@@ -229,6 +229,7 @@ def row_exhibit(root):
              "words": "in force: %d rules applied by code, %d read by the classifier" % (kinds.get("rule", 0), kinds.get("guidance", 0))
              if procs["n"] is not None else "in force", "open": cer + "/procs", "error": procs["error"]},
             {"words": "A procedure's saves undo together"},
+            {"words": "Counted from the nightly procedures run; the tab's Progress view also lists its own queues (another look, rules to turn on) and drops a title from them the moment a person decides it"},
         ],
         "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
         "facts": {"titles": len(ut), "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
@@ -385,6 +386,17 @@ def row_cr(root):
 # SUBJ, "to remember the difference between SUBJECT and DISCIPLINE"). The row's figures come
 # from the seed, the daily scan's latest.json (kb/_csr_trail.py --latest, the step before this
 # one) and the procedures store; a count's link opens the tab's own list (the Commons' step 3).
+# The Subjects tab's own words for the scan's rules and the findings its page leaves to another item (canonical_subj4.js).
+CSR_ASK_SKIP = ("cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup")
+CSR_RULE_WORDS = {
+    "cs1_format": "not four letters", "cs3_squat": "an official prefix on another subject",
+    "cs4_divergence_noted": "a divergence the note records", "cs5_modal_diverge": "a modal choice without a note",
+    "cs6_weak_mnemonic": "a weak mnemonic", "cs7_needs_review": "needs review",
+    "cs8_seeder_bypass": "the mint path skips the reference", "cs9_anchor_dead_format": "an anchor key in the dead format",
+    "cs9_anchor_subj_diverge": "an anchor off its code",
+}
+
+
 def row_subjects(root):
     tab = "#canonical-subj4"
     seed = load_json(root, "kb/discipline_canonical_subj4.json")
@@ -425,8 +437,16 @@ def row_subjects(root):
         for f in scan.get("findings") or []:
             rules[f.get("rule")] = rules.get(f.get("rule"), 0) + 1
         missed = rules.get("cs4_missed_alignment", 0)
-        judgments = rules.get("cs6_weak_mnemonic", 0) + rules.get("cs5_modal_diverge", 0)
-        issues.append({"n": judgments, "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note)",
+        # The findings to confirm or note, counted as the Subjects tab's opened page counts them (S561): every
+        # finding needing judgment less the ones another issue counts and the aligned ones (ASK_SKIP in
+        # canonical_subj4.js). The card had counted two rules only, so it read 16 where the page read 17.
+        ask = {}
+        for f in scan.get("findings") or []:
+            if f.get("needs_judgment") and f.get("rule") not in CSR_ASK_SKIP:
+                ask[f.get("rule")] = ask.get(f.get("rule"), 0) + 1
+        judgments = sum(ask.values())
+        kinds = ", ".join(CSR_RULE_WORDS.get(r, r) for r, _ in sorted(ask.items(), key=lambda kv: -kv[1]))
+        issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
                        "owner": "a curator, after Jev's sitting", "open": tab + "/progress"})
         mc = scan.get("_mid_codes") or {}
         issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
@@ -446,6 +466,7 @@ def row_subjects(root):
             {"words": "A code is four letters; the subject map decides a discipline and TOP corroborates it"},
             {"words": "A re-key goes through the alias chain and lands in one cron window"},
         ]
+    procedures.append({"words": "Counted from the picks as the daily sync committed them; the tab reads them live, so between syncs its figures run ahead of these"})
     machine = {"what": "the daily sync of the picks into the seed", "at": seed.get("_synced_at"), "every_hours": 24}
     if scan and scan.get("_scanned_at"):
         machine = {"what": "the daily sync of the picks and the daily scan", "at": max(seed.get("_synced_at") or "", scan["_scanned_at"]), "every_hours": 24}

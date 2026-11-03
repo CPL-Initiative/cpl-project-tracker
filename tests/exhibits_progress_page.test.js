@@ -86,7 +86,8 @@ function exhibitRow(over) {
     status_file: "kb/status/exhibit.json",
     pair: [{ n: 2402, of: 5492, words: "titles carry a review stamp", open: "#exhibits/credentials" }],
     tests: ["curator-stamped", "procedure-settled"],
-    issues: [{ n: 621, words: "titles in the reference that have left MAP", owner: "a curator (retire or keep)", open: "#credential-reference/all", error: null }],
+    issues: [{ n: 1, words: "titles held for a person", owner: "a curator", open: "#exhibits/held", error: null },
+      { n: 621, words: "titles in the reference that have left MAP", owner: "a curator (retire or keep)", open: "#credential-reference/all", error: null }],
     procedures: [{ n: 16, words: "in force", open: "#credential-reference/procs", error: null }],
     machine: { what: "the saving run and the fold", at: ago(3), every_hours: 24 },
     facts: { titles: 5492, stamped: 2402, person: 1088, cohort: 1314 }
@@ -156,6 +157,9 @@ function views(d) { return Array.from(d.querySelectorAll(".exh-views > *")).map(
   const att = d.getElementById("exh-pg-attention");
   check("host: a held title shows with its action", /1 title the nightly run held for a curator\./.test(txt(att)) && /Review them/.test(txt(att)));
   check("host: a conflict shows with its action", /1 saved title disagrees with one a person approved\./.test(txt(att)) && /Decide them/.test(txt(att)));
+  check("host: the nightly run's held titles, already counted live, are not listed a second time from the Commons row (S561)",
+    !/titles held for a person/.test(txt(att)));
+  check("host: the foot names why the Commons card's list is shorter (S561)", /The CPL Commons card counts the nightly procedures run/.test(txt(page)));
   check("host: the row's known issue reads who settles it",
     /621 titles in the reference that have left MAP, for a curator to retire or keep\./.test(txt(att)));
   const toCer = Array.from(att.querySelectorAll("a")).find(function (a) { return txt(a) === "Review the 621"; });

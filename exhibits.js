@@ -2762,6 +2762,9 @@
     }
     (row && row.issues || []).forEach(function (i) {
       if (i.n == null) return;
+      /* The held and conflict queues are counted live above once the review file is read; the row's copies are
+         the nightly run's, the same titles, so listing both would count them twice (S561). */
+      if (state.data && /\/(held|conflict)$/.test(i.open || "")) return;
       var go = to(i.open), href = hrefOf(i.open);
       /* The owner reads as who settles it: "a curator (retire or keep)" says "for a curator to retire or keep". */
       var own = /^(.+?) \((.+)\)$/.exec(i.owner || "");
@@ -2809,7 +2812,7 @@
         ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "",
         empty: "Nothing in the reference waits on a person." },
       groups: groups, of: cc.n, ofWords: "credentials in the reference",
-      foot: "The reference is staging: not yet faculty-published."
+      foot: "The reference is staging: not yet faculty-published. Needs attention reads this tab's queues live: a title leaves them the moment a person decides it. The CPL Commons card counts the nightly procedures run and lists only the reference's known issues, so its list is shorter and between runs its counts can run behind this page."
     };
   }
   function renderProgress(wrap) {

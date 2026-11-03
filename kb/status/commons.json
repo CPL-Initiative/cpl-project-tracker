@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T09:15:59Z",
+ "written_at": "2026-11-03T10:16:23Z",
  "rows": [
   {
    "key": "requirements",
@@ -113,6 +113,9 @@
     },
     {
      "words": "A procedure's saves undo together"
+    },
+    {
+     "words": "Counted from the nightly procedures run; the tab's Progress view also lists its own queues (another look, rules to turn on) and drops a title from them the moment a person decides it"
     }
    ],
    "machine": {
@@ -377,8 +380,8 @@
      "open": "#canonical-subj4/pre_seeded"
     },
     {
-     "n": 16,
-     "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note)",
+     "n": 17,
+     "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
      "owner": "a curator, after Jev's sitting",
      "open": "#canonical-subj4/progress"
     },
@@ -403,6 +406,9 @@
     },
     {
      "words": "A person confirms each pick; a procedure may confirm the authority's own"
+    },
+    {
+     "words": "Counted from the picks as the daily sync committed them; the tab reads them live, so between syncs its figures run ahead of these"
     }
    ],
    "machine": {

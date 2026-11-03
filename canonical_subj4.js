@@ -2028,6 +2028,7 @@
   var SECS_KEY = "cplCsr.secs.v1";
   var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }, { id: "list", label: "List" }];
   var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
+  var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];
   var RULE_WORDS = {
     cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
     cs4_aligned: "aligned with the official prefix", cs4_missed_alignment: "a missed alignment", cs4_divergence_noted: "a divergence the note records",
@@ -2297,11 +2298,19 @@
     var differ = rows.filter(function (e) {
       return e.ccn_subject_code && (e.cid_subject_codes || []).length && e.cid_subject_codes.indexOf(e.ccn_subject_code) < 0;
     }).map(function (e) { return e.discipline + " is " + e.ccn_subject_code + ", C-ID says " + e.cid_subject_codes.join(", "); });
-    var byRule = {}, askable = null, judgments = null, askableWords = "";
+    var byRule = {}, askable = null, judgments = null, askableWords = "", toNote = null, toNoteWords = "";
     if (scan) {
       scan.findings.forEach(function (f) { byRule[f.rule] = (byRule[f.rule] || 0) + 1; });
       var ask = scan.findings.filter(function (f) { return f.needs_judgment && f.rule !== "cs7_unreviewed" && f.rule !== "cs4_aligned"; });
       askable = ask.length;
+      /* The opened page's findings item: those needing judgment, less the ones another item counts (the unconfirmed,
+         the collisions, the missed alignments) and the aligned ones. kb/_build_commons_status.py counts the same set
+         for the Commons card (CSR_ASK_SKIP there), so the card and the page agree (S561). */
+      var note = scan.findings.filter(function (f) { return f.needs_judgment && ASK_SKIP.indexOf(f.rule) < 0; });
+      toNote = note.length;
+      var nr = {};
+      note.forEach(function (f) { nr[f.rule] = (nr[f.rule] || 0) + 1; });
+      toNoteWords = Object.keys(nr).sort(function (a, b) { return nr[b] - nr[a]; }).map(function (r) { return fmtN(nr[r]) + " " + (RULE_WORDS[r] || r); }).join(", ");
       judgments = (byRule.cs6_weak_mnemonic || 0) + (byRule.cs5_modal_diverge || 0);
       var ar = {};
       ask.forEach(function (f) { ar[f.rule] = (ar[f.rule] || 0) + 1; });
@@ -2326,6 +2335,7 @@
       mqTotal: mqTotal, mqNoCourses: mqTotal == null ? null : mqTotal - rows.length, mqReadAt: state.mqDoc && (state.mqDoc._extracted_at || null),
       cidSubjects: cidSubj.length, cidDescriptors: state.cidMeta && state.cidMeta.count, cidReadAt: state.cidMeta && retrievedDay(state.cidMeta.source),
       ccnSubjects: ccnSubj.length, ccnCourses: state.ccnMeta && state.ccnMeta.count, bothSubjects: both.length, ccnOnly: ccnOnly, differ: differ,
+      toNote: toNote, toNoteWords: toNoteWords,
       scanDay: scan && scan._scanned_at, missed: scan ? (byRule.cs4_missed_alignment || 0) : null, judgments: judgments, askable: askable,
       askableWords: askableWords, byRule: byRule, findings: scan ? scan.findings.length : null,
       codes: mc ? mc.codes : null, codeIds: mc ? mc.ids : null, canonicalCodes: mc ? mc.canonical : null, umbrellaOnlyCodes: mc ? mc.umbrella : null,
@@ -2505,8 +2515,10 @@
         action: { words: "Confirm them", go: go(TO.preSeeded) } },
       { n: x.collisions, words: x.collisions === 1 ? "Common SUBJ shared by two MQ disciplines." : "Common SUBJs shared by two or more MQ disciplines.",
         action: { words: "Check them", go: go(TO.check) } },
-      { n: x.scan ? x.askable : null, words: "scan findings to confirm or note" + (x.askableWords ? " (" + x.askableWords + ")." : "."),
+      { n: x.scan ? x.toNote : null, words: (x.toNote === 1 ? "scan finding to confirm or note" : "scan findings to confirm or note") + (x.toNoteWords ? " (" + x.toNoteWords + ")." : "."),
         action: { words: "Open the findings", go: go(TO.findings) } },
+      x.missed ? { n: x.missed, words: x.missed === 1 ? "missed alignment with an authority code." : "missed alignments with an authority code.",
+        action: { words: "Open them", go: go(TO.chip) } } : null,
       { n: x.strayCodes, words: "identity codes that are neither a Common SUBJ nor an umbrella code" +
         (x.strayIds != null ? ", on " + fmtN(x.strayIds) + " identities" : "") + ", for a re-mint under the playbook." }
     ];
@@ -2514,6 +2526,7 @@
       items.push({ n: 1, words: "decision for " + x.decider + ": " + (c.title || "an open call") + ".",
         action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
     });
+    items = items.filter(Boolean);
     var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
     var on = (x.procs || []).filter(function (p) { return p.on; }).length;
     var r = function (label, n, to) { return { label: label, n: n, go: go(to || TO.all) }; };
@@ -2538,7 +2551,7 @@
         { q: "How does it reach the courses?", rows: [r("An umbrella code over others", x.umbrellas), r("Paired in a fan-in", x.fanInDisc)] }
       ],
       of: total, ofWords: "MQ disciplines with courses",
-      foot: "The reference is staging: not yet faculty-published."
+      foot: "The reference is staging: not yet faculty-published. This page reads the picks live; the CPL Commons card counts them as the daily sync committed them, so between syncs this page runs ahead of it."
     };
   }
 
