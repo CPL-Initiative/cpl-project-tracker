@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-96 document(s).
+97 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -51,6 +51,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CPL Project Tracker — Roadmap Archive, part 4](../roadmap_archive_4.md) | `roadmap_archive_4.md` | 2026-10-25 |  |
 | [CPL Project Tracker — Roadmap Archive, part 5](../roadmap_archive_5.md) | `roadmap_archive_5.md` | 2026-10-25 |  |
 | [CPL Project Tracker — Roadmap Archive, part 6](../roadmap_archive_6.md) | `roadmap_archive_6.md` | 2026-10-25 |  |
+| [CPL Project Tracker — Roadmap Archive, part 7](../roadmap_archive_7.md) | `roadmap_archive_7.md` | 2026-11-03 |  |
 | [CPL Student Portal video — continuation capsule (SkyVid → next)](../cpl_portal_video_handoff.md) | `cpl_portal_video_handoff.md` | 2026-07-23 |  |
 | [Cross-Disciplinary Shared-COR Course Identity — Re-mint Scope](../research_workexp_crossdisc_remint_scope.md) | `research_workexp_crossdisc_remint_scope.md` | 2026-06-09 |  |
 | [Dashboard card metrics — consistency recommendations (Sam's recommend list)](../dashboard_card_metrics_recommendations.md) | `dashboard_card_metrics_recommendations.md` | 2026-06-29 |  |
