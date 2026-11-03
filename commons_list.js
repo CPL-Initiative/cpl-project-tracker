@@ -977,10 +977,6 @@
       if (n) n.textContent = listSelWords();
       if (fl && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
     }
-    function listFocusTitle(key) {
-      var td = document.querySelector("td." + P + 'title[data-key="' + String(key).replace(/"/g, '\\"') + '"] .' + P + "open");
-      if (td) td.focus();
-    }
     /* The side panel for the row L.panel names, or null when none is open or its row has left the List. */
     function listPanel() {
       var L = listState();
