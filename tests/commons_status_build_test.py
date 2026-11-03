@@ -67,6 +67,17 @@ for r in rows:
 
 req = rows[0]
 f = req.get("facts") or {}
+# Every Commons action opens the reference's List (Sam, 2026-11-03), on the filter a count names where the List has one.
+check("Programs: the card and its counts open CPL Pathways' List, the issues its Fail and Not read yet filters",
+      req["links"][0]["href"] == "#program-requirements/list" and all(p_["open"] == "#program-requirements/list" for p_ in req["pair"])
+      and [i["open"] for i in req["issues"]] == ["#program-requirements/list/fail", "#program-requirements/list/unread"][:len(req["issues"])],
+      (req["links"], [p_["open"] for p_ in req["pair"]], [i["open"] for i in req["issues"]]))
+_ex = [r for r in rows if r["key"] == "exhibit"][0]
+check("Exhibits: the card and its counts open the List; held titles and conflicts keep Review; the procedures open Rules, never the retired CER",
+      _ex["links"][0]["href"] == "#exhibits/list" and all(p_["open"] == "#exhibits/list" for p_ in _ex["pair"])
+      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#credential-reference/all") for i in _ex["issues"])
+      and _ex["procedures"][0]["open"] == "#exhibits/rules",
+      (_ex["links"], [p_["open"] for p_ in _ex["pair"]], [i["open"] for i in _ex["issues"]], _ex["procedures"][0].get("open")))
 building = data.get("building", [])
 check("the three building references follow the rows (S552): credentials, outcomes, skills",
       [b.get("key") for b in building] == ["credentials", "outcomes", "skills"])
@@ -98,9 +109,9 @@ cr = rows[3]
 crf = cr.get("facts") or {}
 # S437 (the CR Progress view; Open Asks Sheet 108 card 5): one pair, the wordings that resolve to a
 # settled reference of every wording, a rule's placements and a curator's beyond them summing to it.
-check("CR: settled wordings of every wording first, opening the Progress view",
+check("CR: settled wordings of every wording first, opening the List (Sam, 2026-11-03)",
       cr["pair"][0]["n"] == crf.get("settled") and cr["pair"][0]["of"] == crf.get("wordings")
-      and cr["pair"][0]["open"] == "#cr-reference/progress" and cr["tests"] == ["rule-settled", "curator-decided", "confirmed by a person"])
+      and cr["pair"][0]["open"] == "#cr-reference/list" and cr["links"][0]["href"] == "#cr-reference/list" and cr["tests"] == ["rule-settled", "curator-decided", "confirmed by a person"])
 check("CR: a rule's wordings and a curator's beyond them sum to the settled count, the rest unsettled",
       crf.get("rule_wordings") + crf.get("curator_only") == crf.get("settled")
       and crf.get("settled") + crf.get("unsettled") == crf.get("wordings")
@@ -134,13 +145,14 @@ check("Subjects: settled is the confirmed count less the collisions, and the pai
       sub.get("settled") == rows[4]["pair"][0]["n"] and sub.get("settled") <= sub.get("confirmed") and rows[4]["pair"][0]["of"] == sub.get("disciplines"))
 check("Subjects: the pair's words say MQ disciplines and name the three tests", "MQ disciplines" in rows[4]["pair"][0]["words"]
       and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free", "confirmed by a person"])
-check("Subjects: every count opens the tab's own list (the Commons' step 3)",
-      rows[4]["pair"][0]["open"] == "#canonical-subj4/progress" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
+check("Subjects: the card and its counts open the List (Sam, 2026-11-03), every issue the tab's own list",
+      rows[4]["links"][0]["href"] == "#canonical-subj4/list" and rows[4]["pair"][0]["open"] == "#canonical-subj4/list"
+      and rows[4]["pair"][1]["open"] == "#canonical-subj4/list/person" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
 # A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
 # a known issue with nothing in it is not an issue, and facts.shared keeps the measure.
 collision_issues = [i for i in rows[4]["issues"] if "two MQ disciplines" in i.get("words", "")]
-check("Subjects: the unconfirmed issue opens the pre-seeded filter and a collision issue, when one is listed, the SUBJ check",
-      rows[4]["issues"][0]["open"] == "#canonical-subj4/pre_seeded" and all(i["open"] == "#canonical-subj4/check" for i in collision_issues)
+check("Subjects: the unconfirmed issue opens the List's Open filter, where a pick is confirmed, and a collision issue, when one is listed, the List's In a collision",
+      rows[4]["issues"][0]["open"] == "#canonical-subj4/open" and all(i["open"] == "#canonical-subj4/list/collision" for i in collision_issues)
       and bool(sub.get("shared")) == bool(collision_issues))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
     check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",

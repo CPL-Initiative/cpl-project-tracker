@@ -128,17 +128,19 @@ def row_requirements(root):
     checked = chk["n"]
     return {
         "key": "requirements", "title": "Program Requirements", "tab": tab,
-        "links": [{"href": tab, "text": "Open the tab"}],
+        # Every Commons action opens the reference's List (Sam, 2026-11-03: "open the List view as the default for all
+        # the commons actions"), on the filter a count names where the List has one.
+        "links": [{"href": tab + "/list", "text": "Open the tab"}],
         "status_file": "kb/status/program-requirements.json" if exists(root, "kb/status/program-requirements.json") else None,
         "pair": [{"n": len(complete), "of": len(active),
-                  "words": "complete at %d colleges" % len(set(c for c, _ in complete)), "open": tab},
+                  "words": "complete at %d colleges" % len(set(c for c, _ in complete)), "open": tab + "/list"},
                  confirmed_pair(len(checked) if checked is not None else None, len(active),
                                 sum(1 for k in complete if k in checked) if checked is not None else None,
-                                "complete", tab, chk["error"])],
+                                "complete", tab + "/list", chk["error"])],
         "tests": ["machine-checked", "confirmed by a person"],
         "issues": [
-            {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "open": tab},
-            {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "open": tab},
+            {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "open": tab + "/list/fail"},
+            {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "open": tab + "/list/unread"},
         ],
         "procedures": [
             {"n": len(colleges), "words": "reading procedures, one per college read, versioned", "open": tab},
@@ -181,8 +183,8 @@ def receipt_time(v):
 
 def row_exhibit(root):
     # The Exhibits tab carries the reference's queue now (Sam, Open Asks Sheet 148, 2026-10-31: link-retire);
-    # the counts open its routes. Titles that left MAP and the procedures stay at the CER's address, which
-    # still opens, until Exhibits carries them.
+    # the counts open its routes. Titles that left MAP stay at the CER's address, which still opens, until Exhibits
+    # carries them; the procedures moved to Exhibits' Rules view, which lists every one (2026-11-03).
     tab = "#exhibits"
     cer = "#credential-reference"
     ut = load_json(root, "kb/unified_titles.json")
@@ -228,14 +230,15 @@ def row_exhibit(root):
     stamps = [t for t in (saved_at, fold_at) if t]
     return {
         "key": "exhibit", "title": "Common Exhibit Reference", "tab": tab,
-        # The card opens the reference's page in the CPL Commons mock's shape (S556): Exhibits' Progress view.
-        "links": [{"href": tab + "/progress", "text": "Open Exhibits"}],
+        # The card opens Exhibits' List (Sam, 2026-11-03); Progress is a word away. Held titles and the fold's
+        # conflicts keep the Review card, where Change to Proposed Title and Teach a rule live.
+        "links": [{"href": tab + "/list", "text": "Open Exhibits"}],
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
         "pair": [{"n": len(stamped), "of": len(ut),
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
-                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/credentials"},
+                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/list"},
                  # A person's stamp is complete by definition here (complete is a review stamp), so no "of them" clause.
-                 confirmed_pair(person, len(ut), None, "", tab + "/credentials")],
+                 confirmed_pair(person, len(ut), None, "", tab + "/list")],
         "tests": ["curator-stamped", "procedure-settled", "confirmed by a person"],
         # An issue that reads zero has nothing in it and is left out; an unread one (null, its error) stays.
         # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
@@ -250,7 +253,7 @@ def row_exhibit(root):
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
              "words": "in force: %d rules applied by code, %d read by the classifier" % (kinds.get("rule", 0), kinds.get("guidance", 0))
-             if procs["n"] is not None else "in force", "open": cer + "/procs", "error": procs["error"]},
+             if procs["n"] is not None else "in force", "open": tab + "/rules", "error": procs["error"]},
             {"words": "A procedure's saves undo together"},
             {"words": "Counted from the nightly procedures run; the tab's Progress view also lists its own queues (another look, rules to turn on) and drops a title from them the moment a person decides it"},
         ],
@@ -400,12 +403,13 @@ def row_cr(root):
              % (fmt(len(by_rule)), fmt(len(by_curator - by_rule)), fmt(sum(rows_of[w] for w in settled)), fmt(st["total_rows"])))
     return {
         "key": "cr", "title": "Common CR Reference", "tab": tab,
-        # The card opens the reference's page in the CPL Commons mock's shape (S556); the tab still opens on the worklist.
-        "links": [{"href": tab + "/progress", "text": "Open the tab"}],
+        # The card opens the reference's List (Sam, 2026-11-03); its issues keep the worklist's filters, which the
+        # List's filters do not match (the worklist's open is not the List's Needs a decision).
+        "links": [{"href": tab + "/list", "text": "Open the tab"}],
         "status_file": "kb/status/cr.json" if exists(root, "kb/status/cr.json") else None,
-        "pair": [{"n": len(settled), "of": len(rows_of), "words": words, "open": tab + "/progress"},
+        "pair": [{"n": len(settled), "of": len(rows_of), "words": words, "open": tab + "/list"},
                  # The CR's curator decisions are a person's verdicts read from a decision sheet (the receipts' _doc).
-                 confirmed_pair(len(by_curator), len(rows_of), len(by_curator & settled), "settled", tab + "/progress")],
+                 confirmed_pair(len(by_curator), len(rows_of), len(by_curator & settled), "settled", tab + "/list")],
         "tests": ["rule-settled", "curator-decided", "confirmed by a person"],
         "issues": [
             {"n": len(unsettled), "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
@@ -479,9 +483,9 @@ def row_subjects(root):
     procs = load_json(root, "kb/csr_procedures.json") if exists(root, "kb/csr_procedures.json") else None
     who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by the nightly procedure or a session cohort" % fmt(cohort) if cohort else "")
     issues = [
-        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/pre_seeded"},
+        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/open"},
         {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
-         "owner": "a curator", "open": tab + "/check"},
+         "owner": "a curator", "open": tab + "/list/collision"},
     ]
     # A known issue with nothing in it is not an issue: the collisions row leaves the list at zero
     # (the AGAB re-key of 2026-10-19 closed the one), and facts.shared keeps the measure.
@@ -527,13 +531,14 @@ def row_subjects(root):
         machine = {"what": "the daily sync of the picks and the daily scan", "at": max(seed.get("_synced_at") or "", scan["_scanned_at"]), "every_hours": 24}
     return {
         "key": "subjects", "title": "Common Subjects Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open the tab"}],
+        # The card opens the reference's List (Sam, 2026-11-03), where a pick is confirmed.
+        "links": [{"href": tab + "/list", "text": "Open the tab"}],
         "status_file": "kb/status/subjects.json" if exists(root, "kb/status/subjects.json") else None,
         "pair": [{"n": len(settled), "of": len(D),
                   "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (%s)" % who,
-                  "open": tab + "/progress"},
+                  "open": tab + "/list"},
                  confirmed_pair(len(confirmed) - cohort, len(D),
-                                sum(1 for k in settled if not is_cohort(confirmed[k].get("reviewed_by"))), "settled", tab + "/progress")],
+                                sum(1 for k in settled if not is_cohort(confirmed[k].get("reviewed_by"))), "settled", tab + "/list/person")],
         "tests": ["confirmed", "authority rule", "collision-free", "confirmed by a person"],
         "issues": issues,
         "procedures": procedures,

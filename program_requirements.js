@@ -3858,6 +3858,8 @@
     var parts = (location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] !== "program-requirements" || parts[1] !== "list") return false;
     state.view = "list";
+    /* #program-requirements/list/<filter> opens the List on one of its filters (a Commons count, Sam 2026-11-03). */
+    if (parts[2] && LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) { var L = listState(); L.f = parts[2]; L.q = ""; }
     return true;
   }
   var hashWired = false;

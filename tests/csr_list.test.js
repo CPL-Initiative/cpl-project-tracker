@@ -17,6 +17,7 @@
 //       a value that is not four letters never writes;
 //   (6) a refused write says it did not save and puts the value back;
 //   (7) signed out, the List says so and a save asks for a sign-in without writing;
+//   (12) #canonical-subj4/open (the Commons card's unconfirmed issue) opens the List on Open, Confirm this pick on the row;
 //   (8) the Status drawer's Confirm this pick writes the open pick's own code for its discipline;
 //   (9) Edit (one row) saves a note through the note path, and the pick's reviewer stays the code row's;
 //  (10) tokens only, no glyph, American spelling in the List's source;
@@ -318,6 +319,21 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(11) after Dismiss, focus sits on the row's title", !!focused && focused.classList.contains("csl-open") && txt(focused) === "Psychology", focused && focused.outerHTML);
   words(sz.d, "Suggested picks").click(); await settle();
   check("(11) a dismissed pick leaves Suggested picks for the visit", rows(sz.d).length === 0);
+
+  // ── (12) a pick waiting for a person opens where it can be confirmed (Sam, 2026-11-03) ──
+  // The Commons card's unconfirmed issue and the Progress view's Confirm them lead to #canonical-subj4/open: the List
+  // on Open, each row with Confirm this pick. The Reference box saves only a changed code, so it had nothing to press.
+  const so = boot({ hash: "#canonical-subj4/open" });
+  await settle();
+  check("(12) #canonical-subj4/open opens the List on Open", so.M()._state.view === "list" && so.M()._state.ls.f === "open"
+    && rows(so.d).map(titleOf).join("|") === "Agricultural Business and Related Services|Psychology", rows(so.d).map(titleOf).join("|"));
+  check("(12) the open pick carries Confirm this pick on its row, and the one in a collision waits for a person instead",
+    !!sgOf(so.d, "Psychology") && /Confirm this pick/.test(txt(sgOf(so.d, "Psychology"))) && !sgOf(so.d, "Agricultural Business and Related Services"));
+  // #canonical-subj4/list/<filter> opens the List on any of its filters (the Commons card's counts, Sam 2026-11-03).
+  const sp = boot({ hash: "#canonical-subj4/list/collision" });
+  await settle();
+  check("(12) #canonical-subj4/list/collision opens the List on In a collision", sp.M()._state.view === "list" && sp.M()._state.ls.f === "collision"
+    && rows(sp.d).length === 2 && rows(sp.d).every((r) => /AUTB/.test(txt(r))), rows(sp.d).map(titleOf).join("|"));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });

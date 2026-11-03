@@ -45,16 +45,16 @@ check("the tab draws a view row, Progress first, then Worklist",
 check("the tab still opens on the worklist", /view: "worklist",/.test(TAB) && /filter: "todo"/.test(TAB));
 check("the tab loads the module, the opened page, then the definitions (S556)",
   /loadScript\("commons_progress\.js", "CPL_COMMONS_PROGRESS", function \(\) \{[\s\S]*?T\.loadScript\("commons_page\.js", "CPL_COMMONS_PAGE", function \(\) \{\s*T\.loadScript\("cr_progress\.js", "CPL_CR_PROGRESS", cb\)/.test(TAB));
-check("the Commons card for the reference opens the Progress view (S556)",
-  /"links": \[\{"href": tab \+ "\/progress", "text": "Open the tab"\}\]/.test(BUILDER.slice(BUILDER.indexOf('"key": "cr"'))));
+check("the Commons card for the reference opens the List, Progress a word away (Sam, 2026-11-03)",
+  /"links": \[\{"href": tab \+ "\/list", "text": "Open the tab"\}\]/.test(BUILDER.slice(BUILDER.indexOf('"key": "cr"'))));
 check("the tab lends the worklist and its view switch for the page's questions", /groups: state\.groups \|\| null, view: function \(v\) \{ setView\(v\); \}/.test(TAB));
 check("the tab routes #cr-reference/<view or filter>", /function routeFromHash\(\)/.test(TAB) && /parts\[0\] !== "cr-reference"/.test(TAB));
 check("the view reads the run log and the Commons figures", /kb\/status\/cr\.json/.test(SRC) && /kb\/status\/commons\.json/.test(SRC));
 check("the Commons row carries the wording figures the view reads",
   ["wordings", "settled", "settled_rows", "rule_wordings", "rule_groups", "curator_only", "unsettled", "awaiting_look", "names_to_check"]
     .every((k) => typeof f[k] === "number") && f.head && f.head["50"] && typeof f.head["50"].settled === "number");
-check("the Commons row's counts open the tab's view and filters",
-  cr.pair[0].open === "#cr-reference/progress" && cr.issues.every((i) => /^#cr-reference\/(open|names)$/.test(i.open)));
+check("the Commons row's counts open the tab's List, its issues the worklist's filters (Sam, 2026-11-03)",
+  cr.pair[0].open === "#cr-reference/list" && cr.issues.every((i) => /^#cr-reference\/(open|names)$/.test(i.open)));
 check("the tab and the builder settle by the same decisions", /var SETTLES = \["confirmed", "not_a_topic"\];/.test(TAB)
   && /SETTLES = \("confirmed", "not_a_topic"\)/.test(BUILDER));
 const css = SRC.slice(SRC.indexOf("function ensureCss()"), SRC.indexOf("function mount("));
