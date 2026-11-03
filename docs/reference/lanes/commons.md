@@ -106,8 +106,18 @@ does not list never counts; a failed active read says *Could not be read*. `comm
 Progress render. Guard `tests/program_requirements_page.test.js` (16); a11y `program-requirements-progress` and
 `-dark` wait for the page and open Details.
 
-**NEXT:** the Course Progress view (below), the last reference without the page. The a11y pass (`npm run a11y --
-cobi:commons`) passes on the first view at both widths (S552). The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
+**The Common Course Reference too (S559, 2026-11-03, #2720):** COCI Lookup's **Progress** view, first in its views row
+(the tab still opens on the Courses List), at `#coci-lookup/progress`; the Commons card's third word, *Open Progress*.
+It reads the Commons' own row (`kb/status/commons.json`, key `course`) and the run log it names, so its headline is the
+card's pair: ready (the auditor's 0.85 or better) of the auditor's cards, 3,205 of 27,581. Needs attention: needs
+repair, then the row's issues with who fixes each, Open SkyView on each. The three questions (what it is called, where
+it sits, whether its courses agree) count the cards free of one auditor tag; the builder writes those six tag counts
+into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
+recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
+Every reference now carries the opened page.
+
+**NEXT:** the to-do below: make every tab's figures and the Commons summary agree, or name the difference on both.
+The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
@@ -191,9 +201,7 @@ card for Sam.
 
 **Step 3's Progress views, Subjects (S425, #2260), Exhibit (S436) and CR (S437), with Sam's keep rulings (Sheets 107 and 108):** the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*). Each host brought a 60-line spec to the shared module and needed no change to it.
 
-**NEXT:** the Course Progress view from the shared module, with its definition of complete on a card for Sam and the
-deep link behind each count. Course is SkyView alone (Sam, 2026-10-18), so its view lives where SkyView's counts can
-reach it.
+Each reference's Progress view now draws the opened page; Course's landed last (S559, above).
 
 **To do, later (Sam, 2026-10-26 ~15:00Z, S490):** *"The Commons program numbers don't match the PR tabs numbers. Need
 to make sure the numbers on all tabs on the commons match the commons summaries."* His two screenshots, the same morning:

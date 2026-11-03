@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 93 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 526 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1358** | |
+| Session handoffs | 527 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1359** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-03 S559 SkyAndromeda (CPL Queue routine): the Common Course Reference takes the Commons page in COCI Lookup (#2720), the last reference; Santa Ana's 1,366 SLO rows loaded (#2716); Las Positas's trial 12 of 12; handoff 560.
 - 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
 - 2026-11-03 S557 SkySculptor (CPL Queue routine): the ELL IET Version 3 draft from Sam's Revise request; Santa Ana's SLO read and Las Positas's index; the CSM Workspace UI pass; library lessons archived (`docs/library_lessons_archive.md`); handoff 558.
 - 2026-11-03 S555 SkyTadpole: the CSM Workspace tab ships with its communications log (`csm_log`) and contacts; the Commons closes a to-do from its band; Sheet 159; a11y `--dark`
@@ -129,11 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-02 S554 SkySombrero: the Library's stuck remediations get Finish remediation on their cards, bound to the record; `/coord` tells live sessions this one is running; handoff 555.
 - 2026-11-02 S553 SkyPinwheel: the Library remediates every file it reads, every draft applied as the report opens, a PDF's title, language and title display written in the browser (55 team PDFs verified); handoff 554.
 - 2026-11-02 S551 SkyWhirlpool: Sheet 156 answered (try the catalog first); the runner reads seeds, and every catalog route refused or printed nothing; Sheet 157 asks for the upload; the apply fills a blank email on a name match; handoff 552.
-- 2026-11-02 S550 SkyMoonflower: the ninth contacts read (33 records, 16 new, 0 gone; 295 people at 75 colleges) closes the first full pass, so the harvest goes weekly on Sundays; the contacts lane compacted; handoff 551.
-- 2026-11-02 S549 SkySunflower: Santa Ana's SLO trial, 12 of 12 after a reader fix (#2691); two contacts title patterns (#2692); the eighth contacts read (31 people, 279 at 70 colleges); handoff 550.
-- 2026-11-02 S548 SkyTadpole: the cert link's IT vendor family (CompTIA, Cisco, Microsoft; 208 titles to 165 certs, #2689), the seventh contacts read (47 people, 246 at 59 colleges); handoff 549.
-- 2026-11-02 S547 SkyCartwheel: Golden West's SLO load (568 rows), the sixth contacts read (53 people), Open Asks Sheet 156 on the colleges that refuse the read; handoff 548.
-- 2026-11-02 (Sam's session, SkyWhirlpool S545): the List norms' step 3 (CR wordings in read-only bands by group, `bands.order`; #2679) and Exhibits on the engine's suggestion slot (#2680), so all three steps have landed; the college short-name editor (`public.college_short_names`, the College Identity tab's Short name column, the daily fold `kb/_apply_college_short_names.py`, DR-30; #2681); KB note `methodology-probe-a-live-trigger-inside-a-failing-statement`.
-- 2026-11-02 (Sam's session, SkySombrero S544): the List norms' steps 1 and 2 in the engine (suggestions with Confirm and Dismiss, Changed this visit, filter counts, Selected; #2673, #2675); the Commons status rebuilt nightly after the procedures (#2674); City College of San Francisco and College of the Desert back in the funding join on Sam's Sheet 155 *restore* (#2676); new KB note methodology-a-name-a-join-keys-on-is-a-key.
-- 2026-11-02 (Sam's session, SkyAndromeda S543): Sierra answers which colleges have not met the 75 percent JST condition from one aggregate funding-note section and names the statewide JST count (#2666, deployed on Sheet 154 *deploy*); the credential reference's statewide flag counts the Fact Sheet's 152 (#2667, *count*, ESS outcome 2 70 to 72 colleges); S542's five PRs merged; new KB note methodology-a-per-entity-index-cannot-answer-which-ones.
-- 2026-11-01 (Sam's session, SkyTriangulum S542): kept groups and moves in the Exhibits List (#2655); one List engine, `commons_list.js`, with Lists for the CR Reference (flag, #2659), Subjects and Program Requirements (#2656-#2660); Lists and the Catalog Commons span the window (#2661, #2662); a read-only SLO grouping test (lessons, the vault report).

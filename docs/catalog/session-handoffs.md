@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-526 document(s).
+527 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 560 | [Session 560 handoff: the Common Course Reference takes the Commons page; Santa Ana's SLOs loaded](../session_560_handoff.md) | 2026-11-03 |
 | 559 | [Session 559 handoff: CPL Pathways' Progress view on the Commons page, Las Positas's SLO trial](../session_559_handoff.md) | 2026-11-03 |
 | 558 | [Session 558 handoff: the ELL IET Version 3 draft, the night's SLO runs and the credential slice](../session_558_handoff.md) | 2026-11-03 |
 | 556 | [Session 556 handoff: the CSM Workspace ships with its log and contacts; the Commons closes a to-do](../session_556_handoff.md) | 2026-11-03 |

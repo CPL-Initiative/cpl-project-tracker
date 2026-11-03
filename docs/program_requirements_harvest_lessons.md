@@ -1146,3 +1146,14 @@ From Sheet 144 card 2's paragraph: S529 rescored the filed records (`kb/_program
 - **Read "once a UTC day" against the day the last run was made, not the session's.** Handoff 549 said *Step 11 on the
   new UTC day*; this session fired at 11:12Z on the same day as the index (#2685, 06:18Z) and ran the trial anyway.
   Cost: one 5-minute run on a host already idle. The full read waits for 2026-11-03.
+
+## S559 SkyAndromeda (2026-11-03, the 08:12Z firing): Santa Ana loaded, Las Positas's trial passes
+
+- **Santa Ana's load:** `.load` = `host=sac` (the helper's `--college santa_ana` prints it; the file on main read
+  `host=cccd`), load run 41602658602, 1,366 inserted, 7 skipped, receipt on the branch in about five minutes.
+- **The receipt commit started no `test` again,** and marking the PR ready did not start one either. Restoring
+  `.load` to main's text (S547's pattern) is the session commit that gives CI a head.
+- **Las Positas's trial read 12 of 12** (4 to 7 outcomes a course), so it moves to a full read; the quota (one full read,
+  one preparation run per UTC day) held it to 2026-11-04.
+- **A worktree for the SLO branch** keeps the main checkout on the session's own branch; `git worktree add` on this
+  repo takes about two minutes.
