@@ -3004,7 +3004,7 @@
     var liveA = A ? A.filter(function (a) { return LIVE_ADDENDA.indexOf(a.status) >= 0; }) : null;
     /* Every record in the index, counted once: read, passing or failing (and on which check),
        and, where COCI's active list was read, complete (an active program, passing). */
-    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0 };
+    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0, activeFail: 0 };
     P.forEach(function (p) {
       colleges[p.college] = 1;
       var f = machineFails(p), act = !!(K && K[keyOf(p)]);
@@ -3014,7 +3014,7 @@
         if (f.indexOf("courses") >= 0) n.courses++;
         if (f.indexOf("off-list") >= 0) n.added++;
       } else n.pass++;
-      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; } }
+      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; } else n.activeFail++; }
     });
     var procList = procs.map(function (r) { return short(r.college) + (r.procedure.v != null ? " v" + r.procedure.v : ""); });
     var x = {
@@ -3027,7 +3027,7 @@
       checked: P1.length,
       checkedDay: dayOf(latest(P1.map(function (p) { return p.checked_at; }))),
       read: P.length, readColleges: Object.keys(colleges).length,
-      passing: n.pass, failing: n.fail, failUnits: n.units, failCourses: n.courses, failAdded: n.added,
+      passing: n.pass, failing: n.fail, failingActive: K ? n.activeFail : null, failUnits: n.units, failCourses: n.courses, failAdded: n.added,
       complete: K ? n.complete : null, completeColleges: K ? Object.keys(doneCols).length : null,
       activeUnread: K && G.active != null ? G.active - n.onActive : null, notActive: K ? P.length - n.onActive : null,
       mapsPublished: published.length, mapsRead: mapsRead.length, mapsSettled: mapsSettled.length,
@@ -3172,8 +3172,12 @@
     var plural = function (n, one, many) { return n === 1 ? one : many; };
     var R = x.R || [];
     var items = [
-      { n: x.failing, words: plural(x.failing, "record fails a machine check; the fix goes to its college's reading procedure.",
-        "records fail a machine check; the fix goes to each college's reading procedure."), action: { words: "Open them", go: go(TO.fail) } },
+      /* Over the page's denominator, as the Commons card counts it (S560): an active program whose record fails. */
+      x.failingActive != null
+        ? { n: x.failingActive, words: plural(x.failingActive, "active program whose record fails a machine check; the fix goes to its college's reading procedure.",
+          "active programs whose record fails a machine check; the fix goes to each college's reading procedure."), action: { words: "Open them", go: go(TO.fail) } }
+        : { n: x.failing, words: plural(x.failing, "record fails a machine check; the fix goes to its college's reading procedure.",
+          "records fail a machine check; the fix goes to each college's reading procedure."), action: { words: "Open them", go: go(TO.fail) } },
       { n: x.activeUnread, words: plural(x.activeUnread, "active program no read has reached yet.", "active programs no read has reached yet.") },
       { n: R.length - x.withUrl, words: plural(R.length - x.withUrl, "college needs a catalog address.", "colleges need a catalog address."),
         action: { words: "Open them", go: go(TO.noAddress) } },
@@ -3215,7 +3219,7 @@
           { label: "Complete: passes all three checks, so Sierra quotes it", n: x.complete, go: go(TO.complete) }] }
       ],
       of: a ? x.active : null, ofWords: "active programs in COCI",
-      foot: "The records are staging: read by machine, checked by the reading procedures."
+      foot: "The records are staging: read by machine, checked by the reading procedures. This page reads the harvest live; the CPL Commons card counts the records committed at the last checkpoint, so between checkpoints this page runs ahead of it."
     };
   }
   /* commons_page.js loads the first time Progress opens; until it arrives (or should it fail) the dash draws alone. */

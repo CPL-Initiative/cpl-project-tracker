@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-03T08:36:12Z",
-  "session": 559,
-  "moniker": "SkyAndromeda",
+  "written_at": "2026-11-03T09:22:54Z",
+  "session": 560,
+  "moniker": "SkyWhirligig",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_560_handoff.md",
+  "handoff": "docs/session_561_handoff.md",
   "next_step": {
     "title": "Las Positas's full SLO read",
     "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-04 UTC day, beside Columbia's trial."
@@ -208,6 +208,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-03T09:20:00Z",
+      "text": "What needs attention now counts active programs whose record fails a check, the Commons card's unit, and both pages say why their figures can differ: the card counts the records committed at the last checkpoint, this page reads live."
+    },
+    {
       "at": "2026-11-03T08:40:00Z",
       "text": "Santa Ana's course outcomes loaded: 1,366 rows (#2716); Las Positas's trial parsed 12 of 12."
     },
@@ -234,10 +238,6 @@
     {
       "at": "2026-11-02T15:10:00Z",
       "text": "The Allan Hancock and Antelope Valley presidents' emails loaded through the contacts apply as a partial file; the Commons' first view is the CPL Commons, locked by Sam, with the look for its port on Sheet 158."
-    },
-    {
-      "at": "2026-11-02T14:10:00Z",
-      "text": "The contacts harvest read each refused college's catalog, as Sam asked on Sheet 156; every route refused or printed nothing, so Sheet 157 asks for his upload. The apply now fills a blank email when the name matches."
     }
   ],
   "headline": [
