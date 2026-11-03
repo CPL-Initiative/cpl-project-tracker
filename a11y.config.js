@@ -937,6 +937,9 @@ async function seedCrProgress(page, theme) {
   await page.waitForSelector('#tab-cr-reference button.crr-view[data-view="progress"]', { timeout: 60000 });
   await page.evaluate(() => document.querySelector('#tab-cr-reference button.crr-view[data-view="progress"]').focus());
   await page.keyboard.press("Enter");
+  // The opened page (S556) draws first; the milestones and parts sit under Details, opened here so both are measured.
+  await page.waitForSelector("#tab-cr-reference #cq-progress .cq-pg-groups .cq-pg-bar", { timeout: 60000 });
+  await page.evaluate(() => { const d = document.querySelector("#tab-cr-reference details.cq-more"); if (d) d.open = true; });
   await page.waitForSelector("#tab-cr-reference #cq-progress .prh-pg-part", { timeout: 60000 });
   await page.waitForTimeout(300);
 }

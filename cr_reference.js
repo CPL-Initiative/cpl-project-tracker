@@ -1094,17 +1094,22 @@
   }
   function withProgressModules(cb) {
     var T = window.CPL_TABS;
-    if (window.CPL_CR_PROGRESS && window.CPL_COMMONS_PROGRESS) { cb(); return; }
+    if (window.CPL_CR_PROGRESS && window.CPL_COMMONS_PROGRESS && window.CPL_COMMONS_PAGE) { cb(); return; }
     if (!T || typeof T.loadScript !== "function") { cb(); return; }
     T.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", function () {
-      T.loadScript("cr_progress.js", "CPL_CR_PROGRESS", cb);
+      // The opened page (S556): commons_page.js draws the CPL Commons mock's shape over the dash.
+      T.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () {
+        T.loadScript("cr_progress.js", "CPL_CR_PROGRESS", cb);
+      });
     });
   }
   function progressApi() {
     // The table's rows, read live; null when the read is gated or failed, so the
     // view says nothing about the table rather than comparing against an empty one.
     var live = signedIn() && state.loadedSignedIn && !state.decisionsStale ? Object.keys(state.decisions).length : null;
-    return { go: function (f) { if (FILTERS.indexOf(f) >= 0) setFilter(f); }, liveDecided: live };
+    return { go: function (f) { if (FILTERS.indexOf(f) >= 0) setFilter(f); }, liveDecided: live,
+      // The worklist the tab holds, for the page's three questions (counted per wording), and its view switch.
+      groups: state.groups || null, view: function (v) { setView(v); } };
   }
   function mountProgress() {
     withProgressModules(function () {

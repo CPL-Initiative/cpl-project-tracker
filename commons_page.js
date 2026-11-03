@@ -55,7 +55,7 @@
       s + "status { display:inline-block; margin-right:10px; padding:1px 10px; border:1px solid var(--border-strong); border-radius:999px; font-size:.78rem; font-weight:600; color:var(--text-strong); }",
       s + "read { color:var(--text-muted); }",
       s + "links { display:flex; flex-wrap:wrap; gap:6px 20px; font-size:.95rem; }",
-      s + "card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:clamp(14px, 3vw, 22px) clamp(14px, 3vw, 24px); display:grid; gap:10px; min-width:0; }",
+      s + "card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:clamp(14px, 3vw, 22px) clamp(14px, 3vw, 24px); display:grid; gap:10px; align-content:start; min-width:0; }",
       s + "h { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:1.15rem; font-weight:600; }",
       s + "big { font-family:var(--f-display, Georgia, serif); font-size:clamp(1.8rem, 4vw, 2.4rem); font-weight:700; color:var(--seal-blue-text); letter-spacing:-.02em; font-variant-numeric:tabular-nums; }",
       s + "line { margin:0; color:var(--text-body); font-size:1.02rem; }",

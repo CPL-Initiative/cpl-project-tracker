@@ -229,11 +229,94 @@
       heldByScreen: f && f.held_by_screen, namedByRange: f && f.named_by_range, namedNoncredit: f && f.named_noncredit,
       unitsDiffer: f && f.units_differ, namedOfficial: f && f.named_official,
       decided: f && f.decided, verdicts: f && f.verdicts,
-      liveDecided: api && api.liveDecided != null ? api.liveDecided : null
+      liveDecided: api && api.liveDecided != null ? api.liveDecided : null,
+      row: row, ask: askCounts(api && api.groups)
     };
     var CP = window.CPL_COMMONS_PROGRESS;
     if (CP) { var st = CP.steps(MILESTONES, x); x.steps = st.steps; x.here = st.here; x.next = st.next; }
     return x;
+  }
+
+  /* ── the opened page (S556): the CPL Commons mock's shape, drawn by commons_page.js ──
+     Sam locked the mock on 2026-11-02 (S552); its opened page is the pattern for every reference: the progress line
+     over one denominator, Needs attention with an action each, and three questions with every count over that same
+     denominator. Here the denominator is the wording, the headline's own unit (Sam's keep on Sheet 108: complete is a
+     wording a rung 1 to 4 rule places or a curator decides). The questions are counted per wording from the worklist the
+     tab already holds (kb/cr_reference_worklist.json), so nothing is read twice. The milestones and parts stay one
+     word away, under Details. */
+  function askCounts(groups) {
+    if (!Array.isArray(groups) || !groups.length) return null;
+    var c = { n: 0, grouped: 0, official: 0, statewide: 0, units: 0, agree: 0, colleges2: 0, credentials2: 0 };
+    groups.forEach(function (g) {
+      (g.members || []).forEach(function (m) {
+        c.n++;
+        if ((g.wordings || 0) >= 2) c.grouped++;
+        if (g.official_applied) c.official++;
+        if (g.rung === 1) c.statewide++;
+        if (m.units_lo != null) c.units++;
+        if (!g.units_differ) c.agree++;
+        if ((m.colleges_n || 0) >= 2) c.colleges2++;
+        if ((m.credentials_n || 0) >= 2) c.credentials2++;
+      });
+    });
+    return c;
+  }
+  function firstSentence(t) { var m = String(t || "").trim().match(/^[^.]*\.(?=\s|$)/); return m ? m[0] : String(t || "").trim(); }
+  function pageSpec(x, api) {
+    var Q = x.Q, row = x.row || {}, a = x.ask, go = function (f) { return function () { if (api && api.go) api.go(f); }; };
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var open = calls.filter(function (c) { return !(c.answer && c.answer.words); });
+    var decider = x.decider;
+    var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + firstSentence(Q.changes[0].text) : "";
+    var split = x.ruleWordings != null && x.curatorOnly != null
+      ? fmtN(x.ruleWordings) + " placed by a rung 1 to 4 rule, " + fmtN(x.curatorOnly) + " more by a curator." : "";
+    var items = [];
+    var target = function (href) { var m = /^#cr-reference\/([a-z]+)$/.exec(href || ""); return m && TO[m[1]] ? m[1] : null; };
+    (row.issues || []).forEach(function (i) {
+      if (i.n == null) return;
+      var f = target(i.open);
+      /* The row's words already name who settles each issue (a curator), so the owner is not repeated. */
+      items.push({ n: i.n, words: i.words + ".",
+        action: f ? { words: f === "names" ? "Check them" : "Decide them", go: go(f) } : null });
+    });
+    if (x.awaitingLook != null) items.push({ n: x.awaitingLook, words: x.awaitingLook === 1
+      ? "group a rule folded carries no curator's look yet; it counts as settled." : "groups a rule folded carry no curator's look yet; they count as settled.",
+      action: { words: "Look at them", go: go("todo") } });
+    if (x.heldByScreen != null) items.push({ n: x.heldByScreen, words: x.heldByScreen === 1
+      ? "group held by a safety screen." : "groups held by a safety screen.", action: { words: "Open them", go: go("held") } });
+    open.forEach(function (c) {
+      items.push({ n: 1, words: "decision for " + decider + ": " + (c.title || "an open call") + ".",
+        action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
+    });
+    var proc = (row.procedures || []).filter(function (p) { return p.n != null; })[0];
+    var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
+    var list = function () { if (api && api.view) api.view("list"); };
+    var r = function (label, k) { return { label: label, n: a ? a[k] : null, go: list }; };
+    return {
+      label: "Common CR Reference", prefix: "cq-pg-", reading: false,
+      status: open.length ? "Needs you" : "In progress",
+      lede: "The Common CR Reference: one wording for each credit recommendation, so the same credit reads the same everywhere.",
+      read: x.facts && row.machine && row.machine.at && window.CPL_COMMONS_PROGRESS
+        ? "Worklist built " + window.CPL_COMMONS_PROGRESS.dayOf(row.machine.at) + "." : "",
+      links: [proc ? { words: "How it is kept: " + fmtN(proc.n) + " groups a rule folds", go: go("auto") } : null,
+        sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
+      progress: { n: x.settled, of: x.wordings, short: "settled", words: "wordings resolve to a settled reference",
+        recently: [recently, split].filter(Boolean).join(" "),
+        calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmtN(open.length) + " decisions wait on ") + decider + "."
+          : "No decisions wait on " + decider + ".") : "",
+        error: x.errors.facts || null },
+      attention: { items: items, empty: "Nothing in the reference waits on a person.",
+        next: Q && Q.next_step && Q.next_step.title ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "" },
+      groups: [
+        { q: "What is it called?", rows: [r("Grouped with its other wordings", "grouped"),
+          r("Named by an official number (C-ID or CCN)", "official"), r("A published statewide line", "statewide")] },
+        { q: "What credit does it carry?", rows: [r("Units stated", "units"), r("Units agree across its group", "agree")] },
+        { q: "Who could adopt it?", rows: [r("Articulated by two or more colleges", "colleges2"),
+          r("Carried by two or more credentials", "credentials2")] }
+      ],
+      of: a ? a.n : null, ofWords: "wordings colleges wrote",
+      foot: "The reference is staging: not yet faculty-published."
+    };
   }
 
   /* ── the host the shared module borrows: sections, count controls, call cards ── */
@@ -300,6 +383,7 @@
       P + " .cq-word { font:inherit; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
       P + " .cq-word:hover { text-decoration-thickness:2px; }",
       P + " .cq-word:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; border-radius:2px; }",
+      P + " .cq-more { margin-top:18px; }",
       "@media (max-width: 760px) { " + P + " .cq-progress .prh-pg-steps { grid-template-columns:minmax(0, 1fr); } }"
     ].join("\n") }));
   }
@@ -321,10 +405,18 @@
     return load().then(function (reads) {
       var x = context(reads, api || {}, new Date());
       while (box.firstChild) box.removeChild(box.firstChild);
-      box.appendChild(CP.render(SPEC, x, { readAt: new Date(), errors: x.errors }, host(api || {})));
+      var dash = CP.render(SPEC, x, { readAt: new Date(), errors: x.errors }, host(api || {}));
+      var PG = window.CPL_COMMONS_PAGE;
+      if (!PG) { box.appendChild(dash); return; }
+      /* The opened page first; the milestones and parts one word away (the Commons first view's Details). */
+      box.appendChild(PG.render(pageSpec(x, api || {})));
+      var more = el("details", { cls: "cq-sec cq-more", "data-sec": "progress:details" },
+        [el("summary", { cls: "cq-sec-sum" }, [el("h3", { cls: "cq-sec-t", text: "Details: the milestones and the parts" })]),
+          el("div", { cls: "cq-sec-b" }, [dash])]);
+      box.appendChild(more);
     });
   }
 
   window.CPL_CR_PROGRESS = { MILESTONES: MILESTONES, PARTS: PARTS, HEADLINE: HEADLINE, SPEC: SPEC, TO: TO,
-    context: context, mount: mount, _reset: function () { cache = { status: null, commons: null }; secs = null; } };
+    context: context, mount: mount, pageSpec: pageSpec, askCounts: askCounts, _reset: function () { cache = { status: null, commons: null }; secs = null; } };
 })();
