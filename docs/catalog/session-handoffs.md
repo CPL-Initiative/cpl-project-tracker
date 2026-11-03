@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-524 document(s).
+525 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 558 | [Session 558 handoff: the ELL IET Version 3 draft, the night's SLO runs and the credential slice](../session_558_handoff.md) | 2026-11-03 |
 | 556 | [Session 556 handoff: the CSM Workspace ships with its log and contacts; the Commons closes a to-do](../session_556_handoff.md) | 2026-11-03 |
 | 555 | [Session 555 handoff: the Library's stuck remediations get Finish remediation, and /coord](../session_555_handoff.md) | 2026-11-02 |
 | 554 | [Session 554 handoff: the Library remediates every file it reads, drafts applied from the start, a PDF written](../session_554_handoff.md) | 2026-11-02 |

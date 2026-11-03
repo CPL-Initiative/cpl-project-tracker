@@ -11446,7 +11446,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 92,
+   "count": 93,
    "docs": [
     {
      "created": "2026-08-14",
@@ -13484,6 +13484,20 @@
       "writer"
      ],
      "title": "The communications register and the writer module \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "path": "docs/library_lessons_archive.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "archive",
+      "library"
+     ],
+     "title": "The Library and its filer \u2014 archived lessons (2026-10-06 to 2026-10-23)",
      "type": null,
      "updated": ""
     },
@@ -16462,8 +16476,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 524,
+   "count": 525,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 558,
+     "path": "docs/session_558_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "ell-iet",
+      "program-requirements",
+      "credential-registry",
+      "ui-pass"
+     ],
+     "title": "Session 558 handoff: the ELL IET Version 3 draft, the night's SLO runs and the credential slice",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25420,5 +25452,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1355
+ "total": 1357
 }

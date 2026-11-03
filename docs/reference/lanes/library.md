@@ -110,15 +110,7 @@ outputs (`reports/*.docx`) and source documents under `docs/reference/` are
 inputs, not deliverables. Claude artifacts (decision sheets, mockups) stay on
 claude.ai.
 
-**A shareable Claude artifact gets a Library record, routinely (Sam, 2026-10-20):**
-*"I want to add artifacts like this routinely to the library."* A page made for others
-stays on claude.ai; the session adds a record with `home` `web`, the artifact link, and
-`rebuild_from` naming the HTML source it commits to the vault beside the work. Writes go
-through a committed receipt and `supabase-migrate.yml`. First:
-`dsp-credit-starting-points` (`kb/receipts/cpl_library_dsp_starting_points_2026-10-20.sql`,
-applied 2026-10-20 by `supabase-migrate.yml` run 39500044669; the record, the memory row and
-its log row read back 1, 1, 1).
-`cpl_memory` `sam-claude-artifacts-go-in-library-2026-10-20`.
+**A shareable Claude artifact gets a Library record, routinely (Sam, 2026-10-20)**: CLAUDE.md carries the rule; the first record and its receipt moved verbatim to `docs/library_lessons.md` (*Moved from the lane, S557*).
 
 Sheet 121's rulings (the Knowledge Base fold, the Coordinator Guide files, the ELL IET notice) and Sheet 124's (the hero
 photos, the IT and AI deck unlisted) are carried out; their text moved verbatim to `docs/library_lessons.md`
@@ -130,11 +122,7 @@ Built S490 (`refresh_note`, `sources`, `regen`, the one box, the college page's 
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
-Sam's asks of 2026-10-24 are built: an Ask Sierra side bar any public page loads with one script (`sierra/sidebar.js`,
-resizable, light by default; the library, COBI's Library tab, the Fact Sheet and the funding model page carry it; test
-`tests/sierra_sidebar.test.js`), and `cpl-chat`'s LIBRARY BLOCK, which reads `cpl_library_public()` and answers from a
-listed piece's own text (test `tests/sierra_library.test.js`). The full record, his words and the mechanics moved verbatim
-to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S480)*.
+Live; its record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, S557*).
 
 ## Public pieces live on GitHub Pages (Sam, 2026-10-25; built S469 and S470)
 
@@ -145,6 +133,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **ELL IET CPL Starting Points Version 3 is a draft awaiting *Replace the public copy*** (S557, Sam's Revise request of
+  2026-11-02): https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3, `regen.ready_at`/`draft_url` on the record (receipt
+  `kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql`, rollback beside it). Once approved, run
+  `scripts/library_page.py ell-iet-cpl-starting-points` on `CPLBrain/.../ell-iet/20261023_ELL_IET_CPL_Starting_Points_3.html`,
+  add the version as Current, empty `refresh_note`, set `regen` to null. IACA's `regen` (Crystal Nasio, 2026-10-26) has
+  no note or sources: it waits on what she wants changed.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
   (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.

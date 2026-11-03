@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-02_csm_log.sql
-name=s555_csm_log
+file=kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql
+name=s557_library_ell_iet_v3_draft
