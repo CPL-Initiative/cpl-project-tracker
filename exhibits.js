@@ -1428,8 +1428,9 @@
     }
     return cs.drafts[r.ut];
   }
-  function credSave(r) {
+  function credSave(r, ui) {
     var cs = state.cs, d = credDraft(r), cur = credCurrent(r);
+    ui = ui || credUi("credentials", r.ut);
     var issuer = d.issuer.replace(/\s+/g, " ").trim();
     var sites = parseSites(JSON.stringify(d.sites)) || [];
     var writes = [];
@@ -1438,7 +1439,8 @@
       writes.push([FIELD_CRED_SITES, JSON.stringify(sites)]);
       writes.push([FIELD_CRED_TRAINER, joinSites(sites)]);
     }
-    if (!writes.length) { cs.note = "Nothing changed."; render(); return Promise.resolve(); }
+    var again = ui.pf + "save";
+    if (!writes.length) { ui.setNote("Nothing changed."); ui.redraw(again); return Promise.resolve(); }
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
@@ -1452,12 +1454,13 @@
         else { o.sites = w[1]; o.sitesAt = now; }
       });
       delete cs.drafts[r.ut];
-      cs.note = "Saved. The tabs show it now; the daily run writes it into the reference.";
-      render();
+      ui.changed();
+      ui.setNote("Saved. The tabs show it now; the daily run writes it into the reference.");
+      ui.redraw(again);
     }).catch(function (e) {
-      cs.note = e && e.message === "signin" ? "Sign in as a reviewer to save."
-        : "The save did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
-      render();
+      ui.setNote(e && e.message === "signin" ? "Sign in as a reviewer to save."
+        : "The save did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed; try again.");
+      ui.redraw(again);
     });
   }
   function credOpen(ut) {
@@ -1888,9 +1891,9 @@
     var old = document.querySelector(".exh-ctable");
     if (old && old.parentNode) old.parentNode.replaceChild(credTable(credRows()), old);
   }
-  function siteRow(r, d, k, colleges) {
-    var x = d.sites[k];
-    var sel = el("select", { id: "exh-c-col-" + k, "aria-label": "College for training site " + (k + 1) });
+  function siteRow(r, d, k, colleges, ui) {
+    var x = d.sites[k], pf = ui.pf;
+    var sel = el("select", { id: pf + "col-" + k, "aria-label": "College for training site " + (k + 1) });
     var opts = [""].concat(colleges);
     if (x.college && opts.indexOf(x.college) === -1) opts.push(x.college);
     opts.forEach(function (c) {
@@ -1899,49 +1902,69 @@
       sel.appendChild(o);
     });
     sel.addEventListener("change", function () { x.college = sel.value; });
-    var inp = el("input", { id: "exh-c-site-" + k, type: "text", autocomplete: "off",
+    var inp = el("input", { id: pf + "site-" + k, type: "text", autocomplete: "off",
       placeholder: "Local school house or training center", "aria-label": "Training site " + (k + 1) });
     inp.value = x.site || "";
     inp.addEventListener("input", function () { x.site = inp.value; });
     var rm = word("Remove", function () {
-      d.sites.splice(k, 1); render();
-      var a = document.getElementById("exh-c-add"); if (a) a.focus();
+      d.sites.splice(k, 1); ui.redraw(pf + "add");
     }, { "aria-label": "Remove training site " + (k + 1) });
     return el("div", { cls: "exh-siteitem" }, [el("div", { cls: "exh-siterow" }, [sel, inp, rm]),
       suggest(inp, "sites", function (t) { x.site = t; })]);
   }
+  /* The credential's editor, one for the Credentials view and the List's side panel: the issuer (offering the names
+     already in the reference), the issuers the reference holds beside it, and the training sites, each for a college
+     or any college. ui = { pf: the id prefix, redraw(focusId), note: the status words, setNote(text), changed(ut) }. */
+  function credUi(where, ut) {
+    function focus(fid) { var n = fid && document.getElementById(fid); if (n) n.focus(); }
+    if (where === "panel") {
+      // The panel's words last the visit with the List's state; a save joins the List's Changed this visit.
+      var L = listState(), notes = L.pnNote || (L.pnNote = {});
+      return { pf: "exh-pn-", note: notes[ut] || "",
+        redraw: function (fid) { redrawList(); focus(fid); },
+        setNote: function (t) { notes[ut] = t; },
+        changed: function () { if (L.changed && L.changed.indexOf(ut) === -1) L.changed.push(ut); } };
+    }
+    return { pf: "exh-c-", note: state.cs.note || "",
+      redraw: function (fid) { render(); focus(fid); },
+      setNote: function (t) { state.cs.note = t; }, changed: function () {} };
+  }
+  function credEditor(r, ui) {
+    var d = credDraft(r), pf = ui.pf, out = [];
+    var issuer = el("input", { id: pf + "issuer", type: "text", autocomplete: "off", placeholder: "None named" });
+    issuer.value = d.issuer;
+    issuer.addEventListener("input", function () { d.issuer = issuer.value; });
+    out.push(el("label", { cls: "exh-inbox", "for": pf + "issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
+    out.push(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
+    var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
+    if (also.length) out.push(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
+      + ". The Common Exhibit Reference edits a credential's other issuers." }));
+    var fs = el("fieldset", { cls: "exh-sites" }, [el("legend", { cls: "exh-cl", text: "Training sites" })]);
+    var colleges = credArt(r);
+    if (!d.sites.length) fs.appendChild(el("p", { cls: "exh-muted exh-small", text: "None named" }));
+    d.sites.forEach(function (x, k) { fs.appendChild(siteRow(r, d, k, colleges, ui)); });
+    fs.appendChild(el("p", { cls: "exh-muted exh-small", text: colleges.length
+      ? "Name the college a site trains for, or leave Any college." : "No college articulates it yet, so each site reads Any college." }));
+    out.push(fs);
+    out.push(el("div", { cls: "exh-acts" }, [
+      word("Add a training site", function () {
+        d.sites.push({ site: "", college: colleges.length === 1 ? colleges[0] : "" });
+        ui.redraw(pf + "site-" + (d.sites.length - 1));
+      }, { id: pf + "add" }),
+      word("Save", function () { credSave(r, ui); }, { id: pf + "save" })]));
+    out.push(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: ui.note || "" }));
+    return out;
+  }
   function credPanel(r) {
-    var cs = state.cs, d = credDraft(r);
+    var cs = state.cs;
     var p = el("section", { cls: "exh-card exh-cpanel", id: "exh-cpanel", "aria-labelledby": "exh-c-h" });
     p.appendChild(el("h3", { cls: "exh-ph", id: "exh-c-h", tabindex: "-1", text: credName(r) }));
     p.appendChild(el("div", { cls: "exh-chiprow" }, [el("span", { cls: "exh-chip", tabindex: "0", "data-tip": TIPS[IN_REF],
       "aria-label": "CER step: " + IN_REF + ". " + TIPS[IN_REF] }, ["CER step: " + IN_REF])]));
 
     var called = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "What is it called?" })]);
-    var issuer = el("input", { id: "exh-c-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
-    issuer.value = d.issuer;
-    issuer.addEventListener("input", function () { d.issuer = issuer.value; });
-    called.appendChild(el("label", { cls: "exh-inbox", "for": "exh-c-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
-    called.appendChild(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
-    var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
-    if (also.length) called.appendChild(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
-      + ". The Common Exhibit Reference edits a credential's other issuers." }));
-    var fs = el("fieldset", { cls: "exh-sites" }, [el("legend", { cls: "exh-cl", text: "Training sites" })]);
     var colleges = credArt(r);
-    if (!d.sites.length) fs.appendChild(el("p", { cls: "exh-muted exh-small", text: "None named" }));
-    d.sites.forEach(function (x, k) { fs.appendChild(siteRow(r, d, k, colleges)); });
-    fs.appendChild(el("p", { cls: "exh-muted exh-small", text: colleges.length
-      ? "Name the college a site trains for, or leave Any college." : "No college articulates it yet, so each site reads Any college." }));
-    called.appendChild(fs);
-    var acts = el("div", { cls: "exh-acts" }, [
-      word("Add a training site", function () {
-        d.sites.push({ site: "", college: colleges.length === 1 ? colleges[0] : "" });
-        render();
-        var n = document.getElementById("exh-c-site-" + (d.sites.length - 1)); if (n) n.focus();
-      }, { id: "exh-c-add" }),
-      word("Save", function () { credSave(r); }, { id: "exh-c-save" })]);
-    called.appendChild(acts);
-    called.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: cs.note || "" }));
+    credEditor(r, credUi("credentials", r.ut)).forEach(function (n) { called.appendChild(n); });
     var vars = (r.raw_variants || []).map(function (v) { return v.r; });
     var shownVars = cs.showTitles ? vars : vars.slice(0, 3);
     var lt = el("p", { cls: "exh-small" }, [el("span", { cls: "exh-cl", text: "Local titles: " }), shownVars.join(" · ") || "None"]);
@@ -2255,8 +2278,16 @@
   function listSave(r) {
     var L = listState(), d = L.draft, cur = credCurrent(r), cs = state.cs;
     var title = d.title.replace(/\s+/g, " ").trim(), issuer = d.issuer.replace(/\s+/g, " ").trim();
-    var sites = d.sites.split(";").map(function (x) { return x.replace(/\s+/g, " ").trim(); })
-      .filter(Boolean).map(function (x) { return { site: x }; });
+    /* The row's box holds the site names alone, so a site whose name stands keeps the college it trains for (set in
+       the side panel's editor); a new name trains for any college. Repeats pair off in order. */
+    var pool = cur.sites.slice();
+    var sites = parseSites(JSON.stringify(d.sites.split(";").map(function (x) { return x.replace(/\s+/g, " ").trim(); })
+      .filter(Boolean).map(function (x) {
+        var k = -1;
+        pool.some(function (p, i) { if (p.site === x) { k = i; return true; } return false; });
+        var col = k > -1 ? pool.splice(k, 1)[0].college : "";
+        return col ? { site: x, college: col } : { site: x };
+      }))) || [];
     var writes = [];
     if (!title) { L.note = "A title cannot be empty."; render(); return Promise.resolve(); }
     if (title !== listTitle(r)) writes.push([FIELD_CRED_TITLE, title === r.ut ? "" : title]);
@@ -2479,8 +2510,7 @@
         line("Alike through a shared course or identical SLO text, which is articulation evidence and never a hint:");
         list(sh.map(function (x) { return x[0] + ", similarity " + Number(x[1]).toFixed(2) + (x[3] === "text" ? ", identical text" : ", a shared course"); }));
       }
-      var openC = word("Open it in Credentials", function () { openCredential(r.ut); });
-      box.appendChild(openC);
+      // The title's drawer shows inside the side panel, whose editor sets the issuer and training sites.
     } else if (name === "Status" || name === "Confidence") {
       line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
         (listStatus(r) === "Cohort" ? "the cohort " + r.curated_by : "a person") + ".");
@@ -2743,8 +2773,10 @@
      (like you've designed) of the folded members"; the mock https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4, after
      SkyView's course outline). One line of what the credential is, its members (the MAP exhibits folded under it,
      kb/exhibits_adoption.json's x), and the rest folded below: the credit each college awards, the issuer and training
-     sites, and who could adopt it. Read only; an edit opens the Credentials view, which the panel replaces once it
-     carries the edits. */
+     sites, and who could adopt it. The issuer and training sites are edited here with the Credentials view's own editor
+     (credEditor: a site for a college or any college, the names already in the reference offered as you type), so the
+     panel does what that view does and the view can retire (the List norms, The List is the workspace). Each fold
+     keeps its place for the visit, so a sort, an added site or a save does not close it. */
   var PN_COLS = [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]];
   function pnSort() { return state.pnSort || (state.pnSort = { col: 1, dir: 1 }); }
   function listPanelBody(r, h) {
@@ -2781,7 +2813,11 @@
       out.push(el2("div", { cls: "exh-pn-wrap", role: "region", tabindex: "0", "aria-label": "Members of " + listTitle(r) },
         [el2("table", { cls: "exh-pn-table" }, [el2("thead", null, [head]), body])]));
     }
-    // The rest, folded: what each college awards, the issuer and training sites, who could adopt it.
+    // The issuer and training sites, edited in place.
+    out.push(pnFold(r, "edit", "Who issues it, and where it is trained: " + (cur.issuer || "no issuer named") + "; "
+      + (cur.sites.length ? cur.sites.length + " training site" + (cur.sites.length === 1 ? "" : "s") : "no training site named"),
+      credEditor(r, credUi("panel", r.ut))));
+    // The rest, folded: what each college awards and who could adopt it.
     var more = [];
     var awards = adoptMap(ad && ad.a), names = Object.keys(awards).sort(function (a, b) { return (awards[b][0] || 0) - (awards[a][0] || 0) || a.localeCompare(b); });
     more.push(el2("h3", { cls: "exh-pn-q", text: "What credit it carries" }));
@@ -2790,9 +2826,6 @@
       var a = awards[nm] || [], lines = (a[1] || []).map(function (x) { return x[0] + (x[1] ? ", " + x[1] : ""); }).join("; ");
       return el2("li", null, [el2("b", { text: nm }), ", " + h.fmt(a[0]) + " units" + (lines ? ": " + lines : "")]);
     })) : el2("p", { cls: "exh-muted exh-small", text: "No college articulates it yet." }));
-    more.push(el2("h3", { cls: "exh-pn-q", text: "Who issues it, and where it is trained" }));
-    more.push(el2("p", { cls: "exh-small", text: "Issuer: " + (cur.issuer || "none named") }));
-    more.push(el2("p", { cls: "exh-small", text: "Training sites: " + (cur.sites.length ? cur.sites.map(function (x) { return x.site + (x.college ? ", for " + x.college : ", for any college"); }).join("; ") : "none named") }));
     if (could.length) {
       var cmap = adoptMap(ad && ad.c);
       more.push(el2("h3", { cls: "exh-pn-q", text: "Who could adopt it" }));
@@ -2801,9 +2834,16 @@
         return el2("li", null, [el2("b", { text: nm }), cs ? " already teaches " + cs + "." : ""]);
       })));
     }
-    more.push(el2("p", { cls: "exh-small" }, [h.word("Edit it in the Credentials view", function () { openCredential(r.ut); })]));
-    out.push(el2("details", { cls: "exh-pn-more" }, [el2("summary", { text: "More about this exhibit: its credit, issuer, training sites and who could adopt it" })].concat(more)));
+    out.push(pnFold(r, "more", "More about this exhibit: its credit and who could adopt it", more));
     return out;
+  }
+  /* A fold in the panel, open or shut as the reader left it this visit (L.pnFold), whichever row the panel shows. */
+  function pnFold(r, id, summary, kids) {
+    var L = listState(), F = L.pnFold || (L.pnFold = {});
+    var dt = el("details", { cls: "exh-pn-" + id + " exh-pn-fold" }, [el("summary", { text: summary }), el("div", { cls: "exh-pn-fbody" }, kids)]);
+    if (F[id]) dt.open = true;
+    dt.addEventListener("toggle", function () { F[id] = dt.open; });
+    return dt;
   }
   function listRows() { return listApi() ? LIST_ENGINE.rows() : []; }
   function listCsv(rows) { return listApi() ? LIST_ENGINE.csv(rows) : ""; }
@@ -3326,9 +3366,10 @@
     ".exh-pn-id { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.8rem; color:var(--text-muted); }",
     ".exh-pn-n { text-align:right; font-variant-numeric:tabular-nums; }",
     ".exh-pn-ul { margin:4px 0 0; padding-left:1.1em; font-size:.88rem; display:flex; flex-direction:column; gap:5px; }",
-    ".exh-pn-more { margin-top:16px; }",
-    ".exh-pn-more > summary { cursor:pointer; min-height:24px; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }",
-    ".exh-pn-more > summary:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
+    ".exh-pn-fold { margin-top:16px; }",
+    ".exh-pn-fold > summary { cursor:pointer; min-height:24px; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }",
+    ".exh-pn-fold > summary:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
+    ".exh-pn-edit > .exh-pn-fbody { display:grid; gap:8px; margin-top:10px; min-width:0; }",
     ".exh-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
     "a.exh-tcount { text-decoration:underline; text-underline-offset:3px; }",
     ".exh-tile .exh-zero { color:var(--hunter); }",

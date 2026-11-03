@@ -852,14 +852,15 @@ async function seedExhibitsProgress(page, theme) {
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
 /* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
-   folded rest opened, so the panel's bar, its sort words, its MAP links and the title drawer it carries are measured. */
+   folded rest opened (the issuer and training-site editor among it), so the panel's bar, its sort words, its MAP links,
+   the editor's boxes and the title drawer it carries are measured. */
 async function seedExhibitsPanel(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/list") location.hash = "exhibits/list"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open"), null, { timeout: 60000 });
   await page.evaluate(() => { document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open").click(); });
   await page.waitForFunction(() => document.getElementById("exh-l-panel"), null, { timeout: 10000 });
-  await page.evaluate(() => { const d = document.querySelector("#exh-l-panel details.exh-pn-more"); if (d) d.open = true; });
+  await page.evaluate(() => { document.querySelectorAll("#exh-l-panel details.exh-pn-fold").forEach((d) => { d.open = true; }); });
   await page.waitForTimeout(400);
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }

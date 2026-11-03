@@ -48,8 +48,9 @@ Each reference's List becomes its one workspace, in this shape, top to bottom:
 
 Every Commons card action opens the List (#2735). A reference's original views retire once its List does everything
 they do, one PR each. Built: Exhibits' line and fold (2026-11-03, over the tiles the Credentials view and the List
-share). Next: the side panel in `commons_list.js`, Exhibits first, which lets the Credentials view retire; then the
-cards and the line over the CR, Subjects, Courses and Programs Lists, drawn by one renderer.
+share), the side panel in `commons_list.js` (#2738), and the panel's issuer and training-site editor, the Credentials
+view's own (2026-11-03). Next: retire the Credentials view; then the cards, the line and the panel over the CR,
+Subjects, Courses and Programs Lists, drawn by one renderer.
 
 ## What every List shares
 
