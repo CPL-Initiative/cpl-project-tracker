@@ -15,7 +15,11 @@
  *
  * THE LOG (csm_log, kb/migrations/2026-11-02_csm_log.sql; mapped DR-09 in kb/governance_surface_map.json, Rule 10
  * a3): notes, calls, emails and meetings per college and activity, each with an optional follow-up date the queue
- * counts down to. A decision made here logs itself. Still to come: the Cc picker and the contacts popups.
+ * counts down to. A decision made here logs itself.
+ *
+ * THE CONTACTS (S555): Contacts on file and Names, titles and emails open popups over MAP's directory, the landing
+ * page and MAP's users; Write an email seeds To and Cc by template, takes More Cc from the picker, and copies the
+ * formatted email for Outlook. All three sources are reviewer-gated in the database.
  *
  * The look is the CPL Commons' (Malone's CPL/AI palette) as the mock shows it; the dark theme maps every role onto a
  * First Light dark token. The top (Today and the priority cards) folds behind one word for the visit (Sam's ask 18).
@@ -268,7 +272,7 @@
     "--cw-muted:#58677D; --cw-heading:#082B61; --cw-title:#072C66; --cw-link:#0D5BC6; --cw-accent:#1671D9; --cw-gold:#F4B300; " +
     "--cw-line:#D9E4EF; --cw-line-soft:#E8EEF5; --cw-field-line:#6E7F96; --cw-track:#E3ECF5; --cw-pill-bg:#EAF4FE; " +
     "--cw-pill-fg:#355A80; --cw-ask-bg:#FFF4D6; --cw-ask-fg:#5C4000; --cw-warn-fg:#8A2316; --cw-sel:#EEF5FD; --cw-guide:#9AA9BC; " +
-    "--cw-paper:#FFFFFF; --cw-paper-ink:#1C1C1A; --cw-serif:Georgia,'Times New Roman',serif; " +
+    "--cw-paper:#FFFFFF; --cw-paper-ink:#1C1C1A; --cw-dialog:#FFFFFF; --cw-serif:Georgia,'Times New Roman',serif; " +
     "--cw-sans:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;";
   var DARK = "--cw-page:var(--surface-muted); --cw-page-end:var(--surface-muted); --cw-surface:var(--surface); " +
     "--cw-ink:var(--text-body); --cw-ink-2:var(--text-body); --cw-muted:var(--text-muted); --cw-heading:var(--text-strong); " +
@@ -276,7 +280,7 @@
     "--cw-line:var(--border); --cw-line-soft:var(--border); --cw-field-line:var(--border-strong); --cw-track:var(--surface-muted); " +
     "--cw-pill-bg:var(--surface-muted); --cw-pill-fg:var(--text-body); --cw-ask-bg:var(--gold-soft); --cw-ask-fg:var(--mustard-text); " +
     "--cw-warn-fg:var(--danger-text); --cw-sel:var(--surface-muted); --cw-guide:var(--text-faint); --cw-paper:var(--surface); " +
-    "--cw-paper-ink:var(--text-body);";
+    "--cw-paper-ink:var(--text-body); --cw-dialog:var(--surface-opaque);";
   var CSS_ID = "csm-workspace-css";
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
@@ -288,6 +292,8 @@
       "#tab-csm-workspace .cw { background:linear-gradient(180deg, var(--cw-surface) 0, var(--cw-page) 26rem, var(--cw-page-end) 100%); " +
         "background-color:var(--cw-page); color:var(--cw-ink); font-family:var(--cw-sans); font-size:16px; line-height:1.55; border-radius:12px; }",
       "#tab-csm-workspace .cw-fold[hidden] { display:none; }",
+      // A popup sits over the page, so its ground is opaque in both themes (dark --surface is translucent glass).
+      "#tab-csm-workspace dialog.cdlg.cdlg { background:var(--cw-dialog); }",
       "#tab-csm-workspace .signin { margin:0; padding:10px 14px; border-radius:8px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.92rem; }"
     ].concat(RULES).join("\n");
     document.head.appendChild(st);
@@ -609,6 +615,8 @@
     if (w.length) act.push('<button type="button" class="word lead" data-act="toreview">Review the request</button>');
     if (S.reviewer && r.part.confirmed && r.req && r.req.part && r.req.part.email) act.push('<button type="button" class="word" data-act="mail" data-kind="part">Email the confirmation acceptance again</button>');
     if (S.reviewer && r.nc && r.nc.standing && r.req && r.req.nc && r.req.nc.attestor_email) act.push('<button type="button" class="word" data-act="mail" data-kind="nc">Email the attestation acceptance again</button>');
+    if (S.reviewer) act.push('<button type="button" class="word" data-pop="contacts">Contacts on file</button>' +
+      '<button type="button" class="word" data-pop="people">Names, titles and emails</button>');
     act.push('<button type="button" class="word" data-act="focus">Open in Implementation Funding</button>');
     if (S.reviewer) act.push('<button type="button" class="word" data-act="declined">' + (r.declined ? "Clear Declined participation" : "Mark Declined participation") + "</button>");
     var conds = '<ul class="conds">' + r.conds.map(function (c) {
@@ -635,7 +643,7 @@
       '<div class="decide" role="group" aria-label="Actions">' + act.join("") + "</div>" +
       '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" +
       '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + who +
-      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + historyHtml(r) +
+      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + composeHtml(r) + historyHtml(r) +
       "</div></div>";
   }
   function historyHtml(r) {
@@ -663,6 +671,338 @@
       }).join("") + "</ul>" : '<p class="gate">Nothing logged with this college yet.</p>';
     return '<div><p class="k" id="cw-log-h">History</p>' + form + items + "</div>";
   }
+  // ── the contacts on file (Sam's asks 4, 6, 7, 8, 11, 12, 13 on the mock, 2026-11-02) ─────────────────────────────
+  // Three sources, read once a visit for a signed-in reviewer: MAP's directory (map_college_contacts, the twelve role
+  // fields), the college's CPL landing page (rpc/map_landing_contacts_roster, each person with any MAP role they hold)
+  // and MAP's active users by role (map_college_users, paged). All three are reviewer-gated in the database; nothing
+  // here reaches a reader who is not signed in. A name matches an institution as Nudge matches it (case, punctuation,
+  // a leading "the" and MAP's Credit / Non-Credit suffixes fall away, and the short name counts).
+  var DIR_FIELDS = [["primary_contact", "Primary CPL contact"], ["cpl_coordinator", "CPL Coordinator"],
+    ["cpl_counselor", "CPL Counselor"], ["articulation_officer", "Articulation Officer"], ["faculty_lead", "Faculty Lead"],
+    ["lead_initiator", "Lead Initiator"], ["senate_president", "Academic Senate President"],
+    ["certifying_official", "Certifying Official"], ["vpaa", "VPAA"], ["vpss", "VPSS"], ["ceo", "CEO"],
+    ["cpl_assistant", "CPL Assistant"]];
+  var CT = { state: "idle", dir: [], landing: [], users: [], error: "", p: null };
+  function norm(s) {
+    return String(s == null ? "" : s).toLowerCase().replace(/&/g, " and ")
+      .replace(/\b(non-?credit|credit)\s*$/, "").replace(/[^a-z0-9]+/g, " ").replace(/^the /, "").trim();
+  }
+  function shortOf(s) { return typeof window.cplCollegeShort === "function" ? window.cplCollegeShort(s, "short") : s; }
+  function keysOf(s) { return [norm(s), norm(shortOf(s)), norm(String(s || "").replace(/\s+college$/i, ""))].filter(Boolean); }
+  function rowsFor(r, rows) {
+    var want = {};
+    [r.key, r.name].forEach(function (a) { keysOf(a).forEach(function (k) { want[k] = 1; }); });
+    return rows.filter(function (x) { return keysOf(x.college).some(function (k) { return want[k]; }); });
+  }
+  function splitList(v) {
+    return String(v == null ? "" : v).split(/\s*[\n,;]+\s*/).map(function (t) { return t.replace(/\s+/g, " ").trim(); }).filter(Boolean);
+  }
+  // A name holds a comma ("Rivera, Ana"), so names split on a new line or a semicolon alone; addresses on commas too.
+  function namesIn(v) {
+    return String(v == null ? "" : v).split(/\s*[\n;]+\s*/).map(function (t) { return t.replace(/\s+/g, " ").trim(); }).filter(Boolean);
+  }
+  function emailsIn(v) { return splitList(v).filter(function (t) { return /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(t); }); }
+  function loadContacts() {
+    if (CT.state === "ready" || CT.state === "loading") return CT.p || Promise.resolve(CT);
+    var R = rest();
+    if (!R || !S || !S.reviewer) return Promise.resolve(null);
+    if (!R.remote) { CT.state = "ready"; CT.p = Promise.resolve(CT); return CT.p; }
+    CT.state = "loading";
+    var h = R.headers;
+    var json = function (r, what) { if (!r.ok) throw new Error(what + " answered " + r.status); return r.json(); };
+    var users = [];
+    var page = function (from) {
+      return fetch(R.url + "map_college_users?select=college,first_name,last_name,email,role_name&user_status=eq.Active&order=id.asc",
+        { headers: Object.assign({ Range: from + "-" + (from + 999), "Range-Unit": "items" }, h) })
+        .then(function (r) { return json(r, "map_college_users"); })
+        .then(function (rows) { users = users.concat(rows || []); return rows && rows.length === 1000 ? page(from + 1000) : users; });
+    };
+    CT.p = Promise.all([
+      fetch(R.url + "map_college_contacts?select=*", { headers: h }).then(function (r) { return json(r, "map_college_contacts"); }),
+      fetch(R.url + "rpc/map_landing_contacts_roster", { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, h), body: "{}" })
+        .then(function (r) { return json(r, "map_landing_contacts_roster"); }),
+      page(0)
+    ]).then(function (res) {
+      CT.dir = res[0] || []; CT.landing = res[1] || []; CT.users = res[2] || []; CT.state = "ready"; CT.error = "";
+      if (state.sel) paintRecord();
+      return CT;
+    }, function (e) {
+      CT.state = "error"; CT.error = "The contacts could not be read (" + e.message + "). Reload to try again.";
+      if (state.sel) paintRecord();
+      return CT;
+    });
+    return CT.p;
+  }
+  // One institution's people, every source, one row each: { src, role, name, email }.
+  function contactsOf(r) {
+    var dir = rowsFor(r, CT.dir), land = rowsFor(r, CT.landing), users = rowsFor(r, CT.users), out = [];
+    dir.forEach(function (d) {
+      DIR_FIELDS.forEach(function (f) {
+        var names = namesIn(d[f[0]]), mails = emailsIn(d[f[0] + "_email"]);
+        if (!names.length && !mails.length) return;
+        var n = Math.max(names.length, mails.length);
+        for (var i = 0; i < n; i++) out.push({ src: "MAP directory", role: f[1], name: names[i] || "", email: mails[i] || "" });
+      });
+    });
+    land.forEach(function (l) {
+      var roles = (Array.isArray(l.map_users) ? l.map_users : []).map(function (u) { return u.role; }).filter(Boolean);
+      out.push({ src: "Landing page", role: l.contact_title || "A contact", name: l.contact_name || "", email: emailsIn(l.contact_email)[0] || "",
+        mapRoles: roles });
+    });
+    users.forEach(function (u) {
+      out.push({ src: "MAP users", role: u.role_name || "User", name: [u.first_name, u.last_name].filter(Boolean).join(" "), email: emailsIn(u.email)[0] || "" });
+    });
+    return { dir: dir, land: land, users: users, people: out, landing: (dir[0] && dir[0].landing_page_url) || r.landing || "" };
+  }
+  // What disagrees between the sources, in a sentence each (ask 4).
+  function mismatchesOf(r, c) {
+    var out = [], landMail = {}, userMail = {};
+    c.land.forEach(function (l) { emailsIn(l.contact_email).forEach(function (e) { landMail[e.toLowerCase()] = 1; }); });
+    c.users.forEach(function (u) { emailsIn(u.email).forEach(function (e) { userMail[e.toLowerCase()] = 1; }); });
+    var coord = c.people.filter(function (p) { return p.src === "MAP directory" && p.role === "CPL Coordinator"; });
+    var landCoord = c.land.filter(function (l) { return /coordinator|liaison/i.test(l.contact_title || ""); });
+    if (!coord.length && landCoord.length) out.push("The landing page lists a CPL Coordinator; MAP's directory has none.");
+    coord.forEach(function (p) {
+      if (p.email && !landMail[p.email.toLowerCase()]) out.push("The CPL Coordinator in MAP's directory (" + (p.name || p.email) + ") is not on the landing page.");
+    });
+    c.people.filter(function (p) { return p.src === "MAP directory" && p.role === "Primary CPL contact" && p.email; }).forEach(function (p) {
+      if (!userMail[p.email.toLowerCase()]) out.push("The primary CPL contact (" + (p.name || p.email) + ") is not an active MAP user.");
+    });
+    if (!c.dir.length) out.push("MAP's directory holds no row for this college.");
+    if (!c.land.length) out.push("The landing page lists no one.");
+    return out;
+  }
+
+  // ── the popups ──
+  var lastOpener = null;
+  function dialogShell(id, title, body, wide) {
+    return '<dialog class="cdlg' + (wide ? " wide" : "") + '" id="' + id + '" aria-labelledby="' + id + '-h"><div class="cdlg-in">' +
+      '<div class="cdlg-head"><h3 id="' + id + '-h" tabindex="-1">' + esc(title) + '</h3><button type="button" class="word" data-close="1">Close</button></div>' +
+      body + "</div></dialog>";
+  }
+  function openDialog(html, opener) {
+    closeDialog();
+    lastOpener = opener || null;
+    var host = document.createElement("div");
+    host.id = "cw-dlg-host";
+    host.innerHTML = html;
+    root().appendChild(host);
+    var dlg = host.querySelector("dialog");
+    if (typeof dlg.showModal === "function") { try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); } }
+    else dlg.setAttribute("open", "");
+    dlg.addEventListener("cancel", function (e) { e.preventDefault(); closeDialog(); });
+    dlg.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closeDialog(); } });
+    var h = dlg.querySelector("h3"); if (h) h.focus();
+    return dlg;
+  }
+  function closeDialog() {
+    var host = document.getElementById("cw-dlg-host");
+    if (!host) return;
+    var dlg = host.querySelector("dialog");
+    try { if (dlg && dlg.open && typeof dlg.close === "function") dlg.close(); } catch (e) {}
+    host.parentNode.removeChild(host);
+    if (lastOpener && document.body.contains(lastOpener)) lastOpener.focus();
+    lastOpener = null;
+  }
+  function contactsDialogHtml(r) {
+    var c = contactsOf(r), mm = mismatchesOf(r, c);
+    var dirByRole = {};
+    c.people.forEach(function (p) { if (p.src === "MAP directory") (dirByRole[p.role] = dirByRole[p.role] || []).push(p); });
+    var fields = '<ul class="fields">' + DIR_FIELDS.map(function (f) {
+      var ps = dirByRole[f[1]] || [];
+      return "<li><span>" + esc(f[1]) + "</span>" + (ps.length ? '<span class="on">' + esc(ps.map(function (p) {
+        return [p.name, p.email].filter(Boolean).join(", "); }).join("; ")) + "</span>" : '<span class="off">Not on file</span>') + "</li>";
+    }).join("") + "</ul>";
+    var land = c.land.length ? '<ul class="card-list">' + c.land.map(function (l) {
+      var roles = (Array.isArray(l.map_users) ? l.map_users : []).map(function (u) { return u.role; }).filter(Boolean);
+      return "<li><span>" + esc(l.contact_title || "A contact") + ": " + esc(l.contact_name || "") + "</span><span>" +
+        esc(roles.length ? "MAP " + roles.join(", ") : "Not a MAP user") + "</span></li>";
+    }).join("") + "</ul>" : '<p class="tpl-meta">The landing page lists no one.</p>';
+    var byRole = {};
+    c.users.forEach(function (u) { var k = u.role_name || "User"; byRole[k] = (byRole[k] || 0) + 1; });
+    var users = Object.keys(byRole).length ? '<p class="tags">' + Object.keys(byRole).sort().map(function (k) {
+      return '<span class="pill">' + esc(k) + " " + byRole[k] + "</span>"; }).join("") + "</p>" : '<p class="tpl-meta">No active MAP users.</p>';
+    var landingLinkHtml = c.landing ? '<a href="' + esc(c.landing) + '" target="_blank" rel="noopener">Open the landing page</a>' : "";
+    return dialogShell("cw-cdlg", r.name + " contacts",
+      (mm.length ? '<p class="diff">' + mm.map(esc).join("<br>") + "</p>" : '<p class="tpl-meta">The three sources agree on the coordinator and the primary contact.</p>') +
+      '<section class="cdlg-src"><h4>MAP directory</h4>' + fields + "</section>" +
+      '<section class="cdlg-src"><h4>Landing page</h4>' + land + "</section>" +
+      '<section class="cdlg-src"><h4>MAP users by role</h4>' + users + "</section>" +
+      '<div class="cdlg-foot">' + landingLinkHtml + '<button type="button" class="word" data-pop="people">Names, titles and emails</button>' +
+        '<button type="button" class="word" data-copyaddr="all">Copy every address</button><span class="tpl-meta" role="status" data-copied="1"></span></div>');
+  }
+  var SOURCES = ["MAP directory", "Landing page", "MAP users"];
+  function peopleDialogHtml(r, only) {
+    var c = contactsOf(r), list = c.people.filter(function (p) { return !only || p.src === only; });
+    var opts = '<option value="">Every source</option>' + SOURCES.map(function (s) { return '<option' + (s === only ? " selected" : "") + ">" + esc(s) + "</option>"; }).join("");
+    return dialogShell("cw-pdlg", r.name + ": names, titles and emails",
+      '<div class="ppl-tools"><label for="cw-psrc">Show</label><select id="cw-psrc" data-psrc="1">' + opts + "</select>" +
+        '<button type="button" class="word" data-copyaddr="shown">Copy the addresses shown</button><span class="tpl-meta" role="status" data-copied="1"></span></div>' +
+      '<div class="ppl-scroll" role="region" aria-label="People on file" tabindex="0"><table class="people"><thead><tr>' +
+        '<th scope="col">Source</th><th scope="col">Role or title</th><th scope="col">Name</th><th scope="col">Email</th></tr></thead><tbody>' +
+        (list.length ? list.map(function (p) {
+          return "<tr><td>" + esc(p.src) + "</td><td>" + esc(p.role) + "</td><td>" + (p.name ? esc(p.name) : '<span class="ph">Not given</span>') +
+            "</td><td>" + (p.email ? esc(p.email) : '<span class="ph">None</span>') + "</td></tr>";
+        }).join("") : '<tr><td colspan="4">No one on file from this source.</td></tr>') + "</tbody></table></div>", true);
+  }
+  function uniqueEmails(list) {
+    var seen = {}, out = [];
+    list.forEach(function (p) { var e = (p.email || "").toLowerCase(); if (e && !seen[e]) { seen[e] = 1; out.push(p.email); } });
+    return out;
+  }
+  function copyText(t) {
+    try { if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t).then(function () { return true; }, function () { return false; }); }
+    catch (e) {}
+    return Promise.resolve(false);
+  }
+
+  // ── the email: To, Cc, More Cc, Subject, the words, Copy the email (asks 5, 8, 11, 12, 13) ──
+  // The workspace never sends: Copy the email puts the formatted email (the logo on its signature line) on the
+  // clipboard for Outlook, Open a draft opens the mail program with To, Cc and Subject, and the log notes the copy.
+  var EMAIL_LOGO_URL = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/cpl-initiative-logo-navy.png";
+  var EMAIL_LOGO_ALT = "California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office";
+  var PUBLIC_FUNDING_URL = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/";
+  var TEMPLATES = [
+    { id: "follow", label: "Follow up on a condition" },
+    { id: "nudge", label: "Nudge for the participation confirmation" },
+    { id: "blank", label: "Blank" }];
+  function firstOf(c, role) { var p = c.people.filter(function (x) { return x.src === "MAP directory" && x.role === role && x.email; })[0]; return p || null; }
+  // Sam's order for the one person a nudge goes to (Nudge's cascade): CPL Coordinator, primary contact, Lead Initiator, VPAA, CEO.
+  function primaryOf(c) {
+    var order = ["CPL Coordinator", "Primary CPL contact", "Lead Initiator", "VPAA", "CEO"];
+    for (var i = 0; i < order.length; i++) { var p = firstOf(c, order[i]); if (p) return p; }
+    return null;
+  }
+  function personWord(n) {
+    var s = String(n || ""), i = s.indexOf(",");
+    if (i >= 0) s = s.slice(i + 1) + " " + s.slice(0, i);
+    var w = s.replace(/\([^)]*\)/g, " ").split(/\s+/).filter(function (t) { return t.replace(/\./g, "").length > 1; });
+    return w.length >= 2 ? w[0] + " " + w[w.length - 1] : w.join(" ") || "colleague";
+  }
+  function seedMail(r, tplId) {
+    var c = contactsOf(r), req = r.req && (r.req.part || null), nreq = r.req && r.req.nc;
+    var to = null, toName = "", cc = [];
+    var coord = firstOf(c, "CPL Coordinator"), vpaa = firstOf(c, "VPAA"), prim = primaryOf(c);
+    if (tplId === "follow" && (req || nreq)) {
+      to = req ? req.email : nreq.attestor_email; toName = req ? req.name : nreq.attestor_name;
+      if (coord && coord.email.toLowerCase() !== String(to).toLowerCase()) cc.push(coord.email);
+    } else if (prim) {
+      to = prim.email; toName = prim.name;
+      if (tplId === "nudge" && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
+      if (tplId === "follow" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
+    }
+    var name = personWord(toName), college = r.name, missing = missingWords(r);
+    var subject = "", body = "";
+    if (tplId === "follow") {
+      subject = "CPL Implementation Funding: a follow-up for " + college;
+      body = "Dear " + name + ",\n\nThank you for your work on CPL Implementation Funding at " + college + ". In reviewing the college's record, " +
+        "the CPL Initiative team noticed the following:\n\n" + (r.note || (missing.length ? missing.join("\n") : "Write what the college can do here.")) +
+        "\n\nWe would welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team";
+    } else if (tplId === "nudge") {
+      subject = "CPL Implementation Funding: a participation confirmation for " + college;
+      body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about CPL Implementation Funding for " + college + ". Our records do not yet " +
+        "show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award." +
+        (S.deadline ? " The deadline is " + longDay(S.deadline) + "." : "") + "\n\nThe CPL Implementation Funding page explains each condition and how to send it: " +
+        PUBLIC_FUNDING_URL + "\n\nIf it is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
+        "\n\nThe CPL Initiative team";
+    } else {
+      body = "Dear " + name + ",\n\n\n\nThe CPL Initiative team";
+    }
+    return { tpl: tplId, to: to || "", cc: cc.join(", "), more: [], subject: subject, body: body };
+  }
+  var LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function longDay(v) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || "")); return m ? LONG[+m[2] - 1] + " " + +m[3] + ", " + m[1] : String(v || ""); }
+  function mailOf(r) {
+    state.mail = state.mail || {};
+    // A college with no participation confirmation gets the nudge; any other college a follow-up.
+    if (!state.mail[r.key]) state.mail[r.key] = seedMail(r, r.part.confirmed || r.part.waiting ? "follow" : "nudge");
+    return state.mail[r.key];
+  }
+  function ccPickerHtml(r, m) {
+    var c = contactsOf(r), picked = {};
+    m.more.forEach(function (e) { picked[e.toLowerCase()] = 1; });
+    var groups = SOURCES.map(function (src) {
+      var seen = {}, rows = c.people.filter(function (p) {
+        if (p.src !== src || !p.email) return false;
+        var k = p.email.toLowerCase(); if (seen[k]) return false; seen[k] = 1; return true;
+      });
+      if (!rows.length) return "";
+      return '<fieldset><legend>' + esc(src) + '</legend><div class="ccpick-list">' + rows.map(function (p, i) {
+        var id = "cw-cc-" + src.replace(/\W+/g, "") + "-" + i;
+        return '<label class="ccopt" for="' + id + '" data-hay="' + esc((p.name + " " + p.role + " " + p.email).toLowerCase()) + '">' +
+          '<input type="checkbox" id="' + id + '" data-ccpick="' + esc(p.email) + '"' + (picked[p.email.toLowerCase()] ? " checked" : "") + ">" +
+          '<span><span class="tt">' + esc(p.name || p.email) + "</span>, " + esc(p.role) + '<br><span class="nm">' + esc(p.email) + "</span></span></label>";
+      }).join("") + "</div></fieldset>";
+    }).join("");
+    return '<details class="ccpick"' + (state.ccOpen ? " open" : "") + '><summary><span class="word">Add people to Cc</span><span class="tpl-meta">' +
+      (m.more.length ? m.more.length + " added" : "from the contacts on file") + "</span></summary>" +
+      '<div class="ccpick-in"><label class="sr" for="cw-ccfind">Find a name or title</label>' +
+      '<input type="search" id="cw-ccfind" placeholder="Find a name or title">' +
+      (groups || '<p class="tpl-meta">No one on file has an address.</p>') + "</div></details>";
+  }
+  function composeHtml(r) {
+    if (!S.reviewer) return "";
+    if (CT.state === "error") return '<div><p class="k">Write an email</p><p class="gate">' + esc(CT.error) + "</p></div>";
+    if (CT.state !== "ready") return '<div><p class="k">Write an email</p><p class="gate">Reading the contacts on file&hellip;</p></div>';
+    var m = mailOf(r);
+    var opts = TEMPLATES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
+    return '<div class="tpl" aria-labelledby="cw-mail-h"><p class="k" id="cw-mail-h">Write an email</p>' +
+      '<div class="tpl-row"><label for="cw-tpl">Template</label><select id="cw-tpl" data-mail="tpl">' + opts + "</select></div>" +
+      '<dl class="addr"><dt><label for="cw-to">To</label></dt><dd><input id="cw-to" data-mail="to" value="' + esc(m.to) + '"></dd>' +
+        '<dt><label for="cw-cc">Cc</label></dt><dd><input id="cw-cc" data-mail="cc" value="' + esc(m.cc) + '"></dd>' +
+        '<dt><label for="cw-more">More Cc</label></dt><dd><input id="cw-more" data-mail="more" value="' + esc(m.more.join(", ")) + '"></dd>' +
+        '<dt><label for="cw-subj">Subject</label></dt><dd><input id="cw-subj" data-mail="subject" value="' + esc(m.subject) + '"></dd></dl>' +
+      ccPickerHtml(r, m) +
+      '<label class="sr" for="cw-body">The email</label><textarea id="cw-body" class="search" data-mail="body" rows="10" style="min-height:180px;">' + esc(m.body) + "</textarea>" +
+      '<div class="tpl-row"><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
+        '<button type="button" class="word" data-mailact="draft">Open a draft</button>' +
+        '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
+      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook; the log notes the copy.</p></div>';
+  }
+  function allCc(m) {
+    var seen = {}, out = [];
+    splitList(m.cc).concat(m.more).forEach(function (e) { var k = e.toLowerCase(); if (e && !seen[k]) { seen[k] = 1; out.push(e); } });
+    return out;
+  }
+  function mailHtml(m) {
+    var link = function (h) { return h.replace(/https?:\/\/[^\s<>"]+[^\s<>".,;:)]/g, function (u) { return '<a href="' + u + '">' + u + "</a>"; }); };
+    return '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;">' +
+      String(m.body || "").split(/\n\n/).map(function (p) { return '<p style="margin:0 0 12px;">' + link(esc(p)).replace(/\n/g, "<br>") + "</p>"; }).join("") +
+      '<p style="margin:4px 0 0;"><img src="' + EMAIL_LOGO_URL + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
+  }
+  function copyMail(m) {
+    try {
+      if (window.ClipboardItem && navigator.clipboard && typeof navigator.clipboard.write === "function") {
+        return navigator.clipboard.write([new window.ClipboardItem({ "text/html": new Blob([mailHtml(m)], { type: "text/html" }),
+          "text/plain": new Blob([m.body || ""], { type: "text/plain" }) })]).then(function () { return true; }, function () { return copyText(m.body || ""); });
+      }
+    } catch (e) {}
+    return copyText(m.body || "");
+  }
+  function mailAct(kind) {
+    var r = rowOf(state.sel); if (!r) return;
+    var m = mailOf(r), cc = allCc(m);
+    if (!m.to) { say("Give the email an address in To first."); var t = document.getElementById("cw-to"); if (t) t.focus(); return; }
+    var logIt = function (what) {
+      logWrite("POST", null, Object.assign({ college: r.key, kind: "email",
+        body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
+        m.fu === false ? {} : { follow_up_on: plusDays(7) }));
+    };
+    if (kind === "draft") {
+      var href = "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject || "") +
+        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&body=" + encodeURIComponent(m.body || "");
+      if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") window.CPL_FUNDING_OPEN_MAIL(href);
+      else { try { window.location.href = href; } catch (e) {} }
+      logIt("Draft opened");
+      say("The draft opens in your mail program with To, Cc and Subject; the log notes it.");
+      return;
+    }
+    copyMail(m).then(function (ok) {
+      if (!ok) { say("The browser refused the copy. Select the words in the box and copy them by hand."); return; }
+      logIt("Email copied");
+      say("Copied, logo included. Paste it into Outlook; the log notes the copy.");
+    });
+  }
   function boardHtml() {
     return '<div class="board">' + STAGES.map(function (st) {
       var list = S.rows.filter(function (r) { return stageOf(r) === st.id; }).sort(function (a, b) { return a.name.localeCompare(b.name); });
@@ -686,6 +1026,9 @@
     if (!f) { el.innerHTML = '<p class="empty">Loading the CSM Workspace&hellip;</p>'; return; }
     S = f.snapshot();
     if (S.reviewer && !LOG.asked) loadLog();
+    if (S.reviewer && CT.state === "idle") loadContacts();
+    var dlgHost = document.getElementById("cw-dlg-host");
+    if (dlgHost) dlgHost.parentNode.removeChild(dlgHost);
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
@@ -705,6 +1048,7 @@
       '<footer class="foot"><span>The workspace never sends mail: every email opens for you to copy into Outlook.</span>' +
         '<a href="#implementation-funding">Implementation Funding</a></footer>' +
       "</div></div></div>";
+    if (dlgHost) el.appendChild(dlgHost);
     if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
     else if (focusSel) { var b = el.querySelector('.row[data-sel="' + cssEsc(focusSel) + '"]'); if (b) b.focus(); }
     watchReviews();
@@ -790,6 +1134,26 @@
       if (h && t.classList.contains("chip")) h.focus(); return; }
     if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
     if (t.hasAttribute("data-stage")) { var s = t.getAttribute("data-stage"); state.view = s === "waiting" ? "review" : s; state.sel = null; paint(); return; }
+    if (t.hasAttribute("data-close")) { closeDialog(); return; }
+    if (t.hasAttribute("data-pop")) {
+      var pr = rowOf(state.sel); if (!pr) return;
+      var opener = t.closest("dialog") ? lastOpener : t;
+      var pop = function () {
+        if (CT.state === "error") { say(CT.error); return; }
+        openDialog(t.getAttribute("data-pop") === "people" ? peopleDialogHtml(pr, "") : contactsDialogHtml(pr), opener);
+      };
+      if (CT.state === "ready") pop(); else { say("Reading the contacts on file…"); loadContacts().then(pop); }
+      return;
+    }
+    if (t.hasAttribute("data-copyaddr")) {
+      var cr = rowOf(state.sel); if (!cr) return;
+      var srcSel = document.getElementById("cw-psrc"), only = t.getAttribute("data-copyaddr") === "shown" && srcSel ? srcSel.value : "";
+      var list = uniqueEmails(contactsOf(cr).people.filter(function (p) { return !only || p.src === only; }));
+      var stat = t.parentNode.querySelector("[data-copied]");
+      copyText(list.join("; ")).then(function (ok) { if (stat) stat.textContent = ok ? list.length + " addresses copied." : "The browser refused the copy."; });
+      return;
+    }
+    if (t.hasAttribute("data-mailact")) { mailAct(t.getAttribute("data-mailact")); return; }
     if (t.hasAttribute("data-logdone")) {
       var on = t.getAttribute("data-on") === "1";
       logWrite("PATCH", Number(t.getAttribute("data-logdone")), { done_at: on ? new Date().toISOString() : null })
@@ -826,13 +1190,44 @@
       refreshVerdicts();
       return;
     }
+    if (t.hasAttribute && t.hasAttribute("data-psrc")) {
+      var pr = rowOf(state.sel); if (!pr) return;
+      openDialog(peopleDialogHtml(pr, t.value), lastOpener);
+      var ns = document.getElementById("cw-psrc"); if (ns) ns.focus();
+      return;
+    }
+    if (t.hasAttribute && t.hasAttribute("data-ccpick")) {
+      var mr = rowOf(state.sel); if (!mr) return;
+      var mm = mailOf(mr), e = t.getAttribute("data-ccpick");
+      mm.more = mm.more.filter(function (x) { return x.toLowerCase() !== e.toLowerCase(); });
+      if (t.checked) mm.more.push(e);
+      var mf = document.getElementById("cw-more"); if (mf) mf.value = mm.more.join(", ");
+      var cnt = root().querySelector(".ccpick > summary .tpl-meta"); if (cnt) cnt.textContent = mm.more.length ? mm.more.length + " added" : "from the contacts on file";
+      return;
+    }
+    if (t.hasAttribute && t.hasAttribute("data-mail")) { mailField(t); return; }
     if (t.form && t.form.hasAttribute("data-logform") && state.sel) {
       state.draft[state.sel] = { kind: fv(t.form, "kind").value, due: fv(t.form, "due").value, body: fv(t.form, "body").value };
       return;
     }
     if (t.id === "cw-view") { state.view = t.value; state.sel = null; paint(); }
   }
+  function mailField(t) {
+    var r = rowOf(state.sel); if (!r) return;
+    var m = mailOf(r), k = t.getAttribute("data-mail");
+    if (k === "tpl") { var keep = m.more; state.mail[r.key] = seedMail(r, t.value); state.mail[r.key].more = keep; paintRecord();
+      var nt = document.getElementById("cw-tpl"); if (nt) nt.focus(); return; }
+    if (k === "more") { m.more = splitList(t.value); return; }
+    if (k === "fu") { m.fu = !!t.checked; return; }
+    m[k] = t.value;
+  }
   function onInput(e) {
+    if (e.target.id === "cw-ccfind") {
+      var q = e.target.value.trim().toLowerCase();
+      Array.prototype.forEach.call(root().querySelectorAll(".ccopt"), function (o) { o.hidden = !!q && o.getAttribute("data-hay").indexOf(q) < 0; });
+      return;
+    }
+    if (e.target.hasAttribute && e.target.hasAttribute("data-mail") && e.target.getAttribute("data-mail") !== "tpl") { mailField(e.target); return; }
     var fm = e.target.form;
     if (fm && fm.hasAttribute("data-logform") && state.sel) {
       state.draft[state.sel] = { kind: fv(fm, "kind").value, due: fv(fm, "due").value, body: fv(fm, "body").value };
@@ -861,6 +1256,7 @@
       el.addEventListener("change", onChange);
       el.addEventListener("input", onInput);
       el.addEventListener("submit", onSubmit);
+      el.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("ccpick")) state.ccOpen = e.target.open; }, true);
       window.addEventListener("cpl-tab-activated", function (e) {
         if (e && e.detail && e.detail.tab === TAB) { fresh(); paint(); }
       });
@@ -882,5 +1278,9 @@
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
     _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _snapshot: function () { return S; },
-    _log: function () { return LOG.rows; }, _dueOf: dueOf };
+    _log: function () { return LOG.rows; }, _dueOf: dueOf,
+    _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
+    _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
+    _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
+    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; } };
 })();

@@ -1019,6 +1019,16 @@
      "line": 62
     },
     {
+     "id": "module:csm_workspace.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 862,
+     "tabs": [
+      "csm-workspace"
+     ]
+    },
+    {
      "id": "module:library.js",
      "kind": "module",
      "direction": "read",
@@ -1674,7 +1684,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 298,
+     "line": 304,
      "tabs": [
       "csm-workspace"
      ]
@@ -6233,7 +6243,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 879,
+     "line": 1275,
      "tabs": [
       "csm-workspace"
      ]
@@ -23698,6 +23708,16 @@
   },
   "rpc:map_landing_contacts_roster": {
    "consumers": [
+    {
+     "id": "module:csm_workspace.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 722,
+     "tabs": [
+      "csm-workspace"
+     ]
+    },
     {
      "id": "module:map_users.js",
      "kind": "module",
