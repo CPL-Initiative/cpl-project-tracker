@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-529 document(s).
+530 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 563 | [Session 563 handoff: three lanes back under budget; the Commons' Exhibit-tiles item was already built](../session_563_handoff.md) | 2026-11-03 |
 | 562 | [Session 562 handoff: every Commons pair checked; Subjects and Exhibits now agree with their cards](../session_562_handoff.md) | 2026-11-03 |
 | 561 | [Session 561 handoff: the Program Requirements pair agrees with the Commons card](../session_561_handoff.md) | 2026-11-03 |
 | 560 | [Session 560 handoff: the Common Course Reference takes the Commons page; Santa Ana's SLOs loaded](../session_560_handoff.md) | 2026-11-03 |

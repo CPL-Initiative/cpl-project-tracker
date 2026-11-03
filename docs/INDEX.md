@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 93 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 529 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1361** | |
+| Session handoffs | 530 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1362** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-03 S562 SkyPinwheel (CPL Queue routine): the Commons, funding and program requirements lanes back under budget, their dated text moved verbatim to lessons and two lessons docs rolled into archives; the Commons' Exhibit-tiles NEXT found already built; light checkpoint; handoff 563.
 - 2026-11-03 S561 SkyCigar (CPL Queue routine): merged S560's #2721; the Commons to-do's last four pairs, Subjects' findings count and Exhibits' held list now agree with their cards (#2722); light checkpoint; handoff 562.
 - 2026-11-03 S559 SkyAndromeda (CPL Queue routine): the Common Course Reference takes the Commons page in COCI Lookup (#2720), the last reference; Santa Ana's 1,366 SLO rows loaded (#2716); Las Positas's trial 12 of 12; handoff 560.
 - 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-03 S555 SkyTadpole: the CSM Workspace tab ships with its communications log (`csm_log`) and contacts; the Commons closes a to-do from its band; Sheet 159; a11y `--dark`
 - 2026-11-02 S554 SkySombrero (funding): every Eligibility word editable on the public page, a minimum-conditions filter, No NC, Email reopens an acceptance (#2701, #2703); the CSM Workspace mock; new `docs/csm_workspace_lessons.md`; handoff 555 extended.
 - 2026-11-02 S554 SkySombrero: the Library's stuck remediations get Finish remediation on their cards, bound to the record; `/coord` tells live sessions this one is running; handoff 555.
-- 2026-11-02 S553 SkyPinwheel: the Library remediates every file it reads, every draft applied as the report opens, a PDF's title, language and title display written in the browser (55 team PDFs verified); handoff 554.
-- 2026-11-02 S551 SkyWhirlpool: Sheet 156 answered (try the catalog first); the runner reads seeds, and every catalog route refused or printed nothing; Sheet 157 asks for the upload; the apply fills a blank email on a name match; handoff 552.

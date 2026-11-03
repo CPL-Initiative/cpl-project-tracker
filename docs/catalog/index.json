@@ -14149,7 +14149,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 archived lessons, part 4 (2026-09-22 onward)",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-06-11",
@@ -16134,7 +16134,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-02"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-08-28",
@@ -16476,8 +16476,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 529,
+   "count": 530,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 563,
+     "path": "docs/session_563_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "implementation-funding",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 563 handoff: three lanes back under budget; the Commons' Exhibit-tiles item was already built",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25513,5 +25529,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1361
+ "total": 1362
 }
