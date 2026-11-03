@@ -1,69 +1,71 @@
 ---
-title: "CER redesign handoff: the CLEP fold confirmed, the Catalog sync test fixed (SkySnowberry)"
-date: 2026-11-01
-session: CER redesign build, side session after S536 (SkySnowberry)
-tags: [handoff, cer, exhibits, exhibit-canonicalization, clep, credential-catalog]
+title: "CER redesign handoff: the 11-02 and 11-03 panel rows moved, two calls on Sheet 161 (SkyCheckerberry)"
+date: 2026-11-03
+session: CER redesign build, side session beside S564 (SkyCheckerberry)
+tags: [handoff, cer, exhibits, exhibit-canonicalization, kb-curation, decision-sheet]
 status: current
 ---
 
-# You are SkyCheckerberry, the Exhibits tab's next build
+# You are SkyBlackberry, the Exhibits tab's next build
 
-SkySnowberry ran on 2026-11-01 from 02:51Z to 07:25Z, started from Sam's phone. No other session was live on these
-files; S536's CPL queue line merged #2636 (the contacts harvest) beside it, on other files. This is a **light
-checkpoint**: no lane's state changed and the run wrote no re-mint or data receipt. This file is the handoff, and the
-CPL queue's `docs/session_<N>_handoff.md` stays the routine's. Skipped, each with its reason:
-- The lane files: none moved. The CER lane's NEXT stands as SkyTeaberry left it.
+SkyCheckerberry ran on 2026-11-03 from 15:06Z to about 15:45Z, started from Sam's phone with SkyInkberry's older
+greeting line (it named SkyTeaberry). The handoff on main named SkyCheckerberry, so this session took that name. No
+other session was live on these files: the CSM Workspace session (#2729) had finished, and the funding session sat
+idle. This is a **light checkpoint**. The cer-procedures lane gained one NEEDS SAM marker, and the run wrote one data
+receipt (Rule 10). This file is the handoff; the CPL queue's `docs/session_<N>_handoff.md` stays the routine's.
+Skipped, each with its reason:
 - `README.md`, `kb/README.md`, the pipeline view, a KB note: no change to the KB, the surfaces or the pipeline.
 - `kb/status/program-requirements.json`: that line was not worked.
 
-`kb/status/exhibit.json` was refreshed by hand: `scripts/queue_status.py --stamp` accepts only a
-`docs/session_<N>_handoff.md`, and on this file it rewrites the JSON at indent 2 before it refuses. Write it at
-indent 1.
+`kb/status/exhibit.json` was written by hand, at indent 1. `--check --project exhibit` passes only when `handoff`
+names a `docs/session_<N>_handoff.md`, so it names the routine's latest (565) and session 564.
 
 ## What shipped
 
-- **#2634, the Catalog sync test (SkyTeaberry's open work 5).** `tests/credential_catalog_sync_test.py` required
-  every statewide credential to carry `ccc_rec`, the gate the sierra-retrieval-corpus lane retired (`ccc_rec` comes from
-  adoptions). It now gates on `ccc_rec`, the published statewide set from the Fact Sheet builder, or that builder's MAP
-  fix list. Of the 78 it flagged, 68 answer through the published set. The other 10 are on the fix list: nine
-  statewide exhibits MAP publishes with no recommendation (four ICC inspector and examiner titles, CSLB C-4, NATE,
-  NCCER Core, a BAS certification and DLPT Russian), plus
-  *Introduction to Hospitality Management*, which has local recommendations only. It passes on main.
-- **The CLEP fold took (open work 3).** The 05:14Z dispatch of the daily run (the 06:17Z rung did not fire after it)
-  synced the live rows. A dry run of `kb/_fold_unclassified.py` on main reads all 33 assignments moved under
-  `cer-clep-fold-skyteaberry@bot` as *already classified to the same target*. 61 CLEP preseed rows read STALE, all
-  `preseed-v1@bot` and all Roman-numeral forms, the same 61 as the 2026-10-31 report (the old handoff said 38).
-  They were left alone.
-- **Nothing from Sam to act on.** No `kb_curation` row was saved after 02:30Z and no rule was sent to the routine
-  (`cer_procedure_request`), as of 07:20Z. Another look reads 119 cards after the IB and CLEP folds (122 before).
+- **The panel rows of Sam's 11-01 and 11-02 runs through Another look (open work 1).** The 11-02 fold moved 42
+  credentials and retired 27. The 11-03 fold moved one: Sam filed Saddleback's *Credit by Exam* under *Water Supply*.
+  Together they left 25 Curate-panel rows under 17 old names. Ten moved to the new names by a guarded UPDATE of
+  `course_id` (receipt `kb/receipts/credential_panel_move_2026-11-03_skycheckerberry.json`, before-values and rollback
+  SQL; the guard refused none). Fifteen stayed under the old keys, each named in the receipt. Eight met an identical
+  issuer row under the new name. Five rename and confirm rows were already carried out: moved, Sam's *Spanish 1* →
+  *Elementary Spanish I* would rename *Elementary Spanish 1* back to Roman.
+- **Open Asks Sheet 161** (https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv, current, `SHEET_ID`
+  `2026-11-03-open-asks-161`, db and comments, store empty at publish). Two cards, both held because each deletes a row:
+  1. **Engine Performance 1 and 2:** drop Sam's two ASE issuer rows, as he did for Electrical/Electronics on 10-31.
+  2. **Metal Building Erection 1:** whose issuer stands, Sam's Iron Workers row or a bulk run's California Community
+     Colleges row.
+
+  The builder and coverage test are in CPLBrain, with a premise and fixture for each card. The test passes 32 of 32.
+- **Nothing sent to the routine.** `kb_curation` held no `cer_procedure_*` row at 15:45Z.
 
 ## Read first
 
-Read `docs/reference/lanes/cer-procedures.md` (the CLEP block and NEXT), then the SkyTeaberry and SkySnowberry
-sections of `docs/cer_v2_redesign_lessons.md`.
+`docs/reference/lanes/cer-procedures.md` (NEXT and its NEEDS SAM), the SkyCheckerberry section of
+`docs/cer_v2_redesign_lessons.md`, then the receipt.
 
 ## Open work, in order
 
-1. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
-   and move the panel rows they list, as SkyHuckleberry did.
-2. **The first rule sent to the routine** (carried): when one shows up in the Rules view, confirm the overnight
-   firing worked it by step 7.
-3. **Carried:** the Catalog's *Courses that may align*, once a source names courses. Training sites for a held title
-   new to the reference, only if Sam asks.
-4. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list need a CCC-tagged
-   recommendation in MAP. That is MAP's write, so the record of them is the builder's own log.
+1. **Read Sheet 161's `replies` before acting.** On *drop*, delete the two Engine Performance
+   `issuing_agency_override` rows (values in the receipt), drop ASE from their records in `kb/credentials.json` as
+   SkyHuckleberry did for A6, and write `flag_for_sam` as *Answered (Sam, <date>): ...*. On *ironworkers*, delete the
+   bulk run's row under *Metal Building Erection 1 / Foreman Training*, move Sam's onto the new name, and record
+   `answer` in `left_in_place.conflict_for_sam`. Either answer drops the lane's marker. The card premises read those
+   two receipt fields.
+2. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
+   and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
+   compare values before you call a leftover row redundant.
+3. **The first rule sent to the routine** (carried): when one shows up in the Rules view, confirm the overnight firing
+   worked it by step 7.
+4. **Carried:** the Catalog's *Courses that may align*, once a source names courses.
+5. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list (SkySnowberry).
 
 ## Lessons to honor
 
-- **A quiet night writes no fold receipt.** `kb/_fold_unclassified.py --apply-if-safe` with nothing to fold prints
-  *Nothing to fold — receipts left untouched* and writes no `kb/unclassified_fold/<date>/`. To check a moved row, run
-  the dry run locally (it writes the day's `report.json`), read it, and delete the folder.
-- A test's assertion can outlive the doctrine it encoded. Before you fix such a test, read the lane that owns the
-  field; here it had already ruled the gate.
-- The run log lives outside the sandbox (`productionresultssa*.blob.core.windows.net` returns 403). Read it through
-  `mcp__github__get_job_logs` with `return_content`, in a subagent, so the dump stays out of the session.
+- The repo's Supabase guard refuses a read that contains `replace`. Spell out the keys instead.
+- The cer-procedures lane sits at its 20,000-byte budget. Move a ruled paragraph to the lessons doc before you add one.
+- A quiet night writes no fold receipt (SkySnowberry); the 11-02 and 11-03 folds did write one.
 
 ## Let go
 
-At sign-off this session holds no PR watch (#2634 merged, unsubscribed), no check-in (the CLEP check fired and the
-#2634 safety check was deleted) and no artifact watch.
+At sign-off this session holds no PR watch once its PRs merge, no check-in, and no artifact watch. The Sheet 161
+publish armed a watch that this session leaves to lapse; the next build reads the replies.
