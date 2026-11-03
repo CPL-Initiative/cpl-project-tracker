@@ -244,6 +244,30 @@ def row_exhibit(root):
 
 
 # ── Common Course Reference ───────────────────────────────────────────────────────────────
+def confirmed_by_person(root, rows):
+    """The cards a person's save names (Sam, Open Asks Sheet 160, 2026-11-03: "The personal confirmation is an
+    attribute we can give the reference when it occurs and we can then count confirmed CCRs"). One read with the
+    auditor: kb/coci_curation.json is the kb_curation sync the auditor applies, keyed by live id, so a card counts
+    when an entry whose reviewer is a person (never a `@bot` cohort) sets its title, discipline or cross-listing,
+    sets a merge aside on it, or places a course into it (`merge_into`, SkyView's save and COBI's alike). An entry
+    naming an id the audit no longer carries counts as unplaced, never as a card."""
+    cur = (load_json(root, "kb/coci_curation.json").get("curations") or {})
+    cards = {r["id"]: r.get("fr") for r in rows if r.get("k") in ("C", "X")}
+    hit, unplaced = set(), 0
+    for cid, e in cur.items():
+        if not isinstance(e, dict) or not e.get("reviewed_by") or is_cohort(e.get("reviewed_by")):
+            continue
+        named = []
+        if e.get("merge_into"):
+            named.append(e["merge_into"])
+        if any(e.get(f) for f in ("unified_title", "discipline", "cross_listed_disciplines", "merge_dismissed")):
+            named.append(cid)
+        placed = [t for t in named if t in cards]
+        hit |= set(placed)
+        unplaced += 0 if placed or not named else 1
+    return {"n": len(hit), "ready": sum(1 for c in hit if cards[c] == "ready"), "unplaced": unplaced}
+
+
 def row_course(root):
     # SkyView alone (Sam, 2026-10-18 20:46Z: "SkyView alone, since CCR is included as part of it"): the row's
     # home and every count open the map; the list tab (#unified-courses) left the menu the same minute. The Courses
@@ -255,6 +279,8 @@ def row_course(root):
     cap = figure(lambda: round(1 - A["_faculty_weights"]["discipline"] * (1 - A["_field_state_score"]["seed-untouched"]), 2))
     canvas = figure(lambda: load_json(root, "prototype/ccr_universe.json"))
     today = figure(lambda: js_object(root, "unified_courses_standalone.js"))
+    conf = figure(lambda: confirmed_by_person(root, A["rows"]))
+    cf = conf["n"] or {}
     cv = canvas["n"] or {}
     counts = cv.get("counts") or {}
     procedures = [
@@ -272,8 +298,12 @@ def row_course(root):
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
-                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"])), "open": tab}],
-        "tests": ["scored by the auditor"],
+                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"])), "open": tab},
+                 # The second figure, beside ready and never in place of it (Sheet 160, *keep*).
+                 {"n": cf.get("n"), "of": st["total_cards"],
+                  "words": "confirmed by a person, %s of them ready" % fmt(cf.get("ready")), "open": tab,
+                  "error": conf["error"]}],
+        "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
              "owner": "the Common Subjects reference", "open": tab},
@@ -286,11 +316,12 @@ def row_course(root):
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
         "facts": {"total": st["total_cards"], "ready": fr["ready"], "needs_review": fr["needs_review"],
                   "needs_repair": fr["needs_repair"], "not_ready": fr["not_ready"], "cap": cap["n"],
+                  "confirmed": cf.get("n"), "confirmed_ready": cf.get("ready"), "confirmed_unplaced": cf.get("unplaced"),
                   # One count a tag, each a card carrying it (the auditor counts a card once): COCI Lookup's Progress
                   # view reads these for its three questions, so the page and this card share one read (S559).
                   "tags": {k: tags.get(k) for k in ("blank_description", "discipline_title_mismatch", "blank_discipline",
                            "seed_untouched_discipline", "top_discipline_disagreement", "unit_anomaly")}},
-        "sources": ["kb/row_audit/latest.json", "prototype/ccr_universe.json", "unified_courses_standalone.js"],
+        "sources": ["kb/row_audit/latest.json", "prototype/ccr_universe.json", "unified_courses_standalone.js", "kb/coci_curation.json"],
     }
 
 

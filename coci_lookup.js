@@ -624,7 +624,12 @@
           r("Its discipline confirmed by a seed or a curator", free("seed_untouched_discipline")),
           r("TOP agrees with its discipline", free("top_discipline_disagreement"))] },
         { q: "Do its courses agree?", rows: [r("Units agree, or the range is stated", free("unit_anomaly")),
-          { label: "Ready: scores 0.85 or better, so faculty can review it", n: typeof F.ready === "number" ? F.ready : null, href: sky }] }
+          { label: "Ready: scores 0.85 or better, so faculty can review it", n: typeof F.ready === "number" ? F.ready : null, href: sky }] },
+        // Sheet 160 (Sam, 2026-11-03): complete stays the auditor's ready; a person's confirmation is an attribute
+        // counted beside it. A card counts when a curator's save in SkyView or COBI names it.
+        { q: "Has a person confirmed it?", rows: [
+          { label: "Confirmed by a person: a curator's save names it", n: typeof F.confirmed === "number" ? F.confirmed : null, href: sky },
+          { label: "Confirmed by a person and ready", n: typeof F.confirmed_ready === "number" ? F.confirmed_ready : null, href: sky }] }
       ],
       of: total, ofWords: "common-course cards the auditor scores",
       foot: "The reference is staging: AI-assisted, not yet faculty-published."

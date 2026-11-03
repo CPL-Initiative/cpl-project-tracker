@@ -94,7 +94,16 @@ lane, 2026-11-03*). **Complete is the auditor's *ready*** (Sam, Open Asks Sheet 
 before a person confirms it; a confirmation is an attribute the reference gains, counted beside it once it exists. His words are in
 `docs/commons_lessons.md` (*Sheet 160 answered*).
 
-**NEXT:** a *Confirmed by a person* count beside *ready* on the Course page and card, from SkyView's curator saves (Sheet 160); the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
+✅ **Confirmed by a person (S564, Sheet 160).** `confirmed_by_person()` in `kb/_build_commons_status.py` counts the cards a
+person's save names in `kb/coci_curation.json` (the `kb_curation` sync the auditor applies, live-keyed): a title, discipline,
+cross-listing or set-aside merge on the card, or a course placed into it (`merge_into`, SkyView's save and COBI's alike); a
+`@bot` cohort never counts. The Course row carries it as its second `pair` and in `facts` (`confirmed`, `confirmed_ready`,
+`confirmed_unplaced`); the Commons card shows it under its figure, and the Course page asks *Has a person confirmed it?*
+Measured 2026-11-03: **387** of 27,581 cards, **104** of them ready; 34 person saves (May–June) name ids no longer in the
+audit and count as unplaced. The sync keeps the latest reviewer per id, so a later cohort write on the same id hides a
+person's earlier one (an undercount, never an overcount). Guards `commons_status_build_test.py`, `coci_progress`, `commons`.
+
+**NEXT:** ask the lane's next build at a session Sam opens, or propose one on the sheet; the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
 that once answered 500 (check it first when a Progress card reads *Could not be read*).
 The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 

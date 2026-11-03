@@ -33,6 +33,7 @@ const COMMONS = {
       { n: 5750, words: "blank descriptions", owner: "the colleges' COCI entries" }],
     procedures: [{ n: 16478, words: "identities and 33,418 stand-alone courses on the canvas" }],
     facts: { total: 27581, ready: 3205, needs_review: 17036, needs_repair: 7335, not_ready: 5,
+      confirmed: 387, confirmed_ready: 104,
       tags: { blank_description: 5750, discipline_title_mismatch: 1116, blank_discipline: 89,
         seed_untouched_discipline: 14523, top_discipline_disagreement: 1159, unit_anomaly: 4179 } } }],
 };
@@ -94,13 +95,16 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   check("each item opens SkyView", Array.from(page.querySelectorAll(".cplcoci-pg-item a")).filter((a) => /skyview\.html$/.test(a.href)).length === 3);
   check("the team's next step from the run log", /Next for the team: The List norms on the Courses List\./.test(t));
   const qs = Array.from(page.querySelectorAll(".cplcoci-pg-groups h3")).map(txt);
-  check("three questions fit a course", qs.join("|") === "What is it called?|Where does it sit?|Do its courses agree?");
+  check("three questions fit a course, and a fourth asks whether a person confirmed it (Sheet 160)",
+    qs.join("|") === "What is it called?|Where does it sit?|Do its courses agree?|Has a person confirmed it?");
   const rowText = (label) => { const r = Array.from(page.querySelectorAll(".cplcoci-pg-row")).find((x) => txt(x).indexOf(label) === 0); return txt(r); };
   check("description: cards free of the tag", /21,831 of 27,581$/.test(rowText("Carries a catalog description")));
   check("discipline confirmed: total less seed-untouched", /13,058 of 27,581$/.test(rowText("Its discipline confirmed")));
   check("TOP agrees", /26,422 of 27,581$/.test(rowText("TOP agrees")));
   check("units agree", /23,402 of 27,581$/.test(rowText("Units agree")));
   check("ready closes the third question", /3,205 of 27,581$/.test(rowText("Ready:")));
+  check("confirmed by a person, beside ready", /387 of 27,581$/.test(rowText("Confirmed by a person: a curator")) &&
+    /104 of 27,581$/.test(rowText("Confirmed by a person and ready")));
   check("the foot names the denominator", /Each count is of the 27,581 common-course cards the auditor scores\./.test(t));
   check("the List is one word away", !!btn(doc, /^Open the Courses List$/));
   btn(doc, /^Open the Courses List$/).click();

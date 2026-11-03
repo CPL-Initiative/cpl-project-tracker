@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T10:23:09Z",
+ "written_at": "2026-11-03T13:52:58Z",
  "rows": [
   {
    "key": "requirements",
@@ -174,10 +174,18 @@
      "of": 27581,
      "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    },
+    {
+     "n": 387,
+     "of": 27581,
+     "words": "confirmed by a person, 104 of them ready",
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "error": null
     }
    ],
    "tests": [
-    "scored by the auditor"
+    "scored by the auditor",
+    "confirmed by a person"
    ],
    "issues": [
     {
@@ -231,6 +239,9 @@
     "needs_repair": 7335,
     "not_ready": 5,
     "cap": 0.79,
+    "confirmed": 387,
+    "confirmed_ready": 104,
+    "confirmed_unplaced": 34,
     "tags": {
      "blank_description": 5750,
      "discipline_title_mismatch": 1116,
@@ -243,7 +254,8 @@
    "sources": [
     "kb/row_audit/latest.json",
     "prototype/ccr_universe.json",
-    "unified_courses_standalone.js"
+    "unified_courses_standalone.js",
+    "kb/coci_curation.json"
    ]
   },
   {

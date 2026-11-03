@@ -168,6 +168,27 @@ if os.path.exists(os.path.join(ROOT, "kb", "csr_procedures.json")):
                   if not w["words"].startswith("Counted from"))  # the timing line (S561) names no procedure
           and rows[4]["procedures"][-1]["words"].startswith("Counted from the picks"))
 
+# ── Sheet 160: a person's confirmation, counted beside ready ──
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "kb"))
+    with open(os.path.join(tmp, "kb", "coci_curation.json"), "w") as f:
+        json.dump({"curations": {
+            "ART M1001": {"unified_title": "Drawing", "reviewed_by": "map@rccd.edu"},
+            "ART M10AA": {"merge_into": "ART M1002", "reviewed_by": "MAP@rccd.edu"},
+            "ART M10AB": {"merge_into": "ART M1002", "reviewed_by": "map@rccd.edu"},
+            "ART M1003": {"unified_title": "Painting", "reviewed_by": "automerge-v1@bot"},
+            "ART M9999": {"discipline": "Art", "reviewed_by": "map@rccd.edu"}}}, f)
+    cf = B.confirmed_by_person(tmp, [{"id": "ART M1001", "k": "X", "fr": "ready"}, {"id": "ART M1002", "k": "C", "fr": "needs_review"},
+                                     {"id": "ART M1003", "k": "C", "fr": "ready"}])
+    check("confirmed: a person's title or a course placed into a card counts it once; a cohort's save never does",
+          cf["n"] == 2 and cf["ready"] == 1, cf)
+    check("confirmed: a save naming an id the audit no longer carries is unplaced, never a card", cf["unplaced"] == 1, cf)
+course = rows[2]
+check("Course: the second figure is Confirmed by a person, beside ready and never in its place",
+      len(course["pair"]) == 2 and course["pair"][0]["words"].startswith("cards the auditor scores")
+      and course["pair"][1]["words"].startswith("confirmed by a person") and course["pair"][1]["n"] == course["facts"]["confirmed"]
+      and isinstance(course["facts"]["confirmed_ready"], int))
+
 # ── the S343 rule: a source that cannot be read is null with its error, never a zero ──
 with tempfile.TemporaryDirectory() as empty:
     bare = B.build(empty)
