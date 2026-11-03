@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-02_college_contacts_harvest_fill_email.sql
-name=s551_college_contacts_harvest_fill_email
+file=kb/migrations/2026-11-02_csm_log.sql
+name=s555_csm_log

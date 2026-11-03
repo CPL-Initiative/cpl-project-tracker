@@ -117,6 +117,7 @@
     // (for inline runs elsewhere) doubled the spacing and set the first button
     // 6px off the text column above it (margin audit, 2026-09-30).
     ".cplfund-actions .cplfund-optbtn, .cplfund-toolbar .cplfund-optbtn { margin-left: 0; }",
+    ".cplfund-csmlink { display: inline-flex; align-items: center; min-height: 24px; margin-left: 12px; color: var(--navy-primary); text-decoration: underline; text-underline-offset: 3px; font-size: .8rem; font-weight: 600; }",
     ".cplfund-viewlab { font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-left: 6px; }",
     // The Public page view (call 1): the page in a frame the height of its page.
     ".cplfund-pv-frame { display: block; width: 100%; min-height: 70vh; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque); }",
@@ -6690,7 +6691,9 @@
   function nudgeShown() { return unlocked() && !publicMode() && !publicSurface(); }
   function nudgeBtnHtml() {
     return nudgeShown() ? '<button type="button" class="cplfund-optbtn" id="cplFundNudge" title="List the institutions ' +
-      'still missing a participation confirmation or a noncredit attestation, with one recipient each, for a mail merge">Nudge</button>' : "";
+      'still missing a participation confirmation or a noncredit attestation, with one recipient each, for a mail merge">Nudge</button>' +
+      // The team's queue over the same requests (Sam, 2026-11-02: "a tab linked from the internal view").
+      '<a class="cplfund-csmlink" href="#csm-workspace">CSM Workspace</a>' : "";
   }
   function nudgeInstitutions() {
     return oneRoster().map(function (c) {
@@ -6704,6 +6707,72 @@
       return { key: c.college, name: dispName(c.college), aliases: [c.short, c.name].filter(Boolean), missing: missing,
         declined: d ? longDate(d.at) : "" };
     }).filter(function (r) { return r.missing.length; });
+  }
+  // ── THE CSM WORKSPACE'S READ (Sam, 2026-11-02: "a CSM workspace for handling the comms (notes, follow ups,
+  // acceptances, etc.) for the colleges ... a tab linked from the internal view"; built S555) ──────────────────
+  // csm_workspace.js paints the team's queue from this one record per institution, so the workspace and the
+  // funding tab read the same conditions, requests and attestations and can never disagree. Names, titles and
+  // emails ride `req` for a signed-in reviewer on the internal view alone, as the review lane shows them.
+  function csmCtx(kind, key, fy) {
+    var c = reqCtxOf(kind, key, fy);
+    if (!c) return null;
+    return { map: c.map.map(function (u) { return { role: u.role || "", status: u.status || "", own: !u.college || ctxCollegeIs(u.college, key), college: u.college || "" }; }),
+      landing: c.landing.map(function (l) { return { title: l.title || "", own: !l.college || ctxCollegeIs(l.college, key), college: l.college || "" }; }) };
+  }
+  function csmSnapshot() {
+    var reviewer = unlocked() && !publicMode();
+    var rows = oneRoster().map(function (c) {
+      var key = c.college, a = collegeAlloc(c), row = ELIG.optinRow[key] || null, att = ncAttestOf(key);
+      var ncOn = ncAttestShown(c), d = declinedOf(key), k = ELIG.contact[key] || null;
+      var out = {
+        key: key, name: dispName(key), district: c.district || "",
+        total: Math.round(a.total || 0), floored: !!a.floored, capped: !!a.capped, ncShare: ncOn,
+        gate: baselineGate(key),
+        conds: eligReqList(key).map(function (r) {
+          var w = eligReqWords(r, key);
+          return { kind: r.kind || "", met: !!r.met, pending: !!r.pending, label: String(r.label || ""), words: w.text, counts: w.counts || "" };
+        }),
+        part: { status: row ? row.status || "" : "", waiting: optinPending(key), confirmed: !!ELIG.optin[key],
+          at: row ? (row.requested_at || row.created_at || "") : "", confirmedAt: row ? row.confirmed_at || "" : "" },
+        nc: ncOn ? { status: att ? att.status || "" : "", waiting: ncAttestPending(att), standing: ncAttestStanding(att),
+          fy: att ? att.fiscal_year || "" : "", at: att ? (att.requested_at || att.created_at || "") : "" } : null,
+        declined: d ? d.at : "", landing: k ? httpsUrl(k.url) || "" : "",
+        coordMissing: (ELIG.coordMissing || {})[key] || "", note: "", req: null };
+      if (reviewer) {
+        out.note = noteFor(key);
+        var rev = optinReviewOf(key), nrev = ncOn ? ncAttestReviewOf(key) : null, nr = null;
+        if (nrev) {
+          nr = {};
+          Object.keys(nrev).forEach(function (f) { nr[f] = nrev[f]; });
+          nr.ctx = csmCtx("nc", key, att && att.fiscal_year);
+          nr.leadCtx = csmCtx("lead", key, att && att.fiscal_year);
+        }
+        out.req = { part: rev ? { name: rev.name || "", title: rev.title || "", email: rev.email || "", at: rev.requested_at || "",
+          status: rev.status || "", ctx: csmCtx("part", key) } : null, nc: nr };
+      }
+      return out;
+    });
+    return { reviewer: reviewer, loaded: !!ELIG.loaded, coordOk: !!ELIG.coordOk, deadline: participationDeadline(),
+      ncTitles: NC_ATTEST_TITLES.slice(), partTitles: OPTIN_TITLES.slice(), rows: rows };
+  }
+  // The workspace acts through the review lane's own functions, so a decision there is the same write and the same
+  // email the funding tab makes. kind is "part" (the participation confirmation) or "nc" (the noncredit attestation).
+  var CSM_ACT = {
+    accept: function (kind, key) { if (kind === "nc") acceptNcAttest(key); else acceptOptIn(key); },
+    deny: function (kind, key) { if (kind === "nc") denyNcAttest(key); else denyOptIn(key); },
+    follow: function (kind, key) { if (kind === "nc") followNcAttest(key); else followOptIn(key); },
+    mail: function (kind, key) { if (kind === "nc") mailNcAttest(key); else mailOptIn(key); }
+  };
+  function csmAct(action, kind, key) {
+    if (!unlocked() || publicMode() || !CSM_ACT[action]) return false;
+    CSM_ACT[action](kind, key);
+    return true;
+  }
+  // Open the funding tab on one institution: the table's search takes its name, read once, as a hand-off.
+  function csmFocus(key) {
+    state.q = dispName(key) || key;
+    if (window.CPL_TABS && typeof window.CPL_TABS.activate === "function") window.CPL_TABS.activate("implementation-funding");
+    render();
   }
   function openNudge() {
     if (!nudgeShown()) return;
@@ -18893,6 +18962,14 @@
     // True while the first paint waits for the shared config (holdForConfig), so a page
     // that paints from this module waits with it and paints on the model-change event.
     configHeld: function () { return configHold; },
+    // The CSM Workspace (csm_workspace.js, S555): one record per institution, the review lane's actions, Nudge.
+    csm: { snapshot: csmSnapshot, act: csmAct, focus: csmFocus, nudge: function () { openNudge(); },
+      // The workspace's log (csm_log) reads and writes with the reviewer's own credential, as the notes do.
+      rest: function () {
+        return { remote: remoteEnabled(), url: SUPABASE_URL + "/rest/v1/", who: curatorEmail() || "",
+          headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }) };
+      },
+      setDeclined: function (key, on) { if (unlocked() && !publicMode()) setDeclined(key, !!on); } },
     onModelChange: function (fn, describe) {
       if (typeof fn !== "function") return function () {};
       _subs.push(fn);

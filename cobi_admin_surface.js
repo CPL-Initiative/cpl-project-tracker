@@ -120,6 +120,36 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "measured": true
     },
+    "csm-workspace": {
+      "modules": [
+        "cpl_funding.js",
+        "csm_workspace.js"
+      ],
+      "reads": [
+        "budget_funding",
+        "map_ace_exhibit_titles",
+        "map_college_contacts",
+        "map_college_contacts_pub",
+        "map_college_cr_unit",
+        "map_colleges"
+      ],
+      "writes": [
+        "cpl_funding_config",
+        "cpl_funding_nc_attestation",
+        "cpl_funding_nc_attestation_pub",
+        "cpl_funding_notes",
+        "cpl_funding_participation",
+        "cpl_funding_reports"
+      ],
+      "rpcs": [
+        "cpl_funding_email_domains",
+        "cpl_funding_nc_attestation_review",
+        "cpl_funding_optin_review",
+        "cpl_funding_requester_context",
+        "map_coordinator_summary"
+      ],
+      "measured": true
+    },
     "contracts": {
       "modules": [
         "contracts.js"

@@ -53,7 +53,7 @@
   "table:gr_memos": "DR-22",
   "table:gr_memo_sections": "DR-22",
   "table:cpl_funding_config": "DR-09",
-  "table:cpl_funding_notes": "DR-09",
+  "table:cpl_funding_notes": "DR-09", "table:csm_log": "DR-09",
   "table:cpl_funding_participation": "DR-09",
   "table:cpl_funding_reports": "DR-09",
   "rpc:cpl_funding_my_reports": "DR-09",
