@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 561,
-  "moniker": "SkyCigar",
-  "run": "the CPL Queue routine",
+  "session": 565,
+  "moniker": "SkyTrue",
+  "run": "the Exhibits build (CER redesign side lane)",
   "decider": "Sam",
-  "handoff": "docs/session_562_handoff.md",
+  "handoff": "docs/session_565_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -20,13 +20,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-03T10:23:00Z",
+  "written_at": "2026-11-03T20:17:53Z",
   "project": "subjects",
   "next_step": {
     "title": "Work the stray codes toward one re-key window",
     "text": "The forestry stragglers moved on Sam's move-both (Open Asks Sheet 107 card 1, applied S436). The stray codes go through the discipline-blank worklist toward one re-key window."
   },
   "changes": [
+    {
+      "at": "2026-11-03T20:20:00Z",
+      "text": "The Local subjects List: one row per local subject code with its MQ discipline, where a person confirms a filing under DR-25 (#2737)."
+    },
+    {
+      "at": "2026-11-03T19:33:00Z",
+      "text": "The Commons card and every pick waiting for a person open the List, where Confirm this pick lives (#2735)."
+    },
     {
       "at": "2026-11-03T10:20:00Z",
       "text": "The opened page and the Commons card count the same scan findings, 17 (the card had left out the dead-format anchor), and each names its timing (S561, #2722)."
@@ -42,18 +50,6 @@
     {
       "at": "2026-11-02T02:01:00Z",
       "text": "Open picks show as suggestions on the List with Confirm this pick; a pick whose code another MQ discipline holds is never suggested (#2673)."
-    },
-    {
-      "at": "2026-11-01T21:59:00Z",
-      "text": "A List view on the shared engine: one row per MQ discipline, with Confirm this pick in the Status drawer (#2658)."
-    },
-    {
-      "at": "2026-10-20T07:39:00Z",
-      "text": "The two ENVR forestry pairs joined the faculty merge-candidate queue, survivors proposed and nothing merged (#2278)."
-    },
-    {
-      "at": "2026-10-20T07:56:00Z",
-      "text": "The quarterly check of the handbook now compares what it reads with the accepted 19th edition and runs on the first of each quarter (#2279)."
     }
   ]
 }
