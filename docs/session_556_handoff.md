@@ -41,6 +41,12 @@ note (the lessons sit in `docs/csm_workspace_lessons.md`). Context closed at abo
 
 ## Open work, in order
 
+0. **FIRST: the funding tab's memo in the CO's memo format (Sam's ask at S555's close, not started: context ran out).**
+   *"for the memo function on the funding tab, is it possible for you to adjust the procedure to output a memo
+   matching the formatting of the attached ESS memo. I've attached the way it is outputting now for comparison."*
+   Both files are in the vault: `CPLBrain/04-projects/cpl-initiative/resources/memo-format/` (the target, ESLEI
+   24-12, as a PDF; today's output as a docx; its README names the steps). Find the memo builder, list the format
+   differences, change the builder, and compare a fresh output against the PDF before shipping.
 1. **Watch the CSM Workspace in use.** Read `csm_log` (Supabase MCP) for the team's first rows; fix what they hit.
    Lane NEXT: hover cards (ask 10), every landing-page role (ask 6), the denial email, Nudge logging itself, *Log from
    Slack* (`#mapanditpiteam`, read-only, never post without Sam), other activities (MAP onboarding).
