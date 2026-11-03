@@ -92,9 +92,12 @@ read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progr
 carries it too (S556):** its Progress view draws the page first and the S437 milestones and parts under *Details*,
 closed; the three questions are counted per wording from the worklist the tab holds (grouped, official number, statewide
 line; units stated, units agree; two or more colleges, two or more credentials), and the card opens
-`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54).
+`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54). **Subjects
+too (S556):** the page over the 147 MQ disciplines with courses, with questions that fit a code (what it is called, whose
+code it is, how it reaches the courses); the milestones and steps under *Details*, the procedures and findings below.
+Guard `tests/csr_progress.test.js` (78), a11y `canonical-subj4-progress` (320 to 1440) and `-dark`.
 
-**NEXT:** the same page on Subjects' and CPL Pathways' Progress views (each hands
+**NEXT:** the same page on CPL Pathways' Progress view (each hands
 `commons_page.js` a spec: its pair, its queues as *Needs attention*, its three questions), then the Course Progress view
 (below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 

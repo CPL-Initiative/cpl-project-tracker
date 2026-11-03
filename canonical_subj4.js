@@ -2281,6 +2281,7 @@
     var collided = {};
     check.collisions.forEach(function (c) { c.owners.forEach(function (o) { collided[o.d] = true; }); });
     var settled = confirmed.filter(function (e) { return !collided[e.discipline]; });
+    var collidedDisc = rows.filter(function (e) { return collided[e.discipline]; }).length;
     var chips = rows.filter(function (e) { return authorityChips(e).length; });
     var bySource = { ccn: 0, "c-id": 0, csr: 0 };
     rows.forEach(function (e) { if (Object.prototype.hasOwnProperty.call(bySource, e.canonical_source)) bySource[e.canonical_source]++; });
@@ -2315,7 +2316,8 @@
       total: rows.length, confirmed: confirmed.length, person: person, cohort: confirmed.length - person,
       validated: rows.filter(function (e) { return e.validated_at; }).length,
       unconfirmed: unconfirmed.length, unconfirmedAuthority: unconfirmed.filter(onAuthorityCode).length,
-      settled: settled.length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length,
+      settled: settled.length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length, collidedDisc: collidedDisc,
+      fanInDisc: fanIns.length,
       collisions: check.collisions.length, collisionCodes: check.collisions.map(function (c) { return c.code; }),
       aliasShared: check.aliasShared.length, drift: check.drift.length, driftRows: check.nRowsOff, invalid: check.invalid.length,
       chips: chips.length, ccn: bySource.ccn, cid: bySource["c-id"], csr: bySource.csr, onAuthority: bySource.ccn + bySource["c-id"],
@@ -2484,11 +2486,70 @@
     return section("progress:findings", "Findings waiting on a judgment", meta, kids, { cls: "cs-findings-sec", h: "h4" });
   }
 
+  /* ── the opened page (S556): the CPL Commons mock's shape, drawn by commons_page.js ──
+     Sam locked the mock on 2026-11-02 (S552); its opened page is the pattern for every reference: the progress line
+     over one denominator, Needs attention with an action each, three questions with every count over that same
+     denominator. Here the denominator is the MQ discipline with courses, the headline's own unit (complete: a settled
+     Common SUBJ, confirmed, on the authority rule, in no collision). A subject code carries no credit, so the questions
+     fit a code: what it is called, whose code it is, how it reaches the courses. Every figure is the context the dash
+     already reads live (progressContext), so the two cannot disagree; the dash stays one word away, under Details. */
+  function subjPageSpec(x) {
+    var Q = x.Q, go = function (to) { return function () { goTo(to); }; };
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var open = calls.filter(function (c) { return !(c.answer && c.answer.words); });
+    var first = function (t) { var m = String(t || "").trim().match(/^[^.]*\.(?=\s|$)/); return m ? m[0] : String(t || "").trim(); };
+    var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + first(Q.changes[0].text) : "";
+    var split = fmtN(x.person) + " confirmed by a person, " + fmtN(x.cohort) + " by the nightly procedure or a session cohort.";
+    var items = [
+      { n: x.unconfirmed, words: x.unconfirmed === 1 ? "MQ discipline on the data's modal code, unconfirmed." : "MQ disciplines on the data's modal code, unconfirmed.",
+        action: { words: "Confirm them", go: go(TO.preSeeded) } },
+      { n: x.collisions, words: x.collisions === 1 ? "Common SUBJ shared by two MQ disciplines." : "Common SUBJs shared by two or more MQ disciplines.",
+        action: { words: "Check them", go: go(TO.check) } },
+      { n: x.scan ? x.askable : null, words: "scan findings to confirm or note" + (x.askableWords ? " (" + x.askableWords + ")." : "."),
+        action: { words: "Open the findings", go: go(TO.findings) } },
+      { n: x.strayCodes, words: "identity codes that are neither a Common SUBJ nor an umbrella code" +
+        (x.strayIds != null ? ", on " + fmtN(x.strayIds) + " identities" : "") + ", for a re-mint under the playbook." }
+    ];
+    open.forEach(function (c) {
+      items.push({ n: 1, words: "decision for " + x.decider + ": " + (c.title || "an open call") + ".",
+        action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
+    });
+    var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
+    var on = (x.procs || []).filter(function (p) { return p.on; }).length;
+    var r = function (label, n, to) { return { label: label, n: n, go: go(to || TO.all) }; };
+    var total = x.total;
+    return {
+      label: "Common Subjects Reference", prefix: "cs-pg-", reading: false,
+      status: open.length ? "Needs you" : "In progress",
+      lede: "The Common Subjects Reference: one Common SUBJ for each MQ discipline, the key every M-ID is minted under.",
+      read: x.scanDay ? "Scanned " + x.scanDay + "." : "",
+      links: [x.procs ? { words: "How it is kept: " + fmtN(on) + " procedures in force", go: go(TO.procedures) } : null,
+        sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
+      progress: { n: x.settled, of: total, short: "settled", words: "MQ disciplines with courses carry a settled Common SUBJ",
+        recently: [recently, split].filter(Boolean).join(" "),
+        calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmtN(open.length) + " decisions wait on ") + x.decider + "."
+          : "No decisions wait on " + x.decider + ".") : "" },
+      attention: { items: items, empty: "Nothing in the reference waits on a person.",
+        next: Q && Q.next_step && Q.next_step.title ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "" },
+      groups: [
+        { q: "What is it called?", rows: [r("A Common SUBJ code", total - x.missingCode), r("Confirmed", x.confirmed, TO.reviewed),
+          r("In no collision", total - x.collidedDisc, TO.check)] },
+        { q: "Whose code is it?", rows: [r("The CCN's", x.ccn, TO.ccn), r("C-ID's", x.cid, TO.cid), r("Minted here", x.csr)] },
+        { q: "How does it reach the courses?", rows: [r("An umbrella code over others", x.umbrellas), r("Paired in a fan-in", x.fanInDisc)] }
+      ],
+      of: total, ofWords: "MQ disciplines with courses",
+      foot: "The reference is staging: not yet faculty-published."
+    };
+  }
+
   /* ── the view, drawn by the shared module from this reference's definitions and context ── */
   function withProgressModule(cb) {
-    if (window.CPL_COMMONS_PROGRESS) { cb(); return; }
+    if (window.CPL_COMMONS_PROGRESS && window.CPL_COMMONS_PAGE) { cb(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-      window.CPL_TABS.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", cb);
+      window.CPL_TABS.loadScript("commons_progress.js", "CPL_COMMONS_PROGRESS", function () {
+        // The opened page (S556): commons_page.js draws the CPL Commons mock's shape over the dash.
+        window.CPL_TABS.loadScript("commons_page.js", "CPL_COMMONS_PAGE", cb);
+      });
       return;
     }
     cb();
@@ -2506,7 +2567,15 @@
       }
       ensureProgressCss();
       var x = progressContext(new Date());
-      mount.appendChild(CP.render(PROGRESS, x, { readAt: state.readAt || new Date(), errors: x.errors }, HOST));
+      var dash = CP.render(PROGRESS, x, { readAt: state.readAt || new Date(), errors: x.errors }, HOST);
+      var PG = window.CPL_COMMONS_PAGE;
+      if (PG) {
+        /* The opened page first; the milestones and steps one word away (the Commons first view's Details). */
+        mount.appendChild(PG.render(subjPageSpec(x)));
+        mount.appendChild(el("details", { class: "cs-sec cs-more", "data-sec": "progress:details" }, [
+          el("summary", { class: "cs-sec-sum" }, [el("h3", { class: "cs-sec-t" }, ["Details: the milestones and the steps"])]),
+          el("div", { class: "cs-sec-b" }, [dash])]));
+      } else mount.appendChild(dash);
       mount.appendChild(proceduresSection(x));
       mount.appendChild(findingsSection(x));
     });
@@ -2875,6 +2944,9 @@
     if (document.getElementById("cs-progress-css")) return;
     document.head.appendChild(el("style", { id: "cs-progress-css" }, [[
       "#tab-canonical-subj4 .cs-views { display:flex; flex-wrap:wrap; gap:6px 18px; padding-block:6px 14px; }",
+      // The dash under Details (S556) keeps its own width: the fold adds no side padding of its own.
+      "#tab-canonical-subj4 .cs-more { margin-top:18px; border:0; background:none; }",
+      "#tab-canonical-subj4 .cs-more > .cs-sec-b { padding:0; }",
       "#tab-canonical-subj4 .cs-views button { font:inherit; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
       "#tab-canonical-subj4 .cs-views button:hover { text-decoration-thickness:2px; }",
       "#tab-canonical-subj4 .cs-views button[aria-selected=\"true\"] { color:var(--text-strong); font-weight:700; text-decoration-thickness:2px; }",
@@ -2902,7 +2974,10 @@
       "#tab-canonical-subj4 .cs-sec-t { margin:0; font-size:1.05rem; color:var(--text-strong); font-family:inherit; }",
       "#tab-canonical-subj4 .cs-sec-meta { font-size:.875rem; color:var(--text-muted); font-variant-numeric:tabular-nums; }",
       "#tab-canonical-subj4 .cs-sec-label { flex:1 0 100%; font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }",
-      "#tab-canonical-subj4 .cs-sec-b { padding:2px 14px 14px; min-width:0; }",
+      "#tab-canonical-subj4 .cs-sec-b { padding:2px 14px 14px; min-width:0; overflow-wrap:anywhere; }",
+      // A procedure's steps name file paths no word break reaches; on a 320px phone they wrap anywhere (S556).
+      "#tab-canonical-subj4 .cs-sec-sum > * { min-width:0; overflow-wrap:anywhere; }",
+      "#tab-canonical-subj4 .cs-proc-steps li { min-width:0; overflow-wrap:anywhere; }",
       "#tab-canonical-subj4 .cs-sec-b p { margin:0 0 8px; font-size:.9rem; color:var(--text-body); }",
       "#tab-canonical-subj4 .cs-links { display:flex; flex-wrap:wrap; gap:.4rem 1rem; margin:.5rem 0 0; }",
       "#tab-canonical-subj4 .cs-proc { background:var(--surface-subtle); }",
@@ -3000,6 +3075,7 @@
   }
   /* Exposed for the tests and the a11y sweep's seed: the definitions, the context and the view. */
   window.CPL_CANONICAL_SUBJ4 = { MILESTONES: MILESTONES, PARTS: PARTS, HEADLINE: HEADLINE, TO: TO, progressContext: progressContext,
+    subjPageSpec: subjPageSpec,
     applyView: applyView, routeFromHash: routeFromHash, renderProgress: renderProgress, _state: state,
     _listRows: listRowsAll, _listCols: listCols };
 })();
