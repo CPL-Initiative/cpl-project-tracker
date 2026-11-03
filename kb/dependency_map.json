@@ -808,6 +808,16 @@
      ]
     },
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 2743,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "script:kb/_build_claude_md_audit_decision_sheet.py",
      "kind": "script",
      "direction": "read",
@@ -1618,7 +1628,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2021
+     "line": 2039
     }
    ],
    "main_committers": []
@@ -2219,7 +2229,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1062
+     "line": 1080
     }
    ],
    "main_committers": []
@@ -2238,7 +2248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1407
+     "line": 1425
     },
     {
      "id": "module:college_briefing.js",
@@ -4182,7 +4192,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1685
+     "line": 1703
     }
    ],
    "main_committers": []
@@ -5231,7 +5241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1576
+     "line": 1594
     },
     {
      "id": "module:admin.js",
@@ -5786,7 +5796,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2242,
+     "line": 2246,
      "tabs": [
       "exhibits"
      ]
@@ -5980,7 +5990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2730,
+     "line": 2735,
      "tabs": [
       "exhibits"
      ]
@@ -6050,7 +6060,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2873,
+     "line": 2944,
      "tabs": [
       "exhibits"
      ]
@@ -6294,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1960
+     "line": 1978
     },
     {
      "id": "module:college_briefing.js",
@@ -6500,7 +6510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1122
+     "line": 1140
     },
     {
      "id": "module:cpl_funding.js",

@@ -832,6 +832,24 @@ async function seedExhibitsProgress(page, theme) {
 
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
+/* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
+   folded rest opened, so the panel's bar, its sort words, its MAP links and the title drawer it carries are measured. */
+async function seedExhibitsPanel(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/list") location.hash = "exhibits/list"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open"), null, { timeout: 60000 });
+  await page.evaluate(() => { document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open").click(); });
+  await page.waitForFunction(() => document.getElementById("exh-l-panel"), null, { timeout: 10000 });
+  await page.evaluate(() => { const d = document.querySelector("#exh-l-panel details.exh-pn-more"); if (d) d.open = true; });
+  await page.waitForTimeout(400);
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
 async function seedExhibitsList(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
@@ -3492,6 +3510,22 @@ module.exports = {
     routes: [{ hash: "exhibits", name: "list-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedExhibitsList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-panel": {
+    file: "index.html",
+    title: "Exhibits: List with a credential's side panel open, its members and the rest unfolded",
+    routes: [{ hash: "exhibits/list", name: "panel" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedExhibitsPanel(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-panel-dark": {
+    file: "index.html",
+    title: "Exhibits: the side panel, dark",
+    routes: [{ hash: "exhibits/list", name: "panel-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsPanel(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-credentials-dark": {

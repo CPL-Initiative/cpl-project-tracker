@@ -2170,6 +2170,10 @@
       { h: "CIP family (from TOP)", w: 7, v: listCip },
       { h: "Colleges", w: 5, n: true, v: function (r) { return credColleges(r).length; } },
       { h: "MAP titles", w: 5, n: true, v: function (r) { return r.raw_count || 0; } },
+      // Students who hold credit for it (Sam, 2026-11-03, on the side-panel mock): the reference's own count, with a
+      // suppressed one reading Too few, as the Credentials view reads it.
+      { h: "Students", w: 5, n: true, v: function (r) { return r.students_served != null ? r.students_served : null; },
+        cell: function (r) { return [credStudents(r).word]; } },
       { h: "Basis", w: 5, v: listBasis }
     ];
   }
@@ -2551,6 +2555,7 @@
       noun: { many: "credentials", region: "Every credential, A to Z", keyHeader: "Credential key", file: "exhibits-list",
         placeholder: "Title, issuer, college, district, SWP region, ASCCC area, discipline, subject or CPL type", findLabel: "Find in the list" },
       state: listState, rows: function () { return state.cs.rows || []; }, cols: listCols,
+      panel: { label: function (r) { return "Exhibit: " + listTitle(r); }, body: listPanelBody },
       key: function (r) { return r.ut; }, title: listTitle, render: function () { render(); }, session: session,
       head: function (wrap) {
         var L = listState(), cs = state.cs;
@@ -2734,6 +2739,72 @@
     });
   }
   function redrawList() { if (listApi()) LIST_ENGINE.redraw(); else render(); }
+  /* ── The side panel (Sam, 2026-11-03: "when you click on an exhibit in the list and open the side bar it shows a list
+     (like you've designed) of the folded members"; the mock https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4, after
+     SkyView's course outline). One line of what the credential is, its members (the MAP exhibits folded under it,
+     kb/exhibits_adoption.json's x), and the rest folded below: the credit each college awards, the issuer and training
+     sites, and who could adopt it. Read only; an edit opens the Credentials view, which the panel replaces once it
+     carries the edits. */
+  var PN_COLS = [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]];
+  function pnSort() { return state.pnSort || (state.pnSort = { col: 1, dir: 1 }); }
+  function listPanelBody(r, h) {
+    var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
+    var cip = listCip(r), n = r.raw_count || 0;
+    var meta = [cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
+      art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
+      could.length ? could.length + " could adopt" : "", "Students: " + st.word].filter(Boolean).join(" · ");
+    var out = [el2("h2", { cls: "exh-pn-h", text: listTitle(r) }), el2("p", { cls: "exh-muted exh-small exh-pn-meta", text: meta })];
+    var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
+    out.push(el2("h3", { cls: "exh-pn-q", text: "Members" }));
+    if (!members.length) {
+      out.push(el2("p", { cls: "exh-muted exh-small", text: state.cs.adopt ? "MAP records no exhibit under this name." : "Reading the exhibits…" }));
+    } else {
+      var S2 = pnSort(), key = PN_COLS[S2.col][0], num = !!PN_COLS[S2.col][2];
+      members.sort(function (a, b) {
+        var x = a[key], y = b[key], c = num ? (+x || 0) - (+y || 0) : String(x || "").localeCompare(String(y || ""));
+        return c * S2.dir || String(a.id).localeCompare(String(b.id));
+      });
+      out.push(el2("p", { cls: "exh-muted exh-small", text: "The MAP exhibits folded under this name, as colleges entered them. Press a header to sort." }));
+      var head = el2("tr", null, PN_COLS.map(function (c, i) {
+        var on = S2.col === i, up = on && S2.dir > 0;
+        var b = h.word(c[1] + (on ? (c[2] ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")) : ""), function () {
+          var P2 = pnSort(); P2.dir = P2.col === i ? -P2.dir : 1; P2.col = i; redrawList();
+          var nb = document.querySelectorAll(".exh-pn-table th button")[i]; if (nb) nb.focus();
+        });
+        return el2("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+      }).concat([el2("th", { scope: "col" }, [el2("span", { cls: "exh-vh", text: "In MAP" })])]));
+      var body = el2("tbody", null, members.map(function (m) {
+        return el2("tr", null, [el2("td", { cls: "exh-pn-id", text: m.id }), el2("td", { text: m.title || "" }),
+          el2("td", { cls: "exh-pn-n", text: m.units != null ? h.fmt(m.units) : "" }),
+          el2("td", null, [el2("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", text: "in MAP", "aria-label": m.id + " in MAP" })])]);
+      }));
+      out.push(el2("div", { cls: "exh-pn-wrap", role: "region", tabindex: "0", "aria-label": "Members of " + listTitle(r) },
+        [el2("table", { cls: "exh-pn-table" }, [el2("thead", null, [head]), body])]));
+    }
+    // The rest, folded: what each college awards, the issuer and training sites, who could adopt it.
+    var more = [];
+    var awards = adoptMap(ad && ad.a), names = Object.keys(awards).sort(function (a, b) { return (awards[b][0] || 0) - (awards[a][0] || 0) || a.localeCompare(b); });
+    more.push(el2("h3", { cls: "exh-pn-q", text: "What credit it carries" }));
+    if (ad && ad.p != null) more.push(el2("p", { cls: "exh-small", text: "The median articulating college awards " + h.fmt(ad.p) + " units." }));
+    more.push(names.length ? el2("ul", { cls: "exh-pn-ul" }, names.map(function (nm) {
+      var a = awards[nm] || [], lines = (a[1] || []).map(function (x) { return x[0] + (x[1] ? ", " + x[1] : ""); }).join("; ");
+      return el2("li", null, [el2("b", { text: nm }), ", " + h.fmt(a[0]) + " units" + (lines ? ": " + lines : "")]);
+    })) : el2("p", { cls: "exh-muted exh-small", text: "No college articulates it yet." }));
+    more.push(el2("h3", { cls: "exh-pn-q", text: "Who issues it, and where it is trained" }));
+    more.push(el2("p", { cls: "exh-small", text: "Issuer: " + (cur.issuer || "none named") }));
+    more.push(el2("p", { cls: "exh-small", text: "Training sites: " + (cur.sites.length ? cur.sites.map(function (x) { return x.site + (x.college ? ", for " + x.college : ", for any college"); }).join("; ") : "none named") }));
+    if (could.length) {
+      var cmap = adoptMap(ad && ad.c);
+      more.push(el2("h3", { cls: "exh-pn-q", text: "Who could adopt it" }));
+      more.push(el2("ul", { cls: "exh-pn-ul" }, could.map(function (nm) {
+        var cs = (cmap[nm] || []).map(function (x) { return x[0] + (x[2] != null ? " (" + h.fmt(x[2]) + " units)" : ""); }).join(", ");
+        return el2("li", null, [el2("b", { text: nm }), cs ? " already teaches " + cs + "." : ""]);
+      })));
+    }
+    more.push(el2("p", { cls: "exh-small" }, [h.word("Edit it in the Credentials view", function () { openCredential(r.ut); })]));
+    out.push(el2("details", { cls: "exh-pn-more" }, [el2("summary", { text: "More about this exhibit: its credit, issuer, training sites and who could adopt it" })].concat(more)));
+    return out;
+  }
   function listRows() { return listApi() ? LIST_ENGINE.rows() : []; }
   function listCsv(rows) { return listApi() ? LIST_ENGINE.csv(rows) : ""; }
   function listCellNote(text) {
@@ -3245,6 +3316,20 @@
     ".exh-tn .exh-tcount { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }",
     /* A one-digit count is a target too: WCAG 2.2's 24px floor (the a11y sweep, 2026-11-03). */
     "button.exh-w.exh-tcount, a.exh-tcount { display:inline-block; min-width:24px; min-height:24px; text-align:start; }",
+    ".exh-pn-h { margin:0 0 4px; font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.35rem, 2.2vw, 1.8rem); line-height:1.15; color:var(--text-strong); }",
+    ".exh-pn-meta { margin:0 0 12px; }",
+    ".exh-pn-q { margin:14px 0 4px; font-size:1.02rem; color:var(--text-strong); }",
+    ".exh-pn-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; }",
+    ".exh-pn-table { width:100%; border-collapse:collapse; font-size:.86rem; }",
+    ".exh-pn-table th { text-align:left; padding:6px 8px; background:var(--surface-subtle); border-bottom:1px solid var(--border-strong); }",
+    ".exh-pn-table td { padding:6px 8px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-body); }",
+    ".exh-pn-id { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.8rem; color:var(--text-muted); }",
+    ".exh-pn-n { text-align:right; font-variant-numeric:tabular-nums; }",
+    ".exh-pn-ul { margin:4px 0 0; padding-left:1.1em; font-size:.88rem; display:flex; flex-direction:column; gap:5px; }",
+    ".exh-pn-more { margin-top:16px; }",
+    ".exh-pn-more > summary { cursor:pointer; min-height:24px; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }",
+    ".exh-pn-more > summary:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
+    ".exh-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
     "a.exh-tcount { text-decoration:underline; text-underline-offset:3px; }",
     ".exh-tile .exh-zero { color:var(--hunter); }",
     ".exh-tests { display:flex; flex-wrap:wrap; gap:6px; padding-top:2px; }",
