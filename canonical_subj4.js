@@ -2026,7 +2026,8 @@
   var SKYVIEW_URL = "prototype/skyview.html";
   var VIEW_KEY = "cplCsr.view.v1";
   var SECS_KEY = "cplCsr.secs.v1";
-  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }, { id: "list", label: "List" }];
+  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }, { id: "list", label: "List" },
+    { id: "local", label: "Local subjects" }];
   var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
   var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];
   var RULE_WORDS = {
@@ -2877,6 +2878,67 @@
     if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
     return LIST_ENGINE;
   }
+  /* ── The Local subjects List (csr_local_subjects.js; Sam, 2026-11-03: "yes on local subjects") ──
+     One row per local subject code over kb/reference/subject_discipline_map.json, its confirms as _SUBJ_DISC::<CODE>
+     rows in kb_curation (DR-25). The module and the List engine load the first time the view opens. */
+  var LOCAL = null, localLoading = false, localFailed = false, localFilter = "";
+  function saveCuration(courseId, field, value) {
+    var sess = state.sess;
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify({ course_id: courseId, field: field, value: value, reviewer_email: sess.email })
+    });
+  }
+  function readCuration(prefix) {
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at"
+      + "&course_id=like." + encodeURIComponent(prefix) + "%25";
+    return fetch(url, { headers: { "apikey": SUPABASE_ANON } }).then(function (r) {
+      if (!r.ok) throw new Error("kb_curation answered " + r.status);
+      return r.json();
+    });
+  }
+  function localHost() {
+    return {
+      // The colleges' local codes only: variantsFor's fallback (variants_observed) is the M-IDs' own SUBJ4s, not local codes.
+      entries: mergedEntries, variantsFor: function (e) { return e.local_subject_variants || {}; },
+      session: function () { return state.sess && state.sess.access_token ? state.sess : null; },
+      save: saveCuration, read: readCuration,
+      fetchJson: function (url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " answered " + r.status); return r.json(); }); },
+      render: localRepaint,
+      signIn: function () { applyView("reference"); }
+    };
+  }
+  function localRepaint() {
+    var node = document.getElementById("cs-local");
+    if (!node || state.view !== "local" || !state.seed) return;
+    node.innerHTML = "";
+    if (!LOCAL && window.CPL_CSR_LOCAL && window.CPL_COMMONS_LIST) {
+      LOCAL = window.CPL_CSR_LOCAL.create(localHost());
+      if (localFilter) LOCAL.setFilter(localFilter);
+    }
+    if (LOCAL) { LOCAL.render(node); return; }
+    if (localFailed) {
+      node.appendChild(el("p", { class: "cs-caution", role: "alert" }, ["The Local subjects List could not be loaded. The other views read as usual; reload the tab to try again."]));
+      return;
+    }
+    node.appendChild(el("p", { class: "cs-quiet" }, ["Loading the Local subjects List…"]));
+    var T = window.CPL_TABS;
+    if (localLoading || !T || typeof T.loadScript !== "function") return;
+    localLoading = true;
+    var done = function () {
+      localLoading = false;
+      if (!window.CPL_COMMONS_LIST || !window.CPL_CSR_LOCAL) localFailed = true;
+      localRepaint();
+    };
+    var mod = function () { if (window.CPL_CSR_LOCAL) done(); else T.loadScript("csr_local_subjects.js", "CPL_CSR_LOCAL", done); };
+    if (window.CPL_COMMONS_LIST) mod(); else T.loadScript("commons_list.js", "CPL_COMMONS_LIST", mod);
+  }
+
   /* Draw the List into its section; the engine loads the first time the view opens. */
   function listRepaint() {
     var node = document.getElementById("cs-list");
@@ -2903,7 +2965,7 @@
      #canonical-subj4/<filter> opens the Reference view with that filter (the Commons row's counts link here);
      #canonical-subj4/check opens the SUBJ check. The last view chosen is remembered; the List's filters,
      sort and selection last the visit (tabs never remember a filter, Sam 2026-10-21). */
-  var VIEW_MOUNT = { progress: "cs-progress", reference: "cs-table-wrap", list: "cs-list" };
+  var VIEW_MOUNT = { progress: "cs-progress", reference: "cs-table-wrap", list: "cs-list", local: "cs-local" };
   function readView() {
     try { var v = localStorage.getItem(VIEW_KEY); return VIEW_MOUNT[v] ? v : null; } catch (e) { return null; }
   }
@@ -2920,6 +2982,8 @@
     if (pg) pg.hidden = state.view !== "progress";
     var ls = document.getElementById("cs-list");
     if (ls) ls.hidden = state.view !== "list";
+    var lo = document.getElementById("cs-local");
+    if (lo) lo.hidden = state.view !== "local";
     var sw = document.getElementById("cs-views");
     if (sw) Array.prototype.forEach.call(sw.querySelectorAll("button[role=tab]"), function (b) {
       var sel = b.getAttribute("data-view") === state.view;
@@ -2928,6 +2992,7 @@
     });
     if (state.view === "progress") renderProgress();
     else if (state.view === "list") listRepaint();
+    else if (state.view === "local") localRepaint();
   }
   function ensureViewMounts() {
     var tb = document.getElementById("cs-toolbar");
@@ -2954,6 +3019,8 @@
     tb.parentNode.insertBefore(pg, tb);
     var ls = el("section", { class: "cs-list", id: "cs-list", "aria-label": "Common Subjects Reference, List", hidden: "" });
     tb.parentNode.insertBefore(ls, tb);
+    var lo = el("section", { class: "cs-list", id: "cs-local", "aria-label": "Common Subjects Reference, Local subjects", hidden: "" });
+    tb.parentNode.insertBefore(lo, tb);
   }
   function routeFromHash() {
     var h = (location.hash || "").replace(/^#/, "");
@@ -2961,6 +3028,7 @@
     if (parts[0] !== QS_TAB) return false;
     var r = parts[1] || "";
     if (r === "list" && parts[2] && listFilterId(parts[2])) { goTo({ view: "list", filter: parts[2] }); return true; }
+    if (r === "local" && parts[2]) { localFilter = parts[2]; if (LOCAL) LOCAL.setFilter(parts[2]); applyView("local"); return true; }
     if (VIEW_MOUNT[r]) { applyView(r); return true; }
     if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
     if (r === "check") { goTo(TO.check); return true; }

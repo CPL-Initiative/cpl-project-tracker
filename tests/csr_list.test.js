@@ -143,8 +143,8 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   await settle();
   const d = t.d, M = t.M();
   const sw = d.getElementById("cs-views");
-  check("(1) the view switch carries Progress, Reference and List, List selected",
-    Array.from(sw.querySelectorAll("button[role=tab]")).map(txt).join(",") === "Progress,Reference,List"
+  check("(1) the view switch carries Progress, Reference, List and Local subjects, List selected",
+    Array.from(sw.querySelectorAll("button[role=tab]")).map(txt).join(",") === "Progress,Reference,List,Local subjects"
     && d.getElementById("cs-tab-list").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-list").getAttribute("aria-controls") === "cs-list");
   check("(1) the List shows; the table, its toolbar and Progress hide", M._state.view === "list" && !d.getElementById("cs-list").hidden
     && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden && d.getElementById("cs-progress").hidden);

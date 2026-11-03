@@ -56,7 +56,14 @@ note where no code row exists stands in as the review, so a replace across notes
 `tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`. **A pick waiting for a person
 opens the List on Open** (`#canonical-subj4/open`, `TO.confirm`): the Commons card's unconfirmed issue and the Progress
 view's *Confirm them* led to the Reference table's pre-seeded filter, whose box saves only a changed code, so Sam
-found nothing to press (2026-11-03). The pre-seeded filter keeps its own address.
+found nothing to press (2026-11-03). The pre-seeded filter keeps its own address. **The Local subjects List** (Sam, 2026-11-03: *"yes on
+local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
+code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
+discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /
+`subject_discipline_confirm`, a note as `subject_discipline_note` (both DR-25, Sam's); the map file changes only when a
+session applies the filings under DR-25 with its ripple check. Guard `tests/csr_local_subjects.test.js`; a11y
+`canonical-subj4-local`, `-dark`. NEXT: the Commons card's second count (local codes confirmed by a person) needs the
+confirms synced to a committed file.
 
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
