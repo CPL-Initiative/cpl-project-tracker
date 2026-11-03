@@ -90,10 +90,11 @@ Exhibits `#exhibits/progress` (questions read `credCounts()`, the tiles' own cou
 program) and the Common Course Reference in COCI Lookup (`#coci-lookup/progress`, the row's pair: ready of the auditor's
 cards). Guards `tests/exhibits_progress_page.test.js`, `cr_progress`, `csr_progress`, `program_requirements_page`,
 `coci_progress`; a11y targets `<view>-progress` and `-dark`. Per-view detail: `docs/commons_lessons.md` (*Moved from the
-lane, 2026-11-03*). **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
-recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9
+lane, 2026-11-03*). **Complete is the auditor's *ready*** (Sam, Open Asks Sheet 160, *keep*, 12:44Z 2026-11-03): a common course counts
+before a person confirms it; a confirmation is an attribute the reference gains, counted beside it once it exists. His words are in
+`docs/commons_lessons.md` (*Sheet 160 answered*).
 
-**NEXT:** the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
+**NEXT:** a *Confirmed by a person* count beside *ready* on the Course page and card, from SkyView's curator saves (Sheet 160); the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
 that once answered 500 (check it first when a Progress card reads *Could not be read*).
 The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 

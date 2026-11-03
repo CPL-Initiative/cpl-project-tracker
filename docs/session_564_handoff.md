@@ -29,8 +29,10 @@ lessons doc (nothing retired needed a home), `kb/README.md`, `README.md`, the pi
 
 ## Open work, in order
 
-1. **Sheet 160's reply** (https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9, current, one card, commons): read its
-   `replies` store first. *curator* means changing `progressSpec()` in `coci_lookup.js` and the Commons row together.
+1. **Sheet 160 is answered** (Sam, *keep*, 12:44Z, after S563's sign-off; S563 recorded it). Complete stays the auditor's
+   *ready*; his note makes a person's confirmation an attribute counted beside it. Build that: a *Confirmed by a person*
+   count on the Course page (`progressSpec()` in `coci_lookup.js`) and the Commons row, from SkyView's curator saves.
+   His words: `docs/commons_lessons.md` (*Sheet 160 answered*). No sheet is open; the builder makes the next.
 2. **Step 11, on the 2026-11-04 UTC day:** Las Positas's full read on #2717's branch
    (`python3 scripts/next_slo_colleges.py --college las_positas`), and Columbia's trial. That day's first firing also
    owns the dashboard run, the credential slice and the UI pass.
