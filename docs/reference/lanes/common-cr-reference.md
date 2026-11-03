@@ -45,8 +45,11 @@ bands, because in CR the group is the fold unit. Edit and Edit every row rename 
 worklist's own write (`saveDecision`, the group's `cr_reference_decisions` row, its decision kept or deferred), so a
 rename never settles a group; Confirm the group and Not a topic sit in the reference's drawer and, for an undecided rung
 1 to 4 group, on its *Suggested groups* line. Your flag saves to `kb_curation` (`_CR_LIST::<wording>`, `list_flag`). No
-find and replace: a replace across wordings would write one group once per wording. Guard: `tests/cr_list.test.js`;
-a11y targets `cr-list` and `cr-list-dark`.
+find and replace: a replace across wordings would write one group once per wording. **A wording's title opens a side
+panel** (2026-11-03, the List norms' *The List is the workspace*): the wording, one line of what it is, its group's
+wordings (sortable; another's name opens its panel), Confirm the group and Not a topic with their own status line, and
+the rung, credentials and courses folded. Guards: `tests/cr_list.test.js`, `cr_list_panel`; a11y targets `cr-list`
+and `cr-list-dark` (the panel open).
 
 ## Jev on this lane — the blocking, the gate, the verdicts (S279/S280, 2026-09-20)
 

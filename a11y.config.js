@@ -992,15 +992,20 @@ async function seedCrProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
-// The Common CR Reference's List (S542, the Catalog Commons' shared List): every wording A to Z, the Reference
-// drawer of the first row open and Edit every row's boxes on, so the table, the drawer and the boxes are measured.
+// The Common CR Reference's List (S542, the Catalog Commons' shared List): every wording A to Z, the first wording's side
+// panel open with its fold (2026-11-03), its Reference drawer open and Edit every row's boxes on, so the table, the
+// panel, the drawer and the boxes are measured.
 async function seedCrList(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cr-reference") location.hash = "cr-reference"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForSelector('#tab-cr-reference button.crr-view[data-view="list"]', { timeout: 60000 });
   await page.evaluate(() => document.querySelector('#tab-cr-reference button.crr-view[data-view="list"]').click());
   await page.waitForSelector("#tab-cr-reference .crl-table tbody tr", { timeout: 60000 });
-  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td:nth-child(3) button.crl-open"); if (b) b.click(); });
+  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td.crl-title button.crl-open"); if (b) b.click(); });
+  await page.waitForSelector("#crl-panel", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#crl-panel details.crl-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.waitForTimeout(200);
+  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td:nth-child(4) button.crl-open"); if (b) b.click(); });
   await page.waitForSelector("#tab-cr-reference .crl-drawer", { timeout: 10000 });
   await page.evaluate(() => { document.getElementById("crl-editall").click(); });
   await page.waitForSelector("#tab-cr-reference .crl-cellin", { timeout: 10000 });
@@ -3235,7 +3240,7 @@ module.exports = {
   },
   "cr-list": {
     file: "index.html",
-    title: "Common CR Reference: List, every wording banded by group, a drawer and the boxes open",
+    title: "Common CR Reference: List, every wording banded by group, a wording's side panel, a drawer and the boxes open",
     routes: [{ hash: "cr-reference", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCrList(page, "light"),

@@ -52,6 +52,11 @@ share), the side panel in `commons_list.js` (#2738), and the panel's issuer and 
 view's own (2026-11-03). Next: retire the Credentials view; then the cards, the line and the panel over the CR,
 Subjects, Courses and Programs Lists, drawn by one renderer.
 
+**The panel's shared parts are the engine's** (`h.title`, `h.meta`, `h.heading`, `h.table`, `h.fold`, `h.open` in
+`commons_list.js`), so every List's panel reads alike: one line of what the row is, its members in a sortable table, and
+folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03); Exhibits' moves
+onto them when next touched.
+
 ## What every List shares
 
 **The row is the thing that folds:** a credential, a wording, an MQ discipline, an M-ID, a program. In COCI Lookup the

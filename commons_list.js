@@ -79,8 +79,13 @@
 //   panel              { label(r) -> the bar's words, body(r, h) -> nodes }: a side panel for one row (Sam, 2026-11-03:
 //                      "build the side panel into the Exhibits List", after SkyView's course outline). Pressing a row's
 //                      title opens it beside the table, in place of the title's drawer; another title swaps it, and Close
-//                      or Escape shuts it and returns focus to the row. h = { el, word, fmt, stamp, close }. L.panel holds
-//                      the open row's key for the visit.
+//                      or Escape shuts it and returns focus to the row. h = { el, word, fmt, stamp, close } and the
+//                      panel's shared parts, so every List's panel reads alike (the List norms: one renderer):
+//                      h.title(text), h.meta(parts) (one line of what the row is, parts joined by a middle dot),
+//                      h.heading(text), h.table(o) (a sortable table of the row's members: o = { id, label, cols:
+//                      [[key, header, numeric]], rows, cell(row, key) -> text or node, note }; its sort lasts the visit in
+//                      L.pnSort[id]), h.fold(id, summary, kids) (a fold that stays open or shut as the reader left it,
+//                      L.pnFold[id]) and h.open(key) (show another row's panel). L.panel holds the open row's key.
 //   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
 //                      file): its word shows no count, never a 0 a reader takes for empty (S343).
 // The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
@@ -977,6 +982,53 @@
       if (n) n.textContent = listSelWords();
       if (fl && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
     }
+    /* The panel's shared parts (the hook's h): what every List's panel draws the same way. */
+    function panelHelp(close) {
+      var L = listState();
+      function focusId(id) { var n = document.getElementById(id); if (n) n.focus(); }
+      return { el: el, word: word, fmt: fmt, stamp: stamp, close: close,
+        title: function (text) { return el("h2", { cls: P + "pn-h", text: text }); },
+        meta: function (parts) { return el("p", { cls: CL.muted + " " + CL.small + " " + P + "pn-meta", text: (parts || []).filter(Boolean).join(" \u00b7 ") }); },
+        heading: function (text) { return el("h3", { cls: P + "pn-q", text: text }); },
+        table: function (o) {
+          var sorts = L.pnSort || (L.pnSort = {}), S2 = sorts[o.id] || (sorts[o.id] = { col: 0, dir: 1 });
+          var cols = o.cols, k = cols[S2.col] ? cols[S2.col][0] : cols[0][0], num = !!(cols[S2.col] || [])[2];
+          var rows = (o.rows || []).slice().sort(function (a, b) {
+            var x = a[k], y = b[k], c = num ? (+x || 0) - (+y || 0) : String(x == null ? "" : x).localeCompare(String(y == null ? "" : y));
+            return c * S2.dir;
+          });
+          var head = el("tr", null, cols.map(function (c, i) {
+            var on = S2.col === i, up = on && S2.dir > 0;
+            var b = word(c[1] + (on ? (c[2] ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")) : ""), function () {
+              S2.dir = S2.col === i ? -S2.dir : 1; S2.col = i; redrawList();
+              var nb = document.querySelectorAll("#" + P + "pn-" + o.id + " th button")[i]; if (nb) nb.focus();
+            });
+            return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+          }));
+          var body = el("tbody", null, rows.map(function (row) {
+            return el("tr", o.rowAttrs ? o.rowAttrs(row) : null, cols.map(function (c) {
+              var v = o.cell ? o.cell(row, c[0]) : row[c[0]];
+              var td = el("td", { cls: c[2] ? P + "pn-n" : null });
+              if (v != null && typeof v === "object") td.appendChild(v); else td.textContent = v == null ? "" : (c[2] ? fmt(v) : String(v));
+              return td;
+            }));
+          }));
+          var kids = [];
+          if (o.note) kids.push(el("p", { cls: CL.muted + " " + CL.small, text: o.note }));
+          kids.push(el("div", { id: P + "pn-" + o.id, cls: P + "pn-wrap", role: "region", tabindex: "0", "aria-label": o.label },
+            [el("table", { cls: P + "pn-table" }, [el("thead", null, [head]), body])]));
+          return el("div", null, kids);
+        },
+        fold: function (id, summary, kids) {
+          var F = L.pnFold || (L.pnFold = {});
+          var dt = el("details", { cls: P + "pn-fold " + P + "pn-" + id }, [el("summary", { text: summary }), el("div", { cls: P + "pn-fbody" }, kids)]);
+          if (F[id]) dt.open = true;
+          dt.addEventListener("toggle", function () { F[id] = dt.open; });
+          return dt;
+        },
+        open: function (k) { L.panel = k; L.open = null; L.edit = null; redrawList(); focusId(P + "panel-t"); }
+      };
+    }
     /* The side panel for the row L.panel names, or null when none is open or its row has left the List. */
     function listPanel() {
       var L = listState();
@@ -985,7 +1037,7 @@
       if (!r) { L.panel = null; return null; }
       var key = L.panel;
       function close() { L.panel = null; redrawList(); listFocusTitle(key); }
-      var body = el("div", { cls: P + "pbody" }, S.panel.body(r, { el: el, word: word, fmt: fmt, stamp: stamp, close: close }) || []);
+      var body = el("div", { cls: P + "pbody" }, S.panel.body(r, panelHelp(close)) || []);
       // The title's drawer moves into the panel, so nothing the List showed under its title is lost.
       if (S.drawer) {
         var dbox = el("div", { cls: P + "pdrawer" });
@@ -1220,7 +1272,21 @@
         "." + P + "pt{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
         "." + P + "pt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
         "." + P + "pbody{padding:12px 16px 16px}",
-        "." + P + "pdrawer{margin:12px 0 0;padding:10px 0 0;border-top:1px solid var(--border)}"
+        "." + P + "pdrawer{margin:12px 0 0;padding:10px 0 0;border-top:1px solid var(--border)}",
+        // The panel's shared parts (panelHelp): the title, one line of facts, headings, a members table, folds.
+        "." + P + "pn-h{margin:0 0 4px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.25rem,2.1vw,1.7rem);line-height:1.15;color:var(--text-strong);overflow-wrap:anywhere}",
+        "." + P + "pn-meta{margin:0 0 12px}",
+        "." + P + "pn-q{margin:14px 0 4px;font-size:1.02rem;color:var(--text-strong)}",
+        "." + P + "pn-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px}",
+        "." + P + "pn-table{width:100%;border-collapse:collapse;font-size:.86rem}",
+        "." + P + "pn-table th{text-align:left;padding:6px 8px;background:var(--surface-subtle);border-bottom:1px solid var(--border-strong)}",
+        "." + P + "pn-table td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
+        "." + P + "pn-n{text-align:right;font-variant-numeric:tabular-nums}",
+        "." + P + "pn-fold{margin-top:16px}",
+        "." + P + "pn-fold > summary{cursor:pointer;min-height:24px;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;font-size:.9rem}",
+        "." + P + "pn-fold > summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
+        "." + P + "pn-fbody{display:grid;gap:8px;margin-top:10px;min-width:0}",
+        "." + P + "pn-fbody p{margin:0}"
       ]);
       // A tab with no base classes of its own gets the Exhibits tab's: underlined words, muted and small text, the
       // finder's box, the current filter underlined.

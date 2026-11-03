@@ -132,6 +132,10 @@
       ".crr-stat{border:1px solid var(--border);border-radius:8px;padding:9px 13px;background:var(--surface-subtle);min-width:112px}",
       ".crr-stat b{display:block;color:var(--text-strong);font-size:19px;line-height:1.2}",
       ".crr-stat span{color:var(--text-muted);font-size:11.5px}",
+      // The List's side panel: the decision line, its words in a row, its status line.
+      ".crl-pn-dec{margin:10px 0 6px}",
+      ".crl-acts{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}",
+      ".crr-status{margin:6px 0 0;min-height:1.2em;color:var(--text-body)}",
       ".crr-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0;padding:11px;",
       "  border:1px solid var(--border);border-radius:8px;background:var(--surface-subtle)}",
       ".crr-chip{border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);",
@@ -940,6 +944,9 @@
       state: listState, rows: function () { listNamedMemo = null; return listFlat(); }, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.m.rec; }, render: render,
       changed: true,
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03, after the Exhibits mock): a wording's
+      // title opens it beside the table, with its group's wordings, the decision words and the rest folded.
+      panel: { label: function (r) { return "Wording: " + r.m.rec; }, body: listPanelBody },
       // The List norms' step 3: the wordings of one group sit under one band, named and ordered by the group's reference.
       // Read only: in CR the group is the fold unit, so a wording leaves its group through the worklist's split, never a
       // move between bands. A group of one wording sits under "Single wording", the filter's own word.
@@ -1054,6 +1061,60 @@
     } else {
       h.line(name + ": " + (listCols()[h.colIndex(name)].v(r) || "none") + ".");
     }
+  }
+  /* A wording's side panel: what it is, its group's wordings (the members the group folds; another one's name opens its
+     panel), the decision words the Reference drawer carries (Confirm the group, Not a topic), and the rest folded: the
+     credentials and courses it is articulated under, the rung's reason and the official title. The title's drawer
+     moves in with it (the engine). Its words answer in its own status line. */
+  function listPanelBody(r, h) {
+    var g = r.g, m = r.m, rung = RUNGS[g.rung] || RUNGS[5], d = state.decisions[g.key], L = listState();
+    var notes = L.pnNote || (L.pnNote = {}), out = [];
+    out.push(h.title(m.rec));
+    out.push(h.meta([fmt(m.rows) + (m.rows === 1 ? " articulation" : " articulations"), fmt(m.colleges_n) + (m.colleges_n === 1 ? " college" : " colleges"),
+      unitRange([m]), "Reference: " + refOf(g), decisionOf(g) || "No decision yet", "Rung: " + rung.label]));
+    out.push(h.heading("Its group"));
+    var added = addedTo(g.key), ex = (d && d.excluded) || [];
+    var mem = g.members.map(function (x) {
+      return { rec: x.rec, rows: x.rows, colleges: x.colleges_n, units: unitRange([x]),
+        state: x.rec === m.rec ? "This wording" : ex.indexOf(x.rec) > -1 ? "Split out" : "" };
+    }).concat(added.map(function (rec) { return { rec: rec, rows: null, colleges: null, units: "", state: "Added to the group" }; }));
+    out.push(h.table({ id: "members", label: "The wordings of the group " + refOf(g),
+      note: fmt(mem.length) + (mem.length === 1 ? " wording resolves" : " wordings resolve") + " to " + refOf(g)
+        + (g.rows ? ", " + fmt(g.rows) + (g.rows === 1 ? " articulation at " : " articulations at ") + fmt(g.colleges) + (g.colleges === 1 ? " college" : " colleges") : "")
+        + ". Press a header to sort" + (mem.length > 1 ? "; a wording's name opens its panel." : "."),
+      cols: [["rec", "Wording"], ["rows", "Articulations", true], ["colleges", "Colleges", true], ["state", "Note"]],
+      rows: mem,
+      cell: function (row, k) {
+        if (k !== "rec") return row[k];
+        if (row.rec === m.rec || row.state === "Added to the group") return row.rec;
+        return h.word(row.rec, function () { h.open(row.rec); }, { "aria-label": row.rec + ", open its panel" });
+      } }));
+    out.push(h.el("p", { cls: "crl-pn-dec", text: d && d.decision !== "cleared" ? "Decision: " + (DECISION_WORDS[d.decision] || d.decision)
+      + (d.updated_by ? ", by " + d.updated_by : "") + (d.updated_at ? " " + h.stamp(d.updated_at) : "") + "." : "No decision recorded yet." }));
+    var status = h.el("p", { cls: "crr-status", role: "status", "aria-live": "polite", text: notes[r.ut] || "" });
+    function decide(decision, words) {
+      return function () {
+        notes[r.ut] = "Recording " + words.toLowerCase() + " for " + refOf(g) + "…"; status.textContent = notes[r.ut];
+        listDecide(g, decision).then(function () {
+          markChanged(g); notes[r.ut] = "Recorded: " + words.toLowerCase() + ", " + refOf(g) + ".";
+        }).catch(function (e) { notes[r.ut] = "It did not save (" + saveWords(e) + "). Nothing changed."; })
+          .then(function () { LIST_ENGINE.redraw(); var n = document.getElementById("crl-pn-" + decision); if (n) n.focus(); });
+      };
+    }
+    out.push(h.el("div", { cls: "crl-acts" }, [h.word("Confirm the group", decide("confirmed", "Confirmed"), { id: "crl-pn-confirmed" }),
+      h.word("Not a topic", decide("not_a_topic", "Not a topic"), { id: "crl-pn-not_a_topic" }),
+      h.word("Open it in the worklist", function () { state.view = "worklist"; state.filter = "all"; state.q = m.rec; state.open[g.key] = true; render(); })]));
+    out.push(status);
+    var more = [];
+    more.push(h.el("p", null, ["Rung: " + rung.label + ". " + (g.rung_why || rung.why)]));
+    if (g.official_id) more.push(h.el("p", null, [(g.official_applied ? "Named by its " : "An official title reaches it but was not applied: ")
+      + (g.official_system || "") + " " + g.official_id + (g.official_title ? ", " + g.official_title : "") + "."]));
+    var screens = Object.keys(m.screens || {}).filter(function (k) { return m.screens[k]; });
+    if (screens.length) more.push(h.el("p", null, ["Its words mark it as " + screens.join(", ") + ", so it never merges with a wording that differs on that."]));
+    more.push(h.el("p", null, ["Credentials: " + ((m.credentials || []).join("; ") || "none named") + "."]));
+    more.push(h.el("p", null, ["Courses: " + ((m.courses || []).join("; ") || "no course identity reaches it") + "."]));
+    out.push(h.fold("more", "More about this wording: its rung, credentials and courses", more));
+    return out;
   }
   function listApi() {
     if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
