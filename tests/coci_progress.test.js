@@ -7,7 +7,8 @@
 //   - Needs attention: needs repair, then the row's issues, an Open SkyView each; the run log's next step;
 //   - the three questions count cards free of one auditor tag over the one denominator;
 //   - a failed read says Could not be read, never a zero; without the renderer the view says so;
-//   - the builder writes the tags the page reads.
+//   - a person's confirmation (Sheet 160) is a row beside ready, never the headline; Could not be read without it;
+//   - the builder writes the tags the page reads, and the confirmed count from the curation overlay.
 //
 // Run from repo root: `npm test` (or `node tests/coci_progress.test.js`).
 const fs = require("fs");
@@ -32,7 +33,7 @@ const COMMONS = {
       { n: 0, words: "unit anomalies", owner: "a curator" },
       { n: 5750, words: "blank descriptions", owner: "the colleges' COCI entries" }],
     procedures: [{ n: 16478, words: "identities and 33,418 stand-alone courses on the canvas" }],
-    facts: { total: 27581, ready: 3205, needs_review: 17036, needs_repair: 7335, not_ready: 5,
+    facts: { total: 27581, ready: 3205, needs_review: 17036, needs_repair: 7335, not_ready: 5, confirmed: 812, confirmed_ready: 126,
       tags: { blank_description: 5750, discipline_title_mismatch: 1116, blank_discipline: 89,
         seed_untouched_discipline: 14523, top_discipline_disagreement: 1159, unit_anomaly: 4179 } } }],
 };
@@ -101,6 +102,8 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   check("TOP agrees", /26,422 of 27,581$/.test(rowText("TOP agrees")));
   check("units agree", /23,402 of 27,581$/.test(rowText("Units agree")));
   check("ready closes the third question", /3,205 of 27,581$/.test(rowText("Ready:")));
+  check("a person's confirmation is counted beside ready (Sheet 160)", /812 of 27,581$/.test(rowText("Confirmed by a person in SkyView")));
+  check("the headline stays the auditor's ready", /3,205 of 27,581 common-course cards/.test(t) && !/812 of 27,581 common-course/.test(t));
   check("the foot names the denominator", /Each count is of the 27,581 common-course cards the auditor scores\./.test(t));
   check("the List is one word away", !!btn(doc, /^Open the Courses List$/));
   btn(doc, /^Open the Courses List$/).click();
@@ -122,6 +125,11 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   await sleep(20);
   check("a row without the tags says Could not be read on the questions",
     /Carries a catalog descriptionCould not be read/.test(txt(w.document.querySelector("#cplcoci-progress"))));
+  const noConf = JSON.parse(JSON.stringify(COMMONS)); delete noConf.rows[1].facts.confirmed;
+  w = makeDom({ hash: "#coci-lookup/progress", commons: noConf });
+  await sleep(20);
+  check("a row without the confirmed count says Could not be read there",
+    /Confirmed by a person in SkyViewCould not be read/.test(txt(w.document.querySelector("#cplcoci-progress"))));
   w = makeDom({ hash: "#coci-lookup/progress", noPage: true });
   await sleep(20);
   check("without the renderer the view says so", /commons_page\.js\) did not load/.test(txt(w.document.querySelector("#cplcoci-progress"))));
@@ -129,6 +137,8 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   // ── static ──
   check("the builder writes the tags the page reads", ["blank_description", "discipline_title_mismatch", "blank_discipline",
     "seed_untouched_discipline", "top_discipline_disagreement", "unit_anomaly"].every((k) => BUILDER.indexOf('"' + k + '"') >= 0) && /"tags": \{k: tags\.get\(k\)/.test(BUILDER));
+  check("the builder counts a person's SkyView saves, never a cohort's", /def confirmed_cards/.test(BUILDER)
+    && /kb\/coci_curation\.json/.test(BUILDER) && /not is_cohort\(v\.get\("reviewed_by"\)\)/.test(BUILDER) && /"confirmed": conf/.test(BUILDER));
   check("no raw hex in the view", !/#[0-9a-fA-F]{3,6}\b/.test(SRC.slice(SRC.indexOf("── Progress: the Common Course"), SRC.indexOf("function mkSelect"))));
 
   let fail = 0;

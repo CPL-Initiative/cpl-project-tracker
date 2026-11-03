@@ -544,7 +544,8 @@
    * It reads what the Commons card reads: kb/status/commons.json, its row keyed "course", and the run log the row
    * names. Nothing is counted twice, so the two pages cannot disagree (Sam's S490 to-do: "the numbers on all tabs on
    * the commons match the commons summaries").
-   * Complete is the auditor's ready: a common-course card scoring 0.85 or better (kb/_row_audit.py); the one
+   * Complete is the auditor's ready: a common-course card scoring 0.85 or better (kb/_row_audit.py), with a person's
+ * confirmation counted beside it as an attribute (Sheet 160); the one
    * denominator is the auditor's cards. The three questions fit a course: what it is called, where it sits, and whether
    * its courses agree. Each row is the cards free of one auditor tag (a card carries a tag once). A count the reads
    * could not supply says "Could not be read", never a zero. */
@@ -624,7 +625,10 @@
           r("Its discipline confirmed by a seed or a curator", free("seed_untouched_discipline")),
           r("TOP agrees with its discipline", free("top_discipline_disagreement"))] },
         { q: "Do its courses agree?", rows: [r("Units agree, or the range is stated", free("unit_anomaly")),
-          { label: "Ready: scores 0.85 or better, so faculty can review it", n: typeof F.ready === "number" ? F.ready : null, href: sky }] }
+          { label: "Ready: scores 0.85 or better, so faculty can review it", n: typeof F.ready === "number" ? F.ready : null, href: sky },
+          // Confirmed by a person (Sam, Sheet 160, 2026-11-03): an attribute a card gains when a person saves it in
+          // SkyView, counted beside ready and never in place of it. The builder reads the curation overlay.
+          { label: "Confirmed by a person in SkyView", n: typeof F.confirmed === "number" ? F.confirmed : null, href: sky }] }
       ],
       of: total, ofWords: "common-course cards the auditor scores",
       foot: "The reference is staging: AI-assisted, not yet faculty-published."

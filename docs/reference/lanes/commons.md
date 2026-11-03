@@ -91,10 +91,11 @@ program) and the Common Course Reference in COCI Lookup (`#coci-lookup/progress`
 cards). Guards `tests/exhibits_progress_page.test.js`, `cr_progress`, `csr_progress`, `program_requirements_page`,
 `coci_progress`; a11y targets `<view>-progress` and `-dark`. Per-view detail: `docs/commons_lessons.md` (*Moved from the
 lane, 2026-11-03*). **Complete is the auditor's *ready*** (Sam, Open Asks Sheet 160, *keep*, 12:44Z 2026-11-03): a common course counts
-before a person confirms it; a confirmation is an attribute the reference gains, counted beside it once it exists. His words are in
-`docs/commons_lessons.md` (*Sheet 160 answered*).
+before a person confirms it; a confirmation is an attribute the reference gains, counted beside it. His words are in
+`docs/commons_lessons.md` (*Sheet 160 answered*). **Confirmed by a person** (S564, #2726): `facts.confirmed`, cards whose save in
+`kb/coci_curation.json` names a person (812 of 27,581), a row after *Ready*; detail in the lessons (*The confirmed count*).
 
-**NEXT:** a *Confirmed by a person* count beside *ready* on the Course page and card, from SkyView's curator saves (Sheet 160); the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
+**NEXT:** propose the lane's next build (a confirmed count for the other four references). The to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
 that once answered 500 (check it first when a Progress card reads *Could not be read*).
 The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
@@ -114,7 +115,7 @@ bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one 
 **The Exhibits tiles carry the Commons' Exhibit row** (Sam, 2026-11-01: *"capture everything from 1st into Exhibits view"*): its pair, tests, known issues, procedures, the Decision Sheet Library and the last run, read from `kb/status/commons.json` and its run log, never copied (`exhibits.js`, *The Commons' row, carried on the Credentials view's tiles*); the row's `facts` feed the Progress view. Done; S562 found it built.
 
 
-**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.
+**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. All three steps have landed (history in the lessons, *The List norms, steps 1 to 3*).
 
 **LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
 live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the

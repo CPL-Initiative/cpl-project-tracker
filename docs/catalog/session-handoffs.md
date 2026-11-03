@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-531 document(s).
+532 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 565 | [Session 565 handoff: a Confirmed by a person count beside ready on the Course page and card](../session_565_handoff.md) | 2026-11-03 |
 | 564 | [Session 564 handoff: the roadmap archive split into a part 7; nothing new from Sam or the team](../session_564_handoff.md) | 2026-11-03 |
 | 563 | [Session 563 handoff: three lanes back under budget; the Commons' Exhibit-tiles item was already built](../session_563_handoff.md) | 2026-11-03 |
 | 562 | [Session 562 handoff: every Commons pair checked; Subjects and Exhibits now agree with their cards](../session_562_handoff.md) | 2026-11-03 |

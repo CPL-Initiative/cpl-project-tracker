@@ -1,20 +1,24 @@
 {
   "schema": 1,
-  "session": 559,
-  "moniker": "SkyAndromeda",
+  "session": 564,
+  "moniker": "SkyHoag",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_560_handoff.md",
+  "handoff": "docs/session_565_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-03T08:36:12Z",
+  "written_at": "2026-11-03T13:28:43Z",
   "project": "course",
   "next_step": {
-    "title": "Make the Commons figures agree on every tab",
-    "text": "Every reference now draws the opened page; the lane's to-do is each tab's figures agreeing with the Commons summary, or the difference named on both."
+    "title": "Choose the lane's next build",
+    "text": "The confirmed count is built for the Course page; the same count for the other four references is the natural next build, for Sam to choose."
   },
   "changes": [
+    {
+      "at": "2026-11-03T13:28:16Z",
+      "text": "The Course page and the Commons card count cards a person has confirmed in SkyView beside ready: 812 of 27,581 (#2726)."
+    },
     {
       "at": "2026-11-03T08:45:00Z",
       "text": "COCI Lookup's Progress view draws the Common Course Reference's opened page from the Commons' own row: 3,205 of 27,581 cards ready (#2720)."

@@ -577,3 +577,17 @@ process of using them, reveal opportunities and gaps and misalignments to correc
 enough. Hopefully, in the process of using imperfect CCRs, we can add lessons, rules, principles that will sharpen and
 strengthen our AI routines designed to create and manage the CCRs and all our common references."* The Course page keeps
 the auditor's *ready* as complete; the lane's NEXT is a confirmed count beside it.
+
+## The confirmed count (S564 SkyHoag, 2026-11-03)
+
+Built Sheet 160's attribute: *Confirmed by a person in SkyView*, 812 of the auditor's 27,581 cards (#2726). Three things
+learned on the way. The auditor's cards are not identities: an M-ID that is also a merge target is scored twice (kinds
+`C` and `X`), so the count is taken in cards to share the page's one denominator (542 identities). SkyView's explicit
+Verify (`validated_at`, Sam's 2026-06-10 *"it shouldn't change to Verified until I verify it"*) has never been pressed,
+so the count reads person-made saves instead (a title, a discipline, a cross-listing, a merge). And
+`kb/coci_curation.json` keeps one reviewer a card, the latest, so a cohort save after a person's hides the person: the
+count is a floor until the overlay keeps a reviewer a field.
+
+## The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)
+
+Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.

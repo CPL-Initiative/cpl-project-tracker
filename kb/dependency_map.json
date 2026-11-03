@@ -5504,7 +5504,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 681,
+     "line": 685,
      "tabs": [
       "coci-lookup"
      ]
@@ -6030,7 +6030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 568,
+     "line": 569,
      "tabs": [
       "coci-lookup"
      ]
@@ -10562,6 +10562,13 @@
      "line": 100
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 303
+    },
+    {
      "id": "script:kb/_build_esl_fold_preview.py",
      "kind": "script",
      "direction": "read",
@@ -12456,7 +12463,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 558
     }
    ],
    "served": false,
@@ -12537,7 +12544,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 321
+     "line": 340
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13097,7 +13104,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 423
+     "line": 442
     }
    ],
    "producers": [
@@ -13154,7 +13161,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 424
+     "line": 443
     }
    ],
    "served": true,
@@ -13385,7 +13392,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 402
+     "line": 421
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14576,7 +14583,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 518
+     "line": 537
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -15543,7 +15550,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 324
+     "line": 343
     }
    ],
    "served": false,
@@ -17098,7 +17105,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 272
+     "line": 278
     }
    ],
    "served": true,
@@ -17111,7 +17118,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 353
+     "line": 372
     }
    ],
    "served": true,
@@ -17177,7 +17184,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 476
+     "line": 495
     }
    ],
    "served": true,
@@ -19512,7 +19519,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 556
     }
    ],
    "served": false,
