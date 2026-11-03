@@ -1,24 +1,57 @@
 ---
-title: "CER redesign handoff: the 11-02 and 11-03 panel rows moved, two calls on Sheet 161 (SkyCheckerberry)"
+title: "CER redesign handoff: Sheet 161 applied (SkyBlackberry)"
 date: 2026-11-03
-session: CER redesign build, side session beside S564 (SkyCheckerberry)
+session: CER redesign build, side session (SkyBlackberry)
 tags: [handoff, cer, exhibits, exhibit-canonicalization, kb-curation, decision-sheet]
 status: current
 ---
 
-# You are SkyBlackberry, the Exhibits tab's next build
+# You are SkyElderberry, the Exhibits tab's next build
 
-SkyCheckerberry ran on 2026-11-03 from 15:06Z to about 15:30Z, started from Sam's phone with SkyInkberry's older
-greeting line (it named SkyTeaberry). The handoff on main named SkyCheckerberry, so this session took that name. No
-other session was live on these files: the CSM Workspace session (#2729) had finished, and the funding session sat
-idle. This is a **light checkpoint**. The cer-procedures lane gained one NEEDS SAM marker, and the run wrote one data
-receipt (Rule 10). This file is the handoff; the CPL queue's `docs/session_<N>_handoff.md` stays the routine's.
-Skipped, each with its reason:
-- `README.md`, `kb/README.md`, the pipeline view, a KB note: no change to the KB, the surfaces or the pipeline.
-- `kb/status/program-requirements.json`: that line was not worked.
+SkyBlackberry ran on 2026-11-03 from about 16:00Z to 16:15Z and applied Sam's two Sheet 161 answers. This is a
+**light checkpoint**: no lane changed state beyond one NEXT line, and the run's one data write is recorded in the
+existing receipt. Skipped: `README.md`, `kb/README.md`, the pipeline view, a KB note, `kb/status/*.json` (no change to
+the KB build, the surfaces or the pipeline). This file is the handoff; the CPL queue's `docs/session_<N>_handoff.md`
+stays the routine's (latest 565).
 
-`kb/status/exhibit.json` was written by hand, at indent 1. `--check --project exhibit` passes only when `handoff`
-names a `docs/session_<N>_handoff.md`, so it names the routine's latest (565) and session 564.
+## What shipped (SkyBlackberry)
+
+- **Sheet 161 applied.** A fresh read at 16:07Z matched the four rows recorded in
+  `kb/receipts/credential_panel_move_2026-11-03_skycheckerberry.json`. One statement deleted three rows (Sam's two
+  ASE issuer rows on Engine Performance 1 and 2, the bulk run's California Community Colleges row on Metal Building
+  Erection 1) and moved Sam's Iron Workers row onto Metal Building Erection 1. The receipt's `then_planned` is now
+  `then_applied`, with the reason the UPDATE's not-exists guard was dropped (one statement reads one snapshot).
+- **`kb/credentials.json`:** Engine Performance 1 and 2 lost the ASE record and name California Community Colleges,
+  as Automotive Electrical/Electronics did on 10-31; Metal Building Erection 1 names the Iron Workers, Sam's review.
+- **Checked, nothing to do:** no fold after 11-03 (`kb/unclassified_fold/`), and `kb_curation` holds no
+  `cer_procedure_*` row.
+
+## Open work, in order
+
+1. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
+   and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
+   compare values before you call a leftover row redundant.
+2. **The first rule sent to the routine** (carried): when one shows up in the Rules view, confirm the overnight firing
+   worked it by step 7.
+3. **Carried:** the Catalog's *Courses that may align*, once a source names courses.
+4. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list (SkySnowberry).
+
+## Lessons to honor
+
+- A delete and a guarded move of a row onto the deleted row's key cannot share one statement with a `not exists`
+  guard: a data-modifying CTE reads one snapshot, so the guard still sees the row being deleted. Drop the guard only
+  when the same statement deletes the target, and say so in the receipt.
+- The repo's Supabase guard refuses a read that contains `replace`. Spell out the keys instead.
+- The cer-procedures lane sits at its 20,000-byte budget (19,900 now). Move a ruled paragraph to the lessons doc before
+  you add one.
+
+## Let go
+
+At sign-off this session holds no check-in and no artifact watch; its PR watch drops when the PR merges.
+
+---
+
+# SkyCheckerberry's record (earlier the same day)
 
 ## What shipped
 
@@ -38,32 +71,3 @@ names a `docs/session_<N>_handoff.md`, so it names the routine's latest (565) an
   The builder and coverage test are in CPLBrain, with a premise and fixture for each card. The test passes 32 of 32.
 - **Nothing sent to the routine.** `kb_curation` held no `cer_procedure_*` row at 15:12Z.
 
-## Read first
-
-`docs/reference/lanes/cer-procedures.md` (NEXT and its NEEDS SAM), the SkyCheckerberry section of
-`docs/cer_v2_redesign_lessons.md`, then the receipt.
-
-## Open work, in order
-
-1. **Sheet 161 is answered** (15:14Z, his own call): *drop* and *ironworkers*. If the receipt's `then_planned`
-   still reads NOT APPLIED, the delete waited on Sam's confirmation of the statement. Read the four rows fresh, run its
-   `sql`, rename `then_planned` to `then_applied` with the time, and drop ASE from the Engine Performance 1 and 2
-   records in `kb/credentials.json`, as SkyHuckleberry did for A6.
-2. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
-   and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
-   compare values before you call a leftover row redundant.
-3. **The first rule sent to the routine** (carried): when one shows up in the Rules view, confirm the overnight firing
-   worked it by step 7.
-4. **Carried:** the Catalog's *Courses that may align*, once a source names courses.
-5. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list (SkySnowberry).
-
-## Lessons to honor
-
-- The repo's Supabase guard refuses a read that contains `replace`. Spell out the keys instead.
-- The cer-procedures lane sits at its 20,000-byte budget. Move a ruled paragraph to the lessons doc before you add one.
-- A quiet night writes no fold receipt (SkySnowberry); the 11-02 and 11-03 folds did write one.
-
-## Let go
-
-At sign-off this session holds no PR watch once its PRs merge, no check-in, and no artifact watch. The Sheet 161
-publish armed a watch that this session leaves to lapse; the next build reads the replies.
