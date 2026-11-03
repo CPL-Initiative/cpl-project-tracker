@@ -56,7 +56,10 @@ CR, Subjects, Courses and Programs Lists, drawn by one renderer.
 **The panel's shared parts are the engine's** (`h.title`, `h.meta`, `h.heading`, `h.table`, `h.fold`, `h.open` in
 `commons_list.js`), so every List's panel reads alike: one line of what the row is, its members in a sortable table, and
 folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03); Exhibits' moves
-onto them when next touched.
+onto them when next touched. **The line is the engine's too** (`api.line`, with `CPL_COMMONS_LIST.readCommons` reading
+`kb/status/commons.json` once a visit and `lineItems` shortening a row): Exhibits' line and CR's are drawn by it, each
+count opening the List's own filter where it has one. Next: the line, the cards and the panel over Subjects, Courses
+and Programs.
 
 ## What every List shares
 

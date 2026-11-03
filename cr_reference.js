@@ -961,6 +961,7 @@
       suggest: { get: listSuggestOf, verb: "Confirm the group", key: function (r) { return r.g.key; }, accept: listSuggestAccept,
         label: function (r) { return "Confirm the group of " + r.m.rec + " as " + refOf(r.g); } },
       head: function (wrap, api) {
+        listLine(wrap, api);
         if (!signedIn()) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "You are not signed in. The list is readable; "
           + "decisions show and save once you unlock with the team phrase or sign in with a reviewer link." }));
         else if (state.decisionsStale) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "Could not read the decisions table, so the "
@@ -1061,6 +1062,44 @@
     } else {
       h.line(name + ": " + (listCols()[h.colIndex(name)].v(r) || "none") + ".");
     }
+  }
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits' first,
+     #2736): one line of the CR row in kb/status/commons.json, each count opening the List's own filter where it has one,
+     and the worklist's measured stance folded behind one word for the visit. The engine draws the line and reads the
+     Commons file (CPL_COMMONS_LIST.readCommons), once a visit. */
+  function listLine(wrap, api) {
+    var L = listState(), CLM = window.CPL_COMMONS_LIST;
+    // Read once a visit (state.ls resets each visit), fresh: a failed read says so and is not retried until the next visit.
+    if (!L.cmRead && !L.cmLoading && CLM && CLM.readCommons) {
+      L.cmLoading = true;
+      CLM.readCommons(true).then(function (d) {
+        L.cm = CLM.commonsRow(d, "cr"); L.cmErr = L.cm ? null : "kb/status/commons.json has no cr row";
+      }, function (e) { L.cmErr = String(e && e.message || e); }).then(function () {
+        L.cmLoading = false; L.cmRead = true; if (state.view === "list") render();
+      });
+    }
+    var filters = { todo: 1, suggested: 1, done: 1, open: 1, names: 1, solo: 1, flagged: 1, changed: 1 };
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "crl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
+      control: function (open, text, li, w) {
+        var m = /^#cr-reference\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
+        if (open === "#cr-reference/list" || f === "list") return L.f ? api.word(text, function () { L.f = ""; render(); }, { cls: w + " " + li }) : null;
+        if (f && filters[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = null; render(); }, { cls: w + " " + li });
+        if (open) return api.el("a", { href: open, cls: li, text: text });
+        return null;
+      } }));
+    var s2 = state.stats || {}, todoN = state.groups.filter(function (g) { return needsDecision(g) && !decidedState(g); }).length;
+    var decidedN = Object.keys(state.decisions).filter(function (k) { return state.decisions[k] && state.decisions[k].decision !== "cleared"; }).length;
+    var fold = api.el("div", { cls: "crl-fold", id: "crl-fold" });
+    if (folded) fold.hidden = true;
+    var cards = api.el("div", { cls: "crr-stats" });
+    cards.innerHTML = [statCard(fmt(s2.distinct_strings), "wordings in the corpus"), statCard(fmt(todoN), "waiting on a decision"),
+      statCard(fmt(decidedN), "decided so far"),
+      statCard(s2.pct_rows_in_top_50_strings != null ? s2.pct_rows_in_top_50_strings + "%" : "Not read", "of all articulations sit in the top 50"),
+      statCard(s2.auto_strings_collapsed != null ? fmt(s2.auto_strings_collapsed) : "Not read", "collapsed automatically")].join("");
+    fold.appendChild(cards);
+    wrap.appendChild(fold);
   }
   /* A wording's side panel: what it is, its group's wordings (the members the group folds; another one's name opens its
      panel), the decision words the Reference drawer carries (Confirm the group, Not a topic), and the rest folded: the

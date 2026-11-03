@@ -86,6 +86,13 @@
 //                      [[key, header, numeric]], rows, cell(row, key) -> text or node, note }; its sort lasts the visit in
 //                      L.pnSort[id]), h.fold(id, summary, kids) (a fold that stays open or shut as the reader left it,
 //                      L.pnFold[id]) and h.open(key) (show another row's panel). L.panel holds the open row's key.
+// The line (api.line, the List norms' norm 1; Sam, 2026-11-03: "incorporating the list view below the action/metric cards
+// and make that top level collapsible while keeping the one-line action/metric links like we do elsewhere"): one line of
+// the reference's Commons row over its List, each count a control where the tab says where it opens, and the word that
+// folds the tab's cards for the visit. o = { row, error, folded, onToggle(), control(open, text, liCls, wCls) -> node or null,
+// foldId, cls }. CPL_COMMONS_LIST.readCommons(fresh) reads kb/status/commons.json once a visit for every List, and
+// lineItems(row) turns a row into the line's counts: the pair's count with "of N" and its words up to the first
+// parenthesis or semicolon, the confirmed count, then each known issue. Exhibits drew the first line (#2736).
 //   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
 //                      file): its word shows no count, never a 0 a reader takes for empty (S343).
 // The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
@@ -1286,7 +1293,12 @@
         "." + P + "pn-fold > summary{cursor:pointer;min-height:24px;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;font-size:.9rem}",
         "." + P + "pn-fold > summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
         "." + P + "pn-fbody{display:grid;gap:8px;margin-top:10px;min-width:0}",
-        "." + P + "pn-fbody p{margin:0}"
+        "." + P + "pn-fbody p{margin:0}",
+        // The line over the List (api.line) and the fold of the tab's cards.
+        "." + P + "linebar{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;justify-content:space-between;margin:12px 0 10px}",
+        "." + P + "line{margin:0;display:flex;flex-wrap:wrap;gap:4px 0;align-items:baseline;color:var(--text-strong)}",
+        "." + P + "sep{color:var(--text-muted);margin:0 .55em}",
+        "." + P + "fold[hidden]{display:none}"
       ]);
       // A tab with no base classes of its own gets the Exhibits tab's: underlined words, muted and small text, the
       // finder's box, the current filter underlined.
@@ -1303,8 +1315,36 @@
       document.head.appendChild(el("style", { id: P + "css", text: rules.join("\n") }));
     }
 
+    /* The line of the reference's counts and the word that folds its cards (see the header). The tab's own class names
+       win, so a tab whose line came first keeps its look. */
+    function line(o) {
+      var C = Object.assign({ bar: P + "linebar", line: P + "line", sep: P + "sep", li: P + "li", w: CL.w, fold: P + "fold" }, o.cls || {});
+      var foldId = o.foldId || P + "fold", items = [];
+      if (o.row) {
+        lineItems(o.row).forEach(function (it) {
+          if (it.n == null) { items.push(el("span", { text: "Could not be read: " + it.words })); return; }
+          var text = fmt(it.n) + " " + it.words;
+          items.push((o.control && o.control(it.open, text, C.li, C.w)) || el("span", { text: text }));
+        });
+      } else {
+        // error: null while the read is out; "" or its words once it failed.
+        items.push(el("span", { text: o.error != null ? "The Commons' figures could not be read" + (o.error ? " (" + o.error + ")" : "") : "Reading the Commons' figures" }));
+      }
+      var p = el("p", { cls: C.line });
+      items.forEach(function (n, k) {
+        if (k) p.appendChild(el("span", { cls: C.sep, "aria-hidden": "true", text: "\u00b7" }));
+        p.appendChild(n);
+      });
+      var tid = foldId + "-w";
+      var tog = word(o.folded ? "Show the summary" : "Hide the summary", function () {
+        if (o.onToggle) o.onToggle();
+        var b = document.getElementById(tid); if (b) b.focus();
+      }, { cls: C.w + " " + foldId + "-w", id: tid, "aria-expanded": o.folded ? "false" : "true", "aria-controls": foldId });
+      return el("div", { cls: C.bar, role: "group", "aria-label": "The reference at a glance" }, [p, tog]);
+    }
+
     var api = {
-      render: renderList, redraw: redrawList, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
+      render: renderList, redraw: redrawList, line: line, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
@@ -1315,5 +1355,31 @@
     return api;
   }
 
-  window.CPL_COMMONS_LIST = { create: create, LIMIT: LIST_LIMIT };
+  /* The Commons' figures for every List: kb/status/commons.json, read once a visit (fresh reads it again). A failed read
+     rejects with its words, and the line says it could not be read (S343), never a zero. */
+  var COMMONS_URL = "kb/status/commons.json", commonsRead = null;
+  function readCommons(fresh) {
+    if (commonsRead && !fresh) return commonsRead;
+    commonsRead = fetch(COMMONS_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(COMMONS_URL + " answered " + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (!d || !Array.isArray(d.rows)) throw new Error(COMMONS_URL + " is not the Commons' status file");
+      return d;
+    });
+    commonsRead.catch(function () { commonsRead = null; });
+    return commonsRead;
+  }
+  function commonsRow(d, key) { return (d && Array.isArray(d.rows) ? d.rows : []).filter(function (r) { return r && r.key === key; })[0] || null; }
+  /* A row's line: [{n, words, open}], the pair's count of its whole, the confirmed count, then each known issue. */
+  function lineItems(row) {
+    function fmt(n) { return Number(n).toLocaleString("en-US"); }
+    function cut(w, re) { var s = String(w || ""), m = re.exec(s); return (m ? s.slice(0, m.index) : s).trim(); }
+    var out = [], pairs = Array.isArray(row && row.pair) ? row.pair : [], p = pairs[0], c = pairs[1];
+    if (p) out.push({ n: p.n, open: p.open, words: (p.of != null ? "of " + fmt(p.of) + " " : "") + cut(p.words, /\s*[(;]/) });
+    if (c) out.push({ n: c.n, open: c.open, words: cut(c.words, /\s*[,(;]/) });
+    (Array.isArray(row && row.issues) ? row.issues : []).forEach(function (i) { out.push({ n: i.n, open: i.open, words: i.words }); });
+    return out;
+  }
+  window.CPL_COMMONS_LIST = { create: create, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
 })();
