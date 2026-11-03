@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "session": 565,
-  "moniker": "SkyTrue",
+  "moniker": "SkyMulberry",
   "run": "the Exhibits build (CER redesign side lane)",
   "decider": "Sam",
   "handoff": "docs/session_565_handoff.md",
@@ -119,13 +119,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-03T20:17:53Z",
+  "written_at": "2026-11-03T22:50:36Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Carry the edits into the side panel",
-    "text": "The panel's issuer and training-site edits let the Credentials view retire; after each of Sam's runs through Another look, move the panel rows the fold names."
+    "title": "The other Lists take the line, the cards and the panel",
+    "text": "Subjects, then Programs, then Courses, one PR each, drawn by the List engine's line and panel parts; Exhibits' panel moves onto those parts too. After each of Sam's runs through Another look, move the panel rows the fold names."
   },
   "changes": [
+    {
+      "at": "2026-11-03T22:42:00Z",
+      "text": "The Credentials view retired into the List: the side panel carries its credit lines, each college's own MAP exhibit and Request Quick Adopt, and #exhibits/credentials opens the List (#2741)."
+    },
+    {
+      "at": "2026-11-03T22:14:00Z",
+      "text": "The side panel edits a credential's issuer and training sites, each site for a college or any college, and the List's row Edit keeps a kept site's college (#2740)."
+    },
     {
       "at": "2026-11-03T20:20:00Z",
       "text": "A title in the Exhibits List opens a side panel with the MAP exhibits folded under it and the rest folded below, and the List gains a Students column (#2738)."

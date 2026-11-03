@@ -13872,11 +13872,11 @@
       "handoff",
       "cer",
       "exhibits",
-      "exhibit-canonicalization",
-      "kb-curation",
+      "commons-list",
+      "cr-reference",
       "map-links"
      ],
-     "title": "CER redesign handoff: the List becomes the workspace, the Exhibits side panel (SkyTrue)",
+     "title": "CER redesign handoff: the Credentials view retires into the List, the CR List's panel and line (SkyMulberry)",
      "type": null,
      "updated": ""
     },
