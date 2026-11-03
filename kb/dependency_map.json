@@ -664,7 +664,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4634,
+     "line": 4644,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1003,7 +1003,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6523,
+     "line": 6533,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1327,7 +1327,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4125,
+     "line": 4135,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1677,6 +1677,19 @@
      "line": 770,
      "tabs": [
       "commons"
+     ]
+    },
+    {
+     "id": "module:cpl_funding.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 15478,
+     "tabs": [
+      "college-briefing",
+      "cpl-pathways",
+      "csm-workspace",
+      "implementation-funding"
      ]
     },
     {
@@ -2051,7 +2064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4785,
+     "line": 4795,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -2243,7 +2256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4113,
+     "line": 4123,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -3402,7 +3415,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6825,
+     "line": 6835,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -4448,7 +4461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9392,
+     "line": 9402,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5875,7 +5888,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 101
+     "line": 111
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
@@ -6267,7 +6280,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 102
+     "line": 112
     }
    ],
    "served": true,
@@ -6291,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18684,
+     "line": 18867,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6335,7 +6348,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 100
+     "line": 110
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -6386,7 +6399,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18611,
+     "line": 18794,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6438,7 +6451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18596,
+     "line": 18779,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7763,7 +7776,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9516,
+     "line": 9526,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -19772,7 +19785,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5469,
+     "line": 5479,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23401,7 +23414,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 6214,
+     "line": 6224,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24234,7 +24247,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5769,
+     "line": 5779,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24819,7 +24832,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5651,
+     "line": 5661,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24857,7 +24870,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6407,
+     "line": 6417,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24875,7 +24888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5716,
+     "line": 5726,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24888,7 +24901,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5850,
+     "line": 5860,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24913,7 +24926,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7278,
+     "line": 7288,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24926,7 +24939,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7306,
+     "line": 7316,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24957,7 +24970,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5833,
+     "line": 5843,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24982,7 +24995,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7394,
+     "line": 7404,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24995,7 +25008,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7515,
+     "line": 7525,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -25898,7 +25911,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13696,
+     "line": 13706,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -25969,7 +25982,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5712,
+     "line": 5722,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26023,7 +26036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5713,
+     "line": 5723,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26066,7 +26079,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13672,
+     "line": 13682,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26385,7 +26398,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13651,
+     "line": 13661,
      "tabs": [
       "college-briefing",
       "cpl-pathways",

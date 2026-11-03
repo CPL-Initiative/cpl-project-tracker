@@ -61,14 +61,24 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
 .memo{background:var(--surface-opaque); border:1px solid var(--border); border-radius:8px;
   padding:clamp(20px,5vw,44px) clamp(16px,5vw,52px); color:var(--text-strong)}
 .memo h1{font-size:1.15rem; color:var(--seal-blue); margin:0 0 2px; text-align:center; letter-spacing:.04em}
-.memo h2{font-family:"Playfair Display",Georgia,serif; font-weight:600; font-size:1.08rem; color:var(--seal-blue);
-  margin:20px 0 6px; border-bottom:1px solid var(--border-strong); padding-bottom:3px}
+.memo h2{font-weight:700; font-size:1.08rem; color:var(--seal-blue); margin:18px 0 4px}
 .memo .masthead{text-align:center; font-size:.85rem; color:var(--text-muted); border-bottom:2px solid var(--seal-blue);
   padding-bottom:8px; margin-bottom:12px}
 .memo .masthead strong{color:var(--seal-blue)}
-.memo .fields{margin:10px 0; font-size:.95rem}
-.memo .fields .fld{margin:3px 0}
-.memo .fields .lab, .memo .cc .lab{font-weight:700; color:var(--seal-blue); display:inline-block; min-width:52px}
+/* The CO's memo format (Sam, 2026-11-03, ESLEI 24-12): the logo at the left with
+   MEMORANDUM and the date at the right, labels beside their text, a gray rule,
+   the office's address at the foot. cpl_funding.js writes these classes. */
+.memo .memo-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin:0 0 22px}
+.memo .memo-logo{width:230px; max-width:45%; height:auto}
+.memo .memo-headr{text-align:right; margin-left:auto}
+.memo .memo-headr h1{text-align:right; font-size:1.05rem; letter-spacing:0; margin:4px 0 6px}
+.memo .memo-dl{margin:0; font-size:.9rem; color:var(--text-muted)}
+.memo .memo-ref{margin-top:1.1em}
+.memo .fields{margin:10px 0 0}
+.memo .fields .fld{display:grid; grid-template-columns:4.2em 1fr; gap:0 .4em; margin:0 0 12px}
+.memo .lab{font-weight:700}
+.memo .memo-rule{border:0; border-top:1px solid var(--border-strong); margin:4px 0 18px}
+.memo .memo-foot{margin-top:28px; padding-top:8px; border-top:1px solid var(--border); font-size:.85rem; color:var(--seal-blue)}
 .memo p{margin:8px 0; max-width:var(--measure,none)}
 .memo ul, .memo ol{margin:8px 0; padding-left:22px}
 .memo li{margin:5px 0}
@@ -130,6 +140,11 @@ main{max-width:880px; margin:0 auto; padding:12px clamp(16px,4vw,28px) 40px}
     box.hidden = false;
     try {
       box.innerHTML = T._buildMemo("memo");
+      // A printed memo carries the CO memo's page furniture: the address in the
+      // first page's footer, the RE line and date atop later pages, page numbers.
+      var pcss = document.getElementById("memo-page-css");
+      if (!pcss) { pcss = document.createElement("style"); pcss.id = "memo-page-css"; document.head.appendChild(pcss); }
+      pcss.textContent = typeof T._memoPageCss === "function" ? "@media print{" + T._memoPageCss(box) + "}" : "";
       // Wide tables scroll inside their own box on a phone, never the page.
       // Each region is named for what its table holds, so no two share a name
       // (axe landmark-unique, 2026-10-26): the summary has no header row (the

@@ -1111,7 +1111,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `example.org` | modules: `a11y.config.js` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `fonts.googleapis.com` | tabs: `commons`, `csm-workspace` · scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py`, `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` |
+| `fonts.googleapis.com` | tabs: `college-briefing`, `commons`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py`, `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` |
 | `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |

@@ -927,12 +927,22 @@
     ".cplfund-memo { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 40px 48px; max-width: 820px; margin: 0 auto; color: var(--text-strong); line-height: 1.5; font-size: .95rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }",
     ".cplfund-memo:focus { outline: 2px solid var(--gold-accent); outline-offset: 4px; }",
     ".cplfund-memo h1 { font-size: 1.15rem; color: var(--navy-primary); margin: 0 0 2px; text-align: center; letter-spacing: .04em; }",
-    ".cplfund-memo h2 { font-size: 1rem; color: var(--navy-primary); margin: 18px 0 6px; border-bottom: 1px solid var(--border-strong); padding-bottom: 3px; }",
+    ".cplfund-memo h2 { font-size: 1.05rem; color: var(--navy-primary); margin: 18px 0 4px; }",
     ".cplfund-memo .masthead { text-align: center; font-size: .8rem; color: var(--text-muted); border-bottom: 2px solid var(--seal-blue); padding-bottom: 8px; margin-bottom: 12px; }",
     ".cplfund-memo .masthead strong { color: var(--navy-primary); font-size: .92rem; }",
-    ".cplfund-memo .fields { margin: 10px 0; font-size: .9rem; }",
-    ".cplfund-memo .fields .fld { margin: 3px 0; }",
-    ".cplfund-memo .fields .lab { font-weight: 700; color: var(--navy-primary); display: inline-block; min-width: 52px; vertical-align: top; }",
+    // The CO's memo format (ESLEI 24-12): logo left, MEMORANDUM and the date
+    // right; labels beside their text; a gray rule; the footer's address.
+    ".cplfund-memo .memo-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin: 0 0 22px; }",
+    ".cplfund-memo .memo-logo { width: 230px; max-width: 45%; height: auto; background: var(--white); border-radius: 4px; }",
+    ".cplfund-memo .memo-headr { text-align: right; margin-left: auto; }",
+    ".cplfund-memo .memo-headr h1 { text-align: right; font-size: 1.05rem; letter-spacing: 0; margin: 4px 0 6px; }",
+    ".cplfund-memo .memo-dl { margin: 0; font-size: .88rem; color: var(--text-muted); }",
+    ".cplfund-memo .memo-ref { margin-top: 1.1em; }",
+    ".cplfund-memo .fields { margin: 10px 0 0; }",
+    ".cplfund-memo .fields .fld { display: grid; grid-template-columns: 4.2em 1fr; gap: 0 .4em; margin: 0 0 12px; }",
+    ".cplfund-memo .lab { font-weight: 700; color: var(--text-strong); }",
+    ".cplfund-memo .memo-rule { border: 0; border-top: 1px solid var(--border-strong); margin: 4px 0 18px; }",
+    ".cplfund-memo .memo-foot { margin-top: 28px; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; color: var(--navy-primary); }",
     ".cplfund-memo p { margin: 8px 0; }",
     ".cplfund-memo ul, .cplfund-memo ol { margin: 8px 0; padding-left: 22px; }",
     ".cplfund-memo blockquote { margin: 8px 0 8px 14px; padding-left: 10px; border-left: 2px solid var(--border-strong); }",
@@ -14805,10 +14815,15 @@
     ["noncredit outcome count", "how many noncredit outcomes, as a word"],
     ["date", "today's date, spelled out"]];
   var MEMO_BLOCKS = [
-    { key: "memo_masthead", where: "The masthead, every document", rows: 3,
+    { key: "memo_masthead", where: "The masthead, the letter, report and brief", rows: 3,
       plain: "**California Community Colleges Chancellor's Office**\nAcademic Affairs Division\n" +
         "1102 Q Street, Sacramento, CA 95811 · (916) 445-8752 · www.cccco.edu" },
-    { key: "memo_dateline", where: "The memo's date line", rows: 1, plain: "{date} · ESS __-__ · Via Email" },
+    // The CO's memo format (Sam, 2026-11-03, ESLEI 24-12): the date under
+    // MEMORANDUM, then the memo's number and how it goes out, one line each.
+    { key: "memo_dateline", where: "The memo's date line, beside the logo: the date, then the memo's number",
+      rows: 2, plain: "{date}\nESS __-__ | Via Email" },
+    { key: "memo_footer", where: "The memo's first-page footer", rows: 2,
+      plain: "**Chancellor's Office, Academic Affairs**\n1102 Q Street, Sacramento, CA 95811 | 916.445.8752 | www.cccco.edu" },
     { key: "memo_to", where: "TO", rows: 2,
       plain: "Chief Executive Officers; Chief Instructional Officers; Chief Student Services Officers; " +
         "Chief Business Officers; Academic Senate Presidents" },
@@ -14939,6 +14954,24 @@
   function memoLineHtml(key, F) {
     return plainNormalize(textPlain(key)).split(/\n+/).map(function (ln) { return richInline(ln, "mc", F); }).join("<br>");
   }
+  // A short passage as its lines: one a line typed, and a one-line passage
+  // split at its separator (TO's semicolons; the date line's old " · ", whose
+  // first part is the date and the rest the memo's number, joined with " | ").
+  function memoLines(key, F, sep) {
+    var lines = plainNormalize(textPlain(key)).split(/\n+/).filter(function (ln) { return ln.trim(); });
+    if (sep && lines.length === 1) {
+      var parts = lines[0].split(sep).filter(function (x) { return x.trim(); });
+      lines = key === "memo_dateline" && parts.length > 1 ? [parts[0], parts.slice(1).join(" | ")] : parts;
+    }
+    return lines.map(function (ln) { return richInline(ln.trim(), "mc", F); });
+  }
+  // The CO's logo, as its own memo carries it; found beside this script, so
+  // the public memo page (funding-model/memo/) loads it too.
+  var MEMO_LOGO = "ccc_memo_logo.jpg";
+  function memoAssetSrc(name) {
+    var own = typeof document !== "undefined" && document.querySelector('script[src$="cpl_funding.js"]');
+    return own ? own.getAttribute("src").replace(/cpl_funding\.js$/, name) : name;
+  }
   // The priorities, every card in the tab's order (Sam, 2026-09-24: "Need P4
   // on Reports"), each from the model: never a passage, so an edit cannot
   // freeze a card the dials have moved.
@@ -15049,15 +15082,30 @@
     var tech = "<h2>Technical Assistance</h2>" + P("memo_tech");
     var reporting = "<h2>Outcomes Reporting</h2>" + P("memo_reporting") + "<h2>Conclusion</h2>" + P("memo_conclusion");
     if (docType === "memo") {
-      return masthead +
-        '<h1>MEMORANDUM</h1>' +
+      // The CO's memo format (Sam, 2026-11-03: "output a memo matching the
+      // formatting of the attached ESS memo", ESLEI 24-12): the logo at the
+      // left with MEMORANDUM, the date and the memo's number at the right; the
+      // TO, FROM and RE labels beside their text, one addressee a line; a gray
+      // rule; the office's address in the first page's footer. The Word and PDF
+      // exports read these classes, so the screen and the file stay one layout.
+      var dl = memoLines("memo_dateline", F, /\s+·\s+/);
+      var fld = function (f, lab, lines) {
+        return '<div class="fld" data-f="' + f + '"><span class="lab">' + lab + '</span><span class="val">' +
+          lines.join("<br>") + "</span></div>";
+      };
+      return '<div class="memo-head">' +
+        '<img class="memo-logo" src="' + esc(memoAssetSrc(MEMO_LOGO)) + '" alt="California Community Colleges">' +
+        '<div class="memo-headr"><h1>MEMORANDUM</h1>' +
+        dl.map(function (ln, i) { return '<p class="memo-dl' + (i ? " memo-ref" : "") + '">' + ln + "</p>"; }).join("") +
+        "</div></div>" +
         '<div class="fields">' +
-        '<div class="fld">' + I("memo_dateline") + "</div>" +
-        '<div class="fld"><span class="lab">TO:</span> ' + I("memo_to") + "</div>" +
-        '<div class="fld"><span class="lab">FROM:</span> ' + I("memo_from") + "</div>" +
-        '<div class="fld"><span class="lab">RE:</span> ' + I("memo_re") + "</div></div>" +
+        fld("to", "TO:", memoLines("memo_to", F, /;\s*/)) +
+        fld("from", "FROM:", memoLines("memo_from", F)) +
+        fld("re", "RE:", memoLines("memo_re", F)) + "</div>" +
+        '<hr class="memo-rule">' +
         body + memoAllocation(m, true) + tech + reporting + P("memo_questions") +
-        '<div class="cc"><span class="lab">cc:</span> ' + I("memo_cc") + "</div>";
+        '<div class="cc"><span class="lab">cc:</span> ' + I("memo_cc") + "</div>" +
+        '<div class="memo-foot">' + I("memo_footer") + "</div>";
     }
     if (docType === "letter") {
       return masthead + "<p>" + esc(todayLong()) + "</p>" + P("memo_letter_open") +
@@ -15376,20 +15424,60 @@
     return "CPL_" + state.docType + "_" + (windowLabel() || "").replace(/[^0-9A-Za-z]+/g, "_");
   }
   function memoInnerHtml() { var m = document.getElementById("cplFundMemo"); return m ? m.innerHTML : ""; }
+  // The page furniture the CO's memo carries (ESLEI 24-12), for a printed
+  // memo: the office's address in the first page's footer, the RE line and the
+  // date at the head of every later page, "Memorandum | Page N of M" at its
+  // foot. Chrome and Edge print @page margin boxes; the strings are read from
+  // the document, edits and all. The public memo page prints with the same.
+  function memoCssStr(t) {
+    return '"' + String(t || "").replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/</g, "\\3C ").replace(/\n/g, "\\A ") + '"';
+  }
+  function memoTextOf(el) {
+    if (!el) return "";
+    var c = el.cloneNode(true);
+    Array.prototype.forEach.call(c.querySelectorAll("br"), function (b) { b.parentNode.replaceChild(document.createTextNode("\n"), b); });
+    return c.textContent.replace(/[ \t]+/g, " ").replace(/ *\n */g, "\n").trim();
+  }
+  function memoPageCss(root) {
+    root = root || document.getElementById("cplFundMemo");
+    if (!root || !root.querySelector(".memo-head")) return "";
+    var re = memoTextOf(root.querySelector('.fld[data-f="re"] .val')).replace(/\n/g, " ");
+    var date = memoTextOf(root.querySelector(".memo-dl"));
+    var foot = memoTextOf(root.querySelector(".memo-foot"));
+    var box = "font-family:'Source Sans 3','Source Sans Pro',Arial,sans-serif;font-size:8.5pt;color:#002F6D;";
+    return "@page{size:letter;margin:1in 1in .9in;" +
+      "@top-left{content:" + memoCssStr(re + "\n" + date) + ";white-space:pre;" + box + "vertical-align:bottom;padding-bottom:.25in;}" +
+      "@bottom-center{content:\"Memorandum | Page \" counter(page) \" of \" counter(pages);" + box + "}}" +
+      "@page:first{margin-top:.45in;@top-left{content:none;}@bottom-center{content:none;}" +
+      "@bottom-left{content:" + memoCssStr(foot) + ";white-space:pre;" + box + "line-height:1.35;}}" +
+      ".memo-foot{display:none;}";
+  }
   function memoPrintHtml() {
-    var css = "body{font-family:'Segoe UI',Arial,sans-serif;color:#1C1C1A;margin:0;background:#f4f2ee;}" +
-      ".wrap{max-width:780px;margin:0 auto;padding:40px 48px;background:#fff;line-height:1.5;}" +
-      "h1{color:#002F6D;font-size:19px;text-align:center;letter-spacing:.04em;margin:0 0 4px;}" +
-      "h2{color:#002F6D;font-size:15px;border-bottom:1px solid #999;padding-bottom:3px;margin:18px 0 6px;}" +
-      ".masthead{text-align:center;font-size:12px;color:var(--text-muted);border-bottom:2px solid #002F6D;padding-bottom:8px;margin-bottom:12px;}" +
-      ".masthead strong{color:#002F6D;}.fields{font-size:13px;margin:10px 0;}.fields .lab,.cc .lab{font-weight:700;color:#002F6D;}" +
-      "p{font-size:14px;margin:8px 0;}ul{font-size:14px;}li{margin:5px 0;}" +
-      "table{border-collapse:collapse;width:100%;font-size:11px;margin:8px 0;}" +
+    // The CO's memo look (ESLEI 24-12): Source Sans, gray text, navy headings
+    // and links, no rules under the headings.
+    var css = "body{font-family:'Source Sans 3','Source Sans Pro',Arial,sans-serif;color:#555759;margin:0;background:#f4f2ee;font-size:11pt;}" +
+      ".wrap{max-width:7.5in;margin:0 auto;padding:40px 48px;background:#fff;line-height:1.55;}" +
+      "h1{color:#002F6D;font-size:16pt;text-align:center;margin:0 0 4px;}" +
+      "h2{color:#002F6D;font-size:12pt;font-weight:700;margin:12px 0 2px;break-after:avoid;}" +
+      "h3{color:#555759;font-size:11pt;margin:10px 0 2px;break-after:avoid;}" +
+      ".memo-head{display:flex;justify-content:space-between;align-items:flex-start;margin:0 0 26px;}" +
+      ".memo-logo{width:2.3in;height:auto;}.memo-headr{text-align:right;}" +
+      ".memo-headr h1{font-size:12pt;text-align:right;margin:.2in 0 6px;}.memo-dl{font-size:10pt;margin:0;}.memo-ref{margin-top:14px;}" +
+      ".fields{margin:0;}.fld{display:grid;grid-template-columns:.6in 1fr;margin:0 0 12px;line-height:1.25;}.lab{font-weight:700;}" +
+      ".memo-rule{border:0;border-top:1px solid #B2B3B2;margin:6px 0 14px;}" +
+      ".memo-foot{margin-top:24px;font-size:8.5pt;color:#002F6D;}" +
+      ".masthead{text-align:center;font-size:9pt;border-bottom:2px solid #002F6D;padding-bottom:8px;margin-bottom:12px;}" +
+      ".masthead strong{color:#002F6D;}.memo-sub{text-align:center;}" +
+      "p{margin:0 0 8pt;}ul,ol{margin:0 0 8pt;padding-left:.75in;}li{margin:0;line-height:1.3;}" +
+      "blockquote{margin:0 0 8pt .25in;font-style:italic;}a{color:#002F6D;}" +
+      "table{border-collapse:collapse;width:100%;font-size:8.5pt;margin:8px 0;}" +
       "th{background:#002F6D;color:#fff;padding:4px 6px;text-align:right;}th.t,td.t{text-align:left;}" +
-      "td{border-top:1px solid #ccc;padding:3px 6px;text-align:right;}.cc{margin-top:16px;font-size:12px;color:var(--text-muted);}" +
-      "@media print{.wrap{max-width:none;padding:0;}body{background:#fff;}}";
-    return "<!doctype html><html><head><meta charset='utf-8'><title>" + esc(memoFilename()) +
-      "</title><style>" + css + "</style></head><body><div class='wrap'>" + memoInnerHtml() + "</div></body></html>";
+      "td{border-top:1px solid #ccc;padding:3px 6px;text-align:right;}.cc{margin-top:16px;font-size:10pt;}" +
+      "@media print{.wrap{max-width:none;padding:0;}body{background:#fff;}" + memoPageCss() + "}";
+    return "<!doctype html><html lang='en'><head><meta charset='utf-8'><title>" + esc(memoFilename()) +
+      "</title><link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,700;1,400&display=swap'>" +
+      "<base href='" + esc(document.baseURI) + "'>" +
+      "<style>" + css + "</style></head><body><div class='wrap'>" + memoInnerHtml() + "</div></body></html>";
   }
   function exportMemoPdf() {
     var w = window.open("", "_blank");
@@ -15406,10 +15494,7 @@
   }
   // The library sits beside this file, so a page in a subfolder (the public
   // memo, funding-model/memo/) finds it through this script's own address.
-  function docxSrc() {
-    var own = document.querySelector('script[src$="cpl_funding.js"]');
-    return own ? own.getAttribute("src").replace(/cpl_funding\.js$/, "docx.min.js") : "docx.min.js";
-  }
+  function docxSrc() { return memoAssetSrc("docx.min.js"); }
   function ensureDocx(cb) {
     if (window.docx) { cb(); return; }
     var s = document.createElement("script");
@@ -15425,42 +15510,54 @@
   // ends it, a <br> stays a line break wherever it sits, and the file carries
   // the memo's own styles (font, navy headings, spacing) instead of Word's.
   var MEMO_DOCX_BLOCK = /^(P|DIV|H[1-6]|UL|OL|LI|TABLE|BLOCKQUOTE|SECTION|ARTICLE|HEADER|FOOTER|FIGURE|PRE|HR|DETAILS|SUMMARY|DL|DT|DD)$/;
-  var MEMO_DOCX_INK = { navy: "002F6D", muted: "555555", rule: "999999", grid: "CCCCCC" };
-  var MEMO_DOCX_FONT = "Arial";
+  // The CO's memo look (Sam, 2026-11-03, measured off ESLEI 24-12): Source
+  // Sans Pro 11 pt in gray, navy 12 pt headings with no rule, links navy,
+  // bullets at half an inch, 1-inch margins on a letter page.
+  var MEMO_DOCX_INK = { navy: "002F6D", body: "555759", muted: "555759", rule: "B2B3B2", grid: "CCCCCC" };
+  var MEMO_DOCX_FONT = "Source Sans Pro";
   function memoDocxStyles() {
     var ink = MEMO_DOCX_INK;
     return {
       default: {
         // The document's language (WCAG 3.1.1, 2026-10-26): Word's proofing and a PDF saved from it read it.
-        document: { run: { font: MEMO_DOCX_FONT, size: 22, color: "1C1C1A", language: { value: "en-US" } }, paragraph: { spacing: { after: 160, line: 276 } } },
-        heading1: { run: { font: MEMO_DOCX_FONT, size: 30, bold: true, color: ink.navy, characterSpacing: 20 },
-          paragraph: { alignment: "center", spacing: { before: 120, after: 160 } } },
+        document: { run: { font: MEMO_DOCX_FONT, size: 22, color: ink.body, language: { value: "en-US" } }, paragraph: { spacing: { after: 160, line: 312, lineRule: "auto" } } },
+        heading1: { run: { font: MEMO_DOCX_FONT, size: 28, bold: true, color: ink.navy },
+          paragraph: { alignment: "center", spacing: { before: 0, after: 160, line: 240, lineRule: "auto" } } },
         heading2: { run: { font: MEMO_DOCX_FONT, size: 24, bold: true, color: ink.navy },
-          paragraph: { spacing: { before: 280, after: 120 }, keepNext: true,
-            border: { bottom: { style: "single", size: 6, color: ink.rule, space: 2 } } } },
-        heading3: { run: { font: MEMO_DOCX_FONT, size: 22, bold: true, color: ink.navy },
-          paragraph: { spacing: { before: 200, after: 80 }, keepNext: true } }
+          paragraph: { spacing: { before: 80, after: 40 }, keepNext: true } },
+        heading3: { run: { font: MEMO_DOCX_FONT, size: 22, bold: true, color: ink.body },
+          paragraph: { spacing: { before: 0, after: 160 }, keepNext: true } }
       },
       paragraphStyles: [
         { id: "MemoMasthead", name: "Memo Masthead", basedOn: "Normal", run: { size: 18, color: ink.muted },
           paragraph: { alignment: "center", spacing: { after: 240 },
             border: { bottom: { style: "single", size: 12, color: ink.navy, space: 6 } } } },
-        { id: "MemoField", name: "Memo Field", basedOn: "Normal", paragraph: { spacing: { after: 40 } } },
+        // TO, FROM and RE: the label, a tab, the text, its later lines under it.
+        { id: "MemoField", name: "Memo Field", basedOn: "Normal",
+          paragraph: { spacing: { after: 240, line: 240, lineRule: "auto" }, indent: { left: 864, hanging: 864 },
+            tabStops: [{ type: "left", position: 864 }] } },
+        { id: "MemoHead", name: "Memo Head", basedOn: "Normal", run: { size: 20 },
+          paragraph: { alignment: "right", spacing: { after: 0, line: 240, lineRule: "auto" } } },
+        { id: "MemoRunning", name: "Memo Header and Footer", basedOn: "Normal", run: { size: 17, color: ink.navy },
+          paragraph: { spacing: { after: 0, line: 240, lineRule: "auto" } } },
         { id: "MemoSub", name: "Memo Subtitle", basedOn: "Normal", run: { color: ink.muted }, paragraph: { alignment: "center" } },
-        { id: "MemoQuote", name: "Memo Quote", basedOn: "Normal",
-          paragraph: { indent: { left: 360 }, border: { left: { style: "single", size: 8, color: ink.rule, space: 8 } } } },
-        { id: "MemoCc", name: "Memo cc", basedOn: "Normal", run: { size: 19, color: ink.muted }, paragraph: { spacing: { before: 240 } } },
-        { id: "MemoCell", name: "Memo Table Cell", basedOn: "Normal", run: { size: 17 }, paragraph: { spacing: { after: 0, line: 240 } } }
+        { id: "MemoQuote", name: "Memo Quote", basedOn: "Normal", run: { italics: true },
+          paragraph: { indent: { left: 360 } } },
+        { id: "MemoCc", name: "Memo cc", basedOn: "Normal", run: { size: 20 }, paragraph: { spacing: { before: 240 } } },
+        { id: "MemoCell", name: "Memo Table Cell", basedOn: "Normal", run: { size: 17 }, paragraph: { spacing: { after: 0, line: 240, lineRule: "auto" } } }
       ]
     };
   }
+  // Bullets and numbers sit half an inch in, their text three quarters, as the
+  // CO's memo sets them; a list item is single-spaced.
   function memoDocxNumbering() {
-    var d = window.docx, levels = [];
+    var d = window.docx, ol = [], ul = [], marks = ["\u2022", "o", "\u25AA"];
     for (var i = 0; i < 3; i++) {
-      levels.push({ level: i, format: d.LevelFormat.DECIMAL, text: "%" + (i + 1) + ".", alignment: d.AlignmentType.LEFT,
-        style: { paragraph: { indent: { left: 720 * (i + 1), hanging: 360 } } } });
+      var ind = { paragraph: { indent: { left: 1080 + 360 * i, hanging: 360 } } };
+      ol.push({ level: i, format: d.LevelFormat.DECIMAL, text: "%" + (i + 1) + ".", alignment: d.AlignmentType.LEFT, style: ind });
+      ul.push({ level: i, format: d.LevelFormat.BULLET, text: marks[i], alignment: d.AlignmentType.LEFT, style: ind });
     }
-    return { config: [{ reference: "memo-ol", levels: levels }] };
+    return { config: [{ reference: "memo-ol", levels: ol }, { reference: "memo-ul", levels: ul }] };
   }
   // A block's paragraph settings from its tag and class: the memo's masthead,
   // its TO/FROM/RE fields, the cc line and the report's subtitle each keep the
@@ -15486,7 +15583,6 @@
     if (t === "U") f.underline = {};
     if (t === "SUP") f.superScript = true;
     if (t === "SUB") f.subScript = true;
-    if (/ lab /.test(cls)) f.color = MEMO_DOCX_INK.navy;
     if ((t === "STRONG" || t === "B") && el.closest && el.closest(".masthead")) f.color = MEMO_DOCX_INK.navy;
     return f;
   }
@@ -15501,6 +15597,8 @@
         if (t.charAt(0) === " " && (!prev || prev.br || (prev.text != null && / $/.test(prev.text)))) t = t.slice(1);
         if (t) runs.push({ text: t, fmt: fmt });
       } else if (c.nodeType === 1) {
+        // A field's text follows its label after a tab, as the CO's memo sets TO, FROM and RE.
+        if (/(^| )val( |$)/.test(c.getAttribute("class") || "")) runs.push({ tab: true });
         if (c.tagName === "BR") runs.push({ br: true });
         else if (c.tagName === "A" && /^(https?:|mailto:)/i.test(c.getAttribute("href") || "")) {
           var inner = memoInlineRuns(c, memoDocxRunFmt(c, fmt), []);
@@ -15522,6 +15620,7 @@
     if (last.text != null) flat[flat.length - 1] = { text: last.text.replace(/ +$/, ""), fmt: last.fmt };
     var toRun = function (r, extra) {
       if (r.br) return new d.TextRun({ text: "", break: 1 });
+      if (r.tab) return new d.TextRun({ children: [new d.Tab()] });
       var o = { text: r.text }, f = r.fmt || {}, k;
       for (k in f) if (Object.prototype.hasOwnProperty.call(f, k)) o[k] = f[k];
       for (k in extra || {}) o[k] = extra[k];
@@ -15530,7 +15629,7 @@
     return flat.map(function (r) {
       if (r.link) {
         return new d.ExternalHyperlink({ link: r.link, children: r.runs.filter(function (x) { return x.br || x.text; })
-          .map(function (x) { return toRun(x, { style: "Hyperlink" }); }) });
+          .map(function (x) { return toRun(x, { style: "Hyperlink", color: MEMO_DOCX_INK.navy }); }) });
       }
       return toRun(r);
     });
@@ -15588,6 +15687,15 @@
       flush();
       var tag = node.tagName;
       var o = memoDocxParaOpts(node, opts);
+      var ncls = " " + (node.getAttribute("class") || "") + " ";
+      // The memo's head is a borderless two-cell table (the logo, then
+      // MEMORANDUM and the date at the right); its footer belongs to the page,
+      // so memoDocxDocument sets it there and the body skips it.
+      if (/ memo-head /.test(ncls)) {
+        out.push(memoDocxHead(node, memoDocxBlocks.logo), new d.Paragraph({ spacing: { after: 120 }, children: [] }));
+        return;
+      }
+      if (/ memo-foot /.test(ncls)) return;
       if (tag === "H1") memoDocxBlocks(node, { heading: d.HeadingLevel.HEADING_1, alignment: d.AlignmentType.CENTER }, out);
       else if (tag === "H2") memoDocxBlocks(node, { heading: d.HeadingLevel.HEADING_2 }, out);
       else if (/^H[3-6]$/.test(tag)) memoDocxBlocks(node, { heading: d.HeadingLevel.HEADING_3 }, out);
@@ -15595,37 +15703,112 @@
       else if (tag === "UL" || tag === "OL") {
         var lvl = list ? Math.min(list.level + 1, 2) : 0;
         var inst = tag === "OL" ? (memoDocxBlocks.olCount = (memoDocxBlocks.olCount || 0) + 1) : 0;
+        var items = Array.prototype.filter.call(node.childNodes, function (x) { return x.nodeType === 1; });
         Array.prototype.forEach.call(node.childNodes, function (li) {
-          var lo = { spacing: { after: 80 } };
+          // Single-spaced items; the last one keeps a paragraph's space after it (a nested list's, none).
+          var last = !list && li === items[items.length - 1];
+          var lo = { spacing: { after: last ? 160 : 0, line: 240, lineRule: "auto" } };
           if (tag === "OL") lo.numbering = { reference: "memo-ol", level: lvl, instance: inst };
-          else lo.bullet = { level: lvl };
+          else lo.numbering = { reference: "memo-ul", level: lvl };
           if (li.nodeType === 1 && li.tagName === "LI") memoDocxBlocks(li, lo, out, { level: lvl });
           else if (li.nodeType === 1) memoDocxBlocks(li, lo, out, { level: lvl });
         });
       }
-      else if (tag === "LI") memoDocxBlocks(node, { bullet: { level: 0 }, spacing: { after: 80 } }, out, { level: 0 });
+      else if (tag === "LI") memoDocxBlocks(node, { numbering: { reference: "memo-ul", level: 0 }, spacing: { after: 0, line: 240, lineRule: "auto" } }, out, { level: 0 });
       else if (tag === "BLOCKQUOTE") memoDocxBlocks(node, { style: "MemoQuote" }, out);
-      else if (tag === "HR") out.push(new d.Paragraph({ border: { bottom: { style: d.BorderStyle.SINGLE, size: 6, color: MEMO_DOCX_INK.rule, space: 1 } }, children: [] }));
+      else if (tag === "HR") out.push(new d.Paragraph({ spacing: { before: 0, after: 240, line: 240, lineRule: "auto" },
+        border: { bottom: { style: d.BorderStyle.SINGLE, size: 6, color: MEMO_DOCX_INK.rule, space: 1 } }, children: [] }));
       else {
         memoDocxBlocks(node, o, out, list);   // p, div and the other containers
-        // The TO/FROM/RE block sits tight; the body opens a line below it.
-        if (/(^| )fields( |$)/.test(node.getAttribute("class") || "")) out.push(new d.Paragraph({ spacing: { after: 0 }, children: [] }));
       }
     });
     flush();
     return out;
   }
-  function memoDocxDocument(memo) {
+  // The memo's head: the CO's logo at the left (2.3 by 0.875 inches, as its
+  // memo prints it), MEMORANDUM, the date and the memo's number at the right.
+  // A layout table, so no borders and no header row.
+  function memoDocxHead(node, logo) {
+    var d = window.docx, none = { style: d.BorderStyle.NONE, size: 0, color: "FFFFFF" };
+    var borders = { top: none, bottom: none, left: none, right: none, insideHorizontal: none, insideVertical: none };
+    var img = node.querySelector(".memo-logo");
+    var left = logo ? [new d.Paragraph({ spacing: { after: 0 }, children: [new d.ImageRun({ type: "jpg", data: logo,
+      transformation: { width: 221, height: 84 },
+      altText: { name: "Logo", title: "California Community Colleges", description: (img && img.getAttribute("alt")) || "California Community Colleges" } })] })]
+      : [new d.Paragraph({ spacing: { after: 0 }, children: [new d.TextRun({ text: "California Community Colleges", bold: true, color: MEMO_DOCX_INK.navy, size: 28 })] })];
+    var right = [];
+    var h1 = node.querySelector("h1");
+    right.push(new d.Paragraph({ heading: d.HeadingLevel.HEADING_1, alignment: d.AlignmentType.RIGHT, spacing: { before: 120, after: 120 },
+      children: memoDocxChildren(memoInlineRuns(h1 || node, { size: 24 })) || [new d.TextRun("MEMORANDUM")] }));
+    Array.prototype.forEach.call(node.querySelectorAll(".memo-dl"), function (p, i) {
+      var kids = memoDocxChildren(memoInlineRuns(p, {}));
+      if (kids) right.push(new d.Paragraph({ style: "MemoHead", spacing: { before: i ? 240 : 0, after: 0, line: 240, lineRule: "auto" }, children: kids }));
+    });
+    var cell = function (children, w) {
+      return new d.TableCell({ children: children, borders: borders, width: { size: w, type: d.WidthType.DXA },
+        margins: { top: 0, bottom: 0, left: 0, right: 0 }, verticalAlign: d.VerticalAlign.TOP });
+    };
+    // The text column, 6.5 inches, split at the middle.
+    return new d.Table({ rows: [new d.TableRow({ children: [cell(left, 4680), cell(right, 4680)] })],
+      columnWidths: [4680, 4680], width: { size: 9360, type: d.WidthType.DXA }, borders: borders, layout: d.TableLayoutType.FIXED });
+  }
+  // The page furniture of the CO's memo: the office's address in the first
+  // page's footer; the RE line and the date at the head of every later page;
+  // "Memorandum | Page N of M" at its foot. Read from the document as edited.
+  function memoDocxPages(memo) {
+    var d = window.docx;
+    if (!memo.querySelector || !memo.querySelector(".memo-head")) return {};
+    var para = function (runs, extra) {
+      var o = { style: "MemoRunning", children: runs }, k;
+      for (k in extra || {}) o[k] = extra[k];
+      return new d.Paragraph(o);
+    };
+    var re = memo.querySelector('.fld[data-f="re"] .val'), date = memo.querySelector(".memo-dl");
+    var reRuns = re ? memoDocxChildren(memoInlineRuns(re, { bold: true })) : null;
+    var dateRuns = date ? memoDocxChildren(memoInlineRuns(date, {})) : null;
+    var foot = memo.querySelector(".memo-foot");
+    var footRuns = foot ? memoDocxChildren(memoInlineRuns(foot, {})) : null;
+    var pageNo = para([new d.TextRun({ children: ["Memorandum | Page ", d.PageNumber.CURRENT, " of ", d.PageNumber.TOTAL_PAGES] })],
+      { alignment: d.AlignmentType.CENTER });
+    return {
+      titlePage: true,
+      headers: {
+        first: new d.Header({ children: [para([])] }),
+        default: new d.Header({ children: [para(reRuns || []), para(dateRuns || [])] })
+      },
+      footers: {
+        first: new d.Footer({ children: [para(footRuns || [])] }),
+        default: new d.Footer({ children: [pageNo] })
+      }
+    };
+  }
+  function memoDocxDocument(memo, logo) {
     var d = window.docx;
     memoDocxBlocks.olCount = 0;
+    memoDocxBlocks.logo = logo || null;
+    var pages = memoDocxPages(memo);
+    var section = {
+      // A letter page with 1-inch margins; the head of a later page and the
+      // footer sit half an inch from the edge.
+      properties: { titlePage: !!pages.titlePage,
+        page: { size: { width: 12240, height: 15840 },
+          margin: { top: 1440, bottom: 1296, left: 1440, right: 1440, header: 640, footer: 560 } } },
+      children: memoDocxBlocks(memo)
+    };
+    if (pages.headers) { section.headers = pages.headers; section.footers = pages.footers; }
     return new d.Document({
       creator: "California Community Colleges Chancellor's Office",
       title: memoFilename().replace(/_/g, " "),
       styles: memoDocxStyles(),
       numbering: memoDocxNumbering(),
-      sections: [{ properties: { page: { margin: { top: 1080, bottom: 1080, left: 1260, right: 1260 } } },
-        children: memoDocxBlocks(memo) }]
+      sections: [section]
     });
+  }
+  // The logo's bytes for the Word file; the file still builds without them.
+  function memoLogoBytes(cb) {
+    if (typeof fetch !== "function") { cb(null); return; }
+    fetch(memoAssetSrc(MEMO_LOGO)).then(function (r) { return r.ok ? r.arrayBuffer() : null; })
+      .then(function (b) { cb(b ? new Uint8Array(b) : null); }, function () { cb(null); });
   }
   function exportMemoDocx(el) {
     var memo = el && el.nodeType === 1 ? el : document.getElementById("cplFundMemo");
@@ -15634,13 +15817,13 @@
     ensureDocx(function () {
       var d = window.docx;
       if (!d || !d.Document) return;
-      d.Packer.toBlob(memoDocxDocument(memo)).then(function (blob) {
+      memoLogoBytes(function (logo) { d.Packer.toBlob(memoDocxDocument(memo, logo)).then(function (blob) {
         var a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
         a.download = name + ".docx";
         document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
-      }).catch(function () { /* export failed silently — PDF path still works */ });
+      }).catch(function () { /* export failed silently — PDF path still works */ }); });
     });
   }
 
@@ -19234,6 +19417,8 @@
     },
     _memoModel: memoModel,
     _memoDocxDocument: memoDocxDocument,
+    _memoPageCss: memoPageCss,
+    _memoPrintHtml: memoPrintHtml,
     // The public memo page's Word download: the same export, from its own element.
     _downloadMemoDocx: function (el) { var prev = state.docType; state.docType = "memo"; exportMemoDocx(el); state.docType = prev; },
     _setSubview: function (v) { state.subview = v; render(); },
