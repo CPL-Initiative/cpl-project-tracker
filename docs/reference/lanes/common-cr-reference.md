@@ -48,7 +48,8 @@ rename never settles a group; Confirm the group and Not a topic sit in the refer
 find and replace: a replace across wordings would write one group once per wording. **A wording's title opens a side
 panel** (2026-11-03, the List norms' *The List is the workspace*): the wording, one line of what it is, its group's
 wordings (sortable; another's name opens its panel), Confirm the group and Not a topic with their own status line, and
-the rung, credentials and courses folded. **Above it, one line of the CR row** of `kb/status/commons.json` (its two
+the rung, credentials and courses folded. Since 2026-11-04 it does what the worklist's group card did: Split out and Put
+back, Name the group by it, Add a wording from another group, the note saved with Defer, Clear the decision. **Above it, one line of the CR row** of `kb/status/commons.json` (its two
 issues set the List's *No rule or decision* and *Name to check*) and the worklist's measured stance folded behind
 *Hide the summary* (2026-11-03). Guards: `tests/cr_list.test.js`, `cr_list_panel`, `cr_list_line`; a11y targets
 `cr-list` and `cr-list-dark` (the panel open).

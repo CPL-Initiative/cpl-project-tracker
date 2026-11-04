@@ -83,9 +83,11 @@
 //                      panel's shared parts, so every List's panel reads alike (the List norms: one renderer):
 //                      h.title(text), h.meta(parts) (one line of what the row is, parts joined by a middle dot),
 //                      h.heading(text), h.table(o) (a sortable table of the row's members: o = { id, label, cols:
-//                      [[key, header, numeric]], rows, cell(row, key) -> text or node, note, sort: { col, dir } to open
-//                      on a column other than the first, A to Z }; its sort lasts the visit in L.pnSort[id]),
-//                      h.fold(id, summary, kids) (a fold that stays open or shut as the reader left it, L.pnFold[id]) and h.open(key) (show another row's panel). L.panel holds the open row's key.
+//                      [[key, header, numeric, fixed]] (fixed: a column of controls, its header no sort), rows,
+//                      cell(row, key) -> text or node, note, sort: { col, dir } to open on a column other than the
+//                      first, A to Z }; its sort lasts the visit in L.pnSort[id]), h.fold(id, summary, kids) (a fold
+//                      that stays open or shut as the reader left it, L.pnFold[id]) and h.open(key) (show another
+//                      row's panel). L.panel holds the open row's key.
 // The line (api.line, the List norms' norm 1; Sam, 2026-11-03: "incorporating the list view below the action/metric cards
 // and make that top level collapsible while keeping the one-line action/metric links like we do elsewhere"): one line of
 // the reference's Commons row over its List, each count a control where the tab says where it opens, and the word that
@@ -1007,6 +1009,8 @@
             return c * S2.dir;
           });
           var head = el("tr", null, cols.map(function (c, i) {
+            // A column marked fixed (c[3]) holds controls, not values: its header is plain words, never a sort.
+            if (c[3]) return el("th", { scope: "col", text: c[1] });
             var on = S2.col === i, up = on && S2.dir > 0;
             var b = word(c[1] + (on ? (c[2] ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")) : ""), function () {
               S2.dir = S2.col === i ? -S2.dir : 1; S2.col = i; redrawList();

@@ -36,7 +36,8 @@ bytes, and the commits since `session_565` (its checkpoint trigger).
 1. **Merge the Exhibits PR** (its panel on the engine's parts; Exhibits' and CR Progress's Commons reads through
    `CPL_COMMONS_LIST.readCommons`) once `test` passes on its head. #2746 merged.
 2. **The original views retire as each List does what they do**, one PR each, tests ported first: CR's worklist
-   (Add a wording inside a group, a split, the per-group detail still live only there), then Subjects' Reference
+   (its group edits now live in the panel; what remains there: the filters *auto* and *held* that `cr_progress.js`'s
+   counts open, the official-title warning, *Seen under*), then Subjects' Reference
    view (its toolbar filters, the SUBJ check modal), then Programs' and Courses' older views. Check what only the
    view still has and carry it into the panel first.
 3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.

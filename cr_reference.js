@@ -134,6 +134,10 @@
       ".crr-stat span{color:var(--text-muted);font-size:11.5px}",
       // The List's side panel: the decision line, its words in a row, its status line.
       ".crl-pn-dec{margin:10px 0 6px}",
+      ".crl-pn-notel{display:block;margin:8px 0 4px;font-size:.88rem;color:var(--text-muted)}",
+      "#crl-pn-note{width:100%;box-sizing:border-box}",
+      ".crl-pn-hits{margin:6px 0 0;padding-left:1.1em;display:grid;gap:4px;font-size:.88rem}",
+      "#crl-pn-pick{width:100%;box-sizing:border-box;margin:4px 0}",
       ".crl-acts{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}",
       ".crr-status{margin:6px 0 0;min-height:1.2em;color:var(--text-body)}",
       ".crr-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0;padding:11px;",
@@ -910,10 +914,49 @@
     var prev = state.decisions[g.key] || {}, gm = groupMembers(g, prev);
     return saveDecision(g.key, prev.decision || "deferred", name, gm.members, gm.excluded, prev.note);
   }
-  function listDecide(g, decision) {
+  function listDecide(g, decision, note) {
     if (!signedIn()) return Promise.reject(new Error("signin"));
     var prev = state.decisions[g.key] || {}, gm = groupMembers(g, prev);
-    return saveDecision(g.key, decision, prev.canonical || g.canonical, gm.members, gm.excluded, prev.note || "");
+    return saveDecision(g.key, decision, prev.canonical || g.canonical, gm.members, gm.excluded, note != null ? note : (prev.note || ""));
+  }
+  /* The worklist's group edits, for the side panel (the List norms: a view retires once its List does what it does).
+     Each writes the group's one decision row, as the worklist's did: split a wording out (or put it back, or remove
+     one that was added), name the group by one of its wordings, or pull in a wording from another group, whose own
+     group keeps its row, so nothing is silently destroyed. */
+  function listSplit(g, rec) {
+    if (!signedIn()) return Promise.reject(new Error("signin"));
+    var prev = state.decisions[g.key] || {}, ex = (prev.excluded || []).slice(), i = ex.indexOf(rec);
+    if (i >= 0) ex.splice(i, 1); else ex.push(rec);
+    var members = g.members.map(function (m) { return m.rec; }).concat(addedTo(g.key)).filter(function (x) { return ex.indexOf(x) < 0; });
+    return saveDecision(g.key, ex.length ? "split" : (prev.decision === "split" ? "deferred" : (prev.decision || "deferred")),
+      prev.canonical || g.canonical, members, ex, prev.note).then(function () { return i < 0; });
+  }
+  function listNameBy(g, rec) {
+    if (!signedIn()) return Promise.reject(new Error("signin"));
+    var prev = state.decisions[g.key] || {}, gm = groupMembers(g, prev);
+    return saveDecision(g.key, prev.decision || "deferred", rec, gm.members, gm.excluded, prev.note);
+  }
+  function listAddWording(g, rec) {
+    if (!signedIn()) return Promise.reject(new Error("signin"));
+    var prev = state.decisions[g.key] || {}, ex = (prev.excluded || []).slice();
+    var members = g.members.map(function (m) { return m.rec; }).concat(addedTo(g.key));
+    if (members.indexOf(rec) < 0) members.push(rec);
+    var ei = ex.indexOf(rec);
+    if (ei >= 0) ex.splice(ei, 1);
+    return saveDecision(g.key, prev.decision === "confirmed" ? "confirmed" : "deferred", prev.canonical || g.canonical,
+      members.filter(function (x) { return ex.indexOf(x) < 0; }), ex, prev.note);
+  }
+  /* Wordings in other groups whose words hold the query, most articulations first (the worklist's picker). */
+  function listPickHits(g, q) {
+    q = String(q || "").trim().toLowerCase();
+    if (q.length < 2) return [];
+    var own = {}, hits = [];
+    groupKeys(g).forEach(function (x) { own[x] = 1; });
+    state.groups.forEach(function (og) {
+      if (og.key === g.key) return;
+      og.members.forEach(function (m) { if (!own[m.rec] && m.rec.toLowerCase().indexOf(q) >= 0) hits.push({ m: m, g: og }); });
+    });
+    return hits.sort(function (a, b) { return (b.m.rows || 0) - (a.m.rows || 0); }).slice(0, 12);
   }
   // Every wording a decision on the group reaches, for the visit's changed set.
   function groupKeys(g) { return g.members.map(function (m) { return m.rec; }).concat(addedTo(g.key)); }
@@ -1112,37 +1155,89 @@
     out.push(h.meta([fmt(m.rows) + (m.rows === 1 ? " articulation" : " articulations"), fmt(m.colleges_n) + (m.colleges_n === 1 ? " college" : " colleges"),
       unitRange([m]), "Reference: " + refOf(g), decisionOf(g) || "No decision yet", "Rung: " + rung.label]));
     out.push(h.heading("Its group"));
-    var added = addedTo(g.key), ex = (d && d.excluded) || [];
+    var added = addedTo(g.key), ex = (d && d.excluded) || [], ref = refOf(g);
     var mem = g.members.map(function (x) {
-      return { rec: x.rec, rows: x.rows, colleges: x.colleges_n, units: unitRange([x]),
-        state: x.rec === m.rec ? "This wording" : ex.indexOf(x.rec) > -1 ? "Split out" : "" };
-    }).concat(added.map(function (rec) { return { rec: rec, rows: null, colleges: null, units: "", state: "Added to the group" }; }));
-    out.push(h.table({ id: "members", label: "The wordings of the group " + refOf(g),
-      note: fmt(mem.length) + (mem.length === 1 ? " wording resolves" : " wordings resolve") + " to " + refOf(g)
+      var out1 = ex.indexOf(x.rec) > -1;
+      return { rec: x.rec, rows: x.rows, colleges: x.colleges_n, units: unitRange([x]), out: out1, added: false,
+        state: [x.rec === m.rec ? "This wording" : "", x.rec === ref ? "Names the group" : "", out1 ? "Split out" : ""].filter(Boolean).join("; ") };
+    }).concat(added.filter(function (rec) { return ex.indexOf(rec) < 0; }).map(function (rec) {
+      return { rec: rec, rows: null, colleges: null, units: "", out: false, added: true, state: "Added to the group" + (rec === ref ? "; names the group" : "") };
+    }));
+    // Each wording's changes answer in the panel's status line, then focus returns to the word pressed.
+    function change(id, run, words) {
+      return function () {
+        notes[r.ut] = words.doing; status.textContent = notes[r.ut];
+        run().then(function (res) { markChanged(g); notes[r.ut] = typeof words.done === "function" ? words.done(res) : words.done; },
+          function (e) { notes[r.ut] = "It did not save (" + saveWords(e) + "). Nothing changed."; })
+          .then(function () { LIST_ENGINE.redraw(); var n = document.getElementById(id) || document.getElementById("crl-panel-t"); if (n) n.focus(); });
+      };
+    }
+    out.push(h.table({ id: "members", label: "The wordings of the group " + ref,
+      note: fmt(mem.length) + (mem.length === 1 ? " wording resolves" : " wordings resolve") + " to " + ref
         + (g.rows ? ", " + fmt(g.rows) + (g.rows === 1 ? " articulation at " : " articulations at ") + fmt(g.colleges) + (g.colleges === 1 ? " college" : " colleges") : "")
-        + ". Press a header to sort" + (mem.length > 1 ? "; a wording's name opens its panel." : "."),
-      cols: [["rec", "Wording"], ["rows", "Articulations", true], ["colleges", "Colleges", true], ["state", "Note"]],
+        + ". Press a header to sort" + (mem.length > 1 ? "; a wording's name opens its panel." : ".")
+        + " Split out a wording that is a different recommendation; it keeps its own row.",
+      cols: [["rec", "Wording"], ["rows", "Articulations", true], ["colleges", "Colleges", true], ["state", "Note"], ["do", "Change", false, true]],
       rows: mem,
       cell: function (row, k) {
+        if (k === "do") {
+          var n = mem.indexOf(row), acts = [];
+          if (!row.out && row.rec !== ref) acts.push(h.word("Name the group by it", change("crl-pn-name-" + n, function () { return listNameBy(g, row.rec); },
+            { doing: "Naming the group " + row.rec + "…", done: "Saved: the group reads " + row.rec + "." }), { id: "crl-pn-name-" + n, "aria-label": "Name the group by " + row.rec }));
+          acts.push(h.word(row.added ? "Remove" : row.out ? "Put back" : "Split out", change("crl-pn-split-" + n, function () { return listSplit(g, row.rec); },
+            { doing: (row.out ? "Putting back " : row.added ? "Removing " : "Splitting out ") + row.rec + "…",
+              done: function (wentOut) { return wentOut ? "Saved: " + row.rec + (row.added ? " is out of the group again." : " is split out of the group; it keeps its own row.") : "Saved: " + row.rec + " is back in the group."; } }),
+            { id: "crl-pn-split-" + n, "aria-label": (row.added ? "Remove " : row.out ? "Put back " : "Split out ") + row.rec }));
+          return h.el("span", { cls: "crl-acts" }, acts);
+        }
         if (k !== "rec") return row[k];
-        if (row.rec === m.rec || row.state === "Added to the group") return row.rec;
+        if (row.rec === m.rec || row.added) return row.rec;
         return h.word(row.rec, function () { h.open(row.rec); }, { "aria-label": row.rec + ", open its panel" });
       } }));
+    // Add a wording: pull in a wording from another group that means the same (the worklist's picker).
+    var picks = L.pnPick || (L.pnPick = {}), pq = picks[g.key] || "";
+    var pin = h.el("input", { id: "crl-pn-pick", type: "search", cls: "crr-search", value: pq, placeholder: "Two or more letters of a wording",
+      "aria-describedby": "crl-pn-pick-n" });
+    pin.addEventListener("input", function () {
+      picks[g.key] = pin.value; LIST_ENGINE.redraw();
+      var n2 = document.getElementById("crl-pn-pick"); if (n2) { n2.focus(); try { n2.setSelectionRange(n2.value.length, n2.value.length); } catch (e2) { /* search boxes may refuse */ } }
+    });
+    var hits = listPickHits(g, pq);
+    var pickKids = [h.el("label", { "for": "crl-pn-pick", text: "Add a wording from another group that means the same" }), pin,
+      h.el("p", { id: "crl-pn-pick-n", cls: "crr-muted", text: pq.trim().length < 2 ? "Type at least two letters." : hits.length ? fmt(hits.length) + (hits.length === 1 ? " wording matches" : " wordings match") + ", most articulations first." : "No wording in another group matches." })];
+    if (hits.length) pickKids.push(h.el("ul", { cls: "crl-pn-hits" }, hits.map(function (x, k2) {
+      return h.el("li", null, [h.word("Add " + x.m.rec, change("crl-pn-add-" + k2, function () { picks[g.key] = ""; return listAddWording(g, x.m.rec); },
+        { doing: "Adding " + x.m.rec + " to the group…", done: "Saved: " + x.m.rec + " is added to the group; its own group keeps its row." }), { id: "crl-pn-add-" + k2 }),
+        " (" + fmt(x.m.rows) + (x.m.rows === 1 ? " articulation" : " articulations") + ", now under " + refOf(x.g) + ")"]);
+    })));
+    out.push(h.fold("pick", "Add a wording to this group", pickKids));
     out.push(h.el("p", { cls: "crl-pn-dec", text: d && d.decision !== "cleared" ? "Decision: " + (DECISION_WORDS[d.decision] || d.decision)
       + (d.updated_by ? ", by " + d.updated_by : "") + (d.updated_at ? " " + h.stamp(d.updated_at) : "") + "." : "No decision recorded yet." }));
     var status = h.el("p", { cls: "crr-status", role: "status", "aria-live": "polite", text: notes[r.ut] || "" });
+    // The note the next curator reads, saved with a decision (the worklist's note box).
+    var drafts = L.pnDraft || (L.pnDraft = {});
+    var noteBox = h.el("textarea", { id: "crl-pn-note", cls: "crr-note", rows: "2" });
+    noteBox.value = drafts[g.key] != null ? drafts[g.key] : ((d && d.note) || "");
+    noteBox.addEventListener("input", function () { drafts[g.key] = noteBox.value; });
     function decide(decision, words) {
       return function () {
         notes[r.ut] = "Recording " + words.toLowerCase() + " for " + refOf(g) + "…"; status.textContent = notes[r.ut];
-        listDecide(g, decision).then(function () {
+        listDecide(g, decision, drafts[g.key] != null ? drafts[g.key] : undefined).then(function () {
+          delete drafts[g.key];
           markChanged(g); notes[r.ut] = "Recorded: " + words.toLowerCase() + ", " + refOf(g) + ".";
         }).catch(function (e) { notes[r.ut] = "It did not save (" + saveWords(e) + "). Nothing changed."; })
-          .then(function () { LIST_ENGINE.redraw(); var n = document.getElementById("crl-pn-" + decision); if (n) n.focus(); });
+          .then(function () { LIST_ENGINE.redraw(); var n = document.getElementById("crl-pn-" + decision) || document.getElementById("crl-pn-confirmed"); if (n) n.focus(); });
       };
     }
-    out.push(h.el("div", { cls: "crl-acts" }, [h.word("Confirm the group", decide("confirmed", "Confirmed"), { id: "crl-pn-confirmed" }),
+    out.push(h.el("label", { "for": "crl-pn-note", cls: "crl-pn-notel", text: "Why (optional): the next curator reads this, saved with the decision" }));
+    out.push(noteBox);
+    var acts2 = [h.word("Confirm the group", decide("confirmed", "Confirmed"), { id: "crl-pn-confirmed" }),
       h.word("Not a topic", decide("not_a_topic", "Not a topic"), { id: "crl-pn-not_a_topic" }),
-      h.word("Open it in the worklist", function () { state.view = "worklist"; state.filter = "all"; state.q = m.rec; state.open[g.key] = true; render(); })]));
+      h.word("Defer", decide("deferred", "Deferred"), { id: "crl-pn-deferred" })];
+    // Clear keeps the row, so "never reviewed" and "reviewed then reverted" stay distinguishable.
+    if (d && d.decision !== "cleared") acts2.push(h.word("Clear the decision", decide("cleared", "Cleared"), { id: "crl-pn-cleared" }));
+    out.push(h.el("div", { cls: "crl-acts" }, acts2.concat([
+      h.word("Open it in the worklist", function () { state.view = "worklist"; state.filter = "all"; state.q = m.rec; state.open[g.key] = true; render(); })])));
     out.push(status);
     var more = [];
     more.push(h.el("p", null, ["Rung: " + rung.label + ". " + (g.rung_why || rung.why)]));
