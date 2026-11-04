@@ -380,7 +380,7 @@
       fold.appendChild(PG.render(spec));
     } else if (pg.pageFailed) {
       fold.appendChild(el("p", { "class": "cplcoci-empty", role: "alert" }, ["The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again."]));
-    } else fold.appendChild(el("p", { "class": "cplcoci-meta", role: "status" }, ["Reading the reference's figures."]));
+    } else fold.appendChild(el("p", { "class": "cplcoci-empty ccl-fold-note", role: "status" }, ["Reading the reference's figures."]));
     wrap.appendChild(fold);
   }
   /* A course's side panel (SkyView's course outline the model): what it is, its common course and the other local
