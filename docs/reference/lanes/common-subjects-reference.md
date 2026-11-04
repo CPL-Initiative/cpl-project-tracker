@@ -80,22 +80,23 @@ confirms synced to a committed file.
 
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
-the authority rule, and that is in no collision with another MQ discipline. Measured 2026-10-19: **121 of 147**
-(122 confirmed, Auto Body Technology in the AUTB collision). Confirmed alone would read 122; adding "no finding
-needing a judgment" would read 106.
+the authority rule, and that is in no collision with another MQ discipline. Measured 2026-11-04: **147 of 147**,
+every MQ discipline with courses complete (133 confirmed by a person, 14 by the nightly procedure or a session cohort;
+no collision). The Commons card's unconfirmed issue leaves its list at zero, by the builder's rule that an empty issue
+is not an issue.
 
-**The measured state, 2026-10-19:**
+**The measured state, 2026-10-19 (the rows the 2026-11-04 scan re-measured say so):**
 
 | what | measure |
 |---|---|
 | MQ disciplines in the handbook's index | 248 (19th edition, read 2026-05-20, re-validated 2026-07-10); 147 carry courses on the map, 101 carry none |
-| picks confirmed by a person | 122 of 147 (the live table holds 121 code rows, all Sam's; Physical Education Disabled Students is a seed-only override); 25 on the data's modal code, 13 of them on the authority's own code, which the nightly confirm takes from its first run; 0 through the validate stage, whose column left the tab (ruling 5) |
+| picks confirmed | 147 of 147 (2026-11-04): 133 by a person, 14 by the nightly procedure or a session cohort; 0 on the data's modal code unconfirmed |
 | on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
 | C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
 | identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
 | collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing returned to Auto Body Technology on Sam's Sheet 101 ruling (22:38Z), so no row sits off its code |
 | by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
-| the daily scan | 61 findings (2026-10-19, after the AGAB re-key and the M1071 ruling): 24 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; no collision |
+| the daily scan | 38 findings (2026-11-04): 19 aligned, 13 weak mnemonics, 3 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; none unconfirmed, no collision. The Commons card counts 17 to confirm or note and 93 stray identity codes on 305 identities |
 | procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync

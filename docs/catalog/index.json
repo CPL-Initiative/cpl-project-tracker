@@ -16516,8 +16516,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 533,
+   "count": 534,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 567,
+     "path": "docs/session_567_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "common-subjects-reference",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25613,5 +25629,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1367
+ "total": 1368
 }
