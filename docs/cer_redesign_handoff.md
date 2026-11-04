@@ -31,6 +31,13 @@ bytes, and the commits since `session_565` (its checkpoint trigger).
   M-ID holds, the Title drawer (description, outcomes) moved in. The Title drawer's tests in `coci_list` and
   `coci_lookup` now drive it inside the panel. `tests/coci_list_panel.test.js`. This checkpoint rides in it.
 
+- **#2747** (merged): Exhibits' panel on the engine's parts (each exhibit's number links to MAP); Exhibits' and CR
+  Progress's Commons reads through `CPL_COMMONS_LIST.readCommons` (`tests/commons_one_reader.test.js`); the CR wording
+  panel does what the worklist's group card did (Split out, Put back, Name the group by it, Add a wording, the note
+  with Defer, Clear). The engine's `h.table` takes a fixed column of controls.
+- **#2748**: the CR List opens first; Progress counts and `#cr-reference/<filter>` open it, with *Folded by a rule* and
+  *Held by a screen*; the official-title warning rides in the panel; `#cr-reference/worklist` keeps the worklist.
+
 ## Open work, in order
 
 1. **Merge the CR List-first PR** once `test` passes on its head (#2746 and #2747 merged).
