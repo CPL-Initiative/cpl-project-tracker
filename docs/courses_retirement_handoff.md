@@ -76,4 +76,4 @@ its work with its moniker; the CPL queue's `docs/session_<N>_handoff.md` stays t
 
 ## Let go
 
-At sign-off: drop the PR watch on #2779 once merged. No check-in, no artifact watch.
+At sign-off: drop the PR watch on #2780 (this checkpoint) once merged; #2775, #2776, #2777 and #2779 merged and unwatched. No check-in, no artifact watch.
