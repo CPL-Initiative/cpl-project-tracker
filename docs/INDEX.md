@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 97 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 537 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1371** | |
+| Session handoffs | 538 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1372** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-04 S570 SkyFireworks (CPL Queue routine): the cert link's PMI, ICC, CDPH and EMSA families, 17 titles to 16 certs (#2760); light checkpoint; handoff 571.
 - 2026-11-04 S569 SkyAntennae (CPL Queue routine): merged S568's #2758; the cert link's Autodesk, NCCER and ASME families, 13 titles to 20 certs (#2759); light checkpoint; handoff 570.
 - 2026-11-04 S568 SkyMalin (CPL Queue routine): the cert link's FAA family, 11 titles to 15 certs (#2758); light checkpoint; handoff 569.
 - 2026-11-03 SkyTrue: the List becomes each common reference's workspace (#2735, #2736); the Local subjects List (#2737); the Exhibits side panel (#2738); light checkpoint.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-03 S561 SkyCigar (CPL Queue routine): merged S560's #2721; the Commons to-do's last four pairs, Subjects' findings count and Exhibits' held list now agree with their cards (#2722); light checkpoint; handoff 562.
 - 2026-11-03 S559 SkyAndromeda (CPL Queue routine): the Common Course Reference takes the Commons page in COCI Lookup (#2720), the last reference; Santa Ana's 1,366 SLO rows loaded (#2716); Las Positas's trial 12 of 12; handoff 560.
 - 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
-- 2026-11-03 S557 SkySculptor (CPL Queue routine): the ELL IET Version 3 draft from Sam's Revise request; Santa Ana's SLO read and Las Positas's index; the CSM Workspace UI pass; library lessons archived (`docs/library_lessons_archive.md`); handoff 558.
