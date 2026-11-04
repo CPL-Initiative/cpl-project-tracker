@@ -3,10 +3,10 @@
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
  "_reference_generated_at": "2026-11-04T06:20:04+00:00",
  "counts": {
-  "certs_linked": 222,
-  "titles_linked": 259,
-  "holds": 243,
-  "bundles": 48,
+  "certs_linked": 226,
+  "titles_linked": 271,
+  "holds": 255,
+  "bundles": 51,
   "aligned": 16,
   "codes_not_in_catalog": [
    "G1"
@@ -559,6 +559,13 @@
    "issuer": "California Emergency Medical Services Authority",
    "family": "EMSA"
   },
+  "ITC3983": {
+   "code": null,
+   "name": "Wildland Fire Chainsaws",
+   "catalog_name": "Wildland Fire Chainsaws",
+   "issuer": "National Wildfire Coordinating Group",
+   "family": "NWCG"
+  },
   "ITC4053": {
    "code": null,
    "name": "Aviation Airframe Mechanic",
@@ -740,6 +747,27 @@
    "catalog_name": "Parts Specialist Certification - P1 Medium-Heavy Truck Parts Specialist",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
+  },
+  "ITC4234": {
+   "code": null,
+   "name": "Distribution System Operator",
+   "catalog_name": "Distribution System Operator",
+   "issuer": "California State Water Resources Control Board",
+   "family": "SWRCB"
+  },
+  "ITC4236": {
+   "code": null,
+   "name": "Wastewater Treatment Plant Operator",
+   "catalog_name": "Wastewater Treatment Plant Operator",
+   "issuer": "California State Water Resources Control Board",
+   "family": "SWRCB"
+  },
+  "ITC4237": {
+   "code": null,
+   "name": "Water Treatment Operator",
+   "catalog_name": "Water Treatment Operator",
+   "issuer": "California State Water Resources Control Board",
+   "family": "SWRCB"
   },
   "ITC5200": {
    "code": null,
@@ -3544,6 +3572,95 @@
    "rule": "all",
    "certs": [
     "ITC4093"
+   ]
+  },
+  "Wastewater Treatment 1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4236"
+   ]
+  },
+  "Wastewater Treatment 2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4236"
+   ]
+  },
+  "Water Distribution Operator 2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4234"
+   ]
+  },
+  "Water Distribution Operator Grade D2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4234"
+   ]
+  },
+  "Water Distribution Operator Grade D2, D3, D4, or D5": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4234"
+   ]
+  },
+  "Water Treatment 1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4237"
+   ]
+  },
+  "Water Treatment 2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4237"
+   ]
+  },
+  "Water Treatment Operator Grade T2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4237"
+   ]
+  },
+  "Water Treatment Operator Grade T3 / Distribution Grade D3": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4237",
+    "ITC4234"
+   ]
+  },
+  "Water and Wastewater Mathematics 1": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC4237",
+    "ITC4234",
+    "ITC4236"
+   ]
+  },
+  "Water/Wastewater Operator Certification": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC4237",
+    "ITC4234",
+    "ITC4236"
+   ]
+  },
+  "Wildland Fire Chainsaws (S-212)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC3983"
    ]
   }
  }

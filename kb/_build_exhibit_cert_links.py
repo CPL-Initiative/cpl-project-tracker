@@ -264,6 +264,31 @@ HAND = {
         "AWS Certified Solutions Architect — Associate": ("all", ["AWS Certified Solutions Architect - Associate"]),
         "AWS CloudOps Engineer - Associate": ("all", ["AWS Certified CloudOps Engineer - Associate"]),
     }),
+    # Fourteenth and fifteenth families (S572, 2026-11-04): NWCG and the State Water Resources Control Board, one catalog
+    # spelling each. The Board's catalog rows carry no grade, so a title whose exhibits name a grade (D2, T3, wastewater
+    # grade II) holds its operator row, as a D1.1 qualification holds the code's row; a title naming certifications
+    # joined by "or" holds any of them. Left out: "Water Treatment Facilities" (its exhibits name two issuers) and every
+    # NWCG course title but S-212. The S-130/S-190 course is the training for Firefighter Type 2, and the position also
+    # needs a task book, so no course title is pointed at the position.
+    "NWCG": (("National Wildfire Coordinating Group",), {
+        "Wildland Fire Chainsaws (S-212)": ("all", ["Wildland Fire Chainsaws"]),
+    }),
+    "SWRCB": (("California State Water Resources Control Board",), {
+        "Wastewater Treatment 1": ("all", ["Wastewater Treatment Plant Operator"]),
+        "Wastewater Treatment 2": ("all", ["Wastewater Treatment Plant Operator"]),
+        "Water Treatment 1": ("all", ["Water Treatment Operator"]),
+        "Water Treatment 2": ("all", ["Water Treatment Operator"]),
+        "Water Treatment Operator Grade T2": ("all", ["Water Treatment Operator"]),
+        "Water Distribution Operator 2": ("all", ["Distribution System Operator"]),
+        "Water Distribution Operator Grade D2": ("all", ["Distribution System Operator"]),
+        "Water Distribution Operator Grade D2, D3, D4, or D5": ("all", ["Distribution System Operator"]),
+        "Water Treatment Operator Grade T3 / Distribution Grade D3": ("all", ["Water Treatment Operator",
+                                                                               "Distribution System Operator"]),
+        "Water and Wastewater Mathematics 1": ("any", ["Water Treatment Operator", "Distribution System Operator",
+                                                       "Wastewater Treatment Plant Operator"]),
+        "Water/Wastewater Operator Certification": ("any", ["Water Treatment Operator", "Distribution System Operator",
+                                                            "Wastewater Treatment Plant Operator"]),
+    }),
 }
 HAND_ISSUER = {sp: fam for fam, (spellings, _) in HAND.items() for sp in spellings}
 HAND_TITLE = {ut: fam for fam, (_, table) in HAND.items() for ut in table}
