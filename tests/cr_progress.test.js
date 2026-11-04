@@ -40,9 +40,9 @@ const f = cr.facts;
 const n = (v) => Number(v).toLocaleString("en-US");
 
 // ───────────────────────────── Part A — static invariants ─────────────────────────────
-check("the tab draws a view row, Progress first, then Worklist",
-  /data-view="progress"[^]*?>Progress<\/button>[^]*?data-view="worklist"/.test(TAB));
-check("the tab opens on the List, the workspace since 2026-11-04", /view: "list",/.test(TAB) && /filter: "todo"/.test(TAB));
+check("the tab draws a view row, Progress first, then List (the worklist retired into the List, 2026-11-04)",
+  /data-view="progress"[^]*?>Progress<\/button>[^]*?data-view="list"/.test(TAB) && !/data-view="worklist"/.test(TAB));
+check("the tab opens on the List, the workspace since 2026-11-04", /view: "list",/.test(TAB));
 check("the tab loads the module, the opened page, then the definitions (S556)",
   /loadScript\("commons_progress\.js", "CPL_COMMONS_PROGRESS", function \(\) \{[\s\S]*?T\.loadScript\("commons_page\.js", "CPL_COMMONS_PAGE", function \(\) \{\s*T\.loadScript\("cr_progress\.js", "CPL_CR_PROGRESS", cb\)/.test(TAB));
 check("the Commons card for the reference opens the List, Progress a word away (Sam, 2026-11-03)",
@@ -206,26 +206,24 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
     wordings: recs.length, rows: 1, colleges: 1, credentials: 1, members: recs.map((r) => ({ rec: r, rows: 1 })) }, extra || {});
   const w = tab("#cr-reference/open");
   const S = w.CPL_CR_REFERENCE._state;
-  check("#cr-reference/open opens the List on No rule or decision", w.CPL_CR_REFERENCE._route() && S.view === "list" && S.filter === "open" && S.ls && S.ls.f === "open");
-  S.view = "worklist";   // the worklist's own filters, checked while it lives
+  check("#cr-reference/open opens the List on No rule or decision", w.CPL_CR_REFERENCE._route() && S.view === "list" && S.ls && S.ls.f === "open");
+  // The two lists, on the predicates the List's filters call (the worklist's own filters retired with it, 2026-11-04).
   S.data = { _stats: {} }; S.stats = { distinct_strings: 6, total_rows: 6 }; S.loading = false;
   S.groups = [grp("a", ["a1", "a2"], { rung: 1, acts_automatically: true }), grp("b", ["b1"]), grp("c", ["c1"]), grp("d", ["d1"]),
     grp("n", ["n1"], { official_id: "AJ 110", title_divergent: true })];
   S.decisions = { b: { group_key: "b", decision: "confirmed", members: ["b1", "c1"], excluded: [] },
     d: { group_key: "d", decision: "deferred", members: ["d1"], excluded: [] } };
-  const vis = w.CPL_CR_REFERENCE._visible().map((g) => g.key);
+  const vis = S.groups.filter(w.CPL_CR_REFERENCE._isOpen).map((g) => g.key);
   check("No rule or decision: not a rule's group, not a decided one, not one whose wording was folded; a deferred one stays",
     vis.join(",") === "d,n");
-  S.filter = "names";
-  check("Name to check: the official number whose title shares no word", w.CPL_CR_REFERENCE._visible().map((g) => g.key).join(",") === "n");
+  check("Name to check: the official number whose title shares no word", S.groups.filter(w.CPL_CR_REFERENCE._isName).map((g) => g.key).join(",") === "n");
+  check("the List's filters call the same two predicates", /L\.f === "open"\) return isOpen\(/.test(TAB) && /L\.f === "names"\) return isName\(g\)/.test(TAB));
   w.CPL_CR_REFERENCE._render();
-  const chipText = Array.from(w.document.querySelectorAll(".crr-chip")).map(txt).join(" | ");
-  check("the filter row counts the two new lists", /No rule or decision \(2\)/.test(chipText) && /Name to check \(1\)/.test(chipText));
   const views = Array.from(w.document.querySelectorAll("button.crr-view"));
-  // S542 added the List after the Worklist (the Catalog Commons' shared List, commons_list.js).
-  check("the view row: Progress, then Worklist (pressed here), then List", views.map(txt).join(",") === "Progress,Worklist,List"
-    && views[1].getAttribute("aria-pressed") === "true" && views[0].getAttribute("aria-pressed") === "false"
-    && views[2].getAttribute("aria-pressed") === "false");
+  check("the view row: Progress, then List (pressed here)", views.map(txt).join(",") === "Progress,List"
+    && views[1].getAttribute("aria-pressed") === "true" && views[0].getAttribute("aria-pressed") === "false");
+  const w4 = tab("#cr-reference/worklist");
+  check("#cr-reference/worklist, the retired view's address, opens the List", w4.CPL_CR_REFERENCE._route() && w4.CPL_CR_REFERENCE._state.view === "list");
   const w1 = tab("");
   const root1 = w1.document.getElementById("cr-reference-root");
   root1.setAttribute("style", "border: 1px dashed var(--border-strong); text-align: center;");
@@ -236,8 +234,7 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
   const w2 = tab("#cr-reference/progress");
   check("#cr-reference/progress opens the Progress view", w2.CPL_CR_REFERENCE._route() && w2.CPL_CR_REFERENCE._state.view === "progress");
   const w3 = tab("#cr-reference/nope");
-  check("an unknown word leaves the tab where it opens, on the List", !w3.CPL_CR_REFERENCE._route() && w3.CPL_CR_REFERENCE._state.view === "list"
-    && w3.CPL_CR_REFERENCE._state.filter === "todo");
+  check("an unknown word leaves the tab where it opens, on the List", !w3.CPL_CR_REFERENCE._route() && w3.CPL_CR_REFERENCE._state.view === "list");
   check("the live count is withheld when no one is signed in", w.CPL_CR_REFERENCE._progressApi().liveDecided === null);
 
   let failed = 0;

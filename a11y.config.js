@@ -3242,7 +3242,7 @@ module.exports = {
   },
   /* The Common CR Reference's Progress view (S437): the Commons' dash for the reference,
      drawn once the module, the definitions, the run log and the Commons figures are in. The
-     cobi sweep lands on the worklist, so the view needs its own target. */
+     cobi sweep lands on the List, so the view needs its own target. */
   "cr-progress": {
     file: "index.html",
     title: "Common CR Reference: Progress, the Commons' dash",
