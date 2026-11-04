@@ -38,6 +38,8 @@ function entry(code, extra) {
     cid_subject_codes: [], ccn_subject_code: null }, extra || {});
 }
 function open(code, extra) { return entry(code, Object.assign({ source: "data_modal", reviewed_at: null, reviewed_by: null }, extra || {})); }
+const LOCAL_COURSES = { discipline: "Automotive Technology", colleges: ["Alpha College"],
+  by: { AT: [[0, "101", "Brakes", "CCC000000101"], [0, "102", "Engine Repair", "CCC000000102"]] } };
 const SEED = {
   _counts: {}, _seeded_at: "2026-09-30", _synced_at: "2026-10-19T13:25:33Z",
   disciplines: {
@@ -90,6 +92,8 @@ function boot(opts) {
       return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(opts.commons))) });
     }
     const body =
+      u.indexOf("discipline_local_courses/index.json") >= 0 ? { files: { "Automotive Technology": "automotive-technology.json" } } :
+      u.indexOf("discipline_local_courses/automotive-technology.json") >= 0 ? LOCAL_COURSES :
       u.indexOf("discipline_canonical_subj4.json") >= 0 ? SEED :
       u.indexOf("kb_curation") >= 0 ? OVERLAY :
       u.indexOf("discipline_aliases.json") >= 0 ? ALIASES :
@@ -126,7 +130,7 @@ function col(d, name) {
   return H.indexOf(name);
 }
 /* The title cell carries its lines under the title (a suggestion, changed this visit), so a row is found by its title word. */
-function titleOf(r) { return txt(r.children[1].querySelector(".csl-open") || r.children[1]); }
+function titleOf(r) { return txt(r.querySelector(".csl-title .csl-open") || r.querySelector(".csl-title")); }
 function rowOf(d, disc) { return rows(d).find((r) => titleOf(r) === disc); }
 function cell(d, disc, name) { const r = rowOf(d, disc); return r ? txt(r.children[col(d, name)]) : null; }
 /* The engine draws an empty cell as a dash it can be pressed on. */
@@ -145,7 +149,8 @@ const COMMONS = { schema: 1, written_at: "2026-11-04T06:00:00Z", rows: [{ key: "
     { n: 93, words: "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities", open: "#canonical-subj4/progress" }] }] };
 function lineOf(d) { return d.querySelector("#cs-list .csl-line"); }
 function panel(d) { return d.getElementById("csl-panel"); }
-function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.children[1].querySelector("button.csl-open"); }
+function w0(d) { return d.defaultView; }
+function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.querySelector(".csl-title button.csl-open"); }
 
 (async function () {
   // ── (1) the line ──
@@ -217,6 +222,24 @@ function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.children[1]
   const lrows2 = Array.from(panel(d).querySelectorAll("#csl-pn-locals tbody tr")).map((r) => txt(r.children[0]));
   check("(5) Courses opens high to low, so a press sorts it low to high", lrows2.join(",") === "AUT,AT,AUTO"
     && /^Courses, low to high/.test(txt(panel(d).querySelectorAll("#csl-pn-locals th button")[1])), lrows2.join(","));
+  // (5b) the courses behind a count (Sam, 2026-11-04, on ECONMT's 55: "Add a hover over on the 55 so I can see the 55
+  //      course titles"): the panel reads its MQ discipline's course file as it opens, each count's tooltip names them,
+  //      a press lists them under the table, and the way to refile the code opens Local subjects on it.
+  const atBtn = panel(d).querySelector("#csl-lc-AT");
+  check("(5b) ⭐ a count is a word whose tooltip names its courses", !!atBtn && atBtn.tagName === "BUTTON" && /^AT 101  Brakes\nAT 102  Engine Repair$/.test(atBtn.title || ""), atBtn && atBtn.title);
+  atBtn.click(); await settle();
+  const lc = panel(d).querySelector(".csl-lc");
+  const lcRows = lc ? Array.from(lc.querySelectorAll("tbody tr")).map((r) => Array.from(r.children).map(txt).join(",")) : [];
+  check("(5b) ⭐ pressing it lists the courses with their control numbers, at their one college", !!lc && /The courses on AT/.test(txt(lc))
+    && lcRows.join("|") === "AT 101,Brakes,CCC000000101|AT 102,Engine Repair,CCC000000102" && /2 courses, all at Alpha College/.test(txt(lc))
+    && panel(d).querySelector("#csl-lc-AT").getAttribute("aria-expanded") === "true", lcRows.join("|"));
+  const refile = Array.from(lc.querySelectorAll("button")).find((b) => txt(b) === "Refile AT in Local subjects");
+  check("(5b) the courses offer the way to refile the code, and to hide them", !!refile && Array.from(lc.querySelectorAll("button")).some((b) => txt(b) === "Hide the courses"));
+  const noList = panel(d).querySelector("#csl-lc-AUT");
+  check("(5b) a code the build names no courses for says so in its tooltip", !!noList && /No course list for AUT/.test(noList.title || ""));
+  refile.click(); await settle();
+  check("(5b) ⭐ Refile opens the Local subjects view", /canonical-subj4\/local/.test(w0(d).location.hash) || !!d.querySelector("#cs-local:not([hidden])"), w0(d).location.hash);
+  w0(d).location.hash = "#canonical-subj4/list"; await settle();
   check("(5) the title's drawer moves in: the MQ discipline's other words", !!panel(d).querySelector(".csl-pdrawer"));
   check("(5) the rest folded: authority and note", !!panel(d).querySelector("details.csl-pn-more") && /C-ID code/.test(txt(panel(d).querySelector("details.csl-pn-more")))
     && /Note: a note/.test(txt(panel(d).querySelector("details.csl-pn-more"))));

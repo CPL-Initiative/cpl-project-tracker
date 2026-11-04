@@ -77,7 +77,7 @@ const ALIASES = { aliases: { "Kinesiology": ["Physical Education"] } };
 
 function boot(opts) {
   opts = opts || {};
-  const posts = [];
+  const posts = [], auths = [];
   const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body>
     <div id="tab-canonical-subj4">
       <div id="cs-toolbar"></div><div id="cs-summary"></div>
@@ -88,7 +88,7 @@ function boot(opts) {
   w.fetch = function (url, init) {
     const u = String(url);
     if (u.indexOf("kb_curation") >= 0 && init && init.method === "POST") {
-      posts.push(JSON.parse(init.body));
+      posts.push(JSON.parse(init.body)); auths.push(init.headers && init.headers.Authorization);
       return Promise.resolve(opts.refuse ? { ok: false, status: 401, json: () => Promise.resolve({}) } : { ok: true, status: 201, json: () => Promise.resolve([]) });
     }
     const body =
@@ -114,7 +114,7 @@ function boot(opts) {
     setTimeout(cb, 0);
   } };
   vm.runInContext(SRC, ctx, { filename: "canonical_subj4.js" });
-  return { w: w, d: w.document, posts: posts, confirms: confirms, loads: loads, M: () => w.CPL_CANONICAL_SUBJ4 };
+  return { w: w, d: w.document, posts: posts, auths: auths, confirms: confirms, loads: loads, M: () => w.CPL_CANONICAL_SUBJ4 };
 }
 const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 15; i++) await tick(); }
@@ -126,7 +126,7 @@ function col(d, name) {
   return H.indexOf(name);
 }
 /* The title cell carries its lines under the title (a suggestion, changed this visit), so a row is found by its title word. */
-function titleOf(r) { return txt(r.children[1].querySelector(".csl-open") || r.children[1]); }
+function titleOf(r) { return txt(r.querySelector(".csl-title .csl-open") || r.querySelector(".csl-title")); }
 function rowOf(d, disc) { return rows(d).find((r) => titleOf(r) === disc); }
 function cell(d, disc, name) { const r = rowOf(d, disc); return r ? txt(r.children[col(d, name)]) : null; }
 /* The engine draws an empty cell as a dash it can be pressed on. */
@@ -241,8 +241,23 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   change(u, boxOf(u.d, "Welding", "Common SUBJ"), "WLDG");
   await settle();
   check("(6) ⭐ a refused write says it did not save and puts the value back", u.posts.length === 1 && boxOf(u.d, "Welding", "Common SUBJ").value === "WELD"
-    && /did not save \(status 401\)/.test(txt(u.d.getElementById("csl-cellnote"))) && cell(u.d, "Welding", "Status") === "Confirmed by a session cohort",
+    && /did not save \(the sign-in has lapsed; sign in again/.test(txt(u.d.getElementById("csl-cellnote"))) && cell(u.d, "Welding", "Status") === "Confirmed by a session cohort",
     txt(u.d.getElementById("csl-cellnote")));
+  // (6b) the tag says the sign-in lapsed (Sam, 2026-11-04: "it shows me as signed in"), and offers the sign-in again.
+  const tag = u.d.querySelector("#tab-canonical-subj4 .cs-auth");
+  check("(6b) ⭐ a 401 turns the signed-in tag to lapsed, with Sign in again", !!tag && !!tag.querySelector(".cs-auth-lapsed")
+    && /Sign-in lapsed for curator@rccd\.edu/.test(txt(tag)) && !tag.querySelector(".cs-auth-on")
+    && Array.prototype.some.call(tag.querySelectorAll("a"), function (a) { return a.textContent === "Sign in again"; }), tag && txt(tag));
+
+  // (6c) a save carries the token as it stands when it writes, never the copy taken when the tab loaded: the keeper
+  // renews cpl_sb underneath (a laptop back from sleep), and the 401s came from the stale copy.
+  const f = boot({});
+  await settle();
+  f.w.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "new.renewed.token", refresh_token: "rrr2", email: "curator@rccd.edu", exp: Date.now() + 9e6 }));
+  f.d.getElementById("csl-editall").click(); await settle();
+  change(f, boxOf(f.d, "Welding", "Common SUBJ"), "WLDG");
+  await settle();
+  check("(6c) ⭐ a save reads the renewed token at write time", f.auths.length === 1 && f.auths[0] === "Bearer new.renewed.token", JSON.stringify(f.auths));
 
   // ── (7) signed out ──
   const v = boot({ signedIn: false });
@@ -254,19 +269,27 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(7) a save asks for a sign-in and writes nothing", v.posts.length === 0 && /Sign in as a reviewer/.test(txt(v.d.getElementById("csl-cellnote")))
     && boxOf(v.d, "Psychology", "Common SUBJ").value === "PSYC");
 
-  // ── (8) Confirm this pick ──
+  // ── (8) Confirm this pick, in the panel (a row press opens its edit row and its panel; the Status drawer's words
+  //        moved there with editByRow, Sam 2026-11-04) ──
   const x = boot();
   await settle();
   rowOf(x.d, "Psychology").children[col(x.d, "Status")].querySelector("button").click(); await settle();
-  const drawer = x.d.querySelector("#cs-list .csl-drawer");
-  check("(8) the Status drawer says the pick waits and offers Confirm this pick", !!drawer && /waits for a person to confirm it/.test(txt(drawer)) && !!inDrawer(x.d, "Confirm this pick"), txt(drawer));
-  inDrawer(x.d, "Confirm this pick").click(); await settle();
+  const pnl = () => x.d.getElementById("csl-panel");
+  check("(8) a press on the Status cell opens the row's edit row and its panel, which says the pick waits",
+    !!pnl() && /waits for a person to confirm it/.test(txt(pnl())) && !!x.d.getElementById("csl-pn-confirm")
+    && x.d.getElementById("csl-subj").value === "PSYC" && !x.d.querySelector("#cs-list .csl-drawer"), pnl() && txt(pnl()));
+  x.d.getElementById("csl-pn-confirm").click(); await settle();
   check("(8) ⭐ Confirm this pick writes the open pick's own code for its discipline",
     x.posts.length === 1 && x.posts[0].course_id === "_CANON_SUBJ4::Psychology" && x.posts[0].field === "canonical_subj4" && x.posts[0].value === "PSYC");
-  check("(8) the row then reads Confirmed by a person", cell(x.d, "Psychology", "Status") === "Confirmed by a person" && /Confirmed PSYC for Psychology/.test(txt(x.d.getElementById("csl-cellnote"))));
+  check("(8) the row then reads Confirmed by a person", cell(x.d, "Psychology", "Status") === "Confirmed by a person");
   rowOf(x.d, "Mathematics").children[col(x.d, "Status")].querySelector("button").click(); await settle();
-  check("(8) a confirmed pick's drawer names who confirmed it and offers no Confirm", /Confirmed by the nightly procedure, csr-confirm-authority@bot/.test(txt(x.d.querySelector("#cs-list .csl-drawer")))
-    && !inDrawer(x.d, "Confirm this pick"));
+  check("(8) ⭐ pressing another row moves the panel to it: who confirmed it, and no Confirm",
+    /Mathematics/.test(txt(x.d.getElementById("csl-panel-t"))) && /Confirmed by the nightly procedure, csr-confirm-authority@bot/.test(txt(pnl()))
+    && !x.d.getElementById("csl-pn-confirm") && x.d.getElementById("csl-subj").value === "MATH");
+  // Edit sits beside the select box (Sam, 2026-11-04: "Move edit button to the right of the selection boxes").
+  const mrow = rowOf(x.d, "Mathematics");
+  check("(8) ⭐ Edit is the row's second cell, after its select box", !!mrow.children[0].querySelector("input[type=checkbox]")
+    && !!mrow.children[1].querySelector("button[aria-label='Edit Mathematics']") && !mrow.lastElementChild.querySelector("button[aria-label='Edit Mathematics']"));
 
   // ── (9) Edit (one row) saves a note through the note path ──
   const y = boot();
@@ -278,6 +301,14 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   words(y.d, "Save").click(); await settle();
   check("(9) ⭐ Save writes the note row only, for that discipline", y.posts.length === 1 && y.posts[0].course_id === "_CANON_SUBJ4::Auto Body Technology"
     && y.posts[0].field === "canonical_subj4_notes" && y.posts[0].value === "Auto Body keeps AUTB", JSON.stringify(y.posts));
+  check("(9) ⭐ a save that lands closes the edit row (Sam, 2026-11-04: \"close row after save\")", !y.d.getElementById("csl-subj") && !y.d.querySelector("#cs-list .csl-editrow"));
+  // (9b) the visit's changes can be checked at once (Sam, 2026-11-04: "should there I be offered an option to rerun the routine")
+  const ckw = y.d.getElementById("csl-ck-w");
+  check("(9b) a change offers Check the 1 change made this visit", !!ckw && txt(ckw) === "Check the 1 change made this visit", ckw && txt(ckw));
+  ckw.click(); await settle();
+  const ckList = y.d.querySelector("#csl-ck .csl-ck-list");
+  check("(9b) ⭐ the check reads the changed row: its code, the fixture's collision, its local use, and where the scan's fuller rules run",
+    !!ckList && /Auto Body Technology \(AUTB\): in a collision: AUTB with Agricultural Business and Related Services; 20 local courses of 30 already use AUTB\./.test(txt(ckList)) && /daily dashboard run at 06:17 UTC/.test(txt(y.d.getElementById("csl-ck"))), ckList && txt(ckList));
   const ab = y.M()._listRows().find((r) => r.ut === "Auto Body Technology");
   check("(9) the note shows and the pick's reviewer stays the code row's", cell(y.d, "Auto Body Technology", "Notes") === "Auto Body keeps AUTB"
     && ab.e.reviewed_by === "map@rccd.edu" && ab.how === "person");
@@ -306,8 +337,8 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
     && /Confirmed PSYC for Psychology/.test(txt(sy.d.getElementById("csl-cellnote"))), txt(sy.d.getElementById("csl-cellnote")));
   words(sy.d, "Changed this visit").click(); await settle();
   check("(11) ⭐ Changed this visit lists it, saying so under the title, and it reads Confirmed by a person",
-    rows(sy.d).map(titleOf).join("|") === "Psychology" && /changed this visit/.test(txt(rows(sy.d)[0].children[1]))
-    && cell(sy.d, "Psychology", "Status") === "Confirmed by a person", rows(sy.d).map((r) => txt(r.children[1])).join("|"));
+    rows(sy.d).map(titleOf).join("|") === "Psychology" && /changed this visit/.test(txt(rows(sy.d)[0].querySelector(".csl-title")))
+    && cell(sy.d, "Psychology", "Status") === "Confirmed by a person", rows(sy.d).map((r) => txt(r.querySelector(".csl-title"))).join("|"));
   const sz = boot();
   await settle();
   Array.from(sgOf(sz.d, "Psychology").querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();

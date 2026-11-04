@@ -49,10 +49,10 @@ function boot(opts) {
     w: w, d: d, posts: posts, M: () => w.CPL_CANONICAL_SUBJ4,
     rows: () => Array.from(d.querySelectorAll("#cs-list .csl-table tbody tr:not(.csl-editrow):not(.csl-band)")),
     /* The title cell carries its lines under the title, so a row is named by its title word. */
-    titles: () => api.rows().map((r) => txt(r.children[1].querySelector(".csl-open") || r.children[1])),
+    titles: () => api.rows().map((r) => txt(r.querySelector(".csl-title .csl-open") || r.querySelector(".csl-title"))),
     heads: () => Array.from(d.querySelectorAll("#cs-list .csl-table thead tr:first-child th")).map(txt)
       .map((h) => h.replace(/ \(\d+\)/, "").replace(/, (A to Z|Z to A|low to high|high to low)$/, "")),
-    cell: (disc, name) => { const r = api.rows().find((x) => txt(x.children[1].querySelector(".csl-open") || x.children[1]) === disc); return r ? txt(r.children[api.heads().indexOf(name)]) : null; },
+    cell: (disc, name) => { const r = api.rows().find((x) => txt(x.querySelector(".csl-title .csl-open") || x.querySelector(".csl-title")) === disc); return r ? txt(r.children[api.heads().indexOf(name)]) : null; },
     find: async (q) => { const i = d.getElementById("csl-find"); i.value = q; i.dispatchEvent(new w.Event("input")); await settle(); return api.titles(); },
     /* Open an MQ discipline's panel; its text carries the title's drawer (the MQ handbook, other names, the split). */
     panel: async (disc) => {
