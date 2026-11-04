@@ -2845,7 +2845,11 @@
       changed: true,
       suggest: { get: listSuggestOf, verb: "Confirm this pick", accept: listSuggestAccept, always: true,
         label: function (r) { return "Confirm " + r.e.canonical_subj4 + " for " + r.ut; } },
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): an MQ discipline's title opens it
+      // beside the table, with its local subjects, the codes it shares, Confirm this pick and the rest folded.
+      panel: { label: function (r) { return "MQ discipline: " + r.ut; }, body: listPanelBody },
       head: function (wrap, api) {
+        listLine(wrap, api);
         wrap.appendChild(api.el("p", { cls: "cs-quiet", text: "Every MQ discipline with courses, A to Z: its Common SUBJ, who confirmed it, "
           + "the Local SUBJs colleges use for its courses and how many, its local courses and M-IDs, and any collision. Press a cell for its details." }));
         if (!state.sess) wrap.appendChild(api.el("p", { cls: "cs-lede" }, ["You are not signed in. The list reads; a save asks for a sign-in, which sits on the Reference view. ",
@@ -2873,6 +2877,122 @@
       },
       cellSave: listCellSave
     };
+  }
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits' first
+     (PR 2736), then CR's (PR 2743)): one line of the subjects row in kb/status/commons.json, each count opening the List's own
+     filter where it has one, and the Progress view's opened page (its cards: Needs attention and the three questions)
+     folded behind one word for the visit. The engine draws the line and reads the Commons file once a visit. */
+  var LINE_FILTERS = { open: 1, suggested: 1, person: 1, procedure: 1, collision: 1, changed: 1 };
+  function listLine(wrap, api) {
+    var L = listState(), CLM = window.CPL_COMMONS_LIST;
+    // Read once a visit (state.ls resets each visit), fresh: a failed read says so and is not retried until the next
+    // visit, or a failed read would re-render and read again forever (the CR line's lesson, 2026-11-03).
+    if (!L.cmRead && !L.cmLoading && CLM && CLM.readCommons) {
+      L.cmLoading = true;
+      CLM.readCommons(true).then(function (d) {
+        L.cm = CLM.commonsRow(d, "subjects"); L.cmErr = L.cm ? null : "kb/status/commons.json has no subjects row";
+      }, function (e) { L.cmErr = String(e && e.message || e); }).then(function () {
+        L.cmLoading = false; L.cmRead = true; if (state.view === "list") listRepaint();
+      });
+    }
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "csl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; listRepaint(); },
+      control: function (open, text, li, w) {
+        var m = /^#canonical-subj4\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
+        if (f === "list") return L.f ? api.word(text, function () { L.f = ""; L.limit = api.LIMIT; listRepaint(); }, { cls: w + " " + li }) : null;
+        if (f && LINE_FILTERS[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = api.LIMIT; listRepaint(); }, { cls: w + " " + li });
+        if (open) return api.el("a", { href: open, cls: li, text: text });
+        return null;
+      } }));
+    var fold = api.el("div", { cls: "csl-fold", id: "csl-fold" });
+    if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
+    var PG = window.CPL_COMMONS_PAGE;
+    if (PG && window.CPL_COMMONS_PROGRESS) {
+      // The Progress view's own page, under its own prefix, so its ids never meet the Progress view's.
+      var spec = subjPageSpec(progressContext(new Date()));
+      spec.prefix = "csl-pg-";
+      fold.appendChild(PG.render(spec));
+    } else if (L.pgTried) {
+      fold.appendChild(api.el("p", { cls: "cs-caution", role: "alert", text: "The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again." }));
+    } else {
+      fold.appendChild(api.el("p", { cls: "cs-quiet", text: "Loading the summary…" }));
+      // Loaded once a visit, success or failure, so a failed load never loops.
+      if (!L.pgLoading) { L.pgLoading = true; withProgressModule(function () { L.pgLoading = false; L.pgTried = true; if (state.view === "list") listRepaint(); }); }
+    }
+    wrap.appendChild(fold);
+  }
+  /* An MQ discipline's side panel: what it is, its local subjects (the codes colleges use for its courses, the members
+     the row folds), the codes it shares with another MQ discipline (another one's name opens its panel), Confirm this
+     pick with its own status line, and the rest folded: the authority, the note and the identity codes off its code.
+     The title's drawer (the MQ handbook, its other names, the umbrella and the TOP) moves in with it (the engine). */
+  function listPanelBody(r, h) {
+    var e = r.e, L = listState(), notes = L.pnNote || (L.pnNote = {}), out = [];
+    var code = e.canonical_subj4 || "", total = e.local_subject_total || 0;
+    out.push(h.title(r.ut));
+    out.push(h.meta([code ? "Common SUBJ: " + code : "No Common SUBJ yet", CONFIRM_WORDS[r.how],
+      e.local_subject_total != null ? plural(e.local_subject_total, "local course", "local courses") : "",
+      e.total_mids != null ? plural(e.total_mids, "M-ID", "M-IDs") : "", authorityWords(r)]));
+    out.push(h.el("p", { cls: "csl-pn-dec", text: r.how === "open"
+      ? (e.source === "data_modal" ? "Open: the pick is the data's most-used code and waits for a person to confirm it." : "Open: the pick waits for a person.")
+      : CONFIRM_WORDS[r.how] + (e.reviewed_by ? ", " + e.reviewed_by : "") + (e.reviewed_at ? " " + h.stamp(e.reviewed_at) : "") + "." }));
+    var acts = [];
+    if (r.how === "open" && hasCode(e)) {
+      acts.push(h.word("Confirm this pick", function () {
+        notes[r.ut] = "Confirming " + code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
+        listSaveCode(r, code, { confirm: true }).then(function (res) {
+          notes[r.ut] = res.words;
+          if (res.ok) { listChanged(r); render(); }
+        }).then(function () {
+          if (LIST_ENGINE) LIST_ENGINE.redraw();
+          var n = document.getElementById("csl-pn-confirm") || document.getElementById("csl-panel-t"); if (n) n.focus();
+        });
+      }, { id: "csl-pn-confirm" }));
+    }
+    acts.push(h.word("Show it in the Reference view", function () { goTo({ view: "reference", search: r.ut.toLowerCase() }); }));
+    out.push(h.el("div", { cls: "csl-acts" }, acts));
+    var status = h.el("p", { cls: "cs-quiet", role: "status", "aria-live": "polite", text: notes[r.ut] || "" });
+    out.push(status);
+    out.push(h.heading("Its local subjects"));
+    if (!r.locals.length) out.push(h.el("p", { cls: "cs-quiet", text: "No college course under this MQ discipline names a subject code yet." }));
+    else out.push(h.table({ id: "locals", label: "The local subject codes colleges use for " + r.ut,
+      note: plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(total, "local course", "local courses")
+        + (r.more ? "; " + fmtN(r.more) + " more the reference file does not list" : "") + ". Press a header to sort.",
+      cols: [["code", "Local SUBJ"], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"]], sort: { col: 1, dir: -1 },
+      rows: r.locals.map(function (x) {
+        var pct = total ? x[1] / total * 100 : null;
+        return { code: x[0], n: x[1], share: pct == null ? "" : pct < 1 ? "Under 1%" : Math.round(pct) + "%",
+          note: x[0] === code ? "The Common SUBJ" : x[0] === e.data_modal ? "Most used locally" : "" };
+      }) }));
+    var shares = [];
+    r.coll.forEach(function (c) { c.others.forEach(function (o) { shares.push({ code: c.code, d: o.d, why: o.why || "", note: "A collision" }); }); });
+    r.shared.forEach(function (c) { c.others.forEach(function (o) { shares.push({ code: c.code, d: o.d, why: o.why || "", note: "Shared by design" }); }); });
+    if (shares.length) {
+      out.push(h.heading("The codes it shares"));
+      out.push(h.table({ id: "shares", label: "The MQ disciplines that share a code with " + r.ut,
+        note: r.coll.length ? "One code belongs to one MQ discipline, so one side of a collision takes another code at the next fold. "
+          + "A code shared by design (an alias family, a ruled fan-in, an umbrella code) stays. An MQ discipline's name opens its panel."
+          : "Each is shared by design: an alias family, a ruled fan-in, or an umbrella code every owner declares. An MQ discipline's name opens its panel.",
+        cols: [["code", "Code"], ["d", "MQ discipline"], ["why", "Its reason"], ["note", "Note"]],
+        rows: shares,
+        cell: function (row, k) {
+          if (k !== "d") return row[k];
+          return h.word(row.d, function () { h.open(row.d); }, { "aria-label": row.d + ", open its panel" });
+        } }));
+    }
+    var more = [], ov = state.overlay[r.ut] || {};
+    more.push(h.el("p", null, [e.canonical_source === "ccn" ? "The Common SUBJ is the CCN code." : e.canonical_source === "c-id" ? "The Common SUBJ is the C-ID code."
+      : e.canonical_source === "csr" ? "This reference minted the Common SUBJ" + (e.authority_flag === "proposed" ? "; no C-ID or CCN code names these courses yet, so it reads proposed." : ".")
+      : "No authority reading recorded."]));
+    if (e.ccn_subject_code) more.push(h.el("p", null, ["CCN: " + e.ccn_subject_code + "."]));
+    if ((e.cid_subject_codes || []).length) more.push(h.el("p", null, ["C-ID: " + e.cid_subject_codes.join(", ") + "."]));
+    if (e.authority_note) more.push(h.el("p", null, [e.authority_note]));
+    if (r.drift) more.push(h.el("p", null, [plural(r.drift.nOff, "identity carries", "identities carry") + " a code other than " + r.drift.canonical + ": "
+      + r.drift.off.map(function (x) { return x.code + " " + fmtN(x.n) + (x.ownedBy ? " (the code of " + x.ownedBy + ")" : ""); }).join(", ") + ". They fold at the next re-mint."]));
+    var by = ov._notes_by || e._notes_by, at = ov._notes_at || e._notes_at;
+    more.push(h.el("p", null, [e._notes ? "Note: " + e._notes + (by || at ? " (written by " + (by || "a reviewer") + (at ? " " + h.stamp(at) : "") + ")" : "") : "No note yet."]));
+    out.push(h.fold("more", "More about this MQ discipline: its authority, note and identity codes", more));
+    return out;
   }
   function listApi() {
     if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
@@ -3056,6 +3176,9 @@
       "#tab-canonical-subj4 .cs-list[hidden] { display:none; }",
       "#tab-canonical-subj4 .cs-list > p { margin:0 0 6px; font-size:.875rem; }",
       "#tab-canonical-subj4 .csl-acts { display:flex; flex-wrap:wrap; gap:6px 16px; }",
+      "#tab-canonical-subj4 .csl-pn-dec { margin:10px 0 6px; }",
+      // A local code is one word: it never breaks inside itself (the engine's cells wrap anywhere).
+      "#tab-canonical-subj4 #csl-pn-locals td:first-child, #tab-canonical-subj4 #csl-pn-shares td:first-child { overflow-wrap:normal; white-space:nowrap; }",
       "#tab-canonical-subj4 .cs-toolbar[hidden], #tab-canonical-subj4 .cs-summary[hidden], #tab-canonical-subj4 .cs-table-wrap[hidden] { display:none; }",
       "#tab-canonical-subj4 .cs-word { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; display:inline-block; }",
       "#tab-canonical-subj4 .cs-word:hover { text-decoration-thickness:2px; }",

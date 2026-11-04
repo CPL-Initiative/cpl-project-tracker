@@ -97,8 +97,11 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
   lineWord(/^1,884 wordings/).click(); await settle();
   const on = Array.from(t.d.querySelectorAll(".cl-on")).map(txt).join(",");
   check("(2) an issue's count sets the List's own filter", /No rule or decision/.test(on) && !lineWord(/^1,884/) && !!lineWord(/^460 of/), on);
+  // A count pressed from the line resets the page to the first one; a null limit drew an empty table (2026-11-04).
+  check("(2) ⭐ the filter the line sets shows its rows, never an empty table", rows(t.d).length > 0, String(rows(t.d).length));
   lineWord(/^460 of/).click(); await settle();
-  check("(2) the List's own count turns back to All", /^All/.test(Array.from(t.d.querySelectorAll(".cl-on")).map(txt).join(",")) && !lineWord(/^460 of/));
+  check("(2) the List's own count turns back to All, every wording shown", /^All/.test(Array.from(t.d.querySelectorAll(".cl-on")).map(txt).join(",")) && !lineWord(/^460 of/)
+    && rows(t.d).length === 5, String(rows(t.d).length));
   const fold = () => t.d.getElementById("crl-fold"), tog = () => t.d.getElementById("crl-fold-w");
   check("(3) the worklist's measured stance sits in the fold, open", !!fold() && !fold().hidden && fold().querySelectorAll(".crr-stat").length === 5
     && /5wordings in the corpus/.test(txt(fold())) && txt(tog()) === "Hide the summary" && tog().getAttribute("aria-expanded") === "true"

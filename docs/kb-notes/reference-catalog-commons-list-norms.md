@@ -58,8 +58,11 @@ CR, Subjects, Courses and Programs Lists, drawn by one renderer.
 folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03); Exhibits' moves
 onto them when next touched. **The line is the engine's too** (`api.line`, with `CPL_COMMONS_LIST.readCommons` reading
 `kb/status/commons.json` once a visit and `lineItems` shortening a row): Exhibits' line and CR's are drawn by it, each
-count opening the List's own filter where it has one. Next: the line, the cards and the panel over Subjects, Courses
-and Programs.
+count opening the List's own filter where it has one. Subjects' is the third (2026-11-04): the line, the Progress
+view's own page folded under it, and an MQ discipline's panel with its local subjects and the codes it shares. A
+line's count resets the List to its first page (`api.LIMIT`); a null limit drew an empty table. Next: the line, the
+cards and the panel over Courses. Programs' is the fourth (2026-11-04): a program's panel lists its courses block
+by block with the CPL on record at its college, reading a light record once from the panel.
 
 ## What every List shares
 

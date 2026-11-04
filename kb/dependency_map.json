@@ -734,7 +734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 641
+     "line": 648
     }
    ],
    "main_committers": []
@@ -1628,7 +1628,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2038
+     "line": 2066
     }
    ],
    "main_committers": []
@@ -1928,7 +1928,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2794,
+     "line": 2796,
      "tabs": [
       "program-requirements"
      ]
@@ -2229,7 +2229,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1079
+     "line": 1107
     }
    ],
    "main_committers": []
@@ -2248,7 +2248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1424
+     "line": 1452
     },
     {
      "id": "module:college_briefing.js",
@@ -4192,7 +4192,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1702
+     "line": 1730
     }
    ],
    "main_committers": []
@@ -5241,7 +5241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1593
+     "line": 1621
     },
     {
      "id": "module:admin.js",
@@ -5497,7 +5497,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 699
+     "line": 706
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -5542,7 +5542,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3854,
+     "line": 3961,
      "tabs": [
       "program-requirements"
      ]
@@ -5960,7 +5960,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2939,
+     "line": 3059,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6000,7 +6000,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3853,
+     "line": 3960,
      "tabs": [
       "program-requirements"
      ]
@@ -6070,7 +6070,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3234,
+     "line": 3236,
      "tabs": [
       "program-requirements"
      ]
@@ -6304,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1977
+     "line": 2005
     },
     {
      "id": "module:college_briefing.js",
@@ -6510,7 +6510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1139
+     "line": 1167
     },
     {
      "id": "module:cpl_funding.js",
@@ -7175,7 +7175,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2938,
+     "line": 3058,
      "tabs": [
       "canonical-subj4"
      ]
@@ -12550,7 +12550,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1691,
+     "line": 1693,
      "tabs": [
       "program-requirements"
      ]
@@ -17119,7 +17119,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1360,
+     "line": 1362,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -24786,7 +24786,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1852,
+     "line": 1854,
      "tabs": [
       "program-requirements"
      ]
