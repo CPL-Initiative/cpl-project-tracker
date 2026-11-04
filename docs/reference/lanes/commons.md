@@ -90,7 +90,7 @@ hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one no
 groups"*). Exhibits (#2656), the Common CR Reference (#2657, with your flag #2659), Subjects (#2658) and Program
 Requirements (#2660) run on it. **The Courses List is the COCI Lookup tab's Courses view** (#2670, live): 141,738
 local courses banded by today's M-ID (from `unified_courses_members.js`, never the extract's older column), Open in
-SkyView on each band, read only (an M-ID move is a re-mint, done in SkyView). Sam, 2026-11-01 ~23:02Z: *"WE have the
+SkyView on each band; an M-ID move is a re-mint, done in SkyView. A course's panel carries its common course's card and, for a signed-in reviewer, Rename, Set the discipline and Confirm, carried from the Common Course Reference tab before it retires (SkyJujube, 2026-11-04, `tests/coci_list_cc_card.test.js`). Sam, 2026-11-01 ~23:02Z: *"WE have the
 COCI lookup tab in COBI...maybe courses in that?"*; SkyView stays the map alone. The engine filters before it sorts and
 sorts on per-column ranks (a settled finder keystroke 228 ms at 141,738 rows). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
 only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll

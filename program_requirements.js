@@ -1180,6 +1180,17 @@
   }
 
   /* ── CSS (tokens only; injected once, so both HTMLs carry it without a Rule-4 mirror) ── */
+  /* The stacked table, one cell to a line with its column's word: by the viewport on a phone, and by the
+     record pane's width in side by side. */
+  var STACK_CSS =
+    " .prh table.prh-stack thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }" +
+    " .prh table.prh-stack, .prh table.prh-stack tbody, .prh table.prh-stack tr { display:block; width:100%; }" +
+    " .prh table.prh-stack tr { border-top:1px solid var(--border); padding-block:6px; }" +
+    " .prh table.prh-stack tbody th, .prh table.prh-stack tbody td { display:grid; grid-template-columns:7.5rem minmax(0,1fr); gap:8px; border:0; padding:4px 12px; }" +
+    " .prh table.prh-stack tbody td::before, .prh table.prh-stack tbody th::before { content:attr(data-label); font-weight:600; color:var(--text-muted); font-size:.8125rem; }" +
+    /* a cell's chips and notes sit under its value, never in the word's column */
+    " .prh table.prh-stack tbody th > *, .prh table.prh-stack tbody td > * { grid-column:2; }";
+
   function ensureCss() {
     if (document.getElementById("prh-css")) return;
     var css = [
@@ -1325,12 +1336,11 @@
       ".prh-draft-note { margin:0 0 10px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }",
       ".prh-draft-note:empty { display:none; }",
       "@media (max-width: 860px) { .prh-rhead { grid-template-columns:minmax(0,1fr); } .prh-checks { grid-template-columns:repeat(2, minmax(0,1fr)); } }",
-      "@media (max-width: 560px) { .prh-count { margin-left:0; width:100%; }" +
-        " .prh table.prh-stack thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }" +
-        " .prh table.prh-stack, .prh table.prh-stack tbody, .prh table.prh-stack tr { display:block; width:100%; }" +
-        " .prh table.prh-stack tr { border-top:1px solid var(--border); padding-block:6px; }" +
-        " .prh table.prh-stack tbody th, .prh table.prh-stack tbody td { display:grid; grid-template-columns:7.5rem minmax(0,1fr); gap:8px; border:0; padding:4px 12px; }" +
-        " .prh table.prh-stack tbody td::before, .prh table.prh-stack tbody th::before { content:attr(data-label); font-weight:600; color:var(--text-muted); font-size:.8125rem; } }",
+      "@media (max-width: 560px) { .prh-count { margin-left:0; width:100%; }" + STACK_CSS + " }",
+      /* Side by side's record pane is narrow on a laptop (about 490px at 1024): the table stacks by the pane's
+         own width, so a course's C-ID and M-ID chips stay in their cell (SkyJujube, 2026-11-04). */
+      ".prh-split-rec { container:prh-rec / inline-size; }",
+      "@container prh-rec (max-width: 560px) {" + STACK_CSS + " }",
       /* sections: a <details> per section, its summary the heading plus a line that reads shut;
          the marker is drawn in CSS (a word-free disclosure, no glyph) */
       ".prh-allctl { display:flex; flex-wrap:wrap; gap:6px 18px; }",

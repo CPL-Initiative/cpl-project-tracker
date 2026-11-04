@@ -444,7 +444,9 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "course_outcomes"
       ],
-      "writes": [],
+      "writes": [
+        "kb_curation"
+      ],
       "rpcs": [],
       "measured": true
     },
