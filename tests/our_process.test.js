@@ -64,6 +64,15 @@ check("renders the checkpoint loop svg", root && root.querySelector(".op-loop-fl
 check("renders the four TMC problem stats", root && root.querySelectorAll(".op-problem .op-stat").length === 4);
 check("renders the illustrated builder mock rows", root && root.querySelectorAll(".op-mock .op-mslot").length >= 4);
 
+// "Getting set up" (S576, 2026-11-04): the teammate's steps and the admin's steps.
+const setup = root && root.querySelector(".op-setup");
+check("renders the Getting set up section", setup && /Getting set up/.test(setup.textContent));
+check("setup has a teammate lane and an admin lane, each with steps",
+  setup && setup.querySelectorAll(".op-lane .op-steps").length === 2
+    && Array.prototype.every.call(setup.querySelectorAll(".op-lane .op-steps"), (ol) => ol.children.length >= 4));
+// The tracker is public: the tab names roles and repos, never a person's address.
+check("Our Process carries no email address", !/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/.test(root ? root.textContent : ""));
+
 const cta = root && root.querySelector("a.op-livebtn");
 check("'See it live' CTA deep-links to the in-app #tmc-builder tab", cta && cta.getAttribute("href") === "#tmc-builder");
 
