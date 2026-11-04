@@ -28,10 +28,11 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const HTMLS = ["CPL_Dashboard.html", "index.html"];
-// Every file that carried a prose measure before the 2026-08-22 sweep.
+// Every file that carried a prose measure before the 2026-08-22 sweep, and carries one still (cr_reference.js left the
+// list on 2026-11-04: its one capped line was the retired worklist's intro).
 const SWEPT = HTMLS.concat([
   "budget_ledger.js", "cip_crosswalk.js", "college_identity.js", "cpl_chat.js",
-  "cpl_memory.js", "cr_reference.js",
+  "cpl_memory.js",
   "credential_reference.js", "first_light.js", "gr_priorities.js",
   "map_cleanup_views.js", "nc_learning_partners.js", "our_process.js",
   "raci.js", "team_phrases.js", "tmc_builder.js",

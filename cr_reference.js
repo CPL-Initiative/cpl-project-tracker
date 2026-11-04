@@ -512,7 +512,7 @@
       head: function (wrap, api) {
         listLine(wrap, api);
         if (!signedIn()) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "You are not signed in. The list is readable; "
-          + "decisions show and save once you unlock with the team phrase or sign in with a reviewer link." }));
+          + "decisions show and save once you unlock with the team phrase in the header or sign in with a reviewer link." }));
         else if (state.decisionsStale) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "Could not read the decisions table, so the "
           + "Decision column and any renamed reference are not shown; this is a failed read, not an empty table. Reload before working." }));
         if (listFlagsFailed) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "Your flags could not be read, so none show; "
