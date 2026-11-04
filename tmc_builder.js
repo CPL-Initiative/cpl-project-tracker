@@ -1048,13 +1048,15 @@
   });
   /* #tmc-builder/<show> opens the directory on that Show word; #tmc-builder/tmc/<id> opens that TMC once the
      catalog has loaded (a UC pathway id waits for the ADT overlay that lists it). A bare address, or a word or id the
-     tab does not know, leaves the default directory. Read once, at boot: the module keeps its view across visits. */
+     tab does not know, changes nothing: the first visit keeps the default directory, a later one what it showed. */
   var arrivalTmc = "";
   function arrive() {
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("tmc-builder") : null;
-    if (!a || !a[0]) return;
-    if (a[0] === "tmc" && a[1]) arrivalTmc = a[1];
-    else if (SHOW_WORDS.indexOf(a[0]) >= 0) state.statusFilter = a[0];
+    if (!a || !a[0]) return false;
+    if (a[0] === "tmc" && a[1]) { arrivalTmc = a[1]; return true; }
+    if (SHOW_WORDS.indexOf(a[0]) < 0) return false;
+    state.statusFilter = a[0]; state.view = "list"; state.tmc = null;
+    return true;
   }
   function openArrivalTmc() {
     if (!arrivalTmc || !findCatalog(arrivalTmc)) return false;
@@ -2170,6 +2172,12 @@
       renderBody();
     });
     arrive();
+    // A later visit by an address that names a view (a link, or a hash typed in) opens it; tabs.js fires
+    // onActivate once, so the module hears each later visit itself.
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (!(e && e.detail && e.detail.tab === "tmc-builder") || !arrive()) return;
+      if (!openArrivalTmc()) render();
+    });
     render(); // shell + (empty) selectors immediately
     restoreSession(function () { var a = document.getElementById("tmc-auth"); if (a) renderAuthInto(a); });
     loadRequests();

@@ -343,6 +343,27 @@
     page: 0,
     filteredCache: null
   };
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. Credentials
+     is the first view, so it reports the bare tab; the matrix adds its Show in cells word when it is not Both. */
+  var VIEW_WORDS = ["credentials", "table", "matrix"];
+  var CELL_WORDS = { adopted: "got", opportunity: "opp" };
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("exhibit-adoption", function () {
+    if (state.view === "table") return "exhibit-adoption/table";
+    if (state.view !== "matrix") return "exhibit-adoption";
+    var w = state.matrixCells === "got" ? "adopted" : state.matrixCells === "opp" ? "opportunity" : "";
+    return "exhibit-adoption/matrix" + (w ? "/" + w : "");
+  });
+  /* #exhibit-adoption/<credentials|table|matrix>[/<adopted|opportunity>] opens that view. #exhibit-adoption/adoption
+     is the side menu's scroll target for the card (tabs.js), so like any word the tab does not know it changes
+     nothing; a bare address keeps what the tab shows. Returns whether the view changed. */
+  function arrive() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("exhibit-adoption") : null;
+    if (!a || VIEW_WORDS.indexOf(a[0]) < 0) return false;
+    var cells = a[0] === "matrix" ? (CELL_WORDS[a[1]] || "both") : state.matrixCells;
+    if (a[0] === state.view && cells === state.matrixCells) return false;
+    state.view = a[0]; state.matrixCells = cells;
+    return true;
+  }
 
   // ── Helpers ──
   function unique(arr) {
@@ -2625,9 +2646,14 @@
     sortExhibits();
     deriveFromData();
     state.sess = getSession();
+    arrive();   // before the card: buildCard() marks the sub-tab the address names
     buildCard();
     renderRows();
     bindEvents();
+    // A later visit by an address that names a view opens it (onActivate fires once, so listen here).
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (e && e.detail && e.detail.tab === "exhibit-adoption" && arrive()) { syncSubtabs(); renderRows(); }
+    });
     loadMapVerified();
     fetchFlagOverlay().then(function (m) {
       state.flags = m || {};
