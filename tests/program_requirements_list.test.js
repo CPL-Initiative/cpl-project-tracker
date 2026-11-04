@@ -1,6 +1,6 @@
 // The Program Requirements List on the Catalog Commons' shared engine (Sam, 2026-11-01: "This new list view is so
 // helpful that I want one now for each of our Catalog Commons groups"). Guards:
-//   (1) #program-requirements/list opens the List: the sixth view word is selected, and the engine and COCI's program
+//   (1) #program-requirements/list opens the List: the fifth and last view word is selected, and the engine and COCI's program
 //       list load through CPL_TABS.loadScript;
 //   (2) one row per ACTIVE program, A to Z: an inactive program is left out, and a record on it is counted as off the
 //       list rather than drawn;
@@ -97,7 +97,7 @@ function words(d, re) { return Array.from(d.querySelectorAll("button")).find((b)
   const t = tab();
   await settle();
   const sel = t.d.querySelector('[role="tab"][aria-selected="true"]');
-  check("(1) #program-requirements/list selects the List, the sixth view", t.d.querySelectorAll('[role="tab"]').length === 6
+  check("(1) #program-requirements/list selects the List, the fifth and last view", t.d.querySelectorAll('[role="tab"]').length === 5
     && sel && sel.id === "prh-tab-list" && t.S.view === "list", sel && sel.id);
   check("(1) the engine and COCI's list load through CPL_TABS.loadScript", t.calls.indexOf("commons_list.js") >= 0
     && t.calls.indexOf("coci_programs_data.js") >= 0 && !!t.w.CPL_COMMONS_LIST);

@@ -761,9 +761,9 @@ async function seedPrList(page, theme) {
   await page.waitForTimeout(300);
 }
 
-// Seeds the Records view as a signed-in reviewer sees it (S347, Sheet 51 card 1): a record
-// with flags on the whole record and on a block, its blocks open, and the verdict box with
-// its Needs a fix note open, so every surface the flags and the verdict paint is measured.
+// Seeds a record as a signed-in reviewer reads it side by side (S347, Sheet 51 card 1; Program records, which drew the
+// same card, retired into the List, SkyLoquat 2026-11-04): flags on the whole record and on a block, its blocks open, and the
+// verdict box with its Needs a fix note open, so every surface the flags and the verdict paint is measured.
 async function seedRecords(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "program-requirements") location.hash = "program-requirements"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
@@ -804,13 +804,14 @@ async function seedRecords(page, theme) {
     S.records = [];
     S.review = { email: "reviewer@example.org", records: [art], verdicts: [], error: null };
     S.error = null;
-    S.open = { "Irvine Valley College|10265": true };
-    /* The Records view lists the colleges a reader picks (2026-10-13): pick the record's, so its
-       card, the picker and the find controls are all measured. */
-    S.pick = ["Irvine Valley College"]; S.rscope = "pick";
-    S.view = "records";
+    S.view = "list";
     M._render();
-    const fix = document.querySelector("#program-requirements-root .prh-verdict button[aria-expanded]");
+    /* First Light's greeting would cover the record; close it, as the other seeds do. */
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    M.openSplit(art);
+    const fix = document.querySelector(".prh-split .prh-verdict button[aria-expanded]");
     if (fix) fix.click();
   });
   await page.waitForTimeout(300);
@@ -821,7 +822,7 @@ async function seedRecords(page, theme) {
 async function seedExhibits(page, theme) {
   await seedRecords(page, theme);
   await page.evaluate(() => {
-    const b = document.querySelector("#program-requirements-root button.prh-cplbtn");
+    const b = document.querySelector(".prh-split button.prh-cplbtn");
     if (b) b.click();
   });
   await page.waitForTimeout(300);
@@ -905,12 +906,12 @@ async function seedExhibitsList(page, theme) {
   await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-cellin"), null, { timeout: 10000 });
 }
 
-// Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121
-// (Sam, 2026-10-14) open a list of checkboxes no other target paints.
+// Seeds the List with its first filter open (S391 UI pass; the dropdowns moved from Program records to the List, SkyLoquat 2026-11-04):
+// the dropdowns of PR 2121 (Sam, 2026-10-14) open a list of checkboxes no other target paints.
 async function seedFilterOpen(page, theme) {
-  await seedRecords(page, theme);
+  await seedPrList(page, theme);
   await page.evaluate(() => {
-    const b = document.querySelector("#program-requirements-root .prh-dd-btn");
+    const b = document.querySelector("#program-requirements-root .prl-scope .prh-dd-btn");
     if (b) b.click();
   });
   await page.waitForTimeout(300);
@@ -920,15 +921,9 @@ async function seedFilterOpen(page, theme) {
 // Prog Rev tab so I don't have to do it manually"): the signed-in record above, opened
 // beside its catalog page, so the bar, the frame's pane and the record pane are measured
 // with the page behind inert. The frame's request leaves the origin and is aborted, which
-// is fine: what is measured is ours.
+// is fine: what is measured is ours. The record's seed opens it (Program records retired, SkyLoquat 2026-11-04).
 async function seedSplit(page, theme) {
   await seedRecords(page, theme);
-  await page.evaluate(() => {
-    const b = Array.prototype.filter.call(document.querySelectorAll("#program-requirements-root button.prh-word"),
-      (x) => x.textContent === "Side by side")[0];
-    if (b) b.click();
-  });
-  await page.waitForTimeout(300);
 }
 
 // Exhibit Adoption's table and matrix (S409): the tab opens on Credentials, so
@@ -3480,38 +3475,19 @@ module.exports = {
     seed: (page) => seedPrList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  /* ── Program Requirements: the Records view, signed in (S347) ──────────
-     Flags on the whole record and on a block, and the verdict box with its
-     note open: the surfaces Sheet 51 card 1 added, one per theme. */
-  "program-requirements-records": {
-    file: "index.html",
-    title: "Program Requirements: Records, signed in",
-    routes: [{ hash: "program-requirements", name: "records" }],
-    widths: [390, 768, 1024, 1440],
-    seed: (page) => seedRecords(page, "light"),
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
-  "program-requirements-records-dark": {
-    file: "index.html",
-    title: "Program Requirements: Records, signed in, dark",
-    routes: [{ hash: "program-requirements", name: "records-dark" }],
-    widths: [390, 768, 1024, 1440],
-    seed: (page) => seedRecords(page, "dark"),
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
-  /* ── Program Requirements: a Records filter open (S391 UI pass) ──────── */
+  /* ── Program Requirements: a List filter open (S391 UI pass; Program records' filters, on the List since SkyLoquat, 2026-11-04) ── */
   "program-requirements-filter": {
     file: "index.html",
-    title: "Program Requirements: Records, a filter open",
-    routes: [{ hash: "program-requirements", name: "filter" }],
+    title: "Program Requirements: the List, a filter open",
+    routes: [{ hash: "program-requirements/list", name: "filter" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedFilterOpen(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "program-requirements-filter-dark": {
     file: "index.html",
-    title: "Program Requirements: Records, a filter open, dark",
-    routes: [{ hash: "program-requirements", name: "filter-dark" }],
+    title: "Program Requirements: the List, a filter open, dark",
+    routes: [{ hash: "program-requirements/list", name: "filter-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedFilterOpen(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

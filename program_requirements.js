@@ -115,9 +115,6 @@
   var DRAFT_SELECT = "college,control_number,award,catalog_year,gaps:display->gaps";
   var PICK_KEY = "cplProgramRequirements.pick.v1";
   var FILTERS_KEY = "cplProgramRequirements.filters.v1";
-  /* A filter that lists at most this many colleges reads their records at once; a wider one
-     reads each college when its section opens, so a region never pulls 20 MB unasked. */
-  var EAGER_COLLEGES = 4;
   /* This project's status file, one of kb/status/<project>.json (S419, the Commons' step 1; it was
      kb/queue_status.json from S343). Written by every checkpoint (.claude/commands/checkpoint.md
      step 12, scripts/queue_status.py): what no browser read can know. anon reads every record
@@ -151,7 +148,6 @@
   var VIEWS = [
     { id: "progress", label: "Progress" },
     { id: "catalogs", label: "Catalogs" },
-    { id: "records", label: "Program records" },
     { id: "sequences", label: "Sequences" },
     { id: "procedures", label: "Procedures" },
     { id: "list", label: "List" }
@@ -166,12 +162,12 @@
 
   /* records: the index, one row per record; a row stays _light until its full row merges into it
      (the same object, so a card, a call and the counts all see one record). pick: the colleges
-     the Records view lists (for the visit); rscope "all" lists every college, as a count the reader
-     followed counted them. failed: a college whose read failed, kept until the reader asks again. */
+     the List's College filter keeps (for the visit). failed: a college whose read failed, kept
+     until the reader asks again. */
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
-    view: "progress", q: "", show: "all", pshow: "all", platform: "all", rq: "", rshow: "all", pick: null, linkPicks: [], rscope: "pick", open: {}, secs: null,
+    view: "progress", q: "", show: "all", pshow: "all", platform: "all", pick: null, linkPicks: [], open: {}, secs: null,
     review: null, sessionWired: false, framing: null, notice: null, districts: null, regions: null, districtError: null,
-    filt: null, cip: null, cipError: null, cipLoading: null,
+    filt: null,
     failed: {}, draftsRead: null, draftsError: null };
 
   /* ── small helpers ── */
@@ -555,7 +551,6 @@
   function isLight(p) { return !!(p && p._light); }
   /* The rows the page reads from: the reviewer's (with fingerprints) when signed in, else the public's. */
   function rows() { return (state.review && state.review.records) || state.records || []; }
-  function rowsOf(c) { return rows().filter(function (p) { return p.college === c; }); }
   function setRows(arr) {
     state.records = arr;
     if (state.review && state.review.records) state.review.records = arr;
@@ -832,42 +827,7 @@
     "60": "Health Professions Residency/Fellowship Programs", "61": "Medical Residency/Fellowship Programs"
   };
   var NO_CIP = "No CIP assigned yet";
-  var CIP_BATCH = 150;
-  function sectorOf(p) {
-    var c = state.cip && state.cip[p.control_number];
-    var m = /^(\d{2})/.exec(String(c || ""));
-    return m ? m[1] : "";
-  }
   function sectorLabel(k) { return k ? k + " · " + (CIP_FAMS[k] || "CIP family " + k) : NO_CIP; }
-  function loadCips() {
-    if (state.cip || state.cipLoading || !state.records) return state.cipLoading || Promise.resolve();
-    var ctrls = state.records.map(function (p) { return p.control_number; }).filter(Boolean)
-      .filter(function (c, i, a) { return a.indexOf(c) === i; });
-    var batches = [];
-    for (var i = 0; i < ctrls.length; i += CIP_BATCH) batches.push(ctrls.slice(i, i + CIP_BATCH));
-    var got = {};
-    var one = function (b) {
-      return getJson(REST + "/coci_college_programs?select=control_number,cip_code&control_number=in.(" +
-        b.map(function (c) { return encodeURIComponent('"' + String(c).replace(/"/g, "") + '"'); }).join(",") + ")").then(function (rows) {
-        (rows || []).forEach(function (r) { if (r && r.control_number && r.cip_code) got[r.control_number] = String(r.cip_code); });
-      });
-    };
-    var next = 0;
-    var worker = function () {
-      if (next >= batches.length) return Promise.resolve();
-      var b = batches[next++];
-      return one(b).then(worker);
-    };
-    state.cipError = null;
-    state.cipLoading = Promise.all([worker(), worker()]).then(function () {
-      state.cip = got;
-    }, function (e) { state.cip = null; state.cipError = msg(e); }).then(function () {
-      state.cipLoading = null;
-      /* The Records view on screen adds its CIP Sector filter in place, keeping its status line. */
-      if (typeof state.onCip === "function") state.onCip();
-    });
-    return state.cipLoading;
-  }
 
   /* ── a reviewer's session (cpl_session.js keeps it; the server decides who may write) ── */
   function session() {
@@ -1129,6 +1089,7 @@
       "Would you tell us which record is current, so that CPL Pathways shows your programs as you publish them?");
     return out.join("\n");
   }
+
   function draftsBox(college, items) {
     var id = "prh-draft-" + String(college).replace(/[^A-Za-z0-9]+/g, "-");
     var text = el("textarea", { id: id, cls: "prh-draft-text", readonly: "readonly", rows: "8" });
@@ -1155,7 +1116,33 @@
       text,
       el("div", { cls: "prh-draft-actions" }, [copy, said])]);
   }
-
+  /* The college's drafts from a program's panel on the List (SkyLoquat 2026-11-04, carried from Program records' college section):
+     the college's records read whole once asked, then the draft to copy. */
+  function collegeDraftsSlot(c, here) {
+    var slot = el("div", { cls: "prh-drafts-slot" });
+    var said = el("span", { cls: "prh-small prh-quiet", role: "status", "aria-live": "polite" });
+    var go = el("button", { cls: "prh-word", type: "button", text: "Draft the message to " + shortCollege(c) });
+    function show() {
+      var d = knownDrafts()[c];
+      if (state.failed[c]) { said.textContent = c + "'s records could not be read (" + state.failed[c] + "). "; go.textContent = "Read again"; go.hidden = false; return; }
+      if (!d || !d.length) { said.textContent = "Nothing at " + c + " waits on the college."; go.hidden = true; return; }
+      slot.textContent = "";
+      var box = draftsBox(c, d);
+      box.open = true;
+      slot.appendChild(box);
+      var sum = box.querySelector("summary");
+      if (sum) try { sum.focus({ preventScroll: true }); } catch (e) { sum.focus(); }
+    }
+    go.addEventListener("click", function () {
+      var lights = rows().filter(function (q) { return q.college === c && isLight(q); });
+      if (!lights.length) { show(); return; }
+      go.hidden = true;
+      said.textContent = "Reading " + c + "'s " + fmt(lights.length) + (lights.length === 1 ? " record…" : " records…");
+      ensureRows(lights, { college: true, retry: true }).then(show);
+    });
+    slot.appendChild(el("p", {}, [collegeCount(here) + " for " + shortCollege(c) + " to correct. ", go, " ", said]));
+    return slot;
+  }
   /* A record passes when all four checks hold: every course the state file lists is placed
      (or its absence explained), nothing the catalog does not print is added, the units add
      up to the printed total (or the catalog prints none), and a person read it. */
@@ -1253,8 +1240,6 @@
       ".prh-small { font-size:.8125rem; }",
       ".prh-alts { display:block; font-size:.8125rem; color:var(--text-muted); }",
       ".prh-rec, .prh-card { background:var(--surface-opaque); border:1px solid var(--border); border-radius:8px; margin-bottom:8px; }",
-      /* A college lists hundreds of records: the browser lays out only the cards near the screen. */
-      ".prh-college .prh-rec { content-visibility:auto; contain-intrinsic-size:auto 240px; }",
       ".prh-card { padding:16px; display:grid; gap:12px; margin-bottom:18px; }",
       ".prh-rhead { padding:12px 14px; display:grid; gap:8px 18px; grid-template-columns:minmax(0,1.4fr) minmax(0,2.2fr) minmax(0,1fr); align-items:start; }",
       ".prh-rec.prh-open .prh-rhead { border-bottom:1px solid var(--border); }",
@@ -1318,7 +1303,6 @@
       ".prh-btn { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
       ".prh-btn:hover { text-decoration-thickness:2px; }",
       ".prh-btn[disabled] { cursor:wait; }",
-      ".prh-review-note p { margin:0; }",
       /* the Records view's college picker (2026-10-13): a district's colleges under it, each a
          checkbox with its counts; one column on a phone */
       ".prh-filterbar { display:grid; gap:6px; margin:0 0 16px; }",
@@ -1337,8 +1321,7 @@
       "@media (max-width: 560px) { .prh-dd { position:static; } .prh-dd-pop { left:0; right:0; width:auto; } .prh-filterbar { position:relative; } }",
       ".prh-pick-c { min-width:0; overflow-wrap:anywhere; }",
       ".prh-pick-n { flex:1 0 100%; padding-left:26px; font-size:.8125rem; font-weight:400; color:var(--text-muted); font-variant-numeric:tabular-nums; }",
-      ".prh-rscope { margin:8px 0 0; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; }",
-      ".prh-rscope[hidden], .prh-word[hidden] { display:none; }",
+      ".prh-word[hidden] { display:none; }",
       ".prh-draft-note { margin:0 0 10px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }",
       ".prh-draft-note:empty { display:none; }",
       "@media (max-width: 860px) { .prh-rhead { grid-template-columns:minmax(0,1fr); } .prh-checks { grid-template-columns:repeat(2, minmax(0,1fr)); } }",
@@ -1528,7 +1511,7 @@
           : el("span", { cls: "prh-quiet", text: r.catalog_url ? "Not named" : "" });
         var nd = (drafts[r.college] || []).length;
         return [
-          nd ? [r.college, el("span", { cls: "prh-alts", text: nd + (nd === 1 ? " draft" : " drafts") + " for the college, under Program records" })] : r.college,
+          nd ? [r.college, el("span", { cls: "prh-alts" }, [goControl(nd + (nd === 1 ? " draft" : " drafts") + " for the college, on the List", { view: "list", rcollege: r.college })])] : r.college,
           r.catalog_url ? link(r.catalog_url, (PLATFORM[r.catalog_platform] || "Catalog") + " catalog")
             : el("span", { cls: "prh-quiet", text: "No address yet" }),
           year,
@@ -2128,19 +2111,9 @@
     }
     return state.pick;
   }
-  /* Picks are never stored (picks() above). */
-  function savePick() { /* the visit's picks live in state only */ }
-  /* A college a link added (CPL Pathways' college line, a call's "Open it on Program records")
-     lists until the reader opens the Records tab by its own button or sets the College filter
-     (Sam, 2026-10-21: a later look at Program records showed only Bakersfield, opened from
-     CPL Pathways' line). */
-  function linkPick(cols) {
-    var own = picks();
-    state.linkPicks = state.linkPicks || [];
-    (cols || []).forEach(function (c) { if (c && own.indexOf(c) < 0 && state.linkPicks.indexOf(c) < 0) state.linkPicks.push(c); });
-    addPick(cols);
-  }
-  /* The Records tab opened by its own button lists the reader's own picks again. */
+  /* A college a link added (CPL Pathways' college line) lists until the reader opens the List by its own
+     button or sets the College filter (Sam, 2026-10-21: a later look showed only Bakersfield, opened from
+     CPL Pathways' line); the List's own button lists the reader's own picks again. */
   function dropLinkPicks() {
     var linked = state.linkPicks || [];
     if (!linked.length) return;
@@ -2154,7 +2127,6 @@
     if (!state.filt) state.filt = { district: [], region: [], sector: [] };
     return state.filt;
   }
-  function saveFilt() { /* the visit's filters live in state only */ }
   /* A click outside a filter's list closes it (wired once, for every render). */
   var ddWired = false;
   function wireDropdowns() {
@@ -2176,12 +2148,6 @@
     if (F.district.length && F.district.indexOf(districtOf(c) || "") < 0) return false;
     if (F.region.length && F.region.indexOf(regionOf(c) || "") < 0) return false;
     return true;
-  }
-  function addPick(cols) {
-    var P = picks().slice();
-    (cols || []).forEach(function (c) { if (c && P.indexOf(c) < 0) P.push(c); });
-    state.pick = P.sort();
-    savePick();
   }
   /* One dropdown filter (Sam, 2026-10-14: "a simple drop down multi-select filter"): a word that opens a list of
      checkboxes, a search when the list is long, and a word to clear it; Escape closes it and returns to the word.
@@ -2237,323 +2203,8 @@
     o.dds.push(d);
     return d;
   }
-  function readingText(c, n) { return "Reading " + c + "'s " + fmt(n) + (n === 1 ? " record…" : " records…"); }
 
-  function viewRecords() {
-    var Rv = state.review;
-    var P = rows(), R = state.registry;
-    var box = el("div");
-    box.appendChild(el("p", { cls: "prh-lede", text: "Each program read from its college's catalog: the required courses, the courses chosen from a list, and the electives. A record passes three machine checks: it places the courses the state's Program Course File lists, it adds no course the catalog does not print, and its units add up to the catalog's total. A person may also confirm it against the catalog. A misread changes the college's reading procedure, never the record." }));
-    /* Who is reading: a lede beside the first one, so the view keeps only sections below it. */
-    box.appendChild(el("div", { cls: "prh-lede prh-review-note" }, [
-      Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status",
-        text: "Your sign-in could not read the records (" + Rv.error + "), so these are the records the public sees, without Confirm and Needs a fix. Reload the tab to try again." })
-      : Rv ? el("p", { cls: "prh-small prh-quiet",
-        text: "Signed in as " + Rv.email + ". Each record ends with Confirm and Needs a fix." })
-      : signInBox()]));
-    if (!P.length) {
-      box.appendChild(el("div", { cls: "prh-empty", text: "No program record has been loaded yet." }));
-      return box;
-    }
-    /* The glance counts every record, from the index. Passing is the three machine checks
-       (S415): a person's confirm is optional since Sam's 2026-10-17 ruling, so a count that
-       needed one read 32 while thousands passed. */
-    var checks = P.map(recordChecks);
-    var passing = P.filter(function (p) { return machineFails(p).length === 0; }).length;
-    var equal = checks.filter(function (c) { return c.arithmetic === "equal"; }).length;
-    var withCpl = P.filter(function (p) { return p.display && p.display.counts && p.display.counts.here > 0; }).length;
-    var colleges = {};
-    P.forEach(function (p) { colleges[p.college] = 1; });
-    box.appendChild(section("records:glance", "At a glance", fmt(passing) + " of " + fmt(P.length) + " records pass the machine checks", [
-      el("div", { cls: "prh-facts" }, [
-        fact(fmt(P.length) + " at " + Object.keys(colleges).length, "programs read, at that many colleges"),
-        fact(fmt(passing) + " of " + fmt(P.length), "records pass the machine checks"),
-        fact(fmt(equal), "totals agree with the catalog's"),
-        fact(fmt(withCpl) + " of " + fmt(P.length), "programs hold a course with CPL at the college")
-      ])]));
-    var reviewing = !!(Rv && Rv.records);
-    var totals = {}, waits = {};
-    P.forEach(function (p) {
-      totals[p.college] = (totals[p.college] || 0) + 1;
-      if (isWaiting(p)) waits[p.college] = (waits[p.college] || 0) + 1;
-    });
-    var names = Object.keys(totals).sort();
-    var kept = picks().filter(function (c) { return totals[c]; });
-    if (kept.length !== picks().length) { state.pick = kept; savePick(); }
-
-    /* ── The filters (Sam, 2026-10-14: "change that to a simple drop down multi-select filter
-       and add filters for CIP Sectors and SWP Regions"). Four dropdowns, each a list of
-       checkboxes: District, College, SWP Region and CIP Sector. A record shows when it passes
-       every filter that has a pick; a filter with none passes everything. Each college names
-       its records and how many wait on a reading, from the index. ── */
-    var F = filt();
-    wireDropdowns();
-    var say = el("p", { cls: "prh-small prh-quiet prh-pick-say", role: "status", "aria-live": "polite" });
-    var clear = el("button", { cls: "prh-word", type: "button", text: "Clear the filters" });
-    var dds = [];
-    function chosen(key) { return key === "college" ? picks() : F[key]; }
-    function anyFilter() { return collegeFiltersOn() || F.sector.length > 0; }
-    function scopeColleges() { return names.filter(collegeInFilters); }
-    function syncFilters() {
-      dds.forEach(function (d) { d.sync(); });
-      clear.hidden = !anyFilter();
-    }
-    /* ask: the reader picked it just now, so a college whose last read failed reads again. */
-    function loadPicked(cols, ask) {
-      var need = cols.filter(function (c) { return totals[c] && rowsOf(c).some(isLight) && (ask || !state.failed[c]); });
-      if (!need.length) return;
-      var n = need.reduce(function (s, c) { return s + totals[c]; }, 0);
-      say.textContent = need.length === 1 ? readingText(need[0], totals[need[0]])
-        : "Reading " + fmt(n) + " records at " + need.length + " colleges…";
-      var lights = rows().filter(function (p) { return p._light && need.indexOf(p.college) >= 0; });
-      ensureRows(lights, { college: true, retry: !!ask }).then(function () {
-        var bad = need.filter(function (c) { return state.failed[c]; });
-        say.textContent = bad.length
-          ? bad.map(function (c) { return c + "'s records could not be read (" + state.failed[c] + ")."; }).join(" ")
-          : need.length === 1 ? need[0] + "'s " + fmt(totals[need[0]]) + (totals[need[0]] === 1 ? " record is" : " records are") + " open below."
-          : fmt(n) + " records at " + need.length + " colleges are open below.";
-      });
-    }
-    function setFilter(key, next) {
-      next = next.filter(function (v, i) { return next.indexOf(v) === i; }).sort();
-      if (key === "college") { state.linkPicks = []; state.pick = next; savePick(); }
-      else { F[key] = next; saveFilt(); }
-      state.rscope = "pick";
-      syncFilters();
-      var sc = scopeColleges();
-      if (collegeFiltersOn() && sc.length <= EAGER_COLLEGES) loadPicked(sc, true);
-      else if (collegeFiltersOn()) say.textContent = sc.length + " colleges match; each reads its records when you open it.";
-      else say.textContent = "";
-      draw();
-    }
-    clear.addEventListener("click", function () {
-      state.linkPicks = []; state.pick = []; savePick();
-      F.district = []; F.region = []; F.sector = []; saveFilt();
-      syncFilters();
-      say.textContent = "No filter is set.";
-      draw();
-      /* The word hides once nothing is set; focus goes to the first dropdown. */
-      var firstBtn = bar.querySelector(".prh-dd-btn");
-      if (firstBtn) firstBtn.focus();
-    });
-    /* One dropdown: a word that opens a list of checkboxes, a search when the list is long,
-       and a word to clear it. Escape closes it and returns to the word. */
-    function dropdown(key, label, opts, attr) {
-      return dropdownBox({ key: key, label: label, opts: opts, attr: attr, chosen: function () { return chosen(key); },
-        set: function (next) { setFilter(key, next); }, dds: dds });
-    }
-    function countMeta(cs) {
-      var n = cs.reduce(function (t, c) { return t + totals[c]; }, 0);
-      return cs.length + (cs.length === 1 ? " college, " : " colleges, ") + fmt(n) + (n === 1 ? " record" : " records");
-    }
-    function grouped(of, none) {
-      var g = {};
-      names.forEach(function (c) { var k = of(c) || ""; (g[k] = g[k] || []).push(c); });
-      return Object.keys(g).sort(function (a, b) { return a === b ? 0 : !a ? 1 : !b ? -1 : a < b ? -1 : 1; })
-        .map(function (k) { return { value: k, text: k || none, meta: countMeta(g[k]) }; });
-    }
-    var bar = el("div", { cls: "prh-filters", role: "group", "aria-label": "Filter the records" });
-    if (state.districts) bar.appendChild(dropdown("district", "District", grouped(districtOf, "No district on record"), "data-district").wrap);
-    bar.appendChild(dropdown("college", "College", names.map(function (c) {
-      var w = waits[c] || 0;
-      return { value: c, text: c, meta: fmt(totals[c]) + (totals[c] === 1 ? " record, " : " records, ") +
-        (w ? fmt(w) : "none") + (w === 1 ? " waits" : " wait") + (reviewing ? " on your reading" : " on a reading") };
-    }), "data-college").wrap);
-    if (state.regions) bar.appendChild(dropdown("region", "SWP Region", grouped(regionOf, "No region on record"), "data-region").wrap);
-    function sectorDropdown() {
-      var sc = {};
-      P.forEach(function (p) { var k = sectorOf(p); sc[k] = (sc[k] || 0) + 1; });
-      /* Every family, as on EACR (Sam, 2026-09-24): a sector with nothing says so. */
-      var fams = Object.keys(CIP_FAMS).concat(Object.keys(sc).filter(function (k) { return k && !CIP_FAMS[k]; })).sort();
-      if (sc[""]) fams.push("");
-      return dropdown("sector", "CIP Sector", fams.map(function (k) {
-        return { value: k, text: sectorLabel(k), meta: fmt(sc[k] || 0) + (sc[k] === 1 ? " record" : " records") };
-      }), "data-sector").wrap;
-    }
-    var sectorSlot = state.cip ? sectorDropdown() : el("span", { cls: "prh-dd-slot", hidden: "" });
-    bar.appendChild(sectorSlot);
-    bar.appendChild(clear);
-    var notesLine = el("p", { cls: "prh-small" });
-    function writeNotes() {
-      var notes = [];
-      if (state.districtError) notes.push("The district and region lists could not be read (" + state.districtError + "), so those two filters are left out.");
-      if (state.cipError) notes.push("The programs' CIP codes could not be read (" + state.cipError + "), so the CIP Sector filter is left out.");
-      else if (!state.cip) notes.push("Reading each program's CIP code for the CIP Sector filter…");
-      notesLine.textContent = notes.join(" ");
-      notesLine.className = "prh-small" + (state.districtError || state.cipError ? " prh-caution" : " prh-quiet");
-      notesLine.hidden = !notes.length;
-    }
-    writeNotes();
-    box.appendChild(el("div", { cls: "prh-filterbar" }, [bar,
-      el("p", { cls: "prh-small prh-quiet", text: "A record shows when it passes every filter you set. A college's records load when a filter reaches it and stay until the page reloads." }),
-      notesLine, say]));
-    syncFilters();
-    state.onCip = function () {
-      if (!bar.parentNode || !document.body.contains(bar)) return;
-      if (state.cip && sectorSlot.classList.contains("prh-dd-slot")) {
-        var dd = sectorDropdown();
-        bar.replaceChild(dd, sectorSlot);
-        sectorSlot = dd;
-        syncFilters();
-      }
-      writeNotes();
-      if (F.sector.length) draw();
-    };
-
-    /* ── Find a record (Sam, 2026-10-09, reading Cerritos's 274 on his phone: "Yes, do them"):
-       a search by name or control number, and what to show, over the colleges listed. ── */
-    var q = el("input", { id: "prh-rq", type: "search", placeholder: "Name or control number", autocomplete: "off" });
-    q.value = state.rq;
-    var shows = [["all", "All records"]].concat(reviewing ? [["waiting", "Waiting on your reading"]] : [])
-      .concat([["fail", "Fail a machine check"], ["conflict", "Disagree with the state's course list"], ["pass", "Pass the machine checks"],
-        ["complete", "Complete: an active program, passing"], ["checked", "Confirmed by a person"]]);
-    if (!shows.some(function (o) { return o[0] === state.rshow; })) state.rshow = "all";
-    var showSel = el("select", { id: "prh-rshow" }, shows.map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
-    showSel.value = state.rshow;
-    var count = el("span", { cls: "prh-count", "aria-live": "polite" });
-    /* A count on the Progress view lists every college, as it counted them (rscope "all"). */
-    var only = el("button", { cls: "prh-word", type: "button", text: "List only what the filters choose" });
-    only.addEventListener("click", function () { state.rscope = "pick"; draw(); });
-    var first = el("button", { cls: "prh-word", type: "button", text: "Read the first waiting record side by side" });
-    var shown = [];
-    first.addEventListener("click", function () {
-      var r = shown.filter(readable)[0];
-      if (r) openRecord(r, first);
-    });
-    var scopeText = el("span");
-    var scopeLine = el("p", { cls: "prh-small prh-rscope" }, [scopeText, only, first]);
-    var drawn = [];
-    /* A college's records, built the first time its section is open. Rows still light load
-       first: the whole college, or, in a narrowed list, the matches by key. */
-    function collegeBody(c, list, narrowed) {
-      var holder = el("div", { cls: "prh-college-b" });
-      function fill() {
-        holder.textContent = "";
-        var d = !narrowed ? knownDrafts()[c] : null;
-        if (d && d.length) holder.appendChild(draftsBox(c, d));
-        list.forEach(function (p) { if (!p._light && !p._gone) holder.appendChild(recordCard(p)); });
-      }
-      function failedLine() {
-        var again = el("button", { cls: "prh-word", type: "button", text: "Read again" });
-        again.addEventListener("click", function () { start(true); });
-        return el("p", { cls: "prh-small prh-caution", role: "status" }, [c + "'s records could not be read (" + state.failed[c] + "). ", again]);
-      }
-      function start(ask) {
-        var need = (narrowed ? list : rowsOf(c)).filter(isLight);
-        if (!need.length) { fill(); return; }
-        holder.textContent = "";
-        if (state.failed[c] && !ask) { holder.appendChild(failedLine()); return; }
-        var n = list.filter(isLight).length;
-        holder.appendChild(el("p", { cls: "prh-small prh-quiet", text: narrowed && n < totals[c]
-          ? "Reading " + fmt(n) + " of " + c + "'s records…" : readingText(c, totals[c]) }));
-        ensureRows(need, { college: !narrowed, retry: !!ask }).then(function () {
-          if (state.failed[c] && list.some(isLight)) { holder.textContent = ""; holder.appendChild(failedLine()); return; }
-          fill();
-        });
-      }
-      start(false);
-      return [holder];
-    }
-    function draw() {
-      state.rq = q.value; state.rshow = showSel.value;
-      var all = state.rscope === "all", side = collegeFiltersOn(), sectorOn = F.sector.length > 0;
-      /* A sector or a search narrows the list, so its colleges open and read their matches by key. */
-      var narrowed = !!String(state.rq).trim() || state.rshow !== "all" || (!all && sectorOn);
-      var inScope = all || !side ? P : P.filter(function (p) { return collegeInFilters(p.college); });
-      var sectorWait = !all && sectorOn && !state.cip;
-      if (!all && sectorOn && state.cip) inScope = inScope.filter(function (p) { return F.sector.indexOf(sectorOf(p)) >= 0; });
-      shown = filterRecords(inScope, state.rq, state.rshow, null, reviewing ? isWaiting : null);
-      drawn.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
-      drawn = [];
-      scopeText.textContent = all ? "Every college is listed, because the count you followed spans them all. " : "";
-      only.hidden = !all;
-      first.hidden = !(reviewing && state.rshow === "waiting" && shown.some(readable));
-      scopeLine.hidden = only.hidden && first.hidden;
-      if (!all && !side && !sectorOn) {
-        count.textContent = "";
-        drawn.push(box.appendChild(el("div", { cls: "prh-empty", text: "Choose a district, college, SWP region or CIP sector above to read its records." })));
-        return;
-      }
-      if (sectorWait) {
-        count.textContent = "";
-        drawn.push(box.appendChild(el("div", { cls: "prh-empty", role: "status", text: state.cipError
-          ? "The programs' CIP codes could not be read (" + state.cipError + "), so no record can be matched to a sector."
-          : "Reading each program's CIP code before the sector filter applies…" })));
-        return;
-      }
-      var order = [], byCollege = {};
-      shown.forEach(function (p) {
-        if (!byCollege[p.college]) { byCollege[p.college] = []; order.push(p.college); }
-        byCollege[p.college].push(p);
-      });
-      if (!shown.length) drawn.push(box.appendChild(el("div", { cls: "prh-empty", text: "No record matches. Clear a filter or the search, or choose All records." })));
-      /* Every college at once: a list a page long opens and reads its records by key; a longer
-         one keeps each college shut until the reader opens it, so nothing loads unasked. */
-      var few = shown.length <= RECORD_PAGE;
-      var drafts = knownDrafts();
-      order.forEach(function (c) {
-        var list = byCollege[c];
-        var reg = R.filter(function (r) { return r.college === c; })[0] || {};
-        var nd = (drafts[c] || []).length;
-        var cy = (list.filter(function (p) { return p.catalog_year; })[0] || reg).catalog_year;
-        var n = list.length < totals[c] ? list.length + " of " + totals[c] : String(totals[c]);
-        var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog" + (cy ? ", " + yr(cy) : "")).trim() + " · " +
-          n + (totals[c] === 1 ? " program" : " programs") + (nd ? " · " + nd + (nd === 1 ? " draft" : " drafts") + " for the college" : "");
-        /* A narrowed list opens its colleges, so a match is never hidden in a closed section. */
-        var sec = section("records:" + c, c, meta, function () { return collegeBody(c, list, narrowed); },
-          { cls: "prh-college", open: all ? few : narrowed, shut: all && !few });
-        drawn.push(box.appendChild(sec));
-      });
-      count.textContent = "Showing " + shown.length + " of " + inScope.length;
-    }
-    /* One event each: a select fires both input and change, and each draw rebuilds the list. */
-    q.addEventListener("input", draw);
-    showSel.addEventListener("change", draw);
-    box.appendChild(section("records:find", "Find a record", "By name or control number, and what waits", [
-      el("div", { cls: "prh-controls prh-rfind", role: "search", "aria-label": "Find a program record" }, [
-        el("label", { "for": "prh-rq" }, ["Find a program", q]),
-        el("label", { "for": "prh-rshow" }, ["Show", showSel]),
-        count]), scopeLine]));
-    /* A pick loads; one whose read failed waits for the reader to ask. */
-    if (state.rscope !== "all" && collegeFiltersOn()) {
-      var sc0 = scopeColleges();
-      if (sc0.length <= EAGER_COLLEGES) loadPicked(sc0, false);
-    }
-    loadCips();
-    draw();
-    return box;
-  }
   function isWaiting(p) { var sl = stateLine(p); return !!(sl && sl.waiting); }
-  /* An active program in COCI (S415), from the Progress view's read of COCI's active keys: null
-     when that read failed, so no list passes off an unread state as "not active". */
-  function activeIn(p) {
-    var k = state.progress && state.progress.activeKeys;
-    return k ? !!k[keyOf(p)] : null;
-  }
-  /* The Records view's filter, pure so a test reads it: the search matches the program's
-     name or its control number; show narrows to the records waiting on the reader (when one
-     is signed in), those failing or passing the three machine checks, the complete ones (an
-     active program in COCI, passing), or the ones a person confirmed. */
-  /* college: "all" (or none), one college's name, or a list of them (the Records view's picks). */
-  function filterRecords(P, q, show, college, waiting) {
-    var t = String(q || "").trim().toLowerCase();
-    return (P || []).filter(function (p) {
-      if (Array.isArray(college)) { if (college.indexOf(p.college) < 0) return false; }
-      else if (college && college !== "all" && p.college !== college) return false;
-      if (t && String(p.control_number || "").toLowerCase().indexOf(t) < 0 &&
-          String(p.program_title || "").toLowerCase().indexOf(t) < 0) return false;
-      if (show === "waiting") return waiting ? waiting(p) : true;
-      if (show === "fail") return machineFails(p).length > 0;
-      if (show === "pass") return machineFails(p).length === 0;
-      /* Where the catalog and the state's Program Course File disagree: a listed course the record
-         misses, or a course it adds that the list lacks (CPL Pathways' college line, 2026-10-21). */
-      if (show === "conflict") return machineFails(p).some(function (f) { return f === "courses" || f === "off-list"; });
-      if (show === "complete") return machineFails(p).length === 0 && activeIn(p) === true;
-      if (show === "checked") return !!p.checked;
-      return true;
-    });
-  }
-
   /* A noncredit program's hours as estimated equivalent units, from the display build (the lecture rate,
      16-18 hours a unit in half units, Title 5 section 55002.5). Sam, 2026-10-11: for estimating only. */
   function equivRow(p, disp) {
@@ -3343,13 +2994,6 @@
       return;
     }
     state.q = to.q || ""; state.show = to.show || "all"; state.platform = "all";
-    state.rq = to.rq || ""; state.rshow = to.rshow || "all";
-    /* A count spans every college, so its list does too, whatever the reader picked; a target
-       that names a college adds it to the picks. Either way the records load as they show. */
-    if (to.view === "records") {
-      if (to.rcollege) { linkPick([to.rcollege]); state.rscope = "pick"; }
-      else state.rscope = "all";
-    }
     if (to.sec) secSet(to.sec, true);
     choose(to.view, false);
     bringUp(document.getElementById("prh-panel"));
@@ -3459,22 +3103,10 @@
      page. A light row has not brought its page yet; every record names one (2026-10-13), and
      goNext() passes over one that arrives without. */
   function readable(q) { return !!(q && !q._gone && (q._light || q.source_url) && q.requirements_fp && stateLine(q).waiting); }
-  /* The colleges the Records view lists: those every college-side filter passes, or every
-     college (null) when it lists them all or no such filter is set, so a record opened by a
-     link still has a next one. */
-  function listedColleges() {
-    if (state.rscope === "all" || !collegeFiltersOn()) return null;
-    var seen = {};
-    return rows().map(function (p) { return p.college; }).filter(function (c) {
-      if (seen[c]) return false;
-      seen[c] = 1;
-      return collegeInFilters(c);
-    });
-  }
   /* The next record waiting on the reader (Sam, 2026-10-11: "bring me to the next item to
      confirm"). A record on a call: the next waiting one on that call, then on the calls after
-     it. Any other record: the next waiting one in the list the Records view shows, in its order
-     (college, then control number) and under its search and filters. */
+     it. Any other record: the next waiting one in the List's order, under its filters; outside the
+     List, the reviewer's records in theirs (college, then control number). */
   function nextToRead(p) {
     function same(r) { return !!r && r.college === p.college && r.control_number === p.control_number; }
     var Q = state.progress && state.progress.queue, calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
@@ -3491,7 +3123,7 @@
     }
     /* From the List: the next waiting record in the order it shows, under its filters (S574). */
     var P = state.view === "list" && LIST.engine ? LIST.engine.rows().map(function (r) { return r.p; }).filter(Boolean)
-      : filterRecords((state.review && state.review.records) || [], state.rq, state.rshow, listedColleges(), isWaiting);
+      : (state.review && state.review.records) || [];
     var i0 = -1;
     P.forEach(function (r, i) { if (i0 < 0 && same(r)) i0 = i; });
     for (var k = 1; k <= P.length; k++) {
@@ -3664,8 +3296,8 @@
    * holds its record, whether that record passes the three machine checks, and the issues the
    * checks name. The TOP code is a word the finder reads and the CIP family's drawer shows as the
    * college entered it; it decides nothing here (CLAUDE.md Rule 7).
-   * Read only. The tab's one write is a reviewer's verdict on a record, and each row's drawer opens
-   * that record in Program records, where the verdict sits.
+   * Read only but for the tab's one write, a reviewer's verdict on a record, which each row's panel carries
+   * (Program records retired into it, SkyLoquat 2026-11-04).
    * A record joins its program by control number, unique among active programs (20,282 of 20,282
    * and the same 16,132 records by control number as by college and control number, 2026-11-01),
    * so COCI's short college names ("L.A. VALLEY") never have to match the records' names. */
@@ -4125,8 +3757,7 @@
         more.push(h.el("p", null, ["Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
           (p.catalog_year ? " (" + yr(p.catalog_year) + ")" : "") + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + "." +
           (disp.build ? " Display build " + disp.build + (disp.built ? ", " + disp.built : "") + "." : "")]));
-        if (F.college.length) more.push(h.el("p", null, [collegeCount(F.college) + " for " + shortCollege(p.college) + " to correct. ",
-          h.word("Open " + shortCollege(p.college) + "'s drafts on Catalogs", function () { goTo({ view: "catalogs", q: p.college, sec: "catalogs:registry" }); })]));
+        if (F.college.length) more.push(collegeDraftsSlot(p.college, F.college));
         if (F.notes.length) out.push(h.fold("notes", "Notes for the reading procedure (" + F.notes.length + ")",
           [h.el("ul", null, F.notes.map(function (g) { return h.el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
       }
@@ -4185,7 +3816,7 @@
   /* ── frame ── */
   function counts() {
     var R = state.registry || [], P = rows();
-    return { progress: null, catalogs: R.length, records: P.length,
+    return { progress: null, catalogs: R.length,
       sequences: R.filter(function (r) { return r.sequence_url || r.sequence_host; }).length,
       procedures: R.filter(function (r) { return r.procedure; }).length,
       list: state.progress && state.progress.active != null ? state.progress.active : null };
@@ -4238,9 +3869,8 @@
       var b = el("button", { role: "tab", id: "prh-tab-" + v.id, "aria-controls": "prh-panel",
         "aria-selected": sel ? "true" : "false", tabindex: sel ? "0" : "-1", type: "button" },
         [v.label, n[v.id] == null ? null : el("span", { cls: "prh-n", text: fmt(n[v.id]) })]);
-      /* The Records tab itself lists the reader's picks; only a count's word lists every college. */
       /* A view's own button lists the reader's own picks: a college a link added drops (Sam, 2026-10-21). */
-      b.addEventListener("click", function () { if (v.id === "records") state.rscope = "pick"; if (v.id === "records" || v.id === "list") dropLinkPicks(); choose(v.id, true); });
+      b.addEventListener("click", function () { if (v.id === "list") dropLinkPicks(); choose(v.id, true); });
       b.addEventListener("keydown", function (e) {
         var k = e.key, j = null;
         if (k === "ArrowRight") j = (i + 1) % VIEWS.length;
@@ -4249,15 +3879,13 @@
         else if (k === "End") j = VIEWS.length - 1;
         if (j == null) return;
         e.preventDefault();
-        if (VIEWS[j].id === "records") state.rscope = "pick";
-        if (VIEWS[j].id === "records" || VIEWS[j].id === "list") dropLinkPicks();
+        if (VIEWS[j].id === "list") dropLinkPicks();
         choose(VIEWS[j].id, true);
       });
       sw.appendChild(b);
     });
     panel.setAttribute("aria-labelledby", "prh-tab-" + state.view);
     panel.appendChild(state.view === "progress" ? viewProgress()
-      : state.view === "records" ? viewRecords()
       : state.view === "sequences" ? viewSequences()
       : state.view === "procedures" ? viewProcedures()
       : state.view === "list" ? viewList() : viewCatalogs());
@@ -4298,9 +3926,9 @@
 
   window.CPL_PROGRAM_REQUIREMENTS = {
     activate: activate, pageSpec: pageSpec, activeCounts: activeCounts,
-    _state: state, _load: load, _render: render, _idle: idle,
-    INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY, FILTERS_KEY: FILTERS_KEY, CIP_FAMS: CIP_FAMS, sectorOf: sectorOf,
-    catalogStatus: catalogStatus, catalogAccess: catalogAccess, filterProcedures: filterProcedures, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,
+    _state: state, _load: load, _render: render, _idle: idle, _ensureRows: ensureRows,
+    INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY, FILTERS_KEY: FILTERS_KEY, CIP_FAMS: CIP_FAMS,
+    catalogStatus: catalogStatus, catalogAccess: catalogAccess, filterProcedures: filterProcedures, filterRegistry: filterRegistry, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary, collegeLine: collegeLine, collegeCount: collegeCount,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,

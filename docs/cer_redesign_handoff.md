@@ -1,12 +1,67 @@
 ---
-title: "CER redesign handoff: Program records retires into the Programs List, PRs 1 and 2 of 3 (SkyQuince)"
+title: "CER redesign handoff: Program records deleted, PR 3 of 3 (SkyLoquat)"
 date: 2026-11-04
-session: CER redesign build, side session (SkyQuince)
-tags: [handoff, cer, commons-list, program-requirements, side-by-side, cpl-pathways]
+session: CER redesign build, side session (SkyLoquat)
+tags: [handoff, cer, commons-list, program-requirements, side-by-side, a11y]
 status: current
 ---
 
-# You are SkyLoquat, the Lists' next build
+# You are SkyJujube, the Lists' next build
+
+SkyLoquat ran on 2026-11-04 from about 18:55Z (Sam's greeting named SkyTeaberry and cited SkyInkberry's handoff, three
+sessions stale; the file held SkyQuince's, which named SkyLoquat, and this session took that name). SkyQuince was still
+live on #2773 (the Commons look); the two agreed one writer per file by message: this run kept out of both HTMLs and
+`commons_look.js`. **Light checkpoint:** no §11 row moved, no re-mint, no data receipt, nothing waits on Sam. Skipped:
+`README.md`, `kb/README.md`, the pipeline view, a new KB note, the lessons doc, `cpl_memory` rows and the decision
+sheet. The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (575), and so do its session numbers: a side
+session marks its work with its moniker, never an S-number.
+
+## What shipped (SkyLoquat)
+
+- **PR 3 (this one): Program records is gone.** `viewRecords`, its college sections, the Records view word,
+  `filterRecords`, `listedColleges`, the CIP batch reader (`loadCips`, `sectorOf`, `state.cip`), `state.rq`/`rshow`/
+  `rscope`, `linkPick`/`addPick`/`savePick`/`saveFilt`/`rowsOf`/`activeIn`/`readingText`/`EAGER_COLLEGES` and three
+  dead CSS rules: about 420 lines. `goTo` still maps an older `view: "records"` address to the List.
+- **Carried first, found in the inventory:** the drafts to the college (the copyable message) lived only in the view's
+  college section; the List panel's word pointed to Catalogs, whose count pointed back to Program records. The panel
+  now offers *Draft the message to …* (`collegeDraftsSlot`: reads the college's records once, then `draftsBox`, open),
+  and Catalogs' count is a word that opens the List on the college.
+- **Tests ported:** `program_requirements.test.js` (438 to 367) reads the card through side by side (`cardOf`,
+  `cardAt`, `fullRows` over the new `_ensureRows` hook); the view-only blocks (13's search and Show, 21, 24b-e, 24i,
+  24k, 24m, 24n) went, their shared parts carried: the dropdown's keyboard and outside click and the unread-district note
+  (port (12)), the drafts box (port (14)), Needs a fix in place (port (15)). Port suite 52. `cpl_pathways_college_status`
+  (d) checks the conflict rule against `machineFails` and the List's filter.
+- **`a11y.config.js`:** the Records routes went; the record seed opens side by side directly and closes First Light's
+  greeting (it had covered the record in every shot); the filter routes open the List's College dropdown. The six
+  Program Requirements targets pass, light and dark, checked by screenshot.
+
+## Open work, in order
+
+1. **Merge this PR** once `test` passes on its head.
+2. **Courses' older view** (Courses keeps SkyView first): inventory what only the view has, carry it into the List or
+   its panel (one PR), then delete (the next). Follow every "open it on X" word to its end before deleting.
+3. **Seen, not fixed:** in side by side at 1024px a course's COCI chip (`.prh-coci`) overlaps the course column's
+   C-ID and M-ID chips (Art's ARTH 4, the a11y seed). Older than this run.
+4. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
+   Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
+   may align*, once a source names courses.
+
+## Lessons to honor
+
+- **An inventory reads the pointers, too.** The drafts were missed because the panel *pointed* at them: the word led to
+  Catalogs, and Catalogs led back to the view being deleted. Follow each pointer to the thing itself.
+- **A light row draws a card without its gaps.** Read the record whole (`_ensureRows`) before a test reads its card.
+- **Side by side's save moves on;** the in-place verdict flow (the said line, the state line) is the List panel's.
+- **An a11y pass is not a look.** The sweep passed while First Light's greeting covered the record; only the
+  screenshots (`--shots <dir>`) showed it. Close the greeting in the seed, then look.
+
+## Let go
+
+At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
+
+---
+
+# SkyQuince's record (2026-11-04)
 
 SkyQuince ran on 2026-11-04 from about 17:05Z (Sam named it; the greeting cited SkyPawpaw's handoff, and the file held
 it). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt, nothing waits on Sam. Skipped: `README.md`,
@@ -61,68 +116,3 @@ count since it (6) is the routine's trigger.
 
 At sign-off: drop the PR watches on #2769 and PR 2 once merged. No check-in, no artifact watch.
 
----
-
-# SkyPawpaw's record (2026-11-04)
-
-SkyPawpaw ran on 2026-11-04 from about 02:24Z to 03:45Z (Sam named it; the greeting cited SkyTeaberry's handoff, and the
-file held it). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt. `cpl_memory`:
-`cr-worklist-retired-into-list-2026-11-04` (verified), `subjects-reference-view-retiring-into-list-2026-11-04` and
-`pitfall-qs-hint-wiped-by-arrival-reset-2026-11-04` (proposed). Skipped: `README.md`, `kb/README.md`, the pipeline view,
-a new KB note (the List norms note took the record), the lessons doc (nothing retired), and the decision sheet (nothing
-waits on Sam from this run). The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (565). The lint flags two
-items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000 bytes, and the commits since `session_565`.
-
-## What shipped (SkyPawpaw)
-
-- **#2750** (merged): **CR's worklist retired into the List.** Deleted the worklist's render (group cards, picker,
-  filter row, stat row, CSV), its write handlers and its control CSS; the view row reads Progress, List, and
-  `#cr-reference/worklist` opens the List. `tests/cr_reference.test.js` keeps Parts A, C and B17; Part B lives on in
-  `cr_list_worklist_port`. Two suites caught what the worklist alone had carried: the header pointer
-  (`team_phrase_affordance`) and the one prose measure (`cobi_prose_measure`).
-- **#2751** (merged): **Subjects' List carries the Reference view.** Its lists became List filters (No code yet,
-  Confirmed, On the CCN code, On the C-ID code, An official code differs, Proposed); every Progress count, old filter
-  address and quickstart hint opens the List; a TOP column takes the TOP filter's place; the head carries the sign-in and
-  Run the SUBJ check; the panel folds the CPL window and the C-ID and CCN courses on its codes.
-  `tests/csr_list_reference_port.test.js` (17).
-- **#2752** (merged): **Subjects' Reference view retires.** About 1,000 lines out of `canonical_subj4.js` (toolbar,
-  table, row editor, variants and CPL modals); the check's *show* opens the panel; the panel lists *Codes it could take*
-  with a *Take* word. The table's suites read the List through `tests/csr_list_harness.js`. Both HTMLs mount the views
-  before `#cs-mount`. Five ported suites re-baselined their check floors (`tests/check_floor.json`), each loss named.
-- **This PR**: the table's 55 rules leave the tab's `<style>` (both HTMLs) and the box's injected CSS with them;
-  `csr_ui_pass` checks the rules that stay and that the table's are gone; `cobi_prose_measure`'s layout sample moves to
-  `.cr-title-cell`.
-
-## Open work, in order
-
-1. **Merge this PR** (the Subjects CSS) once `test` passes on its head.
-2. **The original views retire as each List does what they do**, one PR each, tests ported first: Programs' older view,
-   then Courses' (Courses keeps SkyView first). Inventory what only the view has, carry it into the List or its panel
-   (one PR), then delete (the next), as Subjects went.
-3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
-4. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
-   to the routine; the Catalog's *Courses that may align*, once a source names courses.
-
-## Lessons to honor
-
-- **Deleting a view can delete a guard's only evidence.** The worklist held CR's only "in the header" pointer and only
-  prose measure; run the suites that scan source (`team_phrase_affordance`, `cobi_prose_measure`, `csr_ui_pass`) before
-  the push, not only the tab's own.
-- **A quickstart hint lands before its tab does.** The tab's arrival reset (tabs never remember a filter) wipes it;
-  hold it for that one arrival (`state.qsHeld`).
-- **A save's `render()` must not repaint the List.** The List's callers redraw it and put focus back; a second repaint
-  from `render()` loses the focus (csr_list (4)).
-- **Port a suite that has no List engine by giving it one:** the shell's `CPL_TABS.loadScript` running
-  `commons_list.js` in the page's context (`tests/csr_list_harness.js`).
-- **Build the next PR on the open one, push it after the squash:** `git rebase --onto origin/main <old-branch>`.
-- **A ported suite runs fewer checks than its floor** (`tests/check_floor.json`), and CI fails the shard. When the
-  drop is the retired view's own checks, lower that file's entry by hand and name the loss in the commit (the full
-  `npm run test:floor` refuses a shard and rewrites every entry).
-- **A suite can print its FAIL lines indented** (`axe_select_names`); match `(^|\s)FAIL` when sweeping, never `^FAIL`.
-- **Never hide a check's exit code behind a pipe:** `check_generated.sh | tail -1` let a stale dependency map through.
-- **`npm test` locally exceeds the 30-minute background limit;** run the suites that touch the change, and let CI's
-  shards run the rest.
-
-## Let go
-
-At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.

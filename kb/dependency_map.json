@@ -1647,7 +1647,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2077
+     "line": 2072
     }
    ],
    "main_committers": []
@@ -1961,7 +1961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2806,
+     "line": 2457,
      "tabs": [
       "program-requirements"
      ]
@@ -2262,7 +2262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1118
+     "line": 1113
     }
    ],
    "main_committers": []
@@ -2281,7 +2281,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1463
+     "line": 1458
     },
     {
      "id": "module:college_briefing.js",
@@ -4239,7 +4239,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1741
+     "line": 1736
     }
    ],
    "main_committers": []
@@ -5288,7 +5288,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1632
+     "line": 1627
     },
     {
      "id": "module:admin.js",
@@ -5603,7 +5603,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4172,
+     "line": 3803,
      "tabs": [
       "program-requirements"
      ]
@@ -6068,7 +6068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4171,
+     "line": 3802,
      "tabs": [
       "program-requirements"
      ]
@@ -6138,7 +6138,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3248,
+     "line": 2899,
      "tabs": [
       "program-requirements"
      ]
@@ -6372,7 +6372,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2016
+     "line": 2011
     },
     {
      "id": "module:college_briefing.js",
@@ -6578,7 +6578,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1178
+     "line": 1173
     },
     {
      "id": "module:cpl_funding.js",
@@ -10014,7 +10014,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 131,
+     "line": 128,
      "tabs": [
       "program-requirements"
      ]
@@ -12618,7 +12618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1689,
+     "line": 1672,
      "tabs": [
       "program-requirements"
      ]
@@ -24793,7 +24793,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 850,
+     "line": 915,
      "tabs": [
       "program-requirements"
      ]
@@ -24925,7 +24925,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1850,
+     "line": 1833,
      "tabs": [
       "program-requirements"
      ]
@@ -26722,7 +26722,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 775,
+     "line": 770,
      "tabs": [
       "program-requirements"
      ]
@@ -27047,7 +27047,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 888,
+     "line": 848,
      "tabs": [
       "program-requirements"
      ]
@@ -27090,7 +27090,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 578,
+     "line": 573,
      "tabs": [
       "program-requirements"
      ]
@@ -27126,7 +27126,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 954,
+     "line": 914,
      "tabs": [
       "program-requirements"
      ]
@@ -27173,7 +27173,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 740,
+     "line": 735,
      "tabs": [
       "program-requirements"
      ]
@@ -27382,7 +27382,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 224,
+     "line": 220,
      "tabs": [
       "program-requirements"
      ]
