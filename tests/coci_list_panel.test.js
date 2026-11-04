@@ -97,13 +97,15 @@ const COMMONS_DOC = { schema: 1, written_at: "2026-11-04T06:00:00Z", rows: [{ ke
   pair: [{ n: 3205, of: 27581, words: "cards the auditor scores 0.85 or better; 17,036 at needs review", open: SKY },
     { n: 957, of: 27581, words: "confirmed by a person, 152 of them ready", open: SKY, error: null }],
   issues: [{ n: 4179, words: "unit anomalies", owner: "a curator", open: SKY }] }] };
+/* Waits until the condition holds (a loaded runner reads slower than a fixed sleep allows), up to 5 s. */
+async function until(fn, ms) { const end = Date.now() + (ms || 5000); while (!fn() && Date.now() < end) await sleep(10); return fn(); }
 function panel(d) { return d.getElementById(P + "panel"); }
 function titleBtn(d, title) { const tr = dataRows(d).find((x) => txt(cell(x, d, "Title")).indexOf(title) === 0); return tr && cell(tr, d, "Title").querySelector("button"); }
 
 (async () => {
   // ── (1) the line ──
   const t = tab({ commons: COMMONS_DOC, modules: true });
-  await sleep(200);
+  await until(() => t.d.querySelector("#" + P + "fold #" + P + "pg-attention"));
   const d = t.d, ln = d.querySelector("." + P + "line");
   const parts = ln ? Array.from(ln.children).filter((x) => !x.classList.contains(P + "sep")).map(txt) : [];
   check("(1) ⭐ the line reads the course row", parts.join(" | ") === "3,205 of 27,581 cards the auditor scores 0.85 or better | 957 confirmed by a person | 4,179 unit anomalies", parts.join(" | "));
@@ -122,12 +124,13 @@ function titleBtn(d, title) { const tr = dataRows(d).find((x) => txt(cell(x, d, 
   check("(2) Hide the summary hides it; the word says Show the summary and keeps focus", d.getElementById(P + "fold").hidden && txt(tog2) === "Show the summary"
     && tog2.getAttribute("aria-expanded") === "false" && d.activeElement === tog2);
   const tf = tab();
-  await sleep(30);
+  await until(() => /could not be read/.test(txt(tf.d.querySelector("." + P + "line"))));
+  await sleep(50);
   check("(2) a failed read says the figures could not be read, once", /could not be read/.test(txt(tf.d.querySelector("." + P + "line")))
     && tf.fetches.filter((u) => /commons\.json/.test(u)).length === 1);
 
   // ── (3) the panel ──
-  titleBtn(d, "Composition and Reading").click(); await sleep(20);
+  titleBtn(d, "Composition and Reading").click(); await until(() => /ENGL 101, Rio Hondo/.test(txt(d.getElementById(P + "panel-t"))) && d.querySelector("#" + P + "panel ." + P + "pdrawer .cplcoci-outs"));
   const p = panel(d);
   check("(3) ⭐ a title opens the panel, named for the course and its college", !!p && txt(d.getElementById(P + "panel-t")) === "Course: ENGL 101, Rio Hondo College"
     && /ENGL 101, Composition and Reading/.test(txt(p.querySelector("h2"))) && /C-ID ENGL 100/.test(txt(p.querySelector("." + P + "pn-meta"))));
@@ -140,11 +143,11 @@ function titleBtn(d, title) { const tr = dataRows(d).find((x) => txt(cell(x, d, 
   check("(3) the members table is a labelled region with th scope=col", mt.getAttribute("role") === "region" && !!mt.getAttribute("aria-label") && mt.querySelectorAll("th[scope='col']").length === 4);
   check("(3) the Title drawer moves in: the catalog description and the outcomes", !!p.querySelector("." + P + "pdrawer .cplcoci-outs"));
   check("(3) the rest folded: the older M-ID the extract named", /named ENGL M1999; the course has moved since/.test(txt(p.querySelector("details." + P + "pn-more"))));
-  Array.from(mt.querySelectorAll("tbody button")).find((b) => txt(b) === "College Composition").click(); await sleep(20);
+  Array.from(mt.querySelectorAll("tbody button")).find((b) => txt(b) === "College Composition").click(); await until(() => /ENGL 300/.test(txt(d.getElementById(P + "panel-t"))));
   check("(3) another course's title opens its panel", txt(d.getElementById(P + "panel-t")) === "Course: ENGL 300, American River College");
-  titleBtn(d, "Intro to Welding").click(); await sleep(20);
+  titleBtn(d, "Intro to Welding").click(); await until(() => /WELD 101/.test(txt(d.getElementById(P + "panel-t"))));
   check("(3) a course in two M-IDs names both and sits under the larger", /sits in 2 M-IDs \(WELD M1109, MANF M1200\)/.test(txt(panel(d))), txt(panel(d)).slice(0, 400));
-  titleBtn(d, "Rigging").click(); await sleep(20);
+  titleBtn(d, "Rigging").click(); await until(() => /CARP 040K/.test(txt(d.getElementById(P + "panel-t"))));
   check("(3) a course in no M-ID says so and lists none", /No M-ID: the Common Course Reference holds this course in no common course today/.test(txt(panel(d)))
     && !panel(d).querySelector("#" + P + "pn-members"));
 
