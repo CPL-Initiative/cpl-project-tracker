@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 1386,
-    "bytes": 14032482,
+    "files": 1389,
+    "bytes": 14053217,
     "over_budget": 1,
-    "handoff_max": 573,
+    "handoff_max": 575,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60641,
+    "always_loaded_bytes": 60898,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60641,
+        "bytes": 60898,
         "over": 1
       },
       "other": {
-        "files": 139,
-        "bytes": 4256853,
+        "files": 140,
+        "bytes": 4265981,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8518,
+        "bytes": 8557,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2622688,
+        "bytes": 2627417,
         "over": 0
       },
       "kb_note": {
-        "files": 575,
-        "bytes": 2824487,
+        "files": 576,
+        "bytes": 2826986,
         "over": 0
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 482703,
+        "bytes": 482328,
         "over": 0
       },
       "handoff": {
-        "files": 540,
-        "bytes": 3776592,
+        "files": 541,
+        "bytes": 3781050,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25611,
-      "bytes": 4192341713,
+      "files": 25615,
+      "bytes": 4192462826,
       "heavy_bytes": 2980407265,
       "heavy_share": 0.711,
       "ignore_filters": [
@@ -147,13 +147,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60641,
+        "bytes": 60898,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 641,
+        "over_by": 898,
         "ratio": 1.01
       },
-      "message": "60,641 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,898 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
