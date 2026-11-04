@@ -57,6 +57,38 @@
     // the 3-tier tree; directory = sort_order,name). dir: 1 asc, -1 desc.
     msort: { col: null, dir: 1 }, dsort: { col: null, dir: 1 } };
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens.
+     raci (the matrix on every row) · raci/directory · raci/matrix/activity-<n> · raci/matrix/<sub-activity id>.
+     The search box is free text and is not carried. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("raci", function () {
+    if (state.view === "directory") return "raci/directory";
+    var s = (state.mfilter && state.mfilter.scope) || "all";
+    if (s.indexOf("act:") === 0) return "raci/matrix/activity-" + encodeURIComponent(s.slice(4));
+    if (s.indexOf("sub:") === 0) return "raci/matrix/" + encodeURIComponent(s.slice(4));
+    return "raci";
+  });
+  /* The matrix scope an address word names, checked against the Activities and the official sub-activities;
+     null for anything else. */
+  function scopeFromWord(w) {
+    if (!w) return null;
+    var m = /^activity-(.+)$/.exec(w);
+    if (m) return ACTIVITIES.some(function (a) { return a.id === m[1]; }) ? "act:" + m[1] : null;
+    var subs = state._subByAct || {};
+    var known = Object.keys(subs).some(function (k) { return subs[k].some(function (s) { return s.id === w; }); });
+    return known ? "sub:" + w : null;
+  }
+  /* Opens the view the address names (#raci/directory, #raci/matrix/activity-4). A bare #raci, or a word the tab
+     does not know, leaves the view as it is. */
+  function arrive() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("raci") : null;
+    if (!a) return false;
+    if (a[0] === "directory") { state.view = "directory"; return true; }
+    if (a[0] !== "matrix") return false;
+    state.view = "matrix";
+    state.mfilter = { scope: scopeFromWord(a[1]) || "all", q: "" };
+    return true;
+  }
+
   // ─── Sort helpers (shared by the matrix + directory click-to-sort) ─────────
   // Natural compare so "1.2" < "1.10" and "Activity 2" sorts sensibly.
   function natCmp(a, b) {
@@ -1598,14 +1630,17 @@
   // Re-check the focus key on every navigation to #raci (handles the case where
   // the tab was already booted, so onActivate's once-only boot won't re-fire).
   window.addEventListener("cpl-tab-activated", function (e) {
-    if (e && e.detail && e.detail.tab === "raci") consumePendingFocus();
+    if (!(e && e.detail && e.detail.tab === "raci")) return;
+    // A later visit by an address opens its view; boot's callback covers the first.
+    if (state.loaded && arrive()) render();
+    consumePendingFocus();
   });
 
   // ─── Boot ──────────────────────────────────────────────────────────────────
   function boot() {
     var root = document.getElementById("raci-root");
     if (root) root.innerHTML = '<p style="color:var(--text-muted);padding:1rem;">Loading Team & RACI…</p>';
-    load(function () { render(); consumePendingFocus(); });
+    load(function () { arrive(); render(); consumePendingFocus(); });
   }
 
   window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
