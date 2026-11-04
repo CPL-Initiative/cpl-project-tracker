@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 563 (SkyBode, the CPL Queue routine, 2026-11-03 12:12Z firing)
 tags: [handoff, docs-lint]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 564

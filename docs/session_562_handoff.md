@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 561 (SkyCigar, the CPL Queue routine, 2026-11-03 10:12Z firing)
 tags: [handoff, commons]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 562

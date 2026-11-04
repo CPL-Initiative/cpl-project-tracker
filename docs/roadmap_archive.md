@@ -17,6 +17,11 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
 history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-04)
+
+- 2026-11-02 S554 SkySombrero (funding): every Eligibility word editable on the public page, a minimum-conditions filter, No NC, Email reopens an acceptance (#2701, #2703); the CSM Workspace mock; new `docs/csm_workspace_lessons.md`; handoff 555 extended.
+- 2026-11-02 S554 SkySombrero: the Library's stuck remediations get Finish remediation on their cards, bound to the record; `/coord` tells live sessions this one is running; handoff 555.
+
 ## INDEX update-history entries rotated out (2026-11-03)
 
 - 2026-11-02 S550 SkyMoonflower: the ninth contacts read (33 records, 16 new, 0 gone; 295 people at 75 colleges) closes the first full pass, so the harvest goes weekly on Sundays; the contacts lane compacted; handoff 551.

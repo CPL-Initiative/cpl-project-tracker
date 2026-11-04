@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 97 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 535 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1369** | |
+| Session handoffs | 536 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1370** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-04 S568 SkyMalin (CPL Queue routine): the cert link's FAA family, 11 titles to 15 certs (#2758); light checkpoint; handoff 569.
 - 2026-11-03 SkyTrue: the List becomes each common reference's workspace (#2735, #2736); the Local subjects List (#2737); the Exhibits side panel (#2738); light checkpoint.
 - 2026-11-03 S562 SkyPinwheel (CPL Queue routine): the Commons, funding and program requirements lanes back under budget, their dated text moved verbatim to lessons and two lessons docs rolled into archives; the Commons' Exhibit-tiles NEXT found already built; light checkpoint; handoff 563.
 - 2026-11-03 S561 SkyCigar (CPL Queue routine): merged S560's #2721; the Commons to-do's last four pairs, Subjects' findings count and Exhibits' held list now agree with their cards (#2722); light checkpoint; handoff 562.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
 - 2026-11-03 S557 SkySculptor (CPL Queue routine): the ELL IET Version 3 draft from Sam's Revise request; Santa Ana's SLO read and Las Positas's index; the CSM Workspace UI pass; library lessons archived (`docs/library_lessons_archive.md`); handoff 558.
 - 2026-11-03 S555 SkyTadpole: the CSM Workspace tab ships with its communications log (`csm_log`) and contacts; the Commons closes a to-do from its band; Sheet 159; a11y `--dark`
-- 2026-11-02 S554 SkySombrero (funding): every Eligibility word editable on the public page, a minimum-conditions filter, No NC, Email reopens an acceptance (#2701, #2703); the CSM Workspace mock; new `docs/csm_workspace_lessons.md`; handoff 555 extended.
-- 2026-11-02 S554 SkySombrero: the Library's stuck remediations get Finish remediation on their cards, bound to the record; `/coord` tells live sessions this one is running; handoff 555.
