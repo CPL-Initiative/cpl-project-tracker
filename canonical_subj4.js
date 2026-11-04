@@ -1571,7 +1571,10 @@
       lede: "The Common Subjects Reference: one Common SUBJ for each MQ discipline, the key every M-ID is minted under.",
       read: x.scanDay ? "Scanned " + x.scanDay + "." : "",
       links: [x.procs ? { words: "How it is kept: " + fmtN(on) + " procedures in force", go: go(TO.procedures) } : null,
-        sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
+        sheet ? { words: "Decision record", href: sheet.link } : null,
+        // The plain-words explanation (Sam, 2026-11-04: "provide a simple explanation of it available by link on our
+        // subjects common view"; "and how the MQs determine the subject codes needed").
+        { words: "What a Common SUBJ is", href: "prototype/common_subj_explainer.html" }].filter(Boolean),
       progress: { n: x.settled, of: total, short: "settled", words: "MQ disciplines with courses carry a settled Common SUBJ",
         // Confirmed by a person, beside settled (Sheet 160; Sam, S565, 2026-11-03: all five references).
         confirmed: { n: x.person, done: x.personSettled, doneWords: "settled" },

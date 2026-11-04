@@ -553,7 +553,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Career-attainment import — the Chancellor's Office's EDD measure for goal (C)](../kb-notes/reference-career-attainment-import.md) | reference | published | 2026-09-23 | 2026-09-23 |
 | [CCR curation sync & live-merge durability (what's instant vs what waits for cron)](../kb-notes/reference-ccr-curation-sync-and-live-merge.md) | reference | published | 2026-06-23 | 2026-06-23 |
 | [CDCP, course-level, and the CIP-count rule](../kb-notes/reference-cdcp-and-the-cip-count-rule.md) | reference | published | 2026-07-28 |  |
-| [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-06-23 |
+| [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-11-04 |
 | [Common-Course level convention (Beg/Int/Adv)](../kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 |  |
 | [CPL eligibility — military vs non-military + the Exhibit CRs Catalog rollup](../kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md) | reference | published | 2026-06-09 | 2026-06-09 |
 | [CTDL classes for COBI's records, verified against Credential Engine's schema](../kb-notes/reference-ctdl-classes-for-cobi-records.md) | reference | published | 2026-10-20 | 2026-10-20 |
