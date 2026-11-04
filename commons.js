@@ -60,6 +60,17 @@
   };
   var ORDER = ["requirements", "subjects", "exhibit", "cr", "course", "credentials", "outcomes", "skills"];
 
+  /* The one queue (Sam, 2026-11-04, S573: the routines carry the volume and "queue human decisions only when
+     needed"). The status file's queue groups every known issue a person must see by its reason; everything else
+     the routines carry. The words for each reason live here; the builder carries only the key. */
+  var REASONS = {
+    no_procedure: { title: "No procedure covers it yet", who: "A person decides it, then teaches the rule so the daily check handles the next one." },
+    unsure: { title: "A procedure is unsure", who: "A person confirms it or fixes it; a note settles a difference for good." },
+    reaches: { title: "It moves items another reference relies on", who: "The lead decides, and the move happens in one planned window." },
+    keep_call: { title: "It is a keep, retire or rename call", who: "A curator decides, or the lead where a ruling stands." },
+    unsorted: { title: "Not yet sorted", who: "An issue that names no reason. Give it one in the Commons builder." }
+  };
+
   function P() { return window.CPL_COMMONS_PROGRESS || null; }
 
   function el(tag, attrs, kids) {
@@ -453,6 +464,32 @@
     box.appendChild(det);
     return box;
   }
+  function queueItem(i) {
+    var name = (CARDS[i.ref] && CARDS[i.ref].name) || i.title || i.ref;
+    return el("li", null, [el("span", { cls: "cmn-queue-ref", text: name + ": " }), count(i.n, i.open), " " + (i.words || "")]);
+  }
+  function queueSection(q) {
+    if (!q || !Array.isArray(q.reasons)) return null;
+    var groups = q.reasons.slice();
+    if (Array.isArray(q.unsorted) && q.unsorted.length) groups.push({ key: "unsorted", items: q.unsorted });
+    var boxes = groups.map(function (g) {
+      var w = REASONS[g.key] || { title: g.key, who: "" };
+      var items = Array.isArray(g.items) ? g.items : [];
+      return el("div", { cls: "cmn-reason", "data-reason": g.key }, [
+        el("h4", { cls: "cmn-reason-h", text: w.title }),
+        el("p", { cls: "cmn-reason-who", text: w.who }),
+        items.length ? el("ul", null, items.map(queueItem)) : el("p", { cls: "cmn-quiet", text: "Nothing waits here." })
+      ]);
+    });
+    var carried = Array.isArray(q.carried) ? q.carried : [];
+    return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
+      el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
+      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest." }),
+      el("div", { cls: "cmn-queue-grid" }, boxes),
+      carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, carried.map(queueItem))]) : null
+    ].filter(Boolean));
+  }
+
   function render(root, data, S, now) {
     now = now || new Date();
     root.removeAttribute("style");
@@ -488,6 +525,10 @@
         }))
       ]));
     }
+
+    /* the one queue: what waits on a person, by reason, and what the routines carry */
+    var queue = queueSection(data && data.queue);
+    if (queue) wrap.appendChild(queue);
 
     /* the filter words: the visit's, never remembered */
     var show = "all";
@@ -681,6 +722,15 @@
     ".cmn-filter-label, .cmn-sort-note { color:var(--cmn-muted); font-size:.9rem; margin:0; }",
     "button.cmn-filter[aria-pressed=\"true\"] { color:var(--cmn-heading); font-weight:700; text-decoration-thickness:3px; }",
     ".cmn-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; }",
+    ".cmn-queue { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:18px 22px; display:grid; gap:12px; }",
+    ".cmn-queue-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; }",
+    ".cmn-reason { border:1px solid var(--cmn-line-soft); border-radius:10px; padding:12px 14px; display:grid; gap:6px; align-content:start; min-width:0; }",
+    ".cmn-reason-h { margin:0; font-size:.98rem; font-weight:700; color:var(--cmn-heading); }",
+    ".cmn-reason-who { margin:0; color:var(--cmn-muted); font-size:.88rem; }",
+    ".cmn-reason ul, .cmn-carried ul { margin:0; padding-left:20px; display:grid; gap:4px; font-size:.92rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-reason a, .cmn-carried a { display:inline-block; min-height:24px; line-height:24px; font-weight:700; }",
+    ".cmn-queue-ref { color:var(--cmn-ink-2); font-weight:600; }",
+    ".cmn-carried { border-top:1px solid var(--cmn-line-soft); padding-top:10px; display:grid; gap:6px; }",
     ".cmn-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; gap:12px; min-width:0; }",
     ".cmn-card-needs { border-top:4px solid var(--cmn-gold); }",
     ".cmn-card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }",
@@ -761,6 +811,7 @@
     "@media (prefers-reduced-motion: no-preference) { .cmn-ref h3 { scroll-margin-top:16px; } }",
     "@media (max-width: 1040px) { .cmn-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
     "@media (max-width: 900px) { .cmn-cells { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
+    "@media (max-width: 620px) { .cmn-queue-grid { grid-template-columns:minmax(0, 1fr); } .cmn-queue { padding:16px; } }",
     "@media (max-width: 620px) { .cmn-grid { grid-template-columns:minmax(0, 1fr); } .cmn-page { margin:0; padding-left:16px; padding-right:16px; } }",
     "@media (max-width: 560px) { .cmn-cells { grid-template-columns:minmax(0, 1fr); } .cmn-ref { padding:14px; } .cmn-card { padding:16px; } }"
   ].join("\n");
@@ -783,6 +834,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
+    queueSection: queueSection, REASONS: REASONS,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

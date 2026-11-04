@@ -388,6 +388,45 @@ function cellText(li, title) {
       /sign in as a reviewer to mark it done/.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
   }
 
+  // the one queue (Sam, 2026-11-04, S573): what waits on a person, by reason, and what the routines carry
+  {
+    const Q = { reasons: [
+        { key: "no_procedure", items: [{ ref: "cr", title: "Common CR Reference", n: 1883, words: "wordings no rule places", owner: "a curator", open: "#cr-reference/open" }] },
+        { key: "unsure", items: [{ ref: "exhibit", title: "Common Exhibit Reference", n: null, words: "titles held for a person", owner: "a curator", open: "#exhibits/held", error: "E" }] },
+        { key: "reaches", items: [] },
+        { key: "keep_call", items: [{ ref: "exhibit", title: "Common Exhibit Reference", n: 622, words: "titles in the reference that have left MAP", owner: "a curator", open: "#credential-reference/all" }] }],
+      carried: [{ ref: "requirements", title: "Program Requirements", n: 3349, words: "active programs with no record yet", owner: "the harvest", open: "#program-requirements/list/unread" }] };
+    const withQ = JSON.parse(JSON.stringify(STATUS)); withQ.queue = Q;
+    const q = load({ fetch: responder({ "kb/status/commons.json": withQ, "kb/status/program-requirements.json": PR_LOG }) });
+    await q.M.boot();
+    const sec = q.d.querySelector(".cmn-queue");
+    check("queue 1: the section draws, headed Waiting on a person, labelled by its heading",
+      sec && txt(sec.querySelector("#cmn-queue-h")) === "Waiting on a person" && sec.getAttribute("aria-labelledby") === "cmn-queue-h");
+    check("queue 2: one box per reason, in the file's order, each with its plain words",
+      Array.prototype.map.call(sec.querySelectorAll(".cmn-reason"), function (b) { return b.getAttribute("data-reason"); }).join() === "no_procedure,unsure,reaches,keep_call"
+      && txt(sec.querySelector('[data-reason="no_procedure"] .cmn-reason-h')) === "No procedure covers it yet");
+    const first = sec.querySelector('[data-reason="no_procedure"] li');
+    check("queue 3: an item names its card's Common name, links its count and keeps its words",
+      /^Common Credit Recommendations: 1,883 wordings no rule places$/.test(txt(first)) && first.querySelector("a").getAttribute("href") === "#cr-reference/open");
+    check("queue 4: an unread count reads Could not be read, never a zero",
+      /Could not be read/.test(txt(sec.querySelector('[data-reason="unsure"] li'))) && !/: 0 /.test(txt(sec)));
+    check("queue 5: an empty reason says Nothing waits here",
+      txt(sec.querySelector('[data-reason="reaches"] .cmn-quiet')) === "Nothing waits here.");
+    check("queue 6: the routines' items sit apart, under The routines carry, never in a reason box",
+      /The routines carry/.test(txt(sec.querySelector(".cmn-carried"))) && /3,349 active programs with no record yet/.test(txt(sec.querySelector(".cmn-carried")))
+      && !/no record yet/.test(Array.prototype.map.call(sec.querySelectorAll(".cmn-reason"), txt).join(" ")));
+    check("queue 7: the queue sits after the decisions band and before the filter words",
+      (function () { const kids = Array.prototype.slice.call(q.d.querySelector(".cmn-wrap").children);
+        const iq = kids.indexOf(sec), ib = kids.indexOf(q.d.querySelector(".cmn-band")), iff = kids.indexOf(q.d.querySelector(".cmn-filter-row"));
+        return iq > ib && iq < iff; })());
+    check("queue 8: the queue's words name no person and carry no glyph",
+      !/Sam/.test(txt(sec)) && !/[←-⇿☀-➿\u{1F300}-\u{1FAFF}✔✖▶▼]/u.test(txt(sec)));
+    check("queue 9: a status file with no queue draws no queue section", !t.d.querySelector(".cmn-queue"));
+    const unsorted = q.M.queueSection({ reasons: [], unsorted: [{ ref: "x", title: "X", n: 2, words: "a new issue", open: null }] });
+    check("queue 10: an unsorted issue shows under Not yet sorted, so it cannot hide",
+      txt(unsorted.querySelector('[data-reason="unsorted"] .cmn-reason-h')) === "Not yet sorted");
+  }
+
   // the states, on their own
   const M = t.M;
   check("machineState: no stamp is Could not be read", M.machineState({}, NOW).key === "unread" && M.machineState(null, NOW).word === "Could not be read");
