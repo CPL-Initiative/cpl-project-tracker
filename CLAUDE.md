@@ -195,15 +195,10 @@ nobody finds; `unreferenced_offload` flags any that stop being.
 
    **The authoritative handoff is the highest-numbered
    `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
-   (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read the
+   — `ls docs/session_*_handoff.md`, read the
    highest, and confirm the number with Sam if they diverge. Sam's greeting
-   sometimes names the session's moniker (SkyTime S104, SkyPhilo S108
-   precedent) — claim it and carry it in the §11 narrative + handoff.
-
-   Capture in each artifact: (a) what's been learned this checkpoint, (b) the
-   current state of the work, (c) strategic roadmap, (d) next concrete step.
-   Better to checkpoint slightly early than slightly late — sessions end
-   abruptly and what is not in a markdown file is effectively lost.
+   sometimes names the session's moniker — claim it and carry it in the §11
+   narrative + handoff.
 
 9a. **Context pressure is measurable — warn Sam before the compact instead of
    discovering it after.** Claude Code writes the exact live context size to the
@@ -675,11 +670,9 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   the visit; a hand-off between tabs is read once and cleared. Column widths, the theme and
   section folds are not filters. The public funding page forgets its institution too
   (Sheet 111 card 2, reversing his call 9).
-- **Every view has an address (asked in session, 2026-11-04: *"make that fix on all COBI views"*).**
-  A view a person switches to inside a tab opens from `#<tab>/<view>` (`CPL_SESSION.arrival`) and
-  reports what is on screen (`CPL_SESSION.viewAddress`), so an emailed sign-in link returns to it.
-  The address is the only carrier; nothing is stored. A new tab with views joins the list in
-  `tests/every_view_has_an_address.test.js`.
+- **Every view has an address (asked in session, 2026-11-04).** A view inside a tab opens from
+  `#<tab>/<view>` (`CPL_SESSION.arrival`) and reports itself (`viewAddress`), so a sign-in link returns
+  to it; nothing is stored. A new tab with views joins `tests/every_view_has_an_address.test.js`.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
 
@@ -692,21 +685,14 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)**.
 
 Read it before vault-sync or vault-path work, Obsidian exclusion, or the
-sparse-checkout fix (the vault root, `scripts/sync-vault-clones.ps1`).
+sparse-checkout fix.
 
 Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
 which, the per-lane contract, and the KB-notes lane's author-at-final-quality
 rule: [`docs/INDEX.md`](docs/INDEX.md).
 
-**Checkpoint scope — vault, never the public KB.** Rule 9 / `/checkpoint`
-refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the UI pass ledger),
-which auto-sync into Sam's Obsidian vault + the `CPLBrain` repo with no review
-gate — correct for internal working memory. Checkpoint must **never** write to
-the public `cpl-knowledge-base`. That repo is a separate, audience-facing store
-reached **only** through its curation pipeline (`CPLBrain/audit/curation-manifest.tsv`
-→ `cpl-knowledge-base/tools/curation_assistant.py` → a human-reviewed **draft
-PR** per its `CURATION.md` — its "Promoting a checkpoint or vault note" section
-is the explicit path).
+**A checkpoint writes the vault, never the public KB**:
+[`obsidian_vault_wiring`](docs/reference/obsidian_vault_wiring.md).
 
 ---
 
@@ -717,10 +703,7 @@ is the explicit path).
 Read it before: touching `excel_to_dashboard.py` or the daily workflow (§5–6);
 adding/moving tabs or nav (§7b); working on CPL Assistant (§7c) or TMC Builder
 (§7d); **any Supabase schema/RLS/write work (§8 — table inventory + gating)**;
-EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
-2 File Inventory · 3 Cloudflare Worker · 4 3-Tier Colleges · 5 Python Pipeline ·
-6 Daily Workflow · 6a Analytics · 6b Activities · 7 Custom Report · 7a–7d Tabs ·
-8 Supabase · 9 EACR · 10 C-ID/CCN.
+EACR identity (§9); C-ID/CCN conventions (§10).
 
 ## Knowledge Base & Unified Courses Curation — Build Status
 

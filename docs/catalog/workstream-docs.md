@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-97 document(s).
+98 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -38,6 +38,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [COBI → CO Platform — Long-Term Strategy & Plan of Attack](../co_platform_strategy.md) | `co_platform_strategy.md` | 2026-06-28 | 2026-06-28 |
 | [Common CR Reference — scope, measured against the CCR's actual matching factors](../common_cr_reference_scope.md) | `common_cr_reference_scope.md` | 2026-08-13 |  |
 | [CourseControlNumber Re-mint — Decisions & Lessons](../coursecontrolnumber_remint.md) | `coursecontrolnumber_remint.md` | 2026-05-22 |  |
+| [Courses retirement handoff: the old Common Course Reference tab into the Courses List (SkyJujube)](../courses_retirement_handoff.md) | `courses_retirement_handoff.md` | 2026-11-04 |  |
 | [CPL Assistant (Sierra) lessons — archive 2](../cpl_assistant_lessons_archive_2.md) | `cpl_assistant_lessons_archive_2.md` | 2026-10-16 | 2026-10-16 |
 | [CPL Implementation Funding tab — archived lessons, part 2 (2026-08-04 → 2026-08-31)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-25 | 2026-10-25 |
 | [CPL Implementation Funding tab — archived lessons, part 3 (2026-08-31 → 2026-09-16)](../cpl_funding_lessons_archive_3.md) | `cpl_funding_lessons_archive_3.md` | 2026-10-25 | 2026-10-25 |
