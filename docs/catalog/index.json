@@ -16516,8 +16516,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 540,
+   "count": 541,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 574,
+     "path": "docs/session_574_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 574 handoff: the cert link's IAI, Intuit and DRE families; the family work stops; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25724,5 +25740,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1374
+ "total": 1375
 }

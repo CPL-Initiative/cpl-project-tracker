@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 97 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 540 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1374** | |
+| Session handoffs | 541 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1375** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-04 S573 SkyNeedle (CPL Queue routine): merged S572's #2762; the cert link's IAI, Intuit and DRE families, 9 titles to 9 certs (#2763); the hand-family work stops, the remaining gap is issuers the catalog does not read; light checkpoint; handoff 574.
 - 2026-11-04 S572 SkyBlackEye (CPL Queue routine): merged S571's #2761; the cert link's NWCG and SWRCB families, 12 titles to 4 certs (#2762); light checkpoint; handoff 573.
 - 2026-11-04 S571 SkyHoags (CPL Queue routine): merged S570's #2760; the cert link's AWS welding and Amazon Web Services families, 10 titles to 6 certs (#2761); light checkpoint; handoff 572.
 - 2026-11-04 S570 SkyFireworks (CPL Queue routine): the cert link's PMI, ICC, CDPH and EMSA families, 17 titles to 16 certs (#2760); light checkpoint; handoff 571.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-04 S568 SkyMalin (CPL Queue routine): the cert link's FAA family, 11 titles to 15 certs (#2758); light checkpoint; handoff 569.
 - 2026-11-03 SkyTrue: the List becomes each common reference's workspace (#2735, #2736); the Local subjects List (#2737); the Exhibits side panel (#2738); light checkpoint.
 - 2026-11-03 S562 SkyPinwheel (CPL Queue routine): the Commons, funding and program requirements lanes back under budget, their dated text moved verbatim to lessons and two lessons docs rolled into archives; the Commons' Exhibit-tiles NEXT found already built; light checkpoint; handoff 563.
-- 2026-11-03 S561 SkyCigar (CPL Queue routine): merged S560's #2721; the Commons to-do's last four pairs, Subjects' findings count and Exhibits' held list now agree with their cards (#2722); light checkpoint; handoff 562.
