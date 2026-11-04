@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-04T06:23:23Z",
+ "written_at": "2026-11-04T15:49:45Z",
  "rows": [
   {
    "key": "requirements",
@@ -116,9 +116,9 @@
    ],
    "issues": [
     {
-     "n": 2,
+     "n": 31,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 2)",
+     "owner": "a curator (the classifier is unsure 28, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
      "open": "#exhibits/held",
      "error": null
     },
@@ -146,7 +146,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-04T06:18:47Z",
+    "at": "2026-11-04T15:49:39Z",
     "every_hours": 24
    },
    "facts": {
@@ -158,7 +158,7 @@
     "confirmed": 1173,
     "records": 2976,
     "records_stamped": 2207,
-    "saved_at": "2026-11-03T15:33:09Z",
+    "saved_at": "2026-11-04T15:49:39Z",
     "fold_at": "2026-11-04T06:18:47Z",
     "map_titles": 4928,
     "unclassified": 44,
@@ -341,7 +341,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-03T06:22:32Z",
+    "at": "2026-11-04T06:23:27Z",
     "every_hours": null
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "pair": [
     {
-     "n": 7559,
+     "n": 7564,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -509,7 +509,7 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7559,
+    "credentials": 7564,
     "issuers": 1525,
     "in_map": 205,
     "articulated": 161,
@@ -537,9 +537,9 @@
    ],
    "pair": [
     {
-     "n": 24120,
+     "n": 26136,
      "of": null,
-     "words": "outcomes read from 6,095 courses at 8 colleges",
+     "words": "outcomes read from 6,600 courses at 9 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -547,23 +547,24 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 24120,
-    "courses": 6095,
+    "outcomes": 26136,
+    "courses": 6600,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "golden_west",
+     "las_positas",
      "modesto_junior",
      "moreno_valley",
      "norco",
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 22
+    "reads": 25
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-03T08:08:41Z",
+    "at": "2026-11-04T08:03:38Z",
     "every_hours": null
    },
    "sources": [
