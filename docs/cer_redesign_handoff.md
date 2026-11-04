@@ -1,12 +1,59 @@
 ---
-title: "CER redesign handoff: Program records deleted, PR 3 of 3 (SkyLoquat)"
+title: "CER redesign handoff: side by side's chips stay in their cell (SkyJujube)"
 date: 2026-11-04
-session: CER redesign build, side session (SkyLoquat)
+session: CER redesign build, side session (SkyJujube)
 tags: [handoff, cer, commons-list, program-requirements, side-by-side, a11y]
 status: current
 ---
 
-# You are SkyJujube, the Lists' next build
+# You are SkyKumquat, the Lists' next build
+
+SkyJujube ran on 2026-11-04 from about 21:21Z (Sam's greeting named it and cited SkyLoquat's handoff, which the file
+held). **The moniker ran twice:** a Cowork session (`session_01Rvwe2Xto2Gp2P1RBVdv913`, on Kristen_Surface) shipped
+#2776 as SkyJujube before this one started, taking item 2 below. By message this run left it the Courses carry
+(`coci_lookup.js`, `unified_courses.js`, `tests/coci_list_cc_card.test.js`, `lanes/commons.md`) and kept to
+`program_requirements.js`, its test and this file. **Light checkpoint:** no §11 row moved, no re-mint, no data receipt,
+nothing waits on Sam. Skipped: `README.md`, `kb/README.md`, the pipeline view, a KB note, the lessons doc, `cpl_memory`
+rows and the decision sheet. The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (575).
+
+## What shipped (SkyJujube)
+
+- **This PR: side by side's course chips stay in their cell.** At 1024px the record pane is about 490px, so the
+  course column (17%) let a course's C-ID and M-ID chips run into the title column over the COCI chip. The record
+  pane is now a container (`prh-rec`) and the card's tables stack by its own width under 560px, sharing the phone's
+  rules (`STACK_CSS`); a stacked cell's element children sit in the value's column (the M-ID chip had dropped into the
+  word's column on the phone too). Measured in Chromium at 768, 1024 and 1440: every chip inside its cell. Guard
+  `tests/program_requirements.test.js` (19), 369 checks; `npm run a11y -- program-requirements-split
+  program-requirements-split-dark` passes.
+
+## Open work, in order
+
+1. **Merge this PR** once `test` passes on its head.
+2. **Courses' older view** belongs to the Cowork session that shipped #2776 while it runs (its next PR: the merge
+   editor and Suggested merges; then the deletion). Read `list_sessions` first; take it only if that session has
+   stopped, from where `lanes/commons.md` says it stopped.
+3. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
+   Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
+   may align*, once a source names courses.
+4. **Small, seen:** stacked, the Units and CPL here cells keep `.prh-num`'s right alignment, so their words sit right
+   in the word column (older, on the phone too).
+
+## Lessons to honor
+
+- **Check the live sessions before taking a handoff's next item.** Item 2 here had already shipped as #2776 under the
+  same moniker; `list_sessions` and `main`'s log named the session, and one message settled who writes what.
+- **A table in a pane stacks by the pane, not the viewport.** A `@media` breakpoint never fires for a 490px pane on a
+  1024px screen; a container query does.
+- **Measure the overlap, then look.** The a11y sweep passed with the chips overlapping; a bounding-box check of each
+  chip against its cell, plus a screenshot scrolled to the row, showed the fix.
+
+## Let go
+
+At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
+
+---
+
+# SkyLoquat's record (2026-11-04)
 
 SkyLoquat ran on 2026-11-04 from about 18:55Z (Sam's greeting named SkyTeaberry and cited SkyInkberry's handoff, three
 sessions stale; the file held SkyQuince's, which named SkyLoquat, and this session took that name). SkyQuince was still
@@ -58,61 +105,4 @@ session marks its work with its moniker, never an S-number.
 ## Let go
 
 At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
-
----
-
-# SkyQuince's record (2026-11-04)
-
-SkyQuince ran on 2026-11-04 from about 17:05Z (Sam named it; the greeting cited SkyPawpaw's handoff, and the file held
-it). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt, nothing waits on Sam. Skipped: `README.md`,
-`kb/README.md`, the pipeline view, a new KB note (the List norms note took the record), the lessons doc, `cpl_memory`
-rows and the decision sheet. The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (573); the commit
-count since it (6) is the routine's trigger.
-
-## What shipped (SkyQuince)
-
-- **#2769**: **the Programs List's panel carries Program records' card.** `recordFacts` (shared by the card and the
-  panel) draws the checks in full and the CPL line; the panel adds the flags with where each sits, each course's
-  C-ID/CCN/M-ID chips, flag marks, outcomes and its CPL here dialog, Side by side, and Confirm and Needs a fix (or the
-  sign-in). New List filters: *Confirmed by a person*, and *Waiting on your reading* for a signed-in reviewer, counted
-  live. `tests/program_requirements_list_record_port.test.js`.
-- **PR 2 (this one)**: **every way into Program records opens the List.** `goTo` takes `view: "list"` (`lf`, `lq`,
-  `rcollege`, `panel`) and maps an older `view: "records"` address; `TO`'s record counts open List filters (Complete is
-  Pass); a call's *Open it in the List* opens the record's panel; CPL Pathways' college line sends `view: "list"`. The
-  four dropdowns (`dropdownBox`, shared) sit over the List; off-list records are rows under *On a program COCI does not
-  list as active*; the panel points to the college's drafts on Catalogs and offers *Read again*; `nextToRead` follows
-  the List's rows. **Engine fix:** the drawer goes before the panel's first direct-child `<details>` (a nested one
-  threw NotFoundError). `program_requirements.test.js` 444 to 438, the six moved to the port suite (39).
-
-## Open work, in order
-
-1. **Merge PR 2** once `test` passes on its head.
-2. **PR 3: delete Program records.** The view is now reachable only by its own view word. Delete `viewRecords`, its
-   `collegeBody`, the Records view word in `VIEWS`, `listedColleges`, `state.rq`/`rshow`/`rscope`, the `records:*`
-   sections, `loadCips`/`sectorOf`/`state.cip` if nothing else reads them, and `filterRecords` once CPL Pathways' test
-   (d) stops calling it. **Keep** `recordCard`/`fillBody` (side by side draws them), `verdictBox`, `flagsFor`, the CPL
-   dialog, `dropdownBox`, `picks`/`filt`/`linkPick`. **Port first:** 28 blocks of `tests/program_requirements.test.js`
-   drive the Records view: (4) (6c) (11) (13) (15a) (15b) (15d) (15e) (17) (17b) (19) (19b) (20) (21) (22) (23) (24a)
-   (24b) (24c) (24d) (24e) (24i) (24k) (24l) (24m) (24n) (25) (25b). Most test the card's parts through it; drive
-   them through side by side (`M.openSplit`) or the List panel (`tests/program_requirements_list_record_port.test.js`'s
-   harness), and drop what tests only the view (its Show select, count line, college cards, lazy college reads). Then
-   update the lane file's "Four views" line (`docs/reference/lanes/program-requirements-harvest.md`).
-3. **Then Courses' older view** (Courses keeps SkyView first), the same three steps.
-4. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
-   Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
-   may align*, once a source names courses.
-
-## Lessons to honor
-
-- **An engine anchor found by `querySelector` reaches into the tab's nodes.** `body.querySelector("details")` found a
-  fold nested in the checks; anchor on direct children.
-- **Move the ways in before deleting the view.** Re-pointing `TO`, the calls and the cross-tab hand-off is its own PR;
-  the deletion then breaks only the view's own tests.
-- **Keep the old address working.** CPL Pathways' `CPL_PROGRAM_REQUIREMENTS_GOTO` may hold a `view: "records"`
-  request from a page loaded before the deploy; `goTo` maps it.
-- **A dropdown that redraws only the engine's table keeps its list open;** a full `render()` would close it.
-
-## Let go
-
-At sign-off: drop the PR watches on #2769 and PR 2 once merged. No check-in, no artifact watch.
 

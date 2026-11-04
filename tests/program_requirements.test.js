@@ -1795,6 +1795,14 @@ block("(19)", function () {
     units.querySelector("dd").textContent === "Units differ: the blocks add to 29.5–31.5; the catalog prints 30.5 units", units && units.textContent);
   check("(19) the chip is drawn on tokens", /\.prh-coci \{[^}]*border:1px solid var\(--border-strong\)[^}]*color:var\(--text-muted\)/.test(SRC) &&
     !/\.prh-coci[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+  /* Side by side at 1024: the record pane is about 490px, so the course column's C-ID and M-ID chips ran into the
+     title column over the COCI chip (SkyJujube, 2026-11-04). The table stacks by the pane's own width, and a
+     stacked cell's chips sit under its value. jsdom has no layout; the guard pins the rules. */
+  check("(19) side by side's record pane stacks its tables by its own width",
+    /"\.prh-split-rec \{ container:prh-rec \/ inline-size; \}"/.test(SRC) &&
+    /"@container prh-rec \(max-width: 560px\) \{" \+ STACK_CSS/.test(SRC) &&
+    /"@media \(max-width: 560px\) \{[^"]*" \+ STACK_CSS/.test(SRC));
+  check("(19) a stacked cell's chips sit in the value's column", /tbody td > \* \{ grid-column:2; \}/.test(SRC));
   const plain = JSON.parse(JSON.stringify(IRONWORKER));
   plain.record.blocks[0].courses.push({ code: "ZZ 1", units: 3, alternatives: [], catalog_addition: true });
   m.M._state.records = [plain]; m.M._render(); cardOf(m.M, m.w, plain);
