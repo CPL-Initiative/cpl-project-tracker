@@ -638,7 +638,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/eths_remint_out/<date>/<scope>/alias_map.json` | scripts: `kb/_eths_remint.py` | — |
 | `kb/eths_remint_out/<date>/ruled/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
-| `kb/exhibit_audit/latest.json` | tabs: `credential-reference` · scripts: `kb/_ap_official_titles.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_clep_official_titles.py`, `kb/_ib_official_titles.py` | committed by: `daily-dashboard.yml` |
+| `kb/exhibit_audit/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_ap_official_titles.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_clep_official_titles.py`, `kb/_ib_official_titles.py` | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_cert_links.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_cert_links.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibit_cert_links.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_slo_neighbors.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_slo_neighbors.py` | scripts: `kb/_build_exhibit_slo_neighbors.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_page.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py`, `scripts/next_slo_colleges.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |

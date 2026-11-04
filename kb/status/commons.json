@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-04T18:04:03Z",
+ "written_at": "2026-11-04T18:10:01Z",
  "rows": [
   {
    "key": "requirements",
@@ -127,10 +127,10 @@
     },
     {
      "n": 622,
-     "words": "titles in the reference that have left MAP",
-     "owner": "a curator (retire or keep)",
+     "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
+     "owner": "a curator",
      "carry": "keep_call",
-     "open": "#credential-reference/all",
+     "open": "#exhibits/list/left",
      "error": null
     }
    ],
@@ -685,9 +685,9 @@
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
       "n": 622,
-      "words": "titles in the reference that have left MAP",
-      "owner": "a curator (retire or keep)",
-      "open": "#credential-reference/all"
+      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
+      "owner": "a curator",
+      "open": "#exhibits/list/left"
      }
     ]
    }

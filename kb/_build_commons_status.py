@@ -247,8 +247,12 @@ def row_exhibit(root):
              "carry": "unsure", "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
              "carry": "unsure", "open": tab + "/conflict", "error": run["error"]},
-            {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
-             "carry": "keep_call", "open": cer + "/all", "error": left["error"]},
+            # Said so a reader knows the job (Sam, 2026-11-04: "I keep seeing those 622 mentioned but don't know what to do
+            # with them, so if you can clarify on the commons card or link, that would help").
+            {"n": left["n"], "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, "
+                                      "or keep one a college may enter again",
+             "owner": "a curator",
+             "carry": "keep_call", "open": tab + "/list/left", "error": left["error"]},
         ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,

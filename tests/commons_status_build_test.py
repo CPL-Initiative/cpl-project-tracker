@@ -75,7 +75,8 @@ check("Programs: the card and its counts open CPL Pathways' List, the issues its
 _ex = [r for r in rows if r["key"] == "exhibit"][0]
 check("Exhibits: the card and its counts open the List; held titles and conflicts keep Review; the procedures open Rules, never the retired CER",
       _ex["links"][0]["href"] == "#exhibits/list" and all(p_["open"] == "#exhibits/list" for p_ in _ex["pair"])
-      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#credential-reference/all") for i in _ex["issues"])
+      # S574: the titles that have left MAP open their own List filter, never the retired CER's whole list.
+      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#exhibits/list/left") for i in _ex["issues"])
       and _ex["procedures"][0]["open"] == "#exhibits/rules",
       (_ex["links"], [p_["open"] for p_ in _ex["pair"]], [i["open"] for i in _ex["issues"]], _ex["procedures"][0].get("open")))
 building = data.get("building", [])

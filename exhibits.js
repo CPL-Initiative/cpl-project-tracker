@@ -1903,7 +1903,8 @@
     ["outcomes", "Outcomes match"],
     ["waiting", "Folds waiting for the apply"],
     ["statewide", "Based on statewide"],
-    ["local", "Local only"]
+    ["local", "Local only"],
+    ["left", "A title that has left MAP"]
   ];
   /* Outcomes match (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): the credentials whose articulated
      courses' SLOs match a row's at cosine 0.5 or more through distinct courses, from kb/exhibit_slo_neighbors.json
@@ -2379,6 +2380,10 @@
             .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
         }
         if (!L.sloP) listSloLoad().then(function () { if (state.view === "list") render(); });
+        if (L.f === "left") {
+          if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
+          wrap.appendChild(listLeftNote());
+        }
         return true;
       },
       filters: LIST_FILTERS,
@@ -2392,6 +2397,7 @@
         if (L.f === "waiting" && !listPendingFold(r)) return false;
         if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
         if (L.f === "local" && listBasis(r) !== "Local") return false;
+        if (L.f === "left" && !listLeft(r).length) return false;
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
         return true;
       },
@@ -2402,10 +2408,12 @@
         if (id === "suggested") return !L.aiData;
         if (id === "outcomes") return !(L.slo && L.slo.neighbors);
         if (id === "mine" || id === "waiting") return state.cs.overlayOk !== true;
+        if (id === "left") return !LEFT.by;
         return false;
       },
       onFilter: function (id, api) {
         if (id === "outcomes") return listSloLoad();
+        if (id === "left") return listLeftLoad();
         return id === "suggested" && !listState().aiData ? api.aiLoad() : null;
       },
       hay: function (r) {
@@ -2565,6 +2573,34 @@
      exhibit and MAP's Request Quick Adopt line, the panel does what the Credentials view did, and that view retired
      (the List norms, The List is the workspace). Each fold
      keeps its place for the visit, so a sort, an added site or a save does not close it. */
+  /* The titles in the reference MAP no longer carries (the auditor's stale_kb_entry, never an unclassified title still in
+     MAP), by the credential they fold under: the Commons' keep-or-retire count opens this filter (Sam, 2026-11-04: "the
+     links on all surfaces should open to the filtered view of the job needed"). Read only when it is chosen. */
+  var LEFT = { by: null, error: null, p: null };
+  function listLeftLoad() {
+    if (LEFT.p) return LEFT.p;
+    LEFT.p = fetch("kb/exhibit_audit/latest.json", { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("kb/exhibit_audit/latest.json answered " + r.status);
+      return r.json();
+    }).then(function (d) {
+      var by = {};
+      ((d && d.title_cards) || []).forEach(function (c) {
+        var t = c.tags || [];
+        if (t.indexOf("stale_kb_entry") >= 0 && t.indexOf("unclassified_in_map") < 0) (by[c.unified_title] = by[c.unified_title] || []).push(String(c.raw_title || "").trim());
+      });
+      LEFT.by = by;
+    }, function (e) { LEFT.error = String(e && e.message || e); });
+    return LEFT.p;
+  }
+  function listLeft(r) { return (LEFT.by && LEFT.by[r.ut]) || []; }
+  function listLeftNote() {
+    if (LEFT.error) return el("p", { cls: "exh-empty", role: "alert", text: LEFT.error + ", so this filter shows nothing. Reload the tab to try again." });
+    if (!LEFT.by) return el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading the auditor's titles for this filter…" });
+    var names = Object.keys(LEFT.by), n = names.reduce(function (t, k) { return t + LEFT.by[k].length; }, 0);
+    return el("p", { cls: "exh-muted exh-small", text: fmt(n) + (n === 1 ? " old title no MAP exhibit uses any more sits" : " old titles no MAP exhibit uses any more sit") +
+      " in the reference, under " + fmt(names.length) + (names.length === 1 ? " credential" : " credentials") + " below. Nothing breaks while they stay. " +
+      "Open a credential to see its titles; a curator retires each, or keeps one a college may enter again." });
+  }
   function listPanelBody(r, h) {
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
     var cip = listCip(r), n = r.raw_count || 0;
@@ -2572,6 +2608,13 @@
     var out = [h.title(listTitle(r)), h.meta([cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
       could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
+    var gone = listLeft(r);
+    if (gone.length) {
+      out.push(h.heading(gone.length === 1 ? "A title that has left MAP" : "Titles that have left MAP"));
+      out.push(el2("p", { cls: "exh-muted exh-small", text: "The reference still folds " + (gone.length === 1 ? "this title" : "these titles") +
+        " under this credential, and no MAP exhibit uses " + (gone.length === 1 ? "it" : "them") + " any more. Nothing breaks while " + (gone.length === 1 ? "it stays" : "they stay") + "; a curator keeps or retires each." }));
+      out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return el2("li", { text: t }); })));
+    }
     var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
     out.push(h.heading("Members"));
     if (!members.length) {
