@@ -11446,7 +11446,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 93,
+   "count": 94,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12870,6 +12870,30 @@
       "cpl"
      ],
      "title": "OpenClassrooms Digital Marketer \u2192 CCC CPL crosswalk \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [
+      "kb/_build_oc_medical_assistant_crosswalk.py",
+      "kb/_write_oc_medical_assistant_workbook.py",
+      "kb/_write_oc_medical_assistant_html.py",
+      "kb/openclassrooms_ma_ace_recs.json",
+      "kb/receipts/cpl_library_oc_medical_assistant_2026-11-03.sql"
+     ],
+     "path": "docs/openclassrooms_medical_assistant_crosswalk_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "partners",
+      "crosswalk",
+      "openclassrooms",
+      "medical-assisting",
+      "apprenticeship",
+      "cpl"
+     ],
+     "title": "OpenClassrooms Medical Assistant \u2192 CCC CPL crosswalk \u2014 lessons",
      "type": null,
      "updated": ""
     },
@@ -25573,5 +25597,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1365
+ "total": 1366
 }
