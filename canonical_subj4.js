@@ -1784,6 +1784,10 @@
     if (stop === "declined") return Promise.resolve({ ok: false, words: v + " stays off " + r.ut + "; nothing changed." });
     return writeCanon(e, v).then(function (res) {
       if (!res.ok) return { ok: false, words: "The Common SUBJ of " + r.ut + " did not save (" + failWords(res) + "); it is back as it was." };
+      // An edit row open on this row follows the save (Sam, 2026-11-04: Take WOOD saved while the open row still read
+      // CNSC, so its Save would have put CNSC back). The note draft stays as typed.
+      var LS = listState();
+      if (LS.edit === r.ut && LS.draft) LS.draft.subj = v;
       return { ok: true, words: opts.confirm && v === was ? "Confirmed " + v + " for " + r.ut + "." : "Saved " + r.ut + ": " + v + "." };
     }, function () { return { ok: false, words: "The Common SUBJ of " + r.ut + " did not save (no answer); it is back as it was." }; });
   }
@@ -2206,20 +2210,24 @@
     // The codes it could take: the Reference box's suggestions (its own local codes and identity codes, most used first,
     // none another MQ discipline holds), each a word that saves it through the same write as the Common SUBJ cell.
     var sugg = subjSuggestions(e, "");
-    if (sugg.length) {
+    if (sugg.length || code) {
       out.push(h.heading("Codes it could take"));
       out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could take as its Common SUBJ",
         note: "Its own codes, most used first; a code another MQ discipline holds is left out. Take one to make it the Common SUBJ.",
         cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Take it", false, true]],
-        rows: sugg.map(function (x) {
+        // Its own code leads, named as its code, so a code just taken stays in view (Sam, 2026-11-04: "WOOD then
+        // disappeared from the list").
+        rows: (code ? [{ code: code, mine: ((e.variants_observed || {})[code] || 0) + ((e.local_subject_variants || {})[code] || 0),
+          take: null, current: true, note: "Its Common SUBJ now" }] : []).concat(sugg.map(function (x) {
           var nCid = (state.cidBySubj[x.code] || []).length, nCcn = (state.ccnBySubj[x.code] || []).length;
           return { code: x.code, mine: x.mine, take: x.code,
             note: [x.conflict ? "Also on " + plural(x.conflict.n, "identity", "identities") + " under " + x.conflict.d : "",
               nCid || nCcn ? "An official subject (" + [nCid ? nCid + " C-ID" : "", nCcn ? nCcn + " CCN" : ""].filter(Boolean).join(", ") + ")" : ""]
               .filter(Boolean).join("; ") };
-        }),
+        })),
         cell: function (row, k) {
           if (k !== "take") return row[k];
+          if (row.current) return "Taken";
           return h.word("Take " + row.code, function () {
             notes[r.ut] = "Saving " + row.code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
             listSaveCode(r, row.code).then(function (res) {
