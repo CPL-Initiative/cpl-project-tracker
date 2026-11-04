@@ -130,9 +130,9 @@ function note(d) { return txt(d.getElementById("csls-cellnote")); }
   await settle();
   const d = t.d, M = t.M();
   const tabs = Array.from(d.querySelectorAll("#cs-views button[role=tab]")).map(txt);
-  check("(1) the view switch carries Progress, Reference, List and Local subjects", tabs.join(",") === "Progress,Reference,List,Local subjects", tabs.join(","));
+  check("(1) the view switch carries Progress, List and Local subjects", tabs.join(",") === "Progress,List,Local subjects", tabs.join(","));
   check("(1) #canonical-subj4/local shows the Local subjects view and hides the others", M._state.view === "local" && !d.getElementById("cs-local").hidden
-    && d.getElementById("cs-list").hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
+    && d.getElementById("cs-list").hidden && d.getElementById("cs-progress").hidden);
   check("(1) the engine loads, then the module", t.loads.indexOf("commons_list.js") >= 0 && t.loads.indexOf("csr_local_subjects.js") > t.loads.indexOf("commons_list.js"), t.loads.join(","));
 
   // ── (2) one row per code, A to Z, normalized ──

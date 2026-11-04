@@ -44,14 +44,14 @@ for (const [f, src] of htmls) {
 check("(1) the two HTMLs stay identical (Rule 4)", htmls[0][1] === htmls[1][1]);
 
 // ── (2) the tab's own script paints no raw gray ───────────────────────────
-check("(2) ⭐ canonical_subj4.js paints no #9ca3af (the CIP placeholder and the reviewer line read --text-muted)",
+check("(2) ⭐ canonical_subj4.js paints no #9ca3af",
   !/#9ca3af/i.test(js));
-check("(2) the CIP placeholder cell reads --text-muted",
-  /class: "cs-mono", style: "color:var\(--text-muted\)"/.test(js));
 
 // ── (3) every control is at least 24px tall (WCAG 2.2 target size) ─────────
 const injected = (js.match(/function ensureCsrUiCss\(\)[\s\S]*?\]\)\);/) || [""])[0];
-for (const sel of [".cs-check-btn", ".cs-var-show", "input.cs-canon", "label.cs-flag-toggle", "a.cs-auth-link"]) {
+// The Reference table's controls (the check button, the variants word, the code box, the TOP toggle) retired with it
+// into the List (2026-11-04), whose controls are the engine's; the sign-in link stays on the List's head.
+for (const sel of ["a.cs-auth-link"]) {
   const re = new RegExp("#tab-canonical-subj4 " + sel.replace(".", "\\.") + "[^{]*\\{[^}]*min-height:24px");
   const inGroup = new RegExp("#tab-canonical-subj4 " + sel.replace(".", "\\.") + "[,{][^}]*min-height:24px");
   check(`(3) ⭐ ${sel} is at least 24px tall`, re.test(injected) || inGroup.test(injected));

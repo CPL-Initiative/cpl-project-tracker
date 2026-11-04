@@ -3430,13 +3430,6 @@ module.exports = {
     seed: (page) => seedCsrProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  "canonical-subj4-reference": {
-    file: "index.html",
-    title: "Common Subjects Reference: the table",
-    routes: [{ hash: "canonical-subj4/reference", name: "reference" }],
-    widths: [390, 768, 1024, 1440],
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
   "canonical-subj4-list": {
     file: "index.html",
     title: "Common Subjects Reference: List, its line and folded summary, an MQ discipline's side panel, a drawer and the boxes open",
