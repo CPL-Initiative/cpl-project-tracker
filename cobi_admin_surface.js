@@ -482,6 +482,7 @@ window.COBI_ADMIN_SURFACE = {
     "commons": {
       "modules": [
         "commons.js",
+        "commons_look.js",
         "commons_progress.js"
       ],
       "reads": [
