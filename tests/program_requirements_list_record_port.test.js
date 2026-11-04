@@ -11,7 +11,14 @@
 //   (7) Waiting on your reading is offered to a reviewer only, and #program-requirements/list/waiting and /checked open
 //       those filters;
 //   (8) the careers, the source line and the notes for the reading procedure fold below;
-//   (9) no raw hex and no glyph in the panel's code.
+//   (9) no raw hex and no glyph in the panel's code;
+//  (10) a record on a program COCI does not list as active is a row under its own filter only, never under All or Pass
+//       (PR 2 of 3: every way in opens the List);
+//  (11) a reviewer on Waiting gets Read the first waiting record side by side, and the next record follows the List's order;
+//  (12) the dropdowns over the List (District, College, SWP Region, CIP Sector, Sam 2026-10-14) narrow the rows and the
+//       filter counts, and Clear the filters lifts them;
+//  (13) a call's Open it in the List searches the record and opens its panel; a count clears the scope it did not set;
+//  (14) a record with items for the college points to its drafts on Catalogs.
 // Run from repo root: `npm test` (or `node tests/program_requirements_list_record_port.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -82,6 +89,7 @@ function tab(opts) {
   S.progress = { active: opts.active != null ? opts.active : 5, activeKeys: {}, activeCollege: opts.noLive ? null : Object.assign({}, LIVE),
     errors: opts.noLive ? { active: "coci_college_programs answered 503" } : {}, readAt: new Date() };
   if (opts.noLive) S.progress.activeKeys = null;
+  if (opts.setup) opts.setup(S);
   if (opts.review) S.review = { email: "sam@rccd.edu", records: S.records, verdicts: [], todos: [], error: null };
   if (opts.reviewError) S.review = { email: "sam@rccd.edu", records: null, verdicts: [], todos: [], error: "program_record_verdicts answered 500" };
   if (opts.review) w.CPL_SESSION = { get: () => ({ email: "sam@rccd.edu" }), isFresh: () => true, ensureFresh: () => ({ email: "sam@rccd.edu" }),
@@ -221,6 +229,73 @@ const btn = (root, re) => Array.from(root.querySelectorAll("button")).find((b) =
   await settle();
   check("(7) #program-requirements/list/checked opens Confirmed by a person", listOf(tc) === "checked"
     && rows(tc.d).map((r) => txt(cell(tc.d, r, "Program"))).join("|") === "Welding Technology");
+
+  // ── (10) the off-list records ──
+  const to = tab({ commons: COMMONS_DOC });
+  await settle();
+  const progs = (d) => rows(d).map((r) => txt(cell(d, r, "Program"))).sort().join("|");
+  check("(10) ⭐ a record on a program COCI does not list as active is not under All", !/Old Program/.test(progs(to.d)), progs(to.d));
+  btn(to.d, /^On a program COCI does not list as active \(1\)$/).click(); await settle();
+  check("(10) ⭐ its own filter shows it, with the catalog's words", progs(to.d) === "Old Program"
+    && /COCI does not list it as active/.test(txt(cell(to.d, rows(to.d)[0], "Known issues"))), progs(to.d));
+  btn(to.d, /^Pass the machine checks/).click(); await settle();
+  check("(10) a passing off-list record is not under Pass (Program records' Complete)", progs(to.d) === "Welding Technology", progs(to.d));
+
+  // ── (12) the dropdowns ──
+  const tdd = tab({ commons: COMMONS_DOC, setup: function (S) {
+    S.registry = [{ college: "Los Angeles Valley College", college_id: 1 }, { college: "Cerritos College", college_id: 2 }, { college: "Cañada College", college_id: 3 }];
+    S.districts = { 1: "Los Angeles CCD", 2: "Cerritos CCD", 3: "San Mateo CCD" }; S.regions = { 1: "Los Angeles", 2: "Los Angeles", 3: "Bay Area" };
+  } });
+  await settle();
+  const dd = (key) => tdd.d.querySelector('.prl-scope .prh-dd[data-filter="' + key + '"]');
+  check("(12) ⭐ District, College, SWP Region and CIP Sector sit over the List", ["district", "college", "region", "sector"].every((k) => !!dd(k)));
+  const regionLA = dd("region").querySelector('input[value="Los Angeles"]');
+  regionLA.checked = true; regionLA.dispatchEvent(new tdd.w.Event("change")); await settle();
+  check("(12) ⭐ a region narrows the rows to its colleges", progs(tdd.d) === "Accounting|Art History|Nursing|Welding Technology", progs(tdd.d));
+  const flt = Array.from(tdd.d.querySelectorAll(".prl-filters button, .prl-filters span")).map(txt);
+  check("(12) and the filter counts follow it", flt[0] === "All (4)" && flt.indexOf("Not read yet (1)") >= 0, flt.join("|"));
+
+  const sec = dd("sector").querySelector('input[value="48"]');
+  sec.checked = true; sec.dispatchEvent(new tdd.w.Event("change")); await settle();
+  check("(12) a CIP sector narrows by the program's own CIP code", progs(tdd.d) === "Welding Technology", progs(tdd.d));
+  btn(tdd.d, /^Clear the filters$/).click(); await settle();
+  check("(12) Clear the filters lifts them", rows(tdd.d).length === 5 && btn(tdd.d, /^Clear the filters$/).hidden, String(rows(tdd.d).length));
+
+  // ── (13) a call's record, and a count ──
+  const tg = tab({ commons: COMMONS_DOC, records: rich(JSON.parse(JSON.stringify(RECORDS))) });
+  await settle();
+  tg.S.pick = ["Cerritos College"];
+  tg.M.goTo({ view: "list", lq: "10001", panel: { college: "Los Angeles Valley College", control_number: "10001" } }); await settle();
+  check("(13) ⭐ Open it in the List searches the record and opens its panel", !!pnl(tg.d) && /Program: Welding Technology/.test(txt(tg.d.getElementById("prl-panel-t")))
+    && rows(tg.d).length === 1 && tg.S.pick.length === 0, txt(pnl(tg.d)).slice(0, 80));
+  tg.M.goTo(tg.M.TO.fail); await settle();
+  check("(13) a count opens its filter with no search, no college and no panel", listOf(tg) === "fail" && !tg.S.ls.q && !pnl(tg.d)
+    && progs(tg.d) === "Accounting|Nursing", progs(tg.d));
+
+  // ── (14) the college's drafts ──
+  const tk = tab({ commons: COMMONS_DOC, records: (function () { const R = rich(JSON.parse(JSON.stringify(RECORDS)));
+    R[0].display.gaps.push({ kind: "Catalog and state file differ", owner: "college", text: "WELD 201 is printed at 3 units; the state file says 4." }); return R; })() });
+  await settle();
+  titleBtn(tk.d, "Welding Technology").click(); await settle();
+  const dw = btn(pnl(tk.d), /^Open Los Angeles Valley's drafts on Catalogs$/);
+  check("(14) a record with items for the college points to its drafts on Catalogs", !!dw && /1 place the catalog and the state file differ/.test(txt(pnl(tk.d))));
+  dw.click(); await settle();
+  check("(14) which opens Catalogs on the college", tk.S.view === "catalogs" && tk.S.q === "Los Angeles Valley College");
+
+  // ── (11) the first waiting record, and the next in the List's order ──
+  const tn = tab({ commons: COMMONS_DOC, review: true, records: (function () { const R = rich(JSON.parse(JSON.stringify(RECORDS)));
+    full(R[1]); Object.assign(R[1], { checked: false, requirements_fp: "fp2", source_url: "https://example.edu/acct" }); return R; })(),
+    hash: "#program-requirements/list/waiting" });
+  await settle();
+  const first = btn(tn.d, /^Read the first waiting record side by side$/);
+  check("(11) ⭐ a reviewer on Waiting gets Read the first waiting record side by side", !!first);
+  tn.w.open = function () { return null; };
+  first.click(); await settle();
+  const split = tn.d.querySelector(".prh-split");
+  check("(11) it opens the List's first waiting record (A to Z: Accounting)", !!split && /Accounting/.test(txt(split.querySelector("#prh-split-t"))),
+    split && txt(split.querySelector("#prh-split-t")));
+  check("(11) ⭐ the next record follows the List's order", tn.M.nextToRead(tn.S.records[1]) === tn.S.records[0]);
+  tn.M.closeSplit(true);
 
   const block = SRC.slice(SRC.indexOf("function listPanelBody("), SRC.indexOf("function listApi()"));
   check("(9) no raw hex and no glyph in the panel's code", block.length > 3000 && !/#[0-9a-fA-F]{3,6}\b/.test(block)

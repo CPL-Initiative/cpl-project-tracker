@@ -371,13 +371,9 @@
     var name = ref.label || (p ? (p.program_title + " " + award(p.award)).trim() : shortCollege(ref.college));
     var sl = p && p.requirements_fp ? stateLine(p) : null;
     var line = el("span", { cls: "prh-state" + (sl && sl.waiting ? " prh-state-waiting" : ""), text: sl ? sl.text : "" });
-    var read = el("button", { cls: "prh-word", type: "button", text: "Open it on Program records" });
-    read.addEventListener("click", function () {
-      /* The record's college joins the picked colleges and loads; the search finds the record. */
-      state.rq = ref.control_number; state.rshow = "all";
-      linkPick([ref.college]); state.rscope = "pick";
-      choose("records", true);
-    });
+    var read = el("button", { cls: "prh-word", type: "button", text: "Open it in the List" });
+    /* The List, found by its control number, with the record's panel open (S574). */
+    read.addEventListener("click", function () { goTo({ view: "list", lq: ref.control_number, panel: ref }); });
     var key = ref.college + "|" + ref.control_number;
     var light = !!(p && p._light);
     var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null,
@@ -2187,6 +2183,60 @@
     state.pick = P.sort();
     savePick();
   }
+  /* One dropdown filter (Sam, 2026-10-14: "a simple drop down multi-select filter"): a word that opens a list of
+     checkboxes, a search when the list is long, and a word to clear it; Escape closes it and returns to the word.
+     o = { key, label, opts: [{ value, text, meta }], attr, chosen() -> values, set(values), dds: the bar's list }. */
+  function dropdownBox(o) {
+    var key = o.key, label = o.label, opts = o.opts, attr = o.attr;
+    var id = "prh-dd-" + key;
+    var btn = el("button", { cls: "prh-word prh-dd-btn", type: "button", "aria-expanded": "false", "aria-controls": id });
+    var list = el("ul", { cls: "prh-dd-list" });
+    var inputs = [];
+    opts.forEach(function (op) {
+      var a = { type: "checkbox", value: op.value };
+      a[attr] = op.value;
+      var ci = el("input", a);
+      inputs.push(ci);
+      ci.addEventListener("change", function () {
+        var cur = o.chosen().filter(function (v) { return v !== op.value; });
+        o.set(ci.checked ? cur.concat([op.value]) : cur);
+      });
+      list.appendChild(el("li", {}, [el("label", {}, [ci, el("span", { cls: "prh-pick-c", text: op.text }),
+        op.meta ? el("span", { cls: "prh-pick-n", text: op.meta }) : null])]));
+    });
+    var find = opts.length > 8 ? el("input", { type: "search", cls: "prh-dd-find", autocomplete: "off",
+      placeholder: "Find a " + label.toLowerCase(), "aria-label": "Find a " + label.toLowerCase() }) : null;
+    if (find) find.addEventListener("input", function () {
+      var t = find.value.trim().toLowerCase();
+      Array.prototype.forEach.call(list.children, function (li) { li.hidden = !!t && li.textContent.toLowerCase().indexOf(t) < 0; });
+    });
+    var none = el("button", { cls: "prh-word", type: "button", text: "Clear " + label });
+    var pop = el("div", { cls: "prh-dd-pop", id: id, role: "group", "aria-label": label },
+      [find, opts.length ? list : el("p", { cls: "prh-small prh-quiet", text: "Nothing to choose yet." }), el("div", { cls: "prh-dd-acts" }, [none])]);
+    pop.hidden = true;
+    function close() { pop.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+    function open() {
+      o.dds.forEach(function (d) { d.close(); });
+      pop.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      var f = find || inputs[0];
+      if (f) f.focus();
+    }
+    btn.addEventListener("click", function () { if (pop.hidden) open(); else close(); });
+    none.addEventListener("click", function () { o.set([]); close(); btn.focus(); });
+    pop.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); btn.focus(); }
+    });
+    var d = { wrap: el("div", { cls: "prh-dd", "data-filter": key }, [btn, pop]), close: close, sync: function () {
+      var cur = o.chosen();
+      inputs.forEach(function (i) { i.checked = cur.indexOf(i.value) >= 0; });
+      btn.textContent = label + (cur.length ? " (" + cur.length + ")" : "");
+      btn.setAttribute("aria-label", label + ": " + (cur.length ? cur.length + " chosen" : "all") + "; show the list");
+      none.hidden = !cur.length;
+    } };
+    o.dds.push(d);
+    return d;
+  }
   function readingText(c, n) { return "Reading " + c + "'s " + fmt(n) + (n === 1 ? " record…" : " records…"); }
 
   function viewRecords() {
@@ -2289,54 +2339,8 @@
     /* One dropdown: a word that opens a list of checkboxes, a search when the list is long,
        and a word to clear it. Escape closes it and returns to the word. */
     function dropdown(key, label, opts, attr) {
-      var id = "prh-dd-" + key;
-      var btn = el("button", { cls: "prh-word prh-dd-btn", type: "button", "aria-expanded": "false", "aria-controls": id });
-      var list = el("ul", { cls: "prh-dd-list" });
-      var inputs = [];
-      opts.forEach(function (o) {
-        var a = { type: "checkbox", value: o.value };
-        a[attr] = o.value;
-        var ci = el("input", a);
-        inputs.push(ci);
-        ci.addEventListener("change", function () {
-          var cur = chosen(key).filter(function (v) { return v !== o.value; });
-          setFilter(key, ci.checked ? cur.concat([o.value]) : cur);
-        });
-        list.appendChild(el("li", {}, [el("label", {}, [ci, el("span", { cls: "prh-pick-c", text: o.text }),
-          o.meta ? el("span", { cls: "prh-pick-n", text: o.meta }) : null])]));
-      });
-      var find = opts.length > 8 ? el("input", { type: "search", cls: "prh-dd-find", autocomplete: "off",
-        placeholder: "Find a " + label.toLowerCase(), "aria-label": "Find a " + label.toLowerCase() }) : null;
-      if (find) find.addEventListener("input", function () {
-        var t = find.value.trim().toLowerCase();
-        Array.prototype.forEach.call(list.children, function (li) { li.hidden = !!t && li.textContent.toLowerCase().indexOf(t) < 0; });
-      });
-      var none = el("button", { cls: "prh-word", type: "button", text: "Clear " + label });
-      var pop = el("div", { cls: "prh-dd-pop", id: id, role: "group", "aria-label": label },
-        [find, opts.length ? list : el("p", { cls: "prh-small prh-quiet", text: "Nothing to choose yet." }), el("div", { cls: "prh-dd-acts" }, [none])]);
-      pop.hidden = true;
-      function close() { pop.hidden = true; btn.setAttribute("aria-expanded", "false"); }
-      function open() {
-        dds.forEach(function (d) { d.close(); });
-        pop.hidden = false;
-        btn.setAttribute("aria-expanded", "true");
-        var f = find || inputs[0];
-        if (f) f.focus();
-      }
-      btn.addEventListener("click", function () { if (pop.hidden) open(); else close(); });
-      none.addEventListener("click", function () { setFilter(key, []); close(); btn.focus(); });
-      pop.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); btn.focus(); }
-      });
-      var d = { wrap: el("div", { cls: "prh-dd", "data-filter": key }, [btn, pop]), close: close, sync: function () {
-        var cur = chosen(key);
-        inputs.forEach(function (i) { i.checked = cur.indexOf(i.value) >= 0; });
-        btn.textContent = label + (cur.length ? " (" + cur.length + ")" : "");
-        btn.setAttribute("aria-label", label + ": " + (cur.length ? cur.length + " chosen" : "all") + "; show the list");
-        none.hidden = !cur.length;
-      } };
-      dds.push(d);
-      return d;
+      return dropdownBox({ key: key, label: label, opts: opts, attr: attr, chosen: function () { return chosen(key); },
+        set: function (next) { setFilter(key, next); }, dds: dds });
     }
     function countMeta(cs) {
       var n = cs.reduce(function (t, c) { return t + totals[c]; }, 0);
@@ -2850,12 +2854,14 @@
     colleges: { view: "catalogs", sec: "catalogs:registry" },
     noProcedure: { view: "catalogs", show: "noprocedure", sec: "catalogs:registry" },
     addenda: { view: "catalogs", show: "addenda", sec: "catalogs:registry" },
-    records: { view: "records", sec: "records:find" },
-    checked: { view: "records", rshow: "checked", sec: "records:find" },
-    fail: { view: "records", rshow: "fail", sec: "records:find" },
-    conflict: { view: "records", rshow: "conflict", sec: "records:find" },
-    complete: { view: "records", rshow: "complete", sec: "records:find" },
-    waiting: { view: "records", rshow: "waiting", sec: "records:find" },
+    /* Program records' counts open the List (S574): the List's rows are COCI's active programs, so Complete (active and
+       passing) is its Pass the machine checks. */
+    records: { view: "list", lf: "read" },
+    checked: { view: "list", lf: "checked" },
+    fail: { view: "list", lf: "fail" },
+    conflict: { view: "list", lf: "conflict" },
+    complete: { view: "list", lf: "pass" },
+    waiting: { view: "list", lf: "waiting" },
     maps: { view: "sequences", sec: "sequences:colleges" },
     procedures: { view: "procedures" },
     pathways: { href: "#cpl-pathways" }
@@ -3321,8 +3327,21 @@
   }
   /* What a count totals (TO above): the view, with only the target's filters set, so the list
      shows exactly what the card counted; its list's section opened; the panel brought up. */
+  /* Program records' Show words, as the List's filters: an older address (CPL Pathways' college line) still opens. */
+  var RSHOW_LF = { all: "", waiting: "waiting", fail: "fail", conflict: "conflict", pass: "pass", complete: "pass", checked: "checked" };
   function goTo(to) {
     if (!to || !to.view) return;
+    if (to.view === "records") to = { view: "list", lf: RSHOW_LF[to.rshow || "all"] || "", lq: to.rq || "", rcollege: to.rcollege, panel: to.panel };
+    /* The List with only the target's filter, search and college set; a count spans every college. A record a link
+       names opens its panel once the List is built. */
+    if (to.view === "list") {
+      var L = listState(), F = filt();
+      L.f = to.lf || ""; L.q = to.lq || ""; L.cf = {}; L.limit = null; L.open = null; L.panel = null; L.panelRef = to.panel || null;
+      F.district = []; F.region = []; F.sector = []; state.pick = to.rcollege ? [to.rcollege] : []; state.linkPicks = state.pick.slice();
+      choose("list", false);
+      bringUp(document.getElementById("prh-panel"));
+      return;
+    }
     state.q = to.q || ""; state.show = to.show || "all"; state.platform = "all";
     state.rq = to.rq || ""; state.rshow = to.rshow || "all";
     /* A count spans every college, so its list does too, whatever the reader picked; a target
@@ -3470,7 +3489,9 @@
       }
       return null;
     }
-    var P = filterRecords((state.review && state.review.records) || [], state.rq, state.rshow, listedColleges(), isWaiting);
+    /* From the List: the next waiting record in the order it shows, under its filters (S574). */
+    var P = state.view === "list" && LIST.engine ? LIST.engine.rows().map(function (r) { return r.p; }).filter(Boolean)
+      : filterRecords((state.review && state.review.records) || [], state.rq, state.rshow, listedColleges(), isWaiting);
     var i0 = -1;
     P.forEach(function (r, i) { if (i0 < 0 && same(r)) i0 = i; });
     for (var k = 1; k <= P.length; k++) {
@@ -3651,17 +3672,43 @@
   var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
   var LIST_FILTERS = [["", "All"], ["unread", "Not read yet"], ["read", "Read"], ["pass", "Pass the machine checks"],
     ["fail", "Fail a machine check"], ["conflict", "Disagree with the state's course list"], ["units", "Units do not add up"],
-    ["checked", "Confirmed by a person"]];
+    ["checked", "Confirmed by a person"], ["off", "On a program COCI does not list as active"]];
   /* Program records' Waiting on your reading (S574): offered to a signed-in reviewer, as that view offered it, and kept
      while an address set it. A record waits until a person confirms it or notes a fix (stateLine). */
   var LIST_WAITING = ["waiting", "Waiting on your reading"];
   function listFilters() {
     var L = listState();
-    return reviewing() || L.f === "waiting" ? [LIST_FILTERS[0], LIST_WAITING].concat(LIST_FILTERS.slice(1)) : LIST_FILTERS;
+    var m = listBuild(), F = LIST_FILTERS;
+    // The off-list records' filter shows only when there are some (or an address set it).
+    if (!(m && m.counts.off) && L.f !== "off") F = F.filter(function (f) { return f[0] !== "off"; });
+    return reviewing() || L.f === "waiting" ? [F[0], LIST_WAITING].concat(F.slice(1)) : F;
   }
-  function listLive() {
-    var n = { checked: 0, waiting: 0 }, m = listBuild();
-    (m ? m.rows : []).forEach(function (r) { if (!r.p) return; if (r.p.checked) n.checked++; if (isWaiting(r.p)) n.waiting++; });
+  function listLive(rs) {
+    var n = { checked: 0, waiting: 0 };
+    (rs || []).forEach(function (r) { if (!r.p || r.off) return; if (r.p.checked) n.checked++; if (isWaiting(r.p)) n.waiting++; });
+    return n;
+  }
+  /* The scope the List's dropdowns set (Program records' District, College, SWP Region and CIP Sector, Sam 2026-10-14),
+     for the visit: the colleges through collegeInFilters, the sector from the program's own CIP code. */
+  function listSector(r) { return (/^(\d{2})/.exec(r.cip || "") || [])[1] || ""; }
+  function listScopeOn() { return collegeFiltersOn() || filt().sector.length > 0; }
+  function listScopePass(r) {
+    if (!collegeInFilters(r.college)) return false;
+    var F = filt();
+    return !F.sector.length || F.sector.indexOf(listSector(r)) >= 0;
+  }
+  /* Each filter's count over the rows the dropdowns leave. */
+  function listCountRows(rs) {
+    var n = { "": 0, unread: 0, read: 0, pass: 0, fail: 0, conflict: 0, units: 0, off: 0 };
+    rs.forEach(function (r) {
+      if (r.off) { n.off++; return; }
+      n[""]++;
+      if (!r.p) { n.unread++; return; }
+      n.read++;
+      if (r.fails.length) n.fail++; else n.pass++;
+      if (r.fails.indexOf("courses") >= 0 || r.fails.indexOf("off-list") >= 0) n.conflict++;
+      if (r.fails.indexOf("units") >= 0) n.units++;
+    });
     return n;
   }
   function listState() { return state.ls || (state.ls = {}); }
@@ -3723,7 +3770,6 @@
       if (!had || (live && live[k] === p.college && had.college !== p.college)) byCtl[k] = p;
     });
     var act = D.statuses.indexOf("Active"), out = [], seen = {}, colleges = {};
-    var n = { "": 0, unread: 0, read: 0, pass: 0, fail: 0, conflict: 0, units: 0 };
     D.rows.forEach(function (r) {
       if (r[6] !== act) return;
       var ctl = String(r[1]), p = byCtl[ctl] || null, u = cociUnits(r[7]), fails = p ? machineFails(p) : [];
@@ -3735,18 +3781,24 @@
       row.hay = listFold([row.title, row.college, short, ctl, row.award, awardLong, row.top, cip, row.fam,
         p ? p.program_title : "", row.issueText].join(" "));
       seen[ctl] = 1; colleges[row.college] = 1;
-      n[""]++;
-      if (!p) n.unread++;
-      else {
-        n.read++;
-        if (fails.length) n.fail++; else n.pass++;
-        if (fails.indexOf("courses") >= 0 || fails.indexOf("off-list") >= 0) n.conflict++;
-        if (fails.indexOf("units") >= 0) n.units++;
-      }
       out.push(row);
     });
-    var off = P.filter(function (p) { return !seen[String(p.control_number || "")]; }).length;
-    LIST.memo = { D: D, P: P, n: P.length, G: G, rows: out, counts: n, colleges: Object.keys(colleges).length, off: off, live: !!live };
+    /* A record on a program COCI does not list as active is a row of its own, shown only by its filter (S574: Program
+       records listed them; the List's universe stays COCI's active programs). Its words are the catalog's. */
+    var off = 0;
+    P.forEach(function (p) {
+      var ctl = String(p.control_number || "");
+      if (seen[ctl]) return;
+      off++;
+      var fails = machineFails(p);
+      var row = { ut: "off|" + keyOf(p), ctl: ctl, title: String(p.program_title || ""), college: p.college, coci: "", awardLong: "",
+        award: award(p.award), top: "", cip: "", fam: sectorLabel(""), lo: p.total_min != null ? Number(p.total_min) : null,
+        hi: p.total_max != null ? Number(p.total_max) : null, p: p, fails: fails, off: true };
+      row.issueText = ["COCI does not list it as active"].concat(listIssues(p, fails)).join("; ");
+      row.hay = listFold([row.title, row.college, ctl, row.award, row.issueText].join(" "));
+      out.push(row);
+    });
+    LIST.memo = { D: D, P: P, n: P.length, G: G, rows: out, counts: listCountRows(out), colleges: Object.keys(colleges).length, off: off, live: !!live };
     return LIST.memo;
   }
   /* The columns, found by name (the engine's rule, S541); built once, since the engine asks per row. */
@@ -3765,6 +3817,9 @@
   }
   function listFilterPass(r, L) {
     var f = L.f;
+    if (listScopeOn() && !listScopePass(r)) return false;
+    if (r.off) return f === "off";
+    if (f === "off") return false;
     if (!f) return true;
     if (f === "unread") return !r.p;
     if (!r.p) return false;
@@ -3786,22 +3841,100 @@
     var asOf = (/(\d{4}-\d\d-\d\d)\)?\s*$/.exec(String(D._source || "")) || [])[1] || D._built_at || "";
     wrap.appendChild(el("p", { cls: "prh-lede", text: "Every active program in COCI, one row each: " + fmt(c[""]) + " at " + m.colleges +
       " colleges. The harvest holds a record of " + fmt(c.read) + ", read from the college's catalog, and " + fmt(c.pass) +
-      " of those pass the machine checks: every listed course placed, none added, the units add up. The List is read only; a row's Record drawer opens its record in Program records, where a reviewer confirms it." }));
+      " of those pass the machine checks: every listed course placed, none added, the units add up. A program's title opens its panel: the record, its courses block by block, and Confirm and Needs a fix for a signed-in reviewer." }));
     var notes = ["Each program's title, award, CIP and TOP codes and units are COCI's" + (asOf ? ", from its " + asOf + " export" : "") + "; the records are read live."];
-    if (m.off) notes.push(fmt(m.off) + (m.off === 1 ? " record is on a program" : " records are on programs") + " COCI does not list as active; Program records lists them.");
+    if (m.off) notes.push(fmt(m.off) + (m.off === 1 ? " record is on a program" : " records are on programs") + " COCI does not list as active; the filter On a program COCI does not list as active shows them.");
     if (!m.live) notes.push("The live read of COCI's active programs did not arrive" + (G.errors && G.errors.active ? " (" + G.errors.active + ")" : "") + ", so each college shows COCI's short name.");
     else if (G.active != null && G.active !== c[""]) notes.push("COCI's live table lists " + fmt(G.active) + " active programs and the export " + fmt(c[""]) + "; they agree again once kb/_build_coci_programs.py rebuilds the export.");
     wrap.appendChild(el("p", { cls: "prh-meta", text: notes.join(" ") }));
+    if (!Rv0()) wrap.appendChild(signInBox());
+    else if (state.review.error) wrap.appendChild(el("p", { cls: "prh-small prh-caution", role: "status",
+      text: "Your sign-in could not read the records (" + state.review.error + "), so the panel leaves out Confirm and Needs a fix. Reload the tab to try again." }));
+    wrap.appendChild(listScopeBar(m));
+    var L = listState();
+    if (L.panelRef) { var k = listKeyFor(L.panelRef); L.panelRef = null; if (k) L.panel = k; }
+    /* Program records' first waiting record, side by side, in the List's own order (S574). */
+    if (reviewing() && L.f === "waiting") {
+      var first = el("button", { cls: "prh-word", type: "button", text: "Read the first waiting record side by side" });
+      first.addEventListener("click", function () {
+        var q = (LIST.engine ? LIST.engine.rows() : []).map(function (r) { return r.p; }).filter(readable)[0];
+        if (q) openRecord(q, first);
+      });
+      wrap.appendChild(el("p", { cls: "prh-small" }, [first]));
+    }
     return true;
   }
-  function listOpenRecord(p) {
-    state.open[keyOf(p)] = true;
-    goTo({ view: "records", rcollege: p.college, rq: p.control_number, sec: "records:find" });
+  function Rv0() { return state.review; }
+  /* The row a record names: its active program's row, else its own off-list row. */
+  function listKeyFor(ref) {
+    var m = listBuild();
+    if (!m || !ref) return null;
+    var hit = m.rows.filter(function (r) { return r.p && r.p.college === ref.college && String(r.p.control_number) === String(ref.control_number); })[0]
+      || m.rows.filter(function (r) { return !r.off && r.ctl === String(ref.control_number); })[0];
+    return hit ? hit.ut : null;
+  }
+  /* The dropdowns over the List: District, College, SWP Region and CIP Sector (Program records' filters, Sam
+     2026-10-14), each a multi-select for the visit. A choice redraws the table and its filter counts, never the head,
+     so an open list keeps its place. */
+  function listScopeBar(m) {
+    var F = filt(), dds = [], by = {};
+    wireDropdowns();
+    m.rows.forEach(function (r) {
+      if (r.off) return;
+      var c = by[r.college] || (by[r.college] = { n: 0, read: 0 });
+      c.n++; if (r.p) c.read++;
+    });
+    var names = Object.keys(by).sort();
+    function progs(n) { return fmt(n) + (n === 1 ? " program" : " programs"); }
+    function grouped(of, none) {
+      var g = {};
+      names.forEach(function (c) { var k = of(c) || ""; (g[k] = g[k] || []).push(c); });
+      return Object.keys(g).sort(function (a, b) { return a === b ? 0 : !a ? 1 : !b ? -1 : a < b ? -1 : 1; }).map(function (k) {
+        var n = g[k].reduce(function (t, c) { return t + by[c].n; }, 0);
+        return { value: k, text: k || none, meta: g[k].length + (g[k].length === 1 ? " college, " : " colleges, ") + progs(n) };
+      });
+    }
+    var clear = el("button", { cls: "prh-word", type: "button", text: "Clear the filters" });
+    function chosen(key) { return key === "college" ? picks() : F[key]; }
+    function apply() {
+      dds.forEach(function (d) { d.sync(); });
+      clear.hidden = !listScopeOn();
+      var L = listState(); L.limit = null;
+      if (LIST.engine) LIST.engine.redraw();
+    }
+    function set(key, next) {
+      next = next.filter(function (v, i) { return next.indexOf(v) === i; }).sort();
+      if (key === "college") { state.linkPicks = []; state.pick = next; } else F[key] = next;
+      apply();
+    }
+    function make(key, label, opts, attr) {
+      return dropdownBox({ key: key, label: label, opts: opts, attr: attr, chosen: function () { return chosen(key); },
+        set: function (next) { set(key, next); }, dds: dds }).wrap;
+    }
+    clear.addEventListener("click", function () {
+      state.linkPicks = []; state.pick = []; F.district = []; F.region = []; F.sector = [];
+      apply();
+      var b = bar.querySelector(".prh-dd-btn"); if (b) b.focus();
+    });
+    var sc = {};
+    m.rows.forEach(function (r) { if (r.off) return; var k = listSector(r); sc[k] = (sc[k] || 0) + 1; });
+    var fams = Object.keys(CIP_FAMS).concat(Object.keys(sc).filter(function (k) { return k && !CIP_FAMS[k]; })).sort();
+    if (sc[""]) fams.push("");
+    var bar = el("div", { cls: "prh-filters", role: "group", "aria-label": "Filter the programs" }, [
+      state.districts ? make("district", "District", grouped(districtOf, "No district on record"), "data-district") : null,
+      make("college", "College", names.map(function (c) { return { value: c, text: c, meta: progs(by[c].n) + ", " + fmt(by[c].read) + " read" }; }), "data-college"),
+      state.regions ? make("region", "SWP Region", grouped(regionOf, "No region on record"), "data-region") : null,
+      make("sector", "CIP Sector", fams.map(function (k) { return { value: k, text: sectorLabel(k), meta: progs(sc[k] || 0) }; }), "data-sector"),
+      clear]);
+    dds.forEach(function (d) { d.sync(); });
+    clear.hidden = !listScopeOn();
+    return el("div", { cls: "prh-filterbar prl-scope" }, [bar, state.districtError ? el("p", { cls: "prh-small prh-caution",
+      text: "The district and region lists could not be read (" + state.districtError + "), so those two filters are left out." }) : null]);
   }
   /* Each drawer answers its column by name. */
   function listDrawer(r, name, h) {
     var p = r.p;
-    var openWord = function () { return h.word("Open the record in Program records", function () { listOpenRecord(p); }); };
+    var openWord = function () { return h.el("p", { cls: "prh-small prh-quiet", text: "Its title opens its panel: the record's checks, its courses and Your reading." }); };
     var notRead = "The harvest holds no record of this program yet.";
     if (name === "Program") {
       h.line(r.title + (r.award ? ", " + r.award : "") + ", control number " + r.ctl + ".");
@@ -3846,7 +3979,12 @@
       panel: { label: function (r) { return "Program: " + r.title; }, body: listPanelBody },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       // Confirmed and Waiting count live: a verdict saved in the panel changes them without a new build.
-      counts: function () { var m = listBuild(); return m ? Object.assign({}, m.counts, listLive()) : {}; }
+      counts: function () {
+        var m = listBuild();
+        if (!m) return {};
+        var rs = listScopeOn() ? m.rows.filter(listScopePass) : m.rows;
+        return Object.assign({}, rs === m.rows ? m.counts : listCountRows(rs), listLive(rs));
+      }
     };
     Object.defineProperty(spec, "filters", { enumerable: true, get: listFilters });
     return spec;
@@ -3914,8 +4052,8 @@
       out.push(h.el("p", { cls: "prl-pn-dec", text: (p.checked ? "A person confirmed it" + (p.checked_by ? ", " + p.checked_by : "") + (p.checked_at ? " " + h.stamp(p.checked_at) : "")
         : "Not yet confirmed by a person") + ". Courses: " + (p.checks && p.checks.coverage === true ? "every listed course placed" : "a listed course is not placed")
         + "; added courses: " + (p.checks && p.checks.invented === true ? "none" : "a course the state's list lacks") + "; units: " + unitsWords(p) + "." }));
-      out.push(h.el("div", { cls: "prl-acts" }, [sl ? line : null, !light && p.source_url ? splitButton(p) : null,
-        h.word("Open the record in Program records", function () { listOpenRecord(p); })]));
+      var acts = [sl ? line : null, !light && p.source_url ? splitButton(p) : null];
+      if (acts.some(Boolean)) out.push(h.el("div", { cls: "prl-acts" }, acts));
       if (light) {
         if (!loads[key]) {
           loads[key] = "reading";
@@ -3923,9 +4061,14 @@
             .then(function () { if (LIST.engine && listState().panel === r.ut) LIST.engine.redraw(); });
         }
         out.push(h.heading("Its courses"));
-        out.push(h.el("p", { cls: "prh-meta", role: "status", text: loads[key] === "failed"
-          ? "The record's courses could not be read" + (state.failed[p.college] ? " (" + state.failed[p.college] + ")" : "") + ". Open the record in Program records to try again."
-          : "Reading the record's courses…" }));
+        out.push(h.el("p", { cls: "prh-meta", role: "status" }, loads[key] === "failed"
+          ? ["The record's courses could not be read" + (state.failed[p.college] ? " (" + state.failed[p.college] + ")" : "") + ". ",
+            h.word("Read again", function () {
+              loads[key] = "reading"; if (LIST.engine) LIST.engine.redraw();
+              ensureRows([p], { retry: true }).then(function () { loads[key] = p._light ? "failed" : "done"; }, function () { loads[key] = "failed"; })
+                .then(function () { if (LIST.engine && listState().panel === r.ut) LIST.engine.redraw(); });
+            })]
+          : ["Reading the record's courses…"]));
       } else {
         var F = flagsFor(p), facts = recordFacts(p, F), disp = p.display || {};
         out.push(h.heading("Its checks"));
@@ -3982,11 +4125,14 @@
         more.push(h.el("p", null, ["Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
           (p.catalog_year ? " (" + yr(p.catalog_year) + ")" : "") + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + "." +
           (disp.build ? " Display build " + disp.build + (disp.built ? ", " + disp.built : "") + "." : "")]));
+        if (F.college.length) more.push(h.el("p", null, [collegeCount(F.college) + " for " + shortCollege(p.college) + " to correct. ",
+          h.word("Open " + shortCollege(p.college) + "'s drafts on Catalogs", function () { goTo({ view: "catalogs", q: p.college, sec: "catalogs:registry" }); })]));
         if (F.notes.length) out.push(h.fold("notes", "Notes for the reading procedure (" + F.notes.length + ")",
           [h.el("ul", null, F.notes.map(function (g) { return h.el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
       }
     }
-    more.unshift(h.el("p", null, [r.awardLong ? "COCI's award: " + r.awardLong + "." : "COCI names no award for this program."]),
+    if (r.off) more.unshift(h.el("p", null, ["COCI does not list this program as active, so its title and award here are the catalog's."]));
+    else more.unshift(h.el("p", null, [r.awardLong ? "COCI's award: " + r.awardLong + "." : "COCI names no award for this program."]),
       h.el("p", null, [r.cip ? "CIP " + r.cip + ", in the family " + r.fam + "." : "COCI holds no CIP code for this program."]));
     if (r.top) more.splice(2, 0, h.el("p", null, ["TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal)."]));
     if (r.coci && r.coci !== r.college) more.push(h.el("p", null, ["COCI's short name for the college: " + r.coci + "."]));
@@ -4093,7 +4239,8 @@
         "aria-selected": sel ? "true" : "false", tabindex: sel ? "0" : "-1", type: "button" },
         [v.label, n[v.id] == null ? null : el("span", { cls: "prh-n", text: fmt(n[v.id]) })]);
       /* The Records tab itself lists the reader's picks; only a count's word lists every college. */
-      b.addEventListener("click", function () { if (v.id === "records") { state.rscope = "pick"; dropLinkPicks(); } choose(v.id, true); });
+      /* A view's own button lists the reader's own picks: a college a link added drops (Sam, 2026-10-21). */
+      b.addEventListener("click", function () { if (v.id === "records") state.rscope = "pick"; if (v.id === "records" || v.id === "list") dropLinkPicks(); choose(v.id, true); });
       b.addEventListener("keydown", function (e) {
         var k = e.key, j = null;
         if (k === "ArrowRight") j = (i + 1) % VIEWS.length;
@@ -4102,7 +4249,8 @@
         else if (k === "End") j = VIEWS.length - 1;
         if (j == null) return;
         e.preventDefault();
-        if (VIEWS[j].id === "records") { state.rscope = "pick"; dropLinkPicks(); }
+        if (VIEWS[j].id === "records") state.rscope = "pick";
+        if (VIEWS[j].id === "records" || VIEWS[j].id === "list") dropLinkPicks();
         choose(VIEWS[j].id, true);
       });
       sw.appendChild(b);
