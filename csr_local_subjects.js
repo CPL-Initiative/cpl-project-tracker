@@ -240,6 +240,8 @@
         if (E) E.render(node);
       },
       setFilter: function (f) { st.ls.f = FILTERS.some(function (x) { return x[0] === f; }) ? f : ""; st.ls.q = ""; },
+      // The Subjects List's panel opens one code here (Refile <code> in Local subjects, 2026-11-04): every filter, the finder set.
+      setFind: function (q) { st.ls.f = ""; st.ls.q = q || ""; },
       rows: rows, state: st, load: load
     };
   }

@@ -118,7 +118,7 @@ function col(d, name) {
   return H.indexOf(name);
 }
 /* The title cell carries its lines under the title (a suggestion, changed this visit), so a row is found by its title word. */
-function titleOf(r) { return txt(r.children[1].querySelector(".csl-open") || r.children[1]); }
+function titleOf(r) { return txt(r.querySelector(".csl-title .csl-open") || r.querySelector(".csl-title")); }
 function rowOf(d, disc) { return rows(d).find((r) => titleOf(r) === disc); }
 function cell(d, disc, name) { const r = rowOf(d, disc); return r ? txt(r.children[col(d, name)]) : null; }
 /* The engine draws an empty cell as a dash it can be pressed on. */
@@ -131,7 +131,7 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
 
 
 function panel(d) { return d.getElementById("csl-panel"); }
-function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.children[1].querySelector("button.csl-open"); }
+function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.querySelector(".csl-title button.csl-open"); }
 function count(d, label) { const b = words(d, label); const m = b && /\(([\d,]+)\)$/.exec(txt(b)); return m ? Number(m[1].replace(/,/g, "")) : null; }
 const CPL = { "Automotive Technology": { n_creds: 2, n_colleges: 5, n_courses: 3,
   creds: [{ c: "ASE A1 Engine Repair", i: "ASE", n: 4 }, { c: "ASE A8 Engine Performance", i: "ASE", n: 5 }] } };

@@ -104,22 +104,40 @@
       })
       .catch(function () { return {}; });
   }
-  function saveField(discipline, field, value, sess) {
-    var body = {
-      course_id: KEY_PREFIX + discipline,
-      field: field,
-      value: value,
-      reviewer_email: sess.email
-    };
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-      method: "POST",
-      headers: {
-        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates,return=minimal"
-      },
-      body: JSON.stringify(body)
+  /* A save reads the session at the moment it writes (Sam, 2026-11-04: every Common SUBJ he saved after a drive came
+     back 401 while the tag still read signed in). state.sess was the copy taken when the tab loaded; the keeper
+     (cpl_session.js) renews cpl_sb underneath, but a laptop that slept missed its hourly tick and the copy kept the
+     dead token. So every write asks the keeper first: ensureFresh renews a token near expiry and resolves null only
+     when the session has ended. A null, or a 401 that still comes back, marks the tag lapsed (renderAuthInto). */
+  function freshSess() {
+    var K = window.CPL_SESSION;
+    var p = K && K.ensureFresh ? K.ensureFresh() : Promise.resolve(getSession());
+    return p.then(function (s) {
+      if (s && isValidJwt(s.access_token)) { state.sess = s; state.lapsed = false; return s; }
+      if (state.sess) { state.lapsed = true; renderAuth(); }
+      return null;
+    }, function () { return getSession(); });
+  }
+  function postCuration(body) {
+    return freshSess().then(function (sess) {
+      if (!sess) return { ok: false, status: 401, lapsed: true };
+      body.reviewer_email = sess.email;
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+          "Content-Type": "application/json",
+          "Prefer": "resolution=merge-duplicates,return=minimal"
+        },
+        body: JSON.stringify(body)
+      }).then(function (r) {
+        if (r.status === 401) { state.lapsed = true; renderAuth(); }
+        return r;
+      });
     });
+  }
+  function saveField(discipline, field, value) {
+    return postCuration({ course_id: KEY_PREFIX + discipline, field: field, value: value });
   }
 
   /* ── The one save path for a Common SUBJ and its note ──
@@ -148,9 +166,9 @@
   }
   function overlayRec(d) { return state.overlay[d] = state.overlay[d] || {}; }
   function writeCanon(entry, v) {
-    var sess = state.sess;
-    return saveField(entry.discipline, FIELD_CANON, v, sess).then(function (r) {
+    return saveField(entry.discipline, FIELD_CANON, v).then(function (r) {
       if (!r.ok) return r;
+      var sess = state.sess;
       // Reflect in state.overlay so the row updates without a refetch.
       var rec = overlayRec(entry.discipline), at = new Date().toISOString();
       rec[FIELD_CANON] = v;
@@ -161,9 +179,9 @@
     });
   }
   function writeNote(entry, text) {
-    var sess = state.sess;
-    return saveField(entry.discipline, FIELD_NOTES, text, sess).then(function (r) {
+    return saveField(entry.discipline, FIELD_NOTES, text).then(function (r) {
       if (!r.ok) return r;
+      var sess = state.sess;
       var rec = overlayRec(entry.discipline), at = new Date().toISOString();
       rec[FIELD_NOTES] = text;
       rec._notes_by = sess.email; rec._notes_at = at;
@@ -655,7 +673,10 @@
   function ensureCsrUiCss() {
     if (document.getElementById("cs-ui-css")) return;
     document.head.appendChild(el("style", { id: "cs-ui-css" }, [
-      "#tab-canonical-subj4 a.cs-auth-link{display:inline-block;min-height:24px;line-height:24px;}"
+      "#tab-canonical-subj4 a.cs-auth-link{display:inline-block;min-height:24px;line-height:24px;}",
+      "#tab-canonical-subj4 .cs-auth-lapsed{color:var(--red-alert);font-weight:600;}",
+      // A count's word is a target too (WCAG 2.2 target size): a two-digit count drew it 18px wide.
+      "#tab-canonical-subj4 button[id^='csl-lc-']{min-width:24px;text-align:right;}"
     ]));
   }
 
@@ -890,6 +911,15 @@
     auth.innerHTML = "";
 
     // Signed in
+    // Lapsed: the keeper could not renew it, or a save came back 401. Say so where the tag sat, and offer the sign-in.
+    if (state.sess && state.lapsed) {
+      auth.appendChild(el("span", { class: "cs-auth-lapsed", role: "status" }, ["Sign-in lapsed for " + state.sess.email + "; saves will not go through."]));
+      auth.appendChild(document.createTextNode("  "));
+      var again = el("a", { class: "cs-auth-link", href: "#" }, ["Sign in again"]);
+      again.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; state.lapsed = false; renderAuth(); };
+      auth.appendChild(again);
+      return;
+    }
     if (state.sess) {
       auth.appendChild(el("span", { class: "cs-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
@@ -1737,7 +1767,10 @@
     }
   }
   function signinWords() { return "Sign in as a reviewer to save; the sign-in sits at the head of the List."; }
-  function failWords(r) { return r && r.status ? "status " + r.status : "no answer"; }
+  function failWords(r) {
+    if (r && r.status === 401) return "the sign-in has lapsed; sign in again at the head of the List and save once more";
+    return r && r.status ? "status " + r.status : "no answer";
+  }
   /* A Common SUBJ through the table's path. Resolves to the words for the note line; `ok` says whether it saved.
      A List save never writes an empty code: the overlay would keep the seed's and only the reviewer would move. */
   function listSaveCode(r, value, opts) {
@@ -1907,7 +1940,9 @@
         draft: function (r) { return { subj: r.e.canonical_subj4 || "", notes: r.e._notes || "" }; },
         save: listSaveRow
       },
-      cellSave: listCellSave
+      cellSave: listCellSave,
+      // A row press edits it and the panel follows (Sam, 2026-11-04); the panel carries what the drawers showed.
+      editByRow: true
     };
   }
   /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits' first
@@ -1915,6 +1950,44 @@
      filter where it has one, and the Progress view's opened page (its cards: Needs attention and the three questions)
      folded behind one word for the visit. The engine draws the line and reads the Commons file once a visit. */
   var LINE_FILTERS = { open: 1, suggested: 1, person: 1, procedure: 1, collision: 1, changed: 1 };
+  /* Check what this visit changed (Sam, 2026-11-04: "Once I'm done with my edits, should there I be offered an option
+     to rerun the routine to see if our procedures think these are good matches?"). The page runs what it holds: the
+     SUBJ check (one code to one MQ discipline, four letters) and the local codes' spread, on the changed rows alone,
+     at once. The scan's fuller rules (kb/_csr_trail.py: a choice off the most-used code without a note, a code no
+     name or college suggests) run in the daily dashboard run at 06:17 UTC; their findings land in each panel then, and
+     a session can dispatch that run sooner. The page never copies those rules, so the two never disagree. */
+  function changedCheck(api) {
+    var L = listState(), keys = (L.changed || []).slice();
+    if (!keys.length) return null;
+    var box = api.el("div", { cls: "csl-ck", id: "csl-ck" });
+    box.appendChild(api.el("p", { cls: "csl-acts" }, [api.word(L.ckShown ? "Hide the check" : "Check the " + plural(keys.length, "change", "changes") + " made this visit",
+      function () { L.ckShown = !L.ckShown; listRepaint(); var n = document.getElementById("csl-ck-w"); if (n) n.focus(); }, { id: "csl-ck-w", "aria-expanded": L.ckShown ? "true" : "false" })]));
+    if (!L.ckShown) return box;
+    invalidateSubjIndex();
+    var byUt = {};
+    listRowsAll().forEach(function (r) { byUt[r.ut] = r; });
+    var items = keys.map(function (ut) {
+      var r = byUt[ut];
+      if (!r) return api.el("li", { text: ut + ": no longer on the List." });
+      var e = r.e, c = (e.canonical_subj4 || "").toUpperCase(), parts = [];
+      if (!c) parts.push("no Common SUBJ");
+      else if (!SUBJ4_RE.test(c)) parts.push(c + " is not four letters");
+      if (r.coll.length) parts.push("in a collision: " + collisionWords(r));
+      else if (c) parts.push("no collision");
+      var tot = e.local_subject_total || 0, mine = 0;
+      r.locals.forEach(function (x) { if (x[0] === c) mine = x[1]; });
+      if (c && tot) parts.push(mine ? plural(mine, "local course", "local courses") + " of " + fmtN(tot) + " already use " + c : "no college uses " + c + " for these courses yet");
+      if (c && e.data_modal && e.data_modal !== c) parts.push("the most-used local code is " + e.data_modal + (e._notes ? "; the note gives the reason" : ", and no note gives the reason"));
+      var before = scanAsksOf(ut);
+      if (before.length) parts.push("the last scan named " + before.map(function (f) { return (RULE_WORDS[f.rule] || f.rule).toLowerCase(); }).join(" and ") + "; it reads the row again tonight");
+      return api.el("li", null, [api.el("b", { text: ut + " (" + (c || "none") + "): " }), parts.join("; ") + "."]);
+    });
+    box.appendChild(api.el("ul", { cls: "csl-ck-list", role: "status" }, items));
+    var st = state.scan && state.scan.data, when = st && st._scanned_at;
+    box.appendChild(api.el("p", { cls: "cs-quiet", text: "The SUBJ check ran on these rows now. The scan's fuller rules run in the daily dashboard run at 06:17 UTC"
+      + (when ? " (the last scan: " + String(when).slice(0, 16).replace("T", " ") + " UTC)" : "") + "; a session can dispatch that run sooner." }));
+    return box;
+  }
   function listLine(wrap, api) {
     var L = listState(), CLM = window.CPL_COMMONS_LIST;
     // Read once a visit (state.ls resets each visit), fresh: a failed read says so and is not retried until the next
@@ -1937,6 +2010,8 @@
         if (open) return api.el("a", { href: open, cls: li, text: text });
         return null;
       } }));
+    var ck = changedCheck(api);
+    if (ck) wrap.appendChild(ck);
     var fold = api.el("div", { cls: "csl-fold", id: "csl-fold" });
     if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
     var PG = window.CPL_COMMONS_PAGE;
@@ -1972,6 +2047,96 @@
       plural(A.length - files.length, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
       (files.length ? "; " + files.map(function (f) { return (RULE_WORDS[f.rule] || f.rule) + " in " + f.item; }).join("; ") +
         ", on a file rather than an MQ discipline, which Run the SUBJ check lists" : "") + "." });
+  }
+  /* The courses behind a local code's count (Sam, 2026-11-04, on Electromechanical Technology's "ECONMT, 55": "Add a
+     hover over on the 55 so I can see the 55 course titles. If they truly are econ, this is an opportunity to improve
+     our procedure that produced these alignments. Think about how we can do that without leaving this page.").
+     kb/discipline_local_courses/ holds them, one file per MQ discipline, built by kb/_build_discipline_local_courses.py
+     over the seed's own walk, so each list has the count beside it. Hovering a count reads the file and puts the titles
+     in its tooltip; pressing it lists the courses under the table, with the way to refile the code: the Local subjects
+     List, where a reviewer confirms or moves a code's MQ discipline (DR-25), the edge that placed these courses. */
+  var LC_DIR = "kb/discipline_local_courses/";
+  function localCourses(ut) {
+    var C = state.lc || (state.lc = { files: {}, docs: {} });
+    if (!C.index) C.index = fetch(LC_DIR + "index.json", { cache: "no-store" })
+      .then(function (res) { if (!res.ok) throw new Error("index " + res.status); return res.json(); })
+      .catch(function (err) { C.index = null; throw err; });
+    if (C.files[ut]) return C.files[ut];
+    var p = C.files[ut] = C.index.then(function (ix) {
+      var f = ix && ix.files && ix.files[ut];
+      if (!f) return null;
+      return fetch(LC_DIR + f, { cache: "no-store" }).then(function (res) { if (!res.ok) throw new Error(f + " " + res.status); return res.json(); });
+    });
+    p.then(function (doc) { C.docs[ut] = doc; }, function () { delete C.files[ut]; });
+    return p;
+  }
+  function localCourseRows(doc, code) {
+    var rows = doc && doc.by && doc.by[code];
+    return rows ? rows.map(function (x) { return { college: doc.colleges[x[0]] || "", num: code + " " + x[1], title: x[2] || "", ccn: x[3] || "" }; }) : null;
+  }
+  function localCountWord(r, row, h) {
+    var L = listState(), on = !!(L.pnCourses && L.pnCourses.ut === r.ut && L.pnCourses.code === row.code);
+    var b = h.word(fmtN(row.n), function () {
+      L.pnCourses = on ? null : { ut: r.ut, code: row.code };
+      if (LIST_ENGINE) LIST_ENGINE.redraw();
+      var n = document.getElementById(on ? "csl-lc-" + row.code : "csl-lc-h"); if (n) n.focus();
+    }, { id: "csl-lc-" + row.code, "aria-expanded": on ? "true" : "false",
+      "aria-label": "The " + plural(row.n, "course", "courses") + " on " + row.code + ": " + (on ? "hide them" : "list them") });
+    var doc = state.lc && state.lc.docs[r.ut];
+    if (doc) setTip(b, localCourseRows(doc, row.code), row.code);
+    return b;
+  }
+  /* The tooltip a count carries: its first 40 courses, number and title, and how many more. */
+  function setTip(b, rows, code) {
+    if (!b) return;
+    if (!rows) { b.title = "No course list for " + code + " in this build."; return; }
+    b.title = rows.slice(0, 40).map(function (x) { return x.num + "  " + x.title; }).join("\n")
+      + (rows.length > 40 ? "\nand " + fmtN(rows.length - 40) + " more; press to list them all" : "");
+  }
+  /* A panel reads its MQ discipline's course file once as it opens, then gives each count its tooltip in place. */
+  function prefetchLocalCourses(r) {
+    if (state.lc && state.lc.docs[r.ut]) return;
+    localCourses(r.ut).then(function (doc) {
+      r.locals.forEach(function (x) { setTip(document.getElementById("csl-lc-" + x[0]), localCourseRows(doc, x[0]), x[0]); });
+    }, function () {});
+  }
+  function localCoursesBlock(r, code, h) {
+    var L = listState(), box = h.el("div", { cls: "csl-lc" });
+    box.appendChild(h.el("h3", { id: "csl-lc-h", cls: "csl-pn-q", tabindex: "-1", text: "The courses on " + code }));
+    var p = localCourses(r.ut);
+    var draw = function (doc) {
+      var rows = localCourseRows(doc, code);
+      if (!rows) { box.appendChild(h.el("p", { cls: "cs-quiet", text: "This build names no courses for " + code + " under " + r.ut + "; its count comes from the M-IDs' own codes." })); return; }
+      var cols = {};
+      rows.forEach(function (x) { cols[x.college] = 1; });
+      var one = Object.keys(cols).length === 1;
+      box.appendChild(h.table({ id: "lc", label: "The courses colleges file under " + code + " for " + r.ut,
+        note: plural(rows.length, "course", "courses") + (one ? ", all at " + rows[0].college : " at " + plural(Object.keys(cols).length, "college", "colleges"))
+          + ". If they belong to another MQ discipline, the filing of " + code + " placed them here: refile it in Local subjects, and the next map run and re-mint move them.",
+        cols: one ? [["num", "Course"], ["title", "Title"], ["ccn", "Control number"]] : [["college", "College"], ["num", "Course"], ["title", "Title"]],
+        rows: rows }));
+    };
+    var acts = h.el("div", { cls: "csl-acts" }, [
+      h.word("Refile " + code + " in Local subjects", function () { openLocalOn(code); }, { "aria-label": "Open " + code + " in the Local subjects List to confirm or move its MQ discipline" }),
+      h.word("Hide the courses", function () { L.pnCourses = null; if (LIST_ENGINE) LIST_ENGINE.redraw(); var n = document.getElementById("csl-lc-" + code); if (n) n.focus(); })]);
+    // A file already read draws now; a first read draws when it lands, then the panel repaints once.
+    var ready = state.lc && state.lc.docs[r.ut];
+    if (ready) draw(ready);
+    else {
+      var wait = h.el("p", { cls: "cs-quiet", role: "status", text: "Reading the courses on " + code + "…" });
+      box.appendChild(wait);
+      p.then(function () { if (LIST_ENGINE) LIST_ENGINE.redraw(); var n = document.getElementById("csl-lc-h"); if (n) n.focus(); },
+        function () { wait.textContent = "The courses on " + code + " could not be read; press the count again to retry."; L.pnCourses = null; });
+    }
+    box.appendChild(acts);
+    return box;
+  }
+  /* The Local subjects List on one code: its finder set, the view opened (the Subjects tab's own view word). */
+  var localFind = "";
+  function openLocalOn(code) {
+    localFind = code; localFilter = "";
+    if (LOCAL && LOCAL.setFind) LOCAL.setFind(code);
+    applyView("local");
   }
   function listPanelBody(r, h) {
     var e = r.e, L = listState(), notes = L.pnNote || (L.pnNote = {}), out = [];
@@ -2017,7 +2182,11 @@
         var pct = total ? x[1] / total * 100 : null;
         return { code: x[0], n: x[1], share: pct == null ? "" : pct < 1 ? "Under 1%" : Math.round(pct) + "%",
           note: x[0] === code ? "The Common SUBJ" : x[0] === e.data_modal ? "Most used locally" : "" };
-      }) }));
+      }),
+      cell: function (row, k) { return k === "n" ? localCountWord(r, row, h) : row[k]; } }));
+    if (r.locals.length) prefetchLocalCourses(r);
+    var lcOpen = L.pnCourses && L.pnCourses.ut === r.ut ? L.pnCourses.code : null;
+    if (lcOpen) out.push(localCoursesBlock(r, lcOpen, h));
     var shares = [];
     r.coll.forEach(function (c) { c.others.forEach(function (o) { shares.push({ code: c.code, d: o.d, why: o.why || "", note: "A collision" }); }); });
     r.shared.forEach(function (c) { c.others.forEach(function (o) { shares.push({ code: c.code, d: o.d, why: o.why || "", note: "Shared by design" }); }); });
@@ -2113,16 +2282,7 @@
      rows in kb_curation (DR-25). The module and the List engine load the first time the view opens. */
   var LOCAL = null, localLoading = false, localFailed = false, localFilter = "";
   function saveCuration(courseId, field, value) {
-    var sess = state.sess;
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-      method: "POST",
-      headers: {
-        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates,return=minimal"
-      },
-      body: JSON.stringify({ course_id: courseId, field: field, value: value, reviewer_email: sess.email })
-    });
+    return postCuration({ course_id: courseId, field: field, value: value });
   }
   function readCuration(prefix) {
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at"
@@ -2150,6 +2310,8 @@
     if (!LOCAL && window.CPL_CSR_LOCAL && window.CPL_COMMONS_LIST) {
       LOCAL = window.CPL_CSR_LOCAL.create(localHost());
       if (localFilter) LOCAL.setFilter(localFilter);
+      if (localFind && LOCAL.setFind) LOCAL.setFind(localFind);
+      localFind = "";
     }
     if (LOCAL) { LOCAL.render(node); return; }
     if (localFailed) {
@@ -2380,11 +2542,25 @@
       if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "list" : (readView() || "progress"));
       window.addEventListener("hashchange", onHashChange);
     });
+    /* The tag tells the truth before a save, too: when the session changes underneath (renewed, signed in elsewhere,
+       ended), and when the window comes back from sleep or another tab, the keeper is asked again. */
+    function recheckSession() {
+      if (!state.sess && !getSession()) return;
+      freshSess().then(function (s) { if (s && !state.lapsed) renderAuth(); });
+    }
+    window.addEventListener("cpl-session-changed", function (e) {
+      var on = !!(e && e.detail && e.detail.signedIn), s = getSession();
+      if (on && s) { state.sess = s; state.lapsed = false; }
+      else if (state.sess) state.lapsed = true;
+      renderAuth();
+    });
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) recheckSession(); });
     // A new visit drops the List's filters, sort and selection (tabs never remember a filter, Sam, 2026-10-21).
     var awayFromTab = false;
     window.addEventListener("cpl-tab-activated", function (e) {
       var t = e && e.detail && e.detail.tab;
       if (t !== QS_TAB) { awayFromTab = true; return; }
+      recheckSession();
       if (!awayFromTab) { state.qsHeld = false; return; }
       awayFromTab = false;
       // A quickstart hint arrives just before its tab does: the visit it opens keeps the List it set.

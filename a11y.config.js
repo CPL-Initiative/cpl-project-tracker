@@ -408,8 +408,12 @@ async function seedCsrList(page, theme) {
   await page.waitForSelector("#csl-panel", { timeout: 10000 });
   await page.evaluate(() => { document.querySelectorAll("#csl-panel details.csl-pn-fold").forEach((d) => { d.open = true; }); });
   await page.waitForTimeout(200);
-  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td:nth-child(4) button.csl-open"); if (b) b.click(); });
-  await page.waitForSelector("#tab-canonical-subj4 .csl-drawer", { timeout: 10000 });
+  // A row press opens its edit row and moves the panel to it (editByRow, 2026-11-04); the cells open no drawers. Then a
+  // local code's count lists its courses in the panel (kb/discipline_local_courses/), so the list and Refile are measured.
+  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td:nth-child(5) button.csl-open"); if (b) b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csl-editrow", { timeout: 10000 });
+  await page.evaluate(() => { const b = document.querySelector("#csl-panel button[id^='csl-lc-']"); if (b) b.click(); });
+  await page.waitForFunction(() => { const x = document.querySelector("#csl-panel .csl-lc"); return x && !/Reading the courses/.test(x.textContent); }, null, { timeout: 15000 });
   await page.evaluate(() => { document.getElementById("csl-editall").click(); });
   await page.waitForSelector("#tab-canonical-subj4 .csl-cellin", { timeout: 10000 });
   await page.waitForTimeout(700);
