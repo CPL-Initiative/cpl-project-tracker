@@ -16516,8 +16516,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 532,
+   "count": 533,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 566,
+     "path": "docs/session_566_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest",
+      "credential-registry"
+     ],
+     "title": "Session 566 handoff: Las Positas's full read and Columbia's trial in flight; #2734 brought up to main",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25597,5 +25613,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1366
+ "total": 1367
 }

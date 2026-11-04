@@ -150,13 +150,16 @@ check("Subjects: the card and its counts open the List (Sam, 2026-11-03), every 
       and rows[4]["pair"][1]["open"] == "#canonical-subj4/list/person" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
 # A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
 # a known issue with nothing in it is not an issue, and facts.shared keeps the measure.
+# The unconfirmed issue leaves the list at zero too (every MQ discipline confirmed, 2026-11-04, S566).
 collision_issues = [i for i in rows[4]["issues"] if "two MQ disciplines" in i.get("words", "")]
-check("Subjects: the unconfirmed issue opens the List's Open filter, where a pick is confirmed, and a collision issue, when one is listed, the List's In a collision",
-      rows[4]["issues"][0]["open"] == "#canonical-subj4/open" and all(i["open"] == "#canonical-subj4/list/collision" for i in collision_issues)
+modal_issues = [i for i in rows[4]["issues"] if "modal code, unconfirmed" in i.get("words", "")]
+check("Subjects: the unconfirmed issue, when listed, opens the List's Open filter, where a pick is confirmed, and a collision issue, when one is listed, the List's In a collision",
+      all(i["open"] == "#canonical-subj4/open" for i in modal_issues) and bool(sub.get("modal")) == bool(modal_issues)
+      and all(i["open"] == "#canonical-subj4/list/collision" for i in collision_issues)
       and bool(sub.get("shared")) == bool(collision_issues))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
     check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",
-          len(rows[4]["issues"]) >= 3 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
+          len(rows[4]["issues"]) >= 2 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
           and any("scan findings" in i.get("words", "") for i in rows[4]["issues"])
           and any("identity codes" in i.get("words", "") for i in rows[4]["issues"]))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
