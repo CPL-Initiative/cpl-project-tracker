@@ -1,0 +1,150 @@
+Admin Outline for Radiation Safety 40A
+Radiation Safety
+Effective: Fall 2018
+Catalog Description:
+RADS 40A - Radiation Safety
+2.00 Units
+A course designed to provide basic radiation safety instruction. Includes identification of the sources of radiation and radioactive materials, the nature of ionization radiation, biological effects, and risk assessment.
+2 Units Lecture
+Recommended Course Preparation:
+MATH 110 or MATH 110B
+Total Lecture Hours	36
+Total Inside of Class Hours	36
+Total Outside of Class Hours	72
+Total Student Learning Hours	108
+Course Grading:
+Optional
+Discipline:
+Industrial Safety.
+Number of Times Course May Be Taken for Credit:
+1
+Student Learning Outcomes
+Upon the completion of this course, the student should be able to:
+Identify the basic principles of atomic energy, radioactivity, and decay.
+Assess hazards associated with the use of ionizing radiation.
+Determine biological effects and risks from radiation exposure.
+Course Objectives:
+Upon completion of this course, the student should be able to:
+Identify the basic principles of atomic energy, radioactivity, and decay
+Assess hazards associated with the use of ionizing radiation
+Determine biological effects and risks from radiation exposure
+Estimate dose and risks to individuals and populations
+Define monitoring for the workplace
+Identify sources of radiation, including artificial and natural sources
+Course Content:
+Radiation Safety
+In depth review
+Sources of radiation and radioactive materials
+Nature of ionization radiation
+Radiation fundamentals
+Atomic structure and definitions
+Types of radiation and origin
+Radioactive decay
+Radiation interactions
+Nuclear interactions
+Effects of shielding
+Radiation units and dose
+Biological effects
+Risks and dose assessments
+Radiation dose
+Population/collective dose
+Probability of health effects
+Balance with benefits
+Industrial sources and natural sources
+Fission, fusion, accelerators
+Medical and industrial sources
+Cosmic, terrestrial, natural sources of radiation
+Methods of Instruction:
+Guest Lecturers - guest speakers from industry
+Field Trips
+Written Exercises
+Lecture
+Demonstration
+Discussion - Group discussions
+Audio-visual Activity - Video and overhead presentation
+Student Presentations
+Methods of Evaluation
+Class Participation
+Exams/Tests
+Field Trips
+Home Work
+Papers
+Quizzes
+Typical Outside-of-Class Assignments
+Other:
+Problem solving
+Using a decay equation, solve the following problem:
+If a sample has 1000 atoms of Tritium (H-3) on 9/17/2017, how many H-3 atoms will there be on 9/17/2021?  The half-life of H-3 is 12.3 years.
+What is the primary type of interaction of a 0.2 MeV photon in Lead?
+How about a 2 MeV photon?
+How about 9 MeV photons?
+If 250,000 people are exposed to 5 rem of radiation;
+How many person-rem would that be?
+If there are 8 excess cancer fatalities for every 10,000 person-rem, how many cancers above the natural occurrence would you expect?
+Assuming a 20% natural cancer mortality, how many natural cancer deaths?
+Textbooks (Typical):
+Textbook:
+Thomas E. Johnson Introduction to Health Physics. 5th ed., McGraw-Hill Education/Medical, 2017.
+Haydee Domenech Radiation Safety: Management and Programs. 1st ed., Springer International Publishing, 2016.
+DE Proposal
+Delivery Methods
+Fully Online (FO)
+Rationale for DE
+Explain why this course should be offered in Distance Education mode.
+This course is only offered every 2 years; there needs to be a way to offer the course when face to face instruction is not possible to ensure student completion of the program is not delayed. Online offerings will increase enrollment in the OSH program.
+Explain how the decision was made to offer this course in a Distance Education mode.
+The decision was made in consultation with the Dean of the STEM program (Nan Ho) and through student feedback.
+Accessibility:
+Closed captioning for videos.
+Transcription for audio.
+Alt-text/ tags for images.
+Utilizing headers/styles for text formatting to make web pages accessible for screen readers.
+Utilizing headers/styles for text formatting to make Word, PowerPoint, PDF, etc. accessible for screen readers.
+Formatting and coding to make tables accessible for screen readers.
+Exploratory links.
+Proper color contrast.
+Modifying assignment time limits for students with accommodations.
+Course Objectives:
+The same standards of course quality identified in the course outline of record can be applied.
+The content identified in the course outline of record can be presented effectively and with the same degree of rigor.
+A student can achieve the same goals and objectives identified in the course outline of record.
+The same assignments in the course outline of record can be completed by the student and graded by the instructor.
+The same assessments and level of student accountability can be achieved.
+DE Course Interaction
+Instructor-Student Interaction
+Discussion board: The instructor will regularly participate in discussions that deal with academic content, will consistently provide substantive feedback, and will facilitate all discussions.
+Frequency: Weekly
+Feedback on assignments: The instructor will provide regular substantive, academic feedback to students on assignments and assessments. Students will know the reason for the grade they received and what they can do to improve.
+Frequency: Following all assignments, quizzes and tests
+Announcements: Regular announcements that are academic in nature will be posted to the class.
+Frequency: 1-4 times per month
+Web conferencing: The instructor will use web conferencing to interact with students in real time.
+Frequency: Weekly
+Chat: The instructor will use chat to interact with students, textually and/or graphically, in realtime.
+Frequency: Weekly
+Student-Student Interaction
+Email: Students will be encouraged to email each other to ask questions about the course, including assignments.
+Frequency: Weekly
+Chat: Students will use the class chatroom to discuss assignments and course material in realtime.
+Frequency: Weekly
+Web conferencing: Students will interact in real time with each other to discuss coursework and assignments.
+Frequency: Weekly
+Student-Content Interaction
+Written papers: Papers will be written on various topics.
+Frequency: Once per semester
+Research Assignments: Students will use the Internet and library resources to research questions,problems, events, etc.
+Frequency: Once per semester
+Quizzes, tests/exams: Quizzes will be used to make sure students completed assigned material and understood it.
+Frequency: At least 3 exams per semester Periodic/weekly quizzes
+Lecture: Students will attend or access synchronous or asynchronous lectures on course content.
+Frequency: Weekly
+Field Trips: Students will attend live or virtual field trips.
+Frequency: Once per semester
+Brainstorming: Brainstorming will be used to promote creative thinking.
+Frequency: 2 times per semester
+Case studies: Students will evaluate real-world problems, situations, etc.
+Frequency: Once per semester
+General Education/Transfer
+General Education/Transfer Request
+CSU Transfer
+Transfers to CSU - Approved
