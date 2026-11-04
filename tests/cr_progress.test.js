@@ -4,7 +4,7 @@
 // Sam, 2026-10-18: "each of our 'common' projects should have the same approach and tracking and
 // feedback system... as we make changes to one, keep the other related dashes aligned". Guards:
 //   - static: the tab carries a Progress view beside the worklist, loads the module and the
-//     definitions lazily, routes #cr-reference/<view or filter>, and still opens on the worklist;
+//     definitions lazily, routes #cr-reference/<view or filter> (a filter opens the List on it), and opens on the List;
 //   - one definition: the headline pair is the Commons row's own pair (kb/status/commons.json);
 //   - the view from a fixture: the headline pair, five milestones with You are here on the first
 //     with work left, eight cards in order, the run log's next step;
@@ -42,7 +42,7 @@ const n = (v) => Number(v).toLocaleString("en-US");
 // ───────────────────────────── Part A — static invariants ─────────────────────────────
 check("the tab draws a view row, Progress first, then Worklist",
   /data-view="progress"[^]*?>Progress<\/button>[^]*?data-view="worklist"/.test(TAB));
-check("the tab still opens on the worklist", /view: "worklist",/.test(TAB) && /filter: "todo"/.test(TAB));
+check("the tab opens on the List, the workspace since 2026-11-04", /view: "list",/.test(TAB) && /filter: "todo"/.test(TAB));
 check("the tab loads the module, the opened page, then the definitions (S556)",
   /loadScript\("commons_progress\.js", "CPL_COMMONS_PROGRESS", function \(\) \{[\s\S]*?T\.loadScript\("commons_page\.js", "CPL_COMMONS_PAGE", function \(\) \{\s*T\.loadScript\("cr_progress\.js", "CPL_CR_PROGRESS", cb\)/.test(TAB));
 check("the Commons card for the reference opens the List, Progress a word away (Sam, 2026-11-03)",
@@ -206,7 +206,8 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
     wordings: recs.length, rows: 1, colleges: 1, credentials: 1, members: recs.map((r) => ({ rec: r, rows: 1 })) }, extra || {});
   const w = tab("#cr-reference/open");
   const S = w.CPL_CR_REFERENCE._state;
-  check("#cr-reference/open opens the worklist on No rule or decision", w.CPL_CR_REFERENCE._route() && S.view === "worklist" && S.filter === "open");
+  check("#cr-reference/open opens the List on No rule or decision", w.CPL_CR_REFERENCE._route() && S.view === "list" && S.filter === "open" && S.ls && S.ls.f === "open");
+  S.view = "worklist";   // the worklist's own filters, checked while it lives
   S.data = { _stats: {} }; S.stats = { distinct_strings: 6, total_rows: 6 }; S.loading = false;
   S.groups = [grp("a", ["a1", "a2"], { rung: 1, acts_automatically: true }), grp("b", ["b1"]), grp("c", ["c1"]), grp("d", ["d1"]),
     grp("n", ["n1"], { official_id: "AJ 110", title_divergent: true })];
@@ -222,7 +223,7 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
   check("the filter row counts the two new lists", /No rule or decision \(2\)/.test(chipText) && /Name to check \(1\)/.test(chipText));
   const views = Array.from(w.document.querySelectorAll("button.crr-view"));
   // S542 added the List after the Worklist (the Catalog Commons' shared List, commons_list.js).
-  check("the view row: Progress, then Worklist pressed, then List", views.map(txt).join(",") === "Progress,Worklist,List"
+  check("the view row: Progress, then Worklist (pressed here), then List", views.map(txt).join(",") === "Progress,Worklist,List"
     && views[1].getAttribute("aria-pressed") === "true" && views[0].getAttribute("aria-pressed") === "false"
     && views[2].getAttribute("aria-pressed") === "false");
   const w1 = tab("");
@@ -235,7 +236,7 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
   const w2 = tab("#cr-reference/progress");
   check("#cr-reference/progress opens the Progress view", w2.CPL_CR_REFERENCE._route() && w2.CPL_CR_REFERENCE._state.view === "progress");
   const w3 = tab("#cr-reference/nope");
-  check("an unknown word leaves the tab where it opens", !w3.CPL_CR_REFERENCE._route() && w3.CPL_CR_REFERENCE._state.view === "worklist"
+  check("an unknown word leaves the tab where it opens, on the List", !w3.CPL_CR_REFERENCE._route() && w3.CPL_CR_REFERENCE._state.view === "list"
     && w3.CPL_CR_REFERENCE._state.filter === "todo");
   check("the live count is withheld when no one is signed in", w.CPL_CR_REFERENCE._progressApi().liveDecided === null);
 

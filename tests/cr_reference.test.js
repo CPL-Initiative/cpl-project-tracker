@@ -196,6 +196,9 @@ function seed(w, opts) {
   S.decisions = opts.decisions || {};
   S.decisionsStale = !!opts.stale;
   S.filter = opts.filter || "todo";
+  // The List is the tab's default view since 2026-11-04; these checks exercise the worklist until it retires and its
+  // checks are ported onto the List (handoff, open work).
+  S.view = "worklist";
   return S;
 }
 

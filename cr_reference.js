@@ -57,7 +57,7 @@
     decisionsStale: false,  // the READ failed — the map is last-known-good, NOT the truth
     loadedSignedIn: false,
     loading: false, error: null,
-    view: "worklist",       // or "progress" (S437): the Commons' dash for this reference, or "list" (S542)
+    view: "list",           // the List (S542), the tab's workspace since 2026-11-04; or "progress" (S437), or "worklist" until it retires
     ls: null,               // the List view's state; a new visit drops it (tabs never remember a filter)
     filter: "todo", q: "",
     open: {},               // group_key -> true. Lives HERE, not in the DOM:
@@ -1013,7 +1013,8 @@
           + "this is a failed read, not an empty list. Reload to try again." }));
         return true;
       },
-      filters: [["", "All"], ["todo", "Needs a decision"], ["suggested", "Suggested groups"], ["done", "Decided"],
+      filters: [["", "All"], ["todo", "Needs a decision"], ["suggested", "Suggested groups"], ["auto", "Folded by a rule"],
+        ["held", "Held by a screen"], ["done", "Decided"],
         ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"], ["flagged", "Your flags"],
         ["selected", "Selected"], ["changed", "Changed this visit"]],
       flag: { get: listFlagOf, set: listSetFlag },
@@ -1021,6 +1022,9 @@
         var g = r.g, d = decidedState(g);
         if (L.f === "flagged") return !!listFlagOf(r);
         if (L.f === "todo") return needsDecision(g) && !d;
+        // The worklist's two lists the Progress view's counts open (a rule's folds; a group a safety screen holds).
+        if (L.f === "auto") return g.acts_automatically && needsDecision(g);
+        if (L.f === "held") return (g.screens_objecting || []).length > 0;
         if (L.f === "done") return !!d;
         if (L.f === "solo") return !needsDecision(g);
         if (L.f === "open") return isOpen(g, listNamedMemo || (listNamedMemo = curatorNamed()));
@@ -1121,7 +1125,7 @@
         L.cmLoading = false; L.cmRead = true; if (state.view === "list") render();
       });
     }
-    var filters = { todo: 1, suggested: 1, done: 1, open: 1, names: 1, solo: 1, flagged: 1, changed: 1 };
+    var filters = { todo: 1, suggested: 1, auto: 1, held: 1, done: 1, open: 1, names: 1, solo: 1, flagged: 1, changed: 1 };
     var folded = !!L.dashFolded;
     wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "crl-fold",
       onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
@@ -1241,6 +1245,11 @@
     out.push(status);
     var more = [];
     more.push(h.el("p", null, ["Rung: " + rung.label + ". " + (g.rung_why || rung.why)]));
+    // The worklist's warning, carried over: an official number whose title shares no word with the wordings is proposed,
+    // never applied, so a curator confirms it only if it is the same recommendation.
+    if (g.official_id && !g.official_applied && g.title_divergent) out.splice(2, 0, h.el("p", { cls: "crr-warn crl-pn-warn", text: (g.official_system || "C-ID") + " "
+      + g.official_id + " reaches this group but is not applied: its official title, " + (g.official_title || "untitled") + ", shares no word with the wordings, "
+      + "and it arrives through the course pairing. Confirm it only if it is the same recommendation." }));
     if (g.official_id) more.push(h.el("p", null, [(g.official_applied ? "Named by its " : "An official title reaches it but was not applied: ")
       + (g.official_system || "") + " " + g.official_id + (g.official_title ? ", " + g.official_title : "") + "."]));
     var screens = Object.keys(m.screens || {}).filter(function (k) { return m.screens[k]; });
@@ -1281,8 +1290,11 @@
     state.view = v === "progress" || v === "list" ? v : "worklist";
     render();
   }
+  /* A count opens the List on the filter that lists it (the List is the workspace; the worklist retires): "all" is the
+     List's All. The worklist keeps its own filter for a reader who opens it. */
   function setFilter(f) {
-    state.view = "worklist"; state.filter = f; state.limit = 60;
+    var L = listState();
+    state.view = "list"; state.filter = f; L.f = f === "all" ? "" : f; L.q = ""; L.limit = (window.CPL_COMMONS_LIST && window.CPL_COMMONS_LIST.LIMIT) || L.limit;
     render();
     var root = document.getElementById("cr-reference-root");
     if (root && root.scrollIntoView) root.scrollIntoView({ block: "start" });
@@ -1326,7 +1338,9 @@
     if (parts[0] !== "cr-reference" || !parts[1]) return false;
     if (parts[1] === "progress" || parts[1] === "worklist" || parts[1] === "list") { state.view = parts[1]; return true; }
     if (FILTERS.indexOf(parts[1]) < 0) return false;
-    state.view = "worklist"; state.filter = parts[1]; state.limit = 60;
+    // A filter's address opens the List on it (the Commons row's issues link here); #cr-reference/worklist keeps the worklist.
+    var L = listState();
+    state.view = "list"; state.filter = parts[1]; state.limit = 60; L.f = parts[1] === "all" ? "" : parts[1]; L.q = "";
     return true;
   }
   var hashWired = false;
