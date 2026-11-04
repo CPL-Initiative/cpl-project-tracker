@@ -35,16 +35,21 @@ bytes, and the commits since `session_565` (its checkpoint trigger).
   Progress's Commons reads through `CPL_COMMONS_LIST.readCommons` (`tests/commons_one_reader.test.js`); the CR wording
   panel does what the worklist's group card did (Split out, Put back, Name the group by it, Add a wording, the note
   with Defer, Clear). The engine's `h.table` takes a fixed column of controls.
-- **#2748**: the CR List opens first; Progress counts and `#cr-reference/<filter>` open it, with *Folded by a rule* and
+- **#2748** (merged): the CR List opens first; Progress counts and `#cr-reference/<filter>` open it, with *Folded by a rule* and
   *Held by a screen*; the official-title warning rides in the panel; `#cr-reference/worklist` keeps the worklist.
+
+- **This PR**: the worklist's Part B guards ported onto the List (`tests/cr_list_worklist_port.test.js`, 16), and a
+  *Decided by* column on the CR List.
 
 ## Open work, in order
 
-1. **Merge the CR List-first PR** once `test` passes on its head (#2746 and #2747 merged).
-2. **The original views retire as each List does what they do**, one PR each, tests ported first: CR's worklist is
-   one word away now (the List opens first and does what it did); retire it by porting `tests/cr_reference.test.js`
-   Part B (B1 to B17: the decisions-read warning, signed out, the 200-with-empty-body failure, who decided, the CSV
-   columns) and Part D's control CSS onto the List, then delete the worklist's render; then Subjects' Reference
+1. **Merge the worklist-port PR** once `test` passes on its head (#2746, #2747 and #2748 merged).
+2. **The original views retire as each List does what they do**, one PR each, tests ported first. **CR's worklist is
+   ready to delete:** the List opens first and does what it did, and `tests/cr_list_worklist_port.test.js` carries
+   Part B (B1 to B16) onto the List, with a *Decided by* column for the CSV's who-and-when. Delete the worklist's render
+   (`groupCard`, its picker and `wire`'s worklist handlers, the worklist view word, `#cr-reference/worklist`), then
+   Part B of `tests/cr_reference.test.js` and Part D (the worklist's own control CSS; the engine's control rules
+   cover the List). Keep Parts A and C (the builder's data). Then Subjects' Reference
    view (its toolbar filters, the SUBJ check modal), then Programs' and Courses' older views. Check what only the
    view still has and carry it into the panel first.
 3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
