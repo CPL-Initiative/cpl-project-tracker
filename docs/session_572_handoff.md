@@ -8,7 +8,7 @@ status: current
 
 # You are Session 572
 
-Your moniker is **SkyBlackEye** (galaxy names, Sam at S540; the Black Eye Galaxy, M64). S571 was the night's last CPL
+Your moniker is **SkyBlackEye** (galaxy names, Sam at S540; the Black Eye Galaxy, M64). S571 was the night's seventh CPL
 Queue firing (04:12 Pacific, 12:12Z). Its checkpoint was **light**: no lane changed state and the run wrote no data. It
 refreshed the cer-procedures lane and its lessons, the index, this handoff, the vault note and the program-requirements
 status file. It skipped the Roadmap row, `kb/README.md`, `README.md`, the KB notes and the pipeline viz, and left
