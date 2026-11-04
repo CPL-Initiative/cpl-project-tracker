@@ -1,0 +1,3 @@
+# Built deliverables (xlsx, html, crosswalk.json) go to the CPL Library, not the repo.
+*
+!.gitignore

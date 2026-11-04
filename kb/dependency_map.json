@@ -4,9 +4,9 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 782,
-  "external_services": 192,
-  "consumers": 512,
+  "file_datasets": 783,
+  "external_services": 193,
+  "consumers": 515,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -890,6 +890,25 @@
    ],
    "main_committers": []
   },
+  "external:coci2.ccctechcenter.net": {
+   "consumers": [
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 21
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_workbook.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 25
+    }
+   ],
+   "main_committers": []
+  },
   "external:code.claude.com": {
    "consumers": [
     {
@@ -1727,6 +1746,13 @@
      "line": 698
     },
     {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 132
+    },
+    {
      "id": "script:kb/_write_openclassrooms_html.py",
      "kind": "script",
      "direction": "read",
@@ -1793,6 +1819,13 @@
      "direction": "read",
      "how": "url",
      "line": 479
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 133
     },
     {
      "id": "script:kb/_write_openclassrooms_html.py",
@@ -2287,6 +2320,20 @@
      "direction": "read",
      "how": "url",
      "line": 4
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 22
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_workbook.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     },
     {
      "id": "script:tools/source_cpl_stories.mjs",
@@ -5367,6 +5414,13 @@
      "line": 163
     },
     {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 318
+    },
+    {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5401,6 +5455,13 @@
      "tabs": [
       "coci-lookup"
      ]
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 321
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -5581,6 +5642,13 @@
      "direction": "read",
      "how": "literal",
      "line": 225
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 477
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -14912,6 +14980,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/openclassrooms_ma_ace_recs.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 396
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/openclassrooms_map_ace_recs.json": {
    "consumers": [
     {
@@ -15235,6 +15316,13 @@
   },
   "file:kb/program_requirements_pilot/registry_read.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 292
+    },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
@@ -15709,6 +15797,13 @@
      "direction": "read",
      "how": "literal",
      "line": 47
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 314
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -16778,6 +16873,13 @@
      "line": 64
     },
     {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 295
+    },
+    {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -16846,6 +16948,13 @@
   },
   "file:kb/reference/swp_region_roster.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 217
+    },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
@@ -20342,6 +20451,13 @@
      "direction": "read",
      "how": "literal",
      "line": 306
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
