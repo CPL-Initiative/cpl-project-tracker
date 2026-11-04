@@ -12411,6 +12411,28 @@
     titleEditing: null, // id of the section whose TITLE is being renamed, else null
     titleDraft: {},     // the same draft-preservation for a rename in flight
   };
+  // The view a sign-in link returns to (cpl_session.js viewAddress); the address arriveView() opens. The
+  // sub-tabs (2026-28 Funding, 2025-26 Funding, Report) and the View control's Public page are the views. The
+  // Public page draws funding-model/ in place of every sub-tab, so it is one word of its own. 2026-28 Funding on
+  // the Internal view is the first view, so it reports the bare tab. A public page has no COBI address.
+  var FUND_VIEWS = { model: 1, grants: 1, report: 1 };
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("implementation-funding", function () {
+    if (window.CPL_FUNDING_PUBLIC || window.CPL_FUNDING_EMBED === "college") return "implementation-funding";
+    if (state.previewPublic) return "implementation-funding/public";
+    return state.subview === "grants" || state.subview === "report" ? "implementation-funding/" + state.subview : "implementation-funding";
+  });
+  // #implementation-funding/<model|grants|report|public> opens that view on the Internal view (public: the Public
+  // page). A bare address, or a word the tab does not know, changes nothing, so ?fundview=public still opens the
+  // Public page. Never on a public page. Returns whether the address named a view.
+  function arriveView() {
+    if (window.CPL_FUNDING_PUBLIC || window.CPL_FUNDING_EMBED === "college") return false;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("implementation-funding") : null;
+    if (!a) return false;
+    if (a[0] === "public") { state.previewPublic = true; return true; }
+    if (!FUND_VIEWS[a[0]]) return false;
+    state.subview = a[0]; state.previewPublic = false;
+    return true;
+  }
 
   // ── collapsible sections (Sam, 2026-07-27) ────────────────────────────────
   // Each top-level tab section is a native <details> whose <summary> IS its h3.
@@ -18853,6 +18875,12 @@
   function boot() {
     if (booted) { render(); return; }
     booted = true;
+    // The view the address names, on the first visit, and on a later one by its own listener (tabs.js fires
+    // onActivate once). The CSM Workspace boots this module from its own tab, where the address names no view here.
+    arriveView();
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (e && e.detail && e.detail.tab === "implementation-funding" && arriveView()) render();
+    });
     // Re-measure the frozen-row pins when the window changes size or zoom —
     // registered ONCE here, behind the booted guard, so re-boots never stack
     // listeners.

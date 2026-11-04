@@ -1038,6 +1038,33 @@
     render();
   }
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. A TMC's
+     builder reports its catalog id (stable: the ASCCC template's slug, or the UC pathway's), the directory its Show
+     word. The default Show (this college's approved ADTs) reports the bare tab. */
+  var SHOW_WORDS = ["all", "adt-yes", "adt-no", "official", "draft", "requested"];
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("tmc-builder", function () {
+    if (state.statusFilter !== "requested" && state.view === "detail" && state.tmc && state.tmc.id) return "tmc-builder/tmc/" + encodeURIComponent(state.tmc.id);
+    return state.statusFilter && state.statusFilter !== "adt-yes" ? "tmc-builder/" + state.statusFilter : "tmc-builder";
+  });
+  /* #tmc-builder/<show> opens the directory on that Show word; #tmc-builder/tmc/<id> opens that TMC once the
+     catalog has loaded (a UC pathway id waits for the ADT overlay that lists it). A bare address, or a word or id the
+     tab does not know, changes nothing: the first visit keeps the default directory, a later one what it showed. */
+  var arrivalTmc = "";
+  function arrive() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("tmc-builder") : null;
+    if (!a || !a[0]) return false;
+    if (a[0] === "tmc" && a[1]) { arrivalTmc = a[1]; return true; }
+    if (SHOW_WORDS.indexOf(a[0]) < 0) return false;
+    state.statusFilter = a[0]; state.view = "list"; state.tmc = null;
+    return true;
+  }
+  function openArrivalTmc() {
+    if (!arrivalTmc || !findCatalog(arrivalTmc)) return false;
+    var id = arrivalTmc; arrivalTmc = "";
+    openTmc(id);
+    return true;
+  }
+
   // The prominent per-college (or statewide) ADT-status banner under a TMC's
   // header. null until the COCI overlay has lazy-loaded (avoids a misleading
   // "not established" flash before the data arrives).
@@ -2144,12 +2171,19 @@
       if (a) renderAuthInto(a);
       renderBody();
     });
+    arrive();
+    // A later visit by an address that names a view (a link, or a hash typed in) opens it; tabs.js fires
+    // onActivate once, so the module hears each later visit itself.
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (!(e && e.detail && e.detail.tab === "tmc-builder") || !arrive()) return;
+      if (!openArrivalTmc()) render();
+    });
     render(); // shell + (empty) selectors immediately
     restoreSession(function () { var a = document.getElementById("tmc-auth"); if (a) renderAuthInto(a); });
     loadRequests();
     // lazy-load the TMC templates (small) then the per-college COCI index (big)
     ensureScript("tmc_templates.js", "CPL_TMC_TEMPLATES", function () {
-      render(); // TMC dropdown now populated
+      if (!openArrivalTmc()) render(); // TMC dropdown now populated (or the TMC its address names)
       loadCollegeCourses(function (ok) {
         state.loadedCourses = ok;
         render(); // college dropdown now populated
@@ -2165,6 +2199,7 @@
       // the overlay decides which directory rows show (default = approved ADTs) and
       // gates the approved-ADT title-fill — re-run it for an already-open TMC.
       if (state.view === "detail" && state.college && state.tmc) titleAutoFill();
+      if (openArrivalTmc()) return;   // a UC pathway named by the address is listed only here
       renderBody(); // directory gains the ADT column; detail gains the banner
     });
   }

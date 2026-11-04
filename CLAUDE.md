@@ -675,6 +675,11 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   the visit; a hand-off between tabs is read once and cleared. Column widths, the theme and
   section folds are not filters. The public funding page forgets its institution too
   (Sheet 111 card 2, reversing his call 9).
+- **Every view has an address (asked in session, 2026-11-04: *"make that fix on all COBI views"*).**
+  A view a person switches to inside a tab opens from `#<tab>/<view>` (`CPL_SESSION.arrival`) and
+  reports what is on screen (`CPL_SESSION.viewAddress`), so an emailed sign-in link returns to it.
+  The address is the only carrier; nothing is stored. A new tab with views joins the list in
+  `tests/every_view_has_an_address.test.js`.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
 

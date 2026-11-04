@@ -48,10 +48,17 @@ const SRC = fs.readFileSync("map_team_queue.js", "utf8");
 function makeWin(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><body><div id="map-queue-root"></div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || ""), runScripts: "dangerously" });
   const w = dom.window;
+  if (opts.session) {
+    const bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }; };
+    Object.defineProperty(w, "localStorage", { value: bag(), configurable: true });
+    Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
+  }
   if (opts.teamPass) w.localStorage.setItem("cpl_team_pass", opts.teamPass);
   w.fetch = function () { return new Promise(function () {}); };
+  // The keeper (cpl_session.js) first, as the page loads it: arrival() and viewAddress() live there.
+  if (opts.session) w.eval(fs.readFileSync("cpl_session.js", "utf8"));
   // Shared phrase helper first — production ships both, and the locked state
   // renders its banner (with a working input) rather than the bare fallback.
   const tp = w.document.createElement("script");
@@ -257,6 +264,41 @@ function byId(items) {
     /Measured/.test(r2.innerHTML) && /Hand-tracked/.test(r2.innerHTML));
   check("signed in: 'someone is waiting' badge appears on person items",
     /someone is waiting/.test(r2.innerHTML));
+})();
+
+// every view has an address (2026-11-04): #map-queue/clear shows the cleared items
+(function () {
+  const ask = (w) => { w.CPL_SESSION.stashReturnTab("map-queue"); return (JSON.parse(w.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; };
+  function open(hash) {
+    const w = makeWin({ teamPass: "p", session: true, hash: hash });
+    const API = w.CPL_MAP_QUEUE;
+    API._state.items = API._buildQueue(Object.assign({}, FULL, { collegeItems: [] }), NOW);
+    API._state.loadedSignedIn = true;
+    API.activate();
+    return w;
+  }
+  const box = (w) => w.document.querySelector("#map-queue-root [data-showclear]");
+  const clearShown = (w) => w.document.querySelectorAll("#map-queue-root .mtq-item.clear").length > 0;
+  const a = open("#map-queue/clear");
+  check("address 1: #map-queue/clear opens with the cleared items shown", box(a) && box(a).checked && clearShown(a));
+  check("address 2: the view reports map-queue/clear", ask(a) === "map-queue/clear");
+  box(a).checked = false; box(a).dispatchEvent(new a.Event("change"));
+  check("address 3: unticked, it reports the bare map-queue", ask(a) === "map-queue" && !clearShown(a));
+  box(a).checked = true; box(a).dispatchEvent(new a.Event("change"));
+  a.history.replaceState(null, "", "#map-queue");
+  a.dispatchEvent(new a.CustomEvent("cpl-tab-activated", { detail: { tab: "map-queue" } }));
+  check("address 4: an unlock's re-fire keeps the box as it was", box(a).checked && ask(a) === "map-queue/clear");
+  const b = open("#map-queue");
+  check("address 5: the bare #map-queue opens with cleared items hidden, as before", box(b) && !box(b).checked && !clearShown(b) && ask(b) === "map-queue");
+  b.dispatchEvent(new b.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
+  b.history.replaceState(null, "", "#map-queue/clear");
+  b.dispatchEvent(new b.CustomEvent("cpl-tab-activated", { detail: { tab: "map-queue" } }));
+  check("address 6: a later visit on #map-queue/clear ticks it", box(b).checked && clearShown(b));
+  const c = open("#map-queue/nonsense");
+  check("address 7: an unknown word leaves the default", !box(c).checked);
+  check("address 8: nothing about the view is stored",
+    !Object.keys(c.localStorage).some((k) => !/^(cpl_sb_return_tab|cpl_team_pass)$/.test(k) && /clear|view|queue/i.test(k)));
+  [a, b, c].forEach((w) => w.close());   // the keeper's refresh timer would keep node running
 })();
 
 // (h) XSS — names arrive from Supabase and committed JSON, both untrusted here

@@ -486,6 +486,25 @@
 
   var state = { items: null, loading: false, error: null, loadedSignedIn: false, showClear: false };
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens.
+     The one switch on the page shows the cleared items beside the waiting ones: #map-queue/clear. Off is the bare
+     #map-queue, as the side menu writes it. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("map-queue", function () {
+    return state.showClear ? "map-queue/clear" : "map-queue";
+  });
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a box ticked since stays. A bare address
+     changes nothing: the first visit opens with cleared items hidden, a later one as the box was left. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "map-queue") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-queue") : null;
+    if (a && a[0] === "clear") state.showClear = true;
+  }
+
   function loadAll() {
     return Promise.all([
       jget(REST + "/map_contact_gaps?select=college,college_kind,primary_contact_email,"
@@ -725,6 +744,7 @@
   function activate() {
     var root = document.getElementById("map-queue-root");
     if (!root) return;
+    arrive();
     // Re-measure when the sign-in state changed since the last load — otherwise
     // signing in after opening the tab leaves the gate on screen forever.
     if (state.items && state.loadedSignedIn === signedIn()) { render(root); return; }

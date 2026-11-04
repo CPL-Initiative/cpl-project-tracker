@@ -520,6 +520,26 @@
   var state = { areas: [], areaId: null, revisions: [], artifacts: [], memos: [], memoSections: [], filters: null,
                failed: { revisions: false, artifacts: false, cross: false, memos: false, memoSections: false } };
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address load() opens.
+     gr-priorities (the first priority area) · gr-priorities/<area id> (the gr_areas key, encoded). The pathway
+     chips, status, section dropdowns and search filter the area's register and are not carried. */
+  var GR_TAB = "gr-priorities";
+  if (typeof window !== "undefined" && window.CPL_SESSION && window.CPL_SESSION.viewAddress) window.CPL_SESSION.viewAddress(GR_TAB, function () {
+    var first = state.areas && state.areas[0] && state.areas[0].id;
+    return state.areaId && state.areaId !== first ? GR_TAB + "/" + encodeURIComponent(state.areaId) : GR_TAB;
+  });
+  /* The area an address names, waiting for the area list it is checked against. The address this visit already
+     opened is kept, so a phrase unlock re-firing cpl-tab-activated on it keeps an area picked since. */
+  var pendingArea = null, arrivedFrom = null;
+  function arrive() {
+    var h = "";
+    try { h = String(location.hash || ""); } catch (e) { return; }
+    if (h === arrivedFrom) return;
+    arrivedFrom = h;
+    var a = window.CPL_SESSION && window.CPL_SESSION.arrival ? window.CPL_SESSION.arrival(GR_TAB) : null;
+    pendingArea = a && a[0] ? a[0] : null;
+  }
+
   function loadAreas() {
     return getJson(REST + "/gr_areas?select=*&status=eq.active&order=sort.asc,title.asc");
   }
@@ -3004,6 +3024,9 @@
         root.appendChild(w);
         return;
       }
+      // The area the address names wins when the list holds it; an unknown one leaves the area as it is.
+      if (pendingArea && areas.some(function (a) { return a.id === pendingArea; })) state.areaId = pendingArea;
+      pendingArea = null;
       if (!state.areaId || !areas.some(function (a) { return a.id === state.areaId; })) {
         state.areaId = areas[0].id;
       }
@@ -3034,8 +3057,22 @@
     ensureCss();
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
+    activated = true;
+    arrive();
     load(root);
   }
+  /* The shell's onActivate boots this tab once, so a later visit by an address (or another tab's link to an area)
+     is read here. Before the first activate() it does nothing; that call reads the address itself. Visiting another
+     tab ends the visit. */
+  var activated = false;
+  if (typeof window !== "undefined" && window.addEventListener) window.addEventListener("cpl-tab-activated", function (e) {
+    if (!(e && e.detail)) return;
+    if (e.detail.tab !== GR_TAB) { arrivedFrom = null; return; }
+    if (!activated) return;
+    var before = arrivedFrom;
+    arrive();
+    if (pendingArea && arrivedFrom !== before) { var root = document.getElementById(ROOT_ID); if (root) load(root); }
+  });
 
   var api = {
     activate: activate,

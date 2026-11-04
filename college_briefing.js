@@ -181,6 +181,67 @@
     oppsCip: ""
   };
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens.
+     college-briefing (the scope question) · college-briefing/<college|district|swp|statewide> (the scope, before its
+     second pick) · college-briefing/college/<college> · college-briefing/district/<district> ·
+     college-briefing/swp/<region code>, each name encoded. A college picked under a district or region narrowing
+     returns as the college alone. The address is the only carrier: nothing here is stored (Sam, 2026-10-21). */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("college-briefing", function () {
+    var s = state.scope;
+    if (!s && state.college) s = "college";
+    if (!s) return "college-briefing";
+    var name = s === "college" ? state.college : s === "district" ? state.district : s === "swp" ? state.swpRegion : "";
+    return "college-briefing/" + s + (name ? "/" + encodeURIComponent(name) : "");
+  });
+  /* The scope an address names, waiting for the lists its name is checked against (the colleges, the district
+     roster, the consortium roster). Held in memory for this visit only. */
+  var pendingArrival = null;
+  /* The address this visit already opened. A phrase unlock or a sign-out re-fires cpl-tab-activated on the same
+     address, and opening it again would undo a college picked since; visiting another tab ends the visit. */
+  var arrivedFrom = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== "college-briefing") arrivedFrom = null;
+  });
+  function arrive() {
+    var h = String(location.hash || "");
+    if (h === arrivedFrom) return false;
+    arrivedFrom = h;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("college-briefing") : null;
+    var known = a && SCOPES.some(function (s) { return s.k === a[0] && s.ready; });
+    pendingArrival = known ? { scope: a[0], name: a[1] || "" } : null;
+    return !!pendingArrival;
+  }
+  /* Opens the pending scope once its list is read: a name the list does not hold opens the scope's own question,
+     which is where a stale link should land. Draws into the tab's own root, never a CPL Pathways host (the roster
+     may have been asked for by one). True when it drew; false while a list the name needs is still loading. */
+  function ownRoot() { return document.getElementById("college-briefing-root"); }
+  function applyArrival() {
+    var p = pendingArrival, root = ownRoot();
+    if (!p || !root || state.loading) return false;
+    var dataDone = !!state.data || !!state.error;
+    if (p.scope === "college" && p.name && !dataDone) return false;
+    if (p.scope === "district" && p.name && (!dataDone || state.roster === "idle" || state.roster === "loading")) return false;
+    if (p.scope === "swp" && p.name && (state.swp === "idle" || state.swp === "loading")) return false;
+    pendingArrival = null;
+    var name = "";
+    if (p.scope === "college" && p.name) {
+      var k = choiceKey(p.name), names = (state.data && state.data.colleges) || [];
+      for (var i = 0; i < names.length; i++) if (choiceKey(names[i]) === k) { name = names[i]; break; }
+    } else if (p.scope === "district" && p.name) {
+      var dIdx = districtIndex((state.data && state.data.colleges) || []);
+      if (dIdx && dIdx[p.name]) name = p.name;
+    } else if (p.scope === "swp" && p.name) {
+      if (swpColleges(p.name).length) name = p.name;
+    }
+    // The address replaces any earlier pick and narrowing, as a shared choice does.
+    state.college = null; state.detail = null; state.detailFor = null; state.detailError = null;
+    state.district = p.scope === "district" ? name : "";
+    state.swpRegion = p.scope === "swp" ? name : "";
+    if (p.scope === "college" && name) { state.scope = "college"; selectCollege(name, root); }
+    else setScope(p.scope, root);
+    return true;
+  }
+
   // MAP's six CPL types, in the order a coordinator thinks about them, with the
   // plain-language name beside MAP's own. Apprenticeship is deliberately NOT
   // here: MAP has no such type, so a type filter returns 0 and reads as "we do
@@ -4084,7 +4145,8 @@
     state.roster = "loading";
     loadScript("cpl_funding_data.js", "CPL_FUNDING", function () {
       state.roster = window.CPL_FUNDING ? "ready" : "error";
-      if (root) render(root);
+      // A district the address names waits on this roster (applyArrival draws the tab's own root).
+      if (!(applyArrival() && root === ownRoot()) && root) render(root);
     });
   }
 
@@ -4098,7 +4160,7 @@
       var D = window.CPL_SWP_REGIONS;
       state.swpData = (D && D.regions) ? D : null;
       state.swp = state.swpData ? "ready" : "error";
-      if (root) render(root);
+      if (!(applyArrival() && root === ownRoot()) && root) render(root);
     });
   }
 
@@ -5004,7 +5066,15 @@
     if (!root) return;
     if (state.scope === null) restoreScope();
     wireSharedChoice();
-    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); applySharedChoice(root); return; }
+    /* The scope the address names (#college-briefing/college/<name>) opens once its list is read, on the first
+       visit and a later one. It wins over a college another tab shared, which is marked seen. A bare
+       #college-briefing leaves the tab as it is. */
+    if (arrive()) shareSeen = window.CPL_COLLEGE_CHOICE || null;
+    if (state.data && state.loadedSignedIn === signedIn()) {
+      loadRoster(root); loadSwp(root); loadLive(root);
+      if (!applyArrival()) render(root);
+      applySharedChoice(root); return;
+    }
     // No sign-in branch: a public reader loads the `_pub` mirrors through
     // sources(). `loadedSignedIn` above is what reloads from the OTHER source
     // when a reader signs in or out mid-session.
@@ -5016,10 +5086,12 @@
     loadSwp(root);
     loadLive(root);
     loadAll().then(function () {
-      state.loading = false; state.loadedSignedIn = signedIn(); render(root);
+      state.loading = false; state.loadedSignedIn = signedIn();
+      if (!applyArrival()) render(root);
       applySharedChoice(root);
     }).catch(function (e) {
-      state.loading = false; state.error = String(e && e.message || e); state.loadedSignedIn = signedIn(); render(root);
+      state.loading = false; state.error = String(e && e.message || e); state.loadedSignedIn = signedIn();
+      if (!applyArrival()) render(root);
     });
   }
 

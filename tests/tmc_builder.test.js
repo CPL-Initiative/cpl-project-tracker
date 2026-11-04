@@ -228,6 +228,57 @@ function rowFor(re) { return Array.prototype.filter.call(listRows(), (r) => re.t
   const queue = document.querySelector("#tab-tmc-builder .tmc-reqlist");
   check("'New requests' filter renders the CO-review queue", queue && /Test College/.test(txt(queue)));
 
+  // ── Every view has an address (a sign-in link opens a new browser tab, so only the address survives) ──
+  // A fresh window per address, the real keeper (cpl_session.js) loaded first, the same mock data.
+  const SESSION_SRC = fs.readFileSync("cpl_session.js", "utf8");
+  function bootAt(hash) {
+    const d = new JSDOM(html, { runScripts: "outside-only", url: "https://example.org/index.html" + hash });
+    const w = d.window, bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }; };
+    Object.defineProperty(w, "localStorage", { value: bag(), configurable: true });
+    Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
+    w.fetch = window.fetch;
+    w.eval(SESSION_SRC);
+    w.CPL_TMC_TEMPLATES = window.CPL_TMC_TEMPLATES;
+    w.CPL_TMC_COLLEGE_COURSES = window.CPL_TMC_COLLEGE_COURSES;
+    w.eval(builderSrc);
+    w.CPL_TMC_BUILDER.boot();
+    const stash = () => { w.CPL_SESSION.stashReturnTab("tmc-builder"); return JSON.parse(w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab; };
+    return { w, d: w.document, S: w.CPL_TMC_BUILDER._state, stash };
+  }
+  {
+    const a = bootAt("#tmc-builder/official");
+    await sleep(0);
+    check("address: #tmc-builder/official opens the directory on Official", a.S.statusFilter === "official" &&
+      a.d.getElementById("tmc-status-filter").value === "official" && a.d.querySelectorAll(".tmc-listrow").length === 1);
+    check("address: the directory reports its Show word", a.stash() === "tmc-builder/official");
+    a.d.querySelector(".tmc-listrow").click();
+    await sleep(0);
+    check("address: an open TMC reports its catalog id (the address still says official)",
+      a.stash() === "tmc-builder/tmc/test-official" && a.w.location.hash === "#tmc-builder/official");
+    a.w.location.hash = "#tmc-builder/requested";
+    a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "tmc-builder" } }));
+    await sleep(0);
+    check("address: a later visit by an address opens its view", a.S.statusFilter === "requested" && !!a.d.querySelector(".tmc-reqlist") &&
+      a.stash() === "tmc-builder/requested");
+  }
+  {
+    const b = bootAt("#tmc-builder/tmc/test-psych");
+    await sleep(0);
+    check("address: #tmc-builder/tmc/<id> opens that TMC's builder", b.S.view === "detail" && b.S.tmc && b.S.tmc.id === "test-psych" &&
+      b.d.querySelectorAll(".tmc-section").length === 2);
+    b.d.querySelector(".tmc-back").click();
+    await sleep(0);
+    check("address: back on the default directory reports the bare tab", b.stash() === "tmc-builder");
+  }
+  {
+    const c = bootAt("#tmc-builder");
+    await sleep(0);
+    check("address: a bare #tmc-builder opens the default directory", c.S.view === "list" && c.S.statusFilter === "adt-yes" && c.d.querySelectorAll(".tmc-listrow").length === 2);
+    const u = bootAt("#tmc-builder/tmc/no-such-tmc");
+    await sleep(0);
+    check("address: an unknown id leaves the directory", u.S.view === "list" && u.d.querySelectorAll(".tmc-listrow").length === 2);
+  }
+
   check("no unhandled promise rejections", rejections.length === 0);
 
   let pass = 0;

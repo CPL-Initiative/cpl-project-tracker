@@ -253,6 +253,36 @@
     focusNext: null, focusHeld: null, focusFallback: null,
   };
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address activate() opens. The card views:
+     sierra-training (Still to do, the default) · sierra-training/down (Thumbs-down) · sierra-training/inuse
+     (Instructions in use pressed) · sierra-training/down/inuse. #sierra-training/todo opens the default too. The
+     dropdown filters are free and are not carried, so a list on them returns to Still to do. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("sierra-training", function () {
+    var parts = [];
+    if (fbViewIs(FB_VIEWS.down)) parts.push("down");
+    if (state.guidOnlyOn) parts.push("inuse");
+    return parts.length ? "sierra-training/" + parts.join("/") : "sierra-training";
+  });
+  /* The address this visit already opened. A phrase unlock or a sign-out re-fires cpl-tab-activated on the same
+     address, and opening it again would undo a card pressed since; visiting another tab ends the visit. */
+  var arrivedFrom = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== "sierra-training") arrivedFrom = null;
+  });
+  /* Opens the card views the address names; a bare #sierra-training, or a word the tab does not know, leaves the
+     view as it is. */
+  function arrive() {
+    var h = String(location.hash || "");
+    if (h === arrivedFrom) return;
+    arrivedFrom = h;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("sierra-training") : null;
+    if (!a) return;
+    var fb = FB_VIEWS[a[0]] ? a[0] : null, inuse = a.indexOf("inuse") >= 0;
+    if (!fb && !inuse) return;
+    setFbView(FB_VIEWS[fb || "todo"]);
+    state.guidOnlyOn = inuse;
+  }
+
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
   // so the tab can honestly mark which rules are actually reaching Sierra.
   //
@@ -3152,6 +3182,7 @@
     if (!root) return;
     // Arriving on the tab is not a change to announce; the next change is.
     lastSaid = null;
+    arrive();
     renderInto(root, !!(state.feedback || state.turns));
   }
 
