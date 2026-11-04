@@ -656,3 +656,62 @@ Progress view's `callAnswered` resolves a record. The machine stamps: Program Re
 read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
 last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
 older than a week reads stale.
+
+## Moved from the lane, 2026-11-04 (SkyJujube; the lane passed its 20,000-byte budget)
+
+The S417 record of the Commons tab's first build, verbatim. The Course row's *SkyView alone* ruling it records was reversed on 2026-11-04 (S574: the Courses List first, SkyView beside it).
+
+**LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
+live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the
+mock-up's row without its prose: five rows in his order, each with the complete pair and the test behind
+it, the known issues each naming an owner, the settled procedures, the calls in the run log and the two
+stamps. Every row collapses on its own word to its count and meter (19:08Z: *"Commons looks good. Just
+make sure I can collapse each and we have a collapse all button."*; 20:03Z: *"Keep the count and meter
+when collapsed."*), Collapse all folds the page, the words on a row move it, and the order and the fold
+stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
+`sam-approves-commons-mockup-collapse-2026-10-18` (verified).
+
+- **The machine side** is `kb/status/commons.json`, written daily by `kb/_build_commons_status.py`
+  (daily-dashboard.yml, after the builds it reads) from the committed files alone: Program Requirements
+  from `coci_programs_data.js` and the harvest's record files (the mock-up's own method); Exhibit from
+  `kb/unified_titles.json`, `kb/credentials.json`, the exhibit audit, the procedures run's `latest.json`,
+  the saving receipts and the fold report; Course from the auditor's `kb/row_audit/latest.json`,
+  `prototype/ccr_universe.json` and the stand-alone build; CR from `kb/cr_reference_worklist.json` and
+  the curator receipts under `kb/receipts/`; Subjects from `kb/discipline_canonical_subj4.json`. A figure
+  a source cannot supply is null beside its error and reads *Could not be read* (the S343 rule). Guard:
+  `tests/commons_status_build_test.py` (66 checks).
+- **The session side** is each project's run log, `kb/status/<project>.json`: today Program Requirements
+  alone has one, so four rows read *no run log*. The tab reads a run log's session stamp, next step and
+  calls as its last checkpoint left them. A call Sam answered on its sheet carries `answer` {by, at, words}: listed
+  with his words, counted answered (Sam, 2026-10-21: *"the open asks on The Commons doesn't seem to record that I
+  responded"*; #2329).
+- **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
+  `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
+  passes at both widths; UI pass ledger `cobi:commons`.
+- **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
+  right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
+  and every count on the row opens it. The Common Course Reference list left the COBI menu at 20:51Z through
+  `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
+  header; the run's receipt `kb/receipts/migration_cobi_nav_unified_courses_hidden_2026_10_18_s417_39165056506.json`;
+  the session's SQL guard holds an UPDATE for that path): `cobi_nav` row `unified-courses` is `hidden`, the `skyview`
+  launcher row kept. The tab and its list view stay reachable by deep link (`#unified-courses`,
+  `#unified-courses/list`) and the Admin tab can show the entry again.
+- The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
+  source `docs/visuals/2026-10-18-commons-mockup.html`).
+
+
+## SkyJujube, 2026-11-04: retiring the Common Course Reference tab (a side session)
+
+- **The inventory read what the module does at load.** `unified_courses.js` ran `consumeAuthHash()` as it loaded, for
+  every tab: the hidden Common Course Reference landed every COBI magic link, and deleting it would have ended
+  signing in. Its pointers (SkyView's three links, Quickstart, Subjects' *Fix on CCR*) were the expected part. The
+  landing moved into `cpl_session.js` first (#2775).
+- **Measured use sized the carry.** `kb_curation` by field, all time and the last 30 days, before porting anything:
+  merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1, description edits and merge notes never. Three edits carried
+  (#2776); the rest wait on Sam's call or retire with the tab.
+- **The List's panel is the Courses workspace for a common course,** reached from any of its local courses. The card
+  reads `unified_courses_data.js` the first time a panel opens (16,389 common courses in the browser file).
+- **A panel's sign-in fold must not be a direct-child `<details>`:** the engine places the Title drawer before the
+  first one, so the fold pulled the drawer into the common course. The screenshot showed it; jsdom passed.
+- **Every view has an address** (asked in session, 2026-11-04): a sign-in link opens a new browser tab, so only the
+  address carries the view back. 27 tabs now open the view their address names and report it (#2775, #2779).

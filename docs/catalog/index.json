@@ -13721,7 +13721,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 97,
+   "count": 98,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14127,6 +14127,24 @@
       "atomic-land"
      ],
      "title": "CourseControlNumber Re-mint \u2014 Decisions & Lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "path": "docs/courses_retirement_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "commons-list",
+      "courses-list",
+      "ccr",
+      "signin",
+      "views"
+     ],
+     "title": "Courses retirement handoff: the old Common Course Reference tab into the Courses List (SkyJujube)",
      "type": null,
      "updated": ""
     },
@@ -25776,5 +25794,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1377
+ "total": 1378
 }
