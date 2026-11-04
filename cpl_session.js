@@ -401,6 +401,17 @@
     } catch (e) { /* no location — keep the tab */ }
     return tab;
   }
+  /* The view part of the address, read by a tab as a visit starts: on #csm-workspace/due, arrival("csm-workspace")
+   * returns ["due"]; on any other address, null. With viewAddress it makes the pair every view keeps (CLAUDE.md,
+   * Engineering & UI practices): the tab opens the view its address names, and reports the view it shows, so a
+   * sign-in link returns to it. Only the address carries a view; nothing is stored. */
+  function arrival(tab) {
+    try {
+      var h = String(location.hash || "").replace(/^#/, "");
+      if (!tab || h.indexOf(tab + "/") !== 0 || h.indexOf("access_token") >= 0) return null;
+      return h.slice(tab.length + 1).split("/").map(function (x) { try { return decodeURIComponent(x); } catch (e) { return x; } });
+    } catch (e) { return null; }
+  }
   function stashReturnTab(tab) {
     if (!tab) return;
     tab = viewOf(String(tab));
@@ -520,6 +531,7 @@
     // The tab a magic link brought this page back to, or null (read, never taken).
     returnedTo: function () { return returnedTo; },
     viewAddress: viewAddress,
+    arrival: arrival,
     consumeAuthHash: consumeAuthHash,
     _returnTtlMs: RETURN_TTL_MS,
     sync: sync,
