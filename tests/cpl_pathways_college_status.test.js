@@ -141,26 +141,29 @@ function restFor(byCollege, asked, hold) {
   w.CPL_PROGRAM_REQUIREMENTS = { goTo: (to) => went.push(to) };
   btns.forEach((b) => b.click());
   check("(d) a figure opens the Program Requirements tab", nav.length === 3 && nav.every((t) => t === "program-requirements"), nav);
-  check("(d) on the Records view, picked to the college, with its filter",
-    went.length === 3 && went.every((t) => t.view === "records" && t.rcollege === "College of Alameda" && t.sec === "records:find") &&
-    went.map((t) => t.rshow).join(",") === "complete,all,conflict", JSON.stringify(went));
+  check("(d) ⭐ on the List, its College filter set to the college, with its filter (S574)",
+    went.length === 3 && went.every((t) => t.view === "list" && t.rcollege === "College of Alameda") &&
+    went.map((t) => t.lf).join(",") === "pass,,conflict", JSON.stringify(went));
   // Not loaded yet: the request waits for that tab's first activation, which takes it once.
   delete w.CPL_PROGRAM_REQUIREMENTS;
   nav.length = 0;
   btns[2].click();
   check("(d) before that tab has loaded, the list waits as a request and the tab opens",
-    nav.join() === "program-requirements" && w.CPL_PROGRAM_REQUIREMENTS_GOTO && w.CPL_PROGRAM_REQUIREMENTS_GOTO.rshow === "conflict"
+    nav.join() === "program-requirements" && w.CPL_PROGRAM_REQUIREMENTS_GOTO && w.CPL_PROGRAM_REQUIREMENTS_GOTO.lf === "conflict"
     && w.CPL_PROGRAM_REQUIREMENTS_GOTO.rcollege === "College of Alameda");
   check("(d) and this tab never loads that tab's module", !/loadScript\("program_requirements\.js"/.test(SRC));
-  dp.window.CPL_PROGRAM_REQUIREMENTS_GOTO = { view: "records", rcollege: "College of Alameda", rshow: "conflict", sec: "records:find" };
+  dp.window.CPL_PROGRAM_REQUIREMENTS_GOTO = { view: "list", rcollege: "College of Alameda", lf: "conflict" };
   M.activate();
   check("(d) the Program Requirements tab takes the request on activation, once",
-    dp.window.CPL_PROGRAM_REQUIREMENTS_GOTO === null && M._state.view === "records" && M._state.rshow === "conflict"
-    && (M._state.pick || []).indexOf("College of Alameda") >= 0);
+    dp.window.CPL_PROGRAM_REQUIREMENTS_GOTO === null && M._state.view === "list" && (M._state.ls || {}).f === "conflict"
+    && (M._state.pick || []).join() === "College of Alameda");
+  // An older address (view "records") still opens the List.
+  M.goTo({ view: "records", rcollege: "College of Alameda", rshow: "complete", sec: "records:find" });
+  check("(d) an older Records address opens the List on its filter", M._state.view === "list" && (M._state.ls || {}).f === "pass");
   const P = FIX.records.map((r) => Object.assign({ college: "College of Alameda", program_title: r.control_number }, r));
   check("(d) the tab's conflict filter lists what the line counted",
     M.filterRecords(P, "", "conflict", "all").map((p) => p.control_number).join(",") === "A2,A3");
-  check("(d) and the Records view offers it", /\["conflict", "Disagree with the state's course list"\]/.test(PRH));
+  check("(d) and the List offers it", /\["conflict", "Disagree with the state's course list"\]/.test(PRH));
 
   // ── (e) ──
   const hold = { "Cerritos College": [] };

@@ -1,12 +1,69 @@
 ---
-title: "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)"
+title: "CER redesign handoff: Program records retires into the Programs List, PRs 1 and 2 of 3 (SkyQuince)"
 date: 2026-11-04
-session: CER redesign build, side session (SkyPawpaw)
-tags: [handoff, cer, commons-list, cr-reference, subjects, program-requirements, coci-lookup]
+session: CER redesign build, side session (SkyQuince)
+tags: [handoff, cer, commons-list, program-requirements, side-by-side, cpl-pathways]
 status: current
 ---
 
-# You are SkyQuince, the Lists' next build
+# You are SkyLoquat, the Lists' next build
+
+SkyQuince ran on 2026-11-04 from about 17:05Z (Sam named it; the greeting cited SkyPawpaw's handoff, and the file held
+it). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt, nothing waits on Sam. Skipped: `README.md`,
+`kb/README.md`, the pipeline view, a new KB note (the List norms note took the record), the lessons doc, `cpl_memory`
+rows and the decision sheet. The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (573); the commit
+count since it (6) is the routine's trigger.
+
+## What shipped (SkyQuince)
+
+- **#2769**: **the Programs List's panel carries Program records' card.** `recordFacts` (shared by the card and the
+  panel) draws the checks in full and the CPL line; the panel adds the flags with where each sits, each course's
+  C-ID/CCN/M-ID chips, flag marks, outcomes and its CPL here dialog, Side by side, and Confirm and Needs a fix (or the
+  sign-in). New List filters: *Confirmed by a person*, and *Waiting on your reading* for a signed-in reviewer, counted
+  live. `tests/program_requirements_list_record_port.test.js`.
+- **PR 2 (this one)**: **every way into Program records opens the List.** `goTo` takes `view: "list"` (`lf`, `lq`,
+  `rcollege`, `panel`) and maps an older `view: "records"` address; `TO`'s record counts open List filters (Complete is
+  Pass); a call's *Open it in the List* opens the record's panel; CPL Pathways' college line sends `view: "list"`. The
+  four dropdowns (`dropdownBox`, shared) sit over the List; off-list records are rows under *On a program COCI does not
+  list as active*; the panel points to the college's drafts on Catalogs and offers *Read again*; `nextToRead` follows
+  the List's rows. **Engine fix:** the drawer goes before the panel's first direct-child `<details>` (a nested one
+  threw NotFoundError). `program_requirements.test.js` 444 to 438, the six moved to the port suite (39).
+
+## Open work, in order
+
+1. **Merge PR 2** once `test` passes on its head.
+2. **PR 3: delete Program records.** The view is now reachable only by its own view word. Delete `viewRecords`, its
+   `collegeBody`, the Records view word in `VIEWS`, `listedColleges`, `state.rq`/`rshow`/`rscope`, the `records:*`
+   sections, `loadCips`/`sectorOf`/`state.cip` if nothing else reads them, and `filterRecords` once CPL Pathways' test
+   (d) stops calling it. **Keep** `recordCard`/`fillBody` (side by side draws them), `verdictBox`, `flagsFor`, the CPL
+   dialog, `dropdownBox`, `picks`/`filt`/`linkPick`. **Port first:** 28 blocks of `tests/program_requirements.test.js`
+   drive the Records view: (4) (6c) (11) (13) (15a) (15b) (15d) (15e) (17) (17b) (19) (19b) (20) (21) (22) (23) (24a)
+   (24b) (24c) (24d) (24e) (24i) (24k) (24l) (24m) (24n) (25) (25b). Most test the card's parts through it; drive
+   them through side by side (`M.openSplit`) or the List panel (`tests/program_requirements_list_record_port.test.js`'s
+   harness), and drop what tests only the view (its Show select, count line, college cards, lazy college reads). Then
+   update the lane file's "Four views" line (`docs/reference/lanes/program-requirements-harvest.md`).
+3. **Then Courses' older view** (Courses keeps SkyView first), the same three steps.
+4. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
+   Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
+   may align*, once a source names courses.
+
+## Lessons to honor
+
+- **An engine anchor found by `querySelector` reaches into the tab's nodes.** `body.querySelector("details")` found a
+  fold nested in the checks; anchor on direct children.
+- **Move the ways in before deleting the view.** Re-pointing `TO`, the calls and the cross-tab hand-off is its own PR;
+  the deletion then breaks only the view's own tests.
+- **Keep the old address working.** CPL Pathways' `CPL_PROGRAM_REQUIREMENTS_GOTO` may hold a `view: "records"`
+  request from a page loaded before the deploy; `goTo` maps it.
+- **A dropdown that redraws only the engine's table keeps its list open;** a full `render()` would close it.
+
+## Let go
+
+At sign-off: drop the PR watches on #2769 and PR 2 once merged. No check-in, no artifact watch.
+
+---
+
+# SkyPawpaw's record (2026-11-04)
 
 SkyPawpaw ran on 2026-11-04 from about 02:24Z to 03:45Z (Sam named it; the greeting cited SkyTeaberry's handoff, and the
 file held it). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt. `cpl_memory`:
@@ -69,72 +126,3 @@ items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000 bytes, and the
 ## Let go
 
 At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
-
----
-
-# SkyTeaberry's record (2026-11-04)
-
-SkyTeaberry ran on 2026-11-04 from about 00:00Z to 01:15Z (Sam named it; the greeting cited SkyInkberry's handoff, and
-the file held SkyMulberry's, which named SkyMedlar). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt.
-One `cpl_memory` row: `pitfall-null-list-limit-empties-table-2026-11-04` (proposed). Skipped: `README.md`,
-`kb/README.md`, the pipeline view, a new KB note (the List norms note took the record), the lessons doc (nothing
-retired), and the decision sheet (nothing waits on Sam from this run). The CPL queue's `docs/session_<N>_handoff.md`
-stays the routine's (565). The lint flags two items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000
-bytes, and the commits since `session_565` (its checkpoint trigger).
-
-## What shipped (SkyTeaberry)
-
-- **#2745** (merged): **Subjects and Programs take the line, the folded summary and the side panel.** Subjects'
-  panel: an MQ discipline's local subjects (most used first, each share), the codes it shares (a collision, or shared
-  by design; another discipline's name opens its panel) and Confirm this pick with its own status line. Programs'
-  panel: the record's checks in words and its courses block by block with title, units and the CPL on record at the
-  college; a light record is read once from the panel. **Engine fix:** a count pressed on CR's line set
-  `L.limit = null` and `slice(0, null)` drew an empty table; `listState` restores the first page, callers pass
-  `api.LIMIT`. `h.table` takes an opening `sort`; the line's pair words stop at a colon too.
-  `tests/csr_list_panel.test.js`, `tests/program_requirements_list_panel.test.js`.
-- **#2746** (merged): **Courses, the fifth.** Its counts open SkyView in a new tab (Courses keeps SkyView first); the line
-  shares the tab's one read of the Commons file with its Progress page; a course's panel lists the local courses its
-  M-ID holds, the Title drawer (description, outcomes) moved in. The Title drawer's tests in `coci_list` and
-  `coci_lookup` now drive it inside the panel. `tests/coci_list_panel.test.js`. This checkpoint rides in it.
-
-- **#2747** (merged): Exhibits' panel on the engine's parts (each exhibit's number links to MAP); Exhibits' and CR
-  Progress's Commons reads through `CPL_COMMONS_LIST.readCommons` (`tests/commons_one_reader.test.js`); the CR wording
-  panel does what the worklist's group card did (Split out, Put back, Name the group by it, Add a wording, the note
-  with Defer, Clear). The engine's `h.table` takes a fixed column of controls.
-- **#2748** (merged): the CR List opens first; Progress counts and `#cr-reference/<filter>` open it, with *Folded by a rule* and
-  *Held by a screen*; the official-title warning rides in the panel; `#cr-reference/worklist` keeps the worklist.
-
-- **This PR**: the worklist's Part B guards ported onto the List (`tests/cr_list_worklist_port.test.js`, 16), and a
-  *Decided by* column on the CR List.
-
-## Open work, in order
-
-1. **Merge the worklist-port PR** once `test` passes on its head (#2746, #2747 and #2748 merged).
-2. **The original views retire as each List does what they do**, one PR each, tests ported first. **CR's worklist is
-   ready to delete:** the List opens first and does what it did, and `tests/cr_list_worklist_port.test.js` carries
-   Part B (B1 to B16) onto the List, with a *Decided by* column for the CSV's who-and-when. Delete the worklist's render
-   (`groupCard`, its picker and `wire`'s worklist handlers, the worklist view word, `#cr-reference/worklist`), then
-   Part B of `tests/cr_reference.test.js` and Part D (the worklist's own control CSS; the engine's control rules
-   cover the List). Keep Parts A and C (the builder's data). Then Subjects' Reference
-   view (its toolbar filters, the SUBJ check modal), then Programs' and Courses' older views. Check what only the
-   view still has and carry it into the panel first.
-3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
-4. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
-   to the routine; the Catalog's *Courses that may align*, once a source names courses.
-
-## Lessons to honor
-
-- **A null page limit empties a List.** `rows.slice(0, null)` is `[]`. Reset with `api.LIMIT`; the engine now guards it.
-- **The engine's `redraw` repaints the table only.** A control that changes the head (the line, the fold) calls the
-  tab's own render.
-- **A raw-hex lint reads `#2736` as a color.** Write PR numbers in comments as `PR 2736` in files whose tests scan for hex.
-- **Before a title press moves into a panel, port the Title drawer's tests** (`.P-pdrawer` inside `#P-panel`) and
-  filter a fetch log by its table (`course_outcomes`) rather than reading `fetches[0]`.
-- **A 503 retries after a delay** in Programs' reads; a test that wants a failure answers 400.
-- **A lane edit can tip its budget.** Run the lint before the push, not after.
-
-## Let go
-
-At sign-off: drop the PR watch on #2746 and the check-in `trig_01D7fGoDcNALyBK5UaqiHQP3` once it merges. No artifact watch.
-
----

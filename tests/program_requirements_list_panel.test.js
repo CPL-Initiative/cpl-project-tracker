@@ -172,9 +172,8 @@ function titleBtn(d, title) { const r = rowOf(d, title); return r && r.querySele
   check("(5) a header sorts it", sorted.join(",") === "0,0,2,4", sorted.join(","));
   check("(5) the title's drawer moves in, and COCI's words fold below", !!panel(t.d).querySelector(".prl-pdrawer")
     && /TOP code 0956\.50/.test(txt(panel(t.d).querySelector("details.prl-pn-more"))) && /decides nothing/.test(txt(panel(t.d).querySelector("details.prl-pn-more"))));
-  words(t.d, /^Open the record in Program records$/) && Array.from(panel(t.d).querySelectorAll("button")).find((b) => txt(b) === "Open the record in Program records").click();
-  await settle();
-  check("(5) Open the record opens it in Program records", t.S.view === "records" && t.S.rq === "10001");
+  check("(5) the panel carries the record, so no word sends it to Program records (S574)",
+    !Array.from(panel(t.d).querySelectorAll("button")).some((b) => /Program records/.test(txt(b))));
 
   // ── (6) a light record, an unread program ──
   const tl = tab({ recordsFail: true });
@@ -184,6 +183,8 @@ function titleBtn(d, title) { const r = rowOf(d, title); return r && r.querySele
   check("(6) ⭐ a light record is read from the panel; a failed read says so", before >= 1 && /could not be read/.test(txt(panel(tl.d))), txt(panel(tl.d)).slice(0, 300));
   tl.M._render(); await settle(); await settle();
   check("(6) a repaint does not read it again", tl.reads.filter((u) => /program_requirement_records/.test(u)).length === before, before + " vs " + tl.reads.filter((u) => /program_requirement_records/.test(u)).length);
+  Array.from(panel(tl.d).querySelectorAll("button")).find((b) => txt(b) === "Read again").click(); await settle(); await settle();
+  check("(6) Read again reads it once more (S574)", tl.reads.filter((u) => /program_requirement_records/.test(u)).length > before);
   titleBtn(tl.d, "Art History").click(); await settle();
   check("(6) an unread program says the harvest holds no record and lists no courses", /holds no record of this program yet/.test(txt(panel(tl.d)))
     && !panel(tl.d).querySelector("#prl-pn-courses"));

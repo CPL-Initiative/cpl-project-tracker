@@ -3259,14 +3259,17 @@
     catch (e) { return d.toISOString().slice(0, 10); }
   }
   var STAT_SOURCE = { course_outline: "course outlines", catalog: "the catalog" };
-  /* A figure opens its list on the Program Requirements tab: the Records view, picked to the college.
+  /* A figure opens its list on the Program Requirements tab: the List, its College filter set to the college and
+     its own filter to the figure's (S574: Program records retires into the List; Complete, an active program passing,
+     is the List's Pass the machine checks, since its rows are COCI's active programs).
      That tab loads its own module; this one never does (it would read as reading that tab's tables).
      Loaded already, its goTo runs at once; otherwise the request waits for the tab's first activation,
      which reads it (window.CPL_PROGRAM_REQUIREMENTS_GOTO). */
+  var LIST_FILTER = { all: "", complete: "pass", conflict: "conflict", fail: "fail", pass: "pass", checked: "checked" };
   function openCollegeRecords(college, rshow) {
     var T = window.CPL_TABS;
     if (!T || typeof T.navigate !== "function") return;
-    var to = { view: "records", rcollege: college, rshow: rshow, sec: "records:find" };
+    var to = { view: "list", rcollege: college, lf: LIST_FILTER[rshow] || "" };
     var M = window.CPL_PROGRAM_REQUIREMENTS;
     if (M && typeof M.goTo === "function") { T.navigate("program-requirements"); M.goTo(to); return; }
     window.CPL_PROGRAM_REQUIREMENTS_GOTO = to;
@@ -3366,14 +3369,17 @@
     catch (e) { return d.toISOString().slice(0, 10); }
   }
   var STAT_SOURCE = { course_outline: "course outlines", catalog: "the catalog" };
-  /* A figure opens its list on the Program Requirements tab: the Records view, picked to the college.
+  /* A figure opens its list on the Program Requirements tab: the List, its College filter set to the college and
+     its own filter to the figure's (S574: Program records retires into the List; Complete, an active program passing,
+     is the List's Pass the machine checks, since its rows are COCI's active programs).
      That tab loads its own module; this one never does (it would read as reading that tab's tables).
      Loaded already, its goTo runs at once; otherwise the request waits for the tab's first activation,
      which reads it (window.CPL_PROGRAM_REQUIREMENTS_GOTO). */
+  var LIST_FILTER = { all: "", complete: "pass", conflict: "conflict", fail: "fail", pass: "pass", checked: "checked" };
   function openCollegeRecords(college, rshow) {
     var T = window.CPL_TABS;
     if (!T || typeof T.navigate !== "function") return;
-    var to = { view: "records", rcollege: college, rshow: rshow, sec: "records:find" };
+    var to = { view: "list", rcollege: college, lf: LIST_FILTER[rshow] || "" };
     var M = window.CPL_PROGRAM_REQUIREMENTS;
     if (M && typeof M.goTo === "function") { T.navigate("program-requirements"); M.goTo(to); return; }
     window.CPL_PROGRAM_REQUIREMENTS_GOTO = to;

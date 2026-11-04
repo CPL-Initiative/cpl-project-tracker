@@ -1058,7 +1058,8 @@
         var list = function (items) { dbox.appendChild(el("ul", { cls: P + "dul" }, items.map(function (x) { return el("li", null, typeof x === "string" ? [x] : x); }))); };
         S.drawer(r, listCols()[0].h, { line: line, list: list, box: dbox, word: word, el: el, filterBy: listFilterBy,
           colIndex: listColIndex, L: L, LIMIT: LIST_LIMIT, fmt: fmt, stamp: stamp });
-        if (dbox.firstChild) body.insertBefore(dbox, body.querySelector("details") || null);
+        // Before the panel's first fold among its own children: a fold nested deeper (a checks list's details) is no anchor.
+        if (dbox.firstChild) body.insertBefore(dbox, Array.prototype.filter.call(body.children, function (c) { return c.tagName === "DETAILS"; })[0] || null);
       }
       var aside = el("aside", { id: P + "panel", cls: P + "panel", "aria-labelledby": P + "panel-t" }, [
         el("div", { cls: P + "pbar" }, [el("span", { id: P + "panel-t", cls: P + "pt", tabindex: "-1", text: S.panel.label ? S.panel.label(r) : listTitle(r) }),

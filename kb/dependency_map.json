@@ -1961,7 +1961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2802,
+     "line": 2806,
      "tabs": [
       "program-requirements"
      ]
@@ -5603,7 +5603,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4026,
+     "line": 4172,
      "tabs": [
       "program-requirements"
      ]
@@ -6068,7 +6068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4025,
+     "line": 4171,
      "tabs": [
       "program-requirements"
      ]
@@ -6138,7 +6138,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3242,
+     "line": 3248,
      "tabs": [
       "program-requirements"
      ]
@@ -6266,7 +6266,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3613,
+     "line": 3619,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6336,7 +6336,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3607,
+     "line": 3613,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6712,7 +6712,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3573,
+     "line": 3579,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6791,7 +6791,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3621,
+     "line": 3627,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6984,7 +6984,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3594,
+     "line": 3600,
      "tabs": [
       "cpl-pathways"
      ]
@@ -12618,7 +12618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1693,
+     "line": 1689,
      "tabs": [
       "program-requirements"
      ]
@@ -17241,7 +17241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1366,
+     "line": 1367,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -24783,7 +24783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 854,
+     "line": 850,
      "tabs": [
       "program-requirements"
      ]
@@ -24915,7 +24915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1854,
+     "line": 1850,
      "tabs": [
       "program-requirements"
      ]
@@ -26712,7 +26712,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 779,
+     "line": 775,
      "tabs": [
       "program-requirements"
      ]
@@ -27037,7 +27037,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 892,
+     "line": 888,
      "tabs": [
       "program-requirements"
      ]
@@ -27080,7 +27080,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 582,
+     "line": 578,
      "tabs": [
       "program-requirements"
      ]
@@ -27116,7 +27116,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 958,
+     "line": 954,
      "tabs": [
       "program-requirements"
      ]
@@ -27163,7 +27163,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 744,
+     "line": 740,
      "tabs": [
       "program-requirements"
      ]
