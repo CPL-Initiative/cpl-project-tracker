@@ -228,6 +228,27 @@ with tempfile.TemporaryDirectory() as empty:
           [(r["key"], r.get("error")) for r in bare["rows"]])
     check("an unread row draws no zero anywhere", all(i.get("n") != 0 for r in bare["rows"] for i in r.get("issues", [])))
 
+# ── the one queue (Sam, 2026-11-04, S573): every issue names who carries it, and the queue groups the person items ──
+allissues = [(r["key"], i) for r in data["rows"] for i in r.get("issues", [])]
+check("every known issue names who carries it: a routine or one of the four reasons",
+      all(i.get("carry") in B.CARRY_KEYS for _, i in allissues), [(k, i.get("words")) for k, i in allissues if i.get("carry") not in B.CARRY_KEYS])
+q = data.get("queue") or {}
+check("the status file carries the queue, its four reasons in order",
+      [g["key"] for g in q.get("reasons", [])] == ["no_procedure", "unsure", "reaches", "keep_call"])
+check("the queue leaves nothing unsorted on the repo", not q.get("unsorted"), q.get("unsorted"))
+person = sum(len(g["items"]) for g in q.get("reasons", []))
+check("every issue lands once: the person items and the carried ones add up to the issues",
+      person + len(q.get("carried", [])) == len(allissues), (person, len(q.get("carried", [])), len(allissues)))
+check("a routine's issue never reaches a person's queue",
+      all(i["words"] not in [x["words"] for g in q.get("reasons", []) for x in g["items"]]
+          for _, i in allissues if i.get("carry") == "routine"))
+probe = B.build_queue([{"key": "x", "title": "X", "issues": [{"n": 3, "words": "a new issue", "owner": "someone"},
+                                                             {"n": None, "words": "an unread one", "carry": "unsure", "error": "E"}]}])
+check("an issue that names no reason lands under unsorted, so it cannot hide",
+      [i["words"] for i in probe.get("unsorted", [])] == ["a new issue"])
+check("an unread issue keeps its null and its error in the queue",
+      probe["reasons"][1]["items"] == [{"ref": "x", "title": "X", "n": None, "words": "an unread one", "owner": None, "open": None, "error": "E"}])
+
 # ── the small helpers ──
 check("receipt_time turns 2026-10-18T17-37-29Z into ISO", B.receipt_time("2026-10-18T17-37-29Z") == "2026-10-18T17:37:29Z")
 check("receipt_time leaves an ISO stamp alone", B.receipt_time("2026-10-18T17:37:29Z") == "2026-10-18T17:37:29Z")

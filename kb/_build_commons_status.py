@@ -139,8 +139,8 @@ def row_requirements(root):
                                 "complete", tab + "/list", chk["error"])],
         "tests": ["machine-checked", "confirmed by a person"],
         "issues": [
-            {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "open": tab + "/list/fail"},
-            {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "open": tab + "/list/unread"},
+            {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "carry": "routine", "open": tab + "/list/fail"},
+            {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "carry": "routine", "open": tab + "/list/unread"},
         ],
         "procedures": [
             {"n": len(colleges), "words": "reading procedures, one per college read, versioned", "open": tab},
@@ -244,11 +244,11 @@ def row_exhibit(root):
         # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
         "issues": [i for i in [
             {"n": held_n, "words": "titles held for a person", "owner": "a curator" + (" (" + held_why + ")" if held_why else ""),
-             "open": tab + "/held", "error": run["error"]},
+             "carry": "unsure", "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
-             "open": tab + "/conflict", "error": run["error"]},
+             "carry": "unsure", "open": tab + "/conflict", "error": run["error"]},
             {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
-             "open": cer + "/all", "error": left["error"]},
+             "carry": "keep_call", "open": cer + "/all", "error": left["error"]},
         ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
@@ -312,11 +312,11 @@ def row_course(root):
         "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
-             "owner": "the Common Subjects reference", "open": tab},
-            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "open": tab},
+             "owner": "the Common Subjects reference", "carry": "no_procedure", "open": tab},
+            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": tab},
             {"n": tags.get("top_discipline_disagreement"), "words": "TOP and discipline disagreements",
-             "owner": "a curator (the subject map decides; TOP corroborates)", "open": tab},
-            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "open": tab},
+             "owner": "a curator (the subject map decides; TOP corroborates)", "carry": "unsure", "open": tab},
+            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": tab},
         ],
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
@@ -413,9 +413,9 @@ def row_cr(root):
         "tests": ["rule-settled", "curator-decided", "confirmed by a person"],
         "issues": [
             {"n": len(unsettled), "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
-             "owner": "a curator", "open": tab + "/open"},
+             "owner": "a curator", "carry": "no_procedure", "open": tab + "/open"},
             {"n": len(names), "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
-             "owner": "a curator", "open": tab + "/names"},
+             "owner": "a curator", "carry": "unsure", "open": tab + "/names"},
         ],
         "procedures": [
             {"n": st["auto_groups"], "words": "groups a rung 1 to 4 rule folds: five rungs, groups form on a shared key, the course count gates a cartesian line",
@@ -483,9 +483,9 @@ def row_subjects(root):
     procs = load_json(root, "kb/csr_procedures.json") if exists(root, "kb/csr_procedures.json") else None
     who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by the nightly procedure or a session cohort" % fmt(cohort) if cohort else "")
     issues = [
-        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/open"},
+        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "carry": "unsure", "open": tab + "/open"},
         {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
-         "owner": "a curator", "open": tab + "/list/collision"},
+         "owner": "a curator", "carry": "reaches", "open": tab + "/list/collision"},
     ]
     # A known issue with nothing in it is not an issue: the collisions row leaves the list at zero
     # (the AGAB re-key of 2026-10-19 closed the one), and facts.shared keeps the measure.
@@ -506,12 +506,12 @@ def row_subjects(root):
         judgments = sum(ask.values())
         kinds = ", ".join(CSR_RULE_WORDS.get(r, r) for r, _ in sorted(ask.items(), key=lambda kv: -kv[1]))
         issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
-                       "owner": "a curator, after Jev's sitting", "open": tab + "/progress"})
+                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/progress"})
         mc = scan.get("_mid_codes") or {}
         issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
-                       "owner": "a re-mint under the playbook", "open": tab + "/progress"})
+                       "owner": "a re-mint under the playbook", "carry": "reaches", "open": tab + "/progress"})
         if missed:
-            issues.append({"n": missed, "words": "missed alignments with an authority code", "owner": "a curator", "open": tab + "/chip"})
+            issues.append({"n": missed, "words": "missed alignments with an authority code", "owner": "a curator", "carry": "unsure", "open": tab + "/chip"})
     procedures = []
     if procs:
         ps = procs.get("procedures") or []
@@ -645,6 +645,36 @@ def fmt_int(n):
     return "{:,}".format(n) if isinstance(n, int) else "an unknown number of"
 
 
+# The one queue (Sam, 2026-11-04, S573: the routines carry the volume and "queue human decisions only when
+# needed"). Every issue names who carries it: a routine (the harvest, a session fixing a procedure, a source
+# outside the Commons), or a person for one of four reasons. The queue groups the person items by reason, in
+# this order; an issue that names no reason lands under "unsorted", so a new issue cannot hide.
+CARRY_REASONS = ["no_procedure", "unsure", "reaches", "keep_call"]
+CARRY_KEYS = set(CARRY_REASONS) | {"routine"}
+
+
+def build_queue(rows):
+    groups = {k: [] for k in CARRY_REASONS}
+    carried, unsorted = [], []
+    for r in rows:
+        for i in r.get("issues") or []:
+            item = {"ref": r.get("key"), "title": r.get("title"), "n": i.get("n"), "words": i.get("words"),
+                    "owner": i.get("owner"), "open": i.get("open")}
+            if i.get("error"):
+                item["error"] = i["error"]
+            c = i.get("carry")
+            if c == "routine":
+                carried.append(item)
+            elif c in groups:
+                groups[c].append(item)
+            else:
+                unsorted.append(item)
+    out = {"reasons": [{"key": k, "items": groups[k]} for k in CARRY_REASONS], "carried": carried}
+    if unsorted:
+        out["unsorted"] = unsorted
+    return out
+
+
 BUILDING = [
     ("credentials", "Industry credentials", "#exhibits", building_credentials),
     ("outcomes", "Course outcomes", "#coci-lookup", building_outcomes),
@@ -666,7 +696,7 @@ def build(root):
         except Exception as e:  # noqa: BLE001
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building}
+    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows)}
 
 
 def main(argv=None):
