@@ -2264,6 +2264,14 @@
     return false;
   }
   function onHashChange() { routeFromHash(); }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(QS_TAB, function () {
+    var v = state.view, f = state.ls && state.ls.f;
+    if (v === "list") return QS_TAB + "/list" + (f && listFilterId(f) ? "/" + f : "");
+    if (v === "local") return QS_TAB + "/local" + (localFilter ? "/" + localFilter : "");
+    return VIEW_MOUNT[v] ? QS_TAB + "/" + v : QS_TAB;
+  });
 
   /* ── CSS (tokens only; the section pattern the shared module borrows, the word controls,
      the procedures and the findings). Injected once, so both HTMLs carry it. ── */

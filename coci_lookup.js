@@ -1050,6 +1050,13 @@
     return true;
   }
   window.addEventListener("hashchange", function () { if (_booted && state.data && routeList()) renderShell(); });
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
+    var f = state.ls && state.ls.f;
+    if (state.view === "courses" && f && LIST_FILTERS.some(function (x) { return x[0] === f; })) return TAB + "/list/" + f;
+    return TAB + "/" + state.view;
+  });
   // A new visit drops the List's filters, sort, selection and open drawer (tabs never remember a
   // filter, Sam, 2026-10-21); the engine keeps its sorted order, so the repaint is a filter pass.
   var awayFromTab = false;

@@ -384,42 +384,16 @@
     _hostState: postHostState,
   };
 
-  function consumeAuthHash() {
-    var h = location.hash || "";
-    if (h.indexOf("access_token=") < 0) return false;
-    var p = {};
-    h.replace(/^#/, "").split("&").forEach(function (kv) {
-      var a = kv.split("="); p[decodeURIComponent(a[0])] = decodeURIComponent(a[1] || "");
-    });
-    if (!persistToken(p)) return false;
-    history.replaceState(null, "", location.pathname + location.search);
-    // Return the user to whichever curator tab kicked off the sign-in —
-    // each tab's signIn() stashes its name in sessionStorage.cpl_sb_return_tab
-    // before sending the magic-link request. Default back to the Common
-    // Course Reference tab if nobody stashed (older code paths, manual
-    // testing).
-    // ⚠ THE DEFAULT WAS FIRING FOR EVERYONE. The stash lived in sessionStorage,
-    // which is PER BROWSER TAB, and the magic link opens a NEW tab — so the
-    // note written where you clicked "sign in" was invisible here and every
-    // sign-in from anywhere landed on the Common Course Reference (Sam,
-    // 2026-08-25). The keeper reads the shared copy, honors an older
-    // same-tab one, expires a stale one, and TAKES it so the next arrival is
-    // not redirected by a note left for someone else.
-    var returnTab = "unified-courses";
-    var stashed = null;
-    if (window.CPL_SESSION && CPL_SESSION.takeReturnTab) stashed = CPL_SESSION.takeReturnTab();
-    else try {
-      stashed = sessionStorage.getItem("cpl_sb_return_tab");
-      if (stashed) sessionStorage.removeItem("cpl_sb_return_tab");
-    } catch (e) {}
-    if (stashed) returnTab = stashed;
-    // Signing in is intent to CURATE, and curation happens in the list. Landing
-    // a returning curator on the map answers a question they did not ask.
-    if (returnTab === "unified-courses") authReturn = true;
-    location.hash = returnTab;
-    return true;
+  /* The magic link's landing moved to cpl_session.js (SkyJujube, 2026-11-04): this tab ran it for all of COBI, and
+   * it retires into COCI Lookup's Courses List. A curator who signed in here comes back to the list: signIn stashes
+   * this tab, and the keeper reports where it returned. */
+  function returnedHere() {
+    var back = window.CPL_SESSION && CPL_SESSION.returnedTo ? String(CPL_SESSION.returnedTo() || "") : "";
+    return back.split("/")[0] === "unified-courses";
   }
   function signIn(email) {
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("unified-courses");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "unified-courses"); } catch (e) {}
     // GoTrue's REST endpoint takes the redirect as a ?redirect_to= query param
     // (it ignores a body "options" object — that's the JS client's shape). The
     // URL must be in the project's allowed Redirect URLs.
@@ -4739,10 +4713,8 @@
     loadAudit().then(function () { render(); });
   }
 
-  // Process an auth redirect hash as early as possible (must run regardless of
-  // which tab is active so a curator magic-link sign-in is captured + shared via
-  // sessionStorage with the other curator tabs).
-  consumeAuthHash();
+  // A curator back from a magic link they asked for here lands on the list (cpl_session.js read the link).
+  if (returnedHere()) authReturn = true;
   // Lazy boot (perf): the ~7 MB CPL_UNIFIED_COURSES payload + the table render
   // are deferred until the Unified Courses (CCR) tab is first opened — they are
   // no longer eager at page load. tabs.js loadScript injects unified_courses_data.js

@@ -3228,6 +3228,15 @@
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     return true;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("exhibits", function () {
+    var v = state.view, f = state.ls && state.ls.f;
+    if (v === "list") return "exhibits/list" + (f ? "/" + f : "");
+    if (v === "progress" || v === "rules") return "exhibits/" + v;
+    if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? "another-look" : "held");
+    return "exhibits";
+  });
   function boot() {
     if (booted) return Promise.resolve();
     booted = true;
