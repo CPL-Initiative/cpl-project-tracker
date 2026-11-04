@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-04T17:04:33Z",
+ "written_at": "2026-11-04T17:47:07Z",
  "rows": [
   {
    "key": "requirements",
@@ -444,7 +444,7 @@
      "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
      "owner": "a curator, after Jev's sitting",
      "carry": "unsure",
-     "open": "#canonical-subj4/progress"
+     "open": "#canonical-subj4/list/scan"
     },
     {
      "n": 93,
@@ -676,7 +676,7 @@
       "n": 17,
       "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
       "owner": "a curator, after Jev's sitting",
-      "open": "#canonical-subj4/progress"
+      "open": "#canonical-subj4/list/scan"
      }
     ]
    },

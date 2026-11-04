@@ -802,7 +802,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1094,
+     "line": 1096,
      "tabs": [
       "canonical-subj4"
      ]
@@ -1703,7 +1703,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 870,
+     "line": 880,
      "tabs": [
       "commons"
      ]
@@ -6028,7 +6028,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2134,
+     "line": 2169,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6098,7 +6098,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1568,
+     "line": 1570,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6154,7 +6154,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1566,
+     "line": 1568,
      "tabs": [
       "canonical-subj4"
      ]
@@ -7243,7 +7243,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2133,
+     "line": 2168,
      "tabs": [
       "canonical-subj4"
      ]
@@ -24181,7 +24181,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 692,
+     "line": 702,
      "tabs": [
       "commons"
      ]
@@ -27362,7 +27362,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 670,
+     "line": 680,
      "tabs": [
       "commons"
      ]
@@ -29473,7 +29473,7 @@
  "not_served": [
   "*.xlsx",
   "docs",
-  "kb/*_out",
+  "kb/*_dryrun",
   "kb/coci_minted_courses.json",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",

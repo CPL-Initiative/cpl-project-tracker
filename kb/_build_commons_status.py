@@ -506,7 +506,7 @@ def row_subjects(root):
         judgments = sum(ask.values())
         kinds = ", ".join(CSR_RULE_WORDS.get(r, r) for r, _ in sorted(ask.items(), key=lambda kv: -kv[1]))
         issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
-                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/progress"})
+                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/list/scan"})
         mc = scan.get("_mid_codes") or {}
         issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
                        "owner": "a re-mint under the playbook", "carry": "reaches", "open": tab + "/progress"})
