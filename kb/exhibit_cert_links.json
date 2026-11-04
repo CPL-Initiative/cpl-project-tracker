@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA.",
+ "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME.",
  "_reference_generated_at": "2026-11-04T06:20:04+00:00",
  "counts": {
-  "certs_linked": 180,
-  "titles_linked": 219,
-  "holds": 203,
-  "bundles": 44,
+  "certs_linked": 200,
+  "titles_linked": 232,
+  "holds": 216,
+  "bundles": 48,
   "aligned": 16,
   "codes_not_in_catalog": [
    "G1"
@@ -293,6 +293,62 @@
    "issuer": "CompTIA",
    "family": "CompTIA"
   },
+  "ITC1348": {
+   "code": null,
+   "name": "Commercial Carpenter",
+   "catalog_name": "Commercial Carpenter",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1349": {
+   "code": null,
+   "name": "Commercial Electrician",
+   "catalog_name": "Commercial Electrician",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1353": {
+   "code": null,
+   "name": "Construction Foreman",
+   "catalog_name": "Construction Foreman",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1354": {
+   "code": null,
+   "name": "Construction Superintendant Certification",
+   "catalog_name": "Construction Superintendant Certification",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1375": {
+   "code": null,
+   "name": "Industrial Carpenter",
+   "catalog_name": "Industrial Carpenter",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1376": {
+   "code": null,
+   "name": "Industrial Electrician",
+   "catalog_name": "Industrial Electrician",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1418": {
+   "code": null,
+   "name": "NCCER Commercial Electrician",
+   "catalog_name": "NCCER Commercial Electrician",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
+  "ITC1419": {
+   "code": null,
+   "name": "NCCER Core Credential",
+   "catalog_name": "NCCER Core Credential",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
+  },
   "ITC1436": {
    "code": "A6",
    "name": "Electrical/Electronic Systems",
@@ -356,6 +412,76 @@
    "issuer": "Microsoft",
    "family": "Microsoft"
   },
+  "ITC2089": {
+   "code": null,
+   "name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
+   "catalog_name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
+   "issuer": "American Society of Mechanical Engineers International",
+   "family": "ASME"
+  },
+  "ITC2092": {
+   "code": null,
+   "name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level",
+   "catalog_name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level",
+   "issuer": "American Society of Mechanical Engineers International",
+   "family": "ASME"
+  },
+  "ITC2094": {
+   "code": null,
+   "name": "Geometric Dimensioning & Tolerancing Professional - Technologist",
+   "catalog_name": "Geometric Dimensioning & Tolerancing Professional - Technologist",
+   "issuer": "American Society of Mechanical Engineers International",
+   "family": "ASME"
+  },
+  "ITC2325": {
+   "code": null,
+   "name": "AutoCAD Certified Professional",
+   "catalog_name": "AutoCAD Certified Professional",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
+  "ITC2326": {
+   "code": null,
+   "name": "Autodesk Associate (Certified User) AutoCAD",
+   "catalog_name": "Autodesk Associate (Certified User) AutoCAD",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
+  "ITC2330": {
+   "code": null,
+   "name": "Autodesk Certified User",
+   "catalog_name": "Autodesk Certified User",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
+  "ITC2333": {
+   "code": null,
+   "name": "AutoCAD Certified User",
+   "catalog_name": "AutoCAD Certified User",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
+  "ITC2337": {
+   "code": null,
+   "name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
+   "catalog_name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
+  "ITC2342": {
+   "code": null,
+   "name": "Autodesk Certified Professional in Revit for Architectural Design",
+   "catalog_name": "Autodesk Certified Professional in Revit for Architectural Design",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
+  "ITC2351": {
+   "code": null,
+   "name": "Autodesk Certified User - Revit",
+   "catalog_name": "Autodesk Certified User - Revit",
+   "issuer": "Autodesk, Inc.",
+   "family": "Autodesk"
+  },
   "ITC4053": {
    "code": null,
    "name": "Aviation Airframe Mechanic",
@@ -376,6 +502,13 @@
    "catalog_name": "Mechanic (Airframe & Powerplant)",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
+  },
+  "ITC4070": {
+   "code": null,
+   "name": "NCCER HVAC, Level 1",
+   "catalog_name": "NCCER HVAC, Level 1",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
   },
   "ITC4086": {
    "code": "L4",
@@ -1202,6 +1335,13 @@
    "catalog_name": "IB World Religions SL",
    "issuer": "International Baccalaureate Organization (IBO)",
    "family": "IB"
+  },
+  "ITC7289": {
+   "code": null,
+   "name": "Level 1 - Welding",
+   "catalog_name": "Level 1 - Welding",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "family": "NCCER"
   },
   "ITC7466": {
    "code": null,
@@ -2051,6 +2191,40 @@
    "certs": [],
    "unresolved": [
     "xEV (not in the catalog)"
+   ]
+  },
+  "ASME GDTP Y14.5 Certification": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC2094",
+    "ITC2089",
+    "ITC2092"
+   ]
+  },
+  "Autodesk Certified User": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC2330"
+   ]
+  },
+  "Autodesk Certified User/Professional — AutoCAD": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC2326",
+    "ITC2333",
+    "ITC2325",
+    "ITC2337"
+   ]
+  },
+  "Autodesk Certified User/Professional — Revit Architecture": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC2351",
+    "ITC2342"
    ]
   },
   "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)": {
@@ -2948,6 +3122,70 @@
    "rule": "all",
    "certs": [
     "ITC1827"
+   ]
+  },
+  "NCCER CORE Curriculum - Introduction to Basic Construction Skills": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1419"
+   ]
+  },
+  "NCCER Commercial Carpenter Journey Level": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1348"
+   ]
+  },
+  "NCCER Commercial Electrician Level 4/Journey Level": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC1349",
+    "ITC1418"
+   ]
+  },
+  "NCCER Construction Foreman Management": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1353"
+   ]
+  },
+  "NCCER Construction Superintendent Management": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1354"
+   ]
+  },
+  "NCCER HVACR Level 1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4070"
+   ]
+  },
+  "NCCER Industrial Carpenter Journey Level": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1375"
+   ]
+  },
+  "NCCER Industrial Electrician Level 4/Journey Level": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1376"
+   ]
+  },
+  "NCCER Welding Level 1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7289"
    ]
   },
   "Private Pilot Certificate": {

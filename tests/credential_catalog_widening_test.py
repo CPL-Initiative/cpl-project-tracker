@@ -233,3 +233,29 @@ class FaaCerts(unittest.TestCase):
                        "Aircraft and Engines"):
             self.assertNotIn(course, self.links)
             self.assertNotIn(course, lk.FAA)
+
+
+class HandFamilies(unittest.TestCase):
+    """Autodesk, NCCER and ASME (S569): every named cert resolves across the issuer's two catalog spellings, and the
+    titles that name no one catalog certification (levels short of journey, courses, mixed issuers) are never linked."""
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(REPO, "kb", "exhibit_cert_links.json"), encoding="utf-8") as fh:
+            d = json.load(fh)
+        cls.links, cls.certs = d["links"], d["certs"]
+
+    def test_every_named_cert_is_in_the_catalog(self):
+        for fam, (_, table) in lk.HAND.items():
+            for title, (rule, names) in table.items():
+                link = self.links[title]
+                self.assertEqual(link.get("unresolved", []), [], title)
+                self.assertEqual(len(link["certs"]), len(names), title)
+                for cid in link["certs"]:
+                    self.assertEqual(self.certs[cid]["family"], fam, title)
+
+    def test_left_out(self):
+        for title in ("NCCER Commercial Electrician Level 1", "NCCER Industrial Electrician Level 3", "AutoCAD Beginning",
+                      "Autodesk Revit", "Autodesk Certified Professional", "Fire Inspector 1",
+                      "ASME BPVC Section IX — GTAW Welder Qualification"):
+            self.assertNotIn(title, self.links)
