@@ -96,7 +96,7 @@ function routeRead(url) {
 function loadModule(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="letters-root">Loading</div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || ""), runScripts: "dangerously" });
   const w = dom.window;
   const calls = [];
   w.fetch = function (url, init) {
@@ -115,6 +115,7 @@ function loadModule(opts) {
       const d = w.document.createElement("div"); d.setAttribute("data-tp-locked", ""); d.textContent = "Locked: " + o.what; return d; } };
   }
   if (opts.proxy) w.CPL_REPORT_PROXY_URL = opts.proxy;
+  if (opts.session) w.eval(fs.readFileSync("cpl_session.js", "utf8"));   // the keeper, before the tab registers its view
   w.cplCollegeShort = function (n) { return n.replace(/ (Community )?College$/, ""); };
   const sw = w.document.createElement("script");   // the writer first, as the page loads it
   sw.textContent = WRITER;
@@ -356,6 +357,38 @@ block("(11)", function () {
   const m = loadModule({ noStorage: true });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     check("(11) with storage blocked the tab renders its locked state", /team phrase/.test(m.root.textContent) && m.calls.length === 0, m.root.textContent);
+  });
+});
+
+// ── (12) Every view has an address: a record opens from #letters/<slug> and reports it ──
+// A sign-in link opens a new browser tab, so only the address survives (cpl_session.js viewAddress).
+block("(12)", function () {
+  const m = loadModule({ phrase: "p", session: true, hash: "#letters/team-note-261022" });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    check("(12) ⭐ #letters/<slug> opens that record", m.M._state.open === "c2" && !!m.root.querySelector(".cm-item.open"), m.M._state.open);
+    m.w.CPL_SESSION.stashReturnTab("letters");
+    const stash = JSON.parse(m.w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab;
+    check("(12) the open record is the view a sign-in returns to", stash === "letters/team-note-261022", stash);
+    click(m.w, m.root.querySelector('button.cm-btn[data-open="c2"]'));   // close it; the address keeps the old slug
+    m.w.CPL_SESSION.stashReturnTab("letters");
+    const stash2 = JSON.parse(m.w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab;
+    check("(12) ⭐ a closed record reports the register, though the address still names it",
+      m.M._state.open === null && stash2 === "letters" && m.w.location.hash === "#letters/team-note-261022", stash2 + " " + m.w.location.hash);
+    click(m.w, m.root.querySelector('button.cm-btn[data-open="c1"]'));
+    m.w.CPL_SESSION.stashReturnTab("letters");
+    const stash3 = JSON.parse(m.w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab;
+    check("(12) opening another record reports its slug", stash3 === "letters/jst-upload-ceos-261023", stash3);
+  });
+});
+block("(12b)", function () {
+  const m = loadModule({ phrase: "p", session: true, hash: "#letters" });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    check("(12) a bare #letters opens the register with nothing open", m.M._state.open === null && !m.root.querySelector(".cm-item.open"));
+    m.w.CPL_SESSION.stashReturnTab("letters");
+    check("(12) and reports the bare tab", JSON.parse(m.w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab === "letters");
+    m.M._state.open = "new";
+    m.w.CPL_SESSION.stashReturnTab("letters");
+    check("(12) a new, unsaved record has no slug, so it reports the register", JSON.parse(m.w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab === "letters");
   });
 });
 

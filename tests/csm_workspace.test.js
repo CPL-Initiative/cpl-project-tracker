@@ -39,7 +39,10 @@ function session() {
 function setup(opts) {
   opts = opts || {};
   const { window } = freshDom();
-  if (opts.signedIn) window.CPL_SESSION = session();
+  if (opts.hash) window.location.hash = opts.hash;
+  // The real keeper (cpl_session.js) when a test reads the view's address; a signed-in mock rides on top of it.
+  if (opts.keeper) window.eval(fs.readFileSync(path.join(ROOT, "cpl_session.js"), "utf8"));
+  if (opts.signedIn) window.CPL_SESSION = Object.assign(window.CPL_SESSION || {}, session());
   // A browser's observer that has not yet seen the review's foot: jsdom has none, and the module's fallback opens
   // the gate at once, which is the right behavior where no observer exists but would hide the gate from this test.
   window.IntersectionObserver = function () { this.observe = function () {}; this.disconnect = function () {}; };
@@ -161,6 +164,26 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
     W._state.view === "notyet" && !!root.querySelector('[data-act="nudge"]'));
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
   check("5d: a new visit starts on All open items with nothing typed", W._state.view === "open" && W._state.q === "");
+}
+
+// ── 5e. every view has an address (a sign-in link opens a new browser tab, so only the address survives) ─────
+{
+  const { window, W, root } = setup({ signedIn: true, keeper: true, hash: "#csm-workspace/held" });
+  const stash = () => { window.CPL_SESSION.stashReturnTab("csm-workspace"); return (JSON.parse(window.localStorage.getItem("cpl_sb_return_tab") || "{}")).tab; };
+  check("5e1: #csm-workspace/held opens Confirmed, still held", W._state.view === "held" && root.querySelector("#cw-view").value === "held");
+  check("5e2: and reports it as the view a sign-in returns to", stash() === "csm-workspace/held");
+  clickEl(window, root.querySelector('[data-stage="notyet"]'));
+  check("5e3: another view reports its own address (the address still says held)", stash() === "csm-workspace/notyet" && window.location.hash === "#csm-workspace/held");
+  const sel = root.querySelector("#cw-view"); sel.value = "open"; sel.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("5e4: All open items reports the bare tab", stash() === "csm-workspace");
+  window.location.hash = "#csm-workspace/due";
+  window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
+  check("5e5: a later visit reads its address after the reset", W._state.view === "due" && W._state.q === "");
+  window.location.hash = "#csm-workspace/nonsense";
+  window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
+  check("5e6: an unknown word keeps All open items", W._state.view === "open");
+  const bare = setup({ signedIn: true, keeper: true, hash: "#csm-workspace" });
+  check("5e7: a bare #csm-workspace opens All open items", bare.W._state.view === "open" && bare.root.querySelector("#cw-view").value === "open");
 }
 
 // ── 6. Rule 4 and the link from the internal view ────────────────────────────

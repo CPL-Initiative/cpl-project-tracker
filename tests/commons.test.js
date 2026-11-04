@@ -131,9 +131,16 @@ function responder(map) {
 function load(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="commons-root" style="padding:28px;">Loading</div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || ""), runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = opts.fetch || responder({ "kb/status/commons.json": STATUS, "kb/status/program-requirements.json": PR_LOG });
+  // the keeper (cpl_session.js) first, as the page loads it, with storage stubs it reads at start
+  if (opts.session) {
+    const bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }; };
+    Object.defineProperty(w, "localStorage", { value: bag(), configurable: true });
+    Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
+    w.eval(fs.readFileSync("cpl_session.js", "utf8"));
+  }
   if (opts.noStorage) Object.defineProperty(w, "localStorage", { get: function () { throw new Error("SecurityError"); } });
   // boot() reads the clock (new Date()), so the window's clock is pinned to NOW: the fixture's stamps are fixed, and
   // on the real clock the "inside 36 hours" check turned red 36 hours after its stamp (2026-10-20 05:47Z, S432).
@@ -451,6 +458,32 @@ function cellText(li, title) {
       && /Common Exhibits: each procedure/.test(sec.querySelector(".cmn-conf-wrap").getAttribute("aria-label")));
     check("confidence 6: an unread source reads Could not be read, never a zero", /Common Credit Recommendations[\s\S]*Could not be read/.test(txt(sec)));
     check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
+  }
+
+  // every view has an address (2026-11-04): #commons/<needs|build> opens that filter word; the view reports it back
+  {
+    const pressed = (x) => { const b = x.d.querySelector(".cmn-filter[aria-pressed=\"true\"]"); return b && b.getAttribute("data-show"); };
+    const keysOf = (x) => Array.from(x.d.querySelectorAll(".cmn-card")).map((c) => c.getAttribute("data-card"));
+    const ask = (x) => { x.w.CPL_SESSION.stashReturnTab("commons"); return (JSON.parse(x.w.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; };
+    const a = load({ hash: "#commons/needs", session: true });
+    await a.M.boot();
+    check("address 1: #commons/needs opens on Needs you", pressed(a) === "needs" && keysOf(a).join(",") === "requirements");
+    check("address 2: the view reports commons/needs", ask(a) === "commons/needs");
+    a.d.querySelector('.cmn-filter[data-show="build"]').click();
+    check("address 3: switched to Building, the view reports commons/build", ask(a) === "commons/build");
+    a.d.querySelector('.cmn-filter[data-show="all"]').click();
+    check("address 4: All reports the bare commons", ask(a) === "commons");
+    const b = load({ hash: "#commons", session: true });
+    await b.M.boot();
+    check("address 5: the bare #commons opens on All, as before", pressed(b) === "all" && keysOf(b).length === 8 && ask(b) === "commons");
+    const c = load({ hash: "#commons/nonsense", session: true });
+    await c.M.boot();
+    check("address 6: an unknown word leaves All", pressed(c) === "all");
+    // a later visit on an address that names a filter opens it
+    b.w.history.replaceState(null, "", "#commons/build");
+    b.w.dispatchEvent(new b.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+    check("address 7: a later visit on #commons/build redraws on Building", pressed(b) === "build" && keysOf(b).join(",") === "credentials,outcomes,skills");
+    check("address 8: nothing about the view is stored", !Object.keys(b.w.localStorage).some((k) => /filter|show|view/i.test(k)));
   }
 
   // the states, on their own

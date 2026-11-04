@@ -534,6 +534,26 @@
     return el("section", { cls: "cmn-queue cmn-conf", "aria-labelledby": "cmn-conf-h" }, kids);
   }
 
+  /* The first view's filter word (All, Needs you, Building): it lasts the visit and is never stored. An address
+     names it (#commons/needs, #commons/build); the bare #commons is All. */
+  var SHOWS = ["all", "needs", "build"];
+  var show = "all";
+  var redraw = null;
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
+    return show === "all" ? "commons" : "commons/" + show;
+  });
+  /* Opens the filter word the address names; anything unknown leaves the view as it is. */
+  function arrive() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
+    if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
+    return false;
+  }
+  /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "commons" && redraw && arrive()) redraw();
+  });
+
   function render(root, data, S, now) {
     now = now || new Date();
     root.removeAttribute("style");
@@ -576,8 +596,7 @@
     var conf = confidenceSection(data && data.confidence);
     if (conf) wrap.appendChild(conf);
 
-    /* the filter words: the visit's, never remembered */
-    var show = "all";
+    /* the filter words: the visit's, never remembered (show lives at module scope, read from the address) */
     var grid = el("div", { cls: "cmn-grid", id: "cmn-cards" });
     var filterBtns = [["all", "All " + countWords(cards.length)], ["needs", "Needs you"], ["build", "Building"]].map(function (f) {
       var b = el("button", { cls: "cmn-word cmn-filter", type: "button", "data-show": f[0], "aria-pressed": f[0] === show ? "true" : "false", text: f[1] });
@@ -622,6 +641,7 @@
       if (!grid.children.length) grid.appendChild(el("p", { cls: "cmn-quiet cmn-empty", text: show === "needs" ? "Nothing waits on you." : "Nothing is being built." }));
     }
     filterBtns.forEach(function (b) { b.addEventListener("click", function () { show = b.getAttribute("data-show"); draw(); }); });
+    redraw = draw;
     draw();
 
     /* the foot */
@@ -731,6 +751,7 @@
       return null;
     }
     root.textContent = "Reading the Commons…";
+    arrive();
     return load().then(function (r) { render(root, r.data, r.S, new Date()); return r; }, function (e) {
       notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
       return null;

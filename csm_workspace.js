@@ -453,6 +453,11 @@
     confirmed: { label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
     qual: { label: "Qualifies", keep: function (r) { return stageOf(r) === "qual"; } },
     all: { label: "All institutions", keep: function () { return true; } } };
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
+     items is the tab's first view, so it reports the bare tab. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
+    return VIEWS[state.view] && state.view !== "open" ? TAB + "/" + state.view : TAB;
+  });
   function sortRank(r) {
     var s = stageOf(r), du = dueOf(r);
     if (s === "waiting") return 0;
@@ -1247,13 +1252,19 @@
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
   function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; LOG.asked = false; }
+  /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
+     #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
+  function arrive() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival(TAB) : null;
+    if (a && a[0] && Object.prototype.hasOwnProperty.call(VIEWS, a[0])) state.view = a[0];
+  }
   function boot() {
     ensureCss();
     var el = root(); if (!el) return;
     el.removeAttribute("style");   // the pane's loading placeholder (dashed, centered) goes once the tab paints
     // A pick lasts the visit (Sam, 2026-10-21): every open starts on All open items, nothing chosen. tabs.js fires
     // onActivate once, so the module hears each later visit itself.
-    fresh();
+    fresh(); arrive();
     if (!wired) {
       wired = true;
       el.addEventListener("click", onClick);
@@ -1262,7 +1273,7 @@
       el.addEventListener("submit", onSubmit);
       el.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("ccpick")) state.ccOpen = e.target.open; }, true);
       window.addEventListener("cpl-tab-activated", function (e) {
-        if (e && e.detail && e.detail.tab === TAB) { fresh(); paint(); }
+        if (e && e.detail && e.detail.tab === TAB) { fresh(); arrive(); paint(); }
       });
     }
     var go = function () {
