@@ -19,6 +19,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
 ## INDEX update-history entries rotated out (2026-11-04)
 
+- 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
 - 2026-11-03 S557 SkySculptor (CPL Queue routine): the ELL IET Version 3 draft from Sam's Revise request; Santa Ana's SLO read and Las Positas's index; the CSM Workspace UI pass; library lessons archived (`docs/library_lessons_archive.md`); handoff 558.
 - 2026-11-03 S555 SkyTadpole: the CSM Workspace tab ships with its communications log (`csm_log`) and contacts; the Commons closes a to-do from its band; Sheet 159; a11y `--dark`
 - 2026-11-02 S554 SkySombrero (funding): every Eligibility word editable on the public page, a minimum-conditions filter, No NC, Email reopens an acceptance (#2701, #2703); the CSM Workspace mock; new `docs/csm_workspace_lessons.md`; handoff 555 extended.
