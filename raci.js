@@ -77,9 +77,18 @@
     var known = Object.keys(subs).some(function (k) { return subs[k].some(function (s) { return s.id === w; }); });
     return known ? "sub:" + w : null;
   }
+  /* The address this visit already opened. A phrase unlock or a sign-out re-fires cpl-tab-activated on the same
+     address, and opening it again would undo a view picked since; visiting another tab ends the visit. */
+  var arrivedFrom = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== "raci") arrivedFrom = null;
+  });
   /* Opens the view the address names (#raci/directory, #raci/matrix/activity-4). A bare #raci, or a word the tab
      does not know, leaves the view as it is. */
   function arrive() {
+    var h = String(location.hash || "");
+    if (h === arrivedFrom) return false;
+    arrivedFrom = h;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("raci") : null;
     if (!a) return false;
     if (a[0] === "directory") { state.view = "directory"; return true; }

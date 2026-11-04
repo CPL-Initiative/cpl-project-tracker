@@ -263,9 +263,18 @@
     if (state.guidOnlyOn) parts.push("inuse");
     return parts.length ? "sierra-training/" + parts.join("/") : "sierra-training";
   });
+  /* The address this visit already opened. A phrase unlock or a sign-out re-fires cpl-tab-activated on the same
+     address, and opening it again would undo a card pressed since; visiting another tab ends the visit. */
+  var arrivedFrom = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== "sierra-training") arrivedFrom = null;
+  });
   /* Opens the card views the address names; a bare #sierra-training, or a word the tab does not know, leaves the
      view as it is. */
   function arrive() {
+    var h = String(location.hash || "");
+    if (h === arrivedFrom) return;
+    arrivedFrom = h;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("sierra-training") : null;
     if (!a) return;
     var fb = FB_VIEWS[a[0]] ? a[0] : null, inuse = a.indexOf("inuse") >= 0;

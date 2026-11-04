@@ -2359,13 +2359,23 @@
     return state.lens && state.lens !== "all" && LENSES.indexOf(state.lens) >= 0 ? "map-users/" + state.lens : "map-users";
   });
 
+  /* The address this visit already opened. A phrase unlock or a sign-out re-fires cpl-tab-activated on the same
+     address, and opening it again would undo a lens picked since; visiting another tab ends the visit. */
+  var arrivedFrom = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== "map-users") arrivedFrom = null;
+  });
+
   function activate() {
     var root = document.getElementById("map-users-root");
     if (!root) return;
     /* The lens the address names (#map-users/gaps). The two worklist lenses are built from gated contact rows, so a
-       signed-out reader keeps the roster; a bare #map-users or an unknown word leaves the lens as it is. */
-    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-users") : null;
-    if (a && LENSES.indexOf(a[0]) >= 0 && (a[0] === "all" || signedIn())) state.lens = a[0];
+       signed-out reader keeps the roster (and the address waits for a sign-in); a bare #map-users or an unknown
+       word leaves the lens as it is. */
+    var h = String(location.hash || "");
+    var a = h !== arrivedFrom && window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-users") : null;
+    if (a && LENSES.indexOf(a[0]) >= 0 && (a[0] === "all" || signedIn())) { state.lens = a[0]; arrivedFrom = h; }
+    else if (!a) arrivedFrom = h;
     renderInto(root, !!state.summary);
     loadLensData(root);
   }

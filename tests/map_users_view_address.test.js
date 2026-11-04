@@ -64,14 +64,20 @@ const click = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubb
     click(a.w, a.lens("contacts"));
     await tick();
     check("(2) the Contact directory reports map-users/contacts", a.lit() === "contacts" && a.stash() === "map-users/contacts", a.stash());
-    // (3) a later visit
-    a.w.location.hash = "#map-users/gaps";
+    // (3) a re-fired activation (a phrase unlock) on the same address keeps the lens picked since
     a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "map-users" } }));
     await tick();
+    check("(3) a re-fired activation on the same address keeps the lens picked since", a.lit() === "contacts", a.lit());
+    // (3) a later visit, after another tab
+    const visit = async (hash) => {
+      a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "dashboard" } }));
+      a.w.location.hash = hash;
+      a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "map-users" } }));
+      await tick();
+    };
+    await visit("#map-users/gaps");
     check("(3) a later visit by an address opens its lens", a.lit() === "gaps" && a.stash() === "map-users/gaps", a.lit());
-    a.w.location.hash = "#map-users";
-    a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "map-users" } }));
-    await tick();
+    await visit("#map-users");
     check("(3) a later visit on the bare tab leaves the lens the reader chose", a.lit() === "gaps", a.lit());
   }
   {
