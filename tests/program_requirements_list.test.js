@@ -133,11 +133,11 @@ function words(d, re) { return Array.from(d.querySelectorAll("button")).find((b)
     && txt(cell(t.d, art, "Record")) === "Not read yet" && txt(cell(t.d, art, "Machine checks")) === "—", txt(cell(t.d, nurse, "Known issues")));
 
   const fl = Array.from(t.d.querySelectorAll(".prl-filters button, .prl-filters span")).map(txt);
-  check("(4) each filter word carries its count", fl.join("|") === "All (5)|Not read yet (2)|Read (3)|Pass the machine checks (1)|Fail a machine check (2)|Disagree with the state's course list (1)|Units do not add up (1)",
+  check("(4) each filter word carries its count", fl.join("|") === "All (5)|Not read yet (2)|Read (3)|Pass the machine checks (1)|Fail a machine check (2)|Disagree with the state's course list (1)|Units do not add up (1)|Confirmed by a person (0)",
     fl.join(" | "));
   const expect = { "Not read yet": ["Art History", "English as a Second Language"], "Read": ["Accounting", "Nursing", "Welding Technology"],
     "Pass the machine checks": ["Welding Technology"], "Fail a machine check": ["Accounting", "Nursing"],
-    "Disagree with the state's course list": ["Nursing"], "Units do not add up": ["Accounting"] };
+    "Disagree with the state's course list": ["Nursing"], "Units do not add up": ["Accounting"], "Confirmed by a person": [] };
   const bad = [];
   for (const k of Object.keys(expect)) {
     words(t.d, new RegExp("^" + k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " \\(")).click(); await settle();

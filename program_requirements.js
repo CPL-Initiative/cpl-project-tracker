@@ -2560,16 +2560,14 @@
         " hours a unit (Title 5 section 55002.5); for estimating only, not awarded units" })]);
   }
 
-  /* opts.split: the card drawn in the side by side view, its blocks open and no Side by side word. */
-  function recordCard(p, opts) {
-    opts = opts || {};
-    var key = p.college + "|" + p.control_number;
+  /* A record's checks and its CPL line, as the card and the List's panel both draw them (S574: the panel carries
+     the card's parts before Program records retires). */
+  function recordFacts(p, F) {
     var unit = p.measure === "hours" ? "hours" : "units";
     var ck = recordChecks(p);
     var disp = p.display || {};
     var counts = disp.counts || {};
     var figure = disp.figure || {};
-    var courses = disp.courses || {};
     function dd(label, value) {
       return el("div", { cls: "prh-check" }, [el("dt", { text: label }), typeof value === "string" ? el("dd", { text: value }) : el("dd", {}, [value])]);
     }
@@ -2598,7 +2596,20 @@
           " of " + (counts.courses || "?") + " carry CPL at this college" +
           (figure.up_to != null ? "; up to " + fmt(figure.up_to) + " of " + span(p.total_min, p.total_max) + " " + unit + " through CPL" : "")])
       : el("div", { cls: "prh-cpl prh-quiet", text: "No course here carries CPL at this college yet" });
-    var F = flagsFor(p);
+    return { checks: el("dl", { cls: "prh-checks" }, [dd("Courses", placed),
+        dd("Off the state list", ck.additions ? ck.additions + ", printed in the catalog" : "None"),
+        dd("Units", arith), equivRow(p, disp), dd("Person's reading", reader),
+        F.flags.length ? wide(dd("Flags", flagSummary(F.flags))) : null,
+        F.college.length ? wide(dd("For the college", collegeLine(p, F.college))) : null]), cpl: cpl };
+  }
+  /* opts.split: the card drawn in the side by side view, its blocks open and no Side by side word. */
+  function recordCard(p, opts) {
+    opts = opts || {};
+    var key = p.college + "|" + p.control_number;
+    var unit = p.measure === "hours" ? "hours" : "units";
+    var disp = p.display || {};
+    var courses = disp.courses || {};
+    var F = flagsFor(p), facts = recordFacts(p, F);
     var reviewing = !!(state.review && state.review.records && p.requirements_fp);
     var sl = reviewing ? stateLine(p) : null;
     /* The public reads every record (Sam, Open Asks Sheet 67), and one no person has checked
@@ -2613,12 +2624,7 @@
       el("div", { cls: "prh-rtitle" }, [el("strong", { text: p.program_title }),
         el("span", { cls: "prh-small prh-quiet", text: award(p.award) + " · " + p.control_number }), line,
         el("span", { cls: "prh-rctl" }, [btn, !opts.split && p.source_url ? splitButton(p) : null])]),
-      el("dl", { cls: "prh-checks" }, [dd("Courses", placed),
-        dd("Off the state list", ck.additions ? ck.additions + ", printed in the catalog" : "None"),
-        dd("Units", arith), equivRow(p, disp), dd("Person's reading", reader),
-        F.flags.length ? wide(dd("Flags", flagSummary(F.flags))) : null,
-        F.college.length ? wide(dd("For the college", collegeLine(p, F.college))) : null]),
-      cpl]);
+      facts.checks, facts.cpl]);
     var body = el("div", { cls: "prh-body", id: bodyId });
     body.hidden = !isOpen;
     /* The blocks are built the first time they show (Sam, 2026-10-11: "the program blocks
@@ -3644,7 +3650,20 @@
    * so COCI's short college names ("L.A. VALLEY") never have to match the records' names. */
   var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
   var LIST_FILTERS = [["", "All"], ["unread", "Not read yet"], ["read", "Read"], ["pass", "Pass the machine checks"],
-    ["fail", "Fail a machine check"], ["conflict", "Disagree with the state's course list"], ["units", "Units do not add up"]];
+    ["fail", "Fail a machine check"], ["conflict", "Disagree with the state's course list"], ["units", "Units do not add up"],
+    ["checked", "Confirmed by a person"]];
+  /* Program records' Waiting on your reading (S574): offered to a signed-in reviewer, as that view offered it, and kept
+     while an address set it. A record waits until a person confirms it or notes a fix (stateLine). */
+  var LIST_WAITING = ["waiting", "Waiting on your reading"];
+  function listFilters() {
+    var L = listState();
+    return reviewing() || L.f === "waiting" ? [LIST_FILTERS[0], LIST_WAITING].concat(LIST_FILTERS.slice(1)) : LIST_FILTERS;
+  }
+  function listLive() {
+    var n = { checked: 0, waiting: 0 }, m = listBuild();
+    (m ? m.rows : []).forEach(function (r) { if (!r.p) return; if (r.p.checked) n.checked++; if (isWaiting(r.p)) n.waiting++; });
+    return n;
+  }
   function listState() { return state.ls || (state.ls = {}); }
   function listFold(s) {
     s = String(s == null ? "" : s);
@@ -3753,6 +3772,8 @@
     if (f === "fail") return r.fails.length > 0;
     if (f === "conflict") return r.fails.indexOf("courses") >= 0 || r.fails.indexOf("off-list") >= 0;
     if (f === "units") return r.fails.indexOf("units") >= 0;
+    if (f === "checked") return !!r.p.checked;
+    if (f === "waiting") return isWaiting(r.p);
     return true;
   }
   function listHead(wrap) {
@@ -3824,15 +3845,17 @@
       // the table, with its required courses block by block, the record's checks and the rest folded.
       panel: { label: function (r) { return "Program: " + r.title; }, body: listPanelBody },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
-      filters: LIST_FILTERS, counts: function () { var m = listBuild(); return m ? m.counts : {}; }
+      // Confirmed and Waiting count live: a verdict saved in the panel changes them without a new build.
+      counts: function () { var m = listBuild(); return m ? Object.assign({}, m.counts, listLive()) : {}; }
     };
+    Object.defineProperty(spec, "filters", { enumerable: true, get: listFilters });
     return spec;
   }
   /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR and
      Subjects first): one line of the requirements row in kb/status/commons.json, each count opening the List's own
      filter where it has one, and the Progress view's opened page folded behind one word for the visit. The engine
      draws the line and reads the Commons file once a visit. */
-  var LINE_FILTERS = { unread: 1, read: 1, pass: 1, fail: 1, conflict: 1, units: 1 };
+  var LINE_FILTERS = { unread: 1, read: 1, pass: 1, fail: 1, conflict: 1, units: 1, checked: 1, waiting: 1 };
   function listLine(wrap, api) {
     var L = listState(), CLM = window.CPL_COMMONS_LIST;
     // Read once, success or failure, or a failed read would repaint and read again forever (the CR line's lesson).
@@ -3878,53 +3901,95 @@
     out.push(h.title(r.title));
     out.push(h.meta([r.college, r.award, "Control number " + r.ctl, r.fam, r.lo == null ? "" : span(r.lo, r.hi) + " units",
       !p ? "Not read yet" : r.fails.length ? "Fails a machine check" : "Passes the machine checks"]));
+    var more = [];
     if (!p) {
       out.push(h.el("p", { cls: "prh-meta", text: "The harvest holds no record of this program yet, so its courses are not listed here. COCI's words and codes are folded below." }));
     } else {
+      var key = keyOf(p), light = p._light && !p._gone;
+      /* The card's parts (S574, before Program records retires): the reader's state line, Side by side, the checks in
+         full, the flags, each course's codes, flag marks, outcomes and its CPL dialog, and Your reading's two words. */
+      var reviewing = !light && !!(state.review && state.review.records && p.requirements_fp);
+      var sl = reviewing ? stateLine(p) : null;
+      var line = h.el("span", { cls: "prh-state" + (sl && sl.waiting ? " prh-state-waiting" : ""), text: sl ? sl.text : "" });
       out.push(h.el("p", { cls: "prl-pn-dec", text: (p.checked ? "A person confirmed it" + (p.checked_by ? ", " + p.checked_by : "") + (p.checked_at ? " " + h.stamp(p.checked_at) : "")
         : "Not yet confirmed by a person") + ". Courses: " + (p.checks && p.checks.coverage === true ? "every listed course placed" : "a listed course is not placed")
         + "; added courses: " + (p.checks && p.checks.invented === true ? "none" : "a course the state's list lacks") + "; units: " + unitsWords(p) + "." }));
-      out.push(h.el("div", { cls: "prl-acts" }, [h.word("Open the record in Program records", function () { listOpenRecord(p); })]));
-      out.push(h.heading("Its courses"));
-      var key = keyOf(p);
-      if (p._light && !p._gone) {
+      out.push(h.el("div", { cls: "prl-acts" }, [sl ? line : null, !light && p.source_url ? splitButton(p) : null,
+        h.word("Open the record in Program records", function () { listOpenRecord(p); })]));
+      if (light) {
         if (!loads[key]) {
           loads[key] = "reading";
           ensureRows([p]).then(function () { loads[key] = p._light ? "failed" : "done"; }, function () { loads[key] = "failed"; })
             .then(function () { if (LIST.engine && listState().panel === r.ut) LIST.engine.redraw(); });
         }
+        out.push(h.heading("Its courses"));
         out.push(h.el("p", { cls: "prh-meta", role: "status", text: loads[key] === "failed"
           ? "The record's courses could not be read" + (state.failed[p.college] ? " (" + state.failed[p.college] + ")" : "") + ". Open the record in Program records to try again."
           : "Reading the record's courses…" }));
       } else {
-        var blocks = (p.record && p.record.blocks) || [], info = (p.display && p.display.courses) || {}, unit = p.measure === "hours" ? "Hours" : "Units";
+        var F = flagsFor(p), facts = recordFacts(p, F), disp = p.display || {};
+        out.push(h.heading("Its checks"));
+        out.push(facts.checks);
+        out.push(facts.cpl);
+        if (F.flags.length) {
+          var names = ((p.record && p.record.blocks) || []).map(function (b) { return b.name || "Courses"; });
+          out.push(h.heading("Flags for the reading procedure"));
+          out.push(h.el("div", { cls: "prh-flags" }, F.flags.map(function (f) {
+            var box = flagBox(f);
+            box.insertBefore(h.el("p", { cls: "prh-small prh-quiet", text: f.block == null ? "On the whole record" : "In " + names[f.block] }), box.firstChild.nextSibling);
+            return box;
+          })));
+        }
+        out.push(h.heading("Its courses"));
+        var blocks = (p.record && p.record.blocks) || [], info = disp.courses || {}, unit = p.measure === "hours" ? "Hours" : "Units";
         var groups = {};
         blocks.forEach(function (b) { if (b.option_group) groups[b.option_group] = (groups[b.option_group] || 0) + 1; });
         var cs = [];
         blocks.forEach(function (b, bi) {
+          var stated = b.stated && b.stated.min != null ? "; the catalog prints " + span(b.stated.min, b.stated.max) + " " + unit.toLowerCase() : "";
           (b.courses || []).forEach(function (c) {
             var i = info[c.code] || {}, alts = (c.alternatives || []).map(function (a) { return a && (a.code || a); }).filter(Boolean);
-            cs.push({ at: bi, block: (b.name || "Courses") + ", " + ruleText(b, p.measure, groups).toLowerCase(), code: c.code + (alts.length ? " or " + alts.join(", ") : ""),
+            cs.push({ at: bi, block: (b.name || "Courses") + ", " + ruleText(b, p.measure, groups).toLowerCase() + stated, code: c.code + (alts.length ? " or " + alts.join(", ") : ""),
               title: i.title || "", units: c.units != null ? Number(c.units) : i.units_from_state_file != null ? Number(i.units_from_state_file) : null,
-              cpl: exhibitCount(i) });
+              cpl: exhibitCount(i), c: c, i: i });
           });
         });
-        if (!cs.length) out.push(h.el("p", { cls: "prh-meta", text: "The record lists no courses." }));
-        else out.push(h.table({ id: "courses", label: "The courses " + r.title + " at " + r.college + " requires",
+        var holder = h.el("div", { cls: "prl-pn-courses" });
+        if (!cs.length) holder.appendChild(h.el("p", { cls: "prh-meta", text: "The record lists no courses." }));
+        else holder.appendChild(h.table({ id: "courses", label: "The courses " + r.title + " at " + r.college + " requires",
           note: fmt(cs.length) + (cs.length === 1 ? " course" : " courses") + " in " + fmt(blocks.length) + (blocks.length === 1 ? " block" : " blocks")
             + (p.total_min != null ? "; the program totals " + span(p.total_min, p.total_max) + " " + unit.toLowerCase() : "")
-            + ". CPL here counts the exhibits and credit recommendations on record for the course at this college. Press a header to sort.",
+            + ". CPL here counts the exhibits and credit recommendations on record for the course at this college; its number opens them. Press a header to sort.",
           cols: [["at", "Order", true], ["block", "Block"], ["code", "Course"], ["title", "Title"], ["units", unit, true], ["cpl", "CPL here", true]],
           rows: cs,
-          cell: function (row, k) { return k === "at" ? row.at + 1 : row[k]; } }));
+          cell: function (row, k) {
+            if (k === "at") return row.at + 1;
+            if (k === "units") return row.c.units != null || row.i.units_from_state_file == null ? span(row.c.units, row.c.units_max) : fmt(row.i.units_from_state_file) + " (COCI)";
+            if (k === "code") return h.el("span", null, [row.code, idChips(row.i)]);
+            if (k === "title") return h.el("span", null, [row.title, rowMark(row.c, F.byCode, info),
+              h.el("span", { cls: "prh-outslot", "data-key": codeKey(row.c.code), "data-code": row.c.code })]);
+            if (k === "cpl") return row.cpl || hasLeads(row.i) || aiMatches(p.college, row.c.code).length ? cplButton(p, row.c.code, row.i, row.cpl) : zeroCount(p, row.c.code, row.i);
+            return row[k];
+          } }));
+        if (cs.length) fillOutcomeLinks(holder, p, info);
+        out.push(holder);
+        if (reviewing) out.push(verdictBox(p, F, line));
+        else if (state.review && state.review.error) out.push(h.el("p", { cls: "prh-small prh-caution", role: "status",
+          text: "Your sign-in could not read the records (" + state.review.error + "), so Confirm and Needs a fix are left out. Reload the tab to try again." }));
+        else if (!state.review) out.push(signInBox());
+        var careers = (p.record && p.record.program && p.record.program.careers) || [];
+        if (careers.length) more.push(h.el("p", null, ["Careers the catalog names: " + careers.join("; ") + "."]));
+        more.push(h.el("p", null, ["Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
+          (p.catalog_year ? " (" + yr(p.catalog_year) + ")" : "") + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + "." +
+          (disp.build ? " Display build " + disp.build + (disp.built ? ", " + disp.built : "") + "." : "")]));
+        if (F.notes.length) out.push(h.fold("notes", "Notes for the reading procedure (" + F.notes.length + ")",
+          [h.el("ul", null, F.notes.map(function (g) { return h.el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
       }
     }
-    var more = [];
-    more.push(h.el("p", null, [r.awardLong ? "COCI's award: " + r.awardLong + "." : "COCI names no award for this program."]));
-    more.push(h.el("p", null, [r.cip ? "CIP " + r.cip + ", in the family " + r.fam + "." : "COCI holds no CIP code for this program."]));
-    if (r.top) more.push(h.el("p", null, ["TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal)."]));
+    more.unshift(h.el("p", null, [r.awardLong ? "COCI's award: " + r.awardLong + "." : "COCI names no award for this program."]),
+      h.el("p", null, [r.cip ? "CIP " + r.cip + ", in the family " + r.fam + "." : "COCI holds no CIP code for this program."]));
+    if (r.top) more.splice(2, 0, h.el("p", null, ["TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal)."]));
     if (r.coci && r.coci !== r.college) more.push(h.el("p", null, ["COCI's short name for the college: " + r.coci + "."]));
-    if (p) more.push(h.el("p", null, ["Read from " + shortCollege(p.college) + "'s catalog" + (p.program_title ? " as " + p.program_title : "") + (p.catalog_year ? ", " + yr(p.catalog_year) : "") + "."]));
     out.push(h.fold("more", "More about this program: COCI's words, its codes and the record's source", more));
     return out;
   }
@@ -3966,7 +4031,7 @@
     if (parts[0] !== "program-requirements" || parts[1] !== "list") return false;
     state.view = "list";
     /* #program-requirements/list/<filter> opens the List on one of its filters (a Commons count, Sam 2026-11-03). */
-    if (parts[2] && LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) { var L = listState(); L.f = parts[2]; L.q = ""; }
+    if (parts[2] && (parts[2] === LIST_WAITING[0] || LIST_FILTERS.some(function (f) { return f[0] === parts[2]; }))) { var L = listState(); L.f = parts[2]; L.q = ""; }
     return true;
   }
   var hashWired = false;

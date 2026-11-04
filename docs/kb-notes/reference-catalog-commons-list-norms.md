@@ -69,7 +69,7 @@ by block with the CPL on record at its college, reading a light record once from
 Commons file with its Progress page, and a course's panel lists the local courses its M-ID holds. Every List now has
 the line, the fold and the panel. CR's worklist retired into its List on 2026-11-04, its Part B guards ported
 first (`tests/cr_list_worklist_port.test.js`); Subjects' Reference view followed (#2751 carried it onto the List,
-#2752 deletes it). Next: Programs' and Courses' older views.
+#2752 deletes it). Programs' Program records view is next, in three PRs: the panel carries the record's card (its checks in full, the flags, each course's codes, flag marks, outcomes and CPL dialog, Side by side, and Confirm and Needs a fix or the sign-in) with *Confirmed by a person* and a reviewer's *Waiting on your reading* as List filters (2026-11-04, `tests/program_requirements_list_record_port.test.js`); then every way in opens the List (the Progress counts, a call's record, CPL Pathways' college line), with the District and SWP Region filters, a college's drafts and the records on programs COCI does not list as active; then the view is deleted. Courses' older view follows.
 
 ## What every List shares
 
