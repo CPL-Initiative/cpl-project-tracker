@@ -379,6 +379,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_apply_college_short_names.py`, `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_list.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
+| `commons_look.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_page.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` | — |
 | `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
 | `comms.js` | pages: `CPL_Dashboard.html` | — |
@@ -1285,5 +1286,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 784 file
-datasets · 193 external services · 515 consumers · 60 workflows · 40 tabs.
+Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 785 file
+datasets · 193 external services · 516 consumers · 60 workflows · 40 tabs.
