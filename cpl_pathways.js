@@ -2870,6 +2870,19 @@
       var c = it.prog && it.prog.college;
       if (c && colleges.indexOf(c) < 0) colleges.push(c);
     });
+    /* Every college, not only those with a pathway on record (Ashley, 2026-11-04: Santiago
+       Canyon College was missing). The full roster is College Identity's (college_short_names.js);
+       a college already listed under a pathway's spelling keeps that spelling, matched by
+       choiceKey, so no college appears twice. One with no pathway yet says so when picked. */
+    var listed = {};
+    colleges.forEach(function (c) { listed[choiceKey(c)] = true; });
+    (window.CPL_COLLEGE_SHORT || []).forEach(function (r) {
+      var c = r && r.canonical;
+      if (!c) return;
+      c = c.replace(/ (Of|The)(?= )/g, function (m) { return m.toLowerCase(); });
+      var k = choiceKey(c);
+      if (k && !listed[k]) { listed[k] = true; colleges.push(c); }
+    });
     colleges.sort(function (a, b) { return a.localeCompare(b); });
     col.appendChild(option("", "All colleges"));
     colleges.forEach(function (c) { col.appendChild(option(c, c)); });
@@ -2961,7 +2974,11 @@
       return o ? o.value : "";
     }
     takeShared(colleges);
-    if (pickedCollege && colleges.indexOf(pickedCollege) < 0) pickedCollege = "";
+    if (pickedCollege && colleges.indexOf(pickedCollege) < 0) {
+      // The same college under a pathway's spelling, once the table's records land.
+      var pk = choiceKey(pickedCollege);
+      pickedCollege = colleges.filter(function (c) { return choiceKey(c) === pk; })[0] || "";
+    }
     col.value = pickedCollege;
     fill(pickedCollege);
     sel.addEventListener("change", function () {
