@@ -643,3 +643,16 @@ so the port into this tab waits on his call on the look.
 - **`kb_curation` forgets:** its primary key is (course_id, field), so a person's save replaces a procedure's row. The
   receipts are the only record of what a procedure wrote; a confidence measure for another reference needs receipts in
   the same row shape (only the CER saves and the Subjects confirm have them today).
+
+## Moved from the lane, 2026-11-04 (S574)
+
+**What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
+list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
+read of the records' display facts, so the Program Requirements row carries two known issues, the failing
+and the unread. The CR row's curator decisions come from the committed receipt, so a new sitting lands a
+receipt under `kb/receipts/` or the figure stays at 30 (the live table is the authority). A call reads from
+the run log and stays open until a checkpoint removes it; the decision sheet's store is read only where the
+Progress view's `callAnswered` resolves a record. The machine stamps: Program Requirements the last college
+read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
+last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
+older than a week reads stale.

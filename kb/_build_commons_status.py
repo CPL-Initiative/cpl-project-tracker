@@ -314,8 +314,9 @@ def row_course(root):
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
              "owner": "the Common Subjects reference", "carry": "no_procedure", "open": tab},
             {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": tab},
-            {"n": tags.get("top_discipline_disagreement"), "words": "TOP and discipline disagreements",
-             "owner": "a curator (the subject map decides; TOP corroborates)", "carry": "unsure", "open": tab},
+            # TOP and discipline disagreements are no person's item (Sam, 2026-11-04: "I'm not generally worried about
+            # TOP disagreement as those are input unchecked by colleges. CIP from the COCI programs records should be
+            # more dependable"; Rule 7, TOP is last in line). The count stays in facts.tags for the Progress page.
             {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": tab},
         ],
         "procedures": procedures,

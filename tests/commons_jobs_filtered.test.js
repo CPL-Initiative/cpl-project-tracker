@@ -8,6 +8,8 @@
 //       Progress page;
 //   (3) that filter holds the MQ disciplines with a finding to confirm or note (never an unconfirmed-only finding), says
 //       which finding sits on a file, and each panel names its findings;
+//   (5) TOP and discipline disagreements wait on no person (Sam, 2026-11-04: "those are input unchecked by colleges. CIP
+//       from the COCI programs records should be more dependable"); their count stays a fact;
 //   (4) the deploy serves kb/csr_out/latest.json (the Subjects Progress page read "Could not be read" while the build
 //       pruned it) and fails if it goes missing.
 // Run from repo root: `npm test` (or `node tests/commons_jobs_filtered.test.js`).
@@ -44,6 +46,11 @@ check("(2) ⭐ the Commons file's scan findings count opens the Subjects List on
 const queued = [].concat.apply([], CM.queue.reasons.map((g) => g.items)).find((i) => i.ref === "subjects" && /scan findings/.test(i.words));
 check("(2) and so does its queue item", !!queued && queued.open === "#canonical-subj4/list/scan");
 const BUILD = fs.readFileSync("kb/_build_commons_status.py", "utf8");
+const allQueued = [].concat.apply([], CM.queue.reasons.map((g) => g.items)).concat(CM.queue.carried || []);
+const course = CM.rows.find((r) => r.key === "course");
+check("(5) ⭐ no TOP disagreement waits on a person, in the queue or the Courses row's issues", !allQueued.some((i) => /TOP/.test(i.words))
+  && !(course.issues || []).some((i) => /TOP/.test(i.words)) && !/"words": "TOP and discipline disagreements"/.test(BUILD));
+check("(5) its count stays a fact for the Progress page", course.facts && course.facts.tags && course.facts.tags.top_discipline_disagreement != null);
 check("(2) the builder writes that address", /"open": tab \+ "\/list\/scan"/.test(BUILD));
 const CS = fs.readFileSync("canonical_subj4.js", "utf8");
 check("(2) the tab's own Progress item opens the List on it", /scan: \{ view: "list", filter: "scan" \}/.test(CS) && /words: "Open them in the List", go: go\(TO\.scan\)/.test(CS));

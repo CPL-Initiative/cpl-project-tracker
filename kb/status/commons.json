@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-04T17:47:07Z",
+ "written_at": "2026-11-04T17:52:05Z",
  "rows": [
   {
    "key": "requirements",
@@ -231,13 +231,6 @@
      "words": "unit anomalies",
      "owner": "a curator (an identity keeps its unit range)",
      "carry": "no_procedure",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
-    },
-    {
-     "n": 1159,
-     "words": "TOP and discipline disagreements",
-     "owner": "a curator (the subject map decides; TOP corroborates)",
-     "carry": "unsure",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     },
     {
@@ -653,14 +646,6 @@
       "words": "titles held for a person",
       "owner": "a curator (the classifier is unsure 28, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
       "open": "#exhibits/held"
-     },
-     {
-      "ref": "course",
-      "title": "Common Course Reference",
-      "n": 1159,
-      "words": "TOP and discipline disagreements",
-      "owner": "a curator (the subject map decides; TOP corroborates)",
-      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
      },
      {
       "ref": "cr",
