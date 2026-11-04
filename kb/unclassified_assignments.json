@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-03T06:18:40Z",
-  "count": 2307,
+  "_synced_at": "2026-11-04T06:18:46Z",
+  "count": 2320,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3101,6 +3101,12 @@
       "unified_title": "Intermediate American Sign Language 2",
       "supersedes": "American Sign Language: Level 2 Intermediate"
     },
+    "ASL 052 American Sign Language III": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "American Sign Language III"
+    },
     "ASL 1: Beginning American Sign Language": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -4522,6 +4528,18 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Fundamentals of Computer-Aided Drafting"
+    },
+    "CARP 207 Math for Construction Trades": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Math for Construction Trades"
+    },
+    "CARP 223 OSHA 30 Hr. Construction Safety Training": {
+      "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)"
     },
     "CDA National Credentialing Program--Preschool": {
       "issuing_agency": "Council for Professional Recognition",
@@ -10028,6 +10046,42 @@
       "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB World Religions SL"
     },
+    "IBEW- Inside Wireman, Apprenticeship Year 1": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 1"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 2": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 2"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 3": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 3"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 4": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 4"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 5": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 5"
+    },
+    "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Journeyperson"
+    },
     "IBEW- Power Lineman Apprenticeship Year 1": {
       "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -12578,6 +12632,30 @@
       "reviewed_at": "2026-11-01T22:14:02.571+00:00",
       "unified_title": "Computer Basics",
       "supersedes": "Portfolio Review"
+    },
+    "Portfolio - Basic Food Preparation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Basic Food Preparation"
+    },
+    "Portfolio - Cost Control for Food Service Organizations": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Cost Control for Food Service Organizations"
+    },
+    "Portfolio - Intermediate Food Preparation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Food Preparation Intermediate"
+    },
+    "Portfolio - Introduction to the Hospitality Industry": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Introduction to the Hospitality Industry"
     },
     "Portfolio AJ 54": {
       "issuing_agency": "California Community Colleges",

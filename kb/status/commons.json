@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T18:46:01Z",
+ "written_at": "2026-11-04T06:23:23Z",
  "rows": [
   {
    "key": "requirements",
@@ -96,14 +96,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2457,
-     "of": 5493,
-     "words": "titles carry a review stamp (1,173 a person's, 1,284 a cohort's); 2,667 credentials, 2,201 of 2,970 records stamped",
+     "n": 2470,
+     "of": 5506,
+     "words": "titles carry a review stamp (1,173 a person's, 1,297 a cohort's); 2,673 credentials, 2,207 of 2,976 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1173,
-     "of": 5493,
+     "of": 5506,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -123,7 +123,7 @@
      "error": null
     },
     {
-     "n": 621,
+     "n": 622,
      "words": "titles in the reference that have left MAP",
      "owner": "a curator (retire or keep)",
      "open": "#credential-reference/all",
@@ -146,23 +146,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-03T15:33:09Z",
+    "at": "2026-11-04T06:18:47Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5493,
-    "stamped": 2457,
+    "titles": 5506,
+    "stamped": 2470,
     "person": 1173,
-    "cohort": 1284,
-    "credentials": 2667,
+    "cohort": 1297,
+    "credentials": 2673,
     "confirmed": 1173,
-    "records": 2970,
-    "records_stamped": 2201,
+    "records": 2976,
+    "records_stamped": 2207,
     "saved_at": "2026-11-03T15:33:09Z",
-    "fold_at": "2026-11-03T06:18:41Z",
-    "map_titles": 4887,
-    "unclassified": 15,
-    "left_map": 621,
+    "fold_at": "2026-11-04T06:18:47Z",
+    "map_titles": 4928,
+    "unclassified": 44,
+    "left_map": 622,
     "below_80": 1123,
     "below_60": 237
    },
@@ -256,7 +256,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-03T06:20:32+00:00",
+    "at": "2026-11-04T06:21:00+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -297,9 +297,9 @@
    "status_file": "kb/status/cr.json",
    "pair": [
     {
-     "n": 460,
+     "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (410 by a rung 1 to 4 rule, 50 more by a curator); 5,900 of 9,432 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,959 of 9,432 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -317,7 +317,7 @@
    ],
    "issues": [
     {
-     "n": 1884,
+     "n": 1883,
      "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
      "owner": "a curator",
      "open": "#cr-reference/open"
@@ -341,44 +341,44 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-03T06:22:32+00:00",
+    "at": "2026-11-03T06:22:32Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
-    "rung_5": 1934,
+    "rung_5": 1933,
     "rows": 9432,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
-    "settled": 460,
-    "settled_rows": 5900,
-    "rule_wordings": 410,
-    "rule_rows": 4855,
-    "rule_groups": 225,
+    "settled": 461,
+    "settled_rows": 5959,
+    "rule_wordings": 411,
+    "rule_rows": 4914,
+    "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
     "confirmed": 97,
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
-    "unsettled": 1884,
-    "unsettled_rows": 3532,
+    "unsettled": 1883,
+    "unsettled_rows": 3473,
     "head": {
      "50": {
-      "settled": 45,
+      "settled": 46,
       "of": 50,
       "rows": 4648
      },
      "100": {
-      "settled": 77,
+      "settled": 78,
       "of": 100,
       "rows": 5545
      },
      "250": {
-      "settled": 152,
+      "settled": 153,
       "of": 250,
       "rows": 6559
      }
@@ -409,15 +409,15 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 136,
+     "n": 147,
      "of": 147,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (122 by a person, 14 by the nightly procedure or a session cohort)",
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (133 by a person, 14 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
-     "n": 122,
+     "n": 133,
      "of": 147,
-     "words": "confirmed by a person, 122 of them settled",
+     "words": "confirmed by a person, 133 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
     }
@@ -429,12 +429,6 @@
     "confirmed by a person"
    ],
    "issues": [
-    {
-     "n": 11,
-     "words": "MQ disciplines on the data's modal code, unconfirmed",
-     "owner": "a curator",
-     "open": "#canonical-subj4/open"
-    },
     {
      "n": 17,
      "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
@@ -469,20 +463,20 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-03T06:18:39Z",
+    "at": "2026-11-04T06:18:44Z",
     "every_hours": 24
    },
    "facts": {
     "disciplines": 147,
-    "confirmed": 136,
-    "person": 122,
+    "confirmed": 147,
+    "person": 133,
     "cohort": 14,
-    "person_settled": 122,
-    "settled": 136,
-    "modal": 11,
+    "person_settled": 133,
+    "settled": 147,
+    "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-03",
+    "scanned_at": "2026-11-04",
     "procedures_on": 6
    },
    "sources": [

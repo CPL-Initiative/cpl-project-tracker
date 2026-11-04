@@ -61361,5 +61361,109 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-01T22:09:51.887055+00:00",
     "reviewed_by": "slee@cccco.edu"
+  },
+  "ASL 052 American Sign Language III": {
+    "unified_title": "American Sign Language III",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CARP 207 Math for Construction Trades": {
+    "unified_title": "Math for Construction Trades",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CARP 223 OSHA 30 Hr. Construction Safety Training": {
+    "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 1": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 2": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 3": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 4": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 5": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 5",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
+    "unified_title": "IBEW Electrician Apprenticeship — Journeyperson",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio - Basic Food Preparation": {
+    "unified_title": "Basic Food Preparation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio - Cost Control for Food Service Organizations": {
+    "unified_title": "Cost Control for Food Service Organizations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio - Intermediate Food Preparation": {
+    "unified_title": "Food Preparation Intermediate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio - Introduction to the Hospitality Industry": {
+    "unified_title": "Introduction to the Hospitality Industry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-04",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

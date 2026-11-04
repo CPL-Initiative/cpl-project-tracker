@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft.",
- "_reference_generated_at": "2026-11-03T06:19:44+00:00",
+ "_reference_generated_at": "2026-11-04T06:20:04+00:00",
  "counts": {
   "certs_linked": 165,
   "titles_linked": 208,
