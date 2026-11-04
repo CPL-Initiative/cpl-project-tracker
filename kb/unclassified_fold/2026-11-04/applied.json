@@ -1,0 +1,151 @@
+{
+  "folded": [
+    {
+      "raw": "ASL 052 American Sign Language III",
+      "assigned": "American Sign Language III",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "CARP 207 Math for Construction Trades",
+      "assigned": "Math for Construction Trades",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "CARP 223 OSHA 30 Hr. Construction Safety Training",
+      "assigned": "OSHA 30 — Construction Industry Outreach (30-hour)",
+      "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "IBEW- Inside Wireman, Apprenticeship Year 1",
+      "assigned": "IBEW Electrician Apprenticeship — Year 1",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "IBEW- Inside Wireman, Apprenticeship Year 2",
+      "assigned": "IBEW Electrician Apprenticeship — Year 2",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "IBEW- Inside Wireman, Apprenticeship Year 3",
+      "assigned": "IBEW Electrician Apprenticeship — Year 3",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "IBEW- Inside Wireman, Apprenticeship Year 4",
+      "assigned": "IBEW Electrician Apprenticeship — Year 4",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "IBEW- Inside Wireman, Apprenticeship Year 5",
+      "assigned": "IBEW Electrician Apprenticeship — Year 5",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "IBEW- Inside Wireman, Apprenticeship- Journeyperson",
+      "assigned": "IBEW Electrician Apprenticeship — Journeyperson",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Basic Food Preparation",
+      "assigned": "Basic Food Preparation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Cost Control for Food Service Organizations",
+      "assigned": "Cost Control for Food Service Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Intermediate Food Preparation",
+      "assigned": "Food Preparation Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Introduction to the Hospitality Industry",
+      "assigned": "Introduction to the Hospitality Industry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "ASL 052 American Sign Language III",
+      "assigned": "American Sign Language III",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "CARP 207 Math for Construction Trades",
+      "assigned": "Math for Construction Trades",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Basic Food Preparation",
+      "assigned": "Basic Food Preparation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Cost Control for Food Service Organizations",
+      "assigned": "Cost Control for Food Service Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Intermediate Food Preparation",
+      "assigned": "Food Preparation Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    },
+    {
+      "raw": "Portfolio - Introduction to the Hospitality Industry",
+      "assigned": "Introduction to the Hospitality Industry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 13,
+  "unified_titles_count": 5506
+}

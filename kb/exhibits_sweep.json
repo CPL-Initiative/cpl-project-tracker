@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-03T06:22:21Z",
+ "generated_at": "2026-11-04T06:23:08Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -42,12 +42,42 @@
  ],
  "counts": {
   "ase": 0,
-  "numerals": 0,
+  "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 0,
- "cards": []
+ "local_titles": 1,
+ "cards": [
+  {
+   "current": "American Sign Language III",
+   "proposed": "Intermediate American Sign Language 1",
+   "rules": [
+    "numerals",
+    "language"
+   ],
+   "why": [
+    "Roman numerals become Arabic",
+    "“ASL 052 American Sign Language III” reads as intermediate level 1"
+   ],
+   "locals": [
+    {
+     "raw": "ASL 052 American Sign Language III",
+     "colleges": [
+      "Berkeley City College"
+     ],
+     "course": "ASL 052",
+     "credit": "4 hours in American Sign Language III"
+    }
+   ],
+   "id": "c7c95ed31724",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  }
+ ]
 }

@@ -1,6 +1,6 @@
 {
- "_scanned_at": "2026-11-03",
- "_registry_synced_at": "2026-11-03T06:18:39Z",
+ "_scanned_at": "2026-11-04",
+ "_registry_synced_at": "2026-11-04T06:18:44Z",
  "_disciplines": 147,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -1026,105 +1026,6 @@
   },
   {
    "id": "CSR0038",
-   "rule": "cs7_unreviewed",
-   "item": "Commercial Art",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0039",
-   "rule": "cs7_unreviewed",
-   "item": "Cosmetology",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0040",
-   "rule": "cs7_unreviewed",
-   "item": "Court Reporting",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0041",
-   "rule": "cs7_unreviewed",
-   "item": "Digital Fabrication Technician",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0042",
-   "rule": "cs7_unreviewed",
-   "item": "Disabled Student Programs and Services (DSPS)",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0043",
-   "rule": "cs7_unreviewed",
-   "item": "Electronic Technology",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0044",
-   "rule": "cs7_unreviewed",
-   "item": "Equine Science",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0045",
-   "rule": "cs7_unreviewed",
-   "item": "Heavy Duty Equipment Mechanics",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0046",
-   "rule": "cs7_unreviewed",
-   "item": "Parent Education: Noncredit",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0047",
-   "rule": "cs7_unreviewed",
-   "item": "Speech Language Pathology",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0048",
-   "rule": "cs7_unreviewed",
-   "item": "Upholstering",
-   "evidence": "no reviewed_by stamp",
-   "suggestion": null,
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0049",
    "rule": "cs9_anchor_dead_format",
    "item": "common_courses.json",
    "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",

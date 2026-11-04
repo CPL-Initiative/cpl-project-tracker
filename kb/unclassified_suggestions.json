@@ -1,33 +1,71 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-03T06:20:57Z",
- "count": 3,
+ "_generated_at": "2026-11-04T06:21:31Z",
+ "count": 7,
  "suggestions": {
-  "ASL 052 American Sign Language III": [
+  "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": [
    {
     "kind": "course",
-    "title": "American Sign Language III",
-    "code": "ASL 52",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "CARP 207 Math for Construction Trades": [
-   {
-    "kind": "course",
-    "title": "Math for Construction Trades",
-    "code": "CARP 207",
+    "title": "Advanced Waterworks Mathematics",
+    "code": "WATER 131",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
    }
   ],
-  "CARP 223 OSHA 30 Hr. Construction Safety Training": [
+  "EET 203 Basic Electricity": [
    {
     "kind": "course",
-    "title": "OSHA 30-Hour Construction Safety Training",
-    "code": "CARP 223",
+    "title": "Basic Electricity",
+    "code": "EET 203",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "EET 222 Photovaltaic NABCEP for Solar Associates": [
+   {
+    "kind": "course",
+    "title": "Photovoltaic NABCEP Test Preparation",
+    "code": "EET 222",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GEOG 1 Physical Geology": [
+   {
+    "kind": "cid",
+    "id": "GEOG 110",
+    "title": "Introduction to Physical Geography",
+    "code": "GEOG 1"
+   }
+  ],
+  "GRART 32 Digital Documents (Adobe InDesign)": [
+   {
+    "kind": "course",
+    "title": "Digital Documents (Adobe InDesign)",
+    "code": "GRART 32",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 36 Adobe Photoshop Basics": [
+   {
+    "kind": "course",
+    "title": "Adobe Photoshop Basics",
+    "code": "GRART 36",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 37 Advanced Photoshop": [
+   {
+    "kind": "course",
+    "title": "Advanced Photoshop",
+    "code": "GRART 37",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
@@ -35,85 +73,33 @@
   ]
  },
  "aligned": {
-  "ASL 052 American Sign Language III": {
-   "kind": "mid",
-   "id": "SLNA M1036",
-   "title": "American Sign Language 3",
-   "code": "ASL 052",
-   "college": "Berkeley City College"
+  "GEOG 1 Physical Geology": {
+   "kind": "cid",
+   "id": "GEOG 110",
+   "title": "Introduction to Physical Geography",
+   "code": "GEOG 001",
+   "college": "Laney College"
   },
-  "Portfolio - Intermediate Food Preparation": {
+  "GRART 32 Digital Documents (Adobe InDesign)": {
    "kind": "course",
-   "id": "RMGT M10BJ",
-   "title": "Intermediate Food Preparation",
-   "code": "FDR 051B",
-   "college": "Mission College"
+   "id": "GRAF M10BF",
+   "title": "Digital Documents (Adobe InDesign)",
+   "code": "GRART 032",
+   "college": "Laney College"
   },
-  "Portfolio - Cost Control for Food Service Organizations": {
-   "kind": "cid",
-   "id": "HOSP 120",
-   "title": "Hospitality Cost Control",
-   "code": "FDR 058",
-   "college": "Mission College"
-  },
-  "Portfolio - Introduction to the Hospitality Industry": {
-   "kind": "cid",
-   "id": "HOSP 100",
-   "title": "Introduction to Hospitality Management",
-   "code": "FDR 050",
-   "college": "Mission College"
-  },
-  "Portfolio - Basic Food Preparation": {
+  "GRART 36 Adobe Photoshop Basics": {
    "kind": "mid",
-   "id": "RMGT M1002",
-   "title": "Basic Food Preparation",
-   "code": "FDR 051A",
-   "college": "Mission College"
+   "id": "GRAF M9003",
+   "title": "Adobe Photoshop Basics",
+   "code": "GRART 036",
+   "college": "Laney College"
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 3": {
+  "GRART 37 Advanced Photoshop": {
    "kind": "mid",
-   "id": "AUTB M1047",
-   "title": "Apprentice Inside Wireman 1",
-   "code": "AEL 051",
-   "college": "Santiago Canyon College",
-   "ambiguous": [
-    "AUTB M1047",
-    "AUTB M1050",
-    "AUTB M1051",
-    "AUTB M1052",
-    "AUTB M1053",
-    "AUTB M1054"
-   ]
-  },
-  "IBEW- Inside Wireman, Apprenticeship Year 1": {
-   "kind": "mid",
-   "id": "AUTB M1047",
-   "title": "Apprentice Inside Wireman 1",
-   "code": "AEL 051",
-   "college": "Santiago Canyon College",
-   "ambiguous": [
-    "AUTB M1047",
-    "AUTB M1050"
-   ]
-  },
-  "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
-   "kind": "mid",
-   "id": "AUTB M1047",
-   "title": "Apprentice Inside Wireman 1",
-   "code": "AEL 051",
-   "college": "Santiago Canyon College",
-   "ambiguous": [
-    "AUTB M1047",
-    "AUTB M1049",
-    "AUTB M1050",
-    "AUTB M1051",
-    "AUTB M1052",
-    "AUTB M1053",
-    "AUTB M1054",
-    "AUTB M1055",
-    "AUTB M1057",
-    "AUTB M1058"
-   ]
+   "id": "PHOT M1011",
+   "title": "Advanced Photoshop",
+   "code": "GRART 037",
+   "college": "Laney College"
   },
   "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
    "kind": "course",
@@ -126,67 +112,25 @@
     "ELEC M10AO"
    ]
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 2": {
-   "kind": "mid",
-   "id": "AUTB M1047",
-   "title": "Apprentice Inside Wireman 1",
-   "code": "AEL 051",
-   "college": "Santiago Canyon College",
-   "ambiguous": [
-    "AUTB M1047",
-    "AUTB M1050",
-    "AUTB M1051",
-    "AUTB M1052"
-   ]
-  },
-  "IBEW- Inside Wireman, Apprenticeship Year 4": {
-   "kind": "mid",
-   "id": "AUTB M1047",
-   "title": "Apprentice Inside Wireman 1",
-   "code": "AEL 051",
-   "college": "Santiago Canyon College",
-   "ambiguous": [
-    "AUTB M1047",
-    "AUTB M1050",
-    "AUTB M1051",
-    "AUTB M1052",
-    "AUTB M1053",
-    "AUTB M1054",
-    "AUTB M1055",
-    "AUTB M1057"
-   ]
-  },
-  "IBEW- Inside Wireman, Apprenticeship Year 5": {
-   "kind": "mid",
-   "id": "AUTB M1047",
-   "title": "Apprentice Inside Wireman 1",
-   "code": "AEL 051",
-   "college": "Santiago Canyon College",
-   "ambiguous": [
-    "AUTB M1047",
-    "AUTB M1049",
-    "AUTB M1050",
-    "AUTB M1051",
-    "AUTB M1052",
-    "AUTB M1053",
-    "AUTB M1054",
-    "AUTB M1055",
-    "AUTB M1057",
-    "AUTB M1058"
-   ]
-  },
-  "CARP 207 Math for Construction Trades": {
+  "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
    "kind": "course",
-   "id": "CARP M10CX",
-   "title": "Math for Construction Trades",
-   "code": "CARP 207",
+   "id": "ESCI M10BZ",
+   "title": "Advanced Waterworks Mathematics",
+   "code": "WATER 131",
+   "college": "College of the Canyons"
+  },
+  "EET 203 Basic Electricity": {
+   "kind": "mid",
+   "id": "ELEC M1016",
+   "title": "Basic Electricity",
+   "code": "E/ET 203",
    "college": "Laney College"
   },
-  "CARP 223 OSHA 30 Hr. Construction Safety Training": {
-   "kind": "mid",
-   "id": "CNST M1001",
-   "title": "OSHA 30-Hour Construction Safety Training",
-   "code": "CARP 223",
+  "EET 222 Photovaltaic NABCEP for Solar Associates": {
+   "kind": "course",
+   "id": "ELCT M10EK",
+   "title": "Photovoltaic NABCEP Test Preparation",
+   "code": "E/ET 222",
    "college": "Laney College"
   }
  }
