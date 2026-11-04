@@ -3811,6 +3811,12 @@
     if (parts[2] && (parts[2] === LIST_WAITING[0] || LIST_FILTERS.some(function (f) { return f[0] === parts[2]; }))) { var L = listState(); L.f = parts[2]; L.q = ""; }
     return true;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("program-requirements", function () {
+    var f = state.ls && state.ls.f;
+    return state.view === "list" ? "program-requirements/list" + (f ? "/" + f : "") : "program-requirements";
+  });
   var hashWired = false;
 
   /* ── frame ── */

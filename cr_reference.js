@@ -847,6 +847,14 @@
     state.view = "list"; L.f = parts[1] === "all" ? "" : parts[1]; L.q = "";
     return true;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("cr-reference", function () {
+    var f = state.ls && state.ls.f;
+    if (state.view === "progress") return "cr-reference/progress";
+    if (state.view === "list") return f && FILTERS.indexOf(f) >= 0 ? "cr-reference/" + f : "cr-reference/list";
+    return "cr-reference";
+  });
   var hashWired = false;
 
   function activate() {

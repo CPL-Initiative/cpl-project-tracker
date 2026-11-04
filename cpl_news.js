@@ -162,6 +162,9 @@
   function signIn() {
     var email = window.prompt("Reviewer sign-in — enter your @ email for a magic link:");
     if (!email) return;
+    // The magic link's landing (cpl_session.js) sends the reviewer back here.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("cpl-news");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "cpl-news"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname + "#cpl-news");
     fetch(REST.replace("/rest/v1", "") + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",

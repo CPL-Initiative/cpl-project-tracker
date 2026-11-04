@@ -380,8 +380,30 @@
    */
   var RETURN_KEY = "cpl_sb_return_tab";
   var RETURN_TTL_MS = 30 * 60 * 1000;
+  /* The VIEW, not just the tab (2026-11-04, asked in session: "make sure that the sign in link from the emails
+   * takes the user back to the view they logged in from"). Callers name their tab ("exhibits"); when the address
+   * already sits inside that tab (#exhibits/list/left), the whole address is kept, so the link returns to the List
+   * on its filter word, a Progress page, a college's view. What the address does not hold (a typed search, an open
+   * side panel) starts fresh, as every visit does. A name that is not the tab in the address is kept as given. */
+  /* A tab whose views do not write the address tells the keeper what its view is: viewAddress("exhibits", fn), fn
+   * returning an address that tab's own routeFromHash opens ("exhibits/list/left"). It wins over the address, which
+   * can be stale (arrived on #exhibits/list/left, moved on to Progress). An answer outside the tab is ignored. */
+  var VIEW_OF = {};
+  function viewAddress(tab, fn) { if (tab && typeof fn === "function") VIEW_OF[tab] = fn; }
+  function inTab(a, tab) { return !!a && a.length < 300 && a.indexOf("access_token") < 0 && (a === tab || a.indexOf(tab + "/") === 0); }
+  function viewOf(tab) {
+    if (VIEW_OF[tab]) {
+      try { var a = String(VIEW_OF[tab]() || ""); if (inTab(a, tab)) return a; } catch (e) { /* a broken provider keeps the tab */ }
+    }
+    try {
+      var h = String(location.hash || "").replace(/^#/, "");
+      if (inTab(h, tab)) return h;
+    } catch (e) { /* no location — keep the tab */ }
+    return tab;
+  }
   function stashReturnTab(tab) {
     if (!tab) return;
+    tab = viewOf(String(tab));
     // Both stores: localStorage is what the new browser tab can see, and
     // sessionStorage keeps the same-tab flow working with no behavior change
     // where it already worked.
@@ -405,6 +427,55 @@
     try { localStorage.removeItem(RETURN_KEY); } catch (e) { /* ignore */ }
     try { sessionStorage.removeItem(RETURN_KEY); } catch (e) { /* ignore */ }
     return out;
+  }
+
+  /* ── the magic link's landing ─────────────────────────────────────────────
+   * A magic link opens index.html#access_token=…&refresh_token=…&expires_in=…
+   * in a new browser tab. This turns that fragment into the session every tab
+   * reads, takes the stashed return tab, and puts it in the address, so the
+   * person lands where they clicked Sign in.
+   *
+   * ⭐ IT LIVED IN unified_courses.js until SkyJujube (2026-11-04). The hidden
+   * Common Course Reference tab ran it at load, so every COBI sign-in, from any
+   * tab, went through the one tab due to retire into COCI Lookup's Courses List;
+   * deleting that tab would have ended signing in everywhere. Here it runs as
+   * this file loads, ahead of tabs.js, so the first tab tabs.js opens is the
+   * return tab and no hashchange is needed.
+   *
+   * With nothing stashed it leaves the address bare and tabs.js opens the home
+   * tab. The old default sent every unstashed sign-in to the Common Course
+   * Reference (Sam, 2026-08-25, the bug the return-tab key was written for).
+   *
+   * The fragment is read from `access_token=` on, so a redirect that already
+   * carried a hash (`#cpl-news#access_token=…`) still parses. */
+  var returnedTo = null;
+  function jwtEmail(t) {
+    try { return JSON.parse(atob(t.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).email || ""; }
+    catch (e) { return ""; }
+  }
+  function consumeAuthHash() {
+    var h = String(location.hash || "");
+    var at = h.indexOf("access_token=");
+    if (at < 0) return false;
+    var p = {};
+    h.slice(at).split("&").forEach(function (kv) {
+      var i = kv.indexOf("=");
+      if (i <= 0) return;
+      try { p[decodeURIComponent(kv.slice(0, i))] = decodeURIComponent(kv.slice(i + 1)); } catch (e) { /* skip a garbled pair */ }
+    });
+    if (!isValidJwt(p.access_token)) return false;
+    var s = {
+      access_token: p.access_token,
+      refresh_token: p.refresh_token || null,
+      email: jwtEmail(p.access_token),
+      exp: Date.now() + (parseInt(p.expires_in || "3600", 10) * 1000)
+    };
+    write(s);
+    returnedTo = takeReturnTab();
+    try { history.replaceState(null, "", location.pathname + location.search + (returnedTo ? "#" + returnedTo : "")); }
+    catch (e) { /* no history API — the session is kept all the same */ }
+    announce(s);
+    return true;
   }
 
   var timer = null;
@@ -446,6 +517,10 @@
     signOut: function () { drop(); announce(null); },
     stashReturnTab: stashReturnTab,
     takeReturnTab: takeReturnTab,
+    // The tab a magic link brought this page back to, or null (read, never taken).
+    returnedTo: function () { return returnedTo; },
+    viewAddress: viewAddress,
+    consumeAuthHash: consumeAuthHash,
     _returnTtlMs: RETURN_TTL_MS,
     sync: sync,
     start: start,
@@ -461,6 +536,8 @@
    * module reads `cpl_sb` while its own script evaluates. Waiting for DOM ready
    * would leave a tab reading "signed out" for the whole parse, which is the
    * very state this file exists to prevent. Listener registration is legal
-   * during parsing too, so there is nothing here to defer. */
+   * during parsing too, so there is nothing here to defer. A magic link's
+   * fragment is read first, so the first tick shares the new session. */
+  consumeAuthHash();
   start();
 })();
