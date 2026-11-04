@@ -1076,3 +1076,20 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
   pointed at it.
 - **Next families:** NWCG (17 titles, 6 rows) and SWRCB (12, 4). The D1.x codes the catalog lacks wait on the
   credential watch.
+
+## SkyBlackEye (2026-11-04, S572, the CPL Queue routine): NWCG and the State Water Resources Control Board in the cert link
+
+- **A course title can carry a certification's words.** The Board's titles read like courses (*Water Treatment 1*,
+  *Wastewater Treatment 2*), but each one's exhibits name the certification that earns the credit (*T2, T3, T4, or T5
+  certification*). Read `raw_variants` before calling a title a course.
+- **The Board's three catalog rows carry no grade.** A title naming a grade (D2, T3, wastewater grade II) holds its
+  operator row, as a D1.1 qualification holds its code's row. Two titles name certifications joined by *or* and hold any
+  of the three; *T3 / D3* holds both.
+- **#2762 adds 12 titles to 4 certs:** 11 Board titles and NWCG's *Wildland Fire Chainsaws (S-212)*. The link holds 271
+  titles to 226 certs.
+- **Left out:** *Water Treatment Facilities* (its exhibits name two issuers); the other NWCG titles, which are courses.
+  *Basic Wildland Firefighter (S-130/S-190)* is the training for the catalog's *Firefighter Type 2*, but the position also
+  needs a task book, so no course title points at it. *Basic Faller* and *Helicopter Crew Member Trainee* have no title.
+- **The S542 test** moved here from the lane: it is in the S542 entry above.
+- **Next:** the remaining families are courses and apprenticeship committees with no catalog certs; measure the gap by
+  issuer again before choosing one.

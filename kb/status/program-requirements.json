@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-04T12:40:00Z",
-  "session": 571,
-  "moniker": "SkyHoags",
+  "written_at": "2026-11-04T13:45:00Z",
+  "session": 572,
+  "moniker": "SkyBlackEye",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_572_handoff.md",
+  "handoff": "docs/session_573_handoff.md",
   "next_step": {
     "title": "Columbia's full SLO read",
     "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
