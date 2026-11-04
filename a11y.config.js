@@ -859,7 +859,7 @@ async function seedExhibitsPanel(page, theme) {
   await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open"), null, { timeout: 60000 });
   await page.evaluate(() => { document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open").click(); });
   await page.waitForFunction(() => document.getElementById("exh-l-panel"), null, { timeout: 10000 });
-  await page.evaluate(() => { document.querySelectorAll("#exh-l-panel details.exh-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.evaluate(() => { document.querySelectorAll("#exh-l-panel details.exh-l-pn-fold").forEach((d) => { d.open = true; }); });
   // One training site row added, so its college select, site box and Remove are measured (the retired Credentials
   // view's target measured them there).
   await page.evaluate(() => { const a = document.getElementById("exh-pn-add"); if (a) a.click(); });

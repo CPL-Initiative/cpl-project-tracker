@@ -553,13 +553,13 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
 
   function titleOf(d, ut) { return Array.from(d.querySelectorAll(".exh-l-table tbody td.exh-l-title button.exh-l-open")).find(function (b) { return txt(b) === ut; }); }
   function pn(d) { return d.getElementById("exh-l-panel"); }
-  function fold(d, id) { return pn(d) && pn(d).querySelector("details.exh-pn-" + id); }
+  function fold(d, id) { return pn(d) && pn(d).querySelector("details.exh-l-pn-" + id); }
   titleOf(t.d, IBEW).click(); await settle();
   let cp = pn(t.d);
   check("a credential's title opens its panel, focused on its bar", cp && txt(t.d.getElementById("exh-l-panel-t")) === "Exhibit: " + IBEW && t.d.activeElement === t.d.getElementById("exh-l-panel-t"));
-  check("one line of what it is: the issuer, the field, the colleges, the students", txt(cp.querySelector(".exh-pn-meta"))
+  check("one line of what it is: the issuer, the field, the colleges, the students", txt(cp.querySelector(".exh-l-pn-meta"))
     === "International Brotherhood of Electrical Workers (IBEW) · CIP 46 Construction Trades · 0 MAP titles · 2 colleges articulate · Students: None yet",
-    txt(cp.querySelector(".exh-pn-meta")));
+    txt(cp.querySelector(".exh-l-pn-meta")));
   fold(t.d, "edit").open = true; fold(t.d, "more").open = true; await settle();
   check("the issuer is an input with its label", t.d.getElementById("exh-pn-issuer").value === "International Brotherhood of Electrical Workers (IBEW)"
     && t.d.querySelector('label[for="exh-pn-issuer"]'));
@@ -571,7 +571,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the credit shows: the recommendation, the CPL type, the discipline and the courses", /Credit recommendation: 3\.5 hours in Electrical Theory/.test(txt(more))
     && /CPL type: Portfolio Review/.test(txt(more)) && /Discipline: Electricity/.test(txt(more)) && /Courses: M-ID ELEC M1001, Electrical Theory/.test(txt(more)), txt(more));
   check("the median and the exhibit in MAP", /The median articulating college awards 3\.5 units/.test(txt(more))
-    && Array.from(cp.querySelector(".exh-pn-table tbody tr").children).slice(0, 3).map(txt).join("|") === "MAPAPP-IBEW-1-001|IBEW Year 1|3.5", txt(cp.querySelector(".exh-pn-table tbody tr")) + " // " + txt(more));
+    && Array.from(cp.querySelector(".exh-l-pn-table tbody tr").children).slice(0, 3).map(txt).join("|") === "MAPAPP-IBEW-1-001|IBEW Year 1|3.5", txt(cp.querySelector(".exh-l-pn-table tbody tr")) + " // " + txt(more));
   check("MAP's line for the credential, with Request Quick Adopt", !!cp.querySelector('.cpl-maplinks[data-ml-title="' + IBEW + '"]') && /Request Quick Adopt/.test(txt(more)));
   const norco = Array.from(more.querySelectorAll(".exh-pn-ul li")).find(function (li) { return /^Norco College/.test(txt(li)); });
   check("an articulating college: its line, its units and the exhibit it built, in MAP", !!norco && /3\.5 units: ELC 401, 3\.5 hours in Introduction to Electrical Theory/.test(txt(norco))
@@ -651,14 +651,14 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   titleOf(t.d, SECP).click(); await settle();
   fold(t.d, "more").open = true; await settle();
   cp = pn(t.d);
-  check("the meta line counts the articulating colleges (MAP's adopters joined) and the could-adopt ones", /2 colleges articulate · 2 could adopt/.test(txt(cp.querySelector(".exh-pn-meta"))),
-    txt(cp.querySelector(".exh-pn-meta")));
+  check("the meta line counts the articulating colleges (MAP's adopters joined) and the could-adopt ones", /2 colleges articulate · 2 could adopt/.test(txt(cp.querySelector(".exh-l-pn-meta"))),
+    txt(cp.querySelector(".exh-l-pn-meta")));
   const could = Array.from(fold(t.d, "more").querySelectorAll(".exh-pn-ul")).pop();
   check("Could adopt lists the teaching colleges, the articulating one left out", /Cañada College already teaches CIS 60 \(3 units\)/.test(txt(could))
     && /De Anza College already teaches CIS 108 \(4\.5 units\)/.test(txt(could)) && !/Cabrillo/.test(txt(could)), txt(could));
   check("the over-merged colleges are counted, never named", /4 colleges teach a course under an identity that joins too many courses to name them/.test(txt(cp)));
   check("an adopter MAP records beyond the reference is named with its line", /Chabot College\s*, 2 units: CNT 69, 2 hours in Network Security/.test(txt(cp)), txt(cp));
-  check("the four exhibits are the members", cp.querySelectorAll(".exh-pn-table tbody tr").length === 4);
+  check("the four exhibits are the members", cp.querySelectorAll(".exh-l-pn-table tbody tr").length === 4);
   check("an articulating college's verified exhibit links MAP; an unverified one never shows", /Cabrillo College, 3 units.*Its exhibit in MAP: MAPCXI-CS-1-001/.test(txt(cp)) && !/NOT-VERIFIED/.test(txt(cp))
     && Array.from(cp.querySelectorAll(".exh-pn-ul a")).some(function (a) { return a.href === "https://map.example/opp?Exhibit=MAPCXI-CS-1-001&View=Non-Military"; }), txt(cp));
 

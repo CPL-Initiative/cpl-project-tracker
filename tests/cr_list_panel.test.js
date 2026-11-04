@@ -7,7 +7,10 @@
 //   (3) Confirm the group writes the group's decision row as the drawer does, answers in the panel's status line, and the
 //       group's wordings join Changed this visit; a refused write says it did not save;
 //   (4) the rest folded, staying open through a redraw;
-//   (5) the engine documents the panel's shared parts (one renderer for every List's panel).
+//   (5) the engine documents the panel's shared parts (one renderer for every List's panel);
+//   (6) the worklist's group edits live in the panel: Split out and Put back, Name the group by it, Add a wording from
+//       another group (its own group keeps its row), the note saved with Defer, and Clear the decision; signed out,
+//       nothing writes.
 // Run from repo root: `npm test` (or `node tests/cr_list_panel.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -90,10 +93,12 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
     && txt(p.querySelector(".crl-pn-meta")) === "293 articulations · 28 colleges · 3 units · Reference: 3 hours in Community Relations · No decision yet · Rung: Published",
     txt(p.querySelector(".crl-pn-meta")));
   const mem = () => Array.from(pn(t.d).querySelectorAll("#crl-pn-members tbody tr")).map((r) => Array.from(r.children).map(txt).join(" / "));
-  check("(2) its group's wordings, A to Z, this one noted", mem().join(" | ") === "3 hours in Community Relations / 293 / 28 / This wording | 3.0 hours in Community Relations / 122 / 20 / ",
+  check("(2) its group's wordings, A to Z, this one noted, the one naming the group noted, each with its changes",
+    mem().join(" | ") === "3 hours in Community Relations / 293 / 28 / This wording; Names the group / Split out | 3.0 hours in Community Relations / 122 / 20 /  / Name the group by itSplit out",
     mem().join(" | "));
-  check("(2) the members table is a labelled region with scoped headers", !!pn(t.d).querySelector('#crl-pn-members[role="region"][aria-label]')
-    && pn(t.d).querySelectorAll('#crl-pn-members th[scope="col"]').length === 4);
+  check("(2) the members table is a labelled region with scoped headers; the Change column is plain words, no sort",
+    !!pn(t.d).querySelector('#crl-pn-members[role="region"][aria-label]') && pn(t.d).querySelectorAll('#crl-pn-members th[scope="col"]').length === 5
+    && pn(t.d).querySelectorAll('#crl-pn-members th button').length === 4 && txt(pn(t.d).querySelectorAll('#crl-pn-members th')[4]) === "Change");
   Array.from(pn(t.d).querySelectorAll("#crl-pn-members th button")).find((b) => /^Articulations/.test(txt(b))).click(); await settle();
   Array.from(pn(t.d).querySelectorAll("#crl-pn-members th button")).find((b) => /^Articulations/.test(txt(b))).click(); await settle();
   check("(2) a header sorts the members, most first on a second press, focus kept", /^3 hours/.test(mem()[0]) && /^Articulations, high to low/.test(txt(t.d.activeElement)),
@@ -131,6 +136,62 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
     && /No decision recorded yet/.test(txt(pn(t.d))), txt(pn(t.d).querySelector(".crr-status")));
   check("(2) a group of one lists its one wording, its counts in the singular", Array.from(pn(t.d).querySelectorAll("#crl-pn-members tbody tr")).length === 1
     && /1 wording resolves to 4 hours in Welding, 12 articulations at 3 colleges\. Press a header to sort\./.test(txt(pn(t.d))), txt(pn(t.d)));
+
+  // (6) the worklist's group edits, carried into the panel (the List norms: a view retires once its List does what it does)
+  t = tab();
+  t.M.activate(); await settle();
+  title(t.d, "3 hours in Community Relations").click(); await settle();
+  let n1 = posts(t).length;
+  t.d.getElementById("crl-pn-split-1").click(); await settle();
+  let q1 = posts(t).slice(n1);
+  check("(6) ⭐ Split out writes the group's row: the wording excluded, the decision split, the reference kept",
+    q1.length === 1 && q1[0].body[0].decision === "split" && q1[0].body[0].excluded.join("|") === "3.0 hours in Community Relations"
+    && q1[0].body[0].members.join("|") === "3 hours in Community Relations" && q1[0].body[0].canonical === "3 hours in Community Relations", JSON.stringify(q1.map((x) => x.body)));
+  check("(6) the panel says it keeps its own row, notes it Split out, and offers Put back with focus on it",
+    /split out of the group; it keeps its own row/.test(txt(pn(t.d).querySelector(".crr-status"))) && /Split out \/ Put back$/.test(mem()[1])
+    && t.d.activeElement === t.d.getElementById("crl-pn-split-1"), mem().join(" | ") + " // " + txt(pn(t.d).querySelector(".crr-status")));
+  n1 = posts(t).length;
+  t.d.getElementById("crl-pn-split-1").click(); await settle();
+  q1 = posts(t).slice(n1);
+  check("(6) Put back writes it back in, the split decision lifted", q1.length === 1 && q1[0].body[0].excluded.length === 0 && q1[0].body[0].decision !== "split"
+    && q1[0].body[0].members.length === 2, JSON.stringify(q1.map((x) => x.body)));
+  n1 = posts(t).length;
+  t.d.getElementById("crl-pn-name-1").click(); await settle();
+  q1 = posts(t).slice(n1);
+  check("(6) ⭐ Name the group by it writes that wording as the reference", q1.length === 1 && q1[0].body[0].canonical === "3.0 hours in Community Relations"
+    && /the group reads 3\.0 hours in Community Relations/.test(txt(pn(t.d).querySelector(".crr-status"))), JSON.stringify(q1.map((x) => x.body)));
+  // Add a wording from another group
+  pn(t.d).querySelector("details.crl-pn-pick").open = true;
+  const pick = t.d.getElementById("crl-pn-pick");
+  pick.value = "weld"; pick.dispatchEvent(new t.w.Event("input")); await settle();
+  check("(6) the picker finds a wording in another group, says how many, and keeps focus in its box",
+    !!t.d.getElementById("crl-pn-add-0") && /^Add 4 hours in Welding$/.test(txt(t.d.getElementById("crl-pn-add-0"))) && /1 wording matches/.test(txt(pn(t.d)))
+    && t.d.activeElement === t.d.getElementById("crl-pn-pick"), txt(pn(t.d).querySelector("details.crl-pn-pick")));
+  n1 = posts(t).length;
+  t.d.getElementById("crl-pn-add-0").click(); await settle();
+  q1 = posts(t).slice(n1);
+  check("(6) ⭐ Add writes the wording into this group's members; its own group keeps its row", q1.length === 1 && q1[0].body[0].group_key === "community relations"
+    && q1[0].body[0].members.indexOf("4 hours in Welding") >= 0 && /its own group keeps its row/.test(txt(pn(t.d).querySelector(".crr-status")))
+    && /4 hours in Welding \/\s+\/\s+\/ Added to the group \/ Name the group by itRemove/.test(mem().join(" | ")), mem().join(" | "));
+  // The note, Defer and Clear
+  const note = t.d.getElementById("crl-pn-note");
+  note.value = "Same course outline at both colleges."; note.dispatchEvent(new t.w.Event("input"));
+  n1 = posts(t).length;
+  t.d.getElementById("crl-pn-deferred").click(); await settle();
+  q1 = posts(t).slice(n1);
+  check("(6) ⭐ Defer saves the decision with the note the next curator reads", q1.length === 1 && q1[0].body[0].decision === "deferred"
+    && q1[0].body[0].note === "Same course outline at both colleges." && !!t.d.querySelector('label[for="crl-pn-note"]'), JSON.stringify(q1.map((x) => x.body)));
+  n1 = posts(t).length;
+  t.d.getElementById("crl-pn-cleared").click(); await settle();
+  q1 = posts(t).slice(n1);
+  check("(6) Clear the decision writes cleared, keeping the row, and the word leaves", q1.length === 1 && q1[0].body[0].decision === "cleared"
+    && !t.d.getElementById("crl-pn-cleared") && /No decision recorded yet/.test(txt(pn(t.d))), JSON.stringify(q1.map((x) => x.body)));
+  t = tab({ signedIn: false });
+  t.M.activate(); await settle();
+  title(t.d, "3 hours in Community Relations").click(); await settle();
+  n1 = posts(t).length;
+  t.d.getElementById("crl-pn-split-1").click(); await settle();
+  check("(6) signed out, a change writes nothing and says how to sign in", posts(t).length === n1 && /Sign in as a reviewer/.test(txt(pn(t.d).querySelector(".crr-status"))));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])));
