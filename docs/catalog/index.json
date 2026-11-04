@@ -13864,7 +13864,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-03",
+     "created": "2026-11-04",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13874,9 +13874,11 @@
       "exhibits",
       "commons-list",
       "cr-reference",
-      "map-links"
+      "subjects",
+      "program-requirements",
+      "coci-lookup"
      ],
-     "title": "CER redesign handoff: the Credentials view retires into the List, the CR List's panel and line (SkyMulberry)",
+     "title": "CER redesign handoff: every List carries the line, the folded summary and the side panel (SkyTeaberry)",
      "type": null,
      "updated": ""
     },

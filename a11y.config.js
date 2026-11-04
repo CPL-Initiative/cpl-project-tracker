@@ -1031,6 +1031,17 @@ async function seedCociList(page, theme) {
     const band = Array.from(document.querySelectorAll("#coci-lookup-root .ccl-table tbody tr")).find((tr) => tr.classList.contains("ccl-band") && tr.querySelector("a"));
     let row = band && band.nextElementSibling;
     while (row && row.classList.contains("ccl-band")) row = row.nextElementSibling;
+    // The line, its folded summary and the side panel of the first course in a band (2026-11-04), its fold open.
+    const t = row && row.querySelector("td.ccl-title button.ccl-open");
+    if (t) t.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#ccl-fold #ccl-pg-attention") || document.querySelector("#ccl-fold [role=alert]"), null, { timeout: 60000 });
+  await page.waitForSelector("#ccl-panel #ccl-pn-members", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#ccl-panel details.ccl-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.evaluate(() => {
+    const band = Array.from(document.querySelectorAll("#coci-lookup-root .ccl-table tbody tr")).find((tr) => tr.classList.contains("ccl-band") && tr.querySelector("a"));
+    let row = band && band.nextElementSibling;
+    while (row && row.classList.contains("ccl-band")) row = row.nextElementSibling;
     const b = row && Array.from(row.querySelectorAll("button.ccl-open")).find((x) => /^Identities/.test(x.getAttribute("aria-label") || ""));
     if (b) b.click();
   });
@@ -3252,7 +3263,7 @@ module.exports = {
      Every local course in COCI banded by M-ID, an Identities drawer open; one per theme. */
   "coci-lookup-list": {
     file: "index.html",
-    title: "COCI Lookup: the Courses List, banded by M-ID, an Identities drawer open",
+    title: "COCI Lookup: the Courses List, banded by M-ID, its line and folded summary, a course's side panel, an Identities drawer open",
     routes: [{ hash: "coci-lookup", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCociList(page, "light"),

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "session": 565,
-  "moniker": "SkyMulberry",
+  "moniker": "SkyTeaberry",
   "run": "the Exhibits build (CER redesign side lane)",
   "decider": "Sam",
   "handoff": "docs/session_565_handoff.md",
@@ -119,13 +119,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-03T22:50:36Z",
+  "written_at": "2026-11-04T01:00:00Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The other Lists take the line, the cards and the panel",
-    "text": "Subjects, then Programs, then Courses, one PR each, drawn by the List engine's line and panel parts; Exhibits' panel moves onto those parts too. After each of Sam's runs through Another look, move the panel rows the fold names."
+    "title": "Exhibits' panel onto the engine's parts, then the original views retire",
+    "text": "Exhibits' panel moves onto the List engine's shared parts and its Commons read onto the engine's reader; then each reference's original views retire once its List does what they do, one PR each, tests ported first."
   },
   "changes": [
+    {
+      "at": "2026-11-04T00:40:00Z",
+      "text": "Courses, the fifth List, takes the line, the folded summary and a course's side panel; every count opens SkyView (#2746)."
+    },
+    {
+      "at": "2026-11-04T00:30:00Z",
+      "text": "Subjects and Programs take the line, the folded summary and the side panel; a count pressed on CR's line no longer empties the List (#2745)."
+    },
     {
       "at": "2026-11-03T22:42:00Z",
       "text": "The Credentials view retired into the List: the side panel carries its credit lines, each college's own MAP exhibit and Request Quick Adopt, and #exhibits/credentials opens the List (#2741)."
