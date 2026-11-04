@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -79,8 +79,6 @@ card 2): the palette lives once as `--cmn` tokens on `#tab-commons`; the dark th
 dark token (`:root[data-theme="dark"] #tab-commons` and the OS-dark media query), so no color is invented there. Inter
 loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/commons_status_build_test.py` (83).
 
-**A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
-
 **The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
 the mock's opened page for any reference: the progress line over one denominator, *Needs attention* with an action each,
 and three question groups over that denominator; an unread count says *Could not be read*. First Light tokens. **Every
@@ -111,9 +109,7 @@ sorts on per-column ranks (a settled finder keystroke 228 ms at 141,738 rows). A
 only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
 bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04).
 
-**The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
-bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
-**The Exhibits tiles carry the Commons' Exhibit row** (Sam, 2026-11-01: *"capture everything from 1st into Exhibits view"*): its pair, tests, known issues, procedures, the Decision Sheet Library and the last run, read from `kb/status/commons.json` and its run log, never copied (`exhibits.js`, *The Commons' row, carried on the Credentials view's tiles*); the row's `facts` feed the Progress view. Done; S562 found it built.
+**RULED: every Commons view in Malone's look, and the path (Sam, S573, 2026-11-04, in chat).** *"Use the new UI format rather than first light on this and all commons views."* This widens Sheet 158 card 2 from the first view to every Commons view (the Lists, the Progress pages, the side panels); First Light stays the rule for the rest of COBI. The same morning he asked for a visual of the curator's steps and decision points, *"available on every commons surface"*, plain words, with *"a generic term"* for him. The mock is **the path** (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9, source in `CPLBrain/04-projects/cpl-initiative/commons-path-mock/`): six steps every reference shares (know what belongs, let the daily check run, work the list, get the lead's call, check the connections, clean), the CPL Commons view and the Common Subjects view. NEXT: his reaction, then the other references' paths, then the port (`commons_page.js` and `commons_list.js` onto the `--cmn` tokens, the path as a fold above each List). Older notes moved to the lessons (*Moved from the lane, 2026-11-04*).
 
 
 **The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. All three steps have landed (history in the lessons, *The List norms, steps 1 to 3*).

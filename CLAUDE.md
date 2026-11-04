@@ -589,8 +589,8 @@ file.
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
   **One departure (Sam, 2026-10-24):** the public `library/` page, Sierra and the adoption page take Malone's
-  CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI only the **CPL Commons** tab (Sheet 158,
-  2026-11-02; [lane](docs/reference/lanes/commons.md)).
+  CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view (S573,
+  2026-11-04; [lane](docs/reference/lanes/commons.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
