@@ -1,7 +1,7 @@
 ---
 title: The Catalog Commons List norms, what every common reference's List shares and what stays different
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [reference, commons, commons-list, ui]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -25,6 +25,51 @@ artifacts:
 
 `commons_list.js` draws every reference's List from a spec (S542). The Exhibits List grew from Sam's live use (S540 to
 S542; `docs/cer_v2_redesign_lessons.md`). The engine makes the table consistent; these norms make the work consistent.
+
+## The List is the workspace (Sam, 2026-11-03)
+
+Sam, in session: *"I believe we could consolidate the main views for each by incorporating the list view below the
+action/metric cards and make that top level collapsible while keeping the one-line action/metric links like we do
+elsewhere."* Then: *"The idea would be to retire the original common work spaces once we can do everything we need to
+do from list view, which will have the action cards on it--all consolidated and consistent with other commons
+datasets"*, and *"Let's plan to have a side bar open for list items to show all the details (like an exhibits or the
+nice side bar that opens for courses on SkyView."* (cpl_memory `sam-the-list-is-the-commons-workspace-2026-11-03`.)
+
+Each reference's List becomes its one workspace, in this shape, top to bottom:
+
+1. **One line of the reference's counts,** each a word that opens where its card's count opens, outside the fold: the
+   CSM Workspace's *Today* line (#2727). The line carries the Commons row (the headline, confirmed by a person, each
+   known issue); the List's own filter row keeps the per-filter counts, so a count shows once.
+2. **The action and metric cards,** folded behind one word for the visit (*Hide the summary*, *Show the summary*).
+3. **The List,** full width. A row's title opens **a side panel** beside the table: the engine's `panel` hook
+   (`commons_list.js`; the title's drawer moves into it, so nothing is lost), SkyView's course outline the model.
+   Exhibits' panel shows the credential, its folded **members** (the MAP exhibits under it, sortable, each linked to
+   MAP), and the rest folded below (Sam's mock, https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4, 2026-11-03).
+
+Every Commons card action opens the List (#2735). A reference's original views retire once its List does everything
+they do, one PR each. Built: Exhibits' line and fold (2026-11-03, over the tiles the Credentials view and the List
+share), the side panel in `commons_list.js` (#2738), and the panel's issuer and training-site editor (#2740); with the
+credit lines, each college's own exhibit and MAP's Request Quick Adopt line in the panel, the Credentials view retired
+into the List (2026-11-03; `#exhibits/credentials` opens the List). Next: the cards, the line and the panel over the
+CR, Subjects, Courses and Programs Lists, drawn by one renderer.
+
+**The panel's shared parts are the engine's** (`h.title`, `h.meta`, `h.heading`, `h.table`, `h.fold`, `h.open` in
+`commons_list.js`), so every List's panel reads alike: one line of what the row is, its members in a sortable table, and
+folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03);
+every List's panel is since 2026-11-04 (Exhibits' last, each exhibit's number linking to MAP). Exhibits' tiles and CR's
+Progress view read the Commons file through `CPL_COMMONS_LIST.readCommons` where the engine is loaded
+(`tests/commons_one_reader.test.js`). **The line is the engine's too** (`api.line`, with `CPL_COMMONS_LIST.readCommons` reading
+`kb/status/commons.json` once a visit and `lineItems` shortening a row): Exhibits' line and CR's are drawn by it, each
+count opening the List's own filter where it has one. Subjects' is the third (2026-11-04): the line, the Progress
+view's own page folded under it, and an MQ discipline's panel with its local subjects and the codes it shares. A
+line's count resets the List to its first page (`api.LIMIT`); a null limit drew an empty table. Next: the line, the
+cards and the panel over Courses. Programs' is the fourth (2026-11-04): a program's panel lists its courses block
+by block with the CPL on record at its college, reading a light record once from the panel. Courses' is the fifth
+(2026-11-04): every count opens SkyView (Courses keeps SkyView first), the line shares the tab's one read of the
+Commons file with its Progress page, and a course's panel lists the local courses its M-ID holds. Every List now has
+the line, the fold and the panel. CR's worklist retired into its List on 2026-11-04, its Part B guards ported
+first (`tests/cr_list_worklist_port.test.js`); Subjects' Reference view followed (#2751 carried it onto the List,
+#2752 deletes it). Next: Programs' and Courses' older views.
 
 ## What every List shares
 
@@ -80,6 +125,7 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
 | Exhibits | credential | finder, filters with counts, bands, kept groups, suggested folds on the engine's slot (Accept), Changed this visit, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | |
 | CR Reference | wording (group) | finder, filters with counts, Edit, flag, rung proposals as suggestions (Confirm the group), Selected, Changed this visit, read-only bands by group ordered by the reference | |
 | Subjects | MQ discipline | finder, filters with counts, Edit, open picks as suggestions (Confirm this pick), Selected, Changed this visit | |
+| Subjects: Local subjects | local subject code | finder, filters with counts, filings as suggestions (Confirm), a note per code (Edit), Selected, Changed this visit (2026-11-03) | the card's confirmed count |
 | Courses (COCI Lookup) | local course (M-ID band) | finder, filters with counts, read-only M-ID bands from the engine's `bands` hook, Open in SkyView | |
 | Program Requirements | program | finder, filters with counts | read only |
 

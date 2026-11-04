@@ -785,6 +785,27 @@ the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
   adoptions). #2634 gates on `ccc_rec`, the Fact Sheet builder's published set, or its MAP fix list: 68 of the 78
   answer through the set, and 10 sit on the fix list for MAP to give a CCC-tagged recommendation.
 
+## SkyCheckerberry (2026-11-03): the panel rows of Sam's 11-01 and 11-02 runs
+
+- **Read what a leftover row says before you move it.** The 11-02 and 11-03 folds left 25 Curate-panel rows under 17
+  renamed or retired credentials. Ten moved by a guarded UPDATE of `course_id` (receipt
+  `kb/receipts/credential_panel_move_2026-11-03_skycheckerberry.json`, before-values and rollback SQL). The other 15
+  stayed. Eight issuer rows met an identical row under the new name (six Ironworker, two Spanish). Five rename rows
+  were already carried out: Sam's 10-27 *Spanish 1* → *Elementary Spanish I* and its confirm, which the fold reached in
+  Arabic form, so under the new key they would rename *Elementary Spanish 1* back to Roman. A `unified_title_override`
+  or `unified_title_merge_confirm` is a request about the old name; it never moves.
+- **A row that cannot fan in may disagree with the row it meets.** *Metal Building Erection I*'s issuer (Sam, Iron
+  Workers) met a bulk run's California Community Colleges row under *1*. His row should win, but that deletes a row, so
+  it went to Open Asks Sheet 161 card 2. Compare values before calling a leftover row redundant.
+- **A dated ruling on the same case still leaves its deletion on the hold list.** The two Engine Performance ASE
+  issuer rows are the Electrical/Electronics case Sam ruled on 10-31 (*"Drop the ASE override"*). They moved unchanged
+  and the drop is Sheet 161 card 1.
+- **Sam ruled an administrative bucket into a credential.** His 11-02 save filed Saddleback's *Credit by Exam* under
+  *Water Supply*; its issuer row moved with it. A move like this one can look wrong when you read it cold. Check
+  `reviewed_by` before you treat it as a fold error.
+- Sheet 149's rulings (moved from the lane, 2026-11-03): https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, 14:41Z
+  2026-10-31, his own calls (`cpl_memory` `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
+
 ## Moved from the lane (SkyInkberry)
 
 The CER tab is retired (Open Asks Sheet 148); these two bullets described its views and moved here verbatim on 2026-11-01, when the lane passed its size budget.
@@ -982,3 +1003,14 @@ lists. Report: `CPLBrain/04-projects/cpl-initiative/20261101_SLO_Grouping_Test.m
   OpenText) stay out: they deliver the exam, Microsoft issues it.
 - **38 titles to 46 certs; the link holds 208 titles to 165 certs.** Three titles name no one cert and stay unresolved.
   Nine local courses (*Microsoft Excel 1*, *Using Microsoft Windows*) stay out: a college issues them.
+
+## Moved from the lane (SkyTrue, 2026-11-03)
+
+Sheet 161's ruling moved here verbatim from the lane's NEXT line once it was applied, with the lane at its size budget.
+
+**Sam, Open Asks Sheet 161 (15:14Z 2026-11-03):** *drop* his Engine Performance 1 and 2 ASE issuer rows;
+Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16:08Z (receipt's `then_applied`).
+
+- **A lane line can trail the code by a merge.** The lane said *SLO hints, to build* a day after #2684 shipped them
+  (`kb/_build_exhibit_slo_neighbors.py`, the List's *Outcomes match:*). Grep the code a NEXT or *to build* line names
+  before you build it.

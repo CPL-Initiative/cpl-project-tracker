@@ -408,7 +408,8 @@ window.COBI_ADMIN_SURFACE = {
         "canonical_subj4.js",
         "commons_list.js",
         "commons_page.js",
-        "commons_progress.js"
+        "commons_progress.js",
+        "csr_local_subjects.js"
       ],
       "reads": [],
       "writes": [
@@ -437,7 +438,8 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "coci_lookup.js",
         "coci_lookup_data.js",
-        "commons_list.js"
+        "commons_list.js",
+        "commons_page.js"
       ],
       "reads": [
         "course_outcomes"
@@ -459,6 +461,7 @@ window.COBI_ADMIN_SURFACE = {
     "program-requirements": {
       "modules": [
         "commons_list.js",
+        "commons_page.js",
         "commons_progress.js",
         "program_requirements.js"
       ],

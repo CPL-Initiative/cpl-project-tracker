@@ -629,83 +629,11 @@
       });
   }
 
-  // Live feedback under the Common SUBJ input: assessment line(s) + suggestion
-  // chips. Chips set the value on mousedown (before blur) so the input's
-  // natural blur saves the pick.
-  function renderSubjHint(entry, input, hint) {
-    if (input.disabled) return;
-    var v = (input.value || "").toUpperCase();
-    hint.innerHTML = "";
-    if (v && SUBJ4_RE.test(v) && v !== entry.canonical_subj4) {
-      var own = otherOwners(v, entry.discipline);
-      var users = otherUsers(v, entry.discipline);
-      var mineN = (entry.variants_observed || {})[v] || 0;
-      if (own.length) {
-        hint.appendChild(el("span", { class: "cs-badge warn" },
-          ["✗ " + v + " is the Common SUBJ of " + own.map(function (o) { return o.d; }).join(" + ")]));
-      } else if (users.length) {
-        hint.appendChild(el("span", {
-          class: "cs-badge mix",
-          title: users.map(function (u) { return u.d + " ×" + u.n; }).join("\n"),
-        }, ["⚠ on " + users[0].n + " CCR row" + (users[0].n === 1 ? "" : "s") + " under " + users[0].d]));
-      }
-      if (mineN) {
-        hint.appendChild(el("span", { class: "cs-badge ok" },
-          ["✓ on " + mineN + " of this discipline's CCR rows"]));
-      } else if (!own.length && !users.length) {
-        hint.appendChild(el("span", { class: "cs-badge muted" },
-          ["new code — created at the next fold re-mint"]));
-      }
-      var nCid = (state.cidBySubj[v] || []).length;
-      var nCcn = (state.ccnBySubj[v] || []).length;
-      if (nCid || nCcn) {
-        hint.appendChild(el("span", { class: "cs-badge muted" },
-          ["ℹ official subject (" + (nCid ? nCid + " C-ID" : "") + (nCid && nCcn ? ", " : "") + (nCcn ? nCcn + " CCN" : "") + ")"]));
-      }
-    }
-    // Partial input filters the suggestions by prefix; empty or a complete
-    // 4-letter code shows the full alternative list (minus the typed code).
-    var prefix = (v && !SUBJ4_RE.test(v)) ? v : "";
-    var sugg = subjSuggestions(entry, prefix).filter(function (s) { return s.code !== v; });
-    if (sugg.length) {
-      var lab = el("span", { class: "cs-sugg-label" }, ["try:"]);
-      hint.appendChild(lab);
-      sugg.forEach(function (s) {
-        var chip = el("button", {
-          type: "button",
-          class: "cs-sugg-chip" + (s.conflict ? " conflicted" : ""),
-          title: (s.mine ? "Used " + s.mine + "× in this discipline's rows/local codes. " : "") +
-                 (s.conflict ? "⚠ also on " + s.conflict.n + " CCR row(s) under " + s.conflict.d + "."
-                             : "No collisions elsewhere.") + " Click to fill + save.",
-        }, [s.code + (s.conflict ? " ⚠" : "")]);
-        chip.onmousedown = function () {
-          // mousedown fires BEFORE the input's blur, so setting the value here
-          // lets the natural blur-save flow persist the pick.
-          input.value = s.code;
-        };
-        hint.appendChild(chip);
-      });
-    }
-    hint.classList.toggle("show", hint.children.length > 0);
-  }
-
   // One-time CSS for the checker UI (layout only — colors ride the existing
   // cs-badge classes + design tokens).
   function ensureCheckCss() {
     if (document.getElementById("cs-check-css")) return;
     document.head.appendChild(el("style", { id: "cs-check-css" }, [
-      "#tab-canonical-subj4 .cs-check-btn{padding:6px 10px;border:1px solid var(--border-strong);border-radius:6px;" +
-        "background:var(--surface-opaque);font-size:.85rem;cursor:pointer;color:var(--text-strong);}" +
-      "#tab-canonical-subj4 .cs-check-btn:hover{background:var(--surface-muted);}" +
-      "#tab-canonical-subj4 .cs-subj-hint{display:none;margin-top:4px;text-align:left;line-height:1.9;max-width:34ch;}" +
-      "#tab-canonical-subj4 .cs-subj-hint.show{display:block;}" +
-      "#tab-canonical-subj4 .cs-subj-hint .cs-badge{display:inline-block;margin:0 4px 2px 0;}" +
-      "#tab-canonical-subj4 .cs-sugg-label{color:var(--text-muted);font-size:.72rem;margin-right:4px;}" +
-      "#tab-canonical-subj4 .cs-sugg-chip{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;padding:1px 7px;" +
-        "margin:0 3px 2px 0;border:1px solid var(--border-strong);border-radius:10px;background:var(--surface-subtle);" +
-        "cursor:pointer;color:var(--text-strong);}" +
-      "#tab-canonical-subj4 .cs-sugg-chip:hover{background:var(--surface-muted);}" +
-      "#tab-canonical-subj4 .cs-sugg-chip.conflicted{border-style:dashed;color:var(--text-muted);}" +
       "#tab-canonical-subj4 .cs-check-section{margin:14px 0 6px;font-size:.95rem;color:var(--text-strong);}" +
       "#tab-canonical-subj4 .cs-check-list{margin:0;padding:0;list-style:none;}" +
       "#tab-canonical-subj4 .cs-check-list li{padding:6px 4px;border-top:1px solid var(--border);font-size:.85rem;" +
@@ -722,44 +650,11 @@
     ]));
   }
 
-  // Authority chip + proposed flag: muted CO blue on white for a chip that
-  // earns its place (the glyph rule), a dashed muted word for "proposed".
-  function ensureAuthorityCss() {
-    if (document.getElementById("cs-auth-css")) return;
-    document.head.appendChild(el("style", { id: "cs-auth-css" }, [
-      "#tab-canonical-subj4 .cs-badge.auth{color:var(--seal-blue-text,#002F6D);border-color:var(--cobalt-on-dark);" +
-        "background:var(--surface-opaque);font-family:ui-monospace,Menlo,monospace;font-weight:600;}" +
-      "#tab-canonical-subj4 .cs-badge.proposed{color:var(--text-muted);border-style:dashed;font-weight:500;}"
-    ]));
-  }
-
-  // One-time CSS overrides for the table chrome (Sam's 2026-06-12 CSR
-  // review). Injected from the tab's JS — the repo convention — so BOTH
-  // CPL_Dashboard.html and index.html are covered without a Rule-4 mirror
-  // edit. The base .cs-table rules live in the pane's in-body <style>
-  // block, so each override carries one extra level of specificity
-  // (thead / .cs-table ancestor) to win regardless of document order.
+  // WCAG 2.2 target size (UI pass, S386): the sign-in link at least 24px tall, on the List's head. The rest of this
+  // sheet styled the Reference table, which retired into the List (2026-11-04).
   function ensureCsrUiCss() {
     if (document.getElementById("cs-ui-css")) return;
     document.head.appendChild(el("style", { id: "cs-ui-css" }, [
-      // Header text: white, NOT bold (was gold + UA-default bold). No
-      // non-deprecated white-on-dark text token exists in :root (--white
-      // sits in the deprecated legacy block), hence the literal #fff.
-      // The inactive sort arrows inherit the white at .55 opacity; the
-      // ACTIVE arrow keeps its gold accent rule so the affordance pops.
-      "#tab-canonical-subj4 .cs-table thead th{color:#fff;font-weight:normal;}" +
-      // CTE badge ("Y (90%)", "Y (all)") on ONE line. The extra width the
-      // column needs is stolen from the Notes textarea (30ch → 26ch — it
-      // has slack), NOT by widening the table: no horizontal scroll at
-      // desktop widths (standing rule).
-      "#tab-canonical-subj4 .cs-table td.cs-cte{white-space:nowrap;}" +
-      "#tab-canonical-subj4 .cs-table td.cs-cte .cs-badge{white-space:nowrap;}" +
-      "#tab-canonical-subj4 .cs-table textarea.cs-notes{width:26ch;}" +
-      // WCAG 2.2 target size (UI pass, S386): every control at least 24px tall. These set
-      // properties the HTML rules leave unset, so the head-injected sheet applies though the
-      // tab's own <style> sits later, in the body.
-      "#tab-canonical-subj4 .cs-check-btn,#tab-canonical-subj4 .cs-var-show,#tab-canonical-subj4 input.cs-canon{min-height:24px;}" +
-      "#tab-canonical-subj4 label.cs-flag-toggle{min-height:24px;display:inline-flex;align-items:center;gap:4px;}" +
       "#tab-canonical-subj4 a.cs-auth-link{display:inline-block;min-height:24px;line-height:24px;}"
     ]));
   }
@@ -783,22 +678,12 @@
     document.getElementById("tab-canonical-subj4").appendChild(bg);
   }
 
-  // Cure affordance: clear every filter, search the discipline, close the
-  // modal — the curator lands on the row with the live-checking input.
+  // Cure affordance: close the check and open the MQ discipline's panel on the List, every filter
+  // cleared, where its code is set or confirmed (2026-11-04: the Reference table retired into the List).
   function jumpToDiscipline(d) {
-    state.search = d.toLowerCase();
-    state.subj = "";
-    state.subjSel = "";
-    state.filter = "all";
-    state.topFilter = "all";
-    var inp = document.getElementById("cs-search"); if (inp) inp.value = d;
-    var sj = document.getElementById("cs-subj-search"); if (sj) sj.value = "";
-    var sf = document.getElementById("cs-subj-filter"); if (sf) sf.value = "";
-    var f = document.getElementById("cs-filter"); if (f) f.value = "all";
-    var tf = document.getElementById("cs-top-filter"); if (tf) tf.value = "all";
-    render();
     var bg = document.getElementById("cs-check-modal");
     if (bg) bg.classList.remove("show");
+    goTo({ view: "list", panel: d });
   }
 
   function _jumpBtn(d) {
@@ -981,128 +866,6 @@
     bg.classList.add("show");
   }
 
-  // Build the inline variants summary — show top 5 + a "show all (n)" chip
-  // that opens the variants modal. Modal listing always includes any C-IDs
-  // and CCNs that share a SUBJ4 with the variants observed, so a curator
-  // sees the full official-id landscape next to the local-code landscape.
-  function variantsCell(entry) {
-    var td = el("td", { class: "cs-variants" });
-    var vsrc = variantsFor(entry);
-    if (!Object.keys(vsrc).length) return td;
-    var modal = entry.data_modal;
-    var pairs = Object.keys(vsrc).map(function (k) {
-      return [k, vsrc[k]];
-    }).sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
-    var visible = pairs.slice(0, 5);
-    var hidden = pairs.length - visible.length;
-    var parts = visible.map(function (p) {
-      var cls = (p[0] === modal) ? "cs-var-modal" : "cs-var-other";
-      return '<span class="' + cls + '">' + p[0] + "·" + p[1] + "</span>";
-    });
-    td.innerHTML = parts.join(" ");
-    // Show-all chip — appended as a clickable button so it can dispatch to
-    // the modal opener.
-    var btn = el("button", {
-      class: "cs-var-show", type: "button",
-      title: "Show all variants for this discipline (including any matching CIDs/CCNs)",
-    }, [hidden > 0 ? "Show all (" + pairs.length + ") →" : "Show details →"]);
-    btn.onclick = function () { openVariantsModal(entry); };
-    td.appendChild(document.createTextNode(" "));
-    td.appendChild(btn);
-    return td;
-  }
-
-  function openVariantsModal(entry) {
-    var bg = document.getElementById("cs-variants-modal");
-    var body = document.getElementById("cs-variants-body");
-    var title = document.getElementById("cs-variants-title");
-    if (!bg || !body) return;
-    title.textContent = "Variants for " + entry.discipline;
-
-    var modal = entry.data_modal;
-    var canon = entry.canonical_subj4;
-    var vsrcM = variantsFor(entry);
-    var variants = Object.keys(vsrcM)
-      .map(function (k) { return [k, vsrcM[k]]; })
-      .sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
-
-    body.innerHTML = "";
-    var totalCourses = entry.local_subject_total || entry.total_mids || 0;
-    var moreTrunc = entry.local_subject_variants_truncated || 0;
-    var truncNote = moreTrunc > 0 ? " (+" + moreTrunc + " more codes truncated from this list)" : "";
-    body.appendChild(el("p", { class: "cs-modal-meta" }, [
-      String(totalCourses) + " local college courses across " + variants.length + " distinct subject codes" + truncNote + ". " +
-      "Bold yellow = the most-used code locally; green = curator-confirmed Common SUBJ."
-    ]));
-
-    // Section 1: local college variants
-    body.appendChild(el("h5", null, ["Local college subject codes (what colleges actually use)"]));
-    var grid = el("div", { class: "cs-var-grid" });
-    variants.forEach(function (p) {
-      var isModal = p[0] === modal;
-      var isCanon = p[0] === canon;
-      var cls = "cs-var-chip" + (isCanon ? " canonical" : isModal ? " modal" : "");
-      var chip = el("div", { class: cls });
-      chip.appendChild(el("span", { class: "cs-var-code" }, [p[0]]));
-      chip.appendChild(document.createTextNode(" · " + p[1] + " MIDs"));
-      if (isCanon) chip.appendChild(el("span", { class: "cs-var-flag" }, ["canonical"]));
-      else if (isModal) chip.appendChild(el("span", { class: "cs-var-flag" }, ["most-used"]));
-      grid.appendChild(chip);
-    });
-    body.appendChild(grid);
-
-    // Section 2: C-IDs that share a SUBJ4 with this discipline (canonical or
-    // any local variant). Helps the curator see what official identifiers
-    // line up with their choice.
-    var allSubjs = new Set(variants.map(function (p) { return p[0]; }));
-    if (canon) allSubjs.add(canon);
-    var cidHits = [];
-    var ccnHits = [];
-    allSubjs.forEach(function (s) {
-      (state.cidBySubj[s] || []).forEach(function (h) { cidHits.push(Object.assign({ subject: s }, h)); });
-      (state.ccnBySubj[s] || []).forEach(function (h) { ccnHits.push(Object.assign({ subject: s }, h)); });
-    });
-
-    if (cidHits.length) {
-      body.appendChild(el("h5", null, ["CIDs that share one of these subjects (" + cidHits.length + ")"]));
-      var cidGrid = el("div", { class: "cs-var-grid" });
-      cidHits.sort(function (a, b) { return a.id.localeCompare(b.id); }).forEach(function (h) {
-        var chip = el("div", { class: "cs-var-chip", title: h.title });
-        chip.appendChild(el("span", { class: "cs-var-code" }, [h.id]));
-        if (h.title) chip.appendChild(el("span", { class: "cs-var-flag" }, [h.title.length > 28 ? h.title.slice(0, 28) + "…" : h.title]));
-        cidGrid.appendChild(chip);
-      });
-      body.appendChild(cidGrid);
-    }
-    if (ccnHits.length) {
-      body.appendChild(el("h5", null, ["CCNs that share one of these subjects (" + ccnHits.length + ")"]));
-      var ccnGrid = el("div", { class: "cs-var-grid" });
-      ccnHits.sort(function (a, b) { return a.id.localeCompare(b.id); }).forEach(function (h) {
-        var chip = el("div", { class: "cs-var-chip", title: h.title });
-        chip.appendChild(el("span", { class: "cs-var-code" }, [h.id]));
-        if (h.title) chip.appendChild(el("span", { class: "cs-var-flag" }, [h.title.length > 28 ? h.title.slice(0, 28) + "…" : h.title]));
-        ccnGrid.appendChild(chip);
-      });
-      body.appendChild(ccnGrid);
-    }
-    if (!cidHits.length && !ccnHits.length) {
-      body.appendChild(el("h5", null, ["Official identifiers"]));
-      body.appendChild(el("p", { class: "cs-modal-meta" }, [
-        "No CIDs or CCNs share any of the subject codes above. (Either this discipline has no official identifiers yet, or it uses different subject codes than the official systems.)"
-      ]));
-    }
-
-    bg.classList.add("show");
-    document.addEventListener("keydown", _variantsModalEsc);
-  }
-  function _variantsModalEsc(e) {
-    if (e.key === "Escape") {
-      var bg = document.getElementById("cs-variants-modal");
-      if (bg) bg.classList.remove("show");
-      document.removeEventListener("keydown", _variantsModalEsc);
-    }
-  }
-
   // ─── render ────────────────────────────────────────────────────────────────
   var state = {
     seed: null,
@@ -1110,19 +873,8 @@
     cidBySubj: {},
     ccnBySubj: {},
     cidMeta: null, ccnMeta: null, mqDoc: null,
-    view: "progress",            // "progress" (the Commons' dash) or "reference" (the table); remembered
+    view: "progress",            // "progress" (the Commons' dash), "list" or "local"; remembered
     scan: null, status: null, procs: null, secs: null, readAt: null,
-    filter: "all",
-    topFilter: "all",            // TOP 2-digit category filter; "all" = no filter
-    grouped: true,               // Group rows under TOP 2-digit category headers
-    collapsedCats: {},           // {top_cat_2digit: bool} — collapsed category groups
-    search: "",
-    subjSel: "",                 // SUBJ dropdown pick ("" = all) — see the cs-subj-filter select
-    // Sort: default is re-key impact (descending). Curator clicks a sortable
-    // header to override. Click again to flip direction. Clicking another
-    // header switches the active column. When grouped, sort applies WITHIN
-    // each category group.
-    sort: { key: "_impact", dir: "desc" },
     // Sign-in feedback lives in the auth widget (no corner toast). See
     // PR #119 / docs/exhibit_canonicalization_lessons.md for context.
     pendingSignInEmail: null,
@@ -1130,197 +882,11 @@
     sess: null,
   };
 
-  // Sortable column descriptors: key = sort key on the row object, getter =
-  // value extractor. Status uses an ordering enum so "validated" sorts above
-  // "initiated" above "pre-seeded" above "needs review" above "invalid" by
-  // default.
-  var STATUS_ORDER = { "validated": 0, "initiated": 1, "pre-seeded": 2, "needs review": 3, "invalid": 4 };
-  var CTE_ORDER = { "all": 0, "most": 1, "mixed": 2, "none": 3 };
-  var SORT_GETTERS = {
-    discipline: function (e) { return (e.discipline || "").toLowerCase(); },
-    total_mids: function (e) { return e.total_mids || 0; },
-    variants_count: function (e) { return Object.keys(variantsFor(e)).length; },
-    data_modal: function (e) { return (e.data_modal || "").toLowerCase(); },
-    canonical_subj4: function (e) { return (e.canonical_subj4 || "~").toLowerCase(); }, // ~ sorts blanks last
-    status: function (e) { return STATUS_ORDER[status(e).label] || 99; },
-    top_4digit: function (e) { return e.top_modal_4digit || "~"; },
-    cte: function (e) { return CTE_ORDER[e.cte_flag] || 99; },
-    _cpl_n: function (e) { return e._cpl_n || 0; },
-    reviewed_by: function (e) { return (e.reviewed_by || "~").toLowerCase(); },
-    _impact: function (e) { return e._impact || 0; },
-  };
-  function sortRows(rows) {
-    var key = state.sort.key, dir = state.sort.dir;
-    var get = SORT_GETTERS[key] || SORT_GETTERS._impact;
-    var sign = dir === "asc" ? 1 : -1;
-    return rows.slice().sort(function (a, b) {
-      var va = get(a), vb = get(b);
-      if (va < vb) return -sign;
-      if (va > vb) return sign;
-      // tiebreaker: discipline alpha asc (stable, readable)
-      return (a.discipline || "").localeCompare(b.discipline || "");
-    });
-  }
-
-  function toast(msg, isErr) {
-    var t = document.getElementById("cs-toast");
-    if (!t) return;
-    t.textContent = msg;
-    t.className = "cs-toast show" + (isErr ? " err" : "");
-    setTimeout(function () { t.className = "cs-toast" + (isErr ? " err" : ""); }, 2600);
-  }
-
-  // Toolbar build — call ONCE at init. Subsequent state changes (filter
-  // selection, search input, sort) don't re-call this; they only re-render
-  // the table body via render(). This prevents the search input from being
-  // recreated on every keystroke (which would steal focus, the bug behind
-  // the curator's "stops typing after one character" report).
-  //
-  // The toolbar's <select>/input elements naturally stay in sync with
-  // state because their values are USER-driven (onchange/oninput updates
-  // state.* directly). Only the auth widget changes asynchronously
-  // (sign-in/sign-out), so it gets its own renderAuth() that updates the
-  // cs-auth span without touching the rest of the toolbar.
-  function renderToolbar() {
-    var tb = document.getElementById("cs-toolbar");
-    if (!tb) return;
-    tb.innerHTML = "";
-    // Filter dropdown
-    var sel = el("select", { class: "cs-filter", id: "cs-filter", "aria-label": "Show" });
-    [
-      ["all", "All MQ disciplines"],
-      ["needs_review", "Needs curator review"],
-      ["pre_seeded", "Pre-seeded (data-modal already 4-letter)"],
-      ["reviewed", "Initiated (the pick is confirmed)"],
-      ["invalid", "Invalid (saved value not 4 letters)"],
-      ["ccn", "Common SUBJ is the CCN code"],
-      ["cid", "Common SUBJ is the C-ID code"],
-      ["chip", "Shows a C-ID or CCN chip (code differs)"],
-      ["proposed", "CSR code, proposed (no authority code yet)"],
-    ].forEach(function (opt) {
-      var o = el("option", { value: opt[0] }, [opt[1]]);
-      if (opt[0] === state.filter) o.selected = true;
-      sel.appendChild(o);
-    });
-    sel.onchange = function () { state.filter = this.value; render(); };
-    tb.appendChild(sel);
-
-    // TOP category filter — 2-digit code dropdown. Populates from seed's
-    // distinct top_category_2digit values so we don't list categories that
-    // have no disciplines in this dataset.
-    if (state.seed) {
-      var cats = {};
-      Object.keys(state.seed.disciplines || {}).forEach(function (d) {
-        var e = state.seed.disciplines[d];
-        if (e.top_category_2digit) {
-          cats[e.top_category_2digit] = e.top_category_title || e.top_category_2digit;
-        }
-      });
-      var topSel = el("select", { class: "cs-filter", id: "cs-top-filter", title: "Filter by TOP 2-digit category" });
-      topSel.appendChild(el("option", { value: "all" }, ["TOP: any"]));
-      Object.keys(cats).sort().forEach(function (k) {
-        var o = el("option", { value: k }, [k + " — " + cats[k]]);
-        if (k === state.topFilter) o.selected = true;
-        topSel.appendChild(o);
-      });
-      topSel.onchange = function () { state.topFilter = this.value; render(); };
-      tb.appendChild(topSel);
-    }
-
-    // Group toggle — when on, rows render under collapsible 2-digit TOP
-    // category headers. When off, the table is flat (sort + filter only).
-    var groupLabel = el("label", { class: "cs-flag-toggle", title: "Group rows under TOP category headers" });
-    var groupCb = el("input", { type: "checkbox", id: "cs-group" });
-    groupCb.checked = !!state.grouped;
-    groupCb.onchange = function () { state.grouped = this.checked; render(); };
-    groupLabel.appendChild(groupCb);
-    groupLabel.appendChild(document.createTextNode(" Group by TOP"));
-    tb.appendChild(groupLabel);
-
-    // Search — typeahead via native <datalist>. Browser shows a dropdown of
-    // matching disciplines as the curator types; picking one (or typing a
-    // full match) filters the table to just rows containing the term.
-    // Width widened to ~280px so longer discipline names are readable.
-    var datalistId = "cs-discipline-list";
-    if (!document.getElementById(datalistId) && state.seed) {
-      var dl = document.createElement("datalist");
-      dl.id = datalistId;
-      Object.keys(state.seed.disciplines || {}).sort().forEach(function (d) {
-        dl.appendChild(el("option", { value: d }));
-      });
-      tb.appendChild(dl);
-    }
-    var search = el("input", {
-      class: "cs-filter cs-search-wide", id: "cs-search", type: "search",
-      placeholder: "Search discipline (start typing for suggestions)…",
-      list: datalistId,
-      autocomplete: "off",
-    });
-    search.value = state.search;
-    // Re-render on input so the table filters incrementally; the datalist
-    // dropdown is handled by the browser, so there's no race with our state.
-    search.oninput = function () { state.search = this.value.toLowerCase(); render(); };
-    tb.appendChild(search);
-    // #8 SUBJ filter — match canonical SUBJ4 or any local subject code/variant.
-    var subjSearch = el("input", {
-      class: "cs-filter", id: "cs-subj-search", type: "search",
-      placeholder: "SUBJ code…", autocomplete: "off", style: "min-width:120px;",
-      title: "Filter by canonical SUBJ4 or any local subject code",
-    });
-    subjSearch.value = state.subj || "";
-    subjSearch.oninput = function () { state.subj = this.value.trim(); render(); };
-    tb.appendChild(subjSearch);
-    // SUBJ dropdown (mirrors the CCR's Subject filter concept) — pick a
-    // 4-letter code and see the disciplines it belongs to. Two optgroups:
-    //   "Common subjects"      — every distinct curator/seed canonical pick
-    //   "Local-derived variants" — codes observed on CCR rows that are not a
-    //                              canonical anywhere (post-fold this is
-    //                              nearly empty — it's a progress meter)
-    // A pick matches a discipline whose canonical IS the code OR whose
-    // variants_observed carries it. ANDs with the search/status/TOP filters.
-    if (state.seed) {
-      var canonSet = {}, variantSet = {};
-      mergedEntries().forEach(function (e) {
-        if (e.canonical_subj4) canonSet[e.canonical_subj4] = true;
-        Object.keys(e.variants_observed || {}).forEach(function (s) { variantSet[s] = true; });
-      });
-      var subjSel = el("select", {
-        class: "cs-filter", id: "cs-subj-filter",
-        title: "Filter disciplines by subject code: canonical Common SUBJ picks first, then local-derived variant codes not yet folded to a canonical.",
-      });
-      subjSel.appendChild(el("option", { value: "" }, ["All subjects"]));
-      var ogCanon = el("optgroup", { label: "Common subjects" });
-      Object.keys(canonSet).sort().forEach(function (c) {
-        ogCanon.appendChild(el("option", { value: c }, [c]));
-      });
-      subjSel.appendChild(ogCanon);
-      var ogVar = el("optgroup", { label: "Local-derived variants" });
-      Object.keys(variantSet).filter(function (s) { return !canonSet[s]; }).sort()
-        .forEach(function (s) { ogVar.appendChild(el("option", { value: s }, [s])); });
-      subjSel.appendChild(ogVar);
-      subjSel.value = state.subjSel || "";
-      subjSel.onchange = function () { state.subjSel = this.value; render(); };
-      tb.appendChild(subjSel);
-    }
-    // SUBJ ⇄ CCR checker — curator-initiated sweep (works signed-out; cures
-    // need sign-in). See the "SUBJ ⇄ CCR error checking" block above.
-    var checkBtn = el("button", {
-      class: "cs-check-btn", type: "button", id: "cs-subj-check",
-      title: "Check every discipline's Common SUBJ against the SUBJ4 codes its Common Course Reference rows actually carry: shared codes (collisions), off-canonical rows (queued for the fold re-mint), invalid saves, and missing picks.",
-    }, ["✓ Check SUBJ ⇄ CCR"]);
-    checkBtn.onclick = openCheckModal;
-    tb.appendChild(checkBtn);
-    // Auth widget — populated by renderAuth() so async sign-in/out flows
-    // don't have to rebuild the whole toolbar (and clobber search focus).
-    tb.appendChild(el("span", { id: "cs-auth", class: "cs-auth" }));
-    renderAuth();
-  }
-
-  // Re-render only the auth widget. Called from sign-in/out paths and from
-  // init(). Safe to call repeatedly — touches no other toolbar element.
+  /* The sign-in sits on the List's head (2026-11-04); it renders into every host the tab draws. */
   function renderAuth() {
-    var auth = document.getElementById("cs-auth");
-    if (!auth) return;
+    Array.prototype.forEach.call(document.querySelectorAll("#tab-canonical-subj4 .cs-auth"), renderAuthInto);
+  }
+  function renderAuthInto(auth) {
     auth.innerHTML = "";
 
     // Signed in
@@ -1328,7 +894,7 @@
       auth.appendChild(el("span", { class: "cs-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
       var out = el("a", { class: "cs-auth-link", href: "#" }, ["sign out"]);
-      out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; renderAuth(); render(); };
+      out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; renderAuth(); render(); if (state.view === "list") listRepaint(); };
       auth.appendChild(out);
       return;
     }
@@ -1405,573 +971,11 @@
     auth.appendChild(el("span", { class: "cs-auth-tag" }, ["(CCCCO MAP only)"]));
   }
 
-  function passesFilter(entry) {
-    var s = status(entry);
-    if (state.filter === "needs_review" && s.label !== "needs review") return false;
-    if (state.filter === "pre_seeded" && s.label !== "pre-seeded") return false;
-    if (state.filter === "reviewed" && s.label !== "initiated") return false;
-    if (state.filter === "invalid" && s.label !== "invalid") return false;
-    if (state.filter === "ccn" && entry.canonical_source !== "ccn") return false;
-    if (state.filter === "cid" && entry.canonical_source !== "c-id") return false;
-    if (state.filter === "chip" && !authorityChips(entry).length) return false;
-    if (state.filter === "proposed" && entry.authority_flag !== "proposed") return false;
-    if (state.topFilter !== "all" && entry.top_category_2digit !== state.topFilter) return false;
-    return true;
-  }
-
-  function renderSummary(rows) {
-    var sum = document.getElementById("cs-summary");
-    if (!sum) return;
-    var counts = { initiated: 0, "needs review": 0, "pre-seeded": 0, invalid: 0 };
-    rows.forEach(function (e) {
-      var s = status(e);
-      counts[s.label] = (counts[s.label] || 0) + 1;
-    });
-    var src = { ccn: 0, "c-id": 0, csr: 0, chips: 0 };
-    rows.forEach(function (e) {
-      if (e.canonical_source && src.hasOwnProperty(e.canonical_source)) src[e.canonical_source]++;
-      if (authorityChips(e).length) src.chips++;
-    });
-    sum.innerHTML = "<strong>" + rows.length + "</strong> MQ disciplines · "
-      + counts.initiated + " initiated · "
-      + counts["pre-seeded"] + " pre-seeded · "
-      + counts["needs review"] + " need review"
-      + (counts.invalid ? " · <span style='color:#991b1b'>" + counts.invalid + " invalid</span>" : "")
-      + ((src.ccn + src["c-id"] + src.csr)
-          ? " · on a CCN code " + src.ccn + " · on a C-ID code " + src["c-id"]
-            + " · CSR proposed " + src.csr + " · with a chip " + src.chips
-          : "");
-  }
-
-  // Re-render the table body + summary. Does NOT touch the toolbar — that's
-  // built once at init by renderToolbar(). Called on every filter / search /
-  // sort / group / collapsedCats change.
+  /* After a save: the Progress view, when showing, reads the same merge. The List repaints itself (its callers redraw
+     it and keep focus); the Reference table this once also redrew retired into the List, 2026-11-04. */
   function render() {
     if (!state.seed) return;
-
-    var allRows = Object.keys(state.seed.disciplines).map(function (d) {
-      var entry = applyOverlay(state.seed.disciplines[d], state.overlay[d]);
-      entry.discipline = d;
-      entry._impact = rekeyImpact(entry);
-      entry._cpl = (state.cpl || {})[d] || null;        // CSR rollup for this discipline
-      entry._cpl_n = entry._cpl ? entry._cpl.n_creds : 0; // sort key
-      return entry;
-    });
-
-    var filtered = allRows.filter(function (e) {
-      // Discipline search also matches a split discipline's language names +
-      // codes ("Spanish"/"FLSP" → Foreign Languages) and a converged
-      // discipline's alternate names ("Physical Education" → Kinesiology).
-      if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0
-          && splitSearchText(e).indexOf(state.search) < 0
-          && aliasSearchText(e).indexOf(state.search) < 0
-          && authoritySearchText(e).indexOf(state.search) < 0) return false;
-      if (state.subj) {
-        var sq = state.subj.toUpperCase();
-        var subjHit = (e.canonical_subj4 || "").toUpperCase().indexOf(sq) >= 0
-          || (e.data_modal || "").toUpperCase().indexOf(sq) >= 0
-          || Object.keys(variantsFor(e)).some(function (s) { return s.toUpperCase().indexOf(sq) >= 0; })
-          || (splitFor(e) || []).some(function (x) { return x.code.toUpperCase().indexOf(sq) >= 0; })
-          || authorityChips(e).some(function (c) { return c.code.toUpperCase().indexOf(sq) >= 0; });
-        if (!subjHit) return false;
-      }
-      // SUBJ dropdown pick (exact code): the discipline's canonical IS the
-      // code, or its CCR rows carry it (variants_observed). ANDs with the
-      // other filters above/below.
-      if (state.subjSel) {
-        if ((e.canonical_subj4 || "") !== state.subjSel
-            && !Object.prototype.hasOwnProperty.call(e.variants_observed || {}, state.subjSel)) return false;
-      }
-      return passesFilter(e);
-    });
-    filtered = sortRows(filtered);
-
-    renderSummary(allRows);
-
-    var wrap = document.getElementById("cs-table-wrap");
-    if (!wrap) return;
-    wrap.innerHTML = "";
-
-    // Collapse-all / Expand-all twisty — visible only when grouping is on.
-    // The "wedge" the curator referred to is a disclosure triangle / twisty.
-    // Toggle behavior: if ANY category is currently expanded, the button
-    // collapses everything; if all are collapsed, it expands everything.
-    if (state.grouped) {
-      var allCats = {};
-      Object.keys(state.seed.disciplines).forEach(function (d) {
-        var k = state.seed.disciplines[d].top_category_2digit || "~~";
-        allCats[k] = true;
-      });
-      var allCatKeys = Object.keys(allCats);
-      var anyExpanded = allCatKeys.some(function (k) { return !state.collapsedCats[k]; });
-      var twisty = el("button", {
-        class: "cs-collapse-all", type: "button",
-        title: anyExpanded ? "Collapse every TOP category" : "Expand every TOP category",
-      }, [(anyExpanded ? "▼ Collapse all" : "▶ Expand all")]);
-      twisty.onclick = function () {
-        var collapseEverything = anyExpanded;
-        state.collapsedCats = {};
-        if (collapseEverything) {
-          allCatKeys.forEach(function (k) { state.collapsedCats[k] = true; });
-        }
-        render();
-      };
-      wrap.appendChild(twisty);
-    }
-
-    var table = el("table", { class: "cs-table" });
-    // Sortable column headers — click to set/flip sort. Indicator shows
-    // current state (▲ asc / ▼ desc / ↕ inactive). CIP sits next to TOP
-    // per the curator's preference — they read as a paired "taxonomy"
-    // block, with CTE following as the derived designation.
-    var COLS = [
-      // "MQ Discipline" (Sam, 2026-10-19): the handbook's discipline beside our Common SUBJ,
-      // "to remember the difference between SUBJECT and DISCIPLINE".
-      { key: "discipline",       label: "MQ Discipline", title: "The discipline as the Minimum Qualifications handbook names it. One MQ discipline carries one Common SUBJ; an umbrella discipline carries several." },
-      { key: "total_mids",       label: "MIDs",      title: "MIDs = Minted ID, the synthetic identifier for a single common course taught across one or more colleges. This number is how many distinct common courses fall under this discipline." },
-      { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click 'Show all' to see every code + any matching CIDs/CCNs." },
-      { key: "data_modal",       label: "Most-used locally", title: "The most-used local college subject code across colleges. If shorter than 4 letters, pick a 4-letter expansion in the Common SUBJ column." },
-      { key: "canonical_subj4",  label: "Common SUBJ *", title: "Required: exactly 4 uppercase letters (A–Z). The single shared subject code chosen for this discipline." },
-      { key: "top_4digit",       label: "TOP",       title: "Modal TOP 4-digit category for this discipline (from the 2023 CCC Taxonomy of Programs Manual). Hover the cell for the 6-digit code + program title." },
-      { key: null,               label: "CIP",       title: "CIP (Classification of Instructional Programs) — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." },
-      { key: "cte",              label: "CTE",       title: "Career Technical Education designation per the 2023 TOP Manual (asterisk-marked codes). 'all' = every MID is CTE; 'most' / 'mixed' / 'none' summarize the share." },
-      { key: "_cpl_n",           label: "CPL opportunities", title: "Earned CPL articulations in this discipline: how many distinct exhibits/credentials articulate to its courses, across how many colleges. Click the badge for the full credential list. (The CER/EACR · CCR · CSR “three grains” family — this is the discipline grain.)" },
-      { key: "status",           label: "Status" },
-      { key: null,               label: "Notes" },
-      { key: "reviewed_by",      label: "Reviewed" },
-    ];
-    var headerRow = el("tr");
-    COLS.forEach(function (col) {
-      var attrs = col.title ? { title: col.title } : null;
-      var children = [col.label];
-      if (col.key) {
-        var active = state.sort.key === col.key;
-        var indicator = !active ? "↕" : (state.sort.dir === "asc" ? "▲" : "▼");
-        children.push(el("span", {
-          class: "cs-sort-indicator" + (active ? " active" : ""),
-        }, [indicator]));
-      }
-      var th = el("th", attrs, children);
-      if (col.key) {
-        th.classList.add("sortable");
-        (function (k) {
-          th.onclick = function () {
-            if (state.sort.key === k) state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
-            else { state.sort.key = k; state.sort.dir = k === "discipline" ? "asc" : "desc"; }
-            render();
-          };
-        })(col.key);
-      }
-      headerRow.appendChild(th);
-    });
-    var thead = el("thead", null, [headerRow]);
-    table.appendChild(thead);
-    var tbody = el("tbody");
-    var colCount = COLS.length;
-    if (state.grouped) {
-      // Group by TOP 2-digit category, ordered by code (01, 02, …). Rows
-      // without a top_category_2digit go under a "Uncategorized" group last.
-      var groups = {};
-      filtered.forEach(function (e) {
-        var k = e.top_category_2digit || "~~";
-        (groups[k] = groups[k] || []).push(e);
-      });
-      var keys = Object.keys(groups).sort();
-      keys.forEach(function (k) {
-        var rows = groups[k];
-        var title = k === "~~" ? "(Uncategorized)" :
-          (k + " — " + (rows[0].top_category_title || "TOP " + k));
-        var collapsed = !!state.collapsedCats[k];
-        var hr = el("tr", { class: "cs-cat-header" + (collapsed ? " collapsed" : "") });
-        var td = el("td", { colspan: String(colCount) });
-        td.innerHTML = (collapsed ? "▶ " : "▼ ") +
-          "<strong>" + title + "</strong> " +
-          "<span style='color:var(--text-muted);font-weight:400'>· " + rows.length + " discipline" + (rows.length === 1 ? "" : "s") + "</span>";
-        td.style.cursor = "pointer";
-        (function (key) {
-          td.onclick = function () { state.collapsedCats[key] = !state.collapsedCats[key]; render(); };
-        })(k);
-        hr.appendChild(td);
-        tbody.appendChild(hr);
-        if (!collapsed) {
-          rows.forEach(function (e) { tbody.appendChild(rowFor(e)); });
-        }
-      });
-    } else {
-      filtered.forEach(function (e) { tbody.appendChild(rowFor(e)); });
-    }
-    table.appendChild(tbody);
-    wrap.appendChild(table);
-    // A save re-renders the table; the Progress view, when showing, reads the same merge.
     if (state.view === "progress" && document.getElementById("cs-progress") && !document.getElementById("cs-progress").hidden) renderProgress();
-  }
-
-  function rowFor(entry) {
-    var tr = el("tr");
-    // Discipline cell — name first; a converged discipline (fan-in) also
-    // carries an "also: <alternate name>" chip so the folded-in name stays
-    // discoverable (matched in render()'s search filter too).
-    var tdDisc = el("td", { class: "cs-disc" }, [entry.discipline]);
-    var aliasArr = aliasesFor(entry);
-    if (aliasArr && aliasArr.length) {
-      var aliasChip = el("span", {
-        class: "cs-badge muted",
-        title: "Alternate discipline name" + (aliasArr.length > 1 ? "s" : "")
-          + " (fan-in convergence): identities minted under "
-          + aliasArr.join(" / ") + " were folded into " + entry.discipline
-          + ". The alternate remains a valid MQ for faculty qualification.",
-      }, ["also: " + aliasArr.join(", ")]);
-      aliasChip.style.marginLeft = "6px";
-      aliasChip.style.cursor = "help";
-      tdDisc.appendChild(aliasChip);
-    }
-    // MQ-list chip (19th ed. handbook) — 🎓 master's list · 🔧 experience list
-    // (any bachelor's + 2 yrs OR associate + 6 yrs) · 🎓🔧 both · 📋 noncredit
-    // CCR §53412. Added 2026-07-10 after Sam's Vocational/Business question:
-    // re-disciplining a row changes the implied faculty-qualification pool —
-    // this chip makes that visible at the point of decision.
-    var mq = state.mq && state.mq[entry.discipline];
-    if (mq) {
-      var mqIcon = mq.mq_list === "masters" ? "🎓"
-        : mq.mq_list === "not_masters" ? "🔧"
-        : mq.mq_list === "both_lists" ? "🎓🔧" : "📋";
-      var mqChip = el("span", {
-        class: "cs-badge muted",
-        title: "MQ Handbook (19th ed.): " + (mq.mq_list_label || mq.mq_list)
-          + (mq.special_ccr ? " · " + mq.special_ccr : "")
-          + (mq.flags ? " · " + mq.flags.join(", ") : "")
-          + ". 🎓 = master's in the discipline; 🔧 = any bachelor's + 2 yrs"
-          + " professional experience OR any associate + 6 yrs.",
-      }, [mqIcon]);
-      mqChip.style.marginLeft = "6px";
-      mqChip.style.cursor = "help";
-      tdDisc.appendChild(mqChip);
-    }
-    tr.appendChild(tdDisc);
-    tr.appendChild(el("td", { class: "cs-mono" }, [String(entry.total_mids || 0)]));
-    tr.appendChild(variantsCell(entry));
-    // Data-modal cell — the most-used LOCAL college subject code. Local codes
-    // are the colleges' own vocabulary and are ALLOWED to be non-4-letter
-    // ("VN", "VOC ED"), so this cell carries NO warning chip (the old
-    // "⚠ needs 4-letter" here was noise — removed 2026-06-12, Sam's CSR
-    // review). The chip had been doing double duty: its real signal — the
-    // canonical pick is still MISSING because the modal couldn't be
-    // auto-seeded — now renders on the Common SUBJ cell (see tdCanon below),
-    // where the fix actually happens.
-    var tdModal = el("td", { class: "cs-mono" });
-    tdModal.appendChild(document.createTextNode(entry.data_modal || "—"));
-    tr.appendChild(tdModal);
-
-    // Canonical SUBJ4 input
-    var input = el("input", {
-      class: "cs-canon", type: "text", maxlength: "4",
-      value: entry.canonical_subj4 || "", placeholder: "ABCD"
-    });
-    if (!state.sess) input.disabled = true;
-    var initial = input.value;
-    // Live SUBJ ⇄ CCR feedback under the input: collision/in-use assessment
-    // + collision-free suggestion chips. Populated on focus/input, cleared
-    // shortly after blur (the delay lets a chip's mousedown set the value
-    // before the blur-save runs).
-    var hint = el("div", { class: "cs-subj-hint" });
-    function reflectValidity() {
-      var v = (input.value || "").toUpperCase();
-      input.value = v;
-      input.classList.remove("cs-saved", "cs-invalid");
-      if (v && !SUBJ4_RE.test(v)) input.classList.add("cs-invalid");
-    }
-    input.oninput = function () { reflectValidity(); renderSubjHint(entry, input, hint); };
-    input.onfocus = function () { ensureCheckCss(); renderSubjHint(entry, input, hint); };
-    input.onblur = function () {
-      setTimeout(function () { hint.innerHTML = ""; hint.classList.remove("show"); }, 150);
-      var v = (input.value || "").toUpperCase();
-      if (v === initial.toUpperCase()) return;
-      var stop = canonCheck(entry, v);
-      if (stop === "format") { toast("Canonical SUBJ4 must be exactly 4 letters", true); return; }
-      if (stop === "declined") { input.value = initial; reflectValidity(); return; }
-      writeCanon(entry, v)
-        .then(function (r) {
-          if (!r.ok) { toast("Save failed (" + r.status + ")", true); return; }
-          input.classList.add("cs-saved");
-          toast("Saved " + entry.discipline + " → " + v);
-          render();
-        })
-        .catch(function () { toast("Save failed (network)", true); });
-    };
-    input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
-    var tdCanon = el("td", null, [input, hint]);
-    // Residual "⚠ needs 4-letter" warning — a discipline whose canonical
-    // pick is MISSING (needs-review: no canonical_subj4, typically because
-    // the most-used local code isn't 4 letters so it couldn't be
-    // auto-seeded). This belongs HERE on the Common SUBJ cell — where the
-    // curator picks the code — not on the Most-used-locally cell (local
-    // codes are allowed to be non-4-letter; flagging them there was noise).
-    // The Status chip's "needs review" keeps surfacing the same state.
-    if (!entry.canonical_subj4) {
-      var needsPick = el("span", {
-        class: "cs-badge warn",
-        title: "No 4-letter Common SUBJ picked yet"
-          + (entry.data_modal && !entry.data_modal_is_4letter
-              ? " — the most-used local code (" + entry.data_modal
-                + ") isn't a usable 4-letter canonical, so pick an expansion here."
-              : " — pick one for this discipline."),
-      }, ["⚠ needs 4-letter"]);
-      needsPick.style.marginLeft = "6px";
-      tdCanon.appendChild(needsPick);
-    }
-    // Multi-SUBJ4 umbrella (e.g. Foreign Languages): show the per-language
-    // split codes so the curator sees the discipline isn't single-canonical,
-    // and the codes are visibly searchable (matched in render()'s filter).
-    var splitArr = splitFor(entry);
-    if (splitArr && splitArr.length) {
-      var splitTip = splitArr.map(function (x) { return x.lang + " → " + x.code; }).join("\n");
-      var splitChip = el("span", {
-        class: "cs-badge muted",
-        title: "Split per-language (multi-SUBJ4 umbrella):\n" + splitTip,
-      }, ["⚯ " + splitArr.length + " splits"]);
-      splitChip.style.marginLeft = "6px";
-      splitChip.style.cursor = "help";
-      tdCanon.appendChild(splitChip);
-      var codesLine = el("div", {
-        class: "cs-mono",
-        style: "font-size:.68rem;color:var(--text-muted);margin-top:3px;line-height:1.3;",
-      }, [splitArr.map(function (x) { return x.code; }).join(" · ")]);
-      tdCanon.appendChild(codesLine);
-    }
-    // Authority chip (item 19, Sam 2026-09-03: "stay with 4-characters and add
-    // a CID chip with the verbatim CID code showing"). Where the Common SUBJ
-    // differs from the code C-ID or CCN uses for these courses, the code is a
-    // word chip beside ours — "C-ID AJ" next to CRIM — so faculty see both.
-    // A CSR-minted code no authority names yet reads "proposed" (item 18).
-    // Data: authority_chips / authority_flag on the seed entry, built by
-    // kb/_seed_authority_codes.py from the promotions evidence + the rulings.
-    ensureAuthorityCss();
-    authorityChips(entry).forEach(function (c) {
-      var authChip = el("span", {
-        class: "cs-badge auth",
-        title: c.system + " uses the subject code " + c.code + " for these courses; the Common SUBJ "
-          + "stays " + (entry.canonical_subj4 || "four letters") + " under rule 3 (four letters, no hyphens). "
-          + (entry.authority_note || ""),
-      }, [c.system + " " + c.code]);
-      authChip.style.marginLeft = "6px";
-      authChip.style.cursor = "help";
-      tdCanon.appendChild(authChip);
-    });
-    if (entry.authority_flag === "proposed") {
-      var propChip = el("span", {
-        class: "cs-badge proposed",
-        title: "No C-ID or CCN subject code names this discipline's courses yet, so the CSR proposes "
-          + "this one (item 18, 2026-09-03). When an authority publishes a code, rule 1 applies at the next fold.",
-      }, ["proposed"]);
-      propChip.style.marginLeft = "6px";
-      propChip.style.cursor = "help";
-      tdCanon.appendChild(propChip);
-    }
-    // CID / CCN match badges — count official identifiers whose subject
-    // equals the canonical SUBJ4 (or, if no canonical set yet, the data
-    // modal). Hover tooltip lists the actual identifiers + titles (capped
-    // for legibility); click opens the full list in the variants modal.
-    var matchSubj = entry.canonical_subj4 || entry.data_modal;
-    function _badgeTip(hits, kind) {
-      // First 6 identifiers + their titles in the tooltip; the variants
-      // modal carries the full list.
-      var lines = [kind + " descriptors that use subject " + matchSubj + " (click to see all):"];
-      hits.slice(0, 6).forEach(function (h) {
-        lines.push("  " + h.id + (h.title ? " — " + h.title : ""));
-      });
-      if (hits.length > 6) lines.push("  …+" + (hits.length - 6) + " more");
-      return lines.join("\n");
-    }
-    if (matchSubj) {
-      var cidHits = state.cidBySubj[matchSubj] || [];
-      var ccnHits = state.ccnBySubj[matchSubj] || [];
-      if (cidHits.length > 0) {
-        var cidBadge = el("span", {
-          class: "cs-id-badge cid",
-          title: _badgeTip(cidHits, "CID"),
-          style: "cursor:pointer",
-        }, ["CID·" + cidHits.length]);
-        cidBadge.onclick = function (e) { e.stopPropagation(); openVariantsModal(entry); };
-        tdCanon.appendChild(cidBadge);
-      }
-      if (ccnHits.length > 0) {
-        var ccnBadge = el("span", {
-          class: "cs-id-badge ccn",
-          title: _badgeTip(ccnHits, "CCN"),
-          style: "cursor:pointer",
-        }, ["CCN·" + ccnHits.length]);
-        ccnBadge.onclick = function (e) { e.stopPropagation(); openVariantsModal(entry); };
-        tdCanon.appendChild(ccnBadge);
-      }
-    }
-    tr.appendChild(tdCanon);
-
-    // TOP cell — 4-digit modal code; tooltip shows the 6-digit code + program title
-    var tdTop = el("td", { class: "cs-mono" });
-    if (entry.top_modal_4digit) {
-      var topText = entry.top_modal_4digit;
-      var topTip = entry.top_modal_6digit
-        ? (entry.top_modal_6digit + " — " + (entry.top_modal_title || ""))
-        : "";
-      tdTop.appendChild(el("span", { title: topTip }, [topText]));
-    } else {
-      tdTop.appendChild(document.createTextNode("—"));
-    }
-    tr.appendChild(tdTop);
-
-    // CIP placeholder column — sits next to TOP (paired taxonomy block).
-    // CCCCO is transitioning from TOP to CIP; column will populate when the
-    // mapping finalizes. Always blank today.
-    tr.appendChild(el("td", { class: "cs-mono", style: "color:var(--text-muted)", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
-
-    // CTE cell — show the flag as a badge with color reflecting the share.
-    // .cs-cte rides ensureCsrUiCss(): the badge ("Y (90%)") stays on ONE
-    // line; the width it needs comes out of the Notes column's slack.
-    var tdCte = el("td", { class: "cs-cte" });
-    if (entry.cte_flag && entry.cte_flag !== "none") {
-      var cls = entry.cte_flag === "all" ? "ok"
-              : entry.cte_flag === "most" ? "ok"
-              : entry.cte_flag === "mixed" ? "mix" : "muted";
-      var share = Math.round((entry.cte_share || 0) * 100);
-      var label = entry.cte_flag === "all" ? "Y (all)"
-                : entry.cte_flag === "most" ? "Y (" + share + "%)"
-                : "mixed (" + share + "%)";
-      tdCte.appendChild(el("span", {
-        class: "cs-badge " + cls,
-        title: "CTE-designated MIDs: " + share + "% (" + (entry.cte_known_n || 0) + " of " +
-               ((entry.cte_known_n || 0) + (entry.cte_unknown_n || 0)) + " with known TOP). Source: 2023 CCC TOP Manual.",
-      }, [label]));
-    } else {
-      tdCte.appendChild(el("span", { class: "cs-badge muted", title: "No CTE-designated TOP codes in this discipline." }, ["—"]));
-    }
-    tr.appendChild(tdCte);
-
-    // CPL opportunities cell — the CSR rollup (mirror of the EACR/CCR at the
-    // discipline grain): how many exhibits/credentials articulate to this
-    // discipline's courses, across how many colleges. Click to list them.
-    tr.appendChild(cplCell(entry));
-
-    var st = status(entry);
-    tr.appendChild(el("td", null, [el("span", { class: "cs-badge " + st.cls }, [st.label])]));
-
-    // Notes textarea
-    var ta = el("textarea", { class: "cs-notes", placeholder: "optional curator note" });
-    ta.value = entry._notes || "";
-    if (!state.sess) ta.disabled = true;
-    var initialNote = ta.value;
-    ta.onblur = function () {
-      if (ta.value === initialNote) return;
-      writeNote(entry, ta.value)
-        .then(function (r) {
-          if (!r.ok) { toast("Notes save failed (" + r.status + ")", true); return; }
-          toast("Note saved · " + entry.discipline);
-          // Don't re-render the whole table — just bump initialNote tracker.
-          initialNote = ta.value;
-        })
-        .catch(function () { toast("Note save failed (network)", true); });
-    };
-    tr.appendChild(el("td", null, [ta]));
-
-    var rev = el("td", { class: "cs-reviewed" });
-    if (entry.validated_at && entry.validated_by) {
-      // Two-line: validator (top) + reviewer (bottom) when both exist.
-      rev.innerHTML = "✓ <strong>" + (entry.validated_by || "").split("@")[0] + "</strong> · " + entry.validated_at.slice(0, 10);
-      if (entry.reviewed_by && entry.reviewed_at) {
-        rev.innerHTML += "<br><span style='color:var(--text-muted);font-size:.7rem'>rev. " +
-          (entry.reviewed_by || "").split("@")[0] + " · " + entry.reviewed_at.slice(0, 10) + "</span>";
-      }
-    } else if (entry.reviewed_at && entry.reviewed_by) {
-      rev.textContent = (entry.reviewed_by || "").split("@")[0] + " · " + entry.reviewed_at.slice(0, 10);
-    } else {
-      rev.textContent = "—";
-    }
-    tr.appendChild(rev);
-
-
-    return tr;
-  }
-
-  // CPL-opportunities cell: a count badge ("🎓 N · M coll.") linking to the
-  // credential list, or a muted dash when the discipline has no earned
-  // articulations yet. Data from the CSR rollup (state.cpl[discipline]).
-  function cplCell(entry) {
-    var td = el("td");
-    var r = entry._cpl;
-    if (!r || !r.n_creds) {
-      td.appendChild(el("span", { class: "cs-muted-dash", title: "No earned CPL articulations recorded for this discipline yet." }, ["—"]));
-      return td;
-    }
-    var top = (r.creds || []).slice(0, 6).map(function (c) { return c.c; }).join(", ");
-    var badge = el("span", {
-      class: "cs-badge ok", style: "cursor:pointer",
-      title: r.n_creds + " credential" + (r.n_creds === 1 ? "" : "s") + " · " +
-             r.n_colleges + " college" + (r.n_colleges === 1 ? "" : "s") + " · " +
-             r.n_courses + " course" + (r.n_courses === 1 ? "" : "s") +
-             "\nTop: " + top + "\n(click for the full list)",
-    }, ["🎓 " + r.n_creds + " · " + r.n_colleges + " coll."]);
-    badge.onclick = function (e) { e.stopPropagation(); openCplModal(entry); };
-    td.appendChild(badge);
-    return td;
-  }
-
-  // Inject the CPL modal once (reuses the tab's .cs-modal-bg/.cs-modal classes;
-  // appended inside the pane so those scoped rules apply — no HTML edit needed).
-  function ensureCplModal() {
-    if (document.getElementById("cs-cpl-modal")) return;
-    if (!document.getElementById("cs-cpl-css")) {
-      document.head.appendChild(el("style", { id: "cs-cpl-css" }, [
-        "#tab-canonical-subj4 .cs-cpl-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:8px;}" +
-        "#tab-canonical-subj4 .cs-cpl-table th{text-align:left;color:var(--text-muted);font-weight:600;border-bottom:1px solid #e5e7eb;padding:4px 8px;}" +
-        "#tab-canonical-subj4 .cs-cpl-table td{padding:4px 8px;border-bottom:1px solid #f1f5f9;vertical-align:top;}"
-      ]));
-    }
-    var close = el("button", { class: "cs-modal-close", type: "button", "aria-label": "Close" }, ["×"]);
-    var modal = el("div", { class: "cs-modal" }, [
-      close,
-      el("h3", { id: "cs-cpl-title" }, ["CPL opportunities"]),
-      el("div", { id: "cs-cpl-body" }),
-    ]);
-    var bg = el("div", { id: "cs-cpl-modal", class: "cs-modal-bg", role: "dialog", "aria-modal": "true" }, [modal]);
-    function shut() { bg.classList.remove("show"); document.removeEventListener("keydown", esc); }
-    function esc(e) { if (e.key === "Escape") shut(); }
-    bg._esc = esc;
-    close.onclick = shut;
-    bg.onclick = function (e) { if (e.target === bg) shut(); };
-    document.getElementById("tab-canonical-subj4").appendChild(bg);
-  }
-
-  // Open the CPL modal for a discipline: list every aligned exhibit/credential
-  // (credential · issuer · #colleges that earned it).
-  function openCplModal(entry) {
-    ensureCplModal();
-    var r = entry._cpl;
-    if (!r) return;
-    var bg = document.getElementById("cs-cpl-modal");
-    document.getElementById("cs-cpl-title").textContent = "CPL opportunities · " + entry.discipline;
-    var body = document.getElementById("cs-cpl-body");
-    body.innerHTML = "";
-    body.appendChild(el("p", {}, [
-      r.n_creds + " distinct exhibit/credential" + (r.n_creds === 1 ? "" : "s") +
-      " articulate to this discipline’s courses, earned across " + r.n_colleges +
-      " college" + (r.n_colleges === 1 ? "" : "s") + " (" + r.n_courses + " course identit" +
-      (r.n_courses === 1 ? "y" : "ies") + ")."
-    ]));
-    var tbl = el("table", { class: "cs-cpl-table" });
-    var hr = el("tr");
-    ["Credential", "Issuer", "Colleges"].forEach(function (h) { hr.appendChild(el("th", {}, [h])); });
-    tbl.appendChild(el("thead", null, [hr]));
-    var tb = el("tbody");
-    (r.creds || []).forEach(function (c) {
-      var row = el("tr");
-      row.appendChild(el("td", {}, [c.c || "—"]));
-      row.appendChild(el("td", { style: "color:var(--text-muted);" }, [c.i || "—"]));
-      row.appendChild(el("td", { class: "cs-mono", style: "text-align:center;" }, [String(c.n)]));
-      tb.appendChild(row);
-    });
-    tbl.appendChild(tb);
-    body.appendChild(tbl);
-    document.addEventListener("keydown", bg._esc);
-    bg.classList.add("show");
   }
 
   // Guidelines modal — wire the open/close on the curator-facing button.
@@ -1989,15 +993,7 @@
     bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
   }
 
-  // Variants modal — close handlers (the opener lives inline in variantsCell).
-  function wireVariantsModal() {
-    var bg = document.getElementById("cs-variants-modal");
-    if (!bg) return;
-    var close = bg.querySelector(".cs-modal-close");
-    function shut() { bg.classList.remove("show"); document.removeEventListener("keydown", _variantsModalEsc); }
-    close && close.addEventListener("click", shut);
-    bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
-  }
+
 
   // ══════════════════════════════════════════════════════════════════════════════════════
   // The Progress view (S425, 2026-10-19): the Commons' dash for this reference.
@@ -2009,7 +1005,7 @@
   // the Commons' step 1): the run status, the headline pair, the milestone line with You are
   // here, a card per step and the side column from the run log (kb/status/subjects.json).
   // Each card's procedure lives in kb/csr_procedures.json and is drawn under the cards; a
-  // count opens the Reference view with the filter that lists exactly what it counted (the
+  // count opens the List with the filter that lists exactly what it counted (the
   // Commons' step 3, the deep link behind a count: #canonical-subj4/<filter>).
   //
   // The definitions are this reference's; the renderer is the module's. The context x is
@@ -2026,8 +1022,12 @@
   var SKYVIEW_URL = "prototype/skyview.html";
   var VIEW_KEY = "cplCsr.view.v1";
   var SECS_KEY = "cplCsr.secs.v1";
-  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }, { id: "list", label: "List" }];
-  var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
+  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "list", label: "List" },
+    { id: "local", label: "Local subjects" }];
+  // The retired Reference view's filter addresses (and the quickstart's status hints), each opening the List on its filter.
+  var FILTER_ROUTES = { needs_review: "nocode", pre_seeded: "open", reviewed: "confirmed", invalid: "nocode", ccn: "ccn", cid: "cid",
+    chip: "chip", proposed: "proposed" };
+  var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];
   var RULE_WORDS = {
     cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
     cs4_aligned: "aligned with the official prefix", cs4_missed_alignment: "a missed alignment", cs4_divergence_noted: "a divergence the note records",
@@ -2072,17 +1072,20 @@
   }
 
   /* ── where a count leads (the Commons' step 3) ──
-     A target names the Reference view with one filter set, the tab's own SUBJ check, a
-     section of this view, a procedure's card, or another page. */
+     A target names the List with one filter set (the Reference view's lists became List filters
+     when it retired into the List, 2026-11-04), the tab's own SUBJ check, a section of this view, a
+     procedure's card, or another page. A pick waiting for a person leads to the List's Open filter
+     (TO.confirm), where Confirm this pick lives (Sam, 2026-11-03, from the Commons). */
   var TO = {
-    all: { view: "reference", filter: "all" },
-    needsReview: { view: "reference", filter: "needs_review" },
-    preSeeded: { view: "reference", filter: "pre_seeded" },
-    reviewed: { view: "reference", filter: "reviewed" },
-    ccn: { view: "reference", filter: "ccn" },
-    cid: { view: "reference", filter: "cid" },
-    chip: { view: "reference", filter: "chip" },
-    proposed: { view: "reference", filter: "proposed" },
+    all: { view: "list", filter: "" },
+    needsReview: { view: "list", filter: "nocode" },
+    preSeeded: { view: "list", filter: "open" },
+    confirm: { view: "list", filter: "open" },
+    reviewed: { view: "list", filter: "confirmed" },
+    ccn: { view: "list", filter: "ccn" },
+    cid: { view: "list", filter: "cid" },
+    chip: { view: "list", filter: "chip" },
+    proposed: { view: "list", filter: "proposed" },
     check: { check: true },
     findings: { sec: "progress:findings" },
     procedures: { sec: "progress:procedures" },
@@ -2106,7 +1109,7 @@
       left: function (x) { return [[x.missed, "missed alignment", "missed alignments", TO.chip]]; } },
     { id: "confirmed", title: "Every pick confirmed",
       fact: function (x) { return fmtN(x.confirmed) + " of " + fmtN(x.total) + " by a person"; },
-      left: function (x) { return [[x.unconfirmed, "pick to confirm", "picks to confirm", TO.preSeeded]]; } },
+      left: function (x) { return [[x.unconfirmed, "pick to confirm", "picks to confirm", TO.confirm]]; } },
     { id: "checks", title: "The checks pass", needs: ["scan"],
       fact: function (x) { return plural(x.askable, "finding needs", "findings need") + " a judgment"; },
       left: function (x) {
@@ -2222,7 +1225,7 @@
             fmtN(x.cohort) + " picks carry a procedure's or a session cohort's stamp."
           : "The cohort confirm of authority-coded picks is proposed, a card for " + x.decider + ".";
       },
-      open: function (x) { return ["Open the " + fmtN(x.unconfirmed) + " waiting", TO.preSeeded]; },
+      open: function (x) { return ["Open the " + fmtN(x.unconfirmed) + " waiting", TO.confirm]; },
       more: function () { return ["Procedure", procTarget("confirmation")]; } },
     { id: "checks", title: "The daily scan and Jev's sitting", needs: ["scan"],
       status: function (x) { return x.askable ? "going" : "done"; },
@@ -2297,11 +1300,19 @@
     var differ = rows.filter(function (e) {
       return e.ccn_subject_code && (e.cid_subject_codes || []).length && e.cid_subject_codes.indexOf(e.ccn_subject_code) < 0;
     }).map(function (e) { return e.discipline + " is " + e.ccn_subject_code + ", C-ID says " + e.cid_subject_codes.join(", "); });
-    var byRule = {}, askable = null, judgments = null, askableWords = "";
+    var byRule = {}, askable = null, judgments = null, askableWords = "", toNote = null, toNoteWords = "";
     if (scan) {
       scan.findings.forEach(function (f) { byRule[f.rule] = (byRule[f.rule] || 0) + 1; });
       var ask = scan.findings.filter(function (f) { return f.needs_judgment && f.rule !== "cs7_unreviewed" && f.rule !== "cs4_aligned"; });
       askable = ask.length;
+      /* The opened page's findings item: those needing judgment, less the ones another item counts (the unconfirmed,
+         the collisions, the missed alignments) and the aligned ones. kb/_build_commons_status.py counts the same set
+         for the Commons card (CSR_ASK_SKIP there), so the card and the page agree (S561). */
+      var note = scan.findings.filter(function (f) { return f.needs_judgment && ASK_SKIP.indexOf(f.rule) < 0; });
+      toNote = note.length;
+      var nr = {};
+      note.forEach(function (f) { nr[f.rule] = (nr[f.rule] || 0) + 1; });
+      toNoteWords = Object.keys(nr).sort(function (a, b) { return nr[b] - nr[a]; }).map(function (r) { return fmtN(nr[r]) + " " + (RULE_WORDS[r] || r); }).join(", ");
       judgments = (byRule.cs6_weak_mnemonic || 0) + (byRule.cs5_modal_diverge || 0);
       var ar = {};
       ask.forEach(function (f) { ar[f.rule] = (ar[f.rule] || 0) + 1; });
@@ -2316,7 +1327,7 @@
       total: rows.length, confirmed: confirmed.length, person: person, cohort: confirmed.length - person,
       validated: rows.filter(function (e) { return e.validated_at; }).length,
       unconfirmed: unconfirmed.length, unconfirmedAuthority: unconfirmed.filter(onAuthorityCode).length,
-      settled: settled.length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length, collidedDisc: collidedDisc,
+      settled: settled.length, personSettled: settled.filter(function (e) { return !isCohort(e.reviewed_by); }).length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length, collidedDisc: collidedDisc,
       fanInDisc: fanIns.length,
       collisions: check.collisions.length, collisionCodes: check.collisions.map(function (c) { return c.code; }),
       aliasShared: check.aliasShared.length, drift: check.drift.length, driftRows: check.nRowsOff, invalid: check.invalid.length,
@@ -2326,6 +1337,7 @@
       mqTotal: mqTotal, mqNoCourses: mqTotal == null ? null : mqTotal - rows.length, mqReadAt: state.mqDoc && (state.mqDoc._extracted_at || null),
       cidSubjects: cidSubj.length, cidDescriptors: state.cidMeta && state.cidMeta.count, cidReadAt: state.cidMeta && retrievedDay(state.cidMeta.source),
       ccnSubjects: ccnSubj.length, ccnCourses: state.ccnMeta && state.ccnMeta.count, bothSubjects: both.length, ccnOnly: ccnOnly, differ: differ,
+      toNote: toNote, toNoteWords: toNoteWords,
       scanDay: scan && scan._scanned_at, missed: scan ? (byRule.cs4_missed_alignment || 0) : null, judgments: judgments, askable: askable,
       askableWords: askableWords, byRule: byRule, findings: scan ? scan.findings.length : null,
       codes: mc ? mc.codes : null, codeIds: mc ? mc.ids : null, canonicalCodes: mc ? mc.canonical : null, umbrellaOnlyCodes: mc ? mc.umbrella : null,
@@ -2383,19 +1395,19 @@
     if (node.scrollIntoView) node.scrollIntoView({ block: "start" });
     try { node.focus({ preventScroll: true }); } catch (e) { /* older browsers */ }
   }
-  /* A count's target, applied: the Reference view with one filter set and its toolbar in step;
+  /* A count's target, applied: the List with one filter set (or one MQ discipline's panel open);
      the SUBJ check; a section of this view (and a procedure's card inside it). */
   function goTo(to) {
     if (!to) return;
-    if (to.view === "reference") {
-      state.filter = to.filter || "all"; state.search = to.search || ""; state.subj = ""; state.subjSel = ""; state.topFilter = "all";
-      applyView("reference");
-      renderToolbar();
-      render();
-      bringUp(document.getElementById("cs-table-wrap"));
+    if (to.view === "list") {
+      var L = listState();
+      L.f = to.filter || ""; L.q = to.search || ""; L.cf = to.cf || {};
+      if (to.panel) L.panel = to.panel;
+      applyView("list");
+      bringUp(document.getElementById("cs-list"));
       return;
     }
-    if (to.check) { applyView("reference"); openCheckModal(); return; }
+    if (to.check) { openCheckModal(); return; }
     if (to.sec) {
       secSet(to.sec, true);
       applyView("progress");
@@ -2470,14 +1482,14 @@
     if (!x.scan) kids = [el("p", { class: "cs-caution", role: "status" }, [SOURCE.scan + " could not be read (" + (x.errors.scan || "not read yet") + ")."])];
     else {
       var ask = x.scan.findings.filter(function (f) { return f.needs_judgment && f.rule !== "cs7_unreviewed" && f.rule !== "cs4_aligned"; });
-      kids = [el("p", { class: "cs-quiet" }, ["The scan of " + dayWords(x.scanDay) + ". Each line is one finding that needs a judgment; the unconfirmed picks are counted on the Confirmation card instead. A word opens the row on the Reference view."])];
+      kids = [el("p", { class: "cs-quiet" }, ["The scan of " + dayWords(x.scanDay) + ". Each line is one finding that needs a judgment; the unconfirmed picks are counted on the Confirmation card instead. A word opens its panel on the List."])];
       if (!ask.length) kids.push(el("p", null, ["No finding needs a judgment."]));
       else kids.push(el("ul", { class: "cs-findings" }, ask.map(function (f) {
         var disc = state.seed && state.seed.disciplines && state.seed.disciplines[f.item] ? f.item : null;
         var li = el("li", null, [el("b", null, [RULE_WORDS[f.rule] || f.rule]), ": " + f.item + ". " + (f.evidence || "") + (f.suggestion ? " " + f.suggestion.charAt(0).toUpperCase() + f.suggestion.slice(1) + "." : "")]);
         if (disc) {
           li.appendChild(document.createTextNode(" "));
-          li.appendChild(goControl("Open the row", { view: "reference", filter: "all", search: disc.toLowerCase() }));
+          li.appendChild(goControl("Open its panel", { view: "list", panel: disc }));
         }
         return li;
       })));
@@ -2502,11 +1514,13 @@
     var split = fmtN(x.person) + " confirmed by a person, " + fmtN(x.cohort) + " by the nightly procedure or a session cohort.";
     var items = [
       { n: x.unconfirmed, words: x.unconfirmed === 1 ? "MQ discipline on the data's modal code, unconfirmed." : "MQ disciplines on the data's modal code, unconfirmed.",
-        action: { words: "Confirm them", go: go(TO.preSeeded) } },
+        action: { words: "Confirm them", go: go(TO.confirm) } },
       { n: x.collisions, words: x.collisions === 1 ? "Common SUBJ shared by two MQ disciplines." : "Common SUBJs shared by two or more MQ disciplines.",
         action: { words: "Check them", go: go(TO.check) } },
-      { n: x.scan ? x.askable : null, words: "scan findings to confirm or note" + (x.askableWords ? " (" + x.askableWords + ")." : "."),
+      { n: x.scan ? x.toNote : null, words: (x.toNote === 1 ? "scan finding to confirm or note" : "scan findings to confirm or note") + (x.toNoteWords ? " (" + x.toNoteWords + ")." : "."),
         action: { words: "Open the findings", go: go(TO.findings) } },
+      x.missed ? { n: x.missed, words: x.missed === 1 ? "missed alignment with an authority code." : "missed alignments with an authority code.",
+        action: { words: "Open them", go: go(TO.chip) } } : null,
       { n: x.strayCodes, words: "identity codes that are neither a Common SUBJ nor an umbrella code" +
         (x.strayIds != null ? ", on " + fmtN(x.strayIds) + " identities" : "") + ", for a re-mint under the playbook." }
     ];
@@ -2514,6 +1528,7 @@
       items.push({ n: 1, words: "decision for " + x.decider + ": " + (c.title || "an open call") + ".",
         action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
     });
+    items = items.filter(Boolean);
     var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
     var on = (x.procs || []).filter(function (p) { return p.on; }).length;
     var r = function (label, n, to) { return { label: label, n: n, go: go(to || TO.all) }; };
@@ -2526,6 +1541,8 @@
       links: [x.procs ? { words: "How it is kept: " + fmtN(on) + " procedures in force", go: go(TO.procedures) } : null,
         sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
       progress: { n: x.settled, of: total, short: "settled", words: "MQ disciplines with courses carry a settled Common SUBJ",
+        // Confirmed by a person, beside settled (Sheet 160; Sam, S565, 2026-11-03: all five references).
+        confirmed: { n: x.person, done: x.personSettled, doneWords: "settled" },
         recently: [recently, split].filter(Boolean).join(" "),
         calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmtN(open.length) + " decisions wait on ") + x.decider + "."
           : "No decisions wait on " + x.decider + ".") : "" },
@@ -2538,7 +1555,7 @@
         { q: "How does it reach the courses?", rows: [r("An umbrella code over others", x.umbrellas), r("Paired in a fan-in", x.fanInDisc)] }
       ],
       of: total, ofWords: "MQ disciplines with courses",
-      foot: "The reference is staging: not yet faculty-published."
+      foot: "The reference is staging: not yet faculty-published. This page reads the picks live; the CPL Commons card counts them as the daily sync committed them, so between syncs this page runs ahead of it."
     };
   }
 
@@ -2562,7 +1579,7 @@
       mount.innerHTML = "";
       if (!CP) {
         mount.appendChild(el("p", { class: "cs-caution", role: "alert" },
-          ["The Progress view's shared module (commons_progress.js) could not be loaded. The Reference view reads as usual; reload the tab to try again."]));
+          ["The Progress view's shared module (commons_progress.js) could not be loaded. The List reads as usual; reload the tab to try again."]));
         return;
       }
       ensureProgressCss();
@@ -2596,7 +1613,24 @@
   var CONFIRM_WORDS = { person: "Confirmed by a person", nightly: "Confirmed by the nightly procedure",
     cohort: "Confirmed by a session cohort", open: "Open" };
   var SOURCE_WORDS = { ccn: "CCN", "c-id": "C-ID", csr: "Minted here" };
-  function listState() { return state.ls || (state.ls = {}); }
+  /* A new visit's List state; a quickstart hint waiting for the List (state.qsList) sets its filter, find and TOP once. */
+  function listState() {
+    if (state.ls) return state.ls;
+    var L = state.ls = {}, q = state.qsList;
+    if (q) {
+      state.qsList = null;
+      if (q.f) L.f = q.f;
+      if (q.q) L.q = q.q;
+      if (q.top) { L.cf = {}; L.cf[listCols().map(function (c) { return c.h; }).indexOf("TOP")] = q.top; }
+    }
+    return L;
+  }
+  /* The List's filters; #canonical-subj4/list/<id> opens the List on one (a Commons count, Sam 2026-11-03). */
+  var LIST_FILTERS = [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["confirmed", "Confirmed"],
+    ["person", "Confirmed by a person"], ["procedure", "Confirmed by a procedure"], ["nocode", "No code yet"], ["collision", "In a collision"],
+    ["ccn", "On the CCN code"], ["cid", "On the C-ID code"], ["chip", "An official code differs"], ["proposed", "Proposed, no official code"],
+    ["selected", "Selected"], ["changed", "Changed this visit"]];
+  function listFilterId(id) { return LIST_FILTERS.some(function (f) { return f[0] === id; }) ? id : null; }
   function confirmedHow(e) {
     if (!isConfirmed(e)) return "open";
     if (!isCohort(e.reviewed_by)) return "person";
@@ -2637,6 +1671,10 @@
     var chips = authorityChips(e).map(function (c) { return c.system + " says " + c.code; });
     return [src].concat(chips).filter(Boolean).join("; ");
   }
+  function topWords(r) {
+    var e = r.e;
+    return e.top_category_2digit ? e.top_category_2digit + (e.top_category_title ? " " + e.top_category_title : "") : "";
+  }
   function listCols() {
     return [
       { h: "MQ Discipline", w: 17, v: function (r) { return r.ut; } },
@@ -2648,6 +1686,9 @@
       { h: "Local courses", w: 6, n: true, v: function (r) { return r.e.local_subject_total == null ? null : r.e.local_subject_total; } },
       { h: "M-IDs", w: 5, n: true, v: function (r) { return r.e.total_mids == null ? null : r.e.total_mids; } },
       { h: "Authority", w: 7, v: authorityWords },
+      // The TOP category, a fuzzy filter only (TOP is a last-in-line signal): the Reference view's TOP filter and grouping,
+      // carried as a column a reader filters and sorts (2026-11-04).
+      { h: "TOP", w: 9, v: topWords },
       { h: "Notes", w: 8, edit: "notes", v: function (r) { return r.e._notes || ""; } }
     ];
   }
@@ -2685,7 +1726,7 @@
       if (n) n.focus();
     }
   }
-  function signinWords() { return "Sign in as a reviewer to save; the sign-in sits on the Reference view."; }
+  function signinWords() { return "Sign in as a reviewer to save; the sign-in sits at the head of the List."; }
   function failWords(r) { return r && r.status ? "status " + r.status : "no answer"; }
   /* A Common SUBJ through the table's path. Resolves to the words for the note line; `ok` says whether it saved.
      A List save never writes an empty code: the overlay would keep the seed's and only the reviewer would move. */
@@ -2756,7 +1797,6 @@
       if (sp) h.line("Split by language: " + sp.map(function (x) { return x.lang + " " + x.code; }).join(", ") + ".");
       if ((e.fan_in_with || []).length) h.line("Shares its code by ruling with " + e.fan_in_with.join(", ") + ".");
       if (e.top_modal_4digit) h.line("Most common TOP: " + (e.top_modal_6digit || e.top_modal_4digit) + (e.top_modal_title ? ", " + e.top_modal_title : "") + ".");
-      h.box.appendChild(h.word("Show it in the Reference view", function () { goTo({ view: "reference", search: d.toLowerCase() }); }));
     } else if (name === "Common SUBJ" || name === "Status") {
       h.line(e.canonical_subj4 ? "The Common SUBJ is " + e.canonical_subj4 + "." : "No Common SUBJ picked yet.");
       if (e.data_modal) h.line("Most used locally: " + e.data_modal + (e.data_modal_share ? ", " + Math.round(e.data_modal_share * 100) + "% of the local courses" : "") + ".");
@@ -2814,20 +1854,34 @@
       changed: true,
       suggest: { get: listSuggestOf, verb: "Confirm this pick", accept: listSuggestAccept, always: true,
         label: function (r) { return "Confirm " + r.e.canonical_subj4 + " for " + r.ut; } },
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): an MQ discipline's title opens it
+      // beside the table, with its local subjects, the codes it shares, Confirm this pick and the rest folded.
+      panel: { label: function (r) { return "MQ discipline: " + r.ut; }, body: listPanelBody },
       head: function (wrap, api) {
+        listLine(wrap, api);
         wrap.appendChild(api.el("p", { cls: "cs-quiet", text: "Every MQ discipline with courses, A to Z: its Common SUBJ, who confirmed it, "
           + "the Local SUBJs colleges use for its courses and how many, its local courses and M-IDs, and any collision. Press a cell for its details." }));
-        if (!state.sess) wrap.appendChild(api.el("p", { cls: "cs-lede" }, ["You are not signed in. The list reads; a save asks for a sign-in, which sits on the Reference view. ",
-          api.word("Go to the Reference view", function () { applyView("reference"); })]));
+        // The sign-in and the SUBJ check, carried from the Reference view's toolbar (2026-11-04).
+        var auth = api.el("span", { cls: "cs-auth" });
+        renderAuthInto(auth);
+        wrap.appendChild(api.el("p", { cls: "cs-lede csl-auth" }, state.sess ? ["Signed in: ", auth]
+          : ["You are not signed in. The list reads; a save asks for a sign-in: ", auth]));
+        wrap.appendChild(api.el("p", { cls: "csl-acts" }, [api.word("Run the SUBJ check", function () { openCheckModal(); }, { id: "csl-check" })]));
         return true;
       },
-      filters: [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["person", "Confirmed by a person"],
-        ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["selected", "Selected"], ["changed", "Changed this visit"]],
+      filters: LIST_FILTERS,
       filterPass: function (r, L) {
         if (L.f === "open") return r.how === "open";
         if (L.f === "person") return r.how === "person";
         if (L.f === "procedure") return r.how === "nightly" || r.how === "cohort";
         if (L.f === "collision") return r.coll.length > 0;
+        // The Reference view's lists, carried onto the List (2026-11-04).
+        if (L.f === "confirmed") return r.how !== "open";
+        if (L.f === "nocode") return !hasCode(r.e);
+        if (L.f === "ccn") return r.e.canonical_source === "ccn";
+        if (L.f === "cid") return r.e.canonical_source === "c-id";
+        if (L.f === "chip") return authorityChips(r.e).length > 0;
+        if (L.f === "proposed") return r.e.authority_flag === "proposed";
         return true;
       },
       hay: function (r) {
@@ -2844,10 +1898,242 @@
       cellSave: listCellSave
     };
   }
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits' first
+     (PR 2736), then CR's (PR 2743)): one line of the subjects row in kb/status/commons.json, each count opening the List's own
+     filter where it has one, and the Progress view's opened page (its cards: Needs attention and the three questions)
+     folded behind one word for the visit. The engine draws the line and reads the Commons file once a visit. */
+  var LINE_FILTERS = { open: 1, suggested: 1, person: 1, procedure: 1, collision: 1, changed: 1 };
+  function listLine(wrap, api) {
+    var L = listState(), CLM = window.CPL_COMMONS_LIST;
+    // Read once a visit (state.ls resets each visit), fresh: a failed read says so and is not retried until the next
+    // visit, or a failed read would re-render and read again forever (the CR line's lesson, 2026-11-03).
+    if (!L.cmRead && !L.cmLoading && CLM && CLM.readCommons) {
+      L.cmLoading = true;
+      CLM.readCommons(true).then(function (d) {
+        L.cm = CLM.commonsRow(d, "subjects"); L.cmErr = L.cm ? null : "kb/status/commons.json has no subjects row";
+      }, function (e) { L.cmErr = String(e && e.message || e); }).then(function () {
+        L.cmLoading = false; L.cmRead = true; if (state.view === "list") listRepaint();
+      });
+    }
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "csl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; listRepaint(); },
+      control: function (open, text, li, w) {
+        var m = /^#canonical-subj4\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
+        if (f === "list") return L.f ? api.word(text, function () { L.f = ""; L.limit = api.LIMIT; listRepaint(); }, { cls: w + " " + li }) : null;
+        if (f && LINE_FILTERS[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = api.LIMIT; listRepaint(); }, { cls: w + " " + li });
+        if (open) return api.el("a", { href: open, cls: li, text: text });
+        return null;
+      } }));
+    var fold = api.el("div", { cls: "csl-fold", id: "csl-fold" });
+    if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
+    var PG = window.CPL_COMMONS_PAGE;
+    if (PG && window.CPL_COMMONS_PROGRESS) {
+      // The Progress view's own page, under its own prefix, so its ids never meet the Progress view's.
+      var spec = subjPageSpec(progressContext(new Date()));
+      spec.prefix = "csl-pg-";
+      fold.appendChild(PG.render(spec));
+    } else if (L.pgTried) {
+      fold.appendChild(api.el("p", { cls: "cs-caution", role: "alert", text: "The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again." }));
+    } else {
+      fold.appendChild(api.el("p", { cls: "cs-quiet", text: "Loading the summary…" }));
+      // Loaded once a visit, success or failure, so a failed load never loops.
+      if (!L.pgLoading) { L.pgLoading = true; withProgressModule(function () { L.pgLoading = false; L.pgTried = true; if (state.view === "list") listRepaint(); }); }
+    }
+    wrap.appendChild(fold);
+  }
+  /* An MQ discipline's side panel: what it is, its local subjects (the codes colleges use for its courses, the members
+     the row folds), the codes it shares with another MQ discipline (another one's name opens its panel), Confirm this
+     pick with its own status line, and the rest folded: the authority, the note and the identity codes off its code.
+     The title's drawer (the MQ handbook, its other names, the umbrella and the TOP) moves in with it (the engine). */
+  function listPanelBody(r, h) {
+    var e = r.e, L = listState(), notes = L.pnNote || (L.pnNote = {}), out = [];
+    var code = e.canonical_subj4 || "", total = e.local_subject_total || 0;
+    out.push(h.title(r.ut));
+    out.push(h.meta([code ? "Common SUBJ: " + code : "No Common SUBJ yet", CONFIRM_WORDS[r.how],
+      e.local_subject_total != null ? plural(e.local_subject_total, "local course", "local courses") : "",
+      e.total_mids != null ? plural(e.total_mids, "M-ID", "M-IDs") : "", authorityWords(r)]));
+    out.push(h.el("p", { cls: "csl-pn-dec", text: r.how === "open"
+      ? (e.source === "data_modal" ? "Open: the pick is the data's most-used code and waits for a person to confirm it." : "Open: the pick waits for a person.")
+      : CONFIRM_WORDS[r.how] + (e.reviewed_by ? ", " + e.reviewed_by : "") + (e.reviewed_at ? " " + h.stamp(e.reviewed_at) : "") + "." }));
+    var acts = [];
+    if (r.how === "open" && hasCode(e)) {
+      acts.push(h.word("Confirm this pick", function () {
+        notes[r.ut] = "Confirming " + code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
+        listSaveCode(r, code, { confirm: true }).then(function (res) {
+          notes[r.ut] = res.words;
+          if (res.ok) { listChanged(r); render(); }
+        }).then(function () {
+          if (LIST_ENGINE) LIST_ENGINE.redraw();
+          var n = document.getElementById("csl-pn-confirm") || document.getElementById("csl-panel-t"); if (n) n.focus();
+        });
+      }, { id: "csl-pn-confirm" }));
+    }
+    if (acts.length) out.push(h.el("div", { cls: "csl-acts" }, acts));
+    var status = h.el("p", { cls: "cs-quiet", role: "status", "aria-live": "polite", text: notes[r.ut] || "" });
+    out.push(status);
+    out.push(h.heading("Its local subjects"));
+    if (!r.locals.length) out.push(h.el("p", { cls: "cs-quiet", text: "No college course under this MQ discipline names a subject code yet." }));
+    else out.push(h.table({ id: "locals", label: "The local subject codes colleges use for " + r.ut,
+      note: plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(total, "local course", "local courses")
+        + (r.more ? "; " + fmtN(r.more) + " more the reference file does not list" : "") + ". Press a header to sort.",
+      cols: [["code", "Local SUBJ"], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"]], sort: { col: 1, dir: -1 },
+      rows: r.locals.map(function (x) {
+        var pct = total ? x[1] / total * 100 : null;
+        return { code: x[0], n: x[1], share: pct == null ? "" : pct < 1 ? "Under 1%" : Math.round(pct) + "%",
+          note: x[0] === code ? "The Common SUBJ" : x[0] === e.data_modal ? "Most used locally" : "" };
+      }) }));
+    var shares = [];
+    r.coll.forEach(function (c) { c.others.forEach(function (o) { shares.push({ code: c.code, d: o.d, why: o.why || "", note: "A collision" }); }); });
+    r.shared.forEach(function (c) { c.others.forEach(function (o) { shares.push({ code: c.code, d: o.d, why: o.why || "", note: "Shared by design" }); }); });
+    if (shares.length) {
+      out.push(h.heading("The codes it shares"));
+      out.push(h.table({ id: "shares", label: "The MQ disciplines that share a code with " + r.ut,
+        note: r.coll.length ? "One code belongs to one MQ discipline, so one side of a collision takes another code at the next fold. "
+          + "A code shared by design (an alias family, a ruled fan-in, an umbrella code) stays. An MQ discipline's name opens its panel."
+          : "Each is shared by design: an alias family, a ruled fan-in, or an umbrella code every owner declares. An MQ discipline's name opens its panel.",
+        cols: [["code", "Code"], ["d", "MQ discipline"], ["why", "Its reason"], ["note", "Note"]],
+        rows: shares,
+        cell: function (row, k) {
+          if (k !== "d") return row[k];
+          return h.word(row.d, function () { h.open(row.d); }, { "aria-label": row.d + ", open its panel" });
+        } }));
+    }
+    // The codes it could take: the Reference box's suggestions (its own local codes and identity codes, most used first,
+    // none another MQ discipline holds), each a word that saves it through the same write as the Common SUBJ cell.
+    var sugg = subjSuggestions(e, "");
+    if (sugg.length) {
+      out.push(h.heading("Codes it could take"));
+      out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could take as its Common SUBJ",
+        note: "Its own codes, most used first; a code another MQ discipline holds is left out. Take one to make it the Common SUBJ.",
+        cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Take it", false, true]],
+        rows: sugg.map(function (x) {
+          var nCid = (state.cidBySubj[x.code] || []).length, nCcn = (state.ccnBySubj[x.code] || []).length;
+          return { code: x.code, mine: x.mine, take: x.code,
+            note: [x.conflict ? "Also on " + plural(x.conflict.n, "identity", "identities") + " under " + x.conflict.d : "",
+              nCid || nCcn ? "An official subject (" + [nCid ? nCid + " C-ID" : "", nCcn ? nCcn + " CCN" : ""].filter(Boolean).join(", ") + ")" : ""]
+              .filter(Boolean).join("; ") };
+        }),
+        cell: function (row, k) {
+          if (k !== "take") return row[k];
+          return h.word("Take " + row.code, function () {
+            notes[r.ut] = "Saving " + row.code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
+            listSaveCode(r, row.code).then(function (res) {
+              notes[r.ut] = res.words;
+              if (res.ok) { listChanged(r); render(); }
+              if (LIST_ENGINE) LIST_ENGINE.redraw();
+            });
+          }, { "aria-label": "Take " + row.code + " as the Common SUBJ of " + r.ut });
+        } }));
+    }
+    var more = [], ov = state.overlay[r.ut] || {};
+    more.push(h.el("p", null, [e.canonical_source === "ccn" ? "The Common SUBJ is the CCN code." : e.canonical_source === "c-id" ? "The Common SUBJ is the C-ID code."
+      : e.canonical_source === "csr" ? "This reference minted the Common SUBJ" + (e.authority_flag === "proposed" ? "; no C-ID or CCN code names these courses yet, so it reads proposed." : ".")
+      : "No authority reading recorded."]));
+    if (e.ccn_subject_code) more.push(h.el("p", null, ["CCN: " + e.ccn_subject_code + "."]));
+    if ((e.cid_subject_codes || []).length) more.push(h.el("p", null, ["C-ID: " + e.cid_subject_codes.join(", ") + "."]));
+    if (e.authority_note) more.push(h.el("p", null, [e.authority_note]));
+    if (r.drift) more.push(h.el("p", null, [plural(r.drift.nOff, "identity carries", "identities carry") + " a code other than " + r.drift.canonical + ": "
+      + r.drift.off.map(function (x) { return x.code + " " + fmtN(x.n) + (x.ownedBy ? " (the code of " + x.ownedBy + ")" : ""); }).join(", ") + ". They fold at the next re-mint."]));
+    var by = ov._notes_by || e._notes_by, at = ov._notes_at || e._notes_at;
+    more.push(h.el("p", null, [e._notes ? "Note: " + e._notes + (by || at ? " (written by " + (by || "a reviewer") + (at ? " " + h.stamp(at) : "") + ")" : "") : "No note yet."]));
+    out.push(h.fold("more", "More about this MQ discipline: its authority, note and identity codes", more));
+    // The Reference view's CPL and variants windows, carried into the panel (2026-11-04): the credentials colleges
+    // articulate to its courses, and the C-ID and CCN courses that share one of its codes.
+    var cpl = (state.cpl || {})[r.ut];
+    if (cpl && cpl.n_creds) {
+      out.push(h.fold("cpl", "Its CPL opportunities: " + plural(cpl.n_creds, "credential", "credentials") + " at " + plural(cpl.n_colleges, "college", "colleges"), [
+        h.el("p", null, [plural(cpl.n_creds, "credential articulates", "credentials articulate") + " to its courses at "
+          + plural(cpl.n_colleges, "college", "colleges") + ", across " + plural(cpl.n_courses, "course identity", "course identities") + "."]),
+        h.table({ id: "cpl", label: "The credentials colleges articulate to " + r.ut + "'s courses", note: "Press a header to sort.",
+          cols: [["c", "Credential"], ["i", "Issuer"], ["n", "Colleges", true]], sort: { col: 2, dir: -1 },
+          rows: (cpl.creds || []).map(function (c) { return { c: c.c || "", i: c.i || "", n: c.n || 0 }; }) })]));
+    }
+    var official = officialOn(e);
+    out.push(h.fold("official", official.length ? "C-ID and CCN courses on its codes: " + fmtN(official.length)
+      : "C-ID and CCN courses on its codes: none", official.length ? [h.table({ id: "official",
+        label: "The C-ID and CCN courses that share a code with " + r.ut, note: "Over the Common SUBJ and the local codes colleges use. Press a header to sort.",
+        cols: [["sys", "System"], ["id", "Course"], ["t", "Title"], ["code", "On the code"]],
+        rows: official })] : [h.el("p", null, ["No C-ID or CCN course shares any of its codes. Either it has no official course yet, or the official systems use other codes."])]));
+    return out;
+  }
+  /* The C-ID and CCN courses whose subject is the Common SUBJ or one of the local codes (the variants window's lists). */
+  function officialOn(e) {
+    var codes = {};
+    Object.keys(variantsFor(e) || {}).forEach(function (k) { codes[k] = 1; });
+    if (e.canonical_subj4) codes[e.canonical_subj4] = 1;
+    var out = [];
+    Object.keys(codes).sort().forEach(function (code) {
+      (state.cidBySubj[code] || []).forEach(function (x) { out.push({ sys: "C-ID", id: x.id, t: x.title || "", code: code }); });
+      (state.ccnBySubj[code] || []).forEach(function (x) { out.push({ sys: "CCN", id: x.id, t: x.title || "", code: code }); });
+    });
+    return out.sort(function (a, b) { return a.id.localeCompare(b.id); });
+  }
   function listApi() {
     if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
     return LIST_ENGINE;
   }
+  /* ── The Local subjects List (csr_local_subjects.js; Sam, 2026-11-03: "yes on local subjects") ──
+     One row per local subject code over kb/reference/subject_discipline_map.json, its confirms as _SUBJ_DISC::<CODE>
+     rows in kb_curation (DR-25). The module and the List engine load the first time the view opens. */
+  var LOCAL = null, localLoading = false, localFailed = false, localFilter = "";
+  function saveCuration(courseId, field, value) {
+    var sess = state.sess;
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify({ course_id: courseId, field: field, value: value, reviewer_email: sess.email })
+    });
+  }
+  function readCuration(prefix) {
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at"
+      + "&course_id=like." + encodeURIComponent(prefix) + "%25";
+    return fetch(url, { headers: { "apikey": SUPABASE_ANON } }).then(function (r) {
+      if (!r.ok) throw new Error("kb_curation answered " + r.status);
+      return r.json();
+    });
+  }
+  function localHost() {
+    return {
+      // The colleges' local codes only: variantsFor's fallback (variants_observed) is the M-IDs' own SUBJ4s, not local codes.
+      entries: mergedEntries, variantsFor: function (e) { return e.local_subject_variants || {}; },
+      session: function () { return state.sess && state.sess.access_token ? state.sess : null; },
+      save: saveCuration, read: readCuration,
+      fetchJson: function (url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " answered " + r.status); return r.json(); }); },
+      render: localRepaint,
+      signIn: function () { applyView("list"); }
+    };
+  }
+  function localRepaint() {
+    var node = document.getElementById("cs-local");
+    if (!node || state.view !== "local" || !state.seed) return;
+    node.innerHTML = "";
+    if (!LOCAL && window.CPL_CSR_LOCAL && window.CPL_COMMONS_LIST) {
+      LOCAL = window.CPL_CSR_LOCAL.create(localHost());
+      if (localFilter) LOCAL.setFilter(localFilter);
+    }
+    if (LOCAL) { LOCAL.render(node); return; }
+    if (localFailed) {
+      node.appendChild(el("p", { class: "cs-caution", role: "alert" }, ["The Local subjects List could not be loaded. The other views read as usual; reload the tab to try again."]));
+      return;
+    }
+    node.appendChild(el("p", { class: "cs-quiet" }, ["Loading the Local subjects List…"]));
+    var T = window.CPL_TABS;
+    if (localLoading || !T || typeof T.loadScript !== "function") return;
+    localLoading = true;
+    var done = function () {
+      localLoading = false;
+      if (!window.CPL_COMMONS_LIST || !window.CPL_CSR_LOCAL) localFailed = true;
+      localRepaint();
+    };
+    var mod = function () { if (window.CPL_CSR_LOCAL) done(); else T.loadScript("csr_local_subjects.js", "CPL_CSR_LOCAL", done); };
+    if (window.CPL_COMMONS_LIST) mod(); else T.loadScript("commons_list.js", "CPL_COMMONS_LIST", mod);
+  }
+
   /* Draw the List into its section; the engine loads the first time the view opens. */
   function listRepaint() {
     var node = document.getElementById("cs-list");
@@ -2855,7 +2141,7 @@
     node.innerHTML = "";
     if (listApi()) { LIST_ENGINE.render(node); return; }
     if (listFailed) {
-      node.appendChild(el("p", { class: "cs-caution", role: "alert" }, ["The List (commons_list.js) could not be loaded. The Reference view reads as usual; reload the tab to try again."]));
+      node.appendChild(el("p", { class: "cs-caution", role: "alert" }, ["The List (commons_list.js) could not be loaded. Progress reads as usual; reload the tab to try again."]));
       return;
     }
     node.appendChild(el("p", { class: "cs-quiet" }, ["Loading the List…"]));
@@ -2869,28 +2155,26 @@
     });
   }
 
-  /* ── the three views and the route in the address ──
-     #canonical-subj4/progress, #canonical-subj4/reference and #canonical-subj4/list name a view;
-     #canonical-subj4/<filter> opens the Reference view with that filter (the Commons row's counts link here);
+  /* ── the views and the route in the address ──
+     #canonical-subj4/progress, /list and /local name a view (/reference, the retired view, opens the List);
+     #canonical-subj4/<filter> opens the List on the filter that carries it (the Commons row's counts link here);
      #canonical-subj4/check opens the SUBJ check. The last view chosen is remembered; the List's filters,
      sort and selection last the visit (tabs never remember a filter, Sam 2026-10-21). */
-  var VIEW_MOUNT = { progress: "cs-progress", reference: "cs-table-wrap", list: "cs-list" };
+  var VIEW_MOUNT = { progress: "cs-progress", list: "cs-list", local: "cs-local" };
+  /* A reader who last chose the Reference view lands on the List, the view it retired into (2026-11-04). */
   function readView() {
-    try { var v = localStorage.getItem(VIEW_KEY); return VIEW_MOUNT[v] ? v : null; } catch (e) { return null; }
+    try { var v = localStorage.getItem(VIEW_KEY); if (v === "reference") v = "list"; return VIEW_MOUNT[v] ? v : null; } catch (e) { return null; }
   }
   function keepView(v) { try { localStorage.setItem(VIEW_KEY, v); } catch (e) { /* private window */ } }
   function applyView(v) {
     state.view = VIEW_MOUNT[v] ? v : "progress";
     keepView(state.view);
-    var onRef = state.view === "reference";
-    ["cs-toolbar", "cs-summary", "cs-table-wrap"].forEach(function (id) {
-      var n = document.getElementById(id);
-      if (n) n.hidden = !onRef;
-    });
     var pg = document.getElementById("cs-progress");
     if (pg) pg.hidden = state.view !== "progress";
     var ls = document.getElementById("cs-list");
     if (ls) ls.hidden = state.view !== "list";
+    var lo = document.getElementById("cs-local");
+    if (lo) lo.hidden = state.view !== "local";
     var sw = document.getElementById("cs-views");
     if (sw) Array.prototype.forEach.call(sw.querySelectorAll("button[role=tab]"), function (b) {
       var sel = b.getAttribute("data-view") === state.view;
@@ -2899,9 +2183,11 @@
     });
     if (state.view === "progress") renderProgress();
     else if (state.view === "list") listRepaint();
+    else if (state.view === "local") localRepaint();
   }
   function ensureViewMounts() {
-    var tb = document.getElementById("cs-toolbar");
+    // The views mount before #cs-mount (#cs-toolbar in an older shell).
+    var tb = document.getElementById("cs-mount") || document.getElementById("cs-toolbar");
     if (!tb || document.getElementById("cs-views")) return;
     ensureProgressCss();
     var sw = el("div", { class: "cs-views", id: "cs-views", role: "tablist", "aria-label": "Common Subjects Reference views" });
@@ -2925,15 +2211,21 @@
     tb.parentNode.insertBefore(pg, tb);
     var ls = el("section", { class: "cs-list", id: "cs-list", "aria-label": "Common Subjects Reference, List", hidden: "" });
     tb.parentNode.insertBefore(ls, tb);
+    var lo = el("section", { class: "cs-list", id: "cs-local", "aria-label": "Common Subjects Reference, Local subjects", hidden: "" });
+    tb.parentNode.insertBefore(lo, tb);
   }
   function routeFromHash() {
     var h = (location.hash || "").replace(/^#/, "");
     var parts = h.split("/");
     if (parts[0] !== QS_TAB) return false;
     var r = parts[1] || "";
+    if (r === "list" && parts[2] && listFilterId(parts[2])) { goTo({ view: "list", filter: parts[2] }); return true; }
+    if (r === "local" && parts[2]) { localFilter = parts[2]; if (LOCAL) LOCAL.setFilter(parts[2]); applyView("local"); return true; }
     if (VIEW_MOUNT[r]) { applyView(r); return true; }
-    if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
+    if (r === "reference") { applyView("list"); return true; }
+    if (FILTER_ROUTES[r]) { goTo({ view: "list", filter: FILTER_ROUTES[r] }); return true; }
     if (r === "check") { goTo(TO.check); return true; }
+    if (r === "open") { goTo(TO.confirm); return true; }
     return false;
   }
   function onHashChange() { routeFromHash(); }
@@ -2957,7 +2249,9 @@
       "#tab-canonical-subj4 .cs-list[hidden] { display:none; }",
       "#tab-canonical-subj4 .cs-list > p { margin:0 0 6px; font-size:.875rem; }",
       "#tab-canonical-subj4 .csl-acts { display:flex; flex-wrap:wrap; gap:6px 16px; }",
-      "#tab-canonical-subj4 .cs-toolbar[hidden], #tab-canonical-subj4 .cs-summary[hidden], #tab-canonical-subj4 .cs-table-wrap[hidden] { display:none; }",
+      "#tab-canonical-subj4 .csl-pn-dec { margin:10px 0 6px; }",
+      // A local code is one word: it never breaks inside itself (the engine's cells wrap anywhere).
+      "#tab-canonical-subj4 #csl-pn-locals td:first-child, #tab-canonical-subj4 #csl-pn-shares td:first-child { overflow-wrap:normal; white-space:nowrap; }",
       "#tab-canonical-subj4 .cs-word { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; display:inline-block; }",
       "#tab-canonical-subj4 .cs-word:hover { text-decoration-thickness:2px; }",
       "#tab-canonical-subj4 .cs-word:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
@@ -2997,27 +2291,24 @@
   // dropped; valid hints set state + sync the matching toolbar input.
   var QS_TAB = "canonical-subj4";
   var QS_STATUS = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1 };
+  /* A quickstart hint opens the List (2026-11-04): its status as the List's filter, its search as the find, its TOP in the
+     TOP column. It waits in state.qsList for the List's next state, and state.qsHeld spares it the reset on arrival. */
   function applyQsHint(hint) {
     if (!hint || typeof hint !== "object") return false;
-    var any = false;
-    if (typeof hint.status === "string" && QS_STATUS[hint.status]) {
-      state.filter = hint.status; any = true;
-    }
-    if (typeof hint.top_2digit === "string" && /^\d{2}$/.test(hint.top_2digit)) {
-      state.topFilter = hint.top_2digit; any = true;
-    }
-    if (typeof hint.search === "string" && hint.search) {
-      state.search = hint.search.toLowerCase(); any = true;
-    }
-    return any;
+    var q = {};
+    if (typeof hint.status === "string" && QS_STATUS[hint.status]) q.f = FILTER_ROUTES[hint.status];
+    if (typeof hint.top_2digit === "string" && /^\d{2}$/.test(hint.top_2digit)) q.top = hint.top_2digit;
+    if (typeof hint.search === "string" && hint.search) q.q = hint.search;
+    if (!Object.keys(q).length) return false;
+    state.qsList = q; state.ls = null; state.qsHeld = true;
+    return true;
   }
 
   function init() {
     if (!document.getElementById("tab-canonical-subj4")) return;
-    ensureCsrUiCss(); // table-chrome overrides (white non-bold header, one-line CTE)
+    ensureCsrUiCss();
     state.sess = getSession();
     wireGuidelinesModal();
-    wireVariantsModal();
     Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit(), fetchAliases(), fetchMqSections(),
                  fetchScan(), fetchStatus(), fetchProcedures()]).then(function (parts) {
       state.seed = parts[0];
@@ -3040,14 +2331,10 @@
       Object.keys(dd).forEach(function (n) { if (dd[n] && !dd[n].discipline) dd[n].discipline = n; });
       // Apply any pending quickstart hint stashed before init (refresh case).
       if (window.CPL_QS && applyQsHint(window.CPL_QS.consume(QS_TAB))) window.CPL_QS_HINTED_CSR = true;
-      // Toolbar is built once at init. Subsequent state changes only
-      // re-render the table (render()); the search input keeps focus.
-      renderToolbar();
-      render();
-      // The two views (S425): the Progress dash opens unless the address names a view or a
-      // filter, or the reader last chose the Reference view; a quickstart hint opens the table.
+      // The Progress dash opens unless the address names a view or a filter, or the reader last chose
+      // another view; a quickstart hint opens the List.
       ensureViewMounts();
-      if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "reference" : (readView() || "progress"));
+      if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "list" : (readView() || "progress"));
       window.addEventListener("hashchange", onHashChange);
     });
     // A new visit drops the List's filters, sort and selection (tabs never remember a filter, Sam, 2026-10-21).
@@ -3055,8 +2342,10 @@
     window.addEventListener("cpl-tab-activated", function (e) {
       var t = e && e.detail && e.detail.tab;
       if (t !== QS_TAB) { awayFromTab = true; return; }
-      if (!awayFromTab) return;
-      awayFromTab = false; state.ls = null;
+      if (!awayFromTab) { state.qsHeld = false; return; }
+      awayFromTab = false;
+      // A quickstart hint arrives just before its tab does: the visit it opens keeps the List it set.
+      if (state.qsHeld) state.qsHeld = false; else state.ls = null;
       if (state.view === "list") listRepaint();
     });
     // Subscribe to runtime hints (quickstart fires after the tab is already
@@ -3064,7 +2353,7 @@
     // is visible in the dropdown chrome too.
     window.addEventListener("cpl-qs-hint", function (e) {
       if (!e || !e.detail || e.detail.tab !== QS_TAB) return;
-      if (applyQsHint(e.detail.hint)) { renderToolbar(); render(); if (document.getElementById("cs-views")) applyView("reference"); }
+      if (applyQsHint(e.detail.hint) && document.getElementById("cs-views")) applyView("list");
     });
   }
 

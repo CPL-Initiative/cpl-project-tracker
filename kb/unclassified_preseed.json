@@ -1,12 +1,199 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-02T17:29:36Z",
- "_queue_count": 0,
+ "_generated_at": "2026-11-03T15:33:08Z",
+ "_queue_count": 15,
  "_counts": {
-  "staged": 0,
-  "needs_you": 0,
+  "staged": 15,
+  "needs_you": 2,
   "not_yet_asked": 0
  },
  "_residual": [],
- "staged": {}
+ "staged": {
+  "ASL 052 American Sign Language III": {
+   "title": "American Sign Language III",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ASL 52; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "CARP 207 Math for Construction Trades": {
+   "title": "Math for Construction Trades",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for CARP 207; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "CARP 223 OSHA 30 Hr. Construction Safety Training": {
+   "title": "OSHA 30 — Construction Industry Outreach (30-hour)",
+   "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Industry Certification row naming the OSHA 30-hour construction card. The Laney CARP 223 course code was stripped and the row joins the house OSHA 30 construction family. Both hints were set aside because the card is issued by OSHA, not the college.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "issuer-issues-the-card",
+    "Rule 1",
+    "Rule 8b"
+   ]
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 1": {
+   "title": "IBEW Electrician Apprenticeship — Year 1",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon electrician apprenticeships.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7",
+    "Rule 3"
+   ],
+   "trainer": "Riverside Area Electrical J. A. C."
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 2": {
+   "title": "IBEW Electrician Apprenticeship — Year 2",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Riverside Area Electrical J. A. C."
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 3": {
+   "title": "IBEW Electrician Apprenticeship — Year 3",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Riverside Area Electrical J. A. C."
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 4": {
+   "title": "IBEW Electrician Apprenticeship — Year 4",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Riverside Area Electrical J. A. C."
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 5": {
+   "title": "IBEW Electrician Apprenticeship — Year 5",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Riverside Area Electrical J. A. C."
+  },
+  "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
+   "title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Inside Wireman journeyperson joins the house IBEW electrician journeyperson family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Riverside Area Electrical J. A. C."
+  },
+  "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
+   "title": "IBEW Intelligent Transportation Systems Apprenticeship — Year 1",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "ITS is a distinct IBEW apprenticeship classification with no house family, so the row gets a new title in the house IBEW shape. The training JATC is unconfirmed, so the trainer is left null.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 4",
+    "Rule 7"
+   ]
+  },
+  "Peace Officer Standards and Training": {
+   "title": "POST Basic Academy",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "The title names only the commission, not a specific certificate; the Basic Academy is assumed as the most common POST exhibit. Needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 7"
+   ],
+   "trainer": "varies by academy"
+  },
+  "Portfolio - Basic Food Preparation": {
+   "title": "Basic Food Preparation",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Mission College portfolio course; the mechanism word was stripped and the cx hint accepted.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Portfolio - Cost Control for Food Service Organizations": {
+   "title": "Cost Control for Food Service Organizations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Course title kept as-is. 'Hospitality Cost Control' may be the same content; a curator could merge them later.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio - Intermediate Food Preparation": {
+   "title": "Food Preparation Intermediate",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The cx hint was mended by moving the level word 'Intermediate' to the end.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last"
+   ]
+  },
+  "Portfolio - Introduction to the Hospitality Industry": {
+   "title": "Introduction to the Hospitality Industry",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Course title kept verbatim. It is close to the house family 'Introduction to Hospitality'; a curator may merge them.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last"
+   ]
+  }
+ }
 }

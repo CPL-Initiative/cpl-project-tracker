@@ -76,6 +76,25 @@
 //                      filter by its own pass. counts() -> { id: n } hands the tab's own, from a build that already
 //                      counted them (Program Requirements, Courses); an id it leaves out or nulls shows no count, and the
 //                      engine still counts the ids it owns. counts: false shows none.
+//   panel              { label(r) -> the bar's words, body(r, h) -> nodes }: a side panel for one row (Sam, 2026-11-03:
+//                      "build the side panel into the Exhibits List", after SkyView's course outline). Pressing a row's
+//                      title opens it beside the table, in place of the title's drawer; another title swaps it, and Close
+//                      or Escape shuts it and returns focus to the row. h = { el, word, fmt, stamp, close } and the
+//                      panel's shared parts, so every List's panel reads alike (the List norms: one renderer):
+//                      h.title(text), h.meta(parts) (one line of what the row is, parts joined by a middle dot),
+//                      h.heading(text), h.table(o) (a sortable table of the row's members: o = { id, label, cols:
+//                      [[key, header, numeric, fixed]] (fixed: a column of controls, its header no sort), rows,
+//                      cell(row, key) -> text or node, note, sort: { col, dir } to open on a column other than the
+//                      first, A to Z }; its sort lasts the visit in L.pnSort[id]), h.fold(id, summary, kids) (a fold
+//                      that stays open or shut as the reader left it, L.pnFold[id]) and h.open(key) (show another
+//                      row's panel). L.panel holds the open row's key.
+// The line (api.line, the List norms' norm 1; Sam, 2026-11-03: "incorporating the list view below the action/metric cards
+// and make that top level collapsible while keeping the one-line action/metric links like we do elsewhere"): one line of
+// the reference's Commons row over its List, each count a control where the tab says where it opens, and the word that
+// folds the tab's cards for the visit. o = { row, error, folded, onToggle(), control(open, text, liCls, wCls) -> node or null,
+// foldId, cls }. CPL_COMMONS_LIST.readCommons(fresh) reads kb/status/commons.json once a visit for every List, and
+// lineItems(row) turns a row into the line's counts: the pair's count with "of N" and its words up to the first
+// parenthesis, semicolon or colon, the confirmed count, then each known issue. Exhibits drew the first line (#2736).
 //   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
 //                      file): its word shows no count, never a 0 a reader takes for empty (S343).
 // The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
@@ -137,6 +156,8 @@
     function listState() {
       var L = S.state();
       for (var k in DEFAULTS) if (L[k] === undefined) L[k] = JSON.parse(JSON.stringify(DEFAULTS[k]));
+      // A tab that resets the page with a null limit gets the first page, never an empty table (slice(0, null) is []).
+      if (!(L.limit > 0)) L.limit = LIST_LIMIT;
       return L;
     }
     function listColIndex(h) {
@@ -710,7 +731,8 @@
           { id: P + "editall", "aria-pressed": L.editAll ? "true" : "false" }) : null,
         word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
         !S.fr || frState().open ? null : word("Find and replace", function () {
-          frState().open = true; render(); var n = document.getElementById(FP + "find"); if (n) n.focus(); }, { id: FP + "open" }), dl]), region]);
+          frState().open = true; render(); var n = document.getElementById(FP + "find"); if (n) n.focus(); }, { id: FP + "open" }), dl]),
+        (function () { var pn = listPanel(); return pn ? el("div", { cls: P + "split" }, [region, pn]) : region; })()]);
       var selKeys = Object.keys(L.sel);
       if (gi && selKeys.length) out.appendChild(listMovePanel(selKeys));
       if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
@@ -971,6 +993,80 @@
       if (n) n.textContent = listSelWords();
       if (fl && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
     }
+    /* The panel's shared parts (the hook's h): what every List's panel draws the same way. */
+    function panelHelp(close) {
+      var L = listState();
+      function focusId(id) { var n = document.getElementById(id); if (n) n.focus(); }
+      return { el: el, word: word, fmt: fmt, stamp: stamp, close: close,
+        title: function (text) { return el("h2", { cls: P + "pn-h", text: text }); },
+        meta: function (parts) { return el("p", { cls: CL.muted + " " + CL.small + " " + P + "pn-meta", text: (parts || []).filter(Boolean).join(" \u00b7 ") }); },
+        heading: function (text) { return el("h3", { cls: P + "pn-q", text: text }); },
+        table: function (o) {
+          var sorts = L.pnSort || (L.pnSort = {}), S2 = sorts[o.id] || (sorts[o.id] = { col: o.sort ? o.sort.col : 0, dir: o.sort ? o.sort.dir : 1 });
+          var cols = o.cols, k = cols[S2.col] ? cols[S2.col][0] : cols[0][0], num = !!(cols[S2.col] || [])[2];
+          var rows = (o.rows || []).slice().sort(function (a, b) {
+            var x = a[k], y = b[k], c = num ? (+x || 0) - (+y || 0) : String(x == null ? "" : x).localeCompare(String(y == null ? "" : y));
+            return c * S2.dir;
+          });
+          var head = el("tr", null, cols.map(function (c, i) {
+            // A column marked fixed (c[3]) holds controls, not values: its header is plain words, never a sort.
+            if (c[3]) return el("th", { scope: "col", text: c[1] });
+            var on = S2.col === i, up = on && S2.dir > 0;
+            var b = word(c[1] + (on ? (c[2] ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")) : ""), function () {
+              S2.dir = S2.col === i ? -S2.dir : 1; S2.col = i; redrawList();
+              var nb = document.querySelectorAll("#" + P + "pn-" + o.id + " th button")[i]; if (nb) nb.focus();
+            });
+            return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+          }));
+          var body = el("tbody", null, rows.map(function (row) {
+            return el("tr", o.rowAttrs ? o.rowAttrs(row) : null, cols.map(function (c) {
+              var v = o.cell ? o.cell(row, c[0]) : row[c[0]];
+              var td = el("td", { cls: c[2] ? P + "pn-n" : null });
+              if (v != null && typeof v === "object") td.appendChild(v); else td.textContent = v == null ? "" : (c[2] ? fmt(v) : String(v));
+              return td;
+            }));
+          }));
+          var kids = [];
+          if (o.note) kids.push(el("p", { cls: CL.muted + " " + CL.small, text: o.note }));
+          kids.push(el("div", { id: P + "pn-" + o.id, cls: P + "pn-wrap", role: "region", tabindex: "0", "aria-label": o.label },
+            [el("table", { cls: P + "pn-table" }, [el("thead", null, [head]), body])]));
+          return el("div", null, kids);
+        },
+        fold: function (id, summary, kids) {
+          var F = L.pnFold || (L.pnFold = {});
+          var dt = el("details", { cls: P + "pn-fold " + P + "pn-" + id }, [el("summary", { text: summary }), el("div", { cls: P + "pn-fbody" }, kids)]);
+          if (F[id]) dt.open = true;
+          dt.addEventListener("toggle", function () { F[id] = dt.open; });
+          return dt;
+        },
+        open: function (k) { L.panel = k; L.open = null; L.edit = null; redrawList(); focusId(P + "panel-t"); }
+      };
+    }
+    /* The side panel for the row L.panel names, or null when none is open or its row has left the List. */
+    function listPanel() {
+      var L = listState();
+      if (!S.panel || L.panel == null) return null;
+      var r = (S.rows() || []).filter(function (x) { return K(x) === L.panel; })[0];
+      if (!r) { L.panel = null; return null; }
+      var key = L.panel;
+      function close() { L.panel = null; redrawList(); listFocusTitle(key); }
+      var body = el("div", { cls: P + "pbody" }, S.panel.body(r, panelHelp(close)) || []);
+      // The title's drawer moves into the panel, so nothing the List showed under its title is lost.
+      if (S.drawer) {
+        var dbox = el("div", { cls: P + "pdrawer" });
+        var line = function (text, cls) { dbox.appendChild(el("p", { cls: P + "dl" + (cls ? " " + P + cls : ""), text: text })); };
+        var list = function (items) { dbox.appendChild(el("ul", { cls: P + "dul" }, items.map(function (x) { return el("li", null, typeof x === "string" ? [x] : x); }))); };
+        S.drawer(r, listCols()[0].h, { line: line, list: list, box: dbox, word: word, el: el, filterBy: listFilterBy,
+          colIndex: listColIndex, L: L, LIMIT: LIST_LIMIT, fmt: fmt, stamp: stamp });
+        if (dbox.firstChild) body.insertBefore(dbox, body.querySelector("details") || null);
+      }
+      var aside = el("aside", { id: P + "panel", cls: P + "panel", "aria-labelledby": P + "panel-t" }, [
+        el("div", { cls: P + "pbar" }, [el("span", { id: P + "panel-t", cls: P + "pt", tabindex: "-1", text: S.panel.label ? S.panel.label(r) : listTitle(r) }),
+          word("Close", close, { "aria-label": "Close the panel for " + listTitle(r) })]),
+        body]);
+      aside.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.stopPropagation(); close(); } });
+      return aside;
+    }
     /* A cell opens its drill-down in a drawer under the row (Sam, 2026-11-01: "how many of these fields can you make
        drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
     function listOpener(r, col, text, isOpen) {
@@ -978,6 +1074,18 @@
       var b = el("button", { type: "button", cls: P + "open", "aria-expanded": isOpen ? "true" : "false",
         "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" },
         listCols()[col].cell ? (listCols()[col].cell(r, el) || [text || "—"]) : [text || "—"]);
+      if (col === 0 && S.panel) {
+        var on = L.panel === K(r);
+        b.setAttribute("aria-expanded", on ? "true" : "false");
+        b.setAttribute("aria-controls", P + "panel");
+        b.setAttribute("aria-label", (text || "none") + ", " + (on ? "close its panel" : "open its panel"));
+        b.addEventListener("click", function () {
+          L.panel = on ? null : K(r); L.open = null; L.edit = null; redrawList();
+          var t = document.getElementById(on ? "" : P + "panel-t");
+          if (t) t.focus(); else listFocusTitle(K(r));
+        });
+        return b;
+      }
       b.addEventListener("click", function () {
         L.open = isOpen ? null : { ut: K(r), col: col }; L.edit = null; redrawList();
         var again = document.querySelector("." + P + 'open[aria-expanded="true"]'); if (again) again.focus();
@@ -1168,6 +1276,36 @@
         // column to its longest title, past the screen's edge, and ignored the grip (Sam on his phone, 2026-11-01).
         "@media (max-width:560px){" + p + "table{min-width:900px}}"
       ];
+      // The side panel (S.panel): the table and the panel share the row, and on a narrow window the panel wraps below.
+      rules = rules.concat([
+        "." + P + "split{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}",
+        "." + P + "split > ." + P + "wrap{flex:999 1 480px;min-width:0}",
+        "." + P + "panel{flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        "." + P + "pbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid var(--border);background:var(--surface-subtle)}",
+        "." + P + "pt{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
+        "." + P + "pt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
+        "." + P + "pbody{padding:12px 16px 16px}",
+        "." + P + "pdrawer{margin:12px 0 0;padding:10px 0 0;border-top:1px solid var(--border)}",
+        // The panel's shared parts (panelHelp): the title, one line of facts, headings, a members table, folds.
+        "." + P + "pn-h{margin:0 0 4px;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.25rem,2.1vw,1.7rem);line-height:1.15;color:var(--text-strong);overflow-wrap:anywhere}",
+        "." + P + "pn-meta{margin:0 0 12px}",
+        "." + P + "pn-q{margin:14px 0 4px;font-size:1.02rem;color:var(--text-strong)}",
+        "." + P + "pn-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px}",
+        "." + P + "pn-table{width:100%;border-collapse:collapse;font-size:.86rem}",
+        "." + P + "pn-table th{text-align:left;padding:6px 8px;background:var(--surface-subtle);border-bottom:1px solid var(--border-strong)}",
+        "." + P + "pn-table td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
+        "." + P + "pn-n{text-align:right;font-variant-numeric:tabular-nums}",
+        "." + P + "pn-fold{margin-top:16px}",
+        "." + P + "pn-fold > summary{cursor:pointer;min-height:24px;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;font-size:.9rem}",
+        "." + P + "pn-fold > summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
+        "." + P + "pn-fbody{display:grid;gap:8px;margin-top:10px;min-width:0}",
+        "." + P + "pn-fbody p{margin:0}",
+        // The line over the List (api.line) and the fold of the tab's cards.
+        "." + P + "linebar{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;justify-content:space-between;margin:12px 0 10px}",
+        "." + P + "line{margin:0;display:flex;flex-wrap:wrap;gap:4px 0;align-items:baseline;color:var(--text-strong)}",
+        "." + P + "sep{color:var(--text-muted);margin:0 .55em}",
+        "." + P + "fold[hidden]{display:none}"
+      ]);
       // A tab with no base classes of its own gets the Exhibits tab's: underlined words, muted and small text, the
       // finder's box, the current filter underlined.
       if (OWN_BASE) rules = rules.concat([
@@ -1183,8 +1321,36 @@
       document.head.appendChild(el("style", { id: P + "css", text: rules.join("\n") }));
     }
 
+    /* The line of the reference's counts and the word that folds its cards (see the header). The tab's own class names
+       win, so a tab whose line came first keeps its look. */
+    function line(o) {
+      var C = Object.assign({ bar: P + "linebar", line: P + "line", sep: P + "sep", li: P + "li", w: CL.w, fold: P + "fold" }, o.cls || {});
+      var foldId = o.foldId || P + "fold", items = [];
+      if (o.row) {
+        lineItems(o.row).forEach(function (it) {
+          if (it.n == null) { items.push(el("span", { text: "Could not be read: " + it.words })); return; }
+          var text = fmt(it.n) + " " + it.words;
+          items.push((o.control && o.control(it.open, text, C.li, C.w)) || el("span", { text: text }));
+        });
+      } else {
+        // error: null while the read is out; "" or its words once it failed.
+        items.push(el("span", { text: o.error != null ? "The Commons' figures could not be read" + (o.error ? " (" + o.error + ")" : "") : "Reading the Commons' figures" }));
+      }
+      var p = el("p", { cls: C.line });
+      items.forEach(function (n, k) {
+        if (k) p.appendChild(el("span", { cls: C.sep, "aria-hidden": "true", text: "\u00b7" }));
+        p.appendChild(n);
+      });
+      var tid = foldId + "-w";
+      var tog = word(o.folded ? "Show the summary" : "Hide the summary", function () {
+        if (o.onToggle) o.onToggle();
+        var b = document.getElementById(tid); if (b) b.focus();
+      }, { cls: C.w + " " + foldId + "-w", id: tid, "aria-expanded": o.folded ? "false" : "true", "aria-controls": foldId });
+      return el("div", { cls: C.bar, role: "group", "aria-label": "The reference at a glance" }, [p, tog]);
+    }
+
     var api = {
-      render: renderList, redraw: redrawList, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
+      render: renderList, redraw: redrawList, line: line, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
@@ -1195,5 +1361,31 @@
     return api;
   }
 
-  window.CPL_COMMONS_LIST = { create: create, LIMIT: LIST_LIMIT };
+  /* The Commons' figures for every List: kb/status/commons.json, read once a visit (fresh reads it again). A failed read
+     rejects with its words, and the line says it could not be read (S343), never a zero. */
+  var COMMONS_URL = "kb/status/commons.json", commonsRead = null;
+  function readCommons(fresh) {
+    if (commonsRead && !fresh) return commonsRead;
+    commonsRead = fetch(COMMONS_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(COMMONS_URL + " answered " + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (!d || !Array.isArray(d.rows)) throw new Error(COMMONS_URL + " is not the Commons' status file");
+      return d;
+    });
+    commonsRead.catch(function () { commonsRead = null; });
+    return commonsRead;
+  }
+  function commonsRow(d, key) { return (d && Array.isArray(d.rows) ? d.rows : []).filter(function (r) { return r && r.key === key; })[0] || null; }
+  /* A row's line: [{n, words, open}], the pair's count of its whole, the confirmed count, then each known issue. */
+  function lineItems(row) {
+    function fmt(n) { return Number(n).toLocaleString("en-US"); }
+    function cut(w, re) { var s = String(w || ""), m = re.exec(s); return (m ? s.slice(0, m.index) : s).trim(); }
+    var out = [], pairs = Array.isArray(row && row.pair) ? row.pair : [], p = pairs[0], c = pairs[1];
+    if (p) out.push({ n: p.n, open: p.open, words: (p.of != null ? "of " + fmt(p.of) + " " : "") + cut(p.words, /\s*[(;:]/) });
+    if (c) out.push({ n: c.n, open: c.open, words: cut(c.words, /\s*[,(;]/) });
+    (Array.isArray(row && row.issues) ? row.issues : []).forEach(function (i) { out.push({ n: i.n, open: i.open, words: i.words }); });
+    return out;
+  }
+  window.CPL_COMMONS_LIST = { create: create, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
 })();

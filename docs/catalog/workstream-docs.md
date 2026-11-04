@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-96 document(s).
+97 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -28,7 +28,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CCR Convergence Strategy — from 7,716 decisions to a 2,500-course crosswalk](../ccr_convergence_strategy.md) | `ccr_convergence_strategy.md` | 2026-07-03 |  |
 | [CCR merge-workspace epic — consolidate the two merge popups + dock the worklist](../ccr_merge_workspace_epic_scope.md) | `ccr_merge_workspace_epic_scope.md` | 2026-06-24 |  |
 | [CER exhibit model — multi-issuer + aligned-assessment pathways (design note)](../cer_assessment_pathways_design.md) | `cer_assessment_pathways_design.md` | 2026-07-12 |  |
-| [CER redesign handoff: the CLEP fold confirmed, the Catalog sync test fixed (SkySnowberry)](../cer_redesign_handoff.md) | `cer_redesign_handoff.md` | 2026-11-01 |  |
+| [CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)](../cer_redesign_handoff.md) | `cer_redesign_handoff.md` | 2026-11-04 |  |
 | [CIP Review — progress dashboard, editing access, and COCI submission (design note)](../cip_submission_access_plan.md) | `cip_submission_access_plan.md` | 2026-07-18 |  |
 | [CIP workstream handoff → next session](../cip_crosswalk_handoff.md) | `cip_crosswalk_handoff.md` | 2026-07-20 |  |
 | [CIS ↔ CS Convergence — Scope (decision pending)](../cis_cs_convergence_scope.md) | `cis_cs_convergence_scope.md` | 2026-06-10 |  |
@@ -41,7 +41,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CPL Assistant (Sierra) lessons — archive 2](../cpl_assistant_lessons_archive_2.md) | `cpl_assistant_lessons_archive_2.md` | 2026-10-16 | 2026-10-16 |
 | [CPL Implementation Funding tab — archived lessons, part 2 (2026-08-04 → 2026-08-31)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-25 | 2026-10-25 |
 | [CPL Implementation Funding tab — archived lessons, part 3 (2026-08-31 → 2026-09-16)](../cpl_funding_lessons_archive_3.md) | `cpl_funding_lessons_archive_3.md` | 2026-10-25 | 2026-10-25 |
-| [CPL Implementation Funding tab — archived lessons, part 4 (2026-09-22 onward)](../cpl_funding_lessons_archive_4.md) | `cpl_funding_lessons_archive_4.md` | 2026-10-24 | 2026-11-01 |
+| [CPL Implementation Funding tab — archived lessons, part 4 (2026-09-22 onward)](../cpl_funding_lessons_archive_4.md) | `cpl_funding_lessons_archive_4.md` | 2026-10-24 | 2026-11-03 |
 | [CPL Implementation Funding — next-session handoff](../cpl_funding_handoff.md) | `cpl_funding_handoff.md` | 2026-06-11 | 2026-08-05 |
 | [CPL Pathways side-lane handoff — the Common Course Reference redesign](../cpl_pathways_handoff.md) | `cpl_pathways_handoff.md` | 2026-07-16 |  |
 | [CPL presentations — workstream handoff (StarBOG)](../cpl_presentations_handoff.md) | `cpl_presentations_handoff.md` | 2026-07-20 |  |
@@ -51,6 +51,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CPL Project Tracker — Roadmap Archive, part 4](../roadmap_archive_4.md) | `roadmap_archive_4.md` | 2026-10-25 |  |
 | [CPL Project Tracker — Roadmap Archive, part 5](../roadmap_archive_5.md) | `roadmap_archive_5.md` | 2026-10-25 |  |
 | [CPL Project Tracker — Roadmap Archive, part 6](../roadmap_archive_6.md) | `roadmap_archive_6.md` | 2026-10-25 |  |
+| [CPL Project Tracker — Roadmap Archive, part 7](../roadmap_archive_7.md) | `roadmap_archive_7.md` | 2026-11-03 |  |
 | [CPL Student Portal video — continuation capsule (SkyVid → next)](../cpl_portal_video_handoff.md) | `cpl_portal_video_handoff.md` | 2026-07-23 |  |
 | [Cross-Disciplinary Shared-COR Course Identity — Re-mint Scope](../research_workexp_crossdisc_remint_scope.md) | `research_workexp_crossdisc_remint_scope.md` | 2026-06-09 |  |
 | [Dashboard card metrics — consistency recommendations (Sam's recommend list)](../dashboard_card_metrics_recommendations.md) | `dashboard_card_metrics_recommendations.md` | 2026-06-29 |  |

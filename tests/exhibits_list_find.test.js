@@ -322,11 +322,11 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   zq.value = ""; zq.dispatchEvent(new z.w.Event("input")); await settle();
   const wz = rows(z.d).find((r) => /^Welding/.test(txt(r.children[2])));
   wz.children[2].querySelector("button.exh-l-open").click(); await settle();
-  const dz = txt(z.d.querySelector(".exh-l-drawer"));
-  check("(12) the title drawer lists the certs by catalog id and the names not yet in the table",
+  const dz = txt(z.d.querySelector(".exh-l-pdrawer"));
+  check("(12) the title drawer, in the side panel since 2026-11-03, lists the certs by catalog id and the names not yet in the table",
     /Holds all of these certifications/.test(dz) && /ASE T8 Preventive Maintenance Inspection \(ITC1\)/.test(dz) && /ASE A5 Brakes \(ITC2\)/.test(dz)
     && /not yet in the cert table: SP\/2 HD/.test(dz), dz);
-  Array.from(z.d.querySelectorAll(".exh-l-drawer button")).find((b) => /Show every exhibit with ASE A5 Brakes/.test(b.getAttribute("aria-label") || "")).click(); await settle();
+  Array.from(z.d.querySelectorAll(".exh-l-pdrawer button")).find((b) => /Show every exhibit with ASE A5 Brakes/.test(b.getAttribute("aria-label") || "")).click(); await settle();
   check("(12) Show every exhibit with it lists the holder and the aligned course", rows(z.d).length === 2
     && /ASE A5 Brakes/.test(txt(z.d.getElementById("exh-l-certline"))), rows(z.d).map((r) => txt(r.children[2])).join("|"));
   Array.from(z.d.getElementById("exh-l-certline").querySelectorAll("button")).find((b) => txt(b) === "Clear").click(); await settle();

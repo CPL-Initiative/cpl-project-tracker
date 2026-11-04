@@ -34,8 +34,8 @@ const cssBlock = pageSrc.slice(pageSrc.indexOf("function css(p)"), pageSrc.index
 check("the shared renderer names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(cssBlock));
 check("controls are underlined words, 24px tall", /button\." \+ p \+ "w \{ all:unset; cursor:pointer; min-height:24px;[^}]*text-decoration:underline/.test(cssBlock));
 check("the three groups fold to one column on a narrow window", /@media \(max-width: 980px\) \{ " \+ s \+ "groups \{ grid-template-columns:minmax\(0, 1fr\); \} \}/.test(cssBlock));
-check("the Commons card for the reference opens the Progress view",
-  /"links": \[\{"href": tab \+ "\/progress", "text": "Open Exhibits"\}\]/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
+check("the Commons card for the reference opens the List, Progress a word away (Sam, 2026-11-03)",
+  /"links": \[\{"href": tab \+ "\/list", "text": "Open Exhibits"\}\]/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("no figure is copied into the host", !/\b(2,?457|5,?493|2,?644|2,?639|1,?605)\b/.test(src.slice(src.indexOf("function progressSpec"), src.indexOf("function renderProgress"))));
 
 // ───────────────────────────── the shared renderer alone ─────────────────────────────
@@ -86,10 +86,11 @@ function exhibitRow(over) {
     status_file: "kb/status/exhibit.json",
     pair: [{ n: 2402, of: 5492, words: "titles carry a review stamp", open: "#exhibits/credentials" }],
     tests: ["curator-stamped", "procedure-settled"],
-    issues: [{ n: 621, words: "titles in the reference that have left MAP", owner: "a curator (retire or keep)", open: "#credential-reference/all", error: null }],
+    issues: [{ n: 1, words: "titles held for a person", owner: "a curator", open: "#exhibits/held", error: null },
+      { n: 621, words: "titles in the reference that have left MAP", owner: "a curator (retire or keep)", open: "#credential-reference/all", error: null }],
     procedures: [{ n: 16, words: "in force", open: "#credential-reference/procs", error: null }],
     machine: { what: "the saving run and the fold", at: ago(3), every_hours: 24 },
-    facts: { titles: 5492, stamped: 2402, person: 1088, cohort: 1314 }
+    facts: { titles: 5492, stamped: 2402, person: 1088, cohort: 1314, confirmed: 1088 }
   }, over || {});
 }
 function status(row) { return { schema: 1, written_at: ago(2), rows: [row] }; }
@@ -147,6 +148,8 @@ function views(d) { return Array.from(d.querySelectorAll(".exh-views > *")).map(
   let t = await boot();
   const d = t.d, page = d.querySelector(".exh-pg-page");
   check("host: #exhibits/progress opens the Progress view", t.M._state.view === "progress" && !!page);
+  check("host: a person's stamps sit under the bar as Confirmed by a person (S565)",
+    txt(d.querySelector(".exh-pg-confirmed")) === "1,088 confirmed by a person.");
   check("host: Progress is the first view", views(d)[0] === "Progress" && /Review/.test(views(d)[1]));
   check("host: the headline is the Commons row's pair, a title with a review stamp",
     /2,402 of 5,492 college-entered titles carry a review stamp/.test(txt(d.querySelector(".exh-pg-page [aria-label=Progress]"))));
@@ -156,6 +159,9 @@ function views(d) { return Array.from(d.querySelectorAll(".exh-views > *")).map(
   const att = d.getElementById("exh-pg-attention");
   check("host: a held title shows with its action", /1 title the nightly run held for a curator\./.test(txt(att)) && /Review them/.test(txt(att)));
   check("host: a conflict shows with its action", /1 saved title disagrees with one a person approved\./.test(txt(att)) && /Decide them/.test(txt(att)));
+  check("host: the nightly run's held titles, already counted live, are not listed a second time from the Commons row (S561)",
+    !/titles held for a person/.test(txt(att)));
+  check("host: the foot names why the Commons card's list is shorter (S561)", /The CPL Commons card counts the nightly procedures run/.test(txt(page)));
   check("host: the row's known issue reads who settles it",
     /621 titles in the reference that have left MAP, for a curator to retire or keep\./.test(txt(att)));
   const toCer = Array.from(att.querySelectorAll("a")).find(function (a) { return txt(a) === "Review the 621"; });

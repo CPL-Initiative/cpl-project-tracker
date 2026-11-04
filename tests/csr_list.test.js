@@ -11,12 +11,13 @@
 //   (3) the filters (Open, Confirmed by a person, Confirmed by a procedure, In a collision) and the finder (a local
 //       code, an alternate name) narrow the rows;
 //   (4) Edit every row turns Common SUBJ into boxes; leaving one writes THAT discipline's _CANON_SUBJ4 kb_curation row
-//       through the table's own path, the row then reads Confirmed by a person, the Reference table shows the code,
+//       through the table's own path, the row then reads Confirmed by a person, the overlay carries the code,
 //       and the collision clears from both rows it joined;
 //   (5) a code another MQ discipline owns asks the table's confirm; declined, nothing writes and the value is back;
 //       a value that is not four letters never writes;
 //   (6) a refused write says it did not save and puts the value back;
 //   (7) signed out, the List says so and a save asks for a sign-in without writing;
+//   (12) #canonical-subj4/open (the Commons card's unconfirmed issue) opens the List on Open, Confirm this pick on the row;
 //   (8) the Status drawer's Confirm this pick writes the open pick's own code for its discipline;
 //   (9) Edit (one row) saves a note through the note path, and the pick's reviewer stays the code row's;
 //  (10) tokens only, no glyph, American spelling in the List's source;
@@ -142,11 +143,10 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   await settle();
   const d = t.d, M = t.M();
   const sw = d.getElementById("cs-views");
-  check("(1) the view switch carries Progress, Reference and List, List selected",
-    Array.from(sw.querySelectorAll("button[role=tab]")).map(txt).join(",") === "Progress,Reference,List"
+  check("(1) the view switch carries Progress, List and Local subjects, List selected (the Reference view retired, 2026-11-04)",
+    Array.from(sw.querySelectorAll("button[role=tab]")).map(txt).join(",") === "Progress,List,Local subjects"
     && d.getElementById("cs-tab-list").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-list").getAttribute("aria-controls") === "cs-list");
-  check("(1) the List shows; the table, its toolbar and Progress hide", M._state.view === "list" && !d.getElementById("cs-list").hidden
-    && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden && d.getElementById("cs-progress").hidden);
+  check("(1) the List shows; Progress hides", M._state.view === "list" && !d.getElementById("cs-list").hidden && d.getElementById("cs-progress").hidden);
   check("(1) the engine loads through CPL_TABS.loadScript", t.loads.indexOf("commons_list.js") >= 0 && !!t.w.CPL_COMMONS_LIST);
   const names = rows(d).map(titleOf);
   check("(1) ⭐ every MQ discipline is one row, A to Z", names.length === 11 && names[0] === "Agricultural Business and Related Services"
@@ -218,8 +218,7 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(4) ⭐ the collision clears from both rows it joined", blank(cell(d, "Agricultural Business and Related Services", "Collision"))
     && blank(cell(d, "Auto Body Technology", "Collision")));
   check("(4) the note line says what saved", /Saved Agricultural Business and Related Services: AGBS\./.test(txt(d.getElementById("csl-cellnote"))));
-  const refInput = Array.from(d.querySelectorAll("#cs-table-wrap tr")).find((r) => /^Agricultural Business/.test(txt(r.querySelector("td.cs-disc"))));
-  check("(4) the Reference table shows the code (the same overlay)", refInput && refInput.querySelector("input.cs-canon").value === "AGBS");
+  check("(4) the overlay carries the code, for Progress and the panel alike", t.M()._state.overlay["Agricultural Business and Related Services"].canonical_subj4 === "AGBS");
   check("(4) focus comes back to the redrawn box, so Edit every row keeps its place", d.activeElement !== agBox && d.activeElement.classList.contains("csl-cellin")
     && d.activeElement.getAttribute("aria-label") === "Common SUBJ of Agricultural Business and Related Services");
 
@@ -318,6 +317,21 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(11) after Dismiss, focus sits on the row's title", !!focused && focused.classList.contains("csl-open") && txt(focused) === "Psychology", focused && focused.outerHTML);
   words(sz.d, "Suggested picks").click(); await settle();
   check("(11) a dismissed pick leaves Suggested picks for the visit", rows(sz.d).length === 0);
+
+  // ── (12) a pick waiting for a person opens where it can be confirmed (Sam, 2026-11-03) ──
+  // The Commons card's unconfirmed issue and the Progress view's Confirm them lead to #canonical-subj4/open: the List
+  // on Open, each row with Confirm this pick. The Reference box saves only a changed code, so it had nothing to press.
+  const so = boot({ hash: "#canonical-subj4/open" });
+  await settle();
+  check("(12) #canonical-subj4/open opens the List on Open", so.M()._state.view === "list" && so.M()._state.ls.f === "open"
+    && rows(so.d).map(titleOf).join("|") === "Agricultural Business and Related Services|Psychology", rows(so.d).map(titleOf).join("|"));
+  check("(12) the open pick carries Confirm this pick on its row, and the one in a collision waits for a person instead",
+    !!sgOf(so.d, "Psychology") && /Confirm this pick/.test(txt(sgOf(so.d, "Psychology"))) && !sgOf(so.d, "Agricultural Business and Related Services"));
+  // #canonical-subj4/list/<filter> opens the List on any of its filters (the Commons card's counts, Sam 2026-11-03).
+  const sp = boot({ hash: "#canonical-subj4/list/collision" });
+  await settle();
+  check("(12) #canonical-subj4/list/collision opens the List on In a collision", sp.M()._state.view === "list" && sp.M()._state.ls.f === "collision"
+    && rows(sp.d).length === 2 && rows(sp.d).every((r) => /AUTB/.test(txt(r))), rows(sp.d).map(titleOf).join("|"));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });

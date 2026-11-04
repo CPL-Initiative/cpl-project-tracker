@@ -57,10 +57,20 @@
   }
   function written_at(j) { return !!(j && j.written_at); }
   function cr_row(j) { return !!(j && Array.isArray(j.rows) && j.rows.some(function (r) { return r && r.key === "cr" && r.facts; })); }
+  /* The Commons file through the List engine's one reader where the engine is loaded (the List norms: never a second
+     reader), fresh for this read; this view's own read otherwise. */
+  function readCommonsSoft() {
+    var CLM = window.CPL_COMMONS_LIST;
+    if (!CLM || typeof CLM.readCommons !== "function") return readSoft(COMMONS_URL, cr_row);
+    return CLM.readCommons(true).then(function (j) {
+      if (!cr_row(j)) throw new Error(COMMONS_URL + " has no cr_row");
+      return { data: j, error: null };
+    }).catch(function (e) { return { data: null, error: String(e && e.message || e) }; });
+  }
   function load() {
     return Promise.all([
       cache.status ? Promise.resolve(cache.status) : readSoft(STATUS_URL, written_at),
-      cache.commons ? Promise.resolve(cache.commons) : readSoft(COMMONS_URL, cr_row)
+      cache.commons ? Promise.resolve(cache.commons) : readCommonsSoft()
     ]).then(function (parts) {
       if (parts[0].data) cache.status = parts[0];
       if (parts[1].data) cache.commons = parts[1];
@@ -68,7 +78,7 @@
     });
   }
 
-  /* ── where a count leads: a filter of the tab's worklist ── */
+  /* ── where a count leads: a filter of the tab's List ── */
   var TO = {
     todo: { filter: "todo" }, auto: { filter: "auto" }, held: { filter: "held" }, done: { filter: "done" },
     open: { filter: "open" }, names: { filter: "names" }, all: { filter: "all" }
@@ -301,6 +311,8 @@
       links: [proc ? { words: "How it is kept: " + fmtN(proc.n) + " groups a rule folds", go: go("auto") } : null,
         sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
       progress: { n: x.settled, of: x.wordings, short: "settled", words: "wordings resolve to a settled reference",
+        // Confirmed by a person, beside settled (Sheet 160; Sam, S565): wordings a curator's decision names.
+        confirmed: { n: x.facts ? x.facts.confirmed : null, done: x.facts ? x.facts.confirmed_settled : null, doneWords: "settled" },
         recently: [recently, split].filter(Boolean).join(" "),
         calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmtN(open.length) + " decisions wait on ") + decider + "."
           : "No decisions wait on " + decider + ".") : "",
@@ -396,7 +408,7 @@
     while (node.firstChild) node.removeChild(node.firstChild);
     if (!CP) {
       node.appendChild(el("p", { cls: "cq-caution", role: "alert",
-        text: "The Progress view's shared module (commons_progress.js) could not be loaded. The worklist reads as usual; reload the tab to try again." }));
+        text: "The Progress view's shared module (commons_progress.js) could not be loaded. The List reads as usual; reload the tab to try again." }));
       return Promise.resolve();
     }
     ensureCss();

@@ -401,12 +401,38 @@ async function seedCsrList(page, theme) {
   await page.waitForSelector("#tab-canonical-subj4 #cs-tab-list", { timeout: 60000 });
   await page.evaluate(() => { const b = document.getElementById("cs-tab-list"); if (b && b.getAttribute("aria-selected") !== "true") b.click(); });
   await page.waitForSelector("#tab-canonical-subj4 .csl-table tbody tr", { timeout: 60000 });
+  // The line, the folded summary (the Progress view's page) and an MQ discipline's side panel with its folds open.
+  await page.waitForSelector("#tab-canonical-subj4 .csl-line", { timeout: 30000 });
+  await page.waitForFunction(() => document.querySelector("#csl-fold #csl-pg-attention") || document.querySelector("#csl-fold [role=alert]"), null, { timeout: 60000 });
+  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td.csl-title button.csl-open"); if (b) b.click(); });
+  await page.waitForSelector("#csl-panel", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#csl-panel details.csl-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.waitForTimeout(200);
   await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td:nth-child(4) button.csl-open"); if (b) b.click(); });
   await page.waitForSelector("#tab-canonical-subj4 .csl-drawer", { timeout: 10000 });
   await page.evaluate(() => { document.getElementById("csl-editall").click(); });
   await page.waitForSelector("#tab-canonical-subj4 .csl-cellin", { timeout: 10000 });
   await page.waitForTimeout(700);
   // First Light's greeting opens 650 ms after load and would cover the List.
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
+/* The Common Subjects Reference's Local subjects List (2026-11-03): every local code A to Z, the Status drawer
+   open on the first row and that row's Edit box, so the drawer, the suggestion line and the note box are measured. */
+async function seedCsrLocal(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "canonical-subj4/local") location.hash = "canonical-subj4/local"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#tab-canonical-subj4 #cs-tab-local", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.getElementById("cs-tab-local"); if (b && b.getAttribute("aria-selected") !== "true") b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csls-table tbody tr", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csls-table tbody tr td:nth-child(7) button.csls-open"); if (b) b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csls-drawer", { timeout: 10000 });
+  await page.waitForTimeout(500);
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
@@ -649,6 +675,13 @@ async function seedProgress(page, theme) {
     S.view = "progress";
     M._render();
   });
+  /* The opened page (S558): commons_page.js arrives on the first render, then the tab draws again; open Details so
+     the dash under it is measured too. */
+  await page.waitForSelector("#program-requirements-root nav[aria-label^='Common Programs']", { timeout: 30000 });
+  await page.evaluate(() => {
+    const d = document.querySelector('#program-requirements-root details[data-sec="progress:details"]');
+    if (d) d.open = true;
+  });
   await page.waitForTimeout(300);
 }
 
@@ -684,6 +717,13 @@ async function seedPrList(page, theme) {
         checks: { coverage: i % 7 !== 0, invented: i % 31 !== 0, arithmetic: i % 9 === 0 ? "unequal" : i % 13 === 0 ? "incomplete" : "equal" },
         display: { counts: { here: i % 4 } }, _light: true });
     });
+    // The first record full, so its side panel draws its courses table (the List norms' panel, 2026-11-04).
+    Object.assign(recs[0], { _light: false, measure: "units", total_min: 18, total_max: 18, catalog_year: "2026-2027",
+      record: { blocks: [{ name: "Required core", rule: "all", courses: [{ code: "WELD 101", units: 4 }, { code: "WELD 102", units: 4, alternatives: [{ code: "WELD 103" }] }] },
+        { name: "Electives", rule: "choose_units", min: 6, courses: [{ code: "WELD 201", units: 3 }, { code: "MATH 105", units: 3 }] }] },
+      display: { counts: { here: 1 }, courses: { "WELD 101": { title: "Introduction to Welding", here: { exhibits_n: 4 } }, "WELD 102": { title: "Arc Welding" },
+        "WELD 201": { title: "Pipe Welding" }, "MATH 105": { title: "Shop Math" } } } });
+    window.__prPanelKey = recs[0].control_number;
     S.registry = [{ college: "Cerritos College", catalog_url: "https://catalog.example/", catalog_year: "2026-2027" }];
     S.records = recs; S.error = null;
     S.progress = Object.assign({}, S.progress, { active: i, activeKeys: {}, activeCollege: at, errors: {} });
@@ -698,6 +738,20 @@ async function seedPrList(page, theme) {
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
     if (x) x.click();
   });
+  await page.evaluate(() => {
+    const row = Array.from(document.querySelectorAll("#program-requirements-root .prl-table tbody tr")).find((tr) => /Fails/.test(tr.textContent));
+    const b = row && Array.from(row.querySelectorAll("button.prl-open")).find((x) => /^Record:/.test(x.getAttribute("aria-label") || ""));
+    if (b) b.click();
+  });
+  await page.waitForSelector("#program-requirements-root .prl-drawer", { timeout: 10000 });
+  // The line, its folded summary and the full record's side panel, its fold open.
+  await page.waitForFunction(() => document.querySelector("#prl-fold #prl-pg-attention") || document.querySelector("#prl-fold [role=alert]"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const L = window.CPL_PROGRAM_REQUIREMENTS._state.ls; L.panel = window.__prPanelKey; L.open = null;
+    window.CPL_PROGRAM_REQUIREMENTS._render();
+  });
+  await page.waitForSelector("#prl-panel #prl-pn-courses", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#prl-panel details.prl-pn-fold").forEach((d) => { d.open = true; }); });
   await page.evaluate(() => {
     const row = Array.from(document.querySelectorAll("#program-requirements-root .prl-table tbody tr")).find((tr) => /Fails/.test(tr.textContent));
     const b = row && Array.from(row.querySelectorAll("button.prl-open")).find((x) => /^Record:/.test(x.getAttribute("aria-label") || ""));
@@ -773,35 +827,6 @@ async function seedExhibits(page, theme) {
   await page.waitForTimeout(300);
 }
 
-// Seeds the Exhibits tab's Credentials view (the credential panel, Sheet 147 step 2): the table, a
-// credential's panel open beside it, and one more training site row, so the select, the site box and
-// Remove are measured. The live rows are out of reach here, which paints the fallback note too. Since
-// step 3 a college chip is opened too (a could-adopt one where the credential has it), so the box of
-// what a college articulated or teaches, Exhibit Adoption's cell panel folded in, is measured.
-async function seedExhibitsCredentials(page, theme) {
-  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
-  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForFunction(() => window.CPL_EXHIBITS && window.CPL_EXHIBITS._state.data, null, { timeout: 60000 });
-  await page.evaluate(() => {
-    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
-      (x) => x.textContent.indexOf("Credentials") === 0)[0];
-    if (b) b.click();
-  });
-  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-table tbody tr"), null, { timeout: 60000 });
-  await page.evaluate(() => {
-    const b = document.querySelector("#exhibits-root .exh-table button.exh-cred");
-    if (b) b.click();
-  });
-  await page.waitForFunction(() => document.getElementById("exh-c-add"), null, { timeout: 30000 });
-  await page.evaluate(() => document.getElementById("exh-c-add").click());
-  await page.waitForTimeout(300);
-  await page.evaluate(() => {
-    const chips = document.querySelectorAll("#exh-cpanel button.exh-cchip");
-    if (chips.length) chips[chips.length - 1].click();
-  });
-  await page.waitForTimeout(300);
-}
-
 // Seeds the Exhibits tab's Progress view (S556): the reference opened in the CPL Commons mock's shape, drawn by
 // commons_page.js once the Commons row, the run log and the credentials are in. Opened by its word, as a reader does.
 async function seedExhibitsProgress(page, theme) {
@@ -825,6 +850,28 @@ async function seedExhibitsProgress(page, theme) {
 
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
+/* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
+   folded rest opened (the issuer and training-site editor among it, one site row added), so the panel's bar, its sort
+   words, its MAP links, the editor's boxes and the title drawer it carries are measured. */
+async function seedExhibitsPanel(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/list") location.hash = "exhibits/list"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open"), null, { timeout: 60000 });
+  await page.evaluate(() => { document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open").click(); });
+  await page.waitForFunction(() => document.getElementById("exh-l-panel"), null, { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#exh-l-panel details.exh-l-pn-fold").forEach((d) => { d.open = true; }); });
+  // One training site row added, so its college select, site box and Remove are measured (the retired Credentials
+  // view's target measured them there).
+  await page.evaluate(() => { const a = document.getElementById("exh-pn-add"); if (a) a.click(); });
+  await page.waitForTimeout(400);
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
 async function seedExhibitsList(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
@@ -947,15 +994,20 @@ async function seedCrProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
-// The Common CR Reference's List (S542, the Catalog Commons' shared List): every wording A to Z, the Reference
-// drawer of the first row open and Edit every row's boxes on, so the table, the drawer and the boxes are measured.
+// The Common CR Reference's List (S542, the Catalog Commons' shared List): every wording A to Z, the first wording's side
+// panel open with its fold (2026-11-03), its Reference drawer open and Edit every row's boxes on, so the table, the
+// panel, the drawer and the boxes are measured.
 async function seedCrList(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cr-reference") location.hash = "cr-reference"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForSelector('#tab-cr-reference button.crr-view[data-view="list"]', { timeout: 60000 });
   await page.evaluate(() => document.querySelector('#tab-cr-reference button.crr-view[data-view="list"]').click());
   await page.waitForSelector("#tab-cr-reference .crl-table tbody tr", { timeout: 60000 });
-  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td:nth-child(3) button.crl-open"); if (b) b.click(); });
+  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td.crl-title button.crl-open"); if (b) b.click(); });
+  await page.waitForSelector("#crl-panel", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#crl-panel details.crl-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.waitForTimeout(200);
+  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td:nth-child(4) button.crl-open"); if (b) b.click(); });
   await page.waitForSelector("#tab-cr-reference .crl-drawer", { timeout: 10000 });
   await page.evaluate(() => { document.getElementById("crl-editall").click(); });
   await page.waitForSelector("#tab-cr-reference .crl-cellin", { timeout: 10000 });
@@ -979,10 +1031,35 @@ async function seedCociList(page, theme) {
     const band = Array.from(document.querySelectorAll("#coci-lookup-root .ccl-table tbody tr")).find((tr) => tr.classList.contains("ccl-band") && tr.querySelector("a"));
     let row = band && band.nextElementSibling;
     while (row && row.classList.contains("ccl-band")) row = row.nextElementSibling;
+    // The line, its folded summary and the side panel of the first course in a band (2026-11-04), its fold open.
+    const t = row && row.querySelector("td.ccl-title button.ccl-open");
+    if (t) t.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#ccl-fold #ccl-pg-attention") || document.querySelector("#ccl-fold [role=alert]"), null, { timeout: 60000 });
+  await page.waitForSelector("#ccl-panel #ccl-pn-members", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#ccl-panel details.ccl-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.evaluate(() => {
+    const band = Array.from(document.querySelectorAll("#coci-lookup-root .ccl-table tbody tr")).find((tr) => tr.classList.contains("ccl-band") && tr.querySelector("a"));
+    let row = band && band.nextElementSibling;
+    while (row && row.classList.contains("ccl-band")) row = row.nextElementSibling;
     const b = row && Array.from(row.querySelectorAll("button.ccl-open")).find((x) => /^Identities/.test(x.getAttribute("aria-label") || ""));
     if (b) b.click();
   });
   await page.waitForSelector("#coci-lookup-root .ccl-drawer", { timeout: 10000 });
+  await page.waitForTimeout(300);
+}
+
+// The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
+// from the real kb/status/commons.json the origin serves.
+async function seedCociProgress(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "coci-lookup/progress") location.hash = "coci-lookup/progress"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#cplcoci-progress .cplcoci-pg-groups", { timeout: 120000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
   await page.waitForTimeout(300);
 }
 
@@ -3165,7 +3242,7 @@ module.exports = {
   },
   /* The Common CR Reference's Progress view (S437): the Commons' dash for the reference,
      drawn once the module, the definitions, the run log and the Commons figures are in. The
-     cobi sweep lands on the worklist, so the view needs its own target. */
+     cobi sweep lands on the List, so the view needs its own target. */
   "cr-progress": {
     file: "index.html",
     title: "Common CR Reference: Progress, the Commons' dash",
@@ -3176,7 +3253,7 @@ module.exports = {
   },
   "cr-list": {
     file: "index.html",
-    title: "Common CR Reference: List, every wording banded by group, a drawer and the boxes open",
+    title: "Common CR Reference: List, every wording banded by group, a wording's side panel, a drawer and the boxes open",
     routes: [{ hash: "cr-reference", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCrList(page, "light"),
@@ -3186,7 +3263,7 @@ module.exports = {
      Every local course in COCI banded by M-ID, an Identities drawer open; one per theme. */
   "coci-lookup-list": {
     file: "index.html",
-    title: "COCI Lookup: the Courses List, banded by M-ID, an Identities drawer open",
+    title: "COCI Lookup: the Courses List, banded by M-ID, its line and folded summary, a course's side panel, an Identities drawer open",
     routes: [{ hash: "coci-lookup", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCociList(page, "light"),
@@ -3198,6 +3275,23 @@ module.exports = {
     routes: [{ hash: "coci-lookup", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */
+  "coci-lookup-progress": {
+    file: "index.html",
+    title: "COCI Lookup: Progress, the Common Course Reference's opened page",
+    routes: [{ hash: "coci-lookup/progress", name: "progress" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCociProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "coci-lookup-progress-dark": {
+    file: "index.html",
+    title: "COCI Lookup: Progress, dark",
+    routes: [{ hash: "coci-lookup/progress", name: "progress-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCociProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cr-list-dark": {
@@ -3336,19 +3430,28 @@ module.exports = {
     seed: (page) => seedCsrProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  "canonical-subj4-reference": {
-    file: "index.html",
-    title: "Common Subjects Reference: the table",
-    routes: [{ hash: "canonical-subj4/reference", name: "reference" }],
-    widths: [390, 768, 1024, 1440],
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
   "canonical-subj4-list": {
     file: "index.html",
-    title: "Common Subjects Reference: List, every MQ discipline A to Z, a drawer and the boxes open",
+    title: "Common Subjects Reference: List, its line and folded summary, an MQ discipline's side panel, a drawer and the boxes open",
     routes: [{ hash: "canonical-subj4/list", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCsrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-local": {
+    file: "index.html",
+    title: "Common Subjects Reference: Local subjects, every local code A to Z, a drawer open",
+    routes: [{ hash: "canonical-subj4/local", name: "local" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCsrLocal(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-local-dark": {
+    file: "index.html",
+    title: "Common Subjects Reference: Local subjects, dark",
+    routes: [{ hash: "canonical-subj4/local", name: "local-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCsrLocal(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "canonical-subj4-list-dark": {
@@ -3363,7 +3466,7 @@ module.exports = {
      Every active program in COCI on one sheet, the Record drawer of a failing row open; one per theme. */
   "program-requirements-list": {
     file: "index.html",
-    title: "Program Requirements: List, every active program, a Record drawer open",
+    title: "Program Requirements: List, its line and folded summary, a program's side panel, a Record drawer open",
     routes: [{ hash: "program-requirements/list", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedPrList(page, "light"),
@@ -3413,16 +3516,6 @@ module.exports = {
     seed: (page) => seedFilterOpen(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  /* ── Exhibits: Credentials, the credential panel (Sheet 147 step 2) ─────
-     The table with a credential's panel open and a training site row added. */
-  "exhibits-credentials": {
-    file: "index.html",
-    title: "Exhibits: Credentials, a credential's panel open",
-    routes: [{ hash: "exhibits", name: "credentials" }],
-    widths: [390, 768, 1024, 1440],
-    seed: (page) => seedExhibitsCredentials(page, "light"),
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
   /* ── Exhibits: Progress, the reference opened (S556, the CPL Commons mock's Exhibits page) ── */
   "exhibits-progress": {
     file: "index.html",
@@ -3456,12 +3549,20 @@ module.exports = {
     seed: (page) => seedExhibitsList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  "exhibits-credentials-dark": {
+  "exhibits-panel": {
     file: "index.html",
-    title: "Exhibits: Credentials, a credential's panel open, dark",
-    routes: [{ hash: "exhibits", name: "credentials-dark" }],
-    widths: [390, 768, 1024, 1440],
-    seed: (page) => seedExhibitsCredentials(page, "dark"),
+    title: "Exhibits: List with a credential's side panel open, its members and the rest unfolded",
+    routes: [{ hash: "exhibits/list", name: "panel" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedExhibitsPanel(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-panel-dark": {
+    file: "index.html",
+    title: "Exhibits: the side panel, dark",
+    routes: [{ hash: "exhibits/list", name: "panel-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsPanel(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the exhibits view (S355) ─────────────────────

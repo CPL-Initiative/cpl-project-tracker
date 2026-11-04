@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-11-01
+updated: 2026-11-03
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -28,7 +28,7 @@ Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (versio
 rule and the CPL-AI dialog (#2601); the Exhibits tab's Review queue (SkyRowanberry, 2026-10-31, below). What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
-**The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`: ASE, exams, IT vendors); **kept groups** (S542, #2655): a band over every run (titles alone under *Not in a group*), tick rows to Move, Out of every group or Back to the AI sort, Keep this group, Rename (a shared name joins two), Release; `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` laid over the nightly sort (the builder does not read it yet; a rename apply drops a title's group row, as it does the flag). Since S542 the List is drawn by the shared engine `commons_list.js` (#2656) and spans the window (#2661). Preview at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A (`scripts/build_exhibits_list_preview.py`). **SLO hints, to build (Sam, 2026-11-01, in chat: *"yes to SLO hints and the nightly harvest"*):** a title whose articulated courses match another's at SLO similarity 0.5 or more shows *Outcomes match:* with that title and its group; Sam acts with Move. The S542 test (36 of 113 such pairs share a group; 746 of 2,663 credentials reach SLOs): lessons.
+**The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`: ASE, exams, IT vendors); **kept groups** (S542, #2655): a band over every run (titles alone under *Not in a group*), tick rows to Move, Out of every group or Back to the AI sort, Keep this group, Rename (a shared name joins two), Release; `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` laid over the nightly sort (the builder does not read it yet; a rename apply drops a title's group row, as it does the flag). Since S542 the List is drawn by the shared engine `commons_list.js` (#2656) and spans the window (#2661). A title opens a side panel (2026-11-03): the folded members, issuer and sites edited there, the rest folded; a Students column. Preview at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A (`scripts/build_exhibits_list_preview.py`). **SLO hints, built (#2684, 2026-11-02; Sam, 2026-11-01, in chat: *"yes to SLO hints and the nightly harvest"*):** a title whose articulated courses match another's at SLO similarity 0.5 or more, through distinct courses, shows *Outcomes match:* with that title and its group; Sam acts with Move. `kb/_build_exhibit_slo_neighbors.py` writes `kb/exhibit_slo_neighbors.json` daily (guard `tests/exhibit_slo_neighbors_build_test.py`). The S542 test: lessons.
 
 Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyCloudberry)*.
 
@@ -43,8 +43,8 @@ Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_les
 **The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602, #2603 and #2604, history in the lessons
 doc's 2026-10-31 sections). *Review* draws mock-up v26's card per held title, the step tiles as filters and *Go to an
 exhibit*; `#exhibits/held`, `/conflict` and `/credentials` open one place, read once per visit, and the Commons' CER row
-links them (#2612). *Credentials* lists every credential, most students first, with a panel whose issuer and training
-sites (each with its college) save as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
+links them (#2612). A List row's side panel (the Credentials view retired into it, 2026-11-03) sets the issuer and training
+sites (each with its college), saved as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
 stands (`tests/credential_review_sites_test.py`); `field:kb_curation.training_sites_override` maps to DR-07. The panel
 reads `kb/exhibits_adoption.json`: each college's lines and units, the course a could-adopt college already teaches,
 the peer median. **Could adopt never reads the TOP and C-ID overlap** (Sam, 2026-09-24; Rule 7; KB note
@@ -124,8 +124,7 @@ run-by-run figures are in the lessons doc's S416 to S418 sections.
   receipts them; rows the daily fold already carried into `kb/unified_titles.json` (their `reviewed_by` is the cohort)
   are counted, and the fold commit that carried them is reverted. A rule procedure's settlement saves at the rule's
   word, the course-identity rule's 0.8 included (the college's own course title, 96 of its 125; the 29 anchored to a
-  CCN or C-ID read 0.85). The first night's preview: 926 titles under 7 procedures (classifier 737, course-identity
-  125, brand-family 53, nccer-verbatim 5, statewide-catalog 3, cslb-classification 2, apprenticeship-trades 1).
+  CCN or C-ID read 0.85).
   `save=preview` on the workflow lists them and writes no row. Governance: `workflow:cer-procedures.yml` → DR-07.
 - **The store:** `kb/cer_procedures.json`, each procedure a rule in plain words with who set it, when, and
   their words. Seven **rule** procedures settle a title by code, in order: brand families (an AP title takes College Board's official
@@ -151,10 +150,7 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
 
 Sheet 94's three rulings (apply, save, retire; `sam-sheet-94-rulings-2026-10-18`) and Sheet 96 card 1 are in the lessons doc.
 
-Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) are in the lessons doc.
-
-**Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, 14:41Z 2026-10-31, his own
-calls; `cpl_memory` `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
+Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) and Sheet 149's (fold, routine) are in the lessons doc.
 
 **Rules (SkyBilberry, 2026-10-31; Sam: "a link to a view of all the rules used to suggest or fold exhibit titles", and
 Sheet 149 card 2).** The tab's **Rules** view (`#exhibits/rules`, also from Another look's rule filter) lists every
@@ -184,7 +180,8 @@ assignments and 3 panel markers moved under `cer-clep-fold-skyteaberry@bot` (`cl
 the two Level III markers stay under their old keys. Guard: `tests/clep_official_titles_test.py`.
 
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
-`credential_retires` and move the panel rows they list (SkyHuckleberry moved the first four, receipt
-`kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`). (1) The Catalog's *Courses that may align*,
+`credential_retires` and move the panel rows they list (receipts `kb/receipts/credential_panel_move_*.json`; a row
+that cannot fan in, or whose rename the fold carried out, stays under its old key, named in the receipt).
+Sheet 161, applied 16:08Z 2026-11-03: lessons. (1) The Catalog's *Courses that may align*,
 once a source names courses. (2) Training sites for a held title new to the reference, and the *Held titles by group*
 table, only if Sam asks.

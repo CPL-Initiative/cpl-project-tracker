@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-03T06:18:29.883885+00:00",
+  "scraped_at": "2026-11-04T06:18:30.478505+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 30926,
+    "jst": 30953,
     "star_colleges": 66
   },
   "computed_star_colleges": 66,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 156,
+      "jst": 167,
       "star": false
     },
     "Santiago Canyon College": {
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 597,
+      "jst": 599,
       "star": true
     },
     "Norco College": {
@@ -122,7 +122,7 @@
     },
     "College of the Desert": {
       "vets": 264,
-      "jst": 422,
+      "jst": 431,
       "star": true
     },
     "Barstow Community College": {
@@ -137,7 +137,7 @@
     },
     "Modesto Junior College": {
       "vets": 223,
-      "jst": 152,
+      "jst": 154,
       "star": false
     },
     "Cypress College": {
@@ -262,7 +262,7 @@
     },
     "Lemoore College": {
       "vets": 76,
-      "jst": 20,
+      "jst": 21,
       "star": false
     },
     "East Los Angeles College": {
@@ -400,15 +400,15 @@
       "jst": 50,
       "star": true
     },
-    "College of Alameda": {
-      "vets": 21,
-      "jst": 30,
-      "star": true
-    },
     "Columbia College": {
       "vets": 43,
       "jst": 25,
       "star": false
+    },
+    "College of Alameda": {
+      "vets": 21,
+      "jst": 30,
+      "star": true
     },
     "Crafton Hills College": {
       "vets": 637,
@@ -422,7 +422,7 @@
     },
     "Las Positas College": {
       "vets": 234,
-      "jst": 21,
+      "jst": 23,
       "star": false
     },
     "Los Medanos College": {
@@ -550,14 +550,19 @@
       "jst": 1,
       "star": false
     },
+    "Orange Coast College": {
+      "vets": 404,
+      "jst": 1,
+      "star": false
+    },
     "College of Marin": {
       "vets": 75,
       "jst": 1,
       "star": false
     },
-    "Orange Coast College": {
-      "vets": 404,
-      "jst": 1,
+    "Folsom Lake College": {
+      "vets": 80,
+      "jst": 0,
       "star": false
     },
     "California State University Los Angeles": {
@@ -575,18 +580,13 @@
       "jst": 0,
       "star": false
     },
-    "Folsom Lake College": {
-      "vets": 80,
+    "Los Angeles Southwest College": {
+      "vets": 67,
       "jst": 0,
       "star": false
     },
     "Lake Tahoe Community College": {
       "vets": 57,
-      "jst": 0,
-      "star": false
-    },
-    "Los Angeles Southwest College": {
-      "vets": 67,
       "jst": 0,
       "star": false
     }

@@ -175,12 +175,13 @@ function input(w, node, v) { node.value = v; node.dispatchEvent(new w.Event("inp
 
   // ── (6) drawers ──
   const comp2 = dataRows(d).find((tr) => txt(cell(tr, d, "Title")) === "College Composition");
+  // Since 2026-11-04 a title opens the course's side panel, and the Title drawer moves into it (the List norms).
   cell(comp2, d, "Title").querySelector("button").click();
   await sleep(20);
-  let drawer = d.querySelector("." + P + "drawer");
-  check("the Title drawer reads the catalog description from its subject's shard", t.calls.indexOf("coci_lookup_desc_E.js") >= 0 && /Expository writing and critical reading\./.test(txt(drawer)));
+  let drawer = d.querySelector("#" + P + "panel ." + P + "pdrawer");
+  check("the Title drawer, in the panel, reads the catalog description from its subject's shard", !!drawer && t.calls.indexOf("coci_lookup_desc_E.js") >= 0 && /Expository writing and critical reading\./.test(txt(drawer)));
   check("and the learning outcomes, numbered, with where they were read", drawer.querySelectorAll(".cplcoci-outs ol li").length === 2 && /As printed in the course outline of record/.test(txt(drawer))
-    && /college=eq\.American%20River%20College/.test(t.fetches[0] || ""));
+    && t.fetches.some((u) => /course_outcomes/.test(u) && /college=eq\.American%20River%20College/.test(u)), t.fetches.join(" | "));
   check("and opens the course's M-ID in SkyView", !!Array.from(drawer.querySelectorAll("a")).find((a) => a.getAttribute("href") === "prototype/skyview.html#outline/ENGL%20M1001"));
   const moved2 = dataRows(d).find((tr) => txt(cell(tr, d, "Title")) === "Composition and Reading");
   cell(moved2, d, "Identities").querySelector("button").click();

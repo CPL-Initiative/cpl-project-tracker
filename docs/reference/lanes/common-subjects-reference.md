@@ -39,40 +39,64 @@ for this reference, drawn by the shared `commons_progress.js` from `canonical_su
 run status from `kb/status/subjects.json`, the headline pair, five milestones with You are here, a card for
 each of Sam's eight steps (consolidated to eight: the MQ list, the C-ID and CCN tables, the authority rule,
 the identity codes, one code one MQ discipline, the cross-listings, confirmation, the scan), the procedures
-under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. Reference is the table.
-A count opens the table with its filter; `#canonical-subj4/<filter>`, `/progress`, `/reference` and `/check`
-route from the address (the Commons' step 3). Guard `tests/csr_progress.test.js`; a11y
-`canonical-subj4-progress-dark`, `canonical-subj4-reference`.
+under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. A count opens the List on
+its filter; `#canonical-subj4/<filter>`, `/progress`, `/list` and `/check` route from the address (the Commons'
+step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark`.
 
 **LIVE: the List view (2026-11-01).** `#canonical-subj4/list`, the third word beside Progress and Reference, is the
 Catalog Commons' shared List (`commons_list.js`, lazy-loaded) with this reference's spec in `canonical_subj4.js` (Sam,
 2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one row per MQ discipline (147), A to Z, with its
 Common SUBJ, status (confirmed by a person, by the nightly procedure `csr-confirm-authority@bot`, by a session cohort,
 or open), any collision, the Local SUBJs colleges use and how many, local courses, M-IDs, authority and note. Edit, Edit
-every row and the Status drawer's Confirm this pick write through the table's own path (`canonCheck`, `writeCanon`,
-`writeNote`, now shared by the table's boxes): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
+every row and the Status drawer's Confirm this pick write through one path (`canonCheck`, `writeCanon`,
+`writeNote`): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
 column (no flag field) and no find and replace (a replace on Common SUBJ hands one code to several MQ disciplines; a
 note where no code row exists stands in as the review, so a replace across notes would confirm picks). Guard
-`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`.
+`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`. **A pick waiting for a person
+opens the List on Open** (`#canonical-subj4/open`, `TO.confirm`): the Commons card's unconfirmed issue and the Progress
+view's *Confirm them* once led to a filter whose box saved only a changed code, so Sam found nothing to press
+(2026-11-03). **The List is the workspace
+(2026-11-04, the List norms):** over the List, the engine's line of the subjects row in `kb/status/commons.json` (Open
+and Confirmed by a person set the List's own filters), and the Progress view's opened page folded behind *Hide the
+summary* (prefix `csl-pg-`). An MQ discipline's title opens a side panel: its local subjects (most used first, each
+share), the codes it shares (a collision, or shared by design; another MQ discipline's name opens its panel),
+*Confirm this pick* with its own status line, and the authority, note and identity codes folded. Guard
+`tests/csr_list_panel.test.js`. **The Reference view retired into the List (2026-11-04, SkyPawpaw):** its lists are
+List filters (*No code yet*, *Confirmed*, *On the CCN code*, *On the C-ID code*, *An official code differs*, *Proposed*),
+and every Progress count, old address (`/reference` too) and quickstart hint opens the List; a TOP column takes the TOP
+filter's place (a fuzzy filter only); the head carries the sign-in and *Run the SUBJ check*, whose *show* opens a
+discipline's panel; the panel folds the CPL window and the C-ID and CCN courses on its codes, and lists the *Codes it
+could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
+table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
+`csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
+the injected box CSS with it. **The Local subjects List** (Sam, 2026-11-03: *"yes on
+local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
+code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
+discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /
+`subject_discipline_confirm`, a note as `subject_discipline_note` (both DR-25, Sam's); the map file changes only when a
+session applies the filings under DR-25 with its ripple check. Guard `tests/csr_local_subjects.test.js`; a11y
+`canonical-subj4-local`, `-dark`. NEXT: the Commons card's second count (local codes confirmed by a person) needs the
+confirms synced to a committed file.
 
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
-the authority rule, and that is in no collision with another MQ discipline. Measured 2026-10-19: **121 of 147**
-(122 confirmed, Auto Body Technology in the AUTB collision). Confirmed alone would read 122; adding "no finding
-needing a judgment" would read 106.
+the authority rule, and that is in no collision with another MQ discipline. Measured 2026-11-04: **147 of 147**,
+every MQ discipline with courses complete (133 confirmed by a person, 14 by the nightly procedure or a session cohort;
+no collision). The Commons card's unconfirmed issue leaves its list at zero, by the builder's rule that an empty issue
+is not an issue.
 
-**The measured state, 2026-10-19:**
+**The measured state, 2026-10-19 (the rows the 2026-11-04 scan re-measured say so):**
 
 | what | measure |
 |---|---|
 | MQ disciplines in the handbook's index | 248 (19th edition, read 2026-05-20, re-validated 2026-07-10); 147 carry courses on the map, 101 carry none |
-| picks confirmed by a person | 122 of 147 (the live table holds 121 code rows, all Sam's; Physical Education Disabled Students is a seed-only override); 25 on the data's modal code, 13 of them on the authority's own code, which the nightly confirm takes from its first run; 0 through the validate stage, whose column left the tab (ruling 5) |
+| picks confirmed | 147 of 147 (2026-11-04): 133 by a person, 14 by the nightly procedure or a session cohort; 0 on the data's modal code unconfirmed |
 | on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
 | C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
 | identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
 | collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing returned to Auto Body Technology on Sam's Sheet 101 ruling (22:38Z), so no row sits off its code |
 | by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
-| the daily scan | 61 findings (2026-10-19, after the AGAB re-key and the M1071 ruling): 24 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; no collision |
+| the daily scan | 38 findings (2026-11-04): 19 aligned, 13 weak mnemonics, 3 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; none unconfirmed, no collision. The Commons card counts 17 to confirm or note and 93 stray identity codes on 305 identities |
 | procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
@@ -87,7 +111,7 @@ BIOT, BSOT, CMUS, DENA, DMGR, EET, EMS, FIRE, HIT, WELD, WWTR), which it had ski
 suggestions saw 48 of the 65 C-ID subjects.
 
 **The Commons row** (`kb/_build_commons_status.py` `row_subjects`) reads the same files: the settled pair,
-four known issues with owners, the procedures in force, and deep links into the table.
+four known issues with owners, the procedures in force, and deep links into the List.
 
 ## Sam's eight steps against the record (S425's check, 2026-10-19)
 

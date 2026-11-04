@@ -515,3 +515,91 @@ style (a dashed box, muted centered text) since it shipped; the module now clear
 **RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
 `sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
 curator decides, and the tab opens on its worklist.
+
+## S559 SkyAndromeda, 2026-11-03: the Common Course Reference takes the opened page, the last of them
+
+- **Read the Commons' row, never recount.** The Course page reads `kb/status/commons.json`'s `course` row and its run
+  log, as Exhibits' tiles do, so the S490 to-do (every tab agreeing with the Commons summary) holds by construction
+  here. The three questions needed counts the row lacked, so the builder writes the auditor's six tag counts into
+  `facts.tags` rather than the page fetching the 10 MB `kb/row_audit/latest.json`.
+- **The auditor counts a tag once a card** (checked: the per-card set counter equals `stats.tag_counts`), so *cards free
+  of a tag* = total less the tag's count is a sound row over the one denominator.
+- **commons_page.js's links fall under 24px** in a row (`a` gets no min-height, its buttons do): a host whose rows link out
+  (here SkyView, an external page) adds `a { display:inline-block; min-height:24px }` under its prefix. A host with no
+  h2 above the page skips h1 to h3; COCI Lookup's header is a span, so the view adds its own h2.
+
+## Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget again)
+
+The per-reference opened-page paragraphs, verbatim as the lane carried them on 2026-11-03:
+
+**The opened page, one renderer (S556, 2026-11-03).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
+the mock's opened page for any reference: the progress line over its one denominator, *Needs attention* with an action
+each and the team's next step, and the three question groups with every count over one denominator; an unread count says
+*Could not be read*. First Light tokens (the Commons tab alone wears Malone's look). **Exhibits carries it** as its
+**Progress** view, first in the views row, at `#exhibits/progress`, and the Common Exhibits card opens there; the tab
+still opens on Review (Sheet 147). The headline is the Commons row's pair (Sam's keep, Sheets 107 and 108); the groups
+read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progress view stands as kept. Guards
+`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`. **The CR Reference
+carries it too (S556):** its Progress view draws the page first and the S437 milestones and parts under *Details*,
+closed; the three questions are counted per wording from the worklist the tab holds (grouped, official number, statewide
+line; units stated, units agree; two or more colleges, two or more credentials), and the card opens
+`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54). **Subjects
+too (S556):** the page over the 147 MQ disciplines with courses, with questions that fit a code (what it is called, whose
+code it is, how it reaches the courses); the milestones and steps under *Details*, the procedures and findings below.
+Guard `tests/csr_progress.test.js` (78), a11y `canonical-subj4-progress` (320 to 1440) and `-dark`.
+
+**CPL Pathways too (S558, 2026-11-03):** the Program Requirements tab's Progress view draws the page first and the
+dash (milestones, parts, the whole harvest, the calls) under *Details*, closed; opening a call opens Details. The
+denominator is COCI's active program, the headline's own unit, and the three questions fit a program: where it is read
+from (a college with a catalog address, with a reading procedure), what it requires (read, units add up, nothing
+added), whether it matches the state's record (every course COCI lists placed, complete). A record on a program COCI
+does not list never counts; a failed active read says *Could not be read*. `commons_page.js` loads on the first
+Progress render. Guard `tests/program_requirements_page.test.js` (16); a11y `program-requirements-progress` and
+`-dark` wait for the page and open Details.
+
+**The Common Course Reference too (S559, 2026-11-03, #2720):** COCI Lookup's **Progress** view, first in its views row
+(the tab still opens on the Courses List), at `#coci-lookup/progress`; the Commons card's third word, *Open Progress*.
+It reads the Commons' own row (`kb/status/commons.json`, key `course`) and the run log it names, so its headline is the
+card's pair: ready (the auditor's 0.85 or better) of the auditor's cards, 3,205 of 27,581. Needs attention: needs
+repair, then the row's issues with who fixes each, Open SkyView on each. The three questions (what it is called, where
+it sits, whether its courses agree) count the cards free of one auditor tag; the builder writes those six tag counts
+into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
+recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
+Every reference now carries the opened page.
+
+## Sheet 160 answered (S563 SkyBode, 2026-11-03)
+
+Sam answered card 1 *keep* at 12:44Z with a note, the whole sheet reviewed: *"We should count a common course reference even
+when a person has not confirmed it. The personal confirmation is an attribute we can give the reference when it occurs and we
+can then count confirmed CCRs, until which time we can use the CCRs to crosswalk local titles as best they can--even knowing
+they may need more work, folding with other courses or CCRs, or reminting. We will use them for what we can, and in the
+process of using them, reveal opportunities and gaps and misalignments to correct and then confirm when confidence is high
+enough. Hopefully, in the process of using imperfect CCRs, we can add lessons, rules, principles that will sharpen and
+strengthen our AI routines designed to create and manage the CCRs and all our common references."* The Course page keeps
+the auditor's *ready* as complete; the lane's NEXT is a confirmed count beside it.
+
+## The confirmed count (S564 SkyHoag, 2026-11-03)
+
+Built Sheet 160's attribute: *Confirmed by a person in SkyView*, 812 of the auditor's 27,581 cards (#2726). Three things
+learned on the way. The auditor's cards are not identities: an M-ID that is also a merge target is scored twice (kinds
+`C` and `X`), so the count is taken in cards to share the page's one denominator (542 identities). SkyView's explicit
+Verify (`validated_at`, Sam's 2026-06-10 *"it shouldn't change to Verified until I verify it"*) has never been pressed,
+so the count reads person-made saves instead (a title, a discipline, a cross-listing, a merge). And
+`kb/coci_curation.json` keeps one reviewer a card, the latest, so a cohort save after a person's hides the person: the
+count is a floor until the overlay keeps a reviewer a field.
+
+**On all five (S565, 2026-11-03).** Sam: *"yes to both, build them for all four"*, answering whether a course placed into
+a card confirms that card too, and whether the other references should count the same attribute. Each row now carries
+`confirmed_pair()` as its second pair, over the first pair's denominator, with the share also complete: Programs 32 checked
+by a person (28 complete); Exhibits 1,173 titles a person stamped (complete is the stamp, so no share); Courses 957 cards
+(a person's save keyed on the card, 812, or placing a course into it, 145 more; 152 ready); CR 97 wordings a curator's
+decision names (all settled); Subjects 122 MQ disciplines a person confirmed (all settled). CPL Pathways' Confirm writes
+only to `program_requirement_records`, so the committed records undercount (20 against 32 live); `kb/_sync_program_checked.py`
+commits the checked list daily, college, number and day, never the address. Each Progress page draws it as one line under
+its bar (`progress.confirmed`), the Commons card as one line under its figure. The lesson: S564 and S565 built the first
+version at the same hour because a scheduled firing is not in `list_sessions`; read `main`'s commits before starting a
+queue item, not only at session start.
+
+## The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)
+
+Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.

@@ -97,41 +97,9 @@ Crafton Hills's walk and the pending-run rule, Taft's slashed subject, Merced's 
 Cañada's eleven, read from the catalog's own words: verbatim in
 `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-## S420 SkyTanoak (2026-10-19): Cañada's re-read landed, a Jev sitting over the failing records, the second reader ruled
+## S420: moved to the archive (S562 compaction)
 
-- **The reader change paid as predicted.** `step=read` with `extract=1` on `claude/s420-canada` (run 39190086831) kept
-  47 records filed from the same page and re-extracted the 26 whose page moved, for about $1.85 (21 of the 26 passing);
-  `reread` replaced 17 rows and `load` inserted 8. Cañada's filed set holds 73 of its 75 listed programs: 56 pass, 17
-  fail arithmetic, 3 fail coverage (COCI lists one course the printed section never names), 2 are unfound (Elementary
-  Teacher Education A.A.-T, Cloud Computing). The headline moved from 11,621 to 11,630 complete.
-- **A data PR carries its display build or lints fail.** `tests/roep_display_test.py` reads the committed display
-  receipt against the branch's record folders: the Cañada PR failed it (run 39191885428) until `kb/_build_roep_display.py`
-  ran on the branch and its two outputs were committed (build 3aa52b4afcb6). One display build per wave, on the branch;
-  `step=display` on main applies it after the merge (run 39194711397).
-- **The tail needs a different instrument** (Sam's question of ~02:33Z: is this the most effective way to the
-  systemwide dataset?). The body of the corpus read at a college an hour; S419 spent a session on eleven records. Two
-  judgment layers now sit over the failing records, both ranking and suggesting, neither writing: `kb/_jev_harvest.py`
-  (a typed cause and owner per record, uncalibrated until a person's verdicts set a gate; `typesafe-smoke.yml` input
-  `harvest=<college>`, the runner capturing the college first so Jev sees the page text), and the second reader Sam ruled
-  on Sheet 97 at 03:11Z (Build with Grok; waits on the `XAI_API_KEY` secret; `xai-smoke.yml` proves it). KB note:
-  `docs/kb-notes/methodology-a-harvests-tail-needs-a-different-instrument.md`.
-- **Dispatch the runner's steps one at a time**: a second pending dispatch in the same concurrency group cancels the
-  first (`actions-newer-pending-cancels-older-pending-2026-10-18`). Read, reread, load each waited for the one before.
-
-### Moved from the lane (S420 compaction)
-
-**The code finder reads a run of numbers after one subject** ("BUSAD 101, 106, 120") and a kerned three-digit number
-(#2206); **the code net and the scorer read a slashed subject** (`CNA/N 621`, and the slash-free `CNAN626` the state's
-file sometimes stores, #2222; the scorer also reads `THART/S 124X2` as the state's `THART124X2`, S414). **The scorer has
-six readings of catalog text** (flat, the line-end hyphen two ways, the spaced hyphen, stand-in ligature glyphs, a list
-marker at a line's end, #2207). **Cañada's eleven (S419):** the 11 records the load left out placed no listed course;
-the catalog heads each section with the award's letters ("CA  Business Assistant"), wraps a long title onto a short next
-line, and opens a list on the page after its heading, and `pdf_heading()`/`_pdf_pick()` read all three
-(`PDF_AWARD_PREFIX`, `PDF_WRAP_CHARS`; 276 checks). Three stayed out because COCI lists one course the printed section
-never names (Business Administration A.S., Theater Arts A.A., Technical (Apparel Industry Orientation)): a COCI
-comparison finding. Its capture-only read (S413, run 39103943654) had found the same pages, the business certificates
-sharing pages 148-154 and two on the course availability table.
-
+Cañada's re-read, a Jev sitting over the failing records, the second reader ruled: verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S421 SkyTupelo (2026-10-19): the second reader built, three Jev sittings read, Cañada's Cal-GETC step and the six-row rollback
 
@@ -1146,3 +1114,20 @@ From Sheet 144 card 2's paragraph: S529 rescored the filed records (`kb/_program
 - **Read "once a UTC day" against the day the last run was made, not the session's.** Handoff 549 said *Step 11 on the
   new UTC day*; this session fired at 11:12Z on the same day as the index (#2685, 06:18Z) and ran the trial anyway.
   Cost: one 5-minute run on a host already idle. The full read waits for 2026-11-03.
+
+## S559 SkyAndromeda (2026-11-03, the 08:12Z firing): Santa Ana loaded, Las Positas's trial passes
+
+- **Santa Ana's load:** `.load` = `host=sac` (the helper's `--college santa_ana` prints it; the file on main read
+  `host=cccd`), load run 41602658602, 1,366 inserted, 7 skipped, receipt on the branch in about five minutes.
+- **The receipt commit started no `test` again,** and marking the PR ready did not start one either. Restoring
+  `.load` to main's text (S547's pattern) is the session commit that gives CI a head.
+- **Las Positas's trial read 12 of 12** (4 to 7 outcomes a course), so it moves to a full read; the quota (one full read,
+  one preparation run per UTC day) held it to 2026-11-04.
+- **A worktree for the SLO branch** keeps the main checkout on the session's own branch; `git worktree add` on this
+  repo takes about two minutes.
+
+## Moved from the lane (S562, 2026-11-03; the lane passed its 20,000-byte budget)
+
+The catalog sweep paragraph, verbatim as the lane carried it:
+
+🔨 **The catalog sweep (S394-S414; Sam's aim of 2026-10-14: every catalog, then curated audit sweeps).** One branch per college, never two on one host; a wave branch merges the loaded ones, their dated reads and one display build. A free capture-only read (`extract=0`) comes first wherever a host's shape is new to the reader, and a free page read of the host's own outline (`kb/college_reads/`) before any reader change; the session reaches neither college hosts nor run artifacts, so a PDF's text comes from a page read. **Dispatch every read with `college=`** (lessons S402). Extraction runs under the $40 go. **The readers** (CourseLeaf, curriQunet, eLumen, Acalog, Coursedog, the whole-catalog PDF): lessons, *Moved from the lane (S421 compaction)*. The code finder's, the code net's and the scorer's readings of catalog text (#2206, #2207, #2222, S414): lessons, *Moved from the lane (S420 compaction)*. **A reconcile rescores a record only on the page it was extracted from, or on a fresh capture of the same file that prints the record's own heading** (`own_heading_kept`, S530). **The hand-filed step** (Sam's ruling 2, 2026-10-17): `kb/hand_filed_catalogs/` and its README. **Reader invariants** (a PDF step naming its file, Coursedog's heading reads, a kept record from its source's page, a page read's vendor hosts; #2213, #2216): lessons, *Moved from the lane (S421 compaction)*. **Sam's go of 2026-10-17 (`sam-trust-procedures-no-per-item-approval-2026-10-17`):** harvest calls proceed on their procedures without a card, and a write the Supabase guard holds goes through `supabase-migrate.yml` (`kb/migrations/.apply`), never to Sam as a paste. **Each wave's colleges, counts and the per-college rescoring history: lessons S406-S415** (moved from the lane, S419). **No record (4):** North Orange Continuing Education, San Jose City (CourseLeaf), Diablo Valley, Santiago Canyon (eLumen). **S452-S457** (the waves, Hartnell's and Sierra's readings, the `meets` reading): lessons archive 3, *Moved from the lane (S474 compaction)*. **A Coursedog catalog reads from its site by default** (`route=pdf` keeps the PDF step for one run, S451). **`step=display` applies the committed build; it never builds one.** Run `kb/_build_roep_display.py` on the wave branch first (needs `openpyxl`), commit its two outputs, then apply on `main` after the merge (S452). ✅ **Sam's standing rule (Open Asks Sheet 118 card 1, 2026-10-23):** the older-build rows each wave leaves behind are removed at each wave with a before-values receipt by the S456 method, no card. Sheet 118 cards 2 and 3 *keep* (Hartnell's Local GE at 23; Cal-GETC 34 on a local degree whose own tab names it). Sam ruled **narrow** on the scorer's `meets` reading (Sheet 120 card 1). Sheet 115 card 1, the S456 and S459 removals and the S459 rescore: lessons archive 3, *Moved from the lane (S474 compaction)*. Display build e021a2824548's apply (S459) and Hartnell's thirteen still failing (S488): lessons, *Moved from the lane (S530 compaction)*. The two S448 offers wait on Sam's word. **Later (Sam, Sheet 112 card 1, 2026-10-22 11:16Z, his own call):** no note goes to Program Mapper's vendor for the 63 colleges' maps for now (`cpl_memory` `sam-sheet-112-program-mapper-later-2026-10-22`). **List the thin colleges live, and look for a shared cause, first** (S442). On screen the reference is **CPL Pathways** (Sam, 2026-10-21). **Parked for the reader** (nine colleges and two record sets; Ventura and Oxnard read in S442): lessons, *Moved from the lane (S421 compaction)*. **A reconcile step for a figure a local degree never carries reads transfer degrees only** (`awards: transfer`, S421): lessons, *Moved from the lane (S542 compaction)*. **Verify a reader change on the catalog's own words before any dispatch** (`kb/college_reads/`; a PDF plan takes `pdf_span` and `pdf_after`, S421). **A renumbered course** maps through `course_renumbers` (S423-S424): lessons archive 3, *Moved from the lane (S495 compaction)*.

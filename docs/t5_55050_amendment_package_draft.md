@@ -78,7 +78,7 @@ contested one. **Tier 2 is retained below, complete and ready to file separately
 > credit for prior learning, including during the college exploration and admission
 > process; and**
 >
-> **(4) Utilize the Chancellor's Office systemwide credit for prior learning
+> **(4) Use the Chancellor's Office systemwide credit for prior learning
 > infrastructure, or supply regular and frequent updates of required data to that
 > infrastructure, for reporting and to make credit for prior learning opportunities
 > available on related Chancellor's Office, intersegmental, and agency partner

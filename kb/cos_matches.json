@@ -1,9 +1,9 @@
 {
  "_about": "CareerOneStop authority matches for CER unified titles (kb/_match_cos_authority.py). DERIVED overlay — the CER renders these as ✓ COS badges; display requires the attribution below.",
  "_attribution": "Source: CareerOneStop (www.careeronestop.org), sponsored by the U.S. Department of Labor, Employment and Training Administration; data maintained by the Minnesota Department of Employment and Economic Development (DEED).",
- "_authority_synced_at": "2026-10-03T13:28:00Z",
- "_generated_at": "2026-10-03T13:28:08Z",
- "count": 89,
+ "_authority_synced_at": "2026-11-03T16:24:25Z",
+ "_generated_at": "2026-11-03T16:24:33Z",
+ "count": 121,
  "matches": {
   "ACE Health Coach Certification": {
    "name": "ACE Health Coach Certification",
@@ -64,6 +64,21 @@
    "acronym": "CAP",
    "type": "Core"
   },
+  "Aerospace Engineering": {
+   "name": "Aerospace Engineering",
+   "org": "NOCTI",
+   "tier": "exact",
+   "id": "14650-A",
+   "type": "Core"
+  },
+  "Autodesk Certified User": {
+   "name": "Autodesk Certified User",
+   "org": "Autodesk, Inc.",
+   "tier": "exact",
+   "id": "13957-D",
+   "acronym": "ACU",
+   "type": "Product/Equipment"
+  },
   "Autodesk Certified User/Professional — AutoCAD": {
    "name": "AutoCAD Certified Professional",
    "org": "Autodesk, Inc.",
@@ -123,6 +138,14 @@
    "acronym": "CAPM",
    "type": "Core"
   },
+  "Certified Building Official": {
+   "name": "Certified Building Official",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "8647-A",
+   "acronym": "CBO",
+   "type": "Core"
+  },
   "Certified Ethical Hacker (CEH)": {
    "name": "Certified Ethical Hacker",
    "org": "EC-Council",
@@ -130,6 +153,14 @@
    "id": "9224-A",
    "acronym": "C/EH",
    "type": "Core"
+  },
+  "Certified Information Systems Security Professional (CISSP)": {
+   "name": "Certified Information Systems Security Professional",
+   "org": "International Information Systems Security Certification Consortium, Inc.",
+   "tier": "exact",
+   "id": "10799-B",
+   "acronym": "CISSP",
+   "type": "Advanced"
   },
   "Certified Nurse Assistant (CNA) Certification": {
    "name": "Certified Nurse Assistant",
@@ -153,6 +184,14 @@
    "id": "0486-A",
    "acronym": "CPP",
    "type": "Core"
+  },
+  "Certified SOLIDWORKS Associate (CSWA)": {
+   "name": "Certified SOLIDWORKS Associate",
+   "org": "SOLIDWORKS",
+   "tier": "exact",
+   "id": "12842-D",
+   "acronym": "CSWA",
+   "type": "Product/Equipment"
   },
   "Certified Strength and Conditioning Specialist (CSCS)": {
    "name": "Certified Strength and Conditioning Specialist",
@@ -178,6 +217,14 @@
    "acronym": "CDA",
    "type": "Core"
   },
+  "Cisco Certified Network Professional (CCNP) Security": {
+   "name": "Cisco Certified Network Professional",
+   "org": "Cisco Systems, Inc.",
+   "tier": "acronym",
+   "id": "1271-D",
+   "acronym": "CCNP",
+   "type": "Product/Equipment"
+  },
   "Commercial Building Inspector": {
    "name": "Commercial Building Inspector",
    "org": "International Code Council",
@@ -193,6 +240,14 @@
    "id": "10936-B",
    "acronym": "CDL",
    "type": "Advanced"
+  },
+  "Commercial Mechanical Inspector": {
+   "name": "Commercial Mechanical Inspector",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "3394-A",
+   "acronym": "CMI",
+   "type": "Core"
   },
   "CompTIA Certification (unspecified)": {
    "name": "CompTIA A+ Certification",
@@ -279,6 +334,13 @@
    "id": "5371-A",
    "type": "Core"
   },
+  "ESCO Master Specialist — Principles of Electrical and Refrigeration Theory": {
+   "name": "Principles of Electrical and Refrigeration Theory",
+   "org": "ESCO Group",
+   "tier": "contains",
+   "id": "11958-A",
+   "type": "Core"
+  },
   "Emergency Medical Responder": {
    "name": "Emergency Medical Responder",
    "org": "National Registry of Emergency Medical Technicians",
@@ -311,12 +373,59 @@
    "acronym": "EMT",
    "type": "Core"
   },
+  "Emergency Medical Technician (EMT) Certification": {
+   "name": "Emergency Medical Technician",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "acronym",
+   "id": "0291-A",
+   "acronym": "EMT",
+   "type": "Core"
+  },
+  "Emergency Medical Technician Basic": {
+   "name": "Emergency Medical Technician",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "contains",
+   "id": "0291-A",
+   "acronym": "EMT",
+   "type": "Core"
+  },
+  "Emergency Medical Technician Preparation": {
+   "name": "Emergency Medical Technician",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "contains",
+   "id": "0291-A",
+   "acronym": "EMT",
+   "type": "Core"
+  },
+  "Emergency Medical Technician Preparation (EMT Prep)": {
+   "name": "Emergency Medical Technician",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "contains",
+   "id": "0291-A",
+   "acronym": "EMT",
+   "type": "Core"
+  },
+  "Engineering Graphics": {
+   "name": "Certified in Engineering Graphics",
+   "org": "Association of Technology, Management, and Applied Engineering",
+   "tier": "contains",
+   "id": "8183-A",
+   "acronym": "CEG",
+   "type": "Core"
+  },
   "Entrepreneurship and Small Business (ESB) Certification": {
    "name": "Entrepreneurship and Small Business",
    "org": "Pearson",
    "tier": "contains",
    "id": "13468-E",
    "type": "Skill"
+  },
+  "Epic Games Game Design Professional Certificate": {
+   "name": "Epic Games Game Design Professional Certificate",
+   "org": "Epic Games",
+   "tier": "exact",
+   "id": "14816-D",
+   "type": "Product/Equipment"
   },
   "FAA Certified Flight Instructor — Instrument (CFII)": {
    "name": "Certified Flight Instrument Instructor Rating",
@@ -333,6 +442,36 @@
    "id": "12986-C",
    "type": "Specialty"
   },
+  "FCC General Radiotelephone Operator License (GROL)": {
+   "name": "General Radiotelephone Operator License",
+   "org": "Federal Communications Commission",
+   "tier": "contains",
+   "id": "14090-D",
+   "acronym": "PG",
+   "type": "Product/Equipment"
+  },
+  "Fire Inspector I": {
+   "name": "Fire Inspector I",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "5176-A",
+   "type": "Core"
+  },
+  "Fire Inspector II": {
+   "name": "Fire Inspector II",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "5177-B",
+   "type": "Advanced"
+  },
+  "Fire Investigator": {
+   "name": "Certified Fire Investigator",
+   "org": "International Association of Arson Investigators",
+   "tier": "contains",
+   "id": "5786-A",
+   "acronym": "CFI",
+   "type": "Core"
+  },
   "Firefighter 2": {
    "name": "Firefighter Type 2",
    "org": "National Wildfire Coordinating Group",
@@ -340,6 +479,13 @@
    "id": "13379-B",
    "acronym": "FFT2",
    "type": "Advanced"
+  },
+  "First Aid": {
+   "name": "MEDIC First Aid",
+   "org": "HSI",
+   "tier": "contains",
+   "id": "13495-A",
+   "type": "Core"
   },
   "First Aid, CPR, and AED Certification": {
    "name": "First Aid Certification",
@@ -364,11 +510,32 @@
    "acronym": "AC/DC",
    "type": "Core"
   },
+  "ISA Certified Arborist": {
+   "name": "Certified Arborist",
+   "org": "International Society of Arboriculture",
+   "tier": "contains",
+   "id": "1752-A",
+   "type": "Core"
+  },
   "Introduction to Electricity": {
    "name": "Introduction to Exploring Electricity",
    "org": "Festo",
    "tier": "contains",
    "id": "14507-A",
+   "type": "Core"
+  },
+  "Introduction to Electronics": {
+   "name": "Introduction to Exploring Electronics",
+   "org": "Festo",
+   "tier": "contains",
+   "id": "14508-A",
+   "type": "Core"
+  },
+  "Introduction to Engineering": {
+   "name": "Introduction to Process Engineering",
+   "org": "Festo",
+   "tier": "contains",
+   "id": "14509-A",
    "type": "Core"
   },
   "Introduction to Mechatronics": {
@@ -456,6 +623,14 @@
    "acronym": "RNC-MNN",
    "type": "Specialty"
   },
+  "Mechanical Plans Examiner": {
+   "name": "Mechanical Plans Examiner",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "3405-A",
+   "acronym": "MPE",
+   "type": "Core"
+  },
   "Medical Surgical Nursing Advanced": {
    "name": "Medical-Surgical Nursing",
    "org": "ANA Enterprise",
@@ -473,6 +648,14 @@
    "type": "Specialty"
   },
   "Medical Surgical Nursing Lab Advanced": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Medical Surgical Nursing — Older Adult": {
    "name": "Medical-Surgical Nursing",
    "org": "ANA Enterprise",
    "tier": "contains",
@@ -529,6 +712,27 @@
    "tier": "contains",
    "id": "14455-D",
    "type": "Product/Equipment"
+  },
+  "Microsoft Certified: Microsoft 365 Administrator Expert": {
+   "name": "Microsoft 365 Certified: Administrator Expert",
+   "org": "Microsoft Corporation",
+   "tier": "contains",
+   "id": "14454-D",
+   "type": "Product/Equipment"
+  },
+  "Microsoft Certified: Power BI Data Analyst Associate": {
+   "name": "Microsoft Certified: Power BI Data Analyst Associate",
+   "org": "Microsoft Corporation",
+   "tier": "exact",
+   "id": "12366-D",
+   "type": "Product/Equipment"
+  },
+  "NATE Ground Source Heat Pump Loop Installer": {
+   "name": "Ground Source Heat Pump Loop",
+   "org": "North American Technician Excellence, Inc.",
+   "tier": "contains",
+   "id": "6250-C",
+   "type": "Specialty"
   },
   "NCCER Welding Level 1": {
    "name": "Level 1 - Welding",
@@ -617,12 +821,28 @@
    "acronym": "RBI",
    "type": "Core"
   },
+  "Residential Mechanical Inspector": {
+   "name": "Residential Mechanical Inspector",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "3805-A",
+   "acronym": "M1",
+   "type": "Core"
+  },
   "Residential Plans Examiner": {
    "name": "Residential Plans Examiner",
    "org": "International Code Council",
    "tier": "exact",
    "id": "6914-A",
    "acronym": "R3",
+   "type": "Core"
+  },
+  "Robotics for Manufacturing": {
+   "name": "Robotics in Manufacturing Fundamentals",
+   "org": "Society of Manufacturing Engineers",
+   "tier": "contains",
+   "id": "14361-A",
+   "acronym": "RMF",
    "type": "Core"
   },
   "ServSafe Food Protection Manager": {
@@ -647,6 +867,14 @@
    "acronym": "SCIL",
    "type": "Core"
   },
+  "System Administrator": {
+   "name": "Certified System Administrator",
+   "org": "Xinuos",
+   "tier": "contains",
+   "id": "10512-A",
+   "acronym": "CSA",
+   "type": "Core"
+  },
   "Traffic Control Technician": {
    "name": "Traffic Control Technician",
    "org": "American Traffic Safety Services Association",
@@ -663,7 +891,21 @@
    "acronym": "CLTD",
    "type": "Advanced"
   },
+  "Unity Certified Professional: Programmer": {
+   "name": "Certified Professional: Programmer",
+   "org": "Unity Technologies",
+   "tier": "contains",
+   "id": "15297-A",
+   "type": "Core"
+  },
   "Welding 1": {
+   "name": "Level 1 - Welding",
+   "org": "National Center for Construction Education and Research",
+   "tier": "contains",
+   "id": "13323-A",
+   "type": "Core"
+  },
+  "Welding Level 1": {
    "name": "Level 1 - Welding",
    "org": "National Center for Construction Education and Research",
    "tier": "contains",

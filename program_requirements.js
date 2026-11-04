@@ -1250,6 +1250,8 @@
       ".prh .prl-table th.prl-box, .prh .prl-table td.prl-box { padding-left:2px; padding-right:2px; }",
       ".prh .prl-table tbody td.prl-n { text-align:right; }",
       ".prh .prl-table tbody tr:nth-child(even) { background:transparent; }",
+      ".prh .prl-pn-dec { margin:10px 0 6px; }",
+      ".prh .prl-acts { display:flex; flex-wrap:wrap; gap:6px 16px; }",
       ".prh-quiet { color:var(--text-muted); }",
       ".prh-caution { color:var(--mustard-text); font-weight:600; }",
       ".prh-small { font-size:.8125rem; }",
@@ -3004,7 +3006,7 @@
     var liveA = A ? A.filter(function (a) { return LIVE_ADDENDA.indexOf(a.status) >= 0; }) : null;
     /* Every record in the index, counted once: read, passing or failing (and on which check),
        and, where COCI's active list was read, complete (an active program, passing). */
-    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0 };
+    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0, activeFail: 0, checkedComplete: 0 };
     P.forEach(function (p) {
       colleges[p.college] = 1;
       var f = machineFails(p), act = !!(K && K[keyOf(p)]);
@@ -3014,7 +3016,7 @@
         if (f.indexOf("courses") >= 0) n.courses++;
         if (f.indexOf("off-list") >= 0) n.added++;
       } else n.pass++;
-      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; } }
+      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; if (p.checked) n.checkedComplete++; } else n.activeFail++; }
     });
     var procList = procs.map(function (r) { return short(r.college) + (r.procedure.v != null ? " v" + r.procedure.v : ""); });
     var x = {
@@ -3024,10 +3026,10 @@
       currentYear: R.filter(function (r) { return r.catalog_year === CURRENT_YEAR; }).length,
       censusDay: dayOf(latest(R.map(function (r) { return r.census_checked_at; }))),
       nextCensus: ptDay(nextWeekly(now, 0, 10, 29)),
-      checked: P1.length,
+      checked: P1.length, checkedComplete: K ? n.checkedComplete : null,
       checkedDay: dayOf(latest(P1.map(function (p) { return p.checked_at; }))),
       read: P.length, readColleges: Object.keys(colleges).length,
-      passing: n.pass, failing: n.fail, failUnits: n.units, failCourses: n.courses, failAdded: n.added,
+      passing: n.pass, failing: n.fail, failingActive: K ? n.activeFail : null, failUnits: n.units, failCourses: n.courses, failAdded: n.added,
       complete: K ? n.complete : null, completeColleges: K ? Object.keys(doneCols).length : null,
       activeUnread: K && G.active != null ? G.active - n.onActive : null, notActive: K ? P.length - n.onActive : null,
       mapsPublished: published.length, mapsRead: mapsRead.length, mapsSettled: mapsSettled.length,
@@ -3133,7 +3135,121 @@
       foot: "The five parts count equally. The confirm step is left out: it becomes an optional college confirm once the reading procedures prove stable." }
   };
   var HOST = { section: section, goControl: goControl, callAnswered: callAnswered, callRecords: callRecords, callLinks: callLinks, callDone: callDone, goToCall: goToCall };
-  function viewProgress() { return CP.render(PROGRESS, progressContext(new Date()), state.progress || {}, HOST); }
+  /* ── the opened page (S558): the CPL Commons mock's shape, drawn by commons_page.js ──
+     Sam locked the mock on 2026-11-02 (S552); its opened page is the pattern for every reference: the progress line
+     over one denominator, Needs attention with an action each, three questions with every count over that same
+     denominator. Here the denominator is COCI's active program, the headline's own unit (complete: an active program
+     whose record passes the three machine checks, Sheet 95 card 2). A program carries requirements, not a name or a
+     credit, so the questions fit a program: where it is read from, what it requires, whether it matches the state's
+     record. Every figure is counted over the active programs from the reads the dash already holds (progressContext
+     and COCI's active keys), so the two cannot disagree; the dash stays one word away, under Details. */
+  function activeCounts(x) {
+    var K = state.progress && state.progress.activeKeys;
+    if (!K) return null;
+    var R = x.R || [], withUrl = {}, withProc = {}, c = { url: 0, proc: 0, read: 0, units: 0, added: 0, listed: 0 };
+    R.forEach(function (r) { if (r.catalog_url) withUrl[r.college] = 1; if (r.procedure) withProc[r.college] = 1; });
+    Object.keys(K).forEach(function (k) {
+      var col = k.split("|")[0];
+      if (withUrl[col]) c.url++;
+      if (withProc[col]) c.proc++;
+    });
+    rows().forEach(function (p) {
+      if (!K[keyOf(p)]) return;
+      var f = machineFails(p);
+      c.read++;
+      if (f.indexOf("units") < 0) c.units++;
+      if (f.indexOf("off-list") < 0) c.added++;
+      if (f.indexOf("courses") < 0) c.listed++;
+    });
+    return c;
+  }
+  function pageSpec(x) {
+    var Q = x.Q, a = activeCounts(x), go = function (to) { return function () { goTo(to); }; };
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var open = calls.filter(function (c) { return !callAnswered(c); });
+    var first = function (t) { var m = String(t || "").trim().match(/^[^.]*\.(?=\s|$)/); return m ? m[0] : String(t || "").trim(); };
+    var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + first(Q.changes[0].text) : "";
+    var within = x.read > 0 ? fmt(x.read) + " records read at " + x.readColleges + (x.readColleges === 1 ? " college" : " colleges") +
+      (x.notActive ? ", " + fmt(x.notActive) + " of them on programs COCI does not list as active." : ".") : "";
+    var plural = function (n, one, many) { return n === 1 ? one : many; };
+    var R = x.R || [];
+    var items = [
+      /* Over the page's denominator, as the Commons card counts it (S560): an active program whose record fails. */
+      x.failingActive != null
+        ? { n: x.failingActive, words: plural(x.failingActive, "active program whose record fails a machine check; the fix goes to its college's reading procedure.",
+          "active programs whose record fails a machine check; the fix goes to each college's reading procedure."), action: { words: "Open them", go: go(TO.fail) } }
+        : { n: x.failing, words: plural(x.failing, "record fails a machine check; the fix goes to its college's reading procedure.",
+          "records fail a machine check; the fix goes to each college's reading procedure."), action: { words: "Open them", go: go(TO.fail) } },
+      { n: x.activeUnread, words: plural(x.activeUnread, "active program no read has reached yet.", "active programs no read has reached yet.") },
+      { n: R.length - x.withUrl, words: plural(R.length - x.withUrl, "college needs a catalog address.", "colleges need a catalog address."),
+        action: { words: "Open them", go: go(TO.noAddress) } },
+      { n: R.length - x.procedures, words: plural(R.length - x.procedures, "college has no reading procedure yet.", "colleges have no reading procedure yet."),
+        action: { words: "Open them", go: go(TO.noProcedure) } },
+      { n: x.addendaUnread, words: plural(x.addendaUnread, "catalog addendum to read.", "catalog addenda to read."), action: { words: "Open them", go: go(TO.addenda) } },
+      { n: x.mapsPublished - x.mapsSettled, words: plural(x.mapsPublished - x.mapsSettled, "published program map to read or settle.", "published program maps to read or settle."),
+        action: { words: "Open them", go: go(TO.maps) } }
+    ].filter(function (i) { return i.n == null || i.n > 0; });
+    open.forEach(function (c) {
+      var i = calls.indexOf(c);
+      items.push({ n: 1, words: "decision for " + x.decider + ": " + (c.title || "an open call") + ".",
+        action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link }
+          : { words: "Answer it", go: function () { goToCall(i); } } });
+    });
+    var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
+    var r = function (label, k, to) { return { label: label, n: a ? a[k] : null, go: go(to || TO.records) }; };
+    return {
+      label: "Common Programs", prefix: "pr-pg-", reading: false,
+      status: open.length ? "Needs you" : "In progress",
+      lede: "CPL Pathways: each active program's requirements, read from its college's own catalog, so a learner can see which courses CPL clears.",
+      read: state.progress && state.progress.readAt ? "Figures read " + dayOf(state.progress.readAt) + "." : "",
+      links: [x.procedures ? { words: "How it is kept: " + fmt(x.procedures) + " reading procedures", go: go(TO.procedures) } : null,
+        { words: "Open CPL Pathways", href: TO.pathways.href },
+        sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
+      progress: { n: x.complete, of: x.active, short: "complete", words: "active programs harvested complete",
+        // Confirmed by a person, beside complete (Sheet 160; Sam, S565): a person's Confirm, read live.
+        confirmed: { n: x.checked, done: x.checkedComplete, doneWords: "complete" },
+        recently: [recently, within].filter(Boolean).join(" "),
+        calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmt(open.length) + " decisions wait on ") + x.decider + "."
+          : "No decisions wait on " + x.decider + ".") : "",
+        error: (x.errors && x.errors.active) || null },
+      attention: { items: items, empty: "Nothing in the harvest waits on a person.",
+        next: Q && Q.next_step && Q.next_step.title ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "" },
+      groups: [
+        { q: "Where is it read from?", rows: [r("At a college with a catalog address", "url", TO.colleges),
+          r("At a college with a reading procedure", "proc", TO.procedures)] },
+        { q: "What does it require?", rows: [r("Read from its catalog", "read"), r("The units add up", "units"),
+          r("Nothing added the catalog does not print", "added")] },
+        { q: "Does it match the state's record?", rows: [r("Every course COCI lists placed", "listed"),
+          { label: "Complete: passes all three checks, so Sierra quotes it", n: x.complete, go: go(TO.complete) }] }
+      ],
+      of: a ? x.active : null, ofWords: "active programs in COCI",
+      foot: "The records are staging: read by machine, checked by the reading procedures. This page reads the harvest live; the CPL Commons card counts the records committed at the last checkpoint, so between checkpoints this page runs ahead of it."
+    };
+  }
+  /* commons_page.js loads the first time Progress opens; until it arrives (or should it fail) the dash draws alone. */
+  var PAGE = { loading: false, failed: false };
+  function withPage() {
+    if (window.CPL_COMMONS_PAGE || PAGE.loading || PAGE.failed) return;
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") { PAGE.failed = true; return; }
+    PAGE.loading = true;
+    T.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () {
+      PAGE.loading = false;
+      if (!window.CPL_COMMONS_PAGE) { PAGE.failed = true; return; }
+      // The List folds the same page under its line, so it repaints too.
+      if ((state.view === "progress" || state.view === "list") && document.getElementById(ROOT_ID)) render();
+    });
+  }
+  function viewProgress() {
+    var x = progressContext(new Date());
+    var dash = CP.render(PROGRESS, x, state.progress || {}, HOST);
+    var PG = window.CPL_COMMONS_PAGE;
+    if (!PG) { withPage(); return dash; }
+    /* The opened page first; the milestones and parts one word away (the Commons first view's Details). */
+    return el("div", { cls: "prh-opened" }, [PG.render(pageSpec(x)),
+      section("progress:details", "Details: the milestones, the parts and the calls", "", [dash],
+        { cls: "prh-more", shut: secs()["progress:details"] == null && secs()["*"] == null })]);
+  }
 
   /* ── Sam's to-dos ──
    * Sam, 2026-10-09: "Put a button to my todo items on the front of Program Requirements so I
@@ -3191,6 +3307,7 @@
   }
   /* One call's card on the Progress view, open, scrolled to and focused. */
   function goToCall(i) {
+    secSet("progress:details", true);   /* the calls sit in the dash, under the opened page's Details (S558) */
     secSet("progress:call:" + i, true);
     choose("progress", false);
     var card = document.querySelector("#" + ROOT_ID + ' details[data-sec="progress:call:' + i + '"]');
@@ -3701,11 +3818,115 @@
         findLabel: "Find in the list" },
       state: listState, rows: function () { var m = listBuild(); return m ? m.rows : []; }, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: render,
-      head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer,
+      head: function (wrap, api) { listLine(wrap, api); return listHead(wrap); },
+      filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer,
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a program's title opens it beside
+      // the table, with its required courses block by block, the record's checks and the rest folded.
+      panel: { label: function (r) { return "Program: " + r.title; }, body: listPanelBody },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { var m = listBuild(); return m ? m.counts : {}; }
     };
     return spec;
+  }
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR and
+     Subjects first): one line of the requirements row in kb/status/commons.json, each count opening the List's own
+     filter where it has one, and the Progress view's opened page folded behind one word for the visit. The engine
+     draws the line and reads the Commons file once a visit. */
+  var LINE_FILTERS = { unread: 1, read: 1, pass: 1, fail: 1, conflict: 1, units: 1 };
+  function listLine(wrap, api) {
+    var L = listState(), CLM = window.CPL_COMMONS_LIST;
+    // Read once, success or failure, or a failed read would repaint and read again forever (the CR line's lesson).
+    if (!L.cmRead && !L.cmLoading && CLM && CLM.readCommons) {
+      L.cmLoading = true;
+      CLM.readCommons(true).then(function (d) {
+        L.cm = CLM.commonsRow(d, "requirements"); L.cmErr = L.cm ? null : "kb/status/commons.json has no requirements row";
+      }, function (e) { L.cmErr = String(e && e.message || e); }).then(function () {
+        L.cmLoading = false; L.cmRead = true; if (state.view === "list" && document.getElementById(ROOT_ID)) render();
+      });
+    }
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "prl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
+      control: function (open, text, li, w) {
+        var m = /^#program-requirements\/list(?:\/([a-z-]+))?$/.exec(open || ""), f = m ? (m[1] || "") : null;
+        if (f === "") return L.f ? api.word(text, function () { L.f = ""; L.limit = api.LIMIT; render(); }, { cls: w + " " + li }) : null;
+        if (f && LINE_FILTERS[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = api.LIMIT; render(); }, { cls: w + " " + li });
+        if (open) return api.el("a", { href: open, cls: li, text: text });
+        return null;
+      } }));
+    var fold = api.el("div", { cls: "prl-fold", id: "prl-fold" });
+    if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
+    var PG = window.CPL_COMMONS_PAGE;
+    if (PG) {
+      // The Progress view's own page, under its own prefix, so its ids never meet the Progress view's.
+      var spec = pageSpec(progressContext(new Date()));
+      spec.prefix = "prl-pg-";
+      fold.appendChild(PG.render(spec));
+    } else if (PAGE.failed) {
+      fold.appendChild(api.el("p", { cls: "prh-empty", role: "alert", text: "The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again." }));
+    } else {
+      fold.appendChild(api.el("p", { cls: "prh-meta", text: "Loading the summary…" }));
+      withPage();
+    }
+    wrap.appendChild(fold);
+  }
+  /* A program's side panel: what it is, its required courses block by block (the members the row folds: each course's
+     title, units and the CPL on record for it at this college), the record's checks, and the rest folded: COCI's
+     words, the TOP code as a search aid and the record's source. A record the index holds light is read once, here. */
+  function listPanelBody(r, h) {
+    var p = r.p, L = listState(), loads = L.pnLoad || (L.pnLoad = {}), out = [];
+    out.push(h.title(r.title));
+    out.push(h.meta([r.college, r.award, "Control number " + r.ctl, r.fam, r.lo == null ? "" : span(r.lo, r.hi) + " units",
+      !p ? "Not read yet" : r.fails.length ? "Fails a machine check" : "Passes the machine checks"]));
+    if (!p) {
+      out.push(h.el("p", { cls: "prh-meta", text: "The harvest holds no record of this program yet, so its courses are not listed here. COCI's words and codes are folded below." }));
+    } else {
+      out.push(h.el("p", { cls: "prl-pn-dec", text: (p.checked ? "A person confirmed it" + (p.checked_by ? ", " + p.checked_by : "") + (p.checked_at ? " " + h.stamp(p.checked_at) : "")
+        : "Not yet confirmed by a person") + ". Courses: " + (p.checks && p.checks.coverage === true ? "every listed course placed" : "a listed course is not placed")
+        + "; added courses: " + (p.checks && p.checks.invented === true ? "none" : "a course the state's list lacks") + "; units: " + unitsWords(p) + "." }));
+      out.push(h.el("div", { cls: "prl-acts" }, [h.word("Open the record in Program records", function () { listOpenRecord(p); })]));
+      out.push(h.heading("Its courses"));
+      var key = keyOf(p);
+      if (p._light && !p._gone) {
+        if (!loads[key]) {
+          loads[key] = "reading";
+          ensureRows([p]).then(function () { loads[key] = p._light ? "failed" : "done"; }, function () { loads[key] = "failed"; })
+            .then(function () { if (LIST.engine && listState().panel === r.ut) LIST.engine.redraw(); });
+        }
+        out.push(h.el("p", { cls: "prh-meta", role: "status", text: loads[key] === "failed"
+          ? "The record's courses could not be read" + (state.failed[p.college] ? " (" + state.failed[p.college] + ")" : "") + ". Open the record in Program records to try again."
+          : "Reading the record's courses…" }));
+      } else {
+        var blocks = (p.record && p.record.blocks) || [], info = (p.display && p.display.courses) || {}, unit = p.measure === "hours" ? "Hours" : "Units";
+        var groups = {};
+        blocks.forEach(function (b) { if (b.option_group) groups[b.option_group] = (groups[b.option_group] || 0) + 1; });
+        var cs = [];
+        blocks.forEach(function (b, bi) {
+          (b.courses || []).forEach(function (c) {
+            var i = info[c.code] || {}, alts = (c.alternatives || []).map(function (a) { return a && (a.code || a); }).filter(Boolean);
+            cs.push({ at: bi, block: (b.name || "Courses") + ", " + ruleText(b, p.measure, groups).toLowerCase(), code: c.code + (alts.length ? " or " + alts.join(", ") : ""),
+              title: i.title || "", units: c.units != null ? Number(c.units) : i.units_from_state_file != null ? Number(i.units_from_state_file) : null,
+              cpl: exhibitCount(i) });
+          });
+        });
+        if (!cs.length) out.push(h.el("p", { cls: "prh-meta", text: "The record lists no courses." }));
+        else out.push(h.table({ id: "courses", label: "The courses " + r.title + " at " + r.college + " requires",
+          note: fmt(cs.length) + (cs.length === 1 ? " course" : " courses") + " in " + fmt(blocks.length) + (blocks.length === 1 ? " block" : " blocks")
+            + (p.total_min != null ? "; the program totals " + span(p.total_min, p.total_max) + " " + unit.toLowerCase() : "")
+            + ". CPL here counts the exhibits and credit recommendations on record for the course at this college. Press a header to sort.",
+          cols: [["at", "Order", true], ["block", "Block"], ["code", "Course"], ["title", "Title"], ["units", unit, true], ["cpl", "CPL here", true]],
+          rows: cs,
+          cell: function (row, k) { return k === "at" ? row.at + 1 : row[k]; } }));
+      }
+    }
+    var more = [];
+    more.push(h.el("p", null, [r.awardLong ? "COCI's award: " + r.awardLong + "." : "COCI names no award for this program."]));
+    more.push(h.el("p", null, [r.cip ? "CIP " + r.cip + ", in the family " + r.fam + "." : "COCI holds no CIP code for this program."]));
+    if (r.top) more.push(h.el("p", null, ["TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal)."]));
+    if (r.coci && r.coci !== r.college) more.push(h.el("p", null, ["COCI's short name for the college: " + r.coci + "."]));
+    if (p) more.push(h.el("p", null, ["Read from " + shortCollege(p.college) + "'s catalog" + (p.program_title ? " as " + p.program_title : "") + (p.catalog_year ? ", " + yr(p.catalog_year) : "") + "."]));
+    out.push(h.fold("more", "More about this program: COCI's words, its codes and the record's source", more));
+    return out;
   }
   function listApi() {
     if (!LIST.engine && window.CPL_COMMONS_LIST && window.CPL_COCI_PROGRAMS) LIST.engine = window.CPL_COMMONS_LIST.create(listSpec());
@@ -3744,6 +3965,8 @@
     var parts = (location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] !== "program-requirements" || parts[1] !== "list") return false;
     state.view = "list";
+    /* #program-requirements/list/<filter> opens the List on one of its filters (a Commons count, Sam 2026-11-03). */
+    if (parts[2] && LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) { var L = listState(); L.f = parts[2]; L.q = ""; }
     return true;
   }
   var hashWired = false;
@@ -3861,7 +4084,7 @@
   }
 
   window.CPL_PROGRAM_REQUIREMENTS = {
-    activate: activate,
+    activate: activate, pageSpec: pageSpec, activeCounts: activeCounts,
     _state: state, _load: load, _render: render, _idle: idle,
     INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY, FILTERS_KEY: FILTERS_KEY, CIP_FAMS: CIP_FAMS, sectorOf: sectorOf,
     catalogStatus: catalogStatus, catalogAccess: catalogAccess, filterProcedures: filterProcedures, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,

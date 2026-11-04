@@ -22,14 +22,17 @@
  * formatted email for Outlook. All three sources are reviewer-gated in the database.
  *
  * The look is the CPL Commons' (Malone's CPL/AI palette) as the mock shows it; the dark theme maps every role onto a
- * First Light dark token. The top (Today and the priority cards) folds behind one word for the visit (Sam's ask 18).
+ * First Light dark token. The priority cards fold behind one word for the visit (Sam's ask 18);
+ * Today stays in the header either way, each count a word that opens its view (Sam, 2026-11-03, S564).
  *
  * Tests: tests/csm_workspace.test.js
  */
 (function () {
   var RULES = [
-      "#tab-csm-workspace .page { padding-block:28px 48px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }",
-      "#tab-csm-workspace .wrap { max-width:1240px; margin:0 auto; display:grid; gap:24px; }",
+      "#tab-csm-workspace .main-container { max-width:none; padding:8px 16px; }",
+      "@media (max-width: 560px) { #tab-csm-workspace .main-container { padding-left:0; padding-right:0; } }",
+      "#tab-csm-workspace .page { padding-block:16px 40px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }",
+      "#tab-csm-workspace .wrap { max-width:none; margin:0; display:grid; gap:16px; }",
       "#tab-csm-workspace a { color:var(--cw-link); text-underline-offset:3px; }",
       "#tab-csm-workspace .word { all:unset; box-sizing:border-box; cursor:pointer; min-height:24px; display:inline-flex; align-items:center; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; font-size:.92rem; }",
       "#tab-csm-workspace .word:hover { color:var(--cw-heading); }",
@@ -41,29 +44,29 @@
       "#tab-csm-workspace .top-row { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:8px 24px; }",
       "#tab-csm-workspace h1 { margin:0; font-family:var(--cw-serif); font-weight:700; color:var(--cw-title); font-size:clamp(2rem, 1.5rem + 1.8vw, 3rem); line-height:1; letter-spacing:-0.03em; }",
       "#tab-csm-workspace .links { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.92rem; align-items:baseline; }",
-      "#tab-csm-workspace .rule { width:66px; height:4px; background:var(--cw-gold); margin:16px 0 14px; }",
-      "#tab-csm-workspace .lede { margin:0; color:var(--cw-ink-2); font-size:1.08rem; max-width:72ch; }",
-      "#tab-csm-workspace .today { margin:12px 0 0; display:flex; flex-wrap:wrap; gap:4px 10px; align-items:baseline; font-size:.95rem; }",
+      "#tab-csm-workspace .rule { width:66px; height:4px; background:var(--cw-gold); margin:10px 0 8px; }",
+      "#tab-csm-workspace .today { margin:0; display:flex; flex-wrap:wrap; gap:4px 10px; align-items:baseline; font-size:.95rem; }",
       "#tab-csm-workspace .today b { color:var(--cw-heading); }",
       "#tab-csm-workspace .today .sep { color:var(--cw-muted); }",
+      "#tab-csm-workspace .today .word { font-weight:500; font-size:inherit; }",
       "#tab-csm-workspace h2 { margin:0; font-family:var(--cw-serif); font-size:1.3rem; color:var(--cw-heading); }",
-      "#tab-csm-workspace .sec { display:grid; gap:12px; }",
+      "#tab-csm-workspace .sec { display:grid; gap:8px; }",
       "#tab-csm-workspace .sec-h { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:6px 20px; }",
       "#tab-csm-workspace .note { margin:0; color:var(--cw-muted); font-size:.9rem; }",
-      "#tab-csm-workspace .needs-row { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }",
-      "#tab-csm-workspace .cohort-row { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; }",
-      "#tab-csm-workspace .card { background:var(--cw-surface); border:1px solid var(--cw-line); border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; }",
-      "#tab-csm-workspace .card.needs { border-top:4px solid var(--cw-gold); padding:20px 22px; }",
+      "#tab-csm-workspace .needs-row { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; }",
+      "#tab-csm-workspace .cohort-row { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; }",
+      "#tab-csm-workspace .card { background:var(--cw-surface); border:1px solid var(--cw-line); border-radius:12px; padding:12px 16px; display:flex; flex-direction:column; gap:6px; min-width:0; }",
+      "#tab-csm-workspace .card.needs { border-top:4px solid var(--cw-gold); padding:12px 18px 14px; }",
       "#tab-csm-workspace .card.on { border-color:var(--cw-accent); box-shadow:0 0 0 1px var(--cw-accent); }",
       "#tab-csm-workspace .card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }",
       "#tab-csm-workspace .card-name { margin:0; font-family:var(--cw-serif); font-size:1.15rem; line-height:1.25; color:var(--cw-heading); }",
       "#tab-csm-workspace .needs .card-name { font-size:1.3rem; }",
       "#tab-csm-workspace .big { margin:0; font-family:var(--cw-serif); font-size:2rem; font-weight:700; color:var(--cw-title); letter-spacing:-0.02em; font-variant-numeric:tabular-nums; line-height:1; }",
-      "#tab-csm-workspace .needs .big { font-size:2.8rem; }",
+      "#tab-csm-workspace .needs .big { font-size:2.3rem; }",
       "#tab-csm-workspace .big small { font-family:var(--cw-sans); font-size:.95rem; font-weight:400; color:var(--cw-muted); letter-spacing:0; }",
       "#tab-csm-workspace .card-what { margin:0; color:var(--cw-ink-2); font-size:.92rem; line-height:1.45; }",
       "#tab-csm-workspace .card-list { margin:0; padding:0; list-style:none; display:grid; gap:2px; font-size:.92rem; }",
-      "#tab-csm-workspace .card-list li { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--cw-line-soft); padding:5px 0; }",
+      "#tab-csm-workspace .card-list li { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--cw-line-soft); padding:3px 0; }",
       "#tab-csm-workspace .card-list li span:last-child { color:var(--cw-muted); font-variant-numeric:tabular-nums; white-space:nowrap; }",
       "#tab-csm-workspace .card .word { margin-top:auto; }",
       "#tab-csm-workspace .meter { height:8px; border-radius:999px; background:var(--cw-track); overflow:hidden; }",
@@ -582,7 +585,7 @@
         Object.keys(heldWhy).sort(function (a, b) { return heldWhy[b] - heldWhy[a]; }).map(function (w) { return [w, String(heldWhy[w])]; }), "held", true) +
       "</div><div class=\"cohort-row\">" +
       card("cw-c3", "Confirmed", String(conf.length), "of " + tot, "", null, "confirmed", false).replace('<button', meter(conf.length, tot) + "<button") +
-      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "Institutions whose award carries a noncredit share.", null, "nc", false)
+      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "", null, "nc", false)
         .replace('<button', meter(ncDone.length, ncRows.length) + "<button") +
       card("cw-c5", "CPL Coordinator in MAP", S.coordOk ? String(coordMet.length) : "&hellip;", S.coordOk ? "of " + coordRows.length : "loading", "", null, "coord", false)
         .replace('<button', meter(coordMet.length, coordRows.length) + "<button") +
@@ -1016,9 +1019,11 @@
     var h = S.rows.filter(function (r) { return stageOf(r) === "held"; }).length;
     var q = S.rows.filter(function (r) { return stageOf(r) === "qual"; }).length;
     var n = S.rows.filter(function (r) { return stageOf(r) === "notyet"; }).length;
-    return '<p class="today"><b>Today</b><span>' + w + " waiting on the team</span><span class=\"sep\">·</span><span>" + h +
-      " confirmed and held</span><span class=\"sep\">·</span><span>" + q + " qualify</span><span class=\"sep\">·</span><span>" + n +
-      " not yet confirmed</span>" + (S.deadline ? '<span class="sep">·</span><span>Confirmation due ' + esc(shortDate(S.deadline)) + "</span>" : "") + "</p>";
+    var go = function (view, t) { return '<button type="button" class="word" data-view="' + view + '" aria-pressed="' + (state.view === view) + '">' + t + "</button>"; };
+    var sep = '<span class="sep" aria-hidden="true">·</span>';
+    return '<p class="today"><b>Today</b>' + go("review", w + " waiting on the team") + sep + go("held", h + " confirmed and held") + sep +
+      go("qual", q + " qualify") + sep + go("notyet", n + " not yet confirmed") +
+      (S.deadline ? sep + "<span>Confirmation due " + esc(shortDate(S.deadline)) + "</span>" : "") + "</p>";
   }
   function paint() {
     var el = root(); if (!el) return;
@@ -1035,12 +1040,11 @@
       '<header><div class="top-row"><h1>CSM Workspace</h1><p class="links">' +
         '<a href="#implementation-funding">Implementation Funding</a>' +
         '<button type="button" class="word" data-act="fold" aria-expanded="' + !state.folded + '" aria-controls="cw-fold">' +
-        (state.folded ? "Show the summary" : "Hide the summary") + "</button></p></div>" +
-        '<div class="rule" aria-hidden="true"></div>' +
-        '<p class="lede">What waits on the CPL Initiative team for each college\'s Implementation Funding: requests to review, follow-ups and acceptances.</p></header>' +
+        (state.folded ? "Show the priorities" : "Hide the priorities") + "</button></p></div>" +
+        '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
       (S.reviewer ? "" : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p>') +
-      '<div id="cw-fold" class="cw-fold"' + (state.folded ? " hidden" : "") + ">" + todayHtml() +
-        '<section class="sec" aria-labelledby="cw-pri-h" style="margin-top:20px"><h2 id="cw-pri-h">Priorities</h2>' + cardsHtml() + "</section></div>" +
+      '<div id="cw-fold" class="cw-fold"' + (state.folded ? " hidden" : "") + ">" +
+        '<section class="sec" aria-labelledby="cw-pri-h"><h2 id="cw-pri-h">Priorities</h2>' + cardsHtml() + "</section></div>" +
       '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
         (S.loaded ? "Read live from the funding tab." : "Loading the requests&hellip;") + "</p></div>" +
         '<div class="center">' + queueHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +

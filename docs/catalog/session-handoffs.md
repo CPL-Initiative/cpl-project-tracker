@@ -15,10 +15,20 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-524 document(s).
+534 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 567 | [Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read](../session_567_handoff.md) | 2026-11-04 |
+| 566 | [Session 566 handoff: Las Positas's full read and Columbia's trial in flight; #2734 brought up to main](../session_566_handoff.md) | 2026-11-04 |
+| 565 | [Session 565 handoff: a Confirmed by a person count beside ready on the Course page and card](../session_565_handoff.md) | 2026-11-03 |
+| 564 | [Session 564 handoff: the roadmap archive split into a part 7; nothing new from Sam or the team](../session_564_handoff.md) | 2026-11-03 |
+| 563 | [Session 563 handoff: three lanes back under budget; the Commons' Exhibit-tiles item was already built](../session_563_handoff.md) | 2026-11-03 |
+| 562 | [Session 562 handoff: every Commons pair checked; Subjects and Exhibits now agree with their cards](../session_562_handoff.md) | 2026-11-03 |
+| 561 | [Session 561 handoff: the Program Requirements pair agrees with the Commons card](../session_561_handoff.md) | 2026-11-03 |
+| 560 | [Session 560 handoff: the Common Course Reference takes the Commons page; Santa Ana's SLOs loaded](../session_560_handoff.md) | 2026-11-03 |
+| 559 | [Session 559 handoff: CPL Pathways' Progress view on the Commons page, Las Positas's SLO trial](../session_559_handoff.md) | 2026-11-03 |
+| 558 | [Session 558 handoff: the ELL IET Version 3 draft, the night's SLO runs and the credential slice](../session_558_handoff.md) | 2026-11-03 |
 | 556 | [Session 556 handoff: the CSM Workspace ships with its log and contacts; the Commons closes a to-do](../session_556_handoff.md) | 2026-11-03 |
 | 555 | [Session 555 handoff: the Library's stuck remediations get Finish remediation, and /coord](../session_555_handoff.md) | 2026-11-02 |
 | 554 | [Session 554 handoff: the Library remediates every file it reads, drafts applied from the start, a PDF written](../session_554_handoff.md) | 2026-11-02 |

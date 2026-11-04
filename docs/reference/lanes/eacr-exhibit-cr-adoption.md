@@ -156,7 +156,8 @@ authoritative rec's exhibits (`eids`), `fact-sheet/_build_statewide_recs.py` kee
 lists, and the renderer takes the address from `map_links.js` (`CPL_MAP_LINKS.url`, the one builder). Until the
 daily run carries `eids`, only credentials with one exhibit link (277 of 419 recs). The workbook and Sierra's words
 now say Request Quick Adopt needs no sign-in. **NEXT:** the rest of the sweep of public views with no MAP link
-(Sam, 2026-10-28); `college_cpl_workbook.js` and `statewide_interactive.js` still build the address themselves.
+(Sam, 2026-10-28). Every COBI view builds the address through `CPL_MAP_LINKS.url`, the Exhibits tab included since
+SkyElderberry (2026-11-03); the public adopt page keeps a copy that `tests/public_adopt.test.js` holds equal.
 
 **Standing rulings that survive:** brown is the PEER BENCHMARK, never
 `rec_units_total` · columns open on COLLEGES · brown on CREDIBLE cells only ·

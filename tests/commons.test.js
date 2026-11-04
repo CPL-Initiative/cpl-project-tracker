@@ -85,7 +85,8 @@ const STATUS = {
     { key: "course", title: "Common Course Reference", tab: "#unified-courses",
       links: [{ href: "https://example.org/prototype/skyview.html", text: "Open SkyView" }],
       status_file: null,
-      pair: [{ n: 3208, of: 27581, words: "cards the auditor scores 0.85 or better", open: "#unified-courses" }], tests: ["scored by the auditor"],
+      pair: [{ n: 3208, of: 27581, words: "cards the auditor scores 0.85 or better", open: "#unified-courses" },
+        { n: 957, of: 27581, words: "confirmed by a person, 152 of them ready", open: "#unified-courses" }], tests: ["scored by the auditor"],
       issues: [{ n: 4179, words: "unit anomalies", owner: "a curator", open: "#unified-courses" }],
       procedures: [{ words: "TOP is a last-in-line signal" }],
       machine: { what: "the auditor", at: "2026-10-16T17:48:47+00:00", every_hours: 24 }, sources: ["x"] },
@@ -177,11 +178,16 @@ function cellText(li, title) {
   check("the card's headline is the pair in one line with its meter",
     /11,625 of 20,282 complete at 113 colleges/.test(txt(reqCard.querySelector(".cmn-card-n")).replace(/\s+/g, " "))
     && reqCard.querySelector(".cmn-card-meter") && /57\.3%/.test(reqCard.querySelector(".cmn-card-meter i").style.width));
+  const courseCard = t.d.querySelector('.cmn-card[data-card="course"]');
+  check("Sheet 160 (S565): a card counts Confirmed by a person under its figure, beside the first pair and never in its place; a one-pair card adds no line",
+    /^3,208 of 27,581/.test(txt(courseCard.querySelector(".cmn-card-n")).replace(/\s+/g, " "))
+    && txt(courseCard.querySelector(".cmn-card-also")) === "957 confirmed by a person, 152 of them ready"
+    && !reqCard.querySelector(".cmn-card-also"));
   check("Recently is the run log's latest change, cut to its first sentence; Next is its next step",
     /Recently\s+Glendale's 220 records loaded\.$/.test(txt(reqCard.querySelector(".cmn-card-lines p:nth-child(2)")).replace(/\s+/g, " "))
     && /Next\s+Hand Sam the Commons mock-up/.test(txt(reqCard.querySelector(".cmn-card-lines p:nth-child(3)")).replace(/\s+/g, " ")));
   check("the Programs card opens as CPL Pathways (Sam, 2026-10-21) and carries Decision record",
-    txt(reqCard.querySelector('.cmn-card-links a[href="#program-requirements"]')) === "CPL Pathways" && txt(reqCard.querySelector(".cmn-record")) === "Decision record");
+    txt(reqCard.querySelector('.cmn-card-links a[href="#program-requirements/list"]')) === "CPL Pathways" && txt(reqCard.querySelector(".cmn-record")) === "Decision record");
   const exCard = t.d.querySelector('.cmn-card[data-card="exhibit"]');
   check("a card with no run log reads In progress and Recently from its machine stamp", txt(exCard.querySelector(".cmn-pill")) === "In progress"
     && /Recently\s+The saving run and the fold, /.test(txt(exCard.querySelector(".cmn-card-lines")).replace(/\s+/g, " ")));

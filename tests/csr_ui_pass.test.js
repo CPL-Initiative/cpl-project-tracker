@@ -25,15 +25,12 @@ function rule(src, sel) {
 }
 const RULES = [
   ["#tab-canonical-subj4 .cs-auth-tag", /color:var\(--text-muted\)/],
-  ["#tab-canonical-subj4 .cs-muted-dash", /color:var\(--text-muted\)/],
-  ["#tab-canonical-subj4 .cs-variants .cs-var-modal", /color:var\(--text-body\)/],
-  ["#tab-canonical-subj4 tr.cs-cat-header td", /background:var\(--surface-muted\)/],
-  ["#tab-canonical-subj4 tr.cs-cat-header.collapsed td", /background:var\(--surface-subtle\)/],
+  // The table's rules (the CIP dash, the variant held, the TOP-category rows) left with the Reference table (2026-11-04).
   ["#tab-canonical-subj4 .cs-scope-note", /background:var\(--surface-subtle\)[^}]*color:var\(--text-body\)/],
   ["#tab-canonical-subj4 .cs-scope-note strong", /color:var\(--navy-primary\)/],
 ];
 
-// ── (1) the six rules read tokens, in both HTMLs ──────────────────────────
+// ── (1) the rules that stay read tokens, in both HTMLs ──────────────────────────
 for (const [f, src] of htmls) {
   for (const [sel, want] of RULES) {
     const r = rule(src, sel);
@@ -42,16 +39,17 @@ for (const [f, src] of htmls) {
   }
 }
 check("(1) the two HTMLs stay identical (Rule 4)", htmls[0][1] === htmls[1][1]);
+check("(1) the retired table's rules are gone from both HTMLs", htmls.every(([f, src]) => !/#tab-canonical-subj4 (\.cs-table|tr\.cs-cat-header|\.cs-variants|\.cs-muted-dash)/.test(src)));
 
 // ── (2) the tab's own script paints no raw gray ───────────────────────────
-check("(2) ⭐ canonical_subj4.js paints no #9ca3af (the CIP placeholder and the reviewer line read --text-muted)",
+check("(2) ⭐ canonical_subj4.js paints no #9ca3af",
   !/#9ca3af/i.test(js));
-check("(2) the CIP placeholder cell reads --text-muted",
-  /class: "cs-mono", style: "color:var\(--text-muted\)"/.test(js));
 
 // ── (3) every control is at least 24px tall (WCAG 2.2 target size) ─────────
 const injected = (js.match(/function ensureCsrUiCss\(\)[\s\S]*?\]\)\);/) || [""])[0];
-for (const sel of [".cs-check-btn", ".cs-var-show", "input.cs-canon", "label.cs-flag-toggle", "a.cs-auth-link"]) {
+// The Reference table's controls (the check button, the variants word, the code box, the TOP toggle) retired with it
+// into the List (2026-11-04), whose controls are the engine's; the sign-in link stays on the List's head.
+for (const sel of ["a.cs-auth-link"]) {
   const re = new RegExp("#tab-canonical-subj4 " + sel.replace(".", "\\.") + "[^{]*\\{[^}]*min-height:24px");
   const inGroup = new RegExp("#tab-canonical-subj4 " + sel.replace(".", "\\.") + "[,{][^}]*min-height:24px");
   check(`(3) ⭐ ${sel} is at least 24px tall`, re.test(injected) || inGroup.test(injected));

@@ -91,6 +91,9 @@
     ".cplcoci-outs a { color: var(--cobalt); }",
     ".cplcoci-more { text-align:center; padding:10px; }",
     ".cplcoci-empty { padding:26px; text-align:center; color: var(--text-muted); }",
+    // Progress (S559): the page's links reach 24px (WCAG 2.2 target size); its h2 names the page for the outline.
+    ".cplcoci-pg-page a, .ccl-pg-page a, .ccl-pn-acts a, .ccl-pdrawer > a { display:inline-block; min-height:24px; line-height:24px; }",
+    ".cplcoci-pg-title { margin:0 0 4px; font-size:1.1rem; color: var(--seal-blue-text); }",
     ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
     ".cplcoci-meta { margin:0 0 6px; font-size:.8rem; color: var(--text-muted); max-width:var(--cpl-measure,none); }",
     ".cplcoci-viewseg { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; margin:0 0 10px; }",
@@ -105,7 +108,7 @@
                STATUS: 6, UNITS: 7, XFER: 8 };
 
   var state = {
-    view: "courses",     // courses | programs
+    view: "courses",     // courses | programs | progress
     data: null,          // window.CPL_COCI_LOOKUP
     ls: null,            // the Courses List's state (commons_list.js); a new visit drops it
     q: "",               // the Programs finder
@@ -347,7 +350,89 @@
     if (f === "none") return !(r.mid || r.cid || r.ccn);
     return r.code === f;
   }
-  function listHead(wrap) {
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR,
+     Subjects and Programs first): one line of the course row in kb/status/commons.json, read once by this tab's own
+     Progress read (loadProgress), so the file has one reader here; every count opens SkyView, where a course's work is
+     done (Courses keeps SkyView first; Sam, 2026-11-03). The Progress view's opened page folds under it for the visit. */
+  function listLine(wrap, api) {
+    var L = listState();
+    loadProgress();
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; mountList(); },
+      control: function (open, text, li) {
+        if (!open) return null;
+        var out = /^https?:\/\//.test(open);
+        return api.el("a", { href: open, cls: li, text: text, target: out ? "_blank" : null, rel: out ? "noopener" : null,
+          "aria-label": out ? text + " (opens SkyView in a new tab)" : null });
+      } }));
+    var fold = api.el("div", { cls: "ccl-fold", id: "ccl-fold" });
+    if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
+    var PG = window.CPL_COMMONS_PAGE;
+    if (PG && pg.done) {
+      // The Progress view's own page, under its own prefix so its ids never meet the Progress view's, less the word
+      // that opens this List.
+      var spec = progressSpec();
+      spec.prefix = "ccl-pg-";
+      spec.links = (spec.links || []).filter(function (l) { return l.words !== "Open the Courses List"; });
+      // The page's cards are h3s; the fold carries their h2, as the Progress view does.
+      fold.appendChild(el("h2", { "class": "cplcoci-pg-title" }, ["Common Course Reference: progress"]));
+      fold.appendChild(PG.render(spec));
+    } else if (pg.pageFailed) {
+      fold.appendChild(el("p", { "class": "cplcoci-empty", role: "alert" }, ["The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again."]));
+    } else fold.appendChild(el("p", { "class": "cplcoci-empty ccl-fold-note", role: "status" }, ["Reading the reference's figures."]));
+    wrap.appendChild(fold);
+  }
+  /* A course's side panel (SkyView's course outline the model): what it is, its common course and the other local
+     courses that M-ID holds (the members its band folds; another course's title opens its panel), SkyView one word
+     away, and the rest folded: its identities, the TOP code as a search aid, an older M-ID. The Title drawer (the
+     catalog description and the learning outcomes) moves in with it (the engine). */
+  function listByMid(m) {
+    if (m.byMid) return m.byMid;
+    var by = new Map();
+    m.rows.forEach(function (r) { r.mids.forEach(function (id) { var a = by.get(id); if (!a) by.set(id, a = []); a.push(r); }); });
+    return (m.byMid = by);
+  }
+  function listPanelBody(r, h) {
+    var m = listBuild(), out = [];
+    out.push(h.title(r.subj + " " + r.num + ", " + r.title));
+    out.push(h.meta([r.college, r.units == null ? "No units listed" : fmt(r.units) + (r.units === 1 ? " unit" : " units"), r.credit,
+      r.cid ? "C-ID " + r.cid : "", r.ccn ? "CCN " + r.ccn : "", "Control number " + r.ctrl]));
+    if (!m.X) {
+      out.push(el("p", { "class": "cplcoci-meta" }, ["Today's identity file did not arrive, so the panel cannot say which common course holds this course."]));
+    } else if (!r.mid) {
+      out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+    } else {
+      var members = listByMid(m).get(r.mid) || [], seenCol = {};
+      members.forEach(function (x) { seenCol[x.college] = 1; });
+      var nCol = Object.keys(seenCol).length;
+      out.push(h.heading("Its common course: " + r.mid));
+      out.push(el("p", { "class": "ccl-pn-acts" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
+      out.push(h.table({ id: "members", label: "The local courses " + r.mid + " holds",
+        note: idWords(r.mid) + ", holding " + fmt(members.length) + (members.length === 1 ? " local course" : " local courses") + " at "
+          + fmt(nCol) + (nCol === 1 ? " college" : " colleges") + (r.mids.length > 1 ? "; the course sits in " + r.mids.length + " M-IDs (" + r.mids.join(", ") + "), and the List bands it under this one, the largest" : "")
+          + ". Press a header to sort; another course's title opens its panel.",
+        cols: [["code", "Course"], ["title", "Title"], ["college", "College"], ["units", "Units", true]],
+        rows: members.map(function (x) { return { ut: x.ut, code: x.subj + " " + x.num, title: x.title, college: x.college, units: x.units }; }),
+        cell: function (row, k) {
+          if (k !== "title") return row[k];
+          if (row.ut === r.ut) return row.title + " (this course)";
+          return h.word(row.title, function () { h.open(row.ut); }, { "aria-label": row.code + ", " + row.title + " at " + row.college + ", open its panel" });
+        },
+        rowAttrs: function (row) { return row.ut === r.ut ? { "aria-current": "true" } : null; } }));
+    }
+    var more = [];
+    if (r.mids.length > 1) more.push(el("p", null, ["Its M-IDs: " + r.mids.join(", ") + "."]));
+    if (r.was) more.push(el("p", null, ["COCI's " + (state.data._built_at || "") + " extract named " + r.was + "; the course has moved since."]));
+    more.push(el("p", null, [r.cid ? "A transfer-model course: it carries C-ID " + r.cid + " (a floor, not full CSU or UC transferability)." : "No C-ID on record in COCI."]));
+    if (r.ccn) more.push(el("p", null, ["CCN " + r.ccn + ", the AB 1111 Common Course Number COCI records."]));
+    more.push(el("p", null, [r.top ? "TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing here (a TOP code is a last-in-line signal)." : "COCI holds no TOP code for this course."]));
+    more.push(el("p", null, ["Moving a course to another M-ID is a re-mint: it happens in SkyView, under the playbook."]));
+    out.push(h.fold("more", "More about this course: its identities and codes", more));
+    return out;
+  }
+  function listHead(wrap, api) {
+    listLine(wrap, api);
     var m = listBuild(), c = m.counts, D = state.data;
     wrap.appendChild(el("p", { "class": "cplcoci-lede" }, ["Every local course in COCI, one row each: " + fmt(c[""]) + " at " + m.colleges +
       " colleges, from COCI's " + (D._built_at || "") + " extract. " + (m.X
@@ -443,6 +528,9 @@
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: mountList,
       head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, hayFolded: true, findWords: true,
       fixedRows: true, findDelay: 160, drawer: listDrawer,
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a course's title opens it beside
+      // the table, with its common course's local courses, SkyView one word away and the rest folded.
+      panel: { label: function (r) { return "Course: " + r.subj + " " + r.num + ", " + r.college; }, body: listPanelBody },
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
@@ -502,7 +590,7 @@
 
     // Courses | Programs view toggle
     var seg = el("div", { "class": "cplcoci-viewseg" });
-    [["courses", "Courses"], ["programs", "Programs"]].forEach(function (v) {
+    [["progress", "Progress"], ["courses", "Courses"], ["programs", "Programs"]].forEach(function (v) {
       var b = el("button", { "class": "cplcoci-viewbtn" + (state.view === v[0] ? " on" : ""),
         type: "button", "aria-pressed": state.view === v[0] ? "true" : "false" }, [v[1]]);
       b.onclick = function () { if (state.view !== v[0]) { state.view = v[0]; renderShell(); } };
@@ -510,7 +598,10 @@
     });
     r.appendChild(seg);
 
-    if (state.view === "programs") {
+    if (state.view === "progress") {
+      r.appendChild(el("div", { id: "cplcoci-progress" }, []));
+      renderProgressView();
+    } else if (state.view === "programs") {
       r.appendChild(el("div", { "class": "cplcoci-toolbar", id: "cplcoci-toolbar" }, []));
       r.appendChild(el("div", { id: "cplcoci-table-wrap", "class": "cplcoci-wrap" }, []));
       renderProgramsView();
@@ -529,6 +620,126 @@
   function renderCoursesView() {
     setSub("the Catalog Commons' Courses List: COCI's " + fmt(state.data.rows.length) + " local courses, banded by M-ID");
     mountList();
+  }
+
+  /* ── Progress: the Common Course Reference's opened page (S559) ─────────────
+   * The last reference to take the CPL Commons mock's opened page (Sam locked it 2026-11-02, S552), drawn by
+   * commons_page.js as Exhibits, the CR Reference, Subjects and CPL Pathways draw theirs. Course is SkyView alone
+   * (Sam, 2026-10-18), and the Courses List lives here (2026-11-01), so the page lives here too, one word from the List.
+   * It reads what the Commons card reads: kb/status/commons.json, its row keyed "course", and the run log the row
+   * names. Nothing is counted twice, so the two pages cannot disagree (Sam's S490 to-do: "the numbers on all tabs on
+   * the commons match the commons summaries").
+   * Complete is the auditor's ready: a common-course card scoring 0.85 or better (kb/_row_audit.py), with a person's
+ * confirmation counted beside it as an attribute (Sheet 160); the one
+   * denominator is the auditor's cards. The three questions fit a course: what it is called, where it sits, and whether
+   * its courses agree. Each row is the cards free of one auditor tag (a card carries a tag once). A count the reads
+   * could not supply says "Could not be read", never a zero. */
+  var COMMONS_URL = "kb/status/commons.json", COMMONS_KEY = "course", DECIDER = "Sam";
+  var pg = { loading: false, done: false, row: null, at: null, Q: null, error: null, pageFailed: false };
+  function readStatus(url) {
+    return fetch(url, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(url + " answered " + r.status);
+      return r.json();
+    }).then(function (j) {
+      if (!j || typeof j !== "object" || !j.written_at) throw new Error(url + " names no written_at");
+      return j;
+    });
+  }
+  function loadProgress() {
+    if (pg.done || pg.loading) return;
+    pg.loading = true;
+    var T = window.CPL_TABS, waits = 2;
+    function done() {
+      if (--waits > 0) return;
+      pg.loading = false; pg.done = true;
+      if (state.view === "progress") renderProgressView();
+      // The Courses List draws the same row as its line and folds the same page (the List norms).
+      else if (state.view === "courses") mountList();
+    }
+    if (!window.CPL_COMMONS_PAGE && T && typeof T.loadScript === "function") {
+      T.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () { if (!window.CPL_COMMONS_PAGE) pg.pageFailed = true; done(); });
+    } else { if (!window.CPL_COMMONS_PAGE) pg.pageFailed = true; done(); }
+    readStatus(COMMONS_URL).then(function (d) {
+      var row = (Array.isArray(d.rows) ? d.rows : []).filter(function (x) { return x && x.key === COMMONS_KEY; })[0];
+      if (!row) throw new Error(COMMONS_URL + " has no " + COMMONS_KEY + " row");
+      pg.row = row; pg.at = d.written_at;
+      return row.status_file ? readStatus(row.status_file).then(function (Q) { pg.Q = Q; }, function () {}) : null;
+    }).catch(function (e) { pg.error = e && e.message ? e.message : String(e); }).then(done);
+  }
+  function dayOf(iso) {
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    return d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Los_Angeles" }) + " PT";
+  }
+  function goView(v) { return function () { state.view = v; renderShell(); }; }
+  function progressSpec() {
+    var row = pg.row || {}, F = row.facts || {}, T = F.tags || {}, Q = pg.Q;
+    var total = typeof F.total === "number" ? F.total : null;
+    var sky = row.tab || SKYVIEW;
+    var free = function (k) { return total != null && typeof T[k] === "number" ? total - T[k] : null; };
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var open = calls.filter(function (c) { return !(c && c.answer); });
+    var first = function (t) { var m = String(t || "").trim().match(/^[^.]*\.(?=\s|$)/); return m ? m[0] : String(t || "").trim(); };
+    var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + first(Q.changes[0].text) : "";
+    var items = (Array.isArray(row.issues) ? row.issues : []).filter(function (i) { return i && (i.n == null || i.n > 0); })
+      .map(function (i) {
+        return { n: i.n, words: i.words + (i.owner ? "; " + i.owner + " fixes them." : "."),
+          action: { words: "Open SkyView", href: sky } };
+      });
+    if (typeof F.needs_repair === "number" && F.needs_repair > 0)
+      items.unshift({ n: F.needs_repair, words: "cards the auditor marks needs repair, scoring 0.40 to 0.64.", action: { words: "Open SkyView", href: sky } });
+    open.forEach(function (c) {
+      items.push({ n: 1, words: "decision for " + DECIDER + ": " + (c.title || "an open call") + ".",
+        action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
+    });
+    var r = function (label, n) { return { label: label, n: n, href: sky }; };
+    var procs = (Array.isArray(row.procedures) ? row.procedures : [])[0];
+    return {
+      label: "Common Course Reference", prefix: "cplcoci-pg-", reading: !pg.done,
+      status: open.length ? "Needs you" : "In progress",
+      lede: "Local courses grouped into shared common courses, each named by its M-ID and mapped in SkyView.",
+      read: pg.at ? "Figures read " + dayOf(pg.at) + "." : "",
+      links: [{ words: "Open SkyView", href: sky }, { words: "Open the Courses List", go: goView("courses") },
+        procs && procs.n != null ? { words: "How it is kept: the alias chain, the re-mint playbook, TOP last in line", href: sky } : null].filter(Boolean),
+      progress: { n: typeof F.ready === "number" ? F.ready : null, of: total, short: "ready",
+        words: "common-course cards the auditor scores 0.85 or better",
+        confirmed: { n: typeof F.confirmed === "number" ? F.confirmed : null, done: F.confirmed_ready, doneWords: "ready" },
+        recently: [recently, procs && procs.n != null ? fmt(procs.n) + " " + procs.words + "." : ""].filter(Boolean).join(" "),
+        calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmt(open.length) + " decisions wait on ") + DECIDER + "."
+          : "No decisions wait on " + DECIDER + ".") : "",
+        error: pg.error },
+      attention: { items: items, empty: "Nothing in the reference waits on a person.",
+        next: Q && Q.next_step && Q.next_step.title ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "" },
+      groups: [
+        { q: "What is it called?", rows: [r("Carries a catalog description", free("blank_description")),
+          r("Its title fits its discipline", free("discipline_title_mismatch"))] },
+        { q: "Where does it sit?", rows: [r("Carries a discipline", free("blank_discipline")),
+          r("Its discipline confirmed by a seed or a curator", free("seed_untouched_discipline")),
+          r("TOP agrees with its discipline", free("top_discipline_disagreement"))] },
+        { q: "Do its courses agree?", rows: [r("Units agree, or the range is stated", free("unit_anomaly")),
+          { label: "Ready: scores 0.85 or better, so faculty can review it", n: typeof F.ready === "number" ? F.ready : null, href: sky },
+          // Confirmed by a person (Sam, Sheet 160, 2026-11-03): an attribute a card gains when a person's save in
+          // SkyView or COBI names it, or places a course into it (S565), counted beside ready and never in its place.
+          { label: "Confirmed by a person in SkyView or COBI", n: typeof F.confirmed === "number" ? F.confirmed : null, href: sky }] }
+      ],
+      of: total, ofWords: "common-course cards the auditor scores",
+      foot: "The reference is staging: AI-assisted, not yet faculty-published."
+    };
+  }
+  function renderProgressView() {
+    setSub("the Common Course Reference: how far it has come and what waits on a person");
+    var m = document.getElementById("cplcoci-progress");
+    if (!m) return;
+    clearNode(m);
+    loadProgress();
+    var PG = window.CPL_COMMONS_PAGE;
+    if (!PG) {
+      m.appendChild(el("p", { "class": "cplcoci-empty", role: pg.pageFailed ? "alert" : "status" },
+        [pg.pageFailed ? "The page's renderer (commons_page.js) did not load. Reload the tab to try again." : "Reading the reference's figures."]));
+      return;
+    }
+    m.appendChild(el("h2", { "class": "cplcoci-pg-title" }, ["Common Course Reference: progress"]));
+    m.appendChild(PG.render(progressSpec()));
   }
 
   function mkSelect(id, title, opts, val, onchange) {
@@ -742,6 +953,10 @@
       return;
     }
     state.data = window.CPL_COCI_LOOKUP;
+    /* #coci-lookup/progress opens the Progress view (the Commons' Common Courses card links there); the tab still
+       opens on the Courses List. */
+    var parts = String(location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] === TAB && (parts[1] === "progress" || parts[1] === "courses" || parts[1] === "programs")) state.view = parts[1];
     renderShell();
   }
 

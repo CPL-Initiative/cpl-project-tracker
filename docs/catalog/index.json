@@ -11112,7 +11112,7 @@
      ],
      "title": "The Catalog Commons List norms, what every common reference's List shares and what stays different",
      "type": "reference",
-     "updated": "2026-11-02"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-09-01",
@@ -11446,7 +11446,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 92,
+   "count": 94,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12874,6 +12874,30 @@
      "updated": ""
     },
     {
+     "created": "2026-11-03",
+     "governs": [
+      "kb/_build_oc_medical_assistant_crosswalk.py",
+      "kb/_write_oc_medical_assistant_workbook.py",
+      "kb/_write_oc_medical_assistant_html.py",
+      "kb/openclassrooms_ma_ace_recs.json",
+      "kb/receipts/cpl_library_oc_medical_assistant_2026-11-03.sql"
+     ],
+     "path": "docs/openclassrooms_medical_assistant_crosswalk_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "partners",
+      "crosswalk",
+      "openclassrooms",
+      "medical-assisting",
+      "apprenticeship",
+      "cpl"
+     ],
+     "title": "OpenClassrooms Medical Assistant \u2192 CCC CPL crosswalk \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-08-05",
      "governs": [
       "kb/_build_partner_crosswalk.py",
@@ -13488,6 +13512,20 @@
      "updated": ""
     },
     {
+     "created": "2026-11-03",
+     "governs": [],
+     "path": "docs/library_lessons_archive.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "archive",
+      "library"
+     ],
+     "title": "The Library and its filer \u2014 archived lessons (2026-10-06 to 2026-10-23)",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-10-06",
      "governs": [
       "scripts/library_file.py",
@@ -13663,7 +13701,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 96,
+   "count": 97,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13850,19 +13888,20 @@
      "updated": ""
     },
     {
-     "created": "2026-11-01",
+     "created": "2026-11-04",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
      "tags": [
       "handoff",
       "cer",
-      "exhibits",
-      "exhibit-canonicalization",
-      "clep",
-      "credential-catalog"
+      "commons-list",
+      "cr-reference",
+      "subjects",
+      "program-requirements",
+      "coci-lookup"
      ],
-     "title": "CER redesign handoff: the CLEP fold confirmed, the Catalog sync test fixed (SkySnowberry)",
+     "title": "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)",
      "type": null,
      "updated": ""
     },
@@ -14135,7 +14174,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 archived lessons, part 4 (2026-09-22 onward)",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-06-11",
@@ -14277,6 +14316,21 @@
       "session-history"
      ],
      "title": "CPL Project Tracker \u2014 Roadmap Archive, part 6",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "path": "docs/roadmap_archive_7.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 7",
      "type": null,
      "updated": ""
     },
@@ -15596,7 +15650,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-09-08",
@@ -16120,7 +16174,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-02"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-08-28",
@@ -16462,8 +16516,163 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 524,
+   "count": 534,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 567,
+     "path": "docs/session_567_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "common-subjects-reference",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 566,
+     "path": "docs/session_566_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest",
+      "credential-registry"
+     ],
+     "title": "Session 566 handoff: Las Positas's full read and Columbia's trial in flight; #2734 brought up to main",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 565,
+     "path": "docs/session_565_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons"
+     ],
+     "title": "Session 565 handoff: a Confirmed by a person count beside ready on the Course page and card",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 564,
+     "path": "docs/session_564_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "docs-lint"
+     ],
+     "title": "Session 564 handoff: the roadmap archive split into a part 7; nothing new from Sam or the team",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 563,
+     "path": "docs/session_563_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "implementation-funding",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 563 handoff: three lanes back under budget; the Commons' Exhibit-tiles item was already built",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 562,
+     "path": "docs/session_562_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons"
+     ],
+     "title": "Session 562 handoff: every Commons pair checked; Subjects and Exhibits now agree with their cards",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 561,
+     "path": "docs/session_561_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "program-requirements"
+     ],
+     "title": "Session 561 handoff: the Program Requirements pair agrees with the Commons card",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 560,
+     "path": "docs/session_560_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "program-requirements",
+      "course-outcomes"
+     ],
+     "title": "Session 560 handoff: the Common Course Reference takes the Commons page; Santa Ana's SLOs loaded",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 559,
+     "path": "docs/session_559_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "program-requirements",
+      "ui"
+     ],
+     "title": "Session 559 handoff: CPL Pathways' Progress view on the Commons page, Las Positas's SLO trial",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 558,
+     "path": "docs/session_558_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "ell-iet",
+      "program-requirements",
+      "credential-registry",
+      "ui-pass"
+     ],
+     "title": "Session 558 handoff: the ELL IET Version 3 draft, the night's SLO runs and the credential slice",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25420,5 +25629,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1355
+ "total": 1368
 }

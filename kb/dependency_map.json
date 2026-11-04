@@ -4,9 +4,9 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 779,
-  "external_services": 192,
-  "consumers": 510,
+  "file_datasets": 783,
+  "external_services": 193,
+  "consumers": 515,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -734,7 +734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 622
+     "line": 648
     }
    ],
    "main_committers": []
@@ -802,9 +802,19 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2091,
+     "line": 1094,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 2560,
+     "tabs": [
+      "exhibits"
      ]
     },
     {
@@ -876,6 +886,25 @@
      "direction": "read",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "main_committers": []
+  },
+  "external:coci2.ccctechcenter.net": {
+   "consumers": [
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 21
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_workbook.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 25
     }
    ],
    "main_committers": []
@@ -1023,7 +1052,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 862,
+     "line": 865,
      "tabs": [
       "csm-workspace"
      ]
@@ -1082,7 +1111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 250
+     "line": 279
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1350,7 +1379,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 129,
+     "line": 130,
      "tabs": [
       "exhibits"
      ]
@@ -1618,7 +1647,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2000
+     "line": 2077
     }
    ],
    "main_committers": []
@@ -1674,7 +1703,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 770,
+     "line": 775,
      "tabs": [
       "commons"
      ]
@@ -1697,7 +1726,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 304,
+     "line": 307,
      "tabs": [
       "csm-workspace"
      ]
@@ -1715,6 +1744,13 @@
      "direction": "read",
      "how": "url",
      "line": 698
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 132
     },
     {
      "id": "script:kb/_write_openclassrooms_html.py",
@@ -1783,6 +1819,13 @@
      "direction": "read",
      "how": "url",
      "line": 479
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 133
     },
     {
      "id": "script:kb/_write_openclassrooms_html.py",
@@ -1898,7 +1941,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 150,
+     "line": 151,
      "tabs": [
       "exhibits"
      ]
@@ -1918,7 +1961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2794,
+     "line": 2796,
      "tabs": [
       "program-requirements"
      ]
@@ -2219,7 +2262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1041
+     "line": 1118
     }
    ],
    "main_committers": []
@@ -2238,7 +2281,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1386
+     "line": 1463
     },
     {
      "id": "module:college_briefing.js",
@@ -2277,6 +2320,20 @@
      "direction": "read",
      "how": "url",
      "line": 4
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 22
+    },
+    {
+     "id": "script:kb/_write_oc_medical_assistant_workbook.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     },
     {
      "id": "script:tools/source_cpl_stories.mjs",
@@ -4182,7 +4239,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1664
+     "line": 1741
     }
    ],
    "main_committers": []
@@ -5231,7 +5288,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1555
+     "line": 1632
     },
     {
      "id": "module:admin.js",
@@ -5357,6 +5414,13 @@
      "line": 163
     },
     {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 318
+    },
+    {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5393,6 +5457,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 321
+    },
+    {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5410,7 +5481,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 152,
+     "line": 155,
      "tabs": [
       "coci-lookup"
      ]
@@ -5487,7 +5558,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 673
+     "line": 706
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -5504,7 +5575,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 566,
+     "line": 777,
      "tabs": [
       "coci-lookup"
      ]
@@ -5532,7 +5603,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3740,
+     "line": 3961,
      "tabs": [
       "program-requirements"
      ]
@@ -5571,6 +5642,13 @@
      "direction": "read",
      "how": "literal",
      "line": 225
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 477
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -5786,7 +5864,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2197,
+     "line": 2049,
      "tabs": [
       "exhibits"
      ]
@@ -5950,7 +6028,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2865,
+     "line": 2134,
      "tabs": [
       "canonical-subj4"
      ]
@@ -5960,7 +6038,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 484,
+     "line": 572,
      "tabs": [
       "coci-lookup"
      ]
@@ -5970,7 +6048,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1072,
+     "line": 780,
      "tabs": [
       "cr-reference"
      ]
@@ -5980,7 +6058,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2685,
+     "line": 2552,
      "tabs": [
       "exhibits"
      ]
@@ -5990,7 +6068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3739,
+     "line": 3960,
      "tabs": [
       "program-requirements"
      ]
@@ -6020,9 +6098,19 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2551,
+     "line": 1568,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 660,
+     "tabs": [
+      "coci-lookup"
      ]
     },
     {
@@ -6030,7 +6118,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1101,
+     "line": 811,
      "tabs": [
       "cr-reference"
      ]
@@ -6040,9 +6128,19 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2823,
+     "line": 2773,
      "tabs": [
       "exhibits"
+     ]
+    },
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3236,
+     "tabs": [
+      "program-requirements"
      ]
     }
    ],
@@ -6056,7 +6154,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2549,
+     "line": 1566,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6066,7 +6164,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1099,
+     "line": 809,
      "tabs": [
       "cr-reference"
      ]
@@ -6274,7 +6372,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1939
+     "line": 2016
     },
     {
      "id": "module:college_briefing.js",
@@ -6292,7 +6390,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1275,
+     "line": 1279,
      "tabs": [
       "csm-workspace"
      ]
@@ -6480,7 +6578,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1101
+     "line": 1178
     },
     {
      "id": "module:cpl_funding.js",
@@ -6810,7 +6908,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1102,
+     "line": 812,
      "tabs": [
       "cr-reference"
      ]
@@ -6906,7 +7004,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 96,
+     "line": 98,
      "tabs": [
       "exhibits"
      ]
@@ -7136,6 +7234,22 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:csr_local_subjects.js": {
+   "consumers": [
+    {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2133,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:dashboard_filters.js": {
@@ -7977,7 +8091,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 123,
+     "line": 125,
      "tabs": [
       "exhibits"
      ]
@@ -9702,6 +9816,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_sync_program_checked.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_typesafe_cr_trial.py": {
    "consumers": [
     {
@@ -9942,7 +10069,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 148,
+     "line": 149,
      "tabs": [
       "exhibits"
      ]
@@ -9952,7 +10079,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 192
+     "line": 216
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -9989,7 +10116,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 149,
+     "line": 150,
      "tabs": [
       "exhibits"
      ]
@@ -9999,7 +10126,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 181
+     "line": 205
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -10043,7 +10170,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 220
     }
    ],
    "served": false,
@@ -10540,6 +10667,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 331
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -12436,7 +12570,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 512
+     "line": 602
     }
    ],
    "served": false,
@@ -12484,7 +12618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1691,
+     "line": 1693,
      "tabs": [
       "program-requirements"
      ]
@@ -12507,7 +12641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 39,
+     "line": 40,
      "tabs": [
       "cr-reference"
      ]
@@ -12517,7 +12651,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 376
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -12607,7 +12741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 118,
+     "line": 120,
      "tabs": [
       "exhibits"
      ]
@@ -12829,7 +12963,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 170
+     "line": 194
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13077,7 +13211,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 405
+     "line": 482
     }
    ],
    "producers": [
@@ -13134,7 +13268,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 406
+     "line": 483
     }
    ],
    "served": true,
@@ -13365,7 +13499,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 384
+     "line": 461
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13920,7 +14054,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 173
+     "line": 197
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13962,7 +14096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 126,
+     "line": 128,
      "tabs": [
       "exhibits"
      ]
@@ -14007,7 +14141,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2066,
+     "line": 1914,
      "tabs": [
       "exhibits"
      ]
@@ -14045,7 +14179,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 91,
+     "line": 93,
      "tabs": [
       "exhibits"
      ]
@@ -14150,7 +14284,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 89,
+     "line": 91,
      "tabs": [
       "exhibits"
      ]
@@ -14199,7 +14333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 90,
+     "line": 92,
      "tabs": [
       "exhibits"
      ]
@@ -14241,7 +14375,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 135,
+     "line": 136,
      "tabs": [
       "exhibits"
      ]
@@ -14556,7 +14690,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 491
+     "line": 581
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -14841,6 +14975,19 @@
      "direction": "read",
      "how": "literal",
      "line": 82
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/openclassrooms_ma_ace_recs.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 396
     }
    ],
    "served": true,
@@ -15169,6 +15316,13 @@
   },
   "file:kb/program_requirements_pilot/registry_read.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 292
+    },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
@@ -15523,7 +15677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 317
+     "line": 379
     }
    ],
    "served": false,
@@ -15643,6 +15797,13 @@
      "direction": "read",
      "how": "literal",
      "line": 47
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 314
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -16712,6 +16873,13 @@
      "line": 64
     },
     {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 295
+    },
+    {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -16780,6 +16948,13 @@
   },
   "file:kb/reference/swp_region_roster.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 217
+    },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
@@ -16971,7 +17146,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 280
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -17049,6 +17224,20 @@
   "file:kb/status/commons.json": {
    "consumers": [
     {
+     "id": "module:commons_list.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1366,
+     "tabs": [
+      "canonical-subj4",
+      "coci-lookup",
+      "cr-reference",
+      "exhibits",
+      "program-requirements"
+     ]
+    },
+    {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
@@ -17078,7 +17267,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 269
+     "line": 305
     }
    ],
    "served": true,
@@ -17091,7 +17280,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 346
+     "line": 409
     }
    ],
    "served": true,
@@ -17104,11 +17293,46 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 211
+     "line": 236
     }
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:kb/status/program-requirements-checked.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 127
+    },
+    {
+     "id": "script:kb/_sync_program_checked.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 27
+    },
+    {
+     "id": "script:kb/_sync_program_checked.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 27
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/status/program-requirements.json": {
    "consumers": [
@@ -17127,7 +17351,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 127
+     "line": 134
     },
     {
      "id": "script:scripts/queue_status.py",
@@ -17157,7 +17381,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 449
+     "line": 536
     }
    ],
    "served": true,
@@ -17657,7 +17881,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 201
+     "line": 225
     }
    ],
    "served": false,
@@ -17803,7 +18027,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 166
+     "line": 190
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -18996,7 +19220,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 254
+     "line": 283
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -19492,7 +19716,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 510
+     "line": 600
     }
    ],
    "served": false,
@@ -20227,6 +20451,13 @@
      "direction": "read",
      "how": "literal",
      "line": 306
+    },
+    {
+     "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -22808,7 +23039,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 485,
+     "line": 573,
      "tabs": [
       "coci-lookup"
      ]
@@ -22965,7 +23196,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 255
+     "line": 284
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -23619,7 +23850,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 362,
+     "line": 368,
      "tabs": [
       "exhibits"
      ]
@@ -23762,7 +23993,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 722,
+     "line": 725,
      "tabs": [
       "csm-workspace"
      ]
@@ -23937,7 +24168,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 611,
+     "line": 615,
      "tabs": [
       "commons"
      ]
@@ -24651,7 +24882,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 181,
+     "line": 184,
      "tabs": [
       "coci-lookup"
      ]
@@ -24671,7 +24902,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1852,
+     "line": 1854,
      "tabs": [
       "program-requirements"
      ]
@@ -25251,7 +25482,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 208,
+     "line": 167,
      "tabs": [
       "cr-reference"
      ]
@@ -25261,7 +25492,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 252,
+     "line": 211,
      "tabs": [
       "cr-reference"
      ]
@@ -25653,7 +25884,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 825,
+     "line": 336,
      "tabs": [
       "cr-reference"
      ]
@@ -25663,7 +25894,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 850,
+     "line": 361,
      "tabs": [
       "cr-reference"
      ]
@@ -25693,7 +25924,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 413,
+     "line": 419,
      "tabs": [
       "exhibits"
      ]
@@ -25703,7 +25934,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 469,
+     "line": 475,
      "tabs": [
       "exhibits"
      ]
@@ -26849,6 +27080,13 @@
      "line": 941
     },
     {
+     "id": "script:kb/_sync_program_checked.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
      "id": "script:scripts/catalog_framing.py",
      "kind": "script",
      "direction": "read",
@@ -27111,7 +27349,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 589,
+     "line": 593,
      "tabs": [
       "commons"
      ]
@@ -27621,8 +27859,10 @@
   ],
   "commons_page.js": [
    "canonical-subj4",
+   "coci-lookup",
    "cr-reference",
-   "exhibits"
+   "exhibits",
+   "program-requirements"
   ],
   "commons_progress.js": [
    "canonical-subj4",
@@ -27678,6 +27918,9 @@
   ],
   "csm_workspace.js": [
    "csm-workspace"
+  ],
+  "csr_local_subjects.js": [
+   "canonical-subj4"
   ],
   "docx.min.js": [
    "letters"
@@ -28207,6 +28450,7 @@
     "kb/_build_exhibit_cert_links.py",
     "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
+    "kb/_sync_program_checked.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -28280,6 +28524,7 @@
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
+    "kb/status/program-requirements-checked.json",
     "kb/csr_out/latest.json",
     "kb/project_lifecycle.json",
     "kb/budget_snapshot.json",
@@ -29227,7 +29472,6 @@
  ],
  "unresolved": [
   "chatbox/sync_program_courses.py",
-  "commons_list.js",
   "cpl_session.js",
   "cr_progress.js",
   "exhibit_progress.js",

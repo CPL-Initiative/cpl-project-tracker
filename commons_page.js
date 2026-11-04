@@ -135,6 +135,11 @@
       prog.appendChild(el("p", { cls: p + "line" }, [el("span", { cls: p + "warn", text: waiting }),
         g.error ? " (" + g.error + ")" : null]));
     }
+    /* Confirmed by a person (Sam, Open Asks Sheet 160 and S565, 2026-11-03): an attribute counted beside complete,
+       never in its place, so it reads as its own line under the bar. */
+    var cf = g.confirmed;
+    if (cf && known(cf.n)) prog.appendChild(el("p", { cls: p + "line " + p + "confirmed" }, [el("b", { text: fmt(cf.n) }),
+      " confirmed by a person" + (known(cf.done) && cf.n ? ", " + fmt(cf.done) + " of them " + (cf.doneWords || "complete") : "") + "."]));
     var under = [g.recently, g.calls].filter(Boolean).join(" ");
     if (under) prog.appendChild(el("p", { cls: p + "quiet", text: under }));
     page.appendChild(prog);

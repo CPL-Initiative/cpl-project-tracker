@@ -38,8 +38,8 @@
    "name": "Privacy",
    "page": "privacy.html",
    "audience": "public",
-   "last": "2026-10-28",
-   "outcome": "S505: npm run a11y privacy and privacy-dark pass at 9 widths; tokens only (no raw hex outside :root), the theme's two faces, no glyphs; wiring: reads no dataset. Copy still describes the parked Drive filer accurately (Google's consent screen links it). No fix needed."
+   "last": "2026-11-04",
+   "outcome": "S565: a11y light and dark pass at 9 widths (axe 4.10.2); raw hex appears only in its :root tokens; it reads no shared dataset, so wiring has nothing to compare. No fix needed."
   },
   {
    "id": "funding-model",
@@ -414,8 +414,8 @@
    "name": "CSM Workspace",
    "page": "index.html#csm-workspace",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-11-03",
+   "outcome": "S557: npm run a11y passes light and dark at both widths (axe, targets, contrast, layout). First Light: raw hex only in the --cw-* token block (the CPL Commons look, proceeded on the recommendation at S555, reply to reverse); components use var(--cw-*). Wiring: no dataset of its own; it reads the funding tab's state (CPL_FUNDING_TAB.csm), one read by design. No fix needed."
   }
  ]
 }

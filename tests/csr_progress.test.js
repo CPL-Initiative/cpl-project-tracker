@@ -6,18 +6,19 @@
 // procedures needed by agents"; "Add 'MQ' to the title for Discipline". Guards:
 //   - static: both HTMLs identical and saying MQ discipline; the column, filter and summary
 //     words; CI and the daily workflow wired; the module's second word per part;
-//   - the two views: Progress opens by default, the switch is two underlined words, the table
+//   - the views: Progress opens by default, the switch is underlined words (the Reference table retired into the List), the table
 //     and its toolbar hide under Progress; the last view is remembered;
 //   - the context from the fixture: the headline pair (settled = confirmed less the
 //     collisions), the five milestones with You are here on the confirmations, eight cards
 //     in the ruled order, the procedures from the real store under the cards, the findings;
-//   - a count opens the Reference view with exactly its filter (the Commons' step 3), the
+//   - a count opens the Reference view with exactly its filter, a waiting pick the List's Open filter (the Commons' step 3), the
 //     address routes a filter and a view, the SUBJ check opens from its card;
 //   - the pick's reviewer is the code row's, not a later note's (the eleven-cohort misread);
 //   - a failed read says so on the card, never a zero; without the module the view says so
 //     and the table still draws; tokens only, no glyph, American spelling.
 //
 // Run from repo root: `npm test` (or `node tests/csr_progress.test.js`).
+const x4c = (M) => { const x = M.progressContext(new Date()); return x.person + " confirmed by a person, " + x.personSettled + " of them settled."; };
 const fs = require("fs");
 const vm = require("vm");
 const { JSDOM } = require("jsdom");
@@ -37,9 +38,9 @@ const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 check("the tab's subtitle says per MQ discipline", /one shared 4-letter subject code per MQ discipline/.test(cpl));
 check("the scope note says MQ discipline names", /MQ discipline names<\/strong> on this page/.test(cpl));
-check("the column is MQ Discipline", /label: "MQ Discipline"/.test(SRC));
-check("the filter's first word is All MQ disciplines", /"All MQ disciplines"/.test(SRC));
-check("the summary counts MQ disciplines", /<\/strong> MQ disciplines · /.test(SRC));
+// Sam's word, "MQ discipline" (2026-10-19), on the List the Reference table retired into (2026-11-04).
+check("the List's column is MQ Discipline", /h: "MQ Discipline"/.test(SRC));
+check("the List counts MQ disciplines", /many: "MQ disciplines"/.test(SRC));
 check("the identifiers kept their names (the hash, the namespace, the field)", /canonical-subj4/.test(SRC) && /_CANON_SUBJ4::/.test(SRC) && /"canonical_subj4"/.test(SRC));
 check("the tab reads the scan, the run log and the procedures", /kb\/csr_out\/latest\.json/.test(SRC) && /kb\/status\/subjects\.json/.test(SRC) && /kb\/csr_procedures\.json/.test(SRC));
 check("the module draws a second word per part", /o\.p\.more \? o\.p\.more\(x\)/.test(MODULE) && /\.prh-pg-more \{ position:relative; z-index:1; \}/.test(MODULE));
@@ -52,7 +53,6 @@ const cssBlock = SRC.slice(SRC.indexOf("function ensureProgressCss()"), SRC.inde
 check("the injected CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(cssBlock.replace(/#tab-canonical-subj4/g, "").replace(/#cs-/g, "")));
 check("the injected CSS uses tokens", /var\(--cobalt\)/.test(cssBlock) && /var\(--border\)/.test(cssBlock) && /var\(--text-muted\)/.test(cssBlock));
 check("the word controls are 24px tall, underlined, with no fill", /\.cs-word \{[^}]*background:none;[^}]*min-height:24px;[^}]*text-decoration:underline/.test(cssBlock));
-check("the hidden attribute wins over the toolbar's display rule", /\.cs-toolbar\[hidden\], #tab-canonical-subj4 \.cs-summary\[hidden\], #tab-canonical-subj4 \.cs-table-wrap\[hidden\] \{ display:none; \}/.test(cssBlock));
 check("single column on a phone", /@media \(max-width: 760px\) \{ #tab-canonical-subj4 \.cs-progress \.prh-pg-steps \{ grid-template-columns:minmax\(0, 1fr\)/.test(cssBlock));
 const progressBlock = SRC.slice(SRC.indexOf("var SCAN_URL"), SRC.indexOf("// Quickstart-C hint consumer"));
 check("no glyph in the Progress view's words", !/[\u2190-\u21ff\u2600-\u27bf\u2b00-\u2bff\u{1f300}-\u{1faff}]/u.test(progressBlock));
@@ -172,9 +172,9 @@ setTimeout(function () {
     // ── the two views ──
     const sw = d.getElementById("cs-views");
     check("the view switch is a tablist of three words", sw && sw.getAttribute("role") === "tablist" && sw.querySelectorAll("button[role=tab]").length === 3);
-    check("the words are Progress, Reference and List (the Catalog Commons' List, 2026-11-01)", Array.prototype.map.call(sw.querySelectorAll("button"), txt).join(",") === "Progress,Reference,List");
-    check("Progress opens by default", M._state.view === "progress" && !d.getElementById("cs-progress").hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden);
-    check("the selected word is marked and focusable", d.getElementById("cs-tab-progress").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-reference").getAttribute("tabindex") === "-1");
+    check("the words are Progress, List (the Catalog Commons' List, 2026-11-01) and Local subjects (2026-11-03); the Reference view retired into the List (2026-11-04)", Array.prototype.map.call(sw.querySelectorAll("button"), txt).join(",") === "Progress,List,Local subjects");
+    check("Progress opens by default", M._state.view === "progress" && !d.getElementById("cs-progress").hidden && d.getElementById("cs-list").hidden);
+    check("the selected word is marked and focusable", d.getElementById("cs-tab-progress").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-list").getAttribute("tabindex") === "-1");
     const pg = d.getElementById("cs-progress");
     check("the module drew the view", pg.querySelector(".prh-pg") && txt(pg.querySelector(".prh-pg-head h3")) === "Common Subjects Reference");
     // ── the headline pair ──
@@ -225,22 +225,36 @@ setTimeout(function () {
     const openWaiting = Array.prototype.filter.call(cards[6].querySelectorAll(".prh-pg-open"), function (b) { return /Open the 2 waiting/.test(txt(b)); })[0];
     check("the confirmation card's count is a word", !!openWaiting);
     openWaiting.click();
-    check("it opens the Reference view with the pre-seeded filter and the select in step", M._state.view === "reference" && M._state.filter === "pre_seeded" && d.getElementById("cs-filter").value === "pre_seeded" && !d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
-    const shown = Array.prototype.map.call(d.querySelectorAll("td.cs-disc"), function (td) { return txt(td).split(" also:")[0].replace(/\s+[^\sA-Za-z].*$/, ""); });
-    check("the table lists exactly the two unconfirmed picks", shown.length === 2 && /Agricultural Business/.test(shown[0] + shown[1]) && /Mathematics/.test(shown[0] + shown[1]));
-    check("the column header says MQ Discipline", /^MQ Discipline/.test(txt(d.querySelector(".cs-table th"))));
-    check("the summary says MQ disciplines", /MQ disciplines ·/.test(txt(d.getElementById("cs-summary"))));
-    check("the Reference view is remembered", w.localStorage.getItem("cplCsr.view.v1") === "reference");
+    // A pick waiting for a person opens where it can be confirmed (Sam, 2026-11-03): the List's Open filter, whose
+    // rows carry Confirm this pick. The Reference box saves only a changed code, so it had nothing to press.
+    const lsEl = d.getElementById("cs-list");
+    check("it opens the List on its Open filter", M._state.view === "list" && M._state.ls && M._state.ls.f === "open" && !lsEl.hidden && d.getElementById("cs-progress").hidden);
+    // The List's rows and their Confirm this pick are tests/csr_list.test.js (12): this suite loads no List engine.
+    // The Reference view's filter addresses open the List on the filter that carries them (2026-11-04).
+    w.location.hash = "#canonical-subj4/pre_seeded";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/pre_seeded opens the List on Open (a seeded pick waiting for a person)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden && d.getElementById("cs-progress").hidden);
+    w.location.hash = "#canonical-subj4/needs_review";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/needs_review opens the List on No code yet", M._state.view === "list" && M._state.ls.f === "nocode");
+    w.location.hash = "#canonical-subj4/reviewed";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/reviewed opens the List on Confirmed", M._state.view === "list" && M._state.ls.f === "confirmed");
+    check("the List view is remembered", w.localStorage.getItem("cplCsr.view.v1") === "list");
     // ── the address routes a filter and a view ──
     w.location.hash = "#canonical-subj4/chip";
     w.dispatchEvent(new w.Event("hashchange"));
-    check("#canonical-subj4/chip opens the table filtered to the one with a chip", M._state.view === "reference" && M._state.filter === "chip" && d.querySelectorAll("td.cs-disc").length === 1 && /Automotive Technology/.test(txt(d.querySelector("td.cs-disc"))));
+    check("#canonical-subj4/chip opens the List on An official code differs", M._state.view === "list" && M._state.ls.f === "chip");
+    check("every count's target is the List or the check, never the Reference view", Object.keys(M.TO).every(function (k) { return M.TO[k].view !== "reference"; }));
+    w.location.hash = "#canonical-subj4/open";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/open opens the List on its Open filter (the Commons card's address)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden);
     w.location.hash = "#canonical-subj4/progress";
     w.dispatchEvent(new w.Event("hashchange"));
     check("#canonical-subj4/progress opens the Progress view", M._state.view === "progress" && !d.getElementById("cs-progress").hidden);
     w.location.hash = "#canonical-subj4/check";
     w.dispatchEvent(new w.Event("hashchange"));
-    check("#canonical-subj4/check opens the SUBJ check on the Reference view", M._state.view === "reference" && d.getElementById("cs-check-modal") && d.getElementById("cs-check-modal").classList.contains("show"));
+    check("#canonical-subj4/check opens the SUBJ check where the reader is", M._state.view === "progress" && d.getElementById("cs-check-modal") && d.getElementById("cs-check-modal").classList.contains("show"));
     // ── the pick's reviewer ──
     check("the pick's reviewer is the code row's, not the later note's", M._state.overlay["Automotive Technology"].reviewed_by === "map@rccd.edu" && M._state.overlay["Automotive Technology"].reviewed_at === "2026-05-23T17:00:00Z" && M._state.overlay["Automotive Technology"]._notes_by === "csr-doctrine-s111@bot");
     // ── the exported context agrees with the screen ──
@@ -249,12 +263,12 @@ setTimeout(function () {
     check("a C-ID descriptor ending in X is indexed under its subject", !!M._state.cidBySubj.WELD && M._state.cidBySubj.WELD[0].id === "WELD 100 X" && x.cidSubjects === 5);
     check("the context: 4 umbrella codes beside their own, 1 fan-in pair, 1 alias family, 2 codes shared by design (FTVE, AGAB)", x.umbrellaCodes === 4 && x.fanInPairs === 1 && x.aliasFamilies === 1 && x.aliasShared === 2 && x.collisionCodes.join() === "AUTB");
 
-    // ── without the module: the view says so and the table still draws (t2) ──
+    // ── without the module: the view says so and the List still opens (t2) ──
     const d2 = t2.d, M2 = t2.w.CPL_CANONICAL_SUBJ4;
-    check("the reference route opens the table", M2._state.view === "reference" && !d2.getElementById("cs-table-wrap").hidden && d2.querySelectorAll("td.cs-disc").length === 11);
+    check("the retired reference route opens the List", M2._state.view === "list" && !d2.getElementById("cs-list").hidden);
     M2.applyView("progress");
     check("without the module the Progress view says so, in a line", /commons_progress\.js\) could not be loaded/.test(txt(d2.getElementById("cs-progress"))) && d2.getElementById("cs-progress").querySelector("[role=alert]"));
-    check("the table drew all the same", d2.querySelectorAll("td.cs-disc").length === 11);
+    check("the List opens all the same", (M2.applyView("list"), M2._state.view === "list" && !d2.getElementById("cs-list").hidden));
 
     // ── a failed read says so, never a zero (t3) ──
     const d3 = t3.d, pg3 = d3.getElementById("cs-progress");
@@ -268,6 +282,8 @@ setTimeout(function () {
     const d4 = t4.d, M4 = t4.w.CPL_CANONICAL_SUBJ4, pg4 = d4.getElementById("cs-progress");
     const page = pg4.querySelector(".cs-pg-page");
     check("page: drawn first when commons_page.js is in", !!page && pg4.firstElementChild === page);
+    check("page: a person's confirmations sit under the bar, with the settled share (S565)",
+      spaced(page.querySelector(".cs-pg-confirmed")) === x4c(M4) && M4.progressContext(new Date()).personSettled <= M4.progressContext(new Date()).person);
     check("page: the headline is the settled MQ disciplines over every one with courses (8 of 11)",
       /8 of 11 MQ disciplines with courses carry a settled Common SUBJ/.test(spaced(page.querySelector("[aria-label=Progress]"))));
     const x4 = M4.progressContext(new Date());
@@ -281,14 +297,17 @@ setTimeout(function () {
       && /The CCN's 2 of 11/.test(spaced(qs[1])) && /C-ID's 1 of 11/.test(spaced(qs[1])) && /Minted here 8 of 11/.test(spaced(qs[1]))
       && /Each count is of the 11 MQ disciplines with courses\./.test(spaced(page)));
     const att4 = d4.getElementById("cs-pg-attention");
-    check("page: Needs attention carries the 2 unconfirmed, the 1 collision and the 2 findings, each with its action",
+    // The cs2_dup finding is the collision the item above counts, so the findings item leaves it out (S561), as the
+    // Commons card does (CSR_ASK_SKIP in kb/_build_commons_status.py): 1 finding, the weak mnemonic.
+    check("page: Needs attention carries the 2 unconfirmed, the 1 collision and the 1 finding no other item counts, each with its action",
       /2 MQ disciplines on the data's modal code, unconfirmed\./.test(spaced(att4)) && /1 Common SUBJ shared by two MQ disciplines\./.test(spaced(att4))
-      && /2 scan findings to confirm or note/.test(spaced(att4)) && /Confirm them/.test(txt(att4)) && /Check them/.test(txt(att4)));
+      && /1 scan finding to confirm or note \(1 a weak mnemonic\)/.test(spaced(att4)) && /Confirm them/.test(txt(att4)) && /Check them/.test(txt(att4)));
+    check("page: the foot names why the Commons card can run behind (S561)", /the CPL Commons card counts them as the daily sync committed them/.test(spaced(page)));
     const more = pg4.querySelector("details.cs-more");
     check("page: the milestones and steps stay one word away, closed", more && !more.open && !!more.querySelector(".prh-pg-part"));
     check("page: the procedures and findings sections stay below", !!pg4.querySelector('details[data-sec="progress:procedures"]') && !!pg4.querySelector('details[data-sec="progress:findings"]'));
     Array.prototype.filter.call(att4.querySelectorAll("button"), function (b) { return txt(b) === "Confirm them"; })[0].click();
-    check("page: Confirm them opens the Reference view on the pre-seeded filter", M4._state.view === "reference" && M4._state.filter === "pre_seeded");
+    check("page: Confirm them opens the List on its Open filter", M4._state.view === "list" && M4._state.ls && M4._state.ls.f === "open");
   } catch (e) {
     check("no exception while checking: " + (e && e.stack || e), false);
   }

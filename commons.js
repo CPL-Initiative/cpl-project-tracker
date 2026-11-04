@@ -48,7 +48,7 @@
      the calls, Recently and Next come from the files; only the name, the one-line what and the opening words live here. */
   var CARDS = {
     requirements: { name: "Common Programs", what: "What each college program requires, read from its catalog.",
-      links: [{ href: "#program-requirements", text: "CPL Pathways" }] },
+      links: [{ href: "#program-requirements/list", text: "CPL Pathways" }] },
     subjects: { name: "Common Subjects", what: "One shared subject code for each discipline, the key every common course sits under." },
     exhibit: { name: "Common Exhibits", what: "Every credential colleges grant credit for, under one name and issuer." },
     cr: { name: "Common Credit Recommendations", what: "One wording for each credit recommendation, so the same credit reads the same everywhere." },
@@ -392,6 +392,10 @@
       var bar = el("i"); bar.style.width = (Math.round(c.pct * 10) / 10) + "%"; meter.appendChild(bar);
       figure.appendChild(meter);
     }
+    // Confirmed by a person, the second pair: counted beside the first, never in its place (Sheet 160; S565).
+    var also = (Array.isArray(c.row.pair) ? c.row.pair : [])[1];
+    if (!c.unread && also && typeof also.n === "number")
+      figure.appendChild(el("p", { cls: "cmn-card-also", text: fmt(also.n) + (also.words ? " " + also.words : "") }));
     var lines = el("div", { cls: "cmn-card-lines" });
     if (c.open.length) {
       var ask = el("p", { cls: "cmn-card-ask" }, [el("span", { cls: "cmn-card-label cmn-card-label-ask", text: "Your decision " }), callNode(c.open[0])]);
@@ -687,6 +691,7 @@
     ".cmn-pill { display:inline-block; white-space:nowrap; padding:3px 10px; border-radius:999px; background:var(--cmn-pill-bg); color:var(--cmn-pill-fg); font-size:.78rem; font-weight:700; }",
     ".cmn-pill-needs { background:var(--cmn-ask-bg); color:var(--cmn-ask-fg); }",
     ".cmn-card-what { margin:0; color:var(--cmn-muted); font-size:.92rem; line-height:1.45; }",
+    ".cmn-card-also { margin:0; color:var(--cmn-ink-2); font-size:.92rem; font-variant-numeric:tabular-nums; }",
     ".cmn-card-figure { display:grid; gap:6px; }",
     ".cmn-card-n { margin:0; font-size:.95rem; color:var(--cmn-ink-2); font-variant-numeric:tabular-nums; }",
     ".cmn-card-big { font-family:var(--cmn-serif); font-size:1.9rem; font-weight:700; color:var(--cmn-title); letter-spacing:-0.02em; }",

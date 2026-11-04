@@ -8051,6 +8051,25 @@
    "hints": "a86fbfacb4",
    "asked": "2026-10-31"
   },
+  "CARP 223 OSHA 30 Hr. Construction Safety Training": {
+   "raw_title": "CARP 223 OSHA 30 Hr. Construction Safety Training",
+   "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)",
+   "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "brand-family",
+    "issuer-issues-the-card",
+    "Rule 1",
+    "Rule 8b"
+   ],
+   "_notes": "Industry Certification row naming the OSHA 30-hour construction card. The Laney CARP 223 course code was stripped and the row joins the house OSHA 30 construction family. Both hints were set aside because the card is issued by OSHA, not the college.",
+   "rules": "d20f2caab9db",
+   "hints": "89d53fe577",
+   "asked": "2026-11-03"
+  },
   "CDA National Credentialing Program--Preschool": {
    "raw_title": "CDA National Credentialing Program--Preschool",
    "unified_title": "Child Development Associate (CDA) Credential",
@@ -16154,6 +16173,109 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "IBEW- Inside Wireman, Apprenticeship Year 1": {
+   "raw_title": "IBEW- Inside Wireman, Apprenticeship Year 1",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 1",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Riverside Area Electrical J. A. C.",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "Rule 7",
+    "Rule 3"
+   ],
+   "_notes": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon electrician apprenticeships.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 2": {
+   "raw_title": "IBEW- Inside Wireman, Apprenticeship Year 2",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 2",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Riverside Area Electrical J. A. C.",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 3": {
+   "raw_title": "IBEW- Inside Wireman, Apprenticeship Year 3",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 3",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Riverside Area Electrical J. A. C.",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 4": {
+   "raw_title": "IBEW- Inside Wireman, Apprenticeship Year 4",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 4",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Riverside Area Electrical J. A. C.",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
+  "IBEW- Inside Wireman, Apprenticeship Year 5": {
+   "raw_title": "IBEW- Inside Wireman, Apprenticeship Year 5",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 5",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Riverside Area Electrical J. A. C.",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
+  "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
+   "raw_title": "IBEW- Inside Wireman, Apprenticeship- Journeyperson",
+   "unified_title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Riverside Area Electrical J. A. C.",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman journeyperson joins the house IBEW electrician journeyperson family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
   "IBEW- Power Lineman Apprenticeship Year 1": {
    "raw_title": "IBEW- Power Lineman Apprenticeship Year 1",
    "unified_title": "IBEW Power Lineman Apprenticeship — Year 1",
@@ -16221,6 +16343,23 @@
    "_notes": "Journeyperson completion level of the lineman apprenticeship. The JATC trainer is assumed, not confirmed.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
+   "raw_title": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1",
+   "unified_title": "IBEW Intelligent Transportation Systems Apprenticeship — Year 1",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "ITS is a distinct IBEW apprenticeship classification with no house family, so the row gets a new title in the house IBEW shape. The training JATC is unconfirmed, so the trainer is left null.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
   },
   "IET-400 Inland Empire Electrical Training Center (Workplace Safety)": {
    "raw_title": "IET-400 Inland Empire Electrical Training Center (Workplace Safety)",
@@ -20272,6 +20411,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-21"
   },
+  "Peace Officer Standards and Training": {
+   "raw_title": "Peace Officer Standards and Training",
+   "unified_title": "POST Basic Academy",
+   "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+   "training_agency": "varies by academy",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 7"
+   ],
+   "_notes": "The title names only the commission, not a specific certificate; the Basic Academy is assumed as the most common POST exhibit. Needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-03"
+  },
   "Peace Officer Standards and Training (POST)": {
    "raw_title": "Peace Officer Standards and Training (POST)",
    "unified_title": "POST Basic Academy",
@@ -20441,6 +20598,77 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Portfolio - Basic Food Preparation": {
+   "raw_title": "Portfolio - Basic Food Preparation",
+   "unified_title": "Basic Food Preparation",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Mission College portfolio course; the mechanism word was stripped and the cx hint accepted.",
+   "rules": "d20f2caab9db",
+   "hints": "828f22e8df",
+   "asked": "2026-11-03"
+  },
+  "Portfolio - Cost Control for Food Service Organizations": {
+   "raw_title": "Portfolio - Cost Control for Food Service Organizations",
+   "unified_title": "Cost Control for Food Service Organizations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course title kept as-is. 'Hospitality Cost Control' may be the same content; a curator could merge them later.",
+   "rules": "d20f2caab9db",
+   "hints": "3740294e6a",
+   "asked": "2026-11-03"
+  },
+  "Portfolio - Intermediate Food Preparation": {
+   "raw_title": "Portfolio - Intermediate Food Preparation",
+   "unified_title": "Food Preparation Intermediate",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last"
+   ],
+   "_notes": "The cx hint was mended by moving the level word 'Intermediate' to the end.",
+   "rules": "d20f2caab9db",
+   "hints": "b6a77fac44",
+   "asked": "2026-11-03"
+  },
+  "Portfolio - Introduction to the Hospitality Industry": {
+   "raw_title": "Portfolio - Introduction to the Hospitality Industry",
+   "unified_title": "Introduction to the Hospitality Industry",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "level-words-last"
+   ],
+   "_notes": "Course title kept verbatim. It is close to the house family 'Introduction to Hospitality'; a curator may merge them.",
+   "rules": "d20f2caab9db",
+   "hints": "66ab71f4ce",
+   "asked": "2026-11-03"
   },
   "Portfolio AJ 54": {
    "raw_title": "Portfolio AJ 54",
