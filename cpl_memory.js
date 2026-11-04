@@ -79,6 +79,28 @@
   var viewMode = "curate";               // "curate" | "report"
   var reportOrg = "all";                 // org scope: "all" | one of ORGS
   var reportIncludeProposed = false;     // DEFAULT OFF — verified-only (the pane's verified-default trust rule)
+  // The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() opens. Curate is the
+  // first view, so it reports the bare tab, or the entry open in the ripple inspector by its slug (the stable
+  // handle related rows and cites already use; a row with no slug falls back to its uuid, also stable).
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("memory", function () {
+    if (viewMode === "report") return "memory/report";
+    if (view.mode === "entry" && view.id && byId[view.id]) return "memory/entry/" + encodeURIComponent(view.id);
+    return "memory";
+  });
+  // #memory/<curate|report> opens that view; #memory/entry/<slug> opens Curate on that entry once the rows load.
+  // A bare #memory, or a word the tab does not know, leaves the view as it is. Returns whether it named a view.
+  var arrivalEntry = "";
+  function arrive() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("memory") : null;
+    if (!a) return false;
+    if (a[0] === "report" || a[0] === "curate") { viewMode = a[0]; return true; }
+    if (a[0] === "entry" && a[1]) { viewMode = "curate"; arrivalEntry = a[1]; return true; }
+    return false;
+  }
+  function openArrivalEntry() {
+    if (arrivalEntry && byId[arrivalEntry]) view = { mode: "entry", id: arrivalEntry };
+    arrivalEntry = "";
+  }
   // DOM refs
   var appEl, authBar, tilesEl, statusSegEl, tagCloudEl, activeEl, curateBarEl,
     listMetaEl, listEl, listFootEl, rippleEl, searchEl,
@@ -1731,7 +1753,7 @@
     var headers = authHeaders();
     return fetch(REST + "cpl_memory?select=*&order=updated_at.desc", { headers: headers })
       .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (rows) { ingest(Array.isArray(rows) ? rows : []); render(); })
+      .then(function (rows) { ingest(Array.isArray(rows) ? rows : []); openArrivalEntry(); render(); })
       .catch(function () { ingest([]); render(); });
   }
   function refresh() { return load(); }
@@ -2251,7 +2273,16 @@
     ensureCss();
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
-    if (!_shellBuilt) { buildShell(root); _shellBuilt = true; }
+    if (!_shellBuilt) {
+      buildShell(root); _shellBuilt = true;
+      arrive();
+      // A later visit by an address that names a view opens it (tabs.js fires onActivate once).
+      window.addEventListener("cpl-tab-activated", function (e) {
+        if (!(e && e.detail && e.detail.tab === "memory") || !arrive()) return;
+        if (loaded) openArrivalEntry();
+        render();
+      });
+    }
     // The keeper renews the reviewer token underneath this tab and announces
     // sign-ins that happened in ANOTHER browser tab. Without this the lock
     // state was only ever rendered at activation, so a session that changed

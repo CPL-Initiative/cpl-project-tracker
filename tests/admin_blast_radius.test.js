@@ -30,11 +30,12 @@ const ORGS_SRC = fs.readFileSync("cobi_orgs.js", "utf8");
 const OVERLAY_SRC = fs.readFileSync("nav_overlay.js", "utf8");
 const NAVGROUPS_SRC = fs.readFileSync("nav_groups.js", "utf8");
 
-function makeWin() {
+function makeWin(opts) {
+  opts = opts || {};
   const dom = new JSDOM(`<!doctype html><html><body>
     <nav class="cpl-tabs"><button class="cpl-tab" data-tab="admin">Admin</button></nav>
     <div id="admin-root"></div></body></html>`,
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || ""), runScripts: "dangerously" });
   const w = dom.window;
   w.sessionStorage.setItem("cpl_sb", JSON.stringify({
     access_token: "aaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc",
@@ -45,11 +46,16 @@ function makeWin() {
       return Promise.resolve({ ok: true, json: () => Promise.resolve(
         [{ tbl: "cpl_memory", rls_enabled: true, select_gate: "is_allowed_reviewer()", policy_count: 1 }]) });
     }
+    if (opts.map && /dependency_map\.json/.test(String(url))) {
+      return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(opts.map))) });
+    }
     // Everything else — the dependency map included — answers with junk, so
     // loadBlast's error path is what a fetchless environment exercises.
     return Promise.resolve({ ok: true, json: () => Promise.resolve([]) });
   };
-  [OVERLAY_SRC, NAVGROUPS_SRC, ORGS_SRC, SURFACE_SRC, ADMIN_SRC].forEach((src) => {
+  // The keeper (cpl_session.js) first, as the page loads it: arrival() and viewAddress() live there.
+  const pre = opts.session ? [fs.readFileSync("cpl_session.js", "utf8")] : [];
+  pre.concat([OVERLAY_SRC, NAVGROUPS_SRC, ORGS_SRC, SURFACE_SRC, ADMIN_SRC]).forEach((src) => {
     const el = w.document.createElement("script"); el.textContent = src;
     w.document.body.appendChild(el);
   });
@@ -172,6 +178,36 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     api._blastKindOf("file:secret.xlsx") === "file" &&
     api._blastKindOf("storage:foo") === "other" &&
     api._blastKindOf("external:api.github.com") === "external");
+
+  // ── every view has an address (2026-11-04): #admin/blast/<kind> ───────────
+  {
+    const ask = (x) => { x.CPL_SESSION.stashReturnTab("admin"); return (JSON.parse(x.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; };
+    const pressedKind = (x) => { const b = x.document.querySelector('#admBlast .adm-blast-kind[aria-pressed="true"]'); return b && b.getAttribute("data-blastkind"); };
+    const a = makeWin({ hash: "#admin/blast/rpc", session: true, map: FIXTURE });
+    a.CPL_ADMIN_TAB.activate();
+    for (let i = 0; i < 6; i++) await tick();
+    check("address 1: #admin/blast/rpc opens Blast Radius on RPCs",
+      pressedKind(a) === "rpc" && a.document.querySelectorAll("#admBlast .adm-blast-ds").length === 1);
+    check("address 2: the view reports admin/blast/rpc", ask(a) === "admin/blast/rpc");
+    a.document.querySelector('#admBlast [data-blastkind="supabase"]').click();
+    check("address 3: switched to Supabase tables, it reports admin/blast/supabase", ask(a) === "admin/blast/supabase");
+    a.document.querySelector('#admBlast [data-blastkind="all"]').click();
+    check("address 4: All reports the bare admin", ask(a) === "admin");
+    const b = makeWin({ hash: "#admin", session: true, map: FIXTURE });
+    b.CPL_ADMIN_TAB.activate();
+    for (let i = 0; i < 6; i++) await tick();
+    check("address 5: the bare #admin opens All kinds, as before", pressedKind(b) === "all" && ask(b) === "admin");
+    b.history.replaceState(null, "", "#admin/blast/file");
+    b.CPL_ADMIN_TAB.activate();
+    for (let i = 0; i < 3; i++) await tick();
+    check("address 6: a later visit on #admin/blast/file opens Files", pressedKind(b) === "file" && ask(b) === "admin/blast/file");
+    const c = makeWin({ hash: "#admin/blast/nonsense", session: true, map: FIXTURE });
+    c.CPL_ADMIN_TAB.activate();
+    for (let i = 0; i < 6; i++) await tick();
+    check("address 7: an unknown kind leaves All", pressedKind(c) === "all");
+    check("address 8: nothing about the view is stored",
+      !Object.keys(b.localStorage).some((k) => k !== "cpl_sb_return_tab" && /blast|kind|view/i.test(k)));
+  }
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

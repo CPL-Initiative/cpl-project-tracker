@@ -337,8 +337,60 @@ function seeded(opts) {
     !/No contracts on file/.test(r.textContent));
 })();
 
+// ── every view has an address (2026-11-04): #contracts/<id> opens that contract ──
+(async function () {
+  const SECOND = Object.assign({}, CONTRACT, { id: "c2", agreement_no: "V0999", vendor_short: "WestEd" });
+  function page(hash) {
+    const dom = new JSDOM('<!doctype html><html><head></head><body><div id="contracts-root"></div></body></html>',
+      { url: "https://example.org/index.html" + (hash || ""), runScripts: "dangerously" });
+    const w = dom.window;
+    const bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }; };
+    Object.defineProperty(w, "localStorage", { value: bag(), configurable: true });
+    Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
+    w.localStorage.setItem("cpl_team_pass", "p");
+    w.fetch = function (url) {
+      const u = String(url);
+      const body = /cpl_contracts\?/.test(u) ? [CONTRACT, SECOND] : /cpl_contract_deliverables/.test(u) ? DELIVERABLES : [];
+      return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(body))) });
+    };
+    w.eval(fs.readFileSync("cpl_session.js", "utf8"));
+    w.eval(SRC);
+    return w;
+  }
+  const tick = () => new Promise((r) => setTimeout(r, 0));
+  const ask = (w) => { w.CPL_SESSION.stashReturnTab("contracts"); return (JSON.parse(w.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; };
+  const onPick = (w) => { const b = w.document.querySelector(".ctr-pick.on"); return b && b.getAttribute("data-pick"); };
+  async function open(w) { w.CPL_CONTRACTS.activate(); for (let i = 0; i < 4; i++) await tick(); }
+
+  const a = page("#contracts/c2");
+  await open(a);
+  check("address 1: #contracts/c2 opens the second contract", a.CPL_CONTRACTS._state.activeId === "c2" && onPick(a) === "c2");
+  check("address 2: the view reports contracts/c2", ask(a) === "contracts/c2");
+  a.document.querySelector('[data-pick="c1"]').click();
+  check("address 3: switched to the first contract, it reports the bare contracts", ask(a) === "contracts");
+  a.document.querySelector('[data-pick="c2"]').click();
+  a.dispatchEvent(new a.CustomEvent("cpl-tab-activated", { detail: { tab: "contracts" } }));
+  check("address 4: an unlock's re-fire on the same visit keeps the pick", a.CPL_CONTRACTS._state.activeId === "c2");
+
+  const b = page("#contracts");
+  await open(b);
+  check("address 5: the bare #contracts opens the first contract, as before", b.CPL_CONTRACTS._state.activeId === "c1" && ask(b) === "contracts");
+  b.history.replaceState(null, "", "#contracts/c2");
+  b.dispatchEvent(new b.CustomEvent("cpl-tab-activated", { detail: { tab: "contracts" } }));
+  check("address 6: a later visit on #contracts/c2 opens it", b.CPL_CONTRACTS._state.activeId === "c2" && onPick(b) === "c2");
+
+  const c = page("#contracts/no-such-contract");
+  await open(c);
+  check("address 7: an id no loaded contract carries leaves the first", c.CPL_CONTRACTS._state.activeId === "c1" && ask(c) === "contracts");
+  check("address 8: nothing about the view is stored",
+    !Object.keys(c.localStorage).some((k) => !/^(cpl_sb_return_tab|cpl_team_pass)$/.test(k) && /contract|pick|view/i.test(k)));
+  report();
+})();
+
 // ── report ──
+function report() {
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
 console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
 process.exit(failed ? 1 : 0);
+}

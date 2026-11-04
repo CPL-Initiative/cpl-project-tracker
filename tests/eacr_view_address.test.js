@@ -50,15 +50,18 @@ function bootAt(hash) {
   const doc = w.document;
   const stash = () => { w.CPL_SESSION.stashReturnTab("exhibit-adoption"); return (JSON.parse(local.cpl_sb_return_tab || "{}")).tab; };
   const on = () => val(() => doc.querySelector(".sw-subtab.on").getAttribute("data-view"));
-  const shown = () => ["credentials", "table", "matrix"].filter((v) => !doc.getElementById("sw-view-" + v).hidden);
+  const shown = () => ["credentials", "table", "matrix"].filter((v) => { const p = doc.getElementById("sw-view-" + v); return p && !p.hidden; });
   return { w, doc, stash, on, shown, local, store };
 }
+// The tab starts on DOMContentLoaded when the document is still loading, so each boot waits a tick.
+const tick = () => new Promise((r) => setTimeout(r, 30));
 const click = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
 
 (async function () {
   // (1) the matrix on a cells word
   {
     const a = bootAt("#exhibit-adoption/matrix/opportunity");
+    await tick();
     check("(1) ⭐ #exhibit-adoption/matrix/opportunity opens the matrix", a.on() === "matrix" && a.shown().join() === "matrix", a.on() + " " + a.shown());
     check("(1) on Opportunity only", val(() => a.doc.getElementById("mx-cells-opp").checked) === true);
     check("(1) and reports that address", a.stash() === "exhibit-adoption/matrix/opportunity", a.stash());
@@ -83,11 +86,14 @@ const click = (w, el) => el && el.dispatchEvent(new w.MouseEvent("click", { bubb
   // (4) the defaults
   {
     const b = bootAt("#exhibit-adoption");
+    await tick();
     check("(4) a bare #exhibit-adoption opens Credentials", b.on() === "credentials" && b.shown().join() === "credentials");
     check("(4) and reports the bare tab", b.stash() === "exhibit-adoption", b.stash());
     const c = bootAt("#exhibit-adoption/adoption");
+    await tick();
     check("(4) #exhibit-adoption/adoption (the side menu's scroll target) keeps Credentials", c.on() === "credentials", c.on());
     const t = bootAt("#exhibit-adoption/table");
+    await tick();
     check("(4) #exhibit-adoption/table opens the Adoption table", t.on() === "table" && t.shown().join() === "table", t.on());
   }
 

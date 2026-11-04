@@ -74,7 +74,14 @@
     return ["map-data-quality"].concat(w).join("/");
   });
   /* Opens the class and tier the address names; a tier opens the guidance, where its words sit. */
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "map-data-quality") away = true; });
   function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return false;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-data-quality") : null;
     if (!a) return false;
     var hit = false;
