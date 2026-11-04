@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-538 document(s).
+539 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 572 | [Session 572 handoff: the cert link's AWS welding and Amazon families; Columbia's full read is next](../session_572_handoff.md) | 2026-11-04 |
 | 571 | [Session 571 handoff: the cert link's PMI, ICC, CDPH and EMSA families; Columbia's full read is next](../session_571_handoff.md) | 2026-11-04 |
 | 570 | [Session 570 handoff: the cert link's Autodesk, NCCER and ASME families; Columbia's full read is next](../session_570_handoff.md) | 2026-11-04 |
 | 569 | [Session 569 handoff: the cert link's FAA family; Columbia's full read is next](../session_569_handoff.md) | 2026-11-04 |

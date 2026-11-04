@@ -1061,3 +1061,18 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
 - **Next families:** AWS welding (19 titles, 17 catalog rows) needs a check of the D1.1 qualifications against the
   catalog's names. NWCG (17 titles, 6 rows) and SWRCB (12, 4) are small. DANTES DSST waits on the credential watch to
   list the exams.
+
+## SkyHoags (2026-11-04, S571, the CPL Queue routine): AWS welding and Amazon Web Services in the cert link
+
+- **"AWS" names two issuers.** The reference writes both the American Welding Society's and Amazon Web Services' titles
+  as *AWS ...*, and neither family was linked. Amazon's four titles (Cloud Practitioner, Developer, Solutions Architect,
+  CloudOps) match catalog rows one to one. The catalog holds 17 American Welding Society rows, but only two name a
+  welding code: *AWS D1.1 Structural Steel* and *AWS D9.1 Sheet Metal Welding*.
+- **#2761 adds 10 titles to 6 certs:** five D1.1 qualifications and the D9.1 one hold their code's row; the four Amazon
+  titles hold theirs. The link holds 259 titles to 222 certs.
+- **Left out:** D1.3, D1.5, D1.8, D17.1 and the B2.2 brazing qualification (no catalog row); *AWS Welder Qualification
+  — D1.1/D1.3/D17.1* (two of three codes missing); the LA City certified-welder titles, which the City issues; the
+  welding-process courses and the Light Gage titles. *Certified Welder (CW)* is AWS's umbrella program, so no title is
+  pointed at it.
+- **Next families:** NWCG (17 titles, 6 rows) and SWRCB (12, 4). The D1.x codes the catalog lacks wait on the
+  credential watch.

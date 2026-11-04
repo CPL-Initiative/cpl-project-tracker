@@ -1,11 +1,11 @@
 {
  "schema": 1,
- "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA.",
+ "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
  "_reference_generated_at": "2026-11-04T06:20:04+00:00",
  "counts": {
-  "certs_linked": 216,
-  "titles_linked": 249,
-  "holds": 233,
+  "certs_linked": 222,
+  "titles_linked": 259,
+  "holds": 243,
   "bundles": 48,
   "aligned": 16,
   "codes_not_in_catalog": [
@@ -187,6 +187,34 @@
    "catalog_name": "Project Management Professional",
    "issuer": "PMI",
    "family": "PMI"
+  },
+  "ITC0832": {
+   "code": null,
+   "name": "AWS Certified Cloud Practitioner",
+   "catalog_name": "AWS Certified Cloud Practitioner",
+   "issuer": "Amazon Web Services",
+   "family": "Amazon"
+  },
+  "ITC0833": {
+   "code": null,
+   "name": "AWS Certified CloudOps Engineer - Associate",
+   "catalog_name": "AWS Certified CloudOps Engineer - Associate",
+   "issuer": "Amazon Web Services",
+   "family": "Amazon"
+  },
+  "ITC0834": {
+   "code": null,
+   "name": "AWS Certified Solutions Architect - Associate",
+   "catalog_name": "AWS Certified Solutions Architect - Associate",
+   "issuer": "Amazon Web Services",
+   "family": "Amazon"
+  },
+  "ITC0835": {
+   "code": null,
+   "name": "AWS Certified Developer - Associate",
+   "catalog_name": "AWS Certified Developer - Associate",
+   "issuer": "Amazon Web Services",
+   "family": "Amazon"
   },
   "ITC0842": {
    "code": null,
@@ -1448,6 +1476,20 @@
    "issuer": "PMI",
    "family": "PMI"
   },
+  "ITC7257": {
+   "code": null,
+   "name": "AWS D1.1 Structural Steel",
+   "catalog_name": "AWS D1.1 Structural Steel",
+   "issuer": "American Welding Society",
+   "family": "AWS-Welding"
+  },
+  "ITC7258": {
+   "code": null,
+   "name": "AWS D9.1 Sheet Metal Welding",
+   "catalog_name": "AWS D9.1 Sheet Metal Welding",
+   "issuer": "American Welding Society",
+   "family": "AWS-Welding"
+  },
   "ITC7289": {
    "code": null,
    "name": "Level 1 - Welding",
@@ -2312,6 +2354,76 @@
     "ITC2094",
     "ITC2089",
     "ITC2092"
+   ]
+  },
+  "AWS Certified Cloud Practitioner": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0832"
+   ]
+  },
+  "AWS Certified Developer — Associate": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0835"
+   ]
+  },
+  "AWS Certified Solutions Architect — Associate": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0834"
+   ]
+  },
+  "AWS CloudOps Engineer - Associate": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0833"
+   ]
+  },
+  "AWS D1.1 FCAW Qualified Welder": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7257"
+   ]
+  },
+  "AWS D1.1 SMAW Qualified Welder": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7257"
+   ]
+  },
+  "AWS D1.1 Structural Welder Qualification": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7257"
+   ]
+  },
+  "AWS D1.1 Structural Welding Certification — FCAW (E71T-8)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7257"
+   ]
+  },
+  "AWS D1.1 Structural Welding Certification — SMAW (E7018)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7257"
+   ]
+  },
+  "AWS D9.1 GMAW Qualified Welder": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7258"
    ]
   },
   "Autodesk Certified User": {

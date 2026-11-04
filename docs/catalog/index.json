@@ -16516,8 +16516,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 538,
+   "count": 539,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 572,
+     "path": "docs/session_572_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 572 handoff: the cert link's AWS welding and Amazon families; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25692,5 +25708,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1372
+ "total": 1373
 }
