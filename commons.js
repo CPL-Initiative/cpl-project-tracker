@@ -52,7 +52,7 @@
     subjects: { name: "Common Subjects", what: "One shared subject code for each discipline, the key every common course sits under." },
     exhibit: { name: "Common Exhibits", what: "Every credential colleges grant credit for, under one name and issuer." },
     cr: { name: "Common Credit Recommendations", what: "One wording for each credit recommendation, so the same credit reads the same everywhere." },
-    course: { name: "Common Courses", what: "Local courses grouped into shared common courses, mapped in SkyView." },
+    course: { name: "Common Courses", what: "Local courses grouped into shared common courses, worked on the Courses List or in SkyView." },
     credentials: { name: "Common Credentials", what: "Certifications and badges as their issuers publish them, with the skills each names, linked to exhibits." },
     outcomes: { name: "Common Outcomes", what: "Each course’s learning outcomes and objectives, read from its public outline." },
     skills: { name: "Common Skills", status: "Starting",

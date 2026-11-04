@@ -100,11 +100,15 @@ check("Program Requirements: the issues are the failing and the unread counts",
 ex = rows[1].get("facts") or {}
 check("Exhibit: a person's and a cohort's stamps sum to the stamped titles", ex.get("person") + ex.get("cohort") == ex.get("stamped") == rows[1]["pair"][0]["n"])
 co = rows[2]
-check("Course: SkyView is the row's home and every count opens it (Sam, 20:46Z); the Courses List is the second word (2026-11-01); its Progress page the third (S559)",
-      co["links"] == [{"href": co["tab"], "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"},
-                      {"href": "#coci-lookup/progress", "text": "Open Progress"}]
-      and co["tab"].endswith("/prototype/skyview.html")
-      and all(i.get("open") == co["tab"] for i in co["issues"]) and co["pair"][0]["open"] == co["tab"])
+check("Course: the Courses List is the row's home and its pair opens it, SkyView the second word, Progress the third "
+      "(Sam, 2026-11-04: \"I want to be able to use list or skyview. Skyview is still too buggy to make the main workspace\"); "
+      "each issue opens its job's List filter (S574)",
+      co["tab"] == "#coci-lookup/courses"
+      and co["links"] == [{"href": "#coci-lookup/courses", "text": "Open the Courses List"},
+                          {"href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", "text": "Open SkyView"},
+                          {"href": "#coci-lookup/progress", "text": "Open Progress"}]
+      and all(p.get("open") == co["tab"] for p in co["pair"])
+      and all((i.get("open") or "").startswith("#coci-lookup/list/") for i in co["issues"]))
 cr = rows[3]
 crf = cr.get("facts") or {}
 # S437 (the CR Progress view; Open Asks Sheet 108 card 5): one pair, the wordings that resolve to a
@@ -147,7 +151,9 @@ check("Subjects: the pair's words say MQ disciplines and name the three tests", 
       and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free", "confirmed by a person"])
 check("Subjects: the card and its counts open the List (Sam, 2026-11-03), every issue the tab's own list",
       rows[4]["links"][0]["href"] == "#canonical-subj4/list" and rows[4]["pair"][0]["open"] == "#canonical-subj4/list"
-      and rows[4]["pair"][1]["open"] == "#canonical-subj4/list/person" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
+      and rows[4]["pair"][1]["open"] == "#canonical-subj4/list/person"
+      # S574: an issue opens its job filtered; the stray identity codes are courses' identities, so the Courses List's.
+      and all((i.get("open") or "").startswith("#canonical-subj4/") or i.get("open") == "#coci-lookup/list/stray" for i in rows[4]["issues"]))
 # A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
 # a known issue with nothing in it is not an issue, and facts.shared keeps the measure.
 # The unconfirmed issue leaves the list at zero too (every MQ discipline confirmed, 2026-11-04, S566).

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-04T17:52:05Z",
+ "written_at": "2026-11-04T18:04:03Z",
  "rows": [
   {
    "key": "requirements",
@@ -183,15 +183,15 @@
   {
    "key": "course",
    "title": "Common Course Reference",
-   "tab": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+   "tab": "#coci-lookup/courses",
    "links": [
+    {
+     "href": "#coci-lookup/courses",
+     "text": "Open the Courses List"
+    },
     {
      "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "text": "Open SkyView"
-    },
-    {
-     "href": "#coci-lookup",
-     "text": "Open the Courses List"
     },
     {
      "href": "#coci-lookup/progress",
@@ -204,13 +204,13 @@
      "n": 3205,
      "of": 27581,
      "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "open": "#coci-lookup/courses"
     },
     {
      "n": 957,
      "of": 27581,
      "words": "confirmed by a person, 152 of them ready",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "open": "#coci-lookup/courses",
      "error": null
     }
    ],
@@ -224,21 +224,21 @@
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "open": "#coci-lookup/list/seedless"
     },
     {
      "n": 4179,
      "words": "unit anomalies",
      "owner": "a curator (an identity keeps its unit range)",
      "carry": "no_procedure",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "open": "#coci-lookup/list/units"
     },
     {
      "n": 5750,
      "words": "blank descriptions",
      "owner": "the colleges' COCI entries",
      "carry": "routine",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "open": "#coci-lookup/list/nodesc"
     }
    ],
    "procedures": [
@@ -444,7 +444,7 @@
      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
      "owner": "a re-mint under the playbook",
      "carry": "reaches",
-     "open": "#canonical-subj4/progress"
+     "open": "#coci-lookup/list/stray"
     }
    ],
    "procedures": [
@@ -616,7 +616,7 @@
       "n": 14523,
       "words": "cards carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
-      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+      "open": "#coci-lookup/list/seedless"
      },
      {
       "ref": "course",
@@ -624,7 +624,7 @@
       "n": 4179,
       "words": "unit anomalies",
       "owner": "a curator (an identity keeps its unit range)",
-      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+      "open": "#coci-lookup/list/units"
      },
      {
       "ref": "cr",
@@ -674,7 +674,7 @@
       "n": 93,
       "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
       "owner": "a re-mint under the playbook",
-      "open": "#canonical-subj4/progress"
+      "open": "#coci-lookup/list/stray"
      }
     ]
    },
@@ -715,7 +715,7 @@
     "n": 5750,
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
-    "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    "open": "#coci-lookup/list/nodesc"
    }
   ]
  },
