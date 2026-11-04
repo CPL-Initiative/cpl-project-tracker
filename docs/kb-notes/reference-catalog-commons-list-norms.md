@@ -67,7 +67,8 @@ cards and the panel over Courses. Programs' is the fourth (2026-11-04): a progra
 by block with the CPL on record at its college, reading a light record once from the panel. Courses' is the fifth
 (2026-11-04): every count opens SkyView (Courses keeps SkyView first), the line shares the tab's one read of the
 Commons file with its Progress page, and a course's panel lists the local courses its M-ID holds. Every List now has
-the line, the fold and the panel. Next: the original views retire as each List does what they do.
+the line, the fold and the panel. CR's worklist retired into its List on 2026-11-04, its Part B guards ported
+first (`tests/cr_list_worklist_port.test.js`). Next: Subjects' Reference view, then Programs' and Courses' older views.
 
 ## What every List shares
 

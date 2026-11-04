@@ -78,7 +78,7 @@
     });
   }
 
-  /* ── where a count leads: a filter of the tab's worklist ── */
+  /* ── where a count leads: a filter of the tab's List ── */
   var TO = {
     todo: { filter: "todo" }, auto: { filter: "auto" }, held: { filter: "held" }, done: { filter: "done" },
     open: { filter: "open" }, names: { filter: "names" }, all: { filter: "all" }
@@ -408,7 +408,7 @@
     while (node.firstChild) node.removeChild(node.firstChild);
     if (!CP) {
       node.appendChild(el("p", { cls: "cq-caution", role: "alert",
-        text: "The Progress view's shared module (commons_progress.js) could not be loaded. The worklist reads as usual; reload the tab to try again." }));
+        text: "The Progress view's shared module (commons_progress.js) could not be loaded. The List reads as usual; reload the tab to try again." }));
       return Promise.resolve();
     }
     ensureCss();
