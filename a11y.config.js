@@ -2415,6 +2415,15 @@ module.exports = {
     ],
   },
 
+  /* ── The Common SUBJ explainer (2026-11-04) ─────────────────────────────
+     Linked from the Common Subjects Reference's page ("What a Common SUBJ is"). */
+  "common-subj-explainer": {
+    file: "prototype/common_subj_explainer.html",
+    title: "The Common SUBJ: a plain-words explanation",
+    routes: [{ hash: "", name: "page" }],
+    widths: [320, 390, 768, 1440],
+  },
+
   /* ── SkyView ─────────────────────────────────────────────────────────────
      The built artifact, not its prototype/ccr_atlas_v1.html source: what ships
      is what gets measured. It opens full-window from the CCR side menu, so it
