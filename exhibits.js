@@ -16,11 +16,11 @@
 //   kb/exhibits_review.json          the held titles, written nightly by kb/_build_exhibits_review.py
 //   kb/exhibits_review_courses.json  the courses behind a could-adopt chip, fetched on the first click
 //   kb/exhibits_adoption.json        Exhibit Adoption's per-credential view (Sheet 147 step 3), read with the
-//                                    Credentials view: what each college articulated, the courses each
+//                                    List: what each college articulated, the courses each
 //                                    could-adopt college already teaches, the exhibits, the field, the peer median
 //   map_links.js                     MAP's verified exhibits and who built each, for Request Quick Adopt
 //   kb/status/commons.json           the Commons' row for this reference (key "exhibit"), and the run log it names,
-//   kb/status/exhibit.json           read for the Credentials view's tiles exactly as commons.js reads them, so the
+//   kb/status/exhibit.json           read for the List's tiles exactly as commons.js reads them, so the
 //                                    two pages show the same figures (Sam, 2026-11-01; see "The Commons' row" below)
 //   exhibit_title_students()         students per title: an allowed reviewer only, k=10 applied in the
 //                                    database (the student-detail ADR), so this page never holds a count
@@ -35,12 +35,14 @@
 // The buttons, read from Sam's words: the current title is the exhibit's latest decision (its local title,
 // or the title a person saved for a conflict); the proposed title is the box, which he may edit first.
 //
-// Credentials (the credential panel, Sheet 147's order, step 2): every credential in the reference, from
-// credential_reference_data.js (loaded on the first visit to the view) and the live _CREDENTIAL_REVIEW::
-// rows, so a save shows at once. Sam, 2026-10-30: "the issuer for an electrician apprentice is the
+// The credential's issuer and training sites (Sheet 147's order, step 2): every credential in the reference, from
+// credential_reference_data.js (loaded on the first visit to the List) and the live _CREDENTIAL_REVIEW::
+// rows, so a save shows at once. The Credentials view held the editor until 2026-11-03, when the List's side panel
+// took it and the view retired (Sam, 2026-11-03: the original views retire once the List does what they do;
+// #exhibits/credentials opens the List). Sam, 2026-10-30: "the issuer for an electrician apprentice is the
 // national trade union and the training site is the local union school house"; "could be multiple
 // training sites"; "would want to be able to set and change both issuer and training site from here".
-// The panel's Save writes, under _CREDENTIAL_REVIEW::<credential>, issuing_agency_override and
+// The editor's Save writes, under _CREDENTIAL_REVIEW::<credential>, issuing_agency_override and
 // training_sites_override (a JSON list of {site, college}, college optional), with training_agency_override
 // set to the sites joined, so a reader that takes one trainer (the bake, MAP export, the CER tab) stays
 // right. kb/_apply_credential_review.py resolves the two the way resolveSites() does here.
@@ -124,7 +126,6 @@
   /* Which certs each canonical title holds, by the industry credential catalog's ids (kb/_build_exhibit_cert_links.py;
      Sam, 2026-11-01: "a separate canonical list of just our certs, apart from how they might be bundled"). */
   var CERT_LINKS_URL = "kb/exhibit_cert_links.json";
-  var CRED_PAGE = 50;
   var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
   var MAP_VIEW = "&View=Non-Military";
@@ -173,8 +174,8 @@
     rq: { rows: null, store: null, report: null, error: null, busy: "", note: "" },
     // Another look: the sweep's cards, decided this visit by card id.
     sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
-    cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
-          drafts: {}, note: "", showTitles: false, showArt: false, showCould: false, showRecords: false,
+    cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null,
+          drafts: {},
           adopt: null, adoptErr: false, open: null, links: null },
     // The Commons' row and its run log, read fresh each visit (commonsFresh()).
     cm: null
@@ -1033,10 +1034,10 @@
     showAse();
     canon.appendChild(aseNote);
     var sites = (h.trainers || []).join("; ");
-    // The credential panel sets training sites; a title new to the reference gets them once the nightly run adds it.
+    // The List's side panel sets training sites; a title new to the reference gets them once the nightly run adds it.
     canon.appendChild(el("div", { cls: "exh-inbox exh-read" }, [el("span", { cls: "exh-pre", text: "Training site:" }),
       el("span", { cls: "exh-grow", text: sites || "None named" }),
-      h.exists ? word("Set in the credential panel", function () { openCredential(h.title); }, { cls: "exh-w exh-small" })
+      h.exists ? word("Set them in the List", function () { openCredential(h.title); }, { cls: "exh-w exh-small" })
         : el("span", { cls: "exh-muted exh-small", text: "set once it joins the reference" })]));
     var exists = el("p", { cls: "exh-muted exh-small" },
       [h.exists ? "Joins the credential already in the reference under this title." : "A new credential in the reference."]);
@@ -1214,7 +1215,7 @@
     return wrap;
   }
 
-  /* ── Credentials: the credential panel ── */
+  /* ── The credential's issuer and training sites (the side panel's editor) ── */
   /* One rule with kb/_apply_credential_review.py: a list of {site, college}, blank sites and repeats
      dropped, anything else read as null (ignored, never half-applied). */
   function parseSites(value) {
@@ -1298,28 +1299,6 @@
     if (!a) return [];
     var art = credArt(r);
     return Object.keys(adoptMap(a.c)).filter(function (n) { return art.indexOf(n) === -1; }).sort();
-  }
-  function credAdoption(r) {
-    var a = credArt(r).length, c = credCould(r).length;
-    var parts = [];
-    if (a) parts.push(fmt(a) + (a === 1 ? " articulates it" : " articulate it"));
-    if (c) parts.push(fmt(c) + " could adopt");
-    return parts.join(" · ") || "No college yet";
-  }
-  function credRows() {
-    var cs = state.cs;
-    if (!cs.rows) return [];
-    var words = cs.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    var list = cs.rows;
-    if (words.length) {
-      list = list.filter(function (r) {
-        var cur = credCurrent(r);
-        var hay = [credName(r), r.ut, cur.issuer, (r.issuers || []).join(" "), joinSites(cur.sites),
-          (r.raw_variants || []).map(function (v) { return v.r; }).join(" ")].join(" ").toLowerCase();
-        return words.every(function (w) { return hay.indexOf(w) !== -1; });
-      });
-    }
-    return list;
   }
 
   function loadCertLinks() {
@@ -1428,8 +1407,9 @@
     }
     return cs.drafts[r.ut];
   }
-  function credSave(r) {
+  function credSave(r, ui) {
     var cs = state.cs, d = credDraft(r), cur = credCurrent(r);
+    ui = ui || credUi(r.ut);
     var issuer = d.issuer.replace(/\s+/g, " ").trim();
     var sites = parseSites(JSON.stringify(d.sites)) || [];
     var writes = [];
@@ -1438,7 +1418,8 @@
       writes.push([FIELD_CRED_SITES, JSON.stringify(sites)]);
       writes.push([FIELD_CRED_TRAINER, joinSites(sites)]);
     }
-    if (!writes.length) { cs.note = "Nothing changed."; render(); return Promise.resolve(); }
+    var again = ui.pf + "save";
+    if (!writes.length) { ui.setNote("Nothing changed."); ui.redraw(again); return Promise.resolve(); }
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
@@ -1452,30 +1433,32 @@
         else { o.sites = w[1]; o.sitesAt = now; }
       });
       delete cs.drafts[r.ut];
-      cs.note = "Saved. The tabs show it now; the daily run writes it into the reference.";
-      render();
+      ui.changed();
+      ui.setNote("Saved. The tabs show it now; the daily run writes it into the reference.");
+      ui.redraw(again);
     }).catch(function (e) {
-      cs.note = e && e.message === "signin" ? "Sign in as a reviewer to save."
-        : "The save did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
+      ui.setNote(e && e.message === "signin" ? "Sign in as a reviewer to save."
+        : "The save did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed; try again.");
+      ui.redraw(again);
+    });
+  }
+  /* The Review card's way in: the credential a held title joins, in the List's side panel with its issuer and
+     training sites open. A title not yet in the reference opens no panel; the List says so. */
+  function openCredential(ut) {
+    var L = listState();
+    state.view = "list"; L.f = ""; L.limit = LIST_LIMIT; L.open = null; L.edit = null;
+    L.panel = ut; (L.pnFold || (L.pnFold = {})).edit = true;
+    render();
+    return loadCredentials().then(function () {
+      var inRef = (state.cs.rows || []).some(function (r) { return r.ut === ut; });
+      if (!inRef) { L.panel = null; listCellNote("“" + ut + "” is not in the reference yet. The nightly run adds it."); }
+      // Focus lands once the List draws, which waits for its engine on a first visit.
+      state.listFocus = inRef ? "exh-l-panel-t" : "exh-l-find";
       render();
     });
   }
-  function credOpen(ut) {
-    var cs = state.cs;
-    cs.sel = ut; cs.note = ""; cs.showTitles = cs.showArt = cs.showCould = cs.showRecords = false; cs.open = null;
-    render();
-    var h = document.getElementById("exh-c-h");
-    if (h) h.focus();
-  }
-  /* The Review card's way in: the credential a held title joins. */
-  function openCredential(ut) {
-    state.view = "credentials"; state.cs.q = ""; state.cs.limit = CRED_PAGE;
-    state.cs.sel = ut; state.cs.note = ""; state.cs.open = null;
-    render();
-    loadCredentials().then(function () { render(); var h = document.getElementById("exh-c-h"); if (h) h.focus(); });
-  }
 
-  /* ── The Commons' row, carried on the Credentials view's tiles ──
+  /* ── The Commons' row, carried on the tiles above the List (the Credentials view's until it retired) ──
      Sam, 2026-11-01, comparing the Catalog Commons row for the Common Exhibit Reference with these tiles: "I like the
      tiles above the list and thinking you could integrate what's needed into existing tiles and create any others needed
      to capture everything from 1st into Exhibits view." So the row's headline pair, its tests and its known issues join
@@ -1495,7 +1478,7 @@
   /* The Commons' procedures count opens the CER's list; here, the Rules view lists every procedure. */
   var COMMONS_EQUIV = { "#credential-reference/procs": "#exhibits/rules" };
   var ROUTE_WORDS = { held: "Review, every held title", conflict: "Review, Conflict with the reference", "another-look": "Review, Another look",
-    credentials: "the Credentials view", rules: "the Rules view", list: "the List view", progress: "the Progress view" };
+    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view" };
 
   function commonsFresh() {
     return { row: null, at: null, error: null, Q: null, qErr: null, logFile: null, loading: null, done: false };
@@ -1511,11 +1494,21 @@
       return j;
     });
   }
+  /* The Commons file through the List engine's one reader where the engine is loaded (the List norms: never a second
+     reader), fresh for this read; the tab's own read before the engine arrives. Either way it must name written_at. */
+  function readCommonsJson() {
+    var CLM = window.CPL_COMMONS_LIST;
+    if (!CLM || typeof CLM.readCommons !== "function") return readStatusJson(COMMONS_URL);
+    return CLM.readCommons(true).then(function (j) {
+      if (!j || !j.written_at) throw new Error(COMMONS_URL + " names no written_at");
+      return j;
+    });
+  }
   function loadCommons() {
     var cm = state.cm = state.cm || commonsFresh();
     if (cm.done) return Promise.resolve();
     if (cm.loading) return cm.loading;
-    cm.loading = readStatusJson(COMMONS_URL).then(function (d) {
+    cm.loading = readCommonsJson().then(function (d) {
       if (!Array.isArray(d.rows)) throw new Error(COMMONS_URL + " is not the Commons' status file");
       var row = d.rows.filter(function (r) { return r && r.key === COMMONS_KEY; })[0];
       if (!row) throw new Error(COMMONS_URL + " has no " + COMMONS_KEY + " row");
@@ -1582,19 +1575,18 @@
     var f = LIST_FILTERS.filter(function (x) { return x[0] === id; })[0];
     return f ? f[1] : "";
   }
-  /* The reference's own list: the Credentials view and the List both show it, so a count naming it is not a control there. */
+  /* The reference's own list is the List (#exhibits/credentials opens it too), so a count naming it is not a control there. */
   function cmHere(t) {
-    var lists = state.view === "credentials" || state.view === "list";
     if (t.filter) return state.view === "list" && listState().f === t.filter;
-    return ROUTES[t.route][0] === state.view || (lists && (t.route === "credentials" || t.route === "list"));
+    return ROUTES[t.route][0] === state.view;
   }
   function cmGo(route, filter) {
     var r = ROUTES[route];
     state.view = r[0]; state.filter = r[1]; state.cur = 0; state.note = ""; state.openCollege = null; state.teach = false;
     state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false;
-    if (route === "list") { var L = listState(); L.f = filter || ""; L.limit = LIST_LIMIT; }
+    if (r[0] === "list") { var L = listState(); L.f = filter || ""; L.limit = LIST_LIMIT; }
     render();
-    if (r[0] === "credentials" || r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
+    if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     var h = document.querySelector(".exh-h");
     if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
   }
@@ -1732,12 +1724,42 @@
     if (cm.at) more.push(el("p", { cls: "exh-age", text: "The Commons' figures, read " + cmStamp(cm.at) }));
     return cmTile({ label: label, more: more, cls: "exh-run" });
   }
-  /* The tiles above the list: the Credentials view and the List draw the same set (norm 1). */
+  /* The tiles above the List (norm 1). */
+  /* The tiles fold behind one word for the visit, and one line of their counts stays above the list (Sam, 2026-11-03:
+     "incorporating the list view below the action/metric cards and make that top level collapsible while keeping the
+     one-line action/metric links like we do elsewhere", the CSM Workspace's Today line, #2727). The line reads the same
+     Commons row the tiles read, and each count opens where its tile's count opens. */
   function credDash(wrap) {
-    if (!state.cm) loadCommons().then(function () { if (state.view === "credentials" || state.view === "list") render(); });
-    wrap.appendChild(credTiles());
-    wrap.appendChild(credMoreTiles());
-    wrap.appendChild(cmKeptGroup());
+    if (!state.cm) loadCommons().then(function () { if (state.view === "list") render(); });
+    var folded = !!state.dashFolded;
+    wrap.appendChild(cmLine(folded));
+    var fold = el("div", { cls: "exh-fold", id: "exh-fold", hidden: folded ? "" : null });
+    fold.appendChild(credTiles());
+    fold.appendChild(credMoreTiles());
+    fold.appendChild(cmKeptGroup());
+    wrap.appendChild(fold);
+  }
+  /* One item of the line: the whole phrase is the control, as on the CSM Workspace; the list it names, when it shows
+     here already, reads as plain words. A count that could not be read says so, never a zero (the S343 rule). */
+  /* A count on the line opens where its tile's count opens: a route in this tab (not the one the reader is on), or a link. */
+  function cmLineControl(href, text) {
+    var t = cmTarget(href);
+    if (t && t.route && !cmHere(t)) return word(text, function () { cmGo(t.route, t.filter); }, { cls: "exh-w exh-li" });
+    if (t && t.href && !t.route) {
+      var a = el("a", { href: t.href, cls: "exh-li", text: text });
+      if (/^https:\/\//.test(t.href)) { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
+      return a;
+    }
+    return null;
+  }
+  /* The line itself is the List engine's (commons_list.js api.line, one renderer for every List's line), drawn with this
+     tab's class names so it looks as it did when Exhibits drew the first (#2736). */
+  function cmLine(folded) {
+    var cm = state.cm;
+    return LIST_ENGINE.line({ row: cm && cm.row, error: cm && cm.done ? (cm.error || "") : null, folded: folded, foldId: "exh-fold",
+      onToggle: function () { state.dashFolded = !state.dashFolded; render(); },
+      control: cmLineControl,
+      cls: { bar: "exh-linebar", line: "exh-line", sep: "exh-sep", li: "exh-li", w: "exh-w" } });
   }
   function cmKeptGroup() {
     var now = new Date();
@@ -1801,52 +1823,9 @@
           "credentials a college could adopt, teaching a mapped course", "", adoptWord)])]);
     return el("div", { cls: "exh-groups" }, [credit, adopt]);
   }
-  function credTable(list) {
-    var cs = state.cs;
-    var box = el("div", { cls: "exh-ctable" });
-    var wrap = el("div", { cls: "exh-tablewrap", role: "region", "aria-label": "Credentials", tabindex: "0" });
-    var table = el("table", { cls: "exh-table" });
-    table.appendChild(el("colgroup", null, [el("col", { style: "width:31%" }), el("col", { style: "width:20%" }),
-      el("col", { style: "width:19%" }), el("col", { style: "width:13%" }), el("col", { style: "width:17%" })]));
-    table.appendChild(el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Credential" }),
-      el("th", { scope: "col", text: "Issuer" }), el("th", { scope: "col", text: "Training sites" }),
-      el("th", { scope: "col", cls: "exh-r", text: "Students" }), el("th", { scope: "col", text: "Adoption" })])]));
-    var body = el("tbody");
-    list.slice(0, cs.limit).forEach(function (r) {
-      var cur = credCurrent(r), on = cs.sel === r.ut;
-      var b = word(credName(r), function () { credOpen(r.ut); }, { cls: "exh-w exh-cred", "aria-controls": "exh-cpanel",
-        "aria-current": on ? "true" : null });
-      var iss = cur.issuer || "None named";
-      var more = (r.issuers || []).filter(function (x) { return x !== cur.issuer; }).length;
-      var sites = joinSites(cur.sites);
-      body.appendChild(el("tr", { cls: on ? "exh-sel" : null }, [
-        el("td", null, [b]),
-        el("td", { cls: cur.issuer ? null : "exh-muted" }, [iss + (more ? " and " + more + " more" : "")]),
-        el("td", { cls: sites ? null : "exh-muted", text: sites || "None named" }),
-        el("td", { cls: "exh-r", text: credStudents(r).word }),
-        el("td", { text: credAdoption(r) })]));
-    });
-    table.appendChild(body);
-    wrap.appendChild(table);
-    box.appendChild(wrap);
-    var foot = el("p", { cls: "exh-small exh-muted" }, [list.length
-      ? "Showing " + fmt(Math.min(cs.limit, list.length)) + " of " + fmt(list.length) + ", most students first. "
-      : (cs.q.trim() ? "No credential matches." : "No credentials.")]);
-    if (list.length > cs.limit) {
-      foot.appendChild(word("Show " + fmt(Math.min(CRED_PAGE, list.length - cs.limit)) + " more", function () {
-        cs.limit += CRED_PAGE; redrawCredTable();
-      }, { cls: "exh-w exh-small" }));
-    }
-    box.appendChild(foot);
-    return box;
-  }
-  function redrawCredTable() {
-    var old = document.querySelector(".exh-ctable");
-    if (old && old.parentNode) old.parentNode.replaceChild(credTable(credRows()), old);
-  }
-  function siteRow(r, d, k, colleges) {
-    var x = d.sites[k];
-    var sel = el("select", { id: "exh-c-col-" + k, "aria-label": "College for training site " + (k + 1) });
+  function siteRow(r, d, k, colleges, ui) {
+    var x = d.sites[k], pf = ui.pf;
+    var sel = el("select", { id: pf + "col-" + k, "aria-label": "College for training site " + (k + 1) });
     var opts = [""].concat(colleges);
     if (x.college && opts.indexOf(x.college) === -1) opts.push(x.college);
     opts.forEach(function (c) {
@@ -1855,191 +1834,59 @@
       sel.appendChild(o);
     });
     sel.addEventListener("change", function () { x.college = sel.value; });
-    var inp = el("input", { id: "exh-c-site-" + k, type: "text", autocomplete: "off",
+    var inp = el("input", { id: pf + "site-" + k, type: "text", autocomplete: "off",
       placeholder: "Local school house or training center", "aria-label": "Training site " + (k + 1) });
     inp.value = x.site || "";
     inp.addEventListener("input", function () { x.site = inp.value; });
     var rm = word("Remove", function () {
-      d.sites.splice(k, 1); render();
-      var a = document.getElementById("exh-c-add"); if (a) a.focus();
+      d.sites.splice(k, 1); ui.redraw(pf + "add");
     }, { "aria-label": "Remove training site " + (k + 1) });
     return el("div", { cls: "exh-siteitem" }, [el("div", { cls: "exh-siterow" }, [sel, inp, rm]),
       suggest(inp, "sites", function (t) { x.site = t; })]);
   }
-  function credPanel(r) {
-    var cs = state.cs, d = credDraft(r);
-    var p = el("section", { cls: "exh-card exh-cpanel", id: "exh-cpanel", "aria-labelledby": "exh-c-h" });
-    p.appendChild(el("h3", { cls: "exh-ph", id: "exh-c-h", tabindex: "-1", text: credName(r) }));
-    p.appendChild(el("div", { cls: "exh-chiprow" }, [el("span", { cls: "exh-chip", tabindex: "0", "data-tip": TIPS[IN_REF],
-      "aria-label": "CER step: " + IN_REF + ". " + TIPS[IN_REF] }, ["CER step: " + IN_REF])]));
-
-    var called = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "What is it called?" })]);
-    var issuer = el("input", { id: "exh-c-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
+  /* The credential's editor, in the List's side panel: the issuer (offering the names already in the reference), the
+     issuers the reference holds beside it, and the training sites, each for a college or any college. ui = { pf: the id
+     prefix, redraw(focusId), note: the status words, setNote(text), changed() }. The panel's words last the visit with
+     the List's state, and a save joins the List's Changed this visit. */
+  function credUi(ut) {
+    var L = listState(), notes = L.pnNote || (L.pnNote = {});
+    return { pf: "exh-pn-", note: notes[ut] || "",
+      redraw: function (fid) { redrawList(); var n = fid && document.getElementById(fid); if (n) n.focus(); },
+      setNote: function (t) { notes[ut] = t; },
+      changed: function () { if (L.changed && L.changed.indexOf(ut) === -1) L.changed.push(ut); } };
+  }
+  function credEditor(r, ui) {
+    var d = credDraft(r), pf = ui.pf, out = [];
+    var issuer = el("input", { id: pf + "issuer", type: "text", autocomplete: "off", placeholder: "None named" });
     issuer.value = d.issuer;
     issuer.addEventListener("input", function () { d.issuer = issuer.value; });
-    called.appendChild(el("label", { cls: "exh-inbox", "for": "exh-c-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
-    called.appendChild(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
+    out.push(el("label", { cls: "exh-inbox", "for": pf + "issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
+    out.push(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
     var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
-    if (also.length) called.appendChild(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
+    if (also.length) out.push(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
       + ". The Common Exhibit Reference edits a credential's other issuers." }));
     var fs = el("fieldset", { cls: "exh-sites" }, [el("legend", { cls: "exh-cl", text: "Training sites" })]);
     var colleges = credArt(r);
     if (!d.sites.length) fs.appendChild(el("p", { cls: "exh-muted exh-small", text: "None named" }));
-    d.sites.forEach(function (x, k) { fs.appendChild(siteRow(r, d, k, colleges)); });
+    d.sites.forEach(function (x, k) { fs.appendChild(siteRow(r, d, k, colleges, ui)); });
     fs.appendChild(el("p", { cls: "exh-muted exh-small", text: colleges.length
       ? "Name the college a site trains for, or leave Any college." : "No college articulates it yet, so each site reads Any college." }));
-    called.appendChild(fs);
-    var acts = el("div", { cls: "exh-acts" }, [
+    out.push(fs);
+    out.push(el("div", { cls: "exh-acts" }, [
       word("Add a training site", function () {
         d.sites.push({ site: "", college: colleges.length === 1 ? colleges[0] : "" });
-        render();
-        var n = document.getElementById("exh-c-site-" + (d.sites.length - 1)); if (n) n.focus();
-      }, { id: "exh-c-add" }),
-      word("Save", function () { credSave(r); }, { id: "exh-c-save" })]);
-    called.appendChild(acts);
-    called.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: cs.note || "" }));
-    var vars = (r.raw_variants || []).map(function (v) { return v.r; });
-    var shownVars = cs.showTitles ? vars : vars.slice(0, 3);
-    var lt = el("p", { cls: "exh-small" }, [el("span", { cls: "exh-cl", text: "Local titles: " }), shownVars.join(" · ") || "None"]);
-    if (vars.length > 3) {
-      lt.appendChild(document.createTextNode(" "));
-      lt.appendChild(word(cs.showTitles ? "Show fewer" : "and " + (vars.length - 3) + " more",
-        function () { cs.showTitles = !cs.showTitles; render(); }, { cls: "exh-w exh-small" }));
-    }
-    called.appendChild(lt);
-    p.appendChild(called);
-
-    var credit = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "What credit does it carry?" })]);
-    var dl = el("dl", { cls: "exh-dl" });
-    function dd(label, value) { if (value) { dl.appendChild(el("dt", { text: label })); dl.appendChild(el("dd", { text: value })); } }
-    dd(r.ccc_rec ? "Statewide recommendation" : "Credit recommendation", r.ccc_rec || r.gen_rec || "None in MAP");
-    dd("CPL type", (r.cpl_types || []).join(", "));
-    dd("Discipline", r.disc_modal || "");
-    var ids = (r.articulations || []).map(function (a) { return (a.sys ? a.sys + " " : "") + a.cid + (a.title ? ", " + a.title : ""); });
-    dd("Courses", ids.slice(0, 3).join("; ") + (ids.length > 3 ? "; and " + (ids.length - 3) + " more" : ""));
-    var ad = credAdopt(r);
-    if (ad && ad.s) {
-      var sector = ((cs.adopt && cs.adopt.cip_sectors) || {})[ad.s];
-      dd("Field", "CIP " + ad.s + (sector ? ", " + sector : ""));
-    }
-    if (ad && ad.p) dd("Units", "The median articulating college awards " + fmt(ad.p) + (ad.p === 1 ? " unit" : " units"));
-    credit.appendChild(dl);
-    if (ad && ad.x && ad.x.length) {
-      var recs = cs.showRecords ? ad.x : ad.x.slice(0, 3);
-      var xp = el("p", { cls: "exh-small" }, [el("span", { cls: "exh-cl", text: "Exhibits in MAP (" + ad.x.length + "): " })]);
-      recs.forEach(function (x, k) {
-        if (k) xp.appendChild(document.createTextNode(" · "));
-        xp.appendChild(el("span", { title: x[0], text: (x[1] || x[0]) + (x[2] ? ", " + fmt(x[2]) + (x[2] === 1 ? " unit" : " units") : "") }));
-      });
-      if (ad.x.length > 3) {
-        xp.appendChild(document.createTextNode(" "));
-        xp.appendChild(word(cs.showRecords ? "Show fewer" : "and " + (ad.x.length - 3) + " more",
-          function () { cs.showRecords = !cs.showRecords; render(); }, { cls: "exh-w exh-small" }));
-      }
-      credit.appendChild(xp);
-    }
-    p.appendChild(credit);
-
-    var adopt = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "Who could adopt it?" })]);
-    var st = credStudents(r);
-    adopt.appendChild(el("p", { cls: "exh-small", text: st.n >= 10 ? st.word + " students with credit"
-      : st.n ? "Too few students to show" : "No students with credit yet" }));
-    /* A college chip opens what it articulated, or the course it already teaches, and the way to adopt in MAP
-       (Sam, 2026-10-30: "When college could adopt chips clicked they should open with the courses and Request
-       Quick Adopt links"). Exhibit Adoption's cell panel, folded in. */
-    function names(kind, label, list, all, toggle) {
-      var box = el("span", { cls: "exh-cchips" });
-      if (!list.length) box.appendChild(el("span", { cls: "exh-muted", text: kind === "c" && !cs.adopt
-        ? (cs.adoptErr ? "Could not be read" : "Reading") : "None yet" }));
-      (all ? list : list.slice(0, CHIP_MAX)).forEach(function (n) {
-        var on = cs.open && cs.open.k === kind && cs.open.n === n;
-        var b = el("button", { type: "button", cls: "exh-cchip", title: n, "aria-controls": "exh-c-adopt",
-          "aria-expanded": on ? "true" : "false" }, [shortName(n)]);
-        b.addEventListener("click", function () { cs.open = on ? null : { k: kind, n: n }; render(); });
-        box.appendChild(b);
-      });
-      if (list.length > CHIP_MAX) box.appendChild(word(all ? "Show fewer" : "and " + (list.length - CHIP_MAX) + " more", toggle, { cls: "exh-w exh-small" }));
-      return el("div", { cls: "exh-ccrow" }, [el("span", { cls: "exh-cl", text: label + " (" + list.length + ")" }), box]);
-    }
-    var could = credCould(r);
-    adopt.appendChild(names("a", "Articulated at", colleges, cs.showArt, function () { cs.showArt = !cs.showArt; render(); }));
-    adopt.appendChild(names("c", "Could adopt", could, cs.showCould, function () { cs.showCould = !cs.showCould; render(); }));
-    if (ad && ad.w) adopt.appendChild(el("p", { cls: "exh-small exh-muted", text: fmt(ad.w) + (ad.w === 1 ? " college teaches" : " colleges teach")
-      + " a course under an identity that joins too many courses to name them; curating the identity names them." }));
-    adopt.appendChild(credAdoptBox(r, ad));
-    var L = window.CPL_MAP_LINKS;
-    if (L && typeof L.node === "function") adopt.appendChild(L.node(r.ut));
-    p.appendChild(adopt);
-    p.appendChild(el("p", { cls: "exh-small exh-muted" }, ["Its other issuers, discipline and title edits are in ",
-      el("a", { href: "#credential-reference", text: "the Common Exhibit Reference" }), "."]));
-    return p;
-  }
-  function credAdoptBox(r, ad) {
-    var cs = state.cs, o = cs.open;
-    var box = el("div", { cls: "exh-adopt", id: "exh-c-adopt" });
-    if (!o) { box.hidden = true; return box; }
-    box.appendChild(el("h4", { text: o.n }));
-    if (!cs.adopt) {
-      box.appendChild(el("p", { cls: "exh-muted", text: cs.adoptErr ? "What each college articulated could not be read." : "Reading…" }));
-      return box;
-    }
-    if (o.k === "a") {
-      var got = adoptMap(ad && ad.a)[o.n];
-      if (got && got[1].length) {
-        box.appendChild(el("p", { cls: "exh-muted", text: "Articulated, " + fmt(got[0]) + (got[0] === 1 ? " unit" : " units") + " in all:" }));
-        box.appendChild(el("ul", null, got[1].map(function (l) { return el("li", { text: [l[0], l[1]].filter(Boolean).join(": ") }); })));
-      } else {
-        box.appendChild(el("p", { cls: "exh-muted", text: "Articulates it; MAP lists no credit recommendation line for this college." }));
-      }
-      var own = builtBy(r, o.n);
-      if (own.length) {
-        box.appendChild(el("p", null, ["Its exhibit in MAP, for others to Request Quick Adopt from: "].concat(own.slice(0, 3).map(function (id, k) {
-          return el("span", null, [k ? ", " : "", el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id })]);
-        }))));
-      }
-      return box;
-    }
-    var rows = adoptMap(ad && ad.c)[o.n] || [];
-    box.appendChild(el("p", { cls: "exh-muted", text: rows.length ? "Already teaches a course mapped to it:" : "No course on file here; the college's faculty choose the course." }));
-    if (rows.length) box.appendChild(courseList(rows));
-    box.appendChild(el("p", { cls: "exh-muted exh-small", text: "Request Quick Adopt from an exhibit a college built, below." }));
-    return box;
-  }
-  function renderCredentials(wrap) {
-    var cs = state.cs;
-    credDash(wrap);
-    wrap.appendChild(viewsNav());
-    if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return; }
-    if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return; }
-    var find = el("div", { cls: "exh-finder" });
-    find.appendChild(el("label", { cls: "exh-muted exh-small", "for": "exh-c-find", text: "Find a credential" }));
-    var q = el("input", { cls: "exh-search", id: "exh-c-find", type: "search", autocomplete: "off",
-      placeholder: "Credential, issuer, training site or local title" });
-    q.value = cs.q;
-    q.addEventListener("input", function () { cs.q = q.value; cs.limit = CRED_PAGE; redrawCredTable(); });
-    find.appendChild(q);
-    wrap.appendChild(find);
-    if (cs.overlayOk === false) wrap.appendChild(el("p", { cls: "exh-muted exh-small",
-      text: "Today's saves could not be read, so the credentials show as of " + (stamp(cs.generated) || "the last daily run") + "." }));
-    var sel = cs.sel && cs.rows.filter(function (r) { return r.ut === cs.sel; })[0];
-    var split = el("div", { cls: "exh-split" + (sel ? " exh-has-panel" : "") });
-    split.appendChild(credTable(credRows()));
-    if (sel) split.appendChild(credPanel(sel));
-    else if (cs.sel) split.appendChild(el("p", { cls: "exh-empty", text: "“" + cs.sel + "” is not in the reference yet. The nightly run adds it." }));
-    wrap.appendChild(split);
-    if (state.studentsWord === "signin" && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
-      var mount = el("div", { cls: "exh-signin" });
-      wrap.appendChild(mount);
-      window.CPL_REVIEWER_SIGNIN.mountInto(mount, { title: "Sign in to edit",
-        blurb: "A reviewer's sign-in saves a credential's issuer and training sites.", returnTab: "exhibits" });
-    }
+        ui.redraw(pf + "site-" + (d.sites.length - 1));
+      }, { id: pf + "add" }),
+      word("Save", function () { credSave(r, ui); }, { id: pf + "save" })]));
+    out.push(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: ui.note || "" }));
+    return out;
   }
   /* ── List: every credential on one sheet, A to Z (Sam, 2026-11-01) ──
      "a simple exhibit view in small font, alpha order with tight margins and padding. I want to be able to scan
      and correct directly on the view exhibit titles next to their key information, such as status, CIP title,
      Subject, Discipline, issuing agency, CPL types". Fable advised the columns (S540, docs/cer_procedures lessons):
      no TOP column (Rule 7: TOP is last-in-line), the CIP field named as a family read from TOP, never a code;
-     the discipline is the M-IDs' own. Edit saves what the credential panel saves (issuer, training sites) and the
+     the discipline is the M-IDs' own. Edit saves what the side panel's editor saves (issuer, training sites) and the
      rename field the reference already reads (unified_title_override; the daily dry-run checks collisions and a
      reviewed apply re-keys). Re-analyze my changes writes one request row the CPL queue routine works. */
   var LIST_LIMIT = 400;
@@ -2126,6 +1973,10 @@
       { h: "CIP family (from TOP)", w: 7, v: listCip },
       { h: "Colleges", w: 5, n: true, v: function (r) { return credColleges(r).length; } },
       { h: "MAP titles", w: 5, n: true, v: function (r) { return r.raw_count || 0; } },
+      // Students who hold credit for it (Sam, 2026-11-03, on the side-panel mock): the reference's own count, with a
+      // suppressed one reading Too few.
+      { h: "Students", w: 5, n: true, v: function (r) { return r.students_served != null ? r.students_served : null; },
+        cell: function (r) { return [credStudents(r).word]; } },
       { h: "Basis", w: 5, v: listBasis }
     ];
   }
@@ -2207,8 +2058,16 @@
   function listSave(r) {
     var L = listState(), d = L.draft, cur = credCurrent(r), cs = state.cs;
     var title = d.title.replace(/\s+/g, " ").trim(), issuer = d.issuer.replace(/\s+/g, " ").trim();
-    var sites = d.sites.split(";").map(function (x) { return x.replace(/\s+/g, " ").trim(); })
-      .filter(Boolean).map(function (x) { return { site: x }; });
+    /* The row's box holds the site names alone, so a site whose name stands keeps the college it trains for (set in
+       the side panel's editor); a new name trains for any college. Repeats pair off in order. */
+    var pool = cur.sites.slice();
+    var sites = parseSites(JSON.stringify(d.sites.split(";").map(function (x) { return x.replace(/\s+/g, " ").trim(); })
+      .filter(Boolean).map(function (x) {
+        var k = -1;
+        pool.some(function (p, i) { if (p.site === x) { k = i; return true; } return false; });
+        var col = k > -1 ? pool.splice(k, 1)[0].college : "";
+        return col ? { site: x, college: col } : { site: x };
+      }))) || [];
     var writes = [];
     if (!title) { L.note = "A title cannot be empty."; render(); return Promise.resolve(); }
     if (title !== listTitle(r)) writes.push([FIELD_CRED_TITLE, title === r.ut ? "" : title]);
@@ -2431,8 +2290,7 @@
         line("Alike through a shared course or identical SLO text, which is articulation evidence and never a hint:");
         list(sh.map(function (x) { return x[0] + ", similarity " + Number(x[1]).toFixed(2) + (x[3] === "text" ? ", identical text" : ", a shared course"); }));
       }
-      var openC = word("Open it in Credentials", function () { openCredential(r.ut); });
-      box.appendChild(openC);
+      // The title's drawer shows inside the side panel, whose editor sets the issuer and training sites.
     } else if (name === "Status" || name === "Confidence") {
       line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
         (listStatus(r) === "Cohort" ? "the cohort " + r.curated_by : "a person") + ".");
@@ -2505,8 +2363,9 @@
       prefix: "exh-l-", frPrefix: "exh-fr-",
       cls: { w: "exh-w", muted: "exh-muted", small: "exh-small", note: "exh-note", search: "exh-search", on: "exh-view-on", vh: "exh-vh", empty: "exh-empty" },
       noun: { many: "credentials", region: "Every credential, A to Z", keyHeader: "Credential key", file: "exhibits-list",
-        placeholder: "Title, issuer, college, district, SWP region, ASCCC area, discipline, subject or CPL type", findLabel: "Find in the list" },
+        placeholder: "Title, local title, issuer, training site, college, district, SWP region, ASCCC area, discipline, subject or CPL type", findLabel: "Find in the list" },
       state: listState, rows: function () { return state.cs.rows || []; }, cols: listCols,
+      panel: { label: function (r) { return "Exhibit: " + listTitle(r); }, body: listPanelBody },
       key: function (r) { return r.ut; }, title: listTitle, render: function () { render(); }, session: session,
       head: function (wrap) {
         var L = listState(), cs = state.cs;
@@ -2551,8 +2410,10 @@
       },
       hay: function (r) {
         var cur = credCurrent(r);
-        return [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
-          r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r);
+        // The local titles and other issuers too, as the retired Credentials view's search found them.
+        return [r.ut, listTitle(r), cur.issuer, (r.issuers || []).join(" "), cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
+          r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r)
+          + " | " + (r.raw_variants || []).map(function (v) { return v.r; }).join(" | ");
       },
       afterBar: function (wrap) {
         var L = listState(), cs = state.cs;
@@ -2677,7 +2538,12 @@
     return LIST_ENGINE;
   }
   function renderList(wrap) {
-    if (listApi()) { LIST_ENGINE.render(wrap); return; }
+    if (listApi()) {
+      LIST_ENGINE.render(wrap);
+      var f = state.listFocus && document.getElementById(state.listFocus);
+      if (f) { state.listFocus = null; f.focus(); }
+      return;
+    }
     wrap.appendChild(viewsNav());
     if (state.listFailed) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The list could not be loaded; reload the tab to try again." })); return; }
     wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the list…" }));
@@ -2690,6 +2556,85 @@
     });
   }
   function redrawList() { if (listApi()) LIST_ENGINE.redraw(); else render(); }
+  /* ── The side panel (Sam, 2026-11-03: "when you click on an exhibit in the list and open the side bar it shows a list
+     (like you've designed) of the folded members"; the mock https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4, after
+     SkyView's course outline). One line of what the credential is, its members (the MAP exhibits folded under it,
+     kb/exhibits_adoption.json's x), and the rest folded below: the credit each college awards, the issuer and training
+     sites, and who could adopt it. The issuer and training sites are edited here (credEditor: a site for a college or
+     any college, the names already in the reference offered as you type); with the credit lines, each college's own
+     exhibit and MAP's Request Quick Adopt line, the panel does what the Credentials view did, and that view retired
+     (the List norms, The List is the workspace). Each fold
+     keeps its place for the visit, so a sort, an added site or a save does not close it. */
+  function listPanelBody(r, h) {
+    var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
+    var cip = listCip(r), n = r.raw_count || 0;
+    // The engine's shared parts (commons_list.js h.title, h.meta, h.heading, h.table, h.fold), so every List's panel reads alike.
+    var out = [h.title(listTitle(r)), h.meta([cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
+      art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
+      could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
+    var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
+    out.push(h.heading("Members"));
+    if (!members.length) {
+      out.push(el2("p", { cls: "exh-muted exh-small", text: state.cs.adopt ? "MAP records no exhibit under this name."
+        : state.cs.adoptErr ? "The exhibits under this name could not be read." : "Reading the exhibits…" }));
+    } else {
+      // Each exhibit's number links to it in MAP; the table opens A to Z by local title.
+      out.push(h.table({ id: "members", label: "Members of " + listTitle(r), sort: { col: 1, dir: 1 },
+        note: "The MAP exhibits folded under this name, as colleges entered them. Press a header to sort; an exhibit's number opens it in MAP.",
+        cols: [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]],
+        rows: members,
+        cell: function (m, k) {
+          if (k !== "id") return m[k];
+          return el2("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", cls: "exh-pn-id", text: m.id, "aria-label": m.id + " in MAP (opens a new tab)" });
+        } }));
+    }
+    // The issuer and training sites, edited in place.
+    out.push(h.fold("edit", "Who issues it, and where it is trained: " + (cur.issuer || "no issuer named") + "; "
+      + (cur.sites.length ? cur.sites.length + " training site" + (cur.sites.length === 1 ? "" : "s") : "no training site named"),
+      credEditor(r, credUi(r.ut))));
+    // The rest, folded: its credit, what each college awards (and the exhibit it built), and who could adopt it.
+    var more = [];
+    var awards = adoptMap(ad && ad.a), names = art.slice().sort(function (a, b) {
+      return ((awards[b] || [])[0] || 0) - ((awards[a] || [])[0] || 0) || a.localeCompare(b); });
+    more.push(el2("h3", { cls: "exh-pn-q", text: "What credit it carries" }));
+    var facts = [[r.ccc_rec ? "Statewide recommendation" : "Credit recommendation", r.ccc_rec || r.gen_rec || "None in MAP"],
+      ["CPL type", (r.cpl_types || []).join(", ")], ["Discipline", r.disc_modal || ""]];
+    var ids = (r.articulations || []).map(function (a) { return (a.sys ? a.sys + " " : "") + a.cid + (a.title ? ", " + a.title : ""); });
+    if (ids.length) facts.push(["Courses", ids.slice(0, 3).join("; ") + (ids.length > 3 ? "; and " + (ids.length - 3) + " more" : "")]);
+    facts.forEach(function (f) { if (f[1]) more.push(el2("p", { cls: "exh-small" }, [el2("span", { cls: "exh-muted", text: f[0] + ": " }), f[1]])); });
+    if (ad && ad.p != null) more.push(el2("p", { cls: "exh-small", text: "The median articulating college awards " + h.fmt(ad.p) + " units." }));
+    more.push(names.length ? el2("ul", { cls: "exh-pn-ul" }, names.map(function (nm) {
+      var a = awards[nm], lines = a ? (a[1] || []).map(function (x) { return x[0] + (x[1] ? ", " + x[1] : ""); }).join("; ") : "";
+      var li = el2("li", null, [el2("b", { text: nm }), a ? ", " + h.fmt(a[0]) + " units" + (lines ? ": " + lines : "")
+        : ", articulates it; MAP lists no credit recommendation line for it"]);
+      // The exhibit it built, which another college may Request Quick Adopt from.
+      var own = builtBy(r, nm);
+      if (own.length) {
+        li.appendChild(document.createTextNode(". Its exhibit in MAP: "));
+        own.slice(0, 3).forEach(function (id, k) {
+          if (k) li.appendChild(document.createTextNode(", "));
+          li.appendChild(el2("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id, "aria-label": nm + "'s exhibit " + id + " in MAP" }));
+        });
+      }
+      return li;
+    })) : el2("p", { cls: "exh-muted exh-small", text: "No college articulates it yet." }));
+    if (could.length || (ad && ad.w) || state.cs.adoptErr) more.push(el2("h3", { cls: "exh-pn-q", text: "Who could adopt it" }));
+    if (could.length) {
+      var cmap = adoptMap(ad && ad.c);
+      more.push(el2("ul", { cls: "exh-pn-ul" }, could.map(function (nm) {
+        var cs = (cmap[nm] || []).map(function (x) { return x[0] + (x[2] != null ? " (" + h.fmt(x[2]) + " units)" : ""); }).join(", ");
+        return el2("li", null, [el2("b", { text: nm }), cs ? " already teaches " + cs + "." : ""]);
+      })));
+    }
+    if (ad && ad.w) more.push(el2("p", { cls: "exh-small exh-muted", text: h.fmt(ad.w) + (ad.w === 1 ? " college teaches" : " colleges teach")
+      + " a course under an identity that joins too many courses to name them; curating the identity names them." }));
+    if (state.cs.adoptErr) more.push(el2("p", { cls: "exh-small exh-muted", text: "Who could adopt it could not be read." }));
+    // MAP's own line for the credential: its exhibits and the way to Request Quick Adopt (map_links.js).
+    var ML = window.CPL_MAP_LINKS;
+    if (ML && typeof ML.node === "function") more.push(el2("p", { cls: "exh-small" }, [ML.node(r.ut)]));
+    out.push(h.fold("more", "More about this exhibit: its credit and who could adopt it", more));
+    return out;
+  }
   function listRows() { return listApi() ? LIST_ENGINE.rows() : []; }
   function listCsv(rows) { return listApi() ? LIST_ENGINE.csv(rows) : ""; }
   function listCellNote(text) {
@@ -2703,16 +2648,15 @@
       if (state.view === id) return el("span", { cls: "exh-view-on", "aria-current": "page" }, kids);
       var b = el("button", { type: "button", cls: "exh-w" }, kids);
       b.addEventListener("click", function () {
-        state.view = id; state.note = ""; state.cs.note = "";
+        state.view = id; state.note = "";
         render();
-        if (id === "credentials" || id === "list" || id === "progress") loadCredentials().then(render);
+        if (id === "list" || id === "progress") loadCredentials().then(render);
       });
       return b;
     }
     return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
       v("progress", "Progress", null),
       v("review", "Review", state.data ? stepCount("") : null),
-      v("credentials", "Credentials", state.cs.rows ? state.cs.rows.length : null),
       v("list", "List", state.cs.rows ? state.cs.rows.length : null),
       v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
@@ -2784,14 +2728,14 @@
 
     var procs = row && (row.procedures || []).filter(function (p) { return p.n != null; })[0];
     var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
-    /* The views row above already names Review, Credentials, List and Rules; these are the two it does not. */
+    /* The views row above already names Review, List and Rules; these are the two it does not. */
     var links = [
-      { words: "How it is kept" + (procs ? ": " + fmt(procs.n) + " procedures" : ""), go: function () { cmGo("credentials"); } },
+      { words: "How it is kept" + (procs ? ": " + fmt(procs.n) + " procedures" : ""), go: function () { cmGo("list"); } },
       sheet ? { words: "Decision record", href: sheet.link } : null
     ].filter(Boolean);
 
     var cc = credCounts();
-    var cred = function (label) { return { label: label, n: null, go: function () { cmGo("credentials"); } }; };
+    var cred = function (label) { return { label: label, n: null, go: function () { cmGo("list"); } }; };
     var row3 = function (label, n) { var r = cred(label); r.n = n; return r; };
     var groups = [
       { q: "What is it called?", rows: [row3("Issuer named", cc.iss), row3("Training site named", cc.site), row3("Field of study (CIP) assigned", cc.field)] },
@@ -2998,11 +2942,6 @@
     root.appendChild(wrap);
     var head = el("div", { cls: "exh-titlebar" }, [el("h2", { cls: "exh-h", text: "Exhibits" })]);
     wrap.appendChild(head);
-    if (state.view === "credentials") {
-      if (state.cs.generated) head.appendChild(el("span", { cls: "exh-muted exh-small", text: "Reference built " + stamp(state.cs.generated) }));
-      renderCredentials(wrap);
-      return;
-    }
     if (state.view === "rules") {
       renderRules(wrap);
       return;
@@ -3014,6 +2953,13 @@
     if (state.view === "list") {
       if (state.cs.generated) head.appendChild(el("span", { cls: "exh-muted exh-small", text: "Reference built " + stamp(state.cs.generated) }));
       renderList(wrap);
+      // A reviewer's sign-in saves from the List: a row's Edit, its side panel, find and replace.
+      if (state.studentsWord === "signin" && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
+        var lm = el("div", { cls: "exh-signin" });
+        wrap.appendChild(lm);
+        window.CPL_REVIEWER_SIGNIN.mountInto(lm, { title: "Sign in to edit",
+          blurb: "A reviewer's sign-in saves a credential's title, issuer and training sites.", returnTab: "exhibits" });
+      }
       return;
     }
     if (state.error || !state.data) {
@@ -3093,6 +3039,10 @@
     ".exh-chip[data-tip] { cursor:help; }",
     ".exh-chip[data-tip]:hover::after, .exh-chip[data-tip]:focus-visible::after, .exh-step[data-tip]:hover::after, .exh-step[data-tip]:focus-visible::after { content:attr(data-tip); position:absolute; left:0; top:calc(100% + 6px); z-index:3; width:max-content; max-width:min(300px, 80vw); white-space:normal; font-size:.82rem; font-weight:400; line-height:1.4; color:var(--text-body); background:var(--surface); border:1px solid var(--border-strong); border-radius:6px; padding:8px 10px; }",
     ".exh-views { display:flex; flex-wrap:wrap; gap:6px 22px; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:8px; font-size:.95rem; }",
+    ".exh-linebar { display:flex; flex-wrap:wrap; gap:6px 22px; align-items:baseline; justify-content:space-between; margin:12px 0 10px; }",
+    ".exh-line { margin:0; display:flex; flex-wrap:wrap; gap:4px 0; align-items:baseline; color:var(--text-strong); }",
+    ".exh-sep { color:var(--text-muted); margin:0 .55em; }",
+    ".exh-fold[hidden] { display:none; }",
     ".exh-view-on { color:var(--text-strong); font-weight:600; text-decoration:underline; text-decoration-thickness:3px; text-decoration-color:var(--seal-blue-text); text-underline-offset:3px; }",
     ".exh-n { color:var(--text-muted); font-weight:400; }",
     ".exh-wrap a { color:var(--cobalt); text-underline-offset:3px; }",
@@ -3157,25 +3107,6 @@
     ".exh-foot span { overflow-wrap:anywhere; min-width:0; }",
     ".exh-empty { color:var(--text-muted); margin:0; }",
     ".exh-views button.exh-w { font-size:.95rem; }",
-    ".exh-split { display:grid; gap:16px; min-width:0; align-items:start; }",
-    ".exh-split.exh-has-panel { grid-template-columns:minmax(0, 1.35fr) minmax(0, 1fr); }",
-    ".exh-ctable { display:grid; gap:6px; min-width:0; }",
-    ".exh-ctable > p { margin:0; }",
-    ".exh-tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; background:var(--surface); min-width:0; }",
-    ".exh-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.9rem; }",
-    ".exh-table th { text-align:left; font-size:.75rem; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); font-weight:600; padding:8px 8px; border-bottom:1px solid var(--border-strong); background:var(--surface-subtle); }",
-    ".exh-table td { padding:7px 8px; border-bottom:1px solid var(--border); vertical-align:top; overflow-wrap:anywhere; color:var(--text-body); }",
-    ".exh-table .exh-r { text-align:right; font-variant-numeric:tabular-nums; }",
-    ".exh-table td.exh-muted { color:var(--text-muted); }",
-    ".exh-table tr.exh-sel td { background:var(--surface-subtle); }",
-    ".exh-table tr.exh-sel td:first-child { box-shadow:inset 3px 0 0 var(--seal-blue-text); }",
-    "button.exh-cred { overflow-wrap:anywhere; }",
-    "button.exh-cred[aria-current='true'] { color:var(--text-strong); font-weight:600; }",
-    ".exh-cpanel { gap:12px; }",
-    ".exh-ph { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:clamp(1.2rem, 2.4vw, 1.5rem); overflow-wrap:anywhere; }",
-    ".exh-ph:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
-    ".exh-block { display:grid; gap:8px; padding-top:12px; border-top:1px solid var(--border); min-width:0; }",
-    ".exh-block > p { margin:0; }",
     ".exh-sites { border:0; margin:0; padding:0; display:grid; gap:6px; min-width:0; }",
     ".exh-sites p { margin:0; }",
     ".exh-siterow { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; min-width:0; }",
@@ -3183,18 +3114,22 @@
     ".exh-siterow input { flex:3 1 14em; }",
     ".exh-siterow select, .exh-siterow input { min-width:0; font:inherit; font-size:.9rem; color:var(--text-body); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:4px 6px; }",
     ".exh-siterow select:focus-visible, .exh-siterow input:focus-visible, .exh-search:focus-visible { outline:2px solid var(--seal-blue); outline-offset:1px; }",
-    ".exh-dl { display:grid; grid-template-columns:minmax(0, 11em) minmax(0, 1fr); gap:4px 12px; margin:0; font-size:.9rem; }",
-    ".exh-dl dt { color:var(--text-muted); }",
-    ".exh-dl dd { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
-    "@media (max-width: 1200px) { .exh-split.exh-has-panel { grid-template-columns:minmax(0, 1fr); } .exh-cpanel { order:-1; } }",
-    "@media (max-width: 560px) { .exh-ccrow { grid-template-columns:minmax(0, 1fr); } .exh-dash, .exh-steps { grid-template-columns:repeat(2, minmax(0, 1fr)); }"
-      + " .exh-dl { grid-template-columns:minmax(0, 1fr); }"
-      + " .exh-table { min-width:560px; } }",
+    "@media (max-width: 560px) { .exh-ccrow { grid-template-columns:minmax(0, 1fr); } .exh-dash, .exh-steps { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
     ".exh-why { display:grid; gap:4px; min-width:0; }",
     /* The Commons' row on the tiles (Sam, 2026-11-01). */
     ".exh-tile.exh-wide { grid-column:1 / -1; }",
     ".exh-kept { grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); align-items:start; }",
     ".exh-tn .exh-tcount { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }",
+    /* A one-digit count is a target too: WCAG 2.2's 24px floor (the a11y sweep, 2026-11-03). */
+    "button.exh-w.exh-tcount, a.exh-tcount { display:inline-block; min-width:24px; min-height:24px; text-align:start; }",
+    ".exh-l-pn-h { margin:0 0 4px; font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.35rem, 2.2vw, 1.8rem); line-height:1.15; color:var(--text-strong); }",
+    ".exh-l-pn-meta { margin:0 0 12px; }",
+    ".exh-pn-q { margin:14px 0 4px; font-size:1.02rem; color:var(--text-strong); }",
+    // An exhibit's number in the panel is its link to MAP: a word in the List's control style, 24px tall.
+    "a.exh-pn-id { display:inline-block; min-height:24px; line-height:24px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.8rem; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; }",
+    ".exh-pn-ul { margin:4px 0 0; padding-left:1.1em; font-size:.88rem; display:flex; flex-direction:column; gap:5px; }",
+    ".exh-l-pn-edit > .exh-l-pn-fbody { display:grid; gap:8px; margin-top:10px; min-width:0; }",
+    ".exh-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
     "a.exh-tcount { text-decoration:underline; text-underline-offset:3px; }",
     ".exh-tile .exh-zero { color:var(--hunter); }",
     ".exh-tests { display:flex; flex-wrap:wrap; gap:6px; padding-top:2px; }",
@@ -3230,16 +3165,15 @@
     state.view = "review";
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false;
     state.ls = null;
-    state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = ""; state.cs.open = null;
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     render();
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
-     the reference, credentials = the Credentials view, rules = the rules sent to the routine, list = the List, and
+     the reference, credentials = the List (the Credentials view retired into it), rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
-  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""],
+  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["list", ""],
     rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
@@ -3248,7 +3182,7 @@
     state.view = r[0]; state.filter = r[1];
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
-    if (r[0] === "credentials" || r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
+    if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     return true;
   }
   function boot() {
@@ -3267,7 +3201,7 @@
     boot: boot, render: render, load: load, loadStudents: loadStudents, ensureCss: ensureCss,
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
     loadCredentials: loadCredentials, openCredential: openCredential,
-    _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows,
+    _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent,
     _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows,
     _aseIssuer: aseIssuer, _issuerFor: issuerFor, _nameOptions: nameOptions, _nameMatches: nameMatches, _bulkItems: bulkItems,
     _sweepIssuer: sweepIssuer,

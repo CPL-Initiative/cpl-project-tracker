@@ -15,7 +15,7 @@
 // is exactly that case).
 //
 // ⚠️ THE THRESHOLD IS THE WHOLE POINT. A cap below ~55ch is LAYOUT, not a reading
-// measure — cell truncation (.cs-variants 42ch), a raw-value column (.cr-wl-raw
+// measure — cell truncation (.cr-title-cell 32ch), a raw-value column (.cr-wl-raw
 // 42ch), a monospace context strip (46ch), a badge (9ch), a deliberately short
 // hero lede (.op-hero .op-lead 44ch). Widening those would break the layouts this
 // change is not about, so Part C pins a sample of them: a future blanket sweep
@@ -28,10 +28,11 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const HTMLS = ["CPL_Dashboard.html", "index.html"];
-// Every file that carried a prose measure before the 2026-08-22 sweep.
+// Every file that carried a prose measure before the 2026-08-22 sweep, and carries one still (cr_reference.js left the
+// list on 2026-11-04: its one capped line was the retired worklist's intro).
 const SWEPT = HTMLS.concat([
   "budget_ledger.js", "cip_crosswalk.js", "college_identity.js", "cpl_chat.js",
-  "cpl_memory.js", "cr_reference.js",
+  "cpl_memory.js",
   "credential_reference.js", "first_light.js", "gr_priorities.js",
   "map_cleanup_views.js", "nc_learning_partners.js", "our_process.js",
   "raci.js", "team_phrases.js", "tmc_builder.js",
@@ -106,7 +107,8 @@ check("the token's rationale names Sam and the date, so the next session can fin
 // ── Part C — the narrow LAYOUT caps are not prose and must survive ──
 {
   const layout = [
-    ["CPL_Dashboard.html", /\.cs-variants\s*\{[^}]*max-width:\s*42ch/, ".cs-variants (a table cell) stays 42ch"],
+    // .cs-variants (42ch) was the HTML's sample until the Subjects table retired (2026-11-04); a credential title cell takes its place.
+    ["CPL_Dashboard.html", /\.cr-title-cell\s*\{[^}]*max-width:\s*32ch/, ".cr-title-cell (a table cell) stays 32ch"],
     ["credential_reference.js", /\.cr-wl-raw\{max-width:42ch;\}/, ".cr-wl-raw (a raw-value column) stays 42ch"],
     ["credential_reference.js", /max-width:\s*9ch/, "the 9ch badge cap survives"],
     ["our_process.js", /\.op-hero \.op-lead \{ max-width:44ch; \}/, ".op-hero .op-lead (a short hero lede, by design) stays 44ch"],

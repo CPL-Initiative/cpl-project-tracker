@@ -96,14 +96,14 @@ function nFetch(t) { return t.calls.filter((c) => c.url === "kb/exhibit_slo_neig
     /similarity of 0\.5 or more through distinct courses/.test(txt(line)) && /9 colleges so far, reaching 746 credentials/.test(txt(line))
     && /never a decision/.test(txt(line)), txt(line));
 
-  const open = Array.from(t.d.querySelectorAll(".exh-l-open")).find((b) => b.getAttribute("aria-label") === "Title: California Wines, details");
+  const open = Array.from(t.d.querySelectorAll(".exh-l-open")).find((b) => b.getAttribute("aria-label") === "California Wines, open its panel");
   open.click(); await settle();
-  const dr = txt(t.d.querySelector(".exh-l-drawer"));
-  check("(5) the Title drawer lists each match with its similarity", /Spanish Wines \(Spanish\), similarity 0\.90/.test(dr) && !/French Wines/.test(dr), dr);
+  const dr = txt(t.d.querySelector(".exh-l-pdrawer"));
+  check("(5) the Title drawer, now in the side panel (2026-11-03), lists each match with its similarity", /Spanish Wines \(Spanish\), similarity 0\.90/.test(dr) && !/French Wines/.test(dr), dr);
   btn(t.d.querySelector(".exh-l-filters"), "All").click(); await settle();
-  const open2 = Array.from(t.d.querySelectorAll(".exh-l-open")).find((b) => b.getAttribute("aria-label") === "Title: Welding 1, details");
+  const open2 = Array.from(t.d.querySelectorAll(".exh-l-open")).find((b) => b.getAttribute("aria-label") === "Welding 1, open its panel");
   open2.click(); await settle();
-  const dr2 = txt(t.d.querySelector(".exh-l-drawer"));
+  const dr2 = txt(t.d.querySelector(".exh-l-pdrawer"));
   check("(5) the shared-course pairs sit apart, named as articulation evidence",
     /Alike through a shared course or identical SLO text/.test(dr2) && /Zoology Field Survey, similarity 0\.81, a shared course/.test(dr2) && !/Outcomes match/.test(dr2), dr2);
   check("(6) the file is read once a visit", nFetch(t) === 1, String(nFetch(t)));

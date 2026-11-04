@@ -90,8 +90,8 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
     members: ["3 or 4 hours in Engine Performance", "5 hours in Engine Performance"], excluded: [], note: "spread" }] });
   t.M.activate(); await settle();
   const views = Array.from(t.d.querySelectorAll("button.crr-view"));
-  check("(1) #cr-reference/list presses List in the view row", views.map(txt).join(",") === "Progress,Worklist,List"
-    && views[2].getAttribute("aria-pressed") === "true");
+  check("(1) #cr-reference/list presses List in the view row", views.map(txt).join(",") === "Progress,List"
+    && views[1].getAttribute("aria-pressed") === "true");
   check("(1) the engine loads through CPL_TABS.loadScript", t.calls.some((c) => c.url === "loadScript:commons_list.js") && !!t.w.CPL_COMMONS_LIST);
   let got = rows(t.d).map((r) => txt(r.children[2]));
   check("(1) ⭐ every wording is one row, in bands by group", got.join(" | ") === "3 hours in Community Relations | 3.0 hours in Community Relations"

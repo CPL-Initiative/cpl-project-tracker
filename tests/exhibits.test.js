@@ -24,7 +24,7 @@ const fs = require("fs");
 const { JSDOM } = require("jsdom");
 
 const results = [];
-function check(name, cond) { results.push([name, !!cond]); }
+function check(name, cond, why) { results.push([name, !!cond, why]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
 
 // ───────────────────────────── Part A — static invariants ─────────────────────────────
@@ -54,7 +54,7 @@ check("CI runs the builder's test", /python3 tests\/exhibits_review_build_test\.
     && pick(ex, "MAP_VIEW") && pick(ex, "MAP_VIEW") === pick(ml, "MAP_VIEW"));
   check("the tab builds a MAP address in one function only", (ex.match(/MAP_PAGE \+ "\?Exhibit="/g) || []).length === 1);
 }
-check("the Commons row links Open Exhibits, at its Progress view", /"href": tab \+ "\/progress", "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
+check("the Commons row links Open Exhibits, at its List (Sam, 2026-11-03)", /"href": tab \+ "\/list", "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("the Commons row's tab is Exhibits (Sheet 148, link-retire)", /tab = "#exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8"))
   && /\("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit\)/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("the students function is migrated, reviewer-gated and closed to anon",
@@ -220,6 +220,8 @@ function load(opts) {
   w.CPL_TABS = { loadScript: function (src, name, cb) {
     calls.push({ url: "loadScript:" + src, method: "SCRIPT" });
     if (src === "credential_reference_data.js" && !opts.noCreds) w[name] = JSON.parse(JSON.stringify(CREDREF));
+    // The List's engine, as COBI loads it.
+    if (src === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = fs.readFileSync("commons_list.js", "utf8"); w.document.body.appendChild(e); }
     setTimeout(cb, 0);
   } };
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
@@ -497,36 +499,38 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("an unread review file says so", /The review file could not be read \(HTTP 404\)/.test(txt(t.root)));
 
 
-  // ───────────────────────────── Part C — Credentials, the credential panel ─────────────────────────────
+  // ───────────── Part C — a credential's issuer, training sites and adoption, in the List and its side panel ─────────────
+  // The Credentials view retired into the List on 2026-11-03 (Sam: the original views retire once the List does what they
+  // do). Its guards stand here against the List's columns and a row's side panel.
   t = load({ overlay: OVERLAY });
   await t.M.boot(); await settle();
-  check("the views name Review and Credentials, Review current", txt(t.d.querySelector('.exh-views [aria-current="page"]')).indexOf("Review") === 0
-    && viewBtn(t.d, "Credentials"));
-  check("the credential file is not read until the view opens", !t.calls.some(function (c) { return c.url === "loadScript:credential_reference_data.js"; }));
-  viewBtn(t.d, "Credentials").click(); await settle();
-  check("Credentials loads the reference's file once and the live rows", t.calls.filter(function (c) { return c.url === "loadScript:credential_reference_data.js"; }).length === 1
-    && t.calls.some(function (c) { return /kb_curation\?select=course_id,field,value,reviewed_at/.test(c.url) && /field=in\.\(issuing_agency_override,training_agency_override,training_sites_override,unified_title_override,list_flag,exhibit_group,unified_title_merge_confirm\)/.test(c.url)
+  check("the views name Review and List, Review current, and no Credentials view", txt(t.d.querySelector('.exh-views [aria-current="page"]')).indexOf("Review") === 0
+    && viewBtn(t.d, "List") && !viewBtn(t.d, "Credentials"));
+  check("the credential file is not read until the List opens", !t.calls.some(function (c) { return c.url === "loadScript:credential_reference_data.js"; }));
+  viewBtn(t.d, "List").click(); await settle();
+  check("the List loads the reference's file once and the live rows", t.calls.filter(function (c) { return c.url === "loadScript:credential_reference_data.js"; }).length === 1
+    && t.calls.some(function (c) { return /kb_curation\?select=course_id,field,value,reviewed_at/.test(c.url) && /field=in\.\(issuing_agency_override,training_agency_override,training_sites_override,unified_title_override,/.test(c.url)
       && /course_id=like\._CREDENTIAL_REVIEW%3A%3A%25/.test(c.url) && c.headers.Range === "0-999"; }));
-  check("the view is current and counts the credentials", /Credentials 4/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))));
+  check("the view is current and counts the credentials", /List 4/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))));
   const ctiles = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
   check("the tiles count issuers and training sites", ctiles.some(function (x) { return /^Issuers4 of 4/.test(x); })
     && ctiles.some(function (x) { return /^Training sites3 of 4/.test(x); }));
-  function rowsOf(d) { return Array.from(d.querySelectorAll(".exh-table tbody tr")).map(function (tr) { return Array.from(tr.children).map(txt); }); }
-  let rows = rowsOf(t.d);
-  check("most students first, then the cells under ten, then by colleges", rows.map(function (r) { return r[0]; }).join("|") === [SECP, MED, JLP, IBEW].join("|"));
-  check("a suppressed count reads Too few; none reads None yet", rows[0][3] === "57" && rows[1][3] === "Too few" && rows[3][3] === "None yet");
-  check("the live issuer stands over the daily file's", rows[0][1] === "CompTIA (Computing Technology Industry Association)");
-  check("no site reads None named", rows[0][2] === "None named");
-  check("the live list stands when its joined text matches the trainer saved beside it", rows[2][2] === "Regional Academy North; Valley Academy");
-  check("a later one-trainer edit that differs wins over the list", rows[1][2] === "Orange High School");
-  check("a credential's other issuers count beside it", rows[1][1] === "Canyon High School and 1 more");
-  check("adoption counts the colleges; could adopt is the prescriptive layer, the articulating college left out",
-    rows[2][4] === "3 articulate it" && rows[0][4] === "2 articulate it · 2 could adopt" && rows[3][4] === "2 articulate it");
-  check("articulated at joins MAP's adopters with no course identity to the reference's colleges", rows[0][4].indexOf("2 articulate it") === 0);
-  check("the reference's broad potential_colleges never count", !rows.some(function (r) { return /11 could adopt|1 could adopt/.test(r[4]); }));
+  function heads(d) { return Array.from(d.querySelectorAll(".exh-l-table thead tr:first-child th")).map(txt); }
+  function cell(d, ut, h) {
+    const i = heads(d).findIndex(function (x) { return x.indexOf(h) === 0; });
+    const tr = Array.from(d.querySelectorAll(".exh-l-table tbody tr")).find(function (r) { const k = r.querySelector("td[data-key]"); return k && k.getAttribute("data-key") === ut; });
+    return tr && i > -1 ? txt(tr.children[i]) : null;
+  }
+  function listKeys(d) { return Array.from(d.querySelectorAll(".exh-l-table tbody td[data-key]")).map(function (x) { return x.getAttribute("data-key"); }); }
+  check("a suppressed count reads Too few; none reads None yet", cell(t.d, SECP, "Students") === "57" && cell(t.d, MED, "Students") === "Too few"
+    && cell(t.d, IBEW, "Students") === "None yet", [cell(t.d, SECP, "Students"), cell(t.d, MED, "Students"), cell(t.d, IBEW, "Students")].join("/"));
+  check("the live issuer stands over the daily file's", cell(t.d, SECP, "Issuer") === "CompTIA (Computing Technology Industry Association)");
+  check("no site reads empty", cell(t.d, SECP, "Training sites") === "—", cell(t.d, SECP, "Training sites"));
+  check("the live list stands when its joined text matches the trainer saved beside it", cell(t.d, JLP, "Training sites") === "Regional Academy North; Valley Academy");
+  check("a later one-trainer edit that differs wins over the list", cell(t.d, MED, "Training sites") === "Orange High School");
   const groups = Array.from(t.d.querySelectorAll(".exh-group > .exh-q")).map(txt);
-  check("the view asks the three questions, then How is it kept? (the Commons' row, Sam 2026-11-01)",
-    groups.join("|") === "What is it called?|What credit does it carry?|Who could adopt it?|How is it kept?");
+  check("the tiles ask the three questions, then How is it kept? (the Commons' row, Sam 2026-11-01)",
+    groups.join("|") === "What is it called?|What credit does it carry?|Who could adopt it?|How is it kept?", groups.join("|"));
   const all = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
   check("the credit tiles count recommendations, statewide ones and the field",
     all.some(function (x) { return /^Credit recs3 of 4/.test(x); }) && all.some(function (x) { return /^Statewide recs1 of 4/.test(x); })
@@ -534,89 +538,79 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the adoption tiles count the adoptable, the shared and the could-adopt credentials",
     all.some(function (x) { return /^Adoptable2 of 4/.test(x); }) && all.some(function (x) { return /^Shared3 of 4/.test(x); })
     && all.some(function (x) { return /^Could adopt1 of 4/.test(x); }));
-  check("the adoption file and MAP's index load once with the view", t.calls.filter(function (c) { return c.url === "kb/exhibits_adoption.json"; }).length === 1
+  check("the adoption file and MAP's index load once with the List", t.calls.filter(function (c) { return c.url === "kb/exhibits_adoption.json"; }).length === 1
     && t.calls.filter(function (c) { return c.url === "maplinks:load"; }).length === 1);
   check("the views link names what Exhibit Adoption still holds", /The college matrix, in Exhibit Adoption/.test(txt(t.d.querySelector(".exh-views"))));
-  check("the table is a labeled region with scoped headers and a fixed layout", t.d.querySelector('.exh-tablewrap[role="region"][aria-label="Credentials"][tabindex="0"]')
-    && t.d.querySelectorAll('.exh-table th[scope="col"]').length === 5 && t.d.querySelectorAll(".exh-table col").length === 5);
 
-  const cfind = t.d.getElementById("exh-c-find");
-  cfind.focus(); cfind.value = "academy"; cfind.dispatchEvent(new t.w.Event("input")); await settle();
-  check("the search finds a training site and keeps the box focused", rowsOf(t.d).length === 1 && rowsOf(t.d)[0][0] === JLP && t.d.activeElement === t.d.getElementById("exh-c-find"));
-  cfind.value = "security fund"; cfind.dispatchEvent(new t.w.Event("input")); await settle();
-  check("the search finds a local title, every word", rowsOf(t.d).length === 1 && rowsOf(t.d)[0][0] === SECP);
-  cfind.value = "no such credential"; cfind.dispatchEvent(new t.w.Event("input")); await settle();
-  check("no match says so", /No credential matches/.test(txt(t.d.querySelector(".exh-ctable"))));
-  cfind.value = ""; cfind.dispatchEvent(new t.w.Event("input")); await settle();
+  const lfind = t.d.getElementById("exh-l-find");
+  lfind.value = "valley academy"; lfind.dispatchEvent(new t.w.Event("input")); await settle();
+  check("the finder finds a training site", listKeys(t.d).join("|") === JLP, listKeys(t.d).join("|"));
+  lfind.value = "security fund"; lfind.dispatchEvent(new t.w.Event("input")); await settle();
+  check("the finder finds a local title, every word (the Credentials view's search)", listKeys(t.d).join("|") === SECP, listKeys(t.d).join("|"));
+  lfind.value = "el modena"; lfind.dispatchEvent(new t.w.Event("input")); await settle();
+  check("the finder finds another issuer", listKeys(t.d).join("|") === MED, listKeys(t.d).join("|"));
+  lfind.value = ""; lfind.dispatchEvent(new t.w.Event("input")); await settle();
 
-  byText(t.d, ".exh-table button", IBEW).click(); await settle();
-  let cp = t.d.getElementById("exh-cpanel");
-  check("a credential opens its panel, focused on its name", cp && txt(t.d.getElementById("exh-c-h")) === IBEW && t.d.activeElement === t.d.getElementById("exh-c-h"));
-  check("the row reads selected", byText(t.d, ".exh-table button", IBEW).getAttribute("aria-current") === "true");
-  check("the panel carries the three questions", ["What is it called?", "What credit does it carry?", "Who could adopt it?"].every(function (q) {
-    return Array.from(cp.querySelectorAll("h4")).some(function (h) { return txt(h) === q; }); }));
-  check("its CER step chip says In the reference, with the hover", /CER step: In the reference/.test(txt(cp.querySelector(".exh-chip"))) && /Settled\./.test(cp.querySelector(".exh-chip").getAttribute("data-tip")));
-  check("the issuer is an input with its label", t.d.getElementById("exh-c-issuer").value === "International Brotherhood of Electrical Workers (IBEW)"
-    && t.d.querySelector('label[for="exh-c-issuer"]'));
-  check("the daily file's site is the first row, for any college", t.d.getElementById("exh-c-site-0").value === "Joint Apprenticeship Training Committee (JATC)"
-    && t.d.getElementById("exh-c-col-0").value === "");
-  const opts0 = Array.from(t.d.getElementById("exh-c-col-0").options).map(function (o) { return o.value; });
-  check("the college choices are Any college and the colleges that articulate it", opts0.join("|") === "|Bakersfield College|Norco College");
-  check("the credit and the colleges show", /3\.5 hours in Electrical Theory/.test(txt(cp)) && /M-ID ELEC M1001, Electrical Theory/.test(txt(cp))
-    && /Articulated at \(2\)/.test(txt(cp)) && /Could adopt \(0\)/.test(txt(cp)) && /No students with credit yet/.test(txt(cp)));
-  check("the credit block names the field, the peer median and the exhibits", /CIP 46, Construction Trades/.test(txt(cp))
-    && /The median articulating college awards 3\.5 units/.test(txt(cp)) && /Exhibits in MAP \(1\): IBEW Year 1, 3\.5 units/.test(txt(cp)));
-  check("the panel no longer sends a reader to Exhibit Adoption for a college's courses", !/Each college's courses/.test(txt(cp)));
-  check("the MAP line for the credential sits under the chips", cp.querySelector('.cpl-maplinks[data-ml-title="' + IBEW + '"]'));
-  const norco = Array.from(cp.querySelectorAll("button.exh-cchip")).find(function (b) { return txt(b) === "Norco"; });
-  check("an articulating college is a button tied to the box", norco && norco.getAttribute("aria-controls") === "exh-c-adopt" && norco.getAttribute("aria-expanded") === "false"
-    && t.d.getElementById("exh-c-adopt").hidden);
-  norco.click(); await settle();
-  let box = t.d.getElementById("exh-c-adopt");
-  check("its chip opens what it articulated: the line, the units, its own exhibit in MAP", !box.hidden && /Norco College/.test(txt(box))
-    && /Articulated, 3\.5 units in all/.test(txt(box)) && /ELC 401: 3\.5 hours in Introduction to Electrical Theory/.test(txt(box))
-    && /Its exhibit in MAP/.test(txt(box)) && box.querySelector("a").href === "https://map.example/opp?Exhibit=MAPAPP-IBEW-1-001&View=Non-Military");
-  check("the chip reads expanded and the focus target survives", Array.from(t.d.querySelectorAll("#exh-cpanel button.exh-cchip")).find(function (b) { return txt(b) === "Norco"; }).getAttribute("aria-expanded") === "true");
-  Array.from(t.d.querySelectorAll("#exh-cpanel button.exh-cchip")).find(function (b) { return txt(b) === "Bakersfield"; }).click(); await settle();
-  box = t.d.getElementById("exh-c-adopt");
-  check("a college with no line says so and claims no exhibit", /MAP lists no credit recommendation line/.test(txt(box)) && !box.querySelector("a"));
-  Array.from(t.d.querySelectorAll("#exh-cpanel button.exh-cchip")).find(function (b) { return txt(b) === "Bakersfield"; }).click(); await settle();
-  check("a second click closes the box", t.d.getElementById("exh-c-adopt").hidden);
+  function titleOf(d, ut) { return Array.from(d.querySelectorAll(".exh-l-table tbody td.exh-l-title button.exh-l-open")).find(function (b) { return txt(b) === ut; }); }
+  function pn(d) { return d.getElementById("exh-l-panel"); }
+  function fold(d, id) { return pn(d) && pn(d).querySelector("details.exh-l-pn-" + id); }
+  titleOf(t.d, IBEW).click(); await settle();
+  let cp = pn(t.d);
+  check("a credential's title opens its panel, focused on its bar", cp && txt(t.d.getElementById("exh-l-panel-t")) === "Exhibit: " + IBEW && t.d.activeElement === t.d.getElementById("exh-l-panel-t"));
+  check("one line of what it is: the issuer, the field, the colleges, the students", txt(cp.querySelector(".exh-l-pn-meta"))
+    === "International Brotherhood of Electrical Workers (IBEW) · CIP 46 Construction Trades · 0 MAP titles · 2 colleges articulate · Students: None yet",
+    txt(cp.querySelector(".exh-l-pn-meta")));
+  fold(t.d, "edit").open = true; fold(t.d, "more").open = true; await settle();
+  check("the issuer is an input with its label", t.d.getElementById("exh-pn-issuer").value === "International Brotherhood of Electrical Workers (IBEW)"
+    && t.d.querySelector('label[for="exh-pn-issuer"]'));
+  check("the daily file's site is the first row, for any college", t.d.getElementById("exh-pn-site-0").value === "Joint Apprenticeship Training Committee (JATC)"
+    && t.d.getElementById("exh-pn-col-0").value === "");
+  const opts0 = Array.from(t.d.getElementById("exh-pn-col-0").options).map(function (o) { return o.value; });
+  check("the college choices are Any college and the colleges that articulate it", opts0.join("|") === "|Bakersfield College|Norco College", opts0.join("|"));
+  const more = fold(t.d, "more");
+  check("the credit shows: the recommendation, the CPL type, the discipline and the courses", /Credit recommendation: 3\.5 hours in Electrical Theory/.test(txt(more))
+    && /CPL type: Portfolio Review/.test(txt(more)) && /Discipline: Electricity/.test(txt(more)) && /Courses: M-ID ELEC M1001, Electrical Theory/.test(txt(more)), txt(more));
+  check("the median and the exhibit in MAP", /The median articulating college awards 3\.5 units/.test(txt(more))
+    && Array.from(cp.querySelector(".exh-l-pn-table tbody tr").children).slice(0, 3).map(txt).join("|") === "MAPAPP-IBEW-1-001|IBEW Year 1|3.5", txt(cp.querySelector(".exh-l-pn-table tbody tr")) + " // " + txt(more));
+  check("MAP's line for the credential, with Request Quick Adopt", !!cp.querySelector('.cpl-maplinks[data-ml-title="' + IBEW + '"]') && /Request Quick Adopt/.test(txt(more)));
+  const norco = Array.from(more.querySelectorAll(".exh-pn-ul li")).find(function (li) { return /^Norco College/.test(txt(li)); });
+  check("an articulating college: its line, its units and the exhibit it built, in MAP", !!norco && /3\.5 units: ELC 401, 3\.5 hours in Introduction to Electrical Theory/.test(txt(norco))
+    && norco.querySelector("a") && norco.querySelector("a").href === "https://map.example/opp?Exhibit=MAPAPP-IBEW-1-001&View=Non-Military", norco && txt(norco));
+  const bak = Array.from(more.querySelectorAll(".exh-pn-ul li")).find(function (li) { return /^Bakersfield College/.test(txt(li)); });
+  check("a college with no line says so and claims no exhibit", !!bak && /, 0 units/.test(txt(bak)) && !bak.querySelector("a"), bak && txt(bak));
+  check("the panel has no emoji", !/[\u{1F300}-\u{1FAFF}☀-➿]/u.test(txt(cp)));
 
   // edit: two JATCs, each for its college
-  t.d.getElementById("exh-c-col-0").value = "Bakersfield College"; t.d.getElementById("exh-c-col-0").dispatchEvent(new t.w.Event("change"));
-  t.d.getElementById("exh-c-site-0").value = "Kern County JATC"; t.d.getElementById("exh-c-site-0").dispatchEvent(new t.w.Event("input"));
-  byText(cp, "button", "Add a training site").click(); await settle();
-  check("Add a training site adds a row and focuses its box", t.d.getElementById("exh-c-site-1") && t.d.activeElement === t.d.getElementById("exh-c-site-1"));
-  check("the first row's edits survive the re-render", t.d.getElementById("exh-c-site-0").value === "Kern County JATC" && t.d.getElementById("exh-c-col-0").value === "Bakersfield College");
-  t.d.getElementById("exh-c-col-1").value = "Norco College"; t.d.getElementById("exh-c-col-1").dispatchEvent(new t.w.Event("change"));
-  t.d.getElementById("exh-c-site-1").value = "  Inland Empire   JATC "; t.d.getElementById("exh-c-site-1").dispatchEvent(new t.w.Event("input"));
-  byText(t.d.getElementById("exh-cpanel"), "button", "Add a training site").click(); await settle();
-  t.d.querySelector('[aria-label="Remove training site 3"]').click(); await settle();
-  check("Remove takes the row away and returns focus to Add", !t.d.getElementById("exh-c-site-2") && t.d.activeElement === t.d.getElementById("exh-c-add"));
-  t.d.getElementById("exh-c-save").click(); await settle();
-  check("signed out, Save asks for a sign-in and writes nothing", /Sign in as a reviewer to save/.test(txt(t.d.querySelector("#exh-cpanel .exh-status")))
+  t.d.getElementById("exh-pn-col-0").value = "Bakersfield College"; t.d.getElementById("exh-pn-col-0").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-pn-site-0").value = "Kern County JATC"; t.d.getElementById("exh-pn-site-0").dispatchEvent(new t.w.Event("input"));
+  byText(fold(t.d, "edit"), "button", "Add a training site").click(); await settle();
+  check("Add a training site adds a row and focuses its box", t.d.getElementById("exh-pn-site-1") && t.d.activeElement === t.d.getElementById("exh-pn-site-1"));
+  check("the first row's edits survive the redraw", t.d.getElementById("exh-pn-site-0").value === "Kern County JATC" && t.d.getElementById("exh-pn-col-0").value === "Bakersfield College");
+  t.d.getElementById("exh-pn-save").click(); await settle();
+  check("signed out, Save asks for a sign-in and writes nothing", /Sign in as a reviewer to save/.test(txt(fold(t.d, "edit").querySelector(".exh-status")))
     && !t.calls.some(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }));
 
   t.w.dispatchEvent(new t.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } })); await settle();
-  check("a new visit starts on Review with no credential chosen", /Review/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))) && !t.d.getElementById("exh-cpanel")
-    && t.M._state.cs.sel === null && t.M._state.cs.q === "");
+  check("a new visit starts on Review with no panel open", /Review/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))) && !pn(t.d)
+    && !t.M._state.ls);
 
   // signed in: the save
   t = load({ signedIn: true, overlay: OVERLAY });
   await t.M.boot(); await settle();
-  t.M.openCredential(IBEW); await settle();
-  check("the Review card's way in opens a credential's panel", txt(t.d.getElementById("exh-c-h")) === IBEW);
-  t.d.getElementById("exh-c-save").click(); await settle();
-  check("Save with nothing changed writes nothing and says so", /Nothing changed/.test(txt(t.d.querySelector("#exh-cpanel .exh-status")))
+  await t.M.openCredential(IBEW); await settle();
+  check("the Review card's way in opens the List with the credential's panel, its issuer and sites open", t.M._state.view === "list"
+    && pn(t.d) && txt(t.d.getElementById("exh-l-panel-t")) === "Exhibit: " + IBEW && fold(t.d, "edit").open && t.M._state.listFocus === null,
+    [t.M._state.view, !!pn(t.d), pn(t.d) && txt(t.d.getElementById("exh-l-panel-t")), fold(t.d, "edit") && fold(t.d, "edit").open, t.d.activeElement && t.d.activeElement.id].join(" / "));
+  t.d.getElementById("exh-pn-save").click(); await settle();
+  check("Save with nothing changed writes nothing and says so", /Nothing changed/.test(txt(fold(t.d, "edit").querySelector(".exh-status")))
     && !t.calls.some(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }));
-  t.d.getElementById("exh-c-col-0").value = "Bakersfield College"; t.d.getElementById("exh-c-col-0").dispatchEvent(new t.w.Event("change"));
-  t.d.getElementById("exh-c-site-0").value = "Kern County JATC"; t.d.getElementById("exh-c-site-0").dispatchEvent(new t.w.Event("input"));
-  byText(t.d.getElementById("exh-cpanel"), "button", "Add a training site").click(); await settle();
-  t.d.getElementById("exh-c-col-1").value = "Norco College"; t.d.getElementById("exh-c-col-1").dispatchEvent(new t.w.Event("change"));
-  t.d.getElementById("exh-c-site-1").value = "  Inland Empire   JATC "; t.d.getElementById("exh-c-site-1").dispatchEvent(new t.w.Event("input"));
-  t.d.getElementById("exh-c-issuer").value = "IBEW"; t.d.getElementById("exh-c-issuer").dispatchEvent(new t.w.Event("input"));
-  t.d.getElementById("exh-c-save").click(); await settle();
+  t.d.getElementById("exh-pn-col-0").value = "Bakersfield College"; t.d.getElementById("exh-pn-col-0").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-pn-site-0").value = "Kern County JATC"; t.d.getElementById("exh-pn-site-0").dispatchEvent(new t.w.Event("input"));
+  byText(fold(t.d, "edit"), "button", "Add a training site").click(); await settle();
+  t.d.getElementById("exh-pn-col-1").value = "Norco College"; t.d.getElementById("exh-pn-col-1").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-pn-site-1").value = "  Inland Empire   JATC "; t.d.getElementById("exh-pn-site-1").dispatchEvent(new t.w.Event("input"));
+  t.d.getElementById("exh-pn-issuer").value = "IBEW"; t.d.getElementById("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
+  t.d.getElementById("exh-pn-save").click(); await settle();
   const cposts = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; });
   const byField = {}; cposts.forEach(function (p) { byField[p.body.field] = p.body; });
   check("Save writes three rows under the credential's key, as the reviewer", cposts.length === 3 && cposts.every(function (p) {
@@ -625,68 +619,68 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the sites save as JSON, in order, each with its college, spaces folded",
     byField.training_sites_override && byField.training_sites_override.value === JSON.stringify([{ site: "Kern County JATC", college: "Bakersfield College" }, { site: "Inland Empire JATC", college: "Norco College" }]));
   check("the one-trainer field carries the sites joined", byField.training_agency_override && byField.training_agency_override.value === "Kern County JATC; Inland Empire JATC");
-  check("the save says so and the table shows it at once", /Saved\. The tabs show it now/.test(txt(t.d.querySelector("#exh-cpanel .exh-status")))
-    && rowsOf(t.d).some(function (r) { return r[0] === IBEW && r[1] === "IBEW" && r[2] === "Kern County JATC; Inland Empire JATC"; }));
-  t.d.getElementById("exh-c-save").click(); await settle();
+  check("the save says so and the List shows it at once", /Saved\. The tabs show it now/.test(txt(fold(t.d, "edit").querySelector(".exh-status")))
+    && cell(t.d, IBEW, "Issuer") === "IBEW" && cell(t.d, IBEW, "Training sites") === "Kern County JATC; Inland Empire JATC");
+  t.d.getElementById("exh-pn-save").click(); await settle();
   check("a second Save right after writes nothing", t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).length === 3);
-  // removing every site saves an empty list and an empty trainer
-  t.d.querySelector('[aria-label="Remove training site 2"]').click(); await settle();
-  t.d.querySelector('[aria-label="Remove training site 1"]').click(); await settle();
-  check("with no sites the panel says None named", /None named/.test(txt(t.d.querySelector("#exh-cpanel .exh-sites"))));
-  t.d.getElementById("exh-c-save").click(); await settle();
+  t.d.querySelector('#exh-l-panel [aria-label="Remove training site 2"]').click(); await settle();
+  t.d.querySelector('#exh-l-panel [aria-label="Remove training site 1"]').click(); await settle();
+  check("with no sites the editor says None named", /None named/.test(txt(fold(t.d, "edit").querySelector(".exh-sites"))));
+  t.d.getElementById("exh-pn-save").click(); await settle();
   const last = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(3);
   check("clearing the sites saves an empty list and an empty trainer", last.length === 2
     && last.some(function (p) { return p.body.field === "training_sites_override" && p.body.value === "[]"; })
     && last.some(function (p) { return p.body.field === "training_agency_override" && p.body.value === ""; }));
 
-  // the Review card links the panel for a credential already in the reference
+  // the Review card links the List's panel for a credential already in the reference
   t = load({ overlay: OVERLAY });
   await t.M.boot(); await settle();
-  const setIt = byText(t.d, ".exh-read button", "Set in the credential panel");
-  check("the card's training site links the credential panel", setIt);
+  const setIt = byText(t.d, ".exh-read button", "Set them in the List");
+  check("the card's training site links the List", setIt);
   setIt.click(); await settle();
-  check("the link opens the credential the title joins", txt(t.d.getElementById("exh-c-h")) === JLP
-    && t.d.getElementById("exh-c-site-0").value === "Regional Academy North" && t.d.getElementById("exh-c-col-0").value === "Norco College");
-  t.d.getElementById("exh-c-issuer").value = "Draft issuer"; t.d.getElementById("exh-c-issuer").dispatchEvent(new t.w.Event("input"));
+  check("the link opens the credential the title joins, its sites and their colleges", txt(t.d.getElementById("exh-l-panel-t")) === "Exhibit: " + JLP
+    && t.d.getElementById("exh-pn-site-0").value === "Regional Academy North" && t.d.getElementById("exh-pn-col-0").value === "Norco College");
+  t.d.getElementById("exh-pn-issuer").value = "Draft issuer"; t.d.getElementById("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
   viewBtn(t.d, "Review").click(); await settle();
-  viewBtn(t.d, "Credentials").click(); await settle();
-  byText(t.d, ".exh-table button", JLP).click(); await settle();
-  check("a panel draft outlives leaving the view", t.d.getElementById("exh-c-issuer").value === "Draft issuer");
+  viewBtn(t.d, "List").click(); await settle();
+  check("a panel draft outlives leaving the view", t.d.getElementById("exh-pn-issuer") && t.d.getElementById("exh-pn-issuer").value === "Draft issuer");
+  await t.M.openCredential("Not In The Reference"); await settle();
+  check("a title not yet in the reference opens no panel and says so", !pn(t.d) && /is not in the reference yet/.test(txt(t.root)));
 
   // Exhibit Adoption folded in: CompTIA Security+'s could-adopt colleges
-  byText(t.d, ".exh-table button", SECP).click(); await settle();
-  cp = t.d.getElementById("exh-cpanel");
-  check("Could adopt lists the teaching colleges, the articulating one left out", /Could adopt \(2\)/.test(txt(cp))
-    && !Array.from(cp.querySelectorAll(".exh-ccrow")).some(function (row) { return /Could adopt/.test(txt(row)) && /Cabrillo/.test(txt(row)); }));
+  titleOf(t.d, SECP).click(); await settle();
+  fold(t.d, "more").open = true; await settle();
+  cp = pn(t.d);
+  check("the meta line counts the articulating colleges (MAP's adopters joined) and the could-adopt ones", /2 colleges articulate · 2 could adopt/.test(txt(cp.querySelector(".exh-l-pn-meta"))),
+    txt(cp.querySelector(".exh-l-pn-meta")));
+  const could = Array.from(fold(t.d, "more").querySelectorAll(".exh-pn-ul")).pop();
+  check("Could adopt lists the teaching colleges, the articulating one left out", /Cañada College already teaches CIS 60 \(3 units\)/.test(txt(could))
+    && /De Anza College already teaches CIS 108 \(4\.5 units\)/.test(txt(could)) && !/Cabrillo/.test(txt(could)), txt(could));
   check("the over-merged colleges are counted, never named", /4 colleges teach a course under an identity that joins too many courses to name them/.test(txt(cp)));
-  check("an adopter MAP records beyond the reference is a chip", Array.from(cp.querySelectorAll("button.exh-cchip")).some(function (b) { return txt(b) === "Chabot"; })
-    && /Articulated at \(2\)/.test(txt(cp)));
-  check("a more control keeps a space from the text before it", /and 1 more/.test(txt(cp)) && !/unitsand/.test(txt(cp)) && !/Plusand/.test(txt(cp)));
-  check("four exhibits fold to three and 1 more", /Exhibits in MAP \(4\)/.test(txt(cp)) && byText(cp, "button", "and 1 more"));
-  Array.from(cp.querySelectorAll("button.exh-cchip")).find(function (b) { return txt(b) === "De Anza"; }).click(); await settle();
-  box = t.d.getElementById("exh-c-adopt");
-  check("a could-adopt chip opens the course it already teaches and points to Request Quick Adopt",
-    /Already teaches a course mapped to it/.test(txt(box)) && /CIS 108, 4\.5 units/.test(txt(box)) && /Request Quick Adopt/.test(txt(box)));
-  t.M._state.cs.open = null;
+  check("an adopter MAP records beyond the reference is named with its line", /Chabot College\s*, 2 units: CNT 69, 2 hours in Network Security/.test(txt(cp)), txt(cp));
+  check("the four exhibits are the members", cp.querySelectorAll(".exh-l-pn-table tbody tr").length === 4);
+  check("an articulating college's verified exhibit links MAP; an unverified one never shows", /Cabrillo College, 3 units.*Its exhibit in MAP: MAPCXI-CS-1-001/.test(txt(cp)) && !/NOT-VERIFIED/.test(txt(cp))
+    && Array.from(cp.querySelectorAll(".exh-pn-ul a")).some(function (a) { return a.href === "https://map.example/opp?Exhibit=MAPCXI-CS-1-001&View=Non-Military"; }), txt(cp));
 
   // the adoption file could not be read
   t = load({ noAdoption: true });
   await t.M.boot(); await settle();
-  viewBtn(t.d, "Credentials").click(); await settle();
-  check("an unread adoption file leaves the table standing and says so on the tiles", rowsOf(t.d).length === 4
+  viewBtn(t.d, "List").click(); await settle();
+  check("an unread adoption file leaves the List standing and says so on the tiles", listKeys(t.d).length === 4
     && Array.from(t.d.querySelectorAll(".exh-tile")).some(function (x) { return /^FieldCould not be read/.test(txt(x)); }));
-  byText(t.d, ".exh-table button", SECP).click(); await settle();
-  check("its Could adopt says it could not be read rather than none", /Could adopt \(0\)Could not be read/.test(txt(t.d.getElementById("exh-cpanel"))));
+  titleOf(t.d, SECP).click(); await settle();
+  check("its panel says the exhibits and who could adopt it could not be read, rather than none", /The exhibits under this name could not be read/.test(txt(pn(t.d)))
+    && /Who could adopt it could not be read/.test(txt(pn(t.d))), txt(pn(t.d)));
 
   // the live rows could not be read
   t = load({ overlayFails: true });
   await t.M.boot(); await settle();
-  viewBtn(t.d, "Credentials").click(); await settle();
-  check("unread live rows fall back to the daily file and say so", /Today's saves could not be read, so the credentials show as of 2026-10-31 06:20Z/.test(txt(t.root))
-    && rowsOf(t.d).some(function (r) { return r[0] === JLP && r[2] === "Regional Academy"; }));
+  viewBtn(t.d, "List").click(); await settle();
+  check("unread live rows fall back to the daily file and say so", /Today's saves could not be read/.test(txt(t.root))
+    && cell(t.d, JLP, "Training sites") === "Regional Academy", txt(t.root).slice(0, 400));
   t = load({ noCreds: true });
   await t.M.boot(); await settle();
-  viewBtn(t.d, "Credentials").click(); await settle();
+  viewBtn(t.d, "List").click(); await settle();
   check("an unread credential file says so", /The credentials could not be read \(the credential file did not load\)/.test(txt(t.root)));
 
   // #exhibits/<route>: the Commons row's counts land here, read once per visit (Sheet 148, link-retire)
@@ -696,7 +690,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
     && stepTile(t.d, "Conflict with the reference").getAttribute("aria-pressed") === "true");
   t = load({ hash: "#exhibits/credentials" });
   await t.M.boot(); await settle();
-  check("#exhibits/credentials opens the Credentials view", t.M._state.view === "credentials" && rowsOf(t.d).length === 4);
+  check("#exhibits/credentials, the retired view's address, opens the List", t.M._state.view === "list" && listKeys(t.d).length === 4);
   t = load({ hash: "#exhibits/nowhere" });
   await t.M.boot(); await settle();
   check("an unknown route opens Review on all held", t.M._state.view === "review" && t.M._state.filter === "");
@@ -712,10 +706,9 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("resolveSites: the list stands when the trainer matches or is older",
     M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "1", trainer: "A", trainerAt: "2" }).length === 1
     && M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "2", trainer: "B", trainerAt: "1" }).length === 1);
-  check("the rendered credential view has no emoji", !/[\u{1F300}-\u{1FAFF}☀-➿]/u.test(txt(t.root)));
 
   const failed = results.filter(function (r) { return !r[1]; });
-  results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); });
+  results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });
   console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");
   process.exit(failed.length ? 1 : 0);
 })().catch(function (e) { console.error(e); process.exit(1); });

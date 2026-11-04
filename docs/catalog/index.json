@@ -11112,7 +11112,7 @@
      ],
      "title": "The Catalog Commons List norms, what every common reference's List shares and what stays different",
      "type": "reference",
-     "updated": "2026-11-02"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-09-01",
@@ -13888,19 +13888,20 @@
      "updated": ""
     },
     {
-     "created": "2026-11-03",
+     "created": "2026-11-04",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
      "tags": [
       "handoff",
       "cer",
-      "exhibits",
-      "exhibit-canonicalization",
-      "kb-curation",
-      "map-links"
+      "commons-list",
+      "cr-reference",
+      "subjects",
+      "program-requirements",
+      "coci-lookup"
      ],
-     "title": "CER redesign handoff: one MAP address on the Exhibits tab (SkyElderberry)",
+     "title": "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)",
      "type": null,
      "updated": ""
     },
@@ -15649,7 +15650,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-03"
     },
     {
      "created": "2026-09-08",

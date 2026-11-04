@@ -39,21 +39,44 @@ for this reference, drawn by the shared `commons_progress.js` from `canonical_su
 run status from `kb/status/subjects.json`, the headline pair, five milestones with You are here, a card for
 each of Sam's eight steps (consolidated to eight: the MQ list, the C-ID and CCN tables, the authority rule,
 the identity codes, one code one MQ discipline, the cross-listings, confirmation, the scan), the procedures
-under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. Reference is the table.
-A count opens the table with its filter; `#canonical-subj4/<filter>`, `/progress`, `/reference` and `/check`
-route from the address (the Commons' step 3). Guard `tests/csr_progress.test.js`; a11y
-`canonical-subj4-progress-dark`, `canonical-subj4-reference`.
+under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgment. A count opens the List on
+its filter; `#canonical-subj4/<filter>`, `/progress`, `/list` and `/check` route from the address (the Commons'
+step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark`.
 
 **LIVE: the List view (2026-11-01).** `#canonical-subj4/list`, the third word beside Progress and Reference, is the
 Catalog Commons' shared List (`commons_list.js`, lazy-loaded) with this reference's spec in `canonical_subj4.js` (Sam,
 2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one row per MQ discipline (147), A to Z, with its
 Common SUBJ, status (confirmed by a person, by the nightly procedure `csr-confirm-authority@bot`, by a session cohort,
 or open), any collision, the Local SUBJs colleges use and how many, local courses, M-IDs, authority and note. Edit, Edit
-every row and the Status drawer's Confirm this pick write through the table's own path (`canonCheck`, `writeCanon`,
-`writeNote`, now shared by the table's boxes): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
+every row and the Status drawer's Confirm this pick write through one path (`canonCheck`, `writeCanon`,
+`writeNote`): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
 column (no flag field) and no find and replace (a replace on Common SUBJ hands one code to several MQ disciplines; a
 note where no code row exists stands in as the review, so a replace across notes would confirm picks). Guard
-`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`.
+`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`. **A pick waiting for a person
+opens the List on Open** (`#canonical-subj4/open`, `TO.confirm`): the Commons card's unconfirmed issue and the Progress
+view's *Confirm them* once led to a filter whose box saved only a changed code, so Sam found nothing to press
+(2026-11-03). **The List is the workspace
+(2026-11-04, the List norms):** over the List, the engine's line of the subjects row in `kb/status/commons.json` (Open
+and Confirmed by a person set the List's own filters), and the Progress view's opened page folded behind *Hide the
+summary* (prefix `csl-pg-`). An MQ discipline's title opens a side panel: its local subjects (most used first, each
+share), the codes it shares (a collision, or shared by design; another MQ discipline's name opens its panel),
+*Confirm this pick* with its own status line, and the authority, note and identity codes folded. Guard
+`tests/csr_list_panel.test.js`. **The Reference view retired into the List (2026-11-04, SkyPawpaw):** its lists are
+List filters (*No code yet*, *Confirmed*, *On the CCN code*, *On the C-ID code*, *An official code differs*, *Proposed*),
+and every Progress count, old address (`/reference` too) and quickstart hint opens the List; a TOP column takes the TOP
+filter's place (a fuzzy filter only); the head carries the sign-in and *Run the SUBJ check*, whose *show* opens a
+discipline's panel; the panel folds the CPL window and the C-ID and CCN courses on its codes, and lists the *Codes it
+could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
+table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
+`csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
+the injected box CSS with it. **The Local subjects List** (Sam, 2026-11-03: *"yes on
+local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
+code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
+discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /
+`subject_discipline_confirm`, a note as `subject_discipline_note` (both DR-25, Sam's); the map file changes only when a
+session applies the filings under DR-25 with its ripple check. Guard `tests/csr_local_subjects.test.js`; a11y
+`canonical-subj4-local`, `-dark`. NEXT: the Commons card's second count (local codes confirmed by a person) needs the
+confirms synced to a committed file.
 
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
@@ -87,7 +110,7 @@ BIOT, BSOT, CMUS, DENA, DMGR, EET, EMS, FIRE, HIT, WELD, WWTR), which it had ski
 suggestions saw 48 of the 65 C-ID subjects.
 
 **The Commons row** (`kb/_build_commons_status.py` `row_subjects`) reads the same files: the settled pair,
-four known issues with owners, the procedures in force, and deep links into the table.
+four known issues with owners, the procedures in force, and deep links into the List.
 
 ## Sam's eight steps against the record (S425's check, 2026-10-19)
 

@@ -3,7 +3,8 @@
 //
 //   CCR list view       ten filters (#uc-kind and its neighbors), and the selects
 //                       its editors open (stance, discipline, proposed discipline)
-//   Common Subjects     the table's Show filter (#cs-filter)
+//   Common Subjects     the table's Show filter (#cs-filter), retired with the Reference table into the List
+//                       (2026-11-04); the tab now builds no select, and any it adds must carry a name
 //   MAP Users           the roster's sort (.mapu-select)
 //
 // A select's first option ("All kinds") is a value, never a name, so each one
@@ -20,12 +21,14 @@ const results = [];
 const check = (name, cond, msg) => results.push([!!cond, name + (cond ? "" : " — " + (msg || ""))]);
 
 // ── every el("select", {...}) in the two builders names its select ──────────
-for (const f of ["unified_courses.js", "canonical_subj4.js"]) {
+// The second figure is how many selects the file must build at least: the CCR builds its filters; the Common
+// Subjects tab builds none since its table retired, so 0 is no failure there, and an unnamed one still is.
+for (const [f, atLeast] of [["unified_courses.js", 1], ["canonical_subj4.js", 0]]) {
   const src = read(f);
   const calls = src.match(/el\("select", \{[^}]*\}/g) || [];
   const unnamed = calls.filter((c) => !/"aria-label":|\btitle:/.test(c));
   check(`${f}: all ${calls.length} selects it builds carry an aria-label or a title`,
-    calls.length > 0 && unnamed.length === 0, unnamed.join(" | "));
+    calls.length >= atLeast && unnamed.length === 0, unnamed.join(" | "));
 }
 
 // ── the CCR list view's filter helper names each filter by its id ───────────
