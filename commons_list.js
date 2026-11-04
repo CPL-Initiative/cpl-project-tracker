@@ -83,16 +83,16 @@
 //                      panel's shared parts, so every List's panel reads alike (the List norms: one renderer):
 //                      h.title(text), h.meta(parts) (one line of what the row is, parts joined by a middle dot),
 //                      h.heading(text), h.table(o) (a sortable table of the row's members: o = { id, label, cols:
-//                      [[key, header, numeric]], rows, cell(row, key) -> text or node, note }; its sort lasts the visit in
-//                      L.pnSort[id]), h.fold(id, summary, kids) (a fold that stays open or shut as the reader left it,
-//                      L.pnFold[id]) and h.open(key) (show another row's panel). L.panel holds the open row's key.
+//                      [[key, header, numeric]], rows, cell(row, key) -> text or node, note, sort: { col, dir } to open
+//                      on a column other than the first, A to Z }; its sort lasts the visit in L.pnSort[id]),
+//                      h.fold(id, summary, kids) (a fold that stays open or shut as the reader left it, L.pnFold[id]) and h.open(key) (show another row's panel). L.panel holds the open row's key.
 // The line (api.line, the List norms' norm 1; Sam, 2026-11-03: "incorporating the list view below the action/metric cards
 // and make that top level collapsible while keeping the one-line action/metric links like we do elsewhere"): one line of
 // the reference's Commons row over its List, each count a control where the tab says where it opens, and the word that
 // folds the tab's cards for the visit. o = { row, error, folded, onToggle(), control(open, text, liCls, wCls) -> node or null,
 // foldId, cls }. CPL_COMMONS_LIST.readCommons(fresh) reads kb/status/commons.json once a visit for every List, and
 // lineItems(row) turns a row into the line's counts: the pair's count with "of N" and its words up to the first
-// parenthesis or semicolon, the confirmed count, then each known issue. Exhibits drew the first line (#2736).
+// parenthesis, semicolon or colon, the confirmed count, then each known issue. Exhibits drew the first line (#2736).
 //   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
 //                      file): its word shows no count, never a 0 a reader takes for empty (S343).
 // The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
@@ -154,6 +154,8 @@
     function listState() {
       var L = S.state();
       for (var k in DEFAULTS) if (L[k] === undefined) L[k] = JSON.parse(JSON.stringify(DEFAULTS[k]));
+      // A tab that resets the page with a null limit gets the first page, never an empty table (slice(0, null) is []).
+      if (!(L.limit > 0)) L.limit = LIST_LIMIT;
       return L;
     }
     function listColIndex(h) {
@@ -998,7 +1000,7 @@
         meta: function (parts) { return el("p", { cls: CL.muted + " " + CL.small + " " + P + "pn-meta", text: (parts || []).filter(Boolean).join(" \u00b7 ") }); },
         heading: function (text) { return el("h3", { cls: P + "pn-q", text: text }); },
         table: function (o) {
-          var sorts = L.pnSort || (L.pnSort = {}), S2 = sorts[o.id] || (sorts[o.id] = { col: 0, dir: 1 });
+          var sorts = L.pnSort || (L.pnSort = {}), S2 = sorts[o.id] || (sorts[o.id] = { col: o.sort ? o.sort.col : 0, dir: o.sort ? o.sort.dir : 1 });
           var cols = o.cols, k = cols[S2.col] ? cols[S2.col][0] : cols[0][0], num = !!(cols[S2.col] || [])[2];
           var rows = (o.rows || []).slice().sort(function (a, b) {
             var x = a[k], y = b[k], c = num ? (+x || 0) - (+y || 0) : String(x == null ? "" : x).localeCompare(String(y == null ? "" : y));
@@ -1376,7 +1378,7 @@
     function fmt(n) { return Number(n).toLocaleString("en-US"); }
     function cut(w, re) { var s = String(w || ""), m = re.exec(s); return (m ? s.slice(0, m.index) : s).trim(); }
     var out = [], pairs = Array.isArray(row && row.pair) ? row.pair : [], p = pairs[0], c = pairs[1];
-    if (p) out.push({ n: p.n, open: p.open, words: (p.of != null ? "of " + fmt(p.of) + " " : "") + cut(p.words, /\s*[(;]/) });
+    if (p) out.push({ n: p.n, open: p.open, words: (p.of != null ? "of " + fmt(p.of) + " " : "") + cut(p.words, /\s*[(;:]/) });
     if (c) out.push({ n: c.n, open: c.open, words: cut(c.words, /\s*[,(;]/) });
     (Array.isArray(row && row.issues) ? row.issues : []).forEach(function (i) { out.push({ n: i.n, open: i.open, words: i.words }); });
     return out;

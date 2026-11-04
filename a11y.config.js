@@ -401,6 +401,13 @@ async function seedCsrList(page, theme) {
   await page.waitForSelector("#tab-canonical-subj4 #cs-tab-list", { timeout: 60000 });
   await page.evaluate(() => { const b = document.getElementById("cs-tab-list"); if (b && b.getAttribute("aria-selected") !== "true") b.click(); });
   await page.waitForSelector("#tab-canonical-subj4 .csl-table tbody tr", { timeout: 60000 });
+  // The line, the folded summary (the Progress view's page) and an MQ discipline's side panel with its folds open.
+  await page.waitForSelector("#tab-canonical-subj4 .csl-line", { timeout: 30000 });
+  await page.waitForFunction(() => document.querySelector("#csl-fold #csl-pg-attention") || document.querySelector("#csl-fold [role=alert]"), null, { timeout: 60000 });
+  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td.csl-title button.csl-open"); if (b) b.click(); });
+  await page.waitForSelector("#csl-panel", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#csl-panel details.csl-pn-fold").forEach((d) => { d.open = true; }); });
+  await page.waitForTimeout(200);
   await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td:nth-child(4) button.csl-open"); if (b) b.click(); });
   await page.waitForSelector("#tab-canonical-subj4 .csl-drawer", { timeout: 10000 });
   await page.evaluate(() => { document.getElementById("csl-editall").click(); });
@@ -3400,7 +3407,7 @@ module.exports = {
   },
   "canonical-subj4-list": {
     file: "index.html",
-    title: "Common Subjects Reference: List, every MQ discipline A to Z, a drawer and the boxes open",
+    title: "Common Subjects Reference: List, its line and folded summary, an MQ discipline's side panel, a drawer and the boxes open",
     routes: [{ hash: "canonical-subj4/list", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCsrList(page, "light"),

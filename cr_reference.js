@@ -1084,8 +1084,8 @@
       onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
       control: function (open, text, li, w) {
         var m = /^#cr-reference\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
-        if (open === "#cr-reference/list" || f === "list") return L.f ? api.word(text, function () { L.f = ""; render(); }, { cls: w + " " + li }) : null;
-        if (f && filters[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = null; render(); }, { cls: w + " " + li });
+        if (open === "#cr-reference/list" || f === "list") return L.f ? api.word(text, function () { L.f = ""; L.limit = api.LIMIT; render(); }, { cls: w + " " + li }) : null;
+        if (f && filters[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = api.LIMIT; render(); }, { cls: w + " " + li });
         if (open) return api.el("a", { href: open, cls: li, text: text });
         return null;
       } }));
