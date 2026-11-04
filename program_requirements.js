@@ -1250,6 +1250,8 @@
       ".prh .prl-table th.prl-box, .prh .prl-table td.prl-box { padding-left:2px; padding-right:2px; }",
       ".prh .prl-table tbody td.prl-n { text-align:right; }",
       ".prh .prl-table tbody tr:nth-child(even) { background:transparent; }",
+      ".prh .prl-pn-dec { margin:10px 0 6px; }",
+      ".prh .prl-acts { display:flex; flex-wrap:wrap; gap:6px 16px; }",
       ".prh-quiet { color:var(--text-muted); }",
       ".prh-caution { color:var(--mustard-text); font-weight:600; }",
       ".prh-small { font-size:.8125rem; }",
@@ -3234,7 +3236,8 @@
     T.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () {
       PAGE.loading = false;
       if (!window.CPL_COMMONS_PAGE) { PAGE.failed = true; return; }
-      if (state.view === "progress" && document.getElementById(ROOT_ID)) render();
+      // The List folds the same page under its line, so it repaints too.
+      if ((state.view === "progress" || state.view === "list") && document.getElementById(ROOT_ID)) render();
     });
   }
   function viewProgress() {
@@ -3815,11 +3818,115 @@
         findLabel: "Find in the list" },
       state: listState, rows: function () { var m = listBuild(); return m ? m.rows : []; }, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: render,
-      head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer,
+      head: function (wrap, api) { listLine(wrap, api); return listHead(wrap); },
+      filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer,
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a program's title opens it beside
+      // the table, with its required courses block by block, the record's checks and the rest folded.
+      panel: { label: function (r) { return "Program: " + r.title; }, body: listPanelBody },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { var m = listBuild(); return m ? m.counts : {}; }
     };
     return spec;
+  }
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR and
+     Subjects first): one line of the requirements row in kb/status/commons.json, each count opening the List's own
+     filter where it has one, and the Progress view's opened page folded behind one word for the visit. The engine
+     draws the line and reads the Commons file once a visit. */
+  var LINE_FILTERS = { unread: 1, read: 1, pass: 1, fail: 1, conflict: 1, units: 1 };
+  function listLine(wrap, api) {
+    var L = listState(), CLM = window.CPL_COMMONS_LIST;
+    // Read once, success or failure, or a failed read would repaint and read again forever (the CR line's lesson).
+    if (!L.cmRead && !L.cmLoading && CLM && CLM.readCommons) {
+      L.cmLoading = true;
+      CLM.readCommons(true).then(function (d) {
+        L.cm = CLM.commonsRow(d, "requirements"); L.cmErr = L.cm ? null : "kb/status/commons.json has no requirements row";
+      }, function (e) { L.cmErr = String(e && e.message || e); }).then(function () {
+        L.cmLoading = false; L.cmRead = true; if (state.view === "list" && document.getElementById(ROOT_ID)) render();
+      });
+    }
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "prl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
+      control: function (open, text, li, w) {
+        var m = /^#program-requirements\/list(?:\/([a-z-]+))?$/.exec(open || ""), f = m ? (m[1] || "") : null;
+        if (f === "") return L.f ? api.word(text, function () { L.f = ""; L.limit = api.LIMIT; render(); }, { cls: w + " " + li }) : null;
+        if (f && LINE_FILTERS[f]) return L.f === f ? null : api.word(text, function () { L.f = f; L.limit = api.LIMIT; render(); }, { cls: w + " " + li });
+        if (open) return api.el("a", { href: open, cls: li, text: text });
+        return null;
+      } }));
+    var fold = api.el("div", { cls: "prl-fold", id: "prl-fold" });
+    if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
+    var PG = window.CPL_COMMONS_PAGE;
+    if (PG) {
+      // The Progress view's own page, under its own prefix, so its ids never meet the Progress view's.
+      var spec = pageSpec(progressContext(new Date()));
+      spec.prefix = "prl-pg-";
+      fold.appendChild(PG.render(spec));
+    } else if (PAGE.failed) {
+      fold.appendChild(api.el("p", { cls: "prh-empty", role: "alert", text: "The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again." }));
+    } else {
+      fold.appendChild(api.el("p", { cls: "prh-meta", text: "Loading the summary…" }));
+      withPage();
+    }
+    wrap.appendChild(fold);
+  }
+  /* A program's side panel: what it is, its required courses block by block (the members the row folds: each course's
+     title, units and the CPL on record for it at this college), the record's checks, and the rest folded: COCI's
+     words, the TOP code as a search aid and the record's source. A record the index holds light is read once, here. */
+  function listPanelBody(r, h) {
+    var p = r.p, L = listState(), loads = L.pnLoad || (L.pnLoad = {}), out = [];
+    out.push(h.title(r.title));
+    out.push(h.meta([r.college, r.award, "Control number " + r.ctl, r.fam, r.lo == null ? "" : span(r.lo, r.hi) + " units",
+      !p ? "Not read yet" : r.fails.length ? "Fails a machine check" : "Passes the machine checks"]));
+    if (!p) {
+      out.push(h.el("p", { cls: "prh-meta", text: "The harvest holds no record of this program yet, so its courses are not listed here. COCI's words and codes are folded below." }));
+    } else {
+      out.push(h.el("p", { cls: "prl-pn-dec", text: (p.checked ? "A person confirmed it" + (p.checked_by ? ", " + p.checked_by : "") + (p.checked_at ? " " + h.stamp(p.checked_at) : "")
+        : "Not yet confirmed by a person") + ". Courses: " + (p.checks && p.checks.coverage === true ? "every listed course placed" : "a listed course is not placed")
+        + "; added courses: " + (p.checks && p.checks.invented === true ? "none" : "a course the state's list lacks") + "; units: " + unitsWords(p) + "." }));
+      out.push(h.el("div", { cls: "prl-acts" }, [h.word("Open the record in Program records", function () { listOpenRecord(p); })]));
+      out.push(h.heading("Its courses"));
+      var key = keyOf(p);
+      if (p._light && !p._gone) {
+        if (!loads[key]) {
+          loads[key] = "reading";
+          ensureRows([p]).then(function () { loads[key] = p._light ? "failed" : "done"; }, function () { loads[key] = "failed"; })
+            .then(function () { if (LIST.engine && listState().panel === r.ut) LIST.engine.redraw(); });
+        }
+        out.push(h.el("p", { cls: "prh-meta", role: "status", text: loads[key] === "failed"
+          ? "The record's courses could not be read" + (state.failed[p.college] ? " (" + state.failed[p.college] + ")" : "") + ". Open the record in Program records to try again."
+          : "Reading the record's courses…" }));
+      } else {
+        var blocks = (p.record && p.record.blocks) || [], info = (p.display && p.display.courses) || {}, unit = p.measure === "hours" ? "Hours" : "Units";
+        var groups = {};
+        blocks.forEach(function (b) { if (b.option_group) groups[b.option_group] = (groups[b.option_group] || 0) + 1; });
+        var cs = [];
+        blocks.forEach(function (b, bi) {
+          (b.courses || []).forEach(function (c) {
+            var i = info[c.code] || {}, alts = (c.alternatives || []).map(function (a) { return a && (a.code || a); }).filter(Boolean);
+            cs.push({ at: bi, block: (b.name || "Courses") + ", " + ruleText(b, p.measure, groups).toLowerCase(), code: c.code + (alts.length ? " or " + alts.join(", ") : ""),
+              title: i.title || "", units: c.units != null ? Number(c.units) : i.units_from_state_file != null ? Number(i.units_from_state_file) : null,
+              cpl: exhibitCount(i) });
+          });
+        });
+        if (!cs.length) out.push(h.el("p", { cls: "prh-meta", text: "The record lists no courses." }));
+        else out.push(h.table({ id: "courses", label: "The courses " + r.title + " at " + r.college + " requires",
+          note: fmt(cs.length) + (cs.length === 1 ? " course" : " courses") + " in " + fmt(blocks.length) + (blocks.length === 1 ? " block" : " blocks")
+            + (p.total_min != null ? "; the program totals " + span(p.total_min, p.total_max) + " " + unit.toLowerCase() : "")
+            + ". CPL here counts the exhibits and credit recommendations on record for the course at this college. Press a header to sort.",
+          cols: [["at", "Order", true], ["block", "Block"], ["code", "Course"], ["title", "Title"], ["units", unit, true], ["cpl", "CPL here", true]],
+          rows: cs,
+          cell: function (row, k) { return k === "at" ? row.at + 1 : row[k]; } }));
+      }
+    }
+    var more = [];
+    more.push(h.el("p", null, [r.awardLong ? "COCI's award: " + r.awardLong + "." : "COCI names no award for this program."]));
+    more.push(h.el("p", null, [r.cip ? "CIP " + r.cip + ", in the family " + r.fam + "." : "COCI holds no CIP code for this program."]));
+    if (r.top) more.push(h.el("p", null, ["TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal)."]));
+    if (r.coci && r.coci !== r.college) more.push(h.el("p", null, ["COCI's short name for the college: " + r.coci + "."]));
+    if (p) more.push(h.el("p", null, ["Read from " + shortCollege(p.college) + "'s catalog" + (p.program_title ? " as " + p.program_title : "") + (p.catalog_year ? ", " + yr(p.catalog_year) : "") + "."]));
+    out.push(h.fold("more", "More about this program: COCI's words, its codes and the record's source", more));
+    return out;
   }
   function listApi() {
     if (!LIST.engine && window.CPL_COMMONS_LIST && window.CPL_COCI_PROGRAMS) LIST.engine = window.CPL_COMMONS_LIST.create(listSpec());

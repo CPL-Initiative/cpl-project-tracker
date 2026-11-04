@@ -717,6 +717,13 @@ async function seedPrList(page, theme) {
         checks: { coverage: i % 7 !== 0, invented: i % 31 !== 0, arithmetic: i % 9 === 0 ? "unequal" : i % 13 === 0 ? "incomplete" : "equal" },
         display: { counts: { here: i % 4 } }, _light: true });
     });
+    // The first record full, so its side panel draws its courses table (the List norms' panel, 2026-11-04).
+    Object.assign(recs[0], { _light: false, measure: "units", total_min: 18, total_max: 18, catalog_year: "2026-2027",
+      record: { blocks: [{ name: "Required core", rule: "all", courses: [{ code: "WELD 101", units: 4 }, { code: "WELD 102", units: 4, alternatives: [{ code: "WELD 103" }] }] },
+        { name: "Electives", rule: "choose_units", min: 6, courses: [{ code: "WELD 201", units: 3 }, { code: "MATH 105", units: 3 }] }] },
+      display: { counts: { here: 1 }, courses: { "WELD 101": { title: "Introduction to Welding", here: { exhibits_n: 4 } }, "WELD 102": { title: "Arc Welding" },
+        "WELD 201": { title: "Pipe Welding" }, "MATH 105": { title: "Shop Math" } } } });
+    window.__prPanelKey = recs[0].control_number;
     S.registry = [{ college: "Cerritos College", catalog_url: "https://catalog.example/", catalog_year: "2026-2027" }];
     S.records = recs; S.error = null;
     S.progress = Object.assign({}, S.progress, { active: i, activeKeys: {}, activeCollege: at, errors: {} });
@@ -731,6 +738,20 @@ async function seedPrList(page, theme) {
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
     if (x) x.click();
   });
+  await page.evaluate(() => {
+    const row = Array.from(document.querySelectorAll("#program-requirements-root .prl-table tbody tr")).find((tr) => /Fails/.test(tr.textContent));
+    const b = row && Array.from(row.querySelectorAll("button.prl-open")).find((x) => /^Record:/.test(x.getAttribute("aria-label") || ""));
+    if (b) b.click();
+  });
+  await page.waitForSelector("#program-requirements-root .prl-drawer", { timeout: 10000 });
+  // The line, its folded summary and the full record's side panel, its fold open.
+  await page.waitForFunction(() => document.querySelector("#prl-fold #prl-pg-attention") || document.querySelector("#prl-fold [role=alert]"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const L = window.CPL_PROGRAM_REQUIREMENTS._state.ls; L.panel = window.__prPanelKey; L.open = null;
+    window.CPL_PROGRAM_REQUIREMENTS._render();
+  });
+  await page.waitForSelector("#prl-panel #prl-pn-courses", { timeout: 10000 });
+  await page.evaluate(() => { document.querySelectorAll("#prl-panel details.prl-pn-fold").forEach((d) => { d.open = true; }); });
   await page.evaluate(() => {
     const row = Array.from(document.querySelectorAll("#program-requirements-root .prl-table tbody tr")).find((tr) => /Fails/.test(tr.textContent));
     const b = row && Array.from(row.querySelectorAll("button.prl-open")).find((x) => /^Record:/.test(x.getAttribute("aria-label") || ""));
@@ -3441,7 +3462,7 @@ module.exports = {
      Every active program in COCI on one sheet, the Record drawer of a failing row open; one per theme. */
   "program-requirements-list": {
     file: "index.html",
-    title: "Program Requirements: List, every active program, a Record drawer open",
+    title: "Program Requirements: List, its line and folded summary, a program's side panel, a Record drawer open",
     routes: [{ hash: "program-requirements/list", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedPrList(page, "light"),
