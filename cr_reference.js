@@ -895,6 +895,9 @@
       { h: "Reference", w: 18, edit: "reference", v: function (r) { return refOf(r.g); } },
       { h: "Rung", w: 7, v: function (r) { return (RUNGS[r.g.rung] || RUNGS[5]).label; } },
       { h: "Decision", w: 7, v: function (r) { return decisionOf(r.g); } },
+      // Who decided and when, beside the rung (automation) and the decision (judgment): the worklist CSV's guarantee,
+      // carried onto the List before the worklist retires.
+      { h: "Decided by", w: 8, v: function (r) { var d = decidedState(r.g); return d ? (d.updated_by || "") + (d.updated_at ? ", " + String(d.updated_at).slice(0, 10) : "") : ""; } },
       { h: "Articulations", w: 6, n: true, v: function (r) { return r.m.rows; } },
       { h: "Colleges", w: 5, n: true, v: function (r) { return r.m.colleges_n; } },
       { h: "Units", w: 6, v: function (r) { return unitRange([r.m]); } },
