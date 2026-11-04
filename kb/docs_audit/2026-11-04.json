@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1384,
-    "bytes": 14021641,
+    "bytes": 14022858,
     "over_budget": 2,
     "handoff_max": 571,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2620013,
+        "bytes": 2621243,
         "over": 0
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 482752,
+        "bytes": 482739,
         "over": 1
       },
       "handoff": {
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 25609,
-      "bytes": 4192320556,
+      "bytes": 4192326205,
       "heavy_bytes": 2980407265,
       "heavy_share": 0.711,
       "ignore_filters": [
@@ -171,13 +171,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20044,
+        "bytes": 20031,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 44,
+        "over_by": 31,
         "ratio": 1.0
       },
-      "message": "20,044 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "20,031 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cer-procedures.md"
     },
     {

@@ -245,6 +245,25 @@ HAND = {
         "Emergency Medical Technician (EMT) Certification": ("all", ["Emergency Medical Technician (EMT)"]),
         "Paramedic License": ("all", ["Paramedic License (EMT-P)"]),
     }),
+    # Twelfth and thirteenth families (S571, 2026-11-04): the American Welding Society and Amazon Web Services, one
+    # catalog spelling each, both written "AWS" in titles. A D1.1 or D9.1 welder qualification holds the catalog's row for
+    # its code. Left out: D1.3, D1.5, D1.8, D17.1 and the B2.2 brazing qualification (no catalog row), "AWS Welder
+    # Qualification — D1.1/D1.3/D17.1" (two of its three codes have no row), the LA City certified-welder titles (the
+    # City issues them), and the welding-process courses and Light Gage titles.
+    "AWS-Welding": (("American Welding Society",), {
+        "AWS D1.1 FCAW Qualified Welder": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 SMAW Qualified Welder": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 Structural Welder Qualification": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 Structural Welding Certification — FCAW (E71T-8)": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 Structural Welding Certification — SMAW (E7018)": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D9.1 GMAW Qualified Welder": ("all", ["AWS D9.1 Sheet Metal Welding"]),
+    }),
+    "Amazon": (("Amazon Web Services",), {
+        "AWS Certified Cloud Practitioner": ("all", ["AWS Certified Cloud Practitioner"]),
+        "AWS Certified Developer — Associate": ("all", ["AWS Certified Developer - Associate"]),
+        "AWS Certified Solutions Architect — Associate": ("all", ["AWS Certified Solutions Architect - Associate"]),
+        "AWS CloudOps Engineer - Associate": ("all", ["AWS Certified CloudOps Engineer - Associate"]),
+    }),
 }
 HAND_ISSUER = {sp: fam for fam, (spellings, _) in HAND.items() for sp in spellings}
 HAND_TITLE = {ut: fam for fam, (_, table) in HAND.items() for ut in table}
@@ -369,7 +388,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},
