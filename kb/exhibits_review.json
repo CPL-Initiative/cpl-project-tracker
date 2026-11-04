@@ -1,18 +1,18 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-04T15:49:40Z",
+ "written_at": "2026-11-04T17:04:13Z",
  "sources": {
   "procedures_run": "2026-11-04T15:49:37Z",
-  "suggestions": "2026-11-04T06:21:31Z",
-  "statewide": "2026-11-04T06:17:39",
-  "audit": "2026-11-04T06:21:08+00:00"
+  "suggestions": "2026-11-04T17:02:39Z",
+  "statewide": "2026-11-04T16:59:23",
+  "audit": "2026-11-04T17:02:22+00:00"
  },
  "tiles": {
   "names": {
-   "n": 5506,
-   "of": 5550,
-   "waiting": 44
+   "n": 5519,
+   "of": 5582,
+   "waiting": 63
   },
   "aligned": {
    "n": 2,
@@ -467,7 +467,7 @@
   {"raw": "Industry for AJ 63", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Criminal Investigation", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA62-1-001"], "art": [27], "could": [0, 6, 13, 14, 31, 32, 36, 42, 50, 61, 63], "basis": "", "same": false, "courses_key": "teaches:Criminal Investigation", "confidence": 0.6, "under": ["ADJU 212\tCriminal Investation - Credit by Exam", "ADM JUS 005 - Criminal Investigation", "Admin Just 6 CBE", "AJ 108 Criminal Investigation", "CRIM-08 Introduction to Investigation", "Criminal Investigation", "Criminal Investigation- HS CE(CRYROP)", "Criminal Investigations ADJ 13 Cx", "Discipline Exam - ADM JUS 005"], "under_count": 9, "exists": true},
   {"raw": "Industry for AJ 64", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Police Patrol Operations", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA63-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
   {"raw": "Industry for AJ 66", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Juvenile Procedures", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA64-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["ADM JUS 008 - Juvenile Procedures", "Discipline Exam - ADM JUS 008", "Juvenile Procedures"], "under_count": 3, "exists": true},
-  {"raw": "Industry for BUSN 65", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Federal Income Tax Accounting", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFB6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
+  {"raw": "Industry for BUSN 65", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Federal Income Tax Accounting", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFB6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["Portfolio for BUSN 65"], "under_count": 1, "exists": true},
   {"raw": "Industry for FST 1", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Fire Protection Organization", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFF1-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["Credit by Exam - CalAPS - Fire Protection Organization", "FIRE 33 -Fire Protection Organization and System", "Fire Protection Org High School Articulation", "Fire Protection Organization", "Fire Protection Organizations FIRE 001 Cx", "FIRE-30 Fire Protection Organization - Credit by Exam", "FTC 101 Fire Protection Organization (A)", "FTC 101 Fire Protection Organization (P)"], "under_count": 8, "exists": true},
   {"raw": "Industry for HORT 55", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Greenhouse, Nursery, and Garden Center Management", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH5-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
   {"raw": "Industry for HORT 56", "step": "Proposed", "why": "the classifier is unsure (0.55)", "colleges": [27], "title": "Arboriculture/Urban Forestry", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH51-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.55},

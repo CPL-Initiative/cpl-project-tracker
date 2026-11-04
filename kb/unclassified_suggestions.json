@@ -1,23 +1,83 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-04T06:21:31Z",
- "count": 7,
+ "_generated_at": "2026-11-04T17:02:39Z",
+ "count": 14,
  "suggestions": {
-  "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": [
+  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": [
    {
     "kind": "course",
-    "title": "Advanced Waterworks Mathematics",
-    "code": "WATER 131",
+    "title": "Introduction to Water Systems Technology",
+    "code": "WATER 120",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
    }
   ],
-  "EET 203 Basic Electricity": [
+  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": [
    {
     "kind": "course",
-    "title": "Basic Electricity",
-    "code": "EET 203",
+    "title": "Wastewater Treatment and Disposal I",
+    "code": "WATER 160",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": [
+   {
+    "kind": "course",
+    "title": "Wastewater Treatment and Disposal II",
+    "code": "WATER 161",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "Credit by Exam - Water Distribution Operator I (WATER 140)": [
+   {
+    "kind": "course",
+    "title": "Water Distribution Operator I",
+    "code": "WATER 140",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "Credit by Exam - Water Distribution Operator II (WATER 141)": [
+   {
+    "kind": "course",
+    "title": "Water Distribution Operator II",
+    "code": "WATER 141",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": [
+   {
+    "kind": "course",
+    "title": "Water Treatment Plant Operation Processes I",
+    "code": "WATER 150",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": [
+   {
+    "kind": "course",
+    "title": "Water Treatment Plant Operation Processes II",
+    "code": "WATER 151",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "Credit by Exam - Waterworks Mathematics (WATER 130)": [
+   {
+    "kind": "course",
+    "title": "Waterworks Mathematics",
+    "code": "WATER 130",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
@@ -33,73 +93,67 @@
     "scoped": true
    }
   ],
-  "GEOG 1 Physical Geology": [
+  "Portfolio - Life Drawing I (ART 225A)": [
    {
     "kind": "cid",
-    "id": "GEOG 110",
-    "title": "Introduction to Physical Geography",
-    "code": "GEOG 1"
+    "id": "ARTS 200",
+    "title": "Figure Drawing",
+    "code": "ART 225A"
    }
   ],
-  "GRART 32 Digital Documents (Adobe InDesign)": [
+  "Portfolio - Life Drawing II (ART 225B)": [
    {
     "kind": "course",
-    "title": "Digital Documents (Adobe InDesign)",
-    "code": "GRART 32",
+    "title": "Life Drawing II",
+    "code": "ART 225B",
     "share": 1.0,
-    "colleges": 1,
+    "colleges": 2,
     "scoped": true
    }
   ],
-  "GRART 36 Adobe Photoshop Basics": [
+  "Portfolio - Painting I (ART 227)": [
+   {
+    "kind": "cid",
+    "id": "ARTS 210",
+    "title": "Introduction to Painting",
+    "code": "ART 227"
+   }
+  ],
+  "Portfolio - Watercolor Painting (ART 220)": [
    {
     "kind": "course",
-    "title": "Adobe Photoshop Basics",
-    "code": "GRART 36",
+    "title": "Watercolor Painting",
+    "code": "ART 220",
     "share": 1.0,
-    "colleges": 1,
+    "colleges": 9,
     "scoped": true
    }
   ],
-  "GRART 37 Advanced Photoshop": [
+  "Portfolio Painting II (ART 228)": [
    {
     "kind": "course",
-    "title": "Advanced Photoshop",
-    "code": "GRART 37",
+    "title": "Painting II",
+    "code": "ART 228",
     "share": 1.0,
-    "colleges": 1,
+    "colleges": 3,
     "scoped": true
    }
   ]
  },
  "aligned": {
-  "GEOG 1 Physical Geology": {
+  "Portfolio - Painting I (ART 227)": {
    "kind": "cid",
-   "id": "GEOG 110",
-   "title": "Introduction to Physical Geography",
-   "code": "GEOG 001",
-   "college": "Laney College"
+   "id": "ARTS 210",
+   "title": "Introduction to Painting",
+   "code": "ART 227",
+   "college": "College of the Canyons"
   },
-  "GRART 32 Digital Documents (Adobe InDesign)": {
-   "kind": "course",
-   "id": "GRAF M10BF",
-   "title": "Digital Documents (Adobe InDesign)",
-   "code": "GRART 032",
-   "college": "Laney College"
-  },
-  "GRART 36 Adobe Photoshop Basics": {
-   "kind": "mid",
-   "id": "GRAF M9003",
-   "title": "Adobe Photoshop Basics",
-   "code": "GRART 036",
-   "college": "Laney College"
-  },
-  "GRART 37 Advanced Photoshop": {
-   "kind": "mid",
-   "id": "PHOT M1011",
-   "title": "Advanced Photoshop",
-   "code": "GRART 037",
-   "college": "Laney College"
+  "Portfolio - Life Drawing I (ART 225A)": {
+   "kind": "cid",
+   "id": "ARTS 200",
+   "title": "Figure Drawing",
+   "code": "ART 225A",
+   "college": "College of the Canyons"
   },
   "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
    "kind": "course",
@@ -112,19 +166,86 @@
     "ELEC M10AO"
    ]
   },
-  "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
-   "kind": "course",
-   "id": "ESCI M10BZ",
-   "title": "Advanced Waterworks Mathematics",
-   "code": "WATER 131",
+  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
+   "kind": "cid",
+   "id": "WWTR 140 X",
+   "title": "Water Distribution Operator II",
+   "code": "WATER 141",
    "college": "College of the Canyons"
   },
-  "EET 203 Basic Electricity": {
+  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
+   "kind": "course",
+   "id": "ESCI M10OW",
+   "title": "Introduction to Water Systems Technology",
+   "code": "WATER 120",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
+   "kind": "cid",
+   "id": "WWTR 160 X",
+   "title": "Water Treatment II",
+   "code": "WATER 151",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
+   "kind": "cid",
+   "id": "WWTR 120 X",
+   "title": "Wastewater Treatment II",
+   "code": "WATER 161",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
+   "kind": "cid",
+   "id": "WWTR 110 X",
+   "title": "Wastewater Treatment I",
+   "code": "WATER 160",
+   "college": "College of the Canyons",
+   "ambiguous": [
+    "WWTR 110 X",
+    "WWTR 120 X"
+   ]
+  },
+  "Credit by Exam - Water Distribution Operator I (WATER 140)": {
+   "kind": "cid",
+   "id": "WWTR 130 X",
+   "title": "Water Distribution Operator I",
+   "code": "WATER 140",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
+   "kind": "cid",
+   "id": "WWTR 150 X",
+   "title": "Water Treatment I",
+   "code": "WATER 150",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
+   "kind": "cid",
+   "id": "WWTR 100 X",
+   "title": "Water and Wastewater Mathematics I",
+   "code": "WATER 130",
+   "college": "College of the Canyons"
+  },
+  "Portfolio - Life Drawing II (ART 225B)": {
    "kind": "mid",
-   "id": "ELEC M1016",
-   "title": "Basic Electricity",
-   "code": "E/ET 203",
-   "college": "Laney College"
+   "id": "ARTS M1370",
+   "title": "Life Drawing 2",
+   "code": "ART 225B",
+   "college": "College of the Canyons"
+  },
+  "Portfolio Painting II (ART 228)": {
+   "kind": "mid",
+   "id": "ARTS M1024",
+   "title": "Acrylic Painting 2",
+   "code": "ART 228",
+   "college": "College of the Canyons"
+  },
+  "Portfolio - Watercolor Painting (ART 220)": {
+   "kind": "cid",
+   "id": "ARTS 210",
+   "title": "Introduction to Painting",
+   "code": "ART 220",
+   "college": "College of the Canyons"
   },
   "EET 222 Photovaltaic NABCEP for Solar Associates": {
    "kind": "course",
