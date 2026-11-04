@@ -38,8 +38,9 @@ function entry(code, extra) {
     cid_subject_codes: [], ccn_subject_code: null }, extra || {});
 }
 function open(code, extra) { return entry(code, Object.assign({ source: "data_modal", reviewed_at: null, reviewed_by: null }, extra || {})); }
-const LOCAL_COURSES = { discipline: "Automotive Technology", colleges: ["Alpha College"],
-  by: { AT: [[0, "101", "Brakes", "CCC000000101"], [0, "102", "Engine Repair", "CCC000000102"]] } };
+const LOCAL_COURSES = { discipline: "Automotive Technology", colleges: ["Alpha College", "Beta College", "Gamma College"],
+  by: { AT: [[0, "101", "Brakes", "CCC000000101"], [0, "102", "Engine Repair", "CCC000000102"]],
+    AUTO: [[0, "1", "Auto Basics", "CCC000000001"], [1, "10", "Auto Shop", "CCC000000010"], [2, "5", "Auto Systems", "CCC000000005"]] } };
 const SEED = {
   _counts: {}, _seeded_at: "2026-09-30", _synced_at: "2026-10-19T13:25:33Z",
   disciplines: {
@@ -213,15 +214,18 @@ function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.querySelect
     && /AUTO/.test(txt(p.querySelector(".csl-pn-meta"))) && /Confirmed by a person/.test(txt(p.querySelector(".csl-pn-meta"))));
   const lt = p.querySelector("#csl-pn-locals");
   const lrows = lt ? Array.from(lt.querySelectorAll("tbody tr")).map((r) => Array.from(r.children).map(txt).join(",")) : [];
-  check("(5) ⭐ its local subjects, most used first, with each one's share and the Common SUBJ named",
-    lrows.join("|") === "AUTO,300,64%,The Common SUBJ|AT,120,26%,|AUT,50,11%," && /5 local codes on 470 local courses; 2 more/.test(txt(p)), lrows.join("|"));
+  // Colleges beside Courses, sorted by colleges (Sam, 2026-11-04, on Diesel Mechanics: "show me the count of colleges
+  // that use each subject code so I can see if one code is more common than others"; "keep the course column").
+  check("(5) ⭐ its local subjects, by the colleges that use each code, with courses, share, and the Common SUBJ named",
+    lrows.join("|") === "AUTO,3,300,64%,The Common SUBJ; Most courses; Most colleges|AT,1,120,26%,|AUT,,50,11%,"
+    && /5 local codes on 470 local courses; 2 more/.test(txt(p)) && /Colleges counts the colleges/.test(txt(p)), lrows.join("|"));
   check("(5) the members table is a labelled region with th scope=col", lt.getAttribute("role") === "region" && !!lt.getAttribute("aria-label")
-    && lt.querySelectorAll("th[scope='col']").length === 4);
+    && lt.querySelectorAll("th[scope='col']").length === 5 && txt(lt.querySelectorAll("th")[1]) === "Colleges, high to low");
   const sortBtn = Array.from(lt.querySelectorAll("th button")).find((b) => /^Courses/.test(txt(b)));
   sortBtn.click(); await settle();
   const lrows2 = Array.from(panel(d).querySelectorAll("#csl-pn-locals tbody tr")).map((r) => txt(r.children[0]));
   check("(5) Courses opens high to low, so a press sorts it low to high", lrows2.join(",") === "AUT,AT,AUTO"
-    && /^Courses, low to high/.test(txt(panel(d).querySelectorAll("#csl-pn-locals th button")[1])), lrows2.join(","));
+    && /^Courses, low to high/.test(txt(panel(d).querySelectorAll("#csl-pn-locals th button")[2])), lrows2.join(","));
   // (5b) the courses behind a count (Sam, 2026-11-04, on ECONMT's 55: "Add a hover over on the 55 so I can see the 55
   //      course titles"): the panel reads its MQ discipline's course file as it opens, each count's tooltip names them,
   //      a press lists them under the table, and the way to refile the code opens Local subjects on it.

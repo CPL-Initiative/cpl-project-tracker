@@ -77,8 +77,10 @@ landed save closes the row, and the edit row holds to the table's visible box. (
 courses (tooltip; a press lists them) from `kb/discipline_local_courses/`, built by
 `kb/_build_discipline_local_courses.py` over the seed's walk (rebuild with the seed), with *Refile <code> in Local
 subjects*. (4) *Check the N changes made this visit* runs the SUBJ check on the changed rows; the scan's rules stay in
-`kb/_csr_trail.py`. **Found:** ECONMT (Los Angeles Trade Technical, 55, TOP 0952.20) is electrician coursework the map
-files under Electromechanical Technology, and Electricity's top local codes are adult-education ones (AED, APED, HSED):
+`kb/_csr_trail.py`. (5) The panel's local codes carry Colleges beside Courses, sorted by colleges; a code edit fills an
+empty Note with *changed code to better align with local discipline use*; keeping a code asks its reason (*kept X:*);
+*Check alignment* (engine `edit.extra`) audits the typed code and recommends. **Found:** ECONMT (Los Angeles Trade Technical, 55, TOP 0952.20) is electrician coursework filed under
+Electromechanical, and Electricity's top local codes are adult-education ones (AED, APED, HSED):
 DR-25 calls through Local subjects; a move is a re-mint. Guards `tests/csr_list.test.js` (6b, 6c, 8, 9, 9b),
 `tests/csr_list_panel.test.js` (5b). **The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local

@@ -76,6 +76,10 @@
 //                      filter by its own pass. counts() -> { id: n } hands the tab's own, from a build that already
 //                      counted them (Program Requirements, Courses); an id it leaves out or nulls shows no count, and the
 //                      engine still counts the ids it owns. counts: false shows none.
+//   edit.extra         (r, draft, word) -> [nodes]: the spec's own words beside Save and Cancel; draft._hint, when set,
+//                      reads under the fields (the Subjects List's Check alignment writes it).
+//   edit.onInput       (r, key, draft) after a keystroke in an edit field: the spec may set another field's draft, and
+//                      the engine puts each other box in step (the Subjects List fills its Note when the code changes).
 //   editByRow          true (with edit): Edit sits beside the select box, and a press anywhere on a row (a cell, or its
 //                      open ground) opens its edit row, with its panel on the row when the List has one; the cells open no
 //                      drawers, so the panel carries their details. Sam, 2026-11-04, on the Subjects List: "Move edit button to
@@ -566,14 +570,30 @@
       function box(f) {
         var i = el("input", { id: f.id, type: "text", cls: P + "in", placeholder: f.ph || "" });
         i.value = d[f.key];
-        i.addEventListener("input", function () { d[f.key] = i.value; });
+        i.addEventListener("input", function () {
+          d[f.key] = i.value;
+          // edit.onInput(r, key, draft): the spec may fill another field from this one; the boxes follow the draft.
+          if (S.edit.onInput) {
+            S.edit.onInput(r, f.key, d);
+            S.edit.fields.forEach(function (g) {
+              var b = g !== f && document.getElementById(g.id);
+              if (b && b.value !== (d[g.key] == null ? "" : String(d[g.key]))) b.value = d[g.key] == null ? "" : d[g.key];
+            });
+            var hn = document.getElementById(P + "edit-hint");
+            if (hn) { hn.textContent = d._hint || ""; hn.hidden = !d._hint; }
+          }
+        });
         return el("label", { cls: P + "f", "for": f.id }, [el("span", { text: f.label }), i]);
       }
       var td = el("td", { colspan: String(span()) }, [
         el("div", { cls: P + "edit" }, S.edit.fields.map(box).concat([
+          // edit.onInput may set draft._hint: a line about what was typed, kept beside the fields (polite, read aloud).
+          el("p", { id: P + "edit-hint", cls: CL.note + " " + P + "edit-hint", role: "status", "aria-live": "polite", text: d._hint || "", hidden: d._hint ? null : "" }),
           el("div", { cls: P + "acts" }, [
             word(L.busy ? "Saving…" : "Save", function () { S.edit.save(r); }),
-            word("Cancel", function () { L.edit = null; L.draft = null; render(); })])]))]);
+            word("Cancel", function () { L.edit = null; L.draft = null; render(); })]
+            // edit.extra(r, draft, word): the spec's own words beside Save (the Subjects List's Check alignment).
+            .concat(S.edit.extra ? S.edit.extra(r, d, word) : []))]))]);
       return el("tr", { cls: P + "editrow" }, [td]);
     }
     function renderList(wrap) {
@@ -1282,6 +1302,7 @@
         p + "edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0;position:sticky;left:0;box-sizing:border-box;max-width:var(--" + P + "ew,100%)}",
         p + "f{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:.6875rem;color:var(--text-muted)}",
         p + "acts{display:flex;gap:12px}",
+        p + "edit-hint{flex:1 1 100%;order:3;margin:0;font-size:.75rem;color:var(--text-muted)}",
         f.replace(/-$/, "") + "{border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:4px 0 8px;min-width:0;max-width:100%;box-sizing:border-box}",
         "#" + FP + "host{min-width:0;max-width:100%}",
         p + "table tr" + p + "band th{position:static;text-align:left;font-weight:600;color:var(--text-strong);background:var(--surface-opaque);padding:8px 6px 2px;border-top:1px solid var(--border);border-bottom:0;white-space:normal}",
