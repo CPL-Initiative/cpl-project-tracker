@@ -1032,7 +1032,10 @@ async function seedCociList(page, theme) {
   });
   await page.waitForFunction(() => document.querySelector("#ccl-fold #ccl-pg-attention") || document.querySelector("#ccl-fold [role=alert]"), null, { timeout: 60000 });
   await page.waitForSelector("#ccl-panel #ccl-pn-members", { timeout: 10000 });
-  await page.evaluate(() => { document.querySelectorAll("#ccl-panel details.ccl-pn-fold").forEach((d) => { d.open = true; }); });
+  // The common course's card (SkyJujube, 2026-11-04): the reference's file arrives, then its sign-in fold opens, so the
+  // card's facts and the sign-in box are measured.
+  await page.waitForFunction(() => document.querySelector("#ccl-panel .ccl-cc-name") || /did not arrive|is not among/.test((document.getElementById("ccl-panel") || {}).textContent || ""), null, { timeout: 120000 });
+  await page.evaluate(() => { document.querySelectorAll("#ccl-panel details.ccl-pn-fold, #ccl-panel details.ccl-cc-fold").forEach((d) => { d.open = true; d.dispatchEvent(new Event("toggle")); }); });
   await page.evaluate(() => {
     const band = Array.from(document.querySelectorAll("#coci-lookup-root .ccl-table tbody tr")).find((tr) => tr.classList.contains("ccl-band") && tr.querySelector("a"));
     let row = band && band.nextElementSibling;
