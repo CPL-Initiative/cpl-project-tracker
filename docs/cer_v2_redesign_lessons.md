@@ -1014,3 +1014,19 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
 - **A lane line can trail the code by a merge.** The lane said *SLO hints, to build* a day after #2684 shipped them
   (`kb/_build_exhibit_slo_neighbors.py`, the List's *Outcomes match:*). Grep the code a NEXT or *to build* line names
   before you build it.
+
+## SkyMalin (2026-11-04, S568, the CPL Queue routine): the FAA family in the cert link
+
+- **Pick the next family by measuring the gap.** The FAA held the most reference titles with no link (37), ahead of ASE's
+  local courses (10), ASME (8) and Autodesk (7). The catalog carried 48 FAA rows.
+- **Most FAA titles are courses.** 26 of the 37 are flight labs, ground schools and A&P coursework that a college
+  teaches toward a certificate, so they stay out, as *Microsoft Excel 1* does. The 11 that name a certificate or rating
+  now hold 15 certs (#2758).
+- **One issuer, two spellings.** The catalog lists *Federal Aviation Administration* and *... (FAA)*, and some names
+  under both. Lookup folds the two and keeps the lowest id. Read every issuer spelling before you build a hand table.
+- **Leave a title out instead of giving it a false reason.** The catalog has no plain CFI row. Marking CFI ("all", [])
+  would print *names no one certification*, which is false. CFI, the Part 137 certificate and the Part 107 + POST
+  bundle stay out of the table until the watch lists them.
+- **Next families by gap:** ASME's pipe-welder qualifications (8 titles, 1 catalog row), Autodesk (7, 9), NFPA (7, 1)
+  and NCCER (7, 13).
+

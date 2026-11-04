@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 555 (SkyTadpole, Sam's session, 2026-11-02 22:43Z to 2026-11-03 ~01:30Z)
 tags: [handoff, csm-workspace, commons, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 556

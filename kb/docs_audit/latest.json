@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1380,
-    "bytes": 14000530,
+    "files": 1382,
+    "bytes": 14010803,
     "over_budget": 1,
-    "handoff_max": 567,
+    "handoff_max": 569,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60641,
-    "superseded_files": 9,
-    "superseded_bytes": 37514,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 139,
-        "bytes": 4254647,
+        "bytes": 4255419,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8943,
+        "bytes": 8638,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2615332,
+        "bytes": 2617309,
         "over": 0
       },
       "kb_note": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 482510,
+        "bytes": 482682,
         "over": 0
       },
       "handoff": {
-        "files": 534,
-        "bytes": 3753970,
+        "files": 536,
+        "bytes": 3761627,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 1,
       "kb_note_dialect": 1,
-      "superseded_handoff": 9,
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25575,
-      "bytes": 4189612174,
-      "heavy_bytes": 2978128952,
+      "files": 25608,
+      "bytes": 4192311041,
+      "heavy_bytes": 2980407265,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -74,9 +73,9 @@
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/prototype/landing_page_video",
+        "cpl-project-tracker/kb/course_outcomes",
         "cpl-project-tracker/library",
         "cpl-project-tracker/tmc",
-        "cpl-project-tracker/kb/course_outcomes",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -169,113 +168,14 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 556,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 556 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_556_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 558,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 558 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_558_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 559,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 559 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_559_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 560,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 560 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_560_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 561,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 561 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_561_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 562,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 562 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_562_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 563,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 563 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_563_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 564,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 564 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_564_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 565,
-        "authoritative": 567,
-        "has_frontmatter": true
-      },
-      "message": "handoff 565 is below the authoritative 567 but is not stamped `superseded: true`",
-      "path": "docs/session_565_handoff.md"
-    },
-    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853862328,
+        "bytes": 1853930834,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,862,328 B inside the vault"
+      "message": "directory totals 1,853,930,834 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -340,6 +240,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/course_outcomes",
+      "detail": {
+        "bytes": 16645672,
+        "kind": "dir"
+      },
+      "message": "directory totals 16,645,672 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "library",
       "detail": {
         "bytes": 16000816,
@@ -356,16 +266,6 @@
         "kind": "dir"
       },
       "message": "directory totals 14,868,311 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/course_outcomes",
-      "detail": {
-        "bytes": 14435865,
-        "kind": "dir"
-      },
-      "message": "directory totals 14,435,865 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

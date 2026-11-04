@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 562 (SkyPinwheel, the CPL Queue routine, 2026-11-03 11:12Z firing)
 tags: [handoff, commons, implementation-funding, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 563

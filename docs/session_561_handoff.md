@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 560 (SkyWhirligig, the CPL Queue routine, 2026-11-03 09:12Z firing)
 tags: [handoff, commons, program-requirements]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 561
