@@ -231,19 +231,22 @@ setTimeout(function () {
     const lsEl = d.getElementById("cs-list");
     check("it opens the List on its Open filter", M._state.view === "list" && M._state.ls && M._state.ls.f === "open" && !lsEl.hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
     // The List's rows and their Confirm this pick are tests/csr_list.test.js (12): this suite loads no List engine.
-    // The pre-seeded filter stays an address of its own for the Reference table.
+    // The Reference view's filter addresses open the List on the filter that carries them (2026-11-04).
     w.location.hash = "#canonical-subj4/pre_seeded";
     w.dispatchEvent(new w.Event("hashchange"));
-    check("#canonical-subj4/pre_seeded opens the Reference view with the pre-seeded filter and the select in step", M._state.view === "reference" && M._state.filter === "pre_seeded" && d.getElementById("cs-filter").value === "pre_seeded" && !d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
-    const shown = Array.prototype.map.call(d.querySelectorAll("td.cs-disc"), function (td) { return txt(td).split(" also:")[0].replace(/\s+[^\sA-Za-z].*$/, ""); });
-    check("the table lists exactly the two unconfirmed picks", shown.length === 2 && /Agricultural Business/.test(shown[0] + shown[1]) && /Mathematics/.test(shown[0] + shown[1]));
-    check("the column header says MQ Discipline", /^MQ Discipline/.test(txt(d.querySelector(".cs-table th"))));
-    check("the summary says MQ disciplines", /MQ disciplines ·/.test(txt(d.getElementById("cs-summary"))));
-    check("the Reference view is remembered", w.localStorage.getItem("cplCsr.view.v1") === "reference");
+    check("#canonical-subj4/pre_seeded opens the List on Open (a seeded pick waiting for a person)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden && d.getElementById("cs-table-wrap").hidden);
+    w.location.hash = "#canonical-subj4/needs_review";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/needs_review opens the List on No code yet", M._state.view === "list" && M._state.ls.f === "nocode");
+    w.location.hash = "#canonical-subj4/reviewed";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/reviewed opens the List on Confirmed", M._state.view === "list" && M._state.ls.f === "confirmed");
+    check("the List view is remembered", w.localStorage.getItem("cplCsr.view.v1") === "list");
     // ── the address routes a filter and a view ──
     w.location.hash = "#canonical-subj4/chip";
     w.dispatchEvent(new w.Event("hashchange"));
-    check("#canonical-subj4/chip opens the table filtered to the one with a chip", M._state.view === "reference" && M._state.filter === "chip" && d.querySelectorAll("td.cs-disc").length === 1 && /Automotive Technology/.test(txt(d.querySelector("td.cs-disc"))));
+    check("#canonical-subj4/chip opens the List on An official code differs", M._state.view === "list" && M._state.ls.f === "chip");
+    check("every count's target is the List or the check, never the Reference view", Object.keys(M.TO).every(function (k) { return M.TO[k].view !== "reference"; }));
     w.location.hash = "#canonical-subj4/open";
     w.dispatchEvent(new w.Event("hashchange"));
     check("#canonical-subj4/open opens the List on its Open filter (the Commons card's address)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden);
@@ -252,7 +255,7 @@ setTimeout(function () {
     check("#canonical-subj4/progress opens the Progress view", M._state.view === "progress" && !d.getElementById("cs-progress").hidden);
     w.location.hash = "#canonical-subj4/check";
     w.dispatchEvent(new w.Event("hashchange"));
-    check("#canonical-subj4/check opens the SUBJ check on the Reference view", M._state.view === "reference" && d.getElementById("cs-check-modal") && d.getElementById("cs-check-modal").classList.contains("show"));
+    check("#canonical-subj4/check opens the SUBJ check where the reader is", M._state.view === "progress" && d.getElementById("cs-check-modal") && d.getElementById("cs-check-modal").classList.contains("show"));
     // ── the pick's reviewer ──
     check("the pick's reviewer is the code row's, not the later note's", M._state.overlay["Automotive Technology"].reviewed_by === "map@rccd.edu" && M._state.overlay["Automotive Technology"].reviewed_at === "2026-05-23T17:00:00Z" && M._state.overlay["Automotive Technology"]._notes_by === "csr-doctrine-s111@bot");
     // ── the exported context agrees with the screen ──

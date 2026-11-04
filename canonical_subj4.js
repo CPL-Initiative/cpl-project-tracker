@@ -1318,9 +1318,11 @@
 
   // Re-render only the auth widget. Called from sign-in/out paths and from
   // init(). Safe to call repeatedly — touches no other toolbar element.
+  /* The sign-in sits on the List's head as well as the Reference toolbar (2026-11-04), so it renders into every host. */
   function renderAuth() {
-    var auth = document.getElementById("cs-auth");
-    if (!auth) return;
+    Array.prototype.forEach.call(document.querySelectorAll("#tab-canonical-subj4 .cs-auth"), renderAuthInto);
+  }
+  function renderAuthInto(auth) {
     auth.innerHTML = "";
 
     // Signed in
@@ -1328,7 +1330,7 @@
       auth.appendChild(el("span", { class: "cs-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
       var out = el("a", { class: "cs-auth-link", href: "#" }, ["sign out"]);
-      out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; renderAuth(); render(); };
+      out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; renderAuth(); render(); if (state.view === "list") listRepaint(); };
       auth.appendChild(out);
       return;
     }
@@ -2028,7 +2030,9 @@
   var SECS_KEY = "cplCsr.secs.v1";
   var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }, { id: "list", label: "List" },
     { id: "local", label: "Local subjects" }];
-  var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
+  // The Reference view's filter addresses (and the quickstart's status hints), each opening the List on its filter.
+  var FILTER_ROUTES = { needs_review: "nocode", pre_seeded: "open", reviewed: "confirmed", invalid: "nocode", ccn: "ccn", cid: "cid",
+    chip: "chip", proposed: "proposed" };
   var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];
   var RULE_WORDS = {
     cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
@@ -2079,16 +2083,18 @@
      waiting for a person leads to the List's Open filter (TO.confirm): Confirm this pick lives
      there, and the Reference box saves only a changed code, so an unchanged pick had nothing to
      press (Sam, 2026-11-03, from the Commons). */
+  // Every count opens the List on its filter (2026-11-04: the List carries what the Reference view's filters did,
+  // before the Reference view retires).
   var TO = {
-    all: { view: "reference", filter: "all" },
-    needsReview: { view: "reference", filter: "needs_review" },
-    preSeeded: { view: "reference", filter: "pre_seeded" },
+    all: { view: "list", filter: "" },
+    needsReview: { view: "list", filter: "nocode" },
+    preSeeded: { view: "list", filter: "open" },
     confirm: { view: "list", filter: "open" },
-    reviewed: { view: "reference", filter: "reviewed" },
-    ccn: { view: "reference", filter: "ccn" },
-    cid: { view: "reference", filter: "cid" },
-    chip: { view: "reference", filter: "chip" },
-    proposed: { view: "reference", filter: "proposed" },
+    reviewed: { view: "list", filter: "confirmed" },
+    ccn: { view: "list", filter: "ccn" },
+    cid: { view: "list", filter: "cid" },
+    chip: { view: "list", filter: "chip" },
+    proposed: { view: "list", filter: "proposed" },
     check: { check: true },
     findings: { sec: "progress:findings" },
     procedures: { sec: "progress:procedures" },
@@ -2412,12 +2418,13 @@
     }
     if (to.view === "list") {
       var L = listState();
-      L.f = to.filter || ""; L.q = "";
+      L.f = to.filter || ""; L.q = to.search || ""; L.cf = to.cf || {};
+      if (to.panel) L.panel = to.panel;
       applyView("list");
       bringUp(document.getElementById("cs-list"));
       return;
     }
-    if (to.check) { applyView("reference"); openCheckModal(); return; }
+    if (to.check) { openCheckModal(); return; }
     if (to.sec) {
       secSet(to.sec, true);
       applyView("progress");
@@ -2499,7 +2506,7 @@
         var li = el("li", null, [el("b", null, [RULE_WORDS[f.rule] || f.rule]), ": " + f.item + ". " + (f.evidence || "") + (f.suggestion ? " " + f.suggestion.charAt(0).toUpperCase() + f.suggestion.slice(1) + "." : "")]);
         if (disc) {
           li.appendChild(document.createTextNode(" "));
-          li.appendChild(goControl("Open the row", { view: "reference", filter: "all", search: disc.toLowerCase() }));
+          li.appendChild(goControl("Open its panel", { view: "list", panel: disc }));
         }
         return li;
       })));
@@ -2623,10 +2630,23 @@
   var CONFIRM_WORDS = { person: "Confirmed by a person", nightly: "Confirmed by the nightly procedure",
     cohort: "Confirmed by a session cohort", open: "Open" };
   var SOURCE_WORDS = { ccn: "CCN", "c-id": "C-ID", csr: "Minted here" };
-  function listState() { return state.ls || (state.ls = {}); }
+  /* A new visit's List state; a quickstart hint waiting for the List (state.qsList) sets its filter, find and TOP once. */
+  function listState() {
+    if (state.ls) return state.ls;
+    var L = state.ls = {}, q = state.qsList;
+    if (q) {
+      state.qsList = null;
+      if (q.f) L.f = q.f;
+      if (q.q) L.q = q.q;
+      if (q.top) { L.cf = {}; L.cf[listCols().map(function (c) { return c.h; }).indexOf("TOP")] = q.top; }
+    }
+    return L;
+  }
   /* The List's filters; #canonical-subj4/list/<id> opens the List on one (a Commons count, Sam 2026-11-03). */
-  var LIST_FILTERS = [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["person", "Confirmed by a person"],
-    ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["selected", "Selected"], ["changed", "Changed this visit"]];
+  var LIST_FILTERS = [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["confirmed", "Confirmed"],
+    ["person", "Confirmed by a person"], ["procedure", "Confirmed by a procedure"], ["nocode", "No code yet"], ["collision", "In a collision"],
+    ["ccn", "On the CCN code"], ["cid", "On the C-ID code"], ["chip", "An official code differs"], ["proposed", "Proposed, no official code"],
+    ["selected", "Selected"], ["changed", "Changed this visit"]];
   function listFilterId(id) { return LIST_FILTERS.some(function (f) { return f[0] === id; }) ? id : null; }
   function confirmedHow(e) {
     if (!isConfirmed(e)) return "open";
@@ -2668,6 +2688,10 @@
     var chips = authorityChips(e).map(function (c) { return c.system + " says " + c.code; });
     return [src].concat(chips).filter(Boolean).join("; ");
   }
+  function topWords(r) {
+    var e = r.e;
+    return e.top_category_2digit ? e.top_category_2digit + (e.top_category_title ? " " + e.top_category_title : "") : "";
+  }
   function listCols() {
     return [
       { h: "MQ Discipline", w: 17, v: function (r) { return r.ut; } },
@@ -2679,6 +2703,9 @@
       { h: "Local courses", w: 6, n: true, v: function (r) { return r.e.local_subject_total == null ? null : r.e.local_subject_total; } },
       { h: "M-IDs", w: 5, n: true, v: function (r) { return r.e.total_mids == null ? null : r.e.total_mids; } },
       { h: "Authority", w: 7, v: authorityWords },
+      // The TOP category, a fuzzy filter only (TOP is a last-in-line signal): the Reference view's TOP filter and grouping,
+      // carried as a column a reader filters and sorts (2026-11-04).
+      { h: "TOP", w: 9, v: topWords },
       { h: "Notes", w: 8, edit: "notes", v: function (r) { return r.e._notes || ""; } }
     ];
   }
@@ -2852,8 +2879,12 @@
         listLine(wrap, api);
         wrap.appendChild(api.el("p", { cls: "cs-quiet", text: "Every MQ discipline with courses, A to Z: its Common SUBJ, who confirmed it, "
           + "the Local SUBJs colleges use for its courses and how many, its local courses and M-IDs, and any collision. Press a cell for its details." }));
-        if (!state.sess) wrap.appendChild(api.el("p", { cls: "cs-lede" }, ["You are not signed in. The list reads; a save asks for a sign-in, which sits on the Reference view. ",
-          api.word("Go to the Reference view", function () { applyView("reference"); })]));
+        // The sign-in and the SUBJ check, carried from the Reference view's toolbar (2026-11-04).
+        var auth = api.el("span", { cls: "cs-auth" });
+        renderAuthInto(auth);
+        wrap.appendChild(api.el("p", { cls: "cs-lede csl-auth" }, state.sess ? ["Signed in: ", auth]
+          : ["You are not signed in. The list reads; a save asks for a sign-in: ", auth]));
+        wrap.appendChild(api.el("p", { cls: "csl-acts" }, [api.word("Run the SUBJ check", function () { openCheckModal(); }, { id: "csl-check" })]));
         return true;
       },
       filters: LIST_FILTERS,
@@ -2862,6 +2893,13 @@
         if (L.f === "person") return r.how === "person";
         if (L.f === "procedure") return r.how === "nightly" || r.how === "cohort";
         if (L.f === "collision") return r.coll.length > 0;
+        // The Reference view's lists, carried onto the List (2026-11-04).
+        if (L.f === "confirmed") return r.how !== "open";
+        if (L.f === "nocode") return !hasCode(r.e);
+        if (L.f === "ccn") return r.e.canonical_source === "ccn";
+        if (L.f === "cid") return r.e.canonical_source === "c-id";
+        if (L.f === "chip") return authorityChips(r.e).length > 0;
+        if (L.f === "proposed") return r.e.authority_flag === "proposed";
         return true;
       },
       hay: function (r) {
@@ -2992,7 +3030,36 @@
     var by = ov._notes_by || e._notes_by, at = ov._notes_at || e._notes_at;
     more.push(h.el("p", null, [e._notes ? "Note: " + e._notes + (by || at ? " (written by " + (by || "a reviewer") + (at ? " " + h.stamp(at) : "") + ")" : "") : "No note yet."]));
     out.push(h.fold("more", "More about this MQ discipline: its authority, note and identity codes", more));
+    // The Reference view's CPL and variants windows, carried into the panel (2026-11-04): the credentials colleges
+    // articulate to its courses, and the C-ID and CCN courses that share one of its codes.
+    var cpl = (state.cpl || {})[r.ut];
+    if (cpl && cpl.n_creds) {
+      out.push(h.fold("cpl", "Its CPL opportunities: " + plural(cpl.n_creds, "credential", "credentials") + " at " + plural(cpl.n_colleges, "college", "colleges"), [
+        h.el("p", null, [plural(cpl.n_creds, "credential articulates", "credentials articulate") + " to its courses at "
+          + plural(cpl.n_colleges, "college", "colleges") + ", across " + plural(cpl.n_courses, "course identity", "course identities") + "."]),
+        h.table({ id: "cpl", label: "The credentials colleges articulate to " + r.ut + "'s courses", note: "Press a header to sort.",
+          cols: [["c", "Credential"], ["i", "Issuer"], ["n", "Colleges", true]], sort: { col: 2, dir: -1 },
+          rows: (cpl.creds || []).map(function (c) { return { c: c.c || "", i: c.i || "", n: c.n || 0 }; }) })]));
+    }
+    var official = officialOn(e);
+    out.push(h.fold("official", official.length ? "C-ID and CCN courses on its codes: " + fmtN(official.length)
+      : "C-ID and CCN courses on its codes: none", official.length ? [h.table({ id: "official",
+        label: "The C-ID and CCN courses that share a code with " + r.ut, note: "Over the Common SUBJ and the local codes colleges use. Press a header to sort.",
+        cols: [["sys", "System"], ["id", "Course"], ["t", "Title"], ["code", "On the code"]],
+        rows: official })] : [h.el("p", null, ["No C-ID or CCN course shares any of its codes. Either it has no official course yet, or the official systems use other codes."])]));
     return out;
+  }
+  /* The C-ID and CCN courses whose subject is the Common SUBJ or one of the local codes (the variants window's lists). */
+  function officialOn(e) {
+    var codes = {};
+    Object.keys(variantsFor(e) || {}).forEach(function (k) { codes[k] = 1; });
+    if (e.canonical_subj4) codes[e.canonical_subj4] = 1;
+    var out = [];
+    Object.keys(codes).sort().forEach(function (code) {
+      (state.cidBySubj[code] || []).forEach(function (x) { out.push({ sys: "C-ID", id: x.id, t: x.title || "", code: code }); });
+      (state.ccnBySubj[code] || []).forEach(function (x) { out.push({ sys: "CCN", id: x.id, t: x.title || "", code: code }); });
+    });
+    return out.sort(function (a, b) { return a.id.localeCompare(b.id); });
   }
   function listApi() {
     if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
@@ -3150,7 +3217,7 @@
     if (r === "list" && parts[2] && listFilterId(parts[2])) { goTo({ view: "list", filter: parts[2] }); return true; }
     if (r === "local" && parts[2]) { localFilter = parts[2]; if (LOCAL) LOCAL.setFilter(parts[2]); applyView("local"); return true; }
     if (VIEW_MOUNT[r]) { applyView(r); return true; }
-    if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
+    if (FILTER_ROUTES[r]) { goTo({ view: "list", filter: FILTER_ROUTES[r] }); return true; }
     if (r === "check") { goTo(TO.check); return true; }
     if (r === "open") { goTo(TO.confirm); return true; }
     return false;
@@ -3219,19 +3286,17 @@
   // dropped; valid hints set state + sync the matching toolbar input.
   var QS_TAB = "canonical-subj4";
   var QS_STATUS = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1 };
+  /* A quickstart hint opens the List (2026-11-04): its status as the List's filter, its search as the find, its TOP in the
+     TOP column. It waits in state.qsList for the List's next state, and state.qsHeld spares it the reset on arrival. */
   function applyQsHint(hint) {
     if (!hint || typeof hint !== "object") return false;
-    var any = false;
-    if (typeof hint.status === "string" && QS_STATUS[hint.status]) {
-      state.filter = hint.status; any = true;
-    }
-    if (typeof hint.top_2digit === "string" && /^\d{2}$/.test(hint.top_2digit)) {
-      state.topFilter = hint.top_2digit; any = true;
-    }
-    if (typeof hint.search === "string" && hint.search) {
-      state.search = hint.search.toLowerCase(); any = true;
-    }
-    return any;
+    var q = {};
+    if (typeof hint.status === "string" && QS_STATUS[hint.status]) { state.filter = hint.status; q.f = FILTER_ROUTES[hint.status]; }
+    if (typeof hint.top_2digit === "string" && /^\d{2}$/.test(hint.top_2digit)) { state.topFilter = hint.top_2digit; q.top = hint.top_2digit; }
+    if (typeof hint.search === "string" && hint.search) { state.search = hint.search.toLowerCase(); q.q = hint.search; }
+    if (!Object.keys(q).length) return false;
+    state.qsList = q; state.ls = null; state.qsHeld = true;
+    return true;
   }
 
   function init() {
@@ -3269,7 +3334,7 @@
       // The two views (S425): the Progress dash opens unless the address names a view or a
       // filter, or the reader last chose the Reference view; a quickstart hint opens the table.
       ensureViewMounts();
-      if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "reference" : (readView() || "progress"));
+      if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "list" : (readView() || "progress"));
       window.addEventListener("hashchange", onHashChange);
     });
     // A new visit drops the List's filters, sort and selection (tabs never remember a filter, Sam, 2026-10-21).
@@ -3277,8 +3342,10 @@
     window.addEventListener("cpl-tab-activated", function (e) {
       var t = e && e.detail && e.detail.tab;
       if (t !== QS_TAB) { awayFromTab = true; return; }
-      if (!awayFromTab) return;
-      awayFromTab = false; state.ls = null;
+      if (!awayFromTab) { state.qsHeld = false; return; }
+      awayFromTab = false;
+      // A quickstart hint arrives just before its tab does: the visit it opens keeps the List it set.
+      if (state.qsHeld) state.qsHeld = false; else state.ls = null;
       if (state.view === "list") listRepaint();
     });
     // Subscribe to runtime hints (quickstart fires after the tab is already
@@ -3286,7 +3353,7 @@
     // is visible in the dropdown chrome too.
     window.addEventListener("cpl-qs-hint", function (e) {
       if (!e || !e.detail || e.detail.tab !== QS_TAB) return;
-      if (applyQsHint(e.detail.hint)) { renderToolbar(); render(); if (document.getElementById("cs-views")) applyView("reference"); }
+      if (applyQsHint(e.detail.hint)) { renderToolbar(); render(); if (document.getElementById("cs-views")) applyView("list"); }
     });
   }
 
