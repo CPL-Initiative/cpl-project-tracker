@@ -55,8 +55,10 @@ CR, Subjects, Courses and Programs Lists, drawn by one renderer.
 
 **The panel's shared parts are the engine's** (`h.title`, `h.meta`, `h.heading`, `h.table`, `h.fold`, `h.open` in
 `commons_list.js`), so every List's panel reads alike: one line of what the row is, its members in a sortable table, and
-folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03); Exhibits' moves
-onto them when next touched. **The line is the engine's too** (`api.line`, with `CPL_COMMONS_LIST.readCommons` reading
+folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03);
+every List's panel is since 2026-11-04 (Exhibits' last, each exhibit's number linking to MAP). Exhibits' tiles and CR's
+Progress view read the Commons file through `CPL_COMMONS_LIST.readCommons` where the engine is loaded
+(`tests/commons_one_reader.test.js`). **The line is the engine's too** (`api.line`, with `CPL_COMMONS_LIST.readCommons` reading
 `kb/status/commons.json` once a visit and `lineItems` shortening a row): Exhibits' line and CR's are drawn by it, each
 count opening the List's own filter where it has one. Subjects' is the third (2026-11-04): the line, the Progress
 view's own page folded under it, and an MQ discipline's panel with its local subjects and the codes it shares. A

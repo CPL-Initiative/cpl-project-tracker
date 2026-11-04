@@ -26,7 +26,7 @@ function txt(el) {
 const src = fs.readFileSync("exhibits.js", "utf8");
 const listSrc = fs.readFileSync("commons_list.js", "utf8");
 check("the engine documents the panel hook", /\/\/   panel              \{ label\(r\)/.test(listSrc));
-check("the panel's CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(src.slice(src.indexOf('".exh-pn-h'), src.indexOf('".exh-vh'))));
+check("the panel's CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(src.slice(src.indexOf('".exh-l-pn-h'), src.indexOf('".exh-vh'))));
 
 const H = 36e5;
 function ago(h) { return new Date(Date.now() - h * H).toISOString().replace(/\.\d+Z$/, "Z"); }
@@ -137,26 +137,26 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
   check("(1) focus moves to the panel's bar, which names it", d.activeElement && d.activeElement.id === "exh-l-panel-t"
     && txt(d.getElementById("exh-l-panel-t")) === "Exhibit: Emergency Medical Technician");
   check("(1) the title now says it closes the panel", /close its panel$/.test(titleBtn(d, "Emergency Medical Technician").getAttribute("aria-label")));
-  check("(2) the title and one line of what it is", txt(p.querySelector(".exh-pn-h")) === "Emergency Medical Technician"
-    && txt(p.querySelector(".exh-pn-meta")) === "National Registry of Emergency Medical Technicians · CIP 51 Health Professions and Related Programs · 3 MAP titles · 2 colleges articulate · 1 could adopt · Students: Too few",
-    txt(p.querySelector(".exh-pn-meta")));
-  const memberRows = () => Array.from(panel(t.d).querySelectorAll(".exh-pn-table tbody tr")).map((r) => txt(r.children[1]));
+  check("(2) the title and one line of what it is", txt(p.querySelector(".exh-l-pn-h")) === "Emergency Medical Technician"
+    && txt(p.querySelector(".exh-l-pn-meta")) === "National Registry of Emergency Medical Technicians · CIP 51 Health Professions and Related Programs · 3 MAP titles · 2 colleges articulate · 1 could adopt · Students: Too few",
+    txt(p.querySelector(".exh-l-pn-meta")));
+  const memberRows = () => Array.from(panel(t.d).querySelectorAll(".exh-l-pn-table tbody tr")).map((r) => txt(r.children[1]));
   check("(2) the members: every MAP exhibit folded under it, A to Z by local title", memberRows().join("|")
     === "Emergency Medical Technician (EMT) Certification|RCOE Emergency Medical Technician (HS: RCOE)|State or County EMT Certification", memberRows().join("|"));
-  const link = p.querySelector(".exh-pn-table tbody tr a");
+  const link = p.querySelector(".exh-l-pn-table tbody tr a");
   check("(2) each member links to MAP", !!link && /Exhibit=MAPICI-EMT/.test(decodeURIComponent(link.getAttribute("href"))) && link.getAttribute("target") === "_blank", link && link.getAttribute("href"));
-  Array.from(p.querySelectorAll(".exh-pn-table th button")).find((b) => /^Units/.test(txt(b))).click(); await settle();
+  Array.from(p.querySelectorAll(".exh-l-pn-table th button")).find((b) => /^Units/.test(txt(b))).click(); await settle();
   check("(2) a header sorts the members, focus kept on it", memberRows().join("|")
     === "Emergency Medical Technician (EMT) Certification|RCOE Emergency Medical Technician (HS: RCOE)|State or County EMT Certification"
     && /^Units, low to high/.test(txt(t.d.activeElement)), memberRows().join("|") + " / " + txt(t.d.activeElement));
-  const more = panel(t.d).querySelector("details.exh-pn-more");
+  const more = panel(t.d).querySelector("details.exh-l-pn-more");
   check("(3) the rest is folded below", !!more && !more.open && /^More about this exhibit/.test(txt(more.querySelector("summary"))));
   check("(3) what each college awards, most units first, with the median", /The median articulating college awards 6 units\./.test(txt(more))
     && /Bakersfield College , 9 units: EMTC B50, 9 hours in Emergency Medical Technician/.test(txt(more))
     && txt(more).indexOf("Bakersfield") < txt(more).indexOf("Los Angeles Mission"), txt(more));
   check("(3) and who could adopt it", /College of San Mateo already teaches FIRE 717 \(3 units\)/.test(txt(more)), txt(more));
   check("(6) the panel, its title's drawer included, no longer sends a reader to the Credentials view", !/Credentials/.test(txt(panel(t.d))), txt(panel(t.d)));
-  const ed = () => panel(t.d).querySelector("details.exh-pn-edit");
+  const ed = () => panel(t.d).querySelector("details.exh-l-pn-edit");
   check("(6) the issuer and training sites fold above the rest, the summary naming both", !!ed() && !ed().open
     && txt(ed().querySelector("summary")) === "Who issues it, and where it is trained: National Registry of Emergency Medical Technicians; 1 training site"
     && ed().compareDocumentPosition(more) === 4, ed() && txt(ed().querySelector("summary")));
@@ -171,8 +171,8 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
   check("(6) the issuer box offers the names already in the reference", !!opts && !opts.hidden && /CompTIA/.test(txt(opts)), opts && txt(opts));
   Array.from(opts.querySelectorAll("button")).find((b) => txt(b) === "CompTIA").click();
   $("exh-pn-issuer").value = "NREMT"; $("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
-  Array.from(panel(t.d).querySelectorAll(".exh-pn-table th button")).find((b) => /^Exhibit/.test(txt(b))).click(); await settle();
-  check("(6) a redraw keeps both folds where the reader left them, and the draft", ed().open && !panel(t.d).querySelector("details.exh-pn-more").open
+  Array.from(panel(t.d).querySelectorAll(".exh-l-pn-table th button")).find((b) => /^Exhibit/.test(txt(b))).click(); await settle();
+  check("(6) a redraw keeps both folds where the reader left them, and the draft", ed().open && !panel(t.d).querySelector("details.exh-l-pn-more").open
     && $("exh-pn-issuer").value === "NREMT");
   Array.from(ed().querySelectorAll("button")).find((b) => txt(b) === "Add a training site").click(); await settle();
   check("(6) Add a training site adds a row and focuses its box", !!$("exh-pn-site-1") && t.d.activeElement === $("exh-pn-site-1") && ed().open);
@@ -183,7 +183,7 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
     && !t.calls.some((c) => /kb_curation$/.test(c.url) && c.method === "POST") && panel(t.d) && ed().open);
   // (4) another title swaps it; Close and Escape return focus to the row
   titleBtn(t.d, "CompTIA Security+").click(); await settle();
-  check("(4) another title swaps the panel", txt(panel(t.d).querySelector(".exh-pn-h")) === "CompTIA Security+"
+  check("(4) another title swaps the panel", txt(panel(t.d).querySelector(".exh-l-pn-h")) === "CompTIA Security+"
     && /MAP records no exhibit under this name/.test(txt(panel(t.d))));
   Array.from(panel(t.d).querySelectorAll("button")).find((b) => txt(b) === "Close").click(); await settle();
   check("(4) Close shuts it and returns focus to the row's title", !panel(t.d) && t.d.activeElement && txt(t.d.activeElement) === "CompTIA Security+");
@@ -200,7 +200,7 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
   // (6) signed in: the save
   t = await boot({ hash: "#exhibits/list", signedIn: true });
   titleBtn(t.d, "Emergency Medical Technician").click(); await settle();
-  const ed2 = () => panel(t.d).querySelector("details.exh-pn-edit");
+  const ed2 = () => panel(t.d).querySelector("details.exh-l-pn-edit");
   ed2().open = true; await settle();
   const $2 = (id) => t.d.getElementById(id);
   $2("exh-pn-save").click(); await settle();

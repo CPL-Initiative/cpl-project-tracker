@@ -26,23 +26,21 @@ bytes, and the commits since `session_565` (its checkpoint trigger).
   `L.limit = null` and `slice(0, null)` drew an empty table; `listState` restores the first page, callers pass
   `api.LIMIT`. `h.table` takes an opening `sort`; the line's pair words stop at a colon too.
   `tests/csr_list_panel.test.js`, `tests/program_requirements_list_panel.test.js`.
-- **#2746** (CI): **Courses, the fifth.** Its counts open SkyView in a new tab (Courses keeps SkyView first); the line
+- **#2746** (merged): **Courses, the fifth.** Its counts open SkyView in a new tab (Courses keeps SkyView first); the line
   shares the tab's one read of the Commons file with its Progress page; a course's panel lists the local courses its
   M-ID holds, the Title drawer (description, outcomes) moved in. The Title drawer's tests in `coci_list` and
   `coci_lookup` now drive it inside the panel. `tests/coci_list_panel.test.js`. This checkpoint rides in it.
 
 ## Open work, in order
 
-1. **Merge #2746** once `test` passes on its current head.
-2. **Exhibits' panel onto the engine's parts** (`h.table` for its members, `h.fold` for its folds), and Exhibits' and
-   `cr_progress.js`'s reads of `kb/status/commons.json` onto `CPL_COMMONS_LIST.readCommons` where the engine is loaded
-   (the norm: never a second reader; Courses shares its Progress read instead, one reader in its tab).
-3. **The original views retire as each List does what they do**, one PR each, tests ported first: CR's worklist
+1. **Merge the Exhibits PR** (its panel on the engine's parts; Exhibits' and CR Progress's Commons reads through
+   `CPL_COMMONS_LIST.readCommons`) once `test` passes on its head. #2746 merged.
+2. **The original views retire as each List does what they do**, one PR each, tests ported first: CR's worklist
    (Add a wording inside a group, a split, the per-group detail still live only there), then Subjects' Reference
    view (its toolbar filters, the SUBJ check modal), then Programs' and Courses' older views. Check what only the
    view still has and carry it into the panel first.
-4. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
-5. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
+3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
+4. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
    to the routine; the Catalog's *Courses that may align*, once a source names courses.
 
 ## Lessons to honor

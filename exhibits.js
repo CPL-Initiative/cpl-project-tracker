@@ -1494,11 +1494,21 @@
       return j;
     });
   }
+  /* The Commons file through the List engine's one reader where the engine is loaded (the List norms: never a second
+     reader), fresh for this read; the tab's own read before the engine arrives. Either way it must name written_at. */
+  function readCommonsJson() {
+    var CLM = window.CPL_COMMONS_LIST;
+    if (!CLM || typeof CLM.readCommons !== "function") return readStatusJson(COMMONS_URL);
+    return CLM.readCommons(true).then(function (j) {
+      if (!j || !j.written_at) throw new Error(COMMONS_URL + " names no written_at");
+      return j;
+    });
+  }
   function loadCommons() {
     var cm = state.cm = state.cm || commonsFresh();
     if (cm.done) return Promise.resolve();
     if (cm.loading) return cm.loading;
-    cm.loading = readStatusJson(COMMONS_URL).then(function (d) {
+    cm.loading = readCommonsJson().then(function (d) {
       if (!Array.isArray(d.rows)) throw new Error(COMMONS_URL + " is not the Commons' status file");
       var row = d.rows.filter(function (r) { return r && r.key === COMMONS_KEY; })[0];
       if (!row) throw new Error(COMMONS_URL + " has no " + COMMONS_KEY + " row");
@@ -2555,45 +2565,31 @@
      exhibit and MAP's Request Quick Adopt line, the panel does what the Credentials view did, and that view retired
      (the List norms, The List is the workspace). Each fold
      keeps its place for the visit, so a sort, an added site or a save does not close it. */
-  var PN_COLS = [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]];
-  function pnSort() { return state.pnSort || (state.pnSort = { col: 1, dir: 1 }); }
   function listPanelBody(r, h) {
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
     var cip = listCip(r), n = r.raw_count || 0;
-    var meta = [cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
+    // The engine's shared parts (commons_list.js h.title, h.meta, h.heading, h.table, h.fold), so every List's panel reads alike.
+    var out = [h.title(listTitle(r)), h.meta([cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
-      could.length ? could.length + " could adopt" : "", "Students: " + st.word].filter(Boolean).join(" · ");
-    var out = [el2("h2", { cls: "exh-pn-h", text: listTitle(r) }), el2("p", { cls: "exh-muted exh-small exh-pn-meta", text: meta })];
+      could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
     var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
-    out.push(el2("h3", { cls: "exh-pn-q", text: "Members" }));
+    out.push(h.heading("Members"));
     if (!members.length) {
       out.push(el2("p", { cls: "exh-muted exh-small", text: state.cs.adopt ? "MAP records no exhibit under this name."
         : state.cs.adoptErr ? "The exhibits under this name could not be read." : "Reading the exhibits…" }));
     } else {
-      var S2 = pnSort(), key = PN_COLS[S2.col][0], num = !!PN_COLS[S2.col][2];
-      members.sort(function (a, b) {
-        var x = a[key], y = b[key], c = num ? (+x || 0) - (+y || 0) : String(x || "").localeCompare(String(y || ""));
-        return c * S2.dir || String(a.id).localeCompare(String(b.id));
-      });
-      out.push(el2("p", { cls: "exh-muted exh-small", text: "The MAP exhibits folded under this name, as colleges entered them. Press a header to sort." }));
-      var head = el2("tr", null, PN_COLS.map(function (c, i) {
-        var on = S2.col === i, up = on && S2.dir > 0;
-        var b = h.word(c[1] + (on ? (c[2] ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")) : ""), function () {
-          var P2 = pnSort(); P2.dir = P2.col === i ? -P2.dir : 1; P2.col = i; redrawList();
-          var nb = document.querySelectorAll(".exh-pn-table th button")[i]; if (nb) nb.focus();
-        });
-        return el2("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
-      }).concat([el2("th", { scope: "col" }, [el2("span", { cls: "exh-vh", text: "In MAP" })])]));
-      var body = el2("tbody", null, members.map(function (m) {
-        return el2("tr", null, [el2("td", { cls: "exh-pn-id", text: m.id }), el2("td", { text: m.title || "" }),
-          el2("td", { cls: "exh-pn-n", text: m.units != null ? h.fmt(m.units) : "" }),
-          el2("td", null, [el2("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", text: "in MAP", "aria-label": m.id + " in MAP" })])]);
-      }));
-      out.push(el2("div", { cls: "exh-pn-wrap", role: "region", tabindex: "0", "aria-label": "Members of " + listTitle(r) },
-        [el2("table", { cls: "exh-pn-table" }, [el2("thead", null, [head]), body])]));
+      // Each exhibit's number links to it in MAP; the table opens A to Z by local title.
+      out.push(h.table({ id: "members", label: "Members of " + listTitle(r), sort: { col: 1, dir: 1 },
+        note: "The MAP exhibits folded under this name, as colleges entered them. Press a header to sort; an exhibit's number opens it in MAP.",
+        cols: [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]],
+        rows: members,
+        cell: function (m, k) {
+          if (k !== "id") return m[k];
+          return el2("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", cls: "exh-pn-id", text: m.id, "aria-label": m.id + " in MAP (opens a new tab)" });
+        } }));
     }
     // The issuer and training sites, edited in place.
-    out.push(pnFold(r, "edit", "Who issues it, and where it is trained: " + (cur.issuer || "no issuer named") + "; "
+    out.push(h.fold("edit", "Who issues it, and where it is trained: " + (cur.issuer || "no issuer named") + "; "
       + (cur.sites.length ? cur.sites.length + " training site" + (cur.sites.length === 1 ? "" : "s") : "no training site named"),
       credEditor(r, credUi(r.ut))));
     // The rest, folded: its credit, what each college awards (and the exhibit it built), and who could adopt it.
@@ -2636,16 +2632,8 @@
     // MAP's own line for the credential: its exhibits and the way to Request Quick Adopt (map_links.js).
     var ML = window.CPL_MAP_LINKS;
     if (ML && typeof ML.node === "function") more.push(el2("p", { cls: "exh-small" }, [ML.node(r.ut)]));
-    out.push(pnFold(r, "more", "More about this exhibit: its credit and who could adopt it", more));
+    out.push(h.fold("more", "More about this exhibit: its credit and who could adopt it", more));
     return out;
-  }
-  /* A fold in the panel, open or shut as the reader left it this visit (L.pnFold), whichever row the panel shows. */
-  function pnFold(r, id, summary, kids) {
-    var L = listState(), F = L.pnFold || (L.pnFold = {});
-    var dt = el("details", { cls: "exh-pn-" + id + " exh-pn-fold" }, [el("summary", { text: summary }), el("div", { cls: "exh-pn-fbody" }, kids)]);
-    if (F[id]) dt.open = true;
-    dt.addEventListener("toggle", function () { F[id] = dt.open; });
-    return dt;
   }
   function listRows() { return listApi() ? LIST_ENGINE.rows() : []; }
   function listCsv(rows) { return listApi() ? LIST_ENGINE.csv(rows) : ""; }
@@ -3134,20 +3122,13 @@
     ".exh-tn .exh-tcount { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }",
     /* A one-digit count is a target too: WCAG 2.2's 24px floor (the a11y sweep, 2026-11-03). */
     "button.exh-w.exh-tcount, a.exh-tcount { display:inline-block; min-width:24px; min-height:24px; text-align:start; }",
-    ".exh-pn-h { margin:0 0 4px; font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.35rem, 2.2vw, 1.8rem); line-height:1.15; color:var(--text-strong); }",
-    ".exh-pn-meta { margin:0 0 12px; }",
+    ".exh-l-pn-h { margin:0 0 4px; font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.35rem, 2.2vw, 1.8rem); line-height:1.15; color:var(--text-strong); }",
+    ".exh-l-pn-meta { margin:0 0 12px; }",
     ".exh-pn-q { margin:14px 0 4px; font-size:1.02rem; color:var(--text-strong); }",
-    ".exh-pn-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; }",
-    ".exh-pn-table { width:100%; border-collapse:collapse; font-size:.86rem; }",
-    ".exh-pn-table th { text-align:left; padding:6px 8px; background:var(--surface-subtle); border-bottom:1px solid var(--border-strong); }",
-    ".exh-pn-table td { padding:6px 8px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text-body); }",
-    ".exh-pn-id { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.8rem; color:var(--text-muted); }",
-    ".exh-pn-n { text-align:right; font-variant-numeric:tabular-nums; }",
+    // An exhibit's number in the panel is its link to MAP: a word in the List's control style, 24px tall.
+    "a.exh-pn-id { display:inline-block; min-height:24px; line-height:24px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.8rem; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; }",
     ".exh-pn-ul { margin:4px 0 0; padding-left:1.1em; font-size:.88rem; display:flex; flex-direction:column; gap:5px; }",
-    ".exh-pn-fold { margin-top:16px; }",
-    ".exh-pn-fold > summary { cursor:pointer; min-height:24px; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }",
-    ".exh-pn-fold > summary:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
-    ".exh-pn-edit > .exh-pn-fbody { display:grid; gap:8px; margin-top:10px; min-width:0; }",
+    ".exh-l-pn-edit > .exh-l-pn-fbody { display:grid; gap:8px; margin-top:10px; min-width:0; }",
     ".exh-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
     "a.exh-tcount { text-decoration:underline; text-underline-offset:3px; }",
     ".exh-tile .exh-zero { color:var(--hunter); }",

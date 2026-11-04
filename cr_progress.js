@@ -57,10 +57,20 @@
   }
   function written_at(j) { return !!(j && j.written_at); }
   function cr_row(j) { return !!(j && Array.isArray(j.rows) && j.rows.some(function (r) { return r && r.key === "cr" && r.facts; })); }
+  /* The Commons file through the List engine's one reader where the engine is loaded (the List norms: never a second
+     reader), fresh for this read; this view's own read otherwise. */
+  function readCommonsSoft() {
+    var CLM = window.CPL_COMMONS_LIST;
+    if (!CLM || typeof CLM.readCommons !== "function") return readSoft(COMMONS_URL, cr_row);
+    return CLM.readCommons(true).then(function (j) {
+      if (!cr_row(j)) throw new Error(COMMONS_URL + " has no cr_row");
+      return { data: j, error: null };
+    }).catch(function (e) { return { data: null, error: String(e && e.message || e) }; });
+  }
   function load() {
     return Promise.all([
       cache.status ? Promise.resolve(cache.status) : readSoft(STATUS_URL, written_at),
-      cache.commons ? Promise.resolve(cache.commons) : readSoft(COMMONS_URL, cr_row)
+      cache.commons ? Promise.resolve(cache.commons) : readCommonsSoft()
     ]).then(function (parts) {
       if (parts[0].data) cache.status = parts[0];
       if (parts[1].data) cache.commons = parts[1];
