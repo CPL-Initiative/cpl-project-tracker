@@ -6,7 +6,7 @@
 // procedures needed by agents"; "Add 'MQ' to the title for Discipline". Guards:
 //   - static: both HTMLs identical and saying MQ discipline; the column, filter and summary
 //     words; CI and the daily workflow wired; the module's second word per part;
-//   - the two views: Progress opens by default, the switch is two underlined words, the table
+//   - the views: Progress opens by default, the switch is underlined words (the Reference table retired into the List), the table
 //     and its toolbar hide under Progress; the last view is remembered;
 //   - the context from the fixture: the headline pair (settled = confirmed less the
 //     collisions), the five milestones with You are here on the confirmations, eight cards
@@ -38,9 +38,9 @@ const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 check("the tab's subtitle says per MQ discipline", /one shared 4-letter subject code per MQ discipline/.test(cpl));
 check("the scope note says MQ discipline names", /MQ discipline names<\/strong> on this page/.test(cpl));
-check("the column is MQ Discipline", /label: "MQ Discipline"/.test(SRC));
-check("the filter's first word is All MQ disciplines", /"All MQ disciplines"/.test(SRC));
-check("the summary counts MQ disciplines", /<\/strong> MQ disciplines · /.test(SRC));
+// Sam's word, "MQ discipline" (2026-10-19), on the List the Reference table retired into (2026-11-04).
+check("the List's column is MQ Discipline", /h: "MQ Discipline"/.test(SRC));
+check("the List counts MQ disciplines", /many: "MQ disciplines"/.test(SRC));
 check("the identifiers kept their names (the hash, the namespace, the field)", /canonical-subj4/.test(SRC) && /_CANON_SUBJ4::/.test(SRC) && /"canonical_subj4"/.test(SRC));
 check("the tab reads the scan, the run log and the procedures", /kb\/csr_out\/latest\.json/.test(SRC) && /kb\/status\/subjects\.json/.test(SRC) && /kb\/csr_procedures\.json/.test(SRC));
 check("the module draws a second word per part", /o\.p\.more \? o\.p\.more\(x\)/.test(MODULE) && /\.prh-pg-more \{ position:relative; z-index:1; \}/.test(MODULE));
@@ -53,7 +53,6 @@ const cssBlock = SRC.slice(SRC.indexOf("function ensureProgressCss()"), SRC.inde
 check("the injected CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(cssBlock.replace(/#tab-canonical-subj4/g, "").replace(/#cs-/g, "")));
 check("the injected CSS uses tokens", /var\(--cobalt\)/.test(cssBlock) && /var\(--border\)/.test(cssBlock) && /var\(--text-muted\)/.test(cssBlock));
 check("the word controls are 24px tall, underlined, with no fill", /\.cs-word \{[^}]*background:none;[^}]*min-height:24px;[^}]*text-decoration:underline/.test(cssBlock));
-check("the hidden attribute wins over the toolbar's display rule", /\.cs-toolbar\[hidden\], #tab-canonical-subj4 \.cs-summary\[hidden\], #tab-canonical-subj4 \.cs-table-wrap\[hidden\] \{ display:none; \}/.test(cssBlock));
 check("single column on a phone", /@media \(max-width: 760px\) \{ #tab-canonical-subj4 \.cs-progress \.prh-pg-steps \{ grid-template-columns:minmax\(0, 1fr\)/.test(cssBlock));
 const progressBlock = SRC.slice(SRC.indexOf("var SCAN_URL"), SRC.indexOf("// Quickstart-C hint consumer"));
 check("no glyph in the Progress view's words", !/[\u2190-\u21ff\u2600-\u27bf\u2b00-\u2bff\u{1f300}-\u{1faff}]/u.test(progressBlock));
@@ -172,10 +171,10 @@ setTimeout(function () {
     const d = t.d, w = t.w, M = w.CPL_CANONICAL_SUBJ4;
     // ── the two views ──
     const sw = d.getElementById("cs-views");
-    check("the view switch is a tablist of four words", sw && sw.getAttribute("role") === "tablist" && sw.querySelectorAll("button[role=tab]").length === 4);
-    check("the words are Progress, Reference, List (the Catalog Commons' List, 2026-11-01) and Local subjects (2026-11-03)", Array.prototype.map.call(sw.querySelectorAll("button"), txt).join(",") === "Progress,Reference,List,Local subjects");
-    check("Progress opens by default", M._state.view === "progress" && !d.getElementById("cs-progress").hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden);
-    check("the selected word is marked and focusable", d.getElementById("cs-tab-progress").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-reference").getAttribute("tabindex") === "-1");
+    check("the view switch is a tablist of three words", sw && sw.getAttribute("role") === "tablist" && sw.querySelectorAll("button[role=tab]").length === 3);
+    check("the words are Progress, List (the Catalog Commons' List, 2026-11-01) and Local subjects (2026-11-03); the Reference view retired into the List (2026-11-04)", Array.prototype.map.call(sw.querySelectorAll("button"), txt).join(",") === "Progress,List,Local subjects");
+    check("Progress opens by default", M._state.view === "progress" && !d.getElementById("cs-progress").hidden && d.getElementById("cs-list").hidden);
+    check("the selected word is marked and focusable", d.getElementById("cs-tab-progress").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-list").getAttribute("tabindex") === "-1");
     const pg = d.getElementById("cs-progress");
     check("the module drew the view", pg.querySelector(".prh-pg") && txt(pg.querySelector(".prh-pg-head h3")) === "Common Subjects Reference");
     // ── the headline pair ──
@@ -229,12 +228,12 @@ setTimeout(function () {
     // A pick waiting for a person opens where it can be confirmed (Sam, 2026-11-03): the List's Open filter, whose
     // rows carry Confirm this pick. The Reference box saves only a changed code, so it had nothing to press.
     const lsEl = d.getElementById("cs-list");
-    check("it opens the List on its Open filter", M._state.view === "list" && M._state.ls && M._state.ls.f === "open" && !lsEl.hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
+    check("it opens the List on its Open filter", M._state.view === "list" && M._state.ls && M._state.ls.f === "open" && !lsEl.hidden && d.getElementById("cs-progress").hidden);
     // The List's rows and their Confirm this pick are tests/csr_list.test.js (12): this suite loads no List engine.
     // The Reference view's filter addresses open the List on the filter that carries them (2026-11-04).
     w.location.hash = "#canonical-subj4/pre_seeded";
     w.dispatchEvent(new w.Event("hashchange"));
-    check("#canonical-subj4/pre_seeded opens the List on Open (a seeded pick waiting for a person)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden && d.getElementById("cs-table-wrap").hidden);
+    check("#canonical-subj4/pre_seeded opens the List on Open (a seeded pick waiting for a person)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden && d.getElementById("cs-progress").hidden);
     w.location.hash = "#canonical-subj4/needs_review";
     w.dispatchEvent(new w.Event("hashchange"));
     check("#canonical-subj4/needs_review opens the List on No code yet", M._state.view === "list" && M._state.ls.f === "nocode");
@@ -264,12 +263,12 @@ setTimeout(function () {
     check("a C-ID descriptor ending in X is indexed under its subject", !!M._state.cidBySubj.WELD && M._state.cidBySubj.WELD[0].id === "WELD 100 X" && x.cidSubjects === 5);
     check("the context: 4 umbrella codes beside their own, 1 fan-in pair, 1 alias family, 2 codes shared by design (FTVE, AGAB)", x.umbrellaCodes === 4 && x.fanInPairs === 1 && x.aliasFamilies === 1 && x.aliasShared === 2 && x.collisionCodes.join() === "AUTB");
 
-    // ── without the module: the view says so and the table still draws (t2) ──
+    // ── without the module: the view says so and the List still opens (t2) ──
     const d2 = t2.d, M2 = t2.w.CPL_CANONICAL_SUBJ4;
-    check("the reference route opens the table", M2._state.view === "reference" && !d2.getElementById("cs-table-wrap").hidden && d2.querySelectorAll("td.cs-disc").length === 11);
+    check("the retired reference route opens the List", M2._state.view === "list" && !d2.getElementById("cs-list").hidden);
     M2.applyView("progress");
     check("without the module the Progress view says so, in a line", /commons_progress\.js\) could not be loaded/.test(txt(d2.getElementById("cs-progress"))) && d2.getElementById("cs-progress").querySelector("[role=alert]"));
-    check("the table drew all the same", d2.querySelectorAll("td.cs-disc").length === 11);
+    check("the List opens all the same", (M2.applyView("list"), M2._state.view === "list" && !d2.getElementById("cs-list").hidden));
 
     // ── a failed read says so, never a zero (t3) ──
     const d3 = t3.d, pg3 = d3.getElementById("cs-progress");

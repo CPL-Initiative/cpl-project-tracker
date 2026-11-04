@@ -9865,26 +9865,15 @@ The work is intended to accelerate CPL exploration while preserving local curric
             #tab-canonical-subj4 .cs-scope-note strong { color:var(--navy-primary); }
         </style>
         <h2>Common Subjects Reference <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter subject code per MQ discipline</span></h2>
-        <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter Common SUBJ per MQ discipline</strong> so the dashboard uses a single, consistent label everywhere. Progress, the dash above the table, says where the reference stands and what each step's procedure is. Click the <strong>Common SUBJ</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
+        <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter Common SUBJ per MQ discipline</strong> so the dashboard uses a single, consistent label everywhere. Progress says where the reference stands and what each step's procedure is. On the List, press a <strong>Common SUBJ</strong> cell to set or change a code, or an MQ discipline's name to open its panel, where you confirm a pick and add a note.</p>
         <p class="cs-scope-note">
             <strong>Scope.</strong> Common Subject Codes are used <strong>for CPL crosswalk purposes only</strong> — they let colleges find and adopt each other's articulation decisions without getting tangled in subject-code variations. They are not a claim of equivalence with CCN, CID, or any official credentialing system. <strong>MQ discipline names</strong> on this page come directly from the <a href="https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Educational-Programs-and-Professional-Development/Minimum-Qualifications/" target="_blank" rel="noopener">Chancellor's Office Minimum Qualifications handbook (19th edition)</a> — the authoritative source for who's qualified to teach what in California Community Colleges.
         </p>
         <div style="margin-bottom:14px;">
             <button id="cs-guidelines-btn" class="cs-guidelines-btn" type="button">Curation guidelines</button>
         </div>
-        <div id="cs-toolbar" class="cs-toolbar"></div>
-        <div id="cs-summary" class="cs-summary"></div>
-        <div id="cs-table-wrap" class="cs-table-wrap"></div>
-        <div id="cs-toast" class="cs-toast"></div>
-
-        <!-- Variants popup — populated by canonical_subj4.js when the curator clicks the "show all" chip -->
-        <div id="cs-variants-modal" class="cs-modal-bg" role="dialog" aria-modal="true" aria-labelledby="cs-variants-title">
-            <div class="cs-modal">
-                <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
-                <h3 id="cs-variants-title">Variants</h3>
-                <div id="cs-variants-body"></div>
-            </div>
-        </div>
+        <!-- The views (Progress, List, Local subjects) mount before this; the Reference table retired into the List, 2026-11-04 -->
+        <div id="cs-mount"></div>
 
         <!-- Guidelines modal -->
         <div id="cs-guidelines-modal" class="cs-modal-bg" role="dialog" aria-modal="true" aria-labelledby="cs-guidelines-title">

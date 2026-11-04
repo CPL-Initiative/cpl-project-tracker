@@ -11,7 +11,7 @@
 //   (3) the filters (Open, Confirmed by a person, Confirmed by a procedure, In a collision) and the finder (a local
 //       code, an alternate name) narrow the rows;
 //   (4) Edit every row turns Common SUBJ into boxes; leaving one writes THAT discipline's _CANON_SUBJ4 kb_curation row
-//       through the table's own path, the row then reads Confirmed by a person, the Reference table shows the code,
+//       through the table's own path, the row then reads Confirmed by a person, the overlay carries the code,
 //       and the collision clears from both rows it joined;
 //   (5) a code another MQ discipline owns asks the table's confirm; declined, nothing writes and the value is back;
 //       a value that is not four letters never writes;
@@ -143,11 +143,10 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   await settle();
   const d = t.d, M = t.M();
   const sw = d.getElementById("cs-views");
-  check("(1) the view switch carries Progress, Reference, List and Local subjects, List selected",
-    Array.from(sw.querySelectorAll("button[role=tab]")).map(txt).join(",") === "Progress,Reference,List,Local subjects"
+  check("(1) the view switch carries Progress, List and Local subjects, List selected (the Reference view retired, 2026-11-04)",
+    Array.from(sw.querySelectorAll("button[role=tab]")).map(txt).join(",") === "Progress,List,Local subjects"
     && d.getElementById("cs-tab-list").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-list").getAttribute("aria-controls") === "cs-list");
-  check("(1) the List shows; the table, its toolbar and Progress hide", M._state.view === "list" && !d.getElementById("cs-list").hidden
-    && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden && d.getElementById("cs-progress").hidden);
+  check("(1) the List shows; Progress hides", M._state.view === "list" && !d.getElementById("cs-list").hidden && d.getElementById("cs-progress").hidden);
   check("(1) the engine loads through CPL_TABS.loadScript", t.loads.indexOf("commons_list.js") >= 0 && !!t.w.CPL_COMMONS_LIST);
   const names = rows(d).map(titleOf);
   check("(1) ⭐ every MQ discipline is one row, A to Z", names.length === 11 && names[0] === "Agricultural Business and Related Services"
@@ -219,8 +218,7 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(4) ⭐ the collision clears from both rows it joined", blank(cell(d, "Agricultural Business and Related Services", "Collision"))
     && blank(cell(d, "Auto Body Technology", "Collision")));
   check("(4) the note line says what saved", /Saved Agricultural Business and Related Services: AGBS\./.test(txt(d.getElementById("csl-cellnote"))));
-  const refInput = Array.from(d.querySelectorAll("#cs-table-wrap tr")).find((r) => /^Agricultural Business/.test(txt(r.querySelector("td.cs-disc"))));
-  check("(4) the Reference table shows the code (the same overlay)", refInput && refInput.querySelector("input.cs-canon").value === "AGBS");
+  check("(4) the overlay carries the code, for Progress and the panel alike", t.M()._state.overlay["Agricultural Business and Related Services"].canonical_subj4 === "AGBS");
   check("(4) focus comes back to the redrawn box, so Edit every row keeps its place", d.activeElement !== agBox && d.activeElement.classList.contains("csl-cellin")
     && d.activeElement.getAttribute("aria-label") === "Common SUBJ of Agricultural Business and Related Services");
 

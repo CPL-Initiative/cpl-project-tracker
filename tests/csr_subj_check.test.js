@@ -9,7 +9,7 @@
 //   - umbrella disciplines (Foreign Languages splits, Kinesiology KINE+ATHL)
 //     are EXEMPT from drift findings (mirrors kb/_row_audit.py)
 //   - multi-code disciplines with no canonical land in the missing queue
-//   - the "show →" cure jumps the table to the discipline's row
+//   - the "show →" cure opens the discipline's panel on the List (the Reference table retired into the List, 2026-11-04)
 //   - live input: typing another discipline's canonical shows the collision
 //     badge; suggestion chips EXCLUDE owned-elsewhere codes; a chip click
 //     fills the input and the blur-save persists it
@@ -122,15 +122,15 @@ function mockFetch(url, opts) {
 
 const dom = new JSDOM(`<!DOCTYPE html><html><body>
   <div id="tab-canonical-subj4">
-    <div id="cs-toolbar"></div><div id="cs-summary"></div>
-    <div id="cs-table-wrap"></div><div id="cs-toast"></div>
+    <div id="cs-mount"></div>
   </div>
-</body></html>`, { runScripts: "outside-only", pretendToBeVisual: true, url: "https://localhost/" });
+</body></html>`, { runScripts: "outside-only", pretendToBeVisual: true, url: "https://localhost/#canonical-subj4/list" });
 
 const { window } = dom;
 window.fetch = (u, o) => mockFetch(u, o);
 window.matchMedia = window.matchMedia || function () { return { matches: false, addListener() {}, removeListener() {} }; };
-// Signed-in session so the inputs are editable (saves hit the fetch mock).
+window.HTMLElement.prototype.scrollIntoView = function () {};
+// Signed-in session so the saves are allowed (they hit the fetch mock).
 window.sessionStorage.setItem("cpl_sb", JSON.stringify({
   access_token: "aaa.bbb.ccc", refresh_token: "rrr", email: "test@rccd.edu", exp: Date.now() + 9e6,
 }));
@@ -141,28 +141,40 @@ let confirmAnswer = true;
 window.confirm = (msg) => { confirmCalls.push(msg); return confirmAnswer; };
 
 const vm = require("vm");
-vm.runInContext(src, dom.getInternalVMContext ? dom.getInternalVMContext() : vm.createContext(window), { filename: "canonical_subj4.js" });
+const ctx = dom.getInternalVMContext ? dom.getInternalVMContext() : vm.createContext(window);
+// The List engine loads through CPL_TABS, as in the shell.
+const LIST_SRC = fs.readFileSync("commons_list.js", "utf8");
+window.CPL_TABS = { loadScript: function (s, name, cb) {
+  if (s === "commons_list.js") vm.runInContext(LIST_SRC, ctx, { filename: "commons_list.js" });
+  setTimeout(cb, 0);
+} };
+vm.runInContext(src, ctx, { filename: "canonical_subj4.js" });
 
 const results = [];
 const check = (name, cond) => results.push([name, !!cond]);
 const doc = window.document;
 
-function rowFor(disc) {
-  for (const td of doc.querySelectorAll("td.cs-disc")) {
-    if ((td.textContent || "").trim().indexOf(disc) === 0) return td.parentElement;
-  }
-  return null;
+const txt = (n) => (n && n.textContent || "").trim();
+function titleBtn(disc) {
+  return [...doc.querySelectorAll("#cs-list .csl-table tbody tr button.csl-open")].find((b) => txt(b) === disc) || null;
 }
-function disciplinesShown() {
-  return [...doc.querySelectorAll("td.cs-disc")].map((td) => (td.textContent || "").trim());
+function panel() { return doc.getElementById("csl-panel"); }
+/* The panel's Codes it could take: each row's code, and its note. */
+function suggRows() {
+  const t = doc.getElementById("csl-pn-sugg");
+  return t ? [...t.querySelectorAll("tbody tr")].map((tr) => ({ code: txt(tr.children[0]), note: txt(tr.children[2]), take: tr.querySelector("button") })) : [];
 }
+function boxOf(disc) { return [...doc.querySelectorAll(".csl-cellin")].find((b) => b.getAttribute("aria-label") === "Common SUBJ of " + disc); }
 function fire(elm, type) { elm.dispatchEvent(new window.Event(type)); }
 
-setTimeout(() => {
+const tick = () => new Promise((r) => setTimeout(r, 0));
+async function settle() { for (let i = 0; i < 15; i++) await tick(); }
+(async function () {
   try {
-    // ── the sweep ────────────────────────────────────────────────────────
-    const btn = doc.getElementById("cs-subj-check");
-    check("toolbar has the Check SUBJ ⇄ CCR button", !!btn);
+    await settle();
+    // ── the sweep, from the List's head ──────────────────────────────────
+    const btn = doc.getElementById("csl-check");
+    check("the List's head has Run the SUBJ check", !!btn);
     btn.click();
     const modal = doc.getElementById("cs-check-modal");
     check("check modal opens", modal && modal.classList.contains("show"));
@@ -228,73 +240,36 @@ setTimeout(() => {
     // ── the jump cure ────────────────────────────────────────────────────
     const jumps = [...doc.querySelectorAll(".cs-check-jump")].filter((b) => b.textContent.indexOf("Mystery Studies") >= 0);
     check("jump button exists for Mystery Studies", jumps.length > 0);
-    jumps[0].click();
+    jumps[0].click(); await settle();
     check("jump closes the modal", !modal.classList.contains("show"));
-    const shown = disciplinesShown();
-    check("jump filters the table to the discipline", shown.length === 1 && shown[0].indexOf("Mystery Studies") === 0);
+    check("jump opens the discipline's panel on the List", window.CPL_CANONICAL_SUBJ4._state.view === "list" && !!panel() && /Mystery Studies/.test(txt(panel())));
 
-    // reset the filter for the live-input assertions
-    const searchInp = doc.getElementById("cs-search");
-    searchInp.value = ""; fire(searchInp, "input");
-
-    // ── live input feedback ──────────────────────────────────────────────
-    const abRow = rowFor("Auto Body Technology");
-    check("Auto Body row renders", !!abRow);
-    const abInput = abRow.querySelector("input.cs-canon");
-    const abHint = abRow.querySelector(".cs-subj-hint");
-    check("hint container present", !!abHint);
-    abInput.value = "AUTO"; fire(abInput, "input");
-    check("typing another discipline's canonical shows the collision badge",
-      /Common SUBJ of Automotive Technology/.test(abHint.textContent));
-    // suggestions: ABOD (own 4-letter local, unclaimed) in; AUTO (owned elsewhere) out
-    const chipTexts = [...abHint.querySelectorAll(".cs-sugg-chip")].map((c) => c.textContent.trim());
-    check("suggestions include the unclaimed local code ABOD", chipTexts.some((t) => t.indexOf("ABOD") === 0));
-    check("suggestions exclude the owned-elsewhere code AUTO", !chipTexts.some((t) => t.indexOf("AUTO") === 0));
-
-    // Live input on an alias-family member: typing the family owner's code
-    // (KINE on the Physical Education row) shows neither the ✗ collision
-    // badge nor the ⚠ in-use badge — just the own-rows ✓.
-    const peRow = rowFor("Physical Education");
-    const peInput = peRow.querySelector("input.cs-canon");
-    const peHint = peRow.querySelector(".cs-subj-hint");
-    peInput.value = "KINE"; fire(peInput, "input");
-    check("alias family owner's code raises NO collision/in-use badge",
-      peHint.textContent.indexOf("Common SUBJ of") < 0 && peHint.textContent.indexOf("⚠") < 0);
-    check("alias family owner's code still shows the own-rows ✓",
-      /✓ on 5/.test(peHint.textContent));
-    peInput.value = "PEDU"; fire(peInput, "input"); // restore (no save — no blur)
-
-    // ── chip click → fill + blur-save ────────────────────────────────────
-    const abodChip = [...abHint.querySelectorAll(".cs-sugg-chip")].find((c) => c.textContent.indexOf("ABOD") === 0);
-    abodChip.dispatchEvent(new window.MouseEvent("mousedown", { bubbles: true }));
-    check("chip mousedown fills the input", abInput.value === "ABOD");
+    // ── the codes it could take (the Reference box's live suggestions, in the panel) ──
+    titleBtn("Auto Body Technology").click(); await settle();
+    const ab = suggRows();
+    check("suggestions include the unclaimed local code ABOD", ab.some((x) => x.code === "ABOD"));
+    check("suggestions exclude the owned-elsewhere code AUTO", !ab.some((x) => x.code === "AUTO"));
+    titleBtn("Physical Education").click(); await settle();
+    const pe = suggRows().filter((x) => x.code === "KINE")[0];
+    check("alias family owner's code is offered with no collision or in-use note", !!pe && !/Also on|Common SUBJ of/.test(pe.note));
+    // ── Take it saves, no confirm for a free code ────────────────────────
+    titleBtn("Auto Body Technology").click(); await settle();
     confirmCalls = [];
-    fire(abInput, "blur");
-    check("non-colliding save asks NO confirmation", confirmCalls.length === 0);
-
-    // ── collision save guard ─────────────────────────────────────────────
-    setTimeout(() => {
-      try {
-        check("blur-save persisted the chip pick to kb_curation",
-          saves.some((s) => s.field === "canonical_subj4" && s.value === "ABOD" && s.course_id === "_CANON_SUBJ4::Auto Body Technology"));
-
-        // The table re-rendered after the save; re-grab the row. Cancel path:
-        const barbRow = rowFor("Barbering");
-        const barbInput = barbRow.querySelector("input.cs-canon");
-        confirmAnswer = false; confirmCalls = []; const nSaves = saves.length;
-        barbInput.value = "AUTO"; fire(barbInput, "blur");
-        check("saving a colliding code asks for confirmation", confirmCalls.length === 1);
-        check("declined confirmation reverts and does not save",
-          barbInput.value === "COSM" && saves.length === nSaves);
-      } catch (e) {
-        check("no exception in async assertions: " + e.message, false);
-      }
-      finish();
-    }, 80);
+    suggRows().find((x) => x.code === "ABOD").take.click(); await settle();
+    check("taking a free code asks NO confirmation", confirmCalls.length === 0);
+    check("Take it persisted the pick to kb_curation",
+      saves.some((s) => s.field === "canonical_subj4" && s.value === "ABOD" && s.course_id === "_CANON_SUBJ4::Auto Body Technology"));
+    // ── collision save guard (the Common SUBJ cell) ──────────────────────
+    doc.getElementById("csl-editall").click(); await settle();
+    const barb = boxOf("Barbering");
+    confirmAnswer = false; confirmCalls = []; const nSaves = saves.length;
+    barb.value = "AUTO"; barb.dispatchEvent(new window.Event("change")); await settle();
+    check("saving a colliding code asks for confirmation", confirmCalls.length === 1);
+    check("declined confirmation writes nothing", saves.length === nSaves);
   } catch (e) {
     check("no exception during assertions: " + e.message, false);
-    finish();
   }
+  finish();
 
   function finish() {
     let pass = 0;
@@ -302,4 +277,4 @@ setTimeout(() => {
     console.log("\n" + pass + "/" + results.length + " checks passed");
     process.exit(pass === results.length && results.length > 0 ? 0 : 1);
   }
-}, 200);
+})();
