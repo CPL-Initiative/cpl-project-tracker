@@ -1030,3 +1030,18 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
 - **Next families by gap:** ASME's pipe-welder qualifications (8 titles, 1 catalog row), Autodesk (7, 9), NFPA (7, 1)
   and NCCER (7, 13).
 
+
+## SkyAntennae (2026-11-04, S569, the CPL Queue routine): Autodesk, NCCER and ASME in the cert link
+
+- **Measure the catalog before you trust a handoff's count.** Handoff 569 gave NFPA one catalog row and ASME one; the
+  catalog holds 16 NFPA rows and 9 ASME. The gap list was right about the titles and wrong about the certs.
+- **One table, three issuers.** `HAND` in `kb/_build_exhibit_cert_links.py` carries each family's two catalog spellings
+  and its titles, so the next family is a dict entry and no new branch. 13 titles now hold 20 certs (#2759); the link
+  holds 232 titles to 200 certs.
+- **A level short of journey holds nothing.** NCCER's catalog rows are the credential (*Commercial Electrician*), so only
+  *Level 4/Journey Level* links; Levels 1 to 3 stay out. HVACR Level 1 and Welding Level 1 link because the catalog
+  lists those levels by name.
+- **A title whose exhibits name several issuers stays out.** *Fire Inspector 1* is filed under NFPA, but its raw
+  titles name ICC, SFT and Cal-JAC too. NFPA's Firefighter, Fire Officer and Instructor titles name a standard that
+  IFSAC or Pro Board certifies, and the catalog lists no NFPA certification for them.
+- **Next:** the ASME BPVC welder qualifications and the SFT fire titles wait on the credential watch listing them.
