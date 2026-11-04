@@ -490,6 +490,40 @@
     ].filter(Boolean));
   }
 
+  /* The confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward. */
+  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled" };
+  function procName(n) { n = String(n || "").replace(/-/g, " "); return n === "classifier" ? "the classifier" : n; }
+  function confidenceSection(list) {
+    if (!Array.isArray(list) || !list.length) return null;
+    var kids = [
+      el("h3", { id: "cmn-conf-h", cls: "cmn-band-h", text: "How far to trust the procedures" }),
+      el("p", { cls: "cmn-sub", text: "A procedure earns trust by what a person does with its work afterward. A result a person keeps, or renames with its whole family, counts for it; a result a person moves elsewhere counts against it." })
+    ];
+    list.forEach(function (c) {
+      var name = (CARDS[c.ref] && CARDS[c.ref].name) || c.ref;
+      var head = el("h4", { cls: "cmn-reason-h", text: name + ": " + (CONF_UNIT[c.ref] || "results the procedures settled") });
+      if (c.error || !c.total) { kids.push(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-unread", text: "Could not be read" })])); return; }
+      var t = c.total;
+      var line = t.looked
+        ? "A person has looked at " + fmt(t.looked) + " of " + fmt(t.placed) + ": " + fmt(t.kept) + " kept, " + fmt(t.renamed) + " renamed with their family, " + fmt(t.moved) + " moved elsewhere."
+        : "No person has looked at any of the " + fmt(t.placed) + " yet.";
+      var extra = [];
+      if (t.by_procedure) extra.push(fmt(t.by_procedure) + " later revised by another procedure");
+      if (t.left) extra.push(fmt(t.left) + " left the reference");
+      var cols = ["Procedure", "Placed", "A person looked", "Kept", "Renamed with its family", "Moved elsewhere", "Not looked at yet"];
+      var table = el("table", { cls: "cmn-conf-table" }, [
+        el("thead", null, [el("tr", null, cols.map(function (h) { return el("th", { scope: "col", text: h }); }))]),
+        el("tbody", null, (c.procedures || []).map(function (p) {
+          return el("tr", null, [el("th", { scope: "row", text: procName(p.name) })].concat(
+            [p.placed, p.looked, p.kept, p.renamed, p.moved, p.untouched].map(function (n) { return el("td", { text: fmt(n || 0) }); })));
+        }))
+      ]);
+      kids.push(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-conf-line", text: line + (extra.length ? " " + capFirst(extra.join("; ")) + "." : "") }),
+        el("div", { cls: "cmn-conf-wrap", role: "region", tabindex: "0", "aria-label": name + ": each procedure's results" }, [table])]));
+    });
+    return el("section", { cls: "cmn-queue cmn-conf", "aria-labelledby": "cmn-conf-h" }, kids);
+  }
+
   function render(root, data, S, now) {
     now = now || new Date();
     root.removeAttribute("style");
@@ -529,6 +563,8 @@
     /* the one queue: what waits on a person, by reason, and what the routines carry */
     var queue = queueSection(data && data.queue);
     if (queue) wrap.appendChild(queue);
+    var conf = confidenceSection(data && data.confidence);
+    if (conf) wrap.appendChild(conf);
 
     /* the filter words: the visit's, never remembered */
     var show = "all";
@@ -731,6 +767,14 @@
     ".cmn-reason a, .cmn-carried a { display:inline-block; min-height:24px; line-height:24px; font-weight:700; }",
     ".cmn-queue-ref { color:var(--cmn-ink-2); font-weight:600; }",
     ".cmn-carried { border-top:1px solid var(--cmn-line-soft); padding-top:10px; display:grid; gap:6px; }",
+    ".cmn-conf-ref { display:grid; gap:6px; min-width:0; }",
+    ".cmn-conf-line { margin:0; color:var(--cmn-ink-2); font-size:.93rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-conf-wrap { overflow-x:auto; border:1px solid var(--cmn-line-soft); border-radius:10px; }",
+    ".cmn-conf-table { width:100%; border-collapse:collapse; font-size:.9rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-conf-table th, .cmn-conf-table td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--cmn-line-soft); color:var(--cmn-ink); }",
+    ".cmn-conf-table thead th { font-size:.75rem; letter-spacing:.04em; text-transform:uppercase; color:var(--cmn-muted); font-weight:700; }",
+    ".cmn-conf-table tbody th { font-weight:600; }",
+    ".cmn-conf-wrap:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cmn-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; gap:12px; min-width:0; }",
     ".cmn-card-needs { border-top:4px solid var(--cmn-gold); }",
     ".cmn-card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }",
@@ -834,7 +878,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
-    queueSection: queueSection, REASONS: REASONS,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

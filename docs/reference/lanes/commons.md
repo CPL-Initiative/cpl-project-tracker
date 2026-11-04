@@ -47,17 +47,6 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
-**The CPL Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
-and you can play off of that for the card titles and focus elements."*, then, on seeing it: *"Let's go with these designs for now. I'm chickening out on the CCC Commons...let's go with CPL Commons for now as less of a wholesale take over of the system:)"* The first-view mock
-(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 8, locked by Sam; source in
-`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CPL Commons**, with its lede (*eight common references the
-California Community Colleges keep together for credit for prior learning*), and each of its eight cards is a **Common**
-reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
-Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
-the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
-(S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
-so the port into this tab waits on his call on the look.
-
 **RULED (Sam, Open Asks Sheet 158 cards 2 and 3, 15:01Z 2026-11-02, his own call: "malone", "rename").** The CPL
 Commons first view ports into this tab in **Malone's CPL/AI look**, the first COBI tab to carry it (First Light stays the
 rule for the other tabs; this is the one departure inside COBI, beside the public pages' departure of 2026-10-24). The
@@ -94,9 +83,7 @@ before a person confirms it; a confirmation is an attribute the reference gains,
 a line on the card and under each Progress bar. 2026-11-03: Programs 32 (synced daily, `kb/_sync_program_checked.py`),
 Exhibits 1,173, Courses 957 (a save on the card or placing a course into it), CR 97, Subjects 122. Detail in the lessons (*The confirmed count*).
 
-**NEXT:** propose the lane's next build at a session Sam opens, or on the sheet. The to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
-that once answered 500 (check it first when a Progress card reads *Could not be read*).
-The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
+**NEXT:** from the path mock (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9): Teach a rule on every reference; a stalled routine or a backlog that stops shrinking becomes a queue item; the confidence count for the CR rule rungs and the Course auditor; the other references' paths; then every Commons view on the `--cmn` tokens. Data sources: [`data_sources`](../data_sources.md). When a Progress card reads *Could not be read*, check the `coci_college_programs` read first (it once answered 500). `npm run a11y -- cobi:commons` passes at both widths with the queue (S573).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
@@ -110,6 +97,8 @@ only when the window is narrower than its columns (#2661, Sam: *"full screen wid
 bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04).
 
 **LIVE: the one queue (S573, 2026-11-04, Sam: "yes, start building the one queue").** Every issue in `kb/status/commons.json` names its `carry` (`routine`, or a person's reason: `no_procedure`, `unsure`, `reaches`, `keep_call`); the file's `queue` groups the person items, and an issue naming none lands under `unsorted`. The tab draws it as *Waiting on a person*, under the decisions band. Guards: `tests/commons_status_build_test.py`, `tests/commons.test.js` (queue 1 to 10).
+
+**LIVE: the confidence count (S573, 2026-11-04, Sam: "start on the confidence count next").** `kb/status/commons.json`'s `confidence` says what a person did with each procedure's work afterward: the Exhibit procedures' receipts (`kb/cer_procedures_out/saved/`) against `kb/unified_titles.json`, the nightly Subjects confirm's (`kb/csr_out/confirm/`) against the seed. A result a person looked at is kept, renamed with its family (its old name is gone and its siblings moved together), or moved (a correction). 2026-11-04: of 1,178 titles placed, a person looked at 94, kept 23, renamed 71, moved 0; none of the 13 confirmed picks looked at yet. The tab shows it as *How far to trust the procedures*.
 
 **RULED: every Commons view in Malone's look, and the path (Sam, S573, 2026-11-04, in chat).** *"Use the new UI format rather than first light on this and all commons views."* This widens Sheet 158 card 2 from the first view to every Commons view (the Lists, the Progress pages, the side panels); First Light stays the rule for the rest of COBI. The same morning he asked for a visual of the curator's steps and decision points, *"available on every commons surface"*, plain words, with *"a generic term"* for him. The mock is **the path** (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9, source in `CPLBrain/04-projects/cpl-initiative/commons-path-mock/`): six steps every reference shares (know what belongs, let the daily check run, work the list, get the lead's call, check the connections, clean), the CPL Commons view and the Common Subjects view. NEXT: his reaction, then the other references' paths, then the port (`commons_page.js` and `commons_list.js` onto the `--cmn` tokens, the path as a fold above each List).
 
