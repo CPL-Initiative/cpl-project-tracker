@@ -28,22 +28,22 @@ items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000 bytes, and the
   address and quickstart hint opens the List; a TOP column takes the TOP filter's place; the head carries the sign-in and
   Run the SUBJ check; the panel folds the CPL window and the C-ID and CCN courses on its codes.
   `tests/csr_list_reference_port.test.js` (17).
-- **#2752** (open, CI): **Subjects' Reference view retires.** About 1,000 lines out of `canonical_subj4.js` (toolbar,
+- **#2752** (merged): **Subjects' Reference view retires.** About 1,000 lines out of `canonical_subj4.js` (toolbar,
   table, row editor, variants and CPL modals); the check's *show* opens the panel; the panel lists *Codes it could take*
   with a *Take* word. The table's suites read the List through `tests/csr_list_harness.js`. Both HTMLs mount the views
-  before `#cs-mount`.
+  before `#cs-mount`. Five ported suites re-baselined their check floors (`tests/check_floor.json`), each loss named.
+- **This PR**: the table's 55 rules leave the tab's `<style>` (both HTMLs) and the box's injected CSS with them;
+  `csr_ui_pass` checks the rules that stay and that the table's are gone; `cobi_prose_measure`'s layout sample moves to
+  `.cr-title-cell`.
 
 ## Open work, in order
 
-1. **Merge #2752** once `test` passes on its head.
-2. **Subjects' leftover CSS:** the table's rules in the tab's `<style>` block (both HTMLs, Rule 4): `.cs-table*`,
-   `.cs-toolbar`, `.cs-summary`, `.cs-variants`, `tr.cs-cat-header`, `.cs-muted-dash`, `.cs-toast`. `tests/csr_ui_pass.test.js`
-   still checks four of them (its RULES); move those checks to the rules that stay.
-3. **The original views retire as each List does what they do**, one PR each, tests ported first: Programs' older view,
+1. **Merge this PR** (the Subjects CSS) once `test` passes on its head.
+2. **The original views retire as each List does what they do**, one PR each, tests ported first: Programs' older view,
    then Courses' (Courses keeps SkyView first). Inventory what only the view has, carry it into the List or its panel
    (one PR), then delete (the next), as Subjects went.
-4. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
-5. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
+3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
+4. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
    to the routine; the Catalog's *Courses that may align*, once a source names courses.
 
 ## Lessons to honor
@@ -58,12 +58,17 @@ items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000 bytes, and the
 - **Port a suite that has no List engine by giving it one:** the shell's `CPL_TABS.loadScript` running
   `commons_list.js` in the page's context (`tests/csr_list_harness.js`).
 - **Build the next PR on the open one, push it after the squash:** `git rebase --onto origin/main <old-branch>`.
+- **A ported suite runs fewer checks than its floor** (`tests/check_floor.json`), and CI fails the shard. When the
+  drop is the retired view's own checks, lower that file's entry by hand and name the loss in the commit (the full
+  `npm run test:floor` refuses a shard and rewrites every entry).
+- **A suite can print its FAIL lines indented** (`axe_select_names`); match `(^|\s)FAIL` when sweeping, never `^FAIL`.
+- **Never hide a check's exit code behind a pipe:** `check_generated.sh | tail -1` let a stale dependency map through.
 - **`npm test` locally exceeds the 30-minute background limit;** run the suites that touch the change, and let CI's
   shards run the rest.
 
 ## Let go
 
-At sign-off: drop the PR watch on #2752 once merged. No check-in, no artifact watch.
+At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
 
 ---
 

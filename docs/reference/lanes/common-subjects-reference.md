@@ -68,7 +68,8 @@ filter's place (a fuzzy filter only); the head carries the sign-in and *Run the 
 discipline's panel; the panel folds the CPL window and the C-ID and CCN courses on its codes, and lists the *Codes it
 could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
 table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
-`csr_subj_check`; harness `tests/csr_list_harness.js`). Left: the table's rules in the tab's `<style>` (both HTMLs). **The Local subjects List** (Sam, 2026-11-03: *"yes on
+`csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
+the injected box CSS with it. **The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
 code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
 discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /

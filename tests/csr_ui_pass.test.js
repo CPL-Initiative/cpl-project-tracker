@@ -25,15 +25,12 @@ function rule(src, sel) {
 }
 const RULES = [
   ["#tab-canonical-subj4 .cs-auth-tag", /color:var\(--text-muted\)/],
-  ["#tab-canonical-subj4 .cs-muted-dash", /color:var\(--text-muted\)/],
-  ["#tab-canonical-subj4 .cs-variants .cs-var-modal", /color:var\(--text-body\)/],
-  ["#tab-canonical-subj4 tr.cs-cat-header td", /background:var\(--surface-muted\)/],
-  ["#tab-canonical-subj4 tr.cs-cat-header.collapsed td", /background:var\(--surface-subtle\)/],
+  // The table's rules (the CIP dash, the variant held, the TOP-category rows) left with the Reference table (2026-11-04).
   ["#tab-canonical-subj4 .cs-scope-note", /background:var\(--surface-subtle\)[^}]*color:var\(--text-body\)/],
   ["#tab-canonical-subj4 .cs-scope-note strong", /color:var\(--navy-primary\)/],
 ];
 
-// ── (1) the six rules read tokens, in both HTMLs ──────────────────────────
+// ── (1) the rules that stay read tokens, in both HTMLs ──────────────────────────
 for (const [f, src] of htmls) {
   for (const [sel, want] of RULES) {
     const r = rule(src, sel);
@@ -42,6 +39,7 @@ for (const [f, src] of htmls) {
   }
 }
 check("(1) the two HTMLs stay identical (Rule 4)", htmls[0][1] === htmls[1][1]);
+check("(1) the retired table's rules are gone from both HTMLs", htmls.every(([f, src]) => !/#tab-canonical-subj4 (\.cs-table|tr\.cs-cat-header|\.cs-variants|\.cs-muted-dash)/.test(src)));
 
 // ── (2) the tab's own script paints no raw gray ───────────────────────────
 check("(2) ⭐ canonical_subj4.js paints no #9ca3af",
