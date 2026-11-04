@@ -2056,6 +2056,83 @@
     if (look) r._where = out;
     return out;
   }
+  /* Check alignment beside Save (Sam, 2026-11-04: "a Check Alignment button in the code box that fires a little audit
+     and recommendation"; "We could use that feature on all our commons list views"). For a credential, alignment is its
+     unified title and issuer against the reference: the title another credential already carries (two names, one
+     credential, or a collision), the close titles beside it, what colleges wrote for it (raw variants), the noise the
+     canonicalization rules strip (.claude/skills/exhibit-canonicalization, Rule 1), and the issuer's spellings across
+     the reference. It reads what the List holds; the daily run's collision check and the re-analysis stay the record. */
+  function auditNorm(t) {
+    return String(t == null ? "" : t).toLowerCase().replace(/\bu\.?\s?s\.?\b/g, "us").replace(/united states/g, "us")
+      .replace(/&/g, " and ").replace(/[^a-z0-9+#]+/g, " ").replace(/\b(the|of)\b/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function auditWords(t) { return auditNorm(t).split(" ").filter(function (w) { return w.length > 1; }); }
+  function auditClose(a, b) {
+    var A = auditWords(a), B = auditWords(b);
+    if (!A.length || !B.length) return 0;
+    var inB = {}; B.forEach(function (w) { inB[w] = 1; });
+    var both = A.filter(function (w) { return inB[w]; }).length;
+    return both / (A.length + B.length - both);
+  }
+  var AUDIT_NOISE = [
+    [/credit\s*by\s*exam|\bcbe\b|portfolio(\s+review)?|industry\s+certification|certificate\s+prep|\bprep\b/i, "a CPL mechanism (the CPL type carries it)"],
+    [/\bscore\s*\d|\(\s*score|\bversion\s*\d|\bv\d+(\.\d+)?\b|\beffective\s+(fall|spring|summer|winter)|\bprior\s+(fall|spring|summer)/i, "a score or version note"],
+    [/\bat\s+[a-z .'-]+\b(college|university)\b/i, "a college's name"],
+    [/[.,;:]\s*$/, "trailing punctuation"],
+    [/\s{2,}/, "a double space"]
+  ];
+  function exhibitAudit(r, d) {
+    var rows = state.cs.rows || [], typed = String(d.title || "").replace(/\s+/g, " ").trim(), was = listTitle(r);
+    var title = typed || was, issuer = String(d.issuer || "").replace(/\s+/g, " ").trim();
+    if (!title) return "Type a title to check it.";
+    var facts = [], recs = [], key = auditNorm(title);
+    var nColl = function (x) { return credColleges(x).length; };
+    // The title another credential carries, or nearly.
+    var same = rows.filter(function (x) { return x !== r && auditNorm(listTitle(x)) === key; });
+    var close = rows.filter(function (x) { return x !== r && same.indexOf(x) < 0; })
+      .map(function (x) { return { x: x, s: auditClose(title, listTitle(x)) }; })
+      .filter(function (y) { return y.s >= 0.6; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 3);
+    if (same.length) facts.push("“" + listTitle(same[0]) + "” is already a credential (" + fmt(nColl(same[0])) + (nColl(same[0]) === 1 ? " college" : " colleges") + ")");
+    else facts.push("no other credential carries this title");
+    if (close.length) facts.push("close titles: " + close.map(function (y) { return "“" + listTitle(y.x) + "” (" + fmt(nColl(y.x)) + (nColl(y.x) === 1 ? " college" : " colleges") + ")"; }).join(", "));
+    // What colleges wrote for this credential.
+    var raws = (r.raw_variants || []).map(function (v) { return v.r; }).filter(Boolean);
+    if (raws.length) {
+      var hit = raws.some(function (x) { return auditNorm(x) === key; });
+      facts.push(fmt(raws.length) + (raws.length === 1 ? " college-written title folds" : " college-written titles fold") + " here" + (hit ? ", and one reads this way" : "; none reads this way"));
+    }
+    // The noise the canonicalization rules strip.
+    var noise = AUDIT_NOISE.filter(function (n) { return n[0].test(title); }).map(function (n) { return n[1]; });
+    if (noise.length) facts.push("the title carries " + noise.join(" and "));
+    // The issuer's spellings across the reference.
+    var spell = {}, ikey = auditNorm(issuer), twin = null;
+    if (issuer) {
+      rows.forEach(function (x) {
+        var i = (x === r ? issuer : credCurrent(x).issuer) || "";
+        if (i && auditNorm(i) === ikey) spell[i] = (spell[i] || 0) + 1;
+      });
+      var names = Object.keys(spell).sort(function (a, b) { return spell[b] - spell[a]; });
+      facts.push("the issuer “" + issuer + "” names " + fmt(spell[issuer] || 1) + (spell[issuer] === 1 || !spell[issuer] ? " credential" : " credentials")
+        + (names.length > 1 ? ", and the reference also spells it " + names.filter(function (n) { return n !== issuer; }).map(function (n) { return "“" + n + "” (" + fmt(spell[n]) + ")"; }).join(", ") : ""));
+      // A twin spelling is recommended only when more credentials use it than the one typed.
+      if (names.length > 1 && names[0] !== issuer && spell[names[0]] > (spell[issuer] || 0)) twin = names[0];
+    } else facts.push("no issuer named");
+    // One recommendation, the most pressing first.
+    if (same.length) recs.push(typed && typed !== was
+      ? "this title is “" + listTitle(same[0]) + "”'s. If they are one credential, fold them (Suggested folds, or Move); if not, add what tells them apart, a level, an exam or a version"
+      : "two credentials carry one title: fold them if they are one, or tell them apart");
+    else if (twin) recs.push("spell the issuer “" + twin + "”, as " + fmt(spell[twin]) + " credentials do");
+    else if (noise.length) recs.push("drop " + noise[0] + " from the title; the canonicalization rules keep the credential's own name");
+    else if (close.length && close[0].s >= 0.75) recs.push("check “" + listTitle(close[0].x) + "”: if it is the same credential, fold one into the other");
+    else if (!issuer) recs.push("name the issuer, the body that grants the credential");
+    else recs.push("the title and issuer read well against the reference");
+    return facts.join("; ") + ". Recommendation: " + recs[0] + ".";
+  }
+  function listCheckAlignment(r, d) {
+    d._hint = exhibitAudit(r, d);
+    var hn = document.getElementById("exh-l-edit-hint");
+    if (hn) { hn.textContent = d._hint; hn.hidden = false; }
+  }
   function listSave(r) {
     var L = listState(), d = L.draft, cur = credCurrent(r), cs = state.cs;
     var title = d.title.replace(/\s+/g, " ").trim(), issuer = d.issuer.replace(/\s+/g, " ").trim();
@@ -2483,7 +2560,12 @@
           var cur = credCurrent(r);
           return { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
         },
-        save: listSave
+        save: listSave,
+        // A keystroke in the title or issuer box clears an earlier check; Check alignment writes a new one.
+        onInput: function (r, key, d) { if (key === "title" || key === "issuer") d._hint = ""; },
+        extra: function (r, d, word) {
+          return [word("Check alignment", function () { listCheckAlignment(r, d); }, { "aria-label": "Check the alignment of the title and issuer typed for " + listTitle(r) })];
+        }
       },
       cellSave: listCellSave,
       fr: {
