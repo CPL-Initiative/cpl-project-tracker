@@ -3,7 +3,7 @@ title: "Session 567 handoff: every MQ discipline complete; S565's PR and Ashley'
 date: 2026-11-04
 session: 566 (SkySombrero, the CPL Queue routine, 2026-11-04 07:12Z firing)
 tags: [handoff, scheduled-sessions, common-subjects-reference, program-requirements-harvest]
-status: current
+status: superseded
 ---
 
 # You are Session 567

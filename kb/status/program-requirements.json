@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-03T09:22:54Z",
-  "session": 560,
-  "moniker": "SkyWhirligig",
+  "written_at": "2026-11-04T08:18:01Z",
+  "session": 567,
+  "moniker": "SkyWhirlpool",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_561_handoff.md",
+  "handoff": "docs/session_568_handoff.md",
   "next_step": {
-    "title": "Las Positas's full SLO read",
-    "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-04 UTC day, beside Columbia's trial."
+    "title": "Columbia's full SLO read",
+    "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
   },
   "calls": [
     {
@@ -207,6 +207,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-04T08:17:00Z",
+      "text": "Las Positas's course outcomes loaded: 505 rows (#2717). The table holds 9,889 rows at twelve colleges."
+    },
     {
       "at": "2026-11-03T09:20:00Z",
       "text": "What needs attention now counts active programs whose record fails a check, the Commons card's unit, and both pages say why their figures can differ: the card counts the records committed at the last checkpoint, this page reads live."
@@ -407,7 +411,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-03T09:12:00Z"
+    "at": "2026-11-04T09:12:00Z"
   },
   "harvest": {
     "day": "2026-11-03",
