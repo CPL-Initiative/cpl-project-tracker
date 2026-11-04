@@ -92,7 +92,7 @@
     ".cplcoci-more { text-align:center; padding:10px; }",
     ".cplcoci-empty { padding:26px; text-align:center; color: var(--text-muted); }",
     // Progress (S559): the page's links reach 24px (WCAG 2.2 target size); its h2 names the page for the outline.
-    ".cplcoci-pg-page a { display:inline-block; min-height:24px; line-height:24px; }",
+    ".cplcoci-pg-page a, .ccl-pg-page a, .ccl-pn-acts a, .ccl-pdrawer > a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cplcoci-pg-title { margin:0 0 4px; font-size:1.1rem; color: var(--seal-blue-text); }",
     ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
     ".cplcoci-meta { margin:0 0 6px; font-size:.8rem; color: var(--text-muted); max-width:var(--cpl-measure,none); }",
@@ -350,7 +350,89 @@
     if (f === "none") return !(r.mid || r.cid || r.ccn);
     return r.code === f;
   }
-  function listHead(wrap) {
+  /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR,
+     Subjects and Programs first): one line of the course row in kb/status/commons.json, read once by this tab's own
+     Progress read (loadProgress), so the file has one reader here; every count opens SkyView, where a course's work is
+     done (Courses keeps SkyView first; Sam, 2026-11-03). The Progress view's opened page folds under it for the visit. */
+  function listLine(wrap, api) {
+    var L = listState();
+    loadProgress();
+    var folded = !!L.dashFolded;
+    wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold",
+      onToggle: function () { L.dashFolded = !L.dashFolded; mountList(); },
+      control: function (open, text, li) {
+        if (!open) return null;
+        var out = /^https?:\/\//.test(open);
+        return api.el("a", { href: open, cls: li, text: text, target: out ? "_blank" : null, rel: out ? "noopener" : null,
+          "aria-label": out ? text + " (opens SkyView in a new tab)" : null });
+      } }));
+    var fold = api.el("div", { cls: "ccl-fold", id: "ccl-fold" });
+    if (folded) { fold.hidden = true; wrap.appendChild(fold); return; }
+    var PG = window.CPL_COMMONS_PAGE;
+    if (PG && pg.done) {
+      // The Progress view's own page, under its own prefix so its ids never meet the Progress view's, less the word
+      // that opens this List.
+      var spec = progressSpec();
+      spec.prefix = "ccl-pg-";
+      spec.links = (spec.links || []).filter(function (l) { return l.words !== "Open the Courses List"; });
+      // The page's cards are h3s; the fold carries their h2, as the Progress view does.
+      fold.appendChild(el("h2", { "class": "cplcoci-pg-title" }, ["Common Course Reference: progress"]));
+      fold.appendChild(PG.render(spec));
+    } else if (pg.pageFailed) {
+      fold.appendChild(el("p", { "class": "cplcoci-empty", role: "alert" }, ["The summary's cards (commons_page.js) could not be loaded. The List reads as usual; reload the tab to try again."]));
+    } else fold.appendChild(el("p", { "class": "cplcoci-meta", role: "status" }, ["Reading the reference's figures."]));
+    wrap.appendChild(fold);
+  }
+  /* A course's side panel (SkyView's course outline the model): what it is, its common course and the other local
+     courses that M-ID holds (the members its band folds; another course's title opens its panel), SkyView one word
+     away, and the rest folded: its identities, the TOP code as a search aid, an older M-ID. The Title drawer (the
+     catalog description and the learning outcomes) moves in with it (the engine). */
+  function listByMid(m) {
+    if (m.byMid) return m.byMid;
+    var by = new Map();
+    m.rows.forEach(function (r) { r.mids.forEach(function (id) { var a = by.get(id); if (!a) by.set(id, a = []); a.push(r); }); });
+    return (m.byMid = by);
+  }
+  function listPanelBody(r, h) {
+    var m = listBuild(), out = [];
+    out.push(h.title(r.subj + " " + r.num + ", " + r.title));
+    out.push(h.meta([r.college, r.units == null ? "No units listed" : fmt(r.units) + (r.units === 1 ? " unit" : " units"), r.credit,
+      r.cid ? "C-ID " + r.cid : "", r.ccn ? "CCN " + r.ccn : "", "Control number " + r.ctrl]));
+    if (!m.X) {
+      out.push(el("p", { "class": "cplcoci-meta" }, ["Today's identity file did not arrive, so the panel cannot say which common course holds this course."]));
+    } else if (!r.mid) {
+      out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+    } else {
+      var members = listByMid(m).get(r.mid) || [], seenCol = {};
+      members.forEach(function (x) { seenCol[x.college] = 1; });
+      var nCol = Object.keys(seenCol).length;
+      out.push(h.heading("Its common course: " + r.mid));
+      out.push(el("p", { "class": "ccl-pn-acts" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
+      out.push(h.table({ id: "members", label: "The local courses " + r.mid + " holds",
+        note: idWords(r.mid) + ", holding " + fmt(members.length) + (members.length === 1 ? " local course" : " local courses") + " at "
+          + fmt(nCol) + (nCol === 1 ? " college" : " colleges") + (r.mids.length > 1 ? "; the course sits in " + r.mids.length + " M-IDs (" + r.mids.join(", ") + "), and the List bands it under this one, the largest" : "")
+          + ". Press a header to sort; another course's title opens its panel.",
+        cols: [["code", "Course"], ["title", "Title"], ["college", "College"], ["units", "Units", true]],
+        rows: members.map(function (x) { return { ut: x.ut, code: x.subj + " " + x.num, title: x.title, college: x.college, units: x.units }; }),
+        cell: function (row, k) {
+          if (k !== "title") return row[k];
+          if (row.ut === r.ut) return row.title + " (this course)";
+          return h.word(row.title, function () { h.open(row.ut); }, { "aria-label": row.code + ", " + row.title + " at " + row.college + ", open its panel" });
+        },
+        rowAttrs: function (row) { return row.ut === r.ut ? { "aria-current": "true" } : null; } }));
+    }
+    var more = [];
+    if (r.mids.length > 1) more.push(el("p", null, ["Its M-IDs: " + r.mids.join(", ") + "."]));
+    if (r.was) more.push(el("p", null, ["COCI's " + (state.data._built_at || "") + " extract named " + r.was + "; the course has moved since."]));
+    more.push(el("p", null, [r.cid ? "A transfer-model course: it carries C-ID " + r.cid + " (a floor, not full CSU or UC transferability)." : "No C-ID on record in COCI."]));
+    if (r.ccn) more.push(el("p", null, ["CCN " + r.ccn + ", the AB 1111 Common Course Number COCI records."]));
+    more.push(el("p", null, [r.top ? "TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing here (a TOP code is a last-in-line signal)." : "COCI holds no TOP code for this course."]));
+    more.push(el("p", null, ["Moving a course to another M-ID is a re-mint: it happens in SkyView, under the playbook."]));
+    out.push(h.fold("more", "More about this course: its identities and codes", more));
+    return out;
+  }
+  function listHead(wrap, api) {
+    listLine(wrap, api);
     var m = listBuild(), c = m.counts, D = state.data;
     wrap.appendChild(el("p", { "class": "cplcoci-lede" }, ["Every local course in COCI, one row each: " + fmt(c[""]) + " at " + m.colleges +
       " colleges, from COCI's " + (D._built_at || "") + " extract. " + (m.X
@@ -446,6 +528,9 @@
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: mountList,
       head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, hayFolded: true, findWords: true,
       fixedRows: true, findDelay: 160, drawer: listDrawer,
+      // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a course's title opens it beside
+      // the table, with its common course's local courses, SkyView one word away and the rest folded.
+      panel: { label: function (r) { return "Course: " + r.subj + " " + r.num + ", " + r.college; }, body: listPanelBody },
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
@@ -564,7 +649,13 @@
     if (pg.done || pg.loading) return;
     pg.loading = true;
     var T = window.CPL_TABS, waits = 2;
-    function done() { if (--waits > 0) return; pg.loading = false; pg.done = true; if (state.view === "progress") renderProgressView(); }
+    function done() {
+      if (--waits > 0) return;
+      pg.loading = false; pg.done = true;
+      if (state.view === "progress") renderProgressView();
+      // The Courses List draws the same row as its line and folds the same page (the List norms).
+      else if (state.view === "courses") mountList();
+    }
     if (!window.CPL_COMMONS_PAGE && T && typeof T.loadScript === "function") {
       T.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () { if (!window.CPL_COMMONS_PAGE) pg.pageFailed = true; done(); });
     } else { if (!window.CPL_COMMONS_PAGE) pg.pageFailed = true; done(); }

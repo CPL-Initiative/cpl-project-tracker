@@ -90,6 +90,8 @@ function makeDom() {
   log.fetches = [];
   window.fetch = function (url) {
     log.fetches.push(String(url));
+    // A relative read (kb/status/commons.json, the Courses List's line and the Progress page) answers 404 here.
+    if (!/^https?:/.test(String(url))) return Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve(null) });
     const qp = new URL(String(url)).searchParams;
     const want = (qp.get("course_code") || "").replace(/^in\.\(|\)$/g, "").split(",").map((c) => c.replace(/^"|"$/g, ""));
     if (want.indexOf("ESL-010") >= 0) return Promise.resolve({ ok: false, status: 503, json: () => Promise.resolve(null) });
@@ -218,7 +220,8 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
   await sleep(20);
   check("desc: the drawer lazy-loads the subject-letter shard",
     log.lazyLoads.some((s) => s === "coci_lookup_desc_C.js"));
-  const descRow = doc.querySelector("." + P + "drawer");
+  // Since 2026-11-04 a title opens the course's side panel; the Title drawer moves into it (the List norms).
+  const descRow = doc.querySelector("#" + P + "panel ." + P + "pdrawer");
   check("desc: the shard's description renders",
     !!descRow && txt(descRow).indexOf("Safety and health training") >= 0);
   // Learning outcomes (Sam, 2026-10-14: "there should be a link to them on each course listing").
@@ -226,15 +229,16 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
   check("outcomes: the drawer shows the newest read's outcomes, numbered, with what each maps to",
     !!outs && /Student Learning Outcomes \(2\)/.test(txt(outs)) && outs.querySelectorAll("ol li").length === 2
     && /Maps to: Critical Thinking/.test(txt(outs)) && !/older read/.test(txt(outs)));
+  const outReads = () => log.fetches.filter((u) => /course_outcomes/.test(u));
   const srcA = outs && outs.querySelector('a[href="https://example.org/outline/carpt111"]');
   check("outcomes: it names and links where it was read", !!srcA && txt(srcA) === "the course outline of record"
     && /read 2026-10-13\./.test(txt(outs)));
   check("outcomes: asked under the code's spellings, for that college",
-    /college=eq\.American%20River%20College/.test(log.fetches[0] || "") && /%22CARPT%20111%22,%22CARPT111%22,%22CARPT-111%22/.test(log.fetches[0] || ""));
+    /college=eq\.American%20River%20College/.test(outReads()[0] || "") && /%22CARPT%20111%22,%22CARPT111%22,%22CARPT-111%22/.test(outReads()[0] || ""));
   const reopen = () => cellOf(doc, rowByTitle(doc, "Tool and Equipment Applications"), "Title").querySelector("button").click();
   reopen(); reopen();
   await sleep(20);
-  check("outcomes: re-opening reads them from memory", log.fetches.length === 1);
+  check("outcomes: re-opening reads them from memory", outReads().length === 1, outReads().join(" | "));
   reopen();
 
   // ── 7. a spreadsheet of the filtered set ──
@@ -305,7 +309,7 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
     const fdoc = fresh.window.document;
     cellOf(fdoc, rowByTitle(fdoc, "English Fundamentals"), "Title").querySelector("button").click();
     await sleep(20);
-    const fouts = fdoc.querySelector("." + P + "drawer .cplcoci-outs");
+    const fouts = fdoc.querySelector("#" + P + "panel ." + P + "pdrawer .cplcoci-outs");
     check("outcomes: a failed read says so, naming the table", !!fouts && /could not be read \(course_outcomes answered 503\)/.test(txt(fouts)));
   }
 
