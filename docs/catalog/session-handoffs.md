@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-533 document(s).
+534 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 567 | [Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read](../session_567_handoff.md) | 2026-11-04 |
 | 566 | [Session 566 handoff: Las Positas's full read and Columbia's trial in flight; #2734 brought up to main](../session_566_handoff.md) | 2026-11-04 |
 | 565 | [Session 565 handoff: a Confirmed by a person count beside ready on the Course page and card](../session_565_handoff.md) | 2026-11-03 |
 | 564 | [Session 564 handoff: the roadmap archive split into a part 7; nothing new from Sam or the team](../session_564_handoff.md) | 2026-11-03 |
