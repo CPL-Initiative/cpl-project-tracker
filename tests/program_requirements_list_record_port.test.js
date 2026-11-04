@@ -18,7 +18,10 @@
 //  (12) the dropdowns over the List (District, College, SWP Region, CIP Sector, Sam 2026-10-14) narrow the rows and the
 //       filter counts, and Clear the filters lifts them;
 //  (13) a call's Open it in the List searches the record and opens its panel; a count clears the scope it did not set;
-//  (14) a record with items for the college points to its drafts on Catalogs.
+//  (14) a record with items for the college drafts the message to the college in its panel (Program records' college
+//       section, SkyLoquat 2026-11-04), and a college whose records could not be read says so;
+//  (15) Needs a fix in place: the note opens, an empty one is not sent, a written one posts and says where it went
+//       (Program records' (12), SkyLoquat 2026-11-04).
 // Run from repo root: `npm test` (or `node tests/program_requirements_list_record_port.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -211,6 +214,21 @@ const btn = (root, re) => Array.from(root.querySelectorAll("button")).find((b) =
     && posts[0].p_control_number === "10001" && posts[0].p_verdict === "confirm" && posts[0].p_requirements_fp === "fp1", JSON.stringify(posts));
   check("(5) the state line says who confirmed it", /Confirmed by you/.test(txt(p.querySelector(".prl-acts .prh-state"))), txt(p.querySelector(".prl-acts .prh-state")));
   check("(5) the save leaves the panel open and says so", /Confirmed\. The record is checked/.test(txt(p.querySelector(".prh-said"))), txt(p.querySelector(".prh-verdict")));
+  // (15) Needs a fix, in place (Program records' (12), SkyLoquat 2026-11-04): the note opens, an empty one is not sent, a written one
+  // posts and says where it went.
+  const fixB = btn(p, /^Needs a fix$/);
+  fixB.click();
+  const vbox = p.querySelector(".prh-verdict");
+  check("(15) ⭐ Needs a fix opens the note", fixB.getAttribute("aria-expanded") === "true" && !vbox.querySelector(".prh-fix").hidden);
+  vbox.querySelector(".prh-fix button").click();
+  check("(15) an empty note is not sent", posts.length === 1 && txt(vbox.querySelector(".prh-said")) === "Write what should change, then save.");
+  vbox.querySelector(".prh-fix textarea").value = "Read the electives from the addendum.";
+  vbox.querySelector(".prh-fix button").click(); await settle();
+  p = pnl(tr.d);
+  check("(15) ⭐ Needs a fix posts the note", posts.length === 2 && posts[1].p_verdict === "needs_fix" && posts[1].p_note === "Read the electives from the addendum.",
+    JSON.stringify(posts[1]));
+  check("(15) and says where it went", /joins Los Angeles Valley's open questions on its reading procedure/.test(txt(p.querySelector(".prh-said"))),
+    txt(p.querySelector(".prh-verdict")));
   btn(p, /^Close$/).click(); await settle();
   const flr2 = Array.from(tr.d.querySelectorAll(".prl-filters button, .prl-filters span")).map(txt);
   check("(5) the Confirmed and Waiting counts move without a new build", flr2.indexOf("Confirmed by a person (1)") >= 0 && flr2[1] === "Waiting on your reading (2)", flr2.join("|"));
@@ -260,6 +278,23 @@ const btn = (root, re) => Array.from(root.querySelectorAll("button")).find((b) =
   check("(12) a CIP sector narrows by the program's own CIP code", progs(tdd.d) === "Welding Technology", progs(tdd.d));
   btn(tdd.d, /^Clear the filters$/).click(); await settle();
   check("(12) Clear the filters lifts them", rows(tdd.d).length === 5 && btn(tdd.d, /^Clear the filters$/).hidden, String(rows(tdd.d).length));
+  // The dropdown's own mechanics (Program records' (24b), SkyLoquat 2026-11-04): a word opens its list, Escape returns to the word,
+  // a click elsewhere closes it.
+  const ddb = dd("college").querySelector(".prh-dd-btn"), pop = dd("college").querySelector(".prh-dd-pop");
+  check("(12) each dropdown opens from a word, its list hidden until asked", !!ddb && ddb.tagName === "BUTTON" && !!pop && pop.hidden
+    && ddb.getAttribute("aria-expanded") === "false");
+  ddb.click();
+  check("(12) the word opens its list and says so", pop.hidden === false && ddb.getAttribute("aria-expanded") === "true");
+  pop.dispatchEvent(new tdd.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  check("(12) Escape closes it and returns to the word", pop.hidden === true && tdd.d.activeElement === ddb);
+  ddb.click(); tdd.d.body.dispatchEvent(new tdd.w.MouseEvent("mousedown", { bubbles: true })); tdd.d.body.dispatchEvent(new tdd.w.MouseEvent("click", { bubbles: true }));
+  check("(12) a click elsewhere closes it", pop.hidden === true && ddb.getAttribute("aria-expanded") === "false");
+  const tde = tab({ commons: COMMONS_DOC, setup: function (S) { S.districtError = "map_colleges answered 503"; } });
+  await settle();
+  check("(12) an unread district list says so, naming the table, and leaves out District and SWP Region",
+    /The district and region lists could not be read \(map_colleges answered 503\)/.test(txt(tde.d.querySelector(".prl-scope")))
+    && !tde.d.querySelector('.prl-scope .prh-dd[data-filter="district"], .prl-scope .prh-dd[data-filter="region"]')
+    && !!tde.d.querySelector('.prl-scope .prh-dd[data-filter="college"]'));
 
   // ── (13) a call's record, and a count ──
   const tg = tab({ commons: COMMONS_DOC, records: rich(JSON.parse(JSON.stringify(RECORDS))) });
@@ -274,13 +309,35 @@ const btn = (root, re) => Array.from(root.querySelectorAll("button")).find((b) =
 
   // ── (14) the college's drafts ──
   const tk = tab({ commons: COMMONS_DOC, records: (function () { const R = rich(JSON.parse(JSON.stringify(RECORDS)));
-    R[0].display.gaps.push({ kind: "Catalog and state file differ", owner: "college", text: "WELD 201 is printed at 3 units; the state file says 4." }); return R; })() });
+    R[0].display.gaps.push({ kind: "Catalog and state file differ", owner: "college", text: "WELD 201 is printed at 3 units; the state file says 4." });
+    R[1]._light = false; R[1].record = { blocks: [] }; return R; })() });
   await settle();
   titleBtn(tk.d, "Welding Technology").click(); await settle();
-  const dw = btn(pnl(tk.d), /^Open Los Angeles Valley's drafts on Catalogs$/);
-  check("(14) a record with items for the college points to its drafts on Catalogs", !!dw && /1 place the catalog and the state file differ/.test(txt(pnl(tk.d))));
+  const dw = btn(pnl(tk.d), /^Draft the message to Los Angeles Valley$/);
+  check("(14) ⭐ a record with items for the college offers the draft to the college, in its panel (Program records' college section, SkyLoquat 2026-11-04)",
+    !!dw && /1 place the catalog and the state file differ for Los Angeles Valley to correct/.test(txt(pnl(tk.d))), txt(pnl(tk.d)).slice(0, 200));
   dw.click(); await settle();
-  check("(14) which opens Catalogs on the college", tk.S.view === "catalogs" && tk.S.q === "Los Angeles Valley College");
+  const box = pnl(tk.d).querySelector("details.prh-drafts");
+  check("(14) ⭐ pressing it opens the drafts for the college, open, saying the MAP team decides when to send",
+    !!box && box.open && /Drafts for the college \(1\)/.test(txt(box)) && /The MAP team decides when to send/.test(txt(box)), box && txt(box).slice(0, 200));
+  const ta = box && box.querySelector("textarea");
+  check("(14) the draft is labeled and read-only, and names the item", !!ta && ta.hasAttribute("readonly")
+    && !!box.querySelector('label[for="' + ta.id + '"]') && /WELD 201 is printed at 3 units/.test(ta.value));
+  const copy = box && btn(box, /^Copy the draft$/);
+  check("(14) a Copy the draft control is offered", !!copy);
+  if (copy) { copy.click(); await settle(); check("(14) copying says what happened", /Copied|Selected/.test(txt(box))); }
+  const tk2 = tab({ commons: COMMONS_DOC, records: (function () { const R = JSON.parse(JSON.stringify(RECORDS));
+    R[1].display.gaps = [{ kind: "Catalog and state file differ", owner: "college", text: "ACCT 1 is printed; the state file lacks it." }]; R[1]._light = false;
+    R[1].record = { blocks: [] }; return R; })(), onFetch: function (url, init, reads) {
+    if (/program_requirement_records\?.*college=/.test(url)) { reads.push(url); return Promise.resolve({ ok: false, status: 400, json: () => Promise.resolve({}), text: () => Promise.resolve("") }); }
+    return null;
+  } });
+  await settle();
+  titleBtn(tk2.d, "Accounting").click(); await settle();
+  btn(pnl(tk2.d), /^Draft the message to Los Angeles Valley$/).click(); await settle();
+  check("(14) a college whose records could not be read says so and offers Read again, never an empty draft",
+    /records could not be read/.test(txt(pnl(tk2.d))) && !!btn(pnl(tk2.d), /^Read again$/) && !pnl(tk2.d).querySelector("details.prh-drafts"),
+    txt(pnl(tk2.d)).slice(0, 300));
 
   // ── (11) the first waiting record, and the next in the List's order ──
   const tn = tab({ commons: COMMONS_DOC, review: true, records: (function () { const R = rich(JSON.parse(JSON.stringify(RECORDS)));

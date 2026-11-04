@@ -161,8 +161,10 @@ function restFor(byCollege, asked, hold) {
   M.goTo({ view: "records", rcollege: "College of Alameda", rshow: "complete", sec: "records:find" });
   check("(d) an older Records address opens the List on its filter", M._state.view === "list" && (M._state.ls || {}).f === "pass");
   const P = FIX.records.map((r) => Object.assign({ college: "College of Alameda", program_title: r.control_number }, r));
+  // The List's Disagree filter keeps a record that misses a listed course or adds one (its fails, from machineFails).
   check("(d) the tab's conflict filter lists what the line counted",
-    M.filterRecords(P, "", "conflict", "all").map((p) => p.control_number).join(",") === "A2,A3");
+    P.filter((p) => M.machineFails(p).some((f) => f === "courses" || f === "off-list")).map((p) => p.control_number).join(",") === "A2,A3"
+    && /if \(f === "conflict"\) return r\.fails\.indexOf\("courses"\) >= 0 \|\| r\.fails\.indexOf\("off-list"\) >= 0/.test(PRH));
   check("(d) and the List offers it", /\["conflict", "Disagree with the state's course list"\]/.test(PRH));
 
   // ── (e) ──
