@@ -28,14 +28,15 @@ its work with its moniker; the CPL queue's `docs/session_<N>_handoff.md` stays t
   `tests/coci_list_cc_card.test.js` (31). The engine anchors its Title drawer on the panel's first direct-child
   `<details>`: the sign-in fold is wrapped in a `div` so it never pulls the drawer up (seen only in the screenshot).
 - **#2777 Context meter: a null usage field counts as zero.** The meter and its hook had been silent.
-- **#2779 Every COBI view has an address** (open at this checkpoint; merge on green). `CPL_SESSION.arrival(tab)`;
+- **#2779 Every COBI view has an address** (merged). `CPL_SESSION.arrival(tab)`;
   21 more tabs open the view their address names and report it; CLAUDE.md's *Every view has an address*;
   `tests/every_view_has_an_address.test.js` (107). Built by three agents on disjoint files; each tab has a round trip.
 
 ## Open work, in order
 
-1. **Merge #2779** once `test` passes on its head. Then trim `CLAUDE.md` back under its 60,000-byte budget (the lint
-   flagged 60,898 before #2779 added its bullet): move PULL prose to `docs/reference/`, never a rule that must fire.
+1. **#2779 merged; CLAUDE.md is back under its 60,000-byte budget** (this checkpoint moved the checkpoint-scope
+   paragraph to `obsidian_vault_wiring.md` and trimmed two asides). Keep it there: move PULL prose out before
+   adding a rule.
 2. **Suggested merges: read Sam's answer.** Asked in chat 2026-11-04: about 7,300 suggestions written daily
    (`unified_courses_suggestions.js`), none acted on since Sep 27, unseen since 10-18. 1 retire with the tab
    (recommended; stop the daily build writing the file), 2 carry the merge editor into the List. If no answer, carry
