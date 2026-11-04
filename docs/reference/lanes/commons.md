@@ -109,7 +109,7 @@ SkyView on each band, read only (an M-ID move is a re-mint, done in SkyView). Sa
 COCI lookup tab in COBI...maybe courses in that?"*; SkyView stays the map alone. The engine filters before it sorts and
 sorts on per-column ranks (a settled finder keystroke 228 ms at 141,738 rows). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
 only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
-bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04; the List norms note).
+bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04).
 
 **The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
 bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
