@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1382,
-    "bytes": 14010803,
-    "over_budget": 1,
-    "handoff_max": 569,
+    "files": 1383,
+    "bytes": 14015968,
+    "over_budget": 2,
+    "handoff_max": 570,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60641,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 139,
-        "bytes": 4255419,
+        "bytes": 4255598,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8638,
+        "bytes": 8644,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2617309,
+        "bytes": 2618606,
         "over": 0
       },
       "kb_note": {
@@ -46,23 +46,23 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 482682,
-        "over": 0
+        "bytes": 482730,
+        "over": 1
       },
       "handoff": {
-        "files": 536,
-        "bytes": 3761627,
+        "files": 537,
+        "bytes": 3765262,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 1,
+      "oversized_doc": 2,
       "kb_note_dialect": 1,
       "vault_heavy_path": 73
     },
     "vault": {
       "files": 25608,
-      "bytes": 4192311041,
+      "bytes": 4192305860,
       "heavy_bytes": 2980407265,
       "heavy_share": 0.711,
       "ignore_filters": [
@@ -166,6 +166,19 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20022,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 22,
+        "ratio": 1.0
+      },
+      "message": "20,022 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
       "rule": "vault_heavy_path",

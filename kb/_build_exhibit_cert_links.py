@@ -184,13 +184,50 @@ FAA = {
 }
 
 
+# Fifth to seventh families (S569, 2026-11-04), hand-checked against the catalog the same way. Each issuer is spelled
+# two ways in the catalog, so the spellings fold to one. Only a title that names a certification the catalog lists is
+# linked: a level short of journey (NCCER Electrician Level 1 to 3) holds no catalog row, "Autodesk Certified
+# Professional" names no one certification, "Fire Inspector 1" mixes ICC, SFT and NFPA exhibits, and the ASME welder
+# qualifications are not in the catalog yet. Courses (AutoCAD Beginning, Autodesk Revit) stay out.
+HAND = {
+    "Autodesk": (("Autodesk", "Autodesk, Inc."), {
+        "Autodesk Certified User": ("all", ["Autodesk Certified User"]),
+        "Autodesk Certified User/Professional — AutoCAD": ("any", [
+            "Autodesk Associate (Certified User) AutoCAD", "AutoCAD Certified User", "AutoCAD Certified Professional",
+            "Autodesk Certified Professional in AutoCAD for Design and Drafting"]),
+        "Autodesk Certified User/Professional — Revit Architecture": ("any", [
+            "Autodesk Certified User - Revit", "Autodesk Certified Professional in Revit for Architectural Design"]),
+    }),
+    "NCCER": (("National Center for Construction Education and Research",
+               "National Center for Construction Education and Research (NCCER)"), {
+        "NCCER Commercial Carpenter Journey Level": ("all", ["Commercial Carpenter"]),
+        "NCCER Industrial Carpenter Journey Level": ("all", ["Industrial Carpenter"]),
+        "NCCER Commercial Electrician Level 4/Journey Level": ("any", ["Commercial Electrician", "NCCER Commercial Electrician"]),
+        "NCCER Industrial Electrician Level 4/Journey Level": ("all", ["Industrial Electrician"]),
+        "NCCER Construction Foreman Management": ("all", ["Construction Foreman"]),
+        "NCCER Construction Superintendent Management": ("all", ["Construction Superintendant Certification"]),
+        "NCCER CORE Curriculum - Introduction to Basic Construction Skills": ("all", ["NCCER Core Credential"]),
+        "NCCER HVACR Level 1": ("all", ["NCCER HVAC, Level 1"]),
+        "NCCER Welding Level 1": ("all", ["Level 1 - Welding"]),
+    }),
+    "ASME": (("American Society of Mechanical Engineers (ASME)", "American Society of Mechanical Engineers International"), {
+        "ASME GDTP Y14.5 Certification": ("any", [
+            "Geometric Dimensioning & Tolerancing Professional - Technologist",
+            "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
+            "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level"]),
+    }),
+}
+HAND_ISSUER = {sp: fam for fam, (spellings, _) in HAND.items() for sp in spellings}
+HAND_TITLE = {ut: fam for fam, (_, table) in HAND.items() for ut in table}
+
+
 def catalog_vendor():
-    """The catalog's CompTIA, Cisco, Microsoft and FAA rows (the FAA's two spellings as one), by (issuer, name); a name listed twice keeps its lowest id."""
+    """The catalog's CompTIA, Cisco, Microsoft, FAA and HAND rows (each issuer's spellings as one), by (issuer, name); a name listed twice keeps its lowest id."""
     rows = json.loads(CATALOG.read_text(encoding="utf-8"))["credentials"]
     out = {}
     for r in sorted(rows, key=lambda r: (len(r["id"]), r["id"])):
-        issuer = FAA_ISSUER if r.get("issuer") in FAA_ISSUER_SPELLINGS else r.get("issuer")
-        if issuer in VENDOR_ISSUERS + (FAA_ISSUER,):
+        issuer = FAA_ISSUER if r.get("issuer") in FAA_ISSUER_SPELLINGS else HAND_ISSUER.get(r.get("issuer"), r.get("issuer"))
+        if issuer in VENDOR_ISSUERS + (FAA_ISSUER,) + tuple(HAND):
             out.setdefault((issuer, r["name"]), {"id": r["id"], "name": r["name"], "issuer": issuer})
     return out
 
@@ -220,15 +257,20 @@ def build():
 
     for r in rows:
         ut = r.get("ut") or ""
-        if ut in VENDOR or ut in FAA:
-            rule, wanted = VENDOR[ut] if ut in VENDOR else FAA[ut]
-            issuer = FAA_ISSUER if ut in FAA else next(v for v in VENDOR_ISSUERS if ut.startswith(v))
+        if ut in VENDOR or ut in FAA or ut in HAND_TITLE:
+            if ut in HAND_TITLE:
+                issuer = HAND_TITLE[ut]
+                rule, wanted = HAND[issuer][1][ut]
+            else:
+                rule, wanted = VENDOR[ut] if ut in VENDOR else FAA[ut]
+                issuer = FAA_ISSUER if ut in FAA else next(v for v in VENDOR_ISSUERS if ut.startswith(v))
             ids, unresolved = [], []
             for name in wanted:
                 c = vendor.get((issuer, name))
                 if c:
                     certs[c["id"]] = {"code": None, "name": c["name"], "catalog_name": c["name"],
-                                      "issuer": issuer, "family": "FAA" if issuer == FAA_ISSUER else issuer}
+                                      "issuer": HAND[issuer][0][-1] if issuer in HAND else issuer,
+                                      "family": "FAA" if issuer == FAA_ISSUER else issuer}
                     if c["id"] not in ids:
                         ids.append(c["id"])
                 else:
@@ -298,7 +340,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},

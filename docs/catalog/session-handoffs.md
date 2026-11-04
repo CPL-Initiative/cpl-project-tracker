@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-536 document(s).
+537 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 570 | [Session 570 handoff: the cert link's Autodesk, NCCER and ASME families; Columbia's full read is next](../session_570_handoff.md) | 2026-11-04 |
 | 569 | [Session 569 handoff: the cert link's FAA family; Columbia's full read is next](../session_569_handoff.md) | 2026-11-04 |
 | 568 | [Session 568 handoff: Las Positas's SLOs loaded (505 rows); Columbia's full read is next](../session_568_handoff.md) | 2026-11-04 |
 | 567 | [Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read](../session_567_handoff.md) | 2026-11-04 |
