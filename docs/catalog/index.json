@@ -13916,12 +13916,11 @@
       "handoff",
       "cer",
       "commons-list",
-      "cr-reference",
-      "subjects",
       "program-requirements",
-      "coci-lookup"
+      "side-by-side",
+      "cpl-pathways"
      ],
-     "title": "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)",
+     "title": "CER redesign handoff: Program records retires into the Programs List, PRs 1 and 2 of 3 (SkyQuince)",
      "type": null,
      "updated": ""
     },
