@@ -1,11 +1,11 @@
 {
  "schema": 1,
- "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME.",
+ "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA.",
  "_reference_generated_at": "2026-11-04T06:20:04+00:00",
  "counts": {
-  "certs_linked": 200,
-  "titles_linked": 232,
-  "holds": 216,
+  "certs_linked": 216,
+  "titles_linked": 249,
+  "holds": 233,
   "bundles": 48,
   "aligned": 16,
   "codes_not_in_catalog": [
@@ -174,6 +174,20 @@
    "issuer": "College Board",
    "family": "CLEP"
   },
+  "ITC0745": {
+   "code": null,
+   "name": "Certified Associate in Project Management (CAPM)",
+   "catalog_name": "Certified Associate in Project Management (CAPM)",
+   "issuer": "PMI",
+   "family": "PMI"
+  },
+  "ITC0746": {
+   "code": null,
+   "name": "Project Management Professional",
+   "catalog_name": "Project Management Professional",
+   "issuer": "PMI",
+   "family": "PMI"
+  },
   "ITC0842": {
    "code": null,
    "name": "CCNA Certification",
@@ -292,6 +306,20 @@
    "catalog_name": "CompTIA Cloud Essentials",
    "issuer": "CompTIA",
    "family": "CompTIA"
+  },
+  "ITC1315": {
+   "code": null,
+   "name": "Commercial Building Inspector",
+   "catalog_name": "Commercial Building Inspector",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC1322": {
+   "code": null,
+   "name": "Residential Building Inspector",
+   "catalog_name": "Residential Building Inspector",
+   "issuer": "International Code Council",
+   "family": "ICC"
   },
   "ITC1348": {
    "code": null,
@@ -481,6 +509,27 @@
    "catalog_name": "Autodesk Certified User - Revit",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
+  },
+  "ITC3391": {
+   "code": null,
+   "name": "Certified Nurse Assistant",
+   "catalog_name": "Certified Nurse Assistant",
+   "issuer": "California Department of Public Health",
+   "family": "CDPH"
+  },
+  "ITC3422": {
+   "code": null,
+   "name": "Paramedic License (EMT-P)",
+   "catalog_name": "Paramedic License (EMT-P)",
+   "issuer": "California Emergency Medical Services Authority",
+   "family": "EMSA"
+  },
+  "ITC3424": {
+   "code": null,
+   "name": "Emergency Medical Technician (EMT)",
+   "catalog_name": "Emergency Medical Technician (EMT)",
+   "issuer": "California Emergency Medical Services Authority",
+   "family": "EMSA"
   },
   "ITC4053": {
    "code": null,
@@ -1335,6 +1384,69 @@
    "catalog_name": "IB World Religions SL",
    "issuer": "International Baccalaureate Organization (IBO)",
    "family": "IB"
+  },
+  "ITC5845": {
+   "code": null,
+   "name": "Building Plans Examiner",
+   "catalog_name": "Building Plans Examiner",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC5846": {
+   "code": null,
+   "name": "Certified Building Official",
+   "catalog_name": "Certified Building Official",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC5860": {
+   "code": null,
+   "name": "Commercial Mechanical Inspector",
+   "catalog_name": "Commercial Mechanical Inspector",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC5870": {
+   "code": null,
+   "name": "Mechanical Plans Examiner",
+   "catalog_name": "Mechanical Plans Examiner",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC5879": {
+   "code": null,
+   "name": "Residential Mechanical Inspector",
+   "catalog_name": "Residential Mechanical Inspector",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC5880": {
+   "code": null,
+   "name": "Residential Plans Examiner",
+   "catalog_name": "Residential Plans Examiner",
+   "issuer": "International Code Council",
+   "family": "ICC"
+  },
+  "ITC6512": {
+   "code": null,
+   "name": "PMI Professional in Business Analysis",
+   "catalog_name": "PMI Professional in Business Analysis",
+   "issuer": "PMI",
+   "family": "PMI"
+  },
+  "ITC6513": {
+   "code": null,
+   "name": "PMI Agile Certified Practitioner",
+   "catalog_name": "PMI Agile Certified Practitioner",
+   "issuer": "PMI",
+   "family": "PMI"
+  },
+  "ITC6514": {
+   "code": null,
+   "name": "PMI Risk Management Professional",
+   "catalog_name": "PMI Risk Management Professional",
+   "issuer": "PMI",
+   "family": "PMI"
   },
   "ITC7289": {
    "code": null,
@@ -2304,6 +2416,13 @@
     "ITC4113"
    ]
   },
+  "Building Plans Examiner": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5845"
+   ]
+  },
   "CLEP American Government": {
    "relation": "holds",
    "rule": "all",
@@ -2549,6 +2668,34 @@
     "ITC5257"
    ]
   },
+  "Certified Associate in Project Management (CAPM)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0745"
+   ]
+  },
+  "Certified Building Official": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5846"
+   ]
+  },
+  "Certified Nurse Assistant (CNA) Certification": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC3391"
+   ]
+  },
+  "Certified Nursing Assistant (CNA)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC3391"
+   ]
+  },
   "Cisco Certified Network Associate (CCNA)": {
    "relation": "holds",
    "rule": "all",
@@ -2583,6 +2730,20 @@
    "rule": "all",
    "certs": [
     "ITC0845"
+   ]
+  },
+  "Commercial Building Inspector": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1315"
+   ]
+  },
+  "Commercial Mechanical Inspector": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5860"
    ]
   },
   "CompTIA A+": {
@@ -2675,6 +2836,13 @@
    "rule": "all",
    "certs": [
     "ITC1013"
+   ]
+  },
+  "Emergency Medical Technician (EMT) Certification": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC3424"
    ]
   },
   "Engine Performance (ASE A8 Engine Performance)": {
@@ -2950,6 +3118,13 @@
     "ITC4092"
    ]
   },
+  "Mechanical Plans Examiner": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5870"
+   ]
+  },
   "Microsoft Certified Solutions Associate (MCSA) — Windows Server": {
    "relation": "holds",
    "rule": "all",
@@ -3188,12 +3363,68 @@
     "ITC7289"
    ]
   },
+  "PMI Agile Certified Practitioner (PMI-ACP)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC6513"
+   ]
+  },
+  "PMI Professional in Business Analysis (PMI-PBA)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC6512"
+   ]
+  },
+  "PMI Risk Management Professional (PMI-RMP)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC6514"
+   ]
+  },
+  "Paramedic License": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC3422"
+   ]
+  },
   "Private Pilot Certificate": {
    "relation": "holds",
    "rule": "any",
    "certs": [
     "ITC7485",
     "ITC7496"
+   ]
+  },
+  "Project Management Professional (PMP)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0746"
+   ]
+  },
+  "Residential Building Inspector": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1322"
+   ]
+  },
+  "Residential Mechanical Inspector": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5879"
+   ]
+  },
+  "Residential Plans Examiner": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5880"
    ]
   },
   "Suspension and Steering (ASE A4 Suspension and Steering)": {

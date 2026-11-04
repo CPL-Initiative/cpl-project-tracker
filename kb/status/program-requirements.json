@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-04T10:21:14Z",
-  "session": 569,
-  "moniker": "SkyAntennae",
+  "written_at": "2026-11-04T11:22:54Z",
+  "session": 570,
+  "moniker": "SkyFireworks",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_570_handoff.md",
+  "handoff": "docs/session_571_handoff.md",
   "next_step": {
     "title": "Columbia's full SLO read",
     "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
@@ -207,6 +207,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-04T11:22:00Z",
+      "text": "No harvest change this run: the day's SLO read had already run. The run added the PMI, ICC, CDPH and EMSA families to the exhibit-to-cert link (#2760)."
+    },
     {
       "at": "2026-11-04T10:20:00Z",
       "text": "No harvest change this run: the day's SLO read had already run. The run added the Autodesk, NCCER and ASME families to the exhibit-to-cert link (#2759)."
@@ -425,7 +429,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-04T11:12:00Z"
+    "at": "2026-11-04T12:12:00Z"
   },
   "harvest": {
     "day": "2026-11-04",

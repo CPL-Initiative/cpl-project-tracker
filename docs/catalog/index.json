@@ -16516,8 +16516,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 537,
+   "count": 538,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 571,
+     "path": "docs/session_571_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 571 handoff: the cert link's PMI, ICC, CDPH and EMSA families; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25676,5 +25692,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1371
+ "total": 1372
 }

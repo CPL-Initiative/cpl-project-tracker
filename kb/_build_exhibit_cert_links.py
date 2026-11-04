@@ -216,6 +216,35 @@ HAND = {
             "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
             "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level"]),
     }),
+    # Eighth to eleventh families (S570, 2026-11-04): PMI, ICC, CDPH and EMSA, one catalog spelling each. Left out:
+    # PgMP and PfMP (not in the catalog), ICC's California code titles and the INSPEC courses, the Acute Care Nursing
+    # Assistant course, EMR (not in the catalog), the EMT courses, "EMT-2 Certification" (California's old EMT-II has
+    # no catalog row) and "EMT Certification", whose exhibits name EMSA, NREMT and ACE.
+    "PMI": (("PMI",), {
+        "Certified Associate in Project Management (CAPM)": ("all", ["Certified Associate in Project Management (CAPM)"]),
+        "Project Management Professional (PMP)": ("all", ["Project Management Professional"]),
+        "PMI Agile Certified Practitioner (PMI-ACP)": ("all", ["PMI Agile Certified Practitioner"]),
+        "PMI Professional in Business Analysis (PMI-PBA)": ("all", ["PMI Professional in Business Analysis"]),
+        "PMI Risk Management Professional (PMI-RMP)": ("all", ["PMI Risk Management Professional"]),
+    }),
+    "ICC": (("International Code Council",), {
+        "Building Plans Examiner": ("all", ["Building Plans Examiner"]),
+        "Certified Building Official": ("all", ["Certified Building Official"]),
+        "Commercial Building Inspector": ("all", ["Commercial Building Inspector"]),
+        "Commercial Mechanical Inspector": ("all", ["Commercial Mechanical Inspector"]),
+        "Mechanical Plans Examiner": ("all", ["Mechanical Plans Examiner"]),
+        "Residential Building Inspector": ("all", ["Residential Building Inspector"]),
+        "Residential Mechanical Inspector": ("all", ["Residential Mechanical Inspector"]),
+        "Residential Plans Examiner": ("all", ["Residential Plans Examiner"]),
+    }),
+    "CDPH": (("California Department of Public Health",), {
+        "Certified Nurse Assistant (CNA) Certification": ("all", ["Certified Nurse Assistant"]),
+        "Certified Nursing Assistant (CNA)": ("all", ["Certified Nurse Assistant"]),
+    }),
+    "EMSA": (("California Emergency Medical Services Authority",), {
+        "Emergency Medical Technician (EMT) Certification": ("all", ["Emergency Medical Technician (EMT)"]),
+        "Paramedic License": ("all", ["Paramedic License (EMT-P)"]),
+    }),
 }
 HAND_ISSUER = {sp: fam for fam, (spellings, _) in HAND.items() for sp in spellings}
 HAND_TITLE = {ut: fam for fam, (_, table) in HAND.items() for ut in table}
@@ -340,7 +369,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},

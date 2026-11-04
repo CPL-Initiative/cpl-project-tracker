@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-537 document(s).
+538 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 571 | [Session 571 handoff: the cert link's PMI, ICC, CDPH and EMSA families; Columbia's full read is next](../session_571_handoff.md) | 2026-11-04 |
 | 570 | [Session 570 handoff: the cert link's Autodesk, NCCER and ASME families; Columbia's full read is next](../session_570_handoff.md) | 2026-11-04 |
 | 569 | [Session 569 handoff: the cert link's FAA family; Columbia's full read is next](../session_569_handoff.md) | 2026-11-04 |
 | 568 | [Session 568 handoff: Las Positas's SLOs loaded (505 rows); Columbia's full read is next](../session_568_handoff.md) | 2026-11-04 |

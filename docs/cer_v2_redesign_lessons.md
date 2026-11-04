@@ -1045,3 +1045,19 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
   titles name ICC, SFT and Cal-JAC too. NFPA's Firefighter, Fire Officer and Instructor titles name a standard that
   IFSAC or Pro Board certifies, and the catalog lists no NFPA certification for them.
 - **Next:** the ASME BPVC welder qualifications and the SFT fire titles wait on the credential watch listing them.
+
+## SkyFireworks (2026-11-04, S570, the CPL Queue routine): PMI, ICC, CDPH and EMSA in the cert link
+
+- **The gap by issuer, measured against the catalog.** Of the unlinked titles, the California Community Colleges'
+  1,334 are courses, and the apprenticeship committees (CTCNC 132, Southwest Carpenters 61, Iron Workers 52, UA 342 23,
+  IBEW 23), SFT 99, DANTES 38 (the catalog holds 1 DSST row), ACE 29 and POST 16 have no catalog certs to point at.
+  The issuers whose titles name a catalog cert were PMI, ICC, CDPH and EMSA. #2760 adds them: 17 titles to 16 certs (both
+  CNA titles hold one cert). The link holds 249 titles to 216 certs.
+- **One catalog spelling each.** These four issuers have a single spelling in the catalog, so each `HAND` entry is a
+  one-item tuple. The reference spells ICC two ways, but the table keys on the title, so that split does not matter.
+- **Left out:** PgMP and PfMP (no catalog rows), ICC's California code titles and the INSPEC courses, the EMT and
+  nursing-assistant courses, *EMT-2 Certification* (California's old EMT-II has no catalog row), and *EMT
+  Certification*, whose exhibits name EMSA, NREMT and ACE.
+- **Next families:** AWS welding (19 titles, 17 catalog rows) needs a check of the D1.1 qualifications against the
+  catalog's names. NWCG (17 titles, 6 rows) and SWRCB (12, 4) are small. DANTES DSST waits on the credential watch to
+  list the exams.

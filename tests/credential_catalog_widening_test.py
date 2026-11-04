@@ -236,7 +236,7 @@ class FaaCerts(unittest.TestCase):
 
 
 class HandFamilies(unittest.TestCase):
-    """Autodesk, NCCER and ASME (S569): every named cert resolves across the issuer's two catalog spellings, and the
+    """Autodesk, NCCER and ASME (S569), PMI, ICC, CDPH and EMSA (S570): every named cert resolves across the issuer's two catalog spellings, and the
     titles that name no one catalog certification (levels short of journey, courses, mixed issuers) are never linked."""
 
     @classmethod
@@ -257,5 +257,7 @@ class HandFamilies(unittest.TestCase):
     def test_left_out(self):
         for title in ("NCCER Commercial Electrician Level 1", "NCCER Industrial Electrician Level 3", "AutoCAD Beginning",
                       "Autodesk Revit", "Autodesk Certified Professional", "Fire Inspector 1",
-                      "ASME BPVC Section IX — GTAW Welder Qualification"):
+                      "ASME BPVC Section IX — GTAW Welder Qualification", "Program Management Professional (PgMP)",
+                      "California Building Code Certification", "Acute Care Nursing Assistant", "EMT Certification",
+                      "EMT-2 Certification", "Emergency Medical Technician Basic"):
             self.assertNotIn(title, self.links)
