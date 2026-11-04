@@ -5671,6 +5671,12 @@
     setLane(r);
     return true;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("credential-reference", function () {
+    var l = state.lane;
+    return l ? "credential-reference/" + (l === "held" ? "needs" : l === "all" ? "ref" : l) : "credential-reference";
+  });
 
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
