@@ -1670,6 +1670,11 @@
     return d && Array.isArray(d.findings) ? d.findings.filter(function (f) { return f.needs_judgment && ASK_SKIP.indexOf(f.rule) < 0; }) : null;
   }
   function scanAsksOf(ut) { return (scanAsks() || []).filter(function (f) { return f.item === ut; }); }
+  /* Saved by a person this visit: a code, a note, a Take or a Confirm (each marks the row changed). */
+  function answeredThisVisit(ut) { var L = listState(); return !!(L.changed && L.changed.indexOf(ut) !== -1); }
+  /* Where a saved answer goes next: the sync (phase-1e-sync.yml, dispatched by a session after a working pass) carries
+     kb_curation into the reference file, and the daily scan (kb/_csr_trail.py, 06:17 UTC) reads it there. */
+  var SCAN_NEXT = "the sync carries it into the reference file and the next daily scan (06:17 UTC) reads it again";
   function listFilterId(id) { return LIST_FILTERS.some(function (f) { return f[0] === id; }) ? id : null; }
   function confirmedHow(e) {
     if (!isConfirmed(e)) return "open";
@@ -1784,6 +1789,10 @@
     if (stop === "declined") return Promise.resolve({ ok: false, words: v + " stays off " + r.ut + "; nothing changed." });
     return writeCanon(e, v).then(function (res) {
       if (!res.ok) return { ok: false, words: "The Common SUBJ of " + r.ut + " did not save (" + failWords(res) + "); it is back as it was." };
+      // An edit row open on this row follows the save (Sam, 2026-11-04: Take WOOD saved while the open row still read
+      // CNSC, so its Save would have put CNSC back). The note draft stays as typed.
+      var LS = listState();
+      if (LS.edit === r.ut && LS.draft) LS.draft.subj = v;
       return { ok: true, words: opts.confirm && v === was ? "Confirmed " + v + " for " + r.ut + "." : "Saved " + r.ut + ": " + v + "." };
     }, function () { return { ok: false, words: "The Common SUBJ of " + r.ut + " did not save (no answer); it is back as it was." }; });
   }
@@ -1796,10 +1805,77 @@
       return { ok: true, words: "Saved the note on " + r.ut + "." };
     }, function () { return { ok: false, words: "The note on " + r.ut + " did not save (no answer); it is back as it was." }; });
   }
+  var SEED_NOTE = "changed code to better align with local discipline use";
+  /* Check alignment: a small audit of the code in the box and one recommendation (Sam, 2026-11-04: "What if I enter a
+     subj code that is already being used?"; "a Check Alignment button in the code box that fires a little audit and
+     recommendation"). It reads what the page holds: the Common SUBJ index (another MQ discipline's code collides at the
+     re-mint), the M-IDs' codes, the colleges' local codes, and the panel's course file for how many colleges use each
+     code here. The scan's rules stay in kb/_csr_trail.py; this reads the same facts and says them for one code. */
+  function codeAudit(r, raw) {
+    var was = (r.e.canonical_subj4 || "").toUpperCase(), v = String(raw == null ? "" : raw).replace(/\s+/g, "").toUpperCase() || was;
+    if (!v) return "Type a code to check it.";
+    if (!SUBJ4_RE.test(v)) return v + ": a Common SUBJ is four letters, A to Z. Recommendation: pick a four-letter code.";
+    var doc = state.lc && state.lc.docs[r.ut];
+    var colsOf = function (c) {
+      var rows = doc && doc.by && doc.by[c]; if (!rows) return 0;
+      var seen = {}; rows.forEach(function (x) { seen[x[0]] = 1; }); return Object.keys(seen).length;
+    };
+    var own = otherOwners(v, r.ut), users = otherUsers(v, r.ut), elsewhere = [];
+    mergedEntries().forEach(function (e) {
+      var n = (e.local_subject_variants || {})[v];
+      if (n && e.discipline !== r.ut) elsewhere.push(e.discipline + " (" + plural(n, "course", "courses") + ")");
+    });
+    var here = (r.e.local_subject_variants || {})[v] || 0, hereCols = colsOf(v);
+    var facts = [];
+    facts.push(own.length ? v + " is the Common SUBJ of " + own.map(function (o) { return o.d; }).join(" and ") + ", so the two would collide at the re-mint"
+      : v + " is no other MQ discipline's Common SUBJ");
+    facts.push(here ? plural(hereCols || 1, "college", "colleges") + " file " + plural(here, "course", "courses") + " under " + v + " here" : "no college files these courses under " + v);
+    if (elsewhere.length) facts.push("colleges use " + v + " under " + elsewhere.slice(0, 3).join(", ") + (elsewhere.length > 3 ? " and " + fmtN(elsewhere.length - 3) + " more" : ""));
+    if (users.length) facts.push("M-IDs under " + users.slice(0, 3).map(function (u) { return u.d + " (" + fmtN(u.n) + ")"; }).join(", ") + " carry " + v);
+    if (v !== was && r.e.total_mids) facts.push("a change re-keys " + plural(r.e.total_mids, "M-ID", "M-IDs") + " at the next fold");
+    // The code most colleges use here, four letters and no one else's Common SUBJ.
+    var best = null;
+    r.locals.forEach(function (x) {
+      var c = x[0]; if (!SUBJ4_RE.test(c) || otherOwners(c, r.ut).length) return;
+      var k = [colsOf(c), x[1]];
+      if (!best || k[0] > best.k[0] || (k[0] === best.k[0] && k[1] > best.k[1])) best = { code: c, k: k };
+    });
+    var rec;
+    if (own.length) rec = "not " + v + "; it belongs to " + own[0].d + (best && best.code !== v ? ". Consider " + best.code + ", which " + plural(best.k[0] || 1, "college uses", "colleges use") + " here" : "") + ".";
+    else if (best && best.code === v) rec = v + ": more colleges use it here than any other free code.";
+    else if (best && best.k[0] > hereCols) rec = "consider " + best.code + ": " + plural(best.k[0], "college uses", "colleges use") + " it here, against " + fmtN(hereCols) + " for " + v + ".";
+    else if (!here && v !== was) rec = "keep " + (was || "the current code") + " unless its letters mislead: " + v + " is new to every college, so it gains no match and costs the re-key.";
+    else rec = v + " reads well against the data.";
+    return facts.join("; ") + ". Recommendation: " + rec;
+  }
+  function checkAlignment(r, d) {
+    var go = function () {
+      d._hint = codeAudit(r, d.subj);
+      var hn = document.getElementById("csl-edit-hint");
+      if (hn) { hn.textContent = d._hint; hn.hidden = false; }
+    };
+    if (state.lc && Object.prototype.hasOwnProperty.call(state.lc.docs, r.ut)) go();
+    else localCourses(r.ut).then(go, go);
+  }
   function listSaveRow(r) {
     var L = listState(), d = L.draft || {};
     var code = String(d.subj == null ? "" : d.subj).replace(/\s+/g, "").toUpperCase(), note = String(d.notes == null ? "" : d.notes);
     var codeChanged = code !== (r.e.canonical_subj4 || "").toUpperCase(), noteChanged = note !== (r.e._notes || "");
+    // The seeded reason rides a code change only: left as seeded on a row whose code stays, it is no change.
+    if (!codeChanged && !r.e._notes && note === SEED_NOTE) noteChanged = false;
+    // Keeping the code asks for its reason (Sam, 2026-11-04: "what if I want to keep the code as is? Maybe I should be
+    // required to add a note that our procedure can be aware of for future alignments"). Save with the code unchanged
+    // is the keep; on a row with no note it starts one and waits. The sync carries the note into the reference file, and
+    // the scan's "a modal choice without a note" reads it there.
+    var keepStub = "kept " + code + ": ";
+    if (!codeChanged && !r.e._notes && (!note.trim() || note.trim() === keepStub.trim() || note === SEED_NOTE)) {
+      d.notes = keepStub; L.draft = d;
+      L.note = "To keep " + (code || "the code") + " on " + r.ut + ", say why in the Note, then Save: the nightly scan reads the note, so a later alignment knows the reason.";
+      listRepaint();
+      var nb = document.getElementById("csl-notes");
+      if (nb) { nb.focus(); try { nb.setSelectionRange(nb.value.length, nb.value.length); } catch (e) {} }
+      return Promise.resolve();
+    }
     if (!codeChanged && !noteChanged) { L.edit = null; L.draft = null; L.note = "Nothing changed."; listRepaint(); return Promise.resolve(); }
     L.busy = true; listRepaint();
     var said = [];
@@ -1926,7 +2002,9 @@
         if (L.f === "cid") return r.e.canonical_source === "c-id";
         if (L.f === "chip") return authorityChips(r.e).length > 0;
         if (L.f === "proposed") return r.e.authority_flag === "proposed";
-        if (L.f === "scan") return scanAsksOf(r.ut).length > 0;
+        // A row a person saved this visit leaves the list needing a look (Sam, 2026-11-04: "after I edit and save subj,
+        // will the list needing a look shorten?"); the scan reads it again once the sync has carried the save.
+        if (L.f === "scan") return scanAsksOf(r.ut).length > 0 && !answeredThisVisit(r.ut);
         return true;
       },
       hay: function (r) {
@@ -1938,7 +2016,23 @@
       edit: {
         fields: [{ id: "csl-subj", label: "Common SUBJ, four letters", key: "subj", ph: "ABCD" }, { id: "csl-notes", label: "Note", key: "notes" }],
         draft: function (r) { return { subj: r.e.canonical_subj4 || "", notes: r.e._notes || "" }; },
-        save: listSaveRow
+        // Sam's usual reason fills an empty Note when the code is edited (2026-11-04: "add a pre-seeded note to the notes
+        // field"; "maybe the note should fire when the subj code is edited"), and leaves again if the code goes back.
+        // A note the reader typed is never touched.
+        onInput: function (r, key, d) {
+          if (key !== "subj") return;
+          d._hint = "";   // a check read the code as it was; a new keystroke clears it
+          if (r.e._notes) return;
+          var changed = String(d.subj || "").replace(/\s+/g, "").toUpperCase() !== (r.e.canonical_subj4 || "").toUpperCase();
+          if (changed && !d.notes) d.notes = SEED_NOTE;
+          else if (!changed && d.notes === SEED_NOTE) d.notes = "";
+        },
+        save: listSaveRow,
+        // Check alignment beside the code box (Sam, 2026-11-04: "a Check Alignment button in the code box that fires a
+        // little audit and recommendation").
+        extra: function (r, d, word) {
+          return [word("Check alignment", function () { checkAlignment(r, d); }, { "aria-label": "Check the alignment of the code typed for " + r.ut })];
+        }
       },
       cellSave: listCellSave,
       // A row press edits it and the panel follows (Sam, 2026-11-04); the panel carries what the drawers showed.
@@ -2042,9 +2136,12 @@
     var on = {}, files = [], uts = {};
     (listRowsAll() || []).forEach(function (r) { uts[r.ut] = 1; });
     A.forEach(function (f) { if (uts[f.item]) on[f.item] = 1; else files.push(f); });
-    var n = Object.keys(on).length;
+    var done = Object.keys(on).filter(answeredThisVisit);
+    var n = Object.keys(on).length - done.length;
+    var left = A.filter(function (f) { return uts[f.item] && done.indexOf(f.item) < 0; }).length;
     return api.el("p", { cls: "cs-quiet", text: plural(A.length, "scan finding", "scan findings") + " to confirm or note: " +
-      plural(A.length - files.length, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
+      plural(left, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
+      (done.length ? "; " + plural(done.length, "MQ discipline", "MQ disciplines") + " answered this visit left the list (" + done.join(", ") + "), and " + SCAN_NEXT : "") +
       (files.length ? "; " + files.map(function (f) { return (RULE_WORDS[f.rule] || f.rule) + " in " + f.item; }).join("; ") +
         ", on a file rather than an MQ discipline, which Run the SUBJ check lists" : "") + "." });
   }
@@ -2095,9 +2192,16 @@
   }
   /* A panel reads its MQ discipline's course file once as it opens, then gives each count its tooltip in place. */
   function prefetchLocalCourses(r) {
-    if (state.lc && state.lc.docs[r.ut]) return;
-    localCourses(r.ut).then(function (doc) {
-      r.locals.forEach(function (x) { setTip(document.getElementById("csl-lc-" + x[0]), localCourseRows(doc, x[0]), x[0]); });
+    // Read once: a discipline with no course file reads null, and null is still read (a falsy test redrew forever).
+    if (state.lc && Object.prototype.hasOwnProperty.call(state.lc.docs, r.ut)) return;
+    localCourses(r.ut).then(function () {
+      // The Colleges column and the tooltips fill in one repaint; focus and a field's caret stay where they were.
+      if (listState().panel !== r.ut || !LIST_ENGINE) return;
+      var a = document.activeElement, id = a && a.id, pos = null;
+      try { pos = a && typeof a.selectionStart === "number" ? a.selectionStart : null; } catch (e) {}
+      LIST_ENGINE.redraw();
+      var n = id && document.getElementById(id);
+      if (n) { n.focus(); if (pos != null) { try { n.setSelectionRange(pos, pos); } catch (e) {} } }
     }, function () {});
   }
   function localCoursesBlock(r, code, h) {
@@ -2166,7 +2270,10 @@
     out.push(status);
     var asks = scanAsksOf(r.ut);
     if (asks.length) {
-      out.push(h.heading(asks.length === 1 ? "A scan finding to confirm or note" : "Scan findings to confirm or note"));
+      var answered = answeredThisVisit(r.ut);
+      out.push(h.heading(answered ? (asks.length === 1 ? "A scan finding, answered this visit" : "Scan findings, answered this visit")
+        : asks.length === 1 ? "A scan finding to confirm or note" : "Scan findings to confirm or note"));
+      if (answered) out.push(h.el("p", { cls: "cs-quiet", text: "You saved this MQ discipline this visit, so it has left the list needing a look; " + SCAN_NEXT + "." }));
       out.push(h.el("ul", { cls: "csl-pn-scan" }, asks.map(function (f) {
         return h.el("li", null, [h.el("b", { text: (RULE_WORDS[f.rule] || f.rule) + ": " }), f.evidence || "",
           f.suggestion ? ". The scan suggests: " + f.suggestion + "." : "."]);
@@ -2174,16 +2281,37 @@
     }
     out.push(h.heading("Its local subjects"));
     if (!r.locals.length) out.push(h.el("p", { cls: "cs-quiet", text: "No college course under this MQ discipline names a subject code yet." }));
-    else out.push(h.table({ id: "locals", label: "The local subject codes colleges use for " + r.ut,
-      note: plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(total, "local course", "local courses")
-        + (r.more ? "; " + fmtN(r.more) + " more the reference file does not list" : "") + ". Press a header to sort.",
-      cols: [["code", "Local SUBJ"], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"]], sort: { col: 1, dir: -1 },
-      rows: r.locals.map(function (x) {
+    else {
+      /* Colleges first (Sam, 2026-11-04, on Diesel Mechanics: "the count of courses is not helpful because it seems to
+         be showing me the count of courses at one college. It would be more helpful for it to show me the count of
+         colleges that use each subject code"): DCDT's 24 courses sit at one college, DIES's 14 at four. The colleges
+         come from the course file the panel reads (kb/discipline_local_courses/), so the column fills once it lands. */
+      var lcDoc = state.lc && state.lc.docs[r.ut];
+      var nCol = function (c) {
+        var rows = lcDoc && lcDoc.by && lcDoc.by[c];
+        if (!rows) return null;
+        var seen = {}; rows.forEach(function (x) { seen[x[0]] = 1; });
+        return Object.keys(seen).length;
+      };
+      var locRows = r.locals.map(function (x) {
         var pct = total ? x[1] / total * 100 : null;
-        return { code: x[0], n: x[1], share: pct == null ? "" : pct < 1 ? "Under 1%" : Math.round(pct) + "%",
-          note: x[0] === code ? "The Common SUBJ" : x[0] === e.data_modal ? "Most used locally" : "" };
-      }),
-      cell: function (row, k) { return k === "n" ? localCountWord(r, row, h) : row[k]; } }));
+        return { code: x[0], col: nCol(x[0]), n: x[1], share: pct == null ? "" : pct < 1 ? "Under 1%" : Math.round(pct) + "%" };
+      });
+      var most = null, mostN = 0, tie = false;
+      locRows.forEach(function (x) { if (x.col > mostN) { most = x.code; mostN = x.col; tie = false; } else if (x.col && x.col === mostN) tie = true; });
+      locRows.forEach(function (x) {
+        x.note = [x.code === code ? "The Common SUBJ" : "", x.code === e.data_modal ? "Most courses" : "",
+          !tie && mostN > 1 && x.code === most ? "Most colleges" : ""].filter(Boolean).join("; ");
+      });
+      out.push(h.table({ id: "locals", label: "The local subject codes colleges use for " + r.ut,
+        note: plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(total, "local course", "local courses")
+          + (r.more ? "; " + fmtN(r.more) + " more the reference file does not list" : "") + ". Colleges counts the colleges that file "
+          + "courses under each code" + (lcDoc ? "" : " (reading…)") + "; press a course count to see its courses, or a header to sort.",
+        cols: [["code", "Local SUBJ"], ["col", "Colleges", true], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"]],
+        sort: { col: 1, dir: -1 },
+        rows: locRows,
+        cell: function (row, k) { return k === "n" ? localCountWord(r, row, h) : row[k]; } }));
+    }
     if (r.locals.length) prefetchLocalCourses(r);
     var lcOpen = L.pnCourses && L.pnCourses.ut === r.ut ? L.pnCourses.code : null;
     if (lcOpen) out.push(localCoursesBlock(r, lcOpen, h));
@@ -2206,20 +2334,24 @@
     // The codes it could take: the Reference box's suggestions (its own local codes and identity codes, most used first,
     // none another MQ discipline holds), each a word that saves it through the same write as the Common SUBJ cell.
     var sugg = subjSuggestions(e, "");
-    if (sugg.length) {
+    if (sugg.length || code) {
       out.push(h.heading("Codes it could take"));
       out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could take as its Common SUBJ",
         note: "Its own codes, most used first; a code another MQ discipline holds is left out. Take one to make it the Common SUBJ.",
         cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Take it", false, true]],
-        rows: sugg.map(function (x) {
+        // Its own code leads, named as its code, so a code just taken stays in view (Sam, 2026-11-04: "WOOD then
+        // disappeared from the list").
+        rows: (code ? [{ code: code, mine: ((e.variants_observed || {})[code] || 0) + ((e.local_subject_variants || {})[code] || 0),
+          take: null, current: true, note: "Its Common SUBJ now" }] : []).concat(sugg.map(function (x) {
           var nCid = (state.cidBySubj[x.code] || []).length, nCcn = (state.ccnBySubj[x.code] || []).length;
           return { code: x.code, mine: x.mine, take: x.code,
             note: [x.conflict ? "Also on " + plural(x.conflict.n, "identity", "identities") + " under " + x.conflict.d : "",
               nCid || nCcn ? "An official subject (" + [nCid ? nCid + " C-ID" : "", nCcn ? nCcn + " CCN" : ""].filter(Boolean).join(", ") + ")" : ""]
               .filter(Boolean).join("; ") };
-        }),
+        })),
         cell: function (row, k) {
           if (k !== "take") return row[k];
+          if (row.current) return "Taken";
           return h.word("Take " + row.code, function () {
             notes[r.ut] = "Saving " + row.code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
             listSaveCode(r, row.code).then(function (res) {

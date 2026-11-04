@@ -85,6 +85,17 @@ const SCAN = { _scanned_at: "2026-11-04T06:00:00Z", _mid_codes: { stray_codes: 0
     && /The scan suggests: confirm choice \+ record a note/.test(pt) && /a weak mnemonic: canonical CNSC/.test(pt), pt.slice(0, 400));
   const fl = Array.from(t.d.querySelectorAll(".csl-filters button, .csl-filters span")).map(txt).find((x) => /^A scan finding/.test(x)) || "";
   check("(3) the filter word carries its count", fl === "A scan finding to confirm or note (2)", fl);
+  // (3b) a row saved this visit leaves the list needing a look (Sam, 2026-11-04: "after I edit and save subj, will the
+  //      list needing a look shorten?"); its panel says the scan reads it again after the sync.
+  t.M()._state.ls.changed.push("Cabinet Making"); t.M().applyView("list"); await H.settle();
+  const fl2 = Array.from(t.d.querySelectorAll(".csl-filters button, .csl-filters span")).map(txt).find((x) => /^A scan finding/.test(x)) || "";
+  const note2 = Array.from(t.d.querySelectorAll("#cs-list p")).map(txt).find((x) => /scan findings to confirm or note:/.test(x)) || "";
+  check("(3b) ⭐ a row saved this visit leaves the filter, and the count follows", t.titles().join("|") === "Graphic Arts" && fl2 === "A scan finding to confirm or note (1)", t.titles().join("|") + " / " + fl2);
+  check("(3b) the List names what left and where it goes next", /1 finding on 1 MQ discipline below/.test(note2)
+    && /1 MQ discipline answered this visit left the list \(Cabinet Making\), and the sync carries it into the reference file/.test(note2), note2);
+  t.M()._state.ls.f = ""; t.M().applyView("list"); await H.settle();
+  const p2 = await t.panel("Cabinet Making");
+  check("(3b) its panel reads answered this visit", !!p2 && /Scan findings, answered this visit/.test(txt(p2)) && /has left the list needing a look/.test(txt(p2)), p2 && txt(p2).slice(0, 300));
   const u = H.boot({ seed: SEED, scan: null, hash: "#canonical-subj4/list/scan" });
   await H.settle(); await H.settle();
   check("(3) a scan that could not be read says so, never an empty list as a zero", /could not be read/.test(txt(u.d.getElementById("cs-list"))));

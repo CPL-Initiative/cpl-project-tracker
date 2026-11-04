@@ -32,10 +32,17 @@ rows and the decision sheet. The CPL queue's `docs/session_<N>_handoff.md` stays
 2. **Courses' older view** belongs to the Cowork session that shipped #2776 while it runs (its next PR: the merge
    editor and Suggested merges; then the deletion). Read `list_sessions` first; take it only if that session has
    stopped, from where `lanes/commons.md` says it stopped.
-3. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
+3. **Check alignment on every Commons List** (Sam, 2026-11-04, on the Subjects List's: *"We could use that feature on
+   all our commons list views"*). The engine hook is `edit.extra(r, draft, word)` in `commons_list.js`, with
+   `draft._hint` reading under the fields; the Subjects List's `codeAudit` in `canonical_subj4.js` is the worked example.
+   Each List needs its own audit, what "already used" and "aligned" mean for an exhibit title, a credit recommendation
+   or a program: one PR per List. The Courses List is the other session's (`coci_lookup.js`), so offer it the hook.
+4. **ECONMT and Electricity's adult-education codes** wait on Sam's refile in Local subjects (lane
+   `common-subjects-reference`); a session applies a refile to the map under DR-25, and a move is a re-mint.
+5. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
    Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
    may align*, once a source names courses.
-4. **Small, seen:** stacked, the Units and CPL here cells keep `.prh-num`'s right alignment, so their words sit right
+6. **Small, seen:** stacked, the Units and CPL here cells keep `.prh-num`'s right alignment, so their words sit right
    in the word column (older, on the phone too).
 
 ## Lessons to honor

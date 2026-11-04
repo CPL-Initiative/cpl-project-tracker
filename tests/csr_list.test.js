@@ -313,6 +313,52 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(9) the note shows and the pick's reviewer stays the code row's", cell(y.d, "Auto Body Technology", "Notes") === "Auto Body keeps AUTB"
     && ab.e.reviewed_by === "map@rccd.edu" && ab.how === "person");
 
+  // ── (9c) the seeded note fires when the code is edited (Sam, 2026-11-04) ──
+  const sn = boot();
+  await settle();
+  rowOf(sn.d, "Auto Body Technology").querySelector("button[aria-label='Edit Auto Body Technology']").click(); await settle();
+  const sSubj = sn.d.getElementById("csl-subj"), sNote = sn.d.getElementById("csl-notes");
+  const typ = (b, v) => { b.value = v; b.dispatchEvent(new sn.w.Event("input")); };
+  check("(9c) the Note opens empty on a row with no note", sNote.value === "");
+  typ(sSubj, "ABOD");
+  check("(9c) ⭐ editing the code fills the empty Note with the usual reason", sNote.value === "changed code to better align with local discipline use", sNote.value);
+  typ(sSubj, "AUTB");
+  check("(9c) setting the code back clears the untouched reason", sNote.value === "");
+  typ(sNote, "my own words"); typ(sSubj, "ABOD");
+  check("(9c) a note the reader typed is never replaced", sNote.value === "my own words");
+  typ(sNote, ""); typ(sSubj, "AUTB"); typ(sSubj, "ABOD");
+  words(sn.d, "Save").click(); await settle();
+  check("(9c) ⭐ Save writes the code and the reason", sn.posts.length === 2 && sn.posts[0].value === "ABOD"
+    && sn.posts[1].field === "canonical_subj4_notes" && sn.posts[1].value === "changed code to better align with local discipline use", JSON.stringify(sn.posts));
+
+  // ── (9d) keeping the code asks for its reason (Sam, 2026-11-04) ──
+  const kp = boot();
+  await settle();
+  rowOf(kp.d, "Auto Body Technology").querySelector("button[aria-label='Edit Auto Body Technology']").click(); await settle();
+  words(kp.d, "Save").click(); await settle();
+  check("(9d) ⭐ Save with the code kept and no note writes nothing, starts the reason and says why", kp.posts.length === 0
+    && kp.d.getElementById("csl-notes").value === "kept AUTB: " && /To keep AUTB on Auto Body Technology, say why in the Note/.test(txt(kp.d.getElementById("cs-list"))));
+  const kn = kp.d.getElementById("csl-notes"); kn.value = "kept AUTB: the colleges' own code"; kn.dispatchEvent(new kp.w.Event("input"));
+  words(kp.d, "Save").click(); await settle();
+  check("(9d) with a reason, Save writes the note alone and closes the row", kp.posts.length === 1 && kp.posts[0].field === "canonical_subj4_notes"
+    && kp.posts[0].value === "kept AUTB: the colleges' own code" && !kp.d.getElementById("csl-subj"));
+
+  // ── (9e) Check alignment: a small audit of the typed code and one recommendation ──
+  const ca = boot();
+  await settle();
+  rowOf(ca.d, "Auto Body Technology").querySelector("button[aria-label='Edit Auto Body Technology']").click(); await settle();
+  const caBox = ca.d.getElementById("csl-subj"); caBox.value = "AUTO"; caBox.dispatchEvent(new ca.w.Event("input"));
+  words(ca.d, "Check alignment").click(); await settle();
+  const hint = ca.d.getElementById("csl-edit-hint");
+  check("(9e) ⭐ Check alignment names who holds a code and recommends against it", !!hint && !hint.hidden
+    && /AUTO is the Common SUBJ of/.test(txt(hint)) && /Recommendation: not AUTO/.test(txt(hint)), hint && txt(hint));
+  caBox.value = "QZQZ"; caBox.dispatchEvent(new ca.w.Event("input"));
+  check("(9e) a new keystroke clears the old check", hint.hidden || txt(ca.d.getElementById("csl-edit-hint")) === "");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(9e) ⭐ a code no college uses: keep the current one unless its letters mislead, and the re-key named",
+    /QZQZ is no other MQ discipline's Common SUBJ; no college files these courses under QZQZ/.test(txt(ca.d.getElementById("csl-edit-hint")))
+    && /Recommendation: keep AUTB unless its letters mislead/.test(txt(ca.d.getElementById("csl-edit-hint"))), txt(ca.d.getElementById("csl-edit-hint")));
+
   // ── (10) the List's source ──
   const block = SRC.slice(SRC.indexOf("/* ── List: every MQ discipline"), SRC.indexOf("/* ── the three views"));
   check("(10) no raw hex in the List's source", !/#[0-9a-fA-F]{3,8}\b/.test(block));

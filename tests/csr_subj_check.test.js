@@ -259,6 +259,12 @@ async function settle() { for (let i = 0; i < 15; i++) await tick(); }
     check("taking a free code asks NO confirmation", confirmCalls.length === 0);
     check("Take it persisted the pick to kb_curation",
       saves.some((s) => s.field === "canonical_subj4" && s.value === "ABOD" && s.course_id === "_CANON_SUBJ4::Auto Body Technology"));
+    // Sam, 2026-11-04: Take WOOD saved while the open edit row still read CNSC, and WOOD left the list.
+    check("an edit row open on the row follows the Take (its Save would not put the old code back)",
+      !!doc.getElementById("csl-subj") && doc.getElementById("csl-subj").value === "ABOD", doc.getElementById("csl-subj") && doc.getElementById("csl-subj").value);
+    const took = suggRows().find((x) => x.code === "ABOD");
+    check("the code taken stays in Codes it could take, named its Common SUBJ, with no Take word",
+      !!took && took.note === "Its Common SUBJ now" && !took.take, JSON.stringify(suggRows().map((x) => x.code + ":" + x.note)));
     // ── collision save guard (the Common SUBJ cell) ──────────────────────
     doc.getElementById("csl-editall").click(); await settle();
     const barb = boxOf("Barbering");
