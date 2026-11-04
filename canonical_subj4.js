@@ -1086,6 +1086,8 @@
     cid: { view: "list", filter: "cid" },
     chip: { view: "list", filter: "chip" },
     proposed: { view: "list", filter: "proposed" },
+    // The scan's findings a person confirms or notes, on the List (S574: a count opens the job, filtered).
+    scan: { view: "list", filter: "scan" },
     check: { check: true },
     findings: { sec: "progress:findings" },
     procedures: { sec: "progress:procedures" },
@@ -1518,7 +1520,7 @@
       { n: x.collisions, words: x.collisions === 1 ? "Common SUBJ shared by two MQ disciplines." : "Common SUBJs shared by two or more MQ disciplines.",
         action: { words: "Check them", go: go(TO.check) } },
       { n: x.scan ? x.toNote : null, words: (x.toNote === 1 ? "scan finding to confirm or note" : "scan findings to confirm or note") + (x.toNoteWords ? " (" + x.toNoteWords + ")." : "."),
-        action: { words: "Open the findings", go: go(TO.findings) } },
+        action: { words: "Open them in the List", go: go(TO.scan) } },
       x.missed ? { n: x.missed, words: x.missed === 1 ? "missed alignment with an authority code." : "missed alignments with an authority code.",
         action: { words: "Open them", go: go(TO.chip) } } : null,
       { n: x.strayCodes, words: "identity codes that are neither a Common SUBJ nor an umbrella code" +
@@ -1629,7 +1631,15 @@
   var LIST_FILTERS = [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["confirmed", "Confirmed"],
     ["person", "Confirmed by a person"], ["procedure", "Confirmed by a procedure"], ["nocode", "No code yet"], ["collision", "In a collision"],
     ["ccn", "On the CCN code"], ["cid", "On the C-ID code"], ["chip", "An official code differs"], ["proposed", "Proposed, no official code"],
+    ["scan", "A scan finding to confirm or note"],
     ["selected", "Selected"], ["changed", "Changed this visit"]];
+  /* The daily scan's findings a person confirms or notes (the Commons' "scan findings to confirm or note", S574: its count
+     opens this filter). Read from the scan the tab already reads; a finding on a file names no MQ discipline. */
+  function scanAsks() {
+    var d = state.scan && state.scan.data;
+    return d && Array.isArray(d.findings) ? d.findings.filter(function (f) { return f.needs_judgment && ASK_SKIP.indexOf(f.rule) < 0; }) : null;
+  }
+  function scanAsksOf(ut) { return (scanAsks() || []).filter(function (f) { return f.item === ut; }); }
   function listFilterId(id) { return LIST_FILTERS.some(function (f) { return f[0] === id; }) ? id : null; }
   function confirmedHow(e) {
     if (!isConfirmed(e)) return "open";
@@ -1867,6 +1877,7 @@
         wrap.appendChild(api.el("p", { cls: "cs-lede csl-auth" }, state.sess ? ["Signed in: ", auth]
           : ["You are not signed in. The list reads; a save asks for a sign-in: ", auth]));
         wrap.appendChild(api.el("p", { cls: "csl-acts" }, [api.word("Run the SUBJ check", function () { openCheckModal(); }, { id: "csl-check" })]));
+        if (listState().f === "scan") wrap.appendChild(scanNote(api));
         return true;
       },
       filters: LIST_FILTERS,
@@ -1882,6 +1893,7 @@
         if (L.f === "cid") return r.e.canonical_source === "c-id";
         if (L.f === "chip") return authorityChips(r.e).length > 0;
         if (L.f === "proposed") return r.e.authority_flag === "proposed";
+        if (L.f === "scan") return scanAsksOf(r.ut).length > 0;
         return true;
       },
       hay: function (r) {
@@ -1946,6 +1958,21 @@
      the row folds), the codes it shares with another MQ discipline (another one's name opens its panel), Confirm this
      pick with its own status line, and the rest folded: the authority, the note and the identity codes off its code.
      The title's drawer (the MQ handbook, its other names, the umbrella and the TOP) moves in with it (the engine). */
+  /* What the scan filter holds, in words: the findings, the MQ disciplines they sit on, and any finding on a file, which
+     the SUBJ check lists. A scan that could not be read says so. */
+  function scanNote(api) {
+    var A = scanAsks();
+    if (!A) return api.el("p", { cls: "cs-caution", role: "status", text: "The daily scan (" + SCAN_URL + ") could not be read" +
+      (state.scan && state.scan.error ? " (" + state.scan.error + ")" : "") + ", so this filter shows nothing. Reload the tab to try again." });
+    var on = {}, files = [], uts = {};
+    (listRowsAll() || []).forEach(function (r) { uts[r.ut] = 1; });
+    A.forEach(function (f) { if (uts[f.item]) on[f.item] = 1; else files.push(f); });
+    var n = Object.keys(on).length;
+    return api.el("p", { cls: "cs-quiet", text: plural(A.length, "scan finding", "scan findings") + " to confirm or note: " +
+      plural(A.length - files.length, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
+      (files.length ? "; " + files.map(function (f) { return (RULE_WORDS[f.rule] || f.rule) + " in " + f.item; }).join("; ") +
+        ", on a file rather than an MQ discipline, which Run the SUBJ check lists" : "") + "." });
+  }
   function listPanelBody(r, h) {
     var e = r.e, L = listState(), notes = L.pnNote || (L.pnNote = {}), out = [];
     var code = e.canonical_subj4 || "", total = e.local_subject_total || 0;
@@ -1972,6 +1999,14 @@
     if (acts.length) out.push(h.el("div", { cls: "csl-acts" }, acts));
     var status = h.el("p", { cls: "cs-quiet", role: "status", "aria-live": "polite", text: notes[r.ut] || "" });
     out.push(status);
+    var asks = scanAsksOf(r.ut);
+    if (asks.length) {
+      out.push(h.heading(asks.length === 1 ? "A scan finding to confirm or note" : "Scan findings to confirm or note"));
+      out.push(h.el("ul", { cls: "csl-pn-scan" }, asks.map(function (f) {
+        return h.el("li", null, [h.el("b", { text: (RULE_WORDS[f.rule] || f.rule) + ": " }), f.evidence || "",
+          f.suggestion ? ". The scan suggests: " + f.suggestion + "." : "."]);
+      })));
+    }
     out.push(h.heading("Its local subjects"));
     if (!r.locals.length) out.push(h.el("p", { cls: "cs-quiet", text: "No college course under this MQ discipline names a subject code yet." }));
     else out.push(h.table({ id: "locals", label: "The local subject codes colleges use for " + r.ut,

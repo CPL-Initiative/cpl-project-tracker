@@ -247,8 +247,12 @@ def row_exhibit(root):
              "carry": "unsure", "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
              "carry": "unsure", "open": tab + "/conflict", "error": run["error"]},
-            {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
-             "carry": "keep_call", "open": cer + "/all", "error": left["error"]},
+            # Said so a reader knows the job (Sam, 2026-11-04: "I keep seeing those 622 mentioned but don't know what to do
+            # with them, so if you can clarify on the commons card or link, that would help").
+            {"n": left["n"], "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, "
+                                      "or keep one a college may enter again",
+             "owner": "a curator",
+             "carry": "keep_call", "open": tab + "/list/left", "error": left["error"]},
         ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
@@ -276,7 +280,11 @@ def row_course(root):
     # home and every count open the map; the list tab (#unified-courses) left the menu the same minute. The Courses
     # List joined as a second word (Sam, 2026-11-01: "WE have the COCI lookup tab in COBI...maybe courses in that?"):
     # COCI Lookup's Courses view, every local course banded by its M-ID. SkyView stays the home.
-    tab = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    # The List first, SkyView beside it (Sam, 2026-11-04: "I want to be able to use list or skyview. Skyview is still
+    # too buggy to make the main workspace"): the row's home, its links and its pair open the Courses List; SkyView is
+    # the second word, and each band of the List opens its common course there.
+    sky = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    tab = "#coci-lookup/courses"
     A = load_json(root, "kb/row_audit/latest.json")
     st, fr, tags = A["stats"], A["stats"]["faculty_readiness"], A["stats"]["tag_counts"]
     cap = figure(lambda: round(1 - A["_faculty_weights"]["discipline"] * (1 - A["_field_state_score"]["seed-untouched"]), 2))
@@ -294,13 +302,13 @@ def row_course(root):
         {"n": counts.get("identities"), "words": "identities and %s stand-alone courses on the canvas (the %s layout)%s"
          % (fmt(counts.get("stand_alone")), str(cv.get("_generated_from", ""))[:10],
             "; %s stand-alone in today's build" % fmt(len(today["n"]["rows"])) if today["n"] else ""),
-         "open": tab, "error": canvas["error"]},
+         "open": sky, "error": canvas["error"]},
         {"words": "TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain"},
         {"words": "Re-mints follow the playbook, one cron window each"},
     ]
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"},
+        "links": [{"href": tab, "text": "Open the Courses List"}, {"href": sky, "text": "Open SkyView"},
                   {"href": "#coci-lookup/progress", "text": "Open Progress"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
@@ -312,11 +320,12 @@ def row_course(root):
         "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
-             "owner": "the Common Subjects reference", "carry": "no_procedure", "open": tab},
-            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": tab},
-            {"n": tags.get("top_discipline_disagreement"), "words": "TOP and discipline disagreements",
-             "owner": "a curator (the subject map decides; TOP corroborates)", "carry": "unsure", "open": tab},
-            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": tab},
+             "owner": "the Common Subjects reference", "carry": "no_procedure", "open": "#coci-lookup/list/seedless"},
+            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
+            # TOP and discipline disagreements are no person's item (Sam, 2026-11-04: "I'm not generally worried about
+            # TOP disagreement as those are input unchecked by colleges. CIP from the COCI programs records should be
+            # more dependable"; Rule 7, TOP is last in line). The count stays in facts.tags for the Progress page.
+            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": "#coci-lookup/list/nodesc"},
         ],
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
@@ -506,10 +515,10 @@ def row_subjects(root):
         judgments = sum(ask.values())
         kinds = ", ".join(CSR_RULE_WORDS.get(r, r) for r, _ in sorted(ask.items(), key=lambda kv: -kv[1]))
         issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
-                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/progress"})
+                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/list/scan"})
         mc = scan.get("_mid_codes") or {}
         issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
-                       "owner": "a re-mint under the playbook", "carry": "reaches", "open": tab + "/progress"})
+                       "owner": "a re-mint under the playbook", "carry": "reaches", "open": "#coci-lookup/list/stray"})
         if missed:
             issues.append({"n": missed, "words": "missed alignments with an authority code", "owner": "a curator", "carry": "unsure", "open": tab + "/chip"})
     procedures = []
@@ -556,7 +565,7 @@ def row_subjects(root):
 ROWS = [
     ("requirements", "Program Requirements", "#program-requirements", row_requirements),
     ("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit),
-    ("course", "Common Course Reference", "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", row_course),
+    ("course", "Common Course Reference", "#coci-lookup/courses", row_course),
     ("cr", "Common CR Reference", "#cr-reference", row_cr),
     ("subjects", "Common Subjects Reference", "#canonical-subj4", row_subjects),
 ]

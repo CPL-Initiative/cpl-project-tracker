@@ -23,6 +23,7 @@ function boot(opts) {
     if (u.indexOf("kb_curation") >= 0 && init && init.method === "POST") { posts.push(JSON.parse(init.body)); return Promise.resolve({ ok: true, status: 201, json: () => Promise.resolve([]) }); }
     if (u.indexOf("kb/status/commons.json") >= 0) return Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) });
     const body =
+      u.indexOf("csr_out/latest.json") >= 0 ? (opts.scan || null) :
       u.indexOf("discipline_canonical_subj4.json") >= 0 ? opts.seed :
       u.indexOf("discipline_aliases.json") >= 0 ? (opts.aliases || { aliases: {} }) :
       u.indexOf("foreign_language_subj4.json") >= 0 ? (opts.flsplit || null) :

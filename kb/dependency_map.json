@@ -802,7 +802,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1094,
+     "line": 1096,
      "tabs": [
       "canonical-subj4"
      ]
@@ -812,7 +812,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2560,
+     "line": 2568,
      "tabs": [
       "exhibits"
      ]
@@ -1111,7 +1111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 279
+     "line": 286
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1703,7 +1703,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 870,
+     "line": 880,
      "tabs": [
       "commons"
      ]
@@ -5575,7 +5575,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 777,
+     "line": 855,
      "tabs": [
       "coci-lookup"
      ]
@@ -5864,7 +5864,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2049,
+     "line": 2050,
      "tabs": [
       "exhibits"
      ]
@@ -6028,7 +6028,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2134,
+     "line": 2169,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6038,7 +6038,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 572,
+     "line": 643,
      "tabs": [
       "coci-lookup"
      ]
@@ -6058,7 +6058,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2552,
+     "line": 2560,
      "tabs": [
       "exhibits"
      ]
@@ -6098,7 +6098,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1568,
+     "line": 1570,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6108,7 +6108,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 660,
+     "line": 731,
      "tabs": [
       "coci-lookup"
      ]
@@ -6128,7 +6128,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2773,
+     "line": 2816,
      "tabs": [
       "exhibits"
      ]
@@ -6154,7 +6154,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1566,
+     "line": 1568,
      "tabs": [
       "canonical-subj4"
      ]
@@ -7243,7 +7243,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2133,
+     "line": 2168,
      "tabs": [
       "canonical-subj4"
      ]
@@ -10673,7 +10673,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 340
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -12570,7 +12570,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 602
+     "line": 611
     }
    ],
    "served": false,
@@ -12651,7 +12651,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 385
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13201,7 +13201,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 753
+     "line": 762
     }
    ],
    "served": false,
@@ -13224,7 +13224,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 482
+     "line": 491
     }
    ],
    "producers": [
@@ -13281,7 +13281,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 483
+     "line": 492
     }
    ],
    "served": true,
@@ -13512,7 +13512,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 461
+     "line": 470
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14056,6 +14056,16 @@
      ]
     },
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2582,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "script:kb/_ap_official_titles.py",
      "kind": "script",
      "direction": "read",
@@ -14154,7 +14164,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1914,
+     "line": 1915,
      "tabs": [
       "exhibits"
      ]
@@ -14703,7 +14713,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 581
+     "line": 590
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -15690,7 +15700,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 379
+     "line": 388
     }
    ],
    "served": false,
@@ -17159,7 +17169,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 280
+     "line": 288
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -17280,7 +17290,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 305
+     "line": 313
     }
    ],
    "served": true,
@@ -17293,7 +17303,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 409
+     "line": 418
     }
    ],
    "served": true,
@@ -17394,7 +17404,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 536
+     "line": 545
     }
    ],
    "served": true,
@@ -19233,7 +19243,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 283
+     "line": 291
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -19729,7 +19739,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 600
+     "line": 609
     }
    ],
    "served": false,
@@ -23052,7 +23062,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 573,
+     "line": 644,
      "tabs": [
       "coci-lookup"
      ]
@@ -23209,7 +23219,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 284
+     "line": 292
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24181,7 +24191,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 692,
+     "line": 702,
      "tabs": [
       "commons"
      ]
@@ -27362,7 +27372,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 670,
+     "line": 680,
      "tabs": [
       "commons"
      ]
@@ -29473,7 +29483,7 @@
  "not_served": [
   "*.xlsx",
   "docs",
-  "kb/*_out",
+  "kb/*_dryrun",
   "kb/coci_minted_courses.json",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",

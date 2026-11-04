@@ -100,6 +100,8 @@ bar when needed"*). **All five Lists carry the line, the fold and the side panel
 
 **LIVE: the confidence count (S573, 2026-11-04, Sam: "start on the confidence count next").** `kb/status/commons.json`'s `confidence` says what a person did with each procedure's work afterward: the Exhibit procedures' receipts (`kb/cer_procedures_out/saved/`) against `kb/unified_titles.json`, the nightly Subjects confirm's (`kb/csr_out/confirm/`) against the seed. A result a person looked at is kept, renamed with its family (its old name is gone and its siblings moved together), or moved (a correction). 2026-11-04: of 1,178 titles placed, a person looked at 94, kept 23, renamed 71, moved 0; none of the 13 confirmed picks looked at yet. The tab shows it as *How far to trust the procedures*.
 
+**RULED: a count opens its job, filtered; the queue in process order; TOP waits on no one (Sam, S574, 2026-11-04).** *"the links on all surfaces should open to the filtered view of the job needed"*; *"put the procedural things to act in a process order within their cards"* (subjects, courses, exhibits, CR, programs); TOP disagreements *"are input unchecked by colleges. CIP from the COCI programs records should be more dependable"*, so they left the queue. Guards `tests/commons_jobs_filtered.test.js`, `tests/coci_list_jobs.test.js` (the Courses jobs and the strays). **The Courses List first, SkyView beside it** (Sam, same day: *"I want to be able to use list or skyview. Skyview is still too buggy to make the main workspace"*), reversing 2026-11-03's SkyView first. NEXT: Exhibits' left-MAP filter, then the `--cmn` port.
+
 **RULED: every Commons view in Malone's look, and the path (Sam, S573, 2026-11-04, in chat).** *"Use the new UI format rather than first light on this and all commons views."* This widens Sheet 158 card 2 from the first view to every Commons view (the Lists, the Progress pages, the side panels); First Light stays the rule for the rest of COBI. The same morning he asked for a visual of the curator's steps and decision points, *"available on every commons surface"*, plain words, with *"a generic term"* for him. The mock is **the path** (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9, source in `CPLBrain/04-projects/cpl-initiative/commons-path-mock/`): six steps every reference shares (know what belongs, let the daily check run, work the list, get the lead's call, check the connections, clean), the CPL Commons view and the Common Subjects view. NEXT: his reaction, then the other references' paths, then the port (`commons_page.js` and `commons_list.js` onto the `--cmn` tokens, the path as a fold above each List).
 
 
@@ -143,16 +145,7 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
 
 **Steps 1 and 2 (S419 #2237, S423): the shared Progress module `commons_progress.js` and the five run logs under `kb/status/`.** The record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*).
 
-**What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
-list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
-read of the records' display facts, so the Program Requirements row carries two known issues, the failing
-and the unread. The CR row's curator decisions come from the committed receipt, so a new sitting lands a
-receipt under `kb/receipts/` or the figure stays at 30 (the live table is the authority). A call reads from
-the run log and stays open until a checkpoint removes it; the decision sheet's store is read only where the
-Progress view's `callAnswered` resolves a record. The machine stamps: Program Requirements the last college
-read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
-last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
-older than a week reads stale.
+**What the tab leaves for the build** (2026-10-18) moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-04*): a count now opens its job's filtered list.
 
 **Fable's advice, carried (2026-10-18):** complete differs in kind, so each row names the test behind its
 count and no column sorts on a share; the machine stamp and the session stamp stay apart, each against a

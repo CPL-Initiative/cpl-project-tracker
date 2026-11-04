@@ -339,9 +339,68 @@
       { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
     ]);
   }
+  /* The jobs a Commons count names, as List filters (Sam, 2026-11-04: "the links on all surfaces should open to the
+     filtered view of the job needed"): the auditor's tag on a course's common course (kb/row_audit/latest.json, read only
+     when one is chosen; ten megabytes) and the identity codes the Subjects scan finds stray (kb/csr_out/latest.json).
+     The Commons counts common courses (cards); a filter here lists their local courses, banded by M-ID. */
+  var JOB_FILTERS = [["seedless", "Discipline no seed has touched", "seed_untouched_discipline"], ["units", "A unit anomaly", "unit_anomaly"],
+    ["nodesc", "No catalog description", "blank_description"], ["stray", "On a stray identity code", null]];
+  LIST_FILTERS = LIST_FILTERS.concat(JOB_FILTERS.map(function (f) { return [f[0], f[1]]; }));
+  var JOBS = { by: null, strays: null, error: null, strayError: null, loading: null };
+  function isJob(f) { return JOB_FILTERS.some(function (j) { return j[0] === f; }); }
+  function readJson(url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " answered " + r.status); return r.json(); }); }
+  function loadJobs() {
+    if (JOBS.by || JOBS.error) return Promise.resolve();
+    if (JOBS.loading) return JOBS.loading;
+    JOBS.loading = Promise.all([
+      readJson("kb/row_audit/latest.json").then(function (A) {
+        var by = {};
+        JOB_FILTERS.forEach(function (j) { if (j[2]) by[j[0]] = new Set(); });
+        (A.rows || []).forEach(function (row) {
+          (row.tags || []).forEach(function (t) { JOB_FILTERS.forEach(function (j) { if (j[2] === t) by[j[0]].add(row.id); }); });
+        });
+        JOBS.by = by;
+      }, function (e) { JOBS.error = String(e && e.message || e); }),
+      readJson("kb/csr_out/latest.json").then(function (C) {
+        var st = C && C._mid_codes && C._mid_codes.strays;
+        if (!Array.isArray(st)) throw new Error("kb/csr_out/latest.json has no stray codes");
+        JOBS.strays = new Set(st.map(function (x) { return x.code; }));
+      }, function (e) { JOBS.strayError = String(e && e.message || e); })
+    ]).then(function () { JOBS.loading = null; if (state.view === "courses") mountList(); });
+    return JOBS.loading;
+  }
+  function jobCounts() {
+    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0);
+    if (JOBS.memo && JOBS.memo.m === m && JOBS.memo.key === key) return JOBS.memo.n;
+    var n = {};
+    JOB_FILTERS.forEach(function (j) {
+      if (j[0] === "stray" ? !JOBS.strays : !JOBS.by) return;
+      var c = 0; m.rows.forEach(function (r) { if (jobPass(r, j[0])) c++; }); n[j[0]] = c;
+    });
+    JOBS.memo = { m: m, key: key, n: n };
+    return n;
+  }
+  function jobPass(r, f) {
+    if (f === "stray") return !!JOBS.strays && r.mids.some(function (id) { return JOBS.strays.has(String(id).split(" ")[0]); });
+    var set = JOBS.by && JOBS.by[f];
+    return !!set && r.mids.some(function (id) { return set.has(id); });
+  }
+  /* What a job filter holds, in words: its common courses and their local courses, or the read it waits on. */
+  function jobNote(f) {
+    var j = JOB_FILTERS.filter(function (x) { return x[0] === f; })[0];
+    if (f === "stray" ? (JOBS.strayError && !JOBS.strays) : (JOBS.error && !JOBS.by))
+      return el("p", { "class": "cplcoci-empty", role: "alert" }, [(f === "stray" ? JOBS.strayError : JOBS.error) + ", so this filter shows nothing. Reload the tab to try again."]);
+    if (f === "stray" ? !JOBS.strays : !JOBS.by) return el("p", { "class": "cplcoci-meta", role: "status" }, ["Reading the " + (f === "stray" ? "Subjects scan" : "auditor's cards") + " for this filter…"]);
+    var m = listBuild(), ids = {}, n = 0;
+    m.rows.forEach(function (r) { if (jobPass(r, f)) { n++; r.mids.forEach(function (id) { if (f === "stray" ? JOBS.strays.has(id.split(" ")[0]) : JOBS.by[f].has(id)) ids[id] = 1; }); } });
+    var cards = f === "stray" ? Object.keys(ids).length : JOBS.by[f].size;
+    return el("p", { "class": "cplcoci-meta" }, [j[1] + ": " + fmt(cards) + (cards === 1 ? " common course" : " common courses") +
+      (f === "stray" ? " on " + fmt(JOBS.strays.size) + " stray codes" : " the auditor marks") + "; their " + fmt(n) + " local courses are below, banded by M-ID. Its work is done in SkyView, one word from each band."]);
+  }
   function listFilterPass(r, L) {
     var f = L.f;
     if (!f) return true;
+    if (isJob(f)) return jobPass(r, f);
     if (f === "mid") return !!r.mid;
     if (f === "nomid") return !r.mid;
     if (f === "cid") return !!r.cid;
@@ -360,8 +419,15 @@
     var folded = !!L.dashFolded;
     wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold",
       onToggle: function () { L.dashFolded = !L.dashFolded; mountList(); },
-      control: function (open, text, li) {
+      control: function (open, text, li, w) {
         if (!open) return null;
+        // A count whose place is this List (the List first, S574): a word that sets its filter, plain text when set.
+        var m = /^#coci-lookup\/(?:courses|list\/([a-z]+))$/.exec(open);
+        if (m) {
+          var f = m[1] || "";
+          if (L.f === f) return null;
+          return api.word(text, function () { L.f = f; L.q = ""; L.limit = null; if (isJob(f)) loadJobs(); mountList(); }, { cls: (w || "") + " " + li });
+        }
         var out = /^https?:\/\//.test(open);
         return api.el("a", { href: open, cls: li, text: text, target: out ? "_blank" : null, rel: out ? "noopener" : null,
           "aria-label": out ? text + " (opens SkyView in a new tab)" : null });
@@ -445,6 +511,8 @@
       if (m.moved) notes.push("COCI's extract names an older M-ID for " + fmt(m.moved) + " courses; a course's Identities drawer names it.");
     }
     wrap.appendChild(el("p", { "class": "cplcoci-meta" }, [notes.join(" ")]));
+    var L = listState();
+    if (isJob(L.f)) { loadJobs(); wrap.appendChild(jobNote(L.f)); }
     return true;
   }
   /* The most common title among a band's courses, as most of them spell it. */
@@ -536,7 +604,10 @@
         facts: function (id, members) { return bandFacts(members); },
         acts: function (id) { return [skyLink(id)]; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
-      filters: LIST_FILTERS, counts: function () { return listBuild().counts; }
+      filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
+      // The job filters count by the engine's own pass once their file is read; until then they show no count.
+      uncounted: function (id) { return isJob(id) && (id === "stray" ? !JOBS.strays : !JOBS.by); },
+      onFilter: function (id) { return isJob(id) ? loadJobs() : null; }
     };
     return spec;
   }
@@ -672,10 +743,16 @@
     return d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Los_Angeles" }) + " PT";
   }
   function goView(v) { return function () { state.view = v; renderShell(); }; }
+  /* A count's job, on the Courses List under its filter (S574). */
+  function goList(f) {
+    return function () { state.view = "courses"; var L = listState(); L.f = f; L.q = ""; L.limit = null; L.panel = null; if (isJob(f)) loadJobs(); renderShell(); };
+  }
   function progressSpec() {
     var row = pg.row || {}, F = row.facts || {}, T = F.tags || {}, Q = pg.Q;
     var total = typeof F.total === "number" ? F.total : null;
-    var sky = row.tab || SKYVIEW;
+    // SkyView is the second word (Sam, 2026-11-04: "Skyview is still too buggy to make the main workspace"); the row's
+    // home is now this tab's List.
+    var sky = /^https?:\/\//.test(row.tab || "") ? row.tab : SKYVIEW;
     var free = function (k) { return total != null && typeof T[k] === "number" ? total - T[k] : null; };
     var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
     var open = calls.filter(function (c) { return !(c && c.answer); });
@@ -683,8 +760,9 @@
     var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + first(Q.changes[0].text) : "";
     var items = (Array.isArray(row.issues) ? row.issues : []).filter(function (i) { return i && (i.n == null || i.n > 0); })
       .map(function (i) {
+        var lf = /^#coci-lookup\/list\/([a-z]+)$/.exec(i.open || "");
         return { n: i.n, words: i.words + (i.owner ? "; " + i.owner + " fixes them." : "."),
-          action: { words: "Open SkyView", href: sky } };
+          action: lf ? { words: "Open them in the List", go: goList(lf[1]) } : { words: "Open SkyView", href: sky } };
       });
     if (typeof F.needs_repair === "number" && F.needs_repair > 0)
       items.unshift({ n: F.needs_repair, words: "cards the auditor marks needs repair, scoring 0.40 to 0.64.", action: { words: "Open SkyView", href: sky } });
@@ -699,7 +777,7 @@
       status: open.length ? "Needs you" : "In progress",
       lede: "Local courses grouped into shared common courses, each named by its M-ID and mapped in SkyView.",
       read: pg.at ? "Figures read " + dayOf(pg.at) + "." : "",
-      links: [{ words: "Open SkyView", href: sky }, { words: "Open the Courses List", go: goView("courses") },
+      links: [{ words: "Open the Courses List", go: goView("courses") }, { words: "Open SkyView", href: sky },
         procs && procs.n != null ? { words: "How it is kept: the alias chain, the re-mint playbook, TOP last in line", href: sky } : null].filter(Boolean),
       progress: { n: typeof F.ready === "number" ? F.ready : null, of: total, short: "ready",
         words: "common-course cards the auditor scores 0.85 or better",
@@ -957,9 +1035,21 @@
        opens on the Courses List. */
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] === TAB && (parts[1] === "progress" || parts[1] === "courses" || parts[1] === "programs")) state.view = parts[1];
+    routeList();
     renderShell();
   }
 
+  /* #coci-lookup/list/<filter> opens the Courses List on one (a Commons count names the job, S574): at the first boot,
+     on a later arrival after its reset, and on a hash change while the tab is open. */
+  function routeList() {
+    var parts = String(location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] !== TAB || parts[1] !== "list" || !parts[2] || !LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) return false;
+    state.view = "courses";
+    var L0 = listState(); L0.f = parts[2]; L0.q = ""; L0.limit = null; L0.panel = null;
+    if (isJob(parts[2])) loadJobs();
+    return true;
+  }
+  window.addEventListener("hashchange", function () { if (_booted && state.data && routeList()) renderShell(); });
   // A new visit drops the List's filters, sort, selection and open drawer (tabs never remember a
   // filter, Sam, 2026-10-21); the engine keeps its sorted order, so the repaint is a filter pass.
   var awayFromTab = false;
@@ -968,6 +1058,7 @@
     if (t !== TAB) { awayFromTab = true; return; }
     if (!awayFromTab || !_booted) return;
     awayFromTab = false; state.ls = null;
+    if (state.data && routeList()) { renderShell(); return; }
     if (state.data && state.view === "courses") mountList();
   });
 

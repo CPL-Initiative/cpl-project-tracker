@@ -52,7 +52,7 @@
     subjects: { name: "Common Subjects", what: "One shared subject code for each discipline, the key every common course sits under." },
     exhibit: { name: "Common Exhibits", what: "Every credential colleges grant credit for, under one name and issuer." },
     cr: { name: "Common Credit Recommendations", what: "One wording for each credit recommendation, so the same credit reads the same everywhere." },
-    course: { name: "Common Courses", what: "Local courses grouped into shared common courses, mapped in SkyView." },
+    course: { name: "Common Courses", what: "Local courses grouped into shared common courses, worked on the Courses List or in SkyView." },
     credentials: { name: "Common Credentials", what: "Certifications and badges as their issuers publish them, with the skills each names, linked to exhibits." },
     outcomes: { name: "Common Outcomes", what: "Each course’s learning outcomes and objectives, read from its public outline." },
     skills: { name: "Common Skills", status: "Starting",
@@ -468,25 +468,35 @@
     var name = (CARDS[i.ref] && CARDS[i.ref].name) || i.title || i.ref;
     return el("li", null, [el("span", { cls: "cmn-queue-ref", text: name + ": " }), count(i.n, i.open), " " + (i.words || "")]);
   }
+  /* Each card's items in the order the work goes (Sam, 2026-11-04: "put the procedural things to act in a process order
+     within their cards"): the subjects first, the key every M-ID is minted under, then the courses minted under them,
+     the exhibits, their credit recommendations, and the programs those courses and credits count toward. Inside one
+     reference the status file's order stands. */
+  var PROCESS_ORDER = ["subjects", "course", "exhibit", "cr", "requirements"];
+  function inProcessOrder(items) {
+    function at(i) { var k = PROCESS_ORDER.indexOf(i.ref); return k < 0 ? PROCESS_ORDER.length : k; }
+    return items.map(function (i, n) { return { i: i, n: n }; })
+      .sort(function (a, b) { return at(a.i) - at(b.i) || a.n - b.n; }).map(function (x) { return x.i; });
+  }
   function queueSection(q) {
     if (!q || !Array.isArray(q.reasons)) return null;
     var groups = q.reasons.slice();
     if (Array.isArray(q.unsorted) && q.unsorted.length) groups.push({ key: "unsorted", items: q.unsorted });
     var boxes = groups.map(function (g) {
       var w = REASONS[g.key] || { title: g.key, who: "" };
-      var items = Array.isArray(g.items) ? g.items : [];
+      var items = inProcessOrder(Array.isArray(g.items) ? g.items : []);
       return el("div", { cls: "cmn-reason", "data-reason": g.key }, [
         el("h4", { cls: "cmn-reason-h", text: w.title }),
         el("p", { cls: "cmn-reason-who", text: w.who }),
-        items.length ? el("ul", null, items.map(queueItem)) : el("p", { cls: "cmn-quiet", text: "Nothing waits here." })
+        items.length ? el("ol", { cls: "cmn-steps" }, items.map(queueItem)) : el("p", { cls: "cmn-quiet", text: "Nothing waits here." })
       ]);
     });
     var carried = Array.isArray(q.carried) ? q.carried : [];
     return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
       el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
-      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest." }),
+      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
       el("div", { cls: "cmn-queue-grid" }, boxes),
-      carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, carried.map(queueItem))]) : null
+      carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, inProcessOrder(carried).map(queueItem))]) : null
     ].filter(Boolean));
   }
 
@@ -763,7 +773,7 @@
     ".cmn-reason { border:1px solid var(--cmn-line-soft); border-radius:10px; padding:12px 14px; display:grid; gap:6px; align-content:start; min-width:0; }",
     ".cmn-reason-h { margin:0; font-size:.98rem; font-weight:700; color:var(--cmn-heading); }",
     ".cmn-reason-who { margin:0; color:var(--cmn-muted); font-size:.88rem; }",
-    ".cmn-reason ul, .cmn-carried ul { margin:0; padding-left:20px; display:grid; gap:4px; font-size:.92rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-reason ul, .cmn-reason ol, .cmn-carried ul { margin:0; padding-left:22px; display:grid; gap:4px; font-size:.92rem; font-variant-numeric:tabular-nums; }",
     ".cmn-reason a, .cmn-carried a { display:inline-block; min-height:24px; line-height:24px; font-weight:700; }",
     ".cmn-queue-ref { color:var(--cmn-ink-2); font-weight:600; }",
     ".cmn-carried { border-top:1px solid var(--cmn-line-soft); padding-top:10px; display:grid; gap:6px; }",
