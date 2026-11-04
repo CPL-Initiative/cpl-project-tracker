@@ -10,7 +10,9 @@
 //   (5) the engine documents the panel's shared parts (one renderer for every List's panel);
 //   (6) the worklist's group edits live in the panel: Split out and Put back, Name the group by it, Add a wording from
 //       another group (its own group keeps its row), the note saved with Defer, and Clear the decision; signed out,
-//       nothing writes.
+//       nothing writes;
+//   (7) the List is the tab's workspace: it opens first, a Progress count opens it on that filter (Folded by a rule, Held
+//       by a screen, All), and the official-title warning rides in the panel.
 // Run from repo root: `npm test` (or `node tests/cr_list_panel.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -51,7 +53,7 @@ function tab(opts) {
     const body = init.body ? JSON.parse(init.body) : null;
     calls.push({ url: url, method: init.method || "GET", body: body });
     const ok = (o) => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(o))) });
-    if (url === "kb/cr_reference_worklist.json") return ok(WORKLIST);
+    if (url === "kb/cr_reference_worklist.json") return ok(opts.worklist || WORKLIST);
     if (/\/kb_curation\?select/.test(url)) return opts.flagReadFails ? Promise.resolve({ ok: false, status: 500, json: () => Promise.resolve({}) }) : ok(opts.flags || []);
     if (/\/kb_curation$/.test(url) && init.method === "POST") return ok(body.map((r) => Object.assign({}, r)));
     if (/cr_reference_decisions\?select/.test(url)) return ok(opts.decisions || []);
@@ -192,6 +194,27 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
   n1 = posts(t).length;
   t.d.getElementById("crl-pn-split-1").click(); await settle();
   check("(6) signed out, a change writes nothing and says how to sign in", posts(t).length === n1 && /Sign in as a reviewer/.test(txt(pn(t.d).querySelector(".crr-status"))));
+
+  // (7) the List is the tab's workspace (2026-11-04): it opens first; a Progress count and a filter's address open the
+  // List on that filter, the worklist's two lists (a rule's folds, a group a screen holds) among them; the official-title
+  // warning rides in the panel.
+  const WL2 = JSON.parse(JSON.stringify(WORKLIST));
+  Object.assign(WL2.groups[1], { screens_objecting: ["level"], official_id: "AJ 110", official_system: "C-ID", official_title: "Introduction to Criminal Justice",
+    official_applied: false, title_divergent: true });
+  t = tab({ worklist: WL2 });
+  t.M.activate(); await settle();
+  check("(7) ⭐ the tab opens on the List", t.M._state.view === "list" && !!t.d.querySelector(".crl-table"));
+  t.M._progressApi().go("auto"); await settle();
+  const shown = () => Array.from(t.d.querySelectorAll(".crl-table tbody tr:not(.crl-band):not(.crl-editrow)")).map(txt).filter((x) => /hours in/.test(x));
+  check("(7) ⭐ a Progress count opens the List on Folded by a rule: the rule's folded group", t.M._state.view === "list" && t.M._state.ls.f === "auto"
+    && shown().length === 2 && shown().every((x) => /Community Relations/.test(x)), shown().join(" | "));
+  t.M._progressApi().go("held"); await settle();
+  check("(7) and on Held by a screen: the group a safety screen holds", t.M._state.ls.f === "held" && shown().length === 2 && shown().every((x) => /Engine Performance/.test(x)), shown().join(" | "));
+  t.M._progressApi().go("all"); await settle();
+  check("(7) Open every group is the List's All", t.M._state.ls.f === "" && shown().length === 5, String(shown().length));
+  title(t.d, "3 or 4 hours in Engine Performance").click(); await settle();
+  check("(7) the panel warns when an official number reaches the group but is not applied", /C-ID AJ 110 reaches this group but is not applied: its official title, Introduction to Criminal Justice, shares no word/.test(txt(pn(t.d).querySelector(".crl-pn-warn"))),
+    txt(pn(t.d)).slice(0, 300));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])));

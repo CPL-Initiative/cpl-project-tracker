@@ -31,13 +31,20 @@ bytes, and the commits since `session_565` (its checkpoint trigger).
   M-ID holds, the Title drawer (description, outcomes) moved in. The Title drawer's tests in `coci_list` and
   `coci_lookup` now drive it inside the panel. `tests/coci_list_panel.test.js`. This checkpoint rides in it.
 
+- **#2747** (merged): Exhibits' panel on the engine's parts (each exhibit's number links to MAP); Exhibits' and CR
+  Progress's Commons reads through `CPL_COMMONS_LIST.readCommons` (`tests/commons_one_reader.test.js`); the CR wording
+  panel does what the worklist's group card did (Split out, Put back, Name the group by it, Add a wording, the note
+  with Defer, Clear). The engine's `h.table` takes a fixed column of controls.
+- **#2748**: the CR List opens first; Progress counts and `#cr-reference/<filter>` open it, with *Folded by a rule* and
+  *Held by a screen*; the official-title warning rides in the panel; `#cr-reference/worklist` keeps the worklist.
+
 ## Open work, in order
 
-1. **Merge the Exhibits PR** (its panel on the engine's parts; Exhibits' and CR Progress's Commons reads through
-   `CPL_COMMONS_LIST.readCommons`) once `test` passes on its head. #2746 merged.
-2. **The original views retire as each List does what they do**, one PR each, tests ported first: CR's worklist
-   (its group edits now live in the panel; what remains there: the filters *auto* and *held* that `cr_progress.js`'s
-   counts open, the official-title warning, *Seen under*), then Subjects' Reference
+1. **Merge the CR List-first PR** once `test` passes on its head (#2746 and #2747 merged).
+2. **The original views retire as each List does what they do**, one PR each, tests ported first: CR's worklist is
+   one word away now (the List opens first and does what it did); retire it by porting `tests/cr_reference.test.js`
+   Part B (B1 to B17: the decisions-read warning, signed out, the 200-with-empty-body failure, who decided, the CSV
+   columns) and Part D's control CSS onto the List, then delete the worklist's render; then Subjects' Reference
    view (its toolbar filters, the SUBJ check modal), then Programs' and Courses' older views. Check what only the
    view still has and carry it into the panel first.
 3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
