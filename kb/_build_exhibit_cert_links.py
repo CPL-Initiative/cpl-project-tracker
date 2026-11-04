@@ -34,6 +34,13 @@ naming either by "or" holds any. A title naming no one cert ("CompTIA Certificat
 Specialist (generic)") is kept as unresolved, and so are the local courses ("Microsoft Excel 1", "Microsoft Word
 Beginning", "Using Microsoft Windows"), which the table leaves out: a college issues those, and no vendor does.
 
+Fourth family: the FAA's airman certificates and ratings (S568, 2026-11-04), by the same hand table (FAA below). The
+catalog lists the FAA under two spellings ("Federal Aviation Administration" and "... (FAA)") and some names twice, so
+a name is looked up across both and keeps its lowest id. A title naming a certificate without its category ("FAA
+Instrument Rating", "FAA Pilot Certificate — Helicopter Rating") holds any of the catalog's ratings that fit it. Left
+out: the flight labs and ground schools, which a college teaches toward the certificate (as "Microsoft Excel 1" is
+left out); "FAA Certified Flight Instructor (CFI)" and the Part 137 operator certificate, which the catalog does not
+list yet; and the Part 107 and POST Basic bundle, whose POST half no catalog issuer holds.
 ASE's test names come from kb/_sweep_exhibit_titles.py's ASE table (imported, never copied). Writes
 kb/exhibit_cert_links.json; the daily run rebuilds it after the credential reference; the Exhibits List's finder and
 title drawer read it. Standard library only.
@@ -155,14 +162,36 @@ VENDOR = {
 }
 VENDOR_ISSUERS = ("CompTIA", "Cisco", "Microsoft")
 
+# The FAA's certificates and ratings, hand-checked against the catalog on 2026-11-04 (S568).
+FAA_ISSUER = "Federal Aviation Administration (FAA)"
+FAA_ISSUER_SPELLINGS = ("Federal Aviation Administration", FAA_ISSUER)
+FAA_PRIVATE = ["Private Pilot", "Private Pilot Certificate"]
+FAA = {
+    "FAA Certified Flight Instructor — Instrument (CFII)": ("all", ["Certified Flight Instrument Instructor Rating"]),
+    "FAA Commercial Pilot Certificate": ("all", ["Commercial Pilot"]),
+    "FAA Instrument Rating": ("any", ["Airplane Instrument Rating", "Instrument-Helicopter Rating",
+                                      "Instrument - Powered-lift Rating"]),
+    "FAA Mechanic Certificate — Airframe and Powerplant (A&P)": ("all", ["Mechanic (Airframe & Powerplant)"]),
+    "FAA Mechanic Certificate — Airframe or Powerplant Rating": ("any", ["Aviation Airframe Mechanic",
+                                                                        "Aviation Powerplant Mechanic"]),
+    "FAA Mechanic Certificate — Airframe Rating": ("all", ["Aviation Airframe Mechanic"]),
+    "FAA Mechanic Certificate — Powerplant Rating": ("all", ["Aviation Powerplant Mechanic"]),
+    "FAA Pilot Certificate — Helicopter Rating": ("any", ["Private Pilot, Helicopter Rating",
+                                                          "Commercial Pilot, Helicopter Rating", "Helicopter Class Rating"]),
+    "FAA Private Pilot Certificate": ("any", FAA_PRIVATE),
+    "Private Pilot Certificate": ("any", FAA_PRIVATE),
+    "FAA Remote Pilot Certificate (Part 107)": ("any", ["Remote Pilot Certificate", "Drone Pilot Certification"]),
+}
+
 
 def catalog_vendor():
-    """The catalog's CompTIA, Cisco and Microsoft rows, by (issuer, name); a name listed twice keeps its lowest id."""
+    """The catalog's CompTIA, Cisco, Microsoft and FAA rows (the FAA's two spellings as one), by (issuer, name); a name listed twice keeps its lowest id."""
     rows = json.loads(CATALOG.read_text(encoding="utf-8"))["credentials"]
     out = {}
     for r in sorted(rows, key=lambda r: (len(r["id"]), r["id"])):
-        if r.get("issuer") in VENDOR_ISSUERS:
-            out.setdefault((r["issuer"], r["name"]), {"id": r["id"], "name": r["name"], "issuer": r["issuer"]})
+        issuer = FAA_ISSUER if r.get("issuer") in FAA_ISSUER_SPELLINGS else r.get("issuer")
+        if issuer in VENDOR_ISSUERS + (FAA_ISSUER,):
+            out.setdefault((issuer, r["name"]), {"id": r["id"], "name": r["name"], "issuer": issuer})
     return out
 
 
@@ -191,15 +220,15 @@ def build():
 
     for r in rows:
         ut = r.get("ut") or ""
-        if ut in VENDOR:
-            rule, wanted = VENDOR[ut]
-            issuer = next(v for v in VENDOR_ISSUERS if ut.startswith(v))
+        if ut in VENDOR or ut in FAA:
+            rule, wanted = VENDOR[ut] if ut in VENDOR else FAA[ut]
+            issuer = FAA_ISSUER if ut in FAA else next(v for v in VENDOR_ISSUERS if ut.startswith(v))
             ids, unresolved = [], []
             for name in wanted:
                 c = vendor.get((issuer, name))
                 if c:
                     certs[c["id"]] = {"code": None, "name": c["name"], "catalog_name": c["name"],
-                                      "issuer": issuer, "family": issuer}
+                                      "issuer": issuer, "family": "FAA" if issuer == FAA_ISSUER else issuer}
                     if c["id"] not in ids:
                         ids.append(c["id"])
                 else:
@@ -269,7 +298,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},

@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft.",
+ "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA.",
  "_reference_generated_at": "2026-11-04T06:20:04+00:00",
  "counts": {
-  "certs_linked": 165,
-  "titles_linked": 208,
-  "holds": 192,
-  "bundles": 38,
+  "certs_linked": 180,
+  "titles_linked": 219,
+  "holds": 203,
+  "bundles": 44,
   "aligned": 16,
   "codes_not_in_catalog": [
    "G1"
@@ -355,6 +355,27 @@
    "catalog_name": "Microsoft Certified: Power BI Data Analyst Associate",
    "issuer": "Microsoft",
    "family": "Microsoft"
+  },
+  "ITC4053": {
+   "code": null,
+   "name": "Aviation Airframe Mechanic",
+   "catalog_name": "Aviation Airframe Mechanic",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC4054": {
+   "code": null,
+   "name": "Aviation Powerplant Mechanic",
+   "catalog_name": "Aviation Powerplant Mechanic",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC4056": {
+   "code": null,
+   "name": "Mechanic (Airframe & Powerplant)",
+   "catalog_name": "Mechanic (Airframe & Powerplant)",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
   },
   "ITC4086": {
    "code": "L4",
@@ -1181,6 +1202,90 @@
    "catalog_name": "IB World Religions SL",
    "issuer": "International Baccalaureate Organization (IBO)",
    "family": "IB"
+  },
+  "ITC7466": {
+   "code": null,
+   "name": "Airplane Instrument Rating",
+   "catalog_name": "Airplane Instrument Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7469": {
+   "code": null,
+   "name": "Certified Flight Instrument Instructor Rating",
+   "catalog_name": "Certified Flight Instrument Instructor Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7470": {
+   "code": null,
+   "name": "Commercial Pilot",
+   "catalog_name": "Commercial Pilot",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7474": {
+   "code": null,
+   "name": "Commercial Pilot, Helicopter Rating",
+   "catalog_name": "Commercial Pilot, Helicopter Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7477": {
+   "code": null,
+   "name": "Helicopter Class Rating",
+   "catalog_name": "Helicopter Class Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7478": {
+   "code": null,
+   "name": "Instrument - Powered-lift Rating",
+   "catalog_name": "Instrument - Powered-lift Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7480": {
+   "code": null,
+   "name": "Instrument-Helicopter Rating",
+   "catalog_name": "Instrument-Helicopter Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7485": {
+   "code": null,
+   "name": "Private Pilot",
+   "catalog_name": "Private Pilot",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7488": {
+   "code": null,
+   "name": "Private Pilot, Helicopter Rating",
+   "catalog_name": "Private Pilot, Helicopter Rating",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7489": {
+   "code": null,
+   "name": "Remote Pilot Certificate",
+   "catalog_name": "Remote Pilot Certificate",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7493": {
+   "code": null,
+   "name": "Drone Pilot Certification",
+   "catalog_name": "Drone Pilot Certification",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
+  },
+  "ITC7496": {
+   "code": null,
+   "name": "Private Pilot Certificate",
+   "catalog_name": "Private Pilot Certificate",
+   "issuer": "Federal Aviation Administration (FAA)",
+   "family": "FAA"
   }
  },
  "links": {
@@ -2419,6 +2524,83 @@
     "ITC4096"
    ]
   },
+  "FAA Certified Flight Instructor — Instrument (CFII)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7469"
+   ]
+  },
+  "FAA Commercial Pilot Certificate": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC7470"
+   ]
+  },
+  "FAA Instrument Rating": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC7466",
+    "ITC7480",
+    "ITC7478"
+   ]
+  },
+  "FAA Mechanic Certificate — Airframe Rating": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4053"
+   ]
+  },
+  "FAA Mechanic Certificate — Airframe and Powerplant (A&P)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4056"
+   ]
+  },
+  "FAA Mechanic Certificate — Airframe or Powerplant Rating": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC4053",
+    "ITC4054"
+   ]
+  },
+  "FAA Mechanic Certificate — Powerplant Rating": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4054"
+   ]
+  },
+  "FAA Pilot Certificate — Helicopter Rating": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC7488",
+    "ITC7474",
+    "ITC7477"
+   ]
+  },
+  "FAA Private Pilot Certificate": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC7485",
+    "ITC7496"
+   ]
+  },
+  "FAA Remote Pilot Certificate (Part 107)": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC7489",
+    "ITC7493"
+   ]
+  },
   "IB Biology HL": {
    "relation": "holds",
    "rule": "all",
@@ -2766,6 +2948,14 @@
    "rule": "all",
    "certs": [
     "ITC1827"
+   ]
+  },
+  "Private Pilot Certificate": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC7485",
+    "ITC7496"
    ]
   },
   "Suspension and Steering (ASE A4 Suspension and Steering)": {
