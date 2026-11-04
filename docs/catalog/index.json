@@ -15596,7 +15596,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 64,
+   "count": 65,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16253,6 +16253,22 @@
      "title": "Context-pressure hook \u2014 install and mechanics",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "path": "docs/reference/data_sources.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-sources",
+      "wishlist",
+      "procedures"
+     ],
+     "title": "Data sources: the register of datasets that could fill a Commons gap",
+     "type": null,
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-08-30",
@@ -25724,5 +25740,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1374
+ "total": 1375
 }

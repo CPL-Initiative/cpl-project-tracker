@@ -437,6 +437,9 @@ first day.** Do the remembering for them.
   **Link every sheet you name (Sam, 2026-10-04):** in chat, each mention carries
   its link and says whether it is current; a superseded one links its
   replacement. Titles carry the number.
+- **Record a data source when you find one (Sam, 2026-11-04):** *"document them when they are discovered, see how
+  they could be plugged in and how we might get the connections made."* Its entry and four steps:
+  [`data_sources`](docs/reference/data_sources.md).
 - **Capture unplanned substance on the fly (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
