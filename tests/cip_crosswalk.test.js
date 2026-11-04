@@ -1345,6 +1345,61 @@ function fresh(withCollege) {
   } catch (e) { noCoursesThrew = true; console.error(e); }
   check("a college with no courses does not throw", !noCoursesThrew);
 
+  // ── Every view has an address (a sign-in link opens a new browser tab, so only the address survives) ──
+  // The real keeper (cpl_session.js) loads first; the address opens a destination over the stored choice for the
+  // visit, without writing it, and the tab reports the destination and, once a subject shows, its triage tile.
+  {
+    const SESSION_SRC = fs.readFileSync("cpl_session.js", "utf8");
+    const at = function (hash, stored) {
+      const dom = new JSDOM(`<!DOCTYPE html><html><body><div class="cpl-tab-pane" id="tab-cip-crosswalk"><div class="main-container"><div id="cip-crosswalk-root"></div></div></div></body></html>`,
+        { runScripts: "outside-only", url: "https://example.org/index.html" + hash });
+      if (stored) dom.window.localStorage.setItem("cipx_scope", stored);
+      dom.window.eval(SESSION_SRC);
+      dom.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+      dom.window.eval(src);
+      const api = dom.window.CPL_CIP_CROSSWALK;
+      api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
+      api._setCourses("test_college", JSON.parse(JSON.stringify(RCOURSES)));
+      api._setConsensus(RCONSENSUS);
+      api._setPrograms(JSON.parse(JSON.stringify(PROGRAMS_FX)));
+      api.activate();
+      const w = dom.window, doc = w.document;
+      const stash = () => { w.CPL_SESSION.stashReturnTab("cip-crosswalk"); return JSON.parse(w.localStorage.getItem("cpl_sb_return_tab") || "{}").tab; };
+      const navOn = () => ((doc.querySelector(".cipx-modetab.on") || {}).textContent || "");
+      const pickCollege = () => { const c = doc.querySelector(".cipx-college-sel"); c.value = "test_college"; c.dispatchEvent(new w.Event("change")); };
+      const pickSubject = async (v) => { await tick(); await tick(); const d = doc.querySelector(".cipx-rev-deptsel"); d.value = v; d.dispatchEvent(new w.Event("change")); await tick(); await tick(); };
+      const tileOn = () => ((doc.querySelector(".cipx-rev-tile.on .cipx-rev-tilel") || {}).textContent || "").trim();
+      return { w, doc, stash, navOn, pickCollege, pickSubject, tileOn };
+    };
+    const a = at("#cip-crosswalk/courses/review", "programs");
+    check("address: #cip-crosswalk/courses/review opens Review my courses over a stored Programs choice", /Review my courses/.test(a.navOn()));
+    check("address: and does not write the stored choice", a.w.localStorage.getItem("cipx_scope") === "programs");
+    check("address: before a subject shows, it reports the destination", a.stash() === "cip-crosswalk/courses");
+    a.pickCollege(); await a.pickSubject("ACCT");
+    check("address: the first subject chosen opens on the address's tile", /Review/.test(a.tileOn()) && a.stash() === "cip-crosswalk/courses/review", a.tileOn() + " " + a.stash());
+    Array.prototype.filter.call(a.doc.querySelectorAll(".cipx-rev-tile"), (t) => /^All$/.test(t.querySelector(".cipx-rev-tilel").textContent.trim()))[0].click();
+    check("address: the All tile reports the destination alone", a.stash() === "cip-crosswalk/courses");
+    await a.pickSubject("BUS");
+    check("address: a later subject starts on All (the address's tile is spent)", /^All$/.test(a.tileOn()));
+    a.w.location.hash = "#cip-crosswalk/courses/ready";
+    a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "cip-crosswalk" } }));
+    await tick(); await tick(); await tick();
+    check("address: a later visit naming a tile, with a subject showing, opens that tile", /Ready/.test(a.tileOn()) && a.stash() === "cip-crosswalk/courses/ready", a.tileOn() + " " + a.stash());
+    Array.prototype.filter.call(a.doc.querySelectorAll(".cipx-modetab"), (t) => /Review my programs/.test(t.textContent))[0].click();
+    check("address: switching to Review my programs reports it", a.stash() === "cip-crosswalk/programs");
+    a.w.location.hash = "#cip-crosswalk/courses";
+    a.w.dispatchEvent(new a.w.CustomEvent("cpl-tab-activated", { detail: { tab: "cip-crosswalk" } }));
+    check("address: a later visit by an address opens its destination", /Review my courses/.test(a.navOn()) && a.stash() === "cip-crosswalk/courses");
+    const b = at("#cip-crosswalk/programs");
+    check("address: #cip-crosswalk/programs opens Review my programs", /Review my programs/.test(b.navOn()) && b.stash() === "cip-crosswalk/programs");
+    const c = at("#cip-crosswalk", "programs");
+    check("address: a bare #cip-crosswalk keeps the stored choice, as today", /Review my programs/.test(c.navOn()));
+    const d = at("#cip-crosswalk");
+    check("address: a bare #cip-crosswalk with nothing stored opens Review my courses", /Review my courses/.test(d.navOn()));
+    const u = at("#cip-crosswalk/browse", "programs");
+    check("address: a word the tab does not know leaves it as it is", /Review my programs/.test(u.navOn()));
+  }
+
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
   console.log(`\n${pass}/${results.length} assertions passed`);

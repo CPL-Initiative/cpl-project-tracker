@@ -1142,6 +1142,28 @@
     ["external", "External services"],
     ["other", "Other"]
   ];
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens.
+     Admin has one page; its Blast Radius pane's kind words are the one row of view words on it, so a kind other
+     than All is the address: #admin/blast/<supabase|rpc|edgefn|datajs|file|external|other>. The search box and the
+     "show pages with no stored information" box stay out of it. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("admin", function () {
+    var k = state.blast && state.blast.kind;
+    return k && k !== "all" ? "admin/blast/" + k : "admin";
+  });
+  var blastLand = false;   // an arrival on a kind brings the pane into view once it paints
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "admin") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("admin") : null;
+    if (!a || a[0] !== "blast") return;
+    var k = a[1] || "all";
+    if (BLAST_KINDS.some(function (x) { return x[0] === k; })) { state.blast.kind = k; blastLand = true; }
+  }
   var BLAST_GROUP = {
     supabase: "Supabase tables", rpc: "RPCs", edgefn: "Edge functions",
     datajs: "Generated JS artifacts", file: "JSON, Excel and other files",
@@ -1350,6 +1372,7 @@
         renderBlast();
       });
     });
+    if (blastLand) { blastLand = false; if (host.scrollIntoView) host.scrollIntoView({ block: "start" }); }
   }
 
   /* ── DR-26: the live-session banner control ─────────────────────────────────
@@ -2017,6 +2040,7 @@
     wireOverlay();
     var root = document.getElementById("admin-root");
     if (!root) return;
+    arrive();
     if (state.loadState === "ok") { render(root); loadBlast().then(renderBlast); return; }
     render(root);
     loadGates().then(function () { render(root); });

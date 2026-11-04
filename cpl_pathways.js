@@ -2282,6 +2282,9 @@
     });
     return w;
   }
+  /* The CCR and membership views' Student / College toggle: one view for the tab, as roepView is, so a re-render
+     (the table's list landing) and an address (#cpl-pathways/.../curate) keep it. "student" is the default. */
+  var ccrWho = "student";
   function ccrVtBtn(label, on) {
     var b = document.createElement("button");
     b.type = "button";
@@ -2297,18 +2300,20 @@
   }
   function renderCcrViews(prog, ccr) {
     ensureCcrCss();
-    var box = el("div", "cplpw-sec wide cplccr view-student");
+    var box = el("div", "cplpw-sec wide cplccr view-" + (ccrWho === "college" ? "college" : "student"));
     // Student / College toggle
     var tog = el("div", "ccr-toggle");
     tog.setAttribute("role", "group");
     tog.setAttribute("aria-label", "View for");
-    var bS = ccrVtBtn("Explore CPL — student", true);
-    var bC = ccrVtBtn("Curate & validate — college", false);
+    var bS = ccrVtBtn("Explore CPL — student", ccrWho !== "college");
+    var bC = ccrVtBtn("Curate & validate — college", ccrWho === "college");
     bS.addEventListener("click", function () {
+      ccrWho = "student";
       box.classList.remove("view-college"); box.classList.add("view-student");
       ccrVtPick(bS, bC);
     });
     bC.addEventListener("click", function () {
+      ccrWho = "college";
       box.classList.remove("view-student"); box.classList.add("view-college");
       ccrVtPick(bC, bS);
     });
@@ -2540,18 +2545,20 @@
     ensureCcrCss();
     ensureMemCss();
     var progs = memPrograms();
-    var box = el("div", "cplpw-sec wide cplccr cplmem view-student");
+    var box = el("div", "cplpw-sec wide cplccr cplmem view-" + (ccrWho === "college" ? "college" : "student"));
     // Student / College toggle (same affordance as the CCR two-view)
     var tog = el("div", "ccr-toggle");
     tog.setAttribute("role", "group");
     tog.setAttribute("aria-label", "View for");
-    var bS = ccrVtBtn("Explore CPL — student", true);
-    var bC = ccrVtBtn("Curate & validate — college", false);
+    var bS = ccrVtBtn("Explore CPL — student", ccrWho !== "college");
+    var bC = ccrVtBtn("Curate & validate — college", ccrWho === "college");
     bS.addEventListener("click", function () {
+      ccrWho = "student";
       box.classList.remove("view-college"); box.classList.add("view-student");
       ccrVtPick(bS, bC);
     });
     bC.addEventListener("click", function () {
+      ccrWho = "college";
       box.classList.remove("view-student"); box.classList.add("view-college");
       ccrVtPick(bC, bS);
     });
@@ -3437,8 +3444,90 @@
   // (a reviewer signing in or out) re-renders with the reader's pick kept.
   var lastRender = null;
   var shownIdent = null;
+  var shownItem = null;   // the item shownIdent names, for the address below
   function itemIdent(it, i) {
     return it.kind === "roep" ? "roep:" + roepId(it.prog.college, it.prog.control_number) : it.kind + ":" + i;
+  }
+
+  /* ── the tab's address (every view has an address, 2026-11-04) ──
+     The tab writes no address of its own (the comment at buildSelector); it reads one as a visit starts and reports
+     the view on screen, so a sign-in link returns to it:
+       #cpl-pathways[/college/<name>][/pathway/<id> | /record/<control number> | /none][/term][/public][/curate][/mine]
+     college: the College select. pathway: a featured map or a baccalaureate, by its id. record: a catalog record, by
+     its control number (at the named college when one is). none: No pathway chosen. term and public: a catalog
+     record's By term and Student or public. curate: the CCR and membership views' college side. mine: the My College
+     section open. The bare #cpl-pathways, what the side menu and every other tab's link write, opens as before. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("cpl-pathways", function () {
+    var L = lastRender;
+    if (!L) return "cpl-pathways";
+    var p = [];
+    if (pickedCollege) p.push("college", pickedCollege);
+    if (shownIdent === "none") p.push("none");
+    else if (shownItem && shownItem.prog) {
+      if (shownItem.kind === "roep") p.push("record", shownItem.prog.control_number);
+      else if (shownItem.prog.id && (pickedCollege || shownItem !== L.first)) p.push("pathway", shownItem.prog.id);
+    }
+    if (shownItem && shownItem.kind === "roep" && shownIdent !== "none") {
+      if (roepView.lay === "term") p.push("term");
+      if (roepView.who === "public") p.push("public");
+    }
+    if (ccrWho === "college" && L.root && L.root.querySelector && L.root.querySelector(".cplccr")) p.push("curate");
+    if (mineOpen && pickedCollege) p.push("mine");
+    return ["cpl-pathways"].concat(p.map(function (x) { return encodeURIComponent(String(x)); })).join("/");
+  });
+  /* The pathway an address names, held until a render lists it: a catalog record can arrive with the table's list,
+     after the first render. Any pick of the reader's drops it. */
+  var wantPath = null, arrivedCollege = false;
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock re-fires
+     cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "cpl-pathways") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return false;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("cpl-pathways") : null;
+    if (!a) return false;
+    var plan = { words: {} }, any = false;
+    for (var i = 0; i < a.length; i++) {
+      var w = a[i], v = a[i + 1];
+      if ((w === "college" || w === "pathway" || w === "record") && v) { plan[w] = v; any = true; i++; continue; }
+      if (/^(none|term|public|curate|mine)$/.test(w)) { plan.words[w] = true; any = true; }
+    }
+    if (!any) return false;
+    // What the address names is the whole view: the rest takes its default, and a typed search starts fresh.
+    shareSeen = window.CPL_COLLEGE_CHOICE; sharePending = false;   // the address wins over an older shared choice
+    pickedCollege = plan.college || ""; arrivedCollege = !!plan.college;
+    pickedQuery = "";
+    shownIdent = null; shownItem = null;
+    wantPath = plan.words.none ? { none: true } : plan.pathway ? { id: plan.pathway } : plan.record ? { control: plan.record } : null;
+    roepView.lay = plan.words.term ? "term" : "req";
+    roepView.who = plan.words.public ? "public" : "college";
+    ccrWho = plan.words.curate ? "college" : "student";
+    mineOpen = !!plan.words.mine && !!plan.college;   // My College belongs to a college
+    return true;
+  }
+  /* Resolves wantPath against this render's items; a catalog record not yet listed waits for the table's list. */
+  function takeWant(items) {
+    var wp = wantPath;
+    if (!wp) return;
+    var hit = null;
+    if (wp.none) hit = "none";
+    items.forEach(function (it, j) {
+      if (hit || !it.prog) return;
+      if (wp.id && it.kind !== "roep" && it.prog.id === wp.id) hit = itemIdent(it, j);
+    });
+    if (wp.control) {
+      var at = null, any = null;
+      items.forEach(function (it, j) {
+        if (it.kind !== "roep" || !it.prog || String(it.prog.control_number) !== wp.control) return;
+        if (any === null) any = itemIdent(it, j);
+        if (at === null && pickedCollege && choiceKey(it.prog.college) === choiceKey(pickedCollege)) at = itemIdent(it, j);
+      });
+      hit = at || any;
+    }
+    if (hit) { shownIdent = hit; wantPath = null; }
+    else if (!wp.control || roepTable.index || roepTable.error) wantPath = null;
   }
   function render(root, data, live, dir, liveNote) {
     lastRender = { root: root, data: data, live: live, dir: dir, liveNote: liveNote };
@@ -3448,6 +3537,7 @@
     featured.forEach(function (p) { items.push({ kind: "featured", prog: p }); });
     directory.forEach(function (p) { items.push({ kind: "directory", prog: p }); });
     roepPrograms().forEach(function (p) { items.push({ kind: "roep", prog: p }); });
+    lastRender.first = items[0] || null;
     if (!items.length) {
       clearNode(root);
       root.appendChild(el("div", "cplpw-empty", "No pathway definitions found (cpl_pathways_data.js)."));
@@ -3457,6 +3547,7 @@
     var body = el("div");
     var selector = null;
     function openById(id) {
+      wantPath = null;
       for (var j = 0; j < items.length; j++) {
         if (items[j].prog && items[j].prog.id === id) {
           if (selector) selector.show(j);
@@ -3468,7 +3559,7 @@
     }
     function show(i) {
       if (i === -1) {
-        shownIdent = "none";
+        shownIdent = "none"; shownItem = null;
         roepOpening++;
         clearNode(body);
         var q = selector && selector.query();
@@ -3491,6 +3582,7 @@
           var b = document.createElement("button");
           b.type = "button"; b.className = "cplpw-oppact cplpw-found-go"; b.textContent = f.text;
           b.addEventListener("click", function () {
+            wantPath = null;
             selector.show(f.i);
             show(f.i);
           });
@@ -3503,7 +3595,7 @@
         return;
       }
       var it = items[i] || items[0];
-      shownIdent = itemIdent(it, items[i] ? i : 0);
+      shownIdent = itemIdent(it, items[i] ? i : 0); shownItem = it;
       roepOpening++; // a record read still in flight no longer owns the view
       if (it.kind === "directory") renderDirectory(body, it.prog, dir, directory, dir ? null : liveNote);
       else if (it.kind === "roep") openRoepProgram(body, it.prog);
@@ -3511,7 +3603,7 @@
       else renderProgram(body, it.prog, live, liveNote);
     }
     if (items.length > 1) {
-      selector = buildSelector(items, directory, dir, function (i) { show(i); });
+      selector = buildSelector(items, directory, dir, function (i) { wantPath = null; show(i); });
       container.appendChild(selector.row);
     }
     var rnote = roepFallbackNote();
@@ -3520,6 +3612,10 @@
     clearNode(root);
     root.removeAttribute("style");
     root.appendChild(container);
+    takeWant(items);
+    // A college the address named, once this render has matched it to a listed one, is the shared choice too, as a
+    // pick in the College select is.
+    if (arrivedCollege) { arrivedCollege = false; if (selector && selector.college.value) shareChoice(selector.college.value); }
     var start = 0;
     if (shownIdent === "none" && selector) start = -1;
     else if (shownIdent) items.forEach(function (it, j) { if (itemIdent(it, j) === shownIdent) start = j; });
@@ -3581,8 +3677,15 @@
     if (sharedWired) return;
     sharedWired = true;
     window.addEventListener("cpl-tab-activated", function (e) {
-      if (e && e.detail && e.detail.tab === "cpl-pathways") applySharedChoice();
+      if (e && e.detail && e.detail.tab === "cpl-pathways" && !revisit()) applySharedChoice();
     });
+  }
+  /* A later visit by an address that names a view opens it; any other visit keeps the reader's place, as before. */
+  function revisit() {
+    if (!arrive()) return false;
+    var L = lastRender;
+    if (L && L.root && L.root.isConnected !== false) render(L.root, L.data, L.live, L.dir, L.liveNote);
+    return true;
   }
 
   function activate() {
@@ -3590,8 +3693,9 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     wireSharedChoice();
-    if (root.getAttribute("data-cplpw-rendered") === "1") { applySharedChoice(); return; }
+    if (root.getAttribute("data-cplpw-rendered") === "1") { if (!revisit()) applySharedChoice(); return; }
     root.setAttribute("data-cplpw-rendered", "1");
+    arrive();
 
     var data = window.CPL_PATHWAYS || { programs: [] };
     var college = (data.programs && data.programs[0] && data.programs[0].college) || "Cerritos";
@@ -3670,6 +3774,7 @@
     _roepTable: roepTable,
     _roepIndexLanded: roepIndexLanded,
     _roepView: roepView,
+    _ccrWho: function () { return ccrWho; },
     _ladderBlocks: ladderBlocks,
     _certificateFigures: certificateFigures,
     _collegeStatus: collegeStatus,

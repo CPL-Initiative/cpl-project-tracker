@@ -169,6 +169,13 @@
     for (var i = 0; i < rows.length; i++) if (rows[i].slug === slug) return rows[i];
     return null;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address routeFromHash below opens. It reads
+     state.open, never the address, which can still hold the slug of a record since closed. A new, unsaved record has
+     no slug, so it reports the register. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("letters", function () {
+    var r = state.open && state.open !== "new" ? byId(state.open) : null;
+    return r && r.slug ? "letters/" + r.slug : "letters";
+  });
 
   // ── the salutation ─────────────────────────────────────────────────────────
   // MAP's roster holds one hand-typed name per role ("Dr. Jennifer Zellet", "Kevin G.
