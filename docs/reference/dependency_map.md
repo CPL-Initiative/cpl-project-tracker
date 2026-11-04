@@ -609,6 +609,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/crnc_mirrors.json` | scripts: `excel_to_dashboard.py`, `kb/_detect_crnc_mirrors.py`, `kb/_rekey_crnc_mirrors.py` | — |
 | `kb/crossdisc_out/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/csr_out/confirm` | none found | committed by: `csr-confirm.yml` |
+| `kb/csr_out/confirm/confirmed_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/csr_out/latest.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | committed by: `daily-dashboard.yml` |
 | `kb/csr_out/stray_triage.json` | none found | scripts: `kb/_csr_stray_triage.py` |
 | `kb/csr_out/stray_triage.md` | none found | scripts: `kb/_csr_stray_triage.py` |
@@ -1284,5 +1285,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 783 file
+Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 784 file
 datasets · 193 external services · 515 consumers · 60 workflows · 40 tabs.

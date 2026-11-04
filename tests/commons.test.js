@@ -427,6 +427,32 @@ function cellText(li, title) {
       txt(unsorted.querySelector('[data-reason="unsorted"] .cmn-reason-h')) === "Not yet sorted");
   }
 
+  // the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward
+  {
+    const C = [
+      { ref: "exhibit", unit: "titles", total: { placed: 1178, untouched: 1047, kept: 23, renamed: 71, moved: 0, by_procedure: 24, left: 13, looked: 94 },
+        procedures: [{ name: "classifier", placed: 890, untouched: 807, kept: 4, renamed: 53, moved: 0, by_procedure: 19, left: 7, looked: 57 }] },
+      { ref: "subjects", unit: "picks", total: { placed: 13, untouched: 13, kept: 0, renamed: 0, moved: 0, by_procedure: 0, left: 0, looked: 0 },
+        procedures: [{ name: "confirm-authority", placed: 13, untouched: 13, kept: 0, renamed: 0, moved: 0, by_procedure: 0, left: 0, looked: 0 }] },
+      { ref: "cr", error: "FileNotFoundError: x" }];
+    const withC = JSON.parse(JSON.stringify(STATUS)); withC.confidence = C;
+    const c = load({ fetch: responder({ "kb/status/commons.json": withC, "kb/status/program-requirements.json": PR_LOG }) });
+    await c.M.boot();
+    const sec = c.d.querySelector(".cmn-conf");
+    check("confidence 1: the section draws, headed How far to trust the procedures", sec && txt(sec.querySelector("#cmn-conf-h")) === "How far to trust the procedures");
+    check("confidence 2: a reference's line says how many a person looked at and what they did",
+      /A person has looked at 94 of 1,178: 23 kept, 71 renamed with their family, 0 moved elsewhere\. 24 later revised by another procedure; 13 left the reference\./.test(txt(sec)));
+    check("confidence 3: a reference no person has looked at says so", /No person has looked at any of the 13 yet\./.test(txt(sec)));
+    const th = sec.querySelector("table").querySelectorAll("thead th");
+    check("confidence 4: each table names its columns with th scope=col, its rows with th scope=row",
+      th.length === 7 && Array.prototype.every.call(th, function (h) { return h.getAttribute("scope") === "col"; })
+      && sec.querySelector("tbody th").getAttribute("scope") === "row" && txt(sec.querySelector("tbody th")) === "the classifier");
+    check("confidence 5: the table scrolls in its own labelled region", sec.querySelector(".cmn-conf-wrap").getAttribute("role") === "region"
+      && /Common Exhibits: each procedure/.test(sec.querySelector(".cmn-conf-wrap").getAttribute("aria-label")));
+    check("confidence 6: an unread source reads Could not be read, never a zero", /Common Credit Recommendations[\s\S]*Could not be read/.test(txt(sec)));
+    check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
+  }
+
   // the states, on their own
   const M = t.M;
   check("machineState: no stamp is Could not be read", M.machineState({}, NOW).key === "unread" && M.machineState(null, NOW).word === "Could not be read");

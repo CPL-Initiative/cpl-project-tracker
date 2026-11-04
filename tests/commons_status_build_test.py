@@ -249,6 +249,41 @@ check("an issue that names no reason lands under unsorted, so it cannot hide",
 check("an unread issue keeps its null and its error in the queue",
       probe["reasons"][1]["items"] == [{"ref": "x", "title": "X", "n": None, "words": "an unread one", "owner": None, "open": None, "error": "E"}])
 
+# ── the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward ──
+conf = {c.get("ref"): c for c in data.get("confidence", [])}
+check("the status file carries the confidence count for Exhibits and Subjects", set(conf) == {"exhibit", "subjects"}, list(conf))
+for ref, c in conf.items():
+    t = c.get("total") or {}
+    check("confidence %s: every placed item lands in exactly one state" % ref,
+          not c.get("error") and t.get("placed") == sum(t.get(k, 0) for k in ("untouched", "kept", "renamed", "moved", "by_procedure", "left")), c.get("error") or t)
+    check("confidence %s: looked is kept plus renamed plus moved" % ref, t.get("looked") == t.get("kept", 0) + t.get("renamed", 0) + t.get("moved", 0))
+with tempfile.TemporaryDirectory() as fx:
+    os.makedirs(os.path.join(fx, "kb", "cer_procedures_out", "saved"))
+    rows = [  # the procedure's saves: (raw title, the common title it placed)
+        ("A1", "Alpha"), ("B1", "Beta"), ("B2", "Beta"), ("C1", "Gamma"), ("D1", "Delta"), ("D2", "Delta"), ("E1", "Eps"), ("F1", "Phi")]
+    with open(os.path.join(fx, "kb", "cer_procedures_out", "saved", "saved_2026-11-01T00-00-00Z.json"), "w") as f:
+        json.dump({"at": "2026-11-01", "rows": [{"course_id": "_UNCLASSIFIED::" + k, "field": "unified_title_assignment", "value": v,
+                                                 "reviewer_email": "cer-procedure-p1@bot", "procedure": "p1"} for k, v in rows]}, f)
+    now = {
+        "A1": {"unified_title": "Alpha", "reviewed_by": "cer-procedure-p1@bot"},          # untouched
+        "B1": {"unified_title": "Beta Two", "reviewed_by": "map@rccd.edu"},               # Beta renamed: both moved together
+        "B2": {"unified_title": "Beta Two", "reviewed_by": "map@rccd.edu"},
+        "C1": {"unified_title": "Gamma", "reviewed_by": "map@rccd.edu"},                  # kept
+        "D1": {"unified_title": "Delta One", "reviewed_by": "map@rccd.edu"},              # Delta split: one moved away
+        "D2": {"unified_title": "Delta", "reviewed_by": "map@rccd.edu"},
+        "E1": {"unified_title": "Eps", "reviewed_by": "cer-procedure-p2@bot"},            # revised by another procedure
+        "X9": {"unified_title": "Delta", "reviewed_by": "map@rccd.edu"},
+    }                                                                                    # F1 left the reference
+    with open(os.path.join(fx, "kb", "unified_titles.json"), "w") as f:
+        json.dump(now, f)
+    ce = B.confidence_exhibits(fx)["total"]
+    check("confidence fixture: untouched, kept, renamed with the family, a split one moved, another procedure, left",
+          (ce["untouched"], ce["kept"], ce["renamed"], ce["moved"], ce["by_procedure"], ce["left"]) == (1, 2, 2, 1, 1, 1), ce)
+    check("confidence fixture: a split counts the one that left its family as moved, never as renamed",
+          ce["moved"] == 1 and ce["looked"] == 5)
+    bare = B.build_confidence(os.path.join(fx, "nowhere"))
+    check("an unreadable confidence source carries its error, never a zero", all(c.get("error") and "total" not in c for c in bare), bare)
+
 # ── the small helpers ──
 check("receipt_time turns 2026-10-18T17-37-29Z into ISO", B.receipt_time("2026-10-18T17-37-29Z") == "2026-10-18T17:37:29Z")
 check("receipt_time leaves an ISO stamp alone", B.receipt_time("2026-10-18T17:37:29Z") == "2026-10-18T17:37:29Z")

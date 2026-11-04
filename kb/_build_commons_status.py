@@ -675,6 +675,115 @@ def build_queue(rows):
     return out
 
 
+# The confidence count (Sam, 2026-11-04, S573: "automate as many of these procedures with confidence as
+# possible"). A procedure earns trust by what a person does with its work afterward. Each procedure's committed
+# receipts say what it placed; the committed reference says where each item sits now and whose stamp it carries.
+# An item a person has looked at is kept (same place), renamed with its family (the person renamed or merged the
+# whole family: its old name is gone and its siblings moved together), or moved (a correction). Items no person has
+# looked at yet stay "untouched", so the share looked at reads beside the agreement.
+CONF_KEYS = ["placed", "untouched", "kept", "renamed", "moved", "by_procedure", "left"]
+
+
+def _norm(t):
+    return " ".join(str(t or "").lower().split())
+
+
+def _conf_counts(placed):
+    c = {k: 0 for k in CONF_KEYS}
+    for state in placed.values():
+        c["placed"] += 1
+        c[state] += 1
+    c["looked"] = c["kept"] + c["renamed"] + c["moved"]
+    return c
+
+
+def confidence_exhibits(root):
+    """Exhibit titles a CER procedure assigned (kb/cer_procedures_out/saved/), against kb/unified_titles.json now."""
+    ut = load_json(root, "kb/unified_titles.json")
+    saved = {}
+    for f in sorted(glob.glob(os.path.join(root, "kb/cer_procedures_out/saved/saved_*.json"))):
+        with open(f, encoding="utf-8") as fh:
+            d = json.load(fh)
+        for r in d.get("rows") or []:
+            if r.get("field") == "unified_title_assignment" and r.get("course_id"):
+                saved[r["course_id"]] = r   # the latest save of a title wins
+    live = {}
+    for v in ut.values():
+        n = _norm(v.get("unified_title"))
+        live[n] = live.get(n, 0) + 1
+    # Where each family a procedure named now sits, so a split reads as a move, never as a rename.
+    went = {}
+    for cid, r in saved.items():
+        e = ut.get(cid.partition("::")[2])
+        if e:
+            went.setdefault(_norm(r.get("value")), []).append(_norm(e.get("unified_title")))
+    plural = {v: max(set(w), key=w.count) for v, w in went.items()}
+    by = {}
+    for cid, r in saved.items():
+        proc = r.get("procedure") or str(r.get("reviewer_email") or "").replace("cer-procedure-", "").replace("@bot", "")
+        e = ut.get(cid.partition("::")[2])
+        old = _norm(r.get("value"))
+        who = str((e or {}).get("reviewed_by") or "")
+        if e is None:
+            state = "left"
+        elif not who or who == r.get("reviewer_email"):
+            state = "untouched"
+        elif who.endswith("@bot"):
+            state = "by_procedure"
+        elif _norm(e.get("unified_title")) == old:
+            state = "kept"
+        elif live.get(old, 0) == 0 and _norm(e.get("unified_title")) == plural.get(old):
+            state = "renamed"
+        else:
+            state = "moved"
+        by.setdefault(proc, {})[cid] = state
+    procs = [dict(name=k, **_conf_counts(v)) for k, v in by.items()]
+    procs.sort(key=lambda x: -x["placed"])
+    allp = {}
+    for v in by.values():
+        allp.update(v)
+    return {"ref": "exhibit", "unit": "titles", "procedures": procs, "total": _conf_counts(allp)}
+
+
+def confidence_subjects(root):
+    """Common SUBJ picks the nightly confirm settled (kb/csr_out/confirm/), against kb/discipline_canonical_subj4.json now."""
+    seed = load_json(root, "kb/discipline_canonical_subj4.json").get("disciplines") or {}
+    placed = {}
+    proc_name = "confirm-authority"
+    for f in sorted(glob.glob(os.path.join(root, "kb/csr_out/confirm/confirmed_*.json"))):
+        with open(f, encoding="utf-8") as fh:
+            d = json.load(fh)
+        for r in d.get("rows") or []:
+            disc = r.get("discipline")
+            if not disc:
+                continue
+            e = seed.get(disc) or {}
+            who = str(e.get("reviewed_by") or "")
+            if not e.get("canonical_subj4"):
+                state = "left"
+            elif not who or who == r.get("reviewer_email"):
+                state = "untouched"
+            elif who.endswith("@bot"):
+                state = "by_procedure"
+            elif e.get("canonical_subj4") == r.get("value"):
+                state = "kept"
+            else:
+                state = "moved"
+            placed[disc] = state
+    return {"ref": "subjects", "unit": "picks", "procedures": [dict(name=proc_name, **_conf_counts(placed))] if placed else [],
+            "total": _conf_counts(placed)}
+
+
+def build_confidence(root):
+    out = []
+    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects)):
+        try:
+            out.append(fn(root))
+        except Exception as e:  # noqa: BLE001  (a source that cannot be read says so, never a zero)
+            out.append({"ref": ref, "error": "%s: %s" % (type(e).__name__, e)})
+    return out
+
+
 BUILDING = [
     ("credentials", "Industry credentials", "#exhibits", building_credentials),
     ("outcomes", "Course outcomes", "#coci-lookup", building_outcomes),
@@ -696,7 +805,8 @@ def build(root):
         except Exception as e:  # noqa: BLE001
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows)}
+    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows),
+            "confidence": build_confidence(root)}
 
 
 def main(argv=None):
