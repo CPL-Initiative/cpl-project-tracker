@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 573,
+   "count": 574,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3416,6 +3416,26 @@
      "title": "A remembered toggle hides the default from its author",
      "type": "methodology",
      "updated": "2026-09-02"
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [
+      "kb/_build_commons_status.py",
+      "kb/cer_procedures_out/saved/",
+      "kb/unified_titles.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-renamed-family-is-not-a-correction.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "commons",
+      "procedures",
+      "confidence",
+      "curation"
+     ],
+     "title": "A renamed family is not a correction",
+     "type": "methodology",
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-10-19",
@@ -16532,8 +16552,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 540,
+   "count": 541,
    "docs": [
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 575,
+     "path": "docs/session_575_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "data-sources",
+      "scheduled-sessions"
+     ],
+     "title": "Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25740,5 +25777,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1375
+ "total": 1377
 }

@@ -624,3 +624,22 @@ Common Credit Recommendations, Common Courses, Common Credentials, Common Outcom
 the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
 (S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
 so the port into this tab waits on his call on the look.
+
+## S573 SkyNeedle, 2026-11-04: the path, the order, the queue and the confidence count (Sam's session)
+
+- **The path mock** (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9, v8; source `CPLBrain/04-projects/cpl-initiative/commons-path-mock/`):
+  six steps every reference shares, the CPL Commons view and the Common Subjects view, in Malone's look (Sam: *"Use the
+  new UI format rather than first light on this and all commons views"*, now the CLAUDE.md presentation rule).
+- **Sam's additions, in order** (verbatim in the vault braindump `braindump-2026-11-04-1415-commons-path-one-look.md`):
+  where to start (Subjects then Courses, Exhibits then Credit Recommendations, Programs last); teach the daily check
+  (Teach a rule, try it switched off, turn it on, watch what a person changes); who carries the work (the routines carry
+  the volume, a person is asked only for one of four reasons); the daily check's wish list of data sources, which became
+  the register `docs/reference/data_sources.md` with its four steps and a `CLAUDE.md` line.
+- **Built:** the one queue (#2766) and the confidence count (#2767) on the CPL Commons tab; the daily dashboard was
+  dispatched at 16:57Z so the status file carries both.
+- **The confidence lesson:** a first comparison read 71 of the 94 person-touched exhibit titles as changed; every one was
+  a family a person renamed or merged. The count now separates kept, renamed with its family, and moved; the KB note
+  `methodology-a-renamed-family-is-not-a-correction` holds the rule.
+- **`kb_curation` forgets:** its primary key is (course_id, field), so a person's save replaces a procedure's row. The
+  receipts are the only record of what a procedure wrote; a confidence measure for another reference needs receipts in
+  the same row shape (only the CER saves and the Subjects confirm have them today).
