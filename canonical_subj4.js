@@ -1674,7 +1674,17 @@
   }
   function scanAsksOf(ut) { return (scanAsks() || []).filter(function (f) { return f.item === ut; }); }
   /* Saved by a person this visit: a code, a note, a Take or a Confirm (each marks the row changed). */
-  function answeredThisVisit(ut) { var L = listState(); return !!(L.changed && L.changed.indexOf(ut) !== -1); }
+  function answeredThisVisit(ut) {
+    var L = listState();
+    if (L.changed && L.changed.indexOf(ut) !== -1) return true;
+    // Or saved since the scan ran, whatever the visit (Sam, 2026-11-05: "I edited these but they are staying on the list",
+    // after a reload had cleared the visit's changed set). The overlay holds each save's time; the scan stamps its date,
+    // and the daily run's earliest firing is 06:17 UTC.
+    var rec = state.overlay && state.overlay[ut], d = state.scan && state.scan.data, when = d && d._scanned_at;
+    if (!rec || !when) return false;
+    var since = /T/.test(when) ? when : when + "T06:17:00Z";
+    return [rec._pick_at, rec._notes_at].some(function (t) { return t && new Date(t).getTime() > new Date(since).getTime(); });
+  }
   /* Where a saved answer goes next: the sync (phase-1e-sync.yml, dispatched by a session after a working pass) carries
      kb_curation into the reference file, and the daily scan (kb/_csr_trail.py, 06:17 UTC) reads it there. */
   var SCAN_NEXT = "the sync carries it into the reference file and the next daily scan (06:17 UTC) reads it again";
@@ -2146,7 +2156,7 @@
     var left = A.filter(function (f) { return uts[f.item] && done.indexOf(f.item) < 0; }).length;
     return api.el("p", { cls: "cs-quiet", text: plural(A.length, "scan finding", "scan findings") + " to confirm or note: " +
       plural(left, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
-      (done.length ? "; " + plural(done.length, "MQ discipline", "MQ disciplines") + " answered this visit left the list (" + done.join(", ") + "), and " + SCAN_NEXT : "") +
+      (done.length ? "; " + plural(done.length, "MQ discipline", "MQ disciplines") + " answered since the last scan left the list (" + done.join(", ") + "), and " + SCAN_NEXT : "") +
       (files.length ? "; " + files.map(function (f) { return (RULE_WORDS[f.rule] || f.rule) + " in " + f.item; }).join("; ") +
         ", on a file rather than an MQ discipline, which Run the SUBJ check lists" : "") + "." });
   }
@@ -2289,9 +2299,9 @@
     var asks = scanAsksOf(r.ut);
     if (asks.length) {
       var answered = answeredThisVisit(r.ut);
-      out.push(h.heading(answered ? (asks.length === 1 ? "A scan finding, answered this visit" : "Scan findings, answered this visit")
+      out.push(h.heading(answered ? (asks.length === 1 ? "A scan finding, answered since the scan" : "Scan findings, answered since the scan")
         : asks.length === 1 ? "A scan finding to confirm or note" : "Scan findings to confirm or note"));
-      if (answered) out.push(h.el("p", { cls: "cs-quiet", text: "You saved this MQ discipline this visit, so it has left the list needing a look; " + SCAN_NEXT + "." }));
+      if (answered) out.push(h.el("p", { cls: "cs-quiet", text: "A person saved this MQ discipline since the last scan, so it has left the list needing a look; " + SCAN_NEXT + "." }));
       out.push(h.el("ul", { cls: "csl-pn-scan" }, asks.map(function (f) {
         return h.el("li", null, [h.el("b", { text: (RULE_WORDS[f.rule] || f.rule) + ": " }), f.evidence || "",
           f.suggestion ? ". The scan suggests: " + f.suggestion + "." : "."]);

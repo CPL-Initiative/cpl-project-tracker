@@ -92,10 +92,17 @@ const SCAN = { _scanned_at: "2026-11-04T06:00:00Z", _mid_codes: { stray_codes: 0
   const note2 = Array.from(t.d.querySelectorAll("#cs-list p")).map(txt).find((x) => /scan findings to confirm or note:/.test(x)) || "";
   check("(3b) ⭐ a row saved this visit leaves the filter, and the count follows", t.titles().join("|") === "Graphic Arts" && fl2 === "A scan finding to confirm or note (1)", t.titles().join("|") + " / " + fl2);
   check("(3b) the List names what left and where it goes next", /1 finding on 1 MQ discipline below/.test(note2)
-    && /1 MQ discipline answered this visit left the list \(Cabinet Making\), and the sync carries it into the reference file/.test(note2), note2);
+    && /1 MQ discipline answered since the last scan left the list \(Cabinet Making\), and the sync carries it into the reference file/.test(note2), note2);
   t.M()._state.ls.f = ""; t.M().applyView("list"); await H.settle();
   const p2 = await t.panel("Cabinet Making");
-  check("(3b) its panel reads answered this visit", !!p2 && /Scan findings, answered this visit/.test(txt(p2)) && /has left the list needing a look/.test(txt(p2)), p2 && txt(p2).slice(0, 300));
+  check("(3b) its panel reads answered since the scan", !!p2 && /Scan findings, answered since the scan/.test(txt(p2)) && /has left the list needing a look/.test(txt(p2)), p2 && txt(p2).slice(0, 300));
+  // (3c) a save from an earlier visit counts too (Sam, 2026-11-05: "I edited these but they are staying on the list"):
+  //      the overlay's save time after the scan's run takes the row off, with no changed set.
+  const OVER = [{ course_id: "_CANON_SUBJ4::Graphic Arts", field: "canonical_subj4_notes", value: "kept GRAF: the colleges' code", reviewer_email: "slee@cccco.edu", reviewed_at: "2026-11-04T21:27:22Z" },
+    { course_id: "_CANON_SUBJ4::Cabinet Making", field: "canonical_subj4_notes", value: "an old note", reviewer_email: "slee@cccco.edu", reviewed_at: "2026-11-03T21:00:00Z" }];
+  const v = H.boot({ seed: SEED, scan: SCAN, overlay: OVER, hash: "#canonical-subj4/list/scan" });
+  await H.settle(); await H.settle();
+  check("(3c) ⭐ a note saved after the scan ran takes its row off in a new visit; a note saved before it does not", v.titles().join("|") === "Cabinet Making", v.titles().join("|"));
   const u = H.boot({ seed: SEED, scan: null, hash: "#canonical-subj4/list/scan" });
   await H.settle(); await H.settle();
   check("(3) a scan that could not be read says so, never an empty list as a zero", /could not be read/.test(txt(u.d.getElementById("cs-list"))));
