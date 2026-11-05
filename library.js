@@ -895,6 +895,11 @@
       "Changes to make" + (asked ? " (" + asked + ")" : "") + ":\n" +
       (r.refresh_note || "None typed: rebuild it from its source, the documents below and the current data.") + "\n" +
       sourcesText(r) + "\n" +
+      (rs === "waiting" && (g.based_on_draft || g.based_on_url)
+        ? "These are more changes to the draft that is not public yet, not to the public copy: start from " +
+          (g.based_on_draft ? "draft " + g.based_on_draft + " (select html from cpl_library_drafts where id = '" + g.based_on_draft + "')" : g.based_on_url) +
+          ", which already carries the earlier changes, and keep them.\n"
+        : "") +
       (rs === "approved" && g.draft_id
         ? "The draft from the card is approved (" + [g.approved_by, stamp(g.approved_at)].filter(Boolean).join(", ") + "): library-publish.yml publishes it in its next run " +
           "(every three hours); dispatch that workflow to publish it now. Nothing else to do.\n"
@@ -971,6 +976,13 @@
         "RCCD has not approved the Microsoft 365 connector. Download a copy of the file from SharePoint, then drop that copy into Create, Revise or Remediate a Document " +
         "with this piece picked, and the next scheduled run rebuilds it.");
     }
+    if (rs === "waiting" && (g.based_on_draft || g.based_on_url)) {
+      var pv = r.version && /^\d+$/.test(r.version) ? parseInt(r.version, 10) : null;
+      return esc("More changes asked by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ", on top of " +
+        (pv ? "Version " + (pv + 1) + ", the draft" : "the draft") + "; its changes are kept. " +
+        (pv ? "Version " + pv + " stays public." : "The public copy stays as it is.") +
+        (canDraftHere(r) ? "" : " A session makes this one: Copy the request starts it now, or the next scheduled run picks it up."));
+    }
     if (rs === "waiting") {
       return esc("Rebuild requested by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ". The next scheduled run rebuilds it from its source" +
         (sourceList(r).length ? " and the documents" : "") + " and remediates it; Copy the request starts it in a session now.");
@@ -995,7 +1007,8 @@
   // Draft it now needs a public copy on GitHub Pages to revise from, and something to change.
   function canDraftHere(r) {
     var pasted = sourceList(r).some(function (x) { return !x.url && x.text; });
-    return !!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0 && !sharePointOnly(r) && (r.refresh_note || pasted));
+    var linkOnly = !!(r.regen && r.regen.based_on_url && !r.regen.based_on_draft);
+    return !!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0 && !sharePointOnly(r) && !linkOnly && (r.refresh_note || pasted));
   }
   function g0Replace(r) { return !!(r.regen && r.regen.publish === "replace"); }
   function draftNow(id) {
@@ -1246,6 +1259,13 @@
     state.piece = id; state.src.pc = sourceList(r).slice();
     setPieceUse(use || (r.status === "requested" ? "details" : "revise"));
   }
+  // A card's Revise or Edit opens the box at the top of the tab, far from the card (Sam, 2026-11-05: "nothing
+  // seemed to happen"): land with the box's heading and the piece's name in view, then the field focused.
+  function landOnBox(fieldId) {
+    var h = document.getElementById("lib-panel-h"), f = document.getElementById(fieldId);
+    if (f && f.focus) { try { f.focus({ preventScroll: true }); } catch (e) { f.focus(); } }
+    if (h && h.scrollIntoView) h.scrollIntoView({ block: "start" });
+  }
   function clearPiece() {
     if (state.formFor && state.formFor === state.piece) { state.form = null; state.formFor = null; }
     if (state.edit && state.edit === state.piece) { state.edit = null; state.retireAsk = null; }
@@ -1257,6 +1277,11 @@
   function pieceMeta(r) {
     return [KIND[r.kind] || r.kind, versionWord(r), r.status ? statusWord(r) : "", r.public_listed ? "In the public library" : ""].filter(Boolean).join(" · ");
   }
+  function moreWords(r) {
+    var pv = r.version && /^\d+$/.test(r.version) ? parseInt(r.version, 10) : null;
+    return "More changes build on " + (pv ? "Version " + (pv + 1) + ", the draft on its card" : "the draft on its card") +
+      ", and keep its changes. " + (pv ? "Version " + pv + " stays public" : "The public copy stays") + " until you replace it.";
+  }
   function pieceHtml(r) {
     var row = function (v, label) {
       return '<label class="lib-check"><input type="radio" name="lc-piece-use" id="lc-pu-' + v + '" value="' + v + '"' + (state.pieceUse === v ? " checked" : "") + "> " + esc(label) + "</label>";
@@ -1264,10 +1289,11 @@
     return '<div class="lib-piecepick"><div><p class="lib-kicker">Already in the Library</p><p><b>' + esc(r.title) + "</b> · " + esc(pieceMeta(r)) + "</p></div>" +
       '<button type="button" class="lib-btn" data-unpiece="1">Clear<span class="lib-vh"> ' + esc(r.title) + "</span></button></div>" +
       '<fieldset class="lib-uses"><legend>What do you want to do with it?</legend>' +
-      (r.status === "requested" ? "" : row("revise", "Revise and remediate this piece")) +
+      (r.status === "requested" ? "" : row("revise", regenState(r) === "ready" ? "Ask for more changes to the draft" : "Revise and remediate this piece")) +
       row("details", "Change its details: status, who sees it, who it is for, project, link") +
       row("version", "File a new version of it") +
-      row("background", "Use it as background for something new") + "</fieldset>";
+      row("background", "Use it as background for something new") + "</fieldset>" +
+      (regenState(r) === "ready" && state.pieceUse === "revise" ? '<p class="lib-line" id="lc-more">' + esc(moreWords(r)) + "</p>" : "");
   }
   function pieceDocsHtml() {
     var list = state.src.pc || [];
@@ -2086,6 +2112,22 @@
   // Start on a picked piece. Revise and remediate saves the request on the record: the
   // instructions as its changes to make (whole, as a document, when they run past the column's
   // cap), the documents, and who asked. Background opens the brief with the piece as a source.
+  // More changes to a ready draft (Sam, 2026-11-05: "when I clicked Ask for more changes, nothing seemed to happen").
+  // A new request on a piece whose draft is ready builds on that draft and never drops it: the draft becomes the
+  // request's base (based_on_draft, which library-revise-draft reads in place of the public copy; a draft known only
+  // by its link, based_on_url, goes to a session), and every earlier draft stays listed under regen.earlier.
+  function moreRegen(r, by) {
+    var g = r.regen || {}, out = { requested_at: new Date().toISOString(), requested_by: by, publish: "show" };
+    if (regenState(r) !== "ready" && !g.based_on_draft && !g.based_on_url) return out;
+    var base = regenState(r) === "ready" ? { draft_id: g.draft_id || null, draft_url: g.draft_url || null } : { draft_id: g.based_on_draft || null, draft_url: g.based_on_url || null };
+    if (base.draft_id) out.based_on_draft = base.draft_id; else if (base.draft_url) out.based_on_url = base.draft_url;
+    out.earlier = (Array.isArray(g.earlier) ? g.earlier : []).slice(-9);
+    if (regenState(r) === "ready") {
+      out.earlier.push({ draft_id: base.draft_id, draft_url: base.draft_url, ready_at: g.ready_at || null, requested_by: g.requested_by || null,
+        note: r.refresh_note ? String(r.refresh_note).slice(0, NOTE_MAX) : null });
+    }
+    return out;
+  }
   function pieceStart() {
     var r = byId(state.piece);
     if (!r) { clearPiece(); render(); return; }
@@ -2116,7 +2158,7 @@
     if (JSON.stringify(list).length > SRC_BYTES_MAX) { say("The documents together run past what a record holds. Remove one, or paste the part the piece needs into Instructions.", true); render(); return; }
     rememberAuthor(by);
     var id = r.id, name = r.title;
-    var body = { refresh_note: note || null, sources: list, regen: { requested_at: new Date().toISOString(), requested_by: by, publish: "show" }, updated_by: by };
+    var body = { refresh_note: note || null, sources: list, regen: moreRegen(r, by), updated_by: by };
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
       say(sharePointOnly(Object.assign({}, r, { sources: list }))
         ? "Requested. " + SP_INSTEAD + " Pick " + name + " there, and the next scheduled run rebuilds it."
@@ -2786,7 +2828,7 @@
       else if ((v = b.getAttribute("data-request"))) copyRequest(v);
       else if ((v = b.getAttribute("data-revise"))) {
         setPiece(v, "revise"); say(""); render();
-        var ri = document.getElementById("lc-instr"); if (ri) ri.focus();
+        landOnBox("lc-instr");
       }
       else if (b.getAttribute("data-unpiece")) {
         clearPiece(); say(""); render();
@@ -2813,7 +2855,7 @@
       else if ((v = b.getAttribute("data-edittop"))) {
         // Edit opens the box with the piece picked at Change its details.
         setPiece(v, "details"); say(""); render();
-        var es = document.getElementById("le-status"); if (es) es.focus();
+        landOnBox("le-status");
       }
       else if ((v = b.getAttribute("data-pubtop"))) {
         state.pub = v; state.open[v] = true; say(""); render();

@@ -110,9 +110,22 @@ Deno.serve(async (req) => {
   if (!SLUG.test(r.slug || "")) return reply(409, { error: "The record's slug is not a Pages address." });
 
   const pageUrl = PAGES + r.slug + "/";
-  const pr = await fetch(pageUrl).catch(() => null);
-  if (!pr || !pr.ok) return reply(409, { error: "This piece has no public copy on GitHub Pages to revise from, so a session revises it: Copy the request." });
-  const page = await pr.text();
+  // More changes to a draft (Sam, 2026-11-05: Ask for more changes must never lose the draft): the card names the
+  // draft it builds on in regen.based_on_draft, and the new draft starts from that draft's page, never the public copy.
+  const baseDraft = g.based_on_draft ? String(g.based_on_draft) : "";
+  if (baseDraft && !/^[0-9a-f-]{36}$/i.test(baseDraft)) return reply(409, { error: "The draft this builds on is not one the Library stored; a session revises it: Copy the request." });
+  let page = "", basedOn = pageUrl, pageWords = `The page (${pageUrl})`;
+  if (baseDraft) {
+    const bd = await rest(`cpl_library_drafts?id=eq.${baseDraft}&library_id=eq.${r.id}&select=html`, cred);
+    const rows = bd.ok ? await bd.json() : [];
+    if (!rows[0] || !rows[0].html) return reply(409, { error: "The draft this builds on could not be read, so a session revises it: Copy the request." });
+    page = rows[0].html; basedOn = "draft " + baseDraft;
+    pageWords = `The draft of the page, not yet public (it will replace ${pageUrl})`;
+  } else {
+    const pr = await fetch(pageUrl).catch(() => null);
+    if (!pr || !pr.ok) return reply(409, { error: "This piece has no public copy on GitHub Pages to revise from, so a session revises it: Copy the request." });
+    page = await pr.text();
+  }
   if (page.length > MAX_PAGE) return reply(413, { error: "The page is too large to revise here; a session revises it." });
 
   let docs = "";
@@ -121,7 +134,7 @@ Deno.serve(async (req) => {
     if (room <= 0) break;
     docs += `\n--- ${String(x.title || "A pasted document").slice(0, 200)} ---\n` + String(x.text).slice(0, room) + "\n";
   }
-  const ask = `The page (${pageUrl}):\n<page>\n${page}\n</page>\n\n` +
+  const ask = `${pageWords}:\n<page>\n${page}\n</page>\n\n` +
     `Changes asked for by ${g.requested_by || "the team"}:\n${r.refresh_note || "None typed: bring the page in line with the documents below."}\n` +
     (docs ? `\nDocuments pasted to work from:${docs}` : "") +
     (linked.length ? `\nDocuments linked on the card, not opened here: ${linked.map((x: any) => x.title || x.url).join("; ")}. Say in the summary if the change needs one of them.\n` : "") +
@@ -149,7 +162,7 @@ Deno.serve(async (req) => {
   const ins = await rest("cpl_library_drafts", cred, {
     method: "POST",
     body: JSON.stringify({
-      library_id: r.id, slug: r.slug, html: done.html, based_on: pageUrl, made_by: by, model: MODEL,
+      library_id: r.id, slug: r.slug, html: done.html, based_on: basedOn, made_by: by, model: MODEL,
       summary: ans.summary || null, edits: done.applied,
       request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g },
     }),

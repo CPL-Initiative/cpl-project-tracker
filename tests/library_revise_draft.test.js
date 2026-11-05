@@ -8,7 +8,10 @@
 //      something to change, sends the record's id and the name with the caller's credential, and
 //      a ready draft from the card offers Open the draft, which reads cpl_library_drafts;
 //   C. the edge function and the workflow say what they may and may not do (read with the
-//      caller's credential, no publish from the function, the daily-dashboard concurrency group).
+//      caller's credential, no publish from the function, the daily-dashboard concurrency group);
+//   D. Ask for more changes on a ready draft keeps that draft (Sam, 2026-11-05: "nothing seemed to happen";
+//      SkyCartwheel found Start would have dropped Version 3 and drafted from Version 2): the new request
+//      names the draft as its base, lists it under earlier, and the function drafts from it.
 //
 // Run: node tests/library_revise_draft.test.js
 const fs = require("fs");
@@ -118,6 +121,40 @@ function load(rows, onFetch) {
     check("B: Open the draft reads the one draft behind the team phrase", c && /id=eq\.d1/.test(c.url) && c.init.headers["x-team-pass"] === "open-sesame");
     check("B: and opens it in a new tab", m.opened.length === 1 && m.opened[0].location === "blob:draft");
   }
+
+  // ── D. more changes build on the draft ───────────────────────────────────
+  {
+    const ready = { requested_at: "2026-11-02T21:20:29Z", requested_by: "Sam", publish: "show", ready_at: "2026-11-03T06:21:50Z", draft_id: "d3", draft_url: "https://claude.ai/artifact/x" };
+    const r = rec({ refresh_note: "Remove the one org; add the December 9 agenda.", regen: ready });
+    let patch = null;
+    const m = load([r], function (url, init) {
+      if (init.method === "PATCH" && /rest\/v1\/cpl_library\?id=eq\./.test(url)) { patch = JSON.parse(init.body); return response(200, [Object.assign({}, r, patch)]); }
+      return null;
+    });
+    await m.M.activate(); await settle();
+    const more = m.root.querySelector('[data-revise="' + r.id + '"]');
+    check("D: a ready draft's card offers Ask for more changes", more && /Ask for more changes/.test(more.textContent));
+    more.dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
+    await settle();
+    check("D: the box says the changes build on Version 3 and Version 2 stays public",
+      /More changes build on Version 3, the draft on its card, and keep its changes\. Version 2 stays public/.test((m.root.querySelector("#lc-more") || {}).textContent || ""),
+      m.root.textContent.slice(0, 300));
+    m.w.document.getElementById("lc-instr").value = "Add Request Adopt links to each course.";
+    m.w.document.getElementById("lib-go").dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
+    await settle(); await settle();
+    const g = patch && patch.regen || {};
+    check("D: the new request names the ready draft as its base", g.based_on_draft === "d3", JSON.stringify(patch));
+    check("D: and keeps it, with what was asked for it, under earlier",
+      Array.isArray(g.earlier) && g.earlier.length === 1 && g.earlier[0].draft_id === "d3" && /December 9/.test(g.earlier[0].note || ""), JSON.stringify(g));
+    check("D: the new request is waiting, not ready", g.requested_at && !g.ready_at && !g.draft_id);
+    const waiting = rec({ regen: { requested_at: "2026-11-05T14:00:00Z", requested_by: "Sam", publish: "show", based_on_draft: "d3", earlier: g.earlier } });
+    check("D: the card then says the more changes sit on top of Version 3", /on top of Version 3, the draft; its changes are kept\. Version 2 stays public/.test(m.M._regenWords(waiting)), m.M._regenWords(waiting));
+    check("D: and Copy the request says to start from that draft", /start from draft d3/.test(m.M._requestText(waiting)));
+    check("D: a base known only by its claude.ai link goes to a session, never Draft it now",
+      !m.M._canDraftHere(rec({ regen: { requested_at: "2026-11-05T14:00:00Z", requested_by: "Sam", publish: "show", based_on_url: "https://claude.ai/artifact/x" } })));
+  }
+  check("D: the function drafts from the named draft, read with the caller's credential, in place of the public copy",
+    /g\.based_on_draft/.test(FN) && /cpl_library_drafts\?id=eq\.\$\{baseDraft\}&library_id=eq\.\$\{r\.id\}/.test(FN) && /based_on: basedOn/.test(FN));
 
   // ── C. what the function and the workflow may do ─────────────────────────
   check("C: the function reads and writes with the caller's credential, never the service key", !/SERVICE_ROLE|service_role|SUPABASE_SERVICE/i.test(FN));
