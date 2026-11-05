@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-549 document(s).
+550 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 584 | [Session 584 handoff: the queue was not empty; five lane items the handoffs had dropped](../session_584_handoff.md) | 2026-11-05 |
 | 583 | [Session 583 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC](../session_583_handoff.md) | 2026-11-05 |
 | 582 | [Session 582 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC](../session_582_handoff.md) | 2026-11-05 |
 | 581 | [Session 581 handoff: Mission College's SLO trial parsed 11 of 12; its full read waits for the next UTC day](../session_581_handoff.md) | 2026-11-05 |
