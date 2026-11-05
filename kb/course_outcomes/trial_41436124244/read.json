@@ -44,7 +44,14 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "584e5a71960211100c38e07c775efb01"
+   "fingerprint": "584e5a71960211100c38e07c775efb01",
+   "objectives": [
+    "1.  Students will create a budget of monthly income and expenses.",
+    "2.  Students will develop a savings plan."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "75c7e13091f9ac5bd9be85aa9152901d"
   },
   {
    "code": "ASL 110",
@@ -70,7 +77,17 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d188052392e9c7f1fc694e1d3c23d5fa"
+   "fingerprint": "d188052392e9c7f1fc694e1d3c23d5fa",
+   "objectives": [
+    "Integrate American Sign Language (ASL) vocabulary, grammar and culture to introduce self and others, exchange personal information, talk and ask about surroundings (spatial agreement), telling and asking where people live (signer's perspective), converse about family, express opinions, talk about past, present and future activities.",
+    "Identify and apply the phonology of ASL to each sign by using the five parameters (handshape, palm orientation, location, movement, and non-manual behaviors) accurately and appropriately.",
+    "Identify and analyze similarities and differences in the American Deaf and hearing cultures.",
+    "Comprehend and generate short story narratives and conversations utilizing all elements of ASL grammar and phonology accurately.",
+    "Utilize American Sign Language grammar correctly to communicate a variety of activities and real world experiences."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "1c4abadf70755a17b96455bd657c3a7a"
   },
   {
    "code": "CDEV 108",
@@ -96,7 +113,20 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "15257958d49a0dab5ca34ffe7f83a471"
+   "fingerprint": "15257958d49a0dab5ca34ffe7f83a471",
+   "objectives": [
+    "Discuss the role of partnerships with families and other professionals in utilizing interpretations of observational and assessment data.",
+    "Describe legal and ethical responsibilities in relation to observation, assessment, documentation, and recordkeeping.",
+    "Demonstrate how observation and assessment are used to plan for and adjust learning experiences.",
+    "Discuss logistical challenges, biases, and preconceptions about observing and assessing children.",
+    "Use standardized observation and assessment tools to evaluate quality in environments, interactions, and curriculum.",
+    "Apply knowledge of development and other influencing factors to interpret observations and assessments.",
+    "Differentiate between various observation and assessment tools according to their purpose and validity.",
+    "Demonstrate basic formative and summative assessment techniques."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "ab2cbbaad24b63f0831156a0cb530fd1"
   },
   {
    "code": "CNSL 100",
@@ -123,7 +153,14 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "0580951ea46ea1fb6367793a5f1b2c76"
+   "fingerprint": "0580951ea46ea1fb6367793a5f1b2c76",
+   "objectives": [
+    "Interpret and evaluate self-assessment results regarding values, skills, and interests.",
+    "Examine the role, function, and structure of the educational system as they apply to academic and personal goal-setting."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "15634936c4be70a92cafa8f81e4157e6"
   },
   {
    "code": "EMLS 112",
@@ -150,7 +187,15 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2eda76f323a811dceadc8da1279b9421"
+   "fingerprint": "2eda76f323a811dceadc8da1279b9421",
+   "objectives": [
+    "1.  analyze various texts and use them as an impetus for discussion and writing.",
+    "2.  apply the knowledge of correct grammatical structures when writing compositions.",
+    "3.  compose logical, organized essays and utilize revision and editing techniques."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "d2d179acf8c55e2ceb2a7e2af8a511a6"
   },
   {
    "code": "FAC 008",
@@ -174,7 +219,17 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "fd1a9a04a316bd51d2aa9cf0287bb268"
+   "fingerprint": "fd1a9a04a316bd51d2aa9cf0287bb268",
+   "objectives": [
+    "Demonstrate the physical skills, strength, endurance, and coordination required to complete all Biddle Firefighter Physical Ability Test tasks safely and within the validated time standard.",
+    "Apply proper techniques for each manipulative task to ensure safe, efficient, and effective performance under test and field conditions.",
+    "Evaluate their current level of physical preparedness through structured practice, feedback, and timed assessments.",
+    "Develop an individualized exercise and conditioning program designed to enhance performance, address areas of improvement, and reduce injury risk.",
+    "Incorporate sound nutrition and recovery strategies into a personal wellness plan that supports training, testing, and long-term occupational fitness."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "f08f0acdcc1a0d18ed36cae1eece7a18"
   },
   {
    "code": "HSENG 083",
@@ -199,7 +254,31 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c6bc8d5299a1070616e2cc790c0d5ab1"
+   "fingerprint": "c6bc8d5299a1070616e2cc790c0d5ab1",
+   "objectives": [
+    "Communication Skills Identify the 4 steps in the writing process",
+    "Create  structured outlines and develop compositions using the outline as a guide",
+    "Demonstrate in writing 6 types of paragraphs including  exemplification, compare/contrast, descriptive, cause and effect, process, and argument",
+    "2.   Thinking and Reasoning:",
+    "Defend an opinion and support it using supportive details",
+    "Evaluate and edit rough drafts of paragraphs and make revisions Information Management:",
+    "Information Management",
+    "a: Information Competency",
+    "Interpret information through the use of books, the Internet, and computer programs",
+    "b: Technology Competency",
+    "Use Internet to locate information for writing assessment and assignments",
+    "4.Careers:",
+    "N/A",
+    "Civic Responsibility",
+    "N/A",
+    "Life Skills",
+    "N/A",
+    "Careers",
+    "N/A"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "3f517cb9dbfe3f7195da1c3b52bfdab6"
   },
   {
    "code": "JAMS 102",
@@ -225,7 +304,17 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "eaf663087e1691e8e1a74b97496b5074"
+   "fingerprint": "eaf663087e1691e8e1a74b97496b5074",
+   "objectives": [
+    "Construct multimedia news stories through blog, website and social media posts",
+    "Produce feature and news stories using audio and video",
+    "Edit audio and video to tell a variety of story forms",
+    "Assess digital storytelling strategies – Knowing when and how to use traditional print, audio, video, multimedia, other visual and social media",
+    "Develop digital research strategies for multimedia packaging and storytelling"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "a712b62fd00ab6fecbb3f0338cc297cf"
   },
   {
    "code": "KNIA 125",
@@ -250,7 +339,13 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "71926df3af87b418e39da06024e2c7dc"
+   "fingerprint": "71926df3af87b418e39da06024e2c7dc",
+   "objectives": [
+    "Students will understand the requirements of preparing for a season of competition and the rules that apply to be a member of the Santa Ana College football program."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "0147c66052b65edd78784af39d89762b"
   },
   {
    "code": "MKTG 111",
@@ -275,7 +370,19 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "76995153fc679ae648f7a63c57df6a19"
+   "fingerprint": "76995153fc679ae648f7a63c57df6a19",
+   "objectives": [
+    "Compare & contrast traditional retailers and category specialists.",
+    "Describe how technology is used to support retail businesses.",
+    "Evaluate the effectiveness of merchandising.",
+    "Compare the strategies that are used in the stages of a product's life cycle.",
+    "Describe the flow of goods and services in a retail environment by understanding how logistics and supply chain management are used.",
+    "Compare different customer service strategies that can be used to improve consumer experiences.",
+    "Evaluate the impact of laws and regulations on retail managers."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "5481102b5532ee0631bc135d8487f81a"
   },
   {
    "code": "PHAR 048",
@@ -306,7 +413,19 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "18c1d428a01cabc7e657b9c8d07bf2d6"
+   "fingerprint": "18c1d428a01cabc7e657b9c8d07bf2d6",
+   "objectives": [
+    "Memorize the top 100 common trade-generic medication names.",
+    "Demonstrate an understanding of the characteristics of common dosage forms.",
+    "Explain all the steps involved in new drug development.",
+    "Understand the system of drug classification.",
+    "Demonstrate the ability to read prescriptions and prepare prescription labels.",
+    "Explain in depth which skills are needed to successfully complete the Pharmacy Technology program.",
+    "Analyze and discuss the duties and roles of the pharmacy technician in various practice settings."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "fba95a5295fbba7ff5bc4cadf02e0b0e"
   },
   {
    "code": "SLPA 160",
@@ -331,9 +450,22 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f364f379135a130a7c0545f489c01452"
+   "fingerprint": "f364f379135a130a7c0545f489c01452",
+   "objectives": [
+    "Identify and describe the anatomy and physiology of the speech and voice mechanism.",
+    "Describe the roles, responsibilities, and work settings of speech-language pathologists.",
+    "Define and explain the basic terminology related to human communication disorders.",
+    "Identify and classify various types of communication disorders.",
+    "Discuss the basic principles of human speech, language, and hearing development across the life span.",
+    "Discuss professional aspects of speech-language pathology including professional ethics, legal guidelines, certification, and licensure requirements.",
+    "Discuss the impact of communication disorders on peoples' lives.",
+    "Describe and discuss the basic principles of assessment and remediation of various types of communication disorders."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "35303e579a2a655953c3d96593747894"
   }
  ],
- "reparsed_at": "2026-11-02T11:30:41Z",
+ "reparsed_at": "2026-11-05T14:22:28Z",
  "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }

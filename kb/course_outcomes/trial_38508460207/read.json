@@ -45,7 +45,29 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "234f44e99dddc0e18fa1beba2de42e3a"
+   "fingerprint": "234f44e99dddc0e18fa1beba2de42e3a",
+   "objectives": [
+    "Describe the purpose and process of accounting.",
+    "Prepare and describe the purposes of a simple income statement, statement of owner's equity, and balance sheet.",
+    "Define the parts of a T account and use them to analyze transactions.",
+    "Journalize and post transactions. Then prepare a trial balance.",
+    "Prepare, journalize and post adjusting entries. Explain how adjusting entries are used to prepare the accrual basis worksheet.",
+    "Prepare depreciation schedules using the most common methods.",
+    "Use the worksheet to prepare financial statements. Close the accounting period using proper entries.",
+    "Prepare the bank reconciliation and related journal entries including petty cash reimbursement.",
+    "Define internal control and describe the key components and emphasize those that focus on cash.",
+    "Describe and apply various payroll record-keeping methods.",
+    "Describe and account for employer payroll taxes.",
+    "Describe merchandise sales and use the accounts receivable ledger.",
+    "Describe merchandise purchases and use the accounts payable ledger.",
+    "Describe, explain the purpose of, and identify transactions recorded in special journals.",
+    "Describe the two principal systems of accounting for merchandise inventory-the periodic and perpetual systems.",
+    "Journalize adjusting entries for a merchandising business.",
+    "Prepare a single-step and multi-step income statement for a merchandising business. Prepare a classified balance sheet and use it to calculate key ratios."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "49620654ff5519a912f9c3b0febe0032"
   },
   {
    "code": "ARTH C1100",
@@ -67,7 +89,11 @@
    "outcomes": [],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": null
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "BUS C100",
@@ -93,7 +119,27 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4598915bc04f6db93b22524d4dcb34f1"
+   "fingerprint": "4598915bc04f6db93b22524d4dcb34f1",
+   "objectives": [
+    "Cite the various ways the U.S. government affects, restricts, and protects business.",
+    "Compare and contrast the advantages/disadvantages in each form of business ownership.",
+    "Define business ethics and explain the role of social responsibility in an organization.",
+    "Compare and contrast the primary economic systems.",
+    "Identify how business operates in an international/global environment, including legal, social, cultural, and interdependence and integrated financial markets.",
+    "Define and describe the key management functions of planning, organizing, leading, and controlling.",
+    "Identify current production operations processes. Address sustainability.",
+    "Identify key human resource management functions and laws.",
+    "Identify the marketing mix and key tools, terms, and strategies related to each element.",
+    "Describe and identify how technology impacts all the primary functions of business.",
+    "Evaluate the basic components of financial statements and ratio analysis.",
+    "Explain the importance of finance to the operations of business, the various types of financing, and the process of internal and external financing and controls.",
+    "Identify securities markets, including investment options, mechanisms of investing, and way to conduct basic analysis of business financial information.",
+    "Identify and describe the basics of business law, including contracts, torts, intellectual property, and the American legal system.",
+    "Summarize the components of risk management and basic insurance concepts."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "91374a4cef6da3849fb91cca0ce3f93d"
   },
   {
    "code": "CMST C060N",
@@ -119,7 +165,19 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f799c8f4d099c5cc487b554d9c24be47"
+   "fingerprint": "f799c8f4d099c5cc487b554d9c24be47",
+   "objectives": [
+    "Understand and be able to participate in the Esports ecosystem responsibly and safely.",
+    "Understand communication strategies as they relate to competitive gaming and the ecosystem supporting its growth",
+    "Assess best practices for communication, building brands, and implementing social media strategies within competitive gaming and the Esports ecosystem",
+    "Understand the communication methodologies and strategies of building competitive gaming communities",
+    "Investigate communication careers in Esports",
+    "Identify effective characteristics of digital citizenship.",
+    "Investigate the history of Esports"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "b9caff57667630b30cb620f3f8be08a0"
   },
   {
    "code": "DMC C100",
@@ -145,7 +203,21 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "27bd7e8ffe191ae77050ed4566b521b3"
+   "fingerprint": "27bd7e8ffe191ae77050ed4566b521b3",
+   "objectives": [
+    "Define and describe the fundamental concepts and components of Mass Communication, including media types, key theories, and historical developments.",
+    "Examine the historical evolution of mass media and its significance in shaping society, culture, and communication practices.",
+    "Recognize the multifaceted roles and responsibilities of mass media in information dissemination, entertainment, and shaping public discourse.",
+    "Distinguish between traditional and new media platforms, their characteristics, and their impact on contemporary communication.",
+    "Critically assess the relationship between media and society, including issues of representation, diversity, and media's role in shaping public opinion.",
+    "Cultivate media literacy skills to critically analyze content, recognize biases, and assess source credibility.",
+    "Investigate technological advancements in mass communication, including the convergence of media platforms and ethical considerations in the digital era.",
+    "Evaluate the cultural impact of mass media, including its influence on pop culture, advertising, and political communication.",
+    "Identify current trends and career opportunities in mass communication, preparing students for further studies or professional roles requiring media literacy and communication skills."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "299a5f902fc4cf977a106a73d65fd873"
   },
   {
    "code": "ELL C020N",
@@ -170,7 +242,18 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dbf417f401361e305c1898af870a8c0d"
+   "fingerprint": "dbf417f401361e305c1898af870a8c0d",
+   "objectives": [
+    "Follow written and oral directions.",
+    "Produce written and oral grammatically-correct sentences with simple present, present progressive,and past-tense verbs.",
+    "Ask and answer simple questions verbally to communicate needs.",
+    "Recognize and produce targeted initial and final sounds.",
+    "Use basic vocabulary related to personal, workplace, and school situations.",
+    "Identify and use basic computer and Internet vocabulary."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "ae32a8d031921835267f32a06dd10f1d"
   },
   {
    "code": "ETHS C100",
@@ -197,7 +280,18 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c4643bc762b667fa8f155e4be0b52639"
+   "fingerprint": "c4643bc762b667fa8f155e4be0b52639",
+   "objectives": [
+    "Apply critical theoretical frameworks and cultural knowledge/practices from Native American, African American, Asian American, and Chicanx/Latinx paradigms for the analysis of histories, cultural practices, knowledge systems, social institutions, and contemporary struggles with an emphasis on community assets and empowerment.",
+    "Describe how hierarchical and systemic power relations produce patterns of privilege and oppression such as settler colonialism, racial capitalism, White supremacy, patriarchy, classism, heterosexism, racism, nativism, and Euro/Anglocentrism.",
+    "Articulate concepts, frameworks, and movements related to sovereignty, self-determination, liberation, abolition, reparations, futurity, and racial/social justice in African American, Native American, Asian American, and Latinx/Chicanx communities.",
+    "Examine the impact of colonization, genocide, slavery, racialization, segregation, discrimination, exploitation, immigration, and diaspora in the shaping of ethnic and racial formations and contemporary social issues in the United States.",
+    "Utilize critical interdisciplinary perspectives to explain how race and ethnicity intersect with class, gender, ability, immigration/citizenship status, and sexuality in one?s own life and in U.S. society.",
+    "Critically Analyze collective mobilizations for liberation, sovereignty, abolition, self-determination, racial justice, and decolonization informed by the fields of Native American, African American, Chicanx/Latinx, and Asian American studies, and consciously engage in anti-racist, equity-oriented practices for a just society."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "cb3cb365ededc55ff60d0b83e12520bd"
   },
   {
    "code": "HIST C1001",
@@ -219,7 +313,11 @@
    "outcomes": [],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": null
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "IT C104",
@@ -246,7 +344,28 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "0addd9e79a29a8aaaa18ccb07184221e"
+   "fingerprint": "0addd9e79a29a8aaaa18ccb07184221e",
+   "objectives": [
+    "Explain concepts and terminology of IT systems and infrastructure.",
+    "Compare and contrast software development concepts and various applications and software used in the IT industry.",
+    "Explain database concepts and fundamental security concepts.",
+    "Describe troubleshooting methodology to safely diagnose, resolve, and document common hardware and software issues.",
+    "Describe how to install, configure, and troubleshoot personal computer components, drivers, and operating system utilities.",
+    "Summarize cloud computing concepts, including types of cloud networks and cloud characteristics.",
+    "Define virtual desktop infrastructure (VDI).",
+    "Identify basic features of Microsoft Windows editions.",
+    "Outline various security measures and their purposes.",
+    "Compare and contrast wireless security protocols and authentication methods.",
+    "Describe how to detect, remove, and prevent malware using the appropriate tools and methods.",
+    "Outline the common steps to troubleshoot common personal computer (PC) security issues.",
+    "Compare and contrast programming language categories.",
+    "Identify common uses of artificial intelligence (AI).",
+    "Explain the value of data and information.",
+    "Explain common uses of artificial intelligence in information technology, such as business use and personal use."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "6019495e06d28070e6e9e30ecdc337d8"
   },
   {
    "code": "LIBR C110",
@@ -271,7 +390,20 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "85060681f96219463d134a3ca7a05f60"
+   "fingerprint": "85060681f96219463d134a3ca7a05f60",
+   "objectives": [
+    "Distinguish which type of information will best meet the information need.",
+    "Construct strategies for locating information and data.",
+    "Analyze various information tools and explain how they differ.",
+    "Use a range of retrieval tools and resources effectively.",
+    "Choose suitable materials on a research topic.",
+    "Appraise issues of quality, accuracy, relevance, bias, reputation, and credibility relating to information and data sources.",
+    "Identify when to stop researching and when to start writing.",
+    "Explain the research process and explain how to evaluate sources in an annotated bibliography."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "e9114db9ba3c3c5cb869c2a7e1c87749"
   },
   {
    "code": "MUS C100",
@@ -298,7 +430,16 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "bb78965f05203ff67a8b499528a364cf"
+   "fingerprint": "bb78965f05203ff67a8b499528a364cf",
+   "objectives": [
+    "Demonstrate a basic understanding of the elements of music by using appropriate terminology.",
+    "Identify musical instruments and ensembles.",
+    "Analyze and evaluate musical performances.",
+    "Discuss music in its historic context."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "40d0e4abb68894e02763bbee701061f9"
   },
   {
    "code": "POLS C1000",
@@ -320,9 +461,13 @@
    "outcomes": [],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": null
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   }
  ],
- "reparsed_at": "2026-10-14T03:56:17Z",
+ "reparsed_at": "2026-11-05T14:22:28Z",
  "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }

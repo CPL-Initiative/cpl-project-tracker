@@ -46,7 +46,14 @@
    "offered_at": [
     "RIV",
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Prepare State income tax returns for individuals and families with limited income.",
+    "Prepare Federal income tax returns for individuals and families with limited income."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "959170d33378ac3eedd82eef6abddb55"
   },
   {
    "code": "ARA 1",
@@ -88,7 +95,21 @@
    "offered_at": [
     "RIV",
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Comprehend standard spoken Arabic related to the individual and his/her surroundings, likes and dislikes, daily routine, leisure activities and past experiences with a recognition vocabulary of 1000 words.",
+    "Apply reading strategies in order to understand and analyze 150- to 200-word short articles, dialogues, stories and other authentic literary and factual texts related to the self, family and surroundings, written in Arabic alphabet.",
+    "Use acquired elementary vocabulary and grammar to communicate orally about emotional and mental states; the individual; school and work; origin and family; plans and needs; sports and cultural events with an active vocabulary of approximately 500 words.",
+    "Use targeted beginning-level grammar and vocabulary to compose 100- to 150-word paragraphs of connected discourse on personal, familiar and cultural topics, using Arabic alphabet.",
+    "Identify and use the indicative mood of regular, irregular, and stem-changing verbs in the simple present, present progressive, near future and preterite when engaged in receptive and communicative activities.",
+    "Recognize and apply gender and number agreement rules with definite and indefinite articles; descriptive, possessive and demonstrative adjectives; subject, reflexive, direct and indirect object, double object, and relative pronouns when using both receptive and expressive skills.",
+    "Understand and use imperative, declarative, negative and interrogative simple and compound sentences in oral and written activities.",
+    "Identify verbal and non-verbal differences between Arabic-speaking cultures and their own as related to greetings, leave-taking, and levels of formality.",
+    "Identify verbal and non-verbal differences between Arabic-speaking cultures and their own as related to education, family, daily life, traditions, holidays, and artistic expression."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "4b7a06de9e361d43d7b1067c45970732"
   },
   {
    "code": "AUT 13A",
@@ -117,7 +138,20 @@
    "parsed_from": "html",
    "offered_at": [
     "RIV"
-   ]
+   ],
+   "objectives": [
+    "Describe safe practices when working around high voltage.",
+    "Demonstrate how to safely inspect high voltage gloves prior to use.",
+    "Describe the process to safely power down high voltage systems found in hybrid and electric vehicles.",
+    "Identify components used in hybrid and electric vehicle systems.",
+    "Describe different types of battery technology used in hybrid and electric vehicles.",
+    "Discuss different types of traction motors used in hybrid and electric vehicles.",
+    "Perform basic maintenance on hybrid and electric vehicle systems.",
+    "Demonstrate ability to safely remove and replace high voltage battery packs."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "b9ef4175aacb1b14dbc979a646aa3ad9"
   },
   {
    "code": "CIS 11",
@@ -153,7 +187,14 @@
     "RIV",
     "MOV",
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Write a range of assembly language programs, ranging from simple code segments, to medium size application programs.",
+    "Demonstrate the implementation of fundamental high-level programming constructs such as decision statements, looping statements, and functions at the machine-language level."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "35883a2db844310e3863e3433f38a253"
   },
   {
    "code": "CUL 20",
@@ -181,7 +222,21 @@
    "parsed_from": "html",
    "offered_at": [
     "RIV"
-   ]
+   ],
+   "objectives": [
+    "List the properties for each baking ingredient.",
+    "Calculate formulas for all types of dough, batters, icings, and fillings.",
+    "Identify, utilize and care for equipment and tools through experience and supervision.",
+    "Demonstrate the ability to use weights and measures.",
+    "Identify standards of quality for baked goods.",
+    "Demonstrate mixing and baking procedures and operational procedures.",
+    "Produce all types of yeast and sweet goods.",
+    "Prepare baking and pastry items in a time-restricted, quality-minded setting.",
+    "Prevent food poisoning and food-borne diseases by exercising proper hygiene, food handling and storage habits."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "9941b7d5a22728bb941193b5d9c3c3fa"
   },
   {
    "code": "ELC 11",
@@ -215,7 +270,16 @@
    "parsed_from": "html",
    "offered_at": [
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Apply Ohm's Law, Kirchhoff's Voltage and Current Laws, and other foundational electrical principles in the analysis of circuits.",
+    "Master the fundamentals of voltage, current, resistance, and power in DC circuits.",
+    "Utilize network theorems like Thevenin’s and Norton’s for simplifying and solving circuits.",
+    "Conduct experiments and interpret results with standard electrical measurement tools to verify theoretical predictions."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "2217c972f338849dfd0a48385e1f7ac1"
   },
   {
    "code": "EST 22",
@@ -242,7 +306,17 @@
    "parsed_from": "html",
    "offered_at": [
     "RIV"
-   ]
+   ],
+   "objectives": [
+    "Apply the mechanical code in construction, regulation, and design.",
+    "Achieve professional certification by passing applicable examinations",
+    "Achieve skills for employment in private or public construction fields, or become inspector or plans examiners.",
+    "Apply codes in construction designs.",
+    "Interpret and apply appropriate knowledge of combustion and air circulation in gas systems as per mechanical code."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "00b49e48b952a09a58d01363a57f2c12"
   },
   {
    "code": "GEG 1",
@@ -288,7 +362,15 @@
     "RIV",
     "MOV",
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Use critical thinking to provide examples of and explain relationships between the atmosphere, biosphere, hydrosphere and lithosphere.",
+    "Interpret geographic tools such as maps, graphs, data and images to enhance understanding of geographic landscapes and processes.",
+    "Describe geographic processes as they occur in the four spheres."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "55baa5f4b922e085f3e06c314b8b15de"
   },
   {
    "code": "HUM 10",
@@ -331,7 +413,19 @@
     "RIV",
     "MOV",
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Explain how the category of religion and its associated terminology are variously defined and also how those definitions may be contested.",
+    "Evaluate the various methodological approaches to religion, such as anthropological, sociological, historical, psychological, and philosophical.",
+    "Describe historical and contemporary varieties of religious experience, belief, and practice in at least 8 world religions across 3 world religious traditions.",
+    "Examine the relationship between historical and contemporary varieties of religious experience and the cultures in which they are found.",
+    "Discuss the role of primary religious texts in their religious traditions through their respective interpretive frameworks.",
+    "Examine the relationship between religious traditions and political and social issues that arise in their respective cultures.",
+    "Recognize the influence of Christian European colonization on the development of religious studies as an academic field."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "bdb42cd4f9febe0868d374e7f77dff6c"
   },
   {
    "code": "MAN 10",
@@ -361,7 +455,19 @@
    "parsed_from": "html",
    "offered_at": [
     "NOR"
-   ]
+   ],
+   "objectives": [
+    "Describe the Concepts and terminology of Smart Manufacturing",
+    "Understand the machine operation safety guidelines.",
+    "Describe basic types of tools and fasteners.",
+    "Define dimensional measurement and explain its importance. Perform measurement conversion.",
+    "Describe the types of Engineering drawings used in Manufacturing.",
+    "Describe basic electrical control, pneumatic, robot operations and sensor system operations.",
+    "Monitor machinery using Human Machine Interface, Internet, and Ethernet"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "d8bedc0a20569cb24ea1efd4703cdfae"
   },
   {
    "code": "NNA 79",
@@ -389,7 +495,17 @@
    "parsed_from": "html",
    "offered_at": [
     "RIV"
-   ]
+   ],
+   "objectives": [
+    "Define the meaning of medical terminology word roots, suffixes and prefixes used in a variety of healthcare professions.",
+    "Recognize and understand basic medical terms used by healthcare professionals.",
+    "Correctly spell basic medical terminology.",
+    "Analyze unfamiliar terms using the knowledge of medical terminology word roots, suffixes and prefixes.",
+    "Apply medical terms to healthcare scenarios and case studies."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "bf5dce17ebf9dd922823f569489c88cc"
   },
   {
    "code": "PHO 11",
@@ -417,9 +533,16 @@
    "parsed_from": "html",
    "offered_at": [
     "RIV"
-   ]
+   ],
+   "objectives": [
+    "Produce professional quality large format inkjet prints.",
+    "Produce a body of professional quality photographic images."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "objectives_fingerprint": "c71777463b8bebe7ec7d19d345d70c6a"
   }
  ],
- "reparsed_at": "2026-10-12T22:40:03Z",
- "reparsed_note": "The run's own parser read the Course Objectives RCCD prints before the SLOs under the same lead-in; these rows are the filed pages parsed again by outcomes_from_html."
+ "reparsed_at": "2026-11-05T14:22:26Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }

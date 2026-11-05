@@ -158,10 +158,9 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
   orders them, as the Cards' project cards already were.
 - **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
-- **ELL IET CPL Starting Points is at Version 3, public and Approved** (2026-11-05; published by `library-publish.yml`,
-  2806f47d; status by receipt `kb/receipts/cpl_library_skycartwheel_ell_v3_approved_2026-11-05.sql`). **Version 4 is
-  the card's draft, awaiting *Replace the public copy*** (SkyRoundoff, 2026-11-05; Sam on seeing it: *"new visual looks
-  wonderful!"*): an Overview tab, then a tab per project (ARIA tabs; every panel shows with no script). Stored as
+- **ELL IET CPL Starting Points is at Version 4, public** (SkyRoundoff, 2026-11-05; Sam on seeing the draft: *"new
+  visual looks wonderful!"*, then *"Replace the public copy with Version 4"*, receipt
+  `kb/receipts/cpl_library_skyroundoff_ell_v4_replace_2026-11-05.sql`; `library-publish.yml` run 42064847765 published it): an Overview tab, then a tab per project (ARIA tabs; every panel shows with no script). Drafted as
   `cpl_library_drafts` a0ac81de-caf6-43b4-9e0e-fb0589f6b309 with its link https://claude.ai/artifact/XhDFfPrT33opjRqTAzKpRN
   (migration `kb/migrations/2026-11-05_library_ell_iet_v4_stored_draft.sql`, rollback beside it); `rebuild_from` names
   the vault's `make_tabs.py`, which builds it from Version 3. Sierra reads it at 33,979 characters against

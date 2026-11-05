@@ -1840,7 +1840,7 @@
   var outcomeIndex = {};
   function outcomeCodes(college) {
     if (!outcomeIndex[college]) {
-      outcomeIndex[college] = getAllRows(REST + "/course_outcomes?select=course_code&college=eq." +
+      outcomeIndex[college] = getAllRows(REST + "/course_outcomes?select=course_code&kind=eq.slo&college=eq." +
         encodeURIComponent(college) + "&order=id", headers()).then(function (rows) {
         var m = {};
         rows.forEach(function (r) {
@@ -1897,7 +1897,7 @@
     hideTip();
     var body = el("div", {}, [el("p", { cls: "prh-quiet", text: "Reading the outcomes…" })]);
     openDialog(p, code, info, [body], "the learning outcomes", opener);
-    var url = REST + "/course_outcomes?select=" + OUTCOME_SELECT + "&college=eq." + encodeURIComponent(p.college) +
+    var url = REST + "/course_outcomes?select=" + OUTCOME_SELECT + "&kind=eq.slo&college=eq." + encodeURIComponent(p.college) +
       "&course_code=in.(" + codes.map(function (c) { return encodeURIComponent('"' + c.replace(/"/g, "") + '"'); }).join(",") + ")" +
       "&order=read_run.desc,id.desc";
     getJson(url).then(function (rows) {

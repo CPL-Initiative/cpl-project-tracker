@@ -44,7 +44,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "91a0124a14ad5e884952a70c0098c069"
+   "fingerprint": "91a0124a14ad5e884952a70c0098c069",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ANTHR 102",
@@ -70,7 +74,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c10d44458be4ea09f32a797bc813abb9"
+   "fingerprint": "c10d44458be4ea09f32a797bc813abb9",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "BIT 231",
@@ -96,7 +104,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8efdfafa5dcc99ba4bdfffd3e3c32a1b"
+   "fingerprint": "8efdfafa5dcc99ba4bdfffd3e3c32a1b",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "COMM 102",
@@ -122,7 +134,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f7fe9a41e348cf15916795baecffbb2b"
+   "fingerprint": "f7fe9a41e348cf15916795baecffbb2b",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "EHS 201",
@@ -147,7 +163,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a59c0fbf78a93460edd614fbd230d9d5"
+   "fingerprint": "a59c0fbf78a93460edd614fbd230d9d5",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ENGTC 300",
@@ -173,7 +193,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7edf16edcd35346f041f03756d30b75d"
+   "fingerprint": "7edf16edcd35346f041f03756d30b75d",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "GEOG 101",
@@ -200,7 +224,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "2c77067e2792ade524b1cffbe45c04cd"
+   "fingerprint": "2c77067e2792ade524b1cffbe45c04cd",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "IIS 901",
@@ -225,7 +253,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "51673b016d9d1ba5df041eab97d5a537"
+   "fingerprint": "51673b016d9d1ba5df041eab97d5a537",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "MICRO 101",
@@ -252,7 +284,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e3bad0f761271830d93cd59e1f0e8c72"
+   "fingerprint": "e3bad0f761271830d93cd59e1f0e8c72",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "NURSE 270",
@@ -276,7 +312,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f6a015b7fd3373b2253c490504e75d0d"
+   "fingerprint": "f6a015b7fd3373b2253c490504e75d0d",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "PHILO 101",
@@ -302,7 +342,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "60cb8e5054fb596c34393dc795babc80"
+   "fingerprint": "60cb8e5054fb596c34393dc795babc80",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "PSYCH 103",
@@ -327,10 +371,14 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "50e3b82c4d5069066fd8c2b081a05412"
+   "fingerprint": "50e3b82c4d5069066fd8c2b081a05412",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   }
  ],
- "reparsed_at": "2026-10-14T03:33:42Z",
+ "reparsed_at": "2026-11-05T14:22:28Z",
  "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college).",
  "source_kind": "catalog"
 }

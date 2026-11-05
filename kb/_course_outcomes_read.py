@@ -294,6 +294,79 @@ def outcomes_of(text: str) -> dict:
             "maps_to": None, "parsed_from": "text"}
 
 
+# Course objectives (Sam, 2026-11-02, S551: "we should grab course objectives and store them as well. They are often
+# richer descriptions of course content than any other element of the COR"). The heading as each host prints it:
+# RCCD and Las Positas "Course Objectives:", Santa Ana and the Coast district "Course Objectives", SDCCD's outline
+# report "STUDENT LEARNING OBJECTIVES:" and its All Fields report "Student Learning Objectives" with a field label
+# "Objective Text" before each item.
+OBJ_TITLE = re.compile(r"^[ \t]*(course|student learning|learning|performance)? ?objectives[ \t]*:?[ \t]*$", re.I)
+# A field label a report prints before each item, never an objective itself.
+OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
+# Section headings the outcomes' STOP list does not name, where the objectives end: SDCCD's outline report goes on
+# to "Section II" and "1. COURSE OUTLINE AND SCOPE:", its All Fields report to "Disciplines" and "Minimum
+# Qualification".
+OBJ_STOP = re.compile(r"^(section [ivx\d]+|disciplines?|minimum qualifications?|course outline and scope:?)$", re.I)
+
+
+def _obj_ends(s: str) -> bool:
+    bare = MARKER.sub("", s, count=1).strip()
+    return bool(OBJ_TITLE.match(s) or STOP.match(s) or SLO_TITLE.match(s) or CCCD_SLO_HEAD.match(s)
+                or OBJ_STOP.match(s) or OBJ_STOP.match(bare) or (bare.isupper() and STOP.match(bare)))
+
+
+def objectives_of(text: str) -> dict:
+    """The first Course Objectives section that holds items, as printed: its heading, the lead-in, and each line
+    up to the next section heading (the outcomes' own STOP list, or an SLO heading). A heading that a page lists
+    in its contents with no items under it is passed over (Las Positas prints one in its DE section). Each item
+    keeps its words; only a list marker is removed."""
+    lines = (text or "").split("\n")
+    for i, line in enumerate(lines):
+        if not OBJ_TITLE.match(line):
+            continue
+        lead, items = None, []
+        for raw in lines[i + 1:i + 200]:
+            s = raw.strip()
+            if not s or OBJ_LABEL.match(s):
+                continue
+            if _obj_ends(s):
+                break
+            if not items and LEAD.match(s):
+                lead = lead or s
+                continue
+            items.append(MARKER.sub("", s, count=1).strip())
+        items = [x for x in items if x]
+        if items:
+            return {"objectives": items, "objectives_heading": line.strip().rstrip(":").strip(),
+                    "objectives_lead": lead, "objectives_fingerprint": fingerprint(items)}
+    return {"objectives": [], "objectives_heading": None, "objectives_lead": None, "objectives_fingerprint": None}
+
+
+def objectives_from_html(page_html: str) -> list[str] | None:
+    """Each Objective Text field a curriQunet All Fields report prints (SDCCD's report 4), its value as one item:
+    the page's text breaks a long field across lines, the field keeps it whole (CISC 106, trial 38350787486).
+    None when the page prints no such field."""
+    if "Objective Text" not in (page_html or ""):
+        return None
+    tree = _Tree()
+    tree.feed(page_html)
+    out = []
+    for f in tree.root.find(lambda n: _has_class(n, "iq-data-field")):
+        lab, val = _field_part(f, "field-label"), _field_part(f, "field-value")
+        if lab and _ws(lab.text()) == "Objective Text" and val and _ws(val.text()):
+            out.append(_ws(val.text()))
+    return out or None
+
+
+def objectives_block(page_html: str, text: str) -> dict:
+    """The objectives as parse_page files them: the text reader's heading and lead-in, with the All Fields
+    report's own fields as the items where it prints them."""
+    got = objectives_of(text)
+    fields = objectives_from_html(page_html)
+    if fields:
+        got = {**got, "objectives": fields, "objectives_fingerprint": fingerprint(fields)}
+    return got
+
+
 def offered_at(text: str) -> list[str] | None:
     """The college codes an integrated outline prints under College: (RIV, MOV, NOR)."""
     m = OFFERED.search(text or "")
@@ -462,6 +535,11 @@ def cccd_outcomes_from_html(page_html: str) -> dict | None:
 
 
 def parse_page(page_html: str, text: str, system: str | None = None) -> dict:
+    """The outcomes a page prints (_parse_outcomes) and, beside them, its course objectives (Sam, 2026-11-02)."""
+    return {**_parse_outcomes(page_html, text, system), **objectives_block(page_html, text)}
+
+
+def _parse_outcomes(page_html: str, text: str, system: str | None = None) -> dict:
     """The outcomes a page prints: each college's group (SDCCD's All Fields report), else
     the SLO area of an integrated outline (RCCD), else an eLumen course page's block,
     else the text reader."""

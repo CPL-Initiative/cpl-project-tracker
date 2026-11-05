@@ -45,7 +45,16 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "85c9dbbea0a0f2f5eb274868a72ea816"
+   "fingerprint": "85c9dbbea0a0f2f5eb274868a72ea816",
+   "objectives": [
+    "Demonstrate proper use of aerobic equipment.",
+    "Calculate Aerobic Training Zone utilizing the Karvonen Formula.",
+    "Identify the physical, observational, and social/emotional benefits of aerobic training.",
+    "Perform methods of aerobic assessment to determine a fitness baseline and progressive overload for improvement."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "91474589e182b81ed872e1c17e0fd89c"
   },
   {
    "code": "ARHS 1",
@@ -72,7 +81,16 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "65416e77b541ce0de773625f726ced6c"
+   "fingerprint": "65416e77b541ce0de773625f726ced6c",
+   "objectives": [
+    "Evaluate and critique works of art and archetecture based on formal elements and principles of design and employing appropriate art historical terminology",
+    "Analyze, evaluate, and distinguish materials and techniques used for creating art and architecture",
+    "Differentiate art historical methodologies",
+    "Identify, analyze, and discuss the functions of art and architecture and the roles of artists in diverse cultures"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "7c7cb094d834598eb8d01ba58e7deac2"
   },
   {
    "code": "BL 1",
@@ -98,7 +116,18 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "4664c0ab2fe6db6a1e905b33e61dce92"
+   "fingerprint": "4664c0ab2fe6db6a1e905b33e61dce92",
+   "objectives": [
+    "Demonstrate knowledge of the rules involved with the game of bowling;",
+    "Demonstrate basic skills required in bowling, e.g. approach, grip, release, scoring",
+    "Demonstrate knowledge of spare pick-up strategy used in bowling;",
+    "Experience and exhibit team cooperation and proper conduct commonly performed in the game of bowling;",
+    "Develop and/or maintain a level of fitness needed to participate in the sport of bowling;",
+    "Understand the inherit risks involved with bowling (e.g. low back injury) and participate in a safe and wise manner."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "624dd0244822eb2e0fd08cc7a9645df7"
   },
   {
    "code": "COMM C1000",
@@ -123,7 +152,22 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7945fec9f3862588d954695a8520a514"
+   "fingerprint": "7945fec9f3862588d954695a8520a514",
+   "objectives": [
+    "Apply rhetorical theories to create and analyze public speeches in a variety of contexts including historical and/or contemporary.",
+    "Formulate and implement effective research strategies to gather information and ideas from primary and secondary sources, evaluating them for credibility, accuracy, and relevancy.",
+    "Employ sound reasoning and construct compelling arguments in support of a guiding thesis and organizational pattern appropriate for the audience, occasion, and purpose.",
+    "Demonstrate rhetorical sensitivity to diversity, equity, inclusion, accessibility, and belonging and adhere to ethical communication practices which include truthfulness, accuracy, honesty, and reason.",
+    "Compose and deliver a variety of speeches, including Informative and Persuasive speeches, to a live audience (one to many) using effective delivery practices.",
+    "Employ effective listening practices.",
+    "Discuss the theoretical foundations of rhetoric and the Aristotelian proofs of ethos, pathos, and logos.",
+    "Describe, define, discuss and explain the basic components of the human communication process.",
+    "Demonstrate critical thinking, both as speakers and as listeners and provide constructive criticism to peers.",
+    "Demonstrate effective language usage, verbal and nonverbal delivery skills, and visual aid usage in public speaking presentations."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "301b52c9e7a9d0ccb8ea56422885e03b"
   },
   {
    "code": "ENGL C1000",
@@ -153,7 +197,32 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6f90061d050210851ba868765c1cd232"
+   "fingerprint": "6f90061d050210851ba868765c1cd232",
+   "objectives": [
+    "Reading:",
+    "Critically read texts and materials from a variety of academic and cultural contexts.",
+    "Summarize a thesis and main points.",
+    "Analyze main ideas.",
+    "Evaluate the validity and logic of the text’s reasoning and support.",
+    "Relate ideas and information in the text to their own experience as well as other texts.",
+    "Create a coherent position or argument based on reading.",
+    "Writing",
+    "Write multiple-paragraph papers that accurately and appropriately respond to a given assignment.",
+    "Develop a relevant, focused thesis.",
+    "Organize ideas and coherently move from coordinating to subordinating points",
+    "Develop ideas with sufficient and relevant evidence.",
+    "Synthesize facts and ideas originating outside their direct experience to develop and support a thesis.",
+    "Demonstrate stylistic choices in tone, syntax, and diction.",
+    "Use language--including edited American English and Englishes informed by one's positionality--style, and voice to write clear, engaging prose with an authentic voice.",
+    "Research:",
+    "Research a specific topic using the Internet, databases, journals, and books.",
+    "Review sources for relevant evidence and arguments.",
+    "Integrate researched material into their own writing with appropriate context, explanation, punctuation, and citation.",
+    "Document sources in an academically responsible way."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "8fa4042158c742726aa37e7d31b7c123"
   },
   {
    "code": "FREN 1A",
@@ -180,7 +249,25 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ba94246c9a3b18fbe4a6684387b9c0af"
+   "fingerprint": "ba94246c9a3b18fbe4a6684387b9c0af",
+   "objectives": [
+    "Select appropriate prepositions of place when describing locations and using geographical nouns.",
+    "Determine the correct form of definite and indefinite articles in simple sentences.",
+    "Use the present perfect with the helping verb avoir in simple sentences.",
+    "Identify basic parts of a sentence in French;",
+    "Use nouns and accompanying adjectives in correct form;",
+    "Use regular and key irregular verbs in the present tense;",
+    "Use the immediate future tense in short sentences;",
+    "Use singular and plural possessive adjectives appropriately;",
+    "Speak in short sentences using simple vocabulary on topics such as clothing, food, family, quantities, time, weather, locations around town;",
+    "Understand native speakers engaged in simple conversation speaking at a slower than normal pace;",
+    "Use knowledge of English to recognize French cognates as an aid to comprehension;",
+    "Recognize, discuss and compare several aspects of the culture and society of several Francophone countries, in English.",
+    "Ask and answer questions in the present tense."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "e99afbf8c780bad26a5d9dc6fa762088"
   },
   {
    "code": "HEA 1",
@@ -208,7 +295,33 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "423a046f2002a0a08b0f935b5506c324"
+   "fingerprint": "423a046f2002a0a08b0f935b5506c324",
+   "objectives": [
+    "Describe the dimensions of health;",
+    "Distinguish between personal health and public health;",
+    "Identify methods for maintaining psychological health;",
+    "Describe the physiological effects of stress and its role in disease risk and progression;",
+    "Apply fitness principles to improve cardiorespiratory endurance, muscular stength, muscular endurance, flexibility, and body composition;",
+    "Apply dietary recommendations to making nutrition choices throughout the lifecycle, and in the promotion of health and wellness;",
+    "Discuss disordered eating, eating disorders and body image, and the societal conditions that contribute to them;",
+    "Describe risk factors and risk reduction strategies for chronic conditions including cancer, diabetes, cardiovascular disease, and other diseases;",
+    "Examine the consequences associated with alcohol, tobacco, and other drug use, misuse, and addiction; including impact on individual and society;",
+    "Illustrate strategies for effective communication in healthy relationships;",
+    "Discuss the roles of intimacy and sexualty in healthy relationships;",
+    "Discuss risk reduction strategies for sexually transmitted infections (STIs) and other infectious diseases;",
+    "Identify conditions that contribute to intentional and unintentional injuries on a personal and community level and strategies that would reduce their occurrences.",
+    "Describe environmental health risks communities face, and the inter-relationship between humans and their environment;",
+    "Explain aging including the physiological, emotional, psychological, and sexual aspects;",
+    "Describe the U.S. health care delivery system including types of insurance, the structure of the system, and issues concerning access and equity;",
+    "Evaluate personal health status; and develop and implement personal strategies (as appropriate) for psychological well-being, physical fitness, nutrition and healthy eating patterns, reduction of chronic disease risk, and prevention of infection diseases;",
+    "Critically evaluate various sources of health information;",
+    "Interpret and evaluate health and medical information from general and subject-specific sources.",
+    "Communicate effectively orally and in writing utilizing health-specific discipline language;",
+    "Analyze their lifestyle from a wellness perspective. In response, identify areas for personal behavior change, and then plan and implement health enhancing behaviors as appropriate."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "996a55ae0800f1431b7ea3678c0611e8"
   },
   {
    "code": "LGBT 1",
@@ -236,7 +349,21 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e00ba3320822be2e55ce162895f2bd5e"
+   "fingerprint": "e00ba3320822be2e55ce162895f2bd5e",
+   "objectives": [
+    "Analyze the various ways people identify their sexual orientation and/or their gender identity and expression.",
+    "Synthesize the intersections of sexual orientation, gender identity, gender expression, race, ethnicity, socioeconomic class, disability, age, and other intersecting identities within the United States.",
+    "Assess theories about sexual orientation and gender identity and expression within the context of feminist theory, critical theory, and queer theory.",
+    "Examine the continuous evolution of legal policies and societal views of LGBTQ+ people on a national and global level.",
+    "Examine sexual orientation and gender identity issues within the Native American, African American, Chicano/a and Latino/a, Asian American, Pacific Islander, and recent immigrant communities in the United States.",
+    "Identify key individuals and describe their contributions regarding changing public policy and laws for LGBTQ+ people.",
+    "Analyze the impact of sexual prejudice on LGBTQ+ individuals and communities.",
+    "Analyze the evolution of LGBTQ+ culture in the media and the arts.",
+    "Research the history of public health policy in the United States, as well as, internationally to explore how public policies affect LGBTQ+ people."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "9b3f64eb6fa04328c6233a4dcbe42b7a"
   },
   {
    "code": "NBUS 200",
@@ -264,7 +391,16 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e160a57553f2b15da145b7db7cec7078"
+   "fingerprint": "e160a57553f2b15da145b7db7cec7078",
+   "objectives": [
+    "Distinguish among the various barriers that interfere with communication and develop skills to address and overcome these barriers through the effective application of verbal and nonverbal communication.",
+    "Apply effective listening skills in a variety of situations to promote healthy, positive communication",
+    "Develop an interview plan with optimal questions and scenarios for a successful interview.",
+    "Identify and describe non-verbal communication and how it can be interpreted."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "3f7fe85a8afc2b00f0047c7ce3182f4d"
   },
   {
    "code": "PHIL 1",
@@ -290,7 +426,19 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "817d23b14ea2841280031654ab25d896"
+   "fingerprint": "817d23b14ea2841280031654ab25d896",
+   "objectives": [
+    "Articulate and discuss the central questions and formative figures of the philosophical tradition",
+    "Evaluate and critique prominent theories about God, nature and human nature",
+    "Apply theories discussed in class to problems and questions facing humans in modern times",
+    "Show connections between the field of philosophy and other fields of inquiry such as humanities, religion, art, sociology, psychology, and the applied arts",
+    "Synthesize personal experience, individual research, and course information into a cogent and defensible philosophical theory",
+    "Explain personal philosophical positions to others in both written and spoken form",
+    "Work with others in a group to problem-solve philosophical issues"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "6ad0260baa94bf74ff576e64d992c0fa"
   },
   {
    "code": "RADS 40A",
@@ -317,7 +465,18 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "97be7fb960f759d571a914fb3b0e64ec"
+   "fingerprint": "97be7fb960f759d571a914fb3b0e64ec",
+   "objectives": [
+    "Identify the basic principles of atomic energy, radioactivity, and decay",
+    "Assess hazards associated with the use of ionizing radiation",
+    "Determine biological effects and risks from radiation exposure",
+    "Estimate dose and risks to individuals and populations",
+    "Define monitoring for the workplace",
+    "Identify sources of radiation, including artificial and natural sources"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "226912374ffd9b6391fe29b235e5adb9"
   },
   {
    "code": "SW 1",
@@ -344,7 +503,21 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6d120397b202f31a84b5d227fa863aa3"
+   "fingerprint": "6d120397b202f31a84b5d227fa863aa3",
+   "objectives": [
+    "Employ beginning level breathing:  blowing bubbles, bobbing, turning the head to the side",
+    "Describe and apply aquatic safety methods, including drown-proofing technique",
+    "Demonstrate competency of beginning level swimmers, including floating skills, and comfort in the water;",
+    "Demonstrate the basic techniques of freestyle and backstroke for 25 yards.",
+    "Demonstrate the basic techniques of a non-competitive stroke, elementary backstroke",
+    "Perform fundamental entries into the water, shallow and deep.",
+    "Identify common swim training equipment"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "6bec693004e92ce3462a3b5a56f10cc7"
   }
- ]
+ ],
+ "reparsed_at": "2026-11-05T14:22:29Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }
