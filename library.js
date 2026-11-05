@@ -2785,6 +2785,10 @@
       stateBlock(r) +
       '<div class="lib-details" id="lib-d-' + esc(r.id) + '">' + details(r) + "</div></div>";
   }
+  function bandNewestFirst(k, members) {
+    var t = (members || []).reduce(function (m, r) { var x = Date.parse(modified(r)); return isNaN(x) || x < m ? m : x; }, -1);
+    return t < 0 ? "z" : String(9e15 - t).padStart(16, "0");
+  }
   function listSpec() {
     return {
       prefix: "libl-", frPrefix: "libl-fr-",
@@ -2796,7 +2800,11 @@
       render: render, findWords: true,
       filters: LIST_FILTERS, filterPass: listPass,
       hay: function (r) { return [r.title, r.project, r.occasion, r.file_name, r.summary, KIND[r.kind], r.made_by, r.version, r.for_name, forKindWord(r), standsWord(r)].join(" "); },
+      // The band holding the last-modified piece leads, as the Cards' project cards do (Sam, 2026-11-05: "the sort
+      // descending by modified date only partially works--ELL is not at the top of the list but was last modified").
+      // The engine runs bands A to Z on order(), so the newest time inverts into a fixed-width key; no time sorts last.
       bands: { key: function (r) { return r.project || ""; }, by: "project", label: "Projects", none: "Not in a project",
+        order: bandNewestFirst,
         name: function (k) { return k; }, facts: function (k, members) { return members.length + " pieces"; } },
       panel: {
         label: function (r) { return r.title; },

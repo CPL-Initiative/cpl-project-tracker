@@ -32,7 +32,11 @@ const ROWS = [
     seen_by: "colleges", home: "drive", url: "https://studentrcc.sharepoint.com/sites/x/deck.pptx", refresh_note: "Update the counts.", sources: [], versions: [],
     updated_at: "2026-11-03T10:00:00Z", regen: { requested_at: "2026-11-05T08:00:00Z", requested_by: "Ashley", publish: "show" } },
   { id: "l4", slug: "memo", title: "A memo", kind: "document", occasion: "Summit", made_on: "2026-10-19", status: "presented", seen_by: "team",
-    home: "web", url: "https://claude.ai/artifact/memo", sources: [], versions: [], updated_at: "2026-11-01T10:00:00Z" }
+    home: "web", url: "https://claude.ai/artifact/memo", sources: [], versions: [], updated_at: "2026-11-01T10:00:00Z" },
+  // A project whose name sorts first and whose pieces are older: Sam's report of 2026-11-05 ("ELL is not at the top of
+  // the list but was last modified") came from bands ordered by name.
+  { id: "l5", slug: "adopt-guide", title: "Adopt guide", kind: "document", project: "Adopt kit", occasion: "Summit", made_on: "2026-10-18",
+    status: "approved", seen_by: "team", home: "web", url: "https://claude.ai/artifact/adopt", sources: [], versions: [], updated_at: "2026-10-30T10:00:00Z" }
 ];
 
 function response(status, body) {
@@ -83,6 +87,16 @@ function load(hash, withList) {
   const order = Array.prototype.map.call(doc.querySelectorAll("#lib-list tbody tr"), function (tr) { return tr.textContent; })
     .filter(function (t) { return /Summit deck|A memo/.test(t); });
   check("⭐ last modified first, as the Cards (Sam, 2026-11-05)", order.length === 2 && /Summit deck/.test(order[0]) && /A memo/.test(order[1]), JSON.stringify(order));
+  const bandOrder = Array.prototype.map.call(doc.querySelectorAll("#lib-list tbody tr"), function (tr) { return tr.textContent; })
+    .map(function (t) { return /ELL IET CPL Starting Points|ELL IET CPL Ideas/.test(t) ? "ELL" : /Adopt guide/.test(t) ? "Adopt" : ""; })
+    .filter(Boolean);
+  check("⭐ the project holding the last-modified piece leads, so the modified-date sort holds across bands (Sam, 2026-11-05)",
+    bandOrder[0] === "ELL" && bandOrder.indexOf("Adopt") > bandOrder.lastIndexOf("ELL"), JSON.stringify(bandOrder));
+  const cards = load("#library/cards", false);
+  await cards.M.activate(); await settle();
+  const projs = Array.prototype.map.call(cards.doc.querySelectorAll(".lib-proj .lib-title, .lib-item:not(.lib-proj) .lib-title"), function (h) { return h.textContent; });
+  check("the Cards order their projects the same way: newest piece first", projs.join("|").indexOf("ELL IET CPL") >= 0 &&
+    (projs.indexOf("Adopt guide") < 0 || projs.indexOf("ELL IET CPL") < projs.indexOf("Adopt guide")), JSON.stringify(projs));
   check("six columns, no Seen by, so the table fits beside the side menu", m.M._state.ls.sort[0].col === 5 && !/>Seen by</.test(doc.querySelector("#lib-list thead").innerHTML));
 
   const st = m.M._state;
