@@ -45,7 +45,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "9fb23cd573c5425aa1a5adbdbfee69a8"
+   "fingerprint": "9fb23cd573c5425aa1a5adbdbfee69a8",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "AT 100",
@@ -70,7 +74,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4af97f29af47f4ff32ff29731223c180"
+   "fingerprint": "4af97f29af47f4ff32ff29731223c180",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "CHILD 1",
@@ -96,7 +104,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "bbd1eadbd2faa36f259246abad8b9f37"
+   "fingerprint": "bbd1eadbd2faa36f259246abad8b9f37",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "DRAMA 10",
@@ -122,7 +134,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "011bcf0cd0dda1bc1799a2f8e8234377"
+   "fingerprint": "011bcf0cd0dda1bc1799a2f8e8234377",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ELL 10",
@@ -150,7 +166,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "faa432e32283ec73207ab6997d36c489"
+   "fingerprint": "faa432e32283ec73207ab6997d36c489",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ENTRE 101",
@@ -176,7 +196,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8d4fc14a7dfb4a54f359303d95c5d0a4"
+   "fingerprint": "8d4fc14a7dfb4a54f359303d95c5d0a4",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "FNR 1",
@@ -202,7 +226,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a74c0dde2152714b85f1cd44efafed21"
+   "fingerprint": "a74c0dde2152714b85f1cd44efafed21",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "HIST 11",
@@ -228,7 +256,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "18127bb15d5efbc34c4b6e1463a09bc8"
+   "fingerprint": "18127bb15d5efbc34c4b6e1463a09bc8",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "HUMAN 1",
@@ -254,7 +286,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dce5a7aa5657b0559f839ab0484a0a4d"
+   "fingerprint": "dce5a7aa5657b0559f839ab0484a0a4d",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "MGMT 110",
@@ -278,7 +314,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a88bcebbbf88b6ee94f3e6e526100d0a"
+   "fingerprint": "a88bcebbbf88b6ee94f3e6e526100d0a",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "PHYCS 1",
@@ -304,7 +344,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c2e3446f06491255d1ebd08ffc307b02"
+   "fingerprint": "c2e3446f06491255d1ebd08ffc307b02",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "PSYCC 1000",
@@ -330,7 +374,13 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c5b0998baeacd67213fa9e8444107d04"
+   "fingerprint": "c5b0998baeacd67213fa9e8444107d04",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   }
- ]
+ ],
+ "reparsed_at": "2026-11-05T14:22:29Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }

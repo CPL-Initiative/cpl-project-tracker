@@ -3271,7 +3271,7 @@
     return Promise.all([
       roepGetAll("/coci_college_programs?select=control_number&status=eq.Active" + c + "&order=id"),
       roepGetAll("/program_requirement_records?select=control_number,checks,loaded_at" + c + "&order=control_number"),
-      roepGetAll("/course_outcomes?select=course_code,outcomes,source_kind" + c + "&order=id"),
+      roepGetAll("/course_outcomes?select=course_code,outcomes,source_kind&kind=eq.slo" + c + "&order=id"),
       roepGetAll("/coci_program_courses?select=course_code" + c + "&order=program_control_number,course_control_number,course_code")
     ]).then(function (g) { return { active: g[0], records: g[1], outcomes: g[2], listed: g[3] }; });
   }
@@ -3381,7 +3381,7 @@
     return Promise.all([
       roepGetAll("/coci_college_programs?select=control_number&status=eq.Active" + c + "&order=id"),
       roepGetAll("/program_requirement_records?select=control_number,checks,loaded_at" + c + "&order=control_number"),
-      roepGetAll("/course_outcomes?select=course_code,outcomes,source_kind" + c + "&order=id"),
+      roepGetAll("/course_outcomes?select=course_code,outcomes,source_kind&kind=eq.slo" + c + "&order=id"),
       roepGetAll("/coci_program_courses?select=course_code" + c + "&order=program_control_number,course_control_number,course_code")
     ]).then(function (g) { return { active: g[0], records: g[1], outcomes: g[2], listed: g[3] }; });
   }

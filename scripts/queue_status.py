@@ -269,7 +269,7 @@ select (select count(*) from program_source_registry) colleges,
   (select count(*) from rec where record->'program' ? 'careers') careers_read,
   (select count(*) from crs) program_courses,
   (select count(*) from crs c where exists (select 1 from course_outcomes o
-      where o.college = c.college and o.course_code = c.course_code)) slo_courses;"""
+      where o.college = c.college and o.course_code = c.course_code and o.kind = 'slo')) slo_courses;"""
 HARVEST_KEYS = ("colleges", "catalog_links", "cms_links", "ppm_links", "active_programs", "roep_programs",
                 "coci_compared", "plo_read", "careers_read", "program_courses", "slo_courses")
 WHOLE_PARTS = {"links": ("catalog", "cms", "ppm"), "roep": None, "coci": None,
