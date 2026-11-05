@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-05_library_ell_iet_v5_card_links_draft.sql",
+ "name": "skyflipflop_library_ell_iet_v5_card_links_draft",
+ "version": "20261105185817",
+ "sha256": "a0c7bb631ae19a3d85356a6e58a85c307985acd7027311a24dd39e0421616b02",
+ "run": "42088990152",
+ "status": 201,
+ "response": "[{\"slug\":\"ell-iet-cpl-starting-points\",\"?column?\":\"b26372ff-c4eb-401a-97fa-d8601d3fb7cc\",\"updated_at\":\"2026-11-05 18:58:17.549437+00\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
