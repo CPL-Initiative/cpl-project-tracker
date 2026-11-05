@@ -16570,8 +16570,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 549,
+   "count": 550,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 584,
+     "path": "docs/session_584_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 584 handoff: the queue was not empty; five lane items the handoffs had dropped",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25924,5 +25939,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1386
+ "total": 1387
 }
