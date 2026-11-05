@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 565,
-  "moniker": "SkyTeaberry",
-  "run": "the Exhibits build (CER redesign side lane)",
+  "session": 575,
+  "moniker": "SkyJujube",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_565_handoff.md",
+  "handoff": "docs/session_575_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
@@ -119,52 +119,24 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-04T01:00:00Z",
+  "written_at": "2026-11-05T00:38:02Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Exhibits' panel onto the engine's parts, then the original views retire",
-    "text": "Exhibits' panel moves onto the List engine's shared parts and its Commons read onto the engine's reader; then each reference's original views retire once its List does what they do, one PR each, tests ported first."
+    "title": "Check alignment on the other Commons Lists",
+    "text": "Exhibits carries Check alignment for a credential's title and issuer; CR, Programs and Courses follow."
   },
   "changes": [
     {
-      "at": "2026-11-04T00:40:00Z",
-      "text": "Courses, the fifth List, takes the line, the folded summary and a course's side panel; every count opens SkyView (#2746)."
+      "at": "2026-11-05T00:45:00Z",
+      "text": "Check alignment on the Exhibits List's edit row: a title another credential carries, close titles, canonicalization noise, and the issuer's spellings"
     },
     {
-      "at": "2026-11-04T00:30:00Z",
-      "text": "Subjects and Programs take the line, the folded summary and the side panel; a count pressed on CR's line no longer empties the List (#2745)."
+      "at": "2026-11-05T00:45:00Z",
+      "text": "Hide the top and a resizable side panel"
     },
     {
-      "at": "2026-11-03T22:42:00Z",
-      "text": "The Credentials view retired into the List: the side panel carries its credit lines, each college's own MAP exhibit and Request Quick Adopt, and #exhibits/credentials opens the List (#2741)."
-    },
-    {
-      "at": "2026-11-03T22:14:00Z",
-      "text": "The side panel edits a credential's issuer and training sites, each site for a college or any college, and the List's row Edit keeps a kept site's college (#2740)."
-    },
-    {
-      "at": "2026-11-03T20:20:00Z",
-      "text": "A title in the Exhibits List opens a side panel with the MAP exhibits folded under it and the rest folded below, and the List gains a Students column (#2738)."
-    },
-    {
-      "at": "2026-11-03T19:04:00Z",
-      "text": "The tiles fold behind Hide the summary, and one line of their counts stays above the list (#2736)."
-    },
-    {
-      "at": "2026-11-03T19:33:00Z",
-      "text": "The Common Exhibits card opens the List; its procedures open the Rules view, no longer the retired CER (#2735)."
-    },
-    {
-      "at": "2026-11-03T15:10:00Z",
-      "text": "Ten Curate-panel rows left under credentials Sam's Another look renamed or retired on 11-02 and 11-03 moved to the new names (receipt kb/receipts/credential_panel_move_2026-11-03_skycheckerberry.json); two calls went to Open Asks Sheet 161."
-    },
-    {
-      "at": "2026-11-03T10:20:00Z",
-      "text": "The opened page no longer lists the nightly run's held titles twice, and the page and the Commons card say why the card's list is shorter (S561, #2722)."
-    },
-    {
-      "at": "2026-11-02T10:40:00Z",
-      "text": "The exhibit-to-cert link gains the IT vendor family: 38 CompTIA, Cisco and Microsoft titles hold 46 catalog certs, so the link covers 208 titles and 165 certs (#2689)."
+      "at": "2026-11-05T00:45:00Z",
+      "text": "The side session's handoff: docs/cer_redesign_handoff.md (SkyJujube to SkyKumquat)."
     }
   ]
 }

@@ -1,62 +1,58 @@
 ---
-title: "CER redesign handoff: side by side's chips stay in their cell (SkyJujube)"
-date: 2026-11-04
+title: "CER redesign handoff: the Subjects List as Sam's workspace; Commons views fold and resize (SkyJujube)"
+date: 2026-11-05
 session: CER redesign build, side session (SkyJujube)
-tags: [handoff, cer, commons-list, program-requirements, side-by-side, a11y]
+tags: [handoff, cer, commons-list, common-subjects-reference, exhibits, check-alignment]
 status: current
 ---
 
 # You are SkyKumquat, the Lists' next build
 
-SkyJujube ran on 2026-11-04 from about 21:21Z (Sam's greeting named it and cited SkyLoquat's handoff, which the file
-held). **The moniker ran twice:** a Cowork session (`session_01Rvwe2Xto2Gp2P1RBVdv913`, on Kristen_Surface) shipped
-#2776 as SkyJujube before this one started, taking item 2 below. By message this run left it the Courses carry
-(`coci_lookup.js`, `unified_courses.js`, `tests/coci_list_cc_card.test.js`, `lanes/commons.md`) and kept to
-`program_requirements.js`, its test and this file. **Light checkpoint:** no §11 row moved, no re-mint, no data receipt,
-nothing waits on Sam. Skipped: `README.md`, `kb/README.md`, the pipeline view, a KB note, the lessons doc, `cpl_memory`
-rows and the decision sheet. The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (575).
+SkyJujube ran 2026-11-04 21:21Z to 2026-11-05 ~00:40Z with Sam driving the Common Subjects List live. Another Cowork
+session also named SkyJujube owns the Courses carry (`coci_lookup.js`, `unified_courses.js`, `lanes/commons.md`); a
+third (CO Academic Affairs setup) owns `our_process.js`. **Light checkpoint** (context at the warn line): no Roadmap
+row moved, no re-mint, no Rule 10 write. Skipped: `README.md`, `kb/README.md`, the pipeline view, the decision sheet,
+`program-requirements.json` (the routine's).
 
-## What shipped (SkyJujube)
+## What shipped (all merged)
 
-- **This PR: side by side's course chips stay in their cell.** At 1024px the record pane is about 490px, so the
-  course column (17%) let a course's C-ID and M-ID chips run into the title column over the COCI chip. The record
-  pane is now a container (`prh-rec`) and the card's tables stack by its own width under 560px, sharing the phone's
-  rules (`STACK_CSS`); a stacked cell's element children sit in the value's column (the M-ID chip had dropped into the
-  word's column on the phone too). Measured in Chromium at 768, 1024 and 1440: every chip inside its cell. Guard
-  `tests/program_requirements.test.js` (19), 369 checks; `npm run a11y -- program-requirements-split
-  program-requirements-split-dark` passes.
+#2778 side by side's chips stay in their cell. #2781 saves renew the sign-in (the 401s), a row press edits and moves
+the panel, local-code counts name their courses (`kb/discipline_local_courses/`). #2782 Colleges beside Courses, the
+Note seeded on a code edit, a reason to keep, Check alignment (Subjects and Exhibits), the scan list shortens. #2783
+*What a Common SUBJ is* (`prototype/common_subj_explainer.html`) and KB note section 5. #2785 *Hide the top* on every
+Commons view, side panels resize, Take becomes Use, a row saved since the scan leaves the scan list.
+CPLBrain#663 Sam's Common SUBJ framing, verbatim. **The sync ran and was reverted** (phase-1e-sync, 00:15Z): new codes in the file ahead of their
+M-IDs fail `tests/csr_trail_rules_test.py` (canonical codes with no identity; strays 2,488 of 75,581). Sam's saves stay
+in `kb_curation`; sync them with the re-mint, in one window.
+
+## Sam's decisions this run
+
+- The Common SUBJ model (his words in the braindump): four-letter codes for every MQ discipline, adopted from C-ID and
+  CCN where they exist; he hopes C-ID's 21 short prefixes move to the CCN standard.
+- Keep ELMT. Keep cards and edits on the List: row press edits; Use, not Take; colleges beside courses; a reason to keep.
+- Check alignment belongs on every Commons List.
 
 ## Open work, in order
 
-1. **Merge this PR** once `test` passes on its head.
-2. **Courses' older view** belongs to the Cowork session that shipped #2776 while it runs (its next PR: the merge
-   editor and Suggested merges; then the deletion). Read `list_sessions` first; take it only if that session has
-   stopped, from where `lanes/commons.md` says it stopped.
-3. **Check alignment on every Commons List** (Sam, 2026-11-04, on the Subjects List's: *"We could use that feature on
-   all our commons list views"*). The engine hook is `edit.extra(r, draft, word)` in `commons_list.js`, with
-   `draft._hint` reading under the fields; the Subjects List's `codeAudit` in `canonical_subj4.js` is the worked example.
-   Each List needs its own audit, what "already used" and "aligned" mean for an exhibit title, a credit recommendation
-   or a program: one PR per List. The Courses List is the other session's (`coci_lookup.js`), so offer it the hook.
-4. **ECONMT and Electricity's adult-education codes** wait on Sam's refile in Local subjects (lane
-   `common-subjects-reference`); a session applies a refile to the map under DR-25, and a move is a re-mint.
-5. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
-   Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
-   may align*, once a source names courses.
-6. **Small, seen:** stacked, the Units and CPL here cells keep `.prh-num`'s right alignment, so their words sit right
-   in the word column (older, on the phone too).
+1. **The re-mint dry-run** that carries the evening's new codes (Cabinet Making WWKC, Furniture Making WWKF, Graphic
+   Arts GFCD, Building Codes CBIT, Diesel DIES, AI CSIS and others) onto their M-IDs. Read
+   `docs/reference/mid_lifecycle.md` and `docs/coursecontrolnumber_remint.md` first; the refreshed
+   `kb/subj4_dryrun/report.md` is the starting list. The apply waits on Sam.
+2. **Check alignment on CR, Programs and (offer it to the other session) Courses**: engine `edit.extra`; worked
+   examples `codeAudit` (canonical_subj4.js), `exhibitAudit` (exhibits.js).
+3. **After the 06:17 scan**, confirm the answered findings left; any left are the scan's rules disagreeing with a note.
+4. Carried: ECONMT and Electricity's adult-education codes (Sam's refile); the Subjects card's second count; the
+   stacked Units cells' right alignment.
 
 ## Lessons to honor
 
-- **Check the live sessions before taking a handoff's next item.** Item 2 here had already shipped as #2776 under the
-  same moniker; `list_sessions` and `main`'s log named the session, and one message settled who writes what.
-- **A table in a pane stacks by the pane, not the viewport.** A `@media` breakpoint never fires for a 490px pane on a
-  1024px screen; a container query does.
-- **Measure the overlap, then look.** The a11y sweep passed with the chips overlapping; a bounding-box check of each
-  chip against its cell, plus a screenshot scrolled to the row, showed the fix.
+- Read a session token at write time; a laptop sleep outlives the copy taken at load.
+- A code change and its re-mint land together: syncing new codes alone turns main red. Notes alone could sync any time.
+- Verify a "fix the display" ask against the database: the evening's "reverts" were saves that never landed.
 
 ## Let go
 
-At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
+No PR watch, no check-in, no artifact watch remain.
 
 ---
 
