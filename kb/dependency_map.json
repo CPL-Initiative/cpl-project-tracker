@@ -4,9 +4,9 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 785,
+  "file_datasets": 787,
   "external_services": 193,
-  "consumers": 517,
+  "consumers": 518,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -6717,6 +6717,13 @@
      "direction": "write",
      "how": "literal",
      "line": 298
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     }
    ],
    "producers": [
@@ -6783,6 +6790,13 @@
      "direction": "write",
      "how": "literal",
      "line": 50
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     }
    ],
    "producers": [
@@ -7170,6 +7184,13 @@
      "direction": "read",
      "how": "literal",
      "line": 303
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -13678,6 +13699,13 @@
      "line": 42
     },
     {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
+    },
+    {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -17584,6 +17612,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/subjects_list_recode_out/2026-11-05/picks.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 349
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/subjects_list_recode_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/supabase_workplan_move.sql": {
    "consumers": [
     {
@@ -19027,6 +19081,13 @@
      "line": 43
     },
     {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
+    },
+    {
      "id": "script:prototype/build_ccr_atlas.py",
      "kind": "script",
      "direction": "read",
@@ -19694,6 +19755,13 @@
   },
   "file:prototype/skyview.html": {
    "consumers": [
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
+    },
     {
      "id": "script:prototype/build_ccr_atlas.py",
      "kind": "script",
@@ -22788,6 +22856,13 @@
      "direction": "read",
      "how": "literal",
      "line": 31
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -22917,6 +22992,13 @@
      "direction": "read",
      "how": "literal",
      "line": 287
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -22970,6 +23052,13 @@
      "direction": "read",
      "how": "literal",
      "line": 96
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "producers": [
@@ -23036,6 +23125,13 @@
      "direction": "read",
      "how": "literal",
      "line": 114
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "producers": [
@@ -23092,6 +23188,13 @@
      "direction": "read",
      "how": "literal",
      "line": 584
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "producers": [
@@ -23213,6 +23316,13 @@
      "line": 117
     },
     {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
+    },
+    {
      "id": "script:kb/_suggest_unclassified.py",
      "kind": "script",
      "direction": "read",
@@ -23309,6 +23419,13 @@
      "direction": "read",
      "how": "literal",
      "line": 131
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -23376,6 +23493,13 @@
      "direction": "read",
      "how": "literal",
      "line": 140
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     }
    ],
    "producers": [

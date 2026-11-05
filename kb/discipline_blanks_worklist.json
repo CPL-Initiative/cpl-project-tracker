@@ -3,8 +3,8 @@
   "_generated_by": "kb/_build_discipline_blanks_worklist.py",
   "_read_this_first": "`corroboration` is the column that matters. Where it says none, or a single row, there is nothing in the payload to check a proposed discipline against — that is why these are here.",
   "_counts": {
-    "blank_after_fill": 84,
-    "subject_codes": 43,
+    "blank_after_fill": 86,
+    "subject_codes": 45,
     "codes_with_no_corroboration": 33,
     "codes_corroborated_by_one_row": 5,
     "filled_from_the_subject_map": 0,
@@ -388,6 +388,20 @@
       "corroboration": "none — no other identity carries this prefix"
     },
     {
+      "subj4": "BRDC",
+      "identities_blank": 1,
+      "ids": [
+        "BRDC M1061"
+      ],
+      "titles": [
+        "Media Literacy"
+      ],
+      "same_prefix_identities": 55,
+      "they_are_filed_under": "Broadcasting Technology",
+      "how_many_agree": 55,
+      "corroboration": "55 of 55 identities"
+    },
+    {
       "subj4": "CMRT",
       "identities_blank": 1,
       "ids": [
@@ -526,6 +540,20 @@
       "they_are_filed_under": null,
       "how_many_agree": 0,
       "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "GFCD",
+      "identities_blank": 1,
+      "ids": [
+        "GFCD M1051"
+      ],
+      "titles": [
+        "Introduction to Virtual Production"
+      ],
+      "same_prefix_identities": 67,
+      "they_are_filed_under": "Graphic Arts",
+      "how_many_agree": 67,
+      "corroboration": "67 of 67 identities"
     },
     {
       "subj4": "HOSM",

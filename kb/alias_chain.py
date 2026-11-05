@@ -89,6 +89,7 @@ ALIAS_MAPS = [
     "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",  # 2026-10-20 (Sheet 107 card 1, Session 436 — stamps: _forestry_wine_remint_from; the two forestry identities merged into ENVR M1069, AGRI M10SY and M1104, to ENVR, Sam's "move-both")
     "kb/fl_stray_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 107 card 2, Session 436 — stamps: _fl_stray_remint_from; the twelve Foreign Languages identities on stray codes to their language's code under the umbrella, five new codes FLAM FLHU FLEG FLKH FLTU, Sam's "rekey-twelve")
     "kb/blank_stray_remint_out/2026-10-20/alias_map.json",  # 2026-10-20 (Sheet 107 card 3, Session 436 — stamps: _blank_stray_remint_from; the 79 identities on eight blank stray codes filed under the discipline both signals name, ARCE ARTF NCAR -> ARTS, CSMT -> COSM, BRDC -> BCST, FLGH -> AVIA, ARTP -> PHOT, WELL -> HLTH, Sam's "file-eight")
+    "kb/subjects_list_recode_out/2026-11-05/alias_map.json",  # 2026-11-05 (the Subjects List recode, SkyKumquat — stamps: _subjects_list_recode_from; eleven disciplines onto the Common SUBJ Sam saved on the List 2026-11-04: CSAI->CSIS BCST->BRDC CNSR->CBIT CNSC->WWKC AUTD->DIES ESCI->ENVS CSTF->WWKF GRAF->GFCD PLGL->PARA NRSV->VNRS, and Media Production FTVE->FMED, ending the fan-in)
 ]
 
 

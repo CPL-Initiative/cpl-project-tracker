@@ -568,7 +568,11 @@ instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
 dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
 decisions + validation methodology:
 [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-**Latest instance (2026-09-04, SkyFold S225): the prefix fold, APPLIED.** Sam ruled the
+**Newest instance (2026-11-05, SkyKumquat): the Subjects List recode, APPLIED.** Sam's eleven Common SUBJ picks of
+2026-11-04 as a keep-number prefix re-key (`kb/_subjects_list_recode.py`, `kb/subjects_list_recode_out/2026-11-05/`):
+2,389 ids, Media Production off the FTVE fan-in to FMED; lane `common-subjects-reference` has the counts. Its lesson:
+a code change saved on the List lands only with its re-key, so the List's save is the ruling and the re-key follows in
+the same window. **Earlier instance (2026-09-04, SkyFold S225): the prefix fold, APPLIED.** Sam ruled the
 seven-item worklist sheet "Yes to all recommendations" (`kb/prefix_fold_rulings_2026-09-04.json`)
 and `kb/_prefix_fold_apply.py` landed the frozen receipt `kb/prefix_fold_out/2026-09-03/` in one
 cron window (#1463): 278 ids re-keyed onto their discipline's code (132 materialized machine

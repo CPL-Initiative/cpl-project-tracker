@@ -3710,7 +3710,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "AUBD M10AA"
     },
-    "AUTD M1007": {
+    "DIES M1007": {
       "identity_system": "M-ID",
       "title": "DIESEL FUEL SYSTEMS AND ELECTRIC COMPONENT THEORY",
       "discipline": "Diesel Mechanics",
@@ -3728,7 +3728,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M1004"
     },
-    "AUTD M1009": {
+    "DIES M1009": {
       "identity_system": "M-ID",
       "title": "Diesel Engine Fundamentals",
       "discipline": "Diesel Mechanics",
@@ -3747,7 +3747,7 @@
       "colleges_offering_count": 2,
       "_identities_rekeyed_from": "DESL M1001"
     },
-    "AUTD M1011": {
+    "DIES M1011": {
       "identity_system": "M-ID",
       "title": "DIESEL ENGINE OVERHAUL",
       "discipline": "Diesel Mechanics",
@@ -3766,7 +3766,7 @@
       "colleges_offering_count": 2,
       "_identities_rekeyed_from": "DIES M1003"
     },
-    "AUTD M1012": {
+    "DIES M1012": {
       "identity_system": "M-ID",
       "title": "Diesel Engine Principles",
       "discipline": "Diesel Mechanics",
@@ -3785,7 +3785,7 @@
       "colleges_offering_count": 2,
       "_identities_rekeyed_from": "AGM M1002"
     },
-    "AUTD M1014": {
+    "DIES M1014": {
       "identity_system": "M-ID",
       "title": "Diesel Engines",
       "discipline": "Diesel Mechanics",
@@ -3808,7 +3808,7 @@
       "colleges_offering_count": 6,
       "_identities_rekeyed_from": "AUTE M1005"
     },
-    "AUTD M1020": {
+    "DIES M1020": {
       "identity_system": "M-ID",
       "title": "HEAVY DUTY DRIVE TRAIN FUNDAMENTALS",
       "discipline": "Diesel Mechanics",
@@ -3826,7 +3826,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M1005"
     },
-    "AUTD M1026": {
+    "DIES M1026": {
       "identity_system": "M-ID",
       "title": "Introduction to Preventative Maintenance Inspection",
       "discipline": "Diesel Mechanics",
@@ -3844,7 +3844,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DETT M1001"
     },
-    "AUTD M10BN": {
+    "DIES M10HN": {
       "identity_system": "M-ID",
       "title": "Heavy Duty Transmissions, Brakes, and Suspension",
       "discipline": "Diesel Mechanics",
@@ -3862,7 +3862,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10BJ"
     },
-    "AUTD M10CY": {
+    "DIES M10CY": {
       "identity_system": "M-ID",
       "title": "ELECTRONIC ENGINE CONTROLS",
       "discipline": "Diesel Mechanics",
@@ -3880,7 +3880,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10AT"
     },
-    "AUTD M10DB": {
+    "DIES M10DB": {
       "identity_system": "M-ID",
       "title": "Diesel Engine Fuel Systems & Diagnosis",
       "discipline": "Diesel Mechanics",
@@ -3898,7 +3898,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "AGM M10AE"
     },
-    "AUTD M10EH": {
+    "DIES M10EH": {
       "identity_system": "M-ID",
       "title": "Diesel and Related Technology",
       "discipline": "Diesel Mechanics",
@@ -3916,7 +3916,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10AJ"
     },
-    "AUTD M10ER": {
+    "DIES M10ER": {
       "identity_system": "M-ID",
       "title": "Heavy Duty Electrical Systems",
       "discipline": "Diesel Mechanics",
@@ -3934,7 +3934,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10BA"
     },
-    "AUTD M10ET": {
+    "DIES M10ET": {
       "identity_system": "M-ID",
       "title": "Heavy Duty Emissions Systems",
       "discipline": "Diesel Mechanics",
@@ -3952,7 +3952,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10BC"
     },
-    "AUTD M10EU": {
+    "DIES M10EU": {
       "identity_system": "M-ID",
       "title": "Heavy Duty Hydraulics",
       "discipline": "Diesel Mechanics",
@@ -3970,7 +3970,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10BF"
     },
-    "AUTD M10EX": {
+    "DIES M10EX": {
       "identity_system": "M-ID",
       "title": "Heavy Duty Suspension and Steering Systems",
       "discipline": "Diesel Mechanics",
@@ -3988,7 +3988,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10BI"
     },
-    "AUTD M10FI": {
+    "DIES M10FI": {
       "identity_system": "M-ID",
       "title": "Heavy and Related Technology",
       "discipline": "Diesel Mechanics",
@@ -4006,7 +4006,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "DIES M10AW"
     },
-    "AUTD M10FY": {
+    "DIES M10FY": {
       "identity_system": "M-ID",
       "title": "Heavy Duty Heating, Ventilation, and Air Conditioning (HVAC)",
       "discipline": "Air Conditioning, Refrigeration, Heating",
@@ -15814,7 +15814,7 @@
       ],
       "colleges_offering_count": 1
     },
-    "CNSC M10AZ": {
+    "WWKC M10AZ": {
       "identity_system": "M-ID",
       "title": "Cutting and Burning",
       "discipline": "Cabinet Making",
@@ -15832,7 +15832,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "AMW M10AF"
     },
-    "CNSC M10BR": {
+    "WWKC M10BR": {
       "identity_system": "M-ID",
       "title": "Machinery Installation and Erection - A",
       "discipline": "Cabinet Making",
@@ -15850,7 +15850,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "AMW M10AK"
     },
-    "CNSC M10CH": {
+    "WWKC M10CH": {
       "identity_system": "M-ID",
       "title": "Precision Optics",
       "discipline": "Cabinet Making",
@@ -15976,7 +15976,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "CEM M10AK"
     },
-    "CNSR M1001": {
+    "CBIT M1001": {
       "identity_system": "M-ID",
       "title": "Advanced Construction Inspection: International Building Code (IBC)",
       "discipline": "Building Codes and Regulations",
@@ -15994,7 +15994,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1001"
     },
-    "CNSR M1004": {
+    "CBIT M1004": {
       "identity_system": "M-ID",
       "title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
       "discipline": "Building Codes and Regulations",
@@ -16012,7 +16012,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1004"
     },
-    "CNSR M1005": {
+    "CBIT M1005": {
       "identity_system": "M-ID",
       "title": "Aspects of Building and Safety",
       "discipline": "Building Codes and Regulations",
@@ -16030,7 +16030,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1005"
     },
-    "CNSR M1006": {
+    "CBIT M1006": {
       "identity_system": "M-ID",
       "title": "Community Relations for Building Personnel",
       "discipline": "Building Codes and Regulations",
@@ -16048,7 +16048,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1009"
     },
-    "CNSR M1008": {
+    "CBIT M1008": {
       "identity_system": "M-ID",
       "title": "California State Energy Regulations for Residential Buildings",
       "discipline": "Building Codes and Regulations",
@@ -16066,7 +16066,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1008"
     },
-    "CNSR M1009": {
+    "CBIT M1009": {
       "identity_system": "M-ID",
       "title": "California Residential Code",
       "discipline": "Building Codes and Regulations",
@@ -16084,7 +16084,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1006"
     },
-    "CNSR M1014": {
+    "CBIT M1014": {
       "identity_system": "M-ID",
       "title": "Fundamentals of Construction Inspection: Wood, Steel, Masonry",
       "discipline": "Building Codes and Regulations",
@@ -16102,7 +16102,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1011"
     },
-    "CNSR M1015": {
+    "CBIT M1015": {
       "identity_system": "M-ID",
       "title": "Non-Structural Plan Review",
       "discipline": "Building Codes and Regulations",
@@ -16120,7 +16120,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1012"
     },
-    "CNSR M1016": {
+    "CBIT M1016": {
       "identity_system": "M-ID",
       "title": "Structural Plan Review",
       "discipline": "Building Codes and Regulations",
@@ -16138,7 +16138,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "INSP M1013"
     },
-    "CNSR M10AA": {
+    "CBIT M10AA": {
       "identity_system": "M-ID",
       "title": "10-Key on the Computer",
       "discipline": "Building Codes and Regulations",
@@ -16156,7 +16156,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "BIT M10AA"
     },
-    "CNSR M10AE": {
+    "CBIT M10AE": {
       "identity_system": "M-ID",
       "title": "Introduction to Adobe Acrobat",
       "discipline": "Building Codes and Regulations",
@@ -16174,7 +16174,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "BIT M10BB"
     },
-    "CNSR M10AH": {
+    "CBIT M10AH": {
       "identity_system": "M-ID",
       "title": "Beginning Document Processing",
       "discipline": "Building Codes and Regulations",
@@ -16192,7 +16192,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "BIT M10AC"
     },
-    "CNSR M9001": {
+    "CBIT M9001": {
       "identity_system": "M-ID",
       "title": "Introduction to Microsoft Outlook",
       "discipline": "Building Codes and Regulations",
@@ -25627,7 +25627,7 @@
       ],
       "colleges_offering_count": 25
     },
-    "ESCI M1023": {
+    "ENVS M1023": {
       "identity_system": "M-ID",
       "title": "Sustainable Construction, Building Performance, and the Environment",
       "discipline": "Environmental Technologies",
@@ -25645,7 +25645,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "CEM M1005"
     },
-    "ESCI M1026": {
+    "ENVS M1026": {
       "identity_system": "M-ID",
       "title": "Calculations in Water/Wastewater Technology",
       "discipline": "Environmental Technologies",
@@ -25665,7 +25665,7 @@
       "colleges_offering_count": 3,
       "_identities_rekeyed_from": "WTEC M1003"
     },
-    "ESCI M1029": {
+    "ENVS M1029": {
       "identity_system": "M-ID",
       "title": "Wastewater Collection I",
       "discipline": "Environmental Technologies",
@@ -25683,7 +25683,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "WST M1007"
     },
-    "ESCI M1030": {
+    "ENVS M1030": {
       "identity_system": "M-ID",
       "title": "Wastewater Collection II",
       "discipline": "Environmental Technologies",
@@ -25701,7 +25701,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "WST M1008"
     },
-    "ESCI M1045": {
+    "ENVS M1045": {
       "identity_system": "M-ID",
       "title": "Water Distribution I",
       "discipline": "Environmental Technologies",
@@ -25720,7 +25720,7 @@
       "colleges_offering_count": 2,
       "_identities_rekeyed_from": "WDTO M1001"
     },
-    "ESCI M1063": {
+    "ENVS M1063": {
       "identity_system": "M-ID",
       "title": "Introduction to Environmental Science",
       "discipline": "Environmental Technologies",
@@ -25758,7 +25758,7 @@
       "colleges_offering_count": 21,
       "_identities_rekeyed_from": "ENVS M1007"
     },
-    "ESCI M1064": {
+    "ENVS M1064": {
       "identity_system": "M-ID",
       "title": "Environmental Science Laboratory",
       "discipline": "Environmental Technologies",
@@ -25787,7 +25787,7 @@
       "colleges_offering_count": 12,
       "_identities_rekeyed_from": "ENVS M1006"
     },
-    "ESCI M1073": {
+    "ENVS M1073": {
       "identity_system": "M-ID",
       "title": "Water Treatment I",
       "discipline": "Environmental Technologies",
@@ -25808,7 +25808,7 @@
       "colleges_offering_count": 4,
       "_identities_rekeyed_from": "WATR M1005"
     },
-    "ESCI M1075": {
+    "ENVS M1075": {
       "identity_system": "M-ID",
       "title": "Water Treatment II",
       "discipline": "Environmental Technologies",
@@ -25829,7 +25829,7 @@
       "colleges_offering_count": 4,
       "_identities_rekeyed_from": "WATR M1006"
     },
-    "ESCI M10HH": {
+    "ENVS M10HH": {
       "identity_system": "M-ID",
       "title": "HazMat Emergency Response:First Responder Operations-Decontamination",
       "discipline": "Environmental Technologies",
@@ -25847,7 +25847,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "FST M10BO"
     },
-    "ESCI M10HS": {
+    "ENVS M10HS": {
       "identity_system": "M-ID",
       "title": "Solar Photovoltaic Design and Installation",
       "discipline": "Environmental Technologies",
@@ -25865,7 +25865,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "CEM M10AY"
     },
-    "ESCI M10ON": {
+    "ENVS M10ON": {
       "identity_system": "M-ID",
       "title": "Introduction to Water Resource Management",
       "discipline": "Environmental Technologies",
@@ -30222,7 +30222,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "RTVF M10CG"
     },
-    "FTVE M1113": {
+    "FMED M1113": {
       "identity_system": "M-ID",
       "title": "Introduction to Digital Film Production",
       "discipline": "Media Production",
@@ -30885,7 +30885,7 @@
       ],
       "colleges_offering_count": 15
     },
-    "GRAF M1007": {
+    "GFCD M1007": {
       "identity_system": "M-ID",
       "title": "Digital Illustration with Adobe Illustrator",
       "discipline": "Graphic Arts",
@@ -30903,7 +30903,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "GDS M1005"
     },
-    "GRAF M1044": {
+    "GFCD M1044": {
       "identity_system": "M-ID",
       "title": "Digital Media",
       "discipline": "Graphic Arts",
@@ -30922,7 +30922,7 @@
       "colleges_offering_count": 2,
       "_identities_rekeyed_from": "GRC M1003"
     },
-    "GRAF M1052": {
+    "GFCD M1052": {
       "identity_system": "M-ID",
       "title": "Portfolio Production Studio",
       "discipline": "Graphic Arts",
@@ -30940,7 +30940,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "GDS M1010"
     },
-    "GRAF M10FY": {
+    "GFCD M10FY": {
       "identity_system": "M-ID",
       "title": "PHOTOSHOP SKILLS FOR GRAPHIC DESIGNERS",
       "discipline": "Graphic Arts",
@@ -30958,7 +30958,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "GD M10AU"
     },
-    "GRAF M1300": {
+    "GFCD M1300": {
       "identity_system": "M-ID",
       "title": "Graphic Design I",
       "discipline": "Art",
@@ -45474,7 +45474,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "NURS M10SM"
     },
-    "NRSV M10BW": {
+    "VNRS M10BW": {
       "identity_system": "M-ID",
       "title": "Growth and Development of the Child",
       "discipline": "Licensed Vocational Nursing",
@@ -45492,7 +45492,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "NURV M10AI"
     },
-    "NRSV M10DM": {
+    "VNRS M10DM": {
       "identity_system": "M-ID",
       "title": "Leadership for the Vocational Nurse Lab",
       "discipline": "Licensed Vocational Nursing",
@@ -45510,7 +45510,7 @@
       "colleges_offering_count": 1,
       "_identities_rekeyed_from": "NURV M10AN"
     },
-    "NRSV M10DP": {
+    "VNRS M10DP": {
       "identity_system": "M-ID",
       "title": "Leadership for the Vocational Nurse",
       "discipline": "Licensed Vocational Nursing",
@@ -59310,7 +59310,7 @@
       "_remint_from": "M-ID AGM 100"
     },
     {
-      "course_id": "AUTD M1012",
+      "course_id": "DIES M1012",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -59342,7 +59342,7 @@
       "_remint_from": "M-ID AGM 104"
     },
     {
-      "course_id": "AUTD M1012",
+      "course_id": "DIES M1012",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -59554,7 +59554,7 @@
       "_remint_from": "M-ID AGM 118"
     },
     {
-      "course_id": "AUTD M10DB",
+      "course_id": "DIES M10DB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74476,7 +74476,7 @@
       "_remint_from": "M-ID AMW 112"
     },
     {
-      "course_id": "CNSC M10AZ",
+      "course_id": "WWKC M10AZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74506,7 +74506,7 @@
       "_remint_from": "M-ID AMW 114"
     },
     {
-      "course_id": "CNSC M10AZ",
+      "course_id": "WWKC M10AZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74716,7 +74716,7 @@
       "_remint_from": "M-ID AMW 120"
     },
     {
-      "course_id": "CNSC M10BR",
+      "course_id": "WWKC M10BR",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74746,7 +74746,7 @@
       "_remint_from": "M-ID AMW 124"
     },
     {
-      "course_id": "CNSC M10BR",
+      "course_id": "WWKC M10BR",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74956,7 +74956,7 @@
       "_remint_from": "M-ID AMW 134"
     },
     {
-      "course_id": "CNSC M10CH",
+      "course_id": "WWKC M10CH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74986,7 +74986,7 @@
       "_remint_from": "M-ID AMW 136"
     },
     {
-      "course_id": "CNSC M10CH",
+      "course_id": "WWKC M10CH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -78651,7 +78651,7 @@
       "_remint_from": "M-ID ART 2718"
     },
     {
-      "course_id": "GRAF M1300",
+      "course_id": "GFCD M1300",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -78705,7 +78705,7 @@
       "_remint_from": "M-ID ART 622"
     },
     {
-      "course_id": "GRAF M1300",
+      "course_id": "GFCD M1300",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -84678,7 +84678,7 @@
       "_remint_from": "M-ID AUTECH 104"
     },
     {
-      "course_id": "AUTD M1014",
+      "course_id": "DIES M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -88249,7 +88249,7 @@
       "_remint_from": "M-ID AUTO 262"
     },
     {
-      "course_id": "AUTD M1021",
+      "course_id": "DIES M1021",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -99602,7 +99602,7 @@
       "_remint_from": "M-ID BA 100"
     },
     {
-      "course_id": "CNSR M10AA",
+      "course_id": "CBIT M10AA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -99632,7 +99632,7 @@
       "_remint_from": "M-ID BIT 108"
     },
     {
-      "course_id": "CNSR M10AA",
+      "course_id": "CBIT M10AA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -99662,7 +99662,7 @@
       "_remint_from": "M-ID BIT 108"
     },
     {
-      "course_id": "CNSR M10AH",
+      "course_id": "CBIT M10AH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -99692,7 +99692,7 @@
       "_remint_from": "M-ID BIT 112"
     },
     {
-      "course_id": "CNSR M10AE",
+      "course_id": "CBIT M10AE",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -110227,7 +110227,7 @@
       "_remint_from": "M-ID CEM 104"
     },
     {
-      "course_id": "ESCI M1023",
+      "course_id": "ENVS M1023",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -110437,7 +110437,7 @@
       "_remint_from": "M-ID CEM 162"
     },
     {
-      "course_id": "ESCI M10HS",
+      "course_id": "ENVS M10HS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -135114,7 +135114,7 @@
       "_remint_from": "M-ID DENTAL 136"
     },
     {
-      "course_id": "AUTD M1009",
+      "course_id": "DIES M1009",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135146,7 +135146,7 @@
       "_remint_from": "M-ID DESL 100"
     },
     {
-      "course_id": "AUTD M1009",
+      "course_id": "DIES M1009",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135178,7 +135178,7 @@
       "_remint_from": "M-ID DESL 100"
     },
     {
-      "course_id": "AUTD M1026",
+      "course_id": "DIES M1026",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135460,7 +135460,7 @@
       "_remint_from": "M-ID DH 176"
     },
     {
-      "course_id": "AUTD M1011",
+      "course_id": "DIES M1011",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135492,7 +135492,7 @@
       "_remint_from": "M-ID AGM 102"
     },
     {
-      "course_id": "AUTD M1011",
+      "course_id": "DIES M1011",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135524,7 +135524,7 @@
       "_remint_from": "M-ID AGM 102"
     },
     {
-      "course_id": "AUTD M1011",
+      "course_id": "DIES M1011",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135556,7 +135556,7 @@
       "_remint_from": "M-ID AGM 102"
     },
     {
-      "course_id": "AUTD M1011",
+      "course_id": "DIES M1011",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135588,7 +135588,7 @@
       "_remint_from": "M-ID AGM 102"
     },
     {
-      "course_id": "AUTD M1007",
+      "course_id": "DIES M1007",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135618,7 +135618,7 @@
       "_remint_from": "M-ID DIESLTK 100"
     },
     {
-      "course_id": "AUTD M1007",
+      "course_id": "DIES M1007",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135648,7 +135648,7 @@
       "_remint_from": "M-ID DIESLTK 100"
     },
     {
-      "course_id": "AUTD M1007",
+      "course_id": "DIES M1007",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135678,7 +135678,7 @@
       "_remint_from": "M-ID DIESLTK 100"
     },
     {
-      "course_id": "AUTD M1007",
+      "course_id": "DIES M1007",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135708,7 +135708,7 @@
       "_remint_from": "M-ID DIESLTK 100"
     },
     {
-      "course_id": "AUTD M1020",
+      "course_id": "DIES M1020",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135738,7 +135738,7 @@
       "_remint_from": "M-ID DIESLTK 102"
     },
     {
-      "course_id": "AUTD M1020",
+      "course_id": "DIES M1020",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135768,7 +135768,7 @@
       "_remint_from": "M-ID DIESLTK 102"
     },
     {
-      "course_id": "AUTD M1020",
+      "course_id": "DIES M1020",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135798,7 +135798,7 @@
       "_remint_from": "M-ID DIESLTK 102"
     },
     {
-      "course_id": "AUTD M1020",
+      "course_id": "DIES M1020",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -135828,7 +135828,7 @@
       "_remint_from": "M-ID DIESLTK 102"
     },
     {
-      "course_id": "AUTD M10EH",
+      "course_id": "DIES M10EH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -135858,7 +135858,7 @@
       "_remint_from": "M-ID DIESLTK 106"
     },
     {
-      "course_id": "AUTD M10EH",
+      "course_id": "DIES M10EH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -135888,7 +135888,7 @@
       "_remint_from": "M-ID DIESLTK 106"
     },
     {
-      "course_id": "AUTD M10CY",
+      "course_id": "DIES M10CY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -135918,7 +135918,7 @@
       "_remint_from": "M-ID DIESLTK 108"
     },
     {
-      "course_id": "AUTD M10CY",
+      "course_id": "DIES M10CY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -135948,7 +135948,7 @@
       "_remint_from": "M-ID DIESLTK 108"
     },
     {
-      "course_id": "AUTD M10FI",
+      "course_id": "DIES M10FI",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -135978,7 +135978,7 @@
       "_remint_from": "M-ID DIESLTK 110"
     },
     {
-      "course_id": "AUTD M10ER",
+      "course_id": "DIES M10ER",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136008,7 +136008,7 @@
       "_remint_from": "M-ID DIESLTK 112"
     },
     {
-      "course_id": "AUTD M10ER",
+      "course_id": "DIES M10ER",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136038,7 +136038,7 @@
       "_remint_from": "M-ID DIESLTK 112"
     },
     {
-      "course_id": "AUTD M10ET",
+      "course_id": "DIES M10ET",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136068,7 +136068,7 @@
       "_remint_from": "M-ID DIESLTK 116"
     },
     {
-      "course_id": "AUTD M10ET",
+      "course_id": "DIES M10ET",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136098,7 +136098,7 @@
       "_remint_from": "M-ID DIESLTK 116"
     },
     {
-      "course_id": "AUTD M10FY",
+      "course_id": "DIES M10FY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136128,7 +136128,7 @@
       "_remint_from": "M-ID DIESLTK 120"
     },
     {
-      "course_id": "AUTD M10FY",
+      "course_id": "DIES M10FY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136158,7 +136158,7 @@
       "_remint_from": "M-ID DIESLTK 120"
     },
     {
-      "course_id": "AUTD M10EU",
+      "course_id": "DIES M10EU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136188,7 +136188,7 @@
       "_remint_from": "M-ID DIESLTK 122"
     },
     {
-      "course_id": "AUTD M10EU",
+      "course_id": "DIES M10EU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136218,7 +136218,7 @@
       "_remint_from": "M-ID DIESLTK 122"
     },
     {
-      "course_id": "AUTD M10EU",
+      "course_id": "DIES M10EU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136248,7 +136248,7 @@
       "_remint_from": "M-ID DIESLTK 122"
     },
     {
-      "course_id": "AUTD M10EX",
+      "course_id": "DIES M10EX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136278,7 +136278,7 @@
       "_remint_from": "M-ID DIESLTK 124"
     },
     {
-      "course_id": "AUTD M10EX",
+      "course_id": "DIES M10EX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136308,7 +136308,7 @@
       "_remint_from": "M-ID DIESLTK 124"
     },
     {
-      "course_id": "AUTD M10BN",
+      "course_id": "DIES M10HN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136338,7 +136338,7 @@
       "_remint_from": "M-ID DIESLTK 126"
     },
     {
-      "course_id": "AUTD M10BN",
+      "course_id": "DIES M10HN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -152809,7 +152809,7 @@
       "adoption_leverage_count": 24
     },
     {
-      "course_id": "ESCI M1064",
+      "course_id": "ENVS M1064",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -152851,7 +152851,7 @@
       "_remint_from": "M-ID ENVS 110"
     },
     {
-      "course_id": "ESCI M1063",
+      "course_id": "ENVS M1063",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -172732,7 +172732,7 @@
       "_remint_from": "M-ID FST 152"
     },
     {
-      "course_id": "ESCI M10HH",
+      "course_id": "ENVS M10HH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -175755,7 +175755,7 @@
       "_remint_from": "M-ID DAID 102"
     },
     {
-      "course_id": "GRAF M10FY",
+      "course_id": "GFCD M10FY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -175785,7 +175785,7 @@
       "_remint_from": "M-ID GD 148"
     },
     {
-      "course_id": "GRAF M1007",
+      "course_id": "GFCD M1007",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -175815,7 +175815,7 @@
       "_remint_from": "M-ID GDS 106"
     },
     {
-      "course_id": "GRAF M1052",
+      "course_id": "GFCD M1052",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -177470,7 +177470,7 @@
       "adoption_leverage_count": 14
     },
     {
-      "course_id": "GRAF M1044",
+      "course_id": "GFCD M1044",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -177503,7 +177503,7 @@
       "_remint_from": "M-ID GRC 106"
     },
     {
-      "course_id": "GRAF M1044",
+      "course_id": "GFCD M1044",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -186073,7 +186073,7 @@
       "_remint_from": "M-ID IETELMT 106"
     },
     {
-      "course_id": "CNSR M1001",
+      "course_id": "CBIT M1001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186103,7 +186103,7 @@
       "_remint_from": "M-ID INSPEC 100"
     },
     {
-      "course_id": "CNSR M1001",
+      "course_id": "CBIT M1001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186133,7 +186133,7 @@
       "_remint_from": "M-ID INSPEC 100"
     },
     {
-      "course_id": "CNSR M1004",
+      "course_id": "CBIT M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186163,7 +186163,7 @@
       "_remint_from": "M-ID INSPEC 106"
     },
     {
-      "course_id": "CNSR M1005",
+      "course_id": "CBIT M1005",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186193,7 +186193,7 @@
       "_remint_from": "M-ID INSPEC 108"
     },
     {
-      "course_id": "CNSR M1009",
+      "course_id": "CBIT M1009",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186223,7 +186223,7 @@
       "_remint_from": "M-ID INSPEC 110"
     },
     {
-      "course_id": "CNSR M1008",
+      "course_id": "CBIT M1008",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186253,7 +186253,7 @@
       "_remint_from": "M-ID INSPEC 114"
     },
     {
-      "course_id": "CNSR M1006",
+      "course_id": "CBIT M1006",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186283,7 +186283,7 @@
       "_remint_from": "M-ID INSPEC 116"
     },
     {
-      "course_id": "CNSR M1014",
+      "course_id": "CBIT M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186313,7 +186313,7 @@
       "_remint_from": "M-ID INSPEC 120"
     },
     {
-      "course_id": "CNSR M1014",
+      "course_id": "CBIT M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186343,7 +186343,7 @@
       "_remint_from": "M-ID INSPEC 120"
     },
     {
-      "course_id": "CNSR M1015",
+      "course_id": "CBIT M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186373,7 +186373,7 @@
       "_remint_from": "M-ID INSPEC 122"
     },
     {
-      "course_id": "CNSR M1015",
+      "course_id": "CBIT M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186403,7 +186403,7 @@
       "_remint_from": "M-ID INSPEC 122"
     },
     {
-      "course_id": "CNSR M1016",
+      "course_id": "CBIT M1016",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187535,7 +187535,7 @@
       "_remint_from": "M-ID IS 134"
     },
     {
-      "course_id": "CNSR M9001",
+      "course_id": "CBIT M9001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -201117,7 +201117,7 @@
       "_remint_from": "M-ID MEDA 162"
     },
     {
-      "course_id": "FTVE M1113",
+      "course_id": "FMED M1113",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -201152,7 +201152,7 @@
       "_remint_from": "M-ID MEDIART 104"
     },
     {
-      "course_id": "FTVE M1113",
+      "course_id": "FMED M1113",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -201187,7 +201187,7 @@
       "_remint_from": "M-ID MEDIART 104"
     },
     {
-      "course_id": "FTVE M1113",
+      "course_id": "FMED M1113",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -204324,7 +204324,7 @@
       "_remint_from": "M-ID MULTIMD 102"
     },
     {
-      "course_id": "FTVE M10TG",
+      "course_id": "FMED M10TG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -204354,7 +204354,7 @@
       "_remint_from": "M-ID MULT 128"
     },
     {
-      "course_id": "FTVE M10TG",
+      "course_id": "FMED M10TG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -212062,7 +212062,7 @@
       "_remint_from": "M-ID NURVN 114"
     },
     {
-      "course_id": "NRSV M10BW",
+      "course_id": "VNRS M10BW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -212182,7 +212182,7 @@
       "_remint_from": "M-ID NURVN 122"
     },
     {
-      "course_id": "NRSV M10DP",
+      "course_id": "VNRS M10DP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -212212,7 +212212,7 @@
       "_remint_from": "M-ID NURVN 124"
     },
     {
-      "course_id": "NRSV M10DM",
+      "course_id": "VNRS M10DM",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -234783,7 +234783,7 @@
       "_remint_from": "M-ID ACA 272"
     },
     {
-      "course_id": "ESCI M1073",
+      "course_id": "ENVS M1073",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -234817,7 +234817,7 @@
       "_remint_from": "M-ID WATR 118"
     },
     {
-      "course_id": "ESCI M1075",
+      "course_id": "ENVS M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -234851,7 +234851,7 @@
       "_remint_from": "M-ID WATR 120"
     },
     {
-      "course_id": "ESCI M1045",
+      "course_id": "ENVS M1045",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -242754,7 +242754,7 @@
       "_remint_from": "M-ID WELD 256"
     },
     {
-      "course_id": "ESCI M1029",
+      "course_id": "ENVS M1029",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -242784,7 +242784,7 @@
       "_remint_from": "M-ID WST 110"
     },
     {
-      "course_id": "ESCI M1030",
+      "course_id": "ENVS M1030",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -242814,7 +242814,7 @@
       "_remint_from": "M-ID WST 112"
     },
     {
-      "course_id": "ESCI M10ON",
+      "course_id": "ENVS M10ON",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -242940,7 +242940,7 @@
       "_remint_from": "M-ID WELD 128"
     },
     {
-      "course_id": "ESCI M1026",
+      "course_id": "ENVS M1026",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
