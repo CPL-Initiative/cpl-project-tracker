@@ -11,19 +11,19 @@ window.CPL_FUNDING_PERF = {
   "pe": 51042,
   "pa": 46221,
   "ppa": 122,
-  "p2": 3617,
-  "p3": 16864,
+  "p2": 3618,
+  "p3": 16865,
   "pp": 7,
   "ppe": 134,
-  "pac": 5312,
-  "ptc": 4636,
-  "pe_u": 1593074.95,
+  "pac": 5313,
+  "ptc": 4637,
+  "pe_u": 1593095.95,
   "pa_u": 282977.9,
   "ppa_u": 763.5,
   "ppe_u": 7236.5,
-  "pac_u": 38041.2,
-  "ptc_u": 31713.45,
-  "p3_u": 84685.15,
+  "pac_u": 38047.2,
+  "ptc_u": 31719.45,
+  "p3_u": 84691.15,
   "pp_u": 73.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -1421,19 +1421,19 @@ window.CPL_FUNDING_PERF = {
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 26.0,
-   "p2": 74,
-   "p3": 196,
-   "p3_u": 1435.5,
+   "p2": 75,
+   "p3": 197,
+   "p3_u": 1441.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 10.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 26.0,
-   "pac": 201,
-   "pac_u": 1487.0,
-   "ptc": 198,
-   "ptc_u": 1445.5,
+   "pac": 202,
+   "pac_u": 1493.0,
+   "ptc": 199,
+   "ptc_u": 1451.5,
    "nc_exh": 0,
    "nc_course": 0,
    "nc_cdcp": 37
@@ -2515,7 +2515,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Woodland": {
    "pe": 16,
-   "pe_u": 553.5,
+   "pe_u": 574.5,
    "pa": 16,
    "pa_u": 43.0,
    "ppa": 0,
@@ -3447,7 +3447,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 48,
     "pa": 46,
-    "p3": 42
+    "p3": 43
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -4371,7 +4371,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1454,
    "pa": 1433,
-   "p3": 1205
+   "p3": 1206
   },
   "Industry Certification | Military": {
    "pe": 58,
@@ -4473,14 +4473,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1593074.95,
+   "pe_u": 1593095.95,
    "pa_u": 282977.9,
-   "p3_u": 84685.15
+   "p3_u": 84691.15
   },
   "map": {
-   "pe_u": 1600311.45,
+   "pe_u": 1600332.45,
    "pa_u": 283741.4,
-   "p3_u": 84758.65
+   "p3_u": 84764.65
   },
   "ratio": {
    "pe_u": 1.0045,

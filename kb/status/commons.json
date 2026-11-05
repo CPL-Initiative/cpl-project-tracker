@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-05T21:24:58Z",
+ "written_at": "2026-11-05T21:58:48Z",
  "rows": [
   {
    "key": "requirements",
@@ -257,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-05T21:22:43+00:00",
+    "at": "2026-11-05T21:56:53+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -468,7 +468,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-05T21:20:46Z",
+    "at": "2026-11-05T21:54:39Z",
     "every_hours": 24
    },
    "facts": {
