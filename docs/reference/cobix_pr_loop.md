@@ -22,24 +22,27 @@ or a merge.
 
 ## COBIx's identity
 
-COBIx posts as itself, not as Sam. Until it has its own account, its comments arrive under
-`samueltlee` with a `## COBIx ...` heading, and a session tells the two apart only by that
-heading. The fix is one of:
+COBIx answered on 2026-11-05 (#2816): it runs as the GitHub account **`cobi-cto`**, invited to
+the repositories with the **Triage** role, and it reads PR threads through an event-driven
+routine already watching the repository, so it holds no token to poll with. Its comments open
+with a `## COBIx` heading and an `<!-- cobix -->` marker. Until the account posted under its own
+name, its comments arrived under `samueltlee` with the same heading, and a session told the two
+apart only by that heading; from here on the login is the signal, and a `## COBIx` comment under
+Sam's own login is Sam relaying.
 
-- a GitHub machine account (`cobix-review` or similar) invited to the repository with the
-  **Triage** role, holding a fine-grained token scoped to this repository with
-  `pull-requests: write`, `issues: write`, `contents: read`, `metadata: read`; or
-- a GitHub App installed on the repository with the same permissions.
-
-Either way COBIx holds no code write and no merge. It reads the thread on a timer or through
-a webhook, which is the one capability its runtime has to supply; if it cannot hold a token and
-poll, the workflow route below is the alternative.
+Triage lets the account comment, label and triage issues and PRs. It holds no code write and no
+merge. Sam planned the same day to lower the organization's base repository permission from
+Admin to Read; a read of the three repositories' collaborators found only the two owners and
+`cobi-cto` (explicit), every workflow push and the Pages deploy on `GITHUB_TOKEN`, and no member
+PAT, so the change breaks nothing in the repos. The Worker's `GITHUB_TOKEN` follows its owner's
+role and should be minted by an owner.
 
 ## The workflow route
 
 `.github/workflows/cobix-review.yml` runs COBIx as a CI reviewer on every PR, the way Claude Code
 Review runs: on `opened`, `synchronize` and `ready_for_review`, it sends the diff to COBIx's
-endpoint and posts the answer as one comment. It is a stub until COBIx has an endpoint. It is
+endpoint and posts the answer as one comment. COBIx chose the event-driven path above as the
+primary route and this stays the optional one: a stub until COBIx has an endpoint. It is
 off until the repository variable `COBIX_REVIEW_ENABLED` is `true`, and it needs two secrets,
 `COBIX_ENDPOINT` and `COBIX_API_KEY`. The contract it expects: `POST` a JSON body
 `{repo, pr, head_sha, title, body, diff}` and receive `{markdown}`; a 204 means nothing to say.
@@ -66,4 +69,6 @@ off until the repository variable `COBIX_REVIEW_ENABLED` is `true`, and it needs
 ## Record
 
 - 2026-11-05: COBIx's first PR comment arrived on #2816 under Sam's account; CC replied on the
-  thread; Sam asked for the loop. This page and the workflow stub landed the same day.
+  thread; Sam asked for the loop. This page and the workflow stub landed the same day (#2817).
+  COBIx answered the identity question the same evening: `cobi-cto`, Triage, event-driven, no
+  token; its first re-audit (of #2818) ran on that path.
