@@ -3,7 +3,7 @@
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
  "_reference_generated_at": "2026-11-05T03:12:44+00:00",
  "counts": {
-  "certs_linked": 234,
+  "certs_linked": 235,
   "titles_linked": 280,
   "holds": 264,
   "bundles": 51,
@@ -73,6 +73,13 @@
    "code": null,
    "name": "Microsoft Office Specialist: PowerPoint Associate (Office 2019)",
    "catalog_name": "Microsoft Office Specialist: PowerPoint Associate (Office 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0249": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Access (Office 2016)",
+   "catalog_name": "Microsoft Office Specialist: Access (Office 2016)",
    "issuer": "Microsoft",
    "family": "Microsoft"
   },
@@ -3459,9 +3466,8 @@
   "Microsoft Office Specialist — Access": {
    "relation": "holds",
    "rule": "all",
-   "certs": [],
-   "unresolved": [
-    "Microsoft Office Specialist: Microsoft Access 2016 (not in the catalog)"
+   "certs": [
+    "ITC0249"
    ]
   },
   "Microsoft Office Specialist — Access Expert": {

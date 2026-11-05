@@ -147,7 +147,7 @@ VENDOR = {
     "Microsoft Technology Associate (MTA) Database Fundamentals": ("all", ["Microsoft Technology Associate (MTA) Database Fundamentals"]),
     "Microsoft Office Specialist": ("all", []),
     "Microsoft Office Specialist (generic)": ("all", []),
-    "Microsoft Office Specialist — Access": ("any", [_MOS + "Microsoft Access 2016"]),
+    "Microsoft Office Specialist — Access": ("any", [_MOS + "Access (Office 2016)"]),
     "Microsoft Office Specialist — Access Expert": ("any", MOS_ACCESS_EXPERT),
     "Microsoft Office Specialist — Excel": ("any", MOS_EXCEL),
     "Microsoft Office Specialist — Excel Expert": ("any", MOS_EXCEL_EXPERT),

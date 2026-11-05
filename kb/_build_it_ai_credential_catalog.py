@@ -432,7 +432,7 @@ ALIASES = {
     ("Microsoft", "Microsoft Office Specialist — Access Expert"):
         "Microsoft Office Specialist: Microsoft Access Expert (Access and Access 2019)",
     ("Microsoft", "Microsoft Office Specialist — Access"):
-        "Microsoft Office Specialist: Microsoft Access 2016",
+        "Microsoft Office Specialist: Access (Office 2016)",
 }
 
 # MAP titles that name a family rather than one credential. They stay out of
