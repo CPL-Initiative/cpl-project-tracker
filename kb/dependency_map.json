@@ -477,7 +477,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 130
+     "line": 143
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -2817,7 +2817,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1288,
+     "line": 1314,
      "tabs": [
       "library"
      ]
@@ -8627,7 +8627,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1773,
+     "line": 1799,
      "tabs": [
       "library"
      ]
@@ -8643,7 +8643,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1281,
+     "line": 1307,
      "tabs": [
       "library"
      ]
@@ -18716,7 +18716,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1391,
+     "line": 1417,
      "tabs": [
       "library"
      ]
@@ -20436,7 +20436,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2868,
+     "line": 2910,
      "tabs": [
       "library"
      ]
@@ -25635,7 +25635,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2001,
+     "line": 2027,
      "tabs": [
       "library"
      ]
