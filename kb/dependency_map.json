@@ -4,9 +4,9 @@
   "supabase_tables": 106,
   "rpcs": 49,
   "edge_functions": 12,
-  "file_datasets": 792,
+  "file_datasets": 793,
   "external_services": 193,
-  "consumers": 521,
+  "consumers": 522,
   "workflows": 61,
   "data_js_files": 71,
   "tabs": 40
@@ -298,7 +298,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 28
+     "line": 34
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -491,7 +491,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 451
+     "line": 508
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -560,7 +560,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 350
+     "line": 398
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -1244,7 +1244,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 26
+     "line": 32
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -1286,6 +1286,26 @@
      ]
     },
     {
+     "id": "module:cobi_refresh.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 17,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    },
+    {
+     "id": "module:cobi_refresh.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "seeded",
+     "line": 0,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    },
+    {
      "id": "module:college_report_generator.js",
      "kind": "module",
      "direction": "read",
@@ -1310,7 +1330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 158,
+     "line": 176,
      "pages": [
       "CPL_Dashboard.html",
       "kb-portal/index.html"
@@ -1362,13 +1382,6 @@
      "pages": [
       "CPL_Dashboard.html"
      ]
-    },
-    {
-     "id": "script:excel_to_dashboard.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 13557
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -1495,7 +1508,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 34
+     "line": 82
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -2235,7 +2248,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 27
+     "line": 33
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -5422,6 +5435,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:cobi_refresh.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:coci_lookup.js": {
    "consumers": [
     {
@@ -8482,7 +8508,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13695
+     "line": 13679
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -8528,7 +8554,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13715
+     "line": 13699
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -28186,6 +28212,21 @@
      "direction": "read",
      "how": "literal",
      "line": 120
+    }
+   ],
+   "main_committers": []
+  },
+  "workflow:daily-dashboard.yml": {
+   "consumers": [
+    {
+     "id": "module:cobi_refresh.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "seeded",
+     "line": 0,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
     }
    ],
    "main_committers": []

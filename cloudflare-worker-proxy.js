@@ -16,6 +16,12 @@
  *   3. Worker URL: https://cpl-proxy.slee-548.workers.dev
  *
  * SCRAPE ENDPOINT:
+ *   POST /trigger and POST / (the drafting path) answer only a request that carries the
+ *   reader's credential: Authorization: Bearer <reviewer JWT> (rpc/is_allowed_reviewer) or
+ *   x-team-pass: <team phrase> (rpc/team_pass_ok). Since 2026-11-05 (COBIx round 1 items 1
+ *   and 2): the page ships no secret, and the Anthropic key is spent only by a signed-in
+ *   reviewer or a phrase holder. Rotation: docs/security/rotation_guide.md.
+ *
  *   GET /scrape?secret=YOUR_SECRET
  *   Calls the CPL Dashboard's /api/potential-savings endpoint (clean JSON),
  *   extracts the "ALL COLLEGES" aggregate row, and returns formatted metrics
@@ -27,6 +33,48 @@ const ALLOWED_ORIGINS = [
   'http://localhost',
   'http://127.0.0.1',
 ];
+
+// ── Credential check (2026-11-05, COBIx round 1 items 1 and 2) ──────────────
+// /trigger and the drafting path carry the reader's own credential, verified by Postgres
+// on the Work Plan project the same way workplan-rebuild verifies it:
+//   Authorization: Bearer <reviewer JWT>  → rpc/is_allowed_reviewer
+//   x-team-pass: <team phrase>            → rpc/team_pass_ok, sent with the anon key
+// The worker holds no copy of either. The anon key below is the public one every COBI page
+// ships; env.SUPABASE_URL / env.SUPABASE_ANON_KEY override it.
+const SUPABASE_URL = 'https://hvuwhnbuahrtptokpqfh.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM';
+const CREDENTIAL_ERROR = 'Sign in or enter the team phrase: the proxy answers only a reviewer session or the team phrase.';
+
+async function rpcTrue(env, fn, headers) {
+  const base = env.SUPABASE_URL || SUPABASE_URL;
+  const anon = env.SUPABASE_ANON_KEY || SUPABASE_ANON;
+  try {
+    const r = await fetch(`${base}/rest/v1/rpc/${fn}`, {
+      method: 'POST',
+      headers: { apikey: anon, 'Content-Type': 'application/json', ...headers },
+      body: '{}',
+    });
+    if (!r.ok) return false;
+    return (await r.json()) === true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Resolves 'reviewer' | 'team' | null. A bearer that is the anon key itself is no credential.
+async function credentialOf(request, env) {
+  const anon = env.SUPABASE_ANON_KEY || SUPABASE_ANON;
+  const m = /^Bearer\s+(\S+)$/i.exec(request.headers.get('Authorization') || '');
+  const bearer = m ? m[1] : '';
+  if (bearer && bearer !== anon && bearer.split('.').length === 3) {
+    if (await rpcTrue(env, 'is_allowed_reviewer', { Authorization: `Bearer ${bearer}` })) return 'reviewer';
+  }
+  const pass = (request.headers.get('x-team-pass') || '').trim();
+  if (pass && pass.length <= 200) {
+    if (await rpcTrue(env, 'team_pass_ok', { Authorization: `Bearer ${anon}`, 'x-team-pass': pass })) return 'team';
+  }
+  return null;
+}
 
 // The CPL Dashboard exposes a Next.js API route that returns college-level
 // KPI data as JSON. The "ALL COLLEGES" row (Sorder=1) contains the system-wide
@@ -53,7 +101,7 @@ function corsHeaders(origin) {
   return {
     'Access-Control-Allow-Origin': allowed ? origin : 'https://cpl-initiative.github.io',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, x-api-key, anthropic-version',
+    'Access-Control-Allow-Headers': 'Content-Type, x-api-key, anthropic-version, Authorization, x-team-pass',
     'Access-Control-Max-Age': '86400',
   };
 }
@@ -315,23 +363,23 @@ async function handleScrape(url, env) {
 // can kick off a full pipeline run with one click.
 
 async function handleTrigger(request, env, origin) {
-  // SEC-3: the shared secret is shipped to every public visitor in the dashboard
-  // refresh button, so it gates nothing on its own. Add an origin check
-  // (defense-in-depth) + keep the secret; the REAL backstop is a Cloudflare
-  // rate-limit rule on /trigger. (The pipeline job is idempotent, so a spurious
-  // trigger is low-impact, but rate-limit it anyway.)
+  // SEC-3 closed 2026-11-05: the page ships no secret. A trigger carries the reader's
+  // credential (credentialOf), or the worker's own SCRAPE_SECRET in the body for a curl
+  // from the console once that value is one no page has ever shipped (rotation_guide.md).
+  // Origin stays as defense in depth; a Cloudflare rate-limit rule on /trigger is the
+  // backstop against a credential holder's script.
   if (!isAllowedOrigin(origin)) {
     return new Response(JSON.stringify({ error: 'Forbidden origin' }), {
       status: 403,
       headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
     });
   }
-  // Verify shared secret (same SCRAPE_SECRET)
   let body;
   try { body = await request.json(); } catch { body = {}; }
-  const secret = body.secret || '';
-  if (env.SCRAPE_SECRET && secret !== env.SCRAPE_SECRET) {
-    return new Response(JSON.stringify({ error: 'Invalid or missing secret' }), {
+  let who = await credentialOf(request, env);
+  if (!who && env.SCRAPE_SECRET && body && body.secret === env.SCRAPE_SECRET) who = 'secret';
+  if (!who) {
+    return new Response(JSON.stringify({ error: CREDENTIAL_ERROR }), {
       status: 403,
       headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
     });
@@ -425,6 +473,15 @@ export default {
     if (!isAllowedOrigin(origin)) {
       return new Response(JSON.stringify({ error: 'Forbidden origin' }), {
         status: 403,
+        headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+      });
+    }
+
+    // The key is spent only for a reader Postgres recognizes (COBIx round 1 item 1). The
+    // error takes Anthropic's own shape so cpl_writer.js shows the sentence as it is.
+    if (!(await credentialOf(request, env))) {
+      return new Response(JSON.stringify({ error: { type: 'authentication_error', message: CREDENTIAL_ERROR } }), {
+        status: 401,
         headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
       });
     }
