@@ -16570,8 +16570,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 544,
+   "count": 545,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 579,
+     "path": "docs/session_579_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest",
+      "credential-registry",
+      "ui-pass"
+     ],
+     "title": "Session 579 handoff: the night's routine items (Columbia's full read, the credential slice, the explainer's UI pass)",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25847,5 +25864,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1381
+ "total": 1382
 }
