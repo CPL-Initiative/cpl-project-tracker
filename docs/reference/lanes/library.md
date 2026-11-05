@@ -133,6 +133,18 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **Revise from the card, no session (built S577, SkyBarnard; Sam, 2026-11-05: "Build it").** On a piece with a Pages
+  copy, Revise and remediate's request now offers **Draft it now**: the edge function `library-revise-draft` reads
+  `library/<slug>/` from Pages, asks Claude for edits (each an exact passage occurring once, all or none, the page's frame
+  kept; `apply_edits.mjs`), stores the draft in `cpl_library_drafts` and sets `regen.ready_at` and `regen.draft_id`, all
+  with the caller's own credential. The card offers **Open the draft** and **Replace the public copy**; every three hours
+  `library-publish.yml` (`scripts/library_publish.py`) writes an approved draft to `library/<slug>/index.html` with a
+  receipt (`kb/receipts/library_publish/`), commits to main, then moves the record (Version N+1 Current, the one before
+  Replaced, Changes to make and regen cleared), guarded on the `updated_at` it read. A piece with no Pages copy, a
+  SharePoint file, or only a linked document still goes to a session (Copy the request). Governance: dismissed with
+  reasons (`table:cpl_library_drafts`, `function:library-revise-draft`, `workflow:library-publish.yml`). Migration
+  `kb/migrations/2026-11-05_library_drafts.sql` (rollback beside it); the function deploys with `cpl-chat-deploy.yml`
+  (`function: library-revise-draft`). Tests: `tests/library_revise_draft.test.js`, `tests/library_publish_test.py`.
 - **ELL IET CPL Starting Points Version 3 is a draft awaiting *Replace the public copy*** (S557, Sam's Revise request of
   2026-11-02): https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3, `regen.ready_at`/`draft_url` on the record (receipt
   `kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql`, rollback beside it). Once approved, run

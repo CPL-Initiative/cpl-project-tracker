@@ -231,6 +231,10 @@ jobs:
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.
       - name: Library filer
         run: python3 tests/library_file_test.py
+      # The Library publisher (S577): a draft from the card is published only once a person
+      # approved it; the receipt keeps the before-values the guarded update checks. Pure-stdlib python.
+      - name: Library publisher
+        run: python3 tests/library_publish_test.py
       # The program-source census (S320) reads 118 college sites from a runner
       # and files where each one's catalog lives. Its pure half is pinned
       # without a browser: a library catalog never wins, an old year never
