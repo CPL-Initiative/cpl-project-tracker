@@ -422,8 +422,8 @@
    "name": "prototype/common_subj_explainer.html",
    "page": "prototype/common_subj_explainer.html",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-11-05",
+   "outcome": "S578: npm run a11y passes at 320, 390, 768 and 1440 (axe 4.10.2); light-only page, raw hex only in :root, every var() token defined, no glyphs. Wiring: reads no dataset, so its figures were checked by hand against kb/discipline_canonical_subj4.json (147 disciplines; 13 CCN, 20 C-ID, 114 minted: all hold). Fixed: it said Diesel Mechanics carries AUTD, which the 2026-11-05 Subjects List recode moved to DIES; the paragraph now tells that move, and the figures' date reads 5 November."
   }
  ]
 }
