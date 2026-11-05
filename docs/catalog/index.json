@@ -16570,8 +16570,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 548,
+   "count": 549,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 583,
+     "path": "docs/session_583_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 583 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25909,5 +25924,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1385
+ "total": 1386
 }
