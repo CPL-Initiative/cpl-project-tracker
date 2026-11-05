@@ -1,0 +1,263 @@
+{
+  "folded": [
+    {
+      "raw": "Autodesk Certified Associate in CAD for Mechanical Design certificate",
+      "assigned": "Autodesk Certified Associate in CAD for Mechanical Design",
+      "issuer": "Autodesk",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+      "assigned": "Introduction to Water Systems Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+      "assigned": "Wastewater Treatment and Disposal I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+      "assigned": "Wastewater Treatment and Disposal II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Distribution Operator I (WATER 140)",
+      "assigned": "Water Distribution Operator I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Distribution Operator II (WATER 141)",
+      "assigned": "Water Distribution Operator II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+      "assigned": "Water Treatment Plant Operation Processes I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+      "assigned": "Water Treatment Plant Operation Processes II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Waterworks Mathematics (WATER 130)",
+      "assigned": "Waterworks Mathematics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Noncredit for FREN 1A",
+      "assigned": "Elementary French 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Life Drawing I (ART 225A)",
+      "assigned": "Figure Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Life Drawing II (ART 225B)",
+      "assigned": "Life Drawing II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Painting I (ART 227)",
+      "assigned": "Introduction to Painting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Watercolor Painting (ART 220)",
+      "assigned": "Watercolor Painting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio Painting II (ART 228)",
+      "assigned": "Painting II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio for MKTG 50",
+      "assigned": "Introduction to Marketing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio for MKTG 56",
+      "assigned": "Marketing Strategies",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio for MKTG 61",
+      "assigned": "Professional Selling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Solidworks Design Associate (CSWA) Certification",
+      "assigned": "Certified SOLIDWORKS Associate (CSWA)",
+      "issuer": "Dassault Systèmes",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Autodesk Certified Associate in CAD for Mechanical Design certificate",
+      "assigned": "Autodesk Certified Associate in CAD for Mechanical Design",
+      "issuer": "Autodesk",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+      "assigned": "Introduction to Water Systems Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+      "assigned": "Wastewater Treatment and Disposal I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+      "assigned": "Wastewater Treatment and Disposal II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Distribution Operator I (WATER 140)",
+      "assigned": "Water Distribution Operator I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Distribution Operator II (WATER 141)",
+      "assigned": "Water Distribution Operator II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+      "assigned": "Water Treatment Plant Operation Processes I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+      "assigned": "Water Treatment Plant Operation Processes II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Credit by Exam - Waterworks Mathematics (WATER 130)",
+      "assigned": "Waterworks Mathematics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Life Drawing I (ART 225A)",
+      "assigned": "Figure Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Life Drawing II (ART 225B)",
+      "assigned": "Life Drawing II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio - Watercolor Painting (ART 220)",
+      "assigned": "Watercolor Painting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio Painting II (ART 228)",
+      "assigned": "Painting II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio for MKTG 50",
+      "assigned": "Introduction to Marketing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio for MKTG 56",
+      "assigned": "Marketing Strategies",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    },
+    {
+      "raw": "Portfolio for MKTG 61",
+      "assigned": "Professional Selling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 2,
+  "audit_pruned": 19,
+  "unified_titles_count": 5538
+}
