@@ -1116,3 +1116,6 @@ advise"* and *"I could add a bot specifically trained for this by you"*.
   they are counting?"*, then *"this should be a rule for all visuals if advisable"*; now a Presentation rule in `CLAUDE.md`).
   The figure is the link and the whole card takes the click; the participants card stays plain, its figure summed from a
   line on six tabs. `npm run a11y` failed the first try: a focus ring moved to the card is no ring on the link.
+- **A stored draft is kept as made.** `cpl_library_drafts_guard` refuses any change but the publish stamp, so the first
+  try at adding the card links to the stored draft failed (receipt `..._v5_card_links_42088269186.json`). The next build of the
+  same version is a new draft row, and the one it replaces joins `regen.earlier`.

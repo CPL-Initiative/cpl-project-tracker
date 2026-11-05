@@ -1,7 +1,14 @@
--- Rollback for 2026-11-05_library_ell_iet_v5_card_links.sql (SkyFlipFlop): the stored Version 5 draft goes back to its first html.
+-- SkyFlipFlop (Library side session), 2026-11-05: ELL IET Version 5 with the top cards' links, stored as the card's draft.
+-- Sam, in session (~18:45Z): "can you make the top cards clickable so they go to the items they are counting?"
+-- A stored draft is kept as made (cpl_library_drafts_guard refused an UPDATE, receipt
+-- migration_skyflipflop_library_ell_iet_v5_card_links_42088269186.json), so this inserts the rebuilt Pages copy
+-- (sha256 007c4337ae06c9aa344f9d3e05f63ebe4716fcee371e2a5d2f9cff5332a1083f) as a new draft; the first Version 5 draft (1cc83f99-0e5b-40fd-8e30-6b8c11092d8f)
+-- joins regen.earlier. Same link: https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa. Nothing public changes.
+-- Guarded on the live row read 2026-11-05 ~18:56Z: regen.draft_id = 1cc83f99-0e5b-40fd-8e30-6b8c11092d8f, updated_at 2026-11-05 18:43:01.20959+00.
+-- ROLLBACK: kb/migrations/2026-11-05_library_ell_iet_v5_card_links_draft_rollback.sql
 with d as (
-  update public.cpl_library_drafts
-  set html = $ELLV5B$<!doctype html>
+  insert into public.cpl_library_drafts (library_id, slug, html, based_on, request, summary, edits, model, made_by)
+  select l.id, l.slug, $ELLV5B$<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -125,6 +132,11 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 .glance a{display:inline-block;min-height:24px;line-height:24px}
 .glance-more a{display:inline-block;min-height:24px;line-height:24px}
 @media (max-width:560px){.glance{grid-template-columns:1fr}}
+/* Top cards that open what they count (Version 5): the figure is the link; the whole card takes the click. */
+.fact{position:relative}
+.fact a{color:inherit;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.fact a::after{content:"";position:absolute;inset:0}
+.fact a:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
 </style>
 <a class="skip" href="#tabs">Skip to the projects</a>
 <!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
@@ -247,7 +259,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <p class="lede">On July 3, 2023 the Employment Development Department awarded $17.97 million to eight organizations under the English Language Learner Integrated Education and Training Fund. Each project trains English learners toward a credential and a job. Seven of those projects make up the ELL IET group today. We read their project summaries against the MAP platform, where California&#x27;s community colleges record the credit they award for prior learning, and against the state&#x27;s program inventory, to see where a project&#x27;s completers could already turn their training into college credit, and where a first articulation would start.</p>
 <p class="lede">After the Overview, a tab per project, ordered by fit: credit that already exists at a college in the project&#x27;s own counties or at a partner college comes first. Each card names the people at the colleges who can carry the conversation forward, and each example that rests on a credit recommendation in MAP carries a Request Adopt link, which opens that exhibit in MAP, where Request Quick Adopt asks a college to adopt it and needs no MAP sign-in.</p>
 </header>
-<div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b>$17.97 million</b><span>Awarded July 3, 2023 to eight organizations; funding decisions are final</span></div><div class="fact" role="listitem"><b>7 projects</b><span>The ELL IET group today: adult schools, workforce boards, a school district, a consortium and nonprofits, across 19 counties</span></div><div class="fact" role="listitem"><b>2,432 participants</b><span>The 6 projects that state an enrollment target; Corona-Norco states regional demand instead</span></div><div class="fact" role="listitem"><b>15 credential families</b><span>From nursing assistant to wildland fire, matched against MAP and COCI</span></div></div>
+<div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b><a href="#about-scan">$17.97 million</a></b><span>Awarded July 3, 2023 to eight organizations; funding decisions are final</span></div><div class="fact" role="listitem"><b><a href="#start">7 projects</a></b><span>The ELL IET group today: adult schools, workforce boards, a school district, a consortium and nonprofits, across 19 counties</span></div><div class="fact" role="listitem"><b>2,432 participants</b><span>The 6 projects that state an enrollment target; Corona-Norco states regional demand instead</span></div><div class="fact" role="listitem"><b><a href="#statewide">15 credential families</a></b><span>From nursing assistant to wildland fire, matched against MAP and COCI</span></div></div>
 
 <div id="tabs" class="tabset" tabindex="-1">
 <div class="tabs" role="tablist" aria-label="Overview and the projects" data-tabs hidden>
@@ -355,7 +367,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <p>The people on each card start the conversation. The project contacts come from the July 2023 notice, so the first call confirms who leads it on each side today.</p>
 </section>
 <section aria-labelledby="h-next"><div class="band-head"><h2 id="h-next">Practical next steps</h2></div><ol class="next"><li>Send each project its card, so the first conversation is between the people it names: the project&#x27;s contact, each college&#x27;s CPL Coordinator and the faculty who teach the matching course.</li><li>For the healthcare projects, confirm the exit credential (CNA, HHA, LVN, CMA) and compare it with the credit recommendations College of the Desert, Chaffey College and Los Angeles Pierce College already hold.</li><li>For the early care apprenticeships, ask ECEPTS which Child Development Permit level each cohort reaches, then read it against the Child Development Associate exhibit the CCC Collaborative built.</li><li>For Fresno and the north valley, start with the exhibits Fresno City College and Lemoore College already articulate, and invite their CPL coordinators to a shared call with the workforce boards.</li><li>On December 9, hear from ECEPTS and Mountain View Los Altos what moved their colleges, and take Mountain View Los Altos&#x27;s two remaining colleges as the first follow-up.</li><li>Record every confirmed match in MAP so the next grantee cohort finds it there.</li></ol></section>
-<p class="note">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read November 3, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Each card names the project&#x27;s contact as EDD&#x27;s notice gives it; for each college in its examples, the card names the CPL Coordinator the college records in MAP and the faculty MAP lists in the subject of an example course or in English as a second language, read November 3, 2026. Version 3 adds the programs each example course is required in, as the CPL Commons&#x27; program requirements harvest read each college&#x27;s catalog, and a Request Adopt link wherever MAP&#x27;s CPL Opportunities page listed the exhibit when last checked.</p>
+<p class="note" id="about-scan">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read November 3, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Each card names the project&#x27;s contact as EDD&#x27;s notice gives it; for each college in its examples, the card names the CPL Coordinator the college records in MAP and the faculty MAP lists in the subject of an example course or in English as a second language, read November 3, 2026. Version 3 adds the programs each example course is required in, as the CPL Commons&#x27; program requirements harvest read each college&#x27;s catalog, and a Request Adopt link wherever MAP&#x27;s CPL Opportunities page listed the exhibit when last checked.</p>
 </div>
 <div class="panel" role="tabpanel" id="p-fresno" aria-labelledby="t-fresno" tabindex="0">
 <section aria-labelledby="h-p-fresno">
@@ -744,16 +756,20 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <script src="../../sierra/sidebar.js" defer></script>
 </body>
 </html>
-$ELLV5B$,
-      summary = replace(summary, 'Then, at Sam''s ask in session, the top cards open what they count: the funding opens the note naming EDD''s award notice, the 7 projects open the fit bands, the 15 credential families open the statewide table; the participants card stays plain, since its figure sums one line on each of six project tabs. Remediated: nothing failed;', 'Remediated: nothing failed;')
-  where slug = 'ell-iet-cpl-starting-points' and made_by = 'SkyFlipFlop (session), stored by library-skyflipflop@bot'
-    and published_at is null and md5(html) = 'dabc2bf412d5b68c7fd7c5957b14d71b'
-  returning id
+$ELLV5B$, f.based_on, f.request,
+         replace(f.summary, 'Remediated: nothing failed;', 'Then, at Sam''s ask in session, the top cards open what they count: the funding opens the note naming EDD''s award notice, the 7 projects open the fit bands, the 15 credential families open the statewide table; the participants card stays plain, since its figure sums one line on each of six project tabs. Remediated: nothing failed;'), null, null, f.made_by
+  from public.cpl_library l join public.cpl_library_drafts f on f.id = '1cc83f99-0e5b-40fd-8e30-6b8c11092d8f'
+  where l.slug = 'ell-iet-cpl-starting-points' and l.retired_at is null
+    and l.regen->>'draft_id' = '1cc83f99-0e5b-40fd-8e30-6b8c11092d8f' and l.regen->>'approved_at' is null and l.updated_at = '2026-11-05 18:43:01.20959+00'
+  returning id, library_id
 )
 update public.cpl_library l
-set versions = (select jsonb_agg(case when v->>'label' = 'Version 5'
-                  then jsonb_set(v, '{status}', to_jsonb(replace(v->>'status', 'Then, at Sam''s ask in session, the top cards open what they count: the funding opens the note naming EDD''s award notice, the 7 projects open the fit bands, the 15 credential families open the statewide table; the participants card stays plain, since its figure sums one line on each of six project tabs. Remediated: nothing failed;', 'Remediated: nothing failed;')))
+set regen = l.regen || jsonb_build_object('draft_id', d.id::text,
+              'ready_at', to_char(now() at time zone 'utc', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'),
+              'earlier', coalesce(l.regen->'earlier', '[]'::jsonb) || jsonb_build_array('{"draft_id": "1cc83f99-0e5b-40fd-8e30-6b8c11092d8f", "draft_url": "https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa", "ready_at": "2026-11-05T18:43:01Z", "requested_by": "Sam", "note": null, "drafted_with": "session", "set_aside": "The same Version 5 without the top cards'' links; SkyFlipFlop added them at Sam''s ask in session"}'::jsonb)),
+    versions = (select jsonb_agg(case when v->>'label' = 'Version 5'
+                  then jsonb_set(v, '{status}', to_jsonb(replace(v->>'status', 'Remediated: nothing failed;', 'Then, at Sam''s ask in session, the top cards open what they count: the funding opens the note naming EDD''s award notice, the 7 projects open the fit bands, the 15 credential families open the statewide table; the participants card stays plain, since its figure sums one line on each of six project tabs. Remediated: nothing failed;')))
                   else v end order by o) from jsonb_array_elements(l.versions) with ordinality as t(v, o)),
     updated_by = 'library-skyflipflop@bot'
-from d where l.slug = 'ell-iet-cpl-starting-points' and l.regen->>'draft_id' = d.id::text
-returning l.slug, l.updated_at;
+from d where l.id = d.library_id
+returning l.slug, l.regen->>'draft_id', l.updated_at;

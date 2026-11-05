@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1400,
-    "bytes": 14147293,
+    "bytes": 14147623,
     "over_budget": 1,
     "handoff_max": 585,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2632986,
+        "bytes": 2633316,
         "over": 0
       },
       "kb_note": {
@@ -62,9 +62,9 @@
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25855,
-      "bytes": 4209488610,
-      "heavy_bytes": 2991553390,
+      "files": 25856,
+      "bytes": 4209385989,
+      "heavy_bytes": 2991554017,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -174,10 +174,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853983439,
+        "bytes": 1853984017,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,983,439 B inside the vault"
+      "message": "directory totals 1,853,984,017 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -274,10 +274,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10143730,
+        "bytes": 10143779,
         "kind": "dir"
       },
-      "message": "directory totals 10,143,730 B inside the vault"
+      "message": "directory totals 10,143,779 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -914,11 +914,11 @@
       "fixable": false,
       "path": "docs/session_585_handoff.md",
       "detail": {
-        "commits_since": 9,
+        "commits_since": 11,
         "budget": 6,
         "handoff": "session_585_handoff.md"
       },
-      "message": "9 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "11 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
