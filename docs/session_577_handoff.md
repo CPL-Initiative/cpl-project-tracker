@@ -40,8 +40,7 @@ open asks below were put to Sam in chat this run and await his reply; card them 
 
 ## Open work, in order
 
-1. **#2786 and #2788**: both carry `main` with #2787's revert; merge each on a passing `test` (`lints` was red only
-   because of the reverted sync). Then dispatch nothing: neither touches a generated artifact.
+1. **Done:** #2786 (Our Process, Start here and a card per account) and #2788 (the Library) merged at 01:21Z and 01:24Z.
 2. **Sam's open asks (put in chat, unanswered at sign-off):** the plan for **revising a visual from the Library card
    without a session** (an edge function drafts from the card's notes; an Action publishes the Pages copy on *Replace
    the public copy*; a new write surface, so Rule 10 (a3) first); **the ELL IET Version 3 draft**
@@ -62,5 +61,4 @@ open asks below were put to Sam in chat this run and await his reply; card them 
 
 ## Let go
 
-At sign-off this session drops its PR subscriptions on #2786 and #2788 and its 01:35Z check-in; the next session picks
-the two PRs up from item 1.
+At sign-off this session holds no PR subscription and no check-in; #2786, #2788 and this checkpoint (#2789) are merged.
