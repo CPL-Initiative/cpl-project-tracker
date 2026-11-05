@@ -640,6 +640,9 @@ file.
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
     carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
     emoji, and a plain-words reading does not override his ruling.
+- **A figure card opens what it counts (Sam, 2026-11-05: *"this should be a rule for all visuals"*).** The figure is
+  the link, to the one place on the page or site that holds those items; a figure summed from many places stays plain
+  rather than pointing somewhere arbitrary. First built on ELL IET Version 5's top cards.
 - **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
   underlined at rest, 24px tall, a `<button>` where it acts; each view converts
   at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).

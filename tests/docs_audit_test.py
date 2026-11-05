@@ -678,6 +678,7 @@ _ALL = [
     "- **No horizontal scroll whenever feasible.**",
     "- **PROSE RUNS THE FULL WIDTH.** `--cpl-measure`.",
     "- **CONTROLS ARE UNDERLINED WORDS.** no border and no fill.",
+    "- **A FIGURE CARD OPENS WHAT IT COUNTS.**",
 ]
 _e = _claude_presentation(_ALL)
 check("presentation doctrine: silent when every rule is stated",
