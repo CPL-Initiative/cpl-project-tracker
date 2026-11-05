@@ -27,6 +27,7 @@ run "docs corpus lint"        "python3 tests/docs_audit_test.py"
 run "docs index builder"      "python3 tests/docs_index_build_test.py"
 run "American spelling"       "python3 tests/american_spelling_test.py"
 run "dependency map contents" "python3 tests/dependency_map_test.py"
+run "refresh button, no secret" "python3 tests/refresh_button_no_secret_test.py"
 # ⚠️ ADDED AFTER THIS SCRIPT ALREADY MISSED ONE. The first version had the two
 # generators I happened to have tripped over that day; admin_tab.test.js then
 # failed on cobi_admin_surface.js, a THIRD generated file, for the same reason.
