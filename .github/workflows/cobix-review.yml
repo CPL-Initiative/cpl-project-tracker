@@ -1,0 +1,97 @@
+# COBIx as a CI reviewer. A stub until COBIx has an endpoint: it is OFF unless the repository
+# variable COBIX_REVIEW_ENABLED is "true", and it needs the secrets COBIX_ENDPOINT and
+# COBIX_API_KEY. Contract: POST {repo, pr, head_sha, title, body, diff} as JSON, receive
+# {markdown}; a 204 means COBIx has nothing to say. Comment-only: pull-requests write, nothing
+# else. Guardrails and the loop: docs/reference/cobix_pr_loop.md.
+name: cobix-review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: cobix-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: ${{ vars.COBIX_REVIEW_ENABLED == 'true' && github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Count COBIx comments already on the PR (two rounds, then a person)
+        id: cap
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          n=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" --paginate \
+                --jq '[.[] | select(.body | startswith("## COBIx"))] | length')
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+          if [ "$n" -ge 3 ]; then echo "COBIx has commented $n times here; a person takes the next turn."; fi
+
+      - uses: actions/checkout@v4
+        if: ${{ steps.cap.outputs.count < 3 }}
+        with:
+          fetch-depth: 0
+
+      - name: Build the diff against the base
+        if: ${{ steps.cap.outputs.count < 3 }}
+        id: diff
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git diff --no-color "$BASE" "$HEAD" -- . ':(exclude)*.html' ':(exclude)*.json' > /tmp/pr.diff
+          head -c 400000 /tmp/pr.diff > /tmp/pr.capped.diff
+          echo "bytes=$(wc -c < /tmp/pr.capped.diff)" >> "$GITHUB_OUTPUT"
+
+      - name: Ask COBIx
+        if: ${{ steps.cap.outputs.count < 3 }}
+        id: ask
+        env:
+          COBIX_ENDPOINT: ${{ secrets.COBIX_ENDPOINT }}
+          COBIX_API_KEY: ${{ secrets.COBIX_API_KEY }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+          TITLE: ${{ github.event.pull_request.title }}
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if [ -z "$COBIX_ENDPOINT" ] || [ -z "$COBIX_API_KEY" ]; then
+            echo "COBIX_ENDPOINT or COBIX_API_KEY is not set; the stub ends here."
+            echo "status=unconfigured" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          python3 - <<'PY' > /tmp/req.json
+          import json, os
+          print(json.dumps({
+            "repo": os.environ["GITHUB_REPOSITORY"], "pr": int(os.environ["PR"]),
+            "head_sha": os.environ["HEAD"], "title": os.environ["TITLE"],
+            "body": os.environ.get("BODY") or "", "diff": open("/tmp/pr.capped.diff").read(),
+          }))
+          PY
+          code=$(curl -sS -o /tmp/resp.json -w '%{http_code}' -X POST "$COBIX_ENDPOINT" \
+                 -H "Authorization: Bearer $COBIX_API_KEY" -H "Content-Type: application/json" \
+                 --data-binary @/tmp/req.json --max-time 600)
+          echo "status=$code" >> "$GITHUB_OUTPUT"
+          [ "$code" = "200" ] || [ "$code" = "204" ] || { echo "COBIx answered $code"; cat /tmp/resp.json; exit 1; }
+
+      - name: Post the review as one comment
+        if: ${{ steps.cap.outputs.count < 3 && steps.ask.outputs.status == '200' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY' > /tmp/comment.md
+          import json, os
+          md = (json.load(open("/tmp/resp.json")).get("markdown") or "").strip()
+          if not md: raise SystemExit("empty markdown")
+          if not md.startswith("## COBIx"): md = "## COBIx review\n\n" + md
+          print(md + f"\n\n---\n_Posted by COBIx review on {os.environ['HEAD'][:7]}; a finding here is a claim for Claude Code to verify, not an approval._")
+          PY
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" -f body="$(cat /tmp/comment.md)" > /dev/null

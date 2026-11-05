@@ -15635,7 +15635,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 65,
+   "count": 66,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16269,6 +16269,16 @@
      "title": "Branch policy \u2014 the full record (CLAUDE.md offload)",
      "type": null,
      "updated": "2026-08-28"
+    },
+    {
+     "created": "",
+     "governs": [],
+     "path": "docs/reference/cobix_pr_loop.md",
+     "status": null,
+     "tags": [],
+     "title": "COBIx on pull requests: the review loop without Sam in the middle",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-08-29",
@@ -25955,5 +25965,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1388
+ "total": 1389
 }

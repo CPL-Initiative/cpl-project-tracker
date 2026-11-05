@@ -1298,4 +1298,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 106 Supabase tables · 49 RPCs · 12 edge functions · 792 file
-datasets · 193 external services · 521 consumers · 61 workflows · 40 tabs.
+datasets · 193 external services · 521 consumers · 62 workflows · 40 tabs.

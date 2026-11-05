@@ -36,10 +36,10 @@ kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
 Allow-Once storm) ·
-[doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
-measurements behind these rules) ·
+[doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents
+behind these rules) · cobix_pr_loop ·
 [credential_watch_agent](docs/reference/credential_watch_agent.md) (the
-industry-credential watch) · `lanes/` (stubs below).
+industry-credential watch) · `lanes/`.
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
