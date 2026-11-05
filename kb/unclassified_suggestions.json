@@ -1,6 +1,6 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-04T17:02:39Z",
+ "_generated_at": "2026-11-05T03:13:55Z",
  "count": 14,
  "suggestions": {
   "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": [
@@ -166,25 +166,25 @@
     "ELEC M10AO"
    ]
   },
-  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
-   "kind": "cid",
-   "id": "WWTR 140 X",
-   "title": "Water Distribution Operator II",
-   "code": "WATER 141",
-   "college": "College of the Canyons"
-  },
   "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
    "kind": "course",
-   "id": "ESCI M10OW",
+   "id": "ENVS M10OW",
    "title": "Introduction to Water Systems Technology",
    "code": "WATER 120",
    "college": "College of the Canyons"
   },
-  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
+  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
    "kind": "cid",
-   "id": "WWTR 160 X",
-   "title": "Water Treatment II",
-   "code": "WATER 151",
+   "id": "WWTR 100 X",
+   "title": "Water and Wastewater Mathematics I",
+   "code": "WATER 130",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
+   "kind": "cid",
+   "id": "WWTR 150 X",
+   "title": "Water Treatment I",
+   "code": "WATER 150",
    "college": "College of the Canyons"
   },
   "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
@@ -192,6 +192,13 @@
    "id": "WWTR 120 X",
    "title": "Wastewater Treatment II",
    "code": "WATER 161",
+   "college": "College of the Canyons"
+  },
+  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
+   "kind": "cid",
+   "id": "WWTR 140 X",
+   "title": "Water Distribution Operator II",
+   "code": "WATER 141",
    "college": "College of the Canyons"
   },
   "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
@@ -205,6 +212,13 @@
     "WWTR 120 X"
    ]
   },
+  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
+   "kind": "cid",
+   "id": "WWTR 160 X",
+   "title": "Water Treatment II",
+   "code": "WATER 151",
+   "college": "College of the Canyons"
+  },
   "Credit by Exam - Water Distribution Operator I (WATER 140)": {
    "kind": "cid",
    "id": "WWTR 130 X",
@@ -212,18 +226,11 @@
    "code": "WATER 140",
    "college": "College of the Canyons"
   },
-  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
-   "kind": "cid",
-   "id": "WWTR 150 X",
-   "title": "Water Treatment I",
-   "code": "WATER 150",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
-   "kind": "cid",
-   "id": "WWTR 100 X",
-   "title": "Water and Wastewater Mathematics I",
-   "code": "WATER 130",
+  "Portfolio Painting II (ART 228)": {
+   "kind": "mid",
+   "id": "ARTS M1024",
+   "title": "Acrylic Painting 2",
+   "code": "ART 228",
    "college": "College of the Canyons"
   },
   "Portfolio - Life Drawing II (ART 225B)": {
@@ -231,13 +238,6 @@
    "id": "ARTS M1370",
    "title": "Life Drawing 2",
    "code": "ART 225B",
-   "college": "College of the Canyons"
-  },
-  "Portfolio Painting II (ART 228)": {
-   "kind": "mid",
-   "id": "ARTS M1024",
-   "title": "Acrylic Painting 2",
-   "code": "ART 228",
    "college": "College of the Canyons"
   },
   "Portfolio - Watercolor Painting (ART 220)": {

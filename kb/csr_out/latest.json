@@ -1,6 +1,6 @@
 {
- "_scanned_at": "2026-11-04",
- "_registry_synced_at": "2026-11-04T17:00:20Z",
+ "_scanned_at": "2026-11-05",
+ "_registry_synced_at": "2026-11-05T03:11:41Z",
  "_disciplines": 147,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -31,8 +31,8 @@
  },
  "_mid_codes": {
   "ids": 75581,
-  "codes": 270,
-  "canonical": 146,
+  "codes": 271,
+  "canonical": 147,
   "umbrella": 31,
   "stray_codes": 93,
   "stray_ids": 305,
@@ -882,69 +882,24 @@
   },
   {
    "id": "CSR0022",
-   "rule": "cs5_modal_diverge",
-   "item": "Broadcasting Technology",
-   "evidence": "modal BRDC (share 0.73) but canonical BCST, no _notes",
-   "suggestion": "confirm choice + record a note",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Building Codes and Regulations",
+   "evidence": "canonical CBIT not derivable from name and absent from 9 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
    "needs_judgment": true,
    "group": null
   },
   {
    "id": "CSR0023",
-   "rule": "cs5_modal_diverge",
+   "rule": "cs6_weak_mnemonic",
    "item": "Cabinet Making",
-   "evidence": "modal WOOD (share 0.67) but canonical CNSC, no _notes",
-   "suggestion": "confirm choice + record a note",
+   "evidence": "canonical WWKC not derivable from name and absent from 2 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
    "needs_judgment": true,
    "group": null
   },
   {
    "id": "CSR0024",
-   "rule": "cs5_modal_diverge",
-   "item": "Legal Assisting",
-   "evidence": "modal PARA (share 0.71) but canonical PLGL, no _notes",
-   "suggestion": "confirm choice + record a note",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0025",
-   "rule": "cs6_weak_mnemonic",
-   "item": "Artificial Intelligence",
-   "evidence": "canonical CSAI not derivable from name and absent from 29 observed variants",
-   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0026",
-   "rule": "cs6_weak_mnemonic",
-   "item": "Building Codes and Regulations",
-   "evidence": "canonical CNSR not derivable from name and absent from 9 observed variants",
-   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0027",
-   "rule": "cs6_weak_mnemonic",
-   "item": "Cabinet Making",
-   "evidence": "canonical CNSC not derivable from name and absent from 2 observed variants",
-   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0028",
-   "rule": "cs6_weak_mnemonic",
-   "item": "Diesel Mechanics",
-   "evidence": "canonical AUTD not derivable from name and absent from 31 observed variants",
-   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0029",
    "rule": "cs6_weak_mnemonic",
    "item": "Electromechanical Technology",
    "evidence": "canonical ELMT not derivable from name and absent from 1 observed variants",
@@ -953,34 +908,25 @@
    "group": null
   },
   {
-   "id": "CSR0030",
-   "rule": "cs6_weak_mnemonic",
-   "item": "Environmental Technologies",
-   "evidence": "canonical ESCI not derivable from name and absent from 40 observed variants",
-   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0031",
+   "id": "CSR0025",
    "rule": "cs6_weak_mnemonic",
    "item": "Furniture Making",
-   "evidence": "canonical CSTF not derivable from name and absent from 3 observed variants",
+   "evidence": "canonical WWKF not derivable from name and absent from 3 observed variants",
    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
    "needs_judgment": true,
    "group": null
   },
   {
-   "id": "CSR0032",
+   "id": "CSR0026",
    "rule": "cs6_weak_mnemonic",
    "item": "Graphic Arts",
-   "evidence": "canonical GRAF not derivable from name and absent from 19 observed variants",
+   "evidence": "canonical GFCD not derivable from name and absent from 19 observed variants",
    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
    "needs_judgment": true,
    "group": null
   },
   {
-   "id": "CSR0033",
+   "id": "CSR0027",
    "rule": "cs6_weak_mnemonic",
    "item": "Interdisciplinary Studies",
    "evidence": "canonical IDST not derivable from name and absent from 16 observed variants",
@@ -989,16 +935,7 @@
    "group": null
   },
   {
-   "id": "CSR0034",
-   "rule": "cs6_weak_mnemonic",
-   "item": "Licensed Vocational Nursing",
-   "evidence": "canonical NRSV not derivable from name and absent from 8 observed variants",
-   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
-   "needs_judgment": true,
-   "group": null
-  },
-  {
-   "id": "CSR0035",
+   "id": "CSR0028",
    "rule": "cs6_weak_mnemonic",
    "item": "Masonry",
    "evidence": "canonical CNMA not derivable from name and absent from 6 observed variants",
@@ -1007,16 +944,16 @@
    "group": null
   },
   {
-   "id": "CSR0036",
+   "id": "CSR0029",
    "rule": "cs6_weak_mnemonic",
    "item": "Media Production",
-   "evidence": "canonical FTVE not derivable from name and absent from 6 observed variants",
+   "evidence": "canonical FMED not derivable from name and absent from 6 observed variants",
    "suggestion": "confirm or improve mnemonic (re-key evidence only)",
    "needs_judgment": true,
    "group": null
   },
   {
-   "id": "CSR0037",
+   "id": "CSR0030",
    "rule": "cs6_weak_mnemonic",
    "item": "Native American/American Indian Studies",
    "evidence": "canonical ETHA not derivable from name and absent from 8 observed variants",
@@ -1025,11 +962,191 @@
    "group": null
   },
   {
-   "id": "CSR0038",
+   "id": "CSR0031",
    "rule": "cs9_anchor_dead_format",
    "item": "common_courses.json",
    "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",
    "suggestion": "promote-time re-key plan (Rule-7); anchor stays firewalled until then",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0032",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BM",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0033",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BN",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0034",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BO",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0035",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BP",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0036",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BQ",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0037",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BR",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0038",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "CNSR M10BS",
+   "evidence": "anchor id prefix CNSR vs CSR canonical CBIT",
+   "suggestion": "fold to CBIT at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0039",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "AUTD M10FX",
+   "evidence": "anchor id prefix AUTD vs CSR canonical DIES",
+   "suggestion": "fold to DIES at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0040",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "AUTD M10FY",
+   "evidence": "anchor id prefix AUTD vs CSR canonical DIES",
+   "suggestion": "fold to DIES at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0041",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "AUTD M10FZ",
+   "evidence": "anchor id prefix AUTD vs CSR canonical DIES",
+   "suggestion": "fold to DIES at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0042",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "FTVE M10VO",
+   "evidence": "anchor id prefix FTVE vs CSR canonical FMED",
+   "suggestion": "fold to FMED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0043",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "FTVE M10VP",
+   "evidence": "anchor id prefix FTVE vs CSR canonical FMED",
+   "suggestion": "fold to FMED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0044",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "FTVE M10VQ",
+   "evidence": "anchor id prefix FTVE vs CSR canonical FMED",
+   "suggestion": "fold to FMED at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0045",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "GRAF M1066",
+   "evidence": "anchor id prefix GRAF vs CSR canonical GFCD",
+   "suggestion": "fold to GFCD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0046",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "GRAF M10HZ",
+   "evidence": "anchor id prefix GRAF vs CSR canonical GFCD",
+   "suggestion": "fold to GFCD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0047",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "GRAF M10IA",
+   "evidence": "anchor id prefix GRAF vs CSR canonical GFCD",
+   "suggestion": "fold to GFCD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0048",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "GRAF M10IB",
+   "evidence": "anchor id prefix GRAF vs CSR canonical GFCD",
+   "suggestion": "fold to GFCD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0049",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "GRAF M10IC",
+   "evidence": "anchor id prefix GRAF vs CSR canonical GFCD",
+   "suggestion": "fold to GFCD at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0050",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "PLGL M10IA",
+   "evidence": "anchor id prefix PLGL vs CSR canonical PARA",
+   "suggestion": "fold to PARA at promote-time",
+   "needs_judgment": true,
+   "group": "anchor"
+  },
+  {
+   "id": "CSR0051",
+   "rule": "cs9_anchor_subj_diverge",
+   "item": "PLGL M10IB",
+   "evidence": "anchor id prefix PLGL vs CSR canonical PARA",
+   "suggestion": "fold to PARA at promote-time",
    "needs_judgment": true,
    "group": "anchor"
   }

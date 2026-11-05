@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-04T18:10:01Z",
+ "written_at": "2026-11-05T03:15:17Z",
  "rows": [
   {
    "key": "requirements",
@@ -257,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-04T17:02:17+00:00",
+    "at": "2026-11-05T03:13:31+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -433,8 +433,8 @@
    ],
    "issues": [
     {
-     "n": 17,
-     "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
+     "n": 30,
+     "words": "scan findings to confirm or note (an anchor off its code, a weak mnemonic, an anchor key in the dead format)",
      "owner": "a curator, after Jev's sitting",
      "carry": "unsure",
      "open": "#canonical-subj4/list/scan"
@@ -468,7 +468,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-04T17:00:20Z",
+    "at": "2026-11-05T03:11:41Z",
     "every_hours": 24
    },
    "facts": {
@@ -481,7 +481,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-04",
+    "scanned_at": "2026-11-05",
     "procedures_on": 6
    },
    "sources": [
@@ -658,8 +658,8 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 17,
-      "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
+      "n": 30,
+      "words": "scan findings to confirm or note (an anchor off its code, a weak mnemonic, an anchor key in the dead format)",
       "owner": "a curator, after Jev's sitting",
       "open": "#canonical-subj4/list/scan"
      }
