@@ -78,8 +78,9 @@ a row saved since the scan ran leaves *A scan finding to confirm or note*; *What
 (`prototype/common_subj_explainer.html`). Every Commons view: *Hide the top*, side panels resize, both remembered.
 **Sync:** `phase-1e-sync.yml` is manual, and a code change must land with its re-mint: the 2026-11-05 00:15Z sync put
 Sam's new codes in the file ahead of the M-IDs, broke `tests/csr_trail_rules_test.py` on main, and was reverted. His
-saves stay in `kb_curation`; the re-mint run syncs and folds them in one window. **NEXT:** the re-mint dry-run that carries the evening's codes onto the M-IDs (WWKC, WWKF, GFCD, CBIT, DIES,
-CSIS and others; apply waits on Sam); ECONMT and Electricity's adult-education codes, his refile in Local subjects.
+saves stay in `kb_curation`; the re-mint run syncs and folds them in one window. The evening's codes landed
+(*APPLIED*, under NEXT below; re-key 41958042347 green; S583 read back no row left on an old code). **NEXT:** ECONMT and Electricity's
+adult-education codes, his refile in Local subjects.
 **The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
 code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
