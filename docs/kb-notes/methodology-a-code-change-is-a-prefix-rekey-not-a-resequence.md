@@ -1,7 +1,7 @@
 ---
 title: A code change is a prefix re-key that keeps the number, not a re-sequence
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-11-05
 tags: [methodology, remint, rule-7, subj4, identity, allocator, ccr]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -15,6 +15,7 @@ artifacts:
   - kb/_subj4_dryrun.py
   - kb/_pols_remint.py
   - kb/authority_recode_out/2026-09-03/report.md
+  - kb/_subjects_list_recode.py
 ---
 
 # A code change is a prefix re-key that keeps the number, not a re-sequence
@@ -82,6 +83,20 @@ classification: subject codes, org prefixes, band digits. It does not apply
 when a bucket is genuinely being renumbered (a first mint, or a fold where the
 old numbers were never stable), which is what the re-sequencer is for, and the
 receipt must say which tool ran.
+
+## A code saved on the List is a ruling its re-key must follow (2026-11-05)
+
+The Common Subjects List lets a person change a discipline's code in place. On 2026-11-04 Sam saved eleven, and the
+sync that carried them into the seed alone turned main red: the CSR trail found canonical codes no identity carried and
+2,488 identities on codes no discipline owned. A code change and its prefix re-key land in one commit, so the save is
+the ruling and the re-key is its consequence (`kb/_subjects_list_recode.py`, 2,389 ids, 2,024 keeping their number).
+
+Three things the run taught. The discipline that moves a row is the one a curator's overlay names, when it names one:
+four FTVE rows the trail crew had filed under Media Production would otherwise have stayed behind. A slot an earlier
+re-mint vacated stays free unless the row itself once held it, so a code a June fold retired (DIES, ENVS, PARA, VNRS)
+comes back with gap-fills. And the generated outputs the daily rebuilds must agree with the kb until it runs, so they
+are re-keyed token for token in the same commit, except an output keyed to records that keep their own ids (the ROEP
+mirror), and except a payload with its own builder, which is rebuilt rather than edited.
 
 ## See also
 

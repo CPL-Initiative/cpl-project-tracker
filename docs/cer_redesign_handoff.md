@@ -3,7 +3,15 @@ title: "CER redesign handoff: the Subjects List as Sam's workspace; Commons view
 date: 2026-11-05
 session: CER redesign build, side session (SkyJujube)
 tags: [handoff, cer, commons-list, common-subjects-reference, exhibits, check-alignment]
-status: current
+status: superseded
+---
+
+# SkyKumquat's queue moved to handoff 578
+
+Sam asked this side session to carry the main queue too (2026-11-05, *"Hoping you can combine this work in this
+session"*). Its work (the Subjects List recode, #2790) and its next steps are in
+[`docs/session_578_handoff.md`](session_578_handoff.md), which carries both queues; read that one.
+
 ---
 
 # You are SkyKumquat, the Lists' next build

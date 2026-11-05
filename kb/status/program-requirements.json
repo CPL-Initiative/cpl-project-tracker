@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-04T14:20:48Z",
-  "session": 573,
-  "moniker": "SkyNeedle",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-05T03:19:31Z",
+  "session": 577,
+  "moniker": "SkyKumquat and SkyBarnard",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_574_handoff.md",
+  "handoff": "docs/session_578_handoff.md",
   "next_step": {
     "title": "Columbia's full SLO read",
     "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
@@ -258,6 +258,10 @@
     {
       "at": "2026-11-02T15:10:00Z",
       "text": "The Allan Hancock and Antelope Valley presidents' emails loaded through the contacts apply as a partial file; the Commons' first view is the CPL Commons, locked by Sam, with the look for its port on Sheet 158."
+    },
+    {
+      "at": "2026-11-05T02:22:00Z",
+      "text": "Merged the routine's S573 cert-link pull request (#2763) after bringing main in; no program record changed this run."
     }
   ],
   "headline": [
@@ -428,6 +432,12 @@
       "active": 20282,
       "complete": 13542,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-05",
+      "active": 20282,
+      "complete": 13542,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -436,7 +446,7 @@
     "at": "2026-11-05T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-04",
+    "day": "2026-11-05",
     "gaps": 3025,
     "parts": {
       "links": {

@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 98 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 65 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 543 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1380** | |
+| Session handoffs | 544 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1381** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-05 S577 SkyKumquat and SkyBarnard (Sam's session, both queues): the Subjects List recode, eleven Common SUBJ codes onto 2,389 M-IDs (#2790), `kb_curation` re-keyed and read back; the S573 cert-link PR merged (#2763); the Library revises a public visual from its card, no session (#2791, #2792); full checkpoint; handoff 578.
 - 2026-11-05 S576 SkyMice (Sam's session): two Claude Team accounts (MAP team, CO Academic Affairs pilot) with the kit and runbook in CPLBrain (#662, #664); Our Process *Getting set up* (#2784, #2786); the Library names a draft's version, sorts by last modified, quiets the project count (#2788); light checkpoint; handoff 577.
 - 2026-11-04/05 SkyJujube (Sam's session, the Lists side session): the Subjects List as Sam's workspace (#2778, #2781, #2782, #2783, #2785): saves renew the sign-in, row press edits, Check alignment (Subjects and Exhibits), Colleges beside Courses, Use, *What a Common SUBJ is*, Hide the top and resizable panels on every Commons view; the sync ran; light checkpoint; handoff `docs/cer_redesign_handoff.md`.
 - 2026-11-04 SkyJujube (Sam's session, a side session): sign-in lands in the keeper and returns to the view (#2775); the Courses List's panel carries the common course card and its edits (#2776); the context meter reads again (#2777); every COBI view has an address (#2779); light checkpoint; handoff `docs/courses_retirement_handoff.md`.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-04 S572 SkyBlackEye (CPL Queue routine): merged S571's #2761; the cert link's NWCG and SWRCB families, 12 titles to 4 certs (#2762); light checkpoint; handoff 573.
 - 2026-11-04 S571 SkyHoags (CPL Queue routine): merged S570's #2760; the cert link's AWS welding and Amazon Web Services families, 10 titles to 6 certs (#2761); light checkpoint; handoff 572.
 - 2026-11-04 S570 SkyFireworks (CPL Queue routine): the cert link's PMI, ICC, CDPH and EMSA families, 17 titles to 16 certs (#2760); light checkpoint; handoff 571.
-- 2026-11-04 S569 SkyAntennae (CPL Queue routine): merged S568's #2758; the cert link's Autodesk, NCCER and ASME families, 13 titles to 20 certs (#2759); light checkpoint; handoff 570.

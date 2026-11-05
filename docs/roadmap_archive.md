@@ -188,3 +188,5 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## docs/INDEX.md update history, moved 2026-11-04 (SkyJujube)
 
 - 2026-11-03 S562 SkyPinwheel (CPL Queue routine): the Commons, funding and program requirements lanes back under budget, their dated text moved verbatim to lessons and two lessons docs rolled into archives; the Commons' Exhibit-tiles NEXT found already built; light checkpoint; handoff 563.
+
+- (from docs/INDEX.md Update history, S577) 2026-11-04 S569 SkyAntennae (CPL Queue routine): merged S568's #2758; the cert link's Autodesk, NCCER and ASME families, 13 titles to 20 certs (#2759); light checkpoint; handoff 570.
