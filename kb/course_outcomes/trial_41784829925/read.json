@@ -1,0 +1,336 @@
+{
+ "run": "41784829925",
+ "index": "catalog:columbia",
+ "host": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+ "system": "elumen",
+ "source_kind": "catalog",
+ "slugs": "columbia",
+ "part": 1,
+ "of": 1,
+ "wanted": 422,
+ "slice": 12,
+ "at": "2026-11-04T06:24:19Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 11,
+   "paragraph": 1
+  },
+  "status_not_200": 0,
+  "outcomes": 35
+ },
+ "rows": [
+  {
+   "code": "ANTHR 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,anthr1?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,anthr1?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1791,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Communicate effectively by comparing and contrasting the morphology and behavior of different evolutionary stages of human and closely related human ancestors.",
+    "Demonstrate knowledge of how genetic, evolutionary, and historical processes have shaped primates and human ancestors and lead to the biological, behavioral, and cultural diversity seen in the present.",
+    "Think critically about human evolution and how human beings have influenced the environment and are influenced by the environment."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "9fb23cd573c5425aa1a5adbdbfee69a8"
+  },
+  {
+   "code": "AT 100",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,at100?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,at100?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1362,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Excel in the workplace by demonstrating the necessary skills for entry-level employment in the automotive industry",
+    "Communicate effectively to customers regarding their repair activity, both orally and through work orders"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "4af97f29af47f4ff32ff29731223c180"
+  },
+  {
+   "code": "CHILD 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,child1?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,child1?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1696,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Integrate into the culture and community by identifying how children's development is impacted by cultural, economic, political, and historical contexts.",
+    "Demonstrate a knowledge of development and major theoretical frameworks through application to child observations.",
+    "Think critically, explaining children’s development from conception through adolescence in the physical, social, emotional, and cognitive domains."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "bbd1eadbd2faa36f259246abad8b9f37"
+  },
+  {
+   "code": "DRAMA 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,drama10?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,drama10?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1622,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate knowledge of the components of theater, terms used in theatrical art and historical and contemporary theater in various world cultures.",
+    "think critically to examine the use of creative ideas in theatrical production and how to apply it to one's own work.",
+    "Use effective communication in analyses of written plays, films and performed productions."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "011bcf0cd0dda1bc1799a2f8e8234377"
+  },
+  {
+   "code": "ELL 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,ell10?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,ell10?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1832,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Communicate effectively by writing compositions including essays on college-level materials and texts of philosophical, historical, literary, aesthetic, and cultural importance.",
+    "Demonstrate a knowledge of academic and professional vocabulary and level-appropriate grammar.",
+    "Think critically to comprehend and analyze college-level materials and texts of philosophical, historical, literary, aesthetic, and cultural importance.",
+    "Integrate into the culture and community of American higher education by engaging in appropriate academic activities of philosophical, historical, literary, aesthetic, and cultural importance.",
+    "Excel in the workforce by engaging in professional standards and norms."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "faa432e32283ec73207ab6997d36c489"
+  },
+  {
+   "code": "ENTRE 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,entre101?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,entre101?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1159,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Communicate effectively to express themselves clearly when writing or speaking about the entrepreneurial method.",
+    "Excel in the workplace by knowing how to recognize business opportunities.",
+    "Demonstrate a knowledge of how profit or lack thereof acts as a signal to the entrepreneur."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "8d4fc14a7dfb4a54f359303d95c5d0a4"
+  },
+  {
+   "code": "FNR 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,fnr1?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,fnr1?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1174,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Think critically about real-world examples of concepts explored in coursework and their implications for the environment conservation.",
+    "Demonstrate a knowledge of environmental conservation to make informed decisions.",
+    "Communicate effectively on the subject of environmental conservation."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "a74c0dde2152714b85f1cd44efafed21"
+  },
+  {
+   "code": "HIST 11",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,hist11?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,hist11?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1399,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Think critically by describing, analyzing, and evaluating differing interpretations regarding California History.",
+    "Demonstrate a knowledge of California History by describing California History from a variety of perspectives.",
+    "Communicate effectively through oral participation, essay examinations and research papers."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "18127bb15d5efbc34c4b6e1463a09bc8"
+  },
+  {
+   "code": "HUMAN 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,human1?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,human1?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2161,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Think critically, by interpreting and evaluating the role that ancient, medieval, and humanistic worldviews play in the production of the arts, literature, religion, and philosophy within Western culture.",
+    "Think critically, by interpreting and evaluating the significance of the arts, literature, religion, and philosophy in giving form and meaning to the human experience in Western culture from prehistory to the Renaissance.",
+    "Demonstrate a knowledge of the major periods in Western culture from prehistory to the Renaissance, including the key ideas, figures, and artistic movements that define them."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "dce5a7aa5657b0559f839ab0484a0a4d"
+  },
+  {
+   "code": "MGMT 110",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,mgmt110?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,mgmt110?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 879,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Communicate effectively, when describing the key elements in communication within business organizations."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "a88bcebbbf88b6ee94f3e6e526100d0a"
+  },
+  {
+   "code": "PHYCS 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,phycs1?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,phycs1?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1473,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate a knowledge of using appropriate basic mathematical skills and concepts to obtain quantitative solutions in problems involving the fundamental principles in conceptual physics.",
+    "Communicate effectively in thoughtful discussions during the hands-on mini experiments and interpretation of the observations during the conceptual physics lectures.",
+    "Think critically when determining the appropriate concepts to analyze qualitative problems or situations involving the fundamental principles in conceptual physics."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "c2e3446f06491255d1ebd08ffc307b02"
+  },
+  {
+   "code": "PSYCC 1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,psycc1000?tenant=gocolumbia.elumenapp.com",
+   "named_by": [
+    "columbia"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,course,psycc1000?tenant=gocolumbia.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1525,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate a knowledge of the basic concepts and theories in psychology, and how to apply them to one's own life.",
+    "Think critically about the major theories and perspectives in psychology and be able to compare and contrast the strengths and weaknesses of each.",
+    "Communicate effectively about scientific research and be able to evaluate psychological research."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "c5b0998baeacd67213fa9e8444107d04"
+  }
+ ]
+}
