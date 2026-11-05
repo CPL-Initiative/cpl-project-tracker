@@ -4,9 +4,9 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 785,
+  "file_datasets": 787,
   "external_services": 193,
-  "consumers": 517,
+  "consumers": 518,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -13678,6 +13678,13 @@
      "line": 42
     },
     {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
+    },
+    {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -17582,6 +17589,32 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/subjects_list_recode_out/2026-11-05/picks.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 344
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/subjects_list_recode_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/supabase_workplan_move.sql": {
@@ -22917,6 +22950,13 @@
      "direction": "read",
      "how": "literal",
      "line": 287
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -23309,6 +23349,13 @@
      "direction": "read",
      "how": "literal",
      "line": 131
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [

@@ -3,16 +3,16 @@
   "_generated_by": "kb/_build_orphan_parent_worklist.py",
   "_read_this_first": "`decidable` is the column that matters. A false there means the payload holds nothing to check a proposed discipline against — the members disagree, or every signal rests on a one or two character subject code, or the row carries an approved identifier. Filling those from the modal member would reproduce the `ES`-reads-Ethnic-Studies error in reverse. ⚠ And `members_say` is what the colleges typed, never a verdict on the parent: AUTD M1040 Medium and Heavy Truck Drivetrain Service is recorded Diesel Mechanics while its members read Automotive Technology, and Diesel Mechanics is arguably the better answer. A decidable row is one a curator can settle from what is here, whichever way they settle it.",
   "_counts": {
-    "orphan_parents": 114,
+    "orphan_parents": 113,
     "decidable": 19,
-    "undecidable": 95,
-    "members_disagree": 93,
+    "undecidable": 94,
+    "members_disagree": 92,
     "short_codes_only": 2,
     "carries_an_approved_identifier": 0
   },
   "rows": [
     {
-      "id": "AUTD M1040",
+      "id": "DIES M1040",
       "title": "Medium and Heavy Truck Drivetrain Service, Diagnosis, and Repair",
       "id_system": "M-ID",
       "recorded_discipline": "Diesel Mechanics",
@@ -99,7 +99,7 @@
       "members_say": "Kinesiology"
     },
     {
-      "id": "AUTD M1025",
+      "id": "DIES M1025",
       "title": "Caterpillar Machine Electronic Systems",
       "id_system": "M-ID",
       "recorded_discipline": "Diesel Mechanics",
@@ -120,7 +120,7 @@
       "members_say": "Office Technologies"
     },
     {
-      "id": "GRAF M1001",
+      "id": "GFCD M1001",
       "title": "Web Programming: JavaScript",
       "id_system": "M-ID",
       "recorded_discipline": "Graphic Arts",
@@ -507,7 +507,7 @@
       "members_say": null
     },
     {
-      "id": "GRAF M1011",
+      "id": "GFCD M1011",
       "title": "Digital Imaging 1",
       "id_system": "M-ID",
       "recorded_discipline": "Graphic Arts",
@@ -532,7 +532,7 @@
       "members_say": null
     },
     {
-      "id": "GRAF M1010",
+      "id": "GFCD M1010",
       "title": "Digital Illustration with Adobe Illustrator",
       "id_system": "M-ID",
       "recorded_discipline": "Graphic Arts",
@@ -559,28 +559,6 @@
       "members_say": null
     },
     {
-      "id": "AUTD M1029",
-      "title": "Construction Systems - Introduction to Low Voltage Building Systems 1",
-      "id_system": "M-ID",
-      "recorded_discipline": "Diesel Mechanics",
-      "members": 11,
-      "subject_codes": [
-        "AUTO",
-        "ELECT"
-      ],
-      "member_disciplines": {
-        "Automotive Technology": 1,
-        "Electronics": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Automotive Technology": 1,
-        "Electronics": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Automotive Technology and Electronics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
       "id": "COUN M1168",
       "title": "Case Administration, Crisis Intervention and Referral",
       "id_system": "M-ID",
@@ -601,6 +579,28 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Administration of Justice and Public Safety), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "DIES M1029",
+      "title": "Construction Systems - Introduction to Low Voltage Building Systems 1",
+      "id_system": "M-ID",
+      "recorded_discipline": "Diesel Mechanics",
+      "members": 11,
+      "subject_codes": [
+        "AUTO",
+        "ELECT"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Electronics": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1,
+        "Electronics": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Electronics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     },
     {
@@ -743,7 +743,7 @@
       "members_say": null
     },
     {
-      "id": "ESCI M1085",
+      "id": "ENVS M1085",
       "title": "Solar Photovoltaic Systems Design, Installation, and Troubleshooting",
       "id_system": "M-ID",
       "recorded_discipline": "Environmental Technologies",
@@ -893,28 +893,6 @@
       "members_say": null
     },
     {
-      "id": "AUTD M1027",
-      "title": "Manual and Automatic Transmissions, Transaxles and Drive Trains",
-      "id_system": "M-ID",
-      "recorded_discipline": "Diesel Mechanics",
-      "members": 9,
-      "subject_codes": [
-        "AUTO",
-        "CAT"
-      ],
-      "member_disciplines": {
-        "Automotive Technology": 1,
-        "Office Technologies": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Automotive Technology": 1,
-        "Office Technologies": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Automotive Technology and Office Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
       "id": "BUSI M1377",
       "title": "Computer Keyboarding: 10 Key",
       "id_system": "M-ID",
@@ -981,6 +959,28 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Law and Legal Assisting), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "DIES M1027",
+      "title": "Manual and Automatic Transmissions, Transaxles and Drive Trains",
+      "id_system": "M-ID",
+      "recorded_discipline": "Diesel Mechanics",
+      "members": 9,
+      "subject_codes": [
+        "AUTO",
+        "CAT"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Office Technologies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1,
+        "Office Technologies": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Office Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     },
     {
@@ -1343,7 +1343,7 @@
       "members_say": null
     },
     {
-      "id": "GRAF M1030",
+      "id": "GFCD M1030",
       "title": "Photo Editing for Digital and Print Publication",
       "id_system": "M-ID",
       "recorded_discipline": "Graphic Arts",
@@ -1362,32 +1362,6 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Media Production and Multimedia), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
-      "id": "GRAF M1051",
-      "title": "Introduction to Virtual Production",
-      "id_system": "M-ID",
-      "recorded_discipline": "Graphic Arts",
-      "members": 7,
-      "subject_codes": [
-        "CINE",
-        "CINEMA",
-        "DAID",
-        "MEDIA"
-      ],
-      "member_disciplines": {
-        "Film and Media Studies": 2,
-        "Multimedia": 1,
-        "Media Production": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Film and Media Studies": 2,
-        "Multimedia": 1,
-        "Media Production": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Film and Media Studies and Media Production and Multimedia), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     },
     {
@@ -1594,7 +1568,7 @@
       "members_say": null
     },
     {
-      "id": "PLGL M1013",
+      "id": "PARA M1077",
       "title": "Business Organizations",
       "id_system": "M-ID",
       "recorded_discipline": "Legal Assisting",
@@ -1730,7 +1704,7 @@
       "members_say": null
     },
     {
-      "id": "GRAF M1013",
+      "id": "GFCD M1013",
       "title": "Digital Illustration 2",
       "id_system": "M-ID",
       "recorded_discipline": "Graphic Arts",
@@ -1886,7 +1860,7 @@
       "members_say": null
     },
     {
-      "id": "BCST M1036",
+      "id": "BRDC M1036",
       "title": "History of American Film",
       "id_system": "M-ID",
       "recorded_discipline": "Broadcasting Technology",
@@ -1908,7 +1882,7 @@
       "members_say": null
     },
     {
-      "id": "CSAI M1004",
+      "id": "CSIS M1491",
       "title": "Ethics and Artificial Intelligence",
       "id_system": "M-ID",
       "recorded_discipline": "Artificial Intelligence",
@@ -2545,6 +2519,28 @@
       "members_say": null
     },
     {
+      "id": "PARA M1029",
+      "title": "Environmental Law and Policy",
+      "id_system": "M-ID",
+      "recorded_discipline": "Legal Assisting",
+      "members": 2,
+      "subject_codes": [
+        "AGNR",
+        "LAW"
+      ],
+      "member_disciplines": {
+        "Agriculture": 1,
+        "Law": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Agriculture": 1,
+        "Law": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Agriculture and Law), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
       "id": "PEDS M1008",
       "title": "Aquatics: Level 1, Beginning Swimming",
       "id_system": "M-ID",
@@ -2564,28 +2560,6 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Kinesiology and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
-      "id": "PLGL M1029",
-      "title": "Environmental Law and Policy",
-      "id_system": "M-ID",
-      "recorded_discipline": "Legal Assisting",
-      "members": 2,
-      "subject_codes": [
-        "AGNR",
-        "LAW"
-      ],
-      "member_disciplines": {
-        "Agriculture": 1,
-        "Law": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Agriculture": 1,
-        "Law": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Agriculture and Law), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     }
   ]

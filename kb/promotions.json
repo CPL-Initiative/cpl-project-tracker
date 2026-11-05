@@ -3062,63 +3062,6 @@
     }
    }
   },
-  "BCST M1011": {
-   "minted_remnant_members": 15,
-   "official_targets": {
-    "C-ID:FTVE 100": {
-     "members": 2,
-     "colleges": [
-      "Cuesta College",
-      "Pasadena City College"
-     ]
-    }
-   }
-  },
-  "BCST M1013": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:FTVE 130": {
-     "members": 1,
-     "colleges": [
-      "Santa Barbara City College"
-     ]
-    }
-   }
-  },
-  "BCST M1057": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:FTVE 135": {
-     "members": 2,
-     "colleges": [
-      "Chaffey College",
-      "Pasadena City College"
-     ]
-    }
-   }
-  },
-  "BCST M10JM": {
-   "minted_remnant_members": 1,
-   "official_targets": {
-    "C-ID:FTVE 110": {
-     "members": 1,
-     "colleges": [
-      "Pasadena City College"
-     ]
-    }
-   }
-  },
-  "BCST M10JU": {
-   "minted_remnant_members": 1,
-   "official_targets": {
-    "C-ID:FTVE 125": {
-     "members": 1,
-     "colleges": [
-      "Rio Hondo College"
-     ]
-    }
-   }
-  },
   "BIOL M1021": {
    "minted_remnant_members": 5,
    "official_targets": {
@@ -4147,6 +4090,63 @@
      "members": 1,
      "colleges": [
       "Santa Ana College"
+     ]
+    }
+   }
+  },
+  "BRDC M1011": {
+   "minted_remnant_members": 15,
+   "official_targets": {
+    "C-ID:FTVE 100": {
+     "members": 2,
+     "colleges": [
+      "Cuesta College",
+      "Pasadena City College"
+     ]
+    }
+   }
+  },
+  "BRDC M1013": {
+   "minted_remnant_members": 2,
+   "official_targets": {
+    "C-ID:FTVE 130": {
+     "members": 1,
+     "colleges": [
+      "Santa Barbara City College"
+     ]
+    }
+   }
+  },
+  "BRDC M1057": {
+   "minted_remnant_members": 5,
+   "official_targets": {
+    "C-ID:FTVE 135": {
+     "members": 2,
+     "colleges": [
+      "Chaffey College",
+      "Pasadena City College"
+     ]
+    }
+   }
+  },
+  "BRDC M10JM": {
+   "minted_remnant_members": 1,
+   "official_targets": {
+    "C-ID:FTVE 110": {
+     "members": 1,
+     "colleges": [
+      "Pasadena City College"
+     ]
+    }
+   }
+  },
+  "BRDC M10JU": {
+   "minted_remnant_members": 1,
+   "official_targets": {
+    "C-ID:FTVE 125": {
+     "members": 1,
+     "colleges": [
+      "Rio Hondo College"
      ]
     }
    }
@@ -12079,7 +12079,7 @@
     }
    }
   },
-  "ESCI M1063": {
+  "ENVS M1063": {
    "minted_remnant_members": 23,
    "official_targets": {
     "C-ID:ENVS 100": {
@@ -12100,7 +12100,7 @@
     }
    }
   },
-  "ESCI M10LG": {
+  "ENVS M10LG": {
    "minted_remnant_members": 1,
    "official_targets": {
     "C-ID:AG-EH 104 L X": {
@@ -12117,7 +12117,7 @@
     }
    }
   },
-  "ESCI M10NJ": {
+  "ENVS M10NJ": {
    "minted_remnant_members": 1,
    "official_targets": {
     "C-ID:AG-EH 108 L": {
@@ -12128,7 +12128,7 @@
     }
    }
   },
-  "ESCI M10RC": {
+  "ENVS M10RC": {
    "minted_remnant_members": 1,
    "official_targets": {
     "C-ID:WWTR 150 X": {
@@ -12768,6 +12768,53 @@
     }
    }
   },
+  "FMED M10PX": {
+   "minted_remnant_members": 1,
+   "official_targets": {
+    "C-ID:FTVE 105": {
+     "members": 1,
+     "colleges": [
+      "Glendale Community College"
+     ]
+    }
+   }
+  },
+  "FMED M1106": {
+   "minted_remnant_members": 2,
+   "official_targets": {
+    "C-ID:THTR 171": {
+     "members": 2,
+     "colleges": [
+      "Los Angeles Harbor College",
+      "Los Angeles Valley College"
+     ]
+    }
+   }
+  },
+  "FMED M1166": {
+   "minted_remnant_members": 8,
+   "official_targets": {
+    "C-ID:FTVE 120": {
+     "members": 1,
+     "colleges": [
+      "Glendale Community College"
+     ]
+    }
+   }
+  },
+  "FMED M1167": {
+   "minted_remnant_members": 8,
+   "official_targets": {
+    "C-ID:FTVE 120": {
+     "members": 3,
+     "colleges": [
+      "City College of San Francisco",
+      "Cuesta College",
+      "Ohlone College"
+     ]
+    }
+   }
+  },
   "FTVE M1035": {
    "minted_remnant_members": 6,
    "official_targets": {
@@ -12893,17 +12940,6 @@
     }
    }
   },
-  "FTVE M10PX": {
-   "minted_remnant_members": 1,
-   "official_targets": {
-    "C-ID:FTVE 105": {
-     "members": 1,
-     "colleges": [
-      "Glendale Community College"
-     ]
-    }
-   }
-  },
   "FTVE M1104": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -12928,42 +12964,6 @@
      "members": 1,
      "colleges": [
       "Cerritos College"
-     ]
-    }
-   }
-  },
-  "FTVE M1106": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:THTR 171": {
-     "members": 2,
-     "colleges": [
-      "Los Angeles Harbor College",
-      "Los Angeles Valley College"
-     ]
-    }
-   }
-  },
-  "FTVE M1166": {
-   "minted_remnant_members": 8,
-   "official_targets": {
-    "C-ID:FTVE 120": {
-     "members": 1,
-     "colleges": [
-      "Glendale Community College"
-     ]
-    }
-   }
-  },
-  "FTVE M1167": {
-   "minted_remnant_members": 8,
-   "official_targets": {
-    "C-ID:FTVE 120": {
-     "members": 3,
-     "colleges": [
-      "City College of San Francisco",
-      "Cuesta College",
-      "Ohlone College"
      ]
     }
    }
@@ -14302,18 +14302,7 @@
     }
    }
   },
-  "GLOB M1001": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:JOUR 100": {
-     "members": 1,
-     "colleges": [
-      "Cypress College"
-     ]
-    }
-   }
-  },
-  "GRAF M1019": {
+  "GFCD M1019": {
    "minted_remnant_members": 2,
    "official_targets": {
     "C-ID:ARTS 250": {
@@ -14324,7 +14313,7 @@
     }
    }
   },
-  "GRAF M10CE": {
+  "GFCD M10CE": {
    "minted_remnant_members": 1,
    "official_targets": {
     "C-ID:ARTS 250": {
@@ -14335,7 +14324,7 @@
     }
    }
   },
-  "GRAF M1300": {
+  "GFCD M1300": {
    "minted_remnant_members": 38,
    "official_targets": {
     "C-ID:ARTS 250": {
@@ -14352,13 +14341,24 @@
     }
    }
   },
-  "GRAF M1306": {
+  "GFCD M1306": {
    "minted_remnant_members": 17,
    "official_targets": {
     "C-ID:ARTS 250": {
      "members": 1,
      "colleges": [
       "Chaffey College"
+     ]
+    }
+   }
+  },
+  "GLOB M1001": {
+   "minted_remnant_members": 2,
+   "official_targets": {
+    "C-ID:JOUR 100": {
+     "members": 1,
+     "colleges": [
+      "Cypress College"
      ]
     }
    }
@@ -23684,6 +23684,17 @@
     }
    }
   },
+  "PARA M1045": {
+   "minted_remnant_members": 14,
+   "official_targets": {
+    "C-ID:LPPS 110": {
+     "members": 1,
+     "colleges": [
+      "Cerro Coso Community College"
+     ]
+    }
+   }
+  },
   "PHIL M1005": {
    "minted_remnant_members": 4,
    "official_targets": {
@@ -25650,17 +25661,6 @@
      "members": 1,
      "colleges": [
       "Cabrillo College"
-     ]
-    }
-   }
-  },
-  "PLGL M1045": {
-   "minted_remnant_members": 14,
-   "official_targets": {
-    "C-ID:LPPS 110": {
-     "members": 1,
-     "colleges": [
-      "Cerro Coso Community College"
      ]
     }
    }
@@ -31033,7 +31033,7 @@
    }
   }
  },
- "_rekeyed_at": "2026-10-20",
+ "_rekeyed_at": "2026-11-05",
  "_rekeyed_through": [
   "kb/subj4_apply/alias_map.json",
   "kb/crossdisc_out/alias_map.json",
@@ -31058,7 +31058,8 @@
   "kb/forestry_wine_remint_out/2026-10-20/alias_map.json",
   "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",
   "kb/fl_stray_remint_out/2026-10-20/alias_map.json",
-  "kb/blank_stray_remint_out/2026-10-20/alias_map.json"
+  "kb/blank_stray_remint_out/2026-10-20/alias_map.json",
+  "kb/subjects_list_recode_out/2026-11-05/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

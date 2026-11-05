@@ -1,6 +1,6 @@
 {
   "_about": "Every C-ID / CCN subject code in kb/reference, the disciplines its rows sit under in kb/promotions.json (evidence), and where it is attributed (basis: ruled | canonical | majority | name); dismissed pairs are item 17 of the 2026-09-03 rulings. Built by kb/_seed_authority_codes.py.",
-  "_built_at": "2026-10-20",
+  "_built_at": "2026-11-05",
   "_rules": {
     "majority_floor": 4,
     "dismissed_pairs": [
@@ -67,12 +67,11 @@
   },
   "counts": {
     "codes": 79,
-    "attributed": 73,
-    "unhomed": 6
+    "attributed": 74,
+    "unhomed": 5
   },
   "unhomed": [
     "c-id ADS",
-    "c-id ENVS",
     "c-id GLST",
     "c-id MIS",
     "c-id SJS",
@@ -855,7 +854,15 @@
         "Environmental Technologies": 1,
         "Social Science": 1
       },
-      "attributed": [],
+      "attributed": [
+        {
+          "discipline": "Environmental Technologies",
+          "basis": "canonical",
+          "rows": 1,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
       "dismissed": [],
       "name_home_reason": null
     },
@@ -904,7 +911,7 @@
           "discipline": "Media Production",
           "basis": "ruled",
           "rows": 3,
-          "chip": false,
+          "chip": true,
           "chip_primary": true
         }
       ],
@@ -1115,8 +1122,8 @@
         "Law": 2,
         "Political Science": 2,
         "Business": 1,
-        "Philosophy": 1,
-        "Legal Assisting": 1
+        "Legal Assisting": 1,
+        "Philosophy": 1
       },
       "attributed": [
         {

@@ -1,6 +1,6 @@
 {
  "_generated_by": "kb/_desc_consolidation_dryrun.py",
- "_generated_at": "2026-10-20",
+ "_generated_at": "2026-11-05",
  "_status": "DRY-RUN — measurement receipt; nothing applied",
  "_params": {
   "cosine_min": 0.6,
@@ -51,12 +51,12 @@
    "cos_max": 1.0,
    "cross_college": true,
    "shared_terms": [
-    "bureaucratic",
     "advocated",
+    "bureaucratic",
     "debated",
     "reducing",
-    "degradation",
-    "parties"
+    "parties",
+    "degradation"
    ]
   },
   {
@@ -91,8 +91,8 @@
     "youth",
     "observational",
     "practitioners",
-    "adherence",
     "anxiety",
+    "adherence",
     "counseling"
    ]
   },
@@ -142,8 +142,8 @@
    "cross_college": true,
    "shared_terms": [
     "recognized",
-    "driver",
     "simulated",
+    "driver",
     "inspections",
     "positioning",
     "apparatus"
@@ -239,7 +239,7 @@
   {
    "members": [
     {
-     "id": "ESCI M1062",
+     "id": "ENVS M1062",
      "title": "Introduction to Environmental Policy and Natural Resource Management",
      "units": 3.0,
      "disc": "Environmental Technologies",
@@ -361,8 +361,8 @@
    "cos_max": 0.921,
    "cross_college": true,
    "shared_terms": [
-    "traffic",
     "patrol",
+    "traffic",
     "officer",
     "philosophies",
     "expectations",
@@ -742,17 +742,7 @@
   {
    "members": [
     {
-     "id": "AUTD M1002",
-     "title": "Advanced Diesel Engine Repair",
-     "units": 3.0,
-     "disc": "Diesel Mechanics",
-     "colleges": [
-      "Bakersfield College",
-      "Coalinga College"
-     ]
-    },
-    {
-     "id": "AUTD M1010",
+     "id": "DIES M1010",
      "title": "Introduction to Diesel Engine Repair",
      "units": 3.0,
      "disc": "Diesel Mechanics",
@@ -762,13 +752,23 @@
      ]
     },
     {
-     "id": "AUTD M1012",
+     "id": "DIES M1012",
      "title": "Diesel Engine Principles",
      "units": 3.0,
      "disc": "Diesel Mechanics",
      "colleges": [
       "Modesto Junior College",
       "San Joaquin Delta College"
+     ]
+    },
+    {
+     "id": "DIES M1044",
+     "title": "Advanced Diesel Engine Repair",
+     "units": 3.0,
+     "disc": "Diesel Mechanics",
+     "colleges": [
+      "Bakersfield College",
+      "Coalinga College"
      ]
     }
    ],
@@ -781,8 +781,8 @@
     "disassembling",
     "diagnosing",
     "diesel",
-    "engines",
-    "testing"
+    "running",
+    "engines"
    ]
   },
   {
@@ -897,8 +897,8 @@
    "cos_max": 0.742,
    "cross_college": true,
    "shared_terms": [
-    "geog",
     "responded",
+    "geog",
     "exclusion",
     "segregation",
     "intersections",
@@ -1430,8 +1430,8 @@
     "therefore",
     "detail",
     "interview",
-    "disciplines",
-    "existing"
+    "existing",
+    "disciplines"
    ]
   },
   {
@@ -1482,8 +1482,8 @@
     "therefore",
     "detail",
     "interview",
-    "disciplines",
-    "existing"
+    "existing",
+    "disciplines"
    ]
   },
   {
@@ -1537,10 +1537,10 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "criterion",
-    "noted",
     "discontinue",
+    "criterion",
     "actually",
+    "noted",
     "submitted",
     "committee"
    ]
@@ -1613,9 +1613,9 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
+    "skim",
     "bazooka",
     "spotters",
-    "skim",
     "butt",
     "coat",
     "boxes"
@@ -1662,7 +1662,7 @@
   {
    "members": [
     {
-     "id": "CNSR M1007",
+     "id": "CBIT M1007",
      "title": "California State Energy Regulations for Non-Residential Buildings",
      "units": 3.0,
      "disc": "Building Codes and Regulations",
@@ -1671,7 +1671,7 @@
      ]
     },
     {
-     "id": "CNSR M1008",
+     "id": "CBIT M1008",
      "title": "California State Energy Regulations for Residential Buildings",
      "units": 3.0,
      "disc": "Building Codes and Regulations",
@@ -1722,8 +1722,8 @@
    "cos_max": 0.969,
    "cross_college": false,
    "shared_terms": [
-    "shin",
     "guards",
+    "shin",
     "cleats",
     "attire",
     "soccer",
@@ -1771,8 +1771,8 @@
     "mos",
     "similar",
     "thorough",
-    "coverage",
     "examinations",
+    "coverage",
     "specialist"
    ]
   },
@@ -1915,8 +1915,8 @@
    "shared_terms": [
     "mundane",
     "illuminate",
-    "paradigms",
     "accomplishments",
+    "paradigms",
     "constructs",
     "transnational"
    ]
@@ -1995,8 +1995,8 @@
     "mos",
     "similar",
     "thorough",
-    "coverage",
     "examinations",
+    "coverage",
     "specialist"
    ]
   },
@@ -2250,7 +2250,7 @@
     "wines",
     "evaluations",
     "sensory",
-    "old"
+    "wine"
    ]
   },
   {
@@ -2301,8 +2301,8 @@
    "cos_max": 0.934,
    "cross_college": false,
    "shared_terms": [
-    "bot",
     "less",
+    "bot",
     "desiring",
     "mos",
     "similar",
@@ -2616,8 +2616,8 @@
    "cross_college": false,
    "shared_terms": [
     "memorizing",
-    "hone",
     "choreographer",
+    "hone",
     "clean",
     "performer",
     "concert"
@@ -2651,8 +2651,8 @@
    "shared_terms": [
     "dermatology",
     "dictation",
-    "transcription",
     "htec",
+    "transcription",
     "speech",
     "recognition"
    ]
@@ -2786,8 +2786,8 @@
    "cos_max": 0.907,
    "cross_college": false,
    "shared_terms": [
-    "ferrous",
     "wants",
+    "ferrous",
     "electrode",
     "electric",
     "arc",
@@ -3035,8 +3035,8 @@
    "cross_college": false,
    "shared_terms": [
     "stay",
-    "overnight",
     "observed",
+    "overnight",
     "landscapes",
     "geographical",
     "possible"
@@ -3233,8 +3233,8 @@
     "cadd",
     "operator",
     "orthographic",
-    "illustration",
-    "latest"
+    "latest",
+    "illustration"
    ]
   },
   {
@@ -3468,9 +3468,9 @@
    "cos_max": 0.864,
    "cross_college": false,
    "shared_terms": [
-    "relied",
     "perceived",
     "consequential",
+    "relied",
     "interacted",
     "impacted",
     "technological"
@@ -3546,8 +3546,8 @@
     "sponsored",
     "attend",
     "produced",
-    "concert",
     "master",
+    "concert",
     "department"
    ]
   },
@@ -3633,12 +3633,12 @@
    "cos_max": 0.853,
    "cross_college": false,
    "shared_terms": [
-    "spatially",
     "raster",
+    "spatially",
     "arcgis",
     "esri",
     "smart",
-    "gis"
+    "vector"
    ]
   },
   {
@@ -3863,8 +3863,8 @@
     "sponsored",
     "attend",
     "produced",
-    "concert",
     "master",
+    "concert",
     "department"
    ]
   },
@@ -4070,9 +4070,9 @@
    "cross_college": false,
    "shared_terms": [
     "erths",
-    "uneven",
-    "pepperwood",
     "steward",
+    "pepperwood",
+    "uneven",
     "preserve",
     "hiking"
    ]
@@ -4180,8 +4180,8 @@
    "cos_max": 0.82,
    "cross_college": false,
    "shared_terms": [
-    "shin",
     "guards",
+    "shin",
     "cleats",
     "attire",
     "soccer",
@@ -4265,8 +4265,8 @@
     "maneuvers",
     "aeronautical",
     "contained",
-    "faa",
     "pilot",
+    "faa",
     "attain"
    ]
   },
@@ -4339,11 +4339,11 @@
    "cross_college": false,
    "shared_terms": [
     "ranked",
-    "kcactf",
     "kennedy",
+    "kcactf",
     "festival",
     "workshop",
-    "theatrical"
+    "theater"
    ]
   },
   {
@@ -4384,8 +4384,8 @@
     "tutorials",
     "lessons",
     "assessments",
-    "individually",
     "prescribed",
+    "individually",
     "assigned"
    ]
   },
@@ -4505,8 +4505,8 @@
    "shared_terms": [
     "interpreters",
     "translation",
-    "fluency",
     "strongly",
+    "fluency",
     "spanish",
     "government"
    ]
@@ -4610,8 +4610,8 @@
    "shared_terms": [
     "counting",
     "listing",
-    "clarity",
     "phrasing",
+    "clarity",
     "sense",
     "musicality"
    ]
@@ -4945,8 +4945,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "articulated",
     "miramar",
+    "articulated",
     "malfunctions",
     "repairing",
     "natef",
@@ -5094,8 +5094,8 @@
    "cos_max": 0.72,
    "cross_college": false,
    "shared_terms": [
-    "pevm",
     "completions",
+    "pevm",
     "allowed",
     "mentally",
     "collegiate",
@@ -5137,7 +5137,7 @@
   {
    "members": [
     {
-     "id": "CSAI M1003",
+     "id": "CSIS M1490",
      "title": "Introduction to Artificial Intelligence and Data Science",
      "units": 3.0,
      "disc": "Artificial Intelligence",
@@ -5147,7 +5147,7 @@
      ]
     },
     {
-     "id": "CSAI M1006",
+     "id": "CSIS M1493",
      "title": "Introduction to Artificial Intelligence and Machine Learning",
      "units": 3.0,
      "disc": "Artificial Intelligence",
@@ -5166,8 +5166,8 @@
    "shared_terms": [
     "bias",
     "exposed",
-    "surrounding",
     "cases",
+    "surrounding",
     "deep"
    ]
   },
@@ -5543,8 +5543,8 @@
     "suspended",
     "drywall",
     "ceilings",
-    "square",
     "ceiling",
+    "square",
     "suspension"
    ]
   },
@@ -6530,8 +6530,8 @@
     "nine",
     "campuses",
     "transformative",
-    "holistic",
     "fund",
+    "holistic",
     "education"
    ]
   },
@@ -6624,8 +6624,8 @@
    "cos_max": 0.62,
    "cross_college": false,
    "shared_terms": [
-    "roman",
     "empire",
+    "roman",
     "constructions",
     "older",
     "adults"
@@ -6659,8 +6659,8 @@
    "cos_max": 0.62,
    "cross_college": false,
    "shared_terms": [
-    "theatrical",
     "solo",
+    "theatrical",
     "performances",
     "theatre",
     "musical",
@@ -6810,7 +6810,7 @@
     "culturally",
     "conducted",
     "third",
-    "readings"
+    "acquire"
    ]
   },
   {
@@ -6889,9 +6889,9 @@
    "cross_college": false,
    "shared_terms": [
     "icc",
-    "council",
     "petition",
     "admissions",
+    "council",
     "published",
     "repeat"
    ]

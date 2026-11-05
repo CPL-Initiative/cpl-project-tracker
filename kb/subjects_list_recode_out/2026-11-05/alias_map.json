@@ -1,5 +1,5 @@
 {
-  "_status": "Subjects List recode old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_status": "Subjects List recode old->new alias (receipt + rollback inverse) - APPLIED",
   "_at": "2026-11-05",
   "_scope": [
     "subjects-list-2026-11-04"
@@ -11952,5 +11952,15 @@
       "route": "PARA",
       "discipline": "Legal Assisting"
     }
+  },
+  "_applied_at": "2026-11-05",
+  "_applied_ruling": "Sam, 2026-11-04 21:25Z to 2026-11-05 00:10Z (the Common Subjects List, `_CANON_SUBJ4::` saves with a note each): eleven disciplines take a new Common SUBJ",
+  "_counts": {
+    "courses": 476,
+    "singletons": 1913,
+    "articulations": 88,
+    "identities": 54,
+    "pointers": 642,
+    "curation_keys": 935
   }
 }

@@ -2294,7 +2294,7 @@
     ]
    ]
   },
-  "GRAF M1300": {
+  "GFCD M1300": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2378,7 +2378,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M1306": {
+  "GFCD M1306": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -4305,7 +4305,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "BCST M1003": {
+  "BRDC M1061": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5879,7 +5879,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ESCI M1023": {
+  "ENVS M1023": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5958,7 +5958,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSAI M1001": {
+  "CSIS M1488": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5976,7 +5976,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSAI M9001": {
+  "CSIS M9049": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6156,7 +6156,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FTVE M1337": {
+  "FMED M1337": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7040,7 +7040,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FTVE M1165": {
+  "FMED M1165": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -8246,7 +8246,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CNSC M9001": {
+  "WWKC M9001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8760,7 +8760,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AUTD M1026": {
+  "DIES M1026": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -9011,7 +9011,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "BCST M1018": {
+  "BRDC M1018": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -14511,7 +14511,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FTVE M1167": {
+  "FMED M1167": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -15933,7 +15933,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M1005": {
+  "GFCD M1005": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -15945,13 +15945,13 @@
     ]
    ]
   },
-  "GRAF M1013": {
+  "GFCD M1013": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M1020": {
+  "GFCD M1020": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -15963,7 +15963,7 @@
     ]
    ]
   },
-  "GRAF M1007": {
+  "GFCD M1007": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -15975,7 +15975,7 @@
     ]
    ]
   },
-  "GRAF M1028": {
+  "GFCD M1028": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -15987,7 +15987,7 @@
     ]
    ]
   },
-  "GRAF M1001": {
+  "GFCD M1001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -15999,13 +15999,13 @@
     ]
    ]
   },
-  "GRAF M1043": {
+  "GFCD M1043": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M1048": {
+  "GFCD M1048": {
    "class": "partial_mirror",
    "nc_total": 3,
    "nc_mirrored": 1,
@@ -16017,7 +16017,7 @@
     ]
    ]
   },
-  "GRAF M1052": {
+  "GFCD M1052": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16029,7 +16029,7 @@
     ]
    ]
   },
-  "GRAF M1047": {
+  "GFCD M1047": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16041,7 +16041,7 @@
     ]
    ]
   },
-  "GRAF M1031": {
+  "GFCD M1031": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16053,7 +16053,7 @@
     ]
    ]
   },
-  "GRAF M1002": {
+  "GFCD M1002": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16065,7 +16065,7 @@
     ]
    ]
   },
-  "GRAF M9005": {
+  "GFCD M9005": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -16276,7 +16276,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M1041": {
+  "GFCD M1041": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -16324,7 +16324,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M1010": {
+  "GFCD M1010": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -16336,7 +16336,7 @@
     ]
    ]
   },
-  "GRAF M1012": {
+  "GFCD M1012": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16348,7 +16348,7 @@
     ]
    ]
   },
-  "GRAF M1044": {
+  "GFCD M1044": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16372,7 +16372,7 @@
     ]
    ]
   },
-  "GRAF M1006": {
+  "GFCD M1006": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16384,7 +16384,7 @@
     ]
    ]
   },
-  "GRAF M1018": {
+  "GFCD M1018": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16396,7 +16396,7 @@
     ]
    ]
   },
-  "GRAF M1040": {
+  "GFCD M1040": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16408,7 +16408,7 @@
     ]
    ]
   },
-  "GRAF M1054": {
+  "GFCD M1054": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16420,7 +16420,7 @@
     ]
    ]
   },
-  "GRAF M1008": {
+  "GFCD M1008": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16432,7 +16432,7 @@
     ]
    ]
   },
-  "GRAF M1053": {
+  "GFCD M1053": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16444,7 +16444,7 @@
     ]
    ]
   },
-  "GRAF M1026": {
+  "GFCD M1026": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16456,7 +16456,7 @@
     ]
    ]
   },
-  "GRAF M9002": {
+  "GFCD M9002": {
    "class": "partial_mirror",
    "nc_total": 3,
    "nc_mirrored": 1,
@@ -16468,7 +16468,7 @@
     ]
    ]
   },
-  "GRAF M9001": {
+  "GFCD M9001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16480,7 +16480,7 @@
     ]
    ]
   },
-  "GRAF M9004": {
+  "GFCD M9004": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16492,7 +16492,7 @@
     ]
    ]
   },
-  "GRAF M9006": {
+  "GFCD M9006": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -16888,7 +16888,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "PLGL M1031": {
+  "PARA M1031": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -17632,7 +17632,7 @@
     ]
    ]
   },
-  "CNSR M1001": {
+  "CBIT M1001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17644,7 +17644,7 @@
     ]
    ]
   },
-  "CNSR M1002": {
+  "CBIT M1002": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17656,7 +17656,7 @@
     ]
    ]
   },
-  "CNSR M1003": {
+  "CBIT M1003": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17668,7 +17668,7 @@
     ]
    ]
   },
-  "CNSR M1004": {
+  "CBIT M1004": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17680,7 +17680,7 @@
     ]
    ]
   },
-  "CNSR M1005": {
+  "CBIT M1005": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17692,7 +17692,7 @@
     ]
    ]
   },
-  "CNSR M1009": {
+  "CBIT M1009": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17704,7 +17704,7 @@
     ]
    ]
   },
-  "CNSR M1007": {
+  "CBIT M1007": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17716,7 +17716,7 @@
     ]
    ]
   },
-  "CNSR M1008": {
+  "CBIT M1008": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17728,7 +17728,7 @@
     ]
    ]
   },
-  "CNSR M1006": {
+  "CBIT M1006": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17740,7 +17740,7 @@
     ]
    ]
   },
-  "CNSR M1013": {
+  "CBIT M1013": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17752,7 +17752,7 @@
     ]
    ]
   },
-  "CNSR M1014": {
+  "CBIT M1014": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17764,7 +17764,7 @@
     ]
    ]
   },
-  "CNSR M1015": {
+  "CBIT M1015": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17776,7 +17776,7 @@
     ]
    ]
   },
-  "CNSR M1016": {
+  "CBIT M1016": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17836,7 +17836,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AUTD M1024": {
+  "DIES M1024": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18046,7 +18046,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CNSR M9001": {
+  "CBIT M9001": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
@@ -18490,7 +18490,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSAI M1002": {
+  "CSIS M1489": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18646,7 +18646,7 @@
     ]
    ]
   },
-  "NRSV M1016": {
+  "VNRS M1016": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18784,7 +18784,7 @@
     ]
    ]
   },
-  "AUTD M1016": {
+  "DIES M1016": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -19438,13 +19438,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AUTD M1025": {
+  "DIES M1025": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AUTD M9005": {
+  "DIES M9005": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -19480,7 +19480,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FTVE M1110": {
+  "FMED M1110": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20683,7 +20683,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "GRAF M9003": {
+  "GFCD M9003": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -21411,7 +21411,7 @@
     ]
    ]
   },
-  "ESCI M1025": {
+  "ENVS M1025": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -23529,13 +23529,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ESCI M1032": {
+  "ENVS M1032": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ESCI M1049": {
+  "ENVS M1049": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -24103,7 +24103,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ESCI M1078": {
+  "ENVS M1078": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -24151,7 +24151,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ESCI M9002": {
+  "ENVS M9002": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -24193,7 +24193,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ESCI M1007": {
+  "ENVS M1114": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -24413,8 +24413,9 @@
   "kb/forestry_wine_remint_out/2026-10-20/alias_map.json",
   "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",
   "kb/fl_stray_remint_out/2026-10-20/alias_map.json",
-  "kb/blank_stray_remint_out/2026-10-20/alias_map.json"
+  "kb/blank_stray_remint_out/2026-10-20/alias_map.json",
+  "kb/subjects_list_recode_out/2026-11-05/alias_map.json"
  ],
- "_rekeyed_at": "2026-10-20",
+ "_rekeyed_at": "2026-11-05",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }
