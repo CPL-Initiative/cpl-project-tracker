@@ -683,16 +683,13 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 ## Obsidian vault wiring
 
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)**.
+Read it before vault-sync, exclusion, or the sparse-checkout fix. A checkpoint
+writes the vault, never the public KB. Three doc lanes — KB notes, lessons,
+handoffs: [`docs/INDEX.md`](docs/INDEX.md).
 
-Read it before vault-sync or vault-path work, Obsidian exclusion, or the
-sparse-checkout fix.
-
-Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
-which, the per-lane contract, and the KB-notes lane's author-at-final-quality
-rule: [`docs/INDEX.md`](docs/INDEX.md).
-
-**A checkpoint writes the vault, never the public KB**:
-[`obsidian_vault_wiring`](docs/reference/obsidian_vault_wiring.md).
+**LLM wiki.** `CPLBrain` (`samueltlee/CPLBrain#671`), beside the COG vault.
+Read root `index.md` first, or `/wiki-query`. Promote a settled decision or
+fact with `/wiki-ingest`. Captures still land where they land.
 
 ---
 
