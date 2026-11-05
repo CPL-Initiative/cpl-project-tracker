@@ -63,6 +63,7 @@ on:
           - cpl-chat
           - program-requirements-extract
           - workplan-rebuild
+          - library-revise-draft
 
 concurrency:
   group: cpl-chat-deploy
