@@ -6,7 +6,7 @@
   "edge_functions": 12,
   "file_datasets": 794,
   "external_services": 193,
-  "consumers": 522,
+  "consumers": 523,
   "workflows": 62,
   "data_js_files": 71,
   "tabs": 40
@@ -5880,7 +5880,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 225
+     "line": 226
     }
    ],
    "served": true,
@@ -6065,7 +6065,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 223
+     "line": 224
     },
     {
      "id": "script:kb/_apply_college_short_names.py",
@@ -18697,7 +18697,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 332
+     "line": 333
     }
    ],
    "served": true,
@@ -18754,7 +18754,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 280
+     "line": 281
     }
    ],
    "served": true,
@@ -18805,6 +18805,13 @@
      "pages": [
       "fact-sheet/index.html"
      ]
+    },
+    {
+     "id": "page:library/cpl-initiative-overview/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 53
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -18944,7 +18951,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 224
+     "line": 225
     }
    ],
    "served": true,
@@ -20521,42 +20528,49 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 333
+     "line": 334
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 198
+     "line": 199
+    },
+    {
+     "id": "page:library/cpl-initiative-overview/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 329
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 282
+     "line": 283
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 406
+     "line": 407
     },
     {
      "id": "page:library/ell-iet-cpl-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 722
+     "line": 747
     },
     {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 282
+     "line": 283
     }
    ],
    "served": true,

@@ -23,6 +23,7 @@
 //     (or stays still for one photo or reduced motion), in Malone's look on tokens.
 // Run from repo root: `npm test` (or `node tests/public_library.test.js`).
 const fs = require("fs");
+const path = require("path");
 const { JSDOM } = require("jsdom");
 
 const results = [];
@@ -135,10 +136,16 @@ block("(2d)", function () {
   const word = d.querySelector(".cplh button[data-cplh-links]");
   const panel = word && d.getElementById(word.getAttribute("aria-controls"));
   const links = Array.from(d.querySelectorAll('.cplh nav[aria-label="CPL pages"] a'));
-  // Six links since the Credential Catalog joined them (Sam, Open Asks Sheet 148 card 2, 2026-10-31).
+  // Six links since the Credential Catalog joined them (Sam, Open Asks Sheet 148 card 2, 2026-10-31); seven since
+  // the CPL Initiative overview led them (Sam, 2026-11-05: "add the link to the ell visual and all other visuals").
   check("(2d) ⭐ the links sit behind one word, Links, an underlined word button, collapsed over a hidden panel",
     !!word && word.textContent.trim() === "Links" && word.classList.contains("word") && word.getAttribute("aria-expanded") === "false" &&
-    !!panel && panel.hidden && links.length === 6 && links.every(function (a) { return panel.contains(a); }));
+    !!panel && panel.hidden && links.length === 7 && links.every(function (a) { return panel.contains(a); }));
+  // Every public page with the header leads its links with the CPL Initiative overview (Sam, 2026-11-05).
+  const lacking = fs.readdirSync("library").map(function (d) { return path.join("library", d, "index.html"); })
+    .concat(["library/index.html"]).filter(function (f) { return fs.existsSync(f); })
+    .filter(function (f) { const h = fs.readFileSync(f, "utf8"); return /class="cplh"/.test(h) && !/library\/cpl-initiative-overview\/" [^>]*aria-describedby="cplh-d-about">The CPL Initiative</.test(h); });
+  check("(2d) every public page's header links the CPL Initiative overview", lacking.length === 0, lacking.join(", "));
   const bad = links.filter(function (a) {
     const el = d.getElementById(a.getAttribute("aria-describedby") || "");
     const n = el ? el.textContent.trim().split(/\s+/).length : 0;
