@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1400,
-    "bytes": 14147623,
+    "bytes": 14147631,
     "over_budget": 1,
     "handoff_max": 585,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 486042,
+        "bytes": 486050,
         "over": 0
       },
       "handoff": {
@@ -62,9 +62,9 @@
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25856,
-      "bytes": 4209385989,
-      "heavy_bytes": 2991554017,
+      "files": 25857,
+      "bytes": 4209386585,
+      "heavy_bytes": 2991554605,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -174,10 +174,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853984017,
+        "bytes": 1853984605,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,984,017 B inside the vault"
+      "message": "directory totals 1,853,984,605 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -914,11 +914,11 @@
       "fixable": false,
       "path": "docs/session_585_handoff.md",
       "detail": {
-        "commits_since": 11,
+        "commits_since": 13,
         "budget": 6,
         "handoff": "session_585_handoff.md"
       },
-      "message": "11 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "13 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

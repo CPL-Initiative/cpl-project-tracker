@@ -161,8 +161,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **ELL IET Version 5 is a draft on the card** (SkyFlipFlop, 2026-11-05; Sam at 18:30Z: *"add a brief high level overview of the
   Chancellor's Office CPL Initiative as a visual with a link on this page"*): the Overview's *The CPL Initiative at a glance*, four
   numbered steps after the December 9 call, linked from its second agenda item; `make_tabs.py` builds it from Version 3. Link
-  https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa, stored by `kb/migrations/2026-11-05_library_ell_iet_v5_stored_draft.sql`
- ; the machine draft 22d6f5de-… moved to `regen.earlier`. Sierra reads it at 33,971 of 34,000: the
+  https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa, stored by `kb/migrations/2026-11-05_library_ell_iet_v5_card_links_draft.sql`
+  (top cards that link); earlier drafts sit in `regen.earlier`. Sierra reads it at 33,971 of 34,000: the
   build trims two repeated table phrases to make room. Version 4 stays public until Replace the public copy.
 - **ELL IET CPL Starting Points is at Version 4, public** (SkyRoundoff, 2026-11-05; Sam on seeing the draft: *"new
   visual looks wonderful!"*, then *"Replace the public copy with Version 4"*, receipt
