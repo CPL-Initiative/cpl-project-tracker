@@ -73,6 +73,10 @@ is his standing preference there too.
    as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
    the writer note in their comments, and merged the work (#2192). A PR updated in
    the last half hour is a live session: end in one line.
+   **Except a declared side session** (Sam, 2026-11-05, S583: *"go"*): when that PR's body declares a scope
+   (*Library side session (<moniker>): <files> and <tables>*), the firing proceeds, stays off every file, table and
+   routine step the scope names (a Library scope takes step 6 with it), and says so in its handoff. A PR with no
+   declared scope, or one whose scope names this firing's queue item, still ends the firing.
    **Read the open PRs even with `list_sessions` in hand, and an old one closely:**
    a side session's PR left open is work Sam approved that main never received.
    #2323 (the narrated funding film in Sam's own script, 2026-10-21) waited a week
