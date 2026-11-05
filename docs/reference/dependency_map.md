@@ -189,6 +189,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
+| `map_cpl_coordinator_compare` | tabs: `map-queue`, `map-users` | — |
 | `map_landing_contacts_replace` | scripts: `map/sync_landing_contacts.py` | — |
 | `map_landing_contacts_roster` | tabs: `csm-workspace`, `map-queue`, `map-users` | — |
 | `map_promote_custom_reports` | scripts: `kb/_sync_map_custom_reports.py` | — |
@@ -369,6 +370,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cobi_brand.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_orgs.js` | pages: `CPL_Dashboard.html` | — |
+| `cobi_refresh.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup_desc_*.js` | tabs: `coci-lookup` · scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py` | — |
 | `coci_program_export_*.csv` | scripts: `chatbox/build_coci_offerings.py` | — |
@@ -823,7 +825,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
 | `library_remediate.js` | tabs: `library` | — |
-| `live_metrics.json` | tabs: `college-briefing`, `cpl-pathways` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
+| `live_metrics.json` | tabs: `college-briefing`, `cpl-pathways` · pages: `fact-sheet/index.html`, `library/cpl-initiative-overview/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
 | `live_metrics_new.json` | workflows: `daily-dashboard.yml` | — |
 | `map/probe_users_schema.py` | workflows: `map-users-schema-probe.yml` | — |
 | `map/sync_landing_contacts.py` | workflows: `map-users-sync.yml` | — |
@@ -914,7 +916,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/index.html` | scripts: `scripts/ui_pass.py` | — |
-| `sierra/sidebar.js` | tabs: `library`, `sierra-training` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html` | — |
+| `sierra/sidebar.js` | tabs: `library`, `sierra-training` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-initiative-overview/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
 | `sierra_wording_check.js` | tabs: `sierra-training` | — |
@@ -1028,6 +1030,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
+| `tests/refresh_button_no_secret_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
@@ -1112,7 +1115,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
+| `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `exhibits`, `implementation-funding` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/adopt/index.html`, `library/cpl-opportunity/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py`, `map/sync_landing_contacts.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `credentialengineregistry.org` | tabs: `credential-reference` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_page.py`, `kb/_fetch_ce_top50.py` |
@@ -1297,5 +1300,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 106 Supabase tables · 49 RPCs · 12 edge functions · 792 file
-datasets · 193 external services · 521 consumers · 61 workflows · 40 tabs.
+Coverage: 106 Supabase tables · 50 RPCs · 12 edge functions · 794 file
+datasets · 193 external services · 523 consumers · 62 workflows · 40 tabs.

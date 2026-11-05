@@ -64,6 +64,19 @@ rule's name, verbatim, dated. The rule itself stays in `CLAUDE.md`.
 > said read. Sam's own framing applies: Rule 8 is **ingest**, sessions are
 > **query** — and the memory table only ever got the ingest half.
 
+### The human-sourced row that a session superseded (moved here 2026-11-05)
+
+*`CLAUDE.md` Rule 8, second paragraph, as it read from 2026-08-10 to 2026-11-05:*
+
+> On 2026-08-08 Sam said *"Sierra only lives in COBY for now"*; a later session read
+> the code (three callers, one shared function) and marked that row `superseded`.
+> Both were true — his claim was about **where the widget is deployed**, the code
+> finding about **what it calls** — but the fact left the default view, and he had
+> to say it again on 2026-08-10.
+
+The rule that stays in `CLAUDE.md`: supersede a human-sourced row only by saying so
+explicitly, or file a new row and flag the conflict.
+
 ## Rule 9 — the checkpoint trigger
 
 *`CLAUDE.md` lines 173–187, as of 2026-09-27:*

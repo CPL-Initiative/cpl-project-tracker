@@ -426,3 +426,51 @@ hook.
 Sam's test: three calls that used to ask, run in a new session with no prompt.
 Handoff 298 carries the paste, and the cleanup of the notes that call the
 prompt unreachable waits on it.
+
+## 2026-11-05 (S586 side job, COBIx round 1) — the proxy and the button take a credential
+
+COBIx, Sam's quality and security checker, read the repo, both Supabase projects and the Cloudflare
+account on 2026-11-05 and sent twelve findings. The reply with every verdict is
+`docs/security/cobix_round1_reply_2026-11-05.md` (#2816); this section keeps what the auth lane
+learned.
+
+**The worker was the open door, and it was ours to close in code.** `cloudflare-worker-proxy.js`
+forwarded any POST with an allowed Origin to Anthropic on the account key, and `/trigger` took a
+secret the page itself published (SEC-3, known since June and accepted because the pipeline is
+idempotent). Both paths now ask Postgres who is calling, the way `workplan-rebuild` already did:
+`x-team-pass` through `rpc/team_pass_ok` with the anon key, or a reviewer bearer through
+`rpc/is_allowed_reviewer`. The click moved out of the generator's inline `onclick` into
+`cobi_refresh.js`, the writers send the same credential from the keeper modules, and the KB
+portal passes its own phrase. Nothing in a page is a secret any more (#2818; the worker still has
+to be pasted, then `SCRAPE_SECRET` and `GITHUB_TOKEN` rotated: `docs/security/rotation_guide.md`).
+
+**What this does to the phrase question.** The phrase now opens one more surface, and a
+credential holder's script could spend the key, so the backstop is a Cloudflare rate-limit rule
+and the phrase oracle's throttle (step 2 of the agreed order). COBIx proposed revoking anon on the
+`*_pass_check` functions; that closes nothing, because `team_pass_ok()` is the function the
+browser, RLS and three edge functions call and it calls `team_pass_check` inside. The oracle is
+`team_pass_ok()`; the fix is a failed-attempt lockout inside the check, with hashing at rest as
+hygiene. This is one more argument for the lane's recommended direction, a magic link plus a role
+column, over a shared phrase.
+
+**Three things COBIx called gaps that are design.** `verify_jwt: false` on the edge functions
+(the flag only requires the public anon key and rejects the new publishable keys; seven of nine
+functions gate inside). Anon execute on the reviewer-or-phrase DEFINER functions (that is how the
+phrase reaches the database). The three materialized views (k=10 is applied inside the view; 0
+visible cells under 10 on 2026-11-05). Each is now written down with its reason, so the next
+audit reads the reason instead of re-finding the surface.
+
+**The loop with COBIx.** Its comments arrive on the PR thread under Sam's account; the session
+that opened the PR is woken and answers there. `docs/reference/cobix_pr_loop.md` and the
+`cobix-review.yml` stub (#2817) carry the guardrails: findings to verify, never a go; two rounds,
+then a person; comment-only.
+
+### Later the same evening (S586): the rotations, and step 2 drafted
+
+Sam pasted the worker and rotated both secrets himself, with proof runs between the steps (686 for
+`SCRAPE_SECRET` and the restored service key, 688 for the new fine-grained token). Two things worth
+keeping: a secret with a similar name took the random value meant for another, and the fix was a proof
+run before the cron plus one password-manager entry per secret named for where it lives; and
+`is_map_team()`, which no JS calls, is called by two RLS policies, so it stays executable by the API
+roles. Step 2's migration (#2822) is drafted on the live definitions and waits for the client switch to
+`team_pass_verify` before it is applied.

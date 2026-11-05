@@ -158,6 +158,11 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
   orders them, as the Cards' project cards already were.
 - **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
+- **ELL IET Version 5 is public** (SkyFlipFlop, 2026-11-05; Sam's Replace at 22:34Z, `library-publish` dispatched, run
+  42122991947): the Initiative at a glance and top cards that link; built by `make_tabs.py` from Version 3.
+- **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
+  overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
+  Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
 - **ELL IET CPL Starting Points is at Version 4, public** (SkyRoundoff, 2026-11-05; Sam on seeing the draft: *"new
   visual looks wonderful!"*, then *"Replace the public copy with Version 4"*, receipt
   `kb/receipts/cpl_library_skyroundoff_ell_v4_replace_2026-11-05.sql`; `library-publish.yml` run 42064847765 published it): an Overview tab, then a tab per project (ARIA tabs; every panel shows with no script). Drafted as

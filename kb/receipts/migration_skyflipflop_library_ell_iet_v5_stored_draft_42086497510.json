@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-05_library_ell_iet_v5_stored_draft.sql",
+ "name": "skyflipflop_library_ell_iet_v5_stored_draft",
+ "version": "20261105184300",
+ "sha256": "c7406cf15150952ced9e57650026d53145cb403235f7e69cb5a18f8f1e0aed08",
+ "run": "42086497510",
+ "status": 201,
+ "response": "[{\"slug\":\"ell-iet-cpl-starting-points\",\"regen\":{\"earlier\":[{\"note\":null,\"draft_id\":\"22d6f5de-3d3b-4cf9-896f-2f4a6fa4d676\",\"ready_at\":\"2026-11-05T18:30:45.887Z\",\"draft_url\":null,\"set_aside\":\"SkyFlipFlop built Version 5 in a session from the vault source, at Sam's request\",\"drafted_with\":\"library-revise-draft\",\"requested_by\":\"Sam\"}],\"publish\":\"show\",\"draft_id\":\"1cc83f99-0e5b-40fd-8e30-6b8c11092d8f\",\"ready_at\":\"2026-11-05T18:43:01Z\",\"draft_url\":\"https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa\",\"drafted_by\":\"SkyFlipFlop (session)\",\"drafted_with\":\"session\",\"requested_at\":\"2026-11-05T18:30:18.271Z\",\"requested_by\":\"Sam\"},\"updated_at\":\"2026-11-05 18:43:01.20959+00\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

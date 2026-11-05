@@ -908,6 +908,8 @@ PRESENTATION_DOCTRINE = {
     "text measure": (r"cpl-measure", r"full width"),
     # Sam, 2026-10-09: a First Light rule.
     "controls are underlined words": (r"underlined words", r"no border and no fill"),
+    # Sam, 2026-11-05: "this should be a rule for all visuals".
+    "a figure card opens what it counts": (r"opens what it counts",),
 }
 
 

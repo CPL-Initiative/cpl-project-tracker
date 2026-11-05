@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-05T15:54:08Z",
+ "written_at": "2026-11-05T22:15:32Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2483,
-     "of": 5519,
-     "words": "titles carry a review stamp (1,173 a person's, 1,310 a cohort's); 2,682 credentials, 2,216 of 2,985 records stamped",
+     "n": 2502,
+     "of": 5538,
+     "words": "titles carry a review stamp (1,173 a person's, 1,329 a cohort's); 2,698 credentials, 2,232 of 3,001 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1173,
-     "of": 5519,
+     "of": 5538,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -150,22 +150,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-05T15:54:01Z",
+    "at": "2026-11-05T21:20:48Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5519,
-    "stamped": 2483,
+    "titles": 5538,
+    "stamped": 2502,
     "person": 1173,
-    "cohort": 1310,
-    "credentials": 2682,
+    "cohort": 1329,
+    "credentials": 2698,
     "confirmed": 1173,
-    "records": 2985,
-    "records_stamped": 2216,
+    "records": 3001,
+    "records_stamped": 2232,
     "saved_at": "2026-11-05T15:54:01Z",
-    "fold_at": "2026-11-04T17:00:22Z",
+    "fold_at": "2026-11-05T21:20:48Z",
     "map_titles": 4960,
-    "unclassified": 63,
+    "unclassified": 44,
     "left_map": 622,
     "below_80": 1123,
     "below_60": 237
@@ -257,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-05T03:13:31+00:00",
+    "at": "2026-11-05T22:13:38+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -344,7 +344,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-05T03:15:23Z",
+    "at": "2026-11-05T22:07:42Z",
     "every_hours": null
    },
    "facts": {
@@ -468,7 +468,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-05T03:11:41Z",
+    "at": "2026-11-05T22:11:41Z",
     "every_hours": 24
    },
    "facts": {
@@ -728,23 +728,23 @@
     {
      "name": "classifier",
      "placed": 896,
-     "untouched": 814,
+     "untouched": 820,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 6,
+     "left": 0,
      "looked": 57
     },
     {
      "name": "course-identity",
      "placed": 173,
-     "untouched": 149,
+     "untouched": 162,
      "kept": 0,
      "renamed": 11,
      "moved": 0,
      "by_procedure": 0,
-     "left": 13,
+     "left": 0,
      "looked": 11
     },
     {
@@ -816,12 +816,12 @@
    ],
    "total": {
     "placed": 1197,
-    "untouched": 1060,
+    "untouched": 1079,
     "kept": 23,
     "renamed": 71,
     "moved": 0,
     "by_procedure": 24,
-    "left": 19,
+    "left": 0,
     "looked": 94
    }
   },

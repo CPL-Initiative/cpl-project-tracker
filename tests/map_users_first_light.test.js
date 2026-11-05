@@ -55,7 +55,7 @@ const seen = [];
   const on = root.querySelector(".mapu-lensbtn.on");
   check("(d) " + lens + ": the selected lens says so with aria-pressed",
     on && on.getAttribute("aria-pressed") === "true"
-      && root.querySelectorAll('.mapu-lensbtn[aria-pressed="false"]').length === 2);
+      && root.querySelectorAll('.mapu-lensbtn[aria-pressed="false"]').length === 3);
   Array.prototype.forEach.call(root.querySelectorAll("table.mapu-table"), function (t) {
     if (t.parentElement.closest(".mapu-table")) return;          // a roster nested in a row
     const box = t.parentElement;

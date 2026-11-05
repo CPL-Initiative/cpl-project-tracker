@@ -128,10 +128,12 @@
     // Where a file stands in the Library's remediation (S517; Sam, 2026-10-29: "a box to
     // count and filter for the files in remediation or remediated").
     in_remediation: { word: "In remediation", count: "in remediation" },
-    remediated: { word: "Remediated", count: "remediated" }
+    remediated: { word: "Remediated", count: "remediated" },
+    // Fix 3: the public copy was revised on the card, so the script that rebuilds it is behind it.
+    source_behind: { word: "Source behind the page", count: "whose source is behind the public page" }
   };
   var REM_FLAG_ORDER = ["in_remediation", "remediated"];
-  var FLAG_ORDER = ["not_filed", "public_unset", "ready", "regen", "refresh", "kb_note"];
+  var FLAG_ORDER = ["not_filed", "public_unset", "ready", "regen", "refresh", "source_behind", "kb_note"];
   // A document's pasted text, and the whole list, stay under cpl_library_sources_ck.
   var SRC_TEXT_MAX = 60000, SRC_MAX = 20, SRC_BYTES_MAX = 380000;
   // refresh_note's cap in cpl_library_text_ck; longer instructions go whole into the documents.
@@ -228,9 +230,16 @@
     if (rs === "ready") f.push("ready");
     else if (rs) f.push("regen");
     else if (r.refresh_note) f.push("refresh");
+    if (currentVersion(r) && currentVersion(r).source_behind) f.push("source_behind");
     if (r.knowledge === true && !r.kb_note) f.push("kb_note");
     if (r.remediation === "in_remediation" || r.remediation === "remediated") f.push(r.remediation);
     return f;
+  }
+  // The version a record names as its public copy (its status starts "Current").
+  function currentVersion(r) {
+    var v = Array.isArray(r && r.versions) ? r.versions : [];
+    for (var i = v.length - 1; i >= 0; i--) if (v[i] && /^Current/.test(String(v[i].status || ""))) return v[i];
+    return null;
   }
   // Where a Regenerate request stands: null when none is open; "waiting" until a
   // session puts a draft on it; "ready" while a draft of a piece with a public copy
@@ -245,6 +254,8 @@
   function flagText(f, r) {
     if (f === "refresh" && r.refresh_note) return "Changes to make: " + r.refresh_note;
     if (f === "regen" && r.refresh_note) return "Rebuild requested: " + r.refresh_note;
+    if (f === "source_behind") return "Source behind the page: the public copy was revised on its card, so fold that change into " +
+      (r.rebuild_from ? r.rebuild_from.split(" ")[0] : "its source") + " before the next rebuild from source, or the rebuild drops it.";
     if (f === "in_remediation" && !r.url) return "In remediation" + (r.file_name ? " from " + r.file_name : "") + ". The Library keeps the record, not the file: press Finish remediation and choose the file again.";
     if (f === "remediated" && !r.url) return "Remediated. Put the remediated file in the CPLLibrary folder, then press File it and paste its link.";
     return FLAGS[f].word;
@@ -1366,7 +1377,7 @@
       var timer = setTimeout(function () { finish({ error: "The accessibility check did not finish; open the draft and run npm run a11y on it." }); }, 15000);
       f.onload = function () {
         clearTimeout(timer);
-        try { finish(checkDoc(f.contentDocument, f.contentWindow)); }
+        try { finish(checkDoc(f.contentDocument, f.contentWindow, html)); }
         catch (e) { finish({ error: "The accessibility check could not read the draft." }); }
       };
       // The draft goes in before the frame does, so the one load event is the draft's own, never about:blank's.
@@ -1392,7 +1403,28 @@
   }
   // What the check measures, in the page's own terms: the title and language, each picture's words, the heading
   // order, each link's name, and every text color against what it sits on (AA: 4.5:1, 3:1 for large text).
-  function checkDoc(doc, win) {
+  // The text Sierra reads from a page, uncapped (fix 1 of Sam's 2026-11-05 "build fixes 1-3"). The same
+  // rules as cpl-chat's libraryPageText and the drafter's sierra_text.mjs; tests/library_revise_draft.test.js
+  // holds all three to one answer on a real page.
+  var SIERRA_MAX = 34000;
+  var SIERRA_ENT = { amp: "&", lt: "<", gt: ">", quot: "\"", apos: "'", nbsp: " ", middot: "\u00b7", ndash: "\u2013", mdash: "\u2014", rsquo: "\u2019", lsquo: "\u2018", rdquo: "\u201d", ldquo: "\u201c", hellip: "\u2026" };
+  function sierraText(html) {
+    var body = String(html || "")
+      .replace(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/g, " ")
+      .replace(/<header\b[^>]*\bclass="cplh"[\s\S]*?<\/header>/gi, " ")
+      .replace(/<(head|script|style|svg|nav|noscript|template)\b[\s\S]*?<\/\1>/gi, " ")
+      .replace(/<!--[\s\S]*?-->/g, " ")
+      .replace(/<\/(p|div|li|h[1-6]|tr|section|article|td|th)>/gi, "$& \n")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&#(\d+);/g, function (_m, n) { return String.fromCodePoint(Number(n)); })
+      .replace(/&#x([0-9a-f]+);/gi, function (_m, n) { return String.fromCodePoint(parseInt(n, 16)); })
+      .replace(/&([a-z]+);/gi, function (m, n) { var v = SIERRA_ENT[n.toLowerCase()]; return v === undefined ? m : v; });
+    return body.split("\n").map(function (l) { return l.replace(/\s+/g, " ").trim(); }).filter(Boolean).join("\n");
+  }
+  // Fix 2: the card's check reads the draft whole. The frame runs no script, so a tabbed page shows
+  // every panel and every tab is checked; it adds the WCAG 2.2 target size (24 by 24, the rule
+  // npm run a11y applies, with its inline-link exception) and Sierra's count.
+  function checkDoc(doc, win, html) {
     var fix = [], pass = [];
     if (!doc || !win) return { error: "The accessibility check could not read the draft." };
     if (!doc.documentElement.getAttribute("lang")) fix.push("The page names no language.");
@@ -1432,6 +1464,25 @@
     var n = Object.keys(pairs).length;
     if (n && !lows.length) pass.unshift(n + (n === 1 ? " color pair passes" : " color pairs pass") + " AA");
     if (!doc.documentElement.getAttribute("lang") || !(doc.title || "").trim()) { /* listed above */ } else pass.push("its title and language set");
+    var small = 0, smallSay = "";
+    Array.prototype.forEach.call(doc.querySelectorAll('a[href],button,input:not([type="hidden"]),select,textarea,[role="button"]'), function (el) {
+      var b = el.getBoundingClientRect();
+      if (b.width === 0 && b.height === 0) return;
+      if (el.closest(".skip, .skip-link, .sr-only")) return;
+      if (el.tagName === "A" && el.closest("p, li, footer")) return;
+      var wrap = el.closest("label");
+      if (wrap) { var lb = wrap.getBoundingClientRect(); if (lb.width > 0 && lb.height > 0) b = lb; }
+      if (b.width >= 24 && b.height >= 24) return;
+      small += 1;
+      if (!smallSay) smallSay = "“" + (el.textContent || el.getAttribute("aria-label") || "").trim().replace(/\s+/g, " ").slice(0, 30) + "” is " + Math.floor(b.width) + " by " + Math.floor(b.height * 10) / 10 + "px";
+    });
+    if (small) fix.push(small + (small === 1 ? " link or button is" : " links or buttons are") + " under 24 by 24px (" + smallSay + ").");
+    else pass.push("every link and button at least 24px");
+    if (html !== undefined) {
+      var n2 = sierraText(html).length;
+      if (n2 > SIERRA_MAX) fix.push("Sierra reads " + n2.toLocaleString("en-US") + " characters of its text; past " + SIERRA_MAX.toLocaleString("en-US") + " she skips the middle of the page. Shorten repeated wording to make room.");
+      else pass.push("Sierra reads it whole (" + n2.toLocaleString("en-US") + " of " + SIERRA_MAX.toLocaleString("en-US") + " characters)");
+    }
     return { fix: fix, pass: pass };
   }
 
@@ -3485,6 +3536,7 @@
     _sharePointOnly: sharePointOnly,
     _regenWords: regenWords, _canDraftHere: canDraftHere, _draftNow: draftNow, _openDraft: openDraft,
     _checkDoc: checkDoc,
+    _sierraText: sierraText,
     _requestText: requestText,
     _sourcesText: sourcesText,
     _ensureSierraBar: ensureSierraBar

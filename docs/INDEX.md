@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 574 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 98 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 65 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 551 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1388** | |
+| Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 553 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1391** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-05 S586 SkyMessier continued (Sam's side session for COBIx): step 1 verified end to end (worker pasted, both secrets rotated, proof runs 686 and 688); COBIx's identity recorded (#2820); step 2's migration drafted, not applied (#2822); light checkpoint at the context WARN; handoff 587.
+- 2026-11-05 S585 SkyMessier (Sam's side session for COBIx): COBIx round 1 answered (#2816), the COBIx PR loop and `cobix-review.yml` stub (#2817), security step 1: the worker and the refresh button take a reviewer sign-in or the team phrase, no trigger secret in the page (#2818); light checkpoint; handoff 586.
 - 2026-11-05 S584 SkyMinkowski (scheduled firing, 14:12Z): course objectives read and stored beside the SLOs (`course_outcomes.kind`, applied live, #2808); Monterey Peninsula's page read (#2809); light checkpoint; handoff 585.
 - 2026-11-05 S581 SkyMeathook (scheduled firing, 10:12Z): start checks only, the queue empty until Mission's full read on 2026-11-06 UTC; light checkpoint; handoff 582.
 - 2026-11-05 S577 SkyKumquat and SkyBarnard (Sam's session, both queues): the Subjects List recode, eleven Common SUBJ codes onto 2,389 M-IDs (#2790), `kb_curation` re-keyed and read back; the S573 cert-link PR merged (#2763); the Library revises a public visual from its card, no session (#2791, #2792); full checkpoint; handoff 578.
