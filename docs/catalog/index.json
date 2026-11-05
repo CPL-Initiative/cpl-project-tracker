@@ -16570,8 +16570,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 545,
+   "count": 546,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 580,
+     "path": "docs/session_580_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 580 handoff: Mission College's SLO trial is running; the night's other routine steps were empty",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25864,5 +25879,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1382
+ "total": 1383
 }
