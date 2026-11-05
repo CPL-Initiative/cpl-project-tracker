@@ -1035,3 +1035,47 @@ publishes approved drafts every three hours with a receipt (#2791). The function
 writes with the caller's own credential, so the table's policies and history trigger stand as they do for the page.
 The MCP migration timed out on its confirmation prompt; `supabase-migrate.yml` applied the same file from the branch.
 The function deploys through `cpl-chat-deploy.yml` once #2792 adds it to the choices (Sam: "Deploy it").
+
+## 2026-11-05 SkyCartwheel (Library side session): revise on the card, and the List
+
+Sam pressed *Ask for more changes* on ELL IET's ready Version 3 and "nothing seemed to happen". Three lessons came out of it.
+
+- **A control that acts somewhere else reads as one that did nothing.** The click worked: it scrolled up to the box at the
+  top of the tab and focused its Instructions, with the box's heading and the piece's name off the screen, far from the
+  card he pressed. Version 22 puts the box, its answer and its errors on the card itself (`sayOn`), and a piece found
+  anywhere opens its own card or row.
+- **More changes to a draft must start from the draft.** Start on a ready draft wrote a fresh `regen` (dropping
+  `ready_at`, `draft_id`, `draft_url`), and `library-revise-draft` always read the public copy, so more changes to
+  Version 3 would have come back built on Version 2 with Version 3's changes gone. A request now names its base
+  (`based_on_draft`) and keeps every earlier draft (`regen.earlier`); the box starts with no documents, because the ones
+  the draft was made from are already in it. `tests/library_revise_draft.test.js` D fails on the old behavior.
+- **A draft held only at a claude.ai link is out of reach of the machine.** Neither `library-publish.yml` nor the edge
+  function can read claude.ai, so Replace waited on a queue session. SkyCartwheel stored S557's Version 3 Pages copy as a
+  `cpl_library_drafts` row (migration `2026-11-05_library_ell_iet_v3_stored_draft.sql`, sha256 in its header).
+
+Two smaller ones from the build:
+
+- **An iframe's `srcdoc` set after it is in the page fires its first load for about:blank.** The draft check read an empty
+  page and reported no title and no language; set `srcdoc` before appending the frame.
+- **A seeded a11y target measures what the unseeded one never opens.** `cobi:library` reaches only the locked view. The
+  seeded `library-list` target, with a panel open, found the Details links at 20px and a skipped heading level; the
+  Cards view had hidden both behind a closed Details. A lead word in `--seal-blue` vanished in dark mode, found by the
+  dark screenshot; a lead takes `--cobalt` (the link role every theme defines) and weight, never a second color.
+
+Fable advised on the flow (one public copy, at most one draft, four states, the next step on the card; "promise a check,
+not a repair"). Sam: "Version 22 looks better"; "Do we need the One chip? Why not put focus on the title"; then the List.
+
+## Moved from the lane (SkyCartwheel, 2026-11-05)
+
+- **Revise from the card, no session (built S577, SkyBarnard; Sam, 2026-11-05: "Build it").** On a piece with a Pages
+  copy, Revise and remediate's request now offers **Draft it now**: the edge function `library-revise-draft` reads
+  `library/<slug>/` from Pages, asks Claude for edits (each an exact passage occurring once, all or none, the page's frame
+  kept; `apply_edits.mjs`), stores the draft in `cpl_library_drafts` and sets `regen.ready_at` and `regen.draft_id`, all
+  with the caller's own credential. The card offers **Open the draft** and **Replace the public copy**; every three hours
+  `library-publish.yml` (`scripts/library_publish.py`) writes an approved draft to `library/<slug>/index.html` with a
+  receipt (`kb/receipts/library_publish/`), commits to main, then moves the record (Version N+1 Current, the one before
+  Replaced, Changes to make and regen cleared), guarded on the `updated_at` it read. A piece with no Pages copy, a
+  SharePoint file, or only a linked document still goes to a session (Copy the request). Governance: dismissed with
+  reasons (`table:cpl_library_drafts`, `function:library-revise-draft`, `workflow:library-publish.yml`). Migration
+  `kb/migrations/2026-11-05_library_drafts.sql` (rollback beside it); the function deploys with `cpl-chat-deploy.yml`
+  (`function: library-revise-draft`). Tests: `tests/library_revise_draft.test.js`, `tests/library_publish_test.py`.

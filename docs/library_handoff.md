@@ -1,7 +1,7 @@
 ---
-title: Library — side-lane handoff (SkyChokeberry, beside S520)
-date: 2026-10-29
-tags: [handoff, library, remediation, side-lane]
+title: Library — side-lane handoff (SkyCartwheel, beside the CPL Queue routine)
+date: 2026-11-05
+tags: [handoff, library, revise, list-view, side-lane]
 related:
   - "[[docs/reference/lanes/library]]"
   - "[[docs/library_lessons]]"
@@ -9,61 +9,44 @@ related:
 
 # Library — side-lane handoff
 
-> **In progress (2026-11-05): SkyCartwheel**, a Library side session beside the CPL Queue routine
-> (S584 SkyMinkowski). One writer for the Library files until this note is replaced.
+> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`; the hourly CPL Queue routine
+> (S584 SkyMinkowski and later) writes those. No checkpoint was run: the lane file, the lessons and this note are this
+> session's whole record, with `python3 kb/_docs_audit.py` run before the last commit.
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 520
-> (in #2560) belongs to S520 SkyLingonberry, the funding session running beside this one, and its
-> checkpoint writes 521. This was a **light checkpoint** (no §11 row moved, no re-mint, no Rule 10
-> data write).
+Your moniker is **SkyRoundoff**. You pick up the **Library** lane after SkyCartwheel, a side session Sam opened on
+2026-11-05 to fix the COBI Library tab's issues. Read in order:
+1. [`docs/reference/lanes/library.md`](reference/lanes/library.md): *Version 22 and the List* and *Next*.
+2. [`docs/library_lessons.md`](library_lessons.md): *2026-11-05 SkyCartwheel*, at the end.
 
-Your moniker is **SkyJuneberry**. You are picking up the **Library** lane after SkyChokeberry, a side session Sam ran on 2026-10-29
-while S519 wrapped up and S520 worked funding. Read in order:
-1. [`docs/reference/lanes/library.md`](reference/lanes/library.md), item ⑪ at the foot.
-2. [`docs/library_lessons.md`](library_lessons.md): *A form's limit must be the column's* and
-   *Moved from the lane (S520's side session)*, both at the end.
+## What shipped (PR #2807, open, held for the redeploy below)
+- **Ask for more changes keeps the draft.** Sam's report ("nothing seemed to happen") had a worse problem behind it:
+  Start would have dropped Version 3 and drafted from Version 2. More changes now build on the draft
+  (`regen.based_on_draft`, `regen.earlier`); `library-revise-draft` drafts from it.
+- **ELL IET Version 3 is a stored draft** (`cpl_library_drafts` 200adaee-…, migration
+  `kb/migrations/2026-11-05_library_ell_iet_v3_stored_draft.sql`, applied by `supabase-migrate` run 42039458662,
+  rollback beside it). The public copy stays Version 2 until Sam presses Replace the public copy.
+- **Version 22**, the mockup Sam approved (Library canvas, https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR, advised
+  by Fable): the card's state line and next step, Revise's box on the card, What changed with a check run on the draft,
+  Edit in Details, the size beside the title.
+- **The List** (Sam's ask the same afternoon): `#library` opens a Commons List, every piece a row, its card in the side
+  panel; Cards at `#library/cards`; the Library in the Commons look (`commons_look.js`, and CLAUDE.md's departure line).
 
-## What shipped
-- **#2564, merged b1585e3b, live on Pages:** Revise and remediate from the one box. The panel is
-  *Create, Revise or Remediate a Document*; it finds a piece already here by a picker label naming
-  its kind, its own link, a file named for it, or the card's **Revise and remediate** or **Edit**.
-  Edit lives only in the box now. Word files are read in the browser. Instructions past
-  `refresh_note`'s 600 characters go whole into `sources`. Every revision request's paste asks the
-  session to remediate the draft before it comes back; `scheduled_sessions` step 6 says the same.
-  Regenerate's form and its publish question are gone. Test `library` 263/263, block (19).
-- **The cause of Sam's report:** his ELL revision never saved. Regenerate's box allowed 4,000
-  characters, the column holds 600, and the refusal printed far above the card.
-- **Mockup Version 21** sits beside Version 20 on the same canvas:
-  https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR.
-- **Outside the repo:** Sam's summit deck (*0950-1045 1.4 Leading CPL Forward*), handed to him in
-  chat as `_2.pptx`: Shelly's (17-20) and Sharon's (21-34) slides restyled to his section's look, and
-  his speaker scripts, low key and high level at his ask, in the notes of 7, 8 and 10-16 (9 kept his
-  own). The script text and the build are in the vault (see the session note).
-
-## Decisions Sam made this run (cpl_memory `sam-library-revise-from-the-box-2026-10-29`, verified)
-- Fold Edit and Regenerate for existing pieces into the one box; keep its simplicity.
-- *"could be as simple as choosing an existing item in the drop box"*; each label names its kind.
-- *"Maybe make Revise 'Revise and Remediate'"*: every rebuild is remediated.
-- For his deck: style everything on his slides; a script in his slides' notes only; *"low key and
-  higher elevation even though there is a lot of content."*
+## Waiting on Sam
+1. **Redeploy `library-revise-draft` with the merge** (asked in chat). The card asks for drafts built on a draft and
+   What changed reads the edit pairs; the deployed function knows neither. Merge #2807 only together with
+   `cpl-chat-deploy.yml` (`function: library-revise-draft`). `test` was green on each pushed head.
+2. **Replace the public copy on ELL IET** when Version 3 reads right.
+3. **Edit moved off the card's top row into Details.** That reverses his 2026-10-20 call ("move the Edit button onto the
+   top layer of the card"); his Version 22 approval covers it, and he was told so. Restore it if he asks.
 
 ## Next
-1. **Sam re-enters the ELL revision** with Revise and remediate (the first never saved). The overnight
-   queue run picks it up (step 6); his Copy the request starts it sooner.
-2. **The daytime Library run (Sheet 131)** still does not exist; only the overnight queue routine
-   does (`list_triggers`, 2026-10-29). It waits on Sam, from claude.ai's routines page.
-3. **The box cannot combine two decks** (Sam asked; one file at a time, and a brief keeps no bytes).
-   A session with the files does it today (python-pptx and LibreOffice are in the image). Worth a
-   card if he asks again.
-4. **Slides 18 and 20 of the summit deck are SmartArt**, left for Sam by hand; slide 14's notes flag
-   $1,893,023 (the page's noncredit Total Possible) against $1,783,399 (slide 9's script), handed to
-   S520's funding session.
-
-## Skipped on this light checkpoint
-§11 row (state unchanged), `kb/README.md`, `README.md`, KB notes (the pitfall went to `cpl_memory`
-as `pitfall-form-limit-must-match-column-2026-10-29`, proposed), the Pipeline tab, and the
-`kb/status/` files (S520's; this run touched no common reference).
+- The Coordinator Guide's request (Sam, 2026-11-05 12:36Z: Request Adopt links) has no Pages copy, so a session makes it
+  (Copy the request), or `library_page.py` gives it one and the card drafts it.
+- IACA waits on the Microsoft 365 connector, as before.
 
 ## Let go
-PR subscription on #2564 dropped at merge; the safety check-in deleted. The watch on the mockup
-canvas ends with this session.
+The PR subscription on #2807 is dropped at sign-off; the artifact watch on the mockup canvas ends with the session.
+No check-ins are scheduled.
+
+> *Greetings, you are SkyRoundoff, a Library side session beside the CPL Queue routine, see SkyCartwheel's handoff —
+> `docs/library_handoff.md` — let's keep rolling with the Library.*
