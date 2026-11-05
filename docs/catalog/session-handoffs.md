@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-552 document(s).
+553 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 587 | [Session 587 handoff: step 1 verified end to end; step 2's migration drafted, not applied](../session_587_handoff.md) | 2026-11-05 |
 | 586 | [Session 586 handoff: COBIx's first audit answered; the proxy and the refresh button take a credential](../session_586_handoff.md) | 2026-11-05 |
 | 585 | [Session 585 handoff: course objectives read and stored; Monterey Peninsula's page read](../session_585_handoff.md) | 2026-11-05 |
 | 584 | [Session 584 handoff: the queue was not empty; five lane items the handoffs had dropped](../session_584_handoff.md) | 2026-11-05 |

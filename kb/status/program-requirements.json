@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-05T19:55:13Z",
-  "session": 585,
+  "written_at": "2026-11-05T22:13:20Z",
+  "session": 586,
   "moniker": "SkyMessier",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_586_handoff.md",
+  "handoff": "docs/session_587_handoff.md",
   "next_step": {
     "title": "Monterey Peninsula's six unequal records",
     "text": "Read back the free page read on #2809, write any reconcile step from the catalog's words, then reconcile and reread."
@@ -250,6 +250,10 @@
     {
       "at": "2026-11-05T19:54:00Z",
       "text": "A side session answered COBIx's security audit and closed the drafting proxy and the refresh trigger behind a reviewer sign-in or the team phrase (tracker 2816, 2817, 2818). The harvest's tables and its queue did not move; Monterey Peninsula's page read and Mission's full read stand where the 585 handoff left them."
+    },
+    {
+      "at": "2026-11-05T22:13:00Z",
+      "text": "The side session finished security step 1 with Sam (worker pasted, both secrets rotated, proof runs 686 and 688) and drafted step 2's migration (tracker 2822). The harvest's tables and queue did not move."
     }
   ],
   "headline": [
