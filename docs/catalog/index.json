@@ -16581,8 +16581,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 552,
+   "count": 553,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 587,
+     "path": "docs/session_587_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "security",
+      "cobix",
+      "org-phrase-scope-auth"
+     ],
+     "title": "Session 587 handoff: step 1 verified end to end; step 2's migration drafted, not applied",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25981,5 +25997,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1390
+ "total": 1391
 }

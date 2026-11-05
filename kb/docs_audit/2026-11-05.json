@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1404,
-    "bytes": 14186247,
+    "files": 1405,
+    "bytes": 14193081,
     "over_budget": 0,
-    "handoff_max": 586,
+    "handoff_max": 587,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59875,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 144,
-        "bytes": 4329566,
+        "bytes": 4329707,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9888,
+        "bytes": 10184,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2636091,
+        "bytes": 2636803,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 488036,
+        "bytes": 488324,
         "over": 0
       },
       "handoff": {
-        "files": 552,
-        "bytes": 3830719,
+        "files": 553,
+        "bytes": 3836116,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 25870,
-      "bytes": 4209488583,
-      "heavy_bytes": 2991578700,
+      "files": 25873,
+      "bytes": 4210323743,
+      "heavy_bytes": 2992383854,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -210,10 +210,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 41002597,
+        "bytes": 41790021,
         "kind": "dir"
       },
-      "message": "directory totals 41,002,597 B inside the vault"
+      "message": "directory totals 41,790,021 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -240,10 +240,10 @@
       "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 16014920,
+        "bytes": 16017881,
         "kind": "dir"
       },
-      "message": "directory totals 16,014,920 B inside the vault"
+      "message": "directory totals 16,017,881 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -450,10 +450,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11908880,
+        "bytes": 11902140,
         "kind": "file"
       },
-      "message": "11,908,880 B single file inside the vault"
+      "message": "11,902,140 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -530,10 +530,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10095661,
+        "bytes": 10095662,
         "kind": "file"
       },
-      "message": "10,095,661 B single file inside the vault"
+      "message": "10,095,662 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -730,10 +730,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3495324,
+        "bytes": 3505441,
         "kind": "file"
       },
-      "message": "3,495,324 B single file inside the vault"
+      "message": "3,505,441 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -860,20 +860,20 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2226529,
+        "bytes": 2231237,
         "kind": "file"
       },
-      "message": "2,226,529 B single file inside the vault"
+      "message": "2,231,237 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/unified_titles.json",
       "detail": {
-        "bytes": 2184364,
+        "bytes": 2191047,
         "kind": "file"
       },
-      "message": "2,184,364 B single file inside the vault"
+      "message": "2,191,047 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -898,14 +898,19 @@
     {
       "rule": "handoff_drops_active_lane",
       "fixable": false,
-      "path": "docs/session_586_handoff.md",
+      "path": "docs/session_587_handoff.md",
       "detail": {
         "lanes": [
-          "map-users-student-contact"
+          "cer-procedures",
+          "common-subjects-reference",
+          "governance-team-enablement",
+          "map-users-student-contact",
+          "program-requirements-harvest",
+          "reviewer-session-lifetime"
         ],
         "days": 7
       },
-      "message": "`docs/session_586_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: map-users-student-contact. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
+      "message": "`docs/session_587_handoff.md` never names 6 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, common-subjects-reference, governance-team-enablement, map-users-student-contact, program-requirements-harvest, reviewer-session-lifetime. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

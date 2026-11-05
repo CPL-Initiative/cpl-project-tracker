@@ -464,3 +464,13 @@ audit reads the reason instead of re-finding the surface.
 that opened the PR is woken and answers there. `docs/reference/cobix_pr_loop.md` and the
 `cobix-review.yml` stub (#2817) carry the guardrails: findings to verify, never a go; two rounds,
 then a person; comment-only.
+
+### Later the same evening (S586): the rotations, and step 2 drafted
+
+Sam pasted the worker and rotated both secrets himself, with proof runs between the steps (686 for
+`SCRAPE_SECRET` and the restored service key, 688 for the new fine-grained token). Two things worth
+keeping: a secret with a similar name took the random value meant for another, and the fix was a proof
+run before the cron plus one password-manager entry per secret named for where it lives; and
+`is_map_team()`, which no JS calls, is called by two RLS policies, so it stays executable by the API
+roles. Step 2's migration (#2822) is drafted on the live definitions and waits for the client switch to
+`team_pass_verify` before it is applied.
