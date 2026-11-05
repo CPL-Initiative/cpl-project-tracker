@@ -146,7 +146,11 @@
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
     view: "pieces", src: {},
     pick: null, use: null, rem: null, autoDraft: true,
-    piece: null, pieceUse: null
+    piece: null, pieceUse: null,
+    // Version 22 (Sam, 2026-11-05: "Version 22 looks better"): revising happens on the card
+    // (cardBox), a card's own message prints on it (msgFor), and a ready draft's What changed
+    // reads the draft once (drafts).
+    cardBox: null, msgFor: null, drafts: {}, cbDocs: false, cbName: false
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -251,7 +255,7 @@
   // downloaded copy dropped into the one box, whose words this browser reads.
   function isSharePoint(url) { return /^https:\/\/[a-z0-9-]+\.sharepoint\.com\//i.test(String(url || "")); }
   var SP_INSTEAD = "A session cannot open SharePoint yet: RCCD has not approved the Microsoft 365 connector. " +
-    "Download a copy of the file from SharePoint, then drop that copy into Create, Revise or Remediate a Document.";
+    "Download a copy of the file from SharePoint, then add that copy in the card's Revise box under Add a document to work from.";
   // A request a run cannot start: no source to rebuild from, no document it can read, and the
   // only file on SharePoint.
   function sharePointOnly(r) {
@@ -260,7 +264,9 @@
     if (srcs.some(function (x) { return (x.text && String(x.text).trim()) || (x.url && !isSharePoint(x.url)); })) return false;
     return isSharePoint(r.url) || srcs.some(function (x) { return isSharePoint(x.url); });
   }
-  function say(text, isErr) { state.message = text; state.msgErr = !!isErr; }
+  function say(text, isErr) { state.message = text; state.msgErr = !!isErr; state.msgFor = null; }
+  // A card's own action answers on that card, where the person is looking (Sam, 2026-11-05).
+  function sayOn(id, text, isErr) { say(text, isErr); state.msgFor = id; }
   function statusWord(r) { return r.status ? STATUS[r.status] || r.status : "Not set"; }
   function seenWord(r) { return r.seen_by ? SEEN[r.seen_by] || r.seen_by : "Not set"; }
   // Who a piece is made for, in words: the type (or the typed Other category) and the name.
@@ -372,7 +378,31 @@
       R + " .lib-ghead{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-bottom:10px;}",
       R + " .lib-ghead .count{color:var(--text-muted);font-size:.9rem;}",
       R + " .lib-items{display:grid;gap:10px;}",
-      R + " .lib-item{display:grid;grid-template-columns:176px minmax(0,1fr) auto;gap:6px 18px;padding:14px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
+      R + " .lib-item.has-thumb{grid-template-columns:176px minmax(0,1fr) auto;}",
+      R + " .lib-size{font-family:inherit;font-size:.92rem;font-weight:400;color:var(--text-muted);white-space:nowrap;margin-left:8px;}",
+      R + " .lib-word{display:inline-flex;align-items:center;min-height:24px;padding:0 2px;background:none;border:0;font:inherit;font-weight:600;font-size:.95rem;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left;white-space:nowrap;}",
+      R + " .lib-word:hover{text-decoration-thickness:2px;}",
+      R + " .lib-word:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}",
+      R + " .lib-word.lead{font-weight:700;font-size:1.05rem;}",
+      R + " .lib-word[disabled]{color:var(--text-muted);cursor:default;}",
+      R + " .lib-state{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--border);display:grid;gap:8px;}",
+      R + " .lib-state:focus{outline:none;}",
+      R + " .lib-state .now{margin:0;font-weight:600;color:var(--text-strong);}",
+      R + " .lib-state .why{margin:0;color:var(--text-muted);font-size:.92rem;}",
+      R + " .lib-next{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;}",
+      R + " .lib-next form{display:inline-flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;margin:0;}",
+      R + " .lib-next input{font:inherit;padding:4px 8px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface-opaque);color:var(--text-body);}",
+      R + " .lib-cbox,.lib-changed{padding:14px;border:1px solid var(--border);border-radius:8px;background:var(--surface-subtle);display:grid;gap:10px;}",
+      R + " .lib-cbox h4,.lib-changed h4{margin:0;font-family:'Playfair Display',Georgia,serif;font-size:1.08rem;color:var(--text-strong);}",
+      R + " .lib-cbox p,.lib-changed p{margin:0;}",
+      R + " .lib-cbox textarea,.lib-cbox input[type=url],.lib-cbox input[type=text]{width:100%;box-sizing:border-box;}",
+      R + " .lib-pair{display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 10px;font-size:.92rem;}",
+      R + " .lib-pair b{color:var(--text-muted);font-weight:600;}",
+      R + " .lib-pair span{overflow-wrap:anywhere;}",
+      R + " .lib-fix{color:var(--crimson);}",
+      R + " .lib-recacts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 10px;}",
+      R + " .lib-acts .lib-word{justify-content:flex-start;}",
+      R + " .lib-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:14px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
       R + " .lib-thumb{width:176px;aspect-ratio:16/10;max-width:100%;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--surface-muted);}",
       R + " .lib-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}",
       R + " .lib-tile{height:100%;display:grid;align-content:center;justify-items:start;gap:2px;padding:10px 14px;background:var(--surface-subtle);}",
@@ -431,8 +461,8 @@
       R + " .lib-muted{color:var(--text-muted);}",
       "@media (max-width:560px){" + R + " .lib-devitem{grid-template-columns:minmax(0,1fr);}" + R + " .lib-devitem .lib-acts{flex-direction:row;flex-wrap:wrap;}}",
       R + " :focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:4px;}",
-      "@media (max-width:760px){" + R + " .lib-item{grid-template-columns:132px minmax(0,1fr);}" + R + " .lib-thumb{width:132px;}" + R + " .lib-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;}}",
-      "@media (max-width:560px){" + R + " .lib-item{grid-template-columns:minmax(0,1fr);}" + R + " .lib-thumb{width:100%;max-width:320px;}" + R + " .lib-details dl{grid-template-columns:minmax(0,1fr);gap:2px 0;}" + R + " .lib-details dd{margin-bottom:8px;}" + R + " .lib-seg{width:100%;}" + R + " .lib-seg button{flex:1 1 auto;}}",
+      "@media (max-width:760px){" + R + " .lib-item{grid-template-columns:minmax(0,1fr);}" + R + " .lib-item.has-thumb{grid-template-columns:132px minmax(0,1fr);}" + R + " .lib-thumb{width:132px;}" + R + " .lib-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;}}",
+      "@media (max-width:560px){" + R + " .lib-item,"+ R + " .lib-item.has-thumb{grid-template-columns:minmax(0,1fr);}" + R + " .lib-thumb{width:100%;max-width:320px;}" + R + " .lib-details dl{grid-template-columns:minmax(0,1fr);gap:2px 0;}" + R + " .lib-details dd{margin-bottom:8px;}" + R + " .lib-seg{width:100%;}" + R + " .lib-seg button{flex:1 1 auto;}}",
       // Create or Remediate a Document (Sam, 2026-10-28; mockup Version 20).
       R + " .lib-panel{display:grid;gap:12px;margin:16px 0 4px;padding:18px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
       R + " .lib-panel h2.lib-h{margin:0;}",
@@ -646,9 +676,27 @@
     return '<div class="lib-thumb"><div class="lib-tile"><span class="big">' + esc(big) + '</span><span class="unit">' +
       esc(unit) + '</span><span class="type">' + esc(r.file_type || "") + "</span></div></div>";
   }
+  // The size and format sit beside the title (Sam, 2026-11-05: "Do we need the One chip? Why not put
+  // focus on the title and include any small details needed from the chip next to the title").
+  function sizeWord(r) {
+    var ext = String(r.extent || "").trim();
+    if (ext) ext = ext.charAt(0).toLowerCase() + ext.slice(1);
+    var ft = String(r.file_type || "").trim().toUpperCase();
+    return [ext, ft].filter(Boolean).join(", ");
+  }
+  function word(attr, id, label, lead, title) {
+    return '<button type="button" class="lib-word' + (lead ? " lead" : "") + '" ' + attr + '="' + esc(id) + '"' + (state.busy ? " disabled" : "") + ">" +
+      esc(label) + (title ? '<span class="lib-vh"> ' + esc(title) + "</span>" : "") + "</button>";
+  }
   function chip(text, unset) { return '<li class="lib-chip' + (unset ? " unset" : "") + '">' + esc(text) + "</li>"; }
 
   function details(r) {
+    var recActs = '<div class="lib-recacts">' + word("data-edittop", r.id, "Edit the record", false, r.title) +
+      word("data-newver", r.id, "File a new version") + word("data-fromit", r.id, "Start something new from it") + "</div>" +
+      (state.edit === r.id ? editForm(r) : "");
+    return recActs + detailsList(r);
+  }
+  function detailsList(r) {
     var home = homeOf(r);
     var where = r.url
       ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(home.label) + "</a>"
@@ -792,36 +840,43 @@
       "</div></form>";
   }
 
+  // The card's side column (Version 22): Open, Copy link, List publicly and Details, as words. Revise and
+  // its next steps sit under the card's text (stateBlock); Edit lives in Details, beside the record it edits.
+  function sideWords(r, withOpen) {
+    var open = !!state.open[r.id];
+    var acts = r.url
+      ? (withOpen ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" : "") +
+        word("data-copy", r.id, "Copy link")
+      : word("data-file", r.id, "File it", r.remediation === "remediated");
+    if (r.url && !r.public_listed) acts += word("data-pubtop", r.id, "List publicly");
+    acts += '<button type="button" class="lib-word" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
+    return acts;
+  }
+  // The card's own flags: the state block already says where a revision stands.
+  function cardFlags(r) {
+    return flagsOf(r).filter(function (f) { return f !== "ready" && f !== "regen" && f !== "refresh"; });
+  }
   function item(r) {
     var open = !!state.open[r.id];
-    var fl = flagsOf(r);
+    var fl = cardFlags(r);
     var kicker = [KIND[r.kind] || r.kind, fmtDate(r.made_on)];
     if (r.version) kicker.push(/^\d+$/.test(r.version) ? "Version " + r.version : r.version);
-    var acts = r.url
-      ? '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open</a>' +
-        '<button type="button" class="lib-btn" data-copy="' + esc(r.id) + '">Copy link</button>'
-      : '<button type="button" class="lib-btn' + (r.remediation === "remediated" ? " primary" : "") + '" data-file="' + esc(r.id) + '">File it</button>';
-    // Edit and the public switch sit on the card itself (Sam, 2026-10-20: "move the
-    // Edit button onto the top layer of the card"); each opens its form below.
-    acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
-    acts += reviseBtn(r);
-    if (r.refresh_note || regenState(r)) acts += requestBtn(r);
-    if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
-    acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
+    var acts = sideWords(r, true);
+    var size = sizeWord(r);
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
       (r.public_listed ? chip("In the public library") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) +
       (r.home === "not_filed" ? "" : chip(homeOf(r).label));
-    return '<article class="lib-item" aria-labelledby="lib-t-' + esc(r.id) + '">' + thumb(r) +
+    return '<article class="lib-item' + (r.poster ? " has-thumb" : "") + '" aria-labelledby="lib-t-' + esc(r.id) + '">' + (r.poster ? thumb(r) : "") +
       '<div class="lib-body"><p class="lib-kicker">' + esc(kicker.filter(Boolean).join(" · ")) + "</p>" +
-      '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
+      '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + (size ? ' <span class="lib-size">' + esc(size) + "</span>" : "") + "</h3>" +
       (r.for_kind ? '<p class="lib-for">Made for <b>' + esc(forKindWord(r)) + "</b>" + (r.for_name ? " \u00b7 For <b>" + esc(r.for_name) + "</b>" : "") + "</p>" : "") +
       (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
       '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) {
         return "<li>" + esc(flagText(f, r)) + "</li>";
       }).join("") + "</ul>" : "") +
-      regenBox(r) + requestBox(r) +
+      stateBlock(r) +
       '</div><div class="lib-acts">' + acts + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></div>' +
       '<div class="lib-details" id="lib-d-' + esc(r.id) + '"' + (open ? "" : " hidden") + ">" + (open ? details(r) : "") + "</div></article>";
   }
@@ -973,8 +1028,8 @@
     var g = r.regen || {}, rs = regenState(r);
     if (rs === "waiting" && sharePointOnly(r)) {
       return esc("Rebuild requested by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ". Its file is on SharePoint, which a session cannot open yet: " +
-        "RCCD has not approved the Microsoft 365 connector. Download a copy of the file from SharePoint, then drop that copy into Create, Revise or Remediate a Document " +
-        "with this piece picked, and the next scheduled run rebuilds it.");
+        "RCCD has not approved the Microsoft 365 connector. Download a copy of the file from SharePoint, then press Change what you asked " +
+        "and add that copy as a document to work from; the next scheduled run rebuilds it.");
     }
     if (rs === "waiting" && (g.based_on_draft || g.based_on_url)) {
       var pv = r.version && /^\d+$/.test(r.version) ? parseInt(r.version, 10) : null;
@@ -1011,24 +1066,24 @@
     return !!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0 && !sharePointOnly(r) && !linkOnly && (r.refresh_note || pasted));
   }
   function g0Replace(r) { return !!(r.regen && r.regen.publish === "replace"); }
-  function draftNow(id) {
+  function draftNow(id, byName) {
     var r = byId(id);
     if (!r || regenState(r) !== "waiting") return;
-    var n = document.getElementById("dn-by-" + id), by = n ? n.value.trim() : "";
-    if (!by) { say("Add your name, so the record says who asked for the draft.", true); render(); return; }
+    var n = document.getElementById("dn-by-" + id), by = byName || (n ? n.value.trim() : "") || storedAuthor();
+    if (!by) { sayOn(id, "Add your name, so the record says who asked for the draft.", true); render(); return; }
     rememberAuthor(by);
     var h = headers({ "Content-Type": "application/json" }), tok = reviewerToken();
     if (tok && !teamPhrase()) h.Authorization = "Bearer " + tok;
-    state.busy = true; say("Drafting the changes onto " + r.title + ". This takes about a minute."); render();
+    state.busy = true; sayOn(id, "Claude is drafting the changes to " + r.title + ". This takes about a minute."); render(); focusState(id);
     return window.fetch(REVISE_DRAFT_URL, { method: "POST", headers: h, body: JSON.stringify({ id: id, by: by }) })
       .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j || {} }; }); })
       .then(function (o) {
         state.busy = false;
         if (!o.ok) throw new Error((o.j.error || "The draft was not made.") + (o.j.summary ? " The model said: " + o.j.summary : ""));
-        say("The draft is ready: " + (o.j.summary || "open it to read the changes.") +
-          (o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open the draft, then Replace the public copy when it reads right."));
-        return load();
-      }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+        sayOn(id, "The draft is ready: " + (o.j.summary || "open it to read the changes.") +
+          (o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open it, then Replace the public copy when it reads right."));
+        return load().then(function () { focusState(id); });
+      }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); focusState(id); });
   }
   // A draft from the card lives in cpl_library_drafts, behind the team phrase: read it and
   // open it as a page of its own in a new tab.
@@ -1041,6 +1096,328 @@
         var url = URL.createObjectURL(new Blob([rows[0].html], { type: "text/html" }));
         if (w) w.location = url; else window.open(url, "_blank");
       }).catch(function (e) { if (w) w.close(); say(e.message, true); render(); });
+  }
+
+  // ── Version 22: a piece's revision lives on its card (Sam, 2026-11-05) ─────────────────────
+  // One public copy, at most one draft, and four states the card names in one line: nothing waiting, changes
+  // asked, a draft ready, replacing. Under the line sits the one next step for that state, and Revise opens
+  // its box right there, never at the top of the tab.
+  function publicVersion(r) { return r.version && /^\d+$/.test(r.version) ? parseInt(r.version, 10) : null; }
+  function nameOrField(prefix, id) {
+    var a = storedAuthor();
+    return a ? '<input type="hidden" id="' + prefix + id + '" value="' + esc(a) + '">'
+      : '<label for="' + prefix + esc(id) + '">Your name</label><input id="' + prefix + esc(id) + '" type="text" required autocomplete="name">';
+  }
+  function openDraftWord(r, lead) {
+    var g = r.regen || {};
+    if (g.draft_id) return word("data-draftopen", g.draft_id, "Open the draft", lead, "of " + r.title);
+    if (g.draft_url) return '<a class="lib-word' + (lead ? " lead" : "") + '" href="' + esc(g.draft_url) + '" target="_blank" rel="noopener">Open the draft<span class="lib-vh"> of ' + esc(r.title) + "</span></a>";
+    return "";
+  }
+  function readyLine(r) {
+    var g = r.regen || {}, pv = publicVersion(r);
+    return (pv ? "Version " + (pv + 1) + " is ready to review" : "A draft is ready to review") + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". " +
+      (pv ? "Version " + pv + " stays public until you replace it." : "The public copy stays as it is until you replace it.");
+  }
+  function stateBlock(r) {
+    if (r.status === "requested") return "";
+    var rs = regenState(r), g = r.regen || {}, box = state.cardBox && state.cardBox.id === r.id ? state.cardBox : null;
+    var line = "", why = "", next = [], extra = "";
+    if (r.remediation === "in_remediation" && !r.url) next.push(resumeBtn(r));
+    else if (!rs && r.refresh_note) {
+      line = esc("Changes to make: " + r.refresh_note);
+      next.push(word("data-revise", r.id, "Revise", true, r.title), requestWord(r, false));
+    } else if (!rs) {
+      next.push(word("data-revise", r.id, "Revise", true, r.title));
+    } else if (rs === "waiting") {
+      line = regenWords(r);
+      if (canDraftHere(r)) {
+        next.push('<form data-draftnowform="' + esc(r.id) + '">' + nameOrField("dn-by-", r.id) +
+          '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>",
+          word("data-change", r.id, "Change what you asked"), requestWord(r, false, "Copy for a session"));
+        why = "Claude drafts the changes in about a minute and checks the draft's accessibility. " +
+          (publicVersion(r) ? "Version " + publicVersion(r) + " stays public until you replace it." : "The public copy stays until you replace it.") +
+          (g0Replace(r) ? " This request asked to replace the public copy at once." : "");
+      } else {
+        next.push(requestWord(r, true), word("data-change", r.id, "Change what you asked"));
+      }
+    } else if (rs === "ready") {
+      line = esc(readyLine(r));
+      next.push(openDraftWord(r, true),
+        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) +
+          '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Replace the public copy</button></form>",
+        word("data-revise", r.id, "Ask for more changes", false, r.title));
+      extra = changedHtml(r);
+    } else if (rs === "approved") {
+      line = regenWords(r);
+      next.push(openDraftWord(r, false), word("data-keep", r.id, "Keep " + (publicVersion(r) ? "Version " + publicVersion(r) : "the public copy") + " instead"));
+    }
+    var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
+    return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
+      (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
+      (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
+      (box ? "" : extra) + msg + requestBox(r) + "</div>";
+  }
+  function requestWord(r, lead, label) {
+    return '<button type="button" class="lib-word' + (lead ? " lead" : "") + '" data-request="' + esc(r.id) + '">' +
+      esc(state.requestShown[r.id] ? "Copied. Copy again" : (label || "Copy the request")) + "</button>";
+  }
+  // Can this piece be drafted here, for the box's mode? A draft known only by its claude.ai link, a SharePoint
+  // file or a piece with no Pages copy goes to a session.
+  function boxDraftsHere(r, mode) {
+    if (!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0) || sharePointOnly(r)) return false;
+    var g = r.regen || {};
+    if (mode === "more") return !!g.draft_id;
+    if (mode === "change") return !(g.based_on_url && !g.based_on_draft);
+    return true;
+  }
+  function cardBoxHtml(r, box) {
+    var g = r.regen || {}, pv = publicVersion(r), mode = box.mode, here = boxDraftsHere(r, mode === "fresh" ? "revise" : mode);
+    var head = mode === "more" ? "More changes to " + (pv ? "Version " + (pv + 1) + " (the draft)" : "the draft")
+      : mode === "change" ? "Change what you asked for " + r.title
+      : mode === "fresh" ? "Revise " + r.title + ", starting over from " + (pv ? "Version " + pv : "the public copy")
+      : "Revise " + r.title + (pv ? ", Version " + pv : "");
+    var asked = [];
+    (Array.isArray(g.earlier) ? g.earlier : []).forEach(function (x) { if (x && x.note) asked.push((x.requested_by || "The team") + ": " + x.note); });
+    if (mode === "more" && r.refresh_note) asked.push((g.requested_by || "The team") + ", " + stamp(g.requested_at) + ": " + String(r.refresh_note).replace(/\u2026 The whole instructions are under Documents to work from\.$/, "\u2026"));
+    var docs = state.src.cb || [];
+    var by = storedAuthor();
+    var note = mode === "more"
+      ? (here ? "Claude drafts the new changes on top of the draft in about a minute and checks its accessibility. The draft you have stays in the record."
+              : "A Claude session makes these changes on top of the draft; the request saves now, and the card says when the new draft is back.")
+      : here ? "Claude drafts the changes onto the public page in about a minute and checks its accessibility. " + (pv ? "Version " + pv + " stays public until you replace it." : "The public copy stays until you replace it.")
+      : "A Claude session makes the revision from the piece's source; the request saves now, and the card says when the draft is back. Never add a student's record.";
+    return '<form class="lib-cbox" data-cboxform="' + esc(r.id) + '" aria-labelledby="cb-h-' + esc(r.id) + '"><h4 id="cb-h-' + esc(r.id) + '">' + esc(head) + "</h4>" +
+      (asked.length ? '<div><p class="why">Asked so far</p>' + asked.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</div>" : "") +
+      '<div class="lib-field"><label for="cb-instr-' + esc(r.id) + '">What to change</label><textarea id="cb-instr-' + esc(r.id) + '" rows="3" placeholder="The wording, the figures, the layout, what to add or cut">' +
+      esc(box.prefill || (mode === "change" ? (r.refresh_note || "") : "")) + "</textarea></div>" +
+      (docs.length ? '<div><p class="why">Documents to work from</p><ul class="lib-srcs">' + docs.map(function (x, i) {
+        return "<li>" + srcWords(x) + ' <button type="button" class="lib-word" data-srcdel="cb:' + i + '">Remove<span class="lib-vh"> ' + esc(x.title) + "</span></button></li>";
+      }).join("") + "</ul></div>" : "") +
+      (state.cbDocs
+        ? '<div class="lib-field"><label for="cb-file-' + esc(r.id) + '">Add a document to work from: a Word or text file is read here</label><input id="cb-file-' + esc(r.id) + '" data-cbfile="' + esc(r.id) + '" type="file"></div>' +
+          '<div class="lib-field"><label for="cb-link-' + esc(r.id) + '">or paste its link</label><input id="cb-link-' + esc(r.id) + '" type="url" placeholder="A web page or a Claude page; SharePoint is closed to a session"></div>'
+        : '<div class="lib-next">' + word("data-cbdocs", r.id, "Add a document to work from") + "</div>") +
+      (by && !state.cbName
+        ? '<p class="why">as ' + esc(by) + ' <button type="button" class="lib-word" data-cbname="' + esc(r.id) + '">change</button></p>'
+        : '<div class="lib-field"><label for="cb-by-' + esc(r.id) + '">Your name</label><input id="cb-by-' + esc(r.id) + '" type="text" required autocomplete="name" value="' + esc(by) + '"></div>') +
+      '<div class="lib-next"><button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">" + (here ? "Draft it now" : "Send to a session") + "</button>" +
+      (mode === "more" ? word("data-startover", r.id, "Start over from " + (pv ? "Version " + pv : "the public copy")) : "") +
+      word("data-cboxcancel", r.id, "Cancel") + "</div>" +
+      '<p class="why">' + esc(note) + "</p></form>";
+  }
+  // A piece picked anywhere (its card, the finder in the top box, its link or a file named for it) opens its
+  // card's box; a card the filters hide is shown first, so the box always lands in view.
+  function ensureShown(r) {
+    if (isDev(r) || matches(r)) return;
+    state.q = ""; state.kind = "all"; state.seen = "all"; state.status = "all"; state.flag = null; state.madeFor = "all"; state.forName = "all";
+  }
+  function openCardBox(id, mode, prefill) {
+    var r = byId(id);
+    if (!r) return;
+    if (state.piece) clearPiece();
+    state.pick = null; state.use = null;
+    ensureShown(r);
+    state.cardBox = { id: id, mode: mode || (regenState(r) === "ready" ? "more" : regenState(r) === "waiting" ? "change" : "revise"), prefill: prefill || "" };
+    state.cbDocs = false; state.cbName = false;
+    // More changes start clean: the documents the draft was made from are already in it, and handing them over
+    // again would have Claude apply them twice. The record keeps their titles with the earlier draft.
+    state.src.cb = state.cardBox.mode === "more" ? [] : sourceList(r).slice();
+    say(""); render();
+    var t = document.getElementById("cb-instr-" + id);
+    if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } if (t.scrollIntoView) t.scrollIntoView({ block: "center" }); }
+  }
+  function closeCardBox(focusId) {
+    state.cardBox = null; state.src.cb = []; render();
+    var b = focusId && document.getElementById("lib-st-" + focusId); if (b && b.focus) b.focus();
+  }
+  function focusState(id) {
+    var b = document.getElementById("lib-st-" + id);
+    if (b) { if (b.scrollIntoView) b.scrollIntoView({ block: "center" }); if (b.focus) b.focus(); }
+  }
+  // A document dropped or chosen in the card's box: its words travel with the request.
+  function addCardFile(id, file) {
+    var name = file.name, ext = extOf(name);
+    var take = function (text) {
+      if (!String(text || "").trim()) { sayOn(id, "A session cannot open " + name + " from here. Save it as a Word document or plain text, or paste its words into What to change.", true); render(); return; }
+      var list = (state.src.cb || []).slice();
+      if (list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
+      state.src.cb = list; sayOn(id, "Added " + name + ". It saves with the request."); render();
+    };
+    var fail = function () { take(""); };
+    if (ext === "docx" && file.arrayBuffer) readDocxText(file).then(take, fail);
+    else if (TEXT_EXT[ext] && file.text) file.text().then(take, fail);
+    else fail();
+  }
+  // The box's one press: save the request, then draft it here when this piece can be (Fable's advice, Sam's
+  // ask: "add a note and click revise and it hands me a revision right there in the Library").
+  function submitCardBox(id) {
+    var r = byId(id), box = state.cardBox;
+    if (!r || !box || box.id !== id) return;
+    var g = function (x) { var n = document.getElementById(x + id); return n ? n.value.trim() : ""; };
+    var instr = g("cb-instr-"), link = g("cb-link-"), by = g("cb-by-") || storedAuthor(), on = today();
+    if (!by) { sayOn(id, "Add your name, so the request says who asked.", true); render(); return; }
+    if (link && !/^https:\/\//.test(link)) { sayOn(id, "The link must start with https://.", true); render(); return; }
+    var list = (state.src.cb || []).slice();
+    if (link) list.push({ title: (titleFromName(link) || link).slice(0, 200), url: link, text: null, added_by: by, added_on: on });
+    var here = boxDraftsHere(r, box.mode === "fresh" ? "revise" : box.mode);
+    var pasted = list.some(function (x) { return !x.url && x.text; });
+    if (here && !instr && !pasted) { sayOn(id, "Say what to change, or add a document's words, so Claude has something to draft.", true); render(); return; }
+    var note = instr;
+    if (note.length > NOTE_MAX) {
+      list.push({ title: "Instructions from " + by + ", " + fmtDate(on), url: null, text: note.slice(0, SRC_TEXT_MAX), added_by: by, added_on: on });
+      note = note.slice(0, NOTE_MAX - 80).replace(/\s+\S*$/, "") + "… The whole instructions are under Documents to work from.";
+    }
+    if (list.length > SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+    if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
+    rememberAuthor(by);
+    var regen = box.mode === "fresh" ? { requested_at: new Date().toISOString(), requested_by: by, publish: "show" } : moreRegen(r, by);
+    var body = { refresh_note: note || null, sources: list, regen: regen, updated_by: by };
+    state.cardBox = null; state.src.cb = [];
+    return write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
+      return load();
+    }).then(function () {
+      var fresh = byId(id);
+      if (here && fresh && canDraftHere(fresh)) return draftNow(id, by);
+      sayOn(id, sharePointOnly(Object.assign({}, r, { sources: list }))
+        ? "Saved. " + SP_INSTEAD
+        : "Saved. A Claude session makes this one: Copy the request starts it now, or the next scheduled run picks it up.");
+      render(); focusState(id);
+    }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
+  }
+  // Keep the public version instead: an approval taken back before the publish run. The history keeps the row.
+  function keepPublic(id) {
+    var r = byId(id);
+    if (!r || regenState(r) !== "approved") return;
+    var regen = {};
+    Object.keys(r.regen).forEach(function (k) { if (k !== "approved_at" && k !== "approved_by") regen[k] = r.regen[k]; });
+    regen.publish = "show";
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: storedAuthor() || "the team" } }).then(function () {
+      sayOn(id, "Kept. The public copy stays as it is, and the draft stays ready to review."); return load();
+    }).then(function () { focusState(id); }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
+  }
+
+  // What changed in a ready draft: the model's summary, each edit as Was and Now, and the accessibility
+  // check run on the draft itself, here in the browser (Fable: "promise a check, not a repair").
+  function plainText(h) { return String(h || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim(); }
+  function changedHtml(r) {
+    var g = r.regen || {};
+    if (!g.draft_id) return "";
+    var d = state.drafts[g.draft_id];
+    if (!d) { loadDraftInfo(g.draft_id); d = { loading: true }; }
+    var pv = publicVersion(r);
+    var head = '<h4 id="lib-wc-' + esc(r.id) + '">What changed in ' + (pv ? "Version " + (pv + 1) : "the draft") + "</h4>";
+    if (d.loading) return '<div class="lib-changed" aria-labelledby="lib-wc-' + esc(r.id) + '">' + head + '<p class="why">Reading the draft&hellip;</p></div>';
+    if (d.error) return '<div class="lib-changed" aria-labelledby="lib-wc-' + esc(r.id) + '">' + head + '<p class="why">' + esc(d.error) + "</p></div>";
+    var pairs = (d.request && Array.isArray(d.request.pairs) ? d.request.pairs : []);
+    var shown = pairs.slice(0, 4).map(function (x) {
+      return '<div class="lib-pair"><b>Was</b><span>' + esc(plainText(x.was).slice(0, 240) || "(nothing)") + "</span><b>Now</b><span>" + esc(plainText(x.now).slice(0, 240) || "(removed)") + "</span></div>";
+    }).join("");
+    var chk = d.check;
+    var check = !chk ? '<p class="why">Checking the draft&rsquo;s accessibility&hellip;</p>'
+      : chk.error ? '<p class="why">' + esc(chk.error) + "</p>"
+      : (chk.fix.length
+          ? '<p class="lib-fix"><b>Accessibility: ' + chk.fix.length + " to fix.</b> " + esc(chk.fix.slice(0, 4).join(" ")) + (chk.fix.length > 4 ? " And " + (chk.fix.length - 4) + " more." : "") + "</p>" +
+            '<div class="lib-next">' + word("data-fixask", r.id, "Ask for these fixes") + "</div>"
+          : "<p><b>Accessibility checked:</b> " + esc(chk.pass.join("; ")) + ".</p>");
+    return '<div class="lib-changed" aria-labelledby="lib-wc-' + esc(r.id) + '">' + head +
+      (d.summary ? "<p>" + esc(d.summary) + "</p>" : "") +
+      shown + (pairs.length > 4 ? '<p class="why">And ' + (pairs.length - 4) + " more changes.</p>" : "") +
+      check + '<p class="why">Open the draft to read it. To alter it, ask for more changes; a draft is never edited by hand here.</p></div>';
+  }
+  function loadDraftInfo(draftId) {
+    if (state.drafts[draftId]) return;
+    state.drafts[draftId] = { loading: true };
+    window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=id,summary,request,html", { headers: headers() })
+      .then(function (res) { if (!res.ok) throw new Error("The draft could not be read (" + res.status + ")."); return res.json(); })
+      .then(function (rows) {
+        var d = rows && rows[0];
+        if (!d) throw new Error("The draft is not there.");
+        state.drafts[draftId] = { summary: d.summary || "", request: d.request || {}, check: null };
+        render();
+        return checkDraft(d.html).then(function (c) { state.drafts[draftId].check = c; render(); });
+      }).catch(function (e) { state.drafts[draftId] = { error: e.message || "The draft could not be read." }; render(); });
+  }
+  // The check runs on the draft drawn in a frame with no scripts, so its own styles decide every color.
+  function checkDraft(html) {
+    return new Promise(function (done) {
+      var f = document.createElement("iframe");
+      f.setAttribute("sandbox", "allow-same-origin");
+      f.setAttribute("aria-hidden", "true"); f.tabIndex = -1;
+      f.style.cssText = "position:absolute;left:-10000px;top:0;width:1280px;height:900px;border:0;visibility:hidden;";
+      var finish = function (c) { if (f.parentNode) f.parentNode.removeChild(f); done(c); };
+      var timer = setTimeout(function () { finish({ error: "The accessibility check did not finish; open the draft and run npm run a11y on it." }); }, 15000);
+      f.onload = function () {
+        clearTimeout(timer);
+        try { finish(checkDoc(f.contentDocument, f.contentWindow)); }
+        catch (e) { finish({ error: "The accessibility check could not read the draft." }); }
+      };
+      // The draft goes in before the frame does, so the one load event is the draft's own, never about:blank's.
+      f.srcdoc = String(html || "");
+      document.body.appendChild(f);
+    });
+  }
+  function lum(c) {
+    var m = /rgba?\(([^)]+)\)/.exec(c || ""); if (!m) return null;
+    var v = m[1].split(",").map(function (x) { return parseFloat(x); });
+    if (v.length > 3 && v[3] === 0) return null;
+    var ch = v.slice(0, 3).map(function (x) { x /= 255; return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); });
+    return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2];
+  }
+  function bgOf(el, win) {
+    for (var n = el; n && n.nodeType === 1; n = n.parentElement) {
+      var cs = win.getComputedStyle(n);
+      if (cs.backgroundImage && cs.backgroundImage !== "none") return null;
+      var c = cs.backgroundColor;
+      if (c && !/rgba\([^)]*,\s*0\)$/.test(c) && c !== "transparent") return c;
+    }
+    return "rgb(255, 255, 255)";
+  }
+  // What the check measures, in the page's own terms: the title and language, each picture's words, the heading
+  // order, each link's name, and every text color against what it sits on (AA: 4.5:1, 3:1 for large text).
+  function checkDoc(doc, win) {
+    var fix = [], pass = [];
+    if (!doc || !win) return { error: "The accessibility check could not read the draft." };
+    if (!doc.documentElement.getAttribute("lang")) fix.push("The page names no language.");
+    if (!(doc.title || "").trim()) fix.push("The page has no title.");
+    var imgs = doc.querySelectorAll("img"), bare = 0;
+    Array.prototype.forEach.call(imgs, function (i) { if (!i.hasAttribute("alt")) bare += 1; });
+    if (bare) fix.push(bare + (bare === 1 ? " picture has" : " pictures have") + " no alt text.");
+    else if (imgs.length) pass.push(imgs.length + (imgs.length === 1 ? " picture described" : " pictures described"));
+    var hs = doc.querySelectorAll("h1,h2,h3,h4,h5,h6"), last = 0, skip = 0;
+    Array.prototype.forEach.call(hs, function (h) { var n = +h.tagName.charAt(1); if (last && n > last + 1) skip += 1; last = n; });
+    if (skip) fix.push("The headings skip a level " + skip + (skip === 1 ? " time." : " times."));
+    else if (hs.length) pass.push("headings in order");
+    var unnamed = 0;
+    Array.prototype.forEach.call(doc.querySelectorAll("a[href],button"), function (a) {
+      if (!(a.textContent || "").trim() && !a.getAttribute("aria-label") && !a.getAttribute("aria-labelledby") && !a.querySelector("img[alt]:not([alt=''])")) unnamed += 1;
+    });
+    if (unnamed) fix.push(unnamed + (unnamed === 1 ? " link or button has" : " links or buttons have") + " no name.");
+    else pass.push("every link names where it goes");
+    var pairs = {}, low = {};
+    var walk = doc.createTreeWalker(doc.body || doc.documentElement, 4, null), t;
+    while ((t = walk.nextNode())) {
+      if (!t.nodeValue || !t.nodeValue.trim()) continue;
+      var el = t.parentElement; if (!el || /^(SCRIPT|STYLE|NOSCRIPT|TITLE)$/.test(el.tagName)) continue;
+      var cs = win.getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden") continue;
+      var bg = bgOf(el, win); if (!bg) continue;
+      var a = lum(cs.color), b = lum(bg); if (a === null || b === null) continue;
+      var ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+      var size = parseFloat(cs.fontSize) || 16, bold = (+cs.fontWeight || 400) >= 700;
+      var need = size >= 24 || (bold && size >= 18.66) ? 3 : 4.5;
+      var key = cs.color + " on " + bg;
+      pairs[key] = true;
+      if (ratio < need && !low[key]) low[key] = { ratio: ratio, text: t.nodeValue.trim().slice(0, 40) };
+    }
+    var lows = Object.keys(low);
+    lows.forEach(function (k) { fix.push("“" + low[k].text + "” reads " + low[k].ratio.toFixed(1) + ":1 against its background."); });
+    var n = Object.keys(pairs).length;
+    if (n && !lows.length) pass.unshift(n + (n === 1 ? " color pair passes" : " color pairs pass") + " AA");
+    if (!doc.documentElement.getAttribute("lang") || !(doc.title || "").trim()) { /* listed above */ } else pass.push("its title and language set");
+    return { fix: fix, pass: pass };
   }
 
   // Under the card: the request's state, and Replace the public copy on a ready draft.
@@ -1283,6 +1660,14 @@
       ", and keep its changes. " + (pv ? "Version " + pv + " stays public" : "The public copy stays") + " until you replace it.";
   }
   function pieceHtml(r) {
+    var what = state.pieceUse === "version" ? "File a new version of it: put the new file in the CPLLibrary folder, then paste its link below."
+      : state.pieceUse === "background" ? "Start something new from it: say what the new piece is for, and the brief carries this one as a document to work from."
+      : "";
+    return '<div class="lib-piecepick"><div><p class="lib-kicker">Already in the Library</p><p><b>' + esc(r.title) + "</b> · " + esc(pieceMeta(r)) + "</p>" +
+      (what ? '<p class="lib-line">' + esc(what) + "</p>" : "") + "</div>" +
+      '<button type="button" class="lib-btn" data-unpiece="1">Clear<span class="lib-vh"> ' + esc(r.title) + "</span></button></div>";
+  }
+  function pieceHtmlOld(r) {
     var row = function (v, label) {
       return '<label class="lib-check"><input type="radio" name="lc-piece-use" id="lc-pu-' + v + '" value="' + v + '"' + (state.pieceUse === v ? " checked" : "") + "> " + esc(label) + "</label>";
     };
@@ -1348,7 +1733,7 @@
   function takeFile(fl) {
     if (state.piece) { addPieceFile(fl); return; }
     var known = !REMEDIABLE[extOf(fl.name)] && pieceByFileName(fl.name);
-    if (known) { setPiece(known.id, "revise"); pieceFound(known); render(); var i0 = document.getElementById("lc-instr"); if (i0) i0.focus(); return; }
+    if (known) { openCardBox(known.id); return; }
     setPick({ name: fl.name, file: fl }); render();
     var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus();
   }
@@ -1378,7 +1763,7 @@
         '<label class="lib-pick" for="lc-file">or choose a file</label><input id="lc-file" class="lib-vh" type="file">' +
         '<div class="lib-field"><label for="lc-link">or paste a link</label><input id="lc-link" type="url" placeholder="A SharePoint file, a web page or a Claude page" value="' + esc(pk && pk.link && !pr ? pk.link : "") + '"></div>'
       : "";
-    var chooser = pr ? "" : '<div class="lib-field"><label for="lc-piece">or choose a piece already in the Library</label><input id="lc-piece" type="text" list="lib-pieces" autocomplete="off" placeholder="Type part of its title"></div>' +
+    var chooser = pr ? "" : '<div class="lib-field"><label for="lc-piece">Find a piece already here; its card opens to revise it</label><input id="lc-piece" type="text" list="lib-pieces" autocomplete="off" placeholder="Type part of its title"></div>' +
       '<datalist id="lib-pieces">' + pieceLabels().map(function (x) { return '<option value="' + esc(x.label) + '">'; }).join("") + "</datalist>";
     var hint = pu === "revise" ? "What to change: the wording, the figures, the layout, what to add or cut. Leave it empty to rebuild from its source, the documents and the current data."
       : pu === "background" ? "What the new piece is for, who it is for, the focus."
@@ -1395,7 +1780,7 @@
       (pu === "revise" && !storedAuthor() ? '<div class="lib-field"><label for="lc-by">Your name</label><input id="lc-by" type="text" required></div>' : "") +
       '<div class="lib-panelfoot"><p class="lib-line">' + esc(foot) + "</p>" +
       '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>";
-    return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create, Revise or Remediate a Document</h2>' +
+    return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
       '<div class="lib-drop" id="lib-drop">' +
       (pr ? pieceHtml(pr) : "") + inputs + chooser + picked + asks +
       "</div>" + remHtml() + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
@@ -2071,7 +2456,7 @@
     if (link && (!state.pick || state.pick.link !== link)) {
       if (!/^https:\/\//.test(link)) { say("The link must start with https://.", true); render(); return; }
       var known = pieceByLink(link);
-      if (known) { ln.value = ""; setPiece(known.id, "revise"); pieceFound(known); render(); var i1 = document.getElementById("lc-instr"); if (i1) i1.focus(); return; }
+      if (known) { ln.value = ""; openCardBox(known.id); return; }
       setPick({ name: link, link: link });
     }
     var pk = state.pick;
@@ -2124,7 +2509,8 @@
     out.earlier = (Array.isArray(g.earlier) ? g.earlier : []).slice(-9);
     if (regenState(r) === "ready") {
       out.earlier.push({ draft_id: base.draft_id, draft_url: base.draft_url, ready_at: g.ready_at || null, requested_by: g.requested_by || null,
-        note: r.refresh_note ? String(r.refresh_note).slice(0, NOTE_MAX) : null });
+        note: r.refresh_note ? String(r.refresh_note).slice(0, NOTE_MAX) : null,
+        documents: sourceList(r).map(function (x) { return String(x.title || "").slice(0, 200); }).slice(0, SRC_MAX) });
     }
     return out;
   }
@@ -2229,8 +2615,7 @@
     acts += r.url ? '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>'
       : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
     acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit record</button>';
-    if (r.status !== "requested") acts += reviseBtn(r);
-    if (r.refresh_note || regenState(r)) acts += requestBtn(r);
+    if (r.status === "requested" && r.refresh_note) acts += requestBtn(r);
     return '<article class="lib-devitem" aria-labelledby="lib-t-' + esc(r.id) + '"><div>' +
       '<p class="lib-kicker">' + esc(kicker.join(" · ")) + "</p>" +
       '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
@@ -2238,7 +2623,9 @@
       (r.occasion ? '<p class="lib-line">' + esc(r.occasion) + "</p>" : "") +
       '<ol class="lib-steps" aria-label="Where this piece stands">' + steps + "</ol>" +
       (shown ? '<label class="lib-vh" for="lib-b-' + esc(r.id) + '">The brief to paste into a new session</label><textarea class="lib-brief" id="lib-b-' + esc(r.id) + '" readonly>' + esc(briefText(r)) + "</textarea>" : "") +
-      (r.refresh_note ? '<p class="lib-line"><b>Changes to make:</b> ' + esc(r.refresh_note) + "</p>" : "") +
+      (r.refresh_note && r.status === "requested" ? '<p class="lib-line"><b>Changes to make:</b> ' + esc(r.refresh_note) + "</p>" : "") +
+      stateBlock(r) +
+      (state.edit === r.id ? editForm(r) : "") +
       (sourceList(r).length ? '<div class="lib-line"><b>Documents to work from:</b> ' + srcListHtml(sourceList(r)) + "</div>" : "") +
       regenBox(r) + requestBox(r) +
       '</div><div class="lib-acts">' + acts + "</div>" +
@@ -2282,7 +2669,7 @@
   }
   function pieceRow(r) {
     var open = !!state.open[r.id];
-    var fl = flagsOf(r);
+    var fl = cardFlags(r);
     var meta = [KIND[r.kind] || r.kind];
     if (r.version) meta.push(/^\d+$/.test(r.version) ? "Version " + r.version : r.version);
     var name = r.url
@@ -2292,19 +2679,12 @@
       (r.public_listed ? chip("In the public library") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) +
       (r.home === "not_filed" ? "" : chip(homeOf(r).label));
-    var acts = r.url
-      ? '<button type="button" class="lib-btn" data-copy="' + esc(r.id) + '">Copy link</button>'
-      : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
-    if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
-    acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
-    acts += reviseBtn(r);
-    if (r.refresh_note || regenState(r)) acts += requestBtn(r);
-    acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
+    var acts = sideWords(r, false);
     return '<li class="lib-piece"><div class="lib-piecehead"><span class="lib-piecename">' + name + " \u00b7 " + esc(meta.filter(Boolean).join(" \u00b7 ")) + "</span>" +
       '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
       '<span class="lib-pieceacts">' + acts + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></span></div>' +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) { return "<li>" + esc(flagText(f, r)) + "</li>"; }).join("") + "</ul>" : "") +
-      regenBox(r) + requestBox(r) +
+      stateBlock(r) +
       '<div class="lib-details" id="lib-d-' + esc(r.id) + '"' + (open ? "" : " hidden") + ">" + (open ? details(r) : "") + "</div></li>";
   }
   function projectCard(u) {
@@ -2329,7 +2709,7 @@
   function listHtml(all) {
     var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
-    if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece under Create, Revise or Remediate a Document.</p>';
+    if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece under Create or Remediate a Document.</p>';
     if (!shown.length) return '<p class="lib-empty">Nothing matches these filters. Clear the search or choose All.</p>';
     return gs.map(function (g, i) {
       return '<section class="lib-group" aria-labelledby="lib-g-' + i + '"><div class="lib-ghead"><h2 class="lib-h" id="lib-g-' + i + '">' + esc(g.name) +
@@ -2408,7 +2788,7 @@
       '<div class="lib-field"><label for="lib-status">Status</label><select id="lib-status">' + opt("all", "Any", state.status) + opt("draft", "Draft", state.status) +
       opt("approved", "Approved", state.status) + opt("presented", "Presented", state.status) + opt("unset", "Not set", state.status) + "</select></div>" +
       "</div>" + datalists() + panelHtml() +
-      (state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "");
+      (state.message && !state.msgFor ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "");
 
     controls += '<p class="lib-line" role="status" id="lib-count">' + countLine(state.rows) + "</p></section>";
     var list = devHtml(state.rows) + '<div id="lib-register">' + listHtml(state.rows) + "</div>";
@@ -2418,7 +2798,7 @@
       "<p>The Library keeps one record per piece, and the file lives on the MAP team's SharePoint site: approved pieces in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its Drafts folder. ' +
       "The repos keep only the source that rebuilds each piece.</p>" +
-      "<p>Create, Revise or Remediate a Document saves a brief as a Requested record. Choose a piece already here, or press Revise on its card, and the same box asks for its changes; a session rebuilds it, checks its accessibility, and puts the draft on its card. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
+      "<p>Create or Remediate a Document saves a brief as a Requested record, or remediates a file in this browser. To revise a piece already here, press Revise on its card: say what to change, and Claude drafts it on the card in about a minute (a web page with a public copy) or a session rebuilds it (a deck, a document, a file on SharePoint). The card then shows what changed and its accessibility check; Replace the public copy makes it public. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
       "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
@@ -2427,7 +2807,7 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lc-link'],input[id^='lc-by'],textarea[id^='lc-'],input[id^='ro-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lc-link'],input[id^='lc-by'],textarea[id^='lc-'],input[id^='ro-'],textarea[id^='cb-'],input[id^='cb-link'],input[id^='cb-by']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
@@ -2621,16 +3001,16 @@
   function approveRegen(id) {
     var r = byId(id);
     if (!r || regenState(r) !== "ready") return;
-    var n = document.getElementById("ro-by-" + id), by = n ? n.value.trim() : "";
-    if (!by) { say("Add your name, so the record says who approved the draft.", true); render(); return; }
+    var n = document.getElementById("ro-by-" + id), by = (n ? n.value.trim() : "") || storedAuthor();
+    if (!by) { sayOn(id, "Add your name, so the record says who approved the draft.", true); render(); return; }
     rememberAuthor(by);
     var regen = {};
     Object.keys(r.regen).forEach(function (k) { regen[k] = r.regen[k]; });
     regen.approved_at = new Date().toISOString(); regen.approved_by = by;
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: by } }).then(function () {
-      say("Approved. The next scheduled run replaces the public copy with the draft.");
-      return load();
-    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+      sayOn(id, "Approved. The draft becomes the public copy within three hours.");
+      return load().then(function () { focusState(id); });
+    }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
   }
 
   function setPublic(id, listed) {
@@ -2702,11 +3082,11 @@
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
       else if (e.target.id === "lc-piece") {
         var pr0 = pieceByLabel(e.target.value);
-        if (pr0) { setPiece(pr0.id); say(""); render(); var pi = document.getElementById(state.pieceUse === "details" ? "le-status" : "lc-instr"); if (pi) pi.focus(); }
+        if (pr0) { e.target.value = ""; openCardBox(pr0.id); }
       }
       else if (e.target.id === "lc-link" && !state.piece) {
         var pl = pieceByLink(e.target.value);
-        if (pl) { e.target.value = ""; setPiece(pl.id, "revise"); pieceFound(pl); render(); var pli = document.getElementById("lc-instr"); if (pli) pli.focus(); }
+        if (pl) { e.target.value = ""; openCardBox(pl.id); }
       }
       else if (e.target.getAttribute && e.target.getAttribute("data-remscript") && state.rem) {
         state.rem.scripts[e.target.getAttribute("data-remscript")] = e.target.value; state.rem.touched = true;
@@ -2719,6 +3099,7 @@
       }
     });
     root.addEventListener("change", function (e) {
+      if (e.target.getAttribute && e.target.getAttribute("data-cbfile") && e.target.files && e.target.files[0]) { addCardFile(e.target.getAttribute("data-cbfile"), e.target.files[0]); return; }
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
@@ -2790,6 +3171,7 @@
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
       else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
       else if (e.target.getAttribute("data-draftnowform")) draftNow(e.target.getAttribute("data-draftnowform"));
+      else if (e.target.getAttribute("data-cboxform")) submitCardBox(e.target.getAttribute("data-cboxform"));
     });
     root.addEventListener("click", function (e) {
       var go = e.target.closest ? e.target.closest("[data-remgoto]") : null;
@@ -2826,10 +3208,19 @@
       else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-go"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if ((v = b.getAttribute("data-request"))) copyRequest(v);
-      else if ((v = b.getAttribute("data-revise"))) {
-        setPiece(v, "revise"); say(""); render();
-        landOnBox("lc-instr");
+      else if ((v = b.getAttribute("data-revise"))) openCardBox(v);
+      else if ((v = b.getAttribute("data-change"))) openCardBox(v, "change");
+      else if ((v = b.getAttribute("data-startover")) && state.cardBox) { state.cardBox.mode = "fresh"; render(); var so = document.getElementById("cb-instr-" + v); if (so) so.focus(); }
+      else if ((v = b.getAttribute("data-cboxcancel"))) closeCardBox(v);
+      else if ((v = b.getAttribute("data-cbdocs"))) { state.cbDocs = true; render(); var cf = document.getElementById("cb-file-" + v); if (cf) cf.focus(); }
+      else if ((v = b.getAttribute("data-cbname"))) { state.cbName = true; render(); var cn = document.getElementById("cb-by-" + v); if (cn) cn.focus(); }
+      else if ((v = b.getAttribute("data-keep"))) keepPublic(v);
+      else if ((v = b.getAttribute("data-fixask"))) {
+        var fr = byId(v), fd = fr && fr.regen && state.drafts[fr.regen.draft_id];
+        openCardBox(v, "more", fd && fd.check && fd.check.fix.length ? "Fix what the accessibility check found: " + fd.check.fix.join(" ") : "");
       }
+      else if ((v = b.getAttribute("data-newver"))) { setPiece(v, "version"); say(""); render(); landOnBox("la-url"); }
+      else if ((v = b.getAttribute("data-fromit"))) { setPiece(v, "background"); say(""); render(); landOnBox("lc-instr"); }
       else if (b.getAttribute("data-unpiece")) {
         clearPiece(); say(""); render();
         var cp = document.getElementById("lc-piece"); if (cp) cp.focus();
@@ -2853,17 +3244,20 @@
       }
       else if ((v = b.getAttribute("data-copy"))) copyLink(b, v);
       else if ((v = b.getAttribute("data-edittop"))) {
-        // Edit opens the box with the piece picked at Change its details.
-        setPiece(v, "details"); say(""); render();
-        landOnBox("le-status");
+        // Edit the record opens its form inside the card's Details (Version 22): the record's form sits beside
+        // the record it edits, and Revise stays the one thing on the card's face.
+        if (state.piece) clearPiece();
+        state.open[v] = true; state.edit = v; state.retireAsk = null; say(""); render();
+        var es = document.getElementById("le-status"); if (es) es.focus();
       }
       else if ((v = b.getAttribute("data-pubtop"))) {
         state.pub = v; state.open[v] = true; say(""); render();
         var ps2 = document.getElementById("lp-sum"); if (ps2) ps2.focus();
       }
       else if (b.getAttribute("data-editcancel")) {
+        var was = state.edit;
         state.edit = null; state.retireAsk = null; clearPiece(); render();
-        var ec = document.getElementById("lc-piece"); if (ec) ec.focus();
+        var ec = was && root.querySelector('[data-toggle="' + was + '"]'); if (ec) ec.focus();
       }
       else if ((v = b.getAttribute("data-retire"))) { state.retireAsk = v; render(); }
       else if (b.getAttribute("data-retireno")) { state.retireAsk = null; render(); }
@@ -2944,6 +3338,7 @@
     _regenState: regenState, _goToRequest: goToRequest,
     _sharePointOnly: sharePointOnly,
     _regenWords: regenWords, _canDraftHere: canDraftHere, _draftNow: draftNow, _openDraft: openDraft,
+    _checkDoc: checkDoc,
     _requestText: requestText,
     _sourcesText: sourcesText,
     _ensureSierraBar: ensureSierraBar

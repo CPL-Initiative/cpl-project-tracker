@@ -1032,6 +1032,13 @@
      "line": 33
     },
     {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1509
+    },
+    {
      "id": "module:admin.js",
      "kind": "module",
      "direction": "read",
@@ -1689,7 +1696,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2079
+     "line": 2128
     }
    ],
    "main_committers": []
@@ -2817,7 +2824,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1314,
+     "line": 1699,
      "tabs": [
       "library"
      ]
@@ -2983,6 +2990,13 @@
   },
   "external:studentrcc.sharepoint.com": {
    "consumers": [
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1520
+    },
     {
      "id": "module:dashboard_filters.js",
      "kind": "module",
@@ -4291,7 +4305,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1743
+     "line": 1792
     }
    ],
    "main_committers": []
@@ -5340,7 +5354,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1634
+     "line": 1683
     },
     {
      "id": "module:admin.js",
@@ -6437,7 +6451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2018
+     "line": 2067
     },
     {
      "id": "module:college_briefing.js",
@@ -8627,7 +8641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1799,
+     "line": 2184,
      "tabs": [
       "library"
      ]
@@ -8643,7 +8657,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1307,
+     "line": 1692,
      "tabs": [
       "library"
      ]
@@ -18716,7 +18730,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1417,
+     "line": 1802,
      "tabs": [
       "library"
      ]
@@ -20436,7 +20450,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2910,
+     "line": 3304,
      "tabs": [
       "library"
      ]
@@ -25635,7 +25649,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2027,
+     "line": 1279,
      "tabs": [
       "library"
      ]

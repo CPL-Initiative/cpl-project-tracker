@@ -164,7 +164,9 @@ Deno.serve(async (req) => {
     body: JSON.stringify({
       library_id: r.id, slug: r.slug, html: done.html, based_on: basedOn, made_by: by, model: MODEL,
       summary: ans.summary || null, edits: done.applied,
-      request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g },
+      request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g,
+        // Each edit as Was and Now, so the card's What changed shows them (Version 22).
+        pairs: (Array.isArray(ans.edits) ? ans.edits : []).slice(0, 40).map((e: any) => ({ was: String(e?.old ?? "").slice(0, 400), now: String(e?.new ?? "").slice(0, 400) })) },
     }),
   });
   if (!ins.ok) return reply(502, { error: "The draft could not be stored (" + ins.status + ")." });

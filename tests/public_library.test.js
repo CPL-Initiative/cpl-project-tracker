@@ -226,10 +226,12 @@ block("(3d)", function () {
   const m = loadLib({ token: "t" });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     const acts = m.root.querySelector(".lib-acts");
-    check("(3d) Edit sits on the card's top row", !!(acts && acts.querySelector('[data-edittop="r1"]')));
+    // Version 22 (Sam, 2026-11-05: "Version 22 looks better") moved Edit into Details, beside the record it edits.
+    check("(3d) Edit the record sits in the card's Details, one press away", !!(acts && acts.querySelector('[data-toggle="r1"]')) && !(acts && acts.querySelector('[data-edittop="r1"]')));
     check("(3d) so does List publicly", !!(acts && acts.querySelector('[data-pubtop="r1"]')));
     click(m.w, acts.querySelector('[data-pubtop="r1"]'));
     check("(3d) List publicly opens the listing form under the card", !!m.root.querySelector('[data-pubform="r1"]'));
+    if (!m.root.querySelector('[data-edittop="r1"]')) click(m.w, m.root.querySelector('[data-toggle="r1"]'));
     click(m.w, m.root.querySelector('[data-edittop="r1"]'));
     check("(3d) Edit opens the edit form under the card", !!m.root.querySelector('[data-editform="r1"]'));
   });

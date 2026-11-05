@@ -136,11 +136,13 @@ function load(rows, onFetch) {
     check("D: a ready draft's card offers Ask for more changes", more && /Ask for more changes/.test(more.textContent));
     more.dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
     await settle();
-    check("D: the box says the changes build on Version 3 and Version 2 stays public",
-      /More changes build on Version 3, the draft on its card, and keep its changes\. Version 2 stays public/.test((m.root.querySelector("#lc-more") || {}).textContent || ""),
-      m.root.textContent.slice(0, 300));
-    m.w.document.getElementById("lc-instr").value = "Add Request Adopt links to each course.";
-    m.w.document.getElementById("lib-go").dispatchEvent(new m.w.MouseEvent("click", { bubbles: true }));
+    const box = m.root.querySelector('form[data-cboxform="' + r.id + '"]');
+    check("D: the card's box is headed More changes to Version 3, shows what was asked, and keeps the draft (Version 22)",
+      !!box && /More changes to Version 3 \(the draft\)/.test(box.textContent) && /Asked so far/.test(box.textContent) &&
+      /Remove the one org/.test(box.textContent) && /on top of the draft/.test(box.textContent) && /Start over from Version 2/.test(box.textContent),
+      box ? box.textContent.slice(0, 400) : m.root.textContent.slice(0, 300));
+    m.w.document.getElementById("cb-instr-" + r.id).value = "Add Request Adopt links to each course.";
+    box.dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
     await settle(); await settle();
     const g = patch && patch.regen || {};
     check("D: the new request names the ready draft as its base", g.based_on_draft === "d3", JSON.stringify(patch));
@@ -153,8 +155,24 @@ function load(rows, onFetch) {
     check("D: a base known only by its claude.ai link goes to a session, never Draft it now",
       !m.M._canDraftHere(rec({ regen: { requested_at: "2026-11-05T14:00:00Z", requested_by: "Sam", publish: "show", based_on_url: "https://claude.ai/artifact/x" } })));
   }
+  check("D: the function keeps each edit as a Was and Now pair for the card's What changed", /pairs: \(Array\.isArray\(ans\.edits\)/.test(FN));
   check("D: the function drafts from the named draft, read with the caller's credential, in place of the public copy",
     /g\.based_on_draft/.test(FN) && /cpl_library_drafts\?id=eq\.\$\{baseDraft\}&library_id=eq\.\$\{r\.id\}/.test(FN) && /based_on: basedOn/.test(FN));
+
+  // ── E. the check run on a ready draft (Version 22: "promise a check, not a repair") ──
+  {
+    const m = load([]);
+    const page = function (h) { return new JSDOM(h).window; };
+    const bad = page('<!doctype html><html><head></head><body><h1>A</h1><h3>B</h3><p style="color:#AAAAAA;background:#FFFFFF">Faint words</p><img src="x.png"><a href="/y"></a></body></html>');
+    const c1 = m.M._checkDoc(bad.document, bad);
+    const said = c1.fix.join(" ");
+    check("E: the check names a page with no language and no title", /names no language/.test(said) && /has no title/.test(said), said);
+    check("E: a picture with no alt text, a skipped heading and a link with no name", /1 picture has no alt text/.test(said) && /skip a level 1 time/.test(said) && /1 link or button has no name/.test(said), said);
+    check("E: and text below AA against its background, with its ratio", /\u201cFaint words\u201d reads 2\.3:1/.test(said), said);
+    const good = page('<!doctype html><html lang="en"><head><title>T</title></head><body><h1>A</h1><h2>B</h2><p style="color:#1C1C1A;background:#FFFFFF">Strong words</p><img src="x.png" alt="A chart"><a href="/y">Read more</a></body></html>');
+    const c2 = m.M._checkDoc(good.document, good);
+    check("E: a clean page passes, and says what it measured", !c2.fix.length && /\d+ color pairs? pass(es)? AA/.test(c2.pass.join("; ")) && /1 picture described/.test(c2.pass.join("; ")), JSON.stringify(c2));
+  }
 
   // ── C. what the function and the workflow may do ─────────────────────────
   check("C: the function reads and writes with the caller's credential, never the service key", !/SERVICE_ROLE|service_role|SUPABASE_SERVICE/i.test(FN));

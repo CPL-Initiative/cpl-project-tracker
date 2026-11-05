@@ -105,6 +105,11 @@ function loadModule(opts) {
 }
 function settle() { return new Promise(function (r) { setTimeout(r, 0); }).then(function () { return new Promise(function (r) { setTimeout(r, 0); }); }); }
 function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: true })); }
+// Edit the record lives in a card's Details (Version 22, Sam 2026-11-05); an In development card keeps its own.
+function openEdit(m, id) {
+  if (!m.root.querySelector('[data-edittop="' + id + '"]')) click(m.w, m.root.querySelector('[data-toggle="' + id + '"]'));
+  click(m.w, m.root.querySelector('[data-edittop="' + id + '"]'));
+}
 // The one panel (Create or Remediate a Document) opens the filing form for a pasted link
 // and the brief for instructions with nothing dropped.
 function openAdd(m, url) {
@@ -155,8 +160,8 @@ block("(3)", function () {
     check("(3) changes to make are counted (the box held figures to refresh until S480)", /1\s*with changes to make/.test(t));
     const card = function (id) { return m.root.querySelector('#lib-t-' + id).closest("article"); };
     check("(3) a not-filed piece offers File it and no Open",
-      !!card("a1").querySelector("[data-file]") && !card("a1").querySelector("a.lib-btn"));
-    const open = card("a4").querySelector("a.lib-btn");
+      !!card("a1").querySelector("[data-file]") && !card("a1").querySelector("a.lib-word"));
+    const open = card("a4").querySelector("a.lib-word");
     check("(3) a filed piece opens its own link in a new tab", open && open.getAttribute("href") === ROWS[3].url && open.getAttribute("target") === "_blank");
     check("(3) a film shows its title frame", !!card("a2").querySelector('img[src="library/posters/noncredit-summit-in-motion.jpg"]'));
     check("(3) an unset status and audience say Not set in words", /Status: Not set/.test(card("a5").textContent) && /Seen by: Not set/.test(card("a5").textContent));
@@ -245,7 +250,7 @@ block("(6)", function () {
       check("(6) File it PATCHes that one record with its link", w1.init.method === "PATCH" && /cpl_library\?id=eq\.a1$/.test(w1.url) &&
         w1.body.url === "https://drive.google.com/file/d/deck/view" && w1.body.home === "drive" && w1.body.updated_by === "Ashley");
       click(m.w, m.root.querySelector('[data-toggle="a5"]'));
-      click(m.w, m.root.querySelector('[data-edittop="a5"]'));
+      openEdit(m, "a5");
       doc.getElementById("le-seen").value = "public";
       doc.getElementById("le-status").value = "presented";
       click(m.w, m.root.querySelector('[data-retire="a5"]'));
@@ -258,7 +263,7 @@ block("(6)", function () {
       const w2 = writes[2] || { body: {}, init: {} };
       check("(6) Save PATCHes status and audience with who changed it",
         w2.init.method === "PATCH" && w2.body.seen_by === "public" && w2.body.status === "presented" && w2.body.updated_by === "Ashley", JSON.stringify(w2.body));
-      click(m.w, m.root.querySelector('[data-edittop="a5"]'));
+      openEdit(m, "a5");
       click(m.w, m.root.querySelector('[data-retire="a5"]'));
       click(m.w, m.root.querySelector('[data-retireyes="a5"]'));
       return settle();
@@ -414,14 +419,14 @@ block("(9b)", function () {
       w0.init.method === "PATCH" && /id=eq\.r1$/.test(w0.url) && w0.body.status === "draft" && w0.body.home === "drive", JSON.stringify(w0.body));
     check("(9b) a record filed without a date takes the day it is filed", day.test(w0.body.made_on || ""), w0.body.made_on);
     check("(9b) and says where it went", /now a Draft, under In development/.test(m.root.textContent));
-    click(m.w, m.root.querySelector('[data-edittop="r2"]'));
+    openEdit(m, "r2");
     m.w.document.getElementById("le-status").value = "approved";
     submit(m, 'form[data-editform="r2"]');
     return settle();
   }).then(function () {
     const e = writes.filter(function (x) { return /id=eq\.r2$/.test(x.url); })[0] || { body: {} };
     check("(9b) Edit moving a dateless brief past Requested gives it today's date", e.body.status === "approved" && day.test(e.body.made_on || ""), JSON.stringify(e.body));
-    click(m.w, m.root.querySelector('[data-edittop="r2"]'));
+    openEdit(m, "r2");
     m.w.document.getElementById("le-status").value = "requested";
     submit(m, 'form[data-editform="r2"]');
     return settle();
@@ -565,7 +570,7 @@ block("(11b)", function () {
 block("(11c)", function () {
   const m = loadFor("Sam"), doc = m.w.document;
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
-    click(m.w, m.root.querySelector('[data-edittop="a5"]'));
+    openEdit(m, "a5");
     check("(11c) Edit offers Made for, unset for an older record, and no name field yet", doc.getElementById("le-forkind").value === "" && !doc.getElementById("le-forname"));
     change(m, "le-forkind", "other");
     check("(11c) choosing Other asks for the category and the name", !!doc.getElementById("le-forcat") && !!doc.getElementById("le-forname"));
@@ -635,9 +640,9 @@ block("(13)", function () {
     check("(13) it keeps the link, and empties the box and clears the request when done",
       /keep its link/.test(t) && /empty Changes to make and clear regen/.test(t) && /committed receipt/.test(t));
     check("(13) it ends with what a good result looks like", /A good result: [^\n]+$/.test(t));
-    click(m.w, card("a5").querySelector('[data-edittop="a5"]'));
-    check("(13) Edit opens in the one box, at Change its details, with no comment box of its own",
-      !doc.getElementById("le-refresh") && !!doc.querySelector('#lib-drop [data-editform="a5"]') && doc.getElementById("lc-pu-details").checked);
+    openEdit(m, "a5");
+    check("(13) Edit the record opens inside the card's Details, with no comment box of its own (Version 22)",
+      !doc.getElementById("le-refresh") && !!card("a5").querySelector('.lib-details [data-editform="a5"]'));
   });
 });
 
@@ -672,21 +677,21 @@ block("(14)", function () {
     /cpl_library_sources_ck check \(\s*jsonb_typeof\(sources\) = 'array'/.test(SQL) && /cpl_library_regen_ck check \(\s*regen is null or/.test(SQL));
   return Promise.resolve(M.activate()).then(settle).then(function () {
     const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
-    check("(14) ⭐ every record offers Revise and remediate", ["a1", "a2", "a3", "a4", "a5"].every(function (id) {
-      return /Revise and remediate|Ask for more changes/.test((card(id).querySelector('[data-revise="' + id + '"]') || {}).textContent || ""); }));
-    check("(14) a waiting request names who asked and when, in words, and offers Copy the request",
-      /Rebuild requested by Ashley, 26 October 2026, 14:10 UTC/.test(card("a4").textContent) && !!card("a4").querySelector('[data-request="a4"]') &&
-      /Rebuild requested/.test(card("a4").querySelector(".lib-flags").textContent));
-    check("(14) a ready draft links the draft and offers Replace the public copy",
-      /Draft ready to review/.test(card("a3").querySelector(".lib-flags").textContent) &&
-      !!card("a3").querySelector('a[href="https://claude.ai/artifact/DRAFT1"]') &&
+    check("(14) ⭐ every record offers its next step on the card: Revise, Ask for more changes or Change what you asked (Version 22)",
+      ["a1", "a2", "a3", "a4", "a5"].every(function (id) {
+        return !!card(id).querySelector('.lib-state [data-revise="' + id + '"], .lib-state [data-change="' + id + '"]'); }));
+    check("(14) a waiting request names who asked and when, in words, and leads with Copy the request when a session must make it",
+      /Rebuild requested by Ashley, 26 October 2026, 14:10 UTC/.test(card("a4").querySelector(".lib-state").textContent) &&
+      card("a4").querySelector('.lib-state [data-request="a4"]').classList.contains("lead") && !card("a4").querySelector(".lib-flags"));
+    check("(14) a ready draft leads with Open the draft and offers Replace the public copy and Ask for more changes",
+      card("a3").querySelector('a.lib-word.lead[href="https://claude.ai/artifact/DRAFT1"]') !== null &&
       !!card("a3").querySelector('[data-regenokform="a3"] button[type="submit"]') && /Ask for more changes/.test(card("a3").querySelector('[data-revise="a3"]').textContent));
     check("(14) a ready draft names its version, and the public one it would replace",
-      /Version 3 is ready to review/.test(card("a3").querySelector(".lib-regen").textContent) &&
-      /Version 2 stays public until you replace it/.test(card("a3").querySelector(".lib-regen").textContent),
-      card("a3").querySelector(".lib-regen").textContent);
-    click(m.w, card("a3").querySelector('[data-request="a3"]'));
-    const t = (doc.getElementById("lib-r-a3") || {}).value || "";
+      /Version 3 is ready to review/.test(card("a3").querySelector(".lib-state").textContent) &&
+      /Version 2 stays public until you replace it/.test(card("a3").querySelector(".lib-state").textContent),
+      card("a3").querySelector(".lib-state").textContent);
+    // A ready draft's card leads with Open the draft (Version 22); the paste for it still reads whole.
+    const t = M._requestText(M._state.rows.filter(function (r) { return r.id === "a3"; })[0]);
     check("(14) the paste lists the documents and says how to read pasted text",
       /Documents to work from:\n- Sheet 129 notes: text pasted into the record, 23 characters \(added by Sam, 26 October 2026\)/.test(t) &&
       /select sources from cpl_library where slug = 'cpl-funding-in-motion';/.test(t), t);
@@ -694,28 +699,36 @@ block("(14)", function () {
       /the public copy stays until someone presses Replace the public copy/.test(t), t);
     check("(14) ⭐ the paste asks for the draft remediated before it comes back",
       /Remediate the draft before you hand it over/.test(t) && /npm run a11y/.test(t) && /library_remediate\.js/.test(t), t);
+    const pick = function (file) {
+      const inp = doc.getElementById("cb-file-a5");
+      Object.defineProperty(inp, "files", { value: [file], configurable: true });
+      inp.dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    };
     click(m.w, card("a5").querySelector('[data-revise="a5"]'));
-    const panel = doc.getElementById("lib-drop");
-    check("(14) Revise and remediate opens the one box with the piece picked, its kind named",
-      /Already in the Library/.test(panel.textContent) && /Update to the Board of Governors \u00b7 Deck/.test(panel.textContent) &&
-      doc.getElementById("lc-pu-revise").checked && /Revise and remediate this piece/.test(panel.textContent), panel.textContent.slice(0, 300));
-    check("(14) the box says what a session can read and what it does, and keeps a student's record out",
-      /cannot open SharePoint until RCCD approves the Microsoft 365 connector/.test(panel.textContent) && /Never add a student's record/.test(panel.textContent) &&
-      /checks its accessibility/.test(panel.textContent));
-    check("(14) a piece off the public library asks no publish question", !panel.querySelector("select") && !/Replace the public copy/.test(panel.textContent));
-    doc.getElementById("lc-instr").value = "Add the welding exhibit.";
-    drop({ name: "Meeting notes.txt", text: function () { return Promise.resolve("The college asked about OSHA."); } });
+    const box = card("a5").querySelector('form[data-cboxform="a5"]');
+    check("(14) ⭐ Revise opens its box on the card it was pressed on, named for the piece (Version 22)",
+      !!box && /Revise Update to the Board of Governors/.test(box.textContent) && doc.activeElement === doc.getElementById("cb-instr-a5") && !doc.getElementById("lc-pu-revise"),
+      box ? box.textContent.slice(0, 300) : m.root.textContent.slice(0, 300));
+    check("(14) the box says a session makes a deck, and keeps a student's record out", /A Claude session makes the revision/.test(box.textContent) &&
+      /Never add a student's record/.test(box.textContent) && /Send to a session/.test(box.textContent));
+    check("(14) a piece off the public library asks no publish question", !box.querySelector("select") && !/Replace the public copy/.test(box.textContent));
+    doc.getElementById("cb-instr-a5").value = "Add the welding exhibit.";
+    click(m.w, box.querySelector('[data-cbdocs="a5"]'));
+    pick({ name: "Meeting notes.txt", text: function () { return Promise.resolve("The college asked about OSHA."); } });
     return settle();
   }).then(function () {
-    check("(14) a file dropped on a picked piece becomes a document to work from, read here, and the instructions survive the repaint",
-      /Meeting notes/.test(doc.querySelector("#lib-drop .lib-srcs").textContent) && doc.getElementById("lc-instr").value === "Add the welding exhibit.");
-    drop({ name: "stray.txt", text: function () { return Promise.resolve("Not this one."); } });
+    const box = function () { return m.root.querySelector('form[data-cboxform="a5"]'); };
+    check("(14) a file added in the box becomes a document to work from, read here, and the instructions survive the repaint",
+      /Meeting notes/.test(box().querySelector(".lib-srcs").textContent) && doc.getElementById("cb-instr-a5").value === "Add the welding exhibit.");
+    const inp = doc.getElementById("cb-file-a5");
+    Object.defineProperty(inp, "files", { value: [{ name: "stray.txt", text: function () { return Promise.resolve("Not this one."); } }], configurable: true });
+    inp.dispatchEvent(new m.w.Event("change", { bubbles: true }));
     return settle();
   }).then(function () {
-    click(m.w, m.root.querySelector('[data-srcdel="pc:1"]'));
-    check("(14) Remove takes a document off the list", m.root.querySelectorAll("#lib-drop .lib-srcs li").length === 1);
-    doc.getElementById("lc-link").value = "https://example.org/guide.pdf";
-    click(m.w, doc.getElementById("lib-go"));
+    click(m.w, m.root.querySelector('[data-srcdel="cb:1"]'));
+    check("(14) Remove takes a document off the list", m.root.querySelectorAll('form[data-cboxform="a5"] .lib-srcs li').length === 1);
+    doc.getElementById("cb-link-a5").value = "https://example.org/guide.pdf";
+    submit({ w: m.w, root: m.root }, 'form[data-cboxform="a5"]');
     return settle();
   }).then(function () {
     const w0 = writes[0] || { body: {}, init: {} };
@@ -726,8 +739,9 @@ block("(14)", function () {
       b.sources[0].title === "Meeting notes" && b.sources[0].url === null && b.sources[0].text === "The college asked about OSHA." &&
       b.sources[1].title === "guide" && b.sources[1].url === "https://example.org/guide.pdf" && b.sources[1].text === null &&
       b.regen && b.regen.requested_by === "Sam" && b.regen.publish === "show" && /^\d{4}-\d{2}-\d{2}T/.test(b.regen.requested_at), JSON.stringify(b));
-    check("(14) and says what happens next, beside the box, and lets the piece go", /Claude rebuilds Update to the Board of Governors from its source/.test(m.root.textContent) &&
-      /checks its accessibility/.test(m.root.querySelector(".lib-msg").textContent) && !doc.getElementById("lc-pu-revise"));
+    check("(14) and says what happens next on the card itself, and closes the box",
+      /Saved\. A Claude session makes this one/.test((m.root.querySelector("#lib-t-a5").closest("article").querySelector(".lib-msg") || {}).textContent || "") &&
+      !m.root.querySelector('form[data-cboxform="a5"]'));
     const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
     let scrolled = false;
     m.w.HTMLElement.prototype.scrollIntoView = function () { scrolled = true; };
@@ -785,7 +799,7 @@ block("(15)", function () {
     check("(15) the lone piece keeps the plain card with File it", !doc.getElementById("lib-t-p3").closest("article").classList.contains("lib-proj") && !!doc.getElementById("lib-t-p3").closest("article").querySelector("[data-file]"));
     click(m.w, rows[1].querySelector("[data-toggle]"));
     check("(15) Details opens under its own row", !doc.getElementById("lib-d-p2").hidden && doc.getElementById("lib-d-p2").closest("li.lib-piece") !== null);
-    click(m.w, m.root.querySelector('li.lib-piece [data-edittop="p2"]'));
+    openEdit(m, "p2");
     const pf = doc.getElementById("le-project");
     check("(15) Edit offers Project, filled, with the known projects to pick from", !!pf && pf.value === "ELL IET CPL" && /ELL IET CPL/.test((doc.getElementById("lib-projects") || {}).innerHTML || ""));
     pf.value = "";
@@ -837,7 +851,7 @@ block("(16)", function () {
     doc.getElementById("lib-drop").dispatchEvent(ev);
   };
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
-    check("(16) one panel, headed Create, Revise or Remediate a Document", /Create, Revise or Remediate a Document/.test(doc.getElementById("lib-panel-h").textContent));
+    check("(16) one panel, headed Create or Remediate a Document (Version 22: revising moved onto the card)", /^Create or Remediate a Document$/.test(doc.getElementById("lib-panel-h").textContent));
     check("(16) no Make a visual, Start a piece or Add to the Library button", !doc.getElementById("lib-make") && !doc.getElementById("lib-start") && !doc.getElementById("lib-add"));
     check("(16) one word starts it", doc.getElementById("lib-go").textContent.trim() === "Start");
     click(m.w, doc.getElementById("lib-go"));
@@ -1226,7 +1240,14 @@ block("(19)", function () {
   const rows = JSON.parse(JSON.stringify(PROJ_ROWS));
   rows[0].sources = [{ title: "ELL IET Ideas", url: "https://claude.ai/artifact/x", text: null, added_by: "Sam", added_on: "2026-10-23" }];
   const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
-    if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(200, [{}]); }
+    if (init && init.method && init.method !== "GET") {
+      const body = JSON.parse(init.body || "{}");
+      writes.push({ url: url, body: body });
+      // The fake table keeps a PATCH, as the real one does, so the next read sees it.
+      const hit = /cpl_library\?id=eq\.([\w-]+)$/.exec(url);
+      if (init.method === "PATCH" && hit) rows.forEach(function (r) { if (r.id === hit[1]) Object.assign(r, body); });
+      return response(200, [{}]);
+    }
     return response(200, rows);
   } });
   const JSZip = require("../jszip.min.js");
@@ -1238,49 +1259,46 @@ block("(19)", function () {
     doc.getElementById("lib-drop").dispatchEvent(ev);
   };
   const type = function (id, v) { const n = doc.getElementById(id); n.value = v; n.dispatchEvent(new m.w.Event("input", { bubbles: true })); };
-  const choose = function (v) { const n = doc.getElementById("lc-pu-" + v); n.checked = true; n.dispatchEvent(new m.w.Event("change", { bubbles: true })); };
-  const box = function () { return doc.getElementById("lib-drop"); };
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     const opts = Array.prototype.map.call(doc.querySelectorAll("#lib-pieces option"), function (o) { return o.value; });
     check("(19) ⭐ the picker names each piece's kind, so the visual and its document read apart",
       opts.indexOf("ELL IET CPL Starting Points (Visual, Version 2)") >= 0 && opts.indexOf("ELL IET CPL Ideas (Document)") >= 0, JSON.stringify(opts));
     type("lc-piece", "ELL IET CPL Starting Points (Visual, Version 2)");
-    check("(19) choosing one picks it at Revise and remediate, its documents listed, the picker put away",
-      /Already in the Library/.test(box().textContent) && doc.getElementById("lc-pu-revise").checked &&
-      /ELL IET Ideas/.test(box().querySelector(".lib-srcs").textContent) && !doc.getElementById("lc-piece"));
-    check("(19) the box offers four things to do with it", ["revise", "details", "version", "background"].every(function (v) { return !!doc.getElementById("lc-pu-" + v); }));
-    check("(19) a public piece's draft waits for Replace the public copy, and the box asks nothing about it",
-      /the public copy stays until you press Replace the public copy/.test(box().textContent) && !box().querySelector("select"));
-    click(m.w, box().querySelector("[data-unpiece]"));
-    check("(19) Clear lets the piece go and gives the picker back", !doc.getElementById("lc-pu-revise") && !!doc.getElementById("lc-piece"));
+    const cbox = function () { return m.root.querySelector('form[data-cboxform="p1"]'); };
+    check("(19) choosing one opens its card's box, its documents listed, the finder emptied (Version 22)",
+      !!cbox() && /Revise ELL IET CPL Starting Points/.test(cbox().textContent) && /ELL IET Ideas/.test(cbox().querySelector(".lib-srcs").textContent) &&
+      doc.getElementById("lc-piece").value === "" && doc.activeElement === doc.getElementById("cb-instr-p1"));
+    check("(19) the top box no longer offers the four radios", !doc.getElementById("lc-pu-revise") && !doc.getElementById("lc-pu-details"));
+    check("(19) a public piece drafts on its card, and the box says the public copy stays until replaced",
+      /Draft it now/.test(cbox().textContent) && /Version 2 stays public until you replace it/.test(cbox().textContent) && !cbox().querySelector("select"));
+    click(m.w, cbox().querySelector('[data-cboxcancel="p1"]'));
+    check("(19) Cancel closes the box", !cbox());
     type("lc-link", "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet/");
-    check("(19) pasting a piece's own link picks it, and says so",
-      !!doc.getElementById("lc-pu-revise") && /This is ELL IET CPL Starting Points, already in the Library/.test(m.root.textContent) && doc.getElementById("lc-link").value === "");
-    click(m.w, box().querySelector("[data-unpiece]"));
+    check("(19) pasting a piece's own link opens its card's box", !!cbox() && doc.getElementById("lc-link").value === "");
+    click(m.w, cbox().querySelector('[data-cboxcancel="p1"]'));
     drop({ name: "20261023_ELL_IET_CPL_Starting_Points_2.html", text: function () { return Promise.resolve("<html></html>"); } });
-    check("(19) dropping the page named for a piece picks it, rather than starting a second record",
-      /ELL IET CPL Starting Points/.test((box().querySelector(".lib-piecepick") || {}).textContent || "") && !m.M._state.pick);
+    check("(19) dropping the page named for a piece opens its card's box, rather than starting a second record", !!cbox() && !m.M._state.pick);
     const z = new JSZip();
     z.file("word/document.xml", '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>' +
       "<w:p><w:r><w:t>Add a table to each grantee card.</w:t></w:r></w:p>" +
       '<w:p><w:r><w:t xml:space="preserve">Name the </w:t></w:r><w:r><w:t>college courses.</w:t></w:r></w:p></w:body></w:document>');
     return z.generateAsync({ type: "uint8array" }).then(function (u8) {
-      drop({ name: "ELL revision notes.docx", arrayBuffer: function () { return Promise.resolve(u8.buffer); } });
-      // Wait on the read itself, never a fixed count of ticks (S522). JSZip unzips
-      // over several event-loop turns; on a quiet machine it lands after exactly the
-      // two settles this once waited, so a loaded CI shard (#2570, shard 3, three
-      // runs) checked before it finished and failed this check and the next.
-      const read = function (n) { return (m.M._state.src.pc || []).some(function (x) { return x.title === "ELL revision notes"; }) || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return read(n - 1); }); };
+      click(m.w, cbox().querySelector('[data-cbdocs="p1"]'));
+      const inp = doc.getElementById("cb-file-p1");
+      Object.defineProperty(inp, "files", { value: [{ name: "ELL revision notes.docx", arrayBuffer: function () { return Promise.resolve(u8.buffer); } }], configurable: true });
+      inp.dispatchEvent(new m.w.Event("change", { bubbles: true }));
+      // Wait on the read itself, never a fixed count of ticks (S522).
+      const read = function (n) { return (m.M._state.src.cb || []).some(function (x) { return x.title === "ELL revision notes"; }) || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return read(n - 1); }); };
       return read(300);
     });
   }).then(function () {
-    const pc = m.M._state.src.pc || [];
-    check("(19) ⭐ a Word file dropped on it is read here into a document to work from",
-      /ELL revision notes/.test(box().querySelector(".lib-srcs").textContent) &&
-      pc.some(function (x) { return x.title === "ELL revision notes" && x.text === "Add a table to each grantee card.\nName the college courses."; }), JSON.stringify(pc));
+    const cb = m.M._state.src.cb || [];
+    check("(19) ⭐ a Word file added in the box is read here into a document to work from",
+      /ELL revision notes/.test(m.root.querySelector('form[data-cboxform="p1"] .lib-srcs').textContent) &&
+      cb.some(function (x) { return x.title === "ELL revision notes" && x.text === "Add a table to each grantee card.\nName the college courses."; }), JSON.stringify(cb));
     const long = new Array(41).join("Revise each grantee card. ").trim();
-    doc.getElementById("lc-instr").value = long;
-    click(m.w, doc.getElementById("lib-go"));
+    doc.getElementById("cb-instr-p1").value = long;
+    submit({ w: m.w, root: m.root }, 'form[data-cboxform="p1"]');
     const written = function (n) { return writes.length || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return written(n - 1); }); };
     return written(300).then(function () { return long; });
   }).then(function (long) {
@@ -1288,20 +1306,27 @@ block("(19)", function () {
     check("(19) ⭐ instructions past the 600-character column are kept whole as a document, and the note points there",
       /id=eq\.p1$/.test(w0.url) && long.length > 600 && (b.refresh_note || "").length <= 600 &&
       /The whole instructions are under Documents to work from\.$/.test(b.refresh_note || "") && b.sources.length === 3 &&
-      b.sources.some(function (x) { return /^Instructions from Sam, /.test(x.title) && x.text === long; }) && b.regen.publish === "show", JSON.stringify(b).slice(0, 500));
+      b.sources.some(function (x) { return /^Instructions from Sam, /.test(x.title) && x.text === long; }) && b.regen.publish === "show", JSON.stringify({ n: (b.sources || []).map(function (x) { return x.title; }), note: (b.refresh_note || "").length, regen: b.regen }));
     check("(19) the column's cap is the schema's", /coalesce\(char_length\(refresh_note\), 0\) <= 600/.test(SQL));
-    click(m.w, m.root.querySelector('li.lib-piece [data-edittop="p2"]'));
-    check("(19) Edit opens the box at Change its details, with the record's own form and no Start",
-      doc.getElementById("lc-pu-details").checked && !!box().querySelector('form[data-editform="p2"]') && !doc.getElementById("lc-instr") && !doc.getElementById("lib-go"));
-    choose("version");
+    return settle().then(settle);
+  }).then(function () {
+    const draftCall = writes.filter(function (x) { return /library-revise-draft/.test(x.url); })[0];
+    check("(19) ⭐ one press: the request saves, then Claude drafts it on the card (Sam: \"a note and click revise\")",
+      !!draftCall && draftCall.body.id === "p1" && draftCall.body.by === "Sam", JSON.stringify(writes.map(function (x) { return x.url; })));
+    openEdit(m, "p2");
+    check("(19) Edit the record opens the record's form inside its Details, with no Start",
+      !!m.root.querySelector('.lib-details form[data-editform="p2"]') && !m.root.querySelector('#lib-drop form[data-editform="p2"]'));
+    click(m.w, m.root.querySelector('[data-newver="p2"]'));
     check("(19) File a new version opens the filing form for that same record", !!doc.getElementById("lib-addform") && m.M._state.formFor === "p2" && !doc.getElementById("lib-go"));
-    choose("background");
+    if (!m.root.querySelector('[data-fromit="p2"]')) click(m.w, m.root.querySelector('[data-toggle="p2"]'));
+    click(m.w, m.root.querySelector('[data-fromit="p2"]'));
     doc.getElementById("lc-instr").value = "A deck for the grantee webinar";
     click(m.w, doc.getElementById("lib-go"));
     const ls = m.M._state.src.ls || [];
-    check("(19) Use it as background opens the brief with the piece's own link first",
+    check("(19) Start something new from it opens the brief with the piece's own link first",
       !!doc.getElementById("lib-startform") && ls.length >= 1 && ls[0].url === PROJ_ROWS[1].url && doc.getElementById("ls-kind").value === "deck", JSON.stringify(ls));
-    check("(19) every row says Revise and remediate", rows.every(function (r) { return /Revise and remediate/.test((m.root.querySelector('[data-revise="' + r.id + '"]') || {}).textContent || ""); }));
+    check("(19) every row offers its next step: Revise, or Change what you asked once a request waits",
+      rows.every(function (r) { return /^(Revise|Change what you asked)/.test((m.root.querySelector('[data-revise="' + r.id + '"], [data-change="' + r.id + '"]') || {}).textContent || ""); }));
   });
 });
 
@@ -1354,7 +1379,7 @@ block("(12)", function () {
     check("(12) a knowledge piece links its note", /KB note/.test(t("k2")) && /methodology\/cpl-opportunity-pages\.md/.test(t("k2")));
     check("(12) a deck, film or data piece needs none", /no KB note needed/.test(t("k3")));
     M._state.open = { k1: true }; M.render();
-    click(w, m.root.querySelector('[data-edittop="k1"]'));
+    openEdit(m, "k1");
     check("(12) Edit offers Knowledge and KB note", !!doc.getElementById("le-knowledge") && !!doc.getElementById("le-kbnote") && doc.getElementById("le-knowledge").value === "yes");
     doc.getElementById("le-kbnote").value = "reference/dsp-training.md";
     submit(m, 'form[data-editform="k1"]');
@@ -1392,7 +1417,7 @@ block("(20)", function () {
   const w = M._regenWords(iaca);
   check("(20) ⭐ its card says SharePoint cannot be opened and what to do instead",
     /Rebuild requested by Crystal Nasio/.test(w) && /cannot open yet/.test(w) && /Microsoft 365 connector/.test(w) &&
-    /Download a copy of the file from SharePoint/.test(w) && /Create, Revise or Remediate a Document/.test(w) &&
+    /Download a copy of the file from SharePoint/.test(w) && /Change what you asked/.test(w) &&
     !/Copy the request starts it/.test(w), w);
   check("(20) the advice never sends a file to SharePoint for a session to read",
     !/Put it in SharePoint and paste/.test(SRC) && !/put it in SharePoint and paste/.test(SRC));
@@ -1427,7 +1452,7 @@ block("(21)", function () {
       /In remediation from Sample Resume\.pdf\. The Library keeps the record, not the file: press Finish remediation and choose the file again\./.test(card.textContent), card.textContent.slice(0, 400));
     const done = doc.getElementById("lib-t-done1").closest("article");
     check("(21) a remediated record not yet filed makes File it its first action, and says what to do",
-      done.querySelector("[data-file=done1]").classList.contains("primary") && /Put the remediated file in the CPLLibrary folder, then press File it/.test(done.textContent) && !!done.querySelector("[data-revise]"));
+      done.querySelector("[data-file=done1]").classList.contains("lead") && /Put the remediated file in the CPLLibrary folder, then press File it/.test(done.textContent) && !!done.querySelector("[data-revise]"));
     m.w.JSZip = require("../jszip.min.js");
     m.w.CPL_REMEDIATE = require("../library_remediate.js");
     const pdf = makePdf({ creator: "Microsoft Word", title: "" });
