@@ -67,9 +67,18 @@ check("renders the illustrated builder mock rows", root && root.querySelectorAll
 // "Getting set up" (S576, 2026-11-04): the teammate's steps and the admin's steps.
 const setup = root && root.querySelector(".op-setup");
 check("renders the Getting set up section", setup && /Getting set up/.test(setup.textContent));
-check("setup has a teammate lane and an admin lane, each with steps",
-  setup && setup.querySelectorAll(".op-lane .op-steps").length === 2
+check("setup has one card of steps per account (MAP team, Academic Affairs pilot)",
+  setup && setup.querySelector('.op-lane[data-account="map"] .op-steps')
+    && setup.querySelector('.op-lane[data-account="aa"] .op-steps')
     && Array.prototype.every.call(setup.querySelectorAll(".op-lane .op-steps"), (ol) => ol.children.length >= 4));
+check("setup opens with Sam and Malone's own steps, before the account cards",
+  setup && setup.querySelector(".op-start") && setup.querySelectorAll(".op-start .op-steps li").length >= 4
+    && (setup.querySelector(".op-start").compareDocumentPosition(setup.querySelector(".op-gate")) & 4) !== 0);
+check("setup has the first-day steps shared by both accounts",
+  setup && setup.querySelectorAll(".op-firstday .op-steps li").length >= 4);
+// Setup cards carry no state: they must not borrow the gate's automatic / human-approved colors.
+check("setup cards use the neutral lane, never op-auto or op-human",
+  setup && !setup.querySelector(".op-lane.op-auto, .op-lane.op-human"));
 // The tracker is public: the tab names roles and repos, never a person's address.
 check("Our Process carries no email address", !/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/.test(root ? root.textContent : ""));
 
