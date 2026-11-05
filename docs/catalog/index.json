@@ -16569,7 +16569,7 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 542,
+   "count": 543,
    "docs": [
     {
      "created": "2026-11-05",
@@ -16603,6 +16603,22 @@
       "scheduled-sessions"
      ],
      "title": "Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 574,
+     "path": "docs/session_574_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 574 handoff: the cert link's IAI, Intuit and DRE families; the family work stops; Columbia's full read is next",
      "type": null,
      "updated": ""
     },
@@ -25812,5 +25828,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1379
+ "total": 1380
 }

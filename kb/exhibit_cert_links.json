@@ -3,9 +3,9 @@
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
  "_reference_generated_at": "2026-11-04T17:01:29+00:00",
  "counts": {
-  "certs_linked": 226,
-  "titles_linked": 271,
-  "holds": 255,
+  "certs_linked": 235,
+  "titles_linked": 280,
+  "holds": 264,
   "bundles": 51,
   "aligned": 16,
   "codes_not_in_catalog": [
@@ -160,6 +160,20 @@
    "issuer": "CompTIA",
    "family": "CompTIA"
   },
+  "ITC0519": {
+   "code": null,
+   "name": "Real Estate Broker License",
+   "catalog_name": "Real Estate Broker License",
+   "issuer": "California Department of Real Estate",
+   "family": "DRE"
+  },
+  "ITC0520": {
+   "code": null,
+   "name": "Real Estate Salesperson",
+   "catalog_name": "Real Estate Salesperson",
+   "issuer": "California Department of Real Estate",
+   "family": "DRE"
+  },
   "ITC0531": {
    "code": null,
    "name": "CLEP Principles of Marketing",
@@ -173,6 +187,13 @@
    "catalog_name": "CLEP Financial Accounting",
    "issuer": "College Board",
    "family": "CLEP"
+  },
+  "ITC0664": {
+   "code": null,
+   "name": "Intuit Certified Bookkeeping Professional",
+   "catalog_name": "Intuit Certified Bookkeeping Professional",
+   "issuer": "Intuit, Inc.",
+   "family": "Intuit"
   },
   "ITC0745": {
    "code": null,
@@ -1301,6 +1322,41 @@
    "issuer": "College Board",
    "family": "CLEP"
   },
+  "ITC5683": {
+   "code": null,
+   "name": "Bloodstain Pattern Examiner Certification",
+   "catalog_name": "Bloodstain Pattern Examiner Certification",
+   "issuer": "International Association for Identification (IAI)",
+   "family": "IAI"
+  },
+  "ITC5684": {
+   "code": null,
+   "name": "Crime Scene Certification",
+   "catalog_name": "Crime Scene Certification",
+   "issuer": "International Association for Identification (IAI)",
+   "family": "IAI"
+  },
+  "ITC5685": {
+   "code": null,
+   "name": "Footwear Certification",
+   "catalog_name": "Footwear Certification",
+   "issuer": "International Association for Identification (IAI)",
+   "family": "IAI"
+  },
+  "ITC5687": {
+   "code": null,
+   "name": "Forensic Photography & Imaging Certification",
+   "catalog_name": "Forensic Photography & Imaging Certification",
+   "issuer": "International Association for Identification (IAI)",
+   "family": "IAI"
+  },
+  "ITC5689": {
+   "code": null,
+   "name": "Latent Print Certification",
+   "catalog_name": "Latent Print Certification",
+   "issuer": "International Association for Identification (IAI)",
+   "family": "IAI"
+  },
   "ITC5730": {
    "code": null,
    "name": "IB Biology HL",
@@ -1482,6 +1538,13 @@
    "catalog_name": "Residential Plans Examiner",
    "issuer": "International Code Council",
    "family": "ICC"
+  },
+  "ITC6013": {
+   "code": null,
+   "name": "Intuit QuickBooks Certified User",
+   "catalog_name": "Intuit QuickBooks Certified User",
+   "issuer": "Intuit, Inc.",
+   "family": "Intuit"
   },
   "ITC6512": {
    "code": null,
@@ -2808,6 +2871,20 @@
     "ITC5257"
    ]
   },
+  "California Real Estate Broker License": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0519"
+   ]
+  },
+  "California Real Estate Salesperson License": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0520"
+   ]
+  },
   "Certified Associate in Project Management (CAPM)": {
    "relation": "holds",
    "rule": "all",
@@ -2815,11 +2892,46 @@
     "ITC0745"
    ]
   },
+  "Certified Bloodstain Pattern Analyst (CBPA)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5683"
+   ]
+  },
   "Certified Building Official": {
    "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC5846"
+   ]
+  },
+  "Certified Crime Scene Investigator (CCSI)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5684"
+   ]
+  },
+  "Certified Footwear Examiner (CFE)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5685"
+   ]
+  },
+  "Certified Forensic Photographer (CFP)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5687"
+   ]
+  },
+  "Certified Latent Print Examiner (CLPE)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5689"
    ]
   },
   "Certified Nurse Assistant (CNA) Certification": {
@@ -3249,6 +3361,20 @@
    "rule": "all",
    "certs": [
     "ITC5798"
+   ]
+  },
+  "Intuit Certified Bookkeeping Professional": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0664"
+   ]
+  },
+  "Intuit QuickBooks Certified User": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC6013"
    ]
   },
   "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)": {

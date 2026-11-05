@@ -1093,3 +1093,22 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
 - **The S542 test** moved here from the lane: it is in the S542 entry above.
 - **Next:** the remaining families are courses and apprenticeship committees with no catalog certs; measure the gap by
   issuer again before choosing one.
+
+## SkyNeedle (2026-11-04, S573, the CPL Queue routine): IAI, Intuit and DRE in the cert link; the family work stops
+
+- **Measure by issuer, across spellings.** Exact issuer matching reads zero catalog rows for issuers the catalog spells
+  another way (FAA, NFPA, IAI). A keyword pass over the catalog's issuers found seven with rows and unlinked titles: NFPA,
+  IAI, ESCO, Intuit, the Department of Real Estate, NEIEP and the State Fire Marshal.
+- **#2763 adds 9 titles to 9 certs:** IAI's five certifications (each holds the catalog's row for its discipline, which
+  carries no CCSI/CSCSA level), Intuit's Bookkeeping Professional and QuickBooks Certified User, and the DRE's broker and
+  salesperson licenses. The link holds 280 titles to 235 certs.
+- **Left out:** the ESCO Master Specialist titles (the catalog lists the professional-level exams and the Hands-On
+  credential, never the written Master Specialist); the NFPA titles (their exhibits name Cal-JAC, ICC and SFT too);
+  *Intuit QuickBooks Online Certified User* (no Online row); NEIEP's apprenticeship terms and the State Fire Marshal's
+  courses (no catalog row names them); the QuickBooks and real estate course titles.
+- **What remains, 2,370 titles:** California Community Colleges 1,334 (local courses), the carpenters' committees 198,
+  State Fire Training 99, the Iron Workers 52, DANTES 38, ACE 29, high schools and ROPs about 60, IBEW and UA Local 342
+  46, NWCG courses 16, OSHA 16, POST 16, CSLB 14, FEMA 11. None of these issuers has a catalog row that a title names.
+  **The hand-family work stops here.** The next gain is in the catalog, not the link: State Fire Training (99 titles),
+  POST, CSLB and FEMA issue certifications the credential watch does not read. Adding them to `_issuers_watched` is the
+  credential watch lane's call, and the link rebuild picks up whatever it adds.

@@ -289,6 +289,27 @@ HAND = {
         "Water/Wastewater Operator Certification": ("any", ["Water Treatment Operator", "Distribution System Operator",
                                                             "Wastewater Treatment Plant Operator"]),
     }),
+    # Sixteenth to eighteenth families (S573, 2026-11-04): the International Association for Identification, Intuit and
+    # the California Department of Real Estate. Each IAI certification holds the catalog's row for its discipline (the
+    # catalog lists the discipline, not the CCSI/CSCSA level). Left out: the ESCO Master Specialist titles (the catalog
+    # lists the professional-level exams and the Hands-On credential, never the written Master Specialist), the NFPA
+    # titles (their exhibits name Cal-JAC, ICC and SFT too), "Intuit QuickBooks Online Certified User" (no catalog row
+    # for the Online exam), and the QuickBooks and real estate course titles, which a college issues.
+    "IAI": (("International Association for Identification", "International Association for Identification (IAI)"), {
+        "Certified Bloodstain Pattern Analyst (CBPA)": ("all", ["Bloodstain Pattern Examiner Certification"]),
+        "Certified Crime Scene Investigator (CCSI)": ("all", ["Crime Scene Certification"]),
+        "Certified Footwear Examiner (CFE)": ("all", ["Footwear Certification"]),
+        "Certified Forensic Photographer (CFP)": ("all", ["Forensic Photography & Imaging Certification"]),
+        "Certified Latent Print Examiner (CLPE)": ("all", ["Latent Print Certification"]),
+    }),
+    "Intuit": (("Intuit", "Intuit, Inc."), {
+        "Intuit Certified Bookkeeping Professional": ("all", ["Intuit Certified Bookkeeping Professional"]),
+        "Intuit QuickBooks Certified User": ("all", ["Intuit QuickBooks Certified User"]),
+    }),
+    "DRE": (("California Department of Real Estate",), {
+        "California Real Estate Broker License": ("all", ["Real Estate Broker License"]),
+        "California Real Estate Salesperson License": ("all", ["Real Estate Salesperson"]),
+    }),
 }
 HAND_ISSUER = {sp: fam for fam, (spellings, _) in HAND.items() for sp in spellings}
 HAND_TITLE = {ut: fam for fam, (_, table) in HAND.items() for ut in table}
