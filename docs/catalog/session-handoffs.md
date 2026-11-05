@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-541 document(s).
+542 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 577 | [Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order](../session_577_handoff.md) | 2026-11-05 |
 | 575 | [Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried](../session_575_handoff.md) | 2026-11-04 |
 | 573 | [Session 573 handoff: the cert link's NWCG and SWRCB families; Columbia's full read is next](../session_573_handoff.md) | 2026-11-04 |
 | 572 | [Session 572 handoff: the cert link's AWS welding and Amazon families; Columbia's full read is next](../session_572_handoff.md) | 2026-11-04 |

@@ -16569,8 +16569,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 541,
+   "count": 542,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 577,
+     "path": "docs/session_577_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "governance",
+      "onboarding",
+      "claude-team",
+      "library",
+      "co-academic-affairs"
+     ],
+     "title": "Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25794,5 +25812,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1378
+ "total": 1379
 }
