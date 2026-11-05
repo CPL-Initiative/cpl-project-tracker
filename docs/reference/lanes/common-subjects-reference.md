@@ -76,8 +76,9 @@ the Note, keeping a code asks its reason; the panel's local codes show Colleges 
 `kb/discipline_local_courses/`, `kb/_build_discipline_local_courses.py`), name their courses, and carry *Use <code>*;
 a row saved since the scan ran leaves *A scan finding to confirm or note*; *What a Common SUBJ is*
 (`prototype/common_subj_explainer.html`). Every Commons view: *Hide the top*, side panels resize, both remembered.
-**Sync:** `phase-1e-sync.yml` is manual; a session runs it after Sam's pass (last 2026-11-05 00:15Z, his codes in the
-file). **NEXT:** the re-mint dry-run that carries the evening's codes onto the M-IDs (WWKC, WWKF, GFCD, CBIT, DIES,
+**Sync:** `phase-1e-sync.yml` is manual, and a code change must land with its re-mint: the 2026-11-05 00:15Z sync put
+Sam's new codes in the file ahead of the M-IDs, broke `tests/csr_trail_rules_test.py` on main, and was reverted. His
+saves stay in `kb_curation`; the re-mint run syncs and folds them in one window. **NEXT:** the re-mint dry-run that carries the evening's codes onto the M-IDs (WWKC, WWKF, GFCD, CBIT, DIES,
 CSIS and others; apply waits on Sam); ECONMT and Electricity's adult-education codes, his refile in Local subjects.
 **The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local

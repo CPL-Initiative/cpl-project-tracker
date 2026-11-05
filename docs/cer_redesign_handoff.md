@@ -21,8 +21,9 @@ the panel, local-code counts name their courses (`kb/discipline_local_courses/`)
 Note seeded on a code edit, a reason to keep, Check alignment (Subjects and Exhibits), the scan list shortens. #2783
 *What a Common SUBJ is* (`prototype/common_subj_explainer.html`) and KB note section 5. #2785 *Hide the top* on every
 Commons view, side panels resize, Take becomes Use, a row saved since the scan leaves the scan list.
-CPLBrain#663 Sam's Common SUBJ framing, verbatim. **Sync ran** (phase-1e-sync, 00:15Z): Sam's codes are in
-`kb/discipline_canonical_subj4.json` and the dry-run is refreshed.
+CPLBrain#663 Sam's Common SUBJ framing, verbatim. **The sync ran and was reverted** (phase-1e-sync, 00:15Z): new codes in the file ahead of their
+M-IDs fail `tests/csr_trail_rules_test.py` (canonical codes with no identity; strays 2,488 of 75,581). Sam's saves stay
+in `kb_curation`; sync them with the re-mint, in one window.
 
 ## Sam's decisions this run
 
@@ -46,7 +47,7 @@ CPLBrain#663 Sam's Common SUBJ framing, verbatim. **Sync ran** (phase-1e-sync, 0
 ## Lessons to honor
 
 - Read a session token at write time; a laptop sleep outlives the copy taken at load.
-- A note or code saved is invisible to the scan until the manual sync runs; run it when Sam says the pass is done.
+- A code change and its re-mint land together: syncing new codes alone turns main red. Notes alone could sync any time.
 - Verify a "fix the display" ask against the database: the evening's "reverts" were saves that never landed.
 
 ## Let go
