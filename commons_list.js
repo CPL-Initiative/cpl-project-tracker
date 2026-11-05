@@ -1363,7 +1363,9 @@
         "." + P + "linebar{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;justify-content:space-between;margin:12px 0 10px}",
         "." + P + "line{margin:0;display:flex;flex-wrap:wrap;gap:4px 0;align-items:baseline;color:var(--text-strong)}",
         "." + P + "sep{color:var(--text-muted);margin:0 .55em}",
-        "." + P + "fold[hidden]{display:none}"
+        "." + P + "fold[hidden]{display:none}",
+        // The tab's introduction folds with the summary (line's o.top); one rule for every Commons view.
+        "[data-cmn-top-folded]{display:none !important}"
       ]);
       // A tab with no base classes of its own gets the Exhibits tab's: underlined words, muted and small text, the
       // finder's box, the current filter underlined.
@@ -1400,8 +1402,18 @@
         if (k) p.appendChild(el("span", { cls: C.sep, "aria-hidden": "true", text: "\u00b7" }));
         p.appendChild(n);
       });
+      // The top of the page folds as one (Sam, 2026-11-05: "make the top cards section collapsible for all commons views.
+      // that maximizes my focus on the list"): the summary's cards and the tab's introduction (o.top, CSS selectors).
+      if (o.top && o.top.length) setTimeout(function () {
+        o.top.forEach(function (sel) {
+          Array.prototype.forEach.call(document.querySelectorAll(sel), function (n) {
+            if (o.folded) n.setAttribute("data-cmn-top-folded", ""); else n.removeAttribute("data-cmn-top-folded");
+          });
+        });
+      }, 0);
       var tid = foldId + "-w";
-      var tog = word(o.folded ? "Show the summary" : "Hide the summary", function () {
+      var tog = word(o.folded ? "Show the top" : "Hide the top", function () {
+        setTopFolded(!o.folded);
         if (o.onToggle) o.onToggle();
         var b = document.getElementById(tid); if (b) b.focus();
       }, { cls: C.w + " " + foldId + "-w", id: tid, "aria-expanded": o.folded ? "false" : "true", "aria-controls": foldId });
@@ -1409,7 +1421,7 @@
     }
 
     var api = {
-      render: renderList, redraw: redrawList, line: line, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
+      render: renderList, redraw: redrawList, line: line, topFolded: topFolded, setTopFolded: setTopFolded, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
@@ -1420,6 +1432,17 @@
     return api;
   }
 
+  /* Whether the top of every Commons view is folded: one choice for all five (a fold is no filter, so it lasts across
+     visits, CLAUDE.md "Tabs never remember a filter"). Storage may be blocked; the fold then lasts the page. */
+  var TOP_KEY = "cplCommonsTopFolded", topMem = null;
+  function topFolded() {
+    if (topMem == null) { try { topMem = window.localStorage.getItem(TOP_KEY) === "1"; } catch (e) { topMem = false; } }
+    return topMem;
+  }
+  function setTopFolded(v) {
+    topMem = !!v;
+    try { window.localStorage.setItem(TOP_KEY, topMem ? "1" : "0"); } catch (e) { /* storage blocked */ }
+  }
   /* The Commons' figures for every List: kb/status/commons.json, read once a visit (fresh reads it again). A failed read
      rejects with its words, and the line says it could not be read (S343), never a zero. */
   var COMMONS_URL = "kb/status/commons.json", commonsRead = null;
@@ -1446,5 +1469,5 @@
     (Array.isArray(row && row.issues) ? row.issues : []).forEach(function (i) { out.push({ n: i.n, open: i.open, words: i.words }); });
     return out;
   }
-  window.CPL_COMMONS_LIST = { create: create, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
+  window.CPL_COMMONS_LIST = { create: create, topFolded: topFolded, setTopFolded: setTopFolded, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
 })();

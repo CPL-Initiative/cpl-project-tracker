@@ -8,7 +8,7 @@
 //   (2) a count whose place is the List's own filter (Open, Confirmed by a person) is a word that sets it; the List's own
 //       count is plain text until a filter is set; a count whose place is the Progress view stays a link;
 //   (3) the Progress view's opened page (Needs attention, the three questions) sits in a fold under the line, under its
-//       own prefix so its ids never meet the Progress view's; Hide the summary hides it and its word says so;
+//       own prefix so its ids never meet the Progress view's; Hide the top hides it and its word says so;
 //   (4) a failed read says the figures could not be read, once, with no retry loop; a summary whose modules do not
 //       load says so once, and never loops;
 //   (5) a title opens the panel: the MQ discipline, its local subjects in a sortable table, the codes it shares (a
@@ -192,14 +192,14 @@ function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.querySelect
   check("(3) ⭐ the Progress view's page sits in the fold: Needs attention and the three questions, under its own prefix",
     fold && !fold.hidden && !!fold.querySelector("#csl-pg-attention") && /What is it called\?/.test(txt(fold)) && /Whose code is it\?/.test(txt(fold))
     && !fold.querySelector("[id^='cs-pg-']"), fold && txt(fold).slice(0, 200));
-  check("(3) the fold's word reads Hide the summary and controls the fold", tog && txt(tog) === "Hide the summary"
+  check("(3) the fold's word reads Hide the top and controls the fold", tog && txt(tog) === "Hide the top"
     && tog.getAttribute("aria-expanded") === "true" && tog.getAttribute("aria-controls") === "csl-fold");
   tog.click(); await settle();
   const tog2 = tm.d.getElementById("csl-fold-w");
-  check("(3) ⭐ Hide the summary hides it; the word says Show the summary and keeps focus", tm.d.getElementById("csl-fold").hidden
-    && txt(tog2) === "Show the summary" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
+  check("(3) ⭐ Hide the top hides it; the word says Show the top and keeps focus", tm.d.getElementById("csl-fold").hidden
+    && txt(tog2) === "Show the top" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
   tog2.click(); await settle();
-  check("(3) Show the summary brings it back", !tm.d.getElementById("csl-fold").hidden && !!tm.d.querySelector("#csl-pg-attention"));
+  check("(3) Show the top brings it back", !tm.d.getElementById("csl-fold").hidden && !!tm.d.querySelector("#csl-pg-attention"));
 
   // ── (4) a failed read ──
   const tf = boot();

@@ -2097,8 +2097,10 @@
         L.cmLoading = false; L.cmRead = true; if (state.view === "list") listRepaint();
       });
     }
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (L.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) L.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!L.dashFolded;
-    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "csl-fold",
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "csl-fold", top: ["#tab-canonical-subj4 .cs-intro", "#tab-canonical-subj4 .cs-scope-note", "#tab-canonical-subj4 div:has(> #cs-guidelines-btn)"],
       onToggle: function () { L.dashFolded = !L.dashFolded; listRepaint(); },
       control: function (open, text, li, w) {
         var m = /^#canonical-subj4\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
