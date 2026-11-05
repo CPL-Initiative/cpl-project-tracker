@@ -268,7 +268,7 @@ def fetch_outcomes():
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
         return None
-    endpoint = f"{URL}/rest/v1/course_outcomes?select=college,course_code,read_run,outcomes&order=id.asc"
+    endpoint = f"{URL}/rest/v1/course_outcomes?select=college,course_code,read_run,outcomes&kind=eq.slo&order=id.asc"
     rows, start, page = [], 0, 1000
     while True:
         req = urllib.request.Request(endpoint, headers={

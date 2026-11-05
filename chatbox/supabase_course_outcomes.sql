@@ -31,6 +31,9 @@
 -- Critical Thinking, Communication Skills and the like as a nested list), one list
 -- per outcome, in order; null when the outline prints none.
 --
+-- kind (slo, objective) and its key: kb/migrations/2026-11-05_course_outcomes_kind.sql (S584), which also
+-- replaces the load function below; that migration is the current definition.
+--
 -- Read: public. Course outlines of record are public record with no student
 -- detail (Sam, 2026-10-04, on the harvest: "No need for governance at this point.
 -- Everything is public record"). kb/governance_surface_map.json dismisses the

@@ -43,7 +43,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "52a98548d78ff8623c955f44d12f28c4"
+   "fingerprint": "52a98548d78ff8623c955f44d12f28c4",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ART 10A",
@@ -67,7 +71,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "666ec49fded1aa0722863131594f2dfa"
+   "fingerprint": "666ec49fded1aa0722863131594f2dfa",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "CABT 100",
@@ -92,7 +100,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f3421a6ebdc28b9910031da9358e9683"
+   "fingerprint": "f3421a6ebdc28b9910031da9358e9683",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "CJ 1",
@@ -119,7 +131,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ad20adee31bd28cfab21a25d47c28f56"
+   "fingerprint": "ad20adee31bd28cfab21a25d47c28f56",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "DH 160",
@@ -144,7 +160,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1ca2e125bc858f17c80f77385bfeda58"
+   "fingerprint": "1ca2e125bc858f17c80f77385bfeda58",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "EDUC 400",
@@ -169,7 +189,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b73e0992e9fcda9c825f16bc79514ddd"
+   "fingerprint": "b73e0992e9fcda9c825f16bc79514ddd",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ETECH 130",
@@ -193,7 +217,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f110c03fefbb062151dc96c1ca6d3b7d"
+   "fingerprint": "f110c03fefbb062151dc96c1ca6d3b7d",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "GEOL 10",
@@ -218,7 +246,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ec513c596fe07e3c8bd254a5221ceaad"
+   "fingerprint": "ec513c596fe07e3c8bd254a5221ceaad",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "ITAL 1",
@@ -244,7 +276,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b63c49e454ca35d2651a527a56741e64"
+   "fingerprint": "b63c49e454ca35d2651a527a56741e64",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "MUS 1",
@@ -269,7 +305,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e33de2c1e308572705eaeb30fc9a8739"
+   "fingerprint": "e33de2c1e308572705eaeb30fc9a8739",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "POLSC 1000",
@@ -295,7 +335,11 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c4d377aa21818693814897f7f8a27d3a"
+   "fingerprint": "c4d377aa21818693814897f7f8a27d3a",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   },
   {
    "code": "SOC 1",
@@ -320,10 +364,14 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "976e7d4b0d31fb2e8733a81f6a088880"
+   "fingerprint": "976e7d4b0d31fb2e8733a81f6a088880",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
   }
  ],
- "reparsed_at": "2026-10-14T03:33:42Z",
+ "reparsed_at": "2026-11-05T14:22:28Z",
  "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college).",
  "source_kind": "catalog"
 }
