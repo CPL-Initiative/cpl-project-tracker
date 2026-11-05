@@ -560,6 +560,86 @@
       });
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
+  /* Check alignment beside Save the name and Save the discipline (Sam, 2026-11-04: "a Check Alignment button in the
+     code box that fires a little audit and recommendation"; "We could use that feature on all our commons list views").
+     For a common course, alignment is a name against the titles its own local courses carry and the other common courses
+     of its discipline, and a discipline against where colleges file the same local subject codes. A discipline that came
+     from a TOP code is said to be one: TOP corroborates and never decides (CLAUDE.md Rule 7). It reads what the page
+     holds; SkyView and the daily fold stay the record, and a move between disciplines is a re-mint there. */
+  var CC_NOISE = [
+    [/^\s*[A-Z]{2,6}\s*-?\s*M?\d{2,4}[A-Z]?\b/, "a course code"],
+    [/\b\d+(\.\d+)?\s*(units?|hours?|credits?)\b/i, "a unit count (the reference carries units beside the name)"],
+    [/\bat\s+[a-z .'-]+\b(college|university)\b/i, "a college's name"],
+    [/^[^a-z]*[A-Z]{4,}[^a-z]*$/, "capitals throughout"],
+    [/[.,;:]\s*$/, "trailing punctuation"],
+    [/\s{2,}/, "a double space"]
+  ];
+  function ccMembers(mid) { var m = listBuild(); return m && m.X ? (listByMid(m).get(mid) || []) : []; }
+  function ccNameAudit(c, typed) {
+    var CLM = window.CPL_COMMONS_LIST || {}, norm = CLM.alignNorm || function (t) { return String(t || "").toLowerCase().trim(); },
+      close = CLM.alignClose || function () { return 0; };
+    var was = c.title || "", name = String(typed == null ? "" : typed).replace(/\s+/g, " ").trim() || was;
+    if (!name) return "Type a name to check it.";
+    var key = norm(name), facts = [], rec;
+    var pc = function (n, one, many) { return fmt(n) + " " + (n === 1 ? one : many); };
+    // What its own local courses are called: the commonest title and how many carry the typed one.
+    var mem = ccMembers(c.id), tally = {}, label = {};
+    mem.forEach(function (x) { var k = norm(x.title); if (!k) return; tally[k] = (tally[k] || 0) + 1; if (!label[k]) label[k] = x.title; });
+    var top = Object.keys(tally).sort(function (a, b) { return tally[b] - tally[a]; })[0], here = tally[key] || 0;
+    if (mem.length) facts.push(pc(here, "of its " + fmt(mem.length) + " local courses carries", "of its " + fmt(mem.length) + " local courses carry") + " this title"
+      + (top && top !== key ? "; the commonest is " + label[top] + " (" + fmt(tally[top]) + ")" : ""));
+    // Another common course of its discipline under the same name, or nearly.
+    var same = [], near = [];
+    if (CC.byId) CC.byId.forEach(function (o) {
+      if (o.id === c.id || !o.title || (c.disc && o.disc !== c.disc)) return;
+      if (norm(o.title) === key) same.push(o);
+      else { var sc = close(name, o.title); if (sc >= 0.6) near.push({ o: o, s: sc }); }
+    });
+    near.sort(function (a, b) { return b.s - a.s; });
+    var where = c.disc ? " in " + c.disc : "";
+    facts.push(same.length ? same.slice(0, 3).map(function (o) { return o.id; }).join(", ") + (same.length > 3 ? " and " + fmt(same.length - 3) + " more" : "") + (same.length === 1 ? " already carries" : " already carry") + " this name" + where
+      : "no other common course" + where + " carries this name");
+    if (near.length) facts.push("close names: " + near.slice(0, 3).map(function (y) { return y.o.id + " " + y.o.title; }).join(", "));
+    var noise = CC_NOISE.filter(function (n) { return n[0].test(name); }).map(function (n) { return n[1]; });
+    if (noise.length) facts.push("the name carries " + noise.join(" and "));
+    if (same.length) rec = "the name is " + same[0].id + "'s. If they are one course, join them in SkyView (a re-mint, under the playbook); if not, add what tells them apart, such as a level";
+    else if (noise.length) rec = "drop " + noise[0] + " from the name";
+    else if (top && top !== key && tally[top] > here && tally[top] >= 2) rec = "consider " + label[top] + ": " + pc(tally[top], "of its local courses carries", "of its local courses carry") + " it, against " + fmt(here) + " for this name";
+    else if (near.length && near[0].s >= 0.75) rec = "check " + near[0].o.id + " " + near[0].o.title + ": if it is the same course, join them in SkyView";
+    else rec = "the name reads well against its local courses";
+    return facts.join("; ") + ". Recommendation: " + rec + ".";
+  }
+  function ccDiscAudit(c, chosen) {
+    var disc = chosen || c.disc || "";
+    if (!disc) return "Choose a discipline to check it.";
+    var facts = [], rec;
+    // Where colleges file the same local subject codes: the discipline of every common course whose courses carry them.
+    var codes = (c.subj || []).slice(0, 6), by = {}, n = 0;
+    if (CC.byId && codes.length) CC.byId.forEach(function (o) {
+      if (o.id === c.id || !o.disc || !(o.subj || []).some(function (x) { return codes.indexOf(x) > -1; })) return;
+      by[o.disc] = (by[o.disc] || 0) + 1; n++;
+    });
+    var ranked = Object.keys(by).sort(function (a, b) { return by[b] - by[a]; }), lead = ranked[0];
+    if (!codes.length) facts.push("its local courses name no subject code the page holds");
+    else if (!n) facts.push("no other common course carries " + codes.join(", "));
+    else facts.push("of the " + fmt(n) + " other common courses whose colleges file them under " + codes.join(", ") + ", "
+      + ranked.slice(0, 3).map(function (d) { return fmt(by[d]) + (by[d] === 1 ? " sits in " : " sit in ") + d; }).join(", ") + (by[disc] && ranked.indexOf(disc) > 2 ? ", and " + fmt(by[disc]) + " in " + disc : by[disc] ? "" : ", and none in " + disc));
+    if (c.dsrc === "top_code" || c.dsrc === "top_division") facts.push("its discipline today came from a TOP code, which corroborates and never decides");
+    else if (DSRC_WORDS[c.dsrc] && disc === c.disc) facts.push("its discipline today came " + DSRC_WORDS[c.dsrc]);
+    var prefix = String(c.id || "").split(" ")[0];
+    if (disc !== c.disc) facts.push("a move leaves " + prefix + " for " + disc + "'s Common SUBJ at the next re-mint");
+    var share = n ? (by[disc] || 0) / n : 0;
+    if (!n) rec = disc === c.disc ? "keep " + disc + " unless a person knows better; no second signal speaks to it" : "check the course's description before the move; no second signal speaks to it";
+    else if (lead === disc && share >= 0.5) rec = disc + " agrees with where colleges file these subject codes";
+    else if (lead && by[lead] > (by[disc] || 0)) rec = "consider " + lead + ": " + fmt(by[lead]) + " of the " + fmt(n) + " sit there, against " + fmt(by[disc] || 0) + " for " + disc + ". A subject code is a signal, and the course's description decides";
+    else rec = disc + " reads well against the subject codes";
+    return facts.join("; ") + ". Recommendation: " + rec + ".";
+  }
+  function ccHintNode() {
+    return el("p", { id: "ccl-cc-hint", "class": "ccl-cc-said", role: "status", "aria-live": "polite", hidden: "" }, []);
+  }
+  function ccShowHint(words) { var hn = document.getElementById("ccl-cc-hint"); if (hn) { hn.textContent = words; hn.hidden = false; } }
+  function ccClearHint() { var hn = document.getElementById("ccl-cc-hint"); if (hn) { hn.textContent = ""; hn.hidden = true; } }
   function ccCard(mid, h) {
     ccLoad();
     if (CC.loading || (!CC.byId && !CC.failed)) return [el("p", { "class": "cplcoci-meta" }, ["Reading the common course from the reference…"])];
@@ -600,13 +680,21 @@
       inp.value = c.title || "";
       var go = function () { var v = inp.value.trim(); if (v && v !== c.title) ccSave(c, "rename", v); };
       inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); else if (e.key === "Escape") { CC.edit[mid] = null; ccRedraw(); } });
-      out.push(el("p", { "class": "ccl-cc-edit" }, [inp, h.word(CC.busy ? "Saving…" : "Save the name", go), h.word("Cancel", function () { CC.edit[mid] = null; ccRedraw(); })]));
+      inp.addEventListener("input", ccClearHint);
+      out.push(el("p", { "class": "ccl-cc-edit" }, [inp, h.word(CC.busy ? "Saving…" : "Save the name", go),
+        h.word("Check alignment", function () { ccShowHint(ccNameAudit(c, inp.value)); }, { "aria-label": "Check the alignment of the name typed for " + mid }),
+        h.word("Cancel", function () { CC.edit[mid] = null; ccRedraw(); })]));
+      out.push(ccHintNode());
     } else if (E === "discipline") {
       var s = el("select", { id: "ccl-cc-disc-in", "class": "ccl-cc-in", "aria-label": "Discipline for " + mid });
       s.appendChild(el("option", { value: "" }, ["Choose a discipline"]));
       CC.mq.forEach(function (d0) { var o = el("option", { value: d0 }, [d0]); if (d0 === c.disc) o.selected = true; s.appendChild(o); });
       var go2 = function () { if (s.value && s.value !== c.disc) ccSave(c, "discipline", s.value); };
-      out.push(el("p", { "class": "ccl-cc-edit" }, [s, h.word(CC.busy ? "Saving…" : "Save the discipline", go2), h.word("Cancel", function () { CC.edit[mid] = null; ccRedraw(); })]));
+      s.addEventListener("change", ccClearHint);
+      out.push(el("p", { "class": "ccl-cc-edit" }, [s, h.word(CC.busy ? "Saving…" : "Save the discipline", go2),
+        h.word("Check alignment", function () { ccShowHint(ccDiscAudit(c, s.value)); }, { "aria-label": "Check the alignment of the discipline chosen for " + mid }),
+        h.word("Cancel", function () { CC.edit[mid] = null; ccRedraw(); })]));
+      out.push(ccHintNode());
     } else {
       if (ccOfficial(c)) acts.push(el("span", { "class": "cplcoci-meta" }, ["An official " + c.id_system + " course keeps its authority's title."]));
       else acts.push(h.word("Rename", function () { CC.edit[mid] = "rename"; CC.said[mid] = null; ccRedraw(); var n = document.getElementById("ccl-cc-name-in"); if (n) n.focus(); }));

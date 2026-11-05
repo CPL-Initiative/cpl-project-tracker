@@ -12,7 +12,9 @@
 //   (3) ⭐ signed in: each edit writes the row the tab wrote, under the reviewer's own token and email, and says so;
 //   (4) a merged course's confirmation stamps its rows; an official C-ID or CCN course keeps its authority's title;
 //   (5) a refused save says so with the server's answer; a save since the file was built is shown as said;
-//   (6) the file failing says which file; and the carry writes only the two fields named above.
+//   (6) the file failing says which file; and the carry writes only the two fields named above;
+//   (7) Check alignment beside Rename and the discipline: the name against its local courses and its discipline's other
+//       common courses, the discipline against where colleges file the same subject codes; TOP corroborates only.
 //
 // Run from repo root: `npm test` (or `node tests/coci_list_cc_card.test.js`).
 const fs = require("fs");
@@ -57,7 +59,12 @@ const UC = { generated_at: "2026-11-04 17:00", mq_disciplines: ["Construction", 
   { kind: "Course", id: "CNST M1009", title: "Tool and Equipment Applications", disc: "Construction", credit: "Credit", units: 1.5, conf: 0.6,
     id_system: "M-ID", locked: false, flags: { reviewed: false }, reviewed_by: null, reviewed_at: "", mt: 2, dsrc: "top_code" },
   { kind: "Course", id: "WELD M1109", title: "Welding I", disc: "Welding", credit: "Credit", units: 3, conf: 0.95,
-    id_system: "C-ID", locked: true, flags: { reviewed: true }, reviewed_by: "curator@rccd.edu", reviewed_at: "2026-09-01" }] };
+    id_system: "C-ID", locked: true, flags: { reviewed: true }, reviewed_by: "curator@rccd.edu", reviewed_at: "2026-09-01" },
+  // Check alignment's neighbors (7): common courses that share ENGL M1001's local subject code.
+  { kind: "Course", id: "ENGL M1002", title: "Critical Thinking and Writing", disc: "English", subj: ["ENGL"], id_system: "M-ID" },
+  { kind: "Course", id: "ENGL M1003", title: "Technical Writing", disc: "English", subj: ["ENGL"], id_system: "M-ID" },
+  { kind: "Course", id: "CNST M1010", title: "Blueprint Reading", disc: "Construction", subj: ["ENGL", "CARP"], id_system: "M-ID" }] };
+UC.rows[0].subj = ["ENGL"];
 
 function tab(opts) {
   opts = opts || {};
@@ -214,6 +221,51 @@ async function openPanel(t, title, re) {
   {
     const fields = (SRC.match(/field = kind === "rename" \? "unified_title" : "discipline"/) || []).length;
     check("(6) ⭐ the carry writes two fields, unified_title and discipline", fields === 1 && !/"merge_note"|"description", value|anchor_discipline_proposal|merge_dismissed/.test(SRC));
+  }
+
+  // ── (7) Check alignment beside each edit (Sam, 2026-11-04: "We could use that feature on all our commons list views") ──
+  {
+    const t = tab({ signedIn: true });
+    await openPanel(t, "College Composition", /Confidence/);
+    pword(t.d, /^Rename$/).click(); await until(() => t.d.getElementById("ccl-cc-name-in"));
+    const inp = t.d.getElementById("ccl-cc-name-in"), hint = () => txt(t.d.getElementById("ccl-cc-hint"));
+    check("(7) Rename offers Check alignment, named for the course", !!pword(t.d, /^Check alignment$/)
+      && pword(t.d, /^Check alignment$/).getAttribute("aria-label") === "Check the alignment of the name typed for ENGL M1001");
+    input(t.w, inp, "Critical Thinking and Writing");
+    pword(t.d, /^Check alignment$/).click();
+    check("(7) ⭐ a name another common course of its discipline carries: join in SkyView, or tell apart",
+      /ENGL M1002 already carries this name in English/.test(hint()) && /Recommendation: the name is ENGL M1002's\. If they are one course, join them in SkyView/.test(hint()), hint());
+    input(t.w, inp, "ENGL 101 Composition");
+    check("(7) a keystroke clears the old check", t.d.getElementById("ccl-cc-hint").hidden && hint() === "");
+    pword(t.d, /^Check alignment$/).click();
+    check("(7) a course code in the name: drop it", /Recommendation: drop a course code from the name\./.test(hint()), hint());
+    input(t.w, inp, "College Composition");
+    pword(t.d, /^Check alignment$/).click();
+    check("(7) its own local courses are counted, and a clean name reads well", /1 of its 3 local courses carries this title/.test(hint())
+      && /Recommendation: the name reads well against its local courses\./.test(hint()), hint());
+    pword(t.d, /^Cancel$/).click(); await until(() => pword(t.d, /^Change the discipline$/));
+    pword(t.d, /^Change the discipline$/).click(); await until(() => t.d.getElementById("ccl-cc-disc-in"));
+    const sel = t.d.getElementById("ccl-cc-disc-in");
+    sel.value = "Construction";
+    pword(t.d, /^Check alignment$/).click();
+    check("(7) ⭐ a discipline against where colleges file the same subject code, and the re-mint a move means",
+      /of the 3 other common courses whose colleges file them under ENGL, 2 sit in English, 1 sits in Construction/.test(hint())
+      && /a move leaves ENGL for Construction's Common SUBJ at the next re-mint/.test(hint())
+      && /Recommendation: consider English: 2 of the 3 sit there, against 1 for Construction/.test(hint()), hint());
+    sel.value = "English"; sel.dispatchEvent(new t.w.Event("change"));
+    check("(7) a new choice clears the old check", t.d.getElementById("ccl-cc-hint").hidden);
+    pword(t.d, /^Check alignment$/).click();
+    check("(7) the discipline the subject codes agree with", /Recommendation: English agrees with where colleges file these subject codes\./.test(hint()), hint());
+    check("(7) Check alignment writes nothing", t.writes.length === 0, JSON.stringify(t.writes));
+  }
+  {
+    const t = tab({ signedIn: true });
+    await openPanel(t, "Tool and Equipment Applications", /Confidence/);
+    pword(t.d, /^Change the discipline$/).click(); await until(() => t.d.getElementById("ccl-cc-disc-in"));
+    pword(t.d, /^Check alignment$/).click();
+    const h = txt(t.d.getElementById("ccl-cc-hint"));
+    check("(7) ⭐ a TOP-sourced discipline is said to corroborate only, and with no second signal the person decides",
+      /came from a TOP code, which corroborates and never decides/.test(h) && /Recommendation: keep Construction unless a person knows better; no second signal speaks to it\./.test(h), h);
   }
 
   let pass = 0;

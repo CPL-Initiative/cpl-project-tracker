@@ -94,7 +94,14 @@ SkyView on each band; an M-ID move is a re-mint, done in SkyView. A course's pan
 COCI lookup tab in COBI...maybe courses in that?"*; SkyView stays the map alone. The engine filters before it sorts and
 sorts on per-column ranks (a settled finder keystroke 228 ms at 141,738 rows). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
 only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
-bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04).
+bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04). **All five carry Check alignment** (Sam, 2026-11-04: *"We could use that feature on all our commons list views"*; S578
+added the last three): one audit and one recommendation beside the edit, reading what the page holds and writing nothing.
+Subjects audits a typed code, Exhibits a title and issuer, CR a reference (its applied official name, a cited course its
+wordings never reach, another group's name, a wording's unit count up front), Courses a name (its local courses' titles,
+its discipline's other common courses) and a discipline (where colleges file the same subject codes; a TOP-sourced one
+corroborates only), Programs a record in *Your reading* (its machine checks, COCI's title and units, the same award under
+the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` and `alignClose`. Guards
+`tests/cr_list.test.js` (12), `tests/coci_list_cc_card.test.js` (7), `tests/program_requirements_list_record_port.test.js` (16).
 
 **IN PROGRESS: the Common Course Reference tab retires into the Courses List (SkyJujube, 2026-11-04).** The inventory found `unified_courses.js` landing every COBI magic link (moved into `cpl_session.js`, #2775) and writes curators had stopped using (`kb_curation` on 2026-11-04, all time / last 30 days: merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1; description edits and merge notes never). #2776 carried the common course's card and Rename, Set the discipline and Confirm into the List's panel. NEXT: the ways in (SkyView's three `#unified-courses/list` links, Quickstart's routing, Subjects' *Fix on CCR*, `excel_to_dashboard.py`'s script injection) and the auditor's other triage tags as List filters, then delete the tab and its `uc_*` suites. Suggested merges (about 7,300 written daily, none acted on since Sep 27): carry or retire, asked in chat 2026-11-04 (recommended: retire). Handoff: `docs/courses_retirement_handoff.md`.
 

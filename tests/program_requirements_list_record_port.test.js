@@ -21,6 +21,7 @@
 //  (14) a record with items for the college drafts the message to the college in its panel (Program records' college
 //       section, SkyLoquat 2026-11-04), and a college whose records could not be read says so;
 //  (15) Needs a fix in place: the note opens, an empty one is not sent, a written one posts and says where it went
+//  (16) Check alignment in Your reading: the record against its machine checks, COCI's title and units, and its CIP peers
 //       (Program records' (12), SkyLoquat 2026-11-04).
 // Run from repo root: `npm test` (or `node tests/program_requirements_list_record_port.test.js`).
 const fs = require("fs");
@@ -208,6 +209,25 @@ const btn = (root, re) => Array.from(root.querySelectorAll("button")).find((b) =
   p = pnl(tr.d);
   check("(5) ⭐ a reviewer gets Your reading's Confirm and Needs a fix, and the state line", !!btn(p, /^Confirm$/) && !!btn(p, /^Needs a fix$/)
     && /Waiting on your reading/.test(txt(p.querySelector(".prl-acts .prh-state"))));
+  // (16) Check alignment beside Confirm and Needs a fix (Sam, 2026-11-04: "We could use that feature on all our commons list views").
+  const al = btn(p, /^Check alignment$/), alHint = () => txt(p.querySelector(".prh-verdict .prh-align"));
+  check("(16) Your reading offers Check alignment, named for the program", !!al && al.getAttribute("aria-label") === "Check the alignment of Welding Technology");
+  al.click();
+  check("(16) ⭐ the record against its checks, COCI's title and units, and its CIP peers, and a clean one is Confirm",
+    /the record passes the three machine checks; the record's title is COCI's; the catalog prints 18 units and COCI lists 18–24/.test(alHint())
+    && /no other college lists the Certificate of Achievement \(16 to fewer than 30 units\) under CIP 48\.0508/.test(alHint())
+    && /Recommendation: Confirm: the record agrees with COCI and its peers\./.test(alHint()), alHint());
+  check("(16) Check alignment writes nothing", posts.length === 0);
+  const rec0 = tr.S.records[0], keep0 = [rec0.total_min, rec0.total_max, rec0.checks];
+  rec0.total_min = 30; rec0.total_max = 30;
+  al.click();
+  check("(16) ⭐ units the catalog prints that COCI's do not meet: check them",
+    /which do not meet/.test(alHint()) && /Recommendation: check the units: the catalog prints 30 where COCI lists 18–24/.test(alHint()), alHint());
+  rec0.checks = { coverage: false, invented: true, arithmetic: "equal" };
+  al.click();
+  check("(16) a failed machine check leads: Needs a fix", /the record fails one machine check \(a listed course is not placed\)/.test(alHint())
+    && /Recommendation: Needs a fix: a listed course is not placed/.test(alHint()), alHint());
+  rec0.total_min = keep0[0]; rec0.total_max = keep0[1]; rec0.checks = keep0[2];
   btn(p, /^Confirm$/).click(); await settle();
   p = pnl(tr.d);
   check("(5) ⭐ Confirm posts the one write for this record and its fingerprint", posts.length === 1 && posts[0].p_college === "Los Angeles Valley College"

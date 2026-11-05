@@ -1528,5 +1528,22 @@
     (Array.isArray(row && row.issues) ? row.issues : []).forEach(function (i) { out.push({ n: i.n, open: i.open, words: i.words }); });
     return out;
   }
-  window.CPL_COMMONS_LIST = { create: create, topFolded: topFolded, setTopFolded: setTopFolded, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
+  /* Check alignment's shared text tests (Sam, 2026-11-04: "We could use that feature on all our commons list views"):
+     a name folded for comparison, and how close two names are (the words they share over the words either has). The
+     Subjects List and Exhibits carry their own; CR and Courses read these, so one rule decides "the same name". */
+  function alignNorm(t) {
+    return String(t == null ? "" : t).toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9+#]+/g, " ")
+      .replace(/\b(the|of|and|in|to|for|a|an)\b/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function alignClose(a, b) {
+    var A = alignNorm(a).split(" ").filter(function (w) { return w.length > 1; }), B = alignNorm(b).split(" ").filter(function (w) { return w.length > 1; });
+    if (!A.length || !B.length) return 0;
+    var inB = {}; B.forEach(function (w) { inB[w] = 1; });
+    var seen = {}, both = 0;
+    A.forEach(function (w) { if (inB[w] && !seen[w]) { both++; seen[w] = 1; } });
+    var all = {}; A.concat(B).forEach(function (w) { all[w] = 1; });
+    return both / Object.keys(all).length;
+  }
+  window.CPL_COMMONS_LIST = { create: create, topFolded: topFolded, setTopFolded: setTopFolded, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems,
+    alignNorm: alignNorm, alignClose: alignClose };
 })();

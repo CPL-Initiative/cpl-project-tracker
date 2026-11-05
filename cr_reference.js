@@ -485,6 +485,62 @@
     return e && e.message === "signin" ? "Sign in as a reviewer, or unlock with the team phrase, to record it."
       : (e && e.message) || "no answer";
   }
+  /* Check alignment beside Save (Sam, 2026-11-04: "a Check Alignment button in the code box that fires a little audit
+     and recommendation"; "We could use that feature on all our commons list views"). For a CR group, alignment is the
+     reference typed against what the group holds: the official title its C-ID or ACE match gives it, the course id a
+     name cites, the other groups that already read the name or nearly, the wordings that fold here, and the wording's
+     own form (a unit count up front, a CPL mechanism, run-together words) that a reference leaves to its unit range.
+     It reads what the List holds; kb/_build_cr_reference.py and the decisions table stay the record. */
+  var CR_NOISE = [
+    [/^\s*\d+(\.\d+)?(\s*(-|\u2013|or|to)\s*\d+(\.\d+)?)?\s*(semester\s+|quarter\s+)?(hours?|units?|credits?)\s+(in|of)\b/i, "a wording's unit count up front"],
+    [/credit\s*by\s*exam|\bcbe\b|portfolio(\s+review)?|\bjst\b|\bace\s+credit/i, "a CPL mechanism (the CPL type carries it)"],
+    [/[a-z]&[A-Za-z]|[a-z]{3}[A-Z][a-z]{2,}/, "words run together"],
+    [/[.,;:]\s*$/, "trailing punctuation"],
+    [/\s{2,}/, "a double space"]
+  ];
+  function crCited(name) { var m = /^\s*([A-Z]{2,6})\s*(M?\d{2,4}[A-Z]?)\s+(\u2014|-|\u2013)/.exec(name || ""); return m ? m[1] + " " + m[2] : ""; }
+  function crAudit(r, d) {
+    var g = r.g, CLM = window.CPL_COMMONS_LIST || {}, norm = CLM.alignNorm || function (t) { return String(t || "").toLowerCase().trim(); },
+      close = CLM.alignClose || function () { return 0; };
+    var was = refOf(g), typed = String(d.ref == null ? "" : d.ref).replace(/\s+/g, " ").trim(), name = typed || was;
+    if (!name) return "Type a reference to check it.";
+    var key = norm(name), facts = [], recs = [];
+    var arts = function (x) { return fmt(x.rows) + (x.rows === 1 ? " articulation" : " articulations"); };
+    var others = state.groups.filter(function (x) { return x !== g; });
+    var same = others.filter(function (x) { return norm(refOf(x)) === key; });
+    var near = others.filter(function (x) { return same.indexOf(x) < 0; }).map(function (x) { return { x: x, s: close(name, refOf(x)) }; })
+      .filter(function (y) { return y.s >= 0.6; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 3);
+    // The official name: a C-ID or ACE match the builder applied names the reference; one it only proposed is a lead.
+    var official = g.official_id && g.official_title ? g.official_id + " \u2014 " + g.official_title : "";
+    if (official) facts.push((g.official_applied ? "its " : "a proposed ") + (g.official_system || "official") + " match names it " + official);
+    var cited = crCited(name), reach = (g.courses || []).concat(g.cid ? [g.cid] : []);
+    var citedOff = cited && reach.map(function (c) { return String(c).replace(/\s+/g, " ").toUpperCase(); }).indexOf(cited) < 0;
+    if (cited) facts.push(citedOff ? "the name cites " + cited + ", which none of its wordings reach" : "the name cites " + cited + ", which its wordings reach");
+    facts.push(same.length ? fmt(same.length) + (same.length === 1 ? " other group reads " : " other groups read ") + "this reference (" + same.slice(0, 2).map(function (x) { return fmt(x.wordings) + (x.wordings === 1 ? " wording, " : " wordings, ") + arts(x); }).join("; ") + ")"
+      : "no other group reads this reference");
+    if (near.length) facts.push("close references: " + near.map(function (y) { return refOf(y.x) + " (" + arts(y.x) + ")"; }).join(", "));
+    var topics = (g.members || []).map(function (m) { return m.topic || m.rec; });
+    var hit = topics.some(function (t) { return norm(t) === key || key.indexOf(norm(t)) === 0; });
+    facts.push(fmt(g.wordings) + (g.wordings === 1 ? " wording folds" : " wordings fold") + " here, " + unitRange(g.members) + (hit ? ", and one names this topic" : ""));
+    var noise = CR_NOISE.filter(function (n) { return n[0].test(name); }).map(function (n) { return n[1]; });
+    if (noise.length) facts.push("the name carries " + noise.join(" and "));
+    var shaped = (topics[0] || "").replace(/^\s*[\d.]+(\s*(-|\u2013|or|to)\s*[\d.]+)?\s*(semester\s+|quarter\s+)?(hours?|units?|credits?)\s+(in|of)\s+/i, "") + " (" + unitRange(g.members) + ")";
+    // One recommendation, the most pressing first.
+    if (citedOff) recs.push("drop " + cited + " from the name, or check the group: its wordings reach " + (reach.length ? reach.slice(0, 3).join(", ") : "no course"));
+    else if (official && g.official_applied && norm(name) !== norm(official)) recs.push("use the official name, " + official + ", as the reference");
+    else if (same.length && typed && typed !== was) recs.push("this name is already " + fmt(same.length) + (same.length === 1 ? " other group's" : " other groups'") + ". If they award the same credit, let them share it (units never split an identity); if not, add what tells them apart");
+    else if (same.length) recs.push(fmt(same.length + 1) + " groups read one reference: if they award the same credit, that stands; if one does not, name it apart");
+    else if (noise.length && !(official && g.official_applied)) recs.push("drop " + noise[0] + "; a reference names the topic and its unit range, as in " + shaped);
+    else if (official && !g.official_applied && norm(name) !== norm(official)) recs.push("check the proposed name, " + official + ": use it if it names this recommendation, and keep the topic if not");
+    else if (near.length && near[0].s >= 0.75) recs.push("check " + refOf(near[0].x) + ": if it is the same recommendation, the two groups could read one reference");
+    else recs.push("the reference reads well against the List");
+    return facts.join("; ") + ". Recommendation: " + recs[0] + ".";
+  }
+  function listCheckAlignment(r, d) {
+    d._hint = crAudit(r, d);
+    var hn = document.getElementById("crl-edit-hint");
+    if (hn) { hn.textContent = d._hint; hn.hidden = false; }
+  }
   function listSpec() {
     return {
       prefix: "crl-", frPrefix: "crl-fr-",
@@ -546,6 +602,11 @@
       edit: {
         fields: [{ id: "crl-ref", label: "Reference for this wording's group", key: "ref" }],
         draft: function (r) { return { ref: refOf(r.g) }; },
+        // A keystroke in the box clears an earlier check; Check alignment writes a new one.
+        onInput: function (r, key, d) { if (key === "ref") d._hint = ""; },
+        extra: function (r, d, word) {
+          return [word("Check alignment", function () { listCheckAlignment(r, d); }, { "aria-label": "Check the alignment of the reference typed for " + r.m.rec })];
+        },
         save: function (r) {
           var L = listState(), name = String(L.draft.ref || "").replace(/\s+/g, " ").trim();
           if (!name) { L.note = "A reference cannot be empty."; render(); return Promise.resolve(); }

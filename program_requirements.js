@@ -2022,6 +2022,47 @@
     });
   }
   /* onSaved: the box sits in side by side, which moves to the next record once a verdict saves. */
+  /* Check alignment beside Confirm and Needs a fix (Sam, 2026-11-04: "a Check Alignment button ... that fires a little
+     audit and recommendation"; "We could use that feature on all our commons list views"). A program's reading has no
+     typed field, so alignment is the record against what sits beside it: its machine checks, COCI's own title and units
+     for the control number, and the same award under the same CIP at other colleges. It reads what the List holds; the
+     reading procedure and the verdict log stay the record. */
+  function programAudit(p) {
+    var m = listBuild(), rows0 = m ? m.rows : [], ctl = String(p.control_number || "");
+    var row = rows0.filter(function (x) { return x.p === p; })[0] || rows0.filter(function (x) { return x.ctl === ctl && !x.off; })[0] || null;
+    var CLM = window.CPL_COMMONS_LIST || {}, close = CLM.alignClose || function (a, b) { return listFold(a) === listFold(b) ? 1 : 0; };
+    var facts = [], recs = [], fails = machineFails(p), issues = listIssues(p, fails);
+    facts.push(fails.length ? "the record fails " + (fails.length === 1 ? "one machine check" : fmt(fails.length) + " machine checks") + " (" + issues.join("; ").toLowerCase() + ")"
+      : "the record passes the three machine checks");
+    var title = String(p.program_title || ""), hours = p.measure === "hours";
+    if (!row || row.off) facts.push("COCI does not list control number " + ctl + " as active");
+    else {
+      var sim = close(title, row.title);
+      facts.push(listFold(title) === listFold(row.title) ? "the record's title is COCI's" : "the record reads " + title + " where COCI lists " + row.title);
+      if (sim < 0.5 && listFold(title) !== listFold(row.title)) recs.push("check the title: the record's and COCI's share few words, so the catalog page may name another program");
+      var rLo = p.total_min != null ? Number(p.total_min) : null, rHi = p.total_max != null ? Number(p.total_max) : rLo;
+      if (!hours && rLo != null && row.lo != null) {
+        var meets = rLo <= row.hi && rHi >= row.lo;
+        facts.push("the catalog prints " + span(rLo, rHi) + " units and COCI lists " + span(row.lo, row.hi) + (meets ? "" : ", which do not meet"));
+        if (!meets) recs.push("check the units: the catalog prints " + span(rLo, rHi) + " where COCI lists " + span(row.lo, row.hi) + ". A newer catalog year may explain it; note it under Needs a fix if not");
+      }
+      // The same award under the same CIP at other colleges.
+      if (row.cip && row.lo != null) {
+        var peers = rows0.filter(function (x) { return x !== row && !x.off && x.cip === row.cip && x.award === row.award && x.lo != null; })
+          .map(function (x) { return x.lo; }).sort(function (a, b) { return a - b; });
+        if (peers.length) {
+          var q = function (f) { return peers[Math.min(peers.length - 1, Math.floor(f * (peers.length - 1) + 0.5))]; };
+          facts.push(fmt(peers.length) + " other programs with the " + (row.award || "same award") + " under CIP " + row.cip + " run " + span(peers[0], peers[peers.length - 1])
+            + " units in COCI, most " + span(q(0.25), q(0.75)) + "; this one " + span(row.lo, row.hi));
+          if (peers.length >= 5 && (row.lo < q(0.1) || row.lo > q(0.9)))
+            recs.push("read the units with care: " + span(row.lo, row.hi) + " sits outside nine in ten of its peers (" + span(q(0.1), q(0.9)) + "), which a catalog can explain but a misread block can too");
+        } else facts.push("no other college lists the " + (row.award || "same award") + " under CIP " + row.cip);
+      }
+    }
+    var rec = fails.length ? "Needs a fix: " + issues[0].charAt(0).toLowerCase() + issues[0].slice(1) + ", and the note tells the reading procedure where"
+      : recs.length ? recs[0] : "Confirm: the record agrees with COCI and its peers";
+    return facts.join("; ") + ". Recommendation: " + rec + ".";
+  }
   function verdictBox(p, F, line, onSaved) {
     var key = p.college + "|" + p.control_number;
     var id = "prh-v-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
@@ -2039,6 +2080,10 @@
     var note = el("textarea", { id: id + "-note", rows: "3", maxlength: "2000", cls: "prh-draft-text",
       placeholder: "For example: read the elective lists from the catalog's addendum once it posts." });
     var save = el("button", { cls: "prh-btn", type: "button", text: "Save the note" });
+    var align = el("button", { cls: "prh-btn", type: "button", text: "Check alignment", "aria-label": "Check the alignment of " + (p.program_title || "the record") });
+    var hint = el("p", { cls: "prh-small prh-align", role: "status", "aria-live": "polite" });
+    hint.hidden = true;
+    align.addEventListener("click", function () { hint.textContent = programAudit(p); hint.hidden = false; });
     var fix = el("div", { cls: "prh-fix", id: id + "-fix" }, [
       el("label", { "for": id + "-note", cls: "prh-small" }, [el("b", { text: "What should change." }),
         " The note goes to " + shortCollege(p.college) + "'s reading procedure; the next run carries it out."]),
@@ -2089,7 +2134,7 @@
     });
     return el("div", { cls: "prh-verdict", "aria-label": "Your reading of " + p.program_title }, [
       el("h4", { text: "Your reading" }), el("p", { text: lede }),
-      el("div", { cls: "prh-draft-actions" }, [confirm, fixBtn]), fix, said]);
+      el("div", { cls: "prh-draft-actions" }, [confirm, fixBtn, align]), hint, fix, said]);
   }
   function signInBox() {
     var mount = el("div", { cls: "prh-signin-mount" });
