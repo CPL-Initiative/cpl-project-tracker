@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-550 document(s).
+551 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 585 | [Session 585 handoff: course objectives read and stored; Monterey Peninsula's page read](../session_585_handoff.md) | 2026-11-05 |
 | 584 | [Session 584 handoff: the queue was not empty; five lane items the handoffs had dropped](../session_584_handoff.md) | 2026-11-05 |
 | 583 | [Session 583 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC](../session_583_handoff.md) | 2026-11-05 |
 | 582 | [Session 582 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC](../session_582_handoff.md) | 2026-11-05 |
