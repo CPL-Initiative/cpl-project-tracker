@@ -12,6 +12,10 @@
 //   D. Ask for more changes on a ready draft keeps that draft (Sam, 2026-11-05: "nothing seemed to happen";
 //      SkyCartwheel found Start would have dropped Version 3 and drafted from Version 2): the new request
 //      names the draft as its base, lists it under earlier, and the function drafts from it.
+//   E. Sam's "build fixes 1-3" (2026-11-05): Sierra's budget is counted the same way in cpl-chat, the drafter
+//      (sierra_text.mjs) and the card (library.js sierraText), on a real page; the drafter tells the model the
+//      budget and stores the count; the card's check says when a draft runs past it and checks target size;
+//      a published card draft whose record names a script raises Source behind the page.
 //
 // Run: node tests/library_revise_draft.test.js
 const fs = require("fs");
@@ -186,6 +190,40 @@ function load(rows, onFetch) {
   check("C: drafts are read and added behind the team phrase or a reviewer, never updated or deleted by the team",
     /for select\s+to anon, authenticated using \(public\.team_pass_ok\(\) or public\.is_allowed_reviewer\(\)\)/.test(SQL) &&
     !/for (update|delete)/.test(SQL) && /grant select, insert on public\.cpl_library_drafts to anon, authenticated;/.test(SQL));
+
+  // ── E. fixes 1 to 3 (Sam, 2026-11-05: "build fixes 1-3") ───────────────────
+  {
+    const { liftBlock } = require("./lib/lift_ts");
+    const CHAT = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
+    const L = liftBlock(CHAT, "// ── LIBRARY BLOCK START", "// ── LIBRARY BLOCK END", ["libraryPageText", "LIBRARY_TEXT_MAX"]);
+    const T = await import(path.resolve("chatbox/supabase/functions/library-revise-draft/sierra_text.mjs"));
+    const real = fs.readFileSync("library/ell-iet-cpl-starting-points/index.html", "utf8");
+    const { M } = load([]);
+    const ours = T.readingText(real);
+    check("E1: the drafter counts a real page as Sierra reads it (cpl-chat's libraryPageText)",
+      ours.length <= L.LIBRARY_TEXT_MAX && ours === L.libraryPageText(real), "drafter " + ours.length);
+    check("E1: the card counts it the same way", M._sierraText(real) === ours);
+    check("E1: one budget in all three places", T.SIERRA_MAX === L.LIBRARY_TEXT_MAX && /var SIERRA_MAX = 34000;/.test(SRC));
+    const long = "<p>" + "word ".repeat(9000) + "</p>";
+    check("E1: past the budget, the drafter's count runs on and cpl-chat's stops at the cap",
+      T.readingText(long).length > L.LIBRARY_TEXT_MAX && L.libraryPageText(long).length <= L.LIBRARY_TEXT_MAX + 4);
+    check("E1: the model is told the budget and the page's count, and the draft stores both",
+      /Sierra's reading budget/.test(FN) && /readingText\(page\)\.length/.test(FN) && /regen: g, sierra,/.test(FN) &&
+      /shortening wording the page repeats, never by dropping a fact/.test(FN));
+    const win = new JSDOM("<!doctype html><html lang='en'><head><title>t</title></head><body><h1>t</h1><p>Short.</p></body></html>").window;
+    const okc = M._checkDoc(win.document, win, "<p>Short.</p>");
+    check("E2: a draft inside the budget passes with its count", okc.pass.some((x) => /Sierra reads it whole \(6 of 34,000/.test(x)), JSON.stringify(okc));
+    const over = M._checkDoc(win.document, win, long);
+    check("E2: a draft past it is listed to fix, with how to make room", over.fix.some((x) => /past 34,000 she skips the middle/.test(x)), JSON.stringify(over.fix));
+    check("E2: the card's check measures target size with npm run a11y's 24px floor and inline-link exception",
+      /b\.width >= 24 && b\.height >= 24/.test(SRC) && /el\.closest\("p, li, footer"\)/.test(SRC) && /checkDoc\(f\.contentDocument, f\.contentWindow, html\)/.test(SRC));
+    const sb = rec({ regen: null, rebuild_from: "CPLBrain/x/make_tabs.py a.html -o b.html",
+      versions: [{ label: "Version 6", status: "Current: revised.", source_behind: true }] });
+    check("E3: a Current version marked source_behind raises Source behind the page", M._flagsOf(sb).indexOf("source_behind") >= 0);
+    sb.versions.push({ label: "Version 7", status: "Current: rebuilt from the source." });
+    sb.versions[0].status = "Replaced by v7";
+    check("E3: a version built from the source clears it", M._flagsOf(sb).indexOf("source_behind") < 0);
+  }
 
   let pass = 0;
   results.forEach(([n, okk, why]) => { if (okk) pass += 1; console.log((okk ? "ok   " : "FAIL ") + n + (okk || !why ? "" : "  — " + why)); });

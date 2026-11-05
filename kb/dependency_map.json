@@ -477,7 +477,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 143
+     "line": 149
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -1022,7 +1022,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 37
+     "line": 38
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -2837,7 +2837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1714,
+     "line": 1765,
      "tabs": [
       "library"
      ]
@@ -6160,7 +6160,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2834,
+     "line": 2885,
      "tabs": [
       "library"
      ]
@@ -8603,14 +8603,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 125
     },
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 120
+     "line": 134
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -8677,7 +8677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2199,
+     "line": 2250,
      "tabs": [
       "library"
      ]
@@ -8693,7 +8693,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1707,
+     "line": 1758,
      "tabs": [
       "library"
      ]
@@ -18767,7 +18767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1817,
+     "line": 1868,
      "tabs": [
       "library"
      ]
@@ -20487,7 +20487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3450,
+     "line": 3501,
      "tabs": [
       "library"
      ]
@@ -20549,7 +20549,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 722
+     "line": 746
     },
     {
      "id": "page:library/index.html",
@@ -25715,7 +25715,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1294,
+     "line": 1305,
      "tabs": [
       "library"
      ]
@@ -25725,7 +25725,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 105
+     "line": 119
     }
    ],
    "main_committers": []

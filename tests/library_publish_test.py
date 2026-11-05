@@ -53,6 +53,18 @@ check(rc["before"]["updated_at"] == R["updated_at"], "the receipt keeps the upda
 check(set(u) <= set(rc["before"]), "the receipt keeps a before-value for every field the update writes")
 check(rc["page"] == "library/ell-iet-cpl-starting-points/index.html", "the receipt names the page it wrote")
 
+# Fix 3 (Sam, 2026-11-05: "build fixes 1-3"): a card draft the model made, for a piece a script rebuilds.
+SR = {**R, "rebuild_from": "CPLBrain/04-projects/x/make_tabs.py a.html -o b.html"}
+u2 = lp.record_update(SR, {**D, "model": "claude-opus-5-5"}, "2026-11-05")
+check([v for v in u2["versions"] if str(v.get("status", "")).startswith("Current")][0].get("source_behind") is True,
+      "a model's draft of a scripted piece marks its version source_behind")
+u3 = lp.record_update(SR, {**D, "model": None}, "2026-11-05")
+check(not any(v.get("source_behind") for v in u3["versions"]), "a session's draft, built from the source, does not")
+u4 = lp.record_update({**R, "rebuild_from": "Edit the page on its card."}, {**D, "model": "claude-opus-5-5"}, "2026-11-05")
+check(not any(v.get("source_behind") for v in u4["versions"]), "nor does a piece with no script behind it")
+check("rebuild_from" in open(lp.__file__).read().split("def write_phase")[1].split("\n")[1] and "made_by,model" in open(lp.__file__).read(),
+      "the run reads rebuild_from and the draft's model")
+
 if fails:
     print("\n%d check(s) failed" % len(fails))
     sys.exit(1)
