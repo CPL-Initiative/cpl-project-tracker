@@ -13957,7 +13957,7 @@
         "top_code": "2105.00: Administration of Justice"
       }
     ],
-    "GRAF M1011": [
+    "GFCD M1011": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000597895",
@@ -13977,7 +13977,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1023": [
+    "GFCD M1023": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000640127",
@@ -13997,7 +13997,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1025": [
+    "GFCD M1025": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000610449",
@@ -14017,7 +14017,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1030": [
+    "GFCD M1030": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000640638",
@@ -14037,7 +14037,7 @@
         "top_code": "0614.50: Desktop Publishing"
       }
     ],
-    "GRAF M1042": [
+    "GFCD M1042": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000597009",
@@ -14057,7 +14057,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1017": [
+    "GFCD M1017": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000596953",
@@ -14077,7 +14077,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1015": [
+    "GFCD M1015": [
       {
         "college": "Riverside City College",
         "control_number": "CCC000535443",
@@ -14097,7 +14097,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1016": [
+    "GFCD M1016": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000610450",
@@ -14117,7 +14117,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1050": [
+    "GFCD M1050": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000648722",
@@ -18593,7 +18593,7 @@
         "top_code": "4931.00: Vocational ESL"
       }
     ],
-    "ESCI M1004": [
+    "ENVS M1111": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000517842",
@@ -18613,7 +18613,7 @@
         "top_code": "0934.40: Electrical Systems and Power Transmission"
       }
     ],
-    "ESCI M1003": [
+    "ENVS M1110": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000517844",
@@ -18633,7 +18633,7 @@
         "top_code": "0934.40: Electrical Systems and Power Transmission"
       }
     ],
-    "ESCI M1024": [
+    "ENVS M1024": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000517868",
@@ -18653,7 +18653,7 @@
         "top_code": "0946.10: Energy Systems Technology"
       }
     ],
-    "ESCI M1015": [
+    "ENVS M1015": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000517866",
@@ -18673,7 +18673,7 @@
         "top_code": "0946.10: Energy Systems Technology"
       }
     ],
-    "ESCI M1016": [
+    "ENVS M1016": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000517867",
@@ -18693,7 +18693,7 @@
         "top_code": "0946.10: Energy Systems Technology"
       }
     ],
-    "ESCI M1009": [
+    "ENVS M1116": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000511590",
@@ -18713,7 +18713,7 @@
         "top_code": "0934.40: Electrical Systems and Power Transmission"
       }
     ],
-    "ESCI M1040": [
+    "ENVS M1040": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000511591",
@@ -18733,7 +18733,7 @@
         "top_code": "0934.40: Electrical Systems and Power Transmission"
       }
     ],
-    "ESCI M1039": [
+    "ENVS M1039": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000517843",
@@ -21463,7 +21463,7 @@
         "top_code": "0956.50: Welding Technology"
       }
     ],
-    "AUTD M1012": [
+    "DIES M1012": [
       {
         "college": "Modesto Junior College",
         "control_number": "CCC000367290",
@@ -22477,7 +22477,7 @@
         "top_code": "0116.00: Agricultural Power Equipment Technology"
       }
     ],
-    "AUTD M1006": [
+    "DIES M1048": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000604419",
@@ -23169,7 +23169,7 @@
         "top_code": "1230.80: Home Health Aide"
       }
     ],
-    "CSAI M1005": [
+    "CSIS M1492": [
       {
         "college": "Folsom Lake College",
         "control_number": "CCC000652934",
@@ -23189,7 +23189,7 @@
         "top_code": "0799.00: Other Information Technology"
       }
     ],
-    "CSAI M1006": [
+    "CSIS M1493": [
       {
         "college": "Folsom Lake College",
         "control_number": "CCC000651162",
@@ -51963,7 +51963,7 @@
         "top_code": "1002.00: Art"
       }
     ],
-    "GRAF M1300": [
+    "GFCD M1300": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000574869",
@@ -57254,7 +57254,7 @@
         "top_code": "1002.00: Art"
       }
     ],
-    "GRAF M1306": [
+    "GFCD M1306": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000239734",
@@ -58045,7 +58045,7 @@
         "top_code": "1001.00: Fine Arts, General"
       }
     ],
-    "GRAF M1471": [
+    "GFCD M1471": [
       {
         "college": "Citrus College",
         "control_number": "CCC000547720",
@@ -62140,7 +62140,7 @@
         "top_code": "0614.40: Animation"
       }
     ],
-    "GRAF M1329": [
+    "GFCD M1329": [
       {
         "college": "Columbia College",
         "control_number": "CCC000187351",
@@ -67812,7 +67812,7 @@
         "top_code": "1002.00: Art"
       }
     ],
-    "GRAF M1014": [
+    "GFCD M1014": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000593216",
@@ -67832,7 +67832,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1021": [
+    "GFCD M1021": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000354549",
@@ -67852,7 +67852,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1032": [
+    "GFCD M1032": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000306995",
@@ -67872,7 +67872,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1034": [
+    "GFCD M1034": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000593215",
@@ -67892,7 +67892,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1035": [
+    "GFCD M1035": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000602103",
@@ -67912,7 +67912,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1037": [
+    "GFCD M1037": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000602104",
@@ -69077,7 +69077,7 @@
         "top_code": "0614.60: Computer Graphics and Digital Imagery"
       }
     ],
-    "GRAF M1038": [
+    "GFCD M1038": [
       {
         "college": "American River College",
         "control_number": "CCC000270724",
@@ -76554,7 +76554,7 @@
         "top_code": "1911.00: Astronomy"
       }
     ],
-    "AUTD M1001": [
+    "DIES M1043": [
       {
         "college": "American River College",
         "control_number": "CCC000575757",
@@ -77115,7 +77115,7 @@
         "top_code": "0948.00: Automotive Technology"
       }
     ],
-    "AUTD M1008": [
+    "DIES M1008": [
       {
         "college": "American River College",
         "control_number": "CCC000518745",
@@ -77195,7 +77195,7 @@
         "top_code": "0516.00: Labor and Industrial Relations"
       }
     ],
-    "AUTD M1027": [
+    "DIES M1027": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000130165",
@@ -83276,7 +83276,7 @@
         "top_code": "0948.00: Automotive Technology"
       }
     ],
-    "AUTD M1014": [
+    "DIES M1014": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000582462",
@@ -83332,7 +83332,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1019": [
+    "DIES M1019": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000582461",
@@ -86839,7 +86839,7 @@
         "top_code": "0948.00: Automotive Technology"
       }
     ],
-    "AUTD M1021": [
+    "DIES M1021": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000578359",
@@ -91849,7 +91849,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "BCST M1012": [
+    "BRDC M1012": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000590308",
@@ -91869,7 +91869,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "BCST M1003": [
+    "BRDC M1061": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000601951",
@@ -91918,7 +91918,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "BCST M1019": [
+    "BRDC M1019": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000581459",
@@ -103956,7 +103956,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1011": [
+    "CBIT M1011": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000579049",
@@ -103976,7 +103976,7 @@
         "top_code": "0946.10: Energy Systems Technology"
       }
     ],
-    "CNSR M1012": [
+    "CBIT M1012": [
       {
         "college": "Pasadena City College",
         "control_number": "CCC000559344",
@@ -104446,7 +104446,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "ESCI M1054": [
+    "ENVS M1054": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000528060",
@@ -106134,7 +106134,7 @@
         "top_code": "2105.50: Police Academy"
       }
     ],
-    "BCST M1008": [
+    "BRDC M1008": [
       {
         "college": "Orange Coast College",
         "control_number": "CCC000592294",
@@ -106154,7 +106154,7 @@
         "top_code": "0604.20: Television (including combined TV/Film/Video)"
       }
     ],
-    "BCST M1006": [
+    "BRDC M1006": [
       {
         "college": "East Los Angeles College",
         "control_number": "CCC000646212",
@@ -106174,7 +106174,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "BCST M1011": [
+    "BRDC M1011": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000414829",
@@ -106311,7 +106311,7 @@
         "top_code": "0610.00: Mass Communications"
       }
     ],
-    "BCST M1058": [
+    "BRDC M1058": [
       {
         "college": "Ohlone College",
         "control_number": "CCC000020999",
@@ -106349,7 +106349,7 @@
         "top_code": "0604.10: Radio"
       }
     ],
-    "BCST M1021": [
+    "BRDC M1021": [
       {
         "college": "Los Angeles Pierce College",
         "control_number": "CCC000464174",
@@ -132158,7 +132158,7 @@
         "top_code": "0957.00: Civil and Construction Management Technology"
       }
     ],
-    "ESCI M1023": [
+    "ENVS M1023": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000595574",
@@ -132588,7 +132588,7 @@
         "top_code": "1305.00: Child Development/Early Care and Education"
       }
     ],
-    "CSTF M1001": [
+    "WWKF M1001": [
       {
         "college": "Palomar College",
         "control_number": "CCC000311702",
@@ -143045,7 +143045,7 @@
         "top_code": "0514.00: Office Technology/Office Computer Applications"
       }
     ],
-    "CSAI M1001": [
+    "CSIS M1488": [
       {
         "college": "Irvine Valley College",
         "control_number": "CCC000649897",
@@ -143114,7 +143114,7 @@
         "top_code": "0702.00: Computer Information Systems"
       }
     ],
-    "CSAI M9001": [
+    "CSIS M9049": [
       {
         "college": "Irvine Valley College",
         "control_number": "CCC000658622",
@@ -147713,7 +147713,7 @@
         "top_code": "0702.00: Computer Information Systems"
       }
     ],
-    "FTVE M1337": [
+    "FMED M1337": [
       {
         "college": "Coalinga College",
         "control_number": "CCC000598133",
@@ -157867,7 +157867,7 @@
         "top_code": "0707.20: Database Design and Administration"
       }
     ],
-    "CSAI M1003": [
+    "CSIS M1490": [
       {
         "college": "Folsom Lake College",
         "control_number": "CCC000631217",
@@ -162691,7 +162691,7 @@
         "top_code": "0934.00: Electronics and Electric Technology"
       }
     ],
-    "ESCI M1014": [
+    "ENVS M1014": [
       {
         "college": "Orange Coast College",
         "control_number": "CCC000601641",
@@ -167061,7 +167061,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "FTVE M1165": [
+    "FMED M1165": [
       {
         "college": "Butte College",
         "control_number": "CCC000259766",
@@ -170518,7 +170518,7 @@
         "top_code": "0957.00: Civil and Construction Management Technology"
       }
     ],
-    "CNSR M1010": [
+    "CBIT M1010": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000456462",
@@ -187872,7 +187872,7 @@
         "top_code": "0952.00: Construction Crafts Technology"
       }
     ],
-    "CNSC M9001": [
+    "WWKC M9001": [
       {
         "college": "Victor Valley College",
         "control_number": "CCC000194942",
@@ -187952,7 +187952,7 @@
         "top_code": "0514.30: Court Reporting"
       }
     ],
-    "BCST M1015": [
+    "BRDC M1015": [
       {
         "college": "Saddleback College",
         "control_number": "CCC000654739",
@@ -187972,7 +187972,7 @@
         "top_code": "0602.00: Journalism"
       }
     ],
-    "FTVE M1116": [
+    "FMED M1116": [
       {
         "college": "Saddleback College",
         "control_number": "CCC000384541",
@@ -188001,7 +188001,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1118": [
+    "FMED M1118": [
       {
         "college": "Saddleback College",
         "control_number": "CCC000601546",
@@ -189587,7 +189587,7 @@
         "top_code": "1213.00: Cardiovascular Technician"
       }
     ],
-    "ESCI M1006": [
+    "ENVS M1113": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000598436",
@@ -189607,7 +189607,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1013": [
+    "ENVS M1013": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000598434",
@@ -189627,7 +189627,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1018": [
+    "ENVS M1018": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000608237",
@@ -189647,7 +189647,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1034": [
+    "ENVS M1034": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000598443",
@@ -189667,7 +189667,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1011": [
+    "ENVS M1011": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000598427",
@@ -189696,7 +189696,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1031": [
+    "ENVS M1031": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000598432",
@@ -206650,7 +206650,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "AUTD M1013": [
+    "DIES M1013": [
       {
         "college": "American River College",
         "control_number": "CCC000518757",
@@ -208019,7 +208019,7 @@
         "top_code": "0953.00: Drafting Technology"
       }
     ],
-    "AUTD M1009": [
+    "DIES M1009": [
       {
         "college": "Barstow Community College",
         "control_number": "CCC000604939",
@@ -208039,7 +208039,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1018": [
+    "DIES M1018": [
       {
         "college": "Barstow Community College",
         "control_number": "CCC000604941",
@@ -208079,7 +208079,7 @@
         "top_code": "0953.10: Architectural Drafting"
       }
     ],
-    "AUTD M1026": [
+    "DIES M1026": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000634781",
@@ -208099,7 +208099,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1004": [
+    "DIES M1046": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000581305",
@@ -208119,7 +208119,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1022": [
+    "DIES M1022": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000581302",
@@ -208139,7 +208139,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1023": [
+    "DIES M1023": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000581301",
@@ -208159,7 +208159,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1042": [
+    "DIES M1042": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000581306",
@@ -208888,7 +208888,7 @@
         "top_code": "1012.00: Applied Photography"
       }
     ],
-    "GRAF M1019": [
+    "GFCD M1019": [
       {
         "college": "Coastline Community College",
         "control_number": "CCC000619864",
@@ -211177,7 +211177,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1005": [
+    "DIES M1047": [
       {
         "college": "San Diego Miramar College",
         "control_number": "CCC000353232",
@@ -211197,7 +211197,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1011": [
+    "DIES M1011": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000532619",
@@ -211217,7 +211217,7 @@
         "top_code": "0116.00: Agricultural Power Equipment Technology"
       }
     ],
-    "AUTD M1007": [
+    "DIES M1007": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000465922",
@@ -211237,7 +211237,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1020": [
+    "DIES M1020": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000465924",
@@ -211257,7 +211257,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M1028": [
+    "DIES M1028": [
       {
         "college": "San Diego Miramar College",
         "control_number": "CCC000374934",
@@ -211277,7 +211277,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M9006": [
+    "DIES M9006": [
       {
         "college": "San Diego College of Continuing Education",
         "control_number": "CCC000517364",
@@ -211297,7 +211297,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "AUTD M9002": [
+    "DIES M9002": [
       {
         "college": "San Diego College of Continuing Education",
         "control_number": "CCC000517365",
@@ -213299,7 +213299,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "GRAF M1003": [
+    "GFCD M1003": [
       {
         "college": "Orange Coast College",
         "control_number": "CCC000597265",
@@ -213408,7 +213408,7 @@
         "top_code": "4931.00: Vocational ESL"
       }
     ],
-    "AUTD M1017": [
+    "DIES M1017": [
       {
         "college": "College of Alameda",
         "control_number": "CCC000347590",
@@ -213446,7 +213446,7 @@
         "top_code": "0947.00: Diesel Technology"
       }
     ],
-    "BCST M1018": [
+    "BRDC M1018": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000346606",
@@ -213854,7 +213854,7 @@
         "top_code": "0956.00: Manufacturing and Industrial Technology"
       }
     ],
-    "AUTD M1003": [
+    "DIES M1045": [
       {
         "college": "Palomar College",
         "control_number": "CCC000505497",
@@ -217325,7 +217325,7 @@
         "top_code": "1701.00: Mathematics, General"
       }
     ],
-    "GRAF M1024": [
+    "GFCD M1024": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000626548",
@@ -217345,7 +217345,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1029": [
+    "GFCD M1029": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000593332",
@@ -231124,7 +231124,7 @@
         "top_code": "0103.00: Plant Science"
       }
     ],
-    "ESCI M1080": [
+    "ENVS M1080": [
       {
         "college": "Southwestern College",
         "control_number": "CCC000367953",
@@ -231144,7 +231144,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1012": [
+    "ENVS M1012": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000641749",
@@ -231164,7 +231164,7 @@
         "top_code": "0303.00: Environmental Technology"
       }
     ],
-    "ESCI M1076": [
+    "ENVS M1076": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000641751",
@@ -231184,7 +231184,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1071": [
+    "ENVS M1071": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000505464",
@@ -262754,7 +262754,7 @@
         "top_code": "0506.40: Small Business and Entrepreneurship"
       }
     ],
-    "ESCI M1002": [
+    "ENVS M1109": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000181880",
@@ -262890,7 +262890,7 @@
         "top_code": "0109.20: Floriculture / Floristry"
       }
     ],
-    "ESCI M1028": [
+    "ENVS M1028": [
       {
         "college": "Merritt College",
         "control_number": "CCC000347776",
@@ -262964,7 +262964,7 @@
         "top_code": "0115.00: Natural Resources"
       }
     ],
-    "ESCI M1066": [
+    "ENVS M1066": [
       {
         "college": "Feather River College",
         "control_number": "CCC000313619",
@@ -263124,7 +263124,7 @@
         "top_code": "2205.00: History"
       }
     ],
-    "ESCI M1053": [
+    "ENVS M1053": [
       {
         "college": "Santa Barbara City College",
         "control_number": "CCC000393964",
@@ -263144,7 +263144,7 @@
         "top_code": "0302.00: Environmental Studies"
       }
     ],
-    "ESCI M1056": [
+    "ENVS M1056": [
       {
         "college": "Ohlone College",
         "control_number": "CCC000591391",
@@ -263164,7 +263164,7 @@
         "top_code": "0302.00: Environmental Studies"
       }
     ],
-    "ESCI M1057": [
+    "ENVS M1057": [
       {
         "college": "Skyline College",
         "control_number": "CCC000600628",
@@ -263184,7 +263184,7 @@
         "top_code": "0399.00: Environmental Sciences and Technologies, Other"
       }
     ],
-    "ESCI M1058": [
+    "ENVS M1058": [
       {
         "college": "Skyline College",
         "control_number": "CCC000594194",
@@ -263204,7 +263204,7 @@
         "top_code": "0399.00: Environmental Sciences and Technologies, Other"
       }
     ],
-    "ESCI M1059": [
+    "ENVS M1059": [
       {
         "college": "Skyline College",
         "control_number": "CCC000605760",
@@ -263224,7 +263224,7 @@
         "top_code": "0399.00: Environmental Sciences and Technologies, Other"
       }
     ],
-    "ESCI M1064": [
+    "ENVS M1064": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000605923",
@@ -263334,7 +263334,7 @@
         "top_code": "0115.00: Natural Resources"
       }
     ],
-    "ESCI M1063": [
+    "ENVS M1063": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000458369",
@@ -263617,7 +263617,7 @@
         "top_code": "2206.00: Geography"
       }
     ],
-    "ESCI M1084": [
+    "ENVS M1084": [
       {
         "college": "Mt. San Jacinto College",
         "control_number": "CCC000497807",
@@ -263637,7 +263637,7 @@
         "top_code": "2102.10: Public Works"
       }
     ],
-    "ESCI M1022": [
+    "ENVS M1022": [
       {
         "college": "Los Angeles Harbor College",
         "control_number": "CCC000324121",
@@ -265042,7 +265042,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "ESCI M1060": [
+    "ENVS M1060": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000508283",
@@ -265960,7 +265960,7 @@
         "top_code": "2206.00: Geography"
       }
     ],
-    "ESCI M1046": [
+    "ENVS M1046": [
       {
         "college": "Orange Coast College",
         "control_number": "CCC000559482",
@@ -265980,7 +265980,7 @@
         "top_code": "0301.00: Environmental Science"
       }
     ],
-    "ESCI M1047": [
+    "ENVS M1047": [
       {
         "college": "Orange Coast College",
         "control_number": "CCC000559321",
@@ -282891,7 +282891,7 @@
         "top_code": "0599.00: Other Business and Management"
       }
     ],
-    "ESCI M1062": [
+    "ENVS M1062": [
       {
         "college": "Ventura College",
         "control_number": "CCC000452725",
@@ -282911,7 +282911,7 @@
         "top_code": "2207.00: Political Science"
       }
     ],
-    "ESCI M1061": [
+    "ENVS M1061": [
       {
         "college": "Oxnard College",
         "control_number": "CCC000599720",
@@ -283020,7 +283020,7 @@
         "top_code": "0946.10: Energy Systems Technology"
       }
     ],
-    "ESCI M1085": [
+    "ENVS M1085": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000526427",
@@ -283795,7 +283795,7 @@
         "top_code": "0956.00: Manufacturing and Industrial Technology"
       }
     ],
-    "ESCI M1067": [
+    "ENVS M1067": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000658338",
@@ -283951,7 +283951,7 @@
         "top_code": "0934.00: Electronics and Electric Technology"
       }
     ],
-    "ESCI M1052": [
+    "ENVS M1052": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000620897",
@@ -299866,7 +299866,7 @@
         "top_code": "0612.10: Film History and Criticism"
       }
     ],
-    "FTVE M1167": [
+    "FMED M1167": [
       {
         "college": "Butte College",
         "control_number": "CCC000072225",
@@ -301571,7 +301571,7 @@
         "top_code": "0612.00: Film Studies"
       }
     ],
-    "BCST M1004": [
+    "BRDC M1062": [
       {
         "college": "El Camino College",
         "control_number": "CCC000568840",
@@ -315078,7 +315078,7 @@
         "top_code": "3020.20: Piloting"
       }
     ],
-    "FTVE M1098": [
+    "FMED M1098": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000646219",
@@ -315098,7 +315098,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1107": [
+    "FMED M1107": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000639476",
@@ -315118,7 +315118,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1121": [
+    "FMED M1121": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000646218",
@@ -315138,7 +315138,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1108": [
+    "FMED M1108": [
       {
         "college": "West Los Angeles College",
         "control_number": "CCC000468246",
@@ -316147,7 +316147,7 @@
         "top_code": "2133.10: Wildland Fire Technology"
       }
     ],
-    "ESCI M1035": [
+    "ENVS M1035": [
       {
         "college": "Columbia College",
         "control_number": "CCC000128680",
@@ -316167,7 +316167,7 @@
         "top_code": "0302.00: Environmental Studies"
       }
     ],
-    "ESCI M1036": [
+    "ENVS M1036": [
       {
         "college": "Columbia College",
         "control_number": "CCC000597291",
@@ -320088,7 +320088,7 @@
         "top_code": "2104.00: Human Services"
       }
     ],
-    "BCST M1016": [
+    "BRDC M1016": [
       {
         "college": "Santa Barbara City College",
         "control_number": "CCC000595663",
@@ -323119,7 +323119,7 @@
         "top_code": "2133.10: Wildland Fire Technology"
       }
     ],
-    "BCST M1010": [
+    "BRDC M1010": [
       {
         "college": "Southwestern College",
         "control_number": "CCC000580203",
@@ -323391,7 +323391,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "BCST M1057": [
+    "BRDC M1057": [
       {
         "college": "De Anza College",
         "control_number": "CCC000011265",
@@ -323438,7 +323438,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "BCST M1005": [
+    "BRDC M1005": [
       {
         "college": "De Anza College",
         "control_number": "CCC000210316",
@@ -323739,7 +323739,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "FTVE M1032": [
+    "FMED M1032": [
       {
         "college": "Gavilan College",
         "control_number": "CCC000594793",
@@ -323759,7 +323759,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "BCST M1001": [
+    "BRDC M1059": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000004197",
@@ -323844,7 +323844,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1109": [
+    "FMED M1109": [
       {
         "college": "Gavilan College",
         "control_number": "CCC000456136",
@@ -323913,7 +323913,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "BCST M1017": [
+    "BRDC M1017": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000266538",
@@ -324000,7 +324000,7 @@
         "top_code": "4930.87: English as a Second Language - Integrated"
       }
     ],
-    "FTVE M1117": [
+    "FMED M1117": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000532732",
@@ -324980,7 +324980,7 @@
         "top_code": "1099.00: Other Fine and Applied Arts"
       }
     ],
-    "GRAF M1327": [
+    "GFCD M1327": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000566329",
@@ -325027,7 +325027,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1033": [
+    "GFCD M1033": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000608581",
@@ -325076,7 +325076,7 @@
         "top_code": "0709.00: World Wide Web Administration"
       }
     ],
-    "GRAF M1046": [
+    "GFCD M1046": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000283933",
@@ -325096,7 +325096,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1022": [
+    "GFCD M1022": [
       {
         "college": "Las Positas College",
         "control_number": "CCC000354571",
@@ -325116,7 +325116,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1027": [
+    "GFCD M1027": [
       {
         "college": "College of Marin",
         "control_number": "CCC000615617",
@@ -325136,7 +325136,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1004": [
+    "GFCD M1004": [
       {
         "college": "Mission College",
         "control_number": "CCC000525253",
@@ -325156,7 +325156,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1005": [
+    "GFCD M1005": [
       {
         "college": "Mission College",
         "control_number": "CCC000632016",
@@ -325176,7 +325176,7 @@
         "top_code": "0614.60: Computer Graphics and Digital Imagery"
       }
     ],
-    "GRAF M1013": [
+    "GFCD M1013": [
       {
         "college": "Mission College",
         "control_number": "CCC000644352",
@@ -325196,7 +325196,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1020": [
+    "GFCD M1020": [
       {
         "college": "Mission College",
         "control_number": "CCC000644351",
@@ -325216,7 +325216,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1007": [
+    "GFCD M1007": [
       {
         "college": "Mission College",
         "control_number": "CCC000616460",
@@ -325236,7 +325236,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1028": [
+    "GFCD M1028": [
       {
         "college": "Mission College",
         "control_number": "CCC000616416",
@@ -325256,7 +325256,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "GRAF M1001": [
+    "GFCD M1001": [
       {
         "college": "Mission College",
         "control_number": "CCC000581238",
@@ -325276,7 +325276,7 @@
         "top_code": "0707.10: Computer Programming"
       }
     ],
-    "GRAF M1043": [
+    "GFCD M1043": [
       {
         "college": "Mission College",
         "control_number": "CCC000625243",
@@ -325296,7 +325296,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "GRAF M1048": [
+    "GFCD M1048": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000608170",
@@ -325361,7 +325361,7 @@
         "top_code": "0514.00: Office Technology/Office Computer Applications"
       }
     ],
-    "GRAF M1052": [
+    "GFCD M1052": [
       {
         "college": "Mission College",
         "control_number": "CCC000616464",
@@ -325390,7 +325390,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1047": [
+    "GFCD M1047": [
       {
         "college": "Mission College",
         "control_number": "CCC000653885",
@@ -325410,7 +325410,7 @@
         "top_code": "1012.00: Applied Photography"
       }
     ],
-    "GRAF M1031": [
+    "GFCD M1031": [
       {
         "college": "Mission College",
         "control_number": "CCC000312478",
@@ -325430,7 +325430,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1002": [
+    "GFCD M1002": [
       {
         "college": "Mission College",
         "control_number": "CCC000586977",
@@ -325450,7 +325450,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "GRAF M9005": [
+    "GFCD M9005": [
       {
         "college": "Irvine Valley College",
         "control_number": "CCC000653154",
@@ -327646,7 +327646,7 @@
         "top_code": "2206.00: Geography"
       }
     ],
-    "ESCI M1055": [
+    "ENVS M1055": [
       {
         "college": "Glendale Community College",
         "control_number": "CCC000286968",
@@ -334997,7 +334997,7 @@
         "top_code": "0614.20: Electronic Game Design"
       }
     ],
-    "GRAF M1041": [
+    "GFCD M1041": [
       {
         "college": "Foothill College",
         "control_number": "CCC000360815",
@@ -336106,7 +336106,7 @@
         "top_code": "0614.60: Computer Graphics and Digital Imagery"
       }
     ],
-    "GRAF M1010": [
+    "GFCD M1010": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000158751",
@@ -336162,7 +336162,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1012": [
+    "GFCD M1012": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000074668",
@@ -336182,7 +336182,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1044": [
+    "GFCD M1044": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000617924",
@@ -336285,7 +336285,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1006": [
+    "GFCD M1006": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000617923",
@@ -336305,7 +336305,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1018": [
+    "GFCD M1018": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000597516",
@@ -336325,7 +336325,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1040": [
+    "GFCD M1040": [
       {
         "college": "College of Marin",
         "control_number": "CCC000615613",
@@ -336363,7 +336363,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1054": [
+    "GFCD M1054": [
       {
         "college": "American River College",
         "control_number": "CCC000572925",
@@ -336410,7 +336410,7 @@
         "top_code": "0614.40: Animation"
       }
     ],
-    "GRAF M1008": [
+    "GFCD M1008": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000617925",
@@ -336430,7 +336430,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "GRAF M1053": [
+    "GFCD M1053": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000213126",
@@ -336459,7 +336459,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "GRAF M1026": [
+    "GFCD M1026": [
       {
         "college": "Citrus College",
         "control_number": "CCC000561417",
@@ -336488,7 +336488,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M9002": [
+    "GFCD M9002": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000617933",
@@ -336535,7 +336535,7 @@
         "top_code": "0614.60: Computer Graphics and Digital Imagery"
       }
     ],
-    "GRAF M9001": [
+    "GFCD M9001": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000617930",
@@ -336555,7 +336555,7 @@
         "top_code": "0614.10: Multimedia"
       }
     ],
-    "GRAF M9004": [
+    "GFCD M9004": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000617932",
@@ -336575,7 +336575,7 @@
         "top_code": "1009.00: Applied Design"
       }
     ],
-    "GRAF M9006": [
+    "GFCD M9006": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000645271",
@@ -336595,7 +336595,7 @@
         "top_code": "0614.30: Website Design and Development"
       }
     ],
-    "GRAF M1039": [
+    "GFCD M1039": [
       {
         "college": "Fullerton College",
         "control_number": "CCC000630351",
@@ -336722,7 +336722,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "GRAF M1045": [
+    "GFCD M1045": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000589272",
@@ -352652,7 +352652,7 @@
         "top_code": "1306.00: Nutrition, Foods and Culinary Arts"
       }
     ],
-    "PLGL M1031": [
+    "PARA M1031": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000522039",
@@ -362475,7 +362475,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "CSAI M1004": [
+    "CSIS M1491": [
       {
         "college": "Foothill College",
         "control_number": "CCC000651097",
@@ -368754,7 +368754,7 @@
         "top_code": "4930.10: Career Guidance and Orientation"
       }
     ],
-    "CNSR M1001": [
+    "CBIT M1001": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505093",
@@ -368774,7 +368774,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1002": [
+    "CBIT M1002": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000504235",
@@ -368794,7 +368794,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1003": [
+    "CBIT M1003": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505095",
@@ -368814,7 +368814,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1004": [
+    "CBIT M1004": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505094",
@@ -368834,7 +368834,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1005": [
+    "CBIT M1005": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000601316",
@@ -368854,7 +368854,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1009": [
+    "CBIT M1009": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000601314",
@@ -368874,7 +368874,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1007": [
+    "CBIT M1007": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505097",
@@ -368894,7 +368894,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1008": [
+    "CBIT M1008": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505096",
@@ -368914,7 +368914,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1006": [
+    "CBIT M1006": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000601315",
@@ -368934,7 +368934,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1013": [
+    "CBIT M1013": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000601312",
@@ -368954,7 +368954,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1014": [
+    "CBIT M1014": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505092",
@@ -368974,7 +368974,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1015": [
+    "CBIT M1015": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000505099",
@@ -368994,7 +368994,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "CNSR M1016": [
+    "CBIT M1016": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000601313",
@@ -369504,7 +369504,7 @@
         "top_code": "1302.00: Interior Design and Merchandising"
       }
     ],
-    "AUTD M1024": [
+    "DIES M1024": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000553478",
@@ -370719,7 +370719,7 @@
         "top_code": "0701.00: Information Technology, General"
       }
     ],
-    "CNSR M9001": [
+    "CBIT M9001": [
       {
         "college": "Cerro Coso Community College",
         "control_number": "CCC000643155",
@@ -372264,7 +372264,7 @@
         "top_code": "0955.00: Laboratory Science Technology"
       }
     ],
-    "ESCI M1068": [
+    "ENVS M1068": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000173609",
@@ -412731,7 +412731,7 @@
         "top_code": "2104.00: Human Services"
       }
     ],
-    "PLGL M1003": [
+    "PARA M1067": [
       {
         "college": "American River College",
         "control_number": "CCC000556194",
@@ -412778,7 +412778,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1183": [
+    "PARA M1183": [
       {
         "college": "American River College",
         "control_number": "CCC000542782",
@@ -412834,7 +412834,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1032": [
+    "PARA M1032": [
       {
         "college": "American River College",
         "control_number": "CCC000222609",
@@ -412854,7 +412854,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1035": [
+    "PARA M1035": [
       {
         "college": "American River College",
         "control_number": "CCC000280986",
@@ -412874,7 +412874,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1046": [
+    "PARA M1046": [
       {
         "college": "American River College",
         "control_number": "CCC000316909",
@@ -412912,7 +412912,7 @@
         "top_code": "0511.00: Real Estate"
       }
     ],
-    "PLGL M1052": [
+    "PARA M1052": [
       {
         "college": "American River College",
         "control_number": "CCC000642774",
@@ -412941,7 +412941,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1041": [
+    "PARA M1041": [
       {
         "college": "American River College",
         "control_number": "CCC000312476",
@@ -413010,7 +413010,7 @@
         "top_code": "0801.00: Education, General"
       }
     ],
-    "PLGL M1021": [
+    "PARA M1021": [
       {
         "college": "American River College",
         "control_number": "CCC000264359",
@@ -413814,7 +413814,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1029": [
+    "PARA M1029": [
       {
         "college": "East Los Angeles College",
         "control_number": "CCC000557416",
@@ -415481,7 +415481,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1033": [
+    "PARA M1033": [
       {
         "college": "Southwestern College",
         "control_number": "CCC000365838",
@@ -417095,7 +417095,7 @@
         "top_code": "4930.13: Academic Guidance"
       }
     ],
-    "CSAI M1002": [
+    "CSIS M1489": [
       {
         "college": "Reedley College",
         "control_number": "CCC000653857",
@@ -417193,7 +417193,7 @@
         "top_code": "1602.00: Library Technician (Aide)"
       }
     ],
-    "GRAF M1009": [
+    "GFCD M1009": [
       {
         "college": "Foothill College",
         "control_number": "CCC000460757",
@@ -419315,7 +419315,7 @@
         "top_code": "1601.00: Library Science, General"
       }
     ],
-    "NRSV M1016": [
+    "VNRS M1016": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000637853",
@@ -420366,7 +420366,7 @@
         "top_code": "0956.40: Sheet Metal and Structural Metal"
       }
     ],
-    "BCST M1009": [
+    "BRDC M1009": [
       {
         "college": "Cypress College",
         "control_number": "CCC000578594",
@@ -420444,7 +420444,7 @@
         "top_code": "0953.00: Drafting Technology"
       }
     ],
-    "BCST M1002": [
+    "BRDC M1060": [
       {
         "college": "Cypress College",
         "control_number": "CCC000621143",
@@ -420522,7 +420522,7 @@
         "top_code": "0116.00: Agricultural Power Equipment Technology"
       }
     ],
-    "AUTD M1015": [
+    "DIES M1015": [
       {
         "college": "Madera College",
         "control_number": "CCC000615504",
@@ -420801,7 +420801,7 @@
         "top_code": "0116.00: Agricultural Power Equipment Technology"
       }
     ],
-    "AUTD M1016": [
+    "DIES M1016": [
       {
         "college": "Madera College",
         "control_number": "CCC000615510",
@@ -437112,7 +437112,7 @@
         "top_code": "1506.00: Speech Communication"
       }
     ],
-    "AUTD M1002": [
+    "DIES M1044": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000587752",
@@ -437152,7 +437152,7 @@
         "top_code": "0956.70: Industrial and Occupational Safety and Health"
       }
     ],
-    "AUTD M1010": [
+    "DIES M1010": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000590275",
@@ -437172,7 +437172,7 @@
         "top_code": "0116.00: Agricultural Power Equipment Technology"
       }
     ],
-    "AUTD M1025": [
+    "DIES M1025": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000637132",
@@ -437221,7 +437221,7 @@
         "top_code": "0116.00: Agricultural Power Equipment Technology"
       }
     ],
-    "AUTD M9005": [
+    "DIES M9005": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000637125",
@@ -437384,7 +437384,7 @@
         "top_code": "0602.00: Journalism"
       }
     ],
-    "BCST M1020": [
+    "BRDC M1020": [
       {
         "college": "Grossmont College",
         "control_number": "CCC000351597",
@@ -437544,7 +437544,7 @@
         "top_code": "0604.00: Radio and Television"
       }
     ],
-    "FTVE M1166": [
+    "FMED M1166": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000515550",
@@ -438792,7 +438792,7 @@
         "top_code": "1208.00: Medical Assisting"
       }
     ],
-    "FTVE M1031": [
+    "FMED M1031": [
       {
         "college": "Laney College",
         "control_number": "CCC000354492",
@@ -438850,7 +438850,7 @@
         "top_code": "1208.00: Medical Assisting"
       }
     ],
-    "FTVE M1039": [
+    "FMED M1039": [
       {
         "college": "Laney College",
         "control_number": "CCC000354407",
@@ -438870,7 +438870,7 @@
         "top_code": "0604.20: Television (including combined TV/Film/Video)"
       }
     ],
-    "FTVE M1110": [
+    "FMED M1110": [
       {
         "college": "Laney College",
         "control_number": "CCC000626936",
@@ -438890,7 +438890,7 @@
         "top_code": "0604.20: Television (including combined TV/Film/Video)"
       }
     ],
-    "FTVE M1112": [
+    "FMED M1112": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000526374",
@@ -438919,7 +438919,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1114": [
+    "FMED M1114": [
       {
         "college": "Los Angeles Pierce College",
         "control_number": "CCC000608683",
@@ -438968,7 +438968,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "FTVE M1115": [
+    "FMED M1115": [
       {
         "college": "Santa Monica College",
         "control_number": "CCC000605377",
@@ -439028,7 +439028,7 @@
         "top_code": "0612.20: Film Production"
       }
     ],
-    "FTVE M1113": [
+    "FMED M1113": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000526373",
@@ -439160,7 +439160,7 @@
         "top_code": "0699.00: Other Media and Communications"
       }
     ],
-    "FTVE M1120": [
+    "FMED M1120": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000503222",
@@ -439238,7 +439238,7 @@
         "top_code": "1201.00: Health Occupations, General"
       }
     ],
-    "FTVE M1122": [
+    "FMED M1122": [
       {
         "college": "Laney College",
         "control_number": "CCC000567963",
@@ -439258,7 +439258,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1051": [
+    "GFCD M1051": [
       {
         "college": "Laney College",
         "control_number": "CCC000625841",
@@ -444851,7 +444851,7 @@
         "top_code": "0614.00: Digital Media"
       }
     ],
-    "GRAF M1049": [
+    "GFCD M1049": [
       {
         "college": "College of Marin",
         "control_number": "CCC000349855",
@@ -445129,7 +445129,7 @@
         "top_code": "0702.00: Computer Information Systems"
       }
     ],
-    "FTVE M1111": [
+    "FMED M1111": [
       {
         "college": "Berkeley City College",
         "control_number": "CCC000600659",
@@ -445236,7 +445236,7 @@
         "top_code": "1208.20: Administrative Medical Assisting"
       }
     ],
-    "AUTD M9001": [
+    "DIES M9007": [
       {
         "college": "North Orange Continuing Education",
         "control_number": "CCC000409036",
@@ -445296,7 +445296,7 @@
         "top_code": "0959.00: Marine Technology"
       }
     ],
-    "AUTD M9003": [
+    "DIES M9003": [
       {
         "college": "North Orange Continuing Education",
         "control_number": "CCC000392864",
@@ -445356,7 +445356,7 @@
         "top_code": "0959.00: Marine Technology"
       }
     ],
-    "AUTD M9004": [
+    "DIES M9004": [
       {
         "college": "North Orange Continuing Education",
         "control_number": "CCC000387123",
@@ -472968,7 +472968,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1018": [
+    "VNRS M1018": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000587224",
@@ -473006,7 +473006,7 @@
         "top_code": "1239.00: Psychiatric Technician"
       }
     ],
-    "NRSV M1001": [
+    "VNRS M1019": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000587225",
@@ -473044,7 +473044,7 @@
         "top_code": "1239.00: Psychiatric Technician"
       }
     ],
-    "NRSV M1004": [
+    "VNRS M1023": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000587226",
@@ -475961,7 +475961,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "GRAF M9003": [
+    "GFCD M9003": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000606385",
@@ -476562,7 +476562,7 @@
         "top_code": "0103.00: Plant Science"
       }
     ],
-    "ESCI M1038": [
+    "ENVS M1038": [
       {
         "college": "College of the Siskiyous",
         "control_number": "CCC000362580",
@@ -485481,7 +485481,7 @@
         "top_code": "1306.00: Nutrition, Foods and Culinary Arts"
       }
     ],
-    "NRSV M1015": [
+    "VNRS M1015": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000099291",
@@ -490609,7 +490609,7 @@
         "top_code": "2102.00: Public Administration"
       }
     ],
-    "PLGL M1004": [
+    "PARA M1068": [
       {
         "college": "Riverside City College",
         "control_number": "CCC000626886",
@@ -490649,7 +490649,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1015": [
+    "PARA M1079": [
       {
         "college": "El Camino College",
         "control_number": "CCC000308165",
@@ -490687,7 +490687,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1023": [
+    "PARA M1023": [
       {
         "college": "Los Angeles Valley College",
         "control_number": "CCC000644631",
@@ -490707,7 +490707,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1017": [
+    "PARA M1081": [
       {
         "college": "Los Angeles Valley College",
         "control_number": "CCC000644600",
@@ -490727,7 +490727,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1049": [
+    "PARA M1049": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000355027",
@@ -490765,7 +490765,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1027": [
+    "PARA M1027": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000595169",
@@ -490805,7 +490805,7 @@
         "top_code": "0934.80: Laser and Optical Technology"
       }
     ],
-    "PLGL M1011": [
+    "PARA M1075": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000402174",
@@ -490861,7 +490861,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1014": [
+    "PARA M1078": [
       {
         "college": "Cerro Coso Community College",
         "control_number": "CCC000526529",
@@ -490881,7 +490881,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1019": [
+    "PARA M1083": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000391969",
@@ -490901,7 +490901,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1020": [
+    "PARA M1020": [
       {
         "college": "De Anza College",
         "control_number": "CCC000103685",
@@ -490939,7 +490939,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1009": [
+    "PARA M1073": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000205982",
@@ -490959,7 +490959,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1024": [
+    "PARA M1024": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000401171",
@@ -490997,7 +490997,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1026": [
+    "PARA M1026": [
       {
         "college": "De Anza College",
         "control_number": "CCC000030358",
@@ -491035,7 +491035,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1038": [
+    "PARA M1038": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000417717",
@@ -491055,7 +491055,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1042": [
+    "PARA M1042": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000604512",
@@ -491129,7 +491129,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1044": [
+    "PARA M1044": [
       {
         "college": "De Anza College",
         "control_number": "CCC000256154",
@@ -491149,7 +491149,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1048": [
+    "PARA M1048": [
       {
         "college": "De Anza College",
         "control_number": "CCC000567545",
@@ -491169,7 +491169,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1007": [
+    "PARA M1071": [
       {
         "college": "De Anza College",
         "control_number": "CCC000280824",
@@ -491189,7 +491189,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1051": [
+    "PARA M1051": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000517902",
@@ -491290,7 +491290,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1053": [
+    "PARA M1053": [
       {
         "college": "Santa Ana College",
         "control_number": "CCC000394244",
@@ -491310,7 +491310,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1006": [
+    "PARA M1070": [
       {
         "college": "De Anza College",
         "control_number": "CCC000050410",
@@ -491348,7 +491348,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1040": [
+    "PARA M1040": [
       {
         "college": "Cuyamaca College",
         "control_number": "CCC000304096",
@@ -491368,7 +491368,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1039": [
+    "PARA M1039": [
       {
         "college": "Cerro Coso Community College",
         "control_number": "CCC000460372",
@@ -491408,7 +491408,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1030": [
+    "PARA M1030": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000615395",
@@ -491609,7 +491609,7 @@
         "top_code": "1305.60: Parenting and Family Education"
       }
     ],
-    "PLGL M1010": [
+    "PARA M1074": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000456643",
@@ -491638,7 +491638,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1016": [
+    "PARA M1080": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000648569",
@@ -491685,7 +491685,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1018": [
+    "PARA M1082": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000648570",
@@ -491743,7 +491743,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1047": [
+    "PARA M1047": [
       {
         "college": "Merritt College",
         "control_number": "CCC000347666",
@@ -493517,7 +493517,7 @@
         "top_code": "0506.00: Business Management"
       }
     ],
-    "ESCI M1025": [
+    "ENVS M1025": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000600737",
@@ -504326,7 +504326,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "ESCI M1037": [
+    "ENVS M1037": [
       {
         "college": "Lassen College",
         "control_number": "CCC000280599",
@@ -521142,7 +521142,7 @@
         "top_code": "0952.30: Plumbing, Pipefitting and Steamfitting"
       }
     ],
-    "PLGL M1012": [
+    "PARA M1076": [
       {
         "college": "Fullerton College",
         "control_number": "CCC000580714",
@@ -521191,7 +521191,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1025": [
+    "PARA M1025": [
       {
         "college": "Fullerton College",
         "control_number": "CCC000220650",
@@ -521211,7 +521211,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1028": [
+    "PARA M1028": [
       {
         "college": "Fullerton College",
         "control_number": "CCC000058993",
@@ -521231,7 +521231,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1043": [
+    "PARA M1043": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000359126",
@@ -521278,7 +521278,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1050": [
+    "PARA M1050": [
       {
         "college": "Fullerton College",
         "control_number": "CCC000635898",
@@ -521325,7 +521325,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1013": [
+    "PARA M1077": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000521199",
@@ -521495,7 +521495,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1022": [
+    "PARA M1022": [
       {
         "college": "American River College",
         "control_number": "CCC000277281",
@@ -521551,7 +521551,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1001": [
+    "PARA M1065": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000559841",
@@ -521571,7 +521571,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1034": [
+    "PARA M1034": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000517899",
@@ -521827,7 +521827,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1045": [
+    "PARA M1045": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000517898",
@@ -521955,7 +521955,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1008": [
+    "PARA M1072": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000517903",
@@ -522076,7 +522076,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1054": [
+    "PARA M1054": [
       {
         "college": "Allan Hancock College",
         "control_number": "CCC000517905",
@@ -522096,7 +522096,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1002": [
+    "PARA M1066": [
       {
         "college": "Pasadena City College",
         "control_number": "CCC000398379",
@@ -522252,7 +522252,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1036": [
+    "PARA M1036": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000369209",
@@ -522272,7 +522272,7 @@
         "top_code": "1402.00: Paralegal"
       }
     ],
-    "PLGL M1037": [
+    "PARA M1037": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000363051",
@@ -524301,7 +524301,7 @@
         "top_code": "2207.00: Political Science"
       }
     ],
-    "PLGL M1005": [
+    "PARA M1069": [
       {
         "college": "Ventura College",
         "control_number": "CCC000570385",
@@ -538054,7 +538054,7 @@
         "top_code": "1520.00: Reading"
       }
     ],
-    "BCST M1007": [
+    "BRDC M1007": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000411726",
@@ -545694,7 +545694,7 @@
         "top_code": "0604.10: Radio"
       }
     ],
-    "BCST M1013": [
+    "BRDC M1013": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000617707",
@@ -545714,7 +545714,7 @@
         "top_code": "0604.20: Television (including combined TV/Film/Video)"
       }
     ],
-    "BCST M1023": [
+    "BRDC M1023": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000617708",
@@ -563908,7 +563908,7 @@
         "top_code": "0612.00: Film Studies"
       }
     ],
-    "FTVE M1119": [
+    "FMED M1119": [
       {
         "college": "American River College",
         "control_number": "CCC000607793",
@@ -565351,7 +565351,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "FTVE M1106": [
+    "FMED M1106": [
       {
         "college": "Long Beach City College",
         "control_number": "CCC000586726",
@@ -571745,7 +571745,7 @@
         "top_code": "0604.10: Radio"
       }
     ],
-    "BCST M1022": [
+    "BRDC M1022": [
       {
         "college": "Long Beach City College",
         "control_number": "CCC000625828",
@@ -571794,7 +571794,7 @@
         "top_code": "0604.30: Broadcast Journalism"
       }
     ],
-    "BCST M1014": [
+    "BRDC M1014": [
       {
         "college": "Pasadena City College",
         "control_number": "CCC000397224",
@@ -572871,7 +572871,7 @@
         "top_code": "0614.60: Computer Graphics and Digital Imagery"
       }
     ],
-    "GRAF M1036": [
+    "GFCD M1036": [
       {
         "college": "City College of San Francisco",
         "control_number": "CCC000566328",
@@ -572911,7 +572911,7 @@
         "top_code": "1299.00: Other Health Occupations"
       }
     ],
-    "NRSV M1002": [
+    "VNRS M1020": [
       {
         "college": "Rio Hondo College",
         "control_number": "CCC000549729",
@@ -572960,7 +572960,7 @@
         "top_code": "1210.00: Respiratory Care/Therapy"
       }
     ],
-    "NRSV M1003": [
+    "VNRS M1022": [
       {
         "college": "Lassen College",
         "control_number": "CCC000108225",
@@ -572980,7 +572980,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1005": [
+    "VNRS M1024": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000252918",
@@ -573018,7 +573018,7 @@
         "top_code": "1260.00: Health Professions, Transfer Core Curriculum"
       }
     ],
-    "NRSV M1017": [
+    "VNRS M1017": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000385364",
@@ -573074,7 +573074,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1009": [
+    "VNRS M1030": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000523807",
@@ -573121,7 +573121,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1008": [
+    "VNRS M1029": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000523802",
@@ -573141,7 +573141,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1012": [
+    "VNRS M1012": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000523806",
@@ -573188,7 +573188,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1011": [
+    "VNRS M1011": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000523805",
@@ -573208,7 +573208,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1014": [
+    "VNRS M1014": [
       {
         "college": "College of the Desert",
         "control_number": "CCC000523804",
@@ -573266,7 +573266,7 @@
         "top_code": "1230.10: Registered Nursing"
       }
     ],
-    "NRSV M1006": [
+    "VNRS M1025": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000553794",
@@ -573286,7 +573286,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1007": [
+    "VNRS M1028": [
       {
         "college": "Citrus College",
         "control_number": "CCC000562460",
@@ -573870,7 +573870,7 @@
         "top_code": "0934.00: Electronics and Electric Technology"
       }
     ],
-    "ESCI M9001": [
+    "ENVS M9001": [
       {
         "college": "Mt. San Antonio College",
         "control_number": "CCC000642837",
@@ -576588,7 +576588,7 @@
         "top_code": "1239.00: Psychiatric Technician"
       }
     ],
-    "NRSV M1010": [
+    "VNRS M1010": [
       {
         "college": "Los Medanos College",
         "control_number": "CCC000245287",
@@ -576608,7 +576608,7 @@
         "top_code": "1230.20: Licensed Vocational Nursing"
       }
     ],
-    "NRSV M1013": [
+    "VNRS M1013": [
       {
         "college": "Los Medanos College",
         "control_number": "CCC000649849",
@@ -577249,7 +577249,7 @@
         "top_code": "0956.70: Industrial and Occupational Safety and Health"
       }
     ],
-    "ESCI M1041": [
+    "ENVS M1041": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000507529",
@@ -577269,7 +577269,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1042": [
+    "ENVS M1042": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000284943",
@@ -577289,7 +577289,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1086": [
+    "ENVS M1086": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000525894",
@@ -577309,7 +577309,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1032": [
+    "ENVS M1032": [
       {
         "college": "Mt. San Jacinto College",
         "control_number": "CCC000621313",
@@ -577329,7 +577329,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1049": [
+    "ENVS M1049": [
       {
         "college": "Mt. San Jacinto College",
         "control_number": "CCC000621314",
@@ -577349,7 +577349,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1077": [
+    "ENVS M1077": [
       {
         "college": "Mt. San Jacinto College",
         "control_number": "CCC000621315",
@@ -577369,7 +577369,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1073": [
+    "ENVS M1073": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000522536",
@@ -577443,7 +577443,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1075": [
+    "ENVS M1075": [
       {
         "college": "Citrus College",
         "control_number": "CCC000461439",
@@ -583288,7 +583288,7 @@
         "top_code": "1002.00: Art"
       }
     ],
-    "CSTF M1002": [
+    "WWKF M1002": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000621537",
@@ -583308,7 +583308,7 @@
         "top_code": "1030.00: Graphic Art and Design"
       }
     ],
-    "CSTF M1003": [
+    "WWKF M1003": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000453281",
@@ -583328,7 +583328,7 @@
         "top_code": "0952.50: Mill and Cabinet Work"
       }
     ],
-    "CNSC M1002": [
+    "WWKC M1002": [
       {
         "college": "Mendocino College",
         "control_number": "CCC000620545",
@@ -583348,7 +583348,7 @@
         "top_code": "0952.50: Mill and Cabinet Work"
       }
     ],
-    "CNSC M1001": [
+    "WWKC M1001": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000593003",
@@ -583473,7 +583473,7 @@
         "top_code": "0952.30: Plumbing, Pipefitting and Steamfitting"
       }
     ],
-    "ESCI M1078": [
+    "ENVS M1078": [
       {
         "college": "College of the Siskiyous",
         "control_number": "CCC000658895",
@@ -583640,7 +583640,7 @@
         "top_code": "0956.50: Welding Technology"
       }
     ],
-    "ESCI M9002": [
+    "ENVS M9002": [
       {
         "college": "College of the Siskiyous",
         "control_number": "CCC000604855",
@@ -583800,7 +583800,7 @@
         "top_code": "2205.00: History"
       }
     ],
-    "ESCI M1017": [
+    "ENVS M1017": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000059590",
@@ -583847,7 +583847,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1033": [
+    "ENVS M1033": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000428436",
@@ -583867,7 +583867,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1051": [
+    "ENVS M1051": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000612728",
@@ -583887,7 +583887,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1065": [
+    "ENVS M1065": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000612727",
@@ -583907,7 +583907,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1070": [
+    "ENVS M1070": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000608929",
@@ -583927,7 +583927,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1083": [
+    "ENVS M1083": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000650111",
@@ -583965,7 +583965,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1029": [
+    "ENVS M1029": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000522848",
@@ -583985,7 +583985,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1030": [
+    "ENVS M1030": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000522847",
@@ -584005,7 +584005,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1081": [
+    "ENVS M1081": [
       {
         "college": "Mt. San Jacinto College",
         "control_number": "CCC000621316",
@@ -584034,7 +584034,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1072": [
+    "ENVS M1072": [
       {
         "college": "Imperial Valley College",
         "control_number": "CCC000361009",
@@ -584072,7 +584072,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1074": [
+    "ENVS M1074": [
       {
         "college": "Imperial Valley College",
         "control_number": "CCC000368741",
@@ -584110,7 +584110,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1082": [
+    "ENVS M1082": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000500745",
@@ -584130,7 +584130,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1048": [
+    "ENVS M1048": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000513862",
@@ -584150,7 +584150,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1079": [
+    "ENVS M1079": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000553027",
@@ -584170,7 +584170,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1010": [
+    "ENVS M1117": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000580939",
@@ -584230,7 +584230,7 @@
         "top_code": "0956.50: Welding Technology"
       }
     ],
-    "ESCI M1007": [
+    "ENVS M1114": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000563148",
@@ -584295,7 +584295,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1021": [
+    "ENVS M1021": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000563149",
@@ -584333,7 +584333,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1045": [
+    "ENVS M1045": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000570529",
@@ -584389,7 +584389,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1043": [
+    "ENVS M1043": [
       {
         "college": "Palomar College",
         "control_number": "CCC000111350",
@@ -584409,7 +584409,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1019": [
+    "ENVS M1019": [
       {
         "college": "Copper Mountain College",
         "control_number": "CCC000651277",
@@ -584438,7 +584438,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1020": [
+    "ENVS M1020": [
       {
         "college": "Copper Mountain College",
         "control_number": "CCC000651379",
@@ -584485,7 +584485,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1026": [
+    "ENVS M1026": [
       {
         "college": "Copper Mountain College",
         "control_number": "CCC000650823",
@@ -584514,7 +584514,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1027": [
+    "ENVS M1027": [
       {
         "college": "Copper Mountain College",
         "control_number": "CCC000650822",
@@ -584534,7 +584534,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1069": [
+    "ENVS M1069": [
       {
         "college": "Copper Mountain College",
         "control_number": "CCC000650824",
@@ -584554,7 +584554,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1044": [
+    "ENVS M1044": [
       {
         "college": "Copper Mountain College",
         "control_number": "CCC000650825",
@@ -584668,7 +584668,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1005": [
+    "ENVS M1112": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000654000",
@@ -584697,7 +584697,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1008": [
+    "ENVS M1115": [
       {
         "college": "Bakersfield College",
         "control_number": "CCC000653999",
@@ -584744,7 +584744,7 @@
         "top_code": "0958.00: Water and Wastewater Technology"
       }
     ],
-    "ESCI M1050": [
+    "ENVS M1050": [
       {
         "college": "Evergreen Valley College",
         "control_number": "CCC000575417",
