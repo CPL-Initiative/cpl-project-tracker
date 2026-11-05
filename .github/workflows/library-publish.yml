@@ -1,0 +1,75 @@
+name: Library — publish approved drafts
+
+# Sam, 2026-11-05 (SkyBarnard, in session): "Build it", on revising a Library visual from its card
+# without a session. library-revise-draft (an edge function) drafts the revision into
+# cpl_library_drafts; a person presses Replace the public copy on the card. This run, every three
+# hours or on dispatch, writes each approved draft to library/<slug>/index.html with a receipt,
+# commits both to main, and then moves the record (scripts/library_publish.py). Pages deploys the
+# page from main as it does every commit.
+#
+# Governance: kb/governance_surface_map.json, workflow:library-publish.yml. It writes only the
+# pages of records a person approved, their receipts, and those records' version fields.
+#
+# concurrency: daily-dashboard, so it never pushes to main beside the daily cron (Rule 6).
+
+on:
+  schedule:
+    - cron: "41 */3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Write approved drafts
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "::error::SUPABASE_SERVICE_KEY not set"
+            exit 1
+          fi
+          python3 scripts/library_publish.py --write | tee publish.json
+
+      - name: Commit and push
+        id: push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add library/*/index.html kb/receipts/library_publish/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing approved to publish."
+            echo "sha=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Library: publish approved drafts from the card ($(python3 -c "import json;print(', '.join(json.load(open('publish.json'))['published']))"))"
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then break; fi
+            git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i * 5))
+          done
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Move the records
+        if: steps.push.outputs.sha != ''
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 scripts/library_publish.py --finish --commit "${{ steps.push.outputs.sha }}"
