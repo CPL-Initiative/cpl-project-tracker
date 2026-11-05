@@ -15,9 +15,11 @@ function txt(n) { return (n && n.textContent || "").replace(/\s+/g, " ").trim();
 function boot(opts) {
   opts = opts || {};
   const posts = [];
-  const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body><div id="tab-canonical-subj4"><div id="cs-mount"></div></div></body></html>`,
+  const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body><div id="tab-canonical-subj4">${opts.intro || ""}<div id="cs-mount"></div></div></body></html>`,
     { runScripts: "outside-only", pretendToBeVisual: true, url: "https://localhost/" + (opts.hash || "#canonical-subj4/list") });
   const w = dom.window;
+  // opts.local presets the reader's storage (the Commons top fold, 2026-11-05).
+  Object.keys(opts.local || {}).forEach((k) => w.localStorage.setItem(k, opts.local[k]));
   w.fetch = function (url, init) {
     const u = String(url);
     if (u.indexOf("kb_curation") >= 0 && init && init.method === "POST") { posts.push(JSON.parse(init.body)); return Promise.resolve({ ok: true, status: 201, json: () => Promise.resolve([]) }); }

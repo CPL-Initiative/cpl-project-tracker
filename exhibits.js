@@ -1731,6 +1731,8 @@
      Commons row the tiles read, and each count opens where its tile's count opens. */
   function credDash(wrap) {
     if (!state.cm) loadCommons().then(function () { if (state.view === "list") render(); });
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (state.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) state.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!state.dashFolded;
     wrap.appendChild(cmLine(folded));
     var fold = el("div", { cls: "exh-fold", id: "exh-fold", hidden: folded ? "" : null });
@@ -1756,7 +1758,7 @@
      tab's class names so it looks as it did when Exhibits drew the first (#2736). */
   function cmLine(folded) {
     var cm = state.cm;
-    return LIST_ENGINE.line({ row: cm && cm.row, error: cm && cm.done ? (cm.error || "") : null, folded: folded, foldId: "exh-fold",
+    return LIST_ENGINE.line({ row: cm && cm.row, error: cm && cm.done ? (cm.error || "") : null, folded: folded, foldId: "exh-fold", top: [],
       onToggle: function () { state.dashFolded = !state.dashFolded; render(); },
       control: cmLineControl,
       cls: { bar: "exh-linebar", line: "exh-line", sep: "exh-sep", li: "exh-li", w: "exh-w" } });

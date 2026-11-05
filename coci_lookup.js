@@ -428,8 +428,10 @@
   function listLine(wrap, api) {
     var L = listState();
     loadProgress();
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (L.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) L.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!L.dashFolded;
-    wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold",
+    wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold", top: ["#tab-coci-lookup .cplcoci-lede"],
       onToggle: function () { L.dashFolded = !L.dashFolded; mountList(); },
       control: function (open, text, li, w) {
         if (!open) return null;

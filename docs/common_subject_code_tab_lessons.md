@@ -574,3 +574,30 @@ count. "Discipline" reads "MQ Discipline" (Sam: to keep the two grains apart). T
 SUBJ check's six ruled sharings reported as collisions, the pick's reviewer taken from a later note, and the C-ID index
 skipping descriptors ending in " X". Lessons and the measured state: `docs/commons_lessons.md` (S425) and
 `docs/reference/lanes/common-subjects-reference.md`.
+
+## 2026-11-04/05 — SkyJujube: the List as Sam's workspace (moved from the lane verbatim, then the evening's lessons)
+
+**Sam's working pass on the codes (SkyJujube, 2026-11-04):** (1) *saves read the session when they write*
+(`freshSess`, through `cpl_session.js`): the tab had kept its load-time token, so after a laptop slept every code save
+came back 401 under a signed-in tag; a lapsed sign-in now says so, with *Sign in again*. (2) The List sets the engine's
+`editByRow`: Edit beside the select box, a row press opens its edit row and moves the panel to it (no cell drawers), a
+landed save closes the row, and the edit row holds to the table's visible box. (3) A local code's count names its
+courses (tooltip; a press lists them) from `kb/discipline_local_courses/`, built by
+`kb/_build_discipline_local_courses.py` over the seed's walk (rebuild with the seed), with *Refile <code> in Local
+subjects*. (4) *Check the N changes made this visit* runs the SUBJ check on the changed rows; the scan's rules stay in
+`kb/_csr_trail.py`. (5) The panel's local codes carry Colleges beside Courses, sorted by colleges; a code edit fills an
+empty Note with *changed code to better align with local discipline use*; keeping a code asks its reason (*kept X:*);
+*Check alignment* (engine `edit.extra`) audits the typed code and recommends. **Found:** ECONMT (Los Angeles Trade Technical, 55, TOP 0952.20) is electrician coursework filed under
+Electromechanical, and Electricity's top local codes are adult-education ones (AED, APED, HSED):
+DR-25 calls through Local subjects; a move is a re-mint. Guards `tests/csr_list.test.js` (6b, 6c, 8, 9, 9b),
+`tests/csr_list_panel.test.js` (5b).
+
+**Lessons, 2026-11-05.** (1) A tab that copies the session at load keeps a dead token after a laptop sleeps; read it at
+write time through the keeper, and say *lapsed* where the tag sat. Every code save that evening came back 401 while the
+tag read signed in. (2) A count of courses measures one college's catalog; count colleges beside it (Diesel: DCDT 24
+courses at one college, DIES 14 at four). (3) "Answered this visit" forgets on reload; a save's own time against the
+scan's run is the durable test. (4) The scan reads the reference file, which only the manual sync updates: saves are
+invisible to it until a session dispatches `phase-1e-sync.yml`. (5) The Common SUBJ, in Sam's framing: four-letter codes
+assigned to every MQ discipline (248 listed, 147 with courses), adopted from C-ID and CCN where they exist; the KB note
+`reference-common-vs-local-subj-and-discipline-cardinality` section 5 holds it.
+

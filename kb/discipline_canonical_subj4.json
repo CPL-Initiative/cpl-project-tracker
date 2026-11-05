@@ -771,7 +771,7 @@
       "authority_note": "Common SUBJ ARTH is the CCN subject code (rule 2: CCN first)."
     },
     "Artificial Intelligence": {
-      "canonical_subj4": "CSIS",
+      "canonical_subj4": "CSAI",
       "source": "curator_override",
       "data_modal": "AI",
       "data_modal_is_4letter": false,
@@ -828,18 +828,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:47:23.794015+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed to CSIS for most direct alignment with discipline",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CSAI is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-04T21:25:48.575554+00:00"
+      "authority_note": "Common SUBJ CSAI is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Astronomy": {
       "canonical_subj4": "ASTR",
@@ -1312,7 +1310,7 @@
       "authority_note": "Common SUBJ BIOT is the C-ID subject code."
     },
     "Broadcasting Technology": {
-      "canonical_subj4": "BRDC",
+      "canonical_subj4": "BCST",
       "source": "curator_override",
       "data_modal": "BRDC",
       "data_modal_is_4letter": true,
@@ -1342,21 +1340,19 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:35:59.41225+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed for most direct alignment with discipline",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ BCST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-04T21:27:22.421898+00:00"
+      "authority_note": "Common SUBJ BCST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Building Codes and Regulations": {
-      "canonical_subj4": "CBIT",
+      "canonical_subj4": "CNSR",
       "source": "curator_override",
       "data_modal": "BIT",
       "data_modal_is_4letter": false,
@@ -1393,18 +1389,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:56:19.704569+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed to align with discipline",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CNSR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-04T22:54:06.687711+00:00"
+      "authority_note": "Common SUBJ CNSR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Business": {
       "canonical_subj4": "BUSI",
@@ -1499,7 +1493,7 @@
       "authority_note": "Common SUBJ BUSI is the CSR's four-letter code; the authority says C-ID BUS (rule 3: four letters, verbatim code on the chip)."
     },
     "Cabinet Making": {
-      "canonical_subj4": "WWKC",
+      "canonical_subj4": "CNSC",
       "source": "curator_override",
       "data_modal": "WOOD",
       "data_modal_is_4letter": true,
@@ -1529,18 +1523,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:49:39.24417+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed to align with Woodworking Furniture Making",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CNSC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-04T22:56:47.823661+00:00"
+      "authority_note": "Common SUBJ CNSC is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Carpentry": {
       "canonical_subj4": "CARP",
@@ -2781,7 +2773,7 @@
       "authority_note": "Common SUBJ SONO is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Diesel Mechanics": {
-      "canonical_subj4": "DIES",
+      "canonical_subj4": "AUTD",
       "source": "curator_override",
       "data_modal": "DCDT",
       "data_modal_is_4letter": true,
@@ -2840,18 +2832,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:37:12.925107+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed code to better align with local discipline use",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ AUTD is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-04T23:59:34.930492+00:00"
+      "authority_note": "Common SUBJ AUTD is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Dietetics/Nutritional Science": {
       "canonical_subj4": "NUTR",
@@ -3534,15 +3524,13 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "keep this as the best alternative",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ELMT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-04T23:14:22.680344+00:00"
+      "authority_note": "Common SUBJ ELMT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Electronic Technology": {
       "canonical_subj4": "ELCT",
@@ -4136,7 +4124,7 @@
       "authority_note": "Common SUBJ ESLN is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Environmental Technologies": {
-      "canonical_subj4": "ENVS",
+      "canonical_subj4": "ESCI",
       "source": "curator_override",
       "data_modal": "WATR",
       "data_modal_is_4letter": true,
@@ -4205,10 +4193,10 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:30:08.319045+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed code to better align with local discipline use",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "WWTR"
@@ -4221,9 +4209,7 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ESCI is the CSR's four-letter code; the authority says C-ID WWTR (rule 3: four letters, verbatim code on the chip).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:02:38.40474+00:00"
+      "authority_note": "Common SUBJ ESCI is the CSR's four-letter code; the authority says C-ID WWTR (rule 3: four letters, verbatim code on the chip)."
     },
     "Equine Science": {
       "canonical_subj4": "AGEQ",
@@ -4857,7 +4843,7 @@
       "authority_note": "Common SUBJ ENVR is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Furniture Making": {
-      "canonical_subj4": "WWKF",
+      "canonical_subj4": "CSTF",
       "source": "curator_override",
       "data_modal": "CFT",
       "data_modal_is_4letter": false,
@@ -4888,18 +4874,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:56:04.372528+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed code to better align with cabinet making",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CSTF is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:05:20.086993+00:00"
+      "authority_note": "Common SUBJ CSTF is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Geography": {
       "canonical_subj4": "GEOG",
@@ -5025,7 +5009,7 @@
       "authority_note": "Common SUBJ GERO is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Graphic Arts": {
-      "canonical_subj4": "GFCD",
+      "canonical_subj4": "GRAF",
       "source": "curator_override",
       "data_modal": "GDS",
       "data_modal_is_4letter": false,
@@ -5072,18 +5056,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:35:11.069503+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed code to better align with local discipline use",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ GRAF is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:07:33.419532+00:00"
+      "authority_note": "Common SUBJ GRAF is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Gunsmithing": {
       "canonical_subj4": "GSMI",
@@ -5819,15 +5801,13 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "keep this as the best alternative. Note that Interdisciplinary Studies is an MQ that allows any discipline  to teach it and is used for Supervised Tutoring courses offered through the Learning Centers at colleges.",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ IDST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:09:04.613454+00:00"
+      "authority_note": "Common SUBJ IDST is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Interdisciplinary-Basic Skills: Noncredit": {
       "canonical_subj4": "BSKL",
@@ -6239,7 +6219,7 @@
       "authority_note": "Common SUBJ LSKL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Legal Assisting": {
-      "canonical_subj4": "PARA",
+      "canonical_subj4": "PLGL",
       "source": "curator_override",
       "data_modal": "PARA",
       "data_modal_is_4letter": true,
@@ -6287,18 +6267,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:39:26.978094+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed code to better align with local discipline use",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ PLGL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:09:27.576054+00:00"
+      "authority_note": "Common SUBJ PLGL is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Library Science": {
       "canonical_subj4": "LIBR",
@@ -6394,7 +6372,7 @@
       "authority_note": "Common SUBJ LIBT is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Licensed Vocational Nursing": {
-      "canonical_subj4": "VNRS",
+      "canonical_subj4": "NRSV",
       "source": "curator_override",
       "data_modal": "VN",
       "data_modal_is_4letter": false,
@@ -6430,18 +6408,16 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:45:03.628658+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "changed code to better align with local discipline use",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ NRSV is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:10:18.461193+00:00"
+      "authority_note": "Common SUBJ NRSV is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Machine Tool Technology": {
       "canonical_subj4": "MACH",
@@ -6744,15 +6720,13 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "keep this as the best alternative",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ CNMA is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:10:38.228859+00:00"
+      "authority_note": "Common SUBJ CNMA is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Mathematics": {
       "canonical_subj4": "MATH",
@@ -6842,7 +6816,7 @@
       "authority_note": "Common SUBJ MATH is the CCN subject code (rule 2: CCN first)."
     },
     "Media Production": {
-      "canonical_subj4": "FMED",
+      "canonical_subj4": "FTVE",
       "source": "curator_override",
       "data_modal": "MEDIA",
       "data_modal_is_4letter": false,
@@ -6876,10 +6850,10 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:39:58.022414+00:00",
-      "reviewed_by": "slee@cccco.edu",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Changed to better align with disciplines. Previously Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "FTVE"
@@ -6892,7 +6866,7 @@
         "Film and Media Studies"
       ],
       "_fan_in_note": "FTVE is shared by design (item 13 of the 2026-09-03 rulings; readings card 2): two MQ disciplines, both names kept, one Common SUBJ. Not an alias fold — kb/discipline_aliases.json would fold the discipline away.",
-      "_notes_by": "slee@cccco.edu",
+      "_notes_by": "authority-recode-s224@bot",
       "_notes_at": "2026-09-03T20:34:21.060362+00:00"
     },
     "Mortuary Science": {
@@ -7156,15 +7130,13 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "keep this as the best alternative",
+      "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ETHA is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18).",
-      "_notes_by": "slee@cccco.edu",
-      "_notes_at": "2026-11-05T00:14:13.249811+00:00"
+      "authority_note": "Common SUBJ ETHA is proposed by the CSR; no C-ID or CCN code names this discipline's courses yet (item 18)."
     },
     "Nursing": {
       "canonical_subj4": "NRSR",
@@ -9711,6 +9683,6 @@
       "with_chips": 23
     }
   },
-  "_synced_at": "2026-11-05T00:20:44Z",
+  "_synced_at": "2026-11-04T17:00:20Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }

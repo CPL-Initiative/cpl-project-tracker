@@ -3647,8 +3647,10 @@
         L.cmLoading = false; L.cmRead = true; if (state.view === "list" && document.getElementById(ROOT_ID)) render();
       });
     }
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (L.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) L.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!L.dashFolded;
-    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "prl-fold",
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "prl-fold", top: ["#tab-program-requirements .prh-mast > .prh-meta"],
       onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
       control: function (open, text, li, w) {
         var m = /^#program-requirements\/list(?:\/([a-z-]+))?$/.exec(open || ""), f = m ? (m[1] || "") : null;

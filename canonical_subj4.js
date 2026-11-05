@@ -1674,7 +1674,17 @@
   }
   function scanAsksOf(ut) { return (scanAsks() || []).filter(function (f) { return f.item === ut; }); }
   /* Saved by a person this visit: a code, a note, a Take or a Confirm (each marks the row changed). */
-  function answeredThisVisit(ut) { var L = listState(); return !!(L.changed && L.changed.indexOf(ut) !== -1); }
+  function answeredThisVisit(ut) {
+    var L = listState();
+    if (L.changed && L.changed.indexOf(ut) !== -1) return true;
+    // Or saved since the scan ran, whatever the visit (Sam, 2026-11-05: "I edited these but they are staying on the list",
+    // after a reload had cleared the visit's changed set). The overlay holds each save's time; the scan stamps its date,
+    // and the daily run's earliest firing is 06:17 UTC.
+    var rec = state.overlay && state.overlay[ut], d = state.scan && state.scan.data, when = d && d._scanned_at;
+    if (!rec || !when) return false;
+    var since = /T/.test(when) ? when : when + "T06:17:00Z";
+    return [rec._pick_at, rec._notes_at].some(function (t) { return t && new Date(t).getTime() > new Date(since).getTime(); });
+  }
   /* Where a saved answer goes next: the sync (phase-1e-sync.yml, dispatched by a session after a working pass) carries
      kb_curation into the reference file, and the daily scan (kb/_csr_trail.py, 06:17 UTC) reads it there. */
   var SCAN_NEXT = "the sync carries it into the reference file and the next daily scan (06:17 UTC) reads it again";
@@ -2097,8 +2107,10 @@
         L.cmLoading = false; L.cmRead = true; if (state.view === "list") listRepaint();
       });
     }
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (L.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) L.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!L.dashFolded;
-    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "csl-fold",
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "csl-fold", top: ["#tab-canonical-subj4 .cs-intro", "#tab-canonical-subj4 .cs-scope-note", "#tab-canonical-subj4 div:has(> #cs-guidelines-btn)"],
       onToggle: function () { L.dashFolded = !L.dashFolded; listRepaint(); },
       control: function (open, text, li, w) {
         var m = /^#canonical-subj4\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
@@ -2144,7 +2156,7 @@
     var left = A.filter(function (f) { return uts[f.item] && done.indexOf(f.item) < 0; }).length;
     return api.el("p", { cls: "cs-quiet", text: plural(A.length, "scan finding", "scan findings") + " to confirm or note: " +
       plural(left, "finding", "findings") + " on " + plural(n, "MQ discipline", "MQ disciplines") + " below, each named in its panel" +
-      (done.length ? "; " + plural(done.length, "MQ discipline", "MQ disciplines") + " answered this visit left the list (" + done.join(", ") + "), and " + SCAN_NEXT : "") +
+      (done.length ? "; " + plural(done.length, "MQ discipline", "MQ disciplines") + " answered since the last scan left the list (" + done.join(", ") + "), and " + SCAN_NEXT : "") +
       (files.length ? "; " + files.map(function (f) { return (RULE_WORDS[f.rule] || f.rule) + " in " + f.item; }).join("; ") +
         ", on a file rather than an MQ discipline, which Run the SUBJ check lists" : "") + "." });
   }
@@ -2173,6 +2185,19 @@
   function localCourseRows(doc, code) {
     var rows = doc && doc.by && doc.by[code];
     return rows ? rows.map(function (x) { return { college: doc.colleges[x[0]] || "", num: code + " " + x[1], title: x[2] || "", ccn: x[3] || "" }; }) : null;
+  }
+  /* Use <code>: the code becomes the MQ discipline's Common SUBJ through the table's one save path (listSaveCode: the
+     four letters, the confirm when another MQ discipline holds it, the kb_curation row). Sam, 2026-11-05: "change Take
+     ___ to Use ___". The panel's status line says what happened. */
+  function useWord(r, code, h, status, notes) {
+    return h.word("Use " + code, function () {
+      notes[r.ut] = "Saving " + code + " for " + r.ut + "…"; if (status) status.textContent = notes[r.ut];
+      listSaveCode(r, code).then(function (res) {
+        notes[r.ut] = res.words;
+        if (res.ok) { listChanged(r); render(); }
+        if (LIST_ENGINE) LIST_ENGINE.redraw();
+      });
+    }, { "aria-label": "Use " + code + " as the Common SUBJ of " + r.ut });
   }
   function localCountWord(r, row, h) {
     var L = listState(), on = !!(L.pnCourses && L.pnCourses.ut === r.ut && L.pnCourses.code === row.code);
@@ -2274,9 +2299,9 @@
     var asks = scanAsksOf(r.ut);
     if (asks.length) {
       var answered = answeredThisVisit(r.ut);
-      out.push(h.heading(answered ? (asks.length === 1 ? "A scan finding, answered this visit" : "Scan findings, answered this visit")
+      out.push(h.heading(answered ? (asks.length === 1 ? "A scan finding, answered since the scan" : "Scan findings, answered since the scan")
         : asks.length === 1 ? "A scan finding to confirm or note" : "Scan findings to confirm or note"));
-      if (answered) out.push(h.el("p", { cls: "cs-quiet", text: "You saved this MQ discipline this visit, so it has left the list needing a look; " + SCAN_NEXT + "." }));
+      if (answered) out.push(h.el("p", { cls: "cs-quiet", text: "A person saved this MQ discipline since the last scan, so it has left the list needing a look; " + SCAN_NEXT + "." }));
       out.push(h.el("ul", { cls: "csl-pn-scan" }, asks.map(function (f) {
         return h.el("li", null, [h.el("b", { text: (RULE_WORDS[f.rule] || f.rule) + ": " }), f.evidence || "",
           f.suggestion ? ". The scan suggests: " + f.suggestion + "." : "."]);
@@ -2310,10 +2335,16 @@
         note: plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(total, "local course", "local courses")
           + (r.more ? "; " + fmtN(r.more) + " more the reference file does not list" : "") + ". Colleges counts the colleges that file "
           + "courses under each code" + (lcDoc ? "" : " (reading…)") + "; press a course count to see its courses, or a header to sort.",
-        cols: [["code", "Local SUBJ"], ["col", "Colleges", true], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"]],
+        cols: [["code", "Local SUBJ"], ["col", "Colleges", true], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"], ["use", "Use it", false, true]],
         sort: { col: 1, dir: -1 },
         rows: locRows,
-        cell: function (row, k) { return k === "n" ? localCountWord(r, row, h) : row[k]; } }));
+        cell: function (row, k) {
+          if (k === "n") return localCountWord(r, row, h);
+          if (k !== "use") return row[k];
+          // A local code becomes the Common SUBJ in one press where it can (Sam, 2026-11-05: "add a Use ___ button").
+          if (row.code === code) return "In use";
+          return SUBJ4_RE.test(row.code) ? useWord(r, row.code, h, status, notes) : "Not four letters";
+        } }));
     }
     if (r.locals.length) prefetchLocalCourses(r);
     var lcOpen = L.pnCourses && L.pnCourses.ut === r.ut ? L.pnCourses.code : null;
@@ -2338,10 +2369,10 @@
     // none another MQ discipline holds), each a word that saves it through the same write as the Common SUBJ cell.
     var sugg = subjSuggestions(e, "");
     if (sugg.length || code) {
-      out.push(h.heading("Codes it could take"));
-      out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could take as its Common SUBJ",
-        note: "Its own codes, most used first; a code another MQ discipline holds is left out. Take one to make it the Common SUBJ.",
-        cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Take it", false, true]],
+      out.push(h.heading("Codes it could use"));
+      out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could use as its Common SUBJ",
+        note: "Its own codes, most used first; a code another MQ discipline holds is left out. Use one to make it the Common SUBJ.",
+        cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Use it", false, true]],
         // Its own code leads, named as its code, so a code just taken stays in view (Sam, 2026-11-04: "WOOD then
         // disappeared from the list").
         rows: (code ? [{ code: code, mine: ((e.variants_observed || {})[code] || 0) + ((e.local_subject_variants || {})[code] || 0),
@@ -2354,15 +2385,7 @@
         })),
         cell: function (row, k) {
           if (k !== "take") return row[k];
-          if (row.current) return "Taken";
-          return h.word("Take " + row.code, function () {
-            notes[r.ut] = "Saving " + row.code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
-            listSaveCode(r, row.code).then(function (res) {
-              notes[r.ut] = res.words;
-              if (res.ok) { listChanged(r); render(); }
-              if (LIST_ENGINE) LIST_ENGINE.redraw();
-            });
-          }, { "aria-label": "Take " + row.code + " as the Common SUBJ of " + r.ut });
+          return row.current ? "In use" : useWord(r, row.code, h, status, notes);
         } }));
     }
     var more = [], ov = state.overlay[r.ut] || {};

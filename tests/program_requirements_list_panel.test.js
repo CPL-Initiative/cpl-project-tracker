@@ -5,7 +5,7 @@
 //   (1) the line reads the requirements row of kb/status/commons.json through the engine, once a visit;
 //   (2) a count whose place is one of the List's filters (Fail a machine check, Not read yet) is a word that sets it and
 //       shows its rows; the List's own count is plain text until a filter is set;
-//   (3) the Progress view's opened page sits in a fold under the line, under its own prefix (prl-pg-); Hide the summary
+//   (3) the Progress view's opened page sits in a fold under the line, under its own prefix (prl-pg-); Hide the top
 //       hides it and its word says so;
 //   (4) a failed read of the Commons file says so once, with no retry loop;
 //   (5) a title opens the panel: the program, its record's checks in words, its courses block by block with each one's
@@ -141,11 +141,11 @@ function titleBtn(d, title) { const r = rowOf(d, title); return r && r.querySele
   const fold = tm.d.getElementById("prl-fold"), tog = tm.d.getElementById("prl-fold-w");
   check("(3) ⭐ the Progress view's page sits in the fold under its own prefix", !!fold && !fold.hidden && !!fold.querySelector("#prl-pg-attention")
     && !fold.querySelector("[id^='pr-pg-']"), fold && txt(fold).slice(0, 160));
-  check("(3) its word reads Hide the summary and controls the fold", tog && txt(tog) === "Hide the summary" && tog.getAttribute("aria-controls") === "prl-fold");
+  check("(3) its word reads Hide the top and controls the fold", tog && txt(tog) === "Hide the top" && tog.getAttribute("aria-controls") === "prl-fold");
   tog.click(); await settle();
   const tog2 = tm.d.getElementById("prl-fold-w");
-  check("(3) Hide the summary hides it; the word says Show the summary and keeps focus", tm.d.getElementById("prl-fold").hidden
-    && txt(tog2) === "Show the summary" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
+  check("(3) Hide the top hides it; the word says Show the top and keeps focus", tm.d.getElementById("prl-fold").hidden
+    && txt(tog2) === "Show the top" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
 
   // ── (4) a failed read ──
   const tf = tab();

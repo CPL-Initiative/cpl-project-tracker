@@ -9,7 +9,7 @@
 //   - the figures come from the status files commons.js reads (kb/status/commons.json, row "exhibit", and the run log
 //     it names): change a fixture number and the tile changes; the committed files render item for item;
 //   - a failed read of either file says "Could not be read", never a blank or a zero;
-//   - the tiles fold behind one word (Hide the summary) and one line of their counts stays above the list, each count
+//   - the tiles fold behind one word (Hide the top) and one line of their counts stays above the list, each count
 //     opening where its tile's count opens (Sam, 2026-11-03, the CSM Workspace's Today line);
 //   - the List draws the same tiles above its table (the Catalog Commons List norms, norm 1); a count opens the List
 //     filtered to it where the List holds that filter (#exhibits/list/<filter>), else the matching Exhibits view (held
@@ -275,15 +275,15 @@ function fmt(n) { return Number(n).toLocaleString("en-US"); }
     !Array.from(lineBar.querySelectorAll("button")).some((b) => /review stamp/.test(txt(b)))
     && Array.from(lineBar.querySelectorAll("button")).some((b) => txt(b) === "351 titles held for a person"));
   check("the separators are hidden from a screen reader", Array.from(lineBar.querySelectorAll(".exh-sep")).every((x) => x.getAttribute("aria-hidden") === "true"));
-  check("the fold word reads Hide the summary, expanded, naming the fold", !!tog && txt(tog) === "Hide the summary"
+  check("the fold word reads Hide the top, expanded, naming the fold", !!tog && txt(tog) === "Hide the top"
     && tog.getAttribute("aria-expanded") === "true" && tog.getAttribute("aria-controls") === "exh-fold" && !fold.hidden);
   tog.click(); await settle();
   const fold2 = t.d.getElementById("exh-fold"), tog2 = t.d.getElementById("exh-fold-w");
-  check("Hide the summary folds the tiles; the line and the table stay; focus stays on the word",
-    fold2.hidden && txt(tog2) === "Show the summary" && tog2.getAttribute("aria-expanded") === "false"
+  check("Hide the top folds the tiles; the line and the table stay; focus stays on the word",
+    fold2.hidden && txt(tog2) === "Show the top" && tog2.getAttribute("aria-expanded") === "false"
     && !!t.d.querySelector(".exh-linebar .exh-line") && !!t.d.querySelector("table") && t.d.activeElement === tog2);
   tog2.click(); await settle();
-  check("Show the summary opens it again", !t.d.getElementById("exh-fold").hidden && txt(t.d.getElementById("exh-fold-w")) === "Hide the summary");
+  check("Show the top opens it again", !t.d.getElementById("exh-fold").hidden && txt(t.d.getElementById("exh-fold-w")) === "Hide the top");
   Array.from(t.d.querySelectorAll(".exh-linebar button")).find((b) => txt(b) === "351 titles held for a person").click(); await settle();
   check("a held count on the line opens Review, as its tile's count does", t.M._state.view === "review");
   t = await boot({ hash: "#exhibits/list" });

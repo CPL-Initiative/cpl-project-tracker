@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-04
+updated: 2026-11-05
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-04/05 SkyJujube (Sam's session, the Lists side session): the Subjects List as Sam's workspace (#2778, #2781, #2782, #2783, #2785): saves renew the sign-in, row press edits, Check alignment (Subjects and Exhibits), Colleges beside Courses, Use, *What a Common SUBJ is*, Hide the top and resizable panels on every Commons view; the sync ran; light checkpoint; handoff `docs/cer_redesign_handoff.md`.
 - 2026-11-04 SkyJujube (Sam's session, a side session): sign-in lands in the keeper and returns to the view (#2775); the Courses List's panel carries the common course card and its edits (#2776); the context meter reads again (#2777); every COBI view has an address (#2779); light checkpoint; handoff `docs/courses_retirement_handoff.md`.
 - 2026-11-04 S573 SkyNeedle (Sam's session): the Commons path mock; every Commons view in Malone's look (#2764); the register of data sources (#2765); the one queue (#2766) and the confidence count (#2767) on the CPL Commons tab; light checkpoint; handoff 575.
 - 2026-11-04 S572 SkyBlackEye (CPL Queue routine): merged S571's #2761; the cert link's NWCG and SWRCB families, 12 titles to 4 certs (#2762); light checkpoint; handoff 573.
