@@ -1098,3 +1098,17 @@ tab for each project"*. On seeing the draft: *"new visual looks wonderful!"*
   `~` before digits; a band with no modified time takes `z` so it goes last.
 - **Merging `main` into a branch carries `main`'s `kb/migrations/.apply`** and fires `supabase-migrate.yml` on that
   branch (run 42061383625 on #2808). The V3 migration it named is guarded, so it could not write twice.
+
+## 2026-11-05 SkyFlipFlop: Version 5, the Initiative at a glance
+
+Sam's Revise request (18:30Z): *"add a brief high level overview of the Chancellor's Office CPL Initiative as a visual with a
+link on this page"*. Then, in session: *"is there a way to do this from the Library on the fly without opening a session or
+waiting for an overnight cron?"*, *"I just integrated grokbot, so if we could pass it to a bot to do from the Library,
+advise"* and *"I could add a bot specifically trained for this by you"*.
+
+- **The card already does it on the fly.** `library-revise-draft` drafted the change 27 seconds after the request
+  (22d6f5de, 18:30:45Z). What a session adds: the change lands in the vault source, so the next rebuild keeps it; a browser
+  a11y pass of every tab; and Sierra's character budget, which the machine draft overran (about 900 characters over
+  `LIBRARY_TEXT_MAX`).
+- **Sierra's budget sets the size of any addition.** Version 4 sat 21 characters under 34,000. Version 5 made room by
+  shortening two phrases repeated 14 and 7 times; the build checks both counts, so a moved phrase stops the build.
