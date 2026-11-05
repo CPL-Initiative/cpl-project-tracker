@@ -966,9 +966,13 @@
         (sourceList(r).length ? " and the documents" : "") + " and remediates it; Copy the request starts it in a session now.");
     }
     if (rs === "ready") {
-      return "A draft is ready" + (g.ready_at ? " (" + esc(stamp(g.ready_at)) + ")" : "") + ": " +
+      // Name the draft's version (Sam, 2026-11-05: the card said "Version 2" and he read
+      // the draft as missing; the number on the card is the public one, the draft is the next).
+      var cur = r.version && /^\d+$/.test(r.version) ? parseInt(r.version, 10) : null;
+      return (cur ? "Version " + (cur + 1) + " is ready to review" : "A draft is ready") +
+        (g.ready_at ? " (" + esc(stamp(g.ready_at)) + ")" : "") + ": " +
         (g.draft_url ? '<a href="' + esc(g.draft_url) + '" target="_blank" rel="noopener">open the draft</a>' : "its link is not recorded") +
-        ". The public copy stays as it is until you replace it.";
+        (cur ? ". Version " + cur + " stays public until you replace it." : ". The public copy stays as it is until you replace it.");
     }
     if (rs === "approved") {
       return esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +

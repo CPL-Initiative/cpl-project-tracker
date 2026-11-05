@@ -634,7 +634,7 @@ block("(13)", function () {
 block("(14)", function () {
   const writes = [];
   const rows = JSON.parse(JSON.stringify(ROWS));
-  rows[2].public_listed = true; rows[2].refresh_note = "Name the noncredit lead";
+  rows[2].public_listed = true; rows[2].refresh_note = "Name the noncredit lead"; rows[2].version = "2";
   rows[2].sources = [{ title: "Sheet 129 notes", url: null, text: "Lead with the outcomes.", added_by: "Sam", added_on: "2026-10-26" }];
   rows[2].regen = { requested_at: "2026-10-26T14:05:00Z", requested_by: "Sam", publish: "show",
     ready_at: "2026-10-26T15:40:00Z", draft_url: "https://claude.ai/artifact/DRAFT1" };
@@ -668,6 +668,10 @@ block("(14)", function () {
       /Draft ready to review/.test(card("a3").querySelector(".lib-flags").textContent) &&
       !!card("a3").querySelector('a[href="https://claude.ai/artifact/DRAFT1"]') &&
       !!card("a3").querySelector('[data-regenokform="a3"] button[type="submit"]') && /Ask for more changes/.test(card("a3").querySelector('[data-revise="a3"]').textContent));
+    check("(14) a ready draft names its version, and the public one it would replace",
+      /Version 3 is ready to review/.test(card("a3").querySelector(".lib-regen").textContent) &&
+      /Version 2 stays public until you replace it/.test(card("a3").querySelector(".lib-regen").textContent),
+      card("a3").querySelector(".lib-regen").textContent);
     click(m.w, card("a3").querySelector('[data-request="a3"]'));
     const t = (doc.getElementById("lib-r-a3") || {}).value || "";
     check("(14) the paste lists the documents and says how to read pasted text",
