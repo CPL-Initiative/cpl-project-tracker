@@ -69,20 +69,17 @@ discipline's panel; the panel folds the CPL window and the C-ID and CCN courses 
 could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
 table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
 `csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
-the injected box CSS with it. **Sam's working pass on the codes (SkyJujube, 2026-11-04):** (1) *saves read the session when they write*
-(`freshSess`, through `cpl_session.js`): the tab had kept its load-time token, so after a laptop slept every code save
-came back 401 under a signed-in tag; a lapsed sign-in now says so, with *Sign in again*. (2) The List sets the engine's
-`editByRow`: Edit beside the select box, a row press opens its edit row and moves the panel to it (no cell drawers), a
-landed save closes the row, and the edit row holds to the table's visible box. (3) A local code's count names its
-courses (tooltip; a press lists them) from `kb/discipline_local_courses/`, built by
-`kb/_build_discipline_local_courses.py` over the seed's walk (rebuild with the seed), with *Refile <code> in Local
-subjects*. (4) *Check the N changes made this visit* runs the SUBJ check on the changed rows; the scan's rules stay in
-`kb/_csr_trail.py`. (5) The panel's local codes carry Colleges beside Courses, sorted by colleges; a code edit fills an
-empty Note with *changed code to better align with local discipline use*; keeping a code asks its reason (*kept X:*);
-*Check alignment* (engine `edit.extra`) audits the typed code and recommends. **Found:** ECONMT (Los Angeles Trade Technical, 55, TOP 0952.20) is electrician coursework filed under
-Electromechanical, and Electricity's top local codes are adult-education ones (AED, APED, HSED):
-DR-25 calls through Local subjects; a move is a re-mint. Guards `tests/csr_list.test.js` (6b, 6c, 8, 9, 9b),
-`tests/csr_list_panel.test.js` (5b). **The Local subjects List** (Sam, 2026-11-03: *"yes on
+the injected box CSS with it. **The List as Sam's workspace (SkyJujube, 2026-11-04/05; the story in `docs/common_subject_code_tab_lessons.md`):** saves
+read the session at write time (`freshSess`) and a lapsed sign-in says so; a row press edits the row and moves the panel
+(engine `editByRow`); *Check alignment* audits a typed code (`edit.extra`; Exhibits carries its own); a code edit seeds
+the Note, keeping a code asks its reason; the panel's local codes show Colleges beside Courses (from
+`kb/discipline_local_courses/`, `kb/_build_discipline_local_courses.py`), name their courses, and carry *Use <code>*;
+a row saved since the scan ran leaves *A scan finding to confirm or note*; *What a Common SUBJ is*
+(`prototype/common_subj_explainer.html`). Every Commons view: *Hide the top*, side panels resize, both remembered.
+**Sync:** `phase-1e-sync.yml` is manual; a session runs it after Sam's pass (last 2026-11-05 00:15Z, his codes in the
+file). **NEXT:** the re-mint dry-run that carries the evening's codes onto the M-IDs (WWKC, WWKF, GFCD, CBIT, DIES,
+CSIS and others; apply waits on Sam); ECONMT and Electricity's adult-education codes, his refile in Local subjects.
+**The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
 code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
 discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /

@@ -13908,7 +13908,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-04",
+     "created": "2026-11-05",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13916,11 +13916,11 @@
       "handoff",
       "cer",
       "commons-list",
-      "program-requirements",
-      "side-by-side",
-      "a11y"
+      "common-subjects-reference",
+      "exhibits",
+      "check-alignment"
      ],
-     "title": "CER redesign handoff: side by side's chips stay in their cell (SkyJujube)",
+     "title": "CER redesign handoff: the Subjects List as Sam's workspace; Commons views fold and resize (SkyJujube)",
      "type": null,
      "updated": ""
     },
