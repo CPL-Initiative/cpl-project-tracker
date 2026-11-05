@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-05_library_cpl_initiative_overview.sql",
+ "name": "skyflipflop_library_cpl_initiative_overview",
+ "version": "20261105225944",
+ "sha256": "55cab2235dd80ac9460856f97ecb0861e920ef6b7439ed7497dc05a73718c458",
+ "run": "42125800296",
+ "status": 201,
+ "response": "[{\"id\":\"1977d074-d910-4e7e-83cb-d1fbd75a8bb1\",\"slug\":\"cpl-initiative-overview\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
