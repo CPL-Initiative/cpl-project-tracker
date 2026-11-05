@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 98 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 65 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 550 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1387** | |
+| Session handoffs | 551 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1388** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-05 S584 SkyMinkowski (scheduled firing, 14:12Z): course objectives read and stored beside the SLOs (`course_outcomes.kind`, applied live, #2808); Monterey Peninsula's page read (#2809); light checkpoint; handoff 585.
 - 2026-11-05 S581 SkyMeathook (scheduled firing, 10:12Z): start checks only, the queue empty until Mission's full read on 2026-11-06 UTC; light checkpoint; handoff 582.
 - 2026-11-05 S577 SkyKumquat and SkyBarnard (Sam's session, both queues): the Subjects List recode, eleven Common SUBJ codes onto 2,389 M-IDs (#2790), `kb_curation` re-keyed and read back; the S573 cert-link PR merged (#2763); the Library revises a public visual from its card, no session (#2791, #2792); full checkpoint; handoff 578.
 - 2026-11-05 S576 SkyMice (Sam's session): two Claude Team accounts (MAP team, CO Academic Affairs pilot) with the kit and runbook in CPLBrain (#662, #664); Our Process *Getting set up* (#2784, #2786); the Library names a draft's version, sorts by last modified, quiets the project count (#2788); light checkpoint; handoff 577.

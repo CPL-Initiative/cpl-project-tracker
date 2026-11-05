@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1399,
-    "bytes": 14129978,
+    "files": 1400,
+    "bytes": 14138234,
     "over_budget": 0,
-    "handoff_max": 584,
+    "handoff_max": 585,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59984,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 141,
-        "bytes": 4298471,
+        "bytes": 4303766,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9348,
+        "bytes": 9575,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2627239,
+        "bytes": 2625743,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 484196,
+        "bytes": 483587,
         "over": 0
       },
       "handoff": {
-        "files": 550,
-        "bytes": 3818668,
+        "files": 551,
+        "bytes": 3823507,
         "over": 0
       }
     },
@@ -60,9 +60,9 @@
       "vault_heavy_path": 74
     },
     "vault": {
-      "files": 25836,
-      "bytes": 4208692080,
-      "heavy_bytes": 2991424880,
+      "files": 25838,
+      "bytes": 4208778064,
+      "heavy_bytes": 2991509799,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -229,10 +229,10 @@
       "fixable": false,
       "path": "kb/course_outcomes",
       "detail": {
-        "bytes": 17178134,
+        "bytes": 17259274,
         "kind": "dir"
       },
-      "message": "directory totals 17,178,134 B inside the vault"
+      "message": "directory totals 17,259,274 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -259,10 +259,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10120240,
+        "bytes": 10124019,
         "kind": "dir"
       },
-      "message": "directory totals 10,120,240 B inside the vault"
+      "message": "directory totals 10,124,019 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

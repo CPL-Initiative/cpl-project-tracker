@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-05T03:19:31Z",
-  "session": 577,
-  "moniker": "SkyKumquat and SkyBarnard",
-  "run": "Sam's session",
+  "written_at": "2026-11-05T14:37:48Z",
+  "session": 584,
+  "moniker": "SkyMinkowski",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_578_handoff.md",
+  "handoff": "docs/session_585_handoff.md",
   "next_step": {
-    "title": "Columbia's full SLO read",
-    "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
+    "title": "Monterey Peninsula's six unequal records",
+    "text": "Read back the free page read on #2809, write any reconcile step from the catalog's words, then reconcile and reread."
   },
   "calls": [
     {
@@ -208,6 +208,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-05T14:30:00Z",
+      "text": "Course objectives are now read beside each course's SLOs and stored as their own rows (kind objective); every SLO count reads SLO rows only (#2808)."
+    },
+    {
       "at": "2026-11-04T12:40:00Z",
       "text": "No harvest change this run: the day's SLO read had already run. The run added the AWS welding and Amazon Web Services families to the exhibit-to-cert link (#2761)."
     },
@@ -242,26 +246,6 @@
     {
       "at": "2026-11-03T06:24:00Z",
       "text": "Santa Ana College's full SLO read (four parts) and Las Positas College's course index started on two hosts. Glendale and Los Angeles Valley read on, as Sam's marks asked; their discrepancies wait until the harvest is complete."
-    },
-    {
-      "at": "2026-11-03T01:30:00Z",
-      "text": "Glendale and LA Valley unpark on Sam's marks of 22:55Z (keep going, handle the discrepancies after all data is harvested); the Commons now closes a to-do from its band (#2708)."
-    },
-    {
-      "at": "2026-11-02T18:49:05Z",
-      "text": "No harvest work this run: S554 (Sam's session) added Finish remediation to the Library's cards for a record left In remediation, and the /coord command; the queue's next step stands."
-    },
-    {
-      "at": "2026-11-02T17:08:34Z",
-      "text": "No harvest work this run: S553 (Sam's session) reworked the Library's remediation, every draft applied as the report opens and a PDF written; the queue's next step stands."
-    },
-    {
-      "at": "2026-11-02T15:10:00Z",
-      "text": "The Allan Hancock and Antelope Valley presidents' emails loaded through the contacts apply as a partial file; the Commons' first view is the CPL Commons, locked by Sam, with the look for its port on Sheet 158."
-    },
-    {
-      "at": "2026-11-05T02:22:00Z",
-      "text": "Merged the routine's S573 cert-link pull request (#2763) after bringing main in; no program record changed this run."
     }
   ],
   "headline": [
@@ -443,7 +427,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-05T06:12:00Z"
+    "at": "2026-11-06T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-05",
@@ -473,7 +457,7 @@
       ],
       "outcomes": {
         "slo": [
-          8606,
+          9000,
           89192
         ],
         "plo": [

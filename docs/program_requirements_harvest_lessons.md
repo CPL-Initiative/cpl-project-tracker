@@ -704,6 +704,34 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
 
+## S584 SkyMinkowski (2026-11-05, the CPL Queue routine, 14:12Z firing): course objectives read and stored
+
+- **The build Sam asked for on 2026-11-02** (*"we should grab course objectives and store them as well"*): the reader's
+  `objectives_of` takes the first Course Objectives heading with items under it, the lead-in, and each line to the next
+  section. Hosts print it four ways: "Course Objectives:" (RCCD, Las Positas), "Course Objectives" (Santa Ana, Coast),
+  "STUDENT LEARNING OBJECTIVES:" (SDCCD's outline report) and "Student Learning Objectives" with an "Objective Text"
+  label before each item (SDCCD's All Fields report).
+- **Two boundary faults found on the filed pages, both fixed before any load:** SDCCD's outline report ran on into
+  "Section II" and "1. COURSE OUTLINE AND SCOPE:" (146 items on one page), and its All Fields report into "Disciplines"
+  and "Condition"; the outcomes' STOP list misses the plural "Disciplines" because of its word boundary. `OBJ_STOP` names
+  them. The All Fields page text breaks a long field across lines (CISC 106 read 27 items against 25), so that report's
+  items come from its Objective Text fields; the two SDCCD reports then agree course for course.
+- **Las Positas prints the heading again in its DE section with nothing under it;** the first heading with items wins.
+- **Reparse of the nine filed trials:** every SLO field unchanged; objectives on RCCD, SDCCD (both), Santa Ana and Las
+  Positas 12 of 12, Coast 9 of 12, the eLumen trials none.
+- **Storage:** `course_outcomes.kind`, applied live through the MCP before the readers' `kind=eq.slo` filters merged
+  (a filter on a missing column answers 400, and an objective row posted to the old function would have landed as an
+  SLO row). Rollback: `kb/migrations/2026-11-05_course_outcomes_kind_rollback.sql`.
+- **Lesson: a new row kind in a shared table needs every reader filtered in the same PR.** Five readers took every row
+  as an SLO (the Program Requirements dialog and index, CPL Pathways' two counts, the COCI lookup, the exhibit SLO
+  neighbors, the queue status count); the dependency map found them.
+- **Monterey Peninsula:** a free page read of the six unequal records left (`kb/college_reads/mpc_unequal_left.json`,
+  #2809), for the next session to read back before any step.
+
+### Moved from the lane (S584)
+
+**Golden West loaded (S547, 2026-11-02):** read 41399075269 (two parts), load 41412025040, **568 rows inserted**, 75 skipped, receipt `kb/receipts/course_outcomes_cccd_41412025040.json` (#2684). Santa Ana's course index landed (#2685). **Its trial (S549, run 41436124244, #2691) parsed 12 of 12 after a reader fix:** report 267 prints the SLO heading alone in its section, and `groups_from_html` returned an empty list there instead of handing off to the text reader; `LEAD` now takes *At the conclusion of*. The 72 earlier filed pages parse unchanged. **Santa Ana loaded (S559, 2026-11-03):** read 41589637097 (four parts), load 41602658602, **1,366 rows inserted**, 7 skipped, receipt `kb/receipts/course_outcomes_sac_41602658602.json` (#2716). **Las Positas loaded (S567, 2026-11-04):** trial 41595084107 parsed 12 of 12; read 41784805869 (three parts), load 41797959686, **505 rows inserted**, 271 skipped, receipt `kb/receipts/course_outcomes_laspositas_41797959686.json` (#2717). **Columbia loaded (S578, 2026-11-05):** trial 41784829925 parsed 12 of 12; read 41979319035 (two parts, both filed in about 30 minutes), load 41984104664, **422 rows inserted**, 0 skipped, receipt `kb/receipts/course_outcomes_gocolumbia_41984104664.json` (#2754).
+
 ## S536 SkySugarberry (2026-11-01, 05:12Z firing) and S537 SkyMayberry (10:12Z): Monterey Peninsula 176 to 183 of 197, on `and_units`
 
 - **Page read 41276213077** (plan `kb/college_reads/mpc_unequal_medical.json`): the medical family (03635, 09978, 09979,
@@ -1017,55 +1045,7 @@ Hartnell: RN 03570 read Fable's way sums to about
 **San Joaquin Delta 200 of 203 (S500):** Cal-GETC 45621 passes on a `pool_areas` step over Areas 3 and 5 (S499), and
 Architectural Drafting 22244 on a `unit_line` step that adds its printed math line (lessons S500). The three left (07304, 16764, 19752) are extraction misreads, each needing its own page read (lessons S499).
 
-## S523 SkyBarberry (2026-10-30, the CPL Queue routine): Glendale 80 to 105 passing, every course priced from its own description
-
-- **The state's file was never the whole list.** It leaves 51 Glendale credit courses unpriced, but the filed records
-  place 738 more codes it does not list for their program at all (CABOT 102, ART 130, ESL 151, NS 214). Pricing only the
-  51 lifted 80 to 91 (reconcile 41009271854). Pricing every description lifted it to 105 (reconcile 41012563119).
-- **Read the whole description section in windows, then parse it locally.** The page read prints at most 14 PDF pages
-  whole, so fifteen plans (`kb/college_reads/glendale_course_desc_01..15`, keyword `Units`) cover pages 98-307, three per
-  push (about 3,500 log lines a job, inside get_job_logs' 5,000). Descriptions start at page 128; windows 1-2 held
-  program pages. `kb/_description_units.py` parses the saved logs: a description prints "NUM · TITLE · N Units", then a
-  body naming the course, sometimes letter-spaced ("B I O L 2 9 8"), and the body's code is the key (ACCTG 121's title
-  changed; its code did not). 1,234 codes, plus 44 under the entry's prefix aliases and renumbers.
-- **Anchor a log parser on the fixed token and look backward.** A title pattern with nested quantifiers hung for minutes
-  on a 370,000-character log; matching each "· N Units" and reading the 160 characters before it runs in under a second.
-- **A plan file under `kb/college_reads/` is a read.** A push reads every plan its last commit adds, so a derived map
-  kept there would run as one. The map lives at `kb/program_requirements_units/glendale_community.json`; the step names it
-  as `units_file` (#2574). Only one run waits per concurrency group: a second push while one waits cancels the first, so
-  push the next batch only after the waiting run has started (part b's first push was canceled this way).
-- **Left at Glendale (155 failing arithmetic):** 71 records name no program total, the largest cause now; 48 sum unequal
-  to the printed total (36 before: pricing exposed sums that were hidden as incomplete); about 34 still lack a course's
-  units (13 of the original 51, ART 144-255, AT 138, NS 213, PE 217, POLS 110, THTR 192-193 and others, print no
-  description in this catalog). No model call this session.
-
-## S505 SkyBoysenberry (2026-10-28): Glendale 45 to 80 passing of its filed records, on its catalog's own words
-
-- **List the thin colleges live first (S442), and it named Glendale:** 220 loaded, 65 of 296 active programs passing,
-  the largest gap at a loaded college. 114 records failed arithmetic alone, as incomplete, and 54 failed outcomes.
-- **Three free page reads gave every fix its words** (`kb/college_reads/glendale_program_totals`,
-  `glendale_prefix_titles`, `glendale_theatre_program_pages`; runs 40690480267, 40692306069, 40701293232). The program
-  pages print the old prefixes and numbers (PSYCH 170, T ART 101, ENGL 101); the course descriptions print the state's
-  (PSYC 170 Sports Psychology, THTR 101, "C1000 · ... · (Previously ENGL 101)"). Glendale's reconcile entry files
-  PSYCH and TART as prefix aliases and ENGL 101, ENGL 104 and POL S 101 as renumbers. ART for ARTH stays out: no read
-  printed an ARTH description, and ART is a live Glendale prefix.
-- **The capture now looks for a listed course under an aliased prefix (4a925a33).** `with_renumbers` set `printed` for
-  renumbers only, so a program page printing TART codes named none of the THTR list and the THTR descriptions won the
-  page: three Theatre records read course descriptions. The page picker moved them to their program pages (88, 114,
-  123) and found two programs never filed (Theatre Arts: General 11176, Sociology 30813). A listed prefix that only
-  begins with an alias's (ARTH under ART) is never rewritten; guarded in `program_requirements_pilot_test`.
-- **The outcome scorer's no-space reading now joins line-end hyphens and fires on letter-spaced lines and spaced
-  semicolons (4e53790c).** Glendale's PDF prints "Fulﬁ ll requirements for transfer to a col-\nlege", "b e  a b l e
-  t o" and "occupations ;". The reading only adds; outcome failures went 54 to 0 on the reconcile (run 40711704988).
-- **The Edge Function's BOOT_ERROR (HTTP 503) is transient and leaves a record empty.** Three of 27 failed on run
-  40704760867, two again on the forced retry; the third forcing filed all (runs 40707595210, 40710163463). Check every
-  record's `error` after an extraction before any reread, and force the empty ones.
-- **A reread posts the newest run only,** so records filed by earlier runs on the branch need `force=<run>` each
-  (40704760867, 40710163463, 40707595210 after the reconcile's own).
-- **Left at Glendale:** 180 records fail arithmetic. Most are courses the state's file lists with no units (63 courses,
-  unspaced codes such as BIOL298, ACCTG101); their units print only in the course descriptions ("3.0 Units"), so a
-  reader step that takes a course's units from its description is next. Biotechnology 41767 sums 25-27 against its
-  printed 28-30, the catalog's own disagreement. Cost: $2.64 + about $0.40 in forced retries.
+## S523 and S505 (Glendale): moved to archive 3 (S584 compaction)
 
 ## Moved from the lane (S542 compaction)
 
