@@ -166,7 +166,7 @@ block("(2d)", function () {
 const ROW = { id: "r1", slug: "dsp-credit-starting-points", title: "DSP Credit Starting Points", kind: "document",
   made_on: "2026-10-20", status: "draft", seen_by: null, home: "web", url: "https://claude.ai/artifact/P4R8", summary: "Internal summary", versions: [] };
 function loadLib(opts) {
-  const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/", runScripts: "dangerously" });
+  const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/#library/cards", runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.fetch = function (url, init) { calls.push({ url: String(url), init: init || {} }); return response(200, String(url).indexOf("/rpc/") > -1 ? [] : [opts.row || ROW]); };
   w.localStorage.setItem("cpl_team_pass", "phrase");

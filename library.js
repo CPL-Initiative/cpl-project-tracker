@@ -144,13 +144,18 @@
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
     retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
-    view: "pieces", src: {},
+    view: "list", src: {},
     pick: null, use: null, rem: null, autoDraft: true,
     piece: null, pieceUse: null,
     // Version 22 (Sam, 2026-11-05: "Version 22 looks better"): revising happens on the card
     // (cardBox), a card's own message prints on it (msgFor), and a ready draft's What changed
     // reads the draft once (drafts).
-    cardBox: null, msgFor: null, drafts: {}, cbDocs: false, cbName: false
+    cardBox: null, msgFor: null, drafts: {}, cbDocs: false, cbName: false,
+    // The List (Sam, 2026-11-05: "Add a list view option to the Library just like our CPL Commons list views and the
+    // current cards you have can be the sidebar details like in the Commons"): commons_list.js draws it from LIST_SPEC;
+    // ls is its state for the visit, engine the instance.
+    // Last modified first, as the Cards are (Sam, 2026-11-05: "sort the items in the Library by modified date descending").
+    ls: { sort: [{ col: 5, dir: -1 }] }, engine: null, listLoading: false, listErr: null, boxOpen: false
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -302,15 +307,20 @@
       '" placeholder="The note\'s path in cpl-knowledge-base, or its link"></div>';
   }
   var KB_HASH = "#library/knowledge-base";
+  // Three views, each with an address (every view has one, 2026-11-04): the List (#library, the default, as every Commons
+  // List opens first), the Cards (#library/cards) and the Knowledge Base (#library/knowledge-base).
   function viewFromHash() {
     var h = (window.location.hash || "").replace(/^#/, "").split("/");
-    return h[0] === "knowledge-base" || (h[0] === "library" && h[1] === "knowledge-base") ? "kb" : "pieces";
+    if (h[0] === "knowledge-base" || (h[0] === "library" && h[1] === "knowledge-base")) return "kb";
+    return h[0] === "library" && h[1] === "cards" ? "cards" : "list";
   }
+  function viewHash(v) { return v === "kb" ? KB_HASH : v === "cards" ? "#library/cards" : "#library"; }
   function setView(v, writeHash) {
-    state.view = v === "kb" ? "kb" : "pieces";
-    if (writeHash) { try { window.history.replaceState(null, "", state.view === "kb" ? KB_HASH : "#library"); } catch (e) { /* a sandboxed frame */ } }
+    state.view = v === "kb" || v === "cards" ? v : "list";
+    if (writeHash) { try { window.history.replaceState(null, "", viewHash(state.view)); } catch (e) { /* a sandboxed frame */ } }
     render();
   }
+  if (window.CPL_SESSION && window.CPL_SESSION.viewAddress) window.CPL_SESSION.viewAddress("library", function () { return viewHash(state.view).replace(/^#/, ""); });
   function collegeSlug(name) {
     return String(name || "").toLowerCase().replace(/\s+college$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "college";
   }
@@ -401,6 +411,10 @@
       R + " .lib-pair span{overflow-wrap:anywhere;}",
       R + " .lib-fix{color:var(--crimson);}",
       R + " .lib-recacts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 10px;}",
+      R + " .lib-boxfold{margin:14px 0;}",
+      R + " .lib-details dd a{display:inline-flex;align-items:center;min-height:24px;}",
+      R + " .lib-boxfold>summary{cursor:pointer;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;min-height:24px;}",
+      R + " .lib-boxfold>summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}",
       R + " .lib-acts .lib-word{justify-content:flex-start;}",
       R + " .lib-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:14px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
       R + " .lib-thumb{width:176px;aspect-ratio:16/10;max-width:100%;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--surface-muted);}",
@@ -1218,6 +1232,7 @@
     if (state.piece) clearPiece();
     state.pick = null; state.use = null;
     ensureShown(r);
+    if (state.view === "list") openInList(id);
     state.cardBox = { id: id, mode: mode || (regenState(r) === "ready" ? "more" : regenState(r) === "waiting" ? "change" : "revise"), prefill: prefill || "" };
     state.cbDocs = false; state.cbName = false;
     // More changes start clean: the documents the draft was made from are already in it, and handing them over
@@ -2706,6 +2721,114 @@
       (lead.summary ? '<p class="lib-summary">' + esc(lead.summary) + "</p>" : "") +
       '<ul class="lib-pieces" aria-label="The pieces in ' + esc(u.name) + '">' + rows.map(pieceRow).join("") + "</ul></div></article>";
   }
+  // ── The List view (commons_list.js), the card as its side panel ─────────────────────────────
+  var LIST_FILTERS = [["", "All"], ["ready", "Draft to review"], ["asked", "Changes asked"], ["replacing", "Replacing"],
+    ["dev", "In development"], ["not_filed", "Not filed"], ["public_unset", "No audience set"], ["kb_note", "No KB note"],
+    ["in_remediation", "In remediation"], ["remediated", "Remediated"], ["public", "In the public library"], ["selected", "Selected"]];
+  function standsWord(r) {
+    var rs = regenState(r);
+    if (r.status === "requested") return "Requested";
+    if (rs === "ready") return "Draft to review";
+    if (rs === "approved") return "Replacing the public copy";
+    if (rs === "waiting") return canDraftHere(r) ? "Changes asked; draft it now" : "Changes asked; a session makes it";
+    if (r.refresh_note) return "Changes to make";
+    if (r.remediation === "in_remediation") return "In remediation";
+    if (r.remediation === "remediated" && !r.url) return "Remediated; file it";
+    if (r.home === "not_filed") return "Not filed";
+    return "";
+  }
+  function listRowsAll() {
+    return (state.rows || []).filter(function (r) { return !r.retired_at; });
+  }
+  function listCols() {
+    return [
+      // Six columns that fit COBI's window beside the side menu (no sideways scroll at desktop widths); who sees a
+      // piece reads in its panel and under the In the public library filter.
+      { h: "Title", w: 25, v: function (r) { return r.title; } },
+      { h: "Kind", w: 7, v: function (r) { return KIND[r.kind] || r.kind || ""; } },
+      { h: "Made for", w: 13, v: function (r) { return r.for_kind ? forKindWord(r) + (r.for_name ? ": " + r.for_name : "") : ""; } },
+      { h: "Where it stands", w: 13, v: standsWord },
+      { h: "Status", w: 6, v: function (r) { return r.status ? statusWord(r) : "Not set"; } },
+      { h: "Updated", w: 7, v: function (r) { return modified(r).slice(0, 10); } }
+    ];
+  }
+  function listPass(r, L) {
+    var f = L.f, rs = regenState(r);
+    if (!f) return true;
+    if (f === "ready") return rs === "ready";
+    if (f === "asked") return rs === "waiting" || (!rs && !!r.refresh_note);
+    if (f === "replacing") return rs === "approved";
+    if (f === "dev") return isDev(r);
+    if (f === "public") return !!r.public_listed;
+    return flagsOf(r).indexOf(f) >= 0;
+  }
+  function panelCard(r) {
+    var kicker = [KIND[r.kind] || r.kind, fmtDate(r.made_on)];
+    if (r.version) kicker.push(/^\d+$/.test(r.version) ? "Version " + r.version : r.version);
+    var size = sizeWord(r), fl = cardFlags(r);
+    var words = r.url
+      ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" + word("data-copy", r.id, "Copy link")
+      : word("data-file", r.id, "File it", r.remediation === "remediated");
+    if (r.url && !r.public_listed) words += word("data-pubtop", r.id, "List publicly");
+    if (r.status === "requested") words += word("data-brief", r.id, state.briefShown[r.id] ? "Copied. Copy again" : "Copy the brief", true);
+    var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) + (r.public_listed ? chip("In the public library") : "") +
+      chip("Seen by: " + seenWord(r), !r.seen_by) + (r.home === "not_filed" ? "" : chip(homeOf(r).label));
+    // The panel's bar names the piece; this heading carries the outline (h2 the tab, h3 the piece, h4 its parts).
+    return '<div class="lib-pcard" id="lib-t-' + esc(r.id) + '"><h3 class="lib-vh">' + esc(r.title) + '</h3><p class="lib-kicker">' + esc(kicker.filter(Boolean).join(" · ")) + (size ? " · " + esc(size) : "") + "</p>" +
+      (r.project ? '<p class="lib-line">Project: ' + esc(r.project) + "</p>" : "") +
+      (r.for_kind ? '<p class="lib-for">Made for <b>' + esc(forKindWord(r)) + "</b>" + (r.for_name ? " · For <b>" + esc(r.for_name) + "</b>" : "") + "</p>" : "") +
+      (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
+      '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
+      (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) { return "<li>" + esc(flagText(f, r)) + "</li>"; }).join("") + "</ul>" : "") +
+      '<div class="lib-next">' + words + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></div>' +
+      (r.status === "requested" && state.briefShown[r.id] ? '<label class="lib-vh" for="lib-b-' + esc(r.id) + '">The brief to paste into a new session</label><textarea class="lib-brief" id="lib-b-' + esc(r.id) + '" readonly>' + esc(briefText(r)) + "</textarea>" : "") +
+      stateBlock(r) +
+      '<div class="lib-details" id="lib-d-' + esc(r.id) + '">' + details(r) + "</div></div>";
+  }
+  function listSpec() {
+    return {
+      prefix: "libl-", frPrefix: "libl-fr-",
+      noun: { many: "pieces", region: "Every piece in the Library", keyHeader: "Title", file: "cpl-library",
+        placeholder: "Title, project, occasion, entity or file name", findLabel: "Find in the Library" },
+      state: function () { return state.ls; },
+      rows: listRowsAll, cols: listCols,
+      key: function (r) { return r.id; }, title: function (r) { return r.title; },
+      render: render, findWords: true,
+      filters: LIST_FILTERS, filterPass: listPass,
+      hay: function (r) { return [r.title, r.project, r.occasion, r.file_name, r.summary, KIND[r.kind], r.made_by, r.version, r.for_name, forKindWord(r), standsWord(r)].join(" "); },
+      bands: { key: function (r) { return r.project || ""; }, by: "project", label: "Projects", none: "Not in a project",
+        name: function (k) { return k; }, facts: function (k, members) { return members.length + " pieces"; } },
+      panel: {
+        label: function (r) { return r.title; },
+        body: function (r) {
+          var d = document.createElement("div");
+          d.innerHTML = panelCard(r);
+          return [d];
+        }
+      }
+    };
+  }
+  function listEngine() {
+    if (!state.engine && window.CPL_COMMONS_LIST) state.engine = window.CPL_COMMONS_LIST.create(listSpec());
+    return state.engine;
+  }
+  // Open a piece's row in the List: its panel beside the table, the filters cleared so the row is there.
+  function openInList(id) {
+    var L = state.ls;
+    L.f = ""; L.q = ""; L.panel = id; L.open = null; L.edit = null;
+  }
+  function listHost() {
+    if (window.CPL_COMMONS_LIST) return '<div id="lib-list" class="lib-list"></div>';
+    if (!state.listLoading && !state.listErr) {
+      state.listLoading = true;
+      var T = window.CPL_TABS;
+      var done = function () { state.listLoading = false; if (!window.CPL_COMMONS_LIST) state.listErr = "The List (commons_list.js) could not be loaded. The Cards view reads as usual; reload the tab to try again."; render(); };
+      if (T && T.loadScript) T.loadScript("commons_list.js", "CPL_COMMONS_LIST", done);
+      else { var sc = document.createElement("script"); sc.src = "commons_list.js"; sc.onload = done; sc.onerror = done; document.head.appendChild(sc); }
+    }
+    return state.listErr ? '<p class="lib-msg err" role="alert">' + esc(state.listErr) + "</p>" : '<p class="lib-line">Loading the List&hellip;</p>';
+  }
+
   function listHtml(all) {
     var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
@@ -2734,7 +2857,8 @@
     // Two views (Sam, Open Asks Sheet 121 card 1, 2026-10-23): the pieces, and the Knowledge
     // Base reading portal, which keeps its own sign-in and so opens without the team phrase.
     head += '<div class="lib-views" role="group" aria-label="Library views">' +
-      '<button type="button" data-view="pieces" aria-pressed="' + (state.view !== "kb") + '">Pieces</button>' +
+      '<button type="button" data-view="list" aria-pressed="' + (state.view === "list") + '">List</button>' +
+      '<button type="button" data-view="cards" aria-pressed="' + (state.view === "cards") + '">Cards</button>' +
       '<button type="button" data-view="kb" aria-pressed="' + (state.view === "kb") + '">Knowledge Base</button></div>';
     var kbView = document.getElementById("library-kb");
     if (state.view === "kb") {
@@ -2792,6 +2916,16 @@
 
     controls += '<p class="lib-line" role="status" id="lib-count">' + countLine(state.rows) + "</p></section>";
     var list = devHtml(state.rows) + '<div id="lib-register">' + listHtml(state.rows) + "</div>";
+    if (state.view === "list") {
+      // The List: the box to create or remediate, then every piece as a row; a row's card opens beside it.
+      attention = "";
+      // The box folds in the List (the Commons' fold): shut until opened, open while something in it is under way.
+      var busyBox = !!(state.pick || state.rem || state.start || state.form || state.piece);
+      controls = '<details class="lib-boxfold" id="lib-boxfold"' + (state.boxOpen || busyBox ? " open" : "") + '><summary>Create or remediate a document, or find a piece</summary>' +
+        '<section aria-label="Create or remediate">' + datalists() + panelHtml() + "</section></details>" + '<section aria-label="Messages">' +
+        (state.message && !state.msgFor ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "") + "</section>";
+      list = listHost();
+    }
 
 
     var how = '<footer class="lib-how" aria-labelledby="lib-how-h"><h2 class="lib-h" id="lib-how-h">How the Library works</h2>' +
@@ -2812,6 +2946,8 @@
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
+    var lh = document.getElementById("lib-list"), E = lh && listEngine();
+    if (E) E.render(lh);
     Object.keys(typed).forEach(function (id) {
       if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start)) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
@@ -3098,6 +3234,8 @@
         paintProgress();
       }
     });
+    // The List's box fold: a toggle does not bubble, so it is caught on the way down.
+    root.addEventListener("toggle", function (e) { if (e.target && e.target.id === "lib-boxfold") state.boxOpen = e.target.open; }, true);
     root.addEventListener("change", function (e) {
       if (e.target.getAttribute && e.target.getAttribute("data-cbfile") && e.target.files && e.target.files[0]) { addCardFile(e.target.getAttribute("data-cbfile"), e.target.files[0]); return; }
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }

@@ -381,7 +381,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_apply_college_short_names.py`, `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
-| `commons_list.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
+| `commons_list.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `commons_look.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_page.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` | — |
 | `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
@@ -768,7 +768,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/row_audit/latest.json` | tabs: `pipeline`, `unified-courses` · scripts: `kb/_build_commons_status.py` · workflows: `overmerge-apply.yml`, `phase-1e-apply.yml` | committed by: `daily-dashboard.yml` |
 | `kb/sjcoe_occupation_scope_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
-| `kb/status/commons.json` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` · scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
+| `kb/status/commons.json` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |

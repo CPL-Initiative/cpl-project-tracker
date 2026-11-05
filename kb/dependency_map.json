@@ -1036,7 +1036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1509
+     "line": 1510
     },
     {
      "id": "module:admin.js",
@@ -1696,7 +1696,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2128
+     "line": 2139
     }
    ],
    "main_committers": []
@@ -1762,7 +1762,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 38,
+     "line": 40,
      "tabs": [
       "commons"
      ]
@@ -2824,7 +2824,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1699,
+     "line": 1714,
      "tabs": [
       "library"
      ]
@@ -2995,7 +2995,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1520
+     "line": 1521
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4305,7 +4305,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1792
+     "line": 1803
     }
    ],
    "main_committers": []
@@ -5354,7 +5354,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1683
+     "line": 1694
     },
     {
      "id": "module:admin.js",
@@ -6130,6 +6130,16 @@
      ]
     },
     {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2826,
+     "tabs": [
+      "library"
+     ]
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -6451,7 +6461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2067
+     "line": 2078
     },
     {
      "id": "module:college_briefing.js",
@@ -8641,7 +8651,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2184,
+     "line": 2199,
      "tabs": [
       "library"
      ]
@@ -8657,7 +8667,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1692,
+     "line": 1707,
      "tabs": [
       "library"
      ]
@@ -17412,6 +17422,7 @@
       "coci-lookup",
       "cr-reference",
       "exhibits",
+      "library",
       "program-requirements"
      ]
     },
@@ -18730,7 +18741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1802,
+     "line": 1817,
      "tabs": [
       "library"
      ]
@@ -20450,7 +20461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3304,
+     "line": 3442,
      "tabs": [
       "library"
      ]
@@ -25649,7 +25660,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1279,
+     "line": 1294,
      "tabs": [
       "library"
      ]
@@ -28233,6 +28244,7 @@
    "coci-lookup",
    "cr-reference",
    "exhibits",
+   "library",
    "program-requirements"
   ],
   "commons_look.js": [

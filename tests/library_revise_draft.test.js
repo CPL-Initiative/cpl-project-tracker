@@ -44,7 +44,7 @@ function rec(over) {
 
 function load(rows, onFetch) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="library-root"></div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/#library/cards", runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.localStorage.setItem("cpl_team_pass", "open-sesame");
   w.localStorage.setItem("cpl_library_author", "Sam");

@@ -1494,8 +1494,9 @@ async function seedCommsRegister(page, theme) {
 // The Library with the team phrase (Version 22, SkyCartwheel 2026-11-05): a ready draft with What changed and its
 // accessibility check, a request a session makes, a project of two, and a card's revise box open. The unseeded
 // cobi:library route reaches only the locked view, so it never measured these.
-async function seedLibrary(page, theme) {
-  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "library") location.hash = "library"; });
+async function seedLibrary(page, theme, view) {
+  const want = view === "list" ? "library" : "library/cards";
+  await page.evaluate((h) => { if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, want);
   await page.waitForFunction(() => !!window.CPL_LIBRARY, null, { timeout: 20000 });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.evaluate(() => {
@@ -1533,8 +1534,18 @@ async function seedLibrary(page, theme) {
       if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
       return real.apply(this, arguments);
     };
-    window.CPL_LIBRARY.load();
+    window.CPL_LIBRARY.activate();
   });
+  if (view === "list") {
+    // The List: a row's title opens its card in the side panel, with What changed and its check.
+    await page.waitForFunction(() => !!document.querySelector("#libl-host tbody tr"), null, { timeout: 20000 });
+    await page.evaluate(() => {
+      const t = Array.prototype.filter.call(document.querySelectorAll("#libl-host tbody button"), (b) => /Seed Starting Points/.test(b.textContent))[0];
+      if (t) t.click();
+    });
+    await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("libl-panel") || {}).textContent || ""), null, { timeout: 20000 });
+    return;
+  }
   await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("library-root") || {}).textContent || ""), null, { timeout: 20000 });
   await page.evaluate(() => { const b = document.querySelector('#library-root [data-revise="s4"]'); if (b) b.click(); });
   await page.waitForTimeout(300);
@@ -2893,17 +2904,33 @@ module.exports = {
   "library-cards": {
     file: "index.html",
     title: "Library with the team phrase: a ready draft, a session's request, a project, a revise box open",
-    routes: [{ hash: "library", name: "cards" }],
+    routes: [{ hash: "library/cards", name: "cards" }],
     widths: [390, 1440],
-    seed: (page) => seedLibrary(page, "light"),
+    seed: (page) => seedLibrary(page, "light", "cards"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "library-cards-dark": {
     file: "index.html",
     title: "Library with the team phrase: a ready draft, a session's request, a project, a revise box open, dark",
-    routes: [{ hash: "library", name: "cards" }],
+    routes: [{ hash: "library/cards", name: "cards" }],
     widths: [390, 1440],
-    seed: (page) => seedLibrary(page, "dark"),
+    seed: (page) => seedLibrary(page, "dark", "cards"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "library-list": {
+    file: "index.html",
+    title: "Library List with the team phrase: every piece a row, a card open in the side panel",
+    routes: [{ hash: "library", name: "list" }],
+    widths: [390, 1440],
+    seed: (page) => seedLibrary(page, "light", "list"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "library-list-dark": {
+    file: "index.html",
+    title: "Library List with the team phrase: every piece a row, a card open in the side panel, dark",
+    routes: [{ hash: "library", name: "list" }],
+    widths: [390, 1440],
+    seed: (page) => seedLibrary(page, "dark", "list"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "letters-register": {

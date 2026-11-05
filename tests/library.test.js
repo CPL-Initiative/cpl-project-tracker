@@ -81,7 +81,7 @@ function response(status, body) {
 function loadModule(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="library-root">Loading</div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/#library/cards", runScripts: "dangerously" });
   const w = dom.window;
   const calls = [];
   w.fetch = function (url, init) {
@@ -1359,20 +1359,22 @@ block("(12)", function () {
   } });
   const w = m.w, doc = w.document, M = m.M;
   const kb = doc.createElement("div"); kb.id = "library-kb"; kb.hidden = true; kb.innerHTML = '<iframe src="kb-portal/"></iframe>'; doc.body.appendChild(kb);
-  check("(12) no hash means Pieces", M._viewFromHash() === "pieces");
+  // The Cards view by its address here; a bare #library opens the List (Version 22's List, Sam 2026-11-05).
+  check("(12) #library/cards opens the Cards", M._viewFromHash() === "cards");
   check("(12) a typed note says knowledge; otherwise the choice", M._knowledgeValue("", "a/note.md") === true && M._knowledgeValue("no", "") === false && M._knowledgeValue("yes", "") === true && M._knowledgeValue("", "") === null);
   check("(12) the flag reads a knowledge piece without a note, and only that",
     M._flagsOf(KB_ROWS[0]).indexOf("kb_note") >= 0 && M._flagsOf(KB_ROWS[1]).indexOf("kb_note") < 0 && M._flagsOf(KB_ROWS[2]).indexOf("kb_note") < 0 && M._flagsOf(KB_ROWS[3]).indexOf("kb_note") < 0);
   return Promise.resolve(M.activate()).then(settle).then(function () {
-    check("(12) two views, Pieces pressed", m.root.querySelector('[data-view="pieces"]').getAttribute("aria-pressed") === "true" && m.root.querySelector('[data-view="kb"]').getAttribute("aria-pressed") === "false");
-    check("(12) the portal stays hidden on Pieces", kb.hidden === true && !!m.root.querySelector("#lib-register"));
+    check("(12) three views, the Cards pressed at their address", m.root.querySelector('[data-view="cards"]').getAttribute("aria-pressed") === "true" &&
+      m.root.querySelector('[data-view="list"]').getAttribute("aria-pressed") === "false" && m.root.querySelector('[data-view="kb"]').getAttribute("aria-pressed") === "false");
+    check("(12) the portal stays hidden on the Cards", kb.hidden === true && !!m.root.querySelector("#lib-register"));
     const flag = m.root.querySelector('[data-flag="kb_note"]');
     check("(12) Needs attention counts the one knowledge piece without a note", !!flag && /^1/.test(flag.textContent.trim()) && /knowledge pieces with no KB note/.test(flag.textContent), flag && flag.textContent);
     click(w, m.root.querySelector('[data-view="kb"]'));
     check("(12) Knowledge Base shows the portal and hides the register", kb.hidden === false && !m.root.querySelector("#lib-register") && m.root.querySelector('[data-view="kb"]').getAttribute("aria-pressed") === "true");
     check("(12) the hash carries the view", /#library\/knowledge-base$/.test(w.location.hash), w.location.hash);
-    click(w, m.root.querySelector('[data-view="pieces"]'));
-    check("(12) back to Pieces hides the portal again", kb.hidden === true && !!m.root.querySelector("#lib-register") && w.location.hash === "#library");
+    click(w, m.root.querySelector('[data-view="cards"]'));
+    check("(12) back to the Cards hides the portal again, at its own address", kb.hidden === true && !!m.root.querySelector("#lib-register") && w.location.hash === "#library/cards");
     M._state.open.k1 = true; M._state.open.k2 = true; M._state.open.k3 = true; M.render();
     const t = function (id) { return doc.getElementById("lib-t-" + id).closest("article").textContent; };
     check("(12) a knowledge piece without a note says what to do", /Its substance is knowledge and no KB note links it yet/.test(t("k1")));
