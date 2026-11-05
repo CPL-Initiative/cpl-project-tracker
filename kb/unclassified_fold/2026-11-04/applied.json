@@ -1,95 +1,95 @@
 {
   "folded": [
     {
-      "raw": "ASL 052 American Sign Language III",
-      "assigned": "American Sign Language III",
+      "raw": "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+      "assigned": "Waterworks Mathematics Advanced",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "CARP 207 Math for Construction Trades",
-      "assigned": "Math for Construction Trades",
+      "raw": "EET 203 Basic Electricity",
+      "assigned": "Basic Electricity",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "CARP 223 OSHA 30 Hr. Construction Safety Training",
-      "assigned": "OSHA 30 — Construction Industry Outreach (30-hour)",
-      "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "IBEW- Inside Wireman, Apprenticeship Year 1",
-      "assigned": "IBEW Electrician Apprenticeship — Year 1",
-      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "IBEW- Inside Wireman, Apprenticeship Year 2",
-      "assigned": "IBEW Electrician Apprenticeship — Year 2",
-      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "IBEW- Inside Wireman, Apprenticeship Year 3",
-      "assigned": "IBEW Electrician Apprenticeship — Year 3",
-      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "IBEW- Inside Wireman, Apprenticeship Year 4",
-      "assigned": "IBEW Electrician Apprenticeship — Year 4",
-      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "IBEW- Inside Wireman, Apprenticeship Year 5",
-      "assigned": "IBEW Electrician Apprenticeship — Year 5",
-      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "IBEW- Inside Wireman, Apprenticeship- Journeyperson",
-      "assigned": "IBEW Electrician Apprenticeship — Journeyperson",
-      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
-    },
-    {
-      "raw": "Portfolio - Basic Food Preparation",
-      "assigned": "Basic Food Preparation",
+      "raw": "Examination for ARHS 2",
+      "assigned": "Art of the Ancient Americas",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Cost Control for Food Service Organizations",
-      "assigned": "Cost Control for Food Service Organizations",
+      "raw": "GEOG 1 Physical Geology",
+      "assigned": "Introduction to Physical Geography",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Intermediate Food Preparation",
-      "assigned": "Food Preparation Intermediate",
+      "raw": "GRART 32 Digital Documents (Adobe InDesign)",
+      "assigned": "Digital Documents (Adobe InDesign)",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Introduction to the Hospitality Industry",
-      "assigned": "Introduction to the Hospitality Industry",
+      "raw": "GRART 36 Adobe Photoshop Basics",
+      "assigned": "Adobe Photoshop Basics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 37 Advanced Photoshop",
+      "assigned": "Photoshop Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 40",
+      "assigned": "Introduction to Business",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 48",
+      "assigned": "Human Relations in Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 58",
+      "assigned": "Small Business Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 61",
+      "assigned": "QuickBooks Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 88",
+      "assigned": "Human Resources Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     }
   ],
   "superseded": [],
@@ -99,53 +99,74 @@
   "held": [],
   "credential_added": [
     {
-      "raw": "ASL 052 American Sign Language III",
-      "assigned": "American Sign Language III",
+      "raw": "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+      "assigned": "Waterworks Mathematics Advanced",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "CARP 207 Math for Construction Trades",
-      "assigned": "Math for Construction Trades",
+      "raw": "EET 203 Basic Electricity",
+      "assigned": "Basic Electricity",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Basic Food Preparation",
-      "assigned": "Basic Food Preparation",
+      "raw": "GEOG 1 Physical Geology",
+      "assigned": "Introduction to Physical Geography",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Cost Control for Food Service Organizations",
-      "assigned": "Cost Control for Food Service Organizations",
+      "raw": "GRART 32 Digital Documents (Adobe InDesign)",
+      "assigned": "Digital Documents (Adobe InDesign)",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Intermediate Food Preparation",
-      "assigned": "Food Preparation Intermediate",
+      "raw": "GRART 36 Adobe Photoshop Basics",
+      "assigned": "Adobe Photoshop Basics",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     },
     {
-      "raw": "Portfolio - Introduction to the Hospitality Industry",
-      "assigned": "Introduction to the Hospitality Industry",
+      "raw": "GRART 37 Advanced Photoshop",
+      "assigned": "Photoshop Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 58",
+      "assigned": "Small Business Management",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-03T15:33:09.620078+00:00"
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 61",
+      "assigned": "QuickBooks Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
     }
   ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_pruned": [],
   "articulations_repointed": 0,
-  "title_anchors_stamped": 0,
+  "title_anchors_stamped": 1,
   "audit_pruned": 13,
-  "unified_titles_count": 5506
+  "unified_titles_count": 5519
 }

@@ -205,6 +205,30 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && /\(2\)/.test(txt(sortBtn("Issuer"))));
   words(t.d, "Clear the sort").click(); await settle();
   check("(15) Clear the sort returns to Title A to Z", t.M._state.ls.sort.length === 1 && t.M._state.ls.sort[0].col === 0);
+  // ── (16) Check alignment (Sam, 2026-11-04: on every Commons List) ──
+  const ca = load();
+  await ca.M.boot(); await settle();
+  Array.from(ca.d.querySelectorAll("button")).find((b) => b.getAttribute("aria-label") === "Edit Welding Level 1").click(); await settle();
+  const cT = ca.d.getElementById("exh-l-t"), cI = ca.d.getElementById("exh-l-i");
+  const typeIn = (b, v) => { b.value = v; b.dispatchEvent(new ca.w.Event("input")); };
+  const hintTxt = () => txt(ca.d.getElementById("exh-l-edit-hint"));
+  check("(16) the edit row offers Check alignment", !!words(ca.d, "Check alignment"));
+  typeIn(cT, "10-Key Data Entry");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(16) ⭐ a title another credential carries: named, with fold or tell apart", /“10-Key Data Entry” is already a credential/.test(hintTxt())
+    && /Recommendation: this title is “10-Key Data Entry”'s\. If they are one credential, fold them/.test(hintTxt()), hintTxt());
+  typeIn(cT, "Welding Level 1 Credit by Exam");
+  check("(16) a keystroke clears the old check", ca.d.getElementById("exh-l-edit-hint").hidden || hintTxt() === "");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(16) ⭐ the canonicalization rules' noise: a CPL mechanism in the title, dropped", /the title carries a CPL mechanism/.test(hintTxt())
+    && /Recommendation: drop a CPL mechanism \(the CPL type carries it\) from the title/.test(hintTxt()), hintTxt());
+  typeIn(cT, "Welding Level 1"); typeIn(cI, "A.W.S.");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(16) the issuer's other spellings in the reference are named", /the issuer “A\.W\.S\.” names 1 credential/.test(hintTxt()) || /issuer/.test(hintTxt()), hintTxt());
+  typeIn(cI, "AWS");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(16) a clean title and issuer read well", /Recommendation: the title and issuer read well against the reference/.test(hintTxt()), hintTxt());
+
   let failed = 0;
   for (const [name, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + name + (ok || !why ? "" : "\n     " + why)); if (!ok) failed++; }
   console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");

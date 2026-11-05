@@ -4,9 +4,9 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 783,
+  "file_datasets": 785,
   "external_services": 193,
-  "consumers": 515,
+  "consumers": 517,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -80,7 +80,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1425,
+     "line": 1445,
      "tabs": [
       "gr-priorities"
      ]
@@ -114,7 +114,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1929,
+     "line": 1959,
      "tabs": [
       "sierra-training"
      ]
@@ -653,7 +653,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2740,
+     "line": 2801,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -734,7 +734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 648
+     "line": 652
     }
    ],
    "main_committers": []
@@ -792,7 +792,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1389,
+     "line": 1412,
      "tabs": [
       "admin"
      ]
@@ -802,7 +802,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1094,
+     "line": 1126,
      "tabs": [
       "canonical-subj4"
      ]
@@ -812,7 +812,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2560,
+     "line": 2652,
      "tabs": [
       "exhibits"
      ]
@@ -1001,7 +1001,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1493,
+     "line": 1516,
      "tabs": [
       "admin"
      ]
@@ -1052,7 +1052,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 865,
+     "line": 870,
      "tabs": [
       "csm-workspace"
      ]
@@ -1111,7 +1111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 279
+     "line": 286
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1345,7 +1345,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2469,
+     "line": 2530,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -1369,7 +1369,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2834,
+     "line": 2841,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1527,7 +1527,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1944,
+     "line": 1974,
      "tabs": [
       "sierra-training"
      ]
@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 641,
+     "line": 687,
      "tabs": [
       "nc-learning-partners"
      ]
@@ -1647,7 +1647,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2077
+     "line": 2079
     }
    ],
    "main_committers": []
@@ -1703,7 +1703,17 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 775,
+     "line": 908,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "module:commons_look.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 38,
      "tabs": [
       "commons"
      ]
@@ -1713,7 +1723,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15478,
+     "line": 15500,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1961,7 +1971,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2796,
+     "line": 2467,
      "tabs": [
       "program-requirements"
      ]
@@ -1971,7 +1981,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4430,
+     "line": 4404,
      "tabs": [
       "unified-courses"
      ]
@@ -2024,7 +2034,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3621,
+     "line": 3595,
      "tabs": [
       "unified-courses"
      ]
@@ -2092,7 +2102,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2833,
+     "line": 2840,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2262,7 +2272,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1118
+     "line": 1120
     }
    ],
    "main_committers": []
@@ -2281,14 +2291,14 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1463
+     "line": 1465
     },
     {
      "id": "module:college_briefing.js",
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2461,
+     "line": 2522,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -2765,7 +2775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1227,
+     "line": 1233,
      "tabs": [
       "library"
      ]
@@ -3016,7 +3026,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2487,
+     "line": 2548,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -3168,7 +3178,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2739,
+     "line": 2800,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -3179,7 +3189,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2832,
+     "line": 2839,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4145,7 +4155,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2842,
+     "line": 2862,
      "tabs": [
       "gr-priorities"
      ]
@@ -4195,7 +4205,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2489,
+     "line": 2550,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -4239,7 +4249,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1741
+     "line": 1743
     }
    ],
    "main_committers": []
@@ -4267,7 +4277,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 344,
+     "line": 357,
      "tabs": [
       "cpl-news"
      ]
@@ -4284,7 +4294,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2077,
+     "line": 2097,
      "tabs": [
       "gr-priorities"
      ]
@@ -5288,7 +5298,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1632
+     "line": 1634
     },
     {
      "id": "module:admin.js",
@@ -5376,7 +5386,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 32,
+     "line": 35,
      "tabs": [
       "coci-lookup"
      ]
@@ -5481,7 +5491,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 155,
+     "line": 166,
      "tabs": [
       "coci-lookup"
      ]
@@ -5558,14 +5568,14 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 706
+     "line": 710
     },
     {
      "id": "module:cip_crosswalk.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1478,
+     "line": 1510,
      "tabs": [
       "cip-crosswalk"
      ]
@@ -5575,7 +5585,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 777,
+     "line": 1014,
      "tabs": [
       "coci-lookup"
      ]
@@ -5603,7 +5613,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3961,
+     "line": 3815,
      "tabs": [
       "program-requirements"
      ]
@@ -5737,7 +5747,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3118,
+     "line": 3142,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5767,7 +5777,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3837,
+     "line": 3898,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5778,7 +5788,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3064,
+     "line": 3088,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5864,7 +5874,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2049,
+     "line": 2052,
      "tabs": [
       "exhibits"
      ]
@@ -6028,7 +6038,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2134,
+     "line": 2489,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6038,7 +6048,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 572,
+     "line": 802,
      "tabs": [
       "coci-lookup"
      ]
@@ -6048,7 +6058,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 780,
+     "line": 782,
      "tabs": [
       "cr-reference"
      ]
@@ -6058,7 +6068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2552,
+     "line": 2644,
      "tabs": [
       "exhibits"
      ]
@@ -6068,7 +6078,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3960,
+     "line": 3814,
      "tabs": [
       "program-requirements"
      ]
@@ -6091,6 +6101,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:commons_look.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:commons_page.js": {
    "consumers": [
     {
@@ -6098,7 +6121,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1568,
+     "line": 1603,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6108,7 +6131,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 660,
+     "line": 890,
      "tabs": [
       "coci-lookup"
      ]
@@ -6118,7 +6141,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 811,
+     "line": 813,
      "tabs": [
       "cr-reference"
      ]
@@ -6128,7 +6151,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2773,
+     "line": 2900,
      "tabs": [
       "exhibits"
      ]
@@ -6138,7 +6161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3236,
+     "line": 2909,
      "tabs": [
       "program-requirements"
      ]
@@ -6154,7 +6177,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1566,
+     "line": 1601,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6164,7 +6187,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 809,
+     "line": 811,
      "tabs": [
       "cr-reference"
      ]
@@ -6266,7 +6289,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3613,
+     "line": 3740,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6336,7 +6359,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3607,
+     "line": 3734,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6372,14 +6395,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2016
+     "line": 2018
     },
     {
      "id": "module:college_briefing.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4272,
+     "line": 4334,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -6390,7 +6413,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1279,
+     "line": 1290,
      "tabs": [
       "csm-workspace"
      ]
@@ -6427,7 +6450,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4085,
+     "line": 4146,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -6438,7 +6461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18867,
+     "line": 18895,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6522,7 +6545,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2888,
+     "line": 2949,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -6533,7 +6556,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18794,
+     "line": 18816,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6578,14 +6601,14 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1178
+     "line": 1180
     },
     {
      "id": "module:cpl_funding.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18779,
+     "line": 18801,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6712,7 +6735,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3573,
+     "line": 3700,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6735,7 +6758,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2398,
+     "line": 2403,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6791,7 +6814,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3621,
+     "line": 3748,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6908,7 +6931,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 812,
+     "line": 814,
      "tabs": [
       "cr-reference"
      ]
@@ -6984,7 +7007,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3594,
+     "line": 3721,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6994,7 +7017,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5741,
+     "line": 5747,
      "tabs": [
       "credential-reference"
      ]
@@ -7038,7 +7061,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1493,
+     "line": 1543,
      "tabs": [
       "nc-learning-partners"
      ]
@@ -7243,7 +7266,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2133,
+     "line": 2488,
      "tabs": [
       "canonical-subj4"
      ]
@@ -7742,7 +7765,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3744,
+     "line": 3805,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -7763,7 +7786,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 392,
+     "line": 399,
      "tabs": [
       "letters"
      ]
@@ -8527,7 +8550,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1712,
+     "line": 1718,
      "tabs": [
       "library"
      ]
@@ -8543,7 +8566,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1220,
+     "line": 1226,
      "tabs": [
       "library"
      ]
@@ -10014,7 +10037,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 131,
+     "line": 128,
      "tabs": [
       "program-requirements"
      ]
@@ -10673,7 +10696,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 340
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -11027,6 +11050,13 @@
      "direction": "read",
      "how": "literal",
      "line": 129
+    },
+    {
+     "id": "script:kb/_build_discipline_local_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -11475,6 +11505,13 @@
      "line": 128
     },
     {
+     "id": "script:kb/_build_discipline_local_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    },
+    {
      "id": "script:kb/_build_esl_fold_spotcheck.py",
      "kind": "script",
      "direction": "read",
@@ -11800,6 +11837,13 @@
      "direction": "read",
      "how": "literal",
      "line": 44
+    },
+    {
+     "id": "script:kb/_build_discipline_local_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
     },
     {
      "id": "script:kb/_build_esl_fold_spotcheck.py",
@@ -12570,7 +12614,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 602
+     "line": 611
     }
    ],
    "served": false,
@@ -12618,7 +12662,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1693,
+     "line": 1682,
      "tabs": [
       "program-requirements"
      ]
@@ -12651,7 +12695,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 385
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13194,6 +13238,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/csr_out/confirm/confirmed_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 762
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/csr_out/latest.json": {
    "consumers": [
     {
@@ -13211,7 +13268,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 482
+     "line": 491
     }
    ],
    "producers": [
@@ -13268,7 +13325,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 483
+     "line": 492
     }
    ],
    "served": true,
@@ -13307,7 +13364,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1188,
+     "line": 1210,
      "tabs": [
       "admin"
      ]
@@ -13330,7 +13387,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 253,
+     "line": 271,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13437,7 +13494,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 185,
+     "line": 203,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13447,7 +13504,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3297,
+     "line": 3271,
      "tabs": [
       "unified-courses"
      ]
@@ -13499,7 +13556,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 461
+     "line": 470
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13663,7 +13720,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 194,
+     "line": 212,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13742,7 +13799,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 580,
+     "line": 554,
      "tabs": [
       "unified-courses"
      ]
@@ -14043,6 +14100,16 @@
      ]
     },
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2666,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "script:kb/_ap_official_titles.py",
      "kind": "script",
      "direction": "read",
@@ -14141,7 +14208,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1914,
+     "line": 1917,
      "tabs": [
       "exhibits"
      ]
@@ -14463,7 +14530,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 215,
+     "line": 233,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14690,7 +14757,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 581
+     "line": 590
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -15677,7 +15744,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 379
+     "line": 388
     }
    ],
    "served": false,
@@ -15876,7 +15943,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 295,
+     "line": 313,
      "tabs": [
       "canonical-subj4"
      ]
@@ -16016,7 +16083,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 292,
+     "line": 310,
      "tabs": [
       "canonical-subj4"
      ]
@@ -16623,7 +16690,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 852,
+     "line": 873,
      "tabs": [
       "vision-2030"
      ]
@@ -16812,7 +16879,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 204,
+     "line": 222,
      "tabs": [
       "canonical-subj4"
      ]
@@ -17136,7 +17203,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 931,
+     "line": 905,
      "tabs": [
       "unified-courses"
      ]
@@ -17146,7 +17213,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 280
+     "line": 288
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -17228,7 +17295,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1366,
+     "line": 1507,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -17267,7 +17334,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 305
+     "line": 313
     }
    ],
    "served": true,
@@ -17280,7 +17347,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 409
+     "line": 418
     }
    ],
    "served": true,
@@ -17381,7 +17448,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 536
+     "line": 545
     }
    ],
    "served": true,
@@ -18513,7 +18580,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1330,
+     "line": 1336,
      "tabs": [
       "library"
      ]
@@ -18536,7 +18603,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4126,
+     "line": 4188,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -18716,7 +18783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 524,
+     "line": 543,
      "tabs": [
       "map-queue"
      ]
@@ -19220,7 +19287,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 283
+     "line": 291
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -19716,7 +19783,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 600
+     "line": 609
     }
    ],
    "served": false,
@@ -20193,7 +20260,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2803,
+     "line": 2811,
      "tabs": [
       "library"
      ]
@@ -20203,7 +20270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 364,
+     "line": 394,
      "tabs": [
       "sierra-training"
      ]
@@ -20288,7 +20355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1338,
+     "line": 1368,
      "tabs": [
       "sierra-training"
      ]
@@ -20344,7 +20411,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1857,
+     "line": 1887,
      "tabs": [
       "sierra-training"
      ]
@@ -20384,7 +20451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2644,
+     "line": 2670,
      "tabs": [
       "vision-2030"
      ]
@@ -20579,7 +20646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2645,
+     "line": 2671,
      "tabs": [
       "vision-2030"
      ]
@@ -20628,7 +20695,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4097,
+     "line": 4159,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -22396,7 +22463,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2164,
+     "line": 2198,
      "tabs": [
       "tmc-builder"
      ]
@@ -22489,7 +22556,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2159,
+     "line": 2193,
      "tabs": [
       "tmc-builder"
      ]
@@ -22505,7 +22572,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2151,
+     "line": 2185,
      "tabs": [
       "tmc-builder"
      ]
@@ -22703,7 +22770,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 893,
+     "line": 867,
      "tabs": [
       "unified-courses"
      ]
@@ -22740,6 +22807,16 @@
   },
   "file:unified_courses_data.js": {
    "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 505,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
     {
      "id": "module:unified_courses.js",
      "kind": "module",
@@ -22868,7 +22945,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 861,
+     "line": 835,
      "tabs": [
       "unified-courses"
      ]
@@ -22913,7 +22990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 841,
+     "line": 815,
      "tabs": [
       "unified-courses"
      ]
@@ -22983,7 +23060,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1054,
+     "line": 1028,
      "tabs": [
       "unified-courses"
      ]
@@ -23039,7 +23116,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 573,
+     "line": 803,
      "tabs": [
       "coci-lookup"
      ]
@@ -23060,7 +23137,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 877,
+     "line": 851,
      "tabs": [
       "unified-courses"
      ]
@@ -23165,7 +23242,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1177,
+     "line": 1151,
      "tabs": [
       "unified-courses"
      ]
@@ -23196,7 +23273,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 284
+     "line": 292
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -23260,7 +23337,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 909,
+     "line": 883,
      "tabs": [
       "unified-courses"
      ]
@@ -23699,7 +23776,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4612,
+     "line": 4674,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -23776,7 +23853,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1515,
+     "line": 1538,
      "tabs": [
       "admin"
      ]
@@ -23801,7 +23878,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1532,
+     "line": 1555,
      "tabs": [
       "admin"
      ]
@@ -23993,7 +24070,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 725,
+     "line": 730,
      "tabs": [
       "csm-workspace"
      ]
@@ -24168,7 +24245,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 615,
+     "line": 729,
      "tabs": [
       "commons"
      ]
@@ -24293,7 +24370,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1494,
+     "line": 1524,
      "tabs": [
       "sierra-training"
      ]
@@ -24357,7 +24434,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 199,
+     "line": 240,
      "tabs": [
       "raci"
      ]
@@ -24384,7 +24461,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1607,
+     "line": 1634,
      "tabs": [
       "tmc-builder"
      ]
@@ -24560,7 +24637,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 995,
+     "line": 1025,
      "tabs": [
       "sierra-training"
      ]
@@ -24639,7 +24716,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1847,
+     "line": 1908,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -24698,7 +24775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1368,
+     "line": 1391,
      "tabs": [
       "admin"
      ]
@@ -24760,7 +24837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3248,
+     "line": 3272,
      "tabs": [
       "cpl-pathways"
      ]
@@ -24770,7 +24847,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 854,
+     "line": 915,
      "tabs": [
       "program-requirements"
      ]
@@ -24792,7 +24869,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3251,
+     "line": 3275,
      "tabs": [
       "cpl-pathways"
      ]
@@ -24882,7 +24959,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 184,
+     "line": 195,
      "tabs": [
       "coci-lookup"
      ]
@@ -24892,7 +24969,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3250,
+     "line": 3274,
      "tabs": [
       "cpl-pathways"
      ]
@@ -24902,7 +24979,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1854,
+     "line": 1843,
      "tabs": [
       "program-requirements"
      ]
@@ -24964,7 +25041,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 209,
+     "line": 243,
      "tabs": [
       "contracts"
      ]
@@ -24979,7 +25056,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 211,
+     "line": 245,
      "tabs": [
       "contracts"
      ]
@@ -24989,7 +25066,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1086,
+     "line": 1121,
      "tabs": [
       "contracts"
      ]
@@ -25004,7 +25081,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 210,
+     "line": 244,
      "tabs": [
       "contracts"
      ]
@@ -25014,7 +25091,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1022,
+     "line": 1057,
      "tabs": [
       "contracts"
      ]
@@ -25029,7 +25106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 208,
+     "line": 242,
      "tabs": [
       "contracts"
      ]
@@ -25075,7 +25152,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4828,
+     "line": 4890,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -25313,7 +25390,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1940,
+     "line": 1946,
      "tabs": [
       "library"
      ]
@@ -25328,7 +25405,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1732,
+     "line": 1754,
      "tabs": [
       "memory"
      ]
@@ -25338,7 +25415,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 1660,
+     "line": 1682,
      "tabs": [
       "memory"
      ]
@@ -25360,7 +25437,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1585,
+     "line": 1607,
      "tabs": [
       "memory"
      ]
@@ -25389,7 +25466,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 181,
+     "line": 194,
      "tabs": [
       "cpl-news"
      ]
@@ -25399,7 +25476,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 222,
+     "line": 235,
      "tabs": [
       "cpl-news"
      ]
@@ -25428,7 +25505,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 352,
+     "line": 365,
      "tabs": [
       "cpl-news"
      ]
@@ -25576,7 +25653,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 497,
+     "line": 516,
      "tabs": [
       "map-queue"
      ]
@@ -25591,7 +25668,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 524,
+     "line": 544,
      "tabs": [
       "gr-priorities"
      ]
@@ -25616,7 +25693,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 529,
+     "line": 549,
      "tabs": [
       "gr-priorities"
      ]
@@ -25641,7 +25718,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 536,
+     "line": 556,
      "tabs": [
       "gr-priorities"
      ]
@@ -25666,7 +25743,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 530,
+     "line": 550,
      "tabs": [
       "gr-priorities"
      ]
@@ -25691,7 +25768,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 528,
+     "line": 548,
      "tabs": [
       "gr-priorities"
      ]
@@ -25733,7 +25810,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 347,
+     "line": 388,
      "tabs": [
       "raci"
      ]
@@ -25743,7 +25820,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 389,
+     "line": 430,
      "tabs": [
       "raci"
      ]
@@ -25815,7 +25892,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 348,
+     "line": 389,
      "tabs": [
       "raci"
      ]
@@ -25825,7 +25902,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 581,
+     "line": 622,
      "tabs": [
       "raci"
      ]
@@ -25874,9 +25951,29 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 114,
+     "line": 125,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 512,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 542,
+     "tabs": [
+      "coci-lookup"
      ]
     },
     {
@@ -25981,7 +26078,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 460,
+     "line": 434,
      "tabs": [
       "unified-courses"
      ]
@@ -25991,7 +26088,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 502,
+     "line": 476,
      "tabs": [
       "unified-courses"
      ]
@@ -26178,7 +26275,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13706,
+     "line": 13728,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26196,7 +26293,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 89,
+     "line": 127,
      "tabs": [
       "map-data-quality"
      ]
@@ -26346,7 +26443,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13682,
+     "line": 13704,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26567,7 +26664,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 498,
+     "line": 517,
      "tabs": [
       "map-queue"
      ]
@@ -26634,7 +26731,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4681,
+     "line": 4743,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -26665,7 +26762,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13661,
+     "line": 13683,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26699,7 +26796,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 779,
+     "line": 770,
      "tabs": [
       "program-requirements"
      ]
@@ -26738,7 +26835,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 491,
+     "line": 510,
      "tabs": [
       "map-queue"
      ]
@@ -26791,7 +26888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1844,
+     "line": 1905,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -26807,7 +26904,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 90,
+     "line": 128,
      "tabs": [
       "map-data-quality"
      ]
@@ -26829,7 +26926,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 499,
+     "line": 518,
      "tabs": [
       "map-queue"
      ]
@@ -26851,7 +26948,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 103,
+     "line": 133,
      "tabs": [
       "map-data-quality"
      ]
@@ -26861,7 +26958,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 118,
+     "line": 148,
      "tabs": [
       "map-data-quality"
      ]
@@ -26900,7 +26997,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 586,
+     "line": 560,
      "tabs": [
       "unified-courses"
      ]
@@ -26998,7 +27095,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1869,
+     "line": 1930,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -27009,7 +27106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 503,
+     "line": 522,
      "tabs": [
       "map-queue"
      ]
@@ -27024,7 +27121,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 892,
+     "line": 848,
      "tabs": [
       "program-requirements"
      ]
@@ -27067,7 +27164,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 582,
+     "line": 573,
      "tabs": [
       "program-requirements"
      ]
@@ -27103,7 +27200,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 958,
+     "line": 914,
      "tabs": [
       "program-requirements"
      ]
@@ -27118,7 +27215,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1866,
+     "line": 1927,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -27150,7 +27247,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 744,
+     "line": 735,
      "tabs": [
       "program-requirements"
      ]
@@ -27223,7 +27320,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 349,
+     "line": 390,
      "tabs": [
       "raci"
      ]
@@ -27349,7 +27446,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 593,
+     "line": 707,
      "tabs": [
       "commons"
      ]
@@ -27359,7 +27456,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 224,
+     "line": 220,
      "tabs": [
       "program-requirements"
      ]
@@ -27384,7 +27481,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 495,
+     "line": 514,
      "tabs": [
       "map-queue"
      ]
@@ -27394,7 +27491,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 968,
+     "line": 998,
      "tabs": [
       "sierra-training"
      ]
@@ -27423,7 +27520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1108,
+     "line": 1138,
      "tabs": [
       "sierra-training"
      ]
@@ -27433,7 +27530,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1179,
+     "line": 1209,
      "tabs": [
       "sierra-training"
      ]
@@ -27455,7 +27552,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1366,
+     "line": 1396,
      "tabs": [
       "sierra-training"
      ]
@@ -27465,7 +27562,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1448,
+     "line": 1478,
      "tabs": [
       "sierra-training"
      ]
@@ -27480,7 +27577,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1005,
+     "line": 1035,
      "tabs": [
       "sierra-training"
      ]
@@ -27490,7 +27587,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1026,
+     "line": 1056,
      "tabs": [
       "sierra-training"
      ]
@@ -27541,7 +27638,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1357,
+     "line": 1387,
      "tabs": [
       "sierra-training"
      ]
@@ -27576,7 +27673,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 347,
+     "line": 388,
      "tabs": [
       "raci"
      ]
@@ -27586,7 +27683,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 765,
+     "line": 806,
      "tabs": [
       "raci"
      ]
@@ -27856,6 +27953,9 @@
    "cr-reference",
    "exhibits",
    "program-requirements"
+  ],
+  "commons_look.js": [
+   "commons"
   ],
   "commons_page.js": [
    "canonical-subj4",
@@ -29460,7 +29560,7 @@
  "not_served": [
   "*.xlsx",
   "docs",
-  "kb/*_out",
+  "kb/*_dryrun",
   "kb/coci_minted_courses.json",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",

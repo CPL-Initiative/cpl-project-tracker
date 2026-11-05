@@ -162,6 +162,9 @@
   function signIn() {
     var email = window.prompt("Reviewer sign-in — enter your @ email for a magic link:");
     if (!email) return;
+    // The magic link's landing (cpl_session.js) sends the reviewer back here.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("cpl-news");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "cpl-news"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname + "#cpl-news");
     fetch(REST.replace("/rest/v1", "") + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
@@ -174,6 +177,16 @@
 
   // ── Data ──
   var STATE = { rows: [], scope: "all", stype: "all", q: "", sort: "ca" };
+
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address boot() opens.
+     cpl-news (All) · cpl-news/ca (California) · cpl-news/national (National): the Scope words, the row a reader
+     switches between. The sort, the source type and the search are filters on that view and are not carried. */
+  var SCOPES = ["all", "ca", "national"];
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("cpl-news", function () {
+    return STATE.scope && STATE.scope !== "all" && SCOPES.indexOf(STATE.scope) >= 0 ? "cpl-news/" + STATE.scope : "cpl-news";
+  });
+  /* The address this visit already opened, so a re-fired activation on the same address keeps a scope picked since. */
+  var arrivedFrom = null;
 
   function fetchNews() {
     var sel = "select=*&order=published_at.desc&limit=400";
@@ -389,6 +402,11 @@
     if (!mount) return;
     captureHash();
     if (!booted) { booted = true; }
+    /* The scope the address names (#cpl-news/ca); a bare #cpl-news or an unknown word leaves the scope as it is. */
+    var h = String(location.hash || "");
+    var a = h !== arrivedFrom && window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("cpl-news") : null;
+    arrivedFrom = h;
+    if (a && SCOPES.indexOf(a[0]) >= 0) STATE.scope = a[0];
     var api = render(mount);
     mount.dataset.loading = "1";
     fetchNews().then(function (rows) {
@@ -397,6 +415,22 @@
       mount.dataset.loading = "0";
     });
   }
+
+  /* The shell boots this tab once (onActivate); a later visit by an address opens its scope. Before the first boot
+     it does nothing, and the boot reads the address itself. The rows already read are kept; render() draws them. */
+  function onLaterVisit(e) {
+    if (!(e && e.detail)) return;
+    if (e.detail.tab !== "cpl-news") { arrivedFrom = null; return; }
+    if (!booted) return;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("cpl-news") : null;
+    if (a && SCOPES.indexOf(a[0]) >= 0 && String(location.hash || "") !== arrivedFrom) {
+      var mount = document.getElementById("cplNewsMount");
+      arrivedFrom = String(location.hash || "");
+      STATE.scope = a[0];
+      if (mount) render(mount);
+    }
+  }
+  window.addEventListener("cpl-tab-activated", onLaterVisit);
 
   window.CPL_NEWS_TAB = {
     boot: boot,

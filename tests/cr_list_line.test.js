@@ -6,7 +6,7 @@
 //       parenthesis or semicolon, the confirmed count, then each known issue, joined by a quiet middle dot;
 //   (2) a count whose place is the List's own filter is a word that sets it; the count of where the List already is is
 //       plain text, and the List's own count turns back into a word once a filter is set;
-//   (3) the worklist's measured stance sits in a fold under the line; Hide the summary hides it, its word says so
+//   (3) the worklist's measured stance sits in a fold under the line; Hide the top hides it, its word says so
 //       (aria-expanded, aria-controls), and focus stays on the word;
 //   (4) a failed read says the figures could not be read, once, with no retry loop; a new visit reads again;
 //   (5) lineItems shortens a row the way the line reads it.
@@ -104,13 +104,13 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
     && rows(t.d).length === 5, String(rows(t.d).length));
   const fold = () => t.d.getElementById("crl-fold"), tog = () => t.d.getElementById("crl-fold-w");
   check("(3) the worklist's measured stance sits in the fold, open", !!fold() && !fold().hidden && fold().querySelectorAll(".crr-stat").length === 5
-    && /5wordings in the corpus/.test(txt(fold())) && txt(tog()) === "Hide the summary" && tog().getAttribute("aria-expanded") === "true"
+    && /5wordings in the corpus/.test(txt(fold())) && txt(tog()) === "Hide the top" && tog().getAttribute("aria-expanded") === "true"
     && tog().getAttribute("aria-controls") === "crl-fold", fold() && txt(fold()));
   tog().click(); await settle();
-  check("(3) Hide the summary folds the cards, says so, and keeps focus", fold().hidden && txt(tog()) === "Show the summary" && tog().getAttribute("aria-expanded") === "false"
+  check("(3) Hide the top folds the cards, says so, and keeps focus", fold().hidden && txt(tog()) === "Show the top" && tog().getAttribute("aria-expanded") === "false"
     && t.d.activeElement === tog() && !!bar());
   tog().click(); await settle();
-  check("(3) Show the summary brings them back", !fold().hidden && txt(tog()) === "Hide the summary");
+  check("(3) Show the top brings them back", !fold().hidden && txt(tog()) === "Hide the top");
   const reads = () => t.calls.filter((c) => c.url === "kb/status/commons.json").length;
   check("(4) the figures are read once a visit", reads() === 1, String(reads()));
   t.M.activate(); await settle();

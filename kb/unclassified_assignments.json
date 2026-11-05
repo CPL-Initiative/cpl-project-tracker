@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-04T06:18:46Z",
-  "count": 2320,
+  "_synced_at": "2026-11-04T17:00:22Z",
+  "count": 2333,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -7076,6 +7076,12 @@
       "unified_title": "Water Supply",
       "supersedes": "Credit by Exam"
     },
+    "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Waterworks Mathematics Advanced"
+    },
     "Credit by Exam - CalAPS - Fire Protection Organization": {
       "issuing_agency": "CalAPS",
       "reviewed_by": "slee@cccco.edu",
@@ -8068,6 +8074,12 @@
       "reviewed_at": "2026-07-12T19:59:26.60741+00:00",
       "unified_title": "ECON C2002: Principles of Macroeconomics"
     },
+    "EET 203 Basic Electricity": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Basic Electricity"
+    },
     "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -8546,6 +8558,12 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T16:33:31.610455+00:00",
       "unified_title": "Epic Games Game Design Professional Certificate"
+    },
+    "Examination for ARHS 2": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Art of the Ancient Americas"
     },
     "Examination for FREN 1A": {
       "issuing_agency": "California Community Colleges",
@@ -9223,6 +9241,12 @@
       "reviewed_at": "2026-10-31T16:34:31.159053+00:00",
       "unified_title": "Esthetician Training"
     },
+    "GEOG 1 Physical Geology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Introduction to Physical Geography"
+    },
     "GERMAN 1: Beginning German": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -9248,6 +9272,24 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "GIS Professional (GISP) Certification"
+    },
+    "GRART 32 Digital Documents (Adobe InDesign)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Digital Documents (Adobe InDesign)"
+    },
+    "GRART 36 Adobe Photoshop Basics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Adobe Photoshop Basics"
+    },
+    "GRART 37 Advanced Photoshop": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Photoshop Advanced"
     },
     "Game Design HS-CNUSD": {
       "issuing_agency": "Corona-Norco Unified School District",
@@ -12723,11 +12765,47 @@
       "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
       "unified_title": "International Business"
     },
+    "Portfolio for BUSN 40": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Introduction to Business"
+    },
+    "Portfolio for BUSN 48": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Human Relations in Organizations"
+    },
     "Portfolio for BUSN 52": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T17:03:30.790618+00:00",
       "unified_title": "Business Communication"
+    },
+    "Portfolio for BUSN 58": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Small Business Management"
+    },
+    "Portfolio for BUSN 61": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "QuickBooks Accounting"
+    },
+    "Portfolio for BUSN 65": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Federal Income Tax Accounting"
+    },
+    "Portfolio for BUSN 88": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Human Resources Management"
     },
     "Portfolio for ENG 19A": {
       "issuing_agency": "California Community Colleges",

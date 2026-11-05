@@ -76,6 +76,15 @@
 //                      filter by its own pass. counts() -> { id: n } hands the tab's own, from a build that already
 //                      counted them (Program Requirements, Courses); an id it leaves out or nulls shows no count, and the
 //                      engine still counts the ids it owns. counts: false shows none.
+//   edit.extra         (r, draft, word) -> [nodes]: the spec's own words beside Save and Cancel; draft._hint, when set,
+//                      reads under the fields (the Subjects List's Check alignment writes it).
+//   edit.onInput       (r, key, draft) after a keystroke in an edit field: the spec may set another field's draft, and
+//                      the engine puts each other box in step (the Subjects List fills its Note when the code changes).
+//   editByRow          true (with edit): Edit sits beside the select box, and a press anywhere on a row (a cell, or its
+//                      open ground) opens its edit row, with its panel on the row when the List has one; the cells open no
+//                      drawers, so the panel carries their details. Sam, 2026-11-04, on the Subjects List: "Move edit button to
+//                      the right of the selection boxes"; "Open the row to edit on row click"; "the sidebar should update to
+//                      show that row". The Subjects List sets it; the other Lists keep their drawers.
 //   panel              { label(r) -> the bar's words, body(r, h) -> nodes }: a side panel for one row (Sam, 2026-11-03:
 //                      "build the side panel into the Exhibits List", after SkyView's course outline). Pressing a row's
 //                      title opens it beside the table, in place of the title's drawer; another title swaps it, and Close
@@ -119,6 +128,8 @@
       placeholder: "Find", findLabel: "Find in the list" }, S.noun || {});
     var G = S.groups || null, NO_GROUP = (G && G.none) || "_NO_GROUP";
     var NBOX = S.flag ? 2 : 1, HAS_EDIT = !!S.edit;
+    // editByRow: Edit sits beside the select box, and a press anywhere on a row opens its edit row and its panel.
+    var EDIT_LEAD = HAS_EDIT && !!S.editByRow, LEAD = NBOX + (EDIT_LEAD ? 1 : 0), EDIT_LEAD_PX = 56;
 
     function el(tag, attrs, kids) {
       var e = document.createElement(tag);
@@ -545,19 +556,44 @@
       if (n) { n.focus(); if (n.type === "text") { try { n.setSelectionRange(n.value.length, n.value.length); } catch (e) {} } }
     }
 
+    /* Open a row's edit row; with editByRow its panel follows the row (Sam, 2026-11-04: "When I click edit on various
+       rows, the sidebar should update to show that row"). A row already open keeps its draft. */
+    function listStartEdit(r) {
+      var L = listState(), rk = K(r);
+      if (L.edit !== rk || !L.draft) { L.edit = rk; L.draft = S.edit.draft(r); L.note = ""; }
+      if (EDIT_LEAD && S.panel) L.panel = rk;
+      L.open = null; redrawList();
+      var t = document.getElementById(S.edit.fields[0].id); if (t) t.focus();
+    }
     function listEditRow(r) {
       var L = listState(), d = L.draft;
       function box(f) {
         var i = el("input", { id: f.id, type: "text", cls: P + "in", placeholder: f.ph || "" });
         i.value = d[f.key];
-        i.addEventListener("input", function () { d[f.key] = i.value; });
+        i.addEventListener("input", function () {
+          d[f.key] = i.value;
+          // edit.onInput(r, key, draft): the spec may fill another field from this one; the boxes follow the draft.
+          if (S.edit.onInput) {
+            S.edit.onInput(r, f.key, d);
+            S.edit.fields.forEach(function (g) {
+              var b = g !== f && document.getElementById(g.id);
+              if (b && b.value !== (d[g.key] == null ? "" : String(d[g.key]))) b.value = d[g.key] == null ? "" : d[g.key];
+            });
+            var hn = document.getElementById(P + "edit-hint");
+            if (hn) { hn.textContent = d._hint || ""; hn.hidden = !d._hint; }
+          }
+        });
         return el("label", { cls: P + "f", "for": f.id }, [el("span", { text: f.label }), i]);
       }
       var td = el("td", { colspan: String(span()) }, [
         el("div", { cls: P + "edit" }, S.edit.fields.map(box).concat([
+          // edit.onInput may set draft._hint: a line about what was typed, kept beside the fields (polite, read aloud).
+          el("p", { id: P + "edit-hint", cls: CL.note + " " + P + "edit-hint", role: "status", "aria-live": "polite", text: d._hint || "", hidden: d._hint ? null : "" }),
           el("div", { cls: P + "acts" }, [
             word(L.busy ? "Saving…" : "Save", function () { S.edit.save(r); }),
-            word("Cancel", function () { L.edit = null; L.draft = null; render(); })])]))]);
+            word("Cancel", function () { L.edit = null; L.draft = null; render(); })]
+            // edit.extra(r, draft, word): the spec's own words beside Save (the Subjects List's Check alignment).
+            .concat(S.edit.extra ? S.edit.extra(r, d, word) : []))]))]);
       return el("tr", { cls: P + "editrow" }, [td]);
     }
     function renderList(wrap) {
@@ -596,7 +632,7 @@
     function hasCellEdit() { return listCols().some(function (c) { return !!c.edit; }); }
     function listTable() {
       var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
-      var C = listCols(), nb = NBOX, boxW = 32 * nb;
+      var C = listCols(), nb = NBOX, boxW = 32 * nb + (EDIT_LEAD ? EDIT_LEAD_PX : 0);
       // The full width with a sideways scroll when needed (Sam, 2026-11-01: "for exhibit and all other list views,
       // adjust table and tab to full screen width and allow for a horizontal scroll bar when needed"). The columns share
       // what the boxes and the Edit word leave, so Edit keeps its own 4% (it had the 1% the columns left and clipped);
@@ -605,10 +641,11 @@
       var sumW = C.reduce(function (a, c) { return a + c.w; }, 0) || 1;
       var editW = HAS_EDIT ? EDIT_PCT : 0, share = (100 - 3 * nb - editW) / sumW;
       var minPx = Math.round(sumW * MIN_PX_PER_W) + boxW + (HAS_EDIT ? EDIT_MIN_PX : 0);
-      var lead = [el("col", { style: "width:32px" })].concat(S.flag ? [el("col", { style: "width:32px" })] : []);
+      var lead = [el("col", { style: "width:32px" })].concat(S.flag ? [el("col", { style: "width:32px" })] : [])
+        .concat(EDIT_LEAD ? [el("col", { style: "width:" + (L.widths ? EDIT_LEAD_PX + "px" : editW + "%") })] : []);
       var cols = el("colgroup", null, lead.concat(C.map(function (c, i) {
         return el("col", { style: "width:" + (L.widths ? L.widths[i] + "px" : (Math.round(c.w * share * 100) / 100) + "%") }); }))
-        .concat(HAS_EDIT ? [el("col", { style: "width:" + (L.widths ? L.widths[C.length] + "px" : editW + "%") })] : []));
+        .concat(HAS_EDIT && !EDIT_LEAD ? [el("col", { style: "width:" + (L.widths ? L.widths[C.length] + "px" : editW + "%") })] : []));
       var allBox = el("input", { type: "checkbox", id: P + "selall", "aria-label": "Select every row shown" });
       allBox.checked = shown.length > 0 && shown.every(function (r) { return L.sel[K(r)]; });
       allBox.addEventListener("change", function () {
@@ -616,7 +653,8 @@
         redrawList(); var b = document.getElementById(P + "selall"); if (b) b.focus();
       });
       var headRow = el("tr", null, [el("th", { scope: "col", cls: P + "box" }, [allBox])]
-        .concat(S.flag ? [el("th", { scope: "col", cls: P + "box", text: "Flag" })] : []).concat(C.map(function (c, i) {
+        .concat(S.flag ? [el("th", { scope: "col", cls: P + "box", text: "Flag" })] : [])
+        .concat(EDIT_LEAD ? [el("th", { scope: "col" }, [el("span", { cls: CL.vh, text: "Edit" })])] : []).concat(C.map(function (c, i) {
         var lvIdx = -1; L.sort.forEach(function (x, k) { if (x.col === i) lvIdx = k; });
         var on = lvIdx > -1, up = on && L.sort[lvIdx].dir > 0;
         var b = el("button", { type: "button", cls: P + "sort", title: "Press to sort by this column; Shift and press to sort within the sort already set" },
@@ -630,8 +668,8 @@
           var nb2 = document.querySelectorAll("." + P + "sort")[i]; if (nb2) nb2.focus();
         });
         return el("th", { scope: "col", "aria-sort": lvIdx === 0 ? (up ? "ascending" : "descending") : "none" }, [b, listGrip(i, c.h)]);
-      })).concat(HAS_EDIT ? [el("th", { scope: "col" }, [el("span", { cls: CL.vh, text: "Edit" })])] : []));
-      var filterRow = el("tr", { cls: P + "cf" }, [el("td")].concat(S.flag ? [el("td")] : []).concat(C.map(function (c, i) {
+      })).concat(HAS_EDIT && !EDIT_LEAD ? [el("th", { scope: "col" }, [el("span", { cls: CL.vh, text: "Edit" })])] : []));
+      var filterRow = el("tr", { cls: P + "cf" }, [el("td")].concat(S.flag ? [el("td")] : []).concat(EDIT_LEAD ? [el("td")] : []).concat(C.map(function (c, i) {
         var inp = el("input", { type: "search", cls: P + "in " + P + "cfin", id: P + "cf-" + i, autocomplete: "off",
           "aria-label": "Filter " + c.h, placeholder: "Filter" });
         inp.value = L.cf[i] || "";
@@ -640,7 +678,7 @@
           var n = document.getElementById(P + "cf-" + i); if (n) { n.focus(); try { n.setSelectionRange(n.value.length, n.value.length); } catch (e) {} }
         });
         return el("td", null, [inp]);
-      })).concat(HAS_EDIT ? [el("td")] : []));
+      })).concat(HAS_EDIT && !EDIT_LEAD ? [el("td")] : []));
       var thead = el("thead", null, [headRow, filterRow]);
       var body = el("tbody");
       var aiOn = !!(G && L.ai && L.aiData), gi = aiOn ? (L.gi || listGroupIndex()) : null, sgByGroup = {};
@@ -670,12 +708,7 @@
         if (S.changed && L.changed.indexOf(rk) !== -1) titleTd.appendChild(el("span", { cls: P + "sub", text: "changed this visit" }));
         var sg = S.suggest && (S.suggest.always || aiOn || L.f === "suggested") ? listSuggestion(r) : null;
         if (sg) titleTd.appendChild(listSuggestLine(r, sg));
-        var editBtn = HAS_EDIT ? word("Edit", function () {
-          L.edit = rk;
-          L.draft = S.edit.draft(r);
-          L.note = ""; redrawList();
-          var t = document.getElementById(S.edit.fields[0].id); if (t) t.focus();
-        }, { "aria-label": "Edit " + listTitle(r) }) : null;
+        var editBtn = HAS_EDIT ? word("Edit", function () { listStartEdit(r); }, { "aria-label": "Edit " + listTitle(r) }) : null;
         var selBox = el("input", { type: "checkbox", "aria-label": "Select " + listTitle(r) });
         selBox.checked = !!L.sel[rk];
         selBox.addEventListener("change", function () {
@@ -694,14 +727,22 @@
         var open = L.open && L.open.ut === rk ? L.open.col : -1;
         titleTd.insertBefore(L.editAll && C[0].edit ? listCellInput(r, C[0].edit, listTitle(r), C[0].h) : listOpener(r, 0, listTitle(r), open === 0), titleTd.firstChild);
         titleTd.removeChild(titleTd.childNodes[1]);
-        body.appendChild(el("tr", { cls: (L.sel[rk] ? P + "sel" : "") + (flagged ? " " + P + "flagged" : "") || null },
-          [el("td", { cls: P + "box" }, [selBox])].concat(S.flag ? [el("td", { cls: P + "box" }, [flagBox])] : []).concat([titleTd]).concat(C.slice(1).map(function (c, k) {
+        var rowTr = el("tr", { cls: [L.sel[rk] ? P + "sel" : "", flagged ? P + "flagged" : "", EDIT_LEAD ? P + "rowedit" : "",
+          EDIT_LEAD && L.edit === rk ? P + "editing" : ""].filter(Boolean).join(" ") || null },
+          [el("td", { cls: P + "box" }, [selBox])].concat(S.flag ? [el("td", { cls: P + "box" }, [flagBox])] : [])
+          .concat(EDIT_LEAD ? [el("td", { cls: P + "box" }, [editBtn])] : []).concat([titleTd]).concat(C.slice(1).map(function (c, k) {
           var v = c.v(r), t = c.n ? (v == null ? "" : fmt(v) + (c.suffix || "")) : v;
           var td = el("td", { cls: c.n ? P + "n" : null, title: t ? String(t) : null });
           var kind = L.editAll && c.edit;
           td.appendChild(kind ? listCellInput(r, kind, t == null ? "" : String(t), c.h) : listOpener(r, k + 1, t == null ? "" : String(t), open === k + 1));
           return td;
-        }), HAS_EDIT ? [el("td", null, [editBtn])] : [])));
+        }), HAS_EDIT && !EDIT_LEAD ? [el("td", null, [editBtn])] : []));
+        // A press on the row's open ground (a cell's padding) edits it too; its boxes, words and fields keep their own.
+        if (EDIT_LEAD) rowTr.addEventListener("click", function (ev) {
+          if (L.editAll || (ev.target.closest && ev.target.closest("input, button, a, select, textarea, label"))) return;
+          if (L.edit !== rk) listStartEdit(r);
+        });
+        body.appendChild(rowTr);
         if (open > -1) body.appendChild(listDrawer(r, open));
         if (HAS_EDIT && L.edit === rk && L.draft) body.appendChild(listEditRow(r));
       });
@@ -1058,14 +1099,59 @@
         var list = function (items) { dbox.appendChild(el("ul", { cls: P + "dul" }, items.map(function (x) { return el("li", null, typeof x === "string" ? [x] : x); }))); };
         S.drawer(r, listCols()[0].h, { line: line, list: list, box: dbox, word: word, el: el, filterBy: listFilterBy,
           colIndex: listColIndex, L: L, LIMIT: LIST_LIMIT, fmt: fmt, stamp: stamp });
-        if (dbox.firstChild) body.insertBefore(dbox, body.querySelector("details") || null);
+        // Before the panel's first fold among its own children: a fold nested deeper (a checks list's details) is no anchor.
+        if (dbox.firstChild) body.insertBefore(dbox, Array.prototype.filter.call(body.children, function (c) { return c.tagName === "DETAILS"; })[0] || null);
       }
       var aside = el("aside", { id: P + "panel", cls: P + "panel", "aria-labelledby": P + "panel-t" }, [
         el("div", { cls: P + "pbar" }, [el("span", { id: P + "panel-t", cls: P + "pt", tabindex: "-1", text: S.panel.label ? S.panel.label(r) : listTitle(r) }),
           word("Close", close, { "aria-label": "Close the panel for " + listTitle(r) })]),
         body]);
       aside.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.stopPropagation(); close(); } });
+      panelSize(aside);
+      aside.insertBefore(panelGrip(aside), aside.firstChild);
       return aside;
+    }
+    /* The side panel resizes from its left edge (Sam, 2026-11-05: "make all the sidebars horizontal resizable"): drag it
+       by mouse, pen or finger, or focus it and use the arrow keys (Left widens, Right narrows, Home returns the panel to
+       its own width). One width for every Commons List, kept across visits (a width is no filter). */
+    function panelSize(aside) {
+      var w = panelW();
+      if (w) { aside.style.flex = "0 0 " + w + "px"; aside.style.maxWidth = "none"; aside.style.width = w + "px"; }
+      else { aside.style.flex = ""; aside.style.maxWidth = ""; aside.style.width = ""; }
+    }
+    function panelGrip(aside) {
+      var g = el("span", { cls: P + "pgrip", role: "separator", tabindex: "0", "aria-orientation": "vertical",
+        "aria-label": "Resize the panel", "aria-valuemin": String(PANEL_MIN), "aria-valuemax": String(PANEL_MAX),
+        "aria-valuenow": String(panelW() || Math.round(aside.getBoundingClientRect().width) || 420) });
+      function set(w) {
+        w = Math.max(PANEL_MIN, Math.min(PANEL_MAX, Math.round(w)));
+        setPanelW(w); panelSize(aside); g.setAttribute("aria-valuenow", String(w));
+      }
+      function now() { return panelW() || Math.round(aside.getBoundingClientRect().width) || 420; }
+      g.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") set(now() + LIST_STEP);
+        else if (e.key === "ArrowRight") set(now() - LIST_STEP);
+        else if (e.key === "Home") { setPanelW(null); panelSize(aside); g.setAttribute("aria-valuenow", String(now())); }
+        else return;
+        e.preventDefault(); e.stopPropagation();
+      });
+      g.addEventListener("pointerdown", function (e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        e.preventDefault(); e.stopPropagation();
+        var startX = e.clientX, startW = now();
+        try { g.setPointerCapture(e.pointerId); } catch (err) {}
+        // The grip sits on the panel's left edge, so a drag to the left widens it.
+        function move(ev) { if (ev.pointerId === e.pointerId) set(startW - (ev.clientX - startX)); }
+        function up(ev) {
+          if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+          g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
+          ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+        }
+        g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
+        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
+      });
+      g.addEventListener("click", function (e) { e.stopPropagation(); });
+      return g;
     }
     /* A cell opens its drill-down in a drawer under the row (Sam, 2026-11-01: "how many of these fields can you make
        drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
@@ -1074,6 +1160,13 @@
       var b = el("button", { type: "button", cls: P + "open", "aria-expanded": isOpen ? "true" : "false",
         "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" },
         listCols()[col].cell ? (listCols()[col].cell(r, el) || [text || "—"]) : [text || "—"]);
+      if (EDIT_LEAD) {
+        // editByRow: every cell is the row's way into its edit row (and its panel); the panel carries the details.
+        b.setAttribute("aria-expanded", L.edit === K(r) ? "true" : "false");
+        b.setAttribute("aria-label", listCols()[col].h + ": " + (text || "none") + ", edit the row");
+        b.addEventListener("click", function () { listStartEdit(r); });
+        return b;
+      }
       if (col === 0 && S.panel) {
         var on = L.panel === K(r);
         b.setAttribute("aria-expanded", on ? "true" : "false");
@@ -1115,7 +1208,7 @@
     function listFixWidths() {
       var L = listState();
       if (L.widths) return L.widths;
-      var cols = Array.prototype.slice.call(document.querySelectorAll("." + P + "table col"), NBOX);
+      var cols = Array.prototype.slice.call(document.querySelectorAll("." + P + "table col"), LEAD);
       L.widths = cols.map(function (c) {
         var w = c.getBoundingClientRect ? Math.round(c.getBoundingClientRect().width) : 0;
         return w > 0 ? w : 120;
@@ -1125,17 +1218,23 @@
     function listSetWidth(i, w) {
       var L = listState(), W = listFixWidths();
       W[i] = Math.max(LIST_MIN_W, Math.round(w));
-      var col = document.querySelectorAll("." + P + "table col")[i + NBOX];
+      var col = document.querySelectorAll("." + P + "table col")[i + LEAD];
       if (col) col.style.width = W[i] + "px";
       var t = document.querySelector("." + P + "table");
-      if (t) t.style.width = (W.reduce(function (a, x) { return a + x; }, 0) + 32 * NBOX) + "px";
+      if (t) t.style.width = (W.reduce(function (a, x) { return a + x; }, 0) + 32 * NBOX + (EDIT_LEAD ? EDIT_LEAD_PX : 0)) + "px";
       var g = document.getElementById(P + "grip-" + i);
       if (g) g.setAttribute("aria-valuenow", String(W[i]));
       return L;
     }
     // Each separator reports its column's drawn width once the table is on the page.
+    /* The visible width of the table's box, for the edit row's sticky hold (the CSS reads --<prefix>ew). */
+    function listSyncEditWidth() {
+      var wr = document.querySelector("." + P + "wrap");
+      if (wr && wr.clientWidth > 48) wr.style.setProperty("--" + P + "ew", (wr.clientWidth - 24) + "px");
+    }
     function listSyncGrips() {
-      var cols = Array.prototype.slice.call(document.querySelectorAll("." + P + "table col"), NBOX);
+      listSyncEditWidth();
+      var cols = Array.prototype.slice.call(document.querySelectorAll("." + P + "table col"), LEAD);
       Array.prototype.forEach.call(document.querySelectorAll("." + P + "grip"), function (g, i) {
         var w = cols[i] && cols[i].getBoundingClientRect ? Math.round(cols[i].getBoundingClientRect().width) : 0;
         if (w > 0) g.setAttribute("aria-valuenow", String(w));
@@ -1242,9 +1341,12 @@
         p + "n{text-align:right;font-variant-numeric:tabular-nums}",
         p + "table " + w + "{font-size:.75rem;min-height:24px;min-width:24px;padding:0 2px}",
         p + "editrow td{background:var(--surface-opaque)}",
-        p + "edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0}",
+        // The edit row holds to the table's visible box: a wide table scrolls sideways inside its own box, and with the
+        // panel open the row's Save sat past its right edge (Sam, 2026-11-04, on the Subjects List: rows did not close).
+        p + "edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0;position:sticky;left:0;box-sizing:border-box;max-width:var(--" + P + "ew,100%)}",
         p + "f{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:.6875rem;color:var(--text-muted)}",
         p + "acts{display:flex;gap:12px}",
+        p + "edit-hint{flex:1 1 100%;order:3;margin:0;font-size:.75rem;color:var(--text-muted)}",
         f.replace(/-$/, "") + "{border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:4px 0 8px;min-width:0;max-width:100%;box-sizing:border-box}",
         "#" + FP + "host{min-width:0;max-width:100%}",
         p + "table tr" + p + "band th{position:static;text-align:left;font-weight:600;color:var(--text-strong);background:var(--surface-opaque);padding:8px 6px 2px;border-top:1px solid var(--border);border-bottom:0;white-space:normal}",
@@ -1280,7 +1382,14 @@
       rules = rules.concat([
         "." + P + "split{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}",
         "." + P + "split > ." + P + "wrap{flex:999 1 480px;min-width:0}",
-        "." + P + "panel{flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        "." + P + "rowedit>td{cursor:pointer}",
+        "." + P + "panel{position:relative;flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        // The panel's left-edge grip: a 12px strip, quiet until hovered or focused.
+        "." + P + "pgrip{position:absolute;left:0;top:0;bottom:0;width:12px;cursor:col-resize;touch-action:none;z-index:2}",
+        "." + P + "pgrip:hover,." + P + "pgrip:focus-visible{background:var(--border-strong)}",
+        "." + P + "pgrip:focus-visible{outline:2px solid var(--seal-blue);outline-offset:-2px}",
+        // On a narrow window the panel wraps below the table at the full width, so a stored width never scrolls the page.
+        "@media (max-width: 900px){." + P + "panel{flex:1 1 100% !important;width:auto !important;max-width:none !important}." + P + "pgrip{display:none}}",
         "." + P + "pbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid var(--border);background:var(--surface-subtle)}",
         "." + P + "pt{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
         "." + P + "pt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
@@ -1304,7 +1413,9 @@
         "." + P + "linebar{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;justify-content:space-between;margin:12px 0 10px}",
         "." + P + "line{margin:0;display:flex;flex-wrap:wrap;gap:4px 0;align-items:baseline;color:var(--text-strong)}",
         "." + P + "sep{color:var(--text-muted);margin:0 .55em}",
-        "." + P + "fold[hidden]{display:none}"
+        "." + P + "fold[hidden]{display:none}",
+        // The tab's introduction folds with the summary (line's o.top); one rule for every Commons view.
+        "[data-cmn-top-folded]{display:none !important}"
       ]);
       // A tab with no base classes of its own gets the Exhibits tab's: underlined words, muted and small text, the
       // finder's box, the current filter underlined.
@@ -1341,8 +1452,18 @@
         if (k) p.appendChild(el("span", { cls: C.sep, "aria-hidden": "true", text: "\u00b7" }));
         p.appendChild(n);
       });
+      // The top of the page folds as one (Sam, 2026-11-05: "make the top cards section collapsible for all commons views.
+      // that maximizes my focus on the list"): the summary's cards and the tab's introduction (o.top, CSS selectors).
+      if (o.top && o.top.length) setTimeout(function () {
+        o.top.forEach(function (sel) {
+          Array.prototype.forEach.call(document.querySelectorAll(sel), function (n) {
+            if (o.folded) n.setAttribute("data-cmn-top-folded", ""); else n.removeAttribute("data-cmn-top-folded");
+          });
+        });
+      }, 0);
       var tid = foldId + "-w";
-      var tog = word(o.folded ? "Show the summary" : "Hide the summary", function () {
+      var tog = word(o.folded ? "Show the top" : "Hide the top", function () {
+        setTopFolded(!o.folded);
         if (o.onToggle) o.onToggle();
         var b = document.getElementById(tid); if (b) b.focus();
       }, { cls: C.w + " " + foldId + "-w", id: tid, "aria-expanded": o.folded ? "false" : "true", "aria-controls": foldId });
@@ -1350,7 +1471,7 @@
     }
 
     var api = {
-      render: renderList, redraw: redrawList, line: line, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
+      render: renderList, redraw: redrawList, line: line, topFolded: topFolded, setTopFolded: setTopFolded, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
@@ -1361,6 +1482,26 @@
     return api;
   }
 
+  /* Whether the top of every Commons view is folded: one choice for all five (a fold is no filter, so it lasts across
+     visits, CLAUDE.md "Tabs never remember a filter"). Storage may be blocked; the fold then lasts the page. */
+  var PANEL_KEY = "cplCommonsPanelW", panelMem, PANEL_MIN = 300, PANEL_MAX = 1100;
+  function panelW() {
+    if (panelMem === undefined) { try { panelMem = parseInt(window.localStorage.getItem(PANEL_KEY), 10) || null; } catch (e) { panelMem = null; } }
+    return panelMem;
+  }
+  function setPanelW(w) {
+    panelMem = w || null;
+    try { if (panelMem) window.localStorage.setItem(PANEL_KEY, String(panelMem)); else window.localStorage.removeItem(PANEL_KEY); } catch (e) { /* storage blocked */ }
+  }
+  var TOP_KEY = "cplCommonsTopFolded", topMem = null;
+  function topFolded() {
+    if (topMem == null) { try { topMem = window.localStorage.getItem(TOP_KEY) === "1"; } catch (e) { topMem = false; } }
+    return topMem;
+  }
+  function setTopFolded(v) {
+    topMem = !!v;
+    try { window.localStorage.setItem(TOP_KEY, topMem ? "1" : "0"); } catch (e) { /* storage blocked */ }
+  }
   /* The Commons' figures for every List: kb/status/commons.json, read once a visit (fresh reads it again). A failed read
      rejects with its words, and the line says it could not be read (S343), never a zero. */
   var COMMONS_URL = "kb/status/commons.json", commonsRead = null;
@@ -1387,5 +1528,5 @@
     (Array.isArray(row && row.issues) ? row.issues : []).forEach(function (i) { out.push({ n: i.n, open: i.open, words: i.words }); });
     return out;
   }
-  window.CPL_COMMONS_LIST = { create: create, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
+  window.CPL_COMMONS_LIST = { create: create, topFolded: topFolded, setTopFolded: setTopFolded, LIMIT: LIST_LIMIT, readCommons: readCommons, commonsRow: commonsRow, lineItems: lineItems };
 })();

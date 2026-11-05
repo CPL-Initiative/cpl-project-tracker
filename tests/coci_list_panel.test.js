@@ -6,7 +6,7 @@
 //   (1) the line reads the course row of kb/status/commons.json through the tab's own Progress read (one reader), once;
 //       every count opens SkyView in a new tab and says so (Courses keeps SkyView first);
 //   (2) the Progress view's opened page folds under the line under its own prefix, less the word that opens this List;
-//       Hide the summary hides it; a failed read says the figures could not be read;
+//       Hide the top hides it; a failed read says the figures could not be read;
 //   (3) a title opens the panel: the course, its common course with SkyView one word away, the local courses that M-ID
 //       holds (this one marked, another one's title opening its panel), the Title drawer moved in, the rest folded;
 //       a course in no M-ID says so and lists none;
@@ -121,7 +121,7 @@ function titleBtn(d, title) { const tr = dataRows(d).find((x) => txt(cell(x, d, 
   check("(2) the fold leaves out the word that opens this List", !word(d, /^Open the Courses List$/));
   tog.click(); await sleep(10);
   const tog2 = d.getElementById(P + "fold-w");
-  check("(2) Hide the summary hides it; the word says Show the summary and keeps focus", d.getElementById(P + "fold").hidden && txt(tog2) === "Show the summary"
+  check("(2) Hide the top hides it; the word says Show the top and keeps focus", d.getElementById(P + "fold").hidden && txt(tog2) === "Show the top"
     && tog2.getAttribute("aria-expanded") === "false" && d.activeElement === tog2);
   const tf = tab();
   await until(() => /could not be read/.test(txt(tf.d.querySelector("." + P + "line"))));

@@ -131,9 +131,16 @@ function responder(map) {
 function load(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="commons-root" style="padding:28px;">Loading</div></body></html>',
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || ""), runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = opts.fetch || responder({ "kb/status/commons.json": STATUS, "kb/status/program-requirements.json": PR_LOG });
+  // the keeper (cpl_session.js) first, as the page loads it, with storage stubs it reads at start
+  if (opts.session) {
+    const bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }; };
+    Object.defineProperty(w, "localStorage", { value: bag(), configurable: true });
+    Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
+    w.eval(fs.readFileSync("cpl_session.js", "utf8"));
+  }
   if (opts.noStorage) Object.defineProperty(w, "localStorage", { get: function () { throw new Error("SecurityError"); } });
   // boot() reads the clock (new Date()), so the window's clock is pinned to NOW: the fixture's stamps are fixed, and
   // on the real clock the "inside 36 hours" check turned red 36 hours after its stamp (2026-10-20 05:47Z, S432).
@@ -386,6 +393,97 @@ function cellText(li, title) {
     await c.M.boot();
     check("todo 5: signed out, the to-do says to sign in and offers no Mark done",
       /sign in as a reviewer to mark it done/.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
+  }
+
+  // the one queue (Sam, 2026-11-04, S573): what waits on a person, by reason, and what the routines carry
+  {
+    const Q = { reasons: [
+        { key: "no_procedure", items: [{ ref: "cr", title: "Common CR Reference", n: 1883, words: "wordings no rule places", owner: "a curator", open: "#cr-reference/open" }] },
+        { key: "unsure", items: [{ ref: "exhibit", title: "Common Exhibit Reference", n: null, words: "titles held for a person", owner: "a curator", open: "#exhibits/held", error: "E" }] },
+        { key: "reaches", items: [] },
+        { key: "keep_call", items: [{ ref: "exhibit", title: "Common Exhibit Reference", n: 622, words: "titles in the reference that have left MAP", owner: "a curator", open: "#credential-reference/all" }] }],
+      carried: [{ ref: "requirements", title: "Program Requirements", n: 3349, words: "active programs with no record yet", owner: "the harvest", open: "#program-requirements/list/unread" }] };
+    const withQ = JSON.parse(JSON.stringify(STATUS)); withQ.queue = Q;
+    const q = load({ fetch: responder({ "kb/status/commons.json": withQ, "kb/status/program-requirements.json": PR_LOG }) });
+    await q.M.boot();
+    const sec = q.d.querySelector(".cmn-queue");
+    check("queue 1: the section draws, headed Waiting on a person, labelled by its heading",
+      sec && txt(sec.querySelector("#cmn-queue-h")) === "Waiting on a person" && sec.getAttribute("aria-labelledby") === "cmn-queue-h");
+    check("queue 2: one box per reason, in the file's order, each with its plain words",
+      Array.prototype.map.call(sec.querySelectorAll(".cmn-reason"), function (b) { return b.getAttribute("data-reason"); }).join() === "no_procedure,unsure,reaches,keep_call"
+      && txt(sec.querySelector('[data-reason="no_procedure"] .cmn-reason-h')) === "No procedure covers it yet");
+    const first = sec.querySelector('[data-reason="no_procedure"] li');
+    check("queue 3: an item names its card's Common name, links its count and keeps its words",
+      /^Common Credit Recommendations: 1,883 wordings no rule places$/.test(txt(first)) && first.querySelector("a").getAttribute("href") === "#cr-reference/open");
+    check("queue 4: an unread count reads Could not be read, never a zero",
+      /Could not be read/.test(txt(sec.querySelector('[data-reason="unsure"] li'))) && !/: 0 /.test(txt(sec)));
+    check("queue 5: an empty reason says Nothing waits here",
+      txt(sec.querySelector('[data-reason="reaches"] .cmn-quiet')) === "Nothing waits here.");
+    check("queue 6: the routines' items sit apart, under The routines carry, never in a reason box",
+      /The routines carry/.test(txt(sec.querySelector(".cmn-carried"))) && /3,349 active programs with no record yet/.test(txt(sec.querySelector(".cmn-carried")))
+      && !/no record yet/.test(Array.prototype.map.call(sec.querySelectorAll(".cmn-reason"), txt).join(" ")));
+    check("queue 7: the queue sits after the decisions band and before the filter words",
+      (function () { const kids = Array.prototype.slice.call(q.d.querySelector(".cmn-wrap").children);
+        const iq = kids.indexOf(sec), ib = kids.indexOf(q.d.querySelector(".cmn-band")), iff = kids.indexOf(q.d.querySelector(".cmn-filter-row"));
+        return iq > ib && iq < iff; })());
+    check("queue 8: the queue's words name no person and carry no glyph",
+      !/Sam/.test(txt(sec)) && !/[←-⇿☀-➿\u{1F300}-\u{1FAFF}✔✖▶▼]/u.test(txt(sec)));
+    check("queue 9: a status file with no queue draws no queue section", !t.d.querySelector(".cmn-queue"));
+    const unsorted = q.M.queueSection({ reasons: [], unsorted: [{ ref: "x", title: "X", n: 2, words: "a new issue", open: null }] });
+    check("queue 10: an unsorted issue shows under Not yet sorted, so it cannot hide",
+      txt(unsorted.querySelector('[data-reason="unsorted"] .cmn-reason-h')) === "Not yet sorted");
+  }
+
+  // the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward
+  {
+    const C = [
+      { ref: "exhibit", unit: "titles", total: { placed: 1178, untouched: 1047, kept: 23, renamed: 71, moved: 0, by_procedure: 24, left: 13, looked: 94 },
+        procedures: [{ name: "classifier", placed: 890, untouched: 807, kept: 4, renamed: 53, moved: 0, by_procedure: 19, left: 7, looked: 57 }] },
+      { ref: "subjects", unit: "picks", total: { placed: 13, untouched: 13, kept: 0, renamed: 0, moved: 0, by_procedure: 0, left: 0, looked: 0 },
+        procedures: [{ name: "confirm-authority", placed: 13, untouched: 13, kept: 0, renamed: 0, moved: 0, by_procedure: 0, left: 0, looked: 0 }] },
+      { ref: "cr", error: "FileNotFoundError: x" }];
+    const withC = JSON.parse(JSON.stringify(STATUS)); withC.confidence = C;
+    const c = load({ fetch: responder({ "kb/status/commons.json": withC, "kb/status/program-requirements.json": PR_LOG }) });
+    await c.M.boot();
+    const sec = c.d.querySelector(".cmn-conf");
+    check("confidence 1: the section draws, headed How far to trust the procedures", sec && txt(sec.querySelector("#cmn-conf-h")) === "How far to trust the procedures");
+    check("confidence 2: a reference's line says how many a person looked at and what they did",
+      /A person has looked at 94 of 1,178: 23 kept, 71 renamed with their family, 0 moved elsewhere\. 24 later revised by another procedure; 13 left the reference\./.test(txt(sec)));
+    check("confidence 3: a reference no person has looked at says so", /No person has looked at any of the 13 yet\./.test(txt(sec)));
+    const th = sec.querySelector("table").querySelectorAll("thead th");
+    check("confidence 4: each table names its columns with th scope=col, its rows with th scope=row",
+      th.length === 7 && Array.prototype.every.call(th, function (h) { return h.getAttribute("scope") === "col"; })
+      && sec.querySelector("tbody th").getAttribute("scope") === "row" && txt(sec.querySelector("tbody th")) === "the classifier");
+    check("confidence 5: the table scrolls in its own labelled region", sec.querySelector(".cmn-conf-wrap").getAttribute("role") === "region"
+      && /Common Exhibits: each procedure/.test(sec.querySelector(".cmn-conf-wrap").getAttribute("aria-label")));
+    check("confidence 6: an unread source reads Could not be read, never a zero", /Common Credit Recommendations[\s\S]*Could not be read/.test(txt(sec)));
+    check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
+  }
+
+  // every view has an address (2026-11-04): #commons/<needs|build> opens that filter word; the view reports it back
+  {
+    const pressed = (x) => { const b = x.d.querySelector(".cmn-filter[aria-pressed=\"true\"]"); return b && b.getAttribute("data-show"); };
+    const keysOf = (x) => Array.from(x.d.querySelectorAll(".cmn-card")).map((c) => c.getAttribute("data-card"));
+    const ask = (x) => { x.w.CPL_SESSION.stashReturnTab("commons"); return (JSON.parse(x.w.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; };
+    const a = load({ hash: "#commons/needs", session: true });
+    await a.M.boot();
+    check("address 1: #commons/needs opens on Needs you", pressed(a) === "needs" && keysOf(a).join(",") === "requirements");
+    check("address 2: the view reports commons/needs", ask(a) === "commons/needs");
+    a.d.querySelector('.cmn-filter[data-show="build"]').click();
+    check("address 3: switched to Building, the view reports commons/build", ask(a) === "commons/build");
+    a.d.querySelector('.cmn-filter[data-show="all"]').click();
+    check("address 4: All reports the bare commons", ask(a) === "commons");
+    const b = load({ hash: "#commons", session: true });
+    await b.M.boot();
+    check("address 5: the bare #commons opens on All, as before", pressed(b) === "all" && keysOf(b).length === 8 && ask(b) === "commons");
+    const c = load({ hash: "#commons/nonsense", session: true });
+    await c.M.boot();
+    check("address 6: an unknown word leaves All", pressed(c) === "all");
+    // a later visit on an address that names a filter opens it
+    b.w.history.replaceState(null, "", "#commons/build");
+    b.w.dispatchEvent(new b.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+    check("address 7: a later visit on #commons/build redraws on Building", pressed(b) === "build" && keysOf(b).join(",") === "credentials,outcomes,skills");
+    check("address 8: nothing about the view is stored", !Object.keys(b.w.localStorage).some((k) => /filter|show|view/i.test(k)));
   }
 
   // the states, on their own

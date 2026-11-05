@@ -46,6 +46,36 @@
   var filters = { status: "", category: "", college: "", q: "" };
   var appEl, authBar, filtersEl, listMetaEl, listEl, formHostEl, searchEl;
 
+  /* The tab's address (every view has an address, 2026-11-04): the register's status word is its last part,
+     #map-data-quality/.../<open|reported|in-progress|fixed|verified|wontfix>. map_cleanup_views.js carries the
+     worklist's words before it and registers the same provider, since the keeper holds one per tab. The category,
+     college and search boxes are filters, not view words, and stay out of the address. */
+  function statusWord(s) { return String(s || "").replace(/_/g, "-"); }
+  function viewWords() { return filters.status ? [statusWord(filters.status)] : []; }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("map-data-quality", function () {
+    var w = [].concat(window.CPL_CLEANUP_VIEWS && CPL_CLEANUP_VIEWS._viewWords ? CPL_CLEANUP_VIEWS._viewWords() : [],
+      window.CPL_MAP_DQ && CPL_MAP_DQ._viewWords ? CPL_MAP_DQ._viewWords() : []);
+    return ["map-data-quality"].concat(w).join("/");
+  });
+  /* Opens the status the address names; the worklist's words and anything unknown are left alone. */
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "map-data-quality") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return false;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-data-quality") : null;
+    if (!a) return false;
+    var hit = false;
+    a.forEach(function (x) {
+      STATUSES.forEach(function (st) { if (statusWord(st.s) === x) { filters.status = st.s; hit = true; } });
+    });
+    return hit;
+  }
+
   // ── helpers ──
   function tp() { return (typeof window !== "undefined" && window.CPL_TEAM_PHRASE) || null; }
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
@@ -462,8 +492,13 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     if (!_shellBuilt) { buildShell(root); _shellBuilt = true; }
+    arrive();
     load();
   }
+  /* The tab boot activates on the first visit only; a later visit on an address that names a status opens it. */
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "map-data-quality" && _shellBuilt && arrive()) render();
+  });
 
   window.CPL_MAP_DQ = {
     activate: activate,
@@ -473,6 +508,7 @@
     _setSession: function (s) { sess = s; if (_shellBuilt) render(); },
     _setFilter: function (k, v) { filters[k] = v; if (_shellBuilt) render(); },
     _data: function () { return DATA; },
+    _viewWords: viewWords,
     _filtered: filtered,
     _exportText: buildExportText,
     _openForm: openForm,

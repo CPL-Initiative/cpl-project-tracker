@@ -8,7 +8,7 @@
 //   (2) a count whose place is the List's own filter (Open, Confirmed by a person) is a word that sets it; the List's own
 //       count is plain text until a filter is set; a count whose place is the Progress view stays a link;
 //   (3) the Progress view's opened page (Needs attention, the three questions) sits in a fold under the line, under its
-//       own prefix so its ids never meet the Progress view's; Hide the summary hides it and its word says so;
+//       own prefix so its ids never meet the Progress view's; Hide the top hides it and its word says so;
 //   (4) a failed read says the figures could not be read, once, with no retry loop; a summary whose modules do not
 //       load says so once, and never loops;
 //   (5) a title opens the panel: the MQ discipline, its local subjects in a sortable table, the codes it shares (a
@@ -38,6 +38,9 @@ function entry(code, extra) {
     cid_subject_codes: [], ccn_subject_code: null }, extra || {});
 }
 function open(code, extra) { return entry(code, Object.assign({ source: "data_modal", reviewed_at: null, reviewed_by: null }, extra || {})); }
+const LOCAL_COURSES = { discipline: "Automotive Technology", colleges: ["Alpha College", "Beta College", "Gamma College"],
+  by: { AT: [[0, "101", "Brakes", "CCC000000101"], [0, "102", "Engine Repair", "CCC000000102"]],
+    AUTO: [[0, "1", "Auto Basics", "CCC000000001"], [1, "10", "Auto Shop", "CCC000000010"], [2, "5", "Auto Systems", "CCC000000005"]] } };
 const SEED = {
   _counts: {}, _seeded_at: "2026-09-30", _synced_at: "2026-10-19T13:25:33Z",
   disciplines: {
@@ -90,6 +93,8 @@ function boot(opts) {
       return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(opts.commons))) });
     }
     const body =
+      u.indexOf("discipline_local_courses/index.json") >= 0 ? { files: { "Automotive Technology": "automotive-technology.json" } } :
+      u.indexOf("discipline_local_courses/automotive-technology.json") >= 0 ? LOCAL_COURSES :
       u.indexOf("discipline_canonical_subj4.json") >= 0 ? SEED :
       u.indexOf("kb_curation") >= 0 ? OVERLAY :
       u.indexOf("discipline_aliases.json") >= 0 ? ALIASES :
@@ -126,7 +131,7 @@ function col(d, name) {
   return H.indexOf(name);
 }
 /* The title cell carries its lines under the title (a suggestion, changed this visit), so a row is found by its title word. */
-function titleOf(r) { return txt(r.children[1].querySelector(".csl-open") || r.children[1]); }
+function titleOf(r) { return txt(r.querySelector(".csl-title .csl-open") || r.querySelector(".csl-title")); }
 function rowOf(d, disc) { return rows(d).find((r) => titleOf(r) === disc); }
 function cell(d, disc, name) { const r = rowOf(d, disc); return r ? txt(r.children[col(d, name)]) : null; }
 /* The engine draws an empty cell as a dash it can be pressed on. */
@@ -145,7 +150,8 @@ const COMMONS = { schema: 1, written_at: "2026-11-04T06:00:00Z", rows: [{ key: "
     { n: 93, words: "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities", open: "#canonical-subj4/progress" }] }] };
 function lineOf(d) { return d.querySelector("#cs-list .csl-line"); }
 function panel(d) { return d.getElementById("csl-panel"); }
-function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.children[1].querySelector("button.csl-open"); }
+function w0(d) { return d.defaultView; }
+function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.querySelector(".csl-title button.csl-open"); }
 
 (async function () {
   // ── (1) the line ──
@@ -186,14 +192,14 @@ function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.children[1]
   check("(3) ⭐ the Progress view's page sits in the fold: Needs attention and the three questions, under its own prefix",
     fold && !fold.hidden && !!fold.querySelector("#csl-pg-attention") && /What is it called\?/.test(txt(fold)) && /Whose code is it\?/.test(txt(fold))
     && !fold.querySelector("[id^='cs-pg-']"), fold && txt(fold).slice(0, 200));
-  check("(3) the fold's word reads Hide the summary and controls the fold", tog && txt(tog) === "Hide the summary"
+  check("(3) the fold's word reads Hide the top and controls the fold", tog && txt(tog) === "Hide the top"
     && tog.getAttribute("aria-expanded") === "true" && tog.getAttribute("aria-controls") === "csl-fold");
   tog.click(); await settle();
   const tog2 = tm.d.getElementById("csl-fold-w");
-  check("(3) ⭐ Hide the summary hides it; the word says Show the summary and keeps focus", tm.d.getElementById("csl-fold").hidden
-    && txt(tog2) === "Show the summary" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
+  check("(3) ⭐ Hide the top hides it; the word says Show the top and keeps focus", tm.d.getElementById("csl-fold").hidden
+    && txt(tog2) === "Show the top" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
   tog2.click(); await settle();
-  check("(3) Show the summary brings it back", !tm.d.getElementById("csl-fold").hidden && !!tm.d.querySelector("#csl-pg-attention"));
+  check("(3) Show the top brings it back", !tm.d.getElementById("csl-fold").hidden && !!tm.d.querySelector("#csl-pg-attention"));
 
   // ── (4) a failed read ──
   const tf = boot();
@@ -208,15 +214,36 @@ function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.children[1]
     && /AUTO/.test(txt(p.querySelector(".csl-pn-meta"))) && /Confirmed by a person/.test(txt(p.querySelector(".csl-pn-meta"))));
   const lt = p.querySelector("#csl-pn-locals");
   const lrows = lt ? Array.from(lt.querySelectorAll("tbody tr")).map((r) => Array.from(r.children).map(txt).join(",")) : [];
-  check("(5) ⭐ its local subjects, most used first, with each one's share and the Common SUBJ named",
-    lrows.join("|") === "AUTO,300,64%,The Common SUBJ|AT,120,26%,|AUT,50,11%," && /5 local codes on 470 local courses; 2 more/.test(txt(p)), lrows.join("|"));
+  // Colleges beside Courses, sorted by colleges (Sam, 2026-11-04, on Diesel Mechanics: "show me the count of colleges
+  // that use each subject code so I can see if one code is more common than others"; "keep the course column").
+  check("(5) ⭐ its local subjects, by the colleges that use each code, with courses, share, and the Common SUBJ named",
+    lrows.join("|") === "AUTO,3,300,64%,The Common SUBJ; Most courses; Most colleges,In use|AT,1,120,26%,,Not four letters|AUT,,50,11%,,Not four letters"
+    && /5 local codes on 470 local courses; 2 more/.test(txt(p)) && /Colleges counts the colleges/.test(txt(p)), lrows.join("|"));
   check("(5) the members table is a labelled region with th scope=col", lt.getAttribute("role") === "region" && !!lt.getAttribute("aria-label")
-    && lt.querySelectorAll("th[scope='col']").length === 4);
+    && lt.querySelectorAll("th[scope='col']").length === 6 && txt(lt.querySelectorAll("th")[1]) === "Colleges, high to low");
   const sortBtn = Array.from(lt.querySelectorAll("th button")).find((b) => /^Courses/.test(txt(b)));
   sortBtn.click(); await settle();
   const lrows2 = Array.from(panel(d).querySelectorAll("#csl-pn-locals tbody tr")).map((r) => txt(r.children[0]));
   check("(5) Courses opens high to low, so a press sorts it low to high", lrows2.join(",") === "AUT,AT,AUTO"
-    && /^Courses, low to high/.test(txt(panel(d).querySelectorAll("#csl-pn-locals th button")[1])), lrows2.join(","));
+    && /^Courses, low to high/.test(txt(panel(d).querySelectorAll("#csl-pn-locals th button")[2])), lrows2.join(","));
+  // (5b) the courses behind a count (Sam, 2026-11-04, on ECONMT's 55: "Add a hover over on the 55 so I can see the 55
+  //      course titles"): the panel reads its MQ discipline's course file as it opens, each count's tooltip names them,
+  //      a press lists them under the table, and the way to refile the code opens Local subjects on it.
+  const atBtn = panel(d).querySelector("#csl-lc-AT");
+  check("(5b) ⭐ a count is a word whose tooltip names its courses", !!atBtn && atBtn.tagName === "BUTTON" && /^AT 101  Brakes\nAT 102  Engine Repair$/.test(atBtn.title || ""), atBtn && atBtn.title);
+  atBtn.click(); await settle();
+  const lc = panel(d).querySelector(".csl-lc");
+  const lcRows = lc ? Array.from(lc.querySelectorAll("tbody tr")).map((r) => Array.from(r.children).map(txt).join(",")) : [];
+  check("(5b) ⭐ pressing it lists the courses with their control numbers, at their one college", !!lc && /The courses on AT/.test(txt(lc))
+    && lcRows.join("|") === "AT 101,Brakes,CCC000000101|AT 102,Engine Repair,CCC000000102" && /2 courses, all at Alpha College/.test(txt(lc))
+    && panel(d).querySelector("#csl-lc-AT").getAttribute("aria-expanded") === "true", lcRows.join("|"));
+  const refile = Array.from(lc.querySelectorAll("button")).find((b) => txt(b) === "Refile AT in Local subjects");
+  check("(5b) the courses offer the way to refile the code, and to hide them", !!refile && Array.from(lc.querySelectorAll("button")).some((b) => txt(b) === "Hide the courses"));
+  const noList = panel(d).querySelector("#csl-lc-AUT");
+  check("(5b) a code the build names no courses for says so in its tooltip", !!noList && /No course list for AUT/.test(noList.title || ""));
+  refile.click(); await settle();
+  check("(5b) ⭐ Refile opens the Local subjects view", /canonical-subj4\/local/.test(w0(d).location.hash) || !!d.querySelector("#cs-local:not([hidden])"), w0(d).location.hash);
+  w0(d).location.hash = "#canonical-subj4/list"; await settle();
   check("(5) the title's drawer moves in: the MQ discipline's other words", !!panel(d).querySelector(".csl-pdrawer"));
   check("(5) the rest folded: authority and note", !!panel(d).querySelector("details.csl-pn-more") && /C-ID code/.test(txt(panel(d).querySelector("details.csl-pn-more")))
     && /Note: a note/.test(txt(panel(d).querySelector("details.csl-pn-more"))));

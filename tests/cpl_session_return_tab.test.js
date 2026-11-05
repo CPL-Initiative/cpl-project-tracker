@@ -58,18 +58,21 @@ function twoTabs() {
 
 (function () {
   // ── (A) every caller routes through the keeper ───────────────────────────
+  // Every file that asks for a magic link (each POSTs to /auth/v1/otp). workplan_goals.js and cpl_news.js joined
+  // when the landing moved into the keeper (SkyJujube, 2026-11-04); unified_courses.js stashes its own return now.
   const callers = ["reviewer_signin.js", "projects_editor.js", "budget_editor.js",
-    "canonical_subj4.js", "credential_reference.js", "team_phrases.js", "tmc_builder.js"];
+    "canonical_subj4.js", "credential_reference.js", "team_phrases.js", "tmc_builder.js",
+    "workplan_goals.js", "cpl_news.js", "unified_courses.js"];
   callers.forEach(function (f) {
     const s = fs.readFileSync(f, "utf8");
     check("(A) " + f + " stashes through the keeper", /CPL_SESSION\.stashReturnTab/.test(s));
   });
-  const reader = fs.readFileSync("unified_courses.js", "utf8");
-  check("(A) ⭐ the READER takes it through the keeper", /CPL_SESSION\.takeReturnTab/.test(reader));
+  // The READER is the keeper itself since SkyJujube (2026-11-04): cpl_session.js lands the magic link.
+  check("(A) ⭐ the READER takes it through the keeper", /returnedTo = takeReturnTab\(\)/.test(src));
   check("(A) the keeper exposes both halves",
     /stashReturnTab: stashReturnTab/.test(src) && /takeReturnTab: takeReturnTab/.test(src));
   // ⚠ A sessionStorage-only write left anywhere re-creates the bug on that path.
-  callers.concat(["unified_courses.js"]).forEach(function (f) {
+  callers.forEach(function (f) {
     // Every remaining sessionStorage write of this key must be the FALLBACK arm
     // — i.e. on a line that also says `else`. A bare one anywhere re-creates the
     // bug on that path, silently, for whoever signs in from that tab.

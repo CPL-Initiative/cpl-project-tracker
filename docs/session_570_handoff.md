@@ -4,6 +4,8 @@ date: 2026-11-04
 session: 569 (SkyAntennae, the CPL Queue routine, 2026-11-04 10:12Z firing)
 tags: [handoff, scheduled-sessions, cer-procedures, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_577_handoff.md
 ---
 
 # You are Session 570

@@ -19,8 +19,11 @@
 // learning outcomes in the Title drawer, and the Common Course Reference's grain:
 // the local courses banded by their M-ID, the common course, each band with Open
 // in SkyView (prototype/skyview.html#outline/<id>, SkyView's own route to an
-// identity). Read only. Moving a course to another M-ID is a re-mint (CLAUDE.md
-// Rule 7, the playbook), and SkyView already moves a course; this List links there.
+// identity). The table is read only; a course's panel carries its common course's
+// card and, for a signed-in reviewer, Rename, Set the discipline and Confirm (ccCard,
+// carried from the Common Course Reference tab, SkyJujube 2026-11-04). Moving a course
+// to another M-ID is a re-mint (CLAUDE.md Rule 7, the playbook), and SkyView already
+// moves a course; this List links there.
 //
 // ⚠ The M-ID is TODAY'S, from unified_courses_members.js (the daily build), joined
 // on college and control number. coci_lookup_data.js's own identity column was
@@ -94,6 +97,14 @@
     // Progress (S559): the page's links reach 24px (WCAG 2.2 target size); its h2 names the page for the outline.
     ".cplcoci-pg-page a, .ccl-pg-page a, .ccl-pn-acts a, .ccl-pdrawer > a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cplcoci-pg-title { margin:0 0 4px; font-size:1.1rem; color: var(--seal-blue-text); }",
+    // A course's panel: its common course's card and its edits (ccCard). The controls are underlined words.
+    ".ccl-cc-name { margin:2px 0 2px; font-weight:600; color: var(--text-strong); }",
+    ".ccl-cc-said { margin:4px 0 6px; font-size:.82rem; color: var(--text-body); }",
+    ".ccl-pn-acts { display:flex; flex-wrap:wrap; gap:4px 14px; align-items:center; }",
+    ".ccl-cc-edit { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; margin:4px 0 8px; }",
+    ".ccl-cc-in { font: inherit; font-size:.85rem; min-height:28px; padding:2px 6px; min-width:0; flex:1 1 220px; max-width:100%;" +
+      " border:1px solid var(--border-strong); border-radius:4px; background: var(--surface-opaque); color: var(--text-body); }",
+    ".ccl-cc-fold > summary { cursor:pointer; min-height:24px; line-height:24px; font-size:.82rem; color: var(--text-body); }",
     ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
     ".cplcoci-meta { margin:0 0 6px; font-size:.8rem; color: var(--text-muted); max-width:var(--cpl-measure,none); }",
     ".cplcoci-viewseg { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; margin:0 0 10px; }",
@@ -239,7 +250,8 @@
    * CCR's grain: an M-ID two or more local courses share is a band over its run, A to Z by code; a
    * course alone in its M-ID, or in none, sits under "Not in a group", as the Exhibits AI sort's
    * loners do. The TOP code is a column the finder reads; it decides nothing here (Rule 7).
-   * Read only: no Edit, no flag, no find and replace. A course moves between M-IDs in SkyView. */
+   * The table has no Edit, no flag, no find and replace; the panel's common course card holds the edits (ccCard).
+   * A course moves between M-IDs in SkyView. */
   var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
   var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "No M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
     ["any", "Has any identity"], ["none", "No identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"]];
@@ -339,9 +351,68 @@
       { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
     ]);
   }
+  /* The jobs a Commons count names, as List filters (Sam, 2026-11-04: "the links on all surfaces should open to the
+     filtered view of the job needed"): the auditor's tag on a course's common course (kb/row_audit/latest.json, read only
+     when one is chosen; ten megabytes) and the identity codes the Subjects scan finds stray (kb/csr_out/latest.json).
+     The Commons counts common courses (cards); a filter here lists their local courses, banded by M-ID. */
+  var JOB_FILTERS = [["seedless", "Discipline no seed has touched", "seed_untouched_discipline"], ["units", "A unit anomaly", "unit_anomaly"],
+    ["nodesc", "No catalog description", "blank_description"], ["stray", "On a stray identity code", null]];
+  LIST_FILTERS = LIST_FILTERS.concat(JOB_FILTERS.map(function (f) { return [f[0], f[1]]; }));
+  var JOBS = { by: null, strays: null, error: null, strayError: null, loading: null };
+  function isJob(f) { return JOB_FILTERS.some(function (j) { return j[0] === f; }); }
+  function readJson(url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " answered " + r.status); return r.json(); }); }
+  function loadJobs() {
+    if (JOBS.by || JOBS.error) return Promise.resolve();
+    if (JOBS.loading) return JOBS.loading;
+    JOBS.loading = Promise.all([
+      readJson("kb/row_audit/latest.json").then(function (A) {
+        var by = {};
+        JOB_FILTERS.forEach(function (j) { if (j[2]) by[j[0]] = new Set(); });
+        (A.rows || []).forEach(function (row) {
+          (row.tags || []).forEach(function (t) { JOB_FILTERS.forEach(function (j) { if (j[2] === t) by[j[0]].add(row.id); }); });
+        });
+        JOBS.by = by;
+      }, function (e) { JOBS.error = String(e && e.message || e); }),
+      readJson("kb/csr_out/latest.json").then(function (C) {
+        var st = C && C._mid_codes && C._mid_codes.strays;
+        if (!Array.isArray(st)) throw new Error("kb/csr_out/latest.json has no stray codes");
+        JOBS.strays = new Set(st.map(function (x) { return x.code; }));
+      }, function (e) { JOBS.strayError = String(e && e.message || e); })
+    ]).then(function () { JOBS.loading = null; if (state.view === "courses") mountList(); });
+    return JOBS.loading;
+  }
+  function jobCounts() {
+    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0);
+    if (JOBS.memo && JOBS.memo.m === m && JOBS.memo.key === key) return JOBS.memo.n;
+    var n = {};
+    JOB_FILTERS.forEach(function (j) {
+      if (j[0] === "stray" ? !JOBS.strays : !JOBS.by) return;
+      var c = 0; m.rows.forEach(function (r) { if (jobPass(r, j[0])) c++; }); n[j[0]] = c;
+    });
+    JOBS.memo = { m: m, key: key, n: n };
+    return n;
+  }
+  function jobPass(r, f) {
+    if (f === "stray") return !!JOBS.strays && r.mids.some(function (id) { return JOBS.strays.has(String(id).split(" ")[0]); });
+    var set = JOBS.by && JOBS.by[f];
+    return !!set && r.mids.some(function (id) { return set.has(id); });
+  }
+  /* What a job filter holds, in words: its common courses and their local courses, or the read it waits on. */
+  function jobNote(f) {
+    var j = JOB_FILTERS.filter(function (x) { return x[0] === f; })[0];
+    if (f === "stray" ? (JOBS.strayError && !JOBS.strays) : (JOBS.error && !JOBS.by))
+      return el("p", { "class": "cplcoci-empty", role: "alert" }, [(f === "stray" ? JOBS.strayError : JOBS.error) + ", so this filter shows nothing. Reload the tab to try again."]);
+    if (f === "stray" ? !JOBS.strays : !JOBS.by) return el("p", { "class": "cplcoci-meta", role: "status" }, ["Reading the " + (f === "stray" ? "Subjects scan" : "auditor's cards") + " for this filter…"]);
+    var m = listBuild(), ids = {}, n = 0;
+    m.rows.forEach(function (r) { if (jobPass(r, f)) { n++; r.mids.forEach(function (id) { if (f === "stray" ? JOBS.strays.has(id.split(" ")[0]) : JOBS.by[f].has(id)) ids[id] = 1; }); } });
+    var cards = f === "stray" ? Object.keys(ids).length : JOBS.by[f].size;
+    return el("p", { "class": "cplcoci-meta" }, [j[1] + ": " + fmt(cards) + (cards === 1 ? " common course" : " common courses") +
+      (f === "stray" ? " on " + fmt(JOBS.strays.size) + " stray codes" : " the auditor marks") + "; their " + fmt(n) + " local courses are below, banded by M-ID. Its work is done in SkyView, one word from each band."]);
+  }
   function listFilterPass(r, L) {
     var f = L.f;
     if (!f) return true;
+    if (isJob(f)) return jobPass(r, f);
     if (f === "mid") return !!r.mid;
     if (f === "nomid") return !r.mid;
     if (f === "cid") return !!r.cid;
@@ -357,11 +428,20 @@
   function listLine(wrap, api) {
     var L = listState();
     loadProgress();
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (L.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) L.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!L.dashFolded;
-    wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold",
+    wrap.appendChild(api.line({ row: pg.row, error: pg.error != null ? pg.error : (pg.done && !pg.row ? "" : null), folded: folded, foldId: "ccl-fold", top: ["#tab-coci-lookup .cplcoci-lede"],
       onToggle: function () { L.dashFolded = !L.dashFolded; mountList(); },
-      control: function (open, text, li) {
+      control: function (open, text, li, w) {
         if (!open) return null;
+        // A count whose place is this List (the List first, S574): a word that sets its filter, plain text when set.
+        var m = /^#coci-lookup\/(?:courses|list\/([a-z]+))$/.exec(open);
+        if (m) {
+          var f = m[1] || "";
+          if (L.f === f) return null;
+          return api.word(text, function () { L.f = f; L.q = ""; L.limit = null; if (isJob(f)) loadJobs(); mountList(); }, { cls: (w || "") + " " + li });
+        }
         var out = /^https?:\/\//.test(open);
         return api.el("a", { href: open, cls: li, text: text, target: out ? "_blank" : null, rel: out ? "noopener" : null,
           "aria-label": out ? text + " (opens SkyView in a new tab)" : null });
@@ -393,6 +473,150 @@
     m.rows.forEach(function (r) { r.mids.forEach(function (id) { var a = by.get(id); if (!a) by.set(id, a = []); a.push(r); }); });
     return (m.byMid = by);
   }
+  /* ── The common course's card and its edits (SkyJujube, 2026-11-04) ─────────────────────────────────────────────
+     Carried from the Common Course Reference tab (unified_courses.js) before it retires into this List (Sam, 2026-11-03:
+     the List is each reference's one workspace; 2026-11-04: "Skyview is still too buggy to make the main workspace").
+     A course's panel shows its common course as the reference holds it (unified_courses_data.js, read the first time a
+     panel opens) and, for a signed-in reviewer, the three edits curators still used: Rename, Set the discipline and
+     Confirm the discipline. Each writes the same kb_curation row the tab wrote (unified_title, discipline; a merged
+     course's confirmation stamps validated_at on its rows), and the daily sync folds it into the file. Moving a course
+     to another M-ID stays in SkyView, under the re-mint playbook. What did not carry, by measured use (kb_curation, all
+     time on 2026-11-04): description edits and merge notes (never used), anchor proposals (1), dismissed suggestions
+     (12), Mind Meld notes (10); `git revert` of the tab's deletion brings any back. The merge editor and Suggested
+     merges follow in their own PR. */
+  var CC = { byId: null, mq: [], loading: false, failed: false, live: {}, liveAsked: {}, said: {}, busy: false, edit: {} };
+  var DSRC_WORDS = { top_code: "from its TOP code, a last-in-line signal that waits on a second signal or a person",
+    top_division: "from its TOP division, a last-in-line signal that waits on a second signal or a person",
+    subject_map: "from its subject code", subject_map_edge: "from its subject code", title_keyword: "from words in its title",
+    description: "from its catalog description", coci_reference: "from COCI's reference", crossdisc_remint: "from a re-mint across disciplines" };
+  function ccRedraw() { var api = listApi(); if (api && api.redraw) api.redraw(); }
+  function ccLoad() {
+    if (CC.byId || CC.loading || CC.failed) return;
+    var index = function () {
+      var D = window.CPL_UNIFIED_COURSES;
+      if (!D || !D.rows) { CC.failed = true; return; }
+      var by = new Map();
+      D.rows.forEach(function (c) { if (c && c.id) by.set(c.id, c); });
+      CC.byId = by; CC.mq = (D.mq_disciplines || []).slice();
+    };
+    if (window.CPL_UNIFIED_COURSES) { index(); return; }
+    CC.loading = true;
+    var done = function () { CC.loading = false; index(); ccRedraw(); };
+    if (window.CPL_TABS && CPL_TABS.loadScript) CPL_TABS.loadScript("unified_courses_data.js", "CPL_UNIFIED_COURSES", done);
+    else done();
+  }
+  /* A save made since the file was built shows as said, by whom and when: one read per common course, per visit. */
+  function ccLive(id) {
+    if (CC.liveAsked[id]) return;
+    CC.liveAsked[id] = 1;
+    fetch(REST + "/kb_curation?select=field,value,reviewer_email,reviewed_at&course_id=eq." + encodeURIComponent(id) +
+      "&field=in.(discipline,unified_title)", { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } })
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .then(function (rows) { var by = {}; (rows || []).forEach(function (x) { by[x.field] = x; }); CC.live[id] = by; ccRedraw(); })
+      .catch(function () { CC.live[id] = {}; });
+  }
+  function ccSession() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.get !== "function") return null;
+    var s = S.get();
+    return s && s.email && S.isFresh(s) ? s : null;
+  }
+  function ccFresh() {
+    var S = window.CPL_SESSION;
+    return S && typeof S.ensureFresh === "function" ? Promise.resolve(S.ensureFresh()).then(function () { return ccSession(); }) : Promise.resolve(ccSession());
+  }
+  function ccHeaders(sess) {
+    return { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json",
+      Prefer: "resolution=merge-duplicates,return=minimal" };
+  }
+  function ccVerified(c) { return !!(c.locked || c.reviewed_by || (c.flags && c.flags.reviewed) || c._saved); }
+  function ccOfficial(c) { return c.id_system === "C-ID" || c.id_system === "CCN-ID"; }
+  /* One write: the kb_curation rows the tab wrote, or a merged course's confirmation stamp. Says what happened. */
+  function ccSave(c, kind, value) {
+    if (CC.busy) return;
+    CC.busy = true; CC.said[c.id] = "Saving…"; ccRedraw();
+    ccFresh().then(function (sess) {
+      if (!sess) { CC.busy = false; CC.said[c.id] = "Your sign-in has ended. Sign in again, then save."; ccRedraw(); return null; }
+      var req;
+      if (kind === "confirm" && c.mt) {
+        req = fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(c.id), { method: "PATCH", headers: ccHeaders(sess),
+          body: JSON.stringify({ validated_at: new Date().toISOString(), validated_by: sess.email }) });
+      } else {
+        var field = kind === "rename" ? "unified_title" : "discipline";
+        req = fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess),
+          body: JSON.stringify({ course_id: c.id, field: field, value: value, reviewer_email: sess.email }) });
+      }
+      return req.then(function (res) {
+        CC.busy = false;
+        if (!res.ok) { CC.said[c.id] = "Not saved: the server answered " + res.status + ". Only a reviewer on the list may edit the reference."; ccRedraw(); return; }
+        var when = new Date().toISOString().slice(0, 10), who = sess.email;
+        if (kind === "rename") { c.title = value; (CC.live[c.id] = CC.live[c.id] || {}).unified_title = { value: value, reviewer_email: who, reviewed_at: when }; }
+        else if (kind === "discipline") { c.disc = value; c.dsrc = null; (CC.live[c.id] = CC.live[c.id] || {}).discipline = { value: value, reviewer_email: who, reviewed_at: when }; }
+        if (kind !== "rename") { c._saved = true; c.reviewed_by = who; c.reviewed_at = when; }
+        CC.edit[c.id] = null;
+        CC.said[c.id] = (kind === "rename" ? "Renamed " + c.id + " " + value : kind === "discipline" ? "Set the discipline to " + value : "Confirmed " + c.disc + " as the discipline")
+          + ". The daily sync folds it into the reference.";
+        ccRedraw();
+      });
+    }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
+  }
+  function ccCard(mid, h) {
+    ccLoad();
+    if (CC.loading || (!CC.byId && !CC.failed)) return [el("p", { "class": "cplcoci-meta" }, ["Reading the common course from the reference…"])];
+    if (!CC.byId) return [el("p", { "class": "cplcoci-meta" }, ["The reference's file (unified_courses_data.js) did not arrive, so its name, discipline and edits are not here. Reload the tab to try again."])];
+    var c = CC.byId.get(mid);
+    if (!c) return [el("p", { "class": "cplcoci-meta" }, [mid + " is not among the reference's " + fmt(CC.byId.size) + " common courses in today's file; SkyView holds the rest."])];
+    ccLive(mid);
+    var out = [], live = CC.live[mid] || {}, sess = ccSession();
+    var units = c.umin != null && c.umax != null && c.umin !== c.umax ? fmt(c.umin) + " to " + fmt(c.umax) + " units" : (c.units == null ? "" : fmt(c.units) + (c.units === 1 ? " unit" : " units"));
+    out.push(el("p", { "class": "ccl-cc-name" }, [c.title || mid]));
+    out.push(h.meta([c.disc ? c.disc + (DSRC_WORDS[c.dsrc] ? ", " + DSRC_WORDS[c.dsrc] : "") : "No discipline yet", c.credit, units,
+      c.conf == null ? "" : "Confidence " + Number(c.conf).toFixed(2),
+      ccVerified(c) ? "Confirmed" + (c.reviewed_by ? " by " + c.reviewed_by : "") + (c.reviewed_at ? " on " + c.reviewed_at : "") : "Not confirmed by a person"]));
+    var saved = [];
+    if (live.unified_title && live.unified_title.value !== c.title) saved.push("the name " + live.unified_title.value);
+    if (live.discipline && live.discipline.value !== c.disc) saved.push("the discipline " + live.discipline.value);
+    if (saved.length) out.push(el("p", { "class": "cplcoci-meta" }, ["Saved in COBI since this file was built: " + saved.join(" and ") + ". The daily sync folds it in."]));
+    if (CC.said[mid]) out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [CC.said[mid]]));
+    if (!sess) {
+      var mount = el("div", { "class": "ccl-cc-signin" });
+      var d = el("details", { "class": "ccl-cc-fold" }, [el("summary", null, ["Reviewers: sign in to rename it, set its discipline or confirm it"]), mount]);
+      d.addEventListener("toggle", function () {
+        if (!d.open || mount.childNodes.length) return;
+        var SI = window.CPL_REVIEWER_SIGNIN;
+        if (SI && typeof SI.mountInto === "function") SI.mountInto(mount, { title: "Sign in to edit the reference",
+          blurb: "A reviewer signed in with the magic link renames a common course, sets its discipline or confirms it here.", returnTab: TAB });
+        else mount.appendChild(el("p", { "class": "cplcoci-meta" }, ["The sign-in box did not load here; sign in from the header, then come back."]));
+      });
+      // Wrapped: the engine puts the Title drawer before the panel's first direct-child <details>, and this fold must
+      // not be that anchor (it would pull the drawer up into the common course).
+      out.push(el("div", { "class": "ccl-cc-signin-wrap" }, [d]));
+      return out;
+    }
+    var E = CC.edit[mid];
+    var acts = [];
+    if (E === "rename") {
+      var inp = el("input", { type: "text", id: "ccl-cc-name-in", "class": "ccl-cc-in", autocomplete: "off", "aria-label": "New name for " + mid });
+      inp.value = c.title || "";
+      var go = function () { var v = inp.value.trim(); if (v && v !== c.title) ccSave(c, "rename", v); };
+      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); else if (e.key === "Escape") { CC.edit[mid] = null; ccRedraw(); } });
+      out.push(el("p", { "class": "ccl-cc-edit" }, [inp, h.word(CC.busy ? "Saving…" : "Save the name", go), h.word("Cancel", function () { CC.edit[mid] = null; ccRedraw(); })]));
+    } else if (E === "discipline") {
+      var s = el("select", { id: "ccl-cc-disc-in", "class": "ccl-cc-in", "aria-label": "Discipline for " + mid });
+      s.appendChild(el("option", { value: "" }, ["Choose a discipline"]));
+      CC.mq.forEach(function (d0) { var o = el("option", { value: d0 }, [d0]); if (d0 === c.disc) o.selected = true; s.appendChild(o); });
+      var go2 = function () { if (s.value && s.value !== c.disc) ccSave(c, "discipline", s.value); };
+      out.push(el("p", { "class": "ccl-cc-edit" }, [s, h.word(CC.busy ? "Saving…" : "Save the discipline", go2), h.word("Cancel", function () { CC.edit[mid] = null; ccRedraw(); })]));
+    } else {
+      if (ccOfficial(c)) acts.push(el("span", { "class": "cplcoci-meta" }, ["An official " + c.id_system + " course keeps its authority's title."]));
+      else acts.push(h.word("Rename", function () { CC.edit[mid] = "rename"; CC.said[mid] = null; ccRedraw(); var n = document.getElementById("ccl-cc-name-in"); if (n) n.focus(); }));
+      acts.push(h.word(c.disc ? "Change the discipline" : "Set the discipline", function () { CC.edit[mid] = "discipline"; CC.said[mid] = null; ccRedraw(); var n = document.getElementById("ccl-cc-disc-in"); if (n) n.focus(); }));
+      if (c.disc && !ccVerified(c)) acts.push(h.word("Confirm " + c.disc, function () { ccSave(c, "confirm", c.disc); },
+        { "aria-label": "Confirm " + c.disc + " as the discipline of " + mid }));
+      out.push(el("p", { "class": "ccl-pn-acts" }, acts));
+    }
+    return out;
+  }
   function listPanelBody(r, h) {
     var m = listBuild(), out = [];
     out.push(h.title(r.subj + " " + r.num + ", " + r.title));
@@ -407,6 +631,7 @@
       members.forEach(function (x) { seenCol[x.college] = 1; });
       var nCol = Object.keys(seenCol).length;
       out.push(h.heading("Its common course: " + r.mid));
+      ccCard(r.mid, h).forEach(function (n) { out.push(n); });
       out.push(el("p", { "class": "ccl-pn-acts" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
       out.push(h.table({ id: "members", label: "The local courses " + r.mid + " holds",
         note: idWords(r.mid) + ", holding " + fmt(members.length) + (members.length === 1 ? " local course" : " local courses") + " at "
@@ -437,7 +662,7 @@
     wrap.appendChild(el("p", { "class": "cplcoci-lede" }, ["Every local course in COCI, one row each: " + fmt(c[""]) + " at " + m.colleges +
       " colleges, from COCI's " + (D._built_at || "") + " extract. " + (m.X
         ? fmt(c.mid) + " sit in " + fmt(m.mids) + " common courses of the Common Course Reference, each named by its M-ID, and each common course holding two or more of them is a band. "
-        : "") + "The List is read only; a course moves to another M-ID in SkyView, under the re-mint playbook."]));
+        : "") + "A course's panel shows its common course; a signed-in reviewer renames it, sets its discipline or confirms it there. A course moves to another M-ID in SkyView, under the re-mint playbook."]));
     var notes = [];
     if (!m.X) notes.push("Today's identity file (unified_courses_members.js) did not arrive, so no course shows its M-ID and the List has no bands. Reload the tab to try again.");
     else {
@@ -445,6 +670,8 @@
       if (m.moved) notes.push("COCI's extract names an older M-ID for " + fmt(m.moved) + " courses; a course's Identities drawer names it.");
     }
     wrap.appendChild(el("p", { "class": "cplcoci-meta" }, [notes.join(" ")]));
+    var L = listState();
+    if (isJob(L.f)) { loadJobs(); wrap.appendChild(jobNote(L.f)); }
     return true;
   }
   /* The most common title among a band's courses, as most of them spell it. */
@@ -536,7 +763,10 @@
         facts: function (id, members) { return bandFacts(members); },
         acts: function (id) { return [skyLink(id)]; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
-      filters: LIST_FILTERS, counts: function () { return listBuild().counts; }
+      filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
+      // The job filters count by the engine's own pass once their file is read; until then they show no count.
+      uncounted: function (id) { return isJob(id) && (id === "stray" ? !JOBS.strays : !JOBS.by); },
+      onFilter: function (id) { return isJob(id) ? loadJobs() : null; }
     };
     return spec;
   }
@@ -672,10 +902,16 @@
     return d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Los_Angeles" }) + " PT";
   }
   function goView(v) { return function () { state.view = v; renderShell(); }; }
+  /* A count's job, on the Courses List under its filter (S574). */
+  function goList(f) {
+    return function () { state.view = "courses"; var L = listState(); L.f = f; L.q = ""; L.limit = null; L.panel = null; if (isJob(f)) loadJobs(); renderShell(); };
+  }
   function progressSpec() {
     var row = pg.row || {}, F = row.facts || {}, T = F.tags || {}, Q = pg.Q;
     var total = typeof F.total === "number" ? F.total : null;
-    var sky = row.tab || SKYVIEW;
+    // SkyView is the second word (Sam, 2026-11-04: "Skyview is still too buggy to make the main workspace"); the row's
+    // home is now this tab's List.
+    var sky = /^https?:\/\//.test(row.tab || "") ? row.tab : SKYVIEW;
     var free = function (k) { return total != null && typeof T[k] === "number" ? total - T[k] : null; };
     var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
     var open = calls.filter(function (c) { return !(c && c.answer); });
@@ -683,8 +919,9 @@
     var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + first(Q.changes[0].text) : "";
     var items = (Array.isArray(row.issues) ? row.issues : []).filter(function (i) { return i && (i.n == null || i.n > 0); })
       .map(function (i) {
+        var lf = /^#coci-lookup\/list\/([a-z]+)$/.exec(i.open || "");
         return { n: i.n, words: i.words + (i.owner ? "; " + i.owner + " fixes them." : "."),
-          action: { words: "Open SkyView", href: sky } };
+          action: lf ? { words: "Open them in the List", go: goList(lf[1]) } : { words: "Open SkyView", href: sky } };
       });
     if (typeof F.needs_repair === "number" && F.needs_repair > 0)
       items.unshift({ n: F.needs_repair, words: "cards the auditor marks needs repair, scoring 0.40 to 0.64.", action: { words: "Open SkyView", href: sky } });
@@ -699,7 +936,7 @@
       status: open.length ? "Needs you" : "In progress",
       lede: "Local courses grouped into shared common courses, each named by its M-ID and mapped in SkyView.",
       read: pg.at ? "Figures read " + dayOf(pg.at) + "." : "",
-      links: [{ words: "Open SkyView", href: sky }, { words: "Open the Courses List", go: goView("courses") },
+      links: [{ words: "Open the Courses List", go: goView("courses") }, { words: "Open SkyView", href: sky },
         procs && procs.n != null ? { words: "How it is kept: the alias chain, the re-mint playbook, TOP last in line", href: sky } : null].filter(Boolean),
       progress: { n: typeof F.ready === "number" ? F.ready : null, of: total, short: "ready",
         words: "common-course cards the auditor scores 0.85 or better",
@@ -957,9 +1194,28 @@
        opens on the Courses List. */
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] === TAB && (parts[1] === "progress" || parts[1] === "courses" || parts[1] === "programs")) state.view = parts[1];
+    routeList();
     renderShell();
   }
 
+  /* #coci-lookup/list/<filter> opens the Courses List on one (a Commons count names the job, S574): at the first boot,
+     on a later arrival after its reset, and on a hash change while the tab is open. */
+  function routeList() {
+    var parts = String(location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] !== TAB || parts[1] !== "list" || !parts[2] || !LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) return false;
+    state.view = "courses";
+    var L0 = listState(); L0.f = parts[2]; L0.q = ""; L0.limit = null; L0.panel = null;
+    if (isJob(parts[2])) loadJobs();
+    return true;
+  }
+  window.addEventListener("hashchange", function () { if (_booted && state.data && routeList()) renderShell(); });
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
+    var f = state.ls && state.ls.f;
+    if (state.view === "courses" && f && LIST_FILTERS.some(function (x) { return x[0] === f; })) return TAB + "/list/" + f;
+    return TAB + "/" + state.view;
+  });
   // A new visit drops the List's filters, sort, selection and open drawer (tabs never remember a
   // filter, Sam, 2026-10-21); the engine keeps its sorted order, so the repaint is a filter pass.
   var awayFromTab = false;
@@ -968,6 +1224,7 @@
     if (t !== TAB) { awayFromTab = true; return; }
     if (!awayFromTab || !_booted) return;
     awayFromTab = false; state.ls = null;
+    if (state.data && routeList()) { renderShell(); return; }
     if (state.data && state.view === "courses") mountList();
   });
 

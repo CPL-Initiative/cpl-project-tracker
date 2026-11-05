@@ -1,140 +1,111 @@
 ---
-title: "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)"
-date: 2026-11-04
-session: CER redesign build, side session (SkyPawpaw)
-tags: [handoff, cer, commons-list, cr-reference, subjects, program-requirements, coci-lookup]
+title: "CER redesign handoff: the Subjects List as Sam's workspace; Commons views fold and resize (SkyJujube)"
+date: 2026-11-05
+session: CER redesign build, side session (SkyJujube)
+tags: [handoff, cer, commons-list, common-subjects-reference, exhibits, check-alignment]
 status: current
 ---
 
-# You are SkyQuince, the Lists' next build
+# You are SkyKumquat, the Lists' next build
 
-SkyPawpaw ran on 2026-11-04 from about 02:24Z to 03:45Z (Sam named it; the greeting cited SkyTeaberry's handoff, and the
-file held it). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt. `cpl_memory`:
-`cr-worklist-retired-into-list-2026-11-04` (verified), `subjects-reference-view-retiring-into-list-2026-11-04` and
-`pitfall-qs-hint-wiped-by-arrival-reset-2026-11-04` (proposed). Skipped: `README.md`, `kb/README.md`, the pipeline view,
-a new KB note (the List norms note took the record), the lessons doc (nothing retired), and the decision sheet (nothing
-waits on Sam from this run). The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (565). The lint flags two
-items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000 bytes, and the commits since `session_565`.
+SkyJujube ran 2026-11-04 21:21Z to 2026-11-05 ~00:40Z with Sam driving the Common Subjects List live. Another Cowork
+session also named SkyJujube owns the Courses carry (`coci_lookup.js`, `unified_courses.js`, `lanes/commons.md`); a
+third (CO Academic Affairs setup) owns `our_process.js`. **Light checkpoint** (context at the warn line): no Roadmap
+row moved, no re-mint, no Rule 10 write. Skipped: `README.md`, `kb/README.md`, the pipeline view, the decision sheet,
+`program-requirements.json` (the routine's).
 
-## What shipped (SkyPawpaw)
+## What shipped (all merged)
 
-- **#2750** (merged): **CR's worklist retired into the List.** Deleted the worklist's render (group cards, picker,
-  filter row, stat row, CSV), its write handlers and its control CSS; the view row reads Progress, List, and
-  `#cr-reference/worklist` opens the List. `tests/cr_reference.test.js` keeps Parts A, C and B17; Part B lives on in
-  `cr_list_worklist_port`. Two suites caught what the worklist alone had carried: the header pointer
-  (`team_phrase_affordance`) and the one prose measure (`cobi_prose_measure`).
-- **#2751** (merged): **Subjects' List carries the Reference view.** Its lists became List filters (No code yet,
-  Confirmed, On the CCN code, On the C-ID code, An official code differs, Proposed); every Progress count, old filter
-  address and quickstart hint opens the List; a TOP column takes the TOP filter's place; the head carries the sign-in and
-  Run the SUBJ check; the panel folds the CPL window and the C-ID and CCN courses on its codes.
-  `tests/csr_list_reference_port.test.js` (17).
-- **#2752** (merged): **Subjects' Reference view retires.** About 1,000 lines out of `canonical_subj4.js` (toolbar,
-  table, row editor, variants and CPL modals); the check's *show* opens the panel; the panel lists *Codes it could take*
-  with a *Take* word. The table's suites read the List through `tests/csr_list_harness.js`. Both HTMLs mount the views
-  before `#cs-mount`. Five ported suites re-baselined their check floors (`tests/check_floor.json`), each loss named.
-- **This PR**: the table's 55 rules leave the tab's `<style>` (both HTMLs) and the box's injected CSS with them;
-  `csr_ui_pass` checks the rules that stay and that the table's are gone; `cobi_prose_measure`'s layout sample moves to
-  `.cr-title-cell`.
+#2778 side by side's chips stay in their cell. #2781 saves renew the sign-in (the 401s), a row press edits and moves
+the panel, local-code counts name their courses (`kb/discipline_local_courses/`). #2782 Colleges beside Courses, the
+Note seeded on a code edit, a reason to keep, Check alignment (Subjects and Exhibits), the scan list shortens. #2783
+*What a Common SUBJ is* (`prototype/common_subj_explainer.html`) and KB note section 5. #2785 *Hide the top* on every
+Commons view, side panels resize, Take becomes Use, a row saved since the scan leaves the scan list.
+CPLBrain#663 Sam's Common SUBJ framing, verbatim. **The sync ran and was reverted** (phase-1e-sync, 00:15Z): new codes in the file ahead of their
+M-IDs fail `tests/csr_trail_rules_test.py` (canonical codes with no identity; strays 2,488 of 75,581). Sam's saves stay
+in `kb_curation`; sync them with the re-mint, in one window.
+
+## Sam's decisions this run
+
+- The Common SUBJ model (his words in the braindump): four-letter codes for every MQ discipline, adopted from C-ID and
+  CCN where they exist; he hopes C-ID's 21 short prefixes move to the CCN standard.
+- Keep ELMT. Keep cards and edits on the List: row press edits; Use, not Take; colleges beside courses; a reason to keep.
+- Check alignment belongs on every Commons List.
 
 ## Open work, in order
 
-1. **Merge this PR** (the Subjects CSS) once `test` passes on its head.
-2. **The original views retire as each List does what they do**, one PR each, tests ported first: Programs' older view,
-   then Courses' (Courses keeps SkyView first). Inventory what only the view has, carry it into the List or its panel
-   (one PR), then delete (the next), as Subjects went.
-3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
-4. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
-   to the routine; the Catalog's *Courses that may align*, once a source names courses.
+1. **The re-mint dry-run** that carries the evening's new codes (Cabinet Making WWKC, Furniture Making WWKF, Graphic
+   Arts GFCD, Building Codes CBIT, Diesel DIES, AI CSIS and others) onto their M-IDs. Read
+   `docs/reference/mid_lifecycle.md` and `docs/coursecontrolnumber_remint.md` first; the refreshed
+   `kb/subj4_dryrun/report.md` is the starting list. The apply waits on Sam.
+2. **Check alignment on CR, Programs and (offer it to the other session) Courses**: engine `edit.extra`; worked
+   examples `codeAudit` (canonical_subj4.js), `exhibitAudit` (exhibits.js).
+3. **After the 06:17 scan**, confirm the answered findings left; any left are the scan's rules disagreeing with a note.
+4. Carried: ECONMT and Electricity's adult-education codes (Sam's refile); the Subjects card's second count; the
+   stacked Units cells' right alignment.
 
 ## Lessons to honor
 
-- **Deleting a view can delete a guard's only evidence.** The worklist held CR's only "in the header" pointer and only
-  prose measure; run the suites that scan source (`team_phrase_affordance`, `cobi_prose_measure`, `csr_ui_pass`) before
-  the push, not only the tab's own.
-- **A quickstart hint lands before its tab does.** The tab's arrival reset (tabs never remember a filter) wipes it;
-  hold it for that one arrival (`state.qsHeld`).
-- **A save's `render()` must not repaint the List.** The List's callers redraw it and put focus back; a second repaint
-  from `render()` loses the focus (csr_list (4)).
-- **Port a suite that has no List engine by giving it one:** the shell's `CPL_TABS.loadScript` running
-  `commons_list.js` in the page's context (`tests/csr_list_harness.js`).
-- **Build the next PR on the open one, push it after the squash:** `git rebase --onto origin/main <old-branch>`.
-- **A ported suite runs fewer checks than its floor** (`tests/check_floor.json`), and CI fails the shard. When the
-  drop is the retired view's own checks, lower that file's entry by hand and name the loss in the commit (the full
-  `npm run test:floor` refuses a shard and rewrites every entry).
-- **A suite can print its FAIL lines indented** (`axe_select_names`); match `(^|\s)FAIL` when sweeping, never `^FAIL`.
-- **Never hide a check's exit code behind a pipe:** `check_generated.sh | tail -1` let a stale dependency map through.
-- **`npm test` locally exceeds the 30-minute background limit;** run the suites that touch the change, and let CI's
-  shards run the rest.
+- Read a session token at write time; a laptop sleep outlives the copy taken at load.
+- A code change and its re-mint land together: syncing new codes alone turns main red. Notes alone could sync any time.
+- Verify a "fix the display" ask against the database: the evening's "reverts" were saves that never landed.
+
+## Let go
+
+No PR watch, no check-in, no artifact watch remain.
+
+---
+
+# SkyLoquat's record (2026-11-04)
+
+SkyLoquat ran on 2026-11-04 from about 18:55Z (Sam's greeting named SkyTeaberry and cited SkyInkberry's handoff, three
+sessions stale; the file held SkyQuince's, which named SkyLoquat, and this session took that name). SkyQuince was still
+live on #2773 (the Commons look); the two agreed one writer per file by message: this run kept out of both HTMLs and
+`commons_look.js`. **Light checkpoint:** no §11 row moved, no re-mint, no data receipt, nothing waits on Sam. Skipped:
+`README.md`, `kb/README.md`, the pipeline view, a new KB note, the lessons doc, `cpl_memory` rows and the decision
+sheet. The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (575), and so do its session numbers: a side
+session marks its work with its moniker, never an S-number.
+
+## What shipped (SkyLoquat)
+
+- **PR 3 (this one): Program records is gone.** `viewRecords`, its college sections, the Records view word,
+  `filterRecords`, `listedColleges`, the CIP batch reader (`loadCips`, `sectorOf`, `state.cip`), `state.rq`/`rshow`/
+  `rscope`, `linkPick`/`addPick`/`savePick`/`saveFilt`/`rowsOf`/`activeIn`/`readingText`/`EAGER_COLLEGES` and three
+  dead CSS rules: about 420 lines. `goTo` still maps an older `view: "records"` address to the List.
+- **Carried first, found in the inventory:** the drafts to the college (the copyable message) lived only in the view's
+  college section; the List panel's word pointed to Catalogs, whose count pointed back to Program records. The panel
+  now offers *Draft the message to …* (`collegeDraftsSlot`: reads the college's records once, then `draftsBox`, open),
+  and Catalogs' count is a word that opens the List on the college.
+- **Tests ported:** `program_requirements.test.js` (438 to 367) reads the card through side by side (`cardOf`,
+  `cardAt`, `fullRows` over the new `_ensureRows` hook); the view-only blocks (13's search and Show, 21, 24b-e, 24i,
+  24k, 24m, 24n) went, their shared parts carried: the dropdown's keyboard and outside click and the unread-district note
+  (port (12)), the drafts box (port (14)), Needs a fix in place (port (15)). Port suite 52. `cpl_pathways_college_status`
+  (d) checks the conflict rule against `machineFails` and the List's filter.
+- **`a11y.config.js`:** the Records routes went; the record seed opens side by side directly and closes First Light's
+  greeting (it had covered the record in every shot); the filter routes open the List's College dropdown. The six
+  Program Requirements targets pass, light and dark, checked by screenshot.
+
+## Open work, in order
+
+1. **Merge this PR** once `test` passes on its head.
+2. **Courses' older view** (Courses keeps SkyView first): inventory what only the view has, carry it into the List or
+   its panel (one PR), then delete (the next). Follow every "open it on X" word to its end before deleting.
+3. **Seen, not fixed:** in side by side at 1024px a course's COCI chip (`.prh-coci`) overlaps the course column's
+   C-ID and M-ID chips (Art's ARTH 4, the a11y seed). Older than this run.
+4. **Carried:** the Subjects card's second count once the confirms sync to a file; after each of Sam's runs through
+   Another look, move the panel rows the fold names; the first rule sent to the routine; the Catalog's *Courses that
+   may align*, once a source names courses.
+
+## Lessons to honor
+
+- **An inventory reads the pointers, too.** The drafts were missed because the panel *pointed* at them: the word led to
+  Catalogs, and Catalogs led back to the view being deleted. Follow each pointer to the thing itself.
+- **A light row draws a card without its gaps.** Read the record whole (`_ensureRows`) before a test reads its card.
+- **Side by side's save moves on;** the in-place verdict flow (the said line, the state line) is the List panel's.
+- **An a11y pass is not a look.** The sweep passed while First Light's greeting covered the record; only the
+  screenshots (`--shots <dir>`) showed it. Close the greeting in the seed, then look.
 
 ## Let go
 
 At sign-off: drop the PR watch on this PR once merged. No check-in, no artifact watch.
 
----
-
-# SkyTeaberry's record (2026-11-04)
-
-SkyTeaberry ran on 2026-11-04 from about 00:00Z to 01:15Z (Sam named it; the greeting cited SkyInkberry's handoff, and
-the file held SkyMulberry's, which named SkyMedlar). **Light checkpoint:** no §11 row moved, no re-mint, no data receipt.
-One `cpl_memory` row: `pitfall-null-list-limit-empties-table-2026-11-04` (proposed). Skipped: `README.md`,
-`kb/README.md`, the pipeline view, a new KB note (the List norms note took the record), the lessons doc (nothing
-retired), and the decision sheet (nothing waits on Sam from this run). The CPL queue's `docs/session_<N>_handoff.md`
-stays the routine's (565). The lint flags two items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000
-bytes, and the commits since `session_565` (its checkpoint trigger).
-
-## What shipped (SkyTeaberry)
-
-- **#2745** (merged): **Subjects and Programs take the line, the folded summary and the side panel.** Subjects'
-  panel: an MQ discipline's local subjects (most used first, each share), the codes it shares (a collision, or shared
-  by design; another discipline's name opens its panel) and Confirm this pick with its own status line. Programs'
-  panel: the record's checks in words and its courses block by block with title, units and the CPL on record at the
-  college; a light record is read once from the panel. **Engine fix:** a count pressed on CR's line set
-  `L.limit = null` and `slice(0, null)` drew an empty table; `listState` restores the first page, callers pass
-  `api.LIMIT`. `h.table` takes an opening `sort`; the line's pair words stop at a colon too.
-  `tests/csr_list_panel.test.js`, `tests/program_requirements_list_panel.test.js`.
-- **#2746** (merged): **Courses, the fifth.** Its counts open SkyView in a new tab (Courses keeps SkyView first); the line
-  shares the tab's one read of the Commons file with its Progress page; a course's panel lists the local courses its
-  M-ID holds, the Title drawer (description, outcomes) moved in. The Title drawer's tests in `coci_list` and
-  `coci_lookup` now drive it inside the panel. `tests/coci_list_panel.test.js`. This checkpoint rides in it.
-
-- **#2747** (merged): Exhibits' panel on the engine's parts (each exhibit's number links to MAP); Exhibits' and CR
-  Progress's Commons reads through `CPL_COMMONS_LIST.readCommons` (`tests/commons_one_reader.test.js`); the CR wording
-  panel does what the worklist's group card did (Split out, Put back, Name the group by it, Add a wording, the note
-  with Defer, Clear). The engine's `h.table` takes a fixed column of controls.
-- **#2748** (merged): the CR List opens first; Progress counts and `#cr-reference/<filter>` open it, with *Folded by a rule* and
-  *Held by a screen*; the official-title warning rides in the panel; `#cr-reference/worklist` keeps the worklist.
-
-- **This PR**: the worklist's Part B guards ported onto the List (`tests/cr_list_worklist_port.test.js`, 16), and a
-  *Decided by* column on the CR List.
-
-## Open work, in order
-
-1. **Merge the worklist-port PR** once `test` passes on its head (#2746, #2747 and #2748 merged).
-2. **The original views retire as each List does what they do**, one PR each, tests ported first. **CR's worklist is
-   ready to delete:** the List opens first and does what it did, and `tests/cr_list_worklist_port.test.js` carries
-   Part B (B1 to B16) onto the List, with a *Decided by* column for the CSV's who-and-when. Delete the worklist's render
-   (`groupCard`, its picker and `wire`'s worklist handlers, the worklist view word, `#cr-reference/worklist`), then
-   Part B of `tests/cr_reference.test.js` and Part D (the worklist's own control CSS; the engine's control rules
-   cover the List). Keep Parts A and C (the builder's data). Then Subjects' Reference
-   view (its toolbar filters, the SUBJ check modal), then Programs' and Courses' older views. Check what only the
-   view still has and carry it into the panel first.
-3. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
-4. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
-   to the routine; the Catalog's *Courses that may align*, once a source names courses.
-
-## Lessons to honor
-
-- **A null page limit empties a List.** `rows.slice(0, null)` is `[]`. Reset with `api.LIMIT`; the engine now guards it.
-- **The engine's `redraw` repaints the table only.** A control that changes the head (the line, the fold) calls the
-  tab's own render.
-- **A raw-hex lint reads `#2736` as a color.** Write PR numbers in comments as `PR 2736` in files whose tests scan for hex.
-- **Before a title press moves into a panel, port the Title drawer's tests** (`.P-pdrawer` inside `#P-panel`) and
-  filter a fetch log by its table (`course_outcomes`) rather than reading `fetches[0]`.
-- **A 503 retries after a delay** in Programs' reads; a test that wants a failure answers 400.
-- **A lane edit can tip its budget.** Run the lint before the push, not after.
-
-## Let go
-
-At sign-off: drop the PR watch on #2746 and the check-in `trig_01D7fGoDcNALyBK5UaqiHQP3` once it merges. No artifact watch.
-
----

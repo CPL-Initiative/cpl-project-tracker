@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 573,
+   "count": 574,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3416,6 +3416,26 @@
      "title": "A remembered toggle hides the default from its author",
      "type": "methodology",
      "updated": "2026-09-02"
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [
+      "kb/_build_commons_status.py",
+      "kb/cer_procedures_out/saved/",
+      "kb/unified_titles.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-renamed-family-is-not-a-correction.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "commons",
+      "procedures",
+      "confidence",
+      "curation"
+     ],
+     "title": "A renamed family is not a correction",
+     "type": "methodology",
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-10-19",
@@ -10589,7 +10609,7 @@
      ],
      "title": "Common SUBJ vs Local SUBJ, and the real discipline\u2194subject invariant",
      "type": "reference",
-     "updated": "2026-06-23"
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-06-25",
@@ -13701,7 +13721,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 97,
+   "count": 98,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13888,7 +13908,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-04",
+     "created": "2026-11-05",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13896,12 +13916,11 @@
       "handoff",
       "cer",
       "commons-list",
-      "cr-reference",
-      "subjects",
-      "program-requirements",
-      "coci-lookup"
+      "common-subjects-reference",
+      "exhibits",
+      "check-alignment"
      ],
-     "title": "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)",
+     "title": "CER redesign handoff: the Subjects List as Sam's workspace; Commons views fold and resize (SkyJujube)",
      "type": null,
      "updated": ""
     },
@@ -14108,6 +14127,24 @@
       "atomic-land"
      ],
      "title": "CourseControlNumber Re-mint \u2014 Decisions & Lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "path": "docs/courses_retirement_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "commons-list",
+      "courses-list",
+      "ccr",
+      "signin",
+      "views"
+     ],
+     "title": "Courses retirement handoff: the old Common Course Reference tab into the Courses List (SkyJujube)",
      "type": null,
      "updated": ""
     },
@@ -15596,7 +15633,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 64,
+   "count": 65,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16174,7 +16211,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-03"
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-08-28",
@@ -16253,6 +16290,22 @@
      "title": "Context-pressure hook \u2014 install and mechanics",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "path": "docs/reference/data_sources.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-sources",
+      "wishlist",
+      "procedures"
+     ],
+     "title": "Data sources: the register of datasets that could fill a Commons gap",
+     "type": null,
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-08-30",
@@ -16516,8 +16569,43 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 541,
+   "count": 543,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 577,
+     "path": "docs/session_577_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "governance",
+      "onboarding",
+      "claude-team",
+      "library",
+      "co-academic-affairs"
+     ],
+     "title": "Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 575,
+     "path": "docs/session_575_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "data-sources",
+      "scheduled-sessions"
+     ],
+     "title": "Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-04",
      "governs": [],
@@ -25740,5 +25828,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1375
+ "total": 1380
 }

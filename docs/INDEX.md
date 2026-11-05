@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-04
+updated: 2026-11-05
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 573 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 574 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 97 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 541 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1375** | |
+| Workstream docs | 98 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Reference (pull-side) | 65 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 543 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1380** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,11 +122,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-11-04 S573 SkyNeedle (CPL Queue routine): merged S572's #2762; the cert link's IAI, Intuit and DRE families, 9 titles to 9 certs (#2763); the hand-family work stops, the remaining gap is issuers the catalog does not read; light checkpoint; handoff 574.
+- 2026-11-05 S576 SkyMice (Sam's session): two Claude Team accounts (MAP team, CO Academic Affairs pilot) with the kit and runbook in CPLBrain (#662, #664); Our Process *Getting set up* (#2784, #2786); the Library names a draft's version, sorts by last modified, quiets the project count (#2788); light checkpoint; handoff 577.
+- 2026-11-04/05 SkyJujube (Sam's session, the Lists side session): the Subjects List as Sam's workspace (#2778, #2781, #2782, #2783, #2785): saves renew the sign-in, row press edits, Check alignment (Subjects and Exhibits), Colleges beside Courses, Use, *What a Common SUBJ is*, Hide the top and resizable panels on every Commons view; the sync ran; light checkpoint; handoff `docs/cer_redesign_handoff.md`.
+- 2026-11-04 SkyJujube (Sam's session, a side session): sign-in lands in the keeper and returns to the view (#2775); the Courses List's panel carries the common course card and its edits (#2776); the context meter reads again (#2777); every COBI view has an address (#2779); light checkpoint; handoff `docs/courses_retirement_handoff.md`.
+- 2026-11-04 S573 SkyNeedle (Sam's session): the Commons path mock; every Commons view in Malone's look (#2764); the register of data sources (#2765); the one queue (#2766) and the confidence count (#2767) on the CPL Commons tab; light checkpoint; handoff 575.
 - 2026-11-04 S572 SkyBlackEye (CPL Queue routine): merged S571's #2761; the cert link's NWCG and SWRCB families, 12 titles to 4 certs (#2762); light checkpoint; handoff 573.
 - 2026-11-04 S571 SkyHoags (CPL Queue routine): merged S570's #2760; the cert link's AWS welding and Amazon Web Services families, 10 titles to 6 certs (#2761); light checkpoint; handoff 572.
 - 2026-11-04 S570 SkyFireworks (CPL Queue routine): the cert link's PMI, ICC, CDPH and EMSA families, 17 titles to 16 certs (#2760); light checkpoint; handoff 571.
 - 2026-11-04 S569 SkyAntennae (CPL Queue routine): merged S568's #2758; the cert link's Autodesk, NCCER and ASME families, 13 titles to 20 certs (#2759); light checkpoint; handoff 570.
-- 2026-11-04 S568 SkyMalin (CPL Queue routine): the cert link's FAA family, 11 titles to 15 certs (#2758); light checkpoint; handoff 569.
-- 2026-11-03 SkyTrue: the List becomes each common reference's workspace (#2735, #2736); the Local subjects List (#2737); the Exhibits side panel (#2738); light checkpoint.
-- 2026-11-03 S562 SkyPinwheel (CPL Queue routine): the Commons, funding and program requirements lanes back under budget, their dated text moved verbatim to lessons and two lessons docs rolled into archives; the Commons' Exhibit-tiles NEXT found already built; light checkpoint; handoff 563.

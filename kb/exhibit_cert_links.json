@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-04T06:20:04+00:00",
+ "_reference_generated_at": "2026-11-04T17:01:29+00:00",
  "counts": {
   "certs_linked": 235,
   "titles_linked": 280,

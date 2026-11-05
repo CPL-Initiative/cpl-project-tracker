@@ -58,7 +58,7 @@ view's *Confirm them* once led to a filter whose box saved only a changed code, 
 (2026-11-03). **The List is the workspace
 (2026-11-04, the List norms):** over the List, the engine's line of the subjects row in `kb/status/commons.json` (Open
 and Confirmed by a person set the List's own filters), and the Progress view's opened page folded behind *Hide the
-summary* (prefix `csl-pg-`). An MQ discipline's title opens a side panel: its local subjects (most used first, each
+summary* (prefix `csl-pg-`). A press on a row opens its edit row and its side panel: its local subjects (most used first, each
 share), the codes it shares (a collision, or shared by design; another MQ discipline's name opens its panel),
 *Confirm this pick* with its own status line, and the authority, note and identity codes folded. Guard
 `tests/csr_list_panel.test.js`. **The Reference view retired into the List (2026-11-04, SkyPawpaw):** its lists are
@@ -69,7 +69,18 @@ discipline's panel; the panel folds the CPL window and the C-ID and CCN courses 
 could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
 table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
 `csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
-the injected box CSS with it. **The Local subjects List** (Sam, 2026-11-03: *"yes on
+the injected box CSS with it. **The List as Sam's workspace (SkyJujube, 2026-11-04/05; the story in `docs/common_subject_code_tab_lessons.md`):** saves
+read the session at write time (`freshSess`) and a lapsed sign-in says so; a row press edits the row and moves the panel
+(engine `editByRow`); *Check alignment* audits a typed code (`edit.extra`; Exhibits carries its own); a code edit seeds
+the Note, keeping a code asks its reason; the panel's local codes show Colleges beside Courses (from
+`kb/discipline_local_courses/`, `kb/_build_discipline_local_courses.py`), name their courses, and carry *Use <code>*;
+a row saved since the scan ran leaves *A scan finding to confirm or note*; *What a Common SUBJ is*
+(`prototype/common_subj_explainer.html`). Every Commons view: *Hide the top*, side panels resize, both remembered.
+**Sync:** `phase-1e-sync.yml` is manual, and a code change must land with its re-mint: the 2026-11-05 00:15Z sync put
+Sam's new codes in the file ahead of the M-IDs, broke `tests/csr_trail_rules_test.py` on main, and was reverted. His
+saves stay in `kb_curation`; the re-mint run syncs and folds them in one window. **NEXT:** the re-mint dry-run that carries the evening's codes onto the M-IDs (WWKC, WWKF, GFCD, CBIT, DIES,
+CSIS and others; apply waits on Sam); ECONMT and Electricity's adult-education codes, his refile in Local subjects.
+**The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
 code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
 discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /

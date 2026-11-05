@@ -170,6 +170,19 @@ block("(3)", function () {
   });
 });
 
+// ── (3b) Last modified first (Sam, 2026-11-05) ─────────────────────────────
+block("(3b)", function () {
+  const rows = JSON.parse(JSON.stringify(ROWS));
+  // The oldest-made occasion was edited most recently, so it leads.
+  const last = rows.filter(function (r) { return r.occasion === "Board of Governors, July 2026"; })[0];
+  last.updated_at = "2026-11-05T01:00:00Z";
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function () { return response(200, rows); } });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const gs = Array.prototype.map.call(m.root.querySelectorAll(".lib-group h2"), function (h) { return h.textContent; });
+    check("(3b) groups sort by the last modified piece, newest first", gs[0] === "Board of Governors, July 2026", JSON.stringify(gs));
+  });
+});
+
 // ── (4) A failed read names its table and paints no count ────────────────
 block("(4)", function () {
   const m = loadModule({ phrase: "p", fetch: function () { return response(500, "boom"); } });
@@ -634,7 +647,7 @@ block("(13)", function () {
 block("(14)", function () {
   const writes = [];
   const rows = JSON.parse(JSON.stringify(ROWS));
-  rows[2].public_listed = true; rows[2].refresh_note = "Name the noncredit lead";
+  rows[2].public_listed = true; rows[2].refresh_note = "Name the noncredit lead"; rows[2].version = "2";
   rows[2].sources = [{ title: "Sheet 129 notes", url: null, text: "Lead with the outcomes.", added_by: "Sam", added_on: "2026-10-26" }];
   rows[2].regen = { requested_at: "2026-10-26T14:05:00Z", requested_by: "Sam", publish: "show",
     ready_at: "2026-10-26T15:40:00Z", draft_url: "https://claude.ai/artifact/DRAFT1" };
@@ -668,6 +681,10 @@ block("(14)", function () {
       /Draft ready to review/.test(card("a3").querySelector(".lib-flags").textContent) &&
       !!card("a3").querySelector('a[href="https://claude.ai/artifact/DRAFT1"]') &&
       !!card("a3").querySelector('[data-regenokform="a3"] button[type="submit"]') && /Ask for more changes/.test(card("a3").querySelector('[data-revise="a3"]').textContent));
+    check("(14) a ready draft names its version, and the public one it would replace",
+      /Version 3 is ready to review/.test(card("a3").querySelector(".lib-regen").textContent) &&
+      /Version 2 stays public until you replace it/.test(card("a3").querySelector(".lib-regen").textContent),
+      card("a3").querySelector(".lib-regen").textContent);
     click(m.w, card("a3").querySelector('[data-request="a3"]'));
     const t = (doc.getElementById("lib-r-a3") || {}).value || "";
     check("(14) the paste lists the documents and says how to read pasted text",
@@ -757,7 +774,10 @@ block("(15)", function () {
     const cards = m.root.querySelectorAll("#lib-register article");
     check("(15) two pieces sharing a project draw as one card, a project of one as its own", cards.length === 2, cards.length);
     const proj = m.root.querySelector("article.lib-proj");
-    check("(15) the project card names the project and counts its pieces", !!proj && /ELL IET CPL/.test(proj.querySelector("h3").textContent) && /2 pieces/.test(proj.textContent) && /Visual and document/.test(proj.textContent), proj && proj.textContent.slice(0, 200));
+    check("(15) the project card names the project and counts its pieces", !!proj && /ELL IET CPL/.test(proj.querySelector("h3").textContent) && /2 pieces/.test(proj.textContent) && /visual and document/i.test(proj.textContent), proj && proj.textContent.slice(0, 200));
+    check("(15) the count is a small label beside the title, not a tile, and takes no focus",
+      !proj.querySelector(".lib-thumb") && !!proj.querySelector(".lib-projhead h3 + .lib-projcount") &&
+      proj.querySelector(".lib-projcount").tagName === "SPAN" && !proj.querySelector(".lib-projcount").hasAttribute("tabindex"));
     check("(15) the card carries the public-library chip when a piece is listed", /In the public library/.test(proj.querySelector(".lib-body > .lib-chips").textContent));
     const rows = proj.querySelectorAll("li.lib-piece");
     check("(15) a row per piece, its title the link", rows.length === 2 && rows[0].querySelector("a#lib-t-p1").getAttribute("href") === PROJ_ROWS[0].url);

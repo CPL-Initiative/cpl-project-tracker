@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-04T06:18:30.478505+00:00",
+  "scraped_at": "2026-11-04T17:00:09.039624+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 30953,
+    "jst": 30958,
     "star_colleges": 66
   },
   "computed_star_colleges": 66,
@@ -47,7 +47,7 @@
     },
     "Moreno Valley College": {
       "vets": 938,
-      "jst": 1065,
+      "jst": 1066,
       "star": true
     },
     "Bakersfield College": {
@@ -57,7 +57,7 @@
     },
     "Norco College": {
       "vets": 686,
-      "jst": 576,
+      "jst": 577,
       "star": true
     },
     "Cabrillo College": {
@@ -182,7 +182,7 @@
     },
     "Mission College": {
       "vets": 167,
-      "jst": 173,
+      "jst": 175,
       "star": true
     },
     "Los Angeles Trade Technical College": {
@@ -317,7 +317,7 @@
     },
     "Reedley College": {
       "vets": 100,
-      "jst": 133,
+      "jst": 134,
       "star": true
     },
     "Laney College": {
@@ -565,13 +565,18 @@
       "jst": 0,
       "star": false
     },
-    "California State University Los Angeles": {
-      "vets": 0,
+    "Los Angeles Southwest College": {
+      "vets": 67,
       "jst": 0,
       "star": false
     },
-    "Palomar College": {
-      "vets": 1091,
+    "Lake Tahoe Community College": {
+      "vets": 57,
+      "jst": 0,
+      "star": false
+    },
+    "California State University Los Angeles": {
+      "vets": 0,
       "jst": 0,
       "star": false
     },
@@ -580,13 +585,8 @@
       "jst": 0,
       "star": false
     },
-    "Los Angeles Southwest College": {
-      "vets": 67,
-      "jst": 0,
-      "star": false
-    },
-    "Lake Tahoe Community College": {
-      "vets": 57,
+    "Palomar College": {
+      "vets": 1091,
       "jst": 0,
       "star": false
     }

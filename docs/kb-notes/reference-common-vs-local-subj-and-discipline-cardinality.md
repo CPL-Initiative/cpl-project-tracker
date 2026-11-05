@@ -1,7 +1,7 @@
 ---
 title: Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-11-04
 tags: [reference, m-id, subj4, discipline, c-id, ccn, curation, ccr]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -97,6 +97,36 @@ sequence must be assigned globally to stay collision-free. So: the discipline
 picked at mint *decides* the Common SUBJ; the id catches up at the batch run.
 A merge **into an existing identity** adopts that survivor's Common SUBJ + number
 immediately (no mint).
+
+### 5. Why the Common SUBJ exists, and how it keeps step (Sam, 2026-11-04)
+
+Sam's framing, which settled a long-muddled point: *"The common subject codes are just 4-character codes we are
+assigning to every discipline listed in the MQ list, right? Because they don't have canonical codes that can be
+aligned with C-ID and CCNs that are in use now. As we mint M-IDs, we need to assign an subj code that is harmonious
+with NQ disciplines, CID and CCN."* Confirmed, with three refinements he agreed with. Measured 2026-11-04
+(`kb/discipline_canonical_subj4.json`, synced 17:00Z; `kb/reference/mq_sections.json`; `kb/reference/ccn_courses.json`;
+`kb/reference/cid_descriptors.json`):
+
+- **The MQ list decides which codes are needed.** The handbook lists 248 disciplines (81 master's list, 156 the other
+  list, 9 both, 2 noncredit under §53412) and gives them no codes. A discipline needs its Common SUBJ once courses are
+  filed under it; the subject map files each college subject code under one MQ discipline. 147 carry a code today, all
+  of them MQ disciplines; the other 101 receive one with their first course.
+- **Harmony with C-ID and CCN is adoption.** Where an official code names the subject, the Common SUBJ takes it (13
+  `canonical_source: ccn`, 20 `c-id`); only where none exists is one minted (114 `csr`, `authority_flag: proposed`).
+- **The four-letter shape holds where an authority's code is shorter.** C-ID names Administration of Justice `AJ`; its
+  Common SUBJ is `CRIM`, and the C-ID code rides as an authority chip (23 disciplines, the List's *An official code
+  differs*). All 14 CCN subjects are four letters; 44 of C-ID's 65 prefixes are, and 21 are not (`AJ`, `KIN`,
+  `AG-AB`). Sam: *"Maybe we'll get the CID codes to change later to align with CCN coding standards"*; C-ID sets its
+  own codes, and the reference follows an authority's code when it changes.
+- **The colleges' local codes are the third voice** for a minted code: the code the most colleges use (the panel's
+  Colleges column), and a pick that departs from it carries a note (the scan's *a modal choice without a note*).
+- **One code, one discipline**, with the two ruled exceptions in §1 (alias families; umbrella codes such as `FLNG`).
+
+A good Common SUBJ agrees with three things at once: the MQ discipline it names, the C-ID or CCN code where one
+exists, and what colleges already call these courses. The List's *Check alignment* runs that test on one code. The
+plain-words version, linked from the Common Subjects Reference page as *What a Common SUBJ is*:
+`prototype/common_subj_explainer.html`. Sam's words verbatim:
+`CPLBrain/03-professional/braindumps/braindump-2026-11-04-2330-what-a-common-subj-is.md`.
 
 ## How we got here
 

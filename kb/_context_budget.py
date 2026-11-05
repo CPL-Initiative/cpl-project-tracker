@@ -132,10 +132,11 @@ def read_transcript(path):
                         )
                 usage = (rec.get("message") or {}).get("usage")
                 if isinstance(usage, dict):
+                    # A field can be present and null (seen 2026-11-04, SkyJujube): `or 0`, not get's default.
                     total = (
-                        usage.get("input_tokens", 0)
-                        + usage.get("cache_read_input_tokens", 0)
-                        + usage.get("cache_creation_input_tokens", 0)
+                        (usage.get("input_tokens") or 0)
+                        + (usage.get("cache_read_input_tokens") or 0)
+                        + (usage.get("cache_creation_input_tokens") or 0)
                     )
                     if total > 0:
                         live = total

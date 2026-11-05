@@ -1,6 +1,6 @@
 // The Program Requirements List on the Catalog Commons' shared engine (Sam, 2026-11-01: "This new list view is so
 // helpful that I want one now for each of our Catalog Commons groups"). Guards:
-//   (1) #program-requirements/list opens the List: the sixth view word is selected, and the engine and COCI's program
+//   (1) #program-requirements/list opens the List: the fifth and last view word is selected, and the engine and COCI's program
 //       list load through CPL_TABS.loadScript;
 //   (2) one row per ACTIVE program, A to Z: an inactive program is left out, and a record on it is counted as off the
 //       list rather than drawn;
@@ -97,7 +97,7 @@ function words(d, re) { return Array.from(d.querySelectorAll("button")).find((b)
   const t = tab();
   await settle();
   const sel = t.d.querySelector('[role="tab"][aria-selected="true"]');
-  check("(1) #program-requirements/list selects the List, the sixth view", t.d.querySelectorAll('[role="tab"]').length === 6
+  check("(1) #program-requirements/list selects the List, the fifth and last view", t.d.querySelectorAll('[role="tab"]').length === 5
     && sel && sel.id === "prh-tab-list" && t.S.view === "list", sel && sel.id);
   check("(1) the engine and COCI's list load through CPL_TABS.loadScript", t.calls.indexOf("commons_list.js") >= 0
     && t.calls.indexOf("coci_programs_data.js") >= 0 && !!t.w.CPL_COMMONS_LIST);
@@ -133,11 +133,11 @@ function words(d, re) { return Array.from(d.querySelectorAll("button")).find((b)
     && txt(cell(t.d, art, "Record")) === "Not read yet" && txt(cell(t.d, art, "Machine checks")) === "—", txt(cell(t.d, nurse, "Known issues")));
 
   const fl = Array.from(t.d.querySelectorAll(".prl-filters button, .prl-filters span")).map(txt);
-  check("(4) each filter word carries its count", fl.join("|") === "All (5)|Not read yet (2)|Read (3)|Pass the machine checks (1)|Fail a machine check (2)|Disagree with the state's course list (1)|Units do not add up (1)",
+  check("(4) each filter word carries its count", fl.join("|") === "All (5)|Not read yet (2)|Read (3)|Pass the machine checks (1)|Fail a machine check (2)|Disagree with the state's course list (1)|Units do not add up (1)|Confirmed by a person (0)|On a program COCI does not list as active (1)",
     fl.join(" | "));
   const expect = { "Not read yet": ["Art History", "English as a Second Language"], "Read": ["Accounting", "Nursing", "Welding Technology"],
     "Pass the machine checks": ["Welding Technology"], "Fail a machine check": ["Accounting", "Nursing"],
-    "Disagree with the state's course list": ["Nursing"], "Units do not add up": ["Accounting"] };
+    "Disagree with the state's course list": ["Nursing"], "Units do not add up": ["Accounting"], "Confirmed by a person": [], "On a program COCI does not list as active": ["Old Program"] };
   const bad = [];
   for (const k of Object.keys(expect)) {
     words(t.d, new RegExp("^" + k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " \\(")).click(); await settle();
@@ -177,11 +177,8 @@ function words(d, re) { return Array.from(d.querySelectorAll("button")).find((b)
   drawer = t.d.querySelector(".prl-drawer");
   check("(7) the Record drawer names the checks in words", !!drawer && /Units: they differ from the printed total/.test(txt(drawer))
     && /Courses: every listed course placed/.test(txt(drawer)) && /Not yet confirmed by a person/.test(txt(drawer)), txt(drawer));
-  words(t.d, /^Open the record in Program records$/).click(); await settle();
-  check("(7) ⭐ Open the record opens it in Program records, its college picked and its number searched",
-    t.S.view === "records" && t.S.rq === "10002" && (t.S.pick || []).indexOf("Los Angeles Valley College") >= 0
-    && t.S.open["Los Angeles Valley College|10002"] === true, JSON.stringify({ v: t.S.view, rq: t.S.rq, pick: t.S.pick }));
-  t.S.view = "list"; t.M._render(); await settle();
+  check("(7) ⭐ the Record drawer says the title opens its panel; nothing sends it to Program records (S574)",
+    /Its title opens its panel/.test(txt(drawer)) && !Array.from(drawer.querySelectorAll("button")).some((b) => /Program records/.test(txt(b))), txt(drawer));
   cell(t.d, rowOf(t.d, "Art History"), "Record").querySelector("button").click(); await settle();
   drawer = t.d.querySelector(".prl-drawer");
   check("(7) an unread program's drawer says the harvest holds no record, and offers none to open", /holds no record of this program yet/.test(txt(drawer))

@@ -98,7 +98,12 @@ jobs:
           # Audit provenance — only the slim latest.json summaries are served.
           rm -f  _site/kb/row_audit/*.md _site/kb/row_audit/*.full.json _site/kb/exhibit_audit/*.md
           # Re-mint / fold / dry-run / apply output dirs (alias maps, collisions) — never served.
-          rm -rf _site/kb/*_out _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
+          # One file under them IS served: the Subjects tab reads the daily scan, kb/csr_out/latest.json
+          # (its Progress page read "Could not be read" while the whole directory was pruned, S574).
+          for d in _site/kb/*_out; do
+            if [ "$d" = "_site/kb/csr_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +; else rm -rf "$d"; fi
+          done
+          rm -rf _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
           # root .nojekyll; this is belt + braces).
           touch _site/.nojekyll
@@ -132,6 +137,7 @@ jobs:
             "_site/.nojekyll"
             "_site/CPL_Data.js"
             "_site/live_metrics.json"
+            "_site/kb/csr_out/latest.json"
             "_site/kpi_history.json"
             "_site/project_lifecycle.js"
             "_site/unified_courses_data.js"

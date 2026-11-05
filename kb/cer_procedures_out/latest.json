@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-03T15:33:08Z",
+ "_generated_at": "2026-11-04T15:49:37Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 15,
+ "queue": 44,
  "saved_not_folded": 0,
- "waiting": 15,
- "proposed": 15,
- "needs_you_count": 2,
+ "waiting": 44,
+ "proposed": 42,
+ "needs_you_count": 31,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 7,
-   "held": 1,
+   "settled": 4,
+   "held": 3,
    "sample": []
   },
   {
@@ -111,16 +111,28 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 6,
-   "held": 0,
+   "settled": 13,
+   "held": 28,
    "sample": [
     [
-     "ASL 052 American Sign Language III",
-     "American Sign Language III"
+     "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+     "Waterworks Mathematics Advanced"
     ],
     [
-     "CARP 207 Math for Construction Trades",
-     "Math for Construction Trades"
+     "EET 203 Basic Electricity",
+     "Basic Electricity"
+    ],
+    [
+     "GEOG 1 Physical Geology",
+     "Introduction to Physical Geography"
+    ],
+    [
+     "GRART 32 Digital Documents (Adobe InDesign)",
+     "Digital Documents (Adobe InDesign)"
+    ],
+    [
+     "GRART 36 Adobe Photoshop Basics",
+     "Adobe Photoshop Basics"
     ]
    ]
   },
@@ -151,8 +163,8 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 1,
-   "held": 0,
+   "settled": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -181,7 +193,7 @@
     "words": "level words move to the end of the title",
     "skill": "Rule 5g"
    },
-   "settled": 2,
+   "settled": 0,
    "held": 0,
    "sample": []
   },
@@ -241,8 +253,8 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 1,
-   "held": 0,
+   "settled": 2,
+   "held": 7,
    "sample": []
   },
   {
@@ -257,7 +269,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 0,
+   "held": 7,
    "sample": []
   },
   {
@@ -270,39 +282,156 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 11,
-   "held": 2,
+   "settled": 7,
+   "held": 31,
    "sample": [
     [
-     "CARP 223 OSHA 30 Hr. Construction Safety Training",
-     "OSHA 30 — Construction Industry Outreach (30-hour)"
+     "Examination for ARHS 2",
+     "Art of the Ancient Americas"
     ],
     [
-     "IBEW- Inside Wireman, Apprenticeship Year 1",
-     "IBEW Electrician Apprenticeship — Year 1"
+     "Portfolio for BUSN 40",
+     "Introduction to Business"
     ],
     [
-     "IBEW- Inside Wireman, Apprenticeship Year 2",
-     "IBEW Electrician Apprenticeship — Year 2"
+     "Portfolio for BUSN 48",
+     "Human Relations in Organizations"
     ],
     [
-     "IBEW- Inside Wireman, Apprenticeship Year 3",
-     "IBEW Electrician Apprenticeship — Year 3"
+     "Portfolio for BUSN 58",
+     "Small Business Management"
     ],
     [
-     "IBEW- Inside Wireman, Apprenticeship Year 4",
-     "IBEW Electrician Apprenticeship — Year 4"
+     "Portfolio for BUSN 61",
+     "QuickBooks Accounting"
     ]
    ]
   }
  ],
  "classifier_run": {
-  "calls": 1,
-  "answered": 1,
+  "calls": 3,
+  "answered": 3,
   "errors": [],
-  "cost_usd": 0.55
+  "cost_usd": 1.63
  },
  "needs_you": [
+  {
+   "raw_title": "EET 222 Photovaltaic NABCEP for Solar Associates",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "NABCEP PV Associate",
+    "issuer": "North American Board of Certified Energy Practitioners (NABCEP)",
+    "confidence": 0.78,
+    "note": "Set aside the hs hint, which kept the course code's misspelling and the CCC issuer. The Industry Certification row names the NABCEP PV (Solar) Associate credential, so NABCEP issues it. EET 222 is the Laney prep course."
+   },
+   "colleges": [
+    "Laney College"
+   ]
+  },
+  {
+   "raw_title": "Examination for ARHS 1",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Introduction to Art History",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "Used the catalog hint, which is the Las Positas local course title for ARHS 1. No CCN or C-ID was confirmed. Set aside the cx hint because it kept the mechanism and the code."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for ARHS 3",
+   "why": "the classifier is unsure (0.83)",
+   "proposal": {
+    "title": "Arts of Africa, Oceania, and Indigenous North America",
+    "issuer": "California Community Colleges",
+    "confidence": 0.83,
+    "note": "Mended the catalog hint ('...North Americas') to the existing house family spelling."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for ARHS 7",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Modern Art History",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Used the Las Positas local course title from the catalog hint. No matching house family exists."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for ARHS 8",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Asian Art History",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Used the Las Positas local course title from the catalog hint."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for ARTH C1100",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Survey of Art from Prehistory to the Medieval Era",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Title anchored to CCN ARTH C1100 and joined to the matching house family. Set aside the cx hint, which kept the mechanism and the code."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for ARTH C1200",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Survey of Art: Renaissance to Contemporary",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Title anchored to CCN ARTH C1200 and joined to the matching house family. Set aside the cx hint."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for KIN 5",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Sports Management",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Used the Las Positas local course title for KIN 5 from the catalog hint."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for KIN 6",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Personal Training",
+    "issuer": "California Community Colleges",
+    "confidence": 0.7,
+    "note": "Catalog course title 'Personal Trainer' joined to the house family 'Personal Training' (local CCC course). This is a local course exam, not an industry trainer certification."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
   {
    "raw_title": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1",
    "why": "the classifier is unsure (0.80)",
@@ -317,6 +446,214 @@
    ]
   },
   {
+   "raw_title": "Industry for AJ 54",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Investigative Report Writing",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Industry-typed exhibit that is really a course code, so it takes the AJ 54 course title from the catalog and matches the house family. The outside credential behind it (likely a POST academy) is unnamed, so the CCC issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for AJ 60",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Criminal Law",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded industry exhibit that takes the AJ 60 catalog title and matches the house family. The underlying industry credential (likely POST) is unnamed, so the issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for AJ 61",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Criminal Evidence",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The catalog title 'Evidence' is too bare to work as a search title. It was joined to the house family 'Criminal Evidence', which is likely the same AJ course. The issuer is uncertain because the industry credential is unnamed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for AJ 63",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Criminal Investigation",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded industry exhibit that takes the AJ 63 catalog title and matches the house family. The issuer needs review because the outside credential is unnamed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for AJ 64",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Police Patrol Operations",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded industry exhibit that takes the AJ 64 catalog title. It may duplicate the house family 'Patrol Procedures', but was kept separate pending review. The issuer is uncertain."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for AJ 66",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Juvenile Procedures",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas COCI course AJ 66 (joins existing family); the industry certification behind it is unnamed, so the issuer defaults to CCC pending review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for BUSN 65",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Federal Income Tax Accounting",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas course BUSN 65; the underlying industry credential is unnamed, so the issuer defaults to CCC pending review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for FST 1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Fire Protection Organization",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas FST 1, which matches an existing family; the industry credential is unnamed (possibly SFT), so the CCC issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for HORT 55",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Greenhouse, Nursery, and Garden Center Management",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas HORT 55; the industry credential is unnamed, so the issuer defaults to CCC pending review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for HORT 56",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Arboriculture/Urban Forestry",
+    "issuer": "California Community Colleges",
+    "confidence": 0.55,
+    "note": "Course-coded IC exhibit; title from Las Positas HORT 56. The industry cert may be ISA Certified Arborist, but it is kept apart as a local course credential (Rule 8c-2); the CCC issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for HORT 57",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Landscape and Turfgrass Management",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas HORT 57; the industry credential is unnamed, so the issuer defaults to CCC pending review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for HORT 59",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Landscape Design",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas HORT 59, which joins an existing family; the industry credential is unnamed, so the CCC issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for HORT 60",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Landscape Irrigation Systems",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course-coded IC exhibit; title from Las Positas HORT 60; the industry credential (possibly Irrigation Association) is unnamed, so the CCC issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for KIN 6",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Personal Trainer",
+    "issuer": "California Community Colleges",
+    "confidence": 0.55,
+    "note": "Course-coded IC exhibit; title from Las Positas course KIN 6, kept apart from the industry Personal Training Certification per Rule 8c-2; the cert issuer is unnamed, so the CCC issuer needs review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for ARHS 6",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Museum & Gallery Techniques",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "The cx hint echoed the raw title, so it was set aside; the title comes from the Las Positas catalog for ARHS 6, with the Noncredit pathway word stripped."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for BUSN 33",
+   "why": "the classifier's title has a dangling word",
+   "proposal": {
+    "title": "The Fundamentals of Personal and Family Financial Planning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "The cx hint echoed the raw title and was set aside; the title comes from the Las Positas catalog for BUSN 33."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Peace Officer Standards and Training",
    "why": "the classifier is unsure (0.75)",
    "proposal": {
@@ -327,6 +664,58 @@
    },
    "colleges": [
     "Mission College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio ARHS 6",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Museum & Gallery Techniques",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "The cx hint kept the course code, so it was set aside; ARHS 6 at Las Positas resolves to Museum & Gallery Techniques (from the sibling Noncredit row's catalog hint), and the portfolio mechanism collapses."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio for BUSN 33",
+   "why": "the classifier's title has a dangling word",
+   "proposal": {
+    "title": "The Fundamentals of Personal and Family Financial Planning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.85,
+    "note": "The cx hint 'for BUSN 33' was misstripped and set aside; the title is the catalog course title, shared with the Noncredit BUSN 33 row."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio for BUSN 45",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Entrepreneurship",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "The cx hint was misstripped; the title is the Las Positas catalog title for BUSN 45. It is not joined to Introduction to Entrepreneurship without confirmation."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio for BUSN 56",
+   "why": "a merge would join two issuers (California Community Colleges; the reference has American Council on Education (ACE))",
+   "proposal": {
+    "title": "Introduction to Management",
+    "issuer": "California Community Colleges",
+    "confidence": 0.88,
+    "note": "The title is the Las Positas catalog course name and matches the existing house title. The issuer is CCC because this is a portfolio exhibit, not the ACE military credit."
+   },
+   "colleges": [
+    "Las Positas College"
    ]
   }
  ]

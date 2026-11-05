@@ -8,19 +8,19 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 50985,
-  "pa": 46164,
-  "ppa": 120,
+  "pe": 50987,
+  "pa": 46166,
+  "ppa": 122,
   "p2": 3612,
   "p3": 16855,
   "pp": 7,
-  "ppe": 132,
+  "ppe": 134,
   "pac": 5303,
   "ptc": 4631,
-  "pe_u": 1590824.95,
-  "pa_u": 282622.4,
-  "ppa_u": 748.5,
-  "ppe_u": 7225.5,
+  "pe_u": 1590889.95,
+  "pa_u": 282632.4,
+  "ppa_u": 760.5,
+  "ppe_u": 7237.5,
   "pac_u": 37982.2,
   "ptc_u": 31695.45,
   "p3_u": 84614.15,
@@ -1392,8 +1392,9 @@ window.CPL_FUNDING_PERF = {
    "pe_u": 8031.0,
    "pa": 173,
    "pa_u": 1275.0,
-   "ppa": 0,
-   "ppa_u": 0.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 12.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -1401,8 +1402,9 @@ window.CPL_FUNDING_PERF = {
    "p3_u": 6.0,
    "pp": 0,
    "pp_u": 0.0,
-   "ppe": 0,
-   "ppe_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 12.0,
    "pac": 0,
    "pac_u": 0.0,
    "ptc": 0,
@@ -1485,10 +1487,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 27
   },
   "Moreno Valley": {
-   "pe": 2542,
-   "pe_u": 55136.0,
-   "pa": 2213,
-   "pa_u": 13345.0,
+   "pe": 2543,
+   "pe_u": 55158.0,
+   "pa": 2214,
+   "pa_u": 13350.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
@@ -1761,10 +1763,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 24
   },
   "Reedley College": {
-   "pe": 136,
-   "pe_u": 5089.5,
-   "pa": 116,
-   "pa_u": 558.5,
+   "pe": 137,
+   "pe_u": 5132.5,
+   "pa": 117,
+   "pa_u": 563.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -3578,8 +3580,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1045,
-    "pa": 1045,
+    "pe": 1046,
+    "pa": 1046,
     "p3": 991
    },
    "Standardized Assessment": {
@@ -3766,8 +3768,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 131,
-    "pa": 112,
+    "pe": 132,
+    "pa": 113,
     "p3": 0
    },
    "Portfolio Review": {
@@ -4418,8 +4420,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 30262,
-   "pa": 27220,
+   "pe": 30264,
+   "pa": 27222,
    "p3": 2660
   },
   "Military | Other": {
@@ -4475,18 +4477,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1590824.95,
-   "pa_u": 282622.4,
+   "pe_u": 1590889.95,
+   "pa_u": 282632.4,
    "p3_u": 84614.15
   },
   "map": {
-   "pe_u": 1598050.45,
-   "pa_u": 283370.9,
+   "pe_u": 1598127.45,
+   "pa_u": 283392.9,
    "p3_u": 84687.65
   },
   "ratio": {
    "pe_u": 1.0045,
-   "pa_u": 1.0026,
+   "pa_u": 1.0027,
    "p3_u": 1.0009
   }
  },
@@ -4602,10 +4604,10 @@ window.CPL_FUNDING_PERF = {
   "Orange Coast": false,
   "Marin": false,
   "Folsom Lake": false,
-  "Palomar": false,
-  "Cosumnes River": false,
   "LA Swest": false,
-  "Lake Tahoe": false
+  "Lake Tahoe": false,
+  "Cosumnes River": false,
+  "Palomar": false
  },
  "vet_star_as_of": "2026-11-04",
  "vet_star_threshold": 0.75,
@@ -4648,8 +4650,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "vets": 938,
-   "jst": 1065,
-   "pct": 1.1354
+   "jst": 1066,
+   "pct": 1.1365
   },
   "Bakersfield": {
    "vets": 431,
@@ -4658,8 +4660,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Norco College": {
    "vets": 686,
-   "jst": 576,
-   "pct": 0.8397
+   "jst": 577,
+   "pct": 0.8411
   },
   "Cabrillo": {
    "vets": 93,
@@ -4783,8 +4785,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Mission": {
    "vets": 167,
-   "jst": 173,
-   "pct": 1.0359
+   "jst": 175,
+   "pct": 1.0479
   },
   "LA Trade": {
    "vets": 310,
@@ -4918,8 +4920,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Reedley College": {
    "vets": 100,
-   "jst": 133,
-   "pct": 1.33
+   "jst": 134,
+   "pct": 1.34
   },
   "Laney": {
    "vets": 68,
@@ -5165,8 +5167,13 @@ window.CPL_FUNDING_PERF = {
    "jst": 0,
    "pct": 0.0
   },
-  "Palomar": {
-   "vets": 1091,
+  "LA Swest": {
+   "vets": 67,
+   "jst": 0,
+   "pct": 0.0
+  },
+  "Lake Tahoe": {
+   "vets": 57,
    "jst": 0,
    "pct": 0.0
   },
@@ -5175,13 +5182,8 @@ window.CPL_FUNDING_PERF = {
    "jst": 0,
    "pct": 0.0
   },
-  "LA Swest": {
-   "vets": 67,
-   "jst": 0,
-   "pct": 0.0
-  },
-  "Lake Tahoe": {
-   "vets": 57,
+  "Palomar": {
+   "vets": 1091,
    "jst": 0,
    "pct": 0.0
   }

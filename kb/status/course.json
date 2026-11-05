@@ -1,20 +1,28 @@
 {
   "schema": 1,
-  "session": 564,
-  "moniker": "SkyHoag",
-  "run": "the CPL Queue routine",
+  "session": 575,
+  "moniker": "SkyJujube",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_565_handoff.md",
+  "handoff": "docs/session_575_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-03T13:28:43Z",
+  "written_at": "2026-11-04T22:07:14Z",
   "project": "course",
   "next_step": {
-    "title": "Choose the lane's next build",
-    "text": "The confirmed count is built for the Course page; the same count for the other four references is the natural next build, for Sam to choose."
+    "title": "Re-point the ways in, then retire the old tab",
+    "text": "The Courses List's panel now carries the common course's card and its edits; next, SkyView, Quickstart and Subjects open the List, the auditor's other tags become List filters, then the Common Course Reference tab is deleted. The side session's own handoff is docs/courses_retirement_handoff.md."
   },
   "changes": [
+    {
+      "at": "2026-11-04T20:47:00Z",
+      "text": "A course's panel in the Courses List shows its common course and, for a signed-in reviewer, Rename, Set the discipline and Confirm, carried from the Common Course Reference tab (#2776)."
+    },
+    {
+      "at": "2026-11-04T20:29:00Z",
+      "text": "The sign-in link lands in the shared session file and returns to the view it was asked from (#2775); the old tab had landed every sign-in."
+    },
     {
       "at": "2026-11-03T13:28:16Z",
       "text": "The Course page and the Commons card count cards a person has confirmed in SkyView beside ready: 812 of 27,581 (#2726)."
@@ -26,14 +34,6 @@
     {
       "at": "2026-11-02T00:55:00Z",
       "text": "COCI Lookup's Courses view is the Courses List: 141,738 local courses banded by today's M-ID, read only, Open in SkyView on each band (#2670)."
-    },
-    {
-      "at": "2026-10-20T00:31:27Z",
-      "text": "No change to the CCR this run; two calls from the CTDL partner exchange lane wait on Sam (Sheet 102 cards 4 and 5)."
-    },
-    {
-      "text": "Sam answered Open Asks Sheet 102 (00:31Z, all six as recommended); its calls left the run log.",
-      "at": "2026-10-20T00:37:45Z"
     }
   ]
 }

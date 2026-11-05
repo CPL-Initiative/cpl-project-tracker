@@ -2208,23 +2208,7 @@
     root.querySelectorAll("[data-lens]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         state.lens = btn.getAttribute("data-lens");
-        // Fetch the worklist the first time the lens is opened, not on tab load —
-        // it is a second gated round-trip most visits never need.
-        if ((state.lens === "gaps" || state.lens === "contacts")
-            && !state.gaps && !state.gapsError) {
-          render(root);
-          // Proposals ride along with the worklist. loadProposals never rejects
-          // (a failed read yields {}), so a proposals outage costs the curator's
-          // overlay, never the worklist itself.
-          Promise.all([loadGaps(), loadProposals()]).then(function (res) {
-            state.gaps = Array.isArray(res[0]) ? res[0] : [];
-            render(root);
-          }).catch(function (e) {
-            state.gapsError = (e && e.message) || "error";
-            render(root);
-          });
-          return;
-        }
+        if (loadLensData(root)) return;
         render(root);
       });
     });
@@ -2349,10 +2333,51 @@
     });
   }
 
+  // Fetch the worklist the first time a lens that needs it is opened, not on tab
+  // load — it is a second gated round-trip most visits never need. True when it
+  // started the read (and rendered the loading state).
+  function loadLensData(root) {
+    if (!((state.lens === "gaps" || state.lens === "contacts") && !state.gaps && !state.gapsError)) return false;
+    render(root);
+    // Proposals ride along with the worklist. loadProposals never rejects
+    // (a failed read yields {}), so a proposals outage costs the curator's
+    // overlay, never the worklist itself.
+    Promise.all([loadGaps(), loadProposals()]).then(function (res) {
+      state.gaps = Array.isArray(res[0]) ? res[0] : [];
+      render(root);
+    }).catch(function (e) {
+      state.gapsError = (e && e.message) || "error";
+      render(root);
+    });
+    return true;
+  }
+
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address activate() opens.
+     map-users (All colleges) · map-users/gaps (No student contact) · map-users/contacts (Contact directory). */
+  var LENSES = ["all", "gaps", "contacts"];
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("map-users", function () {
+    return state.lens && state.lens !== "all" && LENSES.indexOf(state.lens) >= 0 ? "map-users/" + state.lens : "map-users";
+  });
+
+  /* The address this visit already opened. A phrase unlock or a sign-out re-fires cpl-tab-activated on the same
+     address, and opening it again would undo a lens picked since; visiting another tab ends the visit. */
+  var arrivedFrom = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== "map-users") arrivedFrom = null;
+  });
+
   function activate() {
     var root = document.getElementById("map-users-root");
     if (!root) return;
+    /* The lens the address names (#map-users/gaps). The two worklist lenses are built from gated contact rows, so a
+       signed-out reader keeps the roster (and the address waits for a sign-in); a bare #map-users or an unknown
+       word leaves the lens as it is. */
+    var h = String(location.hash || "");
+    var a = h !== arrivedFrom && window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-users") : null;
+    if (a && LENSES.indexOf(a[0]) >= 0 && (a[0] === "all" || signedIn())) { state.lens = a[0]; arrivedFrom = h; }
+    else if (!a) arrivedFrom = h;
     renderInto(root, !!state.summary);
+    loadLensData(root);
   }
 
   window.CPL_MAP_USERS_TAB = {

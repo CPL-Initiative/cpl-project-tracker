@@ -81,9 +81,10 @@
   }
 
   // Send the one-time link. The callback lands back on the page root, where
-  // unified_courses.js consumeAuthHash() mints cpl_sb and routes to whatever
-  // sits in cpl_sb_return_tab — so stash the tab the person is ON, and they
-  // come back to it instead of to some other tab's idea of home.
+  // cpl_session.js consumeAuthHash() mints cpl_sb and routes to whatever
+  // sits in cpl_sb_return_tab — so stash the tab the person is ON (the keeper
+  // keeps the whole address when it sits inside that tab), and they come back
+  // to that view instead of to some other tab's idea of home.
   function sendLink(email, returnTab) {
     // ⚠ sessionStorage is PER BROWSER TAB and the magic link lands in a NEW one,
     // so a stash written here could never be seen where it is read — every

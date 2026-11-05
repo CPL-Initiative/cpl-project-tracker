@@ -631,8 +631,10 @@
       });
     }
     var filters = { todo: 1, suggested: 1, auto: 1, held: 1, done: 1, open: 1, names: 1, solo: 1, flagged: 1, changed: 1 };
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (L.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) L.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!L.dashFolded;
-    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "crl-fold",
+    wrap.appendChild(api.line({ row: L.cm, error: L.cmErr != null ? L.cmErr : (L.cmRead && !L.cm ? "" : null), folded: folded, foldId: "crl-fold", top: [],
       onToggle: function () { L.dashFolded = !L.dashFolded; render(); },
       control: function (open, text, li, w) {
         var m = /^#cr-reference\/(?:list\/)?([a-z-]+)$/.exec(open || ""), f = m ? m[1] : null;
@@ -847,6 +849,14 @@
     state.view = "list"; L.f = parts[1] === "all" ? "" : parts[1]; L.q = "";
     return true;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("cr-reference", function () {
+    var f = state.ls && state.ls.f;
+    if (state.view === "progress") return "cr-reference/progress";
+    if (state.view === "list") return f && FILTERS.indexOf(f) >= 0 ? "cr-reference/" + f : "cr-reference/list";
+    return "cr-reference";
+  });
   var hashWired = false;
 
   function activate() {
