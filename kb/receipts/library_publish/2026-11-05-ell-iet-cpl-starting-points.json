@@ -1,0 +1,72 @@
+{
+  "_about": "Library publish receipt (scripts/library_publish.py): the record's before-values and the update --finish makes, guarded on updated_at; cpl_library_history also files the prior row. Roll back by writing the before-values and reverting the page's commit.",
+  "at": "2026-11-05",
+  "slug": "ell-iet-cpl-starting-points",
+  "record_id": "915ff7d5-80ce-45ad-bb95-d75510318ee0",
+  "draft_id": "200adaee-3959-487d-b9b4-2a5d4cfcbf3f",
+  "page": "library/ell-iet-cpl-starting-points/index.html",
+  "before": {
+    "refresh_note": "See this email I just got from Amber and remove the one org from the list of grantees and consider how to integrate her proposed agenda and ideas for collaboration. If you can add in our new Request Adopt buttons on any course recommendations, that would be great and do a scan of the CCPL Commons for any newly harvested program and course information that might improve this draft.\n\nHi Sam,\nThank you again for getting this started.\nI would like to propose the following agenda for our December 9th call:\n1.\tWelcome,… The whole instructions are under Documents to work from.",
+    "regen": {
+      "publish": "show",
+      "draft_id": "200adaee-3959-487d-b9b4-2a5d4cfcbf3f",
+      "ready_at": "2026-11-03T06:21:50Z",
+      "draft_url": "https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3",
+      "approved_at": "2026-11-05T14:46:01.894Z",
+      "approved_by": "Sam",
+      "requested_at": "2026-11-02T21:20:29.029Z",
+      "requested_by": "Sam"
+    },
+    "updated_at": "2026-11-05T14:46:02.305167+00:00",
+    "updated_by": null,
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+    "version": "2",
+    "versions": [
+      {
+        "url": "https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe",
+        "date": "2026-10-23",
+        "label": "Version 1",
+        "status": "Replaced by v2"
+      },
+      {
+        "url": "https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw",
+        "date": "2026-10-26",
+        "label": "Version 2",
+        "status": "Current"
+      },
+      {
+        "url": "https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3",
+        "date": "2026-11-03",
+        "label": "Version 3",
+        "status": "Draft: Get Focused, Stay Focused removed (IRC); the December 9 agenda; answers on the course-to-course path and what grantees can do after the grant; Request Adopt on 25 example rows; programs each example course is required in, from the program requirements harvest (20 rows). Remediated: Request Adopt links raised to 24px targets; npm run a11y passes light and dark."
+      }
+    ]
+  },
+  "update": {
+    "versions": [
+      {
+        "url": "https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe",
+        "date": "2026-10-23",
+        "label": "Version 1",
+        "status": "Replaced by v2"
+      },
+      {
+        "url": "https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw",
+        "date": "2026-10-26",
+        "label": "Version 2",
+        "status": "Replaced by v3"
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+        "date": "2026-11-05",
+        "label": "Version 3",
+        "status": "Current: Version 3 from Sam's Revise request of 2 November (built by S557 in a session): Get Focused, Stay Focused removed at the IRC's word; the December 9 call's agenda; answers on the course-to-course path and what grantees can do after the grant; Request Adopt links to MAP exhibit cards; the programs each example course is required in. Remediated: Request Adopt links raised to 24px targets; npm run a11y passed light and dark. Drafted from the card by S557 SkySculptor (session), stored by library-skycartwheel@bot (draft 200adaee-3959-487d-b9b4-2a5d4cfcbf3f); replaced the public copy on Sam's approval."
+      }
+    ],
+    "refresh_note": null,
+    "regen": null,
+    "updated_by": "library-publish@bot",
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+    "version": "3"
+  }
+}
