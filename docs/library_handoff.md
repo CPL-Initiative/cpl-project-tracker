@@ -1,7 +1,7 @@
 ---
-title: Library — side-lane handoff (SkyRoundoff, beside the CPL Queue routine)
+title: Library — side-lane handoff (SkyFlipFlop, beside the CPL Queue routine)
 date: 2026-11-05
-tags: [handoff, library, ell-iet, list-view, side-lane]
+tags: [handoff, library, ell-iet, cpl-initiative-overview, side-lane]
 related:
   - "[[docs/reference/lanes/library]]"
   - "[[docs/library_lessons]]"
@@ -9,32 +9,38 @@ related:
 
 # Library — side-lane handoff
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`; the hourly CPL Queue routine writes
-> those. No checkpoint was run: the lane file, the lessons and this note are this session's record, with
-> `python3 kb/_docs_audit.py` run before the last commit.
+> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`; the hourly CPL Queue routine and
+> other sessions write those (586 and 587 landed today). No checkpoint was run: the lane file, the lessons and this note
+> are this session's record, with `python3 kb/_docs_audit.py` run before the last commit.
 
-Your moniker is **SkyFlipFlop**. You pick up the **Library** lane after SkyRoundoff (2026-11-05, opened by SkyComet at
-Sam's request; SkyCartwheel before it). Read [`docs/reference/lanes/library.md`](reference/lanes/library.md), *Next*, then
-[`docs/library_lessons.md`](library_lessons.md), *2026-11-05 SkyRoundoff*.
+Your moniker is **SkyHandspring**. You pick up the **Library** lane after SkyFlipFlop (2026-11-05). Read
+[`docs/reference/lanes/library.md`](reference/lanes/library.md), *Next*, then
+[`docs/library_lessons.md`](library_lessons.md), *2026-11-05 SkyFlipFlop*.
 
 ## What shipped
-- **ELL IET Version 4 is the public copy** (#2813; vault #672): an Overview tab, then a tab per project, built by
-  `CPLBrain/04-projects/cpl-initiative/ell-iet/make_tabs.py` from Version 3. Link https://claude.ai/artifact/XhDFfPrT33opjRqTAzKpRN;
-  stored as `cpl_library_drafts` a0ac81de-… by `supabase-migrate` run 42060338692 (rollback beside the migration). Sam:
-  *"new visual looks wonderful!"*, then *"Replace the public copy with Version 4"*; `library-publish.yml` run 42064847765
-  published it at 16:30Z (receipt `kb/receipts/cpl_library_skyroundoff_ell_v4_replace_2026-11-05.sql`).
-- **The List's project bands lead with the newest piece** (#2812), Sam's sort report.
-- **#2808 (S584's course objectives)** merged at Sam's ask (*"merge anything left to do from the last cpl queue
-  session"*), once `main`'s `sierra_library` check was green again.
+- **ELL IET Version 5 is public** (#2815; vault #675): the Initiative at a glance (four steps, linked from the call's
+  second agenda item) and top cards that open what they count. Sam's Replace waited on the three-hourly publish run; the
+  session dispatched `library-publish.yml` (run 42122991947).
+- **The CPL Initiative overview is public** (#2825; vault #679): `library/cpl-initiative-overview/`, in the public
+  library's look, figures live from `live_metrics.json`, the workplan, Sierra and seven other projects linked. Its own
+  source: revise it on its card. Every public page's header leads its Links with it. Sam: *"overview looks excellent."*
+  Review copy https://claude.ai/artifact/5LGm3wbAPts2PGyVxycotu.
+- **A figure card opens what it counts** is a Presentation rule in `CLAUDE.md` (Sam: *"this should be a rule for all
+  visuals"*), guarded by `presentation_doctrine`.
+- **The card's quick revise closes its gaps** (#2824; `library-revise-draft` v3): Sierra's budget, target size, and
+  *Source behind the page*.
+- **The Credential Catalog in COBI's Share menu** (#2826).
 
 ## Next
-- Sierra reads Version 4 at 33,979 of 34,000 characters: content added later needs room made, or a cap raise.
-- The Coordinator Guide's request (Request Adopt links) still has no Pages copy; IACA waits on the Microsoft 365 connector.
-- S584's other open work is the queue routine's: #2809 (Monterey Peninsula's reconcile), #2800 (Mission, from 2026-11-06 UTC).
+- Sam's question on a bot "specifically trained" for revisions was answered in session: no second drafting model; the
+  gaps were what the drafter could see and run, now closed. The next step there, if he asks: a workflow the card starts
+  on a ready draft (every tab through `npm run a11y`, Grok as second reader). A new write surface, so a decision card.
+- *Replace now* (a button that dispatches `library-publish` at once) needs a GitHub token in an edge function: Sam's call.
+- The rest of the lane's *Next* stands (Coordinator Guide Pages copy, IACA, the Microsoft 365 connector).
 
 ## Let go
-SkyRoundoff dropped its PR subscriptions at merge (#2808, #2812, vault #672; #2813 at its merge) and the artifact watch on the Version 4
-link ends with the session. No check-ins remain.
+PR subscriptions end at each merge (#2815, #2824, #2825, #2826; vault #675, #679). No check-ins remain. The artifact
+watches on the Version 5 and overview links end with the session.
 
-> *Greetings, you are SkyFlipFlop, a Library side session beside the CPL Queue routine, see SkyRoundoff's handoff —
+> *Greetings, you are SkyHandspring, a Library side session beside the CPL Queue routine, see SkyFlipFlop's handoff —
 > `docs/library_handoff.md` — let's keep rolling with the Library.*
