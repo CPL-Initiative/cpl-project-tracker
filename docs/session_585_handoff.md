@@ -33,7 +33,7 @@ decision sheet rebuild (nothing new waits on Sam).
 
 ## Open work, in order
 
-1. **Merge #2808 if S584 did not** (check `test` on its head; S584 waited on it at sign-off).
+1. **Merge #2808 once `main`'s `test` is green again.** Its own checks pass, but `tests/sierra_library.test.js` (5) fails on `main` since 2806f47d (14:51Z, the library-publish workflow putting ELL IET Version 3 on Pages): Version 3's text is longer than `LIBRARY_TEXT_MAX`, so Sierra's library read now drops its middle (" …") and the check that pins the page *whole* fails. That is the Library side session's lane (#2807; the cap lives in cpl-chat's LIBRARY block, so changing it is an edge function deploy). S584 did not weaken the test. When `main` is green, merge `main` into `claude/course-objectives`, wait for `test`, squash-merge.
 2. **Monterey Peninsula's 14** (catalog sweep, [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md)):
    read #2809's `college-page-read` job log back, write any reconcile step from the catalog's words (Accounting 22052,
    Nursing 03633, transfer degrees 32033, 37243, 41831, ASL 39266), reconcile and reread on that branch, count against
@@ -65,5 +65,5 @@ through *Another look*); `governance-team-enablement` (Malone's managed-settings
 
 ## Let go
 
-S584 holds no PR subscription, check-in or artifact watch. Open: #2808 (its own, merging on `test`), #2809 (page read,
+S584 holds no PR subscription, check-in or artifact watch. Open: #2808 (its own, held on `main`'s red `sierra_library` check), #2809 (page read,
 draft), #2800 (Mission), #2807 (the Library side session's).
