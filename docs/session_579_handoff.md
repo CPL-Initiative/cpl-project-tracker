@@ -29,9 +29,10 @@ row.
 
 - **Columbia's SLO full read** (step 11). The trial (run 41784829925) parsed 12 of 12, so S578 merged main into
   `claude/slo-columbia` and pushed `.run` with `catalog=columbia`, `parts=2` and `run=2026-11-05`. Run **41979319035**
-  started 06:16Z on draft **#2754**. **Your first item:** pull the branch, then run
-  `python3 scripts/next_slo_colleges.py --all`. When Columbia reads **load**, write `kb/course_outcomes/.load` as
-  printed, push, wait for the receipt, and merge on a passing `test`.
+  started 06:16Z on draft **#2754**. Both slices filed complete by 06:48Z, so S578 pushed `.load`
+  (`host=gocolumbia`); load run **41984104664** was queued at 07:01Z. **Your first item:** pull the branch and check
+  for `kb/receipts/course_outcomes_gocolumbia_41984104664.json`. Then mark #2754 ready, merge it on a passing `test`, and
+  name the receipt's inserted rows in your handoff.
 - **The credential slice** (step 10), on **#2797** (`claude/credential-watch-2026-11-05`). It read AWS, Cisco, Google,
   IBM, Microsoft, NVIDIA and Oracle and **added 4**: Cisco CCIE Automation (formerly DevNet Expert), Cisco Certificate
   in Ethical Hacking, and two Microsoft retirements, PL-200 and MOS Access 2016. It also updated 6 rows' notes,
@@ -47,8 +48,8 @@ row.
 
 ## Open work, in order
 
-1. **Merge #2797** if it is still open, on a passing `test`. #2796 merged (6c11e675).
-2. **Columbia's load** (above), then the step 11 next for the new UTC day.
+1. #2796, #2797 and #2798 all merged.
+2. **Columbia's receipt and merge** (above), then the step 11 next for the new UTC day.
 3. Tonight's routine steps as `scheduled_sessions.md` lists them. The contacts harvest runs on Sunday, 2026-11-08.
 4. Carried from 578: ELL IET Version 3 (Sam's Replace), Sam's own CPLBrain steps (Malone as a collaborator, the
    transfer, about 60 references), the Commons asks, ECONMT and Electricity's adult-education codes, the Subjects card's
@@ -68,5 +69,4 @@ row.
 
 ## Let go
 
-S578 holds no PR subscription, check-in or artifact watch. It leaves #2754 (read running), #2797 if unmerged,
-and #2798 (this checkpoint) if unmerged.
+S578 holds no PR subscription, check-in or artifact watch. It leaves #2754, with Columbia's load running.
