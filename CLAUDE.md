@@ -154,13 +154,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    one run). Sam's framing: Rule 8 is **ingest**, sessions are **query**.
 
    **Also: a row whose `source` or `verified_by` names a human may not be silently
-   superseded by a session's inference.** On 2026-08-08 Sam said *"Sierra only
-   lives in COBY for now"*; a later session read the code (three callers, one
-   shared function) and marked that row `superseded`. Both were true — his claim
-   was about **where the widget is deployed**, the code finding about **what it
-   calls** — but the fact left the default view, and he had to say it again on
-   2026-08-10. Supersede a human-sourced row only by saying so explicitly, or file
-   a new row and flag the conflict.
+   superseded by a session's inference.** Supersede a human-sourced row only by
+   saying so explicitly, or file a new row and flag the conflict (the 2026-08-08
+   Sierra row: [`doctrine_provenance`](docs/reference/doctrine_provenance.md)).
 
 9. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` first
    at every checkpoint** — the docs **lint** pass (Rule 8 is *ingest*, sessions
@@ -542,11 +538,9 @@ against, and the toggle history are in
   - **The `test` check must have succeeded on the current head before you
     merge (Sam's E ruling, amended to doctrine-level 2026-08-30).** GitHub
     cannot make it a required check without rejecting the cron's direct
-    pushes (measured live: a rules-active test declined all five of the
-    cron's push attempts with GH013), so the requirement is doctrine: poll
+    pushes (measured; `branch_policy`), so the requirement is doctrine: poll
     `get_check_runs` on the head until `test` (from `js-tests.yml`) reports
-    success — a docs-only diff finishes in ~2.5 min, a code diff ~11 (six
-    shards, 2026-10-31; balanced by measured time since, `tests/durations.json`) — and
+    success — a docs-only diff finishes in ~2.5 min, a code diff ~11 — and
     never merge past a pending or failing `test`. A failing `test` on your
     PR is yours to fix. Waiting for it is the one sanctioned merge wait.
   - **Beyond `test`, merge on `clean` or `unstable`.** `unstable` from any

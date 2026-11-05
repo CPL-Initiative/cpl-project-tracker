@@ -16581,8 +16581,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 551,
+   "count": 552,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 586,
+     "path": "docs/session_586_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "security",
+      "cobix",
+      "org-phrase-scope-auth"
+     ],
+     "title": "Session 586 handoff: COBIx's first audit answered; the proxy and the refresh button take a credential",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25965,5 +25981,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1389
+ "total": 1390
 }
