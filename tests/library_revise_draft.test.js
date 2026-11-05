@@ -180,6 +180,8 @@ function load(rows, onFetch) {
   check("C: it publishes nothing: no git, no Pages write", !/git |api\.github\.com/.test(FN));
   check("C: it refuses a piece with no Pages copy", /has no public copy on GitHub Pages/.test(FN));
   check("C: the workflow serializes with the daily cron", /group: daily-dashboard/.test(WF));
+  check("C: ⭐ after it commits a page it starts a Pages deploy, since its own push starts none (2026-11-05)",
+    /if: steps\.push\.outputs\.sha != ''\s+env:\s+GH_TOKEN: \$\{\{ secrets\.GITHUB_TOKEN \}\}\s+run: gh workflow run pages\.yml --ref main/.test(WF) && /actions: write/.test(WF));
   check("C: and commits only pages and their receipts", /git add library\/\*\/index\.html kb\/receipts\/library_publish\//.test(WF));
   check("C: drafts are read and added behind the team phrase or a reviewer, never updated or deleted by the team",
     /for select\s+to anon, authenticated using \(public\.team_pass_ok\(\) or public\.is_allowed_reviewer\(\)\)/.test(SQL) &&

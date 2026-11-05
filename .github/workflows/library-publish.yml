@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
 
     steps:
       - name: Checkout main
@@ -73,3 +74,12 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 scripts/library_publish.py --finish --commit "${{ steps.push.outputs.sha }}"
+
+      # A push made with GITHUB_TOKEN starts no other workflow, so Pages would serve the old page until the next
+      # deploy (2026-11-05: Sam replaced ELL IET Version 3 and the public page stayed Version 2). A dispatch made with
+      # it does start one, and only when this run committed a page.
+      - name: Deploy Pages
+        if: steps.push.outputs.sha != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run pages.yml --ref main
