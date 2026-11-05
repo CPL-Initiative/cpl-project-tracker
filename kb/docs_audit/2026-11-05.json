@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1404,
-    "bytes": 14184020,
+    "bytes": 14186247,
     "over_budget": 0,
     "handoff_max": 586,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 144,
-        "bytes": 4328902,
+        "bytes": 4329566,
         "over": 0
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 486473,
+        "bytes": 488036,
         "over": 0
       },
       "handoff": {
@@ -57,12 +57,13 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "vault_heavy_path": 74
+      "vault_heavy_path": 74,
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 25866,
-      "bytes": 4209454628,
-      "heavy_bytes": 2991571284,
+      "files": 25870,
+      "bytes": 4209488583,
+      "heavy_bytes": 2991578700,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -259,10 +260,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10160458,
+        "bytes": 10167874,
         "kind": "dir"
       },
-      "message": "directory totals 10,160,458 B inside the vault"
+      "message": "directory totals 10,167,874 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -893,6 +894,18 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "handoff_drops_active_lane",
+      "fixable": false,
+      "path": "docs/session_586_handoff.md",
+      "detail": {
+        "lanes": [
+          "map-users-student-contact"
+        ],
+        "days": 7
+      },
+      "message": "`docs/session_586_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: map-users-student-contact. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
