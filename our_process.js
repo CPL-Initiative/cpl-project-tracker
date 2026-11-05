@@ -124,6 +124,10 @@
   .op-lane p { font-size:14.5px; margin:0 0 .7em; max-width:none; }
   .op-lane .op-chain { font-family:var(--op-mono); font-size:12px; color:var(--op-ink); letter-spacing:.01em; margin-top:12px; padding-top:12px; border-top:1px dashed var(--op-line-2); line-height:1.9; }
   .op-lane .op-chain .op-g { color:var(--op-ink-faint); }
+  .op-lane .op-steps li { padding:10px 4px 10px 44px; }
+  .op-lane .op-steps li::before { top:10px; }
+  .op-lane .op-steps li b { font-size:15.5px; }
+  .op-note { font-size:14.5px; margin:20px 0 0; color:var(--op-ink-soft); }
 
   /* tmc */
   .op-tmc { border-radius:15px; }
@@ -323,6 +327,43 @@
             <div class="op-chain">nominate <span class="op-g">→</span> clean up <span class="op-g">→</span> <strong>person reviews</strong> <span class="op-g">→</span> publish</div>
           </div>
         </div>
+      </div>
+
+      <div class="op-sec op-setup">
+        <div class="op-sechead op-reveal">
+          <div class="op-eyebrow">Joining the work · accounts and access <span class="op-alt">6,000 ft</span></div>
+          <h2>Getting set up</h2>
+          <p class="op-lead">Each person on the MAP team works under their own Claude seat, so every session knows
+            who is driving and every change carries a name. A session reads the three repos only when the
+            person's GitHub account can reach them, so setup is mostly a matter of access.</p>
+        </div>
+        <div class="op-gate">
+          <div class="op-lane op-auto op-reveal">
+            <div class="op-lanetop"><span class="op-dot"></span><h3>A new teammate</h3><span class="op-flag">First day</span></div>
+            <ol class="op-steps">
+              <li><b>Accept the Claude invite</b><span>Sign in under your own email.</span></li>
+              <li><b>Link GitHub once</b><span>At claude.ai/connect-github. Your account then reaches the three repos.</span></li>
+              <li><b>Turn on the Supabase connector</b><span>On your claude.ai account, after the admin adds you to Supabase. Your curation then carries your name.</span></li>
+              <li><b>Start with all three repos</b><span>The Knowledge Base, the Project Tracker and CPLBrain. Say who you are in your first message.</span></li>
+              <li><b>Read the team guide</b><span>docs/working_with_claude_code.md in the Project Tracker.</span></li>
+            </ol>
+          </div>
+          <div class="op-lane op-human op-reveal">
+            <div class="op-lanetop"><span class="op-dot"></span><h3>The account admin</h3><span class="op-flag">Once</span></div>
+            <ol class="op-steps">
+              <li><b>Hold the Owner role</b><span>Only an Owner edits Claude Code's managed settings and cloud environments.</span></li>
+              <li><b>Invite one seat per person</b><span>No shared logins, so each session can tell who wrote what.</span></li>
+              <li><b>Give the GitHub team its repos</b><span>Write on the Project Tracker and CPLBrain; read on the Knowledge Base, whose changes go through human review.</span></li>
+              <li><b>Push the standing instructions</b><span>The three-repo check goes into the managed CLAUDE.md, so every session carries it.</span></li>
+              <li><b>Set the default cloud environment</b><span>Its setup script installs the context meter and the prompt guards.</span></li>
+            </ol>
+          </div>
+        </div>
+        <p class="op-note op-reveal">Partner offices get an account of their own. The Chancellor's Office Division of
+          Academic Affairs runs a pilot account set up through RCCD, with its own repo, memory table and standing
+          instructions, and reads the Knowledge Base and CPLBrain beside them. The CO will decide whether to offer
+          accounts like it to its other divisions. The full runbook and the files to copy live in CPLBrain, under
+          04-projects/map-team-claude-accounts and 04-projects/co-academic-affairs-pilot.</p>
       </div>
 
       <div class="op-sec op-tmc">
