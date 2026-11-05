@@ -62,9 +62,9 @@
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25854,
-      "bytes": 4209487306,
-      "heavy_bytes": 2991552220,
+      "files": 25855,
+      "bytes": 4209488610,
+      "heavy_bytes": 2991553390,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -174,10 +174,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853982269,
+        "bytes": 1853983439,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,982,269 B inside the vault"
+      "message": "directory totals 1,853,983,439 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -914,11 +914,11 @@
       "fixable": false,
       "path": "docs/session_585_handoff.md",
       "detail": {
-        "commits_since": 7,
+        "commits_since": 9,
         "budget": 6,
         "handoff": "session_585_handoff.md"
       },
-      "message": "7 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "9 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
