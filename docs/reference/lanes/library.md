@@ -185,28 +185,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
 
 
-✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF read at its source (S513; written since S553, ⑮ below), ⑧ a workbook remediated (S514), ⑨ its contrast (S515) and ⑩ its conditional formatting (S516).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S517).
-
-✅ **⑪ A chart's contrast is measured (S517)** in a deck, a document or a workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A chart's contrast (S517)*. Tests: `library_remediate` (135).
-
-✅ **⑫ Remediation drafts first and files as it opens (S517, Sam's session, #2552 to #2554).** Each picture is drawn with its slide and drafted before the report opens (Claude from the picture and its slide's words, a QR code from the address the page reads, a video from its name); the person keeps, edits or redrafts, or uses *Keep all*. One bar, a part per WCAG 2.2 check, counts down to the Chancellor's Office review, the standards beside the header (the CO's 2025 certificate, which Sam shared). A file is a Draft in the Library the moment it opens (`cpl_library.remediation`), and two boxes count and filter it; the download opens its form for the SharePoint link. Sam: *"the library is functioning as much as a work space for all docs as a repository."* Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each picture with its slide (S517, Sam's session)*.
-
-✅ **⑬ Each slide beside its item, empty boxes removed (S518, #2556).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each slide beside its item (S518)*.
-
-✅ **⑭ A title box for every slide, a script in the notes, the deck's own slide order (S518, #2557; `slide-script-draft` v1).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A title box for every slide (S518, later)*.
-
-✅ **⑮ Every draft applied as the report opens, and a PDF written (S553, 2026-11-02; Sam: *"a full remediation without waiting for confirmation on each element but then present the elements remediated as it does now for any edits needed"*).** Every alt text, slide title, sheet name and contrast fix is in the file from the start under *Remediated for you, to edit as needed*; *Needs you* holds only what has no words or needs a person in the program; Keep and Keep all are gone. A PDF gets *Download the remediated file*: its title, language and title display written as an incremental update that keeps every byte (55 team PDFs verified); tags, pictures' alt text and a scan's text stay at the source, each an item with the steps and *Choose the source*. `.pptm`, `.ppsx`, `.docm`, `.xlsm` read as their kin; other kinds say what to do. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Every draft applied, and a PDF written (S553)*. Tests: `library_remediate` (178), `library` (270).
-
-✅ **⑰ Last modified first, a quieter project count, and the draft's version named (Sam, 2026-11-05).** The register
-sorts by each piece's `updated_at` (falling back to `made_on`), so a group sits where its most recently changed piece
-does, and a project card's *Updated* date reads the same field. The project card's 176px "2 pieces" tile became a small
-muted label to the title's right (*"shrink the chip and put it to the right, so it doesn't get focus and the title is the
-focus"*). A ready draft now reads *Version 3 is ready to review* and *Version 2 stays public until you replace it*: the
-card said "Version 2" over "A draft is ready," and Sam read Version 3 as missing. Tests: `library` (279).
-
-✅ **⑯ Finish remediation from the card (S554, 2026-11-02; Sam: the team's remediations sat in the Library with no intuitive way to complete them).** The Library keeps a remediation's record, never its file, so three records (two decks, one PDF, 2026-10-29 and 10-30) sat at *Not filed* and *In remediation* with only *Revise and remediate*, which asks a session to rebuild. A record left In remediation with no link now offers **Finish remediation**: a chooser for the kinds remediation reads, opening the report bound to that record; its download marks the same record Remediated and opens its form for the link. A remediated record with no link makes *File it* its first action. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Finish remediation from the card (S554)*. Tests: `library` (275).
-
-**NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks; a tagged PDF's pictures drafted and written (`/Alt` on each Figure, which needs the picture's bytes out of the page's content) when a dropped PDF shows the need. The Chancellor's Office review still certifies.
+✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S577)*.
 
 ✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
 already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks

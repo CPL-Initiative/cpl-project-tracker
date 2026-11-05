@@ -4,6 +4,8 @@ date: 2026-11-04
 session: 573 (SkyNeedle, the CPL Queue routine, 2026-11-04 14:12Z firing)
 tags: [handoff, scheduled-sessions, cer-procedures, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_578_handoff.md
 ---
 
 # You are Session 574

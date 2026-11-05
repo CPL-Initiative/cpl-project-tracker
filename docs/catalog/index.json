@@ -848,7 +848,8 @@
       "kb/_zband_retire_dryrun.py",
       "kb/_subj4_dryrun.py",
       "kb/_pols_remint.py",
-      "kb/authority_recode_out/2026-09-03/report.md"
+      "kb/authority_recode_out/2026-09-03/report.md",
+      "kb/_subjects_list_recode.py"
      ],
      "path": "docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md",
      "status": "published",
@@ -863,7 +864,7 @@
      ],
      "title": "A code change is a prefix re-key that keeps the number, not a re-sequence",
      "type": "methodology",
-     "updated": "2026-09-03"
+     "updated": "2026-11-05"
     },
     {
      "created": "2026-08-12",
@@ -16569,8 +16570,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 543,
+   "count": 544,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 578,
+     "path": "docs/session_578_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "common-subjects-reference",
+      "remint",
+      "library",
+      "edge-function",
+      "commons"
+     ],
+     "title": "Session 578 handoff: the Subjects List recode landed; the Library revises a visual from its card",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25828,5 +25847,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1380
+ "total": 1381
 }

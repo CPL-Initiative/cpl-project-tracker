@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-543 document(s).
+544 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 578 | [Session 578 handoff: the Subjects List recode landed; the Library revises a visual from its card](../session_578_handoff.md) | 2026-11-05 |
 | 577 | [Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order](../session_577_handoff.md) | 2026-11-05 |
 | 575 | [Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried](../session_575_handoff.md) | 2026-11-04 |
 | 574 | [Session 574 handoff: the cert link's IAI, Intuit and DRE families; the family work stops; Columbia's full read is next](../session_574_handoff.md) | 2026-11-04 |

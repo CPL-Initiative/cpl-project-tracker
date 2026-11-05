@@ -166,9 +166,7 @@ four known issues with owners, the procedures in force, and deep links into the 
 
 ## Sheet 99's six rulings (Sam, 2026-10-19), all applied
 
-Settled, on (the nightly authority confirm), agab, sitting (the 44 and Sheet 104's forestry and wine windows), hide
-and rename: each landed between S427 and S432. The full record, with receipts and run ids, moved verbatim to
-[`commons_lessons`](../../commons_lessons.md) (S433 section) when this file passed its 20 KB budget.
+Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577)*.
 
 ## NEXT
 
@@ -186,20 +184,7 @@ Virtual Production*) lost the discipline the old code implied and joined the bla
 codes `kb/reference/subject_discipline_map.json` maps to Computer Information Systems and Biological Sciences, so any
 blank-discipline row minted on them later would be edge-filled wrong; none exists today.
 
-**RULED and applied (Sam, Open Asks Sheet 107 cards 1-3, 13:08-13:09Z 2026-10-20, each his own call; S436, one
-re-key window, three receipts in apply order in ALIAS_MAPS):**
-- *move-both*: AGRI M10SY and M1104 to ENVR (`kb/forestry_wine_remint_out/2026-10-20-stragglers/`).
-- *rekey-twelve*: the twelve Foreign Languages identities to their language's code (`kb/fl_stray_remint_out/2026-10-20/`);
-  five new umbrella codes FLAM, FLHU, FLEG, FLKH, FLTU, also in `kb/foreign_language_subj4.json`.
-- *file-eight*: the 79 identities on ARCE, ARTF, NCAR (to ARTS), CSMT (COSM), BRDC (BCST), FLGH (AVIA), ARTP (PHOT)
-  and WELL (HLTH), each taking that discipline (`kb/_blank_stray_remint.py`, `kb/blank_stray_remint_out/2026-10-20/`;
-  all 79 gap-filled).
-- The allocator now treats every id an earlier re-mint used, and every id SkyView's hand-built layout still draws,
-  as taken: the first apply gap-filled six ids onto vacated slots the layout still drew, and CI's orbits lint read
-  six duplicate points (`er.skyview_ids()`, S436). Honors Linguistics went to FLNG M11LR instead of M10AF.
-
-Every gate passed on all three (P3 fresh reads of 2, 9 and 39 live rows). After the merge: `supabase-rekey.yml` once
-per receipt, in that order, then the read-back.
+**Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 
 **For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
 BRDC M10AV into JOUR M1016 *Broadcast Journalism*, BRDC M10BF into FTVE M1144, and three noncredit drawing and painting

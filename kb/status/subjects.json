@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 575,
-  "moniker": "SkyJujube",
+  "session": 577,
+  "moniker": "SkyKumquat and SkyBarnard",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_575_handoff.md",
+  "handoff": "docs/session_578_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -14,17 +14,17 @@
       "answer": {
         "by": "Sam",
         "at": "2026-10-20",
-        "words": "move-both, on Open Asks Sheet 107 card 1 (13:08Z, his own call): AGRI M10SY and M1104 moved to ENVR in S436 (kb/forestry_wine_remint_out/2026-10-20-stragglers/). Recorded S555."
+        "words": "move-both (Open Asks Sheet 107 card 1; applied by S436, kb/forestry_wine_remint_out/2026-10-20-stragglers/)"
       }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-05T00:38:02Z",
+  "written_at": "2026-11-05T03:19:16Z",
   "project": "subjects",
   "next_step": {
-    "title": "The re-mint dry-run for the evening's codes",
-    "text": "Carry the codes Sam set on 2026-11-04 (WWKC, WWKF, GFCD, CBIT, DIES, CSIS and others) onto their M-IDs under the re-mint playbook; the apply waits on Sam."
+    "title": "Check alignment on CR, Programs and Courses",
+    "text": "The Subjects List's codes are applied; carry Check alignment to the other Commons Lists (edit.extra; the worked examples are codeAudit and exhibitAudit)."
   },
   "changes": [
     {
@@ -54,6 +54,10 @@
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "The side session's handoff: docs/cer_redesign_handoff.md (SkyJujube to SkyKumquat)."
+    },
+    {
+      "at": "2026-11-05T02:52:00Z",
+      "text": "Sam's eleven codes from 2026-11-04 landed with their identities (#2790): 2,389 ids re-keyed by prefix, the database notes re-keyed and read back."
     }
   ]
 }
