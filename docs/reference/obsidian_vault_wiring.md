@@ -1,7 +1,7 @@
 ---
 title: "Obsidian vault wiring (CLAUDE.md offload)"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-11-05
 tags: [reference, obsidian, vault, claude-md-offload]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -80,3 +80,17 @@ reached **only** through its curation pipeline (`CPLBrain/audit/curation-manifes
 → `cpl-knowledge-base/tools/curation_assistant.py` → a human-reviewed **draft
 PR** per its `CURATION.md` — its "Promoting a checkpoint or vault note" section
 is the explicit path).
+
+## LLM wiki
+
+`CPLBrain` (`samueltlee/CPLBrain#671`) holds an LLM-wiki layer beside the
+COG vault. A session sees that repo as the attached `CPLBrain` checkout.
+The layer has immutable raw sources, concept pages, and a root `index.md`
+and `log.md`. Its skills are `/wiki-ingest`, `/wiki-query`, and `/wiki-lint`.
+
+Read the layer's root `index.md` first, or run `/wiki-query`, before
+re-deriving a settled fact. Captures still land where they land. Promote a
+settled decision or fact with `/wiki-ingest`.
+
+`/checkpoint` names those candidates and points at `/wiki-ingest`. It does
+not write concept pages, `index.md`, `log.md`, or the raw sources.
