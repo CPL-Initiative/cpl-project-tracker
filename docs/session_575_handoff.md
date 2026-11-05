@@ -4,6 +4,8 @@ date: 2026-11-04
 session: 573 (SkyNeedle, Sam's session, 2026-11-04 14:04Z to 17:10Z)
 tags: [handoff, commons, common-subjects-reference, data-sources, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_577_handoff.md
 ---
 
 # You are Session 575

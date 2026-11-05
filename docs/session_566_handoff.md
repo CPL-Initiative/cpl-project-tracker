@@ -4,6 +4,8 @@ date: 2026-11-04
 session: 565 (SkyMayall, the CPL Queue routine, 2026-11-04 06:12Z firing)
 tags: [handoff, scheduled-sessions, program-requirements-harvest, credential-registry]
 status: current
+superseded: true
+superseded_by: session_577_handoff.md
 ---
 
 # You are Session 566
