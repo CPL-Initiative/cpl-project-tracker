@@ -24,7 +24,7 @@ const L = dom.window.CPL_COMMONS_LOOK;
 const cmLight = /"#tab-commons \{ (.*?) \}",/.exec(CM)[1], cmDark = /:root\[data-theme=\\"dark\\"\] #tab-commons \{ (.*?) \}",/.exec(CM)[1].replace(/\\"/g, '"');
 check("(2) ⭐ the light palette is commons.js's", L.LIGHT === cmLight, L.LIGHT.slice(0, 80));
 check("(2) and so is the dark one", L.DARK === cmDark);
-check("(3) ⭐ the five references' tabs", JSON.stringify(L.TABS) === JSON.stringify(["#tab-canonical-subj4", "#tab-exhibits", "#tab-cr-reference", "#tab-program-requirements", "#tab-coci-lookup"]));
+check("(3) ⭐ the five references' tabs, and the Library (Sam, 2026-11-05: \"use the new commons format\")", JSON.stringify(L.TABS) === JSON.stringify(["#tab-canonical-subj4", "#tab-exhibits", "#tab-cr-reference", "#tab-program-requirements", "#tab-coci-lookup", "#tab-library"]));
 const css = L.CSS;
 const lines = css.split("\n");
 const remapLines = lines.filter((x) => x.indexOf(L.REMAP) >= 0);

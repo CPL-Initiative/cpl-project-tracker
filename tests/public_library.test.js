@@ -166,7 +166,7 @@ block("(2d)", function () {
 const ROW = { id: "r1", slug: "dsp-credit-starting-points", title: "DSP Credit Starting Points", kind: "document",
   made_on: "2026-10-20", status: "draft", seen_by: null, home: "web", url: "https://claude.ai/artifact/P4R8", summary: "Internal summary", versions: [] };
 function loadLib(opts) {
-  const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/", runScripts: "dangerously" });
+  const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/#library/cards", runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.fetch = function (url, init) { calls.push({ url: String(url), init: init || {} }); return response(200, String(url).indexOf("/rpc/") > -1 ? [] : [opts.row || ROW]); };
   w.localStorage.setItem("cpl_team_pass", "phrase");
@@ -226,10 +226,12 @@ block("(3d)", function () {
   const m = loadLib({ token: "t" });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     const acts = m.root.querySelector(".lib-acts");
-    check("(3d) Edit sits on the card's top row", !!(acts && acts.querySelector('[data-edittop="r1"]')));
+    // Version 22 (Sam, 2026-11-05: "Version 22 looks better") moved Edit into Details, beside the record it edits.
+    check("(3d) Edit the record sits in the card's Details, one press away", !!(acts && acts.querySelector('[data-toggle="r1"]')) && !(acts && acts.querySelector('[data-edittop="r1"]')));
     check("(3d) so does List publicly", !!(acts && acts.querySelector('[data-pubtop="r1"]')));
     click(m.w, acts.querySelector('[data-pubtop="r1"]'));
     check("(3d) List publicly opens the listing form under the card", !!m.root.querySelector('[data-pubform="r1"]'));
+    if (!m.root.querySelector('[data-edittop="r1"]')) click(m.w, m.root.querySelector('[data-toggle="r1"]'));
     click(m.w, m.root.querySelector('[data-edittop="r1"]'));
     check("(3d) Edit opens the edit form under the card", !!m.root.querySelector('[data-editform="r1"]'));
   });

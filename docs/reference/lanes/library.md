@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-02
+updated: 2026-11-05
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -79,6 +79,27 @@ Opportunity record pair in one step, and opens Start a piece for any other entit
 are in `docs/library_lessons.md`, *Moved from the lane (S467)*, verbatim; Sam's 2026-10-05 rulings, his calls 7 to 9
 and the Drive filing history moved there with them.
 
+✅ **Version 22 and the List (SkyCartwheel, 2026-11-05; Sam: "Version 22 looks better", then "Add a list view option to the
+Library just like our CPL Commons list views and the current cards you have can be the sidebar details like in the Commons.
+Also use the new commons format.").** Mockup Version 22 (advised by Fable) on the Library canvas,
+https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR.
+- **Three views, each with an address:** List (`#library`, the default), Cards (`#library/cards`), Knowledge Base.
+- **The List** is `commons_list.js`: six columns that fit beside the side menu (Title, Kind, Made for, Where it stands,
+  Status, Updated), last modified first, banded by project; filters for drafts to review, changes asked, replacing, in
+  development and the attention flags. A row's title opens its card in the side panel. The create box folds shut.
+- **The card names one of four states** in a line and offers the next step under it as underlined words: Revise; Draft it
+  now, Change what you asked, Copy for a session; Open the draft, Replace the public copy, Ask for more changes; Keep
+  Version N instead. Revise opens its box on the card (or in the panel): What to change, a document, one press that
+  saves the request and drafts it in place for a page with a Pages copy, or sends it to a session.
+- **More changes build on the draft** (`regen.based_on_draft`, earlier drafts under `regen.earlier`; a draft known only
+  by its claude.ai link, `based_on_url`, goes to a session). Start over from Version N drops it by choice.
+- **What changed** on a ready draft: the summary, each edit as Was and Now (`request.pairs`, stored by
+  `library-revise-draft` once redeployed), and an accessibility check run on the draft in a script-free frame.
+- Edit the record, File a new version and Start something new from it sit in Details. The size box is gone; the size
+  and format sit beside the title. The Library takes the Commons look (`commons_look.js` names `#tab-library`).
+- Tests `library` (280), `library_revise_draft` (44), `library_list` (23), `public_library` (112), `commons_look` (12);
+  `npm run a11y -- library-cards library-cards-dark library-list library-list-dark` (seeded) pass.
+
 ## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)
 
 The folder is **CPLLibrary** on the MAP team's SharePoint site (`studentrcc.sharepoint.com`, site
@@ -133,24 +154,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **Revise from the card, no session (built S577, SkyBarnard; Sam, 2026-11-05: "Build it").** On a piece with a Pages
-  copy, Revise and remediate's request now offers **Draft it now**: the edge function `library-revise-draft` reads
-  `library/<slug>/` from Pages, asks Claude for edits (each an exact passage occurring once, all or none, the page's frame
-  kept; `apply_edits.mjs`), stores the draft in `cpl_library_drafts` and sets `regen.ready_at` and `regen.draft_id`, all
-  with the caller's own credential. The card offers **Open the draft** and **Replace the public copy**; every three hours
-  `library-publish.yml` (`scripts/library_publish.py`) writes an approved draft to `library/<slug>/index.html` with a
-  receipt (`kb/receipts/library_publish/`), commits to main, then moves the record (Version N+1 Current, the one before
-  Replaced, Changes to make and regen cleared), guarded on the `updated_at` it read. A piece with no Pages copy, a
-  SharePoint file, or only a linked document still goes to a session (Copy the request). Governance: dismissed with
-  reasons (`table:cpl_library_drafts`, `function:library-revise-draft`, `workflow:library-publish.yml`). Migration
-  `kb/migrations/2026-11-05_library_drafts.sql` (rollback beside it); the function deploys with `cpl-chat-deploy.yml`
-  (`function: library-revise-draft`). Tests: `tests/library_revise_draft.test.js`, `tests/library_publish_test.py`.
-- **ELL IET CPL Starting Points Version 3 is a draft awaiting *Replace the public copy*** (S557, Sam's Revise request of
-  2026-11-02): https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3, `regen.ready_at`/`draft_url` on the record (receipt
-  `kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql`, rollback beside it). Once approved, run
-  `scripts/library_page.py ell-iet-cpl-starting-points` on `CPLBrain/.../ell-iet/20261023_ELL_IET_CPL_Starting_Points_3.html`,
-  add the version as Current, empty `refresh_note`, set `regen` to null. IACA's `regen` (Crystal Nasio, 2026-10-26) has
-  no note or sources: it waits on what she wants changed.
+- **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
+- **ELL IET CPL Starting Points is at Version 3, public and Approved** (2026-11-05; published by `library-publish.yml`,
+  2806f47d; status by receipt `kb/receipts/cpl_library_skycartwheel_ell_v3_approved_2026-11-05.sql`). Sam plans a
+  Version 4 from its card (each grantee project on its own tab). IACA's `regen` (Crystal Nasio, 2026-10-26) has
+  no note or sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z,
+  Request Adopt links) needs a session: it has no Pages copy.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
   (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.

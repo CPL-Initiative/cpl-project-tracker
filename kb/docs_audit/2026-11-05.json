@@ -11,22 +11,22 @@
   },
   "summary": {
     "files": 1400,
-    "bytes": 14138234,
+    "bytes": 14143068,
     "over_budget": 0,
     "handoff_max": 585,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59984,
+    "always_loaded_bytes": 59999,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59984,
+        "bytes": 59999,
         "over": 0
       },
       "other": {
         "files": 141,
-        "bytes": 4303766,
+        "bytes": 4303218,
         "over": 0
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2625743,
+        "bytes": 2629704,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 483587,
+        "bytes": 484420,
         "over": 0
       },
       "handoff": {
         "files": 551,
-        "bytes": 3823507,
+        "bytes": 3824080,
         "over": 0
       }
     },
@@ -60,9 +60,9 @@
       "vault_heavy_path": 74
     },
     "vault": {
-      "files": 25838,
-      "bytes": 4208778064,
-      "heavy_bytes": 2991509799,
+      "files": 25846,
+      "bytes": 4209033998,
+      "heavy_bytes": 2991538625,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -159,10 +159,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853971350,
+        "bytes": 1853977403,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,971,350 B inside the vault"
+      "message": "directory totals 1,853,977,403 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -239,10 +239,10 @@
       "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 16003129,
+        "bytes": 16007730,
         "kind": "dir"
       },
-      "message": "directory totals 16,003,129 B inside the vault"
+      "message": "directory totals 16,007,730 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -259,10 +259,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10124019,
+        "bytes": 10142191,
         "kind": "dir"
       },
-      "message": "directory totals 10,124,019 B inside the vault"
+      "message": "directory totals 10,142,191 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

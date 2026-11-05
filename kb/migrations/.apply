@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-05_library_drafts.sql
-name=s577_library_drafts
+file=kb/migrations/2026-11-05_library_ell_iet_v3_stored_draft.sql
+name=skycartwheel_library_ell_iet_v3_stored_draft
