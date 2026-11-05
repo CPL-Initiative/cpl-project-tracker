@@ -489,6 +489,41 @@ check("checkpoint overdue: silent when there are no handoffs to measure against"
       da.rule_checkpoint_overdue(_d) is None)
 _sh.rmtree(_d)
 
+# ── handoff_drops_active_lane ─────────────────────────────────────────────
+# S583 (2026-11-05): five firings copied a narrowed open-work list and found an
+# empty queue while worked lanes still held a NEXT.
+def _lane_repo(lane_body, handoff_body):
+    d = _git_repo(handoff=None)
+    _os.makedirs(_os.path.join(d, "docs", "reference", "lanes"))
+    open(_os.path.join(d, "docs", "reference", "lanes", "catalog-sweep.md"), "w").write(lane_body)
+    open(_os.path.join(d, "docs", "session_9_handoff.md"), "w").write(handoff_body)
+    _sp.run(["git","add","-A"], cwd=d, capture_output=True)
+    _sp.run(["git","commit","-qm","lane"], cwd=d, capture_output=True)
+    return d
+
+_lane = '---\ntitle: "Catalog sweep — lane state"\n---\n**NEXT:** Monterey\'s 14.\n'
+_d = _lane_repo(_lane, "# You are Session 9\n1. Mission's read.\n")
+_f = da.rule_handoff_drops_active_lane(_d)
+check("handoff drops lane: fires when a worked lane's NEXT is never named",
+      _f is not None and _f["detail"]["lanes"] == ["catalog-sweep"])
+_sh.rmtree(_d)
+
+_d = _lane_repo(_lane, "# You are Session 9\n1. The Catalog sweep: Monterey's 14.\n")
+check("handoff drops lane: silent when the handoff names the lane by title",
+      da.rule_handoff_drops_active_lane(_d) is None)
+_sh.rmtree(_d)
+
+_d = _lane_repo(_lane.replace("**NEXT:**", "Done:"), "# You are Session 9\n")
+check("handoff drops lane: silent when the lane holds no NEXT",
+      da.rule_handoff_drops_active_lane(_d) is None)
+_sh.rmtree(_d)
+
+_d = _tf.mkdtemp(); _os.makedirs(_os.path.join(_d, "docs", "reference", "lanes"))
+open(_os.path.join(_d, "docs", "session_9_handoff.md"), "w").write("# h\n")
+check("handoff drops lane: silent with NO git repo (fail-soft)",
+      da.rule_handoff_drops_active_lane(_d) is None)
+_sh.rmtree(_d)
+
 # ── self_corrected_word_pair ──────────────────────────────────────────────
 # The sweeper ate its own rule: `american_spelling` rewrote `whilst`/`amongst`
 # INSIDE the parenthetical that named them, leaving "while (not while)" in the

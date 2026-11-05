@@ -55,6 +55,21 @@ found "nothing to do" while the lanes held buildable NEXT items. The queue, in o
 7. Carried: ELL IET Version 3 (Sam's Replace), Sam's own CPLBrain steps (Malone as a collaborator, the transfer, about
    60 references), ECONMT and Electricity's adult-education codes, the Subjects card's second count.
 
+**Lanes worked this week that wait on someone else** (named so `handoff_drops_active_lane` sees them):
+`cer-procedures` (its NEXT (0) acts after each of Sam's runs through *Another look*: read the next fold's moves);
+`governance-team-enablement` (waits on Malone's managed-settings answer); `reviewer-session-lifetime` (one real-browser
+round trip, a person's); `common-subjects-reference` (ECONMT and Electricity's adult-education codes, item 7).
+
+## The Subjects re-mint of 2026-11-05, read back (S583, on Sam's ask)
+
+SkyKumquat's recode (#2790, Sam's *Apply now* about 01:58Z) re-keyed 2,389 M-IDs onto his eleven Common SUBJ codes.
+`supabase-rekey.yml` ran on that commit (41958042347, 02:52Z, success), the daily rebuilt after it (41959573553,
+03:15Z, success), and `main`'s `test` has stayed green. S583 read `kb_curation` live: no row is left on any of the
+eleven old codes (CSAI, BCST, CNSR, CNSC, AUTD, ESCI, CSTF, GRAF, PLGL, NRSV); the new codes hold their rows. The
+00:20Z phase-1e sync on 11-05 stayed (the one reverted was 11-04's, #2787). Open from it: the two blank-discipline
+rows (BRDC M1061, GFCD M1051) on the blanks worklist, FMED M1166 and M1167 on the collision signal, and the CSIS and
+ENVS watch, all in the Subjects lane.
+
 ## Lessons
 
 - **A handoff's open work is built from the lane files' NEXT lines, never copied from the last handoff.** S580's lesson

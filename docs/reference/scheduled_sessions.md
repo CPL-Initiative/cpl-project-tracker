@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-01
+updated: 2026-11-05
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -343,6 +343,21 @@ is his standing preference there too.
    opens again when a census, a harvest capture or a verdict row changes. A college whose full read parses outcomes
    on fewer than half the pages that answered gets a verdict row, never a second read. It never writes MAP or a
    curation row, opens a page behind a sign-in, or puts two readers on one host.
+
+12. **The catalog sweep (the program requirements harvest itself)** (Sam's aim of 2026-10-14: *every catalog, then
+   curated audit sweeps*; the $40 go and the stopping rule below). **Armed: yes**, and until S583 carried only by the
+   handoff, so five firings (S579 to S583) skipped it once a handoff dropped it. **Every firing that reaches this step,
+   after step 11, while time remains:** read the lane's catalog sweep and its colleges' NEXT lines
+   ([`program-requirements-harvest`](lanes/program-requirements-harvest.md)) and work the first college that is neither
+   parked nor waiting on a run: its reconcile steps, a read or an extraction under the $40 go, the load, then the display
+   build (`kb/_build_roep_display.py` on the wave branch, then `step=display`). One branch per college, never two on one
+   host; dispatch with `college=`. At the checkpoint, count what moved to passing against the stopping rule and park a
+   college when it says so. When every college is loaded, parked or waiting, the step ends in one line naming the next
+   one due and when. It never writes MAP or hand-edits a record (a misread is a reading-procedure fix).
+
+**The handoff's open work is built from the lanes, not copied from the last handoff** (S583, 2026-11-05). Each lane a
+session worked in the past week that still carries a NEXT goes on the list, or the handoff says by slug why it waits.
+`handoff_drops_active_lane` in `kb/_docs_audit.py` (the checkpoint's step 0) names any it leaves out.
 
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
