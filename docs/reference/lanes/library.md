@@ -155,13 +155,9 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 ## Next
 
 - **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
-- **Redeploy `library-revise-draft` on Sam's go (asked in chat, 2026-11-05)** (`cpl-chat-deploy.yml`, `function: library-revise-draft`) with the merge of
-  #2807: the card now asks for drafts built on a draft (`based_on_draft`) and What changed reads `request.pairs`; the
-  deployed function knows neither, so the PR holds until he says go.
-- **ELL IET CPL Starting Points Version 3 is a stored draft awaiting *Replace the public copy*** (S557's draft, stored by
-  SkyCartwheel as `cpl_library_drafts` 200adaee-3959-487d-b9b4-2a5d4cfcbf3f and named in `regen.draft_id`; migration
-  `kb/migrations/2026-11-05_library_ell_iet_v3_stored_draft.sql`, rollback beside it). Replace publishes it through
-  `library-publish.yml` within three hours; more changes build on it. IACA's `regen` (Crystal Nasio, 2026-10-26) has
+- **ELL IET CPL Starting Points is at Version 3, public and Approved** (2026-11-05; published by `library-publish.yml`,
+  2806f47d; status by receipt `kb/receipts/cpl_library_skycartwheel_ell_v3_approved_2026-11-05.sql`). Sam plans a
+  Version 4 from its card (each grantee project on its own tab). IACA's `regen` (Crystal Nasio, 2026-10-26) has
   no note or sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z,
   Request Adopt links) needs a session: it has no Pages copy.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
