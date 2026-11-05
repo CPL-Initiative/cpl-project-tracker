@@ -14616,17 +14616,18 @@
      "updated": ""
     },
     {
-     "created": "2026-10-29",
+     "created": "2026-11-05",
      "governs": [],
      "path": "docs/library_handoff.md",
      "status": null,
      "tags": [
       "handoff",
       "library",
-      "remediation",
+      "revise",
+      "list-view",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyChokeberry, beside S520)",
+     "title": "Library \u2014 side-lane handoff (SkyCartwheel, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },
@@ -15943,7 +15944,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-02"
+     "updated": "2026-11-05"
     },
     {
      "created": "2026-08-28",
