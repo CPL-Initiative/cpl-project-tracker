@@ -9,6 +9,9 @@ related:
 
 # Library — side-lane handoff
 
+> **In progress (2026-11-05): SkyCartwheel**, a Library side session beside the CPL Queue routine
+> (S584 SkyMinkowski). One writer for the Library files until this note is replaced.
+
 > Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 520
 > (in #2560) belongs to S520 SkyLingonberry, the funding session running beside this one, and its
 > checkpoint writes 521. This was a **light checkpoint** (no §11 row moved, no re-mint, no Rule 10
