@@ -183,6 +183,11 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # SEC-3 guard (2026-11-05, COBIx round 1 item 2): the refresh button carries no
+      # trigger secret, in the generator, both HTMLs and the click module, and both
+      # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
+      - name: Refresh button carries no secret (SEC-3)
+        run: python3 tests/refresh_button_no_secret_test.py
       # Supabase table-grant lint (2026-09-23) — from 2026-10-30 Supabase stops
       # granting the API roles on a NEW public table, and five functions here
       # DROP + CREATE their table on every nightly promotion. Every table the

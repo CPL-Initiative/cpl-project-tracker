@@ -158,6 +158,17 @@ SEEDS = [
                "committed: served locally from ./ccr_desc or from the public Supabase Storage "
                "bucket ccr-desc (scripts/publish_skyview_desc_shards.sh)",
     },
+    {   # cobi_refresh.js (2026-11-05): the Manually Refresh COBI click, moved out of the
+        # generator's inline onclick so the page ships no trigger secret (COBIx round 1 item 2).
+        # It POSTs the worker's /trigger with the reader's credential; the URL is a literal
+        # the scanner would see, but the edge is a WRITE (it dispatches daily-dashboard.yml).
+        "file": "cobi_refresh.js",
+        "anchor": r'TRIGGER_URL = "https://cpl-proxy\.slee-548\.workers\.dev/trigger"',
+        "datasets": [("external:cpl-proxy.slee-548.workers.dev", "write"),
+                     ("workflow:daily-dashboard.yml", "call")],
+        "why": "the click dispatches the daily workflow through the worker's /trigger with "
+               "x-team-pass or a reviewer bearer; no secret rides in the page",
+    },
     {   # team_phrase.js: fetch(SUPABASE_URL + '/rest/v1/rpc/' + rpcFor(site))
         "file": "team_phrase.js",
         "anchor": r"/rest/v1/rpc/'\s*\+\s*rpcFor\(",

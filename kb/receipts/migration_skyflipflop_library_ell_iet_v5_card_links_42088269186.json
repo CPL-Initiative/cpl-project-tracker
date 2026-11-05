@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-05_library_ell_iet_v5_card_links.sql",
+ "name": "skyflipflop_library_ell_iet_v5_card_links",
+ "version": "20261105185347",
+ "sha256": "5f497a9be722d6cb796d254c5c158efced5cb5b59534ed3a83be1afac7371a3f",
+ "run": "42088269186",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  P0001: a Library draft is kept as made; only its publish stamp changes\\nCONTEXT:  PL/pgSQL function cpl_library_drafts_guard() line 11 at RAISE\\n\"}"
+}

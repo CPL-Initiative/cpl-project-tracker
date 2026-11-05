@@ -154,6 +154,24 @@
 
   // The drafting proxy (cloudflare-worker-proxy.js) forwards the request body as it is.
   var NO_PROXY = "The drafting proxy is not configured on this page.";
+
+  // The proxy spends the account's Anthropic key, so since 2026-11-05 (COBIx round 1 item
+  // 1) it answers only a request that carries the reader's credential: a reviewer's bearer
+  // (CPL_SESSION) or the team phrase (CPL_TEAM_PHRASE). Read from the keeper modules at
+  // call time, never cached: a copy taken at load goes stale after a laptop sleeps
+  // (cpl_memory tab-session-copy-goes-stale). This module touches no storage itself; a
+  // page without the keepers (the KB portal) passes its credential as opts.headers.
+  function credentialHeaders(h, extra) {
+    h = h || {};
+    var S = root.CPL_SESSION;
+    var s = (S && typeof S.get === "function") ? S.get() : null;
+    if (s && s.access_token) h.Authorization = "Bearer " + s.access_token;
+    var P = root.CPL_TEAM_PHRASE;
+    var p = (P && typeof P.get === "function") ? P.get() : null;
+    if (p) h["x-team-pass"] = p;
+    if (extra) for (var k in extra) if (extra[k] != null && extra[k] !== "") h[k] = extra[k];
+    return h;
+  }
   function proxyUrl() {
     return root.CPL_REPORT_PROXY_URL || "";
   }
@@ -162,7 +180,8 @@
   // { text, model, stopReason, raw }. opts: system (a string from system()), maxTokens
   // (default 4096), effort ("low" | "medium" | "high"; sent as output_config), model (an
   // override; the default is MODEL), messages (a full array in place of the one user
-  // prompt), temperature, signal (an AbortSignal), url (an override of the page's proxy).
+  // prompt), temperature, signal (an AbortSignal), url (an override of the page's proxy),
+  // headers (a credential the page holds outside the keeper modules, e.g. x-team-pass).
   // It rejects with a sentence a tab can show: no proxy on the page, the proxy's own
   // error message or status, the model declining, or an answer with no text.
   function draft(prompt, opts) {
@@ -179,7 +198,7 @@
     if (opts.temperature != null) body.temperature = opts.temperature;
     var init = {
       method: "POST",
-      headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
+      headers: credentialHeaders({ "Content-Type": "application/json", "anthropic-version": "2023-06-01" }, opts.headers),
       body: JSON.stringify(body)
     };
     if (opts.signal) init.signal = opts.signal;
@@ -215,6 +234,7 @@
     system: system,
     draft: draft,
     proxyUrl: proxyUrl,
+    credentialHeaders: credentialHeaders,
     NO_PROXY: NO_PROXY
   };
 })();

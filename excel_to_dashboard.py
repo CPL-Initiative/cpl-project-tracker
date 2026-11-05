@@ -13540,29 +13540,13 @@ def main():
             )
 
             # ── Inject Refresh Data button below the last-updated div ──
+            # The click lives in cobi_refresh.js (static, both HTMLs load it): it sends the
+            # reader's credential (reviewer bearer or team phrase) and the worker verifies it.
+            # No secret rides in the page any more (SEC-3; COBIx round 1 item 2, 2026-11-05).
             refresh_btn = (
                 '<button id="refreshBtn" class="cobi-util-link" '
-                'title="Re-scrape live MAP data and regenerate the dashboard now" onclick="'
-                'if(!confirm(\'Manual Pipeline Run\\n\\n'
-                'This will re-scrape live data from the MAP CPL Dashboard, '
-                'regenerate all charts and KPIs, and overwrite today\\\'s deployed dashboard.\\n\\n'
-                'The process typically takes 3-5 minutes.\\n\\n'
-                'Continue?\'))return;'
-                'var b=this;b.disabled=true;b.textContent=\'Pipeline triggered — updating...\';'
-                # Secret rides in BOTH the query string and the JSON body: the
-                # currently-deployed worker's /trigger reads url.searchParams
-                # (older paste), the repo version reads body.secret — sending
-                # both works against either deploy (the "Invalid or missing
-                # secret" button failure, Session 41).
-                'fetch(\'https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026\','
-                '{method:\'POST\',headers:{\'Content-Type\':\'application/json\'},'
-                'body:JSON.stringify({secret:\'CPL_SCRAPE_2026\'})})'
-                '.then(function(r){return r.json()})'
-                '.then(function(d){'
-                'if(d.success){b.textContent=\'Pipeline running — page will refresh in 5 min\';'
-                'setTimeout(function(){location.reload()},300000)}'
-                'else{b.textContent=\'Error: \'+( d.error||\'Unknown error\');b.disabled=false}})'
-                '.catch(function(e){b.textContent=\'Error: \'+e.message;b.disabled=false})">'
+                'title="Re-scrape live MAP data and regenerate the dashboard now" '
+                'onclick="cobiTriggerRefresh(this)">'
                 'Manually Refresh COBI</button>'
             )
             # Remove any existing refresh button first, then insert after last-updated.
