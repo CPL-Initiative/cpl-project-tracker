@@ -62,6 +62,8 @@ u3 = lp.record_update(SR, {**D, "model": None}, "2026-11-05")
 check(not any(v.get("source_behind") for v in u3["versions"]), "a session's draft, built from the source, does not")
 u4 = lp.record_update({**R, "rebuild_from": "Edit the page on its card."}, {**D, "model": "claude-opus-5-5"}, "2026-11-05")
 check(not any(v.get("source_behind") for v in u4["versions"]), "nor does a piece with no script behind it")
+u5 = lp.record_update({**R, "rebuild_from": "The page itself; python3 scripts/library_page.py x <the built HTML>"}, {**D, "model": "m"}, "2026-11-05")
+check(not any(v.get("source_behind") for v in u5["versions"]), "nor one whose only script copies the page to Pages")
 check("rebuild_from" in open(lp.__file__).read().split("def write_phase")[1].split("\n")[1] and "made_by,model" in open(lp.__file__).read(),
       "the run reads rebuild_from and the draft's model")
 

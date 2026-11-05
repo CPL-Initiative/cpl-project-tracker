@@ -61,8 +61,10 @@ SCRIPT = re.compile(r"\.py\b|\.mjs\b|\.js\b|build")
 
 
 def source_behind(record, draft):
-    """True when the model drafted the page and the record names a script that rebuilds it. Pure."""
-    return bool(draft.get("model")) and bool(SCRIPT.search(str(record.get("rebuild_from") or "")))
+    """True when the model drafted the page and the record names a script that rebuilds it. Pure.
+    scripts/library_page.py only copies a page to Pages, so naming it alone is no build script."""
+    rb = re.sub(r"\S*library_page\.py", "", str(record.get("rebuild_from") or ""))
+    return bool(draft.get("model")) and bool(SCRIPT.search(rb))
 
 
 def record_update(record, draft, today):
