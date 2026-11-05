@@ -217,10 +217,10 @@ function titleBtn(d, disc) { const r = rowOf(d, disc); return r && r.querySelect
   // Colleges beside Courses, sorted by colleges (Sam, 2026-11-04, on Diesel Mechanics: "show me the count of colleges
   // that use each subject code so I can see if one code is more common than others"; "keep the course column").
   check("(5) ⭐ its local subjects, by the colleges that use each code, with courses, share, and the Common SUBJ named",
-    lrows.join("|") === "AUTO,3,300,64%,The Common SUBJ; Most courses; Most colleges|AT,1,120,26%,|AUT,,50,11%,"
+    lrows.join("|") === "AUTO,3,300,64%,The Common SUBJ; Most courses; Most colleges,In use|AT,1,120,26%,,Not four letters|AUT,,50,11%,,Not four letters"
     && /5 local codes on 470 local courses; 2 more/.test(txt(p)) && /Colleges counts the colleges/.test(txt(p)), lrows.join("|"));
   check("(5) the members table is a labelled region with th scope=col", lt.getAttribute("role") === "region" && !!lt.getAttribute("aria-label")
-    && lt.querySelectorAll("th[scope='col']").length === 5 && txt(lt.querySelectorAll("th")[1]) === "Colleges, high to low");
+    && lt.querySelectorAll("th[scope='col']").length === 6 && txt(lt.querySelectorAll("th")[1]) === "Colleges, high to low");
   const sortBtn = Array.from(lt.querySelectorAll("th button")).find((b) => /^Courses/.test(txt(b)));
   sortBtn.click(); await settle();
   const lrows2 = Array.from(panel(d).querySelectorAll("#csl-pn-locals tbody tr")).map((r) => txt(r.children[0]));

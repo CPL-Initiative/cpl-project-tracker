@@ -2176,6 +2176,19 @@
     var rows = doc && doc.by && doc.by[code];
     return rows ? rows.map(function (x) { return { college: doc.colleges[x[0]] || "", num: code + " " + x[1], title: x[2] || "", ccn: x[3] || "" }; }) : null;
   }
+  /* Use <code>: the code becomes the MQ discipline's Common SUBJ through the table's one save path (listSaveCode: the
+     four letters, the confirm when another MQ discipline holds it, the kb_curation row). Sam, 2026-11-05: "change Take
+     ___ to Use ___". The panel's status line says what happened. */
+  function useWord(r, code, h, status, notes) {
+    return h.word("Use " + code, function () {
+      notes[r.ut] = "Saving " + code + " for " + r.ut + "…"; if (status) status.textContent = notes[r.ut];
+      listSaveCode(r, code).then(function (res) {
+        notes[r.ut] = res.words;
+        if (res.ok) { listChanged(r); render(); }
+        if (LIST_ENGINE) LIST_ENGINE.redraw();
+      });
+    }, { "aria-label": "Use " + code + " as the Common SUBJ of " + r.ut });
+  }
   function localCountWord(r, row, h) {
     var L = listState(), on = !!(L.pnCourses && L.pnCourses.ut === r.ut && L.pnCourses.code === row.code);
     var b = h.word(fmtN(row.n), function () {
@@ -2312,10 +2325,16 @@
         note: plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(total, "local course", "local courses")
           + (r.more ? "; " + fmtN(r.more) + " more the reference file does not list" : "") + ". Colleges counts the colleges that file "
           + "courses under each code" + (lcDoc ? "" : " (reading…)") + "; press a course count to see its courses, or a header to sort.",
-        cols: [["code", "Local SUBJ"], ["col", "Colleges", true], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"]],
+        cols: [["code", "Local SUBJ"], ["col", "Colleges", true], ["n", "Courses", true], ["share", "Share of its courses"], ["note", "Note"], ["use", "Use it", false, true]],
         sort: { col: 1, dir: -1 },
         rows: locRows,
-        cell: function (row, k) { return k === "n" ? localCountWord(r, row, h) : row[k]; } }));
+        cell: function (row, k) {
+          if (k === "n") return localCountWord(r, row, h);
+          if (k !== "use") return row[k];
+          // A local code becomes the Common SUBJ in one press where it can (Sam, 2026-11-05: "add a Use ___ button").
+          if (row.code === code) return "In use";
+          return SUBJ4_RE.test(row.code) ? useWord(r, row.code, h, status, notes) : "Not four letters";
+        } }));
     }
     if (r.locals.length) prefetchLocalCourses(r);
     var lcOpen = L.pnCourses && L.pnCourses.ut === r.ut ? L.pnCourses.code : null;
@@ -2340,10 +2359,10 @@
     // none another MQ discipline holds), each a word that saves it through the same write as the Common SUBJ cell.
     var sugg = subjSuggestions(e, "");
     if (sugg.length || code) {
-      out.push(h.heading("Codes it could take"));
-      out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could take as its Common SUBJ",
-        note: "Its own codes, most used first; a code another MQ discipline holds is left out. Take one to make it the Common SUBJ.",
-        cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Take it", false, true]],
+      out.push(h.heading("Codes it could use"));
+      out.push(h.table({ id: "sugg", label: "Codes " + r.ut + " could use as its Common SUBJ",
+        note: "Its own codes, most used first; a code another MQ discipline holds is left out. Use one to make it the Common SUBJ.",
+        cols: [["code", "Code"], ["mine", "Its courses", true], ["note", "Note"], ["take", "Use it", false, true]],
         // Its own code leads, named as its code, so a code just taken stays in view (Sam, 2026-11-04: "WOOD then
         // disappeared from the list").
         rows: (code ? [{ code: code, mine: ((e.variants_observed || {})[code] || 0) + ((e.local_subject_variants || {})[code] || 0),
@@ -2356,15 +2375,7 @@
         })),
         cell: function (row, k) {
           if (k !== "take") return row[k];
-          if (row.current) return "Taken";
-          return h.word("Take " + row.code, function () {
-            notes[r.ut] = "Saving " + row.code + " for " + r.ut + "…"; status.textContent = notes[r.ut];
-            listSaveCode(r, row.code).then(function (res) {
-              notes[r.ut] = res.words;
-              if (res.ok) { listChanged(r); render(); }
-              if (LIST_ENGINE) LIST_ENGINE.redraw();
-            });
-          }, { "aria-label": "Take " + row.code + " as the Common SUBJ of " + r.ut });
+          return row.current ? "In use" : useWord(r, row.code, h, status, notes);
         } }));
     }
     var more = [], ov = state.overlay[r.ut] || {};

@@ -252,6 +252,13 @@ async function settle() { for (let i = 0; i < 15; i++) await tick(); }
     titleBtn("Physical Education").click(); await settle();
     const pe = suggRows().filter((x) => x.code === "KINE")[0];
     check("alias family owner's code is offered with no collision or in-use note", !!pe && !/Also on|Common SUBJ of/.test(pe.note));
+    // ── Use, not Take (Sam, 2026-11-05: "add a Use ___ button and change Take ___ to Use ___") ──
+    check("Codes it could use: each word reads Use <code>", ab.filter((x) => x.take).every((x) => /^Use [A-Z]{4}$/.test(x.take.textContent))
+      && !/Take /.test(txt(panel())), ab.map((x) => x.take && x.take.textContent).join("|"));
+    titleBtn("Auto Body Technology").click(); await settle();
+    const localsUse = ([...doc.querySelectorAll("#csl-pn-locals tbody tr")].map((tr) => txt(tr.children[0]) + ":" + txt(tr.lastElementChild)));
+    check("Its local subjects: a four-letter local code reads Use <code>, its own code In use", localsUse.length > 0
+      && localsUse.every((x) => /^([A-Z]{4}):(Use \1|In use)$/.test(x) || /:Not four letters$/.test(x)) && localsUse.some((x) => /:Use [A-Z]{4}$/.test(x)), localsUse.join(" | "));
     // ── Take it saves, no confirm for a free code ────────────────────────
     titleBtn("Auto Body Technology").click(); await settle();
     confirmCalls = [];

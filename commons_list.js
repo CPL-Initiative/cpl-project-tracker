@@ -1107,7 +1107,51 @@
           word("Close", close, { "aria-label": "Close the panel for " + listTitle(r) })]),
         body]);
       aside.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.stopPropagation(); close(); } });
+      panelSize(aside);
+      aside.insertBefore(panelGrip(aside), aside.firstChild);
       return aside;
+    }
+    /* The side panel resizes from its left edge (Sam, 2026-11-05: "make all the sidebars horizontal resizable"): drag it
+       by mouse, pen or finger, or focus it and use the arrow keys (Left widens, Right narrows, Home returns the panel to
+       its own width). One width for every Commons List, kept across visits (a width is no filter). */
+    function panelSize(aside) {
+      var w = panelW();
+      if (w) { aside.style.flex = "0 0 " + w + "px"; aside.style.maxWidth = "none"; aside.style.width = w + "px"; }
+      else { aside.style.flex = ""; aside.style.maxWidth = ""; aside.style.width = ""; }
+    }
+    function panelGrip(aside) {
+      var g = el("span", { cls: P + "pgrip", role: "separator", tabindex: "0", "aria-orientation": "vertical",
+        "aria-label": "Resize the panel", "aria-valuemin": String(PANEL_MIN), "aria-valuemax": String(PANEL_MAX),
+        "aria-valuenow": String(panelW() || Math.round(aside.getBoundingClientRect().width) || 420) });
+      function set(w) {
+        w = Math.max(PANEL_MIN, Math.min(PANEL_MAX, Math.round(w)));
+        setPanelW(w); panelSize(aside); g.setAttribute("aria-valuenow", String(w));
+      }
+      function now() { return panelW() || Math.round(aside.getBoundingClientRect().width) || 420; }
+      g.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") set(now() + LIST_STEP);
+        else if (e.key === "ArrowRight") set(now() - LIST_STEP);
+        else if (e.key === "Home") { setPanelW(null); panelSize(aside); g.setAttribute("aria-valuenow", String(now())); }
+        else return;
+        e.preventDefault(); e.stopPropagation();
+      });
+      g.addEventListener("pointerdown", function (e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        e.preventDefault(); e.stopPropagation();
+        var startX = e.clientX, startW = now();
+        try { g.setPointerCapture(e.pointerId); } catch (err) {}
+        // The grip sits on the panel's left edge, so a drag to the left widens it.
+        function move(ev) { if (ev.pointerId === e.pointerId) set(startW - (ev.clientX - startX)); }
+        function up(ev) {
+          if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+          g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
+          ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+        }
+        g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
+        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
+      });
+      g.addEventListener("click", function (e) { e.stopPropagation(); });
+      return g;
     }
     /* A cell opens its drill-down in a drawer under the row (Sam, 2026-11-01: "how many of these fields can you make
        drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
@@ -1339,7 +1383,13 @@
         "." + P + "split{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}",
         "." + P + "split > ." + P + "wrap{flex:999 1 480px;min-width:0}",
         "." + P + "rowedit>td{cursor:pointer}",
-        "." + P + "panel{flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        "." + P + "panel{position:relative;flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        // The panel's left-edge grip: a 12px strip, quiet until hovered or focused.
+        "." + P + "pgrip{position:absolute;left:0;top:0;bottom:0;width:12px;cursor:col-resize;touch-action:none;z-index:2}",
+        "." + P + "pgrip:hover,." + P + "pgrip:focus-visible{background:var(--border-strong)}",
+        "." + P + "pgrip:focus-visible{outline:2px solid var(--seal-blue);outline-offset:-2px}",
+        // On a narrow window the panel wraps below the table at the full width, so a stored width never scrolls the page.
+        "@media (max-width: 900px){." + P + "panel{flex:1 1 100% !important;width:auto !important;max-width:none !important}." + P + "pgrip{display:none}}",
         "." + P + "pbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid var(--border);background:var(--surface-subtle)}",
         "." + P + "pt{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
         "." + P + "pt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
@@ -1434,6 +1484,15 @@
 
   /* Whether the top of every Commons view is folded: one choice for all five (a fold is no filter, so it lasts across
      visits, CLAUDE.md "Tabs never remember a filter"). Storage may be blocked; the fold then lasts the page. */
+  var PANEL_KEY = "cplCommonsPanelW", panelMem, PANEL_MIN = 300, PANEL_MAX = 1100;
+  function panelW() {
+    if (panelMem === undefined) { try { panelMem = parseInt(window.localStorage.getItem(PANEL_KEY), 10) || null; } catch (e) { panelMem = null; } }
+    return panelMem;
+  }
+  function setPanelW(w) {
+    panelMem = w || null;
+    try { if (panelMem) window.localStorage.setItem(PANEL_KEY, String(panelMem)); else window.localStorage.removeItem(PANEL_KEY); } catch (e) { /* storage blocked */ }
+  }
   var TOP_KEY = "cplCommonsTopFolded", topMem = null;
   function topFolded() {
     if (topMem == null) { try { topMem = window.localStorage.getItem(TOP_KEY) === "1"; } catch (e) { topMem = false; } }
