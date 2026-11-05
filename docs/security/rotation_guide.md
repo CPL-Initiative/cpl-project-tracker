@@ -16,7 +16,9 @@ breaks if it runs out of order.
    Then press Manually Refresh COBI once while signed in or holding the phrase: the button
    should read "Pipeline running" and a `daily-dashboard.yml` run should appear in Actions
    within a minute.
-3. **Rotate `SCRAPE_SECRET`** (the one the old page published).
+3. **Rotate `SCRAPE_SECRET`** (the one the old page published), in the same sitting as
+   the paste: until this step the historical value still opens `/trigger` through the
+   request body for anyone who sets the Origin header.
    - Make a new value: 32 or more random characters (`openssl rand -base64 32` or a password
      manager).
    - GitHub first: repository Settings, Secrets and variables, Actions, update

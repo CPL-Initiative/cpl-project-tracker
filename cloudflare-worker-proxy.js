@@ -465,11 +465,11 @@ export default {
       });
     }
 
-    // SEC-1: don't be an open relay to Anthropic on our key. Gate by the origin
-    // allowlist (blocks browser-based abuse from other sites). NOTE: a non-browser
-    // client can forge the Origin header, so a Cloudflare rate-limit rule on this
-    // route is the REAL backstop — configure it in the Cloudflare dashboard
-    // (Security -> WAF -> Rate limiting) for `/`, `/scrape`, and `/trigger`.
+    // SEC-1, closed 2026-11-05: the gate on this path is credentialOf() below, a
+    // reviewer bearer or the team phrase that Postgres verifies. The origin allowlist
+    // stays as defense in depth only; a non-browser client forges Origin at will. A
+    // Cloudflare rate-limit rule (Security -> WAF -> Rate limiting) on `/`, `/scrape`
+    // and `/trigger` is the backstop against a credential holder's script.
     if (!isAllowedOrigin(origin)) {
       return new Response(JSON.stringify({ error: 'Forbidden origin' }), {
         status: 403,
