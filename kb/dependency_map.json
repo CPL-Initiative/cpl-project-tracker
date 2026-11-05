@@ -463,7 +463,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7467
+     "line": 7468
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -477,7 +477,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 130
+     "line": 143
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -1030,6 +1030,13 @@
      "direction": "read",
      "how": "url",
      "line": 33
+    },
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1510
     },
     {
      "id": "module:admin.js",
@@ -1689,7 +1696,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2079
+     "line": 2139
     }
    ],
    "main_committers": []
@@ -1755,7 +1762,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 38,
+     "line": 40,
      "tabs": [
       "commons"
      ]
@@ -2817,7 +2824,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1288,
+     "line": 1714,
      "tabs": [
       "library"
      ]
@@ -2983,6 +2990,13 @@
   },
   "external:studentrcc.sharepoint.com": {
    "consumers": [
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1521
+    },
     {
      "id": "module:dashboard_filters.js",
      "kind": "module",
@@ -4291,7 +4305,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1743
+     "line": 1803
     }
    ],
    "main_committers": []
@@ -5340,7 +5354,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1634
+     "line": 1694
     },
     {
      "id": "module:admin.js",
@@ -6116,6 +6130,16 @@
      ]
     },
     {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2826,
+     "tabs": [
+      "library"
+     ]
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -6437,7 +6461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2018
+     "line": 2078
     },
     {
      "id": "module:college_briefing.js",
@@ -8627,7 +8651,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1773,
+     "line": 2199,
      "tabs": [
       "library"
      ]
@@ -8643,7 +8667,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1281,
+     "line": 1707,
      "tabs": [
       "library"
      ]
@@ -17398,6 +17422,7 @@
       "coci-lookup",
       "cr-reference",
       "exhibits",
+      "library",
       "program-requirements"
      ]
     },
@@ -18716,7 +18741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1391,
+     "line": 1817,
      "tabs": [
       "library"
      ]
@@ -19884,7 +19909,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 63
+     "line": 64
     }
    ],
    "served": false,
@@ -20436,7 +20461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2868,
+     "line": 3442,
      "tabs": [
       "library"
      ]
@@ -20498,7 +20523,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 626
+     "line": 598
     },
     {
      "id": "page:library/index.html",
@@ -24091,7 +24116,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6386
+     "line": 6387
     },
     {
      "id": "module:admin.js",
@@ -24381,7 +24406,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 7051
+     "line": 7052
     }
    ],
    "main_committers": []
@@ -24875,7 +24900,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7737
+     "line": 7738
     },
     {
      "id": "module:sierra_training.js",
@@ -25366,7 +25391,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6573
+     "line": 6574
     }
    ],
    "main_committers": []
@@ -25390,7 +25415,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6637
+     "line": 6638
     },
     {
      "id": "module:college_briefing.js",
@@ -25635,7 +25660,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2001,
+     "line": 1294,
      "tabs": [
       "library"
      ]
@@ -27780,7 +27805,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6722
+     "line": 6723
     },
     {
      "id": "module:sierra_training.js",
@@ -28219,6 +28244,7 @@
    "coci-lookup",
    "cr-reference",
    "exhibits",
+   "library",
    "program-requirements"
   ],
   "commons_look.js": [
