@@ -507,7 +507,8 @@
       R + " .lib-remswatches{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0;}",
       R + " .lib-remswatch{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:4px;font-size:.9rem;}",
       // One card per project (Sam, 2026-10-28; mockup Version 20): a row per piece, its title the link.
-      R + " .lib-proj .lib-tile .big{font-size:1.45rem;}",
+      R + " .lib-projhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 14px;}",
+      R + " .lib-projcount{font-size:.8rem;color:var(--text-muted);white-space:nowrap;}",
       R + " .lib-pieces{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--border);}",
       R + " .lib-piece{display:grid;gap:4px;padding:10px 0;border-bottom:1px solid var(--border);}",
       R + " .lib-piecehead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;}",
@@ -515,9 +516,7 @@
       R + " .lib-piecename a,.lib-piecename b{font-weight:700;}",
       R + " .lib-piece .lib-chips{margin:0;flex:1 1 220px;}",
       R + " .lib-pieceacts{display:flex;flex-wrap:wrap;gap:6px 12px;}",
-      R + " .lib-proj{grid-template-columns:176px minmax(0,1fr);}",
-      "@media (max-width:760px){" + R + " .lib-proj{grid-template-columns:132px minmax(0,1fr);}}",
-      "@media (max-width:560px){" + R + " .lib-proj{grid-template-columns:minmax(0,1fr);}}",
+      R + " .lib-proj{grid-template-columns:minmax(0,1fr);}",
       "@media (prefers-reduced-motion:reduce){" + R + " *{transition:none!important;animation:none!important;}}"
     ].join("\n");
     var st = document.createElement("style");
@@ -611,10 +610,13 @@
     }
     return true;
   }
+  function modified(r) { return String(r.updated_at || r.made_on || r.created_at || ""); }
   function groups(rows) {
     var by = {}, order = [];
+    // Last modified first (Sam, 2026-11-05: "sort the items in the Library by modified date
+    // descending"). A group sits where its most recently changed piece does.
     rows.slice().sort(function (a, b) {
-      var da = a.made_on || "", db = b.made_on || "";
+      var da = modified(a), db = modified(b);
       return da < db ? 1 : da > db ? -1 : String(a.title).localeCompare(String(b.title));
     }).forEach(function (r) {
       var g = r.occasion || "No occasion yet";
@@ -2213,13 +2215,15 @@
     var rows = u.rows.filter(function (r) { return r.kind === "visual"; }).concat(u.rows.filter(function (r) { return r.kind !== "visual"; }));
     var lead = rows[0];
     var who = rows.filter(function (r) { return r.for_kind; })[0];
-    var latest = rows.map(function (r) { return r.made_on || ""; }).sort().pop();
+    var latest = rows.map(modified).sort().pop();
     var id = "lib-p-" + esc(lead.id);
     var anyPublic = rows.some(function (r) { return r.public_listed; });
     return '<article class="lib-item lib-proj" aria-labelledby="' + id + '">' +
-      '<div class="lib-thumb"><div class="lib-tile"><span class="big">' + rows.length + ' pieces</span><span class="unit">' + esc(kindsWord(rows)) + "</span></div></div>" +
+      // The count is a small label to the title's right, so the title holds the eye (Sam, 2026-11-05:
+      // "shrink the chip and put it to the right, so it doesn't get focus and the title is the focus").
       '<div class="lib-body"><p class="lib-kicker">' + esc(["Project", latest ? "Updated " + fmtDate(latest) : ""].filter(Boolean).join(" \u00b7 ")) + "</p>" +
-      '<h3 class="lib-title" id="' + id + '">' + esc(u.name) + "</h3>" +
+      '<div class="lib-projhead"><h3 class="lib-title" id="' + id + '">' + esc(u.name) + "</h3>" +
+      '<span class="lib-projcount">' + rows.length + " pieces \u00b7 " + esc(kindsWord(rows).toLowerCase()) + "</span></div>" +
       (anyPublic ? '<ul class="lib-chips" aria-label="Project"><li class="lib-chip">In the public library</li></ul>' : "") +
       (who ? '<p class="lib-for">Made for <b>' + esc(forKindWord(who)) + "</b>" + (who.for_name ? " \u00b7 For <b>" + esc(who.for_name) + "</b>" : "") + "</p>" : "") +
       (lead.summary ? '<p class="lib-summary">' + esc(lead.summary) + "</p>" : "") +
