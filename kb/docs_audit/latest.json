@@ -11,22 +11,22 @@
   },
   "summary": {
     "files": 1400,
-    "bytes": 14135529,
+    "bytes": 14142418,
     "over_budget": 0,
     "handoff_max": 585,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59984,
+    "always_loaded_bytes": 59999,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59984,
+        "bytes": 59999,
         "over": 0
       },
       "other": {
         "files": 141,
-        "bytes": 4298610,
+        "bytes": 4298062,
         "over": 0
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2627239,
+        "bytes": 2632881,
         "over": 0
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 484196,
+        "bytes": 485976,
         "over": 0
       },
       "handoff": {
@@ -60,9 +60,9 @@
       "vault_heavy_path": 74
     },
     "vault": {
-      "files": 25838,
-      "bytes": 4208706668,
-      "heavy_bytes": 2991433527,
+      "files": 25846,
+      "bytes": 4209045369,
+      "heavy_bytes": 2991453678,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -159,10 +159,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853975396,
+        "bytes": 1853977403,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,975,396 B inside the vault"
+      "message": "directory totals 1,853,977,403 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -259,10 +259,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10120240,
+        "bytes": 10138384,
         "kind": "dir"
       },
-      "message": "directory totals 10,120,240 B inside the vault"
+      "message": "directory totals 10,138,384 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

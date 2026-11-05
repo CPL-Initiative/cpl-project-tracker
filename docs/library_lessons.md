@@ -1079,3 +1079,22 @@ not a repair"). Sam: "Version 22 looks better"; "Do we need the One chip? Why no
   reasons (`table:cpl_library_drafts`, `function:library-revise-draft`, `workflow:library-publish.yml`). Migration
   `kb/migrations/2026-11-05_library_drafts.sql` (rollback beside it); the function deploys with `cpl-chat-deploy.yml`
   (`function: library-revise-draft`). Tests: `tests/library_revise_draft.test.js`, `tests/library_publish_test.py`.
+
+## 2026-11-05 SkyRoundoff (ELL IET Version 4; the List's band order)
+
+Sam's Revise request (15:42Z): *"move the grantee sections each to a tab on the visual so there is a main section and a
+tab for each project"*. On seeing the draft: *"new visual looks wonderful!"*
+
+- **The card answers before a session starts.** `library-revise-draft` had a machine draft ready two minutes after the
+  request (b1925d33, 15:44Z). The session's build from the vault source took `regen.draft_id`; the machine draft moved to
+  `regen.earlier`, kept rather than dropped, and the migration's guard named it.
+- **`scripts/library_page.py` writes the public path.** Building a draft with it changes `library/<slug>/index.html`;
+  copy the result aside and restore the file before committing, or the public copy changes without Replace.
+- **axe sees only the shown tab.** `npm run a11y` passed on the Overview while every project tab failed target size
+  (contact emails at 22.8px). A tabbed page needs each tab selected and checked; the 390px and 1440px pass did that.
+- **Tabs add text Sierra counts.** Tab names, a heading per panel and the Overview's project lists took Version 3's
+  33,273 characters to 35,104; trimming the repeats brought it to 33,979 of `LIBRARY_TEXT_MAX` 34,000.
+- **A sort key for "none" must be a letter.** The List engine orders bands A to Z by `localeCompare`, and ICU puts
+  `~` before digits; a band with no modified time takes `z` so it goes last.
+- **Merging `main` into a branch carries `main`'s `kb/migrations/.apply`** and fires `supabase-migrate.yml` on that
+  branch (run 42061383625 on #2808). The V3 migration it named is guarded, so it could not write twice.

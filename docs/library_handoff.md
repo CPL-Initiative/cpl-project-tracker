@@ -1,7 +1,7 @@
 ---
-title: Library — side-lane handoff (SkyCartwheel, beside the CPL Queue routine)
+title: Library — side-lane handoff (SkyRoundoff, beside the CPL Queue routine)
 date: 2026-11-05
-tags: [handoff, library, revise, list-view, side-lane]
+tags: [handoff, library, ell-iet, list-view, side-lane]
 related:
   - "[[docs/reference/lanes/library]]"
   - "[[docs/library_lessons]]"
@@ -9,46 +9,32 @@ related:
 
 # Library — side-lane handoff
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`; the hourly CPL Queue routine
-> (S584 SkyMinkowski and later) writes those. No checkpoint was run: the lane file, the lessons and this note are this
-> session's whole record, with `python3 kb/_docs_audit.py` run before the last commit.
+> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`; the hourly CPL Queue routine writes
+> those. No checkpoint was run: the lane file, the lessons and this note are this session's record, with
+> `python3 kb/_docs_audit.py` run before the last commit.
 
-Your moniker is **SkyRoundoff**. You pick up the **Library** lane after SkyCartwheel, a side session Sam opened on
-2026-11-05 to fix the COBI Library tab's issues. Read in order:
-1. [`docs/reference/lanes/library.md`](reference/lanes/library.md): *Version 22 and the List* and *Next*.
-2. [`docs/library_lessons.md`](library_lessons.md): *2026-11-05 SkyCartwheel*, at the end.
+Your moniker is **SkyFlipFlop**. You pick up the **Library** lane after SkyRoundoff (2026-11-05, opened by SkyComet at
+Sam's request; SkyCartwheel before it). Read [`docs/reference/lanes/library.md`](reference/lanes/library.md), *Next*, then
+[`docs/library_lessons.md`](library_lessons.md), *2026-11-05 SkyRoundoff*.
 
-## What shipped (PR #2807, merged as 0688e968; both functions redeployed on Sam's go)
-- **Ask for more changes keeps the draft.** Sam's report ("nothing seemed to happen") had a worse problem behind it:
-  Start would have dropped Version 3 and drafted from Version 2. More changes now build on the draft
-  (`regen.based_on_draft`, `regen.earlier`); `library-revise-draft` drafts from it.
-- **ELL IET Version 3 is a stored draft** (`cpl_library_drafts` 200adaee-…, migration
-  `kb/migrations/2026-11-05_library_ell_iet_v3_stored_draft.sql`, applied by `supabase-migrate` run 42039458662,
-  rollback beside it), which his Replace then published.
-- **Version 22**, the mockup Sam approved (Library canvas, https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR, advised
-  by Fable): the card's state line and next step, Revise's box on the card, What changed with a check run on the draft,
-  Edit in Details, the size beside the title.
-- **The List** (Sam's ask the same afternoon): `#library` opens a Commons List, every piece a row, its card in the side
-  panel; Cards at `#library/cards`; the Library in the Commons look (`commons_look.js`, and CLAUDE.md's departure line).
-
-## Done after the merge (2026-11-05, Sam's go)
-- `library-revise-draft` deployed (run 42055755027) and `cpl-chat` deployed (run 42055986671; Sierra's page cap now
-  34,000, so she reads ELL IET Version 3 whole).
-- ELL IET Version 3: Sam pressed Replace; `library-publish.yml` published it (2806f47d) and a hand Pages dispatch served
-  it (the workflow now dispatches Pages itself). Status set to Approved at Sam's word, receipt
-  `kb/receipts/cpl_library_skycartwheel_ell_v3_approved_2026-11-05.sql` (#2811).
-- Edit moved off the card's top row into Details reverses his 2026-10-20 call; his Version 22 approval covers it.
+## What shipped
+- **ELL IET Version 4 is the card's draft** (#2813; vault #672): an Overview tab, then a tab per project, built by
+  `CPLBrain/04-projects/cpl-initiative/ell-iet/make_tabs.py` from Version 3. Link https://claude.ai/artifact/XhDFfPrT33opjRqTAzKpRN;
+  stored as `cpl_library_drafts` a0ac81de-… by `supabase-migrate` run 42060338692 (rollback beside the migration). The
+  public copy stays Version 3 until someone presses **Replace the public copy**. Sam: *"new visual looks wonderful!"*
+- **The List's project bands lead with the newest piece** (#2812), Sam's sort report.
+- **#2808 (S584's course objectives)** had `main` merged in at Sam's ask (*"merge anything left to do from the last cpl
+  queue session"*) now that `main`'s `sierra_library` check is green; it merges when its `test` passes.
 
 ## Next
-- **Sam plans a Version 4 of ELL IET** (each grantee project on its own tab): Revise on its card drafts it from the
-  Version 3 page.
-- The Coordinator Guide's request (Sam, 2026-11-05 12:36Z: Request Adopt links) has no Pages copy, so a session makes it
-  (Copy the request), or `library_page.py` gives it one and the card drafts it.
-- IACA waits on the Microsoft 365 connector, as before.
+- Replace on Version 4 is Sam's press; `library-publish.yml` then publishes it within three hours.
+- Sierra reads Version 4 at 33,979 of 34,000 characters: content added later needs room made, or a cap raise.
+- The Coordinator Guide's request (Request Adopt links) still has no Pages copy; IACA waits on the Microsoft 365 connector.
+- S584's other open work is the queue routine's: #2809 (Monterey Peninsula's reconcile), #2800 (Mission, from 2026-11-06 UTC).
 
 ## Let go
-#2807's subscription dropped at merge; #2811's at its merge. The artifact watch on the mockup canvas ends with the
-session. No check-ins remain.
+SkyRoundoff drops its PR subscriptions at merge (#2808, #2812, #2813, vault #672) and the artifact watch on the Version 4
+link ends with the session. No check-ins remain.
 
-> *Greetings, you are SkyRoundoff, a Library side session beside the CPL Queue routine, see SkyCartwheel's handoff —
+> *Greetings, you are SkyFlipFlop, a Library side session beside the CPL Queue routine, see SkyRoundoff's handoff —
 > `docs/library_handoff.md` — let's keep rolling with the Library.*
