@@ -8603,14 +8603,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 127
     },
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 134
+     "line": 136
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -25725,7 +25725,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 119
+     "line": 121
     }
    ],
    "main_committers": []
