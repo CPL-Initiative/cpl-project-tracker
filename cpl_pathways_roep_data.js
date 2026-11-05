@@ -6690,13 +6690,13 @@ window.CPL_PATHWAYS_ROEP = {
       "title": "Measuring Tools and Applied Mathematics",
       "identity": {
        "kind": "CCR",
-       "id": "DIES M10GX",
+       "id": "AUTD M10AX",
        "title": "Measuring Tools and Applied Mathematics"
       },
       "ids": [
        {
         "kind": "M-ID",
-        "id": "DIES M10GX",
+        "id": "AUTD M10AX",
         "title": "Measuring Tools and Applied Mathematics"
        }
       ]

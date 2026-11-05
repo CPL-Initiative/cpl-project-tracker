@@ -6853,13 +6853,6 @@
      "direction": "read",
      "how": "literal",
      "line": 60
-    },
-    {
-     "id": "script:kb/_subjects_list_recode.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 80
     }
    ],
    "producers": [
@@ -19234,13 +19227,6 @@
      "direction": "read",
      "how": "literal",
      "line": 45
-    },
-    {
-     "id": "script:kb/_subjects_list_recode.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 81
     }
    ],
    "producers": [

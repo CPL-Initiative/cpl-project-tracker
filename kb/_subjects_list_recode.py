@@ -77,8 +77,8 @@ FAN_IN_PARTNER = {"Media Production": "Film and Media Studies"}
 GENERATED = ("unified_courses_data.js", "unified_courses_standalone.js", "unified_courses_aligned.js",
              "unified_courses_details.js", "unified_courses_index.js", "unified_courses_member_desc.js",
              "unified_courses_members.js", "unified_courses_suggestions.js", "cpl_pathways_ccr_data.js",
-             "cpl_pathways_membership_data.js", "cpl_pathways_roep_data.js", "credential_reference_data.js",
-             "prototype/ccr_atlas_data.json", "prototype/ccr_cpl_universe_members.json", "prototype/skyview.html")
+             "cpl_pathways_membership_data.js", "credential_reference_data.js",
+             "prototype/ccr_atlas_data.json", "prototype/skyview.html")
 
 
 def own_stamps(r):
