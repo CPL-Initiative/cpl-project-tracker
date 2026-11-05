@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-05T22:07:26Z",
+ "generated_at": "2026-11-05T22:15:19Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -148,8 +148,8 @@
      "colleges": [
       "College of the Canyons"
      ],
-     "course": "WATER 161",
-     "credit": "3 hours in Wastewater Treatment and Disposal II"
+     "course": "WATER 160",
+     "credit": "3 hours in Wastewater Treatment and Disposal I"
     }
    ],
    "id": "1c976e1dc936",
