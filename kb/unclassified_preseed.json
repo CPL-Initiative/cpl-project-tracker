@@ -1,28 +1,90 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-04T15:49:37Z",
- "_queue_count": 44,
+ "_generated_at": "2026-11-05T15:53:59Z",
+ "_queue_count": 63,
  "_counts": {
-  "staged": 42,
-  "needs_you": 31,
+  "staged": 61,
+  "needs_you": 44,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
-   "title": "Waterworks Mathematics Advanced",
+  "Autodesk Certified Associate in CAD for Mechanical Design certificate": {
+   "title": "Autodesk Certified Associate in CAD for Mechanical Design",
+   "issuer": "Autodesk",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 4",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
+   "title": "Introduction to Water Systems Technology",
    "issuer": "California Community Colleges",
    "via": "identity",
    "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 131; issuer = CCC.",
+   "note": "Rule 5c: the college's own title for WATER 120; issuer = CCC.",
    "procedure": "course-identity"
   },
-  "EET 203 Basic Electricity": {
-   "title": "Basic Electricity",
+  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
+   "title": "Wastewater Treatment and Disposal I",
    "issuer": "California Community Colleges",
    "via": "identity",
    "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for EET 203; issuer = CCC.",
+   "note": "Rule 5c: the college's own title for WATER 160; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
+   "title": "Wastewater Treatment and Disposal II",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for WATER 161; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit by Exam - Water Distribution Operator I (WATER 140)": {
+   "title": "Water Distribution Operator I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for WATER 140; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
+   "title": "Water Distribution Operator II",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for WATER 141; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
+   "title": "Water Treatment Plant Operation Processes I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for WATER 150; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
+   "title": "Water Treatment Plant Operation Processes II",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for WATER 151; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
+   "title": "Waterworks Mathematics",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for WATER 130; issuer = CCC.",
    "procedure": "course-identity"
   },
   "EET 222 Photovaltaic NABCEP for Solar Associates": {
@@ -49,19 +111,6 @@
    "rests_on": [
     "course-identity",
     "Rule 5c"
-   ]
-  },
-  "Examination for ARHS 2": {
-   "title": "Art of the Ancient Americas",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The catalog hint matches an existing house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "brand-family"
    ]
   },
   "Examination for ARHS 3": {
@@ -152,37 +201,33 @@
     "Rule 5c"
    ]
   },
-  "GEOG 1 Physical Geology": {
-   "title": "Introduction to Physical Geography",
+  "Examination for MATH 1": {
+   "title": "Calculus 1",
    "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID GEOG 110; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "GRART 32 Digital Documents (Adobe InDesign)": {
-   "title": "Digital Documents (Adobe InDesign)",
-   "issuer": "California Community Colleges",
-   "via": "identity",
+   "via": "classifier",
    "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for GRART 32; issuer = CCC.",
-   "procedure": "course-identity"
+   "note": "Cx hint kept the mechanism and was set aside; catalog hint 'Calculus I' (Las Positas MATH 1) used with an Arabic numeral. A CCN or C-ID alignment for MATH 1 was not verified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "arabic-level-numerals",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
   },
-  "GRART 36 Adobe Photoshop Basics": {
-   "title": "Adobe Photoshop Basics",
+  "Examination for MATH 2": {
+   "title": "Calculus 2",
    "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for GRART 36; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "GRART 37 Advanced Photoshop": {
-   "title": "Photoshop Advanced",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for GRART 37; issuer = CCC.",
-   "procedure": "course-identity"
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "Catalog hint 'Calculus II' was mended to the existing house family 'Calculus 2'. The Cx hint carried the mechanism and was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "arabic-level-numerals",
+    "brand-family",
+    "Rule 5c"
+   ]
   },
   "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
    "title": "IBEW Intelligent Transportation Systems Apprenticeship — Year 1",
@@ -268,6 +313,19 @@
     "course-identity",
     "Rule 5c",
     "Rule 1"
+   ]
+  },
+  "Industry for AJ 68": {
+   "title": "Police Ethics and Leadership",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.5,
+   "note": "This is an IC-typed exhibit named only by a course code (Las Positas AJ 68). It takes the catalog course title, which joins the house family. The external industry credential is unnamed, so the CCC issuer is provisional.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
    ]
   },
   "Industry for BUSN 65": {
@@ -371,6 +429,32 @@
     "mechanism-collapses"
    ]
   },
+  "Industry for KIN YO1": {
+   "title": "Yoga 1",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "This IC exhibit is named only by a course code. KIN YO1 is guessed to be Yoga 1 at Las Positas, and the title needs a COCI check. The underlying industry cert (likely a yoga instructor credential) is unnamed, so the issuer is left null.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ]
+  },
+  "Industry for KIN ZUM1": {
+   "title": "Zumba 1",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "This IC exhibit is named only by a course code. KIN ZUM1 is guessed to be a Zumba course, and the title needs a COCI check. The industry cert (possibly Zumba instructor licensing) is not named, so the issuer is left null.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ]
+  },
   "Noncredit for ARHS 6": {
    "title": "Museum & Gallery Techniques",
    "issuer": "California Community Colleges",
@@ -382,6 +466,122 @@
     "course-identity",
     "Rule 5c",
     "mechanism-collapses"
+   ]
+  },
+  "Noncredit for FREN 1A": {
+   "title": "Elementary French 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Catalog hint 'Beginning French' for FREN 1A was restyled per language-levels to the house family 'Elementary French 1'.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "language-levels",
+    "brand-family",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for KIN PL1": {
+   "title": "Pilates 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "The Cx hint was only a code plus mechanism. KIN PL1 is guessed to be Pilates 1, and the title needs a Las Positas COCI lookup.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ]
+  },
+  "Noncredit for KIN SW1": {
+   "title": "Swimming 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.5,
+   "note": "KIN SW1 is guessed to be Swimming 1, and the title needs a Las Positas COCI lookup. The Cx hint carried the mechanism and was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ]
+  },
+  "Noncredit for KIN SWF1": {
+   "title": "Swim Fitness 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "KIN SWF1 is guessed to be a swim fitness course, and the title needs a Las Positas COCI lookup.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ]
+  },
+  "Noncredit for KIN YO1": {
+   "title": "Yoga 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "KIN YO1 is guessed to be Yoga 1, the same course as the IC row, and the title needs a Las Positas COCI lookup.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one",
+    "Rule 9"
+   ]
+  },
+  "Noncredit for MUS 16": {
+   "title": "Philharmonic Orchestra",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The catalog hint for Las Positas MUS 16 was accepted. The Cx hint carried the mechanism and was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for MUS 45": {
+   "title": "Chamber Choir",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The catalog hint for Las Positas MUS 45 was accepted. The Cx hint carried the mechanism and was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for MUS 46": {
+   "title": "Vocal Jazz Ensemble",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "The catalog hint for Las Positas MUS 46 was accepted. The Cx hint carried the mechanism and was set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Noncredit for NKIN WT1": {
+   "title": "Weight Training 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "NKIN WT1 is guessed to be a noncredit weight training course, and the title needs a Las Positas COCI lookup.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
    ]
   },
   "Peace Officer Standards and Training": {
@@ -398,6 +598,38 @@
    ],
    "trainer": "varies by academy"
   },
+  "Portfolio - Life Drawing I (ART 225A)": {
+   "title": "Figure Drawing",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID ARTS 200; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Portfolio - Life Drawing II (ART 225B)": {
+   "title": "Life Drawing II",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ART 225B; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Portfolio - Painting I (ART 227)": {
+   "title": "Introduction to Painting",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID ARTS 210; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Portfolio - Watercolor Painting (ART 220)": {
+   "title": "Watercolor Painting",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ART 220; issuer = CCC.",
+   "procedure": "course-identity"
+  },
   "Portfolio ARHS 6": {
    "title": "Museum & Gallery Techniques",
    "issuer": "California Community Colleges",
@@ -412,18 +644,13 @@
     "join-when-likely-one"
    ]
   },
-  "Portfolio for BUSN 40": {
-   "title": "Introduction to Business",
+  "Portfolio Painting II (ART 228)": {
+   "title": "Painting II",
    "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "The cx hint was misstripped; the catalog title for BUSN 40 joins the existing Introduction to Business family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "brand-family"
-   ]
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ART 228; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "Portfolio for BUSN 45": {
    "title": "Entrepreneurship",
@@ -434,20 +661,6 @@
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c"
-   ]
-  },
-  "Portfolio for BUSN 48": {
-   "title": "Human Relations in Organizations",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "The cx hint 'for BUSN 48' was set aside as a strip error. The title comes from the Las Positas catalog course and joins the existing house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "brand-family",
-    "mechanism-collapses",
     "Rule 5c"
    ]
   },
@@ -464,54 +677,56 @@
     "Rule 5c"
    ]
   },
-  "Portfolio for BUSN 58": {
-   "title": "Small Business Management",
+  "Portfolio for MKTG 50": {
+   "title": "Introduction to Marketing",
    "issuer": "California Community Colleges",
    "via": "classifier",
    "confidence": 0.88,
-   "note": "The title is the Las Positas catalog course name. It is kept apart from 'Small Business Ownership and Management' because they are not confirmed to be the same course.",
+   "note": "The cx hint 'for MKTG 50' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 50.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c"
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
-  "Portfolio for BUSN 61": {
-   "title": "QuickBooks Accounting",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The catalog title 'Quickbooks Accounting' was restyled to Intuit's brand casing. This local course portfolio is kept separate from the Intuit certification families (Rule 8c).",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Portfolio for BUSN 65": {
-   "title": "Federal Income Tax Accounting",
+  "Portfolio for MKTG 56": {
+   "title": "Marketing Strategies",
    "issuer": "California Community Colleges",
    "via": "classifier",
    "confidence": 0.88,
-   "note": "The title is the Las Positas catalog course name. No house family matches it exactly.",
+   "note": "The cx hint 'for MKTG 56' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 56.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c"
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
-  "Portfolio for BUSN 88": {
-   "title": "Human Resources Management",
+  "Portfolio for MKTG 61": {
+   "title": "Professional Selling",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "The title comes from the Las Positas catalog course and joins the existing house family 'Human Resources Management'.",
+   "confidence": 0.88,
+   "note": "The cx hint 'for MKTG 61' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 61.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Solidworks Design Associate (CSWA) Certification": {
+   "title": "Certified SOLIDWORKS Associate (CSWA)",
+   "issuer": "Dassault Systèmes",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Joins the existing house family for the CSWA. The college's wording 'Design Associate' is a variant of the CSWA name.",
+   "procedure": "classifier",
+   "rests_on": [
     "brand-family",
-    "Rule 5c"
+    "Rule 5d",
+    "Rule 6"
    ]
   }
  }

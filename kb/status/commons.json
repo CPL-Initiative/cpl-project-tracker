@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-05T03:15:17Z",
+ "written_at": "2026-11-05T15:54:08Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,9 +118,9 @@
    ],
    "issues": [
     {
-     "n": 31,
+     "n": 44,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 28, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+     "owner": "a curator (the classifier is unsure 41, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
@@ -150,7 +150,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-04T17:00:22Z",
+    "at": "2026-11-05T15:54:01Z",
     "every_hours": 24
    },
    "facts": {
@@ -162,7 +162,7 @@
     "confirmed": 1173,
     "records": 2985,
     "records_stamped": 2216,
-    "saved_at": "2026-11-04T15:49:39Z",
+    "saved_at": "2026-11-05T15:54:01Z",
     "fold_at": "2026-11-04T17:00:22Z",
     "map_titles": 4960,
     "unclassified": 63,
@@ -344,7 +344,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-04T06:23:27Z",
+    "at": "2026-11-05T03:15:23Z",
     "every_hours": null
    },
    "facts": {
@@ -504,7 +504,7 @@
    ],
    "pair": [
     {
-     "n": 7564,
+     "n": 7566,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -514,16 +514,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7564,
+    "credentials": 7566,
     "issuers": 1525,
     "in_map": 205,
     "articulated": 161,
-    "with_issuer_skills": 39,
-    "tech_giant": 477
+    "with_issuer_skills": 64,
+    "tech_giant": 479
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-03T00:00:00Z",
+    "at": "2026-11-05T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -542,9 +542,9 @@
    ],
    "pair": [
     {
-     "n": 26136,
+     "n": 27261,
      "of": null,
-     "words": "outcomes read from 6,600 courses at 9 colleges",
+     "words": "outcomes read from 7,022 courses at 10 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -552,11 +552,12 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 26136,
-    "courses": 6600,
+    "outcomes": 27261,
+    "courses": 7022,
     "colleges": [
      "cabrillo",
      "coastline_community",
+     "columbia",
      "golden_west",
      "las_positas",
      "modesto_junior",
@@ -565,11 +566,11 @@
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 25
+    "reads": 27
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-04T08:03:38Z",
+    "at": "2026-11-05T06:47:43Z",
     "every_hours": null
    },
    "sources": [
@@ -583,7 +584,7 @@
    "links": [],
    "pair": [
     {
-     "n": 39,
+     "n": 64,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -593,11 +594,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 39
+    "with_issuer_skills": 64
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-03T00:00:00Z",
+    "at": "2026-11-05T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -642,9 +643,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 31,
+      "n": 44,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 28, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+      "owner": "a curator (the classifier is unsure 41, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
       "open": "#exhibits/held"
      },
      {
@@ -726,24 +727,24 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 890,
+     "placed": 896,
      "untouched": 814,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 6,
      "looked": 57
     },
     {
      "name": "course-identity",
-     "placed": 160,
+     "placed": 173,
      "untouched": 149,
      "kept": 0,
      "renamed": 11,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 13,
      "looked": 11
     },
     {
@@ -814,13 +815,13 @@
     }
    ],
    "total": {
-    "placed": 1178,
+    "placed": 1197,
     "untouched": 1060,
     "kept": 23,
     "renamed": 71,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 19,
     "looked": 94
    }
   },
