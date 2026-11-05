@@ -74,7 +74,11 @@ RECODES = [
     ("Media Production", "FTVE", "FMED", "split"),
 ]
 FAN_IN_PARTNER = {"Media Production": "Film and Media Studies"}
-GENERATED = ("unified_courses_data.js", "unified_courses_standalone.js")
+GENERATED = ("unified_courses_data.js", "unified_courses_standalone.js", "unified_courses_aligned.js",
+             "unified_courses_details.js", "unified_courses_index.js", "unified_courses_member_desc.js",
+             "unified_courses_members.js", "unified_courses_suggestions.js", "cpl_pathways_ccr_data.js",
+             "cpl_pathways_membership_data.js", "cpl_pathways_roep_data.js", "credential_reference_data.js",
+             "prototype/ccr_atlas_data.json", "prototype/ccr_cpl_universe_members.json", "prototype/skyview.html")
 
 
 def own_stamps(r):
@@ -83,8 +87,9 @@ def own_stamps(r):
 
 
 def rekey_generated(alias, root=ROOT):
-    """-> {file: replacements}. The daily rebuilds both files from the kb; until it runs, SkyView's sky reads
-    TOP codes from them by the ids the layout draws, so they are re-keyed in the same commit (the atomic land).
+    """-> {file: replacements}. The daily rebuilds these outputs from the kb; until it runs, SkyView's sky reads
+    TOP codes by the ids the layout draws and the tests read the outputs against each other, so they are re-keyed
+    in the same commit (the atomic land). Idempotent: a file with no old id is left untouched.
     Exact id tokens only, in one simultaneous pass, never a substring."""
     pat = re.compile(r"(?<![A-Za-z0-9])(" + "|".join(re.escape(k) for k in sorted(alias, key=len, reverse=True))
                      + r")(?![A-Za-z0-9])")
