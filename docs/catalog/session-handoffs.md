@@ -15,10 +15,22 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-532 document(s).
+544 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 578 | [Session 578 handoff: the Subjects List recode landed; the Library revises a visual from its card](../session_578_handoff.md) | 2026-11-05 |
+| 577 | [Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order](../session_577_handoff.md) | 2026-11-05 |
+| 575 | [Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried](../session_575_handoff.md) | 2026-11-04 |
+| 574 | [Session 574 handoff: the cert link's IAI, Intuit and DRE families; the family work stops; Columbia's full read is next](../session_574_handoff.md) | 2026-11-04 |
+| 573 | [Session 573 handoff: the cert link's NWCG and SWRCB families; Columbia's full read is next](../session_573_handoff.md) | 2026-11-04 |
+| 572 | [Session 572 handoff: the cert link's AWS welding and Amazon families; Columbia's full read is next](../session_572_handoff.md) | 2026-11-04 |
+| 571 | [Session 571 handoff: the cert link's PMI, ICC, CDPH and EMSA families; Columbia's full read is next](../session_571_handoff.md) | 2026-11-04 |
+| 570 | [Session 570 handoff: the cert link's Autodesk, NCCER and ASME families; Columbia's full read is next](../session_570_handoff.md) | 2026-11-04 |
+| 569 | [Session 569 handoff: the cert link's FAA family; Columbia's full read is next](../session_569_handoff.md) | 2026-11-04 |
+| 568 | [Session 568 handoff: Las Positas's SLOs loaded (505 rows); Columbia's full read is next](../session_568_handoff.md) | 2026-11-04 |
+| 567 | [Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read](../session_567_handoff.md) | 2026-11-04 |
+| 566 | [Session 566 handoff: Las Positas's full read and Columbia's trial in flight; #2734 brought up to main](../session_566_handoff.md) | 2026-11-04 |
 | 565 | [Session 565 handoff: a Confirmed by a person count beside ready on the Course page and card](../session_565_handoff.md) | 2026-11-03 |
 | 564 | [Session 564 handoff: the roadmap archive split into a part 7; nothing new from Sam or the team](../session_564_handoff.md) | 2026-11-03 |
 | 563 | [Session 563 handoff: three lanes back under budget; the Commons' Exhibit-tiles item was already built](../session_563_handoff.md) | 2026-11-03 |

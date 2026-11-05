@@ -180,10 +180,12 @@ function restDb(opts) {
   };
   return db;
 }
-// Every college in the rows the page holds, so the Records view lists them all (the picker).
-function pickAll(M) {
-  const P = (M._state.review && M._state.review.records) || M._state.records || [];
-  M._state.pick = P.map(function (p) { return p.college; }).filter(function (c, i, a) { return a.indexOf(c) === i; });
+// A record's card as side by side draws it: Program records drew the same card, and retired into the List (SkyLoquat, 2026-11-04),
+// so the card's own guards read it here. Closes any open one first; returns the record's pane.
+function cardOf(M, w, p) {
+  M.closeSplit();
+  M.openSplit(p);
+  return w.document.querySelector(".prh-split-rec");
 }
 function recordReads(db) { return db.asked.filter(function (a) { return /program_requirement_records\?/.test(a.url) && !a.filters.display; }); }
 // The Progress view's display-build reads (S415): the newest record's build, and the count of records with none.
@@ -307,7 +309,7 @@ block("(4b)", function () {
   const b = ready();
   const calls = [];
   b.w.CPL_CHAT = { mountInto: function (h, surface) { calls.push([h && h.id, surface]); } };
-  ["progress", "catalogs", "records", "sequences", "procedures"].forEach(function (v) {
+  ["progress", "catalogs", "sequences", "procedures", "list"].forEach(function (v) {
     b.M._state.view = v; b.M._render();
   });
   check("(4b) no view carries a Sierra section, a mount or a link to the CPL Assistant",
@@ -328,16 +330,18 @@ block("(4)", function () {
     !root.querySelector(".prh-ask") &&
     !Array.prototype.some.call(root.querySelectorAll("button, a"), function (b) { return /Sierra|Ask/i.test(b.textContent); }));
 
-  pickAll(M); M._state.view = "records"; M._render();
-  txt = root.textContent;
-  check("(4) Records shows the CPL figure from the display build", /up to 31\.5 of 34–38 units/.test(txt), txt.slice(0, 600));
-  check("(4) Records counts passing records honestly", /1 of 2/.test(txt));
-  const btn = root.querySelector(".prh-toggle");
-  check("(4) the blocks start closed", btn && btn.getAttribute("aria-expanded") === "false");
-  btn.click();
-  check("(4) the toggle opens its own body", btn.getAttribute("aria-expanded") === "true" &&
+  const card = cardOf(M, w, IRONWORKER);
+  txt = card.textContent;
+  check("(4) the record's card shows the CPL figure from the display build", /up to 31\.5 of 34–38 units/.test(txt), txt.slice(0, 600));
+  const btn = card.querySelector(".prh-toggle");
+  check("(4) side by side opens the blocks", btn && btn.getAttribute("aria-expanded") === "true" &&
     !w.document.getElementById(btn.getAttribute("aria-controls")).hidden);
-  check("(4) a course carries its title and its CPL here", /FIW - Orientation/.test(root.textContent));
+  btn.click();
+  check("(4) the toggle hides its own body", btn.getAttribute("aria-expanded") === "false" &&
+    w.document.getElementById(btn.getAttribute("aria-controls")).hidden);
+  btn.click();
+  check("(4) a course carries its title and its CPL here", /FIW - Orientation/.test(card.textContent));
+  M.closeSplit();
 
   M._state.view = "sequences"; M._render();
   txt = root.textContent;
@@ -357,15 +361,16 @@ block("(5)", function () {
   const { M, root, w } = ready();
   M._state.view = "catalogs"; M._render();
   const tabs = root.querySelectorAll('[role="tab"]');
-  check("(5) six views, Progress first and the List last", tabs.length === 6 && /^Progress/.test(tabs[0].textContent)
-    && /^List/.test(tabs[5].textContent));
+  check("(5) five views, Progress first and the List last; Program records has retired into the List",
+    tabs.length === 5 && /^Progress/.test(tabs[0].textContent) && /^List/.test(tabs[4].textContent) &&
+    !Array.prototype.some.call(tabs, function (t) { return /Program records/.test(t.textContent); }));
   check("(5) one tab selected, the rest out of the tab order",
     root.querySelectorAll('[role="tab"][aria-selected="true"]').length === 1 &&
-    root.querySelectorAll('[role="tab"][tabindex="-1"]').length === 5);
+    root.querySelectorAll('[role="tab"][tabindex="-1"]').length === 4);
   tabs[1].dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
-  check("(5) ArrowRight moves to the next view", M._state.view === "records");
+  check("(5) ArrowRight moves to the next view", M._state.view === "sequences");
   check("(5) the panel names its tab",
-    root.querySelector('[role="tabpanel"]').getAttribute("aria-labelledby") === "prh-tab-records");
+    root.querySelector('[role="tabpanel"]').getAttribute("aria-labelledby") === "prh-tab-sequences");
 });
 
 // ── (6) A private window still renders ────────────────────────────────────
@@ -509,23 +514,21 @@ block("(6c)", function () {
   M._state.registry = REGISTRY.concat([{ college: "San Diego Miramar College", catalog_url: "https://sdccd.curriqunet.com/",
     catalog_year: "2026-2027", catalog_platform: "curriqunet", access_status: "ok", procedure: null }]);
   M._state.records = records;
-  pickAll(M); M._state.view = "records"; M._render();
-  const box = root.querySelector("details.prh-drafts");
-  check("(6c) Program records shows the drafts under the college", !!box && /Drafts for the college \(2\)/.test(box.textContent));
-  check("(6c) the drafts say the MAP team decides when to send", !!box && /The MAP team decides when to send/.test(box.textContent));
-  const ta = box && box.querySelector("textarea");
-  check("(6c) the draft is labeled and read-only", !!ta && ta.hasAttribute("readonly") &&
-    !!root.querySelector('label[for="' + ta.id + '"]') && /AUTO 156G/.test(ta.value));
-  const notes = Array.prototype.filter.call(root.querySelectorAll("details.prh-notes:not(.prh-drafts)"),
+  // The drafts box itself sits in a record's panel on the List (program_requirements_list_record_port (14));
+  // the record's own card keeps a college's items out of the procedure's notes.
+  const mcard = cardOf(M, w, MIRA);
+  const notes = Array.prototype.filter.call(mcard.querySelectorAll("details.prh-notes:not(.prh-drafts)"),
     function (n) { return /AUTO 156G|ECON C2002/.test(n.textContent); });
   check("(6c) a college's draft is not listed among the procedure's notes", notes.length === 0);
-  const copy = box && Array.prototype.filter.call(box.querySelectorAll("button"), function (b) { return /Copy the draft/.test(b.textContent); })[0];
-  check("(6c) a Copy the draft control is offered", !!copy);
-  if (copy) { copy.click(); check("(6c) copying says what happened", /Copied|Selected/.test(box.textContent)); }
+  M.closeSplit();
 
   M._state.view = "catalogs"; M._state.show = "drafts"; M._render();
   check("(6c) Catalogs filters to colleges with drafts and counts them",
     /Showing 1 of 5/.test(root.textContent) && /2 drafts for the college/.test(root.textContent), root.textContent.slice(0, 600));
+  const toList = Array.prototype.filter.call(root.querySelectorAll("button.prh-word"), function (b) { return /2 drafts for the college, on the List/.test(b.textContent); })[0];
+  check("(6c) the count is a word that opens the List on the college, where each program's panel drafts the message", !!toList);
+  if (toList) { toList.click(); check("(6c) and it opens the List on that college", M._state.view === "list" && (M._state.pick || []).join() === "San Diego Miramar College"); }
+  M._state.view = "catalogs";
   M._state.show = "all";
 });
 
@@ -896,8 +899,8 @@ block("(10)", function () {
     p.root.querySelectorAll(".prh-pg-hl .prh-pg-n b")[1].textContent === "19" && !!fails && fails.textContent === "1 fails a machine check",
     fails && fails.textContent);
   fails.click();
-  check("(10) and lands on them", p.M._state.view === "records" && p.root.querySelector("#prh-rshow").value === "fail" &&
-    /Showing 1 of 21/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
+  check("(10) and lands on them: the List on Fail a machine check (S574)", p.M._state.view === "list" && (p.M._state.ls || {}).f === "fail",
+    JSON.stringify({ v: p.M._state.view, f: (p.M._state.ls || {}).f }));
   p.f.recs[0].checks = Object.assign({}, p.f.recs[0].checks, { arithmetic: "equal" });
   p.M._state.view = "progress"; p.M._render();
   p.root.querySelector("header .prh-allctl button[data-all=close]").click();
@@ -931,7 +934,7 @@ block("(10)", function () {
 // that cannot close, a Collapse all that skips Sierra or the views not on screen,
 // and a choice that does not survive a re-render.
 block("(9)", function () {
-  const views = ["progress", "catalogs", "records", "sequences", "procedures"];
+  const views = ["progress", "catalogs", "sequences", "procedures"];
   const p = progressReady(20);
   views.forEach(function (v) {
     p.M._state.view = v; p.M._render();
@@ -1021,7 +1024,7 @@ const ART = {
       { kind: "Reader's note", owner: "procedure", text: "No program learning outcomes are printed in the text." }] }
 };
 block("(11)", function () {
-  const { M, root } = ready();
+  const { M, root, w } = ready();
   const F = M.flagsFor(ART);
   check("(11) the reading procedure's gaps are the flags; the college's and a reader's note are not",
     F.flags.length === 2 && F.college.length === 2 && F.notes.length === 1 && F.notes[0].kind === "Reader's note" &&
@@ -1035,8 +1038,8 @@ block("(11)", function () {
   check("(11) the college's line counts its items in words", M.collegeCount(F.college) === "2 places the catalog and the state file differ" &&
     M.collegeCount([{ kind: "MAP names a second course" }, { kind: "Catalog and state file differ" }]) ===
       "1 second course MAP names; 1 place the catalog and the state file differ", M.collegeCount(F.college));
-  M._state.records = [IRONWORKER, ART]; pickAll(M); M._state.view = "records"; M._render();
-  const card = root.querySelector('article[aria-label="Art, Irvine Valley College"]');
+  M._state.records = [IRONWORKER, ART];
+  const card = cardOf(M, w, ART).querySelector('article[aria-label="Art, Irvine Valley College"]');
   const head = card && card.querySelector(".prh-checks");
   check("(11) the record's head counts its flags", head && /Flags2, for the reading procedure/.test(head.textContent), head && head.textContent);
   const line = head && head.querySelector("details.prh-college-line");
@@ -1047,14 +1050,10 @@ block("(11)", function () {
     line && line.querySelectorAll("li").length === 2 &&
     line.querySelectorAll("li")[0].textContent === ART.display.gaps[0].text &&
     /My College and in the MAP team's queue/.test(line.textContent) && /For Irvine Valley/.test(line.textContent));
-  /* Sam, 2026-10-11: "the program blocks are slow to load on click--times out my browser". A
-     record's blocks are built the first time they show, so a draw of 1,210 records builds no
-     hidden course tables; the button still names the body it controls before then. */
   const body = card.querySelector(".prh-body"), show = card.querySelector(".prh-toggle");
-  check("(11) a record's blocks are built when first shown, not before", body.hidden && !body.childNodes.length &&
-    show.getAttribute("aria-controls") === body.id && show.textContent === "Show the blocks", body.childNodes.length + " nodes");
-  show.click();
-  check("(11) Show the blocks builds them once", !body.hidden && body.querySelectorAll("table").length === ART.record.blocks.length, body.querySelectorAll("table").length + " tables");
+  check("(11) side by side builds the blocks once, and the button names the body it controls",
+    !body.hidden && body.querySelectorAll("table").length === ART.record.blocks.length && show.getAttribute("aria-controls") === body.id,
+    body.querySelectorAll("table").length + " tables");
   show.click(); show.click();
   check("(11) and hiding and showing again keeps the one copy", !body.hidden && body.querySelectorAll("table").length === ART.record.blocks.length, body.querySelectorAll("table").length + " tables");
   const whole = card.querySelector(".prh-flags");
@@ -1071,8 +1070,8 @@ block("(11)", function () {
   check("(11) a catalog addition keeps its words, with no flag number", adds.length === 3 && adds.every(function (tr) { return /Printed in the catalog; not on the state's list/.test(tr.textContent) && !/Flag/.test(tr.textContent); }));
   const notes = Array.prototype.filter.call(card.querySelectorAll("details.prh-notes summary"), function (s) { return /Notes for the reading procedure/.test(s.textContent); });
   check("(11) the reader's notes stay notes", notes.length === 1 && /\(1\)/.test(notes[0].textContent));
-  check("(11) signed out: no verdict box, and a way to sign in", !root.querySelector(".prh-verdict") &&
-    /Reviewers: sign in to confirm a record or note a fix/.test(root.querySelector(".prh-signin summary").textContent));
+  check("(11) signed out: no verdict box", !card.querySelector(".prh-verdict"));
+  M.closeSplit();
 });
 
 // ── (12) A person's reading: Confirm and Needs a fix, the tab's one write ──
@@ -1090,12 +1089,16 @@ function reviewerReady(answer, url) {
     authHeaders: function (extra) { return Object.assign({ apikey: "anon", Authorization: "Bearer tok" }, extra || {}); } };
   return Object.assign(m, { posts: db.posts, asked: db.asked, db: db });
 }
-// The Records view with these colleges picked (every college the page holds when none are named),
-// once their records have loaded.
-function showRecords(r, colleges) {
-  if (colleges) r.M._state.pick = colleges; else pickAll(r.M);
-  r.M._state.view = "records"; r.M._render();
-  return r.M._idle();
+// Every record the page holds read in full (as a college's records were when Program records opened it), then idle.
+function fullRows(r, colleges) {
+  const P = (r.M._state.records || []).filter(function (p) { return !colleges || colleges.indexOf(p.college) >= 0; });
+  return r.M._ensureRows(P, { college: true }).then(function () { return r.M._idle(); });
+}
+// A record's card in side by side, by its card's label ("<program>, <college>"), from the rows the page holds.
+function cardAt(r, label) {
+  const p = (r.M._state.records || []).filter(function (q) { return q.program_title + ", " + q.college === label; })[0];
+  const pane = p ? cardOf(r.M, r.w, p) : null;
+  return pane && pane.querySelector('article[aria-label="' + label + '"]');
 }
 function tick() { return new Promise(function (r) { setTimeout(r, 0); }); }
 block("(12)", function () {
@@ -1108,18 +1111,19 @@ block("(12)", function () {
     check("(12) signed in: no record read goes out under the anon key, and the reviewer's index serves the page",
       recordReads(r.db).every(function (a) { return a.auth === "Bearer tok"; }) &&
       (r.M._state.records || []).length === 2 && r.M._state.records === r.M._state.review.records, (r.M._state.records || []).length);
-    return showRecords(r);
+    return fullRows(r);
   }).then(function () {
-    const card = r.root.querySelector('article[aria-label="Art, Irvine Valley College"]');
-    check("(12) the unchecked record a reviewer may read shows on the Records view", !!card);
-    check("(12) it is waiting on a person, said in words", card && card.querySelector(".prh-state.prh-state-waiting").textContent === "Waiting on your reading");
-    const iw = r.root.querySelector('article[aria-label="Apprenticeship: Field Ironworkers, Cerritos College"]');
+    const iw = cardAt(r, "Apprenticeship: Field Ironworkers, Cerritos College");
     check("(12) a checked record names who read it", iw && /^Checked by Sam/.test(iw.querySelector(".prh-state").textContent));
+    // Side by side's card; the List's panel carries the same box (program_requirements_list_record_port (5)).
+    const card = cardAt(r, "Art, Irvine Valley College");
+    check("(12) the unchecked record a reviewer may read opens side by side", !!card);
+    check("(12) it is waiting on a person, said in words", card && card.querySelector(".prh-state.prh-state-waiting").textContent === "Waiting on your reading");
     const box = card.querySelector(".prh-verdict");
     check("(12) each record ends with Your reading, Confirm and Needs a fix", box && /Your reading/.test(box.textContent) &&
       box.querySelectorAll("button")[0].textContent === "Confirm" && box.querySelectorAll("button")[1].textContent === "Needs a fix");
     check("(12) a record passing its machine checks says confirming checks it, and its items stay with the college",
-      /so Sierra quotes it already; confirming records that you read it and marks it checked\. The 2 items for the college stay open with Irvine Valley/.test(box.textContent));
+      /so Sierra quotes it already; confirming records that you read it and marks it checked\. The 2 items for the college stay open with Irvine Valley/.test(box.textContent), box.textContent);
     box.querySelectorAll("button")[0].click();
     return tick().then(tick).then(function () {
       const post = r.posts[0];
@@ -1127,21 +1131,27 @@ block("(12)", function () {
         post && post.body.p_college === "Irvine Valley College" && post.body.p_control_number === "10265" &&
         post.body.p_verdict === "confirm" && post.body.p_note === null && post.body.p_requirements_fp === "fp-art" &&
         post.opts.method === "POST" && post.opts.headers.Authorization === "Bearer tok", post && JSON.stringify(post.body));
-      check("(12) the result is said, and the state line follows it",
-        box.querySelector(".prh-said").textContent === "Confirmed. The record is checked; Sierra quotes it." &&
-        /^Confirmed by you, Oct 8/.test(card.querySelector(".prh-state").textContent), card.querySelector(".prh-state").textContent);
-      const fixBtn = box.querySelectorAll("button")[1];
+      // Side by side moves on after a save (Sam, 2026-10-11); with nothing else waiting it closes and the tab says so.
+      // The in-place flow (the said line, the state line, Needs a fix's note) is the List panel's:
+      // program_requirements_list_record_port (15).
+      check("(12) in side by side, a save with nothing else waiting closes it and the tab says so",
+        !r.w.document.querySelector(".prh-split") && /Confirmed Art.*Nothing else waits on your reading\./.test(r.root.textContent),
+        r.root.textContent.slice(0, 300));
+      const again = cardAt(r, "Art, Irvine Valley College");
+      check("(12) the record's state line then names the reading", again && /^Confirmed by you, Oct 8/.test(again.querySelector(".prh-state").textContent),
+        again && again.querySelector(".prh-state").textContent);
+      const box2 = again.querySelector(".prh-verdict");
+      const fixBtn = box2.querySelectorAll("button")[1];
       fixBtn.click();
-      check("(12) Needs a fix opens the note", fixBtn.getAttribute("aria-expanded") === "true" && !box.querySelector(".prh-fix").hidden);
-      box.querySelector(".prh-fix button").click();
-      check("(12) an empty note is not sent", r.posts.length === 1 && box.querySelector(".prh-said").textContent === "Write what should change, then save.");
-      box.querySelector("textarea").value = "Read the electives from the addendum.";
-      box.querySelector(".prh-fix button").click();
+      check("(12) Needs a fix opens the note", fixBtn.getAttribute("aria-expanded") === "true" && !box2.querySelector(".prh-fix").hidden);
+      box2.querySelector(".prh-fix button").click();
+      check("(12) an empty note is not sent", r.posts.length === 1 && box2.querySelector(".prh-said").textContent === "Write what should change, then save.");
+      box2.querySelector("textarea").value = "Read the electives from the addendum.";
+      box2.querySelector(".prh-fix button").click();
       return tick().then(tick).then(function () {
         const p2 = r.posts[1];
         check("(12) Needs a fix posts the note", p2 && p2.body.p_verdict === "needs_fix" && p2.body.p_note === "Read the electives from the addendum.");
-        check("(12) and says where it went", /joins Irvine Valley's open questions on its reading procedure/.test(box.querySelector(".prh-said").textContent) &&
-          /^Needs a fix, noted by you/.test(card.querySelector(".prh-state").textContent));
+        check("(12) and side by side says it saved the note", /Saved your note on Art\./.test(r.root.textContent), r.root.textContent.slice(0, 300));
       });
     });
   });
@@ -1153,8 +1163,8 @@ block("(12b)", function () {
   const refused = reviewerReady(function () { return res(400, { code: "42501", message: "program_record_verdict_add: not an allowed reviewer" }); });
   const stale = reviewerReady(function () { return res(400, { code: "40001", message: "program_record_verdict_add: the record changed" }); });
   return Promise.all([refused, stale].map(function (r) {
-    return r.M._load().then(function () { return showRecords(r); }).then(function () {
-      const card = r.root.querySelector('article[aria-label="Art, Irvine Valley College"]');
+    return r.M._load().then(function () { return fullRows(r); }).then(function () {
+      const card = cardAt(r, "Art, Irvine Valley College");
       card.querySelector(".prh-verdict button").click();
       return tick().then(tick).then(function () { return [card.querySelector(".prh-said").textContent, card.querySelector(".prh-state").textContent]; });
     });
@@ -1187,66 +1197,19 @@ const CERR = {
 const MUSIC = Object.assign(JSON.parse(JSON.stringify(CERR)), { control_number: "32563", program_title: "Music",
   checks: { coverage: true, invented: true, arithmetic: "unequal", placed: 9, listed: 9 } });
 block("(13)", function () {
-  const { M } = loadModule();
-  const P = [IRONWORKER, CERR, MUSIC, ART];
-  const keys = function (rows) { return rows.map(function (p) { return p.control_number; }).join(","); };
-  check("(13) a control number finds its record", keys(M.filterRecords(P, "02201", "all", "all")) === "02201");
-  check("(13) a word of the name finds it, in any case", keys(M.filterRecords(P, "  music ", "all", "all")) === "32563");
-  check("(13) Fail a machine check keeps the records the server would leave unchecked",
-    keys(M.filterRecords(P, "", "fail", "all")) === "32563");
-  check("(13) Checked keeps the checked records", keys(M.filterRecords(P, "", "checked", "all")) === "42158");
-  check("(13) a college narrows to its records", keys(M.filterRecords(P, "", "all", "Irvine Valley College")) === "10265");
-  check("(13) Waiting asks the page who waits", keys(M.filterRecords(P, "", "waiting", "all",
-    function (p) { return !p.checked; })) === "02201,32563,10265");
+  // Program records' search and Show retired into the List's search and filters (SkyLoquat, 2026-11-04): the List's suites guard those
+  // (program_requirements_list, program_requirements_list_record_port (7)); the card's own facts stay here.
+  const { M, w } = loadModule();
   check("(13) a Phase 2 record shows the scorer's counts", M.recordChecks(CERR).placed === 12 && M.recordChecks(CERR).listed === 12);
   check("(13) a display build still wins over the loader's counts", M.recordChecks(ART).placed === 21 && M.recordChecks(ART).listed === 23);
-
-  const m = loadModule();
-  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER, CERR, MUSIC];
-  pickAll(m.M); m.M._state.view = "records"; m.M._render();
-  const root = m.root;
-  const q = root.querySelector("#prh-rq"), show = root.querySelector("#prh-rshow"), col = root.querySelector('input[type="checkbox"][data-college="Cerritos College"]');
-  const secKeys = Array.prototype.map.call(root.querySelectorAll('[role="tabpanel"] details.prh-sec'), function (d) { return d.getAttribute("data-sec"); });
-  const bar = root.querySelector(".prh-filterbar"), findSec = root.querySelector('details[data-sec="records:find"]');
-  check("(13) the find controls are labeled, in an open section after the filters and above the colleges", !!q && !!show && !!col && col.checked &&
-    !!q.closest('details[data-sec="records:find"][open]') && !!root.querySelector('label[for="prh-rq"]') &&
-    root.querySelector(".prh-rfind").getAttribute("role") === "search" &&
-    !!bar && !!(bar.compareDocumentPosition(findSec) & 4) && secKeys.indexOf("records:pick") < 0 &&
-    secKeys.indexOf("records:find") < secKeys.indexOf("records:Cerritos College"), secKeys.join(","));
-  check("(13) signed out, no Waiting on your reading: that filter is the reviewer's",
-    !Array.prototype.some.call(show.options, function (o) { return o.value === "waiting"; }));
-  check("(13) the count starts at every record", /Showing 3 of 3/.test(root.querySelector(".prh-count").textContent));
-  check("(13) the Phase 2 card says how many courses it placed", /12 of 12 placed/.test(root.textContent));
+  M._state.registry = REGISTRY; M._state.records = [IRONWORKER, CERR, MUSIC];
+  const stateOf = function (p) { const st = cardOf(M, w, p).querySelector(".prh-state"); return st ? st.textContent : ""; };
+  check("(13) the Phase 2 card says how many courses it placed", /12 of 12 placed/.test(cardOf(M, w, CERR).textContent));
   // The public reads every record (Sam, Open Asks Sheet 67, 2026-10-12); one no person has
   // checked says so in Sam's words, and a checked one carries no mark.
-  const stateOf = function (cn) {
-    const a = Array.prototype.filter.call(root.querySelectorAll("article.prh-rec"), function (x) {
-      return x.textContent.indexOf(cn) >= 0; })[0];
-    const st = a && a.querySelector(".prh-state");
-    return st ? st.textContent : "";
-  };
-  check("(13) signed out, an unchecked record says Not yet confirmed", stateOf("02201") === "Not yet confirmed", stateOf("02201"));
-  check("(13) signed out, a checked record carries no mark", stateOf("42158") === "", stateOf("42158"));
-  root.querySelector('details[data-sec="records:Cerritos College"]').removeAttribute("open");
-  q.value = "32563"; q.dispatchEvent(new m.w.Event("input"));
-  const arts = root.querySelectorAll("article.prh-rec");
-  check("(13) typing narrows the cards and the count", arts.length === 1 && /^Music/.test(arts[0].getAttribute("aria-label")) &&
-    /Showing 1 of 3/.test(root.querySelector(".prh-count").textContent));
-  check("(13) a narrowed list opens the college it found the record in",
-    root.querySelector('details[data-sec="records:Cerritos College"]').hasAttribute("open"));
-  check("(13) the search box keeps its focus target through a redraw", root.querySelector("#prh-rq") === q);
-  q.value = "no such program"; q.dispatchEvent(new m.w.Event("input"));
-  check("(13) no match says how to widen it", /No record matches/.test(root.textContent) && /Showing 0 of 3/.test(root.textContent));
-
-  const r = reviewerReady();
-  return r.M._load().then(function () { return showRecords(r); }).then(function () {
-    const sel = r.root.querySelector("#prh-rshow");
-    check("(13) signed in, Waiting on your reading is offered", Array.prototype.some.call(sel.options, function (o) { return o.value === "waiting"; }));
-    sel.value = "waiting"; sel.dispatchEvent(new r.w.Event("change"));
-    const labels = Array.prototype.map.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return a.getAttribute("aria-label"); });
-    check("(13) Waiting shows the unchecked record and hides the checked one",
-      labels.join("|") === "Art, Irvine Valley College", labels.join("|"));
-  });
+  check("(13) signed out, an unchecked record says Not yet confirmed", stateOf(CERR) === "Not yet confirmed", stateOf(CERR));
+  check("(13) signed out, a checked record carries no mark", stateOf(IRONWORKER) === "", stateOf(IRONWORKER));
+  M.closeSplit();
 });
 
 function wordButton(scope, text) {
@@ -1289,7 +1252,7 @@ block("(14)", function () {
       !!art.querySelector('a[href="https://example.org/art"]') && !!art.querySelector(".prh-verdict") &&
       art.querySelectorAll(".prh-verdict button")[0].textContent === "Confirm");
     check("(14) the open control is an underlined word, 24px tall", /\.prh-word \{[^}]*text-decoration:underline[^}]*\}/.test(SRC) &&
-      /\.prh-word \{[^}]*min-height:24px/.test(SRC) && !!wordButton(art, "Open it on Program records"));
+      /\.prh-word \{[^}]*min-height:24px/.test(SRC) && !!wordButton(art, "Open it in the List"));
     art.querySelector(".prh-verdict button").click();
     return tick().then(tick).then(function () {
       check("(14) Confirm on the card writes the verdict through the one RPC, with the record's fingerprint",
@@ -1297,12 +1260,11 @@ block("(14)", function () {
         r.posts[0].body.p_verdict === "confirm" && r.posts[0].body.p_requirements_fp === "fp-art", JSON.stringify(r.posts.map(function (p) { return p.body; })));
       check("(14) the summary says the answer without a reload", /^Confirmed by you/.test(art.querySelector("summary .prh-state").textContent),
         art.querySelector("summary .prh-state").textContent);
-      wordButton(art, "Open it on Program records").click();
+      wordButton(art, "Open it in the List").click();
       return r.M._idle().then(function () {
-        const q = r.root.querySelector("#prh-rq");
-        check("(14) Open it lands on Program records, searched to the record, its college picked", r.M._state.view === "records" && !!q && q.value === "10265" &&
-          r.root.querySelectorAll("article.prh-rec").length === 1 && r.M._state.pick.indexOf("Irvine Valley College") >= 0,
-          r.root.querySelectorAll("article.prh-rec").length + " " + JSON.stringify(r.M._state.pick));
+        const L = r.M._state.ls || {};
+        check("(14) ⭐ Open it lands on the List, searched to the record, its panel asked for (S574)", r.M._state.view === "list" && L.q === "10265" &&
+          !!L.panelRef && L.panelRef.college === "Irvine Valley College" && L.panelRef.control_number === "10265", JSON.stringify(L));
       });
     });
   });
@@ -1323,19 +1285,20 @@ const CALL2 = { title: "Read two records", text: "Open each below.",
 block("(15a)", function () {
   check("(15a) Show the blocks: the body's display yields to [hidden]", /\.prh-body\[hidden\] \{ display:none; \}/.test(SRC));
   const m = loadModule();
-  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER]; pickAll(m.M); m.M._state.view = "records"; m.M._render();
-  const art = m.root.querySelector("article.prh-rec"), body = art.querySelector(".prh-body"), btn = art.querySelector(".prh-toggle");
+  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER];
+  const art = cardOf(m.M, m.w, IRONWORKER).querySelector("article.prh-rec"), body = art.querySelector(".prh-body"), btn = art.querySelector(".prh-toggle");
   const before = body.hidden;
   btn.click();
   const mid = body.hidden;
   btn.click();
-  check("(15a) Show the blocks hides and shows the blocks, not only its own label",
-    before === true && mid === false && body.hidden === true && btn.textContent === "Show the blocks", [before, mid, body.hidden].join());
+  check("(15a) Hide the blocks hides and shows the blocks, not only its own label",
+    before === false && mid === true && body.hidden === false && btn.textContent === "Hide the blocks", [before, mid, body.hidden].join());
+  m.M.closeSplit();
 });
 block("(15b)", function () {
   const out = progressReady(20);
   out.M._state.progress.queue.calls = [CALL2];
-  out.M._state.view = "records"; out.M._render();
+  out.M._state.view = "catalogs"; out.M._render();
   const go = out.root.querySelector(".prh-mast #prh-todo-go");
   check("(15b) the to-do word sits under the tab's title on every view, a button that counts each record a call names",
     !!go && go.tagName === "BUTTON" && go.textContent === "Sam's to-dos (2)" && /prh-todo-go \{[^}]*text-decoration:underline/.test(SRC),
@@ -1370,11 +1333,9 @@ block("(15c)", function () {
 });
 block("(15d)", function () {
   const r = reviewerReady();
-  return r.M._load().then(function () { return showRecords(r); }).then(function () {
-    const card = Array.prototype.filter.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return /^Art/.test(a.getAttribute("aria-label")); })[0];
-    const sbs = wordButton(card, "Side by side");
-    check("(15d) each record with a catalog page offers Side by side, an underlined word", !!sbs);
-    sbs.click();
+  return r.M._load().then(function () { return fullRows(r); }).then(function () {
+    // The List's panel offers Side by side (program_requirements_list_record_port (4)); this is what it opens.
+    cardAt(r, "Art, Irvine Valley College");
     const d = r.w.document.querySelector('.prh-split[role="dialog"][aria-modal="true"]');
     const fr = d && d.querySelector("iframe");
     check("(15d) the split frames the record's catalog page beside it", !!fr && fr.getAttribute("src") === "https://example.org/art" &&
@@ -1389,11 +1350,9 @@ block("(15d)", function () {
       /\.prh-split-rec \{[^}]*overflow:auto/.test(SRC));
     rec.querySelector(".prh-verdict button").click();
     return tick().then(tick).then(function () {
-      const back = Array.prototype.filter.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return /^Art/.test(a.getAttribute("aria-label")); })[0];
       check("(15d) with nothing else waiting, the verdict closes the split and frees the page", !r.w.document.querySelector(".prh-split") && !r.root.hasAttribute("inert"));
-      check("(15d) a verdict saved in the split shows on the card behind", /^Confirmed by you/.test(back.querySelector(".prh-state").textContent),
-        back.querySelector(".prh-state").textContent);
-      check("(15d) focus returns to that record's Side by side", r.w.document.activeElement === wordButton(back, "Side by side"));
+      check("(15d) a verdict saved in the split shows on the record", /^Confirmed by you/.test(cardAt(r, "Art, Irvine Valley College").querySelector(".prh-state").textContent));
+      r.M.closeSplit();
     });
   });
 });
@@ -1402,11 +1361,10 @@ block("(15e)", function () {
   Object.defineProperty(m.w, "innerWidth", { value: 390, configurable: true });
   const opened = [];
   m.w.open = function (u, n, f) { opened.push([u, n, f]); return null; };
-  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER]; pickAll(m.M); m.M._state.view = "records";
+  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER]; m.M._state.view = "list";
   m.M._state.framing = { "cerritos-public.courseleaf.com": { frames: false, xfo: "SAMEORIGIN" } };
-  m.M._render();
   check("(15e) the framing file decides per host", m.M.framingOf(IRONWORKER.source_url) === false && m.M.framingOf("https://other.example/x") === null);
-  wordButton(m.root.querySelector("article.prh-rec"), "Side by side").click();
+  m.M.openSplit(IRONWORKER);
   const d = m.w.document.querySelector(".prh-split");
   check("(15e) on a phone, a host that refuses framing opens in its own named window, the record staying here",
     opened.length === 1 && opened[0][0] === IRONWORKER.source_url && opened[0][1] === "prh-catalog" &&
@@ -1571,11 +1529,11 @@ const NUMBERED = {
 };
 block("(17)", function () {
   const m = loadModule();
-  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED];
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
   // map_links.js stands in: a span the module would fill from the verified MAP index.
   m.w.CPL_MAP_LINKS = { node: function (t) { const s = m.w.document.createElement("span"); s.className = "cpl-maplinks"; s.setAttribute("data-ml-title", t); return s; } };
-  const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
+  const rows = m.w.document.querySelectorAll(".prh-split-rec article.prh-rec tbody tr");
   const hed = rows[0], engl = rows[1], art = rows[2];
   const chips = Array.prototype.map.call(hed.querySelectorAll("button.prh-id"), function (b) { return b.textContent; });
   check("(17) each number the course carries shows under its code, a button a tap can focus", chips.join("|") === "C-ID HLTH 100|M-ID HLTH M1001", chips.join("|"));
@@ -1604,7 +1562,8 @@ block("(17)", function () {
     d && d.innerHTML.slice(-400));
   check("(17) the page behind is inert while it is open", m.root.closest("[inert]") === m.root);
   d.parentNode.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
-  check("(17) Escape closes it and returns to the count", !m.w.document.querySelector(".prh-exdialog") && m.w.document.activeElement === cpl && !m.root.hasAttribute("inert"));
+  check("(17) Escape closes it and returns to the count, side by side live again", !m.w.document.querySelector(".prh-exdialog") && m.w.document.activeElement === cpl &&
+    !m.w.document.querySelector(".prh-split").hasAttribute("inert"));
   check("(17) tokens only in the new CSS", !/\.prh-(id|tip|cplbtn|exback|exdialog|exlist|extype)[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
 });
 
@@ -1623,10 +1582,10 @@ block("(17b)", function () {
     if (/kb\/cpl_ai\/pairs\.json/.test(url)) return Promise.resolve({ ok: true, json: function () { return Promise.resolve(AI); } });
     return new Promise(function () {});
   } });
-  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED];
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
   return tick().then(tick).then(tick).then(function () {
-    const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
+    const rows = m.w.document.querySelectorAll(".prh-split-rec article.prh-rec tbody tr");
     const art = rows[2], engl = rows[1];
     const b = art.querySelector("button.prh-cplbtn");
     check("(17b) a course whose only lead is a CPL-AI match shows its 0 as a button once the file arrives",
@@ -1744,12 +1703,11 @@ block("(18d)", function () {
     r.M._state.review.records.push(IVC2);
     r.M._state.review.records[0].checked = false;
     const art = r.M._state.review.records[1];
-    check("(18d) a record on no call: the next waiting one in the Records view's order", r.M.nextToRead(art) === IVC2,
+    // Outside the List (its own order is program_requirements_list_record_port (11)), the reviewer's records in theirs.
+    check("(18d) a record on no call: the next waiting one in the reviewer's records", r.M.nextToRead(art) === IVC2,
       r.M.nextToRead(art) && r.M.nextToRead(art).control_number);
-    r.M._state.pick = ["Irvine Valley College"];
-    check("(18d) with the Records view's picks, it stays at the picked colleges",
-      r.M.nextToRead(IVC2) === art, r.M.nextToRead(IVC2) && r.M.nextToRead(IVC2).control_number);
-    r.M._state.pick = [];
+    check("(18d) from the last, it wraps to the first waiting one",
+      r.M.nextToRead(IVC2) === r.M._state.review.records[0], r.M.nextToRead(IVC2) && r.M.nextToRead(IVC2).control_number);
     callReady(r, [CALL2, { title: "One more", text: "", records: [{ college: "Irvine Valley College", control_number: "10300" }] }]);
     r.M._state.review.records[0].checked = true;
     check("(18d) a record on a call whose others are answered goes on to the next call's", r.M.nextToRead(art) === IVC2);
@@ -1802,14 +1760,15 @@ block("(20)", function () {
   const rec = JSON.parse(JSON.stringify(IRONWORKER));
   rec.measure = "hours"; rec.total_min = 324; rec.total_max = 324;
   rec.display.equivalent_units = { rate: "lecture", hours_per_unit: [16, 18], total: { min: 20, max: 20 }, up_to: 0 };
-  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; pickAll(m.M); m.M._state.view = "records"; m.M._render();
-  const eq = Array.prototype.filter.call(m.root.querySelectorAll("article.prh-rec .prh-check"), function (d) {
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
+  const eq = Array.prototype.filter.call(m.w.document.querySelectorAll(".prh-split-rec article.prh-rec .prh-check"), function (d) {
     return d.querySelector("dt").textContent === "Estimated equivalent units"; })[0];
   check("(20) a noncredit record states its hours as estimated equivalent units, not awarded units",
     !!eq && eq.querySelector("dd").textContent === "About 20 at the lecture rate, 16–18 hours a unit (Title 5 section 55002.5); for estimating only, not awarded units",
     eq && eq.textContent);
   m.M._state.records = [JSON.parse(JSON.stringify(IRONWORKER))]; m.M._render();
-  check("(20) a units record carries no equivalent row", !/Estimated equivalent units/.test(m.root.textContent));
+  const units = cardOf(m.M, m.w, m.M._state.records[0]);
+  check("(20) a units record carries no equivalent row", !!units && /Units/.test(units.textContent) && !/Estimated equivalent units/.test(units.textContent));
 });
 
 block("(19)", function () {
@@ -1820,9 +1779,9 @@ block("(19)", function () {
   rec.display.courses = Object.assign({}, rec.display.courses, { "EMS 80": { title: "Paramedic Field Externship",
     units_from_state_file: 9, coci: { status: "Inactive", program_ccn: "CCC000584685", current_ccn: "CCC000616276" } } });
   rec.display.checks = Object.assign({}, rec.display.checks, { arithmetic: "unequal", units_differ: { blocks: [29.5, 31.5], printed: [30.5, 30.5] } });
-  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|42158": true }; m.M._render();
-  const art = m.root.querySelector("article.prh-rec");
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec];
+  m.M._state.open = { "Cerritos College|42158": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
+  const art = m.w.document.querySelector(".prh-split-rec article.prh-rec");
   const row = Array.prototype.filter.call(art.querySelectorAll("tr"), function (tr) { return /EMS 80/.test(tr.textContent); })[0];
   const chip = row && row.querySelector(".prh-coci");
   check("(19) a catalog addition COCI carries on the program wears a chip naming its status and both control numbers",
@@ -1836,10 +1795,18 @@ block("(19)", function () {
     units.querySelector("dd").textContent === "Units differ: the blocks add to 29.5–31.5; the catalog prints 30.5 units", units && units.textContent);
   check("(19) the chip is drawn on tokens", /\.prh-coci \{[^}]*border:1px solid var\(--border-strong\)[^}]*color:var\(--text-muted\)/.test(SRC) &&
     !/\.prh-coci[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+  /* Side by side at 1024: the record pane is about 490px, so the course column's C-ID and M-ID chips ran into the
+     title column over the COCI chip (SkyJujube, 2026-11-04). The table stacks by the pane's own width, and a
+     stacked cell's chips sit under its value. jsdom has no layout; the guard pins the rules. */
+  check("(19) side by side's record pane stacks its tables by its own width",
+    /"\.prh-split-rec \{ container:prh-rec \/ inline-size; \}"/.test(SRC) &&
+    /"@container prh-rec \(max-width: 560px\) \{" \+ STACK_CSS/.test(SRC) &&
+    /"@media \(max-width: 560px\) \{[^"]*" \+ STACK_CSS/.test(SRC));
+  check("(19) a stacked cell's chips sit in the value's column", /tbody td > \* \{ grid-column:2; \}/.test(SRC));
   const plain = JSON.parse(JSON.stringify(IRONWORKER));
   plain.record.blocks[0].courses.push({ code: "ZZ 1", units: 3, alternatives: [], catalog_addition: true });
-  m.M._state.records = [plain]; m.M._render();
-  const zz = Array.prototype.filter.call(m.root.querySelectorAll("article.prh-rec tr"), function (tr) { return /ZZ 1/.test(tr.textContent); })[0];
+  m.M._state.records = [plain]; m.M._render(); cardOf(m.M, m.w, plain);
+  const zz = Array.prototype.filter.call(m.w.document.querySelectorAll(".prh-split-rec article.prh-rec tr"), function (tr) { return /ZZ 1/.test(tr.textContent); })[0];
   check("(19) an addition COCI carries under no status keeps its plain mark and no chip",
     !!zz && /not on the state's list/.test(zz.textContent) && !zz.querySelector(".prh-coci"));
 });
@@ -1850,8 +1817,8 @@ block("(19)", function () {
 block("(19b)", function () {
   const m = loadModule();
   function unitsOf(rec) {
-    m.M._state.registry = REGISTRY; m.M._state.records = [rec]; pickAll(m.M); m.M._state.view = "records"; m.M._render();
-    const art = m.root.querySelector("article.prh-rec");
+    m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
+    const art = m.w.document.querySelector(".prh-split-rec article.prh-rec");
     return Array.prototype.filter.call(art.querySelectorAll(".prh-check"), function (d) { return d.querySelector("dt").textContent === "Units"; })[0];
   }
   const deg = JSON.parse(JSON.stringify(IRONWORKER));
@@ -1878,8 +1845,8 @@ block("(19b)", function () {
     !!u && !u.querySelector(".prh-differ") && u.querySelector("dd").textContent === "Equal, 60 units for the degree", u && u.textContent);
   const col = JSON.parse(JSON.stringify(IRONWORKER));
   col.display.gaps = [{ kind: "Catalog and state file differ", owner: "college", where: "x", text: "The state's Program Course File lists EMS 1; the reader found it on no page." }];
-  m.M._state.records = [col]; m.M._render();
-  const sum = m.root.querySelector("article.prh-rec .prh-college-line summary");
+  m.M._state.records = [col]; m.M._render(); cardOf(m.M, m.w, col);
+  const sum = m.w.document.querySelector(".prh-split-rec article.prh-rec .prh-college-line summary");
   check("(19b) the college's items stand out in the row", !!sum && sum.classList.contains("prh-differ-line"), sum && sum.outerHTML);
   check("(19b) both marks are drawn on the alert token, never a raw color",
     /\.prh-coci\.prh-differ \{ color:var\(--red-alert\); border-color:var\(--red-alert\); \}/.test(SRC) &&
@@ -1895,34 +1862,13 @@ block("(20)", function () {
   rec.record.blocks.push({ name: "Recommended Electives", rule: "recommended", minimum: null, option_group: null,
     stated: { min: null, max: null }, courses: [{ code: "WELD 100", units: 3, alternatives: [] }] });
   rec.record.program.careers = ["ironworker", "rigger"];
-  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|42158": true }; m.M._render();
-  const art = m.root.querySelector("article.prh-rec");
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec];
+  m.M._state.open = { "Cerritos College|42158": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
+  const art = m.w.document.querySelector(".prh-split-rec article.prh-rec");
   const h = Array.prototype.filter.call(art.querySelectorAll(".prh-body h4"), function (x) { return /Recommended Electives/.test(x.textContent); })[0];
   check("(20) a recommended block says in words that it is not required", !!h && /Recommended, not required/.test(h.textContent), h && h.textContent);
   check("(20) ruleText names it", m.M.ruleText({ rule: "recommended" }, "units", {}) === "Recommended, not required");
   check("(20) the careers the catalog names show on the record", /Careers the catalog names: ironworker; rigger\./.test(art.textContent));
-});
-
-// ── (21) A closed college costs nothing until it opens (Sam, 2026-10-11) ──
-// "The program blocks are slow to load on click--times out my browser once and I have to tell
-// it to wait". A signed-in reader holds every record; drawing them all, closed sections and
-// hidden blocks included, took 3.7 s and 294,000 elements for 1,210 records. The failures this
-// guards: a closed college that builds its cards anyway, one that opens empty, and a long
-// list the browser lays out in full when only a screenful shows.
-block("(21)", function () {
-  const m = loadModule();
-  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER, ART]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.secs = { "*": false }; m.M._render();
-  const cerr = m.root.querySelector('details[data-sec="records:Cerritos College"]');
-  check("(21) a closed college builds none of its records", !!cerr && !cerr.hasAttribute("open") &&
-    !m.root.querySelector("article.prh-rec"), m.root.querySelectorAll("article.prh-rec").length + " cards");
-  cerr.setAttribute("open", ""); cerr.dispatchEvent(new m.w.Event("toggle"));
-  cerr.dispatchEvent(new m.w.Event("toggle"));
-  check("(21) opening it builds its records once", cerr.querySelectorAll("article.prh-rec").length === 1 &&
-    !m.root.querySelector('details[data-sec="records:Irvine Valley College"] article.prh-rec'));
-  check("(21) the browser lays out only the cards near the screen",
-    /\.prh-college \.prh-rec \{ content-visibility:auto; contain-intrinsic-size:auto 240px; \}/.test(SRC));
 });
 
 // ── (22) A course the program lists through an older version (Sam, 2026-10-11) ──
@@ -1936,9 +1882,9 @@ block("(22)", function () {
   rec.record.blocks[0].courses.push({ code: "ENGT 116", units: 4, alternatives: [], catalog_addition: true });
   rec.display.courses = Object.assign({}, rec.display.courses, { "ENGT 116": { title: "Blueprint Reading and Production",
     coci: { status: "Inactive", program_ccn: "CCC000385118", current_ccn: "CCC000643455", listed: true } } });
-  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|42158": true }; m.M._render();
-  const row = Array.prototype.filter.call(m.root.querySelectorAll("article.prh-rec tr"), function (tr) { return /ENGT 116/.test(tr.textContent); })[0];
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec];
+  m.M._state.open = { "Cerritos College|42158": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
+  const row = Array.prototype.filter.call(m.w.document.querySelectorAll(".prh-split-rec article.prh-rec tr"), function (tr) { return /ENGT 116/.test(tr.textContent); })[0];
   check("(22) a course listed through an older version reads as on the program's list",
     !!row && !/off the program's list/.test(row.textContent) && !/not on the state's list/.test(row.textContent) && !/Flag/.test(row.textContent),
     row && row.textContent);
@@ -1972,17 +1918,15 @@ block("(23)", function () {
   // A filter left from an earlier visit is cleared, so the list is exactly what the card counted.
   p.M._state.rq = "Welding"; p.M._state.pick = ["Cerritos College"];
   part(p.root, "Catalog reading").querySelector(".prh-pg-open").click();
-  check("(23) Catalog reading opens Program records, every record at every college, the earlier search cleared",
-    p.M._state.view === "records" && p.M._state.rshow === "all" && p.M._state.rq === "" && p.M._state.rscope === "all" &&
-    /Showing 20 of 20/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
+  check("(23) Catalog reading opens the List on Read, every college, the earlier search and college cleared (S574)",
+    p.M._state.view === "list" && p.M._state.ls.f === "read" && p.M._state.ls.q === "" && (p.M._state.pick || []).length === 0,
+    JSON.stringify({ v: p.M._state.view, ls: p.M._state.ls, pick: p.M._state.pick }));
 
   p = progressReady(20, null, extraRecords());
   const mc = part(p.root, "The machine checks").querySelector(".prh-pg-open");
   check("(23) the machine checks open the records failing one", !!mc && mc.textContent === "Open the 1 failing", mc && mc.textContent);
   mc.click();
-  check("(23) and land on Fail a machine check", p.M._state.view === "records" &&
-    p.root.querySelector("#prh-rshow").value === "fail" && /Showing 1 of 22/.test(p.root.querySelector(".prh-count").textContent),
-    p.root.querySelector(".prh-count").textContent);
+  check("(23) and land on the List's Fail a machine check", p.M._state.view === "list" && p.M._state.ls.f === "fail");
 
   // Signed in, the machine checks still wait on no one: a person's confirm is optional (Sam, 2026-10-17).
   p = progressReady(20, null, extraRecords());
@@ -2022,13 +1966,9 @@ block("(23)", function () {
   const hl = p.root.querySelector(".prh-pg-hlgo");
   check("(23) the headline's complete count opens the complete records", !!hl && hl.textContent === "Open the 20 complete");
   hl.click();
-  check("(23) and lands on exactly them: active in COCI and passing", p.M._state.view === "records" &&
-    p.root.querySelector("#prh-rshow").value === "complete" && /Showing 20 of 20/.test(p.root.querySelector(".prh-count").textContent),
-    p.root.querySelector(".prh-count").textContent);
-  p = progressReady(20, null, extraRecords());
-  p.root.querySelector(".prh-pg-hlgo").click();
-  check("(23) a passing record on a program COCI does not list as active is not in the complete list",
-    /Showing 20 of 22/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
+  check("(23) and lands on the List's Pass the machine checks: its rows are COCI's active programs (S574)",
+    p.M._state.view === "list" && p.M._state.ls.f === "pass");
+  // A passing record on a program COCI does not list as active stays out of Pass: program_requirements_list_record_port (10).
 
   // A call the status file places on a part puts its answer link on that card.
   p = progressReady(20);
@@ -2127,10 +2067,7 @@ function harvestReviewer(o, url) {
     authHeaders: function (extra) { return Object.assign({ apikey: "anon", Authorization: "Bearer tok" }, extra || {}); } };
   return Object.assign(m, { db: db });
 }
-function collegeBox(root, c) { return root.querySelector('input[type="checkbox"][data-college="' + c + '"]'); }
-function change(w, input, on) { input.checked = on; input.dispatchEvent(new w.Event("change", { bubbles: true })); }
 function inValues(v) { return splitTop(String(v || "").slice(4, -1)); }
-function cardsAt(root, c) { return root.querySelectorAll('details[data-sec="records:' + c + '"] article.prh-rec').length; }
 
 block("(24a)", function () {
   const db = harvestDb();
@@ -2169,205 +2106,7 @@ block("(24a)", function () {
     const pa = A.root.querySelector('[role="tabpanel"]').textContent, pb = B.root.querySelector('[role="tabpanel"]').textContent;
     check("(24a) the Progress view reads the same, word for word", pa === pb && pa.length > 500, pa.slice(0, 200) + " | " + pb.slice(0, 200));
     check("(24a) the view switch counts the same records", A.root.querySelector(".prh-switch").textContent === B.root.querySelector(".prh-switch").textContent);
-    [A, B].forEach(function (m) { m.M._state.view = "records"; m.M._render(); });
-    const ga = A.root.querySelector('details[data-sec="records:glance"]').textContent, gb = B.root.querySelector('details[data-sec="records:glance"]').textContent;
-    check("(24a) the Records view's glance counts the same: passing, totals agreeing, CPL held", ga === gb && /26 of 28 records pass the machine checks/.test(ga), ga + " | " + gb);
-    const ka = A.root.querySelector('.prh-dd[data-filter="college"] .prh-dd-list').textContent, kb = B.root.querySelector('.prh-dd[data-filter="college"] .prh-dd-list').textContent;
-    check("(24a) and the College filter's counts for each college: its records and how many wait", ka === kb &&
-      /Cabrillo College12 records, 10 wait on a reading/.test(ka), ka.slice(0, 300));
     check("(24a) nothing else was read to draw them", recordReads(db).length === 2);
-  });
-});
-
-block("(24b)", function () {
-  // Sam, 2026-10-14: "change that to a simple drop down multi-select filter and add filters for CIP
-  // Sectors and SWP Regions".
-  const db = harvestDb();
-  const m = loadModule({ fetch: db.fetch });
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    return m.M._idle();
-  }).then(function () {
-    const root = m.root;
-    check("(24b) the Records view opens on the filters with no record loaded", recordReads(db).length === 2 &&
-      !root.querySelector("article.prh-rec") && /Choose a district, college, SWP region or CIP sector above to read its records/.test(root.textContent));
-    const bar = root.querySelector('.prh-filterbar [role="group"][aria-label="Filter the records"]');
-    const labels = Array.prototype.map.call(root.querySelectorAll(".prh-dd-btn"), function (b) { return b.textContent; });
-    check("(24b) four dropdowns, in order: District, College, SWP Region, CIP Sector", !!bar &&
-      JSON.stringify(labels) === '["District","College","SWP Region","CIP Sector"]', JSON.stringify(labels));
-    check("(24b) each opens from a word, its list hidden until asked",
-      Array.prototype.every.call(root.querySelectorAll(".prh-dd-btn"), function (b) {
-        const pop = root.querySelector("#" + b.getAttribute("aria-controls"));
-        return b.classList.contains("prh-word") && b.getAttribute("aria-expanded") === "false" && !!pop && pop.hidden === true;
-      }) && !root.querySelector("fieldset.prh-pick, input[data-district]:not(.prh-dd-pop input)"));
-    check("(24b) the College list names each college with its counts, a checkbox in a label",
-      root.querySelectorAll('.prh-dd[data-filter="college"] input[type="checkbox"][data-college]').length === 6 &&
-      Array.prototype.every.call(root.querySelectorAll('.prh-dd input[type="checkbox"]'), function (i) { return !!i.closest("label"); }));
-    const dists = Array.prototype.map.call(root.querySelectorAll('.prh-dd[data-filter="district"] input[data-district]'), function (i) { return i.value; });
-    check("(24b) the District list holds the districts with records, each counted", dists.length === 4 &&
-      /Riverside Community College District3 colleges, 9 records/.test(root.querySelector('.prh-dd[data-filter="district"]').textContent), JSON.stringify(dists));
-    const regions = Array.prototype.map.call(root.querySelectorAll('.prh-dd[data-filter="region"] input[data-region]'), function (i) { return i.value; });
-    check("(24b) the SWP Region list holds the regions with records", JSON.stringify(regions) === '["Bay Area","Inland Empire/Desert","Los Angeles","Orange County"]', JSON.stringify(regions));
-    const sectors = root.querySelectorAll('.prh-dd[data-filter="sector"] input[data-sector]');
-    const sectorTxt = root.querySelector('.prh-dd[data-filter="sector"]').textContent;
-    check("(24b) the CIP Sector list offers every two-digit family, counted, and the records with no CIP",
-      sectors.length === Object.keys(m.M.CIP_FAMS).length + 1 && /51 · Health Professions and Related Programs7 records/.test(sectorTxt) &&
-      /No CIP assigned yet2 records/.test(sectorTxt) && /27 · Mathematics and Statistics0 records/.test(sectorTxt), sectorTxt.slice(0, 200));
-    const cipReads = db.asked.filter(function (a) { return a.cip; });
-    check("(24b) the CIP codes are read once, by control number, in batches", cipReads.length === 1 && /control_number=in\./.test(cipReads[0].url));
-    check("(24b) the filters' words are plain, and Clear hides with nothing set", !/[\u{1F300}-\u{1FAFF}]/u.test(root.querySelector(".prh-filterbar").textContent) &&
-      wordButton(root, "Clear the filters") && wordButton(root, "Clear the filters").hidden === true);
-    const btn = root.querySelector('.prh-dd[data-filter="college"] .prh-dd-btn');
-    btn.click();
-    const pop = root.querySelector("#prh-dd-college");
-    check("(24b) the word opens its list and says so", pop.hidden === false && btn.getAttribute("aria-expanded") === "true");
-    pop.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
-    check("(24b) Escape closes it and returns to the word", pop.hidden === true && m.w.document.activeElement === btn);
-    btn.click();
-    m.w.document.body.dispatchEvent(new m.w.Event("click", { bubbles: true }));
-    check("(24b) a click elsewhere closes it", pop.hidden === true && btn.getAttribute("aria-expanded") === "false");
-  });
-});
-
-block("(24c)", function () {
-  const db = harvestDb();
-  const m = loadModule({ fetch: db.fetch });
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    change(m.w, collegeBox(m.root, "Cabrillo College"), true);
-    const say = m.root.querySelector(".prh-pick-say");
-    check("(24c) picking says what it reads", say.getAttribute("aria-live") === "polite" && say.textContent === "Reading Cabrillo College's 12 records…", say.textContent);
-    return m.M._idle().then(function () {
-      const full = recordReads(db).filter(asksFull);
-      check("(24c) picking one college reads only that college, college=in.(...), in full", full.length === 1 &&
-        JSON.stringify(inValues(full[0].filters.college)) === '["Cabrillo College"]' && !full[0].filters.control_number,
-        full.map(function (a) { return a.url; }).join(" "));
-      check("(24c) its records appear, and only its", cardsAt(m.root, "Cabrillo College") === 12 && m.root.querySelectorAll("article.prh-rec").length === 12 &&
-        /Showing 12 of 12/.test(m.root.querySelector(".prh-count").textContent));
-      check("(24c) the other colleges stay index rows", m.M._state.records.filter(function (p) { return p._light; }).length === HARVEST.length - 12);
-      check("(24c) and the status says they are open", m.root.querySelector(".prh-pick-say").textContent === "Cabrillo College's 12 records are open below.");
-      check("(24c) the pick lasts the visit and is never stored (Sam, 2026-10-21)", m.w.localStorage.getItem(m.M.PICK_KEY) === null);
-      check("(24c) a college's drafts show under it once its records are all here", /Drafts for the college \(2\)/.test(m.root.textContent));
-      const before = recordReads(db).length;
-      change(m.w, collegeBox(m.root, "Cabrillo College"), false);
-      check("(24c) unpicking takes its records off the list", !m.root.querySelector("article.prh-rec"));
-      change(m.w, collegeBox(m.root, "Cabrillo College"), true);
-      return m.M._idle().then(function () {
-        check("(24c) picking it again reads nothing", recordReads(db).length === before && cardsAt(m.root, "Cabrillo College") === 12);
-      });
-    });
-  });
-});
-
-block("(24d)", function () {
-  const db = harvestDb();
-  const m = loadModule({ fetch: db.fetch });
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    const d = m.root.querySelector('input[type="checkbox"][data-district="Riverside Community College District"]');
-    change(m.w, d, true);
-    check("(24d) a district filter lists its colleges, and picks no college for you",
-      JSON.stringify(m.M._state.filt.district) === '["Riverside Community College District"]' && m.M._state.pick.length === 0 &&
-      !collegeBox(m.root, "Norco College").checked &&
-      m.root.querySelector('.prh-dd[data-filter="district"] .prh-dd-btn').textContent === "District (1)");
-    return m.M._idle().then(function () {
-      const full = recordReads(db).filter(asksFull);
-      check("(24d) its three colleges are read in one read", full.length === 1 &&
-        JSON.stringify(inValues(full[0].filters.college).sort()) === '["Moreno Valley College","Norco College","Riverside City College"]',
-        full.map(function (a) { return a.filters.college; }).join(" "));
-      check("(24d) and their records appear", m.root.querySelectorAll("article.prh-rec").length === 9);
-      change(m.w, collegeBox(m.root, "Norco College"), true);
-      check("(24d) a college inside it narrows the list to that college: every filter must pass",
-        m.root.querySelectorAll("details.prh-college").length === 1 && cardsAt(m.root, "Norco College") === 2);
-      change(m.w, collegeBox(m.root, "Cabrillo College"), true);
-      check("(24d) a college outside the district matches nothing more", m.root.querySelectorAll("details.prh-college").length === 1);
-      wordButton(m.root, "Clear the filters").click();
-      check("(24d) Clear the filters clears them all", m.M._state.pick.length === 0 && m.M._state.filt.district.length === 0 &&
-        m.w.localStorage.getItem(m.M.FILTERS_KEY) === null && !m.root.querySelector("article.prh-rec"));
-    });
-  });
-});
-
-block("(24m)", function () {
-  // The SWP Region and CIP Sector filters (Sam, 2026-10-14).
-  const db = harvestDb();
-  const m = loadModule({ fetch: db.fetch });
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    return m.M._idle();
-  }).then(function () {
-    change(m.w, m.root.querySelector('input[data-region="Inland Empire/Desert"]'), true);
-    return m.M._idle();
-  }).then(function () {
-    check("(24m) a region lists its colleges' records", m.root.querySelectorAll("details.prh-college").length === 3 &&
-      m.root.querySelectorAll("article.prh-rec").length === 9 && m.root.querySelector('.prh-dd[data-filter="region"] .prh-dd-btn').textContent === "SWP Region (1)");
-    change(m.w, m.root.querySelector('input[data-sector="51"]'), true);
-    return m.M._idle();
-  }).then(function () {
-    check("(24m) a sector narrows to the programs in that CIP family", m.root.querySelectorAll("article.prh-rec").length === 1 &&
-      cardsAt(m.root, "Norco College") === 1 && /Showing 1 of 1/.test(m.root.querySelector(".prh-count").textContent),
-      m.root.querySelector(".prh-count").textContent);
-    change(m.w, m.root.querySelector('input[data-region="Inland Empire/Desert"]'), false);
-    return m.M._idle();
-  }).then(function () {
-    check("(24m) a sector alone spans every college, reading the matches by key",
-      m.root.querySelectorAll("article.prh-rec").length === 7 && cardsAt(m.root, "Cabrillo College") === 6 &&
-      recordReads(db).filter(asksFull).slice(-1).every(function (a) { return !!a.filters.control_number; }));
-    change(m.w, m.root.querySelector('input[data-sector=""]'), true);
-    return m.M._idle();
-  }).then(function () {
-    check("(24m) and the records with no CIP are one more choice", m.root.querySelectorAll("article.prh-rec").length === 9);
-    check("(24m) the filters are never stored", m.w.localStorage.getItem(m.M.FILTERS_KEY) === null && m.M._state.filt.sector.join("|") === "|51");
-  });
-});
-
-block("(24n)", function () {
-  // A failed CIP read says so and leaves the sector filter out; a sector already set says why nothing lists.
-  const db = harvestDb({ cipFail: true });
-  const m = loadModule({ fetch: db.fetch });
-  m.M._state.filt = { district: [], region: [], sector: ["51"] };
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    return m.M._idle();
-  }).then(function () {
-    const txt = m.root.querySelector(".prh-filterbar").textContent;
-    check("(24n) a failed CIP read names the table and leaves the filter out",
-      /The programs' CIP codes could not be read \(coci_college_programs answered 503\)/.test(txt) && !m.root.querySelector('.prh-dd[data-filter="sector"]'), txt);
-    check("(24n) a sector set before the CIP read failed never reads as no records", /no record can be matched to a sector/.test(m.root.textContent) && !/No record matches/.test(m.root.textContent));
-  });
-});
-
-block("(24e)", function () {
-  const db = harvestDb();
-  const m = loadModule({ fetch: db.fetch });
-  // A pick an earlier build stored is cleared, never applied (Sam, 2026-10-21: "It would be best if
-  // tabs didn't remember the previously filtered objects").
-  m.w.localStorage.setItem("cplProgramRequirements.pick.v1", JSON.stringify(["Norco College"]));
-  m.w.localStorage.setItem("cplProgramRequirements.filters.v1", JSON.stringify({ district: [], region: [], sector: ["51"] }));
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    check("(24e) a stored pick and filters from an earlier build are cleared, not applied",
-      m.M._state.pick.length === 0 && m.M._state.filt.sector.length === 0 &&
-      m.w.localStorage.getItem("cplProgramRequirements.pick.v1") === null && m.w.localStorage.getItem("cplProgramRequirements.filters.v1") === null);
-    change(m.w, collegeBox(m.root, "Mt. San Antonio College"), true);
-    return m.M._idle();
-  }).then(function () {
-    const full = recordReads(db).filter(asksFull);
-    check("(24e) a pick loads, its name quoted for PostgREST (the period in Mt. San Antonio)",
-      full.length === 1 && /college=in\.(\(|%28)%22Mt\.%20San%20Antonio%20College%22(\)|%29)/.test(full[0].url) && cardsAt(m.root, "Mt. San Antonio College") === 5,
-      full.map(function (a) { return a.url; }).join(" "));
-    check("(24e) and its box is checked", collegeBox(m.root, "Mt. San Antonio College").checked === true);
-    const db2 = harvestDb();
-    const priv = loadModule({ fetch: db2.fetch, noStorage: true });
-    return priv.M._load().then(function () {
-      priv.M._state.view = "records"; priv.M._render();
-      check("(24e) a private window (storage throws) renders the filters with nothing set",
-        !!priv.root.querySelector(".prh-filterbar .prh-dd") && /Choose a district, college, SWP region or CIP sector/.test(priv.root.textContent));
-      change(priv.w, collegeBox(priv.root, "Norco College"), true);
-      return priv.M._idle().then(function () {
-        check("(24e) and a pick there still loads", cardsAt(priv.root, "Norco College") === 2);
-      });
-    });
   });
 });
 
@@ -2436,46 +2175,11 @@ block("(24h)", function () {
     r.M.goTo(r.M.TO.waiting);
     return r.M._idle();
   }).then(function () {
-    const root = r.root;
-    check("(24h) the waiting list spans every college, whatever is picked", r.M._state.rscope === "all" &&
-      root.querySelector("#prh-rshow").value === "waiting" && /Showing 24 of 28/.test(root.querySelector(".prh-count").textContent) &&
-      cardsAt(root, "Cabrillo College") === 10 && cardsAt(root, "Riverside City College") === 4, root.querySelector(".prh-count").textContent);
-    check("(24h) a page-long list reads its records by key, never a college whole",
-      !recordReads(r.db).some(function (a) { return asksFull(a) && !a.filters.control_number; }));
-    check("(24h) it says it lists every college, and offers the picks back", /Every college is listed, because the count you followed spans them all/.test(root.textContent) &&
-      wordButton(root, "List only what the filters choose") && !wordButton(root, "List only what the filters choose").hidden);
-    const first = wordButton(root, "Read the first waiting record side by side");
-    check("(24h) and the first waiting record, side by side", !!first && !first.hidden);
-    first.click();
-    const d = r.w.document.querySelector(".prh-split");
-    check("(24h) which opens it", !!d && /^Program 10003/.test(d.querySelector("#prh-split-t").textContent));
-    r.M.closeSplit(true);
-    wordButton(root, "List only what the filters choose").click();
-    check("(24h) back to the picks, the waiting at Norco only", /Showing 2 of 2/.test(root.querySelector(".prh-count").textContent) &&
-      root.querySelectorAll("details.prh-college").length === 1);
-  });
-});
-
-block("(24i)", function () {
-  let failing = true;
-  const db = harvestDb({ fail: function (a) { return failing && a.filters.college && !a.filters.control_number ? 500 : 0; } });
-  const m = loadModule({ fetch: db.fetch });
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    change(m.w, collegeBox(m.root, "Cabrillo College"), true);
-    return m.M._idle();
-  }).then(function () {
-    const say = m.root.querySelector(".prh-pick-say").textContent;
-    const sec = m.root.querySelector('details[data-sec="records:Cabrillo College"]');
-    check("(24i) a failed college read names the table, in the status and in the college's section",
-      /Cabrillo College's records could not be read \(program_requirement_records answered 500\)/.test(say) &&
-      /could not be read \(program_requirement_records answered 500\)/.test(sec.textContent), say);
-    check("(24i) and never stands as a college with no records", !sec.querySelector("article.prh-rec") && !/No record matches/.test(m.root.textContent));
-    failing = false;
-    wordButton(sec, "Read again").click();
-    return m.M._idle().then(function () {
-      check("(24i) Read again reads it", cardsAt(m.root, "Cabrillo College") === 12);
-    });
+    /* S574: the waiting count opens the List on Waiting on your reading, every college; the List's own first-waiting
+       word and its order are guarded in program_requirements_list_record_port (11). */
+    check("(24h) the waiting list spans every college, whatever is picked: the List on Waiting on your reading",
+      r.M._state.view === "list" && r.M._state.ls.f === "waiting" && r.M._state.pick.length === 0,
+      JSON.stringify({ v: r.M._state.view, f: (r.M._state.ls || {}).f, pick: r.M._state.pick }));
   });
 });
 
@@ -2502,19 +2206,6 @@ block("(24j)", function () {
   });
 });
 
-block("(24k)", function () {
-  const db = harvestDb({ colleges: null });
-  const m = loadModule({ fetch: db.fetch });
-  return m.M._load().then(function () {
-    m.M._state.view = "records"; m.M._render();
-    check("(24k) an unread district list says so, naming the table, leaves out District and SWP Region, and lists the colleges by name",
-      /The district and region lists could not be read \(map_colleges answered 503\)/.test(m.root.textContent) &&
-      m.root.querySelectorAll('input[type="checkbox"][data-college]').length === 6 && !m.root.querySelector("input[data-district], input[data-region]"));
-    check("(24k) the filters' CSS is tokens only", /\.prh-dd-list input\[type=\\"checkbox\\"\] \{[^}]*accent-color:var\(--cobalt\)/.test(SRC) &&
-      !/\.prh-(dd|filter|pick|rscope|draft-note)[^"]*(#[0-9a-fA-F]{3,6}|rgba?\()/.test(SRC));
-  });
-});
-
 block("(24l)", function () {
   // A call the status file names when the tab opens: its records are read by key before the first
   // screen, so Confirm and Needs a fix are on the card at once, with nothing picked.
@@ -2531,15 +2222,15 @@ block("(24l)", function () {
     r.M.goTo({ view: "records", rcollege: "Norco College", sec: "records:find" });
     return r.M._idle();
   }).then(function () {
-    check("(24l) a link that names a college picks it and opens its records", r.M._state.rscope === "pick" &&
-      r.M._state.pick.indexOf("Norco College") >= 0 && cardsAt(r.root, "Norco College") === 2);
+    check("(24l) a link that names a college opens the List with that college picked (S574)", r.M._state.view === "list" &&
+      r.M._state.pick.join() === "Norco College", JSON.stringify({ v: r.M._state.view, pick: r.M._state.pick }));
     // A link's college lists for this visit and is never remembered (Sam, 2026-10-21: a later visit's
     // Program records showed only Bakersfield, opened from CPL Pathways' college line).
     check("(24l) a link's college is not remembered", !/Norco College/.test(r.w.localStorage.getItem(r.M.PICK_KEY) || ""));
-    const recTab = r.root.querySelector("#prh-tab-records");
-    if (recTab) recTab.click();
-    check("(24l) the Records tab's own button lists the reader's own picks again",
-      !!recTab && r.M._state.pick.indexOf("Norco College") < 0 && r.M._state.linkPicks.length === 0);
+    const listTab = r.root.querySelector("#prh-tab-list");
+    if (listTab) listTab.click();
+    check("(24l) the List's own button lists the reader's own picks again",
+      !!listTab && r.M._state.pick.indexOf("Norco College") < 0 && r.M._state.linkPicks.length === 0);
     // A verdict saved in the reading room re-reads the log and that one record, never the index.
     r.M.activate();
     const before = recordReads(r.db).length;
@@ -2634,10 +2325,10 @@ function outcomesFetch(asked, fail) {
 block("(25)", function () {
   const asked = [];
   const m = loadModule({ fetch: outcomesFetch(asked) });
-  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED];
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
   return tick().then(tick).then(function () {
-    const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
+    const rows = m.w.document.querySelectorAll(".prh-split-rec article.prh-rec tbody tr");
     const hed = rows[0].querySelector("button.prh-outbtn"), engl = rows[1].querySelector("button.prh-outbtn");
     check("(25) a course whose code is printed another way (HED-100, ENGLC 1000) gets its Outcomes link",
       !!hed && !!engl && hed.textContent === "Outcomes" && /^Learning outcomes of HED 100 at Cerritos/.test(hed.getAttribute("aria-label")));
@@ -2669,10 +2360,10 @@ block("(25)", function () {
 block("(25b)", function () {
   const asked = [];
   const m = loadModule({ fetch: outcomesFetch(asked, true) });
-  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
-  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED];
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render(); cardOf(m.M, m.w, m.M._state.records[0]);
   return tick().then(tick).then(function () {
-    const art = m.root.querySelector("article.prh-rec");
+    const art = m.w.document.querySelector(".prh-split-rec article.prh-rec");
     check("(25b) a failed read says so in the record, and draws no link",
       /learning outcomes could not be read \(course_outcomes answered 503\)/.test(art.textContent) && !art.querySelector("button.prh-outbtn"), art.textContent.slice(-200));
   });

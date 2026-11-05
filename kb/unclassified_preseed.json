@@ -1,122 +1,188 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-03T15:33:08Z",
- "_queue_count": 15,
+ "_generated_at": "2026-11-04T15:49:37Z",
+ "_queue_count": 44,
  "_counts": {
-  "staged": 15,
-  "needs_you": 2,
+  "staged": 42,
+  "needs_you": 31,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "ASL 052 American Sign Language III": {
-   "title": "American Sign Language III",
+  "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
+   "title": "Waterworks Mathematics Advanced",
    "issuer": "California Community Colleges",
    "via": "identity",
    "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ASL 52; issuer = CCC.",
+   "note": "Rule 5c: the college's own title for WATER 131; issuer = CCC.",
    "procedure": "course-identity"
   },
-  "CARP 207 Math for Construction Trades": {
-   "title": "Math for Construction Trades",
+  "EET 203 Basic Electricity": {
+   "title": "Basic Electricity",
    "issuer": "California Community Colleges",
    "via": "identity",
    "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for CARP 207; issuer = CCC.",
+   "note": "Rule 5c: the college's own title for EET 203; issuer = CCC.",
    "procedure": "course-identity"
   },
-  "CARP 223 OSHA 30 Hr. Construction Safety Training": {
-   "title": "OSHA 30 — Construction Industry Outreach (30-hour)",
-   "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+  "EET 222 Photovaltaic NABCEP for Solar Associates": {
+   "title": "NABCEP PV Associate",
+   "issuer": "North American Board of Certified Energy Practitioners (NABCEP)",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Industry Certification row naming the OSHA 30-hour construction card. The Laney CARP 223 course code was stripped and the row joins the house OSHA 30 construction family. Both hints were set aside because the card is issued by OSHA, not the college.",
+   "confidence": 0.78,
+   "note": "Set aside the hs hint, which kept the course code's misspelling and the CCC issuer. The Industry Certification row names the NABCEP PV (Solar) Associate credential, so NABCEP issues it. EET 222 is the Laney prep course.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "issuer-issues-the-card",
     "Rule 1",
-    "Rule 8b"
+    "Rule 6",
+    "issuer-issues-the-card",
+    "mechanism-collapses"
    ]
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 1": {
-   "title": "IBEW Electrician Apprenticeship — Year 1",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+  "Examination for ARHS 1": {
+   "title": "Introduction to Art History",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon electrician apprenticeships.",
+   "confidence": 0.82,
+   "note": "Used the catalog hint, which is the Las Positas local course title for ARHS 1. No CCN or C-ID was confirmed. Set aside the cx hint because it kept the mechanism and the code.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 7",
-    "Rule 3"
-   ],
-   "trainer": "Riverside Area Electrical J. A. C."
+    "course-identity",
+    "Rule 5c"
+   ]
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 2": {
-   "title": "IBEW Electrician Apprenticeship — Year 2",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+  "Examination for ARHS 2": {
+   "title": "Art of the Ancient Americas",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "confidence": 0.85,
+   "note": "The catalog hint matches an existing house family.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 7"
-   ],
-   "trainer": "Riverside Area Electrical J. A. C."
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 3": {
-   "title": "IBEW Electrician Apprenticeship — Year 3",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+  "Examination for ARHS 3": {
+   "title": "Arts of Africa, Oceania, and Indigenous North America",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "confidence": 0.83,
+   "note": "Mended the catalog hint ('...North Americas') to the existing house family spelling.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 7"
-   ],
-   "trainer": "Riverside Area Electrical J. A. C."
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 4": {
-   "title": "IBEW Electrician Apprenticeship — Year 4",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+  "Examination for ARHS 7": {
+   "title": "Modern Art History",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "confidence": 0.8,
+   "note": "Used the Las Positas local course title from the catalog hint. No matching house family exists.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 7"
-   ],
-   "trainer": "Riverside Area Electrical J. A. C."
+    "course-identity",
+    "Rule 5c"
+   ]
   },
-  "IBEW- Inside Wireman, Apprenticeship Year 5": {
-   "title": "IBEW Electrician Apprenticeship — Year 5",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+  "Examination for ARHS 8": {
+   "title": "Asian Art History",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Inside Wireman is the IBEW electrician apprenticeship, so the row joins the house family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "confidence": 0.8,
+   "note": "Used the Las Positas local course title from the catalog hint.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 7"
-   ],
-   "trainer": "Riverside Area Electrical J. A. C."
+    "course-identity",
+    "Rule 5c"
+   ]
   },
-  "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
-   "title": "IBEW Electrician Apprenticeship — Journeyperson",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+  "Examination for ARTH C1100": {
+   "title": "Survey of Art from Prehistory to the Medieval Era",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Inside Wireman journeyperson joins the house IBEW electrician journeyperson family. The trainer is the DAS best-option sponsor for Santiago Canyon.",
+   "confidence": 0.8,
+   "note": "Title anchored to CCN ARTH C1100 and joined to the matching house family. Set aside the cx hint, which kept the mechanism and the code.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 7"
-   ],
-   "trainer": "Riverside Area Electrical J. A. C."
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ]
+  },
+  "Examination for ARTH C1200": {
+   "title": "Survey of Art: Renaissance to Contemporary",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Title anchored to CCN ARTH C1200 and joined to the matching house family. Set aside the cx hint.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ]
+  },
+  "Examination for KIN 5": {
+   "title": "Sports Management",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Used the Las Positas local course title for KIN 5 from the catalog hint.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Examination for KIN 6": {
+   "title": "Personal Training",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Catalog course title 'Personal Trainer' joined to the house family 'Personal Training' (local CCC course). This is a local course exam, not an industry trainer certification.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
+  },
+  "GEOG 1 Physical Geology": {
+   "title": "Introduction to Physical Geography",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID GEOG 110; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 32 Digital Documents (Adobe InDesign)": {
+   "title": "Digital Documents (Adobe InDesign)",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 32; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 36 Adobe Photoshop Basics": {
+   "title": "Adobe Photoshop Basics",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 36; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 37 Advanced Photoshop": {
+   "title": "Photoshop Advanced",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 37; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
    "title": "IBEW Intelligent Transportation Systems Apprenticeship — Year 1",
@@ -128,6 +194,194 @@
    "rests_on": [
     "Rule 4",
     "Rule 7"
+   ]
+  },
+  "Industry for AJ 54": {
+   "title": "Investigative Report Writing",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Industry-typed exhibit that is really a course code, so it takes the AJ 54 course title from the catalog and matches the house family. The outside credential behind it (likely a POST academy) is unnamed, so the CCC issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for AJ 60": {
+   "title": "Criminal Law",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded industry exhibit that takes the AJ 60 catalog title and matches the house family. The underlying industry credential (likely POST) is unnamed, so the issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for AJ 61": {
+   "title": "Criminal Evidence",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "The catalog title 'Evidence' is too bare to work as a search title. It was joined to the house family 'Criminal Evidence', which is likely the same AJ course. The issuer is uncertain because the industry credential is unnamed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
+  },
+  "Industry for AJ 63": {
+   "title": "Criminal Investigation",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded industry exhibit that takes the AJ 63 catalog title and matches the house family. The issuer needs review because the outside credential is unnamed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for AJ 64": {
+   "title": "Police Patrol Operations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded industry exhibit that takes the AJ 64 catalog title. It may duplicate the house family 'Patrol Procedures', but was kept separate pending review. The issuer is uncertain.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for AJ 66": {
+   "title": "Juvenile Procedures",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas COCI course AJ 66 (joins existing family); the industry certification behind it is unnamed, so the issuer defaults to CCC pending review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Industry for BUSN 65": {
+   "title": "Federal Income Tax Accounting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas course BUSN 65; the underlying industry credential is unnamed, so the issuer defaults to CCC pending review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
+  "Industry for FST 1": {
+   "title": "Fire Protection Organization",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas FST 1, which matches an existing family; the industry credential is unnamed (possibly SFT), so the CCC issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Industry for HORT 55": {
+   "title": "Greenhouse, Nursery, and Garden Center Management",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas HORT 55; the industry credential is unnamed, so the issuer defaults to CCC pending review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for HORT 56": {
+   "title": "Arboriculture/Urban Forestry",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "Course-coded IC exhibit; title from Las Positas HORT 56. The industry cert may be ISA Certified Arborist, but it is kept apart as a local course credential (Rule 8c-2); the CCC issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Industry for HORT 57": {
+   "title": "Landscape and Turfgrass Management",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas HORT 57; the industry credential is unnamed, so the issuer defaults to CCC pending review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for HORT 59": {
+   "title": "Landscape Design",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas HORT 59, which joins an existing family; the industry credential is unnamed, so the CCC issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Industry for HORT 60": {
+   "title": "Landscape Irrigation Systems",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Course-coded IC exhibit; title from Las Positas HORT 60; the industry credential (possibly Irrigation Association) is unnamed, so the CCC issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Industry for KIN 6": {
+   "title": "Personal Trainer",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "Course-coded IC exhibit; title from Las Positas course KIN 6, kept apart from the industry Personal Training Certification per Rule 8c-2; the cert issuer is unnamed, so the CCC issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Noncredit for ARHS 6": {
+   "title": "Museum & Gallery Techniques",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "The cx hint echoed the raw title, so it was set aside; the title comes from the Las Positas catalog for ARHS 6, with the Noncredit pathway word stripped.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Peace Officer Standards and Training": {
@@ -144,55 +398,120 @@
    ],
    "trainer": "varies by academy"
   },
-  "Portfolio - Basic Food Preparation": {
-   "title": "Basic Food Preparation",
+  "Portfolio ARHS 6": {
+   "title": "Museum & Gallery Techniques",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Mission College portfolio course; the mechanism word was stripped and the cx hint accepted.",
+   "confidence": 0.78,
+   "note": "The cx hint kept the course code, so it was set aside; ARHS 6 at Las Positas resolves to Museum & Gallery Techniques (from the sibling Noncredit row's catalog hint), and the portfolio mechanism collapses.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "mechanism-collapses"
+    "mechanism-collapses",
+    "join-when-likely-one"
    ]
   },
-  "Portfolio - Cost Control for Food Service Organizations": {
-   "title": "Cost Control for Food Service Organizations",
+  "Portfolio for BUSN 40": {
+   "title": "Introduction to Business",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Course title kept as-is. 'Hospitality Cost Control' may be the same content; a curator could merge them later.",
+   "confidence": 0.88,
+   "note": "The cx hint was misstripped; the catalog title for BUSN 40 joins the existing Introduction to Business family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Portfolio for BUSN 45": {
+   "title": "Entrepreneurship",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "The cx hint was misstripped; the title is the Las Positas catalog title for BUSN 45. It is not joined to Introduction to Entrepreneurship without confirmation.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c"
    ]
   },
-  "Portfolio - Intermediate Food Preparation": {
-   "title": "Food Preparation Intermediate",
+  "Portfolio for BUSN 48": {
+   "title": "Human Relations in Organizations",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "The cx hint was mended by moving the level word 'Intermediate' to the end.",
+   "confidence": 0.9,
+   "note": "The cx hint 'for BUSN 48' was set aside as a strip error. The title comes from the Las Positas catalog course and joins the existing house family.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c",
-    "level-words-last"
+    "brand-family",
+    "mechanism-collapses",
+    "Rule 5c"
    ]
   },
-  "Portfolio - Introduction to the Hospitality Industry": {
-   "title": "Introduction to the Hospitality Industry",
+  "Portfolio for BUSN 56": {
+   "title": "Introduction to Management",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Course title kept verbatim. It is close to the house family 'Introduction to Hospitality'; a curator may merge them.",
+   "confidence": 0.88,
+   "note": "The title is the Las Positas catalog course name and matches the existing house title. The issuer is CCC because this is a portfolio exhibit, not the ACE military credit.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c",
-    "level-words-last"
+    "join-when-likely-one",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for BUSN 58": {
+   "title": "Small Business Management",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The title is the Las Positas catalog course name. It is kept apart from 'Small Business Ownership and Management' because they are not confirmed to be the same course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for BUSN 61": {
+   "title": "QuickBooks Accounting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "The catalog title 'Quickbooks Accounting' was restyled to Intuit's brand casing. This local course portfolio is kept separate from the Intuit certification families (Rule 8c).",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for BUSN 65": {
+   "title": "Federal Income Tax Accounting",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "The title is the Las Positas catalog course name. No house family matches it exactly.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "Portfolio for BUSN 88": {
+   "title": "Human Resources Management",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "The title comes from the Las Positas catalog course and joins the existing house family 'Human Resources Management'.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
    ]
   }
  }

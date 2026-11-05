@@ -5,7 +5,7 @@
 //   (1) the line reads the requirements row of kb/status/commons.json through the engine, once a visit;
 //   (2) a count whose place is one of the List's filters (Fail a machine check, Not read yet) is a word that sets it and
 //       shows its rows; the List's own count is plain text until a filter is set;
-//   (3) the Progress view's opened page sits in a fold under the line, under its own prefix (prl-pg-); Hide the summary
+//   (3) the Progress view's opened page sits in a fold under the line, under its own prefix (prl-pg-); Hide the top
 //       hides it and its word says so;
 //   (4) a failed read of the Commons file says so once, with no retry loop;
 //   (5) a title opens the panel: the program, its record's checks in words, its courses block by block with each one's
@@ -141,11 +141,11 @@ function titleBtn(d, title) { const r = rowOf(d, title); return r && r.querySele
   const fold = tm.d.getElementById("prl-fold"), tog = tm.d.getElementById("prl-fold-w");
   check("(3) ⭐ the Progress view's page sits in the fold under its own prefix", !!fold && !fold.hidden && !!fold.querySelector("#prl-pg-attention")
     && !fold.querySelector("[id^='pr-pg-']"), fold && txt(fold).slice(0, 160));
-  check("(3) its word reads Hide the summary and controls the fold", tog && txt(tog) === "Hide the summary" && tog.getAttribute("aria-controls") === "prl-fold");
+  check("(3) its word reads Hide the top and controls the fold", tog && txt(tog) === "Hide the top" && tog.getAttribute("aria-controls") === "prl-fold");
   tog.click(); await settle();
   const tog2 = tm.d.getElementById("prl-fold-w");
-  check("(3) Hide the summary hides it; the word says Show the summary and keeps focus", tm.d.getElementById("prl-fold").hidden
-    && txt(tog2) === "Show the summary" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
+  check("(3) Hide the top hides it; the word says Show the top and keeps focus", tm.d.getElementById("prl-fold").hidden
+    && txt(tog2) === "Show the top" && tog2.getAttribute("aria-expanded") === "false" && tm.d.activeElement === tog2);
 
   // ── (4) a failed read ──
   const tf = tab();
@@ -172,9 +172,8 @@ function titleBtn(d, title) { const r = rowOf(d, title); return r && r.querySele
   check("(5) a header sorts it", sorted.join(",") === "0,0,2,4", sorted.join(","));
   check("(5) the title's drawer moves in, and COCI's words fold below", !!panel(t.d).querySelector(".prl-pdrawer")
     && /TOP code 0956\.50/.test(txt(panel(t.d).querySelector("details.prl-pn-more"))) && /decides nothing/.test(txt(panel(t.d).querySelector("details.prl-pn-more"))));
-  words(t.d, /^Open the record in Program records$/) && Array.from(panel(t.d).querySelectorAll("button")).find((b) => txt(b) === "Open the record in Program records").click();
-  await settle();
-  check("(5) Open the record opens it in Program records", t.S.view === "records" && t.S.rq === "10001");
+  check("(5) the panel carries the record, so no word sends it to Program records (S574)",
+    !Array.from(panel(t.d).querySelectorAll("button")).some((b) => /Program records/.test(txt(b))));
 
   // ── (6) a light record, an unread program ──
   const tl = tab({ recordsFail: true });
@@ -184,6 +183,8 @@ function titleBtn(d, title) { const r = rowOf(d, title); return r && r.querySele
   check("(6) ⭐ a light record is read from the panel; a failed read says so", before >= 1 && /could not be read/.test(txt(panel(tl.d))), txt(panel(tl.d)).slice(0, 300));
   tl.M._render(); await settle(); await settle();
   check("(6) a repaint does not read it again", tl.reads.filter((u) => /program_requirement_records/.test(u)).length === before, before + " vs " + tl.reads.filter((u) => /program_requirement_records/.test(u)).length);
+  Array.from(panel(tl.d).querySelectorAll("button")).find((b) => txt(b) === "Read again").click(); await settle(); await settle();
+  check("(6) Read again reads it once more (S574)", tl.reads.filter((u) => /program_requirement_records/.test(u)).length > before);
   titleBtn(tl.d, "Art History").click(); await settle();
   check("(6) an unread program says the harvest holds no record and lists no courses", /holds no record of this program yet/.test(txt(panel(tl.d)))
     && !panel(tl.d).querySelector("#prl-pn-courses"));

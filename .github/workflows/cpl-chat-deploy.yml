@@ -63,6 +63,7 @@ on:
           - cpl-chat
           - program-requirements-extract
           - workplan-rebuild
+          - library-revise-draft
 
 concurrency:
   group: cpl-chat-deploy
@@ -154,11 +155,15 @@ jobs:
           # user JWT. Shipping verify_jwt=true 401s every first-party surface.
           # program-requirements-extract runs with it off too (its caller check).
           # --debug so a 403 reports WHICH endpoint and identity was refused.
+          # --yes (2026-11-05): the CLI now asks "Confirmation required: Deploy 1 Function"
+          # and, with no terminal, changes nothing and exits 1. The DEPLOY input above is
+          # the human confirmation, so the CLI's own prompt is answered here.
           test -f "supabase/functions/$FN/index.ts" \
             || { echo "::error::entrypoint missing from $(pwd)"; exit 1; }
           supabase functions deploy "$FN" \
             --project-ref hvuwhnbuahrtptokpqfh \
             --no-verify-jwt \
+            --yes \
             --debug
 
       - name: Byte-verify what actually landed

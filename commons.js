@@ -52,13 +52,24 @@
     subjects: { name: "Common Subjects", what: "One shared subject code for each discipline, the key every common course sits under." },
     exhibit: { name: "Common Exhibits", what: "Every credential colleges grant credit for, under one name and issuer." },
     cr: { name: "Common Credit Recommendations", what: "One wording for each credit recommendation, so the same credit reads the same everywhere." },
-    course: { name: "Common Courses", what: "Local courses grouped into shared common courses, mapped in SkyView." },
+    course: { name: "Common Courses", what: "Local courses grouped into shared common courses, worked on the Courses List or in SkyView." },
     credentials: { name: "Common Credentials", what: "Certifications and badges as their issuers publish them, with the skills each names, linked to exhibits." },
     outcomes: { name: "Common Outcomes", what: "Each course’s learning outcomes and objectives, read from its public outline." },
     skills: { name: "Common Skills", status: "Starting",
       what: "Skills and competencies tied to certifications and courses, validated by faculty as they articulate, and shown on each Career Passport." }
   };
   var ORDER = ["requirements", "subjects", "exhibit", "cr", "course", "credentials", "outcomes", "skills"];
+
+  /* The one queue (Sam, 2026-11-04, S573: the routines carry the volume and "queue human decisions only when
+     needed"). The status file's queue groups every known issue a person must see by its reason; everything else
+     the routines carry. The words for each reason live here; the builder carries only the key. */
+  var REASONS = {
+    no_procedure: { title: "No procedure covers it yet", who: "A person decides it, then teaches the rule so the daily check handles the next one." },
+    unsure: { title: "A procedure is unsure", who: "A person confirms it or fixes it; a note settles a difference for good." },
+    reaches: { title: "It moves items another reference relies on", who: "The lead decides, and the move happens in one planned window." },
+    keep_call: { title: "It is a keep, retire or rename call", who: "A curator decides, or the lead where a ruling stands." },
+    unsorted: { title: "Not yet sorted", who: "An issue that names no reason. Give it one in the Commons builder." }
+  };
 
   function P() { return window.CPL_COMMONS_PROGRESS || null; }
 
@@ -453,6 +464,103 @@
     box.appendChild(det);
     return box;
   }
+  function queueItem(i) {
+    var name = (CARDS[i.ref] && CARDS[i.ref].name) || i.title || i.ref;
+    return el("li", null, [el("span", { cls: "cmn-queue-ref", text: name + ": " }), count(i.n, i.open), " " + (i.words || "")]);
+  }
+  /* Each card's items in the order the work goes (Sam, 2026-11-04: "put the procedural things to act in a process order
+     within their cards"): the subjects first, the key every M-ID is minted under, then the courses minted under them,
+     the exhibits, their credit recommendations, and the programs those courses and credits count toward. Inside one
+     reference the status file's order stands. */
+  var PROCESS_ORDER = ["subjects", "course", "exhibit", "cr", "requirements"];
+  function inProcessOrder(items) {
+    function at(i) { var k = PROCESS_ORDER.indexOf(i.ref); return k < 0 ? PROCESS_ORDER.length : k; }
+    return items.map(function (i, n) { return { i: i, n: n }; })
+      .sort(function (a, b) { return at(a.i) - at(b.i) || a.n - b.n; }).map(function (x) { return x.i; });
+  }
+  function queueSection(q) {
+    if (!q || !Array.isArray(q.reasons)) return null;
+    var groups = q.reasons.slice();
+    if (Array.isArray(q.unsorted) && q.unsorted.length) groups.push({ key: "unsorted", items: q.unsorted });
+    var boxes = groups.map(function (g) {
+      var w = REASONS[g.key] || { title: g.key, who: "" };
+      var items = inProcessOrder(Array.isArray(g.items) ? g.items : []);
+      return el("div", { cls: "cmn-reason", "data-reason": g.key }, [
+        el("h4", { cls: "cmn-reason-h", text: w.title }),
+        el("p", { cls: "cmn-reason-who", text: w.who }),
+        items.length ? el("ol", { cls: "cmn-steps" }, items.map(queueItem)) : el("p", { cls: "cmn-quiet", text: "Nothing waits here." })
+      ]);
+    });
+    var carried = Array.isArray(q.carried) ? q.carried : [];
+    return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
+      el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
+      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
+      el("div", { cls: "cmn-queue-grid" }, boxes),
+      carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, inProcessOrder(carried).map(queueItem))]) : null
+    ].filter(Boolean));
+  }
+
+  /* The confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward. */
+  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled" };
+  function procName(n) { n = String(n || "").replace(/-/g, " "); return n === "classifier" ? "the classifier" : n; }
+  function confidenceSection(list) {
+    if (!Array.isArray(list) || !list.length) return null;
+    var kids = [
+      el("h3", { id: "cmn-conf-h", cls: "cmn-band-h", text: "How far to trust the procedures" }),
+      el("p", { cls: "cmn-sub", text: "A procedure earns trust by what a person does with its work afterward. A result a person keeps, or renames with its whole family, counts for it; a result a person moves elsewhere counts against it." })
+    ];
+    list.forEach(function (c) {
+      var name = (CARDS[c.ref] && CARDS[c.ref].name) || c.ref;
+      var head = el("h4", { cls: "cmn-reason-h", text: name + ": " + (CONF_UNIT[c.ref] || "results the procedures settled") });
+      if (c.error || !c.total) { kids.push(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-unread", text: "Could not be read" })])); return; }
+      var t = c.total;
+      var line = t.looked
+        ? "A person has looked at " + fmt(t.looked) + " of " + fmt(t.placed) + ": " + fmt(t.kept) + " kept, " + fmt(t.renamed) + " renamed with their family, " + fmt(t.moved) + " moved elsewhere."
+        : "No person has looked at any of the " + fmt(t.placed) + " yet.";
+      var extra = [];
+      if (t.by_procedure) extra.push(fmt(t.by_procedure) + " later revised by another procedure");
+      if (t.left) extra.push(fmt(t.left) + " left the reference");
+      var cols = ["Procedure", "Placed", "A person looked", "Kept", "Renamed with its family", "Moved elsewhere", "Not looked at yet"];
+      var table = el("table", { cls: "cmn-conf-table" }, [
+        el("thead", null, [el("tr", null, cols.map(function (h) { return el("th", { scope: "col", text: h }); }))]),
+        el("tbody", null, (c.procedures || []).map(function (p) {
+          return el("tr", null, [el("th", { scope: "row", text: procName(p.name) })].concat(
+            [p.placed, p.looked, p.kept, p.renamed, p.moved, p.untouched].map(function (n) { return el("td", { text: fmt(n || 0) }); })));
+        }))
+      ]);
+      kids.push(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-conf-line", text: line + (extra.length ? " " + capFirst(extra.join("; ")) + "." : "") }),
+        el("div", { cls: "cmn-conf-wrap", role: "region", tabindex: "0", "aria-label": name + ": each procedure's results" }, [table])]));
+    });
+    return el("section", { cls: "cmn-queue cmn-conf", "aria-labelledby": "cmn-conf-h" }, kids);
+  }
+
+  /* The first view's filter word (All, Needs you, Building): it lasts the visit and is never stored. An address
+     names it (#commons/needs, #commons/build); the bare #commons is All. */
+  var SHOWS = ["all", "needs", "build"];
+  var show = "all";
+  var redraw = null;
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
+    return show === "all" ? "commons" : "commons/" + show;
+  });
+  /* Opens the filter word the address names; anything unknown leaves the view as it is. */
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return false;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
+    if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
+    return false;
+  }
+  /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "commons" && redraw && arrive()) redraw();
+  });
+
   function render(root, data, S, now) {
     now = now || new Date();
     root.removeAttribute("style");
@@ -489,8 +597,13 @@
       ]));
     }
 
-    /* the filter words: the visit's, never remembered */
-    var show = "all";
+    /* the one queue: what waits on a person, by reason, and what the routines carry */
+    var queue = queueSection(data && data.queue);
+    if (queue) wrap.appendChild(queue);
+    var conf = confidenceSection(data && data.confidence);
+    if (conf) wrap.appendChild(conf);
+
+    /* the filter words: the visit's, never remembered (show lives at module scope, read from the address) */
     var grid = el("div", { cls: "cmn-grid", id: "cmn-cards" });
     var filterBtns = [["all", "All " + countWords(cards.length)], ["needs", "Needs you"], ["build", "Building"]].map(function (f) {
       var b = el("button", { cls: "cmn-word cmn-filter", type: "button", "data-show": f[0], "aria-pressed": f[0] === show ? "true" : "false", text: f[1] });
@@ -535,6 +648,7 @@
       if (!grid.children.length) grid.appendChild(el("p", { cls: "cmn-quiet cmn-empty", text: show === "needs" ? "Nothing waits on you." : "Nothing is being built." }));
     }
     filterBtns.forEach(function (b) { b.addEventListener("click", function () { show = b.getAttribute("data-show"); draw(); }); });
+    redraw = draw;
     draw();
 
     /* the foot */
@@ -644,6 +758,7 @@
       return null;
     }
     root.textContent = "Reading the Commons…";
+    arrive();
     return load().then(function (r) { render(root, r.data, r.S, new Date()); return r; }, function (e) {
       notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
       return null;
@@ -681,6 +796,23 @@
     ".cmn-filter-label, .cmn-sort-note { color:var(--cmn-muted); font-size:.9rem; margin:0; }",
     "button.cmn-filter[aria-pressed=\"true\"] { color:var(--cmn-heading); font-weight:700; text-decoration-thickness:3px; }",
     ".cmn-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; }",
+    ".cmn-queue { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:18px 22px; display:grid; gap:12px; }",
+    ".cmn-queue-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; }",
+    ".cmn-reason { border:1px solid var(--cmn-line-soft); border-radius:10px; padding:12px 14px; display:grid; gap:6px; align-content:start; min-width:0; }",
+    ".cmn-reason-h { margin:0; font-size:.98rem; font-weight:700; color:var(--cmn-heading); }",
+    ".cmn-reason-who { margin:0; color:var(--cmn-muted); font-size:.88rem; }",
+    ".cmn-reason ul, .cmn-reason ol, .cmn-carried ul { margin:0; padding-left:22px; display:grid; gap:4px; font-size:.92rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-reason a, .cmn-carried a { display:inline-block; min-height:24px; line-height:24px; font-weight:700; }",
+    ".cmn-queue-ref { color:var(--cmn-ink-2); font-weight:600; }",
+    ".cmn-carried { border-top:1px solid var(--cmn-line-soft); padding-top:10px; display:grid; gap:6px; }",
+    ".cmn-conf-ref { display:grid; gap:6px; min-width:0; }",
+    ".cmn-conf-line { margin:0; color:var(--cmn-ink-2); font-size:.93rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-conf-wrap { overflow-x:auto; border:1px solid var(--cmn-line-soft); border-radius:10px; }",
+    ".cmn-conf-table { width:100%; border-collapse:collapse; font-size:.9rem; font-variant-numeric:tabular-nums; }",
+    ".cmn-conf-table th, .cmn-conf-table td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--cmn-line-soft); color:var(--cmn-ink); }",
+    ".cmn-conf-table thead th { font-size:.75rem; letter-spacing:.04em; text-transform:uppercase; color:var(--cmn-muted); font-weight:700; }",
+    ".cmn-conf-table tbody th { font-weight:600; }",
+    ".cmn-conf-wrap:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cmn-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; gap:12px; min-width:0; }",
     ".cmn-card-needs { border-top:4px solid var(--cmn-gold); }",
     ".cmn-card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }",
@@ -761,6 +893,7 @@
     "@media (prefers-reduced-motion: no-preference) { .cmn-ref h3 { scroll-margin-top:16px; } }",
     "@media (max-width: 1040px) { .cmn-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
     "@media (max-width: 900px) { .cmn-cells { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
+    "@media (max-width: 620px) { .cmn-queue-grid { grid-template-columns:minmax(0, 1fr); } .cmn-queue { padding:16px; } }",
     "@media (max-width: 620px) { .cmn-grid { grid-template-columns:minmax(0, 1fr); } .cmn-page { margin:0; padding-left:16px; padding-right:16px; } }",
     "@media (max-width: 560px) { .cmn-cells { grid-template-columns:minmax(0, 1fr); } .cmn-ref { padding:14px; } .cmn-card { padding:16px; } }"
   ].join("\n");
@@ -783,6 +916,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

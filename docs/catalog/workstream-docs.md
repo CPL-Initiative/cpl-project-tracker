@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-97 document(s).
+98 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -28,7 +28,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CCR Convergence Strategy — from 7,716 decisions to a 2,500-course crosswalk](../ccr_convergence_strategy.md) | `ccr_convergence_strategy.md` | 2026-07-03 |  |
 | [CCR merge-workspace epic — consolidate the two merge popups + dock the worklist](../ccr_merge_workspace_epic_scope.md) | `ccr_merge_workspace_epic_scope.md` | 2026-06-24 |  |
 | [CER exhibit model — multi-issuer + aligned-assessment pathways (design note)](../cer_assessment_pathways_design.md) | `cer_assessment_pathways_design.md` | 2026-07-12 |  |
-| [CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)](../cer_redesign_handoff.md) | `cer_redesign_handoff.md` | 2026-11-04 |  |
+| [CER redesign handoff: the Subjects List as Sam's workspace; Commons views fold and resize (SkyJujube)](../cer_redesign_handoff.md) | `cer_redesign_handoff.md` | 2026-11-05 |  |
 | [CIP Review — progress dashboard, editing access, and COCI submission (design note)](../cip_submission_access_plan.md) | `cip_submission_access_plan.md` | 2026-07-18 |  |
 | [CIP workstream handoff → next session](../cip_crosswalk_handoff.md) | `cip_crosswalk_handoff.md` | 2026-07-20 |  |
 | [CIS ↔ CS Convergence — Scope (decision pending)](../cis_cs_convergence_scope.md) | `cis_cs_convergence_scope.md` | 2026-06-10 |  |
@@ -38,6 +38,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [COBI → CO Platform — Long-Term Strategy & Plan of Attack](../co_platform_strategy.md) | `co_platform_strategy.md` | 2026-06-28 | 2026-06-28 |
 | [Common CR Reference — scope, measured against the CCR's actual matching factors](../common_cr_reference_scope.md) | `common_cr_reference_scope.md` | 2026-08-13 |  |
 | [CourseControlNumber Re-mint — Decisions & Lessons](../coursecontrolnumber_remint.md) | `coursecontrolnumber_remint.md` | 2026-05-22 |  |
+| [Courses retirement handoff: the old Common Course Reference tab into the Courses List (SkyJujube)](../courses_retirement_handoff.md) | `courses_retirement_handoff.md` | 2026-11-04 |  |
 | [CPL Assistant (Sierra) lessons — archive 2](../cpl_assistant_lessons_archive_2.md) | `cpl_assistant_lessons_archive_2.md` | 2026-10-16 | 2026-10-16 |
 | [CPL Implementation Funding tab — archived lessons, part 2 (2026-08-04 → 2026-08-31)](../cpl_funding_lessons_archive_2.md) | `cpl_funding_lessons_archive_2.md` | 2026-10-25 | 2026-10-25 |
 | [CPL Implementation Funding tab — archived lessons, part 3 (2026-08-31 → 2026-09-16)](../cpl_funding_lessons_archive_3.md) | `cpl_funding_lessons_archive_3.md` | 2026-10-25 | 2026-10-25 |

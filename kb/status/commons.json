@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T18:46:01Z",
+ "written_at": "2026-11-05T03:15:17Z",
  "rows": [
   {
    "key": "requirements",
@@ -37,12 +37,14 @@
      "n": 3380,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
+     "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
      "n": 3349,
      "words": "active programs with no record yet",
      "owner": "the harvest",
+     "carry": "routine",
      "open": "#program-requirements/list/unread"
     }
    ],
@@ -96,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2457,
-     "of": 5493,
-     "words": "titles carry a review stamp (1,173 a person's, 1,284 a cohort's); 2,667 credentials, 2,201 of 2,970 records stamped",
+     "n": 2483,
+     "of": 5519,
+     "words": "titles carry a review stamp (1,173 a person's, 1,310 a cohort's); 2,682 credentials, 2,216 of 2,985 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1173,
-     "of": 5493,
+     "of": 5519,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -116,17 +118,19 @@
    ],
    "issues": [
     {
-     "n": 2,
+     "n": 31,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 2)",
+     "owner": "a curator (the classifier is unsure 28, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+     "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 621,
-     "words": "titles in the reference that have left MAP",
-     "owner": "a curator (retire or keep)",
-     "open": "#credential-reference/all",
+     "n": 622,
+     "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
+     "owner": "a curator",
+     "carry": "keep_call",
+     "open": "#exhibits/list/left",
      "error": null
     }
    ],
@@ -146,23 +150,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-03T15:33:09Z",
+    "at": "2026-11-04T17:00:22Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5493,
-    "stamped": 2457,
+    "titles": 5519,
+    "stamped": 2483,
     "person": 1173,
-    "cohort": 1284,
-    "credentials": 2667,
+    "cohort": 1310,
+    "credentials": 2682,
     "confirmed": 1173,
-    "records": 2970,
-    "records_stamped": 2201,
-    "saved_at": "2026-11-03T15:33:09Z",
-    "fold_at": "2026-11-03T06:18:41Z",
-    "map_titles": 4887,
-    "unclassified": 15,
-    "left_map": 621,
+    "records": 2985,
+    "records_stamped": 2216,
+    "saved_at": "2026-11-04T15:49:39Z",
+    "fold_at": "2026-11-04T17:00:22Z",
+    "map_titles": 4960,
+    "unclassified": 63,
+    "left_map": 622,
     "below_80": 1123,
     "below_60": 237
    },
@@ -179,15 +183,15 @@
   {
    "key": "course",
    "title": "Common Course Reference",
-   "tab": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+   "tab": "#coci-lookup/courses",
    "links": [
+    {
+     "href": "#coci-lookup/courses",
+     "text": "Open the Courses List"
+    },
     {
      "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "text": "Open SkyView"
-    },
-    {
-     "href": "#coci-lookup",
-     "text": "Open the Courses List"
     },
     {
      "href": "#coci-lookup/progress",
@@ -200,13 +204,13 @@
      "n": 3205,
      "of": 27581,
      "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "open": "#coci-lookup/courses"
     },
     {
      "n": 957,
      "of": 27581,
      "words": "confirmed by a person, 152 of them ready",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "open": "#coci-lookup/courses",
      "error": null
     }
    ],
@@ -219,25 +223,22 @@
      "n": 14523,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "carry": "no_procedure",
+     "open": "#coci-lookup/list/seedless"
     },
     {
      "n": 4179,
      "words": "unit anomalies",
      "owner": "a curator (an identity keeps its unit range)",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
-    },
-    {
-     "n": 1159,
-     "words": "TOP and discipline disagreements",
-     "owner": "a curator (the subject map decides; TOP corroborates)",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "carry": "no_procedure",
+     "open": "#coci-lookup/list/units"
     },
     {
      "n": 5750,
      "words": "blank descriptions",
      "owner": "the colleges' COCI entries",
-     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+     "carry": "routine",
+     "open": "#coci-lookup/list/nodesc"
     }
    ],
    "procedures": [
@@ -256,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-03T06:20:32+00:00",
+    "at": "2026-11-05T03:13:31+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -297,9 +298,9 @@
    "status_file": "kb/status/cr.json",
    "pair": [
     {
-     "n": 460,
+     "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (410 by a rung 1 to 4 rule, 50 more by a curator); 5,900 of 9,432 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,959 of 9,432 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -317,15 +318,17 @@
    ],
    "issues": [
     {
-     "n": 1884,
+     "n": 1883,
      "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
      "owner": "a curator",
+     "carry": "no_procedure",
      "open": "#cr-reference/open"
     },
     {
      "n": 38,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
+     "carry": "unsure",
      "open": "#cr-reference/names"
     }
    ],
@@ -341,44 +344,44 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-03T06:22:32+00:00",
+    "at": "2026-11-04T06:23:27Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
-    "rung_5": 1934,
+    "rung_5": 1933,
     "rows": 9432,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
-    "settled": 460,
-    "settled_rows": 5900,
-    "rule_wordings": 410,
-    "rule_rows": 4855,
-    "rule_groups": 225,
+    "settled": 461,
+    "settled_rows": 5959,
+    "rule_wordings": 411,
+    "rule_rows": 4914,
+    "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
     "confirmed": 97,
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
-    "unsettled": 1884,
-    "unsettled_rows": 3532,
+    "unsettled": 1883,
+    "unsettled_rows": 3473,
     "head": {
      "50": {
-      "settled": 45,
+      "settled": 46,
       "of": 50,
       "rows": 4648
      },
      "100": {
-      "settled": 77,
+      "settled": 78,
       "of": 100,
       "rows": 5545
      },
      "250": {
-      "settled": 152,
+      "settled": 153,
       "of": 250,
       "rows": 6559
      }
@@ -409,15 +412,15 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 136,
+     "n": 147,
      "of": 147,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (122 by a person, 14 by the nightly procedure or a session cohort)",
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (133 by a person, 14 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
-     "n": 122,
+     "n": 133,
      "of": 147,
-     "words": "confirmed by a person, 122 of them settled",
+     "words": "confirmed by a person, 133 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
     }
@@ -430,22 +433,18 @@
    ],
    "issues": [
     {
-     "n": 11,
-     "words": "MQ disciplines on the data's modal code, unconfirmed",
-     "owner": "a curator",
-     "open": "#canonical-subj4/open"
-    },
-    {
-     "n": 17,
-     "words": "scan findings to confirm or note (a weak mnemonic, a modal choice without a note, an anchor key in the dead format)",
+     "n": 30,
+     "words": "scan findings to confirm or note (an anchor off its code, a weak mnemonic, an anchor key in the dead format)",
      "owner": "a curator, after Jev's sitting",
-     "open": "#canonical-subj4/progress"
+     "carry": "unsure",
+     "open": "#canonical-subj4/list/scan"
     },
     {
      "n": 93,
      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
      "owner": "a re-mint under the playbook",
-     "open": "#canonical-subj4/progress"
+     "carry": "reaches",
+     "open": "#coci-lookup/list/stray"
     }
    ],
    "procedures": [
@@ -469,20 +468,20 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-03T06:18:39Z",
+    "at": "2026-11-05T03:11:41Z",
     "every_hours": 24
    },
    "facts": {
     "disciplines": 147,
-    "confirmed": 136,
-    "person": 122,
+    "confirmed": 147,
+    "person": 133,
     "cohort": 14,
-    "person_settled": 122,
-    "settled": 136,
-    "modal": 11,
+    "person_settled": 133,
+    "settled": 147,
+    "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-03",
+    "scanned_at": "2026-11-05",
     "procedures_on": 6
    },
    "sources": [
@@ -505,7 +504,7 @@
    ],
    "pair": [
     {
-     "n": 7559,
+     "n": 7564,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -515,7 +514,7 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7559,
+    "credentials": 7564,
     "issuers": 1525,
     "in_map": 205,
     "articulated": 161,
@@ -543,9 +542,9 @@
    ],
    "pair": [
     {
-     "n": 24120,
+     "n": 26136,
      "of": null,
-     "words": "outcomes read from 6,095 courses at 8 colleges",
+     "words": "outcomes read from 6,600 courses at 9 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -553,23 +552,24 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 24120,
-    "courses": 6095,
+    "outcomes": 26136,
+    "courses": 6600,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "golden_west",
+     "las_positas",
      "modesto_junior",
      "moreno_valley",
      "norco",
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 22
+    "reads": 25
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-03T08:08:41Z",
+    "at": "2026-11-04T08:03:38Z",
     "every_hours": null
    },
    "sources": [
@@ -603,6 +603,253 @@
    "sources": [
     "kb/it_ai_credential_catalog.json"
    ]
+  }
+ ],
+ "queue": {
+  "reasons": [
+   {
+    "key": "no_procedure",
+    "items": [
+     {
+      "ref": "course",
+      "title": "Common Course Reference",
+      "n": 14523,
+      "words": "cards carry a discipline no seed has touched, capped at 0.79",
+      "owner": "the Common Subjects reference",
+      "open": "#coci-lookup/list/seedless"
+     },
+     {
+      "ref": "course",
+      "title": "Common Course Reference",
+      "n": 4179,
+      "words": "unit anomalies",
+      "owner": "a curator (an identity keeps its unit range)",
+      "open": "#coci-lookup/list/units"
+     },
+     {
+      "ref": "cr",
+      "title": "Common CR Reference",
+      "n": 1883,
+      "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
+      "owner": "a curator",
+      "open": "#cr-reference/open"
+     }
+    ]
+   },
+   {
+    "key": "unsure",
+    "items": [
+     {
+      "ref": "exhibit",
+      "title": "Common Exhibit Reference",
+      "n": 31,
+      "words": "titles held for a person",
+      "owner": "a curator (the classifier is unsure 28, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+      "open": "#exhibits/held"
+     },
+     {
+      "ref": "cr",
+      "title": "Common CR Reference",
+      "n": 38,
+      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
+      "owner": "a curator",
+      "open": "#cr-reference/names"
+     },
+     {
+      "ref": "subjects",
+      "title": "Common Subjects Reference",
+      "n": 30,
+      "words": "scan findings to confirm or note (an anchor off its code, a weak mnemonic, an anchor key in the dead format)",
+      "owner": "a curator, after Jev's sitting",
+      "open": "#canonical-subj4/list/scan"
+     }
+    ]
+   },
+   {
+    "key": "reaches",
+    "items": [
+     {
+      "ref": "subjects",
+      "title": "Common Subjects Reference",
+      "n": 93,
+      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
+      "owner": "a re-mint under the playbook",
+      "open": "#coci-lookup/list/stray"
+     }
+    ]
+   },
+   {
+    "key": "keep_call",
+    "items": [
+     {
+      "ref": "exhibit",
+      "title": "Common Exhibit Reference",
+      "n": 622,
+      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
+      "owner": "a curator",
+      "open": "#exhibits/list/left"
+     }
+    ]
+   }
+  ],
+  "carried": [
+   {
+    "ref": "requirements",
+    "title": "Program Requirements",
+    "n": 3380,
+    "words": "active programs whose record fails a check",
+    "owner": "the college's reading procedure",
+    "open": "#program-requirements/list/fail"
+   },
+   {
+    "ref": "requirements",
+    "title": "Program Requirements",
+    "n": 3349,
+    "words": "active programs with no record yet",
+    "owner": "the harvest",
+    "open": "#program-requirements/list/unread"
+   },
+   {
+    "ref": "course",
+    "title": "Common Course Reference",
+    "n": 5750,
+    "words": "blank descriptions",
+    "owner": "the colleges' COCI entries",
+    "open": "#coci-lookup/list/nodesc"
+   }
+  ]
+ },
+ "confidence": [
+  {
+   "ref": "exhibit",
+   "unit": "titles",
+   "procedures": [
+    {
+     "name": "classifier",
+     "placed": 890,
+     "untouched": 814,
+     "kept": 4,
+     "renamed": 53,
+     "moved": 0,
+     "by_procedure": 19,
+     "left": 0,
+     "looked": 57
+    },
+    {
+     "name": "course-identity",
+     "placed": 160,
+     "untouched": 149,
+     "kept": 0,
+     "renamed": 11,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 11
+    },
+    {
+     "name": "brand-family",
+     "placed": 61,
+     "untouched": 54,
+     "kept": 0,
+     "renamed": 2,
+     "moved": 0,
+     "by_procedure": 5,
+     "left": 0,
+     "looked": 2
+    },
+    {
+     "name": "high-school-rop",
+     "placed": 55,
+     "untouched": 31,
+     "kept": 19,
+     "renamed": 5,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 24
+    },
+    {
+     "name": "nccer-verbatim",
+     "placed": 5,
+     "untouched": 5,
+     "kept": 0,
+     "renamed": 0,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 0
+    },
+    {
+     "name": "statewide-catalog",
+     "placed": 4,
+     "untouched": 4,
+     "kept": 0,
+     "renamed": 0,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 0
+    },
+    {
+     "name": "cslb-classification",
+     "placed": 2,
+     "untouched": 2,
+     "kept": 0,
+     "renamed": 0,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 0
+    },
+    {
+     "name": "apprenticeship-trades",
+     "placed": 1,
+     "untouched": 1,
+     "kept": 0,
+     "renamed": 0,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 0
+    }
+   ],
+   "total": {
+    "placed": 1178,
+    "untouched": 1060,
+    "kept": 23,
+    "renamed": 71,
+    "moved": 0,
+    "by_procedure": 24,
+    "left": 0,
+    "looked": 94
+   }
+  },
+  {
+   "ref": "subjects",
+   "unit": "picks",
+   "procedures": [
+    {
+     "name": "confirm-authority",
+     "placed": 13,
+     "untouched": 13,
+     "kept": 0,
+     "renamed": 0,
+     "moved": 0,
+     "by_procedure": 0,
+     "left": 0,
+     "looked": 0
+    }
+   ],
+   "total": {
+    "placed": 13,
+    "untouched": 13,
+    "kept": 0,
+    "renamed": 0,
+    "moved": 0,
+    "by_procedure": 0,
+    "left": 0,
+    "looked": 0
+   }
   }
  ]
 }

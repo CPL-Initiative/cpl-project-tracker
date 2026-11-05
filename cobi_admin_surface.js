@@ -444,7 +444,9 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "course_outcomes"
       ],
-      "writes": [],
+      "writes": [
+        "kb_curation"
+      ],
       "rpcs": [],
       "measured": true
     },
@@ -482,6 +484,7 @@ window.COBI_ADMIN_SURFACE = {
     "commons": {
       "modules": [
         "commons.js",
+        "commons_look.js",
         "commons_progress.js"
       ],
       "reads": [
@@ -672,6 +675,7 @@ window.COBI_ADMIN_SURFACE = {
         "sierra/sidebar.js"
       ],
       "reads": [
+        "cpl_library_drafts",
         "map_colleges"
       ],
       "writes": [

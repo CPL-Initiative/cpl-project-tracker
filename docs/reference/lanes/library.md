@@ -133,6 +133,18 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **Revise from the card, no session (built S577, SkyBarnard; Sam, 2026-11-05: "Build it").** On a piece with a Pages
+  copy, Revise and remediate's request now offers **Draft it now**: the edge function `library-revise-draft` reads
+  `library/<slug>/` from Pages, asks Claude for edits (each an exact passage occurring once, all or none, the page's frame
+  kept; `apply_edits.mjs`), stores the draft in `cpl_library_drafts` and sets `regen.ready_at` and `regen.draft_id`, all
+  with the caller's own credential. The card offers **Open the draft** and **Replace the public copy**; every three hours
+  `library-publish.yml` (`scripts/library_publish.py`) writes an approved draft to `library/<slug>/index.html` with a
+  receipt (`kb/receipts/library_publish/`), commits to main, then moves the record (Version N+1 Current, the one before
+  Replaced, Changes to make and regen cleared), guarded on the `updated_at` it read. A piece with no Pages copy, a
+  SharePoint file, or only a linked document still goes to a session (Copy the request). Governance: dismissed with
+  reasons (`table:cpl_library_drafts`, `function:library-revise-draft`, `workflow:library-publish.yml`). Migration
+  `kb/migrations/2026-11-05_library_drafts.sql` (rollback beside it); the function deploys with `cpl-chat-deploy.yml`
+  (`function: library-revise-draft`). Tests: `tests/library_revise_draft.test.js`, `tests/library_publish_test.py`.
 - **ELL IET CPL Starting Points Version 3 is a draft awaiting *Replace the public copy*** (S557, Sam's Revise request of
   2026-11-02): https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3, `regen.ready_at`/`draft_url` on the record (receipt
   `kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql`, rollback beside it). Once approved, run
@@ -173,21 +185,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
 
 
-✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF read at its source (S513; written since S553, ⑮ below), ⑧ a workbook remediated (S514), ⑨ its contrast (S515) and ⑩ its conditional formatting (S516).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S517).
-
-✅ **⑪ A chart's contrast is measured (S517)** in a deck, a document or a workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A chart's contrast (S517)*. Tests: `library_remediate` (135).
-
-✅ **⑫ Remediation drafts first and files as it opens (S517, Sam's session, #2552 to #2554).** Each picture is drawn with its slide and drafted before the report opens (Claude from the picture and its slide's words, a QR code from the address the page reads, a video from its name); the person keeps, edits or redrafts, or uses *Keep all*. One bar, a part per WCAG 2.2 check, counts down to the Chancellor's Office review, the standards beside the header (the CO's 2025 certificate, which Sam shared). A file is a Draft in the Library the moment it opens (`cpl_library.remediation`), and two boxes count and filter it; the download opens its form for the SharePoint link. Sam: *"the library is functioning as much as a work space for all docs as a repository."* Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each picture with its slide (S517, Sam's session)*.
-
-✅ **⑬ Each slide beside its item, empty boxes removed (S518, #2556).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each slide beside its item (S518)*.
-
-✅ **⑭ A title box for every slide, a script in the notes, the deck's own slide order (S518, #2557; `slide-script-draft` v1).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A title box for every slide (S518, later)*.
-
-✅ **⑮ Every draft applied as the report opens, and a PDF written (S553, 2026-11-02; Sam: *"a full remediation without waiting for confirmation on each element but then present the elements remediated as it does now for any edits needed"*).** Every alt text, slide title, sheet name and contrast fix is in the file from the start under *Remediated for you, to edit as needed*; *Needs you* holds only what has no words or needs a person in the program; Keep and Keep all are gone. A PDF gets *Download the remediated file*: its title, language and title display written as an incremental update that keeps every byte (55 team PDFs verified); tags, pictures' alt text and a scan's text stay at the source, each an item with the steps and *Choose the source*. `.pptm`, `.ppsx`, `.docm`, `.xlsm` read as their kin; other kinds say what to do. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Every draft applied, and a PDF written (S553)*. Tests: `library_remediate` (178), `library` (270).
-
-✅ **⑯ Finish remediation from the card (S554, 2026-11-02; Sam: the team's remediations sat in the Library with no intuitive way to complete them).** The Library keeps a remediation's record, never its file, so three records (two decks, one PDF, 2026-10-29 and 10-30) sat at *Not filed* and *In remediation* with only *Revise and remediate*, which asks a session to rebuild. A record left In remediation with no link now offers **Finish remediation**: a chooser for the kinds remediation reads, opening the report bound to that record; its download marks the same record Remediated and opens its form for the link. A remediated record with no link makes *File it* its first action. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Finish remediation from the card (S554)*. Tests: `library` (275).
-
-**NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks; a tagged PDF's pictures drafted and written (`/Alt` on each Figure, which needs the picture's bytes out of the page's content) when a dropped PDF shows the need. The Chancellor's Office review still certifies.
+✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S577)*.
 
 ✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
 already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks

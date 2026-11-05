@@ -12733,6 +12733,25 @@
    "hints": "7e45007be5",
    "asked": "2026-10-31"
   },
+  "EET 222 Photovaltaic NABCEP for Solar Associates": {
+   "raw_title": "EET 222 Photovaltaic NABCEP for Solar Associates",
+   "unified_title": "NABCEP PV Associate",
+   "issuing_agency": "North American Board of Certified Energy Practitioners (NABCEP)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.82,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 1",
+    "Rule 6",
+    "issuer-issues-the-card",
+    "mechanism-collapses"
+   ],
+   "_notes": "Set aside the hs hint, which kept the course code's misspelling and the CCC issuer. The Industry Certification row names the NABCEP PV (Solar) Associate credential, so NABCEP issues it. EET 222 is the Laney prep course.",
+   "rules": "d20f2caab9db",
+   "hints": "14150eaaeb",
+   "asked": "2026-11-04"
+  },
   "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician": {
    "raw_title": "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician",
    "unified_title": "EMT Certification",
@@ -13430,6 +13449,129 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "Examination for ARHS 1": {
+   "raw_title": "Examination for ARHS 1",
+   "unified_title": "Introduction to Art History",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Used the catalog hint, which is the Las Positas local course title for ARHS 1. No CCN or C-ID was confirmed. Set aside the cx hint because it kept the mechanism and the code.",
+   "rules": "d20f2caab9db",
+   "hints": "1e69e77b7d",
+   "asked": "2026-11-04"
+  },
+  "Examination for ARHS 2": {
+   "raw_title": "Examination for ARHS 2",
+   "unified_title": "Art of the Ancient Americas",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": "The catalog hint matches an existing house family.",
+   "rules": "d20f2caab9db",
+   "hints": "ebfc4035e8",
+   "asked": "2026-11-04"
+  },
+  "Examination for ARHS 3": {
+   "raw_title": "Examination for ARHS 3",
+   "unified_title": "Arts of Africa, Oceania, and Indigenous North America",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.83,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "Mended the catalog hint ('...North Americas') to the existing house family spelling.",
+   "rules": "d20f2caab9db",
+   "hints": "5d453fd7f4",
+   "asked": "2026-11-04"
+  },
+  "Examination for ARHS 7": {
+   "raw_title": "Examination for ARHS 7",
+   "unified_title": "Modern Art History",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Used the Las Positas local course title from the catalog hint. No matching house family exists.",
+   "rules": "d20f2caab9db",
+   "hints": "8b1942d603",
+   "asked": "2026-11-04"
+  },
+  "Examination for ARHS 8": {
+   "raw_title": "Examination for ARHS 8",
+   "unified_title": "Asian Art History",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Used the Las Positas local course title from the catalog hint.",
+   "rules": "d20f2caab9db",
+   "hints": "7249eb9b91",
+   "asked": "2026-11-04"
+  },
+  "Examination for ARTH C1100": {
+   "raw_title": "Examination for ARTH C1100",
+   "unified_title": "Survey of Art from Prehistory to the Medieval Era",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "Title anchored to CCN ARTH C1100 and joined to the matching house family. Set aside the cx hint, which kept the mechanism and the code.",
+   "rules": "d20f2caab9db",
+   "hints": "ccca0940d3",
+   "asked": "2026-11-04"
+  },
+  "Examination for ARTH C1200": {
+   "raw_title": "Examination for ARTH C1200",
+   "unified_title": "Survey of Art: Renaissance to Contemporary",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "Title anchored to CCN ARTH C1200 and joined to the matching house family. Set aside the cx hint.",
+   "rules": "d20f2caab9db",
+   "hints": "e5516b0526",
+   "asked": "2026-11-04"
+  },
   "Examination for FREN 1A": {
    "raw_title": "Examination for FREN 1A",
    "unified_title": "French Beginning",
@@ -13483,6 +13625,41 @@
    "rules": "575c290d755b",
    "hints": "b332d609cd",
    "asked": "2026-10-18"
+  },
+  "Examination for KIN 5": {
+   "raw_title": "Examination for KIN 5",
+   "unified_title": "Sports Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Used the Las Positas local course title for KIN 5 from the catalog hint.",
+   "rules": "d20f2caab9db",
+   "hints": "827e395169",
+   "asked": "2026-11-04"
+  },
+  "Examination for KIN 6": {
+   "raw_title": "Examination for KIN 6",
+   "unified_title": "Personal Training",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "Catalog course title 'Personal Trainer' joined to the house family 'Personal Training' (local CCC course). This is a local course exam, not an industry trainer certification.",
+   "rules": "d20f2caab9db",
+   "hints": "c0c35b7053",
+   "asked": "2026-11-04"
   },
   "Examination for MUS 10A": {
    "raw_title": "Examination for MUS 10A",
@@ -16446,6 +16623,110 @@
    "hints": "0b415ee568",
    "asked": "2026-10-31"
   },
+  "Industry for AJ 54": {
+   "raw_title": "Industry for AJ 54",
+   "unified_title": "Investigative Report Writing",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Industry-typed exhibit that is really a course code, so it takes the AJ 54 course title from the catalog and matches the house family. The outside credential behind it (likely a POST academy) is unnamed, so the CCC issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "049b3d44ea",
+   "asked": "2026-11-04"
+  },
+  "Industry for AJ 60": {
+   "raw_title": "Industry for AJ 60",
+   "unified_title": "Criminal Law",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course-coded industry exhibit that takes the AJ 60 catalog title and matches the house family. The underlying industry credential (likely POST) is unnamed, so the issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "a13b394793",
+   "asked": "2026-11-04"
+  },
+  "Industry for AJ 61": {
+   "raw_title": "Industry for AJ 61",
+   "unified_title": "Criminal Evidence",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog title 'Evidence' is too bare to work as a search title. It was joined to the house family 'Criminal Evidence', which is likely the same AJ course. The issuer is uncertain because the industry credential is unnamed.",
+   "rules": "d20f2caab9db",
+   "hints": "688f1fc6e7",
+   "asked": "2026-11-04"
+  },
+  "Industry for AJ 63": {
+   "raw_title": "Industry for AJ 63",
+   "unified_title": "Criminal Investigation",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course-coded industry exhibit that takes the AJ 63 catalog title and matches the house family. The issuer needs review because the outside credential is unnamed.",
+   "rules": "d20f2caab9db",
+   "hints": "d1c8f394e4",
+   "asked": "2026-11-04"
+  },
+  "Industry for AJ 64": {
+   "raw_title": "Industry for AJ 64",
+   "unified_title": "Police Patrol Operations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course-coded industry exhibit that takes the AJ 64 catalog title. It may duplicate the house family 'Patrol Procedures', but was kept separate pending review. The issuer is uncertain.",
+   "rules": "d20f2caab9db",
+   "hints": "dcc92dadd9",
+   "asked": "2026-11-04"
+  },
+  "Industry for AJ 66": {
+   "raw_title": "Industry for AJ 66",
+   "unified_title": "Juvenile Procedures",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas COCI course AJ 66 (joins existing family); the industry certification behind it is unnamed, so the issuer defaults to CCC pending review.",
+   "rules": "d20f2caab9db",
+   "hints": "8a97ecb54d",
+   "asked": "2026-11-04"
+  },
   "Industry for AUTO A1": {
    "raw_title": "Industry for AUTO A1",
    "unified_title": "ASE A1 — Engine Repair",
@@ -16709,6 +16990,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "Industry for BUSN 65": {
+   "raw_title": "Industry for BUSN 65",
+   "unified_title": "Federal Income Tax Accounting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas course BUSN 65; the underlying industry credential is unnamed, so the issuer defaults to CCC pending review.",
+   "rules": "d20f2caab9db",
+   "hints": "d68593787f",
+   "asked": "2026-11-04"
+  },
   "Industry for CIS 66": {
    "raw_title": "Industry for CIS 66",
    "unified_title": "Networking Fundamentals",
@@ -16938,6 +17237,24 @@
    "hints": "90ed53101c",
    "asked": "2026-10-31"
   },
+  "Industry for FST 1": {
+   "raw_title": "Industry for FST 1",
+   "unified_title": "Fire Protection Organization",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas FST 1, which matches an existing family; the industry credential is unnamed (possibly SFT), so the CCC issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "0d250588b2",
+   "asked": "2026-11-04"
+  },
   "Industry for GDDM 53": {
    "raw_title": "Industry for GDDM 53",
    "unified_title": "Adobe Photoshop I",
@@ -16988,6 +17305,111 @@
    "rules": "e9d6bb7f8641",
    "hints": "96b1d731f6",
    "asked": "2026-10-31"
+  },
+  "Industry for HORT 55": {
+   "raw_title": "Industry for HORT 55",
+   "unified_title": "Greenhouse, Nursery, and Garden Center Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas HORT 55; the industry credential is unnamed, so the issuer defaults to CCC pending review.",
+   "rules": "d20f2caab9db",
+   "hints": "b2f1056572",
+   "asked": "2026-11-04"
+  },
+  "Industry for HORT 56": {
+   "raw_title": "Industry for HORT 56",
+   "unified_title": "Arboriculture/Urban Forestry",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas HORT 56. The industry cert may be ISA Certified Arborist, but it is kept apart as a local course credential (Rule 8c-2); the CCC issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "a5f6a44a07",
+   "asked": "2026-11-04"
+  },
+  "Industry for HORT 57": {
+   "raw_title": "Industry for HORT 57",
+   "unified_title": "Landscape and Turfgrass Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas HORT 57; the industry credential is unnamed, so the issuer defaults to CCC pending review.",
+   "rules": "d20f2caab9db",
+   "hints": "716d466958",
+   "asked": "2026-11-04"
+  },
+  "Industry for HORT 59": {
+   "raw_title": "Industry for HORT 59",
+   "unified_title": "Landscape Design",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas HORT 59, which joins an existing family; the industry credential is unnamed, so the CCC issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "7e778cc52c",
+   "asked": "2026-11-04"
+  },
+  "Industry for HORT 60": {
+   "raw_title": "Industry for HORT 60",
+   "unified_title": "Landscape Irrigation Systems",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas HORT 60; the industry credential (possibly Irrigation Association) is unnamed, so the CCC issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "9516d00ba7",
+   "asked": "2026-11-04"
+  },
+  "Industry for KIN 6": {
+   "raw_title": "Industry for KIN 6",
+   "unified_title": "Personal Trainer",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Course-coded IC exhibit; title from Las Positas course KIN 6, kept apart from the industry Personal Training Certification per Rule 8c-2; the cert issuer is unnamed, so the CCC issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "e4df862b7e",
+   "asked": "2026-11-04"
   },
   "Information Research LIBR10": {
    "raw_title": "Information Research LIBR10",
@@ -19443,6 +19865,24 @@
    "hints": "13736ac213",
    "asked": "2026-10-18"
   },
+  "Noncredit for ARHS 6": {
+   "raw_title": "Noncredit for ARHS 6",
+   "unified_title": "Museum & Gallery Techniques",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint echoed the raw title, so it was set aside; the title comes from the Las Positas catalog for ARHS 6, with the Noncredit pathway word stripped.",
+   "rules": "d20f2caab9db",
+   "hints": "9c5cecb6fd",
+   "asked": "2026-11-04"
+  },
   "Noncredit for AUTO A1": {
    "raw_title": "Noncredit for AUTO A1",
    "unified_title": "Engine Repair",
@@ -19756,6 +20196,24 @@
    "rules": "e9d6bb7f8641",
    "hints": "8fa4c03bee",
    "asked": "2026-10-31"
+  },
+  "Noncredit for BUSN 33": {
+   "raw_title": "Noncredit for BUSN 33",
+   "unified_title": "The Fundamentals of Personal and Family Financial Planning",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint echoed the raw title and was set aside; the title comes from the Las Positas catalog for BUSN 33.",
+   "rules": "d20f2caab9db",
+   "hints": "f29e1b1fe8",
+   "asked": "2026-11-04"
   },
   "Noncredit for CIS 100": {
    "raw_title": "Noncredit for CIS 100",
@@ -20687,6 +21145,25 @@
    "hints": "97dc34eb14",
    "asked": "2026-10-31"
   },
+  "Portfolio ARHS 6": {
+   "raw_title": "Portfolio ARHS 6",
+   "unified_title": "Museum & Gallery Techniques",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.88,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "join-when-likely-one"
+   ],
+   "_notes": "The cx hint kept the course code, so it was set aside; ARHS 6 at Las Positas resolves to Museum & Gallery Techniques (from the sibling Noncredit row's catalog hint), and the portfolio mechanism collapses.",
+   "rules": "d20f2caab9db",
+   "hints": "755c905403",
+   "asked": "2026-11-04"
+  },
   "Portfolio Review - MULTIMD 100": {
    "raw_title": "Portfolio Review - MULTIMD 100",
    "unified_title": "Introduction to Multimedia Computer Applications",
@@ -20809,6 +21286,78 @@
    "hints": "8ee3c89327",
    "asked": "2026-10-21"
   },
+  "Portfolio for BUSN 33": {
+   "raw_title": "Portfolio for BUSN 33",
+   "unified_title": "The Fundamentals of Personal and Family Financial Planning",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.88,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint 'for BUSN 33' was misstripped and set aside; the title is the catalog course title, shared with the Noncredit BUSN 33 row.",
+   "rules": "d20f2caab9db",
+   "hints": "cc320a4e37",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 40": {
+   "raw_title": "Portfolio for BUSN 40",
+   "unified_title": "Introduction to Business",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.88,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": "The cx hint was misstripped; the catalog title for BUSN 40 joins the existing Introduction to Business family.",
+   "rules": "d20f2caab9db",
+   "hints": "3ce0af4dae",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 45": {
+   "raw_title": "Portfolio for BUSN 45",
+   "unified_title": "Entrepreneurship",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.88,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint was misstripped; the title is the Las Positas catalog title for BUSN 45. It is not joined to Introduction to Entrepreneurship without confirmation.",
+   "rules": "d20f2caab9db",
+   "hints": "a3ceac6940",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 48": {
+   "raw_title": "Portfolio for BUSN 48",
+   "unified_title": "Human Relations in Organizations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint 'for BUSN 48' was set aside as a strip error. The title comes from the Las Positas catalog course and joins the existing house family.",
+   "rules": "d20f2caab9db",
+   "hints": "bfc5f78713",
+   "asked": "2026-11-04"
+  },
   "Portfolio for BUSN 52": {
    "raw_title": "Portfolio for BUSN 52",
    "unified_title": "Business Communication",
@@ -20827,6 +21376,94 @@
    "rules": "e9d6bb7f8641",
    "hints": "f657204efa",
    "asked": "2026-10-31"
+  },
+  "Portfolio for BUSN 56": {
+   "raw_title": "Portfolio for BUSN 56",
+   "unified_title": "Introduction to Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "The title is the Las Positas catalog course name and matches the existing house title. The issuer is CCC because this is a portfolio exhibit, not the ACE military credit.",
+   "rules": "d20f2caab9db",
+   "hints": "d4c60c0067",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 58": {
+   "raw_title": "Portfolio for BUSN 58",
+   "unified_title": "Small Business Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The title is the Las Positas catalog course name. It is kept apart from 'Small Business Ownership and Management' because they are not confirmed to be the same course.",
+   "rules": "d20f2caab9db",
+   "hints": "0c7e41017c",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 61": {
+   "raw_title": "Portfolio for BUSN 61",
+   "unified_title": "QuickBooks Accounting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog title 'Quickbooks Accounting' was restyled to Intuit's brand casing. This local course portfolio is kept separate from the Intuit certification families (Rule 8c).",
+   "rules": "d20f2caab9db",
+   "hints": "a6c7bfea36",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 65": {
+   "raw_title": "Portfolio for BUSN 65",
+   "unified_title": "Federal Income Tax Accounting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The title is the Las Positas catalog course name. No house family matches it exactly.",
+   "rules": "d20f2caab9db",
+   "hints": "c7fa56b9b3",
+   "asked": "2026-11-04"
+  },
+  "Portfolio for BUSN 88": {
+   "raw_title": "Portfolio for BUSN 88",
+   "unified_title": "Human Resources Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "The title comes from the Las Positas catalog course and joins the existing house family 'Human Resources Management'.",
+   "rules": "d20f2caab9db",
+   "hints": "741257aec3",
+   "asked": "2026-11-04"
   },
   "Portfolio for ENG 19A": {
    "raw_title": "Portfolio for ENG 19A",

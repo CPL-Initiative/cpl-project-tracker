@@ -65,11 +65,11 @@ view's own page folded under it, and an MQ discipline's panel with its local sub
 line's count resets the List to its first page (`api.LIMIT`); a null limit drew an empty table. Next: the line, the
 cards and the panel over Courses. Programs' is the fourth (2026-11-04): a program's panel lists its courses block
 by block with the CPL on record at its college, reading a light record once from the panel. Courses' is the fifth
-(2026-11-04): every count opens SkyView (Courses keeps SkyView first), the line shares the tab's one read of the
+(2026-11-04): every count opens the List, SkyView one word away (Sam, 2026-11-04: *"Skyview is still too buggy to make the main workspace"*, reversing 2026-11-03's SkyView first; each job count opens its filter, `tests/coci_list_jobs.test.js`), the line shares the tab's one read of the
 Commons file with its Progress page, and a course's panel lists the local courses its M-ID holds. Every List now has
 the line, the fold and the panel. CR's worklist retired into its List on 2026-11-04, its Part B guards ported
 first (`tests/cr_list_worklist_port.test.js`); Subjects' Reference view followed (#2751 carried it onto the List,
-#2752 deletes it). Next: Programs' and Courses' older views.
+#2752 deletes it). Programs' Program records view is next, in three PRs: the panel carries the record's card (its checks in full, the flags, each course's codes, flag marks, outcomes and CPL dialog, Side by side, and Confirm and Needs a fix or the sign-in) with *Confirmed by a person* and a reviewer's *Waiting on your reading* as List filters (2026-11-04, `tests/program_requirements_list_record_port.test.js`); then every way in opens the List (each Progress count on its filter, a call's record searched with its panel open, CPL Pathways' college line on the College filter; an older `view: "records"` address maps to the List), Program records' District, College, SWP Region and CIP Sector dropdowns sit over the List, the records on programs COCI does not list as active are rows under their own filter, a record with items for the college points to its drafts on Catalogs, and side by side's next record follows the List's order (2026-11-04); then the view is deleted. Courses' older view follows.
 
 ## What every List shares
 

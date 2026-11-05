@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-05_library_drafts.sql",
+ "name": "s577_library_drafts",
+ "version": "20261105025121",
+ "sha256": "8d793b6488b2793a7b4a2546ec13a7f55c545cf4a0e6ecb575542290c69442b6",
+ "run": "41957644592",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

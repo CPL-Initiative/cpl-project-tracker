@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 573,
+   "count": 574,
    "docs": [
     {
      "created": "2026-08-14",
@@ -848,7 +848,8 @@
       "kb/_zband_retire_dryrun.py",
       "kb/_subj4_dryrun.py",
       "kb/_pols_remint.py",
-      "kb/authority_recode_out/2026-09-03/report.md"
+      "kb/authority_recode_out/2026-09-03/report.md",
+      "kb/_subjects_list_recode.py"
      ],
      "path": "docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md",
      "status": "published",
@@ -863,7 +864,7 @@
      ],
      "title": "A code change is a prefix re-key that keeps the number, not a re-sequence",
      "type": "methodology",
-     "updated": "2026-09-03"
+     "updated": "2026-11-05"
     },
     {
      "created": "2026-08-12",
@@ -3416,6 +3417,26 @@
      "title": "A remembered toggle hides the default from its author",
      "type": "methodology",
      "updated": "2026-09-02"
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [
+      "kb/_build_commons_status.py",
+      "kb/cer_procedures_out/saved/",
+      "kb/unified_titles.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-renamed-family-is-not-a-correction.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "commons",
+      "procedures",
+      "confidence",
+      "curation"
+     ],
+     "title": "A renamed family is not a correction",
+     "type": "methodology",
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-10-19",
@@ -10589,7 +10610,7 @@
      ],
      "title": "Common SUBJ vs Local SUBJ, and the real discipline\u2194subject invariant",
      "type": "reference",
-     "updated": "2026-06-23"
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-06-25",
@@ -11446,7 +11467,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 93,
+   "count": 94,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12874,6 +12895,30 @@
      "updated": ""
     },
     {
+     "created": "2026-11-03",
+     "governs": [
+      "kb/_build_oc_medical_assistant_crosswalk.py",
+      "kb/_write_oc_medical_assistant_workbook.py",
+      "kb/_write_oc_medical_assistant_html.py",
+      "kb/openclassrooms_ma_ace_recs.json",
+      "kb/receipts/cpl_library_oc_medical_assistant_2026-11-03.sql"
+     ],
+     "path": "docs/openclassrooms_medical_assistant_crosswalk_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "partners",
+      "crosswalk",
+      "openclassrooms",
+      "medical-assisting",
+      "apprenticeship",
+      "cpl"
+     ],
+     "title": "OpenClassrooms Medical Assistant \u2192 CCC CPL crosswalk \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-08-05",
      "governs": [
       "kb/_build_partner_crosswalk.py",
@@ -13677,7 +13722,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 97,
+   "count": 98,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13864,7 +13909,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-04",
+     "created": "2026-11-05",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13872,12 +13917,11 @@
       "handoff",
       "cer",
       "commons-list",
-      "cr-reference",
-      "subjects",
-      "program-requirements",
-      "coci-lookup"
+      "common-subjects-reference",
+      "exhibits",
+      "check-alignment"
      ],
-     "title": "CER redesign handoff: CR's worklist and Subjects' Reference view retire into their Lists (SkyPawpaw)",
+     "title": "CER redesign handoff: the Subjects List as Sam's workspace; Commons views fold and resize (SkyJujube)",
      "type": null,
      "updated": ""
     },
@@ -14084,6 +14128,24 @@
       "atomic-land"
      ],
      "title": "CourseControlNumber Re-mint \u2014 Decisions & Lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "path": "docs/courses_retirement_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "commons-list",
+      "courses-list",
+      "ccr",
+      "signin",
+      "views"
+     ],
+     "title": "Courses retirement handoff: the old Common Course Reference tab into the Courses List (SkyJujube)",
      "type": null,
      "updated": ""
     },
@@ -15572,7 +15634,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 64,
+   "count": 65,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16150,7 +16212,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-03"
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-08-28",
@@ -16229,6 +16291,22 @@
      "title": "Context-pressure hook \u2014 install and mechanics",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "path": "docs/reference/data_sources.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-sources",
+      "wishlist",
+      "procedures"
+     ],
+     "title": "Data sources: the register of datasets that could fill a Commons gap",
+     "type": null,
+     "updated": "2026-11-04"
     },
     {
      "created": "2026-08-30",
@@ -16492,8 +16570,204 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 532,
+   "count": 544,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 578,
+     "path": "docs/session_578_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "common-subjects-reference",
+      "remint",
+      "library",
+      "edge-function",
+      "commons"
+     ],
+     "title": "Session 578 handoff: the Subjects List recode landed; the Library revises a visual from its card",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 577,
+     "path": "docs/session_577_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "governance",
+      "onboarding",
+      "claude-team",
+      "library",
+      "co-academic-affairs"
+     ],
+     "title": "Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 575,
+     "path": "docs/session_575_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "data-sources",
+      "scheduled-sessions"
+     ],
+     "title": "Session 575 handoff: the Commons path, the one queue and the confidence count; the routine's queue carried",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 574,
+     "path": "docs/session_574_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 574 handoff: the cert link's IAI, Intuit and DRE families; the family work stops; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 573,
+     "path": "docs/session_573_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 573 handoff: the cert link's NWCG and SWRCB families; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 572,
+     "path": "docs/session_572_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 572 handoff: the cert link's AWS welding and Amazon families; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 571,
+     "path": "docs/session_571_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 571 handoff: the cert link's PMI, ICC, CDPH and EMSA families; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 570,
+     "path": "docs/session_570_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 570 handoff: the cert link's Autodesk, NCCER and ASME families; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 569,
+     "path": "docs/session_569_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 569 handoff: the cert link's FAA family; Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 568,
+     "path": "docs/session_568_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 568 handoff: Las Positas's SLOs loaded (505 rows); Columbia's full read is next",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 567,
+     "path": "docs/session_567_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "common-subjects-reference",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 567 handoff: every MQ discipline complete; S565's PR and Ashley's crosswalk merged; Columbia at read",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-04",
+     "governs": [],
+     "n": 566,
+     "path": "docs/session_566_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest",
+      "credential-registry"
+     ],
+     "title": "Session 566 handoff: Las Positas's full read and Columbia's trial in flight; #2734 brought up to main",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25573,5 +25847,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1365
+ "total": 1381
 }

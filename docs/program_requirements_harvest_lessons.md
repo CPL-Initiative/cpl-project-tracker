@@ -1126,6 +1126,16 @@ From Sheet 144 card 2's paragraph: S529 rescored the filed records (`kb/_program
 - **A worktree for the SLO branch** keeps the main checkout on the session's own branch; `git worktree add` on this
   repo takes about two minutes.
 
+## S567 SkyWhirlpool (2026-11-04, the 08:12Z firing): Las Positas loaded
+
+- **Las Positas's load:** the three slices of read 41784805869 were filed by 08:03Z; `.load` = `host=laspositas`, load
+  run 41797959686, **505 inserted**, 271 skipped, receipt on the branch in about two minutes. `course_outcomes` now
+  holds 9,889 rows at twelve colleges.
+- **Run the queue helper on main, and the branch's own college on its branch.** Handoff 567 listed Santa Ana at *read*;
+  on main it is *done* (S559's receipt). An SLO branch cut before a load merged reads that college as unloaded.
+- **Merging main into an SLO branch conflicts on `.run`.** Take main's `.run` and `.load` after the load, so the merge
+  push starts no new read or load and CI gets a head.
+
 ## Moved from the lane (S562, 2026-11-03; the lane passed its 20,000-byte budget)
 
 The catalog sweep paragraph, verbatim as the lane carried it:

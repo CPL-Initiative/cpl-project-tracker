@@ -76,6 +76,61 @@ w.applyFilters();
 check("All restores every card", shown("c1") && shown("c2") && shown("c3") && shown("c4"));
 check("All restores every group", shown("grp1") && shown("grp2") && shown("grp3"));
 
+// ── every view has an address (2026-11-04): #activities-projects/sprint/<v>/lead/<v> ──
+// The page loads dashboard_filters.js before cpl_session.js and tabs.js, so the pair wires as the tab activates.
+const LEAD = '<select id="filterLead"><option value="">All</option><option value="Samuel Lee">Samuel Lee</option>'
+  + '<option value="Samuel Lee / Crystal Nasio">Samuel Lee / Crystal Nasio</option></select>';
+function page(hash) {
+  const d = new JSDOM(html.replace('<input type="text" id="searchBox">', LEAD + '<input type="text" id="searchBox">'),
+    { url: "https://example.org/index.html" + (hash || ""), runScripts: "dangerously" });
+  const x = d.window;
+  const bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }; };
+  Object.defineProperty(x, "localStorage", { value: bag(), configurable: true });
+  Object.defineProperty(x, "sessionStorage", { value: bag(), configurable: true });
+  x.fetch = () => Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) });
+  [fs.readFileSync("dashboard_filters.js", "utf8"), fs.readFileSync("cpl_session.js", "utf8")].forEach((src) => {
+    const s = x.document.createElement("script"); s.textContent = src; x.document.body.appendChild(s);
+  });
+  x.dispatchEvent(new x.CustomEvent("cpl-tab-activated", { detail: { tab: "activities-projects" } }));
+  return x;
+}
+function ask(x) { x.CPL_SESSION.stashReturnTab("activities-projects"); return (JSON.parse(x.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; }
+const vis = (x, id) => x.document.getElementById(id).style.display !== "none";
+{
+  const a = page("#activities-projects/sprint/veteran");
+  check("address 1: #activities-projects/sprint/veteran opens on Veteran Sprint",
+    a.document.getElementById("filterSprint").value === "Veteran Sprint" && vis(a, "c1") && !vis(a, "c2") && !vis(a, "grp2"));
+  check("address 2: the view reports activities-projects/sprint/veteran", ask(a) === "activities-projects/sprint/veteran");
+  a.document.getElementById("filterSprint").value = "Statewide Adoption Sprint";
+  a.document.getElementById("filterLead").value = "Samuel Lee / Crystal Nasio";
+  check("address 3: switched, it reports both parts as slugs",
+    ask(a) === "activities-projects/sprint/statewide-adoption/lead/samuel-lee-crystal-nasio", ask(a));
+  a.document.getElementById("filterSprint").value = "";
+  a.document.getElementById("filterLead").value = "";
+  check("address 4: no filter reports the bare tab, not the stale address", ask(a) === "activities-projects");
+}
+{
+  const b = page("#activities-projects/lead/samuel-lee");
+  check("address 5: a lead alone opens on that lead", b.document.getElementById("filterLead").value === "Samuel Lee"
+    && b.document.getElementById("filterSprint").value === "");
+  const c = page("#activities-projects");
+  check("address 6: the bare tab opens every card, both selects on All",
+    c.document.getElementById("filterSprint").value === "" && c.document.getElementById("filterLead").value === ""
+    && ["c1", "c2", "c3", "c4"].every((id) => vis(c, id)) && ask(c) === "activities-projects");
+  c.history.replaceState(null, "", "#activities-projects/sprint/apprenticeship");
+  c.dispatchEvent(new c.CustomEvent("cpl-tab-activated", { detail: { tab: "activities-projects" } }));
+  check("address 7: a later visit on /sprint/apprenticeship opens it", c.document.getElementById("filterSprint").value === "Apprenticeship Sprint"
+    && vis(c, "c3") && !vis(c, "c1"));
+  const d = page("#activities-projects/card-1.1");
+  check("address 8: a card link is not a filter; nothing is narrowed and the card address is kept",
+    d.document.getElementById("filterSprint").value === "" && ["c1", "c2", "c3", "c4"].every((id) => vis(d, id))
+    && ask(d) === "activities-projects/card-1.1");
+  const e = page("#activities-projects/sprint/nonsense/lead/nobody");
+  check("address 9: unknown values leave All", e.document.getElementById("filterSprint").value === "" && e.document.getElementById("filterLead").value === "");
+  check("address 10: nothing about the view is stored",
+    !Object.keys(e.localStorage).some((k) => k !== "cpl_sb_return_tab" && /sprint|lead|filter|view/i.test(k)));
+}
+
 let failed = 0;
 results.forEach(function (r) {
   console.log((r[1] ? "PASS " : "FAIL ") + r[0]);

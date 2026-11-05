@@ -1731,6 +1731,8 @@
      Commons row the tiles read, and each count opens where its tile's count opens. */
   function credDash(wrap) {
     if (!state.cm) loadCommons().then(function () { if (state.view === "list") render(); });
+    // The top's fold is one stored choice for every Commons view (commons_list.js topFolded), read as a visit starts.
+    if (state.dashFolded == null && window.CPL_COMMONS_LIST && CPL_COMMONS_LIST.topFolded) state.dashFolded = CPL_COMMONS_LIST.topFolded();
     var folded = !!state.dashFolded;
     wrap.appendChild(cmLine(folded));
     var fold = el("div", { cls: "exh-fold", id: "exh-fold", hidden: folded ? "" : null });
@@ -1756,7 +1758,7 @@
      tab's class names so it looks as it did when Exhibits drew the first (#2736). */
   function cmLine(folded) {
     var cm = state.cm;
-    return LIST_ENGINE.line({ row: cm && cm.row, error: cm && cm.done ? (cm.error || "") : null, folded: folded, foldId: "exh-fold",
+    return LIST_ENGINE.line({ row: cm && cm.row, error: cm && cm.done ? (cm.error || "") : null, folded: folded, foldId: "exh-fold", top: [],
       onToggle: function () { state.dashFolded = !state.dashFolded; render(); },
       control: cmLineControl,
       cls: { bar: "exh-linebar", line: "exh-line", sep: "exh-sep", li: "exh-li", w: "exh-w" } });
@@ -1903,7 +1905,8 @@
     ["outcomes", "Outcomes match"],
     ["waiting", "Folds waiting for the apply"],
     ["statewide", "Based on statewide"],
-    ["local", "Local only"]
+    ["local", "Local only"],
+    ["left", "A title that has left MAP"]
   ];
   /* Outcomes match (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): the credentials whose articulated
      courses' SLOs match a row's at cosine 0.5 or more through distinct courses, from kb/exhibit_slo_neighbors.json
@@ -2054,6 +2057,83 @@
     var out = parts.filter(Boolean).join(" | ");
     if (look) r._where = out;
     return out;
+  }
+  /* Check alignment beside Save (Sam, 2026-11-04: "a Check Alignment button in the code box that fires a little audit
+     and recommendation"; "We could use that feature on all our commons list views"). For a credential, alignment is its
+     unified title and issuer against the reference: the title another credential already carries (two names, one
+     credential, or a collision), the close titles beside it, what colleges wrote for it (raw variants), the noise the
+     canonicalization rules strip (.claude/skills/exhibit-canonicalization, Rule 1), and the issuer's spellings across
+     the reference. It reads what the List holds; the daily run's collision check and the re-analysis stay the record. */
+  function auditNorm(t) {
+    return String(t == null ? "" : t).toLowerCase().replace(/\bu\.?\s?s\.?\b/g, "us").replace(/united states/g, "us")
+      .replace(/&/g, " and ").replace(/[^a-z0-9+#]+/g, " ").replace(/\b(the|of)\b/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function auditWords(t) { return auditNorm(t).split(" ").filter(function (w) { return w.length > 1; }); }
+  function auditClose(a, b) {
+    var A = auditWords(a), B = auditWords(b);
+    if (!A.length || !B.length) return 0;
+    var inB = {}; B.forEach(function (w) { inB[w] = 1; });
+    var both = A.filter(function (w) { return inB[w]; }).length;
+    return both / (A.length + B.length - both);
+  }
+  var AUDIT_NOISE = [
+    [/credit\s*by\s*exam|\bcbe\b|portfolio(\s+review)?|industry\s+certification|certificate\s+prep|\bprep\b/i, "a CPL mechanism (the CPL type carries it)"],
+    [/\bscore\s*\d|\(\s*score|\bversion\s*\d|\bv\d+(\.\d+)?\b|\beffective\s+(fall|spring|summer|winter)|\bprior\s+(fall|spring|summer)/i, "a score or version note"],
+    [/\bat\s+[a-z .'-]+\b(college|university)\b/i, "a college's name"],
+    [/[.,;:]\s*$/, "trailing punctuation"],
+    [/\s{2,}/, "a double space"]
+  ];
+  function exhibitAudit(r, d) {
+    var rows = state.cs.rows || [], typed = String(d.title || "").replace(/\s+/g, " ").trim(), was = listTitle(r);
+    var title = typed || was, issuer = String(d.issuer || "").replace(/\s+/g, " ").trim();
+    if (!title) return "Type a title to check it.";
+    var facts = [], recs = [], key = auditNorm(title);
+    var nColl = function (x) { return credColleges(x).length; };
+    // The title another credential carries, or nearly.
+    var same = rows.filter(function (x) { return x !== r && auditNorm(listTitle(x)) === key; });
+    var close = rows.filter(function (x) { return x !== r && same.indexOf(x) < 0; })
+      .map(function (x) { return { x: x, s: auditClose(title, listTitle(x)) }; })
+      .filter(function (y) { return y.s >= 0.6; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 3);
+    if (same.length) facts.push("“" + listTitle(same[0]) + "” is already a credential (" + fmt(nColl(same[0])) + (nColl(same[0]) === 1 ? " college" : " colleges") + ")");
+    else facts.push("no other credential carries this title");
+    if (close.length) facts.push("close titles: " + close.map(function (y) { return "“" + listTitle(y.x) + "” (" + fmt(nColl(y.x)) + (nColl(y.x) === 1 ? " college" : " colleges") + ")"; }).join(", "));
+    // What colleges wrote for this credential.
+    var raws = (r.raw_variants || []).map(function (v) { return v.r; }).filter(Boolean);
+    if (raws.length) {
+      var hit = raws.some(function (x) { return auditNorm(x) === key; });
+      facts.push(fmt(raws.length) + (raws.length === 1 ? " college-written title folds" : " college-written titles fold") + " here" + (hit ? ", and one reads this way" : "; none reads this way"));
+    }
+    // The noise the canonicalization rules strip.
+    var noise = AUDIT_NOISE.filter(function (n) { return n[0].test(title); }).map(function (n) { return n[1]; });
+    if (noise.length) facts.push("the title carries " + noise.join(" and "));
+    // The issuer's spellings across the reference.
+    var spell = {}, ikey = auditNorm(issuer), twin = null;
+    if (issuer) {
+      rows.forEach(function (x) {
+        var i = (x === r ? issuer : credCurrent(x).issuer) || "";
+        if (i && auditNorm(i) === ikey) spell[i] = (spell[i] || 0) + 1;
+      });
+      var names = Object.keys(spell).sort(function (a, b) { return spell[b] - spell[a]; });
+      facts.push("the issuer “" + issuer + "” names " + fmt(spell[issuer] || 1) + (spell[issuer] === 1 || !spell[issuer] ? " credential" : " credentials")
+        + (names.length > 1 ? ", and the reference also spells it " + names.filter(function (n) { return n !== issuer; }).map(function (n) { return "“" + n + "” (" + fmt(spell[n]) + ")"; }).join(", ") : ""));
+      // A twin spelling is recommended only when more credentials use it than the one typed.
+      if (names.length > 1 && names[0] !== issuer && spell[names[0]] > (spell[issuer] || 0)) twin = names[0];
+    } else facts.push("no issuer named");
+    // One recommendation, the most pressing first.
+    if (same.length) recs.push(typed && typed !== was
+      ? "this title is “" + listTitle(same[0]) + "”'s. If they are one credential, fold them (Suggested folds, or Move); if not, add what tells them apart, a level, an exam or a version"
+      : "two credentials carry one title: fold them if they are one, or tell them apart");
+    else if (twin) recs.push("spell the issuer “" + twin + "”, as " + fmt(spell[twin]) + " credentials do");
+    else if (noise.length) recs.push("drop " + noise[0] + " from the title; the canonicalization rules keep the credential's own name");
+    else if (close.length && close[0].s >= 0.75) recs.push("check “" + listTitle(close[0].x) + "”: if it is the same credential, fold one into the other");
+    else if (!issuer) recs.push("name the issuer, the body that grants the credential");
+    else recs.push("the title and issuer read well against the reference");
+    return facts.join("; ") + ". Recommendation: " + recs[0] + ".";
+  }
+  function listCheckAlignment(r, d) {
+    d._hint = exhibitAudit(r, d);
+    var hn = document.getElementById("exh-l-edit-hint");
+    if (hn) { hn.textContent = d._hint; hn.hidden = false; }
   }
   function listSave(r) {
     var L = listState(), d = L.draft, cur = credCurrent(r), cs = state.cs;
@@ -2379,6 +2459,10 @@
             .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
         }
         if (!L.sloP) listSloLoad().then(function () { if (state.view === "list") render(); });
+        if (L.f === "left") {
+          if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
+          wrap.appendChild(listLeftNote());
+        }
         return true;
       },
       filters: LIST_FILTERS,
@@ -2392,6 +2476,7 @@
         if (L.f === "waiting" && !listPendingFold(r)) return false;
         if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
         if (L.f === "local" && listBasis(r) !== "Local") return false;
+        if (L.f === "left" && !listLeft(r).length) return false;
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
         return true;
       },
@@ -2402,10 +2487,12 @@
         if (id === "suggested") return !L.aiData;
         if (id === "outcomes") return !(L.slo && L.slo.neighbors);
         if (id === "mine" || id === "waiting") return state.cs.overlayOk !== true;
+        if (id === "left") return !LEFT.by;
         return false;
       },
       onFilter: function (id, api) {
         if (id === "outcomes") return listSloLoad();
+        if (id === "left") return listLeftLoad();
         return id === "suggested" && !listState().aiData ? api.aiLoad() : null;
       },
       hay: function (r) {
@@ -2475,7 +2562,12 @@
           var cur = credCurrent(r);
           return { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
         },
-        save: listSave
+        save: listSave,
+        // A keystroke in the title or issuer box clears an earlier check; Check alignment writes a new one.
+        onInput: function (r, key, d) { if (key === "title" || key === "issuer") d._hint = ""; },
+        extra: function (r, d, word) {
+          return [word("Check alignment", function () { listCheckAlignment(r, d); }, { "aria-label": "Check the alignment of the title and issuer typed for " + listTitle(r) })];
+        }
       },
       cellSave: listCellSave,
       fr: {
@@ -2565,6 +2657,34 @@
      exhibit and MAP's Request Quick Adopt line, the panel does what the Credentials view did, and that view retired
      (the List norms, The List is the workspace). Each fold
      keeps its place for the visit, so a sort, an added site or a save does not close it. */
+  /* The titles in the reference MAP no longer carries (the auditor's stale_kb_entry, never an unclassified title still in
+     MAP), by the credential they fold under: the Commons' keep-or-retire count opens this filter (Sam, 2026-11-04: "the
+     links on all surfaces should open to the filtered view of the job needed"). Read only when it is chosen. */
+  var LEFT = { by: null, error: null, p: null };
+  function listLeftLoad() {
+    if (LEFT.p) return LEFT.p;
+    LEFT.p = fetch("kb/exhibit_audit/latest.json", { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("kb/exhibit_audit/latest.json answered " + r.status);
+      return r.json();
+    }).then(function (d) {
+      var by = {};
+      ((d && d.title_cards) || []).forEach(function (c) {
+        var t = c.tags || [];
+        if (t.indexOf("stale_kb_entry") >= 0 && t.indexOf("unclassified_in_map") < 0) (by[c.unified_title] = by[c.unified_title] || []).push(String(c.raw_title || "").trim());
+      });
+      LEFT.by = by;
+    }, function (e) { LEFT.error = String(e && e.message || e); });
+    return LEFT.p;
+  }
+  function listLeft(r) { return (LEFT.by && LEFT.by[r.ut]) || []; }
+  function listLeftNote() {
+    if (LEFT.error) return el("p", { cls: "exh-empty", role: "alert", text: LEFT.error + ", so this filter shows nothing. Reload the tab to try again." });
+    if (!LEFT.by) return el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading the auditor's titles for this filter…" });
+    var names = Object.keys(LEFT.by), n = names.reduce(function (t, k) { return t + LEFT.by[k].length; }, 0);
+    return el("p", { cls: "exh-muted exh-small", text: fmt(n) + (n === 1 ? " old title no MAP exhibit uses any more sits" : " old titles no MAP exhibit uses any more sit") +
+      " in the reference, under " + fmt(names.length) + (names.length === 1 ? " credential" : " credentials") + " below. Nothing breaks while they stay. " +
+      "Open a credential to see its titles; a curator retires each, or keeps one a college may enter again." });
+  }
   function listPanelBody(r, h) {
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
     var cip = listCip(r), n = r.raw_count || 0;
@@ -2572,6 +2692,13 @@
     var out = [h.title(listTitle(r)), h.meta([cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
       could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
+    var gone = listLeft(r);
+    if (gone.length) {
+      out.push(h.heading(gone.length === 1 ? "A title that has left MAP" : "Titles that have left MAP"));
+      out.push(el2("p", { cls: "exh-muted exh-small", text: "The reference still folds " + (gone.length === 1 ? "this title" : "these titles") +
+        " under this credential, and no MAP exhibit uses " + (gone.length === 1 ? "it" : "them") + " any more. Nothing breaks while " + (gone.length === 1 ? "it stays" : "they stay") + "; a curator keeps or retires each." }));
+      out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return el2("li", { text: t }); })));
+    }
     var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
     out.push(h.heading("Members"));
     if (!members.length) {
@@ -3185,6 +3312,15 @@
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     return true;
   }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
+     what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("exhibits", function () {
+    var v = state.view, f = state.ls && state.ls.f;
+    if (v === "list") return "exhibits/list" + (f ? "/" + f : "");
+    if (v === "progress" || v === "rules") return "exhibits/" + v;
+    if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? "another-look" : "held");
+    return "exhibits";
+  });
   function boot() {
     if (booted) return Promise.resolve();
     booted = true;

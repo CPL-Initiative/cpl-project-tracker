@@ -1,0 +1,172 @@
+{
+  "folded": [
+    {
+      "raw": "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+      "assigned": "Waterworks Mathematics Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "EET 203 Basic Electricity",
+      "assigned": "Basic Electricity",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 2",
+      "assigned": "Art of the Ancient Americas",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GEOG 1 Physical Geology",
+      "assigned": "Introduction to Physical Geography",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 32 Digital Documents (Adobe InDesign)",
+      "assigned": "Digital Documents (Adobe InDesign)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 36 Adobe Photoshop Basics",
+      "assigned": "Adobe Photoshop Basics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 37 Advanced Photoshop",
+      "assigned": "Photoshop Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 40",
+      "assigned": "Introduction to Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 48",
+      "assigned": "Human Relations in Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 58",
+      "assigned": "Small Business Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 61",
+      "assigned": "QuickBooks Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 88",
+      "assigned": "Human Resources Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+      "assigned": "Waterworks Mathematics Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "EET 203 Basic Electricity",
+      "assigned": "Basic Electricity",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GEOG 1 Physical Geology",
+      "assigned": "Introduction to Physical Geography",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 32 Digital Documents (Adobe InDesign)",
+      "assigned": "Digital Documents (Adobe InDesign)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 36 Adobe Photoshop Basics",
+      "assigned": "Adobe Photoshop Basics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "GRART 37 Advanced Photoshop",
+      "assigned": "Photoshop Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 58",
+      "assigned": "Small Business Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 61",
+      "assigned": "QuickBooks Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 1,
+  "audit_pruned": 13,
+  "unified_titles_count": 5519
+}

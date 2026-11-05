@@ -34,6 +34,13 @@ naming either by "or" holds any. A title naming no one cert ("CompTIA Certificat
 Specialist (generic)") is kept as unresolved, and so are the local courses ("Microsoft Excel 1", "Microsoft Word
 Beginning", "Using Microsoft Windows"), which the table leaves out: a college issues those, and no vendor does.
 
+Fourth family: the FAA's airman certificates and ratings (S568, 2026-11-04), by the same hand table (FAA below). The
+catalog lists the FAA under two spellings ("Federal Aviation Administration" and "... (FAA)") and some names twice, so
+a name is looked up across both and keeps its lowest id. A title naming a certificate without its category ("FAA
+Instrument Rating", "FAA Pilot Certificate — Helicopter Rating") holds any of the catalog's ratings that fit it. Left
+out: the flight labs and ground schools, which a college teaches toward the certificate (as "Microsoft Excel 1" is
+left out); "FAA Certified Flight Instructor (CFI)" and the Part 137 operator certificate, which the catalog does not
+list yet; and the Part 107 and POST Basic bundle, whose POST half no catalog issuer holds.
 ASE's test names come from kb/_sweep_exhibit_titles.py's ASE table (imported, never copied). Writes
 kb/exhibit_cert_links.json; the daily run rebuilds it after the credential reference; the Exhibits List's finder and
 title drawer read it. Standard library only.
@@ -155,14 +162,167 @@ VENDOR = {
 }
 VENDOR_ISSUERS = ("CompTIA", "Cisco", "Microsoft")
 
+# The FAA's certificates and ratings, hand-checked against the catalog on 2026-11-04 (S568).
+FAA_ISSUER = "Federal Aviation Administration (FAA)"
+FAA_ISSUER_SPELLINGS = ("Federal Aviation Administration", FAA_ISSUER)
+FAA_PRIVATE = ["Private Pilot", "Private Pilot Certificate"]
+FAA = {
+    "FAA Certified Flight Instructor — Instrument (CFII)": ("all", ["Certified Flight Instrument Instructor Rating"]),
+    "FAA Commercial Pilot Certificate": ("all", ["Commercial Pilot"]),
+    "FAA Instrument Rating": ("any", ["Airplane Instrument Rating", "Instrument-Helicopter Rating",
+                                      "Instrument - Powered-lift Rating"]),
+    "FAA Mechanic Certificate — Airframe and Powerplant (A&P)": ("all", ["Mechanic (Airframe & Powerplant)"]),
+    "FAA Mechanic Certificate — Airframe or Powerplant Rating": ("any", ["Aviation Airframe Mechanic",
+                                                                        "Aviation Powerplant Mechanic"]),
+    "FAA Mechanic Certificate — Airframe Rating": ("all", ["Aviation Airframe Mechanic"]),
+    "FAA Mechanic Certificate — Powerplant Rating": ("all", ["Aviation Powerplant Mechanic"]),
+    "FAA Pilot Certificate — Helicopter Rating": ("any", ["Private Pilot, Helicopter Rating",
+                                                          "Commercial Pilot, Helicopter Rating", "Helicopter Class Rating"]),
+    "FAA Private Pilot Certificate": ("any", FAA_PRIVATE),
+    "Private Pilot Certificate": ("any", FAA_PRIVATE),
+    "FAA Remote Pilot Certificate (Part 107)": ("any", ["Remote Pilot Certificate", "Drone Pilot Certification"]),
+}
+
+
+# Fifth to seventh families (S569, 2026-11-04), hand-checked against the catalog the same way. Each issuer is spelled
+# two ways in the catalog, so the spellings fold to one. Only a title that names a certification the catalog lists is
+# linked: a level short of journey (NCCER Electrician Level 1 to 3) holds no catalog row, "Autodesk Certified
+# Professional" names no one certification, "Fire Inspector 1" mixes ICC, SFT and NFPA exhibits, and the ASME welder
+# qualifications are not in the catalog yet. Courses (AutoCAD Beginning, Autodesk Revit) stay out.
+HAND = {
+    "Autodesk": (("Autodesk", "Autodesk, Inc."), {
+        "Autodesk Certified User": ("all", ["Autodesk Certified User"]),
+        "Autodesk Certified User/Professional — AutoCAD": ("any", [
+            "Autodesk Associate (Certified User) AutoCAD", "AutoCAD Certified User", "AutoCAD Certified Professional",
+            "Autodesk Certified Professional in AutoCAD for Design and Drafting"]),
+        "Autodesk Certified User/Professional — Revit Architecture": ("any", [
+            "Autodesk Certified User - Revit", "Autodesk Certified Professional in Revit for Architectural Design"]),
+    }),
+    "NCCER": (("National Center for Construction Education and Research",
+               "National Center for Construction Education and Research (NCCER)"), {
+        "NCCER Commercial Carpenter Journey Level": ("all", ["Commercial Carpenter"]),
+        "NCCER Industrial Carpenter Journey Level": ("all", ["Industrial Carpenter"]),
+        "NCCER Commercial Electrician Level 4/Journey Level": ("any", ["Commercial Electrician", "NCCER Commercial Electrician"]),
+        "NCCER Industrial Electrician Level 4/Journey Level": ("all", ["Industrial Electrician"]),
+        "NCCER Construction Foreman Management": ("all", ["Construction Foreman"]),
+        "NCCER Construction Superintendent Management": ("all", ["Construction Superintendant Certification"]),
+        "NCCER CORE Curriculum - Introduction to Basic Construction Skills": ("all", ["NCCER Core Credential"]),
+        "NCCER HVACR Level 1": ("all", ["NCCER HVAC, Level 1"]),
+        "NCCER Welding Level 1": ("all", ["Level 1 - Welding"]),
+    }),
+    "ASME": (("American Society of Mechanical Engineers (ASME)", "American Society of Mechanical Engineers International"), {
+        "ASME GDTP Y14.5 Certification": ("any", [
+            "Geometric Dimensioning & Tolerancing Professional - Technologist",
+            "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
+            "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level"]),
+    }),
+    # Eighth to eleventh families (S570, 2026-11-04): PMI, ICC, CDPH and EMSA, one catalog spelling each. Left out:
+    # PgMP and PfMP (not in the catalog), ICC's California code titles and the INSPEC courses, the Acute Care Nursing
+    # Assistant course, EMR (not in the catalog), the EMT courses, "EMT-2 Certification" (California's old EMT-II has
+    # no catalog row) and "EMT Certification", whose exhibits name EMSA, NREMT and ACE.
+    "PMI": (("PMI",), {
+        "Certified Associate in Project Management (CAPM)": ("all", ["Certified Associate in Project Management (CAPM)"]),
+        "Project Management Professional (PMP)": ("all", ["Project Management Professional"]),
+        "PMI Agile Certified Practitioner (PMI-ACP)": ("all", ["PMI Agile Certified Practitioner"]),
+        "PMI Professional in Business Analysis (PMI-PBA)": ("all", ["PMI Professional in Business Analysis"]),
+        "PMI Risk Management Professional (PMI-RMP)": ("all", ["PMI Risk Management Professional"]),
+    }),
+    "ICC": (("International Code Council",), {
+        "Building Plans Examiner": ("all", ["Building Plans Examiner"]),
+        "Certified Building Official": ("all", ["Certified Building Official"]),
+        "Commercial Building Inspector": ("all", ["Commercial Building Inspector"]),
+        "Commercial Mechanical Inspector": ("all", ["Commercial Mechanical Inspector"]),
+        "Mechanical Plans Examiner": ("all", ["Mechanical Plans Examiner"]),
+        "Residential Building Inspector": ("all", ["Residential Building Inspector"]),
+        "Residential Mechanical Inspector": ("all", ["Residential Mechanical Inspector"]),
+        "Residential Plans Examiner": ("all", ["Residential Plans Examiner"]),
+    }),
+    "CDPH": (("California Department of Public Health",), {
+        "Certified Nurse Assistant (CNA) Certification": ("all", ["Certified Nurse Assistant"]),
+        "Certified Nursing Assistant (CNA)": ("all", ["Certified Nurse Assistant"]),
+    }),
+    "EMSA": (("California Emergency Medical Services Authority",), {
+        "Emergency Medical Technician (EMT) Certification": ("all", ["Emergency Medical Technician (EMT)"]),
+        "Paramedic License": ("all", ["Paramedic License (EMT-P)"]),
+    }),
+    # Twelfth and thirteenth families (S571, 2026-11-04): the American Welding Society and Amazon Web Services, one
+    # catalog spelling each, both written "AWS" in titles. A D1.1 or D9.1 welder qualification holds the catalog's row for
+    # its code. Left out: D1.3, D1.5, D1.8, D17.1 and the B2.2 brazing qualification (no catalog row), "AWS Welder
+    # Qualification — D1.1/D1.3/D17.1" (two of its three codes have no row), the LA City certified-welder titles (the
+    # City issues them), and the welding-process courses and Light Gage titles.
+    "AWS-Welding": (("American Welding Society",), {
+        "AWS D1.1 FCAW Qualified Welder": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 SMAW Qualified Welder": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 Structural Welder Qualification": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 Structural Welding Certification — FCAW (E71T-8)": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D1.1 Structural Welding Certification — SMAW (E7018)": ("all", ["AWS D1.1 Structural Steel"]),
+        "AWS D9.1 GMAW Qualified Welder": ("all", ["AWS D9.1 Sheet Metal Welding"]),
+    }),
+    "Amazon": (("Amazon Web Services",), {
+        "AWS Certified Cloud Practitioner": ("all", ["AWS Certified Cloud Practitioner"]),
+        "AWS Certified Developer — Associate": ("all", ["AWS Certified Developer - Associate"]),
+        "AWS Certified Solutions Architect — Associate": ("all", ["AWS Certified Solutions Architect - Associate"]),
+        "AWS CloudOps Engineer - Associate": ("all", ["AWS Certified CloudOps Engineer - Associate"]),
+    }),
+    # Fourteenth and fifteenth families (S572, 2026-11-04): NWCG and the State Water Resources Control Board, one catalog
+    # spelling each. The Board's catalog rows carry no grade, so a title whose exhibits name a grade (D2, T3, wastewater
+    # grade II) holds its operator row, as a D1.1 qualification holds the code's row; a title naming certifications
+    # joined by "or" holds any of them. Left out: "Water Treatment Facilities" (its exhibits name two issuers) and every
+    # NWCG course title but S-212. The S-130/S-190 course is the training for Firefighter Type 2, and the position also
+    # needs a task book, so no course title is pointed at the position.
+    "NWCG": (("National Wildfire Coordinating Group",), {
+        "Wildland Fire Chainsaws (S-212)": ("all", ["Wildland Fire Chainsaws"]),
+    }),
+    "SWRCB": (("California State Water Resources Control Board",), {
+        "Wastewater Treatment 1": ("all", ["Wastewater Treatment Plant Operator"]),
+        "Wastewater Treatment 2": ("all", ["Wastewater Treatment Plant Operator"]),
+        "Water Treatment 1": ("all", ["Water Treatment Operator"]),
+        "Water Treatment 2": ("all", ["Water Treatment Operator"]),
+        "Water Treatment Operator Grade T2": ("all", ["Water Treatment Operator"]),
+        "Water Distribution Operator 2": ("all", ["Distribution System Operator"]),
+        "Water Distribution Operator Grade D2": ("all", ["Distribution System Operator"]),
+        "Water Distribution Operator Grade D2, D3, D4, or D5": ("all", ["Distribution System Operator"]),
+        "Water Treatment Operator Grade T3 / Distribution Grade D3": ("all", ["Water Treatment Operator",
+                                                                               "Distribution System Operator"]),
+        "Water and Wastewater Mathematics 1": ("any", ["Water Treatment Operator", "Distribution System Operator",
+                                                       "Wastewater Treatment Plant Operator"]),
+        "Water/Wastewater Operator Certification": ("any", ["Water Treatment Operator", "Distribution System Operator",
+                                                            "Wastewater Treatment Plant Operator"]),
+    }),
+    # Sixteenth to eighteenth families (S573, 2026-11-04): the International Association for Identification, Intuit and
+    # the California Department of Real Estate. Each IAI certification holds the catalog's row for its discipline (the
+    # catalog lists the discipline, not the CCSI/CSCSA level). Left out: the ESCO Master Specialist titles (the catalog
+    # lists the professional-level exams and the Hands-On credential, never the written Master Specialist), the NFPA
+    # titles (their exhibits name Cal-JAC, ICC and SFT too), "Intuit QuickBooks Online Certified User" (no catalog row
+    # for the Online exam), and the QuickBooks and real estate course titles, which a college issues.
+    "IAI": (("International Association for Identification", "International Association for Identification (IAI)"), {
+        "Certified Bloodstain Pattern Analyst (CBPA)": ("all", ["Bloodstain Pattern Examiner Certification"]),
+        "Certified Crime Scene Investigator (CCSI)": ("all", ["Crime Scene Certification"]),
+        "Certified Footwear Examiner (CFE)": ("all", ["Footwear Certification"]),
+        "Certified Forensic Photographer (CFP)": ("all", ["Forensic Photography & Imaging Certification"]),
+        "Certified Latent Print Examiner (CLPE)": ("all", ["Latent Print Certification"]),
+    }),
+    "Intuit": (("Intuit", "Intuit, Inc."), {
+        "Intuit Certified Bookkeeping Professional": ("all", ["Intuit Certified Bookkeeping Professional"]),
+        "Intuit QuickBooks Certified User": ("all", ["Intuit QuickBooks Certified User"]),
+    }),
+    "DRE": (("California Department of Real Estate",), {
+        "California Real Estate Broker License": ("all", ["Real Estate Broker License"]),
+        "California Real Estate Salesperson License": ("all", ["Real Estate Salesperson"]),
+    }),
+}
+HAND_ISSUER = {sp: fam for fam, (spellings, _) in HAND.items() for sp in spellings}
+HAND_TITLE = {ut: fam for fam, (_, table) in HAND.items() for ut in table}
+
 
 def catalog_vendor():
-    """The catalog's CompTIA, Cisco and Microsoft rows, by (issuer, name); a name listed twice keeps its lowest id."""
+    """The catalog's CompTIA, Cisco, Microsoft, FAA and HAND rows (each issuer's spellings as one), by (issuer, name); a name listed twice keeps its lowest id."""
     rows = json.loads(CATALOG.read_text(encoding="utf-8"))["credentials"]
     out = {}
     for r in sorted(rows, key=lambda r: (len(r["id"]), r["id"])):
-        if r.get("issuer") in VENDOR_ISSUERS:
-            out.setdefault((r["issuer"], r["name"]), {"id": r["id"], "name": r["name"], "issuer": r["issuer"]})
+        issuer = FAA_ISSUER if r.get("issuer") in FAA_ISSUER_SPELLINGS else HAND_ISSUER.get(r.get("issuer"), r.get("issuer"))
+        if issuer in VENDOR_ISSUERS + (FAA_ISSUER,) + tuple(HAND):
+            out.setdefault((issuer, r["name"]), {"id": r["id"], "name": r["name"], "issuer": issuer})
     return out
 
 
@@ -191,15 +351,20 @@ def build():
 
     for r in rows:
         ut = r.get("ut") or ""
-        if ut in VENDOR:
-            rule, wanted = VENDOR[ut]
-            issuer = next(v for v in VENDOR_ISSUERS if ut.startswith(v))
+        if ut in VENDOR or ut in FAA or ut in HAND_TITLE:
+            if ut in HAND_TITLE:
+                issuer = HAND_TITLE[ut]
+                rule, wanted = HAND[issuer][1][ut]
+            else:
+                rule, wanted = VENDOR[ut] if ut in VENDOR else FAA[ut]
+                issuer = FAA_ISSUER if ut in FAA else next(v for v in VENDOR_ISSUERS if ut.startswith(v))
             ids, unresolved = [], []
             for name in wanted:
                 c = vendor.get((issuer, name))
                 if c:
                     certs[c["id"]] = {"code": None, "name": c["name"], "catalog_name": c["name"],
-                                      "issuer": issuer, "family": issuer}
+                                      "issuer": HAND[issuer][0][-1] if issuer in HAND else issuer,
+                                      "family": "FAA" if issuer == FAA_ISSUER else issuer}
                     if c["id"] not in ids:
                         ids.append(c["id"])
                 else:
@@ -269,7 +434,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},

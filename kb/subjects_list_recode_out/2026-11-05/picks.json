@@ -1,0 +1,878 @@
+{
+  "Administration of Justice": {
+    "code": "CRIM",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Agricultural Business and Related Services": {
+    "code": "AGAB",
+    "note": "AGAB: Sam, Open Asks Sheet 99 card 3 (2026-10-19, agab): Agricultural Business and Related Services takes AGAB, the C-ID family code AG-AB; its identity AUTB M1006 Supervision and Management in Agriculture re-keyed to AGAB M1006 (kb/agab_remint_out/2026-10-19/). AUTB M1071 Import Body Customizing returned to Auto Body Technology on his Open Asks Sheet 101 card 1 (2026-10-19 22:38Z, autobody): one discipline field, no re-key (kb/receipts/csr_m1071_autobody_2026-10-19_s427.sql).",
+    "by": "csr-s427@bot",
+    "at": "2026-10-19T22:15:43.263004+00:00"
+  },
+  "Agricultural Production": {
+    "code": "AGPR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Agriculture": {
+    "code": "AGRI",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Air Conditioning, Refrigeration, Heating": {
+    "code": "HVAC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Anthropology": {
+    "code": "ANTH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Architecture": {
+    "code": "ARCH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Art": {
+    "code": "ARTS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Art History": {
+    "code": "ARTH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Artificial Intelligence": {
+    "code": "CSIS",
+    "note": "changed to CSIS for most direct alignment with discipline",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-04T21:25:48.575554+00:00"
+  },
+  "Astronomy": {
+    "code": "ASTR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Auto Body Technology": {
+    "code": "AUTB",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Automotive Technology": {
+    "code": "AUTO",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Aviation": {
+    "code": "AVIA",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Barbering": {
+    "code": "BARB",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Biological Sciences": {
+    "code": "BIOL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Biotechnology": {
+    "code": "BIOT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Broadcasting Technology": {
+    "code": "BRDC",
+    "note": "changed for most direct alignment with discipline",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-04T21:27:22.421898+00:00"
+  },
+  "Building Codes and Regulations": {
+    "code": "CBIT",
+    "note": "changed to align with discipline",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-04T22:54:06.687711+00:00"
+  },
+  "Business": {
+    "code": "BUSI",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Cabinet Making": {
+    "code": "WWKC",
+    "note": "changed to align with Woodworking Furniture Making",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-04T22:56:47.823661+00:00"
+  },
+  "Carpentry": {
+    "code": "CARP",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Chemistry": {
+    "code": "CHEM",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Chicano Studies": {
+    "code": "ETHN",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Child Development/Early Childhood Education": {
+    "code": "CDEV",
+    "note": "Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Commercial Art": {
+    "code": "ARTD",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Commercial Music": {
+    "code": "MUSC",
+    "note": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix CMUS has zero COCI adoption; MUSC is the established canonical. Revisit if CCN CMUS lands. Ref: CSR0013 sibling.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Communication Studies": {
+    "code": "COMM",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Computer Information Systems": {
+    "code": "ITIS",
+    "note": "Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Computer Science": {
+    "code": "COMP",
+    "note": "Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "authority-recode-s224@bot",
+    "at": "2026-09-03T20:34:21.060362+00:00"
+  },
+  "Construction Management": {
+    "code": "CNSM",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Construction Technology": {
+    "code": "CNST",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Cosmetology": {
+    "code": "COSM",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Counseling": {
+    "code": "COUN",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Court Reporting": {
+    "code": "CTRP",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Culinary Arts/Food Technology": {
+    "code": "CULN",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Dance": {
+    "code": "DANC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Dental Technology": {
+    "code": "DENT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Diagnostic Medical Technology": {
+    "code": "SONO",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Diesel Mechanics": {
+    "code": "DIES",
+    "note": "changed code to better align with local discipline use",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-04T23:59:34.930492+00:00"
+  },
+  "Dietetics/Nutritional Science": {
+    "code": "NUTR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Digital Fabrication Technician": {
+    "code": "MAKR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Disabled Student Programs and Services (DSPS)": {
+    "code": "DSPS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Drafting/CADD": {
+    "code": "DRAF",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Drama/Theater Arts": {
+    "code": "THTR",
+    "note": "Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "map@rccd.edu",
+    "at": "2026-06-12T17:18:32.914671+00:00"
+  },
+  "Earth Science": {
+    "code": "GEOL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Economics": {
+    "code": "ECON",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Education": {
+    "code": "EDUC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Electricity": {
+    "code": "ELEC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Electromechanical Technology": {
+    "code": "ELMT",
+    "note": "keep this as the best alternative",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-04T23:14:22.680344+00:00"
+  },
+  "Electronic Technology": {
+    "code": "ELCT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Electronics": {
+    "code": "ELET",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Emergency Medical Technologies": {
+    "code": "EMST",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Engineering": {
+    "code": "ENGR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Engineering Technology": {
+    "code": "ENGT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "English": {
+    "code": "ENGL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "English as a Second Language": {
+    "code": "ESOL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "English as a Second Language (ESL): Noncredit": {
+    "code": "ESLN",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Environmental Technologies": {
+    "code": "ENVS",
+    "note": "changed code to better align with local discipline use",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:02:38.40474+00:00"
+  },
+  "Equine Science": {
+    "code": "AGEQ",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Ethnic Studies": {
+    "code": "ETHS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Family and Consumer Studies/ Home Economics": {
+    "code": "FCSH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Fashion and Related Technologies": {
+    "code": "FASH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Film and Media Studies": {
+    "code": "FTVE",
+    "note": "Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "authority-recode-s224@bot",
+    "at": "2026-09-03T20:34:21.060362+00:00"
+  },
+  "Fire Technology": {
+    "code": "FIRE",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Foreign Languages": {
+    "code": "FLNG",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Forestry/Natural Resources": {
+    "code": "ENVR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Furniture Making": {
+    "code": "WWKF",
+    "note": "changed code to better align with cabinet making",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:05:20.086993+00:00"
+  },
+  "Geography": {
+    "code": "GEOG",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Gerontology": {
+    "code": "GERO",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Graphic Arts": {
+    "code": "GFCD",
+    "note": "changed code to better align with local discipline use",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:07:33.419532+00:00"
+  },
+  "Gunsmithing": {
+    "code": "GSMI",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Health": {
+    "code": "HLTH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Health Care Ancillaries": {
+    "code": "HTEC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Health Information Technology": {
+    "code": "HEIT",
+    "note": "CS4 divergence recorded (Sam, 2026-07-10): official prefix HIT is 3 letters — CS1-invalid as a canonical; HEIT is the CS1-valid canonical. Permanent divergence unless CCN publishes a 4-letter form. Ref: CSR0013 sibling.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Heavy Duty Equipment Mechanics": {
+    "code": "HMDT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "History": {
+    "code": "HIST",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Humanities": {
+    "code": "HUMA",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Industrial Maintenance": {
+    "code": "IMNT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Industrial Relations": {
+    "code": "LABR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Industrial Safety": {
+    "code": "OSHA",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Industrial Technology": {
+    "code": "INDT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Instructional Design/Technology": {
+    "code": "EDTC",
+    "note": "CS5 note (2026-07-10): modal LINC (0.55) diverges deliberately — EDTC is the forward-looking code for the discipline. Ref: CSR0018 bless.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Interdisciplinary Studies": {
+    "code": "IDST",
+    "note": "keep this as the best alternative. Note that Interdisciplinary Studies is an MQ that allows any discipline  to teach it and is used for Supervised Tutoring courses offered through the Learning Centers at colleges.",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:09:04.613454+00:00"
+  },
+  "Interdisciplinary-Basic Skills: Noncredit": {
+    "code": "BSKL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Interior Design": {
+    "code": "INTD",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Journalism": {
+    "code": "JOUR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Kinesiology": {
+    "code": "KINE",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Law": {
+    "code": "LEGL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Learning Assistance or Learning Skills": {
+    "code": "LSKL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Legal Assisting": {
+    "code": "PARA",
+    "note": "changed code to better align with local discipline use",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:09:27.576054+00:00"
+  },
+  "Library Science": {
+    "code": "LIBR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Library Technology": {
+    "code": "LIBT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Licensed Vocational Nursing": {
+    "code": "VNRS",
+    "note": "changed code to better align with local discipline use",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:10:18.461193+00:00"
+  },
+  "Machine Tool Technology": {
+    "code": "MACH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Management": {
+    "code": "MGMT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Manufacturing Technology": {
+    "code": "MANU",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Marketing": {
+    "code": "MRKT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Masonry": {
+    "code": "CNMA",
+    "note": "keep this as the best alternative",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:10:38.228859+00:00"
+  },
+  "Mathematics": {
+    "code": "MATH",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Media Production": {
+    "code": "FMED",
+    "note": "Changed to better align with disciplines. Previously Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "slee@cccco.edu",
+    "at": "2026-09-03T20:34:21.060362+00:00"
+  },
+  "Mortuary Science": {
+    "code": "MORT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Multimedia": {
+    "code": "MULT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Music": {
+    "code": "MUSI",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Native American/American Indian Studies": {
+    "code": "ETHA",
+    "note": "keep this as the best alternative",
+    "by": "slee@cccco.edu",
+    "at": "2026-11-05T00:14:13.249811+00:00"
+  },
+  "Nursing": {
+    "code": "NRSR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Nutritional Science/Dietetics": {
+    "code": "FDNT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Occupational Therapy Assisting": {
+    "code": "OCTA",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Office Technologies": {
+    "code": "BSOT",
+    "note": "Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Older Adults: Noncredit": {
+    "code": "OLAD",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Ornamental Horticulture": {
+    "code": "HORT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Parent Education: Noncredit": {
+    "code": "PARN",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Pharmacy Technology": {
+    "code": "PHMT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Philosophy": {
+    "code": "PHIL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Photography": {
+    "code": "PHOT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Physical Sciences": {
+    "code": "PHSC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Physical Therapy Assisting": {
+    "code": "PTAS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Physics/Astronomy": {
+    "code": "PHYS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Plumbing": {
+    "code": "PLMB",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Political Science": {
+    "code": "POLS",
+    "note": "CS4 convergence applied (Sam, 2026-07-10): POSC -> POLS. Official CCN prefix POLS (144 official rows) + field modal; no rationale was on record for POSC. Re-mint receipt: kb/pols_remint_out/2026-07-10/ (293 ids: 86 M + 197 singletons + 10 Z; 3 stale pre-fold identity ghosts healed). Ref: kb/csr_out/2026-07-10 CSR0006.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T16:05:11.748313+00:00"
+  },
+  "Psychiatric Technician": {
+    "code": "NURP",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Psychology": {
+    "code": "PSYC",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Public Safety": {
+    "code": "PUBS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Radiological Technology": {
+    "code": "RADT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Reading": {
+    "code": "READ",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Real Estate": {
+    "code": "REAL",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Recreation Administration": {
+    "code": "RECR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Registered Veterinary Technician": {
+    "code": "VETT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Respiratory Technologies": {
+    "code": "RSPT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Restaurant Management": {
+    "code": "RMGT",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Robotics": {
+    "code": "ROBO",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Sign Language, American": {
+    "code": "SLNA",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Sign Language/ English Interpreting": {
+    "code": "SLNG",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Small Business Development": {
+    "code": "ENTR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Social Science": {
+    "code": "SOCS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Sociology": {
+    "code": "SOCI",
+    "note": "CS5 note (2026-07-10): data modal SOC fails CS1 (3 letters); SOCI is the official CCN prefix and the deliberate pick. Ref: CSR0012.",
+    "by": "csr-doctrine-s111@bot",
+    "at": "2026-07-10T15:58:36.55856+00:00"
+  },
+  "Speech Language Pathology": {
+    "code": "SLPA",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Stagecraft": {
+    "code": "THES",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Steamfitting": {
+    "code": "STMF",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Surgical Technology": {
+    "code": "SURG",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Transportation": {
+    "code": "TRNS",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Upholstering": {
+    "code": "THAR",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Vocational": {
+    "code": "VOCE",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Welding": {
+    "code": "WELD",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Women’s Studies": {
+    "code": "WMST",
+    "note": null,
+    "by": null,
+    "at": null
+  },
+  "Work Experience Instructors": {
+    "code": "WEXP",
+    "note": null,
+    "by": null,
+    "at": null
+  }
+}

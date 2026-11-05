@@ -58,7 +58,7 @@ view's *Confirm them* once led to a filter whose box saved only a changed code, 
 (2026-11-03). **The List is the workspace
 (2026-11-04, the List norms):** over the List, the engine's line of the subjects row in `kb/status/commons.json` (Open
 and Confirmed by a person set the List's own filters), and the Progress view's opened page folded behind *Hide the
-summary* (prefix `csl-pg-`). An MQ discipline's title opens a side panel: its local subjects (most used first, each
+summary* (prefix `csl-pg-`). A press on a row opens its edit row and its side panel: its local subjects (most used first, each
 share), the codes it shares (a collision, or shared by design; another MQ discipline's name opens its panel),
 *Confirm this pick* with its own status line, and the authority, note and identity codes folded. Guard
 `tests/csr_list_panel.test.js`. **The Reference view retired into the List (2026-11-04, SkyPawpaw):** its lists are
@@ -69,7 +69,18 @@ discipline's panel; the panel folds the CPL window and the C-ID and CCN courses 
 could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
 table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
 `csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
-the injected box CSS with it. **The Local subjects List** (Sam, 2026-11-03: *"yes on
+the injected box CSS with it. **The List as Sam's workspace (SkyJujube, 2026-11-04/05; the story in `docs/common_subject_code_tab_lessons.md`):** saves
+read the session at write time (`freshSess`) and a lapsed sign-in says so; a row press edits the row and moves the panel
+(engine `editByRow`); *Check alignment* audits a typed code (`edit.extra`; Exhibits carries its own); a code edit seeds
+the Note, keeping a code asks its reason; the panel's local codes show Colleges beside Courses (from
+`kb/discipline_local_courses/`, `kb/_build_discipline_local_courses.py`), name their courses, and carry *Use <code>*;
+a row saved since the scan ran leaves *A scan finding to confirm or note*; *What a Common SUBJ is*
+(`prototype/common_subj_explainer.html`). Every Commons view: *Hide the top*, side panels resize, both remembered.
+**Sync:** `phase-1e-sync.yml` is manual, and a code change must land with its re-mint: the 2026-11-05 00:15Z sync put
+Sam's new codes in the file ahead of the M-IDs, broke `tests/csr_trail_rules_test.py` on main, and was reverted. His
+saves stay in `kb_curation`; the re-mint run syncs and folds them in one window. **NEXT:** the re-mint dry-run that carries the evening's codes onto the M-IDs (WWKC, WWKF, GFCD, CBIT, DIES,
+CSIS and others; apply waits on Sam); ECONMT and Electricity's adult-education codes, his refile in Local subjects.
+**The Local subjects List** (Sam, 2026-11-03: *"yes on
 local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
 code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
 discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /
@@ -80,22 +91,23 @@ confirms synced to a committed file.
 
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
-the authority rule, and that is in no collision with another MQ discipline. Measured 2026-10-19: **121 of 147**
-(122 confirmed, Auto Body Technology in the AUTB collision). Confirmed alone would read 122; adding "no finding
-needing a judgment" would read 106.
+the authority rule, and that is in no collision with another MQ discipline. Measured 2026-11-04: **147 of 147**,
+every MQ discipline with courses complete (133 confirmed by a person, 14 by the nightly procedure or a session cohort;
+no collision). The Commons card's unconfirmed issue leaves its list at zero, by the builder's rule that an empty issue
+is not an issue.
 
-**The measured state, 2026-10-19:**
+**The measured state, 2026-10-19 (the rows the 2026-11-04 scan re-measured say so):**
 
 | what | measure |
 |---|---|
 | MQ disciplines in the handbook's index | 248 (19th edition, read 2026-05-20, re-validated 2026-07-10); 147 carry courses on the map, 101 carry none |
-| picks confirmed by a person | 122 of 147 (the live table holds 121 code rows, all Sam's; Physical Education Disabled Students is a seed-only override); 25 on the data's modal code, 13 of them on the authority's own code, which the nightly confirm takes from its first run; 0 through the validate stage, whose column left the tab (ruling 5) |
+| picks confirmed | 147 of 147 (2026-11-04): 133 by a person, 14 by the nightly procedure or a session cohort; 0 on the data's modal code unconfirmed |
 | on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
 | C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
 | identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
 | collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing returned to Auto Body Technology on Sam's Sheet 101 ruling (22:38Z), so no row sits off its code |
 | by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
-| the daily scan | 61 findings (2026-10-19, after the AGAB re-key and the M1071 ruling): 24 unconfirmed, 19 aligned, 13 weak mnemonics, 2 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; no collision |
+| the daily scan | 38 findings (2026-11-04): 19 aligned, 13 weak mnemonics, 3 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; none unconfirmed, no collision. The Commons card counts 17 to confirm or note and 93 stray identity codes on 305 identities |
 | procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
@@ -154,26 +166,25 @@ four known issues with owners, the procedures in force, and deep links into the 
 
 ## Sheet 99's six rulings (Sam, 2026-10-19), all applied
 
-Settled, on (the nightly authority confirm), agab, sitting (the 44 and Sheet 104's forestry and wine windows), hide
-and rename: each landed between S427 and S432. The full record, with receipts and run ids, moved verbatim to
-[`commons_lessons`](../../commons_lessons.md) (S433 section) when this file passed its 20 KB budget.
+Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577)*.
 
 ## NEXT
 
-**RULED and applied (Sam, Open Asks Sheet 107 cards 1-3, 13:08-13:09Z 2026-10-20, each his own call; S436, one
-re-key window, three receipts in apply order in ALIAS_MAPS):**
-- *move-both*: AGRI M10SY and M1104 to ENVR (`kb/forestry_wine_remint_out/2026-10-20-stragglers/`).
-- *rekey-twelve*: the twelve Foreign Languages identities to their language's code (`kb/fl_stray_remint_out/2026-10-20/`);
-  five new umbrella codes FLAM, FLHU, FLEG, FLKH, FLTU, also in `kb/foreign_language_subj4.json`.
-- *file-eight*: the 79 identities on ARCE, ARTF, NCAR (to ARTS), CSMT (COSM), BRDC (BCST), FLGH (AVIA), ARTP (PHOT)
-  and WELL (HLTH), each taking that discipline (`kb/_blank_stray_remint.py`, `kb/blank_stray_remint_out/2026-10-20/`;
-  all 79 gap-filled).
-- The allocator now treats every id an earlier re-mint used, and every id SkyView's hand-built layout still draws,
-  as taken: the first apply gap-filled six ids onto vacated slots the layout still drew, and CI's orbits lint read
-  six duplicate points (`er.skyview_ids()`, S436). Honors Linguistics went to FLNG M11LR instead of M10AF.
+**APPLIED: the Subjects List recode (SkyKumquat, 2026-11-05; Sam's "Apply now" in session ~01:58Z).** The eleven
+codes Sam saved on the List on 2026-11-04 landed with their identities in one window (`kb/_subjects_list_recode.py`,
+receipt `kb/subjects_list_recode_out/2026-11-05/`, in ALIAS_MAPS): CSAI to CSIS, BCST to BRDC, CNSR to CBIT, CNSC to
+WWKC, AUTD to DIES, ESCI to ENVS, CSTF to WWKF, GRAF to GFCD, PLGL to PARA, NRSV to VNRS, and Media Production FTVE to
+FMED, which ends its 2026-09-03 fan-in with Film (C-ID's code for those courses stays FTVE; his note names it). 2,389
+ids: 2,024 kept their number, 360 gap-filled past slots earlier re-mints used, one returned to its own id. P3 by hash:
+live `kb_curation` equaled the committed overlay over 1,409 keys. Fold-verify 7 (the by-design residue);
+`subject_collision_signal` 113 to 115 (FMED M1166 and M1167, audio courses a curator filed under Media Production whose
+file discipline says Film). Two blank-discipline rows (BRDC M1061 *Media Literacy*, GFCD M1051 *Introduction to
+Virtual Production*) lost the discipline the old code implied and joined the blanks worklist. After the merge:
+`supabase-rekey.yml` with the receipt, the read-back, then `daily-dashboard.yml`. **Watch:** CSIS and ENVS are local
+codes `kb/reference/subject_discipline_map.json` maps to Computer Information Systems and Biological Sciences, so any
+blank-discipline row minted on them later would be edge-filled wrong; none exists today.
 
-Every gate passed on all three (P3 fresh reads of 2, 9 and 39 live rows). After the merge: `supabase-rekey.yml` once
-per receipt, in that order, then the read-back.
+**Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 
 **For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
 BRDC M10AV into JOUR M1016 *Broadcast Journalism*, BRDC M10BF into FTVE M1144, and three noncredit drawing and painting

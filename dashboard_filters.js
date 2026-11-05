@@ -330,6 +330,74 @@ function resetFilters() {
         if (d && d.tab === 'activities-projects') applyQuickstartHint(d.hint);
     });
 
+    // ── The tab's address (every view has an address, 2026-11-04) ──
+    // The Activities tab has no view words; the two closed-list selects in its
+    // actions bar are what a person switches between: Sprint (one sprint's
+    // cards) and Responsible Lead (one lead's work). Each is an address part,
+    // a lower-case slug of the option: #activities-projects/sprint/veteran,
+    // #activities-projects/lead/samuel-lee, or both, sprint first. Search is
+    // free text and stays out. card_actions.js owns #activities-projects/
+    // card-<id> and /activity-<id> (a card to scroll to), and the side menu's
+    // section links write /metrics; neither is a filter, so neither is read.
+    // This file loads before cpl_session.js, so the pair is wired as the tab
+    // activates (tabs.js fires it once both have loaded) and on every later
+    // visit. Nothing is written to the address or kept in storage.
+    var VIEW_TAB = 'activities-projects';
+    function viewSlug(v) { return String(v || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+    var VIEW_SELECTS = [
+        ['sprint', 'filterSprint', function (v) { return viewSlug(String(v || '').replace(/\s*sprint\s*$/i, '')); }],
+        ['lead', 'filterLead', viewSlug]
+    ];
+    function viewReport() {
+        var parts = [];
+        VIEW_SELECTS.forEach(function (f) {
+            var el = document.getElementById(f[1]);
+            if (el && el.value) parts.push(f[0], f[2](el.value));
+        });
+        if (parts.length) return VIEW_TAB + '/' + parts.join('/');
+        // No filter: a card or section link in the address is still what is on
+        // screen, so it is kept as the keeper would keep it; a stale filter
+        // address is not.
+        var h = String(location.hash || '').replace(/^#/, '');
+        var second = h.indexOf(VIEW_TAB + '/') === 0 ? h.slice(VIEW_TAB.length + 1).split('/')[0] : '';
+        return second && second !== 'sprint' && second !== 'lead' ? h : VIEW_TAB;
+    }
+    function wireViewAddress() {
+        /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
+        if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("activities-projects", viewReport);
+    }
+    // An arrival is read on a visit: the first, one after another tab, or a
+    // new address. The header's unlock re-fires cpl-tab-activated for the
+    // open tab; that is no visit, so a filter picked since stays.
+    var viewAway = true, viewSeenHash = null;
+    function arriveView() {
+        var h = String(location.hash || ''), visit = viewAway || h !== viewSeenHash;
+        viewAway = false; viewSeenHash = h;
+        if (!visit) return false;
+        var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("activities-projects") : null;
+        if (!a || /^(card|activity)-/.test(a[0] || '')) return false;
+        var changed = false;
+        for (var i = 0; i + 1 < a.length; i += 2) {
+            VIEW_SELECTS.forEach(function (f) {
+                if (a[i] !== f[0]) return;
+                var el = document.getElementById(f[1]);
+                if (!el) return;
+                for (var j = 0; j < el.options.length; j++) {
+                    var v = el.options[j].value;
+                    if (v && f[2](v) === a[i + 1]) { if (el.value !== v) { el.value = v; changed = true; } return; }
+                }
+            });
+        }
+        if (changed) applyFilters();
+        return changed;
+    }
+    wireViewAddress();
+    window.addEventListener('cpl-tab-activated', function (e) {
+        wireViewAddress();
+        if (e && e.detail && e.detail.tab === VIEW_TAB) arriveView();
+        else viewAway = true;
+    });
+
     // Session 97: the filter-bar "📄 Master Report" button was retired — the
     // Master Report is now a Report-Type option inside the Custom Report modal
     // (report_generator.js). The bar-level "📎 Attach Doc" button was retired

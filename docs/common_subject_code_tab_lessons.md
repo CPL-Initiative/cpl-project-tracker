@@ -574,3 +574,65 @@ count. "Discipline" reads "MQ Discipline" (Sam: to keep the two grains apart). T
 SUBJ check's six ruled sharings reported as collisions, the pick's reviewer taken from a later note, and the C-ID index
 skipping descriptors ending in " X". Lessons and the measured state: `docs/commons_lessons.md` (S425) and
 `docs/reference/lanes/common-subjects-reference.md`.
+
+## 2026-11-04/05 — SkyJujube: the List as Sam's workspace (moved from the lane verbatim, then the evening's lessons)
+
+**Sam's working pass on the codes (SkyJujube, 2026-11-04):** (1) *saves read the session when they write*
+(`freshSess`, through `cpl_session.js`): the tab had kept its load-time token, so after a laptop slept every code save
+came back 401 under a signed-in tag; a lapsed sign-in now says so, with *Sign in again*. (2) The List sets the engine's
+`editByRow`: Edit beside the select box, a row press opens its edit row and moves the panel to it (no cell drawers), a
+landed save closes the row, and the edit row holds to the table's visible box. (3) A local code's count names its
+courses (tooltip; a press lists them) from `kb/discipline_local_courses/`, built by
+`kb/_build_discipline_local_courses.py` over the seed's walk (rebuild with the seed), with *Refile <code> in Local
+subjects*. (4) *Check the N changes made this visit* runs the SUBJ check on the changed rows; the scan's rules stay in
+`kb/_csr_trail.py`. (5) The panel's local codes carry Colleges beside Courses, sorted by colleges; a code edit fills an
+empty Note with *changed code to better align with local discipline use*; keeping a code asks its reason (*kept X:*);
+*Check alignment* (engine `edit.extra`) audits the typed code and recommends. **Found:** ECONMT (Los Angeles Trade Technical, 55, TOP 0952.20) is electrician coursework filed under
+Electromechanical, and Electricity's top local codes are adult-education ones (AED, APED, HSED):
+DR-25 calls through Local subjects; a move is a re-mint. Guards `tests/csr_list.test.js` (6b, 6c, 8, 9, 9b),
+`tests/csr_list_panel.test.js` (5b).
+
+**Lessons, 2026-11-05.** (1) A tab that copies the session at load keeps a dead token after a laptop sleeps; read it at
+write time through the keeper, and say *lapsed* where the tag sat. Every code save that evening came back 401 while the
+tag read signed in. (2) A count of courses measures one college's catalog; count colleges beside it (Diesel: DCDT 24
+courses at one college, DIES 14 at four). (3) "Answered this visit" forgets on reload; a save's own time against the
+scan's run is the durable test. (4) The scan reads the reference file, which only the manual sync updates: saves are
+invisible to it until a session dispatches `phase-1e-sync.yml`. (5) The Common SUBJ, in Sam's framing: four-letter codes
+assigned to every MQ discipline (248 listed, 147 with courses), adopted from C-ID and CCN where they exist; the KB note
+`reference-common-vs-local-subj-and-discipline-cardinality` section 5 holds it.
+
+## Moved from the lane (S577): Sheet 99's six rulings, all applied
+
+## Sheet 99's six rulings (Sam, 2026-10-19), all applied
+
+Settled, on (the nightly authority confirm), agab, sitting (the 44 and Sheet 104's forestry and wine windows), hide
+and rename: each landed between S427 and S432. The full record, with receipts and run ids, moved verbatim to
+[`commons_lessons`](../../commons_lessons.md) (S433 section) when this file passed its 20 KB budget.
+
+## Moved from the lane (S577): Sheet 107
+
+**RULED and applied (Sam, Open Asks Sheet 107 cards 1-3, 13:08-13:09Z 2026-10-20, each his own call; S436, one
+re-key window, three receipts in apply order in ALIAS_MAPS):**
+- *move-both*: AGRI M10SY and M1104 to ENVR (`kb/forestry_wine_remint_out/2026-10-20-stragglers/`).
+- *rekey-twelve*: the twelve Foreign Languages identities to their language's code (`kb/fl_stray_remint_out/2026-10-20/`);
+  five new umbrella codes FLAM, FLHU, FLEG, FLKH, FLTU, also in `kb/foreign_language_subj4.json`.
+- *file-eight*: the 79 identities on ARCE, ARTF, NCAR (to ARTS), CSMT (COSM), BRDC (BCST), FLGH (AVIA), ARTP (PHOT)
+  and WELL (HLTH), each taking that discipline (`kb/_blank_stray_remint.py`, `kb/blank_stray_remint_out/2026-10-20/`;
+  all 79 gap-filled).
+- The allocator now treats every id an earlier re-mint used, and every id SkyView's hand-built layout still draws,
+  as taken: the first apply gap-filled six ids onto vacated slots the layout still drew, and CI's orbits lint read
+  six duplicate points (`er.skyview_ids()`, S436). Honors Linguistics went to FLNG M11LR instead of M10AF.
+
+Every gate passed on all three (P3 fresh reads of 2, 9 and 39 live rows). After the merge: `supabase-rekey.yml` once
+per receipt, in that order, then the read-back.
+
+## 2026-11-05 SkyKumquat (S577): the Subjects List recode
+
+Sam saved eleven codes on the List on 2026-11-04; the 00:15Z sync landed them alone and was reverted (#2787). This run
+built the keep-number recode, rehearsed the whole apply locally, and applied it on Sam's "Apply now" (#2790): 2,389 ids,
+the seed with his notes, the chain, SkyView's layout, the generated outputs, then `supabase-rekey.yml` and a read-back
+(935 keys and 642 pointers on the new codes, none on an old one). Lessons: the handoff named `kb/_subj4_dryrun.py`'s
+report as the starting list, but that tool re-sequences (452 curated collisions read as an apply blocker); the prefix
+re-key had no blocker at all. CI found what local tests did not: the suggestions file and the ROEP mirror. The first had
+to be re-keyed, the second left alone because its records keep their ids. A `git clean` of `kb/` deleted the untracked
+planner once; commit a planner before rehearsing with it.

@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 12,
     "already_mapped": 48,
-    "dismissed": 8,
-    "scanned": 68
+    "dismissed": 9,
+    "scanned": 69
   },
   "candidates": [
     {
@@ -94,6 +94,14 @@
     }
   ],
   "dismissed": [
+    {
+      "key": "workflow:library-publish.yml",
+      "kind": "cadence",
+      "label": "Library — publish approved drafts",
+      "detail": "Scheduled: 41 */3 * * *",
+      "where": ".github/workflows/library-publish.yml",
+      "why": "Publishes the Library drafts a person approved on their card (Sam, 2026-11-05: \"Build it\"), every three hours or on dispatch. With the service key it reads only records whose regen carries a draft from the card and an approval (Replace the public copy, or a request to replace at once), writes each draft to library/<slug>/index.html with a receipt of the record's before-values (kb/receipts/library_publish/), commits both to main under the daily-dashboard concurrency group, then moves each record with an update guarded on the updated_at it read, so an edit made on the card since wins. It is the outward step, and it waits on a person's press: the decision to replace a public copy stays with whoever approves the draft, which the record keeps; the workflow only carries it out. Reversible: git revert of the page's commit, and the receipt's before-values (cpl_library_history files the prior row too)."
+    },
     {
       "key": "workflow:program-source-census.yml",
       "kind": "cadence",

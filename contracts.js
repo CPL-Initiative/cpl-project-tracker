@@ -80,6 +80,40 @@
     busy: false
   };
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens.
+     The contract picker shows only with more than one contract; a contract other than the first is the address,
+     #contracts/<id>. The first contract, the tab's default, is the bare #contracts. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("contracts", function () {
+    var first = state.contracts[0];
+    if (!state.activeId || !first || state.activeId === first.id) return "contracts";
+    return "contracts/" + encodeURIComponent(state.activeId);
+  });
+  /* The contract the address names, held until the register is read: it opens only when a loaded contract carries
+     that id; anything else is dropped and the tab keeps its own pick. */
+  var wantId = null;
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "contracts") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("contracts") : null;
+    wantId = a && a[0] ? a[0] : null;
+    applyWant();
+  }
+  function applyWant() {
+    if (!wantId || !state.contracts.length) return;
+    for (var i = 0; i < state.contracts.length; i++) {
+      if (state.contracts[i].id === wantId) {
+        if (state.activeId !== wantId) { state.activeId = wantId; state.open = {}; }
+        break;
+      }
+    }
+    wantId = null;
+  }
+
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ─────────
   function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
   function getSession() {
@@ -215,6 +249,7 @@
       state.reports = res[2] || [];
       state.docs = res[3] || [];
       if (!state.activeId && state.contracts.length) state.activeId = state.contracts[0].id;
+      applyWant();
       state.loading = false;
     }).catch(function (err) {
       state.loading = false;
@@ -1178,6 +1213,7 @@
     // exact friction the header control exists to remove.
     var nowSignedIn = !!reviewerToken();
     var nowCred = (nowSignedIn ? "jwt" : "") + "|" + ((getSession() && getSession().teamPass) || "");
+    arrive();
     if (booted && nowCred === state.cred) { render(); return; }
     state.cred = nowCred;
     booted = true;

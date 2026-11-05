@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-03T06:18:40Z",
-  "count": 2307,
+  "_synced_at": "2026-11-04T17:00:22Z",
+  "count": 2333,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3101,6 +3101,12 @@
       "unified_title": "Intermediate American Sign Language 2",
       "supersedes": "American Sign Language: Level 2 Intermediate"
     },
+    "ASL 052 American Sign Language III": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "American Sign Language III"
+    },
     "ASL 1: Beginning American Sign Language": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -4522,6 +4528,18 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Fundamentals of Computer-Aided Drafting"
+    },
+    "CARP 207 Math for Construction Trades": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Math for Construction Trades"
+    },
+    "CARP 223 OSHA 30 Hr. Construction Safety Training": {
+      "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)"
     },
     "CDA National Credentialing Program--Preschool": {
       "issuing_agency": "Council for Professional Recognition",
@@ -7058,6 +7076,12 @@
       "unified_title": "Water Supply",
       "supersedes": "Credit by Exam"
     },
+    "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Waterworks Mathematics Advanced"
+    },
     "Credit by Exam - CalAPS - Fire Protection Organization": {
       "issuing_agency": "CalAPS",
       "reviewed_by": "slee@cccco.edu",
@@ -8050,6 +8074,12 @@
       "reviewed_at": "2026-07-12T19:59:26.60741+00:00",
       "unified_title": "ECON C2002: Principles of Macroeconomics"
     },
+    "EET 203 Basic Electricity": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Basic Electricity"
+    },
     "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -8528,6 +8558,12 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T16:33:31.610455+00:00",
       "unified_title": "Epic Games Game Design Professional Certificate"
+    },
+    "Examination for ARHS 2": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Art of the Ancient Americas"
     },
     "Examination for FREN 1A": {
       "issuing_agency": "California Community Colleges",
@@ -9205,6 +9241,12 @@
       "reviewed_at": "2026-10-31T16:34:31.159053+00:00",
       "unified_title": "Esthetician Training"
     },
+    "GEOG 1 Physical Geology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Introduction to Physical Geography"
+    },
     "GERMAN 1: Beginning German": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -9230,6 +9272,24 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "GIS Professional (GISP) Certification"
+    },
+    "GRART 32 Digital Documents (Adobe InDesign)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Digital Documents (Adobe InDesign)"
+    },
+    "GRART 36 Adobe Photoshop Basics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Adobe Photoshop Basics"
+    },
+    "GRART 37 Advanced Photoshop": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Photoshop Advanced"
     },
     "Game Design HS-CNUSD": {
       "issuing_agency": "Corona-Norco Unified School District",
@@ -10027,6 +10087,42 @@
       "reviewed_by": "cer-ib-fold-skyinkberry@bot",
       "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB World Religions SL"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 1": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 1"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 2": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 2"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 3": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 3"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 4": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 4"
+    },
+    "IBEW- Inside Wireman, Apprenticeship Year 5": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Year 5"
+    },
+    "IBEW- Inside Wireman, Apprenticeship- Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Journeyperson"
     },
     "IBEW- Power Lineman Apprenticeship Year 1": {
       "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
@@ -12579,6 +12675,30 @@
       "unified_title": "Computer Basics",
       "supersedes": "Portfolio Review"
     },
+    "Portfolio - Basic Food Preparation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Basic Food Preparation"
+    },
+    "Portfolio - Cost Control for Food Service Organizations": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Cost Control for Food Service Organizations"
+    },
+    "Portfolio - Intermediate Food Preparation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Food Preparation Intermediate"
+    },
+    "Portfolio - Introduction to the Hospitality Industry": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+      "unified_title": "Introduction to the Hospitality Industry"
+    },
     "Portfolio AJ 54": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -12645,11 +12765,47 @@
       "reviewed_at": "2026-10-21T13:18:47.359269+00:00",
       "unified_title": "International Business"
     },
+    "Portfolio for BUSN 40": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Introduction to Business"
+    },
+    "Portfolio for BUSN 48": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Human Relations in Organizations"
+    },
     "Portfolio for BUSN 52": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T17:03:30.790618+00:00",
       "unified_title": "Business Communication"
+    },
+    "Portfolio for BUSN 58": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Small Business Management"
+    },
+    "Portfolio for BUSN 61": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "QuickBooks Accounting"
+    },
+    "Portfolio for BUSN 65": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Federal Income Tax Accounting"
+    },
+    "Portfolio for BUSN 88": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
+      "unified_title": "Human Resources Management"
     },
     "Portfolio for ENG 19A": {
       "issuing_agency": "California Community Colleges",

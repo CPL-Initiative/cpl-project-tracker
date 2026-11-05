@@ -115,6 +115,52 @@
   };
   var SECTIONS = [];
 
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address applyArrival() below opens.
+     Each section has its own row of filter words, and their words never overlap, so the address is a set of words,
+     one per section off its default, in any order: nc-learning-partners/outreach (an opportunity kind) ·
+     nc-learning-partners/tier-1 (a use-case tier) · nc-learning-partners/needs-research or /all-questions (the open
+     questions; Needs Input is the default) · combined, nc-learning-partners/outreach/tier-1/needs-research. The bare
+     tab is every default. One word covers the usual case, a single filter, and no word can name the wrong section. */
+  var NC_TAB = "nc-learning-partners";
+  var Q_WORDS = { open: "needs-input", verify: "needs-research", all: "all-questions" };
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(NC_TAB, function () {
+    var p = [];
+    if (state.opp && state.opp !== "all") p.push(encodeURIComponent(state.opp));
+    if (state.uc && state.uc !== "all") p.push("tier-" + encodeURIComponent(state.uc));
+    if (state.q && state.q !== "open" && Q_WORDS[state.q]) p.push(Q_WORDS[state.q]);
+    return p.length ? NC_TAB + "/" + p.join("/") : NC_TAB;
+  });
+  /* The address this visit already opened. A phrase unlock re-fires cpl-tab-activated on the same address, and
+     opening it again would undo a filter picked since; visiting another tab ends the visit. */
+  var arrivedFrom = null, pendingWords = null;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab !== NC_TAB) arrivedFrom = null;
+  });
+  function arrive() {
+    var h = String(location.hash || "");
+    if (h === arrivedFrom) return;
+    arrivedFrom = h;
+    pendingWords = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival(NC_TAB) : null;
+  }
+  /* Sets the three filters the address names once the register is read (an opportunity kind is checked against
+     the register's own kinds). A section the address leaves out takes its default; an address with no word the tab
+     knows, or a bare one, leaves the filters as they are. */
+  function applyArrival(d) {
+    var w = pendingWords;
+    pendingWords = null;
+    if (!w || !d) return;
+    var kinds = {};
+    (d.opportunities || []).forEach(function (o) { kinds[o.kind] = true; });
+    var opp = "all", uc = "all", q = "open", hit = false;
+    w.forEach(function (x) {
+      var m = /^tier-([1-4])$/.exec(x);
+      if (m) { uc = m[1]; hit = true; return; }
+      for (var k in Q_WORDS) if (Q_WORDS[k] === x) { q = k; hit = true; return; }
+      if (x !== "all" && Object.prototype.hasOwnProperty.call(kinds, x)) { opp = x; hit = true; }
+    });
+    if (hit) { state.opp = opp; state.uc = uc; state.q = q; }
+  }
+
   // ── DOM helpers ────────────────────────────────────────────────────────────
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -1459,6 +1505,9 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     ensureCss();
+    // The filter words the address names; applied now when the register is in hand, or once it is read.
+    arrive();
+    if (state.data) applyArrival(state.data);
     // Coming BACK to the tab: paint what we already have so there is no blank
     // flash, then re-pull register + notes + artifacts + backlog in the
     // background. This used to be a hard early-return, which meant a note a
@@ -1477,6 +1526,7 @@
       })
       .then(function (d) {
         state.data = d;
+        applyArrival(d);
         function done() {
           state.dorm = computeDormant(window.CPL_CREDENTIAL_REFERENCE);
           state.live = computeLive(window.CPL_CREDENTIAL_REFERENCE);

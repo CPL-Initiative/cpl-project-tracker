@@ -1,30 +1,30 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-03T15:33:10Z",
+ "written_at": "2026-11-05T03:15:04Z",
  "sources": {
-  "procedures_run": "2026-11-03T15:33:08Z",
-  "suggestions": "2026-11-03T06:20:57Z",
-  "statewide": "2026-11-03T06:17:43",
-  "audit": "2026-11-03T06:20:39+00:00"
+  "procedures_run": "2026-11-04T15:49:37Z",
+  "suggestions": "2026-11-05T03:13:55Z",
+  "statewide": "2026-11-05T03:10:51",
+  "audit": "2026-11-05T03:13:38+00:00"
  },
  "tiles": {
   "names": {
-   "n": 5493,
-   "of": 5508,
-   "waiting": 15
+   "n": 5519,
+   "of": 5582,
+   "waiting": 63
   },
   "aligned": {
-   "n": 1,
-   "of": 2
+   "n": 2,
+   "of": 31
   },
   "saved_not_folded": 0,
   "settled_since_run": 0
  },
  "steps": {
-  "Proposed": 2,
-  "Wording check": 0,
-  "Two issuers": 0,
+  "Proposed": 28,
+  "Wording check": 2,
+  "Two issuers": 1,
   "Conflict with the reference": 0
  },
  "colleges": [
@@ -34,6 +34,7 @@
   "Chabot College",
   "Chaffey College",
   "Citrus College",
+  "City College of San Francisco",
   "Clovis Community College",
   "Coastline Community College",
   "College of the Canyons",
@@ -41,6 +42,7 @@
   "College of the Sequoias",
   "Compton College",
   "Contra Costa College",
+  "Cuesta College",
   "Diablo Valley College",
   "El Camino College",
   "Feather River College",
@@ -52,9 +54,15 @@
   "Hartnell College",
   "Irvine Valley College",
   "Lake Tahoe Community College",
+  "Laney College",
+  "Las Positas College",
   "Lassen College",
   "Long Beach City College",
+  "Los Angeles City College",
+  "Los Angeles Harbor College",
   "Los Angeles Mission College",
+  "Los Angeles Pierce College",
+  "Los Angeles Southwest College",
   "Los Angeles Trade Technical College",
   "Los Angeles Valley College",
   "Madera College",
@@ -62,6 +70,7 @@
   "Merritt College",
   "MiraCosta College",
   "Mission College",
+  "Modesto Junior College",
   "Mt. San Antonio College",
   "Norco College",
   "Oxnard College",
@@ -77,9 +86,12 @@
   "Santiago Canyon College",
   "Sierra College",
   "Skyline College",
+  "Solano Community College",
   "Southwestern College",
   "Taft College",
+  "Ventura College",
   "Victor Valley College",
+  "West Los Angeles College",
   "West Valley College",
   "Woodland Community College",
   "Yuba College"
@@ -439,7 +451,36 @@
   "Villa Park High School"
  ],
  "held": [
-  {"raw": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [46], "title": "Intelligent Transportation Systems Electrician Apprentice 1", "issuer": "International Brotherhood of Electrical Workers (IBEW)", "from": "the course AEL 031", "ids": ["MAPICA-ITSA-1-001"], "art": [46], "could": [], "basis": "the course AEL 031", "same": false, "confidence": 0.8, "alternates": ["IBEW Intelligent Transportation Systems Apprenticeship — Year 1"], "aligned_id": "ELEC M10AC", "course": "AEL 031", "course_college": "Santiago Canyon College", "ambiguous": ["ELEC M10AC", "ELEC M10AO"]},
-  {"raw": "Peace Officer Standards and Training", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [33], "title": "POST Basic Academy", "issuer": "California Commission on Peace Officer Standards and Training (POST)", "from": "the classifier", "ids": ["MAPICI-POSA2-1-001"], "art": [33], "could": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54], "basis": "", "same": false, "courses_key": "teaches:POST Basic Academy", "confidence": 0.75, "under": ["ADJUS 101 - CA POST Training Record", "CA POST", "CA POST Academy SMCCD", "CA POST BASIC POLICE ACADEMY CERTIFICATE", "California Basic P.O.S.T. Peace Officer Certificate", "P.O.S.T Certificate or P.O.S.T Training Transcripts", "Peace Officer Basic Training (POST)", "Peace Officer Standardized Training Academy", "Peace Officer Standards and Training (POST)", "Peace Officer Standards and Training (POST) Basic Academy Certificate", "Peace Officer Standards and Training (POST) Basic Certificate", "Peace Officer Standards and Training Basic Academy Certificate (POST)", "Peace Officer Standards and Training Basic Academy Certificate (POST) ", "Peace Officer Standards Training (POST) Basic Academy", "POST - Peace Officer Standards and Training", "POST - Peace Officer Standards and Training ", "POST - Peace Officer Standards and Training - Basic Academy Certificate", "POST - Peace Officer Standards and Training - Basic Academy Certificate plus verified 1 year full time employment as a Peace Officer", "POST Academy  effective FALL 2025", "POST Academy prior Fall 2025", "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy"], "under_count": 21, "exists": true, "trainers": ["varies by academy"]}
+  {"raw": "EET 222 Photovaltaic NABCEP for Solar Associates", "step": "Proposed", "why": "the classifier is unsure (0.78)", "colleges": [26], "title": "Photovoltaic NABCEP Test Preparation", "issuer": "North American Board of Certified Energy Practitioners (NABCEP)", "from": "the course E/ET 222", "ids": ["MAPICI-E2PN-1-001"], "art": [26], "could": [], "basis": "the course E/ET 222", "same": false, "confidence": 0.78, "alternates": ["NABCEP PV Associate"], "aligned_id": "ELCT M10EK", "course": "E/ET 222", "course_college": "Laney College"},
+  {"raw": "Examination for ARHS 1", "step": "Proposed", "why": "the classifier is unsure (0.82)", "colleges": [27], "title": "Introduction to Art History", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFA1-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.82},
+  {"raw": "Examination for ARHS 3", "step": "Proposed", "why": "the classifier is unsure (0.83)", "colleges": [27], "title": "Arts of Africa, Oceania, and Indigenous North America", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFA3-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.83, "under": ["Arts of Africa, Oceania, and Indigenous North America", "Credit by Exam: Arts of Africa, Oceania, and Indigenous North America"], "under_count": 2, "exists": true},
+  {"raw": "Examination for ARHS 7", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [27], "title": "Modern Art History", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFA7-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.8},
+  {"raw": "Examination for ARHS 8", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [27], "title": "Asian Art History", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFA8-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.8},
+  {"raw": "Examination for ARTH C1100", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [27], "title": "Survey of Art from Prehistory to the Medieval Era", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFAC-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.8, "under": ["Credit by Exam- Survey of Art from Prehistory to the Medieval Era"], "under_count": 1, "exists": true},
+  {"raw": "Examination for ARTH C1200", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [27], "title": "Survey of Art: Renaissance to Contemporary", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFAC1-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.8, "under": ["Survey of Art from the Renaissance to Contemporary (CCN: ARTH C1200)"], "under_count": 1, "exists": true},
+  {"raw": "Examination for KIN 5", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [27], "title": "Sports Management", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFK5-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.8},
+  {"raw": "Examination for KIN 6", "step": "Proposed", "why": "the classifier is unsure (0.70)", "colleges": [27], "title": "Personal Training", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-EFK6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.7, "under": ["HLTH 3: Personal Training"], "under_count": 1, "exists": true},
+  {"raw": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [55], "title": "Intelligent Transportation Systems Electrician Apprentice 1", "issuer": "International Brotherhood of Electrical Workers (IBEW)", "from": "the course AEL 031", "ids": ["MAPICA-ITSA-1-001"], "art": [55], "could": [], "basis": "the course AEL 031", "same": false, "confidence": 0.8, "alternates": ["IBEW Intelligent Transportation Systems Apprenticeship — Year 1"], "aligned_id": "ELEC M10AC", "course": "AEL 031", "course_college": "Santiago Canyon College", "ambiguous": ["ELEC M10AC", "ELEC M10AO"]},
+  {"raw": "Industry for AJ 54", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Investigative Report Writing", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA5-1-001"], "art": [27], "could": [0, 10, 14, 18, 50, 58], "basis": "", "same": false, "courses_key": "teaches:Investigative Report Writing", "confidence": 0.6, "under": ["Credit by Portfolio AJ 54 Investigative Report Writing"], "under_count": 1, "exists": true},
+  {"raw": "Industry for AJ 60", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Criminal Law", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["Criminal Law ADJ 3 Cx"], "under_count": 1, "exists": true},
+  {"raw": "Industry for AJ 61", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Criminal Evidence", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA61-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["Criminal Evidence ADJ 4 Cx"], "under_count": 1, "exists": true},
+  {"raw": "Industry for AJ 63", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Criminal Investigation", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA62-1-001"], "art": [27], "could": [0, 6, 13, 14, 31, 32, 36, 42, 50, 61, 63], "basis": "", "same": false, "courses_key": "teaches:Criminal Investigation", "confidence": 0.6, "under": ["ADJU 212\tCriminal Investation - Credit by Exam", "ADM JUS 005 - Criminal Investigation", "Admin Just 6 CBE", "AJ 108 Criminal Investigation", "CRIM-08 Introduction to Investigation", "Criminal Investigation", "Criminal Investigation- HS CE(CRYROP)", "Criminal Investigations ADJ 13 Cx", "Discipline Exam - ADM JUS 005"], "under_count": 9, "exists": true},
+  {"raw": "Industry for AJ 64", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Police Patrol Operations", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA63-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
+  {"raw": "Industry for AJ 66", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Juvenile Procedures", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFA64-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["ADM JUS 008 - Juvenile Procedures", "Discipline Exam - ADM JUS 008", "Juvenile Procedures"], "under_count": 3, "exists": true},
+  {"raw": "Industry for BUSN 65", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Federal Income Tax Accounting", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFB6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["Portfolio for BUSN 65"], "under_count": 1, "exists": true},
+  {"raw": "Industry for FST 1", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Fire Protection Organization", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFF1-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["Credit by Exam - CalAPS - Fire Protection Organization", "FIRE 33 -Fire Protection Organization and System", "Fire Protection Org High School Articulation", "Fire Protection Organization", "Fire Protection Organizations FIRE 001 Cx", "FIRE-30 Fire Protection Organization - Credit by Exam", "FTC 101 Fire Protection Organization (A)", "FTC 101 Fire Protection Organization (P)"], "under_count": 8, "exists": true},
+  {"raw": "Industry for HORT 55", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Greenhouse, Nursery, and Garden Center Management", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH5-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
+  {"raw": "Industry for HORT 56", "step": "Proposed", "why": "the classifier is unsure (0.55)", "colleges": [27], "title": "Arboriculture/Urban Forestry", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH51-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.55},
+  {"raw": "Industry for HORT 57", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Landscape and Turfgrass Management", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH52-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
+  {"raw": "Industry for HORT 59", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Landscape Design", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH53-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6, "under": ["EHS 215\tLandscape Design - Credit by Exam", "EHS 215\tLandscape Design - Portfolio"], "under_count": 2, "exists": true},
+  {"raw": "Industry for HORT 60", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [27], "title": "Landscape Irrigation Systems", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFH6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.6},
+  {"raw": "Industry for KIN 6", "step": "Proposed", "why": "the classifier is unsure (0.55)", "colleges": [27], "title": "Personal Trainer", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPICI-IFK6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.55},
+  {"raw": "Noncredit for ARHS 6", "step": "Proposed", "why": "the classifier is unsure (0.82)", "colleges": [27], "title": "Museum & Gallery Techniques", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXN-NFA6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.82},
+  {"raw": "Noncredit for BUSN 33", "step": "Wording check", "why": "the classifier's title has a dangling word", "colleges": [27], "title": "The Fundamentals of Personal and Family Financial Planning", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXN-NFB3-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.82},
+  {"raw": "Peace Officer Standards and Training", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [41], "title": "POST Basic Academy", "issuer": "California Commission on Peace Officer Standards and Training (POST)", "from": "the classifier", "ids": ["MAPICI-POSA2-1-001"], "art": [41], "could": [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 29, 32, 35, 36, 37, 38, 39, 40, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 62, 64, 65, 66], "basis": "", "same": false, "courses_key": "teaches:POST Basic Academy", "confidence": 0.75, "under": ["ADJUS 101 - CA POST Training Record", "CA POST", "CA POST Academy SMCCD", "CA POST BASIC POLICE ACADEMY CERTIFICATE", "California Basic P.O.S.T. Peace Officer Certificate", "P.O.S.T Certificate or P.O.S.T Training Transcripts", "Peace Officer Basic Training (POST)", "Peace Officer Standardized Training Academy", "Peace Officer Standards and Training (POST)", "Peace Officer Standards and Training (POST) Basic Academy Certificate", "Peace Officer Standards and Training (POST) Basic Certificate", "Peace Officer Standards and Training Basic Academy Certificate (POST)", "Peace Officer Standards and Training Basic Academy Certificate (POST) ", "Peace Officer Standards Training (POST) Basic Academy", "POST - Peace Officer Standards and Training", "POST - Peace Officer Standards and Training ", "POST - Peace Officer Standards and Training - Basic Academy Certificate", "POST - Peace Officer Standards and Training - Basic Academy Certificate plus verified 1 year full time employment as a Peace Officer", "POST Academy  effective FALL 2025", "POST Academy prior Fall 2025", "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy"], "under_count": 21, "exists": true, "trainers": ["varies by academy"]},
+  {"raw": "Portfolio ARHS 6", "step": "Proposed", "why": "the classifier is unsure (0.78)", "colleges": [27], "title": "Museum & Gallery Techniques", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPCXS-PA6-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.78},
+  {"raw": "Portfolio for BUSN 33", "step": "Wording check", "why": "the classifier's title has a dangling word", "colleges": [27], "title": "The Fundamentals of Personal and Family Financial Planning", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPPRA-PFB3-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.85},
+  {"raw": "Portfolio for BUSN 45", "step": "Proposed", "why": "the classifier is unsure (0.82)", "colleges": [27], "title": "Entrepreneurship", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPPRA-PFB41-1-001"], "art": [27], "could": [], "basis": "", "same": false, "confidence": 0.82},
+  {"raw": "Portfolio for BUSN 56", "step": "Two issuers", "why": "a merge would join two issuers (California Community Colleges; the reference has American Council on Education (ACE))", "colleges": [27], "title": "Introduction to Management", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPPRA-PFB51-1-001"], "art": [27], "could": [30, 32, 33, 34, 35, 63], "basis": "", "same": false, "courses_key": "teaches:Introduction to Management", "confidence": 0.88, "under": ["Introduction to Management"], "under_count": 1, "exists": true, "trainers": ["U.S. Armed Forces"]}
  ]
 }

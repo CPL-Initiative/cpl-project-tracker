@@ -1,0 +1,383 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-04T15-49-39Z",
+ "run_id": "41861183700",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "d20f2caab9db",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+   "field": "unified_title_assignment",
+   "value": "Waterworks Mathematics Advanced",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::EET 203 Basic Electricity",
+   "field": "unified_title_assignment",
+   "value": "Basic Electricity",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::EET 203 Basic Electricity",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for ARHS 2",
+   "field": "unified_title_assignment",
+   "value": "Art of the Ancient Americas",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for ARHS 2",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GEOG 1 Physical Geology",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Physical Geography",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GEOG 1 Physical Geology",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 32 Digital Documents (Adobe InDesign)",
+   "field": "unified_title_assignment",
+   "value": "Digital Documents (Adobe InDesign)",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 32 Digital Documents (Adobe InDesign)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 36 Adobe Photoshop Basics",
+   "field": "unified_title_assignment",
+   "value": "Adobe Photoshop Basics",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 36 Adobe Photoshop Basics",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 37 Advanced Photoshop",
+   "field": "unified_title_assignment",
+   "value": "Photoshop Advanced",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 37 Advanced Photoshop",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 40",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Business",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 40",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 48",
+   "field": "unified_title_assignment",
+   "value": "Human Relations in Organizations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 48",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 58",
+   "field": "unified_title_assignment",
+   "value": "Small Business Management",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 58",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 61",
+   "field": "unified_title_assignment",
+   "value": "QuickBooks Accounting",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 61",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 65",
+   "field": "unified_title_assignment",
+   "value": "Federal Income Tax Accounting",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 65",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 88",
+   "field": "unified_title_assignment",
+   "value": "Human Resources Management",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 88",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+   "field": "unified_title_assignment",
+   "value": "Waterworks Mathematics Advanced",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::EET 203 Basic Electricity",
+   "field": "unified_title_assignment",
+   "value": "Basic Electricity",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::EET 203 Basic Electricity",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for ARHS 2",
+   "field": "unified_title_assignment",
+   "value": "Art of the Ancient Americas",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for ARHS 2",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GEOG 1 Physical Geology",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Physical Geography",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GEOG 1 Physical Geology",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 32 Digital Documents (Adobe InDesign)",
+   "field": "unified_title_assignment",
+   "value": "Digital Documents (Adobe InDesign)",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 32 Digital Documents (Adobe InDesign)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 36 Adobe Photoshop Basics",
+   "field": "unified_title_assignment",
+   "value": "Adobe Photoshop Basics",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 36 Adobe Photoshop Basics",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 37 Advanced Photoshop",
+   "field": "unified_title_assignment",
+   "value": "Photoshop Advanced",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GRART 37 Advanced Photoshop",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 40",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Business",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 40",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 48",
+   "field": "unified_title_assignment",
+   "value": "Human Relations in Organizations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 48",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 58",
+   "field": "unified_title_assignment",
+   "value": "Small Business Management",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 58",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 61",
+   "field": "unified_title_assignment",
+   "value": "QuickBooks Accounting",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 61",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 65",
+   "field": "unified_title_assignment",
+   "value": "Federal Income Tax Accounting",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 65",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 88",
+   "field": "unified_title_assignment",
+   "value": "Human Resources Management",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for BUSN 88",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

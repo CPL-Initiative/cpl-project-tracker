@@ -103,6 +103,21 @@ what made "who can see this" a question someone asked out loud.
 
 ## Status
 
+✅ **Two Claude Team accounts, one seat per person (S576, 2026-11-05).** The MAP team has its own account, so teammates
+stop sharing `map@rccd.edu` and every session knows who is driving. RCCD also set up a pilot account for the Chancellor's
+Office Division of Academic Affairs, which the CO may later offer to its other divisions. Sam's rulings: **Malone is an
+Owner** of the MAP team's account and runs it; the CO's repo is **CO-owned, with Sam and Malone as owners**; **CPLBrain
+is open to both the MAP team and the CO pilot** (*"The only PII is still public info, just not info we necessarily want
+published to the public without careful eyes on it--either from the MAP team or CO"*); `cpl_memory` and
+`cpl-program-records` stay closed to the pilot. Recommended, Sam to run: **transfer CPLBrain to `CPL-Initiative`** so
+Malone can manage its access (a collaborator on a personal repo cannot). The steps live in COBI's **Our Process** tab,
+*Getting set up* (Start here for Sam and Malone, a card per account, each person's first day; #2784, #2786); the runbooks
+and the files to copy in `CPLBrain/04-projects/map-team-claude-accounts/` and `04-projects/co-academic-affairs-pilot/`
+(CLAUDE.md draft, shared Project instructions, the `aa_memory` schema). **NEXT:** Malone confirms the managed-settings
+editor accepts a CLAUDE.md (if not, the per-machine `install-three-repo-check.ps1` stays); the managed three-repo check
+then replaces that script; the CO's repo gets its CLAUDE.md once its GitHub organization exists. Lessons:
+[`governance_lessons`](../../governance_lessons.md), *S576*.
+
 **The CLAUDE.md pass, decided (Open Asks Sheet 109, Sam, 13:26Z 2026-10-21, all five as recommended; applied S442 SkyManzanita).** 1 a light checkpoint tier (Rule 9 and `/checkpoint`); 2 the UI pass left `/checkpoint` and is one view a night (`scheduled_sessions.md`, *The UI pass*); 3 the auto-mark rule and the one hold list sit in `CLAUDE.md`'s decision-sheets bullet, and `scheduled_sessions.md` points at it; 4 the three places that assumed `list_sessions` name the fallback; 5 the funding vocabulary's quotes moved to [`funding_vocabulary`](../funding_vocabulary.md) (every ban stays inline) and the seven parked rows to [`mid_lifecycle`](../mid_lifecycle.md#parked-roadmap-rows), bringing `CLAUDE.md` under 60,000 bytes. The tag table stays the record: `CPLBrain/decision-sheets/claude-md-pass/2026-10-21-claude-md-pass.md`.
 
 ✅ **Vision 2030 goal figures: one set for both views (Sam, Open Asks Sheet 66 card 1, 2026-10-11 23:44Z, his own call: *One set, as proposed*; the same on Sheet 65).** `vision_2030_goals()` in `excel_to_dashboard.py` states the three goals once for the tab and the annual report (`CPL_DATA.vision2030`): Goal 1 measures students against 250,000 (22% on 2026-10-11) and names the credit recommendation count without a percent of the workgroup target (the bar read 1419.5% before); Goals 2 and 3 show `V2030_G2_PROGRESS`/`_CURRENT` and `V2030_G3_PROGRESS`/`_CURRENT` from `kb/dashboard_config.json`, **TBA** until Sam sets them, with no bar and no default standing in (the report had stated 55% and 60%, the tab a fixed 65%); Goal 2 keeps its active-colleges line. Owner of the Goal 2 and 3 figures: Sam, by setting the four keys. Guard: `tests/vision_2030_first_light_test.py` section 6.

@@ -1014,3 +1014,101 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
 - **A lane line can trail the code by a merge.** The lane said *SLO hints, to build* a day after #2684 shipped them
   (`kb/_build_exhibit_slo_neighbors.py`, the List's *Outcomes match:*). Grep the code a NEXT or *to build* line names
   before you build it.
+
+## SkyMalin (2026-11-04, S568, the CPL Queue routine): the FAA family in the cert link
+
+- **Pick the next family by measuring the gap.** The FAA held the most reference titles with no link (37), ahead of ASE's
+  local courses (10), ASME (8) and Autodesk (7). The catalog carried 48 FAA rows.
+- **Most FAA titles are courses.** 26 of the 37 are flight labs, ground schools and A&P coursework that a college
+  teaches toward a certificate, so they stay out, as *Microsoft Excel 1* does. The 11 that name a certificate or rating
+  now hold 15 certs (#2758).
+- **One issuer, two spellings.** The catalog lists *Federal Aviation Administration* and *... (FAA)*, and some names
+  under both. Lookup folds the two and keeps the lowest id. Read every issuer spelling before you build a hand table.
+- **Leave a title out instead of giving it a false reason.** The catalog has no plain CFI row. Marking CFI ("all", [])
+  would print *names no one certification*, which is false. CFI, the Part 137 certificate and the Part 107 + POST
+  bundle stay out of the table until the watch lists them.
+- **Next families by gap:** ASME's pipe-welder qualifications (8 titles, 1 catalog row), Autodesk (7, 9), NFPA (7, 1)
+  and NCCER (7, 13).
+
+
+## SkyAntennae (2026-11-04, S569, the CPL Queue routine): Autodesk, NCCER and ASME in the cert link
+
+- **Measure the catalog before you trust a handoff's count.** Handoff 569 gave NFPA one catalog row and ASME one; the
+  catalog holds 16 NFPA rows and 9 ASME. The gap list was right about the titles and wrong about the certs.
+- **One table, three issuers.** `HAND` in `kb/_build_exhibit_cert_links.py` carries each family's two catalog spellings
+  and its titles, so the next family is a dict entry and no new branch. 13 titles now hold 20 certs (#2759); the link
+  holds 232 titles to 200 certs.
+- **A level short of journey holds nothing.** NCCER's catalog rows are the credential (*Commercial Electrician*), so only
+  *Level 4/Journey Level* links; Levels 1 to 3 stay out. HVACR Level 1 and Welding Level 1 link because the catalog
+  lists those levels by name.
+- **A title whose exhibits name several issuers stays out.** *Fire Inspector 1* is filed under NFPA, but its raw
+  titles name ICC, SFT and Cal-JAC too. NFPA's Firefighter, Fire Officer and Instructor titles name a standard that
+  IFSAC or Pro Board certifies, and the catalog lists no NFPA certification for them.
+- **Next:** the ASME BPVC welder qualifications and the SFT fire titles wait on the credential watch listing them.
+
+## SkyFireworks (2026-11-04, S570, the CPL Queue routine): PMI, ICC, CDPH and EMSA in the cert link
+
+- **The gap by issuer, measured against the catalog.** Of the unlinked titles, the California Community Colleges'
+  1,334 are courses, and the apprenticeship committees (CTCNC 132, Southwest Carpenters 61, Iron Workers 52, UA 342 23,
+  IBEW 23), SFT 99, DANTES 38 (the catalog holds 1 DSST row), ACE 29 and POST 16 have no catalog certs to point at.
+  The issuers whose titles name a catalog cert were PMI, ICC, CDPH and EMSA. #2760 adds them: 17 titles to 16 certs (both
+  CNA titles hold one cert). The link holds 249 titles to 216 certs.
+- **One catalog spelling each.** These four issuers have a single spelling in the catalog, so each `HAND` entry is a
+  one-item tuple. The reference spells ICC two ways, but the table keys on the title, so that split does not matter.
+- **Left out:** PgMP and PfMP (no catalog rows), ICC's California code titles and the INSPEC courses, the EMT and
+  nursing-assistant courses, *EMT-2 Certification* (California's old EMT-II has no catalog row), and *EMT
+  Certification*, whose exhibits name EMSA, NREMT and ACE.
+- **Next families:** AWS welding (19 titles, 17 catalog rows) needs a check of the D1.1 qualifications against the
+  catalog's names. NWCG (17 titles, 6 rows) and SWRCB (12, 4) are small. DANTES DSST waits on the credential watch to
+  list the exams.
+
+## SkyHoags (2026-11-04, S571, the CPL Queue routine): AWS welding and Amazon Web Services in the cert link
+
+- **"AWS" names two issuers.** The reference writes both the American Welding Society's and Amazon Web Services' titles
+  as *AWS ...*, and neither family was linked. Amazon's four titles (Cloud Practitioner, Developer, Solutions Architect,
+  CloudOps) match catalog rows one to one. The catalog holds 17 American Welding Society rows, but only two name a
+  welding code: *AWS D1.1 Structural Steel* and *AWS D9.1 Sheet Metal Welding*.
+- **#2761 adds 10 titles to 6 certs:** five D1.1 qualifications and the D9.1 one hold their code's row; the four Amazon
+  titles hold theirs. The link holds 259 titles to 222 certs.
+- **Left out:** D1.3, D1.5, D1.8, D17.1 and the B2.2 brazing qualification (no catalog row); *AWS Welder Qualification
+  — D1.1/D1.3/D17.1* (two of three codes missing); the LA City certified-welder titles, which the City issues; the
+  welding-process courses and the Light Gage titles. *Certified Welder (CW)* is AWS's umbrella program, so no title is
+  pointed at it.
+- **Next families:** NWCG (17 titles, 6 rows) and SWRCB (12, 4). The D1.x codes the catalog lacks wait on the
+  credential watch.
+
+## SkyBlackEye (2026-11-04, S572, the CPL Queue routine): NWCG and the State Water Resources Control Board in the cert link
+
+- **A course title can carry a certification's words.** The Board's titles read like courses (*Water Treatment 1*,
+  *Wastewater Treatment 2*), but each one's exhibits name the certification that earns the credit (*T2, T3, T4, or T5
+  certification*). Read `raw_variants` before calling a title a course.
+- **The Board's three catalog rows carry no grade.** A title naming a grade (D2, T3, wastewater grade II) holds its
+  operator row, as a D1.1 qualification holds its code's row. Two titles name certifications joined by *or* and hold any
+  of the three; *T3 / D3* holds both.
+- **#2762 adds 12 titles to 4 certs:** 11 Board titles and NWCG's *Wildland Fire Chainsaws (S-212)*. The link holds 271
+  titles to 226 certs.
+- **Left out:** *Water Treatment Facilities* (its exhibits name two issuers); the other NWCG titles, which are courses.
+  *Basic Wildland Firefighter (S-130/S-190)* is the training for the catalog's *Firefighter Type 2*, but the position also
+  needs a task book, so no course title points at it. *Basic Faller* and *Helicopter Crew Member Trainee* have no title.
+- **The S542 test** moved here from the lane: it is in the S542 entry above.
+- **Next:** the remaining families are courses and apprenticeship committees with no catalog certs; measure the gap by
+  issuer again before choosing one.
+
+## SkyNeedle (2026-11-04, S573, the CPL Queue routine): IAI, Intuit and DRE in the cert link; the family work stops
+
+- **Measure by issuer, across spellings.** Exact issuer matching reads zero catalog rows for issuers the catalog spells
+  another way (FAA, NFPA, IAI). A keyword pass over the catalog's issuers found seven with rows and unlinked titles: NFPA,
+  IAI, ESCO, Intuit, the Department of Real Estate, NEIEP and the State Fire Marshal.
+- **#2763 adds 9 titles to 9 certs:** IAI's five certifications (each holds the catalog's row for its discipline, which
+  carries no CCSI/CSCSA level), Intuit's Bookkeeping Professional and QuickBooks Certified User, and the DRE's broker and
+  salesperson licenses. The link holds 280 titles to 235 certs.
+- **Left out:** the ESCO Master Specialist titles (the catalog lists the professional-level exams and the Hands-On
+  credential, never the written Master Specialist); the NFPA titles (their exhibits name Cal-JAC, ICC and SFT too);
+  *Intuit QuickBooks Online Certified User* (no Online row); NEIEP's apprenticeship terms and the State Fire Marshal's
+  courses (no catalog row names them); the QuickBooks and real estate course titles.
+- **What remains, 2,370 titles:** California Community Colleges 1,334 (local courses), the carpenters' committees 198,
+  State Fire Training 99, the Iron Workers 52, DANTES 38, ACE 29, high schools and ROPs about 60, IBEW and UA Local 342
+  46, NWCG courses 16, OSHA 16, POST 16, CSLB 14, FEMA 11. None of these issuers has a catalog row that a title names.
+  **The hand-family work stops here.** The next gain is in the catalog, not the link: State Fire Training (99 titles),
+  POST, CSLB and FEMA issue certifications the credential watch does not read. Adding them to `_issuers_watched` is the
+  credential watch lane's call, and the link rebuild picks up whatever it adds.

@@ -75,7 +75,8 @@ check("Programs: the card and its counts open CPL Pathways' List, the issues its
 _ex = [r for r in rows if r["key"] == "exhibit"][0]
 check("Exhibits: the card and its counts open the List; held titles and conflicts keep Review; the procedures open Rules, never the retired CER",
       _ex["links"][0]["href"] == "#exhibits/list" and all(p_["open"] == "#exhibits/list" for p_ in _ex["pair"])
-      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#credential-reference/all") for i in _ex["issues"])
+      # S574: the titles that have left MAP open their own List filter, never the retired CER's whole list.
+      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#exhibits/list/left") for i in _ex["issues"])
       and _ex["procedures"][0]["open"] == "#exhibits/rules",
       (_ex["links"], [p_["open"] for p_ in _ex["pair"]], [i["open"] for i in _ex["issues"]], _ex["procedures"][0].get("open")))
 building = data.get("building", [])
@@ -100,11 +101,15 @@ check("Program Requirements: the issues are the failing and the unread counts",
 ex = rows[1].get("facts") or {}
 check("Exhibit: a person's and a cohort's stamps sum to the stamped titles", ex.get("person") + ex.get("cohort") == ex.get("stamped") == rows[1]["pair"][0]["n"])
 co = rows[2]
-check("Course: SkyView is the row's home and every count opens it (Sam, 20:46Z); the Courses List is the second word (2026-11-01); its Progress page the third (S559)",
-      co["links"] == [{"href": co["tab"], "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"},
-                      {"href": "#coci-lookup/progress", "text": "Open Progress"}]
-      and co["tab"].endswith("/prototype/skyview.html")
-      and all(i.get("open") == co["tab"] for i in co["issues"]) and co["pair"][0]["open"] == co["tab"])
+check("Course: the Courses List is the row's home and its pair opens it, SkyView the second word, Progress the third "
+      "(Sam, 2026-11-04: \"I want to be able to use list or skyview. Skyview is still too buggy to make the main workspace\"); "
+      "each issue opens its job's List filter (S574)",
+      co["tab"] == "#coci-lookup/courses"
+      and co["links"] == [{"href": "#coci-lookup/courses", "text": "Open the Courses List"},
+                          {"href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", "text": "Open SkyView"},
+                          {"href": "#coci-lookup/progress", "text": "Open Progress"}]
+      and all(p.get("open") == co["tab"] for p in co["pair"])
+      and all((i.get("open") or "").startswith("#coci-lookup/list/") for i in co["issues"]))
 cr = rows[3]
 crf = cr.get("facts") or {}
 # S437 (the CR Progress view; Open Asks Sheet 108 card 5): one pair, the wordings that resolve to a
@@ -147,16 +152,21 @@ check("Subjects: the pair's words say MQ disciplines and name the three tests", 
       and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free", "confirmed by a person"])
 check("Subjects: the card and its counts open the List (Sam, 2026-11-03), every issue the tab's own list",
       rows[4]["links"][0]["href"] == "#canonical-subj4/list" and rows[4]["pair"][0]["open"] == "#canonical-subj4/list"
-      and rows[4]["pair"][1]["open"] == "#canonical-subj4/list/person" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
+      and rows[4]["pair"][1]["open"] == "#canonical-subj4/list/person"
+      # S574: an issue opens its job filtered; the stray identity codes are courses' identities, so the Courses List's.
+      and all((i.get("open") or "").startswith("#canonical-subj4/") or i.get("open") == "#coci-lookup/list/stray" for i in rows[4]["issues"]))
 # A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
 # a known issue with nothing in it is not an issue, and facts.shared keeps the measure.
+# The unconfirmed issue leaves the list at zero too (every MQ discipline confirmed, 2026-11-04, S566).
 collision_issues = [i for i in rows[4]["issues"] if "two MQ disciplines" in i.get("words", "")]
-check("Subjects: the unconfirmed issue opens the List's Open filter, where a pick is confirmed, and a collision issue, when one is listed, the List's In a collision",
-      rows[4]["issues"][0]["open"] == "#canonical-subj4/open" and all(i["open"] == "#canonical-subj4/list/collision" for i in collision_issues)
+modal_issues = [i for i in rows[4]["issues"] if "modal code, unconfirmed" in i.get("words", "")]
+check("Subjects: the unconfirmed issue, when listed, opens the List's Open filter, where a pick is confirmed, and a collision issue, when one is listed, the List's In a collision",
+      all(i["open"] == "#canonical-subj4/open" for i in modal_issues) and bool(sub.get("modal")) == bool(modal_issues)
+      and all(i["open"] == "#canonical-subj4/list/collision" for i in collision_issues)
       and bool(sub.get("shared")) == bool(collision_issues))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
     check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",
-          len(rows[4]["issues"]) >= 3 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
+          len(rows[4]["issues"]) >= 2 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
           and any("scan findings" in i.get("words", "") for i in rows[4]["issues"])
           and any("identity codes" in i.get("words", "") for i in rows[4]["issues"]))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
@@ -224,6 +234,62 @@ with tempfile.TemporaryDirectory() as empty:
           all(r.get("error") and r["pair"][0]["n"] is None and r["pair"][0]["of"] is None for r in bare["rows"]),
           [(r["key"], r.get("error")) for r in bare["rows"]])
     check("an unread row draws no zero anywhere", all(i.get("n") != 0 for r in bare["rows"] for i in r.get("issues", [])))
+
+# ── the one queue (Sam, 2026-11-04, S573): every issue names who carries it, and the queue groups the person items ──
+allissues = [(r["key"], i) for r in data["rows"] for i in r.get("issues", [])]
+check("every known issue names who carries it: a routine or one of the four reasons",
+      all(i.get("carry") in B.CARRY_KEYS for _, i in allissues), [(k, i.get("words")) for k, i in allissues if i.get("carry") not in B.CARRY_KEYS])
+q = data.get("queue") or {}
+check("the status file carries the queue, its four reasons in order",
+      [g["key"] for g in q.get("reasons", [])] == ["no_procedure", "unsure", "reaches", "keep_call"])
+check("the queue leaves nothing unsorted on the repo", not q.get("unsorted"), q.get("unsorted"))
+person = sum(len(g["items"]) for g in q.get("reasons", []))
+check("every issue lands once: the person items and the carried ones add up to the issues",
+      person + len(q.get("carried", [])) == len(allissues), (person, len(q.get("carried", [])), len(allissues)))
+check("a routine's issue never reaches a person's queue",
+      all(i["words"] not in [x["words"] for g in q.get("reasons", []) for x in g["items"]]
+          for _, i in allissues if i.get("carry") == "routine"))
+probe = B.build_queue([{"key": "x", "title": "X", "issues": [{"n": 3, "words": "a new issue", "owner": "someone"},
+                                                             {"n": None, "words": "an unread one", "carry": "unsure", "error": "E"}]}])
+check("an issue that names no reason lands under unsorted, so it cannot hide",
+      [i["words"] for i in probe.get("unsorted", [])] == ["a new issue"])
+check("an unread issue keeps its null and its error in the queue",
+      probe["reasons"][1]["items"] == [{"ref": "x", "title": "X", "n": None, "words": "an unread one", "owner": None, "open": None, "error": "E"}])
+
+# ── the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward ──
+conf = {c.get("ref"): c for c in data.get("confidence", [])}
+check("the status file carries the confidence count for Exhibits and Subjects", set(conf) == {"exhibit", "subjects"}, list(conf))
+for ref, c in conf.items():
+    t = c.get("total") or {}
+    check("confidence %s: every placed item lands in exactly one state" % ref,
+          not c.get("error") and t.get("placed") == sum(t.get(k, 0) for k in ("untouched", "kept", "renamed", "moved", "by_procedure", "left")), c.get("error") or t)
+    check("confidence %s: looked is kept plus renamed plus moved" % ref, t.get("looked") == t.get("kept", 0) + t.get("renamed", 0) + t.get("moved", 0))
+with tempfile.TemporaryDirectory() as fx:
+    os.makedirs(os.path.join(fx, "kb", "cer_procedures_out", "saved"))
+    rows = [  # the procedure's saves: (raw title, the common title it placed)
+        ("A1", "Alpha"), ("B1", "Beta"), ("B2", "Beta"), ("C1", "Gamma"), ("D1", "Delta"), ("D2", "Delta"), ("E1", "Eps"), ("F1", "Phi")]
+    with open(os.path.join(fx, "kb", "cer_procedures_out", "saved", "saved_2026-11-01T00-00-00Z.json"), "w") as f:
+        json.dump({"at": "2026-11-01", "rows": [{"course_id": "_UNCLASSIFIED::" + k, "field": "unified_title_assignment", "value": v,
+                                                 "reviewer_email": "cer-procedure-p1@bot", "procedure": "p1"} for k, v in rows]}, f)
+    now = {
+        "A1": {"unified_title": "Alpha", "reviewed_by": "cer-procedure-p1@bot"},          # untouched
+        "B1": {"unified_title": "Beta Two", "reviewed_by": "map@rccd.edu"},               # Beta renamed: both moved together
+        "B2": {"unified_title": "Beta Two", "reviewed_by": "map@rccd.edu"},
+        "C1": {"unified_title": "Gamma", "reviewed_by": "map@rccd.edu"},                  # kept
+        "D1": {"unified_title": "Delta One", "reviewed_by": "map@rccd.edu"},              # Delta split: one moved away
+        "D2": {"unified_title": "Delta", "reviewed_by": "map@rccd.edu"},
+        "E1": {"unified_title": "Eps", "reviewed_by": "cer-procedure-p2@bot"},            # revised by another procedure
+        "X9": {"unified_title": "Delta", "reviewed_by": "map@rccd.edu"},
+    }                                                                                    # F1 left the reference
+    with open(os.path.join(fx, "kb", "unified_titles.json"), "w") as f:
+        json.dump(now, f)
+    ce = B.confidence_exhibits(fx)["total"]
+    check("confidence fixture: untouched, kept, renamed with the family, a split one moved, another procedure, left",
+          (ce["untouched"], ce["kept"], ce["renamed"], ce["moved"], ce["by_procedure"], ce["left"]) == (1, 2, 2, 1, 1, 1), ce)
+    check("confidence fixture: a split counts the one that left its family as moved, never as renamed",
+          ce["moved"] == 1 and ce["looked"] == 5)
+    bare = B.build_confidence(os.path.join(fx, "nowhere"))
+    check("an unreadable confidence source carries its error, never a zero", all(c.get("error") and "total" not in c for c in bare), bare)
 
 # ── the small helpers ──
 check("receipt_time turns 2026-10-18T17-37-29Z into ISO", B.receipt_time("2026-10-18T17-37-29Z") == "2026-10-18T17:37:29Z")

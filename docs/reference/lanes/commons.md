@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -47,17 +47,6 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
-**The CPL Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
-and you can play off of that for the card titles and focus elements."*, then, on seeing it: *"Let's go with these designs for now. I'm chickening out on the CCC Commons...let's go with CPL Commons for now as less of a wholesale take over of the system:)"* The first-view mock
-(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 8, locked by Sam; source in
-`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CPL Commons**, with its lede (*eight common references the
-California Community Colleges keep together for credit for prior learning*), and each of its eight cards is a **Common**
-reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
-Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
-the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
-(S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
-so the port into this tab waits on his call on the look.
-
 **RULED (Sam, Open Asks Sheet 158 cards 2 and 3, 15:01Z 2026-11-02, his own call: "malone", "rename").** The CPL
 Commons first view ports into this tab in **Malone's CPL/AI look**, the first COBI tab to carry it (First Light stays the
 rule for the other tabs; this is the one departure inside COBI, beside the public pages' departure of 2026-10-24). The
@@ -79,8 +68,6 @@ card 2): the palette lives once as `--cmn` tokens on `#tab-commons`; the dark th
 dark token (`:root[data-theme="dark"] #tab-commons` and the OS-dark media query), so no color is invented there. Inter
 loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/commons_status_build_test.py` (83).
 
-**A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
-
 **The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
 the mock's opened page for any reference: the progress line over one denominator, *Needs attention* with an action each,
 and three question groups over that denominator; an unread count says *Could not be read*. First Light tokens. **Every
@@ -96,78 +83,42 @@ before a person confirms it; a confirmation is an attribute the reference gains,
 a line on the card and under each Progress bar. 2026-11-03: Programs 32 (synced daily, `kb/_sync_program_checked.py`),
 Exhibits 1,173, Courses 957 (a save on the card or placing a course into it), CR 97, Subjects 122. Detail in the lessons (*The confirmed count*).
 
-**NEXT:** propose the lane's next build at a session Sam opens, or on the sheet. The to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
-that once answered 500 (check it first when a Progress card reads *Could not be read*).
-The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
+**NEXT:** from the path mock (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9): Teach a rule on every reference; a stalled routine or a backlog that stops shrinking becomes a queue item; the confidence count for the CR rule rungs and the Course auditor; the other references' paths; then every Commons view on the `--cmn` tokens. Data sources: [`data_sources`](../data_sources.md). When a Progress card reads *Could not be read*, check the `coci_college_programs` read first (it once answered 500). `npm run a11y -- cobi:commons` passes at both widths with the queue (S573).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
 groups"*). Exhibits (#2656), the Common CR Reference (#2657, with your flag #2659), Subjects (#2658) and Program
 Requirements (#2660) run on it. **The Courses List is the COCI Lookup tab's Courses view** (#2670, live): 141,738
 local courses banded by today's M-ID (from `unified_courses_members.js`, never the extract's older column), Open in
-SkyView on each band, read only (an M-ID move is a re-mint, done in SkyView). Sam, 2026-11-01 ~23:02Z: *"WE have the
+SkyView on each band; an M-ID move is a re-mint, done in SkyView. A course's panel carries its common course's card and, for a signed-in reviewer, Rename, Set the discipline and Confirm, carried from the Common Course Reference tab before it retires (SkyJujube, 2026-11-04, `tests/coci_list_cc_card.test.js`). Sam, 2026-11-01 ~23:02Z: *"WE have the
 COCI lookup tab in COBI...maybe courses in that?"*; SkyView stays the map alone. The engine filters before it sorts and
 sorts on per-column ranks (a settled finder keystroke 228 ms at 141,738 rows). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
 only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
-bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04).
+bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04). **All five carry Check alignment** (Sam, 2026-11-04: *"We could use that feature on all our commons list views"*; S578
+added the last three): one audit and one recommendation beside the edit, reading what the page holds and writing nothing.
+Subjects audits a typed code, Exhibits a title and issuer, CR a reference (its applied official name, a cited course its
+wordings never reach, another group's name, a wording's unit count up front), Courses a name (its local courses' titles,
+its discipline's other common courses) and a discipline (where colleges file the same subject codes; a TOP-sourced one
+corroborates only), Programs a record in *Your reading* (its machine checks, COCI's title and units, the same award under
+the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` and `alignClose`. Guards
+`tests/cr_list.test.js` (12), `tests/coci_list_cc_card.test.js` (7), `tests/program_requirements_list_record_port.test.js` (16).
 
-**The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
-bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
-**The Exhibits tiles carry the Commons' Exhibit row** (Sam, 2026-11-01: *"capture everything from 1st into Exhibits view"*): its pair, tests, known issues, procedures, the Decision Sheet Library and the last run, read from `kb/status/commons.json` and its run log, never copied (`exhibits.js`, *The Commons' row, carried on the Credentials view's tiles*); the row's `facts` feed the Progress view. Done; S562 found it built.
+**IN PROGRESS: the Common Course Reference tab retires into the Courses List (SkyJujube, 2026-11-04).** The inventory found `unified_courses.js` landing every COBI magic link (moved into `cpl_session.js`, #2775) and writes curators had stopped using (`kb_curation` on 2026-11-04, all time / last 30 days: merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1; description edits and merge notes never). #2776 carried the common course's card and Rename, Set the discipline and Confirm into the List's panel. NEXT: the ways in (SkyView's three `#unified-courses/list` links, Quickstart's routing, Subjects' *Fix on CCR*, `excel_to_dashboard.py`'s script injection) and the auditor's other triage tags as List filters, then delete the tab and its `uc_*` suites. Suggested merges (about 7,300 written daily, none acted on since Sep 27): carry or retire, asked in chat 2026-11-04 (recommended: retire). Handoff: `docs/courses_retirement_handoff.md`.
+
+**LIVE: the one queue (S573, 2026-11-04, Sam: "yes, start building the one queue").** Every issue in `kb/status/commons.json` names its `carry` (`routine`, or a person's reason: `no_procedure`, `unsure`, `reaches`, `keep_call`); the file's `queue` groups the person items, and an issue naming none lands under `unsorted`. The tab draws it as *Waiting on a person*, under the decisions band. Guards: `tests/commons_status_build_test.py`, `tests/commons.test.js` (queue 1 to 10).
+
+**LIVE: the confidence count (S573, 2026-11-04, Sam: "start on the confidence count next").** `kb/status/commons.json`'s `confidence` says what a person did with each procedure's work afterward: the Exhibit procedures' receipts (`kb/cer_procedures_out/saved/`) against `kb/unified_titles.json`, the nightly Subjects confirm's (`kb/csr_out/confirm/`) against the seed. A result a person looked at is kept, renamed with its family (its old name is gone and its siblings moved together), or moved (a correction). 2026-11-04: of 1,178 titles placed, a person looked at 94, kept 23, renamed 71, moved 0; none of the 13 confirmed picks looked at yet. The tab shows it as *How far to trust the procedures*.
+
+**RULED: a count opens its job, filtered; the queue in process order; TOP waits on no one (Sam, S574, 2026-11-04).** *"the links on all surfaces should open to the filtered view of the job needed"*; *"put the procedural things to act in a process order within their cards"* (subjects, courses, exhibits, CR, programs); TOP disagreements *"are input unchecked by colleges. CIP from the COCI programs records should be more dependable"*, so they left the queue. Guards `tests/commons_jobs_filtered.test.js`, `tests/coci_list_jobs.test.js` (the Courses jobs and the strays). **The Courses List first, SkyView beside it** (Sam, same day: *"I want to be able to use list or skyview. Skyview is still too buggy to make the main workspace"*), reversing 2026-11-03's SkyView first. Exhibits' 622 open `#exhibits/list/left`. **The look on every Commons view** (S574): `commons_look.js` gives the five references' tabs commons.js's palette and, in light mode, maps First Light's roles onto it (dark keeps First Light's); `tests/commons_look.test.js`, `npm run a11y` passes on all 13 Commons routes.
+
+**RULED: every Commons view in Malone's look, and the path (Sam, S573, 2026-11-04, in chat).** *"Use the new UI format rather than first light on this and all commons views."* This widens Sheet 158 card 2 from the first view to every Commons view (the Lists, the Progress pages, the side panels); First Light stays the rule for the rest of COBI. The same morning he asked for a visual of the curator's steps and decision points, *"available on every commons surface"*, plain words, with *"a generic term"* for him. The mock is **the path** (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9, source in `CPLBrain/04-projects/cpl-initiative/commons-path-mock/`): six steps every reference shares (know what belongs, let the daily check run, work the list, get the lead's call, check the connections, clean), the CPL Commons view and the Common Subjects view. NEXT: his reaction, then the other references' paths, then the port (`commons_page.js` and `commons_list.js` onto the `--cmn` tokens, the path as a fold above each List).
 
 
-**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. All three steps have landed (history in the lessons, *The List norms, steps 1 to 3*).
-
-**LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
-live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the
-mock-up's row without its prose: five rows in his order, each with the complete pair and the test behind
-it, the known issues each naming an owner, the settled procedures, the calls in the run log and the two
-stamps. Every row collapses on its own word to its count and meter (19:08Z: *"Commons looks good. Just
-make sure I can collapse each and we have a collapse all button."*; 20:03Z: *"Keep the count and meter
-when collapsed."*), Collapse all folds the page, the words on a row move it, and the order and the fold
-stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
-`sam-approves-commons-mockup-collapse-2026-10-18` (verified).
-
-- **The machine side** is `kb/status/commons.json`, written daily by `kb/_build_commons_status.py`
-  (daily-dashboard.yml, after the builds it reads) from the committed files alone: Program Requirements
-  from `coci_programs_data.js` and the harvest's record files (the mock-up's own method); Exhibit from
-  `kb/unified_titles.json`, `kb/credentials.json`, the exhibit audit, the procedures run's `latest.json`,
-  the saving receipts and the fold report; Course from the auditor's `kb/row_audit/latest.json`,
-  `prototype/ccr_universe.json` and the stand-alone build; CR from `kb/cr_reference_worklist.json` and
-  the curator receipts under `kb/receipts/`; Subjects from `kb/discipline_canonical_subj4.json`. A figure
-  a source cannot supply is null beside its error and reads *Could not be read* (the S343 rule). Guard:
-  `tests/commons_status_build_test.py` (66 checks).
-- **The session side** is each project's run log, `kb/status/<project>.json`: today Program Requirements
-  alone has one, so four rows read *no run log*. The tab reads a run log's session stamp, next step and
-  calls as its last checkpoint left them. A call Sam answered on its sheet carries `answer` {by, at, words}: listed
-  with his words, counted answered (Sam, 2026-10-21: *"the open asks on The Commons doesn't seem to record that I
-  responded"*; #2329).
-- **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
-  `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
-  passes at both widths; UI pass ledger `cobi:commons`.
-- **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
-  right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
-  and every count on the row opens it. The Common Course Reference list left the COBI menu at 20:51Z through
-  `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
-  header; the run's receipt `kb/receipts/migration_cobi_nav_unified_courses_hidden_2026_10_18_s417_39165056506.json`;
-  the session's SQL guard holds an UPDATE for that path): `cobi_nav` row `unified-courses` is `hidden`, the `skyview`
-  launcher row kept. The tab and its list view stay reachable by deep link (`#unified-courses`,
-  `#unified-courses/list`) and the Admin tab can show the entry again.
-- The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
-  source `docs/visuals/2026-10-18-commons-mockup.html`).
+**The Commons tab's first build (S417, 2026-10-18)**, its machine side, session side and the Course row's SkyView-alone ruling (since reversed: the Courses List first, S574), moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-04, SkyJujube*).
 
 **Steps 1 and 2 (S419 #2237, S423): the shared Progress module `commons_progress.js` and the five run logs under `kb/status/`.** The record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*).
 
-**What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
-list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
-read of the records' display facts, so the Program Requirements row carries two known issues, the failing
-and the unread. The CR row's curator decisions come from the committed receipt, so a new sitting lands a
-receipt under `kb/receipts/` or the figure stays at 30 (the live table is the authority). A call reads from
-the run log and stays open until a checkpoint removes it; the decision sheet's store is read only where the
-Progress view's `callAnswered` resolves a record. The machine stamps: Program Requirements the last college
-read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
-last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
-older than a week reads stale.
+**What the tab leaves for the build** (2026-10-18) moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-04*): a count now opens its job's filtered list.
 
 **Fable's advice, carried (2026-10-18):** complete differs in kind, so each row names the test behind its
 count and no column sorts on a share; the machine stamp and the session stamp stay apart, each against a

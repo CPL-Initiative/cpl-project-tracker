@@ -73,9 +73,9 @@
     return null;
   }
   function signIn(email) {
-    try {
-      sessionStorage.setItem("cpl_sb_return_tab", "workplan-goals");
-    } catch (e) {}
+    // Through the keeper, so the new browser tab the magic link opens can read it.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("workplan-goals");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "workplan-goals"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",

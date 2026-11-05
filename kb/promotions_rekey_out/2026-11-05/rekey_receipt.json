@@ -1,0 +1,150 @@
+{
+ "date": "2026-11-05",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/subjects_list_recode_out/2026-11-05/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 18,
+  "folded": 0,
+  "unresolved": 0,
+  "unchanged": 1968
+ },
+ "rekeyed": [
+  {
+   "old": "BCST M1011",
+   "new": "BRDC M1011",
+   "hops": [
+    "BRDC M1011"
+   ]
+  },
+  {
+   "old": "BCST M1013",
+   "new": "BRDC M1013",
+   "hops": [
+    "BRDC M1013"
+   ]
+  },
+  {
+   "old": "BCST M1057",
+   "new": "BRDC M1057",
+   "hops": [
+    "BRDC M1057"
+   ]
+  },
+  {
+   "old": "BCST M10JM",
+   "new": "BRDC M10JM",
+   "hops": [
+    "BRDC M10JM"
+   ]
+  },
+  {
+   "old": "BCST M10JU",
+   "new": "BRDC M10JU",
+   "hops": [
+    "BRDC M10JU"
+   ]
+  },
+  {
+   "old": "ESCI M1063",
+   "new": "ENVS M1063",
+   "hops": [
+    "ENVS M1063"
+   ]
+  },
+  {
+   "old": "ESCI M10LG",
+   "new": "ENVS M10LG",
+   "hops": [
+    "ENVS M10LG"
+   ]
+  },
+  {
+   "old": "ESCI M10NJ",
+   "new": "ENVS M10NJ",
+   "hops": [
+    "ENVS M10NJ"
+   ]
+  },
+  {
+   "old": "ESCI M10RC",
+   "new": "ENVS M10RC",
+   "hops": [
+    "ENVS M10RC"
+   ]
+  },
+  {
+   "old": "FTVE M10PX",
+   "new": "FMED M10PX",
+   "hops": [
+    "FMED M10PX"
+   ]
+  },
+  {
+   "old": "FTVE M1106",
+   "new": "FMED M1106",
+   "hops": [
+    "FMED M1106"
+   ]
+  },
+  {
+   "old": "FTVE M1166",
+   "new": "FMED M1166",
+   "hops": [
+    "FMED M1166"
+   ]
+  },
+  {
+   "old": "FTVE M1167",
+   "new": "FMED M1167",
+   "hops": [
+    "FMED M1167"
+   ]
+  },
+  {
+   "old": "GRAF M1019",
+   "new": "GFCD M1019",
+   "hops": [
+    "GFCD M1019"
+   ]
+  },
+  {
+   "old": "GRAF M10CE",
+   "new": "GFCD M10CE",
+   "hops": [
+    "GFCD M10CE"
+   ]
+  },
+  {
+   "old": "GRAF M1300",
+   "new": "GFCD M1300",
+   "hops": [
+    "GFCD M1300"
+   ]
+  },
+  {
+   "old": "GRAF M1306",
+   "new": "GFCD M1306",
+   "hops": [
+    "GFCD M1306"
+   ]
+  },
+  {
+   "old": "PLGL M1045",
+   "new": "PARA M1045",
+   "hops": [
+    "PARA M1045"
+   ]
+  }
+ ],
+ "folded": [],
+ "unresolved": [],
+ "unchanged": 1968
+}

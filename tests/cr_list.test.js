@@ -279,6 +279,39 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
   check("(11) a renamed reference renames its band and moves it to its new place",
     bs.map(bandName).join(" | ") === "Single wording | Community Relations (3 units) | Engine Performance (3 to 5 units)", bs.map(bandName).join(" | "));
 
+  // (12) Check alignment beside Save (Sam, 2026-11-04: "We could use that feature on all our commons list views").
+  const wg = WORKLIST.groups[2], keep = JSON.stringify(wg);
+  Object.assign(wg, { official_id: "WELD 110", official_title: "Introduction to Welding", official_system: "C-ID", official_applied: true, courses: ["WELD 110"] });
+  const ca = tab(); ca.M.activate(); await settle();
+  Object.keys(wg).forEach((k) => delete wg[k]); Object.assign(wg, JSON.parse(keep));
+  Array.from(ca.d.querySelectorAll("button")).find((b) => b.getAttribute("aria-label") === "Edit 4 hours in Welding").click(); await settle();
+  const rb = ca.d.getElementById("crl-ref"), hint = () => txt(ca.d.getElementById("crl-edit-hint"));
+  const typeIn = (v) => { rb.value = v; rb.dispatchEvent(new ca.w.Event("input")); };
+  check("(12) the edit row offers Check alignment", !!words(ca.d, "Check alignment"));
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(12) ⭐ an applied official match names the reference, and the List recommends it",
+    /its C-ID match names it WELD 110 \u2014 Introduction to Welding/.test(hint())
+    && /Recommendation: use the official name, WELD 110 \u2014 Introduction to Welding, as the reference\./.test(hint())
+    && /the name carries a wording's unit count up front/.test(hint()), hint());
+  typeIn("3 hours in Community Relations");
+  check("(12) a keystroke clears the old check", ca.d.getElementById("crl-edit-hint").hidden || hint() === "");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(12) another group's reference is named, with its size", /1 other group reads this reference \(2 wordings, 415 articulations\)/.test(hint()), hint());
+  typeIn("AUTO M1008 \u2014 Welding");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(12) ⭐ a course id the group's wordings do not reach: drop it, or check the group",
+    /the name cites AUTO M1008, which none of its wordings reach/.test(hint()) && /Recommendation: drop AUTO M1008 from the name, or check the group: its wordings reach WELD 110/.test(hint()), hint());
+  typeIn("WELD 110 \u2014 Introduction to Welding");
+  words(ca.d, "Check alignment").click(); await settle();
+  check("(12) the official name reads well", /which its wordings reach/.test(hint()) && /Recommendation: the reference reads well against the List\./.test(hint()), hint());
+  check("(12) Check alignment writes nothing", !posts(ca).length);
+  const cb2 = tab(); cb2.M.activate(); await settle();
+  Array.from(cb2.d.querySelectorAll("button")).find((b) => b.getAttribute("aria-label") === "Edit 4 hours in Welding").click(); await settle();
+  words(cb2.d, "Check alignment").click(); await settle();
+  check("(12) a group with no official match: the wording's unit count goes, and the List shows the reference's shape",
+    /Recommendation: drop a wording's unit count up front; a reference names the topic and its unit range, as in Welding \(3 units\)\./.test(txt(cb2.d.getElementById("crl-edit-hint"))),
+    txt(cb2.d.getElementById("crl-edit-hint")));
+
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });
   console.log("\n" + pass + "/" + results.length + " passed");

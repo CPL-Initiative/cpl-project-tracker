@@ -15,14 +15,17 @@ function txt(n) { return (n && n.textContent || "").replace(/\s+/g, " ").trim();
 function boot(opts) {
   opts = opts || {};
   const posts = [];
-  const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body><div id="tab-canonical-subj4"><div id="cs-mount"></div></div></body></html>`,
+  const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body><div id="tab-canonical-subj4">${opts.intro || ""}<div id="cs-mount"></div></div></body></html>`,
     { runScripts: "outside-only", pretendToBeVisual: true, url: "https://localhost/" + (opts.hash || "#canonical-subj4/list") });
   const w = dom.window;
+  // opts.local presets the reader's storage (the Commons top fold, 2026-11-05).
+  Object.keys(opts.local || {}).forEach((k) => w.localStorage.setItem(k, opts.local[k]));
   w.fetch = function (url, init) {
     const u = String(url);
     if (u.indexOf("kb_curation") >= 0 && init && init.method === "POST") { posts.push(JSON.parse(init.body)); return Promise.resolve({ ok: true, status: 201, json: () => Promise.resolve([]) }); }
     if (u.indexOf("kb/status/commons.json") >= 0) return Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) });
     const body =
+      u.indexOf("csr_out/latest.json") >= 0 ? (opts.scan || null) :
       u.indexOf("discipline_canonical_subj4.json") >= 0 ? opts.seed :
       u.indexOf("discipline_aliases.json") >= 0 ? (opts.aliases || { aliases: {} }) :
       u.indexOf("foreign_language_subj4.json") >= 0 ? (opts.flsplit || null) :
@@ -48,10 +51,10 @@ function boot(opts) {
     w: w, d: d, posts: posts, M: () => w.CPL_CANONICAL_SUBJ4,
     rows: () => Array.from(d.querySelectorAll("#cs-list .csl-table tbody tr:not(.csl-editrow):not(.csl-band)")),
     /* The title cell carries its lines under the title, so a row is named by its title word. */
-    titles: () => api.rows().map((r) => txt(r.children[1].querySelector(".csl-open") || r.children[1])),
+    titles: () => api.rows().map((r) => txt(r.querySelector(".csl-title .csl-open") || r.querySelector(".csl-title"))),
     heads: () => Array.from(d.querySelectorAll("#cs-list .csl-table thead tr:first-child th")).map(txt)
       .map((h) => h.replace(/ \(\d+\)/, "").replace(/, (A to Z|Z to A|low to high|high to low)$/, "")),
-    cell: (disc, name) => { const r = api.rows().find((x) => txt(x.children[1].querySelector(".csl-open") || x.children[1]) === disc); return r ? txt(r.children[api.heads().indexOf(name)]) : null; },
+    cell: (disc, name) => { const r = api.rows().find((x) => txt(x.querySelector(".csl-title .csl-open") || x.querySelector(".csl-title")) === disc); return r ? txt(r.children[api.heads().indexOf(name)]) : null; },
     find: async (q) => { const i = d.getElementById("csl-find"); i.value = q; i.dispatchEvent(new w.Event("input")); await settle(); return api.titles(); },
     /* Open an MQ discipline's panel; its text carries the title's drawer (the MQ handbook, other names, the split). */
     panel: async (disc) => {

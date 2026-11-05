@@ -139,8 +139,8 @@ def row_requirements(root):
                                 "complete", tab + "/list", chk["error"])],
         "tests": ["machine-checked", "confirmed by a person"],
         "issues": [
-            {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "open": tab + "/list/fail"},
-            {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "open": tab + "/list/unread"},
+            {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "carry": "routine", "open": tab + "/list/fail"},
+            {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "carry": "routine", "open": tab + "/list/unread"},
         ],
         "procedures": [
             {"n": len(colleges), "words": "reading procedures, one per college read, versioned", "open": tab},
@@ -244,11 +244,15 @@ def row_exhibit(root):
         # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
         "issues": [i for i in [
             {"n": held_n, "words": "titles held for a person", "owner": "a curator" + (" (" + held_why + ")" if held_why else ""),
-             "open": tab + "/held", "error": run["error"]},
+             "carry": "unsure", "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
-             "open": tab + "/conflict", "error": run["error"]},
-            {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
-             "open": cer + "/all", "error": left["error"]},
+             "carry": "unsure", "open": tab + "/conflict", "error": run["error"]},
+            # Said so a reader knows the job (Sam, 2026-11-04: "I keep seeing those 622 mentioned but don't know what to do
+            # with them, so if you can clarify on the commons card or link, that would help").
+            {"n": left["n"], "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, "
+                                      "or keep one a college may enter again",
+             "owner": "a curator",
+             "carry": "keep_call", "open": tab + "/list/left", "error": left["error"]},
         ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
@@ -276,7 +280,11 @@ def row_course(root):
     # home and every count open the map; the list tab (#unified-courses) left the menu the same minute. The Courses
     # List joined as a second word (Sam, 2026-11-01: "WE have the COCI lookup tab in COBI...maybe courses in that?"):
     # COCI Lookup's Courses view, every local course banded by its M-ID. SkyView stays the home.
-    tab = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    # The List first, SkyView beside it (Sam, 2026-11-04: "I want to be able to use list or skyview. Skyview is still
+    # too buggy to make the main workspace"): the row's home, its links and its pair open the Courses List; SkyView is
+    # the second word, and each band of the List opens its common course there.
+    sky = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    tab = "#coci-lookup/courses"
     A = load_json(root, "kb/row_audit/latest.json")
     st, fr, tags = A["stats"], A["stats"]["faculty_readiness"], A["stats"]["tag_counts"]
     cap = figure(lambda: round(1 - A["_faculty_weights"]["discipline"] * (1 - A["_field_state_score"]["seed-untouched"]), 2))
@@ -294,13 +302,13 @@ def row_course(root):
         {"n": counts.get("identities"), "words": "identities and %s stand-alone courses on the canvas (the %s layout)%s"
          % (fmt(counts.get("stand_alone")), str(cv.get("_generated_from", ""))[:10],
             "; %s stand-alone in today's build" % fmt(len(today["n"]["rows"])) if today["n"] else ""),
-         "open": tab, "error": canvas["error"]},
+         "open": sky, "error": canvas["error"]},
         {"words": "TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain"},
         {"words": "Re-mints follow the playbook, one cron window each"},
     ]
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"},
+        "links": [{"href": tab, "text": "Open the Courses List"}, {"href": sky, "text": "Open SkyView"},
                   {"href": "#coci-lookup/progress", "text": "Open Progress"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
@@ -312,11 +320,12 @@ def row_course(root):
         "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
-             "owner": "the Common Subjects reference", "open": tab},
-            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "open": tab},
-            {"n": tags.get("top_discipline_disagreement"), "words": "TOP and discipline disagreements",
-             "owner": "a curator (the subject map decides; TOP corroborates)", "open": tab},
-            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "open": tab},
+             "owner": "the Common Subjects reference", "carry": "no_procedure", "open": "#coci-lookup/list/seedless"},
+            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
+            # TOP and discipline disagreements are no person's item (Sam, 2026-11-04: "I'm not generally worried about
+            # TOP disagreement as those are input unchecked by colleges. CIP from the COCI programs records should be
+            # more dependable"; Rule 7, TOP is last in line). The count stays in facts.tags for the Progress page.
+            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": "#coci-lookup/list/nodesc"},
         ],
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
@@ -413,9 +422,9 @@ def row_cr(root):
         "tests": ["rule-settled", "curator-decided", "confirmed by a person"],
         "issues": [
             {"n": len(unsettled), "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
-             "owner": "a curator", "open": tab + "/open"},
+             "owner": "a curator", "carry": "no_procedure", "open": tab + "/open"},
             {"n": len(names), "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
-             "owner": "a curator", "open": tab + "/names"},
+             "owner": "a curator", "carry": "unsure", "open": tab + "/names"},
         ],
         "procedures": [
             {"n": st["auto_groups"], "words": "groups a rung 1 to 4 rule folds: five rungs, groups form on a shared key, the course count gates a cartesian line",
@@ -483,9 +492,9 @@ def row_subjects(root):
     procs = load_json(root, "kb/csr_procedures.json") if exists(root, "kb/csr_procedures.json") else None
     who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by the nightly procedure or a session cohort" % fmt(cohort) if cohort else "")
     issues = [
-        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/open"},
+        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "carry": "unsure", "open": tab + "/open"},
         {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
-         "owner": "a curator", "open": tab + "/list/collision"},
+         "owner": "a curator", "carry": "reaches", "open": tab + "/list/collision"},
     ]
     # A known issue with nothing in it is not an issue: the collisions row leaves the list at zero
     # (the AGAB re-key of 2026-10-19 closed the one), and facts.shared keeps the measure.
@@ -506,12 +515,12 @@ def row_subjects(root):
         judgments = sum(ask.values())
         kinds = ", ".join(CSR_RULE_WORDS.get(r, r) for r, _ in sorted(ask.items(), key=lambda kv: -kv[1]))
         issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
-                       "owner": "a curator, after Jev's sitting", "open": tab + "/progress"})
+                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/list/scan"})
         mc = scan.get("_mid_codes") or {}
         issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
-                       "owner": "a re-mint under the playbook", "open": tab + "/progress"})
+                       "owner": "a re-mint under the playbook", "carry": "reaches", "open": "#coci-lookup/list/stray"})
         if missed:
-            issues.append({"n": missed, "words": "missed alignments with an authority code", "owner": "a curator", "open": tab + "/chip"})
+            issues.append({"n": missed, "words": "missed alignments with an authority code", "owner": "a curator", "carry": "unsure", "open": tab + "/chip"})
     procedures = []
     if procs:
         ps = procs.get("procedures") or []
@@ -556,7 +565,7 @@ def row_subjects(root):
 ROWS = [
     ("requirements", "Program Requirements", "#program-requirements", row_requirements),
     ("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit),
-    ("course", "Common Course Reference", "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", row_course),
+    ("course", "Common Course Reference", "#coci-lookup/courses", row_course),
     ("cr", "Common CR Reference", "#cr-reference", row_cr),
     ("subjects", "Common Subjects Reference", "#canonical-subj4", row_subjects),
 ]
@@ -645,6 +654,145 @@ def fmt_int(n):
     return "{:,}".format(n) if isinstance(n, int) else "an unknown number of"
 
 
+# The one queue (Sam, 2026-11-04, S573: the routines carry the volume and "queue human decisions only when
+# needed"). Every issue names who carries it: a routine (the harvest, a session fixing a procedure, a source
+# outside the Commons), or a person for one of four reasons. The queue groups the person items by reason, in
+# this order; an issue that names no reason lands under "unsorted", so a new issue cannot hide.
+CARRY_REASONS = ["no_procedure", "unsure", "reaches", "keep_call"]
+CARRY_KEYS = set(CARRY_REASONS) | {"routine"}
+
+
+def build_queue(rows):
+    groups = {k: [] for k in CARRY_REASONS}
+    carried, unsorted = [], []
+    for r in rows:
+        for i in r.get("issues") or []:
+            item = {"ref": r.get("key"), "title": r.get("title"), "n": i.get("n"), "words": i.get("words"),
+                    "owner": i.get("owner"), "open": i.get("open")}
+            if i.get("error"):
+                item["error"] = i["error"]
+            c = i.get("carry")
+            if c == "routine":
+                carried.append(item)
+            elif c in groups:
+                groups[c].append(item)
+            else:
+                unsorted.append(item)
+    out = {"reasons": [{"key": k, "items": groups[k]} for k in CARRY_REASONS], "carried": carried}
+    if unsorted:
+        out["unsorted"] = unsorted
+    return out
+
+
+# The confidence count (Sam, 2026-11-04, S573: "automate as many of these procedures with confidence as
+# possible"). A procedure earns trust by what a person does with its work afterward. Each procedure's committed
+# receipts say what it placed; the committed reference says where each item sits now and whose stamp it carries.
+# An item a person has looked at is kept (same place), renamed with its family (the person renamed or merged the
+# whole family: its old name is gone and its siblings moved together), or moved (a correction). Items no person has
+# looked at yet stay "untouched", so the share looked at reads beside the agreement.
+CONF_KEYS = ["placed", "untouched", "kept", "renamed", "moved", "by_procedure", "left"]
+
+
+def _norm(t):
+    return " ".join(str(t or "").lower().split())
+
+
+def _conf_counts(placed):
+    c = {k: 0 for k in CONF_KEYS}
+    for state in placed.values():
+        c["placed"] += 1
+        c[state] += 1
+    c["looked"] = c["kept"] + c["renamed"] + c["moved"]
+    return c
+
+
+def confidence_exhibits(root):
+    """Exhibit titles a CER procedure assigned (kb/cer_procedures_out/saved/), against kb/unified_titles.json now."""
+    ut = load_json(root, "kb/unified_titles.json")
+    saved = {}
+    for f in sorted(glob.glob(os.path.join(root, "kb/cer_procedures_out/saved/saved_*.json"))):
+        with open(f, encoding="utf-8") as fh:
+            d = json.load(fh)
+        for r in d.get("rows") or []:
+            if r.get("field") == "unified_title_assignment" and r.get("course_id"):
+                saved[r["course_id"]] = r   # the latest save of a title wins
+    live = {}
+    for v in ut.values():
+        n = _norm(v.get("unified_title"))
+        live[n] = live.get(n, 0) + 1
+    # Where each family a procedure named now sits, so a split reads as a move, never as a rename.
+    went = {}
+    for cid, r in saved.items():
+        e = ut.get(cid.partition("::")[2])
+        if e:
+            went.setdefault(_norm(r.get("value")), []).append(_norm(e.get("unified_title")))
+    plural = {v: max(set(w), key=w.count) for v, w in went.items()}
+    by = {}
+    for cid, r in saved.items():
+        proc = r.get("procedure") or str(r.get("reviewer_email") or "").replace("cer-procedure-", "").replace("@bot", "")
+        e = ut.get(cid.partition("::")[2])
+        old = _norm(r.get("value"))
+        who = str((e or {}).get("reviewed_by") or "")
+        if e is None:
+            state = "left"
+        elif not who or who == r.get("reviewer_email"):
+            state = "untouched"
+        elif who.endswith("@bot"):
+            state = "by_procedure"
+        elif _norm(e.get("unified_title")) == old:
+            state = "kept"
+        elif live.get(old, 0) == 0 and _norm(e.get("unified_title")) == plural.get(old):
+            state = "renamed"
+        else:
+            state = "moved"
+        by.setdefault(proc, {})[cid] = state
+    procs = [dict(name=k, **_conf_counts(v)) for k, v in by.items()]
+    procs.sort(key=lambda x: -x["placed"])
+    allp = {}
+    for v in by.values():
+        allp.update(v)
+    return {"ref": "exhibit", "unit": "titles", "procedures": procs, "total": _conf_counts(allp)}
+
+
+def confidence_subjects(root):
+    """Common SUBJ picks the nightly confirm settled (kb/csr_out/confirm/), against kb/discipline_canonical_subj4.json now."""
+    seed = load_json(root, "kb/discipline_canonical_subj4.json").get("disciplines") or {}
+    placed = {}
+    proc_name = "confirm-authority"
+    for f in sorted(glob.glob(os.path.join(root, "kb/csr_out/confirm/confirmed_*.json"))):
+        with open(f, encoding="utf-8") as fh:
+            d = json.load(fh)
+        for r in d.get("rows") or []:
+            disc = r.get("discipline")
+            if not disc:
+                continue
+            e = seed.get(disc) or {}
+            who = str(e.get("reviewed_by") or "")
+            if not e.get("canonical_subj4"):
+                state = "left"
+            elif not who or who == r.get("reviewer_email"):
+                state = "untouched"
+            elif who.endswith("@bot"):
+                state = "by_procedure"
+            elif e.get("canonical_subj4") == r.get("value"):
+                state = "kept"
+            else:
+                state = "moved"
+            placed[disc] = state
+    return {"ref": "subjects", "unit": "picks", "procedures": [dict(name=proc_name, **_conf_counts(placed))] if placed else [],
+            "total": _conf_counts(placed)}
+
+
+def build_confidence(root):
+    out = []
+    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects)):
+        try:
+            out.append(fn(root))
+        except Exception as e:  # noqa: BLE001  (a source that cannot be read says so, never a zero)
+            out.append({"ref": ref, "error": "%s: %s" % (type(e).__name__, e)})
+    return out
+
+
 BUILDING = [
     ("credentials", "Industry credentials", "#exhibits", building_credentials),
     ("outcomes", "Course outcomes", "#coci-lookup", building_outcomes),
@@ -666,7 +814,8 @@ def build(root):
         except Exception as e:  # noqa: BLE001
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building}
+    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows),
+            "confidence": build_confidence(root)}
 
 
 def main(argv=None):

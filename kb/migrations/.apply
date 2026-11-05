@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql
-name=s557_library_ell_iet_v3_draft
+file=kb/migrations/2026-11-05_library_drafts.sql
+name=s577_library_drafts

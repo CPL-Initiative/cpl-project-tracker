@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-03T09:22:54Z",
-  "session": 560,
-  "moniker": "SkyWhirligig",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-05T03:19:31Z",
+  "session": 577,
+  "moniker": "SkyKumquat and SkyBarnard",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_561_handoff.md",
+  "handoff": "docs/session_578_handoff.md",
   "next_step": {
-    "title": "Las Positas's full SLO read",
-    "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-04 UTC day, beside Columbia's trial."
+    "title": "Columbia's full SLO read",
+    "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
   },
   "calls": [
     {
@@ -208,6 +208,26 @@
   },
   "changes": [
     {
+      "at": "2026-11-04T12:40:00Z",
+      "text": "No harvest change this run: the day's SLO read had already run. The run added the AWS welding and Amazon Web Services families to the exhibit-to-cert link (#2761)."
+    },
+    {
+      "at": "2026-11-04T11:22:00Z",
+      "text": "No harvest change this run: the day's SLO read had already run. The run added the PMI, ICC, CDPH and EMSA families to the exhibit-to-cert link (#2760)."
+    },
+    {
+      "at": "2026-11-04T10:20:00Z",
+      "text": "No harvest change this run: the day's SLO read had already run. The run added the Autodesk, NCCER and ASME families to the exhibit-to-cert link (#2759)."
+    },
+    {
+      "at": "2026-11-04T09:24:00Z",
+      "text": "No harvest change this run: the day's SLO read had already run. The run built the FAA family of the exhibit-to-cert link (#2758)."
+    },
+    {
+      "at": "2026-11-04T08:17:00Z",
+      "text": "Las Positas's course outcomes loaded: 505 rows (#2717). The table holds 9,889 rows at twelve colleges."
+    },
+    {
       "at": "2026-11-03T09:20:00Z",
       "text": "What needs attention now counts active programs whose record fails a check, the Commons card's unit, and both pages say why their figures can differ: the card counts the records committed at the last checkpoint, this page reads live."
     },
@@ -238,6 +258,10 @@
     {
       "at": "2026-11-02T15:10:00Z",
       "text": "The Allan Hancock and Antelope Valley presidents' emails loaded through the contacts apply as a partial file; the Commons' first view is the CPL Commons, locked by Sam, with the look for its port on Sheet 158."
+    },
+    {
+      "at": "2026-11-05T02:22:00Z",
+      "text": "Merged the routine's S573 cert-link pull request (#2763) after bringing main in; no program record changed this run."
     }
   ],
   "headline": [
@@ -402,15 +426,27 @@
       "active": 20282,
       "complete": 13542,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-04",
+      "active": 20282,
+      "complete": 13542,
+      "colleges": 114
+    },
+    {
+      "day": "2026-11-05",
+      "active": 20282,
+      "complete": 13542,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-03T09:12:00Z"
+    "at": "2026-11-05T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-03",
+    "day": "2026-11-05",
     "gaps": 3025,
     "parts": {
       "links": {
@@ -437,7 +473,7 @@
       ],
       "outcomes": {
         "slo": [
-          8227,
+          8606,
           89192
         ],
         "plo": [

@@ -124,6 +124,18 @@
   .op-lane p { font-size:14.5px; margin:0 0 .7em; max-width:none; }
   .op-lane .op-chain { font-family:var(--op-mono); font-size:12px; color:var(--op-ink); letter-spacing:.01em; margin-top:12px; padding-top:12px; border-top:1px dashed var(--op-line-2); line-height:1.9; }
   .op-lane .op-chain .op-g { color:var(--op-ink-faint); }
+  .op-lane .op-steps li { padding:10px 4px 10px 44px; }
+  .op-lane .op-steps li::before { top:10px; }
+  .op-lane .op-steps li b { font-size:15.5px; }
+  .op-note { font-size:14.5px; margin:20px 0 0; color:var(--op-ink-soft); }
+  /* Setup cards carry no state, so they take the neutral blue, never the gate's teal or coral. */
+  .op-lane.op-plain .op-dot { background:var(--op-indigo); }
+  .op-lane.op-plain .op-flag { color:var(--op-indigo); background:color-mix(in srgb, var(--op-indigo) 12%, transparent); text-transform:none; letter-spacing:.02em; font-size:11.5px; }
+  .op-wide { margin:20px 0; border:1px solid var(--op-line); border-radius:15px; padding:22px 24px 12px; background:var(--op-panel); }
+  .op-wide h3 { font-size:19px; margin:0 0 6px; }
+  .op-wide .op-steps li { padding:10px 4px 10px 44px; }
+  .op-wide .op-steps li::before { top:10px; }
+  .op-wide .op-steps li b { font-size:15.5px; }
 
   /* tmc */
   .op-tmc { border-radius:15px; }
@@ -323,6 +335,62 @@
             <div class="op-chain">nominate <span class="op-g">→</span> clean up <span class="op-g">→</span> <strong>person reviews</strong> <span class="op-g">→</span> publish</div>
           </div>
         </div>
+      </div>
+
+      <div class="op-sec op-setup">
+        <div class="op-sechead op-reveal">
+          <div class="op-eyebrow">Joining the work · accounts and access <span class="op-alt">6,000 ft</span></div>
+          <h2>Getting set up</h2>
+          <p class="op-lead">Two Claude Team accounts share this work: the MAP team's, and a pilot for the
+            Chancellor's Office Division of Academic Affairs, set up through RCCD. Each person works under their own
+            seat, so every session knows who is driving. A session reads a repo only when the person's GitHub
+            account can reach it, so setup is mostly a matter of access.</p>
+        </div>
+        <div class="op-wide op-start op-reveal">
+          <h3>Start here: Sam and Malone, before anyone else</h3>
+          <ol class="op-steps">
+            <li><b>Make Malone an Owner on both Claude accounts</b><span>Sam does this on the MAP team account and on the Academic Affairs pilot, so either of you can change settings on either.</span></li>
+            <li><b>Each sign in under your own seat</b><span>Your own email on each account you will work in. The shared MAP login stays out of new sessions.</span></li>
+            <li><b>Give Malone the GitHub access he needs to manage</b><span>Owner of the CPL-Initiative organization. On CPLBrain, Sam adds him as a collaborator until the repo moves to CPL-Initiative; after the move, his organization role covers it.</span></li>
+            <li><b>Give Malone Supabase access</b><span>Sam adds him to the Supabase organization for our project, and to the division's project once it exists, so he can add the team.</span></li>
+            <li><b>Try a session yourselves</b><span>Attach all three repos, link GitHub, and run python3 scripts/check_hooks_live.py. It should report the context meter as yes. Then set up the accounts below.</span></li>
+          </ol>
+        </div>
+        <div class="op-gate">
+          <div class="op-lane op-plain op-reveal" data-account="map">
+            <div class="op-lanetop"><span class="op-dot"></span><h3>The MAP team account</h3><span class="op-flag">Malone</span></div>
+            <ol class="op-steps">
+              <li><b>Take the Owner role</b><span>Only an Owner edits Claude Code's managed settings and cloud environments.</span></li>
+              <li><b>Invite one seat per person</b><span>No shared logins, so each session can tell who wrote what.</span></li>
+              <li><b>Give the GitHub team its repos</b><span>A map-team team in CPL-Initiative: write on the Project Tracker and CPLBrain, read on the Knowledge Base, whose changes go through human review.</span></li>
+              <li><b>Push the standing instructions</b><span>The three-repo check goes into the managed CLAUDE.md, so every session carries it.</span></li>
+              <li><b>Set the default cloud environment</b><span>Copy Sam's setup script, which installs the context meter and the prompt guards.</span></li>
+            </ol>
+          </div>
+          <div class="op-lane op-plain op-reveal" data-account="aa">
+            <div class="op-lanetop"><span class="op-dot"></span><h3>The Academic Affairs pilot</h3><span class="op-flag">Sam and Malone</span></div>
+            <ol class="op-steps">
+              <li><b>Create the CO's GitHub organization and repo</b><span>The CO owns it; Sam and Malone stay owners so they can make changes along the way.</span></li>
+              <li><b>Commit its CLAUDE.md</b><span>From the draft in CPLBrain, with each person's name and role filled in. Paste the same text into the account's managed CLAUDE.md.</span></li>
+              <li><b>Give them read access to ours</b><span>The Knowledge Base is public; add the division's GitHub accounts to CPLBrain, read-only.</span></li>
+              <li><b>Set up their memory table</b><span>Run the memory table script in the division's own Supabase project.</span></li>
+              <li><b>Share one Project in Claude chat</b><span>Visible to the whole account, with the Project instructions from CPLBrain and the division's core documents uploaded.</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="op-wide op-firstday op-reveal">
+          <h3>Each person's first day, on either account</h3>
+          <ol class="op-steps">
+            <li><b>Accept the Claude invite</b><span>Sign in under your own email.</span></li>
+            <li><b>Link GitHub once</b><span>At claude.ai/connect-github.</span></li>
+            <li><b>Turn on the Supabase connector</b><span>On your claude.ai account, once you have been added to Supabase, so your writes carry your name.</span></li>
+            <li><b>Start a session with your repos attached</b><span>The MAP team attaches all three; the division attaches its own repo beside the Knowledge Base and CPLBrain. Say who you are in your first message.</span></li>
+            <li><b>Read the team guide</b><span>docs/working_with_claude_code.md in the Project Tracker.</span></li>
+          </ol>
+        </div>
+        <p class="op-note op-reveal">The full runbooks and the files to copy live in CPLBrain, under
+          04-projects/map-team-claude-accounts and 04-projects/co-academic-affairs-pilot. The CO will decide
+          whether to offer accounts like the pilot to its other divisions.</p>
       </div>
 
       <div class="op-sec op-tmc">

@@ -182,3 +182,21 @@ survives.
 "can the reader close it here?"** If the answer is no, either add the affordance
 or say plainly where the work happens instead. Naming a gap and providing no
 handle is a small betrayal of the reader's attention.
+
+## 2026-11-05 — Session 576: two Claude Team accounts, and what setup really is
+
+- **Setup is access.** A session reads a repo only when the person's GitHub account reaches it and the Claude GitHub
+  App is installed on it. Seats, GitHub teams and the managed CLAUDE.md are the whole job; the instructions ride along.
+- **A rule a person must remember to install fails on day one.** The three-repo check lived in a per-machine script.
+  An Owner can push it to every member as a managed CLAUDE.md (Organization settings, Claude Code, Managed settings), so
+  even a session with no repo carries it. The docs imply the editor takes a CLAUDE.md and do not state it; confirm there.
+- **A personal repo cannot be delegated.** Collaborators on a personal-account repo can push but cannot manage access,
+  so Malone can run CPLBrain's access only after it moves to an organization.
+- **Claude chat has no org-wide instruction.** A shared Project (instructions plus uploaded knowledge, visible to the
+  account) is the documented route; connectors work only in private projects. Cowork takes org skills, not CLAUDE.md.
+- **Partner accounts get their own memory, not ours.** The CO pilot gets an `aa_memory` table in its own Supabase,
+  trimmed from `cpl_memory`; opening our private stores to another organization is a Rule 10 (a3) read surface.
+- **Sam asked for his and Malone's steps before the team's** (*"make sure there are separate instructions for me an
+  Malone to get set up before the team members get set up"*): an admin's own access is the first dependency, and the
+  page should say so in order.
+

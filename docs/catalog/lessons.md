@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-93 document(s).
+94 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -78,6 +78,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Noncredit & Learning-Partner CPL — workstream lessons](../noncredit_cpl_lessons.md) | `noncredit_cpl_lessons.md` | 2026-08-05 | 2026-08-05 |
 | [Obsidian vault hygiene — lessons](../obsidian_vault_hygiene_lessons.md) | `obsidian_vault_hygiene_lessons.md` | 2026-08-28 | 2026-08-28 |
 | [OpenClassrooms Digital Marketer → CCC CPL crosswalk — lessons](../openclassrooms_crosswalk_lessons.md) | `openclassrooms_crosswalk_lessons.md` | 2026-09-29 |  |
+| [OpenClassrooms Medical Assistant → CCC CPL crosswalk — lessons](../openclassrooms_medical_assistant_crosswalk_lessons.md) | `openclassrooms_medical_assistant_crosswalk_lessons.md` | 2026-11-03 |  |
 | [Partner occupation → CPL crosswalk — lessons](../partner_crosswalk_lessons.md) | `partner_crosswalk_lessons.md` | 2026-08-05 |  |
 | [Program requirements harvest lessons — archive (S320-S347)](../program_requirements_harvest_lessons_archive.md) | `program_requirements_harvest_lessons_archive.md` | 2026-10-10 | 2026-10-12 |
 | [Program requirements harvest — Decisions & Lessons](../program_requirements_harvest_lessons.md) | `program_requirements_harvest_lessons.md` | 2026-10-03 |  |

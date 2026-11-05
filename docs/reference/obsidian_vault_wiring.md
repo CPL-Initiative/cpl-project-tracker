@@ -68,3 +68,15 @@ measurements:
 [`docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md`](docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md);
 corpus finding:
 [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
+
+## Checkpoint scope: the vault, never the public KB (moved from CLAUDE.md, 2026-11-04)
+
+**Checkpoint scope — vault, never the public KB.** Rule 9 / `/checkpoint`
+refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the UI pass ledger),
+which auto-sync into Sam's Obsidian vault + the `CPLBrain` repo with no review
+gate — correct for internal working memory. Checkpoint must **never** write to
+the public `cpl-knowledge-base`. That repo is a separate, audience-facing store
+reached **only** through its curation pipeline (`CPLBrain/audit/curation-manifest.tsv`
+→ `cpl-knowledge-base/tools/curation_assistant.py` → a human-reviewed **draft
+PR** per its `CURATION.md` — its "Promoting a checkpoint or vault note" section
+is the explicit path).

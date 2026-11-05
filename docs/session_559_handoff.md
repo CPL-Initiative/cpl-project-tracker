@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 558 (SkyFornax, the CPL Queue routine, 2026-11-03 07:12Z firing)
 tags: [handoff, commons, program-requirements, ui]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 559

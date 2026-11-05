@@ -81,6 +81,11 @@
   var TABLE_URL = SUPABASE_URL + "/rest/v1/cpl_library";
   var ALT_DRAFT_URL = SUPABASE_URL + "/functions/v1/alt-text-draft";
   var SCRIPT_DRAFT_URL = SUPABASE_URL + "/functions/v1/slide-script-draft";
+  // Revise from the card (Sam, 2026-11-05: "Build it"): library-revise-draft drafts the
+  // revision of a public page into cpl_library_drafts; library-publish.yml publishes it
+  // once someone presses Replace the public copy.
+  var REVISE_DRAFT_URL = SUPABASE_URL + "/functions/v1/library-revise-draft";
+  var DRAFTS_URL = SUPABASE_URL + "/rest/v1/cpl_library_drafts";
   var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
   var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var TEAM_KEY = "cpl_team_pass";
@@ -507,7 +512,8 @@
       R + " .lib-remswatches{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0;}",
       R + " .lib-remswatch{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:4px;font-size:.9rem;}",
       // One card per project (Sam, 2026-10-28; mockup Version 20): a row per piece, its title the link.
-      R + " .lib-proj .lib-tile .big{font-size:1.45rem;}",
+      R + " .lib-projhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 14px;}",
+      R + " .lib-projcount{font-size:.8rem;color:var(--text-muted);white-space:nowrap;}",
       R + " .lib-pieces{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--border);}",
       R + " .lib-piece{display:grid;gap:4px;padding:10px 0;border-bottom:1px solid var(--border);}",
       R + " .lib-piecehead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;}",
@@ -515,9 +521,7 @@
       R + " .lib-piecename a,.lib-piecename b{font-weight:700;}",
       R + " .lib-piece .lib-chips{margin:0;flex:1 1 220px;}",
       R + " .lib-pieceacts{display:flex;flex-wrap:wrap;gap:6px 12px;}",
-      R + " .lib-proj{grid-template-columns:176px minmax(0,1fr);}",
-      "@media (max-width:760px){" + R + " .lib-proj{grid-template-columns:132px minmax(0,1fr);}}",
-      "@media (max-width:560px){" + R + " .lib-proj{grid-template-columns:minmax(0,1fr);}}",
+      R + " .lib-proj{grid-template-columns:minmax(0,1fr);}",
       "@media (prefers-reduced-motion:reduce){" + R + " *{transition:none!important;animation:none!important;}}"
     ].join("\n");
     var st = document.createElement("style");
@@ -611,10 +615,13 @@
     }
     return true;
   }
+  function modified(r) { return String(r.updated_at || r.made_on || r.created_at || ""); }
   function groups(rows) {
     var by = {}, order = [];
+    // Last modified first (Sam, 2026-11-05: "sort the items in the Library by modified date
+    // descending"). A group sits where its most recently changed piece does.
     rows.slice().sort(function (a, b) {
-      var da = a.made_on || "", db = b.made_on || "";
+      var da = modified(a), db = modified(b);
       return da < db ? 1 : da > db ? -1 : String(a.title).localeCompare(String(b.title));
     }).forEach(function (r) {
       var g = r.occasion || "No occasion yet";
@@ -888,7 +895,10 @@
       "Changes to make" + (asked ? " (" + asked + ")" : "") + ":\n" +
       (r.refresh_note || "None typed: rebuild it from its source, the documents below and the current data.") + "\n" +
       sourcesText(r) + "\n" +
-      (rs === "approved"
+      (rs === "approved" && g.draft_id
+        ? "The draft from the card is approved (" + [g.approved_by, stamp(g.approved_at)].filter(Boolean).join(", ") + "): library-publish.yml publishes it in its next run " +
+          "(every three hours); dispatch that workflow to publish it now. Nothing else to do.\n"
+        : rs === "approved"
         ? "The draft is approved (" + [g.approved_by, stamp(g.approved_at)].filter(Boolean).join(", ") + "): " + (g.draft_url || "its draft") +
           " replaces the public copy. Rerun scripts/library_page.py from it, add the version to the record, empty Changes to make and clear regen.\n"
         : "Rebuild it from its source with these changes and keep its link. " +
@@ -966,21 +976,72 @@
         (sourceList(r).length ? " and the documents" : "") + " and remediates it; Copy the request starts it in a session now.");
     }
     if (rs === "ready") {
-      return "A draft is ready" + (g.ready_at ? " (" + esc(stamp(g.ready_at)) + ")" : "") + ": " +
-        (g.draft_url ? '<a href="' + esc(g.draft_url) + '" target="_blank" rel="noopener">open the draft</a>' : "its link is not recorded") +
-        ". The public copy stays as it is until you replace it.";
+      // Name the draft's version (Sam, 2026-11-05: the card said "Version 2" and he read
+      // the draft as missing; the number on the card is the public one, the draft is the next).
+      var cur = r.version && /^\d+$/.test(r.version) ? parseInt(r.version, 10) : null;
+      return (cur ? "Version " + (cur + 1) + " is ready to review" : "A draft is ready") +
+        (g.ready_at ? " (" + esc(stamp(g.ready_at)) + ")" : "") + ": " +
+        (g.draft_url ? '<a href="' + esc(g.draft_url) + '" target="_blank" rel="noopener">open the draft</a>'
+          : g.draft_id ? '<button type="button" class="lib-btn" data-draftopen="' + esc(g.draft_id) + '">Open the draft<span class="lib-vh"> of ' + esc(r.title) + "</span></button>"
+          : "its link is not recorded") +
+        (cur ? ". Version " + cur + " stays public until you replace it." : ". The public copy stays as it is until you replace it.");
     }
     if (rs === "approved") {
       return esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
-        ". The next scheduled run replaces the public copy with the draft.");
+        ". The next scheduled run replaces the public copy with the draft" + (g.draft_id ? " (every three hours)." : "."));
     }
     return "";
   }
+  // Draft it now needs a public copy on GitHub Pages to revise from, and something to change.
+  function canDraftHere(r) {
+    var pasted = sourceList(r).some(function (x) { return !x.url && x.text; });
+    return !!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0 && !sharePointOnly(r) && (r.refresh_note || pasted));
+  }
+  function g0Replace(r) { return !!(r.regen && r.regen.publish === "replace"); }
+  function draftNow(id) {
+    var r = byId(id);
+    if (!r || regenState(r) !== "waiting") return;
+    var n = document.getElementById("dn-by-" + id), by = n ? n.value.trim() : "";
+    if (!by) { say("Add your name, so the record says who asked for the draft.", true); render(); return; }
+    rememberAuthor(by);
+    var h = headers({ "Content-Type": "application/json" }), tok = reviewerToken();
+    if (tok && !teamPhrase()) h.Authorization = "Bearer " + tok;
+    state.busy = true; say("Drafting the changes onto " + r.title + ". This takes about a minute."); render();
+    return window.fetch(REVISE_DRAFT_URL, { method: "POST", headers: h, body: JSON.stringify({ id: id, by: by }) })
+      .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j || {} }; }); })
+      .then(function (o) {
+        state.busy = false;
+        if (!o.ok) throw new Error((o.j.error || "The draft was not made.") + (o.j.summary ? " The model said: " + o.j.summary : ""));
+        say("The draft is ready: " + (o.j.summary || "open it to read the changes.") +
+          (o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open the draft, then Replace the public copy when it reads right."));
+        return load();
+      }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+  // A draft from the card lives in cpl_library_drafts, behind the team phrase: read it and
+  // open it as a page of its own in a new tab.
+  function openDraft(draftId) {
+    var w = window.open("", "_blank");
+    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html", { headers: headers() })
+      .then(function (res) { if (!res.ok) throw new Error("The draft could not be read (" + res.status + ")."); return res.json(); })
+      .then(function (rows) {
+        if (!rows || !rows[0]) throw new Error("The draft is not there.");
+        var url = URL.createObjectURL(new Blob([rows[0].html], { type: "text/html" }));
+        if (w) w.location = url; else window.open(url, "_blank");
+      }).catch(function (e) { if (w) w.close(); say(e.message, true); render(); });
+  }
+
   // Under the card: the request's state, and Replace the public copy on a ready draft.
   function regenBox(r) {
     var rs = regenState(r), html = "";
     if (rs) {
       html += '<div class="lib-regen" role="status"><p>' + regenWords(r) + "</p>";
+      if (rs === "waiting" && canDraftHere(r)) {
+        html += '<form class="lib-inline" data-draftnowform="' + esc(r.id) + '"><label for="dn-by-' + esc(r.id) + '">Your name</label>' +
+          '<input id="dn-by-' + esc(r.id) + '" type="text" required value="' + esc(storedAuthor()) + '">' +
+          '<button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>" +
+          '<p class="lib-hint">Drafts the changes onto the public page in about a minute. The public copy stays until someone presses Replace the public copy' +
+          (g0Replace(r) ? ", except that this request asked to replace it at once." : ".") + "</p>";
+      }
       if (rs === "ready") {
         html += '<form class="lib-inline" data-regenokform="' + esc(r.id) + '"><label for="ro-by-' + esc(r.id) + '">Your name</label>' +
           '<input id="ro-by-' + esc(r.id) + '" type="text" required value="' + esc(storedAuthor()) + '">' +
@@ -2209,13 +2270,15 @@
     var rows = u.rows.filter(function (r) { return r.kind === "visual"; }).concat(u.rows.filter(function (r) { return r.kind !== "visual"; }));
     var lead = rows[0];
     var who = rows.filter(function (r) { return r.for_kind; })[0];
-    var latest = rows.map(function (r) { return r.made_on || ""; }).sort().pop();
+    var latest = rows.map(modified).sort().pop();
     var id = "lib-p-" + esc(lead.id);
     var anyPublic = rows.some(function (r) { return r.public_listed; });
     return '<article class="lib-item lib-proj" aria-labelledby="' + id + '">' +
-      '<div class="lib-thumb"><div class="lib-tile"><span class="big">' + rows.length + ' pieces</span><span class="unit">' + esc(kindsWord(rows)) + "</span></div></div>" +
+      // The count is a small label to the title's right, so the title holds the eye (Sam, 2026-11-05:
+      // "shrink the chip and put it to the right, so it doesn't get focus and the title is the focus").
       '<div class="lib-body"><p class="lib-kicker">' + esc(["Project", latest ? "Updated " + fmtDate(latest) : ""].filter(Boolean).join(" \u00b7 ")) + "</p>" +
-      '<h3 class="lib-title" id="' + id + '">' + esc(u.name) + "</h3>" +
+      '<div class="lib-projhead"><h3 class="lib-title" id="' + id + '">' + esc(u.name) + "</h3>" +
+      '<span class="lib-projcount">' + rows.length + " pieces \u00b7 " + esc(kindsWord(rows).toLowerCase()) + "</span></div>" +
       (anyPublic ? '<ul class="lib-chips" aria-label="Project"><li class="lib-chip">In the public library</li></ul>' : "") +
       (who ? '<p class="lib-for">Made for <b>' + esc(forKindWord(who)) + "</b>" + (who.for_name ? " \u00b7 For <b>" + esc(who.for_name) + "</b>" : "") + "</p>" : "") +
       (lead.summary ? '<p class="lib-summary">' + esc(lead.summary) + "</p>" : "") +
@@ -2684,6 +2747,7 @@
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
       else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
+      else if (e.target.getAttribute("data-draftnowform")) draftNow(e.target.getAttribute("data-draftnowform"));
     });
     root.addEventListener("click", function (e) {
       var go = e.target.closest ? e.target.closest("[data-remgoto]") : null;
@@ -2694,6 +2758,7 @@
       if ((v = b.getAttribute("data-kind"))) { state.kind = v; render(); }
       else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
+      else if ((v = b.getAttribute("data-draftopen"))) openDraft(v);
       else if (b.id === "lib-go") startPanel();
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);
@@ -2836,7 +2901,7 @@
     _knowledgeValue: knowledgeValue,
     _regenState: regenState, _goToRequest: goToRequest,
     _sharePointOnly: sharePointOnly,
-    _regenWords: regenWords,
+    _regenWords: regenWords, _canDraftHere: canDraftHere, _draftNow: draftNow, _openDraft: openDraft,
     _requestText: requestText,
     _sourcesText: sourcesText,
     _ensureSierraBar: ensureSierraBar

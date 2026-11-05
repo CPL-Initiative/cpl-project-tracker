@@ -1,0 +1,350 @@
+{
+ "run": "41595084107",
+ "index": "kb/course_outline_index/index_41589640082.json",
+ "host": "https://laspositas.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "las_positas",
+ "part": 1,
+ "of": 1,
+ "wanted": 776,
+ "slice": 12,
+ "at": "2026-11-03T07:20:03Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 50
+ },
+ "rows": [
+  {
+   "code": "AF 1",
+   "title": "Aerobic Fitness 1",
+   "course_id": 5262,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5262?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5262?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 6186,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Compare and contrast various methods of evaluating exercise intensity.",
+    "Demonstrate an increase in their cardiorespiratory fitness.",
+    "Safely use a variety of cardiovascular gym equipment."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "85c9dbbea0a0f2f5eb274868a72ea816"
+  },
+  {
+   "code": "ARHS 1",
+   "title": "Introduction to Art History",
+   "course_id": 5785,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5785?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5785?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 8617,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Demonstrate critical and creative thinking by applying interdisciplinary approaches to the interpretation of artwork.",
+    "Identify formal elements in an artwork and be able to ascertain how these elements create meaning in the chosen art work.",
+    "Identify themes of art within a chosen art work across a broad range of cultures and time periods."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "65416e77b541ce0de773625f726ced6c"
+  },
+  {
+   "code": "BL 1",
+   "title": "Bowling 1",
+   "course_id": 5253,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5253?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5253?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 3276,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Differentiate the four basic shots in bowling.",
+    "Display appropriate bowling etiquette."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "4664c0ab2fe6db6a1e905b33e61dce92"
+  },
+  {
+   "code": "COMM C1000",
+   "title": "Introduction to Public Speaking",
+   "course_id": 5681,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5681?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5681?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 24444,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Deliver a speech with effective content, organization, and delivery."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "7945fec9f3862588d954695a8520a514"
+  },
+  {
+   "code": "ENGL C1000",
+   "title": "Academic Reading and Writing",
+   "course_id": 6314,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6314?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6314?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 23971,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Read analytically to understand and respond to diverse academic texts.",
+    "Compose thesis-driven academic writing that demonstrates analysis and synthesis of sources as appropriate to the rhetorical situation.",
+    "Demonstrate strategies for planning, outlining, drafting, revising, editing, and proofreading written work.",
+    "Identify the main ideas and supporting arguments of a college-level text.",
+    "Research a topic using credible sources and document sources in an academically responsible way.",
+    "Use effective sentence structure and style to convey ideas."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "6f90061d050210851ba868765c1cd232"
+  },
+  {
+   "code": "FREN 1A",
+   "title": "Beginning French",
+   "course_id": 5792,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5792?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5792?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 14358,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Communicate orally at the beginning level.",
+    "Comprehend spoken French at the beginning level.",
+    "Write at the beginning level."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "ba94246c9a3b18fbe4a6684387b9c0af"
+  },
+  {
+   "code": "HEA 1",
+   "title": "Introduction to Personal Health",
+   "course_id": 6094,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6094?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6094?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 19277,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Identify their modifiable and non-modifiable risk factors for personal health.",
+    "Locate health information related to their individual behavior change process and evaluate the credibility of those sources.",
+    "Integrate and apply scientific research into their individual behavior change process.",
+    "Feel empowered to implement positive health behaviors."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "423a046f2002a0a08b0f935b5506c324"
+  },
+  {
+   "code": "LGBT 1",
+   "title": "Introduction to LGBTQ Studies",
+   "course_id": 4677,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4677?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4677?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 15675,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Explain the social, economic, political, intellectual, and cultural contributions of LGBTQ+ people of the past and present.",
+    "Explain how sexual identity and gender identity combine with nationality, race and ethnicity, religion, social class, and physical ability to shape the experiences of LGBTQ+ individuals.",
+    "Synthesize the relationships between epistemological frameworks used in LGBTQ+ studies and those used in other areas (i.e. Queer Theory, Feminist Theory, and Critical Theory).",
+    "Compare and contrast the key methodologies utilized in LGBTQ+ studies."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e00ba3320822be2e55ce162895f2bd5e"
+  },
+  {
+   "code": "NBUS 200",
+   "title": "Communication in the Workplace",
+   "course_id": 5749,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5749?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5749?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 9614,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Distinguish among the various barriers that interfere with communication and develop skills to address and overcome these barriers through the effective application of verbal and nonverbal communication.",
+    "Apply effective listening skills in a variety of situations to promote healthy, positive communication.",
+    "Develop an interview plan with optimal questions and scenarios for a successful interview.",
+    "Identify and describe non-verbal communication and how it can be interpreted."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e160a57553f2b15da145b7db7cec7078"
+  },
+  {
+   "code": "PHIL 1",
+   "title": "God, Nature, Human Nature",
+   "course_id": 6047,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6047?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6047?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 9625,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Effectively participate and express opinions in a group and whole-class setting in a way that is respectful and well thought-through.",
+    "Use philosophical methods to explain, apply and evaluate philosophical positions of their own and of significant historical figures."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "817d23b14ea2841280031654ab25d896"
+  },
+  {
+   "code": "RADS 40A",
+   "title": "Radiation Safety",
+   "course_id": 4269,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4269?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4269?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 7083,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Identify the basic principles of atomic energy, radioactivity, and decay.",
+    "Assess hazards associated with the use of ionizing radiation.",
+    "Determine biological effects and risks from radiation exposure."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "97be7fb960f759d571a914fb3b0e64ec"
+  },
+  {
+   "code": "SW 1",
+   "title": "Swimming 1",
+   "course_id": 4373,
+   "report": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4373?entityType=Course&reportId=516",
+   "named_by": [
+    "las_positas"
+   ],
+   "status": 200,
+   "final_url": "https://laspositas.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4373?entityType=Course&reportId=516",
+   "access": "public",
+   "title_printed": "Admin Outline",
+   "chars": 3161,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Upon the completion of this course, the student should be able to:",
+    "Demonstrate competency of beginning level swimmers, including floating skills, and comfort in the water.",
+    "Demonstrate the basic techniques of freestyle and backstroke for 25 yards.",
+    "Demonstrate the basic techniques of elementary backstroke."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "6d120397b202f31a84b5d227fa863aa3"
+  }
+ ]
+}

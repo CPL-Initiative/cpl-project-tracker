@@ -56,6 +56,44 @@
   };
   var appEl, authEl, filtEl, metaEl, listEl, guideHostEl;
 
+  /* The tab's address (every view has an address, 2026-11-04). Two modules paint this tab, and the keeper holds one
+     view provider per tab, so this file and map_data_quality.js register the same provider, each reading the other's
+     words through its window handle: #map-data-quality/<p1..p5>/<tier-1..3>/<open|reported|in-progress|fixed|
+     verified|wontfix>, each part optional, in the order they sit on the page. The words never overlap, so each module
+     takes its own from the address and ignores the rest. */
+  function viewWords() {
+    var w = [];
+    if (state.f.priority) w.push("p" + state.f.priority);
+    if (state.guideTier && state.guideOpen) w.push("tier-" + state.guideTier);
+    return w;
+  }
+  /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("map-data-quality", function () {
+    var w = [].concat(window.CPL_CLEANUP_VIEWS && CPL_CLEANUP_VIEWS._viewWords ? CPL_CLEANUP_VIEWS._viewWords() : [],
+      window.CPL_MAP_DQ && CPL_MAP_DQ._viewWords ? CPL_MAP_DQ._viewWords() : []);
+    return ["map-data-quality"].concat(w).join("/");
+  });
+  /* Opens the class and tier the address names; a tier opens the guidance, where its words sit. */
+  /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
+     re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
+  var away = true, seenHash = null;
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "map-data-quality") away = true; });
+  function arrive() {
+    var h = String(location.hash || ""), visit = away || h !== seenHash;
+    away = false; seenHash = h;
+    if (!visit) return false;
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("map-data-quality") : null;
+    if (!a) return false;
+    var hit = false;
+    a.forEach(function (x) {
+      var m = /^p([1-9])$/.exec(x);
+      if (m && PRIORITY_LABEL[m[1]]) { state.f.priority = m[1]; hit = true; }
+      m = /^tier-([123])$/.exec(x);
+      if (m) { state.guideTier = m[1]; state.guideOpen = true; hit = true; }
+    });
+    return hit;
+  }
+
   function tp() { return (typeof window !== "undefined" && window.CPL_TEAM_PHRASE) || null; }
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
   function clear(n) { while (n && n.firstChild) n.removeChild(n.firstChild); }
@@ -556,12 +594,18 @@
     if (!root) return;
     ensureCss();
     if (!state.built) buildShell(root);
+    arrive();
     refresh();
   }
+  /* The tab boot mounts on the first visit only; a later visit on an address that names a view opens it. */
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "map-data-quality" && state.built && arrive()) renderAll();
+  });
 
   window.CPL_CLEANUP_VIEWS = {
     mount: mount,
     _state: state,
+    _viewWords: viewWords,
     _collegeText: collegeText,
     _guideText: guideText,
     _byCollege: byCollege,

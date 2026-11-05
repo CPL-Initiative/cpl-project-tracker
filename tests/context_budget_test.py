@@ -148,6 +148,16 @@ try:
     code_empty, _ = meter(empty)
     check("(4a) a transcript with no usage rows is unmeasurable, not a crash",
           code_empty == 1)
+    # A usage field present and null (seen 2026-11-04): the meter read get()'s default only for a MISSING key and
+    # crashed on None, so the hook went silent for the whole session.
+    nulls = os.path.join(tmp, "nulls.jsonl")
+    with open(nulls, "w") as fh:
+        fh.write(json.dumps({"type": "assistant", "message": {"usage": {
+            "input_tokens": 5, "cache_read_input_tokens": None, "cache_creation_input_tokens": 300_000,
+            "output_tokens": 10}}}) + "\n")
+    code_nulls, m_nulls = meter(nulls)
+    check("(4c) a null usage field counts as zero, not a crash",
+          code_nulls == 0 and m_nulls.get("used") == 300_005, str(m_nulls))
     code_missing, _ = meter(os.path.join(tmp, "nope.jsonl"))
     check("(4b) a missing transcript is unmeasurable, not a crash",
           code_missing == 1)

@@ -1216,6 +1216,38 @@
   // revOpen, it survives the list re-render so an in-progress add/apply stays put. Reset per department.
   var revInline = {};
 
+  // The view a sign-in link returns to (cpl_session.js viewAddress); the address arriveView() opens. The two
+  // nav destinations are the view (Browse and Find a course's code have no nav entry, so no address); the
+  // course triage tile rides along once a subject shows it, in its visible word. The scope is always named,
+  // because the tab's default comes from this browser's stored choice, which another browser does not hold.
+  var FILTER_WORDS = { ready: "clear", suggested: "suggest", review: "review", manual: "manual" };
+  if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("cip-crosswalk", function () {
+    if (st.mode !== "review") return "cip-crosswalk";
+    var a = "cip-crosswalk/" + (st.scope === "programs" ? "programs" : "courses");
+    if (st.scope === "programs" || !rev.dept) return a;
+    for (var w in FILTER_WORDS) if (FILTER_WORDS[w] === rev.filter) return a + "/" + w;
+    return a;
+  });
+  // #cip-crosswalk/<courses|programs>[/<ready|suggested|review|manual>] opens that destination for this visit,
+  // over the stored choice and without writing it. College and subject are picks that clear on close
+  // (Sam, 2026-07-17), so the address holds neither: the tile waits for the first subject chosen in the visit.
+  // A bare address, or a word the tab does not know, leaves the tab as it is. Returns whether the view changed.
+  var arrivalFilter = "";
+  function arriveView() {
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("cip-crosswalk") : null;
+    if (!a || (a[0] !== "courses" && a[0] !== "programs")) return false;
+    var want = a[0] === "courses" && FILTER_WORDS[a[1]] ? FILTER_WORDS[a[1]] : "";
+    var changed = !(st.mode === "review" && st.scope === a[0]);
+    st.mode = "review"; st.scope = a[0];
+    arrivalFilter = "";
+    if (a[0] === "courses" && rev.dept) {
+      // A later visit while a subject is still chosen: the tile opens at once, All when the address names none.
+      var f = want || "all";
+      if (rev.filter !== f) { rev.filter = f; changed = true; }
+    } else arrivalFilter = want;
+    return changed;
+  }
+
   function parseSubject(label) {
     var l = label || "", i = l.indexOf(" — ");
     if (i < 0) return "—";
@@ -1899,7 +1931,7 @@
     // The Department picker lives UP in the college bar, right beside the college
     // dropdown (Sam: "move Dept selector up next to College") — one control row.
     revDeptSel = el("select", { class: "cipx-rev-deptsel", "aria-label": "Subject to review" }, [el("option", { value: "" }, ["Loading " + (col ? col.name : "college") + " courses…"])]);
-    revDeptSel.onchange = function () { rev.dept = revDeptSel.value || null; rev.filter = "all"; loadDept(); };
+    revDeptSel.onchange = function () { rev.dept = revDeptSel.value || null; rev.filter = (rev.dept && arrivalFilter) || "all"; if (rev.dept) arrivalFilter = ""; loadDept(); };
     if (collegeSelEl && collegeSelEl.parentNode) {
       collegeSelEl.parentNode.appendChild(el("span", { class: "cipx-rev-deptinline" }, [el("span", { class: "cipx-rev-deptl" }, ["Subject"]), revDeptSel]));
     }
@@ -2774,6 +2806,7 @@
       var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [n.label])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
       b.onclick = function () {
         if (on) return;
+        arrivalFilter = "";   // the address's tile belonged to the destination it named
         st.mode = n.mode;
         if (n.scope) st.scope = n.scope;
         // A stale stored pair can still read programs+recommend; there is no course-first easy button
@@ -3474,7 +3507,12 @@
     }
     _rendered = true;
     ingest(data);
+    arriveView();   // after ingest restores the stored choice, so the address wins for this visit
     rebuildShell();
+    // A later visit by an address that names a destination opens it (tabs.js fires onActivate once).
+    window.addEventListener("cpl-tab-activated", function (e) {
+      if (e && e.detail && e.detail.tab === "cip-crosswalk" && arriveView()) rebuildShell();
+    });
   }
 
   window.CPL_CIP_CROSSWALK = {

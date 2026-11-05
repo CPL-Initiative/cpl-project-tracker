@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-573 document(s).
+574 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -57,7 +57,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A click-outside-closes overlay must test the click TARGET, never walk ancestors](../kb-notes/methodology-overlay-close-on-backdrop-target-only.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A client cannot see the cap the server enforces, so a two-half feature fails in the half that deployed](../kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A client gate stricter than its RLS policy fails silently, toward lost work](../kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
-| [A code change is a prefix re-key that keeps the number, not a re-sequence](../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md) | methodology | published | 2026-09-03 | 2026-09-03 |
+| [A code change is a prefix re-key that keeps the number, not a re-sequence](../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md) | methodology | published | 2026-09-03 | 2026-11-05 |
 | [A collapsed section must still inform, or it is hidden rather than minimal](../kb-notes/methodology-a-collapsed-section-must-still-inform.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
@@ -191,6 +191,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A red merge ref can be main's, and every open PR inherits it](../kb-notes/methodology-a-red-merge-ref-can-be-mains.md) | methodology | published | 2026-10-14 | 2026-10-14 |
 | [A regressed mode must reach the changed code](../kb-notes/methodology-a-regressed-mode-must-reach-the-changed-code.md) | methodology | published | 2026-10-18 | 2026-10-18 |
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
+| [A renamed family is not a correction](../kb-notes/methodology-a-renamed-family-is-not-a-correction.md) | methodology | published | 2026-11-04 | 2026-11-04 |
 | [A rendered artifact reads the model through a filed stamp](../kb-notes/methodology-a-rendered-artifact-reads-the-model-through-a-filed-stamp.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
@@ -552,7 +553,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Career-attainment import — the Chancellor's Office's EDD measure for goal (C)](../kb-notes/reference-career-attainment-import.md) | reference | published | 2026-09-23 | 2026-09-23 |
 | [CCR curation sync & live-merge durability (what's instant vs what waits for cron)](../kb-notes/reference-ccr-curation-sync-and-live-merge.md) | reference | published | 2026-06-23 | 2026-06-23 |
 | [CDCP, course-level, and the CIP-count rule](../kb-notes/reference-cdcp-and-the-cip-count-rule.md) | reference | published | 2026-07-28 |  |
-| [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-06-23 |
+| [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-11-04 |
 | [Common-Course level convention (Beg/Int/Adv)](../kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 |  |
 | [CPL eligibility — military vs non-military + the Exhibit CRs Catalog rollup](../kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md) | reference | published | 2026-06-09 | 2026-06-09 |
 | [CTDL classes for COBI's records, verified against Credential Engine's schema](../kb-notes/reference-ctdl-classes-for-cobi-records.md) | reference | published | 2026-10-20 | 2026-10-20 |

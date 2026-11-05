@@ -1,0 +1,6 @@
+{
+  "_about": "P3 at write time (2026-11-05 ~02:00Z, MCP execute_sql). Live kb_curation over a superset of the touched keys (every row on the eleven old prefixes, and every entry whose merge_into points at one), reviewed_* columns excluded, hashed as md5 of course_id|field|value lines in byte order; the same hash over the committed coci_curation.json overlay at HEAD. Equal, so the committed overlay is the live read, and the apply's --fresh-read rows were built from it.",
+  "kb_curation": {"rows": 1435, "keys": 1409, "md5_live": "766bad55abb7535d69fedbdfaacb27c6", "md5_committed": "766bad55abb7535d69fedbdfaacb27c6", "newest_reviewed_at": "2026-07-13T20:02:39Z"},
+  "canon_picks": {"rows": 146, "md5_live": "d49cb87090d079cb6ba3687f9094b8a8", "md5_picks_json": "d49cb87090d079cb6ba3687f9094b8a8"},
+  "go": "Sam, 2026-11-05 ~01:58Z, in session (SkyKumquat/SkyBarnard): \"Apply now\""
+}

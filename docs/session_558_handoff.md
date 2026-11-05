@@ -4,6 +4,8 @@ date: 2026-11-03
 session: 557 (SkySculptor, the CPL Queue routine, 2026-11-03 06:12Z firing)
 tags: [handoff, library, ell-iet, program-requirements, credential-registry, ui-pass]
 status: current
+superseded: true
+superseded_by: session_569_handoff.md
 ---
 
 # You are Session 558

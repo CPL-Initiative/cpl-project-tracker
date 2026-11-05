@@ -200,3 +200,70 @@ class VendorCerts(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class FaaCerts(unittest.TestCase):
+    """The FAA (S568): every certificate in the table resolves across the catalog's two FAA spellings, a rating named
+    without its category holds any that fit, and the flight labs and ground schools are never linked."""
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(REPO, "kb", "exhibit_cert_links.json"), encoding="utf-8") as fh:
+            d = json.load(fh)
+        cls.links, cls.certs = d["links"], d["certs"]
+
+    def test_every_named_cert_is_in_the_catalog(self):
+        for title, (rule, names) in lk.FAA.items():
+            if title not in self.links:
+                continue
+            link = self.links[title]
+            self.assertEqual(link.get("unresolved", []), [], title)
+            self.assertEqual(len(link["certs"]), len(set(link["certs"])), title)
+            for cid in link["certs"]:
+                self.assertEqual((self.certs[cid]["issuer"], self.certs[cid]["family"]), (lk.FAA_ISSUER, "FAA"))
+
+    def test_the_family(self):
+        ap = self.links["FAA Mechanic Certificate — Airframe and Powerplant (A&P)"]
+        self.assertEqual((ap["relation"], ap["rule"], len(ap["certs"])), ("holds", "all", 1))
+        either = self.links["FAA Mechanic Certificate — Airframe or Powerplant Rating"]
+        self.assertEqual((either["rule"], len(either["certs"])), ("any", 2))
+
+    def test_courses_stay_out(self):
+        for course in ("Private Pilot 1 Ground School", "Instrument Rating Flight Lab", "FAA Private Pilot Ground School",
+                       "Aircraft and Engines"):
+            self.assertNotIn(course, self.links)
+            self.assertNotIn(course, lk.FAA)
+
+
+class HandFamilies(unittest.TestCase):
+    """Autodesk, NCCER and ASME (S569), PMI, ICC, CDPH and EMSA (S570), AWS welding and Amazon (S571), NWCG and SWRCB (S572), IAI, Intuit and DRE (S573): every named cert resolves across the issuer's two catalog spellings, and the
+    titles that name no one catalog certification (levels short of journey, courses, mixed issuers) are never linked."""
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(REPO, "kb", "exhibit_cert_links.json"), encoding="utf-8") as fh:
+            d = json.load(fh)
+        cls.links, cls.certs = d["links"], d["certs"]
+
+    def test_every_named_cert_is_in_the_catalog(self):
+        for fam, (_, table) in lk.HAND.items():
+            for title, (rule, names) in table.items():
+                link = self.links[title]
+                self.assertEqual(link.get("unresolved", []), [], title)
+                self.assertEqual(len(link["certs"]), len(names), title)
+                for cid in link["certs"]:
+                    self.assertEqual(self.certs[cid]["family"], fam, title)
+
+    def test_left_out(self):
+        for title in ("NCCER Commercial Electrician Level 1", "NCCER Industrial Electrician Level 3", "AutoCAD Beginning",
+                      "Autodesk Revit", "Autodesk Certified Professional", "Fire Inspector 1",
+                      "ASME BPVC Section IX — GTAW Welder Qualification", "Program Management Professional (PgMP)",
+                      "California Building Code Certification", "Acute Care Nursing Assistant", "EMT Certification",
+                      "EMT-2 Certification", "Emergency Medical Technician Basic",
+                      "AWS D1.3 GMAW Qualified Welder", "AWS Welder Qualification — D1.1/D1.3/D17.1",
+                      "LA City Certified Welder — AWS D1.1 SMAW", "Shielded Metal Arc Welding (SMAW)",
+                      "Water Treatment Facilities", "Basic Wildland Firefighter (S-130/S-190)", "S-130 — Firefighter Training",
+                      "NWCG S-190 — Introduction to Wildland Fire Behavior",
+                      "ESCO Master Specialist — Gas Heat", "Firefighter I", "Intuit QuickBooks Online Certified User",
+                      "QuickBooks", "Real Estate Finance"):
+            self.assertNotIn(title, self.links)
