@@ -47,8 +47,7 @@ row.
 
 ## Open work, in order
 
-1. **Merge #2796 and #2797** if they are still open, each on a passing `test` (S578 merges them if CI finishes in its
-   run).
+1. **Merge #2797** if it is still open, on a passing `test`. #2796 merged (6c11e675).
 2. **Columbia's load** (above), then the step 11 next for the new UTC day.
 3. Tonight's routine steps as `scheduled_sessions.md` lists them. The contacts harvest runs on Sunday, 2026-11-08.
 4. Carried from 578: ELL IET Version 3 (Sam's Replace), Sam's own CPLBrain steps (Malone as a collaborator, the
@@ -62,7 +61,12 @@ row.
 - **`check_generated.sh` needs `openpyxl`** for the discipline-blanks and statewide-catalog checks. Run
   `python3 -m pip install openpyxl` in a fresh container, or both read STALE when they are not.
 
+- **A rename the watch routes through `formerly` still needs the hand-written tables moved.** `VENDOR` in
+  `kb/_build_exhibit_cert_links.py` and the MAP route in `kb/_build_it_ai_credential_catalog.py` named MOS Access 2016's
+  registry title, so the link read it as not in the catalog. `credential_catalog_widening_test` caught it in CI's lints,
+  and #2797's second commit points both at the issuer row's name.
+
 ## Let go
 
-S578 holds no PR subscription, check-in or artifact watch. It leaves #2754 (read running), and #2796 and #2797 if
-unmerged.
+S578 holds no PR subscription, check-in or artifact watch. It leaves #2754 (read running), #2797 if unmerged,
+and #2798 (this checkpoint) if unmerged.
