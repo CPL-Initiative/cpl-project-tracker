@@ -6717,6 +6717,13 @@
      "direction": "write",
      "how": "literal",
      "line": 298
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     }
    ],
    "producers": [
@@ -6783,6 +6790,13 @@
      "direction": "write",
      "how": "literal",
      "line": 50
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     }
    ],
    "producers": [
@@ -6839,6 +6853,13 @@
      "direction": "read",
      "how": "literal",
      "line": 60
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     }
    ],
    "producers": [
@@ -7170,6 +7191,13 @@
      "direction": "read",
      "how": "literal",
      "line": 303
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -17598,7 +17626,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 344
+     "line": 349
     }
    ],
    "served": true,
@@ -19060,6 +19088,13 @@
      "line": 43
     },
     {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
+    },
+    {
      "id": "script:prototype/build_ccr_atlas.py",
      "kind": "script",
      "direction": "read",
@@ -19199,6 +19234,13 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
     }
    ],
    "producers": [
@@ -19727,6 +19769,13 @@
   },
   "file:prototype/skyview.html": {
    "consumers": [
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
+    },
     {
      "id": "script:prototype/build_ccr_atlas.py",
      "kind": "script",
@@ -22821,6 +22870,13 @@
      "direction": "read",
      "how": "literal",
      "line": 31
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -23010,6 +23066,13 @@
      "direction": "read",
      "how": "literal",
      "line": 96
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "producers": [
@@ -23076,6 +23139,13 @@
      "direction": "read",
      "how": "literal",
      "line": 114
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "producers": [
@@ -23132,6 +23202,13 @@
      "direction": "read",
      "how": "literal",
      "line": 584
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     }
    ],
    "producers": [
@@ -23251,6 +23328,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     },
     {
      "id": "script:kb/_suggest_unclassified.py",
@@ -23423,6 +23507,13 @@
      "direction": "read",
      "how": "literal",
      "line": 140
+    },
+    {
+     "id": "script:kb/_subjects_list_recode.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     }
    ],
    "producers": [
