@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-545 document(s).
+546 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 580 | [Session 580 handoff: Mission College's SLO trial is running; the night's other routine steps were empty](../session_580_handoff.md) | 2026-11-05 |
 | 579 | [Session 579 handoff: the night's routine items (Columbia's full read, the credential slice, the explainer's UI pass)](../session_579_handoff.md) | 2026-11-05 |
 | 578 | [Session 578 handoff: the Subjects List recode landed; the Library revises a visual from its card](../session_578_handoff.md) | 2026-11-05 |
 | 577 | [Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order](../session_577_handoff.md) | 2026-11-05 |
