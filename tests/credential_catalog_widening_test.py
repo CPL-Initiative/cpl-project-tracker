@@ -236,7 +236,7 @@ class FaaCerts(unittest.TestCase):
 
 
 class HandFamilies(unittest.TestCase):
-    """Autodesk, NCCER and ASME (S569), PMI, ICC, CDPH and EMSA (S570), AWS welding and Amazon (S571), NWCG and SWRCB (S572): every named cert resolves across the issuer's two catalog spellings, and the
+    """Autodesk, NCCER and ASME (S569), PMI, ICC, CDPH and EMSA (S570), AWS welding and Amazon (S571), NWCG and SWRCB (S572), IAI, Intuit and DRE (S573): every named cert resolves across the issuer's two catalog spellings, and the
     titles that name no one catalog certification (levels short of journey, courses, mixed issuers) are never linked."""
 
     @classmethod
@@ -263,5 +263,7 @@ class HandFamilies(unittest.TestCase):
                       "AWS D1.3 GMAW Qualified Welder", "AWS Welder Qualification — D1.1/D1.3/D17.1",
                       "LA City Certified Welder — AWS D1.1 SMAW", "Shielded Metal Arc Welding (SMAW)",
                       "Water Treatment Facilities", "Basic Wildland Firefighter (S-130/S-190)", "S-130 — Firefighter Training",
-                      "NWCG S-190 — Introduction to Wildland Fire Behavior"):
+                      "NWCG S-190 — Introduction to Wildland Fire Behavior",
+                      "ESCO Master Specialist — Gas Heat", "Firefighter I", "Intuit QuickBooks Online Certified User",
+                      "QuickBooks", "Real Estate Finance"):
             self.assertNotIn(title, self.links)
