@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-05_library_ell_iet_v5_stored_draft.sql
-name=skyflipflop_library_ell_iet_v5_stored_draft
+file=kb/migrations/2026-11-05_library_ell_iet_v5_card_links.sql
+name=skyflipflop_library_ell_iet_v5_card_links

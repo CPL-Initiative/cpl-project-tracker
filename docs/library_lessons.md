@@ -1112,3 +1112,7 @@ advise"* and *"I could add a bot specifically trained for this by you"*.
   `LIBRARY_TEXT_MAX`).
 - **Sierra's budget sets the size of any addition.** Version 4 sat 21 characters under 34,000. Version 5 made room by
   shortening two phrases repeated 14 and 7 times; the build checks both counts, so a moved phrase stops the build.
+- **The top cards open what they count** (Sam, in session: *"can you make the top cards clickable so they go to the items
+  they are counting?"*, then *"this should be a rule for all visuals if advisable"*; now a Presentation rule in `CLAUDE.md`).
+  The figure is the link and the whole card takes the click; the participants card stays plain, its figure summed from a
+  line on six tabs. `npm run a11y` failed the first try: a focus ring moved to the card is no ring on the link.

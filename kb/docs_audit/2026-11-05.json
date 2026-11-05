@@ -11,18 +11,18 @@
   },
   "summary": {
     "files": 1400,
-    "bytes": 14146487,
-    "over_budget": 0,
+    "bytes": 14147293,
+    "over_budget": 1,
     "handoff_max": 585,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59999,
+    "always_loaded_bytes": 60324,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59999,
-        "over": 0
+        "bytes": 60324,
+        "over": 1
       },
       "other": {
         "files": 141,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2632505,
+        "bytes": 2632986,
         "over": 0
       },
       "kb_note": {
@@ -56,12 +56,14 @@
       }
     },
     "by_rule": {
+      "oversized_doc": 1,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 74
+      "vault_heavy_path": 74,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25852,
-      "bytes": 4209272949,
+      "files": 25854,
+      "bytes": 4209487306,
       "heavy_bytes": 2991552220,
       "heavy_share": 0.711,
       "ignore_filters": [
@@ -143,6 +145,19 @@
     }
   },
   "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60324,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 324,
+        "ratio": 1.01
+      },
+      "message": "60,324 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
     {
       "rule": "kb_note_dialect",
       "fixable": false,
@@ -893,6 +908,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_585_handoff.md",
+      "detail": {
+        "commits_since": 7,
+        "budget": 6,
+        "handoff": "session_585_handoff.md"
+      },
+      "message": "7 commit(s) have landed since `docs/session_585_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
