@@ -53,6 +53,9 @@ related:
 - **Always watch PRs.** When a Claude session opens a PR, subscribe to its
   activity (CI + review comments) and follow through — fixing small/clear
   issues, asking when ambiguous — until the PR is merged or closed.
+  COBIx's comments arrive on the same thread; how that loop runs and what a
+  COBIx finding may and may not do: [`cobix_pr_loop`](cobix_pr_loop.md)
+  (`docs/reference/cobix_pr_loop.md`).
 - **Auto-merge authorization (added Session 11, 2026-05-27; broadened
   Session 12, 2026-05-27 — Bruh Dec; trust-expanded 2026-05-30 — Sam:
   "change rules to not require my review before you squash-merge. I trust
