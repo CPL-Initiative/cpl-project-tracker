@@ -16571,8 +16571,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 550,
+   "count": 551,
    "docs": [
+    {
+     "created": "2026-11-05",
+     "governs": [],
+     "n": 585,
+     "path": "docs/session_585_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "scheduled-sessions",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 585 handoff: course objectives read and stored; Monterey Peninsula's page read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25940,5 +25955,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1387
+ "total": 1388
 }
