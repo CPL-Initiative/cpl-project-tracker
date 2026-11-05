@@ -54,6 +54,19 @@ def next_version(record):
     return int(v) + 1 if v.isdigit() else None
 
 
+# Fix 3 (Sam, 2026-11-05: "build fixes 1-3"): a draft the card's model made edits the page, never the script
+# that builds it, so publishing one leaves that script behind the public copy. The version it makes carries
+# source_behind, and the card's Needs attention counts it until a version built from the source replaces it.
+SCRIPT = re.compile(r"\.py\b|\.mjs\b|\.js\b|build")
+
+
+def source_behind(record, draft):
+    """True when the model drafted the page and the record names a script that rebuilds it. Pure.
+    scripts/library_page.py only copies a page to Pages, so naming it alone is no build script."""
+    rb = re.sub(r"\S*library_page\.py", "", str(record.get("rebuild_from") or ""))
+    return bool(draft.get("model")) and bool(SCRIPT.search(rb))
+
+
 def record_update(record, draft, today):
     """The update that makes the draft the record's current version. Pure."""
     g = record["regen"]
@@ -66,9 +79,12 @@ def record_update(record, draft, today):
             x["status"] = "Replaced by " + (f"v{n}" if n else label)
     who = g.get("approved_by") or g.get("requested_by") or "the team"
     note = (draft.get("summary") or "Revised from the card.").strip()
-    versions.append({"url": PAGES + record["slug"] + "/", "date": today, "label": label,
-                     "status": f"Current: {note} Drafted from the card by {draft.get('made_by') or 'the team'} "
-                               f"(draft {draft['id']}); replaced the public copy on {who}'s approval."})
+    entry = {"url": PAGES + record["slug"] + "/", "date": today, "label": label,
+             "status": f"Current: {note} Drafted from the card by {draft.get('made_by') or 'the team'} "
+                       f"(draft {draft['id']}); replaced the public copy on {who}'s approval."}
+    if source_behind(record, draft):
+        entry["source_behind"] = True
+    versions.append(entry)
     out = {"versions": versions, "refresh_note": None, "regen": None, "updated_by": BOT,
            "url": PAGES + record["slug"] + "/"}
     if n:
@@ -102,7 +118,7 @@ def api(path, method="GET", body=None, headers=None):
 
 
 def write_phase(today):
-    rows = api("cpl_library?select=id,slug,title,url,version,versions,refresh_note,regen,updated_at"
+    rows = api("cpl_library?select=id,slug,title,url,version,versions,refresh_note,rebuild_from,regen,updated_at"
                "&regen=not.is.null&retired_at=is.null")
     done, skipped = [], []
     for r in rows:
@@ -112,7 +128,7 @@ def write_phase(today):
             skipped.append(f"{r.get('slug')}: no Pages copy at library/<slug>/")
             continue
         did = urllib.parse.quote(r["regen"]["draft_id"])
-        d = api(f"cpl_library_drafts?id=eq.{did}&library_id=eq.{r['id']}&select=id,slug,html,summary,made_by,published_at")
+        d = api(f"cpl_library_drafts?id=eq.{did}&library_id=eq.{r['id']}&select=id,slug,html,summary,made_by,model,published_at")
         if not d:
             skipped.append(f"{r['slug']}: draft {r['regen']['draft_id']} not found")
             continue
