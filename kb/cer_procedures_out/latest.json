@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-04T15:49:37Z",
+ "_generated_at": "2026-11-05T15:53:59Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 44,
+ "queue": 63,
  "saved_not_folded": 0,
- "waiting": 44,
- "proposed": 42,
- "needs_you_count": 31,
+ "waiting": 63,
+ "proposed": 61,
+ "needs_you_count": 44,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 4,
-   "held": 3,
+   "settled": 2,
+   "held": 4,
    "sample": []
   },
   {
@@ -111,28 +111,28 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 13,
-   "held": 28,
+   "settled": 17,
+   "held": 41,
    "sample": [
     [
-     "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)",
-     "Waterworks Mathematics Advanced"
+     "Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+     "Introduction to Water Systems Technology"
     ],
     [
-     "EET 203 Basic Electricity",
-     "Basic Electricity"
+     "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+     "Wastewater Treatment and Disposal I"
     ],
     [
-     "GEOG 1 Physical Geology",
-     "Introduction to Physical Geography"
+     "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+     "Wastewater Treatment and Disposal II"
     ],
     [
-     "GRART 32 Digital Documents (Adobe InDesign)",
-     "Digital Documents (Adobe InDesign)"
+     "Credit by Exam - Water Distribution Operator I (WATER 140)",
+     "Water Distribution Operator I"
     ],
     [
-     "GRART 36 Adobe Photoshop Basics",
-     "Adobe Photoshop Basics"
+     "Credit by Exam - Water Distribution Operator II (WATER 141)",
+     "Water Distribution Operator II"
     ]
    ]
   },
@@ -163,7 +163,7 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 0,
+   "settled": 1,
    "held": 1,
    "sample": []
   },
@@ -224,7 +224,7 @@
     "skill": "Rule 5h"
    },
    "settled": 0,
-   "held": 0,
+   "held": 2,
    "sample": []
   },
   {
@@ -238,7 +238,7 @@
     "words": "look for beginning labels that should be elementary (our canonical term for 1,2 or 1A,1B and intermediate should be often 2,3 or 2A,2B",
     "skill": "Rule 5h"
    },
-   "settled": 0,
+   "settled": 1,
    "held": 0,
    "sample": []
   },
@@ -253,8 +253,8 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 2,
-   "held": 7,
+   "settled": 3,
+   "held": 8,
    "sample": []
   },
   {
@@ -269,7 +269,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 7,
+   "held": 9,
    "sample": []
   },
   {
@@ -282,37 +282,37 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 7,
-   "held": 31,
+   "settled": 6,
+   "held": 44,
    "sample": [
     [
-     "Examination for ARHS 2",
-     "Art of the Ancient Americas"
+     "Autodesk Certified Associate in CAD for Mechanical Design certificate",
+     "Autodesk Certified Associate in CAD for Mechanical Design"
     ],
     [
-     "Portfolio for BUSN 40",
-     "Introduction to Business"
+     "Noncredit for FREN 1A",
+     "Elementary French 1"
     ],
     [
-     "Portfolio for BUSN 48",
-     "Human Relations in Organizations"
+     "Portfolio for MKTG 50",
+     "Introduction to Marketing"
     ],
     [
-     "Portfolio for BUSN 58",
-     "Small Business Management"
+     "Portfolio for MKTG 56",
+     "Marketing Strategies"
     ],
     [
-     "Portfolio for BUSN 61",
-     "QuickBooks Accounting"
+     "Portfolio for MKTG 61",
+     "Professional Selling"
     ]
    ]
   }
  ],
  "classifier_run": {
-  "calls": 3,
-  "answered": 3,
+  "calls": 2,
+  "answered": 2,
   "errors": [],
-  "cost_usd": 1.63
+  "cost_usd": 1.06
  },
  "needs_you": [
   {
@@ -433,6 +433,32 @@
    ]
   },
   {
+   "raw_title": "Examination for MATH 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Calculus 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Cx hint kept the mechanism and was set aside; catalog hint 'Calculus I' (Las Positas MATH 1) used with an Arabic numeral. A CCN or C-ID alignment for MATH 1 was not verified."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Examination for MATH 2",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Calculus 2",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "Catalog hint 'Calculus II' was mended to the existing house family 'Calculus 2'. The Cx hint carried the mechanism and was set aside."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1",
    "why": "the classifier is unsure (0.80)",
    "proposal": {
@@ -518,6 +544,19 @@
     "issuer": "California Community Colleges",
     "confidence": 0.6,
     "note": "Course-coded IC exhibit; title from Las Positas COCI course AJ 66 (joins existing family); the industry certification behind it is unnamed, so the issuer defaults to CCC pending review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for AJ 68",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Police Ethics and Leadership",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "This is an IC-typed exhibit named only by a course code (Las Positas AJ 68). It takes the catalog course title, which joins the house family. The external industry credential is unnamed, so the CCC issuer is provisional."
    },
    "colleges": [
     "Las Positas College"
@@ -628,6 +667,32 @@
    ]
   },
   {
+   "raw_title": "Industry for KIN YO1",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Yoga 1",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "This IC exhibit is named only by a course code. KIN YO1 is guessed to be Yoga 1 at Las Positas, and the title needs a COCI check. The underlying industry cert (likely a yoga instructor credential) is unnamed, so the issuer is left null."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry for KIN ZUM1",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Zumba 1",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "This IC exhibit is named only by a course code. KIN ZUM1 is guessed to be a Zumba course, and the title needs a COCI check. The industry cert (possibly Zumba instructor licensing) is not named, so the issuer is left null."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
    "raw_title": "Noncredit for ARHS 6",
    "why": "the classifier is unsure (0.82)",
    "proposal": {
@@ -648,6 +713,110 @@
     "issuer": "California Community Colleges",
     "confidence": 0.82,
     "note": "The cx hint echoed the raw title and was set aside; the title comes from the Las Positas catalog for BUSN 33."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for KIN PL1",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Pilates 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "The Cx hint was only a code plus mechanism. KIN PL1 is guessed to be Pilates 1, and the title needs a Las Positas COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for KIN SW1",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Swimming 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "KIN SW1 is guessed to be Swimming 1, and the title needs a Las Positas COCI lookup. The Cx hint carried the mechanism and was set aside."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for KIN SWF1",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Swim Fitness 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.4,
+    "note": "KIN SWF1 is guessed to be a swim fitness course, and the title needs a Las Positas COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for KIN YO1",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Yoga 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "KIN YO1 is guessed to be Yoga 1, the same course as the IC row, and the title needs a Las Positas COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for MUS 16",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Philharmonic Orchestra",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The catalog hint for Las Positas MUS 16 was accepted. The Cx hint carried the mechanism and was set aside."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for MUS 45",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Chamber Choir",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The catalog hint for Las Positas MUS 45 was accepted. The Cx hint carried the mechanism and was set aside."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for MUS 46",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Vocal Jazz Ensemble",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "The catalog hint for Las Positas MUS 46 was accepted. The Cx hint carried the mechanism and was set aside."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit for NKIN WT1",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Weight Training 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "NKIN WT1 is guessed to be a noncredit weight training course, and the title needs a Las Positas COCI lookup."
    },
    "colleges": [
     "Las Positas College"

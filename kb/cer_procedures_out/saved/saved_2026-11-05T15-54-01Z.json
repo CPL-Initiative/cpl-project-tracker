@@ -1,0 +1,551 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-05T15-54-01Z",
+ "run_id": "42058838363",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "d20f2caab9db",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Autodesk Certified Associate in CAD for Mechanical Design certificate",
+   "field": "unified_title_assignment",
+   "value": "Autodesk Certified Associate in CAD for Mechanical Design",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Autodesk Certified Associate in CAD for Mechanical Design certificate",
+   "field": "issuing_agency_assignment",
+   "value": "Autodesk",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Water Systems Technology",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+   "field": "unified_title_assignment",
+   "value": "Wastewater Treatment and Disposal I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+   "field": "unified_title_assignment",
+   "value": "Wastewater Treatment and Disposal II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator I (WATER 140)",
+   "field": "unified_title_assignment",
+   "value": "Water Distribution Operator I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator I (WATER 140)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator II (WATER 141)",
+   "field": "unified_title_assignment",
+   "value": "Water Distribution Operator II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator II (WATER 141)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+   "field": "unified_title_assignment",
+   "value": "Water Treatment Plant Operation Processes I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+   "field": "unified_title_assignment",
+   "value": "Water Treatment Plant Operation Processes II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Waterworks Mathematics (WATER 130)",
+   "field": "unified_title_assignment",
+   "value": "Waterworks Mathematics",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Waterworks Mathematics (WATER 130)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for FREN 1A",
+   "field": "unified_title_assignment",
+   "value": "Elementary French 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for FREN 1A",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing I (ART 225A)",
+   "field": "unified_title_assignment",
+   "value": "Figure Drawing",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing I (ART 225A)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing II (ART 225B)",
+   "field": "unified_title_assignment",
+   "value": "Life Drawing II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing II (ART 225B)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Painting I (ART 227)",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Painting",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Painting I (ART 227)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Watercolor Painting (ART 220)",
+   "field": "unified_title_assignment",
+   "value": "Watercolor Painting",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Watercolor Painting (ART 220)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Painting II (ART 228)",
+   "field": "unified_title_assignment",
+   "value": "Painting II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Painting II (ART 228)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 50",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Marketing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 50",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 56",
+   "field": "unified_title_assignment",
+   "value": "Marketing Strategies",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 56",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 61",
+   "field": "unified_title_assignment",
+   "value": "Professional Selling",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 61",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Solidworks Design Associate (CSWA) Certification",
+   "field": "unified_title_assignment",
+   "value": "Certified SOLIDWORKS Associate (CSWA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Solidworks Design Associate (CSWA) Certification",
+   "field": "issuing_agency_assignment",
+   "value": "Dassault Systèmes",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Autodesk Certified Associate in CAD for Mechanical Design certificate",
+   "field": "unified_title_assignment",
+   "value": "Autodesk Certified Associate in CAD for Mechanical Design",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Autodesk Certified Associate in CAD for Mechanical Design certificate",
+   "field": "issuing_agency_assignment",
+   "value": "Autodesk",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Water Systems Technology",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+   "field": "unified_title_assignment",
+   "value": "Wastewater Treatment and Disposal I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+   "field": "unified_title_assignment",
+   "value": "Wastewater Treatment and Disposal II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator I (WATER 140)",
+   "field": "unified_title_assignment",
+   "value": "Water Distribution Operator I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator I (WATER 140)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator II (WATER 141)",
+   "field": "unified_title_assignment",
+   "value": "Water Distribution Operator II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Distribution Operator II (WATER 141)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+   "field": "unified_title_assignment",
+   "value": "Water Treatment Plant Operation Processes I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+   "field": "unified_title_assignment",
+   "value": "Water Treatment Plant Operation Processes II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Waterworks Mathematics (WATER 130)",
+   "field": "unified_title_assignment",
+   "value": "Waterworks Mathematics",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Waterworks Mathematics (WATER 130)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for FREN 1A",
+   "field": "unified_title_assignment",
+   "value": "Elementary French 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for FREN 1A",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing I (ART 225A)",
+   "field": "unified_title_assignment",
+   "value": "Figure Drawing",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing I (ART 225A)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing II (ART 225B)",
+   "field": "unified_title_assignment",
+   "value": "Life Drawing II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Life Drawing II (ART 225B)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Painting I (ART 227)",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Painting",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Painting I (ART 227)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Watercolor Painting (ART 220)",
+   "field": "unified_title_assignment",
+   "value": "Watercolor Painting",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Watercolor Painting (ART 220)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Painting II (ART 228)",
+   "field": "unified_title_assignment",
+   "value": "Painting II",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Painting II (ART 228)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 50",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Marketing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 50",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 56",
+   "field": "unified_title_assignment",
+   "value": "Marketing Strategies",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 56",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 61",
+   "field": "unified_title_assignment",
+   "value": "Professional Selling",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio for MKTG 61",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Solidworks Design Associate (CSWA) Certification",
+   "field": "unified_title_assignment",
+   "value": "Certified SOLIDWORKS Associate (CSWA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Solidworks Design Associate (CSWA) Certification",
+   "field": "issuing_agency_assignment",
+   "value": "Dassault Systèmes",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
