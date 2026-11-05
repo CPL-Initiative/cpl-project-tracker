@@ -94,8 +94,25 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 .people a{overflow-wrap:anywhere}
 .contacts .cnote{font-size:.88rem;color:var(--text-muted)}
 @media (max-width:560px){.people{grid-template-columns:1fr}}
+
+/* Tabs (Version 4): an Overview, then a tab per project. Underlined words, the selected one heavier. */
+.tabs{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem;border-bottom:1px solid var(--line);padding-bottom:.35rem}
+.tabs[hidden]{display:none}
+.tabs [role="tab"]{font:inherit;font-size:.98rem;background:none;border:0;padding:0;min-height:24px;line-height:24px;
+  color:var(--cobalt);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;cursor:pointer}
+.tabs [role="tab"][aria-selected="true"]{color:var(--text-strong);font-weight:700;text-decoration-thickness:3px;
+  text-decoration-color:var(--seal-blue)}
+.tabs [role="tab"]:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.tabset{display:grid;gap:1.6rem;min-width:0}
+.panel{display:grid;gap:2.4rem;min-width:0}
+.panel:focus-visible{outline:2px solid var(--cobalt);outline-offset:4px}
+.js-tabs .panel[hidden]{display:none}
+.bandlist{margin:0;padding-left:1.2rem;display:grid;gap:.3rem}
+.bandlist a{display:inline-block;min-height:24px;line-height:24px}
+/* Contact emails: 24px targets (WCAG 2.2 target size; measured 22.8px tall once a card sits in its tab). */
+.people a{min-height:24px;line-height:24px}
 </style>
-<a class="skip" href="#start">Skip to the projects</a>
+<a class="skip" href="#tabs">Skip to the projects</a>
 <!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
 <style>
 /* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
@@ -211,20 +228,32 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <!-- cpl-public-header:end -->
 <main>
 <header class="top">
-<div class="eyebrow">CPL Initiative · Preliminary scan for EDD&#x27;s ELL IET Fund grantees · November 3, 2026</div>
+<div class="eyebrow">CPL Initiative · Preliminary scan for EDD&#x27;s ELL IET Fund grantees · November 5, 2026</div>
 <h1>Where credit for ELL IET training could start</h1>
 <p class="lede">On July 3, 2023 the Employment Development Department awarded $17.97 million to eight organizations under the English Language Learner Integrated Education and Training Fund. Each project trains English learners toward a credential and a job. Seven of those projects make up the ELL IET group today. We read their project summaries against the MAP platform, where California&#x27;s community colleges record the credit they award for prior learning, and against the state&#x27;s program inventory, to see where a project&#x27;s completers could already turn their training into college credit, and where a first articulation would start.</p>
-<p class="lede">A card per project, ordered by fit: credit that already exists at a college in the project&#x27;s own counties or at a partner college comes first. Each card names the people at the colleges who can carry the conversation forward, and each example that rests on a credit recommendation in MAP carries a Request Adopt link, which opens that exhibit in MAP, where Request Quick Adopt asks a college to adopt it and needs no MAP sign-in.</p>
+<p class="lede">After the Overview, a tab per project, ordered by fit: credit that already exists at a college in the project&#x27;s own counties or at a partner college comes first. Each card names the people at the colleges who can carry the conversation forward, and each example that rests on a credit recommendation in MAP carries a Request Adopt link, which opens that exhibit in MAP, where Request Quick Adopt asks a college to adopt it and needs no MAP sign-in.</p>
 </header>
 <div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b>$17.97 million</b><span>Awarded July 3, 2023 to eight organizations; funding decisions are final</span></div><div class="fact" role="listitem"><b>7 projects</b><span>The ELL IET group today: adult schools, workforce boards, a school district, a consortium and nonprofits, across 19 counties</span></div><div class="fact" role="listitem"><b>2,432 participants</b><span>The 6 projects that state an enrollment target; Corona-Norco states regional demand instead</span></div><div class="fact" role="listitem"><b>15 credential families</b><span>From nursing assistant to wildland fire, matched against MAP and COCI</span></div></div>
 
+<div id="tabs" class="tabset" tabindex="-1">
+<div class="tabs" role="tablist" aria-label="Overview and the projects" data-tabs hidden>
+<button type="button" role="tab" id="t-overview" aria-controls="p-overview" aria-selected="true">Overview</button>
+<button type="button" role="tab" id="t-fresno" aria-controls="p-fresno" aria-selected="false" tabindex="-1">Fresno Area</button>
+<button type="button" role="tab" id="t-corona-norco" aria-controls="p-corona-norco" aria-selected="false" tabindex="-1">Corona-Norco</button>
+<button type="button" role="tab" id="t-ecepts" aria-controls="p-ecepts" aria-selected="false" tabindex="-1">ECEPTS</button>
+<button type="button" role="tab" id="t-north-central" aria-controls="p-north-central" aria-selected="false" tabindex="-1">North Central Counties</button>
+<button type="button" role="tab" id="t-mvla" aria-controls="p-mvla" aria-selected="false" tabindex="-1">Mountain View Los Altos</button>
+<button type="button" role="tab" id="t-fairfield-suisun" aria-controls="p-fairfield-suisun" aria-selected="false" tabindex="-1">Fairfield-Suisun</button>
+<button type="button" role="tab" id="t-werc" aria-controls="p-werc" aria-selected="false" tabindex="-1">Worker Education</button>
+</div>
+<div class="panel" role="tabpanel" id="p-overview" aria-labelledby="t-overview" tabindex="0">
 <section id="call" aria-labelledby="h-call">
 <div class="band-head">
 <div class="eyebrow">December 9, 2026</div>
 <h2 id="h-call">The call with the ELL IET grantees</h2>
 <p>Amber Shevin of the International Rescue Committee proposed this agenda. The CPL Initiative leads the second item and brings this page to the fourth.</p>
 </div>
-<ul class="plain"><li>Welcome, introductions and context, led by the International Rescue Committee.</li><li>An overview of the Chancellor&#x27;s Office CPL Initiative, led by the Chancellor&#x27;s Office.</li><li>ECEPTS and Mountain View Los Altos Adult School on the IETs for which they have articulated credit for prior learning, and what that process asked of them.</li><li>Questions and discussion, facilitated by the International Rescue Committee: how the other grantees might pursue credit for prior learning for their IETs. Each card below names the colleges and people to follow up with.</li></ul>
+<ul class="plain"><li>Welcome, introductions and context, led by the International Rescue Committee.</li><li>An overview of the Chancellor&#x27;s Office CPL Initiative, led by the Chancellor&#x27;s Office.</li><li>ECEPTS and Mountain View Los Altos Adult School on the IETs for which they have articulated credit for prior learning, and what that process asked of them.</li><li>Questions and discussion, facilitated by the International Rescue Committee: how the other grantees might pursue credit for prior learning for their IETs. Each project&#x27;s tab names the colleges and people to follow up with.</li></ul>
 </section>
 <section id="start" aria-labelledby="h-start">
 <div class="band-head">
@@ -232,130 +261,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h2 id="h-start">Start here: credit already exists nearby</h2>
 <p>A college in the project&#x27;s counties, or one of its named partner colleges, already articulates at least one credential the project trains. The conversation starts with that college&#x27;s existing credit recommendation.</p>
 </div>
-<div class="cards">
-<article class="card wide">
-<div class="who">Fresno Area Workforce Investment Corporation · Fresno, Madera, Kings and Tulare counties</div>
-<h3>Construction · Forestry · Healthcare</h3>
-<p class="meta">$3,330,000 · 250 participants planned · 8 colleges in its counties</p>
-<ul class="lines" aria-label="Fresno Area Workforce Investment Corporation: the credentials it trains">
-<li><div class="lh"><code>Construction trades</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Fresno City College (Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship)</span></li>
-<li><div class="lh"><code>Fire, wildland fire and forestry</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at College of the Sequoias (Firefighter 1; Firefighter EMT Certificate), Fresno City College (Intermediate Wildland Fire Behavior), Reedley College (Wildland Fire-Basics)</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Lemoore College (Certified Nurse Assistant (CNA) Certification; Nurse Assistant Training)</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">2 colleges</span></div><span class="lt">Credit already articulated in MAP at Fresno City College, Lemoore College (Medical Terminology)</span></li>
-<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
-</ul>
-<p class="why">An Integrated Resource Team of two workforce boards, ValleyROP, Centro la Familia and ten employers; certified training, work-based learning, credentials and placement for 250 participants, 195 of them completing credentials.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="Fresno Area Workforce Investment Corporation: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship</td><td>Fresno City College</td><td>PREAPP 121 MC3 Pre-Apprenticeship Essentials (3.5 units); PREAPP 120 MC3 Pre-Apprenticeship Core (3.5 units); 7 units in all</td><td>Articulated in MAP at this college; required in MC3 Pre-Apprenticeship Employment Ready (Certificate of Achievement); MC3 Pre-Apprenticeship Plus (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-MPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Firefighter 1</td><td>College of the Sequoias</td><td>FIRE 155 Fire Behavior and Combustion (3 units); FIRE 159 Introduction to Fire Protection Organizations (3 units); and 1 more; 9 units in all</td><td>Articulated in MAP at this college; required in Fire Technology (A.S. Degree); Fire Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-F1C-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Wildland Fire-Basics</td><td>Reedley College</td><td>WLF 10 Wildland Fire-Basics (5 units); WLF 110 Wildland Fire Field Studies II (0.5 units); and 3 more; 27 units in all</td><td>Articulated in MAP at this college; required in Forestry Technician-Fire Suppression (Certificate of Achievement); Wildland Fire Science (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-WF-2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>Lemoore College</td><td>HS 61 Nurse Assistant Training (6 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Medical Terminology</td><td>Fresno City College</td><td>HIT 10 Medical Terminology (3 units)</td><td>Articulated in MAP at this college; required in Clinical Medical Assistant (A.S. Degree); Health Information Technology (A.S. Degree) and 2 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>C-6 Cabinet, Millwork and Finish Carpentry Contractor</td><td>College of the Sequoias</td><td>CT 250 Basic Carpentry (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CCMA-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-start-1">
-<h4 id="who-start-1">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-start-1-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-start-1-1">
-<li><span class="pn">Blake Konczal</span><span class="pr">Executive Director, Fresno Area Workforce Investment Corporation</span><a href="mailto:bkonczal@wfc.co">bkonczal@wfc.co</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-start-1-2">The colleges</p>
-<ul class="people" aria-labelledby="who-start-1-2">
-<li><span class="pn">Diane Defreitas</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Fresno City College</span><a href="mailto:diane.defreitas@fresnocitycollege.edu">diane.defreitas@fresnocitycollege.edu</a></li>
-<li><span class="pn">Nick Branch</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, College of the Sequoias</span><a href="mailto:nickb@cos.edu">nickb@cos.edu</a></li>
-<li><span class="pn">Edward Cunha</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:edwardcunha@whccd.edu">edwardcunha@whccd.edu</a></li>
-<li><span class="pn">Alyssa Salinas</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:alyssasalinas@whccd.edu">alyssasalinas@whccd.edu</a></li>
-<li><span class="pn">Daisy Tafolla</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:daisytafolla@whccd.edu">daisytafolla@whccd.edu</a></li>
-<li><span class="pn">Brian Unruh</span><span class="pr">Faculty in CT, the subject of CT 250, College of the Sequoias</span><a href="mailto:brianu@cos.edu">brianu@cos.edu</a></li>
-<li><span class="pn">Ana Carrizales</span><span class="pr">Faculty in HS, the subject of HS 61, Lemoore College</span><a href="mailto:anacarrizales@whccd.edu">anacarrizales@whccd.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 4 of 5</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-<article class="card wide">
-<div class="who">Corona-Norco Unified School District · Riverside County</div>
-<h3>Healthcare, nursing</h3>
-<p class="meta">$2,289,375 · regional demand stated · 6 colleges in its counties</p>
-<ul class="lines" aria-label="Corona-Norco Unified School District: the credentials it trains">
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Riverside City College, where the program is taught</span></li>
-<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
-<li><div class="lh"><code>Vocational nursing (LVN)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at College of the Desert (Licensed Vocational Nurse (LVN) License)</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
-</ul>
-<p class="why">Corona-Norco Adult School expands its Nurse Assistant training and adds Home Health Aide and Licensed Vocational Nurse training over three years, with Corona Regional Medical Center, Corona Post Acute and Riverside Workforce Development.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="Corona-Norco Unified School District: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Licensed Vocational Nurse (LVN) License</td><td>College of the Desert</td><td>NRN 140C Concepts of Nursing: Gerontology Clinical (1 unit); NRN 140 Concepts of Nursing: Gerontology (1 unit); and 11 more; 22 units in all</td><td>Articulated in MAP at this college; required in Registered Nursing (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOO-LVN(-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>College of the Desert</td><td>HS 64 Nurse Assistant (6 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Medical Terminology</td><td>College of the Desert</td><td>HS 61 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in BIW IV: Medical Office Specialist (Certificate of Achievement); Emergency Medical Services (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>Mt. San Jacinto College</td><td>NURS 585 Certified Nursing Assistant (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Home health aide</td><td>College of the Desert</td><td>HS 66 Home Health Aide (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Home health aide</td><td>Mt. San Jacinto College</td><td>NURS 586 Certified Home Health Aide (CHHA) (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-start-2">
-<h4 id="who-start-2">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-start-2-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-start-2-1">
-<li><span class="pn">Dalia Gadelmawla</span><span class="pr">Assistant Superintendent, Corona-Norco Unified School District</span><a href="mailto:trublaitus@cnusd.k12.ca.us">trublaitus@cnusd.k12.ca.us</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-start-2-2">The colleges</p>
-<ul class="people" aria-labelledby="who-start-2-2">
-<li><span class="pn">Cameron Miller</span><span class="pr">CPL Coordinator, College of the Desert</span><a href="mailto:camiller@collegeofthedesert.edu">camiller@collegeofthedesert.edu</a></li>
-<li><span class="pn">Claudia Gutierrez</span><span class="pr">CPL Coordinator, Mt. San Jacinto College</span><a href="mailto:cgutierrez@msjc.edu">cgutierrez@msjc.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t1">Healthcare</span><span class="tag t1">Credit exists nearby: 1 of 4</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-<article class="card wide">
-<div class="who">Early Care &amp; Education Pathways to Success · Alameda, Contra Costa, El Dorado, Marin, San Joaquin, San Mateo, Santa Clara, Los Angeles and San Diego counties</div>
-<h3>Early care and education</h3>
-<p class="meta">$3,330,000 · 1,400 participants planned · 54 colleges in its counties; partner colleges Chabot College, College of the Canyons, Los Angeles Pierce College and 10 more</p>
-<ul class="lines" aria-label="Early Care &amp; Education Pathways to Success: the credentials it trains">
-<li><div class="lh"><code>Early care and education</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at San Diego City College, San Diego Mesa College, San Diego Miramar College (Child Development Center Practicum; Observation and Assessment in Early Childhood and 1 more)</span></li>
-</ul>
-<p class="why">Twelve ECE Registered Apprenticeship Programs add ESL support, bilingual mentors and embedded tutors; a pre-apprenticeship, an Associate Teacher or a Teacher apprenticeship with a partner college in each community; about 1,400 participants, 42 percent of them English learners.</p>
-<p class="why">The International Rescue Committee reports that ECEPTS has articulated credit for prior learning for its IETs, and it will share that experience on the December 9 call.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="Early Care &amp; Education Pathways to Success: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Observation and Assessment in Early Childhood</td><td>San Diego City College</td><td>CHIL 160 Observation and Assessment of Children (2 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-OAA-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Observation and Issues in Child Development</td><td>San Diego Mesa College</td><td>CHIL 161 Observations and Issues in Child Development (2 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-OAII-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Child Development Center Practicum</td><td>San Diego Miramar College</td><td>CHIL 291A Child Development Center Practicum (1 unit); CHIL 291C Child Development Center Practicum (1 unit); and 2 more; 4 units in all</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CDCP-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Child Development Associate (CDA) Credential</td><td>Merritt College</td><td>CHDEV 55 Child Development (5 units)</td><td>Same common course articulated at Saddleback College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Child Development Associate (CDA) Credential</td><td>De Anza College</td><td>C D 12 Child, Family and Community Interrelationships (4 units)</td><td>Same common course articulated at Saddleback College; required in Child Development (A.A. Degree); Child Development (Certificate of Achievement) and 2 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Child Development Associate (CDA) Credential</td><td>Lake Tahoe Community College</td><td>ECE 101 Principles and Practices of Teaching Young Children (4 units)</td><td>Same common course articulated at Saddleback College; required in Early Childhood Education (A.A. Degree); Early Childhood Education (A.S. T Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-start-3">
-<h4 id="who-start-3">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-start-3-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-start-3-1">
-<li><span class="pn">Randi Wolfe</span><span class="pr">Executive Director, Early Care &amp; Education Pathways to Success</span><a href="mailto:randiwolfe@ecepts.org">randiwolfe@ecepts.org</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-start-3-2">The colleges</p>
-<ul class="people" aria-labelledby="who-start-3-2">
-<li><span class="pn">Angela Merkens</span><span class="pr">CPL Coordinator, San Diego City College</span><a href="mailto:amerkens@sdccd.edu">amerkens@sdccd.edu</a></li>
-<li><span class="pn">Rachel Russell</span><span class="pr">CPL Coordinator, San Diego Mesa College</span><a href="mailto:rrussell@sdccd.edu">rrussell@sdccd.edu</a></li>
-<li><span class="pn">Maryam Tartoussia</span><span class="pr">CPL Coordinator, San Diego Miramar College</span><a href="mailto:mtartoussia@sdccd.edu">mtartoussia@sdccd.edu</a></li>
-<li><span class="pn">Monica Ambalal</span><span class="pr">CPL Coordinator, Merritt College</span><a href="mailto:mambalal@peralta.edu">mambalal@peralta.edu</a></li>
-<li><span class="pn">Jayanti Roy</span><span class="pr">CPL Coordinator, De Anza College</span><a href="mailto:royjayanti@deanza.edu">royjayanti@deanza.edu</a></li>
-<li><span class="pn">Karl Seelbach</span><span class="pr">CPL Coordinator, Merritt College</span><a href="mailto:kseelbach@peralta.edu">kseelbach@peralta.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 1 of 1</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-</div>
+<ul class="bandlist" aria-label="The projects in this band"><li><a href="#p-fresno">Fresno Area Workforce Investment Corporation</a></li><li><a href="#p-corona-norco">Corona-Norco Unified School District</a></li><li><a href="#p-ecepts">Early Care &amp; Education Pathways to Success</a></li></ul>
 </section>
 <section id="second" aria-labelledby="h-second">
 <div class="band-head">
@@ -363,96 +269,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h2 id="h-second">Ready to build: the program runs nearby</h2>
 <p>A college in the project&#x27;s circle teaches the program, so its faculty have a course to compare the training against and can build the first articulation there.</p>
 </div>
-<div class="cards">
-<article class="card wide">
-<div class="who">North Central Counties Consortium · Colusa, Glenn, Yuba and Sutter counties</div>
-<h3>Education · Healthcare · Leisure and hospitality · Manufacturing · Transportation</h3>
-<p class="meta">$2,859,640 · 260 participants planned · 1 college in its counties; nearby Woodland Community College, Butte College</p>
-<ul class="lines" aria-label="North Central Counties Consortium: the credentials it trains">
-<li><div class="lh"><code>Early care and education</code><span class="u">8 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
-<li><div class="lh"><code>Hospitality and food service</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Woodland Community College, where the program is taught</span></li>
-<li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">14 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
-<li><div class="lh"><code>Transportation and logistics</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Yuba College, where the program is taught</span></li>
-</ul>
-<p class="why">Career English and occupational skills training with earn-and-learn placements across four county offices of education, the one-stops and local employers from clinics and post-acute care to farms, a cheese company and a transit agency; 260 participants, 174 completing credentials.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="North Central Counties Consortium: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Child Development Associate (CDA) Credential</td><td>Butte College</td><td>CDF 12 Child, Family, and Community (3 units)</td><td>Same common course articulated at Saddleback College; required in Early Childhood Education (A.S. T Degree); Early Childhood Education (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Child Development Associate (CDA) Credential</td><td>Woodland Community College</td><td>ECE 1A Principles and Practices of Teaching Young Children (3 units)</td><td>Same common course articulated at Saddleback College; required in Child Development Associate Teacher (Certificate of Achievement); Child Development Master Teacher (Certificate of Achievement) and 3 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Medical Terminology</td><td>Butte College</td><td>ALH 104 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Coding (Certificate of Achievement); Medical Office Administration (A.S. Degree) and 1 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>ServSafe Food Protection Manager Certification</td><td>Butte College</td><td>FN 10 Food Safety and Sanitation (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-SC1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>AWS D1.5 SMAW Qualified Welder</td><td>Butte College</td><td>WLD 24 Shielded Metal Arc Welding (Stick Electrode) (8 units)</td><td>Same common course articulated at Bakersfield College; required in Welding Technology (A.S. Degree); Welding Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-AWSD2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>Butte College</td><td>NSG 100 CNA Basic Nursing Care, Theory (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-second-1">
-<h4 id="who-second-1">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-second-1-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-second-1-1">
-<li><span class="pn">Cindy Newton</span><span class="pr">Executive Director, North Central Counties Consortium</span><a href="mailto:cnewton@ncen.org">cnewton@ncen.org</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-second-1-2">The college</p>
-<ul class="people" aria-labelledby="who-second-1-2">
-<li><span class="pn">Edwin Beltran</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:eortega@yccd.edu">eortega@yccd.edu</a></li>
-<li><span class="pn">Alejandra Lopez</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:alopez@yccd.edu">alopez@yccd.edu</a></li>
-<li><span class="pn">Annie Marquez</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:amarquez@yccd.edu">amarquez@yccd.edu</a></li>
-<li><span class="pn">Brandi Asmus</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:basmus@yccd.edu">basmus@yccd.edu</a></li>
-<li><span class="pn">Aree Metz</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:ametz@ycd.edu">ametz@ycd.edu</a></li>
-<li><span class="pn">Jeannine Mullin</span><span class="pr">Faculty in ECE, the subject of ECE 1A, Woodland Community College</span><a href="mailto:jmullin@yccd.edu">jmullin@yccd.edu</a></li>
-<li><span class="pn">Laura Daly</span><span class="pr">Faculty in ECE, the subject of ECE 1A, Woodland Community College</span><a href="mailto:ldaly@yccd.edu">ldaly@yccd.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-<article class="card wide">
-<div class="who">Mountain View Los Altos Adult School · Santa Clara and San Mateo counties</div>
-<h3>Health science and medical technology</h3>
-<p class="meta">$1,904,283 · 240 participants planned · 10 colleges in its counties; partner colleges Chabot College, Foothill College, Mission College</p>
-<ul class="lines" aria-label="Mountain View Los Altos Adult School: the credentials it trains">
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
-<li><div class="lh"><code>Medical assisting</code><span class="u">9 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Evergreen Valley College and 2 more, where the program is taught</span></li>
-<li><div class="lh"><code>Medical office, billing and records</code><span class="u">7 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Gavilan College and 1 more, where the program is taught</span></li>
-<li><div class="lh"><code>Eye care technician</code><span class="u">2 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, where the program is taught</span></li>
-<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
-</ul>
-<p class="why">Eight cohorts of 30 over 44 months: medical terminology first, then Certified Nursing Assistant, Eye Care Technician, Medical Records Specialist, Medical Office Assistant or Medical Assistant, with Home Health Aide and acute care as stackable next steps.</p>
-<p class="why">The International Rescue Committee reports that Mountain View Los Altos has articulated credit for prior learning for its IET at one of its three community colleges. On December 9 it will share what holds up the other two, and the CPL Initiative will bring what MAP shows for each college.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="Mountain View Los Altos Adult School: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Medical Terminology</td><td>Foothill College</td><td>AHS 52 Medical Terminology (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>Mission College</td><td>HOC 019A Nursing Assistant Fundamentals (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Medical assisting</td><td>Chabot College</td><td>MEDA 70A Clinical Skills For the Medical Assistant I (3 units)</td><td>The college teaches a matching course; required in Medical Assisting (A.S. Degree); Medical Assisting (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Medical office, billing and records</td><td>Chabot College</td><td>HIT 48 Medical Coding 1 (4 units)</td><td>The college teaches a matching course; required in Health Information Coding (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Eye care technician</td><td>Chabot College</td><td>OPTN 9702 Optical Dispensing and Materials (5 units)</td><td>The college teaches a matching course; required in Optical Technology (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Home health aide</td><td>Mission College</td><td>HOC 019F Home Health Aide Fundamentals (1.5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-second-2">
-<h4 id="who-second-2">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-second-2-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-second-2-1">
-<li><span class="pn">Julie Vo</span><span class="pr">Director, Mountain View Los Altos Adult School</span><a href="mailto:Julie.vo@mvla.net">Julie.vo@mvla.net</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-second-2-2">The colleges</p>
-<ul class="people" aria-labelledby="who-second-2-2">
-<li><span class="pn">Natalie Latteri</span><span class="pr">CPL Coordinator, Foothill College</span><a href="mailto:latterinatalie@fhda.edu">latterinatalie@fhda.edu</a></li>
-<li><span class="pn">Yolanda Barnes</span><span class="pr">CPL Coordinator, Mission College</span><a href="mailto:yolanda.barnes@missioncollege.edu">yolanda.barnes@missioncollege.edu</a></li>
-<li><span class="pn">Dara Greene</span><span class="pr">CPL Coordinator, Chabot College</span><a href="mailto:dgreene@chabotcollege.edu">dgreene@chabotcollege.edu</a></li>
-<li><span class="pn">Lannibeth Calvillo</span><span class="pr">CPL Coordinator, Chabot College</span><a href="mailto:lcalvillo@chabotcollege.edu">lcalvillo@chabotcollege.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-</div>
+<ul class="bandlist" aria-label="The projects in this band"><li><a href="#p-north-central">North Central Counties Consortium</a></li><li><a href="#p-mvla">Mountain View Los Altos Adult School</a></li></ul>
 </section>
 <section id="precedent" aria-labelledby="h-precedent">
 <div class="band-head">
@@ -460,41 +277,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h2 id="h-precedent">A precedent to adopt: another college shows the way</h2>
 <p>A college elsewhere has articulated the credential, and its credit recommendation is a precedent the nearest college can adopt.</p>
 </div>
-<div class="cards">
-<article class="card wide">
-<div class="who">Fairfield-Suisun Adult School · Solano County</div>
-<h3>Healthcare</h3>
-<p class="meta">$213,120 · 48 participants planned · 1 college in its counties</p>
-<ul class="lines" aria-label="Fairfield-Suisun Adult School: the credentials it trains">
-<li><div class="lh"><code>Medical assisting</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: College of the Canyons, Modesto Junior College already award credit for it</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
-</ul>
-<p class="why">A 120-hour Clinical Medical Assistant bridge course with contextualized medical and office vocabulary, then CALRegional&#x27;s ten-week Clinical Medical Assistant course and a 160-hour externship; 12 students a year, 48 over the grant.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="Fairfield-Suisun Adult School: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Medical Terminology</td><td>Solano Community College</td><td>NURS 111 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Administrative Assistant (Certificate of Achievement); Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 101 Study of Human Diseases for Medical Assistants (3 units)</td><td>The college teaches a matching course; required in Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 60 Adminstrative Medical Assistant (3 units)</td><td>The college teaches a matching course; required in Medical Administrative Assistant (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-precedent-1">
-<h4 id="who-precedent-1">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-precedent-1-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-precedent-1-1">
-<li><span class="pn">Kris Corey</span><span class="pr">Superintendent, Fairfield-Suisun Adult School</span><a href="mailto:elizabethk@fsusd.org">elizabethk@fsusd.org</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-precedent-1-2">The college</p>
-<ul class="people" aria-labelledby="who-precedent-1-2">
-<li><span class="pn">Sarah Barsness</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Solano Community College</span><a href="mailto:sarah.barsness@solano.edu">sarah.barsness@solano.edu</a></li>
-<li><span class="pn">Erica Beam</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Solano Community College</span><a href="mailto:erica.beam@solano.edu">erica.beam@solano.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-</div>
+<ul class="bandlist" aria-label="The project in this band"><li><a href="#p-fairfield-suisun">Fairfield-Suisun Adult School</a></li></ul>
 </section>
 <section id="wider" aria-labelledby="h-wider">
 <div class="band-head">
@@ -502,49 +285,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h2 id="h-wider">Job-related English: a course-to-course match</h2>
 <p>This project has a path to credit. Its training ends in job-related English rather than an industry credential, so the path runs through a course: the colleges nearby teach English as a second language and public sector courses, and their faculty can read the project&#x27;s job-related English and workplace readiness outcomes against a course they already offer, and award the course by examination or a portfolio.</p>
 </div>
-<div class="cards">
-<article class="card wide">
-<div class="who">Worker Education &amp; Resource Center · Los Angeles County</div>
-<h3>Public sector · Health and social services</h3>
-<p class="meta">$1,558,715 · 234 participants planned · 21 colleges in its counties</p>
-<ul class="lines" aria-label="Worker Education &amp; Resource Center: the credentials it trains">
-<li><div class="lh"><code>English as a second language and workplace English</code><span class="u">134 programs</span></div><span class="lt">Ready for a first articulation at Antelope Valley College, Cerritos College, Citrus College, College of the Canyons and 16 more, where the program is taught</span></li>
-<li><div class="lh"><code>Public sector and human services</code><span class="u">17 programs</span></div><span class="lt">Ready for a first articulation at Cerritos College, East Los Angeles College, Glendale Community College, Long Beach City College and 8 more, where the program is taught</span></li>
-</ul>
-<p class="why">Job-related English for incumbent County of Los Angeles workers and job seekers on the PLACE pathway into county civil service and contracted health and human services agencies, with curriculum built with LAUSD&#x27;s Division of Adult and Career Education; 234 workers trained.</p>
-<p class="tlead">Examples to examine with faculty</p>
-<div class="wrap" role="region" aria-label="Worker Education &amp; Resource Center: example articulations to examine" tabindex="0"><table>
-<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
-<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
-<tr><td>Introduction to Social Work and Human Services</td><td>Cerritos College</td><td>SOC 220 Introduction to Human Services (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXS-S0IT1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Community Health Worker Skills</td><td>Long Beach City College</td><td>HLED 200 Introduction to Community Health Worker (3 units)</td><td>Same common course articulated at Cabrillo College; required in Community Health Worker (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CHWS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Social and Human Services Apprenticeship</td><td>Compton College</td><td>SOCI 208A Social Work and Human Services Seminar (2 units)</td><td>Same common course articulated at San Bernardino Valley College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOA-SAHS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>English as a second language and workplace English</td><td>Long Beach City College</td><td>ESL 270 Listen/Speak for Work for ESL Level 1 (5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>English as a second language and workplace English</td><td>East Los Angeles College</td><td>E.S.L. 003A College ESL III: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>English as a second language and workplace English</td><td>Los Angeles City College</td><td>E.S.L. 006A College ESL VI: Writing and Grammar (6 units)</td><td>The college teaches a matching course; required in ESL MILESTONE - LANGUAGE ARTS, ORAL COMMUNICATION (Certificate of Achievement); ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-</tbody></table></div>
-<div class="contacts" role="group" aria-labelledby="who-wider-1">
-<h4 id="who-wider-1">Who is in the conversation</h4>
-<div class="cgroup">
-<p class="cside" id="who-wider-1-1">Grantee staff</p>
-<ul class="people" aria-labelledby="who-wider-1-1">
-<li><span class="pn">Amber Roth</span><span class="pr">Executive Director, Worker Education &amp; Resource Center</span><a href="mailto:aroth@we-rc.org">aroth@we-rc.org</a></li>
-</ul></div>
-<div class="cgroup">
-<p class="cside" id="who-wider-1-2">The colleges</p>
-<ul class="people" aria-labelledby="who-wider-1-2">
-<li><span class="pn">David Rodarte</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Cerritos College</span><a href="mailto:drodarte@cerritos.edu">drodarte@cerritos.edu</a></li>
-<li><span class="pn">Garrett Whelan</span><span class="pr">CPL Coordinator, Long Beach City College</span><a href="mailto:gwhelan@lbcc.edu">gwhelan@lbcc.edu</a></li>
-<li><span class="pn">Corina Diaz</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Compton College</span><a href="mailto:cdiaz3@compton.edu">cdiaz3@compton.edu</a></li>
-<li><span class="pn">Leticia Barajas</span><span class="pr">CPL Coordinator, East Los Angeles College</span><a href="mailto:barajall@elac.edu">barajall@elac.edu</a></li>
-<li><span class="pn">Cynthia Gomez</span><span class="pr">CPL Coordinator, Los Angeles City College</span><a href="mailto:gomezc@lacitycollege.edu">gomezc@lacitycollege.edu</a></li>
-<li><span class="pn">Dr. Carrie Edwards</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Cerritos College</span><a href="mailto:cedwards@cerritos.edu">cedwards@cerritos.edu</a></li>
-<li><span class="pn">Amanda Lynch</span><span class="pr">CPL Coordinator, Long Beach City College</span><a href="mailto:alynch@lbcc.edu">alynch@lbcc.edu</a></li>
-</ul></div>
-</div>
-<div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
-</article>
-</div>
+<ul class="bandlist" aria-label="The project in this band"><li><a href="#p-werc">Worker Education &amp; Resource Center</a></li></ul>
 </section>
 <section id="statewide" aria-labelledby="h-statewide">
 <div class="band-head">
@@ -593,7 +334,390 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 </section>
 <section aria-labelledby="h-next"><div class="band-head"><h2 id="h-next">Practical next steps</h2></div><ol class="next"><li>Send each project its card, so the first conversation is between the people it names: the project&#x27;s contact, each college&#x27;s CPL Coordinator and the faculty who teach the matching course.</li><li>For the healthcare projects, confirm the exit credential (CNA, HHA, LVN, CMA) and compare it with the credit recommendations College of the Desert, Chaffey College and Los Angeles Pierce College already hold.</li><li>For the early care apprenticeships, ask ECEPTS which Child Development Permit level each cohort reaches, then read it against the Child Development Associate exhibit the CCC Collaborative built.</li><li>For Fresno and the north valley, start with the exhibits Fresno City College and Lemoore College already articulate, and invite their CPL coordinators to a shared call with the workforce boards.</li><li>On December 9, hear from ECEPTS and Mountain View Los Altos what moved their colleges, and take Mountain View Los Altos&#x27;s two remaining colleges as the first follow-up.</li><li>Record every confirmed match in MAP so the next grantee cohort finds it there.</li></ol></section>
 <p class="note">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read November 3, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Each card names the project&#x27;s contact as EDD&#x27;s notice gives it; for each college in its examples, the card names the CPL Coordinator the college records in MAP and the faculty MAP lists in the subject of an example course or in English as a second language, read November 3, 2026. Version 3 adds the programs each example course is required in, as the CPL Commons&#x27; program requirements harvest read each college&#x27;s catalog, and a Request Adopt link wherever MAP&#x27;s CPL Opportunities page listed the exhibit when last checked.</p>
+</div>
+<div class="panel" role="tabpanel" id="p-fresno" aria-labelledby="t-fresno" tabindex="0">
+<section aria-labelledby="h-p-fresno">
+<h2 id="h-p-fresno">Start here: credit already exists nearby</h2>
+<article class="card wide">
+<div class="who">Fresno Area Workforce Investment Corporation · Fresno, Madera, Kings and Tulare counties</div>
+<h3>Construction · Forestry · Healthcare</h3>
+<p class="meta">$3,330,000 · 250 participants planned · 8 colleges in its counties</p>
+<ul class="lines" aria-label="Fresno Area Workforce Investment Corporation: the credentials it trains">
+<li><div class="lh"><code>Construction trades</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Fresno City College (Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship)</span></li>
+<li><div class="lh"><code>Fire, wildland fire and forestry</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at College of the Sequoias (Firefighter 1; Firefighter EMT Certificate), Fresno City College (Intermediate Wildland Fire Behavior), Reedley College (Wildland Fire-Basics)</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Lemoore College (Certified Nurse Assistant (CNA) Certification; Nurse Assistant Training)</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">2 colleges</span></div><span class="lt">Credit already articulated in MAP at Fresno City College, Lemoore College (Medical Terminology)</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
+</ul>
+<p class="why">An Integrated Resource Team of two workforce boards, ValleyROP, Centro la Familia and ten employers; certified training, work-based learning, credentials and placement for 250 participants, 195 of them completing credentials.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Fresno Area Workforce Investment Corporation: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship</td><td>Fresno City College</td><td>PREAPP 121 MC3 Pre-Apprenticeship Essentials (3.5 units); PREAPP 120 MC3 Pre-Apprenticeship Core (3.5 units); 7 units in all</td><td>Articulated in MAP at this college; required in MC3 Pre-Apprenticeship Employment Ready (Certificate of Achievement); MC3 Pre-Apprenticeship Plus (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-MPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Firefighter 1</td><td>College of the Sequoias</td><td>FIRE 155 Fire Behavior and Combustion (3 units); FIRE 159 Introduction to Fire Protection Organizations (3 units); and 1 more; 9 units in all</td><td>Articulated in MAP at this college; required in Fire Technology (A.S. Degree); Fire Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-F1C-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Wildland Fire-Basics</td><td>Reedley College</td><td>WLF 10 Wildland Fire-Basics (5 units); WLF 110 Wildland Fire Field Studies II (0.5 units); and 3 more; 27 units in all</td><td>Articulated in MAP at this college; required in Forestry Technician-Fire Suppression (Certificate of Achievement); Wildland Fire Science (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-WF-2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>Lemoore College</td><td>HS 61 Nurse Assistant Training (6 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical Terminology</td><td>Fresno City College</td><td>HIT 10 Medical Terminology (3 units)</td><td>Articulated in MAP at this college; required in Clinical Medical Assistant (A.S. Degree); Health Information Technology (A.S. Degree) and 2 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>C-6 Cabinet, Millwork and Finish Carpentry Contractor</td><td>College of the Sequoias</td><td>CT 250 Basic Carpentry (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CCMA-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-start-1">
+<h4 id="who-start-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-start-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-start-1-1">
+<li><span class="pn">Blake Konczal</span><span class="pr">Executive Director, Fresno Area Workforce Investment Corporation</span><a href="mailto:bkonczal@wfc.co">bkonczal@wfc.co</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-start-1-2">The colleges</p>
+<ul class="people" aria-labelledby="who-start-1-2">
+<li><span class="pn">Diane Defreitas</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Fresno City College</span><a href="mailto:diane.defreitas@fresnocitycollege.edu">diane.defreitas@fresnocitycollege.edu</a></li>
+<li><span class="pn">Nick Branch</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, College of the Sequoias</span><a href="mailto:nickb@cos.edu">nickb@cos.edu</a></li>
+<li><span class="pn">Edward Cunha</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:edwardcunha@whccd.edu">edwardcunha@whccd.edu</a></li>
+<li><span class="pn">Alyssa Salinas</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:alyssasalinas@whccd.edu">alyssasalinas@whccd.edu</a></li>
+<li><span class="pn">Daisy Tafolla</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:daisytafolla@whccd.edu">daisytafolla@whccd.edu</a></li>
+<li><span class="pn">Brian Unruh</span><span class="pr">Faculty in CT, the subject of CT 250, College of the Sequoias</span><a href="mailto:brianu@cos.edu">brianu@cos.edu</a></li>
+<li><span class="pn">Ana Carrizales</span><span class="pr">Faculty in HS, the subject of HS 61, Lemoore College</span><a href="mailto:anacarrizales@whccd.edu">anacarrizales@whccd.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 4 of 5</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-corona-norco" aria-labelledby="t-corona-norco" tabindex="0">
+<section aria-labelledby="h-p-corona-norco">
+<h2 id="h-p-corona-norco">Start here: credit already exists nearby</h2>
+<article class="card wide">
+<div class="who">Corona-Norco Unified School District · Riverside County</div>
+<h3>Healthcare, nursing</h3>
+<p class="meta">$2,289,375 · regional demand stated · 6 colleges in its counties</p>
+<ul class="lines" aria-label="Corona-Norco Unified School District: the credentials it trains">
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Riverside City College, where the program is taught</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
+<li><div class="lh"><code>Vocational nursing (LVN)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at College of the Desert (Licensed Vocational Nurse (LVN) License)</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+</ul>
+<p class="why">Corona-Norco Adult School expands its Nurse Assistant training and adds Home Health Aide and Licensed Vocational Nurse training over three years, with Corona Regional Medical Center, Corona Post Acute and Riverside Workforce Development.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Corona-Norco Unified School District: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Licensed Vocational Nurse (LVN) License</td><td>College of the Desert</td><td>NRN 140C Concepts of Nursing: Gerontology Clinical (1 unit); NRN 140 Concepts of Nursing: Gerontology (1 unit); and 11 more; 22 units in all</td><td>Articulated in MAP at this college; required in Registered Nursing (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOO-LVN(-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>College of the Desert</td><td>HS 64 Nurse Assistant (6 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical Terminology</td><td>College of the Desert</td><td>HS 61 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in BIW IV: Medical Office Specialist (Certificate of Achievement); Emergency Medical Services (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mt. San Jacinto College</td><td>NURS 585 Certified Nursing Assistant (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Home health aide</td><td>College of the Desert</td><td>HS 66 Home Health Aide (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Home health aide</td><td>Mt. San Jacinto College</td><td>NURS 586 Certified Home Health Aide (CHHA) (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-start-2">
+<h4 id="who-start-2">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-start-2-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-start-2-1">
+<li><span class="pn">Dalia Gadelmawla</span><span class="pr">Assistant Superintendent, Corona-Norco Unified School District</span><a href="mailto:trublaitus@cnusd.k12.ca.us">trublaitus@cnusd.k12.ca.us</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-start-2-2">The colleges</p>
+<ul class="people" aria-labelledby="who-start-2-2">
+<li><span class="pn">Cameron Miller</span><span class="pr">CPL Coordinator, College of the Desert</span><a href="mailto:camiller@collegeofthedesert.edu">camiller@collegeofthedesert.edu</a></li>
+<li><span class="pn">Claudia Gutierrez</span><span class="pr">CPL Coordinator, Mt. San Jacinto College</span><a href="mailto:cgutierrez@msjc.edu">cgutierrez@msjc.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t1">Healthcare</span><span class="tag t1">Credit exists nearby: 1 of 4</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-ecepts" aria-labelledby="t-ecepts" tabindex="0">
+<section aria-labelledby="h-p-ecepts">
+<h2 id="h-p-ecepts">Start here: credit already exists nearby</h2>
+<article class="card wide">
+<div class="who">Early Care &amp; Education Pathways to Success · Alameda, Contra Costa, El Dorado, Marin, San Joaquin, San Mateo, Santa Clara, Los Angeles and San Diego counties</div>
+<h3>Early care and education</h3>
+<p class="meta">$3,330,000 · 1,400 participants planned · 54 colleges in its counties; partner colleges Chabot College, College of the Canyons, Los Angeles Pierce College and 10 more</p>
+<ul class="lines" aria-label="Early Care &amp; Education Pathways to Success: the credentials it trains">
+<li><div class="lh"><code>Early care and education</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at San Diego City College, San Diego Mesa College, San Diego Miramar College (Child Development Center Practicum; Observation and Assessment in Early Childhood and 1 more)</span></li>
+</ul>
+<p class="why">Twelve ECE Registered Apprenticeship Programs add ESL support, bilingual mentors and embedded tutors; a pre-apprenticeship, an Associate Teacher or a Teacher apprenticeship with a partner college in each community; about 1,400 participants, 42 percent of them English learners.</p>
+<p class="why">The International Rescue Committee reports that ECEPTS has articulated credit for prior learning for its IETs, and it will share that experience on the December 9 call.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Early Care &amp; Education Pathways to Success: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Observation and Assessment in Early Childhood</td><td>San Diego City College</td><td>CHIL 160 Observation and Assessment of Children (2 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-OAA-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Observation and Issues in Child Development</td><td>San Diego Mesa College</td><td>CHIL 161 Observations and Issues in Child Development (2 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-OAII-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Center Practicum</td><td>San Diego Miramar College</td><td>CHIL 291A Child Development Center Practicum (1 unit); CHIL 291C Child Development Center Practicum (1 unit); and 2 more; 4 units in all</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CDCP-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Merritt College</td><td>CHDEV 55 Child Development (5 units)</td><td>Same common course articulated at Saddleback College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>De Anza College</td><td>C D 12 Child, Family and Community Interrelationships (4 units)</td><td>Same common course articulated at Saddleback College; required in Child Development (A.A. Degree); Child Development (Certificate of Achievement) and 2 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Lake Tahoe Community College</td><td>ECE 101 Principles and Practices of Teaching Young Children (4 units)</td><td>Same common course articulated at Saddleback College; required in Early Childhood Education (A.A. Degree); Early Childhood Education (A.S. T Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-start-3">
+<h4 id="who-start-3">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-start-3-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-start-3-1">
+<li><span class="pn">Randi Wolfe</span><span class="pr">Executive Director, Early Care &amp; Education Pathways to Success</span><a href="mailto:randiwolfe@ecepts.org">randiwolfe@ecepts.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-start-3-2">The colleges</p>
+<ul class="people" aria-labelledby="who-start-3-2">
+<li><span class="pn">Angela Merkens</span><span class="pr">CPL Coordinator, San Diego City College</span><a href="mailto:amerkens@sdccd.edu">amerkens@sdccd.edu</a></li>
+<li><span class="pn">Rachel Russell</span><span class="pr">CPL Coordinator, San Diego Mesa College</span><a href="mailto:rrussell@sdccd.edu">rrussell@sdccd.edu</a></li>
+<li><span class="pn">Maryam Tartoussia</span><span class="pr">CPL Coordinator, San Diego Miramar College</span><a href="mailto:mtartoussia@sdccd.edu">mtartoussia@sdccd.edu</a></li>
+<li><span class="pn">Monica Ambalal</span><span class="pr">CPL Coordinator, Merritt College</span><a href="mailto:mambalal@peralta.edu">mambalal@peralta.edu</a></li>
+<li><span class="pn">Jayanti Roy</span><span class="pr">CPL Coordinator, De Anza College</span><a href="mailto:royjayanti@deanza.edu">royjayanti@deanza.edu</a></li>
+<li><span class="pn">Karl Seelbach</span><span class="pr">CPL Coordinator, Merritt College</span><a href="mailto:kseelbach@peralta.edu">kseelbach@peralta.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 1 of 1</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-north-central" aria-labelledby="t-north-central" tabindex="0">
+<section aria-labelledby="h-p-north-central">
+<h2 id="h-p-north-central">Ready to build: the program runs nearby</h2>
+<article class="card wide">
+<div class="who">North Central Counties Consortium · Colusa, Glenn, Yuba and Sutter counties</div>
+<h3>Education · Healthcare · Leisure and hospitality · Manufacturing · Transportation</h3>
+<p class="meta">$2,859,640 · 260 participants planned · 1 college in its counties; nearby Woodland Community College, Butte College</p>
+<ul class="lines" aria-label="North Central Counties Consortium: the credentials it trains">
+<li><div class="lh"><code>Early care and education</code><span class="u">8 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+<li><div class="lh"><code>Hospitality and food service</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Woodland Community College, where the program is taught</span></li>
+<li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">14 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
+<li><div class="lh"><code>Transportation and logistics</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Yuba College, where the program is taught</span></li>
+</ul>
+<p class="why">Career English and occupational skills training with earn-and-learn placements across four county offices of education, the one-stops and local employers from clinics and post-acute care to farms, a cheese company and a transit agency; 260 participants, 174 completing credentials.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="North Central Counties Consortium: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Butte College</td><td>CDF 12 Child, Family, and Community (3 units)</td><td>Same common course articulated at Saddleback College; required in Early Childhood Education (A.S. T Degree); Early Childhood Education (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Woodland Community College</td><td>ECE 1A Principles and Practices of Teaching Young Children (3 units)</td><td>Same common course articulated at Saddleback College; required in Child Development Associate Teacher (Certificate of Achievement); Child Development Master Teacher (Certificate of Achievement) and 3 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical Terminology</td><td>Butte College</td><td>ALH 104 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Coding (Certificate of Achievement); Medical Office Administration (A.S. Degree) and 1 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>ServSafe Food Protection Manager Certification</td><td>Butte College</td><td>FN 10 Food Safety and Sanitation (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-SC1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>AWS D1.5 SMAW Qualified Welder</td><td>Butte College</td><td>WLD 24 Shielded Metal Arc Welding (Stick Electrode) (8 units)</td><td>Same common course articulated at Bakersfield College; required in Welding Technology (A.S. Degree); Welding Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-AWSD2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Butte College</td><td>NSG 100 CNA Basic Nursing Care, Theory (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-second-1">
+<h4 id="who-second-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-second-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-second-1-1">
+<li><span class="pn">Cindy Newton</span><span class="pr">Executive Director, North Central Counties Consortium</span><a href="mailto:cnewton@ncen.org">cnewton@ncen.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-second-1-2">The college</p>
+<ul class="people" aria-labelledby="who-second-1-2">
+<li><span class="pn">Edwin Beltran</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:eortega@yccd.edu">eortega@yccd.edu</a></li>
+<li><span class="pn">Alejandra Lopez</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:alopez@yccd.edu">alopez@yccd.edu</a></li>
+<li><span class="pn">Annie Marquez</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:amarquez@yccd.edu">amarquez@yccd.edu</a></li>
+<li><span class="pn">Brandi Asmus</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:basmus@yccd.edu">basmus@yccd.edu</a></li>
+<li><span class="pn">Aree Metz</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:ametz@ycd.edu">ametz@ycd.edu</a></li>
+<li><span class="pn">Jeannine Mullin</span><span class="pr">Faculty in ECE, the subject of ECE 1A, Woodland Community College</span><a href="mailto:jmullin@yccd.edu">jmullin@yccd.edu</a></li>
+<li><span class="pn">Laura Daly</span><span class="pr">Faculty in ECE, the subject of ECE 1A, Woodland Community College</span><a href="mailto:ldaly@yccd.edu">ldaly@yccd.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-mvla" aria-labelledby="t-mvla" tabindex="0">
+<section aria-labelledby="h-p-mvla">
+<h2 id="h-p-mvla">Ready to build: the program runs nearby</h2>
+<article class="card wide">
+<div class="who">Mountain View Los Altos Adult School · Santa Clara and San Mateo counties</div>
+<h3>Health science and medical technology</h3>
+<p class="meta">$1,904,283 · 240 participants planned · 10 colleges in its counties; partner colleges Chabot College, Foothill College, Mission College</p>
+<ul class="lines" aria-label="Mountain View Los Altos Adult School: the credentials it trains">
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical assisting</code><span class="u">9 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Evergreen Valley College and 2 more, where the program is taught</span></li>
+<li><div class="lh"><code>Medical office, billing and records</code><span class="u">7 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Gavilan College and 1 more, where the program is taught</span></li>
+<li><div class="lh"><code>Eye care technician</code><span class="u">2 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, where the program is taught</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
+</ul>
+<p class="why">Eight cohorts of 30 over 44 months: medical terminology first, then Certified Nursing Assistant, Eye Care Technician, Medical Records Specialist, Medical Office Assistant or Medical Assistant, with Home Health Aide and acute care as stackable next steps.</p>
+<p class="why">The International Rescue Committee reports that Mountain View Los Altos has articulated credit for prior learning for its IET at one of its three community colleges. On December 9 it will share what holds up the other two, and the CPL Initiative will bring what MAP shows for each college.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Mountain View Los Altos Adult School: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Medical Terminology</td><td>Foothill College</td><td>AHS 52 Medical Terminology (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mission College</td><td>HOC 019A Nursing Assistant Fundamentals (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Medical assisting</td><td>Chabot College</td><td>MEDA 70A Clinical Skills For the Medical Assistant I (3 units)</td><td>The college teaches a matching course; required in Medical Assisting (A.S. Degree); Medical Assisting (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Medical office, billing and records</td><td>Chabot College</td><td>HIT 48 Medical Coding 1 (4 units)</td><td>The college teaches a matching course; required in Health Information Coding (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Eye care technician</td><td>Chabot College</td><td>OPTN 9702 Optical Dispensing and Materials (5 units)</td><td>The college teaches a matching course; required in Optical Technology (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Home health aide</td><td>Mission College</td><td>HOC 019F Home Health Aide Fundamentals (1.5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-second-2">
+<h4 id="who-second-2">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-second-2-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-second-2-1">
+<li><span class="pn">Julie Vo</span><span class="pr">Director, Mountain View Los Altos Adult School</span><a href="mailto:Julie.vo@mvla.net">Julie.vo@mvla.net</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-second-2-2">The colleges</p>
+<ul class="people" aria-labelledby="who-second-2-2">
+<li><span class="pn">Natalie Latteri</span><span class="pr">CPL Coordinator, Foothill College</span><a href="mailto:latterinatalie@fhda.edu">latterinatalie@fhda.edu</a></li>
+<li><span class="pn">Yolanda Barnes</span><span class="pr">CPL Coordinator, Mission College</span><a href="mailto:yolanda.barnes@missioncollege.edu">yolanda.barnes@missioncollege.edu</a></li>
+<li><span class="pn">Dara Greene</span><span class="pr">CPL Coordinator, Chabot College</span><a href="mailto:dgreene@chabotcollege.edu">dgreene@chabotcollege.edu</a></li>
+<li><span class="pn">Lannibeth Calvillo</span><span class="pr">CPL Coordinator, Chabot College</span><a href="mailto:lcalvillo@chabotcollege.edu">lcalvillo@chabotcollege.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-fairfield-suisun" aria-labelledby="t-fairfield-suisun" tabindex="0">
+<section aria-labelledby="h-p-fairfield-suisun">
+<h2 id="h-p-fairfield-suisun">A precedent to adopt: another college shows the way</h2>
+<article class="card wide">
+<div class="who">Fairfield-Suisun Adult School · Solano County</div>
+<h3>Healthcare</h3>
+<p class="meta">$213,120 · 48 participants planned · 1 college in its counties</p>
+<ul class="lines" aria-label="Fairfield-Suisun Adult School: the credentials it trains">
+<li><div class="lh"><code>Medical assisting</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: College of the Canyons, Modesto Junior College already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+</ul>
+<p class="why">A 120-hour Clinical Medical Assistant bridge course with contextualized medical and office vocabulary, then CALRegional&#x27;s ten-week Clinical Medical Assistant course and a 160-hour externship; 12 students a year, 48 over the grant.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Fairfield-Suisun Adult School: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Medical Terminology</td><td>Solano Community College</td><td>NURS 111 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Administrative Assistant (Certificate of Achievement); Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 101 Study of Human Diseases for Medical Assistants (3 units)</td><td>The college teaches a matching course; required in Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 60 Adminstrative Medical Assistant (3 units)</td><td>The college teaches a matching course; required in Medical Administrative Assistant (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-precedent-1">
+<h4 id="who-precedent-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-precedent-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-precedent-1-1">
+<li><span class="pn">Kris Corey</span><span class="pr">Superintendent, Fairfield-Suisun Adult School</span><a href="mailto:elizabethk@fsusd.org">elizabethk@fsusd.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-precedent-1-2">The college</p>
+<ul class="people" aria-labelledby="who-precedent-1-2">
+<li><span class="pn">Sarah Barsness</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Solano Community College</span><a href="mailto:sarah.barsness@solano.edu">sarah.barsness@solano.edu</a></li>
+<li><span class="pn">Erica Beam</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Solano Community College</span><a href="mailto:erica.beam@solano.edu">erica.beam@solano.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-werc" aria-labelledby="t-werc" tabindex="0">
+<section aria-labelledby="h-p-werc">
+<h2 id="h-p-werc">Job-related English: a course-to-course match</h2>
+<article class="card wide">
+<div class="who">Worker Education &amp; Resource Center · Los Angeles County</div>
+<h3>Public sector · Health and social services</h3>
+<p class="meta">$1,558,715 · 234 participants planned · 21 colleges in its counties</p>
+<ul class="lines" aria-label="Worker Education &amp; Resource Center: the credentials it trains">
+<li><div class="lh"><code>English as a second language and workplace English</code><span class="u">134 programs</span></div><span class="lt">Ready for a first articulation at Antelope Valley College, Cerritos College, Citrus College, College of the Canyons and 16 more, where the program is taught</span></li>
+<li><div class="lh"><code>Public sector and human services</code><span class="u">17 programs</span></div><span class="lt">Ready for a first articulation at Cerritos College, East Los Angeles College, Glendale Community College, Long Beach City College and 8 more, where the program is taught</span></li>
+</ul>
+<p class="why">Job-related English for incumbent County of Los Angeles workers and job seekers on the PLACE pathway into county civil service and contracted health and human services agencies, with curriculum built with LAUSD&#x27;s Division of Adult and Career Education; 234 workers trained.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Worker Education &amp; Resource Center: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Introduction to Social Work and Human Services</td><td>Cerritos College</td><td>SOC 220 Introduction to Human Services (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXS-S0IT1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Community Health Worker Skills</td><td>Long Beach City College</td><td>HLED 200 Introduction to Community Health Worker (3 units)</td><td>Same common course articulated at Cabrillo College; required in Community Health Worker (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CHWS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Social and Human Services Apprenticeship</td><td>Compton College</td><td>SOCI 208A Social Work and Human Services Seminar (2 units)</td><td>Same common course articulated at San Bernardino Valley College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOA-SAHS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>English as a second language and workplace English</td><td>Long Beach City College</td><td>ESL 270 Listen/Speak for Work for ESL Level 1 (5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>East Los Angeles College</td><td>E.S.L. 003A College ESL III: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>Los Angeles City College</td><td>E.S.L. 006A College ESL VI: Writing and Grammar (6 units)</td><td>The college teaches a matching course; required in ESL MILESTONE - LANGUAGE ARTS, ORAL COMMUNICATION (Certificate of Achievement); ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-wider-1">
+<h4 id="who-wider-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-wider-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-wider-1-1">
+<li><span class="pn">Amber Roth</span><span class="pr">Executive Director, Worker Education &amp; Resource Center</span><a href="mailto:aroth@we-rc.org">aroth@we-rc.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-wider-1-2">The colleges</p>
+<ul class="people" aria-labelledby="who-wider-1-2">
+<li><span class="pn">David Rodarte</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Cerritos College</span><a href="mailto:drodarte@cerritos.edu">drodarte@cerritos.edu</a></li>
+<li><span class="pn">Garrett Whelan</span><span class="pr">CPL Coordinator, Long Beach City College</span><a href="mailto:gwhelan@lbcc.edu">gwhelan@lbcc.edu</a></li>
+<li><span class="pn">Corina Diaz</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Compton College</span><a href="mailto:cdiaz3@compton.edu">cdiaz3@compton.edu</a></li>
+<li><span class="pn">Leticia Barajas</span><span class="pr">CPL Coordinator, East Los Angeles College</span><a href="mailto:barajall@elac.edu">barajall@elac.edu</a></li>
+<li><span class="pn">Cynthia Gomez</span><span class="pr">CPL Coordinator, Los Angeles City College</span><a href="mailto:gomezc@lacitycollege.edu">gomezc@lacitycollege.edu</a></li>
+<li><span class="pn">Dr. Carrie Edwards</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Cerritos College</span><a href="mailto:cedwards@cerritos.edu">cedwards@cerritos.edu</a></li>
+<li><span class="pn">Amanda Lynch</span><span class="pr">CPL Coordinator, Long Beach City College</span><a href="mailto:alynch@lbcc.edu">alynch@lbcc.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+</div>
 </main>
+<script>
+/* Tabs: the ARIA tabs pattern. Without this script the tab row stays hidden and every panel shows. */
+(function () {
+  var list = document.querySelector("[data-tabs]");
+  if (!list) return;
+  var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+  var root = list.parentNode;
+  function select(i, focus) {
+    tabs.forEach(function (t, j) {
+      var on = j === i;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      panels[j].hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+  }
+  function byPanel(id) {
+    for (var i = 0; i < panels.length; i++) if (panels[i].id === id) return i;
+    return -1;
+  }
+  root.classList.add("js-tabs");
+  list.hidden = false;
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () {
+      select(i, false);
+      try { history.replaceState(null, "", i === 0 ? location.pathname + location.search : "#" + panels[i].id); } catch (e) {}
+    });
+    t.addEventListener("keydown", function (e) {
+      var n = tabs.length, k = e.key, to = -1;
+      if (k === "ArrowRight" || k === "ArrowDown") to = (i + 1) % n;
+      else if (k === "ArrowLeft" || k === "ArrowUp") to = (i - 1 + n) % n;
+      else if (k === "Home") to = 0;
+      else if (k === "End") to = n - 1;
+      if (to < 0) return;
+      e.preventDefault();
+      select(to, true);
+    });
+  });
+  // A link to a panel (the Overview's project names, a shared #p-... address) opens its tab.
+  function fromHash(focusPanel) {
+    var i = byPanel(decodeURIComponent((location.hash || "").slice(1)));
+    if (i < 0) return false;
+    select(i, false);
+    if (focusPanel) { panels[i].focus(); }
+    return true;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#p-"]') : null;
+    if (!a) return;
+    var i = byPanel(a.getAttribute("href").slice(1));
+    if (i < 0) return;
+    e.preventDefault();
+    select(i, false);
+    try { history.pushState(null, "", "#" + panels[i].id); } catch (err) {}
+    list.scrollIntoView({ block: "start" });
+    tabs[i].focus();
+  });
+  window.addEventListener("hashchange", function () { if (!fromHash(false)) select(0, false); });
+  if (!fromHash(false)) select(0, false);
+})();
+</script>
 <!-- Ask Sierra: a chip in the bottom-right corner opens Sierra in a side bar, as on the CPL Library. -->
 <script src="../../sierra/sidebar.js" defer></script>
 </body>
