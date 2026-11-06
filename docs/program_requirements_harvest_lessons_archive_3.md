@@ -1104,3 +1104,48 @@ sharing pages 148-154 and two on the course availability table.
 **The readers:** CourseLeaf's sitemap road, which also reads an own-HTML catalog (`custom_html`) kept to its registry address's year segment (`year_scope()`); the curriQunet, eLumen and Acalog readers; the Coursedog reader (S414: the page's own program search call, its limit rewritten by a route, then each program's Requisites tab); and the whole-catalog PDF reader, which a procedure catalog step points at the PDF a catalog page links, carrying the file's year (#2202), and which prefers a clean heading or the control number (#2203).
 
 **Parked for the reader:** Diablo Valley, Santiago Canyon, Sierra, Foothill, San Jose City, MiraCosta, Orange Coast's 27 empty records, Reedley, Palomar, Ventura and Oxnard, and CCSF's 53 skipped records (lessons S407).
+
+## S422 SkyWillow (2026-10-19): San Joaquin Delta's three scorer readings, Taft's two GE patterns, Sierra Training's UI pass
+
+- **A verdicts file names the fix, and one fix can clear a college.** S421's reading of Delta's sitting said 29 of 32 misses
+  were one shape. Three scorer readings, each from the page's own words, took Delta's live rows from 154 to 195 of 202
+  passing (#2250): the program total read as a floor (`total_units_minimum`, set by a reconcile step on "Minimum Units
+  Required: N" and "Minimum Major Units Required: N", passing a sum whose low end meets it and nothing else), a
+  per-college `prefix_aliases` map (ANTH, ENGL, ARTH and COMM printed where the state file keeps ANTHR, ENG, ART and COM
+  ST; the scorer renames on its own copy, and never a code the file lists as printed), and a noncredit page printing only
+  "Total Contact Hours: N" (equal, `total_only`, only when every hours figure on the page is that total). The eight left
+  are the extraction's: 07304's double-counted electives, 16764's waivable piano block, 22244's unrecorded math, 45621's
+  area minimums, 11970's course-less GE areas, 19752's GE page, and 05630 and 44197 (a certificate total that counts GE;
+  a course taken four times).
+- **A new status string breaks consumers; a flag does not.** `program_record_machine_pass` (SQL), the tab, CPL Pathways
+  and the display build accept only `equal` and `unstated`. A new pass shape is `equal` plus a flag (`minimum`,
+  `within`, `total_only`), the way the degree check already does it.
+- **A new record field reaches the confirm-carry basis.** `program_record_carry_basis` strips the figures a reconcile
+  sets, so a person's confirm survives a reread; `tests/program_requirements_college_test.py` fails when a reconcile
+  field is missing from it. The basis change went live through `supabase-migrate.yml` after checking the live function
+  bodies matched the file (md5 of `prosrc`).
+- **Two reconciles in a row leave two run stamps; reread posts one.** Each reconcile stamps the records it changes with
+  its run, and `step=reread` posted only the newest run's seven. `reread --extracted-run` (the workflow's `force` input on
+  a reread) posts a named run; the function's guards still decide each row (195 replaced, 0 held). Better: put every
+  scorer change on the branch before the first reconcile. A reconcile checks out its dispatch commit, so a later push
+  needs a later run; cancel and redispatch while the capture is young.
+- **Taft's catalog prints two local GE patterns.** Three free page reads: the GE philosophy page states "General
+  Education Requirements (27 units – one course from each category)", and the Other Associate Degrees page says the CTE
+  degrees, Energy Technology and Occupational Safety and Health among them, "follow the local general education pattern of
+  only 18 units". No page words the 60 as a minimum, and neither A.S. page names a GE figure. With 18 the sums are 36 and
+  53 against 60; only Title 5's floor and unnamed electives would pass them, which is also what a dropped block looks
+  like (Fable's advice: cite the catalog's word for a floor or leave the record failing). No step was built (#2249); the
+  27 and 18 are a catalog disagreement for the college.
+- **The UI pass's sweep had never seen Sierra Training** (#2251): the signed-out cobi route paints the First Light
+  greeting over a sign-in note. A reviewer seed with synthetic rows for the six reads measures the tab; it was clean
+  before and after the conversion to underlined words.
+- **Runs this session:** Taft page reads 39215793482, 39216772779, 39217374801; Delta reconcile 39216608232 (canceled:
+  checked out before the alias commit), 39217405432, 39220195737; migrate 39216602991; reread 39223153428, 39223682919;
+  display build 5da99b0af549. No model spend.
+
+### Moved from the lane (S422 compaction)
+
+**Sam's sheet 29 (2026-10-04):** Sierra says "required", names each choose block and gives the printed total for a checked program, citing the catalog and its year (live, smokes 7l and 7q).
+
+**Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
+
