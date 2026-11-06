@@ -89,6 +89,7 @@
      34.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      4.0,
      4.0
@@ -145,7 +146,8 @@
    "outcomes": [
     "Analyze markets using microeconomic techniques such as efficiency analysis, market structure analysis and rational behavior analysis as well as use macroeconomic data and apply macroeconomic models in order to understand the macro-economy."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -282,31 +284,14 @@
    "The single learning outcome is printed for the program page as a whole."
   ]
  },
- "extracted_run": 41192567009,
+ "extracted_run": 42195216637,
  "reconciled": [
   {
-   "field": "alternative_units",
+   "field": "degree_total_minimum",
    "was": null,
-   "now": {
-    "MATH 20A": [
-     4,
-     null
-    ]
-   },
-   "words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 Exploratory Work Experience · or WORK 97 Service Learning Work Experience · Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
-  },
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements')"
+   "now": true,
+   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (college page read 42046379839 (Global Studies AA-T 37243): Global Studies AA-T 37243: 'TOTAL MAJOR UNITS 21-25 · Additional Requirements 35-39 · Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units · Total Units 60' (college page read 42046379839); the same 'electives, if needed, for a total of 60' the local-degree step reads as a floor (Open Asks Sheet 159 card 1, 'keep'))"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 41192567009
 }
