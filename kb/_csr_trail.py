@@ -248,6 +248,26 @@ def mid_subject_codes(disciplines, courses=None, singletons=None):
     }
 
 
+def cs6_findings(disciplines):
+    """CS6: a Common SUBJ not derivable from its discipline's name or observed variants. A recorded note settles it,
+    as a note settles CS4 and CS5 (SkyBeacon, 2026-11-06, from Sam's recording: he noted all nine, "keep this as the
+    best alternative", and the card kept asking). Returns (rule, discipline, evidence, needs_judgment, suggestion)."""
+    out = []
+    for disc, e in sorted(disciplines.items()):
+        c = e["canonical_subj4"]
+        if disc in UMBRELLA_DISCIPLINES:
+            continue
+        if mnemonic_ok(c, disc, e.get("local_subject_variants", {})):
+            continue
+        if e.get("_notes"):
+            out.append(("cs6_mnemonic_noted", disc, "canonical %s not derivable from name or variants; the note records why: %s"
+                        % (c, str(e["_notes"])[:160]), False, "settled by the curator's note"))
+        else:
+            out.append(("cs6_weak_mnemonic", disc, "canonical %s not derivable from name and absent from %d observed variants"
+                        % (c, len(e.get("local_subject_variants", {}))), True, "confirm or improve mnemonic (re-key evidence only)"))
+    return out
+
+
 def note_records_prefix(entry, prefix):
     """A twin whose curator note names the official prefix has a recorded divergence."""
     notes = entry.get("_notes") or ""
@@ -334,14 +354,8 @@ def main(argv=None):
                 True, suggestion="confirm choice + record a note")
 
     # ── CS6 mnemonic ──
-    for disc, e in sorted(disciplines.items()):
-        c = e["canonical_subj4"]
-        if disc in UMBRELLA_DISCIPLINES:
-            continue
-        if not mnemonic_ok(c, disc, e.get("local_subject_variants", {})):
-            add("cs6_weak_mnemonic", disc,
-                "canonical %s not derivable from name and absent from %d observed variants" % (c, len(e.get("local_subject_variants", {}))),
-                True, suggestion="confirm or improve mnemonic (re-key evidence only)")
+    for rule, disc, evidence, judge, suggestion in cs6_findings(disciplines):
+        add(rule, disc, evidence, judge, suggestion=suggestion)
 
     # ── CS7 hygiene ──
     for disc, e in sorted(disciplines.items()):
