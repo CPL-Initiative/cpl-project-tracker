@@ -1,20 +1,24 @@
 {
   "schema": 1,
-  "session": 575,
-  "moniker": "SkyJujube",
+  "session": 595,
+  "moniker": "SkyHarbor",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_575_handoff.md",
+  "handoff": "docs/session_594_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-04T22:07:14Z",
+  "written_at": "2026-11-06T23:57:22Z",
   "project": "course",
   "next_step": {
-    "title": "Re-point the ways in, then retire the old tab",
-    "text": "The Courses List's panel now carries the common course's card and its edits; next, SkyView, Quickstart and Subjects open the List, the auditor's other tags become List filters, then the Common Course Reference tab is deleted. The side session's own handoff is docs/courses_retirement_handoff.md."
+    "title": "Merge the C-ID claim holds and confirm Sierra's read",
+    "text": "After #2862 merges and the 13:20Z sync runs, Sierra's alignment tool returns no HIST 50 row for Basic Military Training at Sierra College."
   },
   "changes": [
+    {
+      "at": "2026-11-06T23:10:00Z",
+      "text": "Moreno Valley's HES 1 claim on C-ID HIST 150 held, and West Los Angeles's ADDICST 1 claim on PH 103: each course joins the identity its sister colleges give it; a daily audit lists new claims of this kind (#2862, open)."
+    },
     {
       "at": "2026-11-04T20:47:00Z",
       "text": "A course's panel in the Courses List shows its common course and, for a signed-in reviewer, Rename, Set the discipline and Confirm, carried from the Common Course Reference tab (#2776)."

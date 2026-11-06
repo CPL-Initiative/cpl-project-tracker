@@ -849,3 +849,31 @@ filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (
   weak mnemonic (CS6), while the card told Sam to *confirm or note*. Nine notes he wrote never counted.
 - **A sign-in gate drawn once must follow the keeper's renewal.** See the KB note
   `methodology-refresh-token-before-write` (the draw-time half) and the lane `reviewer-session-lifetime`.
+
+## SkyHarbor, 2026-11-06 (Library side session)
+
+- **A college's C-ID claim is its own word, not ASCCC's.** Sam saw Basic Military Training offered on Sierra College's
+  HIST 50. Moreno Valley's COCI row put HES 1 Health Science under C-ID HIST 150, with no ASCCC approval behind it, and
+  the identity layer trusted it; one bad member reached 106 colleges' visuals and Sierra's alignment tool, which took the
+  first peer C-ID a recommendation met. Four signals agreeing (no approval; subject, TOP family and title all apart from
+  the group) found exactly 2 statewide. Fix at the source, keep the consumer's rule: see the KB note
+  `methodology-a-c-id-claim-is-a-colleges-word-not-asccc`. (#2862)
+- **Measure the blast radius before naming it.** The first cut (subject and TOP disagree) flagged 214 members, mostly real
+  cross-listings (Medical Terminology under business, networking under electronics). Adding the title signal brought it
+  to 2. A finder that lists cross-listings teaches the team to ignore it.
+- **A stored file the daily run never rebuilds needs its own apply.** `kb/coci_articulations.json` is re-keyed by
+  scripts, not reseeded, so the hold re-keys the record itself with a receipt; `--rollback` restored the file byte for
+  byte before the real apply.
+- **A data change ripples into prototype payloads.** Moving one record left `prototype/ccr_universe.json` counting six on
+  HIST 150, and `lints` caught it. Main's universe was already behind its own inputs (157 vs 159 islands), so the sky
+  placement had to follow the fresh build. Run every lints step locally after a data move, not one.
+- **A workflow's receipt commit starts no CI.** The migrate workflow's push left #2860's head with no checks; merging main
+  in (a real change) started them. Never an empty commit.
+- **The statewide view was already loaded.** CPL Pathways read all 17,547 records' index at open; widening that read by
+  `counts:display->counts` (about 60 bytes a row) gave the statewide cards and List with no new read. Look for the read
+  you already pay for before adding one. (#2863)
+- **The List engine draws the title in the first column.** Putting College first printed program names under it; the
+  statewide List names the college second and sorts by it.
+- **Add your credential: nothing a visitor types shows until verified.** One INSERT-only add, a reviewer-only decide that
+  keeps each prior state in the row's history, a verified-only public read. The repo's Supabase guard blocks DDL in a
+  rolled-back dry run, so the first real run is the migrate workflow; verify the grants live after it. (#2860)

@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 575,
+   "count": 576,
    "docs": [
     {
      "created": "2026-08-14",
@@ -574,6 +574,25 @@
      "title": "A bulk POST is one statement over the union of its keys",
      "type": "methodology",
      "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [
+      "kb/reference/cid_claim_holds.json",
+      "kb/_apply_cid_claim_holds.py",
+      "kb/_audit_cid_claims.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-c-id-claim-is-a-colleges-word-not-asccc.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "c-id",
+      "identity",
+      "cpl-recommendations"
+     ],
+     "title": "A C-ID claim in COCI is a college's word, not ASCCC's",
+     "type": "methodology",
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-08-23",
@@ -14648,11 +14667,11 @@
       "handoff",
       "library",
       "credential-catalog",
-      "cpl-ai",
-      "commons",
+      "cpl-pathways",
+      "c-id",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyBeacon, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyHarbor, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },
@@ -26117,5 +26136,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1398
+ "total": 1399
 }
