@@ -9,9 +9,11 @@
 //     a search names what it also found with another status;
 //   - a college is never offered a Request Quick Adopt chip for its own exhibit; every MAP link is Request Quick Adopt's
 //     address with View=Non-Military (map_links.js);
-//   - the List drills down and a 0 carries Request an evaluation; the matrix marks a could-adopt college A, a cell opens the
-//     side panel at that college, a column heading picks the college; the panel's request names the two routes that exist
-//     today and the analysis reads adopt_align.json;
+//   - the List drills down and a 0 carries Ask us to prioritize; the matrix marks a could-adopt college A, a cell opens the
+//     side panel at that college, a column heading picks the college; the panel's request names the college route and the
+//     statewide route as Sam ruled it on Sheet 162 (a public request to prioritize review, never an evaluation promise):
+//     the form posts to the one INSERT-only function with the credential, the picked college and an optional email, the
+//     reply is the count, the count paints beside the credential, a failed post says so; the analysis reads adopt_align.json;
 //   - the CSV quotes what needs quoting and marks a could-adopt cell A; Create Handout opens the college's visual;
 //   - the page remembers no filter (Sam, 2026-10-21): the browser keeps only the theme and the panel's width;
 //   - Malone's look, Light unless the reader picks Dark; three figure tiles; no bare "CPL" or "MAP" in the page's own words;
@@ -72,7 +74,7 @@ const ALIGN = {
 
 function load(query, opts) {
   opts = opts || {};
-  const writes = [];
+  const writes = [], posts = [];
   const dom = new JSDOM(PAGE, {
     url: "https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/" + (query || ""),
     runScripts: "outside-only", pretendToBeVisual: true,
@@ -81,15 +83,21 @@ function load(query, opts) {
   w.Storage.prototype._set = w.Storage.prototype.setItem;
   w.Storage.prototype.setItem = function (k, v) { writes.push(k); return this._set(k, v); };
   w.Element.prototype.scrollIntoView = function () {};
-  w.fetch = function (url) {
+  w.fetch = function (url, init) {
     if (opts.fail) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
+    if (/credential_priority_counts/.test(url)) return Promise.resolve({ ok: true, json: () => Promise.resolve(opts.asks === undefined ? [] : opts.asks) });
+    if (/credential_priority_request/.test(url)) {
+      posts.push({ headers: init.headers, body: JSON.parse(init.body) });
+      if (opts.askFail) return Promise.resolve({ ok: false, status: 500, json: () => Promise.reject(new Error("500")) });
+      return Promise.resolve({ ok: true, json: () => Promise.resolve(opts.askReply === undefined ? 3 : opts.askReply) });
+    }
     const body = /adopt_more/.test(url) ? (opts.more === undefined ? MORE : opts.more) : /adopt_align/.test(url) ? ALIGN : (opts.data || DATA);
     if (body === null) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
     return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(body))) });
   };
   w.requestAnimationFrame = (f) => setTimeout(f, 0);
   w.eval(JS);
-  return new Promise((res) => setTimeout(() => res({ w, d: w.document, writes }), 60));
+  return new Promise((res) => setTimeout(() => res({ w, d: w.document, writes, posts }), 60));
 }
 const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
 function titles(d) { return Array.from(d.querySelectorAll("#ad-list .cred h3")).map((h) => h.textContent); }
@@ -145,7 +153,8 @@ function pick(d, id, key, on) {
   const chips = Array.from(sec.querySelectorAll("a.chip"));
   check("Request Quick Adopt chips name the builders", chips.map((a) => a.textContent.replace(/ built.*/, "")).join() === "Beta,Gamma");
   check("every chip opens MAP in a new tab", chips.every((a) => /View=Non-Military$/.test(a.href) && a.target === "_blank" && /noopener/.test(a.rel)));
-  check("every card offers Request an evaluation", d.querySelectorAll("#ad-list .cred [data-req]").length === 2);
+  check("every card offers Ask us to prioritize this credential", d.querySelectorAll("#ad-list .cred [data-req]").length === 2
+    && Array.from(d.querySelectorAll("#ad-list .cred [data-req]")).every((b) => b.textContent === "Ask us to prioritize this credential"));
   const hand = d.getElementById("ad-handout");
   check("Create Handout opens the college's visual", !hand.hidden && /cpl-opportunity\/\?college=Alpha%20College$/.test(hand.href));
   check("the status picker reads the scope's words", Array.from(d.querySelectorAll("#pk-standing .pp-row span:first-of-type")).map((s) => s.textContent).slice(0, 2).join("|") === "Earns credit here|Earns credit elsewhere, could be added here");
@@ -179,7 +188,7 @@ function pick(d, id, key, on) {
   check("a band per field", d.querySelectorAll("#ad-tbl-body tr.band").length === 3);
   pick(d, "pk-standing", "harvested", true);
   const zero = Array.from(d.querySelectorAll("#ad-tbl-body td.num")).filter((td) => /^0/.test(td.textContent.trim()));
-  check("a 0 carries Request an evaluation", zero.length === 2 && zero.every((td) => td.querySelector(".req-w")));
+  check("a 0 carries Ask us to prioritize", zero.length === 2 && zero.every((td) => td.querySelector(".req-w") && td.querySelector(".req-w").textContent === "Ask us to prioritize"));
   d.querySelector('#ad-tbl-body button[data-q="CompTIA"]').click();
   check("the issuer drills down to a search", d.getElementById("ad-q").value === "CompTIA" && d.querySelectorAll("#ad-tbl-body tr:not(.band)").length === 1);
   d.getElementById("ad-clear").click();
@@ -205,6 +214,26 @@ function pick(d, id, key, on) {
   check("the panel names the colleges, the request routes and the analysis", /colleges? awards? credit for it/.test(d.getElementById("pn-awards").textContent)
     && /Find your college/.test(d.querySelector("#pn-body .req").textContent) && /Credit for Being You/.test(d.querySelector("#pn-body .req").textContent)
     && /Analysis for faculty/.test(d.getElementById("pn-body").textContent));
+  check("the statewide route is a request to prioritize review, never an evaluation promise (Sam, Sheet 162)",
+    d.getElementById("pn-req").textContent.indexOf("Ask us to prioritize this credential") === 0
+    && /prioritize this credential for review/.test(d.querySelector("#pn-body .req").textContent)
+    && /rests with that college/.test(d.querySelector("#pn-body .req").textContent) && /sends no reply/.test(d.querySelector("#pn-body .req").textContent)
+    && !/evaluat(e|ion) (it|your credential) for you|will evaluate|setting up a request list/.test(d.querySelector("#pn-body .req").textContent));
+  const askForm = d.getElementById("pn-ask-form");
+  check("the form takes the credential, the picked college and an optional email", askForm && askForm.getAttribute("data-cred") === d.querySelector("#pn-body h2").textContent
+    && askForm.querySelector("#pn-ask-college") && askForm.querySelector("#pn-ask-email").type === "email"
+    && askForm.querySelector("button[type=submit]").textContent === "Ask us to prioritize it" && askForm.querySelector("button[type=submit]").classList.contains("word"));
+  askForm.querySelector("#pn-ask-college").value = "Alpha College";
+  askForm.querySelector("#pn-ask-email").value = "someone@example.edu";
+  askForm.dispatchEvent(new d.defaultView.Event("submit", { bubbles: true, cancelable: true }));
+  await tick(40);
+  const posted = one.posts[0];
+  check("Ask posts once to the one INSERT-only function, with the anon key, the credential, the college, the email and the source",
+    one.posts.length === 1 && posted.body.p_credential === askForm.getAttribute("data-cred") && posted.body.p_college === "Alpha College"
+    && posted.body.p_email === "someone@example.edu" && posted.body.p_source === "catalog" && posted.headers.apikey && /^eyJ/.test(posted.headers.apikey));
+  check("the reply is the count, said in the panel and in its heading", /Asked\. 3 people have asked/.test(d.getElementById("pn-ask-msg").textContent)
+    && /3 people have asked/.test(d.getElementById("pn-req").textContent) && askForm.hidden);
+  check("the page remembers nothing of the ask", one.writes.every((k) => k === "cpl_theme" || k === "cpl_catalog_panel_w"));
   const sp = Array.from(d.querySelectorAll("#pn-body .verdict"));
   check("the analysis reads adopt_align.json and labels its score illustrative", sp.length === (/CompTIA/.test(d.querySelector("#pn-body h2").textContent) ? 1 : 0)
     && (!sp.length || (/Recommendation to adopt or adapt/.test(sp[0].textContent) && /Illustrative/.test(sp[0].textContent))));
@@ -215,6 +244,21 @@ function pick(d, id, key, on) {
   check("a column heading picks that college", /College<\/b> Alpha/.test(d.getElementById("ad-sel").innerHTML) && d.querySelectorAll(".mx thead th.ch").length === 1
     && /Alpha College/.test(d.querySelector("#pk-college .sum").textContent));
   check("the page remembers no filter", one.writes.every((k) => k === "cpl_theme" || k === "cpl_catalog_panel_w"));
+
+  // A failed post says so and leaves the form; the counts read paints beside the credential.
+  const nay = await load("", { askFail: true, asks: [{ credential: "comptia security+", n: 4 }, { credential: "AWS Certified Cloud Practitioner", n: 2 }] });
+  d = nay.d;
+  await tick(40);
+  d.querySelector("#ad-list .cred [data-req]").click();
+  await tick(40);
+  const bf = d.getElementById("pn-ask-form");
+  check("a credential's count paints on its card and in the panel's heading", /4 people have asked/.test(d.querySelector("#ad-list .cred .askn").textContent)
+    && /4 people have asked/.test(d.getElementById("pn-req").textContent) && nay.w.CPL_ADOPT.asked({ t: "AWS Certified Cloud Practitioner" }) === 2);
+  bf.dispatchEvent(new d.defaultView.Event("submit", { bubbles: true, cancelable: true }));
+  await tick(40);
+  check("a failed post says so and keeps the form", /could not be sent/.test(d.getElementById("pn-ask-msg").textContent) && !bf.hidden && !bf.querySelector("button[type=submit]").disabled);
+  d.querySelector('[data-view="table"]').click();
+  check("the List says how many asked, beside the credential", Array.from(d.querySelectorAll("#ad-tbl td .askn")).some((x) => x.textContent === "4 asked"));
 
   // Without adopt_more.json the page stands on the settled credentials.
   const lone = await load("", { more: null });

@@ -1119,3 +1119,35 @@ advise"* and *"I could add a bot specifically trained for this by you"*.
 - **A stored draft is kept as made.** `cpl_library_drafts_guard` refuses any change but the publish stamp, so the first
   try at adding the card links to the stored draft failed (receipt `..._v5_card_links_42088269186.json`). The next build of the
   same version is a new draft row, and the one it replaces joins `regen.earlier`.
+
+## Moved from the lane (SkyLoop, 2026-11-06)
+
+Three standing notes from the lane's *Next*, verbatim, so the lane stays under its budget:
+
+- **Each new open-asks sheet updates the series record** `open-asks-sheets` (version 137 since S503, receipt
+  `kb/receipts/cpl_library_s503_2026-10-27.sql`): one guarded UPDATE from the version as read; `made_by` (capped at 300
+  characters) is a range each sheet extends.
+- **A film re-render moves its record.** `cpl-funding-in-motion` names Scenario 2 v13 and Sierra's narrated Draft 7 (Sam's
+  own script), what the public funding page carries, with Scenario 1's approved cuts kept (S504, receipt
+  `kb/receipts/cpl_library_s504_film_v13_2026-10-28.sql`, links pinned to #2525's head 57246801c). `noncredit-summit-in-motion` still names v1
+  (ladypatty1): its v3 cuts are not in the repo, so it moves when Sam files the SharePoint copy with the tab's File it.
+- Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
+  the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
+  `cpl_memory` (`sam-sheet47-rulings-2026-10-07`, `sam-drop-cpllibrary-sharing-2026-10-07`,
+  `sam-sheet49-sharepoint-rulings-2026-10-08`) and in `docs/library_lessons.md`, *Moved from the lane (S460)*.
+
+And three shipped records from the same *Next*, verbatim:
+
+- **ELL IET Version 5 is public** (SkyFlipFlop, 2026-11-05; Sam's Replace at 22:34Z, `library-publish` dispatched, run
+  42122991947): the Initiative at a glance and top cards that link; built by `make_tabs.py` from Version 3.
+- **Version 5 in the library look; public cards date the newest version** (2026-11-06, Sam in session): `make_tabs.py`'s
+  `library_look`; agenda item 2 opens the overview. `cpl_library_public()` returns `revised_on` and `version_label`
+  (`kb/migrations/2026-11-06_library_public_revised_on.sql`, applied through the MCP). Still Version 5.
+- **The card's quick revise closes its gaps** (Sam: *"build fixes 1-3"*, #2824; `library-revise-draft` v3 deployed):
+  the drafter is told Sierra's budget and records `request.sierra`; the card's check adds target size and Sierra's count;
+  a published model draft of a scripted piece raises *Source behind the page* until the source catches up.
+
+And two more, verbatim:
+
+- **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
+- **The Credential Catalog sits in COBI's Share menu** (Sam's ask, #2826): a launcher to `library/adopt/` after CPL Funding.

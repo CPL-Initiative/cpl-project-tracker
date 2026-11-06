@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-05
+updated: 2026-11-06
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -154,6 +154,15 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **Sam's noncredit visual, Draft 1 on its record (SkyLoop, 2026-11-06):** *Noncredit to Credit: How Noncredit Learning Can
+  Result in Credit* (`cpl_library` 5e29e1d3…, his brief, 14:50Z) is drafted in the
+  public library's look from the brief and `docs/noncredit_cpl_thinking.md` (who does what; six ways, each with its
+  credit for prior learning type; four steps to an exhibit; the first question; where to go next). Mock https://claude.ai/artifact/Wi6htw18rtQ9WCM6ajtmnM (Version 3); draft row
+  `cpl_library_drafts` 5b5f9e8a… and the record at Draft (receipt
+  `kb/receipts/cpl_library_noncredit_draft1_2026-11-06_skyloop.sql`); source
+  `CPLBrain/04-projects/cpl-initiative/noncredit-to-credit/`. His reactions of the hour are applied (the companion README lists them). Sam, ~16:10Z: *"visual looks great! go with it"* (and one correction: the Chancellor's film is her address to the 7th
+  Annual CPL Summit): **published** at https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/
+  (`scripts/library_page.py`; the record Approved, Version 1, listed in the public library; `library-noncredit` in the a11y sweep).
 - **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
   simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
   folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
@@ -163,16 +172,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **The List's project bands lead with the newest piece** (#2812, SkyRoundoff; Sam's report: *"the sort descending by
   modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
   orders them, as the Cards' project cards already were.
-- **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
-- **ELL IET Version 5 is public** (SkyFlipFlop, 2026-11-05; Sam's Replace at 22:34Z, `library-publish` dispatched, run
-  42122991947): the Initiative at a glance and top cards that link; built by `make_tabs.py` from Version 3.
-- **Version 5 in the library look; public cards date the newest version** (2026-11-06, Sam in session): `make_tabs.py`'s
-  `library_look`; agenda item 2 opens the overview. `cpl_library_public()` returns `revised_on` and `version_label`
-  (`kb/migrations/2026-11-06_library_public_revised_on.sql`, applied through the MCP). Still Version 5.
-- **The card's quick revise closes its gaps** (Sam: *"build fixes 1-3"*, #2824; `library-revise-draft` v3 deployed):
-  the drafter is told Sierra's budget and records `request.sierra`; the card's check adds target size and Sierra's count;
-  a published model draft of a scripted piece raises *Source behind the page* until the source catches up.
-- **The Credential Catalog sits in COBI's Share menu** (Sam's ask, #2826): a launcher to `library/adopt/` after CPL Funding.
+- Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
+  revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
   overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
   Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
@@ -187,17 +188,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
-- **Each new open-asks sheet updates the series record** `open-asks-sheets` (version 137 since S503, receipt
-  `kb/receipts/cpl_library_s503_2026-10-27.sql`): one guarded UPDATE from the version as read; `made_by` (capped at 300
-  characters) is a range each sheet extends.
-- **A film re-render moves its record.** `cpl-funding-in-motion` names Scenario 2 v13 and Sierra's narrated Draft 7 (Sam's
-  own script), what the public funding page carries, with Scenario 1's approved cuts kept (S504, receipt
-  `kb/receipts/cpl_library_s504_film_v13_2026-10-28.sql`, links pinned to #2525's head 57246801c). `noncredit-summit-in-motion` still names v1
-  (ladypatty1): its v3 cuts are not in the repo, so it moves when Sam files the SharePoint copy with the tab's File it.
-- Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
-  the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
-  `cpl_memory` (`sam-sheet47-rulings-2026-10-07`, `sam-drop-cpllibrary-sharing-2026-10-07`,
-  `sam-sheet49-sharepoint-rulings-2026-10-08`) and in `docs/library_lessons.md`, *Moved from the lane (S460)*.
+- Three standing notes (the open-asks series record, a film re-render's record, Sam's sheet 47 to 49 calls) moved verbatim to
+  [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 
 ## Remediation, one place to add, one card per project (Sam, 2026-10-28; mockup S508)
 

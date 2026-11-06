@@ -1,7 +1,7 @@
 ---
-title: Library — side-lane handoff (SkyAerial, beside the CPL Queue routine)
+title: Library — side-lane handoff (SkyLoop, beside the CPL Queue routine)
 date: 2026-11-06
-tags: [handoff, library, credential-catalog, side-lane]
+tags: [handoff, library, credential-catalog, noncredit, side-lane]
 related:
   - "[[docs/reference/lanes/cer-procedures]]"
   - "[[docs/reference/lanes/library]]"
@@ -10,54 +10,50 @@ related:
 
 # Library — side-lane handoff
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 592 names the main queue's
-> moniker, and this file stays out of its way. Checkpoint under context pressure (2026-11-06, ~14:40Z, the meter at
-> ~100,000 left): the lane file, this handoff, `cpl_memory` and the sheet's card are refreshed. Skipped: `kb/README.md`,
-> `README.md`, the lessons doc, KB notes, the pipeline view, the other status files, Open Asks Sheet 162 is published
-> (https://claude.ai/artifact/AGrQYmaAd6uHAPwXoi3epE) at Sam's word after the port merged (#2843); the vault PR
-> CPLBrain#690 carries its source and merges on its coverage check. EMERGENCY checkpoint at ~41,000 tokens left: this
-> handoff, the lane and `cpl_memory` are current; the INDEX rebuild, To-Do feed, pipeline tab, kb/README, root README,
-> lessons doc, KB notes and vault session note are deferred to SkyLoop.
+> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: the main queue's handoff names its own
+> moniker, and this file stays out of its way. Light checkpoint (SkyLoop, 2026-11-06, ~16:30Z): the two lane files, this
+> handoff, `cpl_memory` (two rows), the docs lint and the INDEX rebuild. Skipped: `kb/README.md`, `README.md`, the lessons
+> doc, KB notes, the pipeline tab (nothing moved there). SkyAerial's deferred set (To-Do feed, pipeline tab, kb/README, root
+> README, lessons doc, KB notes) stays deferred: none of it changed this run.
 
-Your moniker is **SkyLoop**. You pick up after SkyAerial (2026-11-06) on the **Credential Catalog** (the Exhibits
-lane's public face, [`cer-procedures`](reference/lanes/cer-procedures.md), *The Credential Catalog, ported from the
-mock*) and the Library ([`library`](reference/lanes/library.md)).
+Your moniker is **SkyLantern**. You pick up after SkyLoop (2026-11-06) on the **Credential Catalog** (the Exhibits lane's
+public face, [`cer-procedures`](reference/lanes/cer-procedures.md)) and the Library ([`library`](reference/lanes/library.md)).
 
-## What shipped
-- **The Credential Catalog port** (PR on `claude/optimistic-cannon-hlzbco`, merges on green `test`): everything the lane
-  entry lists, from the mock https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds (v8). Two new builders write
-  `adopt_more.json` and `adopt_align.json` daily; the first daily run after the merge fills the analysis from the live
-  course outcomes (the committed file holds a 20-course sample).
-- Merged earlier today: #2839, #2840, #2842 (lane notes, the portal as a data source); CPLBrain#686, #688 (Sam's words).
-
-## Decisions Sam made this run
-- The catalog is the registry's beginning; the public sees every credit status; public words on the page, curation words
-  in the Commons; Show folds into Credit status; A for a could-adopt cell; tiles stay on the public page, 101 is right;
-  "Request an evaluation" over "Request Adopt" for an unevaluated credential; "let's roll with this".
+## What shipped (SkyLoop, 2026-11-06)
+- **Sam's noncredit visual, Draft 1** (*Noncredit to Credit: How Noncredit Learning Can Result in Credit*, `cpl_library`
+  5e29e1d3…): mock https://claude.ai/artifact/Wi6htw18rtQ9WCM6ajtmnM (Version 3), draft row 5b5f9e8a… on the record,
+  source `CPLBrain/04-projects/cpl-initiative/noncredit-to-credit/` (CPLBrain PR on `claude/jolly-newton-aey20k`). His three
+  reactions of the hour are in it, and his correction (the Chancellor's film is her address to the 7th Annual CPL Summit).
+  **Published at his word** (*"visual looks great! go with it"*, ~16:10Z): the Pages copy
+  `library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/` (live once the tracker PR merges and Pages
+  deploys), the record Approved, Version 1, listed in the public library (receipt
+  `kb/receipts/cpl_library_noncredit_draft1_2026-11-06_skyloop.sql`).
+- **The catalog's statewide route, as Sheet 162 ruled it:** *Ask us to prioritize this credential*; one INSERT-only function,
+  one aggregate count, the count beside the credential; DR-31; migration routed through `supabase-migrate.yml`
+  (`kb/migrations/.apply`; the MCP apply waited on a confirmation and timed out). Tracker PR on `claude/jolly-newton-aey20k`.
+- Merged: #2846 (SkyBackflip's item 0, the noncredit visual, into this handoff).
 
 ## Open work, in order
-0. **Sam's noncredit visual** (added by SkyBackflip, 2026-11-06): the Library record *Noncredit to Credit: How
-   Noncredit Learning Can Result in Credit* (`cpl_library` id `5e29e1d3-b1fc-4340-a3d7-9378e2e4d8b9`, Requested 14:50Z).
-   Read its brief, the [NC / Learning Partners lane](reference/lanes/nc-learning-partners.md) and the vault braindump
-   `03-professional/braindumps/braindump-2026-11-06-1450-noncredit-colleges-and-cpl-articulation.md` (his words; "they
-   can themselves articulate" reads as *cannot*: confirm before quoting). One page in the public library's look for
-   noncredit partners (SDCCE, NOCE): a noncredit college does not articulate credit itself; it works with its credit
-   counterparts so aligned courses and programs are evaluated for CPL and documented in a MAP exhibit, through mirrored
-   courses, noncredit assessments credit faculty accept as credit by exam, a noncredit portfolio class, and the
-   certifications its students earn. Mock it on a canvas first; file it as a Draft on that record. (Also merged today,
-   #2844: the Library's Create box is one form, and Start saves the piece.)
-1. **Merge the port PR on green `test`**, then **Sam's eyes on the live page** once Pages deploys (the matrix, the List
-   with Not yet evaluated, a panel's analysis on CompTIA Security+).
-2. **Read Sheet 162's reply** (https://claude.ai/artifact/AGrQYmaAd6uHAPwXoi3epE) before building the statewide write surface;
-   merge CPLBrain#690 if it is still open.
-3. **The Commons Exhibits List** takes the catalog's shape (the lane's *To add* list).
-4. **Jev for the analysis:** a Score question per skill area, calibrated against the 25 Security+ articulations;
-   replaces the lexical score in `kb/_build_adopt_align.py` in place.
+1. **Merge the tracker PR on green `test`** (Sam, in session: "merge the tracker PR when test is green"). The migration is
+   applied (16:21Z, receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`), so the form works the
+   moment Pages serves the merged page.
+2. **The noncredit visual is public once the PR merges:** run `npm run a11y -- library-noncredit` on the Pages copy and note
+   the result on the record's Version 1 (a receipted update); any later change Sam asks for goes through the card's Revise
+   (the page is its own source; the vault keeps the file).
+3. **The Commons Exhibits List** takes the catalog's shape (the lane's *To add* list), now including the public requests as
+   a queue item with its count (`credential_priority_requests`, team read).
+4. **Jev for the analysis:** a Score question per skill area, calibrated against the 25 Security+ articulations; replaces the
+   lexical score in `kb/_build_adopt_align.py` in place.
 5. The Library lane's standing *Next*.
 
-## Let go
-Nothing watched or scheduled once the port PR merges (the session subscribes to it and merges it itself). The artifact
-watch on the mock ends with the session.
+## Decisions Sam made this run
+- On the noncredit visual (in session, 15:49Z and 15:58Z): the student card names the college landing page as an
+  alternative; the intro stays general (*"I forgot about Calbright!"*); *merits* for *carries* wherever possible; naming
+  colleges and programs in the six ways is fine; embed links wherever they fit (Cabrillo's mirrored-course examples).
 
-> *Greetings, you are SkyLoop, a Library side session beside the CPL Queue routine, see SkyAerial's handoff —
+## Let go
+The tracker PR and the CPLBrain PR are subscribed until they merge; the artifact watch on the mock ends with the session.
+No scheduled wake.
+
+> *Greetings, you are SkyLantern, a Library side session beside the CPL Queue routine, see SkyLoop's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*
