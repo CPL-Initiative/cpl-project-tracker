@@ -435,7 +435,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Rebuild a jsonb value from its receipts and check its md5](../kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md) | methodology | published | 2026-10-02 | 2026-10-10 |
 | [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
 | [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
-| [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-11-06 |
 | [Render an HTML animation to MP4 from a headless browser](../kb-notes/methodology-render-an-html-animation-to-mp4.md) | methodology | published | 2026-09-25 | 2026-09-25 |
 | [Reorder by permutation, not by rewriting the config](../kb-notes/methodology-reorder-by-permutation-not-by-rewriting-the-config.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Reserved-key namespaces extend a key→override table with new block types (no schema migration)](../kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md) | methodology | published | 2026-06-28 | 2026-06-28 |

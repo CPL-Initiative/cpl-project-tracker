@@ -68,10 +68,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 575 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 98 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 99 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 558 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1397** | |
+| **total** | **1398** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-06 SkyBeacon (Library side session): the ask rule (#2854); the CER retire path and Sam's 1 yes, 2 yes written and folded by the rename (#2855); the Catalog's badges and a college's first view (#2856); the Commons first view from Sam's recording and the lapsed-token fix on every surface (#2857); COCI Lookup named Courses and Programs (#2858); `library_lessons.md` compacted into `library_lessons_archive_2.md`; full checkpoint; `docs/library_handoff.md`.
 - 2026-11-06 SkyLantern (Library side session): the Catalog's List one line a credential, tiles that follow the filters, lazy loading (#2850); CPL-AI hosted whole, joined to the common exhibits and shown in Exhibits (#2851, #2853); seven title moves and the ServSafe fold written through a reviewed plan (#2852; receipt on main); Sam's word that CPL-AI goes public; the badges mock approved; full checkpoint at the context WARN; `docs/library_handoff.md`.
 - 2026-11-06 S589 SkyStephan (CPL Queue routine, 08:12Z): security step 2 merged and read back (#2822; the migration had applied at 06:30Z); COBIx told on #2816; SLOs: Mission's full read pushed (#2800), Lake Tahoe's trial opened (#2833); light checkpoint; handoff 590.
 - 2026-11-06 SkyHandspring (Library side session): ELL IET Version 5 links the public overview and takes the library look; public cards date the newest version (`cpl_library_public` revised_on, applied live, #2828); CPL Pathways joins the new look (#2829); the CPL Opportunity visual becomes cards over one course list with a side panel and Request Adopt (#2830); light checkpoint; `docs/library_handoff.md`.

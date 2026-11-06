@@ -715,3 +715,20 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
   first one, so the fold pulled the drawer into the common course. The screenshot showed it; jsdom passed.
 - **Every view has an address** (asked in session, 2026-11-04): a sign-in link opens a new browser tab, so only the
   address carries the view back. 27 tabs now open the view their address names and report it (#2775, #2779).
+
+## Moved from the lane (SkyBeacon, 2026-11-06)
+
+Verbatim from `docs/reference/lanes/commons.md`, when the lane passed its 20 KB budget.
+
+**Fable's advice, carried (2026-10-18):** complete differs in kind, so each row names the test behind its
+count and no column sorts on a share; the machine stamp and the session stamp stay apart, each against a
+declared cadence; a call has one source, which today is the run log, with the sheet's store a build item.
+
+**RULED (Sam, Open Asks Sheet 95 card 1, 14:43Z, his own call, "build"; `cpl_memory`
+`sam-sheet-95-rulings-2026-10-18`):** *"Yes, and include Common Subjects in the mix."* Step 1, the shared
+Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons tab came next on Sam's
+20:10Z word. What remains of the order: a run log per project written at checkpoints, each reference's
+Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
+card for Sam.
+
+**Step 3's Progress views, Subjects (S425, #2260), Exhibit (S436) and CR (S437), with Sam's keep rulings (Sheets 107 and 108):** the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*). Each host brought a 60-line spec to the shared module and needed no change to it.
