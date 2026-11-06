@@ -14616,7 +14616,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-05",
+     "created": "2026-11-06",
      "governs": [],
      "path": "docs/library_handoff.md",
      "status": null,
@@ -14624,10 +14624,11 @@
       "handoff",
       "library",
       "ell-iet",
-      "cpl-initiative-overview",
+      "cpl-opportunity",
+      "cpl-pathways",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyFlipFlop, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyHandspring, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },

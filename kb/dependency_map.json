@@ -1053,7 +1053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 980,
+     "line": 1121,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5478,7 +5478,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 950,
+     "line": 1091,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5677,7 +5677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 952,
+     "line": 1093,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5880,7 +5880,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 226
+     "line": 283
     }
    ],
    "served": true,
@@ -6065,7 +6065,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 224
+     "line": 281
     },
     {
      "id": "script:kb/_apply_college_short_names.py",
@@ -18951,7 +18951,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 225
+     "line": 282
     }
    ],
    "served": true,
@@ -20549,7 +20549,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 283
+     "line": 348
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
@@ -20681,7 +20681,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 951,
+     "line": 1092,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -23026,7 +23026,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 951,
+     "line": 1092,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -23428,7 +23428,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 950,
+     "line": 1091,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -27504,7 +27504,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 937,
+     "line": 1078,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -27587,7 +27587,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 932,
+     "line": 1073,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
