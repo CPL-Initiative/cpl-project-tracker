@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 1405,
-    "bytes": 14194270,
+    "bytes": 14195004,
     "over_budget": 0,
     "handoff_max": 587,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59874,
+    "always_loaded_bytes": 59893,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59874,
+        "bytes": 59893,
         "over": 0
       },
       "other": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 488322,
+        "bytes": 489037,
         "over": 0
       },
       "handoff": {
@@ -58,11 +58,12 @@
     "by_rule": {
       "kb_note_dialect": 1,
       "vault_heavy_path": 74,
+      "checkpoint_overdue": 1,
       "handoff_drops_active_lane": 1
     },
     "vault": {
       "files": 25881,
-      "bytes": 4210418380,
+      "bytes": 4210419114,
       "heavy_bytes": 2992459659,
       "heavy_share": 0.711,
       "ignore_filters": [
@@ -894,6 +895,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_587_handoff.md",
+      "detail": {
+        "commits_since": 7,
+        "budget": 6,
+        "handoff": "session_587_handoff.md"
+      },
+      "message": "7 commit(s) have landed since `docs/session_587_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     },
     {
       "rule": "handoff_drops_active_lane",
