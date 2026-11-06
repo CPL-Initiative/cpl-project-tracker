@@ -53,6 +53,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | The Foundation's certification skills | Assessed | Skills, Outcomes, Credit Recommendations | Confirm what the Foundation holds and how it shares it; draft a note for the lead |
 | ACE, the new partnership | Found | Credit Recommendations, Exhibits | The lead shares the partnership's details |
 | WestEd's environmental scan of datasets and connections | Found | Every reference | The lead shares the scan; each dataset in it gets its own entry |
+| Credit for Being You, the student portal's requests | Found | Credentials (the harvested standing), Exhibits | Ask Malone what the portal records when a student names a credential no exhibit covers, and whether a request can arrive with the credential already named |
 
 ### CPL-AI, the Foundation and ASCCC's certification recommendations
 Faculty-reviewed credit recommendations for 115 industry certifications, each paired with courses colleges could
@@ -110,6 +111,17 @@ Named by Sam, 2026-11-04.
 Sam, 2026-11-04 (S573): *"We have a new partnership with ace I need to get you info on."* ACE's reviews already supply
 most of MAP's credit recommendation rows (the military half, lane
 [`military-ace-cr-reference`](lanes/military-ace-cr-reference.md)). Steps 2 to 4 wait on the details he shares.
+
+### Credit for Being You, the student portal's requests
+The CO's student portal (https://creditforbeingyou.org/, linked from the public header as *add what you have learned
+and request credit*) is the front door a student uses to ask a college for credit; its requests land in MAP as
+activity (`docs/map_dataset_spec_for_malone.md` notes that the better the portal performs, the more activity arrives
+through it). Found by SkyAerial on 2026-11-06 while mocking the Credential Catalog's *Request an evaluation* route,
+which asks a college the same question a portal request asks. Two feeds would matter. What students ask for that no
+exhibit covers is the demand signal the statewide priority list would run on (7,401 harvested credentials have no
+exhibit today). And a hand-off in the other direction: a catalog row opening the portal with the credential already
+named, so the page keeps one intake rather than building a second. Malone holds the portal's data model; the
+questions above are his to answer, and a request that the portal expose or accept either is the lead's call.
 
 ### WestEd's environmental scan of datasets and connections
 Sam, 2026-11-04 (S573): *"west ed has a whole environmental scan of datasets and connections I need to feed to you."*
