@@ -5505,7 +5505,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 35,
+     "line": 36,
      "tabs": [
       "coci-lookup"
      ]
@@ -5610,7 +5610,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 166,
+     "line": 167,
      "tabs": [
       "coci-lookup"
      ]
@@ -5704,7 +5704,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1111,
+     "line": 1112,
      "tabs": [
       "coci-lookup"
      ]
@@ -6167,7 +6167,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 899,
+     "line": 900,
      "tabs": [
       "coci-lookup"
      ]
@@ -6270,7 +6270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 987,
+     "line": 988,
      "tabs": [
       "coci-lookup"
      ]
@@ -18879,14 +18879,22 @@
    "main_committers": []
   },
   "file:library/adopt/adopt_ai.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
+    }
+   ],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -23360,7 +23368,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 505,
+     "line": 506,
      "tabs": [
       "coci-lookup"
      ]
@@ -23692,7 +23700,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 900,
+     "line": 901,
      "tabs": [
       "coci-lookup"
      ]
@@ -25573,7 +25581,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 195,
+     "line": 196,
      "tabs": [
       "coci-lookup"
      ]
@@ -26626,7 +26634,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 512,
+     "line": 513,
      "tabs": [
       "coci-lookup"
      ]
@@ -26636,7 +26644,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 551,
+     "line": 552,
      "tabs": [
       "coci-lookup"
      ]

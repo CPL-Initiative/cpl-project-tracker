@@ -827,7 +827,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library.js` | pages: `CPL_Dashboard.html` | — |
 | `library/*/index.html` | none found | committed by: `library-publish.yml` |
 | `library/adopt/adopt.js` | pages: `library/adopt/index.html` | — |
-| `library/adopt/adopt_ai.json` | none found | committed by: `daily-dashboard.yml` |
+| `library/adopt/adopt_ai.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_align.json` | scripts: `kb/_build_adopt_align.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_data.json` | tabs: `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
