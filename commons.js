@@ -711,10 +711,16 @@
     return Sx && typeof Sx.authHeaders === "function" ? Sx.authHeaders(extra) : (extra || {});
   }
   function projectOf(key, Q) { return (Q && Q.project) || key; }
+  /* The marks read behind a reviewer sign-in (queue_todo_done_reviewer_read). A lapsed token renews first: the card had
+     read a lapsed token as signed out, so Sam's Monterey mark (saved on CPL Pathways, 19:29Z 2026-11-06) never reached
+     the band and the call kept waiting. */
   function readTodoMarks() {
-    if (!session()) return Promise.resolve(null);
-    return fetch(REST + "/queue_todo_done?select=project,todo_id,note,reopen,by_email,at&order=id.desc", { headers: sessionHeaders() })
-      .then(function (r) { return r.ok ? r.json() : null; }, function () { return null; });
+    if (!reviewer()) return Promise.resolve(null);
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      return fetch(REST + "/queue_todo_done?select=project,todo_id,note,reopen,by_email,at&order=id.desc", { headers: sessionHeaders() });
+    }).then(function (r) { return r && r.ok ? r.json() : null; }, function () { return null; });
   }
   /* The newest mark on each to-do wins; a done one answers its call (by, at, words), a reopen leaves it open. */
   function applyTodoMarks(S, marks) {

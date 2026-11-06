@@ -399,6 +399,15 @@ function cellText(li, title) {
     lapsed.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu", refresh_token: "r" }), isFresh: () => false });
     await lapsed.M.boot();
     check("todo 6: a lapsed reviewer token that can renew still offers Mark done", !!lapsed.d.querySelector(".cmn-band .cmn-todo-det"));
+    // ...and reads the marks after renewing: Sam's Monterey mark (2026-11-06) saved on CPL Pathways but never left the band.
+    let renewed = 0;
+    const lapsedDone = load({ fetch: withMarks([{ project: "program-requirements", todo_id: TODO.todo_id, note: "keep going", reopen: false,
+      by_email: "slee@cccco.edu", at: "2026-11-06T19:29:50Z" }]) });
+    lapsedDone.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu", refresh_token: "r" }), isFresh: () => false,
+      ensureFresh: () => { renewed++; return Promise.resolve({ email: "slee@cccco.edu", access_token: "h.p.s" }); } });
+    await lapsedDone.M.boot();
+    check("todo 6b: a lapsed token renews, the marks are read, and a to-do marked done on CPL Pathways leaves the band",
+      renewed >= 1 && !lapsedDone.d.querySelector(".cmn-band") && /Marked done: keep going/.test(txt(lapsedDone.root)));
     const dead = load({ fetch: withMarks([]) });
     dead.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu" }), isFresh: () => false });
     await dead.M.boot();
