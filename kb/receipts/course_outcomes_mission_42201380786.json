@@ -1,0 +1,4507 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "mission",
+ "load_run": "42201380786",
+ "reads": [
+  "kb/course_outcomes/mission/read_42186782928_p1of2.json",
+  "kb/course_outcomes/mission/read_42186782928_p2of2.json"
+ ],
+ "posted": 693,
+ "inserted": 693,
+ "kept": 0,
+ "skipped": 66,
+ "skipped_rows": [
+  {
+   "course_code": "BUS 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CHD 13",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COM 8",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COU 55",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETH 016A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETH 18",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 55",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 58",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 73",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 79",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 82",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 86",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 35",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 46",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 64",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 67",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 77",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 81",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 884",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMT 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "JPN 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 038B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 038D",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NTR 040H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSY 001",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPA 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VIE 049B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ACC 77",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CIT 78",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 001B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETH 018H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 59",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 74",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 78",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 81",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDR 85",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 45",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 65",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 74",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 80",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 84",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 85",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GDS 869",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMT 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 038A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 038C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MAT 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSY 001H",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 10312,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 001A"
+  },
+  {
+   "id": 10313,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 023"
+  },
+  {
+   "id": 10314,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 034"
+  },
+  {
+   "id": 10315,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 051A"
+  },
+  {
+   "id": 10316,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 052"
+  },
+  {
+   "id": 10317,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 058A"
+  },
+  {
+   "id": 10318,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 059A"
+  },
+  {
+   "id": 10319,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 066"
+  },
+  {
+   "id": 10320,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 070"
+  },
+  {
+   "id": 10321,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 075"
+  },
+  {
+   "id": 10322,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ANT 001"
+  },
+  {
+   "id": 10323,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ANT 002"
+  },
+  {
+   "id": 10324,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ANT 055"
+  },
+  {
+   "id": 10325,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 001D"
+  },
+  {
+   "id": 10326,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 007"
+  },
+  {
+   "id": 10327,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 031A"
+  },
+  {
+   "id": 10328,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 033A"
+  },
+  {
+   "id": 10329,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 033C"
+  },
+  {
+   "id": 10330,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 034B"
+  },
+  {
+   "id": 10331,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 035B"
+  },
+  {
+   "id": 10332,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 047A"
+  },
+  {
+   "id": 10333,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 048A"
+  },
+  {
+   "id": 10334,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 049A"
+  },
+  {
+   "id": 10335,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 065A"
+  },
+  {
+   "id": 10336,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 067A"
+  },
+  {
+   "id": 10337,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 075A"
+  },
+  {
+   "id": 10338,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 078A"
+  },
+  {
+   "id": 10339,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 085B"
+  },
+  {
+   "id": 10340,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 088B"
+  },
+  {
+   "id": 10341,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ARTHC 1200"
+  },
+  {
+   "id": 10342,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "AST 003"
+  },
+  {
+   "id": 10343,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ATHL 038F"
+  },
+  {
+   "id": 10344,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ATHL 038J"
+  },
+  {
+   "id": 10345,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 001AH"
+  },
+  {
+   "id": 10346,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 001BH"
+  },
+  {
+   "id": 10347,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 010"
+  },
+  {
+   "id": 10348,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 011"
+  },
+  {
+   "id": 10349,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 012H"
+  },
+  {
+   "id": 10350,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 014H"
+  },
+  {
+   "id": 10351,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 017"
+  },
+  {
+   "id": 10352,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 018"
+  },
+  {
+   "id": 10353,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 019"
+  },
+  {
+   "id": 10354,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 025"
+  },
+  {
+   "id": 10355,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 030"
+  },
+  {
+   "id": 10356,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 047"
+  },
+  {
+   "id": 10357,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 048H"
+  },
+  {
+   "id": 10358,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 021"
+  },
+  {
+   "id": 10359,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 022"
+  },
+  {
+   "id": 10360,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 028A"
+  },
+  {
+   "id": 10361,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 041"
+  },
+  {
+   "id": 10362,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 052"
+  },
+  {
+   "id": 10363,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 056A"
+  },
+  {
+   "id": 10364,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 064B"
+  },
+  {
+   "id": 10365,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 102"
+  },
+  {
+   "id": 10366,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 111"
+  },
+  {
+   "id": 10367,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 115"
+  },
+  {
+   "id": 10368,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CAP 046D"
+  },
+  {
+   "id": 10369,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CAP 063B"
+  },
+  {
+   "id": 10370,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 002"
+  },
+  {
+   "id": 10371,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 004"
+  },
+  {
+   "id": 10372,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 006"
+  },
+  {
+   "id": 10373,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 008A"
+  },
+  {
+   "id": 10374,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 013"
+  },
+  {
+   "id": 10375,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 015"
+  },
+  {
+   "id": 10376,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 017"
+  },
+  {
+   "id": 10377,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 020"
+  },
+  {
+   "id": 10378,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 022"
+  },
+  {
+   "id": 10379,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 025"
+  },
+  {
+   "id": 10380,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 001A"
+  },
+  {
+   "id": 10381,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 001B"
+  },
+  {
+   "id": 10382,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 002"
+  },
+  {
+   "id": 10383,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 012A"
+  },
+  {
+   "id": 10384,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 030A"
+  },
+  {
+   "id": 10385,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 001"
+  },
+  {
+   "id": 10386,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 008"
+  },
+  {
+   "id": 10387,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 037A"
+  },
+  {
+   "id": 10388,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 040"
+  },
+  {
+   "id": 10389,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 044"
+  },
+  {
+   "id": 10390,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 050"
+  },
+  {
+   "id": 10391,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 052"
+  },
+  {
+   "id": 10392,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 054"
+  },
+  {
+   "id": 10393,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 057"
+  },
+  {
+   "id": 10394,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 012"
+  },
+  {
+   "id": 10395,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 014"
+  },
+  {
+   "id": 10396,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 018"
+  },
+  {
+   "id": 10397,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 022"
+  },
+  {
+   "id": 10398,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 024"
+  },
+  {
+   "id": 10399,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 010"
+  },
+  {
+   "id": 10400,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 014"
+  },
+  {
+   "id": 10401,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 018"
+  },
+  {
+   "id": 10402,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 020"
+  },
+  {
+   "id": 10403,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 080"
+  },
+  {
+   "id": 10404,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 10405,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COMMC 1000"
+  },
+  {
+   "id": 10406,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ECONC 2001"
+  },
+  {
+   "id": 10407,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 010"
+  },
+  {
+   "id": 10408,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 023"
+  },
+  {
+   "id": 10409,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 024L"
+  },
+  {
+   "id": 10410,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 026"
+  },
+  {
+   "id": 10411,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4401"
+  },
+  {
+   "id": 10412,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4403"
+  },
+  {
+   "id": 10413,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4405"
+  },
+  {
+   "id": 10414,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4407"
+  },
+  {
+   "id": 10415,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4409"
+  },
+  {
+   "id": 10416,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4412"
+  },
+  {
+   "id": 10417,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4416"
+  },
+  {
+   "id": 10418,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4418"
+  },
+  {
+   "id": 10419,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 005A"
+  },
+  {
+   "id": 10420,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 006"
+  },
+  {
+   "id": 10421,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 007B"
+  },
+  {
+   "id": 10422,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 013"
+  },
+  {
+   "id": 10423,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 043"
+  },
+  {
+   "id": 10424,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 070"
+  },
+  {
+   "id": 10425,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENGLC 1001"
+  },
+  {
+   "id": 10426,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ETH 001A"
+  },
+  {
+   "id": 10427,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ETH 044"
+  },
+  {
+   "id": 10428,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 051A"
+  },
+  {
+   "id": 10429,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 054"
+  },
+  {
+   "id": 10430,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 056"
+  },
+  {
+   "id": 10431,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 059"
+  },
+  {
+   "id": 10432,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 072"
+  },
+  {
+   "id": 10433,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 074"
+  },
+  {
+   "id": 10434,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 076"
+  },
+  {
+   "id": 10435,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 079"
+  },
+  {
+   "id": 10436,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 082"
+  },
+  {
+   "id": 10437,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 086"
+  },
+  {
+   "id": 10438,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 105"
+  },
+  {
+   "id": 10439,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 106B"
+  },
+  {
+   "id": 10440,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 153"
+  },
+  {
+   "id": 10441,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 052"
+  },
+  {
+   "id": 10442,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 054"
+  },
+  {
+   "id": 10443,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 056"
+  },
+  {
+   "id": 10444,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 060"
+  },
+  {
+   "id": 10445,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 065C"
+  },
+  {
+   "id": 10446,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 180"
+  },
+  {
+   "id": 10447,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 201"
+  },
+  {
+   "id": 10448,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 300B"
+  },
+  {
+   "id": 10449,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 300D"
+  },
+  {
+   "id": 10450,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 302"
+  },
+  {
+   "id": 10451,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 304"
+  },
+  {
+   "id": 10452,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 865C"
+  },
+  {
+   "id": 10453,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 010"
+  },
+  {
+   "id": 10454,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 012"
+  },
+  {
+   "id": 10455,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 016"
+  },
+  {
+   "id": 10456,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 032"
+  },
+  {
+   "id": 10457,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 039A"
+  },
+  {
+   "id": 10458,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 043A"
+  },
+  {
+   "id": 10459,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 046"
+  },
+  {
+   "id": 10460,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 055A"
+  },
+  {
+   "id": 10461,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 061"
+  },
+  {
+   "id": 10462,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 064"
+  },
+  {
+   "id": 10463,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 067"
+  },
+  {
+   "id": 10464,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 070"
+  },
+  {
+   "id": 10465,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 073"
+  },
+  {
+   "id": 10466,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 075"
+  },
+  {
+   "id": 10467,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 077"
+  },
+  {
+   "id": 10468,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 081"
+  },
+  {
+   "id": 10469,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 086"
+  },
+  {
+   "id": 10470,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 089"
+  },
+  {
+   "id": 10471,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 835"
+  },
+  {
+   "id": 10472,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 845"
+  },
+  {
+   "id": 10473,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 856"
+  },
+  {
+   "id": 10474,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 862"
+  },
+  {
+   "id": 10475,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 865"
+  },
+  {
+   "id": 10476,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 870"
+  },
+  {
+   "id": 10477,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 873"
+  },
+  {
+   "id": 10478,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 875"
+  },
+  {
+   "id": 10479,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 889B"
+  },
+  {
+   "id": 10480,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GEO 001L"
+  },
+  {
+   "id": 10481,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 004AH"
+  },
+  {
+   "id": 10482,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 004BH"
+  },
+  {
+   "id": 10483,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 015H"
+  },
+  {
+   "id": 10484,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 016H"
+  },
+  {
+   "id": 10485,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 031"
+  },
+  {
+   "id": 10486,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 033H"
+  },
+  {
+   "id": 10487,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 044H"
+  },
+  {
+   "id": 10488,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HISTC 1001H"
+  },
+  {
+   "id": 10489,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HISTC 1002H"
+  },
+  {
+   "id": 10490,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 001"
+  },
+  {
+   "id": 10491,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 022"
+  },
+  {
+   "id": 10492,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 023B"
+  },
+  {
+   "id": 10493,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 025A"
+  },
+  {
+   "id": 10494,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 027"
+  },
+  {
+   "id": 10495,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 032"
+  },
+  {
+   "id": 10496,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 033B"
+  },
+  {
+   "id": 10497,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 035A"
+  },
+  {
+   "id": 10498,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 042"
+  },
+  {
+   "id": 10499,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 043B"
+  },
+  {
+   "id": 10500,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 045A"
+  },
+  {
+   "id": 10501,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 047"
+  },
+  {
+   "id": 10502,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 001B"
+  },
+  {
+   "id": 10503,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 015"
+  },
+  {
+   "id": 10504,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 018"
+  },
+  {
+   "id": 10505,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 020"
+  },
+  {
+   "id": 10506,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 024"
+  },
+  {
+   "id": 10507,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "INS 815"
+  },
+  {
+   "id": 10508,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 014B"
+  },
+  {
+   "id": 10509,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 014D"
+  },
+  {
+   "id": 10510,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 015B"
+  },
+  {
+   "id": 10511,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 015D"
+  },
+  {
+   "id": 10512,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 019B"
+  },
+  {
+   "id": 10513,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 020B"
+  },
+  {
+   "id": 10514,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 020D"
+  },
+  {
+   "id": 10515,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 021B"
+  },
+  {
+   "id": 10516,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 021D"
+  },
+  {
+   "id": 10517,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 023B"
+  },
+  {
+   "id": 10518,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 023D"
+  },
+  {
+   "id": 10519,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 030B"
+  },
+  {
+   "id": 10520,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 030D"
+  },
+  {
+   "id": 10521,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 032B"
+  },
+  {
+   "id": 10522,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 032D"
+  },
+  {
+   "id": 10523,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 033B"
+  },
+  {
+   "id": 10524,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 035A"
+  },
+  {
+   "id": 10525,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 035C"
+  },
+  {
+   "id": 10526,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 037B"
+  },
+  {
+   "id": 10527,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 037D"
+  },
+  {
+   "id": 10528,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 039B"
+  },
+  {
+   "id": 10529,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 039D"
+  },
+  {
+   "id": 10530,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 040B"
+  },
+  {
+   "id": 10531,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 040D"
+  },
+  {
+   "id": 10532,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 041B"
+  },
+  {
+   "id": 10533,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 041D"
+  },
+  {
+   "id": 10534,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 042B"
+  },
+  {
+   "id": 10535,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 046A"
+  },
+  {
+   "id": 10536,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 046C"
+  },
+  {
+   "id": 10537,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 047A"
+  },
+  {
+   "id": 10538,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 047C"
+  },
+  {
+   "id": 10539,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 048A"
+  },
+  {
+   "id": 10540,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 050A"
+  },
+  {
+   "id": 10541,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 050C"
+  },
+  {
+   "id": 10542,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 051A"
+  },
+  {
+   "id": 10543,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 051C"
+  },
+  {
+   "id": 10544,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 053B"
+  },
+  {
+   "id": 10545,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 055A"
+  },
+  {
+   "id": 10546,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 061A"
+  },
+  {
+   "id": 10547,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 061C"
+  },
+  {
+   "id": 10548,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 063A"
+  },
+  {
+   "id": 10549,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 066"
+  },
+  {
+   "id": 10550,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 068"
+  },
+  {
+   "id": 10551,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 078"
+  },
+  {
+   "id": 10552,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 081"
+  },
+  {
+   "id": 10553,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 001"
+  },
+  {
+   "id": 10554,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 003A"
+  },
+  {
+   "id": 10555,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 003B"
+  },
+  {
+   "id": 10556,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 004B"
+  },
+  {
+   "id": 10557,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 005"
+  },
+  {
+   "id": 10558,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 012"
+  },
+  {
+   "id": 10559,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 020"
+  },
+  {
+   "id": 10560,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 010"
+  },
+  {
+   "id": 10561,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 020"
+  },
+  {
+   "id": 10562,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 030"
+  },
+  {
+   "id": 10563,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 034"
+  },
+  {
+   "id": 10564,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 042"
+  },
+  {
+   "id": 10565,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MUS 005"
+  },
+  {
+   "id": 10566,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MUS 016"
+  },
+  {
+   "id": 10567,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MUS 080"
+  },
+  {
+   "id": 10568,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 910A"
+  },
+  {
+   "id": 10569,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 920A"
+  },
+  {
+   "id": 10570,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 920GW"
+  },
+  {
+   "id": 10571,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 924"
+  },
+  {
+   "id": 10572,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 931"
+  },
+  {
+   "id": 10573,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 933"
+  },
+  {
+   "id": 10574,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 940FD"
+  },
+  {
+   "id": 10575,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 940RW"
+  },
+  {
+   "id": 10576,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 950LS"
+  },
+  {
+   "id": 10577,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 960LS"
+  },
+  {
+   "id": 10578,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 965GE"
+  },
+  {
+   "id": 10579,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 970RW"
+  },
+  {
+   "id": 10580,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCH 001CW"
+  },
+  {
+   "id": 10581,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCH 003CW"
+  },
+  {
+   "id": 10582,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NTR 006"
+  },
+  {
+   "id": 10583,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NTR 015H"
+  },
+  {
+   "id": 10584,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHI 003"
+  },
+  {
+   "id": 10585,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 801"
+  },
+  {
+   "id": 10586,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 803"
+  },
+  {
+   "id": 10587,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 805"
+  },
+  {
+   "id": 10588,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 807"
+  },
+  {
+   "id": 10589,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 809"
+  },
+  {
+   "id": 10590,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 811"
+  },
+  {
+   "id": 10591,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHY 002A"
+  },
+  {
+   "id": 10592,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHY 004A"
+  },
+  {
+   "id": 10593,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHY 004C"
+  },
+  {
+   "id": 10594,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "POL 004"
+  },
+  {
+   "id": 10595,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "POLSC 1000"
+  },
+  {
+   "id": 10596,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 007"
+  },
+  {
+   "id": 10597,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 012"
+  },
+  {
+   "id": 10598,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 015H"
+  },
+  {
+   "id": 10599,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 022"
+  },
+  {
+   "id": 10600,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 030"
+  },
+  {
+   "id": 10601,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 821"
+  },
+  {
+   "id": 10602,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSYC 3401"
+  },
+  {
+   "id": 10603,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSYC C1000H"
+  },
+  {
+   "id": 10604,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSYCC 1000H"
+  },
+  {
+   "id": 10605,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 023"
+  },
+  {
+   "id": 10606,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 025"
+  },
+  {
+   "id": 10607,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 033"
+  },
+  {
+   "id": 10608,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 035"
+  },
+  {
+   "id": 10609,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 042"
+  },
+  {
+   "id": 10610,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 044"
+  },
+  {
+   "id": 10611,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 047"
+  },
+  {
+   "id": 10612,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SJS 001"
+  },
+  {
+   "id": 10613,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SJS 003"
+  },
+  {
+   "id": 10614,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 001H"
+  },
+  {
+   "id": 10615,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 002H"
+  },
+  {
+   "id": 10616,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 021"
+  },
+  {
+   "id": 10617,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 045"
+  },
+  {
+   "id": 10618,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 050"
+  },
+  {
+   "id": 10619,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 058"
+  },
+  {
+   "id": 10620,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOCI 3402"
+  },
+  {
+   "id": 10621,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SPA 001"
+  },
+  {
+   "id": 10622,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SPA 003"
+  },
+  {
+   "id": 10623,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SPA 050A"
+  },
+  {
+   "id": 10624,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "STAT C1000E"
+  },
+  {
+   "id": 10625,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "STATC 1000"
+  },
+  {
+   "id": 10626,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "STATC 1000H"
+  },
+  {
+   "id": 10627,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 101B"
+  },
+  {
+   "id": 10628,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 102"
+  },
+  {
+   "id": 10629,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 104"
+  },
+  {
+   "id": 10630,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 106"
+  },
+  {
+   "id": 10631,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 108"
+  },
+  {
+   "id": 10632,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 110"
+  },
+  {
+   "id": 10633,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 122"
+  },
+  {
+   "id": 10634,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 131"
+  },
+  {
+   "id": 10635,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 133"
+  },
+  {
+   "id": 10636,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 141"
+  },
+  {
+   "id": 10637,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 143"
+  },
+  {
+   "id": 10638,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 151"
+  },
+  {
+   "id": 10639,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 153"
+  },
+  {
+   "id": 10640,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 155"
+  },
+  {
+   "id": 10641,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 202"
+  },
+  {
+   "id": 10642,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 203B"
+  },
+  {
+   "id": 10643,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 205"
+  },
+  {
+   "id": 10644,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 207"
+  },
+  {
+   "id": 10645,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 209"
+  },
+  {
+   "id": 10646,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 401"
+  },
+  {
+   "id": 10647,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 403"
+  },
+  {
+   "id": 10648,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 405"
+  },
+  {
+   "id": 10649,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 502"
+  },
+  {
+   "id": 10650,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 503B"
+  },
+  {
+   "id": 10651,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 503D"
+  },
+  {
+   "id": 10652,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 300FP"
+  },
+  {
+   "id": 10653,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 300HM"
+  },
+  {
+   "id": 10654,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 300TN"
+  },
+  {
+   "id": 10655,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 802"
+  },
+  {
+   "id": 10656,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 804TN"
+  },
+  {
+   "id": 10657,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 001B"
+  },
+  {
+   "id": 10658,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 033"
+  },
+  {
+   "id": 10659,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 046"
+  },
+  {
+   "id": 10660,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 051B"
+  },
+  {
+   "id": 10661,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 057A"
+  },
+  {
+   "id": 10662,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 058B"
+  },
+  {
+   "id": 10663,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 061"
+  },
+  {
+   "id": 10664,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 067"
+  },
+  {
+   "id": 10665,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ACC 073"
+  },
+  {
+   "id": 10666,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ANT 001L"
+  },
+  {
+   "id": 10667,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ANT 003"
+  },
+  {
+   "id": 10668,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ARB 002"
+  },
+  {
+   "id": 10669,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 004"
+  },
+  {
+   "id": 10670,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 011"
+  },
+  {
+   "id": 10671,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 031B"
+  },
+  {
+   "id": 10672,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 033B"
+  },
+  {
+   "id": 10673,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 034A"
+  },
+  {
+   "id": 10674,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 035A"
+  },
+  {
+   "id": 10675,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 039A"
+  },
+  {
+   "id": 10676,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 047B"
+  },
+  {
+   "id": 10677,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 048B"
+  },
+  {
+   "id": 10678,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 049B"
+  },
+  {
+   "id": 10679,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 065B"
+  },
+  {
+   "id": 10680,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 067B"
+  },
+  {
+   "id": 10681,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 075B"
+  },
+  {
+   "id": 10682,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 085A"
+  },
+  {
+   "id": 10683,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ART 088A"
+  },
+  {
+   "id": 10684,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ARTHC 1100"
+  },
+  {
+   "id": 10685,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "AST 001"
+  },
+  {
+   "id": 10686,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ATHL 038E"
+  },
+  {
+   "id": 10687,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ATHL 038G"
+  },
+  {
+   "id": 10688,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 001A"
+  },
+  {
+   "id": 10689,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 001B"
+  },
+  {
+   "id": 10690,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 004"
+  },
+  {
+   "id": 10691,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 010L"
+  },
+  {
+   "id": 10692,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 012"
+  },
+  {
+   "id": 10693,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 014"
+  },
+  {
+   "id": 10694,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 016"
+  },
+  {
+   "id": 10695,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 017H"
+  },
+  {
+   "id": 10696,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 018H"
+  },
+  {
+   "id": 10697,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 022"
+  },
+  {
+   "id": 10698,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 025H"
+  },
+  {
+   "id": 10699,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 030L"
+  },
+  {
+   "id": 10700,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BIO 048"
+  },
+  {
+   "id": 10701,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 010"
+  },
+  {
+   "id": 10702,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 021L"
+  },
+  {
+   "id": 10703,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 023"
+  },
+  {
+   "id": 10704,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 037"
+  },
+  {
+   "id": 10705,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 051"
+  },
+  {
+   "id": 10706,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 054"
+  },
+  {
+   "id": 10707,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 061"
+  },
+  {
+   "id": 10708,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 078B"
+  },
+  {
+   "id": 10709,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 108"
+  },
+  {
+   "id": 10710,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 114"
+  },
+  {
+   "id": 10711,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "BUS 118"
+  },
+  {
+   "id": 10712,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CAP 044"
+  },
+  {
+   "id": 10713,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CAP 062B"
+  },
+  {
+   "id": 10714,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 001"
+  },
+  {
+   "id": 10715,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 003"
+  },
+  {
+   "id": 10716,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 005"
+  },
+  {
+   "id": 10717,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 007"
+  },
+  {
+   "id": 10718,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 010"
+  },
+  {
+   "id": 10719,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 014"
+  },
+  {
+   "id": 10720,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 016"
+  },
+  {
+   "id": 10721,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 018"
+  },
+  {
+   "id": 10722,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 021"
+  },
+  {
+   "id": 10723,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 024"
+  },
+  {
+   "id": 10724,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHD 026"
+  },
+  {
+   "id": 10725,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHI 002"
+  },
+  {
+   "id": 10726,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 001AH"
+  },
+  {
+   "id": 10727,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 001BH"
+  },
+  {
+   "id": 10728,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 002L"
+  },
+  {
+   "id": 10729,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 012AH"
+  },
+  {
+   "id": 10730,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CHM 060"
+  },
+  {
+   "id": 10731,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 007"
+  },
+  {
+   "id": 10732,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 033"
+  },
+  {
+   "id": 10733,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 039"
+  },
+  {
+   "id": 10734,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 043"
+  },
+  {
+   "id": 10735,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 045"
+  },
+  {
+   "id": 10736,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 051"
+  },
+  {
+   "id": 10737,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 053"
+  },
+  {
+   "id": 10738,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIS 055"
+  },
+  {
+   "id": 10739,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 011"
+  },
+  {
+   "id": 10740,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 013"
+  },
+  {
+   "id": 10741,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 017"
+  },
+  {
+   "id": 10742,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 021"
+  },
+  {
+   "id": 10743,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "CIT 023"
+  },
+  {
+   "id": 10744,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 012"
+  },
+  {
+   "id": 10745,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 015"
+  },
+  {
+   "id": 10746,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 018H"
+  },
+  {
+   "id": 10747,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 020H"
+  },
+  {
+   "id": 10748,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COM 090A"
+  },
+  {
+   "id": 10749,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COMM 3401"
+  },
+  {
+   "id": 10750,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COMM C1000H"
+  },
+  {
+   "id": 10751,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "COMMC 1000H"
+  },
+  {
+   "id": 10752,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ECN 006"
+  },
+  {
+   "id": 10753,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ECONC 2002"
+  },
+  {
+   "id": 10754,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 010H"
+  },
+  {
+   "id": 10755,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 024"
+  },
+  {
+   "id": 10756,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 025"
+  },
+  {
+   "id": 10757,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EGR 030"
+  },
+  {
+   "id": 10758,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4402"
+  },
+  {
+   "id": 10759,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4404"
+  },
+  {
+   "id": 10760,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4406"
+  },
+  {
+   "id": 10761,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4408"
+  },
+  {
+   "id": 10762,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4411"
+  },
+  {
+   "id": 10763,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4413"
+  },
+  {
+   "id": 10764,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "EMSA 4417"
+  },
+  {
+   "id": 10765,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 005B"
+  },
+  {
+   "id": 10766,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 007A"
+  },
+  {
+   "id": 10767,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 011"
+  },
+  {
+   "id": 10768,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 015"
+  },
+  {
+   "id": 10769,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENG 048"
+  },
+  {
+   "id": 10770,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ENGLC 1003"
+  },
+  {
+   "id": 10771,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ETH 013"
+  },
+  {
+   "id": 10772,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "ETH 044H"
+  },
+  {
+   "id": 10773,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 050"
+  },
+  {
+   "id": 10774,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 051B"
+  },
+  {
+   "id": 10775,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 055"
+  },
+  {
+   "id": 10776,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 058"
+  },
+  {
+   "id": 10777,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 060"
+  },
+  {
+   "id": 10778,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 073"
+  },
+  {
+   "id": 10779,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 075"
+  },
+  {
+   "id": 10780,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 078"
+  },
+  {
+   "id": 10781,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 081"
+  },
+  {
+   "id": 10782,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 085"
+  },
+  {
+   "id": 10783,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 096"
+  },
+  {
+   "id": 10784,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 106A"
+  },
+  {
+   "id": 10785,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 152"
+  },
+  {
+   "id": 10786,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FDR 153L"
+  },
+  {
+   "id": 10787,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 051"
+  },
+  {
+   "id": 10788,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 053"
+  },
+  {
+   "id": 10789,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 055"
+  },
+  {
+   "id": 10790,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 057"
+  },
+  {
+   "id": 10791,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 065"
+  },
+  {
+   "id": 10792,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 065L"
+  },
+  {
+   "id": 10793,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 200"
+  },
+  {
+   "id": 10794,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 300A"
+  },
+  {
+   "id": 10795,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 300C"
+  },
+  {
+   "id": 10796,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 301"
+  },
+  {
+   "id": 10797,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 303"
+  },
+  {
+   "id": 10798,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 865"
+  },
+  {
+   "id": 10799,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "FPT 865L"
+  },
+  {
+   "id": 10800,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 011"
+  },
+  {
+   "id": 10801,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 015"
+  },
+  {
+   "id": 10802,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 022"
+  },
+  {
+   "id": 10803,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 035"
+  },
+  {
+   "id": 10804,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 040"
+  },
+  {
+   "id": 10805,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 045"
+  },
+  {
+   "id": 10806,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 049"
+  },
+  {
+   "id": 10807,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 056"
+  },
+  {
+   "id": 10808,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 062"
+  },
+  {
+   "id": 10809,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 065"
+  },
+  {
+   "id": 10810,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 069"
+  },
+  {
+   "id": 10811,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 072"
+  },
+  {
+   "id": 10812,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 074"
+  },
+  {
+   "id": 10813,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 076"
+  },
+  {
+   "id": 10814,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 080"
+  },
+  {
+   "id": 10815,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 085"
+  },
+  {
+   "id": 10816,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 087"
+  },
+  {
+   "id": 10817,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 089B"
+  },
+  {
+   "id": 10818,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 810"
+  },
+  {
+   "id": 10819,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 861"
+  },
+  {
+   "id": 10820,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 864"
+  },
+  {
+   "id": 10821,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 872"
+  },
+  {
+   "id": 10822,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 874"
+  },
+  {
+   "id": 10823,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 881"
+  },
+  {
+   "id": 10824,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GDS 889"
+  },
+  {
+   "id": 10825,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "GEO 001"
+  },
+  {
+   "id": 10826,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 004A"
+  },
+  {
+   "id": 10827,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 004B"
+  },
+  {
+   "id": 10828,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 015"
+  },
+  {
+   "id": 10829,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 016"
+  },
+  {
+   "id": 10830,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 020"
+  },
+  {
+   "id": 10831,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 033"
+  },
+  {
+   "id": 10832,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HIS 044"
+  },
+  {
+   "id": 10833,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HISTC 1001"
+  },
+  {
+   "id": 10834,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HISTC 1002"
+  },
+  {
+   "id": 10835,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HMT 076"
+  },
+  {
+   "id": 10836,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 004"
+  },
+  {
+   "id": 10837,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 023A"
+  },
+  {
+   "id": 10838,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 024"
+  },
+  {
+   "id": 10839,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 026A"
+  },
+  {
+   "id": 10840,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 028"
+  },
+  {
+   "id": 10841,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 033A"
+  },
+  {
+   "id": 10842,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 034"
+  },
+  {
+   "id": 10843,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 036A"
+  },
+  {
+   "id": 10844,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 043A"
+  },
+  {
+   "id": 10845,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 044"
+  },
+  {
+   "id": 10846,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HOC 046A"
+  },
+  {
+   "id": 10847,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 001A"
+  },
+  {
+   "id": 10848,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 007"
+  },
+  {
+   "id": 10849,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 016"
+  },
+  {
+   "id": 10850,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 018H"
+  },
+  {
+   "id": 10851,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "HUM 022"
+  },
+  {
+   "id": 10852,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "INS 810"
+  },
+  {
+   "id": 10853,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "JPN 002"
+  },
+  {
+   "id": 10854,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 014A"
+  },
+  {
+   "id": 10855,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 014C"
+  },
+  {
+   "id": 10856,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 015A"
+  },
+  {
+   "id": 10857,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 015C"
+  },
+  {
+   "id": 10858,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 019A"
+  },
+  {
+   "id": 10859,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 020A"
+  },
+  {
+   "id": 10860,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 020C"
+  },
+  {
+   "id": 10861,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 021A"
+  },
+  {
+   "id": 10862,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 021C"
+  },
+  {
+   "id": 10863,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 023A"
+  },
+  {
+   "id": 10864,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 023C"
+  },
+  {
+   "id": 10865,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 030A"
+  },
+  {
+   "id": 10866,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 030C"
+  },
+  {
+   "id": 10867,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 032A"
+  },
+  {
+   "id": 10868,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 032C"
+  },
+  {
+   "id": 10869,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 033A"
+  },
+  {
+   "id": 10870,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 033C"
+  },
+  {
+   "id": 10871,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 035B"
+  },
+  {
+   "id": 10872,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 037A"
+  },
+  {
+   "id": 10873,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 037C"
+  },
+  {
+   "id": 10874,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 039A"
+  },
+  {
+   "id": 10875,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 039C"
+  },
+  {
+   "id": 10876,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 040A"
+  },
+  {
+   "id": 10877,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 040C"
+  },
+  {
+   "id": 10878,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 041A"
+  },
+  {
+   "id": 10879,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 041C"
+  },
+  {
+   "id": 10880,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 042A"
+  },
+  {
+   "id": 10881,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 042C"
+  },
+  {
+   "id": 10882,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 046B"
+  },
+  {
+   "id": 10883,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 046D"
+  },
+  {
+   "id": 10884,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 047B"
+  },
+  {
+   "id": 10885,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 047D"
+  },
+  {
+   "id": 10886,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 048B"
+  },
+  {
+   "id": 10887,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 050B"
+  },
+  {
+   "id": 10888,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 050D"
+  },
+  {
+   "id": 10889,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 051B"
+  },
+  {
+   "id": 10890,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 053A"
+  },
+  {
+   "id": 10891,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 053C"
+  },
+  {
+   "id": 10892,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 055B"
+  },
+  {
+   "id": 10893,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 061B"
+  },
+  {
+   "id": 10894,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 061D"
+  },
+  {
+   "id": 10895,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 063B"
+  },
+  {
+   "id": 10896,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 067"
+  },
+  {
+   "id": 10897,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 069"
+  },
+  {
+   "id": 10898,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "KIN 079"
+  },
+  {
+   "id": 10899,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "LIN 001"
+  },
+  {
+   "id": 10900,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 002"
+  },
+  {
+   "id": 10901,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 003AH"
+  },
+  {
+   "id": 10902,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 004A"
+  },
+  {
+   "id": 10903,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 004C"
+  },
+  {
+   "id": 10904,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 011"
+  },
+  {
+   "id": 10905,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MAT 015"
+  },
+  {
+   "id": 10906,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 012"
+  },
+  {
+   "id": 10907,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 022"
+  },
+  {
+   "id": 10908,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 032"
+  },
+  {
+   "id": 10909,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 040"
+  },
+  {
+   "id": 10910,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MTT 050"
+  },
+  {
+   "id": 10911,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MUS 010"
+  },
+  {
+   "id": 10912,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MUS 017"
+  },
+  {
+   "id": 10913,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "MUS 082"
+  },
+  {
+   "id": 10914,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 910B"
+  },
+  {
+   "id": 10915,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 920B"
+  },
+  {
+   "id": 10916,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 920PL"
+  },
+  {
+   "id": 10917,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 930FD"
+  },
+  {
+   "id": 10918,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 932"
+  },
+  {
+   "id": 10919,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 934"
+  },
+  {
+   "id": 10920,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 940LS"
+  },
+  {
+   "id": 10921,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 945GE"
+  },
+  {
+   "id": 10922,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 950RW"
+  },
+  {
+   "id": 10923,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 960RW"
+  },
+  {
+   "id": 10924,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 970LS"
+  },
+  {
+   "id": 10925,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCE 980"
+  },
+  {
+   "id": 10926,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NCH 002CW"
+  },
+  {
+   "id": 10927,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NTR 001"
+  },
+  {
+   "id": 10928,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NTR 015"
+  },
+  {
+   "id": 10929,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "NTR 040"
+  },
+  {
+   "id": 10930,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHI 001"
+  },
+  {
+   "id": 10931,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHI 005"
+  },
+  {
+   "id": 10932,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 802"
+  },
+  {
+   "id": 10933,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 804"
+  },
+  {
+   "id": 10934,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 806"
+  },
+  {
+   "id": 10935,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 808"
+  },
+  {
+   "id": 10936,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 810"
+  },
+  {
+   "id": 10937,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHT 812"
+  },
+  {
+   "id": 10938,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHY 002B"
+  },
+  {
+   "id": 10939,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PHY 004B"
+  },
+  {
+   "id": 10940,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "POL 002"
+  },
+  {
+   "id": 10941,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "POL 007"
+  },
+  {
+   "id": 10942,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "POLSC 1000H"
+  },
+  {
+   "id": 10943,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 010"
+  },
+  {
+   "id": 10944,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 015"
+  },
+  {
+   "id": 10945,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 021"
+  },
+  {
+   "id": 10946,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 025"
+  },
+  {
+   "id": 10947,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 045"
+  },
+  {
+   "id": 10948,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSY 822"
+  },
+  {
+   "id": 10949,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 10950,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "PSYCC 1000"
+  },
+  {
+   "id": 10951,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 020"
+  },
+  {
+   "id": 10952,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 024"
+  },
+  {
+   "id": 10953,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 027"
+  },
+  {
+   "id": 10954,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 034"
+  },
+  {
+   "id": 10955,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 037"
+  },
+  {
+   "id": 10956,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 043"
+  },
+  {
+   "id": 10957,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 045"
+  },
+  {
+   "id": 10958,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "RNB 049"
+  },
+  {
+   "id": 10959,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SJS 002"
+  },
+  {
+   "id": 10960,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 001"
+  },
+  {
+   "id": 10961,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 002"
+  },
+  {
+   "id": 10962,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 016"
+  },
+  {
+   "id": 10963,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 040"
+  },
+  {
+   "id": 10964,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 047"
+  },
+  {
+   "id": 10965,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 054"
+  },
+  {
+   "id": 10966,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOC 060"
+  },
+  {
+   "id": 10967,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SOCI 4401"
+  },
+  {
+   "id": 10968,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SPA 002"
+  },
+  {
+   "id": 10969,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SPA 004"
+  },
+  {
+   "id": 10970,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "SPA 050B"
+  },
+  {
+   "id": 10971,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 10972,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "STAT C1000H"
+  },
+  {
+   "id": 10973,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "STATC 1000E"
+  },
+  {
+   "id": 10974,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 101A"
+  },
+  {
+   "id": 10975,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 101C"
+  },
+  {
+   "id": 10976,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 103"
+  },
+  {
+   "id": 10977,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 105"
+  },
+  {
+   "id": 10978,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 107"
+  },
+  {
+   "id": 10979,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 109"
+  },
+  {
+   "id": 10980,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 121"
+  },
+  {
+   "id": 10981,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 123"
+  },
+  {
+   "id": 10982,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 132"
+  },
+  {
+   "id": 10983,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 134"
+  },
+  {
+   "id": 10984,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 142"
+  },
+  {
+   "id": 10985,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 144"
+  },
+  {
+   "id": 10986,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 152"
+  },
+  {
+   "id": 10987,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 154"
+  },
+  {
+   "id": 10988,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 201"
+  },
+  {
+   "id": 10989,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 203A"
+  },
+  {
+   "id": 10990,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 204"
+  },
+  {
+   "id": 10991,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 206"
+  },
+  {
+   "id": 10992,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 208"
+  },
+  {
+   "id": 10993,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 210"
+  },
+  {
+   "id": 10994,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 402"
+  },
+  {
+   "id": 10995,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 404"
+  },
+  {
+   "id": 10996,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 501"
+  },
+  {
+   "id": 10997,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 503A"
+  },
+  {
+   "id": 10998,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 503C"
+  },
+  {
+   "id": 10999,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "TRN 504"
+  },
+  {
+   "id": 11000,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 300CD"
+  },
+  {
+   "id": 11001,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 300GW"
+  },
+  {
+   "id": 11002,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 300MT"
+  },
+  {
+   "id": 11003,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 801"
+  },
+  {
+   "id": 11004,
+   "kind": "slo",
+   "college": "Mission College",
+   "course_code": "WRK 803"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (10312, 10313, 10314, 10315, 10316, 10317, 10318, 10319, 10320, 10321, 10322, 10323, 10324, 10325, 10326, 10327, 10328, 10329, 10330, 10331, 10332, 10333, 10334, 10335, 10336, 10337, 10338, 10339, 10340, 10341, 10342, 10343, 10344, 10345, 10346, 10347, 10348, 10349, 10350, 10351, 10352, 10353, 10354, 10355, 10356, 10357, 10358, 10359, 10360, 10361, 10362, 10363, 10364, 10365, 10366, 10367, 10368, 10369, 10370, 10371, 10372, 10373, 10374, 10375, 10376, 10377, 10378, 10379, 10380, 10381, 10382, 10383, 10384, 10385, 10386, 10387, 10388, 10389, 10390, 10391, 10392, 10393, 10394, 10395, 10396, 10397, 10398, 10399, 10400, 10401, 10402, 10403, 10404, 10405, 10406, 10407, 10408, 10409, 10410, 10411, 10412, 10413, 10414, 10415, 10416, 10417, 10418, 10419, 10420, 10421, 10422, 10423, 10424, 10425, 10426, 10427, 10428, 10429, 10430, 10431, 10432, 10433, 10434, 10435, 10436, 10437, 10438, 10439, 10440, 10441, 10442, 10443, 10444, 10445, 10446, 10447, 10448, 10449, 10450, 10451, 10452, 10453, 10454, 10455, 10456, 10457, 10458, 10459, 10460, 10461, 10462, 10463, 10464, 10465, 10466, 10467, 10468, 10469, 10470, 10471, 10472, 10473, 10474, 10475, 10476, 10477, 10478, 10479, 10480, 10481, 10482, 10483, 10484, 10485, 10486, 10487, 10488, 10489, 10490, 10491, 10492, 10493, 10494, 10495, 10496, 10497, 10498, 10499, 10500, 10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508, 10509, 10510, 10511, 10512, 10513, 10514, 10515, 10516, 10517, 10518, 10519, 10520, 10521, 10522, 10523, 10524, 10525, 10526, 10527, 10528, 10529, 10530, 10531, 10532, 10533, 10534, 10535, 10536, 10537, 10538, 10539, 10540, 10541, 10542, 10543, 10544, 10545, 10546, 10547, 10548, 10549, 10550, 10551, 10552, 10553, 10554, 10555, 10556, 10557, 10558, 10559, 10560, 10561, 10562, 10563, 10564, 10565, 10566, 10567, 10568, 10569, 10570, 10571, 10572, 10573, 10574, 10575, 10576, 10577, 10578, 10579, 10580, 10581, 10582, 10583, 10584, 10585, 10586, 10587, 10588, 10589, 10590, 10591, 10592, 10593, 10594, 10595, 10596, 10597, 10598, 10599, 10600, 10601, 10602, 10603, 10604, 10605, 10606, 10607, 10608, 10609, 10610, 10611, 10612, 10613, 10614, 10615, 10616, 10617, 10618, 10619, 10620, 10621, 10622, 10623, 10624, 10625, 10626, 10627, 10628, 10629, 10630, 10631, 10632, 10633, 10634, 10635, 10636, 10637, 10638, 10639, 10640, 10641, 10642, 10643, 10644, 10645, 10646, 10647, 10648, 10649, 10650, 10651, 10652, 10653, 10654, 10655, 10656, 10657, 10658, 10659, 10660, 10661, 10662, 10663, 10664, 10665, 10666, 10667, 10668, 10669, 10670, 10671, 10672, 10673, 10674, 10675, 10676, 10677, 10678, 10679, 10680, 10681, 10682, 10683, 10684, 10685, 10686, 10687, 10688, 10689, 10690, 10691, 10692, 10693, 10694, 10695, 10696, 10697, 10698, 10699, 10700, 10701, 10702, 10703, 10704, 10705, 10706, 10707, 10708, 10709, 10710, 10711, 10712, 10713, 10714, 10715, 10716, 10717, 10718, 10719, 10720, 10721, 10722, 10723, 10724, 10725, 10726, 10727, 10728, 10729, 10730, 10731, 10732, 10733, 10734, 10735, 10736, 10737, 10738, 10739, 10740, 10741, 10742, 10743, 10744, 10745, 10746, 10747, 10748, 10749, 10750, 10751, 10752, 10753, 10754, 10755, 10756, 10757, 10758, 10759, 10760, 10761, 10762, 10763, 10764, 10765, 10766, 10767, 10768, 10769, 10770, 10771, 10772, 10773, 10774, 10775, 10776, 10777, 10778, 10779, 10780, 10781, 10782, 10783, 10784, 10785, 10786, 10787, 10788, 10789, 10790, 10791, 10792, 10793, 10794, 10795, 10796, 10797, 10798, 10799, 10800, 10801, 10802, 10803, 10804, 10805, 10806, 10807, 10808, 10809, 10810, 10811, 10812, 10813, 10814, 10815, 10816, 10817, 10818, 10819, 10820, 10821, 10822, 10823, 10824, 10825, 10826, 10827, 10828, 10829, 10830, 10831, 10832, 10833, 10834, 10835, 10836, 10837, 10838, 10839, 10840, 10841, 10842, 10843, 10844, 10845, 10846, 10847, 10848, 10849, 10850, 10851, 10852, 10853, 10854, 10855, 10856, 10857, 10858, 10859, 10860, 10861, 10862, 10863, 10864, 10865, 10866, 10867, 10868, 10869, 10870, 10871, 10872, 10873, 10874, 10875, 10876, 10877, 10878, 10879, 10880, 10881, 10882, 10883, 10884, 10885, 10886, 10887, 10888, 10889, 10890, 10891, 10892, 10893, 10894, 10895, 10896, 10897, 10898, 10899, 10900, 10901, 10902, 10903, 10904, 10905, 10906, 10907, 10908, 10909, 10910, 10911, 10912, 10913, 10914, 10915, 10916, 10917, 10918, 10919, 10920, 10921, 10922, 10923, 10924, 10925, 10926, 10927, 10928, 10929, 10930, 10931, 10932, 10933, 10934, 10935, 10936, 10937, 10938, 10939, 10940, 10941, 10942, 10943, 10944, 10945, 10946, 10947, 10948, 10949, 10950, 10951, 10952, 10953, 10954, 10955, 10956, 10957, 10958, 10959, 10960, 10961, 10962, 10963, 10964, 10965, 10966, 10967, 10968, 10969, 10970, 10971, 10972, 10973, 10974, 10975, 10976, 10977, 10978, 10979, 10980, 10981, 10982, 10983, 10984, 10985, 10986, 10987, 10988, 10989, 10990, 10991, 10992, 10993, 10994, 10995, 10996, 10997, 10998, 10999, 11000, 11001, 11002, 11003, 11004);"
+}
