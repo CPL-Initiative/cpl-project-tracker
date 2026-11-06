@@ -43,14 +43,17 @@
     if (!q) return true;
     return [r.title, r.occasion, r.summary, (r.topics || []).join(" "), r.for_name, forWord(r), KIND[r.kind]].join(" ").toLowerCase().indexOf(q) !== -1;
   }
-  // Most recent first by the date a piece was made; a piece with no date goes last.
+  // The date a card shows and sorts by: its newest version's (Sam, 2026-11-06: "date for ver 5 not updating"),
+  // else the date it was made.
+  function shownDate(r) { return r.revised_on || r.made_on || ""; }
+  // Most recent first by that date; a piece with no date goes last.
   // Ties, and Title A–Z, read the title.
   function byTitle(a, b) { return String(a.title || "").localeCompare(String(b.title || ""), "en", { sensitivity: "base" }); }
   function sorted(list) {
     var by = state.sort;
     return list.slice().sort(function (a, b) {
       if (by === "title") return byTitle(a, b);
-      var da = a.made_on || "", db = b.made_on || "";
+      var da = shownDate(a), db = shownDate(b);
       if (da !== db) {
         if (!da) return 1;
         if (!db) return -1;
@@ -91,7 +94,8 @@
       var safe = /^https:\/\//.test(r.url || "");
       var madeFor = r.for_kind ? (r.for_name ? "For " + r.for_name : "Made for " + forWord(r)) : "";
       var title = esc(r.title);
-      return '<article class="piece"><div class="meta">' + esc(KIND[r.kind] || r.kind) + (r.made_on ? " · " + esc(fmtDate(r.made_on)) : "") + "</div>" +
+      return '<article class="piece"><div class="meta">' + esc(KIND[r.kind] || r.kind) + (shownDate(r) ? " · " + esc(fmtDate(shownDate(r))) : "") +
+        (r.version_label ? ' <span class="ver">' + esc(r.version_label) + "</span>" : "") + "</div>" +
         "<h2>" + (safe ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + title + '<span class="sr-only"> (opens in a new tab)</span></a>' : title) + "</h2>" +
         (madeFor ? '<div class="for">' + esc(madeFor) + "</div>" : "") +
         (r.occasion ? '<p class="occ">' + esc(r.occasion) + "</p>" : "") +

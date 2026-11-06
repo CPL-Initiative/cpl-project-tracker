@@ -160,6 +160,9 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
 - **ELL IET Version 5 is public** (SkyFlipFlop, 2026-11-05; Sam's Replace at 22:34Z, `library-publish` dispatched, run
   42122991947): the Initiative at a glance and top cards that link; built by `make_tabs.py` from Version 3.
+- **Version 5 in the library look; public cards date the newest version** (2026-11-06, Sam in session): `make_tabs.py`'s
+  `library_look`; agenda item 2 opens the overview. `cpl_library_public()` returns `revised_on` and `version_label`
+  (`kb/migrations/2026-11-06_library_public_revised_on.sql`, applied through the MCP). Still Version 5.
 - **The card's quick revise closes its gaps** (Sam: *"build fixes 1-3"*, #2824; `library-revise-draft` v3 deployed):
   the drafter is told Sierra's budget and records `request.sierra`; the card's check adds target size and Sierra's count;
   a published model draft of a scripted piece raises *Source behind the page* until the source catches up.
