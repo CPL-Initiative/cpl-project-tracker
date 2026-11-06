@@ -222,6 +222,30 @@ short = R.reconcile(arch, arch_text.replace("Units: 4", "Units: 3"), "San Joaqui
                     "Certificate of Achievement", steps=steps)[0]
 check("a line that does not close the gap exactly adds nothing", len(short["blocks"]) == 1)
 
+print("or_units, the group's figure on its heading line (S590, Monterey Peninsula 22052)")
+acct_text = ("Select one of the following:\t2 · WORK 96 · Professional and Essential Skills · "
+             "or WORK 99\tCareer-Focused Work Experience\nor WORK 98\tExploratory Work Experience\n")
+acct = {"blocks": [{"name": "Select one of the following:", "rule": "all", "stated": {"min": 2, "max": 2},
+                    "courses": [{"code": "WORK 96", "units": None, "units_max": None,
+                                 "alternatives": [{"code": "WORK 99", "units": None}, {"code": "WORK 98", "units": None}]}]}],
+        "program": {}}
+listed = {"WORK96": 1.0, "WORK99": 0.5, "WORK98": 0.5}
+steps = {"Monterey Peninsula College": {"steps": [{"kind": "or_units", "parent_from_block": True, "source_words": "x"}]}}
+check("before: the state file prices the group at 0.5-1", S.program_units(acct, listed)[0] == (0.5, 1.0))
+new, notes = R.reconcile(acct, acct_text, "Monterey Peninsula College", "Certificate of Achievement", steps=steps)
+check("the course and its alternatives take the block's 2", S.program_units(new, listed)[0] == (2, 2))
+check("both changes are noted", {n["field"] for n in notes} == {"course_units", "alternative_units"})
+plain = {"Monterey Peninsula College": {"steps": [{"kind": "or_units", "source_words": "x"}]}}
+check("without parent_from_block, a parent without units still gives nothing",
+      R.reconcile(acct, acct_text, "Monterey Peninsula College", "Certificate of Achievement", steps=plain)[1] == [])
+check("a page with no 'or CODE' row changes nothing",
+      R.reconcile(acct, "Select one of the following: 2 WORK 96 WORK 99", "Monterey Peninsula College",
+                  "Certificate of Achievement", steps=steps)[1] == [])
+two = json.loads(json.dumps(acct))
+two["blocks"][0]["stated"] = {"min": 2, "max": 4}
+check("a block stating a range changes nothing",
+      R.reconcile(two, acct_text, "Monterey Peninsula College", "Certificate of Achievement", steps=steps)[1] == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
