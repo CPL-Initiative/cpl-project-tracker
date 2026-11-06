@@ -391,6 +391,26 @@
   }
  },
  "by_exhibit": {
+  "ACE Certified Personal Trainer": [
+   {
+    "code": "ace1",
+    "title": "ACE Certified Personal Trainer",
+    "kind": "exact",
+    "pairs": 341,
+    "strong": 249,
+    "strong_colleges": 105
+   }
+  ],
+  "ACSM Certified Personal Trainer (ACSM-CPT)": [
+   {
+    "code": "acsm1",
+    "title": "ACSM Certified Personal Trainer (ACSM-CPT)",
+    "kind": "exact",
+    "pairs": 334,
+    "strong": 229,
+    "strong_colleges": 104
+   }
+  ],
   "ASE A1 — Engine Repair": [
    {
     "code": "ase1",
@@ -821,30 +841,12 @@
     "strong_colleges": 50
    }
   ],
-  "Personal Trainer Instructor": [
+  "NASM Certified Personal Trainer (NASM-CPT)": [
    {
     "code": "nasm1",
     "title": "NASM Certified Personal Trainer (NASM-CPT)",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 351,
-    "strong": 249,
-    "strong_colleges": 105
-   },
-   {
-    "code": "acsm1",
-    "title": "ACSM Certified Personal Trainer (ACSM-CPT)",
-    "kind": "named_under",
-    "pairs": 334,
-    "strong": 229,
-    "strong_colleges": 104
-   }
-  ],
-  "Personal Training Certification": [
-   {
-    "code": "ace1",
-    "title": "ACE Certified Personal Trainer",
-    "kind": "named_under",
-    "pairs": 341,
     "strong": 249,
     "strong_colleges": 105
    }
@@ -859,16 +861,6 @@
     "strong_colleges": 41
    }
   ],
-  "ServSafe Food Protection Manager": [
-   {
-    "code": "servsafe1",
-    "title": "ServSafe Food Protection Manager Certification",
-    "kind": "exact",
-    "pairs": 281,
-    "strong": 71,
-    "strong_colleges": 49
-   }
-  ],
   "ServSafe Food Protection Manager Certification": [
    {
     "code": "servsafe1",
@@ -879,11 +871,11 @@
     "strong_colleges": 49
    }
   ],
-  "Wastewater Treatment 1": [
+  "Wastewater Treatment Plant Operator Certificate, Grade II or Higher": [
    {
     "code": "wwtp5",
     "title": "Wastewater Treatment Plant Operator Certificate Grade V",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 215,
     "strong": 47,
     "strong_colleges": 24
@@ -891,7 +883,7 @@
    {
     "code": "wwtp2",
     "title": "Wastewater Treatment Plant Operator Certificate Grade II",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 193,
     "strong": 41,
     "strong_colleges": 25
@@ -899,7 +891,7 @@
    {
     "code": "wwtp4",
     "title": "Wastewater Treatment Plant Operator Certificate Grade IV",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 187,
     "strong": 39,
     "strong_colleges": 22
@@ -907,17 +899,17 @@
    {
     "code": "wwtp3",
     "title": "Wastewater Treatment Plant Operator Certificate Grade III",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 176,
     "strong": 32,
     "strong_colleges": 20
    }
   ],
-  "Wastewater Treatment 2": [
+  "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher": [
    {
     "code": "wwtp5",
     "title": "Wastewater Treatment Plant Operator Certificate Grade V",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 215,
     "strong": 47,
     "strong_colleges": 24
@@ -925,7 +917,7 @@
    {
     "code": "wwtp4",
     "title": "Wastewater Treatment Plant Operator Certificate Grade IV",
-    "kind": "named_under",
+    "kind": "exact",
     "pairs": 187,
     "strong": 39,
     "strong_colleges": 22

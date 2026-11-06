@@ -87,8 +87,7 @@ The rows are the Exhibits tab's Change to Proposed Title shape (a guarded replac
 lane re-points them. After the fold the join reads 46 exact. The same plan folds the duplicate *ServSafe Food Protection
 Manager* (one machine-placed prep-course title) into *ServSafe Food Protection Manager Certification* (Sam: "go ahead and
 fold the duplicate ServSafe Manager exhibit"), an override with its merge confirm that `cred-rename-apply.yml` carries.
-**Next:** the Exhibits List row names its CPL-AI pairs; the Credential Catalog and Sierra wait on Sam's word (Sheet 147
-card 5).
+**Next:** the Credential Catalog and Sierra wait on Sam's word (Sheet 147 card 5).
 
 **The Exhibits List names each row's CPL-AI pairs (SkyLantern, 2026-11-06; Sam: "have the Exhibits List row name its
 CPL-AI pairs"):** under the title, *CPL-AI, 343 pairs* (several certifications counted, a related join marked), its full
