@@ -1111,3 +1111,18 @@ From *Course objectives too*, verbatim:
 ### Moved from the lane (S592): Monterey Peninsula's paragraph, as it stood
 
 **Monterey Peninsula (S535-S536; its 2026-27 CourseLeaf site): 183 of 197 passing**. Its steps: MPC GE 24-34, Cal-GETC 34 (both years' words), the 60 a floor ("electives, if needed"), `or_units`, `and_units` (a lab printed joined to its lecture, "CSIS 50 · & 50L", takes 0). The 14 left: lessons S536. S536 moved 7 (3.6%), so one more session under 3% parks it. **RULED (Sam, Open Asks Sheet 159 card 1, 22:51Z 2026-11-02, his own call: "keep"):** the 60 stays a floor, as S535 read it. **S590 (#2809):** the six unequal records read back (page read 42046379839); two steps on the catalog's words: the floor for transfer degrees too (Global Studies 37243; Fable advised) and `or_units` `parent_from_block` (Accounting 22052's "Select one of the following: 2 · WORK 96 · or WORK 99"). Reconcile 42195216637 dispatched. The other four need reader work or stay as printed: ASL 39266 (an `&`-joined alternative pair), Hospitality 41831 ("Any List A course not already selected" dropped), Nursing 03633 (Humanities and Ethnic Studies lines not kept), Anthropology 32033 (the catalog's own 23 counts List C at 4: leave). **S591:** reconcile 42195216637 moved Global Studies 37243 (183 to 184; Accounting 22052 still fails), reread 42201297009 replaced 33 rows (receipt `kb/receipts/program_requirement_records_college_reread_monterey_peninsula_42201297009.json`), display build 04dec589445a. **PARKED (S591, the stopping rule):** S584 moved 0 and S590 1, both under 6 of 197; `monterey-peninsula-parked-2026-11-06` names what turns it on (the three reader items, its 2027-28 catalog, or Sam's word). Sam unparked Glendale and LA Valley on 2026-11-02 with *"handle the discrepancies after all data is harvested"*, so the sweep's next college is one with missing records, not the next largest discrepancy count. #2809 merged (S592) after display build 04dec589445a applied 17,546 of 17,549 (3 rows gone, 0 errors).
+
+## S593 SkyTadpole (2026-11-06, the CPL Queue routine, 13:12Z firing): #2838 merged; Ohlone's noncredit gaps placed
+
+- **#2838 merged** (`3699b20d`) after the `step=display` apply (run 42217856222) committed its record: 17,547 of 17,550,
+  0 errors, the 3 missing being Monterey Peninsula rows the table no longer holds (S592's note). The bot's applied-record
+  push starts no `test`; updating the branch from `main` and marking it ready did, green in 13 minutes.
+- **Ohlone's 18 noncredit gaps are the college's own.** Three free page reads (`kb/college_reads/ohlone_noncredit_s593.json`;
+  42225429355, 42227635069, 42228515615; four loads): `/noncredit` links a Noncredit Certificates page; that page links 18
+  program pages, and the noncredit program list (`/academics?field_degrees_certificates_tid=1186`, alphabetical, page 1
+  runs A to S) names 20. Neither names Customer Service, Business Support Specialist, Entrepreneurial Business, DRE Exam
+  Preparation, Effective Job Search, Math Foundations or Community Mental Health Preparation. The one missing program the
+  site still links, Computer Aided Design Skills 38975, answers 403 with a sign-in page: an unpublished page, never read.
+  With S451's 15 credit programs, all 33 of Ohlone's gaps are programs COCI lists that the college does not publish.
+- **Check what a page links before reading what it says.** The certificates page's own text named only departments; its
+  links named the programs. A plan's `links` pattern is the cheap half of a page read.

@@ -1,0 +1,40 @@
+{
+ "_readme": "S593 SkyTadpole, 2026-11-06. Step 12 names Ohlone next (146 of 179 on with_closed_list). Lessons (S451) found 15 of the 33 gaps are credit programs the 2026-2027 guide does not print under the state's lists (the college's to settle in COCI), and 18 noncredit certificates that sit on the college's noncredit web page, which the chapter 7 PDF does not carry. This read lists that page's links and the text near the certificates' names, so a session can tell whether each certificate's page prints its courses (a source the capture can take) before any reader change or paid read. Two loads, no model call. Second read (run 42225429355 found the landing page names no certificate): its Noncredit Certificates page, /noncredit/noncredit-certificates. Third read (run 42227635069: the certificates page links 18 noncredit program pages, of which only Computer Aided Design Skills 38975 is among the missing; the Customer Service, Business Support, Entrepreneurship, DRE, Job Search and Mental Health certificates are not linked): the View All Noncredit Programs list, and the AutoCAD program page to see whether a program page names its courses.",
+ "college": "Ohlone College",
+ "questions": {
+  "noncredit_address": "Where does Ohlone print its noncredit certificates (Customer Service Academy, Business Support Specialist I and II, Math Foundations, Computer Fundamentals, Entrepreneurial Business Basics, DRE Exam Preparation, Community Mental Health Preparation): one page per certificate, a list page, or a PDF?",
+  "noncredit_courses": "Does a certificate's page name its courses by code (NBUS, NCMP, NMAT or similar) and hours?"
+ },
+ "keywords": [
+  "noncredit",
+  "certificate",
+  "customer service",
+  "business support",
+  "math foundations",
+  "computer fundamentals",
+  "entrepreneur",
+  "DRE",
+  "mental health",
+  "job search",
+  "AutoCAD",
+  "beginning technology",
+  "\\bN[A-Z]{2,4}[ \\-]?\\d",
+  "hours"
+ ],
+ "pages": [
+  {
+   "url": "https://www.ohlone.edu/academics?field_degrees_certificates_tid=1186",
+   "answers": [
+    "noncredit_address"
+   ],
+   "links": "program/"
+  },
+  {
+   "url": "https://www.ohlone.edu/program/computer-aided-design-skills-autocad-and-solidworks",
+   "answers": [
+    "noncredit_courses"
+   ],
+   "links": "\\.pdf|course|catalog"
+  }
+ ]
+}

@@ -16581,8 +16581,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 557,
+   "count": 558,
    "docs": [
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 594,
+     "path": "docs/session_594_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 594 handoff: Mt. San Jacinto merged; Ohlone's gaps all the college's own",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-06",
      "governs": [],
@@ -26063,5 +26078,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1395
+ "total": 1396
 }
