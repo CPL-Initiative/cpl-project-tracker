@@ -893,6 +893,23 @@ async function seedExhibitsRequests(page, theme) {
   await page.waitForTimeout(300);
 }
 
+/* The Exhibits tab's CPL-AI recommendations view (SkyLantern, 2026-11-06): the hosted snapshot read from the repo, one
+   certification open (ASE A4), its pairs one line each, the first pair's report open with its domain table, so the
+   list box, the tier words, the college picker, the report and its evidence table are measured. */
+async function seedExhibitsCplAi(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/cpl-ai/ase4") location.hash = "exhibits/cpl-ai/ase4"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => document.querySelector("#exh-cplai #cai-pairs-wrap tbody tr button") || document.querySelector("#exh-cplai .exh-empty"), null, { timeout: 90000 });
+  await page.evaluate(() => { const b = document.querySelector("#exh-cplai #cai-pairs-wrap tbody tr button"); if (b) b.click(); });
+  await page.waitForFunction(() => document.querySelector("#exh-cplai .cai-report") || document.querySelector("#exh-cplai .exh-empty"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
 /* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
@@ -3697,6 +3714,22 @@ module.exports = {
     routes: [{ hash: "exhibits/requests", name: "requests-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsRequests(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-cpl-ai": {
+    file: "index.html",
+    title: "Exhibits: CPL-AI recommendations, a certification's pairs and one report open",
+    routes: [{ hash: "exhibits/cpl-ai/ase4", name: "cpl-ai" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsCplAi(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-cpl-ai-dark": {
+    file: "index.html",
+    title: "Exhibits: CPL-AI recommendations, dark",
+    routes: [{ hash: "exhibits/cpl-ai/ase4", name: "cpl-ai-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsCplAi(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-list": {

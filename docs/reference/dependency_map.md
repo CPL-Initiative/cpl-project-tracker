@@ -439,6 +439,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exhibit_progress.js` | tabs: `credential-reference` | — |
 | `exhibits.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/build_exhibits_list_preview.py` | — |
+| `exhibits_cpl_ai.js` | tabs: `exhibits` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
 | `exports/unified_courses.xlsx` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `fact-sheet/_build_statewide_catalog.py` | workflows: `daily-dashboard.yml` | — |
@@ -602,6 +603,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
+| `kb/cpl_ai/exhibit_join.json` | tabs: `exhibits` · scripts: `kb/_build_cpl_ai_join.py` | scripts: `kb/_build_cpl_ai_join.py` |
+| `kb/cpl_ai/hosted/index.json` | tabs: `exhibits` | — |
 | `kb/cpl_ai/pairs.json` | tabs: `program-requirements` · scripts: `kb/_build_cpl_ai.py` | — |
 | `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py`, `scripts/build_cr_list_preview.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
@@ -614,7 +617,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json` | none found | scripts: `kb/_ib_fold_apply.py` |
 | `kb/credential_merges_out/2026-11-01/ib_kb_curation_update_receipt.json` | scripts: `kb/_ib_fold_apply.py` | — |
 | `kb/credential_review_overlay.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_build_exhibits_review.py`, `kb/_cred_rename_dryrun.py`, `kb/_fold_unclassified.py` | scripts: `kb/_apply_credential_review.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
-| `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_cpl_ai_join.py`, `kb/_build_exhibits_review.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/crnc_mirrors.json` | scripts: `excel_to_dashboard.py`, `kb/_detect_crnc_mirrors.py`, `kb/_rekey_crnc_mirrors.py` | — |
 | `kb/crossdisc_out/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/csr_out/confirm` | none found | committed by: `csr-confirm.yml` |
@@ -825,7 +828,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/*/index.html` | none found | committed by: `library-publish.yml` |
 | `library/adopt/adopt.js` | pages: `library/adopt/index.html` | — |
 | `library/adopt/adopt_align.json` | scripts: `kb/_build_adopt_align.py` | committed by: `daily-dashboard.yml` |
-| `library/adopt/adopt_data.json` | pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
+| `library/adopt/adopt_data.json` | tabs: `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
@@ -1163,7 +1166,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map.example` | modules: `a11y.config.js` |
-| `map.rccd.edu` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · modules: `a11y.config.js` · pages: `library/adopt/index.html` · scripts: `kb/_build_cpl_ai.py`, `kb/_seed_statewide_categories.py`, `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
+| `map.rccd.edu` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `exhibits`, `implementation-funding` · modules: `a11y.config.js` · pages: `library/adopt/index.html` · scripts: `kb/_build_cpl_ai.py`, `kb/_harvest_cpl_ai_reports.py`, `kb/_seed_statewide_categories.py`, `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
 | `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_lifecycle_checks.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
 | `merritt.edu` | tabs: `map-queue`, `map-users` |
 | `miracosta.edu` | tabs: `map-queue`, `map-users` |
@@ -1306,5 +1309,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 107 Supabase tables · 51 RPCs · 12 edge functions · 798 file
-datasets · 193 external services · 525 consumers · 62 workflows · 40 tabs.
+Coverage: 107 Supabase tables · 51 RPCs · 12 edge functions · 801 file
+datasets · 193 external services · 528 consumers · 62 workflows · 40 tabs.

@@ -62,6 +62,24 @@ public Credential Catalog. Not built: sites for a title new to the reference, an
   Proposed Title* with the reference's title clears the saved assignment; any other title on a conflict re-keys a
   person-reviewed entry and stays a session's change. *Teach a rule* copies the rule for a session.
 
+**CPL-AI in the Exhibits tab (SkyLantern, 2026-11-06; Sam: "connect CPL-AI in the Exhibits tab and make sure we can
+host all the data, which for now will not have any further updates").** The view **CPL-AI recommendations**
+(`#exhibits/cpl-ai`, `#exhibits/cpl-ai/<code>`; `exhibits_cpl_ai.js`, loaded on first open) lists the 115 certifications
+with pairs by evidence tier (a college pick narrows the counts), opens one to its pairs one line each (tier words,
+college, search, CSV, lazy batches), and opens a pair to its full report: scores, the domain-by-domain alignment with
+both sides' quoted evidence, the course outline's outcomes and skills, the sources, and a link to the same report on
+the CPL-AI page. Data: `kb/cpl_ai/hosted/` from `kb/_harvest_cpl_ai_reports.py` + `kb/_build_cpl_ai_hosted.py`
+(`--check` in CI via `tests/exhibits_cpl_ai.test.js`). Frozen, so nothing schedules a re-read. **The 115 joined to
+common exhibits (Sam, same day: "go ahead and join the 115 to common exhibits"):** `kb/_build_cpl_ai_join.py` holds each
+judgment with its reason and writes `kb/cpl_ai/exhibit_join.json`: **39 exact**, **7 named under another exhibit** (ACE,
+ACSM and NASM personal trainer titles under two mistitled exhibits; the State Water Board's wastewater grades II to V
+under exhibits titled like courses: title fixes for the CER, never made here), **8 related**, **61 with no exhibit**;
+`--check` fails when a named exhibit is re-titled. The view names each certification's exhibit and, for one MAP awards,
+who awards it and which colleges hold a Strong evidence course and do not award it yet (Security+: 25 award, 74 leads).
+Session judgments; a curator's correction wins. **Next:** the Exhibits List row names its CPL-AI pairs; the CER takes
+the seven title fixes and the duplicate ServSafe Manager exhibit; the Credential Catalog and Sierra wait on Sam's word
+(Sheet 147 card 5).
+
 **The Credential Catalog, the public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4; named
 on Sheet 148).** `library/adopt/`, Pages-served, linked from the Library and the public header.
 `kb/_build_adopt_page.py` writes `library/adopt/adopt_data.json` daily from `kb/exhibits_adoption.json`: **settled means a

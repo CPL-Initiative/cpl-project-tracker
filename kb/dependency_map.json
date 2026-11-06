@@ -4,9 +4,9 @@
   "supabase_tables": 107,
   "rpcs": 51,
   "edge_functions": 12,
-  "file_datasets": 798,
+  "file_datasets": 801,
   "external_services": 193,
-  "consumers": 525,
+  "consumers": 528,
   "workflows": 62,
   "data_js_files": 71,
   "tabs": 40
@@ -840,7 +840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2697,
+     "line": 2699,
      "tabs": [
       "exhibits"
      ]
@@ -1036,7 +1036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1550
+     "line": 1567
     },
     {
      "id": "module:admin.js",
@@ -1719,7 +1719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2182
+     "line": 2199
     }
    ],
    "main_committers": []
@@ -2344,7 +2344,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1160
+     "line": 1177
     }
    ],
    "main_committers": []
@@ -2363,7 +2363,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1505
+     "line": 1522
     },
     {
      "id": "module:college_briefing.js",
@@ -2390,6 +2390,16 @@
      ]
     },
     {
+     "id": "module:exhibits_cpl_ai.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 166,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "module:library/adopt/adopt.js",
      "kind": "module",
      "direction": "read",
@@ -2405,6 +2415,13 @@
      "direction": "read",
      "how": "url",
      "line": 7
+    },
+    {
+     "id": "script:kb/_harvest_cpl_ai_reports.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 6
     },
     {
      "id": "script:kb/_seed_statewide_categories.py",
@@ -3028,7 +3045,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1561
+     "line": 1578
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4338,7 +4355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1846
+     "line": 1863
     }
    ],
    "main_committers": []
@@ -5387,7 +5404,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1737
+     "line": 1754
     },
     {
      "id": "module:admin.js",
@@ -5976,7 +5993,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2097,
+     "line": 2099,
      "tabs": [
       "exhibits"
      ]
@@ -6180,7 +6197,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2689,
+     "line": 2691,
      "tabs": [
       "exhibits"
      ]
@@ -6273,7 +6290,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2953,
+     "line": 2957,
      "tabs": [
       "exhibits"
      ]
@@ -6517,7 +6534,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2121
+     "line": 2138
     },
     {
      "id": "module:college_briefing.js",
@@ -6723,7 +6740,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1220
+     "line": 1237
     },
     {
      "id": "module:cpl_funding.js",
@@ -8013,6 +8030,22 @@
      "direction": "read",
      "how": "literal",
      "line": 122
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:exhibits_cpl_ai.js": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3163,
+     "tabs": [
+      "exhibits"
+     ]
     }
    ],
    "served": true,
@@ -12825,6 +12858,52 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/cpl_ai/exhibit_join.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits_cpl_ai.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 24,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_cpl_ai_join.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
+     "id": "script:kb/_build_cpl_ai_join.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 34
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/cpl_ai/hosted/index.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits_cpl_ai.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 23,
+     "tabs": [
+      "exhibits"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/cpl_ai/pairs.json": {
    "consumers": [
     {
@@ -13178,6 +13257,13 @@
      "direction": "read",
      "how": "literal",
      "line": 194
+    },
+    {
+     "id": "script:kb/_build_cpl_ai_join.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -14281,7 +14367,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2711,
+     "line": 2713,
      "tabs": [
       "exhibits"
      ]
@@ -14385,7 +14471,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1962,
+     "line": 1964,
      "tabs": [
       "exhibits"
      ]
@@ -18785,6 +18871,16 @@
   "file:library/adopt/adopt_data.json": {
    "consumers": [
     {
+     "id": "module:exhibits_cpl_ai.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 25,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "module:library/adopt/adopt.js",
      "kind": "module",
      "direction": "read",
@@ -18807,6 +18903,13 @@
      "direction": "read",
      "how": "literal",
      "line": 58
+    },
+    {
+     "id": "script:kb/_build_cpl_ai_join.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     }
    ],
    "producers": [
@@ -28564,6 +28667,9 @@
    "credential-reference"
   ],
   "exhibits.js": [
+   "exhibits"
+  ],
+  "exhibits_cpl_ai.js": [
    "exhibits"
   ],
   "governance.js": [
