@@ -114,9 +114,10 @@ INSERT-only SECURITY DEFINER function**, `credential_priority_request()`, which 
 same email within a day, and returns the count; `credential_priority_counts()` is the one public read (credential and n,
 nothing else) and paints the count beside the credential on its card, its List row and the panel's heading (the count is
 the signal). The table `credential_priority_requests` has no public policy; the team reads rows behind the phrase or a
-reviewer sign-in; nobody deletes. Migration `kb/migrations/2026-11-06_credential_priority_requests.sql` (+ rollback), routed
-through `supabase-migrate.yml` by `kb/migrations/.apply` because the MCP's apply waited on a confirmation and timed out
-(Rule 10 c). Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
+reviewer sign-in; nobody deletes. Migration `kb/migrations/2026-11-06_credential_priority_requests.sql` (+ rollback), applied
+16:21Z by `supabase-migrate.yml` from `kb/migrations/.apply` (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`;
+the MCP's apply had waited on a confirmation and timed out, Rule 10 c); read back live: anon executes the two functions and
+holds no insert on the table, RLS on. Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
 mapped to it, the counts read dismissed with its privacy reason; the dependency map regenerated. Tests: `public_adopt`
 (81). **NEXT:** the Commons Exhibits List reads the rows as a queue item with its count (below).
 

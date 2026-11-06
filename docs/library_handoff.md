@@ -34,9 +34,9 @@ public face, [`cer-procedures`](reference/lanes/cer-procedures.md)) and the Libr
 - Merged: #2846 (SkyBackflip's item 0, the noncredit visual, into this handoff).
 
 ## Open work, in order
-1. **Merge the tracker PR on green `test`**, then confirm `supabase-migrate.yml` applied `credential_priority_requests`
-   (the apply job runs in the `database` environment; if it waits on a tap, tell Sam). Until it applies, the page's form
-   says the request could not be sent and the counts read fails quietly.
+1. **Merge the tracker PR on green `test`** (Sam, in session: "merge the tracker PR when test is green"). The migration is
+   applied (16:21Z, receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`), so the form works the
+   moment Pages serves the merged page.
 2. **The noncredit visual is public once the PR merges:** run `npm run a11y -- library-noncredit` on the Pages copy and note
    the result on the record's Version 1 (a receipted update); any later change Sam asks for goes through the card's Revise
    (the page is its own source; the vault keeps the file).
