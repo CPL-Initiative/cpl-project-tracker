@@ -1,20 +1,32 @@
 {
   "schema": 1,
-  "session": 575,
-  "moniker": "SkyLantern",
+  "session": 595,
+  "moniker": "SkyBeacon",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_594_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-06T20:15:41Z",
+  "written_at": "2026-11-06T22:03:38Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The badges on the live Catalog",
-    "text": "Build the Statewide recommendation and CPL-AI course match badges, the Recommendations filter and the in-panel CPL-AI recommendation into the public Credential Catalog, as the approved mock shows. The Library side lane's own handoff is docs/library_handoff.md."
+    "title": "Add your credential",
+    "text": "When the Catalog's search finds nothing, a short form adds a credential through one INSERT-only function beside credential_priority_request, verified in the Exhibits Requests view before it shows; Governance maps the write beside DR-31 first."
   },
   "changes": [
+    {
+      "at": "2026-11-06T21:46:00Z",
+      "text": "Sam's 1 yes, 2 yes applied: the Spanish 1 and 2 overrides retired, the Wheel Alignment merge confirmed, and the rename folded ServSafe Food Protection Manager and the two Wheel Alignment titles (#2855)."
+    },
+    {
+      "at": "2026-11-06T21:39:00Z",
+      "text": "The Credential Catalog's badges, the Recommendations filter and a college's first view of the recommended credentials it could adopt (#2856)."
+    },
+    {
+      "at": "2026-11-06T21:15:00Z",
+      "text": "Ask us to prioritize only where no college has articulated the credential (#2854)."
+    },
     {
       "at": "2026-11-06T18:50:00Z",
       "text": "CPL-AI hosted whole (33,232 pairs with full reports) and joined to the common exhibits; the Exhibits view CPL-AI recommendations (#2851)."

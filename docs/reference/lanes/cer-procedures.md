@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-11-03
+updated: 2026-11-06
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -68,19 +68,27 @@ the pairs on the List; and *"I do want the CPL-AI recs on public view"* (answers
 `kb/cpl_ai/hosted/` holds all 33,232 pairs with full reports (`kb/_harvest_cpl_ai_reports.py`, `kb/_build_cpl_ai_hosted.py
 --check`); `kb/cpl_ai/exhibit_join.json` (`kb/_build_cpl_ai_join.py --check`, a reason per call; a curator's correction
 wins): 46 exact, 8 related, 61 none once tonight's fold lands. Exhibits shows them at `#exhibits/cpl-ai` and on each List
-row (`#exhibits/list/cplai`, #2853). The seven title moves and the ServSafe fold are written
-(`kb/cer_decisions_out/2026-11-06/`, receipt `applied_2026-11-06T19-49-56Z.json`): the nightly fold re-points the five
-titles; `cred-rename-apply.yml` refuses the ServSafe merge while three of Sam's 2026-10-27 overrides are unsafe (Spanish 1
-and 2, spent; Wheel Alignment, a rename into an existing title with no merge confirm). Sam answered in session (2026-11-06, "1 yes, 2 yes"):
-retire the Spanish rows, confirm the Wheel Alignment merge; the next session writes both (`docs/library_handoff.md`). **The Catalog's badges** (Sam: *"like badges on the credential"*): *Statewide
-recommendation* (pale fill, 153) and *CPL-AI course match* (dashed outline, 42), each opening its panel section; the
-panel resizes and shows a CPL-AI recommendation in place, its confidence first. Mock approved (*"looks good"*), Version 2:
-https://claude.ai/artifact/2FhevexZqhwdyMyuVT9vFu. **Next:** build the badges and the in-panel recommendation into
-`library/adopt/`; Request Quick Adopt beside a strong course where a college awards it; *Add your credential* (Sam:
-"yes, build the add your credential route"; a second public write: Governance first, DR-31); Sierra's CPL-AI answers. **A college's first view (Sam, 2026-11-06):** *"select Allan Hancock filter, you should immediately be presented with any
-statewide or AI recommended exhibits with Request Adopt buttons on all their local aligned courses."* **The ask rule (Sam, 2026-11-06):** *Ask us to
-prioritize* only where no college has articulated the credential; an articulated one offers Request Quick Adopt; branch
-`claude/catalog-ask-vs-adopt` carries it (92/93 at the emergency checkpoint).
+row (`#exhibits/list/cplai`, #2853). The seven title moves are written (`kb/cer_decisions_out/2026-11-06/`) and the nightly fold re-points the
+five titles. **Sam's "1 yes, 2 yes" is applied (SkyBeacon, #2855):** the applier gained a guarded retire path (`retires`
+in a plan: a named curator row goes only while it still holds that value from that reviewer; the receipt keeps it whole;
+`--rollback` reinstates it); plan `kb/cer_decisions_out/2026-11-06-2/` retired his four spent 2026-10-27 Spanish 1 and 2
+rows and confirmed the Wheel Alignment merge (receipt `applied_2026-11-06T21-24-44Z.json`: 1 written, 4 retired), and
+`cred-rename-apply.yml` (run 42298978785) then folded ServSafe Food Protection Manager into its Certification title and
+the two Wheel Alignment titles into one (2 confirmed merges, apply_safe). **The Catalog's badges and a college's first
+view are live with the next daily run (SkyBeacon, #2856):** *Statewide recommendation* (152 credentials across every
+credit status) and *CPL-AI course match* (43) on cards, the List's Recommended column and the panel; the Recommendations
+filter; a single college pick opens on *Recommended credentials <college> could adopt* (no award there, an aligned course
+there: the course mapped in MAP or CPL-AI's Strong evidence and Faculty interpretation courses), each with Request Quick
+Adopt (42 for Allan Hancock); the panel's CPL-AI section with a college picker and the full recommendation read in place
+from `kb/cpl_ai/hosted/shards/`. The builder writes `library/adopt/adopt_ai.json`, read after first paint. Sam's words: *"like badges on the credential"*; *"If you're Allan Hancock College and you open the cred catalog and
+select Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
+Request Adopt buttons on all their local aligned courses."* **The ask rule is live (#2854):** *Ask us to prioritize* only
+where no college has articulated the credential, the *Worth a faculty review* cards included; an articulated one offers
+Request Quick Adopt. **Next:** *Add your credential* (Sam: "yes, build the add your credential route"): when the search
+finds nothing, a short form (name, issuer, kind, a link; college and email optional) through one INSERT-only function
+beside `credential_priority_request`, its rows in the Exhibits Requests view with Verify, Merge, Decline; nothing shows
+until verified; Governance maps the write beside DR-31 and the privacy ADR's check before it ships; record the state's
+license lists in `data_sources`. Then Quick Adopt beside a strong course, and Sierra's CPL-AI answers.
 
 **The Credential Catalog (built SkyTwinberry, 2026-10-31; Sheets 147 and 148).** `library/adopt/`, Pages-served, linked
 from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_data.json` daily from
@@ -162,21 +170,7 @@ Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
 
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
-**IB on the AP pattern (SkyInkberry, 2026-11-01; Sam kept it, Open Asks Sheet 150 card 1).**
-`kb/_ib_official_titles.py` holds IB's `Diploma Programme` subjects, current and retired, at IB's levels, named as the
-reference and the Cal-GETC IB list write them (*IB Language A: Literature HL*). A missing level takes HL, the
-exam colleges award IB credit for, and an SL-only subject takes SL (*IB World Religions SL*). The exam's language folds
-into the subject; a Language A exam in another language keeps *(Non-English)*. Brand-family's `ib` lane runs beside
-`ap`. The fold merged 49 IB credentials into 24 (receipt `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json`);
-the issuer reads *International Baccalaureate Organization (IBO)* everywhere. Eight live rows moved under `cer-ib-fold-skyinkberry@bot`, one of them Sam's issuer save
-(`ib_kb_curation_update_receipt.json`). Guard: `tests/ib_official_titles_test.py`.
-
-**CLEP on the same pattern (SkyTeaberry, 2026-11-01; Sam, Sheet 150 card 2: fold; #2633).** `kb/_clep_official_titles.py`
-holds College Board's 34 CLEP exams and the retired ones, one credential per exam: a language exam's levels fold in as
-score bands (*CLEP Spanish Language*), the numbered exams take 1 and 2 with no period subtitle, a renamed exam takes its
-current name (*CLEP Information Systems*). Brand-family's `clep` lane runs after `ib`. 48 CLEP names became 35; 33 live
-assignments and 3 panel markers moved under `cer-clep-fold-skyteaberry@bot` (`clep_kb_curation_update_receipt.json`);
-the two Level III markers stay under their old keys. Guard: `tests/clep_official_titles_test.py`.
+**IB and CLEP on the AP pattern (SkyInkberry and SkyTeaberry, 2026-11-01; Sam kept both, Sheet 150 cards 1 and 2)** moved verbatim to `docs/cer_v2_redesign_lessons.md` (*Moved from the lane, SkyBeacon, 2026-11-06*).
 
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
 `credential_retires` and move the panel rows they list (receipts `kb/receipts/credential_panel_move_*.json`; a row

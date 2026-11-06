@@ -2,8 +2,8 @@
 title: Refresh the access token before every write (don't trust a format-valid JWT)
 kb-status: published
 created: 2026-06-26
-updated: 2026-06-26
-tags: [methodology, supabase, auth, jwt, magic-link, raci, debugging]
+updated: 2026-11-06
+tags: [methodology, supabase, auth, jwt, magic-link, raci, debugging, session-keeper]
 related: ["[[docs/cobi_raci_nudge_lessons]]", "[[CLAUDE]]"]
 ---
 
@@ -77,3 +77,20 @@ a format-only check.
 > Guard: `tests/cer_token_refresh.test.js`. Remaining known holder of the
 > pattern-without-refresh: none found (unified_courses.js has its own rolling
 > refresh; raci.js and CER now both ensureFresh).
+
+## The draw-time half (2026-11-06)
+
+Renewing before a write is half the rule. A page that decides "is a reviewer signed in?" once, when it draws, and
+checks a strict expiry, reads a lapsed token as signed out and keeps that answer until a reload, even though the shared
+keeper (`cpl_session.js`) renews the token a second later and the header reads *Signed in*. Two places it bit on one
+day: the CPL Commons hid **Mark done** and never read a reviewer's done marks, so a decision Sam had marked done on
+another tab stayed waiting; COCI Lookup (Courses and Programs) hid its save controls. The fix has two parts, and a
+surface needs both:
+
+- **Draw on a renewable session**: an email and either a fresh token or a refresh token. The save still renews first
+  and then asks for a fresh one, so a renewal that fails surfaces at the save, where a message can say so.
+- **Redraw on the keeper's announcement** (`cpl-session-changed`, fired after every renewal and sign-in). A surface that
+  listens recovers without a reload; one that does not stays wrong until the person reloads, which hides the cause.
+
+Diagnosis tell: the header says *Signed in* while one panel offers only a sign-in line, and a reload fixes it.
+

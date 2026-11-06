@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 577,
-  "moniker": "SkyKumquat and SkyBarnard",
+  "session": 595,
+  "moniker": "SkyBeacon",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_578_handoff.md",
+  "handoff": "docs/session_594_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -20,13 +20,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-05T03:19:16Z",
+  "written_at": "2026-11-06T22:03:38Z",
   "project": "subjects",
   "next_step": {
     "title": "Check alignment on CR, Programs and Courses",
     "text": "The Subjects List's codes are applied; carry Check alignment to the other Commons Lists (edit.extra; the worked examples are codeAudit and exhibitAudit)."
   },
   "changes": [
+    {
+      "at": "2026-11-06T21:14:00Z",
+      "text": "A recorded note settles a weak mnemonic, and the anchor findings are their own re-key item, so nothing waits on a curator (#2857)."
+    },
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "Saves read the sign-in at write time, and a lapsed sign-in says so"
@@ -54,10 +58,6 @@
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "The side session's handoff: docs/cer_redesign_handoff.md (SkyJujube to SkyKumquat)."
-    },
-    {
-      "at": "2026-11-05T02:52:00Z",
-      "text": "Sam's eleven codes from 2026-11-04 landed with their identities (#2790): 2,389 ids re-keyed by prefix, the database notes re-keyed and read back."
     }
   ]
 }

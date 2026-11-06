@@ -8234,11 +8234,12 @@
       "jwt",
       "magic-link",
       "raci",
-      "debugging"
+      "debugging",
+      "session-keeper"
      ],
      "title": "Refresh the access token before every write (don't trust a format-valid JWT)",
      "type": "methodology",
-     "updated": "2026-06-26"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-09-25",
@@ -13745,7 +13746,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 98,
+   "count": 99,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14648,10 +14649,10 @@
       "library",
       "credential-catalog",
       "cpl-ai",
-      "exhibits",
+      "commons",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyLantern, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyBeacon, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },
@@ -15355,6 +15356,20 @@
      "updated": "2026-08-19"
     },
     {
+     "created": "2026-11-06",
+     "governs": [],
+     "path": "docs/library_lessons_archive_2.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "library",
+      "archive"
+     ],
+     "title": "The Library and its filer \u2014 lessons, archive 2 (2026-10-24 to 2026-10-29)",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-08-26",
      "governs": [
       "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v2.docx"
@@ -15713,7 +15728,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-03"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-09-08",
@@ -16137,7 +16152,7 @@
      ],
      "title": "Reviewer session lifetime & scope \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-09-09",
@@ -16237,7 +16252,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-04"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-08-28",
@@ -26102,5 +26117,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1397
+ "total": 1398
 }
