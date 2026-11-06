@@ -13,9 +13,11 @@ related:
 > Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 592 names the main queue's
 > moniker, and this file stays out of its way. Checkpoint under context pressure (2026-11-06, ~14:40Z, the meter at
 > ~100,000 left): the lane file, this handoff, `cpl_memory` and the sheet's card are refreshed. Skipped: `kb/README.md`,
-> `README.md`, the lessons doc, KB notes, the pipeline view, the other status files, and **publishing** Open Asks Sheet
-> 162 (built in the vault, unpublished; the next session publishes it with `capabilities: {db: {}, comments: {}}` and
-> hands Sam the link).
+> `README.md`, the lessons doc, KB notes, the pipeline view, the other status files, Open Asks Sheet 162 is published
+> (https://claude.ai/artifact/AGrQYmaAd6uHAPwXoi3epE) at Sam's word after the port merged (#2843); the vault PR
+> CPLBrain#690 carries its source and merges on its coverage check. EMERGENCY checkpoint at ~41,000 tokens left: this
+> handoff, the lane and `cpl_memory` are current; the INDEX rebuild, To-Do feed, pipeline tab, kb/README, root README,
+> lessons doc, KB notes and vault session note are deferred to SkyLoop.
 
 Your moniker is **SkyLoop**. You pick up after SkyAerial (2026-11-06) on the **Credential Catalog** (the Exhibits
 lane's public face, [`cer-procedures`](reference/lanes/cer-procedures.md), *The Credential Catalog, ported from the
@@ -36,8 +38,8 @@ mock*) and the Library ([`library`](reference/lanes/library.md)).
 ## Open work, in order
 1. **Merge the port PR on green `test`**, then **Sam's eyes on the live page** once Pages deploys (the matrix, the List
    with Not yet evaluated, a panel's analysis on CompTIA Security+).
-2. **Publish Open Asks Sheet 162** (the statewide intake card; `CPLBrain/decision-sheets/open-asks/2026-11-06-open-asks-162.html`),
-   put its link in CLAUDE.md §11, and read the reply before building the write surface.
+2. **Read Sheet 162's reply** (https://claude.ai/artifact/AGrQYmaAd6uHAPwXoi3epE) before building the statewide write surface;
+   merge CPLBrain#690 if it is still open.
 3. **The Commons Exhibits List** takes the catalog's shape (the lane's *To add* list).
 4. **Jev for the analysis:** a Score question per skill area, calibrated against the 25 Security+ articulations;
    replaces the lexical score in `kb/_build_adopt_align.py` in place.
