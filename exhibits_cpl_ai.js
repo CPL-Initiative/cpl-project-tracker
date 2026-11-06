@@ -115,9 +115,11 @@
   /* A CPL-AI college as MAP names it (the join file's crosswalk), or null. */
   function mapCollege(name) { return S.join && S.join.colleges ? S.join.colleges[name] || null : null; }
 
-  function open(code, pairId) {
+  /* open(code) a certification; open(null) the list; open(null, null, q) the list searched to q (the Exhibits List's row
+     names an exhibit with several certifications this way; the list's search reads the exhibit names). */
+  function open(code, pairId, q) {
     S.code = code || null; S.pair = pairId || null; S.shown = BATCH;
-    if (!code) { S.q = ""; S.college = ""; S.tiers = { "1": true, "2": true, "3": true }; S.has = ""; }
+    if (!code) { S.q = q || ""; S.college = ""; S.tiers = { "1": true, "2": true, "3": true }; S.has = ""; }
     if (code) { loadShard(code); var j = joinOf(code); if (j && j.kind !== "related") loadAdopt(); }
     changed();
   }

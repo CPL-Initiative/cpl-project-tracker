@@ -1953,7 +1953,8 @@
     ["waiting", "Folds waiting for the apply"],
     ["statewide", "Based on statewide"],
     ["local", "Local only"],
-    ["left", "A title that has left MAP"]
+    ["left", "A title that has left MAP"],
+    ["cplai", "CPL-AI recommendations"]
   ];
   /* Outcomes match (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): the credentials whose articulated
      courses' SLOs match a row's at cosine 0.5 or more through distinct courses, from kb/exhibit_slo_neighbors.json
@@ -1962,6 +1963,45 @@
      reviewer acts on it with Move, and nothing moves by itself. Read once a visit, with the AI sort's order, on the List's
      first draw: the group a hint names is the one the List draws. */
   var SLO_NEIGHBORS_URL = "kb/exhibit_slo_neighbors.json";
+  /* CPL-AI on the List (Sam, 2026-11-06: "have the Exhibits List row name its CPL-AI pairs"): kb/cpl_ai/exhibit_join.json's
+     by_exhibit (kb/_build_cpl_ai_join.py) names, under a row's title, each CPL-AI certification joined to it, its pairs and
+     the colleges holding a Strong evidence course, and opens it in the CPL-AI recommendations view. Read once a page load:
+     the snapshot is frozen. A related join says so; it is a lead, never the credential's own. */
+  var CPLAI_JOIN_URL = "kb/cpl_ai/exhibit_join.json";
+  var CPJ = { data: null, error: null, loading: null };
+  function listCplAiLoad() {
+    if (CPJ.data || CPJ.loading) return CPJ.loading || Promise.resolve(CPJ.data);
+    CPJ.loading = fetch(CPLAI_JOIN_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { CPJ.data = d; }, function (e) { CPJ.error = errText(e); })
+      .then(function () { CPJ.loading = null; });
+    return CPJ.loading;
+  }
+  function listCplAi(r) { return CPJ.data && CPJ.data.by_exhibit ? CPJ.data.by_exhibit[r.ut] || [] : []; }
+  function openCplAi(code, q) {
+    state.view = "cpl-ai"; state.cplAiCode = code; state.cplAiQ = q || null; state.note = "";
+    if (window.CPL_EXHIBITS_CPLAI) { window.CPL_EXHIBITS_CPLAI.open(code, null, q); state.cplAiCode = undefined; state.cplAiQ = null; }
+    render();
+    loadCplAi();
+    var h = document.querySelector(".exh-h");
+    if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
+  }
+  function cplAiSentence(c) {
+    return c.title + (c.kind === "related" ? " (a related certification)" : "") + ": " + fmt(c.pairs) + " pairs, "
+      + fmt(c.strong_colleges) + (c.strong_colleges === 1 ? " college holds" : " colleges hold") + " a Strong evidence course";
+  }
+  /* The row's line is short, so it reads in the title column; its full sentence is the word's title and label, and the
+     side panel spells each out. One certification opens on itself; several open the CPL-AI list searched to this exhibit. */
+  function listCplAiLine(r) {
+    var cs = listCplAi(r);
+    if (!cs.length) return null;
+    var pairs = cs.reduce(function (n, c) { return n + c.pairs; }, 0), full = cs.map(cplAiSentence).join("; ");
+    var words = "CPL-AI, " + (cs.length > 1 ? fmt(cs.length) + " certifications, " : "") + fmt(pairs) + " pairs"
+      + (cs.every(function (c) { return c.kind === "related"; }) ? ", related" : "");
+    var b = word(words, function () { if (cs.length === 1) openCplAi(cs[0].code); else openCplAi(null, r.ut); },
+      { title: full, "aria-label": "Open in the CPL-AI recommendations: " + full });
+    return el("span", { cls: "exh-l-sub exh-l-cai" }, [b]);
+  }
   var SLO_SHOW = 3;
   function listSloLoad() {
     var L = listState();
@@ -2506,6 +2546,7 @@
             .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
         }
         if (!L.sloP) listSloLoad().then(function () { if (state.view === "list") render(); });
+        if (!CPJ.data && !CPJ.loading && !CPJ.error) listCplAiLoad().then(function () { if (state.view === "list") render(); });
         if (L.f === "left") {
           if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
           wrap.appendChild(listLeftNote());
@@ -2524,6 +2565,7 @@
         if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
         if (L.f === "local" && listBasis(r) !== "Local") return false;
         if (L.f === "left" && !listLeft(r).length) return false;
+        if (L.f === "cplai" && !listCplAi(r).length) return false;
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
         return true;
       },
@@ -2535,11 +2577,13 @@
         if (id === "outcomes") return !(L.slo && L.slo.neighbors);
         if (id === "mine" || id === "waiting") return state.cs.overlayOk !== true;
         if (id === "left") return !LEFT.by;
+        if (id === "cplai") return !CPJ.data;
         return false;
       },
       onFilter: function (id, api) {
         if (id === "outcomes") return listSloLoad();
         if (id === "left") return listLeftLoad();
+        if (id === "cplai") return listCplAiLoad();
         return id === "suggested" && !listState().aiData ? api.aiLoad() : null;
       },
       hay: function (r) {
@@ -2547,7 +2591,8 @@
         // The local titles and other issuers too, as the retired Credentials view's search found them.
         return [r.ut, listTitle(r), cur.issuer, (r.issuers || []).join(" "), cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
           r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r)
-          + " | " + (r.raw_variants || []).map(function (v) { return v.r; }).join(" | ");
+          + " | " + (r.raw_variants || []).map(function (v) { return v.r; }).join(" | ")
+          + " | " + listCplAi(r).map(function (c) { return "CPL-AI " + c.title; }).join(" | ");
       },
       afterBar: function (wrap) {
         var L = listState(), cs = state.cs;
@@ -2593,6 +2638,8 @@
         var om = listOutcomeHints(r);
         if (om.length) out.push(el("span", { cls: "exh-l-sub exh-l-om", text: "Outcomes match: "
           + om.slice(0, SLO_SHOW).map(listOutcomeLabel).join("; ") + (om.length > SLO_SHOW ? "; " + (om.length - SLO_SHOW) + " more" : "") }));
+        var cai = listCplAiLine(r);
+        if (cai) out.push(cai);
         return out;
       },
       drawer: listDrawerFill,
@@ -2745,6 +2792,15 @@
       out.push(el2("p", { cls: "exh-muted exh-small", text: "The reference still folds " + (gone.length === 1 ? "this title" : "these titles") +
         " under this credential, and no MAP exhibit uses " + (gone.length === 1 ? "it" : "them") + " any more. Nothing breaks while " + (gone.length === 1 ? "it stays" : "they stay") + "; a curator keeps or retires each." }));
       out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return el2("li", { text: t }); })));
+    }
+    var cai = listCplAi(r);
+    if (cai.length) {
+      out.push(h.heading("CPL-AI recommendations"));
+      out.push(el2("ul", { cls: "exh-pn-ul" }, cai.map(function (c) {
+        return el2("li", null, [word(c.title, function () { openCplAi(c.code); }, { "aria-label": "Open " + c.title + " in the CPL-AI recommendations" }),
+          (c.kind === "related" ? " (a related certification)" : "") + ": " + fmt(c.pairs) + " pairs, " + fmt(c.strong) + " with Strong evidence; "
+          + fmt(c.strong_colleges) + (c.strong_colleges === 1 ? " college holds" : " colleges hold") + " a Strong evidence course."]);
+      })));
     }
     var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
     out.push(h.heading("Members"));
@@ -3156,7 +3212,7 @@
      kb/_build_cpl_ai_hosted.py); this tab loads it on first open and mounts it on every render. */
   function loadCplAi() {
     var M = window.CPL_EXHIBITS_CPLAI;
-    if (M) { if (state.cplAiCode !== undefined) { M.open(state.cplAiCode); state.cplAiCode = undefined; } return M.load().then(function () { render(); }); }
+    if (M) { if (state.cplAiCode !== undefined) { M.open(state.cplAiCode, null, state.cplAiQ); state.cplAiCode = undefined; state.cplAiQ = null; } return M.load().then(function () { render(); }); }
     if (state.cplAiLoading || !window.CPL_TABS || !window.CPL_TABS.loadScript) return Promise.resolve();
     state.cplAiLoading = true;
     return new Promise(function (resolve) {
@@ -3477,6 +3533,7 @@
     _sweepIssuer: sweepIssuer,
     loadRules: loadRules, _requestRows: requestRows, _requestState: requestState, _sendRequest: sendRequest,
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
-    _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons
+    _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
+    _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad
   };
 })();

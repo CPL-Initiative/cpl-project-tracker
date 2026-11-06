@@ -1,7 +1,7 @@
 ---
-title: Library — side-lane handoff (SkyLoop, beside the CPL Queue routine)
+title: Library — side-lane handoff (SkyLantern, beside the CPL Queue routine)
 date: 2026-11-06
-tags: [handoff, library, credential-catalog, noncredit, side-lane]
+tags: [handoff, library, credential-catalog, cpl-ai, exhibits, side-lane]
 related:
   - "[[docs/reference/lanes/cer-procedures]]"
   - "[[docs/reference/lanes/library]]"
@@ -10,53 +10,91 @@ related:
 
 # Library — side-lane handoff
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: the main queue's handoff names its own
-> moniker, and this file stays out of its way. Light checkpoint (SkyLoop, 2026-11-06, ~16:30Z): the two lane files, this
-> handoff, `cpl_memory` (two rows), the docs lint and the INDEX rebuild. Skipped: `kb/README.md`, `README.md`, the lessons
-> doc, KB notes, the pipeline tab (nothing moved there). SkyAerial's deferred set (To-Do feed, pipeline tab, kb/README, root
-> README, lessons doc, KB notes) stays deferred: none of it changed this run.
+> Side-lane handoff; it does not replace the numbered `session_<N>_handoff.md`. **Full checkpoint** (SkyLantern,
+> 2026-11-06, ~20:30Z, at the context WARN): lint, the `cer-procedures` lane (compacted back under budget), `kb/README.md`,
+> `docs/library_lessons.md`, a KB note, the INDEX rebuild, this handoff, `cpl_memory`, the vault note and
+> `kb/status/exhibit.json`. Skipped: the pipeline tab (no M-ID phase, auditor count or re-mint moved), `README.md`, and
+> `kb/status/program-requirements.json` (the main queue's file; this lane did not touch the harvest).
 
-Your moniker is **SkyLantern**. You pick up after SkyLoop (2026-11-06) on the **Credential Catalog** (the Exhibits lane's
-public face, [`cer-procedures`](reference/lanes/cer-procedures.md)) and the Library ([`library`](reference/lanes/library.md)).
+Your moniker is **SkyBeacon**. You pick up after SkyLantern on the **Credential Catalog** and **CPL-AI**
+([`cer-procedures`](reference/lanes/cer-procedures.md)), with the Library ([`library`](reference/lanes/library.md)).
 
-## What shipped (SkyLoop, 2026-11-06)
-- **Sam's noncredit visual, Draft 1** (*Noncredit to Credit: How Noncredit Learning Can Result in Credit*, `cpl_library`
-  5e29e1d3…): mock https://claude.ai/artifact/Wi6htw18rtQ9WCM6ajtmnM (Version 3), draft row 5b5f9e8a… on the record,
-  source `CPLBrain/04-projects/cpl-initiative/noncredit-to-credit/` (CPLBrain PR on `claude/jolly-newton-aey20k`). His three
-  reactions of the hour are in it, and his correction (the Chancellor's film is her address to the 7th Annual CPL Summit).
-  **Published at his word** (*"visual looks great! go with it"*, ~16:10Z): the Pages copy
-  `library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/` (live once the tracker PR merges and Pages
-  deploys), the record Approved, Version 1, listed in the public library (receipt
-  `kb/receipts/cpl_library_noncredit_draft1_2026-11-06_skyloop.sql`).
-- **The catalog's statewide route, as Sheet 162 ruled it:** *Ask us to prioritize this credential*; one INSERT-only function,
-  one aggregate count, the count beside the credential; DR-31; migration routed through `supabase-migrate.yml`
-  (`kb/migrations/.apply`; the MCP apply waited on a confirmation and timed out). Tracker PR on `claude/jolly-newton-aey20k`.
-- **The Exhibits tab's Requests view** (`#exhibits/requests`): the public's asks, one line per credential, most asked first; the
-  views row and Progress count the asks still new (#2848).
-- Merged: #2846 (SkyBackflip's item 0), #2847 (the catalog's route, the visual's Pages copy), #2848, CPLBrain#692.
-
-## Open work, in order
-1. **Nothing is open from SkyLoop's run.** #2847 and #2848 merged (Sam: "merge the tracker PR when test is green"); the
-   migration is applied (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`); the visual and the
-   catalog's form are live on Pages; the Requests view reaches COBI with the next Pages deploy.
-2. **The noncredit visual is public once the PR merges:** run `npm run a11y -- library-noncredit` on the Pages copy and note
-   the result on the record's Version 1 (a receipted update); any later change Sam asks for goes through the card's Revise
-   (the page is its own source; the vault keeps the file).
-3. **The Commons Exhibits List** takes the catalog's shape (the lane's *To add* list). Done this run: the public requests
-   as the Exhibits tab's Requests view and a Progress item. Next: routing a request from its line (a status stamp), credit
-   status as one band across the four classes, the analysis for faculty in the side panel.
-4. **Jev for the analysis:** a Score question per skill area, calibrated against the 25 Security+ articulations; replaces the
-   lexical score in `kb/_build_adopt_align.py` in place.
-5. The Library lane's standing *Next*.
+## What shipped (SkyLantern, 2026-11-06)
+- **#2850** the Catalog's List one line a credential (status and the ask as columns), tiles that follow every filter but
+  Credit status, lazy loading, Worth a faculty review above.
+- **#2851** CPL-AI hosted whole (`kb/cpl_ai/hosted/`, 33,232 pairs with full reports) and joined to the common exhibits
+  (`kb/cpl_ai/exhibit_join.json`); the Exhibits view `#exhibits/cpl-ai`.
+- **#2852** the seven CPL-AI title moves and the ServSafe fold as a reviewed plan, applied (receipt
+  `kb/cer_decisions_out/2026-11-06/applied_2026-11-06T19-49-56Z.json`, 7 inserted, 5 replaced, 0 held); the applier takes
+  the revise shape only.
+- **#2853 (open, CI)** the Exhibits List names each row's CPL-AI pairs; this checkpoint rides it.
+- **CPLBrain#693** the braindump of Sam's CPL-AI and badges words.
+- **The badges mock**, approved: https://claude.ai/artifact/2FhevexZqhwdyMyuVT9vFu (Version 2, current).
 
 ## Decisions Sam made this run
-- On the noncredit visual (in session, 15:49Z and 15:58Z): the student card names the college landing page as an
-  alternative; the intro stays general (*"I forgot about Calbright!"*); *merits* for *carries* wherever possible; naming
-  colleges and programs in the six ways is fine; embed links wherever they fit (Cabrillo's mirrored-course examples).
+All in session, 2026-11-06: host CPL-AI whole and frozen; join the 115; fix the seven titles; fold the ServSafe
+duplicate; name the pairs on the List; feature recommendations as badges (*"like badges on the credential"*); *"I do want
+the CPL-AI recs on public view"* (answers Sheet 147 card 5); the mock *"looks good"*, with a resizable panel and the
+recommendation shown in place (*"trying to keep them on the main page and not have to hop around"*).
 
-## Let go
-Nothing: both tracker PRs and the CPLBrain PR merged and are unsubscribed, the two safety-net check-ins were deleted, and the
-artifact watch on the mock ends with the session.
+> **EMERGENCY checkpoint, ~20:25Z** (the context meter at its last line, after the full checkpoint `f41df3bf`): only
+> this handoff, the lane line and one `cpl_memory` row were refreshed after it. Not refreshed since the full one:
+> the INDEX rebuild, the lessons doc, `kb/README.md`, KB notes, the vault session note (step 11, never written this run:
+> write it, with Sam's words on Cabrillo below), the status files, the pipeline tab.
 
-> *Greetings, you are SkyLantern, a Library side session beside the CPL Queue routine, see SkyLoop's handoff —
+**Sam, ~20:20Z, on the live Catalog:** *"I sorted for Cabrillo and see all their 207 exhibits and the ones they haven't
+evaluated yet waiting for some attention--it looks easier to navigate that we had it thus far AND we're giving the user far
+more data in the process."* And his rule: *Ask us to prioritize* only where no college has articulated the credential; an
+articulated one offers Request Quick Adopt to its card on the MAP dashboard; the Worth a faculty review cards need the ask.
+
+## Open work, in order
+00. **Sam answered "1 yes, 2 yes" (~20:30Z)**: (1) retire the spent overrides on `_CREDENTIAL_REVIEW::Spanish 1` and
+   `Spanish 2` (four rows by slee@cccco.edu, 2026-10-27); (2) confirm the merge of `Wheel Alignment, Chassis Dynamics, and
+   ADAS` into `Wheel Alignment, Chassis Dynamics, ADAS`. Plan `kb/cer_decisions_out/<date>/` with his words as the ruling:
+   (2) is an override row (already live, reads "written") plus a `unified_title_merge_confirm` insert, which
+   `kb/_cer_decision_apply.py` takes today; (1) needs a retire path the applier lacks (a guarded DELETE of named live rows
+   whose receipt keeps them, so `--rollback` restores them; Rule 10 a2), with a test. Dry run, commit, then
+   `cred-rename-apply.yml` (read `kb/cred_rename_dryrun/alias_map.json`'s `apply_safe` first): it carries the ServSafe fold.
+0. **Finish branch `claude/catalog-ask-vs-adopt`** (commit `55c0f660`, pushed, no PR yet): Sam's ask rule in
+   `library/adopt/adopt.js` (articulated cards and panels carry no ask, Being reviewed included; each Worth a faculty
+   review card asks and opens the request via `openReview`). `tests/public_adopt.test.js` reads 92/93: find the one
+   failing check (`node tests/public_adopt.test.js | grep -v ^PASS`), fix it, run `npm run a11y -- public-adopt`, open the
+   PR, merge on green.
+1. **Merge #2853** when `test` is green (a wake is set for 20:36Z).
+2. **Sam's requirement for it (~20:40Z, verbatim):** *"If you're Allan Hancock College and you open the cred catalog and
+   select Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
+   Request Adopt buttons on all their local aligned courses."* So a college pick opens on those first: each credential
+   with a statewide recommendation or a CPL-AI match that the college does not yet award, listing the college's own
+   aligned courses (its could-adopt course; its CPL-AI-rated courses, strongest first), each with Request Quick Adopt to
+   a building college's exhibit card on the MAP dashboard. Where no college has built an exhibit yet, Quick Adopt has
+   nothing to adopt: that credential offers *Ask us to prioritize* instead (Sam's ask rule). **Order (Sam, ~20:45Z):**
+   *"before we show those, we list the statewides and AIs that the college could adopt"*: the first block is the
+   statewide and CPL-AI credentials the college could adopt (no award there yet, an aligned course there), then the rest
+   of the college's view.
+   **The badges on the live Catalog** (`library/adopt/`), as the mock shows: *Statewide recommendation* (from
+   `fact-sheet/statewide_recs.js`), *CPL-AI course match* (from `kb/cpl_ai/`), the Recommendations filter, the
+   Recommended column, the panel's statewide and CPL-AI sections, the recommendation in place with its confidence, the
+   panel's existing resize. Request Quick Adopt beside a strong course where a college awards it. Tests and `npm run
+   a11y -- public-adopt public-adopt-list`.
+3. **Answered (see item 00):** (1) retire the spent Spanish 1 and 2 overrides, (2) confirm the Wheel Alignment
+   merge, so `cred-rename-apply.yml` can carry the ServSafe fold. Put it on the next sheet if he has not answered.
+4. **Add your credential: BUILD IT (Sam, ~20:55Z: "yes, build the add your credential route").** Design as advised in
+   session: when the Catalog's search finds nothing, *Add it* with the search words filled in; a short form (name, issuer,
+   kind: license, certification or badge; a link to the issuer's page, a license lookup or the badge; college and email
+   optional); one INSERT-only function beside `credential_priority_request`, its rows in the Exhibits Requests view with
+   Verify, Merge into an existing credential, Decline; nothing a visitor types shows until verified; a verified one joins
+   the Catalog as *Not yet evaluated* with its asks counted. Before it ships: Governance maps the new write
+   (`kb/governance_surface_map.json`, beside DR-31) and the privacy ADR's check (email optional, never shown); migration
+   through `supabase-migrate.yml`; tests and `npm run a11y`. Also record the state's license lists (the Department of
+   Insurance's license types first) in `docs/reference/data_sources.md`. Pierce's reply was drafted in session for Sam to
+   send. Previously: a second public write beside *Ask us to prioritize*, verified
+   by the team before it shows; Governance first (DR-31, the privacy ADR). The state's license lists as a data source
+   (the Pierce email: three insurance licenses no one holds).
+5. Offered, unanswered: a draft reply to the Pierce Articulation Officer (Sam sends).
+6. The Library lane's standing *Next*.
+
+## Watching
+#2853 (subscribed; check-in `trig_01TRiLT8q4XVfA9WayRjrpGB`); the mock's artifact watch. Let both go at sign-off.
+
+> *Greetings, you are SkyBeacon, a Library side session beside the CPL Queue routine, see SkyLantern's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*

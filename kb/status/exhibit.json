@@ -1,142 +1,31 @@
 {
   "schema": 1,
   "session": 575,
-  "moniker": "SkyJujube",
+  "moniker": "SkyLantern",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_575_handoff.md",
-  "calls": [
-    {
-      "title": "Merge EACR into the CER as one Exhibits tab",
-      "text": "Answered on Open Asks Sheet 147 card 1: one Exhibits tab, Review built first. The CER and EACR tabs stay until it carries what they show.",
-      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "merge"
-      }
-    },
-    {
-      "title": "The high school and ROP rule, and the AP exception",
-      "text": "Answered on Open Asks Sheet 147 card 2: built as procedure high-school-rop; the dry run settles 55 and holds 29 on an issuer conflict.",
-      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "rule"
-      }
-    },
-    {
-      "title": "The public adoption page: settled credentials only, in the CPL/AI look",
-      "text": "Answered on Open Asks Sheet 147 cards 3 and 4: settled credentials only, in Malone's CPL/AI look. Its name is still Sam's to give.",
-      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "stamped; cpl-ai"
-      }
-    },
-    {
-      "title": "Fold the reference's AP titles under College Board's official names",
-      "text": "Answered fold: applied, 14 merges, 7 moves and 42 saved assignments (#2617).",
-      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "fold"
-      }
-    },
-    {
-      "title": "How a rule added in the Exhibits tab gets run",
-      "text": "Answered routine: the lane's next build.",
-      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "routine"
-      }
-    },
-    {
-      "title": "The issuer of a course aligned to an ASE test",
-      "text": "Answered in chat: the college or school that teaches it; ASE fills only an ASE certification's title (#2626).",
-      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2626",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "Agree on your call on the college as issuer"
-      }
-    },
-    {
-      "title": "ASE course titles: the test's name with a short tag",
-      "text": "Answered in chat: drop the ASE override on the two local titles and take the long form, Automotive Technology (ASE A5 Brakes), for local exhibits alone; the sweep already proposes it (#2629).",
-      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2629",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "Drop the ASE override; go with the long form"
-      }
-    },
-    {
-      "title": "Keep the IB fold under IB's own subject names",
-      "text": "Answered keep: the IB fold stands, 49 IB credentials into 24 (#2632).",
-      "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-01",
-        "words": "keep"
-      }
-    },
-    {
-      "title": "Which names CLEP exams take",
-      "text": "Answered fold: applied, 48 CLEP names into 35 and 36 live rows moved (#2633).",
-      "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-01",
-        "words": "fold"
-      }
-    },
-    {
-      "title": "Drop the Engine Performance 1 and 2 ASE issuer rows",
-      "text": "Open Asks Sheet 161 card 1: Sam's two ASE issuer saves moved to the new names unchanged; dropping them as for Electrical/Electronics is proposed, held since it deletes his rows.",
-      "link": "https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-03",
-        "words": "drop"
-      }
-    },
-    {
-      "title": "Metal Building Erection 1's issuer: Iron Workers or the colleges",
-      "text": "Open Asks Sheet 161 card 2: Sam's Iron Workers row could not move onto the bulk run's California Community Colleges row; his is proposed, held since it deletes a row.",
-      "link": "https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-03",
-        "words": "ironworkers"
-      }
-    }
-  ],
+  "handoff": "docs/session_594_handoff.md",
+  "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-05T00:38:02Z",
+  "written_at": "2026-11-06T20:15:41Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Check alignment on the other Commons Lists",
-    "text": "Exhibits carries Check alignment for a credential's title and issuer; CR, Programs and Courses follow."
+    "title": "The badges on the live Catalog",
+    "text": "Build the Statewide recommendation and CPL-AI course match badges, the Recommendations filter and the in-panel CPL-AI recommendation into the public Credential Catalog, as the approved mock shows. The Library side lane's own handoff is docs/library_handoff.md."
   },
   "changes": [
     {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "Check alignment on the Exhibits List's edit row: a title another credential carries, close titles, canonicalization noise, and the issuer's spellings"
+      "at": "2026-11-06T18:50:00Z",
+      "text": "CPL-AI hosted whole (33,232 pairs with full reports) and joined to the common exhibits; the Exhibits view CPL-AI recommendations (#2851)."
     },
     {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "Hide the top and a resizable side panel"
+      "at": "2026-11-06T19:49:56Z",
+      "text": "Seven CPL-AI title moves and the ServSafe fold written through a reviewed plan; receipt on main (#2852)."
     },
     {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "The side session's handoff: docs/cer_redesign_handoff.md (SkyJujube to SkyKumquat)."
+      "at": "2026-11-06T20:11:07Z",
+      "text": "The Exhibits List names each row's CPL-AI pairs, with a filter (#2853)."
     }
   ]
 }

@@ -62,49 +62,31 @@ public Credential Catalog. Not built: sites for a title new to the reference, an
   Proposed Title* with the reference's title clears the saved assignment; any other title on a conflict re-keys a
   person-reviewed entry and stays a session's change. *Teach a rule* copies the rule for a session.
 
-**CPL-AI in the Exhibits tab (SkyLantern, 2026-11-06; Sam: "connect CPL-AI in the Exhibits tab and make sure we can
-host all the data, which for now will not have any further updates").** The view **CPL-AI recommendations**
-(`#exhibits/cpl-ai`, `#exhibits/cpl-ai/<code>`; `exhibits_cpl_ai.js`, loaded on first open) lists the 115 certifications
-with pairs by evidence tier (a college pick narrows the counts), opens one to its pairs one line each (tier words,
-college, search, CSV, lazy batches), and opens a pair to its full report: scores, the domain-by-domain alignment with
-both sides' quoted evidence, the course outline's outcomes and skills, the sources, and a link to the same report on
-the CPL-AI page. Data: `kb/cpl_ai/hosted/` from `kb/_harvest_cpl_ai_reports.py` + `kb/_build_cpl_ai_hosted.py`
-(`--check` in CI via `tests/exhibits_cpl_ai.test.js`). Frozen, so nothing schedules a re-read. **The 115 joined to
-common exhibits (Sam, same day: "go ahead and join the 115 to common exhibits"):** `kb/_build_cpl_ai_join.py` holds each
-judgment with its reason and writes `kb/cpl_ai/exhibit_join.json`: **39 exact**, **7 named under another exhibit** (ACE,
-ACSM and NASM personal trainer titles under two mistitled exhibits; the State Water Board's wastewater grades II to V
-under exhibits titled like courses: title fixes for the CER, never made here), **8 related**, **61 with no exhibit**;
-`--check` fails when a named exhibit is re-titled. The view names each certification's exhibit and, for one MAP awards,
-who awards it and which colleges hold a Strong evidence course and do not award it yet (Security+: 25 award, 74 leads).
-Session judgments; a curator's correction wins. **The seven title fixes (Sam, same day: "go ahead and make the seven
-title fixes in the CER"):** five local titles, each placed by Sam in Review on 2026-10-31 under a title the aligned course
-proposed, move to the credentials they name through `kb/cer_decisions_out/2026-11-06/plan.json` (cohort
-`exhibits-s594@bot`): ACE, ACSM and NASM personal trainer certifications to their own exhibits (Personal Trainer
-Instructor retires; Personal Training Certification keeps its one generic local title), and the State Water Board's
-wastewater grades to *Wastewater Treatment Plant Operator Certificate, Grade II or Higher* and *Grade IV or Higher*.
-The rows are the Exhibits tab's Change to Proposed Title shape (a guarded replace of the assignment beside
-`unified_title_supersedes`), which `kb/_cer_decision_apply.py` now accepts and nothing looser; the nightly fold's revise
-lane re-points them. After the fold the join reads 46 exact. The same plan folds the duplicate *ServSafe Food Protection
-Manager* (one machine-placed prep-course title) into *ServSafe Food Protection Manager Certification* (Sam: "go ahead and
-fold the duplicate ServSafe Manager exhibit"), an override with its merge confirm that `cred-rename-apply.yml` carries.
-**Next:** the Exhibits List row names its CPL-AI pairs; the Credential Catalog and Sierra wait on Sam's word (Sheet 147
-card 5).
+**CPL-AI (SkyLantern, 2026-11-06; detail in `docs/library_lessons.md`).** Sam's words: host it all, frozen (*"make sure
+we can host all the data, which for now will not have any further updates"*); join the 115; fix the seven titles; name
+the pairs on the List; and *"I do want the CPL-AI recs on public view"* (answers Sheet 147 card 5). **State:**
+`kb/cpl_ai/hosted/` holds all 33,232 pairs with full reports (`kb/_harvest_cpl_ai_reports.py`, `kb/_build_cpl_ai_hosted.py
+--check`); `kb/cpl_ai/exhibit_join.json` (`kb/_build_cpl_ai_join.py --check`, a reason per call; a curator's correction
+wins): 46 exact, 8 related, 61 none once tonight's fold lands. Exhibits shows them at `#exhibits/cpl-ai` and on each List
+row (`#exhibits/list/cplai`, #2853). The seven title moves and the ServSafe fold are written
+(`kb/cer_decisions_out/2026-11-06/`, receipt `applied_2026-11-06T19-49-56Z.json`): the nightly fold re-points the five
+titles; `cred-rename-apply.yml` refuses the ServSafe merge while three of Sam's 2026-10-27 overrides are unsafe (Spanish 1
+and 2, spent; Wheel Alignment, a rename into an existing title with no merge confirm). Sam answered in session (2026-11-06, "1 yes, 2 yes"):
+retire the Spanish rows, confirm the Wheel Alignment merge; the next session writes both (`docs/library_handoff.md`). **The Catalog's badges** (Sam: *"like badges on the credential"*): *Statewide
+recommendation* (pale fill, 153) and *CPL-AI course match* (dashed outline, 42), each opening its panel section; the
+panel resizes and shows a CPL-AI recommendation in place, its confidence first. Mock approved (*"looks good"*), Version 2:
+https://claude.ai/artifact/2FhevexZqhwdyMyuVT9vFu. **Next:** build the badges and the in-panel recommendation into
+`library/adopt/`; Request Quick Adopt beside a strong course where a college awards it; *Add your credential* (Sam:
+"yes, build the add your credential route"; a second public write: Governance first, DR-31); Sierra's CPL-AI answers. **A college's first view (Sam, 2026-11-06):** *"select Allan Hancock filter, you should immediately be presented with any
+statewide or AI recommended exhibits with Request Adopt buttons on all their local aligned courses."* **The ask rule (Sam, 2026-11-06):** *Ask us to
+prioritize* only where no college has articulated the credential; an articulated one offers Request Quick Adopt; branch
+`claude/catalog-ask-vs-adopt` carries it (92/93 at the emergency checkpoint).
 
-**The Credential Catalog, the public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4; named
-on Sheet 148).** `library/adopt/`, Pages-served, linked from the Library and the public header.
-`kb/_build_adopt_page.py` writes `library/adopt/adopt_data.json` daily from `kb/exhibits_adoption.json`: **settled means a
-local title under the credential carries a review stamp** in `kb/unified_titles.json`, a person's or a cohort's, the
-classifier's sure saves included (the mock-up's Reviewed tile, which Sam answered on). That gives 957 credentials of 2,232
-in the reference, against 677 without the classifier's stamps and 495 on a person's alone. Columns are the 119 colleges
-`college_lookup.js` holds; CSU Los Angeles takes none. The page has Malone's CPL/AI look and the Library's header with the
-Library linked. Its filters are College, Show (*Not adopted yet*, *Adopted here*, *Every credential*), Field (CIP sector),
-CPL type, SW Region, ASCCC Area, District and Search. The **Credentials** view puts the college's own course first, then
-the most colleges, with Request Quick Adopt chips per building college (a scope never sees its own) and each college's
-units and credit lines. The **College matrix** is windowed like EACR's, shows units or *C* for a college that already
-teaches a matching course, has arrow keys and a tooltip, and a content filter never drops a column. The page also offers
-both CSVs and **Create Handout** (the college's `library/cpl-opportunity/` visual). It writes nothing and remembers no
-filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19),
-`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width.
+**The Credential Catalog (built SkyTwinberry, 2026-10-31; Sheets 147 and 148).** `library/adopt/`, Pages-served, linked
+from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_data.json` daily from
+`kb/exhibits_adoption.json`, and **settled means a local title under the credential carries a review stamp**, a person's
+or a cohort's. It offers both CSVs and Create Handout, writes nothing but the asks, remembers no filter, and `?college=`
+follows the pick. Today's shape is the port below.
 **The Credential Catalog, ported from the mock (SkyAerial, 2026-11-06; Sam: "I think it would make a good beginning for
 our credential registry", then "let's roll with this"; the mock https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds, eight
 versions in one morning).** `library/adopt/` now runs the full width; three figure tiles beside the title open what they

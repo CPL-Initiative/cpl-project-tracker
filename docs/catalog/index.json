@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 574,
+   "count": 575,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10129,6 +10129,29 @@
      "updated": "2026-06-04"
     },
     {
+     "created": "2026-11-06",
+     "governs": [
+      "kb/_cer_decision_apply.py",
+      "kb/_fold_unclassified.py",
+      ".github/workflows/cer-decision-apply.yml",
+      ".github/workflows/cred-rename-apply.yml",
+      "kb/cer_decisions_out/2026-11-06/"
+     ],
+     "path": "docs/kb-notes/playbook-move-a-person-placed-title-in-the-cer.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "cer",
+      "curation",
+      "kb-curation",
+      "rule-10",
+      "revise-lane"
+     ],
+     "title": "Playbook \u2014 moving a local title a person placed in the CER",
+     "type": "playbook",
+     "updated": ""
+    },
+    {
      "created": "2026-06-01",
      "governs": [],
      "path": "docs/kb-notes/playbook-prestage-optional-external-auth.md",
@@ -14624,10 +14647,11 @@
       "handoff",
       "library",
       "credential-catalog",
-      "noncredit",
+      "cpl-ai",
+      "exhibits",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyLoop, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyLantern, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },
@@ -26078,5 +26102,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1396
+ "total": 1397
 }
