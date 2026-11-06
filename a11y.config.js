@@ -866,6 +866,33 @@ async function seedExhibitsProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+/* The Exhibits tab's Requests view (SkyLoop, 2026-11-06): the public's asks to prioritize a credential, one line per
+   credential. The rows read behind the team phrase, which the sweep does not hold, so the read is answered here with
+   three rows (two credentials), and the table, its region and the counts are measured. */
+async function seedExhibitsRequests(page, theme) {
+  await page.route("**/rest/v1/credential_priority_requests*", (route) => route.fulfill({ status: 200, contentType: "application/json",
+    body: JSON.stringify([
+      { credential: "CompTIA Security+", issuer: "CompTIA", college: "Norco College", email: "a@example.edu", note: null, source: "catalog", status: "new", created_at: "2026-11-06T17:00:00Z" },
+      { credential: "CompTIA Security+", issuer: "CompTIA", college: null, email: null, note: null, source: "catalog", status: "noted", created_at: "2026-11-05T09:00:00Z" },
+      { credential: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", college: null, email: null, note: null, source: "catalog", status: "new", created_at: "2026-11-06T12:00:00Z" }]) }));
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/requests") location.hash = "exhibits/requests"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => Array.prototype.some.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+    (x) => x.textContent.indexOf("Requests") === 0) || document.querySelector("#exhibits-root .exh-views [aria-current='page']"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+      (x) => x.textContent.indexOf("Requests") === 0)[0];
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-pq tbody tr") || document.querySelector("#exhibits-root .exh-empty"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
 /* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
@@ -3654,6 +3681,22 @@ module.exports = {
     routes: [{ hash: "exhibits", name: "progress-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-requests": {
+    file: "index.html",
+    title: "Exhibits: Requests, the public's asks to prioritize a credential",
+    routes: [{ hash: "exhibits/requests", name: "requests" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsRequests(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-requests-dark": {
+    file: "index.html",
+    title: "Exhibits: Requests, dark",
+    routes: [{ hash: "exhibits/requests", name: "requests-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsRequests(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-list": {

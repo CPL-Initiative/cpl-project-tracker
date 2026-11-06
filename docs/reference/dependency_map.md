@@ -98,6 +98,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
 | `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
+| `credential_priority_requests` | tabs: `exhibits` · modules: `a11y.config.js` | — |
 | `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
@@ -1305,5 +1306,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 106 Supabase tables · 51 RPCs · 12 edge functions · 798 file
+Coverage: 107 Supabase tables · 51 RPCs · 12 edge functions · 798 file
 datasets · 193 external services · 525 consumers · 62 workflows · 40 tabs.

@@ -31,17 +31,20 @@ public face, [`cer-procedures`](reference/lanes/cer-procedures.md)) and the Libr
 - **The catalog's statewide route, as Sheet 162 ruled it:** *Ask us to prioritize this credential*; one INSERT-only function,
   one aggregate count, the count beside the credential; DR-31; migration routed through `supabase-migrate.yml`
   (`kb/migrations/.apply`; the MCP apply waited on a confirmation and timed out). Tracker PR on `claude/jolly-newton-aey20k`.
-- Merged: #2846 (SkyBackflip's item 0, the noncredit visual, into this handoff).
+- **The Exhibits tab's Requests view** (`#exhibits/requests`): the public's asks, one line per credential, most asked first; the
+  views row and Progress count the asks still new. Tracker PR on `claude/jolly-newton-aey20k` (the second).
+- Merged: #2846 (SkyBackflip's item 0), #2847 (the catalog's route, the visual's Pages copy), CPLBrain#692.
 
 ## Open work, in order
-1. **Merge the tracker PR on green `test`** (Sam, in session: "merge the tracker PR when test is green"). The migration is
-   applied (16:21Z, receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`), so the form works the
-   moment Pages serves the merged page.
+1. **Merge the second tracker PR on green `test`** (the Requests view). #2847 merged 16:50Z (Sam: "merge the tracker PR when
+   test is green"); the migration is applied (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`);
+   the visual and the catalog's form are live on Pages.
 2. **The noncredit visual is public once the PR merges:** run `npm run a11y -- library-noncredit` on the Pages copy and note
    the result on the record's Version 1 (a receipted update); any later change Sam asks for goes through the card's Revise
    (the page is its own source; the vault keeps the file).
-3. **The Commons Exhibits List** takes the catalog's shape (the lane's *To add* list), now including the public requests as
-   a queue item with its count (`credential_priority_requests`, team read).
+3. **The Commons Exhibits List** takes the catalog's shape (the lane's *To add* list). Done this run: the public requests
+   as the Exhibits tab's Requests view and a Progress item. Next: routing a request from its line (a status stamp), credit
+   status as one band across the four classes, the analysis for faculty in the side panel.
 4. **Jev for the analysis:** a Score question per skill area, calibrated against the 25 Security+ articulations; replaces the
    lexical score in `kb/_build_adopt_align.py` in place.
 5. The Library lane's standing *Next*.

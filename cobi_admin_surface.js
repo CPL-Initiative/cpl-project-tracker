@@ -505,7 +505,9 @@ window.COBI_ADMIN_SURFACE = {
         "commons_page.js",
         "exhibits.js"
       ],
-      "reads": [],
+      "reads": [
+        "credential_priority_requests"
+      ],
       "writes": [
         "kb_curation"
       ],

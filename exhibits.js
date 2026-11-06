@@ -172,6 +172,8 @@
     view: "review",
     // Rules sent to the routine: the request rows grouped by request, and the procedures store.
     rq: { rows: null, store: null, report: null, error: null, busy: "", note: "" },
+    // Public requests to prioritize a credential (Sam, Sheet 162): the Credential Catalog's statewide route, read here.
+    pq: { rows: null, error: null, loading: null },
     // Another look: the sweep's cards, decided this visit by card id.
     sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null,
@@ -413,6 +415,48 @@
     if (v == null || v === "") return null;
     if (typeof v === "object") return v;
     try { return JSON.parse(v); } catch (e) { return null; }
+  }
+  /* Public requests to prioritize a credential's review (Sam, Open Asks Sheet 162, 2026-11-06: "a public request to
+     prioritize review of a credential ... without promising any one person that we would evaluate their credential").
+     The Credential Catalog's panel writes credential_priority_requests through one INSERT-only function; the team reads
+     the rows here, behind the phrase or a reviewer sign-in (the table has no public policy), grouped by credential, most
+     asked first. The count is the signal for what to work on next; no reply is owed, and an email a requester left stays
+     a count here, never a column. */
+  var PQ_URL = SUPABASE_URL + "/rest/v1/credential_priority_requests?select=credential,issuer,college,email,note,source,status,created_at&order=created_at.desc";
+  function loadRequests() {
+    if (state.pq.loading) return state.pq.loading;
+    state.pq.loading = session().then(function (sess) {
+      var S = window.CPL_SESSION;
+      var h = S && typeof S.authHeaders === "function" ? S.authHeaders({ "Range-Unit": "items", "Range": "0-999" }) : null;
+      if (!h) throw new Error("no session");
+      if (window.CPL_TEAM_PHRASE && typeof window.CPL_TEAM_PHRASE.decorateHeaders === "function") window.CPL_TEAM_PHRASE.decorateHeaders(h, sess);
+      return fetch(PQ_URL, { headers: h });
+    })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) { state.pq.rows = Array.isArray(rows) ? rows : []; state.pq.error = null; })
+      .catch(function (e) { state.pq.rows = null; state.pq.error = errText(e); })
+      .then(function () { state.pq.loading = null; });
+    return state.pq.loading;
+  }
+  function requestsOpen() { return (state.pq.rows || []).filter(function (r) { return !r.status || r.status === "new"; }).length; }
+  /* One line per credential: how many asked, how many are still new, the colleges named, how many left an email, first and last. */
+  function requestGroups() {
+    var by = {}, out = [];
+    (state.pq.rows || []).forEach(function (r) {
+      var k = String(r.credential || "").toLowerCase();
+      var g = by[k];
+      if (!g) { g = by[k] = { credential: r.credential, issuer: r.issuer || "", n: 0, open: 0, colleges: {}, emails: 0, first: r.created_at, last: r.created_at, sources: {} }; out.push(g); }
+      g.n += 1;
+      if (!r.status || r.status === "new") g.open += 1;
+      if (r.college) g.colleges[r.college] = true;
+      if (r.email) g.emails += 1;
+      if (r.source) g.sources[r.source] = true;
+      if (!g.issuer && r.issuer) g.issuer = r.issuer;
+      if (r.created_at < g.first) g.first = r.created_at;
+      if (r.created_at > g.last) g.last = r.created_at;
+    });
+    out.sort(function (a, b) { return b.n - a.n || (a.last < b.last ? 1 : a.last > b.last ? -1 : 0); });
+    return out;
   }
   function loadRules() {
     var key = anonKey();
@@ -1478,7 +1522,7 @@
   /* The Commons' procedures count opens the CER's list; here, the Rules view lists every procedure. */
   var COMMONS_EQUIV = { "#credential-reference/procs": "#exhibits/rules" };
   var ROUTE_WORDS = { held: "Review, every held title", conflict: "Review, Conflict with the reference", "another-look": "Review, Another look",
-    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view" };
+    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view", requests: "the Requests view" };
 
   function commonsFresh() {
     return { row: null, at: null, error: null, Q: null, qErr: null, logFile: null, loading: null, done: false };
@@ -1587,6 +1631,7 @@
     if (r[0] === "list") { var L = listState(); L.f = filter || ""; L.limit = LIST_LIMIT; }
     render();
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
+    if (r[0] === "requests") loadRequests().then(render);
     var h = document.querySelector(".exh-h");
     if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
   }
@@ -2778,6 +2823,7 @@
         state.view = id; state.note = "";
         render();
         if (id === "list" || id === "progress") loadCredentials().then(render);
+        if (id === "requests") loadRequests().then(render);
       });
       return b;
     }
@@ -2786,6 +2832,7 @@
       v("review", "Review", state.data ? stepCount("") : null),
       v("list", "List", state.cs.rows ? state.cs.rows.length : null),
       v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
+      v("requests", "Requests", state.pq.rows ? requestsOpen() : null),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
   }
 
@@ -2848,6 +2895,11 @@
       items.push({ n: rq, words: rq === 1 ? "rule built and switched off, waiting for you to turn it on." : "rules built and switched off, waiting for you to turn them on.",
         action: { words: "Open the rules", go: function () { cmGo("rules"); } } });
     }
+    if (state.pq.rows) {
+      var pq = requestsOpen();
+      items.push({ n: pq, words: (pq === 1 ? "public request" : "public requests") + " to prioritize a credential's review, for the Initiative to route to a college or the statewide list; the count is the signal and no reply is owed (Sam, Sheet 162).",
+        action: { words: "Read them", go: function () { cmGo("requests"); } } });
+    } else if (state.pq.error && state.pq.error !== "no session") items.push({ n: null, words: "public requests to prioritize a credential: could not be read (" + state.pq.error + ")" });
     open.forEach(function (c) {
       items.push({ n: 1, words: "decision for " + DECIDER + ": " + (c.title || "an open call") + ".",
         action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
@@ -2892,6 +2944,7 @@
   function renderProgress(wrap) {
     wrap.appendChild(viewsNav());
     if (!state.cm || !state.cm.done) loadCommons().then(function () { if (state.view === "progress") render(); });
+    if (!state.pq.rows && !state.pq.loading && !state.pq.error) loadRequests().then(function () { if (state.view === "progress") render(); });
     if (!window.CPL_COMMONS_PAGE) {
       if (state.pageFailed) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The Progress view could not be loaded; reload the tab to try again." })); return; }
       wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the figures…" }));
@@ -3059,6 +3112,41 @@
     }
   }
 
+  /* The Requests view: the public's asks to prioritize a credential, one line per credential, most asked first. */
+  function renderRequests(wrap) {
+    wrap.appendChild(viewsNav());
+    wrap.appendChild(el("p", { cls: "exh-muted", text: "What the public asked the Initiative to prioritize for review, from the Credential Catalog's "
+      + "Ask us to prioritize this credential. Sam, 2026-11-06 (Open Asks Sheet 162): a request helps the Initiative prioritize its work; "
+      + "it promises no one an evaluation, which rests with each college's faculty, and no reply is owed. Route a credential to a college that "
+      + "already teaches for it, or to the statewide list, and the count beside it is the order." }));
+    var groups = state.pq.rows ? requestGroups() : [];
+    var g = el("section", { cls: "exh-group", "aria-labelledby": "exh-pq-h" }, [el("h3", { cls: "exh-q", id: "exh-pq-h",
+      text: "Requests by credential" + (state.pq.rows ? " (" + fmt(state.pq.rows.length) + " on " + fmt(groups.length) + (groups.length === 1 ? " credential" : " credentials") + ")" : "") })]);
+    if (state.pq.rows == null) g.appendChild(el("p", { cls: "exh-empty", text: state.pq.error === "no session" ? "Requests read behind the team phrase or a reviewer sign-in."
+      : state.pq.error ? "The requests could not be read (" + state.pq.error + ")." : "Reading the requests…" }));
+    else if (!groups.length) g.appendChild(el("p", { cls: "exh-empty", text: "No requests to show. The rows read behind the team phrase or a reviewer sign-in; the Credential Catalog's panel writes them." }));
+    else {
+      var tb = el("tbody");
+      groups.forEach(function (r) {
+        var cols = Object.keys(r.colleges).sort();
+        tb.appendChild(el("tr", {}, [
+          el("th", { scope: "row" }, [el("span", { text: r.credential }), r.issuer ? el("span", { cls: "exh-small exh-muted", text: " " + r.issuer }) : null]),
+          el("td", { cls: "exh-num", text: fmt(r.n) + (r.open !== r.n ? " (" + fmt(r.open) + " new)" : "") }),
+          el("td", { text: cols.length ? cols.map(function (c) { return typeof window.cplCollegeShort === "function" ? window.cplCollegeShort(c) : c; }).join(", ") : "Statewide only" }),
+          el("td", { cls: "exh-num", text: r.emails ? fmt(r.emails) : "0" }),
+          el("td", { text: stamp(r.first) }),
+          el("td", { text: r.last === r.first ? "" : stamp(r.last) })]));
+      });
+      var table = el("table", { cls: "exh-pq" }, [
+        el("colgroup", {}, [el("col", { style: "width:34%" }), el("col", { style: "width:10%" }), el("col", { style: "width:26%" }), el("col", { style: "width:8%" }), el("col", { style: "width:11%" }), el("col", { style: "width:11%" })]),
+        el("thead", {}, [el("tr", {}, [el("th", { scope: "col", text: "Credential" }), el("th", { scope: "col", cls: "exh-num", text: "Requests" }), el("th", { scope: "col", text: "Colleges named" }),
+          el("th", { scope: "col", cls: "exh-num", text: "Left an email" }), el("th", { scope: "col", text: "First asked" }), el("th", { scope: "col", text: "Last asked" })])]), tb]);
+      g.appendChild(el("div", { cls: "exh-tblwrap", role: "region", "aria-label": "Public requests by credential", tabindex: "0" }, [table]));
+      g.appendChild(el("p", { cls: "exh-small exh-muted", text: "An email a requester left is counted, never shown here; the row holds it for the Initiative's records." }));
+    }
+    wrap.appendChild(g);
+  }
+
   function render() {
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
@@ -3071,6 +3159,10 @@
     wrap.appendChild(head);
     if (state.view === "rules") {
       renderRules(wrap);
+      return;
+    }
+    if (state.view === "requests") {
+      renderRequests(wrap);
       return;
     }
     if (state.view === "progress") {
@@ -3144,6 +3236,12 @@
     ".exh-muted { color:var(--text-muted); }",
     ".exh-small { font-size:.88rem; }",
     ".exh-group { display:grid; gap:8px; }",
+    ".exh-tblwrap { overflow-x:auto; max-width:100%; }",
+    ".exh-pq { width:100%; border-collapse:collapse; table-layout:fixed; font-size:.92rem; }",
+    ".exh-pq th, .exh-pq td { text-align:left; vertical-align:top; padding:6px 8px 6px 0; border-bottom:1px solid var(--border); overflow-wrap:anywhere; }",
+    ".exh-pq th[scope=col] { color:var(--text-muted); font-weight:600; font-size:.82rem; }",
+    ".exh-pq th[scope=row] { font-weight:600; color:var(--seal-blue-text); }",
+    ".exh-pq .exh-num { text-align:right; font-variant-numeric:tabular-nums; }",
     ".exh-groups { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:16px; min-width:0; }",
     ".exh-dash, .exh-steps { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:10px; }",
     ".exh-tile { display:grid; gap:4px; align-content:start; padding:12px 14px; background:var(--surface); border:1px solid var(--border); border-radius:8px; min-width:0; }",
@@ -3301,7 +3399,7 @@
      the reference, credentials = the List (the Credentials view retired into it), rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
   var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["list", ""],
-    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""] };
+    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], requests: ["requests", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
@@ -3310,6 +3408,7 @@
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
+    if (r[0] === "requests") loadRequests().then(render);
     return true;
   }
   /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
@@ -3317,7 +3416,7 @@
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("exhibits", function () {
     var v = state.view, f = state.ls && state.ls.f;
     if (v === "list") return "exhibits/list" + (f ? "/" + f : "");
-    if (v === "progress" || v === "rules") return "exhibits/" + v;
+    if (v === "progress" || v === "rules" || v === "requests") return "exhibits/" + v;
     if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? "another-look" : "held");
     return "exhibits";
   });
