@@ -556,6 +556,14 @@
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
   }
+  /* The keeper announces a renewed or new sign-in (cpl_session.js): read again, so the done marks behind the reviewer
+     sign-in reach the band without a reload (Sam, 2026-11-06: the lapsed-token fix "must not have worked for all
+     surfaces"). Only once the tab has drawn. */
+  var reboot = null;
+  window.addEventListener("cpl-session-changed", function () {
+    if (!redraw || reboot || !document.getElementById(ROOT_ID)) return;
+    reboot = Promise.resolve(boot()).then(function () { reboot = null; }, function () { reboot = null; });
+  });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (e && e.detail && e.detail.tab === "commons" && redraw && arrive()) redraw();

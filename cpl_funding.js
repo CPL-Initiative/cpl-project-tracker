@@ -18881,6 +18881,9 @@
     window.addEventListener("cpl-tab-activated", function (e) {
       if (e && e.detail && e.detail.tab === "implementation-funding" && arriveView()) render();
     });
+    // The keeper announces a renewed token (cpl_session.js); redraw, so a reviewer who returns after the token lapsed is
+    // unlocked again without a reload (Sam, 2026-11-06: the lapsed-token fix "must not have worked for all surfaces").
+    window.addEventListener("cpl-session-changed", function () { render(); });
     // Re-measure the frozen-row pins when the window changes size or zoom —
     // registered ONCE here, behind the booted guard, so re-boots never stack
     // listeners.

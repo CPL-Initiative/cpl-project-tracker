@@ -412,6 +412,16 @@ function cellText(li, title) {
     dead.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu" }), isFresh: () => false });
     await dead.M.boot();
     check("todo 7: a lapsed token with no way to renew does not", !dead.d.querySelector(".cmn-band .cmn-todo-det"));
+    // The keeper's renewal announcement re-reads the marks, so a mark saved elsewhere reaches the band without a reload.
+    let marksNow = [];
+    const late = load({ fetch: function (url, init) { return withMarks(marksNow)(url, init); } });
+    late.w.CPL_SESSION = SESSION;
+    await late.M.boot();
+    const before = !!late.d.querySelector(".cmn-band");
+    marksNow = [{ project: "program-requirements", todo_id: TODO.todo_id, note: "keep going", reopen: false, by_email: "slee@cccco.edu", at: "2026-11-06T19:29:50Z" }];
+    late.w.dispatchEvent(new late.w.CustomEvent("cpl-session-changed", { detail: { signedIn: true } }));
+    await new Promise((r) => setTimeout(r, 40));
+    check("todo 8: a renewed sign-in re-reads the marks and the marked call leaves the band", before && !late.d.querySelector(".cmn-band"));
   }
 
   // the one queue (Sam, 2026-11-04, S573): what waits on a person, by reason, and what the routines carry
