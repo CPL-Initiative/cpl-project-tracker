@@ -128,9 +128,9 @@ check("buildPolishContent: mixed -> text block then image block", cMix.length ==
 // The phrase must ride ONLY in the x-team-pass header (never the URL/body, so it
 // isn't logged), POST {} to the team_pass_ok() RPC on the MAIN dashboard project.
 const tpr = K.teamPassRequest("https://hvuwhnbuahrtptokpqfh.supabase.co/", "ANON_KEY", "  hunter2 ");
-check("teamPassRequest hits the team_pass_ok RPC (trailing slash normalized)",
-  tpr.url === "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/rpc/team_pass_ok");
-check("teamPassRequest POSTs an empty body", tpr.method === "POST" && tpr.body === "{}");
+check("teamPassRequest hits the team_pass_verify RPC (trailing slash normalized)",
+  tpr.url === "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/rpc/team_pass_verify");
+check("teamPassRequest POSTs only the site", tpr.method === "POST" && tpr.body === '{"p_site":"team"}');
 check("teamPassRequest puts the TRIMMED phrase only in x-team-pass",
   tpr.headers["x-team-pass"] === "hunter2");
 check("teamPassRequest never leaks the phrase into url/body",

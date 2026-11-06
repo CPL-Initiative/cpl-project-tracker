@@ -37,7 +37,7 @@ function makeWin(html, opts) {
   w.__fetches = [];
   w.fetch = function (url, init) {
     w.__fetches.push({ url: String(url), init: init || {} });
-    if (/rpc\/team_pass_ok/.test(url)) {
+    if (/rpc\/team_pass_verify/.test(url)) {
       const sent = (init && init.headers && init.headers["x-team-pass"]) || "";
       const ok = sent === (opts.phrase || "correct-horse");
       return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(ok) });
@@ -80,7 +80,7 @@ function makeWin(html, opts) {
     check("handleWriteFailure ignores non-auth statuses",
       TP.handleWriteFailure({ teamPass: "x" }, 500) === false);
     // the verify POST carried the anon bearer + the candidate phrase
-    const rpc = w.__fetches.find(f => /team_pass_ok/.test(f.url));
+    const rpc = w.__fetches.find(f => /team_pass_verify/.test(f.url));
     check("verify POST sends anon bearer + candidate header",
       /^Bearer ey/.test(rpc.init.headers.Authorization) && !!rpc.init.headers["x-team-pass"]);
   }

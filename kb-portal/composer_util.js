@@ -215,7 +215,7 @@
   // pure builder keeps the URL/header contract unit-testable.
   function teamPassRequest(url, anon, phrase) {
     return {
-      url: String(url || "").replace(/\/+$/, "") + "/rest/v1/rpc/team_pass_ok",
+      url: String(url || "").replace(/\/+$/, "") + "/rest/v1/rpc/team_pass_verify",
       method: "POST",
       headers: {
         apikey: anon,
@@ -223,7 +223,7 @@
         "Content-Type": "application/json",
         "x-team-pass": String(phrase == null ? "" : phrase).trim()
       },
-      body: "{}"
+      body: JSON.stringify({ p_site: "team" })
     };
   }
 

@@ -37,7 +37,7 @@ window.COBI_ADMIN_SURFACE = {
         "team_members"
       ],
       "rpcs": [
-        "team_pass_ok"
+        "team_pass_verify"
       ],
       "measured": true
     },
@@ -527,7 +527,7 @@ window.COBI_ADMIN_SURFACE = {
         "gr_revisions"
       ],
       "rpcs": [
-        "gr_pass_ok"
+        "team_pass_verify"
       ],
       "measured": true
     },

@@ -237,11 +237,11 @@
   // wrong phrase never gets stored — the browser can't read the secret, so it
   // asks the server "is this right?" the same way a write would (Sam, 2026-06-29).
   function verifyPhrase(p) {
-    return fetch(SUPABASE_URL + "/rest/v1/rpc/team_pass_ok", {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/team_pass_verify", {   // records failures (security step 2)
       method: "POST",
       headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
         "Content-Type": "application/json", "x-team-pass": p },
-      body: "{}"
+      body: JSON.stringify({ p_site: "team" })
     }).then(function (r) { return r.ok ? r.json() : false; })
       .then(function (v) { return v === true; }).catch(function () { return false; });
   }
