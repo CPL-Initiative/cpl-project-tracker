@@ -32,13 +32,13 @@ public face, [`cer-procedures`](reference/lanes/cer-procedures.md)) and the Libr
   one aggregate count, the count beside the credential; DR-31; migration routed through `supabase-migrate.yml`
   (`kb/migrations/.apply`; the MCP apply waited on a confirmation and timed out). Tracker PR on `claude/jolly-newton-aey20k`.
 - **The Exhibits tab's Requests view** (`#exhibits/requests`): the public's asks, one line per credential, most asked first; the
-  views row and Progress count the asks still new. Tracker PR on `claude/jolly-newton-aey20k` (the second).
-- Merged: #2846 (SkyBackflip's item 0), #2847 (the catalog's route, the visual's Pages copy), CPLBrain#692.
+  views row and Progress count the asks still new (#2848).
+- Merged: #2846 (SkyBackflip's item 0), #2847 (the catalog's route, the visual's Pages copy), #2848, CPLBrain#692.
 
 ## Open work, in order
-1. **Merge the second tracker PR on green `test`** (the Requests view). #2847 merged 16:50Z (Sam: "merge the tracker PR when
-   test is green"); the migration is applied (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`);
-   the visual and the catalog's form are live on Pages.
+1. **Nothing is open from SkyLoop's run.** #2847 and #2848 merged (Sam: "merge the tracker PR when test is green"); the
+   migration is applied (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`); the visual and the
+   catalog's form are live on Pages; the Requests view reaches COBI with the next Pages deploy.
 2. **The noncredit visual is public once the PR merges:** run `npm run a11y -- library-noncredit` on the Pages copy and note
    the result on the record's Version 1 (a receipted update); any later change Sam asks for goes through the card's Revise
    (the page is its own source; the vault keeps the file).
@@ -55,8 +55,8 @@ public face, [`cer-procedures`](reference/lanes/cer-procedures.md)) and the Libr
   colleges and programs in the six ways is fine; embed links wherever they fit (Cabrillo's mirrored-course examples).
 
 ## Let go
-The tracker PR and the CPLBrain PR are subscribed until they merge; the artifact watch on the mock ends with the session.
-No scheduled wake.
+Nothing: both tracker PRs and the CPLBrain PR merged and are unsubscribed, the two safety-net check-ins were deleted, and the
+artifact watch on the mock ends with the session.
 
 > *Greetings, you are SkyLantern, a Library side session beside the CPL Queue routine, see SkyLoop's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*
