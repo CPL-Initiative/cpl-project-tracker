@@ -84,11 +84,7 @@ from `kb/cpl_ai/hosted/shards/`. The builder writes `library/adopt/adopt_ai.json
 select Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
 Request Adopt buttons on all their local aligned courses."* **The ask rule is live (#2854):** *Ask us to prioritize* only
 where no college has articulated the credential, the *Worth a faculty review* cards included; an articulated one offers
-Request Quick Adopt. **Next:** *Add your credential* (Sam: "yes, build the add your credential route"): when the search
-finds nothing, a short form (name, issuer, kind, a link; college and email optional) through one INSERT-only function
-beside `credential_priority_request`, its rows in the Exhibits Requests view with Verify, Merge, Decline; nothing shows
-until verified; Governance maps the write beside DR-31 and the privacy ADR's check before it ships; record the state's
-license lists in `data_sources`. Then Quick Adopt beside a strong course, and Sierra's CPL-AI answers.
+Request Quick Adopt. **Add your credential is built (#2860; Sam: "yes, build the add your credential route"):** a search that finds nothing offers *Add it*; `credential_submission_add()` takes the form, INSERT-only; a signed-in reviewer Verifies, Merges, Declines or Reopens in the Exhibits Requests view (history keeps each prior state); verified ones join the Catalog as Not yet evaluated. DR-32; live 2026-11-06, grants verified. **Next:** the Department of Insurance's license types into the harvest (`data_sources`); Quick Adopt beside a strong course; Sierra's CPL-AI answers.
 
 **The Credential Catalog (built SkyTwinberry, 2026-10-31; Sheets 147 and 148).** `library/adopt/`, Pages-served, linked
 from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_data.json` daily from
