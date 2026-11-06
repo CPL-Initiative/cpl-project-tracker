@@ -391,8 +391,37 @@ function cellText(li, title) {
     // signed out: the band says where to sign in, and reads no marks
     const c = load({ fetch: withMarks([]) });
     await c.M.boot();
-    check("todo 5: signed out, the to-do says to sign in and offers no Mark done",
-      /sign in as a reviewer to mark it done/.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
+    check("todo 5: signed out, the to-do says Mark done takes a reviewer sign-in, not the team phrase, and offers no Mark done",
+      /Mark done takes a reviewer sign-in, the emailed link; the team phrase does not carry it/.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
+    // Sam's recording, 2026-11-06: the header read Signed in, the card read a lapsed token as signed out. A reviewer
+    // whose token lapsed and can renew keeps Mark done; the save renews the token first.
+    const lapsed = load({ fetch: withMarks([]) });
+    lapsed.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu", refresh_token: "r" }), isFresh: () => false });
+    await lapsed.M.boot();
+    check("todo 6: a lapsed reviewer token that can renew still offers Mark done", !!lapsed.d.querySelector(".cmn-band .cmn-todo-det"));
+    // ...and reads the marks after renewing: Sam's Monterey mark (2026-11-06) saved on CPL Pathways but never left the band.
+    let renewed = 0;
+    const lapsedDone = load({ fetch: withMarks([{ project: "program-requirements", todo_id: TODO.todo_id, note: "keep going", reopen: false,
+      by_email: "slee@cccco.edu", at: "2026-11-06T19:29:50Z" }]) });
+    lapsedDone.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu", refresh_token: "r" }), isFresh: () => false,
+      ensureFresh: () => { renewed++; return Promise.resolve({ email: "slee@cccco.edu", access_token: "h.p.s" }); } });
+    await lapsedDone.M.boot();
+    check("todo 6b: a lapsed token renews, the marks are read, and a to-do marked done on CPL Pathways leaves the band",
+      renewed >= 1 && !lapsedDone.d.querySelector(".cmn-band") && /Marked done: keep going/.test(txt(lapsedDone.root)));
+    const dead = load({ fetch: withMarks([]) });
+    dead.w.CPL_SESSION = Object.assign({}, SESSION, { get: () => ({ email: "slee@cccco.edu" }), isFresh: () => false });
+    await dead.M.boot();
+    check("todo 7: a lapsed token with no way to renew does not", !dead.d.querySelector(".cmn-band .cmn-todo-det"));
+    // The keeper's renewal announcement re-reads the marks, so a mark saved elsewhere reaches the band without a reload.
+    let marksNow = [];
+    const late = load({ fetch: function (url, init) { return withMarks(marksNow)(url, init); } });
+    late.w.CPL_SESSION = SESSION;
+    await late.M.boot();
+    const before = !!late.d.querySelector(".cmn-band");
+    marksNow = [{ project: "program-requirements", todo_id: TODO.todo_id, note: "keep going", reopen: false, by_email: "slee@cccco.edu", at: "2026-11-06T19:29:50Z" }];
+    late.w.dispatchEvent(new late.w.CustomEvent("cpl-session-changed", { detail: { signedIn: true } }));
+    await new Promise((r) => setTimeout(r, 40));
+    check("todo 8: a renewed sign-in re-reads the marks and the marked call leaves the band", before && !late.d.querySelector(".cmn-band"));
   }
 
   // the one queue (Sam, 2026-11-04, S573): what waits on a person, by reason, and what the routines carry
@@ -497,6 +526,12 @@ function cellText(li, title) {
   check("cadenceWords: daily, weekly, every 12 hours, on dispatch", M.cadenceWords(24) === "daily" && M.cadenceWords(168) === "weekly" && M.cadenceWords(12) === "every 12 hours" && M.cadenceWords(null) === "on dispatch");
   check("the CSS is injected once", t.d.querySelectorAll("#cmn-css").length === 1);
 
+  // Sam's recording, 2026-11-06: a completed sheet's line widened its Details cell past Last run and the card (the page
+  // measured 3,414px in a 1,920px window). Each Details list is one shrinking column, so the line cuts with its ellipsis.
+  check("Details lists are one shrinking column: a completed sheet's line cuts, never widens the cell",
+    /"\.cmn-done \{[^"]*grid-template-columns:minmax\(0, 1fr\)/.test(src) && /"\.cmn-cell \{ grid-template-columns:minmax\(0, 1fr\); \}"/.test(src)
+    && /"\.cmn-done li, \.cmn-done details, \.cmn-done summary \{ min-width:0; \}"/.test(src)
+    && /"\.cmn-done-line \{[^"]*white-space:nowrap; text-overflow:ellipsis/.test(src));
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); });
   console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");

@@ -431,8 +431,8 @@
   /* Mark done, on a to-do in the band: a note and the word, for a signed-in reviewer; signed out, where to sign in. */
   function todoControl(card, call, after) {
     var box = el("div", { cls: "cmn-todo" });
-    if (!session()) {
-      box.appendChild(el("p", { cls: "cmn-todo-note", text: "A to-do: sign in as a reviewer to mark it done here." }));
+    if (!reviewer()) {
+      box.appendChild(el("p", { cls: "cmn-todo-note", text: "A to-do: Mark done takes a reviewer sign-in, the emailed link; the team phrase does not carry it." }));
       return box;
     }
     var id = "cmn-todo-" + String(call.todo_id).replace(/[^a-z0-9-]/gi, "");
@@ -556,6 +556,14 @@
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
   }
+  /* The keeper announces a renewed or new sign-in (cpl_session.js): read again, so the done marks behind the reviewer
+     sign-in reach the band without a reload (Sam, 2026-11-06: the lapsed-token fix "must not have worked for all
+     surfaces"). Only once the tab has drawn. */
+  var reboot = null;
+  window.addEventListener("cpl-session-changed", function () {
+    if (!redraw || reboot || !document.getElementById(ROOT_ID)) return;
+    reboot = Promise.resolve(boot()).then(function () { reboot = null; }, function () { reboot = null; });
+  });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (e && e.detail && e.detail.tab === "commons" && redraw && arrive()) redraw();
@@ -697,15 +705,30 @@
     var s = Sx.get();
     return s && s.email && (typeof Sx.isFresh !== "function" || Sx.isFresh(s)) ? s : null;
   }
+  /* A reviewer who can save: a fresh session, or one whose token lapsed and can renew (the save renews it first).
+     The header reads Signed in through the hour a token lasts and after it; the card had read a lapsed token as signed
+     out and offered only the sign-in line (Sam's recording, 2026-11-06). */
+  function reviewer() {
+    var Sx = window.CPL_SESSION;
+    if (!Sx || typeof Sx.get !== "function") return null;
+    var s = Sx.get();
+    return s && s.email && ((typeof Sx.isFresh !== "function" || Sx.isFresh(s)) || s.refresh_token) ? s : null;
+  }
   function sessionHeaders(extra) {
     var Sx = window.CPL_SESSION;
     return Sx && typeof Sx.authHeaders === "function" ? Sx.authHeaders(extra) : (extra || {});
   }
   function projectOf(key, Q) { return (Q && Q.project) || key; }
+  /* The marks read behind a reviewer sign-in (queue_todo_done_reviewer_read). A lapsed token renews first: the card had
+     read a lapsed token as signed out, so Sam's Monterey mark (saved on CPL Pathways, 19:29Z 2026-11-06) never reached
+     the band and the call kept waiting. */
   function readTodoMarks() {
-    if (!session()) return Promise.resolve(null);
-    return fetch(REST + "/queue_todo_done?select=project,todo_id,note,reopen,by_email,at&order=id.desc", { headers: sessionHeaders() })
-      .then(function (r) { return r.ok ? r.json() : null; }, function () { return null; });
+    if (!reviewer()) return Promise.resolve(null);
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      return fetch(REST + "/queue_todo_done?select=project,todo_id,note,reopen,by_email,at&order=id.desc", { headers: sessionHeaders() });
+    }).then(function (r) { return r && r.ok ? r.json() : null; }, function () { return null; });
   }
   /* The newest mark on each to-do wins; a done one answers its call (by, at, words), a reopen leaves it open. */
   function applyTodoMarks(S, marks) {
@@ -841,7 +864,11 @@
     ".cmn-waiting .cmn-state { font-weight:700; }",
     ".cmn-waiting .cmn-zero { color:var(--hunter); }",
     ".cmn-done-h { margin:10px 0 4px; font-size:.78rem; font-weight:700; color:var(--cmn-heading); }",
-    ".cmn-done { list-style:none; padding:0; margin:0; }",
+    /* Every list in a Details cell is a grid with one shrinking column, so a completed sheet's line cuts with its
+       ellipsis instead of widening the cell past the Last run column and the card (Sam's recording, 2026-11-06). */
+    ".cmn-done { list-style:none; padding:0; margin:0; grid-template-columns:minmax(0, 1fr); }",
+    ".cmn-cell { grid-template-columns:minmax(0, 1fr); }",
+    ".cmn-done li, .cmn-done details, .cmn-done summary { min-width:0; }",
     ".cmn-done li { margin:0 0 2px; }",
     ".cmn-done summary { list-style:none; cursor:pointer; min-height:24px; display:flex; align-items:center; }",
     ".cmn-done summary::-webkit-details-marker { display:none; }",

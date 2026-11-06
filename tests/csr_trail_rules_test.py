@@ -102,6 +102,13 @@ check(("Agricultural Business and Related Services", "Auto Body Technology", "AU
       "an undeclared shared code is a duplicate")
 check(("Alpha", "Beta", "ALPH") in dups, "a one-sided declaration does not silence a collision")
 
+# 7b. CS6: a curator's note settles a weak mnemonic (Sam's recording, 2026-11-06: nine noted, the card kept asking).
+CS6 = {"Masonry": {"canonical_subj4": "QZQZ", "local_subject_variants": {"CNST": 4}, "_notes": "keep this as the best alternative"},
+       "Cabinet Making": {"canonical_subj4": "ZQXW", "local_subject_variants": {"WOOD": 3}}}
+got = {d: (r, j) for r, d, _, j, _ in m.cs6_findings(CS6)}
+check(got.get("Masonry") == ("cs6_mnemonic_noted", False), "a noted weak mnemonic is settled, needing no judgment")
+check(got.get("Cabinet Making") == ("cs6_weak_mnemonic", True), "an unnoted weak mnemonic still asks")
+
 # 8. On the committed registry, FTVE's ruled fan-in never reports.
 real_dups = m.cs2_dups(real_reg)
 check(not any(c == "FTVE" for _, _, c in real_dups), "the real FTVE fan-in stays quiet")

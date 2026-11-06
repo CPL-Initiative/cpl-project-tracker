@@ -165,21 +165,29 @@ check("Subjects: the unconfirmed issue, when listed, opens the List's Open filte
       and all(i["open"] == "#canonical-subj4/list/collision" for i in collision_issues)
       and bool(sub.get("shared")) == bool(collision_issues))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
-    check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",
-          len(rows[4]["issues"]) >= 2 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
-          and any("scan findings" in i.get("words", "") for i in rows[4]["issues"])
-          and any("identity codes" in i.get("words", "") for i in rows[4]["issues"]))
+    with open(os.path.join(ROOT, "kb", "csr_out", "latest.json"), encoding="utf-8") as fh:
+        _scan0 = json.load(fh)
+    _anch = sum(1 for f in _scan0.get("findings") or [] if f.get("rule") in ("cs9_anchor_subj_diverge", "cs9_anchor_dead_format"))
+    check("Subjects: with the daily scan's file, the stray codes and the anchor entries are re-key issues with an owner",
+          all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
+          and any("identity codes" in i.get("words", "") and i.get("carry") == "reaches" for i in rows[4]["issues"])
+          and [i["n"] for i in rows[4]["issues"] if "curated anchor entries" in i.get("words", "")] == ([_anch] if _anch else [])
+          and all(i.get("carry") == "reaches" for i in rows[4]["issues"] if "curated anchor entries" in i.get("words", "")))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
     # The card's findings count is the Subjects page's (S561): judgment findings less the ones another item counts.
     with open(os.path.join(ROOT, "kb", "csr_out", "latest.json"), encoding="utf-8") as fh:
         _scan = json.load(fh)
     _want = sum(1 for f in _scan.get("findings") or [] if f.get("needs_judgment")
-                and f.get("rule") not in ("cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"))
+                and f.get("rule") not in ("cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup",
+                                          "cs9_anchor_subj_diverge", "cs9_anchor_dead_format"))
     _got = [i["n"] for i in rows[4]["issues"] if "to confirm or note" in i.get("words", "")]
-    check("Subjects: the scan-findings issue counts what the tab's opened page counts (S561)", _got == [_want])
+    # A zero leaves the list (SkyBeacon, 2026-11-06: Sam noted all nine weak mnemonics and the card kept asking).
+    check("Subjects: the scan-findings issue counts what the tab's opened page counts (S561), and leaves at zero", _got == ([_want] if _want else []))
     _js = open(os.path.join(ROOT, "canonical_subj4.js"), encoding="utf-8").read()
-    check("Subjects: the skip list matches canonical_subj4.js's ASK_SKIP",
-          'var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];' in _js)
+    check("Subjects: the skip list matches canonical_subj4.js's ASK_SKIP, the anchor rules included",
+          'var ANCHOR_RULES = ["cs9_anchor_subj_diverge", "cs9_anchor_dead_format"];' in _js
+          and 'var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"].concat(ANCHOR_RULES);' in _js
+          and set(B.CSR_ASK_SKIP) == {"cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup", "cs9_anchor_subj_diverge", "cs9_anchor_dead_format"})
 if os.path.exists(os.path.join(ROOT, "kb", "csr_procedures.json")):
     with open(os.path.join(ROOT, "kb", "csr_procedures.json"), encoding="utf-8") as f:
         store = json.load(f)

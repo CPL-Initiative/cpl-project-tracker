@@ -830,7 +830,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1126,
+     "line": 1128,
      "tabs": [
       "canonical-subj4"
      ]
@@ -1775,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 908,
+     "line": 935,
      "tabs": [
       "commons"
      ]
@@ -5704,7 +5704,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1102,
+     "line": 1111,
      "tabs": [
       "coci-lookup"
      ]
@@ -6157,7 +6157,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2489,
+     "line": 2494,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6167,7 +6167,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 890,
+     "line": 899,
      "tabs": [
       "coci-lookup"
      ]
@@ -6260,7 +6260,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1603,
+     "line": 1608,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6270,7 +6270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 978,
+     "line": 987,
      "tabs": [
       "coci-lookup"
      ]
@@ -6316,7 +6316,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1601,
+     "line": 1606,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6600,7 +6600,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18895,
+     "line": 18898,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7426,7 +7426,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2488,
+     "line": 2493,
      "tabs": [
       "canonical-subj4"
      ]
@@ -12824,7 +12824,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 611
+     "line": 619
     }
    ],
    "served": false,
@@ -13532,7 +13532,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 762
+     "line": 770
     }
    ],
    "served": false,
@@ -13555,7 +13555,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 491
+     "line": 494
     }
    ],
    "producers": [
@@ -13612,7 +13612,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 492
+     "line": 495
     }
    ],
    "served": true,
@@ -13843,7 +13843,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 470
+     "line": 473
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13857,7 +13857,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 262
+     "line": 282
     },
     {
      "id": "script:kb/_fl_stray_remint.py",
@@ -15058,7 +15058,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 590
+     "line": 598
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -17771,7 +17771,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 545
+     "line": 553
     }
    ],
    "served": true,
@@ -20258,7 +20258,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 609
+     "line": 617
     }
    ],
    "served": false,
@@ -23692,7 +23692,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 891,
+     "line": 900,
      "tabs": [
       "coci-lookup"
      ]
@@ -24844,7 +24844,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 729,
+     "line": 752,
      "tabs": [
       "commons"
      ]
@@ -26636,7 +26636,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 542,
+     "line": 551,
      "tabs": [
       "coci-lookup"
      ]
@@ -28111,7 +28111,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 707,
+     "line": 730,
      "tabs": [
       "commons"
      ]

@@ -515,15 +515,24 @@
       .then(function (rows) { var by = {}; (rows || []).forEach(function (x) { by[x.field] = x; }); CC.live[id] = by; ccRedraw(); })
       .catch(function () { CC.live[id] = {}; });
   }
-  function ccSession() {
+  /* Drawing asks whether a reviewer can save: a fresh session, or one whose token lapsed and can renew. The save renews
+     first and then asks for a fresh one (ccFresh). A lapsed token read as signed out had hidden the controls until a
+     reload, on this tab and others (Sam, 2026-11-06: "must not have worked for all surfaces"). */
+  function ccSessionStrict() {
     var S = window.CPL_SESSION;
     if (!S || typeof S.get !== "function") return null;
     var s = S.get();
     return s && s.email && S.isFresh(s) ? s : null;
   }
+  function ccSession() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.get !== "function") return null;
+    var s = S.get();
+    return s && s.email && (S.isFresh(s) || s.refresh_token) ? s : null;
+  }
   function ccFresh() {
     var S = window.CPL_SESSION;
-    return S && typeof S.ensureFresh === "function" ? Promise.resolve(S.ensureFresh()).then(function () { return ccSession(); }) : Promise.resolve(ccSession());
+    return S && typeof S.ensureFresh === "function" ? Promise.resolve(S.ensureFresh()).then(function () { return ccSessionStrict(); }) : Promise.resolve(ccSessionStrict());
   }
   function ccHeaders(sess) {
     return { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json",
