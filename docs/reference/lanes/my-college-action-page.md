@@ -35,11 +35,15 @@ related:
 
 ✅ **The combined tab is CPL Pathways (Sam, Open Asks Sheet 111 card 1, 2026-10-21).** My College is off the menu since S448 and still opens at `#college-briefing`. Open: Sierra Training's *Try it in: My College* still targets the tab (cpl_chat.js delivers only into a dock inside `#tab-college-briefing`); retarget it to CPL Pathways' section if Sam wants.
 
-🔨 **CPL Pathways and the college visual in the new format (Sam, 2026-11-06: *"1,2 Yes"*).** Fable advised. The visual
-(`library/cpl-opportunity/`) becomes figure cards over one course List (the model is per course: 47 carry CPL, 84 could
-adopt the 189 matches, 146 peers credit, at Cerritos) with a side panel per course and a Programs view; the Extract stays
-the whole record, print hides the panel, a link carries view, filter and row. CPL Pathways: the picker becomes cards and a
-List of the college's programs; a pathway stays full width at its address; the tab takes the new look (his call 2).
-Mockup v1, Cerritos: https://claude.ai/artifact/ESN3ZD6pk64ARJtj4kfty7 (awaiting his reaction before the port).
+✅ **The college visual in the new format (Sam, 2026-11-06: *"1,2 Yes"*, then *"port it to the generator"*).** Fable advised;
+mockup https://claude.ai/artifact/ESN3ZD6pk64ARJtj4kfty7. `library/cpl-opportunity/` is the library look: five figure cards
+(each opens its courses) over one course List (`college_cpl_workbook.js` `courseRows`: a course leads with Could adopt,
+Has an exhibit, Peers credit it or None found; the first two filters each take every course that has one), a side panel
+per course (Request Adopt on its best match, every match with its MAP chips, its exhibits, why, next step) and a Programs
+view; each Could adopt row carries Request Adopt. The address carries view, status, priority, finder and open course
+(`pageState`/`pageQuery`). Exhibit lines whose course COCI lacks get their own row (Cerritos: 5 IWAP/ELAP). Print hides the
+panel; the Extract stays the whole record. Guards: `tests/college_cpl_workbook.test.js` §10; axe on the rendered Cerritos
+page passed light, dark, 390px (the a11y target still measures only the empty picker). Next: CPL Pathways' picker as cards
+and a List, each pathway full width, in the new look (his call 2).
 
 **NEXT:** ⓪ ✅ **Two figures, two names (Sam, sheet 6 card 5, 2026-09-30):** *Start here* reads *units not yet acted on* (`dormant_credits`, the MEASURES headline); *units waiting* stays with the articulated units in *Where you stand* (`articulated_waiting`). Guard: `tests/my_college_units_labels.test.js`. ① the redesign in a browser; ② the region lists when he finds them; ③ Sam's eyes on the public page signed out — the check the sweep cannot make. Story: [`docs/college_action_page_lessons.md`](docs/college_action_page_lessons.md); durable [`a-second-copy-of-a-fact-is-a-stale-copy-waiting`](docs/kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md).

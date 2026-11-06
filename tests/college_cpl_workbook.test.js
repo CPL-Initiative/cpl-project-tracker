@@ -188,7 +188,7 @@ const link8 = { getAttribute: function (k) { return k === "data-crid" ? "MAPICI-
 if (handler) handler({ target: { closest: function () { return link8; } }, preventDefault: function () {} });
 check("a Could Adopt click copies nothing", copied === null);
 check("the visual offers its shareable link", html.indexOf("https://example.org/cpl-opportunity/?college=Test%20River%20College") > 0);
-check("every table header cell is scoped", (html.match(/<th /g) || []).length === (html.match(/<th scope="col">/g) || []).length);
+check("every table header cell is scoped", (html.match(/<th /g) || []).length === (html.match(/<th scope="col"[ >]/g) || []).length);
 
 const pw = fs.readFileSync("cpl_pathways.js", "utf8");
 check("the CPL Pathways college picker links the college's visual", /"library\/cpl-opportunity\/\?college=" \+ encodeURIComponent\(col\.value\)/.test(pw));
@@ -213,7 +213,8 @@ check("the old address forwards to the library's, keeping ?college= and #section
   /var to = "\.\.\/library\/cpl-opportunity\/" \+ \(location\.search \|\| ""\) \+ \(location\.hash \|\| ""\);/.test(oldPage) &&
   /location\.replace\(to\)/.test(oldPage) && /<a href="\.\.\/library\/cpl-opportunity\/">/.test(oldPage));
 check("…and names itself in an h1 before a college is chosen (UI pass S446)",
-  /<div id="cpo-root"><h1>CPL opportunity analysis<\/h1><\/div>/.test(page) && /root\.innerHTML = '<h1>CPL opportunity analysis<\/h1><p class="cpo-note">/.test(page));
+  /<div id="cpo-root"><div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis<\/h1>/.test(page) &&
+  /root\.innerHTML = '<div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis<\/h1><p class="cpo-lede">/.test(page));
 check("the shareable page reads its college from ?college=", /get\("college"\)/.test(page) && /"\.\.\/\.\.\/college_cpl_workbook\.js"/.test(page) && /base: "\.\.\/\.\.\/"/.test(page));
 
 // the My College controls
@@ -238,8 +239,8 @@ check("a contact's email is a mailto link only when it is an address", /<a href=
 check("notes written for another college are not shown", W.notesHtml(NT, "Other College") === "" && W.notesHtml(null, "x") === "" && W.notesHtml({ college: "x", sections: [] }, "x") === "");
 const bn = Object.assign({}, b, { teamNotes: NT });
 const hn = W.pageHtml(bn);
-check("the notes sit under At a glance, before Could Adopt",
-  hn.indexOf('id="cpo-h-glance"') < hn.indexOf('id="cpo-h-notes"') && hn.indexOf('id="cpo-h-notes"') < hn.indexOf('id="cpo-h-adopt"'));
+check("the notes sit under the figure cards, before the course list",
+  hn.indexOf('id="cpo-h-glance"') < hn.indexOf('id="cpo-h-notes"') && hn.indexOf('id="cpo-h-notes"') < hn.indexOf('id="cpo-h-list"'));
 check("a page with no notes paints no notes section", html.indexOf("cpo-h-notes") < 0);
 check("the shareable page asks for its college's notes file and paints without one",
   /var stem = "notes\/" \+ W\.notesSlug\(b\.college\);/.test(page) && /read\(stem \+ "\.json"\)/.test(page) && /paint\(null\)/.test(page));
@@ -271,7 +272,7 @@ const nwChips = bChips.swRows.find(function (r) { return r.title === "CompTIA Ne
 check("each verified ID becomes a chip with its builder's short name; an unlisted ID gets none",
   nwChips.chips.length === 3 && nwChips.chips[0].short === "Saddleback" && nwChips.chips[1].short === "West LA" &&
   nwChips.chips.every(function (c) { return c.id !== "MAPICI-CNX-1-001"; }));
-const htmlChips = W.pageHtml(bChips);
+const htmlChips = W.pageHtml(bChips, { course: nwChips.courseId }); // the chips sit in the course's side panel
 check("each chip opens MAP searched for its own ID, not the first",
   /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN-1-001&amp;View=Non-Military"[^>]*>Saddleback/.test(htmlChips) &&
   /<a class="cpo-chip" href="https:\/\/cpldashboardcccco\.azurewebsites\.net\/insights\/exhibit-courses\?Exhibit=MAPICI-CN2-1-001&amp;View=Non-Military"[^>]*>West LA/.test(htmlChips));
@@ -281,7 +282,7 @@ check("an ID MAP lists without a recorded builder still links, as View in MAP",
 check("the row's status names each ID's builder", /MAPICI-CN-1-001 \(built by Saddleback College\), MAPICI-CN2-1-001 \(built by West Los Angeles College\), MAPICI-CN3-1-001 listed/.test(nwChips.linkStatus));
 check("the row's own Request Adopt link still opens the first verified ID", nwChips.link === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CN-1-001&View=Non-Military");
 check("the visual says the chip is the builder and MAP's table lists articulating colleges",
-  /the college that built it in MAP opens MAP searched for that ID; MAP's table lists the colleges that articulated it\./.test(htmlChips));
+  /Each link names the college that built the exhibit in MAP and opens MAP searched for that ID, where Request Quick Adopt needs no MAP sign-in\. MAP's table lists the colleges that articulated it\./.test(htmlChips));
 check("with no short-name helper a chip shows the full college name",
   W.build({ college: COLLEGE, today: "x", lookup: lookup, members: members, aligned: aligned, statewide: swChips, programs: programs, catalog: catalog,
     verified: { checked_at: "2026-10-26T23:00Z", found: { "MAPICI-CN2-1-001": { college: "West Los Angeles College" } } } })
@@ -289,6 +290,41 @@ check("with no short-name helper a chip shows the full college name",
 check("the shareable page loads the short-name helper before the builder",
   page.indexOf('src="../../college_short_names.js"') > 0 && page.indexOf('src="../../college_short_names.js"') < page.indexOf('src="../../college_cpl_workbook.js"'));
 check("a chip is a 24px target with an underline", /\.cpo-chip \{[^}]*min-height: 24px;[^}]*text-decoration: underline;/.test(page));
+
+// 10. The visual in the Commons format (Sam, 2026-11-06): figure cards over one course list, a side panel per course.
+const rows10 = W.courseRows(b);
+const by10 = {}; rows10.forEach(function (r) { by10[r.id] = r; });
+check("one row per course, statuses read from the build", rows10.length === b.courses.length + rows10.filter(function (r) { return r.notCoci; }).length &&
+  by10["CISC 323"].s === "could-adopt" && by10["HIST 300"].s === "peers" && by10["PLUMB 166"].s === "none");
+check("a course with an exhibit and an unadopted match leads with Could adopt and sits under both filters",
+  by10["CISC 323"].ex.length > 0 && W.pageFilter(rows10, { status: "could-adopt", prio: "", q: "" }).some(function (r) { return r.id === "CISC 323"; }) &&
+  W.pageFilter(rows10, { status: "has-exhibit", prio: "", q: "" }).some(function (r) { return r.id === "CISC 323"; }) &&
+  /Also has an exhibit/.test(W.pageHtml(b)));
+check("the finder matches the credential a course could adopt, not only its own title",
+  W.pageFilter(rows10, { status: "", prio: "", q: "network+" }).map(function (r) { return r.id; }).join() === "CISC 323");
+const h10 = W.pageHtml(b);
+check("five figure cards, each a button whose figure opens its courses", (h10.match(/<button type="button" class="cpo-card" data-act="card"/g) || []).length === 5 &&
+  /data-v="could-adopt" aria-pressed="true"><span class="cpo-fig">/.test(h10));
+check("the row's Request Adopt opens MAP on the course's best match and names it for a screen reader",
+  /<a class="cpo-adopt" href="[^"]*Exhibit=MAPICI-CN-1-001[^"]*" target="_blank" rel="noopener">Request Adopt<span class="cpo-sr"> \(CompTIA Network\+, opens MAP searched for MAPICI-CN-1-001\)/.test(h10));
+check("with no course open the panel says how to open one, and the chips wait for it", /Press a course to see its MAP exhibits/.test(h10) && h10.indexOf('class="cpo-chip"') < 0);
+const p10 = W.pageHtml(b, { course: "CISC 323" });
+check("an open course's panel leads with Request Adopt, then every match with its builders, then its exhibits",
+  p10.indexOf("Request Adopt in MAP") > 0 && p10.indexOf("Request Adopt in MAP") < p10.indexOf("Statewide recommendations it could adopt") &&
+  p10.indexOf("Statewide recommendations it could adopt") < p10.indexOf("Its exhibits in MAP") && /<tr class="cpo-sel">/.test(p10));
+check("the public page carries no curator control: no Edit, Save, flag or sign-in", !/>(Edit|Save|Flag|Sign in|Re-analy[sz]e)</i.test(p10 + h10));
+const st10 = W.pageState("?college=Test%20River%20College&status=all&priority=high&q=fire%20inspector&course=FIRE%201706");
+check("the address names the view, filters and open course, and reads back the same",
+  st10.status === "" && st10.prio === "high" && st10.q === "fire inspector" && st10.course === "FIRE 1706" &&
+  W.pageQuery("Test River College", st10) === "?college=Test%20River%20College&status=all&priority=high&q=fire%20inspector&course=FIRE%201706" &&
+  W.pageQuery("Test River College", W.pageState("")) === "?college=Test%20River%20College");
+check("an address naming an unknown status or priority falls back to the defaults", W.pageState("?status=bogus&priority=urgent").status === "could-adopt" && W.pageState("?priority=urgent").prio === "");
+check("the Programs view lists active programs with their catalog links", /id="cpo-h-prog"/.test(W.pageHtml(b, { view: "programs" })) && !/id="cpo-h-list"/.test(W.pageHtml(b, { view: "programs" })));
+check("the page is in the library's look: its tokens, no First Light fonts in its own styles",
+  /--page: #F5FAFF;/.test(page) && /--title: #072C66;/.test(page) && !/Playfair/.test(page.slice(0, page.indexOf("cpl-public-header:start"))));
+check("print leaves out the side panel and the controls", /@media print \{ \.cpo-panel, \.cpo-pick, \.cpo-acts, \.cpo-tools/.test(page));
+check("the page writes its address from the state and starts a picked college fresh",
+  /W\.pageState\(first \? location\.search : ""\)/.test(page) && /history\.replaceState\(null, "", W\.pageQuery\(b\.college, s2\)/.test(page));
 
 setTimeout(function () {
 let pass = 0;

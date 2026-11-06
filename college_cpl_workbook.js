@@ -786,131 +786,270 @@
     return html + "</section>";
   }
 
-  function pageHtml(b) {
-    var s = b.summary, e = x;
-    function n(v) { return Number(v || 0).toLocaleString("en-US"); }
-    function opt(v) { return '<option value="' + e(v) + '">' + e(v) + "</option>"; }
-    function uniq(list) { var o = {}; list.forEach(function (v) { if (v) o[v] = 1; }); return Object.keys(o).sort(); }
-    var PR = { High: 0, Medium: 1, Low: 2 };
-    var adopt = b.swRows.filter(function (r) { return r.couldAdopt === "Yes"; }).sort(function (a, c) {
-      return PR[a.priority] - PR[c.priority] || String(a.disc).localeCompare(String(c.disc)) || a.title.localeCompare(c.title);
+  /* ── The college's visual in the Commons format (Sam, 2026-11-06: "port it to the generator") ──
+   * Figure cards over one course List, a side panel for the course a reader presses, and a
+   * Programs view (mockup https://claude.ai/artifact/ESN3ZD6pk64ARJtj4kfty7, advised by Fable).
+   * The list is course-grained because the build is: a course carries its MAP exhibits, the
+   * statewide recommendations it could adopt (swRows, couldAdopt "Yes") and its peer evidence.
+   * A course's CPL status is the first of Could adopt, Has an exhibit, Peers credit it, None found;
+   * the Could adopt and Has an exhibit filters each take every course that has one, so a course
+   * with an exhibit and an unadopted match sits under both. Exhibit lines whose course is not in COCI's list still get a row, so the
+   * list holds every line. The address carries the view, filters and open course, so a shared
+   * link opens where the sender was; nothing is stored. Read-only: no edit, flag or sign-in. */
+  var STATUS = [["could-adopt", "Could adopt"], ["has-exhibit", "Has an exhibit"], ["peers", "Peers credit it"], ["none", "None found"]];
+  var STATUS_NAME = {}; STATUS.forEach(function (p) { STATUS_NAME[p[0]] = p[1]; });
+  var PRIO = [["high", "High"], ["medium", "Medium"], ["low", "Low"]];
+  var LIMIT = 50;
+  function pageDefaults() { return { view: "courses", status: "could-adopt", prio: "", q: "", course: "", limit: LIMIT, plimit: LIMIT }; }
+  /* The state a query string names (?college=…&view=programs&status=all&priority=high&q=…&course=…). */
+  function pageState(search) {
+    var st = pageDefaults(), q = String(search || "").replace(/^\?/, "");
+    q.split("&").forEach(function (kv) {
+      if (!kv) return;
+      var i = kv.indexOf("="), k = decodeURIComponent((i < 0 ? kv : kv.slice(0, i)).replace(/\+/g, " "));
+      var v = i < 0 ? "" : decodeURIComponent(kv.slice(i + 1).replace(/\+/g, " "));
+      if (k === "view" && v === "programs") st.view = "programs";
+      else if (k === "status") st.status = v === "all" ? "" : (STATUS_NAME[v] ? v : st.status);
+      else if (k === "priority") st.prio = /^(high|medium|low)$/.test(v) ? v : "";
+      else if (k === "q") st.q = v.slice(0, 120);
+      else if (k === "course") st.course = v.slice(0, 40);
     });
-    var mx = Math.max.apply(null, s.areas.map(function (a) { return a[1] + a[2] + a[3]; }).concat([1]));
-    var bars = s.areas.map(function (a) {
-      function seg(v, cls) { return v ? '<span class="cpo-seg ' + cls + '" style="width:' + (v / mx * 100).toFixed(2) + '%"></span>' : ""; }
-      return '<div class="cpo-bar-row"><span>' + e(a[0]) + '</span><span class="cpo-bar" aria-hidden="true">' + seg(a[1], "hi") + seg(a[2], "me") + seg(a[3], "lo")
-        + '</span><span class="cpo-bar-n">' + a[1] + " high · " + a[2] + " medium · " + a[3] + " low</span></div>";
-    }).join("");
-    function table(id, label, heads, rows, attrs) {
-      return '<div class="cpo-tbl" role="region" aria-label="' + e(label) + '" tabindex="0"><table id="' + id + '"><thead><tr>'
-        + heads.map(function (h) { return '<th scope="col">' + e(h) + "</th>"; }).join("") + "</tr></thead><tbody>"
-        + rows.map(function (r, k) { return "<tr" + (attrs ? attrs(k) : "") + ">" + r.map(function (c) { return "<td>" + c + "</td>"; }).join("") + "</tr>"; }).join("")
-        + "</tbody></table></div>";
+    return st;
+  }
+  function pageQuery(college, st) {
+    var p = ["college=" + encodeURIComponent(college)];
+    if (st.view === "programs") p.push("view=programs");
+    if (st.status !== "could-adopt") p.push("status=" + (st.status || "all"));
+    if (st.prio) p.push("priority=" + st.prio);
+    if (st.q) p.push("q=" + encodeURIComponent(st.q));
+    if (st.course && st.view !== "programs") p.push("course=" + encodeURIComponent(st.course));
+    return "?" + p.join("&");
+  }
+  /* One row per course, plus one per course an exhibit line names that COCI's list lacks. */
+  function courseRows(b) {
+    if (b._rows) return b._rows;
+    var opp = {}, ex = {}, sw = {}, seen = {}, rows = [];
+    (b.opps || []).forEach(function (o) { opp[o.id] = o; });
+    (b.existing || []).forEach(function (e2) { (ex[e2.course] = ex[e2.course] || []).push(e2); });
+    (b.swRows || []).forEach(function (r) { if (r.couldAdopt === "Yes" && r.courseId) (sw[r.courseId] = sw[r.courseId] || []).push(r); });
+    function row(id, title, units, disc, tier, prio, notCoci) {
+      var o = opp[id] || {}, lines = ex[id] || [], recs = sw[id] || [];
+      var s = recs.length ? "could-adopt" : lines.length ? "has-exhibit" : /^Needs validation/.test(tier || o.tier || "") ? "peers" : "none";
+      var best = null;
+      recs.forEach(function (r) { if (r.link && (!best || (r.adopters || 0) > (best.adopters || 0))) best = r; });
+      return { id: id, t: title || "", u: units == null ? "" : units, d: disc || "", s: s, p: o.priority || prio || "", ex: lines, sw: recs,
+        why: s === "could-adopt" || s === "peers" ? (o.why || "") : "", steps: s === "could-adopt" || s === "peers" ? (o.steps || "") : "",
+        best: best, notCoci: !!notCoci };
     }
-    /* Each verified exhibit ID with a chip naming the college that built it in MAP; the chip
-     * opens MAP's CPL Opportunities page searched for that ID alone. */
-    function idCell(r) {
-      if (!r.chips || !r.chips.length) return e(r.crId);
-      return r.chips.map(function (c) {
-        return '<span class="cpo-xid">' + e(c.id) + ' <a class="cpo-chip" href="' + e(c.link) + '" target="_blank" rel="noopener">'
-          + e(c.short || "View in MAP") + '<span class="cpo-sr"> (' + (c.college ? "built by " + e(c.college) + "; " : "")
-          + "opens MAP searched for " + e(c.id) + ")</span></a></span>";
-      }).join(" ");
-    }
-    var adoptRows = adopt.map(function (r) {
-      return [e(r.disc), e(r.title), idCell(r), e(r.course), e(r.courseId), e(r.units === "" || r.units == null ? "" : r.units),
-        e(r.why), e(r.tier), e(r.priority),
-        r.link ? '<a class="cpo-adopt" href="' + e(r.link) + '" target="_blank" rel="noopener">Request Adopt<span class="cpo-sr"> (opens MAP searched for ' + e(String(r.crId).split(",")[0].trim()) + ")</span></a>"
-          : '<span class="cpo-muted">' + e(r.linkStatus) + "</span>"];
+    (b.courses || []).forEach(function (c) { seen[c.id] = 1; rows.push(row(c.id, c.title, c.units, c.topTitle, c.tier, c.priority, false)); });
+    (b.existing || []).forEach(function (e2) {
+      if (!e2.course || seen[e2.course]) return;
+      seen[e2.course] = 1;
+      rows.push(row(e2.course, e2.courseTitle, e2.units, e2.disc, "", "", true));
     });
-    var exRows = b.existing.map(function (x2) {
-      return [e(x2.title), e(x2.type), e(x2.ids), e(x2.course), e(x2.courseTitle), e(x2.units == null ? "" : x2.units), e(x2.origin)];
+    var SO = { "could-adopt": 0, "has-exhibit": 1, "peers": 2, "none": 3 }, PO = { High: 0, Medium: 1, Low: 2 };
+    rows.sort(function (a, c) {
+      return SO[a.s] - SO[c.s] || (a.p in PO ? PO[a.p] : 3) - (c.p in PO ? PO[c.p] : 3) || a.id.localeCompare(c.id);
     });
-    var oppRows = b.opps.map(function (o) {
-      return [e(o.priority), e(o.id), e(o.title), e(o.crDisc || o.area), e(o.couldAdopt), e(o.proposals.split("\n")[0]),
-        e((o.crTitle || o.sources.split("\n")[0]))];
+    rows.forEach(function (r) {
+      r.hay = [r.id, r.t, r.d].concat(r.sw.map(function (w) { return w.title; }), r.ex.map(function (e2) { return e2.title; })).join(" ").toLowerCase();
     });
-    var progRows = b.programs.filter(function (p) { return p.status === "Active"; }).map(function (p) {
-      return [e(p.title), e(p.award), e(p.ctrl), e(p.top), e(p.coverage),
-        p.page ? '<a href="' + e(p.page) + '" target="_blank" rel="noopener">Catalog page</a>' : '<span class="cpo-muted">No program record</span>'];
+    b._rows = rows;
+    return rows;
+  }
+  function inStatus(r, k) { return k === "could-adopt" ? r.sw.length > 0 : k === "has-exhibit" ? r.ex.length > 0 : r.s === k; }
+  function pageFilter(rows, st) {
+    var q = String(st.q || "").trim().toLowerCase(), words = q ? q.split(/\s+/) : [];
+    return rows.filter(function (r) {
+      if (st.status && !inStatus(r, st.status)) return false;
+      if (st.prio && String(r.p).toLowerCase() !== st.prio) return false;
+      for (var i = 0; i < words.length; i++) if (r.hay.indexOf(words[i]) < 0) return false;
+      return true;
     });
-    var bare = b.courses.filter(function (c) { return !c.existing.length; }).sort(function (a, c2) { return a.id.localeCompare(c2.id); });
-    var bareRows = bare.map(function (c) { return [e(c.id), e(c.title), e(c.units), e(c.topTitle), e(c.tier)]; });
-    function sel(id, label, values) {
-      return '<label class="cpo-f">' + e(label) + ' <select id="' + id + '"><option value="">All</option>' + values.map(opt).join("") + "</select></label>";
-    }
-    return '<header class="cpo-head"><span class="cpo-eyebrow">CPL opportunity analysis · ' + e(b.today) + "</span><h1>" + e(b.college) + "</h1>"
-      + '<div class="cpo-acts"><button type="button" class="cpo-act" id="cpo-download">Download CPL Extract</button>'
-      + (b.shareUrl ? '<span class="cpo-share">Shareable link: <a href="' + e(b.shareUrl) + '">' + e(b.shareUrl) + '</a> <button type="button" class="cpo-act" id="cpo-copy">Copy link</button></span>' : "")
-      + "</div></header>"
-      + '<section aria-labelledby="cpo-h-glance"><h2 id="cpo-h-glance">At a glance</h2><div class="cpo-facts">'
-      + '<div class="cpo-fact"><b>' + n(s.nCourses) + "</b><span>COCI courses</span></div>"
-      + '<div class="cpo-fact"><b>' + n(s.nActivePrograms) + "</b><span>active COCI programs</span></div>"
-      + '<div class="cpo-fact"><b>' + n(b.existing.length) + "</b><span>MAP exhibit lines (AP and IB excluded)</span></div>"
-      + '<div class="cpo-fact"><b>' + n(adopt.length) + "</b><span>Could Adopt matches to a course</span></div>"
-      + '<div class="cpo-fact"><b>' + n(s.priority.High) + "</b><span>high-priority course opportunities</span></div></div></section>"
-      + notesHtml(b.teamNotes, b.college)
-      + '<section aria-labelledby="cpo-h-adopt"><h2 id="cpo-h-adopt">Could Adopt</h2>'
-      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link opens MAP\'s CPL Opportunities page already searched for the recommendation\'s exhibit ID, so it comes up with Request Quick Adopt, which needs no MAP sign-in and asks a college initiator to adopt (Quick Adopt needs a sign-in and starts the approval queue). The Non-Military Credit tab there shows the exhibit as a card. Beside each exhibit ID, the college that built it in MAP opens MAP searched for that ID; MAP\'s table lists the colleges that articulated it. '
-      + (s.verifiedAt ? "Links appear only for IDs MAP listed on that page when checked " + e(s.verifiedAt) + "."
-        : "The check of which IDs MAP lists could not be read, so no links are shown.") + "</p>"
-      + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-q" placeholder="Title, ID or course"></label>'
-      + sel("cpo-disc", "Discipline", uniq(adopt.map(function (r) { return r.disc; })))
-      + sel("cpo-pri", "Priority", ["High", "Medium", "Low"])
-      + sel("cpo-status", "Status", uniq(adopt.map(function (r) { return r.tier; })))
-      + '<span class="cpo-count" id="cpo-count" aria-live="polite">' + adopt.length + " shown</span></div>"
-      + table("cpo-adopt-t", "Could Adopt recommendations", ["Discipline", "Statewide recommendation", "Exhibit ID", "Matching course", "Course ID", "Units", "Alignment rationale", "Status", "Priority", "MAP"], adoptRows,
-          function (k) { var r = adopt[k]; return ' data-disc="' + e(r.disc) + '" data-pri="' + e(r.priority) + '" data-status="' + e(r.tier) + '"'; })
-      + "</section>"
-      + '<section aria-labelledby="cpo-h-ex"><h2 id="cpo-h-ex">Existing MAP exhibits</h2><p class="cpo-note">AP and IB excluded; CLEP included. From MAP\'s articulation records.</p>'
-      + (exRows.length ? table("cpo-ex-t", "Existing MAP exhibits", ["Exhibit", "CPL type", "Exhibit ID", "Course", "Course title", "Units", "Origin"], exRows) : '<p>None.</p>') + "</section>"
-      + '<section aria-labelledby="cpo-h-opp"><h2 id="cpo-h-opp">Potential new CPL opportunities</h2><p class="cpo-note">Courses by TOP area and priority. Each is a candidate for faculty review.</p>'
-      + '<div class="cpo-legend"><span><i class="hi"></i>High</span><span><i class="me"></i>Medium</span><span><i class="lo"></i>Low</span></div>' + bars
-      + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-oq" placeholder="Course or credential"></label>' + sel("cpo-opri", "Priority", ["High", "Medium", "Low"]) + "</div>"
-      + table("cpo-opp-t", "Course opportunities", ["Priority", "Course ID", "Title", "Discipline", "Could Adopt", "Proposed opportunity", "Lead credential or source"], oppRows,
-          function (k) { return ' data-pri="' + e(b.opps[k].priority) + '"'; }) + "</section>"
-      + '<section aria-labelledby="cpo-h-prog"><h2 id="cpo-h-prog">Active programs</h2><p class="cpo-note">Each program\'s CPL coverage, read from the courses its catalog page lists. The link opens that page.</p>'
-      + table("cpo-prog-t", "Active programs", ["Program", "Award", "Control number", "TOP", "CPL coverage", "Catalog"], progRows) + "</section>"
-      + '<section aria-labelledby="cpo-h-bare"><h2 id="cpo-h-bare">Courses without a CPL exhibit</h2><p class="cpo-note">' + n(bare.length) + " of " + n(s.nCourses) + " COCI courses hold no MAP exhibit (AP and IB aside).</p>"
-      + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-bq" placeholder="Course ID or title"></label></div>'
-      + table("cpo-bare-t", "Courses without a CPL exhibit", ["Course ID", "Title", "Units", "Discipline area", "Alignment"], bareRows) + "</section>"
-      + '<p class="cpo-note">Built from COBI\'s published data: COCI course list and program export, the program records read from college catalogs, MAP exhibits (' + e(s.statewideGenerated)
-      + ") and the Commons' peer alignments. MyPath pathway links are not in this data, so none are shown. The extract carries every row and its sources.</p>"
-      + b.notes.map(function (t) { return '<p class="cpo-note">' + e(t) + "</p>"; }).join("");
   }
 
-  /* Filters act on rows already in the DOM. */
-  function wirePage(root, b) {
-    function filt(tableId, inputs, test) {
-      var t = root.querySelector("#" + tableId);
-      if (!t) return;
-      var rows = Array.prototype.slice.call(t.tBodies[0].rows);
-      function run() {
-        var shown = 0;
-        rows.forEach(function (tr) { var ok = test(tr); tr.hidden = !ok; if (ok) shown++; });
-        if (tableId === "cpo-adopt-t") { var c = root.querySelector("#cpo-count"); if (c) c.textContent = shown + " shown"; }
-      }
-      inputs.forEach(function (id) { var el = root.querySelector("#" + id); if (el) el.addEventListener("input", run); });
-      run();
+  function pageHtml(b, stIn) {
+    var st = Object.assign(pageDefaults(), stIn || {}), s = b.summary, e = x;
+    function n(v) { return Number(v || 0).toLocaleString("en-US"); }
+    var rows = courseRows(b), count = { "": rows.length }, pc = { high: 0, medium: 0, low: 0 };
+    STATUS.forEach(function (p) { count[p[0]] = 0; });
+    rows.forEach(function (r) {
+      STATUS.forEach(function (p) { if (inStatus(r, p[0])) count[p[0]]++; });
+      var k = String(r.p).toLowerCase(); if (k in pc) pc[k]++;
+    });
+    var matches = rows.reduce(function (t, r) { return t + r.sw.length; }, 0);
+    var progs = (b.programs || []).filter(function (p) { return p.status === "Active"; });
+    function pressed(on) { return ' aria-pressed="' + (on ? "true" : "false") + '"'; }
+    function card(fig, label, sub, act, v, on) {
+      return '<button type="button" class="cpo-card" data-act="' + act + '" data-v="' + e(v) + '"' + pressed(on) + '><span class="cpo-fig">' + e(fig)
+        + '</span><span class="cpo-clabel">' + e(label) + '</span><span class="cpo-csub">' + e(sub) + "</span></button>";
     }
-    function val(id) { var el = root.querySelector("#" + id); return el ? el.value.trim().toLowerCase() : ""; }
-    filt("cpo-adopt-t", ["cpo-q", "cpo-disc", "cpo-pri", "cpo-status"], function (tr) {
-      var q = val("cpo-q"), d = val("cpo-disc"), p = val("cpo-pri"), st = val("cpo-status");
-      return (!q || tr.textContent.toLowerCase().indexOf(q) >= 0) && (!d || (tr.getAttribute("data-disc") || "").toLowerCase() === d)
-        && (!p || (tr.getAttribute("data-pri") || "").toLowerCase() === p) && (!st || (tr.getAttribute("data-status") || "").toLowerCase() === st);
-    });
-    filt("cpo-opp-t", ["cpo-oq", "cpo-opri"], function (tr) {
-      var q = val("cpo-oq"), p = val("cpo-opri");
-      return (!q || tr.textContent.toLowerCase().indexOf(q) >= 0) && (!p || (tr.getAttribute("data-pri") || "").toLowerCase() === p);
-    });
-    filt("cpo-bare-t", ["cpo-bq"], function (tr) { var q = val("cpo-bq"); return !q || tr.textContent.toLowerCase().indexOf(q) >= 0; });
-    var dl = root.querySelector("#cpo-download");
-    if (dl) dl.onclick = function () { downloadWorkbook(b); dl.textContent = "Downloaded"; setTimeout(function () { dl.textContent = "Download CPL Extract"; }, 2600); };
-    var cp = root.querySelector("#cpo-copy");
-    if (cp) cp.onclick = function () {
-      var done = function () { cp.textContent = "Copied"; setTimeout(function () { cp.textContent = "Copy link"; }, 2000); };
-      try { navigator.clipboard.writeText(b.shareUrl).then(done, function () {}); } catch (err) { /* the link stays selectable */ }
+    var courses = st.view !== "programs";
+    var cards = '<section aria-labelledby="cpo-h-glance"><h2 id="cpo-h-glance" class="cpo-vh">At a glance</h2><div class="cpo-cards">'
+      + card(n(rows.length), "Courses", "Every course in COCI's list" + (rows.length > (b.courses || []).length ? ", and the courses its MAP exhibits name" : ""), "card", "all", courses && !st.status && !st.prio)
+      + card(n(count["could-adopt"]), "Could adopt", n(matches) + " statewide credit recommendations match these courses", "card", "could-adopt", courses && st.status === "could-adopt" && !st.prio)
+      + card(n(pc.high), "High priority", "Courses ranked first to take to faculty", "card", "high", courses && !st.status && st.prio === "high")
+      + card(n(count["has-exhibit"]), "Carry CPL now", n((b.existing || []).length) + " MAP exhibit lines, AP and IB left out", "card", "has-exhibit", courses && st.status === "has-exhibit" && !st.prio)
+      + card(n(progs.length), "Active programs", "Opens the Programs view", "card", "programs", !courses)
+      + "</div></section>";
+    var views = '<div class="cpo-views" role="group" aria-label="View">'
+      + '<button type="button" class="cpo-word" data-act="view" data-v="courses"' + pressed(courses) + ">Courses</button>"
+      + '<button type="button" class="cpo-word" data-act="view" data-v="programs"' + pressed(!courses) + ">Programs</button></div>";
+    var hero = '<div class="cpo-hero"><div class="cpo-hero-in"><span class="cpo-eyebrow">CPL Opportunity Analysis · ' + e(b.today) + "</span><h1>" + e(b.college) + "</h1>"
+      + '<div class="cpo-rule" aria-hidden="true"></div>'
+      + '<p class="cpo-lede">Where ' + e(b.college) + "'s courses already carry credit for prior learning, where a statewide credit recommendation could be adopted, and where peer colleges award credit it does not yet. Each figure below opens its courses; a course opens its detail beside the list.</p>"
+      + '<div class="cpo-acts"><button type="button" class="cpo-act" id="cpo-download">Download CPL Extract</button>'
+      + (b.shareUrl ? '<span class="cpo-share">Shareable link: <a href="' + e(b.shareUrl) + '">' + e(b.shareUrl) + '</a> <button type="button" class="cpo-act" id="cpo-copy">Copy link to this view</button></span>' : "")
+      + "</div></div></div>";
+    var body = courses ? listHtml() : programsHtml();
+    function wordGroup(label, list, cur, act, counts) {
+      return '<div class="cpo-wg" role="group" aria-label="' + e(label) + '"><span class="cpo-wl">' + e(label) + "</span>"
+        + list.map(function (p) {
+          return '<button type="button" class="cpo-word" data-act="' + act + '" data-v="' + e(p[0] || "all") + '"' + pressed(cur === p[0]) + ">" + e(p[1])
+            + (counts && counts[p[0]] != null ? " " + n(counts[p[0]]) : "") + "</button>";
+        }).join("") + "</div>";
+    }
+    function listHtml() {
+      var hit = pageFilter(rows, st), shown = hit.slice(0, st.limit);
+      var sel = st.course ? rows.filter(function (r) { return r.id === st.course; })[0] : null;
+      var html = '<section aria-labelledby="cpo-h-list" class="cpo-list"><h2 id="cpo-h-list" class="cpo-vh">Courses</h2>'
+        + '<div class="cpo-tools"><div class="cpo-find"><label for="cpo-q">Find a course</label><input type="search" id="cpo-q" value="' + e(st.q) + '" placeholder="Course, title, discipline or credential" autocomplete="off"></div>'
+        + wordGroup("CPL status", [["", "All"]].concat(STATUS), st.status, "status", count)
+        + wordGroup("Priority", [["", "Any"]].concat(PRIO), st.prio, "prio", { high: pc.high, medium: pc.medium, low: pc.low }) + "</div>"
+        + '<p class="cpo-count" id="cpo-count" role="status">Showing ' + n(shown.length) + " of " + n(hit.length) + " courses in this view.</p>"
+        + '<div class="cpo-split"><div class="cpo-listcol">';
+      if (!hit.length) html += '<p class="cpo-note">No course matches. The finder and the words above narrow together.</p>';
+      else {
+        html += '<div class="cpo-tbl" role="region" aria-label="' + e(b.college) + ' courses" tabindex="0"><table id="cpo-list-t"><colgroup><col style="width:13%"><col style="width:37%"><col style="width:7%"><col style="width:19%"><col style="width:14%"><col style="width:10%"></colgroup>'
+          + '<thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="cpo-num">Units</th><th scope="col">Discipline</th><th scope="col">CPL status</th><th scope="col">Priority</th></tr></thead><tbody>'
+          + shown.map(function (r) {
+            var on = sel && sel.id === r.id;
+            return "<tr" + (on ? ' class="cpo-sel"' : "") + '><td><button type="button" class="cpo-rowbtn" data-act="row" data-v="' + e(r.id) + '" aria-expanded="' + (on ? "true" : "false") + '">' + e(r.id) + "</button></td>"
+              + "<td>" + e(r.t) + (r.notCoci ? ' <span class="cpo-muted">(not in COCI\'s list)</span>' : "") + '</td><td class="cpo-num">' + e(r.u) + "</td><td>" + e(r.d) + "</td>"
+              + '<td class="cpo-st-' + r.s + '"><span class="cpo-stw">' + e(STATUS_NAME[r.s]) + "</span>"
+              + (r.s === "could-adopt" && r.ex.length ? '<span class="cpo-stw cpo-muted">Also has an exhibit</span>' : "")
+              + (r.best ? '<a class="cpo-adopt" href="' + e(r.best.link) + '" target="_blank" rel="noopener">Request Adopt<span class="cpo-sr"> (' + e(r.best.title) + ", opens MAP searched for " + e(String(r.best.crId).split(",")[0].trim()) + ")</span></a>" : "")
+              + '</td><td class="' + (r.p === "High" ? "cpo-hi" : "cpo-muted") + '">' + e(r.p) + "</td></tr>";
+          }).join("") + "</tbody></table></div>";
+        if (hit.length > shown.length) html += '<button type="button" class="cpo-word cpo-more" data-act="more">Show ' + n(Math.min(LIMIT, hit.length - shown.length)) + " more</button>";
+      }
+      html += "</div>" + panelHtml(sel) + "</div></section>" + areasHtml();
+      return html;
+    }
+    function chip(c) {
+      return '<a class="cpo-chip" href="' + e(c.link) + '" target="_blank" rel="noopener">' + e(c.short || "View in MAP")
+        + '<span class="cpo-sr"> (' + (c.college ? "built by " + e(c.college) + "; " : "") + "opens MAP searched for " + e(c.id) + ")</span></a>";
+    }
+    function panelHtml(r) {
+      var h = '<aside class="cpo-panel" aria-labelledby="cpo-ph">';
+      if (!r) return h + '<h2 id="cpo-ph" class="cpo-vh">Course detail</h2><p class="cpo-note">Press a course to see its MAP exhibits, the statewide recommendations it could adopt with the MAP link to request each, why it matches and the next step.</p></aside>';
+      h += '<div class="cpo-ptop"><span class="cpo-eyebrow">' + e(STATUS_NAME[r.s]) + '</span><button type="button" class="cpo-word" data-act="close">Close</button></div>'
+        + '<h2 id="cpo-ph" tabindex="-1">' + e(r.id) + " " + e(r.t) + "</h2>"
+        + '<p class="cpo-note">' + e([r.u !== "" ? r.u + " units" : "", r.d, r.p ? "Priority " + r.p : ""].filter(Boolean).join(" · ")) + "</p>";
+      if (r.best) h += '<p class="cpo-pra"><a href="' + e(r.best.link) + '" target="_blank" rel="noopener">Request Adopt in MAP</a> <span class="cpo-muted">' + e(r.best.title) + ", the match the most colleges have adopted</span></p>";
+      if (r.sw.length) {
+        h += '<section><h3>Statewide recommendations it could adopt</h3><p class="cpo-note">Each link names the college that built the exhibit in MAP and opens MAP searched for that ID, where Request Quick Adopt needs no MAP sign-in. MAP\'s table lists the colleges that articulated it.</p>'
+          + r.sw.map(function (w) {
+            return '<div class="cpo-pitem"><b>' + e(w.title) + "</b><span class=\"cpo-muted\">" + e([w.type, w.adopters ? "adopted by " + n(w.adopters) + (w.adopters === 1 ? " college" : " colleges") : ""].filter(Boolean).join(" · ")) + "</span>"
+              + (w.chips && w.chips.length ? '<div class="cpo-chips">' + w.chips.map(chip).join("") + "</div>" : '<span class="cpo-muted">' + e(w.linkStatus || "MAP lists no exhibit page for this recommendation yet.") + "</span>") + "</div>";
+          }).join("") + "</section>";
+      }
+      if (r.ex.length) {
+        h += "<section><h3>Its exhibits in MAP</h3>" + r.ex.map(function (l) {
+          return '<div class="cpo-pitem"><b>' + e(l.title) + "</b>" + (l.credit ? "<span>" + e(l.credit) + "</span>" : "")
+            + '<span class="cpo-muted">' + e([l.type, l.issuer, l.origin].filter(Boolean).join(" · ")) + "</span>" + (l.ids ? '<span class="cpo-muted">' + e(l.ids) + "</span>" : "") + "</div>";
+        }).join("") + "</section>";
+      }
+      if (r.why) h += '<section><h3>Why it matches</h3><p class="cpo-pre">' + e(r.why) + "</p></section>";
+      if (r.steps) h += "<section><h3>Next step</h3><p>" + e(r.steps) + "</p></section>";
+      if (r.s === "none") h += "<p>No MAP exhibit, statewide recommendation or peer articulation was found for this course. Faculty may know of an industry credential or exam that covers it.</p>";
+      return h + "</aside>";
+    }
+    function areasHtml() {
+      if (!s.areas || !s.areas.length) return "";
+      var mx = Math.max.apply(null, s.areas.map(function (a) { return a[1] + a[2] + a[3]; }).concat([1]));
+      return '<section aria-labelledby="cpo-h-areas"><h2 id="cpo-h-areas">Where the opportunities sit</h2><p class="cpo-note">Courses with a match, by TOP area and priority. An area opens its courses.</p>'
+        + '<div class="cpo-legend" aria-hidden="true"><span><i class="hi"></i>High</span><span><i class="me"></i>Medium</span><span><i class="lo"></i>Low</span></div>'
+        + s.areas.map(function (a) {
+          function seg(v, cls) { return v ? '<span class="cpo-seg ' + cls + '" style="width:' + (v / mx * 100).toFixed(2) + '%"></span>' : ""; }
+          return '<div class="cpo-bar-row"><button type="button" class="cpo-word" data-act="area" data-v="' + e(a[0]) + '">' + e(a[0]) + '</button><span class="cpo-bar" aria-hidden="true">'
+            + seg(a[1], "hi") + seg(a[2], "me") + seg(a[3], "lo") + '</span><span class="cpo-bar-n">' + a[1] + " high · " + a[2] + " medium · " + a[3] + " low</span></div>";
+        }).join("") + "</section>";
+    }
+    function programsHtml() {
+      var shown = progs.slice(0, st.plimit);
+      return '<section aria-labelledby="cpo-h-prog"><h2 id="cpo-h-prog">Active programs</h2><p class="cpo-note">Each program\'s CPL coverage, read from the courses its catalog page lists. The link opens that page.</p>'
+        + '<div class="cpo-tbl" role="region" aria-label="Active programs" tabindex="0"><table id="cpo-prog-t"><colgroup><col style="width:32%"><col style="width:26%"><col style="width:11%"><col style="width:9%"><col style="width:12%"><col style="width:10%"></colgroup>'
+        + '<thead><tr><th scope="col">Program</th><th scope="col">Award</th><th scope="col">Control number</th><th scope="col">TOP</th><th scope="col">CPL coverage</th><th scope="col">Catalog</th></tr></thead><tbody>'
+        + shown.map(function (p) {
+          return "<tr><td><b>" + e(p.title) + "</b></td><td>" + e(String(p.award || "").split(" requiring")[0]) + "</td><td>" + e(p.ctrl) + "</td><td>" + e(p.top) + "</td><td>" + e(p.coverage) + "</td><td>"
+            + (p.page ? '<a href="' + e(p.page) + '" target="_blank" rel="noopener">Catalog page</a>' : '<span class="cpo-muted">No program record</span>') + "</td></tr>";
+        }).join("") + "</tbody></table></div>"
+        + (progs.length > shown.length ? '<button type="button" class="cpo-word cpo-more" data-act="pmore">Show ' + n(Math.min(LIMIT, progs.length - shown.length)) + " more programs</button>" : "")
+        + "</section>";
+    }
+    return hero + '<div class="cpo-body">' + cards + notesHtml(b.teamNotes, b.college) + views + body
+      + '<p class="cpo-note">The CPL Extract holds every course, every match and every column; printing this page prints the rows in view, without the side panel. Built from COBI\'s published data: COCI\'s course list and program export, the program records read from college catalogs, MAP exhibits (' + e(s.statewideGenerated)
+      + ") and the Commons' peer alignments. " + (s.verifiedAt ? "MAP links appear only for IDs MAP listed when checked " + e(s.verifiedAt) + "." : "The check of which IDs MAP lists could not be read, so no MAP links are shown.") + "</p>"
+      + (b.notes || []).map(function (t) { return '<p class="cpo-note">' + e(t) + "</p>"; }).join("") + "</div>";
+  }
+
+  /* One delegated click and one input listener on the page root; every change redraws the root
+   * from the state and reports it (opts.onState), so the page can write the address. */
+  function wirePage(root, b, opts) {
+    opts = opts || {};
+    var st = Object.assign(pageDefaults(), opts.state || {}), timer = null;
+    function redraw(focus) {
+      if (!("innerHTML" in root)) return;
+      root.innerHTML = pageHtml(b, st);
+      if (opts.onState) opts.onState(st);
+      if (focus) { var el = root.querySelector(focus); if (el && el.focus) { el.focus(); if (focus === "#cpo-q" && el.setSelectionRange) el.setSelectionRange(el.value.length, el.value.length); } }
+    }
+    if (root._cpoOff) root._cpoOff();   // a second college on the same page: one set of listeners
+    function onClick(ev) {
+      var t = ev.target && ev.target.closest ? ev.target.closest("[data-act], #cpo-download, #cpo-copy") : null;
+      if (!t || !t.getAttribute) return;
+      var id = t.getAttribute("id");
+      if (id === "cpo-download") { downloadWorkbook(b); t.textContent = "Downloaded"; setTimeout(function () { t.textContent = "Download CPL Extract"; }, 2600); return; }
+      if (id === "cpo-copy") {
+        var url = (opts.shareUrl ? opts.shareUrl(st) : "") || b.shareUrl;
+        try { navigator.clipboard.writeText(url).then(function () { t.textContent = "Copied"; setTimeout(function () { t.textContent = "Copy link to this view"; }, 2000); }, function () {}); } catch (err) { /* the link stays selectable */ }
+        return;
+      }
+      var act = t.getAttribute("data-act"), v = t.getAttribute("data-v") || "";
+      if (!act) return;
+      if (act === "card") {
+        st.view = v === "programs" ? "programs" : "courses"; st.limit = LIMIT; st.course = "";
+        st.status = v === "could-adopt" || v === "has-exhibit" ? v : ""; st.prio = v === "high" ? "high" : "";
+        redraw('.cpo-card[data-v="' + v + '"]'); return;
+      }
+      if (act === "view") { st.view = v === "programs" ? "programs" : "courses"; redraw('.cpo-word[data-act="view"][data-v="' + v + '"]'); return; }
+      if (act === "status") { st.status = v === "all" ? "" : v; st.limit = LIMIT; redraw('.cpo-word[data-act="status"][data-v="' + v + '"]'); return; }
+      if (act === "prio") { st.prio = v === "all" ? "" : v; st.limit = LIMIT; redraw('.cpo-word[data-act="prio"][data-v="' + v + '"]'); return; }
+      if (act === "more") { st.limit += LIMIT; redraw(null); return; }
+      if (act === "pmore") { st.plimit += LIMIT; redraw(null); return; }
+      if (act === "area") { st.view = "courses"; st.status = ""; st.prio = ""; st.q = v; st.limit = LIMIT; st.course = ""; redraw("#cpo-q"); return; }
+      if (act === "close") { var was = st.course; st.course = ""; redraw('.cpo-rowbtn[data-v="' + was.replace(/"/g, "") + '"]'); return; }
+      if (act === "row") {
+        st.course = st.course === v ? "" : v;
+        redraw(st.course ? "#cpo-ph" : '.cpo-rowbtn[data-v="' + v.replace(/"/g, "") + '"]');
+        var ph = st.course && root.querySelector ? root.querySelector("#cpo-ph") : null;
+        if (ph && ph.scrollIntoView && typeof window !== "undefined" && window.innerWidth < 900) ph.scrollIntoView({ block: "start" });
+      }
+    }
+    function onInput(ev) {
+      if (!ev.target || ev.target.id !== "cpo-q") return;
+      var val = ev.target.value;
+      clearTimeout(timer);
+      timer = setTimeout(function () { st.q = val; st.limit = LIMIT; st.course = ""; redraw("#cpo-q"); }, 160);
+    }
+    root.addEventListener("click", onClick);
+    root.addEventListener("input", onInput);
+    root._cpoOff = function () {
+      clearTimeout(timer);
+      if (root.removeEventListener) { root.removeEventListener("click", onClick); root.removeEventListener("input", onInput); }
     };
+    return { state: function () { return st; }, redraw: redraw };
   }
 
   function fileStem(college, today) {
@@ -1003,6 +1142,7 @@
     build: build, sheets: sheets, toXlsx: toXlsx, pageHtml: pageHtml, wirePage: wirePage, load: load, prepare: prepare, resolve: findName,
     downloadWorkbook: downloadWorkbook, catalogFor: catalogFor, shareUrl: shareUrl, colleges: colleges,
     notesSlug: notesSlug, notesHtml: notesHtml,
+    courseRows: courseRows, pageState: pageState, pageQuery: pageQuery, pageFilter: pageFilter,
     _titleMatches: titleMatches, _crc32: crc32
   };
 })();
