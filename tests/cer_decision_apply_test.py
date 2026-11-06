@@ -236,6 +236,50 @@ for label, mutate in [
     check("the plan refuses " + label, refused)
     shutil.rmtree(d)
 
+# ── SkyLantern (2026-11-06): a title assignment only in the revise shape ──────
+RV = {"ruling": "Sam, in session 2026-11-06", "cohort": "exhibits-s1@bot", "rows": [
+    {"course_id": U + "NASM Raw", "field": "unified_title_assignment", "value": "NASM CPT",
+     "replaces": {"value": "Personal Trainer Instructor", "reviewer_email": "curator@rccd.edu"}},
+    {"course_id": U + "NASM Raw", "field": "unified_title_supersedes", "value": "Personal Trainer Instructor"},
+]}
+d = plan_dir(RV)
+try:
+    app.load_plan(d); ok = True
+except SystemExit as e:
+    ok = str(e)
+check("the plan takes a title assignment as a replace beside unified_title_supersedes", ok is True, ok)
+LIVE = {"course_id": U + "NASM Raw", "field": "unified_title_assignment", "value": "Personal Trainer Instructor",
+        "reviewer_email": "curator@rccd.edu", "reviewed_at": "2026-10-31T16:37:41Z"}
+r = FakeRest([LIVE], plan_dir=d)
+code, lines = run(d, "commit", r)
+moved = {x["field"]: x for x in r.rows if x["course_id"] == U + "NASM Raw"}
+check("commit replaces the assignment under the cohort and inserts the supersedes beside it",
+      code == 0 and moved["unified_title_assignment"]["value"] == "NASM CPT"
+      and moved["unified_title_assignment"]["reviewer_email"] == "exhibits-s1@bot"
+      and moved["unified_title_supersedes"]["value"] == "Personal Trainer Instructor", lines)
+code, lines = run(d, "rollback", r)
+back = [x for x in r.rows if x["course_id"] == U + "NASM Raw"]
+check("rollback puts the person's assignment back and removes the supersedes",
+      code == 0 and len(back) == 1 and back[0]["value"] == "Personal Trainer Instructor"
+      and back[0]["reviewer_email"] == "curator@rccd.edu", lines)
+shutil.rmtree(d)
+for label, mutate in [
+    ("a title assignment that replaces nothing", lambda p: p["rows"][0].pop("replaces")),
+    ("a title assignment whose supersedes names another title", lambda p: p["rows"][1].update(value="Something else")),
+    ("a title assignment with no supersedes beside it", lambda p: p["rows"].pop(1)),
+    ("a supersedes with no assignment", lambda p: p["rows"].pop(0)),
+]:
+    bad = copy.deepcopy(RV)
+    mutate(bad)
+    d = plan_dir(bad)
+    try:
+        app.load_plan(d)
+        refused = False
+    except SystemExit:
+        refused = True
+    check("the plan refuses " + label, refused)
+    shutil.rmtree(d)
+
 # ── the plan is validated before anything is read ────────────────────────────
 for label, mutate in [
     ("a cohort that is not <lane>-s<N>@bot", lambda p: p.update(cohort="curator@rccd.edu")),

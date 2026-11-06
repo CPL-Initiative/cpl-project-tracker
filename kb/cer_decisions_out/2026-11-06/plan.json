@@ -1,0 +1,91 @@
+{
+ "about": "Sam, in session 2026-11-06 (SkyLantern), after the CPL-AI join named seven certifications filed under another exhibit: 'go ahead and make the seven title fixes in the CER'. Five local titles carry the seven: each was placed by Sam on 2026-10-31 in Review (slee@cccco.edu) under a title the aligned course proposed, and each moves to the credential it names, the way the Exhibits tab's Change to Proposed Title moves one: a guarded replace of its unified_title_assignment beside unified_title_supersedes naming the title it replaces, so the nightly fold's revise lane re-points it. ACE's Personal Trainer Certification leaves Personal Training Certification (which keeps its one generic local title, MAPICA-PTC-1-001); ACSM-CPT and NASM-CPT leave Personal Trainer Instructor, which retires; the State Water Board's wastewater grades II to V and IV or V leave Wastewater Treatment 1 and 2, whose credential records move with them. The issuer rows Sam saved stay as they are: each already names the right issuer. New titles follow the issuers' own names (the CPL-AI catalog's), and the wastewater titles say what the local titles accept: a grade and any higher one. A local fold preview (kb/_fold_unclassified.py on the overlay as the sync would write it): 5 revise, 0 held, 2 credential moves, 1 retire, 3 adds, V2 and V3 OK. Then, the same session: 'go ahead and fold the duplicate ServSafe Manager exhibit'. ServSafe Food Protection Manager holds one local title, VFOOD 210 (a prep course for the exam), classified by machine on 2026-05-20 and never reviewed; ServSafe Food Protection Manager Certification holds four, one placed by map@rccd.edu. A unified_title_override with its merge confirm folds the first into the second; cred-rename-apply.yml carries it and keeps the old title as an alias.",
+ "ruling": "Sam Lee, in session 2026-11-06 (SkyLantern, the Library side session): 'go ahead and make the seven title fixes in the CER'; superseding his own 2026-10-31 Review saves by his word; and 'go ahead and fold the duplicate ServSafe Manager exhibit' (same session)",
+ "cohort": "exhibits-s594@bot",
+ "read_by_session": {
+  "at": "2026-11-06T19:05Z",
+  "how": "read-only select through the Supabase MCP tool: the five _UNCLASSIFIED:: keys each hold unified_title_assignment and issuing_agency_assignment by slee@cccco.edu (2026-10-31), the assignments naming exactly the titles each row replaces; no unified_title_supersedes on them; no unified_title_override or unified_title_merge_confirm names Personal Training Certification, Personal Trainer Instructor, Wastewater Treatment 1 or 2, or any new title; kb/credentials.json holds none of the five new titles; kb_curation holds no row on _CREDENTIAL_REVIEW::ServSafe Food Protection Manager, and the only ServSafe row is map@rccd.edu's assignment of 'ServeSafe Managerial Certification and resume for CUL 003' to the surviving title; no merge confirm names either title"
+ },
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+   "field": "unified_title_assignment",
+   "value": "ACE Certified Personal Trainer",
+   "replaces": {
+    "value": "Personal Training Certification",
+    "reviewer_email": "slee@cccco.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+   "field": "unified_title_supersedes",
+   "value": "Personal Training Certification"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+   "field": "unified_title_assignment",
+   "value": "ACSM Certified Personal Trainer (ACSM-CPT)",
+   "replaces": {
+    "value": "Personal Trainer Instructor",
+    "reviewer_email": "slee@cccco.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+   "field": "unified_title_supersedes",
+   "value": "Personal Trainer Instructor"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+   "field": "unified_title_assignment",
+   "value": "NASM Certified Personal Trainer (NASM-CPT)",
+   "replaces": {
+    "value": "Personal Trainer Instructor",
+    "reviewer_email": "slee@cccco.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+   "field": "unified_title_supersedes",
+   "value": "Personal Trainer Instructor"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+   "field": "unified_title_assignment",
+   "value": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+   "replaces": {
+    "value": "Wastewater Treatment 1",
+    "reviewer_email": "slee@cccco.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+   "field": "unified_title_supersedes",
+   "value": "Wastewater Treatment 1"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+   "field": "unified_title_assignment",
+   "value": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+   "replaces": {
+    "value": "Wastewater Treatment 2",
+    "reviewer_email": "slee@cccco.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+   "field": "unified_title_supersedes",
+   "value": "Wastewater Treatment 2"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+   "field": "unified_title_override",
+   "value": "ServSafe Food Protection Manager Certification"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+   "field": "unified_title_merge_confirm",
+   "value": "ServSafe Food Protection Manager Certification"
+  }
+ ]
+}

@@ -15,6 +15,9 @@ tokens, a code that must agree: A4, AZ-900, Grade II) and the college titles beh
                certification's exhibit.
   (absent)     no exhibit holds it yet: 61 of 115 on 2026-11-06.
 
+The seven first found named_under (2026-11-06) moved to their own exhibits by the CER plan of the same day; until the
+nightly fold makes those titles, --check accepts a title a committed CER plan assigns and says it waits.
+
 These are a session's judgments, recorded with a reason each; a curator's correction wins (CLAUDE.md, "their domain
 knowledge outranks your inference"). The file also resolves CPL-AI's 121 college names to MAP's names through the
 college identity crosswalk, so the view can say which colleges with a strong course already award the credential.
@@ -41,6 +44,9 @@ DECIDED = "SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction 
 MOS = "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
 ASE = "The ASE area code agrees, and the college titles behind the exhibit name the same test."
 SAME = "Same title and issuer."
+WW2 = "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+WW4 = "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher"
+PLANS = os.path.join(HERE, "cer_decisions_out")
 
 # code: (kind, [exhibits], reason)
 J = {
@@ -82,19 +88,17 @@ J = {
     "intuit1": ("exact", ["Intuit QuickBooks Online Certified User"], SAME),
     "intuit2": ("exact", ["Intuit Certified Bookkeeping Professional"], SAME),
     "rda1": ("exact", ["Registered Dental Assistant (RDA) License"], "The Dental Board of California's RDA license."),
-    "servsafe1": ("exact", ["ServSafe Food Protection Manager Certification", "ServSafe Food Protection Manager"],
-                  "The reference holds two exhibits for this one certification; the first carries the college titles, the second a course's. A fold for the CER."),
-    # named_under: a college title names it; the exhibit is broader or mistitled.
-    "ace1": ("named_under", ["Personal Training Certification"],
-             "A college title names ACE's Personal Trainer Certification, under an exhibit issued as California Community Colleges."),
-    "acsm1": ("named_under", ["Personal Trainer Instructor"],
-              "A college title names ACSM-CPT, under an exhibit that also holds NASM-CPT."),
-    "nasm1": ("named_under", ["Personal Trainer Instructor"],
-              "A college title names NASM-CPT, under an exhibit issued as ACSM that also holds ACSM-CPT."),
-    "wwtp2": ("named_under", ["Wastewater Treatment 1"], "A college title names the State Water Board's wastewater grades II to V, under an exhibit titled like a course."),
-    "wwtp3": ("named_under", ["Wastewater Treatment 1"], "A college title names the State Water Board's wastewater grades II to V, under an exhibit titled like a course."),
-    "wwtp4": ("named_under", ["Wastewater Treatment 1", "Wastewater Treatment 2"], "College titles name grades II to V and IV or V, under exhibits titled like courses."),
-    "wwtp5": ("named_under", ["Wastewater Treatment 1", "Wastewater Treatment 2"], "College titles name grades II to V and IV or V, under exhibits titled like courses."),
+    "servsafe1": ("exact", ["ServSafe Food Protection Manager Certification"],
+                  "Same certification; the duplicate exhibit ServSafe Food Protection Manager folds into it by the CER plan of 2026-11-06."),
+    # Formerly named under another exhibit; moved to their own by the CER plan kb/cer_decisions_out/2026-11-06 (Sam, same
+    # day: "go ahead and make the seven title fixes in the CER"). Exact once the nightly fold re-points them.
+    "ace1": ("exact", ["ACE Certified Personal Trainer"], "ACE's Personal Trainer Certification, moved by the CER plan of 2026-11-06 from Personal Training Certification."),
+    "acsm1": ("exact", ["ACSM Certified Personal Trainer (ACSM-CPT)"], "ACSM-CPT, moved by the CER plan of 2026-11-06 from Personal Trainer Instructor."),
+    "nasm1": ("exact", ["NASM Certified Personal Trainer (NASM-CPT)"], "NASM-CPT, moved by the CER plan of 2026-11-06 from Personal Trainer Instructor."),
+    "wwtp2": ("exact", [WW2], "The exhibit accepts the State Water Board's grade II or any higher one; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1."),
+    "wwtp3": ("exact", [WW2], "The exhibit accepts the State Water Board's grade II or any higher one; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1."),
+    "wwtp4": ("exact", [WW4, WW2], "Both exhibits accept grade IV; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."),
+    "wwtp5": ("exact", [WW4, WW2], "Both exhibits accept grade V; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."),
     # related: same family or program, a different credential.
     "aws1": ("related", ["AWS D1.1 Structural Welder Qualification"], "AWS's welder qualification under D1.1; the Certified Welder program is a different credential."),
     "autodesk2": ("related", ["Autodesk Certified User"], "The exhibit is Autodesk Certified User with no product named."),
@@ -155,11 +159,26 @@ def build():
     }
 
 
+def pending_titles():
+    """Titles a committed CER plan assigns that the nightly fold has not made yet: an exhibit named here may wait on one."""
+    out = set()
+    for d in sorted(os.listdir(PLANS)) if os.path.isdir(PLANS) else []:
+        p = os.path.join(PLANS, d, "plan.json")
+        if os.path.exists(p):
+            for r in json.load(open(p, encoding="utf-8")).get("rows") or []:
+                if r.get("field") in ("unified_title_assignment", "unified_title_override"):
+                    out.add(r.get("value"))
+    return out
+
+
 def check():
     creds = json.load(open(CREDS, encoding="utf-8"))
+    pending = pending_titles()
     codes = {c["code"] for c in json.load(open(INDEX, encoding="utf-8"))["credentials"]}
     bad = [code for code in J if code not in codes]
-    gone = sorted({e for kind, ex, why in J.values() for e in ex if e not in creds})
+    named = {e for kind, ex, why in J.values() for e in ex}
+    gone = sorted(e for e in named if e not in creds and e not in pending)
+    waiting = sorted(e for e in named if e not in creds and e in pending)
     have = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else None
     if bad or gone or have is None or have.get("joins") != build()["joins"]:
         print("cpl-ai join: " + "; ".join(filter(None, [
@@ -168,8 +187,9 @@ def check():
             (have is None or have.get("joins") != build()["joins"]) and "exhibit_join.json is stale; rerun the builder"])))
         return 1
     c = have["counts"]
-    print("cpl-ai join ok: %d exact, %d named under another exhibit, %d related, %d with no exhibit"
-          % (c["exact"], c["named_under"], c["related"], c["none"]))
+    print("cpl-ai join ok: %d exact, %d named under another exhibit, %d related, %d with no exhibit%s"
+          % (c["exact"], c["named_under"], c["related"], c["none"],
+             "; %d exhibit(s) wait on the nightly fold of a committed CER plan" % len(waiting) if waiting else ""))
     return 0
 
 

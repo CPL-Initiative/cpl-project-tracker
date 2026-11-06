@@ -19,7 +19,8 @@ DR-07 (unified credential titles), kb/governance_surface_map.json.
 
 Rule 10, enforced here rather than by recall:
   - only `_CREDENTIAL_REVIEW::` rows (title and agency fields) and `_UNCLASSIFIED::` rows (the
-    issuer assignment), only under a `<lane>-s<N>@bot` cohort;
+    issuer assignment, and a title assignment only in the revise shape: a guarded replace beside
+    unified_title_supersedes naming the title it replaces), only under a `<lane>-s<N>@bot` cohort;
   - a fresh read at write time of every (course_id, field) the plan touches. A row already there
     with another value is a curator's newer word: it is HELD, and nothing is written;
   - a pending unified_title_merge_confirm that names a plan row's source title as its target
@@ -63,7 +64,7 @@ UNCLASSIFIED = "_UNCLASSIFIED::"
 FIELDS_BY_PREFIX = {
     PREFIX: {"unified_title_override", "unified_title_merge_confirm",
              "issuing_agency_override", "training_agency_override"},
-    UNCLASSIFIED: {"issuing_agency_assignment"},
+    UNCLASSIFIED: {"issuing_agency_assignment", "unified_title_assignment", "unified_title_supersedes"},
 }
 TITLE_FIELDS = {"unified_title_override", "unified_title_merge_confirm"}
 COHORT_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*-s\d+@bot$")
@@ -159,6 +160,19 @@ def load_plan(plan_dir):
         if (cid, field) in seen:
             raise SystemExit("a (course_id, field) appears twice: %r" % ((cid, field),))
         seen.add((cid, field))
+        if field == "unified_title_assignment":
+            # The revise shape only (SkyLantern, 2026-11-06; Sam: "make the seven title fixes in the CER"): moving a local
+            # title a person placed is the Exhibits tab's Change to Proposed Title, a guarded replace of the live
+            # assignment beside unified_title_supersedes naming the title it replaces, which the fold's revise lane
+            # re-points. A bare assignment (unclassified triage) stays the tab's to write.
+            sup = [x for x in rows if x.get("course_id") == cid and x.get("field") == "unified_title_supersedes"]
+            if not rp or not sup or sup[0].get("value") != rp["value"]:
+                raise SystemExit("a title assignment is a replace beside unified_title_supersedes naming the title it "
+                                 "replaces: %r" % cid)
+        if field == "unified_title_supersedes":
+            asg = [x for x in rows if x.get("course_id") == cid and x.get("field") == "unified_title_assignment"]
+            if not asg:
+                raise SystemExit("unified_title_supersedes rides with the title assignment it explains: %r" % cid)
         if field == "unified_title_merge_confirm":
             override = [x for x in rows if x["course_id"] == cid and x["field"] == "unified_title_override"]
             if not override or override[0]["value"] != value:

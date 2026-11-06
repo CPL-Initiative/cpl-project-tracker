@@ -76,9 +76,19 @@ ACSM and NASM personal trainer titles under two mistitled exhibits; the State Wa
 under exhibits titled like courses: title fixes for the CER, never made here), **8 related**, **61 with no exhibit**;
 `--check` fails when a named exhibit is re-titled. The view names each certification's exhibit and, for one MAP awards,
 who awards it and which colleges hold a Strong evidence course and do not award it yet (Security+: 25 award, 74 leads).
-Session judgments; a curator's correction wins. **Next:** the Exhibits List row names its CPL-AI pairs; the CER takes
-the seven title fixes and the duplicate ServSafe Manager exhibit; the Credential Catalog and Sierra wait on Sam's word
-(Sheet 147 card 5).
+Session judgments; a curator's correction wins. **The seven title fixes (Sam, same day: "go ahead and make the seven
+title fixes in the CER"):** five local titles, each placed by Sam in Review on 2026-10-31 under a title the aligned course
+proposed, move to the credentials they name through `kb/cer_decisions_out/2026-11-06/plan.json` (cohort
+`exhibits-s594@bot`): ACE, ACSM and NASM personal trainer certifications to their own exhibits (Personal Trainer
+Instructor retires; Personal Training Certification keeps its one generic local title), and the State Water Board's
+wastewater grades to *Wastewater Treatment Plant Operator Certificate, Grade II or Higher* and *Grade IV or Higher*.
+The rows are the Exhibits tab's Change to Proposed Title shape (a guarded replace of the assignment beside
+`unified_title_supersedes`), which `kb/_cer_decision_apply.py` now accepts and nothing looser; the nightly fold's revise
+lane re-points them. After the fold the join reads 46 exact. The same plan folds the duplicate *ServSafe Food Protection
+Manager* (one machine-placed prep-course title) into *ServSafe Food Protection Manager Certification* (Sam: "go ahead and
+fold the duplicate ServSafe Manager exhibit"), an override with its merge confirm that `cred-rename-apply.yml` carries.
+**Next:** the Exhibits List row names its CPL-AI pairs; the Credential Catalog and Sierra wait on Sam's word (Sheet 147
+card 5).
 
 **The Exhibits List names each row's CPL-AI pairs (SkyLantern, 2026-11-06; Sam: "have the Exhibits List row name its
 CPL-AI pairs"):** under the title, *CPL-AI, 343 pairs* (several certifications counted, a related join marked), its full
