@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1409,
-    "bytes": 14229073,
-    "over_budget": 0,
-    "handoff_max": 593,
+    "files": 1410,
+    "bytes": 14238595,
+    "over_budget": 1,
+    "handoff_max": 594,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59893,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 144,
-        "bytes": 4342870,
+        "bytes": 4344355,
         "over": 0
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2636903,
+        "bytes": 2638426,
         "over": 0
       },
       "kb_note": {
@@ -46,23 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 491747,
-        "over": 0
+        "bytes": 494222,
+        "over": 1
       },
       "handoff": {
-        "files": 557,
-        "bytes": 3854725,
+        "files": 558,
+        "bytes": 3858764,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
+      "oversized_doc": 1,
       "vault_heavy_path": 74
     },
     "vault": {
-      "files": 25929,
-      "bytes": 4254598013,
-      "heavy_bytes": 3029450122,
+      "files": 25932,
+      "bytes": 4256054001,
+      "heavy_bytes": 3030893671,
       "heavy_share": 0.712,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -155,14 +156,27 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 21955,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 1955,
+        "ratio": 1.1
+      },
+      "message": "21,955 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cer-procedures.md"
+    },
+    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1890128109,
+        "bytes": 1891571658,
         "kind": "dir"
       },
-      "message": "directory totals 1,890,128,109 B inside the vault"
+      "message": "directory totals 1,891,571,658 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

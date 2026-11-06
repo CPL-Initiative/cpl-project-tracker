@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-557 document(s).
+558 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 594 | [Session 594 handoff: Mt. San Jacinto merged; Ohlone's gaps all the college's own](../session_594_handoff.md) | 2026-11-06 |
 | 593 | [Session 593 handoff: Monterey Peninsula merged; Mt. San Jacinto's Public Health A.S.-T loaded](../session_593_handoff.md) | 2026-11-06 |
 | 592 | [Session 592 handoff: Monterey Peninsula reread, displayed and parked; Mission's SLOs loaded](../session_592_handoff.md) | 2026-11-06 |
 | 591 | [Session 591 handoff: Monterey Peninsula's six read back, two reconcile steps; credential watch 49 added; the funding-model UI pass](../session_591_handoff.md) | 2026-11-06 |

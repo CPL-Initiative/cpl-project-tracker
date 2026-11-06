@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-06T12:28:31Z",
-  "session": 590,
-  "moniker": "SkyLeoTriplet",
+  "written_at": "2026-11-06T14:00:33Z",
+  "session": 593,
+  "moniker": "SkyTadpole",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_591_handoff.md",
+  "handoff": "docs/session_594_handoff.md",
   "next_step": {
-    "title": "Monterey Peninsula's reconcile, then Mission's load",
-    "text": "Read the reconcile on #2809 (two new steps for Global Studies 37243 and Accounting 22052), reread, build the display and merge; then the college parks under the stopping rule. Load Mission's SLOs on #2800 once both slices file complete, and send Lake Tahoe's full read on #2833."
+    "title": "Siskiyous next on the catalog sweep",
+    "text": "Read the College of the Siskiyous' lessons, then a free page read of its gaps (65 of 77 found) before any reader change or paid read. Ohlone's gaps are all the college's own; its 29 records failing a machine check can take a reconcile pass instead."
   },
   "calls": [
     {
@@ -218,6 +218,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-06T14:05:00Z",
+      "text": "Mt. San Jacinto's Public Health A.S.-T record loaded and shown (#2838). Ohlone's 18 missing noncredit certificates are not published on the college's site, so all 33 of its gaps are the college's to settle in COCI (#2841)."
+    },
     {
       "at": "2026-11-06T08:30:00Z",
       "text": "Mission College's full SLO read pushed in two parts after its trial parsed 11 of 12 pages (#2800); Lake Tahoe Community College's 12-page trial started (#2833)."
@@ -453,18 +457,18 @@
     {
       "day": "2026-11-06",
       "active": 20282,
-      "complete": 13542,
+      "complete": 13543,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-06T10:12:00Z"
+    "at": "2026-11-06T14:12:00Z"
   },
   "harvest": {
     "day": "2026-11-06",
-    "gaps": 3025,
+    "gaps": 3024,
     "parts": {
       "links": {
         "catalog": [
@@ -481,7 +485,7 @@
         ]
       },
       "roep": [
-        19157,
+        19156,
         20282
       ],
       "coci": [
@@ -490,7 +494,7 @@
       ],
       "outcomes": {
         "slo": [
-          9000,
+          9266,
           89192
         ],
         "plo": [
