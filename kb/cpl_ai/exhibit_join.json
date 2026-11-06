@@ -3,25 +3,25 @@
  "decided": "SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins",
  "counts": {
   "certifications": 115,
-  "exact": 39,
-  "named_under": 7,
+  "exact": 46,
+  "named_under": 0,
   "related": 8,
   "none": 61
  },
  "joins": {
   "ace1": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Personal Training Certification"
+    "ACE Certified Personal Trainer"
    ],
-   "reason": "A college title names ACE's Personal Trainer Certification, under an exhibit issued as California Community Colleges."
+   "reason": "ACE's Personal Trainer Certification, moved by the CER plan of 2026-11-06 from Personal Training Certification."
   },
   "acsm1": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Personal Trainer Instructor"
+    "ACSM Certified Personal Trainer (ACSM-CPT)"
    ],
-   "reason": "A college title names ACSM-CPT, under an exhibit that also holds NASM-CPT."
+   "reason": "ACSM-CPT, moved by the CER plan of 2026-11-06 from Personal Trainer Instructor."
   },
   "adobe1": {
    "kind": "exact",
@@ -325,11 +325,11 @@
    "reason": "MSSC's CPT under a title that mixes a military machinist designation."
   },
   "nasm1": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Personal Trainer Instructor"
+    "NASM Certified Personal Trainer (NASM-CPT)"
    ],
-   "reason": "A college title names NASM-CPT, under an exhibit issued as ACSM that also holds ACSM-CPT."
+   "reason": "NASM-CPT, moved by the CER plan of 2026-11-06 from Personal Trainer Instructor."
   },
   "rda1": {
    "kind": "exact",
@@ -341,10 +341,9 @@
   "servsafe1": {
    "kind": "exact",
    "exhibits": [
-    "ServSafe Food Protection Manager Certification",
-    "ServSafe Food Protection Manager"
+    "ServSafe Food Protection Manager Certification"
    ],
-   "reason": "The reference holds two exhibits for this one certification; the first carries the college titles, the second a course's. A fold for the CER."
+   "reason": "Same certification; the duplicate exhibit ServSafe Food Protection Manager folds into it by the CER plan of 2026-11-06."
   },
   "servsafe2": {
    "kind": "related",
@@ -361,34 +360,34 @@
    "reason": "CWEA's grade 1, a different issuer from the State Water Board's Grade I certificate."
   },
   "wwtp2": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Wastewater Treatment 1"
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
    ],
-   "reason": "A college title names the State Water Board's wastewater grades II to V, under an exhibit titled like a course."
+   "reason": "The exhibit accepts the State Water Board's grade II or any higher one; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1."
   },
   "wwtp3": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Wastewater Treatment 1"
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
    ],
-   "reason": "A college title names the State Water Board's wastewater grades II to V, under an exhibit titled like a course."
+   "reason": "The exhibit accepts the State Water Board's grade II or any higher one; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1."
   },
   "wwtp4": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Wastewater Treatment 1",
-    "Wastewater Treatment 2"
+    "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
    ],
-   "reason": "College titles name grades II to V and IV or V, under exhibits titled like courses."
+   "reason": "Both exhibits accept grade IV; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."
   },
   "wwtp5": {
-   "kind": "named_under",
+   "kind": "exact",
    "exhibits": [
-    "Wastewater Treatment 1",
-    "Wastewater Treatment 2"
+    "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
    ],
-   "reason": "College titles name grades II to V and IV or V, under exhibits titled like courses."
+   "reason": "Both exhibits accept grade V; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."
   }
  },
  "colleges": {
