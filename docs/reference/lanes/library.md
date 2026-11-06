@@ -160,19 +160,17 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **Revise from the card, no session** (S577, SkyBarnard): its build record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyCartwheel*).
 - **ELL IET Version 5 is public** (SkyFlipFlop, 2026-11-05; Sam's Replace at 22:34Z, `library-publish` dispatched, run
   42122991947): the Initiative at a glance and top cards that link; built by `make_tabs.py` from Version 3.
+- **The card's quick revise closes its gaps** (Sam: *"build fixes 1-3"*, #2824; `library-revise-draft` v3 deployed):
+  the drafter is told Sierra's budget and records `request.sierra`; the card's check adds target size and Sierra's count;
+  a published model draft of a scripted piece raises *Source behind the page* until the source catches up.
+- **The Credential Catalog sits in COBI's Share menu** (Sam's ask, #2826): a launcher to `library/adopt/` after CPL Funding.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
   overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
   Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
-- **ELL IET CPL Starting Points is at Version 4, public** (SkyRoundoff, 2026-11-05; Sam on seeing the draft: *"new
-  visual looks wonderful!"*, then *"Replace the public copy with Version 4"*, receipt
-  `kb/receipts/cpl_library_skyroundoff_ell_v4_replace_2026-11-05.sql`; `library-publish.yml` run 42064847765 published it): an Overview tab, then a tab per project (ARIA tabs; every panel shows with no script). Drafted as
-  `cpl_library_drafts` a0ac81de-caf6-43b4-9e0e-fb0589f6b309 with its link https://claude.ai/artifact/XhDFfPrT33opjRqTAzKpRN
-  (migration `kb/migrations/2026-11-05_library_ell_iet_v4_stored_draft.sql`, rollback beside it); `rebuild_from` names
-  the vault's `make_tabs.py`, which builds it from Version 3. Sierra reads it at 33,979 characters against
-  `LIBRARY_TEXT_MAX` 34,000: any content added to the page must come out of something else, or the cap rises (a
-  `cpl-chat` deploy). IACA's `regen` (Crystal Nasio, 2026-10-26) has
-  no note or sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z,
-  Request Adopt links) needs a session: it has no Pages copy.
+- **Still open from the ELL IET and Coordinator Guide asks:** IACA's `regen` (Crystal Nasio, 2026-10-26) has no note or
+  sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z, Request Adopt
+  links) needs a session: it has no Pages copy. ELL IET reads 33,971 of Sierra's 34,000 characters: room for anything
+  more comes out of repeated wording (the build already trims two phrases) or a `cpl-chat` cap raise.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
   (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.
