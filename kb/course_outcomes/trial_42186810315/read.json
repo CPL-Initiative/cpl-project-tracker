@@ -1,0 +1,382 @@
+{
+ "run": "42186810315",
+ "index": "catalog:lake_tahoe_community",
+ "host": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+ "system": "elumen",
+ "source_kind": "catalog",
+ "slugs": "lake_tahoe_community",
+ "part": 1,
+ "of": 1,
+ "wanted": 445,
+ "slice": 12,
+ "at": "2026-11-06T08:28:29Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 11,
+   "none": 1
+  },
+  "status_not_200": 0,
+  "outcomes": 34
+ },
+ "rows": [
+  {
+   "code": "ANT 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ant101?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ant101?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2001,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Area 4: Social Science",
+    "Approved"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "cabed57378bda5dba6f32742daae478e",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "BOT 122",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,bot122?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,bot122?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1558,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Research, analyze, and evaluate information to solve business problems using project management concepts and software.",
+    "Design and produce project management solutions incorporating current trends, security, and best practices.",
+    "Effectively employ project management concepts and terminology in professional communication.",
+    "Demonstrate marketable project management career skills."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "4cd272ba94d88d4880631c1402e0bfa8",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "COM 130",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,com130?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,com130?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1560,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Area 3a: Fine Arts",
+    "Approved"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "c1a4b79b597341f64593ab81583187c1",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "CUL 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cul101?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cul101?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1919,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Define the philosophy of the foodservice/hospitality industry and its role in providing customer service.",
+    "Discuss and evaluate the importance of professional ethics as it applies to the foodservice industry.",
+    "Discuss the laws and regulations governing hospitality businesses, their employees, and their guests and how these factors influence the operations of all enterprises.",
+    "Discuss/evaluate industry trends as they relate to the various segments of the foodservice and hospitality industry.",
+    "Discuss and evaluate industry trade periodicals, books, and journals that can contribute to individual growth and learning as they pertain to technical skills."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "2ebcac76edbdb03a9b9883b5b17a6c75",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ECONC 2001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,econc2001?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,econc2001?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1658,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Area 4: Social Science",
+    "Approved"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "cabed57378bda5dba6f32742daae478e",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ENGLC 1002",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,englc1002?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,englc1002?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1704,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Area 1b: Communication",
+    "Approved",
+    "Area 3b: Humanities",
+    "Approved"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "b0c8e912c8577ca4cc2b8d717a3943db",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "FIR 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,fir101?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,fir101?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1545,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Describe the educational requirements, duties, and training sources for various occupations in fire protection.",
+    "Identify the basic components of fire as a chemical reaction, the major phases of fire, and the main factors that influence fire spread and fire behavior.",
+    "Identify the major organizations that contribute to fire protection and define the purpose and scope of fire departments.",
+    "Identify the types of common fire department apparatus, equipment, and personal safety equipment used for fire fighting.",
+    "Analyze fire fighting strategy and tactics and describe the basic tenets of fire fighter safety and survival."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "10c5982b0c40dc9fd8d8c21590e94db6",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "HEA 140E",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,hea140e?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,hea140e?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 3558,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate appropriate critical thinking and skills in the assessment of illness and/or injury of a person involved in an emergency situation.",
+    "Apply emergency treatment principles and techniques.",
+    "Demonstrate the ability to render quality patient care to OSHA and California Code of Regulation standards."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "fb2c43c5cb3b1c403fc122ba53a9477f",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "JPN 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,jpn101?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,jpn101?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1741,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Area 3b: Humanities",
+    "Pending"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "7161bb1ffcffd3c9de5165a2ee6798fb",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "PEF 100C",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,pef100c?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,pef100c?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1551,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Identify core muscles as they relate to cycling and use of the theraball.",
+    "Improve functional movements both on and off the bike.",
+    "Develop the basic ability to compensate for small changes in the center of gravity during static and dynamic movement."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "69017e9c75891c35f3bf0b286a2dc95c",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "PHS 102",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,phs102?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,phs102?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1558,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Area 5: Physical Science",
+    "Approved"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "d6ee519aba8741fa28d18a6d60ee3ed2",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "PSY 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,psy101?tenant=ltcc.elumenapp.com",
+   "named_by": [
+    "lake_tahoe_community"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,psy101?tenant=ltcc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 0,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  }
+ ]
+}
