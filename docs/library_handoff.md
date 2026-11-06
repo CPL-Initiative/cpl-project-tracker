@@ -45,10 +45,11 @@ surfaces"*; he marked Monterey Peninsula done on CPL Pathways at 19:29Z: *"keep 
 handle the outliers afterward"* (the CPL Queue routine reads it first).
 
 ## Open work, in order
-1. **Merge #2857 and #2858** when `test` is green on each head (both were in CI at this checkpoint), then dispatch
-   `daily-dashboard.yml` once: it writes `adopt_ai.json` (the Catalog's badges and college view), `kb/csr_out/latest.json`
-   and `kb/status/commons.json` (Subjects' counts on the Commons). Check the Commons: Subjects shows nothing waiting on a
-   curator; Monterey leaves the band for a signed-in reviewer.
+1. **Merge #2858, #2859 (this checkpoint) and CPLBrain#694** when `test` is green on each head. #2857 merged
+   (22:09Z) and `daily-dashboard.yml` was dispatched right after, to write `adopt_ai.json` (the Catalog's badges and
+   college view), `kb/csr_out/latest.json` and `kb/status/commons.json`. Check its run, then the pages: the Catalog's
+   badges on Pages; the Commons' Subjects card shows nothing waiting on a curator; Monterey leaves the band for a
+   signed-in reviewer.
 2. **Add your credential** (Sam: "yes, build the add your credential route"), as the `cer-procedures` lane's Next states:
    the form when search finds nothing, one INSERT-only function beside `credential_priority_request`, the rows in the
    Exhibits Requests view with Verify, Merge, Decline; Governance maps the write beside DR-31 and the privacy ADR's check
@@ -65,8 +66,8 @@ handle the outliers afterward"* (the CPL Queue routine reads it first).
 7. The Library lane's standing *Next*.
 
 ## Watching
-#2857 and #2858 (subscribed). The check-in `trig_01A4h4zRFQ2pCeLnY1DdZafB` fired and is spent. Let both PR
-subscriptions go at sign-off.
+Nothing. SkyBeacon let go of #2858, #2859 and CPLBrain#694 at sign-off (context at the WARN line); the check-in
+`trig_01A4h4zRFQ2pCeLnY1DdZafB` fired and is spent.
 
 > *Greetings, you are SkyHarbor, a Library side session beside the CPL Queue routine, see SkyBeacon's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*
