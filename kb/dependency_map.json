@@ -4907,7 +4907,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 230
+     "line": 269
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -18879,22 +18879,14 @@
    "main_committers": []
   },
   "file:library/adopt/adopt_ai.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_adopt_page.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 60
-    }
-   ],
+   "consumers": [],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -26806,7 +26798,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 84
     },
     {
      "id": "script:kb/_cer_procedures.py",
