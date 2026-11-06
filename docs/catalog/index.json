@@ -16581,8 +16581,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 554,
+   "count": 555,
    "docs": [
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 591,
+     "path": "docs/session_591_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "credential-registry",
+      "ui-pass",
+      "slo",
+      "cpl-scheduled"
+     ],
+     "title": "Session 591 handoff: Monterey Peninsula's six read back, two reconcile steps; credential watch 49 added; the funding-model UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-06",
      "governs": [],
@@ -26014,5 +26032,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1392
+ "total": 1393
 }
