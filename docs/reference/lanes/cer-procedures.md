@@ -87,7 +87,16 @@ The rows are the Exhibits tab's Change to Proposed Title shape (a guarded replac
 lane re-points them. After the fold the join reads 46 exact. The same plan folds the duplicate *ServSafe Food Protection
 Manager* (one machine-placed prep-course title) into *ServSafe Food Protection Manager Certification* (Sam: "go ahead and
 fold the duplicate ServSafe Manager exhibit"), an override with its merge confirm that `cred-rename-apply.yml` carries.
-**Next:** the Credential Catalog and Sierra wait on Sam's word (Sheet 147 card 5).
+**CPL-AI goes public (Sam, in session 2026-11-06: "I do want the CPL-AI recs on public view"),** which answers Sheet 147
+card 5's hold for the public pages. **The Catalog features them as badges** (Sam, same day: "maybe by using the attributes
+we will be attaching for next gen credential registry? like badges on the credential"): one attribute layer, each badge a
+fact with its source and date that opens what it names; first *Statewide recommendation* (the Fact Sheet's 153, a pale
+fill) and *CPL-AI course match* (42 joined, a dashed outline: evidence for faculty review, never a CPL determination).
+Mock: https://claude.ai/artifact/2FhevexZqhwdyMyuVT9vFu (Version 1, real data for 22 credentials). **Next:** the badges
+on the live Catalog once Sam reacts to the mock; Sierra's CPL-AI answers. **The ServSafe fold waits:** its rows are
+written (receipt `kb/cer_decisions_out/2026-11-06/applied_2026-11-06T19-49-56Z.json`), and `cred-rename-apply.yml`
+refuses while three of Sam's 2026-10-27 overrides are unsafe (Spanish 1 and 2, whose titles left the reference; Wheel
+Alignment, Chassis Dynamics, and ADAS, a rename into an existing title with no merge confirm). NEEDS SAM.
 
 **The Exhibits List names each row's CPL-AI pairs (SkyLantern, 2026-11-06; Sam: "have the Exhibits List row name its
 CPL-AI pairs"):** under the title, *CPL-AI, 343 pairs* (several certifications counted, a related join marked), its full
