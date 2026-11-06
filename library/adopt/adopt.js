@@ -380,6 +380,10 @@
 
   function reqWord(c) { return '<div class="chips"><button type="button" class="word" data-open="' + c._i + '" data-req="1">' + ASK + '</button>' + askedWord(c) + "</div>"; }
   // How many have asked us to prioritize a credential: the signal, shown wherever the credential is (Sam, Sheet 162).
+  /* Ask us to prioritize goes only where no college has articulated the credential (Sam, 2026-11-06: "only the ones that
+     have NOT been articulated by at least one college need the link"); an articulated one offers Request Quick Adopt. Being
+     reviewed counts as articulated: a college awards credit for it under a title being confirmed. */
+  function articulated(c) { return (c.a || []).length > 0 || c.std === "held"; }
   function asked(c) { return state.asks[String(c.t || "").toLowerCase()] || 0; }
   function askedWord(c) { var n = asked(c); return n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : ""; }
   function askedCell(c) { var n = asked(c); return n ? '<span class="askn">' + n + " asked</span>" : ""; }
@@ -390,7 +394,7 @@
       : "A college awards credit for a credential by this name; the Credit for Prior Learning Initiative is confirming it is the same one.";
     return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
       + (c.i ? '<p class="meta">' + esc(c.i) + "</p>" : "") + '<div class="pills"><span class="pill ' + (c.std === "harvested" ? "harv" : "std") + '">' + esc(STD[c.std]) + "</span></div>"
-      + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + reqWord(c) + "</article>";
+      + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
   }
 
   function card(c, sc) {
@@ -407,7 +411,7 @@
     if (mine.length) pills += '<span class="pill could">Already teaches a matching course: ' + esc(mine.map(function (x) { return D.colleges[x[0]][1] + (x[1] ? ": " + x[1] : ""); }).join("; ")) + "</span>";
     return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
       + (meta ? '<p class="meta">' + esc(meta) + "</p>" : "") + '<p class="says">' + esc(says) + "</p>"
-      + (pills ? '<div class="pills">' + pills + "</div>" : "") + (here.length ? "" : quickAdopt(c, sc)) + reqWord(c) + "</article>";
+      + (pills ? '<div class="pills">' + pills + "</div>" : "") + (here.length ? "" : quickAdopt(c, sc)) + (n ? "" : reqWord(c)) + "</article>";
   }
 
   function drawList() {
@@ -595,6 +599,7 @@
         rows.forEach(function (x) { if (x && x.credential && x.n > 0) asks[String(x.credential).toLowerCase()] = Number(x.n); });
         state.asks = asks; state.asksRead = true;
         if (state.view === "table") drawTable(); else if (state.view === "list") drawList();
+        drawReview();
       })
       .catch(function () { /* the page stands without the counts */ });
   }
@@ -660,7 +665,7 @@
     if (c.m && c.m.length) html += "<h3>The colleges’ records behind this credential (MAP exhibits)</h3><ul>" + c.m.map(function (m) {
       return '<li><a href="' + esc(mapUrl(m[0])) + '" target="_blank" rel="noopener">' + esc(m[0]) + "</a>" + (m[1] >= 0 ? " · " + esc(D.colleges[m[1]][1]) : m[2] ? " · " + esc(m[2]) : "") + "</li>";
     }).join("") + "</ul>";
-    html += requestBlock(c) + analysisBlock(c);
+    html += (articulated(c) ? "" : requestBlock(c)) + analysisBlock(c);
     $("pn-kicker").textContent = at != null ? "Credential at " + D.colleges[at][1] : "Credential";
     $("pn-body").innerHTML = html;
     p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
@@ -753,7 +758,24 @@
     var links = [];
     if (r.u) links.push('<a class="chip" href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer’s page</a>');
     links.push('<a class="chip" href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>');
-    return html + '<div class="chips">' + links.join("") + "</div></article>";
+    return html + '<div class="chips">' + links.join("") + "</div>"
+      + (r._k != null ? '<div class="chips"><button type="button" class="word" data-review="' + r._k + '">' + ASK + "</button>" + askedWord(r) + "</div>" : "") + "</article>";
+  }
+  /* A Worth a faculty review credential has no college articulating it, so its panel carries the request (Sam, 2026-11-06). */
+  function openReview(k) {
+    var r = (D.review || [])[k], p = $("ad-panel");
+    if (!r) return;
+    state.sel = null;
+    var html = "<h2>" + esc(r.t) + '</h2><p class="meta">' + esc([r.i, r.f].filter(Boolean).join(" · ")) + "</p>"
+      + '<div class="pills"><span class="pill harv">Worth a faculty review</span></div>'
+      + '<p class="lines">No California community college has set credit for it yet. <a href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>'
+      + (r.u ? ' · <a href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer&#x27;s page</a>' : "") + "</p>"
+      + requestBlock({ t: r.t, i: r.i });
+    $("pn-kicker").textContent = "Credential";
+    $("pn-body").innerHTML = html;
+    p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
+    $("pn-close").focus();
+    var h = $("pn-req"); if (h) h.scrollIntoView();
   }
   function drawReview() {
     var sec = $("review");
@@ -762,6 +784,7 @@
     sec.hidden = all.length === 0;
     if (!all.length) return;
     var list = reviewRows(D, f);
+    (D.review || []).forEach(function (r, k) { r._k = k; });
     $("ad-review").innerHTML = list.map(reviewCard).join("");
     $("ad-review-empty").hidden = list.length > 0;
     $("ad-review-state").textContent = list.length === all.length ? plural(all.length, "credential", "credentials") : fmt(list.length) + " of " + plural(all.length, "credential", "credentials");
@@ -930,6 +953,7 @@
       var b = e.target.closest ? e.target.closest("button") : null;
       if (!b) return;
       if (b.hasAttribute("data-open")) { var at = b.getAttribute("data-at"); openPanel(Number(b.getAttribute("data-open")), at == null ? null : Number(at), b.hasAttribute("data-req"), b.getAttribute("data-sec")); }
+      else if (b.hasAttribute("data-review")) openReview(Number(b.getAttribute("data-review")));
       else if (b.hasAttribute("data-col")) { f.colleges = {}; f.colleges[b.getAttribute("data-col")] = true; redrawPickers(); redraw(true); }
       else if (b.hasAttribute("data-pick")) { f.colleges = {}; f.colleges[b.getAttribute("data-pick")] = true; redrawPickers(); redraw(true); }
       else if (b.hasAttribute("data-q")) { $("ad-q").value = b.getAttribute("data-q"); redraw(true); }
