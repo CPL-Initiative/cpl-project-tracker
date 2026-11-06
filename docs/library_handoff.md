@@ -67,7 +67,10 @@ articulated one offers Request Quick Adopt to its card on the MAP dashboard; the
    with a statewide recommendation or a CPL-AI match that the college does not yet award, listing the college's own
    aligned courses (its could-adopt course; its CPL-AI-rated courses, strongest first), each with Request Quick Adopt to
    a building college's exhibit card on the MAP dashboard. Where no college has built an exhibit yet, Quick Adopt has
-   nothing to adopt: that credential offers *Ask us to prioritize* instead (Sam's ask rule).
+   nothing to adopt: that credential offers *Ask us to prioritize* instead (Sam's ask rule). **Order (Sam, ~20:45Z):**
+   *"before we show those, we list the statewides and AIs that the college could adopt"*: the first block is the
+   statewide and CPL-AI credentials the college could adopt (no award there yet, an aligned course there), then the rest
+   of the college's view.
    **The badges on the live Catalog** (`library/adopt/`), as the mock shows: *Statewide recommendation* (from
    `fact-sheet/statewide_recs.js`), *CPL-AI course match* (from `kb/cpl_ai/`), the Recommendations filter, the
    Recommended column, the panel's statewide and CPL-AI sections, the recommendation in place with its confidence, the
