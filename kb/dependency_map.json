@@ -840,7 +840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2699,
+     "line": 2746,
      "tabs": [
       "exhibits"
      ]
@@ -2394,7 +2394,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 166,
+     "line": 168,
      "tabs": [
       "exhibits"
      ]
@@ -5993,7 +5993,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2099,
+     "line": 2139,
      "tabs": [
       "exhibits"
      ]
@@ -6197,7 +6197,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2691,
+     "line": 2738,
      "tabs": [
       "exhibits"
      ]
@@ -6290,7 +6290,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2957,
+     "line": 3013,
      "tabs": [
       "exhibits"
      ]
@@ -8042,7 +8042,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3163,
+     "line": 3219,
      "tabs": [
       "exhibits"
      ]
@@ -12861,6 +12861,16 @@
   "file:kb/cpl_ai/exhibit_join.json": {
    "consumers": [
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1970,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "module:exhibits_cpl_ai.js",
      "kind": "module",
      "direction": "read",
@@ -14367,7 +14377,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2713,
+     "line": 2760,
      "tabs": [
       "exhibits"
      ]
@@ -14471,7 +14481,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1964,
+     "line": 1965,
      "tabs": [
       "exhibits"
      ]

@@ -390,6 +390,550 @@
    "reason": "Both exhibits accept grade V; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."
   }
  },
+ "by_exhibit": {
+  "ACE Certified Personal Trainer": [
+   {
+    "code": "ace1",
+    "title": "ACE Certified Personal Trainer",
+    "kind": "exact",
+    "pairs": 341,
+    "strong": 249,
+    "strong_colleges": 105
+   }
+  ],
+  "ACSM Certified Personal Trainer (ACSM-CPT)": [
+   {
+    "code": "acsm1",
+    "title": "ACSM Certified Personal Trainer (ACSM-CPT)",
+    "kind": "exact",
+    "pairs": 334,
+    "strong": 229,
+    "strong_colleges": 104
+   }
+  ],
+  "ASE A1 — Engine Repair": [
+   {
+    "code": "ase1",
+    "title": "Automotive Service Excellence (ASE) Certification A1: Engine Repair",
+    "kind": "exact",
+    "pairs": 271,
+    "strong": 98,
+    "strong_colleges": 57
+   }
+  ],
+  "ASE A2 — Automatic Transmission/Transaxle": [
+   {
+    "code": "ase2",
+    "title": "Automotive Service Excellence (ASE) Certification A2: Automatic Transmission_Transaxle",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 84,
+    "strong_colleges": 53
+   }
+  ],
+  "ASE A3 — Manual Drive Train and Axles": [
+   {
+    "code": "ase3",
+    "title": "Automotive Service Excellence (ASE) Certification A3: Manual Drive Train and Axles",
+    "kind": "exact",
+    "pairs": 282,
+    "strong": 79,
+    "strong_colleges": 54
+   }
+  ],
+  "ASE A4 — Suspension and Steering": [
+   {
+    "code": "ase4",
+    "title": "Automotive Service Excellence (ASE) Certification A4: Suspension and Steering",
+    "kind": "exact",
+    "pairs": 238,
+    "strong": 88,
+    "strong_colleges": 53
+   }
+  ],
+  "ASE A5 — Brakes": [
+   {
+    "code": "ase5",
+    "title": "Automotive Service Excellence (ASE) Certification A5: Brakes",
+    "kind": "exact",
+    "pairs": 245,
+    "strong": 88,
+    "strong_colleges": 56
+   }
+  ],
+  "ASE A6 — Electrical/Electronic Systems": [
+   {
+    "code": "ase6",
+    "title": "Automotive Service Excellence (ASE) Certification A6: Electrical_Electronic Systems",
+    "kind": "exact",
+    "pairs": 313,
+    "strong": 127,
+    "strong_colleges": 65
+   }
+  ],
+  "ASE A7 — Heating and Air Conditioning": [
+   {
+    "code": "ase7",
+    "title": "Automotive Service Excellence (ASE) Certification A7: Heating and Air Conditioning",
+    "kind": "exact",
+    "pairs": 269,
+    "strong": 92,
+    "strong_colleges": 58
+   }
+  ],
+  "ASE A8 — Engine Performance": [
+   {
+    "code": "ase8",
+    "title": "Automotive Service Excellence (ASE) Certification A8: Engine Performance",
+    "kind": "exact",
+    "pairs": 267,
+    "strong": 121,
+    "strong_colleges": 64
+   }
+  ],
+  "ASE A9 — Light Vehicle Diesel Engines": [
+   {
+    "code": "ase9",
+    "title": "Automotive Service Excellence (ASE) Certification A9: Light Vehicle Diesel Engines",
+    "kind": "exact",
+    "pairs": 265,
+    "strong": 107,
+    "strong_colleges": 59
+   }
+  ],
+  "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist": [
+   {
+    "code": "ase10",
+    "title": "Automotive Service Excellence (ASE) Certification L3: Advanced Engine Performance Specialist (Light Duty Hybrid_Electric Vehicle)",
+    "kind": "exact",
+    "pairs": 275,
+    "strong": 91,
+    "strong_colleges": 57
+   }
+  ],
+  "AWS D1.1 Structural Welder Qualification": [
+   {
+    "code": "aws1",
+    "title": "AWS Certified Welder (CW)",
+    "kind": "related",
+    "pairs": 252,
+    "strong": 89,
+    "strong_colleges": 55
+   }
+  ],
+  "Adobe Certified Professional — Acrobat": [
+   {
+    "code": "adobe1",
+    "title": "Adobe Certified Professional in Document Creation and Management Using Adobe Acrobat Pro",
+    "kind": "exact",
+    "pairs": 170,
+    "strong": 41,
+    "strong_colleges": 33
+   }
+  ],
+  "Adobe Certified Professional — Visual Design (Photoshop)": [
+   {
+    "code": "adobe8",
+    "title": "Adobe Certified Professional in Visual Design Using Adobe Photoshop",
+    "kind": "exact",
+    "pairs": 336,
+    "strong": 176,
+    "strong_colleges": 91
+   }
+  ],
+  "Autodesk Certified User": [
+   {
+    "code": "autodesk3",
+    "title": "Autodesk Certified User: Inventor",
+    "kind": "related",
+    "pairs": 264,
+    "strong": 52,
+    "strong_colleges": 39
+   },
+   {
+    "code": "autodesk6",
+    "title": "Autodesk Certified User: 3ds Max",
+    "kind": "related",
+    "pairs": 257,
+    "strong": 40,
+    "strong_colleges": 32
+   },
+   {
+    "code": "autodesk2",
+    "title": "Autodesk Certified User: Fusion 360",
+    "kind": "related",
+    "pairs": 254,
+    "strong": 30,
+    "strong_colleges": 27
+   },
+   {
+    "code": "autodesk4",
+    "title": "Autodesk Certified User: Maya",
+    "kind": "related",
+    "pairs": 250,
+    "strong": 42,
+    "strong_colleges": 34
+   }
+  ],
+  "Autodesk Certified User/Professional — AutoCAD": [
+   {
+    "code": "autodesk1",
+    "title": "Autodesk Certified User: AutoCAD",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 51,
+    "strong_colleges": 39
+   }
+  ],
+  "Autodesk Certified User/Professional — Revit Architecture": [
+   {
+    "code": "autodesk5",
+    "title": "Autodesk Certified User: Revit Architecture",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 28,
+    "strong_colleges": 25
+   }
+  ],
+  "CompTIA A+": [
+   {
+    "code": "comptia1",
+    "title": "CompTIA A+",
+    "kind": "exact",
+    "pairs": 331,
+    "strong": 215,
+    "strong_colleges": 103
+   }
+  ],
+  "CompTIA Cloud Essentials+": [
+   {
+    "code": "comptia4",
+    "title": "CompTIA Cloud Essentials+",
+    "kind": "exact",
+    "pairs": 331,
+    "strong": 127,
+    "strong_colleges": 71
+   }
+  ],
+  "CompTIA Cloud+": [
+   {
+    "code": "comptia3",
+    "title": "CompTIA Cloud+",
+    "kind": "exact",
+    "pairs": 321,
+    "strong": 170,
+    "strong_colleges": 90
+   }
+  ],
+  "CompTIA CySA+": [
+   {
+    "code": "comptia5",
+    "title": "CompTIA CySA+",
+    "kind": "exact",
+    "pairs": 343,
+    "strong": 178,
+    "strong_colleges": 99
+   }
+  ],
+  "CompTIA Linux+": [
+   {
+    "code": "comptia9",
+    "title": "CompTIA Linux+",
+    "kind": "exact",
+    "pairs": 332,
+    "strong": 163,
+    "strong_colleges": 89
+   }
+  ],
+  "CompTIA Network+": [
+   {
+    "code": "comptia10",
+    "title": "CompTIA Network+",
+    "kind": "exact",
+    "pairs": 330,
+    "strong": 206,
+    "strong_colleges": 94
+   }
+  ],
+  "CompTIA PenTest+": [
+   {
+    "code": "comptia11",
+    "title": "CompTIA PenTest+",
+    "kind": "exact",
+    "pairs": 244,
+    "strong": 98,
+    "strong_colleges": 69
+   }
+  ],
+  "CompTIA Project+": [
+   {
+    "code": "comptia12",
+    "title": "CompTIA Project+",
+    "kind": "exact",
+    "pairs": 317,
+    "strong": 112,
+    "strong_colleges": 64
+   }
+  ],
+  "CompTIA Security+": [
+   {
+    "code": "comptia14",
+    "title": "CompTIA Security+",
+    "kind": "exact",
+    "pairs": 343,
+    "strong": 211,
+    "strong_colleges": 98
+   }
+  ],
+  "CompTIA Server+": [
+   {
+    "code": "comptia13",
+    "title": "CompTIA Server+",
+    "kind": "exact",
+    "pairs": 328,
+    "strong": 214,
+    "strong_colleges": 97
+   }
+  ],
+  "CompTIA Tech+": [
+   {
+    "code": "comptia15",
+    "title": "CompTIA Tech+",
+    "kind": "exact",
+    "pairs": 353,
+    "strong": 207,
+    "strong_colleges": 105
+   }
+  ],
+  "Entrepreneurship and Small Business (ESB) Certification": [
+   {
+    "code": "certiport1",
+    "title": "Entrepreneurship & Small Business (ESB) Certification",
+    "kind": "exact",
+    "pairs": 360,
+    "strong": 146,
+    "strong_colleges": 86
+   }
+  ],
+  "Food Handler Card": [
+   {
+    "code": "servsafe2",
+    "title": "ServSafe Food Handler Certificate",
+    "kind": "related",
+    "pairs": 294,
+    "strong": 40,
+    "strong_colleges": 32
+   }
+  ],
+  "Intuit Certified Bookkeeping Professional": [
+   {
+    "code": "intuit2",
+    "title": "Intuit Certification Certified Bookkeeping Professional",
+    "kind": "exact",
+    "pairs": 325,
+    "strong": 199,
+    "strong_colleges": 105
+   }
+  ],
+  "Intuit QuickBooks Online Certified User": [
+   {
+    "code": "intuit1",
+    "title": "Intuit Certification QuickBooks Online Certified User",
+    "kind": "exact",
+    "pairs": 259,
+    "strong": 75,
+    "strong_colleges": 58
+   }
+  ],
+  "MSSC Certified Production Technician (CPT) — Machinist": [
+   {
+    "code": "mssc1",
+    "title": "MSSC Certified Production Technician (CPT) 4.0",
+    "kind": "related",
+    "pairs": 233,
+    "strong": 72,
+    "strong_colleges": 53
+   }
+  ],
+  "Microsoft Certified: Azure AI Fundamentals": [
+   {
+    "code": "microsoft1",
+    "title": "Microsoft Certified Fundamentals Certification Azure AI Fundamentals (AI-900)",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 19,
+    "strong_colleges": 16
+   }
+  ],
+  "Microsoft Certified: Azure Fundamentals (AZ-900)": [
+   {
+    "code": "microsoft2",
+    "title": "Microsoft Certified Fundamentals Certification Azure Fundamentals (AZ-900)",
+    "kind": "exact",
+    "pairs": 294,
+    "strong": 76,
+    "strong_colleges": 53
+   }
+  ],
+  "Microsoft Office Specialist — Excel": [
+   {
+    "code": "microsoft14",
+    "title": "Microsoft Office Specialist: Excel Associate (Office 2019)",
+    "kind": "exact",
+    "pairs": 335,
+    "strong": 84,
+    "strong_colleges": 63
+   },
+   {
+    "code": "microsoft9",
+    "title": "Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 329,
+    "strong": 80,
+    "strong_colleges": 63
+   }
+  ],
+  "Microsoft Office Specialist — Excel Expert": [
+   {
+    "code": "microsoft12",
+    "title": "Microsoft Office Specialist: Excel Expert (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 340,
+    "strong": 180,
+    "strong_colleges": 104
+   }
+  ],
+  "Microsoft Office Specialist — PowerPoint": [
+   {
+    "code": "microsoft10",
+    "title": "Microsoft Office Specialist: PowerPoint Associate (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 304,
+    "strong": 99,
+    "strong_colleges": 67
+   }
+  ],
+  "Microsoft Office Specialist — Word": [
+   {
+    "code": "microsoft13",
+    "title": "Microsoft Office Specialist: Word Associate (Office 2019)",
+    "kind": "exact",
+    "pairs": 334,
+    "strong": 85,
+    "strong_colleges": 66
+   },
+   {
+    "code": "microsoft8",
+    "title": "Microsoft Office Specialist: Word Associate (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 331,
+    "strong": 77,
+    "strong_colleges": 63
+   }
+  ],
+  "Microsoft Office Specialist — Word Expert": [
+   {
+    "code": "microsoft11",
+    "title": "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 342,
+    "strong": 63,
+    "strong_colleges": 50
+   }
+  ],
+  "NASM Certified Personal Trainer (NASM-CPT)": [
+   {
+    "code": "nasm1",
+    "title": "NASM Certified Personal Trainer (NASM-CPT)",
+    "kind": "exact",
+    "pairs": 351,
+    "strong": 249,
+    "strong_colleges": 105
+   }
+  ],
+  "Registered Dental Assistant (RDA) License": [
+   {
+    "code": "rda1",
+    "title": "Registered Dental Assistant (RDA)",
+    "kind": "exact",
+    "pairs": 252,
+    "strong": 65,
+    "strong_colleges": 41
+   }
+  ],
+  "ServSafe Food Protection Manager Certification": [
+   {
+    "code": "servsafe1",
+    "title": "ServSafe Food Protection Manager Certification",
+    "kind": "exact",
+    "pairs": 281,
+    "strong": 71,
+    "strong_colleges": 49
+   }
+  ],
+  "Wastewater Treatment Plant Operator Certificate, Grade II or Higher": [
+   {
+    "code": "wwtp5",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade V",
+    "kind": "exact",
+    "pairs": 215,
+    "strong": 47,
+    "strong_colleges": 24
+   },
+   {
+    "code": "wwtp2",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade II",
+    "kind": "exact",
+    "pairs": 193,
+    "strong": 41,
+    "strong_colleges": 25
+   },
+   {
+    "code": "wwtp4",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade IV",
+    "kind": "exact",
+    "pairs": 187,
+    "strong": 39,
+    "strong_colleges": 22
+   },
+   {
+    "code": "wwtp3",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade III",
+    "kind": "exact",
+    "pairs": 176,
+    "strong": 32,
+    "strong_colleges": 20
+   }
+  ],
+  "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher": [
+   {
+    "code": "wwtp5",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade V",
+    "kind": "exact",
+    "pairs": 215,
+    "strong": 47,
+    "strong_colleges": 24
+   },
+   {
+    "code": "wwtp4",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade IV",
+    "kind": "exact",
+    "pairs": 187,
+    "strong": 39,
+    "strong_colleges": 22
+   }
+  ],
+  "Wastewater Treatment Plant Operator Grade 1": [
+   {
+    "code": "wwtp1",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade I",
+    "kind": "related",
+    "pairs": 208,
+    "strong": 20,
+    "strong_colleges": 16
+   }
+  ]
+ },
  "colleges": {
   "Allan Hancock College": "Allan Hancock College",
   "American River College": "American River College",
