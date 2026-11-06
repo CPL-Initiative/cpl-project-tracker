@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-05T15:53:59Z",
+ "_generated_at": "2026-11-06T15:27:14Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 63,
+ "queue": 50,
  "saved_not_folded": 0,
- "waiting": 63,
- "proposed": 61,
- "needs_you_count": 44,
+ "waiting": 50,
+ "proposed": 48,
+ "needs_you_count": 50,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 2,
-   "held": 4,
+   "settled": 0,
+   "held": 5,
    "sample": []
   },
   {
@@ -111,30 +111,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 17,
-   "held": 41,
-   "sample": [
-    [
-     "Credit by Exam - Introduction to Water Systems Technology (WATER 120)",
-     "Introduction to Water Systems Technology"
-    ],
-    [
-     "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
-     "Wastewater Treatment and Disposal I"
-    ],
-    [
-     "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
-     "Wastewater Treatment and Disposal II"
-    ],
-    [
-     "Credit by Exam - Water Distribution Operator I (WATER 140)",
-     "Water Distribution Operator I"
-    ],
-    [
-     "Credit by Exam - Water Distribution Operator II (WATER 141)",
-     "Water Distribution Operator II"
-    ]
-   ]
+   "settled": 0,
+   "held": 47,
+   "sample": []
   },
   {
    "id": "high-school-rop",
@@ -163,7 +142,7 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 1,
    "sample": []
   },
@@ -179,7 +158,7 @@
     "skill": "Rule 5f"
    },
    "settled": 0,
-   "held": 0,
+   "held": 6,
    "sample": []
   },
   {
@@ -238,7 +217,7 @@
     "words": "look for beginning labels that should be elementary (our canonical term for 1,2 or 1A,1B and intermediate should be often 2,3 or 2A,2B",
     "skill": "Rule 5h"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 0,
    "sample": []
   },
@@ -253,8 +232,8 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 3,
-   "held": 8,
+   "settled": 0,
+   "held": 9,
    "sample": []
   },
   {
@@ -269,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 9,
+   "held": 10,
    "sample": []
   },
   {
@@ -282,37 +261,16 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 6,
-   "held": 44,
-   "sample": [
-    [
-     "Autodesk Certified Associate in CAD for Mechanical Design certificate",
-     "Autodesk Certified Associate in CAD for Mechanical Design"
-    ],
-    [
-     "Noncredit for FREN 1A",
-     "Elementary French 1"
-    ],
-    [
-     "Portfolio for MKTG 50",
-     "Introduction to Marketing"
-    ],
-    [
-     "Portfolio for MKTG 56",
-     "Marketing Strategies"
-    ],
-    [
-     "Portfolio for MKTG 61",
-     "Professional Selling"
-    ]
-   ]
+   "settled": 0,
+   "held": 50,
+   "sample": []
   }
  ],
  "classifier_run": {
-  "calls": 2,
-  "answered": 2,
+  "calls": 1,
+  "answered": 1,
   "errors": [],
-  "cost_usd": 1.06
+  "cost_usd": 0.52
  },
  "needs_you": [
   {
@@ -690,6 +648,84 @@
    },
    "colleges": [
     "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "LBCC Non-credit CONST 600 - Construction Apprenticeship Readiness",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Construction Apprenticeship Readiness",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Noncredit-to-credit course exhibit. Prefix and course code stripped; no CCN or C-ID was checked, so the local course title is used. The named noncredit provider is LBCC's own program, which is part of the CCC system, so CCC is kept as issuer and LBCC Noncredit is named as trainer. This needs review because Rule 5f would make the noncredit provider the issuer."
+   },
+   "colleges": [
+    "Long Beach City College"
+   ]
+  },
+  {
+   "raw_title": "LBCC Non-credit CONST 605 - Forklift Fundamentals",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Forklift Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Local noncredit course, kept apart from the OSHA Powered Industrial Truck (Forklift) Operator Certification because a course is not an industry card (Rule 8c-2). Issuer and trainer follow the same reasoning as the CONST 600 row and need review."
+   },
+   "colleges": [
+    "Long Beach City College"
+   ]
+  },
+  {
+   "raw_title": "LBCC Non-credit CONST 620 - Plumbing Fundamentals",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Plumbing Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Joins the existing house family 'Plumbing Fundamentals' (issuer CCC). The noncredit provider is LBCC itself, so the issuer and trainer split needs review."
+   },
+   "colleges": [
+    "Long Beach City College"
+   ]
+  },
+  {
+   "raw_title": "LBCC Non-credit CONST 670 - Cost Estimating",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Cost Estimating",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Construction cost-estimating course from LBCC's noncredit program. 'Construction Cost Estimating' is a possible alternative title. The issuer and trainer need review."
+   },
+   "colleges": [
+    "Long Beach City College"
+   ]
+  },
+  {
+   "raw_title": "LBCC Non-credit CONST 675 - Contracting Laws and Management",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Contracting Laws and Management",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Local noncredit course. It is not a CSLB license classification, so it stays a course title. The issuer and trainer need review."
+   },
+   "colleges": [
+    "Long Beach City College"
+   ]
+  },
+  {
+   "raw_title": "LBCC Non-credt CONST 680 - Building Codes for Residential Construct",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Building Codes for Residential Construction",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The truncated word 'Construct' is completed to 'Construction' and the misspelling 'Non-credt' is set aside. This is a local course, not an ICC certification. The issuer and trainer need review."
+   },
+   "colleges": [
+    "Long Beach City College"
    ]
   },
   {

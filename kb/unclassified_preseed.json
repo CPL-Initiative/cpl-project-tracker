@@ -1,92 +1,14 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-05T15:53:59Z",
- "_queue_count": 63,
+ "_generated_at": "2026-11-06T15:27:14Z",
+ "_queue_count": 50,
  "_counts": {
-  "staged": 61,
-  "needs_you": 44,
+  "staged": 48,
+  "needs_you": 50,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "Autodesk Certified Associate in CAD for Mechanical Design certificate": {
-   "title": "Autodesk Certified Associate in CAD for Mechanical Design",
-   "issuer": "Autodesk",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "Rule 6",
-    "issuer-issues-the-card"
-   ]
-  },
-  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
-   "title": "Introduction to Water Systems Technology",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 120; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
-   "title": "Wastewater Treatment and Disposal I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 160; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
-   "title": "Wastewater Treatment and Disposal II",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 161; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Water Distribution Operator I (WATER 140)": {
-   "title": "Water Distribution Operator I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 140; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
-   "title": "Water Distribution Operator II",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 141; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
-   "title": "Water Treatment Plant Operation Processes I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 150; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
-   "title": "Water Treatment Plant Operation Processes II",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 151; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
-   "title": "Waterworks Mathematics",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for WATER 130; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "EET 222 Photovaltaic NABCEP for Solar Associates": {
    "title": "NABCEP PV Associate",
    "issuer": "North American Board of Certified Energy Practitioners (NABCEP)",
@@ -455,6 +377,98 @@
     "Rule 9"
    ]
   },
+  "LBCC Non-credit CONST 600 - Construction Apprenticeship Readiness": {
+   "title": "Construction Apprenticeship Readiness",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Noncredit-to-credit course exhibit. Prefix and course code stripped; no CCN or C-ID was checked, so the local course title is used. The named noncredit provider is LBCC's own program, which is part of the CCC system, so CCC is kept as issuer and LBCC Noncredit is named as trainer. This needs review because Rule 5f would make the noncredit provider the issuer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c",
+    "local-trainer-is-agency",
+    "Rule 7"
+   ],
+   "trainer": "Long Beach City College Noncredit"
+  },
+  "LBCC Non-credit CONST 605 - Forklift Fundamentals": {
+   "title": "Forklift Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Local noncredit course, kept apart from the OSHA Powered Industrial Truck (Forklift) Operator Certification because a course is not an industry card (Rule 8c-2). Issuer and trainer follow the same reasoning as the CONST 600 row and need review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c",
+    "mechanism-collapses",
+    "local-trainer-is-agency"
+   ],
+   "trainer": "Long Beach City College Noncredit"
+  },
+  "LBCC Non-credit CONST 620 - Plumbing Fundamentals": {
+   "title": "Plumbing Fundamentals",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Joins the existing house family 'Plumbing Fundamentals' (issuer CCC). The noncredit provider is LBCC itself, so the issuer and trainer split needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "brand-family",
+    "join-when-likely-one",
+    "local-trainer-is-agency"
+   ],
+   "trainer": "Long Beach City College Noncredit"
+  },
+  "LBCC Non-credit CONST 670 - Cost Estimating": {
+   "title": "Cost Estimating",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Construction cost-estimating course from LBCC's noncredit program. 'Construction Cost Estimating' is a possible alternative title. The issuer and trainer need review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c",
+    "local-trainer-is-agency"
+   ],
+   "trainer": "Long Beach City College Noncredit"
+  },
+  "LBCC Non-credit CONST 675 - Contracting Laws and Management": {
+   "title": "Contracting Laws and Management",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Local noncredit course. It is not a CSLB license classification, so it stays a course title. The issuer and trainer need review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c",
+    "local-trainer-is-agency"
+   ],
+   "trainer": "Long Beach City College Noncredit"
+  },
+  "LBCC Non-credt CONST 680 - Building Codes for Residential Construct": {
+   "title": "Building Codes for Residential Construction",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "The truncated word 'Construct' is completed to 'Construction' and the misspelling 'Non-credt' is set aside. This is a local course, not an ICC certification. The issuer and trainer need review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 1",
+    "Rule 5c",
+    "local-trainer-is-agency"
+   ],
+   "trainer": "Long Beach City College Noncredit"
+  },
   "Noncredit for ARHS 6": {
    "title": "Museum & Gallery Techniques",
    "issuer": "California Community Colleges",
@@ -466,20 +480,6 @@
     "course-identity",
     "Rule 5c",
     "mechanism-collapses"
-   ]
-  },
-  "Noncredit for FREN 1A": {
-   "title": "Elementary French 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "Catalog hint 'Beginning French' for FREN 1A was restyled per language-levels to the house family 'Elementary French 1'.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "language-levels",
-    "brand-family",
-    "Rule 5c"
    ]
   },
   "Noncredit for KIN PL1": {
@@ -598,38 +598,6 @@
    ],
    "trainer": "varies by academy"
   },
-  "Portfolio - Life Drawing I (ART 225A)": {
-   "title": "Figure Drawing",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID ARTS 200; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Portfolio - Life Drawing II (ART 225B)": {
-   "title": "Life Drawing II",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ART 225B; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Portfolio - Painting I (ART 227)": {
-   "title": "Introduction to Painting",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID ARTS 210; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "Portfolio - Watercolor Painting (ART 220)": {
-   "title": "Watercolor Painting",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ART 220; issuer = CCC.",
-   "procedure": "course-identity"
-  },
   "Portfolio ARHS 6": {
    "title": "Museum & Gallery Techniques",
    "issuer": "California Community Colleges",
@@ -643,14 +611,6 @@
     "mechanism-collapses",
     "join-when-likely-one"
    ]
-  },
-  "Portfolio Painting II (ART 228)": {
-   "title": "Painting II",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ART 228; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "Portfolio for BUSN 45": {
    "title": "Entrepreneurship",
@@ -675,58 +635,6 @@
     "course-identity",
     "join-when-likely-one",
     "Rule 5c"
-   ]
-  },
-  "Portfolio for MKTG 50": {
-   "title": "Introduction to Marketing",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "The cx hint 'for MKTG 50' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 50.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Portfolio for MKTG 56": {
-   "title": "Marketing Strategies",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "The cx hint 'for MKTG 56' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 56.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Portfolio for MKTG 61": {
-   "title": "Professional Selling",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "The cx hint 'for MKTG 61' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 61.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Solidworks Design Associate (CSWA) Certification": {
-   "title": "Certified SOLIDWORKS Associate (CSWA)",
-   "issuer": "Dassault Systèmes",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joins the existing house family for the CSWA. The college's wording 'Design Associate' is a variant of the CSWA name.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 5d",
-    "Rule 6"
    ]
   }
  }

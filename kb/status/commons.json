@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-06T06:21:34Z",
+ "written_at": "2026-11-06T15:27:23Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13553,
+     "n": 13554,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3380,
+     "n": 3379,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-01T05:59:43Z",
+    "at": "2026-11-06T11:57:46Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13553,
-    "failing": 3380,
+    "complete": 13554,
+    "failing": 3379,
     "unread": 3349,
-    "records": 18556,
+    "records": 18557,
     "colleges": 114,
-    "outside_active": 1623,
+    "outside_active": 1624,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -118,9 +118,9 @@
    ],
    "issues": [
     {
-     "n": 44,
+     "n": 50,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 41, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+     "owner": "a curator (the classifier is unsure 47, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
@@ -504,7 +504,7 @@
    ],
    "pair": [
     {
-     "n": 7566,
+     "n": 7607,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -514,16 +514,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7566,
+    "credentials": 7607,
     "issuers": 1525,
-    "in_map": 205,
+    "in_map": 206,
     "articulated": 161,
     "with_issuer_skills": 64,
-    "tech_giant": 479
+    "tech_giant": 482
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-05T00:00:00Z",
+    "at": "2026-11-06T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -542,9 +542,9 @@
    ],
    "pair": [
     {
-     "n": 27261,
+     "n": 29793,
      "of": null,
-     "words": "outcomes read from 7,022 courses at 10 colleges",
+     "words": "outcomes read from 7,715 courses at 11 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -552,25 +552,26 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 27261,
-    "courses": 7022,
+    "outcomes": 29793,
+    "courses": 7715,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "columbia",
      "golden_west",
      "las_positas",
+     "mission",
      "modesto_junior",
      "moreno_valley",
      "norco",
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 27
+    "reads": 29
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-05T06:47:43Z",
+    "at": "2026-11-06T09:16:18Z",
     "every_hours": null
    },
    "sources": [
@@ -598,7 +599,7 @@
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-05T00:00:00Z",
+    "at": "2026-11-06T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -643,9 +644,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 44,
+      "n": 50,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 41, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+      "owner": "a curator (the classifier is unsure 47, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
       "open": "#exhibits/held"
      },
      {
@@ -697,7 +698,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3380,
+    "n": 3379,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
