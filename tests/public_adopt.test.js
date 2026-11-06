@@ -62,6 +62,24 @@ const MORE = {
     { t: "Cisco Networking Essentials", i: "Cisco", k: "course certificate", s: "11", ms: "inmap" },
   ],
 };
+// The badges and the college's first view (Sam, 2026-11-06): CompTIA Security+ carries a statewide recommendation and a
+// CPL-AI match; Alpha teaches an aligned course and does not award it, Beta and Gamma do.
+const REC = JSON.parse(JSON.stringify(DATA));
+REC.counts.statewide = 1; REC.counts.cplai = 1;
+REC.credentials[0].sw = [{ t: "Introduction Information Systems Security", u: "3", cid: "ITIS 160", id: "MAPICI-CSC-1-001" }];
+REC.credentials[0].ai = 1;
+const AIF = { page: "https://cplai.example/", credit: "Developed through the statewide CPL-AI initiative.", caveat: "Colleges decide.",
+  tiers: { 1: "Strong evidence", 2: "Faculty interpretation", 3: "Limited evidence" },
+  by_exhibit: { "CompTIA Security+": [{ code: "comptia14", title: "CompTIA Security+", kind: "exact", by_tier: { 1: 2, 2: 1, 3: 0 }, colleges: 3,
+    d: "Validates security skills.", by_college: {
+      "0": [["CIS 9", "Intro to Security", 1, 9, 10, "ccc1"], ["CIS 99", "Old Lab", 3, 2, 10, "ccc9"]],
+      "2": [["CNT 69", "Network Security", 2, 6, 10, "ccc2"]],
+      "Calbright": [["IT 510", "Cybersecurity", 1, 8, 10, "ccc3"]] } }] } };
+const SHARD = { credential: { code: "comptia14", title: "CompTIA Security+" }, sources: [],
+  courses: { ccc1: { college: "Alpha College", code: "CIS 9", title: "Intro to Security", discipline: "Computer Science", units: { display: "3" }, description: "Security basics." } },
+  pairs: [{ id: "comptia14_ccc1", course: "ccc1", tier: 1, relevance: "RELEVANT", cosine: 0.79, ratio: 0.9, domains_n: 10, matched_n: 9,
+    snapshot: ["Course and certificate evidence was identified for 9 of 10 domains."],
+    domains: [{ name: "Threats", courseCovered: true, credentialCovered: true, courseEvidence: ["Classify threats"], credentialEvidence: ["Threat types"] }] }] };
 const ALIGN = {
   cover: { colleges: 2, courses: 40 },
   align: { "CompTIA Security+": {
@@ -90,6 +108,14 @@ function load(query, opts) {
       posts.push({ headers: init.headers, body: JSON.parse(init.body) });
       if (opts.askFail) return Promise.resolve({ ok: false, status: 500, json: () => Promise.reject(new Error("500")) });
       return Promise.resolve({ ok: true, json: () => Promise.resolve(opts.askReply === undefined ? 3 : opts.askReply) });
+    }
+    if (/adopt_ai/.test(url)) {
+      const ai = opts.ai === undefined ? null : opts.ai;
+      return Promise.resolve(ai ? { ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(ai))) } : { ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
+    }
+    if (/shards\//.test(url)) {
+      (opts.shardUrls || []).push(url);
+      return Promise.resolve(opts.shard ? { ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(opts.shard))) } : { ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
     }
     const body = /adopt_more/.test(url) ? (opts.more === undefined ? MORE : opts.more) : /adopt_align/.test(url) ? ALIGN : (opts.data || DATA);
     if (body === null) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
@@ -200,15 +226,15 @@ function pick(d, id, key, on) {
   // The List.
   d.querySelector('[data-view="table"]').click();
   check("the List shows and the cards hide", !d.getElementById("ad-table-view").hidden && d.getElementById("ad-list-view").hidden);
-  check("the List's columns: the credit status its own, the ask on the right (Sam, 2026-11-06)", Array.from(d.querySelectorAll("#ad-tbl thead th")).map((t) => t.textContent).join("|") === "Credential|Issuer|Field|How credit is given|Credit status|Colleges|Median units|Ask us to prioritize");
-  check("the colgroup matches the columns, and a band spans them", d.querySelectorAll("#ad-tbl col").length === 8 && d.querySelector("#ad-tbl-body tr.band th").getAttribute("colspan") === "8");
+  check("the List's columns: the credit status its own, the ask on the right (Sam, 2026-11-06)", Array.from(d.querySelectorAll("#ad-tbl thead th")).map((t) => t.textContent).join("|") === "Credential|Issuer|Field|How credit is given|Credit status|Recommended|Colleges|Median units|Ask us to prioritize");
+  check("the colgroup matches the columns, and a band spans them", d.querySelectorAll("#ad-tbl col").length === 9 && d.querySelector("#ad-tbl-body tr.band th").getAttribute("colspan") === "9");
   check("a band per field", d.querySelectorAll("#ad-tbl-body tr.band").length === 3);
   check("one line a credential: no second line under the title", !d.querySelector("#ad-tbl-body .sub") && /\.tbl\.one td \{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis/.test(PAGE));
   pick(d, "pk-standing", "harvested", true);
-  const hrows = Array.from(d.querySelectorAll("#ad-tbl-body tr:not(.band)")).filter((tr) => tr.children[5].textContent === "0");
+  const hrows = Array.from(d.querySelectorAll("#ad-tbl-body tr:not(.band)")).filter((tr) => tr.children[6].textContent === "0");
   check("a 0 stays a 0, the status in its column, the ask in the last", hrows.length === 2
-    && hrows.every((tr) => tr.children.length === 8 && tr.children[5].textContent === "0" && tr.children[4].textContent === "Not yet evaluated"
-      && tr.children[7].querySelector(".req-w[data-req]") && tr.children[7].querySelector(".req-w").title === "Ask us to prioritize this credential"));
+    && hrows.every((tr) => tr.children.length === 9 && tr.children[6].textContent === "0" && tr.children[4].textContent === "Not yet evaluated"
+      && tr.children[8].querySelector(".req-w[data-req]") && tr.children[8].querySelector(".req-w").title === "Ask us to prioritize this credential"));
   check("the status cell's title carries the evidence", /Not yet evaluated · /.test(hrows.map((tr) => tr.children[4].title).join("|")));
   d.querySelector('#ad-tbl-body button[data-q="CompTIA"]').click();
   check("the issuer drills down to a search", d.getElementById("ad-q").value === "CompTIA" && d.querySelectorAll("#ad-tbl-body tr:not(.band)").length === 1);
@@ -328,18 +354,77 @@ function pick(d, id, key, on) {
   const bad = await load("", { fail: true });
   check("a failed read says so", /could not be read/.test(bad.d.getElementById("ad-state").textContent) && !bad.d.querySelector("#ad-list .cred"));
 
+  // The badges, the Recommendations filter and the Recommended column (Sam, 2026-11-06: "like badges on the credential").
+  const rb = await load("", { data: REC, ai: AIF });
+  d = rb.d;
+  await tick(40);
+  const secCard = Array.from(d.querySelectorAll("#ad-list .cred")).filter((x) => /CompTIA/.test(x.textContent))[0];
+  check("a recommended credential's card carries both badges, as words", secCard && Array.from(secCard.querySelectorAll(".badge")).map((b) => b.textContent).join("|") === "Statewide recommendation|CPL-AI course match"
+    && Array.from(d.querySelectorAll("#ad-list .cred")).filter((x) => /EMT/.test(x.textContent))[0].querySelectorAll(".badge").length === 0);
+  check("the Recommendations filter counts each badge", d.getElementById("f-sw").textContent === "Statewide recommendation (1)" && d.getElementById("f-ai").textContent === "CPL-AI course match (1)");
+  d.getElementById("f-sw").click();
+  check("Statewide recommendation filters to the credentials that carry one", titles(d).join() === "CompTIA Security+" && d.getElementById("f-sw").getAttribute("aria-pressed") === "true");
+  d.getElementById("f-sw").click();
+  check("pressed again, it lets go", titles(d).length === 3);
+  d.querySelector('[data-view="table"]').click();
+  const recCell = Array.from(d.querySelectorAll("#ad-tbl-body tr:not(.band)")).filter((tr) => /CompTIA/.test(tr.textContent))[0].children[5];
+  check("the List's Recommended column names the badges in short", Array.from(recCell.querySelectorAll(".badge")).map((b) => b.textContent).join("|") === "Statewide|CPL-AI");
+  recCell.querySelector(".badge.sw").click();
+  await tick(40);
+  check("a badge opens the panel at its section: the statewide recommendation's courses", d.getElementById("ad-panel").classList.contains("open")
+    && /Introduction Information Systems Security/.test(d.getElementById("pn-sw").nextElementSibling.nextElementSibling.textContent) && /ITIS 160/.test(d.getElementById("pn-body").textContent));
+  check("the panel names CPL-AI's ratings and its credit", /2 strong evidence, 1 faculty interpretation/.test(d.getElementById("pn-body").textContent)
+    && /not a CPL determination/.test(d.getElementById("pn-body").textContent) && /Colleges decide/.test(d.getElementById("pn-body").textContent));
+  const sel = d.getElementById("pn-aic-0");
+  check("the panel's college picker opens on a college with Strong evidence, and lists every rated college", sel && sel.value === "0" && sel.options.length === 3
+    && /CIS 9 Intro to Security/.test(d.getElementById("pn-body").textContent));
+  sel.value = "2"; sel.dispatchEvent(new d.defaultView.Event("change", { bubbles: true }));
+  check("picking a college lists its rated courses and says whether it awards credit", /CNT 69 Network Security/.test(d.getElementById("pn-body").textContent)
+    && /Gamma College awards credit for it in MAP/.test(d.getElementById("pn-body").textContent));
+  check("the colleges with Strong evidence that do not award it yet", /The 1 college with a Strong evidence course/.test(d.getElementById("pn-body").textContent));
+  d.getElementById("pn-close").click();
+
+  // A college's first view: the recommended credentials it could adopt, with Request Quick Adopt.
+  const shardUrls = [];
+  const cv = await load("?college=Alpha%20College", { data: REC, ai: AIF, shard: SHARD, shardUrls });
+  d = cv.d;
+  await tick(60);
+  const ad = d.getElementById("adoptable");
+  check("a college pick opens on the recommended credentials it could adopt", !ad.hidden && /Recommended credentials Alpha College could adopt/.test(d.getElementById("ad-adopt-h").textContent)
+    && d.querySelectorAll("#ad-adopt .cred").length === 1 && /CompTIA Security\+/.test(d.querySelector("#ad-adopt .cred h3").textContent));
+  const acard = d.querySelector("#ad-adopt .cred");
+  check("it names the college's aligned courses: the mapped course, and CPL-AI's, strongest first, Limited evidence left out",
+    /CIS 9<\/b>: mapped to this credential/.test(acard.innerHTML) && /CIS 9 Intro to Security<\/b>: CPL-AI rated it Strong evidence, 9 of 10/.test(acard.innerHTML) && !/Old Lab/.test(acard.innerHTML));
+  check("each offers Request Quick Adopt from a building college, and no ask (it is articulated)", Array.from(acard.querySelectorAll("a.chip")).map((a) => a.textContent.replace(/ built.*/, "")).join() === "Beta,Gamma"
+    && !acard.querySelector("[data-req]"));
+  check("the address carries the pick, and nothing is stored", /\?college=Alpha%20College$/.test(cv.w.location.href) && cv.writes.every((k) => k === "cpl_theme" || k === "cpl_catalog_panel_w"));
+  acard.querySelector("[data-rep]").click();
+  await tick(60);
+  check("Show the recommendation reads the hosted shard and shows it in the panel", /\.\.\/\.\.\/kb\/cpl_ai\/hosted\/shards\/comptia14\.json\.gz$/.test(shardUrls[0] || "")
+    && /Alpha College, CIS 9 Intro to Security/.test(d.querySelector("#pn-body h2").textContent) && /Strong evidence/.test(d.getElementById("pn-body").textContent)
+    && /9 of 10/.test(d.getElementById("pn-body").textContent) && d.querySelector("#pn-body table.dom th[scope=row]").textContent === "Threats");
+  check("it links the same recommendation on the CPL-AI page", Array.from(d.querySelectorAll("#pn-body a")).some((a) => a.href === "https://cplai.example/?report=comptia14_ccc1#recommendations" && a.target === "_blank"));
+  d.getElementById("pn-back").click();
+  check("Back returns to the credential, at its CPL-AI section", /CompTIA Security\+/.test(d.querySelector("#pn-body h2").textContent) && !!d.getElementById("pn-ai"));
+  const gv = await load("?college=Gamma%20College", { data: REC, ai: AIF });
+  await tick(60);
+  check("a college that awards it is not offered it", gv.d.querySelectorAll("#ad-adopt .cred").length === 0 && /None yet/.test(gv.d.getElementById("ad-adopt-state").textContent));
+  const nv = await load("", { data: REC, ai: AIF });
+  await tick(40);
+  check("no college picked: no first block", nv.d.getElementById("adoptable").hidden);
+
   // Malone's look, Light by default, the public words, the wiring.
   const main = PAGE.slice(PAGE.indexOf("<main"), PAGE.indexOf("</main>"));
   check("the Library's tokens, full width", /--heading: #082B61/.test(PAGE) && /--gold: #F4B300/.test(PAGE) && !/1320px/.test(PAGE));
   check("dark only when picked", !/prefers-color-scheme: dark/.test(PAGE));
   check("named the Credential Catalog and indexable (Sheet 148)", /<h1 id="ad-title">Credential Catalog<\/h1>/.test(PAGE) && !/noindex/.test(PAGE));
-  check("the intro says many, and the page's own words carry no bare CPL or MAP", /award credit for many of the credentials/.test(main) && !/\bCPL\b/.test(main.replace(/<!--[\s\S]*?-->/g, "")) && !/\bMAP\b(?! exhibits)/.test(main.replace(/<!--[\s\S]*?-->/g, "")));
+  check("the intro says many, and the page's own words carry no bare CPL or MAP", /award credit for many of the credentials/.test(main) && !/\bCPL\b(?!-AI)/.test(main.replace(/<!--[\s\S]*?-->/g, "")) && !/\bMAP\b(?! exhibits)/.test(main.replace(/<!--[\s\S]*?-->/g, "")));
   check("the Library links the Catalog", /href="\.\/adopt\/"[^>]*>Credential Catalog</.test(fs.readFileSync("library/index.html", "utf8")));
   check("a skip link, one h1, three tiles, five Start with words", /class="skip-link"/.test(PAGE) && (PAGE.match(/<h1/g) || []).length === 1 && (PAGE.match(/class="kpi"/g) || []).length === 3 && (PAGE.match(/data-start=/g) || []).length === 5);
   check("the Library's photos cycle here too", (PAGE.match(/class="hero-slide( is-on)?"/g) || []).length === 11 && /id="ad-hero-pause"/.test(PAGE));
   check("in the a11y sweep, four targets", /"public-adopt"/.test(fs.readFileSync("a11y.config.js", "utf8")) && /"public-adopt-list"/.test(fs.readFileSync("a11y.config.js", "utf8")));
   const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
-  check("the daily run builds the data and the analysis", /kb\/_build_adopt_page\.py/.test(wf) && /kb\/_build_adopt_align\.py/.test(wf) && /adopt_more\.json/.test(wf) && /adopt_align\.json/.test(wf));
+  check("the daily run builds the data and the analysis", /kb\/_build_adopt_page\.py/.test(wf) && /kb\/_build_adopt_align\.py/.test(wf) && /adopt_more\.json/.test(wf) && /adopt_align\.json/.test(wf) && /adopt_ai\.json/.test(wf));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0]));

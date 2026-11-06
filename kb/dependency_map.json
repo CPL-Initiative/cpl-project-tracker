@@ -4,7 +4,7 @@
   "supabase_tables": 107,
   "rpcs": 51,
   "edge_functions": 12,
-  "file_datasets": 801,
+  "file_datasets": 802,
   "external_services": 193,
   "consumers": 528,
   "workflows": 62,
@@ -1451,7 +1451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 22,
+     "line": 24,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -1553,7 +1553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 737,
+     "line": 943,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -1563,7 +1563,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 141
+     "line": 146
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -1589,7 +1589,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 26,
+     "line": 28,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -2404,7 +2404,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 25,
+     "line": 27,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -6041,7 +6041,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 93
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -7238,7 +7238,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 272
+     "line": 337
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -8325,6 +8325,13 @@
      "direction": "write",
      "how": "literal",
      "line": 156
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_build_domain_cpl_crosswalk.py",
@@ -12559,7 +12566,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 99
+     "line": 104
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
@@ -12881,6 +12888,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
      "id": "script:kb/_build_cpl_ai_join.py",
      "kind": "script",
      "direction": "read",
@@ -12909,6 +12923,13 @@
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
     }
    ],
    "served": true,
@@ -14536,7 +14557,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 270
+     "line": 335
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",
@@ -15030,7 +15051,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 176
+     "line": 181
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -16798,7 +16819,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 173
+     "line": 178
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -16845,7 +16866,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 174
+     "line": 179
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -17007,7 +17028,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 274
+     "line": 339
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -18415,7 +18436,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 271
+     "line": 336
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -18851,11 +18872,24 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 513
+     "line": 551
     }
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:library/adopt/adopt_ai.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:library/adopt/adopt_align.json": {
    "consumers": [
@@ -20748,7 +20782,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 514
+     "line": 552
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
@@ -24478,7 +24512,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 33,
+     "line": 35,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -24493,7 +24527,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 32,
+     "line": 34,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -29277,6 +29311,7 @@
     "library/adopt/adopt_data.json",
     "library/adopt/adopt_more.json",
     "library/adopt/adopt_align.json",
+    "library/adopt/adopt_ai.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",
     "kb/cred_rename_dryrun/report.md",
