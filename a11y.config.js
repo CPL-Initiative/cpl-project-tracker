@@ -3440,7 +3440,7 @@ module.exports = {
      Every local course in COCI banded by M-ID, an Identities drawer open; one per theme. */
   "coci-lookup-list": {
     file: "index.html",
-    title: "COCI Lookup: the Courses List, banded by M-ID, its line and folded summary, a course's side panel, an Identities drawer open",
+    title: "Courses and Programs: the Courses List, banded by M-ID, its line and folded summary, a course's side panel, an Identities drawer open",
     routes: [{ hash: "coci-lookup", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCociList(page, "light"),
@@ -3448,7 +3448,7 @@ module.exports = {
   },
   "coci-lookup-list-dark": {
     file: "index.html",
-    title: "COCI Lookup: the Courses List, dark",
+    title: "Courses and Programs: the Courses List, dark",
     routes: [{ hash: "coci-lookup", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociList(page, "dark"),
@@ -3457,7 +3457,7 @@ module.exports = {
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */
   "coci-lookup-progress": {
     file: "index.html",
-    title: "COCI Lookup: Progress, the Common Course Reference's opened page",
+    title: "Courses and Programs: Progress, the Common Course Reference's opened page",
     routes: [{ hash: "coci-lookup/progress", name: "progress" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCociProgress(page, "light"),
@@ -3465,7 +3465,7 @@ module.exports = {
   },
   "coci-lookup-progress-dark": {
     file: "index.html",
-    title: "COCI Lookup: Progress, dark",
+    title: "Courses and Programs: Progress, dark",
     routes: [{ hash: "coci-lookup/progress", name: "progress-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociProgress(page, "dark"),
