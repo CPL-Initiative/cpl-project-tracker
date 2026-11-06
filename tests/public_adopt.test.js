@@ -96,6 +96,11 @@ function load(query, opts) {
     return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(body))) });
   };
   w.requestAnimationFrame = (f) => setTimeout(f, 0);
+  if (opts.io) {  // a stand-in IntersectionObserver the test fires by hand
+    w.IntersectionObserver = function (cb, o) { this.cb = cb; this.o = o; opts.io.push(this); };
+    w.IntersectionObserver.prototype.observe = function (el) { this.el = el; };
+    w.IntersectionObserver.prototype.disconnect = function () { this.gone = true; };
+  }
   w.eval(JS);
   return new Promise((res) => setTimeout(() => res({ w, d: w.document, writes, posts }), 60));
 }
@@ -170,8 +175,19 @@ function pick(d, id, key, on) {
   check("a builder outside the columns is named", /Delta University/.test(d.getElementById("ad-list").textContent));
   // The other statuses arrived from adopt_more.json.
   check("the other statuses are in the picker with counts", /Being reviewed/.test(d.querySelector("#pk-standing").innerHTML) && /Not yet evaluated/.test(d.querySelector("#pk-standing").innerHTML));
-  check("the tiles count what they open", d.querySelector("#kpi-awarded b").textContent === "3" && d.querySelector("#kpi-colleges b").textContent === "3" && d.querySelector("#kpi-harvested b").textContent === "2");
+  const kpi = (id) => d.querySelector("#" + id + " b").textContent;
+  check("the tiles follow a region: what earns credit at its colleges (Sam, 2026-11-06)", kpi("kpi-awarded") === "2" && kpi("kpi-colleges") === "2" && kpi("kpi-harvested") === "2"
+    && /at the colleges picked/.test(d.querySelector("#kpi-awarded span").textContent) && !d.getElementById("kpi-scope").hidden);
   d.getElementById("ad-clear").click();
+  check("the tiles count the state with no filter", kpi("kpi-awarded") === "3" && kpi("kpi-colleges") === "3" && kpi("kpi-harvested") === "2"
+    && /at a college$/.test(d.querySelector("#kpi-awarded span").textContent) && d.getElementById("kpi-scope").hidden);
+  pick(d, "pk-sector", "11", true);
+  check("the tiles follow the field, whatever the credit status", kpi("kpi-awarded") === "1" && kpi("kpi-colleges") === "2" && kpi("kpi-harvested") === "1");
+  d.getElementById("kpi-harvested").click();
+  check("a tile opens what it counts, the field kept", !d.getElementById("ad-table-view").hidden
+    && Array.from(d.querySelectorAll("#ad-tbl-body tr:not(.band) td:first-child")).map((td) => td.textContent).join() === "AWS Certified Cloud Practitioner");
+  d.getElementById("ad-clear").click();
+  d.querySelector('[data-view="list"]').click();
   const q = d.getElementById("ad-q"); q.value = "aws"; q.dispatchEvent(new one.w.Event("input"));
   await tick(220);
   check("a search names what it found with another status, and a word start never matches inside a word",
@@ -184,11 +200,16 @@ function pick(d, id, key, on) {
   // The List.
   d.querySelector('[data-view="table"]').click();
   check("the List shows and the cards hide", !d.getElementById("ad-table-view").hidden && d.getElementById("ad-list-view").hidden);
-  check("the List's columns", Array.from(d.querySelectorAll("#ad-tbl thead th")).map((t) => t.textContent).join("|") === "Credential|Issuer|Field|How credit is given|Colleges awarding|Median units");
+  check("the List's columns: the credit status its own, the ask on the right (Sam, 2026-11-06)", Array.from(d.querySelectorAll("#ad-tbl thead th")).map((t) => t.textContent).join("|") === "Credential|Issuer|Field|How credit is given|Credit status|Colleges|Median units|Ask us to prioritize");
+  check("the colgroup matches the columns, and a band spans them", d.querySelectorAll("#ad-tbl col").length === 8 && d.querySelector("#ad-tbl-body tr.band th").getAttribute("colspan") === "8");
   check("a band per field", d.querySelectorAll("#ad-tbl-body tr.band").length === 3);
+  check("one line a credential: no second line under the title", !d.querySelector("#ad-tbl-body .sub") && /\.tbl\.one td \{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis/.test(PAGE));
   pick(d, "pk-standing", "harvested", true);
-  const zero = Array.from(d.querySelectorAll("#ad-tbl-body td.num")).filter((td) => /^0/.test(td.textContent.trim()));
-  check("a 0 carries Ask us to prioritize", zero.length === 2 && zero.every((td) => td.querySelector(".req-w") && td.querySelector(".req-w").textContent === "Ask us to prioritize"));
+  const hrows = Array.from(d.querySelectorAll("#ad-tbl-body tr:not(.band)")).filter((tr) => tr.children[5].textContent === "0");
+  check("a 0 stays a 0, the status in its column, the ask in the last", hrows.length === 2
+    && hrows.every((tr) => tr.children.length === 8 && tr.children[5].textContent === "0" && tr.children[4].textContent === "Not yet evaluated"
+      && tr.children[7].querySelector(".req-w[data-req]") && tr.children[7].querySelector(".req-w").title === "Ask us to prioritize this credential"));
+  check("the status cell's title carries the evidence", /Not yet evaluated · /.test(hrows.map((tr) => tr.children[4].title).join("|")));
   d.querySelector('#ad-tbl-body button[data-q="CompTIA"]').click();
   check("the issuer drills down to a search", d.getElementById("ad-q").value === "CompTIA" && d.querySelectorAll("#ad-tbl-body tr:not(.band)").length === 1);
   d.getElementById("ad-clear").click();
@@ -281,6 +302,23 @@ function pick(d, id, key, on) {
   check("review: the pure filter", rv.w.CPL_ADOPT.reviewRows(DATA, { q: "", sectors: { "11": true } }).map((r) => r.k).join() === "ce-2");
   const nd = await load("", { data: Object.assign({}, DATA, { review: [] }) });
   check("review: no rows, no section", nd.d.getElementById("review").hidden);
+
+  // Lazy loading in place of Show more (Sam, 2026-11-06).
+  const many = Object.assign({}, DATA, { review: [], credentials: Array.from({ length: 100 }, (_, i) => ({ t: "Cred " + String(i).padStart(3, "0"), i: "X", y: [1], s: "11", p: 3, a: [[1, 3, ""]] })) });
+  const ios = [];
+  const lz = await load("", { data: many, more: null, io: ios });
+  d = lz.d;
+  check("lazy: the first batch, a sentinel, no Show more", d.querySelectorAll("#ad-list .cred").length === 72 && d.getElementById("ad-list-sentinel") && d.getElementById("ad-more").hidden);
+  let live = ios.filter((o) => !o.gone).pop();
+  live.cb([{ isIntersecting: true }]);
+  check("lazy: nearing the end draws the rest and drops the sentinel", d.querySelectorAll("#ad-list .cred").length === 100 && !d.getElementById("ad-list-sentinel"));
+  const ios2 = [];
+  d = (await load("", { data: many, more: null, io: ios2 })).d;
+  d.querySelector('[data-view="table"]').click();
+  live = ios2.filter((o) => !o.gone).pop();
+  check("lazy: the List watches against its own box", live && live.o.root === d.getElementById("ad-tbl-wrap") && live.el.id === "ad-tbl-sentinel" && d.getElementById("ad-more-t").hidden);
+  const plain = await load("", { data: many, more: null });
+  check("lazy: without IntersectionObserver, Show more stays", !plain.d.getElementById("ad-more").hidden && /28 more/.test(plain.d.getElementById("ad-more").textContent));
 
   const bad = await load("", { fail: true });
   check("a failed read says so", /could not be read/.test(bad.d.getElementById("ad-state").textContent) && !bad.d.querySelector("#ad-list .cred"));

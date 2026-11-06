@@ -420,40 +420,72 @@
       html += '<div class="list">' + slice.map(function (c) { return card(c, sc); }).join("") + "</div>";
       if (g.label) html += "</section>";
     });
+    if (drawn < total) html += '<p class="sentinel" id="ad-list-sentinel">Loading ' + fmt(Math.min(PAGE, total - drawn)) + " more of " + fmt(total - drawn) + "…</p>";
     $("ad-list").innerHTML = html;
     $("ad-empty").hidden = total > 0;
     var more = $("ad-more");
-    more.hidden = drawn >= total;
+    more.hidden = lazy.ok || drawn >= total;
     more.textContent = "Show more (" + fmt(total - drawn) + " more)";
+    lazy.watch("list");
   }
 
   /* ── The List ───────────────────────────────────────────────────────────────────── */
 
+  // One line a credential (Sam, 2026-11-06): the credit status is its own column, the ask its own column on the right, and
+  // a cell too long for its column ends in an ellipsis with the whole text in its title.
+  var TBL_COLS = 8;
   function drawTable() {
     var budget = state.shown, html = "", total = 0, drawn = 0, sc = state.sc;
     state.groups.forEach(function (g) {
       total += g.items.length;
       if (budget <= 0) return;
       var slice = g.items.slice(0, budget); budget -= slice.length; drawn += slice.length;
-      if (g.label) html += '<tr class="band"><th scope="rowgroup" colspan="6">' + esc(g.label) + '<span class="cnt">' + plural(g.items.length, "credential", "credentials") + "</span></th></tr>";
+      if (g.label) html += '<tr class="band"><th scope="rowgroup" colspan="' + TBL_COLS + '">' + esc(g.label) + '<span class="cnt">' + plural(g.items.length, "credential", "credentials") + "</span></th></tr>";
       html += slice.map(function (c) {
-        var n = c.a.length;
-        var sub = c.std !== "awarded" ? [STD[c.std], evidence(c)].filter(Boolean).join(" · ") : (sc ? STD[stdOf(c, sc)] : "");
+        var n = c.a.length, field = groupLabel(D, groupKey(c));
+        var status = STD[stdOf(c, sc)] || "", ev = c.std !== "awarded" ? evidence(c) : "";
+        var types = (c.y || []).map(function (i) { return D.types[i]; });
         var typeCells = (c.y || []).map(function (i) { return '<button type="button" class="word dd" data-type="' + i + '" title="Filter to this way of giving credit">' + esc(D.types[i]) + "</button>"; }).join(", ") || esc(c.k || "");
-        return '<tr><td><button type="button" class="word" data-open="' + c._i + '">' + esc(c.t) + "</button>" + (sub ? '<span class="sub">' + esc(sub) + "</span>" : "") + askedCell(c) + "</td>"
-          + "<td>" + (c.i ? '<button type="button" class="word dd" data-q="' + esc(c.i) + '" title="Search this issuer">' + esc(c.i) + "</button>" : "") + "</td>"
-          + '<td><button type="button" class="word dd" data-sector="' + esc(groupKey(c)) + '" title="Filter to this field">' + esc(groupLabel(D, groupKey(c))) + "</button></td><td>" + typeCells + "</td>"
-          + '<td class="num">' + (n ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards" title="The colleges and their units">' + fmt(n) + "</button>"
-            : '0 <button type="button" class="word req-w" data-open="' + c._i + '" data-req="1">Ask us to prioritize</button>') + "</td>"
-          + '<td class="num">' + (n && c.p != null ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards">' + esc(units(c.p)) + "</button>" : "") + "</td></tr>";
+        var ask = (n ? "" : '<button type="button" class="word req-w" data-open="' + c._i + '" data-req="1" title="' + esc(ASK) + '">Ask</button> ') + askedCell(c);
+        return '<tr><td title="' + esc(c.t) + '"><button type="button" class="word" data-open="' + c._i + '">' + esc(c.t) + "</button></td>"
+          + '<td title="' + esc(c.i || "") + '">' + (c.i ? '<button type="button" class="word dd" data-q="' + esc(c.i) + '" title="Search this issuer">' + esc(c.i) + "</button>" : "") + "</td>"
+          + '<td title="' + esc(field) + '"><button type="button" class="word dd" data-sector="' + esc(groupKey(c)) + '" title="Filter to this field">' + esc(field) + "</button></td>"
+          + '<td title="' + esc(types.join(", ") || c.k || "") + '">' + typeCells + "</td>"
+          + '<td class="st" title="' + esc([status, ev].filter(Boolean).join(" · ")) + '">' + esc(status) + "</td>"
+          + '<td class="num">' + (n ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards" title="The colleges and their units">' + fmt(n) + "</button>" : "0") + "</td>"
+          + '<td class="num">' + (n && c.p != null ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards">' + esc(units(c.p)) + "</button>" : "") + "</td>"
+          + '<td class="ask">' + ask + "</td></tr>";
       }).join("");
     });
+    if (drawn < total) html += '<tr class="sentinel" id="ad-tbl-sentinel"><td colspan="' + TBL_COLS + '">Loading ' + fmt(Math.min(PAGE, total - drawn)) + " more of " + fmt(total - drawn) + "…</td></tr>";
     $("ad-tbl-body").innerHTML = html;
     $("ad-tbl-empty").hidden = total > 0;
     var more = $("ad-more-t");
-    more.hidden = drawn >= total;
+    more.hidden = lazy.ok || drawn >= total;
     more.textContent = "Show more (" + fmt(total - drawn) + " more)";
+    lazy.watch("table");
   }
+
+  // Lazy loading (Sam, 2026-11-06): the next batch draws as the reader nears the end, in place of Show more. The List
+  // scrolls inside its own box, so its sentinel is watched against that box; the cards against the window. Where the
+  // browser has no IntersectionObserver, Show more stays.
+  var lazy = {
+    ok: typeof window !== "undefined" && typeof window.IntersectionObserver === "function",
+    obs: null,
+    watch: function (view) {
+      if (!lazy.ok) return;
+      if (lazy.obs) { lazy.obs.disconnect(); lazy.obs = null; }
+      var el = $(view === "table" ? "ad-tbl-sentinel" : "ad-list-sentinel");
+      if (!el) return;
+      lazy.obs = new window.IntersectionObserver(function (es) {
+        if (!es.some(function (e) { return e.isIntersecting; })) return;
+        lazy.obs.disconnect(); lazy.obs = null;
+        state.shown += PAGE;
+        if (state.view === "table") drawTable(); else if (state.view === "list") drawList();
+      }, { root: view === "table" ? $("ad-tbl-wrap") : null, rootMargin: "0px 0px 400px 0px" });
+      lazy.obs.observe(el);
+    }
+  };
 
   /* ── The College matrix: a window over the rows ─────────────────────────────────── */
 
@@ -768,6 +800,7 @@
     } catch (e) { /* the page still works */ }
     if (state.view === "list") drawList(); else if (state.view === "table") drawTable(); else { state.sel = state.sel; buildMatrix(); }
     drawReview();
+    tiles();
   }
 
   function setView(v) {
@@ -839,17 +872,44 @@
 
   /* ── Wiring ─────────────────────────────────────────────────────────────────────── */
 
+  // The three figures follow the filters (Sam, 2026-11-06): every filter but Credit status, since each tile is a status
+  // and opens it. Without a college pick they count the state; with one, what earns credit at the colleges picked.
+  function tileCounts() {
+    var sc = state.sc, colsAw = {}, n = { awarded: 0, harvested: 0 };
+    R.forEach(function (c) {
+      if (!match(c, f, sc, true)) return;
+      if (c.std === "harvested") { n.harvested++; return; }
+      if (c.std !== "awarded") return;
+      var mine = sc ? c.a.filter(function (a) { return sc[a[0]]; }) : c.a;
+      if (sc && !mine.length) return;
+      n.awarded++;
+      mine.forEach(function (a) { colsAw[a[0]] = true; });
+    });
+    n.colleges = Object.keys(colsAw).length;
+    return n;
+  }
+  function filtered() { return !!(f.q || any(f.colleges) || any(f.regions) || any(f.areas) || any(f.sectors) || any(f.types)); }
   function tiles() {
-    var colsAw = {};
-    D.credentials.forEach(function (c) { c.a.forEach(function (a) { colsAw[a[0]] = true; }); });
-    var nHv = R.filter(function (c) { return c.std === "harvested"; }).length;
-    $("kpi-awarded").querySelector("b").textContent = fmt(D.credentials.length);
-    $("kpi-colleges").querySelector("b").textContent = fmt(Object.keys(colsAw).length);
-    $("kpi-harvested").querySelector("b").textContent = fmt(nHv);
-    $("kpi-harvested").hidden = !nHv;
-    $("kpi-awarded").addEventListener("click", function () { clearAll(); setView("list"); $("results").scrollIntoView(); });
-    $("kpi-colleges").addEventListener("click", function () { clearAll(); setView("matrix"); $("results").scrollIntoView(); });
-    $("kpi-harvested").addEventListener("click", function () { clearAll(); f.standing = { harvested: true }; redrawPickers(); setView("table"); $("results").scrollIntoView(); });
+    if (!D) return;
+    var n = tileCounts(), sc = state.sc;
+    $("kpi-awarded").querySelector("b").textContent = fmt(n.awarded);
+    $("kpi-awarded").querySelector("span").textContent = sc ? (n.awarded === 1 ? "credential earns" : "credentials earn") + " credit at the colleges picked" : (n.awarded === 1 ? "credential earns" : "credentials earn") + " credit at a college";
+    $("kpi-colleges").querySelector("b").textContent = fmt(n.colleges);
+    $("kpi-colleges").querySelector("span").textContent = (n.colleges === 1 ? "college awards" : "colleges award") + " that credit";
+    $("kpi-harvested").querySelector("b").textContent = fmt(n.harvested);
+    $("kpi-harvested").querySelector("span").textContent = (n.harvested === 1 ? "credential" : "credentials") + " not yet evaluated";
+    $("kpi-harvested").hidden = !state.hasHarvested;
+    $("kpi-scope").hidden = !filtered();
+  }
+  // A tile opens what it counts: the filters stay, the credit status becomes the tile's.
+  function wireTiles() {
+    function go(std, view) {
+      if (std) { f.standing = {}; f.standing[std] = true; state.hadScope = !!state.sc; redrawPickers(); }
+      setView(view); $("results").scrollIntoView();
+    }
+    $("kpi-awarded").addEventListener("click", function () { go(state.sc ? "here" : "awarded", "list"); });
+    $("kpi-colleges").addEventListener("click", function () { go(state.sc ? "here" : "awarded", "matrix"); });
+    $("kpi-harvested").addEventListener("click", function () { go("harvested", "table"); });
   }
 
   function wire() {
@@ -879,6 +939,7 @@
     var wrap = $("ad-mx-wrap"), raf = 0;
     wrap.addEventListener("scroll", function () { if (raf) return; raf = requestAnimationFrame(function () { raf = 0; drawWindow(false); }); });
     window.addEventListener("resize", function () { if (state.view === "matrix") drawWindow(true); });
+    wireTiles();
     panelWidth();
     heroInit();
   }
@@ -889,8 +950,8 @@
     R.forEach(function (c, i) { c._i = i; });
     state.order = fieldOrder(D, R);
     pickers.sector = null; delete pickers.sector;
+    state.hasHarvested = R.some(function (c) { return c.std === "harvested"; });
     buildPickers();
-    tiles();
     redraw(false);
   }
 
@@ -905,7 +966,6 @@
     if (asked) D.colleges.forEach(function (c, i) { if (c[0] === asked) f.colleges[i] = true; });
     if (D.written_at) $("ad-asof").textContent = "updated " + new Date(D.written_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     wire();
-    tiles();
     redrawPickers();
     redraw(true);
     fetch(MORE_URL, { cache: "no-cache" })
