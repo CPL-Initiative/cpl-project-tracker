@@ -154,6 +154,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
+  simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
+  folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
+  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece is
+  still drafted in a session or the scheduled run: the Library has no in-browser drafter for a new piece (Revise's
+  `library-revise-draft` edits an existing public page only); the page now says so when Start saves.
 - **The List's project bands lead with the newest piece** (#2812, SkyRoundoff; Sam's report: *"the sort descending by
   modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
   orders them, as the Cards' project cards already were.
