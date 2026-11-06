@@ -1,20 +1,21 @@
-// The public adoption page (library/adopt/; Sam, Open Asks Sheet 147, 2026-10-31).
+// The public Credential Catalog (library/adopt/; Sam, Open Asks Sheet 147, 2026-10-31; his asks of 2026-11-06 on the mock).
 //
-// Guards what can go wrong on the page itself (the builder's file is guarded by
-// tests/adopt_page_build_test.py):
-//   - a college pick opens on what the college has not adopted, and "Adopted here" and "Every
-//     credential" read the same scope; the college filters (District, SW Region, ASCCC Area) scope
-//     the same way, and a content filter (Field, CPL type, Search) never drops a matrix column;
-//   - the college's own course comes first, then the most colleges;
-//   - a college is never offered a Request Quick Adopt chip for its own exhibit;
-//   - every MAP link is Request Quick Adopt's address with View=Non-Military (map_links.js);
-//   - the CSV quotes what needs quoting and marks a could-adopt cell C;
-//   - Create Handout opens the college's CPL opportunity visual;
-//   - the page remembers no filter (Sam, 2026-10-21): no storage write but the theme's;
-//   - Malone's look: the Library's tokens, Light unless the reader picks Dark, noindex until linked;
-//   - a failed read says so and paints no list;
-//   - Worth a faculty review: every Credential Engine card, filtered by the search and the field and
-//     never by a college scope; its tags, the related MAP credential, and links that open a new tab.
+// Guards what can go wrong on the page itself (the builders' files are guarded by tests/adopt_page_build_test.py and
+// tests/adopt_align_build_test.py):
+//   - a college pick opens on what the college could add (Earns credit elsewhere); Earns credit here reads the same
+//     scope; a district or region scopes the same way, and a content filter never drops a matrix column;
+//   - the list groups by field, the largest first and the exams last; the college's own course comes first inside a field;
+//   - Credit status takes the public words, and the other statuses arrive from adopt_more.json after the first paint;
+//     a search names what it also found with another status;
+//   - a college is never offered a Request Quick Adopt chip for its own exhibit; every MAP link is Request Quick Adopt's
+//     address with View=Non-Military (map_links.js);
+//   - the List drills down and a 0 carries Request an evaluation; the matrix marks a could-adopt college A, a cell opens the
+//     side panel at that college, a column heading picks the college; the panel's request names the two routes that exist
+//     today and the analysis reads adopt_align.json;
+//   - the CSV quotes what needs quoting and marks a could-adopt cell A; Create Handout opens the college's visual;
+//   - the page remembers no filter (Sam, 2026-10-21): the browser keeps only the theme and the panel's width;
+//   - Malone's look, Light unless the reader picks Dark; three figure tiles; no bare "CPL" or "MAP" in the page's own words;
+//   - a failed read says so and paints no list; Worth a faculty review keeps its cards, filtered by search and field only.
 // Run from repo root: `npm test` (or `node tests/public_adopt.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -27,7 +28,7 @@ const JS = fs.readFileSync("library/adopt/adopt.js", "utf8");
 const MAPLINKS = fs.readFileSync("map_links.js", "utf8");
 
 const DATA = {
-  written_at: "2026-10-31T12:00:00Z",
+  written_at: "2026-11-06T12:00:00Z",
   counts: { settled: 3, held: 1, in_reference: 4 },
   colleges: [
     ["Alpha College", "Alpha", "Alpha CCD", "Bay Area (Region 3)", "B"],
@@ -51,6 +52,23 @@ const DATA = {
       o: ["A (1)", "B (2)", "C (3)"], on: 2, n: ["Health Care (NAICS 62)"] },
   ],
 };
+const MORE = {
+  held: [{ t: "Phlebotomy Technician", i: "NHA", s: "51", n: 1 }],
+  harvested: [
+    { t: "AWS Certified Cloud Practitioner", i: "Amazon Web Services", k: "certification", s: "11", src: ["iss", "cos"], ct: 1, sk: 4, u: "https://aws.example/ccp" },
+    { t: "Chainsaws Level 1", i: "Forestry Board", k: "certification", s: "51", src: ["cos"] },
+    { t: "Cisco Networking Essentials", i: "Cisco", k: "course certificate", s: "11", ms: "inmap" },
+  ],
+};
+const ALIGN = {
+  cover: { colleges: 2, courses: 40 },
+  align: { "CompTIA Security+": {
+    issuer_skills_kind: "exam domains", source: "https://comptia.example/securityplus",
+    skills: [{ domain: "Threats, Vulnerabilities, and Mitigations", weight: 22 }, { domain: "Security Operations", weight: 28 }],
+    courses: [{ college: "Gamma College", code: "CNT 69", title: "Network Security", mean: 0.5,
+      slos: [{ text: "Classify threats and vulnerabilities and apply mitigations.", skill: "Threats, Vulnerabilities, and Mitigations", score: 0.61 }] }],
+    covered: 1, of: 2, confidence: 0.5 } },
+};
 
 function load(query, opts) {
   opts = opts || {};
@@ -60,86 +78,147 @@ function load(query, opts) {
     runScripts: "outside-only", pretendToBeVisual: true,
   });
   const w = dom.window;
-  const real = w.localStorage;
   w.Storage.prototype._set = w.Storage.prototype.setItem;
   w.Storage.prototype.setItem = function (k, v) { writes.push(k); return this._set(k, v); };
-  w.fetch = function () {
+  w.Element.prototype.scrollIntoView = function () {};
+  w.fetch = function (url) {
     if (opts.fail) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
-    return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(DATA))) });
+    const body = /adopt_more/.test(url) ? (opts.more === undefined ? MORE : opts.more) : /adopt_align/.test(url) ? ALIGN : (opts.data || DATA);
+    if (body === null) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
+    return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(body))) });
   };
   w.requestAnimationFrame = (f) => setTimeout(f, 0);
   w.eval(JS);
-  return new Promise((res) => setTimeout(() => res({ w, d: w.document, writes, real }), 30));
+  return new Promise((res) => setTimeout(() => res({ w, d: w.document, writes }), 60));
 }
-
-function change(d, id, v) {
-  const el = d.getElementById(id);
-  el.value = v;
-  el.dispatchEvent(new d.defaultView.Event("change"));
-}
+const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
 function titles(d) { return Array.from(d.querySelectorAll("#ad-list .cred h3")).map((h) => h.textContent); }
+function pick(d, id, key, on) {
+  // Open a picker, set one checkbox, close it.
+  d.querySelector("#" + id + " .pick-btn").click();
+  const box = d.querySelector("#" + id + ' input[data-key="' + key + '"]');
+  if (!box) throw new Error("no option " + key + " in " + id);
+  box.checked = on !== false;
+  box.dispatchEvent(new d.defaultView.Event("change", { bubbles: true }));
+  const done = d.querySelector("#" + id + " .pp-done"); if (done) done.click();
+}
 
 (async function () {
   // The pure parts.
   const A = (await load()).w.CPL_ADOPT;
-  check("no college filter: every credential, no scope", A.scope(DATA, { college: "" }) === null && A.rows(DATA, { q: "", show: "all" }).length === 3);
-  const open = A.rows(DATA, { college: "Alpha College", show: "open", q: "" }).map((c) => c.t);
-  check("open: what the college has not adopted, its own course first", JSON.stringify(open) === JSON.stringify(["CompTIA Security+", "AP Biology"]));
-  check("here: what the college adopted", A.rows(DATA, { college: "Alpha College", show: "here", q: "" }).map((c) => c.t).join() === "EMT");
-  check("district scopes two colleges", Object.keys(A.scope(DATA, { district: "Alpha CCD" })).join() === "0,2");
-  check("a district's open list drops what any of its colleges adopted",
-    A.rows(DATA, { district: "Alpha CCD", show: "open", q: "" }).map((c) => c.t).join() === "AP Biology");
-  check("Area scopes like SW Region", Object.keys(A.scope(DATA, { area: "D" })).join() === "1");
-  check("a content filter never drops a matrix column", A.cols(DATA, { sector: "51", type: "0", q: "zz" }).length === 3);
-  check("search reads title and issuer, every word", A.rows(DATA, { q: "nremt emt", show: "all" }).length === 1);
-  check("CPL type filters by index", A.rows(DATA, { type: "0", show: "all", q: "" }).map((c) => c.t).join() === "AP Biology");
+  const R = DATA.credentials.map((c, i) => Object.assign({ std: "awarded", _i: i }, c));
+  const F = (o) => Object.assign({ q: "", colleges: {}, regions: {}, areas: {}, sectors: {}, types: {}, standing: { awarded: true }, sort: "az" }, o);
+  check("no college filter: every credential, no scope", A.scope(DATA, F()) === null && A.rows(DATA, R, F()).length === 3);
+  const sc0 = A.scope(DATA, F({ colleges: { 0: true } }));
+  check("a credential a college awards is here; one it could add is open", A.stdOf(R[1], sc0) === "here" && A.stdOf(R[0], sc0) === "open" && A.stdOf(R[0], null) === "awarded");
+  const open = A.rows(DATA, R, F({ colleges: { 0: true }, standing: { open: true } })).map((c) => c.t);
+  check("open: what the college could add, its own course first", JSON.stringify(open) === JSON.stringify(["CompTIA Security+", "AP Biology"]));
+  check("here: what the college awards", A.rows(DATA, R, F({ colleges: { 0: true }, standing: { here: true } })).map((c) => c.t).join() === "EMT");
+  check("a region scopes two colleges", Object.keys(A.scope(DATA, F({ regions: { "Bay Area (Region 3)": true } }))).join() === "0,2");
+  check("a region's open list drops what any of its colleges awards",
+    A.rows(DATA, R, F({ regions: { "Bay Area (Region 3)": true }, standing: { open: true } })).map((c) => c.t).join() === "AP Biology");
+  check("Area scopes like SW Region", Object.keys(A.scope(DATA, F({ areas: { D: true } }))).join() === "1");
+  check("a content filter never drops a matrix column", A.cols(DATA, F({ sectors: { "51": true }, q: "zz" })).length === 3);
+  check("search reads title and issuer, every word at a word start", A.rows(DATA, R, F({ q: "nremt emt" })).length === 1 && A.rows(DATA, R, F({ q: "mt" })).length === 0);
+  check("how credit is given filters by index", A.rows(DATA, R, F({ types: { 0: true } })).map((c) => c.t).join() === "AP Biology");
+  check("an exam groups under the exams, whatever its sector", A.groupKey(R[2]) === "exams" && A.groupKey(R[0]) === "11");
+  check("fields order by size, the exams last", A.fieldOrder(DATA, R).keys.join() === "11,51,exams");
   check("MAP link is Request Quick Adopt's, Non-Military card",
     A.mapUrl("MAP-B") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAP-B&View=Non-Military");
   const page = /var MAP_PAGE = "([^"]+)"/.exec(MAPLINKS);
   check("the MAP page matches map_links.js", page && A.mapUrl("X").indexOf(page[1] + "?Exhibit=") === 0);
-  const odd = [Object.assign({}, DATA.credentials[2], { t: 'Spanish, "Level 2"' })];
+  const odd = [Object.assign({}, R[2], { t: 'Spanish, "Level 2"' })];
   check("list CSV quotes a cell with a quote or comma", A.csvList(DATA, odd).split("\r\n")[1].indexOf('"Spanish, ""Level 2"""') === 0);
-  const mx = A.csvMatrix(DATA, DATA.credentials, [0, 1, 2]).split("\r\n");
-  check("matrix CSV: units, and C where the college teaches a matching course", mx[1] === "CompTIA Security+,C,3,3");
+  const mx = A.csvMatrix(DATA, R, [0, 1, 2]).split("\r\n");
+  check("matrix CSV: units, and A where the college could adopt", mx[1] === "CompTIA Security+,A,3,3");
+  check("the public words for each credit status", A.STD.awarded === "Earns credit at a college" && A.STD.harvested === "Not yet evaluated" && A.STD.held === "Being reviewed");
 
-  // The page.
+  // The page, opened on a college.
   const one = await load("?college=Alpha%20College");
   let d = one.d;
-  check("?college= opens on that college", d.getElementById("ad-college").value === "Alpha College");
-  check("a college pick opens on Not adopted yet", d.getElementById("ad-show").value === "open");
-  check("the status names the college", /2 credentials not yet adopted at Alpha College/.test(d.getElementById("ad-state").textContent));
-  check("cards in order", titles(d).join("|") === "CompTIA Security+|AP Biology");
+  check("?college= opens on that college, on what it could add", /2 credentials earning credit elsewhere that Alpha College could add/.test(d.getElementById("ad-state").textContent));
+  check("the college shows as a chip and in its picker", /Alpha/.test(d.getElementById("ad-sel").textContent) && /Alpha College/.test(d.querySelector("#pk-college .sum").textContent));
+  check("cards grouped by field, the exams last", titles(d).join("|") === "CompTIA Security+|AP Biology"
+    && Array.from(d.querySelectorAll("#ad-list .grp-h")).map((h) => h.firstChild.textContent).join("|") === "Computer Sciences|High school and college exams (AP, IB, CLEP, DSST)");
   const sec = d.querySelector("#ad-list .cred");
-  check("the college's own course is named", /Already teaches CIS 9/.test(sec.textContent));
+  check("the college's own course is named", /Already teaches a matching course: Alpha: CIS 9/.test(sec.textContent));
   const chips = Array.from(sec.querySelectorAll("a.chip"));
   check("Request Quick Adopt chips name the builders", chips.map((a) => a.textContent.replace(/ built.*/, "")).join() === "Beta,Gamma");
   check("every chip opens MAP in a new tab", chips.every((a) => /View=Non-Military$/.test(a.href) && a.target === "_blank" && /noopener/.test(a.rel)));
+  check("every card offers Request an evaluation", d.querySelectorAll("#ad-list .cred [data-req]").length === 2);
   const hand = d.getElementById("ad-handout");
   check("Create Handout opens the college's visual", !hand.hidden && /cpl-opportunity\/\?college=Alpha%20College$/.test(hand.href));
-  change(d, "ad-show", "here");
+  check("the status picker reads the scope's words", Array.from(d.querySelectorAll("#pk-standing .pp-row span:first-of-type")).map((s) => s.textContent).slice(0, 2).join("|") === "Earns credit here|Earns credit elsewhere, could be added here");
+  pick(d, "pk-standing", "open", false); pick(d, "pk-standing", "here", true);
   const emt = d.querySelector("#ad-list .cred");
-  check("Adopted here shows the college's units", emt && /Adopted here: 4 units/.test(emt.textContent));
+  check("Earns credit here shows the college's units", emt && /Earns credit here: Alpha \(4\)/.test(emt.textContent) && /1 credential earning credit at Alpha College/.test(d.getElementById("ad-state").textContent));
   check("a college is never offered its own exhibit", emt && !Array.from(emt.querySelectorAll("a.chip")).some((a) => /MAP-A/.test(a.href)));
-  change(d, "ad-college", "");
-  check("no college: Show is Every credential and disabled", d.getElementById("ad-show").value === "all" && d.getElementById("ad-show").disabled);
-  check("no college: no handout", d.getElementById("ad-handout").hidden);
-  check("no college: the address drops ?college=", one.w.location.search === "");
-  change(d, "ad-region", "Bay Area (Region 3)");
-  check("a region newly picked opens on Not adopted yet", d.getElementById("ad-show").value === "open");
+  d.getElementById("ad-clear").click();
+  check("Clear: Earns credit at a college, no handout, the address drops ?college=", /Earns credit at a college/.test(d.querySelector("#pk-standing .sum").textContent)
+    && d.getElementById("ad-handout").hidden && one.w.location.search === "" && titles(d).length === 3);
+  pick(d, "pk-region", "r:Bay Area (Region 3)", true);
+  check("a region newly picked opens on what it could add", /earning credit elsewhere that Bay Area \(Region 3\) could add/.test(d.getElementById("ad-state").textContent));
   check("a builder outside the columns is named", /Delta University/.test(d.getElementById("ad-list").textContent));
+  // The other statuses arrived from adopt_more.json.
+  check("the other statuses are in the picker with counts", /Being reviewed/.test(d.querySelector("#pk-standing").innerHTML) && /Not yet evaluated/.test(d.querySelector("#pk-standing").innerHTML));
+  check("the tiles count what they open", d.querySelector("#kpi-awarded b").textContent === "3" && d.querySelector("#kpi-colleges b").textContent === "3" && d.querySelector("#kpi-harvested b").textContent === "2");
+  d.getElementById("ad-clear").click();
+  const q = d.getElementById("ad-q"); q.value = "aws"; q.dispatchEvent(new one.w.Event("input"));
+  await tick(220);
+  check("a search names what it found with another status, and a word start never matches inside a word",
+    /Also matching with another credit status: 1 not yet evaluated/.test(d.getElementById("ad-other").textContent) && titles(d).length === 0);
+  d.querySelector('#ad-other [data-std="harvested"]').click();
+  check("one press adds that status", titles(d).join() === "AWS Certified Cloud Practitioner" && /Not yet evaluated/.test(d.querySelector("#ad-list .cred").textContent)
+    && /Credential Engine CTID/.test(d.querySelector("#ad-list .cred").textContent));
+  d.getElementById("ad-clear").click();
+
+  // The List.
+  d.querySelector('[data-view="table"]').click();
+  check("the List shows and the cards hide", !d.getElementById("ad-table-view").hidden && d.getElementById("ad-list-view").hidden);
+  check("the List's columns", Array.from(d.querySelectorAll("#ad-tbl thead th")).map((t) => t.textContent).join("|") === "Credential|Issuer|Field|How credit is given|Colleges awarding|Median units");
+  check("a band per field", d.querySelectorAll("#ad-tbl-body tr.band").length === 3);
+  pick(d, "pk-standing", "harvested", true);
+  const zero = Array.from(d.querySelectorAll("#ad-tbl-body td.num")).filter((td) => /^0/.test(td.textContent.trim()));
+  check("a 0 carries Request an evaluation", zero.length === 2 && zero.every((td) => td.querySelector(".req-w")));
+  d.querySelector('#ad-tbl-body button[data-q="CompTIA"]').click();
+  check("the issuer drills down to a search", d.getElementById("ad-q").value === "CompTIA" && d.querySelectorAll("#ad-tbl-body tr:not(.band)").length === 1);
+  d.getElementById("ad-clear").click();
+
   // The matrix.
-  change(d, "ad-show", "all");
+  pick(d, "pk-region", "r:Bay Area (Region 3)", true);
+  pick(d, "pk-standing", "here", true);
   d.querySelector('[data-view="matrix"]').click();
-  check("the matrix shows and the list hides", !d.getElementById("ad-matrix-view").hidden && d.getElementById("ad-list-view").hidden);
+  check("the matrix shows and the List hides", !d.getElementById("ad-matrix-view").hidden && d.getElementById("ad-table-view").hidden);
   const heads = Array.from(d.querySelectorAll(".mx thead th.ch")).map((t) => t.textContent);
   check("a region narrows the columns", heads.join() === "Alpha,Gamma");
   check("column headers are scoped", d.querySelectorAll('.mx thead th[scope="col"]').length === 3);
-  check("row headers are scoped", d.querySelectorAll('.mx tbody th[scope="row"]').length === 3);
-  check("an awarded cell shows units", d.querySelectorAll(".mx td.art").length === 3);
-  check("a could-adopt cell says so in words", /already teaches a matching course/.test(d.querySelector(".mx td.could").textContent));
+  check("a band row and three credential rows, each a row header", d.querySelectorAll('.mx tbody tr.grp-row').length === 3 && d.querySelectorAll('.mx tbody tr:not(.grp-row) th[scope="row"]').length === 3);
+  check("an awarded cell is a button with the units", d.querySelectorAll(".mx td.art button").length === 3);
+  const could = d.querySelector(".mx td.could button");
+  check("a could-adopt cell reads A and says so", could && could.textContent === "A" && /could adopt/.test(could.getAttribute("aria-label")));
   check("the matrix sits in a labelled region", d.getElementById("ad-mx-wrap").getAttribute("role") === "region" && d.getElementById("ad-mx-wrap").getAttribute("aria-label"));
-  check("one cell is in the tab order", d.querySelectorAll('.mx td[tabindex="0"]').length === 1);
-  check("the page remembers no filter", one.writes.every((k) => k === "cpl_theme"));
+  d.querySelector(".mx td.art button").click();
+  await tick(80);
+  const panel = d.getElementById("ad-panel");
+  check("a cell opens the panel at that college", panel.classList.contains("open") && panel.getAttribute("aria-hidden") === "false" && /Credential at (Alpha|Gamma)/.test(d.getElementById("pn-kicker").textContent)
+    && /awards <b>\d/.test(d.querySelector("#pn-body .focus").innerHTML));
+  check("the panel names the colleges, the request routes and the analysis", /colleges? awards? credit for it/.test(d.getElementById("pn-awards").textContent)
+    && /Find your college/.test(d.querySelector("#pn-body .req").textContent) && /Credit for Being You/.test(d.querySelector("#pn-body .req").textContent)
+    && /Analysis for faculty/.test(d.getElementById("pn-body").textContent));
+  const sp = Array.from(d.querySelectorAll("#pn-body .verdict"));
+  check("the analysis reads adopt_align.json and labels its score illustrative", sp.length === (/CompTIA/.test(d.querySelector("#pn-body h2").textContent) ? 1 : 0)
+    && (!sp.length || (/Recommendation to adopt or adapt/.test(sp[0].textContent) && /Illustrative/.test(sp[0].textContent))));
+  check("the panel has a resize grip", d.getElementById("pn-grip").getAttribute("role") === "separator" && d.getElementById("pn-grip").getAttribute("aria-orientation") === "vertical");
+  d.getElementById("pn-close").click();
+  check("Close shuts the panel", !panel.classList.contains("open") && panel.getAttribute("aria-hidden") === "true");
+  d.querySelector(".mx thead th.ch button").click();
+  check("a column heading picks that college", /College<\/b> Alpha/.test(d.getElementById("ad-sel").innerHTML) && d.querySelectorAll(".mx thead th.ch").length === 1
+    && /Alpha College/.test(d.querySelector("#pk-college .sum").textContent));
+  check("the page remembers no filter", one.writes.every((k) => k === "cpl_theme" || k === "cpl_catalog_panel_w"));
+
+  // Without adopt_more.json the page stands on the settled credentials.
+  const lone = await load("", { more: null });
+  check("no adopt_more.json: the page still paints and hides the harvested tile", titles(lone.d).length === 3 && lone.d.getElementById("kpi-harvested").hidden);
 
   // Worth a faculty review.
   function reviewTitles(d) { return Array.from(d.querySelectorAll("#ad-review .cred h3")).map((h) => h.textContent); }
@@ -147,46 +226,33 @@ function titles(d) { return Array.from(d.querySelectorAll("#ad-list .cred h3")).
   d = rv.d;
   check("review: shown with every card, a college pick notwithstanding", !d.getElementById("review").hidden
     && reviewTitles(d).join("|") === "Certified Welder (CW)|Certified Professional Coder (CPC)");
-  check("review: its heading and count", d.getElementById("ad-review-h").textContent === "Worth a faculty review"
-    && d.getElementById("ad-review-state").textContent === "2 credentials");
+  check("review: its heading and count", d.getElementById("ad-review-h").textContent === "Worth a faculty review" && d.getElementById("ad-review-state").textContent === "2 credentials");
   const cw = d.querySelector("#ad-review .cred");
-  const dts = Array.from(cw.querySelectorAll("dl.tags dt")).map((x) => x.textContent);
-  check("review: tags are a description list in order", dts.join() === "Occupations,Field,Level");
-  check("review: the related MAP credential is named", /MAP holds a related credential from the same issuer: AWS D1\.1 Structural Welder Qualification\./.test(cw.textContent));
+  check("review: tags are a description list in order", Array.from(cw.querySelectorAll("dl.tags dt")).map((x) => x.textContent).join() === "Occupations,Field,Level");
+  check("review: the related credential is named without the acronym", /A related credential from the same issuer already earns credit: AWS D1\.1 Structural Welder Qualification\./.test(cw.textContent));
   const rl = Array.from(cw.querySelectorAll("a.chip"));
-  check("review: the issuer's page and the Registry record, each in a new tab", rl.map((a) => a.textContent).join("|") === "The issuer's page|Its Credential Engine Registry record"
-    && rl[1].href === "https://credentialengineregistry.org/resources/ce-1" && rl.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
-  const cpc = d.querySelectorAll("#ad-review .cred")[1];
-  check("review: a card without a page has only the Registry link, and counts the rest", cpc.querySelectorAll("a.chip").length === 1 && /A \(1\), B \(2\), C \(3\), and 2 more/.test(cpc.textContent));
-  change(d, "ad-sector", "51");
+  check("review: the issuer's page and the Registry record, each in a new tab", rl.length === 2 && rl[1].href === "https://credentialengineregistry.org/resources/ce-1" && rl.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
+  pick(d, "pk-sector", "51", true);
   check("review: the field filters it", reviewTitles(d).join() === "Certified Welder (CW)" && d.getElementById("ad-review-state").textContent === "1 of 2 credentials");
-  change(d, "ad-sector", "");
-  const q = d.getElementById("ad-q"); q.value = "aapc"; q.dispatchEvent(new rv.w.Event("input"));
-  await new Promise((r) => setTimeout(r, 220));
-  check("review: the search reads title and issuer", reviewTitles(d).join() === "Certified Professional Coder (CPC)");
-  q.value = "zzzz"; q.dispatchEvent(new rv.w.Event("input"));
-  await new Promise((r) => setTimeout(r, 220));
-  check("review: no match says so", !d.getElementById("ad-review-empty").hidden && reviewTitles(d).length === 0);
-  check("review: the pure filter", rv.w.CPL_ADOPT.reviewRows(DATA, { q: "", sector: "11" }).map((r) => r.k).join() === "ce-2");
-  const none = Object.assign({}, DATA, { review: [] });
-  const nd = new JSDOM(PAGE, { url: "https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/", runScripts: "outside-only", pretendToBeVisual: true });
-  nd.window.fetch = () => Promise.resolve({ ok: true, json: () => Promise.resolve(none) });
-  nd.window.requestAnimationFrame = (f) => setTimeout(f, 0);
-  nd.window.eval(JS);
-  await new Promise((r) => setTimeout(r, 30));
-  check("review: no rows, no section", nd.window.document.getElementById("review").hidden);
+  check("review: the pure filter", rv.w.CPL_ADOPT.reviewRows(DATA, { q: "", sectors: { "11": true } }).map((r) => r.k).join() === "ce-2");
+  const nd = await load("", { data: Object.assign({}, DATA, { review: [] }) });
+  check("review: no rows, no section", nd.d.getElementById("review").hidden);
 
   const bad = await load("", { fail: true });
   check("a failed read says so", /could not be read/.test(bad.d.getElementById("ad-state").textContent) && !bad.d.querySelector("#ad-list .cred"));
 
-  // Malone's look, Light by default, unlisted.
-  check("the Library's tokens", /--heading: #082B61/.test(PAGE) && /--gold: #F4B300/.test(PAGE));
-  check("dark only when picked", !/prefers-color-scheme/.test(PAGE));
+  // Malone's look, Light by default, the public words, the wiring.
+  const main = PAGE.slice(PAGE.indexOf("<main"), PAGE.indexOf("</main>"));
+  check("the Library's tokens, full width", /--heading: #082B61/.test(PAGE) && /--gold: #F4B300/.test(PAGE) && !/1320px/.test(PAGE));
+  check("dark only when picked", !/prefers-color-scheme: dark/.test(PAGE));
   check("named the Credential Catalog and indexable (Sheet 148)", /<h1 id="ad-title">Credential Catalog<\/h1>/.test(PAGE) && !/noindex/.test(PAGE));
+  check("the intro says many, and the page's own words carry no bare CPL or MAP", /award credit for many of the credentials/.test(main) && !/\bCPL\b/.test(main.replace(/<!--[\s\S]*?-->/g, "")) && !/\bMAP\b(?! exhibits)/.test(main.replace(/<!--[\s\S]*?-->/g, "")));
   check("the Library links the Catalog", /href="\.\/adopt\/"[^>]*>Credential Catalog</.test(fs.readFileSync("library/index.html", "utf8")));
-  check("a skip link and one h1", /class="skip-link"/.test(PAGE) && (PAGE.match(/<h1/g) || []).length === 1);
-  check("in the a11y sweep", /"public-adopt"/.test(fs.readFileSync("a11y.config.js", "utf8")));
-  check("the daily run builds the data", /kb\/_build_adopt_page\.py/.test(fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8")));
+  check("a skip link, one h1, three tiles, five Start with words", /class="skip-link"/.test(PAGE) && (PAGE.match(/<h1/g) || []).length === 1 && (PAGE.match(/class="kpi"/g) || []).length === 3 && (PAGE.match(/data-start=/g) || []).length === 5);
+  check("the Library's photos cycle here too", (PAGE.match(/class="hero-slide( is-on)?"/g) || []).length === 11 && /id="ad-hero-pause"/.test(PAGE));
+  check("in the a11y sweep, four targets", /"public-adopt"/.test(fs.readFileSync("a11y.config.js", "utf8")) && /"public-adopt-list"/.test(fs.readFileSync("a11y.config.js", "utf8")));
+  const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+  check("the daily run builds the data and the analysis", /kb\/_build_adopt_page\.py/.test(wf) && /kb\/_build_adopt_align\.py/.test(wf) && /adopt_more\.json/.test(wf) && /adopt_align\.json/.test(wf));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0]));

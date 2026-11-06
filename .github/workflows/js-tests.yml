@@ -423,6 +423,10 @@ jobs:
       # adopt from the prescriptive layer alone, no student figure in the public file.
       - name: Public adoption page builder
         run: python3 tests/adopt_page_build_test.py
+      # The catalog's analysis for faculty (2026-11-06): the skills join, columns only, the newest read,
+      # the lead-in line dropped, covered and confidence, the illustrative label.
+      - name: Credential Catalog analysis builder
+        run: python3 tests/adopt_align_build_test.py
       # The IT/AI credential catalog's fields and MAP join (2026-10-30, 2026-10-31): no guessed
       # CIP, a CTID only on its owner's row, a name join only where the issuer agrees, and the
       # hand check of Credential Engine's top 50 winning over the name join.

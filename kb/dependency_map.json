@@ -4,9 +4,9 @@
   "supabase_tables": 106,
   "rpcs": 49,
   "edge_functions": 12,
-  "file_datasets": 794,
+  "file_datasets": 798,
   "external_services": 193,
-  "consumers": 523,
+  "consumers": 524,
   "workflows": 62,
   "data_js_files": 71,
   "tabs": 40
@@ -1451,7 +1451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15,
+     "line": 22,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -1553,7 +1553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 229,
+     "line": 645,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -1563,7 +1563,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 131
+     "line": 141
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -1583,6 +1583,16 @@
      "direction": "read",
      "how": "url",
      "line": 4988
+    },
+    {
+     "id": "module:library/adopt/adopt.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 26,
+     "pages": [
+      "library/adopt/index.html"
+     ]
     },
     {
      "id": "module:sierra_training.js",
@@ -2377,6 +2387,16 @@
       "cpl-pathways",
       "csm-workspace",
       "implementation-funding"
+     ]
+    },
+    {
+     "id": "module:library/adopt/adopt.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 25,
+     "pages": [
+      "library/adopt/index.html"
      ]
     },
     {
@@ -6004,7 +6024,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 88
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -7201,7 +7221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 221
+     "line": 272
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -8838,6 +8858,19 @@
    "main_committers": []
   },
   "file:kb/_audit_exhibits.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_adopt_align.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -12493,7 +12526,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 99
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
@@ -14396,11 +14429,18 @@
      ]
     },
     {
+     "id": "script:kb/_build_adopt_align.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 197
+    },
+    {
      "id": "script:kb/_build_adopt_page.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 219
+     "line": 270
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",
@@ -14894,7 +14934,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 166
+     "line": 176
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -16662,7 +16702,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 163
+     "line": 173
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -16709,7 +16749,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 164
+     "line": 174
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -16790,6 +16830,13 @@
   "file:kb/reference/industry_credential_skills.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_adopt_align.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 198
+    },
+    {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
      "direction": "read",
@@ -16864,7 +16911,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 223
+     "line": 274
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -18272,7 +18319,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 220
+     "line": 271
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -18708,11 +18755,32 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 333
+     "line": 489
     }
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:library/adopt/adopt_align.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_adopt_align.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 39
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:library/adopt/adopt_data.json": {
    "consumers": [
@@ -18721,17 +18789,45 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14,
+     "line": 21,
      "pages": [
       "library/adopt/index.html"
      ]
+    },
+    {
+     "id": "script:kb/_build_adopt_align.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 196
     },
     {
      "id": "script:kb/_build_adopt_page.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 58
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:library/adopt/adopt_more.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
     }
    ],
    "producers": [
@@ -20539,7 +20635,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 334
+     "line": 490
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
@@ -21057,6 +21153,19 @@
    "main_committers": []
   },
   "file:tests/admin_live_banner_control.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/adopt_align_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25306,6 +25415,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_adopt_align.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
+    },
+    {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",
      "kind": "script",
      "direction": "read",
@@ -28920,6 +29036,7 @@
     "kb/_build_exhibit_cert_links.py",
     "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
+    "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
     "kb/_build_commons_status.py"
    ],
@@ -28983,6 +29100,8 @@
     "kb/exhibit_cert_links.json",
     "kb/exhibit_slo_neighbors.json",
     "library/adopt/adopt_data.json",
+    "library/adopt/adopt_more.json",
+    "library/adopt/adopt_align.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",
     "kb/cred_rename_dryrun/report.md",
@@ -29129,6 +29248,7 @@
     "tests/exhibits_sweep_build_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
+    "tests/adopt_align_build_test.py",
     "tests/credential_catalog_widening_test.py",
     "tests/credential_review_sites_test.py",
     "tests/supabase_sql_guard_test.py",
