@@ -34,6 +34,16 @@ const hdrSrc = fs.readFileSync("team_phrase_header.js", "utf8");
 
 const PHRASES = { team_pass_ok: "shared-phrase", fin_pass_ok: "delta-fin", gr_pass_ok: "gr-phrase" };
 
+function sitePassFn(init) {
+  let site = "team";
+  try { site = JSON.parse((init && init.body) || "{}").p_site || "team"; } catch (e) { /* keep team */ }
+  return site + "_pass_ok";
+}
+// Which gate an unlock fetch asked for: the p_site it sent to team_pass_verify.
+function askedGate(f, gate) {
+  return /rpc\/team_pass_verify/.test(f.url) && sitePassFn(f.init) === gate + "_pass_ok";
+}
+
 function makeWin(opts) {
   opts = opts || {};
   const html = opts.html ||
@@ -46,7 +56,10 @@ function makeWin(opts) {
   w.__fetches = [];
   w.fetch = function (url, init) {
     w.__fetches.push({ url: String(url), init: init || {} });
+    // The unlock calls rpc/team_pass_verify with {"p_site": ...} since security
+    // step 2 (2026-11-06); map the site back to the gate whose phrase it checks.
     const m = /rpc\/([a-z_]+)/.exec(String(url));
+    if (m && m[1] === "team_pass_verify") m[1] = sitePassFn(init);
     if (m && PHRASES[m[1]] !== undefined) {
       if (opts.transient) return Promise.resolve({ ok: false, status: 503, json: () => Promise.resolve(null) });
       const sent = (init && init.headers && init.headers["x-team-pass"]) || "";
@@ -69,14 +82,14 @@ function makeWin(opts) {
       TP.keyFor("gr") === "cpl_gr_pass");
     check("keyFor: unknown site falls back to the shared slot (never invents one)",
       TP.keyFor("nope") === "cpl_team_pass");
-    check("rpcFor: fin → fin_pass_ok", TP.rpcFor("fin") === "fin_pass_ok");
-    check("rpcFor: shared → team_pass_ok", TP.rpcFor(null) === "team_pass_ok");
+    check("rpcFor: fin → p_site fin", TP.rpcFor("fin") === "fin");
+    check("rpcFor: shared → p_site team", TP.rpcFor(null) === "team");
 
     const ok = await TP.unlock(PHRASES.fin_pass_ok, "fin");
     check("site unlock: correct Finance phrase verifies", ok === true);
-    check("site unlock: validated against fin_pass_ok, not team_pass_ok",
-      w.__fetches.some((f) => /rpc\/fin_pass_ok/.test(f.url))
-      && !w.__fetches.some((f) => /rpc\/team_pass_ok/.test(f.url)));
+    check("site unlock: validated against the fin gate, not the team gate",
+      w.__fetches.some((f) => askedGate(f, "fin"))
+      && !w.__fetches.some((f) => askedGate(f, "team")));
     check("site unlock: stored in the Finance slot",
       w.localStorage.getItem("cpl_fin_pass") === PHRASES.fin_pass_ok);
     check("site unlock: shared slot LEFT ALONE (holding Finance costs you nothing)",
@@ -244,7 +257,7 @@ function makeWin(opts) {
     go.dispatchEvent(new w.Event("click"));
     await new Promise((r) => setTimeout(r, 20));
     check("header: unlock validated against the SITE gate",
-      w.__fetches.some((f) => /rpc\/fin_pass_ok/.test(f.url)));
+      w.__fetches.some((f) => askedGate(f, "fin")));
     check("header: stored in the Finance slot",
       w.localStorage.getItem("cpl_fin_pass") === PHRASES.fin_pass_ok);
     check("header: flips to unlocked", H._held("fin") === true);
