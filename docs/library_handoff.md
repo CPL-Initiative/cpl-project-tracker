@@ -48,6 +48,13 @@ more data in the process."* And his rule: *Ask us to prioritize* only where no c
 articulated one offers Request Quick Adopt to its card on the MAP dashboard; the Worth a faculty review cards need the ask.
 
 ## Open work, in order
+00. **Sam answered "1 yes, 2 yes" (~20:30Z)**: (1) retire the spent overrides on `_CREDENTIAL_REVIEW::Spanish 1` and
+   `Spanish 2` (four rows by slee@cccco.edu, 2026-10-27); (2) confirm the merge of `Wheel Alignment, Chassis Dynamics, and
+   ADAS` into `Wheel Alignment, Chassis Dynamics, ADAS`. Plan `kb/cer_decisions_out/<date>/` with his words as the ruling:
+   (2) is an override row (already live, reads "written") plus a `unified_title_merge_confirm` insert, which
+   `kb/_cer_decision_apply.py` takes today; (1) needs a retire path the applier lacks (a guarded DELETE of named live rows
+   whose receipt keeps them, so `--rollback` restores them; Rule 10 a2), with a test. Dry run, commit, then
+   `cred-rename-apply.yml` (read `kb/cred_rename_dryrun/alias_map.json`'s `apply_safe` first): it carries the ServSafe fold.
 0. **Finish branch `claude/catalog-ask-vs-adopt`** (commit `55c0f660`, pushed, no PR yet): Sam's ask rule in
    `library/adopt/adopt.js` (articulated cards and panels carry no ask, Being reviewed included; each Worth a faculty
    review card asks and opens the request via `openReview`). `tests/public_adopt.test.js` reads 92/93: find the one
@@ -59,7 +66,7 @@ articulated one offers Request Quick Adopt to its card on the MAP dashboard; the
    Recommended column, the panel's statewide and CPL-AI sections, the recommendation in place with its confidence, the
    panel's existing resize. Request Quick Adopt beside a strong course where a college awards it. Tests and `npm run
    a11y -- public-adopt public-adopt-list`.
-3. **Asked of Sam in session, unanswered so far:** (1) retire the spent Spanish 1 and 2 overrides, (2) confirm the Wheel Alignment
+3. **Answered (see item 00):** (1) retire the spent Spanish 1 and 2 overrides, (2) confirm the Wheel Alignment
    merge, so `cred-rename-apply.yml` can carry the ServSafe fold. Put it on the next sheet if he has not answered.
 4. **Add your credential** (Sam asked for advice; offered): a second public write beside *Ask us to prioritize*, verified
    by the team before it shows; Governance first (DR-31, the privacy ADR). The state's license lists as a data source

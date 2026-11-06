@@ -71,8 +71,8 @@ wins): 46 exact, 8 related, 61 none once tonight's fold lands. Exhibits shows th
 row (`#exhibits/list/cplai`, #2853). The seven title moves and the ServSafe fold are written
 (`kb/cer_decisions_out/2026-11-06/`, receipt `applied_2026-11-06T19-49-56Z.json`): the nightly fold re-points the five
 titles; `cred-rename-apply.yml` refuses the ServSafe merge while three of Sam's 2026-10-27 overrides are unsafe (Spanish 1
-and 2, spent; Wheel Alignment, a rename into an existing title with no merge confirm). Asked of Sam in session (2026-11-06): retire the
-Spanish rows, confirm the Wheel Alignment merge; the next sheet carries it if unanswered. **The Catalog's badges** (Sam: *"like badges on the credential"*): *Statewide
+and 2, spent; Wheel Alignment, a rename into an existing title with no merge confirm). Sam answered in session (2026-11-06, "1 yes, 2 yes"):
+retire the Spanish rows, confirm the Wheel Alignment merge; the next session writes both (`docs/library_handoff.md`). **The Catalog's badges** (Sam: *"like badges on the credential"*): *Statewide
 recommendation* (pale fill, 153) and *CPL-AI course match* (dashed outline, 42), each opening its panel section; the
 panel resizes and shows a CPL-AI recommendation in place, its confidence first. Mock approved (*"looks good"*), Version 2:
 https://claude.ai/artifact/2FhevexZqhwdyMyuVT9vFu. **Next:** build the badges and the in-panel recommendation into
