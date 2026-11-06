@@ -1557,6 +1557,9 @@ async function seedLibrary(page, theme, view) {
       if (t) t.click();
     });
     await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("libl-panel") || {}).textContent || ""), null, { timeout: 20000 });
+    // The create box open, a new piece's fields and More about it shown (one form, 2026-11-06).
+    await page.evaluate(() => { ["lib-boxfold", "ls-more"].forEach((id) => { const d = document.getElementById(id); if (d) d.open = true; }); });
+    await page.waitForTimeout(150);
     return;
   }
   await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("library-root") || {}).textContent || ""), null, { timeout: 20000 });
