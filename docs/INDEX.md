@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-05
+updated: 2026-11-06
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-06 SkyHandspring (Library side session): ELL IET Version 5 links the public overview and takes the library look; public cards date the newest version (`cpl_library_public` revised_on, applied live, #2828); CPL Pathways joins the new look (#2829); the CPL Opportunity visual becomes cards over one course list with a side panel and Request Adopt (#2830); light checkpoint; `docs/library_handoff.md`.
 - 2026-11-05 S586 SkyMessier continued (Sam's side session for COBIx): step 1 verified end to end (worker pasted, both secrets rotated, proof runs 686 and 688); COBIx's identity recorded (#2820); step 2's migration drafted, not applied (#2822); light checkpoint at the context WARN; handoff 587.
 - 2026-11-05 S585 SkyMessier (Sam's side session for COBIx): COBIx round 1 answered (#2816), the COBIx PR loop and `cobix-review.yml` stub (#2817), security step 1: the worker and the refresh button take a reviewer sign-in or the team phrase, no trigger secret in the page (#2818); light checkpoint; handoff 586.
 - 2026-11-05 S584 SkyMinkowski (scheduled firing, 14:12Z): course objectives read and stored beside the SLOs (`course_outcomes.kind`, applied live, #2808); Monterey Peninsula's page read (#2809); light checkpoint; handoff 585.
