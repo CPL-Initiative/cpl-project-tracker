@@ -272,7 +272,7 @@ function pick(d, id, key, on) {
   check("the page remembers no filter", one.writes.every((k) => k === "cpl_theme" || k === "cpl_catalog_panel_w"));
 
   // A failed post says so and leaves the form; the counts read paints beside the credential.
-  const nay = await load("", { askFail: true, asks: [{ credential: "certified welder (cw)", n: 4 }, { credential: "AWS Certified Cloud Practitioner", n: 2 }] });
+  const nay = await load("", { askFail: true, asks: [{ credential: "certified welder (cw)", n: 4 }, { credential: "comptia security+", n: 3 }, { credential: "AWS Certified Cloud Practitioner", n: 2 }] });
   d = nay.d;
   await tick(40);
   d.querySelector("#ad-review [data-review]").click();
@@ -284,7 +284,7 @@ function pick(d, id, key, on) {
   await tick(40);
   check("a failed post says so and keeps the form", /could not be sent/.test(d.getElementById("pn-ask-msg").textContent) && !bf.hidden && !bf.querySelector("button[type=submit]").disabled);
   d.querySelector('[data-view="table"]').click();
-  check("the List says how many asked, beside the credential", Array.from(d.querySelectorAll("#ad-tbl td .askn")).some((x) => x.textContent === "4 asked"));
+  check("the List says how many asked, beside the credential", Array.from(d.querySelectorAll("#ad-tbl td .askn")).some((x) => x.textContent === "3 asked"));
 
   // Without adopt_more.json the page stands on the settled credentials.
   const lone = await load("", { more: null });
