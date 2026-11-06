@@ -23,16 +23,17 @@ files, the decision sheet rebuild (no card changed; the park call is a to-do on 
    42202162492. **Parked** under the stopping rule (S584 moved 0, S590 1): call
    `monterey-peninsula-parked-2026-11-06` in `kb/status/program-requirements.json`.
 2. **SLOs (step 11):** Mission College loaded (load 42201380786): 693 inserted, 66 skipped, receipt
-   `kb/receipts/course_outcomes_mission_42201380786.json` (#2800).
+   `kb/receipts/course_outcomes_mission_42201380786.json` (#2800, merged).
 3. Steps 6 to 10 found nothing new: no to-do marked done, no new Library brief (the two revise requests stay with the
    Library side lane), no CER rule request, no re-analysis request; the credential watch and the UI pass ran today
    under S590. Open Asks Sheet 160 (https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9) is answered and current.
 
 ## Open work, in order
 
-1. **Merge what this run left in CI** if it is still open: #2809 (after the display run's commit, on a green `test`)
-   and #2800 (its `test` was running at sign-off). Update a branch from `main` when the bot's commit is its head:
-   the bot's push starts no `test`.
+1. **Merge #2809 (Monterey Peninsula).** #2800 (Mission's SLOs) merged as `cff459f7`. #2809's `test` passed on
+   `f9722c41`, but its `step=display` run 42202162492 was still applying build 04dec589445a at sign-off (started
+   10:23Z). Once the run commits its applied record, update the branch from `main` (the bot's push starts no `test`),
+   mark it ready, and merge on a green `test`. If the apply failed, read its log before dispatching again.
 2. **Step 12, the next college: Mt. San Jacinto.** Sam's answers to the Glendale and LA Valley parks (2026-11-02,
    *"handle the discrepancies after all data is harvested"*) put coverage first. On `with_closed_list` it finds 115 of
    152 (76%), the lowest after Canyons and Calbright, whose gaps are explained. Start with a free page read
@@ -63,7 +64,7 @@ None. No one was at the console.
 
 ## Let go
 
-This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: see item 1 (#2809, #2800),
+This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2809 (item 1),
 #2833 (Lake Tahoe, waits for its full read), and this checkpoint's PR.
 
 > *Greetings, you are SkyCoddington (Session 592), see SkySombrero's handoff — `docs/session_592_handoff.md` — let's keep rolling with our queue.*
