@@ -33,6 +33,7 @@ def check(name):
 @check("each course becomes one row per college its outline names (RIV, MOV, NOR), with the outcomes unchanged")
 def _():
     rows, skipped = load.rows_from([TRIAL], "rccd")
+    rows = [r for r in rows if r["kind"] == "slo"]
     trial = json.load(open(TRIAL))["rows"]
     want = sum(len(r["offered_at"]) for r in trial)
     assert len(rows) == want and not skipped, (len(rows), want, skipped)
@@ -49,6 +50,7 @@ SD_TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_38350787486", "rea
 @check("an SDCCD course becomes one row per college group, each with that college's own outcomes")
 def _():
     rows, skipped = load.rows_from([SD_TRIAL], "sdccd")
+    rows = [r for r in rows if r["kind"] == "slo"]
     trial = json.load(open(SD_TRIAL))["rows"]
     want = sum(1 for r in trial for g in r.get("groups") or [] if g["outcomes"])
     assert len(rows) == want == 16, (len(rows), want)
@@ -59,6 +61,33 @@ def _():
     assert ("San Diego City College", "ARCH 100") not in by, "ARCH 100 prints Mesa's outcomes only"
     assert {s["course_code"] for s in skipped} == {"AAPI 124", "SDGE 302"}, skipped
     assert all(r["shape"] in ("list", "paragraph") for r in rows)
+
+
+@check("course objectives load as their own rows (kind objective) for the same colleges, beside the SLOs (Sam, 2026-11-02)")
+def _():
+    rows, _ = load.rows_from([TRIAL], "rccd")
+    trial = {r["code"]: r for r in json.load(open(TRIAL))["rows"]}
+    obj = [r for r in rows if r["kind"] == "objective"]
+    assert len(obj) == sum(len(r["offered_at"]) for r in trial.values() if r.get("objectives")), len(obj)
+    acc = [r for r in obj if r["course_code"] == "ACC 19"]
+    assert {r["college"] for r in acc} == {"Riverside City College", "Norco College"}
+    assert acc[0]["outcomes"] == trial["ACC 19"]["objectives"] and acc[0]["heading"] == "Course Objectives"
+    assert acc[0]["fingerprint"] == load.fingerprint(acc[0]["outcomes"])
+    # SDCCD prints one set for the course: each college whose SLO group it names, even when SLOs are skipped.
+    rows, _ = load.rows_from([SD_TRIAL], "sdccd")
+    geog = {r["college"] for r in rows if r["kind"] == "objective" and r["course_code"] == "GEOG 101"}
+    assert geog >= {"San Diego City College", "San Diego Miramar College"}, geog
+    # A read filed before the reader took objectives loads exactly as before.
+    old = json.load(open(TRIAL))
+    for r in old["rows"]:
+        for k in ("objectives", "objectives_heading", "objectives_lead", "objectives_fingerprint"):
+            r.pop(k, None)
+    import tempfile
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(old, f)
+    rows, _ = load.rows_from([f.name], "rccd")
+    os.unlink(f.name)
+    assert rows and all(r["kind"] == "slo" for r in rows)
 
 
 @check("a group whose title names no college the host maps is skipped with its reason, never guessed")

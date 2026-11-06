@@ -6935,6 +6935,25 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Autodesk Certified Associate in CAD for Mechanical Design certificate": {
+   "raw_title": "Autodesk Certified Associate in CAD for Mechanical Design certificate",
+   "unified_title": "Autodesk Certified Associate in CAD for Mechanical Design",
+   "issuing_agency": "Autodesk",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": null,
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-05"
+  },
   "Autodesk Certified Professional (ACP) Certification": {
    "raw_title": "Autodesk Certified Professional (ACP) Certification",
    "unified_title": "Autodesk Certified Professional",
@@ -13661,6 +13680,44 @@
    "hints": "c0c35b7053",
    "asked": "2026-11-04"
   },
+  "Examination for MATH 1": {
+   "raw_title": "Examination for MATH 1",
+   "unified_title": "Calculus 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "arabic-level-numerals",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "Cx hint kept the mechanism and was set aside; catalog hint 'Calculus I' (Las Positas MATH 1) used with an Arabic numeral. A CCN or C-ID alignment for MATH 1 was not verified.",
+   "rules": "d20f2caab9db",
+   "hints": "7e6754ab5d",
+   "asked": "2026-11-05"
+  },
+  "Examination for MATH 2": {
+   "raw_title": "Examination for MATH 2",
+   "unified_title": "Calculus 2",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "arabic-level-numerals",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Catalog hint 'Calculus II' was mended to the existing house family 'Calculus 2'. The Cx hint carried the mechanism and was set aside.",
+   "rules": "d20f2caab9db",
+   "hints": "4359554086",
+   "asked": "2026-11-05"
+  },
   "Examination for MUS 10A": {
    "raw_title": "Examination for MUS 10A",
    "unified_title": "Music Theory and Musicianship 3",
@@ -16727,6 +16784,24 @@
    "hints": "8a97ecb54d",
    "asked": "2026-11-04"
   },
+  "Industry for AJ 68": {
+   "raw_title": "Industry for AJ 68",
+   "unified_title": "Police Ethics and Leadership",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "This is an IC-typed exhibit named only by a course code (Las Positas AJ 68). It takes the catalog course title, which joins the house family. The external industry credential is unnamed, so the CCC issuer is provisional.",
+   "rules": "d20f2caab9db",
+   "hints": "e68e5e1b5a",
+   "asked": "2026-11-05"
+  },
   "Industry for AUTO A1": {
    "raw_title": "Industry for AUTO A1",
    "unified_title": "ASE A1 — Engine Repair",
@@ -17410,6 +17485,42 @@
    "rules": "d20f2caab9db",
    "hints": "e4df862b7e",
    "asked": "2026-11-04"
+  },
+  "Industry for KIN YO1": {
+   "raw_title": "Industry for KIN YO1",
+   "unified_title": "Yoga 1",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "This IC exhibit is named only by a course code. KIN YO1 is guessed to be Yoga 1 at Las Positas, and the title needs a COCI check. The underlying industry cert (likely a yoga instructor credential) is unnamed, so the issuer is left null.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-05"
+  },
+  "Industry for KIN ZUM1": {
+   "raw_title": "Industry for KIN ZUM1",
+   "unified_title": "Zumba 1",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "This IC exhibit is named only by a course code. KIN ZUM1 is guessed to be a Zumba course, and the title needs a COCI check. The industry cert (possibly Zumba instructor licensing) is not named, so the issuer is left null.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-05"
   },
   "Information Research LIBR10": {
    "raw_title": "Information Research LIBR10",
@@ -20497,6 +20608,25 @@
    "hints": "e6d0f18311",
    "asked": "2026-10-31"
   },
+  "Noncredit for FREN 1A": {
+   "raw_title": "Noncredit for FREN 1A",
+   "unified_title": "Elementary French 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "language-levels",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "Catalog hint 'Beginning French' for FREN 1A was restyled per language-levels to the house family 'Elementary French 1'.",
+   "rules": "d20f2caab9db",
+   "hints": "74b5b26730",
+   "asked": "2026-11-05"
+  },
   "Noncredit for FREN 1B": {
    "raw_title": "Noncredit for FREN 1B",
    "unified_title": "French 2",
@@ -20514,6 +20644,79 @@
    "rules": "e9d6bb7f8641",
    "hints": "24d43dd330",
    "asked": "2026-10-31"
+  },
+  "Noncredit for KIN PL1": {
+   "raw_title": "Noncredit for KIN PL1",
+   "unified_title": "Pilates 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "The Cx hint was only a code plus mechanism. KIN PL1 is guessed to be Pilates 1, and the title needs a Las Positas COCI lookup.",
+   "rules": "d20f2caab9db",
+   "hints": "9aef670ca3",
+   "asked": "2026-11-05"
+  },
+  "Noncredit for KIN SW1": {
+   "raw_title": "Noncredit for KIN SW1",
+   "unified_title": "Swimming 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "KIN SW1 is guessed to be Swimming 1, and the title needs a Las Positas COCI lookup. The Cx hint carried the mechanism and was set aside.",
+   "rules": "d20f2caab9db",
+   "hints": "c640ddda67",
+   "asked": "2026-11-05"
+  },
+  "Noncredit for KIN SWF1": {
+   "raw_title": "Noncredit for KIN SWF1",
+   "unified_title": "Swim Fitness 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "KIN SWF1 is guessed to be a swim fitness course, and the title needs a Las Positas COCI lookup.",
+   "rules": "d20f2caab9db",
+   "hints": "79eb698ab1",
+   "asked": "2026-11-05"
+  },
+  "Noncredit for KIN YO1": {
+   "raw_title": "Noncredit for KIN YO1",
+   "unified_title": "Yoga 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one",
+    "Rule 9"
+   ],
+   "_notes": "KIN YO1 is guessed to be Yoga 1, the same course as the IC row, and the title needs a Las Positas COCI lookup.",
+   "rules": "d20f2caab9db",
+   "hints": "dee6c0fa78",
+   "asked": "2026-11-05"
   },
   "Noncredit for MATH 100C": {
    "raw_title": "Noncredit for MATH 100C",
@@ -20548,6 +20751,75 @@
    "rules": "e9d6bb7f8641",
    "hints": "e27ccaad34",
    "asked": "2026-10-31"
+  },
+  "Noncredit for MUS 16": {
+   "raw_title": "Noncredit for MUS 16",
+   "unified_title": "Philharmonic Orchestra",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog hint for Las Positas MUS 16 was accepted. The Cx hint carried the mechanism and was set aside.",
+   "rules": "d20f2caab9db",
+   "hints": "e0d03d6a8e",
+   "asked": "2026-11-05"
+  },
+  "Noncredit for MUS 45": {
+   "raw_title": "Noncredit for MUS 45",
+   "unified_title": "Chamber Choir",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog hint for Las Positas MUS 45 was accepted. The Cx hint carried the mechanism and was set aside.",
+   "rules": "d20f2caab9db",
+   "hints": "6b7c6302ac",
+   "asked": "2026-11-05"
+  },
+  "Noncredit for MUS 46": {
+   "raw_title": "Noncredit for MUS 46",
+   "unified_title": "Vocal Jazz Ensemble",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog hint for Las Positas MUS 46 was accepted. The Cx hint carried the mechanism and was set aside.",
+   "rules": "d20f2caab9db",
+   "hints": "0a6b17b66c",
+   "asked": "2026-11-05"
+  },
+  "Noncredit for NKIN WT1": {
+   "raw_title": "Noncredit for NKIN WT1",
+   "unified_title": "Weight Training 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "NKIN WT1 is guessed to be a noncredit weight training course, and the title needs a Las Positas COCI lookup.",
+   "rules": "d20f2caab9db",
+   "hints": "74a559295b",
+   "asked": "2026-11-05"
   },
   "Nursing Fundamentals - Credit by Exam (NURS 220 )": {
    "raw_title": "Nursing Fundamentals - Credit by Exam (NURS 220 )",
@@ -21552,6 +21824,60 @@
    "rules": "575c290d755b",
    "hints": "a40bdb729c",
    "asked": "2026-10-18"
+  },
+  "Portfolio for MKTG 50": {
+   "raw_title": "Portfolio for MKTG 50",
+   "unified_title": "Introduction to Marketing",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint 'for MKTG 50' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 50.",
+   "rules": "d20f2caab9db",
+   "hints": "2e2edc3c2a",
+   "asked": "2026-11-05"
+  },
+  "Portfolio for MKTG 56": {
+   "raw_title": "Portfolio for MKTG 56",
+   "unified_title": "Marketing Strategies",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint 'for MKTG 56' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 56.",
+   "rules": "d20f2caab9db",
+   "hints": "3dd8e5b134",
+   "asked": "2026-11-05"
+  },
+  "Portfolio for MKTG 61": {
+   "raw_title": "Portfolio for MKTG 61",
+   "unified_title": "Professional Selling",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint 'for MKTG 61' was a strip error, so it was set aside. The title comes from the Las Positas catalog title for MKTG 61.",
+   "rules": "d20f2caab9db",
+   "hints": "85080fa524",
+   "asked": "2026-11-05"
   },
   "Portfolio for MUS 19": {
    "raw_title": "Portfolio for MUS 19",
@@ -22686,6 +23012,24 @@
    "rules": "575c290d755b",
    "hints": "4c9a9ba4c7",
    "asked": "2026-10-18"
+  },
+  "Solidworks Design Associate (CSWA) Certification": {
+   "raw_title": "Solidworks Design Associate (CSWA) Certification",
+   "unified_title": "Certified SOLIDWORKS Associate (CSWA)",
+   "issuing_agency": "Dassault Systèmes",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 6"
+   ],
+   "_notes": "Joins the existing house family for the CSWA. The college's wording 'Design Associate' is a variant of the CSWA name.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-05"
   },
   "Specialist Course Module F": {
    "raw_title": "Specialist Course Module F",

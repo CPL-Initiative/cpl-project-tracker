@@ -1007,3 +1007,100 @@ line, and opens a list on the page after its heading, and `pdf_heading()`/`_pdf_
 never names (Business Administration A.S., Theater Arts A.A., Technical (Apparel Industry Orientation)): a COCI
 comparison finding. Its capture-only read (S413, run 39103943654) had found the same pages, the business certificates
 sharing pages 148-154 and two on the course availability table.
+
+## S523 SkyBarberry (2026-10-30, the CPL Queue routine): Glendale 80 to 105 passing, every course priced from its own description
+
+- **The state's file was never the whole list.** It leaves 51 Glendale credit courses unpriced, but the filed records
+  place 738 more codes it does not list for their program at all (CABOT 102, ART 130, ESL 151, NS 214). Pricing only the
+  51 lifted 80 to 91 (reconcile 41009271854). Pricing every description lifted it to 105 (reconcile 41012563119).
+- **Read the whole description section in windows, then parse it locally.** The page read prints at most 14 PDF pages
+  whole, so fifteen plans (`kb/college_reads/glendale_course_desc_01..15`, keyword `Units`) cover pages 98-307, three per
+  push (about 3,500 log lines a job, inside get_job_logs' 5,000). Descriptions start at page 128; windows 1-2 held
+  program pages. `kb/_description_units.py` parses the saved logs: a description prints "NUM · TITLE · N Units", then a
+  body naming the course, sometimes letter-spaced ("B I O L 2 9 8"), and the body's code is the key (ACCTG 121's title
+  changed; its code did not). 1,234 codes, plus 44 under the entry's prefix aliases and renumbers.
+- **Anchor a log parser on the fixed token and look backward.** A title pattern with nested quantifiers hung for minutes
+  on a 370,000-character log; matching each "· N Units" and reading the 160 characters before it runs in under a second.
+- **A plan file under `kb/college_reads/` is a read.** A push reads every plan its last commit adds, so a derived map
+  kept there would run as one. The map lives at `kb/program_requirements_units/glendale_community.json`; the step names it
+  as `units_file` (#2574). Only one run waits per concurrency group: a second push while one waits cancels the first, so
+  push the next batch only after the waiting run has started (part b's first push was canceled this way).
+- **Left at Glendale (155 failing arithmetic):** 71 records name no program total, the largest cause now; 48 sum unequal
+  to the printed total (36 before: pricing exposed sums that were hidden as incomplete); about 34 still lack a course's
+  units (13 of the original 51, ART 144-255, AT 138, NS 213, PE 217, POLS 110, THTR 192-193 and others, print no
+  description in this catalog). No model call this session.
+
+## S505 SkyBoysenberry (2026-10-28): Glendale 45 to 80 passing of its filed records, on its catalog's own words
+
+- **List the thin colleges live first (S442), and it named Glendale:** 220 loaded, 65 of 296 active programs passing,
+  the largest gap at a loaded college. 114 records failed arithmetic alone, as incomplete, and 54 failed outcomes.
+- **Three free page reads gave every fix its words** (`kb/college_reads/glendale_program_totals`,
+  `glendale_prefix_titles`, `glendale_theatre_program_pages`; runs 40690480267, 40692306069, 40701293232). The program
+  pages print the old prefixes and numbers (PSYCH 170, T ART 101, ENGL 101); the course descriptions print the state's
+  (PSYC 170 Sports Psychology, THTR 101, "C1000 · ... · (Previously ENGL 101)"). Glendale's reconcile entry files
+  PSYCH and TART as prefix aliases and ENGL 101, ENGL 104 and POL S 101 as renumbers. ART for ARTH stays out: no read
+  printed an ARTH description, and ART is a live Glendale prefix.
+- **The capture now looks for a listed course under an aliased prefix (4a925a33).** `with_renumbers` set `printed` for
+  renumbers only, so a program page printing TART codes named none of the THTR list and the THTR descriptions won the
+  page: three Theatre records read course descriptions. The page picker moved them to their program pages (88, 114,
+  123) and found two programs never filed (Theatre Arts: General 11176, Sociology 30813). A listed prefix that only
+  begins with an alias's (ARTH under ART) is never rewritten; guarded in `program_requirements_pilot_test`.
+- **The outcome scorer's no-space reading now joins line-end hyphens and fires on letter-spaced lines and spaced
+  semicolons (4e53790c).** Glendale's PDF prints "Fulﬁ ll requirements for transfer to a col-\nlege", "b e  a b l e
+  t o" and "occupations ;". The reading only adds; outcome failures went 54 to 0 on the reconcile (run 40711704988).
+- **The Edge Function's BOOT_ERROR (HTTP 503) is transient and leaves a record empty.** Three of 27 failed on run
+  40704760867, two again on the forced retry; the third forcing filed all (runs 40707595210, 40710163463). Check every
+  record's `error` after an extraction before any reread, and force the empty ones.
+- **A reread posts the newest run only,** so records filed by earlier runs on the branch need `force=<run>` each
+  (40704760867, 40710163463, 40707595210 after the reconcile's own).
+- **Left at Glendale:** 180 records fail arithmetic. Most are courses the state's file lists with no units (63 courses,
+  unspaced codes such as BIOL298, ACCTG101); their units print only in the course descriptions ("3.0 Units"), so a
+  reader step that takes a course's units from its description is next. Biotechnology 41767 sums 25-27 against its
+  printed 28-30, the catalog's own disagreement. Cost: $2.64 + about $0.40 in forced retries.
+
+## S421 SkyTupelo (2026-10-19): the second reader built, three Jev sittings read, Cañada's Cal-GETC step and the six-row rollback
+
+- **The second reader is one dispatch away (#2246).** `program-requirements-extract` version 11 takes `provider`
+  (`anthropic` or `xai`): the same system prompt, user message and record schema go to xAI's chat endpoint with the
+  schema as `response_format`, the model is `XAI_MODEL` or the body's, never a guess, and the key is scrubbed from any
+  error. `kb/_second_reader.py` reads a college's failing records only from the capture's page when it is the page the
+  first reading came from (the S403 guard), scores the second reading with the one scorer and compares on
+  `requirements_md5`; `second-reader.yml` captures, reads and uploads the comparison. The key is a function secret, per
+  Sam's call 6 on sheet 23: the repo secret `xai-smoke.yml` reads only proves the key, and at 04:05Z it was unset.
+- **Jev's cause is reliable; its owner is not.** Three sittings (Cañada 22, Taft 24, Delta 49 rows; no errors; seconds
+  each after the free capture) and a session's verdicts beside every row in `kb/jev_harvest_verdicts/`. Where the
+  record's own notes settle it, Jev's cause held on 16 of 16 at Cañada and 15 of 21 at Taft (Delta: cause held on 17 of 49 (12 agree, 5 owner differs), and 29 of the 32 misses are one shape: Delta prints every total as a floor and the record's sum is a range whose low end meets it, so a scorer floor rule for the program total clears them).
+  Its misses have a shape: `excerpt_cut` where the text belongs to another program, `record_right_check_misfires` where
+  the extraction dropped a total the page prints. The owner leans wrong the same way everywhere: the scorer or the
+  extraction for a figure a college's procedure step supplies, or a page the reader cut. Read the owner as a hint.
+- **A verdicts file turns a sitting into a worklist.** Grouping the rows by cause found one fix for five Cañada rows
+  (Cal-GETC's units) and one for two Taft rows (the local GE pattern). The record's notes quote the page, so a session
+  settles most rows without the page; the rest say what the page would need to show.
+- **A reconcile step for a transfer-only figure must say so.** The first Cañada run set Cal-GETC's 34 on 26 records:
+  twenty transfer degrees and six local A.A./A.S. whose captured page spans the sibling transfer section (Earth Science
+  A.S. 30427 then failed at 64 past 60). `awards_match` gained `transfer`; `tests/program_requirements_reconcile_test.py`
+  pins it. Cañada's step cites Cañada's own GE page ("California General Education Transfer Curriculum (Cal-GETC) - 34
+  units minimum", page 79 of the hand-filed PDF) where Taft's cites Monterey Peninsula's.
+- **A cancel does not beat a reread already posting.** The reread dispatched on the wrong fills was canceled at
+  checkout by the clock, yet its receipt landed: 26 rows replaced. The receipt's before-images were the rollback:
+  a fresh live read (all six exactly as the write left them), the receipt's own SQL cut to the six, through
+  `supabase-migrate.yml` because the Supabase guard holds an UPDATE from `execute_sql`, a rollback receipt beside the
+  original (`kb/receipts/program_requirement_records_rollback_ca_ada_six_local_2026-10-19_s421.*`), verified live.
+  Dispatch a reread only after the filed records are what they should be.
+- **A PDF page read needs a span and the page after.** Keying on Cal-GETC spent the 14-page cap on the front matter;
+  keying on headings printed the heading pages, and every requirement block sits on the page after its heading.
+  `pdf_span` and `pdf_after` in the plan (three checks in `tests/college_page_read_test.py`). The catalog's own
+  wording came on the third read: "Completion of Cal-GETC (California General Education Transfer Curriculum)" closes
+  every Cal-GETC transfer block; Environmental Science AS-T prints CSU-GE for STEM 33 or IGETC for STEM 31 instead.
+- **Runs this session:** Cañada reconcile 39200870107 (reverted), reread 39201778849 (its receipt the rollback's source),
+  migrate 39202436931, reconcile 39202270482 (20 transfer records), reread 39203273818 (20 posted, 20 replaced), display
+  build 3d92deb7a816 (#2247; `step=display` on main run 39204942046), sittings 39197675380, 39204968617, 39206690775.
+  Cañada's failing records: 22 before, 17 after. Headline 11,630 to 11,635 complete.
+
+### Moved from the lane (S421 compaction)
+
+**A PDF catalog step may name its file** (`file` in place of `follow`, #2213), for a catalog page whose scripts fetch the PDF (Coursedog). **A Coursedog PDF is read by its "Title - CODE" headings** (`Biology - AS.BIO`; `pdf_code_assign()`, #2216): a program no heading names reads from no page. **A kept record must come from its source's page** (`filed_from()`, #2216): a reconcile run files fresh sources beside records it did not move, so test a reader change with a capture-only read (`extract=0`), never a reconcile. **A page read may keep a named vendor host's data calls** (`network_hosts`, #2216).
+
+**The readers:** CourseLeaf's sitemap road, which also reads an own-HTML catalog (`custom_html`) kept to its registry address's year segment (`year_scope()`); the curriQunet, eLumen and Acalog readers; the Coursedog reader (S414: the page's own program search call, its limit rewritten by a route, then each program's Requisites tab); and the whole-catalog PDF reader, which a procedure catalog step points at the PDF a catalog page links, carrying the file's year (#2202), and which prefers a clean heading or the control number (#2203).
+
+**Parked for the reader:** Diablo Valley, Santiago Canyon, Sierra, Foothill, San Jose City, MiraCosta, Orange Coast's 27 empty records, Reedley, Palomar, Ventura and Oxnard, and CCSF's 53 skipped records (lessons S407).

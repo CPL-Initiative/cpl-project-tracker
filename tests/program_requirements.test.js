@@ -2333,7 +2333,7 @@ block("(25)", function () {
     check("(25) a course whose code is printed another way (HED-100, ENGLC 1000) gets its Outcomes link",
       !!hed && !!engl && hed.textContent === "Outcomes" && /^Learning outcomes of HED 100 at Cerritos/.test(hed.getAttribute("aria-label")));
     check("(25) a course with none on file gets no link", !rows[2].querySelector("button.prh-outbtn"));
-    check("(25) the college's codes are read once, codes only", asked.length === 1 && /select=course_code&college=eq\.Cerritos%20College/.test(asked[0]), asked.join(" "));
+    check("(25) the college's codes are read once, codes only, SLO rows only", asked.length === 1 && /select=course_code&kind=eq\.slo&college=eq\.Cerritos%20College/.test(asked[0]), asked.join(" "));
     hed.click();
     return tick().then(tick).then(function () {
       const d = m.w.document.querySelector('.prh-exdialog[role="dialog"][aria-modal="true"]');

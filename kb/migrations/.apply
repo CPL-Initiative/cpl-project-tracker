@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-05_library_drafts.sql
-name=s577_library_drafts
+file=kb/migrations/2026-11-05_security_step2_phrase_lockout_orphans_team_members.sql
+name=security_step2_phrase_lockout_orphans_team_members

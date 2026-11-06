@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-05T03:19:31Z",
-  "session": 577,
-  "moniker": "SkyKumquat and SkyBarnard",
-  "run": "Sam's session",
+  "written_at": "2026-11-06T09:33:08Z",
+  "session": 590,
+  "moniker": "SkyLeoTriplet",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_578_handoff.md",
+  "handoff": "docs/session_591_handoff.md",
   "next_step": {
-    "title": "Columbia's full SLO read",
-    "text": "Its trial parsed 12 of 12; the full read runs on the 2026-11-05 UTC day, on #2754's branch."
+    "title": "Monterey Peninsula's reconcile, then Mission's load",
+    "text": "Read the reconcile on #2809 (two new steps for Global Studies 37243 and Accounting 22052), reread, build the display and merge; then the college parks under the stopping rule. Load Mission's SLOs on #2800 once both slices file complete, and send Lake Tahoe's full read on #2833."
   },
   "calls": [
     {
@@ -208,6 +208,14 @@
   },
   "changes": [
     {
+      "at": "2026-11-06T08:30:00Z",
+      "text": "Mission College's full SLO read pushed in two parts after its trial parsed 11 of 12 pages (#2800); Lake Tahoe Community College's 12-page trial started (#2833)."
+    },
+    {
+      "at": "2026-11-05T14:30:00Z",
+      "text": "Course objectives are now read beside each course's SLOs and stored as their own rows (kind objective); every SLO count reads SLO rows only (#2808)."
+    },
+    {
       "at": "2026-11-04T12:40:00Z",
       "text": "No harvest change this run: the day's SLO read had already run. The run added the AWS welding and Amazon Web Services families to the exhibit-to-cert link (#2761)."
     },
@@ -244,24 +252,16 @@
       "text": "Santa Ana College's full SLO read (four parts) and Las Positas College's course index started on two hosts. Glendale and Los Angeles Valley read on, as Sam's marks asked; their discrepancies wait until the harvest is complete."
     },
     {
-      "at": "2026-11-03T01:30:00Z",
-      "text": "Glendale and LA Valley unpark on Sam's marks of 22:55Z (keep going, handle the discrepancies after all data is harvested); the Commons now closes a to-do from its band (#2708)."
+      "at": "2026-11-05T19:54:00Z",
+      "text": "A side session answered COBIx's security audit and closed the drafting proxy and the refresh trigger behind a reviewer sign-in or the team phrase (tracker 2816, 2817, 2818). The harvest's tables and its queue did not move; Monterey Peninsula's page read and Mission's full read stand where the 585 handoff left them."
     },
     {
-      "at": "2026-11-02T18:49:05Z",
-      "text": "No harvest work this run: S554 (Sam's session) added Finish remediation to the Library's cards for a record left In remediation, and the /coord command; the queue's next step stands."
+      "at": "2026-11-05T22:13:00Z",
+      "text": "The side session finished security step 1 with Sam (worker pasted, both secrets rotated, proof runs 686 and 688) and drafted step 2's migration (tracker 2822). The harvest's tables and queue did not move."
     },
     {
-      "at": "2026-11-02T17:08:34Z",
-      "text": "No harvest work this run: S553 (Sam's session) reworked the Library's remediation, every draft applied as the report opens and a PDF written; the queue's next step stands."
-    },
-    {
-      "at": "2026-11-02T15:10:00Z",
-      "text": "The Allan Hancock and Antelope Valley presidents' emails loaded through the contacts apply as a partial file; the Commons' first view is the CPL Commons, locked by Sam, with the look for its port on Sheet 158."
-    },
-    {
-      "at": "2026-11-05T02:22:00Z",
-      "text": "Merged the routine's S573 cert-link pull request (#2763) after bringing main in; no program record changed this run."
+      "at": "2026-11-06T09:45:00Z",
+      "text": "Monterey Peninsula's six unequal records were read against their pages (tracker 2809). Two steps from the catalog's own words went to a reconcile: the 60 is a floor for transfer degrees too, and a group's units printed on its heading line count once. The other four need reader work or stay as the catalog prints them."
     }
   ],
   "headline": [
@@ -438,15 +438,21 @@
       "active": 20282,
       "complete": 13542,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-06",
+      "active": 20282,
+      "complete": 13542,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-05T06:12:00Z"
+    "at": "2026-11-06T10:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-05",
+    "day": "2026-11-06",
     "gaps": 3025,
     "parts": {
       "links": {
@@ -473,7 +479,7 @@
       ],
       "outcomes": {
         "slo": [
-          8606,
+          9000,
           89192
         ],
         "plo": [

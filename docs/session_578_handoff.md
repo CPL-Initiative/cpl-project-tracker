@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 577 (SkyKumquat and SkyBarnard, Sam's session, 2026-11-05 01:10Z to ~03:40Z)
 tags: [handoff, common-subjects-reference, remint, library, edge-function, commons]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 578

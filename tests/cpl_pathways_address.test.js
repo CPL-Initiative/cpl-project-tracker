@@ -3,13 +3,15 @@
 // A magic sign-in link opens a new browser tab, so only the address survives. The tab writes no address of its own
 // (the dashboard routes tabs on location.hash); it reads one as a visit starts and reports the view on screen:
 //   #cpl-pathways[/college/<name>][/pathway/<id> | /record/<control number> | /none][/term][/public][/curate][/mine]
+// In the new format (Sam, 2026-11-06: "Require college first") a college's address is its List; a pathway open on it
+// adds its own part, and a pathway named alone moves the College select to its college. /none is read as the List.
 //
 // WHAT THIS GUARDS:
-//   (1) each part opens its view: the College select, a featured map or baccalaureate by id, a catalog record by
-//       control number, No pathway chosen, By term, Student or public, the college side of the student / college
-//       toggle, the My College section;
+//   (1) each part opens its view: the College select and its List, a featured map or baccalaureate by id, a catalog
+//       record by control number, By term, Student or public, the college side of the student / college toggle, the
+//       My College section;
 //   (2) ⭐ the provider reports what is on screen after a switch, as an address (1) opens again;
-//   (3) ⭐ the bare #cpl-pathways (the side menu, every other tab's link) opens as before and reports itself;
+//   (3) ⭐ the bare #cpl-pathways (the side menu, every other tab's link) asks for a college and reports itself;
 //   (4) a later visit on an address that names a view opens it; the header unlock's re-fire keeps the reader's pick;
 //       an unknown id changes nothing;
 //   (5) nothing is written to the address, and nothing about the view is stored.
@@ -38,12 +40,15 @@ function page(hash) {
   w.eval(SESSION);
   w.eval(DATA); w.eval(ROEP); w.eval(BACC); w.eval(MEM);
   w.eval(SRC);
+  require("./cpl_pathways_drive.js").withList(w);
   w.Element.prototype.scrollIntoView = function () {};
   w.CPL_PATHWAYS_TAB.activate();
   return { w, local, root: w.document.getElementById("cpl-pathways-root") };
 }
 function ask(p) { p.w.CPL_SESSION.stashReturnTab("cpl-pathways"); return (JSON.parse(p.local.cpl_sb_return_tab) || {}).tab; }
-function pathText(p) { const s = p.root.querySelector("select.cplpw-select"); const o = s && s.options[s.selectedIndex]; return o ? o.textContent : ""; }
+// The open pathway's own text, or "" when the List or the college prompt is on screen.
+function pathText(p) { const h = p.root.querySelector(".cplpw-path"); return h ? h.textContent.slice(0, 400) : ""; }
+function colOf(p) { return p.root.querySelector("select.cplpw-colsel").value; }
 function change(p, s, v) { s.value = v; s.dispatchEvent(new p.w.Event("change", { bubbles: true })); }
 function pressed(p, value) { const b = p.root.querySelector('.cplpw-rseg button[data-value="' + value + '"]'); return b && b.getAttribute("aria-pressed") === "true"; }
 function visit(p, hash) {
@@ -58,28 +63,25 @@ function visit(p, hash) {
   const featured = D.CPL_PATHWAYS.programs, bacc = D.CPL_BACCALAUREATES.programs, recs = D.CPL_PATHWAYS_ROEP.programs;
   const F2 = featured[1], B = bacc.find((x) => x.control && /Fullerton/.test(x.college)) || bacc[0], R = recs[1];
 
-  // (3) the bare address: the first pathway, All colleges, as before
+  // (3) the bare address: the college comes first
   const bare = page("#cpl-pathways");
-  const firstText = pathText(bare);
-  check("(3) ⭐ the bare #cpl-pathways opens All colleges on the first pathway",
-    bare.root.querySelector("select.cplpw-colsel").value === "" && new RegExp(featured[0].college).test(firstText), firstText);
+  check("(3) ⭐ the bare #cpl-pathways asks for a college and opens no pathway",
+    colOf(bare) === "" && pathText(bare) === "" && /Choose a college/.test(bare.root.textContent) && !bare.root.querySelector("#cplpw-list"));
   check("(3) ⭐ the bare tab reports itself", ask(bare) === "cpl-pathways", ask(bare));
 
   // (1) + (2) a featured map by id
   const a = page("#cpl-pathways/pathway/" + F2.id);
   check("(1) /pathway/<id> opens that featured map", pathText(a).indexOf(F2.program || "") >= 0 && !!(F2.program), pathText(a));
-  check("(2) it reports cpl-pathways/pathway/<id>", ask(a) === "cpl-pathways/pathway/" + F2.id, ask(a));
-  change(a, a.root.querySelector("select.cplpw-colsel"), F2.college);
-  check("(2) with a college picked, it reports the college and the pathway",
+  check("(1) and moves the College select to its college", colOf(a) === F2.college, colOf(a));
+  check("(2) it reports the college and the pathway",
     ask(a) === "cpl-pathways/college/" + encodeURIComponent(F2.college) + "/pathway/" + F2.id, ask(a));
-  change(a, a.root.querySelector("select.cplpw-select"), "");
-  check("(2) No pathway chosen reports none", ask(a) === "cpl-pathways/college/" + encodeURIComponent(F2.college) + "/none", ask(a));
+  a.root.querySelector("button.cplpw-back").dispatchEvent(new a.w.Event("click", { bubbles: true }));
+  check("(2) ⭐ Back to the List reports the college alone", ask(a) === "cpl-pathways/college/" + encodeURIComponent(F2.college) && pathText(a) === "", ask(a));
 
-  // (1) a college and none
+  // (1) a college, and the old none word
   const n = page("#cpl-pathways/college/" + encodeURIComponent(F2.college) + "/none");
-  check("(1) /college/<name>/none opens the college with no pathway chosen",
-    n.root.querySelector("select.cplpw-colsel").value === F2.college && n.root.querySelector("select.cplpw-select").value === ""
-    && /No pathway chosen/.test(n.root.textContent));
+  check("(1) /college/<name>/none opens the college's List with no pathway open",
+    colOf(n) === F2.college && pathText(n) === "" && !!n.root.querySelector("#cplpw-list"));
   check("(1) an arrived college is the shared choice too, as a pick is",
     n.w.CPL_COLLEGE_CHOICE && n.w.CPL_COLLEGE_CHOICE.college === F2.college && n.w.CPL_COLLEGE_CHOICE.by === "cpl-pathways");
 
@@ -98,28 +100,29 @@ function visit(p, hash) {
   const box = b.root.querySelector(".cplccr");
   check("(1) /curate opens the baccalaureate on the college side of the toggle",
     box && box.classList.contains("view-college") && box.querySelectorAll(".ccr-vt")[1].getAttribute("aria-pressed") === "true");
-  check("(2) it reports cpl-pathways/pathway/<id>/curate", ask(b) === "cpl-pathways/pathway/" + B.id + "/curate", ask(b));
+  const bAt = "cpl-pathways/college/" + encodeURIComponent(colOf(b)) + "/pathway/" + B.id;
+  check("(2) it reports cpl-pathways/college/<its college>/pathway/<id>/curate", ask(b) === bAt + "/curate", ask(b));
   box.querySelectorAll(".ccr-vt")[0].dispatchEvent(new b.w.Event("click"));
-  check("(2) switched to the student side, curate drops", ask(b) === "cpl-pathways/pathway/" + B.id, ask(b));
+  check("(2) switched to the student side, curate drops", ask(b) === bAt, ask(b));
 
   // (1) + (2) My College open
   const m = page("#cpl-pathways/college/" + encodeURIComponent(F2.college) + "/mine");
   const det = m.root.querySelector("details.cplpw-mycollege");
   check("(1) /mine opens the My College section", det && det.open && !det.hidden);
-  check("(2) it reports the college and mine", /^cpl-pathways\/college\/[^/]+\/pathway\/[^/]+\/mine$/.test(ask(m)), ask(m));
+  check("(2) it reports the college and mine", ask(m) === "cpl-pathways/college/" + encodeURIComponent(F2.college) + "/mine", ask(m));
   det.open = false; det.dispatchEvent(new m.w.Event("toggle"));
   check("(2) closed, mine drops", !/\/mine$/.test(ask(m)), ask(m));
 
   // (4) a later visit, the unlock's re-fire, an unknown id
   visit(bare, "#cpl-pathways/pathway/" + F2.id);
   check("(4) a later visit on /pathway/<id> opens it", pathText(bare).indexOf(F2.program) >= 0, pathText(bare));
-  change(bare, bare.root.querySelector("select.cplpw-select"), "0");
+  bare.root.querySelector("button.cplpw-back").dispatchEvent(new bare.w.Event("click", { bubbles: true }));
   bare.w.dispatchEvent(new bare.w.CustomEvent("cpl-tab-activated", { detail: { tab: "cpl-pathways" } }));
-  check("(4) the unlock's re-fire on the same visit keeps the reader's pick", new RegExp(featured[0].college).test(pathText(bare)) && pathText(bare).indexOf(F2.program) < 0, pathText(bare));
+  check("(4) the unlock's re-fire on the same visit keeps the reader's place (the List)", pathText(bare) === "" && !!bare.root.querySelector("#cplpw-list"), pathText(bare));
   visit(bare, "#cpl-pathways");
-  check("(4) a later visit by the bare address keeps the reader's place, as before", new RegExp(featured[0].college).test(pathText(bare)));
+  check("(4) a later visit by the bare address keeps the reader's place, as before", colOf(bare) === F2.college && !!bare.root.querySelector("#cplpw-list"));
   const u = page("#cpl-pathways/pathway/no-such-pathway/record/00000");
-  check("(4) an unknown id leaves the first pathway", pathText(u) === firstText, pathText(u));
+  check("(4) an unknown id opens no pathway and asks for a college", pathText(u) === "" && colOf(u) === "", pathText(u));
 
   // (5) the address is never written, nothing is stored
   check("(5) nothing is written to the address", a.w.location.hash === "#cpl-pathways/pathway/" + F2.id && r.w.location.hash.indexOf("/term/public") > 0);

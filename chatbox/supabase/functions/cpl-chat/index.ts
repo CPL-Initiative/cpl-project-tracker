@@ -6247,13 +6247,14 @@ async function fetchMapLinks(): Promise<any> {
 // library itself lists every piece.
 const LIBRARY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
 const LIBRARY_MAX_PIECES = 3;
-// A page's text, and all of them together. ELL IET CPL Starting Points reads 30,975
-// characters since Version 2 added each grantee's example articulations and the people
-// in each conversation (S483), its practical next steps last, so a longer page keeps
-// its opening and its end and loses its middle (libraryCut): a piece's next steps and
-// its caveats come at the end. The total keeps the 6,000 it always left a second piece.
-const LIBRARY_TEXT_MAX = 31000;
-const LIBRARY_TEXT_TOTAL = 37000;
+// A page's text, and all of them together. ELL IET CPL Starting Points reads 33,273
+// characters since Version 3 (2026-11-05: the December 9 call, Request Adopt links and the
+// programs each example course is required in; Version 2 read 30,975), its practical next
+// steps last, so a longer page keeps its opening and its end and loses its middle
+// (libraryCut): a piece's next steps and its caveats come at the end. The total keeps the
+// 6,000 it always left a second piece.
+const LIBRARY_TEXT_MAX = 34000;
+const LIBRARY_TEXT_TOTAL = 40000;
 const LIBRARY_STOP = new Set([
   "what", "where", "which", "when", "how", "does", "have", "about", "their", "they",
   "with", "from", "that", "this", "there", "here", "could", "would", "should", "will",

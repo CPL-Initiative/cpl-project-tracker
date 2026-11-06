@@ -1,0 +1,118 @@
+{
+  "_about": "Library publish receipt (scripts/library_publish.py): the record's before-values and the update --finish makes, guarded on updated_at; cpl_library_history also files the prior row. Roll back by writing the before-values and reverting the page's commit.",
+  "at": "2026-11-05",
+  "slug": "ell-iet-cpl-starting-points",
+  "record_id": "915ff7d5-80ce-45ad-bb95-d75510318ee0",
+  "draft_id": "b26372ff-c4eb-401a-97fa-d8601d3fb7cc",
+  "page": "library/ell-iet-cpl-starting-points/index.html",
+  "before": {
+    "refresh_note": "add a brief high level overview of the Chancellor's Office CPL Initiative as a visual with a link on this page.",
+    "regen": {
+      "earlier": [
+        {
+          "note": null,
+          "draft_id": "22d6f5de-3d3b-4cf9-896f-2f4a6fa4d676",
+          "ready_at": "2026-11-05T18:30:45.887Z",
+          "draft_url": null,
+          "set_aside": "SkyFlipFlop built Version 5 in a session from the vault source, at Sam's request",
+          "drafted_with": "library-revise-draft",
+          "requested_by": "Sam"
+        },
+        {
+          "note": null,
+          "draft_id": "1cc83f99-0e5b-40fd-8e30-6b8c11092d8f",
+          "ready_at": "2026-11-05T18:43:01Z",
+          "draft_url": "https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa",
+          "set_aside": "The same Version 5 without the top cards' links; SkyFlipFlop added them at Sam's ask in session",
+          "drafted_with": "session",
+          "requested_by": "Sam"
+        }
+      ],
+      "publish": "show",
+      "draft_id": "b26372ff-c4eb-401a-97fa-d8601d3fb7cc",
+      "ready_at": "2026-11-05T18:58:17Z",
+      "draft_url": "https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa",
+      "drafted_by": "SkyFlipFlop (session)",
+      "approved_at": "2026-11-05T22:34:27.732Z",
+      "approved_by": "Sam",
+      "drafted_with": "session",
+      "requested_at": "2026-11-05T18:30:18.271Z",
+      "requested_by": "Sam"
+    },
+    "updated_at": "2026-11-05T22:34:28.10323+00:00",
+    "updated_by": null,
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+    "version": "4",
+    "versions": [
+      {
+        "url": "https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe",
+        "date": "2026-10-23",
+        "label": "Version 1",
+        "status": "Replaced by v2"
+      },
+      {
+        "url": "https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw",
+        "date": "2026-10-26",
+        "label": "Version 2",
+        "status": "Replaced by v3"
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+        "date": "2026-11-05",
+        "label": "Version 3",
+        "status": "Current: Version 3 from Sam's Revise request of 2 November (built by S557 in a session): Get Focused, Stay Focused removed at the IRC's word; the December 9 call's agenda; answers on the course-to-course path and what grantees can do after the grant; Request Adopt links to MAP exhibit cards; the programs each example course is required in. Remediated: Request Adopt links raised to 24px targets; npm run a11y passed light and dark. Drafted from the card by S557 SkySculptor (session), stored by library-skycartwheel@bot (draft 200adaee-3959-487d-b9b4-2a5d4cfcbf3f); replaced the public copy on Sam's approval."
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+        "date": "2026-11-05",
+        "label": "Version 4",
+        "status": "Current: Version 4 from Sam's Revise request of 5 November: an Overview tab holds the December 9 call, the four fit bands with their projects named, the statewide table, the paths after the grant, what to confirm and the next steps; a tab per project follows, in order of fit, each holding its Version 3 card unchanged (Request Adopt, the programs each course is required in, who is in the conversation). The tabs follow the ARIA tabs pattern with arrow keys, Home and End; with scripts off every panel shows, so Sierra reads the whole page (33,979 characters against her 34,000). Remediated: contact email links raised to 24px targets in the project tabs; npm run a11y and an axe pass of every tab at 390px and 1440px, light and dark, passed. Drafted from the card by SkyRoundoff (session), stored by library-skyroundoff@bot (draft a0ac81de-caf6-43b4-9e0e-fb0589f6b309); replaced the public copy on Sam's approval."
+      },
+      {
+        "url": "https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa",
+        "date": "2026-11-05",
+        "label": "Version 5",
+        "status": "Draft: Version 5 from Sam's Revise request of 5 November (18:30 UTC): the Overview gains The CPL Initiative at a glance after the December 9 call, four numbered steps from a student's learning to another college adopting the credit (Learning; Request, through Credit for Being You; Credit, which the college awards in MAP; Adoption), with the Chancellor's Office CPL page and the CPL Fact Sheet linked, and the call's second agenda item links to it. To keep Sierra reading the page whole, 14 table cells now read No credit recommendation yet and 7 precedent lines drop already: 33,971 characters against her 34,000. Built in a session from the vault source (make_tabs.py). Then, at Sam's ask in session, the top cards open what they count: the funding opens the note naming EDD's award notice, the 7 projects open the fit bands, the 15 credential families open the statewide table; the participants card stays plain, since its figure sums one line on each of six project tabs. Remediated: nothing failed; npm run a11y and an axe pass of every tab at 390px and 1440px, light and dark, passed."
+      }
+    ]
+  },
+  "update": {
+    "versions": [
+      {
+        "url": "https://claude.ai/artifact/WnEFhH4yuoSdx6mCnoqRpe",
+        "date": "2026-10-23",
+        "label": "Version 1",
+        "status": "Replaced by v2"
+      },
+      {
+        "url": "https://claude.ai/artifact/Skw4HTtnQUPkQBUYYGFwtw",
+        "date": "2026-10-26",
+        "label": "Version 2",
+        "status": "Replaced by v3"
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+        "date": "2026-11-05",
+        "label": "Version 3",
+        "status": "Current: Version 3 from Sam's Revise request of 2 November (built by S557 in a session): Get Focused, Stay Focused removed at the IRC's word; the December 9 call's agenda; answers on the course-to-course path and what grantees can do after the grant; Request Adopt links to MAP exhibit cards; the programs each example course is required in. Remediated: Request Adopt links raised to 24px targets; npm run a11y passed light and dark. Drafted from the card by S557 SkySculptor (session), stored by library-skycartwheel@bot (draft 200adaee-3959-487d-b9b4-2a5d4cfcbf3f); replaced the public copy on Sam's approval."
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+        "date": "2026-11-05",
+        "label": "Version 4",
+        "status": "Current: Version 4 from Sam's Revise request of 5 November: an Overview tab holds the December 9 call, the four fit bands with their projects named, the statewide table, the paths after the grant, what to confirm and the next steps; a tab per project follows, in order of fit, each holding its Version 3 card unchanged (Request Adopt, the programs each course is required in, who is in the conversation). The tabs follow the ARIA tabs pattern with arrow keys, Home and End; with scripts off every panel shows, so Sierra reads the whole page (33,979 characters against her 34,000). Remediated: contact email links raised to 24px targets in the project tabs; npm run a11y and an axe pass of every tab at 390px and 1440px, light and dark, passed. Drafted from the card by SkyRoundoff (session), stored by library-skyroundoff@bot (draft a0ac81de-caf6-43b4-9e0e-fb0589f6b309); replaced the public copy on Sam's approval."
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+        "date": "2026-11-05",
+        "label": "Version 5",
+        "status": "Current: Version 5 from Sam's Revise request of 5 November (18:30 UTC): the Overview gains The CPL Initiative at a glance after the December 9 call, four numbered steps from a student's learning to another college adopting the credit (Learning; Request, through Credit for Being You; Credit, which the college awards in MAP; Adoption), with the Chancellor's Office CPL page and the CPL Fact Sheet linked, and the call's second agenda item links to it. To keep Sierra reading the page whole, 14 table cells now read No credit recommendation yet and 7 precedent lines drop already: 33,971 characters against her 34,000. Built in a session from the vault source (make_tabs.py). Then, at Sam's ask in session, the top cards open what they count: the funding opens the note naming EDD's award notice, the 7 projects open the fit bands, the 15 credential families open the statewide table; the participants card stays plain, since its figure sums one line on each of six project tabs. Remediated: nothing failed; npm run a11y and an axe pass of every tab at 390px and 1440px, light and dark, passed. Drafted from the card by SkyFlipFlop (session), stored by library-skyflipflop@bot (draft b26372ff-c4eb-401a-97fa-d8601d3fb7cc); replaced the public copy on Sam's approval."
+      }
+    ],
+    "refresh_note": null,
+    "regen": null,
+    "updated_by": "library-publish@bot",
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+    "version": "5"
+  }
+}

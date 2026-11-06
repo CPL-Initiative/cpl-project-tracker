@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-05
+updated: 2026-11-06
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 574 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 98 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 65 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 545 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1382** | |
+| Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 555 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1393** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,12 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-06 S589 SkyStephan (CPL Queue routine, 08:12Z): security step 2 merged and read back (#2822; the migration had applied at 06:30Z); COBIx told on #2816; SLOs: Mission's full read pushed (#2800), Lake Tahoe's trial opened (#2833); light checkpoint; handoff 590.
+- 2026-11-06 SkyHandspring (Library side session): ELL IET Version 5 links the public overview and takes the library look; public cards date the newest version (`cpl_library_public` revised_on, applied live, #2828); CPL Pathways joins the new look (#2829); the CPL Opportunity visual becomes cards over one course list with a side panel and Request Adopt (#2830); light checkpoint; `docs/library_handoff.md`.
+- 2026-11-05 S586 SkyMessier continued (Sam's side session for COBIx): step 1 verified end to end (worker pasted, both secrets rotated, proof runs 686 and 688); COBIx's identity recorded (#2820); step 2's migration drafted, not applied (#2822); light checkpoint at the context WARN; handoff 587.
+- 2026-11-05 S585 SkyMessier (Sam's side session for COBIx): COBIx round 1 answered (#2816), the COBIx PR loop and `cobix-review.yml` stub (#2817), security step 1: the worker and the refresh button take a reviewer sign-in or the team phrase, no trigger secret in the page (#2818); light checkpoint; handoff 586.
+- 2026-11-05 S584 SkyMinkowski (scheduled firing, 14:12Z): course objectives read and stored beside the SLOs (`course_outcomes.kind`, applied live, #2808); Monterey Peninsula's page read (#2809); light checkpoint; handoff 585.
+- 2026-11-05 S581 SkyMeathook (scheduled firing, 10:12Z): start checks only, the queue empty until Mission's full read on 2026-11-06 UTC; light checkpoint; handoff 582.
 - 2026-11-05 S577 SkyKumquat and SkyBarnard (Sam's session, both queues): the Subjects List recode, eleven Common SUBJ codes onto 2,389 M-IDs (#2790), `kb_curation` re-keyed and read back; the S573 cert-link PR merged (#2763); the Library revises a public visual from its card, no session (#2791, #2792); full checkpoint; handoff 578.
 - 2026-11-05 S576 SkyMice (Sam's session): two Claude Team accounts (MAP team, CO Academic Affairs pilot) with the kit and runbook in CPLBrain (#662, #664); Our Process *Getting set up* (#2784, #2786); the Library names a draft's version, sorts by last modified, quiets the project count (#2788); light checkpoint; handoff 577.
 - 2026-11-04/05 SkyJujube (Sam's session, the Lists side session): the Subjects List as Sam's workspace (#2778, #2781, #2782, #2783, #2785): saves renew the sign-in, row press edits, Check alignment (Subjects and Exhibits), Colleges beside Courses, Use, *What a Common SUBJ is*, Hide the top and resizable panels on every Commons view; the sync ran; light checkpoint; handoff `docs/cer_redesign_handoff.md`.

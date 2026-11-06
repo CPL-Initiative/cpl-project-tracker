@@ -908,6 +908,8 @@ PRESENTATION_DOCTRINE = {
     "text measure": (r"cpl-measure", r"full width"),
     # Sam, 2026-10-09: a First Light rule.
     "controls are underlined words": (r"underlined words", r"no border and no fill"),
+    # Sam, 2026-11-05: "this should be a rule for all visuals".
+    "a figure card opens what it counts": (r"opens what it counts",),
 }
 
 
@@ -1026,6 +1028,94 @@ def rule_checkpoint_overdue(root):
             f"thirteen artifacts go missing."),
     }
 
+
+
+# ── handoff_drops_active_lane ────────────────────────────────────────────────
+# WHY (2026-11-05, S583, on Sam's question "why there is nothing left in the
+# queue"): handoffs 579 to 583 each copied the open-work list of the one before,
+# which had narrowed to the SLO read. Five scheduled firings then found "nothing
+# to do" while the program requirements, Commons and Subjects lanes still held
+# buildable NEXT lines. A handoff's open work comes from the lane files; this
+# names a lane a session worked in the last week that still carries a NEXT and
+# that the newest handoff never names (by slug, `lanes/<slug>`, or its title).
+#
+# "Worked" means a commit touching at most ACTIVE_LANE_MAX_FILES lane files, so
+# a docs-wide sweep that stamps every lane does not count as work on each one.
+# FAIL-SOFT like checkpoint_overdue: no git or no handoff, no finding.
+ACTIVE_LANE_DAYS = 7
+ACTIVE_LANE_MAX_FILES = 4
+_LANE_NEXT_RE = re.compile(r"\bNEXT\b")
+
+
+def _lane_title(text):
+    m = re.search(r'^title:\s*"?(.+?)"?\s*$', text, re.M)
+    if not m:
+        return None
+    t = re.split(r"\s+[—-]+\s+lane state", m.group(1))[0]
+    return t.strip().strip('"').strip() or None
+
+
+def rule_handoff_drops_active_lane(root):
+    """A lane worked this week still has a NEXT the newest handoff never names."""
+    import subprocess
+    def git(*args):
+        try:
+            r = subprocess.run(["git", *args], cwd=root, capture_output=True,
+                               text=True, timeout=20)
+            return r.stdout if r.returncode == 0 else None
+        except Exception:
+            return None
+
+    docs = os.path.join(root, "docs")
+    lanes_dir = os.path.join(docs, "reference", "lanes")
+    if not os.path.isdir(lanes_dir):
+        return None
+    ns = [(int(m.group(1)), f) for f in os.listdir(docs)
+          if (m := HANDOFF_RE.match(f))]
+    if not ns:
+        return None
+    newest = max(ns)[1]
+    handoff = open(os.path.join(docs, newest), encoding="utf-8").read().lower()
+
+    log = git("log", f"--since={ACTIVE_LANE_DAYS}.days", "--name-only",
+              "--format=@@%H", "--", "docs/reference/lanes/")
+    if log is None:
+        return None
+    worked = set()
+    for chunk in log.split("@@")[1:]:
+        files = [l.strip() for l in chunk.splitlines()[1:] if l.strip().endswith(".md")
+                 and not l.strip().endswith("README.md")]
+        if 0 < len(files) <= ACTIVE_LANE_MAX_FILES:
+            worked.update(os.path.basename(f)[:-3] for f in files)
+
+    missing = []
+    for slug in sorted(worked):
+        path = os.path.join(lanes_dir, slug + ".md")
+        if not os.path.isfile(path):
+            continue
+        text = open(path, encoding="utf-8").read()
+        if not _LANE_NEXT_RE.search(text):
+            continue
+        names = {slug.lower(), slug.replace("-", " ").lower()}
+        title = _lane_title(text)
+        if title:
+            names.add(title.lower())
+        if not any(n in handoff for n in names):
+            missing.append(slug)
+    if not missing:
+        return None
+    return {
+        "rule": "handoff_drops_active_lane",
+        "fixable": False,
+        "path": f"docs/{newest}",
+        "detail": {"lanes": missing, "days": ACTIVE_LANE_DAYS},
+        "message": (
+            f"`docs/{newest}` never names {len(missing)} lane(s) worked in the last "
+            f"{ACTIVE_LANE_DAYS} days that still carry a NEXT: {', '.join(missing)}. "
+            f"Build the open work from each lane's NEXT line, or say in the handoff "
+            f"why the lane waits (name it by slug). Copying the last handoff's list "
+            f"is how five firings found an empty queue (S583)."),
+    }
 
 
 # ── esl_monthly_pass_due ─────────────────────────────────────────────────────
@@ -1880,6 +1970,10 @@ def main():
     overdue = rule_checkpoint_overdue(ROOT)
     if overdue:
         findings.append(overdue)
+
+    dropped = rule_handoff_drops_active_lane(ROOT)
+    if dropped:
+        findings.append(dropped)
 
     esl_due = rule_esl_monthly_pass_due(ROOT)
     if esl_due:

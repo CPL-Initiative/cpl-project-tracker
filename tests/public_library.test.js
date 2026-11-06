@@ -23,6 +23,7 @@
 //     (or stays still for one photo or reduced motion), in Malone's look on tokens.
 // Run from repo root: `npm test` (or `node tests/public_library.test.js`).
 const fs = require("fs");
+const path = require("path");
 const { JSDOM } = require("jsdom");
 
 const results = [];
@@ -65,9 +66,17 @@ block("(1)", function () {
   check("(1) the public read exists", !!fn);
   const body = fn ? fn[0] : "";
   check("(1) it returns listed, current, linked rows only", /where l\.public_listed and l\.retired_at is null and l\.url is not null/.test(body));
+  // l.versions holds notes; the read may take each version's date from it and nothing else (2026-11-06).
+  const dateRead = "jsonb_array_elements(case when jsonb_typeof(l.versions) = 'array' then l.versions else '[]'::jsonb end) e";
+  check("(1) the public read takes only each version's date from l.versions", body.indexOf(dateRead) !== -1 &&
+    /max\(\(e ->> 'date'\)::date\)/.test(body) && !/e ->> '(?!date')/.test(body) && !/\be\.\*|\bselect e\b|, e\b/.test(body));
+  const rest = body.split(dateRead).join("");
   ["note", "brief", "made_by", "rebuild_from", "versions", "added_by", "updated_by", "l.summary"].forEach(function (c) {
-    check("(1) the public read never returns " + c, body.indexOf(c) === -1);
+    check("(1) the public read never returns " + c, rest.indexOf(c) === -1);
   });
+  check("(1) it returns the newest version's date and the version's name, and sorts by that date",
+    /revised_on date, version_label text\)/.test(body) && /order by r\.revised_on desc nulls last/.test(body) &&
+    /case when n\.num > 1 then 'Version ' \|\| n\.num end/.test(body));
   check("(1) anon may run the public read", /grant execute on function public\.cpl_library_public\(\) to anon/.test(SQL));
   check("(1) listing checks the team phrase or the reviewer sign-in", /cpl_library_set_public[\s\S]*?if not \(public\.is_allowed_reviewer\(\) or public\.team_pass_ok\(\)\)/.test(SQL));
   check("(1) anon may call the listing function; the gate is inside it", /grant execute on function public\.cpl_library_set_public\([^)]*\) to anon, authenticated, service_role;/.test(SQL));
@@ -135,10 +144,16 @@ block("(2d)", function () {
   const word = d.querySelector(".cplh button[data-cplh-links]");
   const panel = word && d.getElementById(word.getAttribute("aria-controls"));
   const links = Array.from(d.querySelectorAll('.cplh nav[aria-label="CPL pages"] a'));
-  // Six links since the Credential Catalog joined them (Sam, Open Asks Sheet 148 card 2, 2026-10-31).
+  // Six links since the Credential Catalog joined them (Sam, Open Asks Sheet 148 card 2, 2026-10-31); seven since
+  // the CPL Initiative overview led them (Sam, 2026-11-05: "add the link to the ell visual and all other visuals").
   check("(2d) ⭐ the links sit behind one word, Links, an underlined word button, collapsed over a hidden panel",
     !!word && word.textContent.trim() === "Links" && word.classList.contains("word") && word.getAttribute("aria-expanded") === "false" &&
-    !!panel && panel.hidden && links.length === 6 && links.every(function (a) { return panel.contains(a); }));
+    !!panel && panel.hidden && links.length === 7 && links.every(function (a) { return panel.contains(a); }));
+  // Every public page with the header leads its links with the CPL Initiative overview (Sam, 2026-11-05).
+  const lacking = fs.readdirSync("library").map(function (d) { return path.join("library", d, "index.html"); })
+    .concat(["library/index.html"]).filter(function (f) { return fs.existsSync(f); })
+    .filter(function (f) { const h = fs.readFileSync(f, "utf8"); return /class="cplh"/.test(h) && !/library\/cpl-initiative-overview\/" [^>]*aria-describedby="cplh-d-about">The CPL Initiative</.test(h); });
+  check("(2d) every public page's header links the CPL Initiative overview", lacking.length === 0, lacking.join(", "));
   const bad = links.filter(function (a) {
     const el = d.getElementById(a.getAttribute("aria-describedby") || "");
     const n = el ? el.textContent.trim().split(/\s+/).length : 0;
@@ -166,7 +181,7 @@ block("(2d)", function () {
 const ROW = { id: "r1", slug: "dsp-credit-starting-points", title: "DSP Credit Starting Points", kind: "document",
   made_on: "2026-10-20", status: "draft", seen_by: null, home: "web", url: "https://claude.ai/artifact/P4R8", summary: "Internal summary", versions: [] };
 function loadLib(opts) {
-  const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/", runScripts: "dangerously" });
+  const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/#library/cards", runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.fetch = function (url, init) { calls.push({ url: String(url), init: init || {} }); return response(200, String(url).indexOf("/rpc/") > -1 ? [] : [opts.row || ROW]); };
   w.localStorage.setItem("cpl_team_pass", "phrase");
@@ -226,10 +241,12 @@ block("(3d)", function () {
   const m = loadLib({ token: "t" });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     const acts = m.root.querySelector(".lib-acts");
-    check("(3d) Edit sits on the card's top row", !!(acts && acts.querySelector('[data-edittop="r1"]')));
+    // Version 22 (Sam, 2026-11-05: "Version 22 looks better") moved Edit into Details, beside the record it edits.
+    check("(3d) Edit the record sits in the card's Details, one press away", !!(acts && acts.querySelector('[data-toggle="r1"]')) && !(acts && acts.querySelector('[data-edittop="r1"]')));
     check("(3d) so does List publicly", !!(acts && acts.querySelector('[data-pubtop="r1"]')));
     click(m.w, acts.querySelector('[data-pubtop="r1"]'));
     check("(3d) List publicly opens the listing form under the card", !!m.root.querySelector('[data-pubform="r1"]'));
+    if (!m.root.querySelector('[data-edittop="r1"]')) click(m.w, m.root.querySelector('[data-toggle="r1"]'));
     click(m.w, m.root.querySelector('[data-edittop="r1"]'));
     check("(3d) Edit opens the edit form under the card", !!m.root.querySelector('[data-editform="r1"]'));
   });
@@ -252,7 +269,7 @@ const LISTED_FOR = [
 block("(5)", function () {
   const fn = /create or replace function public\.cpl_library_public\(\)[\s\S]*?\$\$;/.exec(SQL);
   const body = fn ? fn[0] : "";
-  check("(5) the public read returns who a piece is made for", /for_kind text, for_category text, for_name text\)/.test(body) && /l\.for_kind, l\.for_category, l\.for_name/.test(body));
+  check("(5) the public read returns who a piece is made for", /for_kind text, for_category text, for_name text[,)]/.test(body) && /l\.for_kind, l\.for_category, l\.for_name/.test(body));
   check("(5) the kind check takes visual", /'spreadsheet', 'visual'\)/.test(fs.readFileSync("kb/supabase_cpl_library.sql", "utf8")));
   const m = loadPage(function () { return response(200, LISTED_FOR); });
   return settle().then(function () {
@@ -345,6 +362,29 @@ block("(6b)", function () {
     check("(6b) Oldest first reverses the dates, undated still last", order() === "Mid deck|Zeta brief|Alpha film|No date", order());
     sel.value = "title"; sel.dispatchEvent(new m.w.Event("change"));
     check("(6b) Title A–Z reads the title", order() === "Alpha film|Mid deck|No date|Zeta brief", order());
+  });
+});
+block("(6d)", function () {
+  // Sam, 2026-11-06: "date for ver 5 not updating on the public library"; "probs should have ver5 in small gray print
+  // next to the date". A card shows its newest version's date, sorts by it, and names the version beside it.
+  const ROWS = [
+    { slug: "o", title: "Overview", kind: "visual", made_on: "2026-11-05", revised_on: "2026-11-05", version_label: null, summary: "o", topics: [], url: "https://example.org/o" },
+    { slug: "e", title: "ELL IET", kind: "visual", made_on: "2026-10-23", revised_on: "2026-11-06", version_label: "Version 5", summary: "e", topics: [], url: "https://example.org/e" },
+    { slug: "f", title: "Film", kind: "film", made_on: "2026-10-30", summary: "f", topics: [], url: "https://example.org/f" }
+  ];
+  check("(6d) the version line is smaller print in the muted color", /\.piece \.meta \.ver \{[^}]*font-size: \.74rem/.test(styles(PAGE)) &&
+    /\.piece \.meta \{ color: var\(--muted\)/.test(styles(PAGE)));
+  const m = loadPage(function () { return response(200, ROWS); });
+  return settle().then(function () {
+    const cards = Array.prototype.slice.call(m.d.querySelectorAll("#lib-grid .piece"));
+    const t = function (c) { return c.querySelector("h2").textContent.replace(" (opens in a new tab)", ""); };
+    check("(6d) Most recent sorts by the newest version's date", cards.map(t).join("|") === "ELL IET|Overview|Film", cards.map(t).join("|"));
+    const meta = cards[0].querySelector(".meta");
+    check("(6d) the card shows that date, not the date it was made", /November 6, 2026/.test(meta.textContent) && !/October 23/.test(meta.textContent));
+    const ver = meta.querySelector(".ver");
+    check("(6d) and names its version beside the date", !!ver && ver.textContent === "Version 5");
+    check("(6d) a piece with one version, or none named, shows no version", !cards[1].querySelector(".ver") && !cards[2].querySelector(".ver"));
+    check("(6d) a row without revised_on still shows the date it was made", /October 30, 2026/.test(cards[2].querySelector(".meta").textContent));
   });
 });
 block("(6c)", function () {

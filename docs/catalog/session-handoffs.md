@@ -15,10 +15,20 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-545 document(s).
+555 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 591 | [Session 591 handoff: Monterey Peninsula's six read back, two reconcile steps; credential watch 49 added; the funding-model UI pass](../session_591_handoff.md) | 2026-11-06 |
+| 590 | [Session 590 handoff: security step 2 merged and read back; Mission's SLO read and Lake Tahoe's trial running](../session_590_handoff.md) | 2026-11-06 |
+| 587 | [Session 587 handoff: step 1 verified end to end; step 2's migration drafted, not applied](../session_587_handoff.md) | 2026-11-05 |
+| 586 | [Session 586 handoff: COBIx's first audit answered; the proxy and the refresh button take a credential](../session_586_handoff.md) | 2026-11-05 |
+| 585 | [Session 585 handoff: course objectives read and stored; Monterey Peninsula's page read](../session_585_handoff.md) | 2026-11-05 |
+| 584 | [Session 584 handoff: the queue was not empty; five lane items the handoffs had dropped](../session_584_handoff.md) | 2026-11-05 |
+| 583 | [Session 583 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC](../session_583_handoff.md) | 2026-11-05 |
+| 582 | [Session 582 handoff: a quiet firing; Mission College's full read still waits for 2026-11-06 UTC](../session_582_handoff.md) | 2026-11-05 |
+| 581 | [Session 581 handoff: Mission College's SLO trial parsed 11 of 12; its full read waits for the next UTC day](../session_581_handoff.md) | 2026-11-05 |
+| 580 | [Session 580 handoff: Mission College's SLO trial is running; the night's other routine steps were empty](../session_580_handoff.md) | 2026-11-05 |
 | 579 | [Session 579 handoff: the night's routine items (Columbia's full read, the credential slice, the explainer's UI pass)](../session_579_handoff.md) | 2026-11-05 |
 | 578 | [Session 578 handoff: the Subjects List recode landed; the Library revises a visual from its card](../session_578_handoff.md) | 2026-11-05 |
 | 577 | [Session 577 handoff: two Claude Team accounts, Our Process's Getting set up, the Library's draft label and order](../session_577_handoff.md) | 2026-11-05 |

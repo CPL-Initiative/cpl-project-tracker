@@ -28,8 +28,8 @@ check("raci.js no longer forces an email magic-link to edit", !/Sign in to edit/
 check("update composer offers the team phrase in place", /unlockBox\(/.test(SRC) && !/Sign in \(CCCCO MAP\) to add an update/.test(SRC));
 // The phrase is VALIDATED server-side on entry (call the team_pass_ok RPC) so a
 // wrong phrase is rejected, never stored.
-check("phrase is verified via the team_pass_ok RPC before storing",
-  /rpc\/team_pass_ok/.test(SRC) && /function verifyPhrase/.test(SRC) && /verifyPhrase\(/.test(SRC));
+check("phrase is verified via the team_pass_verify RPC before storing",
+  /rpc\/team_pass_verify/.test(SRC) && /p_site: "team"/.test(SRC) && /function verifyPhrase/.test(SRC) && /verifyPhrase\(/.test(SRC));
 check("a wrong phrase is surfaced, not silently stored", /doesn't match/.test(SRC));
 // A reviewer-only admin can view + change the shared phrase.
 // The editor moved to its own tab (team_phrases.js) — Sam, 2026-08-12: "I lost

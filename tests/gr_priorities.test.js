@@ -28,8 +28,8 @@ const GR = require("../gr_priorities.js");
 // ── Part A — static security invariants (no content / correct wiring) ────────
 const jsSrc = fs.readFileSync("gr_priorities.js", "utf8");
 check("gr_priorities.js exposes window.CPL_GR.activate", GR && typeof GR.activate === "function");
-check("gr_priorities.js targets the GR-specific gate (gr_pass_ok, not team_pass_ok)",
-  jsSrc.indexOf("rpc/gr_pass_ok") !== -1 && jsSrc.indexOf("rpc/team_pass_ok") === -1);
+check("gr_priorities.js unlocks through team_pass_verify with p_site gr, never rpc/team_pass_ok",
+  jsSrc.indexOf('"/rest/v1/rpc/team_pass_verify"') !== -1 && /p_site:\s*"gr"/.test(jsSrc) && jsSrc.indexOf("rpc/team_pass_ok") === -1);
 check("gr_priorities.js uses a GR-specific phrase key (cohort isolation client-side too)",
   jsSrc.indexOf("cpl_gr_pass") !== -1);
 check("gr_priorities.js carries NO service key", jsSrc.indexOf("service_role") === -1);

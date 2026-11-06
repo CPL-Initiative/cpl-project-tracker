@@ -61573,5 +61573,165 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Autodesk Certified Associate in CAD for Mechanical Design certificate": {
+    "unified_title": "Autodesk Certified Associate in CAD for Mechanical Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
+    "unified_title": "Introduction to Water Systems Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
+    "unified_title": "Wastewater Treatment and Disposal I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
+    "unified_title": "Wastewater Treatment and Disposal II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Water Distribution Operator I (WATER 140)": {
+    "unified_title": "Water Distribution Operator I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
+    "unified_title": "Water Distribution Operator II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
+    "unified_title": "Water Treatment Plant Operation Processes I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
+    "unified_title": "Water Treatment Plant Operation Processes II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
+    "unified_title": "Waterworks Mathematics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Noncredit for FREN 1A": {
+    "unified_title": "Elementary French 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio - Life Drawing I (ART 225A)": {
+    "unified_title": "Figure Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "ARTS 200"
+    }
+  },
+  "Portfolio - Life Drawing II (ART 225B)": {
+    "unified_title": "Life Drawing II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Portfolio - Painting I (ART 227)": {
+    "unified_title": "Introduction to Painting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "ARTS 210"
+    }
+  },
+  "Portfolio - Watercolor Painting (ART 220)": {
+    "unified_title": "Watercolor Painting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Portfolio Painting II (ART 228)": {
+    "unified_title": "Painting II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Portfolio for MKTG 50": {
+    "unified_title": "Introduction to Marketing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio for MKTG 56": {
+    "unified_title": "Marketing Strategies",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio for MKTG 61": {
+    "unified_title": "Professional Selling",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Solidworks Design Associate (CSWA) Certification": {
+    "unified_title": "Certified SOLIDWORKS Associate (CSWA)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-05",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

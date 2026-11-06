@@ -37,7 +37,7 @@ window.COBI_ADMIN_SURFACE = {
         "team_members"
       ],
       "rpcs": [
-        "team_pass_ok"
+        "team_pass_verify"
       ],
       "measured": true
     },
@@ -57,6 +57,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "rpcs": [
         "map_coordinator_summary",
+        "map_cpl_coordinator_compare",
         "map_landing_contacts_roster",
         "map_users_summary"
       ],
@@ -188,6 +189,7 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "college_briefing.js",
         "college_cpl_workbook.js",
+        "commons_list.js",
         "cpl_baccalaureates_data.js",
         "cpl_funding.js",
         "cpl_pathways.js",
@@ -316,6 +318,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "rpcs": [
         "map_coordinator_summary",
+        "map_cpl_coordinator_compare",
         "map_landing_contacts_roster",
         "map_users_summary"
       ],
@@ -524,7 +527,7 @@ window.COBI_ADMIN_SURFACE = {
         "gr_revisions"
       ],
       "rpcs": [
-        "gr_pass_ok"
+        "team_pass_verify"
       ],
       "measured": true
     },
@@ -668,6 +671,7 @@ window.COBI_ADMIN_SURFACE = {
     },
     "library": {
       "modules": [
+        "commons_list.js",
         "jsqr.min.js",
         "jszip.min.js",
         "library.js",

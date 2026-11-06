@@ -283,20 +283,33 @@ async function sierraAskingChecks(page) {
   }));
   return out;
 }
+/* CPL Pathways in its new format: choose the college, wait for its List (commons_list.js loads on the tab's boot), press
+   the program's title. */
+async function cplpwOpen(page, college, title) {
+  await page.waitForFunction((c) => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    return s && Array.from(s.options).some((o) => o.value === c);
+  }, college, { timeout: 60000 });
+  await page.evaluate((c) => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    if (s.value !== c) { s.value = c; s.dispatchEvent(new Event("change", { bubbles: true })); }
+  }, college);
+  await page.waitForFunction((src) => {
+    const re = new RegExp(src);
+    return Array.from(document.querySelectorAll("#cplpw-list button.cplpwl-open")).some((b) => re.test(b.textContent));
+  }, title.source, { timeout: 60000 });
+  await page.evaluate((src) => {
+    const re = new RegExp(src);
+    const b = Array.from(document.querySelectorAll("#cplpw-list button.cplpwl-open")).find((x) => re.test(x.textContent));
+    if (b) b.click();
+  }, title.source);
+}
 async function seedRoepRecord(page, theme, lay) {
   // The motion pass loads the page without a route, so open the tab here too.
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForFunction(() => {
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    return s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
-  }, null, { timeout: 60000 });
-  await page.evaluate(() => {
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option'))
-      .find((x) => /Apprenticeship: Field Ironworkers/.test(x.textContent));
-    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
-  });
+  // A college first, then its List (Sam, 2026-11-06: "Require college first"): Cerritos, then the record's title.
+  await cplpwOpen(page, "Cerritos College", /^Apprenticeship: Field Ironworkers$/);
   if (lay === "term") await page.evaluate(() => {
     const b = document.querySelector('.cplpw-rseg button[data-value="term"]');
     if (b) b.click();
@@ -315,8 +328,8 @@ async function seedRoepTable(page, theme, which) {
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForFunction(() => {
     const T = window.CPL_PATHWAYS_TAB;
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    return T && T._roepTable && s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    return T && T._roepTable && s && s.options.length > 1;
   }, null, { timeout: 60000 });
   await page.evaluate((which) => {
     const T = window.CPL_PATHWAYS_TAB, R = T._roepTable;
@@ -335,16 +348,14 @@ async function seedRoepTable(page, theme, which) {
       record: base.record, display: disp, checked: false };
     R.error = null;
     T._roepIndexLanded();
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    const want = which === "failed" ? /A Record No Read Has Fetched/ : /Ironworking Technology: Reinforcing/;
-    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option')).find((x) => want.test(x.textContent));
-    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
   }, which);
+  if (which === "failed") await cplpwOpen(page, "Norco College", /^A Record No Read Has Fetched$/);
+  else await cplpwOpen(page, "Long Beach City College", /^Ironworking Technology: Reinforcing/);
   await page.waitForTimeout(400);
 }
 
-// Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08).
-async function seedCollegeSelect(page) {
+// Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08): its cards, line and List (2026-11-06).
+async function seedCollegeSelect(page, theme) {
   /* The college's program-data line (Sam, 2026-10-21) reads four public tables; the sweep blocks
      the database, so they answer here with a few rows and the line paints its three figures. */
   const PASS = { coverage: true, invented: true, arithmetic: "equal" };
@@ -360,6 +371,7 @@ async function seedCollegeSelect(page) {
     route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(ROWS[t] || []) });
   });
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForFunction(() => {
     const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
     return s && Array.from(s.options).some((o) => o.value === "Mt. San Antonio College");
@@ -369,7 +381,8 @@ async function seedCollegeSelect(page) {
     s.value = "Mt. San Antonio College";
     s.dispatchEvent(new Event("change", { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelectorAll("#cpl-pathways-root .cplpw-colstat button.go").length === 3, null, { timeout: 30000 });
+  await page.waitForFunction(() => document.querySelectorAll("#cpl-pathways-root .cplpw-colstat button.go").length === 3
+    && !!document.querySelector("#cplpw-list button.cplpwl-open"), null, { timeout: 30000 });
   await page.waitForTimeout(200);
 }
 
@@ -1491,6 +1504,66 @@ async function seedCommsRegister(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Library with the team phrase (Version 22, SkyCartwheel 2026-11-05): a ready draft with What changed and its
+// accessibility check, a request a session makes, a project of two, and a card's revise box open. The unseeded
+// cobi:library route reaches only the locked view, so it never measured these.
+async function seedLibrary(page, theme, view) {
+  const want = view === "list" ? "library" : "library/cards";
+  await page.evaluate((h) => { if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, want);
+  await page.waitForFunction(() => !!window.CPL_LIBRARY, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cpl_library_author", "Seed Author");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const P = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
+    const R = [
+      { id: "s1", slug: "seed-visual", title: "Seed Starting Points", kind: "visual", project: "Seed project", occasion: "Seed meeting",
+        made_on: "2026-10-23", version: "2", status: "draft", seen_by: "public", home: "web", url: P + "seed-visual/", public_listed: true,
+        extent: "One page", file_type: "html", for_kind: "agency", for_name: "Seed grantees", summary: "A card per seeded project.",
+        refresh_note: "Add Request Adopt links.", sources: [], versions: [], updated_at: "2026-11-05T10:00:00Z",
+        regen: { requested_at: "2026-11-04T10:00:00Z", requested_by: "Seed Author", publish: "show", ready_at: "2026-11-04T10:02:00Z", draft_id: "d1" } },
+      { id: "s2", slug: "seed-notes", title: "Seed notes", kind: "document", project: "Seed project", occasion: "Seed meeting",
+        made_on: "2026-10-22", status: "draft", seen_by: "team", home: "web", url: "https://claude.ai/artifact/seed", sources: [], versions: [],
+        updated_at: "2026-11-05T09:00:00Z" },
+      { id: "s3", slug: "seed-deck", title: "Seed summit deck", kind: "deck", occasion: "Seed summit", made_on: "2026-10-20", version: "1",
+        status: "approved", seen_by: "colleges", home: "drive", url: "https://studentrcc.sharepoint.com/sites/x/seed.pptx", extent: "12 slides",
+        file_type: "pptx", refresh_note: "Update the counts.", sources: [], versions: [], updated_at: "2026-11-05T08:00:00Z",
+        regen: { requested_at: "2026-11-05T08:00:00Z", requested_by: "Seed Author", publish: "show" } },
+      { id: "s4", slug: "seed-memo", title: "Seed memo", kind: "document", occasion: "Seed summit", made_on: "2026-10-19", version: "1",
+        status: "presented", seen_by: "team", home: "web", url: "https://claude.ai/artifact/seed2", extent: "Two pages", file_type: "docx",
+        sources: [], versions: [], updated_at: "2026-11-05T07:00:00Z" },
+    ];
+    const D = [{ id: "d1", summary: "Added a Request Adopt link beside each course.", request: { pairs: [{ was: "<td>FIRE 155</td>", now: '<td>FIRE 155 <a href="#">Request Adopt</a></td>' }] },
+      html: '<!doctype html><html lang="en"><head><title>Seed</title></head><body><h1>Seed</h1><p>Words.</p></body></html>' }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/cpl_library\?/.test(u) ? R : /\/cpl_library_drafts\?/.test(u) ? D : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_LIBRARY.activate();
+  });
+  if (view === "list") {
+    // The List: a row's title opens its card in the side panel, with What changed and its check.
+    await page.waitForFunction(() => !!document.querySelector("#libl-host tbody tr"), null, { timeout: 20000 });
+    await page.evaluate(() => {
+      const t = Array.prototype.filter.call(document.querySelectorAll("#libl-host tbody button"), (b) => /Seed Starting Points/.test(b.textContent))[0];
+      if (t) t.click();
+    });
+    await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("libl-panel") || {}).textContent || ""), null, { timeout: 20000 });
+    return;
+  }
+  await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("library-root") || {}).textContent || ""), null, { timeout: 20000 });
+  await page.evaluate(() => { const b = document.querySelector('#library-root [data-revise="s4"]'); if (b) b.click(); });
+  await page.waitForTimeout(300);
+}
+
 // Noncredit & Learning Partners with the team phrase (S365): notes, artifacts and Revise
 // controls render only for a team-phrase holder, so the unseeded sweep never painted them.
 // The seed holds the phrase, stubs the three reads (nc_partner_notes, nc_artifacts,
@@ -2547,6 +2620,9 @@ module.exports = {
   "library-ell-iet": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points (public Library page)" },
   "library-ell-iet-dark": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
+  "library-cpl-overview": { file: "library/cpl-initiative-overview/index.html", title: "The CPL Initiative overview (public Library page)" },
+  "library-cpl-overview-dark": { file: "library/cpl-initiative-overview/index.html", title: "The CPL Initiative overview, dark", widths: [390, 1280],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
   "library-dsp": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points (public Library page)" },
   "library-dsp-dark": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
@@ -2839,6 +2915,38 @@ module.exports = {
     routes: [{ hash: "nc-learning-partners", name: "editor" }],
     widths: [390, 1440],
     seed: (page) => seedNcPartnersEditor(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "library-cards": {
+    file: "index.html",
+    title: "Library with the team phrase: a ready draft, a session's request, a project, a revise box open",
+    routes: [{ hash: "library/cards", name: "cards" }],
+    widths: [390, 1440],
+    seed: (page) => seedLibrary(page, "light", "cards"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "library-cards-dark": {
+    file: "index.html",
+    title: "Library with the team phrase: a ready draft, a session's request, a project, a revise box open, dark",
+    routes: [{ hash: "library/cards", name: "cards" }],
+    widths: [390, 1440],
+    seed: (page) => seedLibrary(page, "dark", "cards"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "library-list": {
+    file: "index.html",
+    title: "Library List with the team phrase: every piece a row, a card open in the side panel",
+    routes: [{ hash: "library", name: "list" }],
+    widths: [390, 1440],
+    seed: (page) => seedLibrary(page, "light", "list"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "library-list-dark": {
+    file: "index.html",
+    title: "Library List with the team phrase: every piece a row, a card open in the side panel, dark",
+    routes: [{ hash: "library", name: "list" }],
+    widths: [390, 1440],
+    seed: (page) => seedLibrary(page, "dark", "list"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "letters-register": {
@@ -3395,10 +3503,19 @@ module.exports = {
   },
   "cpl-pathways-college": {
     file: "index.html",
-    title: "CPL Pathways: narrowed to one college",
+    title: "CPL Pathways: one college's cards and List",
     routes: [{ hash: "cpl-pathways", name: "college-select" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCollegeSelect(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  // The college's cards and List in the new format, dark (Sam's call 2, 2026-11-06).
+  "cpl-pathways-college-dark": {
+    file: "index.html",
+    title: "CPL Pathways: one college's cards and List, dark",
+    routes: [{ hash: "cpl-pathways", name: "college-list-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCollegeSelect(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the Progress view (S343) ─────────────────────

@@ -42,7 +42,22 @@
    "maps_to": null,
    "parsed_from": "html",
    "fingerprint": null,
-   "groups": []
+   "groups": [],
+   "objectives": [
+    "Evaluate the impact of student and community activism on the creation of Ethnic Studies and Asian American studies.",
+    "Analyze and articulate common Ethnic Studies concepts and terms such as race and racism, racialization, ethnicity, equity, ethno-centrism, eurocentrism, white supremacy, self-determination, liberation, decolonization, sovereignty, imperialism, settler colonialism, and anti-racism in analyzing the experiences of Asian Americans and Pacific Islanders.",
+    "Apply theory and knowledge produced by AAPI communities to describe the histories, critical events, contributions, intellectual traditions, lived-experiences, and social struggles of Asian Americans and Pacific Islanders in the United States, emphasizing agency and group-affirmation.",
+    "Identify shared experiences that link Asian Americans and Pacific Islanders together, as well as the internal diversity (class, gender, sexuality, religion, spirituality, national origin, immigration status, ability, tribal citizenship, sovereignty, language, and/or age) that characterizes this diverse group.",
+    "Use the lens of anti-colonialism, anti-racism, and equity for Asian Americans and Pacific Islanders to critically analyze how (settler) colonialism, imperialism, militarism, and racial capitalism shape AAPI historical and contemporary experiences particularly their (im)migration and/or displacement and their social and political exclusion in the US.",
+    "Evaluate the impacts of federal, state, and local laws in relation to Asian immigrants, Asian Americans, and Pacific Islanders on Asian American and Pacific Islander communities, particularly with respect to family formation, ethnic community development, and identity.",
+    "Critically analyze the intersection of race and racism as they relate to class, gender, sexuality, religion, national origin, immigration status, sovereignty, language, and/or age in Asian American and Pacific Islander communities.",
+    "Critically review how struggle, resistance, racial and social justice, solidarity, and liberation, as experienced, enacted, and studied by Asian Americans and Pacific Islanders are relevant to current and structural issues such as anti-immigrant sentiment, anti-Asian violence, U.S. military industrial complex, environmental racism, and settler-colonialism.",
+    "Critically examine primary and/or secondary sources created by Asian American and Pacific Islander cultural producers–memoir, fiction, major motion picture, documentary, oral history(ies) and other lived experiences, or other art forms–to clarify how Asian Americans and Pacific Islanders challenge negative stereotypes and resist social and political marginalization in the US.",
+    "Describe and actively engage with anti-racist and anti-colonial issues, the practices and movements in AAPI communities, as well as other racial and ethnic coalitional groups for a just and equitable society."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "72e69e34326bc8f9c8e5c59f85c2729a"
   },
   {
    "code": "ARCH 100",
@@ -79,7 +94,20 @@
      "shape": "list",
      "fingerprint": "51ee8cf1d5597c63a3c699e322113391"
     }
-   ]
+   ],
+   "objectives": [
+    "Use architectural terms to read, label and explain architectural drawings.",
+    "Select and use the correct tools to letter and draft construction documents.",
+    "Use a variety of scales to draft plans, sections, elevations, details and schedules.",
+    "Employ architectural lettering to label drawings.",
+    "Produce line types and weights to demonstrate line quality.",
+    "Prepare and present drawings and explain their function, logic, organization and composition.",
+    "Product drawings using pencil, pen and ink.",
+    "Apply shade and shadow theory and technique to architectural drawings."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "5f7a8e1f9dc0313dfa0f9d1fca883a97"
   },
   {
    "code": "BIOL 100",
@@ -129,7 +157,22 @@
      "shape": "list",
      "fingerprint": "5f0dc092492755cf14916b61855e6ef6"
     }
-   ]
+   ],
+   "objectives": [
+    "Describe the major biotic communities of San Diego County and identify key factors that influence local and other biotic communities.",
+    "Describe major taxonomic groups and explain evolutionary trends among them.",
+    "Identify dominant plants and animals from each major biotic community of San Diego County.",
+    "Explain the process of evolution by natural selection.",
+    "Define and explain major processes influencing populations, communities, and ecosystems.",
+    "Identify and describe the major types of symbioses and give examples of each.",
+    "Explain and diagram the trophic structure of typical ecosystems and the energy flow and nutrient recycling in each.",
+    "Describe impacts of human beings on natural ecosystems.",
+    "Analyze the major environmental problems facing human beings and natural systems today.",
+    "Use the scientific method and critical thinking to solve ecological/environmental problems."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "847f6a70ce1f89ce649f8034511c3c93"
   },
   {
    "code": "CISC 106",
@@ -167,7 +210,37 @@
      "shape": "list",
      "fingerprint": "c577513b6d5fc2d19bcacf5bbb0fe65d"
     }
-   ]
+   ],
+   "objectives": [
+    "Describe computers and artificial intelligence in a historical, socio-economic, or societal context.",
+    "Explain the evolution of computer science through the increasing use of abstraction.",
+    "Explain the evolution of artificial intelligence from logic and expert systems, and neural networks to large language models (LLMs).",
+    "Distinguish between functional, logical and object- oriented approaches to programming.",
+    "Define and employ atomic data types, such as booleans and numbers, and compound data types, such as lists, arrays, and user-defined compound data structures.",
+    "Differentiate between code versus data modalities.",
+    "Formulate functions that capture key abstractions, prevent duplication of code or data, and transform parameters and return values.",
+    "Employ object oriented programming methodology to define classes using data encapsulation, and create and manipulate objects.",
+    "Create code that accepts input from the user and produces output to the user.",
+    "Use conditional logic to determine program outcomes.",
+    "Practice the display of data through parameterization.",
+    "Describe and recognize how a problem can be decomposed into self-similar subproblems as a means of developing a recursive algorithm.",
+    "Explain how computer programs can be created systematically.",
+    "Use logical constructs and recursion to operate upon data structures.",
+    "Explain how a programming language can be extended to create a vocabulary that is proximal to the problem domain.",
+    "Create animations and implement an interactive graphic game.",
+    "Systematically design and implement introductory-level programs from given specifications, such as problem descriptions, user stories, design criteria, input/output scenarios, functional or unit tests, pseudo code, modeling language specifications or diagrams.",
+    "Articulate the purpose and working of introductory-level programs, and their language constructs and data structures, such as through diagrams (for instance, flowcharts, Unified Modelling Language (UML) diagrams or entity-relationship (ER) diagrams), code comments, screencast videos, interactive computing notebooks (for instance, Jupyter notebooks), or other written or oral communication.",
+    "Document external interfaces of introductory-level functions or methods (the application programming interface (API)), and the inner working of introductory-level functions, or methods in-code comments.",
+    "Systematically test and debug introductory-level programs by interactively entering arguments, utilizing functional or unit tests, running programs in a test environment, or using a debug environment (for instance, a debugger in an integrated development environment (IDE)).",
+    "Develop introductory-level programs using industry recognized tools, such as code editors, command lines (Read, execute, print loop, REPL), emulators, or integrated development environments (IDE).",
+    "Create a fully functional, interactive introductory-level program incorporating a substantial set of topics from the course.",
+    "Use declarative constructs, including functions, in a programming language from the Lisp family to understand a problem and to create a solution.",
+    "Express a problem as a set of logic clauses in the programming language Prolog and use them to solve a problem.",
+    "Create, train and use an artificial intelligence algorithm to classify data."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "850fa89aae1b2c07581b1b10928d9142"
   },
   {
    "code": "DRAM 100A",
@@ -203,7 +276,20 @@
      "shape": "list",
      "fingerprint": "462380098a3700619954163f91b98c4f"
     }
-   ]
+   ],
+   "objectives": [
+    "Describe the principles of the company concept in the study of dramatic art.",
+    "Identify and define the purpose of significant physical plant areas used in the Dramatic Arts Program.",
+    "Execute safe practices as related to the physical plant through practical application and testing.",
+    "Demonstrate knowledge of basic acting concepts and techniques through in-class performances, projects and assignments.",
+    "Demonstrate mastery of basic technical skills in stage scenery assignments.",
+    "Demonstrate a basic proficiency in selected phases of play production and use of production terminology.",
+    "Locate and safely use machinery and equipment necessary to the dramatic art program.",
+    "Apply basic scenery construction techniques as related to production."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "a0896e052ddb5055831623adf8c3d9f4"
   },
   {
    "code": "EXSC 110A",
@@ -239,7 +325,17 @@
      "shape": "list",
      "fingerprint": "f9c2c55a185c8ae89a3121b6e6b30d36"
     }
-   ]
+   ],
+   "objectives": [
+    "Summarize the origins and history of the sport of surfing.",
+    "Explain, recognize and practice ocean safety.",
+    "Describe the parts of surfboards and properly use surfing equipment.",
+    "Apply the rules of etiquette for picking locations and selecting waves.",
+    "Demonstrate the fundamental skills of body positioning, paddling, standing and wave recognition."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "6b8fb9df4607dbb94240a80e119097b0"
   },
   {
    "code": "GEOG 101",
@@ -308,7 +404,17 @@
      "shape": "list",
      "fingerprint": "1bf038738082d53a64b14724d1511bb9"
     }
-   ]
+   ],
+   "objectives": [
+    "Synthesize knowledge of the Earth’s seasons to predict how this will affect environmental patterns and processes.",
+    "Synthesize spatial data and information by utilizing scientific inquiry and spatial analysis methods and tools.",
+    "Analyze and interpret spatial patterns of atmospheric, climatic, geomorphological, and biotic processes on Earth’s surface.",
+    "Analyze and evaluate the ways nature-society interactions, including the enhanced greenhouse effect and pollution, cause changes in the physical environment.",
+    "Apply spatial thinking skills to engage with local communities on climate change adaptation and mitigation, environmental justice, and sustainability."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "3d769186ff3fc6f639a17441b5cd4905"
   },
   {
    "code": "HUMA 101",
@@ -359,7 +465,16 @@
      "shape": "list",
      "fingerprint": "ed35ed42f1e7b8208bcd3e8bfa9b477a"
     }
-   ]
+   ],
+   "objectives": [
+    "Characterize some of the world civilizations from Upper Paleolithic to approximately 1400 CE.",
+    "Assess the influence of geographical, social, and historical factors on these civilizations.",
+    "Interpret, analyze and criticize disciplines in the arts, literature and philosophy of these cultures.",
+    "Interpret, analyze and criticize the origins, forms and content of some of the arts, literature and philosophy of the various time periods and cultures studied."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "98e514a4de477259eb8b545680fd8a2c"
   },
   {
    "code": "LIBS 101",
@@ -411,7 +526,18 @@
      "shape": "list",
      "fingerprint": "2c4c1557ff539a6116d13167a6bb72b8"
     }
-   ]
+   ],
+   "objectives": [
+    "Describe information services available in a library.",
+    "Develop search strategies in order to effectively locate information.",
+    "Compare and contrast different search methodologies (i.e., free text versus controlled vocabulary searches).",
+    "Evaluate retrieved information in order to determine the most appropriate material to use.",
+    "Document utilized information in order to communicate where the information was found.",
+    "Search appropriate research tools in order to locate relevant information."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "bf41c197f56cc21d68961d87c3bcdd14"
   },
   {
    "code": "MUSI 100",
@@ -460,7 +586,17 @@
      "shape": "paragraph",
      "fingerprint": "9eed8825e52d68447094404e81a01b3b"
     }
-   ]
+   ],
+   "objectives": [
+    "Use appropriate vocabulary to describe the basic concepts of music.",
+    "Recognize aurally and identify the basic elements of music.",
+    "Compare and contrast stylistic differences, including basic music elements and structural characteristics, of music forms and genres from various cultures and eras.",
+    "Recognize aurally and identify the distinguishing characteristics of specific genres of music.",
+    "Analyze musical styles and genres in relation to their cultural, historical, political, socio-economic or other contexts."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "cf6298a21e65f15b92bd255ca34a4eb3"
   },
   {
    "code": "PHOT 100",
@@ -499,7 +635,19 @@
      "shape": "list",
      "fingerprint": "f0a1a92aa4601f5089edd7a95506f46c"
     }
-   ]
+   ],
+   "objectives": [
+    "Select and use cameras and lenses to successfully expose black and white film and develop images.",
+    "Distinguish and demonstrate the basic techniques of camera operation through manual exposure, lens focusing, metering methods, and film loading.",
+    "Select and prepare darkroom chemicals, implement film processing techniques, and use film processing equipment to produce black and white photographs.",
+    "Apply the principles of light theory to create black and white photographs.",
+    "Analyze and employ visualization and compositional techniques to produce black and white darkroom images.",
+    "Demonstrate the use of silver gelatin paper and print finishing techniques to create black and white photographs.",
+    "Recognize and interpret photography as an art form through the analysis of diverse historical and contemporary black and white photographs."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "90a39eac04747640c7e950ef7a035d1f"
   },
   {
    "code": "SDGE 302",
@@ -522,9 +670,19 @@
    "maps_to": null,
    "parsed_from": "html",
    "fingerprint": null,
-   "groups": []
+   "groups": [],
+   "objectives": [
+    "Demonstrate ability to manipulate mathematical computation using fractions, decimals, percent, algebra, and fundamentals of trigonometry.",
+    "Demonstrate the knowledge in using fundamental mechanics: weight, pressure, torque, power, and vectors.",
+    "Demonstrate the knowledge of electron theory as it applies to conductors, electrical potential, current, impedance, and simple circuits.",
+    "Describe the fundamentals of electricity.",
+    "Demonstrate the knowledge in applying the fundamentals of magnetism as it pertains to permanent and electromagnets, magnetic flux, and reluctance."
+   ],
+   "objectives_heading": "Student Learning Objectives",
+   "objectives_lead": "Upon successful completion of the course the student will be able to:",
+   "objectives_fingerprint": "2bb806e32bb61e81b70a6832d0dfa76b"
   }
  ],
- "reparsed_at": "2026-10-13T05:24:47Z",
+ "reparsed_at": "2026-11-05T14:22:27Z",
  "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }

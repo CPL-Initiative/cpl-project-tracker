@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-04T17:00:22Z",
-  "count": 2333,
+  "_synced_at": "2026-11-05T21:20:47Z",
+  "count": 2352,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3593,6 +3593,12 @@
       "reviewed_at": "2026-07-07T17:12:07.974147+00:00",
       "unified_title": "AutoCAD Beginning"
     },
+    "Autodesk Certified Associate in CAD for Mechanical Design certificate": {
+      "issuing_agency": "Autodesk",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Autodesk Certified Associate in CAD for Mechanical Design"
+    },
     "Autodesk Certified Professional (ACP) Certification": {
       "issuing_agency": "Autodesk",
       "reviewed_by": "slee@cccco.edu",
@@ -7118,6 +7124,12 @@
       "reviewed_at": "2026-07-07T20:44:36.336256+00:00",
       "unified_title": "Intro to Process Technology"
     },
+    "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Introduction to Water Systems Technology"
+    },
     "Credit by Exam - Long Beach Unified School District - App Food Service Sanitation in Hotel/Restaurant Management": {
       "issuing_agency": "Long Beach Unified School District",
       "reviewed_by": "slee@cccco.edu",
@@ -7177,6 +7189,48 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:36.394656+00:00",
       "unified_title": "Water Distribution Operator I"
+    },
+    "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Wastewater Treatment and Disposal I"
+    },
+    "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Wastewater Treatment and Disposal II"
+    },
+    "Credit by Exam - Water Distribution Operator I (WATER 140)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Water Distribution Operator I"
+    },
+    "Credit by Exam - Water Distribution Operator II (WATER 141)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Water Distribution Operator II"
+    },
+    "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Water Treatment Plant Operation Processes I"
+    },
+    "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Water Treatment Plant Operation Processes II"
+    },
+    "Credit by Exam - Waterworks Mathematics (WATER 130)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Waterworks Mathematics"
     },
     "Credit by Exam ACCTG 022 Payroll Accounting": {
       "issuing_agency": "California Community Colleges",
@@ -12301,6 +12355,12 @@
       "reviewed_at": "2026-10-31T17:01:45.326495+00:00",
       "unified_title": "English as a Second Language"
     },
+    "Noncredit for FREN 1A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Elementary French 1"
+    },
     "Noncredit for FREN 1B": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -12699,11 +12759,41 @@
       "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
       "unified_title": "Introduction to the Hospitality Industry"
     },
+    "Portfolio - Life Drawing I (ART 225A)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Figure Drawing"
+    },
+    "Portfolio - Life Drawing II (ART 225B)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Life Drawing II"
+    },
+    "Portfolio - Painting I (ART 227)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Introduction to Painting"
+    },
+    "Portfolio - Watercolor Painting (ART 220)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Watercolor Painting"
+    },
     "Portfolio AJ 54": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T17:03:29.056403+00:00",
       "unified_title": "Administration of Justice"
+    },
+    "Portfolio Painting II (ART 228)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Painting II"
     },
     "Portfolio Production Studio- Credit by Exam": {
       "unified_title": "Portfolio Production Studio",
@@ -12836,6 +12926,24 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Introduction to Public Relations"
+    },
+    "Portfolio for MKTG 50": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Introduction to Marketing"
+    },
+    "Portfolio for MKTG 56": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Marketing Strategies"
+    },
+    "Portfolio for MKTG 61": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Professional Selling"
     },
     "Portfolio for MUS 19": {
       "issuing_agency": "California Community Colleges",
@@ -13608,6 +13716,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:30.615902+00:00",
       "unified_title": "Solidworks Advanced Solid Modeling"
+    },
+    "Solidworks Design Associate (CSWA) Certification": {
+      "issuing_agency": "Dassault Systèmes",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+      "unified_title": "Certified SOLIDWORKS Associate (CSWA)"
     },
     "Solidworks Intermediate Solid Modeling": {
       "issuing_agency": "California Community Colleges",

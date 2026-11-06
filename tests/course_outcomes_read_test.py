@@ -6,6 +6,7 @@ failure modes these checks pin: an outcome reworded or merged with the next
 section, a slice that drops or repeats a course, and a read that writes a table.
 Pure-stdlib python.
 """
+import gzip
 import importlib.util
 import json
 import os
@@ -150,8 +151,32 @@ def _():
 def _():
     for name, page_html, text in trial_pages():
         got = reader.parse_page(page_html, text)
-        assert "groups" not in got and got == {**reader.outcomes_from_html(page_html),
+        slo = {k: v for k, v in got.items() if not k.startswith("objectives")}
+        assert "groups" not in got and slo == {**reader.outcomes_from_html(page_html),
                                                "fingerprint": reader.fingerprint(got["outcomes"])}, name
+
+
+@check("course objectives are read beside the SLOs, each as printed, and end at the next section (Sam, 2026-11-02)")
+def _():
+    oc = os.path.join(ROOT, "kb", "course_outcomes")
+    acc = reader.objectives_of(open(os.path.join(oc, "trial_38317539422", "ACC_19.txt")).read())
+    assert acc["objectives"] == ["Prepare State income tax returns for individuals and families with limited income.",
+                                 "Prepare Federal income tax returns for individuals and families with limited income."]
+    assert acc["objectives_heading"] == "Course Objectives" and acc["objectives_lead"].startswith("Upon successful")
+    # The Coast district's numbered list ends before Lecture Content, markers removed.
+    cccd = reader.objectives_of(open(os.path.join(oc, "trial_38508460207", "ACCT_C100.txt")).read())
+    assert len(cccd["objectives"]) == 17 and cccd["objectives"][0] == "Describe the purpose and process of accounting."
+    # SDCCD's two reports print the same objectives: the outline report ends at Section II, the All Fields report
+    # keeps each Objective Text field whole (its text breaks CISC 106's long ones across lines).
+    for code in ("AAPI_124", "CISC_106", "GEOG_101"):
+        a = reader.objectives_of(open(os.path.join(oc, "trial_38350133448", code + ".txt")).read())["objectives"]
+        stem = os.path.join(oc, "trial_38350787486", code)
+        b = reader.objectives_block(gzip.open(stem + ".html.gz", "rt").read(), open(stem + ".txt").read())
+        assert a == b["objectives"], (code, len(a), len(b["objectives"]))
+    # Las Positas lists the heading again in its DE section with nothing under it: the first with items wins.
+    lp = reader.objectives_of(open(os.path.join(oc, "trial_41595084107", "AF_1.txt")).read())
+    assert lp["objectives"][-1].startswith("Perform methods of aerobic assessment"), lp["objectives"][-1]
+    assert reader.objectives_of("Student Learning Outcomes:\n1. Do a thing.\nCourse Content:\nx")["objectives"] == []
 
 
 @check("the slices cover every wanted course once")
