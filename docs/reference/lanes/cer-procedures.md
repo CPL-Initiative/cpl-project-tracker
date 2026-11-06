@@ -76,7 +76,14 @@ units and credit lines. The **College matrix** is windowed like EACR's, shows un
 teaches a matching course, has arrow keys and a tooltip, and a content filter never drops a column. The page also offers
 both CSVs and **Create Handout** (the college's `library/cpl-opportunity/` visual). It writes nothing and remembers no
 filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19),
-`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width. *Worth a faculty review* (#2613) lists Credential
+`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width.
+**Sam's five asks on the page (2026-11-06, opening SkyAerial: "a good beginning for our credential registry"):** full width
+including the matrix; a matrix clickable where there is data; a working-adult first order instead of AP first; every
+filter multi-select, College and District as one picker (a district heads its colleges only where it has more than one)
+and SW Region and ASCCC Area as one Region picker under two headings; a mock to react to. Mock v1 on real rows:
+https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds (list grouped under field headers, largest work fields first and the
+exams last; Start with chips for five kinds of learner; a cell, a title or a column heading opens a side panel or picks the
+college). Waiting on his reaction before any port. *Worth a faculty review* (#2613) lists Credential
 Engine's top-50 credentials MAP has no exhibit for (28), from the hand check `kb/reference/credential_engine_top50_map_check.json`;
 the IT/AI catalog's own join now needs the issuer to agree and reads that check (#2615; in MAP 89 to 102).
 
