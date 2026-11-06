@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 582 (SkyMarkarian, scheduled routine firing, 2026-11-05 ~11:12Z to ~11:20Z)
 tags: [handoff, scheduled-sessions, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 583

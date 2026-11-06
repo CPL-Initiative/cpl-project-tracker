@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-04T06:23:08Z",
+ "generated_at": "2026-11-05T22:15:19Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -42,13 +42,13 @@
  ],
  "counts": {
   "ase": 0,
-  "numerals": 1,
+  "numerals": 9,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 1,
+ "local_titles": 9,
  "cards": [
   {
    "current": "American Sign Language III",
@@ -76,6 +76,222 @@
    "proposed_exists": true,
    "proposed_locals": 1,
    "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Life Drawing II",
+   "proposed": "Life Drawing 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Portfolio - Life Drawing II (ART 225B)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "ART 225B",
+     "credit": "3 hours in Life Drawing II"
+    }
+   ],
+   "id": "d71a56438e9f",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Painting II",
+   "proposed": "Painting 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Portfolio Painting II (ART 228)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "ART 228",
+     "credit": "3 hours in Painting II"
+    }
+   ],
+   "id": "da428ebe3e8a",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Wastewater Treatment and Disposal I",
+   "proposed": "Wastewater Treatment and Disposal 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 160",
+     "credit": "3 hours in Wastewater Treatment and Disposal I"
+    }
+   ],
+   "id": "1c976e1dc936",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Wastewater Treatment and Disposal II",
+   "proposed": "Wastewater Treatment and Disposal 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 161",
+     "credit": "3 hours in Wastewater Treatment and Disposal II"
+    }
+   ],
+   "id": "cf73ef447b24",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Water Distribution Operator I",
+   "proposed": "Water Distribution Operator 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam - Water Distribution Operator I (WATER 140)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 140",
+     "credit": "3 hours in Water Distribution Operator I"
+    }
+   ],
+   "id": "526541ef9df6",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Water Distribution Operator II",
+   "proposed": "Water Distribution Operator 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam - Water Distribution Operator II (WATER 141)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 141",
+     "credit": "3 hours in Water Distribution Operator II"
+    }
+   ],
+   "id": "79d52687daf7",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California State Water Resources Control Board (SWRCB)",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Water Treatment Plant Operation Processes I",
+   "proposed": "Water Treatment Plant Operation Processes 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 150",
+     "credit": "3 hours in Water Treatment Plant Operation Processes I"
+    }
+   ],
+   "id": "83124aed7ad4",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Water Treatment Plant Operation Processes II",
+   "proposed": "Water Treatment Plant Operation Processes 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 151",
+     "credit": "3 hours in Water Treatment Plant Operation Processes II"
+    }
+   ],
+   "id": "3cfb5d4cd5b3",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
    "current_locals": 1,
    "moves_all": true
   }

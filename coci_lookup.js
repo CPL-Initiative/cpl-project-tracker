@@ -193,7 +193,7 @@
     var key = college + "|" + codes[0];
     if (!outcomeCache[key]) {
       var url = REST + "/course_outcomes?select=course_code,heading,lead,outcomes,maps_to,shape,fingerprint," +
-        "source_url,source_kind,source_system,read_run,loaded_at&college=eq." + encodeURIComponent(college) +
+        "source_url,source_kind,source_system,read_run,loaded_at&kind=eq.slo&college=eq." + encodeURIComponent(college) +
         "&course_code=in.(" + codes.map(function (c) { return encodeURIComponent('"' + c.replace(/"/g, "") + '"'); }).join(",") + ")" +
         "&order=read_run.desc,id.desc";
       outcomeCache[key] = Promise.resolve().then(function () {

@@ -36,10 +36,10 @@ kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
 Allow-Once storm) ·
-[doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
-measurements behind these rules) ·
+[doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents
+behind these rules) · cobix_pr_loop ·
 [credential_watch_agent](docs/reference/credential_watch_agent.md) (the
-industry-credential watch) · `lanes/` (stubs below).
+industry-credential watch) · `lanes/`.
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
@@ -154,13 +154,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    one run). Sam's framing: Rule 8 is **ingest**, sessions are **query**.
 
    **Also: a row whose `source` or `verified_by` names a human may not be silently
-   superseded by a session's inference.** On 2026-08-08 Sam said *"Sierra only
-   lives in COBY for now"*; a later session read the code (three callers, one
-   shared function) and marked that row `superseded`. Both were true — his claim
-   was about **where the widget is deployed**, the code finding about **what it
-   calls** — but the fact left the default view, and he had to say it again on
-   2026-08-10. Supersede a human-sourced row only by saying so explicitly, or file
-   a new row and flag the conflict.
+   superseded by a session's inference.** Supersede a human-sourced row only by
+   saying so explicitly, or file a new row and flag the conflict (the 2026-08-08
+   Sierra row: [`doctrine_provenance`](docs/reference/doctrine_provenance.md)).
 
 9. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` first
    at every checkpoint** — the docs **lint** pass (Rule 8 is *ingest*, sessions
@@ -542,11 +538,9 @@ against, and the toggle history are in
   - **The `test` check must have succeeded on the current head before you
     merge (Sam's E ruling, amended to doctrine-level 2026-08-30).** GitHub
     cannot make it a required check without rejecting the cron's direct
-    pushes (measured live: a rules-active test declined all five of the
-    cron's push attempts with GH013), so the requirement is doctrine: poll
+    pushes (measured; `branch_policy`), so the requirement is doctrine: poll
     `get_check_runs` on the head until `test` (from `js-tests.yml`) reports
-    success — a docs-only diff finishes in ~2.5 min, a code diff ~11 (six
-    shards, 2026-10-31; balanced by measured time since, `tests/durations.json`) — and
+    success — a docs-only diff finishes in ~2.5 min, a code diff ~11 — and
     never merge past a pending or failing `test`. A failing `test` on your
     PR is yours to fix. Waiting for it is the one sanctioned merge wait.
   - **Beyond `test`, merge on `clean` or `unstable`.** `unstable` from any
@@ -587,8 +581,8 @@ file.
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
   **One departure (Sam, 2026-10-24):** the public `library/` page, Sierra and the adoption page take Malone's
-  CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view (S573,
-  2026-11-04; [lane](docs/reference/lanes/commons.md)).
+  CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view, the Library
+  and CPL Pathways (2026-11-04, -05, -06; [lane](docs/reference/lanes/commons.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
@@ -640,6 +634,9 @@ file.
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
     carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
     emoji, and a plain-words reading does not override his ruling.
+- **A figure card opens what it counts (Sam, 2026-11-05: *"this should be a rule for all visuals"*).** The figure is
+  the link, to the one place on the page or site that holds those items; a figure summed from many places stays plain
+  rather than pointing somewhere arbitrary. First built on ELL IET Version 5's top cards.
 - **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
   underlined at rest, 24px tall, a `<button>` where it acts; each view converts
   at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
@@ -683,16 +680,13 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 ## Obsidian vault wiring
 
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)**.
+Read it before vault-sync, exclusion, or the sparse-checkout fix. A checkpoint
+writes the vault, never the public KB. Three doc lanes — KB notes, lessons,
+handoffs: [`docs/INDEX.md`](docs/INDEX.md).
 
-Read it before vault-sync or vault-path work, Obsidian exclusion, or the
-sparse-checkout fix.
-
-Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
-which, the per-lane contract, and the KB-notes lane's author-at-final-quality
-rule: [`docs/INDEX.md`](docs/INDEX.md).
-
-**A checkpoint writes the vault, never the public KB**:
-[`obsidian_vault_wiring`](docs/reference/obsidian_vault_wiring.md).
+**LLM wiki.** `CPLBrain` (`samueltlee/CPLBrain#671`), beside the COG vault.
+Read root `index.md` first, or `/wiki-query`. Promote a settled decision or
+fact with `/wiki-ingest`. Captures still land where they land.
 
 ---
 

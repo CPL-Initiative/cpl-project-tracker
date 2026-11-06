@@ -1007,3 +1007,53 @@ line, and opens a list on the page after its heading, and `pdf_heading()`/`_pdf_
 never names (Business Administration A.S., Theater Arts A.A., Technical (Apparel Industry Orientation)): a COCI
 comparison finding. Its capture-only read (S413, run 39103943654) had found the same pages, the business certificates
 sharing pages 148-154 and two on the course availability table.
+
+## S523 SkyBarberry (2026-10-30, the CPL Queue routine): Glendale 80 to 105 passing, every course priced from its own description
+
+- **The state's file was never the whole list.** It leaves 51 Glendale credit courses unpriced, but the filed records
+  place 738 more codes it does not list for their program at all (CABOT 102, ART 130, ESL 151, NS 214). Pricing only the
+  51 lifted 80 to 91 (reconcile 41009271854). Pricing every description lifted it to 105 (reconcile 41012563119).
+- **Read the whole description section in windows, then parse it locally.** The page read prints at most 14 PDF pages
+  whole, so fifteen plans (`kb/college_reads/glendale_course_desc_01..15`, keyword `Units`) cover pages 98-307, three per
+  push (about 3,500 log lines a job, inside get_job_logs' 5,000). Descriptions start at page 128; windows 1-2 held
+  program pages. `kb/_description_units.py` parses the saved logs: a description prints "NUM · TITLE · N Units", then a
+  body naming the course, sometimes letter-spaced ("B I O L 2 9 8"), and the body's code is the key (ACCTG 121's title
+  changed; its code did not). 1,234 codes, plus 44 under the entry's prefix aliases and renumbers.
+- **Anchor a log parser on the fixed token and look backward.** A title pattern with nested quantifiers hung for minutes
+  on a 370,000-character log; matching each "· N Units" and reading the 160 characters before it runs in under a second.
+- **A plan file under `kb/college_reads/` is a read.** A push reads every plan its last commit adds, so a derived map
+  kept there would run as one. The map lives at `kb/program_requirements_units/glendale_community.json`; the step names it
+  as `units_file` (#2574). Only one run waits per concurrency group: a second push while one waits cancels the first, so
+  push the next batch only after the waiting run has started (part b's first push was canceled this way).
+- **Left at Glendale (155 failing arithmetic):** 71 records name no program total, the largest cause now; 48 sum unequal
+  to the printed total (36 before: pricing exposed sums that were hidden as incomplete); about 34 still lack a course's
+  units (13 of the original 51, ART 144-255, AT 138, NS 213, PE 217, POLS 110, THTR 192-193 and others, print no
+  description in this catalog). No model call this session.
+
+## S505 SkyBoysenberry (2026-10-28): Glendale 45 to 80 passing of its filed records, on its catalog's own words
+
+- **List the thin colleges live first (S442), and it named Glendale:** 220 loaded, 65 of 296 active programs passing,
+  the largest gap at a loaded college. 114 records failed arithmetic alone, as incomplete, and 54 failed outcomes.
+- **Three free page reads gave every fix its words** (`kb/college_reads/glendale_program_totals`,
+  `glendale_prefix_titles`, `glendale_theatre_program_pages`; runs 40690480267, 40692306069, 40701293232). The program
+  pages print the old prefixes and numbers (PSYCH 170, T ART 101, ENGL 101); the course descriptions print the state's
+  (PSYC 170 Sports Psychology, THTR 101, "C1000 · ... · (Previously ENGL 101)"). Glendale's reconcile entry files
+  PSYCH and TART as prefix aliases and ENGL 101, ENGL 104 and POL S 101 as renumbers. ART for ARTH stays out: no read
+  printed an ARTH description, and ART is a live Glendale prefix.
+- **The capture now looks for a listed course under an aliased prefix (4a925a33).** `with_renumbers` set `printed` for
+  renumbers only, so a program page printing TART codes named none of the THTR list and the THTR descriptions won the
+  page: three Theatre records read course descriptions. The page picker moved them to their program pages (88, 114,
+  123) and found two programs never filed (Theatre Arts: General 11176, Sociology 30813). A listed prefix that only
+  begins with an alias's (ARTH under ART) is never rewritten; guarded in `program_requirements_pilot_test`.
+- **The outcome scorer's no-space reading now joins line-end hyphens and fires on letter-spaced lines and spaced
+  semicolons (4e53790c).** Glendale's PDF prints "Fulﬁ ll requirements for transfer to a col-\nlege", "b e  a b l e
+  t o" and "occupations ;". The reading only adds; outcome failures went 54 to 0 on the reconcile (run 40711704988).
+- **The Edge Function's BOOT_ERROR (HTTP 503) is transient and leaves a record empty.** Three of 27 failed on run
+  40704760867, two again on the forced retry; the third forcing filed all (runs 40707595210, 40710163463). Check every
+  record's `error` after an extraction before any reread, and force the empty ones.
+- **A reread posts the newest run only,** so records filed by earlier runs on the branch need `force=<run>` each
+  (40704760867, 40710163463, 40707595210 after the reconcile's own).
+- **Left at Glendale:** 180 records fail arithmetic. Most are courses the state's file lists with no units (63 courses,
+  unspaced codes such as BIOL298, ACCTG101); their units print only in the course descriptions ("3.0 Units"), so a
+  reader step that takes a course's units from its description is next. Biotechnology 41767 sums 25-27 against its
+  printed 28-30, the catalog's own disagreement. Cost: $2.64 + about $0.40 in forced retries.

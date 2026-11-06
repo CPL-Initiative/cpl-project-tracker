@@ -1,88 +1,8 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-05T03:13:55Z",
- "count": 14,
+ "_generated_at": "2026-11-06T06:20:20Z",
+ "count": 1,
  "suggestions": {
-  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": [
-   {
-    "kind": "course",
-    "title": "Introduction to Water Systems Technology",
-    "code": "WATER 120",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": [
-   {
-    "kind": "course",
-    "title": "Wastewater Treatment and Disposal I",
-    "code": "WATER 160",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": [
-   {
-    "kind": "course",
-    "title": "Wastewater Treatment and Disposal II",
-    "code": "WATER 161",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Water Distribution Operator I (WATER 140)": [
-   {
-    "kind": "course",
-    "title": "Water Distribution Operator I",
-    "code": "WATER 140",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Water Distribution Operator II (WATER 141)": [
-   {
-    "kind": "course",
-    "title": "Water Distribution Operator II",
-    "code": "WATER 141",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": [
-   {
-    "kind": "course",
-    "title": "Water Treatment Plant Operation Processes I",
-    "code": "WATER 150",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": [
-   {
-    "kind": "course",
-    "title": "Water Treatment Plant Operation Processes II",
-    "code": "WATER 151",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "Credit by Exam - Waterworks Mathematics (WATER 130)": [
-   {
-    "kind": "course",
-    "title": "Waterworks Mathematics",
-    "code": "WATER 130",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
   "EET 222 Photovaltaic NABCEP for Solar Associates": [
    {
     "kind": "course",
@@ -92,68 +12,22 @@
     "colleges": 1,
     "scoped": true
    }
-  ],
-  "Portfolio - Life Drawing I (ART 225A)": [
-   {
-    "kind": "cid",
-    "id": "ARTS 200",
-    "title": "Figure Drawing",
-    "code": "ART 225A"
-   }
-  ],
-  "Portfolio - Life Drawing II (ART 225B)": [
-   {
-    "kind": "course",
-    "title": "Life Drawing II",
-    "code": "ART 225B",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "Portfolio - Painting I (ART 227)": [
-   {
-    "kind": "cid",
-    "id": "ARTS 210",
-    "title": "Introduction to Painting",
-    "code": "ART 227"
-   }
-  ],
-  "Portfolio - Watercolor Painting (ART 220)": [
-   {
-    "kind": "course",
-    "title": "Watercolor Painting",
-    "code": "ART 220",
-    "share": 1.0,
-    "colleges": 9,
-    "scoped": true
-   }
-  ],
-  "Portfolio Painting II (ART 228)": [
-   {
-    "kind": "course",
-    "title": "Painting II",
-    "code": "ART 228",
-    "share": 1.0,
-    "colleges": 3,
-    "scoped": true
-   }
   ]
  },
  "aligned": {
-  "Portfolio - Painting I (ART 227)": {
-   "kind": "cid",
-   "id": "ARTS 210",
-   "title": "Introduction to Painting",
-   "code": "ART 227",
-   "college": "College of the Canyons"
+  "LBCC Non-credit CONST 620 - Plumbing Fundamentals": {
+   "kind": "mid",
+   "id": "CNST M1077",
+   "title": "Plumbing Fundamentals",
+   "code": "CONST 220",
+   "college": "Long Beach City College"
   },
-  "Portfolio - Life Drawing I (ART 225A)": {
-   "kind": "cid",
-   "id": "ARTS 200",
-   "title": "Figure Drawing",
-   "code": "ART 225A",
-   "college": "College of the Canyons"
+  "LBCC Non-credt CONST 680 - Building Codes for Residential Construct": {
+   "kind": "mid",
+   "id": "CNST M1019",
+   "title": "Building Codes for Residential Construct",
+   "code": "CONST 280",
+   "college": "Long Beach City College"
   },
   "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
    "kind": "course",
@@ -166,93 +40,33 @@
     "ELEC M10AO"
    ]
   },
-  "Credit by Exam - Introduction to Water Systems Technology (WATER 120)": {
-   "kind": "course",
-   "id": "ENVS M10OW",
-   "title": "Introduction to Water Systems Technology",
-   "code": "WATER 120",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Waterworks Mathematics (WATER 130)": {
-   "kind": "cid",
-   "id": "WWTR 100 X",
-   "title": "Water and Wastewater Mathematics I",
-   "code": "WATER 130",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
-   "kind": "cid",
-   "id": "WWTR 150 X",
-   "title": "Water Treatment I",
-   "code": "WATER 150",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
-   "kind": "cid",
-   "id": "WWTR 120 X",
-   "title": "Wastewater Treatment II",
-   "code": "WATER 161",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Water Distribution Operator II (WATER 141)": {
-   "kind": "cid",
-   "id": "WWTR 140 X",
-   "title": "Water Distribution Operator II",
-   "code": "WATER 141",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
-   "kind": "cid",
-   "id": "WWTR 110 X",
-   "title": "Wastewater Treatment I",
-   "code": "WATER 160",
-   "college": "College of the Canyons",
-   "ambiguous": [
-    "WWTR 110 X",
-    "WWTR 120 X"
-   ]
-  },
-  "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
-   "kind": "cid",
-   "id": "WWTR 160 X",
-   "title": "Water Treatment II",
-   "code": "WATER 151",
-   "college": "College of the Canyons"
-  },
-  "Credit by Exam - Water Distribution Operator I (WATER 140)": {
-   "kind": "cid",
-   "id": "WWTR 130 X",
-   "title": "Water Distribution Operator I",
-   "code": "WATER 140",
-   "college": "College of the Canyons"
-  },
-  "Portfolio Painting II (ART 228)": {
-   "kind": "mid",
-   "id": "ARTS M1024",
-   "title": "Acrylic Painting 2",
-   "code": "ART 228",
-   "college": "College of the Canyons"
-  },
-  "Portfolio - Life Drawing II (ART 225B)": {
-   "kind": "mid",
-   "id": "ARTS M1370",
-   "title": "Life Drawing 2",
-   "code": "ART 225B",
-   "college": "College of the Canyons"
-  },
-  "Portfolio - Watercolor Painting (ART 220)": {
-   "kind": "cid",
-   "id": "ARTS 210",
-   "title": "Introduction to Painting",
-   "code": "ART 220",
-   "college": "College of the Canyons"
-  },
   "EET 222 Photovaltaic NABCEP for Solar Associates": {
    "kind": "course",
    "id": "ELCT M10EK",
    "title": "Photovoltaic NABCEP Test Preparation",
    "code": "E/ET 222",
    "college": "Laney College"
+  },
+  "LBCC Non-credit CONST 605 - Forklift Fundamentals": {
+   "kind": "mid",
+   "id": "CNST M1068",
+   "title": "Forklift Fundamentals",
+   "code": "CONST 205",
+   "college": "Long Beach City College"
+  },
+  "LBCC Non-credit CONST 675 - Contracting Laws and Management": {
+   "kind": "mid",
+   "id": "CNST M1052",
+   "title": "Contracting Laws and Management",
+   "code": "CONST 275",
+   "college": "Long Beach City College"
+  },
+  "LBCC Non-credit CONST 670 - Cost Estimating": {
+   "kind": "mid",
+   "id": "CNST M1055",
+   "title": "Cost Estimating",
+   "code": "CONST 70",
+   "college": "Long Beach City College"
   }
  }
 }

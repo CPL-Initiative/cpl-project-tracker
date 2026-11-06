@@ -4,10 +4,10 @@
   "supabase_tables": 106,
   "rpcs": 49,
   "edge_functions": 12,
-  "file_datasets": 792,
+  "file_datasets": 794,
   "external_services": 193,
-  "consumers": 521,
-  "workflows": 61,
+  "consumers": 523,
+  "workflows": 62,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -80,7 +80,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1445,
+     "line": 1447,
      "tabs": [
       "gr-priorities"
      ]
@@ -298,7 +298,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 28
+     "line": 34
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -421,7 +421,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 481,
+     "line": 485,
      "tabs": [
       "map-queue",
       "map-users"
@@ -437,7 +437,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 317
+     "line": 390
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -463,7 +463,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7467
+     "line": 7468
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -477,7 +477,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 130
+     "line": 149
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -491,7 +491,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 451
+     "line": 508
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -560,7 +560,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 350
+     "line": 398
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -610,7 +610,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 455,
+     "line": 459,
      "tabs": [
       "map-queue",
       "map-users"
@@ -734,7 +734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 470,
+     "line": 474,
      "tabs": [
       "map-queue",
       "map-users"
@@ -750,7 +750,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 341
+     "line": 414
     }
    ],
    "main_committers": []
@@ -762,7 +762,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 652
+     "line": 665
     }
    ],
    "main_committers": []
@@ -992,7 +992,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 595,
+     "line": 599,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1022,7 +1022,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 37
+     "line": 38
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1030,6 +1030,13 @@
      "direction": "read",
      "how": "url",
      "line": 33
+    },
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1523
     },
     {
      "id": "module:admin.js",
@@ -1046,7 +1053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 980,
+     "line": 1121,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -1107,7 +1114,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1411,
+     "line": 1415,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1237,7 +1244,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 26
+     "line": 32
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -1279,6 +1286,26 @@
      ]
     },
     {
+     "id": "module:cobi_refresh.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 17,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    },
+    {
+     "id": "module:cobi_refresh.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "seeded",
+     "line": 0,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    },
+    {
      "id": "module:college_report_generator.js",
      "kind": "module",
      "direction": "read",
@@ -1303,7 +1330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 158,
+     "line": 176,
      "pages": [
       "CPL_Dashboard.html",
       "kb-portal/index.html"
@@ -1357,13 +1384,6 @@
      ]
     },
     {
-     "id": "script:excel_to_dashboard.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 13557
-    },
-    {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "read",
@@ -1411,7 +1431,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2841,
+     "line": 2853,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1488,7 +1508,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 34
+     "line": 82
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -1507,7 +1527,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 436,
+     "line": 440,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1689,7 +1709,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2079
+     "line": 2152
     }
    ],
    "main_committers": []
@@ -1713,7 +1733,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1011,
+     "line": 1015,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1729,7 +1749,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 650,
+     "line": 654,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1755,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 38,
+     "line": 42,
      "tabs": [
       "commons"
      ]
@@ -1917,7 +1937,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 653,
+     "line": 657,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1933,7 +1953,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 721,
+     "line": 725,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2144,7 +2164,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2840,
+     "line": 2852,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2177,7 +2197,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 530,
+     "line": 534,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2193,7 +2213,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 727,
+     "line": 731,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2228,7 +2248,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 27
+     "line": 33
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -2314,7 +2334,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1120
+     "line": 1133
     }
    ],
    "main_committers": []
@@ -2333,7 +2353,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1465
+     "line": 1478
     },
     {
      "id": "module:college_briefing.js",
@@ -2500,7 +2520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 561,
+     "line": 565,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2516,7 +2536,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 564,
+     "line": 568,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2544,7 +2564,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 659,
+     "line": 663,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2587,7 +2607,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 448,
+     "line": 452,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2615,7 +2635,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 663,
+     "line": 667,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2631,7 +2651,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 582,
+     "line": 586,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2775,7 +2795,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 667,
+     "line": 671,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2817,7 +2837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1288,
+     "line": 1765,
      "tabs": [
       "library"
      ]
@@ -2861,7 +2881,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 427,
+     "line": 431,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2913,7 +2933,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 607,
+     "line": 611,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2929,7 +2949,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 610,
+     "line": 614,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2957,7 +2977,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 484,
+     "line": 488,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2983,6 +3003,13 @@
   },
   "external:studentrcc.sharepoint.com": {
    "consumers": [
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1534
+    },
     {
      "id": "module:dashboard_filters.js",
      "kind": "module",
@@ -3028,7 +3055,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 477,
+     "line": 481,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3079,7 +3106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1083,
+     "line": 1087,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3095,7 +3122,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 458,
+     "line": 462,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3111,7 +3138,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 461,
+     "line": 465,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3127,7 +3154,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 464,
+     "line": 468,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3143,7 +3170,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 467,
+     "line": 471,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3159,7 +3186,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 451,
+     "line": 455,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3175,7 +3202,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 692,
+     "line": 696,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3231,7 +3258,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2839,
+     "line": 2851,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3253,7 +3280,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 474,
+     "line": 478,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3269,7 +3296,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 685,
+     "line": 689,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3285,7 +3312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 642,
+     "line": 646,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3301,7 +3328,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 487,
+     "line": 491,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3317,7 +3344,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 495,
+     "line": 499,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3333,7 +3360,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 499,
+     "line": 503,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3349,7 +3376,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 491,
+     "line": 495,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3365,7 +3392,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 646,
+     "line": 650,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3381,7 +3408,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 503,
+     "line": 507,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3397,7 +3424,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 506,
+     "line": 510,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3432,7 +3459,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 509,
+     "line": 513,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3460,7 +3487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 440,
+     "line": 444,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3476,7 +3503,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 513,
+     "line": 517,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3492,7 +3519,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 416,
+     "line": 420,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3508,7 +3535,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 516,
+     "line": 520,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3564,7 +3591,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 656,
+     "line": 660,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3580,7 +3607,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 639,
+     "line": 643,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3596,7 +3623,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 444,
+     "line": 448,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3612,7 +3639,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 520,
+     "line": 524,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3628,7 +3655,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 524,
+     "line": 528,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3644,7 +3671,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 537,
+     "line": 541,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3660,7 +3687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 540,
+     "line": 544,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3676,7 +3703,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 544,
+     "line": 548,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3692,7 +3719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 534,
+     "line": 538,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3708,7 +3735,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 548,
+     "line": 552,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3724,7 +3751,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 527,
+     "line": 531,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3740,7 +3767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 552,
+     "line": 556,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3768,7 +3795,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 558,
+     "line": 562,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3784,7 +3811,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 555,
+     "line": 559,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3800,7 +3827,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1059,
+     "line": 1063,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3816,7 +3843,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 567,
+     "line": 571,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3844,7 +3871,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 571,
+     "line": 575,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3903,7 +3930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 575,
+     "line": 579,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3919,7 +3946,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 700,
+     "line": 704,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3935,7 +3962,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 578,
+     "line": 582,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3951,7 +3978,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1023,
+     "line": 1027,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3967,7 +3994,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 586,
+     "line": 590,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3983,7 +4010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 589,
+     "line": 593,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3999,7 +4026,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 706,
+     "line": 710,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4027,7 +4054,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 592,
+     "line": 596,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4043,7 +4070,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 599,
+     "line": 603,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4059,7 +4086,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1063,
+     "line": 1067,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4075,7 +4102,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 603,
+     "line": 607,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4091,7 +4118,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 431,
+     "line": 435,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4119,7 +4146,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 613,
+     "line": 617,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4135,7 +4162,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 616,
+     "line": 620,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4151,7 +4178,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 620,
+     "line": 624,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4197,7 +4224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2862,
+     "line": 2864,
      "tabs": [
       "gr-priorities"
      ]
@@ -4231,7 +4258,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 670,
+     "line": 674,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4263,7 +4290,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 623,
+     "line": 627,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4291,7 +4318,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1743
+     "line": 1816
     }
    ],
    "main_committers": []
@@ -4303,7 +4330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 712,
+     "line": 716,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4336,7 +4363,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2097,
+     "line": 2099,
      "tabs": [
       "gr-priorities"
      ]
@@ -5340,7 +5367,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1634
+     "line": 1707
     },
     {
      "id": "module:admin.js",
@@ -5408,6 +5435,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:cobi_refresh.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:coci_lookup.js": {
    "consumers": [
     {
@@ -5438,7 +5478,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 950,
+     "line": 1091,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5610,7 +5650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 710
+     "line": 723
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -5637,7 +5677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 952,
+     "line": 1093,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5789,7 +5829,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3142,
+     "line": 3419,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5830,7 +5870,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3088,
+     "line": 2941,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5840,7 +5880,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 225
+     "line": 283
     }
    ],
    "served": true,
@@ -6025,7 +6065,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 223
+     "line": 281
     },
     {
      "id": "script:kb/_apply_college_short_names.py",
@@ -6096,6 +6136,16 @@
      ]
     },
     {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3656,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -6113,6 +6163,16 @@
      "line": 2644,
      "tabs": [
       "exhibits"
+     ]
+    },
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2885,
+     "tabs": [
+      "library"
      ]
     },
     {
@@ -6331,7 +6391,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3740,
+     "line": 3643,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6401,7 +6461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3734,
+     "line": 3637,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6437,7 +6497,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2018
+     "line": 2091
     },
     {
      "id": "module:college_briefing.js",
@@ -6643,7 +6703,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1180
+     "line": 1193
     },
     {
      "id": "module:cpl_funding.js",
@@ -6734,7 +6794,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2231,
+     "line": 2243,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6784,7 +6844,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3700,
+     "line": 3603,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6807,7 +6867,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2403,
+     "line": 2415,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6863,14 +6923,14 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 323
+     "line": 336
     },
     {
      "id": "module:cpl_pathways.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3748,
+     "line": 3651,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7063,7 +7123,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3721,
+     "line": 3624,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8458,7 +8518,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13695
+     "line": 13679
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -8504,7 +8564,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13715
+     "line": 13699
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -8553,14 +8613,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 127
     },
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 120
+     "line": 136
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -8627,7 +8687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1773,
+     "line": 2250,
      "tabs": [
       "library"
      ]
@@ -8643,7 +8703,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1281,
+     "line": 1758,
      "tabs": [
       "library"
      ]
@@ -12726,7 +12786,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 615
     }
    ],
    "served": false,
@@ -17392,12 +17452,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1507,
+     "line": 1520,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
+      "cpl-pathways",
       "cr-reference",
       "exhibits",
+      "library",
       "program-requirements"
      ]
     },
@@ -18646,7 +18708,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 332
+     "line": 333
     }
    ],
    "served": true,
@@ -18703,7 +18765,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 280
+     "line": 283
     }
    ],
    "served": true,
@@ -18716,7 +18778,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1391,
+     "line": 1868,
      "tabs": [
       "library"
      ]
@@ -18754,6 +18816,13 @@
      "pages": [
       "fact-sheet/index.html"
      ]
+    },
+    {
+     "id": "page:library/cpl-initiative-overview/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 53
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -18893,7 +18962,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 224
+     "line": 282
     }
    ],
    "served": true,
@@ -19884,7 +19953,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 63
+     "line": 64
     }
    ],
    "served": false,
@@ -20436,7 +20505,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2868,
+     "line": 3501,
      "tabs": [
       "library"
      ]
@@ -20470,42 +20539,49 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 333
+     "line": 334
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 198
+     "line": 199
+    },
+    {
+     "id": "page:library/cpl-initiative-overview/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 329
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 282
+     "line": 348
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 406
+     "line": 407
     },
     {
      "id": "page:library/ell-iet-cpl-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 626
+     "line": 789
     },
     {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 282
+     "line": 285
     }
    ],
    "served": true,
@@ -20616,7 +20692,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 951,
+     "line": 1092,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -22333,6 +22409,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/refresh_button_no_secret_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/rekey_crnc_mirrors_test.py": {
    "consumers": [
     {
@@ -22948,7 +23037,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 951,
+     "line": 1092,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -23350,7 +23439,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 950,
+     "line": 1091,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -24091,7 +24180,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6386
+     "line": 6387
     },
     {
      "id": "module:admin.js",
@@ -24180,50 +24269,6 @@
    ],
    "main_committers": []
   },
-  "rpc:fin_pass_ok": {
-   "consumers": [
-    {
-     "id": "module:team_phrase.js",
-     "kind": "module",
-     "direction": "call",
-     "how": "seeded",
-     "line": 0,
-     "pages": [
-      "CPL_Dashboard.html",
-      "prototype/ccr_atlas_v1.html",
-      "prototype/skyview.html"
-     ]
-    }
-   ],
-   "main_committers": []
-  },
-  "rpc:gr_pass_ok": {
-   "consumers": [
-    {
-     "id": "module:gr_priorities.js",
-     "kind": "module",
-     "direction": "call",
-     "how": "literal",
-     "line": 116,
-     "tabs": [
-      "gr-priorities"
-     ]
-    },
-    {
-     "id": "module:team_phrase.js",
-     "kind": "module",
-     "direction": "call",
-     "how": "seeded",
-     "line": 0,
-     "pages": [
-      "CPL_Dashboard.html",
-      "prototype/ccr_atlas_v1.html",
-      "prototype/skyview.html"
-     ]
-    }
-   ],
-   "main_committers": []
-  },
   "rpc:is_allowed_reviewer": {
    "consumers": [
     {
@@ -24280,7 +24325,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 249,
+     "line": 253,
      "tabs": [
       "map-queue",
       "map-users"
@@ -24292,6 +24337,22 @@
      "direction": "call",
      "how": "literal",
      "line": 74
+    }
+   ],
+   "main_committers": []
+  },
+  "rpc:map_cpl_coordinator_compare": {
+   "consumers": [
+    {
+     "id": "module:map_users.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 2162,
+     "tabs": [
+      "map-queue",
+      "map-users"
+     ]
     }
    ],
    "main_committers": []
@@ -24325,7 +24386,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 277,
+     "line": 281,
      "tabs": [
       "map-queue",
       "map-users"
@@ -24365,7 +24426,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 231,
+     "line": 235,
      "tabs": [
       "map-queue",
       "map-users"
@@ -24381,7 +24442,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 7051
+     "line": 7052
     }
    ],
    "main_committers": []
@@ -24663,6 +24724,21 @@
      "direction": "call",
      "how": "literal",
      "line": 5631
+    }
+   ],
+   "main_committers": []
+  },
+  "rpc:team_pass_verify": {
+   "consumers": [
+    {
+     "id": "module:gr_priorities.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 118,
+     "tabs": [
+      "gr-priorities"
+     ]
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -24688,8 +24764,8 @@
      "id": "module:team_phrase.js",
      "kind": "module",
      "direction": "call",
-     "how": "seeded",
-     "line": 0,
+     "how": "literal",
+     "line": 109,
      "pages": [
       "CPL_Dashboard.html",
       "prototype/ccr_atlas_v1.html",
@@ -24875,7 +24951,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7737
+     "line": 7738
     },
     {
      "id": "module:sierra_training.js",
@@ -25082,7 +25158,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3272,
+     "line": 3140,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25114,7 +25190,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3275,
+     "line": 3143,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25214,7 +25290,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3274,
+     "line": 3142,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25366,7 +25442,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6573
+     "line": 6574
     }
    ],
    "main_committers": []
@@ -25390,7 +25466,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6637
+     "line": 6638
     },
     {
      "id": "module:college_briefing.js",
@@ -25635,7 +25711,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2001,
+     "line": 1305,
      "tabs": [
       "library"
      ]
@@ -25645,7 +25721,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 105
+     "line": 121
     }
    ],
    "main_committers": []
@@ -25935,7 +26011,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 544,
+     "line": 546,
      "tabs": [
       "gr-priorities"
      ]
@@ -25945,7 +26021,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 230,
+     "line": 232,
      "tabs": [
       "gr-priorities"
      ]
@@ -25960,7 +26036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 549,
+     "line": 551,
      "tabs": [
       "gr-priorities"
      ]
@@ -25970,7 +26046,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 236,
+     "line": 238,
      "tabs": [
       "gr-priorities"
      ]
@@ -25985,7 +26061,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 556,
+     "line": 558,
      "tabs": [
       "gr-priorities"
      ]
@@ -25995,7 +26071,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 251,
+     "line": 253,
      "tabs": [
       "gr-priorities"
      ]
@@ -26004,6 +26080,31 @@
    "main_committers": []
   },
   "supabase:gr_memos": {
+   "consumers": [
+    {
+     "id": "module:gr_priorities.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 552,
+     "tabs": [
+      "gr-priorities"
+     ]
+    },
+    {
+     "id": "module:gr_priorities.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 250,
+     "tabs": [
+      "gr-priorities"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
+  "supabase:gr_revisions": {
    "consumers": [
     {
      "id": "module:gr_priorities.js",
@@ -26020,32 +26121,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 248,
-     "tabs": [
-      "gr-priorities"
-     ]
-    }
-   ],
-   "main_committers": []
-  },
-  "supabase:gr_revisions": {
-   "consumers": [
-    {
-     "id": "module:gr_priorities.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 548,
-     "tabs": [
-      "gr-priorities"
-     ]
-    },
-    {
-     "id": "module:gr_priorities.js",
-     "kind": "module",
-     "direction": "write",
-     "how": "literal",
-     "line": 233,
+     "line": 235,
      "tabs": [
       "gr-priorities"
      ]
@@ -26633,7 +26709,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1336,
+     "line": 1340,
      "tabs": [
       "map-queue",
       "map-users"
@@ -26941,7 +27017,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1516,
+     "line": 1520,
      "tabs": [
       "map-queue",
       "map-users"
@@ -26952,7 +27028,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1509,
+     "line": 1513,
      "tabs": [
       "map-queue",
       "map-users"
@@ -26975,7 +27051,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 354,
+     "line": 358,
      "tabs": [
       "map-queue",
       "map-users"
@@ -27052,7 +27128,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 790,
+     "line": 794,
      "tabs": [
       "map-queue",
       "map-users"
@@ -27112,7 +27188,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1146,
+     "line": 1150,
      "tabs": [
       "map-queue",
       "map-users"
@@ -27128,7 +27204,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1171,
+     "line": 1175,
      "tabs": [
       "map-queue",
       "map-users"
@@ -27139,7 +27215,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1200,
+     "line": 1204,
      "tabs": [
       "map-queue",
       "map-users"
@@ -27410,7 +27486,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 937,
+     "line": 1078,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -27421,7 +27497,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1616,
+     "line": 1628,
      "tabs": [
       "cpl-pathways"
      ]
@@ -27493,7 +27569,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 932,
+     "line": 1073,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -27504,7 +27580,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1617,
+     "line": 1629,
      "tabs": [
       "cpl-pathways"
      ]
@@ -27780,7 +27856,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6722
+     "line": 6723
     },
     {
      "id": "module:sierra_training.js",
@@ -27960,7 +28036,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 104
+     "line": 108
     }
    ],
    "main_committers": []
@@ -28164,6 +28240,21 @@
     }
    ],
    "main_committers": []
+  },
+  "workflow:daily-dashboard.yml": {
+   "consumers": [
+    {
+     "id": "module:cobi_refresh.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "seeded",
+     "line": 0,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    }
+   ],
+   "main_committers": []
   }
  },
  "module_tabs": {
@@ -28217,8 +28308,10 @@
   "commons_list.js": [
    "canonical-subj4",
    "coci-lookup",
+   "cpl-pathways",
    "cr-reference",
    "exhibits",
+   "library",
    "program-requirements"
   ],
   "commons_look.js": [
@@ -28420,6 +28513,16 @@
     "kb/exhibits_sweep.json",
     "kb/status/commons.json"
    ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "cobix-review.yml": {
+   "name": "cobix-review",
+   "crons": [],
+   "scripts": [],
+   "adds": [],
    "push": null,
    "deploys": [],
    "chain": [],
@@ -28981,6 +29084,7 @@
     "tests/governance_docs_panel.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
+    "tests/refresh_button_no_secret_test.py",
     "tests/supabase_table_grants_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",

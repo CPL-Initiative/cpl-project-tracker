@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-05_library_ell_iet_v4_stored_draft.sql",
+ "name": "skyroundoff_library_ell_iet_v4_stored_draft",
+ "version": "20261105160035",
+ "sha256": "a7b8838fc717cb850b09596052a62b9e76d050d9d61fc2925c93defdc6866b21",
+ "run": "42060338692",
+ "status": 201,
+ "response": "[{\"slug\":\"ell-iet-cpl-starting-points\",\"regen\":{\"earlier\":[{\"note\":null,\"draft_id\":\"b1925d33-55e6-4de2-9499-ffae8b15aa31\",\"ready_at\":\"2026-11-05T15:44:08.080Z\",\"draft_url\":null,\"set_aside\":\"SkyRoundoff built Version 4 in a session from the vault source, at SkyComet's brief\",\"drafted_with\":\"library-revise-draft\",\"requested_by\":\"Sam\"}],\"publish\":\"show\",\"draft_id\":\"a0ac81de-caf6-43b4-9e0e-fb0589f6b309\",\"ready_at\":\"2026-11-05T16:00:35Z\",\"draft_url\":\"https://claude.ai/artifact/XhDFfPrT33opjRqTAzKpRN\",\"drafted_by\":\"SkyRoundoff (session)\",\"drafted_with\":\"session\",\"requested_at\":\"2026-11-05T15:42:20.042Z\",\"requested_by\":\"Sam\"},\"updated_at\":\"2026-11-05 16:00:35.940116+00\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

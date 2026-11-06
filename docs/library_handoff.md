@@ -1,66 +1,59 @@
 ---
-title: Library — side-lane handoff (SkyChokeberry, beside S520)
-date: 2026-10-29
-tags: [handoff, library, remediation, side-lane]
+title: Library — side-lane handoff (SkyBackflip, beside the CPL Queue routine)
+date: 2026-11-06
+tags: [handoff, library, cpl-pathways, my-college, side-lane]
 related:
   - "[[docs/reference/lanes/library]]"
+  - "[[docs/reference/lanes/my-college-action-page]]"
   - "[[docs/library_lessons]]"
 ---
 
 # Library — side-lane handoff
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 520
-> (in #2560) belongs to S520 SkyLingonberry, the funding session running beside this one, and its
-> checkpoint writes 521. This was a **light checkpoint** (no §11 row moved, no re-mint, no Rule 10
-> data write).
+> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 587 names SkyWhirlpool for
+> the main queue, and this file stays out of its way. Light Rule 9 checkpoint (2026-11-06, ~05:30Z): no §11 row moved,
+> no re-mint; one Rule 10 receipt (below). Skipped: `kb/README.md`, `README.md`, the lessons doc, KB notes, the pipeline
+> view, the four other status files and the decision sheet rebuild (no card changed).
 
-Your moniker is **SkyJuneberry**. You are picking up the **Library** lane after SkyChokeberry, a side session Sam ran on 2026-10-29
-while S519 wrapped up and S520 worked funding. Read in order:
-1. [`docs/reference/lanes/library.md`](reference/lanes/library.md), item ⑪ at the foot.
-2. [`docs/library_lessons.md`](library_lessons.md): *A form's limit must be the column's* and
-   *Moved from the lane (S520's side session)*, both at the end.
+Your moniker is **SkyAerial**. You pick up after SkyBackflip (2026-11-06), on two lanes: the **Library**
+([`library`](reference/lanes/library.md), *Next*) and the college pages inside
+[`my-college-action-page`](reference/lanes/my-college-action-page.md).
 
 ## What shipped
-- **#2564, merged b1585e3b, live on Pages:** Revise and remediate from the one box. The panel is
-  *Create, Revise or Remediate a Document*; it finds a piece already here by a picker label naming
-  its kind, its own link, a file named for it, or the card's **Revise and remediate** or **Edit**.
-  Edit lives only in the box now. Word files are read in the browser. Instructions past
-  `refresh_note`'s 600 characters go whole into `sources`. Every revision request's paste asks the
-  session to remediate the draft before it comes back; `scheduled_sessions` step 6 says the same.
-  Regenerate's form and its publish question are gone. Test `library` 263/263, block (19).
-- **The cause of Sam's report:** his ELL revision never saved. Regenerate's box allowed 4,000
-  characters, the column holds 600, and the refusal printed far above the card.
-- **Mockup Version 21** sits beside Version 20 on the same canvas:
-  https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR.
-- **Outside the repo:** Sam's summit deck (*0950-1045 1.4 Leading CPL Forward*), handed to him in
-  chat as `_2.pptx`: Shelly's (17-20) and Sharon's (21-34) slides restyled to his section's look, and
-  his speaker scripts, low key and high level at his ask, in the notes of 7, 8 and 10-16 (9 kept his
-  own). The script text and the build are in the vault (see the session note).
+- **CPL Pathways in the new format** (#2831, merged on green `test`): the College select comes first and the tab asks
+  for a college until one is chosen; a college shows five figure cards (Pathways, Carry CPL here, Could adopt, For
+  consideration, Confirmed; each sets the List's filter), the program-data line, one read-only List of its pathways on
+  `commons_list.js`, and the My College fold. A title opens the pathway full width; *Back to <college>'s pathways*
+  returns to the List as left. The Pathway select, its search box and Clear are retired. `commons_list.js` gained
+  `open(r)`; the tab joined `commons_look.js`. Mockup https://claude.ai/artifact/R3knxBm8aG9D3FMryD377y (Cerritos, real rows).
+- **The ELL IET record's versions** (applied through the MCP, receipt
+  `kb/receipts/cpl_library_skybackflip_ell_versions_tidy_2026-11-06.sql`, rollback inside): Versions 3 and 4 read
+  *Replaced by v4* and *Replaced by v5*; Version 5 stays *Current*.
 
-## Decisions Sam made this run (cpl_memory `sam-library-revise-from-the-box-2026-10-29`, verified)
-- Fold Edit and Regenerate for existing pieces into the one box; keep its simplicity.
-- *"could be as simple as choosing an existing item in the drop box"*; each label names its kind.
-- *"Maybe make Revise 'Revise and Remediate'"*: every rebuild is remediated.
-- For his deck: style everything on his slides; a script in his slides' notes only; *"low key and
-  higher elevation even though there is a lot of content."*
+## Decisions Sam made this run
+- *"Require college first"*: no All colleges, no statewide search.
+- *"Yes to all"*, on call 1 and the two differences from the mockup: the fourth card counts programs *For consideration*
+  (My College's figure left the cards), and the college picker stays at the top while a pathway is open.
 
-## Next
-1. **Sam re-enters the ELL revision** with Revise and remediate (the first never saved). The overnight
-   queue run picks it up (step 6); his Copy the request starts it sooner.
-2. **The daytime Library run (Sheet 131)** still does not exist; only the overnight queue routine
-   does (`list_triggers`, 2026-10-29). It waits on Sam, from claude.ai's routines page.
-3. **The box cannot combine two decks** (Sam asked; one file at a time, and a brief keeps no bytes).
-   A session with the files does it today (python-pptx and LibreOffice are in the image). Worth a
-   card if he asks again.
-4. **Slides 18 and 20 of the summit deck are SmartArt**, left for Sam by hand; slide 14's notes flag
-   $1,893,023 (the page's noncredit Total Possible) against $1,783,399 (slide 9's script), handed to
-   S520's funding session.
+## Open work, in order
+1. **Sam's eyes on CPL Pathways in a browser** once Pages has deployed #2831 (Cerritos, then a college with no catalog
+   records, such as Santiago Canyon).
+2. **A rendered a11y target for the CPL Opportunity visual:** `cpl-opportunity` in `a11y.config.js` measures only the
+   empty picker. A seeded target with `?college=` would load ~45 MB; axe on the rendered Cerritos page passed by hand.
+3. **Sierra Training's *Try it in: My College*** still targets the hidden My College tab (lane, *combined tab* entry).
+4. The Library lane's standing *Next* (Coordinator Guide Pages copy, IACA, the Microsoft 365 connector; *Replace now*
+   is Sam's call).
 
-## Skipped on this light checkpoint
-§11 row (state unchanged), `kb/README.md`, `README.md`, KB notes (the pitfall went to `cpl_memory`
-as `pitfall-form-limit-must-match-column-2026-10-29`, proposed), the Pipeline tab, and the
-`kb/status/` files (S520's; this run touched no common reference).
+## Patterns that worked
+- A routed screenshot: Playwright's `page.route` served Supabase rows read through the MCP, so a local page painted
+  real figures where the sandbox cannot reach `*.supabase.co`.
+- One shared driver for a tab's tests (`tests/cpl_pathways_drive.js`): when the way in changes, the tests change in one
+  place and keep guarding what lies behind it.
+- The statewide index stays light; per-college figures come from one read the status line already made.
 
 ## Let go
-PR subscription on #2564 dropped at merge; the safety check-in deleted. The watch on the mockup
-canvas ends with this session.
+PR #2831 merged and its subscription ended; the safety-net check-in fired and is spent. No check-ins remain. The artifact
+watches on both mockup canvases end with the session.
+
+> *Greetings, you are SkyAerial, a Library side session beside the CPL Queue routine, see SkyBackflip's handoff —
+> `docs/library_handoff.md` — let's keep rolling with our queue.*

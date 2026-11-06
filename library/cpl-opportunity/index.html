@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CPL Opportunity Analysis</title>
 <meta name="description" content="One California community college's credit for prior learning opportunities: its COCI programs and courses, its MAP exhibits, and the statewide credit recommendations it could adopt.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <!--
   The shareable CPL opportunity visual (Ashley and Sam, 2026-10-20): one page per
   college, addressed as ?college=<name>, built in the browser by
@@ -26,74 +26,131 @@
 try{a(localStorage.getItem("cpl_theme"))}catch(e){}
 window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newValue)})})()</script>
 <style>
-  /* First Light (docs/kb-notes/reference-ui-design-system.md): the light identity, one opt-in dark palette. */
+  /* The public library's look (Sam, 2026-11-06: the visual in the new format; tokens are library/index.html's).
+     Dark only when the reader picks it. Figure cards over one course list and a side panel per course. */
   :root {
-    --paper: #F4F2ED; --surface: #FFFFFF; --surface-subtle: #F7F5F1; --text-strong: #1C1C1A; --text-body: #3A3A36;
-    --text-muted: #5C5C55; --border: rgba(28,28,26,.14); --cobalt: #0047AB; --seal-blue: #002F6D;
-    --bar-hi: #0047AB; --bar-me: #7DA1D4; --bar-lo: #D6D2C8; --on-accent: #FFFFFF;
-    --display: "Playfair Display", Georgia, serif; --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --page: #F5FAFF; --page-end: #EEF6FB; --surface: #FFFFFF; --hero-end: #EAF4FB;
+    --ink: #17243B; --muted: #58677D; --heading: #082B61; --title: #072C66;
+    --link: #0D5BC6; --accent: #1671D9; --gold: #F4B300;
+    --line: #D9E4EF; --line-strong: #A9C8E5; --header-line: #E8EEF5; --shadow: rgba(8, 43, 97, .10);
+    --pill-bg: #EAF4FE; --sel-bg: #EAF4FE; --zebra: #FAFCFF;
+    --bar-hi: #1671D9; --bar-me: #7FA9D9; --bar-lo: #CFDDEB;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --gutter-l: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-left, 0px));
+    --gutter-r: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-right, 0px));
+    --cpl-measure: none;
     /* The Ask Sierra chip and side bar (../../sierra/sidebar.js) take this page's look, as on the CPL Library. */
-    --sierra-bar-bg: var(--surface); --sierra-bar-ink: var(--text-body); --sierra-bar-heading: var(--text-strong); --sierra-bar-link: var(--cobalt);
-    --sierra-bar-line: var(--border); --sierra-bar-focus: var(--cobalt); --sierra-bar-chip-bg: var(--cobalt); --sierra-bar-chip-ink: var(--on-accent);
-    --sierra-bar-shadow: var(--border); --sierra-bar-head-font: var(--display);
+    --sierra-bar-bg: var(--surface); --sierra-bar-ink: var(--ink); --sierra-bar-heading: var(--heading); --sierra-bar-link: var(--link);
+    --sierra-bar-line: var(--line); --sierra-bar-focus: var(--accent); --sierra-bar-chip-bg: var(--link); --sierra-bar-chip-ink: var(--surface);
+    --sierra-bar-shadow: var(--shadow); --sierra-bar-head-font: var(--serif);
     color-scheme: light;
   }
   :root[data-theme="dark"] {
-    --paper: #1E1E21; --surface: #27272E; --surface-subtle: #2D2D34; --text-strong: #F2F0EA; --text-body: #DAD7CF;
-    --text-muted: #B4B1A8; --border: rgba(242,240,234,.16); --cobalt: #7DA1D4; --seal-blue: #7DA1D4;
-    --bar-hi: #7DA1D4; --bar-me: #46628A; --bar-lo: #4A4A50; --on-accent: #1E1E21; color-scheme: dark; }
-  body { margin: 0; background: var(--paper); color: var(--text-body); font: 16px/1.55 var(--body); }
-  .skip { position: absolute; left: -999px; top: 8px; background: var(--surface); color: var(--cobalt); padding: 8px 12px; }
+    --page: #0B1628; --page-end: #0E1D33; --surface: #12233D; --hero-end: #10284A;
+    --ink: #E3EAF4; --muted: #A9B7CA; --heading: #D5E3F7; --title: #E8F0FB;
+    --link: #8DBDF5; --accent: #8DBDF5; --gold: #F2B527;
+    --line: #2A3E5C; --line-strong: #4B6B95; --header-line: #22344F; --shadow: rgba(0, 0, 0, .35);
+    --pill-bg: #1B3356; --sel-bg: #1B3356; --zebra: #142A47;
+    --bar-hi: #8DBDF5; --bar-me: #4B6B95; --bar-lo: #2A3E5C;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); background: var(--page); background-image: linear-gradient(180deg, var(--surface) 0, var(--page) 38rem, var(--page-end) 100%);
+    font-family: var(--sans); font-size: clamp(1rem, .97rem + .15vw, 1.06rem); line-height: 1.55; }
+  .skip { position: absolute; left: -999px; top: 8px; z-index: 60; background: var(--surface); color: var(--link); padding: 8px 12px; }
   .skip:focus { left: 16px; }
-  main { max-width: 1180px; margin: 0 auto; padding: 28px 16px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
-  html.sbar-chip-on main { padding-bottom: 88px; } /* the last line clears the Ask Sierra chip (16px up, 48px tall) */
-  h1, h2 { font-family: var(--display); color: var(--text-strong); margin: 0; text-wrap: balance; }
-  h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; }
-  h2 { font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
-  section { display: grid; gap: 12px; min-width: 0; }
-  a { color: var(--cobalt); }
-  :focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
-  #cpo-root { display: grid; gap: 30px; min-width: 0; }
-  .cpo-pick { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .cpo-pick select, .cpo-f select, .cpo-f input { font: inherit; min-height: 32px; padding: 2px 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text-body); max-width: 100%; }
-  .cpo-status { color: var(--text-muted); }
-  .cpo-head { display: grid; gap: 8px; }
-  .cpo-eyebrow { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
-  .cpo-acts { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .cpo-act { font: inherit; font-weight: 600; color: var(--cobalt); background: none; border: 0; padding: 0; min-height: 24px; text-decoration: underline; cursor: pointer; }
+  html.sbar-chip-on main { padding-bottom: 72px; } /* the last line clears the Ask Sierra chip */
+  h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; color: var(--heading); text-wrap: balance; }
+  h2 { font-size: clamp(1.3rem, 1.05rem + .9vw, 1.7rem); line-height: 1.2; }
+  h3 { font-size: 1rem; font-family: var(--sans); }
+  p { margin: 0; max-width: var(--cpl-measure, none); }
+  a { color: var(--link); text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button { font: inherit; }
+  .cpo-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .cpo-pick { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--surface);
+    padding: 18px var(--gutter-r) 0 var(--gutter-l); }
+  .cpo-pick label { color: var(--muted); font-size: .95rem; }
+  .cpo-pick select, .cpo-find input { font: inherit; min-height: 40px; padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 8px;
+    background: var(--surface); color: var(--ink); max-width: 100%; }
+  .cpo-status { color: var(--muted); font-size: .92rem; }
+  .cpo-hero { border-bottom: 1px solid var(--line); background: linear-gradient(90deg, var(--surface) 0%, var(--surface) 50%, var(--page) 75%, var(--hero-end) 100%); }
+  .cpo-hero-in { padding: clamp(22px, 3vw, 36px) var(--gutter-r) clamp(28px, 4vw, 40px) var(--gutter-l); display: grid; }
+  .cpo-eyebrow { color: var(--muted); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .cpo-hero .cpo-eyebrow { margin-bottom: 12px; }
+  .cpo-hero h1 { color: var(--title); font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); line-height: 1.04; letter-spacing: -.02em; }
+  .cpo-rule { width: 66px; height: 4px; margin: 18px 0 20px; background: var(--gold); }
+  .cpo-lede { font-size: clamp(1.02rem, 1rem + .25vw, 1.15rem); max-width: 60rem; }
+  .cpo-acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; margin-top: 16px; }
+  .cpo-act, .cpo-word { background: none; border: 0; padding: 0 2px; min-height: 24px; color: var(--link); text-decoration: underline;
+    text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer; text-align: left; }
+  .cpo-act { font-weight: 600; }
+  .cpo-word[aria-pressed="true"] { color: var(--heading); font-weight: 700; text-decoration-thickness: 3px; text-decoration-color: var(--accent); }
   .cpo-share { font-size: .92rem; overflow-wrap: anywhere; }
-  .cpo-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
-  .cpo-fact { border-top: 2px solid var(--text-strong); padding-top: 8px; display: grid; gap: 2px; }
-  .cpo-fact b { font: 700 1.6rem/1.1 var(--display); color: var(--text-strong); font-variant-numeric: tabular-nums; }
-  .cpo-fact span { font-size: .9rem; color: var(--text-muted); }
-  .cpo-note { font-size: .9rem; color: var(--text-muted); margin: 0; }
+  .cpo-body { padding: 28px var(--gutter-r) 64px var(--gutter-l); display: grid; gap: 24px; min-width: 0; }
+  section { display: grid; gap: 12px; min-width: 0; }
+  .cpo-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+  .cpo-card { display: grid; align-content: start; gap: 4px; text-align: left; cursor: pointer; min-width: 0; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 11px; padding: 18px 19px; }
+  .cpo-card:hover { border-color: var(--line-strong); box-shadow: 0 12px 24px var(--shadow); }
+  .cpo-card[aria-pressed="true"] { border: 2px solid var(--accent); padding: 17px 18px; }
+  .cpo-fig { font-family: var(--serif); font-size: clamp(1.6rem, 1.3rem + .8vw, 2rem); line-height: 1.1; color: var(--title);
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; font-variant-numeric: tabular-nums; }
+  .cpo-clabel { font-weight: 700; color: var(--heading); font-size: .97rem; }
+  .cpo-csub { color: var(--muted); font-size: .88rem; line-height: 1.45; }
+  .cpo-views { display: flex; flex-wrap: wrap; gap: 6px 18px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .cpo-tools { display: flex; flex-wrap: wrap; align-items: end; gap: 12px 24px; }
+  .cpo-find { display: grid; gap: 4px; }
+  .cpo-find label { color: var(--muted); font-size: .88rem; }
+  .cpo-find input { width: min(360px, 84vw); }
+  .cpo-wg { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; font-size: .95rem; }
+  .cpo-wl { color: var(--muted); }
+  .cpo-count, .cpo-note { color: var(--muted); font-size: .9rem; }
+  .cpo-muted { color: var(--muted); font-size: .88rem; }
+  .cpo-split { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
+  .cpo-listcol { flex: 999 1 560px; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; justify-items: start; }
+  .cpo-listcol > .cpo-tbl { justify-self: stretch; }
+  .cpo-tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .9rem; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--header-line); vertical-align: top; overflow-wrap: anywhere; }
+  th { color: var(--heading); font-weight: 700; background: var(--page); }
+  tbody tr:nth-child(even) { background: var(--zebra); }
+  tbody tr.cpo-sel { background: var(--sel-bg); box-shadow: inset 4px 0 0 var(--accent); }
+  .cpo-num { text-align: right; font-variant-numeric: tabular-nums; }
+  .cpo-rowbtn { background: none; border: 0; padding: 0; min-height: 24px; color: var(--link); font-weight: 700; text-decoration: underline;
+    text-underline-offset: 3px; cursor: pointer; text-align: left; overflow-wrap: anywhere; }
+  .cpo-stw { display: block; }
+  .cpo-st-could-adopt .cpo-stw:first-child, .cpo-hi { font-weight: 700; color: var(--heading); }
+  .cpo-adopt { position: relative; display: inline-block; min-height: 24px; line-height: 24px; font-weight: 600; font-size: .86rem; }
+  .cpo-panel { flex: 1 1 340px; max-width: 460px; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 11px;
+    padding: 20px 22px; display: grid; gap: 12px; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto; }
+  .cpo-panel h2 { font-size: 1.35rem; }
+  .cpo-ptop { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .cpo-pra { font-size: .95rem; }
+  .cpo-pra a { font-weight: 700; }
+  .cpo-pitem { border-top: 1px solid var(--header-line); padding-top: 10px; display: grid; gap: 4px; font-size: .92rem; }
+  .cpo-pre { white-space: pre-line; font-size: .92rem; }
+  .cpo-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cpo-chip { position: relative; display: inline-flex; align-items: center; min-height: 24px; padding: 0 9px; border-radius: 10px; font-size: .82rem; font-weight: 600;
+    color: var(--link); background: var(--pill-bg); border: 1px solid var(--line); text-decoration: underline; }
+  .cpo-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   /* The MAP team's notes on one college (notes/<slug>.json), body-sized like the page's prose. */
-  .cpo-notes h3 { font-family: var(--display); color: var(--text-strong); font-size: 1.1rem; margin: 6px 0 0; }
-  .cpo-notes p, .cpo-notes ul { margin: 0; color: var(--text-body); font-size: 1rem; }
+  .cpo-notes { background: var(--surface); border: 1px solid var(--line); border-radius: 11px; padding: 18px 20px; }
+  .cpo-notes h3 { font-family: var(--serif); color: var(--heading); font-size: 1.1rem; margin: 6px 0 0; }
+  .cpo-notes p, .cpo-notes ul { margin: 0; color: var(--ink); font-size: 1rem; }
   .cpo-notes ul { padding-left: 1.2em; }
   .cpo-notes li { margin: 2px 0; }
-  .cpo-notes a { color: var(--cobalt); }
-  .cpo-filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
-  .cpo-f { display: grid; gap: 2px; font-size: .85rem; color: var(--text-muted); }
-  .cpo-count { font-size: .85rem; color: var(--text-muted); }
-  .cpo-tbl { overflow: auto; max-height: 70vh; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
-  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--text-strong); font-weight: 600; background: var(--surface-subtle); position: sticky; top: 0; }
-  .cpo-adopt { display: inline-block; font-weight: 700; color: var(--on-accent); background: var(--seal-blue); padding: 4px 10px; border-radius: 6px; text-decoration: underline; white-space: nowrap; }
-  .cpo-muted { color: var(--text-muted); font-size: .85rem; }
-  /* An exhibit ID and the college that built it in MAP; the chip opens MAP searched for that ID (Sam, 2026-10-26). */
-  .cpo-xid { display: inline-flex; align-items: center; gap: 4px; margin: 0 8px 4px 0; white-space: nowrap; }
-  .cpo-chip { position: relative; display: inline-flex; align-items: center; min-height: 24px; padding: 0 8px; border-radius: 10px; font-size: .8rem; font-weight: 600;
-    color: var(--cobalt); background: var(--surface-subtle); border: 1px solid var(--border); text-decoration: underline; }
-  .cpo-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .cpo-legend { display: flex; gap: 16px; font-size: .85rem; color: var(--text-muted); }
+  .cpo-legend { display: flex; gap: 16px; font-size: .85rem; color: var(--muted); }
   .cpo-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
   .cpo-legend .hi, .cpo-seg.hi { background: var(--bar-hi); } .cpo-legend .me, .cpo-seg.me { background: var(--bar-me); } .cpo-legend .lo, .cpo-seg.lo { background: var(--bar-lo); }
-  .cpo-bar-row { display: grid; grid-template-columns: minmax(120px, 240px) 1fr 200px; gap: 10px; align-items: center; font-size: .9rem; }
-  .cpo-bar { display: flex; height: 14px; background: var(--surface-subtle); border-radius: 3px; overflow: hidden; }
-  .cpo-bar-n { color: var(--text-muted); font-size: .82rem; font-variant-numeric: tabular-nums; }
-  @media (max-width: 560px) { .cpo-bar-row { grid-template-columns: 1fr; gap: 4px; } }
+  .cpo-bar-row { display: grid; grid-template-columns: minmax(140px, 260px) 1fr 200px; gap: 10px; align-items: center; font-size: .92rem; }
+  .cpo-bar { display: flex; height: 14px; background: var(--page); border: 1px solid var(--header-line); border-radius: 3px; overflow: hidden; }
+  .cpo-bar-n { color: var(--muted); font-size: .84rem; font-variant-numeric: tabular-nums; }
+  @media (max-width: 1100px) { .cpo-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 900px) { .cpo-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cpo-panel { position: static; max-height: none; max-width: none; } }
+  @media (max-width: 560px) { .cpo-cards { grid-template-columns: 1fr; } table { min-width: 640px; } .cpo-bar-row { grid-template-columns: 1fr; gap: 4px; } }
+  @media print { .cpo-panel, .cpo-pick, .cpo-acts, .cpo-tools, .cpo-views, .cpo-more, .skip { display: none !important; } .cpo-tbl { overflow: visible; } body { background: #fff; } }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 </head>
@@ -146,6 +203,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
         <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
         <div class="cplh-panel" id="cplh-panel" hidden>
           <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener" aria-describedby="cplh-d-about">The CPL Initiative</a><span class="cplh-desc" id="cplh-d-about">What the Chancellor&#x27;s Office CPL Initiative does, in one page</span></li>
             <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
             <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
             <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
@@ -218,7 +276,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     <select id="cpo-college" disabled><option value="">Loading the college list…</option></select>
     <span class="cpo-status" id="cpo-status" role="status">The first build reads about 45 MB of COBI data.</span>
   </div>
-  <div id="cpo-root"><h1>CPL opportunity analysis</h1></div>
+  <div id="cpo-root"><div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis</h1></div></div></div>
 </main>
 <script src="../../college_short_names.js"></script>
 <script src="../../map_links.js"></script>
@@ -233,11 +291,13 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     s.src = src; s.onload = cb; s.onerror = cb;
     document.head.appendChild(s);
   }
+  var first = true, draftOn = false;
+  try { draftOn = new URLSearchParams(location.search).get("draft") === "1"; } catch (e) { /* the public notes */ }
   function wanted() {
     try { return new URLSearchParams(location.search).get("college") || ""; } catch (e) { return ""; }
   }
   function show(college) {
-    if (!college) { root.innerHTML = '<h1>CPL opportunity analysis</h1><p class="cpo-note">Choose a college to see its CPL opportunities.</p>'; return; }
+    if (!college) { root.innerHTML = '<div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis</h1><p class="cpo-lede">Choose a college to see its CPL opportunities.</p></div></div>'; return; }
     status.textContent = "Building " + college + "…";
     W.prepare({ college: college, loadScript: loadScript, base: "../../" }, function (err, b) {
       if (err || !b) { status.textContent = "Could not build it: " + (err && err.message || "no data"); return; }
@@ -246,8 +306,14 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       function paint(notes) {
         b.teamNotes = notes || null;
         document.title = college + " CPL Opportunities";
-        root.innerHTML = W.pageHtml(b);
-        W.wirePage(root, b);
+        // The address names the view, its filters and the open course (?view=, ?status=, ?priority=, ?q=,
+        // ?course=), so a shared link opens where the sender was; a college picked here starts fresh.
+        var st = W.pageState(first ? location.search : "");
+        first = false;
+        root.innerHTML = W.pageHtml(b, st);
+        W.wirePage(root, b, { state: st,
+          shareUrl: function (s2) { return W.shareUrl(b.college).split("?")[0] + W.pageQuery(b.college, s2); },
+          onState: function (s2) { try { history.replaceState(null, "", W.pageQuery(b.college, s2) + (draftOn ? "&draft=1" : "")); } catch (e) { /* the link still works */ } } });
         status.textContent = "";
       }
       // ?draft=1 shows a draft waiting on Replace the public copy (notes/<slug>.draft.json).

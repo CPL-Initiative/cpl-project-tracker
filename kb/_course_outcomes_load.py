@@ -86,21 +86,41 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     names: dict[str, str] = {}
     rows, skipped, seen = [], [], set()
 
-    def add(college, r, block, d):
-        key = (college, r["code"], r["report"], block["fingerprint"])
+    def add(college, r, block, d, kind="slo"):
+        key = (college, r["code"], r["report"], kind, block["fingerprint"])
         if key in seen:
             return
         seen.add(key)
-        rows.append({"college": college, "course_code": r["code"], "course_title": r.get("title"),
+        rows.append({"college": college, "course_code": r["code"], "course_title": r.get("title"), "kind": kind,
                      "heading": block.get("heading"), "lead": block.get("lead"), "outcomes": block["outcomes"],
                      "maps_to": block.get("maps_to"),
                      "shape": block["shape"], "fingerprint": block["fingerprint"], "source_url": r["report"],
                      "source_kind": d.get("source_kind", "course_outline"), "source_system": d.get("system", "curriqunet"),
                      "read_run": str(d["run"])})
 
+    def add_objectives(colleges, r, d):
+        """The course objectives a page printed (Sam, 2026-11-02), one row per college beside its SLOs; a read
+        filed before the reader took them carries none and adds nothing."""
+        items = r.get("objectives") or []
+        if r.get("status") != 200 or not items:
+            return
+        if r.get("objectives_fingerprint") != fingerprint(items):
+            raise SystemExit("%s: the filed objectives fingerprint does not match its objectives" % r.get("code"))
+        block = {"heading": r.get("objectives_heading"), "lead": r.get("objectives_lead"), "outcomes": items,
+                 "maps_to": None, "shape": "list" if len(items) > 1 else "paragraph", "fingerprint": fingerprint(items)}
+        for college in colleges:
+            add(college, r, block, d, kind="objective")
+
     for path in paths:
         d = json.load(open(path))
         for r in d["rows"]:
+            if r.get("status") == 200 and r.get("objectives"):
+                if r.get("shape") == "groups":
+                    # A district report prints one set of objectives for the course: each college whose group it names.
+                    cols = [(GROUPS.get(host) or {}).get(g.get("group") or "") for g in r.get("groups") or []]
+                    add_objectives([c for c in dict.fromkeys(cols) if c], r, d)
+                else:
+                    add_objectives(colleges_for(host, r, names), r, d)
             if r.get("status") == 200 and r.get("shape") == "groups":
                 for g in r.get("groups") or []:
                     if not g.get("outcomes"):

@@ -39,7 +39,11 @@
                 // The people each college's MAP landing page lists, with the title the
                 // page gives them and their MAP user rows (Sam, 2026-10-31); null until
                 // map_landing_contacts_roster() answers a signed-in reader.
-                landing: null, landingError: null };
+                landing: null, landingError: null,
+                // The CPL Coordinator compared across MAP College Contacts and the
+                // landing page (Jessica and Sam, 2026-11-05); null until
+                // map_cpl_coordinator_compare() answers a signed-in reader.
+                coordCmp: null, coordCmpError: null, coordCmpFilter: "all" };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -1759,11 +1763,18 @@
         + "Contact directory"
         + (state.gaps ? ' <span class="mapu-lenscount">' + state.gaps.filter(function (g) {
             return g.college_kind === "college"; }).length + "</span>" : "")
+        + "</button>"
+        + '<button class="mapu-lensbtn' + (state.lens === "coordinators" ? " on" : "") + '" data-lens="coordinators" aria-pressed="' + (state.lens === "coordinators") + '"'
+        + ' title="Each college’s CPL Coordinator in MAP College Contacts beside the one its landing page lists">'
+        + "CPL Coordinators"
+        + (state.coordCmp ? ' <span class="mapu-lenscount">' + state.coordCmp.filter(function (r) {
+            return r.finding !== "match"; }).length + "</span>" : "")
         + "</button></div>";
     }
 
     if (state.lens === "gaps") { html += gapsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
     if (state.lens === "contacts") { html += contactsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
+    if (state.lens === "coordinators") { html += coordCompareHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
 
     html += '<div class="mapu-toolbar">'
       + '<input class="q" type="text" placeholder="Filter colleges…" value="' + esc(state.q) + '">'
@@ -2124,6 +2135,123 @@
     return "﻿" + lines.join("\r\n");
   }
 
+  // ── The CPL Coordinator, compared (Jessica and Sam, 2026-11-05) ───────────
+  // Jessica: "We want to know if there are gaps and crossover from these fields.
+  // For example, Madera college has Lainey Campos listed as their CPL
+  // coordinator on the landing page but is not tagged as the CPL Coordinator in
+  // the platform." Sam: "please add this to the MAP Users tab so Jessie can look
+  // it up there as well." One row a college: the CPL Coordinator fields of MAP
+  // College Contacts, the CPL Assistant email, and the people the landing page
+  // lists as a CPL coordinator, each with the active MAP user roles their email
+  // holds. map_cpl_coordinator_compare() does the comparing and the gate.
+  var COORD_FINDINGS = [
+    ["landing_only", "Landing page only", "On the landing page, not in the platform’s CPL Coordinator field"],
+    ["different", "Different people", "The platform and the landing page name different people"],
+    ["same_person", "Same person, different email", "A name agrees, the emails differ"],
+    ["platform_only", "Platform only", "In the platform’s CPL Coordinator field, not on the landing page"],
+    ["neither", "Neither", "No CPL Coordinator in either place"],
+    ["match", "Match", "The same person in both places"],
+  ];
+  function coordFindingLabel(k) {
+    for (var i = 0; i < COORD_FINDINGS.length; i++) if (COORD_FINDINGS[i][0] === k) return COORD_FINDINGS[i][1];
+    return k || "";
+  }
+  function loadCoordCompare() {
+    if (!signedIn()) { state.coordCmp = null; return Promise.resolve(null); }
+    var h = authHeaders(); h["Content-Type"] = "application/json";
+    return fetch(REST + "/rpc/map_cpl_coordinator_compare", { method: "POST", headers: h, body: "{}" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("coordinators " + r.status);
+        return r.json();
+      }).then(function (rows) { return Array.isArray(rows) ? rows : []; });
+  }
+  function coordCmpRows() {
+    var rows = state.coordCmp || [];
+    var f = state.coordCmpFilter;
+    if (f === "gaps") rows = rows.filter(function (r) { return r.finding !== "match"; });
+    else if (f === "crossover") rows = rows.filter(function (r) { return !!r.assistant_is_coordinator; });
+    else if (f && f !== "all") rows = rows.filter(function (r) { return r.finding === f; });
+    var q = (state.q || "").toLowerCase();
+    if (q) rows = rows.filter(function (r) { return (r.college || "").toLowerCase().indexOf(q) >= 0; });
+    return rows;
+  }
+  function coordPeopleHtml(list, withTitle) {
+    if (!list || !list.length) return '<span class="mapu-tba">None</span>';
+    return list.map(function (p) {
+      return "<div>" + (p.name ? esc(p.name) : '<span class="mapu-tba">No name</span>')
+        + (withTitle && p.title ? ' <span class="mapu-fb-t">(' + esc(p.title) + ")</span>" : "")
+        + (p.email ? "<br>" + esc(p.email) : "")
+        + "<br>" + (p.roles ? '<span class="mapu-fb-t">MAP user: ' + esc(p.roles) + "</span>"
+                            : '<span class="mapu-notmap">Not a MAP user</span>')
+        + "</div>";
+    }).join("");
+  }
+  function coordCompareHtml() {
+    if (state.coordCmpError) {
+      return '<div class="mapu-empty">Could not load the CPL Coordinator comparison ('
+        + esc(state.coordCmpError) + "). Sign in from the header’s Sign in menu (the team phrase or an email link) and try again.</div>";
+    }
+    if (!state.coordCmp) return '<p class="mapu-gate">Loading the CPL Coordinators…</p>';
+    var all = state.coordCmp;
+    var n = {}; all.forEach(function (r) { n[r.finding] = (n[r.finding] || 0) + 1; });
+    var nCross = all.filter(function (r) { return r.assistant_is_coordinator; }).length;
+    var synced = all.reduce(function (m, r) { return r.synced_at && (!m || r.synced_at > m) ? r.synced_at : m; }, null);
+    var h = '<p class="mapu-intro">Each college’s CPL Coordinator in three places: the <b>CPL Coordinator</b> fields of '
+      + "its MAP College Contacts, its <b>CPL Assistant email</b>, and the people its MAP landing page lists as a CPL "
+      + "coordinator. Each person shows the active MAP user roles their email holds. MAP has no CPL Coordinator user "
+      + "role, and the Users module’s College CPL Role(s) field is not in the report the daily sync reads, so it is "
+      + "not compared here." + (synced ? " Read from MAP " + fmtDate(synced) + "." : "") + "</p>";
+    h += '<div class="mapu-stat">';
+    COORD_FINDINGS.forEach(function (f) {
+      h += '<div class="box" title="' + esc(f[2]) + '"><div class="n">' + (n[f[0]] || 0) + '</div><div class="l">' + esc(f[1]) + "</div></div>";
+    });
+    h += '<div class="box" title="The CPL Assistant email is one of the coordinators’ own"><div class="n">' + nCross
+      + '</div><div class="l">Assistant email is the coordinator’s</div></div></div>';
+    var opts = [["all", "All colleges"], ["gaps", "Everything but a match"]]
+      .concat(COORD_FINDINGS.map(function (f) { return [f[0], f[1]]; }))
+      .concat([["crossover", "Assistant email is the coordinator’s"]]);
+    h += '<div class="mapu-toolbar">'
+      + '<input class="q" type="text" data-coord-q placeholder="Filter colleges…" aria-label="Filter colleges" value="' + esc(state.q) + '">'
+      + '<select class="mapu-select" data-coord-filter aria-label="Show">'
+      + opts.map(function (o) {
+          return '<option value="' + o[0] + '"' + (state.coordCmpFilter === o[0] ? " selected" : "") + ">" + esc(o[1]) + "</option>";
+        }).join("")
+      + "</select>"
+      + '<button class="mapu-rosterbtn" data-coord-csv>Export to CSV / Excel</button>'
+      + '<span class="mapu-count">' + coordCmpRows().length + " of " + all.length + " colleges</span></div>";
+    var rows = coordCmpRows();
+    if (!rows.length) return h + '<div class="mapu-empty">No colleges match.</div>';
+    h += '<div class="mapu-scroll" role="region" tabindex="0" aria-label="CPL Coordinators compared">'
+      + '<table class="mapu-table mapu-coordtable"><colgroup><col style="width:18%"><col style="width:26%">'
+      + '<col style="width:16%"><col style="width:26%"><col style="width:14%"></colgroup><thead><tr>'
+      + '<th scope="col">College</th><th scope="col">CPL Coordinator (MAP College Contacts)</th>'
+      + '<th scope="col">CPL Assistant email</th><th scope="col">CPL Coordinator on the landing page</th>'
+      + '<th scope="col">Finding</th></tr></thead><tbody>';
+    rows.forEach(function (r) {
+      h += "<tr><td>" + esc(r.college) + "</td><td>" + coordPeopleHtml(r.platform) + "</td><td>"
+        + (r.cpl_assistant_email ? esc(r.cpl_assistant_email) : '<span class="mapu-tba">None</span>') + "</td><td>"
+        + coordPeopleHtml(r.landing, true) + "</td><td>" + esc(coordFindingLabel(r.finding))
+        + (r.assistant_is_coordinator ? '<br><span class="mapu-fb-t">Assistant email is the coordinator’s</span>' : "")
+        + "</td></tr>";
+    });
+    return h + "</tbody></table></div>";
+  }
+  function coordCompareCsv() {
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var join = function (list, k) { return (list || []).map(function (p) { return p[k] || ""; }).join("; "); };
+    var roles = function (list) { return (list || []).map(function (p) { return p.roles || "Not a MAP user"; }).join("; "); };
+    var lines = [["College", "CPL Coordinator (MAP College Contacts)", "Coordinator email (MAP College Contacts)",
+      "MAP user role", "CPL Assistant email", "CPL Coordinator on the landing page", "Landing page title",
+      "Landing page coordinator email", "Landing page MAP user role", "Finding",
+      "Assistant email is the coordinator's"].map(q).join(",")];
+    coordCmpRows().forEach(function (r) {
+      lines.push([r.college, join(r.platform, "name"), join(r.platform, "email"), roles(r.platform),
+        r.cpl_assistant_email || "", join(r.landing, "name"), join(r.landing, "title"), join(r.landing, "email"),
+        roles(r.landing), coordFindingLabel(r.finding), r.assistant_is_coordinator ? "Yes" : ""].map(q).join(","));
+    });
+    return "﻿" + lines.join("\r\n");
+  }
+
   function gapsCsv() {
     var rows = gapRows();
     var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
@@ -2286,6 +2414,14 @@
       state.propOnly = !!ponly.checked;
       renderInto(root, true);   // keepData: this is a view filter, not a refetch
     });
+    var cf = root.querySelector("[data-coord-filter]");
+    if (cf) cf.addEventListener("change", function () { state.coordCmpFilter = cf.value; renderInto(root, true); });
+    var cq = root.querySelector("[data-coord-q]");
+    if (cq) cq.addEventListener("change", function () { state.q = cq.value; renderInto(root, true); });
+    var ccsv = root.querySelector("[data-coord-csv]");
+    if (ccsv) ccsv.addEventListener("click", function () {
+      downloadCsv(coordCompareCsv(), "map-cpl-coordinators-compared.csv");
+    });
     var dcsv = root.querySelector("[data-dir-csv]");
     if (dcsv) dcsv.addEventListener("click", function () {
       downloadCsv(contactsCsv(), "map-college-contact-directory.csv");
@@ -2337,6 +2473,18 @@
   // load — it is a second gated round-trip most visits never need. True when it
   // started the read (and rendered the loading state).
   function loadLensData(root) {
+    if (state.lens === "coordinators") {
+      if (state.coordCmp || state.coordCmpError) return false;
+      render(root);
+      loadCoordCompare().then(function (rows) {
+        state.coordCmp = rows || [];
+        render(root);
+      }).catch(function (e) {
+        state.coordCmpError = (e && e.message) || "error";
+        render(root);
+      });
+      return true;
+    }
     if (!((state.lens === "gaps" || state.lens === "contacts") && !state.gaps && !state.gapsError)) return false;
     render(root);
     // Proposals ride along with the worklist. loadProposals never rejects
@@ -2353,8 +2501,8 @@
   }
 
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address activate() opens.
-     map-users (All colleges) · map-users/gaps (No student contact) · map-users/contacts (Contact directory). */
-  var LENSES = ["all", "gaps", "contacts"];
+     map-users (All colleges) · map-users/gaps (No student contact) · map-users/contacts (Contact directory) · map-users/coordinators (CPL Coordinators). */
+  var LENSES = ["all", "gaps", "contacts", "coordinators"];
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("map-users", function () {
     return state.lens && state.lens !== "all" && LENSES.indexOf(state.lens) >= 0 ? "map-users/" + state.lens : "map-users";
   });
@@ -2392,6 +2540,8 @@
     _loadLanding: loadLanding,
     _landingCell: landingCell,
     _landingHtml: landingHtml,
+    _coordCompareHtml: coordCompareHtml,
+    _coordCompareCsv: coordCompareCsv,
     _rosterHtml: rosterHtml,
     _authHeaders: authHeaders,
     _filteredSorted: filteredSorted,

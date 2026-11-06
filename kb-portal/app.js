@@ -502,8 +502,13 @@ async function polishWithClaude() {
       }
       if (droppedImgs) composerStatus("⚠ Dropped " + droppedImgs + " image(s) to fit the size limit; formatting the rest…", "info");
     }
+    // The proxy answers only a credential (2026-11-05): the portal holds the team phrase
+    // under the shared key and no keeper module, so it passes the phrase itself.
+    let phrase = "";
+    try { phrase = localStorage.getItem(TEAM_PASS_KEY) || ""; } catch (e) {}
     const { text } = await W.draft(null, {
       system, maxTokens: 8000, url: PROXY_URL,
+      headers: phrase ? { "x-team-pass": phrase } : undefined,
       messages: [{ role: "user", content }],
     });
     $("composer-body").value = KBC.stripCodeFences(text);

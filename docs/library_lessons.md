@@ -1035,3 +1035,87 @@ publishes approved drafts every three hours with a receipt (#2791). The function
 writes with the caller's own credential, so the table's policies and history trigger stand as they do for the page.
 The MCP migration timed out on its confirmation prompt; `supabase-migrate.yml` applied the same file from the branch.
 The function deploys through `cpl-chat-deploy.yml` once #2792 adds it to the choices (Sam: "Deploy it").
+
+## 2026-11-05 SkyCartwheel (Library side session): revise on the card, and the List
+
+Sam pressed *Ask for more changes* on ELL IET's ready Version 3 and "nothing seemed to happen". Three lessons came out of it.
+
+- **A control that acts somewhere else reads as one that did nothing.** The click worked: it scrolled up to the box at the
+  top of the tab and focused its Instructions, with the box's heading and the piece's name off the screen, far from the
+  card he pressed. Version 22 puts the box, its answer and its errors on the card itself (`sayOn`), and a piece found
+  anywhere opens its own card or row.
+- **More changes to a draft must start from the draft.** Start on a ready draft wrote a fresh `regen` (dropping
+  `ready_at`, `draft_id`, `draft_url`), and `library-revise-draft` always read the public copy, so more changes to
+  Version 3 would have come back built on Version 2 with Version 3's changes gone. A request now names its base
+  (`based_on_draft`) and keeps every earlier draft (`regen.earlier`); the box starts with no documents, because the ones
+  the draft was made from are already in it. `tests/library_revise_draft.test.js` D fails on the old behavior.
+- **A draft held only at a claude.ai link is out of reach of the machine.** Neither `library-publish.yml` nor the edge
+  function can read claude.ai, so Replace waited on a queue session. SkyCartwheel stored S557's Version 3 Pages copy as a
+  `cpl_library_drafts` row (migration `2026-11-05_library_ell_iet_v3_stored_draft.sql`, sha256 in its header).
+
+Two smaller ones from the build:
+
+- **An iframe's `srcdoc` set after it is in the page fires its first load for about:blank.** The draft check read an empty
+  page and reported no title and no language; set `srcdoc` before appending the frame.
+- **A seeded a11y target measures what the unseeded one never opens.** `cobi:library` reaches only the locked view. The
+  seeded `library-list` target, with a panel open, found the Details links at 20px and a skipped heading level; the
+  Cards view had hidden both behind a closed Details. A lead word in `--seal-blue` vanished in dark mode, found by the
+  dark screenshot; a lead takes `--cobalt` (the link role every theme defines) and weight, never a second color.
+
+Fable advised on the flow (one public copy, at most one draft, four states, the next step on the card; "promise a check,
+not a repair"). Sam: "Version 22 looks better"; "Do we need the One chip? Why not put focus on the title"; then the List.
+
+## Moved from the lane (SkyCartwheel, 2026-11-05)
+
+- **Revise from the card, no session (built S577, SkyBarnard; Sam, 2026-11-05: "Build it").** On a piece with a Pages
+  copy, Revise and remediate's request now offers **Draft it now**: the edge function `library-revise-draft` reads
+  `library/<slug>/` from Pages, asks Claude for edits (each an exact passage occurring once, all or none, the page's frame
+  kept; `apply_edits.mjs`), stores the draft in `cpl_library_drafts` and sets `regen.ready_at` and `regen.draft_id`, all
+  with the caller's own credential. The card offers **Open the draft** and **Replace the public copy**; every three hours
+  `library-publish.yml` (`scripts/library_publish.py`) writes an approved draft to `library/<slug>/index.html` with a
+  receipt (`kb/receipts/library_publish/`), commits to main, then moves the record (Version N+1 Current, the one before
+  Replaced, Changes to make and regen cleared), guarded on the `updated_at` it read. A piece with no Pages copy, a
+  SharePoint file, or only a linked document still goes to a session (Copy the request). Governance: dismissed with
+  reasons (`table:cpl_library_drafts`, `function:library-revise-draft`, `workflow:library-publish.yml`). Migration
+  `kb/migrations/2026-11-05_library_drafts.sql` (rollback beside it); the function deploys with `cpl-chat-deploy.yml`
+  (`function: library-revise-draft`). Tests: `tests/library_revise_draft.test.js`, `tests/library_publish_test.py`.
+
+## 2026-11-05 SkyRoundoff (ELL IET Version 4; the List's band order)
+
+Sam's Revise request (15:42Z): *"move the grantee sections each to a tab on the visual so there is a main section and a
+tab for each project"*. On seeing the draft: *"new visual looks wonderful!"*
+
+- **The card answers before a session starts.** `library-revise-draft` had a machine draft ready two minutes after the
+  request (b1925d33, 15:44Z). The session's build from the vault source took `regen.draft_id`; the machine draft moved to
+  `regen.earlier`, kept rather than dropped, and the migration's guard named it.
+- **`scripts/library_page.py` writes the public path.** Building a draft with it changes `library/<slug>/index.html`;
+  copy the result aside and restore the file before committing, or the public copy changes without Replace.
+- **axe sees only the shown tab.** `npm run a11y` passed on the Overview while every project tab failed target size
+  (contact emails at 22.8px). A tabbed page needs each tab selected and checked; the 390px and 1440px pass did that.
+- **Tabs add text Sierra counts.** Tab names, a heading per panel and the Overview's project lists took Version 3's
+  33,273 characters to 35,104; trimming the repeats brought it to 33,979 of `LIBRARY_TEXT_MAX` 34,000.
+- **A sort key for "none" must be a letter.** The List engine orders bands A to Z by `localeCompare`, and ICU puts
+  `~` before digits; a band with no modified time takes `z` so it goes last.
+- **Merging `main` into a branch carries `main`'s `kb/migrations/.apply`** and fires `supabase-migrate.yml` on that
+  branch (run 42061383625 on #2808). The V3 migration it named is guarded, so it could not write twice.
+
+## 2026-11-05 SkyFlipFlop: Version 5, the Initiative at a glance
+
+Sam's Revise request (18:30Z): *"add a brief high level overview of the Chancellor's Office CPL Initiative as a visual with a
+link on this page"*. Then, in session: *"is there a way to do this from the Library on the fly without opening a session or
+waiting for an overnight cron?"*, *"I just integrated grokbot, so if we could pass it to a bot to do from the Library,
+advise"* and *"I could add a bot specifically trained for this by you"*.
+
+- **The card already does it on the fly.** `library-revise-draft` drafted the change 27 seconds after the request
+  (22d6f5de, 18:30:45Z). What a session adds: the change lands in the vault source, so the next rebuild keeps it; a browser
+  a11y pass of every tab; and Sierra's character budget, which the machine draft overran (about 900 characters over
+  `LIBRARY_TEXT_MAX`).
+- **Sierra's budget sets the size of any addition.** Version 4 sat 21 characters under 34,000. Version 5 made room by
+  shortening two phrases repeated 14 and 7 times; the build checks both counts, so a moved phrase stops the build.
+- **The top cards open what they count** (Sam, in session: *"can you make the top cards clickable so they go to the items
+  they are counting?"*, then *"this should be a rule for all visuals if advisable"*; now a Presentation rule in `CLAUDE.md`).
+  The figure is the link and the whole card takes the click; the participants card stays plain, its figure summed from a
+  line on six tabs. `npm run a11y` failed the first try: a focus ring moved to the card is no ring on the link.
+- **A stored draft is kept as made.** `cpl_library_drafts_guard` refuses any change but the publish stamp, so the first
+  try at adding the card links to the stored draft failed (receipt `..._v5_card_links_42088269186.json`). The next build of the
+  same version is a new draft row, and the one it replaces joins `regen.earlier`.

@@ -1,0 +1,778 @@
+-- SkyFlipFlop (Library side session), 2026-11-05: ELL IET CPL Starting Points Version 5 stored as the card's draft.
+--
+-- Sam, 2026-11-05 18:30 UTC, on the card: "add a brief high level overview of the Chancellor's Office CPL Initiative as a
+-- visual with a link on this page". Built in a session from the vault source: CPLBrain/04-projects/cpl-initiative/ell-iet/
+-- make_tabs.py on Version 3, then scripts/library_page.py; the html below is that Pages copy
+-- (sha256 2926faf709ee824c751c562d40f8fb9317ce21aad15d0d6324825a907e238974). Its own link: https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa.
+-- library-revise-draft's machine draft (22d6f5de-…, 18:30:45Z) moves to regen.earlier; this draft takes regen.draft_id.
+-- Nothing public changes: the public copy stays Version 4 until someone presses Replace the public copy.
+-- Guarded on the live row read 2026-11-05 ~19:10Z: regen.draft_id = 22d6f5de-…, regen.requested_at 18:30:18.271Z,
+-- updated_at 18:30:46.02426+00. Before-values (cpl_library 915ff7d5-…):
+--   regen = {"publish": "show", "draft_id": "22d6f5de-3d3b-4cf9-896f-2f4a6fa4d676", "ready_at": "2026-11-05T18:30:45.887Z", "draft_url": null, "drafted_by": "Sam", "drafted_with": "library-revise-draft", "requested_at": "2026-11-05T18:30:18.271Z", "requested_by": "Sam"}
+--   updated_by = 'Sam'; versions = Versions 1 to 4 as listed (this adds Version 5 as a Draft row);
+--   rebuild_from = the Version 4 line (make_tabs.py … -o …_4.html …). cpl_library_history files the prior row too.
+-- ROLLBACK: kb/migrations/2026-11-05_library_ell_iet_v5_stored_draft_rollback.sql
+with d as (
+  insert into public.cpl_library_drafts (library_id, slug, html, based_on, request, summary, edits, model, made_by)
+  select id, slug, $ELLV5$<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var t=null;try{t=localStorage.getItem("cpl_theme")}catch(e){}document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})()</script>
+<title>ELL IET CPL Starting Points</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="icon" href="../../cccco_seal.png">
+<!-- The CPL Library's public copy of ell-iet-cpl-starting-points; the claude.ai artifact is the editable original. Rebuilt by scripts/library_page.py; edit the source, never this file. -->
+<style>:root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>:root{--sierra-bar-bg:var(--cplh-bg);--sierra-bar-ink:var(--cplh-fg);--sierra-bar-heading:var(--cplh-strong);--sierra-bar-link:var(--cplh-link);--sierra-bar-line:var(--cplh-line);--sierra-bar-focus:var(--cplh-link);--sierra-bar-chip-bg:var(--cplh-link);--sierra-bar-chip-ink:var(--cplh-bg);--sierra-bar-shadow:var(--cplh-shadow)}html.sbar-chip-on body{padding-bottom:72px}</style>
+</head>
+<body>
+<style>
+/* Layout: one reading column; bands of cards ranked by fit; a table for the wider ring. First Light tokens. */
+:root{
+  --paper:#F4F2ED; --surface:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+  --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55; --line:#D9D5CB;
+  --seal-blue:#002F6D; --cobalt:#0047AB; --hunter:#2C601A; --mustard-text:#6E5300; --violet:#6D28D9;
+  --tba-bg:#F3ECD6;
+  --display:'Playfair Display', Georgia, serif; --body:'Source Sans 3', Arial, sans-serif;
+  --cpl-measure:none;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15171B; --surface:#1E2127; --surface-subtle:#23262D; --surface-muted:#2A2E36;
+  --text-strong:#F2F0EA; --text-body:#D8D5CD; --text-muted:#AFAB9F; --line:#3A3F49;
+  --seal-blue:#9DB8E0; --cobalt:#7DA1D4; --hunter:#89A67F; --mustard-text:#E3B341; --violet:#B28DEB;
+  --tba-bg:#3A3220; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15171B; --surface:#1E2127; --surface-subtle:#23262D; --surface-muted:#2A2E36;
+  --text-strong:#F2F0EA; --text-body:#D8D5CD; --text-muted:#AFAB9F; --line:#3A3F49;
+  --seal-blue:#9DB8E0; --cobalt:#7DA1D4; --hunter:#89A67F; --mustard-text:#E3B341; --violet:#B28DEB;
+  --tba-bg:#3A3220; color-scheme:dark}
+body{background:var(--paper);color:var(--text-body);font-family:var(--body);font-size:1.02rem;line-height:1.55;margin:0}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--surface);padding:.4rem .7rem;z-index:5}
+main{max-width:1080px;margin:0 auto;padding-block:clamp(1.5rem,4vw,3rem);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:2.4rem}
+h1,h2,h3{font-family:var(--display);color:var(--text-strong);text-wrap:balance;margin:0}
+h1{font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.15}
+h2{font-size:clamp(1.3rem,3vw,1.6rem)}
+h3{font-size:1.15rem}
+p{margin:0;max-width:var(--cpl-measure,none)}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600}
+header.top{display:grid;gap:.8rem}
+.lede{font-size:1.12rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.fact{background:var(--surface);padding:1rem 1.1rem;display:grid;gap:.2rem}
+.fact b{font-family:var(--display);font-size:1.5rem;color:var(--seal-blue);font-variant-numeric:tabular-nums}
+.fact span{color:var(--text-muted);font-size:.92rem}
+section{display:grid;gap:1rem}
+.band-head{display:grid;gap:.35rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);padding:1.1rem 1.2rem;display:grid;gap:.7rem;align-content:start;min-width:0}
+.card .who{font-size:.9rem;color:var(--text-muted);font-weight:600}
+.card .meta{font-size:.92rem;color:var(--text-muted)}
+.lines{margin:0;padding:0;list-style:none;display:grid;gap:.35rem;font-size:.95rem}
+.lines li{display:grid;gap:.1rem;border-top:1px solid var(--surface-muted);padding-top:.35rem}
+.lh{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem}
+.lines code{font-family:var(--body);font-weight:600;color:var(--text-strong)}
+.lines .u{color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.88rem}
+.lt{color:var(--text-body)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-size:.8rem;font-weight:600;padding:.1rem .5rem;border:1px solid var(--line);color:var(--text-muted);background:var(--surface-subtle)}
+.tag.t1{color:var(--cobalt)}.tag.t2{color:var(--hunter)}.tag.t3{color:var(--violet)}
+.tag.tba{background:var(--tba-bg);color:var(--mustard-text);border-color:transparent}
+.why{font-size:.95rem}
+.wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.95rem}
+th,td{text-align:left;padding:.6rem .8rem;vertical-align:top;border-bottom:1px solid var(--surface-muted);overflow-wrap:anywhere}
+th{font-weight:600;color:var(--text-strong);background:var(--surface-subtle)}
+tbody tr:last-child td{border-bottom:0}
+td a{display:inline-block;min-height:24px;line-height:24px}
+ol.next{margin:0;padding-left:1.3rem;display:grid;gap:.5rem}
+ul.plain{margin:0;padding-left:1.2rem;display:grid;gap:.3rem}
+.note{font-size:.88rem;color:var(--text-muted)}
+a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+@media (max-width:560px){.cards{grid-template-columns:1fr}
+ table,thead,tbody,tr,th,td{display:block}thead{position:absolute;left:-999px}td{border:0;padding:.15rem .8rem}tr{border-bottom:1px solid var(--line);padding-block:.5rem}td:first-child{font-weight:600;color:var(--text-strong)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.card.wide{grid-column:1/-1}
+.tlead{font-size:.9rem;font-weight:600;color:var(--text-strong)}
+.card .wrap table{font-size:.92rem}
+
+.contacts{display:grid;gap:.6rem;border-top:1px solid var(--line);padding-top:.8rem;min-width:0}
+.contacts h4{font-family:var(--body);font-size:.9rem;font-weight:600;color:var(--text-strong);margin:0}
+.cgroup{display:grid;gap:.35rem;min-width:0}
+.cside{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600}
+.people{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.6rem 1.2rem}
+.people li{display:grid;gap:.05rem;align-content:start;font-size:.92rem;min-width:0}
+.people .pn{font-weight:600;color:var(--text-strong)}
+.people .pr{color:var(--text-muted)}
+.people a{overflow-wrap:anywhere}
+.contacts .cnote{font-size:.88rem;color:var(--text-muted)}
+@media (max-width:560px){.people{grid-template-columns:1fr}}
+
+/* Tabs (Version 4): an Overview, then a tab per project. Underlined words, the selected one heavier. */
+.tabs{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem;border-bottom:1px solid var(--line);padding-bottom:.35rem}
+.tabs[hidden]{display:none}
+.tabs [role="tab"]{font:inherit;font-size:.98rem;background:none;border:0;padding:0;min-height:24px;line-height:24px;
+  color:var(--cobalt);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;cursor:pointer}
+.tabs [role="tab"][aria-selected="true"]{color:var(--text-strong);font-weight:700;text-decoration-thickness:3px;
+  text-decoration-color:var(--seal-blue)}
+.tabs [role="tab"]:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.tabset{display:grid;gap:1.6rem;min-width:0}
+.panel{display:grid;gap:2.4rem;min-width:0}
+.panel:focus-visible{outline:2px solid var(--cobalt);outline-offset:4px}
+.js-tabs .panel[hidden]{display:none}
+.bandlist{margin:0;padding-left:1.2rem;display:grid;gap:.3rem}
+.bandlist a{display:inline-block;min-height:24px;line-height:24px}
+/* Contact emails: 24px targets (WCAG 2.2 target size; measured 22.8px tall once a card sits in its tab). */
+.people a{min-height:24px;line-height:24px}
+/* The Initiative at a glance (Version 5): four numbered steps, a line between them; one column below 560px. */
+.glance{list-style:none;counter-reset:step;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line)}
+.glance li{counter-increment:step;background:var(--surface);padding:1rem 1.1rem;display:grid;gap:.2rem;align-content:start}
+.glance li::before{content:counter(step);font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--seal-blue);
+  font-variant-numeric:tabular-nums}
+.glance b{font-family:var(--display);font-size:1.15rem;color:var(--text-strong)}
+.glance span{color:var(--text-muted);font-size:.92rem}
+.glance a{display:inline-block;min-height:24px;line-height:24px}
+.glance-more a{display:inline-block;min-height:24px;line-height:24px}
+@media (max-width:560px){.glance{grid-template-columns:1fr}}
+</style>
+<a class="skip" href="#tabs">Skip to the projects</a>
+<!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
+<style>
+/* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
+   Office CPL page, the way out to the public CPL pages, and a light/dark control.
+   The links sit behind one word, Links, each with a line in gray saying what it is
+   (Sam, 2026-10-26: "so new-to-CPL users will not be immediately lost in our acronyms").
+   Its own tokens, so it reads the same on any host page; First Light values. The gray
+   (--cplh-muted) is First Light's muted text: 6.74:1 on the light ground, 7.52:1 on the dark. */
+:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-muted:#5C5C55;--cplh-link:#0047AB;--cplh-strong:#1C1C1A;--cplh-shadow:rgba(28,28,26,.14)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}
+.cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
+.cplh-in{position:relative;max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
+.cplh-logo{display:inline-flex;min-height:24px}
+.cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
+.cplh-logo .cplh-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
+:root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
+:root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
+.cplh-end{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
+.cplh a{color:var(--cplh-link)}
+.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:24px;min-width:24px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cplh-word[aria-expanded="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh-panel{box-sizing:border-box;position:absolute;top:100%;right:max(16px,env(safe-area-inset-right,0px));width:min(38rem,calc(100% - 32px));margin-top:1px;background:var(--cplh-bg);border:1px solid var(--cplh-line);box-shadow:0 10px 28px var(--cplh-shadow);padding:.35rem 1rem}
+.cplh-panel[hidden]{display:none}
+.cplh-nav{margin:0;padding:0;list-style:none}
+.cplh-nav li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-top:1px solid var(--cplh-line)}
+.cplh-nav li:first-child{border-top:0}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:24px;font-weight:600;text-underline-offset:3px}
+.cplh-desc{color:var(--cplh-muted);font-size:.9rem}
+.cplh-theme{display:flex;gap:.9rem;align-items:center}
+.cplh-theme span{color:var(--cplh-fg)}
+.cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
+@media (max-width:560px){.cplh-logo img{height:32px}.cplh-end{margin-left:0}.cplh-nav li{grid-template-columns:minmax(0,1fr)}}
+</style>
+<header class="cplh" role="banner">
+  <div class="cplh-in">
+    <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
+      <img class="cplh-light" src="data:image/png;base64,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" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+      <img class="cplh-dark" src="data:image/png;base64,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" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+    </a>
+    <div class="cplh-end">
+      <nav class="cplh-links" aria-label="CPL pages">
+        <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
+        <div class="cplh-panel" id="cplh-panel" hidden>
+          <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
+            <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
+            <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
+            <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
+            <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener" aria-describedby="cplh-d-lib">CPL Library</a><span class="cplh-desc" id="cplh-d-lib">Presentations, films, visuals and briefs from the Credit for Prior Learning Initiative</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/" target="_blank" rel="noopener" aria-describedby="cplh-d-catalog">Credential Catalog</a><span class="cplh-desc" id="cplh-d-catalog">Credentials colleges award credit for, and how to adopt one in MAP</span></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="cplh-theme" role="group" aria-label="Theme">
+        <span>Theme</span>
+        <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
+        <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+(function () {
+  var KEY = "cpl_theme", root = document.documentElement;
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function paint() {
+    var t = current();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-cplh-theme]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-cplh-theme") === t));
+    });
+  }
+  var saved = read();
+  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-cplh-theme]") : null;
+    if (!b) return;
+    var t = b.getAttribute("data-cplh-theme");
+    root.setAttribute("data-theme", t);
+    try { localStorage.setItem(KEY, t); } catch (err) { /* private window: the choice holds for this visit */ }
+    paint();
+  });
+  if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
+  paint();
+
+  // Links: one word opens the list. Escape, a click outside it, or Tab past its last
+  // link shuts it; Escape hands focus back to the word.
+  var word = document.querySelector("[data-cplh-links]");
+  var panel = word && document.getElementById(word.getAttribute("aria-controls"));
+  var nav = word && word.closest ? word.closest("nav") : null;
+  if (!word || !panel || !nav) return;
+  function isOpen() { return word.getAttribute("aria-expanded") === "true"; }
+  function setOpen(on) { word.setAttribute("aria-expanded", String(on)); panel.hidden = !on; }
+  word.addEventListener("click", function () { setOpen(!isOpen()); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !isOpen()) return;
+    var inside = nav.contains(document.activeElement);
+    setOpen(false);
+    if (inside) word.focus();
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !nav.contains(e.target)) setOpen(false); });
+  nav.addEventListener("focusout", function (e) { if (isOpen() && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false); });
+})();
+</script>
+<!-- cpl-public-header:end -->
+<main>
+<header class="top">
+<div class="eyebrow">CPL Initiative · Preliminary scan for EDD&#x27;s ELL IET Fund grantees · November 5, 2026</div>
+<h1>Where credit for ELL IET training could start</h1>
+<p class="lede">On July 3, 2023 the Employment Development Department awarded $17.97 million to eight organizations under the English Language Learner Integrated Education and Training Fund. Each project trains English learners toward a credential and a job. Seven of those projects make up the ELL IET group today. We read their project summaries against the MAP platform, where California&#x27;s community colleges record the credit they award for prior learning, and against the state&#x27;s program inventory, to see where a project&#x27;s completers could already turn their training into college credit, and where a first articulation would start.</p>
+<p class="lede">After the Overview, a tab per project, ordered by fit: credit that already exists at a college in the project&#x27;s own counties or at a partner college comes first. Each card names the people at the colleges who can carry the conversation forward, and each example that rests on a credit recommendation in MAP carries a Request Adopt link, which opens that exhibit in MAP, where Request Quick Adopt asks a college to adopt it and needs no MAP sign-in.</p>
+</header>
+<div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b>$17.97 million</b><span>Awarded July 3, 2023 to eight organizations; funding decisions are final</span></div><div class="fact" role="listitem"><b>7 projects</b><span>The ELL IET group today: adult schools, workforce boards, a school district, a consortium and nonprofits, across 19 counties</span></div><div class="fact" role="listitem"><b>2,432 participants</b><span>The 6 projects that state an enrollment target; Corona-Norco states regional demand instead</span></div><div class="fact" role="listitem"><b>15 credential families</b><span>From nursing assistant to wildland fire, matched against MAP and COCI</span></div></div>
+
+<div id="tabs" class="tabset" tabindex="-1">
+<div class="tabs" role="tablist" aria-label="Overview and the projects" data-tabs hidden>
+<button type="button" role="tab" id="t-overview" aria-controls="p-overview" aria-selected="true">Overview</button>
+<button type="button" role="tab" id="t-fresno" aria-controls="p-fresno" aria-selected="false" tabindex="-1">Fresno Area</button>
+<button type="button" role="tab" id="t-corona-norco" aria-controls="p-corona-norco" aria-selected="false" tabindex="-1">Corona-Norco</button>
+<button type="button" role="tab" id="t-ecepts" aria-controls="p-ecepts" aria-selected="false" tabindex="-1">ECEPTS</button>
+<button type="button" role="tab" id="t-north-central" aria-controls="p-north-central" aria-selected="false" tabindex="-1">North Central Counties</button>
+<button type="button" role="tab" id="t-mvla" aria-controls="p-mvla" aria-selected="false" tabindex="-1">Mountain View Los Altos</button>
+<button type="button" role="tab" id="t-fairfield-suisun" aria-controls="p-fairfield-suisun" aria-selected="false" tabindex="-1">Fairfield-Suisun</button>
+<button type="button" role="tab" id="t-werc" aria-controls="p-werc" aria-selected="false" tabindex="-1">Worker Education</button>
+</div>
+<div class="panel" role="tabpanel" id="p-overview" aria-labelledby="t-overview" tabindex="0">
+<section id="call" aria-labelledby="h-call">
+<div class="band-head">
+<div class="eyebrow">December 9, 2026</div>
+<h2 id="h-call">The call with the ELL IET grantees</h2>
+<p>Amber Shevin of the International Rescue Committee proposed this agenda. The CPL Initiative leads the second item and brings this page to the fourth.</p>
+</div>
+<ul class="plain"><li>Welcome, introductions and context, led by the International Rescue Committee.</li><li><a href="#initiative">An overview of the Chancellor&#x27;s Office CPL Initiative</a>, led by the Chancellor&#x27;s Office.</li><li>ECEPTS and Mountain View Los Altos Adult School on the IETs for which they have articulated credit for prior learning, and what that process asked of them.</li><li>Questions and discussion, facilitated by the International Rescue Committee: how the other grantees might pursue credit for prior learning for their IETs. Each project&#x27;s tab names the colleges and people to follow up with.</li></ul>
+</section>
+<section id="initiative" aria-labelledby="h-initiative" tabindex="-1">
+<div class="band-head">
+<div class="eyebrow">Agenda item 2</div>
+<h2 id="h-initiative">The CPL Initiative at a glance</h2>
+</div>
+<ol class="glance" aria-label="How credit for prior learning reaches a student"><li><b>Learning</b><span>From work, training, service or a credential</span></li><li><b>Request</b><span>Through <a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></span></li><li><b>Credit</b><span>The college awards it in MAP</span></li><li><b>Adoption</b><span>Other colleges can adopt it</span></li></ol>
+<p class="glance-more">See the <a href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">Chancellor&#x27;s Office CPL page</a> and the <a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a>.</p>
+</section>
+<section id="start" aria-labelledby="h-start">
+<div class="band-head">
+<div class="eyebrow">Strongest fit</div>
+<h2 id="h-start">Start here: credit already exists nearby</h2>
+<p>A college in the project&#x27;s counties, or one of its named partner colleges, already articulates at least one credential the project trains. The conversation starts with that college&#x27;s existing credit recommendation.</p>
+</div>
+<ul class="bandlist" aria-label="The projects in this band"><li><a href="#p-fresno">Fresno Area Workforce Investment Corporation</a></li><li><a href="#p-corona-norco">Corona-Norco Unified School District</a></li><li><a href="#p-ecepts">Early Care &amp; Education Pathways to Success</a></li></ul>
+</section>
+<section id="second" aria-labelledby="h-second">
+<div class="band-head">
+<div class="eyebrow">Good fit</div>
+<h2 id="h-second">Ready to build: the program runs nearby</h2>
+<p>A college in the project&#x27;s circle teaches the program, so its faculty have a course to compare the training against and can build the first articulation there.</p>
+</div>
+<ul class="bandlist" aria-label="The projects in this band"><li><a href="#p-north-central">North Central Counties Consortium</a></li><li><a href="#p-mvla">Mountain View Los Altos Adult School</a></li></ul>
+</section>
+<section id="precedent" aria-labelledby="h-precedent">
+<div class="band-head">
+<div class="eyebrow">A precedent elsewhere</div>
+<h2 id="h-precedent">A precedent to adopt: another college shows the way</h2>
+<p>A college elsewhere has articulated the credential, and its credit recommendation is a precedent the nearest college can adopt.</p>
+</div>
+<ul class="bandlist" aria-label="The project in this band"><li><a href="#p-fairfield-suisun">Fairfield-Suisun Adult School</a></li></ul>
+</section>
+<section id="wider" aria-labelledby="h-wider">
+<div class="band-head">
+<div class="eyebrow">A course-to-course path</div>
+<h2 id="h-wider">Job-related English: a course-to-course match</h2>
+<p>This project has a path to credit. Its training ends in job-related English rather than an industry credential, so the path runs through a course: the colleges nearby teach English as a second language and public sector courses, and their faculty can read the project&#x27;s job-related English and workplace readiness outcomes against a course they already offer, and award the course by examination or a portfolio.</p>
+</div>
+<ul class="bandlist" aria-label="The project in this band"><li><a href="#p-werc">Worker Education &amp; Resource Center</a></li></ul>
+</section>
+<section id="statewide" aria-labelledby="h-statewide">
+<div class="band-head">
+<div class="eyebrow">Statewide starting points</div>
+<h2 id="h-statewide">What MAP already holds, by credential family</h2>
+<p>A credential one college has articulated is a precedent any college can adopt; a CCC Collaborative exhibit was built to be adopted statewide. The last column counts the colleges MAP sees as able to adopt the exhibit because they teach the matched course.</p>
+</div>
+<div class="wrap" role="region" aria-label="Statewide starting points by credential family" tabindex="0"><table>
+<colgroup><col style="width:22%"><col style="width:10%"><col style="width:30%"><col style="width:26%"><col style="width:12%"></colgroup>
+<thead><tr><th scope="col">Credential family</th><th scope="col">Exhibits in MAP</th><th scope="col">Articulated at</th><th scope="col">Statewide (CCC Collaborative) exhibits</th><th scope="col">Colleges that could adopt</th></tr></thead><tbody>
+<tr><td>Construction trades</td><td>61</td><td>Bakersfield College, Cabrillo College, Cerritos College, Chaffey College, City College of San Francisco and 9 more</td><td>C-5 Framing and Rough Carpentry Contractor; C-6 Cabinet, Millwork and Finish Carpentry Contractor; Carpenters Apprenticeship — Acoustical Installer and 31 more</td><td>89</td></tr>
+<tr><td>Fire, wildland fire and forestry</td><td>35</td><td>Bakersfield College, Cabrillo College, Cerro Coso Community College, Chabot College, Chaffey College and 21 more</td><td>Firefighter 1; Firefighter EMT Certificate; NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle) and 5 more</td><td>62</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>5</td><td>Chaffey College, Lemoore College, Los Angeles Mission College, Los Angeles Pierce College</td><td>local articulations, ready to adopt</td><td>38</td></tr>
+<tr><td>Medical terminology</td><td>3</td><td>Cabrillo College, Copper Mountain College, Cuesta College, Fresno City College, Glendale Community College and 8 more</td><td>local articulations, ready to adopt</td><td>92</td></tr>
+<tr><td>Home health aide</td><td>0</td><td>open for a first college</td><td>local articulations, ready to adopt</td><td>0</td></tr>
+<tr><td>Vocational nursing (LVN)</td><td>4</td><td>Chaffey College, College of the Desert, Los Angeles Pierce College, Napa Valley College</td><td>local articulations, ready to adopt</td><td>77</td></tr>
+<tr><td>Medical assisting</td><td>6</td><td>College of the Canyons, Modesto Junior College</td><td>local articulations, ready to adopt</td><td>44</td></tr>
+<tr><td>Medical office, billing and records</td><td>1</td><td>Modesto Junior College</td><td>local articulations, ready to adopt</td><td>9</td></tr>
+<tr><td>Eye care technician</td><td>2</td><td>Los Angeles Trade Technical College</td><td>local articulations, ready to adopt</td><td>36</td></tr>
+<tr><td>Early care and education</td><td>10</td><td>Barstow Community College, Lemoore College, Merced College, Modesto Junior College, Saddleback College and 4 more</td><td>Army Child and Youth Services — Child Development; Child Development Associate (CDA) Credential; Virtual Lab School — Child Development</td><td>109</td></tr>
+<tr><td>Hospitality and food service</td><td>27</td><td>Cabrillo College, College of the Canyons, College of the Desert, Copper Mountain College, Cuesta College and 13 more</td><td>Introduction to Hospitality Management</td><td>89</td></tr>
+<tr><td>Welding, machining and manufacturing</td><td>93</td><td>Bakersfield College, Barstow Community College, Cabrillo College, Cerritos College, College of the Desert and 20 more</td><td>ASME BPVC Section IX — GMAW Welder Qualification; ASME BPVC Section IX — SMAW Welder Qualification; AWS D1.1 SMAW Qualified Welder and 15 more</td><td>99</td></tr>
+<tr><td>Transportation and logistics</td><td>5</td><td>Chaffey College, Copper Mountain College, Madera College, Modesto Junior College</td><td>local articulations, ready to adopt</td><td>22</td></tr>
+<tr><td>English as a second language and workplace English</td><td>7</td><td>Cypress College, Fullerton College, Las Positas College</td><td>local articulations, ready to adopt</td><td>94</td></tr>
+<tr><td>Public sector and human services</td><td>8</td><td>Cabrillo College, Lemoore College, Modesto Junior College, San Bernardino Valley College, Santiago Canyon College</td><td>local articulations, ready to adopt</td><td>80</td></tr>
+</tbody></table></div>
+</section>
+<section id="after" aria-labelledby="h-after">
+<div class="band-head">
+<div class="eyebrow">After the grant</div>
+<h2 id="h-after">Every project has a path, and grantees can keep it moving</h2>
+<p>No card on this page marks a dead end. Where a college nearby already awards credit, the path is adoption; where the program runs nearby, it is a first articulation; where neither holds yet, it is a precedent from another college or a course-to-course review. Grantees can keep each path moving after this grant ends.</p>
+</div>
+<ul class="plain"><li>Ask the nearest college to adopt an existing exhibit: Request Adopt on any example row opens it in MAP, and Request Quick Adopt there sends the request to a college initiator without a MAP sign-in.</li><li>Send the CPL Coordinator on your card the training&#x27;s outcomes, hours and assessments, and the credential your completers hold at exit. Faculty need those to build a first exhibit.</li><li>Invite the college&#x27;s faculty to observe a cohort or review its assessments, so the review rests on the training as taught.</li><li>Write the agreement into the next grant or partnership plan, so the next cohort enters with credit already in place.</li><li>Tell the CPL Initiative where a college has not yet answered. The Initiative works with colleges statewide and can bring the request to the right office.</li></ul>
+</section>
+<section id="confirm" aria-labelledby="h-confirm">
+<div class="band-head">
+<div class="eyebrow">Before any match</div>
+<h2 id="h-confirm">What we still need to confirm</h2>
+</div>
+<p>Which credential each project&#x27;s completers actually hold at exit: the summaries name training programs and industry credentials, and the credential is what a college articulates. The state nursing assistant certificate, a Clinical Medical Assistant certification, a Child Development Permit or an NWCG wildland fire card each map to a different exhibit.</p>
+<p>Whether a project&#x27;s adult school or ROP partner holds a credit-by-exam or articulation agreement with its nearest college already; several high school and ROP articulations in MAP began that way.</p>
+<p>Each card&#x27;s examples are candidates for faculty review. A row pairs the training with a course the college already teaches, and the faculty who teach that course decide whether the training meets its outcomes; their review also settles the units a student would receive and whether the award is credit or noncredit.</p>
+<p>Delivery: our data does not record whether a matched course runs online or on the CVC Exchange, so a learner far from the college would need that confirmed.</p>
+<p>The people on each card start the conversation. The project contacts come from the July 2023 notice, so the first call confirms who leads it on each side today.</p>
+</section>
+<section aria-labelledby="h-next"><div class="band-head"><h2 id="h-next">Practical next steps</h2></div><ol class="next"><li>Send each project its card, so the first conversation is between the people it names: the project&#x27;s contact, each college&#x27;s CPL Coordinator and the faculty who teach the matching course.</li><li>For the healthcare projects, confirm the exit credential (CNA, HHA, LVN, CMA) and compare it with the credit recommendations College of the Desert, Chaffey College and Los Angeles Pierce College already hold.</li><li>For the early care apprenticeships, ask ECEPTS which Child Development Permit level each cohort reaches, then read it against the Child Development Associate exhibit the CCC Collaborative built.</li><li>For Fresno and the north valley, start with the exhibits Fresno City College and Lemoore College already articulate, and invite their CPL coordinators to a shared call with the workforce boards.</li><li>On December 9, hear from ECEPTS and Mountain View Los Altos what moved their colleges, and take Mountain View Los Altos&#x27;s two remaining colleges as the first follow-up.</li><li>Record every confirmed match in MAP so the next grantee cohort finds it there.</li></ol></section>
+<p class="note">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read November 3, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Each card names the project&#x27;s contact as EDD&#x27;s notice gives it; for each college in its examples, the card names the CPL Coordinator the college records in MAP and the faculty MAP lists in the subject of an example course or in English as a second language, read November 3, 2026. Version 3 adds the programs each example course is required in, as the CPL Commons&#x27; program requirements harvest read each college&#x27;s catalog, and a Request Adopt link wherever MAP&#x27;s CPL Opportunities page listed the exhibit when last checked.</p>
+</div>
+<div class="panel" role="tabpanel" id="p-fresno" aria-labelledby="t-fresno" tabindex="0">
+<section aria-labelledby="h-p-fresno">
+<h2 id="h-p-fresno">Start here: credit already exists nearby</h2>
+<article class="card wide">
+<div class="who">Fresno Area Workforce Investment Corporation · Fresno, Madera, Kings and Tulare counties</div>
+<h3>Construction · Forestry · Healthcare</h3>
+<p class="meta">$3,330,000 · 250 participants planned · 8 colleges in its counties</p>
+<ul class="lines" aria-label="Fresno Area Workforce Investment Corporation: the credentials it trains">
+<li><div class="lh"><code>Construction trades</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Fresno City College (Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship)</span></li>
+<li><div class="lh"><code>Fire, wildland fire and forestry</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at College of the Sequoias (Firefighter 1; Firefighter EMT Certificate), Fresno City College (Intermediate Wildland Fire Behavior), Reedley College (Wildland Fire-Basics)</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at Lemoore College (Certified Nurse Assistant (CNA) Certification; Nurse Assistant Training)</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">2 colleges</span></div><span class="lt">Credit already articulated in MAP at Fresno City College, Lemoore College (Medical Terminology)</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
+</ul>
+<p class="why">An Integrated Resource Team of two workforce boards, ValleyROP, Centro la Familia and ten employers; certified training, work-based learning, credentials and placement for 250 participants, 195 of them completing credentials.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Fresno Area Workforce Investment Corporation: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship</td><td>Fresno City College</td><td>PREAPP 121 MC3 Pre-Apprenticeship Essentials (3.5 units); PREAPP 120 MC3 Pre-Apprenticeship Core (3.5 units); 7 units in all</td><td>Articulated in MAP at this college; required in MC3 Pre-Apprenticeship Employment Ready (Certificate of Achievement); MC3 Pre-Apprenticeship Plus (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-MPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Firefighter 1</td><td>College of the Sequoias</td><td>FIRE 155 Fire Behavior and Combustion (3 units); FIRE 159 Introduction to Fire Protection Organizations (3 units); and 1 more; 9 units in all</td><td>Articulated in MAP at this college; required in Fire Technology (A.S. Degree); Fire Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-F1C-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Wildland Fire-Basics</td><td>Reedley College</td><td>WLF 10 Wildland Fire-Basics (5 units); WLF 110 Wildland Fire Field Studies II (0.5 units); and 3 more; 27 units in all</td><td>Articulated in MAP at this college; required in Forestry Technician-Fire Suppression (Certificate of Achievement); Wildland Fire Science (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-WF-2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>Lemoore College</td><td>HS 61 Nurse Assistant Training (6 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical Terminology</td><td>Fresno City College</td><td>HIT 10 Medical Terminology (3 units)</td><td>Articulated in MAP at this college; required in Clinical Medical Assistant (A.S. Degree); Health Information Technology (A.S. Degree) and 2 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>C-6 Cabinet, Millwork and Finish Carpentry Contractor</td><td>College of the Sequoias</td><td>CT 250 Basic Carpentry (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-CCMA-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-start-1">
+<h4 id="who-start-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-start-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-start-1-1">
+<li><span class="pn">Blake Konczal</span><span class="pr">Executive Director, Fresno Area Workforce Investment Corporation</span><a href="mailto:bkonczal@wfc.co">bkonczal@wfc.co</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-start-1-2">The colleges</p>
+<ul class="people" aria-labelledby="who-start-1-2">
+<li><span class="pn">Diane Defreitas</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Fresno City College</span><a href="mailto:diane.defreitas@fresnocitycollege.edu">diane.defreitas@fresnocitycollege.edu</a></li>
+<li><span class="pn">Nick Branch</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, College of the Sequoias</span><a href="mailto:nickb@cos.edu">nickb@cos.edu</a></li>
+<li><span class="pn">Edward Cunha</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:edwardcunha@whccd.edu">edwardcunha@whccd.edu</a></li>
+<li><span class="pn">Alyssa Salinas</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:alyssasalinas@whccd.edu">alyssasalinas@whccd.edu</a></li>
+<li><span class="pn">Daisy Tafolla</span><span class="pr">CPL Coordinator, Lemoore College</span><a href="mailto:daisytafolla@whccd.edu">daisytafolla@whccd.edu</a></li>
+<li><span class="pn">Brian Unruh</span><span class="pr">Faculty in CT, the subject of CT 250, College of the Sequoias</span><a href="mailto:brianu@cos.edu">brianu@cos.edu</a></li>
+<li><span class="pn">Ana Carrizales</span><span class="pr">Faculty in HS, the subject of HS 61, Lemoore College</span><a href="mailto:anacarrizales@whccd.edu">anacarrizales@whccd.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 4 of 5</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-corona-norco" aria-labelledby="t-corona-norco" tabindex="0">
+<section aria-labelledby="h-p-corona-norco">
+<h2 id="h-p-corona-norco">Start here: credit already exists nearby</h2>
+<article class="card wide">
+<div class="who">Corona-Norco Unified School District · Riverside County</div>
+<h3>Healthcare, nursing</h3>
+<p class="meta">$2,289,375 · regional demand stated · 6 colleges in its counties</p>
+<ul class="lines" aria-label="Corona-Norco Unified School District: the credentials it trains">
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Riverside City College, where the program is taught</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
+<li><div class="lh"><code>Vocational nursing (LVN)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at College of the Desert (Licensed Vocational Nurse (LVN) License)</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
+</ul>
+<p class="why">Corona-Norco Adult School expands its Nurse Assistant training and adds Home Health Aide and Licensed Vocational Nurse training over three years, with Corona Regional Medical Center, Corona Post Acute and Riverside Workforce Development.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Corona-Norco Unified School District: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Licensed Vocational Nurse (LVN) License</td><td>College of the Desert</td><td>NRN 140C Concepts of Nursing: Gerontology Clinical (1 unit); NRN 140 Concepts of Nursing: Gerontology (1 unit); and 11 more; 22 units in all</td><td>Articulated in MAP at this college; required in Registered Nursing (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOO-LVN(-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Certified Nurse Assistant (CNA) Certification</td><td>College of the Desert</td><td>HS 64 Nurse Assistant (6 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical Terminology</td><td>College of the Desert</td><td>HS 61 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in BIW IV: Medical Office Specialist (Certificate of Achievement); Emergency Medical Services (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mt. San Jacinto College</td><td>NURS 585 Certified Nursing Assistant (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>Home health aide</td><td>College of the Desert</td><td>HS 66 Home Health Aide (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>Home health aide</td><td>Mt. San Jacinto College</td><td>NURS 586 Certified Home Health Aide (CHHA) (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-start-2">
+<h4 id="who-start-2">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-start-2-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-start-2-1">
+<li><span class="pn">Dalia Gadelmawla</span><span class="pr">Assistant Superintendent, Corona-Norco Unified School District</span><a href="mailto:trublaitus@cnusd.k12.ca.us">trublaitus@cnusd.k12.ca.us</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-start-2-2">The colleges</p>
+<ul class="people" aria-labelledby="who-start-2-2">
+<li><span class="pn">Cameron Miller</span><span class="pr">CPL Coordinator, College of the Desert</span><a href="mailto:camiller@collegeofthedesert.edu">camiller@collegeofthedesert.edu</a></li>
+<li><span class="pn">Claudia Gutierrez</span><span class="pr">CPL Coordinator, Mt. San Jacinto College</span><a href="mailto:cgutierrez@msjc.edu">cgutierrez@msjc.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t1">Healthcare</span><span class="tag t1">Credit exists nearby: 1 of 4</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-ecepts" aria-labelledby="t-ecepts" tabindex="0">
+<section aria-labelledby="h-p-ecepts">
+<h2 id="h-p-ecepts">Start here: credit already exists nearby</h2>
+<article class="card wide">
+<div class="who">Early Care &amp; Education Pathways to Success · Alameda, Contra Costa, El Dorado, Marin, San Joaquin, San Mateo, Santa Clara, Los Angeles and San Diego counties</div>
+<h3>Early care and education</h3>
+<p class="meta">$3,330,000 · 1,400 participants planned · 54 colleges in its counties; partner colleges Chabot College, College of the Canyons, Los Angeles Pierce College and 10 more</p>
+<ul class="lines" aria-label="Early Care &amp; Education Pathways to Success: the credentials it trains">
+<li><div class="lh"><code>Early care and education</code><span class="u">3 colleges</span></div><span class="lt">Credit already articulated in MAP at San Diego City College, San Diego Mesa College, San Diego Miramar College (Child Development Center Practicum; Observation and Assessment in Early Childhood and 1 more)</span></li>
+</ul>
+<p class="why">Twelve ECE Registered Apprenticeship Programs add ESL support, bilingual mentors and embedded tutors; a pre-apprenticeship, an Associate Teacher or a Teacher apprenticeship with a partner college in each community; about 1,400 participants, 42 percent of them English learners.</p>
+<p class="why">The International Rescue Committee reports that ECEPTS has articulated credit for prior learning for its IETs, and it will share that experience on the December 9 call.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Early Care &amp; Education Pathways to Success: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Observation and Assessment in Early Childhood</td><td>San Diego City College</td><td>CHIL 160 Observation and Assessment of Children (2 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-OAA-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Observation and Issues in Child Development</td><td>San Diego Mesa College</td><td>CHIL 161 Observations and Issues in Child Development (2 units)</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-OAII-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Center Practicum</td><td>San Diego Miramar College</td><td>CHIL 291A Child Development Center Practicum (1 unit); CHIL 291C Child Development Center Practicum (1 unit); and 2 more; 4 units in all</td><td>Articulated in MAP at this college</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CDCP-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Merritt College</td><td>CHDEV 55 Child Development (5 units)</td><td>Same common course articulated at Saddleback College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>De Anza College</td><td>C D 12 Child, Family and Community Interrelationships (4 units)</td><td>Same common course articulated at Saddleback College; required in Child Development (A.A. Degree); Child Development (Certificate of Achievement) and 2 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Lake Tahoe Community College</td><td>ECE 101 Principles and Practices of Teaching Young Children (4 units)</td><td>Same common course articulated at Saddleback College; required in Early Childhood Education (A.A. Degree); Early Childhood Education (A.S. T Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-start-3">
+<h4 id="who-start-3">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-start-3-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-start-3-1">
+<li><span class="pn">Randi Wolfe</span><span class="pr">Executive Director, Early Care &amp; Education Pathways to Success</span><a href="mailto:randiwolfe@ecepts.org">randiwolfe@ecepts.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-start-3-2">The colleges</p>
+<ul class="people" aria-labelledby="who-start-3-2">
+<li><span class="pn">Angela Merkens</span><span class="pr">CPL Coordinator, San Diego City College</span><a href="mailto:amerkens@sdccd.edu">amerkens@sdccd.edu</a></li>
+<li><span class="pn">Rachel Russell</span><span class="pr">CPL Coordinator, San Diego Mesa College</span><a href="mailto:rrussell@sdccd.edu">rrussell@sdccd.edu</a></li>
+<li><span class="pn">Maryam Tartoussia</span><span class="pr">CPL Coordinator, San Diego Miramar College</span><a href="mailto:mtartoussia@sdccd.edu">mtartoussia@sdccd.edu</a></li>
+<li><span class="pn">Monica Ambalal</span><span class="pr">CPL Coordinator, Merritt College</span><a href="mailto:mambalal@peralta.edu">mambalal@peralta.edu</a></li>
+<li><span class="pn">Jayanti Roy</span><span class="pr">CPL Coordinator, De Anza College</span><a href="mailto:royjayanti@deanza.edu">royjayanti@deanza.edu</a></li>
+<li><span class="pn">Karl Seelbach</span><span class="pr">CPL Coordinator, Merritt College</span><a href="mailto:kseelbach@peralta.edu">kseelbach@peralta.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t2">Education and trades</span><span class="tag t1">Credit exists nearby: 1 of 1</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-north-central" aria-labelledby="t-north-central" tabindex="0">
+<section aria-labelledby="h-p-north-central">
+<h2 id="h-p-north-central">Ready to build: the program runs nearby</h2>
+<article class="card wide">
+<div class="who">North Central Counties Consortium · Colusa, Glenn, Yuba and Sutter counties</div>
+<h3>Education · Healthcare · Leisure and hospitality · Manufacturing · Transportation</h3>
+<p class="meta">$2,859,640 · 260 participants planned · 1 college in its counties; nearby Woodland Community College, Butte College</p>
+<ul class="lines" aria-label="North Central Counties Consortium: the credentials it trains">
+<li><div class="lh"><code>Early care and education</code><span class="u">8 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
+<li><div class="lh"><code>Hospitality and food service</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Woodland Community College, where the program is taught</span></li>
+<li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">14 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
+<li><div class="lh"><code>Transportation and logistics</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Yuba College, where the program is taught</span></li>
+</ul>
+<p class="why">Career English and occupational skills training with earn-and-learn placements across four county offices of education, the one-stops and local employers from clinics and post-acute care to farms, a cheese company and a transit agency; 260 participants, 174 completing credentials.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="North Central Counties Consortium: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Butte College</td><td>CDF 12 Child, Family, and Community (3 units)</td><td>Same common course articulated at Saddleback College; required in Early Childhood Education (A.S. T Degree); Early Childhood Education (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Child Development Associate (CDA) Credential</td><td>Woodland Community College</td><td>ECE 1A Principles and Practices of Teaching Young Children (3 units)</td><td>Same common course articulated at Saddleback College; required in Child Development Associate Teacher (Certificate of Achievement); Child Development Master Teacher (Certificate of Achievement) and 3 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-ACPC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical Terminology</td><td>Butte College</td><td>ALH 104 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Coding (Certificate of Achievement); Medical Office Administration (A.S. Degree) and 1 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>ServSafe Food Protection Manager Certification</td><td>Butte College</td><td>FN 10 Food Safety and Sanitation (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-SC1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>AWS D1.5 SMAW Qualified Welder</td><td>Butte College</td><td>WLD 24 Shielded Metal Arc Welding (Stick Electrode) (8 units)</td><td>Same common course articulated at Bakersfield College; required in Welding Technology (A.S. Degree); Welding Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-AWSD2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Butte College</td><td>NSG 100 CNA Basic Nursing Care, Theory (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-second-1">
+<h4 id="who-second-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-second-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-second-1-1">
+<li><span class="pn">Cindy Newton</span><span class="pr">Executive Director, North Central Counties Consortium</span><a href="mailto:cnewton@ncen.org">cnewton@ncen.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-second-1-2">The college</p>
+<ul class="people" aria-labelledby="who-second-1-2">
+<li><span class="pn">Edwin Beltran</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:eortega@yccd.edu">eortega@yccd.edu</a></li>
+<li><span class="pn">Alejandra Lopez</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:alopez@yccd.edu">alopez@yccd.edu</a></li>
+<li><span class="pn">Annie Marquez</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:amarquez@yccd.edu">amarquez@yccd.edu</a></li>
+<li><span class="pn">Brandi Asmus</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:basmus@yccd.edu">basmus@yccd.edu</a></li>
+<li><span class="pn">Aree Metz</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Woodland Community College</span><a href="mailto:ametz@ycd.edu">ametz@ycd.edu</a></li>
+<li><span class="pn">Jeannine Mullin</span><span class="pr">Faculty in ECE, the subject of ECE 1A, Woodland Community College</span><a href="mailto:jmullin@yccd.edu">jmullin@yccd.edu</a></li>
+<li><span class="pn">Laura Daly</span><span class="pr">Faculty in ECE, the subject of ECE 1A, Woodland Community College</span><a href="mailto:ldaly@yccd.edu">ldaly@yccd.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-mvla" aria-labelledby="t-mvla" tabindex="0">
+<section aria-labelledby="h-p-mvla">
+<h2 id="h-p-mvla">Ready to build: the program runs nearby</h2>
+<article class="card wide">
+<div class="who">Mountain View Los Altos Adult School · Santa Clara and San Mateo counties</div>
+<h3>Health science and medical technology</h3>
+<p class="meta">$1,904,283 · 240 participants planned · 10 colleges in its counties; partner colleges Chabot College, Foothill College, Mission College</p>
+<ul class="lines" aria-label="Mountain View Los Altos Adult School: the credentials it trains">
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more award credit for it</span></li>
+<li><div class="lh"><code>Medical assisting</code><span class="u">9 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Evergreen Valley College and 2 more, where the program is taught</span></li>
+<li><div class="lh"><code>Medical office, billing and records</code><span class="u">7 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Gavilan College and 1 more, where the program is taught</span></li>
+<li><div class="lh"><code>Eye care technician</code><span class="u">2 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, where the program is taught</span></li>
+<li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
+</ul>
+<p class="why">Eight cohorts of 30 over 44 months: medical terminology first, then Certified Nursing Assistant, Eye Care Technician, Medical Records Specialist, Medical Office Assistant or Medical Assistant, with Home Health Aide and acute care as stackable next steps.</p>
+<p class="why">The International Rescue Committee reports that Mountain View Los Altos has articulated credit for prior learning for its IET at one of its three community colleges. On December 9 it will share what holds up the other two, and the CPL Initiative will bring what MAP shows for each college.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Mountain View Los Altos Adult School: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Medical Terminology</td><td>Foothill College</td><td>AHS 52 Medical Terminology (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mission College</td><td>HOC 019A Nursing Assistant Fundamentals (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>Medical assisting</td><td>Chabot College</td><td>MEDA 70A Clinical Skills For the Medical Assistant I (3 units)</td><td>The college teaches a matching course; required in Medical Assisting (A.S. Degree); Medical Assisting (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Medical office, billing and records</td><td>Chabot College</td><td>HIT 48 Medical Coding 1 (4 units)</td><td>The college teaches a matching course; required in Health Information Coding (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Eye care technician</td><td>Chabot College</td><td>OPTN 9702 Optical Dispensing and Materials (5 units)</td><td>The college teaches a matching course; required in Optical Technology (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Home health aide</td><td>Mission College</td><td>HOC 019F Home Health Aide Fundamentals (1.5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-second-2">
+<h4 id="who-second-2">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-second-2-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-second-2-1">
+<li><span class="pn">Julie Vo</span><span class="pr">Director, Mountain View Los Altos Adult School</span><a href="mailto:Julie.vo@mvla.net">Julie.vo@mvla.net</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-second-2-2">The colleges</p>
+<ul class="people" aria-labelledby="who-second-2-2">
+<li><span class="pn">Natalie Latteri</span><span class="pr">CPL Coordinator, Foothill College</span><a href="mailto:latterinatalie@fhda.edu">latterinatalie@fhda.edu</a></li>
+<li><span class="pn">Yolanda Barnes</span><span class="pr">CPL Coordinator, Mission College</span><a href="mailto:yolanda.barnes@missioncollege.edu">yolanda.barnes@missioncollege.edu</a></li>
+<li><span class="pn">Dara Greene</span><span class="pr">CPL Coordinator, Chabot College</span><a href="mailto:dgreene@chabotcollege.edu">dgreene@chabotcollege.edu</a></li>
+<li><span class="pn">Lannibeth Calvillo</span><span class="pr">CPL Coordinator, Chabot College</span><a href="mailto:lcalvillo@chabotcollege.edu">lcalvillo@chabotcollege.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-fairfield-suisun" aria-labelledby="t-fairfield-suisun" tabindex="0">
+<section aria-labelledby="h-p-fairfield-suisun">
+<h2 id="h-p-fairfield-suisun">A precedent to adopt: another college shows the way</h2>
+<article class="card wide">
+<div class="who">Fairfield-Suisun Adult School · Solano County</div>
+<h3>Healthcare</h3>
+<p class="meta">$213,120 · 48 participants planned · 1 college in its counties</p>
+<ul class="lines" aria-label="Fairfield-Suisun Adult School: the credentials it trains">
+<li><div class="lh"><code>Medical assisting</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: College of the Canyons, Modesto Junior College award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
+</ul>
+<p class="why">A 120-hour Clinical Medical Assistant bridge course with contextualized medical and office vocabulary, then CALRegional&#x27;s ten-week Clinical Medical Assistant course and a 160-hour externship; 12 students a year, 48 over the grant.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Fairfield-Suisun Adult School: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Medical Terminology</td><td>Solano Community College</td><td>NURS 111 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Administrative Assistant (Certificate of Achievement); Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 101 Study of Human Diseases for Medical Assistants (3 units)</td><td>The college teaches a matching course; required in Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 60 Adminstrative Medical Assistant (3 units)</td><td>The college teaches a matching course; required in Medical Administrative Assistant (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-precedent-1">
+<h4 id="who-precedent-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-precedent-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-precedent-1-1">
+<li><span class="pn">Kris Corey</span><span class="pr">Superintendent, Fairfield-Suisun Adult School</span><a href="mailto:elizabethk@fsusd.org">elizabethk@fsusd.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-precedent-1-2">The college</p>
+<ul class="people" aria-labelledby="who-precedent-1-2">
+<li><span class="pn">Sarah Barsness</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Solano Community College</span><a href="mailto:sarah.barsness@solano.edu">sarah.barsness@solano.edu</a></li>
+<li><span class="pn">Erica Beam</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Solano Community College</span><a href="mailto:erica.beam@solano.edu">erica.beam@solano.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t1">Healthcare</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+<div class="panel" role="tabpanel" id="p-werc" aria-labelledby="t-werc" tabindex="0">
+<section aria-labelledby="h-p-werc">
+<h2 id="h-p-werc">Job-related English: a course-to-course match</h2>
+<article class="card wide">
+<div class="who">Worker Education &amp; Resource Center · Los Angeles County</div>
+<h3>Public sector · Health and social services</h3>
+<p class="meta">$1,558,715 · 234 participants planned · 21 colleges in its counties</p>
+<ul class="lines" aria-label="Worker Education &amp; Resource Center: the credentials it trains">
+<li><div class="lh"><code>English as a second language and workplace English</code><span class="u">134 programs</span></div><span class="lt">Ready for a first articulation at Antelope Valley College, Cerritos College, Citrus College, College of the Canyons and 16 more, where the program is taught</span></li>
+<li><div class="lh"><code>Public sector and human services</code><span class="u">17 programs</span></div><span class="lt">Ready for a first articulation at Cerritos College, East Los Angeles College, Glendale Community College, Long Beach City College and 8 more, where the program is taught</span></li>
+</ul>
+<p class="why">Job-related English for incumbent County of Los Angeles workers and job seekers on the PLACE pathway into county civil service and contracted health and human services agencies, with curriculum built with LAUSD&#x27;s Division of Adult and Career Education; 234 workers trained.</p>
+<p class="tlead">Examples to examine with faculty</p>
+<div class="wrap" role="region" aria-label="Worker Education &amp; Resource Center: example articulations to examine" tabindex="0"><table>
+<colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
+<thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
+<tr><td>Introduction to Social Work and Human Services</td><td>Cerritos College</td><td>SOC 220 Introduction to Human Services (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXS-S0IT1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Community Health Worker Skills</td><td>Long Beach City College</td><td>HLED 200 Introduction to Community Health Worker (3 units)</td><td>Same common course articulated at Cabrillo College; required in Community Health Worker (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CHWS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>Social and Human Services Apprenticeship</td><td>Compton College</td><td>SOCI 208A Social Work and Human Services Seminar (2 units)</td><td>Same common course articulated at San Bernardino Valley College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOA-SAHS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
+<tr><td>English as a second language and workplace English</td><td>Long Beach City College</td><td>ESL 270 Listen/Speak for Work for ESL Level 1 (5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>East Los Angeles College</td><td>E.S.L. 003A College ESL III: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>Los Angeles City College</td><td>E.S.L. 006A College ESL VI: Writing and Grammar (6 units)</td><td>The college teaches a matching course; required in ESL MILESTONE - LANGUAGE ARTS, ORAL COMMUNICATION (Certificate of Achievement); ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+</tbody></table></div>
+<div class="contacts" role="group" aria-labelledby="who-wider-1">
+<h4 id="who-wider-1">Who is in the conversation</h4>
+<div class="cgroup">
+<p class="cside" id="who-wider-1-1">Grantee staff</p>
+<ul class="people" aria-labelledby="who-wider-1-1">
+<li><span class="pn">Amber Roth</span><span class="pr">Executive Director, Worker Education &amp; Resource Center</span><a href="mailto:aroth@we-rc.org">aroth@we-rc.org</a></li>
+</ul></div>
+<div class="cgroup">
+<p class="cside" id="who-wider-1-2">The colleges</p>
+<ul class="people" aria-labelledby="who-wider-1-2">
+<li><span class="pn">David Rodarte</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Cerritos College</span><a href="mailto:drodarte@cerritos.edu">drodarte@cerritos.edu</a></li>
+<li><span class="pn">Garrett Whelan</span><span class="pr">CPL Coordinator, Long Beach City College</span><a href="mailto:gwhelan@lbcc.edu">gwhelan@lbcc.edu</a></li>
+<li><span class="pn">Corina Diaz</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Compton College</span><a href="mailto:cdiaz3@compton.edu">cdiaz3@compton.edu</a></li>
+<li><span class="pn">Leticia Barajas</span><span class="pr">CPL Coordinator, East Los Angeles College</span><a href="mailto:barajall@elac.edu">barajall@elac.edu</a></li>
+<li><span class="pn">Cynthia Gomez</span><span class="pr">CPL Coordinator, Los Angeles City College</span><a href="mailto:gomezc@lacitycollege.edu">gomezc@lacitycollege.edu</a></li>
+<li><span class="pn">Dr. Carrie Edwards</span><span class="pr">Faculty Lead, as listed in MAP&#x27;s College Contacts, Cerritos College</span><a href="mailto:cedwards@cerritos.edu">cedwards@cerritos.edu</a></li>
+<li><span class="pn">Amanda Lynch</span><span class="pr">CPL Coordinator, Long Beach City College</span><a href="mailto:alynch@lbcc.edu">alynch@lbcc.edu</a></li>
+</ul></div>
+</div>
+<div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
+</article>
+</section>
+</div>
+</div>
+</main>
+<script>
+/* Tabs: the ARIA tabs pattern. Without this script the tab row stays hidden and every panel shows. */
+(function () {
+  var list = document.querySelector("[data-tabs]");
+  if (!list) return;
+  var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+  var root = list.parentNode;
+  function select(i, focus) {
+    tabs.forEach(function (t, j) {
+      var on = j === i;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      panels[j].hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+  }
+  function byPanel(id) {
+    for (var i = 0; i < panels.length; i++) if (panels[i].id === id) return i;
+    return -1;
+  }
+  root.classList.add("js-tabs");
+  list.hidden = false;
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () {
+      select(i, false);
+      try { history.replaceState(null, "", i === 0 ? location.pathname + location.search : "#" + panels[i].id); } catch (e) {}
+    });
+    t.addEventListener("keydown", function (e) {
+      var n = tabs.length, k = e.key, to = -1;
+      if (k === "ArrowRight" || k === "ArrowDown") to = (i + 1) % n;
+      else if (k === "ArrowLeft" || k === "ArrowUp") to = (i - 1 + n) % n;
+      else if (k === "Home") to = 0;
+      else if (k === "End") to = n - 1;
+      if (to < 0) return;
+      e.preventDefault();
+      select(to, true);
+    });
+  });
+  // A link to a panel (the Overview's project names, a shared #p-... address) opens its tab.
+  function fromHash(focusPanel) {
+    var i = byPanel(decodeURIComponent((location.hash || "").slice(1)));
+    if (i < 0) return false;
+    select(i, false);
+    if (focusPanel) { panels[i].focus(); }
+    return true;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#p-"]') : null;
+    if (!a) return;
+    var i = byPanel(a.getAttribute("href").slice(1));
+    if (i < 0) return;
+    e.preventDefault();
+    select(i, false);
+    try { history.pushState(null, "", "#" + panels[i].id); } catch (err) {}
+    list.scrollIntoView({ block: "start" });
+    tabs[i].focus();
+  });
+  window.addEventListener("hashchange", function () { if (!fromHash(false)) select(0, false); });
+  if (!fromHash(false)) select(0, false);
+})();
+</script>
+<!-- Ask Sierra: a chip in the bottom-right corner opens Sierra in a side bar, as on the CPL Library. -->
+<script src="../../sierra/sidebar.js" defer></script>
+</body>
+</html>
+$ELLV5$,
+         'CPLBrain/04-projects/cpl-initiative/ell-iet/20261023_ELL_IET_CPL_Starting_Points_5.html (make_tabs.py on Version 3) via scripts/library_page.py',
+         jsonb_build_object('refresh_note', refresh_note, 'requested_at', regen->>'requested_at', 'draft_url', 'https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa'),
+         $S$Version 5 from Sam's Revise request of 5 November (18:30 UTC): the Overview gains The CPL Initiative at a glance after the December 9 call, four numbered steps from a student's learning to another college adopting the credit (Learning; Request, through Credit for Being You; Credit, which the college awards in MAP; Adoption), with the Chancellor's Office CPL page and the CPL Fact Sheet linked, and the call's second agenda item links to it. To keep Sierra reading the page whole, 14 table cells now read No credit recommendation yet and 7 precedent lines drop already: 33,971 characters against her 34,000. Built in a session from the vault source (make_tabs.py). Remediated: nothing failed; npm run a11y and an axe pass of every tab at 390px and 1440px, light and dark, passed.$S$, null, null, 'SkyFlipFlop (session), stored by library-skyflipflop@bot'
+  from public.cpl_library
+  where slug = 'ell-iet-cpl-starting-points' and retired_at is null
+    and regen->>'draft_id' = '22d6f5de-3d3b-4cf9-896f-2f4a6fa4d676' and regen->>'requested_at' = '2026-11-05T18:30:18.271Z'
+    and regen->>'approved_at' is null and updated_at = '2026-11-05 18:30:46.02426+00'
+  returning id, library_id
+)
+update public.cpl_library l
+set regen = (l.regen - 'drafted_with') || jsonb_build_object('draft_id', d.id::text, 'draft_url', 'https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa',
+              'ready_at', to_char(now() at time zone 'utc', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'), 'drafted_by', 'SkyFlipFlop (session)',
+              'drafted_with', 'session', 'earlier', '[{"draft_id": "22d6f5de-3d3b-4cf9-896f-2f4a6fa4d676", "draft_url": null, "ready_at": "2026-11-05T18:30:45.887Z", "requested_by": "Sam", "note": null, "drafted_with": "library-revise-draft", "set_aside": "SkyFlipFlop built Version 5 in a session from the vault source, at Sam''s request"}]'::jsonb),
+    rebuild_from = $S$CPLBrain/04-projects/cpl-initiative/ell-iet/make_tabs.py 20261023_ELL_IET_CPL_Starting_Points_3.html -o 20261023_ELL_IET_CPL_Starting_Points_5.html (Version 5, from Version 3, the page S557 built; make_brief.py and ../agency-visual/build.py made Versions 1 and 2 beside it); the public page: python3 scripts/library_page.py ell-iet-cpl-starting-points <the built HTML> (cpl-project-tracker)$S$,
+    versions = coalesce(l.versions, '[]'::jsonb) || jsonb_build_array('{"url": "https://claude.ai/artifact/9USBGJfCwQLAqiwdBmYgQa", "date": "2026-11-05", "label": "Version 5", "status": "Draft: Version 5 from Sam''s Revise request of 5 November (18:30 UTC): the Overview gains The CPL Initiative at a glance after the December 9 call, four numbered steps from a student''s learning to another college adopting the credit (Learning; Request, through Credit for Being You; Credit, which the college awards in MAP; Adoption), with the Chancellor''s Office CPL page and the CPL Fact Sheet linked, and the call''s second agenda item links to it. To keep Sierra reading the page whole, 14 table cells now read No credit recommendation yet and 7 precedent lines drop already: 33,971 characters against her 34,000. Built in a session from the vault source (make_tabs.py). Remediated: nothing failed; npm run a11y and an axe pass of every tab at 390px and 1440px, light and dark, passed."}'::jsonb),
+    updated_by = 'library-skyflipflop@bot'
+from d where l.id = d.library_id
+returning l.slug, l.regen, l.updated_at;

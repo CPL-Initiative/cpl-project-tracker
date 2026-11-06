@@ -30,6 +30,7 @@
 // Governance: kb/governance_surface_map.json, function:library-revise-draft.
 
 import { applyEdits, frameKept, parseAnswer } from "./apply_edits.mjs";
+import { readingText, SIERRA_MAX } from "./sierra_text.mjs";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const ANON = Deno.env.get("SUPABASE_ANON_KEY") || "";
@@ -82,7 +83,8 @@ Rules for the edits:
 - Never invent a figure, a date, a name or a link. A number comes from the request or a pasted document, stated there; if a change needs a figure you were not given, leave the passage as it stands and say so in the summary.
 - Write as the Chancellor's Office writes: plain words, active voice, the student as the subject, American spelling. The program is the CPL Initiative; the platform is the MAP platform (Mapping Articulated Pathways). No emoji, no business words (leverage, utilize, robust).
 - Never copy a person's email address, phone number or ID number from a pasted document onto the page.
-- Keep the page accessible: text you add sits in the same elements and classes as the text around it, so its contrast and sizes follow.`;
+- Keep the page accessible: text you add sits in the same elements and classes as the text around it, so its contrast and sizes follow.
+- Keep the page inside Sierra's reading budget, which the request states. She reads a page whole only up to that many characters of its text and skips the middle of a longer one. When your change would take the page past it, make room by shortening wording the page repeats, never by dropping a fact, and say in the summary what you shortened.`;
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
@@ -110,9 +112,22 @@ Deno.serve(async (req) => {
   if (!SLUG.test(r.slug || "")) return reply(409, { error: "The record's slug is not a Pages address." });
 
   const pageUrl = PAGES + r.slug + "/";
-  const pr = await fetch(pageUrl).catch(() => null);
-  if (!pr || !pr.ok) return reply(409, { error: "This piece has no public copy on GitHub Pages to revise from, so a session revises it: Copy the request." });
-  const page = await pr.text();
+  // More changes to a draft (Sam, 2026-11-05: Ask for more changes must never lose the draft): the card names the
+  // draft it builds on in regen.based_on_draft, and the new draft starts from that draft's page, never the public copy.
+  const baseDraft = g.based_on_draft ? String(g.based_on_draft) : "";
+  if (baseDraft && !/^[0-9a-f-]{36}$/i.test(baseDraft)) return reply(409, { error: "The draft this builds on is not one the Library stored; a session revises it: Copy the request." });
+  let page = "", basedOn = pageUrl, pageWords = `The page (${pageUrl})`;
+  if (baseDraft) {
+    const bd = await rest(`cpl_library_drafts?id=eq.${baseDraft}&library_id=eq.${r.id}&select=html`, cred);
+    const rows = bd.ok ? await bd.json() : [];
+    if (!rows[0] || !rows[0].html) return reply(409, { error: "The draft this builds on could not be read, so a session revises it: Copy the request." });
+    page = rows[0].html; basedOn = "draft " + baseDraft;
+    pageWords = `The draft of the page, not yet public (it will replace ${pageUrl})`;
+  } else {
+    const pr = await fetch(pageUrl).catch(() => null);
+    if (!pr || !pr.ok) return reply(409, { error: "This piece has no public copy on GitHub Pages to revise from, so a session revises it: Copy the request." });
+    page = await pr.text();
+  }
   if (page.length > MAX_PAGE) return reply(413, { error: "The page is too large to revise here; a session revises it." });
 
   let docs = "";
@@ -121,7 +136,11 @@ Deno.serve(async (req) => {
     if (room <= 0) break;
     docs += `\n--- ${String(x.title || "A pasted document").slice(0, 200)} ---\n` + String(x.text).slice(0, room) + "\n";
   }
-  const ask = `The page (${pageUrl}):\n<page>\n${page}\n</page>\n\n` +
+  // Fix 1 (Sam, 2026-11-05: "build fixes 1-3"): the model is told Sierra's budget and the page's length against it.
+  const sierraBefore = readingText(page).length;
+  const ask = `${pageWords}:\n<page>\n${page}\n</page>\n\n` +
+    `Sierra's reading budget: ${SIERRA_MAX.toLocaleString("en-US")} characters of text. The page reads ${sierraBefore.toLocaleString("en-US")} now` +
+    (sierraBefore > SIERRA_MAX ? ", already past it: add nothing without making room." : `, so ${(SIERRA_MAX - sierraBefore).toLocaleString("en-US")} remain.`) + "\n\n" +
     `Changes asked for by ${g.requested_by || "the team"}:\n${r.refresh_note || "None typed: bring the page in line with the documents below."}\n` +
     (docs ? `\nDocuments pasted to work from:${docs}` : "") +
     (linked.length ? `\nDocuments linked on the card, not opened here: ${linked.map((x: any) => x.title || x.url).join("; ")}. Say in the summary if the change needs one of them.\n` : "") +
@@ -146,12 +165,16 @@ Deno.serve(async (req) => {
   const lost = frameKept(page, done.html);
   if (lost.length) return reply(422, { error: "The draft was not stored: it dropped " + lost.join(", ") + ".", summary: ans.summary });
 
+  // The draft's length as Sierra reads it rides on the request, so the card can say it.
+  const sierra = { before: sierraBefore, after: readingText(done.html).length, max: SIERRA_MAX };
   const ins = await rest("cpl_library_drafts", cred, {
     method: "POST",
     body: JSON.stringify({
-      library_id: r.id, slug: r.slug, html: done.html, based_on: pageUrl, made_by: by, model: MODEL,
+      library_id: r.id, slug: r.slug, html: done.html, based_on: basedOn, made_by: by, model: MODEL,
       summary: ans.summary || null, edits: done.applied,
-      request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g },
+      request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g, sierra,
+        // Each edit as Was and Now, so the card's What changed shows them (Version 22).
+        pairs: (Array.isArray(ans.edits) ? ans.edits : []).slice(0, 40).map((e: any) => ({ was: String(e?.old ?? "").slice(0, 400), now: String(e?.new ?? "").slice(0, 400) })) },
     }),
   });
   if (!ins.ok) return reply(502, { error: "The draft could not be stored (" + ins.status + ")." });
@@ -160,5 +183,5 @@ Deno.serve(async (req) => {
   const regen = { ...g, ready_at: new Date().toISOString(), draft_id: draft.id, draft_url: null, drafted_by: by, drafted_with: "library-revise-draft" };
   const up = await rest(`cpl_library?id=eq.${id}`, cred, { method: "PATCH", body: JSON.stringify({ regen, updated_by: by }) });
   if (!up.ok) return reply(502, { error: "The draft is stored, but the card could not be updated (" + up.status + ")." });
-  return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", model: MODEL, usage: out?.usage || null });
+  return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", sierra, model: MODEL, usage: out?.usage || null });
 });

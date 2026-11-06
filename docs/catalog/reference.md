@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-65 document(s).
+66 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -40,7 +40,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-02 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
-| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-02 |
+| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-05 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-08-28 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-09-10 |
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |
@@ -65,6 +65,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
 | [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-10-05 |
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
+| [COBIx on pull requests: the review loop without Sam in the middle](../reference/cobix_pr_loop.md) | — | `cobix_pr_loop.md` |  |  |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-04 |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
@@ -76,7 +77,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Knowledge Base & Unified Courses Curation — Build Status (CLAUDE.md offload)](../reference/kb_build_status.md) | — | `kb_build_status.md` | 2026-07-10 |  |
 | [M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)](../reference/mid_lifecycle.md) | — | `mid_lifecycle.md` | 2026-07-10 |  |
 | [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-10-27 |
-| [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-08-28 |
+| [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-11-05 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-05 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
