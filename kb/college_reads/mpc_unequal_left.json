@@ -1,0 +1,56 @@
+{
+ "_readme": "S584 SkyMinkowski, 2026-11-05. Monterey Peninsula's six unequal records left after S536 (lessons S536, Left (14)): Accounting 22052 (33.5-34 against 35), Nursing 03633 (57.5-63 against 72), the transfer degrees 32033, 37243, 41831, and ASL 39266. Six pages, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "words": "Each course row with its units, each list's or-choices and units, and the program's printed total units."
+ },
+ "keywords": [
+  "Total",
+  "Units",
+  "[Ss]elect",
+  "or ",
+  "[Cc]hoose",
+  "[Cc]omplete",
+  "Cal-GETC",
+  "IGETC",
+  "CSU"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-coa/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/nursing/nursing-as/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/anthropology/anthropology-aa-t/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/global-studies/global-studies-aa-t/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-hospitality-management-as-t/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/american-sign-language/american-sign-language-aa/",
+   "answers": [
+    "words"
+   ]
+  }
+ ]
+}

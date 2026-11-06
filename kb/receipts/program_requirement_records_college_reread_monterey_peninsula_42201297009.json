@@ -1,0 +1,7403 @@
+{
+ "college": "Monterey Peninsula College",
+ "reread_run": "42201297009",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "42195216637",
+ "at": "2026-11-06T10:16:56Z",
+ "posted": 33,
+ "batches": 2,
+ "skipped": [
+  {
+   "control_number": "32361",
+   "why": "extraction error: HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}"
+  },
+  {
+   "control_number": "39294",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39356",
+   "why": "extraction error: HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}"
+  },
+  {
+   "control_number": "40936",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45482",
+   "why": "extraction error: HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}"
+  }
+ ],
+ "error": null,
+ "replaced": 33,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "31364",
+  "31860",
+  "32033",
+  "32034",
+  "32041",
+  "32133",
+  "32143",
+  "32230",
+  "32381",
+  "32416",
+  "33092",
+  "33099",
+  "33234",
+  "33584",
+  "33585",
+  "33586",
+  "33587",
+  "33588",
+  "33590",
+  "35218",
+  "37243",
+  "37306",
+  "37534",
+  "37536",
+  "40920",
+  "41831",
+  "41977",
+  "42677",
+  "43891",
+  "43902",
+  "43903",
+  "43904",
+  "45184"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 30,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Monterey Peninsula College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 42195216637;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "ECED 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 52",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 61",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 80",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Understand and apply knowledge of child development theories and principles, encompassing children’s physical, intellectual, social, and emotional development that recognizes various contexts that influence children as individuals and plan for all children’s developmental needs from both an individualized and group perspective.",
+      "Identify, develop, and implement developmentally appropriate curriculum, teaching practices, and healthy/safe/inclusive environments that positively guide and enhance children’s development, creativity, and problem-solving skills.",
+      "Demonstrate knowledge of foundations of learning for young children, including dual-language learners and children with special needs, in relation to the major curriculum areas of math, science, creative art, small motor development, language/literature/literacy, social studies, large motor development: music/movement, and health/safety/nutrition.",
+      "Develop positive, supportive relationships with children in order to plan for groups and individual children using a relational, play-based collaborative approach involving families and the community.",
+      "Value and cultivate collaborative family and community relationships through inclusion of families and communities in young children’s development and learning, and apply knowledge and strategies for honoring and working with diverse groups of children, families and community.",
+      "Identify and implement observation, documentation, and other developmentally appropriate assessment strategies (including the use of technology), in collaboration with families and community resources, to plan for children’s interests, meet developmental needs, and strengthen teacher’s work with children and families.",
+      "Develop reflective habits and grow as an Early Childhood professional by understanding the complexities, ethical responsibilities, and professional role as a teacher and advocate for young children, their families, and the early-childhood profession."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 25,
+      "min": 25
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Science for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 25,
+   "source_url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Early Childhood Education",
+   "control_number": "31364"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 10",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 19",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 19",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 38",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PSYC 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 3",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PSYC 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 35",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 50",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Explain the major concepts, theoretical perspectives, basic research methods, and empirical findings in psychology.",
+      "Use critical and creative thinking, skeptical inquiry, and when possible, the scientific approach to solve problems related to behavior and mental processes.",
+      "Apply psychological principles to personal and social issues."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 20,
+      "min": 20
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "PSYCHOLOGY, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 20,
+   "source_url": "https://catalog.mpc.edu/programs-study/psychology/psychology-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Psychology",
+   "control_number": "31860"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANTH C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH C1001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "GEOG 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ANTH 6L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GWOS 30",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "List C",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "ANAT 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 2L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Critically examine and comprehend human nature and behavior, social traditions, and institutions.",
+      "Describe biological and cultural factors responsible for human variation.",
+      "Distinguish variations in culture using the relativist perspective.",
+      "Evaluate the various theories, methods, and techniques used to investigate the human past."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 23
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ANTHROPOLOGY, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 23,
+   "source_url": "https://catalog.mpc.edu/programs-study/anthropology/anthropology-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Anthropology",
+   "control_number": "32033"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SOCI 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 19",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "SOCI 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 3",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETNC 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "SOCI 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Explain the process of socialization in terms of human development in different social contexts and societies.",
+      "Develop appropriate research questions, design well-developed research projects at the undergraduate level, and effectively apply empirical methods to the study of society, generating well-evidenced, rational explanations for social outcomes, phenomena, practices, and processes.",
+      "Describe how social structures of class, culture, gender, race, and sexuality affect life changes.",
+      "Critically analyze and explain the relationship between individual behavior and society."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Arts for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://catalog.mpc.edu/programs-study/sociology/sociology-associate-arts-transfer/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Sociology",
+   "control_number": "32034"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 20A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 31",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 32",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 3A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 3B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 3C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 9",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "CSCI 10A",
+          "units": 3,
+          "units_max": 4,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "research",
+      "industry",
+      "education"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Reason qualitatively and logically about physical phenomena using scientific models.",
+      "Apply Newton’s laws, thermodynamics, the laws of electricity and magnetism, quantum theory, and the principles of energy conservation to problems involving motion, heat, light, electro-magnetism, and matter.",
+      "Use appropriate instruments to perform scientific experiments to analyze data to check agreements with theoretical predictions."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 36,
+      "min": 35
+     },
+     "degree_total": {
+      "max": 63,
+      "min": 62
+     },
+     "section_heading": "PHYSICS 2.0, ASSOCIATE IN SCIENCE FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 36,
+   "total_min": 35,
+   "source_url": "https://catalog.mpc.edu/programs-study/physics/physics-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Physics",
+   "control_number": "32041"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CSCI 10A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 10B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 3A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 3B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "computer science"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Design, implement, test, and debug a program using structured and object-oriented design principles.",
+      "Write programs that use data structures such as arrays, records, strings, linked lists, stacks, queues, trees, and hash tables.",
+      "Write programs in assembly language.",
+      "Use formal tools of symbolic logic to model real-life situations, including those arising in computing contexts."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 30,
+      "min": 30
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Science for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 30,
+   "source_url": "https://catalog.mpc.edu/programs-study/computer-science/computer-science-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Computer Science",
+   "control_number": "32133"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTB 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTB 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 10A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ARTD 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTD 40A",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCE 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTB 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 9A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 12A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 40A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTP 11A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 60",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTD 1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Create, understand, analyze, and critically evaluate artwork in a wide variety of media.",
+      "Demonstrate critical thinking and competency in visual language.",
+      "Ask questions related to studio art and artists, draw reasonable conclusions, and/or generate appropriate solutions; and effectively communicate their results.",
+      "Analyze and interpret human thought, achievement, and expression relevant to studio arts, and communicate the results."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "STUDIO ARTS, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.mpc.edu/programs-study/art/studio-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Studio Arts",
+   "control_number": "32143"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 21,
+    "placed": 21,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 10A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARCE 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCE 1A",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTB 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTB 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTD 1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTP 11A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTP 12A",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 9A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTS 12A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 5",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMA 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHIL 2",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "THEA 1",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Identify and describe the formal qualities of a work of art.",
+      "Interpret and appraise the formal qualities of works of art in relation to specific social and historical circumstances.",
+      "Analyze and explain the influences affecting artists working within diverse cultural contexts."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ART HISTORY, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/art-history/art-history-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Art History",
+   "control_number": "32230"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 25,
+    "placed": 25,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "HIST 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 7",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 8",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B Area 1",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GWOS 11",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 8",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JPNS 2A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 3",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SIGN 2A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3S",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4S",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B Area 2",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 3",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Read and analyze primary and secondary sources.",
+      "Write college-level analytical and argumentative essays on historical subjects.",
+      "Describe the basic chronological history of the U.S., Europe, and elective non-European regions chosen by the student.",
+      "Apply race, class, and gender as categories of analysis to understand history."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 20,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "HISTORY, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/history/history-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "History",
+   "control_number": "32381"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "POLS C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "POLS 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "POLS 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Identify the primary theories and methods associated with the four major subfields of the political science.",
+      "Explain the relationship of political outcomes (i.e., constitutions, laws, treaties, wars, etc.) to the institutional structures that have produced them.",
+      "Identify the primary variables in the political development of the institutions of U.S. government.",
+      "Relate the primary theories of political motivation to the actions of political actors, both individual and institutional."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "POLITICAL SCIENCE, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/political-science/political-science-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Political Science",
+   "control_number": "32416"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HIST 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one course from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PHIL 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Analyze and interpret human thought, achievement, and expression relevant to such branches of knowledge as philosophy, literature, and/or the fine and performing arts, and to communicate the results."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Arts for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/philosophy/philosophy-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Philosophy",
+   "control_number": "33092"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 26,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ENGL 40A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 40B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 45",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 47",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 22",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "COMM 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GWOS 11",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 32",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 43",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 49",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 63",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMA 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Apply effective rhetorical strategies in relation to audience and purpose in academic and/or creative writing.",
+      "Recognize and differentiate the major literary genres.",
+      "Apply critical reading, thinking, and writing skills to analyze diverse texts within various contexts."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ENGLISH, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/english/english-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "English",
+   "control_number": "33099"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 71,
+    "placed": 71,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANAT 1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 2",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Movement-Based Courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PFIT 22A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 22B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 24A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 24B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 7A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 7B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 12B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 12C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 16A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 16B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 23A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 23B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 10A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 10B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 11A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 11B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 12A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 12B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 14A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 14B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 15A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 15B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 18A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 18B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 10A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 10B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 15A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 15B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 17A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 17B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 18A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 18B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 19A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 19B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 21A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 21B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 23A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 23B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 30A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PFIT 30B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 5A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 5B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 9A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 9B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 6A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 6B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 10A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 10B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHED 15A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 15B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 22A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 22B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 24A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHED 24B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "CHEM 1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMMS 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 1",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Assess how physical, social, emotional, and/or intellectual factors contribute to wellness and healthful living.",
+      "Describe how biomechanics relates to physical activity, skill development and physical fitness.",
+      "Assess the depth and breadth of kinesiology as an academic discipline and the career opportunities it may support.",
+      "Identify how scientific studies such as anatomy and physiology contribute to the study of human movement."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "KINESIOLOGY, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 21,
+   "source_url": "https://catalog.mpc.edu/programs-study/kinesiology/kinesiology-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Kinesiology",
+   "control_number": "33234"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 23,
+    "placed": 22,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SPAN 1",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 1S",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 2",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 2S",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 3S",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 4S",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A (required)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "HIST 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 22",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 45",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 50A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 50B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Substitution Courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ETNC 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETNC 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPCH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Engage in conversation and interactions with speakers of the Spanish language using the necessary rules of pronunciation, grammar and syntax.",
+      "Interpret spoken Spanish and respond to it at all levels of proficiency.",
+      "Interpret Spanish reading passages at various levels of proficiency.",
+      "Convey information, concepts and ideas in writing to an audience of Spanish readers on a variety of topics.",
+      "Exhibit a comprehensive understanding of the Spanish culture and its social and cultural influences."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "SPANISH, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/spanish/spanish-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Spanish",
+   "control_number": "33584"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "THEA 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 15A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "THEA 40A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 40B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 40C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 40D",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 60A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 60B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 60C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 60D",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "THEA 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 15B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 19",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 23",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Demonstrate knowledge of how to communicate through the dramatic medium, inviting analysis of human situations, contexts, cultures, pursuits, and human behavior and how it relates meaning to all other aspects of the human condition.",
+      "Compare and apply techniques in performance and technical theatre learned in a classroom and/or lab environment to the requirements inherent in theatrical production.",
+      "Create or participate in a theatrical production or productions, in line with discipline standards, so as to demonstrate a command of awareness and execution inherent in those works as well as a degree of performance or technical ability appropriate to the projects and program."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "THEATRE ARTS, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Theatre Arts",
+   "control_number": "33585"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CHEM 1A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 2",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 2L",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 3",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 3L",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "research",
+      "industry",
+      "education"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Use observations of outcrops and/or landscape morphology to interpret basic geologic history and processes.",
+      "Explain Earth features in terms of surficial processes, tectonics, and human influence.",
+      "Use the scientific method to investigate phenomena in the natural world and use concepts, experiments, and/or theory to explain them."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 26,
+      "min": 26
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Science for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 26,
+   "total_min": 26,
+   "source_url": "https://catalog.mpc.edu/programs-study/geology/geology-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41278868382,
+   "program_title": "Geology",
+   "control_number": "33586"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 18",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 20A",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "BUSI 3A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 3B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "MATH 20C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Analyze markets using microeconomic techniques such as efficiency analysis, market structure analysis and rational behavior analysis as well as use macroeconomic data and apply macroeconomic models in order to understand the macro-economy."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 22,
+      "min": 22
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ECONOMICS, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 22,
+   "source_url": "https://catalog.mpc.edu/programs-study/economics/economics-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Economics",
+   "control_number": "33587"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 26",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NUTF 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ANAT 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 12A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "LIST B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "NUTF 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NUTF 10L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Nutrition and Dietetics",
+      "Registered Dietitian Nutritionist (RDN)"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Use a high-quality broad-based education in the physical, biological, and social sciences as a stepping stone of knowledge in nutrition science to improve health and serve society.",
+      "Identify the role of nutrients and healthy food preparations for optimal health and well-being.",
+      "Select appropriate foods for a healthy diet and disease risk reduction.",
+      "Clearly communicate nutrition concepts in oral and written formats.",
+      "Think critically and ethically about nutrition research and its societal impact.",
+      "Analyze how physical, social, emotional, and/or intellectual factors contribute to wellness and healthful living."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 28,
+      "min": 27
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Science for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 28,
+   "total_min": 27,
+   "source_url": "https://catalog.mpc.edu/programs-study/nutrition/nutrition-dietetics-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Nutrition and Dietetics",
+   "control_number": "33588"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MUSI 10A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 10B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 10C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select four semesters of the following:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "MUSI 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Select four semesters from any of the following (repeated units for the same ensemble are strongly encouraged):",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "MUSI 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 22",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 32",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 35",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 36",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 37",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MUSI 10D",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 50A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 50B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 50C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 50D",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Perform a musical composition that demonstrates an intuitive awareness of the symbolic meanings inherent in that work as well as a degree of craft appropriate to the student’s level of development.",
+      "Analyze and interpret elements of musical compositions as they reflect and relate to human thought, achievement, and expressions and to communicate the results.",
+      "Analyze a musical composition or performance in a manner that demonstrates both an awareness of the craft, skill and discipline employed, and the intuitive values expressed.",
+      "Demonstrate intermediate keyboard competency through the performance of level-appropriate piano literature."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 22,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "MUSIC, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 21,
+   "source_url": "https://catalog.mpc.edu/programs-study/music/music-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Music",
+   "control_number": "33590"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL 21",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 22",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "all",
+      "stated": {
+       "max": 22,
+       "min": 22
+      },
+      "courses": [
+       {
+        "code": "CHEM 1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH 20A",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following sequences: PHYS 2A & PHYS 2B",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHYS 2A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics sequence"
+     },
+     {
+      "name": "Select one of the following sequences: PHYS 3A & PHYS 3B",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHYS 3A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 3B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics sequence"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Apply major biological concepts and principles when investigating life at all levels, from molecules to ecosystems.",
+      "Learn independently and collaboratively within Biology and related disciplines.",
+      "Employ tools and techniques commonly used in laboratory and field research.",
+      "Apply the scientific method of inquiry to investigate and solve problems in Biology."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Science for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://catalog.mpc.edu/programs-study/biology/biology-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Biology",
+   "control_number": "35218"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "GLST 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GLST 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 19,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 45",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JPNS 2A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3S",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4S",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Analyze the ongoing phenomenon of globalization employing concepts including but not limited to hegemony, neoliberalism, interdependence, diaspora, Eurocentrism and Orientalism.",
+      "Develop research projects employing the diverse methodologies of the social sciences and humanities.",
+      "Assess the interdependence of global issues, such as inequality, food insecurity, global climate change, terrorism, and community displacement."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 25,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "GLOBAL STUDIES, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 21,
+   "source_url": "https://catalog.mpc.edu/programs-study/global-studies/global-studies-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Global Studies",
+   "control_number": "37243"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 28,
+    "placed": 26,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL 10",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EDUC 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EDUC 1L",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ENGL 21",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Select One Course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 8,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "GEOL 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 12L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B: Select One Course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTB 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C: Up to 12 additional units",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 0
+      },
+      "courses": [
+       {
+        "code": "ASTR 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 10L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "OCEN 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "OCEN 2L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 0,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "elementary school teachers"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Evaluate and discuss theoretical literature related to education in literacy, science, social studies, and math",
+      "Examine and evaluate methods of instruction and curriculum for K-12 students.",
+      "Explain cultural competence and the different types of assessments used to teach students with diverse background"
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ELEMENTARY TEACHER EDUCATION: INTEGRATED PROGRAMS, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.mpc.edu/programs-study/education/elementary-teacher-education-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41278868382,
+   "program_title": "Elementary Teacher Education",
+   "control_number": "37306"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 18,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "GWOS 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select two courses from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ETNC 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 30",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 10,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "GWOS 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 10",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 11",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 30",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "social work",
+      "education",
+      "law",
+      "community or social services",
+      "cultural arts",
+      "legislative advocacy",
+      "politics",
+      "human rights development",
+      "local, state, federal and international governmental agencies",
+      "educators",
+      "social workers",
+      "public policy analysts",
+      "conflict resolution specialists",
+      "human relations workers",
+      "non-profit workers",
+      "mediators",
+      "rights advocates",
+      "journalists",
+      "lobbyists",
+      "human rights organizers",
+      "international relief workers",
+      "anti-violence advocates",
+      "community organizers",
+      "political campaigners"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Identify, analyze, and apply theories of Social Justice to the history of social activism and social movements.",
+      "Reflect critically and evaluate how social justice is rooted in community-based experiences that develop cultural competency in local and global contexts.",
+      "Define and use key concepts, terminology, and theoretical frameworks central to the interdisciplinary fields of Ethnic Studies or Gender and Women’s Studies.",
+      "Articulate symbolic and aesthetic expressions based on ethnicity or gender."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "CIAL JUSTICE STUDIES: GENDER STUDIES, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/social-justice-studies-gender-studies-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Social Justice Studies: Gender Studies",
+   "control_number": "37534"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 27,
+    "placed": 27,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 10,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 16",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 23",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 23",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 24",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 25",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 22",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 30",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "social work",
+      "education",
+      "law",
+      "community or social services",
+      "cultural arts",
+      "legislative advocacy",
+      "politics",
+      "human rights development",
+      "local, state, federal, and international governmental agencies"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Explain and analyze theories of Social Justice, the history of social activism, and social movements.",
+      "Engage in critical reflection about social justice rooted in community-based experiences that develop cultural competency in local and global contexts.",
+      "Define and use key concepts, terminology, and theoretical frameworks central to the interdisciplinary fields of Ethnic Studies or Gender and Women’s Studies.",
+      "Articulate symbolic and aesthetic expressions based on ethnicity or gender."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "SOCIAL JUSTICE STUDIES: ETHNIC STUDIES, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-ethnic-studies-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Social Justice Studies: Ethnic Studies",
+   "control_number": "37536"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSI 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUSI 2",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 3A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 3B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUSI 5",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one course from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "MATH 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 20A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Identify and apply the fundamental knowledge and skills to make information-based business decisions, complete core business processes, and communicate effectively in a business environment."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 28,
+      "min": 28
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "BUSINESS ADMINISTRATION 2.0, ASSOCIATE IN SCIENCE FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 28,
+   "total_min": 28,
+   "source_url": "https://catalog.mpc.edu/programs-study/business/business-administration-2-0-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Business Administration 2.0",
+   "control_number": "40920"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HOSP 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "LIST A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HOSP 23",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HOSP 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HOSP 58",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NUTF 58",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HOSP 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "LIST B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 8,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "BUSI 3A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Accurately assess knowledge, skills, and abilities in relationship to their educational, career, and/or personal goals.",
+      "Apply critical thinking skills to hospitality-related scenarios.",
+      "Apply knowledge of hospitality and sustainable business to the creation and achievement of a successful career in the hospitality field."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 20,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "HOSPITALITY MANAGEMENT, ASSOCIATE IN SCIENCE FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-hospitality-management-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Hospitality Management",
+   "control_number": "41831"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 23,
+    "placed": 23,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMS 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMS 51A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMS 51B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 19",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ANAT 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANAT 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ADMJ 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECED 55",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 35",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETNC 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "program specialists",
+      "leaders in community outreach",
+      "life skills",
+      "drugs/alcohol and mental health counselors",
+      "eligibility technicians",
+      "social workers"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Describe and demonstrate standards of professional behavior, confidentiality, and respect required in the field of human services.",
+      "Explain how to use a strength-based and self-reliance approach in the study and delivery of human services.",
+      "Apply concepts and theories of human services in performing effectively as part of a team when collaborating with families, agencies, and community-based organizations, while maintaining suitable values and ethics for Human Services."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 30,
+      "min": 29
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "K AND HUMAN SERVICES, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 29,
+   "source_url": "https://catalog.mpc.edu/programs-study/human-services/social-work-human-services-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Social Work and Human Services",
+   "control_number": "41977"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "COMM 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL C1002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Apply communication theory and principles to a variety of interpersonal, small group, and public speaking situations.",
+      "Create and present messages appropriate to audience, purpose, and contexts.",
+      "Accomplish personal communicative goals.",
+      "Apply ethical communication principles and practices.",
+      "Explain the connection between communication and culture."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "COMMUNICATION STUDIES 2.0, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/communication-studies/communication-studies-as-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Communication Studies 2.0",
+   "control_number": "42677"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 10,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 16",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 25",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 24",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching",
+      "counseling",
+      "careers in law",
+      "journalism",
+      "marketing",
+      "community and housing development",
+      "cultural arts",
+      "political advocacy",
+      "social work"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Apply knowledge of the major theories that explain the experiences of the African American people, as well as the history of the African American people in the United States.",
+      "Analyze and explain the fundamental theories, terminology, and concepts that comprise the interdisciplinary disciplines of African American studies.",
+      "Describe and critically evaluate social justice theories, as well as the history of African American social activism, community organizing, and political participation."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "SOCIAL JUSTICE STUDIES: AFRICAN AMERICAN STUDIES, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-african-american-studies-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Social Justice Studies: African American Studies",
+   "control_number": "43891"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 10,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 23",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 23",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching",
+      "counseling",
+      "law",
+      "journalism",
+      "marketing",
+      "community and housing development",
+      "cultural arts",
+      "political advocacy",
+      "social work"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Explain and apply the major theories related to the experiences of the Chicano and Latino people, as well as the history of the Chicano and Latino people in the United States.",
+      "Analyze and explain the fundamental theories, terminology, and concepts that comprise the interdisciplinary disciplines of Chicano and Latino studies.",
+      "Describe and critically evaluate social justice theories, as well as the history of Chicano and Latino social activism, community organizing and political participation."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "SOCIAL JUSTICE STUDIES: CHICANO STUDIES, ASSOCIATE IN ARTS FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-chicano-studies-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Social Justice Studies: Chicano Studies",
+   "control_number": "43902"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 35,
+    "placed": 35,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core: Understanding the Law",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ADMJ 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: Ethics",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHIL 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: Oral Communication",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: Written Communication",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: Critical Thinking",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL C1001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: Quantitative Reasoning",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 19",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: U.S. History",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HIST C1001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: Introduction to American Government",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "POLS C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ADMJ 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSI 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GLST 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GLST 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WORK 99",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Identify the process by which American laws are created at the federal and state levels.",
+      "Apply laws, regulations, social or ethical norms to develop a solution to a legal issue, a public policy issue, and/or a societal concern",
+      "Locate, critically read, and analyze relevant primary and secondary sources about the construction and interpretation of law."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 31,
+      "min": 31
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Law, Public Policy, and Society, Associate in Arts for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 31,
+   "total_min": 31,
+   "source_url": "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Law, Public Policy, and Society",
+   "control_number": "43903"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 24,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETNC 13",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 13",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GWOS 5",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 12",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 10,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ETNC 16",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETNC 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 10",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HUMA 40",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PHIL 40",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GWOS 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 30",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "LGBTQ+ non-profit agencies",
+      "community advocacy",
+      "law",
+      "local and national politics",
+      "health care settings",
+      "counseling centers",
+      "human resources",
+      "journalism",
+      "news media",
+      "theatre",
+      "film",
+      "fine arts",
+      "social work",
+      "education"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Describe and analyze LGBTQ+ social activism, community organizing, and political participation and compare historical and contemporary contexts in the U.S. and globally.",
+      "Explain and apply foundational LGBTQ+ Studies terminologies, frameworks, and concepts and compare and analyze queer, trans, and feminist theories of gender and sexuality.",
+      "Explain and analyze how multiple dimensions of human identity and experience are shaped by sexuality and gender and how intersecting systems of social power variously impact diverse LGBTQ+ communities and individuals.",
+      "Interpret and compare the diversities of cultures, thought, perspectives, and literatures of lesbian, gay, bisexual, transgender, intersex, and queer people and communities."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Arts for Transfer Degree Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/social-justice-studies-lgbtq-studies-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Social Justice Studies: LGBTQ Studies",
+   "control_number": "43904"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 19,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL 10",
+        "units": 4,
+        "units_max": 5,
+        "alternatives": [
+         {
+          "code": "BIOL 21",
+          "units": 4,
+          "units_max": 5,
+          "catalog_addition": false
+         },
+         {
+          "code": "BIOL 22",
+          "units": 4,
+          "units_max": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 19",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOCI 19",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ANAT 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 26",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSO 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "HLTH 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NUTF 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "health education",
+      "health agencies",
+      "medical centers",
+      "long-term care facilities",
+      "both private and public health organizations",
+      "local, state, and federal health departments"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Evaluate current health conditions among vulnerable populations, analyze disparities in health outcomes within these populations, and identify evidence-informed interventions to reduce the disease burden and improve health outcomes to maximize health and wellness.",
+      "Effectively create and communicate strategies or tactics to improve health inequalities, such as advocacy, community organizing, and/or policy change.",
+      "Identify, evaluate, utilize, and articulate credible information resources on personal and public health issues from multiple sources, including social media, media outlets, popular texts, and scientific literature."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 26,
+      "min": 24
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "PUBLIC HEALTH, ASSOCIATE IN SCIENCE FOR TRANSFER",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 26,
+   "total_min": 24,
+   "source_url": "https://catalog.mpc.edu/programs-study/health/public-health-ast/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41192567009,
+   "program_title": "Public Health",
+   "control_number": "45184"
+  }
+ ]
+}

@@ -13,6 +13,17 @@
   },
   "calls": [
     {
+      "title": "Monterey Peninsula is parked: what would turn it back on",
+      "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing (6 of 197 here). Monterey Peninsula qualified: S584 moved none and S590 moved one, Global Studies AA-T 37243, on the catalog's words for transfer degrees. It stands at 184 passing, with the reread posted. Three of the records still failing need a change to the reader, and the session has written each one up: American Sign Language 39266 prints a pair of alternatives joined by an ampersand; Hospitality 41831 prints 'Any List A course not already selected', which the reader drops; Nursing 03633 prints Humanities and Ethnic Studies lines the reader does not keep. A fourth, Anthropology 32033, stays as printed, because the catalog's own total counts List C at 4 units. The queue turns the college back on when the reader learns those three shapes, when its 2027-28 catalog loads, or when you say so. If you want it read on now, as you asked for Glendale on Nov 2, write that in the note and press Mark done; the next scheduled session takes it first.",
+      "if_no_reply": "Monterey Peninsula stays at 184 of 197, and the queue moves to the college with the next largest gap.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open Program records"
+      },
+      "part": "reading",
+      "todo_id": "monterey-peninsula-parked-2026-11-06"
+    },
+    {
       "title": "The printed floor is in the scorer: the live update",
       "text": "You ruled each list's printed units its floor (Sheet 144). The scorer reads them that way and the filed records are rescored, but the repo's Supabase guard stopped the session's update of the live rows. Sheet 146 card 2 holds the guarded statement and asks whether it goes through the migrate run or you paste it.",
       "if_no_reply": "The live rows keep the reading you replaced, except where a college's own reread has moved them (Los Angeles Valley, S530).",

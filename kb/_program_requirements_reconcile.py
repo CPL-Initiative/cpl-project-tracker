@@ -223,6 +223,30 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             # without units, printed so, takes its parent's; never one the reading gave units, and never a
             # parent without them.
             filled = {}
+            parents = {}
+            if st.get("parent_from_block"):
+                # S590: the group's figure printed on its heading line, not its first row (Monterey
+                # Peninsula's Business - Accounting 22052: "Select one of the following:<tab>2 · WORK 96 ·
+                # Professional and Essential Skills · or WORK 99 ..."). A block of one course and its
+                # alternatives, read "all" with one figure stated, gives that figure to a course the
+                # reading left without units, so its alternatives take it below; only where the page
+                # prints an alternative as its own "or CODE" row.
+                for block in out.get("blocks") or []:
+                    courses = block.get("courses") or []
+                    stated = block.get("stated") or {}
+                    lo, hi = _num(stated.get("min")), _num(stated.get("max"))
+                    if (block.get("rule") != "all" or len(courses) != 1 or lo is None or lo != hi
+                            or _num(courses[0].get("units")) is not None or courses[0].get("units_max") is not None):
+                        continue
+                    alts = [a for a in courses[0].get("alternatives") or [] if isinstance(a, dict) and a.get("code")]
+                    if not alts or not any(re.search(r"\bor\s+%s\t" % r"\s*".join(
+                            re.escape(ch) for ch in re.sub(r"\s+", "", a["code"])), text) for a in alts):
+                        continue
+                    courses[0]["units"] = lo
+                    parents[courses[0]["code"]] = lo
+            if parents:
+                notes.append({"field": "course_units", "was": None, "now": parents,
+                              "words": st.get("source_words", "")})
             for block in out.get("blocks") or []:
                 for course in block.get("courses") or []:
                     if _num(course.get("units")) is None:

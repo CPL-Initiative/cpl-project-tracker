@@ -89,6 +89,7 @@
      34.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      8.0,
      8.0
@@ -147,7 +148,8 @@
     "Compare and apply techniques in performance and technical theatre learned in a classroom and/or lab environment to the requirements inherent in theatrical production.",
     "Create or participate in a theatrical production or productions, in line with discipline standards, so as to demonstrate a command of awareness and execution inherent in those works as well as a degree of performance or technical ability appropriate to the projects and program."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -315,20 +317,14 @@
    "Learning outcomes are printed for the program on the AA-T page and recorded as this award's outcomes."
   ]
  },
- "extracted_run": 41192567009,
+ "extracted_run": 42195216637,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements')"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (college page read 42046379839 (Global Studies AA-T 37243): Global Studies AA-T 37243: 'TOTAL MAJOR UNITS 21-25 · Additional Requirements 35-39 · Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units · Total Units 60' (college page read 42046379839); the same 'electives, if needed, for a total of 60' the local-degree step reads as a floor (Open Asks Sheet 159 card 1, 'keep'))"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 41192567009
 }

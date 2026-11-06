@@ -139,7 +139,8 @@
    ],
    "careers": [
     "elementary school teachers"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -399,16 +400,14 @@
    "Page URL slug says 'as-t' while the heading and award are AA-T."
   ]
  },
- "extracted_run": 41278868382,
+ "extracted_run": 42195216637,
  "reconciled": [
   {
-   "field": "joined_units",
+   "field": "degree_total_minimum",
    "was": null,
-   "now": {
-    "EDUC 1L": "EDUC 1"
-   },
-   "words": "Medical Assisting 03635: 'CSIS 50 · & 50L MS Office Applications · and MS Office Applications Lab 3' ... 'TOTAL MAJOR UNITS 37-40', the rows summing to 37-40 with the pair counted once; Business - Accounting 22052: 'Path 1 · BUSC 140 · & BUSC 150 · & BUSC 160' (college page read 41276213077)"
+   "now": true,
+   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (college page read 42046379839 (Global Studies AA-T 37243): Global Studies AA-T 37243: 'TOTAL MAJOR UNITS 21-25 · Additional Requirements 35-39 · Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units · Total Units 60' (college page read 42046379839); the same 'electives, if needed, for a total of 60' the local-degree step reads as a floor (Open Asks Sheet 159 card 1, 'keep'))"
   }
  ],
- "read_run": 41192567009
+ "read_run": 41278868382
 }
