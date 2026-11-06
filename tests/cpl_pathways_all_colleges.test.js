@@ -40,9 +40,9 @@ const flush = async (n) => { for (let i = 0; i < (n || 4); i++) await new Promis
   col.value = "Santiago Canyon College";
   col.dispatchEvent(new w.Event("change", { bubbles: true }));
   await flush();
-  const cap = w.document.querySelector(".cplpw-selcount");
+  const none = w.document.querySelector("#cplpw-list .cplpw-nopath");
   check("(c) a college with no pathway can be picked", col.value === "Santiago Canyon College");
-  check("(c) caption names the college", cap && /^Santiago Canyon College: /.test(cap.textContent), cap && cap.textContent);
+  check("(c) its List says it has no pathway on record yet", none && /^Santiago Canyon College has no pathway on record yet/.test(none.textContent), none && none.textContent);
 
   let fail = 0;
   for (const [n, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : " — " + why)); if (!ok) fail++; }

@@ -118,7 +118,7 @@ function restFor(byCollege, asked, hold) {
   const root = w.document.getElementById("cpl-pathways-root");
   const col = root.querySelector("select.cplpw-colsel");
   const line = () => root.querySelector(".cplpw-colstat");
-  check("(c) the line waits for a college", line() && line().hidden === true);
+  check("(c) the line waits for a college", !line() || line().hidden === true);
   const has = [...col.options].some((o) => o.value === "College of Alameda");
   if (!has) { const o = w.document.createElement("option"); o.value = o.textContent = "College of Alameda"; col.appendChild(o); }
   col.value = "College of Alameda"; col.dispatchEvent(new w.Event("change", { bubbles: true }));

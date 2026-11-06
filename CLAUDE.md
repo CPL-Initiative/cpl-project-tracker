@@ -581,8 +581,8 @@ file.
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
   **One departure (Sam, 2026-10-24):** the public `library/` page, Sierra and the adoption page take Malone's
-  CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view and the Library
-  (2026-11-04, -05; [lane](docs/reference/lanes/commons.md)).
+  CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view, the Library
+  and CPL Pathways (2026-11-04, -05, -06; [lane](docs/reference/lanes/commons.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
@@ -680,16 +680,13 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 ## Obsidian vault wiring
 
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)**.
+Read it before vault-sync, exclusion, or the sparse-checkout fix. A checkpoint
+writes the vault, never the public KB. Three doc lanes — KB notes, lessons,
+handoffs: [`docs/INDEX.md`](docs/INDEX.md).
 
-Read it before vault-sync or vault-path work, Obsidian exclusion, or the
-sparse-checkout fix.
-
-Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
-which, the per-lane contract, and the KB-notes lane's author-at-final-quality
-rule: [`docs/INDEX.md`](docs/INDEX.md).
-
-**A checkpoint writes the vault, never the public KB**:
-[`obsidian_vault_wiring`](docs/reference/obsidian_vault_wiring.md).
+**LLM wiki.** `CPLBrain` (`samueltlee/CPLBrain#671`), beside the COG vault.
+Read root `index.md` first, or `/wiki-query`. Promote a settled decision or
+fact with `/wiki-ingest`. Captures still land where they land.
 
 ---
 

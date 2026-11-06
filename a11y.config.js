@@ -283,20 +283,33 @@ async function sierraAskingChecks(page) {
   }));
   return out;
 }
+/* CPL Pathways in its new format: choose the college, wait for its List (commons_list.js loads on the tab's boot), press
+   the program's title. */
+async function cplpwOpen(page, college, title) {
+  await page.waitForFunction((c) => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    return s && Array.from(s.options).some((o) => o.value === c);
+  }, college, { timeout: 60000 });
+  await page.evaluate((c) => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    if (s.value !== c) { s.value = c; s.dispatchEvent(new Event("change", { bubbles: true })); }
+  }, college);
+  await page.waitForFunction((src) => {
+    const re = new RegExp(src);
+    return Array.from(document.querySelectorAll("#cplpw-list button.cplpwl-open")).some((b) => re.test(b.textContent));
+  }, title.source, { timeout: 60000 });
+  await page.evaluate((src) => {
+    const re = new RegExp(src);
+    const b = Array.from(document.querySelectorAll("#cplpw-list button.cplpwl-open")).find((x) => re.test(x.textContent));
+    if (b) b.click();
+  }, title.source);
+}
 async function seedRoepRecord(page, theme, lay) {
   // The motion pass loads the page without a route, so open the tab here too.
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForFunction(() => {
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    return s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
-  }, null, { timeout: 60000 });
-  await page.evaluate(() => {
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option'))
-      .find((x) => /Apprenticeship: Field Ironworkers/.test(x.textContent));
-    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
-  });
+  // A college first, then its List (Sam, 2026-11-06: "Require college first"): Cerritos, then the record's title.
+  await cplpwOpen(page, "Cerritos College", /^Apprenticeship: Field Ironworkers$/);
   if (lay === "term") await page.evaluate(() => {
     const b = document.querySelector('.cplpw-rseg button[data-value="term"]');
     if (b) b.click();
@@ -315,8 +328,8 @@ async function seedRoepTable(page, theme, which) {
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForFunction(() => {
     const T = window.CPL_PATHWAYS_TAB;
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    return T && T._roepTable && s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    return T && T._roepTable && s && s.options.length > 1;
   }, null, { timeout: 60000 });
   await page.evaluate((which) => {
     const T = window.CPL_PATHWAYS_TAB, R = T._roepTable;
@@ -335,16 +348,14 @@ async function seedRoepTable(page, theme, which) {
       record: base.record, display: disp, checked: false };
     R.error = null;
     T._roepIndexLanded();
-    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
-    const want = which === "failed" ? /A Record No Read Has Fetched/ : /Ironworking Technology: Reinforcing/;
-    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option')).find((x) => want.test(x.textContent));
-    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
   }, which);
+  if (which === "failed") await cplpwOpen(page, "Norco College", /^A Record No Read Has Fetched$/);
+  else await cplpwOpen(page, "Long Beach City College", /^Ironworking Technology: Reinforcing/);
   await page.waitForTimeout(400);
 }
 
-// Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08).
-async function seedCollegeSelect(page) {
+// Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08): its cards, line and List (2026-11-06).
+async function seedCollegeSelect(page, theme) {
   /* The college's program-data line (Sam, 2026-10-21) reads four public tables; the sweep blocks
      the database, so they answer here with a few rows and the line paints its three figures. */
   const PASS = { coverage: true, invented: true, arithmetic: "equal" };
@@ -360,6 +371,7 @@ async function seedCollegeSelect(page) {
     route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(ROWS[t] || []) });
   });
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForFunction(() => {
     const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
     return s && Array.from(s.options).some((o) => o.value === "Mt. San Antonio College");
@@ -369,7 +381,8 @@ async function seedCollegeSelect(page) {
     s.value = "Mt. San Antonio College";
     s.dispatchEvent(new Event("change", { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelectorAll("#cpl-pathways-root .cplpw-colstat button.go").length === 3, null, { timeout: 30000 });
+  await page.waitForFunction(() => document.querySelectorAll("#cpl-pathways-root .cplpw-colstat button.go").length === 3
+    && !!document.querySelector("#cplpw-list button.cplpwl-open"), null, { timeout: 30000 });
   await page.waitForTimeout(200);
 }
 
@@ -2607,6 +2620,9 @@ module.exports = {
   "library-ell-iet": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points (public Library page)" },
   "library-ell-iet-dark": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
+  "library-cpl-overview": { file: "library/cpl-initiative-overview/index.html", title: "The CPL Initiative overview (public Library page)" },
+  "library-cpl-overview-dark": { file: "library/cpl-initiative-overview/index.html", title: "The CPL Initiative overview, dark", widths: [390, 1280],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
   "library-dsp": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points (public Library page)" },
   "library-dsp-dark": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
@@ -3487,10 +3503,19 @@ module.exports = {
   },
   "cpl-pathways-college": {
     file: "index.html",
-    title: "CPL Pathways: narrowed to one college",
+    title: "CPL Pathways: one college's cards and List",
     routes: [{ hash: "cpl-pathways", name: "college-select" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCollegeSelect(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  // The college's cards and List in the new format, dark (Sam's call 2, 2026-11-06).
+  "cpl-pathways-college-dark": {
+    file: "index.html",
+    title: "CPL Pathways: one college's cards and List, dark",
+    routes: [{ hash: "cpl-pathways", name: "college-list-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCollegeSelect(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the Progress view (S343) ─────────────────────

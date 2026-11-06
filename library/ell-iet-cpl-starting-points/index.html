@@ -6,7 +6,6 @@
 <script>(function(){var t=null;try{t=localStorage.getItem("cpl_theme")}catch(e){}document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})()</script>
 <title>ELL IET CPL Starting Points</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <link rel="icon" href="../../cccco_seal.png">
 <!-- The CPL Library's public copy of ell-iet-cpl-starting-points; the claude.ai artifact is the editable original. Rebuilt by scripts/library_page.py; edit the source, never this file. -->
 <style>:root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
@@ -15,24 +14,32 @@
 <body>
 <style>
 /* Layout: one reading column; bands of cards ranked by fit; a table for the wider ring. First Light tokens. */
-:root{
-  --paper:#F4F2ED; --surface:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
-  --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55; --line:#D9D5CB;
-  --seal-blue:#002F6D; --cobalt:#0047AB; --hunter:#2C601A; --mustard-text:#6E5300; --violet:#6D28D9;
-  --tba-bg:#F3ECD6;
-  --display:'Playfair Display', Georgia, serif; --body:'Source Sans 3', Arial, sans-serif;
-  --cpl-measure:none;
+:root {
+  --page: #F5FAFF; --page-end: #EEF6FB; --surface: #FFFFFF; --hero-end: #EAF4FB;
+  --ink: #17243B; --muted: #58677D; --heading: #082B61; --title: #072C66;
+  --link: #0D5BC6; --accent: #1671D9; --gold: #F4B300;
+  --line: #D9E4EF; --line-strong: #A9C8E5; --header-line: #E8EEF5; --shadow: rgba(8, 43, 97, .10);
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --gutter-l: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, 5.5vw, calc((100vw - 1320px) / 2), env(safe-area-inset-right, 0px));
+  --cpl-measure: none;
+  /* Version 3's names, read from the library's palette. */
+  --paper: var(--page); --surface-subtle: var(--page); --surface-muted: var(--header-line);
+  --text-strong: var(--heading); --text-body: var(--ink); --text-muted: var(--muted);
+  --seal-blue: var(--title); --cobalt: var(--link);
+  --hunter: #2C601A; --mustard-text: #6E5300; --violet: #6D28D9; --tba-bg: #F3ECD6;
+  --display: var(--serif); --body: var(--sans);
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#15171B; --surface:#1E2127; --surface-subtle:#23262D; --surface-muted:#2A2E36;
-  --text-strong:#F2F0EA; --text-body:#D8D5CD; --text-muted:#AFAB9F; --line:#3A3F49;
-  --seal-blue:#9DB8E0; --cobalt:#7DA1D4; --hunter:#89A67F; --mustard-text:#E3B341; --violet:#B28DEB;
-  --tba-bg:#3A3220; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#15171B; --surface:#1E2127; --surface-subtle:#23262D; --surface-muted:#2A2E36;
-  --text-strong:#F2F0EA; --text-body:#D8D5CD; --text-muted:#AFAB9F; --line:#3A3F49;
-  --seal-blue:#9DB8E0; --cobalt:#7DA1D4; --hunter:#89A67F; --mustard-text:#E3B341; --violet:#B28DEB;
-  --tba-bg:#3A3220; color-scheme:dark}
+:root[data-theme="dark"] {
+  --page: #0B1628; --page-end: #0E1D33; --surface: #12233D; --hero-end: #10284A;
+  --ink: #E3EAF4; --muted: #A9B7CA; --heading: #D5E3F7; --title: #E8F0FB;
+  --link: #8DBDF5; --accent: #8DBDF5; --gold: #F2B527;
+  --line: #2A3E5C; --line-strong: #4B6B95; --header-line: #22344F; --shadow: rgba(0, 0, 0, .35);
+  --hunter: #89A67F; --mustard-text: #E3B341; --violet: #B28DEB; --tba-bg: #3A3220;
+  color-scheme: dark;
+}
 body{background:var(--paper);color:var(--text-body);font-family:var(--body);font-size:1.02rem;line-height:1.55;margin:0}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--surface);padding:.4rem .7rem;z-index:5}
 main{max-width:1080px;margin:0 auto;padding-block:clamp(1.5rem,4vw,3rem);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:2.4rem}
@@ -111,6 +118,54 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 .bandlist a{display:inline-block;min-height:24px;line-height:24px}
 /* Contact emails: 24px targets (WCAG 2.2 target size; measured 22.8px tall once a card sits in its tab). */
 .people a{min-height:24px;line-height:24px}
+/* The Initiative at a glance (Version 5): four numbered steps, a line between them; one column below 560px. */
+.glance{list-style:none;counter-reset:step;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line)}
+.glance li{counter-increment:step;background:var(--surface);padding:1rem 1.1rem;display:grid;gap:.2rem;align-content:start}
+.glance li::before{content:counter(step);font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--seal-blue);
+  font-variant-numeric:tabular-nums}
+.glance b{font-family:var(--display);font-size:1.15rem;color:var(--text-strong)}
+.glance span{color:var(--text-muted);font-size:.92rem}
+.glance a{display:inline-block;min-height:24px;line-height:24px}
+.glance-more a{display:inline-block;min-height:24px;line-height:24px}
+@media (max-width:560px){.glance{grid-template-columns:1fr}}
+/* Top cards that open what they count (Version 5): the figure is the link; the whole card takes the click. */
+.fact{position:relative}
+.fact a{color:inherit;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.fact a::after{content:"";position:absolute;inset:0}
+.fact a:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+
+/* The public library's look (2026-11-06): a hero over the body, on the library's gutters; rounded cards. */
+body { color: var(--ink); background: var(--page); background-image: linear-gradient(180deg, var(--surface) 0, var(--page) 38rem, var(--page-end) 100%); font-family: var(--sans); font-size: clamp(1rem, .97rem + .15vw, 1.06rem); }
+main { max-width: none; margin: 0; padding: 0; display: block; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; color: var(--heading); }
+h2 { font-size: clamp(1.45rem, 1.1rem + 1.2vw, 1.9rem); line-height: 1.15; }
+.eyebrow { color: var(--muted); font-size: .82rem; font-weight: 700; }
+.hero { border-bottom: 1px solid var(--line); background: linear-gradient(90deg, var(--surface) 0%, var(--surface) 50%, var(--page) 75%, var(--hero-end) 100%); }
+.hero-in { padding-block: clamp(32px, 5vw, 56px) clamp(32px, 4vw, 48px); padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: grid; gap: 0; }
+.hero .eyebrow { margin-bottom: 12px; }
+.hero h1 { color: var(--title); font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); line-height: 1.05; letter-spacing: -.02em; }
+.title-accent { width: 66px; height: 4px; margin: 18px 0 22px; background: var(--gold); }
+.hero .lede { font-size: clamp(1.02rem, 1rem + .25vw, 1.15rem); max-width: 60rem; }
+.hero .lede + .lede { margin-top: 12px; }
+.body { padding-block: 34px 56px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: grid; gap: 2.4rem; min-width: 0; }
+.facts { gap: 14px; background: none; border: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.fact { border: 1px solid var(--line); border-radius: 11px; padding: 18px 19px; gap: 6px; }
+.fact b { font-family: var(--serif); font-size: clamp(1.4rem, 1.1rem + .7vw, 1.75rem); line-height: 1.1; color: var(--title); }
+.fact a { text-underline-offset: 5px; }
+.fact a::after { border-radius: 11px; }
+.fact:has(a):hover { border-color: var(--line-strong); box-shadow: 0 12px 24px var(--shadow); }
+.card { border-radius: 11px; padding: 18px 19px; }
+.wrap { border-radius: 11px; }
+.tag { border-radius: 999px; }
+.glance { gap: 14px; background: none; border: 0; }
+.glance li { border: 1px solid var(--line); border-radius: 11px; padding: 18px 19px; }
+.glance li::before { font-family: var(--serif); font-size: 1.6rem; color: var(--accent); }
+.glance b { font-family: var(--serif); color: var(--heading); }
+a { color: var(--link); }
+a:focus-visible, .skip:focus-visible, button:focus-visible { outline-color: var(--accent); }
+@media (max-width: 900px) { .facts, .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .facts, .glance { grid-template-columns: 1fr; } }
 </style>
 <a class="skip" href="#tabs">Skip to the projects</a>
 <!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
@@ -160,6 +215,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
         <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
         <div class="cplh-panel" id="cplh-panel" hidden>
           <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener" aria-describedby="cplh-d-about">The CPL Initiative</a><span class="cplh-desc" id="cplh-d-about">What the Chancellor&#x27;s Office CPL Initiative does, in one page</span></li>
             <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
             <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
             <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
@@ -227,13 +283,15 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 </script>
 <!-- cpl-public-header:end -->
 <main>
-<header class="top">
+<div class="hero"><div class="hero-in">
 <div class="eyebrow">CPL Initiative · Preliminary scan for EDD&#x27;s ELL IET Fund grantees · November 5, 2026</div>
 <h1>Where credit for ELL IET training could start</h1>
+<div class="title-accent" aria-hidden="true"></div>
 <p class="lede">On July 3, 2023 the Employment Development Department awarded $17.97 million to eight organizations under the English Language Learner Integrated Education and Training Fund. Each project trains English learners toward a credential and a job. Seven of those projects make up the ELL IET group today. We read their project summaries against the MAP platform, where California&#x27;s community colleges record the credit they award for prior learning, and against the state&#x27;s program inventory, to see where a project&#x27;s completers could already turn their training into college credit, and where a first articulation would start.</p>
 <p class="lede">After the Overview, a tab per project, ordered by fit: credit that already exists at a college in the project&#x27;s own counties or at a partner college comes first. Each card names the people at the colleges who can carry the conversation forward, and each example that rests on a credit recommendation in MAP carries a Request Adopt link, which opens that exhibit in MAP, where Request Quick Adopt asks a college to adopt it and needs no MAP sign-in.</p>
-</header>
-<div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b>$17.97 million</b><span>Awarded July 3, 2023 to eight organizations; funding decisions are final</span></div><div class="fact" role="listitem"><b>7 projects</b><span>The ELL IET group today: adult schools, workforce boards, a school district, a consortium and nonprofits, across 19 counties</span></div><div class="fact" role="listitem"><b>2,432 participants</b><span>The 6 projects that state an enrollment target; Corona-Norco states regional demand instead</span></div><div class="fact" role="listitem"><b>15 credential families</b><span>From nursing assistant to wildland fire, matched against MAP and COCI</span></div></div>
+</div></div>
+<div class="body">
+<div class="facts" role="list" aria-label="At a glance"><div class="fact" role="listitem"><b><a href="#about-scan">$17.97 million</a></b><span>Awarded July 3, 2023 to eight organizations; funding decisions are final</span></div><div class="fact" role="listitem"><b><a href="#start">7 projects</a></b><span>The ELL IET group today: adult schools, workforce boards, a school district, a consortium and nonprofits, across 19 counties</span></div><div class="fact" role="listitem"><b>2,432 participants</b><span>The 6 projects that state an enrollment target; Corona-Norco states regional demand instead</span></div><div class="fact" role="listitem"><b><a href="#statewide">15 credential families</a></b><span>From nursing assistant to wildland fire, matched against MAP and COCI</span></div></div>
 
 <div id="tabs" class="tabset" tabindex="-1">
 <div class="tabs" role="tablist" aria-label="Overview and the projects" data-tabs hidden>
@@ -253,7 +311,15 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h2 id="h-call">The call with the ELL IET grantees</h2>
 <p>Amber Shevin of the International Rescue Committee proposed this agenda. The CPL Initiative leads the second item and brings this page to the fourth.</p>
 </div>
-<ul class="plain"><li>Welcome, introductions and context, led by the International Rescue Committee.</li><li>An overview of the Chancellor&#x27;s Office CPL Initiative, led by the Chancellor&#x27;s Office.</li><li>ECEPTS and Mountain View Los Altos Adult School on the IETs for which they have articulated credit for prior learning, and what that process asked of them.</li><li>Questions and discussion, facilitated by the International Rescue Committee: how the other grantees might pursue credit for prior learning for their IETs. Each project&#x27;s tab names the colleges and people to follow up with.</li></ul>
+<ul class="plain"><li>Welcome, introductions and context, led by the International Rescue Committee.</li><li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener">An overview of the Chancellor&#x27;s Office CPL Initiative</a>, led by the Chancellor&#x27;s Office.</li><li>ECEPTS and Mountain View Los Altos Adult School on the IETs for which they have articulated credit for prior learning, and what that process asked of them.</li><li>Questions and discussion, facilitated by the International Rescue Committee: how the other grantees might pursue credit for prior learning for their IETs. Each project&#x27;s tab names the colleges and people to follow up with.</li></ul>
+</section>
+<section id="initiative" aria-labelledby="h-initiative" tabindex="-1">
+<div class="band-head">
+<div class="eyebrow">Agenda item 2</div>
+<h2 id="h-initiative">The CPL Initiative at a glance</h2>
+</div>
+<ol class="glance" aria-label="How credit for prior learning reaches a student"><li><b>Learning</b><span>From work, training, service or a credential</span></li><li><b>Request</b><span>Through <a href="https://creditforbeingyou.org/" target="_blank" rel="noopener">Credit for Being You</a></span></li><li><b>Credit</b><span>The college awards it in MAP</span></li><li><b>Adoption</b><span>Other colleges can adopt it</span></li></ol>
+<p class="glance-more">See the <a href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">Chancellor&#x27;s Office CPL page</a> and the <a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener">CPL Fact Sheet</a>. <a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener">Read the full overview</a>.</p>
 </section>
 <section id="start" aria-labelledby="h-start">
 <div class="band-head">
@@ -333,7 +399,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <p>The people on each card start the conversation. The project contacts come from the July 2023 notice, so the first call confirms who leads it on each side today.</p>
 </section>
 <section aria-labelledby="h-next"><div class="band-head"><h2 id="h-next">Practical next steps</h2></div><ol class="next"><li>Send each project its card, so the first conversation is between the people it names: the project&#x27;s contact, each college&#x27;s CPL Coordinator and the faculty who teach the matching course.</li><li>For the healthcare projects, confirm the exit credential (CNA, HHA, LVN, CMA) and compare it with the credit recommendations College of the Desert, Chaffey College and Los Angeles Pierce College already hold.</li><li>For the early care apprenticeships, ask ECEPTS which Child Development Permit level each cohort reaches, then read it against the Child Development Associate exhibit the CCC Collaborative built.</li><li>For Fresno and the north valley, start with the exhibits Fresno City College and Lemoore College already articulate, and invite their CPL coordinators to a shared call with the workforce boards.</li><li>On December 9, hear from ECEPTS and Mountain View Los Altos what moved their colleges, and take Mountain View Los Altos&#x27;s two remaining colleges as the first follow-up.</li><li>Record every confirmed match in MAP so the next grantee cohort finds it there.</li></ol></section>
-<p class="note">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read November 3, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Each card names the project&#x27;s contact as EDD&#x27;s notice gives it; for each college in its examples, the card names the CPL Coordinator the college records in MAP and the faculty MAP lists in the subject of an example course or in English as a second language, read November 3, 2026. Version 3 adds the programs each example course is required in, as the CPL Commons&#x27; program requirements harvest read each college&#x27;s catalog, and a Request Adopt link wherever MAP&#x27;s CPL Opportunities page listed the exhibit when last checked.</p>
+<p class="note" id="about-scan">This is a preliminary scan, not an articulation. Project facts come from EDD&#x27;s award notice for the ELL IET Fund Program Year 2022-23 (WSSFP22-06, awarded July 3, 2023), filed beside this page. Credit recommendations, adopters and the courses each college awards come from the MAP platform&#x27;s adoption view; the example courses come from the COCI course list as the Common Course Reference holds it, with each course&#x27;s common course; programs come from the COCI program inventory (the June 17, 2026 export). All were read November 3, 2026; each college&#x27;s county comes from the CPL Initiative&#x27;s college roster, read October 23, 2026. Each card names the project&#x27;s contact as EDD&#x27;s notice gives it; for each college in its examples, the card names the CPL Coordinator the college records in MAP and the faculty MAP lists in the subject of an example course or in English as a second language, read November 3, 2026. Version 3 adds the programs each example course is required in, as the CPL Commons&#x27; program requirements harvest read each college&#x27;s catalog, and a Request Adopt link wherever MAP&#x27;s CPL Opportunities page listed the exhibit when last checked.</p>
 </div>
 <div class="panel" role="tabpanel" id="p-fresno" aria-labelledby="t-fresno" tabindex="0">
 <section aria-labelledby="h-p-fresno">
@@ -395,7 +461,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Riverside City College, where the program is taught</span></li>
 <li><div class="lh"><code>Home health aide</code><span class="u">first in MAP</span></div><span class="lt">Open for the first exhibit in MAP, built with the nearest college</span></li>
 <li><div class="lh"><code>Vocational nursing (LVN)</code><span class="u">1 college</span></div><span class="lt">Credit already articulated in MAP at College of the Desert (Licensed Vocational Nurse (LVN) License)</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
 </ul>
 <p class="why">Corona-Norco Adult School expands its Nurse Assistant training and adds Home Health Aide and Licensed Vocational Nurse training over three years, with Corona Regional Medical Center, Corona Post Acute and Riverside Workforce Development.</p>
 <p class="tlead">Examples to examine with faculty</p>
@@ -405,9 +471,9 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <tr><td>Licensed Vocational Nurse (LVN) License</td><td>College of the Desert</td><td>NRN 140C Concepts of Nursing: Gerontology Clinical (1 unit); NRN 140 Concepts of Nursing: Gerontology (1 unit); and 11 more; 22 units in all</td><td>Articulated in MAP at this college; required in Registered Nursing (A.S. Degree)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOO-LVN(-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
 <tr><td>Certified Nurse Assistant (CNA) Certification</td><td>College of the Desert</td><td>HS 64 Nurse Assistant (6 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-LFAC-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
 <tr><td>Medical Terminology</td><td>College of the Desert</td><td>HS 61 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in BIW IV: Medical Office Specialist (Certificate of Achievement); Emergency Medical Services (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>Mt. San Jacinto College</td><td>NURS 585 Certified Nursing Assistant (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Home health aide</td><td>College of the Desert</td><td>HS 66 Home Health Aide (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Home health aide</td><td>Mt. San Jacinto College</td><td>NURS 586 Certified Home Health Aide (CHHA) (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mt. San Jacinto College</td><td>NURS 585 Certified Nursing Assistant (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>Home health aide</td><td>College of the Desert</td><td>HS 66 Home Health Aide (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>Home health aide</td><td>Mt. San Jacinto College</td><td>NURS 586 Certified Home Health Aide (CHHA) (2 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
 </tbody></table></div>
 <div class="contacts" role="group" aria-labelledby="who-start-2">
 <h4 id="who-start-2">Who is in the conversation</h4>
@@ -481,8 +547,8 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <p class="meta">$2,859,640 · 260 participants planned · 1 college in its counties; nearby Woodland Community College, Butte College</p>
 <ul class="lines" aria-label="North Central Counties Consortium: the credentials it trains">
 <li><div class="lh"><code>Early care and education</code><span class="u">8 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
 <li><div class="lh"><code>Hospitality and food service</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Woodland Community College, where the program is taught</span></li>
 <li><div class="lh"><code>Welding, machining and manufacturing</code><span class="u">14 programs</span></div><span class="lt">Ready for a first articulation at Butte College, Woodland Community College, Yuba College, where the program is taught</span></li>
 <li><div class="lh"><code>Transportation and logistics</code><span class="u">1 program</span></div><span class="lt">Ready for a first articulation at Yuba College, where the program is taught</span></li>
@@ -497,7 +563,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <tr><td>Medical Terminology</td><td>Butte College</td><td>ALH 104 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Coding (Certificate of Achievement); Medical Office Administration (A.S. Degree) and 1 more programs</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
 <tr><td>ServSafe Food Protection Manager Certification</td><td>Butte College</td><td>FN 10 Food Safety and Sanitation (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-SC1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
 <tr><td>AWS D1.5 SMAW Qualified Welder</td><td>Butte College</td><td>WLD 24 Shielded Metal Arc Welding (Stick Electrode) (8 units)</td><td>Same common course articulated at Bakersfield College; required in Welding Technology (A.S. Degree); Welding Technology (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICI-AWSD2-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>Butte College</td><td>NSG 100 CNA Basic Nursing Care, Theory (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Butte College</td><td>NSG 100 CNA Basic Nursing Care, Theory (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
 </tbody></table></div>
 <div class="contacts" role="group" aria-labelledby="who-second-1">
 <h4 id="who-second-1">Who is in the conversation</h4>
@@ -530,8 +596,8 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h3>Health science and medical technology</h3>
 <p class="meta">$1,904,283 · 240 participants planned · 10 colleges in its counties; partner colleges Chabot College, Foothill College, Mission College</p>
 <ul class="lines" aria-label="Mountain View Los Altos Adult School: the credentials it trains">
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
-<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
+<li><div class="lh"><code>Nursing assistant (CNA)</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Chaffey College, Lemoore College, Los Angeles Mission College and 1 more award credit for it</span></li>
 <li><div class="lh"><code>Medical assisting</code><span class="u">9 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Evergreen Valley College and 2 more, where the program is taught</span></li>
 <li><div class="lh"><code>Medical office, billing and records</code><span class="u">7 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, De Anza College, Gavilan College and 1 more, where the program is taught</span></li>
 <li><div class="lh"><code>Eye care technician</code><span class="u">2 programs</span></div><span class="lt">Ready for a first articulation at Cañada College, Chabot College, where the program is taught</span></li>
@@ -544,11 +610,11 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
 <thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
 <tr><td>Medical Terminology</td><td>Foothill College</td><td>AHS 52 Medical Terminology (4 units)</td><td>Same common course articulated at Cabrillo College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Nursing assistant (CNA)</td><td>Mission College</td><td>HOC 019A Nursing Assistant Fundamentals (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Medical assisting</td><td>Chabot College</td><td>MEDA 70A Clinical Skills For the Medical Assistant I (3 units)</td><td>The college teaches a matching course; required in Medical Assisting (A.S. Degree); Medical Assisting (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Medical office, billing and records</td><td>Chabot College</td><td>HIT 48 Medical Coding 1 (4 units)</td><td>The college teaches a matching course; required in Health Information Coding (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Eye care technician</td><td>Chabot College</td><td>OPTN 9702 Optical Dispensing and Materials (5 units)</td><td>The college teaches a matching course; required in Optical Technology (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Home health aide</td><td>Mission College</td><td>HOC 019F Home Health Aide Fundamentals (1.5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Nursing assistant (CNA)</td><td>Mission College</td><td>HOC 019A Nursing Assistant Fundamentals (4 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>Medical assisting</td><td>Chabot College</td><td>MEDA 70A Clinical Skills For the Medical Assistant I (3 units)</td><td>The college teaches a matching course; required in Medical Assisting (A.S. Degree); Medical Assisting (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Medical office, billing and records</td><td>Chabot College</td><td>HIT 48 Medical Coding 1 (4 units)</td><td>The college teaches a matching course; required in Health Information Coding (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Eye care technician</td><td>Chabot College</td><td>OPTN 9702 Optical Dispensing and Materials (5 units)</td><td>The college teaches a matching course; required in Optical Technology (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Home health aide</td><td>Mission College</td><td>HOC 019F Home Health Aide Fundamentals (1.5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
 </tbody></table></div>
 <div class="contacts" role="group" aria-labelledby="who-second-2">
 <h4 id="who-second-2">Who is in the conversation</h4>
@@ -578,8 +644,8 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <h3>Healthcare</h3>
 <p class="meta">$213,120 · 48 participants planned · 1 college in its counties</p>
 <ul class="lines" aria-label="Fairfield-Suisun Adult School: the credentials it trains">
-<li><div class="lh"><code>Medical assisting</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: College of the Canyons, Modesto Junior College already award credit for it</span></li>
-<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more already award credit for it</span></li>
+<li><div class="lh"><code>Medical assisting</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: College of the Canyons, Modesto Junior College award credit for it</span></li>
+<li><div class="lh"><code>Medical terminology</code><span class="u">precedent</span></div><span class="lt">A precedent to adopt: Cabrillo College, Copper Mountain College, Cuesta College and 10 more award credit for it</span></li>
 </ul>
 <p class="why">A 120-hour Clinical Medical Assistant bridge course with contextualized medical and office vocabulary, then CALRegional&#x27;s ten-week Clinical Medical Assistant course and a 160-hour externship; 12 students a year, 48 over the grant.</p>
 <p class="tlead">Examples to examine with faculty</p>
@@ -587,8 +653,8 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <colgroup><col style="width:20%"><col style="width:17%"><col style="width:27%"><col style="width:22%"><col style="width:14%"></colgroup>
 <thead><tr><th scope="col">Training</th><th scope="col">College</th><th scope="col">Course</th><th scope="col">Basis</th><th scope="col">In MAP</th></tr></thead><tbody>
 <tr><td>Medical Terminology</td><td>Solano Community College</td><td>NURS 111 Medical Terminology (3 units)</td><td>Same common course articulated at Cabrillo College; required in Medical Administrative Assistant (Certificate of Achievement); Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-MT-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 101 Study of Human Diseases for Medical Assistants (3 units)</td><td>The college teaches a matching course; required in Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 60 Adminstrative Medical Assistant (3 units)</td><td>The college teaches a matching course; required in Medical Administrative Assistant (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 101 Study of Human Diseases for Medical Assistants (3 units)</td><td>The college teaches a matching course; required in Spanish/English Healthcare Interpreter Training (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
+<tr><td>Medical assisting</td><td>Solano Community College</td><td>OT 60 Adminstrative Medical Assistant (3 units)</td><td>The college teaches a matching course; required in Medical Administrative Assistant (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
 </tbody></table></div>
 <div class="contacts" role="group" aria-labelledby="who-precedent-1">
 <h4 id="who-precedent-1">Who is in the conversation</h4>
@@ -627,9 +693,9 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <tr><td>Introduction to Social Work and Human Services</td><td>Cerritos College</td><td>SOC 220 Introduction to Human Services (3 units)</td><td>Same common course articulated at Lemoore College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXS-S0IT1-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
 <tr><td>Community Health Worker Skills</td><td>Long Beach City College</td><td>HLED 200 Introduction to Community Health Worker (3 units)</td><td>Same common course articulated at Cabrillo College; required in Community Health Worker (Certificate of Achievement)</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCBEN-CHWS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
 <tr><td>Social and Human Services Apprenticeship</td><td>Compton College</td><td>SOCI 208A Social Work and Human Services Seminar (2 units)</td><td>Same common course articulated at San Bernardino Valley College</td><td><a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPOA-SAHS-1-001&amp;View=Non-Military" target="_blank" rel="noopener">Request Adopt</a></td></tr>
-<tr><td>English as a second language and workplace English</td><td>Long Beach City College</td><td>ESL 270 Listen/Speak for Work for ESL Level 1 (5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>English as a second language and workplace English</td><td>East Los Angeles College</td><td>E.S.L. 003A College ESL III: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation for this course yet</td></tr>
-<tr><td>English as a second language and workplace English</td><td>Los Angeles City College</td><td>E.S.L. 006A College ESL VI: Writing and Grammar (6 units)</td><td>The college teaches a matching course; required in ESL MILESTONE - LANGUAGE ARTS, ORAL COMMUNICATION (Certificate of Achievement); ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION (Certificate of Achievement)</td><td>No credit recommendation for this course yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>Long Beach City College</td><td>ESL 270 Listen/Speak for Work for ESL Level 1 (5 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>East Los Angeles College</td><td>E.S.L. 003A College ESL III: Writing and Grammar (6 units)</td><td>The college teaches a matching course</td><td>No credit recommendation yet</td></tr>
+<tr><td>English as a second language and workplace English</td><td>Los Angeles City College</td><td>E.S.L. 006A College ESL VI: Writing and Grammar (6 units)</td><td>The college teaches a matching course; required in ESL MILESTONE - LANGUAGE ARTS, ORAL COMMUNICATION (Certificate of Achievement); ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION (Certificate of Achievement)</td><td>No credit recommendation yet</td></tr>
 </tbody></table></div>
 <div class="contacts" role="group" aria-labelledby="who-wider-1">
 <h4 id="who-wider-1">Who is in the conversation</h4>
@@ -653,6 +719,7 @@ a{color:var(--cobalt)} a:focus-visible,.skip:focus-visible{outline:2px solid var
 <div class="tags"><span class="tag t3">Several sectors</span><span class="tag tba">Articulation terms: to confirm</span></div>
 </article>
 </section>
+</div>
 </div>
 </div>
 </main>
