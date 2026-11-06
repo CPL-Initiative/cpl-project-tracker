@@ -1110,3 +1110,24 @@ The catalog sweep paragraph, verbatim as the lane carried it:
 From *Course objectives too*, verbatim:
 
 **Built (S584, 2026-11-05):** `kb/_course_outcomes_read.py` files each page's first Course Objectives section with items (`objectives`, `objectives_heading`, `objectives_lead`, `objectives_fingerprint`; SDCCD's All Fields report from its own Objective Text fields, which its text breaks across lines). `--reparse` on the nine filed trials: objectives on RCCD 12 of 12, SDCCD 12 of 12 in both reports (the same lists), Coast 9 of 12, Santa Ana 12 of 12, Las Positas 12 of 12; the eLumen trials (Cabrillo, Modesto, Columbia) print none; every SLO field read unchanged. Storage: `course_outcomes.kind` (`slo` default, `objective`), its key `(college, course_code, source_url, kind, fingerprint)` and the load reading `kind`, applied live (`s584_course_outcomes_kind`; rollback beside it); the load posts objectives as their own rows for the same colleges, and every SLO reader filters `kind=eq.slo`. Every step 11 read now carries both.
+
+## S591 SkySombrero (2026-11-06, the 10:12Z firing): Monterey Peninsula reread and parked; Mission's SLOs loaded
+
+- **Reconcile 42195216637 moved one record:** Global Studies AA-T 37243 (183 to 184). Business - Accounting 22052 still
+  fails after `parent_from_block`; the reconcile rescored it on its own page and the sum stayed short. Read it again
+  only when the college restarts.
+- **Reread 42201297009** replaced 33 rows (30 pass the machine checks); receipt
+  `kb/receipts/program_requirement_records_college_reread_monterey_peninsula_42201297009.json` holds the before-values.
+  Display build 04dec589445a on the branch, then `step=display`.
+- **Parked under the stopping rule:** S584 moved 0 and S590 1, both under 6 of 197. Call
+  `monterey-peninsula-parked-2026-11-06` in the status file.
+- **Lesson: read Sam's answers to the parked calls before choosing the next college.** On 2026-11-02 he unparked
+  Glendale and LA Valley with *"handle the discrepancies after all data is harvested"*. The next college is one with
+  records missing, so the order is coverage first: on `with_closed_list`, Mt. San Jacinto finds 115 of 152 (76%), the
+  lowest after Canyons and Calbright, whose gaps S442 and S453 explained. The four colleges with no record stay as the
+  lane names them.
+- **The display builder needs `openpyxl`** (`chatbox/build_program_courses.py` reads the state's program course file);
+  a fresh container lacks it. `python3 -m pip install openpyxl`, about 10 s.
+- **SLOs: Mission College loaded** (load 42201380786): 693 inserted, 66 skipped, receipt
+  `kb/receipts/course_outcomes_mission_42201380786.json` with its delete. The bot's receipt commit starts no `test`
+  run, so update the branch from `main` to get one before the merge.
