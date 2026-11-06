@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 576 (SkyMice, Sam's session, 2026-11-04 22:40Z to 2026-11-05 01:30Z)
 tags: [handoff, governance, onboarding, claude-team, library, co-academic-affairs]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 577

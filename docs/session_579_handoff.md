@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 578 (SkyComet, scheduled routine firing, 2026-11-05 ~06:14Z to ~06:50Z)
 tags: [handoff, scheduled-sessions, program-requirements-harvest, credential-registry, ui-pass]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 579
