@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-554 document(s).
+555 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 591 | [Session 591 handoff: Monterey Peninsula's six read back, two reconcile steps; credential watch 49 added; the funding-model UI pass](../session_591_handoff.md) | 2026-11-06 |
 | 590 | [Session 590 handoff: security step 2 merged and read back; Mission's SLO read and Lake Tahoe's trial running](../session_590_handoff.md) | 2026-11-06 |
 | 587 | [Session 587 handoff: step 1 verified end to end; step 2's migration drafted, not applied](../session_587_handoff.md) | 2026-11-05 |
 | 586 | [Session 586 handoff: COBIx's first audit answered; the proxy and the refresh button take a credential](../session_586_handoff.md) | 2026-11-05 |

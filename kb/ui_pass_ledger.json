@@ -46,8 +46,8 @@
    "name": "Funding model",
    "page": "funding-model/index.html",
    "audience": "public",
-   "last": "2026-10-29",
-   "outcome": "S510: npm run a11y passes on all seven funding targets (explainer at 9 widths, Ask Sierra open, How to meet it, the confirmation form, My CPL Funding, the memo, the tab's Public page view); light-only by design; wiring reads no shared dataset. First Light: no raw hex outside :root but the print rule's #FFFFFF (kept, as S452 ruled); one undefined token, --navy-secondary, comes from cpl_funding.js rules for cards, goals and the priority editor, none of which this page draws (probed in Chromium: 0 nodes), so nothing to fix."
+   "last": "2026-11-06",
+   "outcome": "S590: npm run a11y light (9 widths) and dark, plus the How to meet it dialog: all pass. First Light: one raw hex, #FFFFFF on body in @media print, kept on purpose (paper prints white whatever the theme; --surface-opaque would follow a dark swap). Wiring: the view reads no shared dataset. No fix needed."
   },
   {
    "id": "cobi:dashboard",
