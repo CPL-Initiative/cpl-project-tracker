@@ -1522,7 +1522,8 @@
   /* The Commons' procedures count opens the CER's list; here, the Rules view lists every procedure. */
   var COMMONS_EQUIV = { "#credential-reference/procs": "#exhibits/rules" };
   var ROUTE_WORDS = { held: "Review, every held title", conflict: "Review, Conflict with the reference", "another-look": "Review, Another look",
-    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view", requests: "the Requests view" };
+    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view", requests: "the Requests view",
+    "cpl-ai": "the CPL-AI recommendations view" };
 
   function commonsFresh() {
     return { row: null, at: null, error: null, Q: null, qErr: null, logFile: null, loading: null, done: false };
@@ -1632,6 +1633,7 @@
     render();
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     if (r[0] === "requests") loadRequests().then(render);
+    if (r[0] === "cpl-ai") loadCplAi();
     var h = document.querySelector(".exh-h");
     if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
   }
@@ -2824,6 +2826,7 @@
         render();
         if (id === "list" || id === "progress") loadCredentials().then(render);
         if (id === "requests") loadRequests().then(render);
+        if (id === "cpl-ai") loadCplAi();
       });
       return b;
     }
@@ -2833,6 +2836,7 @@
       v("list", "List", state.cs.rows ? state.cs.rows.length : null),
       v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
       v("requests", "Requests", state.pq.rows ? requestsOpen() : null),
+      v("cpl-ai", "CPL-AI recommendations", cplAiCount()),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
   }
 
@@ -3147,6 +3151,31 @@
     wrap.appendChild(g);
   }
 
+  /* The CPL-AI recommendations view (Sam, 2026-11-06, SkyLantern: "connect CPL-AI in the Exhibits tab and make sure we
+     can host all the data"). exhibits_cpl_ai.js holds the view and reads the hosted snapshot (kb/cpl_ai/hosted/, built by
+     kb/_build_cpl_ai_hosted.py); this tab loads it on first open and mounts it on every render. */
+  function loadCplAi() {
+    var M = window.CPL_EXHIBITS_CPLAI;
+    if (M) { if (state.cplAiCode !== undefined) { M.open(state.cplAiCode); state.cplAiCode = undefined; } return M.load().then(function () { render(); }); }
+    if (state.cplAiLoading || !window.CPL_TABS || !window.CPL_TABS.loadScript) return Promise.resolve();
+    state.cplAiLoading = true;
+    return new Promise(function (resolve) {
+      window.CPL_TABS.loadScript("exhibits_cpl_ai.js", "CPL_EXHIBITS_CPLAI", function () { state.cplAiLoading = false; resolve(); });
+    }).then(function () { return window.CPL_EXHIBITS_CPLAI ? loadCplAi() : render(); });
+  }
+  function cplAiCount() {
+    var M = window.CPL_EXHIBITS_CPLAI, ix = M && M._state.index;
+    return ix ? ix.counts.pairs : null;
+  }
+  function renderCplAi(wrap) {
+    wrap.appendChild(viewsNav());
+    var host = el("div", { cls: "exh-group", id: "exh-cplai" });
+    wrap.appendChild(host);
+    var M = window.CPL_EXHIBITS_CPLAI;
+    if (!M) { host.appendChild(el("p", { cls: "exh-empty", text: state.cplAiLoading === false ? "The CPL-AI view could not be loaded." : "Reading the CPL-AI data…" })); return; }
+    M.mount(host, { onChange: function () { if (state.view === "cpl-ai") render(); } });
+  }
+
   function render() {
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
@@ -3163,6 +3192,10 @@
     }
     if (state.view === "requests") {
       renderRequests(wrap);
+      return;
+    }
+    if (state.view === "cpl-ai") {
+      renderCplAi(wrap);
       return;
     }
     if (state.view === "progress") {
@@ -3399,7 +3432,7 @@
      the reference, credentials = the List (the Credentials view retired into it), rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
   var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["list", ""],
-    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], requests: ["requests", ""] };
+    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], requests: ["requests", ""], "cpl-ai": ["cpl-ai", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
@@ -3409,6 +3442,7 @@
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     if (r[0] === "requests") loadRequests().then(render);
+    if (r[0] === "cpl-ai") { state.cplAiCode = parts[2] ? decodeURIComponent(parts[2]) : null; loadCplAi(); }
     return true;
   }
   /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
@@ -3417,6 +3451,7 @@
     var v = state.view, f = state.ls && state.ls.f;
     if (v === "list") return "exhibits/list" + (f ? "/" + f : "");
     if (v === "progress" || v === "rules" || v === "requests") return "exhibits/" + v;
+    if (v === "cpl-ai") return window.CPL_EXHIBITS_CPLAI ? window.CPL_EXHIBITS_CPLAI.address() : "exhibits/cpl-ai";
     if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? "another-look" : "held");
     return "exhibits";
   });
