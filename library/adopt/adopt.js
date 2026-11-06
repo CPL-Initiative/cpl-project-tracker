@@ -24,6 +24,14 @@
   var HANDOUT = "../cpl-opportunity/?college=";
   var FIND_COLLEGE = "https://map.rccd.edu/cpllandingpages/";
   var PORTAL = "https://creditforbeingyou.org/";
+  // The statewide route (Sam, Open Asks Sheet 162, 2026-11-06): a public request to prioritize review of a credential,
+  // never an evaluation promise. One INSERT-only function takes it; one aggregate returns the count beside each credential
+  // (kb/migrations/2026-11-06_credential_priority_requests.sql). The public anon key reads nothing else.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var ASK_URL = SUPABASE_URL + "/rest/v1/rpc/credential_priority_request";
+  var COUNTS_URL = SUPABASE_URL + "/rest/v1/rpc/credential_priority_counts";
+  var ASK = "Ask us to prioritize this credential";
   var PAGE = 72;       // cards or rows drawn at a time
   var CHIPS = 6;       // Request Quick Adopt chips before "and N more"
   var ROW_H = 44;      // the matrix row height, px (CSS .mx tbody tr)
@@ -44,7 +52,7 @@
 
   var D = null, A = null, R = [];
   var f = { q: "", colleges: {}, regions: {}, areas: {}, sectors: {}, types: {}, standing: { awarded: true }, sort: "field" };
-  var state = { view: "list", shown: PAGE, rows: [], cols: [], groups: [], flat: [], mxRows: [], sel: null, sc: null, other: {} };
+  var state = { view: "list", shown: PAGE, rows: [], cols: [], groups: [], flat: [], mxRows: [], sel: null, sc: null, other: {}, asks: {}, asksRead: false };
   var pickers = {};
 
   function $(id) { return document.getElementById(id); }
@@ -370,7 +378,11 @@
     return e.join(" · ");
   }
 
-  function reqWord(c) { return '<div class="chips"><button type="button" class="word" data-open="' + c._i + '" data-req="1">Request an evaluation</button></div>'; }
+  function reqWord(c) { return '<div class="chips"><button type="button" class="word" data-open="' + c._i + '" data-req="1">' + ASK + '</button>' + askedWord(c) + "</div>"; }
+  // How many have asked us to prioritize a credential: the signal, shown wherever the credential is (Sam, Sheet 162).
+  function asked(c) { return state.asks[String(c.t || "").toLowerCase()] || 0; }
+  function askedWord(c) { var n = asked(c); return n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : ""; }
+  function askedCell(c) { var n = asked(c); return n ? '<span class="askn">' + n + " asked</span>" : ""; }
 
   function otherCard(c) {
     var says = c.std === "harvested" ? "No college has evaluated it for credit yet. You can ask for that below."
@@ -428,11 +440,11 @@
         var n = c.a.length;
         var sub = c.std !== "awarded" ? [STD[c.std], evidence(c)].filter(Boolean).join(" · ") : (sc ? STD[stdOf(c, sc)] : "");
         var typeCells = (c.y || []).map(function (i) { return '<button type="button" class="word dd" data-type="' + i + '" title="Filter to this way of giving credit">' + esc(D.types[i]) + "</button>"; }).join(", ") || esc(c.k || "");
-        return '<tr><td><button type="button" class="word" data-open="' + c._i + '">' + esc(c.t) + "</button>" + (sub ? '<span class="sub">' + esc(sub) + "</span>" : "") + "</td>"
+        return '<tr><td><button type="button" class="word" data-open="' + c._i + '">' + esc(c.t) + "</button>" + (sub ? '<span class="sub">' + esc(sub) + "</span>" : "") + askedCell(c) + "</td>"
           + "<td>" + (c.i ? '<button type="button" class="word dd" data-q="' + esc(c.i) + '" title="Search this issuer">' + esc(c.i) + "</button>" : "") + "</td>"
           + '<td><button type="button" class="word dd" data-sector="' + esc(groupKey(c)) + '" title="Filter to this field">' + esc(groupLabel(D, groupKey(c))) + "</button></td><td>" + typeCells + "</td>"
           + '<td class="num">' + (n ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards" title="The colleges and their units">' + fmt(n) + "</button>"
-            : '0 <button type="button" class="word req-w" data-open="' + c._i + '" data-req="1">Request an evaluation</button>') + "</td>"
+            : '0 <button type="button" class="word req-w" data-open="' + c._i + '" data-req="1">Ask us to prioritize</button>') + "</td>"
           + '<td class="num">' + (n && c.p != null ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards">' + esc(units(c.p)) + "</button>" : "") + "</td></tr>";
       }).join("");
     });
@@ -502,14 +514,57 @@
   function requestBlock(c) {
     var picked = keys(f.colleges), pre = picked.length === 1 ? Number(picked[0]) : -1;
     var college = pre >= 0 ? D.colleges[pre][0] : "";
-    return '<h3 id="pn-req">Request an evaluation</h3><div class="req">'
-      + '<p class="rtsub">Hold this credential? Ask for it to be evaluated for credit for prior learning. The analysis below is there for the faculty who look at it.</p>'
+    var n = asked(c);
+    return '<h3 id="pn-req">' + ASK + (n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : "") + '</h3><div class="req">'
+      + '<p class="rtsub">Hold this credential, or teach for it? Two ways to ask. The analysis below is there for the faculty who look at it.</p>'
       + '<p class="rt"><b>At your college.</b> ' + (college
         ? 'Reach the person at ' + esc(college) + ' who handles credit for prior learning through <a href="' + FIND_COLLEGE + '" target="_blank" rel="noopener">Find your college</a>, and name this credential.'
         : 'Pick your college above, or reach its credit for prior learning contact through <a href="' + FIND_COLLEGE + '" target="_blank" rel="noopener">Find your college</a>, and name this credential.')
       + ' A student can also add it to their record and request credit at <a href="' + PORTAL + '" target="_blank" rel="noopener">Credit for Being You</a>.</p>'
-      + '<p class="rt"><b>Statewide.</b> The Credit for Prior Learning Initiative and the Academic Senate (ASCCC) are setting up a request list for credentials no college has evaluated; until it opens, the college route above is the way to ask.</p>'
+      + '<p class="rt"><b>Statewide.</b> Ask the Credit for Prior Learning Initiative and the Academic Senate (ASCCC) to prioritize this credential for review. Each request raises it in the order the Initiative works through with colleges. Whether a college evaluates it rests with that college&#x27;s faculty, and the Initiative sends no reply.</p>'
+      + '<form id="pn-ask-form" class="ask-form" data-cred="' + esc(c.t) + '" data-issuer="' + esc(c.i || "") + '">'
+      + '<label for="pn-ask-college">Your college <span class="opt">(optional)</span></label><input id="pn-ask-college" name="college" type="text" maxlength="120" autocomplete="organization" value="' + esc(college) + '">'
+      + '<label for="pn-ask-email">Email <span class="opt">(optional; for the Initiative&#x27;s records, no reply is sent)</span></label><input id="pn-ask-email" name="email" type="email" maxlength="200" autocomplete="email">'
+      + '<div class="ask-row"><button type="submit" class="word">Ask us to prioritize it</button></div>'
+      + '</form><p class="lines" id="pn-ask-msg" aria-live="polite"></p>'
       + "</div>";
+  }
+
+  // The one public write: the credential, an optional college and email; the reply is the count so far.
+  function sendAsk(form) {
+    var msg = $("pn-ask-msg"), btn = form.querySelector("button[type=submit]");
+    var cred = form.getAttribute("data-cred") || "", key = cred.toLowerCase();
+    var email = (form.querySelector("[name=email]") || {}).value || "", college = (form.querySelector("[name=college]") || {}).value || "";
+    if (!cred) return;
+    if (btn) btn.disabled = true;
+    if (msg) msg.textContent = "Sending\u2026";
+    return fetch(ASK_URL, { method: "POST", headers: { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON },
+      body: JSON.stringify({ p_credential: cred, p_issuer: form.getAttribute("data-issuer") || null, p_college: college.trim() || null, p_email: email.trim() || null, p_note: null, p_source: "catalog" }) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (n) {
+        n = Number(n) || (state.asks[key] || 0) + 1;
+        state.asks[key] = n;
+        form.hidden = true;
+        if (msg) msg.textContent = "Asked. " + plural(n, "person has", "people have") + " asked us to prioritize this credential so far.";
+        var h = $("pn-req"); if (h) h.innerHTML = ASK + ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>";
+        if (state.view === "table") drawTable();
+      })
+      .catch(function () {
+        if (btn) btn.disabled = false;
+        if (msg) msg.textContent = "The request could not be sent. Try again in a moment, or ask through your college above.";
+      });
+  }
+  function loadAsks() {
+    return fetch(COUNTS_URL, { cache: "no-cache", headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        var asks = {};
+        rows.forEach(function (x) { if (x && x.credential && x.n > 0) asks[String(x.credential).toLowerCase()] = Number(x.n); });
+        state.asks = asks; state.asksRead = true;
+        if (state.view === "table") drawTable(); else if (state.view === "list") drawList();
+      })
+      .catch(function () { /* the page stands without the counts */ });
   }
 
   function bar(x) { return '<span class="conf" aria-hidden="true"><i style="width:' + Math.round(x * 100) + '%"></i></span>' + x.toFixed(2); }
@@ -809,6 +864,7 @@
     $("ad-csv").addEventListener("click", function () { download(slug() + ".csv", csvList(D, state.rows)); });
     $("ad-csv-mx").addEventListener("click", function () { download(slug() + "-matrix.csv", csvMatrix(D, state.rows, state.cols)); });
     $("pn-close").addEventListener("click", closePanel);
+    document.addEventListener("submit", function (e) { var fm = e.target; if (fm && fm.id === "pn-ask-form") { e.preventDefault(); sendAsk(fm); } });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $("ad-panel").classList.contains("open")) closePanel(); });
     document.addEventListener("click", function (e) {
       var b = e.target.closest ? e.target.closest("button") : null;
@@ -856,10 +912,11 @@
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(addMore)
       .catch(function () { /* the page stands on the settled credentials alone */ });
+    loadAsks();
   }
 
   window.CPL_ADOPT = { scope: scope, stdOf: stdOf, match: match, rows: rows, cols: cols, csvList: csvList, csvMatrix: csvMatrix, mapUrl: mapUrl,
-    groupKey: groupKey, fieldOrder: fieldOrder, reviewRows: reviewRows, reviewCard: reviewCard, STD: STD };
+    groupKey: groupKey, fieldOrder: fieldOrder, reviewRows: reviewRows, reviewCard: reviewCard, STD: STD, ASK: ASK, asked: asked };
 
   if (typeof document === "undefined" || !document.getElementById("ad-list")) return;
   fetch(DATA_URL, { cache: "no-cache" })

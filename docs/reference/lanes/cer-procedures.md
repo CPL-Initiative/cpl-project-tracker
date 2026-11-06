@@ -102,14 +102,23 @@ public-adopt-matrix public-adopt-list` (the last two new). **Request an evaluati
 today: the college route through *Find your college* and *Credit for Being You* (the portal is recorded as a Found data
 source, `docs/reference/data_sources.md`), and a statewide line that says the list is being set up.
 
-**RULED (Sam, Open Asks Sheet 162, 15:16Z 2026-11-06, his own call, in a note): the statewide route is a public request
-to prioritize review, never an evaluation promise.** His words: *"Reframe it as a public request to prioritize review of a
-credential. The idea is that we could collect requests to help us better prioritize our work without promising any one
-person that we would evaluate their credential--that would be left to the discretion of local colleges."* So the page's
-word becomes *Ask us to prioritize this credential* (the count beside a credential is the signal; no reply is owed to the
-requester), the form keeps to what prioritizing needs (credential, optional college, optional email for updates), and the
-write surface is INSERT-only through one function, mapped in Governance with the privacy ADRs before it ships
-(Rule 10 a3). **NEXT:** build it so, and change the page's statewide line and the panel's heading to the new word.
+**RULED and built (Sam, Open Asks Sheet 162, 15:16Z 2026-11-06, his own call, in a note; built by SkyLoop the same
+afternoon): the statewide route is a public request to prioritize review, never an evaluation promise.** His words:
+*"Reframe it as a public request to prioritize review of a credential. The idea is that we could collect requests to help us
+better prioritize our work without promising any one person that we would evaluate their credential--that would be left to
+the discretion of local colleges."* The page's word is **Ask us to prioritize this credential** (the panel's heading, every
+card's chip; *Ask us to prioritize* on a List row's 0); the panel's statewide paragraph says each request raises the
+credential in the Initiative's order, that evaluation rests with a college's faculty, and that no reply is sent. The form
+takes the credential (fixed), an optional college (prefilled from the pick) and an optional email, and posts to **one
+INSERT-only SECURITY DEFINER function**, `credential_priority_request()`, which validates, bounds, drops a repeat from the
+same email within a day, and returns the count; `credential_priority_counts()` is the one public read (credential and n,
+nothing else) and paints the count beside the credential on its card, its List row and the panel's heading (the count is
+the signal). The table `credential_priority_requests` has no public policy; the team reads rows behind the phrase or a
+reviewer sign-in; nobody deletes. Migration `kb/migrations/2026-11-06_credential_priority_requests.sql` (+ rollback), routed
+through `supabase-migrate.yml` by `kb/migrations/.apply` because the MCP's apply waited on a confirmation and timed out
+(Rule 10 c). Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
+mapped to it, the counts read dismissed with its privacy reason; the dependency map regenerated. Tests: `public_adopt`
+(81). **NEXT:** the Commons Exhibits List reads the rows as a queue item with its count (below).
 
 **The Commons Exhibits List carries the same shape next (Sam, 2026-11-06: "make sure that any needed formatting or
 functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public

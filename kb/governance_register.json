@@ -302,6 +302,15 @@
       "maintained_in": "public.college_short_names via the College Identity tab's Short name column; the daily run's kb/_apply_college_short_names.py writes the two files",
       "owner": null,
       "when_empty": "Before S545 the shorts lived in a seed script only a session could run, and a short changed there dropped City College of San Francisco and College of the Desert from the funding join for two days (#2598, #2676)."
+    },
+    {
+      "id": "DR-31",
+      "element": "Public requests to prioritize a credential's review (credential_priority_requests)",
+      "drives": "The Credential Catalog's statewide route. A member of the public asks the Initiative and the Academic Senate to prioritize a credential no college has evaluated; the count beside the credential is the signal the Initiative and the Commons' Exhibits List queue read when choosing what to work on next.",
+      "decides": "Sam (Open Asks Sheet 162, 15:16Z 2026-11-06, his own call): \"Reframe it as a public request to prioritize review of a credential ... without promising any one person that we would evaluate their credential--that would be left to the discretion of local colleges.\" Acceptance: a request names a credential; it promises nothing and no reply is owed; whether a college evaluates the credential rests with that college's faculty. The public writes through one INSERT-only function and reads one aggregate count; the team reads rows behind the team phrase or a reviewer sign-in; nobody deletes.",
+      "maintained_in": "public.credential_priority_requests via credential_priority_request() from library/adopt/ (the public Credential Catalog); read as counts by credential_priority_counts(); the Commons' Exhibits List queue reads the rows next",
+      "owner": null,
+      "when_empty": "Requests pile up with no one reading the count, and the public page's promise that each request raises the credential in the Initiative's order stops being true. The adoption-interest queue (DR-23) showed the shape: intake without an owner manufactures unread rows."
     }
   ],
   "acceptance_standards": [
