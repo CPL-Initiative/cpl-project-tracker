@@ -70,6 +70,9 @@ DRIVE.chooseCollege(w, root, "Cerritos College");
 const cer = DRIVE.listTitles(root);
 check("(c) Cerritos lists its featured maps and its catalog records",
   cer.includes("Field Ironworkers, high school to career") && cer.includes("Apprenticeship: Field Ironworkers"), cer.join(" | "));
+check("(c) every card counts programs and sets a List filter (Sam's call 1, 2026-11-06)",
+  JSON.stringify([...root.querySelectorAll(".cplpw-card")].map((b) => b.getAttribute("data-filter") + ":" + b.hasAttribute("aria-pressed")))
+    === JSON.stringify([":true", "here:true", "adopt:true", "consider:true", "conf:true"]));
 check("(c) the five filter words carry counts", /Certificates \(\d+\)/.test(root.textContent) && /Course maps \(\d+\)/.test(root.textContent));
 
 // ── (d) ──

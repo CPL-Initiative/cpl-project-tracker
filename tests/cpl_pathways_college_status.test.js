@@ -132,9 +132,7 @@ function restFor(byCollege, asked, hold) {
   const btns = [...line().querySelectorAll("button.go")];
   check("(c) each figure is a button", btns.length === 3 && btns.every((b) => b.type === "button"), btns.length);
   check("(c) the line is a polite status region", line().getAttribute("role") === "status" && line().getAttribute("aria-live") === "polite");
-  // The fourth figure card reads My College's public summary through MAP's roster; the line's four reads name the college.
-  const own = asked.filter((u) => !/\/(map_colleges|map_college_credit_summary_pub)\?/.test(u));
-  check("(c) every read names the college", own.length === 4 && own.every((u) => /college=eq\.College%20of%20Alameda/.test(u)), asked.join("\n"));
+  check("(c) every read names the college", asked.length === 4 && asked.every((u) => /college=eq\.College%20of%20Alameda/.test(u)), asked.join("\n"));
   check("(c) the active programs are COCI's active ones", asked.some((u) => /coci_college_programs\?.*status=eq\.Active/.test(u)));
 
   // ── (d) ──

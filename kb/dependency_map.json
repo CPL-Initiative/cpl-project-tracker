@@ -5829,7 +5829,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3443,
+     "line": 3419,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6140,7 +6140,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3701,
+     "line": 3656,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6391,7 +6391,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3688,
+     "line": 3643,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6461,7 +6461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3682,
+     "line": 3637,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6844,7 +6844,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3648,
+     "line": 3603,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6930,7 +6930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3696,
+     "line": 3651,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7123,7 +7123,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3669,
+     "line": 3624,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25187,7 +25187,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3164,
+     "line": 3140,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25219,7 +25219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3167,
+     "line": 3143,
      "tabs": [
       "cpl-pathways"
      ]
@@ -25319,7 +25319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3166,
+     "line": 3142,
      "tabs": [
       "cpl-pathways"
      ]
@@ -26938,16 +26938,6 @@
      ]
     },
     {
-     "id": "module:cpl_pathways.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "helper",
-     "line": 3006,
-     "tabs": [
-      "cpl-pathways"
-     ]
-    },
-    {
      "id": "script:kb/_publish_college_briefing.py",
      "kind": "script",
      "direction": "read",
@@ -27150,16 +27140,6 @@
       "cpl-pathways",
       "csm-workspace",
       "implementation-funding"
-     ]
-    },
-    {
-     "id": "module:cpl_pathways.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "helper",
-     "line": 2995,
-     "tabs": [
-      "cpl-pathways"
      ]
     },
     {

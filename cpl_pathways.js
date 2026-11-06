@@ -321,7 +321,7 @@
     "@media (max-width: 900px) { .cplpw-cards { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
     "@media (max-width: 560px) { .cplpw-cards { grid-template-columns:1fr; } }",
     ".cplpw-card { display:block; text-align:left; font:inherit; min-width:0; cursor:pointer; background: var(--surface); color: var(--text-body); border:1px solid var(--border); border-radius:11px; padding:16px 17px; }",
-    ".cplpw-card[aria-pressed='true'], .cplpw-card[aria-expanded='true'] { border:2px solid var(--focus-ring, var(--cobalt)); padding:15px 16px; }",
+    ".cplpw-card[aria-pressed='true'] { border:2px solid var(--focus-ring, var(--cobalt)); padding:15px 16px; }",
     ".cplpw-card:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     ".cplpw-card-n { display:block; font-family: var(--cmn-serif, Georgia, serif); font-size:1.85rem; line-height:1.1; color: var(--text-strong); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; font-variant-numeric:tabular-nums; }",
     ".cplpw-card-l { display:block; margin-top:6px; font-weight:700; color: var(--text-strong); }",
@@ -2986,30 +2986,6 @@
     p.catch(function () { if (collegeReads[college] === p) delete collegeReads[college]; });
     return p;
   }
-  /* My College's lead figure for the fourth card: units not yet acted on, read from the public summary that suppresses
-     each figure on the students behind it (map_college_credit_summary_pub), through MAP's roster (map_colleges). */
-  var mapRoster = null, myFigures = {};
-  function readMyFigure(college) {
-    if (myFigures[college]) return myFigures[college];
-    if (!mapRoster) {
-      mapRoster = roepGet("/map_colleges?select=college_id,college_name,variants&entity_kind=neq.test&order=college_name");
-      mapRoster.catch(function () { mapRoster = null; });
-    }
-    var p = mapRoster.then(function (rows) {
-      var k = choiceKey(college), id = null;
-      (rows || []).forEach(function (r) {
-        if (id != null || !r) return;
-        var names = [r.college_name].concat(Array.isArray(r.variants) ? r.variants : []);
-        if (names.some(function (n) { return n && choiceKey(n) === k; })) id = r.college_id;
-      });
-      if (id == null) return { none: true };
-      return roepGet("/map_college_credit_summary_pub?select=students,suppressed,dormant_credits,articulated_waiting&college_id=eq." + id)
-        .then(function (s) { return (s && s[0]) || { none: true }; });
-    });
-    myFigures[college] = p;
-    p.catch(function () { if (myFigures[college] === p) delete myFigures[college]; });
-    return p;
-  }
   var CPLPW_FILTERS = [["", "All"], ["degree", "Degrees"], ["cert", "Certificates"], ["noncredit", "Noncredit"],
     ["map", "Course maps"], ["here", "Carry CPL here"], ["adopt", "Could adopt"], ["consider", "For consideration"],
     ["conf", "Confirmed"], ["fail", "Fails a check"]];
@@ -3446,11 +3422,11 @@
           B.mountInto(mineHost, college);
         });
       }
-      myCol.addEventListener("toggle", function () { mineOpen = myCol.open; mountMine(); paintCards(); });
+      myCol.addEventListener("toggle", function () { mineOpen = myCol.open; mountMine(); });
       myCol.open = mineOpen;
       mountMine();
 
-      var recs = null, recsErr = null, my = null, myErr = null, rowsMemo = null;
+      var recs = null, recsErr = null, rowsMemo = null;
       function rows() {
         if (!rowsMemo) rowsMemo = pathwayRows(items, idxs, dir, directory, recs);
         return rowsMemo;
@@ -3501,20 +3477,12 @@
         function card(n, label, sub, f) {
           var b = document.createElement("button");
           b.type = "button"; b.className = "cplpw-card";
-          var on = f === "mine" ? myCol.open : L.f === f;
-          b.setAttribute(f === "mine" ? "aria-expanded" : "aria-pressed", on ? "true" : "false");
-          if (f === "mine") b.setAttribute("aria-controls", "cplpw-mycollege");
+          b.setAttribute("aria-pressed", L.f === f ? "true" : "false");
           b.setAttribute("data-filter", f);
           b.appendChild(el("span", "cplpw-card-n", n));
           b.appendChild(el("span", "cplpw-card-l", label));
           b.appendChild(el("span", "cplpw-card-s", sub));
           b.addEventListener("click", function () {
-            if (f === "mine") {
-              myCol.open = true; mineOpen = true; mountMine();
-              if (typeof myCol.scrollIntoView === "function") myCol.scrollIntoView({ block: "start" });
-              paintCards();
-              return;
-            }
             L.f = f; L.limit = null; paintList();
             var again = cards.querySelector('[data-filter="' + f + '"]'); if (again) again.focus();
           });
@@ -3525,19 +3493,8 @@
         card(statNum(rs.length), "Pathways", parts.join(" and "), "");
         card(fig(count(function (r) { return r.h > 0; })), "Carry CPL here", "Programs with a course " + college + " already credits for prior learning", "here");
         card(fig(count(function (r) { return r.ad > 0; })), "Could adopt", "Programs with a course another college credits for prior learning", "adopt");
-        var myN = "Reading", mySub = "My College's figure. Opens My College";
-        if (myErr) { myN = "TBA"; mySub = "My College's figure could not be read (" + myErr + "). Opens My College"; }
-        else if (my && my.none) { myN = "TBA"; mySub = "MAP holds no figure for this college. Opens My College"; }
-        else if (my) {
-          if (my.suppressed || my.dormant_credits == null) { myN = "<10"; mySub = "Withheld: fewer than 10 students stand behind it. Opens My College"; }
-          else {
-            myN = statNum(my.dormant_credits);
-            mySub = (my.students != null ? statNum(my.students) + " CPL students in MAP" : "") +
-              (my.articulated_waiting != null ? (my.students != null ? "; " : "") + statNum(my.articulated_waiting) + " units already articulated" : "") +
-              ". Opens My College";
-          }
-        }
-        card(myN, "Units not yet acted on", mySub, "mine");
+        // The fourth card counts programs too (Sam, 2026-11-06, call 1: "Yes to all"), so every card opens the List.
+        card(fig(count(function (r) { return r.c > 0; })), "For consideration", "Programs with a course a statewide credit recommendation names", "consider");
         card(statNum(count(function (r) { return r.conf; })), "Confirmed", "Records a person has checked; the rest are Beta drafts", "conf");
       }
       paintList();
@@ -3555,8 +3512,6 @@
           stat.textContent = "The program data could not be read (" + recsErr + ").";
           paintCards();
         });
-        readMyFigure(college).then(function (s) { my = s; if (host.isConnected) paintCards(); },
-          function (e) { myErr = (e && e.message) || "the read failed"; if (host.isConnected) paintCards(); });
       } else stat.hidden = true;
     }
     if (!single) container.appendChild(picker.row);
