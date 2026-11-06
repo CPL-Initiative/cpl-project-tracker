@@ -166,7 +166,7 @@ function click(w, root, value) {
   const none = w.CPL_PATHWAYS_ROEP.programs.find((p) => !p.display.figure.up_to);
   T._renderRoepProgram(root, none);
   check("(b) a program with no CPL says so instead of printing zero",
-    /No course in this program carries CPL at this college yet/.test(root.textContent) && !/Up to 0/.test(root.textContent));
+    /No course in this program can be earned through CPL at this college yet/.test(root.textContent) && !/Up to 0/.test(root.textContent));
   check("(g) a record without outcomes shows no outcomes section",
     (none.record.program.outcomes || []).length > 0 || !root.querySelector(".cplpw-routcomes"));
 

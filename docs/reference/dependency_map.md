@@ -833,7 +833,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/adopt/adopt.js` | pages: `library/adopt/index.html` | — |
 | `library/adopt/adopt_ai.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_align.json` | scripts: `kb/_build_adopt_align.py` | committed by: `daily-dashboard.yml` |
-| `library/adopt/adopt_data.json` | tabs: `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
+| `library/adopt/adopt_data.json` | tabs: `cpl-pathways`, `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |

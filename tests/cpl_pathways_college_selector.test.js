@@ -8,8 +8,9 @@
 // Guards:
 //   (a) the College select is labeled, opens on "Choose a college", and lists every college the pathways name, sorted,
 //       once each; the Pathway select and its search box are retired;
-//   (b) ⭐ with no college chosen the page asks for one: no cards, no List, no pathway;
-//   (c) a college shows its head, five figure cards and a List of every pathway it has (featured maps, baccalaureates,
+//   (b) ⭐ with no college chosen the page shows every college (Sam, 2026-11-06: "a lazy load of the whole state when CPL
+//       Pathways opens...until you narrow down to a college"): its head, the figure cards, the List, no pathway open;
+//   (c) a college shows its head, six figure cards (Credentials second, Sam 2026-11-06) and a List of every pathway it has (featured maps, baccalaureates,
 //       catalog records) and no other college's;
 //   (d) the List's finder and filter words narrow it; a figure card sets its filter and says it is pressed;
 //   (e) ⭐ a title opens its pathway at full width; Back returns to the List with its filter and finder as left;
@@ -55,15 +56,16 @@ check("(a) the Pathway select, its search box and Clear are retired",
   !root.querySelector("select.cplpw-select, #cplpw-path-find, .cplpw-clear, .cplpw-selcount"));
 
 // ── (b) ──
-check("(b) ⭐ no college: the page asks for one, with no cards, List or pathway",
-  /Choose a college to see its pathways/.test(root.textContent) && !root.querySelector(".cplpw-card, #cplpw-list, .cplpw-path"));
+check("(b) ⭐ no college: every college, with its cards and List, and no pathway open",
+  (root.querySelector(".cplpw-h") || {}).textContent === "Every college, every program" && root.querySelectorAll(".cplpw-card").length === 6
+  && !!root.querySelector("#cplpw-list") && !root.querySelector(".cplpw-path") && !/Choose a college to see its pathways/.test(root.textContent));
 
 // ── (c) ──
 DRIVE.chooseCollege(w, root, MT);
 const mt = DRIVE.listTitles(root);
 check("(c) the college's head names it", (root.querySelector(".cplpw-h") || {}).textContent === MT);
-check("(c) five figure cards, the first counting its pathways",
-  root.querySelectorAll(".cplpw-card").length === 5 && root.querySelector(".cplpw-card-n").textContent === String(own(MT).length));
+check("(c) six figure cards, the first counting its pathways",
+  root.querySelectorAll(".cplpw-card").length === 6 && root.querySelector(".cplpw-card-n").textContent === String(own(MT).length));
 check("(c) the List holds every pathway the college has", mt.length === own(MT).length && mt.length > 0, mt.length + " vs " + own(MT).length);
 check("(c) and no other college's", !mt.some((t) => /Field Ironworkers/.test(t)));
 DRIVE.chooseCollege(w, root, "Cerritos College");
@@ -72,7 +74,7 @@ check("(c) Cerritos lists its featured maps and its catalog records",
   cer.includes("Field Ironworkers, high school to career") && cer.includes("Apprenticeship: Field Ironworkers"), cer.join(" | "));
 check("(c) every card counts programs and sets a List filter (Sam's call 1, 2026-11-06)",
   JSON.stringify([...root.querySelectorAll(".cplpw-card")].map((b) => b.getAttribute("data-filter") + ":" + b.hasAttribute("aria-pressed")))
-    === JSON.stringify([":true", "here:true", "adopt:true", "consider:true", "conf:true"]));
+    === JSON.stringify([":true", "creds:true", "here:true", "adopt:true", "consider:true", "conf:true"]));
 check("(c) the five filter words carry counts", /Certificates \(\d+\)/.test(root.textContent) && /Course maps \(\d+\)/.test(root.textContent));
 
 // ── (d) ──
