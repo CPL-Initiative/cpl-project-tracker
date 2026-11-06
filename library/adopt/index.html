@@ -93,6 +93,7 @@ body.panel-open .shift { padding-right: calc(var(--gutter-r) + var(--panel-w)); 
 .kpi:hover { border-color: var(--line-strong); border-left-color: var(--gold); }
 .kpi b { font-family: var(--serif); font-size: 1.6rem; line-height: 1.1; color: var(--heading); font-variant-numeric: tabular-nums; }
 .kpi span { font-size: .8rem; color: var(--muted); line-height: 1.3; }
+.kpi-scope { margin: 0; padding: 2px 8px; border-radius: 6px; background: var(--surface); color: var(--muted); font-size: .82rem; align-self: flex-start; }
 .lede { max-width: 76ch; margin-top: 16px; font-size: 1.02rem; }
 .start { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-top: 14px; }
 .start .lab { color: var(--heading); font-size: .82rem; font-weight: 700; }
@@ -166,6 +167,8 @@ body.panel-open .shift { padding-right: calc(var(--gutter-r) + var(--panel-w)); 
 
 /* Worth a faculty review */
 .review h2 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.7rem); }
+.review { padding-block-end: 8px; }
+.review-box { max-height: min(460px, 62vh); overflow-y: auto; padding: 2px; border-radius: 11px; }
 .cred dl.tags { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 12px; margin: 2px 0 0; font-size: .86rem; }
 .cred dl.tags dt { color: var(--muted); font-weight: 600; }
 .cred dl.tags dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
@@ -183,7 +186,17 @@ body.panel-open .shift { padding-right: calc(var(--gutter-r) + var(--panel-w)); 
 .tbl td .sub { display: block; color: var(--muted); font-size: .82rem; }
 .tbl td button.dd { color: var(--ink); text-decoration-color: var(--line-strong); font-weight: 400; }
 .tbl td button.dd:hover { color: var(--link); }
-.tbl td .req-w { display: block; font-size: .82rem; white-space: nowrap; text-align: center; margin: 0 auto; }
+/* The List, one line a credential (Sam, 2026-11-06): a cell too long ends in an ellipsis, its title holds the rest; the
+   box is a screen tall and draws the next batch as the reader nears its end. */
+#ad-tbl-wrap { max-height: max(420px, 72vh); }
+.tbl.one { min-width: 1020px; }
+.tbl.one td { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; padding-block: 6px; }
+.tbl.one td button.word { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+.tbl.one td.st { color: var(--muted); font-size: .84rem; }
+.tbl.one td.ask { font-size: .84rem; }
+.tbl.one td.ask .askn { display: inline; margin-left: 4px; }
+.tbl tr.sentinel td, .sentinel { color: var(--muted); font-size: .84rem; text-align: center; padding: 10px; }
+.tbl tbody tr.sentinel td { background: var(--surface); }
 
 /* The college matrix: the DOM only holds the rows near the scroll position; a cell with data is a button. */
 .mx-legend { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 6px 0 10px; font-size: .88rem; color: var(--muted); }
@@ -244,7 +257,7 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
 .req .rt b { color: var(--heading); }
 .req .rtsub { color: var(--muted); font-size: .86rem; }
 .askn { color: var(--muted); font-weight: 400; font-size: .84rem; white-space: nowrap; }
-.tbl td .askn { display: block; }
+.tbl td .askn { display: inline; }
 .ask-form { display: grid; gap: 4px; margin-top: 10px; }
 .ask-form label { font-size: .86rem; color: var(--heading); font-weight: 700; margin-top: 6px; }
 .ask-form label .opt { color: var(--muted); font-weight: 400; }
@@ -395,6 +408,7 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
           <button type="button" class="kpi" id="kpi-awarded"><b>…</b><span>credentials earn credit at a college</span></button>
           <button type="button" class="kpi" id="kpi-colleges"><b>…</b><span>colleges award that credit</span></button>
           <button type="button" class="kpi" id="kpi-harvested" hidden><b>…</b><span>credentials not yet evaluated</span></button>
+          <p class="kpi-scope" id="kpi-scope" hidden>Counted for the filters below.</p>
         </div>
       </div>
       <p class="lede">California community colleges award credit for many of the credentials listed here. Find yours to see which colleges award credit for it, and ask for an evaluation where none does yet. Pick your college to see what it awards and what it could add.</p>
@@ -433,6 +447,15 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
       <button type="button" class="word hero-pause" id="ad-hero-pause" hidden>Pause photos</button>
     </div>
   </section>
+  <section id="review" class="results wrap shift review" aria-labelledby="ad-review-h" hidden>
+    <div class="results-bar">
+      <h2 id="ad-review-h">Worth a faculty review</h2>
+      <p class="state" id="ad-review-state" role="status"></p>
+    </div>
+    <p class="scope-note">These credentials sit in the most collections of the Credential Engine Registry, and no California community college has set credit for them yet, so a student who holds one has no credit to request. A faculty review decides whether one warrants credit. The search and the field filter apply here.</p>
+    <div class="review-box" role="region" aria-label="Worth a faculty review, the credentials" tabindex="0"><div class="list" id="ad-review"></div></div>
+    <p class="empty" id="ad-review-empty" hidden>None of these match the search or the field.</p>
+  </section>
   <section id="results" class="results wrap shift" aria-labelledby="ad-results-h">
     <h2 class="sr-only" id="ad-results-h">The credentials</h2>
     <div class="results-bar">
@@ -465,7 +488,7 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
       <button type="button" class="word list-more" id="ad-more" hidden>Show more</button>
     </div>
     <div id="ad-table-view" hidden>
-      <div class="tbl-wrap" role="region" aria-label="Credential list" tabindex="0"><table class="tbl" id="ad-tbl"><colgroup><col style="width:32%"><col style="width:18%"><col style="width:20%"><col style="width:12%"><col style="width:11%"><col style="width:7%"></colgroup><thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col">Field</th><th scope="col">How credit is given</th><th scope="col" class="num">Colleges awarding</th><th scope="col" class="num">Median units</th></tr></thead><tbody id="ad-tbl-body"></tbody></table></div>
+      <div class="tbl-wrap" id="ad-tbl-wrap" role="region" aria-label="Credential list" tabindex="0"><table class="tbl one" id="ad-tbl"><colgroup><col style="width:27%"><col style="width:13%"><col style="width:17%"><col style="width:11%"><col style="width:11%"><col style="width:6.5%"><col style="width:6%"><col style="width:8.5%"></colgroup><thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col">Field</th><th scope="col">How credit is given</th><th scope="col">Credit status</th><th scope="col" class="num">Colleges</th><th scope="col" class="num">Median units</th><th scope="col">Ask us to prioritize</th></tr></thead><tbody id="ad-tbl-body"></tbody></table></div>
       <p class="empty" id="ad-tbl-empty" hidden>No credential matches these filters.</p>
       <button type="button" class="word list-more" id="ad-more-t" hidden>Show more</button>
     </div>
@@ -474,15 +497,6 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
       <p class="mx-legend"><span><span class="mx-key art">3</span> the college awards this many units; press it for the credit lines and the way to request it</span><span><span class="mx-key could">A</span> the college could adopt it: it already teaches a matching course; press it to request</span><span>A column heading picks that college.</span></p>
       <div class="mx-wrap" id="ad-mx-wrap" role="region" aria-label="College matrix: credentials down, colleges across" tabindex="0"></div>
     </div>
-  </section>
-  <section id="review" class="results wrap shift review" aria-labelledby="ad-review-h" hidden>
-    <div class="results-bar">
-      <h2 id="ad-review-h">Worth a faculty review</h2>
-      <p class="state" id="ad-review-state" role="status"></p>
-    </div>
-    <p class="scope-note">These credentials sit in the most collections of the Credential Engine Registry, and no California community college has set credit for them yet, so a student who holds one has no credit to request. A faculty review decides whether one warrants credit. The search and the field filter apply here.</p>
-    <div class="list" id="ad-review"></div>
-    <p class="empty" id="ad-review-empty" hidden>None of these match the search or the field.</p>
   </section>
 </main>
 <aside class="panel" id="ad-panel" aria-label="Credential details" aria-hidden="true">
