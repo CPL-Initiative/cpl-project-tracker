@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-05T22:15:32Z",
+ "written_at": "2026-11-06T06:21:34Z",
  "rows": [
   {
    "key": "requirements",
@@ -164,8 +164,8 @@
     "records_stamped": 2232,
     "saved_at": "2026-11-05T15:54:01Z",
     "fold_at": "2026-11-05T21:20:48Z",
-    "map_titles": 4960,
-    "unclassified": 44,
+    "map_titles": 4966,
+    "unclassified": 50,
     "left_map": 622,
     "below_80": 1123,
     "below_60": 237
@@ -257,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-05T22:13:38+00:00",
+    "at": "2026-11-06T06:20:01+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -344,7 +344,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-05T22:07:42Z",
+    "at": "2026-11-05T22:15:35Z",
     "every_hours": null
    },
    "facts": {
@@ -468,7 +468,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-05T22:11:41Z",
+    "at": "2026-11-06T06:18:21Z",
     "every_hours": 24
    },
    "facts": {
@@ -481,7 +481,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-05",
+    "scanned_at": "2026-11-06",
     "procedures_on": 6
    },
    "sources": [
