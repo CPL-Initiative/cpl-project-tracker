@@ -1,0 +1,1116 @@
+{
+  "folded": [
+    {
+      "raw": "EET 222 Photovaltaic NABCEP for Solar Associates",
+      "assigned": "Photovoltaic NABCEP Test Preparation",
+      "issuer": "North American Board of Certified Energy Practitioners (NABCEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:30:57.050743+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 1",
+      "assigned": "Introduction to Art History",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:30:59.625861+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 3",
+      "assigned": "Arts of Africa, Oceania, and Indigenous North America",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:01.464164+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 7",
+      "assigned": "Modern Art History",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:02.906275+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 8",
+      "assigned": "Asian Art History",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:03.754328+00:00"
+    },
+    {
+      "raw": "Examination for ARTH C1100",
+      "assigned": "Survey of Art from Prehistory to the Medieval Era",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:05.35047+00:00"
+    },
+    {
+      "raw": "Examination for ARTH C1200",
+      "assigned": "Survey of Art: Renaissance to Contemporary",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:07.682484+00:00"
+    },
+    {
+      "raw": "Examination for KIN 5",
+      "assigned": "Sports Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:08.975208+00:00"
+    },
+    {
+      "raw": "Examination for KIN 6",
+      "assigned": "Personal Training",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:09.867176+00:00"
+    },
+    {
+      "raw": "Examination for MATH 1",
+      "assigned": "Calculus 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:10.901449+00:00"
+    },
+    {
+      "raw": "Examination for MATH 2",
+      "assigned": "Calculus 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:11.851942+00:00"
+    },
+    {
+      "raw": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1",
+      "assigned": "Intelligent Transportation Systems Electrician Apprentice 1",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:15.916982+00:00"
+    },
+    {
+      "raw": "Industry for AJ 54",
+      "assigned": "Investigative Report Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:17.89409+00:00"
+    },
+    {
+      "raw": "Industry for AJ 60",
+      "assigned": "Criminal Law",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:19.599902+00:00"
+    },
+    {
+      "raw": "Industry for AJ 61",
+      "assigned": "Criminal Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:20.803473+00:00"
+    },
+    {
+      "raw": "Industry for AJ 63",
+      "assigned": "Criminal Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:22.372521+00:00"
+    },
+    {
+      "raw": "Industry for AJ 64",
+      "assigned": "Police Patrol Operations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:24.663978+00:00"
+    },
+    {
+      "raw": "Industry for AJ 66",
+      "assigned": "Juvenile Procedures",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:26.078448+00:00"
+    },
+    {
+      "raw": "Industry for AJ 68",
+      "assigned": "Police Ethics and Leadership",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:27.145178+00:00"
+    },
+    {
+      "raw": "Industry for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:27.988118+00:00"
+    },
+    {
+      "raw": "Industry for FST 1",
+      "assigned": "Fire Protection Organization",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:29.12033+00:00"
+    },
+    {
+      "raw": "Industry for HORT 55",
+      "assigned": "Greenhouse, Nursery, and Garden Center Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:31.063509+00:00"
+    },
+    {
+      "raw": "Industry for HORT 56",
+      "assigned": "Arboriculture/Urban Forestry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:33.726975+00:00"
+    },
+    {
+      "raw": "Industry for HORT 57",
+      "assigned": "Landscape and Turfgrass Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:34.71937+00:00"
+    },
+    {
+      "raw": "Industry for HORT 59",
+      "assigned": "Landscape Design",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:35.564794+00:00"
+    },
+    {
+      "raw": "Industry for HORT 60",
+      "assigned": "Landscape Irrigation Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:36.353072+00:00"
+    },
+    {
+      "raw": "Industry for KIN 6",
+      "assigned": "Personal Trainer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:37.473467+00:00"
+    },
+    {
+      "raw": "Industry for KIN YO1",
+      "assigned": "Yoga 1",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:38.480687+00:00"
+    },
+    {
+      "raw": "Industry for KIN ZUM1",
+      "assigned": "Zumba 1",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:39.240286+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 600 - Construction Apprenticeship Readiness",
+      "assigned": "Construction Apprenticeship Readiness",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:40.094402+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 605 - Forklift Fundamentals",
+      "assigned": "Forklift Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:40.910583+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 620 - Plumbing Fundamentals",
+      "assigned": "Plumbing Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:43.616019+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 670 - Cost Estimating",
+      "assigned": "Cost Estimating",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:44.969427+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 675 - Contracting Laws and Management",
+      "assigned": "Contracting Laws and Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:51.047114+00:00"
+    },
+    {
+      "raw": "LBCC Non-credt CONST 680 - Building Codes for Residential Construct",
+      "assigned": "Building Codes for Residential Construct",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:53.643294+00:00"
+    },
+    {
+      "raw": "Noncredit for ARHS 6",
+      "assigned": "Museum & Gallery Techniques",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:05.821392+00:00"
+    },
+    {
+      "raw": "Noncredit for BUSN 33",
+      "assigned": "Personal and Family Financial Planning Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:51.471604+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN PL1",
+      "assigned": "Pilates 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:53.594597+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN SW1",
+      "assigned": "Swimming 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:54.727473+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN SWF1",
+      "assigned": "Swim Fitness 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:55.432792+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN YO1",
+      "assigned": "Yoga 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:56.519255+00:00"
+    },
+    {
+      "raw": "Noncredit for MUS 16",
+      "assigned": "Philharmonic Orchestra",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:57.669157+00:00"
+    },
+    {
+      "raw": "Noncredit for MUS 45",
+      "assigned": "Chamber Choir",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:58.84683+00:00"
+    },
+    {
+      "raw": "Noncredit for MUS 46",
+      "assigned": "Vocal Jazz Ensemble",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:59.805352+00:00"
+    },
+    {
+      "raw": "Noncredit for NKIN WT1",
+      "assigned": "Weight Training 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:00.986894+00:00"
+    },
+    {
+      "raw": "Peace Officer Standards and Training",
+      "assigned": "POST Basic Academy",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:11.169951+00:00"
+    },
+    {
+      "raw": "Portfolio ARHS 6",
+      "assigned": "Museum & Gallery Techniques",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:13.609933+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 33",
+      "assigned": "Personal and Family Financial Planning Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:31.004705+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 45",
+      "assigned": "Entrepreneurship",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:32.979372+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 56",
+      "assigned": "Introduction to Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:35.697039+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [
+    {
+      "raw": "ASL 052 American Sign Language III",
+      "assigned": "Intermediate American Sign Language 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:55.062+00:00",
+      "spellings": [
+        "ASL 052 American Sign Language III"
+      ],
+      "disagreeing": [
+        "ASL 052 American Sign Language III"
+      ],
+      "displaced": [
+        "American Sign Language III"
+      ],
+      "supersedes": "American Sign Language III"
+    },
+    {
+      "raw": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "assigned": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "issuer": "American College of Sports Medicine (ACSM)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)"
+      ],
+      "disagreeing": [
+        "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)"
+      ],
+      "displaced": [
+        "Personal Trainer Instructor"
+      ],
+      "supersedes": "Personal Trainer Instructor"
+    },
+    {
+      "raw": "American Council on Exercise (ACE) Personal Trainer Certification",
+      "assigned": "ACE Certified Personal Trainer",
+      "issuer": "American Council on Exercise (ACE)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "American Council on Exercise (ACE) Personal Trainer Certification"
+      ],
+      "disagreeing": [
+        "American Council on Exercise (ACE) Personal Trainer Certification"
+      ],
+      "displaced": [
+        "Personal Training Certification"
+      ],
+      "supersedes": "Personal Training Certification"
+    },
+    {
+      "raw": "California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "assigned": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "California State Water Resources Control Board wastewater grade II, III, IV, or V certification"
+      ],
+      "disagreeing": [
+        "California State Water Resources Control Board wastewater grade II, III, IV, or V certification"
+      ],
+      "displaced": [
+        "Wastewater Treatment 1"
+      ],
+      "supersedes": "Wastewater Treatment 1"
+    },
+    {
+      "raw": "California State Water Resources Control Board wastewater grade IV or V certification",
+      "assigned": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "California State Water Resources Control Board wastewater grade IV or V certification"
+      ],
+      "disagreeing": [
+        "California State Water Resources Control Board wastewater grade IV or V certification"
+      ],
+      "displaced": [
+        "Wastewater Treatment 2"
+      ],
+      "supersedes": "Wastewater Treatment 2"
+    },
+    {
+      "raw": "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)",
+      "assigned": "Wastewater Treatment and Disposal 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:00.11+00:00",
+      "spellings": [
+        "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)"
+      ],
+      "disagreeing": [
+        "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)"
+      ],
+      "displaced": [
+        "Wastewater Treatment and Disposal I"
+      ],
+      "supersedes": "Wastewater Treatment and Disposal I"
+    },
+    {
+      "raw": "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)",
+      "assigned": "Wastewater Treatment and Disposal 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:01.47+00:00",
+      "spellings": [
+        "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)"
+      ],
+      "disagreeing": [
+        "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)"
+      ],
+      "displaced": [
+        "Wastewater Treatment and Disposal II"
+      ],
+      "supersedes": "Wastewater Treatment and Disposal II"
+    },
+    {
+      "raw": "Credit by Exam - Water Distribution Operator I (WATER 140)",
+      "assigned": "Water Distribution Operator 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:03.006+00:00",
+      "spellings": [
+        "Credit by Exam - Water Distribution Operator I (WATER 140)"
+      ],
+      "disagreeing": [
+        "Credit by Exam - Water Distribution Operator I (WATER 140)"
+      ],
+      "displaced": [
+        "Water Distribution Operator I"
+      ],
+      "supersedes": "Water Distribution Operator I"
+    },
+    {
+      "raw": "Credit by Exam - Water Distribution Operator II (WATER 141)",
+      "assigned": "Water Distribution Operator 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:04.014+00:00",
+      "spellings": [
+        "Credit by Exam - Water Distribution Operator II (WATER 141)"
+      ],
+      "disagreeing": [
+        "Credit by Exam - Water Distribution Operator II (WATER 141)"
+      ],
+      "displaced": [
+        "Water Distribution Operator II"
+      ],
+      "supersedes": "Water Distribution Operator II"
+    },
+    {
+      "raw": "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)",
+      "assigned": "Water Treatment Plant Operation Processes 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:05.35+00:00",
+      "spellings": [
+        "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)"
+      ],
+      "disagreeing": [
+        "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)"
+      ],
+      "displaced": [
+        "Water Treatment Plant Operation Processes I"
+      ],
+      "supersedes": "Water Treatment Plant Operation Processes I"
+    },
+    {
+      "raw": "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)",
+      "assigned": "Water Treatment Plant Operation Processes 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:06.862+00:00",
+      "spellings": [
+        "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)"
+      ],
+      "disagreeing": [
+        "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)"
+      ],
+      "displaced": [
+        "Water Treatment Plant Operation Processes II"
+      ],
+      "supersedes": "Water Treatment Plant Operation Processes II"
+    },
+    {
+      "raw": "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "assigned": "NASM Certified Personal Trainer (NASM-CPT)",
+      "issuer": "National Academy of Sports Medicine (NASM)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)"
+      ],
+      "disagreeing": [
+        "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)"
+      ],
+      "displaced": [
+        "Personal Trainer Instructor"
+      ],
+      "supersedes": "Personal Trainer Instructor"
+    },
+    {
+      "raw": "Portfolio - Life Drawing II (ART 225B)",
+      "assigned": "Life Drawing 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:57.142+00:00",
+      "spellings": [
+        "Portfolio - Life Drawing II (ART 225B)"
+      ],
+      "disagreeing": [
+        "Portfolio - Life Drawing II (ART 225B)"
+      ],
+      "displaced": [
+        "Life Drawing II"
+      ],
+      "supersedes": "Life Drawing II"
+    },
+    {
+      "raw": "Portfolio Painting II (ART 228)",
+      "assigned": "Painting 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:58.438+00:00",
+      "spellings": [
+        "Portfolio Painting II (ART 228)"
+      ],
+      "disagreeing": [
+        "Portfolio Painting II (ART 228)"
+      ],
+      "displaced": [
+        "Painting II"
+      ],
+      "supersedes": "Painting II"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "Life Drawing II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Life Drawing 2"
+    },
+    {
+      "title": "Painting II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Painting 2"
+    },
+    {
+      "title": "Wastewater Treatment 1",
+      "records": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:27:53.595457+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+    },
+    {
+      "title": "Wastewater Treatment 2",
+      "records": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:47:52.247086+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher"
+    },
+    {
+      "title": "Wastewater Treatment and Disposal I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Wastewater Treatment and Disposal 1"
+    },
+    {
+      "title": "Wastewater Treatment and Disposal II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Wastewater Treatment and Disposal 2"
+    },
+    {
+      "title": "Water Treatment Plant Operation Processes I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Water Treatment Plant Operation Processes 1"
+    },
+    {
+      "title": "Water Treatment Plant Operation Processes II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Water Treatment Plant Operation Processes 2"
+    }
+  ],
+  "credential_retired": [
+    {
+      "title": "American Sign Language III",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-04",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Intermediate American Sign Language 1"
+      ]
+    },
+    {
+      "title": "Personal Trainer Instructor",
+      "records": [
+        {
+          "issuing_agency": "American College of Sports Medicine (ACSM)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T15:39:13.827261+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        },
+        {
+          "issuing_agency": "National Academy of Sports Medicine (NASM)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:41.271241+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from the CER triage assignment on 'National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)' — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "ACSM Certified Personal Trainer (ACSM-CPT)",
+        "NASM Certified Personal Trainer (NASM-CPT)"
+      ]
+    },
+    {
+      "title": "Water Distribution Operator I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Water Distribution Operator 1"
+      ]
+    },
+    {
+      "title": "Water Distribution Operator II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-05",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Water Distribution Operator 2"
+      ]
+    }
+  ],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "EET 222 Photovaltaic NABCEP for Solar Associates",
+      "assigned": "Photovoltaic NABCEP Test Preparation",
+      "issuer": "North American Board of Certified Energy Practitioners (NABCEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:30:57.050743+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 1",
+      "assigned": "Introduction to Art History",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:30:59.625861+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 7",
+      "assigned": "Modern Art History",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:02.906275+00:00"
+    },
+    {
+      "raw": "Examination for ARHS 8",
+      "assigned": "Asian Art History",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:03.754328+00:00"
+    },
+    {
+      "raw": "Examination for KIN 5",
+      "assigned": "Sports Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:08.975208+00:00"
+    },
+    {
+      "raw": "Examination for MATH 1",
+      "assigned": "Calculus 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:10.901449+00:00"
+    },
+    {
+      "raw": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1",
+      "assigned": "Intelligent Transportation Systems Electrician Apprentice 1",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:15.916982+00:00"
+    },
+    {
+      "raw": "Industry for AJ 64",
+      "assigned": "Police Patrol Operations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:24.663978+00:00"
+    },
+    {
+      "raw": "Industry for HORT 55",
+      "assigned": "Greenhouse, Nursery, and Garden Center Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:31.063509+00:00"
+    },
+    {
+      "raw": "Industry for HORT 56",
+      "assigned": "Arboriculture/Urban Forestry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:33.726975+00:00"
+    },
+    {
+      "raw": "Industry for HORT 57",
+      "assigned": "Landscape and Turfgrass Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:34.71937+00:00"
+    },
+    {
+      "raw": "Industry for HORT 60",
+      "assigned": "Landscape Irrigation Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:36.353072+00:00"
+    },
+    {
+      "raw": "Industry for KIN 6",
+      "assigned": "Personal Trainer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:37.473467+00:00"
+    },
+    {
+      "raw": "Industry for KIN YO1",
+      "assigned": "Yoga 1",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:38.480687+00:00"
+    },
+    {
+      "raw": "Industry for KIN ZUM1",
+      "assigned": "Zumba 1",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:39.240286+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 600 - Construction Apprenticeship Readiness",
+      "assigned": "Construction Apprenticeship Readiness",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:40.094402+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 605 - Forklift Fundamentals",
+      "assigned": "Forklift Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:40.910583+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 670 - Cost Estimating",
+      "assigned": "Cost Estimating",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:44.969427+00:00"
+    },
+    {
+      "raw": "LBCC Non-credit CONST 675 - Contracting Laws and Management",
+      "assigned": "Contracting Laws and Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:51.047114+00:00"
+    },
+    {
+      "raw": "LBCC Non-credt CONST 680 - Building Codes for Residential Construct",
+      "assigned": "Building Codes for Residential Construct",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:53.643294+00:00"
+    },
+    {
+      "raw": "Noncredit for ARHS 6",
+      "assigned": "Museum & Gallery Techniques",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:05.821392+00:00"
+    },
+    {
+      "raw": "Noncredit for BUSN 33",
+      "assigned": "Personal and Family Financial Planning Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:51.471604+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN PL1",
+      "assigned": "Pilates 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:53.594597+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN SW1",
+      "assigned": "Swimming 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:54.727473+00:00"
+    },
+    {
+      "raw": "Noncredit for KIN SWF1",
+      "assigned": "Swim Fitness 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:55.432792+00:00"
+    },
+    {
+      "raw": "Noncredit for MUS 16",
+      "assigned": "Philharmonic Orchestra",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:57.669157+00:00"
+    },
+    {
+      "raw": "Noncredit for MUS 45",
+      "assigned": "Chamber Choir",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:58.84683+00:00"
+    },
+    {
+      "raw": "Noncredit for MUS 46",
+      "assigned": "Vocal Jazz Ensemble",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:59.805352+00:00"
+    },
+    {
+      "raw": "Noncredit for NKIN WT1",
+      "assigned": "Weight Training 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:00.986894+00:00"
+    },
+    {
+      "raw": "Portfolio for BUSN 45",
+      "assigned": "Entrepreneurship",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:32.979372+00:00"
+    },
+    {
+      "raw": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "assigned": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "issuer": "American College of Sports Medicine (ACSM)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)"
+      ],
+      "disagreeing": [
+        "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)"
+      ],
+      "displaced": [
+        "Personal Trainer Instructor"
+      ],
+      "supersedes": "Personal Trainer Instructor"
+    },
+    {
+      "raw": "American Council on Exercise (ACE) Personal Trainer Certification",
+      "assigned": "ACE Certified Personal Trainer",
+      "issuer": "American Council on Exercise (ACE)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "American Council on Exercise (ACE) Personal Trainer Certification"
+      ],
+      "disagreeing": [
+        "American Council on Exercise (ACE) Personal Trainer Certification"
+      ],
+      "displaced": [
+        "Personal Training Certification"
+      ],
+      "supersedes": "Personal Training Certification"
+    },
+    {
+      "raw": "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "assigned": "NASM Certified Personal Trainer (NASM-CPT)",
+      "issuer": "National Academy of Sports Medicine (NASM)",
+      "reviewed_by": "exhibits-s594@bot",
+      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+      "spellings": [
+        "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)"
+      ],
+      "disagreeing": [
+        "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)"
+      ],
+      "displaced": [
+        "Personal Trainer Instructor"
+      ],
+      "supersedes": "Personal Trainer Instructor"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Police Ethics and Leadership",
+      "issuer": "California Community Colleges",
+      "raw": "Industry for AJ 68",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:31:27.145178+00:00"
+    },
+    {
+      "title": "Introduction to Management",
+      "issuer": "California Community Colleges",
+      "raw": "Portfolio for BUSN 56",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:33:35.697039+00:00"
+    },
+    {
+      "title": "Water Distribution Operator 2",
+      "issuer": "California Community Colleges",
+      "raw": "Credit by Exam - Water Distribution Operator II (WATER 141)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:34:04.014+00:00"
+    }
+  ],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 50,
+  "unified_titles_count": 5588
+}

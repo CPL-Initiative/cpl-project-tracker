@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-06T06:18:13.468448+00:00",
+  "scraped_at": "2026-11-06T22:13:45.052739+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31001,
+    "jst": 31121,
     "star_colleges": 67
   },
   "computed_star_colleges": 67,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 168,
+      "jst": 170,
       "star": false
     },
     "Santiago Canyon College": {
@@ -125,6 +125,11 @@
       "jst": 431,
       "star": true
     },
+    "Mt. San Jacinto College": {
+      "vets": 639,
+      "jst": 537,
+      "star": true
+    },
     "Barstow Community College": {
       "vets": 103,
       "jst": 155,
@@ -158,11 +163,6 @@
     "Sierra College": {
       "vets": 344,
       "jst": 330,
-      "star": true
-    },
-    "Mt. San Jacinto College": {
-      "vets": 639,
-      "jst": 537,
       "star": true
     },
     "College of the Canyons": {
@@ -265,6 +265,11 @@
       "jst": 21,
       "star": false
     },
+    "Las Positas College": {
+      "vets": 234,
+      "jst": 128,
+      "star": false
+    },
     "East Los Angeles College": {
       "vets": 642,
       "jst": 236,
@@ -280,15 +285,15 @@
       "jst": 163,
       "star": true
     },
+    "Golden West College": {
+      "vets": 227,
+      "jst": 107,
+      "star": false
+    },
     "Los Angeles Harbor College": {
       "vets": 114,
       "jst": 206,
       "star": true
-    },
-    "Golden West College": {
-      "vets": 227,
-      "jst": 100,
-      "star": false
     },
     "Merritt College": {
       "vets": 39,
@@ -345,15 +350,15 @@
       "jst": 63,
       "star": false
     },
-    "West Valley College": {
-      "vets": 58,
-      "jst": 56,
-      "star": true
-    },
     "Palo Verde College": {
       "vets": 15,
       "jst": 9,
       "star": false
+    },
+    "West Valley College": {
+      "vets": 58,
+      "jst": 56,
+      "star": true
     },
     "Hartnell College": {
       "vets": 122,
@@ -390,14 +395,14 @@
       "jst": 10,
       "star": false
     },
+    "Columbia College": {
+      "vets": 43,
+      "jst": 26,
+      "star": false
+    },
     "College of the Redwoods": {
       "vets": 108,
       "jst": 75,
-      "star": false
-    },
-    "Columbia College": {
-      "vets": 43,
-      "jst": 25,
       "star": false
     },
     "Madera College": {
@@ -418,11 +423,6 @@
     "American River College": {
       "vets": 311,
       "jst": 44,
-      "star": false
-    },
-    "Las Positas College": {
-      "vets": 234,
-      "jst": 23,
       "star": false
     },
     "Los Medanos College": {
@@ -537,7 +537,7 @@
     },
     "Yuba College": {
       "vets": 78,
-      "jst": 4,
+      "jst": 9,
       "star": false
     },
     "Imperial Valley College": {

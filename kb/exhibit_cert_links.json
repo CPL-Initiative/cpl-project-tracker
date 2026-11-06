@@ -1,11 +1,11 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-06T06:19:21+00:00",
+ "_reference_generated_at": "2026-11-06T22:14:58+00:00",
  "counts": {
   "certs_linked": 235,
-  "titles_linked": 280,
-  "holds": 264,
+  "titles_linked": 278,
+  "holds": 262,
   "bundles": 51,
   "aligned": 16,
   "codes_not_in_catalog": [
@@ -3698,20 +3698,6 @@
    "rule": "all",
    "certs": [
     "ITC4131"
-   ]
-  },
-  "Wastewater Treatment 1": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4274"
-   ]
-  },
-  "Wastewater Treatment 2": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4274"
    ]
   },
   "Water Distribution Operator 2": {

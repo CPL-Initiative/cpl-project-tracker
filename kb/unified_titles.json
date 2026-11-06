@@ -57997,20 +57997,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)": {
-    "unified_title": "Personal Trainer Instructor",
+    "unified_title": "ACSM Certified Personal Trainer (ACSM-CPT)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T15:39:13.827261+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+    "reviewed_by": "exhibits-s594@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Personal Trainer Instructor",
+    "_notes": "Another look (Exhibits tab): exhibits-s594@bot replaced 'Personal Trainer Instructor' on 2026-11-06."
   },
   "American Council on Exercise (ACE) Personal Trainer Certification": {
-    "unified_title": "Personal Training Certification",
+    "unified_title": "ACE Certified Personal Trainer",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T15:39:16.338272+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+    "reviewed_by": "exhibits-s594@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Personal Training Certification",
+    "_notes": "Another look (Exhibits tab): exhibits-s594@bot replaced 'Personal Training Certification' on 2026-11-06."
   },
   "American Government and Politics Military Training": {
     "unified_title": "American Government and Politics",
@@ -58619,20 +58625,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "California State Water Resources Control Board wastewater grade II, III, IV, or V certification": {
-    "unified_title": "Wastewater Treatment 1",
+    "unified_title": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:27:53.595457+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+    "reviewed_by": "exhibits-s594@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Wastewater Treatment 1",
+    "_notes": "Another look (Exhibits tab): exhibits-s594@bot replaced 'Wastewater Treatment 1' on 2026-11-06."
   },
   "California State Water Resources Control Board wastewater grade IV or V certification": {
-    "unified_title": "Wastewater Treatment 2",
+    "unified_title": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:47:52.247086+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+    "reviewed_by": "exhibits-s594@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Wastewater Treatment 2",
+    "_notes": "Another look (Exhibits tab): exhibits-s594@bot replaced 'Wastewater Treatment 2' on 2026-11-06."
   },
   "Carpentry: Concrete Forming Certificate of Achievement (COA)": {
     "unified_title": "Wall Forming",
@@ -60359,12 +60371,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)": {
-    "unified_title": "Personal Trainer Instructor",
+    "unified_title": "NASM Certified Personal Trainer (NASM-CPT)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:41.271241+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
+    "reviewed_by": "exhibits-s594@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Personal Trainer Instructor",
+    "_notes": "Another look (Exhibits tab): exhibits-s594@bot replaced 'Personal Trainer Instructor' on 2026-11-06."
   },
   "National US&R Response System- Structural Collapse Technician": {
     "unified_title": "Structural Collapse Specialist 1",
@@ -61363,12 +61378,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "ASL 052 American Sign Language III": {
-    "unified_title": "American Sign Language III",
+    "unified_title": "Intermediate American Sign Language 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-04",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:33:55.062+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language III",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language III' on 2026-11-06."
   },
   "CARP 207 Math for Construction Trades": {
     "unified_title": "Math for Construction Trades",
@@ -61591,52 +61609,70 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "Credit by Exam - Wastewater Treatment and Disposal I (WATER 160)": {
-    "unified_title": "Wastewater Treatment and Disposal I",
+    "unified_title": "Wastewater Treatment and Disposal 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:34:00.11+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Wastewater Treatment and Disposal I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Wastewater Treatment and Disposal I' on 2026-11-06."
   },
   "Credit by Exam - Wastewater Treatment and Disposal II (WATER 161)": {
-    "unified_title": "Wastewater Treatment and Disposal II",
+    "unified_title": "Wastewater Treatment and Disposal 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:34:01.47+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Wastewater Treatment and Disposal II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Wastewater Treatment and Disposal II' on 2026-11-06."
   },
   "Credit by Exam - Water Distribution Operator I (WATER 140)": {
-    "unified_title": "Water Distribution Operator I",
+    "unified_title": "Water Distribution Operator 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:34:03.006+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Water Distribution Operator I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Water Distribution Operator I' on 2026-11-06."
   },
   "Credit by Exam - Water Distribution Operator II (WATER 141)": {
-    "unified_title": "Water Distribution Operator II",
+    "unified_title": "Water Distribution Operator 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:34:04.014+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Water Distribution Operator II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Water Distribution Operator II' on 2026-11-06."
   },
   "Credit by Exam - Water Treatment Plant Operation Processes I (WATER 150)": {
-    "unified_title": "Water Treatment Plant Operation Processes I",
+    "unified_title": "Water Treatment Plant Operation Processes 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:34:05.35+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Water Treatment Plant Operation Processes I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Water Treatment Plant Operation Processes I' on 2026-11-06."
   },
   "Credit by Exam - Water Treatment Plant Operation Processes II (WATER 151)": {
-    "unified_title": "Water Treatment Plant Operation Processes II",
+    "unified_title": "Water Treatment Plant Operation Processes 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:34:06.862+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Water Treatment Plant Operation Processes II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Water Treatment Plant Operation Processes II' on 2026-11-06."
   },
   "Credit by Exam - Waterworks Mathematics (WATER 130)": {
     "unified_title": "Waterworks Mathematics",
@@ -61667,12 +61703,15 @@
     }
   },
   "Portfolio - Life Drawing II (ART 225B)": {
-    "unified_title": "Life Drawing II",
+    "unified_title": "Life Drawing 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:33:57.142+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Life Drawing II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Life Drawing II' on 2026-11-06."
   },
   "Portfolio - Painting I (ART 227)": {
     "unified_title": "Introduction to Painting",
@@ -61695,12 +61734,15 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "Portfolio Painting II (ART 228)": {
-    "unified_title": "Painting II",
+    "unified_title": "Painting 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-05",
+    "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-06T20:33:58.438+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Painting II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Painting II' on 2026-11-06."
   },
   "Portfolio for MKTG 50": {
     "unified_title": "Introduction to Marketing",
@@ -61733,5 +61775,405 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-05T15:54:01.971023+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "EET 222 Photovaltaic NABCEP for Solar Associates": {
+    "unified_title": "Photovoltaic NABCEP Test Preparation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:30:57.050743+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for ARHS 1": {
+    "unified_title": "Introduction to Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:30:59.625861+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for ARHS 3": {
+    "unified_title": "Arts of Africa, Oceania, and Indigenous North America",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:01.464164+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for ARHS 7": {
+    "unified_title": "Modern Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:02.906275+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for ARHS 8": {
+    "unified_title": "Asian Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:03.754328+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for ARTH C1100": {
+    "unified_title": "Survey of Art from Prehistory to the Medieval Era",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:05.35047+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for ARTH C1200": {
+    "unified_title": "Survey of Art: Renaissance to Contemporary",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:07.682484+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for KIN 5": {
+    "unified_title": "Sports Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:08.975208+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for KIN 6": {
+    "unified_title": "Personal Training",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:09.867176+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for MATH 1": {
+    "unified_title": "Calculus 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:10.901449+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Examination for MATH 2": {
+    "unified_title": "Calculus 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:11.851942+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1": {
+    "unified_title": "Intelligent Transportation Systems Electrician Apprentice 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:15.916982+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 54": {
+    "unified_title": "Investigative Report Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:17.89409+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 60": {
+    "unified_title": "Criminal Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:19.599902+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 61": {
+    "unified_title": "Criminal Evidence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:20.803473+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 63": {
+    "unified_title": "Criminal Investigation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:22.372521+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 64": {
+    "unified_title": "Police Patrol Operations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:24.663978+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 66": {
+    "unified_title": "Juvenile Procedures",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:26.078448+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for AJ 68": {
+    "unified_title": "Police Ethics and Leadership",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:27.145178+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for BUSN 65": {
+    "unified_title": "Federal Income Tax Accounting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:27.988118+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for FST 1": {
+    "unified_title": "Fire Protection Organization",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:29.12033+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for HORT 55": {
+    "unified_title": "Greenhouse, Nursery, and Garden Center Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:31.063509+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for HORT 56": {
+    "unified_title": "Arboriculture/Urban Forestry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:33.726975+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for HORT 57": {
+    "unified_title": "Landscape and Turfgrass Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:34.71937+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for HORT 59": {
+    "unified_title": "Landscape Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:35.564794+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for HORT 60": {
+    "unified_title": "Landscape Irrigation Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:36.353072+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for KIN 6": {
+    "unified_title": "Personal Trainer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:37.473467+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for KIN YO1": {
+    "unified_title": "Yoga 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:38.480687+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry for KIN ZUM1": {
+    "unified_title": "Zumba 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:39.240286+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "LBCC Non-credit CONST 600 - Construction Apprenticeship Readiness": {
+    "unified_title": "Construction Apprenticeship Readiness",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:40.094402+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "LBCC Non-credit CONST 605 - Forklift Fundamentals": {
+    "unified_title": "Forklift Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:40.910583+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "LBCC Non-credit CONST 620 - Plumbing Fundamentals": {
+    "unified_title": "Plumbing Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:43.616019+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "LBCC Non-credit CONST 670 - Cost Estimating": {
+    "unified_title": "Cost Estimating",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:44.969427+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "LBCC Non-credit CONST 675 - Contracting Laws and Management": {
+    "unified_title": "Contracting Laws and Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:51.047114+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "LBCC Non-credt CONST 680 - Building Codes for Residential Construct": {
+    "unified_title": "Building Codes for Residential Construct",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:31:53.643294+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for ARHS 6": {
+    "unified_title": "Museum & Gallery Techniques",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:05.821392+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for BUSN 33": {
+    "unified_title": "Personal and Family Financial Planning Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:51.471604+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for KIN PL1": {
+    "unified_title": "Pilates 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:53.594597+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for KIN SW1": {
+    "unified_title": "Swimming 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:54.727473+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for KIN SWF1": {
+    "unified_title": "Swim Fitness 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:55.432792+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for KIN YO1": {
+    "unified_title": "Yoga 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:56.519255+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for MUS 16": {
+    "unified_title": "Philharmonic Orchestra",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:57.669157+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for MUS 45": {
+    "unified_title": "Chamber Choir",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:58.84683+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for MUS 46": {
+    "unified_title": "Vocal Jazz Ensemble",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:32:59.805352+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Noncredit for NKIN WT1": {
+    "unified_title": "Weight Training 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:33:00.986894+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Peace Officer Standards and Training": {
+    "unified_title": "POST Basic Academy",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:33:11.169951+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio ARHS 6": {
+    "unified_title": "Museum & Gallery Techniques",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:33:13.609933+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio for BUSN 33": {
+    "unified_title": "Personal and Family Financial Planning Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:33:31.004705+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio for BUSN 45": {
+    "unified_title": "Entrepreneurship",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:33:32.979372+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio for BUSN 56": {
+    "unified_title": "Introduction to Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-06",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-06T20:33:35.697039+00:00",
+    "reviewed_by": "slee@cccco.edu"
   }
 }

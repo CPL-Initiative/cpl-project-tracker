@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-06
 
-Generated: `2026-11-06T21:45:49Z`
+Generated: `2026-11-06T22:16:25Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -12,14 +12,11 @@ Generated: `2026-11-06T21:45:49Z`
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
 | — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
-| Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
-|---|---|---:|---:|---:|---:|
-| `ServSafe Food Protection Manager` | ⇒ `ServSafe Food Protection Manager Certification` | 1 | 1 | 1 | 1 |
-| `Wheel Alignment, Chassis Dynamics, and ADAS` | ⇒ `Wheel Alignment, Chassis Dynamics, ADAS` | 2 | 2 | 1 | 0 |
+_None._ A queued collision becomes a confirmed merge when the curator clicks **✓ Confirm merge** in the CER triage lane (writes `unified_title_merge_confirm` naming the exact target).
 
 ## Clean renames (would land on apply)
 
