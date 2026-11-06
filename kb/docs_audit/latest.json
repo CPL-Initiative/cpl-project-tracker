@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1405,
-    "bytes": 14197165,
+    "files": 1406,
+    "bytes": 14205288,
     "over_budget": 0,
-    "handoff_max": 587,
+    "handoff_max": 590,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59893,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 144,
-        "bytes": 4332198,
+        "bytes": 4331788,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 10593,
+        "bytes": 10863,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2636803,
+        "bytes": 2638102,
         "over": 0
       },
       "kb_note": {
@@ -46,26 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 489490,
+        "bytes": 491918,
         "over": 0
       },
       "handoff": {
-        "files": 553,
-        "bytes": 3836116,
+        "files": 554,
+        "bytes": 3840652,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "vault_heavy_path": 74,
-      "checkpoint_overdue": 1,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 74
     },
     "vault": {
-      "files": 25881,
-      "bytes": 4210442270,
-      "heavy_bytes": 2992469454,
-      "heavy_share": 0.711,
+      "files": 25889,
+      "bytes": 4217597112,
+      "heavy_bytes": 2992489375,
+      "heavy_share": 0.71,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -161,10 +159,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853988492,
+        "bytes": 1853990679,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,988,492 B inside the vault"
+      "message": "directory totals 1,853,990,679 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -241,10 +239,10 @@
       "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 16082970,
+        "bytes": 16082880,
         "kind": "dir"
       },
-      "message": "directory totals 16,082,970 B inside the vault"
+      "message": "directory totals 16,082,880 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -261,10 +259,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10184478,
+        "bytes": 10188308,
         "kind": "dir"
       },
-      "message": "directory totals 10,184,478 B inside the vault"
+      "message": "directory totals 10,188,308 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -451,10 +449,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11902161,
+        "bytes": 11914712,
         "kind": "file"
       },
-      "message": "11,902,161 B single file inside the vault"
+      "message": "11,914,712 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -631,10 +629,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6716452,
+        "bytes": 6716453,
         "kind": "file"
       },
-      "message": "6,716,452 B single file inside the vault"
+      "message": "6,716,453 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -861,10 +859,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2231237,
+        "bytes": 2232679,
         "kind": "file"
       },
-      "message": "2,231,237 B single file inside the vault"
+      "message": "2,232,679 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -895,34 +893,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_587_handoff.md",
-      "detail": {
-        "commits_since": 9,
-        "budget": 6,
-        "handoff": "session_587_handoff.md"
-      },
-      "message": "9 commit(s) have landed since `docs/session_587_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_587_handoff.md",
-      "detail": {
-        "lanes": [
-          "cer-procedures",
-          "common-subjects-reference",
-          "governance-team-enablement",
-          "map-users-student-contact",
-          "my-college-action-page",
-          "program-requirements-harvest"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_587_handoff.md` never names 6 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, common-subjects-reference, governance-team-enablement, map-users-student-contact, my-college-action-page, program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

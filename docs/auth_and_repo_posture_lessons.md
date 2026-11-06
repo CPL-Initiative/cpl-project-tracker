@@ -474,3 +474,19 @@ run before the cron plus one password-manager entry per secret named for where i
 `is_map_team()`, which no JS calls, is called by two RLS policies, so it stays executable by the API
 roles. Step 2's migration (#2822) is drafted on the live definitions and waits for the client switch to
 `team_pass_verify` before it is applied.
+
+## 2026-11-06 (SkyStephan, S589) — step 2 landed in two halves, two hours apart
+
+The migration applied through `supabase-migrate.yml` at 06:30Z (run 42174586762) while the client half sat on the
+same PR, #2822, red on one stale test mock and then green at 07:44Z with nobody merging it. For 105 minutes the live
+database expected `rpc/team_pass_verify` failures to be recorded while main's pages still called `team_pass_ok`, and
+nudges read `team_members` with the anon key, which the new gate turns into an empty list. Nothing broke loudly: the
+old route still answers, and the nudge opt-out fails silent. The 08:12Z firing read the PR's writer note, ran the
+read-back, and merged.
+
+- **Put the apply in the merge, not ahead of it.** `kb/migrations/.apply` on a feature branch runs the migration the
+  moment it is pushed. When the migration and its clients must move together, push `.apply` in the last commit,
+  after `test` is green, or the gap is as long as CI and the next session's start.
+- **The read-back works from the MCP alone**, without the gateway: `set_config('request.headers', ...)` inside a CTE
+  then `team_pass_verify()` writes the attempt row a real request would.
+- **Still unmeasured:** whether PostgREST passes a client IP header. The first real failed unlock settles it.

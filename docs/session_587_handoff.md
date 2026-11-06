@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 586 (SkyMessier continued, Sam's side session for COBIx, 2026-11-05 ~20:30Z to ~22:40Z; checkpointed at the context WARN)
 tags: [handoff, security, cobix, org-phrase-scope-auth]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 587

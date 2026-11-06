@@ -16581,8 +16581,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 553,
+   "count": 554,
    "docs": [
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 590,
+     "path": "docs/session_590_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "security",
+      "org-phrase-scope-auth",
+      "slo",
+      "cpl-scheduled"
+     ],
+     "title": "Session 590 handoff: security step 2 merged and read back; Mission's SLO read and Lake Tahoe's trial running",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25997,5 +26014,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1391
+ "total": 1392
 }

@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 580 (SkyMedusa, scheduled routine firing, 2026-11-05 ~09:12Z to ~09:35Z)
 tags: [handoff, scheduled-sessions, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 581

@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 584 (SkyMinkowski, scheduled routine firing, 2026-11-05 ~14:18Z to ~14:50Z)
 tags: [handoff, scheduled-sessions, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 585
