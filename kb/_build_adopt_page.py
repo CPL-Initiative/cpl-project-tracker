@@ -57,6 +57,11 @@ import sys
 SCHEMA = 2
 OUT = "library/adopt/adopt_data.json"
 OUT_MORE = "library/adopt/adopt_more.json"
+OUT_AI = "library/adopt/adopt_ai.json"
+CPL_AI_JOIN = "kb/cpl_ai/exhibit_join.json"
+CPL_AI_INDEX = "kb/cpl_ai/hosted/index.json"
+CPL_AI_SHARDS = "kb/cpl_ai/hosted/shards"
+STATEWIDE_RECS = "fact-sheet/statewide_recs.js"
 SRC_KEY = {"CareerOneStop": "cos", "Credential Engine": "ce", "Credential Engine (California licenses)": "ca",
            "issuer site": "iss", "MAP": "map"}
 LINES_CAP = 3        # credit lines kept per college; the hover says how many in all
@@ -266,6 +271,66 @@ def more_rows(root, adoption, settled, ref_by, col_at, src_names):
     return held, harvested
 
 
+def statewide_recs(root):
+    """The Fact Sheet's statewide credit recommendations by credential title: [{t, u, cid, id}]."""
+    try:
+        with open(os.path.join(root, STATEWIDE_RECS), encoding="utf-8") as fh:
+            src = fh.read()
+        return json.loads(src[src.index("{"):src.rindex("}") + 1])
+    except (OSError, ValueError):
+        return {}
+
+
+def cpl_ai(root, col_at):
+    """CPL-AI's certifications joined to the common exhibits, as the badges and the college view read them.
+
+    Sam, 2026-11-06 (SkyLantern's run): "feature statewide credit recommendations and CPL-AI recommendations on the
+    Credential Catalog as badges" and "I do want the CPL-AI recs on public view". Per exhibit title, each joined
+    certification with its tier counts and, per college, the courses CPL-AI rated against it, strongest first:
+    [course code, course title, tier, skill areas matched, skill areas, course id]. A college is its column index
+    when the Catalog has one, else CPL-AI's own name for it (Calbright). The full recommendation stays in the hosted
+    shard (kb/cpl_ai/hosted/shards/<code>.json.gz), which the panel reads on request.
+    """
+    import gzip
+    join = load_json(root, CPL_AI_JOIN, {}) or {}
+    index = load_json(root, CPL_AI_INDEX, {}) or {}
+    names = join.get("colleges") or {}
+    by_code = {x.get("code"): x for x in index.get("credentials") or []}
+    shards, out = {}, {}
+    for ut, certs in sorted((join.get("by_exhibit") or {}).items()):
+        rows = []
+        for cert in certs:
+            code = cert.get("code")
+            if code not in shards:
+                try:
+                    with gzip.open(os.path.join(root, CPL_AI_SHARDS, code + ".json.gz"), "rt", encoding="utf-8") as fh:
+                        shards[code] = json.load(fh)
+                except (OSError, ValueError):
+                    shards[code] = None
+            sh = shards[code]
+            if not sh:
+                continue
+            courses, by_col = sh.get("courses") or {}, {}
+            for pr in sh.get("pairs") or []:
+                co = courses.get(pr.get("course")) or {}
+                raw = co.get("college") or ""
+                ours = names.get(raw, raw) if raw in names else raw
+                key = str(col_at[ours]) if ours in col_at else (raw or "?")
+                by_col.setdefault(key, []).append([co.get("code") or "", clip(co.get("title") or "")[:80],
+                                                   pr.get("tier") or 3, pr.get("matched_n") or 0,
+                                                   pr.get("domains_n") or 0, pr.get("course") or ""])
+            for v in by_col.values():
+                v.sort(key=lambda x: (x[2], -(x[3] / x[4] if x[4] else 0), x[0]))
+            ix = by_code.get(code) or {}
+            desc = (sh.get("credential") or {}).get("description") or ""
+            rows.append({"code": code, "title": cert.get("title") or ix.get("title") or code, "kind": cert.get("kind"),
+                         "by_tier": ix.get("by_tier") or {}, "colleges": ix.get("colleges") or len(by_col),
+                         "d": desc[:420], "by_college": dict(sorted(by_col.items(), key=lambda kv: kv[0]))})
+        if rows:
+            out[ut] = rows
+    return out, index
+
+
 def build(root):
     adoption = load_json(root, "kb/exhibits_adoption.json") or {}
     settled = settled_titles(load_json(root, "kb/unified_titles.json", {}))
@@ -275,6 +340,7 @@ def build(root):
     found, by_title = verified.get("found") or {}, verified.get("by_title") or {}
     lookup = college_lookup(root)
     shorts = short_names(root)
+    recs = statewide_recs(root)
 
     src_names = adoption.get("colleges") or []
     # Columns are California community colleges only: a name college_lookup.js does not hold
@@ -326,6 +392,8 @@ def build(root):
             rec["w"] = e["w"]
         if ids:
             rec["m"] = ids
+        if recs.get(ut):
+            rec["sw"] = recs[ut]
         creds.append(rec)
 
     # The type list sorts by name; renumber the credentials' indexes to match.
@@ -337,6 +405,12 @@ def build(root):
 
     review, unchecked, joined, review_sectors = review_rows(root, set((adoption.get("credentials") or {}).keys()))
     held_rows, harvested = more_rows(root, adoption, settled, ref_by, col_at, src_names)
+    ai, ai_index = cpl_ai(root, col_at)
+    for c in creds + held_rows + harvested:  # the badges: a statewide recommendation, a CPL-AI course match
+        if c.get("t") in ai:
+            c["ai"] = len(ai[c["t"]])
+        if c not in creds and recs.get(c.get("t")):
+            c["sw"] = recs[c["t"]]
     used = {c.get("s") for c in creds + review + held_rows + harvested if c.get("s")}
     # A review row's sector the adoption file does not name takes the catalog's CIP sector title.
     names = dict(review_sectors)
@@ -377,7 +451,9 @@ def build(root):
         "written_at": iso_now(),
         "sources": {"adoption": adoption.get("written_at"), "reference": ref.get("_generated_at"),
                     "map_links": verified.get("checked_at")},
-        "counts": {"settled": len(creds), "held": held, "in_reference": len(adoption.get("credentials") or {}),
+        "counts": {"settled": len(creds), "held": held,
+                   "statewide": sum(1 for c in creds + held_rows + harvested if c.get("sw")),
+                   "cplai": sum(1 for c in creds + held_rows + harvested if c.get("ai")), "in_reference": len(adoption.get("credentials") or {}),
                    "review": len(review), "review_unchecked": unchecked, "review_joined": joined,
                    "more_held": more["counts"]["held"], "more_harvested": more["counts"]["harvested"],
                    "more_inmap": more["counts"]["inmap"]},
@@ -387,6 +463,20 @@ def build(root):
         "credentials": creds,
         "review": review,
         "_more": more,
+        "_ai": {
+            "schema": SCHEMA,
+            "_about": "CPL-AI's course ratings for the Credential Catalog's badges and college view "
+                      "(kb/_build_adopt_page.py, from kb/cpl_ai/). Per exhibit title, each joined certification: code, "
+                      "title, kind (exact or related), by_tier = pairs per tier, colleges, d = its description, and "
+                      "by_college = {college column index, or CPL-AI's name where the Catalog has no column: [[course "
+                      "code, course title, tier, skill areas matched, skill areas, course id]]}, strongest first. The "
+                      "full recommendation is kb/cpl_ai/hosted/shards/<code>.json.gz, pair id <code>_<course id>.",
+            "written_at": iso_now(),
+            "page": ai_index.get("page"), "credit": ai_index.get("credit"), "caveat": ai_index.get("caveat"),
+            "tiers": ai_index.get("tiers") or {},
+            "counts": {"exhibits": len(ai), "certifications": len({r["code"] for v in ai.values() for r in v})},
+            "by_exhibit": ai,
+        },
     }
 
 
@@ -419,10 +509,13 @@ def main(argv=None):
     a = ap.parse_args(argv)
     data = build(a.root)
     more = data.pop("_more")
+    ai = data.pop("_ai")
     out = a.out or os.path.join(a.root, OUT)
     changed = write_if_changed(out, data)
     out_more = (os.path.join(os.path.dirname(out), os.path.basename(OUT_MORE)) if a.out else os.path.join(a.root, OUT_MORE))
     changed_more = write_if_changed(out_more, more)
+    out_ai = (os.path.join(os.path.dirname(out), os.path.basename(OUT_AI)) if a.out else os.path.join(a.root, OUT_AI))
+    changed_ai = write_if_changed(out_ai, ai)
     if not a.quiet:
         c = data["counts"]
         print("%s %s: %d settled credentials of %d (%d held), %d colleges; %d worth a faculty review (%d unchecked)"
@@ -431,6 +524,9 @@ def main(argv=None):
         print("%s %s: %d being reviewed, %d not yet evaluated, %d known to a college with no credit yet"
               % ("wrote" if changed_more else "unchanged", os.path.relpath(out_more, a.root),
                  more["counts"]["held"], more["counts"]["harvested"], more["counts"]["inmap"]))
+        print("%s %s: %d exhibits joined to %d CPL-AI certifications; %d credentials with a statewide recommendation"
+              % ("wrote" if changed_ai else "unchanged", os.path.relpath(out_ai, a.root), ai["counts"]["exhibits"],
+                 ai["counts"]["certifications"], c["statewide"]))
     return 0
 
 

@@ -38,6 +38,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   --pill-bg: #EAF4FE; --pill-fg: #355A80;
   --cell-art: #DCEBFA; --cell-art-ink: #082B61; --cell-could: #FFF6DC; --cell-could-ink: #6B4E00; --row-alt: #F8FBFE;
   --grp-bg: #EAF2FA; --panel-w: min(560px, 100vw);
+  --b-sw-bg: #DCEBFA; --b-sw-fg: #082B61; --b-sw-line: #A9C8E5; --b-ai-bg: #FFFFFF; --b-ai-fg: #355A80; --b-ai-line: #5B7FA8;
   --foot-bg: #082B61; --foot-fg: #DCE9F7;
   --ring: rgba(255, 255, 255, .62); --wash: rgba(255, 255, 255, .42); --wash-0: rgba(255, 255, 255, 0); --chip: rgba(255, 255, 255, .94);
   --shadow: rgba(8, 43, 97, .10);
@@ -60,6 +61,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   --pill-bg: #1B3356; --pill-fg: #CFE0F6;
   --cell-art: #1D3A63; --cell-art-ink: #E3EEFB; --cell-could: #3A3218; --cell-could-ink: #F6E3A6; --row-alt: #142843;
   --grp-bg: #162C4C;
+  --b-sw-bg: #1D3A63; --b-sw-fg: #E3EEFB; --b-sw-line: #4B6B95; --b-ai-bg: #12233D; --b-ai-fg: #CFE0F6; --b-ai-line: #8DBDF5;
   --foot-bg: #06111F; --foot-fg: #C9D7EA;
   --ring: rgba(141, 189, 245, .22); --wash: rgba(11, 22, 40, .30); --wash-0: rgba(11, 22, 40, 0); --chip: rgba(18, 35, 61, .94);
   --shadow: rgba(0, 0, 0, .35);
@@ -159,6 +161,30 @@ body.panel-open .shift { padding-right: calc(var(--gutter-r) + var(--panel-w)); 
 .pill.harv { background: var(--grp-bg); color: var(--heading); }
 .ev { color: var(--muted); font-size: .84rem; }
 .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 7px; font-size: .84rem; }
+/* The badges (Sam, 2026-11-06): words, never icons. A pale fill marks a statewide recommendation; a dashed outline marks
+   CPL-AI's evidence for faculty review. Each is a button that opens its section of the panel. */
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { display: inline-flex; align-items: center; min-height: 24px; padding: 1px 9px; border-radius: 999px; font: inherit; font-size: .76rem; font-weight: 700; white-space: nowrap; border: 1px solid transparent; cursor: pointer; }
+.badge.sw { background: var(--b-sw-bg); color: var(--b-sw-fg); border-color: var(--b-sw-line); }
+.badge.ai { background: var(--b-ai-bg); color: var(--b-ai-fg); border: 1px dashed var(--b-ai-line); }
+.badge:hover { text-decoration: underline; text-underline-offset: 2px; }
+.tbl td.rec .badges { flex-wrap: nowrap; gap: 4px; }
+.tbl td.rec .badge { font-size: .7rem; padding: 0 7px; }
+.recs { display: grid; gap: 4px; align-content: end; }
+.recs .lbl { font-size: .82rem; color: var(--heading); font-weight: 700; }
+.recs .opts { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; min-height: 42px; padding: 6px 12px; border: 1px solid var(--field); border-radius: 9px; background: var(--surface); }
+.adoptable .lead { color: var(--muted); font-size: .9rem; margin-block: 4px 10px; }
+ul.aligned { margin: 4px 0 0; padding-left: 1.1em; font-size: .86rem; }
+ul.aligned li { margin-block: 2px; }
+.aipick { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: .86rem; margin-top: 6px; }
+.aipick select { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 6px; padding: 4px 8px; max-width: 100%; }
+.conf-box { margin-top: 8px; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--page); }
+dl.rep { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px 16px; margin: 10px 0; }
+dl.rep dt { color: var(--muted); font-size: .78rem; }
+dl.rep dd { margin: 0; color: var(--heading); font-weight: 700; }
+.tblx { overflow-x: auto; }
+table.dom { min-width: 820px; }
+table.dom td, table.dom th { vertical-align: top; }
 .chips .lbl { color: var(--muted); }
 .chip { display: inline-flex; align-items: center; min-height: 24px; padding: 1px 9px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--link); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 .chips .more { color: var(--muted); }
@@ -427,6 +453,9 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
         <div class="pick" id="pk-sector"></div>
         <div class="pick" id="pk-type"></div>
         <div class="pick" id="pk-standing"></div>
+        <div class="recs" role="group" aria-labelledby="pk-rec-l"><span class="lbl" id="pk-rec-l">Recommendations</span>
+          <div class="opts"><button type="button" class="word" id="f-sw" data-rec="sw" aria-pressed="false">Statewide recommendation</button>
+            <button type="button" class="word" id="f-ai" data-rec="ai" aria-pressed="false">CPL-AI course match</button></div></div>
       </div>
       <div class="chips-sel" id="ad-sel" aria-live="polite"></div>
     </div>
@@ -446,6 +475,15 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
       </div>
       <button type="button" class="word hero-pause" id="ad-hero-pause" hidden>Pause photos</button>
     </div>
+  </section>
+  <section id="adoptable" class="results wrap shift adoptable" aria-labelledby="ad-adopt-h" hidden>
+    <div class="results-bar">
+      <h2 id="ad-adopt-h">Recommended credentials this college could adopt</h2>
+      <p class="state" id="ad-adopt-state" role="status"></p>
+    </div>
+    <p class="lead">Each has a statewide credit recommendation or a CPL-AI course match, the college does not award it yet, and a course the college teaches aligns with it. Request Quick Adopt asks the college that built the credit to open an adoption.</p>
+    <div class="list" id="ad-adopt"></div>
+    <button type="button" class="word list-more" id="ad-adopt-more" hidden>Show all</button>
   </section>
   <section id="review" class="results wrap shift review" aria-labelledby="ad-review-h" hidden>
     <div class="results-bar">
@@ -488,7 +526,7 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
       <button type="button" class="word list-more" id="ad-more" hidden>Show more</button>
     </div>
     <div id="ad-table-view" hidden>
-      <div class="tbl-wrap" id="ad-tbl-wrap" role="region" aria-label="Credential list" tabindex="0"><table class="tbl one" id="ad-tbl"><colgroup><col style="width:27%"><col style="width:13%"><col style="width:17%"><col style="width:11%"><col style="width:11%"><col style="width:6.5%"><col style="width:6%"><col style="width:8.5%"></colgroup><thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col">Field</th><th scope="col">How credit is given</th><th scope="col">Credit status</th><th scope="col" class="num">Colleges</th><th scope="col" class="num">Median units</th><th scope="col">Ask us to prioritize</th></tr></thead><tbody id="ad-tbl-body"></tbody></table></div>
+      <div class="tbl-wrap" id="ad-tbl-wrap" role="region" aria-label="Credential list" tabindex="0"><table class="tbl one" id="ad-tbl"><colgroup><col style="width:23%"><col style="width:11%"><col style="width:14%"><col style="width:10%"><col style="width:10%"><col style="width:11%"><col style="width:6%"><col style="width:6%"><col style="width:9%"></colgroup><thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col">Field</th><th scope="col">How credit is given</th><th scope="col">Credit status</th><th scope="col">Recommended</th><th scope="col" class="num">Colleges</th><th scope="col" class="num">Median units</th><th scope="col">Ask us to prioritize</th></tr></thead><tbody id="ad-tbl-body"></tbody></table></div>
       <p class="empty" id="ad-tbl-empty" hidden>No credential matches these filters.</p>
       <button type="button" class="word list-more" id="ad-more-t" hidden>Show more</button>
     </div>
