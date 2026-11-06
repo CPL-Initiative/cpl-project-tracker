@@ -507,12 +507,14 @@ window.COBI_ADMIN_SURFACE = {
         "exhibits_cpl_ai.js"
       ],
       "reads": [
-        "credential_priority_requests"
+        "credential_priority_requests",
+        "credential_submissions"
       ],
       "writes": [
         "kb_curation"
       ],
       "rpcs": [
+        "credential_submission_decide",
         "exhibit_title_students"
       ],
       "measured": true
