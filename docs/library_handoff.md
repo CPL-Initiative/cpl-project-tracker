@@ -78,7 +78,16 @@ articulated one offers Request Quick Adopt to its card on the MAP dashboard; the
    a11y -- public-adopt public-adopt-list`.
 3. **Answered (see item 00):** (1) retire the spent Spanish 1 and 2 overrides, (2) confirm the Wheel Alignment
    merge, so `cred-rename-apply.yml` can carry the ServSafe fold. Put it on the next sheet if he has not answered.
-4. **Add your credential** (Sam asked for advice; offered): a second public write beside *Ask us to prioritize*, verified
+4. **Add your credential: BUILD IT (Sam, ~20:55Z: "yes, build the add your credential route").** Design as advised in
+   session: when the Catalog's search finds nothing, *Add it* with the search words filled in; a short form (name, issuer,
+   kind: license, certification or badge; a link to the issuer's page, a license lookup or the badge; college and email
+   optional); one INSERT-only function beside `credential_priority_request`, its rows in the Exhibits Requests view with
+   Verify, Merge into an existing credential, Decline; nothing a visitor types shows until verified; a verified one joins
+   the Catalog as *Not yet evaluated* with its asks counted. Before it ships: Governance maps the new write
+   (`kb/governance_surface_map.json`, beside DR-31) and the privacy ADR's check (email optional, never shown); migration
+   through `supabase-migrate.yml`; tests and `npm run a11y`. Also record the state's license lists (the Department of
+   Insurance's license types first) in `docs/reference/data_sources.md`. Pierce's reply was drafted in session for Sam to
+   send. Previously: a second public write beside *Ask us to prioritize*, verified
    by the team before it shows; Governance first (DR-31, the privacy ADR). The state's license lists as a data source
    (the Pierce email: three insurance licenses no one holds).
 5. Offered, unanswered: a draft reply to the Pierce Articulation Officer (Sam sends).
