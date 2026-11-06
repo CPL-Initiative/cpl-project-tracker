@@ -311,6 +311,15 @@
       "maintained_in": "public.credential_priority_requests via credential_priority_request() from library/adopt/ (the public Credential Catalog); read as counts by credential_priority_counts(); the Commons' Exhibits List queue reads the rows next",
       "owner": null,
       "when_empty": "Requests pile up with no one reading the count, and the public page's promise that each request raises the credential in the Initiative's order stops being true. The adoption-interest queue (DR-23) showed the shape: intake without an owner manufactures unread rows."
+    },
+    {
+      "id": "DR-32",
+      "element": "Credentials the public adds to the Credential Catalog (credential_submissions)",
+      "drives": "The Credential Catalog's Add your credential route. When the Catalog's search finds nothing, a member of the public names the credential, its issuer, its kind and a public link; once a reviewer verifies it, it joins the Catalog as Not yet evaluated with its asks counted, so a credential no record held (the Pierce email's three insurance licenses) can be asked for.",
+      "decides": "Sam (in session, 2026-11-06 ~20:55Z): \"yes, build the add your credential route\". Acceptance: nothing a visitor types shows until a signed-in reviewer verifies it in the Exhibits tab's Requests view; the reviewer may verify it, merge it into an existing credential, decline it, or reopen it, and each decision keeps the prior state in the row's history. The team phrase reads the rows and does not decide. The public writes through one INSERT-only function and reads verified rows only; nobody deletes.",
+      "maintained_in": "public.credential_submissions via credential_submission_add() from library/adopt/ (the public Credential Catalog); decided by credential_submission_decide() from the Exhibits tab's Requests view; read by the Catalog through credential_submissions_verified()",
+      "owner": null,
+      "when_empty": "Submissions wait unverified and the Catalog never shows them, so the visitor's word reaches no one. DR-31 and DR-23 showed the shape: intake without an owner manufactures unread rows. The Requests view counts the waiting submissions on the tab's guidance band."
     }
   ],
   "acceptance_standards": [

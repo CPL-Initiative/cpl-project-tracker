@@ -33,6 +33,13 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var ASK_URL = SUPABASE_URL + "/rest/v1/rpc/credential_priority_request";
   var COUNTS_URL = SUPABASE_URL + "/rest/v1/rpc/credential_priority_counts";
+  // Add your credential (Sam, 2026-11-06: "yes, build the add your credential route"; DR-32): when the search finds
+  // nothing, a visitor names the credential, its issuer, its kind and a link. One INSERT-only function takes it; nothing
+  // shows until a reviewer verifies it, and the one read returns verified rows only
+  // (kb/migrations/2026-11-06_credential_submissions.sql).
+  var ADD_URL = SUPABASE_URL + "/rest/v1/rpc/credential_submission_add";
+  var VERIFIED_URL = SUPABASE_URL + "/rest/v1/rpc/credential_submissions_verified";
+  var KINDS = [["license", "A license"], ["certification", "A certification"], ["badge", "A badge"]];
   var ASK = "Ask us to prioritize this credential";
   var PAGE = 72;       // cards or rows drawn at a time
   var CHIPS = 6;       // Request Quick Adopt chips before "and N more"
@@ -377,6 +384,7 @@
     if (c.sk) e.push(plural(c.sk, "issuer skill area", "issuer skill areas"));
     if ((c.src || []).indexOf("ca") >= 0) e.push("California license");
     if ((c.src || []).indexOf("iss") >= 0) e.push("read from the issuer");
+    if ((c.src || []).indexOf("public") >= 0) e.push("added by a member of the public and checked by the team");
     if (c.std === "held") e.push(c.n ? plural(c.n, "college has it on file", "colleges have it on file") : "on a college’s books");
     return e.join(" · ");
   }
@@ -1027,6 +1035,7 @@
     try {  // the address follows a single college pick, so a link can be sent; nothing is stored
       history.replaceState(null, "", picked.length === 1 ? "?college=" + encodeURIComponent(D.colleges[Number(picked[0])][0]) : location.pathname);
     } catch (e) { /* the page still works */ }
+    drawAddOffer(n, oth.length);
     if (state.view === "list") drawList(); else if (state.view === "table") drawTable(); else { state.sel = state.sel; buildMatrix(); }
     drawReview();
     drawAdoptable();
@@ -1155,7 +1164,15 @@
     $("ad-csv").addEventListener("click", function () { download(slug() + ".csv", csvList(D, state.rows)); });
     $("ad-csv-mx").addEventListener("click", function () { download(slug() + "-matrix.csv", csvMatrix(D, state.rows, state.cols)); });
     $("pn-close").addEventListener("click", closePanel);
-    document.addEventListener("submit", function (e) { var fm = e.target; if (fm && fm.id === "pn-ask-form") { e.preventDefault(); sendAsk(fm); } });
+    document.addEventListener("submit", function (e) {
+      var fm = e.target;
+      if (fm && fm.id === "pn-ask-form") { e.preventDefault(); sendAsk(fm); }
+      else if (fm && fm.id === "pn-add-form") { e.preventDefault(); sendAdd(fm); }
+    });
+    document.addEventListener("click", function (e) {
+      var b = e.target && e.target.closest ? e.target.closest("[data-add]") : null;
+      if (b) { e.preventDefault(); openAdd(f.q); }
+    });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $("ad-panel").classList.contains("open")) closePanel(); });
     document.addEventListener("click", function (e) {
       var b = e.target.closest ? e.target.closest("button") : null;
@@ -1188,6 +1205,96 @@
     heroInit();
   }
 
+  /* ── Add your credential (Sam, 2026-11-06; DR-32) ─────────────────────────────────── */
+
+  // The offer: a search that finds nothing, in any credit status, offers Add it with the search words filled in.
+  function drawAddOffer(n, otherN) {
+    var box = $("ad-add");
+    if (!box) return;
+    var q = f.q || "";
+    var show = n === 0 && !otherN && q.length >= 2;
+    box.hidden = !show;
+    if (!show) { box.innerHTML = ""; return; }
+    box.innerHTML = "<p>The Catalog holds no credential matching <b>" + esc(q) + "</b>. Hold a license, certification or badge it is missing? "
+      + '<button type="button" class="word" data-add="1">Add it</button></p>'
+      + '<p class="lines">The team checks it against the link you give before it shows here, as Not yet evaluated.</p>';
+  }
+  function addForm(q) {
+    var picked = keys(f.colleges), college = picked.length === 1 ? D.colleges[Number(picked[0])][0] : "";
+    return '<h2 id="pn-add">Add a credential</h2>'
+      + '<p class="lines">Name a license, certification or badge the Catalog does not hold. The team checks it against its link; once checked it shows here as Not yet evaluated, '
+      + 'and each request to prioritize it counts. Whether a college evaluates it rests with that college&#x27;s faculty, and the Initiative sends no reply.</p>'
+      + '<form id="pn-add-form" class="ask-form">'
+      + '<label for="pn-add-name">The credential&#x27;s name</label><input id="pn-add-name" name="name" type="text" required minlength="2" maxlength="200" value="' + esc(q || "") + '">'
+      + '<label for="pn-add-issuer">Who issues it</label><input id="pn-add-issuer" name="issuer" type="text" required minlength="2" maxlength="160" autocomplete="off">'
+      + '<fieldset class="add-kind"><legend>What it is</legend>' + KINDS.map(function (k, i) {
+        return '<label><input type="radio" name="kind" value="' + k[0] + '"' + (i === 1 ? " checked" : "") + "> " + k[1] + "</label>"; }).join("") + "</fieldset>"
+      + '<label for="pn-add-link">A link to it <span class="opt">(the issuer&#x27;s page, a license lookup or the badge)</span></label><input id="pn-add-link" name="link" type="url" required maxlength="500" placeholder="https://">'
+      + '<label for="pn-add-college">Your college <span class="opt">(optional)</span></label><input id="pn-add-college" name="college" type="text" maxlength="120" autocomplete="organization" value="' + esc(college) + '">'
+      + '<label for="pn-add-email">Email <span class="opt">(optional; for the Initiative&#x27;s records, never shown, no reply is sent)</span></label><input id="pn-add-email" name="email" type="email" maxlength="200" autocomplete="email">'
+      + '<div class="ask-row"><button type="submit" class="word">Add it</button></div>'
+      + '</form><p class="lines" id="pn-add-msg" aria-live="polite"></p>';
+  }
+  function openAdd(q) {
+    var p = $("ad-panel");
+    state.open = null; state.sel = null;
+    $("pn-kicker").textContent = "Add a credential";
+    $("pn-body").innerHTML = addForm(q);
+    p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
+    p.scrollTop = 0;
+    var first = $("pn-add-issuer"); if (first && q) first.focus(); else { var nm = $("pn-add-name"); if (nm) nm.focus(); }
+  }
+  function val(form, name) { var x = form.querySelector("[name=" + name + "]"); return x ? String(x.value || "").trim() : ""; }
+  function sendAdd(form) {
+    var msg = $("pn-add-msg"), btn = form.querySelector("button[type=submit]");
+    var kindEl = form.querySelector("[name=kind]:checked");
+    var body = { p_name: val(form, "name"), p_issuer: val(form, "issuer"), p_kind: kindEl ? kindEl.value : "", p_link: val(form, "link"),
+      p_college: val(form, "college") || null, p_email: val(form, "email") || null, p_note: null };
+    var wrong = body.p_name.length < 2 ? "Name the credential." : body.p_issuer.length < 2 ? "Name who issues it."
+      : !/^https?:\/\/\S+$/i.test(body.p_link) ? "Give a link that starts with https://." : !body.p_kind ? "Say what it is." : "";
+    if (wrong) { if (msg) msg.textContent = wrong; return; }
+    if (btn) btn.disabled = true;
+    if (msg) msg.textContent = "Sending\u2026";
+    var hdr = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    return fetch(ADD_URL, { method: "POST", headers: hdr, body: JSON.stringify(body) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (added) {
+        form.hidden = true;
+        if (added === false) {
+          // Already waiting or already in: the visitor's word counts as a request to prioritize it instead.
+          return fetch(ASK_URL, { method: "POST", headers: hdr, body: JSON.stringify({ p_credential: body.p_name, p_issuer: body.p_issuer, p_college: body.p_college,
+            p_email: body.p_email, p_note: null, p_source: "catalog" }) }).catch(function () { return null; }).then(function () {
+            if (msg) msg.textContent = "Someone has already added this credential, so your word counts as a request to prioritize it. The team checks it before it shows here.";
+          });
+        }
+        if (msg) msg.textContent = "Received. The team checks it against its link; once checked it shows here as Not yet evaluated.";
+      })
+      .catch(function () {
+        if (btn) btn.disabled = false;
+        if (msg) msg.textContent = "It could not be sent. Try again in a moment.";
+      });
+  }
+  // Verified submissions join the Catalog as Not yet evaluated, with their asks counted. One already held is skipped.
+  function loadVerified() {
+    return fetch(VERIFIED_URL, { method: "POST", cache: "no-cache", headers: { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }, body: "{}" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows) || !rows.length) return;
+        var held = {};
+        R.forEach(function (c) { held[String(c.t || "").toLowerCase()] = true; });
+        var add = [];
+        rows.forEach(function (x) {
+          var key = String(x && x.name || "").toLowerCase();
+          if (!key || held[key]) return;
+          held[key] = true;
+          add.push({ t: x.name, i: x.issuer || "", k: x.kind || null, s: null, src: ["public"], u: /^https?:\/\//i.test(x.link || "") ? x.link : null });
+          if (Number(x.asks) > (state.asks[key] || 0)) state.asks[key] = Number(x.asks);
+        });
+        if (add.length) addMore({ harvested: add });
+      })
+      .catch(function () { /* the page stands without them */ });
+  }
+
   function addMore(more) {
     (more.harvested || []).forEach(function (h) { h.std = h.ms === "inmap" ? "inmap" : "harvested"; h.a = []; h.c = []; h.m = []; h.y = []; R.push(h); });
     (more.held || []).forEach(function (h) { h.std = "held"; h.a = []; h.c = []; h.m = []; h.y = []; R.push(h); });
@@ -1216,13 +1323,13 @@
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(addMore)
       .catch(function () { /* the page stands on the settled credentials alone */ })
-      .then(function () { if (D.counts && D.counts.cplai) loadAI(); });
+      .then(function () { if (D.counts && D.counts.cplai) loadAI(); return loadVerified(); });
     loadAsks();
   }
 
   window.CPL_ADOPT = { scope: scope, stdOf: stdOf, match: match, rows: rows, cols: cols, csvList: csvList, csvMatrix: csvMatrix, mapUrl: mapUrl,
     groupKey: groupKey, fieldOrder: fieldOrder, reviewRows: reviewRows, reviewCard: reviewCard, STD: STD, ASK: ASK, asked: asked,
-    adoptable: adoptable, aiCourses: aiCourses };
+    adoptable: adoptable, aiCourses: aiCourses, openAdd: openAdd };
 
   if (typeof document === "undefined" || !document.getElementById("ad-list")) return;
   fetch(DATA_URL, { cache: "no-cache" })

@@ -174,6 +174,8 @@
     rq: { rows: null, store: null, report: null, error: null, busy: "", note: "" },
     // Public requests to prioritize a credential (Sam, Sheet 162): the Credential Catalog's statewide route, read here.
     pq: { rows: null, error: null, loading: null },
+    // Credentials the public added (Sam, 2026-11-06: "yes, build the add your credential route"), decided here.
+    cs: { rows: null, error: null, loading: null, busy: "", note: "", mergeFor: "" },
     // Another look: the sweep's cards, decided this visit by card id.
     sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null,
@@ -423,7 +425,8 @@
      asked first. The count is the signal for what to work on next; no reply is owed, and an email a requester left stays
      a count here, never a column. */
   var PQ_URL = SUPABASE_URL + "/rest/v1/credential_priority_requests?select=credential,issuer,college,email,note,source,status,created_at&order=created_at.desc";
-  function loadRequests() {
+  function loadRequests() { return Promise.all([loadPq(), loadSubmissions()]); }
+  function loadPq() {
     if (state.pq.loading) return state.pq.loading;
     state.pq.loading = session().then(function (sess) {
       var S = window.CPL_SESSION;
@@ -437,6 +440,44 @@
       .catch(function (e) { state.pq.rows = null; state.pq.error = errText(e); })
       .then(function () { state.pq.loading = null; });
     return state.pq.loading;
+  }
+  /* Credentials the public added from the Catalog when its search found nothing (Sam, 2026-11-06: "yes, build the add
+     your credential route"; DR-32). The Catalog writes credential_submissions through one INSERT-only function; the team
+     reads the rows here behind the phrase or a reviewer sign-in, and a signed-in reviewer decides each one through
+     credential_submission_decide(): Verify (it joins the Catalog as Not yet evaluated), Merge into an existing
+     credential, Decline, or Reopen. Each decision keeps the row's prior state in its history. The email is counted,
+     never shown. */
+  var CS_URL = SUPABASE_URL + "/rest/v1/credential_submissions?select=id,created_at,name,issuer,kind,link,college,email,note,status,merged_into,decided_by,decided_at,decision_note&order=created_at.desc";
+  var CS_DECIDE_URL = SUPABASE_URL + "/rest/v1/rpc/credential_submission_decide";
+  var CS_STATUS = { "new": "Waiting for the team", verified: "Verified: in the Catalog as Not yet evaluated", merged: "Merged", declined: "Declined" };
+  function loadSubmissions() {
+    if (state.cs.loading) return state.cs.loading;
+    state.cs.loading = session().then(function (sess) {
+      var S = window.CPL_SESSION;
+      var h = S && typeof S.authHeaders === "function" ? S.authHeaders({ "Range-Unit": "items", "Range": "0-999" }) : null;
+      if (!h) throw new Error("no session");
+      if (window.CPL_TEAM_PHRASE && typeof window.CPL_TEAM_PHRASE.decorateHeaders === "function") window.CPL_TEAM_PHRASE.decorateHeaders(h, sess);
+      return fetch(CS_URL, { headers: h });
+    })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) { state.cs.rows = Array.isArray(rows) ? rows : []; state.cs.error = null; })
+      .catch(function (e) { state.cs.rows = null; state.cs.error = errText(e); })
+      .then(function () { state.cs.loading = null; });
+    return state.cs.loading;
+  }
+  function submissionsOpen() { return (state.cs.rows || []).filter(function (r) { return r.status === "new"; }).length; }
+  // A reviewer's decision. The function refuses anyone but a signed-in reviewer; the team phrase reads and does not decide.
+  function decideSubmission(id, decision, into) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return fetch(CS_DECIDE_URL, { method: "POST", headers: headers(sess),
+        body: JSON.stringify({ p_id: id, p_decision: decision, p_merged_into: into || null, p_note: null }) });
+    }).then(function (r) {
+      if (r.ok) return r.json();
+      return r.json().catch(function () { return {}; }).then(function (b) {
+        throw new Error(/reviewer sign-in/.test(String(b && b.message || "")) ? "signin" : "HTTP " + r.status);
+      });
+    });
   }
   function requestsOpen() { return (state.pq.rows || []).filter(function (r) { return !r.status || r.status === "new"; }).length; }
   /* One line per credential: how many asked, how many are still new, the colleges named, how many left an email, first and last. */
@@ -2891,7 +2932,7 @@
       v("review", "Review", state.data ? stepCount("") : null),
       v("list", "List", state.cs.rows ? state.cs.rows.length : null),
       v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
-      v("requests", "Requests", state.pq.rows ? requestsOpen() : null),
+      v("requests", "Requests", state.pq.rows ? requestsOpen() + submissionsOpen() : null),
       v("cpl-ai", "CPL-AI recommendations", cplAiCount()),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
   }
@@ -2960,6 +3001,11 @@
       items.push({ n: pq, words: (pq === 1 ? "public request" : "public requests") + " to prioritize a credential's review, for the Initiative to route to a college or the statewide list; the count is the signal and no reply is owed (Sam, Sheet 162).",
         action: { words: "Read them", go: function () { cmGo("requests"); } } });
     } else if (state.pq.error && state.pq.error !== "no session") items.push({ n: null, words: "public requests to prioritize a credential: could not be read (" + state.pq.error + ")" });
+    if (state.cs.rows && submissionsOpen()) {
+      var cs = submissionsOpen();
+      items.push({ n: cs, words: (cs === 1 ? "credential the public added, waiting" : "credentials the public added, waiting") + " for a reviewer to verify, merge or decline; nothing shows in the Catalog until verified (Sam, 2026-11-06).",
+        action: { words: "Decide them", go: function () { cmGo("requests"); } } });
+    }
     open.forEach(function (c) {
       items.push({ n: 1, words: "decision for " + DECIDER + ": " + (c.title || "an open call") + ".",
         action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
@@ -3205,6 +3251,79 @@
       g.appendChild(el("p", { cls: "exh-small exh-muted", text: "An email a requester left is counted, never shown here; the row holds it for the Initiative's records." }));
     }
     wrap.appendChild(g);
+    wrap.appendChild(renderSubmissions());
+  }
+
+  /* The credentials the public added, newest first: what they named, its issuer and kind, the link to check it against,
+     and the decision. Verify, Merge and Decline are a signed-in reviewer's; a decided one can be reopened. */
+  function renderSubmissions() {
+    var rows = state.cs.rows, open = rows ? submissionsOpen() : 0;
+    var g = el("section", { cls: "exh-group", "aria-labelledby": "exh-cs-h" }, [el("h3", { cls: "exh-q", id: "exh-cs-h",
+      text: "Credentials the public added" + (rows ? " (" + fmt(rows.length) + (open ? ", " + fmt(open) + " waiting" : "") + ")" : "") })]);
+    g.appendChild(el("p", { cls: "exh-small exh-muted", text: "From the Credential Catalog's Add it, when its search finds nothing. Check each against its link. "
+      + "Verify adds it to the Catalog as Not yet evaluated, with its asks counted; Merge folds it into a credential the Catalog already holds; "
+      + "Decline keeps it out. Nothing a visitor typed shows until verified (Sam, 2026-11-06)." }));
+    if (rows == null) {
+      g.appendChild(el("p", { cls: "exh-empty", text: state.cs.error === "no session" ? "The added credentials read behind the team phrase or a reviewer sign-in."
+        : state.cs.error ? "The added credentials could not be read (" + state.cs.error + ")." : "Reading the added credentials…" }));
+      return g;
+    }
+    if (!rows.length) { g.appendChild(el("p", { cls: "exh-empty", text: "None added yet." })); return g; }
+    if (state.cs.note) g.appendChild(el("p", { cls: "exh-small", role: "status", text: state.cs.note }));
+    var tb = el("tbody");
+    rows.forEach(function (r) {
+      var busy = state.cs.busy === r.id;
+      function act(label, decision, into) {
+        return word(busy ? "Saving…" : label, function () {
+          if (state.cs.busy) return;
+          state.cs.busy = r.id; state.cs.note = ""; render();
+          decideSubmission(r.id, decision, into).then(function (st) {
+            state.cs.busy = ""; state.cs.mergeFor = "";
+            state.cs.note = r.name + ": " + (CS_STATUS[st] || st) + (st === "verified" ? ". The Catalog shows it on its next read." : ".");
+            return loadSubmissions();
+          }).then(render).catch(function (e) {
+            state.cs.busy = "";
+            state.cs.note = String(e && e.message) === "signin" ? "Sign in as a reviewer to decide an added credential; the team phrase reads them." : "It did not save (" + errText(e) + ").";
+            render();
+          });
+        }, { "aria-label": label + ": " + r.name });
+      }
+      var acts = el("td", { cls: "exh-cs-acts" });
+      if (r.status === "new" && state.cs.mergeFor === r.id) {
+        var inp = el("input", { type: "text", id: "exh-cs-into-" + r.id, maxlength: "200", "aria-label": "The credential it merges into", placeholder: "The Catalog's name for it" });
+        acts.appendChild(inp);
+        acts.appendChild(word("Merge", function () {
+          var into = (inp.value || "").trim();
+          if (into.length < 2) { state.cs.note = "Name the credential it merges into."; render(); return; }
+          act("Merge", "merge", into).click();
+        }, { "aria-label": "Merge " + r.name }));
+        acts.appendChild(word("Cancel", function () { state.cs.mergeFor = ""; render(); }));
+      } else if (r.status === "new") {
+        acts.appendChild(act("Verify", "verify"));
+        acts.appendChild(word("Merge", function () { state.cs.mergeFor = r.id; render(); var i = document.getElementById("exh-cs-into-" + r.id); if (i) i.focus(); }, { "aria-label": "Merge " + r.name + " into a credential" }));
+        acts.appendChild(act("Decline", "decline"));
+      } else acts.appendChild(act("Reopen", "reopen"));
+      var link = /^https?:\/\//i.test(r.link || "") ? el("a", { href: r.link, target: "_blank", rel: "noopener noreferrer", text: "Check it" }) : el("span", { text: "" });
+      var st = (CS_STATUS[r.status] || r.status) + (r.status === "merged" && r.merged_into ? " into " + r.merged_into : "")
+        + (r.decided_by && r.status !== "new" ? ", " + stamp(r.decided_at) + " by " + r.decided_by : "");
+      tb.appendChild(el("tr", {}, [
+        el("th", { scope: "row" }, [el("span", { text: r.name }), el("span", { cls: "exh-small exh-muted", text: " " + (r.issuer || "") })]),
+        el("td", { text: r.kind || "" }),
+        el("td", {}, [link]),
+        el("td", { text: r.college ? (typeof window.cplCollegeShort === "function" ? window.cplCollegeShort(r.college) : r.college) : "" }),
+        el("td", { text: r.email ? "Yes" : "No" }),
+        el("td", { text: stamp(r.created_at) }),
+        el("td", { text: st }),
+        acts]));
+    });
+    var table = el("table", { cls: "exh-pq exh-cs" }, [
+      el("colgroup", {}, [el("col", { style: "width:22%" }), el("col", { style: "width:9%" }), el("col", { style: "width:7%" }), el("col", { style: "width:11%" }),
+        el("col", { style: "width:6%" }), el("col", { style: "width:9%" }), el("col", { style: "width:16%" }), el("col", { style: "width:20%" })]),
+      el("thead", {}, [el("tr", {}, [el("th", { scope: "col", text: "Credential" }), el("th", { scope: "col", text: "Kind" }), el("th", { scope: "col", text: "Link" }),
+        el("th", { scope: "col", text: "College named" }), el("th", { scope: "col", text: "Left an email" }), el("th", { scope: "col", text: "Added" }),
+        el("th", { scope: "col", text: "Decision" }), el("th", { scope: "col", text: "Decide" })])]), tb]);
+    g.appendChild(el("div", { cls: "exh-tblwrap", role: "region", "aria-label": "Credentials the public added", tabindex: "0" }, [table]));
+    return g;
   }
 
   /* The CPL-AI recommendations view (Sam, 2026-11-06, SkyLantern: "connect CPL-AI in the Exhibits tab and make sure we
@@ -3331,6 +3450,9 @@
     ".exh-pq th[scope=col] { color:var(--text-muted); font-weight:600; font-size:.82rem; }",
     ".exh-pq th[scope=row] { font-weight:600; color:var(--seal-blue-text); }",
     ".exh-pq .exh-num { text-align:right; font-variant-numeric:tabular-nums; }",
+    ".exh-cs-acts { display:flex; flex-wrap:wrap; gap:4px 10px; align-items:center; }",
+    ".exh-cs-acts input { min-height:28px; width:100%; padding:2px 6px; font:inherit; color:var(--text-body); background:var(--surface); border:1px solid var(--border); border-radius:4px; }",
+    "@media (max-width:560px) { .exh-cs { table-layout:auto; min-width:640px; } }",
     ".exh-groups { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:16px; min-width:0; }",
     ".exh-dash, .exh-steps { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:10px; }",
     ".exh-tile { display:grid; gap:4px; align-content:start; padding:12px 14px; background:var(--surface); border:1px solid var(--border); border-radius:8px; min-width:0; }",
