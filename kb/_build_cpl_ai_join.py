@@ -130,6 +130,18 @@ def build():
     index = json.load(open(INDEX, encoding="utf-8"))
     titles = {c["code"]: c["title"] for c in index["credentials"]}
     joins = {code: {"kind": kind, "exhibits": ex, "reason": why} for code, (kind, ex, why) in sorted(J.items())}
+    # The other direction, for the Exhibits List (Sam, 2026-11-06: "have the Exhibits List row name its CPL-AI pairs"):
+    # each exhibit's certifications, their pairs, Strong evidence pairs, and colleges holding a Strong evidence course.
+    lines = {c["code"]: c for c in index["credentials"]}
+    by_exhibit = {}
+    for code, j in joins.items():
+        ln = lines[code]
+        strong_colleges = sum(1 for t in (ln.get("by_college") or {}).values() if t[0])
+        for e in j["exhibits"]:
+            by_exhibit.setdefault(e, []).append({"code": code, "title": ln["title"], "kind": j["kind"], "pairs": ln["pairs"],
+                                                 "strong": ln["by_tier"]["1"], "strong_colleges": strong_colleges})
+    for v in by_exhibit.values():
+        v.sort(key=lambda x: ({"exact": 0, "named_under": 1, "related": 2}[x["kind"]], -x["pairs"]))
     kinds = Counter(j["kind"] for j in joins.values())
     return {
         "_about": ("The 115 CPL-AI certifications joined to the common exhibits (kb/credentials.json), by "
@@ -138,6 +150,7 @@ def build():
         "counts": {"certifications": len(titles), "exact": kinds["exact"], "named_under": kinds["named_under"],
                    "related": kinds["related"], "none": len(titles) - len(joins)},
         "joins": joins,
+        "by_exhibit": dict(sorted(by_exhibit.items())),
         "colleges": colleges_map(index["colleges"]),
     }
 

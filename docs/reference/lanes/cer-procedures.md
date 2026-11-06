@@ -80,6 +80,12 @@ Session judgments; a curator's correction wins. **Next:** the Exhibits List row 
 the seven title fixes and the duplicate ServSafe Manager exhibit; the Credential Catalog and Sierra wait on Sam's word
 (Sheet 147 card 5).
 
+**The Exhibits List names each row's CPL-AI pairs (SkyLantern, 2026-11-06; Sam: "have the Exhibits List row name its
+CPL-AI pairs"):** under the title, *CPL-AI, 343 pairs* (several certifications counted, a related join marked), its full
+sentence in the word's title; one certification opens on itself, several open the CPL-AI list searched to the exhibit; the
+side panel spells each out; the filter *CPL-AI recommendations* (`#exhibits/list/cplai`) and the search find them. Read
+from `kb/cpl_ai/exhibit_join.json`'s `by_exhibit`.
+
 **The Credential Catalog, the public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4; named
 on Sheet 148).** `library/adopt/`, Pages-served, linked from the Library and the public header.
 `kb/_build_adopt_page.py` writes `library/adopt/adopt_data.json` daily from `kb/exhibits_adoption.json`: **settled means a
