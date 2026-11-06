@@ -11,8 +11,12 @@
 --    (a VOLATILE function in a policy would run per row), so the writes live in a new
 --    VOLATILE team_pass_verify(p_site) that the explicit unlock calls: it records a failure
 --    per request IP in team_pass_attempts and locks the IP for 15 minutes after 8 failures
---    in 10 minutes. The STABLE checks consult the lock (a locked IP reads false everywhere)
---    and sleep 250 ms on a mismatch, so the read path is throttled too. With no IP header
+--    in 10 minutes. The STABLE checks consult the lock (a locked IP reads false everywhere).
+--    The 250 ms sleep on a mismatch lives only where one request makes one call: in
+--    team_pass_verify and in a direct POST to rpc/team_pass_ok, gr_pass_ok or fin_pass_ok
+--    (request.path names it). Never in *_pass_check: 89 RLS policies call team_pass_ok()
+--    unwrapped, once per row, so a sleep there would stall every table read made with a
+--    stale phrase (S588, 2026-11-06, before apply). With no IP header
 --    on the request the lock logic skips itself rather than lock everyone under one key.
 -- 3. Housekeeping revokes: the *_pass_check functions are reached only through the
 --    SECURITY DEFINER *_pass_ok / team_pass_verify, and the two audit trigger functions
@@ -100,7 +104,6 @@ begin
     where id <> 'gr'          -- GR is a site phrase, not a shared-team phrase
       and secret = p
   ) into ok;
-  if not ok then perform pg_sleep(0.25); end if;   -- a wrong guess costs a quarter second
   return ok;
 end $$;
 
@@ -114,7 +117,6 @@ begin
   if p is null or p = '' then return false; end if;
   if public.team_pass_locked() then return false; end if;
   select exists (select 1 from public.team_access where id = 'gr' and secret = p) into ok;
-  if not ok then perform pg_sleep(0.25); end if;
   return ok;
 end $$;
 
@@ -128,7 +130,55 @@ begin
   if p is null or p = '' then return false; end if;
   if public.team_pass_locked() then return false; end if;
   select exists (select 1 from public.team_access where id = 'fin' and secret = p) into ok;
-  if not ok then perform pg_sleep(0.25); end if;
+  return ok;
+end $$;
+
+-- The RLS readers keep their bodies; a direct RPC call (one per request) pays the sleep.
+create or replace function public.team_pass_ok()
+returns boolean
+language plpgsql stable security definer
+set search_path = 'public'
+as $$
+declare hdr text; ok boolean;
+begin
+  hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+  if hdr is null then return false; end if;
+  ok := public.team_pass_check(hdr);
+  if not ok and current_setting('request.path', true) like '%/rpc/team_pass_ok' then
+    perform pg_sleep(0.25);
+  end if;
+  return ok;
+end $$;
+
+create or replace function public.gr_pass_ok()
+returns boolean
+language plpgsql stable security definer
+set search_path = 'public'
+as $$
+declare hdr text; ok boolean;
+begin
+  hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+  if hdr is null then return false; end if;
+  ok := public.gr_pass_check(hdr);
+  if not ok and current_setting('request.path', true) like '%/rpc/gr_pass_ok' then
+    perform pg_sleep(0.25);
+  end if;
+  return ok;
+end $$;
+
+create or replace function public.fin_pass_ok()
+returns boolean
+language plpgsql stable security definer
+set search_path = 'public'
+as $$
+declare hdr text; ok boolean;
+begin
+  hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+  if hdr is null then return false; end if;
+  ok := public.fin_pass_check(hdr);
+  if not ok and current_setting('request.path', true) like '%/rpc/fin_pass_ok' then
+    perform pg_sleep(0.25);
+  end if;
   return ok;
 end $$;
 
@@ -158,6 +208,7 @@ begin
           when 'fin' then public.fin_pass_check(hdr)
           else            public.team_pass_check(hdr)
         end;
+  if not ok then perform pg_sleep(0.25); end if;   -- one call a request: a wrong guess costs a quarter second
   if v_ip is null then return ok; end if;
   delete from public.team_pass_attempts a where a.last_seen < now() - interval '1 day';
   if ok then

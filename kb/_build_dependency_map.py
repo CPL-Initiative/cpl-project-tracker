@@ -169,12 +169,11 @@ SEEDS = [
         "why": "the click dispatches the daily workflow through the worker's /trigger with "
                "x-team-pass or a reviewer bearer; no secret rides in the page",
     },
-    {   # team_phrase.js: fetch(SUPABASE_URL + '/rest/v1/rpc/' + rpcFor(site))
+    {   # team_phrase.js: fetch(SUPABASE_URL + '/rest/v1/rpc/team_pass_verify'), p_site from rpcFor(site)
         "file": "team_phrase.js",
-        "anchor": r"/rest/v1/rpc/'\s*\+\s*rpcFor\(",
-        "datasets": [("rpc:team_pass_ok", "call"), ("rpc:gr_pass_ok", "call"),
-                     ("rpc:fin_pass_ok", "call")],
-        "why": "rpc name resolved from the SITES map at runtime",
+        "anchor": r"/rest/v1/rpc/team_pass_verify'",
+        "datasets": [("rpc:team_pass_verify", "call")],
+        "why": "the explicit unlock (security step 2); p_site resolved from the SITES map at runtime",
     },
     {   # chatbox/smoke_test.sh: "$REST_BASE/$t" with `for t in …` lists
         "file": "chatbox/smoke_test.sh",

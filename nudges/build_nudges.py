@@ -99,12 +99,19 @@ def _team_members_supabase():
     {email, nudge}. Carries each member's `nudge` opt-in toggle (set on the
     Team & RACI tab). Returns {} on any failure (egress-blocked sandbox / offline)
     — the caller then can't filter by nudge and falls back to the Fact Sheet."""
+    # Since security step 2 (2026-11-06) team_members reads need a reviewer or the
+    # phrase, so the anon read returns []. Use the service key when the environment
+    # holds it; without it the opt-out cannot apply and we say so below.
+    key = os.environ.get("SUPABASE_SERVICE_KEY") or SUPABASE_ANON
     try:
         req = urllib.request.Request(
             SUPABASE_URL + "/rest/v1/team_members?select=name,email,nudge",
-            headers={"apikey": SUPABASE_ANON, "Authorization": "Bearer " + SUPABASE_ANON})
+            headers={"apikey": key, "Authorization": "Bearer " + key})
         with urllib.request.urlopen(req, timeout=15) as r:
             rows = json.load(r)
+        if not rows and key == SUPABASE_ANON:
+            print("  note: team_members read as anon returned no rows (needs SUPABASE_SERVICE_KEY); "
+                  "nudge opt-out not applied.", file=sys.stderr)
         return {_norm(x.get("name")): {"email": (x.get("email") or "").strip(),
                                        "nudge": x.get("nudge") is not False} for x in rows}
     except Exception as e:

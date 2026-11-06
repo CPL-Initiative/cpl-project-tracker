@@ -31,6 +31,33 @@ returns boolean language sql stable security definer set search_path = 'public' 
   select exists (select 1 from public.team_access where id = 'fin' and secret = p);
 $$;
 
+create or replace function public.team_pass_ok()
+returns boolean language plpgsql stable security definer set search_path = 'public' as $$
+  declare hdr text;
+  begin
+    hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+    if hdr is null then return false; end if;
+    return public.team_pass_check(hdr);
+  end;
+$$;
+create or replace function public.gr_pass_ok()
+returns boolean language plpgsql stable security definer set search_path = 'public' as $$
+  declare hdr text;
+  begin
+    hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+    if hdr is null then return false; end if;
+    return public.gr_pass_check(hdr);
+  end;
+$$;
+create or replace function public.fin_pass_ok()
+returns boolean language plpgsql stable security definer set search_path = 'public' as $$
+  declare hdr text;
+  begin
+    hdr := nullif(current_setting('request.headers', true)::json ->> 'x-team-pass', '');
+    if hdr is null then return false; end if;
+    return public.fin_pass_check(hdr);
+  end;
+$$;
 drop function if exists public.team_pass_locked();
 drop function if exists public.cpl_request_ip();
 drop table if exists public.team_pass_attempts;

@@ -107,19 +107,21 @@
   }
   function richP(html, cls) { return appendRich(el("p", cls ? { class: cls } : null), html); }
 
-  // ── gate: GR-cohort phrase, validated server-side via rpc/gr_pass_ok ────────
+  // ── gate: GR-cohort phrase, validated server-side via rpc/team_pass_verify (p_site gr) ────────
   function getPass() { try { return localStorage.getItem(GR_KEY) || null; } catch (e) { return null; } }
   function setPass(p) { try { localStorage.setItem(GR_KEY, p); } catch (e) { /* ignore */ } }
   function clearPass() { try { localStorage.removeItem(GR_KEY); } catch (e) { /* ignore */ } }
 
   function verify(phrase) {
-    return fetch(SUPABASE_URL + "/rest/v1/rpc/gr_pass_ok", {
+    // team_pass_verify with p_site "gr" checks the GR phrase only and records
+    // failures (security step 2); RLS still reads gr_pass_ok().
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/team_pass_verify", {
       method: "POST",
       headers: {
         apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
         "Content-Type": "application/json", "x-team-pass": phrase
       },
-      body: "{}"
+      body: JSON.stringify({ p_site: "gr" })
     }).then(function (r) {
       if (r.status === 429 || r.status >= 500) return null;   // transient
       if (!r.ok) return false;

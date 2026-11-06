@@ -183,8 +183,6 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
 | `credential_recs_for_titles` | `edgefn:cpl-chat` | — |
 | `exhibit_title_students` | tabs: `exhibits` | — |
-| `fin_pass_ok` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
-| `gr_pass_ok` | tabs: `gr-priorities` · pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
@@ -214,7 +212,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `search_statewide_recommendations` | `edgefn:cpl-chat` | — |
 | `sierra_feedback_set_status` | tabs: `sierra-training` | — |
 | `sierra_feedback_upsert` | tabs: `college-briefing` · pages: `sierra/index.html` · scripts: `chatbox/smoke_test.sh` | — |
-| `team_pass_ok` | tabs: `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` · `edgefn:cpl-chat` | — |
+| `team_pass_ok` | `edgefn:cpl-chat` | — |
+| `team_pass_verify` | tabs: `gr-priorities`, `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `tmc_review_submission` | tabs: `tmc-builder` | — |
 | `workplan_move_sub_activity` | tabs: `workplan-goals` | — |
 
@@ -1300,5 +1299,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 106 Supabase tables · 50 RPCs · 12 edge functions · 794 file
+Coverage: 106 Supabase tables · 49 RPCs · 12 edge functions · 794 file
 datasets · 193 external services · 523 consumers · 62 workflows · 40 tabs.

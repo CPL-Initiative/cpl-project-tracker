@@ -10,7 +10,7 @@
  *     same same-origin key raci.js / mission_control.js / kb-portal use, so
  *     one unlock covers every tab).
  *   - VALIDATE BEFORE STORE (the #598 lesson): unlock() POSTs the anon-granted
- *     rpc/team_pass_ok with the typed phrase as the x-team-pass header and
+ *     rpc/team_pass_verify with the typed phrase as the x-team-pass header and
  *     only stores on a strict `true`.
  *   - Writes: callers keep their own fetch plumbing and call
  *     decorateHeaders(headers, sess) — for a phrase session the bearer stays
@@ -43,15 +43,16 @@
   // invention: gr_priorities.js has stored to `cpl_gr_pass` since it shipped —
   // this generalises the pattern it proved.
   var SITES = {
-    gr:  { key: 'cpl_gr_pass',  rpc: 'gr_pass_ok',  label: 'GR' },
-    fin: { key: 'cpl_fin_pass', rpc: 'fin_pass_ok', label: 'Finance' }
+    gr:  { key: 'cpl_gr_pass',  rpc: 'gr',  label: 'GR' },
+    fin: { key: 'cpl_fin_pass', rpc: 'fin', label: 'Finance' }
   };
   function siteDef(site) {
     return (site && Object.prototype.hasOwnProperty.call(SITES, site)) ? SITES[site] : null;
   }
   // Which localStorage slot backs this site (the shared slot when unscoped).
   function keyFor(site) { var d = siteDef(site); return d ? d.key : KEY; }
-  function rpcFor(site) { var d = siteDef(site); return d ? d.rpc : 'team_pass_ok'; }
+  // The p_site value team_pass_verify takes (security step 2, 2026-11-06): 'team', 'gr' or 'fin'.
+  function rpcFor(site) { var d = siteDef(site); return d ? d.rpc : 'team'; }
 
   function get() {
     try { return localStorage.getItem(KEY) || null; } catch (e) { return null; }
@@ -102,7 +103,10 @@
   // we could not verify either way, so never report "wrong phrase").
   // `site` picks the RPC: the site's own gate, or the shared team gate.
   function verify(phrase, site) {
-    return fetch(SUPABASE_URL + '/rest/v1/rpc/' + rpcFor(site), {
+    // team_pass_verify records a failed unlock per request IP and locks after 8 in
+    // 10 minutes (security step 2). The phrase stays in the header; the body names
+    // only the site.
+    return fetch(SUPABASE_URL + '/rest/v1/rpc/team_pass_verify', {
       method: 'POST',
       headers: {
         apikey: SUPABASE_ANON,
@@ -110,7 +114,7 @@
         'Content-Type': 'application/json',
         'x-team-pass': phrase,
       },
-      body: '{}',
+      body: JSON.stringify({ p_site: rpcFor(site) }),
     }).then(function (r) {
       if (r.status === 429 || r.status >= 500) return null;
       if (!r.ok) return false;
