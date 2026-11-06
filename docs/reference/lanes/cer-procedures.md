@@ -102,12 +102,14 @@ public-adopt-matrix public-adopt-list` (the last two new). **Request an evaluati
 today: the college route through *Find your college* and *Credit for Being You* (the portal is recorded as a Found data
 source, `docs/reference/data_sources.md`), and a statewide line that says the list is being set up.
 
-**NEEDS SAM (Open Asks Sheet 162, 2026-11-06, built, unpublished): the statewide intake.** Sam's words: the public can
-"request that it be assessed at a particular college OR prioritized to be led by the CPL Initiative team with ASCCC for a
-statewide exhibit." The statewide route needs a write surface the public reaches (a request table with name, email,
-credential and route, through one RPC; Rule 10 a3: Governance map and the privacy ADRs first), and the count beside a
-credential ("12 people have asked") is the signal the priority list would run on. Held because it is outward and takes
-the public's names and emails. The page's statewide line changes to the form the day it is approved.
+**RULED (Sam, Open Asks Sheet 162, 15:16Z 2026-11-06, his own call, in a note): the statewide route is a public request
+to prioritize review, never an evaluation promise.** His words: *"Reframe it as a public request to prioritize review of a
+credential. The idea is that we could collect requests to help us better prioritize our work without promising any one
+person that we would evaluate their credential--that would be left to the discretion of local colleges."* So the page's
+word becomes *Ask us to prioritize this credential* (the count beside a credential is the signal; no reply is owed to the
+requester), the form keeps to what prioritizing needs (credential, optional college, optional email for updates), and the
+write surface is INSERT-only through one function, mapped in Governance with the privacy ADRs before it ships
+(Rule 10 a3). **NEXT:** build it so, and change the page's statewide line and the panel's heading to the new word.
 
 **The Commons Exhibits List carries the same shape next (Sam, 2026-11-06: "make sure that any needed formatting or
 functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public
