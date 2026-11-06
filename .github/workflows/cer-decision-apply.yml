@@ -2,7 +2,8 @@ name: CER decision apply
 
 # Manual dispatch only. Writes a curator's ruled Credential Reference (CER) decisions into
 # kb_curation from a committed plan (kb/cer_decisions_out/<date>/plan.json; a later plan the same
-# day takes <date>-2): dry-run reads and reports each row's state, commit inserts, rollback removes
+# day takes <date>-2): dry-run reads and reports each row's state, commit inserts (and makes the guarded
+# replaces and retires a plan names), rollback removes
 # the rows this cohort wrote. Sam, 2026-10-02 (open-asks sheet 19, card 1, "Write them for me"):
 # a session writes the rows the CER would have written, then dispatches cred-rename-apply.yml.
 # The repo's Supabase guard denies a session's kb_curation INSERT, so a session dispatches this,
