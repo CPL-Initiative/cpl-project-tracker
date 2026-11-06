@@ -2,19 +2,19 @@
  "college": "Mt. San Jacinto College",
  "programs": 174,
  "with_closed_list": 152,
- "found": 115,
- "extracted": 115,
+ "found": 116,
+ "extracted": 116,
  "errors": 0,
- "passed_machine_checks": 93,
+ "passed_machine_checks": 97,
  "failed": {
   "coverage": 3,
   "invented": 0,
-  "arithmetic": 22,
+  "arithmetic": 19,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.18,
- "cost_per_program": 0.0799,
+ "cost_usd": 9.28,
+ "cost_per_program": 0.08,
  "not_found": [
   {
    "control_number": "08689",
@@ -486,5 +486,5 @@
    }
   }
  ],
- "run": "39779328144"
+ "run": "42212319155"
 }

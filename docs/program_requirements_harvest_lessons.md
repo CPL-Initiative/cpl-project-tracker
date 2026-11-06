@@ -105,49 +105,9 @@ Cañada's re-read, a Jev sitting over the failing records, the second reader rul
 
 The second reader built, three Jev sittings, Cañada's Cal-GETC step and the six-row rollback: verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-## S422 SkyWillow (2026-10-19): San Joaquin Delta's three scorer readings, Taft's two GE patterns, Sierra Training's UI pass
+## S422: moved to the archive (S592 compaction)
 
-- **A verdicts file names the fix, and one fix can clear a college.** S421's reading of Delta's sitting said 29 of 32 misses
-  were one shape. Three scorer readings, each from the page's own words, took Delta's live rows from 154 to 195 of 202
-  passing (#2250): the program total read as a floor (`total_units_minimum`, set by a reconcile step on "Minimum Units
-  Required: N" and "Minimum Major Units Required: N", passing a sum whose low end meets it and nothing else), a
-  per-college `prefix_aliases` map (ANTH, ENGL, ARTH and COMM printed where the state file keeps ANTHR, ENG, ART and COM
-  ST; the scorer renames on its own copy, and never a code the file lists as printed), and a noncredit page printing only
-  "Total Contact Hours: N" (equal, `total_only`, only when every hours figure on the page is that total). The eight left
-  are the extraction's: 07304's double-counted electives, 16764's waivable piano block, 22244's unrecorded math, 45621's
-  area minimums, 11970's course-less GE areas, 19752's GE page, and 05630 and 44197 (a certificate total that counts GE;
-  a course taken four times).
-- **A new status string breaks consumers; a flag does not.** `program_record_machine_pass` (SQL), the tab, CPL Pathways
-  and the display build accept only `equal` and `unstated`. A new pass shape is `equal` plus a flag (`minimum`,
-  `within`, `total_only`), the way the degree check already does it.
-- **A new record field reaches the confirm-carry basis.** `program_record_carry_basis` strips the figures a reconcile
-  sets, so a person's confirm survives a reread; `tests/program_requirements_college_test.py` fails when a reconcile
-  field is missing from it. The basis change went live through `supabase-migrate.yml` after checking the live function
-  bodies matched the file (md5 of `prosrc`).
-- **Two reconciles in a row leave two run stamps; reread posts one.** Each reconcile stamps the records it changes with
-  its run, and `step=reread` posted only the newest run's seven. `reread --extracted-run` (the workflow's `force` input on
-  a reread) posts a named run; the function's guards still decide each row (195 replaced, 0 held). Better: put every
-  scorer change on the branch before the first reconcile. A reconcile checks out its dispatch commit, so a later push
-  needs a later run; cancel and redispatch while the capture is young.
-- **Taft's catalog prints two local GE patterns.** Three free page reads: the GE philosophy page states "General
-  Education Requirements (27 units – one course from each category)", and the Other Associate Degrees page says the CTE
-  degrees, Energy Technology and Occupational Safety and Health among them, "follow the local general education pattern of
-  only 18 units". No page words the 60 as a minimum, and neither A.S. page names a GE figure. With 18 the sums are 36 and
-  53 against 60; only Title 5's floor and unnamed electives would pass them, which is also what a dropped block looks
-  like (Fable's advice: cite the catalog's word for a floor or leave the record failing). No step was built (#2249); the
-  27 and 18 are a catalog disagreement for the college.
-- **The UI pass's sweep had never seen Sierra Training** (#2251): the signed-out cobi route paints the First Light
-  greeting over a sign-in note. A reviewer seed with synthetic rows for the six reads measures the tab; it was clean
-  before and after the conversion to underlined words.
-- **Runs this session:** Taft page reads 39215793482, 39216772779, 39217374801; Delta reconcile 39216608232 (canceled:
-  checked out before the alias commit), 39217405432, 39220195737; migrate 39216602991; reread 39223153428, 39223682919;
-  display build 5da99b0af549. No model spend.
-
-### Moved from the lane (S422 compaction)
-
-**Sam's sheet 29 (2026-10-04):** Sierra says "required", names each choose block and gives the printed total for a checked program, citing the catalog and its year (live, smokes 7l and 7q).
-
-**Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
+The section, verbatim: `program_requirements_harvest_lessons_archive_3.md`, *S422 SkyWillow*.
 
 ## S442, the routine's run beside Sam's SkyManzanita (2026-10-21): the Ventura district's campus letter
 
@@ -1131,3 +1091,23 @@ From *Course objectives too*, verbatim:
 - **SLOs: Mission College loaded** (load 42201380786): 693 inserted, 66 skipped, receipt
   `kb/receipts/course_outcomes_mission_42201380786.json` with its delete. The bot's receipt commit starts no `test`
   run, so update the branch from `main` to get one before the merge.
+
+## S592 SkyCoddington (2026-11-06): Monterey Peninsula merged; Mt. San Jacinto rechecked
+
+- **Read the lessons before taking a college the handoff names.** Handoff 592 named Mt. San Jacinto on coverage; lessons
+  S448 had already read its 37 gaps as the catalog's own (revised degrees, no own pages). A three-load page read
+  (42209254899, `kb/college_reads/msjc_recheck_s592.json`) checked the two "being revised" transfer degrees two weeks on:
+  Public Health A.S.-T 39455 now prints its Requirements (23-24 units, Cal-GETC 34, total 60); Chemistry A.S.-T 40010
+  still prints only the revision notice. A notice that says *expected to be available shortly* is worth one recheck.
+- **Mt. San Jacinto:** free capture 42209857182 found 116 of 152 (115); extraction 42212319155 read 39455 alone for
+  $0.10 (97 of 116 pass); load 42217163675 inserted 1, kept 112 (receipt with its delete); display build 7b1f3658a888
+  (17,550 records). The 14 page-claimed and 22 not found stand as the catalog prints them.
+- **Monterey Peninsula's display apply** (run 42202162492, 67 minutes) wrote 17,546 of 17,549 with 0 errors and ended in
+  failure on 3 rows the table no longer holds, as S457's apply did; the applied record committed, so #2809 merged.
+- **Next by `with_closed_list` coverage**, from each college's `summary.json`, after Canyons, Calbright and Mt. San
+  Jacinto: Ohlone 146 of 179 (82%), Siskiyous 65 of 77, Palomar 282 of 331, Coalinga 53 of 62. Read Ohlone's S451 lessons
+  first.
+
+### Moved from the lane (S592): Monterey Peninsula's paragraph, as it stood
+
+**Monterey Peninsula (S535-S536; its 2026-27 CourseLeaf site): 183 of 197 passing**. Its steps: MPC GE 24-34, Cal-GETC 34 (both years' words), the 60 a floor ("electives, if needed"), `or_units`, `and_units` (a lab printed joined to its lecture, "CSIS 50 · & 50L", takes 0). The 14 left: lessons S536. S536 moved 7 (3.6%), so one more session under 3% parks it. **RULED (Sam, Open Asks Sheet 159 card 1, 22:51Z 2026-11-02, his own call: "keep"):** the 60 stays a floor, as S535 read it. **S590 (#2809):** the six unequal records read back (page read 42046379839); two steps on the catalog's words: the floor for transfer degrees too (Global Studies 37243; Fable advised) and `or_units` `parent_from_block` (Accounting 22052's "Select one of the following: 2 · WORK 96 · or WORK 99"). Reconcile 42195216637 dispatched. The other four need reader work or stay as printed: ASL 39266 (an `&`-joined alternative pair), Hospitality 41831 ("Any List A course not already selected" dropped), Nursing 03633 (Humanities and Ethnic Studies lines not kept), Anthropology 32033 (the catalog's own 23 counts List C at 4: leave). **S591:** reconcile 42195216637 moved Global Studies 37243 (183 to 184; Accounting 22052 still fails), reread 42201297009 replaced 33 rows (receipt `kb/receipts/program_requirement_records_college_reread_monterey_peninsula_42201297009.json`), display build 04dec589445a. **PARKED (S591, the stopping rule):** S584 moved 0 and S590 1, both under 6 of 197; `monterey-peninsula-parked-2026-11-06` names what turns it on (the three reader items, its 2027-28 catalog, or Sam's word). Sam unparked Glendale and LA Valley on 2026-11-02 with *"handle the discrepancies after all data is harvested"*, so the sweep's next college is one with missing records, not the next largest discrepancy count. #2809 merged (S592) after display build 04dec589445a applied 17,546 of 17,549 (3 rows gone, 0 errors).

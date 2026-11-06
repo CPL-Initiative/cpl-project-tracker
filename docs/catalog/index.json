@@ -16581,8 +16581,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 556,
+   "count": 557,
    "docs": [
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 593,
+     "path": "docs/session_593_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 593 handoff: Monterey Peninsula merged; Mt. San Jacinto's Public Health A.S.-T loaded",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-06",
      "governs": [],
@@ -26048,5 +26063,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1394
+ "total": 1395
 }

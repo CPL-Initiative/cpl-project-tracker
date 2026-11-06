@@ -1,0 +1,18 @@
+{
+ "_readme": "S592 SkyCoddington, 2026-11-06. Step 12 named Mt. San Jacinto next on coverage (115 of 152 on with_closed_list). Lessons S448 found its 37 gaps the catalog's own on 2026-10-22: Chemistry A.S.-T 'being revised ... not available to new students in 2026-2027' and Public Health A.S.-T 'expected to be available shortly', and no own page for Musical Theater, the office administration certificates, Environmental Studies A.S., Mathematics A.S. or Culinary Arts & Hospitality A.A. This read checks whether that still holds two weeks on: the sitemap for any page added since, and the capture's view of the two revised degrees. Three loads, no model call.",
+ "college": "Mt. San Jacinto College",
+ "questions": {
+  "new_pages": "Does the sitemap now list an own page for musical theater, office administration, environmental studies, mathematics A.S., culinary arts, or any program address not seen on 2026-10-22?",
+  "revised_degrees": "Do chemistry-ast and public-health-a.s.-t now print a Requirements tab with course codes, or still the revision notice?"
+ },
+ "keywords": [
+  "musical", "theat", "office-admin", "clerical", "administrative", "environmental-studies", "mathematics",
+  "culinary", "hospitality", "public-health", "chemistry", "revised", "not available",
+  "\\bCHEM[ \\-]?\\d", "\\bHS[ \\-]?\\d", "\\bKINE?[ \\-]?\\d", "\\bMATH[ \\-]?\\d", "\\bBIOL?[ \\-]?\\d"
+ ],
+ "pages": [
+  {"url": "https://catalog.msjc.edu/sitemap.xml", "answers": ["new_pages"]},
+  {"url": "https://catalog.msjc.edu/instructional-programs/chemistry/chemistry-ast/", "answers": ["revised_degrees"], "capture_view": true},
+  {"url": "https://catalog.msjc.edu/instructional-programs/public-health/public-health-a.s.-t/", "answers": ["revised_degrees"], "capture_view": true}
+ ]
+}
