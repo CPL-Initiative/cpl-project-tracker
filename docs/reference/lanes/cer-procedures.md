@@ -77,95 +77,46 @@ teaches a matching course, has arrow keys and a tooltip, and a content filter ne
 both CSVs and **Create Handout** (the college's `library/cpl-opportunity/` visual). It writes nothing and remembers no
 filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19),
 `npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width.
-**Sam's five asks on the page (2026-11-06, opening SkyAerial: "a good beginning for our credential registry"):** full width
-including the matrix; a matrix clickable where there is data; a working-adult first order instead of AP first; every
-filter multi-select, College and District as one picker (a district heads its colleges only where it has more than one)
-and SW Region and ASCCC Area as one Region picker under two headings; a mock to react to. Mock v1 on real rows:
-https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds (list grouped under field headers, largest work fields first and the
-exams last; Start with chips for five kinds of learner; a cell, a title or a column heading opens a side panel or picks the
-college). Waiting on his reaction before any port.
-**Mock v2 (same canvas, 2026-11-06 ~12:50Z), on Sam's next asks:** a **Standing** filter of its own (Awarded somewhere 1,260 ·
-In MAP, no articulation yet 45 · Held for title review ~1,200 · Harvested, no exhibit yet 7,401, the nightly watch's
-`kb/it_ai_credential_catalog.json`); a search names matches in the standings not picked. Every credential's panel takes a
-**request for an assessment**, at a named college (MAP's CPL contact) or statewide, led by the CPL Initiative with ASCCC
-(counted, prioritized); the mock drafts and sends nothing. An **analysis for faculty** lists the issuer's skill areas
-(`kb/reference/industry_credential_skills.json`, 65 credentials) against harvested course outcomes (`public.course_outcomes`,
-14 colleges, 11,004 courses; 20 of the skills credentials' articulated courses have them) with an illustrative word-overlap
-confidence; Sam named the Foundation and ASCCC skills-to-outcomes method as the real one and raised TypeSafe's Jev (a Score
-per skill area, probabilities and confidence returned, weights in code) as its engine. His words:
-`CPLBrain/03-professional/braindumps/braindump-2026-11-06-1240-public-request-assessment-skills-to-outcomes.md`. *Worth a faculty review* (#2613) lists Credential
-Engine's top-50 credentials MAP has no exhibit for (28), from the hand check `kb/reference/credential_engine_top50_map_check.json`;
-the IT/AI catalog's own join now needs the issuer to agree and reads that check (#2615; in MAP 89 to 102).
+**The Credential Catalog, ported from the mock (SkyAerial, 2026-11-06; Sam: "I think it would make a good beginning for
+our credential registry", then "let's roll with this"; the mock https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds, eight
+versions in one morning).** `library/adopt/` now runs the full width; three figure tiles beside the title open what they
+count (1,260 earn credit at a college, 101 colleges award it, 7,389 not yet evaluated; the tile count is his call, "101 is
+right"); *Start with* names five kinds of learner; every filter is a multi-select picker (College with a district heading
+only where a district has more than one college; Region under *Strong Workforce* and *ASCCC*; Field; *How credit is
+given*; **Credit status**, Show folded into it); the list groups under field headers, the largest work fields first and
+the exams (AP, IB, CLEP, DSST) last; a **List** view drills down (issuer searches, field and type filter, the count opens
+the awarding table) and a 0 carries *Request an evaluation*; the matrix's cells open a side panel (**A** marks a college
+that could adopt; a column heading picks the college); the panel resizes from its left edge and the browser keeps the
+width; the Library's eleven photos cycle with *Pause photos*; the intro says *many*, and no public string says a bare
+MAP or CPL. **Credit status in public words, the Commons' curation words beside them:** Earns credit at a college
+(Awarded somewhere, 1,260) · Earns credit here / Earns credit elsewhere, could be added here (the two college-relative
+values, replacing Show) · Known to a college, no credit yet (In MAP, no articulation yet, 12) · Being reviewed (Held for
+title review, 1,171) · Not yet evaluated (Harvested, no exhibit yet, 7,389, the nightly watch's
+`kb/it_ai_credential_catalog.json`). Data: `kb/_build_adopt_page.py` also writes `adopt_more.json` (the other statuses,
+read after the first paint); `kb/_build_adopt_align.py` writes `adopt_align.json`, the **analysis for faculty** (issuer
+skill areas from `kb/reference/industry_credential_skills.json` against `public.course_outcomes`, an illustrative
+word-overlap score labeled so; the Foundation and ASCCC method, or a TypeSafe Jev Score per skill area, replaces it; Jev
+already runs the harvest, `tests/jev_harvest_test.py`). Both run daily. Tests `public_adopt` (73),
+`adopt_align_build_test.py` (9), `adopt_page_build_test.py` (32); `npm run a11y -- public-adopt public-adopt-dark
+public-adopt-matrix public-adopt-list` (the last two new). **Request an evaluation** ships with the routes that exist
+today: the college route through *Find your college* and *Credit for Being You* (the portal is recorded as a Found data
+source, `docs/reference/data_sources.md`), and a statewide line that says the list is being set up.
 
-**Another look (SkyCoralberry, 2026-10-31; Sam's words in the lessons doc).**
-`kb/_sweep_exhibit_titles.py` reads every title in the reference nightly (after the fold, in `daily-dashboard.yml` and
-`cer-procedures.yml`) and writes `kb/exhibits_sweep.json`: cards of local titles whose canonical title still differs,
-one per current and proposed title. Six rules: *ase* (a course named by its ASE code, or titled as an ASE test, takes
-*(ASE A7 Heating and Air Conditioning)*; a wrong code gives way to the course's own title), *numerals* (Arabic; State Fire
-Training's names keep Roman), *language* (*Elementary/Intermediate <Language> 1/2*, the level word first as C-ID names
-them), *course-code* (the exhibit's own college course number or a method word left in), *level* (the local title says 1A,
-the canonical 1B), *fold* (twins, one title over different courses at one college, a family's level word). A local
-course is one the colleges issue; an industry credential's or an exam's name is never read as a course number. First build: 134 cards over 168 local titles.
-The tab draws it as Review's *Another look* step (`#exhibits/another-look`). A conflict card's Change and Keep save the
-same way (SkyBilberry, Sam 2026-10-31); a title naming an ASE test fills its issuer with ASE until he types one; the
-issuer and site boxes offer the reference's names (`issuers`, `sites` in `kb/exhibits_review.json`). Change saves the `_UNCLASSIFIED::`
-assignment and issuer and `unified_title_supersedes` (the title replaced); the fold's **revise lane** applies it only
-while that title still stands, renames an emptied credential or retires it, and receipts both with the panel rows left
-under the old name. Keep saves `title_sweep_kept`, which never comes back. **ASE naming: the long form (Sam, 2026-10-31: *"go with the long form"*).** A local exhibit (the colleges issue it: college courses, high school and Cx) names the test as *Automotive Technology (ASE A5 Brakes)*; a title whose own words add to the test's, or carry a level (*Automotive Electrical/Electronics 1*), keeps its base; the ASE certification keeps its own name and ASE as issuer. The sweep's rule already proposes this form. Procedures `ase-paren`,
-`arabic-level-numerals`, `language-levels` (skill Rule 5h) teach the classifier the same. Guards: the sweep's build and jsdom tests, `tests/fold_unclassified_test.py`.
+**NEEDS SAM (Open Asks Sheet 162, 2026-11-06, built, unpublished): the statewide intake.** Sam's words: the public can
+"request that it be assessed at a particular college OR prioritized to be led by the CPL Initiative team with ASCCC for a
+statewide exhibit." The statewide route needs a write surface the public reaches (a request table with name, email,
+credential and route, through one RPC; Rule 10 a3: Governance map and the privacy ADRs first), and the count beside a
+credential ("12 people have asked") is the signal the priority list would run on. Held because it is outward and takes
+the public's names and emails. The page's statewide line changes to the form the day it is approved.
 
-## Status
-
-✅ **Live: the procedures run saves nightly, the fold applies per assignment, and the CER tab is three views (Needs
-you, Procedures, Reference).** Sheet 94's three rulings landed in S416 and S417 and the first saving run in S418
-(2026-10-18, 926 titles under 7 cohorts, receipt `kb/cer_procedures_out/saved/saved_2026-10-18T17-37-29Z.json`); the
-run-by-run figures are in the lessons doc's S416 to S418 sections.
-
-- **The fold holds per assignment (card 1, `kb/_fold_unclassified.py`).** V1 and V4 were an all-or-nothing hold; now a
-  conflict with a human-reviewed classification, or a raw whose articulation rows carry another title, holds only
-  itself and is listed in the report's `held` (with the standing title). On the real overlay the first apply folds 176
-  clean assignments and 12 supersedes, adds 157 credential records, and holds the 18 conflicts. The daily workflow
-  runs it unchanged (`--apply-if-safe`, which never fails the run). Guard: `tests/fold_unclassified_test.py`.
-- **The 18 conflicts are not in the queue.** The reference already classifies each raw under a human-reviewed entry
-  (a bulk review stamp of 2026-06-02), and the worklist assignment of the days after disagrees. The procedures run
-  reads the newest fold report's `held` and puts each on Needs you › Held with the standing title and a word, *Keep the
-  reference's title*, which clears the saved assignment (`clearUnclass`); the other way, re-keying a human-reviewed
-  entry, is a session's reviewed change.
-- **A sure result saves under its procedure (card 2, `kb/_cer_procedures.py --save on`, nightly default).** Every
-  pre-fill no reason holds (a rule procedure settled it, or the classifier is sure at 0.85 or better, a clean title,
-  no issuer conflict) is written to `kb_curation` as the tab's Save would write it, `_UNCLASSIFIED::<raw>` title and
-  issuer rows, under the cohort **`cer-procedure-<id>@bot`** of the procedure that decided it. Rule 10: a fresh
-  Range-paginated read first (a live row for the raw, whoever wrote it, holds the save), INSERT-only with duplicates
-  ignored, the receipt (`kb/cer_procedures_out/saved/saved_<ts>.json`) written before the INSERT and committed by the
-  workflow even when the run fails. **Undo by procedure:** `--undo <id>` deletes that cohort's rows in one call and
-  receipts them; rows the daily fold already carried into `kb/unified_titles.json` (their `reviewed_by` is the cohort)
-  are counted, and the fold commit that carried them is reverted. A rule procedure's settlement saves at the rule's
-  word, the course-identity rule's 0.8 included (the college's own course title, 96 of its 125; the 29 anchored to a
-  CCN or C-ID read 0.85).
-  `save=preview` on the workflow lists them and writes no row. Governance: `workflow:cer-procedures.yml` → DR-07.
-- **The store:** `kb/cer_procedures.json`, each procedure a rule in plain words with who set it, when, and
-  their words. Seven **rule** procedures settle a title by code, in order: brand families (an AP title takes College Board's official
-exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2614), the statewide
-  catalog, NCCER, CSLB, the apprenticeship trades, one-off singles (the pre-seed lanes of
-  `kb/_preseed_unclassified.py`) and the course-identity lookup (Rule 5c, `kb/unclassified_suggestions.json`,
-  which must share words with the college's own title: HIST 035 *History of African Americans* had joined
-  *Western Civilization II*). Five **guidance** procedures go to the classifier with the skill: the issuer
-  issues the card (2026-10-05), a named school is the agency (5f), level words last (5g), method words
-  collapse (8c), join and let faculty pull out (2026-09-20).
-- **The run:** `kb/_cer_procedures.py`, nightly in `cer-procedures.yml` (07:47 UTC, after the daily
-  dashboard refreshes the queue). A quality gate holds a proposal left with a dangling word, a method
-  word, a course code or a high school code. The **cx, hs and ic lanes only hint**: on today's queue they
-  wrote "for MUS 27" and "Kaiser High School". Writes `kb/unclassified_preseed.json` (the tab's
-  pre-fills, the file it already reads), `kb/cer_classified.json` and `kb/cer_procedures_out/latest.json`
-  (tallies and the Needs-you list). **Saving is card 2 above**: since the run of 17:37Z 2026-10-18 a pre-fill no reason holds saves under its procedure; the rest pre-fill.
-- **The classifier:** Edge Function `cer-classify` (v1, deployed S412; reads and writes nothing; service
-  key only; `claude-opus-5-5`, effort medium, 15 titles a call). The run sends the skill, every procedure
-  and the house families (about 48,000 tokens, cached). A title is asked once, and again when the
-  procedures change and its answer was unsure. First pass over the queue: about $8.
-- **The CER tab's views and its sign-off removal** (the tab is retired, Sheet 148): moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyInkberry)*.
-
-
-Sheet 94's three rulings (apply, save, retire; `sam-sheet-94-rulings-2026-10-18`) and Sheet 96 card 1 are in the lessons doc.
+**The Commons Exhibits List carries the same shape next (Sam, 2026-11-06: "make sure that any needed formatting or
+functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public
+face of the Exhibits reference plus the harvested lane).** Already there: the resizable side panel, drill-downs, the
+could-adopt courses behind a chip, Request Quick Adopt, the held and conflict queues, the industry lane, the SLO neighbor
+hints, procedure requests. **To add:** credit status as one band and filter across all four classes (held, conflict and
+industry are separate lanes today); the public evaluation requests as a queue item with its count, routed to a college or
+the statewide list; the analysis for faculty in the side panel; A for a could-adopt cell wherever a matrix shows; the
+table shape with 0 carrying the action. Public only: Start with, the photos, the portal hand-off.
 
 Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) and Sheet 149's (fold, routine) are in the lessons doc.
 
