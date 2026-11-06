@@ -35,4 +35,11 @@ related:
 
 ✅ **The combined tab is CPL Pathways (Sam, Open Asks Sheet 111 card 1, 2026-10-21).** My College is off the menu since S448 and still opens at `#college-briefing`. Open: Sierra Training's *Try it in: My College* still targets the tab (cpl_chat.js delivers only into a dock inside `#tab-college-briefing`); retarget it to CPL Pathways' section if Sam wants.
 
+🔨 **CPL Pathways and the college visual in the new format (Sam, 2026-11-06: *"1,2 Yes"*).** Fable advised. The visual
+(`library/cpl-opportunity/`) becomes figure cards over one course List (the model is per course: 47 carry CPL, 84 could
+adopt the 189 matches, 146 peers credit, at Cerritos) with a side panel per course and a Programs view; the Extract stays
+the whole record, print hides the panel, a link carries view, filter and row. CPL Pathways: the picker becomes cards and a
+List of the college's programs; a pathway stays full width at its address; the tab takes the new look (his call 2).
+Mockup v1, Cerritos: https://claude.ai/artifact/ESN3ZD6pk64ARJtj4kfty7 (awaiting his reaction before the port).
+
 **NEXT:** ⓪ ✅ **Two figures, two names (Sam, sheet 6 card 5, 2026-09-30):** *Start here* reads *units not yet acted on* (`dormant_credits`, the MEASURES headline); *units waiting* stays with the articulated units in *Where you stand* (`articulated_waiting`). Guard: `tests/my_college_units_labels.test.js`. ① the redesign in a browser; ② the region lists when he finds them; ③ Sam's eyes on the public page signed out — the check the sweep cannot make. Story: [`docs/college_action_page_lessons.md`](docs/college_action_page_lessons.md); durable [`a-second-copy-of-a-fact-is-a-stale-copy-waiting`](docs/kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md).
