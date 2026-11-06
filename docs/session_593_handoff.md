@@ -18,9 +18,12 @@ durable beyond the lessons entry), the decision sheet rebuild (no card changed).
 ## Side session
 
 Sam opened a **Credential Catalog** session by hand at about 11:50Z (*"I want CPL queue to keep going
-uninterrupted"*). It is the one writer for `kb/reference/industry_credential*`, `kb/exhibit_cert_links.json`,
-`docs/reference/credential_watch_agent.md` and `docs/session_credentials_lessons.md`. Read its PR body before step 10:
-if it declares a scope, step 10 stays off those files tonight.
+uninterrupted"*): SkyAerial, the Library side session, on the public Credential Catalog page (PR #2839,
+`claude/optimistic-cannon-hlzbco`; CPLBrain#686). Its message of 12:29Z names its files: `library/adopt/`,
+`tests/public_adopt.test.js`, the public-adopt targets in `a11y.config.js`, possibly `kb/_build_adopt_page.py`, the
+lanes `cer-procedures` and `eacr-exhibit-cr-adoption`, and `docs/library_handoff.md`. Stay off them. At a shared
+checkpoint file (`kb/docs_audit/`, `docs/kb-notes/`) the queue writes first and it rebases. The credential watch
+(step 10) is not in its scope.
 
 ## What shipped
 
