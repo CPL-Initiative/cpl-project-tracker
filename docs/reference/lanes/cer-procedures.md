@@ -76,7 +76,24 @@ units and credit lines. The **College matrix** is windowed like EACR's, shows un
 teaches a matching course, has arrow keys and a tooltip, and a content filter never drops a column. The page also offers
 both CSVs and **Create Handout** (the college's `library/cpl-opportunity/` visual). It writes nothing and remembers no
 filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19),
-`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width. *Worth a faculty review* (#2613) lists Credential
+`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width.
+**Sam's five asks on the page (2026-11-06, opening SkyAerial: "a good beginning for our credential registry"):** full width
+including the matrix; a matrix clickable where there is data; a working-adult first order instead of AP first; every
+filter multi-select, College and District as one picker (a district heads its colleges only where it has more than one)
+and SW Region and ASCCC Area as one Region picker under two headings; a mock to react to. Mock v1 on real rows:
+https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds (list grouped under field headers, largest work fields first and the
+exams last; Start with chips for five kinds of learner; a cell, a title or a column heading opens a side panel or picks the
+college). Waiting on his reaction before any port.
+**Mock v2 (same canvas, 2026-11-06 ~12:50Z), on Sam's next asks:** a **Standing** filter of its own (Awarded somewhere 1,260 ·
+In MAP, no articulation yet 45 · Held for title review ~1,200 · Harvested, no exhibit yet 7,401, the nightly watch's
+`kb/it_ai_credential_catalog.json`); a search names matches in the standings not picked. Every credential's panel takes a
+**request for an assessment**, at a named college (MAP's CPL contact) or statewide, led by the CPL Initiative with ASCCC
+(counted, prioritized); the mock drafts and sends nothing. An **analysis for faculty** lists the issuer's skill areas
+(`kb/reference/industry_credential_skills.json`, 65 credentials) against harvested course outcomes (`public.course_outcomes`,
+14 colleges, 11,004 courses; 20 of the skills credentials' articulated courses have them) with an illustrative word-overlap
+confidence; Sam named the Foundation and ASCCC skills-to-outcomes method as the real one and raised TypeSafe's Jev (a Score
+per skill area, probabilities and confidence returned, weights in code) as its engine. His words:
+`CPLBrain/03-professional/braindumps/braindump-2026-11-06-1240-public-request-assessment-skills-to-outcomes.md`. *Worth a faculty review* (#2613) lists Credential
 Engine's top-50 credentials MAP has no exhibit for (28), from the hand check `kb/reference/credential_engine_top50_map_check.json`;
 the IT/AI catalog's own join now needs the issuer to agree and reads that check (#2615; in MAP 89 to 102).
 
