@@ -9392,7 +9392,7 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'ASE A4 — Suspension and Steering' (conf 0.78)."
   },
   "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam": {
-    "unified_title": "Wheel Alignment, Chassis Dynamics, and ADAS",
+    "unified_title": "Wheel Alignment, Chassis Dynamics, ADAS",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
@@ -42187,7 +42187,7 @@
     "_notes": null
   },
   "VFOOD 210: ServeSafe Food Protection Manager Certification Exam Prep, Review, & Practice": {
-    "unified_title": "ServSafe Food Protection Manager",
+    "unified_title": "ServSafe Food Protection Manager Certification",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
