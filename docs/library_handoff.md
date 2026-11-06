@@ -36,6 +36,16 @@ mock*) and the Library ([`library`](reference/lanes/library.md)).
   "Request an evaluation" over "Request Adopt" for an unevaluated credential; "let's roll with this".
 
 ## Open work, in order
+0. **Sam's noncredit visual** (added by SkyBackflip, 2026-11-06): the Library record *Noncredit to Credit: How
+   Noncredit Learning Can Result in Credit* (`cpl_library` id `5e29e1d3-b1fc-4340-a3d7-9378e2e4d8b9`, Requested 14:50Z).
+   Read its brief, the [NC / Learning Partners lane](reference/lanes/nc-learning-partners.md) and the vault braindump
+   `03-professional/braindumps/braindump-2026-11-06-1450-noncredit-colleges-and-cpl-articulation.md` (his words; "they
+   can themselves articulate" reads as *cannot*: confirm before quoting). One page in the public library's look for
+   noncredit partners (SDCCE, NOCE): a noncredit college does not articulate credit itself; it works with its credit
+   counterparts so aligned courses and programs are evaluated for CPL and documented in a MAP exhibit, through mirrored
+   courses, noncredit assessments credit faculty accept as credit by exam, a noncredit portfolio class, and the
+   certifications its students earn. Mock it on a canvas first; file it as a Draft on that record. (Also merged today,
+   #2844: the Library's Create box is one form, and Start saves the piece.)
 1. **Merge the port PR on green `test`**, then **Sam's eyes on the live page** once Pages deploys (the matrix, the List
    with Not yet evaluated, a panel's analysis on CompTIA Security+).
 2. **Read Sheet 162's reply** (https://claude.ai/artifact/AGrQYmaAd6uHAPwXoi3epE) before building the statewide write surface;
