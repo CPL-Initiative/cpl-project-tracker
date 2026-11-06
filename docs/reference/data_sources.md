@@ -1,7 +1,7 @@
 ---
 title: "Data sources: the register of datasets that could fill a Commons gap"
 created: 2026-11-04
-updated: 2026-11-04
+updated: 2026-11-06
 tags: [reference, commons, data-sources, wishlist, procedures]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -54,6 +54,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | ACE, the new partnership | Found | Credit Recommendations, Exhibits | The lead shares the partnership's details |
 | WestEd's environmental scan of datasets and connections | Found | Every reference | The lead shares the scan; each dataset in it gets its own entry |
 | Credit for Being You, the student portal's requests | Found | Credentials (the harvested standing), Exhibits | Ask Malone what the portal records when a student names a credential no exhibit covers, and whether a request can arrive with the credential already named |
+| The state's license lists, the Department of Insurance's license types first | Found | Credentials (the harvested standing), Exhibits | Read the Department of Insurance's published license types; measure how many the Catalog lacks |
 
 ### CPL-AI, the Foundation and ASCCC's certification recommendations
 Faculty-reviewed credit recommendations for 115 industry certifications, each paired with courses colleges could
@@ -127,6 +128,17 @@ exhibit covers is the demand signal the statewide priority list would run on (7,
 exhibit today). And a hand-off in the other direction: a catalog row opening the portal with the credential already
 named, so the page keeps one intake rather than building a second. Malone holds the portal's data model; the
 questions above are his to answer, and a request that the portal expose or accept either is the lead's call.
+
+### The state's license lists, the Department of Insurance's license types first
+Each licensing agency in California publishes the licenses it issues; the Department of Insurance's list of license
+types (life agent, property and casualty broker-agent, and the rest) is the first to read, because a Pierce College
+Articulation Officer's email to Sam named three insurance licenses no record in the Credential Catalog held. The
+Catalog's California licenses come today through Credential Engine (source `ca` in `kb/_build_adopt_page.py`), which
+does not carry every agency's list. Plug-in: each license type joins the harvested standing as Not yet evaluated, with
+the agency as issuer and its lookup page as the link, so a visitor finds it before reaching for *Add your credential*;
+the route's verified submissions (`credential_submissions`, DR-32) are the measure of what the lists still miss. Plan:
+a public read of each agency's page, scheduled with the harvest, the Department of Insurance first and the Department
+of Consumer Affairs' boards next. Found by SkyHarbor on 2026-11-06, from Sam's ask in SkyLantern's run to record them.
 
 ### WestEd's environmental scan of datasets and connections
 Sam, 2026-11-04 (S573): *"west ed has a whole environmental scan of datasets and connections I need to feed to you."*

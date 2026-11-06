@@ -99,6 +99,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
 | `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
 | `credential_priority_requests` | tabs: `exhibits` · modules: `a11y.config.js` | — |
+| `credential_submissions` | tabs: `exhibits` | — |
 | `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
@@ -185,6 +186,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `credential_priority_counts` | pages: `library/adopt/index.html` | — |
 | `credential_priority_request` | pages: `library/adopt/index.html` | — |
 | `credential_recs_for_titles` | `edgefn:cpl-chat` | — |
+| `credential_submission_add` | pages: `library/adopt/index.html` | — |
+| `credential_submission_decide` | tabs: `exhibits` | — |
+| `credential_submissions_verified` | pages: `library/adopt/index.html` | — |
 | `exhibit_title_students` | tabs: `exhibits` | — |
 | `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
@@ -1310,5 +1314,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 107 Supabase tables · 51 RPCs · 12 edge functions · 802 file
+Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 802 file
 datasets · 193 external services · 528 consumers · 62 workflows · 40 tabs.

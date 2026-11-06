@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-06_credential_priority_requests.sql
-name=credential_priority_requests
+file=kb/migrations/2026-11-06_credential_submissions.sql
+name=credential_submissions

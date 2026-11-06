@@ -291,6 +291,11 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
 .ask-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .ask-row { margin-top: 8px; }
 .ask-form button[disabled] { color: var(--muted); cursor: default; }
+.add-offer { margin: 10px 0; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); }
+.add-offer p { margin: 0 0 4px; }
+.ask-form fieldset.add-kind { border: 0; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.ask-form fieldset.add-kind legend { font-size: .86rem; color: var(--heading); font-weight: 700; padding: 0; margin-bottom: 2px; }
+.ask-form fieldset.add-kind label { font-weight: 400; color: var(--ink); margin-top: 0; display: inline-flex; align-items: center; gap: 6px; min-height: 24px; }
 .skl { margin: 4px 0 0; padding-left: 18px; font-size: .9rem; }
 .skl li { margin: 2px 0; }
 .skl .w { color: var(--muted); }
@@ -520,6 +525,7 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
     </div>
     <p class="scope-note" id="ad-note"></p>
     <p class="scope-note" id="ad-other" hidden></p>
+    <div class="add-offer" id="ad-add" hidden></div>
     <div id="ad-list-view">
       <div id="ad-list"></div>
       <p class="empty" id="ad-empty" hidden>No credential matches these filters.</p>
