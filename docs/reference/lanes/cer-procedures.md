@@ -125,10 +125,14 @@ mapped to it, the counts read dismissed with its privacy reason; the dependency 
 functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public
 face of the Exhibits reference plus the harvested lane).** Already there: the resizable side panel, drill-downs, the
 could-adopt courses behind a chip, Request Quick Adopt, the held and conflict queues, the industry lane, the SLO neighbor
-hints, procedure requests. **To add:** credit status as one band and filter across all four classes (held, conflict and
-industry are separate lanes today); the public evaluation requests as a queue item with its count, routed to a college or
-the statewide list; the analysis for faculty in the side panel; A for a could-adopt cell wherever a matrix shows; the
-table shape with 0 carrying the action. Public only: Start with, the photos, the portal hand-off.
+hints, procedure requests, and (SkyLoop, 2026-11-06) **the public requests as the Requests view** (`#exhibits/requests`):
+one line per credential, most asked first, the colleges named or *Statewide only*, emails counted and never shown, first
+and last asked; the views row counts the asks still new and Progress lists them with *Read them*; the read goes behind the
+phrase or a reviewer sign-in (`tests/exhibits_requests.test.js`, 19). **To add:** credit status as one band and filter
+across all four classes (held, conflict and industry are separate lanes today); routing a request to a college or the
+statewide list from its line (a status stamp, service role today); the analysis for faculty in the side panel; A for a
+could-adopt cell wherever a matrix shows; the table shape with 0 carrying the action. Public only: Start with, the photos,
+the portal hand-off.
 
 Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) and Sheet 149's (fold, routine) are in the lessons doc.
 
