@@ -158,8 +158,8 @@ function pick(d, id, key, on) {
   const chips = Array.from(sec.querySelectorAll("a.chip"));
   check("Request Quick Adopt chips name the builders", chips.map((a) => a.textContent.replace(/ built.*/, "")).join() === "Beta,Gamma");
   check("every chip opens MAP in a new tab", chips.every((a) => /View=Non-Military$/.test(a.href) && a.target === "_blank" && /noopener/.test(a.rel)));
-  check("every card offers Ask us to prioritize this credential", d.querySelectorAll("#ad-list .cred [data-req]").length === 2
-    && Array.from(d.querySelectorAll("#ad-list .cred [data-req]")).every((b) => b.textContent === "Ask us to prioritize this credential"));
+  check("an articulated card carries no ask; it offers Request Quick Adopt (Sam, 2026-11-06)", d.querySelectorAll("#ad-list .cred").length === 2
+    && d.querySelectorAll("#ad-list .cred [data-req]").length === 0 && d.querySelectorAll("#ad-list .cred a.chip").length > 0);
   const hand = d.getElementById("ad-handout");
   check("Create Handout opens the college's visual", !hand.hidden && /cpl-opportunity\/\?college=Alpha%20College$/.test(hand.href));
   check("the status picker reads the scope's words", Array.from(d.querySelectorAll("#pk-standing .pp-row span:first-of-type")).map((s) => s.textContent).slice(0, 2).join("|") === "Earns credit here|Earns credit elsewhere, could be added here");
@@ -232,9 +232,14 @@ function pick(d, id, key, on) {
   const panel = d.getElementById("ad-panel");
   check("a cell opens the panel at that college", panel.classList.contains("open") && panel.getAttribute("aria-hidden") === "false" && /Credential at (Alpha|Gamma)/.test(d.getElementById("pn-kicker").textContent)
     && /awards <b>\d/.test(d.querySelector("#pn-body .focus").innerHTML));
-  check("the panel names the colleges, the request routes and the analysis", /colleges? awards? credit for it/.test(d.getElementById("pn-awards").textContent)
-    && /Find your college/.test(d.querySelector("#pn-body .req").textContent) && /Credit for Being You/.test(d.querySelector("#pn-body .req").textContent)
+  check("the panel names the colleges and the analysis; an articulated credential carries no ask", /colleges? awards? credit for it/.test(d.getElementById("pn-awards").textContent)
+    && !d.querySelector("#pn-body .req")
     && /Analysis for faculty/.test(d.getElementById("pn-body").textContent));
+  const rvAsk = d.querySelector("#ad-review [data-review]");
+  check("a Worth a faculty review card offers the ask (Sam, 2026-11-06)", rvAsk && rvAsk.textContent === "Ask us to prioritize this credential");
+  rvAsk.click();
+  await tick(40);
+  check("its panel carries the request routes", /Find your college/.test(d.querySelector("#pn-body .req").textContent) && /Credit for Being You/.test(d.querySelector("#pn-body .req").textContent));
   check("the statewide route is a request to prioritize review, never an evaluation promise (Sam, Sheet 162)",
     d.getElementById("pn-req").textContent.indexOf("Ask us to prioritize this credential") === 0
     && /prioritize this credential for review/.test(d.querySelector("#pn-body .req").textContent)
@@ -267,19 +272,19 @@ function pick(d, id, key, on) {
   check("the page remembers no filter", one.writes.every((k) => k === "cpl_theme" || k === "cpl_catalog_panel_w"));
 
   // A failed post says so and leaves the form; the counts read paints beside the credential.
-  const nay = await load("", { askFail: true, asks: [{ credential: "comptia security+", n: 4 }, { credential: "AWS Certified Cloud Practitioner", n: 2 }] });
+  const nay = await load("", { askFail: true, asks: [{ credential: "certified welder (cw)", n: 4 }, { credential: "comptia security+", n: 3 }, { credential: "AWS Certified Cloud Practitioner", n: 2 }] });
   d = nay.d;
   await tick(40);
-  d.querySelector("#ad-list .cred [data-req]").click();
+  d.querySelector("#ad-review [data-review]").click();
   await tick(40);
   const bf = d.getElementById("pn-ask-form");
-  check("a credential's count paints on its card and in the panel's heading", /4 people have asked/.test(d.querySelector("#ad-list .cred .askn").textContent)
+  check("a credential's count paints on its card and in the panel's heading", /4 people have asked/.test(d.querySelector("#ad-review .cred .askn").textContent)
     && /4 people have asked/.test(d.getElementById("pn-req").textContent) && nay.w.CPL_ADOPT.asked({ t: "AWS Certified Cloud Practitioner" }) === 2);
   bf.dispatchEvent(new d.defaultView.Event("submit", { bubbles: true, cancelable: true }));
   await tick(40);
   check("a failed post says so and keeps the form", /could not be sent/.test(d.getElementById("pn-ask-msg").textContent) && !bf.hidden && !bf.querySelector("button[type=submit]").disabled);
   d.querySelector('[data-view="table"]').click();
-  check("the List says how many asked, beside the credential", Array.from(d.querySelectorAll("#ad-tbl td .askn")).some((x) => x.textContent === "4 asked"));
+  check("the List says how many asked, beside the credential", Array.from(d.querySelectorAll("#ad-tbl td .askn")).some((x) => x.textContent === "3 asked"));
 
   // Without adopt_more.json the page stands on the settled credentials.
   const lone = await load("", { more: null });

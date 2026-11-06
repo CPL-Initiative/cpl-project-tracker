@@ -1,0 +1,47 @@
+{
+ "about": "Sam, in session 2026-11-06 (~20:30Z, SkyLantern), answering the two calls that held cred-rename-apply.yml from carrying the ServSafe fold: '1 yes, 2 yes'. (1) Retire his spent 2026-10-27 overrides on Spanish 1 and Spanish 2: each renames a title that has left the reference (the rename dry run's v2 source-exists check fails on both), so they can never apply and they hold every other rename. The four rows go by a guarded DELETE that names each by value and reviewer; the receipt keeps them whole and --rollback puts them back. The bulk issuer rows on the same keys (ccc-bulk-s108@bot) stay. (2) Confirm the merge of 'Wheel Alignment, Chassis Dynamics, and ADAS' into 'Wheel Alignment, Chassis Dynamics, ADAS': his 2026-10-27 override already names the target, which already exists, so the rename collided; a unified_title_merge_confirm naming the same target makes it a confirmed merge. The override row is in the plan only because a merge confirm rides with its override; it reads 'written' (his row).",
+ "ruling": "Sam Lee, in session 2026-11-06 (SkyLantern, the Library side session), '1 yes, 2 yes': retire the spent overrides on _CREDENTIAL_REVIEW::Spanish 1 and Spanish 2, and confirm the merge of Wheel Alignment, Chassis Dynamics, and ADAS into Wheel Alignment, Chassis Dynamics, ADAS; written by SkyBeacon",
+ "cohort": "exhibits-s595@bot",
+ "read_by_session": {
+  "at": "2026-11-06T20:45Z",
+  "how": "read-only select through the Supabase MCP tool: _CREDENTIAL_REVIEW::Spanish 1 and Spanish 2 each hold unified_title_override and unified_title_merge_confirm by slee@cccco.edu (2026-10-27, Elementary Spanish I and II) beside an issuing_agency_override by ccc-bulk-s108@bot; _CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS holds unified_title_override 'Wheel Alignment, Chassis Dynamics, ADAS' and issuing_agency_override (ASE) by slee@cccco.edu (2026-10-27) and no merge confirm; the target key holds two issuer rows and no title row; kb/credentials.json holds both Wheel Alignment titles"
+ },
+ "rows": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+   "field": "unified_title_override",
+   "value": "Wheel Alignment, Chassis Dynamics, ADAS"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+   "field": "unified_title_merge_confirm",
+   "value": "Wheel Alignment, Chassis Dynamics, ADAS"
+  }
+ ],
+ "retires": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+   "field": "unified_title_override",
+   "value": "Elementary Spanish I",
+   "reviewer_email": "slee@cccco.edu"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+   "field": "unified_title_merge_confirm",
+   "value": "Elementary Spanish I",
+   "reviewer_email": "slee@cccco.edu"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+   "field": "unified_title_override",
+   "value": "Elementary Spanish II",
+   "reviewer_email": "slee@cccco.edu"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+   "field": "unified_title_merge_confirm",
+   "value": "Elementary Spanish II",
+   "reviewer_email": "slee@cccco.edu"
+  }
+ ]
+}
