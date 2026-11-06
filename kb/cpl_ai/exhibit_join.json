@@ -1,0 +1,517 @@
+{
+ "_about": "The 115 CPL-AI certifications joined to the common exhibits (kb/credentials.json), by kb/_build_cpl_ai_join.py. Kinds: exact, named_under (flagged for a title fix), related. SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins.",
+ "decided": "SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins",
+ "counts": {
+  "certifications": 115,
+  "exact": 39,
+  "named_under": 7,
+  "related": 8,
+  "none": 61
+ },
+ "joins": {
+  "ace1": {
+   "kind": "named_under",
+   "exhibits": [
+    "Personal Training Certification"
+   ],
+   "reason": "A college title names ACE's Personal Trainer Certification, under an exhibit issued as California Community Colleges."
+  },
+  "acsm1": {
+   "kind": "named_under",
+   "exhibits": [
+    "Personal Trainer Instructor"
+   ],
+   "reason": "A college title names ACSM-CPT, under an exhibit that also holds NASM-CPT."
+  },
+  "adobe1": {
+   "kind": "exact",
+   "exhibits": [
+    "Adobe Certified Professional — Acrobat"
+   ],
+   "reason": "Adobe's Acrobat Pro professional certification; the exhibit is its only Acrobat identity."
+  },
+  "adobe8": {
+   "kind": "exact",
+   "exhibits": [
+    "Adobe Certified Professional — Visual Design (Photoshop)"
+   ],
+   "reason": "A college title names this exam word for word."
+  },
+  "ase1": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A1 — Engine Repair"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase10": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase2": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A2 — Automatic Transmission/Transaxle"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase3": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A3 — Manual Drive Train and Axles"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase4": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A4 — Suspension and Steering"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase5": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A5 — Brakes"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase6": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A6 — Electrical/Electronic Systems"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase7": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A7 — Heating and Air Conditioning"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase8": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A8 — Engine Performance"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase9": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A9 — Light Vehicle Diesel Engines"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "autodesk1": {
+   "kind": "exact",
+   "exhibits": [
+    "Autodesk Certified User/Professional — AutoCAD"
+   ],
+   "reason": "Autodesk's AutoCAD certification; the exhibit folds User and Professional."
+  },
+  "autodesk2": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "autodesk3": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "autodesk4": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "autodesk5": {
+   "kind": "exact",
+   "exhibits": [
+    "Autodesk Certified User/Professional — Revit Architecture"
+   ],
+   "reason": "Autodesk's Revit certification; the exhibit folds User and Professional."
+  },
+  "autodesk6": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "aws1": {
+   "kind": "related",
+   "exhibits": [
+    "AWS D1.1 Structural Welder Qualification"
+   ],
+   "reason": "AWS's welder qualification under D1.1; the Certified Welder program is a different credential."
+  },
+  "certiport1": {
+   "kind": "exact",
+   "exhibits": [
+    "Entrepreneurship and Small Business (ESB) Certification"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia1": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA A+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia10": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Network+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia11": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA PenTest+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia12": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Project+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia13": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Server+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia14": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Security+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia15": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Tech+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia3": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Cloud+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia4": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Cloud Essentials+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia5": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA CySA+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia9": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Linux+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "intuit1": {
+   "kind": "exact",
+   "exhibits": [
+    "Intuit QuickBooks Online Certified User"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "intuit2": {
+   "kind": "exact",
+   "exhibits": [
+    "Intuit Certified Bookkeeping Professional"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "microsoft1": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Certified: Azure AI Fundamentals"
+   ],
+   "reason": "Same exam (AI-900)."
+  },
+  "microsoft10": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — PowerPoint"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft11": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Word Expert"
+   ],
+   "reason": "Same exam (MO-101)."
+  },
+  "microsoft12": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Excel Expert"
+   ],
+   "reason": "Same exam (MO-211)."
+  },
+  "microsoft13": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Word"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft14": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Excel"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft2": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Certified: Azure Fundamentals (AZ-900)"
+   ],
+   "reason": "Same exam (AZ-900)."
+  },
+  "microsoft8": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Word"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft9": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Excel"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "mssc1": {
+   "kind": "related",
+   "exhibits": [
+    "MSSC Certified Production Technician (CPT) — Machinist"
+   ],
+   "reason": "MSSC's CPT under a title that mixes a military machinist designation."
+  },
+  "nasm1": {
+   "kind": "named_under",
+   "exhibits": [
+    "Personal Trainer Instructor"
+   ],
+   "reason": "A college title names NASM-CPT, under an exhibit issued as ACSM that also holds ACSM-CPT."
+  },
+  "rda1": {
+   "kind": "exact",
+   "exhibits": [
+    "Registered Dental Assistant (RDA) License"
+   ],
+   "reason": "The Dental Board of California's RDA license."
+  },
+  "servsafe1": {
+   "kind": "exact",
+   "exhibits": [
+    "ServSafe Food Protection Manager Certification",
+    "ServSafe Food Protection Manager"
+   ],
+   "reason": "The reference holds two exhibits for this one certification; the first carries the college titles, the second a course's. A fold for the CER."
+  },
+  "servsafe2": {
+   "kind": "related",
+   "exhibits": [
+    "Food Handler Card"
+   ],
+   "reason": "California's food handler card, which a ServSafe Food Handler course can lead to; a different credential."
+  },
+  "wwtp1": {
+   "kind": "related",
+   "exhibits": [
+    "Wastewater Treatment Plant Operator Grade 1"
+   ],
+   "reason": "CWEA's grade 1, a different issuer from the State Water Board's Grade I certificate."
+  },
+  "wwtp2": {
+   "kind": "named_under",
+   "exhibits": [
+    "Wastewater Treatment 1"
+   ],
+   "reason": "A college title names the State Water Board's wastewater grades II to V, under an exhibit titled like a course."
+  },
+  "wwtp3": {
+   "kind": "named_under",
+   "exhibits": [
+    "Wastewater Treatment 1"
+   ],
+   "reason": "A college title names the State Water Board's wastewater grades II to V, under an exhibit titled like a course."
+  },
+  "wwtp4": {
+   "kind": "named_under",
+   "exhibits": [
+    "Wastewater Treatment 1",
+    "Wastewater Treatment 2"
+   ],
+   "reason": "College titles name grades II to V and IV or V, under exhibits titled like courses."
+  },
+  "wwtp5": {
+   "kind": "named_under",
+   "exhibits": [
+    "Wastewater Treatment 1",
+    "Wastewater Treatment 2"
+   ],
+   "reason": "College titles name grades II to V and IV or V, under exhibits titled like courses."
+  }
+ },
+ "colleges": {
+  "Allan Hancock College": "Allan Hancock College",
+  "American River College": "American River College",
+  "Antelope Valley College": "Antelope Valley College",
+  "Bakersfield College": "Bakersfield College",
+  "Barstow Community College": "Barstow Community College",
+  "Berkeley City College": "Berkeley City College",
+  "Butte College": "Butte College",
+  "CALBRIGHT": null,
+  "Cabrillo College": "Cabrillo College",
+  "Canada College": "Cañada College",
+  "Cerritos College": "Cerritos College",
+  "Cerro Coso Community College": "Cerro Coso Community College",
+  "Chabot College": "Chabot College",
+  "Chaffey College": "Chaffey College",
+  "Citrus College": "Citrus College",
+  "City College of San Francisco": "City College of San Francisco",
+  "Clovis Community College": "Clovis Community College",
+  "Coastline Community College": "Coastline Community College",
+  "College of Alameda": "College of Alameda",
+  "College of Marin": "College of Marin",
+  "College of San Mateo": "College of San Mateo",
+  "College of the Canyons": "College of the Canyons",
+  "College of the Desert": "College of the Desert",
+  "College of the Redwoods": "College of the Redwoods",
+  "College of the Sequoias": "College of the Sequoias",
+  "College of the Siskiyous": "College of the Siskiyous",
+  "Columbia College": "Columbia College",
+  "Compton College": "Compton College",
+  "Contra Costa College": "Contra Costa College",
+  "Copper Mountain College": "Copper Mountain College",
+  "Cosumnes River College": "Cosumnes River College",
+  "Crafton Hills College": "Crafton Hills College",
+  "Cuesta College": "Cuesta College",
+  "Cuyamaca College": "Cuyamaca College",
+  "Cypress College": "Cypress College",
+  "De Anza College": "De Anza College",
+  "Diablo Valley College": "Diablo Valley College",
+  "East Los Angeles College": "East Los Angeles College",
+  "El Camino College": "El Camino College",
+  "Evergreen Valley College": "Evergreen Valley College",
+  "Feather River College": "Feather River College",
+  "Folsom Lake College": "Folsom Lake College",
+  "Foothill College": "Foothill College",
+  "Fresno City College": "Fresno City College",
+  "Fullerton College": "Fullerton College",
+  "Gavilan College": "Gavilan College",
+  "Glendale Community College": "Glendale Community College",
+  "Golden West College": "Golden West College",
+  "Grossmont College": "Grossmont College",
+  "Hartnell College": "Hartnell College",
+  "Imperial Valley College": "Imperial Valley College",
+  "Irvine Valley College": "Irvine Valley College",
+  "L.A. I.T.V.": null,
+  "Lake Tahoe Community College": "Lake Tahoe Community College",
+  "Laney College": "Laney College",
+  "Las Positas College": "Las Positas College",
+  "Lassen Community College": "Lassen College",
+  "Long Beach City College": "Long Beach City College",
+  "Los Angeles City College": "Los Angeles City College",
+  "Los Angeles Harbor College": "Los Angeles Harbor College",
+  "Los Angeles Mission College": "Los Angeles Mission College",
+  "Los Angeles Pierce College": "Los Angeles Pierce College",
+  "Los Angeles Southwest College": "Los Angeles Southwest College",
+  "Los Angeles Trade Technical College": "Los Angeles Trade Technical College",
+  "Los Angeles Valley College": "Los Angeles Valley College",
+  "Los Medanos College": "Los Medanos College",
+  "Madera Community College": "Madera College",
+  "Mendocino College": "Mendocino College",
+  "Merced College": "Merced College",
+  "Merritt College": "Merritt College",
+  "MiraCosta College": "MiraCosta College",
+  "Mission College": "Mission College",
+  "Modesto Junior College": "Modesto Junior College",
+  "Monterey Peninsula College": "Monterey Peninsula College",
+  "Moorpark College": "Moorpark College",
+  "Moreno Valley College": "Moreno Valley College",
+  "Mount San Antonio College": "Mt. San Antonio College",
+  "Mt. San Jacinto College": "Mt. San Jacinto College",
+  "NORTH ORANGE ADULT": "North Orange Continuing Education",
+  "Napa Valley College": "Napa Valley College",
+  "Norco College": "Norco College",
+  "Ohlone College": "Ohlone College",
+  "Orange Coast College": "Orange Coast College",
+  "Oxnard College": "Oxnard College",
+  "Palo Verde College": "Palo Verde College",
+  "Palomar College": "Palomar College",
+  "Pasadena City College": "Pasadena City College",
+  "Porterville College": "Porterville College",
+  "RANCHO SANTIAGO CED": null,
+  "Reedley College": "Reedley College",
+  "Rio Hondo College": "Rio Hondo College",
+  "Riverside City College": "Riverside City College",
+  "SAN DIEGO ADULT": "San Diego College of Continuing Education",
+  "SANTA BARBARA CED": null,
+  "Sacramento City College": "Sacramento City College",
+  "Saddleback College": "Saddleback College",
+  "San Bernardino Valley College": "San Bernardino Valley College",
+  "San Diego City College": "San Diego City College",
+  "San Diego Mesa College": "San Diego Mesa College",
+  "San Diego Miramar College": "San Diego Miramar College",
+  "San Joaquin Delta College": "San Joaquin Delta College",
+  "San Jose City College": "San Jose City College",
+  "Santa Ana College": "Santa Ana College",
+  "Santa Barbara City College": "Santa Barbara City College",
+  "Santa Monica College": "Santa Monica College",
+  "Santa Rosa Junior College": "Santa Rosa Junior College",
+  "Santiago Canyon College": "Santiago Canyon College",
+  "Shasta College": "Shasta College",
+  "Sierra College": "Sierra College",
+  "Skyline College": "Skyline College",
+  "Solano Community College": "Solano Community College",
+  "Southwestern College": "Southwestern College",
+  "Taft College": "Taft College",
+  "Ventura College": "Ventura College",
+  "Victor Valley College": "Victor Valley College",
+  "West Hills College Coalinga": "Coalinga College",
+  "West Hills College Lemoore": "Lemoore College",
+  "West Los Angeles College": "West Los Angeles College",
+  "West Valley College": "West Valley College",
+  "Woodland Community College": "Woodland Community College",
+  "Yuba College": "Yuba College"
+ }
+}

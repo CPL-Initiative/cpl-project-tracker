@@ -5,6 +5,8 @@
 //     pick narrows the counts to that college; search and sort;
 //   - a certification opens its gzipped shard (a college picked on the list stays picked), its pairs one line each, all three tiers, the tier words filter, a pair
 //     opens its full report (domains with evidence, the course outline, sources) and links the same report on CPL-AI;
+//   - the join (Sam, 2026-11-06, "join the 115 to common exhibits"): each certification names its exhibit, the words filter
+//     by kind, and a joined one says who awards it in MAP and which colleges hold a Strong course and do not award it yet;
 //   - #exhibits/cpl-ai/<code> opens one certification and the address reads back; a failed read says so;
 //   - the hosted files are whole (kb/_build_cpl_ai_hosted.py --check) when present, and the builder keeps one copy
 //     of the credit and caveat (it imports them from kb/_build_cpl_ai.py).
@@ -58,6 +60,11 @@ const SHARD = {
     { id: "ase4_c2", course: "c2", tier: 3, relevance: "PARTIAL", cosine: 0.4, ratio: 0.25, domains_n: 4, matched_n: 1, explicit: false, snapshot: [], disclaimer: "", source_tier_label: "",
       domains: [], scope_note: "", sources: [], report: false }],
 };
+const JOIN = { counts: { certifications: 2, exact: 1, named_under: 0, related: 0, none: 1 },
+  joins: { ase4: { kind: "exact", exhibits: ["ASE A4 — Suspension and Steering"], reason: "The ASE area code agrees." } },
+  colleges: { "Alpha College": "Alpha College", "Beta College": "Beta College" } };
+const ADOPT = { colleges: [["Alpha College", "Alpha"], ["Beta College", "Beta"]],
+  credentials: [{ t: "ASE A4 — Suspension and Steering", a: [[1, 3, "AUTO 50"]] }, { t: "Something else", a: [[0, 3, ""]] }] };
 const GZ = zlib.gzipSync(Buffer.from(JSON.stringify(SHARD)));
 
 function load(opts) {
@@ -74,6 +81,8 @@ function load(opts) {
     function bad(status) { return Promise.resolve({ ok: false, status: status, json: () => Promise.resolve({}) }); }
     if (url === "kb/exhibits_review.json") return ok({ schema: 1, written_at: "2026-11-01T07:50:00Z", sources: {}, tiles: { names: { n: 1, of: 1, waiting: 0 }, aligned: { n: 0, of: 0 } }, steps: {}, colleges: [], held: [] });
     if (url === "kb/cpl_ai/hosted/index.json") return opts.indexFail ? bad(404) : ok(INDEX);
+    if (url === "kb/cpl_ai/exhibit_join.json") return opts.joinFail ? bad(404) : ok(JOIN);
+    if (url === "library/adopt/adopt_data.json") return ok(ADOPT);
     if (url === "kb/cpl_ai/hosted/shards/ase4.json.gz") {
       const ab = GZ.buffer.slice(GZ.byteOffset, GZ.byteOffset + GZ.byteLength);
       return Promise.resolve({ ok: true, status: 200, arrayBuffer: () => Promise.resolve(ab) });
@@ -110,7 +119,14 @@ function btn(d, words) { return Array.from(d.querySelectorAll("#exh-cplai button
   let trs = Array.from(root.querySelectorAll("tbody tr"));
   check("every certification, A to Z, its pairs by tier", trs.length === 2 && /^ACE Certified/.test(txt(trs[0].querySelector("th")))
     && Array.from(trs[1].querySelectorAll("td")).slice(0, 5).map(txt).join("|") === "1|1|1|2|2");
-  check("a labeled region, row and column headers", root.querySelector('.exh-tblwrap[role="region"][aria-label="CPL-AI certifications"]') && root.querySelectorAll('th[scope="col"]').length === 7);
+  check("a labeled region, row and column headers", root.querySelector('.exh-tblwrap[role="region"][aria-label="CPL-AI certifications"]') && root.querySelectorAll('th[scope="col"]').length === 8);
+  check("the join: each certification names its common exhibit, or none yet", Array.from(trs[1].querySelectorAll("td"))[5].textContent === "ASE A4 — Suspension and Steering"
+    && /None yet/.test(Array.from(trs[0].querySelectorAll("td"))[5].textContent));
+  btn(t.d, "No exhibit yet (1)").click(); await settle();
+  check("the exhibit words filter: No exhibit yet", Array.from(t.d.querySelectorAll("#exh-cplai tbody tr th")).map(txt).join() === "ACE Certified Personal Trainer");
+  btn(t.d, "With a common exhibit (1)").click(); await settle();
+  check("the exhibit words filter: With a common exhibit, its count from the join", Array.from(t.d.querySelectorAll("#exh-cplai tbody tr th")).map(txt).join() === "ASE A4: Suspension and Steering");
+  btn(t.d, "Every certification").click(); await settle();
   check("the address reads exhibits/cpl-ai", t.w.__addr() === "exhibits/cpl-ai");
   const sel = t.d.getElementById("cai-college");
   sel.value = "Beta College"; sel.dispatchEvent(new t.w.Event("change")); await settle();
@@ -125,14 +141,23 @@ function btn(d, words) { return Array.from(d.querySelectorAll("#exh-cplai button
   // A certification.
   btn(t.d, "ASE A4: Suspension and Steering").click(); await settle(); await settle();
   let r2 = t.d.getElementById("exh-cplai");
+  { const s2 = t.d.getElementById("cai-college2"); s2.value = ""; s2.dispatchEvent(new t.w.Event("change")); await settle();
+    r2 = t.d.getElementById("exh-cplai");
+    const all = Array.from(r2.querySelectorAll("#cai-pairs-wrap tbody tr"));
+    check("Awards it reads Yes where the MAP college awards the exhibit", all.length === 3 && txt(all[2].children[7]) === "Yes" && txt(all[2].children[0]) === "Beta College");
+    s2.value = "Alpha College"; s2.dispatchEvent(new t.w.Event("change")); await settle(); r2 = t.d.getElementById("exh-cplai"); }
   check("the shard is read once, gzipped, and unpacked", t.calls.filter((c) => c === "kb/cpl_ai/hosted/shards/ase4.json.gz").length === 1 && /Assesses suspension and steering repair/.test(txt(r2)));
   check("the address reads exhibits/cpl-ai/ase4", t.w.__addr() === "exhibits/cpl-ai/ase4");
   check("the competencies fold", r2.querySelector("details.cai-more summary") && /Competencies the certification names \(2\)/.test(txt(r2.querySelector("details.cai-more summary"))));
   let prs = Array.from(r2.querySelectorAll("#cai-pairs-wrap tbody tr"));
   check("a college picked on the list carries into the certification: its pairs first, every tier", prs.length === 2 && /2 of 3 pairs/.test(txt(r2))
     && t.d.getElementById("cai-college2").value === "Alpha College" && prs.every((tr) => txt(tr.children[0]) === "Alpha College"));
-  check("a pair is one line: college, course, discipline, evidence, matched, alignment, units", prs[0].children.length === 7
-    && Array.from(prs[0].children).map(txt).join("|") === "Alpha College|AT 311 Suspension and Steering Systems|Automotive Technology|Strong evidence|2 of 2|100%|3.0");
+  check("a pair is one line: college, course, discipline, evidence, matched, alignment, units, awards it", prs[0].children.length === 8
+    && Array.from(prs[0].children).map(txt).join("|") === "Alpha College|AT 311 Suspension and Steering Systems|Automotive Technology|Strong evidence|2 of 2|100%|3.0|");
+  const ex = r2.querySelector(".cai-exh");
+  check("the certification names its common exhibit and the reason", ex && /Common exhibit: ASE A4 — Suspension and Steering\./.test(txt(ex)) && /ASE area code agrees/.test(txt(ex)));
+  check("MAP's standing: awarded at 1 college; 1 college holds a Strong course; it does not award it yet", /Awarded at 1 college in MAP\. 1 college holds a Strong evidence course; 1 of them does not award it yet\./.test(txt(ex))
+    && /Alpha College: AT 311/.test(txt(ex.querySelector(".cai-leads"))) && t.calls.filter((c) => c === "library/adopt/adopt_data.json").length === 1);
   btn(t.d, "Limited evidence").click(); await settle();
   prs = Array.from(t.d.querySelectorAll("#cai-pairs-wrap tbody tr"));
   check("a tier word filters", prs.length === 2 && btn(t.d, "Limited evidence").getAttribute("aria-pressed") === "false" && !prs.some((tr) => /Limited/.test(txt(tr))));
@@ -155,7 +180,8 @@ function btn(d, words) { return Array.from(d.querySelectorAll("#exh-cplai button
   const C = t.w.CPL_EXHIBITS_CPLAI;
   check("pure: pairRows by college and search", C._pairRows(SHARD, { q: "brakes", college: "", tiers: { 1: true, 2: true, 3: true } }).map((p) => p.id).join() === "ase4_c2"
     && C._pairRows(SHARD, { q: "", college: "Alpha College", tiers: { 1: true, 2: false, 3: true } }).map((p) => p.id).join() === "ase4_c1");
-  const csv = C._pairCsv(INDEX, SHARD, SHARD.pairs).split("\r\n");
+  const csv = C._pairCsv(INDEX, SHARD, SHARD.pairs, { "Beta College": true }).split("\r\n");
+  check("pure: the CSV says which college awards it in MAP", /,Yes,https/.test(csv[3]) && /,No,https/.test(csv[1]));
   check("pure: the CSV, one line a pair, with its CPL-AI report", csv[0].indexOf("Certification,College,Course") === 0 && csv.length === 5 && /\?report=ase4_c2#recommendations$/.test(csv[3]));
   const plain = Buffer.from(JSON.stringify({ a: 1 }));
   const fromPlain = await C._decode(plain.buffer.slice(plain.byteOffset, plain.byteOffset + plain.byteLength));
@@ -165,16 +191,25 @@ function btn(d, words) { return Array.from(d.querySelectorAll("#exh-cplai button
   t = load({ hash: "#exhibits/cpl-ai/ase4" });
   await t.M.boot(); await settle(); await settle();
   check("#exhibits/cpl-ai/ase4 opens the certification", txt(t.d.getElementById("cai-cert-h")) === "ASE A4: Suspension and Steering" && t.d.querySelectorAll("#cai-pairs-wrap tbody tr").length === 3);
+  t = load({ hash: "#exhibits/cpl-ai", joinFail: true });
+  await t.M.boot(); await settle();
+  check("without the join file the list still stands, no exhibit column words", t.d.querySelectorAll("#exh-cplai tbody tr").length === 2 && !btn(t.d, "No exhibit yet (1)"));
   t = load({ hash: "#exhibits/cpl-ai", indexFail: true });
   await t.M.boot(); await settle();
   check("a failed read says so", /The CPL-AI data could not be read \(HTTP 404\)/.test(txt(t.d.getElementById("exh-cplai"))));
 
+  // The join's file, when present, is current and every exhibit it names still exists.
+  if (fs.existsSync("kb/cpl_ai/exhibit_join.json")) {
+    const jo = require("child_process").spawnSync("python3", ["kb/_build_cpl_ai_join.py", "--check"], { encoding: "utf8" });
+    check("the join is current: " + (jo.stdout || jo.stderr).trim(), jo.status === 0);
+  }
   // The hosted files, when present, are whole.
   if (fs.existsSync("kb/cpl_ai/hosted/index.json")) {
     const out = require("child_process").spawnSync("python3", ["kb/_build_cpl_ai_hosted.py", "--check"], { encoding: "utf8" });
     check("the hosted snapshot is whole: " + (out.stdout || out.stderr).trim(), out.status === 0);
     const ix = JSON.parse(fs.readFileSync("kb/cpl_ai/hosted/index.json", "utf8"));
-    check("the hosted index carries all three tiers and no missing report", Object.keys(ix.tiers).length === 3 && ix.missing_reports.length === 0 && ix.counts.reports === ix.counts.pairs);
+    check("the hosted index carries all three tiers and no missing report", Object.keys(ix.tiers).length === 3 && ix.missing_reports.length === 0 && ix.counts.reports === ix.counts.pairs
+      && Object.values(ix.counts.by_tier).reduce((a, b) => a + b, 0) === ix.counts.pairs);
   }
 
   const failed = results.filter((r) => !r[1]);

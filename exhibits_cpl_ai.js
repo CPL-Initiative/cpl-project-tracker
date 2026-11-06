@@ -9,7 +9,10 @@
  * (every course pair in all three tiers with the full report: scores, the domain-by-domain alignment with quoted
  * evidence, the course outline's outcomes and skills, the sources). The view lists the certifications, opens one to
  * its pairs (one line each, filtered by evidence, college and search, drawn a batch at a time as the reader nears the
- * end), and opens a pair to its report, with a link to the same report on the CPL-AI page. It writes nothing and
+ * end), and opens a pair to its report, with a link to the same report on the CPL-AI page. Each certification names its
+ * common exhibit (kb/cpl_ai/exhibit_join.json, Sam 2026-11-06: "join the 115 to common exhibits"), and for an exhibit MAP
+ * awards, who awards it and which colleges hold a Strong evidence course and do not award it yet (the Credential
+ * Catalog's library/adopt/adopt_data.json, read when such a certification opens). It writes nothing and
  * remembers no filter (Sam, 2026-10-21); #exhibits/cpl-ai/<code> opens one certification.
  *
  * exhibits.js mounts it: CPL_EXHIBITS_CPLAI.mount(host, { onChange }) on every render of the view.
@@ -18,12 +21,17 @@
   "use strict";
 
   var INDEX_URL = "kb/cpl_ai/hosted/index.json";
+  var JOIN_URL = "kb/cpl_ai/exhibit_join.json";          /* kb/_build_cpl_ai_join.py: the 115 joined to common exhibits */
+  var ADOPT_URL = "library/adopt/adopt_data.json";      /* the Credential Catalog's daily file: who awards each exhibit */
+  var KIND = { exact: "Common exhibit", named_under: "Named under another exhibit", related: "Related exhibit" };
+  var HAS = [["", "Every certification"], ["exact", "With a common exhibit"], ["named_under", "Named under another exhibit"], ["related", "Related exhibit only"], ["none", "No exhibit yet"]];
   var SHARD_DIR = "kb/cpl_ai/hosted/shards/";
   var BATCH = 100;
   var TIER_ORDER = ["1", "2", "3"];
 
   var S = { index: null, error: null, loading: null, shards: {}, shardErr: {}, code: null, pair: null,
-    q: "", college: "", tiers: { "1": true, "2": true, "3": true }, sort: "title", shown: BATCH, onChange: null };
+    q: "", college: "", tiers: { "1": true, "2": true, "3": true }, sort: "title", shown: BATCH, onChange: null,
+    join: null, has: "", adopt: null, adoptErr: null, adoptLoading: null };
 
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
@@ -61,9 +69,12 @@
   function load() {
     if (S.index) return Promise.resolve(S.index);
     if (S.loading) return S.loading;
+    var join = fetch(JOIN_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (j) { S.join = j; }, function () { S.join = null; });   /* the view stands without the join */
     S.loading = fetch(INDEX_URL, { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (d) { S.index = d; S.error = null; return d; })
+      .then(function (d) { return join.then(function () { S.index = d; S.error = null; return d; }); })
       .catch(function (e) { S.error = e && e.message || String(e); })
       .then(function (d) { S.loading = null; changed(); return d; });
     return S.loading;
@@ -81,22 +92,52 @@
       .then(function () { changed(); return S.shards[code] || null; });
   }
 
+  function joinOf(code) { return S.join && S.join.joins ? S.join.joins[code] || null : null; }
+  function loadAdopt() {
+    if (S.adopt || S.adoptLoading) return S.adoptLoading || Promise.resolve(S.adopt);
+    S.adoptLoading = fetch(ADOPT_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { S.adopt = d; }, function (e) { S.adoptErr = e && e.message || String(e); })
+      .then(function () { S.adoptLoading = null; changed(); });
+    return S.adoptLoading;
+  }
+  /* The MAP colleges that award a joined certification's exhibit(s), as MAP's college names; null until the file is read. */
+  function awarding(code) {
+    var j = joinOf(code);
+    if (!j || j.kind === "related" || !S.adopt) return null;
+    var names = {}, want = {};
+    j.exhibits.forEach(function (e) { want[e] = true; });
+    (S.adopt.credentials || []).forEach(function (c) {
+      if (want[c.t]) (c.a || []).forEach(function (a) { var col = S.adopt.colleges[a[0]]; if (col) names[col[0]] = true; });
+    });
+    return names;
+  }
+  /* A CPL-AI college as MAP names it (the join file's crosswalk), or null. */
+  function mapCollege(name) { return S.join && S.join.colleges ? S.join.colleges[name] || null : null; }
+
   function open(code, pairId) {
     S.code = code || null; S.pair = pairId || null; S.shown = BATCH;
-    if (!code) { S.q = ""; S.college = ""; S.tiers = { "1": true, "2": true, "3": true }; }
-    if (code) loadShard(code);
+    if (!code) { S.q = ""; S.college = ""; S.tiers = { "1": true, "2": true, "3": true }; S.has = ""; }
+    if (code) { loadShard(code); var j = joinOf(code); if (j && j.kind !== "related") loadAdopt(); }
     changed();
   }
   function address() { return "exhibits/cpl-ai" + (S.code ? "/" + encodeURIComponent(S.code) : ""); }
 
   /* ── pure parts (tests) ── */
-  function credRows(index, f) {
+  function credRows(index, f, join) {
     var q = (f.q || "").toLowerCase(), ci = f.college ? index.colleges.indexOf(f.college) : -1;
+    var J = join && join.joins || {};
     var out = index.credentials.map(function (c) {
       var t = c.by_tier;
       if (ci >= 0) { var b = (c.by_college || {})[ci]; if (!b) return null; t = { "1": b[0], "2": b[1], "3": b[2] }; }
       return { c: c, t: t, n: t["1"] + t["2"] + t["3"] };
-    }).filter(function (r) { return r && (!q || r.c.title.toLowerCase().indexOf(q) >= 0 || (r.c.disciplines || []).join(" ").toLowerCase().indexOf(q) >= 0); });
+    }).filter(function (r) {
+      if (!r) return false;
+      r.j = J[r.c.code] || null;
+      if (f.has && (f.has === "none" ? r.j : !r.j || r.j.kind !== f.has)) return false;
+      var hay = r.c.title + " " + (r.c.disciplines || []).join(" ") + " " + (r.j ? r.j.exhibits.join(" ") : "");
+      return !q || hay.toLowerCase().indexOf(q) >= 0;
+    });
     out.sort(f.sort === "most" ? function (a, b) { return (b.t["1"] - a.t["1"]) || (b.n - a.n) || a.c.title.localeCompare(b.c.title); }
       : function (a, b) { return a.c.title.localeCompare(b.c.title, "en", { sensitivity: "base", numeric: true }); });
     return out;
@@ -112,13 +153,13 @@
     });
   }
   function csvCell(v) { v = v == null ? "" : String(v); return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
-  function pairCsv(index, shard, rows) {
-    var head = ["Certification", "College", "Course", "Course title", "Discipline", "Units", "Evidence", "Relevance", "Alignment ratio", "Similarity", "Domains matched", "Domains", "CPL-AI report"];
+  function pairCsv(index, shard, rows, aw) {
+    var head = ["Certification", "College", "Course", "Course title", "Discipline", "Units", "Evidence", "Relevance", "Alignment ratio", "Similarity", "Domains matched", "Domains", "Awards it in MAP", "CPL-AI report"];
     var lines = [head.map(csvCell).join(",")];
     rows.forEach(function (p) {
       var co = shard.courses[p.course] || {};
       lines.push([shard.credential.title, co.college, co.code, co.title, co.discipline, co.units && co.units.display || "", index.tiers[String(p.tier)],
-        p.relevance, p.ratio, p.cosine, p.matched_n, p.domains_n, reportUrl(index, p.id)].map(csvCell).join(","));
+        p.relevance, p.ratio, p.cosine, p.matched_n, p.domains_n, aw ? (aw[mapCollege(co.college)] ? "Yes" : "No") : "", reportUrl(index, p.id)].map(csvCell).join(","));
     });
     return lines.join("\r\n") + "\r\n";
   }
@@ -167,7 +208,14 @@
     host.appendChild(el("p", { cls: "exh-state", text: fmt(c.pairs) + " pairs: " + fmt(c.certifications) + " certifications, " + fmt(c.colleges) + " colleges, "
       + fmt(c.courses) + " courses; " + TIER_ORDER.map(function (k) { return fmt(c.by_tier[k]) + " " + index.tiers[k].toLowerCase(); }).join(", ") + "." }));
     host.appendChild(el("div", { cls: "cai-bar" }, [search("cai-q", "Search", "Certification or discipline"), collegePick(index, "cai-college")]));
-    var rows = credRows(index, S);
+    if (S.join) {
+      var jc = S.join.counts || {};
+      host.appendChild(el("div", { cls: "exh-views", role: "group", "aria-label": "Joined to a common exhibit" }, [el("span", { cls: "exh-muted", text: "Exhibit" })].concat(HAS.map(function (h) {
+        var n = h[0] ? jc[h[0]] : null;
+        return word(h[1] + (n != null ? " (" + fmt(n) + ")" : ""), function () { S.has = h[0]; changed(); }, { "aria-pressed": String(S.has === h[0]) });
+      }))));
+    }
+    var rows = credRows(index, S, S.join);
     host.appendChild(el("div", { cls: "cai-bar" }, [
       el("div", { cls: "exh-views", role: "group", "aria-label": "Sort" }, [el("span", { cls: "exh-muted", text: "Sort" }),
         word("A to Z", function () { S.sort = "title"; changed(); }, { "aria-pressed": String(S.sort !== "most") }),
@@ -179,13 +227,15 @@
         el("th", { scope: "row", title: r.c.title }, [word(r.c.title, function () { open(r.c.code); })]),
         el("td", { cls: "exh-num", text: fmt(r.t["1"]) }), el("td", { cls: "exh-num", text: fmt(r.t["2"]) }), el("td", { cls: "exh-num", text: fmt(r.t["3"]) }),
         el("td", { cls: "exh-num", text: S.college ? "" : fmt(r.c.colleges) }), el("td", { cls: "exh-num", text: S.college ? "" : fmt(r.c.courses) }),
+        el("td", { cls: "cai-clip", title: r.j ? KIND[r.j.kind] + ": " + r.j.exhibits.join("; ") + ". " + r.j.reason : "No common exhibit yet" },
+          r.j ? [r.j.exhibits[0], r.j.kind !== "exact" ? el("span", { cls: "exh-muted", text: " (" + (r.j.kind === "related" ? "related" : "named under") + ")" }) : null] : [el("span", { cls: "exh-muted", text: "None yet" })]),
         el("td", { cls: "cai-clip", title: (r.c.disciplines || []).join(", "), text: (r.c.disciplines || []).join(", ") })]));
     });
     var table = el("table", { cls: "exh-pq cai-one" }, [
-      el("colgroup", {}, ["36%", "9%", "11%", "9%", "8%", "8%", "19%"].map(function (w) { return el("col", { style: "width:" + w }); })),
+      el("colgroup", {}, ["27%", "8%", "10%", "8%", "7%", "7%", "21%", "12%"].map(function (w) { return el("col", { style: "width:" + w }); })),
       el("thead", {}, [el("tr", {}, [el("th", { scope: "col", text: "Certification" }), el("th", { scope: "col", cls: "exh-num", text: index.tiers["1"] }),
         el("th", { scope: "col", cls: "exh-num", text: index.tiers["2"] }), el("th", { scope: "col", cls: "exh-num", text: index.tiers["3"] }),
-        el("th", { scope: "col", cls: "exh-num", text: "Colleges" }), el("th", { scope: "col", cls: "exh-num", text: "Courses" }), el("th", { scope: "col", text: "Disciplines" })])]), tb]);
+        el("th", { scope: "col", cls: "exh-num", text: "Colleges" }), el("th", { scope: "col", cls: "exh-num", text: "Courses" }), el("th", { scope: "col", text: "Common exhibit" }), el("th", { scope: "col", text: "Disciplines" })])]), tb]);
     host.appendChild(rows.length ? el("div", { cls: "exh-tblwrap cai-box", role: "region", "aria-label": "CPL-AI certifications", tabindex: "0" }, [table])
       : el("p", { cls: "exh-empty", text: "No certification matches." }));
   }
@@ -204,12 +254,13 @@
     if (sh.credential.description) host.appendChild(el("p", { cls: "cai-prose", text: sh.credential.description }));
     if ((sh.credential.competencies || []).length) host.appendChild(el("details", { cls: "cai-more" }, [el("summary", { text: "Competencies the certification names (" + sh.credential.competencies.length + ")" }),
       el("ul", {}, sh.credential.competencies.map(function (t) { return el("li", { text: t }); }))]));
+    host.appendChild(exhibitBlock(index, sh));
     if (S.pair) drawReport(host, index, sh);
     host.appendChild(tierWords(index));
     host.appendChild(el("div", { cls: "cai-bar" }, [search("cai-q2", "Search", "College, course or discipline"), collegePick(index, "cai-college2")]));
-    var rows = pairRows(sh, S), shown = rows.slice(0, S.shown);
+    var rows = pairRows(sh, S), shown = rows.slice(0, S.shown), aw = awarding(S.code);
     host.appendChild(el("div", { cls: "cai-bar" }, [el("span", { cls: "exh-state", text: fmt(rows.length) + " of " + fmt(sh.pairs.length) + " pairs" }),
-      word("Download these pairs (CSV)", function () { download("cpl-ai-" + S.code + ".csv", pairCsv(index, sh, rows)); })]));
+      word("Download these pairs (CSV)", function () { download("cpl-ai-" + S.code + ".csv", pairCsv(index, sh, rows, aw)); })]));
     if (!rows.length) { host.appendChild(el("p", { cls: "exh-empty", text: "No pair matches these filters." })); return; }
     var tb = el("tbody");
     shown.forEach(function (p) {
@@ -222,14 +273,15 @@
         el("td", { cls: "cai-clip", text: index.tiers[String(p.tier)] }),
         el("td", { cls: "exh-num", text: p.matched_n + " of " + p.domains_n }),
         el("td", { cls: "exh-num", text: pct(p.ratio) }),
-        el("td", { cls: "exh-num", text: co.units && co.units.display || "" })]));
+        el("td", { cls: "exh-num", text: co.units && co.units.display || "" }),
+        el("td", { text: aw ? (aw[mapCollege(co.college)] ? "Yes" : "") : "" })]));
     });
-    if (shown.length < rows.length) tb.appendChild(el("tr", { cls: "cai-sentinel", id: "cai-sentinel" }, [el("td", { colspan: "7" }, [
+    if (shown.length < rows.length) tb.appendChild(el("tr", { cls: "cai-sentinel", id: "cai-sentinel" }, [el("td", { colspan: "8" }, [
       word("Show more (" + fmt(rows.length - shown.length) + " more)", function () { S.shown += BATCH; changed(); })])]));
     var wrap = el("div", { cls: "exh-tblwrap cai-box", id: "cai-pairs-wrap", role: "region", "aria-label": "Pairs for " + ln.title, tabindex: "0" }, [el("table", { cls: "exh-pq cai-one" }, [
-      el("colgroup", {}, ["20%", "32%", "17%", "13%", "7%", "6%", "5%"].map(function (w) { return el("col", { style: "width:" + w }); })),
-      el("thead", {}, [el("tr", {}, ["College", "Course", "Discipline", "Evidence", "Domains matched", "Alignment", "Units"].map(function (t, i) {
-        return el("th", { scope: "col", cls: i >= 4 ? "exh-num" : null, text: t });
+      el("colgroup", {}, ["19%", "30%", "16%", "12%", "7%", "6%", "4%", "6%"].map(function (w) { return el("col", { style: "width:" + w }); })),
+      el("thead", {}, [el("tr", {}, ["College", "Course", "Discipline", "Evidence", "Domains matched", "Alignment", "Units", "Awards it"].map(function (t, i) {
+        return el("th", { scope: "col", cls: i >= 4 && i < 7 ? "exh-num" : null, text: t });
       }))]), tb])]);
     host.appendChild(wrap);
     watch(wrap);
@@ -249,6 +301,34 @@
       var again = document.getElementById("cai-pairs-wrap"); if (again) again.scrollTop = top;
     }, { root: wrap, rootMargin: "0px 0px 300px 0px" });
     obs.observe(s);
+  }
+
+  /* The certification's common exhibit, and what MAP shows for it: who awards it, and which colleges hold a Strong
+     evidence course and do not award it yet (the adoption leads). */
+  function exhibitBlock(index, sh) {
+    var j = joinOf(S.code), box = el("div", { cls: "cai-exh" });
+    if (!j) {
+      box.appendChild(el("p", {}, [el("b", { text: "No common exhibit yet. " }), "No MAP exhibit holds this certification; a college that awards it would build the first."]));
+      return box;
+    }
+    box.appendChild(el("p", {}, [el("b", { text: KIND[j.kind] + ": " }), j.exhibits.join("; ") + ". ", el("span", { cls: "exh-muted", text: j.reason })]));
+    if (j.kind === "named_under") box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Flagged for a title fix in the reference: the exhibit's own title names something broader or different." }));
+    if (j.kind === "related") return box;
+    var aw = awarding(S.code);
+    if (!aw) { box.appendChild(el("p", { cls: "exh-small exh-muted", text: S.adoptErr ? "Who awards it in MAP could not be read (" + S.adoptErr + ")." : "Reading who awards it in MAP…" })); return box; }
+    var awN = Object.keys(aw).length, strong = {}, lead = {};
+    sh.pairs.forEach(function (p) {
+      if (p.tier !== 1) return;
+      var co = sh.courses[p.course] || {}, m = mapCollege(co.college);
+      strong[co.college] = true;
+      if (!m || !aw[m]) (lead[co.college] = lead[co.college] || []).push(co.code);
+    });
+    var leads = Object.keys(lead).sort();
+    box.appendChild(el("p", {}, [awN ? "Awarded at " + fmt(awN) + (awN === 1 ? " college" : " colleges") + " in MAP. " : "No college awards it in MAP yet, or the exhibit's credit is still being reviewed. ",
+      fmt(Object.keys(strong).length) + (Object.keys(strong).length === 1 ? " college holds" : " colleges hold") + " a Strong evidence course; " + fmt(leads.length) + " of them " + (leads.length === 1 ? "does" : "do") + " not award it yet."]));
+    if (leads.length) box.appendChild(el("details", { cls: "cai-more" }, [el("summary", { text: "The " + fmt(leads.length) + (leads.length === 1 ? " college" : " colleges") + " with a Strong evidence course that do not award it yet" }),
+      el("ul", { cls: "cai-leads" }, leads.map(function (c) { return el("li", { text: c + ": " + lead[c].join(", ") }); }))]));
+    return box;
   }
 
   function drawReport(host, index, sh) {
@@ -324,6 +404,8 @@
     ".cai-dom { min-width:760px; } .cai-dom th[scope=row] { color:var(--text-strong); }",
     ".cai-ev, .cai-snap { margin:0; padding-left:1.1em; } .cai-ev li { margin-bottom:4px; }",
     ".cai-more summary { cursor:pointer; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
+    ".cai-exh { display:grid; gap:4px; padding:8px 12px; border-left:4px solid var(--seal-blue-text); background:var(--surface-subtle); border-radius:0 8px 8px 0; }",
+    ".cai-exh p { margin:0; } .cai-leads { columns:2 260px; margin:4px 0 0; padding-left:1.1em; }",
     ".cai-prose { margin:0; max-width:var(--cpl-measure,none); color:var(--text-body); }",
     "button.exh-w[aria-pressed=true] { color:var(--text-strong); font-weight:600; text-decoration-thickness:3px; text-decoration-color:var(--seal-blue-text); }",
     "@media (max-width:560px) { .cai-bar { flex-direction:column; align-items:stretch; } }"
@@ -334,5 +416,5 @@
   }
 
   window.CPL_EXHIBITS_CPLAI = { mount: mount, load: load, loadShard: loadShard, open: open, address: address, _state: S,
-    _decode: decode, _credRows: credRows, _pairRows: pairRows, _pairCsv: pairCsv, _reportUrl: reportUrl };
+    _decode: decode, _credRows: credRows, _pairRows: pairRows, _pairCsv: pairCsv, _reportUrl: reportUrl, _awarding: awarding };
 })();

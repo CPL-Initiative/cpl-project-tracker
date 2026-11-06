@@ -128,7 +128,7 @@ def build(catalog, reports, fetched_at):
         "tiers": TIERS,
         "counts": {"pairs": len(catalog), "reports": len(catalog) - len(missing), "certifications": len(by_cred),
                    "colleges": len({r["college"] for r in catalog}), "courses": len({r["courseId"] for r in catalog}),
-                   "by_tier": {k: tiers.get(int(k), 0) for k in TIERS}},
+                   "by_tier": {k: tiers.get(k, 0) for k in TIERS}},
         "missing_reports": missing,
         "credentials": lines,
         "colleges": college_list,
@@ -168,6 +168,8 @@ def check():
         if any(pr["course"] not in s["courses"] for pr in s["pairs"]):
             bad.append(line["file"] + " names a course it does not hold")
         n += len(s["pairs"])
+    if sum(index["counts"]["by_tier"].values()) != index["counts"]["pairs"]:
+        bad.append("the tier counts sum to %d, the pairs are %d" % (sum(index["counts"]["by_tier"].values()), index["counts"]["pairs"]))
     if n != index["counts"]["pairs"]:
         bad.append("the shards hold %d pairs, the catalog %d" % (n, index["counts"]["pairs"]))
     if bad:

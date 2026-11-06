@@ -42,7 +42,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 
 | Source | Stage | Would feed | Next step |
 |---|---|---|---|
-| CPL-AI, the Foundation and ASCCC's certification recommendations | Connected, hosted whole (frozen) | Credit Recommendations, Exhibits, Courses, Programs | Join the 115 certifications to common exhibits; the public pages wait on the lead's word |
+| CPL-AI, the Foundation and ASCCC's certification recommendations | Connected, hosted whole (frozen) | Credit Recommendations, Exhibits, Courses, Programs | The CER takes the join's seven title fixes; the public pages wait on the lead's word |
 | Credential Engine's top 50 | Connected | Credentials, Exhibits | Schedule the fetch; widen the catalog beyond IT |
 | MIS | Connected, in part | Courses, Programs, CPL counts | Name the course elements a nightly read would use; the student match needs an agreement |
 | WestEd | Asked | Courses, Subjects, Programs | The partner exchange's seed, with Malone |
@@ -64,9 +64,9 @@ which for now will not have any further updates. Malone is working on how to int
 `kb/cpl_ai/hosted/` (an index and one gzipped file per certification, every field, all three tiers), and the Exhibits
 tab's **CPL-AI recommendations** view (`#exhibits/cpl-ai`, `exhibits_cpl_ai.js`) reads it. No schedule: the source
 publishes no further updates. The Program Requirements dialog still reads `kb/cpl_ai/pairs.json` (tiers 1 and 2,
-`kb/_build_cpl_ai.py`, read 2026-10-31). Sierra and the public pages wait on the lead's word (Sheet 147 card 5). Gap:
-31 of the 115 join a common exhibit (16 exact); the rest wait on canonical titles. Named by Sam, 2026-11-04; first
-connected S541 (2026-10-31).
+`kb/_build_cpl_ai.py`, read 2026-10-31). Sierra and the public pages wait on the lead's word (Sheet 147 card 5). Joined
+2026-11-06 (`kb/cpl_ai/exhibit_join.json`): 39 of the 115 match a common exhibit exactly, 7 are named under another
+exhibit, 8 have a related one, 61 have none. Named by Sam, 2026-11-04; first connected S541 (2026-10-31).
 
 ### Credential Engine's top 50
 The 50 credentials in the most Credential Registry collections, with their CTDL terms. `kb/_fetch_ce_top50.py` writes

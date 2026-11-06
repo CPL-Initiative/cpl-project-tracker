@@ -503,7 +503,8 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "commons_list.js",
         "commons_page.js",
-        "exhibits.js"
+        "exhibits.js",
+        "exhibits_cpl_ai.js"
       ],
       "reads": [
         "credential_priority_requests"
