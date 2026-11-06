@@ -35,6 +35,11 @@ Rule 10, enforced here rather than by recall:
     it. It changes only while that row still holds exactly that value from that reviewer; anything
     else holds the plan. The receipt keeps the before-value, reviewer and date, and --rollback
     puts them back on rows that still carry this cohort and the value it wrote (Rule 10a2).
+  - a RETIRE is a guarded DELETE, and only where the plan says so: `retires` names each live row by
+    (course_id, field, value, reviewer_email), the ruling lets it go, and it goes only while it still
+    holds exactly that value from that reviewer. The receipt keeps the whole row before the DELETE, and
+    --rollback inserts it back (ignoring duplicates, so a row a curator wrote since wins; Rule 10a2).
+    SkyBeacon, 2026-11-06, for Sam's "1 yes": retire his spent 2026-10-27 overrides on Spanish 1 and 2.
 
 S333 (Sam, open-asks sheet 39 card 2, "name"): the agency fields and the replace path, so OSHA's
 one name as issuer can land on rows a curator wrote earlier. kb/_apply_credential_review.py and
@@ -108,7 +113,8 @@ class Rest:
         return json.loads(raw) if raw else []
 
     def rows_for(self, course_id):
-        return self._call("GET", {"select": "course_id,field,value,reviewer_email,reviewed_at",
+        return self._call("GET", {"select": "course_id,field,value,reviewer_email,reviewed_at,"
+                                            "validated_at,validated_by",
                                   "course_id": "eq." + course_id})
 
     def merge_confirms(self):
@@ -136,8 +142,9 @@ def load_plan(plan_dir):
     with open(os.path.join(plan_dir, "plan.json"), encoding="utf-8") as fh:
         plan = json.load(fh)
     rows = plan.get("rows") or []
-    if not plan.get("ruling") or not plan.get("cohort") or not rows:
-        raise SystemExit("plan.json needs ruling, cohort and at least one row")
+    retires = plan.get("retires") or []
+    if not plan.get("ruling") or not plan.get("cohort") or not (rows or retires):
+        raise SystemExit("plan.json needs ruling, cohort and at least one row or retire")
     if not COHORT_RE.match(plan["cohort"]):
         raise SystemExit("cohort must be <lane>-s<N>@bot, got %r" % plan["cohort"])
     seen = set()
@@ -177,18 +184,32 @@ def load_plan(plan_dir):
             override = [x for x in rows if x["course_id"] == cid and x["field"] == "unified_title_override"]
             if not override or override[0]["value"] != value:
                 raise SystemExit("a merge confirm must name the same target as its title override: %r" % cid)
+    for r in retires:
+        cid, field = r.get("course_id"), r.get("field")
+        pre = next((x for x in FIELDS_BY_PREFIX if isinstance(cid, str) and cid.startswith(x)
+                    and len(cid) > len(x)), None)
+        if pre is None or field not in FIELDS_BY_PREFIX[pre]:
+            raise SystemExit("a retire names a %s key and one of its fields: %r" % (" or ".join(FIELDS_BY_PREFIX), r))
+        if not all(isinstance(r.get(k), str) and r[k].strip() for k in ("value", "reviewer_email")):
+            raise SystemExit("a retire names the live row's value and reviewer_email: %r" % r)
+        if r["reviewer_email"] == plan["cohort"]:
+            raise SystemExit("a retire removes a curator's row; this cohort's own rows go by --rollback: %r" % r)
+        if (cid, field) in seen:
+            raise SystemExit("a (course_id, field) appears twice, or is both written and retired: %r" % ((cid, field),))
+        seen.add((cid, field))
     return plan
 
 
 def check(plan, rest):
     """Each plan row's state against a fresh read: write, written, or held (with why)."""
     live = {}
-    for cid in sorted({r["course_id"] for r in plan["rows"]}):
+    retires = plan.get("retires") or []
+    for cid in sorted({r["course_id"] for r in (plan.get("rows") or []) + retires}):
         for x in rest.rows_for(cid) or []:
             live[(x["course_id"], x["field"])] = x
     confirms = rest.merge_confirms() or []
     out = []
-    for r in plan["rows"]:
+    for r in plan.get("rows") or []:
         now = live.get((r["course_id"], r["field"]))
         rp = r.get("replaces")
         source = r["course_id"][len(PREFIX):]
@@ -211,7 +232,25 @@ def check(plan, rest):
                     "state": state, "why": why,
                     "live": None if now is None else {k: now.get(k) for k in ("value", "reviewer_email",
                                                                               "reviewed_at")}})
+    for r in retires:
+        now = live.get((r["course_id"], r["field"]))
+        if now is None:
+            state, why = "retired", "already gone"
+        elif now.get("value") == r["value"] and now.get("reviewer_email") == r["reviewer_email"]:
+            state, why = "retire", "retires %r (by %s), as the ruling says" % (r["value"], r["reviewer_email"])
+        else:
+            state, why = "held", "holds %r (by %s), not the row the ruling names" % (now.get("value"),
+                                                                                  now.get("reviewer_email"))
+        out.append({"course_id": r["course_id"], "field": r["field"], "value": r["value"], "retire": True,
+                    "state": state, "why": why,
+                    "live": None if now is None else {k: now.get(k) for k in (
+                        "value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")}})
     return out
+
+
+def settled(states):
+    """Every written row holds its value and every retired row is gone."""
+    return all(s["state"] == ("retired" if s.get("retire") else "written") for s in states)
 
 
 def stamp():
@@ -228,13 +267,14 @@ def run(plan_dir, mode, rest, out=print):
     plan = load_plan(plan_dir)
     if mode == "rollback":
         receipts = sorted(glob.glob(os.path.join(plan_dir, "applied_*.json")))
-        written, replaced = [], []
+        written, replaced, retired = [], [], []
         for p in receipts:
             with open(p, encoding="utf-8") as fh:
                 rec = json.load(fh)
             written.extend(rec.get("inserted") or [])
             replaced.extend(rec.get("replaced") or [])
-        if not written and not replaced:
+            retired.extend(rec.get("retired") or [])
+        if not written and not replaced and not retired:
             out("nothing to roll back: no receipt records an insert or a replace")
             return 0
         ts = stamp()
@@ -248,13 +288,22 @@ def run(plan_dir, mode, rest, out=print):
                                {"value": b["value"], "reviewer_email": b["reviewer_email"],
                                 "reviewed_at": b.get("reviewed_at")})
             (restored if got else moved).append({k: r[k] for k in ("course_id", "field", "value")})
+        reinstated, taken = [], []
+        for r in retired:
+            b = r["before"]
+            row = {"course_id": r["course_id"], "field": r["field"], "value": b["value"],
+                   "reviewer_email": b["reviewer_email"]}
+            row.update({k: b[k] for k in ("reviewed_at", "validated_at", "validated_by") if b.get(k) is not None})
+            got = rest.insert([row])
+            (reinstated if got else taken).append({k: row[k] for k in ("course_id", "field", "value")})
         write_receipt(plan_dir, "rolled_back_%s.json" % ts,
                       {"table": TABLE, "mode": "rollback", "at": ts, "cohort": plan["cohort"],
                        "removed": removed, "already_gone": gone,
-                       "restored": restored, "changed_since": moved})
+                       "restored": restored, "changed_since": moved,
+                       "reinstated": reinstated, "taken_since": taken})
         out("rollback: %d removed, %d already gone (consumed by the rename, or changed by a curator); "
-            "%d restored to the curator's value, %d changed since"
-            % (len(removed), len(gone), len(restored), len(moved)))
+            "%d restored to the curator's value, %d changed since; %d retired rows reinstated, %d taken since"
+            % (len(removed), len(gone), len(restored), len(moved), len(reinstated), len(taken)))
         return 0
 
     states = check(plan, rest)
@@ -264,9 +313,12 @@ def run(plan_dir, mode, rest, out=print):
     held = [s for s in states if s["state"] == "held"]
     todo = [s for s in states if s["state"] == "write"]
     swaps = [s for s in states if s["state"] == "replace"]
+    drops = [s for s in states if s["state"] == "retire"]
     if mode == "dry-run":
-        out("dry run: %d to write, %d to replace, %d already written, %d held; nothing written"
-            % (len(todo), len(swaps), sum(s["state"] == "written" for s in states), len(held)))
+        out("dry run: %d to write, %d to replace, %d to retire, %d already written, %d already retired, %d held; "
+            "nothing written"
+            % (len(todo), len(swaps), len(drops), sum(s["state"] == "written" for s in states),
+               sum(s["state"] == "retired" for s in states), len(held)))
         return 1 if held else 0
 
     if mode != "commit":
@@ -274,7 +326,7 @@ def run(plan_dir, mode, rest, out=print):
     if held:
         out("REFUSED: %d row(s) held; nothing written" % len(held))
         return 1
-    if not todo and not swaps:
+    if not todo and not swaps and not drops:
         out("nothing to write: every row already holds its value")
         return 0
     ts = stamp()
@@ -283,9 +335,11 @@ def run(plan_dir, mode, rest, out=print):
              "reviewer_email": plan["cohort"]} for s in todo]
     planned_swaps = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"],
                       "reviewer_email": plan["cohort"], "before": s["live"]} for s in swaps]
+    planned_drops = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"], "before": s["live"]}
+                     for s in drops]
     receipt = {"table": TABLE, "mode": "commit", "at": ts, "ruling": plan["ruling"],
                "cohort": plan["cohort"], "read": states, "rows": rows, "replaces": planned_swaps,
-               "result": "pending"}
+               "retires": planned_drops, "result": "pending"}
     write_receipt(plan_dir, name, receipt)
     got = (rest.insert(rows) or []) if rows else []
     keys = {(g.get("course_id"), g.get("field")) for g in got}
@@ -298,14 +352,23 @@ def run(plan_dir, mode, rest, out=print):
         got = rest.replace(sw["course_id"], sw["field"], b["value"], b["reviewer_email"],
                            {"value": sw["value"], "reviewer_email": plan["cohort"], "reviewed_at": now_iso})
         (receipt["replaced"] if got else receipt["replace_missed"]).append(sw)
+    receipt["retired"], receipt["retire_missed"] = [], []
+    for dr in planned_drops:
+        b = dr["before"]
+        got = rest.delete({"course_id": dr["course_id"], "field": dr["field"], "value": b["value"]},
+                          b["reviewer_email"])
+        (receipt["retired"] if got else receipt["retire_missed"]).append(dr)
+        write_receipt(plan_dir, name, receipt)
     after = check(plan, rest)
-    ok = all(s["state"] == "written" for s in after)
+    ok = settled(after)
     receipt["read_back"] = after
     receipt["result"] = "written" if ok else "written, but the read-back differs"
     write_receipt(plan_dir, name, receipt)
-    out("%s: %d inserted, %d skipped as duplicate, %d replaced, %d replace missed; receipt %s"
+    out("%s: %d inserted, %d skipped as duplicate, %d replaced, %d replace missed, %d retired, %d retire missed; "
+        "receipt %s"
         % (receipt["result"], len(receipt["inserted"]), len(receipt["skipped_as_duplicate"]),
-           len(receipt["replaced"]), len(receipt["replace_missed"]), name))
+           len(receipt["replaced"]), len(receipt["replace_missed"]), len(receipt["retired"]),
+           len(receipt["retire_missed"]), name))
     return 0 if ok else 1
 
 

@@ -300,6 +300,79 @@ for label, mutate in [
     check("the plan refuses " + label, refused)
     shutil.rmtree(d)
 
+# ── a retire is a guarded DELETE of a named curator row; rollback puts it back ──
+SAM = "curator@rccd.edu"
+RPLAN = {"ruling": "retire ruling", "cohort": "exhibits-s0@bot", "rows": [], "retires": [
+    {"course_id": P + "Spanish 1", "field": "unified_title_override", "value": "Elementary Spanish I",
+     "reviewer_email": SAM},
+    {"course_id": P + "Spanish 1", "field": "unified_title_merge_confirm", "value": "Elementary Spanish I",
+     "reviewer_email": SAM},
+]}
+SP = [{"course_id": P + "Spanish 1", "field": "unified_title_override", "value": "Elementary Spanish I",
+       "reviewer_email": SAM, "reviewed_at": "2026-10-27T12:29:38Z"},
+      {"course_id": P + "Spanish 1", "field": "unified_title_merge_confirm", "value": "Elementary Spanish I",
+       "reviewer_email": SAM, "reviewed_at": "2026-10-27T12:29:38Z"},
+      {"course_id": P + "Spanish 1", "field": "issuing_agency_override", "value": "California Community Colleges",
+       "reviewer_email": "ccc-bulk-s108@bot"}]
+d = plan_dir(RPLAN)
+r = FakeRest(SP, plan_dir=d)
+code, lines = run(d, "dry-run", r)
+check("a dry run reports 2 to retire and removes nothing",
+      code == 0 and len(r.rows) == 3 and any("2 to retire" in l for l in lines), lines)
+code, lines = run(d, "commit", r)
+rec = json.load(open(glob.glob(os.path.join(d, "applied_*.json"))[0]))
+check("commit removes exactly the two named rows; the row it did not name stays",
+      code == 0 and len(r.rows) == 1 and r.rows[0]["field"] == "issuing_agency_override", lines)
+check("the receipt keeps each retired row whole, reviewer and date included",
+      len(rec["retired"]) == 2 and all(x["before"]["reviewer_email"] == SAM
+                                       and x["before"]["reviewed_at"] == "2026-10-27T12:29:38Z"
+                                       for x in rec["retired"]) and rec["result"] == "written")
+code, lines = run(d, "commit", r)
+check("a second commit finds them already retired and writes nothing",
+      code == 0 and any("nothing to write" in l for l in lines), lines)
+code, lines = run(d, "rollback", r)
+back = [x for x in r.rows if x["reviewer_email"] == SAM]
+check("rollback reinstates both rows with the curator's reviewer and date",
+      code == 0 and len(back) == 2 and all(x["reviewed_at"] == "2026-10-27T12:29:38Z" for x in back), lines)
+shutil.rmtree(d)
+
+d = plan_dir(RPLAN)
+r = FakeRest([dict(SP[0], value="Spanish I, revised"), SP[1]], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a retire holds when the curator's row changed since the ruling; nothing removed",
+      code == 1 and len(r.rows) == 2 and any("REFUSED" in l for l in lines), lines)
+shutil.rmtree(d)
+
+d = plan_dir(RPLAN)
+r = FakeRest(SP, plan_dir=d)
+run(d, "commit", r)
+r.rows.append(dict(SP[0], value="Spanish I, newer", reviewer_email="other@rccd.edu"))
+code, lines = run(d, "rollback", r)
+check("rollback leaves a row a curator wrote since in place of the retired one",
+      any(x["value"] == "Spanish I, newer" for x in r.rows)
+      and not any(x["value"] == "Elementary Spanish I" and x["field"] == "unified_title_override" for x in r.rows)
+      and any("1 taken since" in l for l in lines), lines)
+shutil.rmtree(d)
+
+for label, mutate in [
+    ("a retire with no reviewer_email", lambda p: p["retires"][0].pop("reviewer_email")),
+    ("a retire of the cohort's own row", lambda p: p["retires"][0].update(reviewer_email="exhibits-s0@bot")),
+    ("a retire outside the CER namespace", lambda p: p["retires"][0].update(course_id="ESOL M9267")),
+    ("a row both written and retired", lambda p: p["rows"].append(
+        {"course_id": P + "Spanish 1", "field": "unified_title_override", "value": "X"})),
+    ("a plan with no rows and no retires", lambda p: p.update(retires=[])),
+]:
+    bad = copy.deepcopy(RPLAN)
+    mutate(bad)
+    d = plan_dir(bad)
+    try:
+        app.load_plan(d)
+        refused = False
+    except SystemExit:
+        refused = True
+    check("the plan refuses " + label, refused)
+    shutil.rmtree(d)
+
 # ── the committed plans are valid ones ───────────────────────────────────────
 plans = glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json"))
 check("a committed plan exists", bool(plans))
