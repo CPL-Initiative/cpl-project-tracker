@@ -149,6 +149,8 @@ covers what only reading can.
 
 ## The network
 
+Still blocked on 2026-11-06 (S590, #2835): learn.snowflake.com (snowflake.com's certification page 404s), help.salesforce.com, trailheadacademy.salesforce.com and Meta's facebook.com Blueprint pages. Salesforce's 16 renames (2026-07-24) and 24 retirements (2027-02-01) wait on help.salesforce.com; Snowflake's rows stay unverified.
+
 On 2026-09-30 the environment's network policy blocked the issuers' own pages,
 so the first build confirmed most rows from search results quoting them. Sam
 asked for the host list the same day. An allowlist that lets a run read the
