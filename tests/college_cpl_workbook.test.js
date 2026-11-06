@@ -318,6 +318,9 @@ check("the address names the view, filters and open course, and reads back the s
   st10.status === "" && st10.prio === "high" && st10.q === "fire inspector" && st10.course === "FIRE 1706" &&
   W.pageQuery("Test River College", st10) === "?college=Test%20River%20College&status=all&priority=high&q=fire%20inspector&course=FIRE%201706" &&
   W.pageQuery("Test River College", W.pageState("")) === "?college=Test%20River%20College");
+check("a mangled percent sequence in a shared link is skipped, and the rest of the address still applies (COBIx, #2830)",
+  (function () { try { const s = W.pageState("?college=Cerritos%20College&q=%E0%A4%A&course=AJ%2&priority=high");
+    return s.q === "" && s.course === "" && s.prio === "high" && /class="cpo-cards"/.test(W.pageHtml(b, s)); } catch (e) { return false; } })());
 check("an address naming an unknown status or priority falls back to the defaults", W.pageState("?status=bogus&priority=urgent").status === "could-adopt" && W.pageState("?priority=urgent").prio === "");
 check("the Programs view lists active programs with their catalog links", /id="cpo-h-prog"/.test(W.pageHtml(b, { view: "programs" })) && !/id="cpo-h-list"/.test(W.pageHtml(b, { view: "programs" })));
 check("the page is in the library's look: its tokens, no First Light fonts in its own styles",

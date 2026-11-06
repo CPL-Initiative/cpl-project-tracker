@@ -804,10 +804,12 @@
   /* The state a query string names (?college=…&view=programs&status=all&priority=high&q=…&course=…). */
   function pageState(search) {
     var st = pageDefaults(), q = String(search || "").replace(/^\?/, "");
+    // A pair that will not decode (a mangled link: "%E0%A4%A") is skipped, so the page still paints.
+    function dec(t) { try { return decodeURIComponent(t.replace(/\+/g, " ")); } catch (err) { return null; } }
     q.split("&").forEach(function (kv) {
       if (!kv) return;
-      var i = kv.indexOf("="), k = decodeURIComponent((i < 0 ? kv : kv.slice(0, i)).replace(/\+/g, " "));
-      var v = i < 0 ? "" : decodeURIComponent(kv.slice(i + 1).replace(/\+/g, " "));
+      var i = kv.indexOf("="), k = dec(i < 0 ? kv : kv.slice(0, i)), v = i < 0 ? "" : dec(kv.slice(i + 1));
+      if (k == null || v == null) return;
       if (k === "view" && v === "programs") st.view = "programs";
       else if (k === "status") st.status = v === "all" ? "" : (STATUS_NAME[v] ? v : st.status);
       else if (k === "priority") st.prio = /^(high|medium|low)$/.test(v) ? v : "";
