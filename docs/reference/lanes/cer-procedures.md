@@ -84,8 +84,11 @@ Instructor retires; Personal Training Certification keeps its one generic local 
 wastewater grades to *Wastewater Treatment Plant Operator Certificate, Grade II or Higher* and *Grade IV or Higher*.
 The rows are the Exhibits tab's Change to Proposed Title shape (a guarded replace of the assignment beside
 `unified_title_supersedes`), which `kb/_cer_decision_apply.py` now accepts and nothing looser; the nightly fold's revise
-lane re-points them. After the fold the join reads 46 exact. **Next:** the Exhibits List row names its CPL-AI pairs;
-the duplicate ServSafe Manager exhibit; the Credential Catalog and Sierra wait on Sam's word (Sheet 147 card 5).
+lane re-points them. After the fold the join reads 46 exact. The same plan folds the duplicate *ServSafe Food Protection
+Manager* (one machine-placed prep-course title) into *ServSafe Food Protection Manager Certification* (Sam: "go ahead and
+fold the duplicate ServSafe Manager exhibit"), an override with its merge confirm that `cred-rename-apply.yml` carries.
+**Next:** the Exhibits List row names its CPL-AI pairs; the Credential Catalog and Sierra wait on Sam's word (Sheet 147
+card 5).
 
 **The Credential Catalog, the public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4; named
 on Sheet 148).** `library/adopt/`, Pages-served, linked from the Library and the public header.

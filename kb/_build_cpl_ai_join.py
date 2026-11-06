@@ -88,8 +88,8 @@ J = {
     "intuit1": ("exact", ["Intuit QuickBooks Online Certified User"], SAME),
     "intuit2": ("exact", ["Intuit Certified Bookkeeping Professional"], SAME),
     "rda1": ("exact", ["Registered Dental Assistant (RDA) License"], "The Dental Board of California's RDA license."),
-    "servsafe1": ("exact", ["ServSafe Food Protection Manager Certification", "ServSafe Food Protection Manager"],
-                  "The reference holds two exhibits for this one certification; the first carries the college titles, the second a course's. A fold for the CER."),
+    "servsafe1": ("exact", ["ServSafe Food Protection Manager Certification"],
+                  "Same certification; the duplicate exhibit ServSafe Food Protection Manager folds into it by the CER plan of 2026-11-06."),
     # Formerly named under another exhibit; moved to their own by the CER plan kb/cer_decisions_out/2026-11-06 (Sam, same
     # day: "go ahead and make the seven title fixes in the CER"). Exact once the nightly fold re-points them.
     "ace1": ("exact", ["ACE Certified Personal Trainer"], "ACE's Personal Trainer Certification, moved by the CER plan of 2026-11-06 from Personal Training Certification."),

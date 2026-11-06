@@ -341,10 +341,9 @@
   "servsafe1": {
    "kind": "exact",
    "exhibits": [
-    "ServSafe Food Protection Manager Certification",
-    "ServSafe Food Protection Manager"
+    "ServSafe Food Protection Manager Certification"
    ],
-   "reason": "The reference holds two exhibits for this one certification; the first carries the college titles, the second a course's. A fold for the CER."
+   "reason": "Same certification; the duplicate exhibit ServSafe Food Protection Manager folds into it by the CER plan of 2026-11-06."
   },
   "servsafe2": {
    "kind": "related",
