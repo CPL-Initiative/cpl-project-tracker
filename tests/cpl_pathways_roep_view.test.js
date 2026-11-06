@@ -7,8 +7,9 @@
 // and renders the mock-up's program view from that build.
 //
 // Guards the failure modes that would let the view look right and be wrong:
-//   (a) every record in the display build is listed, an unchecked one says so,
-//       and the selector opens it;
+//   (a) every record in the display build is listed in its college's List, an
+//       unchecked one reads Beta draft, and its title opens it (Sam, 2026-11-06:
+//       a college first, then its List);
 //   (b) the figure is the display build's, never one recomputed here (the
 //       page and Sierra must give one answer: methodology-one-build-two-readers);
 //   (c) By requirement places every course of every block once, a one-of-several
@@ -56,26 +57,32 @@ function click(w, root, value) {
   root.querySelector('.cplpw-rseg button[data-value="' + value + '"]').dispatchEvent(new w.Event("click", { bubbles: true }));
 }
 
-// ── (a) the selector lists every record ──
+// ── (a) each college's List holds its records ──
 {
   const w = freshWindow();
+  const DRIVE = require("./cpl_pathways_drive.js");
+  DRIVE.withList(w);
   const progs = w.CPL_PATHWAYS_ROEP.programs;
   w.CPL_PATHWAYS_TAB.activate();
   const root = w.document.getElementById("cpl-pathways-root");
-  const sel = root.querySelector("select.cplpw-select");
-  const group = sel && [...sel.querySelectorAll("optgroup")].find((g) => g.label === "Catalog records, Beta draft");
-  check("(a) the selector holds a catalog-record group", !!group);
-  const opts = group ? [...group.querySelectorAll("option")] : [];
-  check("(a) it lists every record in the display build", opts.length === progs.length && progs.length >= 20, opts.length + " of " + progs.length);
-  check("(a) each option names the college and the program",
-    progs.every((p) => opts.some((o) => o.textContent.startsWith(p.college + " — " + p.title))));
+  const colleges = [...new Set(progs.map((p) => p.college))];
+  let listed = 0, drafts = 0, named = true;
+  colleges.forEach((c) => {
+    DRIVE.chooseCollege(w, root, c);
+    const rows = DRIVE.titleButtons(root).map((b) => b.closest("tr"));
+    progs.filter((p) => p.college === c).forEach((p) => {
+      const tr = rows.find((r) => r.querySelector("button.cplpwl-open").textContent === p.title && /Beta draft|Confirmed/.test(r.lastChild.textContent)
+        && (p.display.checks.checked ? /Confirmed/ : /Beta draft/).test(r.lastChild.textContent));
+      if (tr) listed++; else named = false;
+      if (tr && /Beta draft/.test(tr.lastChild.textContent)) drafts++;
+    });
+  });
+  check("(a) every record in the display build is in its college's List", listed === progs.length && progs.length >= 20, listed + " of " + progs.length);
+  check("(a) each row names the program and reads Confirmed or Beta draft as its record does", named);
   const unchecked = progs.filter((p) => !p.display.checks.checked).map((p) => p.key);
-  check("(a) an unchecked record says so in the list",
-    opts.filter((o) => /not yet confirmed/.test(o.textContent)).length === unchecked.length, unchecked.join(","));
-  check("(a) the caption counts the catalog records", /\+ \d+ catalog records/.test(root.textContent));
-  const target = opts.find((o) => o.textContent.startsWith("Cerritos College — Apprenticeship: Field Ironworkers"));
-  if (target) { sel.value = target.value; sel.dispatchEvent(new w.Event("change", { bubbles: true })); }
-  check("(a) choosing one opens its program view",
+  check("(a) an unchecked record reads Beta draft", drafts === unchecked.length, unchecked.join(","));
+  DRIVE.openPathway(w, root, "Cerritos College", "Apprenticeship: Field Ironworkers");
+  check("(a) its title opens its program view",
     !!root.querySelector(".cplpw-roep") && /Apprenticeship: Field Ironworkers/.test(root.querySelector(".cplpw-rprog h2").textContent));
 }
 

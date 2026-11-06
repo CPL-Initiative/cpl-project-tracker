@@ -58,12 +58,14 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 
 // ── Part B — behavior, loaded into jsdom ──
 const SRC = fs.readFileSync("cpl_pathways.js", "utf8");
+const DRIVE = require("./cpl_pathways_drive.js");
 
 function freshWindow() {
   const dom = new JSDOM(`<body><div id="cpl-pathways-root" style="border:1px dashed"></div></body>`, {
     runScripts: "outside-only", url: "https://example.test/",
   });
   dom.window.eval(SRC);
+  DRIVE.withList(dom.window);
   return dom.window;
 }
 
@@ -585,7 +587,7 @@ const SA_PROG = { id: "0948-santa-ana", college: "Santa Ana College", cer_colleg
 }
 check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_course_keys\.js", "CPL_COCI_COURSE_KEYS"/.test(SRC));
 
-// (m) full render — dropdown + directory card switching
+// (m) full render — a college first, its List, then a pathway full width (Sam, 2026-11-06: "Require college first")
 {
   const w = freshWindow();
   w.CPL_PATHWAYS = { programs: [PROGRAM_STUB] };
@@ -593,22 +595,23 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = DIR_CER; cb(); } };
   w.CPL_PATHWAYS_TAB.activate();
   const root = w.document.getElementById("cpl-pathways-root");
-  const sel = root.querySelector("select.cplpw-select");
-  check("dropdown selector renders (featured + directory > 1 item)", !!sel);
-  check("dropdown has a Featured optgroup + field optgroups",
-    !!sel && sel.querySelectorAll("optgroup").length >= 2 &&
-    /Featured/.test(sel.querySelectorAll("optgroup")[0].label));
-  check("dropdown lists every baccalaureate + featured", sel.querySelectorAll("option").length === 2 + BACC_STUB.length);
-  check("directory option shows current/potential CPL courses", (function () {
-    var o = Array.from(sel.options).find(x => /Foothill College — Respiratory Care/.test(x.textContent));
-    return !!o && /1\/2 courses/.test(o.textContent);
+  const col = DRIVE.colSelect(root);
+  check("the College select renders (featured + directory > 1 item)", !!col);
+  check("the Pathway select is retired", !root.querySelector("select.cplpw-select"));
+  check("⭐ no college chosen: the page asks for one and shows no List or pathway",
+    !!col && col.value === "" && /Choose a college/.test(root.textContent) && !root.querySelector("#cplpw-list") && !root.querySelector(".cplpw-stagebanner"));
+  check("the select lists each pathway's college", ["Cerritos College", "Foothill College", "Crafton Hills"].every(c => Array.from(col.options).some(o => o.value === c)));
+  DRIVE.chooseCollege(w, root, "Foothill College");
+  check("a college shows its head, five figure cards and its List",
+    /Foothill College/.test(root.querySelector(".cplpw-h").textContent) && root.querySelectorAll(".cplpw-card").length === 5 &&
+    DRIVE.listTitles(root).join("|") === "Respiratory Care");
+  check("directory row carries current and adoptable CPL courses (1 here, 1 more by adoption)", (function () {
+    var tr = DRIVE.titleButtons(root)[0].closest("tr"); var t = tr ? tr.textContent : "";
+    return /Bachelor of Science/.test(t) && /Directory/.test(t);
   })());
-  check("default view is the featured deep map", /Field Ironworker Supervisor/.test(root.textContent) && !!root.querySelector(".cplpw-stagebanner"));
-  // switch to the Foothill Respiratory directory card (item index 1)
-  sel.value = "1";
-  sel.dispatchEvent(new w.Event("change", { bubbles: true }));
+  DRIVE.openPathway(w, root, null, "Respiratory Care");
   const text = root.textContent;
-  check("directory card renders on select", !!root.querySelector(".cplpw-dirtag") && /Respiratory Care — Bachelor of Science/.test(text));
+  check("directory card renders full width on a press", !!root.querySelector(".cplpw-dirtag") && /Respiratory Care — Bachelor of Science/.test(text) && !root.querySelector("#cplpw-list"));
   check("directory card shows the ✓ in-field CPL", /RCP License/.test(text) && root.querySelectorAll(".cplpw-course.done").length >= 1);
   check("directory card shows the ⊕ adoption pool", /NBRC CRT/.test(text) && !!root.querySelector("button.how.adopt"));
   check("directory card shows the field cohort", !!root.querySelector(".cplpw-cohort") && /Crafton Hills/.test(text));
@@ -617,11 +620,13 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   adoptBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("adoption panel expands with peer lines + Quick Adopt",
     /El Camino College: RESP 12/.test(root.textContent) && !!root.querySelector(".cplpw-adoptopts .cplpw-qa"));
-  // switch to the frontier college (Crafton, index 2) → frontier banner
-  sel.value = "2";
-  sel.dispatchEvent(new w.Event("change", { bubbles: true }));
+  check("⭐ Back returns to the college's List", DRIVE.back(w, root) && DRIVE.listTitles(root).join("|") === "Respiratory Care");
+  // the frontier college (Crafton) → the whole-field pool
+  DRIVE.openPathway(w, root, "Crafton Hills", "Respiratory Care");
   check("frontier college shows the whole-field pool (no own CPL)",
     root.querySelectorAll(".cplpw-course.done").length === 0 && /NBRC CRT/.test(root.textContent));
+  DRIVE.openPathway(w, root, "Cerritos College", "Field Ironworker Supervisor");
+  check("the featured deep map opens from its college's List", /Field Ironworker Supervisor/.test(root.textContent) && !!root.querySelector(".cplpw-stagebanner"));
 }
 
 // (m2) committed directory data file parses + joins to the CER schema
@@ -652,8 +657,7 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   w.CPL_TABS = { loadScript: function (s, g, cb) { w.CPL_CREDENTIAL_REFERENCE = big; cb(); } };
   w.CPL_PATHWAYS_TAB.activate();
   const root = w.document.getElementById("cpl-pathways-root");
-  const sel = root.querySelector("select.cplpw-select");
-  sel.value = "1"; sel.dispatchEvent(new w.Event("change", { bubbles: true }));
+  DRIVE.openPathway(w, root, "Home College", "Automotive Technology");
   const showAll = Array.from(root.querySelectorAll("button")).find(b => /Show all 25/.test(b.textContent));
   check("large pool gets a Show-all toggle", !!showAll);
   const moreWrap = showAll ? showAll.nextSibling : null;

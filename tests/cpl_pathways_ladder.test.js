@@ -14,8 +14,9 @@
 //       "27–29 major units" appears nowhere;
 //   (d) every curated line carries its word label, In our data or To confirm;
 //   (e) a missing display build says so instead of printing a zero;
-//   (f) the full tab boot loads the build and opens on the ladder, and the
-//       B.S. step's button opens the B.S. course map.
+//   (f) the full tab boot loads the build; Cerritos College's List names the
+//       ladder and opens it (Sam, 2026-11-06: a college first, then its List),
+//       and the B.S. step's button opens the B.S. course map.
 
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -127,14 +128,16 @@ function ladderOf(w) { return w.CPL_PATHWAYS.programs.find((p) => p.kind === "la
   w.CPL_PATHWAYS_TAB.activate();
   const root = w.document.getElementById("cpl-pathways-root");
   check("(f) the tab loads the display build when a ladder is listed", loads.includes("cpl_pathways_roep_data.js"), loads.join(","));
-  check("(f) the tab opens on the ladder", !!root.querySelector(".cplpw-lmap") && /From high school to the job site/.test(root.textContent));
-  const sel = root.querySelector("select.cplpw-select");
-  check("(f) the selector lists the ladder among the featured maps", sel && [...sel.querySelectorAll("optgroup")][0] && [...[...sel.querySelectorAll("optgroup")][0].querySelectorAll("option")].some((o) => /Field Ironworkers, high school to career/.test(o.textContent)));
+  const DRIVE = require("./cpl_pathways_drive.js");
+  DRIVE.withList(w);
+  check("(f) Cerritos College's List names the ladder", DRIVE.chooseCollege(w, root, "Cerritos College") && DRIVE.listTitles(root).includes("Field Ironworkers, high school to career"), DRIVE.listTitles(root).join(" | "));
+  DRIVE.openPathway(w, root, null, "Field Ironworkers, high school to career");
+  check("(f) the List opens the ladder", !!root.querySelector(".cplpw-lmap") && /From high school to the job site/.test(root.textContent));
   const open2 = root.querySelector("#cplpw-step-bachelor button.cplpw-lopen");
   if (open2) open2.dispatchEvent(new w.Event("click", { bubbles: true }));
   check("(f) the open button switches the view to the B.S. course map",
     /Field Ironworker Supervisor/.test(root.textContent) && !root.querySelector(".cplpw-lmap"));
-  check("(f) and the selector follows", !!sel && sel.options[sel.selectedIndex] && /Field Ironworker Supervisor/.test(sel.options[sel.selectedIndex].textContent));
+  check("(f) and its way back still names Cerritos College", /Back to Cerritos College's pathways/.test((root.querySelector("button.cplpw-back") || {}).textContent || ""));
 }
 
 const failed = results.filter((r) => !r[1]);
