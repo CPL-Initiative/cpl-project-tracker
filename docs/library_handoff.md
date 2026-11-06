@@ -37,7 +37,22 @@ duplicate; name the pairs on the List; feature recommendations as badges (*"like
 the CPL-AI recs on public view"* (answers Sheet 147 card 5); the mock *"looks good"*, with a resizable panel and the
 recommendation shown in place (*"trying to keep them on the main page and not have to hop around"*).
 
+> **EMERGENCY checkpoint, ~20:25Z** (the context meter at its last line, after the full checkpoint `f41df3bf`): only
+> this handoff, the lane line and one `cpl_memory` row were refreshed after it. Not refreshed since the full one:
+> the INDEX rebuild, the lessons doc, `kb/README.md`, KB notes, the vault session note (step 11, never written this run:
+> write it, with Sam's words on Cabrillo below), the status files, the pipeline tab.
+
+**Sam, ~20:20Z, on the live Catalog:** *"I sorted for Cabrillo and see all their 207 exhibits and the ones they haven't
+evaluated yet waiting for some attention--it looks easier to navigate that we had it thus far AND we're giving the user far
+more data in the process."* And his rule: *Ask us to prioritize* only where no college has articulated the credential; an
+articulated one offers Request Quick Adopt to its card on the MAP dashboard; the Worth a faculty review cards need the ask.
+
 ## Open work, in order
+0. **Finish branch `claude/catalog-ask-vs-adopt`** (commit `55c0f660`, pushed, no PR yet): Sam's ask rule in
+   `library/adopt/adopt.js` (articulated cards and panels carry no ask, Being reviewed included; each Worth a faculty
+   review card asks and opens the request via `openReview`). `tests/public_adopt.test.js` reads 92/93: find the one
+   failing check (`node tests/public_adopt.test.js | grep -v ^PASS`), fix it, run `npm run a11y -- public-adopt`, open the
+   PR, merge on green.
 1. **Merge #2853** when `test` is green (a wake is set for 20:36Z).
 2. **The badges on the live Catalog** (`library/adopt/`), as the mock shows: *Statewide recommendation* (from
    `fact-sheet/statewide_recs.js`), *CPL-AI course match* (from `kb/cpl_ai/`), the Recommendations filter, the
