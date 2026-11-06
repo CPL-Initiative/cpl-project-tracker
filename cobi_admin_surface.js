@@ -189,6 +189,7 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "college_briefing.js",
         "college_cpl_workbook.js",
+        "commons_list.js",
         "cpl_baccalaureates_data.js",
         "cpl_funding.js",
         "cpl_pathways.js",

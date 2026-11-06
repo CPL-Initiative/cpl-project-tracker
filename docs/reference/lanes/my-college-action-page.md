@@ -43,7 +43,24 @@ per course (Request Adopt on its best match, every match with its MAP chips, its
 view; each Could adopt row carries Request Adopt. The address carries view, status, priority, finder and open course
 (`pageState`/`pageQuery`). Exhibit lines whose course COCI lacks get their own row (Cerritos: 5 IWAP/ELAP). Print hides the
 panel; the Extract stays the whole record. Guards: `tests/college_cpl_workbook.test.js` §10; axe on the rendered Cerritos
-page passed light, dark, 390px (the a11y target still measures only the empty picker). Next: CPL Pathways' picker as cards
-and a List, each pathway full width, in the new look (his call 2).
+page passed light, dark, 390px (the a11y target still measures only the empty picker).
+
+✅ **CPL Pathways in the new format (Sam, 2026-11-06: his call 2; then *"Require college first"*).** Mockup
+https://claude.ai/artifact/R3knxBm8aG9D3FMryD377y (Cerritos, real rows). The College select comes first (*Choose a
+college*); until one is chosen the tab asks for it and shows no cards, List or pathway. A college shows its head, five
+figure cards (Pathways; Carry CPL here; Could adopt; Units not yet acted on, My College's figure from
+`map_college_credit_summary_pub` through `map_colleges`, which opens the My College fold; Confirmed), the program-data
+line, one List of its pathways on `commons_list.js` (read-only; filter words Degrees, Certificates, Noncredit, Course maps,
+Carry CPL here, Could adopt, For consideration, Confirmed, Fails a check) and the My College fold. A title opens the
+pathway at full width with *Back to <college>'s pathways*, which returns to the List as left. The engine's new `open(r)`
+hook does that (cells are plain text when a List has no drawer). The per-record counts come from one read per college
+(`readCollegeRecords`: `counts:display->counts`, `total:display->figure->total`, `checks`, `measure`), shared with the
+status line; the statewide index stays light. The Pathway select, its search box, Clear and the statewide matches list are
+retired; the address of a college is its List, a pathway adds its part, and a pathway named alone moves the College
+select to its college. One pathway on record (test stubs only) still opens with no picker. The tab joins the Commons look
+(`commons_look.js` TABS). Guards: `tests/cpl_pathways_college_selector.test.js` (rewritten), the address, ladder,
+record-view and table-read tests driven through `tests/cpl_pathways_drive.js`; a11y targets `cpl-pathways-college`
+(and `-dark`) seed the List, the record targets choose the college and press the title. Open: Sam's call 1 (the fourth
+card is My College's figure; a program figure such as *For consideration* is the alternative).
 
 **NEXT:** ⓪ ✅ **Two figures, two names (Sam, sheet 6 card 5, 2026-09-30):** *Start here* reads *units not yet acted on* (`dormant_credits`, the MEASURES headline); *units waiting* stays with the articulated units in *Where you stand* (`articulated_waiting`). Guard: `tests/my_college_units_labels.test.js`. ① the redesign in a browser; ② the region lists when he finds them; ③ Sam's eyes on the public page signed out — the check the sweep cannot make. Story: [`docs/college_action_page_lessons.md`](docs/college_action_page_lessons.md); durable [`a-second-copy-of-a-fact-is-a-stale-copy-waiting`](docs/kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md).

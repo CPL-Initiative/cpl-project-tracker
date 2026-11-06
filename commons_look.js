@@ -16,7 +16,9 @@
   // Every Commons view but the Commons tab itself: Subjects, Exhibits, Credit Recommendations, Programs and Courses; and
   // the Library, on its Commons List (Sam, 2026-11-05: "Add a list view option to the Library just like our CPL Commons
   // list views ... Also use the new commons format").
-  var TABS = ["#tab-canonical-subj4", "#tab-exhibits", "#tab-cr-reference", "#tab-program-requirements", "#tab-coci-lookup", "#tab-library"];
+  var TABS = ["#tab-canonical-subj4", "#tab-exhibits", "#tab-cr-reference", "#tab-program-requirements", "#tab-coci-lookup", "#tab-library",
+    // CPL Pathways (Sam, 2026-11-06: CPL Pathways takes the new look; his call 2, its new format).
+    "#tab-cpl-pathways"];
   var SEL = TABS.join(", ");
   var LIGHT = "--cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif;";
   var DARK = "--cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text);";

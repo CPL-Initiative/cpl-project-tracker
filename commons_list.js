@@ -104,6 +104,10 @@
 // foldId, cls }. CPL_COMMONS_LIST.readCommons(fresh) reads kb/status/commons.json once a visit for every List, and
 // lineItems(row) turns a row into the line's counts: the pair's count with "of N" and its words up to the first
 // parenthesis, semicolon or colon, the confirmed count, then each known issue. Exhibits drew the first line (#2736).
+//   open(r)            The title's press runs open(r) in place of a drawer or panel: the row's own view opens (CPL
+//                      Pathways: a program opens its pathway at full width, Sam's call 2 of 2026-11-06). openLabel: the
+//                      words after the title for a screen reader (default "open it"). With no drawer hook, the other
+//                      cells are plain text.
 //   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
 //                      file): its word shows no count, never a 0 a reader takes for empty (S343).
 // The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
@@ -1157,6 +1161,15 @@
        drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
     function listOpener(r, col, text, isOpen) {
       var L = listState();
+      // open(r): the title opens the row's own view (CPL Pathways: a program opens its pathway full width), and a List
+      // with no drawer hook shows its other cells as plain text.
+      if (S.open && col === 0) {
+        var ob = el("button", { type: "button", cls: P + "open", "aria-label": (text || "none") + ", " + (S.openLabel || "open it") },
+          listCols()[0].cell ? (listCols()[0].cell(r, el) || [text]) : [text]);
+        ob.addEventListener("click", function () { S.open(r); });
+        return ob;
+      }
+      if (S.open && !S.drawer) return el("span", { cls: P + "cell" }, listCols()[col].cell ? (listCols()[col].cell(r, el) || [text]) : [text]);
       var b = el("button", { type: "button", cls: P + "open", "aria-expanded": isOpen ? "true" : "false",
         "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" },
         listCols()[col].cell ? (listCols()[col].cell(r, el) || [text || "—"]) : [text || "—"]);

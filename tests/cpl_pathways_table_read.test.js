@@ -8,11 +8,11 @@
 // and no file is written per college.
 //
 // Guards the failure modes:
-//   (a) when the table answers, the selector lists the table's programs, never the
+//   (a) when the table answers, the colleges' Lists hold the table's programs, never the
 //       file's: before this change the public saw the file's unchecked pilot programs
 //       whatever the table allowed (fails on the old file);
 //   (b) a signed-out page reads with the anon key; a reviewer's fresh session reads
-//       with the reviewer's token, and an unchecked record says so in the selector;
+//       with the reviewer's token, and an unchecked record reads Beta draft in its List;
 //   (c) opening a program reads that one record, by college and control number, and
 //       renders it; the row's `checked` wins over the display build's copy;
 //   (d) a failed record read shows the file's copy and says why, or, with no copy,
@@ -54,6 +54,7 @@ function freshWindow(fetchImpl, session) {
   }
   if (fetchImpl) w.fetch = fetchImpl;
   w.eval(SRC);
+  require("./cpl_pathways_drive.js").withList(w);
   return w;
 }
 
@@ -86,6 +87,8 @@ function tableStub(opts) {
     const reviewer = auth !== "Bearer " + ANON;
     calls.push({ url, auth, reviewer });
     if (/program_source_registry/.test(url)) return reply([{ college: "Norco College", catalog_platform: "courseleaf" }]);
+    // The college's own read for its List figures and status line (no control number): answered empty.
+    if (/program_requirement_records/.test(url) && /college=eq\./.test(url) && !/control_number=eq\./.test(url)) return reply([]);
     if (/program_requirement_records/.test(url) && /college=eq\./.test(url)) {
       if (o.recordFail) return reply({ message: "boom" }, 503);
       if (o.hold) return new Promise((res) => o.hold.push(() => res({ ok: true, status: 200, json: () => Promise.resolve(o.rowFor(url)) })));
@@ -102,14 +105,26 @@ function tableStub(opts) {
   f.calls = calls;
   return f;
 }
-const recordOptions = (sel) => [...sel.querySelectorAll("optgroup")].filter((g) => g.label === "Catalog records, Beta draft")
-  .flatMap((g) => [...g.querySelectorAll("option")]);
-const change = (w, s, v) => { s.value = v; s.dispatchEvent(new w.Event("change", { bubbles: true })); };
+// The new format (Sam, 2026-11-06: "Require college first"): a record is listed in its college's List and opened by
+// its title. recordTexts reads each college's catalog-record rows as the old selector's options read
+// ("<college> — <title>", and " (not yet confirmed)" for a Beta draft).
+const DRIVE = require("./cpl_pathways_drive.js");
+const COLLEGES = () => [...new Set(FILE.map((p) => p.college).concat([T1.college, T2.college]))];
+function recordTexts(w, root, colleges) {
+  const out = [];
+  (colleges || COLLEGES()).forEach((c) => {
+    if (!DRIVE.chooseCollege(w, root, c)) return;
+    DRIVE.titleButtons(root).forEach((b) => {
+      const rec = b.closest("tr").lastChild.textContent.trim();
+      if (rec === "Confirmed" || rec === "Beta draft") out.push(c + " — " + b.textContent + (rec === "Beta draft" ? " (not yet confirmed)" : ""));
+    });
+  });
+  return out;
+}
 function pickRecord(w, root, title) {
-  const sel = root.querySelector("select.cplpw-select");
-  const opt = recordOptions(sel).find((o) => o.textContent.indexOf(title) >= 0);
-  if (opt) change(w, sel, opt.value);
-  return opt;
+  if (DRIVE.openPathway(w, root, null, title)) return true;
+  for (const c of COLLEGES()) if (DRIVE.openPathway(w, root, c, title)) return true;
+  return false;
 }
 
 (async () => {
@@ -120,8 +135,8 @@ function pickRecord(w, root, title) {
     w.CPL_PATHWAYS_TAB.activate();
     await settle();
     const root = w.document.getElementById("cpl-pathways-root");
-    const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
-    check("(a) the selector lists the table's programs", opts.length === 1 && /Norco College — Table Program One/.test(opts[0]), opts);
+    const opts = recordTexts(w, root);
+    check("(a) the Lists hold the table's programs", opts.length === 1 && /Norco College — Table Program One/.test(opts[0]), opts);
     check("(a) and none of the pilot file's", !opts.some((t) => t.indexOf(uncheckedFile.title) >= 0 || t.indexOf(checkedFile.title) >= 0), opts);
     check("(a) a checked program carries no mark", !/not yet confirmed/.test(opts[0] || "x"), opts[0]);
     const listCall = f.calls.find((c) => /program_requirement_records\?select=/.test(c.url) && !/college=eq/.test(c.url));
@@ -137,7 +152,7 @@ function pickRecord(w, root, title) {
     w.CPL_PATHWAYS_TAB.activate();
     await settle();
     const root = w.document.getElementById("cpl-pathways-root");
-    const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
+    const opts = recordTexts(w, root);
     check("(b) a reviewer reads with the session's token", f.calls.some((c) => c.reviewer && /program_requirement_records/.test(c.url)));
     check("(b) a reviewer sees every record", opts.length === 2, opts);
     check("(b) an unchecked record says so", opts.some((t) => /Table Program Two/.test(t) && /\(not yet confirmed\)$/.test(t)), opts);
@@ -158,7 +173,7 @@ function pickRecord(w, root, title) {
     pickRecord(w, root, "Table Program Two");
     check("(c) the page says it is reading", /Reading Table Program Two/.test(root.textContent));
     await settle();
-    const rec = f.calls.slice(before).filter((c) => /college=eq\./.test(c.url));
+    const rec = f.calls.slice(before).filter((c) => /control_number=eq\./.test(c.url));
     check("(c) one record read, by college and control number", rec.length === 1
       && /college=eq\.Long%20Beach%20City%20College/.test(rec[0].url) && /control_number=eq\.90002/.test(rec[0].url), rec.map((c) => c.url));
     check("(c) it asks for the record and its display", rec.length === 1 && /record/.test(rec[0].url) && /display/.test(rec[0].url));
@@ -209,7 +224,7 @@ function pickRecord(w, root, title) {
     w.CPL_PATHWAYS_TAB.activate();
     await settle();
     const root = w.document.getElementById("cpl-pathways-root");
-    const opts = recordOptions(root.querySelector("select.cplpw-select"));
+    const opts = recordTexts(w, root);
     check("(e) the file's programs stand in", opts.length === FILE.length, opts.length + " of " + FILE.length);
     const note = root.querySelector(".cplpw-rnote");
     check("(e) and the page says why", !!note && /pilot file for now: the table could not be read \(program_requirement_records answered 500\)/.test(note.textContent), note && note.textContent);
@@ -256,8 +271,7 @@ function pickRecord(w, root, title) {
     pickRecord(w, root, "Table Program One");
     const pending = hold.length;
     check("(f) a third read in flight", pending === 3, pending);
-    const sel = root.querySelector("select.cplpw-select");
-    change(w, sel, sel.options[1].value);
+    DRIVE.openPathway(w, root, "Cerritos College", "Field Ironworker Supervisor");
     if (hold[2]) hold[2]();
     await settle();
     check("(f) a featured map picked meanwhile stays on screen", !root.querySelector(".cplpw-rprog") && !!root.querySelector(".cplpw-hero, .cplpw-ladder"),
@@ -272,19 +286,17 @@ function pickRecord(w, root, title) {
     w.CPL_PATHWAYS_TAB.activate();
     await settle();
     const root = w.document.getElementById("cpl-pathways-root");
+    check("(g) signed out: one record listed", recordTexts(w, root).length === 1);
     pickRecord(w, root, "Table Program One");
     await settle();
-    check("(g) signed out: one record listed", recordOptions(root.querySelector("select.cplpw-select")).length === 1);
     session.current = { email: "reviewer@example.org", access_token: "user-token" };
     const n = f.calls.length;
     w.dispatchEvent(new w.CustomEvent("cpl-session-changed"));
     await settle(10);
-    const sel = root.querySelector("select.cplpw-select");
     check("(g) signing in re-reads the list as the reviewer", f.calls.slice(n).some((c) => c.reviewer && /program_requirement_records\?select=college,control_number,program_title/.test(c.url)));
-    check("(g) and lists every record", recordOptions(sel).length === 2);
-    check("(g) the pathway shown stays", /Table Program One/.test((sel.options[sel.selectedIndex] || {}).textContent || "")
-      && !!root.querySelector(".cplpw-rprog") && /Table Program One/.test(root.querySelector(".cplpw-rprog").textContent));
+    check("(g) the pathway shown stays", !!root.querySelector(".cplpw-rprog") && /Table Program One/.test(root.querySelector(".cplpw-rprog").textContent));
     check("(g) the record is read again under the new session", f.calls.slice(n).some((c) => /control_number=eq\.90001/.test(c.url) && c.reviewer));
+    check("(g) and the Lists hold every record", recordTexts(w, root).length === 2);
   }
 
   // ── (h) the tab never waits on the table ──
@@ -294,19 +306,15 @@ function pickRecord(w, root, title) {
     const w = freshWindow(f);
     w.CPL_PATHWAYS_TAB.activate();
     const root = w.document.getElementById("cpl-pathways-root");
-    check("(h) the tab renders before the list answers", !!root.querySelector("select.cplpw-select"));
-    const sel0 = root.querySelector("select.cplpw-select");
-    check("(h) meanwhile the file's programs stand in", recordOptions(sel0).length === FILE.length);
-    // the reader moves to the second pathway before the list lands
-    const second = sel0.options[2] ? sel0.options[2].value : "";
-    const secondText = sel0.options[2] ? sel0.options[2].textContent : "";
-    change(w, sel0, second);
+    check("(h) the tab renders before the list answers", !!root.querySelector("select.cplpw-colsel"));
+    check("(h) meanwhile the file's programs stand in", recordTexts(w, root).length === FILE.length);
+    // the reader opens a featured map before the list lands
+    DRIVE.openPathway(w, root, "Cerritos College", "Field Ironworker Supervisor");
     await settle();
     indexHold.forEach((go) => go());
     await settle(10);
-    const sel = root.querySelector("select.cplpw-select");
-    check("(h) the list, once landed, replaces the file's", recordOptions(sel).length === 1);
-    check("(h) and the reader's pick stays", (sel.options[sel.selectedIndex] || {}).textContent === secondText, (sel.options[sel.selectedIndex] || {}).textContent);
+    check("(h) and the reader's pick stays once the list lands", !!root.querySelector(".cplpw-path") && /Field Ironworker Supervisor/.test(root.querySelector(".cplpw-path").textContent));
+    check("(h) the list, once landed, replaces the file's", recordTexts(w, root).length === 1);
   }
 
   // ── (i) every program arrives, in pages (2026-10-13) ──
@@ -332,9 +340,11 @@ function pickRecord(w, root, title) {
     w.CPL_PATHWAYS_TAB.activate();
     await settle(20);
     const root = w.document.getElementById("cpl-pathways-root");
-    const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
-    check("(i) all 1,300 programs reach the list, past the 1,000-row cap", opts.length === 1300, opts.length);
-    check("(i) the last one included", opts.some((t) => /Paged Program 1299\b/.test(t)), opts.slice(-1));
+    DRIVE.chooseCollege(w, root, "Norco College");
+    const nAll = root.querySelector(".cplpw-card-n").textContent;
+    check("(i) all 1,300 programs reach the List, past the 1,000-row cap", nAll === "1,300", nAll);
+    const fi = root.querySelector("#cplpwl-find"); fi.value = "Paged Program 1299"; fi.dispatchEvent(new w.Event("input", { bubbles: true }));
+    check("(i) the last one included", DRIVE.listTitles(root).includes("Paged Program 1299"), DRIVE.listTitles(root));
     check("(i) each page asks for a range under the cap, over the stable order", ranges.length >= 3 && ranges.every((r) => {
       const m = /^(\d+)-(\d+)$/.exec(r.range || ""); return r.unit === "items" && m && (+m[2] - +m[1] + 1) <= 1000 && /order=college,control_number/.test(r.url); }),
       ranges.map((r) => r.range));
@@ -361,8 +371,10 @@ function pickRecord(w, root, title) {
     w.CPL_PATHWAYS_TAB.activate();
     await settle(60);
     const root = w.document.getElementById("cpl-pathways-root");
-    const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
-    check("(j) all 2,600 programs arrive, the first and the last included", opts.length === 2600 && opts.some((t) => /Wave Program 0\b/.test(t)) && opts.some((t) => /Wave Program 2599\b/.test(t)), opts.length);
+    DRIVE.chooseCollege(w, root, "Norco College");
+    const nAll = root.querySelector(".cplpw-card-n").textContent;
+    const find = (q) => { const fi = root.querySelector("#cplpwl-find"); fi.value = q; fi.dispatchEvent(new w.Event("input", { bubbles: true })); return DRIVE.listTitles(root); };
+    check("(j) all 2,600 programs arrive, the first and the last included", nAll === "2,600" && find("Wave Program 0").includes("Wave Program 0") && find("Wave Program 2599").includes("Wave Program 2599"), nAll);
     check("(j) the pages after the first are read side by side", most > 1, most);
     check("(j) and the read stops at the short page", indexReads <= 7, indexReads);
   }
