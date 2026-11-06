@@ -2747,14 +2747,24 @@ module.exports = {
   },
   "public-adopt-matrix": {
     file: "library/adopt/index.html",
-    title: "Credential Catalog (public), College matrix",
+    title: "Credential Catalog (public), College matrix with a cell's panel open",
     seed: async (page) => {
       await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
-      await page.evaluate(() => {
-        const r = document.getElementById("ad-region"); r.value = r.options[1].value; r.dispatchEvent(new Event("change"));
-        const s = document.getElementById("ad-show"); s.value = "all"; s.dispatchEvent(new Event("change"));
-        document.querySelector('[data-view="matrix"]').click();
-      });
+      await page.evaluate(() => { document.querySelector('[data-view="matrix"]').click(); });
+      await page.waitForSelector("#ad-mx-body td.art button", { timeout: 20000 });
+      await page.evaluate(() => { document.querySelector("#ad-mx-body td.art button").click(); });
+      await page.waitForSelector("#ad-panel.open", { timeout: 20000 });
+    },
+  },
+  "public-adopt-list": {
+    file: "library/adopt/index.html",
+    title: "Credential Catalog (public), the List with every credit status",
+    widths: [390, 1280],
+    seed: async (page) => {
+      await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
+      await page.waitForFunction(() => !document.getElementById("kpi-harvested").hidden, null, { timeout: 20000 });
+      await page.evaluate(() => { document.getElementById("kpi-harvested").click(); });
+      await page.waitForSelector("#ad-tbl-body .req-w", { timeout: 20000 });
     },
   },
 
