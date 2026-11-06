@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-574 document(s).
+575 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -531,6 +531,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — build a CPL executive/board deck, and fill an existing brand PPTX template](../kb-notes/playbook-building-cpl-executive-presentations.md) | playbook | published | 2026-07-20 | 2026-08-10 |
 | [Playbook — loading a Microsoft Access export into Supabase](../kb-notes/playbook-access-export-to-supabase.md) | playbook | published | 2026-08-08 | 2026-08-08 |
 | [Playbook — Merging two existing CER credentials (existing→existing fold)](../kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |
+| [Playbook — moving a local title a person placed in the CER](../kb-notes/playbook-move-a-person-placed-title-in-the-cer.md) | playbook | published | 2026-11-06 |  |
 | [Playbook — Pre-stage optional auth before an external API enforces it](../kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — purge committed PII from git history (CustomReport_latest.json)](../kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — redeploying a shared, live Supabase Edge Function safely](../kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-08-22 |
