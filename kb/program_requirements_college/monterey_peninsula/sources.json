@@ -1846,13 +1846,13 @@
    "label": {
     "award": 1,
     "title": 0.6,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "aa",
+    "section_line": "general studies» general studies: social and behavioral sciences, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 128,
-  "text_chars": 9358
+  "text_chars": 9365
  },
  {
   "control_number": "18645",

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 206,
  "with_closed_list": 205,
- "started": "2026-11-01T05:59:43Z",
+ "started": "2026-11-06T09:29:47Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.mpc.edu/sitemap.xml",
@@ -20,7 +20,7 @@
  "child_pages": 0,
  "banner_h1": "2026-2027\nCollege Catalog",
  "loads": 315,
- "seconds": 1590.4,
+ "seconds": 1588.3,
  "found": 205,
  "by_method": {
   "no_closed_list": 1,
@@ -76,5 +76,5 @@
    }
   ]
  },
- "run": "41278868382"
+ "run": "42195216637"
 }

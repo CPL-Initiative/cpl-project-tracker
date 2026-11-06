@@ -89,6 +89,7 @@
      34.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      7.0,
      8.0
@@ -157,7 +158,8 @@
     "cultural arts",
     "political advocacy",
     "social work"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -302,20 +304,14 @@
    "Careers taken from 'Common career opportunities with a baccalaureate degree include...'; 'careers in law' recorded as 'law'."
   ]
  },
- "extracted_run": 41192567009,
+ "extracted_run": 42195216637,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements')"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (college page read 42046379839 (Global Studies AA-T 37243): Global Studies AA-T 37243: 'TOTAL MAJOR UNITS 21-25 · Additional Requirements 35-39 · Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units · Total Units 60' (college page read 42046379839); the same 'electives, if needed, for a total of 60' the local-degree step reads as a floor (Open Asks Sheet 159 card 1, 'keep'))"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 41192567009
 }
