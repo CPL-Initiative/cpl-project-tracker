@@ -61,7 +61,14 @@ articulated one offers Request Quick Adopt to its card on the MAP dashboard; the
    failing check (`node tests/public_adopt.test.js | grep -v ^PASS`), fix it, run `npm run a11y -- public-adopt`, open the
    PR, merge on green.
 1. **Merge #2853** when `test` is green (a wake is set for 20:36Z).
-2. **The badges on the live Catalog** (`library/adopt/`), as the mock shows: *Statewide recommendation* (from
+2. **Sam's requirement for it (~20:40Z, verbatim):** *"If you're Allan Hancock College and you open the cred catalog and
+   select Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
+   Request Adopt buttons on all their local aligned courses."* So a college pick opens on those first: each credential
+   with a statewide recommendation or a CPL-AI match that the college does not yet award, listing the college's own
+   aligned courses (its could-adopt course; its CPL-AI-rated courses, strongest first), each with Request Quick Adopt to
+   a building college's exhibit card on the MAP dashboard. Where no college has built an exhibit yet, Quick Adopt has
+   nothing to adopt: that credential offers *Ask us to prioritize* instead (Sam's ask rule).
+   **The badges on the live Catalog** (`library/adopt/`), as the mock shows: *Statewide recommendation* (from
    `fact-sheet/statewide_recs.js`), *CPL-AI course match* (from `kb/cpl_ai/`), the Recommendations filter, the
    Recommended column, the panel's statewide and CPL-AI sections, the recommendation in place with its confidence, the
    panel's existing resize. Request Quick Adopt beside a strong course where a college awards it. Tests and `npm run

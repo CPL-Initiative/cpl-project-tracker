@@ -77,7 +77,8 @@ recommendation* (pale fill, 153) and *CPL-AI course match* (dashed outline, 42),
 panel resizes and shows a CPL-AI recommendation in place, its confidence first. Mock approved (*"looks good"*), Version 2:
 https://claude.ai/artifact/2FhevexZqhwdyMyuVT9vFu. **Next:** build the badges and the in-panel recommendation into
 `library/adopt/`; Request Quick Adopt beside a strong course where a college awards it; *Add your credential* (a second
-public write: Governance first, DR-31); Sierra's CPL-AI answers. **The ask rule (Sam, 2026-11-06):** *Ask us to
+public write: Governance first, DR-31); Sierra's CPL-AI answers. **A college's first view (Sam, 2026-11-06):** *"select Allan Hancock filter, you should immediately be presented with any
+statewide or AI recommended exhibits with Request Adopt buttons on all their local aligned courses."* **The ask rule (Sam, 2026-11-06):** *Ask us to
 prioritize* only where no college has articulated the credential; an articulated one offers Request Quick Adopt; branch
 `claude/catalog-ask-vs-adopt` carries it (92/93 at the emergency checkpoint).
 
