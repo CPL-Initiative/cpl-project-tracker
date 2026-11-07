@@ -35,8 +35,8 @@ notes (none crossed the bar), the decision sheet rebuild (no card changed; Open 
 
 ## Open work, in order
 
-1. **Merge #2883 and CPLBrain#707** on a green `test`. The migration applied and was read back at 12:55Z: draft
-   60a8a0d5, 78,995 bytes, in `regen.draft_id`. Confirm that the receipt is on the branch before merging.
+1. **DSP Version 3 is on Sam's card** (#2883 and CPLBrain#707 merged at 12:45Z). Draft 60a8a0d5 sits in `regen.draft_id`.
+   Nothing waits on the queue; act on Sam's Replace or his next note.
 2. **Coalinga:** confirm the display apply on `main` (0 errors) and its record commit.
 3. **Palomar:** when the extraction files, check that its capture has no `curriqunet.errors` and still finds 282. Then
    load, run `step=reread` if it sent a loaded program, and build the display.
@@ -67,8 +67,7 @@ None. His DSP request is recorded verbatim in `docs/library_lessons.md`.
 
 ## Let go
 
-This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2883
-(the DSP draft, item 1), #2873 (Contra Costa SLOs) and this checkpoint's PR. Also open: CPLBrain#707. Runs in flight: Palomar's
+This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2873 (Contra Costa SLOs) and this checkpoint's PR. Runs in flight: Palomar's
 extraction on `claude/sweep-palomar`, and Coalinga's display apply on `main`. Open Asks Sheet 166
 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
 
