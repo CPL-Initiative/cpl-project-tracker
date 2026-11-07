@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-07T02:34:04Z",
+ "written_at": "2026-11-07T14:27:00Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13554,
+     "n": 13595,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 3379,
+     "n": 3348,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3349,
+     "n": 3339,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-06T11:57:46Z",
+    "at": "2026-11-07T13:24:16Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13554,
-    "failing": 3379,
-    "unread": 3349,
-    "records": 18557,
+    "complete": 13595,
+    "failing": 3348,
+    "unread": 3339,
+    "records": 18567,
     "colleges": 114,
     "outside_active": 1624,
     "confirmed": 32,
@@ -118,14 +118,6 @@
    ],
    "issues": [
     {
-     "n": 50,
-     "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 47, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
-     "carry": "unsure",
-     "open": "#exhibits/held",
-     "error": null
-    },
-    {
      "n": 623,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
@@ -150,7 +142,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-07T02:29:41Z",
+    "at": "2026-11-07T14:26:54Z",
     "every_hours": 24
    },
    "facts": {
@@ -162,7 +154,7 @@
     "confirmed": 1227,
     "records": 3031,
     "records_stamped": 2263,
-    "saved_at": "2026-11-05T15:54:01Z",
+    "saved_at": "2026-11-07T14:26:54Z",
     "fold_at": "2026-11-07T02:29:41Z",
     "map_titles": 4971,
     "unclassified": 6,
@@ -344,7 +336,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-06T22:17:51Z",
+    "at": "2026-11-07T02:34:08Z",
     "every_hours": null
    },
    "facts": {
@@ -504,7 +496,7 @@
    ],
    "pair": [
     {
-     "n": 7607,
+     "n": 7708,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -514,16 +506,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7607,
+    "credentials": 7708,
     "issuers": 1525,
-    "in_map": 206,
+    "in_map": 207,
     "articulated": 161,
-    "with_issuer_skills": 64,
-    "tech_giant": 482
+    "with_issuer_skills": 85,
+    "tech_giant": 550
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-06T00:00:00Z",
+    "at": "2026-11-07T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -542,9 +534,9 @@
    ],
    "pair": [
     {
-     "n": 29793,
+     "n": 30978,
      "of": null,
-     "words": "outcomes read from 7,715 courses at 11 colleges",
+     "words": "outcomes read from 8,150 courses at 12 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -552,13 +544,14 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 29793,
-    "courses": 7715,
+    "outcomes": 30978,
+    "courses": 8150,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "columbia",
      "golden_west",
+     "lake_tahoe_community",
      "las_positas",
      "mission",
      "modesto_junior",
@@ -567,11 +560,11 @@
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 29
+    "reads": 31
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-06T09:16:18Z",
+    "at": "2026-11-07T06:49:57Z",
     "every_hours": null
    },
    "sources": [
@@ -585,7 +578,7 @@
    "links": [],
    "pair": [
     {
-     "n": 64,
+     "n": 85,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -595,11 +588,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 64
+    "with_issuer_skills": 85
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-06T00:00:00Z",
+    "at": "2026-11-07T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -641,14 +634,6 @@
    {
     "key": "unsure",
     "items": [
-     {
-      "ref": "exhibit",
-      "title": "Common Exhibit Reference",
-      "n": 50,
-      "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 47, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
-      "open": "#exhibits/held"
-     },
      {
       "ref": "cr",
       "title": "Common CR Reference",
@@ -698,7 +683,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3379,
+    "n": 3348,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -706,7 +691,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3349,
+    "n": 3339,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -739,13 +724,13 @@
     },
     {
      "name": "course-identity",
-     "placed": 173,
+     "placed": 177,
      "untouched": 153,
      "kept": 0,
      "renamed": 20,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 4,
      "looked": 20
     },
     {
@@ -816,13 +801,13 @@
     }
    ],
    "total": {
-    "placed": 1197,
+    "placed": 1201,
     "untouched": 1070,
     "kept": 23,
     "renamed": 80,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 4,
     "looked": 103
    }
   },
