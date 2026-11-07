@@ -132,7 +132,7 @@ check("(7) the read rides the credential routes' Promise.all", /fetchMapLinks\(\
 const tryEnd = FN.indexOf('console.error("credential recs lookup failed:", e);');
 const appendAt = FN.indexOf("credentialContext += cplAiContext;");
 check("(7) the section is appended after the recs try, so a failed lookup keeps it", tryEnd > 0 && appendAt > tryEnd);
-check("(7) the handler picks the title with cplAiPick over every matched credential", /cplAiTitle = cplAiPick\(cplAiDoc,\s*\[\.\.\.\(stdRecs \|\| \[\]\), \.\.\.\(anyCreds \|\| \[\]\)\]/.test(FN));
+check("(7) the handler picks the title with cplAiPick over every route's matches, the volume route included", /cplAiTitle = cplAiPick\(cplAiDoc,\s*\[\.\.\.\(stdRecs \|\| \[\]\), \.\.\.\(anyCreds \|\| \[\]\), \.\.\.\(vol \|\| \[\]\)/.test(FN));
 check("(7) the answer's log names the CPL-AI section", /cpl_ai: \{ credential: cplAiTitle, college: [^}]*loaded: !!cplAiDoc/.test(FN));
 
 // (8)

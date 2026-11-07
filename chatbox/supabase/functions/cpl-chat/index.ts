@@ -7598,8 +7598,12 @@ Deno.serve(async (req: Request) => {
     // CPL-AI's course ratings for the strongest-matched credential (SkyFern, 2026-11-07),
     // outside the try for the same reason: the section does not depend on the recs lookup.
     // It carries its own rule; see the CPL-AI BLOCK.
+    // Every route's matches, not the first two alone: on Sacramento City's Security+ question the
+    // statewide route's top five filled with four LA City welding titles (matched on "city") and
+    // Security+ reached the routes only through the volume lookup (preview A/B, 2026-11-07).
     const cplAiTitle = cplAiPick(cplAiDoc,
-      [...(stdRecs || []), ...(anyCreds || [])].map((r: any) => r?.unified_title), routeText);
+      [...(stdRecs || []), ...(anyCreds || []), ...(vol || []), ...(collegeCreds || []), ...(adopt || [])]
+        .map((r: any) => r?.unified_title), routeText);
     const cplAiContext = buildCplAiContext(cplAiDoc, cplAiTitle, singleProfile?.college || null);
     credentialContext += cplAiContext;
 
@@ -7908,7 +7912,7 @@ Deno.serve(async (req: Request) => {
           } : {}),
           // The CPL-AI ratings this answer was given (SkyFern): the credential and the size.
           // Recorded whenever a credential matched, so an empty section says why: no file, or no rating.
-          ...((stdRecs || anyCreds) ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, loaded: !!cplAiDoc, chars: cplAiContext.length } } : {}),
+          ...((stdRecs || anyCreds || vol) ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, loaded: !!cplAiDoc, chars: cplAiContext.length } } : {}),
         });
         console.log(
           `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +
