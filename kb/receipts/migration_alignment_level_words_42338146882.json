@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-07_alignment_level_words.sql",
+ "name": "alignment_level_words",
+ "version": "20261107042401",
+ "sha256": "47fb3ea66b472dbeaa06e791b16a4d6d2541663b77602e3488e427ed1f7184b8",
+ "run": "42338146882",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
