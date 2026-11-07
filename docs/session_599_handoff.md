@@ -19,8 +19,8 @@ decision sheet rebuild (no card changed; Open Asks Sheet 166 has no replies), `c
 1. **Palomar: not extracted.** Capture 42359155179 found 274 of 331 against the filed 282. The 8 lost programs (7 passing)
    are the 8 pages in `curriqunet.errors` (timeouts and a 503), and an extraction files the new set in place of the old.
    Re-capture 42367400072 dispatched at 11:15Z (free).
-2. **Coalinga:** capture 42363219841 found 55 of 62, none lost; extraction 42367397839 (`extract=1`) sends the two
-   Administration of Justice awards 07958 and 30887, about $0.13.
+2. **Coalinga:** capture 42363219841 found 55 of 62, none lost; extraction 42367397839 filed the two Administration of
+   Justice awards 07958 and 30887, both passing ($0.14), so 45 of 62 pass (was 42). Load dispatched on the branch at 11:27Z.
 3. **Los Medanos:** free capture 42367472028 on `claude/sweep-los-medanos` (lmc.elumenapp.com, its own host; 29 of 97
    passing on the old eLumen reader).
 4. Steps 5 to 7 and 9: no to-do marked done, no new Library brief, no CER rule or re-analysis request; the three Library
@@ -30,7 +30,7 @@ decision sheet rebuild (no card changed; Open Asks Sheet 166 has no replies), `c
 ## Open work, in order
 
 1. **Merge this checkpoint's PR** on a green `test` if it has not merged.
-2. **Coalinga:** when 42367397839 files on `claude/sweep-coalinga`, load (`step=load`), then build the display on the
+2. **Coalinga:** confirm the load on `claude/sweep-coalinga` inserted the 2 new programs, then build the display on the
    branch (`kb/_build_roep_display.py`) and `step=display`; merge the branch on a green `test`.
 3. **Palomar:** when 42367400072 files, check `curriqunet.errors` is empty and the 8 (40047, 05196, 33826, 40622, 40048,
    30605, 36862, 35243) are found again. Then extract only what `would_extract` lists, load, and `step=reread` if it sent
