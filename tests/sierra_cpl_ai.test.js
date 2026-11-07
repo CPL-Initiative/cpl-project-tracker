@@ -40,7 +40,7 @@ function finish() {
 let L = null;
 try {
   L = liftBlock(FN, "// ── CPL-AI BLOCK START", "// ── CPL-AI BLOCK END",
-    ["buildCplAiContext", "cplAiEntry", "cplAiCollegeKey", "CPL_AI_RULE", "CPL_AI_CATALOG"]);
+    ["buildCplAiContext", "cplAiEntry", "cplAiCollegeKey", "cplAiPick", "CPL_AI_RULE", "CPL_AI_CATALOG"]);
 } catch (e) { check("(0) the CPL-AI block lifts out of index.ts — " + e.message, false); }
 check("(0) the CPL-AI block lifts out of index.ts", !!L && typeof L.buildCplAiContext === "function");
 if (!L) finish();
@@ -109,6 +109,18 @@ check("(5) a credential CPL-AI did not rate adds nothing", L.buildCplAiContext(D
 check("(5) no file adds nothing", L.buildCplAiContext(null, SEC, BEST) === "");
 check("(5) no title adds nothing", L.buildCplAiContext(DOC, null, BEST) === "");
 
+// (5b) which matched credential the section is about (the preview A/B, 2026-11-07)
+const SAC_Q = "Which Sacramento City College courses could faculty review for credit for CompTIA Security+?";
+check("(5b) a first-ranked credential CPL-AI did not rate gives way to the one asked about",
+  L.cplAiPick(DOC, ["LA City Certified Welder — AWS D1.1 SMAW", "CompTIA Security+"], SAC_Q) === "CompTIA Security+");
+check("(5b) a Network+ question takes Network+ over a Security+ match ranked first",
+  L.cplAiPick(DOC, ["CompTIA Security+", "CompTIA Network+"], "Which of our courses fit CompTIA Network+?") === "CompTIA Network+");
+check("(5b) a rated title the question does not name is not picked",
+  L.cplAiPick(DOC, ["CompTIA Security+"], "Which Sacramento City College courses fit welding?") === null);
+check("(5b) a title with digits matches on them (ASE A5 for brakes)",
+  L.cplAiPick(DOC, ["ASE A5 — Brakes"], "Do any courses count for ASE A5 brakes?") === "ASE A5 — Brakes");
+check("(5b) no file picks nothing", L.cplAiPick(null, ["CompTIA Security+"], SAC_Q) === null);
+
 // (6)
 check("(6) the rule says the faculty make every CPL determination", /faculty make every CPL determination/.test(L.CPL_AI_RULE));
 check("(6) the rule forbids presenting a rating as credit a student will receive",
@@ -120,7 +132,8 @@ check("(7) the read rides the credential routes' Promise.all", /fetchMapLinks\(\
 const tryEnd = FN.indexOf('console.error("credential recs lookup failed:", e);');
 const appendAt = FN.indexOf("credentialContext += cplAiContext;");
 check("(7) the section is appended after the recs try, so a failed lookup keeps it", tryEnd > 0 && appendAt > tryEnd);
-check("(7) the answer's log names the CPL-AI section", /cpl_ai: \{ credential: cplAiTitle/.test(FN));
+check("(7) the handler picks the title with cplAiPick over every route's matches, the volume route included", /cplAiTitle = cplAiPick\(cplAiDoc,\s*\[\.\.\.\(stdRecs \|\| \[\]\), \.\.\.\(anyCreds \|\| \[\]\), \.\.\.\(vol \|\| \[\]\)/.test(FN));
+check("(7) the answer's log names the CPL-AI section", /cpl_ai: \{ credential: cplAiTitle, college: [^}]*loaded: !!cplAiDoc/.test(FN));
 
 // (8)
 const BUILDER = fs.readFileSync(path.join(ROOT, "kb/_build_adopt_page.py"), "utf8");

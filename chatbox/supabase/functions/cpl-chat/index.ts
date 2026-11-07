@@ -6239,12 +6239,17 @@ async function fetchCplAi(): Promise<any> {
   if (cplAiCache && Date.now() - cplAiCache.at < CPL_AI_TTL_MS) return cplAiCache.doc;
   try {
     const res = await fetch(CPL_AI_URL, { signal: AbortSignal.timeout(5000) });
-    if (!res.ok) return cplAiCache ? cplAiCache.doc : null;
+    if (!res.ok) {
+      console.error(`cpl-chat: CPL-AI file read returned ${res.status}`);
+      return cplAiCache ? cplAiCache.doc : null;
+    }
     const doc = await res.json();
     const ok = doc && doc.by_exhibit && typeof doc.by_exhibit === "object" ? doc : null;
     if (ok) cplAiCache = { at: Date.now(), doc: ok };
+    else console.error("cpl-chat: CPL-AI file read held no by_exhibit");
     return ok || (cplAiCache ? cplAiCache.doc : null);
-  } catch {
+  } catch (e) {
+    console.error("cpl-chat: CPL-AI file read failed:", e);
     return cplAiCache ? cplAiCache.doc : null;
   }
 }
@@ -6256,8 +6261,8 @@ async function fetchCplAi(): Promise<any> {
 // read of them, so a faculty member asking "which of our courses fit Security+" got the
 // MAP articulations and the title-similarity worklist, never CPL-AI's skill-area ratings.
 //
-// The block fires on the STRONGEST-matched credential only (the one Route ALIGN uses) and
-// only when CPL-AI joined a certification to it. With a college: that college's courses,
+// The block fires on one credential, the first matched one CPL-AI rated that the question
+// names (cplAiPick), and only when CPL-AI joined a certification to it. With a college: that college's courses,
 // Strong evidence first, then Faculty interpretation; Limited evidence is a count. Without
 // one, or when CPL-AI rated nothing there: the colleges with the most Strong evidence
 // courses. Every rating is evidence for faculty review, never a CPL determination, and
@@ -6285,6 +6290,34 @@ function cplAiEntry(doc: any, title: string | null): Array<any> {
     if (cplAiNorm(k) === want && Array.isArray(doc.by_exhibit[k])) return doc.by_exhibit[k];
   }
   return [];
+}
+
+// Which matched credential the section is about. The routes rank their matches, and the
+// first is not always the one asked about: for "Which Sacramento City College courses could
+// faculty review for credit for CompTIA Security+?" the first was LA City Certified Welder
+// (the preview A/B, 2026-11-07), on the word "city". So the section scores each matched title
+// CPL-AI rated by the share of its words the question uses (a "+" ignored, words that name
+// no credential left out) and takes the best, at half its words or more; a tie keeps the
+// routes' order. "CompTIA Network+" then wins a Network+ question over Security+.
+const CPL_AI_WEAK_WORDS = new Set(["certified", "certificate", "certification", "college", "city", "the", "and", "for", "with", "professional", "user"]);
+
+function cplAiWords(s: any): Array<string> {
+  return cplAiNorm(s).replace(/\+/g, "").split(" ")
+    .filter((w) => (w.length >= 3 || /\d/.test(w)) && !CPL_AI_WEAK_WORDS.has(w));
+}
+
+function cplAiPick(doc: any, titles: Array<any>, question: string): string | null {
+  const asked = new Set(cplAiWords(question));
+  let best: string | null = null;
+  let bestScore = 0;
+  for (const t of titles || []) {
+    if (!t || cplAiEntry(doc, t).length === 0) continue;
+    const words = cplAiWords(t);
+    if (words.length === 0) continue;
+    const score = words.filter((w) => asked.has(w)).length / words.length;
+    if (score >= 0.5 && score > bestScore) { best = String(t); bestScore = score; }
+  }
+  return best;
 }
 
 // A college's key in by_college: its index in doc.colleges, the Catalog's college
@@ -7565,8 +7598,12 @@ Deno.serve(async (req: Request) => {
     // CPL-AI's course ratings for the strongest-matched credential (SkyFern, 2026-11-07),
     // outside the try for the same reason: the section does not depend on the recs lookup.
     // It carries its own rule; see the CPL-AI BLOCK.
-    const cplAiTitle = (stdRecs && stdRecs[0]?.unified_title)
-      || (anyCreds && anyCreds[0]?.unified_title) || null;
+    // Every route's matches, not the first two alone: on Sacramento City's Security+ question the
+    // statewide route's top five filled with four LA City welding titles (matched on "city") and
+    // Security+ reached the routes only through the volume lookup (preview A/B, 2026-11-07).
+    const cplAiTitle = cplAiPick(cplAiDoc,
+      [...(stdRecs || []), ...(anyCreds || []), ...(vol || []), ...(collegeCreds || []), ...(adopt || [])]
+        .map((r: any) => r?.unified_title), routeText);
     const cplAiContext = buildCplAiContext(cplAiDoc, cplAiTitle, singleProfile?.college || null);
     credentialContext += cplAiContext;
 
@@ -7874,7 +7911,8 @@ Deno.serve(async (req: Request) => {
             },
           } : {}),
           // The CPL-AI ratings this answer was given (SkyFern): the credential and the size.
-          ...(cplAiContext ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, chars: cplAiContext.length } } : {}),
+          // Recorded whenever a credential matched, so an empty section says why: no file, or no rating.
+          ...((stdRecs || anyCreds || vol) ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, loaded: !!cplAiDoc, chars: cplAiContext.length } } : {}),
         });
         console.log(
           `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +
