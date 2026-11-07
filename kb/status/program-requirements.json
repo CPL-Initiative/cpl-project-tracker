@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-07T10:17:27Z",
-  "session": 597,
-  "moniker": "SkyCometGalaxy",
+  "written_at": "2026-11-07T11:18:10Z",
+  "session": 598,
+  "moniker": "SkyAndromeda",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_598_handoff.md",
+  "handoff": "docs/session_599_handoff.md",
   "next_step": {
-    "title": "Read Palomar's and Coalinga's re-captures",
-    "text": "Palomar's and Coalinga's catalogs are being read again on the current reader, at no model cost; each result decides what, if anything, to extract. Siskiyous' display step is applying its 66 passing records."
+    "title": "Read Palomar's re-capture and load Coalinga",
+    "text": "Palomar's first re-capture lost 8 programs to the college site's timeouts, so it is being read again at no model cost. Coalinga's two newly found Administration of Justice programs are being extracted, and Los Medanos' catalog is being read again on the current reader."
   },
   "calls": [
     {
@@ -224,6 +224,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-07T11:16:00Z",
+      "text": "Palomar's catalog is being read again because the college site timed out on 8 pages, which would have dropped 7 passing records. Coalinga's two newly found programs are being extracted, about 13 cents. Los Medanos College's catalog is being read again on the current reader, at no model cost."
+    },
+    {
       "at": "2026-11-07T10:17:00Z",
       "text": "Coalinga College's catalog is being read again on the current reader, at no model cost, beside Palomar's. Siskiyous' display step is still applying its new records."
     },
@@ -290,10 +294,6 @@
     {
       "at": "2026-11-05T22:13:00Z",
       "text": "The side session finished security step 1 with Sam (worker pasted, both secrets rotated, proof runs 686 and 688) and drafted step 2's migration (tracker 2822). The harvest's tables and queue did not move."
-    },
-    {
-      "at": "2026-11-06T09:45:00Z",
-      "text": "Monterey Peninsula's six unequal records were read against their pages (tracker 2809). Two steps from the catalog's own words went to a reconcile: the 60 is a floor for transfer degrees too, and a group's units printed on its heading line count once. The other four need reader work or stay as the catalog prints them."
     }
   ],
   "headline": [
@@ -487,11 +487,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-07T11:12:00Z"
+    "at": "2026-11-07T12:12:00Z"
   },
   "harvest": {
     "day": "2026-11-07",
-    "gaps": 3024,
+    "gaps": 3016,
     "parts": {
       "links": {
         "catalog": [

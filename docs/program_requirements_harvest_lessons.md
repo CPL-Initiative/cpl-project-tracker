@@ -113,34 +113,10 @@ The section, verbatim: `program_requirements_harvest_lessons_archive_3.md`, *S42
 
 Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-## S440 SkyChaparral (2026-10-21): three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone
+## S440: moved to the archive (S598 compaction)
 
-- **List the thin colleges live before picking the next one.** The parked list named eleven colleges; a live read of
-  active COCI programs against records (under 60%) found three more with almost nothing filed and no note saying why:
-  Santa Monica (1 of 254), Irvine Valley (1 of 166) and West LA (4 of 233), each holding only its pilot rows. None
-  had ever been read by the college pipeline.
-- **One run waits per branch.** `program-requirements-college.yml` groups runs by ref with cancel-in-progress off, so
-  a second queued run replaces the first pending one: three dispatches in a row ran the first, canceled the second
-  (Santa Monica, run 39527753004) and queued the third. Queue the next run only when nothing is pending.
-- **A dispatch checks out the commit the branch held when it was sent.** A display dispatch sent in the same breath
-  as a build commit (the commit failed on a staged path) was pinned to the old build (run 39553230693, canceled
-  before it started). Push, confirm the head, then dispatch.
-- **A slow PDF is a wait, not a refusal.** Santa Monica's catalog link answered 200 and its 472-page, 14.5 MB PDF did
-  not finish in 600 s (run 39536186746). A page read (39538245162) showed the HTML catalog links no page per
-  program. Sam raised the ceiling to 2,400 s (`CATALOG_PDF_WAIT_MAX_S`, guard in `tests/program_requirements_pilot_test.py`)
-  and the procedure record names 2,400 (`program_source_procedure_set`, receipt
-  `kb/receipts/program_source_procedure_smc_pdf_wait_2026-10-21_s440.sql`); the rerun (39548766337) found 239 of 240.
-- **A removed row takes its filed record with it.** Build 5f9939404fcf still carried Taft 38661 from
-  `kb/program_requirements_college/taft/records/`, and its display job (39548756872) wrote 16,301 rows and reported
-  38661 missing. Removing the file and rebuilding (772abb3ddebe) clears it, as Hartnell's re-read did.
-- **Taft 38661 (Sheet 98 card 1):** the auto-mode classifier refused the receipt and delete file twice, with and
-  without Sam's go, so Sam ran the guarded delete himself (md5 6b5e44f66a545875fe54b89c8a9d5469, unchecked, no
-  verdicts). No copy of the row is committed.
-- **Counts:** West LA 214 of 228 found, 214 extracted, 173 passing, $14.97, load 39539613701 inserted 195 and kept 4;
-  Irvine Valley 144 of 146 found (curriQunet, 78 minutes of capture), 122 passing, $11.02, load 39548442445 inserted
-  143 and kept 1. Both were already in the dated reads (pilot colleges).
-
-*S424 and S423 moved verbatim to `program_requirements_harvest_lessons_archive_3.md` (S455).*
+Three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone: verbatim in
+`docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## Moved from the lane (S423 compaction)
 
@@ -1134,3 +1110,16 @@ From *Course objectives too*, verbatim:
 ### Moved from the lane (S596): Ohlone's paragraph, as it stood
 
 **Ohlone (S593, #2841): 146 of 179 found; every gap is the college's own.** S451 placed the 15 credit gaps (programs the 2026-2027 guide no longer prints under the state's lists). Page reads 42225429355, 42227635069 and 42228515615 placed the 18 noncredit ones: the college's noncredit certificates page and its program list (A to S) name none of them, and the one it still has a page for, Computer Aided Design Skills 38975, answers 403 behind a sign-in. All 33 are the college's to settle in COCI; no paid read. Its open work is the 29 extracted records failing a machine check (arithmetic 18, coverage 13, outcomes 8, invented 1). Its failing records wait for the outlier pass (Sam's Nov 2 ruling).
+
+## S598 SkyAndromeda (2026-11-07, the CPL Queue routine, 11:12Z firing): Palomar re-captured, Coalinga extracting, Los Medanos captured
+
+- **Check a capture's host errors before extracting from it.** Palomar's capture 42359155179 found 8 fewer programs than
+  the filed read, and the 8 matched the 8 entries in `curriqunet.errors` (seven 60 s timeouts and a 503). A read files
+  its new record set in place of the old one, so extracting there would have traded seven passing records for one better
+  Chemistry page. A free re-capture costs runner minutes only; compare `found` and the lost control numbers first.
+- **Pick the next college by pass share and reader age.** The lowest pass shares on a reader since upgraded (eLumen:
+  Los Medanos 30%, Columbia 37%, Redwoods 50%) are the free re-captures most likely to pay, as Siskiyous' did.
+
+### Moved from the lane (S598): the Progress view, as it stood
+
+✅ **The Progress view (S343, #1900):** the tab's first view, from the mock-up Sam approved (*"The mockup looks good to go"*). `MILESTONES` and `PARTS` at its top are definitions; the tables are read live; what anon cannot read comes from **`kb/status/program-requirements.json`** (`kb/queue_status.json` until S418), written at every checkpoint (step 12, `scripts/queue_status.py`), never from a widened policy. **The view is drawn by the Commons' shared module `commons_progress.js` since S419** (the Commons' step 1; [commons lane](commons.md)): this tab keeps its definitions (`MILESTONES`, `PARTS`, `WHOLE`, `HEADLINE`, `PROGRESS`) and its live reads, and lends the module its sections and count controls. Detail: lessons S343. Every count opens what it totals; a card waiting on Sam links where he answers (#2077); a call in `kb/queue_status.json` must carry its answer link (`link`, `view` or `records`) and may name its card (`part`). *Whole harvest* and *Complete*: lessons, *Moved from the lane (S542 compaction)*. A status-file note replaces its card's live foot, so delete one the moment it stops being true.
