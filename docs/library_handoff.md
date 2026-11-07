@@ -49,8 +49,9 @@ Your moniker is **SkyThistle**. You pick up after SkyBramble on the Library side
    `kb/cer_decisions_out/2026-11-07`. The scorer migration is applied (04:24Z) and read back.
 3. **After the daily run and the 13:20Z sync:** `credential_alignment_for_college('Basic Military Training','Sierra College')`
    holds no `HIST 50` row and no `MUS 4A`.
-4. **Moreno Valley's `HIS 1`** (`CCC000520542`, World History to 1500) is absent from our COCI export while `HES 1`
-   carries `HIST 150`. Whether COCI itself holds that entry needs a COCI read; our export is the only copy here.
+4. **The claim audit's 10 findings** (`kb/cid_claim_audit.json`, content-based since Sam's 2026-11-07 word): each is
+   a team item, hold it with its sister colleges' home or clear it. Add course SLOs, SOC and course CIP to the
+   content test when a source carries them (`data_sources`).
 5. The Department of Insurance's license types (`data_sources`; outside this network), CPL Pathways' sign-in gate
    (agree one writer with the main queue), the Commons' NEXT, the Library lane's standing *Next*.
 6. `tests/statewide_kpi_test.py` fails on `main` before this change (a card shows *Issuer/type variants*); not ours.

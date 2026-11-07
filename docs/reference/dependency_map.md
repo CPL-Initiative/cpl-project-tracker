@@ -378,7 +378,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cobi_orgs.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_refresh.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup.js` | pages: `CPL_Dashboard.html` | — |
-| `coci_lookup_desc_*.js` | tabs: `coci-lookup` · scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py` | — |
+| `coci_lookup_desc_*.js` | tabs: `coci-lookup` · scripts: `kb/_audit_cid_claims.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py` | — |
 | `coci_program_export_*.csv` | scripts: `chatbox/build_coci_offerings.py` | — |
 | `coci_program_export_<date>.csv` | scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_coci_programs.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_program_course_graph.py`, `kb/_classify_noncredit_programs.py`, `tmc/_build_college_adts.py` | — |
 | `college_activity.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
@@ -962,6 +962,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_decision_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_procedures_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cid_claim_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/clep_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
 | `tests/coci_offerings_sync_chunk_test.py` | workflows: `js-tests.yml` | — |
@@ -1318,5 +1319,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 806 file
+Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 807 file
 datasets · 193 external services · 530 consumers · 62 workflows · 40 tabs.

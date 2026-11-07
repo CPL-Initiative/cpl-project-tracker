@@ -808,6 +808,8 @@ jobs:
           python3 tests/eacr_matrix_payload_test.py
           # A held COCI C-ID claim stays out of a statewide rec set (Sheet 164 card 2).
           python3 tests/statewide_cid_hold_test.py
+          # The C-ID claim audit decides on content, never on subject letters alone (Sam, 2026-11-07).
+          python3 tests/cid_claim_audit_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
       # detector proposes re-levels against live curation rows, so its failure
       # modes are confident-wrong writes: reading a PREREQUISITE clause as the

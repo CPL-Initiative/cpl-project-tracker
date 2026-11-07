@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 806,
+  "file_datasets": 807,
   "external_services": 193,
   "consumers": 530,
   "workflows": 62,
@@ -5593,6 +5593,13 @@
      ]
     },
     {
+     "id": "script:kb/_audit_cid_claims.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
+    },
+    {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -10443,7 +10450,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 58
+     "line": 136
     },
     {
      "id": "script:kb/_desc_consolidation_dryrun.py",
@@ -10484,7 +10491,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 91
+     "line": 159
     }
    ],
    "producers": [
@@ -16473,7 +16480,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 139
     }
    ],
    "served": true,
@@ -21660,6 +21667,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cid_claim_audit_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/clep_official_titles_test.py": {
    "consumers": [
     {
@@ -23448,7 +23468,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 57
+     "line": 135
     },
     {
      "id": "script:kb/_build_aligned_exhibits.py",
@@ -23864,7 +23884,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 134
     },
     {
      "id": "script:kb/_build_ccr_atlas_extract.py",
@@ -29705,6 +29725,7 @@
     "tests/top_code_lookup_code4_test.py",
     "tests/eacr_matrix_payload_test.py",
     "tests/statewide_cid_hold_test.py",
+    "tests/cid_claim_audit_test.py",
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
     "tests/esl_reader_and_ladder_test.py",
