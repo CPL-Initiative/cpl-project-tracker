@@ -109,33 +109,9 @@ The second reader built, three Jev sittings, Cañada's Cal-GETC step and the six
 
 The section, verbatim: `program_requirements_harvest_lessons_archive_3.md`, *S422 SkyWillow*.
 
-## S442, the routine's run beside Sam's SkyManzanita (2026-10-21): the Ventura district's campus letter
+## S442 (the Ventura district's campus letter): moved to the archive (S596 compaction)
 
-- **Two sessions ran as S442 on one queue.** The routine's 11:15Z firing found no open PR newer than 10-19 and no
-  `list_sessions`, and Sam opened SkyManzanita by hand about the same hour. Both worked the harvest's thin list; both
-  read Oxnard's host within the hour, and each display job wrote its own build (bf781cf0cd22 for Reedley, 8d733f684f83
-  for the three Ventura colleges) over the same rows in the same window, leaving a mix. A build from `main` after both
-  merged, applied once, settled it. A session with no `list_sessions` reads `main`'s commits again before each
-  display dispatch, not only at the start.
-- **The old reader's capture and the new one disagree on Oxnard:** SkyManzanita's free capture read it "exactly as
-  before" (reader work); with the campus-letter fix it found 120 of 132 (94 before).
-
-- **A tab the filter cannot read as naming a course is dropped before any check sees it.** Moorpark's Animal Care and
-  Training A.S. took its own page at title 1.0 yet read 0 of 42 listed courses. Page read 39595155181 printed only the
-  Overview; with `"expand": true` (39595760314) the REQUIREMENTS tab printed `ANCT M01A`, `ANCT M09` ... The Ventura
-  district letters each number by campus (M, and R and V at Oxnard and Ventura). `SUBJECT_TOKEN` took a number to start
-  with a digit or Coastline's C, so `hidden_tabs_text` dropped the panel as the search dialog, and the capture fell
-  back to textContent, where each code runs into its title (`ANCT M01AAnimal`) and no pattern ends. Any one letter may
-  now lead (#2309; guard in `tests/program_requirements_pilot_test.py`, failing without the fix).
-- **Moorpark after the fix:** capture-only 39596973339 found 144 of 145 (99 before; 106 at coverage 1.0, 57 before),
-  one page claimed (39 before). Extraction 39600815599: 144 extracted, 100 passing (31), $10.40. Load 39605787602
-  inserted 83 and kept 52; reread 39606457885 replaced 1. Display build c45da149b72b, 16,606 rows.
-- **Golden West's re-read with today's reader (39591103370) found the same 81 pages as S395.** Its gap is the catalog's
-  shape: 43 programs' only pages are department pages (Automotive Technology's nine certificates, Accounting's three)
-  or the General Education page, and 29 have no course list in the state's file. A reader change there is a
-  department-page reader, not a code fix.
-- **Read the thin list for a shared cause before a college's own.** Moorpark (34%), Oxnard (49%) and Ventura (55%)
-  sat on one host and one numbering habit; one fix reaches all three.
+Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S440 SkyChaparral (2026-10-21): three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone
 
@@ -1141,3 +1117,20 @@ From *Course objectives too*, verbatim:
 ### Moved from the lane (S595): Mt. San Jacinto's paragraph, as it stood
 
 **Mt. San Jacinto (S592-S593, #2838 merged): 116 of 152 found.** Its gaps are the catalog's own (lessons S448); Public Health A.S.-T 39455 was read and loaded, display build 7b1f3658a888 applied by run 42217856222 (17,547 of 17,550, 0 errors; the 3 missing are Monterey's rows already gone). The other 35 stand as the catalog prints them (recheck Chemistry A.S.-T 40010 with the next catalog edit).
+
+## S596 SkyPinwheel (2026-11-07, the CPL Queue routine, 09:12Z firing): Siskiyous loaded and reread; Palomar re-captured
+
+- **A load after a re-extraction keeps the old rows; the reread replaces them.** Siskiyous' load (42359009832) inserted the
+  8 new programs and kept the 65 already live, which still carried the old reader's records (42 passing). The reread
+  (42359184639) replaced all 65 from extraction 42354853403, so the college went from 42 to 66 passing (about 31% of 77,
+  far above the stopping rule's 3%). Whenever `would_extract` sends programs already loaded, follow the load with
+  `step=reread`.
+- **A merge of `main` into an SLO branch conflicts on `.load` and `.run`.** Keep the branch's lines (Mission's #2800 put its
+  own on main) and begin the commit message with *Merge*: the read and load gates skip a head commit whose message starts
+  that way, so the load does not run twice.
+- **Palomar's free capture** (42359155179) runs on the curriQunet reader as it stands after S447 and S531; its last capture
+  was 2026-10-22.
+
+### Moved from the lane (S596): Ohlone's paragraph, as it stood
+
+**Ohlone (S593, #2841): 146 of 179 found; every gap is the college's own.** S451 placed the 15 credit gaps (programs the 2026-2027 guide no longer prints under the state's lists). Page reads 42225429355, 42227635069 and 42228515615 placed the 18 noncredit ones: the college's noncredit certificates page and its program list (A to S) name none of them, and the one it still has a page for, Computer Aided Design Skills 38975, answers 403 behind a sign-in. All 33 are the college's to settle in COCI; no paid read. Its open work is the 29 extracted records failing a machine check (arithmetic 18, coverage 13, outcomes 8, invented 1). Its failing records wait for the outlier pass (Sam's Nov 2 ruling).
