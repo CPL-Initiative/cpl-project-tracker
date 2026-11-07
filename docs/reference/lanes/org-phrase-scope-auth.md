@@ -104,7 +104,8 @@ The lane's marker is what makes the builder carry them.
   He creates them in the console; the `environment:` lines follow in one PR.
 - **Card 6, advise:** answered in the thread: a ruleset with only *Restrict deletions* and *Block force pushes*
   adds no approval; *Require a pull request*, *Require status checks* and *Require review from Code Owners* stay
-  off. NEEDS SAM ([Open Asks Sheet 168](https://claude.ai/artifact/7UuGfoQCy4dpnz2unuEFn3)): whether to turn that ruleset on in the three repositories.
+  off. Sam answered Sheet 168 card 1 (15:12Z): *"those were already ticked--leaving as is."* The rulesets stand as
+  he set them; nothing waits.
 
 ### Next (session work)
 
