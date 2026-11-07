@@ -13,8 +13,8 @@ Your moniker is **SkyMilkyWay** (galaxy names).
 This checkpoint counts as **full** because the run's workflows wrote Rule 10 data receipts: Palomar's load and reread
 (before-values) and Coalinga's display apply record. No Roadmap row moved. Skipped, each unchanged this run:
 `kb/README.md`, `README.md`, the pipeline view, KB notes (none crossed the bar), the decision sheet rebuild (no card
-changed; Open Asks Sheet 166 has no replies), `cpl_memory` (the lessons doc holds the findings) and the vault session
-note (the queue's routine work; the lessons doc is the record).
+changed; Open Asks Sheet 166 has no replies), and `cpl_memory` (the lessons doc holds the findings). The vault session
+note is CPLBrain#708 (merged).
 
 ## What shipped
 
