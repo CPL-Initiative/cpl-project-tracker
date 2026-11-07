@@ -15695,7 +15695,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 66,
+   "count": 67,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16556,6 +16556,20 @@
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
      "updated": "2026-11-05"
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "path": "docs/reference/cobix_inbox_agent.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "cobix",
+      "scheduled-session"
+     ],
+     "title": "Sky: COBIx inbox \u2014 the standing instruction for the daytime routine",
+     "type": null,
+     "updated": "2026-11-07"
     },
     {
      "created": "2026-09-09",
@@ -26229,5 +26243,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1405
+ "total": 1406
 }

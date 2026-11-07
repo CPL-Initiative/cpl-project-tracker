@@ -38,6 +38,7 @@ finished_workstreams · skyview_invariants · live_session_banner ·
 Allow-Once storm) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents
 behind these rules) · cobix_pr_loop ·
+[cobix_inbox_agent](docs/reference/cobix_inbox_agent.md) (the daytime COBIx routine) ·
 [credential_watch_agent](docs/reference/credential_watch_agent.md) (the
 industry-credential watch) · `lanes/`.
 
