@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 99 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 558 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1399** | |
+| Session handoffs | 559 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1400** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-07 SkyCartwheel (S595, CPL Queue routine, 08:12Z): S594's #2874 merged; Siskiyous 73 of 77 on the new reader, extraction 42354853403 running; Lake Tahoe's SLO load pushed (#2833); Contra Costa's full read due 2026-11-08; light checkpoint; `docs/session_596_handoff.md`.
 - 2026-11-06 SkyHarbor (Library side session): SkyBeacon's PRs merged (#2858, #2859, CPLBrain#694); Add your credential live (#2860, DR-32); the Library List sorts loose pieces by date (#2861); Moreno Valley's HES 1 claim on HIST 150 held, no Basic Military Training on world history (#2862); CPL Pathways opens on every college with the Credential Catalog inside, full width (#2863); full checkpoint; `docs/library_handoff.md`.
 - 2026-11-06 SkyBeacon (Library side session): the ask rule (#2854); the CER retire path and Sam's 1 yes, 2 yes written and folded by the rename (#2855); the Catalog's badges and a college's first view (#2856); the Commons first view from Sam's recording and the lapsed-token fix on every surface (#2857); COCI Lookup named Courses and Programs (#2858); `library_lessons.md` compacted into `library_lessons_archive_2.md`; full checkpoint; `docs/library_handoff.md`.
 - 2026-11-06 SkyLantern (Library side session): the Catalog's List one line a credential, tiles that follow the filters, lazy loading (#2850); CPL-AI hosted whole, joined to the common exhibits and shown in Exhibits (#2851, #2853); seven title moves and the ServSafe fold written through a reviewed plan (#2852; receipt on main); Sam's word that CPL-AI goes public; the badges mock approved; full checkpoint at the context WARN; `docs/library_handoff.md`.

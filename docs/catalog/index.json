@@ -16641,8 +16641,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 558,
+   "count": 559,
    "docs": [
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 596,
+     "path": "docs/session_596_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 596 handoff: Siskiyous extracting on the new reader; Lake Tahoe's SLOs loading",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-06",
      "governs": [],
@@ -26138,5 +26153,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1399
+ "total": 1400
 }

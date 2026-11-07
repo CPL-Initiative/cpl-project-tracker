@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1413,
-    "bytes": 14278938,
+    "bytes": 14280354,
     "over_budget": 1,
     "handoff_max": 594,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 145,
-        "bytes": 4395385,
+        "bytes": 4395742,
         "over": 1
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 495937,
+        "bytes": 496996,
         "over": 0
       },
       "handoff": {
@@ -63,9 +63,9 @@
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 26100,
-      "bytes": 4291739029,
-      "heavy_bytes": 3059569848,
+      "files": 26103,
+      "bytes": 4291775167,
+      "heavy_bytes": 3059573314,
       "heavy_share": 0.713,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -162,13 +162,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 151795,
+        "bytes": 151965,
         "limit": 150000,
         "lane": "other",
-        "over_by": 1795,
+        "over_by": 1965,
         "ratio": 1.01
       },
-      "message": "151,795 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "151,965 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -176,10 +176,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1891577614,
+        "bytes": 1891578017,
         "kind": "dir"
       },
-      "message": "directory totals 1,891,577,614 B inside the vault"
+      "message": "directory totals 1,891,578,017 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -286,10 +286,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10334149,
+        "bytes": 10337212,
         "kind": "dir"
       },
-      "message": "directory totals 10,334,149 B inside the vault"
+      "message": "directory totals 10,337,212 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -926,11 +926,11 @@
       "fixable": false,
       "path": "docs/session_594_handoff.md",
       "detail": {
-        "commits_since": 35,
+        "commits_since": 39,
         "budget": 6,
         "handoff": "session_594_handoff.md"
       },
-      "message": "35 commit(s) have landed since `docs/session_594_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "39 commit(s) have landed since `docs/session_594_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     },
     {
       "rule": "handoff_drops_active_lane",

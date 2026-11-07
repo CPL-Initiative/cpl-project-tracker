@@ -1126,3 +1126,14 @@ From *Course objectives too*, verbatim:
   With S451's 15 credit programs, all 33 of Ohlone's gaps are programs COCI lists that the college does not publish.
 - **Check what a page links before reading what it says.** The certificates page's own text named only departments; its
   links named the programs. A plan's `links` pattern is the cheap half of a page read.
+
+## S594-S595 (2026-11-07, the CPL Queue routine, 06:12Z and 08:12Z firings): Siskiyous re-read
+
+- **A reader upgrade is worth a free re-capture before a page read.** S594 re-ran Siskiyous' capture (42346303670) on
+  the current eLumen reader (`publish/content`, a 230-page walk): 73 of 77 found against 65 on run 38979399672. The 8
+  new are Accounting COA 19374 (page-claimed before) and seven noncredit programs the old walk never reached.
+- **`would_extract` with `kept: 0` means every page's text changed**, not that every program is new: the reader's text
+  differs from the filed sources, so the extraction sends all 73 (about $5). Cheaper than splitting the run, and it puts
+  the 65 old records on the same reader as the 8 new.
+- **S594 stopped before its checkpoint** (#2874 open at 06:24Z, one commit, green). S595 merged it and wrote handoff 595;
+  a firing that finds a green, quiet queue PR with no handoff merges it and carries its items.
