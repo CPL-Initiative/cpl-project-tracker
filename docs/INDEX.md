@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 99 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 564 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1405** | |
+| Session handoffs | 565 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1406** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-07 SkyMilkyWay (S601, Sam's session): the stale KPI scrape fixed (#2892 fail loudly, #2893 header, #2897 reason in the tail, #2898 encoded secret; scrape lands 16:09Z); Open Asks Sheets 167 and 168 (security asks reach the sheet, #2895, #2896); the Sky: COBIx inbox routine drafted for Sam's review (#2894, routine disabled); light checkpoint; `docs/session_602_handoff.md`.
 - 2026-11-07 SkyTriangulum (S599, CPL Queue routine, 12:12Z): DSP Credit Starting Points Version 3 from Sam's Revise request, in ELL IET Version 5's form, stored as the card's draft (#2883, CPLBrain#707); Coalinga merged (#2882) and displaying; Palomar's clean re-capture, Chemistry extracting; Los Medanos adds nothing; `docs/session_600_handoff.md`.
 - 2026-11-07 SkyAndromeda (S598, CPL Queue routine, 11:12Z): Palomar held back from extraction after 8 host errors and re-captured; Coalinga extracting its two new programs; Los Medanos captured on the current eLumen reader; light checkpoint; `docs/session_599_handoff.md`.
 - 2026-11-07 SkyCartwheel (S595, CPL Queue routine, 08:12Z): S594's #2874 merged; Siskiyous 73 of 77 on the new reader, extraction 42354853403 running; Lake Tahoe's SLO load pushed (#2833); Contra Costa's full read due 2026-11-08; light checkpoint; `docs/session_596_handoff.md`.

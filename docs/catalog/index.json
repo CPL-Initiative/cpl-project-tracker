@@ -16641,8 +16641,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 564,
+   "count": 565,
    "docs": [
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 602,
+     "path": "docs/session_602_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "org-phrase-scope-auth",
+      "cobix",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 602 handoff: the stale KPI scrape fixed; security asks on the sheet; the COBIx inbox routine waits for Sam",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-07",
      "governs": [],
@@ -26229,5 +26246,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1405
+ "total": 1406
 }

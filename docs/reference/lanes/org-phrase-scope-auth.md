@@ -80,12 +80,10 @@ The lane's marker is what makes the builder carry them.
 
 ### State
 
-- **The live-metrics scrape has failed since 2026-11-05 ~21:20Z**, and every daily run passed.
-  Cause, from the timing: the S587 rotation of `SCRAPE_SECRET` (21:12Z to 22:02Z that day) left GitHub's
-  `CPL_SCRAPE_SECRET` and the Worker's `SCRAPE_SECRET` unequal; run 688, the first after it, spent under a
-  second in the scrape step, and its green conclusion proved nothing because a failed scrape passed.
-  #2892 makes a failed scrape turn the run red. #2893 lets the Worker read the secret from an
-  `x-scrape-secret` header.
+- **The live-metrics scrape works again (2026-11-07 16:09Z, run 700).** It failed from 2026-11-05 ~21:20Z: the
+  workflow put the secret in the query string unencoded, and a base64 secret's `+` reads back as a space
+  (`URLSearchParams`), so the Worker answered 403 to identical values. #2898 sends it URL-encoded and in the
+  `x-scrape-secret` header; #2892 turns a failed scrape red and #2897 prints the Worker's reply in the last step.
 - **Security steps 1 and 2 are done** (S587, S590). Steps 3 to 6 are written in
   [`cobix_round1_reply_2026-11-05`](../../security/cobix_round1_reply_2026-11-05.md) ("Proposed order,
   revised"), not built.
@@ -98,9 +96,7 @@ The lane's marker is what makes the builder carry them.
 
 ### Sam's rulings ([Open Asks Sheet 167](https://claude.ai/artifact/8LGSDcPhS5m2YnUdL66nES), 15:03-15:06Z 2026-11-07)
 
-- **Card 3, done:** he set the Worker's `SCRAPE_SECRET` and GitHub's `CPL_SCRAPE_SECRET` to one value. Run 696
-  (his, after the change) still left `live_metrics.json` at 2026-11-05T21:20Z; run 697, the first with #2892's
-  logging, reads the Worker's reply. Not closed until a scrape lands.
+- **Card 3, done:** both secrets match; the scrape lands since #2898 (run 700, 16:09Z).
 - **Card 4, go:** security steps 3 to 5, each its own PR or migration, each applied only on his word.
 - **Card 5, create:** with a correction in the sheet's thread, so no apply waits on a click (his words on card 6:
   *"I don't want this to force me to approve every merge or sql query--finally got out of that horrible loop"*):
@@ -112,7 +108,7 @@ The lane's marker is what makes the builder carry them.
 
 ### Next (session work)
 
-1. After #2892 merges and the secrets match: the workflow sends the header only, and the Worker drops
-   `?secret=` (step 2 of #2893).
+1. When Sam confirms the Worker in Cloudflare runs #2893's code (it reads `x-scrape-secret`): the workflow drops the
+   query string and the Worker stops reading `?secret=`.
 2. One shared failure step for the workflows that have none (#2891 item 3), as one PR.
 3. After the environments exist: the `environment:` lines in the service-key workflows, one PR.

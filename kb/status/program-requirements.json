@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-07T13:40:00Z",
-  "session": 600,
-  "moniker": "SkyWhirlpool",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-07T16:19:13Z",
+  "session": 601,
+  "moniker": "SkyMilkyWay",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_601_handoff.md",
+  "handoff": "docs/session_602_handoff.md",
   "next_step": {
-    "title": "Display Palomar and Los Medanos",
-    "text": "Palomar's reread Chemistry program is applying to the display. Los Medanos now passes 44 of 83 programs, up from 29, after its transfer degrees counted Cal-GETC's 34 units from the catalog's own words; its display is built and waits to apply."
+    "title": "Confirm Palomar and Los Medanos on display",
+    "text": "Check that both display applies wrote with no errors, then read Los Medanos' own general education page before any step for its local degrees. This session worked on the dashboard's live figures, not the harvest."
   },
   "calls": [
     {
@@ -223,6 +223,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-07T16:20:00Z",
+      "text": "No harvest change this session. The dashboard's live figures update again: the daily scrape had been refused since November 5, and now sends its key correctly."
+    },
     {
       "at": "2026-11-07T13:55:00Z",
       "text": "Coalinga's display now shows its 45 passing programs. Palomar's Chemistry program was read again and replaced, and its display is applying. Los Medanos now passes 44 of 83 programs, up from 29, at no model cost: its transfer degrees now count Cal-GETC's 34 units."
@@ -488,18 +492,18 @@
     {
       "day": "2026-11-07",
       "active": 20282,
-      "complete": 13567,
+      "complete": 13584,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-07T14:12:00Z"
+    "at": "2026-11-08T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-07",
-    "gaps": 3016,
+    "gaps": 3014,
     "parts": {
       "links": {
         "catalog": [
@@ -520,7 +524,7 @@
         20282
       ],
       "coci": [
-        16140,
+        16142,
         20282
       ],
       "outcomes": {
@@ -529,12 +533,12 @@
           89192
         ],
         "plo": [
-          16140,
+          16142,
           20282
         ]
       },
       "careers": [
-        15104,
+        15106,
         20282
       ]
     }
