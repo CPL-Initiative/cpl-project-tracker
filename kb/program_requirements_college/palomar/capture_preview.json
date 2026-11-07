@@ -5,20 +5,11 @@
  "catalog_year": "2026-2027",
  "programs": 342,
  "with_closed_list": 331,
- "started": "2026-11-07T09:19:33Z",
+ "started": "2026-11-07T11:16:51Z",
  "curriqunet": {
   "catalog": 27,
   "view_prefix": "https://palomar.curriqunet.com/catalog/alias/college/iq/",
-  "errors": [
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=32735: APIRequestContext.get: socket hang up (ECONNRESET) (tried again)",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=32735: APIRequestContext.get: Timeout 60000ms exceeded.",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=32737: APIRequestContext.get: Timeout 60000ms exceeded.",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=33538: APIRequestContext.get: Timeout 60000ms exceeded.",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=33067: APIRequestContext.get: Timeout 60000ms exceeded.",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=33065: APIRequestContext.get: Timeout 60000ms exceeded.",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=33009: APIRequestContext.get: Timeout 60000ms exceeded.",
-   "https://palomar.curriqunet.com/Catalog/_getPage?catalogId=27&id=32707: HTTP 503"
-  ],
+  "errors": [],
   "sections": [
    "Degrees and Certificates",
    "Associate and Certificate Programs",
@@ -32,16 +23,16 @@
   "same_title_entries": 0,
   "entries_read": 235
  },
- "pages_read": 228,
+ "pages_read": 235,
  "banner_h1": null,
- "loads": 707,
- "seconds": 3552.8,
- "found": 274,
+ "loads": 720,
+ "seconds": 3156.6,
+ "found": 282,
  "by_method": {
   "no_closed_list": 11,
   "not_found": 4,
-  "page_claimed": 53,
-  "sitemap_page": 274
+  "page_claimed": 45,
+  "sitemap_page": 282
  },
  "shared_pages": {
   "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SheetMetal-AS-CA": [
@@ -330,6 +321,10 @@
    "40044",
    "40045"
   ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialWorkHumanServices-AA-CA": [
+   "40047",
+   "40048"
+  ],
   "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CompositesTechnology-AS-CA": [
    "43517",
    "43518"
@@ -480,14 +475,6 @@
    "award": "A.A. Degree",
    "pages": [
     "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA"
-   ]
-  },
-  {
-   "control_number": "05196",
-   "title": "Speech Communication",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CommunicationStudies2-0_AAT"
    ]
   },
   {
@@ -755,15 +742,6 @@
    ]
   },
   {
-   "control_number": "30605",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinSocialSciences-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA"
-   ]
-  },
-  {
    "control_number": "31631",
    "title": "Carving Technology",
    "award": "A.S. Degree",
@@ -800,25 +778,6 @@
    ]
   },
   {
-   "control_number": "33826",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinArtsHumanities-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinArtsHumanities-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA"
-   ]
-  },
-  {
-   "control_number": "35243",
-   "title": "Studio Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Three-DimensionalArtsCrafts-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PictorialArtsPainting-AA"
-   ]
-  },
-  {
    "control_number": "35879",
    "title": "Web Development",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -843,43 +802,6 @@
    "pages": [
     "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebFrontEndDesign-AS-CA",
     "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA"
-   ]
-  },
-  {
-   "control_number": "36862",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinArtsHumanities-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinArtsHumanities-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA"
-   ]
-  },
-  {
-   "control_number": "40047",
-   "title": "Social Work and Human Services",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AlcoholOtherDrugStudies-AS-CA"
-   ]
-  },
-  {
-   "control_number": "40048",
-   "title": "Social Work and Human Services",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AlcoholOtherDrugStudies-AS-CA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA"
-   ]
-  },
-  {
-   "control_number": "40622",
-   "title": "SolidWorks Drafting and Design",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DraftingDesignCADDCAMTechnology-AS-CA",
-    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA"
    ]
   },
   {
@@ -918,11 +840,11 @@
  "coverage_bands": {
   "0.5-0.8": 6,
   "0.8-1.0": 22,
-  "1.0": 246
+  "1.0": 254
  },
  "would_extract": {
   "against": "kb/program_requirements_college/palomar",
-  "kept": 273,
+  "kept": 281,
   "programs": 1,
   "list": [
    {
@@ -937,5 +859,5 @@
    }
   ]
  },
- "run": "42359155179"
+ "run": "42367400072"
 }
