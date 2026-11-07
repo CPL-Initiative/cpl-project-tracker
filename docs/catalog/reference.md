@@ -49,7 +49,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [My College (college action page) / MAP-team queue — lane state](../reference/lanes/my-college-action-page.md) | lanes | `my-college-action-page.md` | 2026-08-28 | 2026-10-21 |
 | [NC / Learning Partners — lane state](../reference/lanes/nc-learning-partners.md) | lanes | `nc-learning-partners.md` | 2026-08-28 | 2026-10-22 |
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
-| [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-09-19 |
+| [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-11-07 |
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-10-05 |
 | [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-01 |
 | [Public/private repo split — lane state](../reference/lanes/public-private-repo-split.md) | lanes | `public-private-repo-split.md` | 2026-08-28 | 2026-08-28 |
