@@ -1,0 +1,40 @@
+name: k=10 disclosure check
+# The two public student rollups (map_credential_student_rollup, map_credential_volume)
+# are materialized views the anon key reads; RLS does not apply to them, so the k=10
+# rule lives inside the views (kb/supabase_credential_volume.sql). Their standing
+# assertions were comments nothing ran (COBIx item 7, S602). This reads both views as
+# anon once a day and turns red when a visible count falls between 1 and 9, a measure
+# survives on a suppressed row, or a suppressed cell is recoverable by subtraction.
+#
+# Read-only. No secrets: the public anon key is read from cpl_funding.js. Writes nothing.
+on:
+  schedule:
+    - cron: '41 15 * * *'   # daily 15:41 UTC, off the daily-dashboard ladder (06:17/09:17/12:17)
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/k10-disclosure-check.yml'
+      - 'scripts/k10_disclosure_check.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: k10-disclosure-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Fixture test of the checker
+        run: python3 tests/k10_disclosure_check_test.py
+      - name: The views as anon reads them (the reason for any failure prints last)
+        run: python3 scripts/k10_disclosure_check.py

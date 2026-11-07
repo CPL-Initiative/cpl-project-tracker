@@ -399,7 +399,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `course_outcomes_*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_funding.js` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html` | — |
+| `cpl_funding.js` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `scripts/k10_disclosure_check.py` | — |
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
@@ -924,6 +924,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/cpl_funding.js` | modules: `scripts/build_funding_faq.js` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
+| `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
@@ -1024,6 +1025,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/jev_battery_test.py` | workflows: `js-tests.yml` | — |
 | `tests/jev_harvest_test.py` | workflows: `js-tests.yml` | — |
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
+| `tests/k10_disclosure_check_test.py` | workflows: `js-tests.yml`, `k10-disclosure-check.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
@@ -1059,6 +1061,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/second_reader_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_cid_hold_test.py` | workflows: `js-tests.yml` | — |
+| `tests/statewide_kpi_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_recs_test.py` | workflows: `js-tests.yml` | — |
 | `tests/stop_hook_git_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
@@ -1072,6 +1075,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/unified_units_range_test.py` | workflows: `js-tests.yml` | — |
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
 | `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
+| `tests/workflow_failure_watch_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
 | `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
@@ -1321,5 +1325,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 809 file
-datasets · 193 external services · 530 consumers · 62 workflows · 40 tabs.
+Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 813 file
+datasets · 193 external services · 532 consumers · 64 workflows · 40 tabs.

@@ -201,3 +201,11 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 - 2026-11-04 S572 SkyBlackEye (CPL Queue routine): merged S571's #2761; the cert link's NWCG and SWRCB families, 12 titles to 4 certs (#2762); light checkpoint; handoff 573.
 - 2026-11-04 S571 SkyHoags (CPL Queue routine): merged S570's #2760; the cert link's AWS welding and Amazon Web Services families, 10 titles to 6 certs (#2761); light checkpoint; handoff 572.
 - 2026-11-04 S570 SkyFireworks (CPL Queue routine): the cert link's PMI, ICC, CDPH and EMSA families, 17 titles to 16 certs (#2760); light checkpoint; handoff 571.
+
+## docs/INDEX.md update history, moved 2026-11-07 (S602)
+
+- 2026-11-06 S589 SkyStephan (CPL Queue routine, 08:12Z): security step 2 merged and read back (#2822; the migration had applied at 06:30Z); COBIx told on #2816; SLOs: Mission's full read pushed (#2800), Lake Tahoe's trial opened (#2833); light checkpoint; handoff 590.
+- 2026-11-06 SkyHandspring (Library side session): ELL IET Version 5 links the public overview and takes the library look; public cards date the newest version (`cpl_library_public` revised_on, applied live, #2828); CPL Pathways joins the new look (#2829); the CPL Opportunity visual becomes cards over one course list with a side panel and Request Adopt (#2830); light checkpoint; `docs/library_handoff.md`.
+- 2026-11-05 S586 SkyMessier continued (Sam's side session for COBIx): step 1 verified end to end (worker pasted, both secrets rotated, proof runs 686 and 688); COBIx's identity recorded (#2820); step 2's migration drafted, not applied (#2822); light checkpoint at the context WARN; handoff 587.
+- 2026-11-05 S585 SkyMessier (Sam's side session for COBIx): COBIx round 1 answered (#2816), the COBIx PR loop and `cobix-review.yml` stub (#2817), security step 1: the worker and the refresh button take a reviewer sign-in or the team phrase, no trigger secret in the page (#2818); light checkpoint; handoff 586.
+- 2026-11-05 S584 SkyMinkowski (scheduled firing, 14:12Z): course objectives read and stored beside the SLOs (`course_outcomes.kind`, applied live, #2808); Monterey Peninsula's page read (#2809); light checkpoint; handoff 585.

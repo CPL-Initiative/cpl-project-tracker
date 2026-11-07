@@ -157,23 +157,9 @@ the weekly apply.
 
 Hartnell's double-count words, its pooled subject lists, its last eight failing tabs and the lists with floors under one total: verbatim in [archive 3](program_requirements_harvest_lessons_archive_3.md).
 
-## S485 SkyElderberry (2026-10-26, the CPL Queue routine): Hartnell's last hours and its degree failures, read
+## S485: moved to the archive (S602 compaction)
 
-- **Where a vendor gives no figure, the record stays incomplete.** Page read 40278795148 (`network_find` on the codes):
-  TAC326, BUS690 and BUS699 carry only `creditHours` 0 and `billingHours` 0 under `credits`, no `lectureHours` or
-  `labHours`. The `contactHours` the answer prints belong to the instructional methods (lecture 18, lab 108 a term), not
-  to a course. Subtracting the other courses from the tab's total would make the check pass by construction, so neither
-  44161 (630) nor 44574 (432) is filled.
-- **The page reader's live run status lags.** `list_workflow_jobs` showed checkout "in progress" for twelve minutes on a
-  run that finished in a minute and a half; the logs answer 404 until the API catches up. Read the logs again rather
-  than wait on the step list.
-- **Hartnell's degree failures are structure, not misreadings** (page read 40279150362, three tabs). Both nursing tabs
-  print "Students can double-count required courses and courses for General Education.": the overlap Sam allowed for
-  transfer degrees (Sheet 82 card 2), stated by the page for a local degree. Vocational Nursing 39248 (80-89 against 63)
-  passes once the scorer reads it. RN 03570 names no whole Local GE pattern: its general education is the prerequisite
-  list plus "Local GE - Area 6". B.S. Respiratory Care 44537 prints 120, which includes the A.S. a student holds to be
-  admitted. General Studies 17912 splits one 18-unit choice into eleven subject lists. No change shipped: one record
-  passes on the overlap step, and the step rides Hartnell's next reconcile.
+Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S484 SkyToyon (2026-10-26, the CPL Queue routine): Hartnell's noncredit course hours
 
@@ -1140,3 +1126,18 @@ From *Course objectives too*, verbatim:
   moved 29 to 44 passing at no model cost; reread 42377887155 replaced 27 rows (#2889).
 - **The builder needs `openpyxl`** (`chatbox/build_program_courses.py`); a fresh container lacks it. Install it with
   `python3 -m pip install openpyxl`. A bare `pip` may install it for another Python.
+
+### S602 SkySombrero (2026-11-07, Sam's session)
+
+- **Palomar and Los Medanos displayed:** applies 42377748161 and 42379928561, each 17,557 of 17,560, 0 errors (the 3
+  Monterey Peninsula rows the table no longer holds).
+- **Find a page the catalog never linked by reading its hubs.** No GE URL was on file for LMC. Pass 1 (run
+  42396753803) read the eLumen front page with `links` shown and `follow` on GE words, which found
+  `26-27/requirements`; pass 2 (42397034327) read that hub and followed its topics: `asdegreereq` (local GE *"at least
+  24 units"*), `gradreq` (no electives rule) and `calgetc` (the areas, no total; they add to 36 with Area 5 printed
+  at 9). Two free runs, four and six loads.
+- **A GE figure alone does not pass a degree whose blocks fall short.** Accounting A.S. 01528 computes 23 against
+  60; GE 24 leaves it unequal. Cerritos's `electives_fill_degree` came from its own *"electives as needed"*; LMC prints
+  no such sentence, so its local degrees are parked rather than given an invented step.
+- **Citing another college's statement of a statewide figure is the house pattern.** Taft, Hartnell and LMC cite
+  Monterey Peninsula's page for Cal-GETC's 34; LMC's own page prints no total, so the citation stands.

@@ -104,11 +104,13 @@ The lane's marker is what makes the builder carry them.
   He creates them in the console; the `environment:` lines follow in one PR.
 - **Card 6, advise:** answered in the thread: a ruleset with only *Restrict deletions* and *Block force pushes*
   adds no approval; *Require a pull request*, *Require status checks* and *Require review from Code Owners* stay
-  off. NEEDS SAM ([Open Asks Sheet 168](https://claude.ai/artifact/7UuGfoQCy4dpnz2unuEFn3)): whether to turn that ruleset on in the three repositories.
+  off. Sam answered Sheet 168 card 1 (15:12Z): *"those were already ticked--leaving as is."* The rulesets stand as
+  he set them; nothing waits.
+- **Security step 3 is built (S602, #2901), not applied.** The funding half was already closed: anon and authenticated hold no SELECT on the attestor columns of either funding table (column grants; a select as anon reads *permission denied*), so no `_pub` view or gate is needed. The TMC owner token is the change: migration `kb/migrations/2026-11-07_tmc_submissions_owner_token.sql` and its rollback, and the client in the same PR, which must land in one window. NEEDS SAM ([Open Asks Sheet 169](https://claude.ai/artifact/42Wrb1UqxNE6tX3okfu1Re)): the word to apply it. The k=10 check (item 7) runs daily since #2903 (`k10-disclosure-check.yml`; 0 on all four assertions, first runner read 2026-11-07).
 
 ### Next (session work)
 
 1. When Sam confirms the Worker in Cloudflare runs #2893's code (it reads `x-scrape-secret`): the workflow drops the
    query string and the Worker stops reading `?secret=`.
-2. One shared failure step for the workflows that have none (#2891 item 3), as one PR.
+2. The shared failure step is built (#2905, `workflow-failure-watch.yml`, one issue per failing workflow, closed by the next success); COBIx's fork-PR finding is fixed (46955f4b: only this repository's scheduled, push or dispatch runs alert); confirm it merged with no open finding, and that the first scheduled failure raises an issue.
 3. After the environments exist: the `environment:` lines in the service-key workflows, one PR.
