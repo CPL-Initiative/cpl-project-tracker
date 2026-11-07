@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-558 document(s).
+559 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 596 | [Session 596 handoff: Siskiyous extracting on the new reader; Lake Tahoe's SLOs loading](../session_596_handoff.md) | 2026-11-07 |
 | 594 | [Session 594 handoff: Mt. San Jacinto merged; Ohlone's gaps all the college's own](../session_594_handoff.md) | 2026-11-06 |
 | 593 | [Session 593 handoff: Monterey Peninsula merged; Mt. San Jacinto's Public Health A.S.-T loaded](../session_593_handoff.md) | 2026-11-06 |
 | 592 | [Session 592 handoff: Monterey Peninsula reread, displayed and parked; Mission's SLOs loaded](../session_592_handoff.md) | 2026-11-06 |

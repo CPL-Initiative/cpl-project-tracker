@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1413,
-    "bytes": 14278938,
+    "files": 1414,
+    "bytes": 14287921,
     "over_budget": 1,
-    "handoff_max": 594,
+    "handoff_max": 596,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59893,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 145,
-        "bytes": 4395385,
+        "bytes": 4395881,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 9844,
+        "bytes": 10124,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2620737,
+        "bytes": 2622165,
         "over": 0
       },
       "kb_note": {
@@ -46,26 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 495937,
+        "bytes": 497089,
         "over": 0
       },
       "handoff": {
-        "files": 558,
-        "bytes": 3858764,
+        "files": 559,
+        "bytes": 3864391,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
       "oversized_doc": 1,
-      "vault_heavy_path": 75,
-      "checkpoint_overdue": 1,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26100,
-      "bytes": 4291739029,
-      "heavy_bytes": 3059569848,
+      "files": 26104,
+      "bytes": 4291783370,
+      "heavy_bytes": 3059573314,
       "heavy_share": 0.713,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -162,13 +160,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 151795,
+        "bytes": 151965,
         "limit": 150000,
         "lane": "other",
-        "over_by": 1795,
+        "over_by": 1965,
         "ratio": 1.01
       },
-      "message": "151,795 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "151,965 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -176,10 +174,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1891577614,
+        "bytes": 1891578017,
         "kind": "dir"
       },
-      "message": "directory totals 1,891,577,614 B inside the vault"
+      "message": "directory totals 1,891,578,017 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -286,10 +284,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10334149,
+        "bytes": 10337212,
         "kind": "dir"
       },
-      "message": "directory totals 10,334,149 B inside the vault"
+      "message": "directory totals 10,337,212 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -920,31 +918,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_594_handoff.md",
-      "detail": {
-        "commits_since": 35,
-        "budget": 6,
-        "handoff": "session_594_handoff.md"
-      },
-      "message": "35 commit(s) have landed since `docs/session_594_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_594_handoff.md",
-      "detail": {
-        "lanes": [
-          "local-course-cr-alignment",
-          "reviewer-session-lifetime",
-          "sierra-retrieval-corpus"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_594_handoff.md` never names 3 lane(s) worked in the last 7 days that still carry a NEXT: local-course-cr-alignment, reviewer-session-lifetime, sierra-retrieval-corpus. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

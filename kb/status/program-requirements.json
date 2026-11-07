@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-06T14:00:33Z",
-  "session": 593,
-  "moniker": "SkyTadpole",
+  "written_at": "2026-11-07T08:45:00Z",
+  "session": 595,
+  "moniker": "SkyCartwheel",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_594_handoff.md",
+  "handoff": "docs/session_596_handoff.md",
   "next_step": {
-    "title": "Siskiyous next on the catalog sweep",
-    "text": "Read the College of the Siskiyous' lessons, then a free page read of its gaps (65 of 77 found) before any reader change or paid read. Ohlone's gaps are all the college's own; its 29 records failing a machine check can take a reconcile pass instead."
+    "title": "Load Siskiyous' 73 records",
+    "text": "Read and extraction 42354853403 sends Siskiyous' 73 found programs (73 of 77, up from 65) to the model for about $5. When it files, load them and run the display build; then Palomar and Coalinga."
   },
   "calls": [
     {
@@ -223,6 +223,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-07T08:45:00Z",
+      "text": "Siskiyous' re-read on the current reader found 73 of its 77 programs, 8 more than before; their extraction is running. Lake Tahoe Community College's SLOs are loading (#2833); Contra Costa's trial parsed 11 of 12 pages, so its full read is next."
+    },
     {
       "at": "2026-11-06T14:05:00Z",
       "text": "Mt. San Jacinto's Public Health A.S.-T record loaded and shown (#2838). Ohlone's 18 missing noncredit certificates are not published on the college's site, so all 33 of its gaps are the college's to settle in COCI (#2841)."
@@ -469,7 +473,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-06T14:12:00Z"
+    "at": "2026-11-07T09:12:00Z"
   },
   "harvest": {
     "day": "2026-11-06",

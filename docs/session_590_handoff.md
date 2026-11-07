@@ -4,6 +4,8 @@ date: 2026-11-06
 session: 589 (SkyStephan, the CPL Queue routine's 08:12Z firing, 2026-11-06)
 tags: [handoff, security, org-phrase-scope-auth, slo, cpl-scheduled]
 status: current
+superseded: true
+superseded_by: session_596_handoff.md
 ---
 
 # You are Session 590

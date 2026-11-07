@@ -4,6 +4,8 @@ date: 2026-11-06
 session: 593 (SkyTadpole, the CPL Queue routine's 13:12Z firing, 2026-11-06)
 tags: [handoff, program-requirements-harvest, cpl-scheduled]
 status: current
+superseded: true
+superseded_by: session_596_handoff.md
 ---
 
 # You are Session 594
