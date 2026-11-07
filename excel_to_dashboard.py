@@ -3978,22 +3978,66 @@ def log_daily_snapshot(live_data, exhibit_data):
         "articulating_colleges": int((exhibit_data or {}).get("articulation_colleges", 0)),
     }
 
-    history = []
-    if os.path.exists(HISTORY_FILE):
-        try:
-            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-                history = json.load(f)
-        except (json.JSONDecodeError, IOError):
-            history = []
+    history = _write_kpi_history(HISTORY_FILE, snapshot, _committed_history_length(HISTORY_FILE))
+    print(f"  Logged daily KPI snapshot ({len(history)} total entries in kpi_history.json)")
+    return history
 
+
+class KpiHistoryError(RuntimeError):
+    """kpi_history.json could not be read safely; the run stops rather than write a short history."""
+
+
+def _committed_history_length(path):
+    """Entries in the committed kpi_history.json (git HEAD), or None when git cannot say."""
+    import subprocess
+    rel = os.path.relpath(path, SCRIPT_DIR)
+    try:
+        out = subprocess.run(["git", "-C", SCRIPT_DIR, "show", f"HEAD:{rel}"],
+                             capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    if out.returncode != 0:
+        return None
+    try:
+        committed = json.loads(out.stdout)
+    except json.JSONDecodeError:
+        return None
+    return len(committed) if isinstance(committed, list) else None
+
+
+def _write_kpi_history(path, snapshot, committed_len=None):
+    """Replace today's entry in the history file at `path` and write it atomically.
+
+    COBIx security round 1, item 11 (2026-11-05): the old reader turned a parse
+    error into an empty history, appended today and wrote one entry over the
+    record. Now a file that will not parse, or that is not a list, stops the run;
+    the write goes to a temp file and `os.replace`s it; and a history shorter than
+    the committed one by more than a day is refused (Rule 3's gap guard cannot see
+    a history with no past). `committed_len` None skips the floor.
+    """
+    history = []
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                history = json.load(f)
+        except (json.JSONDecodeError, UnicodeDecodeError, OSError) as e:
+            raise KpiHistoryError(f"{path} does not parse ({e}); restore it from git before rerunning") from e
+        if not isinstance(history, list):
+            raise KpiHistoryError(f"{path} holds a {type(history).__name__}, not a list")
+
+    today = snapshot.get("date")
     history = [e for e in history if e.get("date") != today]
     history.append(snapshot)
     history.sort(key=lambda e: e.get("date", ""))
 
-    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
-        json.dump(history, f, indent=2, ensure_ascii=False)
+    if committed_len is not None and len(history) < committed_len - 1:
+        raise KpiHistoryError(
+            f"refusing to write {len(history)} entries over a committed history of {committed_len}")
 
-    print(f"  Logged daily KPI snapshot ({len(history)} total entries in kpi_history.json)")
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, path)
     return history
 
 
