@@ -124,6 +124,15 @@ const hit = (re) => calls.filter((c) => re.test(c.url));
   reset();
   r = await worker.fetch(new Request("https://cpl-proxy.slee-548.workers.dev/scrape?secret=nope", { method: "GET" }), ENV);
   check("scrape: wrong secret → 403", r.status === 403);
+  reset();
+  r = await worker.fetch(new Request("https://cpl-proxy.slee-548.workers.dev/scrape", { method: "GET", headers: { "x-scrape-secret": ENV.SCRAPE_SECRET } }), ENV);
+  check("scrape: the secret in the x-scrape-secret header passes the gate (S601)", r.status !== 403 && hit(/cpldashboardcccco/).length === 1);
+  reset();
+  r = await worker.fetch(new Request("https://cpl-proxy.slee-548.workers.dev/scrape", { method: "GET", headers: { "x-scrape-secret": "nope" } }), ENV);
+  check("scrape: a wrong secret in the header → 403, no upstream call", r.status === 403 && hit(/cpldashboardcccco/).length === 0);
+  reset();
+  r = await worker.fetch(new Request("https://cpl-proxy.slee-548.workers.dev/scrape", { method: "GET" }), ENV);
+  check("scrape: no secret at all → 403", r.status === 403);
 
   let failed = 0;
   for (const [name, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + name); if (!ok) failed++; }

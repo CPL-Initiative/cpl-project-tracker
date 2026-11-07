@@ -298,7 +298,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 34
+     "line": 35
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -491,7 +491,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 508
+     "line": 512
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -560,7 +560,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 398
+     "line": 402
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -1244,7 +1244,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 32
+     "line": 33
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -1508,7 +1508,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 82
+     "line": 83
     },
     {
      "id": "worker:worker-to-paste.js",
@@ -2258,7 +2258,7 @@
      "kind": "worker",
      "direction": "read",
      "how": "url",
-     "line": 33
+     "line": 34
     },
     {
      "id": "worker:worker-to-paste.js",

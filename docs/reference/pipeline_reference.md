@@ -106,7 +106,8 @@ scraping proved unreliable.
 **Endpoints**
 - `POST /` — proxies to `https://api.anthropic.com/v1/messages`. CORS restricted
   to `cpl-initiative.github.io`, `localhost`, `127.0.0.1`.
-- `GET /scrape?secret=SCRAPE_SECRET` — calls the CCCCO Dashboard API, returns
+- `GET /scrape` with header `x-scrape-secret: SCRAPE_SECRET` (the `?secret=` query string
+  still works during the move, S601) — calls the CCCCO Dashboard API, returns
   JSON with 6 KPI metrics + college tier classification.
 
 **Data source**: `GET /api/potential-savings?cpltype=0&indExcludeSA=0` on
