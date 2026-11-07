@@ -1,29 +1,8 @@
 {
  "_about": "Find COCI C-ID claims that four signals call a mis-entry (SkyHarbor, 2026-11-06).",
  "_generated_by": "kb/_audit_cid_claims.py",
- "found": 2,
+ "found": 0,
  "not_held": 0,
  "holds_in_force": 2,
- "findings": [
-  {
-   "claimed_cid": "HIST 150",
-   "college": "Moreno Valley College",
-   "course": "HES 1",
-   "title": "Health Science",
-   "top": "0837.00",
-   "control_number": "CCC000520534",
-   "held": true,
-   "cpl_articulations_in_group": 3
-  },
-  {
-   "claimed_cid": "PH 103",
-   "college": "West Los Angeles College",
-   "course": "ADDICST 1",
-   "title": "Understanding Addiction And Counseling",
-   "top": "2104.40",
-   "control_number": "CCC000585241",
-   "held": true,
-   "cpl_articulations_in_group": 0
-  }
- ]
+ "findings": []
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-06T22:17:48Z",
+ "written_at": "2026-11-07T02:34:04Z",
  "rows": [
   {
    "key": "requirements",
@@ -100,7 +100,7 @@
     {
      "n": 2552,
      "of": 5588,
-     "words": "titles carry a review stamp (1,227 a person's, 1,325 a cohort's); 2,725 credentials, 2,262 of 3,030 records stamped",
+     "words": "titles carry a review stamp (1,227 a person's, 1,325 a cohort's); 2,725 credentials, 2,263 of 3,031 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -150,7 +150,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-06T22:13:52Z",
+    "at": "2026-11-07T02:29:41Z",
     "every_hours": 24
    },
    "facts": {
@@ -160,10 +160,10 @@
     "cohort": 1325,
     "credentials": 2725,
     "confirmed": 1227,
-    "records": 3030,
-    "records_stamped": 2262,
+    "records": 3031,
+    "records_stamped": 2263,
     "saved_at": "2026-11-05T15:54:01Z",
-    "fold_at": "2026-11-06T22:13:52Z",
+    "fold_at": "2026-11-07T02:29:41Z",
     "map_titles": 4971,
     "unclassified": 6,
     "left_map": 623,
@@ -243,8 +243,8 @@
    ],
    "procedures": [
     {
-     "n": 16478,
-     "words": "identities and 33,418 stand-alone courses on the canvas (the 2026-09-08 layout); 33,421 stand-alone in today's build",
+     "n": 16388,
+     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,421 stand-alone in today's build",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "error": null
     },
@@ -257,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-06T22:16:00+00:00",
+    "at": "2026-11-07T02:31:35+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -344,7 +344,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-05T22:15:35Z",
+    "at": "2026-11-06T22:17:51Z",
     "every_hours": null
    },
    "facts": {
@@ -392,7 +392,7 @@
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 295
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -468,7 +468,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-06T22:13:51Z",
+    "at": "2026-11-07T02:29:38Z",
     "every_hours": 24
    },
    "facts": {
@@ -481,7 +481,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-06",
+    "scanned_at": "2026-11-07",
     "procedures_on": 6
    },
    "sources": [
