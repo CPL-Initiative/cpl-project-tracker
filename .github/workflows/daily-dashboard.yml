@@ -120,8 +120,12 @@ jobs:
               print(f"::error title=Live metrics scrape failed::{e}; worker replied: {raw[:300]!r}. "
                     "Keeping the existing live_metrics.json; the run fails at its last step.")
               open('/tmp/metrics_status', 'w').write('fallback')
+              # The last step repeats this, so the reason sits at the end of the log, where a short tail reads it.
+              detail = ("%s; worker replied: %s" % (e, raw[:200])).replace("\n", " ").replace("\r", " ")
+              open('/tmp/scrape_detail', 'w').write(detail)
           EOF
           echo "LIVE_METRICS_STATUS=$(cat /tmp/metrics_status)" >> "$GITHUB_ENV"
+          [ -f /tmp/scrape_detail ] && echo "SCRAPE_DETAIL=$(cat /tmp/scrape_detail)" >> "$GITHUB_ENV" || true
 
       # ── Step 2b: Fetch MIL/JST (reported military vs uploaded JSTs) ──
       # Same public potential-savings API the worker scrapes, but carrying the
@@ -736,5 +740,6 @@ jobs:
       - name: Fail the run on a stale scrape
         if: env.LIVE_METRICS_STATUS != 'success'
         run: |
-          echo "::error title=Stale live metrics::The scrape failed (status: ${LIVE_METRICS_STATUS:-unset}); live_metrics.json kept its last good copy. See the scrape step's log."
+          echo "::error title=Stale live metrics::The scrape failed (status: ${LIVE_METRICS_STATUS:-unset}); live_metrics.json kept its last good copy."
+          echo "Scrape detail: ${SCRAPE_DETAIL:-none recorded}"
           exit 1
