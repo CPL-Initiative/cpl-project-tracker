@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8181,
+  "input_tokens": 7291,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8181,
-    "output_tokens": 1380,
+    "input_tokens": 7291,
+    "output_tokens": 1393,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1380,
+  "output_tokens": 1393,
   "output_tokens_details": {
-   "thinking_tokens": 510
+   "thinking_tokens": 357
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06032,
- "ms": 12860,
- "seconds": 13.2,
+ "cost_usd": 0.05702,
+ "ms": 11178,
+ "seconds": 11.3,
  "parts": null,
  "error": null,
  "score": {
@@ -87,12 +87,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -111,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements",
+   "section_heading": "Physics 2.0 - AS-T",
    "measure": "units",
    "total_units": {
     "min": 33,
@@ -132,12 +132,17 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply physical principles and mathematical models to analyze, predict, and explain the behavior of physical systems.",
+    "Demonstrate basic experimental knowledge through the collection, analysis, and interpretation of data, recognizing the limitations of results.",
+    "Formulate and solve quantitative physics problems by applying appropriate physical concepts and mathematical techniques.",
+    "Demonstrate the skills and preparedness necessary to succeed in upper-division science and physics courses."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core:",
+    "name": "Required Core",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -215,13 +220,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Total of 33 units appears both at the top of the page ('33.0 credits') and as the Required Core total; the core courses also add up to 33.",
-   "The description mentions the general requirement of 60 semester units for the degree. Because it reads as a generic transfer-degree requirement rather than a printed total for this award, degree_total is left null. No units are printed for Cal-GETC.",
-   "The description says physicists may apply these concepts to fields such as chemistry, biology and engineering, or may pursue a teaching credential. These were read as fields of application, not named careers for the program, so careers is empty. A reviewer may want to check this.",
-   "No program learning outcomes appear in the supplied text.",
-   "The Recommended Sequence table is cut off after Term 3, partway through. It repeats only Required Core courses.",
-   "CSCI1007, MATH2500 and MATH2600 are in the catalog but not in the closed list, so they are marked as catalog additions."
+   "Catalog prints codes without a space (e.g., MATH1400); recorded as printed. They match closed-list codes MATH 1400 etc.",
+   "CSCI1007, MATH2500 and MATH2600 are required in the catalog but absent from the closed list; marked as catalog additions.",
+   "Total of 33 credits taken from 'Credits: 33.0 credits' and 'Required Core: (Total 33)'. The 60-unit sentence is a general AS-T requirement, not printed as this award's total, so degree_total is null; Cal-GETC units are not printed.",
+   "Program outcomes heading reads 'Physic 2.0 - AS-T' (typo in catalog).",
+   "Description says physicists may apply concepts to fields such as chemistry, biology, geophysics, engineering, communication, transportation, electronics, and health, or pursue a teaching credential; read as fields of application rather than named careers, so careers left empty — reviewer may wish to check."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

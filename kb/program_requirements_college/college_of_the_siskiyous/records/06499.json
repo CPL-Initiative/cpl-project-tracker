@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8333,
+  "input_tokens": 8073,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8333,
-    "output_tokens": 2129,
+    "input_tokens": 8073,
+    "output_tokens": 2678,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2129,
+  "output_tokens": 2678,
   "output_tokens_details": {
-   "thinking_tokens": 718
+   "thinking_tokens": 999
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07591,
- "ms": 18768,
- "seconds": 19.1,
+ "cost_usd": 0.08585,
+ "ms": 22749,
+ "seconds": 22.9,
  "parts": null,
  "error": null,
  "score": {
@@ -70,15 +70,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     2.0,
     41.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    20.0,
+    41.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 2.0-41.0; the catalog states 20.0-41.0"
    ]
   },
   "repeated": {
@@ -86,17 +89,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 7,
    "courses": 0,
-   "count": 0,
+   "count": 7,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -110,18 +113,18 @@
  },
  "record": {
   "program": {
-   "section_heading": "Administration of Justice A.A. Degree (heading not printed in the extracted text)",
+   "section_heading": "Administration of Justice - AA",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 41
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "College of the Siskiyous General Education pattern (COSGE)",
    "degree_total": {
     "min": null,
     "max": null
@@ -130,16 +133,26 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Critically evaluate theories, policies, and Criminal Justice professionals’ actions based on empirical evidence",
+    "Communicate and express themselves in a clear and professional manner",
+    "Demonstrate effective written and verbal communication skills.",
+    "Demonstrate knowledge of policing, courts, and corrections.",
+    "Demonstrate knowledge of the theories of crime and justice.",
+    "Demonstrate an understanding of the diverse and multicultural nature of society.",
+    "Demonstrate the ethical decision-making process in Criminal Justice professions and understand the individual, organizational, and societal implications of these decisions."
+   ],
+   "careers": [
+    "criminal justice fields"
+   ]
   },
   "blocks": [
    {
-    "name": "Complete",
+    "name": "Complete all of the following",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major path",
+    "option_group": "major path",
     "stated": {
      "min": 18,
      "max": 18
@@ -193,7 +206,7 @@
     "name": "Complete one of the following",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Major path",
+    "option_group": "major path",
     "stated": {
      "min": 2,
      "max": 3
@@ -233,7 +246,7 @@
     "name": "Alternative Major Requirements: in lieu of the 20-21 units above.",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major path",
+    "option_group": "major path",
     "stated": {
      "min": 30.5,
      "max": 41
@@ -271,14 +284,15 @@
    }
   ],
   "notes": [
-   "The extracted text begins mid-page; no section heading, program description, GE pattern, degree total, outcomes or careers appear in it. Section heading is supplied from the program title.",
-   "The three blocks share option_group 'Major path', but the choice is two-way: the standard path is the first two blocks together (Complete, 18 units, plus Complete one of the following, 2-3 units = the '20-21 units above'), and the alternative path is the 'Alternative Major Requirements' block (30.5-41 units), taken in lieu of them.",
-   "The 20-21 units is referenced only in the alternative block's heading and is not printed as the award's total, so total_units is left null.",
-   "Non-course requirements printed with 0 units precede the course lists: pass the PELLET-B with a minimum score of 42; physical fitness tests (1.5 mile run under 20 minutes, 20 push-ups and 30 sit-ups in 2 minutes); DOJ Live Scan firearms clearance; medical clearance before the first day of the academy. These appear to apply to the academy (alternative) path and were not recorded as courses.",
-   "The 'Complete one of the following' block also says 'Complete the following number of credits: 2-3'; recorded as choose 1 course with stated 2-3.",
-   "ADJ2524 (Introduction to Corrections) and ADJ2516 (Level II Reserve Officer Certification) are not on the closed list.",
-   "A Recommended Sequence (Option 2) is printed for the alternative path; it is cut off in Term 2 and was not used as requirements."
+   "The major has two paths: Option 1 is the first two blocks together (18 required units plus one course of 2-3 units, 20-21 units); Option 2 is the 'Alternative Major Requirements' block (30.5-41 units) taken in lieu of the 20-21 units. All three blocks share option_group 'major path', but the first two are completed together as one option, not as alternatives to each other.",
+   "The total of 20-41 is recorded as the major total. It is printed as 'Total 20 - 41' and 'Complete the following number of credits: 20-41', and it spans both paths.",
+   "The page says to complete COSGE and 'any needed electives to reach a total of 60 COS degree applicable units'. It prints no degree total or GE units for this award, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "The recommended sequence for Option 1 splits the four-course choice into two pairs: ADJ2526 or ADJ2528 in Term 1, and ADJ2512 or ADJ2522 in Term 2. That totals 23-24 units, which conflicts with the requirement list's single 'Complete one of the following' (2-3). The requirement list was recorded.",
+   "The academy entry prerequisites (age 18, driver's license, PELLET-B score of 42, physical tests, DOJ and medical clearance) are printed in the requirements but are not courses.",
+   "ADJ2524 (Introduction to Corrections) and ADJ2516 (Level II Reserve Officer Certification) are not in the closed list and are marked as catalog additions.",
+   "Codes are written as printed, without a space (e.g. ADJ1001).",
+   "The source URL references fall 2025, but the catalog is labeled cos26-27."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }
