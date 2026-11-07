@@ -98,8 +98,13 @@ jobs:
         # passed). The worker's HTTP status and its error reply are logged; neither
         # carries the secret.
         run: |
-          code=$(curl -sS -o live_metrics_new.json -w '%{http_code}' \
-            "https://cpl-proxy.slee-548.workers.dev/scrape?secret=${CPL_SCRAPE_SECRET}" || true)
+          # The secret goes in the x-scrape-secret header (#2893) and, until the Worker drops it, in the
+          # query string URL-encoded: a raw "+" in a base64 secret reads back as a space, so the Worker
+          # answered 403 to an identical value (S601, runs 696-698).
+          code=$(curl -sS -G -o live_metrics_new.json -w '%{http_code}' \
+            -H "x-scrape-secret: ${CPL_SCRAPE_SECRET}" \
+            --data-urlencode "secret=${CPL_SCRAPE_SECRET}" \
+            "https://cpl-proxy.slee-548.workers.dev/scrape" || true)
           export SCRAPE_HTTP="$code"
           python3 - <<'EOF'
           import json, os, shutil
