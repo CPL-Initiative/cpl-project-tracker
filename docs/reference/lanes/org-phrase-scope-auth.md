@@ -112,5 +112,5 @@ The lane's marker is what makes the builder carry them.
 
 1. When Sam confirms the Worker in Cloudflare runs #2893's code (it reads `x-scrape-secret`): the workflow drops the
    query string and the Worker stops reading `?secret=`.
-2. The shared failure step is built (#2905, `workflow-failure-watch.yml`, one issue per failing workflow, closed by the next success); confirm it merged and that the first scheduled failure raises an issue.
+2. The shared failure step is built (#2905, `workflow-failure-watch.yml`, one issue per failing workflow, closed by the next success); COBIx's fork-PR finding is fixed (46955f4b: only this repository's scheduled, push or dispatch runs alert); confirm it merged with no open finding, and that the first scheduled failure raises an issue.
 3. After the environments exist: the `environment:` lines in the service-key workflows, one PR.

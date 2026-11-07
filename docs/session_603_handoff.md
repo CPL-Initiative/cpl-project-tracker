@@ -43,7 +43,9 @@ each unchanged this run: `kb/README.md`, `README.md`, the pipeline view, KB note
    mark #2901 ready and merge it in the same window; read back the policies,
    `has_column_privilege('anon','public.tmc_submissions','owner_token','select')` = false, and one save and resume.
    Card 2 *table*: design the gated category table through Governance (Rule 10 a3) before building.
-2. **#2905:** merge on a green `test` if this session did not; then the first scheduled failure should raise an issue.
+2. **#2905:** COBIx's fork-PR finding is fixed in 46955f4b (only this repository's scheduled, push or dispatch runs
+   alert; the guard pins it). Merge on a green `test` on that head if this session did not, with no open finding
+   on its thread; then the first scheduled failure should raise an issue.
 3. **SLOs on 2026-11-08 UTC:** Contra Costa's full read on #2873 (`catalog=contra_costa`, `parts=2`), then
    `python3 scripts/next_slo_colleges.py --next --skip contra-costa`.
 4. **Sunday 2026-11-08:** the contacts harvest (15 colleges read longest ago), the credential watch's next slice,
