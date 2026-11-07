@@ -141,7 +141,11 @@ function pickRecord(w, root, title) {
     check("(a) a checked program carries no mark", !/not yet confirmed/.test(opts[0] || "x"), opts[0]);
     const listCall = f.calls.find((c) => /program_requirement_records\?select=/.test(c.url) && !/college=eq/.test(c.url));
     check("(b) a signed-out page reads the list with the anon key", !!listCall && !listCall.reviewer, listCall && listCall.auth);
-    check("(b) the list read asks for the light columns only", !!listCall && !/record|display/.test(listCall.url.split("select=")[1].split("&")[0]), listCall && listCall.url);
+    // The light columns plus each program's four counts (SkyHarbor, 2026-11-06: the statewide view's figures), never the
+  // record or the whole display build.
+  check("(b) the list read asks for the light columns and the counts only", !!listCall && (function (sel) {
+    return sel === "college,control_number,program_title,award,checked,counts:display->counts" && !/(^|,)(record|display)(,|$)/.test(sel);
+  })(listCall.url.split("select=")[1].split("&")[0]), listCall && listCall.url);
   }
 
   // ── (b) a reviewer: every record, the unchecked one marked ──
