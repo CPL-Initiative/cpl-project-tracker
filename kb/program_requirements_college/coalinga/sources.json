@@ -40,7 +40,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -83,7 +86,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -113,7 +119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -136,12 +145,35 @@
   "title": "Administration of Justice: Correctional Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ12",
+   "AOJ16",
+   "AOJ20",
+   "AOJ24",
+   "AOJ29",
+   "AOJ3",
+   "AOJ32",
+   "AOJ4",
+   "AOJ6",
+   "AOJ7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/administration-of-justice-correctional-science.php",
+   "title": "Administration of Justice - Correctional Science",
+   "h1": "Administration of Justice - Correctional Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3909
  },
  {
   "control_number": "10910",
@@ -172,7 +204,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -203,7 +238,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -231,7 +269,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -273,7 +314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -332,7 +376,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -406,7 +453,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 44,
@@ -453,7 +503,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "precision agriculture precision agriculture certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -517,7 +570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -548,11 +604,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 4424
+  "text_chars": 4433
  },
  {
   "control_number": "20340",
@@ -585,7 +644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development - teacher child development - teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -596,12 +658,34 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ10",
+   "AOJ16",
+   "AOJ20",
+   "AOJ22",
+   "AOJ24",
+   "AOJ3",
+   "AOJ32",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/administration-of-justice.php",
+   "title": "Administration of Justice",
+   "h1": "Administration of Justice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice administration of justice as-t degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3898
  },
  {
   "control_number": "30939",
@@ -623,7 +707,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics mathematics as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -649,7 +736,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "heavy equipment operation heavy equipment operation - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -679,7 +769,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education early childhood education as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -708,7 +801,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -736,7 +832,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology geology as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -767,7 +866,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology psychology aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -808,7 +910,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science political science aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -837,7 +942,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 communication studies 2.0 aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -866,7 +974,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography geography aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -900,7 +1011,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "integrated pest management integrated pest management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -929,7 +1043,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology welding technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -964,7 +1081,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture plant science agriculture plant science as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -990,7 +1110,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english as a second language certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1041,7 +1164,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "heating ventilation and air conditioning heating ventilation and air conditioning - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1073,7 +1199,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional driving professional driving - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1098,7 +1227,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -1131,7 +1263,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development child and adolescent development aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1161,7 +1296,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food science and safety food science and safety certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1197,7 +1335,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history history aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1225,7 +1366,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business - administration 2.0 business administration 2.0 as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1257,7 +1401,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english english aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1299,7 +1446,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education elementary teacher education aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -1330,7 +1480,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology sociology aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1361,7 +1514,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology biology as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1389,7 +1545,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics physics as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1436,7 +1595,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology kinesiology aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1476,7 +1638,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "equipment technician equipment technician- certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1502,7 +1667,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entry level truck driving entry level truck driving- certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1527,7 +1695,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entry level diesel mechanic entry level diesel mechanic - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1562,7 +1733,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "chemistry uctp chemistry as-t (as-uctp) degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1587,7 +1761,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -1621,7 +1798,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1655,7 +1835,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1685,7 +1868,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1712,7 +1898,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1739,7 +1928,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1779,7 +1971,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1806,7 +2001,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1843,7 +2041,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1874,7 +2075,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
