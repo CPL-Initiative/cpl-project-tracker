@@ -598,12 +598,13 @@ check("boot lazy-loads the current-course catalog", /loadScript\("cpl_coci_cours
   const col = DRIVE.colSelect(root);
   check("the College select renders (featured + directory > 1 item)", !!col);
   check("the Pathway select is retired", !root.querySelector("select.cplpw-select"));
-  check("⭐ no college chosen: the page asks for one and shows no List or pathway",
-    !!col && col.value === "" && /Choose a college/.test(root.textContent) && !root.querySelector("#cplpw-list") && !root.querySelector(".cplpw-stagebanner"));
+  // Every college until one is picked (Sam, 2026-11-06): the state's List shows, and no pathway opens.
+  check("⭐ no college chosen: the page shows every college and opens no pathway",
+    !!col && col.value === "" && /Every college, every program/.test(root.textContent) && !!root.querySelector("#cplpw-list") && !root.querySelector(".cplpw-stagebanner"));
   check("the select lists each pathway's college", ["Cerritos College", "Foothill College", "Crafton Hills"].every(c => Array.from(col.options).some(o => o.value === c)));
   DRIVE.chooseCollege(w, root, "Foothill College");
-  check("a college shows its head, five figure cards and its List",
-    /Foothill College/.test(root.querySelector(".cplpw-h").textContent) && root.querySelectorAll(".cplpw-card").length === 5 &&
+  check("a college shows its head, six figure cards and its List",
+    /Foothill College/.test(root.querySelector(".cplpw-h").textContent) && root.querySelectorAll(".cplpw-card").length === 6 &&
     DRIVE.listTitles(root).join("|") === "Respiratory Care");
   check("directory row carries current and adoptable CPL courses (1 here, 1 more by adoption)", (function () {
     var tr = DRIVE.titleButtons(root)[0].closest("tr"); var t = tr ? tr.textContent : "";
