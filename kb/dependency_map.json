@@ -4,10 +4,10 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 810,
+  "file_datasets": 812,
   "external_services": 193,
-  "consumers": 530,
-  "workflows": 62,
+  "consumers": 532,
+  "workflows": 63,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -6604,6 +6604,13 @@
      "direction": "read",
      "how": "markup",
      "line": 112
+    },
+    {
+     "id": "script:scripts/k10_disclosure_check.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
     }
    ],
    "served": true,
@@ -20733,6 +20740,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/k10_disclosure_check.py": {
+   "consumers": [
+    {
+     "id": "workflow:k10-disclosure-check.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/library_publish.py": {
    "consumers": [
     {
@@ -22471,6 +22491,26 @@
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/k10_disclosure_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:k10-disclosure-check.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -29754,6 +29794,7 @@
     "tests/funding_name_resolver_test.py",
     "tests/college_short_names_apply_test.py",
     "tests/active_colleges_ccc_test.py",
+    "tests/k10_disclosure_check_test.py",
     "tests/statewide_kpi_test.py",
     "tests/credential_reference_statewide_basis_test.py",
     "tests/doctrine_lookup_test.py",
@@ -29799,6 +29840,21 @@
     "tests/course_outcomes_read_test.py",
     "tests/course_outcomes_load_test.py",
     "tests/next_slo_colleges_test.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "k10-disclosure-check.yml": {
+   "name": "k=10 disclosure check",
+   "crons": [
+    "41 15 * * *"
+   ],
+   "scripts": [
+    "tests/k10_disclosure_check_test.py",
+    "scripts/k10_disclosure_check.py"
    ],
    "adds": [],
    "push": null,

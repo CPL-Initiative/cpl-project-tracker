@@ -727,6 +727,12 @@ jobs:
           pip install --quiet openpyxl
           python3 tests/active_colleges_ccc_test.py
 
+      # The k=10 disclosure checker's logic (S602, COBIx item 7): every failure it
+      # names is caught on fixtures. The live read runs in k10-disclosure-check.yml.
+      # Stdlib only. Same non-required check.
+      - name: k=10 disclosure checker (fixtures)
+        run: python3 tests/k10_disclosure_check_test.py
+
       # The Statewide Exhibits card (S602, COBIx #2891): run nowhere until now, it
       # went stale when the card gained its Issuer/type variants breakdown.
       # Imports the generator, so it installs openpyxl. Same non-required check.
