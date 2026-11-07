@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-560 document(s).
+561 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 598 | [Session 598 handoff: Coalinga and Palomar re-capturing; Siskiyous' display applying](../session_598_handoff.md) | 2026-11-07 |
 | 597 | [Session 597 handoff: Siskiyous reread to 66 passing; Palomar re-capturing; Lake Tahoe's SLOs in](../session_597_handoff.md) | 2026-11-07 |
 | 596 | [Session 596 handoff: Siskiyous extracting on the new reader; Lake Tahoe's SLOs loading](../session_596_handoff.md) | 2026-11-07 |
 | 594 | [Session 594 handoff: Mt. San Jacinto merged; Ohlone's gaps all the college's own](../session_594_handoff.md) | 2026-11-06 |
