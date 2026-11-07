@@ -6261,8 +6261,8 @@ async function fetchCplAi(): Promise<any> {
 // read of them, so a faculty member asking "which of our courses fit Security+" got the
 // MAP articulations and the title-similarity worklist, never CPL-AI's skill-area ratings.
 //
-// The block fires on the STRONGEST-matched credential only (the one Route ALIGN uses) and
-// only when CPL-AI joined a certification to it. With a college: that college's courses,
+// The block fires on one credential, the first matched one CPL-AI rated that the question
+// names (cplAiPick), and only when CPL-AI joined a certification to it. With a college: that college's courses,
 // Strong evidence first, then Faculty interpretation; Limited evidence is a count. Without
 // one, or when CPL-AI rated nothing there: the colleges with the most Strong evidence
 // courses. Every rating is evidence for faculty review, never a CPL determination, and
@@ -6290,6 +6290,34 @@ function cplAiEntry(doc: any, title: string | null): Array<any> {
     if (cplAiNorm(k) === want && Array.isArray(doc.by_exhibit[k])) return doc.by_exhibit[k];
   }
   return [];
+}
+
+// Which matched credential the section is about. The routes rank their matches, and the
+// first is not always the one asked about: for "Which Sacramento City College courses could
+// faculty review for credit for CompTIA Security+?" the first was LA City Certified Welder
+// (the preview A/B, 2026-11-07), on the word "city". So the section scores each matched title
+// CPL-AI rated by the share of its words the question uses (a "+" ignored, words that name
+// no credential left out) and takes the best, at half its words or more; a tie keeps the
+// routes' order. "CompTIA Network+" then wins a Network+ question over Security+.
+const CPL_AI_WEAK_WORDS = new Set(["certified", "certificate", "certification", "college", "city", "the", "and", "for", "with", "professional", "user"]);
+
+function cplAiWords(s: any): Array<string> {
+  return cplAiNorm(s).replace(/\+/g, "").split(" ")
+    .filter((w) => (w.length >= 3 || /\d/.test(w)) && !CPL_AI_WEAK_WORDS.has(w));
+}
+
+function cplAiPick(doc: any, titles: Array<any>, question: string): string | null {
+  const asked = new Set(cplAiWords(question));
+  let best: string | null = null;
+  let bestScore = 0;
+  for (const t of titles || []) {
+    if (!t || cplAiEntry(doc, t).length === 0) continue;
+    const words = cplAiWords(t);
+    if (words.length === 0) continue;
+    const score = words.filter((w) => asked.has(w)).length / words.length;
+    if (score >= 0.5 && score > bestScore) { best = String(t); bestScore = score; }
+  }
+  return best;
 }
 
 // A college's key in by_college: its index in doc.colleges, the Catalog's college
@@ -7570,8 +7598,8 @@ Deno.serve(async (req: Request) => {
     // CPL-AI's course ratings for the strongest-matched credential (SkyFern, 2026-11-07),
     // outside the try for the same reason: the section does not depend on the recs lookup.
     // It carries its own rule; see the CPL-AI BLOCK.
-    const cplAiTitle = (stdRecs && stdRecs[0]?.unified_title)
-      || (anyCreds && anyCreds[0]?.unified_title) || null;
+    const cplAiTitle = cplAiPick(cplAiDoc,
+      [...(stdRecs || []), ...(anyCreds || [])].map((r: any) => r?.unified_title), routeText);
     const cplAiContext = buildCplAiContext(cplAiDoc, cplAiTitle, singleProfile?.college || null);
     credentialContext += cplAiContext;
 
@@ -7880,7 +7908,7 @@ Deno.serve(async (req: Request) => {
           } : {}),
           // The CPL-AI ratings this answer was given (SkyFern): the credential and the size.
           // Recorded whenever a credential matched, so an empty section says why: no file, or no rating.
-          ...(cplAiTitle ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, loaded: !!cplAiDoc, chars: cplAiContext.length } } : {}),
+          ...((stdRecs || anyCreds) ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, loaded: !!cplAiDoc, chars: cplAiContext.length } } : {}),
         });
         console.log(
           `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +
