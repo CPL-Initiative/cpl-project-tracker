@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-07_tmc_submissions_owner_token.sql",
+ "name": "tmc_submissions_owner_token",
+ "version": "20261107210203",
+ "sha256": "ca0d6e24abac782defaa427df361d4b4e10fc894e904f0a6ed49702d32edca08",
+ "run": "42413667979",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
