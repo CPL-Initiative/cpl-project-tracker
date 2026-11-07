@@ -3,7 +3,7 @@ title: "Session 597 handoff: Siskiyous reread to 66 passing; Palomar re-capturin
 date: 2026-11-07
 session: 596 (SkyPinwheel, the CPL Queue routine's 09:12Z firing, 2026-11-07)
 tags: [handoff, program-requirements-harvest, cpl-scheduled]
-status: current
+status: superseded
 ---
 
 # You are Session 597

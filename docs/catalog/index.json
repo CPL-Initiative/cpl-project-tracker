@@ -16641,8 +16641,38 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 560,
+   "count": 562,
    "docs": [
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 599,
+     "path": "docs/session_599_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 599 handoff: Palomar re-capturing after host errors; Coalinga extracting; Los Medanos captured",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 598,
+     "path": "docs/session_598_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 598 handoff: Coalinga and Palomar re-capturing; Siskiyous' display applying",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-07",
      "governs": [],
@@ -26168,5 +26198,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1401
+ "total": 1403
 }
