@@ -169,9 +169,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece is
   still drafted in a session or the scheduled run: the Library has no in-browser drafter for a new piece (Revise's
   `library-revise-draft` edits an existing public page only); the page now says so when Start saves.
-- **The List's project bands lead with the newest piece** (#2812, SkyRoundoff; Sam's report: *"the sort descending by
-  modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
-  orders them, as the Cards' project cards already were.
+- **DSP Version 3** (S599; Sam's Revise of 2026-11-07 11:29Z): ELL IET Version 5's form, from the vault source, stored as
+  the card's draft (`kb/migrations/2026-11-07_library_dsp_v3_stored_draft.sql`). **NEXT:** Sam's Replace, or his next note.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
