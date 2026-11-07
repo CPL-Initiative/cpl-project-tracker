@@ -557,6 +557,19 @@
       + "</tbody></table>";
   }
 
+  // Beside a Strong evidence course at a college that does not award the credential: Request Quick Adopt, opening the
+  // exhibit a college already built in MAP, so faculty who agree with the rating can ask to adopt it from the line
+  // that makes the case (SkyBeacon's handoff, cer-procedures Next). A college MAP does not know, or a credential no
+  // college has built, offers nothing.
+  function adoptBeside(c, at, code) {
+    if (String(at) === "NaN" || !D.colleges[at]) return "";
+    var m = (c.m || []).filter(function (x) { return x[1] !== at; })[0];
+    if (!m) return "";
+    var from = m[1] >= 0 ? D.colleges[m[1]][1] : (m[2] || "MAP");
+    return ' <a class="word" href="' + esc(mapUrl(m[0])) + '" target="_blank" rel="noopener" title="Opens ' + esc(from)
+      + "'s exhibit in MAP; no sign-in is needed\">Request Quick Adopt<span class=\"sr-only\"> for " + esc(D.colleges[at][1] + " " + code)
+      + ", from " + esc(from) + "</span></a>";
+  }
   function collegeName(key) { var n = Number(key); return String(n) === String(key) && D.colleges[n] ? D.colleges[n][0] : String(key); }
   function aiBlock(c) {
     if (!c.ai) return "";
@@ -578,7 +591,8 @@
         + ks.map(function (key) { return '<option value="' + esc(key) + '"' + (key === pickKey ? " selected" : "") + ">" + esc(collegeName(key)) + "</option>"; }).join("") + "</select></div>"
         + '<ul class="aligned">' + mine.map(function (r) {
           return "<li><b>" + esc(r[0] + " " + r[1]) + '</b>: <span class="tier">' + esc(TIER[r[2]]) + "</span>, " + r[3] + " of " + r[4]
-            + ' skill areas matched. <button type="button" class="word" data-rep="' + esc(cert.code + "_" + r[5]) + '" data-code="' + esc(cert.code) + '">Show the recommendation</button></li>';
+            + ' skill areas matched. <button type="button" class="word" data-rep="' + esc(cert.code + "_" + r[5]) + '" data-code="' + esc(cert.code) + '">Show the recommendation</button>'
+            + (r[2] === 1 && !aw ? adoptBeside(c, kNum, r[0]) : "") + "</li>";
         }).join("") + "</ul>"
         + '<p class="lines">' + esc(collegeName(pickKey)) + (aw ? " awards credit for it in MAP." : " does not award credit for it yet; a course rated above is the evidence its faculty would review.") + "</p>";
       var leads = ks.filter(function (key) { return String(Number(key)) === key && strongOf(key) && !awardsAt(c, Number(key)); });

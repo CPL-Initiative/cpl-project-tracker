@@ -378,7 +378,17 @@ function pick(d, id, key, on) {
   const sel = d.getElementById("pn-aic-0");
   check("the panel's college picker opens on a college with Strong evidence, and lists every rated college", sel && sel.value === "0" && sel.options.length === 3
     && /CIS 9 Intro to Security/.test(d.getElementById("pn-body").textContent));
+  const strongLi = Array.from(d.querySelectorAll("#pn-body ul.aligned li")).filter((li) => /CIS 9 Intro/.test(li.textContent))[0];
+  const qaBeside = strongLi && strongLi.querySelector("a.word");
+  check("beside a Strong evidence course where the college does not award it: Request Quick Adopt to a built exhibit",
+    qaBeside && /^Request Quick Adopt/.test(qaBeside.textContent) && /MAP-B/.test(qaBeside.getAttribute("href"))
+    && /for Alpha CIS 9, from Beta/.test(qaBeside.querySelector(".sr-only").textContent), strongLi && strongLi.innerHTML);
+  check("a Limited evidence course offers no Quick Adopt", !Array.from(d.querySelectorAll("#pn-body ul.aligned li")).some((li) => /Old Lab/.test(li.textContent) && li.querySelector("a.word")));
   sel.value = "2"; sel.dispatchEvent(new d.defaultView.Event("change", { bubbles: true }));
+  check("a college that already awards it is offered no Quick Adopt", !d.querySelector("#pn-body ul.aligned li a.word"));
+  d.getElementById("pn-aic-0").value = "Calbright"; d.getElementById("pn-aic-0").dispatchEvent(new d.defaultView.Event("change", { bubbles: true }));
+  check("a college MAP does not list is offered no Quick Adopt", /IT 510/.test(d.getElementById("pn-body").textContent) && !d.querySelector("#pn-body ul.aligned li a.word"));
+  d.getElementById("pn-aic-0").value = "2"; d.getElementById("pn-aic-0").dispatchEvent(new d.defaultView.Event("change", { bubbles: true }));
   check("picking a college lists its rated courses and says whether it awards credit", /CNT 69 Network Security/.test(d.getElementById("pn-body").textContent)
     && /Gamma College awards credit for it in MAP/.test(d.getElementById("pn-body").textContent));
   check("the colleges with Strong evidence that do not award it yet", /The 1 college with a Strong evidence course/.test(d.getElementById("pn-body").textContent));
