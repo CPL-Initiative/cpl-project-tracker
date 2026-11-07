@@ -727,6 +727,12 @@ jobs:
           pip install --quiet openpyxl
           python3 tests/active_colleges_ccc_test.py
 
+      # The k=10 disclosure checker's logic (S602, COBIx item 7): every failure it
+      # names is caught on fixtures. The live read runs in k10-disclosure-check.yml.
+      # Stdlib only. Same non-required check.
+      - name: k=10 disclosure checker (fixtures)
+        run: python3 tests/k10_disclosure_check_test.py
+
       # The credential reference's statewide flag counts the Fact Sheet's set
       # (Sam, 2026-11-01: a title that includes a statewide exhibit is based on
       # statewide); it read articulation lines alone and marked 84 of 152.
