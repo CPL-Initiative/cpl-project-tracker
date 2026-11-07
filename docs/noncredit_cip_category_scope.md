@@ -202,9 +202,8 @@ Per row:
 
 **For Sam**
 
-6. Where does a confirmed category persist? Browser `localStorage` (today's pattern) is wrong for a
-   funding-relevant determination — recommend a gated Supabase table with who/when, as with
-   `cr_reference_decisions` and `governance_owners`.
+6. ~~Where does a confirmed category persist?~~ **Answered (Sam, Open Asks Sheet 169 card 2,
+   2026-11-07 20:57Z: *"table"*).** A gated Supabase table with who and when; design in §8.
 7. Does this become its own worklist view, or stay inline on the Programs list behind the existing
    Award-type picker?
 
@@ -224,3 +223,30 @@ Per row:
    warranted, small enough to work by hand.
 
 Phases 1–3 need nothing further from Jenni beyond Q1. Phases 4–5 wait.
+
+---
+
+## 8. Where a confirmed category is saved
+
+Sam chose the table on 2026-11-07 (Open Asks Sheet 169 card 2). The migration is committed and
+**held** until build phase 3, the picker, gives the table its first writer:
+[`kb/migrations/2026-11-07_nc_cip_category_decisions.sql`](../kb/migrations/2026-11-07_nc_cip_category_decisions.sql),
+rollback beside it. Governance row **DR-33** (`kb/governance_register.json`), mapped in
+`kb/governance_surface_map.json`.
+
+- **One row per program**, keyed on the Programs list's program key: the category (one of the ten
+  in §2), the primary CIP, the secondary CIP (required on Short-Term Vocational and refused on every
+  other category), the CIP COCI held at the time, and a note.
+- **Who and when come from the sign-in.** A trigger sets `confirmed_by` from the reviewer's email
+  and `confirmed_at` from the clock; the client cannot supply either.
+- **Writers: a reviewer sign-in only.** The team phrase names nobody, and naming the person is the
+  reason for the table. The team phrase reads. No anon read: the category is funding-relevant and
+  unpublished.
+- **A rule never writes a row** (#1192's guard). The picker's proposal stays computed; a row exists
+  only where a person confirmed.
+- **Reversible from the database** (Rule 10 a2): no DELETE policy, and every edit files the prior
+  row in `nc_cip_category_decisions_history` through a trigger.
+- **The decision is the college's.** The CO page calls its codes examples a college uses to choose,
+  so the reviewer records the college's choice. Nothing reaches COCI.
+- **No student or staff detail.** The rows hold programs, codes and the recorder's sign-in, so the
+  student-detail disclosure ADR does not reach the table.
