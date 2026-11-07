@@ -31,8 +31,9 @@ Your moniker is **SkyThistle**. You pick up after SkyBramble on the Library side
   CI's EACR step). The peer table took the hold on a catalog sync I dispatched at 04:07Z (the first, 04:02Z, timed out
   on the college-courses upsert while my heavy SQL ran; the peer step had already landed). The Sierra College answer
   clears once the daily run regenerates `credential_reference_data.js` and the 13:20Z sync carries it.
-- **Card 3:** `kb/migrations/2026-11-07_alignment_level_words.sql` (rollback beside it), applied by
-  `supabase-migrate.yml` on this branch's push.
+- **Card 3:** `kb/migrations/2026-11-07_alignment_level_words.sql` (rollback beside it), applied 04:24Z
+  (`kb/receipts/migration_alignment_level_words_42338146882.json`); Advanced Strength Training at Sierra College now
+  offers only KIN 5B Strength Training.
 - **Card 4:** `kb/cer_decisions_out/2026-11-07/plan.json`, cohort `exhibits-s596@bot`. Validated by the applier; the
   local fold preview gave 7 revise, 0 held, V2 and V3 OK. **Dispatch `cer-decision-apply.yml` on `main` with that
   plan_dir, dry-run then commit,** once this PR merges.
@@ -45,7 +46,7 @@ Your moniker is **SkyThistle**. You pick up after SkyBramble on the Library side
    `issuing_agency_assignment` rows, and the second issuer off the four credentials in `kb/credentials.json`. Card 2
    *deploy*: preview A/B, then `cpl-chat-deploy.yml`.
 2. **If this PR's apply has not run:** dispatch `cer-decision-apply.yml` (dry-run, then commit) on
-   `kb/cer_decisions_out/2026-11-07`, and read the migrate receipt for the scorer.
+   `kb/cer_decisions_out/2026-11-07`. The scorer migration is applied (04:24Z) and read back.
 3. **After the daily run and the 13:20Z sync:** `credential_alignment_for_college('Basic Military Training','Sierra College')`
    holds no `HIST 50` row and no `MUS 4A`.
 4. **Moreno Valley's `HIS 1`** (`CCC000520542`, World History to 1500) is absent from our COCI export while `HES 1`
