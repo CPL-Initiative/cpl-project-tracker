@@ -67,8 +67,12 @@ stale = [n for n in EXCUSED if n not in workflows]
 check("every excused name is a real workflow name", not stale)
 
 src = open(WATCHER, encoding="utf-8").read()
-check("only unattended runs alert (a schedule, or main)",
-      "workflow_run.event == 'schedule'" in src and "workflow_run.head_branch == 'main'" in src)
+check("only unattended runs alert (a schedule, or a push or dispatch on main)",
+      "workflow_run.event == 'schedule'" in src and "workflow_run.head_branch == 'main'" in src
+      and "workflow_run.event == 'push'" in src)
+check("only this repository's runs alert (a fork PR from a branch named main cannot)",
+      "github.event.workflow_run.head_repository.full_name == github.repository &&" in src)
+check("a pull_request run never alerts", "event == 'pull_request'" not in src)
 check("a success closes the issue", re.search(r"success\)\s*\n\s*if \[ -n \"\$NUM\" \]; then\s*\n\s*gh issue close", src))
 check("one issue per workflow, found by its title", 'TITLE="Failing: $WF"' in src and "select(.title == $t)" in src)
 

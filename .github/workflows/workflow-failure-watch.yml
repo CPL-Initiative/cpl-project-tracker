@@ -2,7 +2,7 @@ name: Workflow failure watch
 # One failure step for every workflow that runs unattended (COBIx #2891 item 3, S602):
 # 44 of 62 workflows had none, so a scheduled run could fail for days with only a red
 # mark nobody opened. This watcher wakes when a listed workflow completes. A failure of
-# a scheduled run, or of any run on main, opens one issue per workflow (label
+# a scheduled run, or of a push or dispatch on main, opens one issue per workflow (label
 # workflow-failure) or comments on the one already open; the next success closes it.
 # Runs on claude/** branches are a session's own business and never alert.
 #
@@ -51,10 +51,15 @@ concurrency:
 
 jobs:
   watch:
-    # Unattended runs only: a schedule, or anything on main.
+    # Unattended runs of this repository only: a schedule, or a push or dispatch on main.
+    # A fork PR from a branch named main arrives as event pull_request with head_branch
+    # main, and this job runs with this repository's token, so without the repository
+    # check an outside contributor could open alerts or close a real one (COBIx, #2905).
     if: >-
-      github.event.workflow_run.event == 'schedule' ||
-      github.event.workflow_run.head_branch == 'main'
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      (github.event.workflow_run.event == 'schedule' ||
+       ((github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch') &&
+        github.event.workflow_run.head_branch == 'main'))
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
