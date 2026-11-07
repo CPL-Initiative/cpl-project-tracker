@@ -16641,8 +16641,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 562,
+   "count": 563,
    "docs": [
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 600,
+     "path": "docs/session_600_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "library",
+      "cpl-scheduled"
+     ],
+     "title": "Session 600 handoff: DSP Version 3 drafted for Sam; Coalinga displaying; Palomar extracting",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-07",
      "governs": [],
@@ -26198,5 +26214,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1403
+ "total": 1404
 }

@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 99 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 562 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1403** | |
+| Session handoffs | 563 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1404** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-07 SkyTriangulum (S599, CPL Queue routine, 12:12Z): DSP Credit Starting Points Version 3 from Sam's Revise request, in ELL IET Version 5's form, stored as the card's draft (#2883, CPLBrain#707); Coalinga merged (#2882) and displaying; Palomar's clean re-capture, Chemistry extracting; Los Medanos adds nothing; `docs/session_600_handoff.md`.
 - 2026-11-07 SkyAndromeda (S598, CPL Queue routine, 11:12Z): Palomar held back from extraction after 8 host errors and re-captured; Coalinga extracting its two new programs; Los Medanos captured on the current eLumen reader; light checkpoint; `docs/session_599_handoff.md`.
 - 2026-11-07 SkyCartwheel (S595, CPL Queue routine, 08:12Z): S594's #2874 merged; Siskiyous 73 of 77 on the new reader, extraction 42354853403 running; Lake Tahoe's SLO load pushed (#2833); Contra Costa's full read due 2026-11-08; light checkpoint; `docs/session_596_handoff.md`.
 - 2026-11-06 SkyHarbor (Library side session): SkyBeacon's PRs merged (#2858, #2859, CPLBrain#694); Add your credential live (#2860, DR-32); the Library List sorts loose pieces by date (#2861); Moreno Valley's HES 1 claim on HIST 150 held, no Basic Military Training on world history (#2862); CPL Pathways opens on every college with the Credential Catalog inside, full width (#2863); full checkpoint; `docs/library_handoff.md`.

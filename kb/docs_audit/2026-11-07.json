@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1417,
-    "bytes": 14305900,
+    "files": 1418,
+    "bytes": 14313444,
     "over_budget": 1,
-    "handoff_max": 599,
+    "handoff_max": 600,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59893,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 145,
-        "bytes": 4401641,
+        "bytes": 4401785,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10398,
+        "bytes": 10750,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2621047,
+        "bytes": 2622885,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 496886,
+        "bytes": 496884,
         "over": 0
       },
       "handoff": {
-        "files": 562,
-        "bytes": 3877657,
+        "files": 563,
+        "bytes": 3882869,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26148,
-      "bytes": 4311655551,
+      "files": 26150,
+      "bytes": 4311685145,
       "heavy_bytes": 3079399219,
       "heavy_share": 0.714,
       "ignore_filters": [

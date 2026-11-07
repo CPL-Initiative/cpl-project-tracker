@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-562 document(s).
+563 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 600 | [Session 600 handoff: DSP Version 3 drafted for Sam; Coalinga displaying; Palomar extracting](../session_600_handoff.md) | 2026-11-07 |
 | 599 | [Session 599 handoff: Palomar re-capturing after host errors; Coalinga extracting; Los Medanos captured](../session_599_handoff.md) | 2026-11-07 |
 | 598 | [Session 598 handoff: Coalinga and Palomar re-capturing; Siskiyous' display applying](../session_598_handoff.md) | 2026-11-07 |
 | 597 | [Session 597 handoff: Siskiyous reread to 66 passing; Palomar re-capturing; Lake Tahoe's SLOs in](../session_597_handoff.md) | 2026-11-07 |
