@@ -22,7 +22,8 @@
  *   and 2): the page ships no secret, and the Anthropic key is spent only by a signed-in
  *   reviewer or a phrase holder. Rotation: docs/security/rotation_guide.md.
  *
- *   GET /scrape?secret=YOUR_SECRET
+ *   GET /scrape   with header  x-scrape-secret: YOUR_SECRET
+ *   (GET /scrape?secret=YOUR_SECRET still works during the move to the header)
  *   Calls the CPL Dashboard's /api/potential-savings endpoint (clean JSON),
  *   extracts the "ALL COLLEGES" aggregate row, and returns formatted metrics
  *   matching the live_metrics.json schema.
@@ -130,9 +131,12 @@ function fmtDollars(n) {
 
 // ── Scrape handler ───────────────────────────────────────────────
 
-async function handleScrape(url, env) {
-  // Verify shared secret
-  const secret = url.searchParams.get('secret') || '';
+async function handleScrape(url, env, request) {
+  // Verify shared secret. The daily workflow sends it in the x-scrape-secret header, so it
+  // stays out of URLs and logs (#2891 item 1, S601). The ?secret= query string still opens
+  // the gate until the workflow has moved to the header; a later PR removes it.
+  const header = (request && request.headers.get('x-scrape-secret')) || '';
+  const secret = header || url.searchParams.get('secret') || '';
   const expectedSecret = env.SCRAPE_SECRET;
   if (expectedSecret && secret !== expectedSecret) {
     return new Response(JSON.stringify({ error: 'Invalid or missing secret' }), {
@@ -444,7 +448,7 @@ export default {
 
     // ── Scrape endpoint ──
     if (url.pathname === '/scrape' && request.method === 'GET') {
-      return handleScrape(url, env);
+      return handleScrape(url, env, request);
     }
 
     // ── Trigger endpoint ──
