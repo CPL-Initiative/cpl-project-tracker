@@ -317,6 +317,17 @@
     ".cplpw-h { margin:0; font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.06; }",
     ".cplpw-h::after { content:''; display:block; width:66px; height:4px; margin:14px 0 0; background: var(--cmn-gold, var(--gold-accent)); }",
     ".cplpw-lede { margin:14px 0 0; font-size:1.02rem; line-height:1.55; max-width:var(--cpl-measure,none); }",
+    /* The statewide head's photos (Sam, 2026-11-06: yes to the hero picture from the standard format): the Credential
+       Catalog's arc and cycle, the photos from library/photos/, a ring in the border token so light and dark both hold. */
+    ".cplpw-head.has-hero { position:relative; display:grid; grid-template-columns:minmax(0, 1.15fr) minmax(0, 1fr); gap:24px; align-items:stretch; }",
+    ".cplpw-hero-v { position:relative; min-width:0; min-height:240px; overflow:hidden; }",
+    ".cplpw-hero-v::before { content:''; position:absolute; inset:0; background: var(--border); clip-path: ellipse(calc(67% + 6px) calc(60% + 6px) at 75% 50%); }",
+    ".cplpw-hero-v img { position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; clip-path: ellipse(67% 60% at 75% 50%); opacity:0; transition: opacity 1.2s ease; }",
+    ".cplpw-hero-v img.is-on { opacity:1; }",
+    ".cplpw-hero-pause { position:absolute; z-index:1; right:12px; bottom:12px; min-height:24px; padding:2px 10px; border:0; border-radius:999px; background: var(--surface-opaque); font:inherit; font-size:.86rem; color: var(--cobalt); text-decoration:underline; text-underline-offset:4px; cursor:pointer; }",
+    ".cplpw-hero-pause:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    "@media (prefers-reduced-motion: reduce) { .cplpw-hero-v img { transition:none; } }",
+    "@media (max-width: 900px) { .cplpw-head.has-hero { grid-template-columns:1fr; gap:12px; } .cplpw-hero-v { min-height:180px; } }",
     ".cplpw-cards { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:14px; margin:20px 0 12px; }",
     "@media (max-width: 1280px) { .cplpw-cards { grid-template-columns:repeat(3, minmax(0, 1fr)); } }",
     "@media (max-width: 900px) { .cplpw-cards { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
@@ -3316,6 +3327,12 @@
    * the ones it awards, the ones it could add, and first the recommended ones it could adopt (a statewide
    * recommendation or a CPL-AI course match, earning credit elsewhere, lined up with a course it teaches). */
   var ADOPT_URL = "library/adopt/adopt_data.json";
+  // The Catalog's photos and pace (library/adopt/index.html, adopt.js HERO_MS), in its order.
+  var HERO_DIR = "library/photos/", HERO_MS = 7000;
+  var HERO_PHOTOS = [["hero-student-1.jpg", 598, 448], ["hero-architecture.jpg", 1001, 750], ["hero-welding-2.jpg", 1001, 750],
+    ["hero-biotech.jpg", 1200, 900], ["hero-construction.jpg", 1001, 750], ["hero-health.jpg", 922, 692],
+    ["hero-fashion.jpg", 1001, 750], ["hero-transportation.jpg", 1001, 750], ["hero-manufacturing.jpg", 1200, 900],
+    ["hero-ict.jpg", 1001, 750], ["hero-welding-1.jpg", 1001, 750]];
   var RECS_SHOWN = 4;
   var adoptState = { data: null, error: null, loading: null, sets: {} };
   function loadAdopt() {
@@ -3526,18 +3543,60 @@
       }
       paintCollege(body, pickedCollege, idxsFor(pickedCollege));
     }
+    /* The statewide head's photos: the Credential Catalog's cycle (library/adopt/adopt.js heroInit). One photo loads with
+       the head and the next ahead of its turn; a reader can pause; reduced motion keeps the first photo still; the cycle
+       runs only while the head is on screen and the window shown, and ends when the head leaves the page. */
+    function heroInto(head) {
+      var v = el("div", "cplpw-hero-v");
+      v.setAttribute("aria-hidden", "true");
+      var imgs = HERO_PHOTOS.map(function (p, k) {
+        var img = document.createElement("img");
+        img.alt = ""; img.width = p[1]; img.height = p[2];
+        img.setAttribute("data-src", HERO_DIR + p[0]);
+        if (k === 0) { img.src = HERO_DIR + p[0]; img.className = "is-on"; }
+        v.appendChild(img);
+        return img;
+      });
+      head.className += " has-hero";
+      head.appendChild(v);
+      var still = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+      // It cycles only while the head is on screen, so a reader scrolled into the List is not moving photos above them.
+      if (still || imgs.length < 2 || typeof window.IntersectionObserver !== "function") return;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "cplpw-hero-pause"; b.textContent = "Pause photos";
+      head.appendChild(b);
+      var i = 0, timer = null, paused = false, seen = false;
+      function prime(img) { if (img && !img.getAttribute("src")) img.src = img.getAttribute("data-src"); }
+      function stop() { if (timer) window.clearInterval(timer); timer = null; }
+      function step() {
+        if (!head.isConnected) { stop(); io.disconnect(); document.removeEventListener("visibilitychange", vis); return; }
+        var next = (i + 1) % imgs.length;
+        prime(imgs[next]); prime(imgs[(next + 1) % imgs.length]);
+        imgs[i].className = ""; imgs[next].className = "is-on"; i = next;
+      }
+      function run() { stop(); if (!paused && seen && !document.hidden && head.isConnected) timer = window.setInterval(step, HERO_MS); }
+      function vis() { run(); }
+      var io = new window.IntersectionObserver(function (es) { seen = es.some(function (e) { return e.isIntersecting; }); run(); });
+      b.addEventListener("click", function () { paused = !paused; b.textContent = paused ? "Play photos" : "Pause photos"; run(); });
+      document.addEventListener("visibilitychange", vis);
+      prime(imgs[1]);
+      io.observe(v);
+    }
     /* The college's head, its five figure cards, its program data in one line, the List and My College. */
     function paintCollege(host, college, idxs) {
       var state = !college;   // every college, until one is picked
       var head = el("div", "cplpw-head");
-      head.appendChild(el("p", "cplpw-eyebrow", "CPL Pathways"));
-      head.appendChild(el("h2", "cplpw-h", state ? "Every college, every program" : college));
-      head.appendChild(el("p", "cplpw-lede", state
+      var words = state ? el("div", "cplpw-head-w") : head;
+      if (state) head.appendChild(words);
+      words.appendChild(el("p", "cplpw-eyebrow", "CPL Pathways"));
+      words.appendChild(el("h2", "cplpw-h", state ? "Every college, every program" : college));
+      words.appendChild(el("p", "cplpw-lede", state
         ? "Every California community college program read from its catalog, and every credential that earns credit at a " +
           "college. Pick a college to see its own programs and what it could add. Each figure opens what it counts."
         : "Every " + college + " program read from its catalog, and its course maps, with the courses in each that earn " +
           "credit for prior learning here or at another college, and every credential it awards credit for or could add. " +
           "Each figure opens what it counts; a program opens its pathway."));
+      if (state) heroInto(head);
       host.appendChild(head);
       var cards = el("div", "cplpw-cards");
       host.appendChild(cards);

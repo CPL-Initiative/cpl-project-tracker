@@ -53,7 +53,7 @@ state when CPL Pathways opens...until you narrow down to a college"*)**: the ind
 figure cards (Pathways; Credentials; CPL here; Could adopt; For consideration; Confirmed; *"I don't like to use the word
 carry"*), a *Programs | Credentials* switch that brings the Credential Catalog in (`library/adopt/adopt_data.json`),
 and for a college its recommended credentials, four then *Show all N* in place (mock
-https://claude.ai/artifact/BRUR7BRD4LxVFauQ23NahP; full width). A college also shows the program-data
+https://claude.ai/artifact/BRUR7BRD4LxVFauQ23NahP; full width). The statewide head carries the Catalog's photo arc (SkyMeadow, 2026-11-07; Sam: yes to the hero picture), cycling only on screen, with Pause photos and a still first photo under reduced motion (`tests/cpl_pathways_hero.test.js`). A college also shows the program-data
 line, one List of its pathways on `commons_list.js` (read-only; filter words Degrees, Certificates, Noncredit, Course maps,
 CPL here, Could adopt, For consideration, Confirmed, Fails a check) and the My College fold. A title opens the
 pathway at full width with *Back to <college>'s pathways*, which returns to the List as left. The engine's new `open(r)`
