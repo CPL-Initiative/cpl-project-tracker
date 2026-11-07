@@ -1,7 +1,7 @@
 ---
 title: "Sierra retrieval + corpus — lane state"
 created: 2026-08-28
-updated: 2026-11-01
+updated: 2026-11-07
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -87,7 +87,7 @@ one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sie
 
 **Statewide exhibits in full (S398-S399, live).** For a request for the whole set, Sierra receives the Fact Sheet's 164 statewide exhibits by program area (`fact-sheet/statewide_catalog.json`, rebuilt daily): #2164, deployed 2026-10-16 on Sam's go (Open Asks Sheet 85 card 7; deploy run 38943025631, production smoke 38943211844 green with mode 7w). **NEXT:** render the Fact Sheet's baked title lists from the catalog (132 baked, 50 current titles missing); retire the April vault note `map-exhibit-analysis.md`; curate the 22 "Other Statewide" exhibits into program areas.
 
-**Sierra quotes complete records (Sam, Open Asks Sheet 95 card 2, 14:43Z 2026-10-18, "quote"; built S416).** `fetchCheckedRequirements` reads a record whose `checks` pass the three machine tests (`coverage` true, `invented` true, `arithmetic` equal or unstated: `program_record_machine_pass` written as PostgREST filters on the column, because the anon key reads the row and cannot call the function), and the block keeps a record for an Active program only; a person's confirm sets `checked` only when those pass, so the 32 confirmed records sit inside the set (11,621 complete on 2026-10-18). The block says the requirements were read from the catalog and checked against the state's Program Course File, naming the catalog and its year; a failing record keeps the lists. Smoke 7q's retrieval assert reads Mt. SAC 08086 through the same filter; `tests/sierra_program_courses.test.js` block 13 pins the filter, the Active gate and the wording. Its deploy: lessons, *Moved from the lane (S521)*. Its three A/Bs: `docs/cpl_assistant_lessons.md`, *Moved from the lane (S465)* ([note](../../kb-notes/methodology-a-regressed-mode-must-reach-the-changed-code.md)).
+**Sierra quotes complete records (S416, live):** the record moved verbatim to `docs/cpl_assistant_lessons.md` (*Moved from the lane, SkyFern*).
 
 ## Where applied and transcribed credit comes from (2026-09-30)
 
@@ -105,6 +105,8 @@ Sam asked Sierra for the military and non-military split of Chaffey's applied un
 **S308-S315 (the two-view double count, CCCSF's split, the place leading only where it teaches, 7c catalog timeouts):** moved verbatim to `docs/cpl_assistant_lessons.md`, *Moved from the lane (S372)*.
 
 **Instructions matched to the question (S540, 2026-11-01; Sam: *"worrying that we are removing part of her brain"*).** Before #2647 every active instruction went newest first to 9,000 characters (19, about 9,360), the question playing no part. First step: match each to the question, matches first, log sent/matched/dropped ids; Jev later, behind a flag. Sam, Sheet 153 card 3, *deploy*, then *"deploy all"* with handoff 530's three held changes: built #2647, preview A/B, one deploy of main. Fable's advice: `docs/sierra_rules_lessons.md`, *Matched instructions*.
+
+**CPL-AI's course ratings (SkyFern, 2026-11-07; built, not deployed).** Sam, 2026-11-06: *"I do want the CPL-AI recs on public view."* For the strongest-matched credential, cpl-chat reads the Catalog's `library/adopt/adopt_ai.json` (an hour's cache; `CPL_AI_URL` overrides) and lists the named college's rated courses by tier, or the colleges with the most Strong evidence, under a rule that keeps a rating evidence for faculty review. Until the daily run writes the file's `colleges` it names no college. `tests/sierra_cpl_ai.test.js`; smoke mode 18. **NEEDS SAM:** the deploy (Open Asks Sheet 164 card 5).
 
 **Every institution's JST standing (S543, live).** A JST question that names no single college reads the funding note's section *Veteran JSTs: which institutions have met the 75 percent condition* by heading (every institution not yet met with its counts, then the met), and her live metrics name `MilitaryStudents` the statewide JST count. Deployed on Sam's Sheet 154 *deploy* (#2666). Story: `cpl_assistant_lessons.md`, S543.
 

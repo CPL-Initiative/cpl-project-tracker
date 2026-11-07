@@ -470,10 +470,14 @@ def build(root):
                       "title, kind (exact or related), by_tier = pairs per tier, colleges, d = its description, and "
                       "by_college = {college column index, or CPL-AI's name where the Catalog has no column: [[course "
                       "code, course title, tier, skill areas matched, skill areas, course id]]}, strongest first. The "
-                      "full recommendation is kb/cpl_ai/hosted/shards/<code>.json.gz, pair id <code>_<course id>.",
+                      "full recommendation is kb/cpl_ai/hosted/shards/<code>.json.gz, pair id <code>_<course id>. colleges = "
+                      "the college column names, in index order.",
             "written_at": iso_now(),
             "page": ai_index.get("page"), "credit": ai_index.get("credit"), "caveat": ai_index.get("caveat"),
             "tiers": ai_index.get("tiers") or {},
+            # The college column names, so a reader without adopt_data.json (Sierra) resolves a
+            # by_college index to its college (SkyFern, 2026-11-07).
+            "colleges": [c[0] for c in colleges],
             "counts": {"exhibits": len(ai), "certifications": len({r["code"] for v in ai.values() for r in v})},
             "by_exhibit": ai,
         },
