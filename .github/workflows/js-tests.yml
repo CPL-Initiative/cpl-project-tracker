@@ -727,6 +727,14 @@ jobs:
           pip install --quiet openpyxl
           python3 tests/active_colleges_ccc_test.py
 
+      # The Statewide Exhibits card (S602, COBIx #2891): run nowhere until now, it
+      # went stale when the card gained its Issuer/type variants breakdown.
+      # Imports the generator, so it installs openpyxl. Same non-required check.
+      - name: Statewide Exhibits card (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/statewide_kpi_test.py
+
       # The credential reference's statewide flag counts the Fact Sheet's set
       # (Sam, 2026-11-01: a title that includes a statewide exhibit is based on
       # statewide); it read articulation lines alone and marked 84 of 152.
