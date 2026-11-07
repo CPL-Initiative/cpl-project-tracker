@@ -32,10 +32,10 @@ note (the queue's routine work; the lessons doc is the record).
 
 1. **Palomar (#2887, merged 13:45Z):** `step=display` was dispatched on `main` at 13:45Z. Confirm 0 errors in its
    applied record (`kb/receipts/..._598157545f29.applied_<run>.json`; about an hour).
-2. **Los Medanos (#2889):** 44 of 83 passing (was 29) after the Cal-GETC step, reread and display build a19682c0630e.
-   Merge #2889 on a passing `test` if it is still open, then `step=display` on `main` once Palomar's apply has
-   committed its record. Next, write a page read of LMC's own GE page (the local A.A./A.S. GE units, and whether
-   electives fill 60) before any step for the local degrees. No paid re-extraction.
+2. **Los Medanos (#2889, merged 14:06Z):** 44 of 83 passing (was 29). `step=display` was dispatched on `main` at
+   14:06Z, queued behind Palomar's; its build a19682c0630e carries Palomar's 05201 too. Confirm 0 errors. Next, write a
+   page read of LMC's own GE page (the local A.A./A.S. GE units, and whether electives fill 60) before any step for
+   the local degrees. No paid re-extraction.
 3. **SLOs on 2026-11-08 UTC:** run Contra Costa's full read on #2873 (`catalog=contra_costa`, `parts=2`, `run=` the
    date). Then run `python3 scripts/next_slo_colleges.py --next --skip contra-costa` for one preparation run.
 4. **The contacts harvest** runs Sunday 2026-11-08 (step 8) on the 15 colleges read longest ago.
@@ -65,6 +65,6 @@ None.
 ## Let go
 
 This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2873 (Contra Costa SLOs),
-#2889 (Los Medanos) if it has not merged, and this checkpoint's PR. Runs in flight: Palomar's display apply on `main`. Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
+and this checkpoint's PR. Runs in flight: Palomar's and then Los Medanos' display applies on `main`. Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
 
 > *Greetings, you are SkyMilkyWay (Session 601), see SkyWhirlpool's handoff — `docs/session_601_handoff.md` — let's keep rolling with our queue.*
