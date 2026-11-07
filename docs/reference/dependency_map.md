@@ -336,6 +336,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `.claude/commands/checkpoint.md` | scripts: `kb/_consolidation_loss_audit.py`, `kb/_doctrine_scenarios.py` | — |
 | `.claude/settings.json` | scripts: `scripts/check_hooks_live.py`, `scripts/install_prompt_guards.py` | scripts: `scripts/install_prompt_guards.py` |
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
+| `/tmp/scrape_detail` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
 | `<date>.json` | scripts: `kb/_agri_family_remint.py` | — |
 | `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
@@ -1320,5 +1321,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 808 file
+Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 809 file
 datasets · 193 external services · 530 consumers · 62 workflows · 40 tabs.

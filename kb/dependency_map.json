@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 808,
+  "file_datasets": 809,
   "external_services": 193,
   "consumers": 530,
   "workflows": 62,
@@ -4496,6 +4496,19 @@
      "direction": "read",
      "how": "yaml",
      "line": 118
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:/tmp/scrape_detail": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "read",
+     "how": "yaml",
+     "line": 125
     }
    ],
    "served": false,
