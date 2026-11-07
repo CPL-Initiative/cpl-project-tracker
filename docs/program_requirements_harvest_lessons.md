@@ -1136,6 +1136,7 @@ From *Course objectives too*, verbatim:
   read (`kb/college_reads/los_medanos_ge_totals.json`, run 42376216539) gave the words: each transfer page prints
   *"Completion of California General Education Transfer Curriculum (Cal-GETC)"* with no figure, so the step sets 34 on
   transfer degrees only, citing the statewide 34 as Cañada's and Hartnell's steps do. The local A.A./A.S. pages print
-  neither GE units nor an electives sentence, so they wait on a read of LMC's GE page.
+  neither GE units nor an electives sentence, so they wait on a read of LMC's GE page. Reconcile 42376691800
+  moved 29 to 44 passing at no model cost; reread 42377887155 replaced 27 rows (#2889).
 - **The builder needs `openpyxl`** (`chatbox/build_program_courses.py`); a fresh container lacks it. Install it with
   `python3 -m pip install openpyxl`. A bare `pip` may install it for another Python.

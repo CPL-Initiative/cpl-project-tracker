@@ -8,8 +8,8 @@
   "decider": "Sam",
   "handoff": "docs/session_601_handoff.md",
   "next_step": {
-    "title": "Display Palomar's Chemistry and rescore Los Medanos",
-    "text": "Palomar's reread Chemistry program is in a display build waiting to apply. Los Medanos' transfer degrees now count Cal-GETC's 34 units from the catalog's own words, and a free re-read is scoring them again."
+    "title": "Display Palomar and Los Medanos",
+    "text": "Palomar's reread Chemistry program is applying to the display. Los Medanos now passes 44 of 83 programs, up from 29, after its transfer degrees counted Cal-GETC's 34 units from the catalog's own words; its display is built and waits to apply."
   },
   "calls": [
     {
@@ -224,8 +224,8 @@
   },
   "changes": [
     {
-      "at": "2026-11-07T13:40:00Z",
-      "text": "Coalinga's display now shows its 45 passing programs. Palomar's Chemistry program was read again and replaced, and its display is built. Most of Los Medanos' failing programs share one cause, the degree's general education units, so a free step now adds Cal-GETC's 34 units to its transfer degrees."
+      "at": "2026-11-07T13:55:00Z",
+      "text": "Coalinga's display now shows its 45 passing programs. Palomar's Chemistry program was read again and replaced, and its display is applying. Los Medanos now passes 44 of 83 programs, up from 29, at no model cost: its transfer degrees now count Cal-GETC's 34 units."
     },
     {
       "at": "2026-11-07T12:50:00Z",
