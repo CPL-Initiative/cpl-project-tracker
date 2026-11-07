@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "7b1f3658a888",
+ "build": "78877932e011",
  "built": "2026-10-23",
  "inputs": {
-  "records": 17550,
+  "records": 17560,
   "map_read_at": "2026-10-18",
   "registry_read_at": "2026-10-23",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-11-06 06:18",
-  "cer": "2026-11-06T06:19:21+00:00"
+  "memberships": "2026-11-07 02:30",
+  "cer": "2026-11-07T02:30:46+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -757,7 +757,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -1787,7 +1787,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -2662,7 +2662,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -3733,7 +3733,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -4556,7 +4556,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -5379,7 +5379,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -6288,7 +6288,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "CompTIA Tech+",
-        "credit": "3 hours in Computer Information Systems",
+        "credit": "4 hours in Intro to IT Concepts and Applications",
         "cid": "BUS 140",
         "colleges_n": 6
        }
@@ -6926,7 +6926,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -7462,7 +7462,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -7727,16 +7727,16 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "consider": [
        {
-        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
-        "credit": "3 hours in Fire Protection Organization",
-        "cid": "FIRE 100 X",
-        "colleges_n": 4
-       },
-       {
         "credential": "Firefighter 1A",
         "credit": "3 hours in Fire Protection Organization",
         "cid": "FIRE 100 X",
         "colleges_n": 11
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 15
        },
        {
         "credential": "Firefighter EMT Certificate",
@@ -7745,10 +7745,10 @@ window.CPL_PATHWAYS_ROEP = {
         "colleges_n": 10
        },
        {
-        "credential": "Firefighter 1",
+        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
         "credit": "3 hours in Fire Protection Organization",
         "cid": "FIRE 100 X",
-        "colleges_n": 15
+        "colleges_n": 4
        }
       ]
      },
@@ -7954,16 +7954,16 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "consider": [
        {
-        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
-        "credit": "3 hours in Building Construction for Fire Protection",
-        "cid": "FIRE 130 X",
-        "colleges_n": 4
-       },
-       {
         "credential": "Firefighter 1A",
         "credit": "3 hours in Building Construction for Fire Protection",
         "cid": "FIRE 130 X",
         "colleges_n": 11
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Building Construction for Fire Protection",
+        "cid": "FIRE 130 X",
+        "colleges_n": 15
        },
        {
         "credential": "Firefighter EMT Certificate",
@@ -7972,10 +7972,10 @@ window.CPL_PATHWAYS_ROEP = {
         "colleges_n": 10
        },
        {
-        "credential": "Firefighter 1",
+        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
         "credit": "3 hours in Building Construction for Fire Protection",
         "cid": "FIRE 130 X",
-        "colleges_n": 15
+        "colleges_n": 4
        }
       ]
      },
@@ -8674,7 +8674,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -9908,7 +9908,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -10629,7 +10629,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -10982,7 +10982,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -11323,7 +11323,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -13173,7 +13173,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -13524,7 +13524,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -14253,7 +14253,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -15896,7 +15896,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -16705,7 +16705,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -17695,7 +17695,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -18473,7 +18473,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   },
@@ -18641,7 +18641,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "7b1f3658a888",
+    "build": "78877932e011",
     "built": "2026-10-23"
    }
   }

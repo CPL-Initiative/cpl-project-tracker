@@ -1,0 +1,213 @@
+{
+ "college": "College of the Siskiyous",
+ "control_number": "43283",
+ "shape": "noncredit",
+ "title": "Foundations for Academic Success",
+ "award": "Noncredit program",
+ "source_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/foundations-for-academic-success-non-credit-coc-cdcp-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6982,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6982,
+    "output_tokens": 1543,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1543,
+  "output_tokens_details": {
+   "thinking_tokens": 433
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05879,
+ "ms": 12658,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    192.0,
+    284.0
+   ],
+   "stated": [
+    192.0,
+    284.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 4,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foundations for Academic Success - Non-Credit COC (CDCP)",
+   "measure": "hours",
+   "total_units": {
+    "min": 192,
+    "max": 284
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 192,
+     "max": 284
+    },
+    "courses": [
+     {
+      "code": "COLL0600",
+      "units": 60,
+      "units_max": 90,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COLL0601",
+      "units": 60,
+      "units_max": 90,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COLL0602",
+      "units": 36,
+      "units_max": 52,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COLL0603",
+      "units": 36,
+      "units_max": 52,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [
+   {
+    "code": "COLL 0600",
+    "outcomes": [
+     "Create a personal toolbox of reference materials and critical thinking strategies to enhance academic success",
+     "Reflect on one's learning processes and challenges",
+     "Navigate college resources"
+    ]
+   },
+   {
+    "code": "COLL 0601",
+    "outcomes": [
+     "Develop an understanding of critical reading strategies in order to sustain the effort required for college level work.",
+     "Select and apply appropriate study skills to college coursework.",
+     "Evaluate and analyze print and online resources related to the attitudes and behaviors of successful college students."
+    ]
+   },
+   {
+    "code": "COLL 0602",
+    "outcomes": [
+     "Analyze personal values and strengths to set meaningful goals for life beyond community college.",
+     "Apply planning strategies and campus resources to build a next-step plan.",
+     "Develop a toolkit that supports confidence, readiness, and success in future academic and personal goals."
+    ]
+   },
+   {
+    "code": "COLL 0603",
+    "outcomes": [
+     "Develop a project that aligns with personal values, goals, and academic or career interests while addressing a campus or community need.",
+     "Implement the project using effective communication, collaboration, and problem-solving skills that support success in future academic and professional settings.",
+     "Translate project insights into professional and academic materials that articulate strengths, purpose, and planned next steps in your educational and career pathway."
+    ]
+   }
+  ],
+  "missing_explained": [],
+  "notes": [
+   "The catalog labels the totals 'credits' (192.0 - 284.0 credits; 60 - 90 etc. per course), but this is a noncredit Certificate of Competency (CDCP), so the figures are read as hours and measure is set to 'hours'. Reviewer should confirm.",
+   "The 'Program Outcomes' heading prints outcomes grouped under each course (COLL 0600 through COLL 0603) rather than program-level outcomes; they are recorded in course_outcomes under the codes as printed there (with a space, e.g. 'COLL 0600'), and program.outcomes is left empty. Reviewer may consider them program outcomes instead.",
+   "The block's stated total 192 - 284 is the 'Program Requirements Complete (Total 192 - 284)' figure, which covers this single block.",
+   "The Recommended Sequence (Term 1-4) repeats the same four required courses and is not recorded as a separate block.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "42354853403"
+}

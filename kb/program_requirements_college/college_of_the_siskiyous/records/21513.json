@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8211,
+  "input_tokens": 7579,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8211,
-    "output_tokens": 1441,
+    "input_tokens": 7579,
+    "output_tokens": 1564,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1441,
+  "output_tokens": 1564,
   "output_tokens_details": {
-   "thinking_tokens": 524
+   "thinking_tokens": 532
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06166,
- "ms": 12850,
- "seconds": 13.3,
+ "cost_usd": 0.0616,
+ "ms": 13945,
+ "seconds": 14.0,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Emergency Medical Services-Paramedic--COA",
+   "section_heading": "Emergency Medical Services-Paramedic - COA",
    "measure": "units",
    "total_units": {
     "min": 39.5,
@@ -121,12 +121,16 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Integrate pathophysiological principles and assessment findings to formulate a field impression and implement a treatment plan for the patient with medical or traumatic emergencies."
+   ],
+   "careers": [
+    "Paramedics"
+   ]
   },
   "blocks": [
    {
-    "name": "Paramedic IA Requirements: Complete EMS 1954 OR EMS 1954A AND 1954B",
+    "name": "Paramedic IA Requirements: Complete EMS 1954 OR EMS 1954A AND 1954B (EMS 1954)",
     "rule": "all",
     "minimum": null,
     "option_group": "Paramedic IA",
@@ -145,7 +149,7 @@
     ]
    },
    {
-    "name": "Paramedic IA Requirements: Complete EMS 1954 OR EMS 1954A AND 1954B",
+    "name": "Paramedic IA Requirements: Complete EMS 1954 OR EMS 1954A AND 1954B (EMS 1954A and EMS 1954B)",
     "rule": "all",
     "minimum": null,
     "option_group": "Paramedic IA",
@@ -207,11 +211,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The Paramedic IA heading reads 'Complete EMS 1954 OR EMS 1954A AND 1954B' with a printed total of 11.5-12 units; recorded as two option blocks in option_group 'Paramedic IA' (EMS 1954 alone, 12 units; or EMS 1954A + EMS 1954B, 11.5 units). The 11.5-12 total applies to the group as a whole, so stated is left null on each option block.",
-   "Catalog prints codes without a space (e.g., 'EMS1954'); recorded with a space to match the heading text and closed list.",
-   "The catalog text begins mid-description (truncated) and the Recommended Sequence section is cut off in Option 2; no program learning outcomes or careers appear in the supplied text.",
-   "Certificate requires a minimum GPA of 2.0 and all major courses completed with a C or better."
+   "The Paramedic IA requirement is printed as one group 'Complete EMS 1954 OR EMS 1954A AND 1954B' with a stated total of 11.5-12; recorded as two option blocks (EMS 1954 at 12 units, or EMS 1954A + EMS 1954B at 11.5 units) sharing option_group 'Paramedic IA'. The printed 11.5-12 total applies to the group as a whole, so each option block's stated is null.",
+   "The catalog prints codes without a space (e.g., 'EMS1954') in the course list and with a space in the group heading ('EMS 1954'); recorded with a space to match the closed list.",
+   "Career 'Paramedics' taken from the program description ('Paramedics determine the nature and extent of illness or injury...'); reviewer may confirm it should count as a named career.",
+   "Recommended Sequence (Option 1 / Option 2 term plans) mirrors the requirement choice and adds no requirements."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

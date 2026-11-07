@@ -1,0 +1,211 @@
+{
+ "college": "College of the Siskiyous",
+ "control_number": "37783",
+ "shape": "noncredit",
+ "title": "Administrative Assistant and Office Aide",
+ "award": "Noncredit program",
+ "source_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administrative-assistant-and-office-aide-non-credit-coc-fall-2021",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6551,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6551,
+    "output_tokens": 1439,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1439,
+  "output_tokens_details": {
+   "thinking_tokens": 558
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05498,
+ "ms": 12723,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BA504",
+    "BA505",
+    "CSCI501"
+   ],
+   "flagged": [
+    "BA504",
+    "BA505",
+    "CSCI501"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant and Office Aide - Non-Credit COC",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify problem solving and decision-making techniques.",
+    "Demonstrate a proficiency in computer skills typically used in the workplace",
+    "Communicate effectively with diverse audiences both orally and in writing",
+    "Demonstrate a proficiency in using spreadsheet software to solve business problems",
+    "Display and demonstrate an awareness of appropriate professional behavior",
+    "Identify the interpersonal skills needed to be successful in the highly professional business industry."
+   ],
+   "careers": [
+    "administrative assistant",
+    "administrative support",
+    "clerical positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "BA0504",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BA0507",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI0501",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "BA0505",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion, but the catalog prints only credits (0.0) and no hours for the program or its courses; measure recorded as 'units' with the printed totals of 0. A reviewer may want to confirm hours elsewhere.",
+   "Catalog prints codes without spaces (BA0507); BA0507 treated as the closed-list course BA 507. BA0504, CSCI0501 and BA0505 are not in the closed list and are marked as catalog additions.",
+   "The 'Electives' block is printed with 'Complete all of the following', so it is recorded as an 'all' block.",
+   "Program outcomes printed under 'Administrative Assistant and Office Aide Cert of Completion'; the line break within the last outcome was read as a space.",
+   "Careers taken from the program description ('entry-level administrative assistant ... administrative support or clerical positions'); the description also mentions 'a variety of careers in a business environment'."
+  ]
+ },
+ "extracted_run": "42354853403"
+}

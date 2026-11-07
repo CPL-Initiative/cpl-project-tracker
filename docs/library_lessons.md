@@ -900,3 +900,27 @@ filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (
 From `docs/reference/lanes/cer-procedures.md`, verbatim, to keep the lane under its budget:
 
 **The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`: 280 titles to 235 certs); **kept groups** (S542, #2655): a band over every run (titles alone under *Not in a group*), tick rows to Move, Out of every group or Back to the AI sort, Keep this group, Rename (a shared name joins two), Release; `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` laid over the nightly sort (the builder does not read it yet). Since S542 the List is drawn by the shared engine `commons_list.js` (#2656) and spans the window (#2661). A title opens a side panel (2026-11-03): the folded members, issuer and sites edited there, the rest folded; a Students column. **SLO hints (#2684):** a title whose articulated courses match another's at SLO similarity 0.5 or more, through distinct courses, shows *Outcomes match:* with that title and its group; Sam acts with Move. `kb/_build_exhibit_slo_neighbors.py` writes `kb/exhibit_slo_neighbors.json` daily (guard `tests/exhibit_slo_neighbors_build_test.py`).
+
+## 2026-11-07 SkyTriangulum (S599, the CPL Queue routine): DSP Version 3
+
+Sam's fourth Revise request on DSP Credit Starting Points (11:29Z): *"update this using the new format (like ELL IET visual
+uses) and add any new data as well as Request Adopt Links wherever possible and any needed links to CPL Pathways or
+Credential Catalog,"* noting *"my previous 3 attempts to make those changes have not been effective."*
+
+- **A change of format is a session's job.** `library-revise-draft` edits exact passages of the Pages copy, so three
+  requests on 11-06 came back as small edits or as "no changes asked". The session rebuilt from the vault source:
+  `dsp-training/make_brief.py` (Version 3) and a new `dsp-training/make_tabs.py`, which imports ELL IET's tab script,
+  tab CSS and `library_look` rather than copying them.
+- **Request Adopt needs an exhibit.** MAP holds no DSPT exhibit and no example course is articulated, so no example row
+  can carry the link. The page gains a band of five MAP exhibits a DSP may already hold (first aid and CPR, nurse
+  assistant, community health worker), each with Request Adopt.
+- **The link forms:** a college's CPL opportunities, the visual CPL Pathways opens, is `library/cpl-opportunity/?college=<MAP
+  name>`; its Credential Catalog view is `library/adopt/?college=<MAP name>`.
+- **Checks:** `npm run a11y` (light, dark) and axe on each of the six tabs at 390px and 1440px, light and dark: no
+  findings. Sierra reads 16,657 of 34,000 characters.
+
+## Moved from the lane (SkyTriangulum, 2026-11-07)
+
+- **The List's project bands lead with the newest piece** (#2812, SkyRoundoff; Sam's report: *"the sort descending by
+  modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
+  orders them, as the Cards' project cards already were.

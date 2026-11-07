@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-07_alignment_level_words.sql
-name=alignment_level_words
+file=kb/migrations/2026-11-07_library_dsp_v3_stored_draft.sql
+name=library_dsp_v3_stored_draft

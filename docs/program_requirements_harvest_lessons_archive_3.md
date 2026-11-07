@@ -1149,3 +1149,61 @@ sharing pages 148-154 and two on the course availability table.
 
 **Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
+
+
+## S442, the routine's run beside Sam's SkyManzanita (2026-10-21): the Ventura district's campus letter
+
+- **Two sessions ran as S442 on one queue.** The routine's 11:15Z firing found no open PR newer than 10-19 and no
+  `list_sessions`, and Sam opened SkyManzanita by hand about the same hour. Both worked the harvest's thin list; both
+  read Oxnard's host within the hour, and each display job wrote its own build (bf781cf0cd22 for Reedley, 8d733f684f83
+  for the three Ventura colleges) over the same rows in the same window, leaving a mix. A build from `main` after both
+  merged, applied once, settled it. A session with no `list_sessions` reads `main`'s commits again before each
+  display dispatch, not only at the start.
+- **The old reader's capture and the new one disagree on Oxnard:** SkyManzanita's free capture read it "exactly as
+  before" (reader work); with the campus-letter fix it found 120 of 132 (94 before).
+
+- **A tab the filter cannot read as naming a course is dropped before any check sees it.** Moorpark's Animal Care and
+  Training A.S. took its own page at title 1.0 yet read 0 of 42 listed courses. Page read 39595155181 printed only the
+  Overview; with `"expand": true` (39595760314) the REQUIREMENTS tab printed `ANCT M01A`, `ANCT M09` ... The Ventura
+  district letters each number by campus (M, and R and V at Oxnard and Ventura). `SUBJECT_TOKEN` took a number to start
+  with a digit or Coastline's C, so `hidden_tabs_text` dropped the panel as the search dialog, and the capture fell
+  back to textContent, where each code runs into its title (`ANCT M01AAnimal`) and no pattern ends. Any one letter may
+  now lead (#2309; guard in `tests/program_requirements_pilot_test.py`, failing without the fix).
+- **Moorpark after the fix:** capture-only 39596973339 found 144 of 145 (99 before; 106 at coverage 1.0, 57 before),
+  one page claimed (39 before). Extraction 39600815599: 144 extracted, 100 passing (31), $10.40. Load 39605787602
+  inserted 83 and kept 52; reread 39606457885 replaced 1. Display build c45da149b72b, 16,606 rows.
+- **Golden West's re-read with today's reader (39591103370) found the same 81 pages as S395.** Its gap is the catalog's
+  shape: 43 programs' only pages are department pages (Automotive Technology's nine certificates, Accounting's three)
+  or the General Education page, and 29 have no course list in the state's file. A reader change there is a
+  department-page reader, not a code fix.
+- **Read the thin list for a shared cause before a college's own.** Moorpark (34%), Oxnard (49%) and Ventura (55%)
+  sat on one host and one numbering habit; one fix reaches all three.
+
+## S440 SkyChaparral (2026-10-21): three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone
+
+- **List the thin colleges live before picking the next one.** The parked list named eleven colleges; a live read of
+  active COCI programs against records (under 60%) found three more with almost nothing filed and no note saying why:
+  Santa Monica (1 of 254), Irvine Valley (1 of 166) and West LA (4 of 233), each holding only its pilot rows. None
+  had ever been read by the college pipeline.
+- **One run waits per branch.** `program-requirements-college.yml` groups runs by ref with cancel-in-progress off, so
+  a second queued run replaces the first pending one: three dispatches in a row ran the first, canceled the second
+  (Santa Monica, run 39527753004) and queued the third. Queue the next run only when nothing is pending.
+- **A dispatch checks out the commit the branch held when it was sent.** A display dispatch sent in the same breath
+  as a build commit (the commit failed on a staged path) was pinned to the old build (run 39553230693, canceled
+  before it started). Push, confirm the head, then dispatch.
+- **A slow PDF is a wait, not a refusal.** Santa Monica's catalog link answered 200 and its 472-page, 14.5 MB PDF did
+  not finish in 600 s (run 39536186746). A page read (39538245162) showed the HTML catalog links no page per
+  program. Sam raised the ceiling to 2,400 s (`CATALOG_PDF_WAIT_MAX_S`, guard in `tests/program_requirements_pilot_test.py`)
+  and the procedure record names 2,400 (`program_source_procedure_set`, receipt
+  `kb/receipts/program_source_procedure_smc_pdf_wait_2026-10-21_s440.sql`); the rerun (39548766337) found 239 of 240.
+- **A removed row takes its filed record with it.** Build 5f9939404fcf still carried Taft 38661 from
+  `kb/program_requirements_college/taft/records/`, and its display job (39548756872) wrote 16,301 rows and reported
+  38661 missing. Removing the file and rebuilding (772abb3ddebe) clears it, as Hartnell's re-read did.
+- **Taft 38661 (Sheet 98 card 1):** the auto-mode classifier refused the receipt and delete file twice, with and
+  without Sam's go, so Sam ran the guarded delete himself (md5 6b5e44f66a545875fe54b89c8a9d5469, unchecked, no
+  verdicts). No copy of the row is committed.
+- **Counts:** West LA 214 of 228 found, 214 extracted, 173 passing, $14.97, load 39539613701 inserted 195 and kept 4;
+  Irvine Valley 144 of 146 found (curriQunet, 78 minutes of capture), 122 passing, $11.02, load 39548442445 inserted
+  143 and kept 1. Both were already in the dated reads (pilot colleges).
+
+*S424 and S423 moved verbatim to `program_requirements_harvest_lessons_archive_3.md` (S455).*

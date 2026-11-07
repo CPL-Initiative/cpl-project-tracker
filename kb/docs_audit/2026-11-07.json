@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1414,
-    "bytes": 14287921,
+    "files": 1418,
+    "bytes": 14313444,
     "over_budget": 1,
-    "handoff_max": 596,
+    "handoff_max": 600,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59893,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 145,
-        "bytes": 4395881,
+        "bytes": 4401785,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10124,
+        "bytes": 10750,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2622165,
+        "bytes": 2622885,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 497089,
+        "bytes": 496884,
         "over": 0
       },
       "handoff": {
-        "files": 559,
-        "bytes": 3864391,
+        "files": 563,
+        "bytes": 3882869,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26104,
-      "bytes": 4291783370,
-      "heavy_bytes": 3059573314,
-      "heavy_share": 0.713,
+      "files": 26150,
+      "bytes": 4311685145,
+      "heavy_bytes": 3079399219,
+      "heavy_share": 0.714,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -174,20 +174,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1891578017,
+        "bytes": 1910524214,
         "kind": "dir"
       },
-      "message": "directory totals 1,891,578,017 B inside the vault"
+      "message": "directory totals 1,910,524,214 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146491924,
+        "bytes": 146585078,
         "kind": "dir"
       },
-      "message": "directory totals 146,491,924 B inside the vault"
+      "message": "directory totals 146,585,078 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -204,10 +204,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84077592,
+        "bytes": 84229117,
         "kind": "dir"
       },
-      "message": "directory totals 84,077,592 B inside the vault"
+      "message": "directory totals 84,229,117 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -264,10 +264,10 @@
       "fixable": false,
       "path": "kb/course_outcomes",
       "detail": {
-        "bytes": 18055973,
+        "bytes": 18546777,
         "kind": "dir"
       },
-      "message": "directory totals 18,055,973 B inside the vault"
+      "message": "directory totals 18,546,777 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -684,10 +684,10 @@
       "fixable": false,
       "path": "kb/it_ai_credential_catalog.json",
       "detail": {
-        "bytes": 5149833,
+        "bytes": 5294058,
         "kind": "file"
       },
-      "message": "5,149,833 B single file inside the vault"
+      "message": "5,294,058 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

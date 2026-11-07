@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8647,
+  "input_tokens": 7299,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8647,
-    "output_tokens": 2315,
+    "input_tokens": 7299,
+    "output_tokens": 2108,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2315,
+  "output_tokens": 2108,
   "output_tokens_details": {
-   "thinking_tokens": 855
+   "thinking_tokens": 677
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08089,
- "ms": 18900,
- "seconds": 19.3,
+ "cost_usd": 0.07136,
+ "ms": 16359,
+ "seconds": 16.4,
  "parts": null,
  "error": null,
  "score": {
@@ -81,12 +81,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -123,7 +123,9 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate academic readiness for application to allied health career programs by understanding and applying foundational concepts and skills relevant to the student’s chosen career."
+   ],
    "careers": [
     "nursing",
     "dental hygiene",
@@ -132,7 +134,7 @@
   },
   "blocks": [
    {
-    "name": "Complete 16 credits from the following courses. Of the 16 credits, no more than 3-4 credits may be Mathematics.",
+    "name": "Program Requirements",
     "rule": "choose_units",
     "minimum": 16,
     "option_group": null,
@@ -226,7 +228,7 @@
     ]
    },
    {
-    "name": "Mathematics Options: Of those 16 required units, up to 4 units may be from math courses.",
+    "name": "Mathematics Options",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -276,14 +278,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog lists BIO1000 and BIO2100 separately plus a row 'BIO 1000 OR BIO 2100 4 - 5'; recorded as one choice (BIO1000 with alternative BIO2100). Same for 'CHEM 1000 OR CHEM 2000 5' (CHEM1000 with alternative CHEM2000). Reviewer should confirm whether both may count.",
-   "The Mathematics Options group is printed nested inside the 16-credit requirement and reads as a cap ('up to 4 units may be from math courses'; 'no more than 3-4 credits may be Mathematics'), not a separate required minimum; recorded as a choose_units block with minimum 3 and stated 3-4 because the catalog prints 'Complete the following number of credits: 3-4'. Math units count within the 16, not in addition.",
-   "The catalog notes: 'Credit will not be awarded if BIO1500 is taken after a student completes BIO 2700 or BIO 2800.'",
-   "KINE1035 is printed as 'Introduction to Athletic Training'; the closed list title is 'Introduction Athletic Training'.",
-   "Careers recorded are the fields of further education the description names ('nursing, dental hygiene, physical therapy, and other fields'); reviewer may decide whether these count as career fields.",
-   "No program learning outcomes printed in the text.",
-   "Recommended Sequence section is cut off in the text."
+   "The certificate is 16 units chosen from the listed courses; the Mathematics Options block is a cap ('up to 4 units may be from math courses', 'no more than 3-4 credits may be Mathematics') within those 16 units, not an additional requirement. Its minimum of 3 is recorded from the printed 'Complete the following number of credits: 3-4' but math appears optional; reviewer should check.",
+   "The catalog prints 'BIO 1000 OR BIO 2100 4 - 5' and 'CHEM 1000 OR CHEM 2000 5' as choice rows; recorded as one entry each with the other course as an alternative.",
+   "BIO1500 note: credit will not be awarded if BIO1500 is taken after BIO 2700 or BIO 2800.",
+   "Catalog prints codes without spaces (e.g., BIO1000, ENGLC1000); these match closed-list courses BIO 1000, ENGL C1000, etc.",
+   "Outcome printed under the heading 'Pre-Health Science' in Program Outcomes; the heading label was not included in the outcome text.",
+   "Careers recorded are the fields of further education named in the description (nursing, dental hygiene, physical therapy).",
+   "Recommended Sequence (CHEM1000, ENGLC1000, BIO2700, NURS1045) is a sample schedule, not a separate requirement."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-07T08:45:00Z",
-  "session": 595,
-  "moniker": "SkyCartwheel",
+  "written_at": "2026-11-07T12:55:00Z",
+  "session": 599,
+  "moniker": "SkyTriangulum",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_596_handoff.md",
+  "handoff": "docs/session_600_handoff.md",
   "next_step": {
-    "title": "Load Siskiyous' 73 records",
-    "text": "Read and extraction 42354853403 sends Siskiyous' 73 found programs (73 of 77, up from 65) to the model for about $5. When it files, load them and run the display build; then Palomar and Coalinga."
+    "title": "Confirm Coalinga's display and Palomar's extraction",
+    "text": "Coalinga's two new Administration of Justice awards are loaded and its display build is applying on main. Palomar's clean re-capture found all 282 programs again, and its one changed program, Chemistry, is being extracted."
   },
   "calls": [
     {
@@ -224,6 +224,22 @@
   },
   "changes": [
     {
+      "at": "2026-11-07T12:50:00Z",
+      "text": "Coalinga now passes 45 of 62 programs; its display build merged and is applying. Palomar's re-read found every program the site had dropped, and Chemistry is being extracted. Los Medanos' new read found nothing new, so its 29 passing stay as filed."
+    },
+    {
+      "at": "2026-11-07T11:16:00Z",
+      "text": "Palomar's catalog is being read again because the college site timed out on 8 pages, which would have dropped 7 passing records. Coalinga's two newly found programs are being extracted, about 13 cents. Los Medanos College's catalog is being read again on the current reader, at no model cost."
+    },
+    {
+      "at": "2026-11-07T10:17:00Z",
+      "text": "Coalinga College's catalog is being read again on the current reader, at no model cost, beside Palomar's. Siskiyous' display step is still applying its new records."
+    },
+    {
+      "at": "2026-11-07T09:50:00Z",
+      "text": "Siskiyous' 73 records loaded and the 65 older ones replaced with the new reading, so 66 now pass the machine checks, up from 42 (#2877). Lake Tahoe Community College's 435 course SLOs loaded (#2833). Palomar's catalog is being read again on the current reader, at no model cost."
+    },
+    {
       "at": "2026-11-07T08:45:00Z",
       "text": "Siskiyous' re-read on the current reader found 73 of its 77 programs, 8 more than before; their extraction is running. Lake Tahoe Community College's SLOs are loading (#2833); Contra Costa's trial parsed 11 of 12 pages, so its full read is next."
     },
@@ -282,10 +298,6 @@
     {
       "at": "2026-11-05T22:13:00Z",
       "text": "The side session finished security step 1 with Sam (worker pasted, both secrets rotated, proof runs 686 and 688) and drafted step 2's migration (tracker 2822). The harvest's tables and queue did not move."
-    },
-    {
-      "at": "2026-11-06T09:45:00Z",
-      "text": "Monterey Peninsula's six unequal records were read against their pages (tracker 2809). Two steps from the catalog's own words went to a reconcile: the 60 is a floor for transfer degrees too, and a group's units printed on its heading line count once. The other four need reader work or stay as the catalog prints them."
     }
   ],
   "headline": [
@@ -468,16 +480,22 @@
       "active": 20282,
       "complete": 13543,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-07",
+      "active": 20282,
+      "complete": 13567,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-07T09:12:00Z"
+    "at": "2026-11-07T13:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-06",
-    "gaps": 3024,
+    "day": "2026-11-07",
+    "gaps": 3016,
     "parts": {
       "links": {
         "catalog": [
@@ -498,21 +516,21 @@
         20282
       ],
       "coci": [
-        16132,
+        16140,
         20282
       ],
       "outcomes": {
         "slo": [
-          9266,
+          9688,
           89192
         ],
         "plo": [
-          16132,
+          16140,
           20282
         ]
       },
       "careers": [
-        15096,
+        15104,
         20282
       ]
     }
