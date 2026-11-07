@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-05_security_step2_phrase_lockout_orphans_team_members.sql
-name=security_step2_phrase_lockout_orphans_team_members
+file=kb/migrations/2026-11-07_alignment_level_words.sql
+name=alignment_level_words

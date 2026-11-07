@@ -1057,11 +1057,13 @@
   // The retired Reference view's filter addresses (and the quickstart's status hints), each opening the List on its filter.
   var FILTER_ROUTES = { needs_review: "nocode", pre_seeded: "open", reviewed: "confirmed", invalid: "nocode", ccn: "ccn", cid: "cid",
     chip: "chip", proposed: "proposed" };
-  var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];
+  // The anchor rules are re-key evidence with their own item; CSR_ASK_SKIP in kb/_build_commons_status.py matches.
+  var ANCHOR_RULES = ["cs9_anchor_subj_diverge", "cs9_anchor_dead_format"];
+  var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"].concat(ANCHOR_RULES);
   var RULE_WORDS = {
     cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
     cs4_aligned: "aligned with the official prefix", cs4_missed_alignment: "a missed alignment", cs4_divergence_noted: "a divergence the note records",
-    cs5_modal_diverge: "a modal choice without a note", cs6_weak_mnemonic: "a weak mnemonic", cs7_unreviewed: "unconfirmed",
+    cs5_modal_diverge: "a modal choice without a note", cs6_weak_mnemonic: "a weak mnemonic", cs6_mnemonic_noted: "a mnemonic the note records", cs7_unreviewed: "unconfirmed",
     cs7_needs_review: "needs review", cs8_seeder_bypass: "the mint path skips the reference", cs9_anchor_dead_format: "an anchor key in the dead format",
     cs9_anchor_subj_diverge: "an anchor off its code"
   };
@@ -1332,7 +1334,7 @@
     var differ = rows.filter(function (e) {
       return e.ccn_subject_code && (e.cid_subject_codes || []).length && e.cid_subject_codes.indexOf(e.ccn_subject_code) < 0;
     }).map(function (e) { return e.discipline + " is " + e.ccn_subject_code + ", C-ID says " + e.cid_subject_codes.join(", "); });
-    var byRule = {}, askable = null, judgments = null, askableWords = "", toNote = null, toNoteWords = "";
+    var byRule = {}, askable = null, judgments = null, askableWords = "", toNote = null, toNoteWords = "", anchors = null;
     if (scan) {
       scan.findings.forEach(function (f) { byRule[f.rule] = (byRule[f.rule] || 0) + 1; });
       var ask = scan.findings.filter(function (f) { return f.needs_judgment && f.rule !== "cs7_unreviewed" && f.rule !== "cs4_aligned"; });
@@ -1342,6 +1344,7 @@
          for the Commons card (CSR_ASK_SKIP there), so the card and the page agree (S561). */
       var note = scan.findings.filter(function (f) { return f.needs_judgment && ASK_SKIP.indexOf(f.rule) < 0; });
       toNote = note.length;
+      anchors = scan.findings.filter(function (f) { return ANCHOR_RULES.indexOf(f.rule) >= 0; }).length;
       var nr = {};
       note.forEach(function (f) { nr[f.rule] = (nr[f.rule] || 0) + 1; });
       toNoteWords = Object.keys(nr).sort(function (a, b) { return nr[b] - nr[a]; }).map(function (r) { return fmtN(nr[r]) + " " + (RULE_WORDS[r] || r); }).join(", ");
@@ -1369,7 +1372,7 @@
       mqTotal: mqTotal, mqNoCourses: mqTotal == null ? null : mqTotal - rows.length, mqReadAt: state.mqDoc && (state.mqDoc._extracted_at || null),
       cidSubjects: cidSubj.length, cidDescriptors: state.cidMeta && state.cidMeta.count, cidReadAt: state.cidMeta && retrievedDay(state.cidMeta.source),
       ccnSubjects: ccnSubj.length, ccnCourses: state.ccnMeta && state.ccnMeta.count, bothSubjects: both.length, ccnOnly: ccnOnly, differ: differ,
-      toNote: toNote, toNoteWords: toNoteWords,
+      toNote: toNote, toNoteWords: toNoteWords, anchors: anchors,
       scanDay: scan && scan._scanned_at, missed: scan ? (byRule.cs4_missed_alignment || 0) : null, judgments: judgments, askable: askable,
       askableWords: askableWords, byRule: byRule, findings: scan ? scan.findings.length : null,
       codes: mc ? mc.codes : null, codeIds: mc ? mc.ids : null, canonicalCodes: mc ? mc.canonical : null, umbrellaOnlyCodes: mc ? mc.umbrella : null,
@@ -1553,6 +1556,8 @@
         action: { words: "Open them in the List", go: go(TO.scan) } },
       x.missed ? { n: x.missed, words: x.missed === 1 ? "missed alignment with an authority code." : "missed alignments with an authority code.",
         action: { words: "Open them", go: go(TO.chip) } } : null,
+      x.anchors ? { n: x.anchors, words: (x.anchors === 1 ? "curated anchor entry" : "curated anchor entries") + " keyed off a Common SUBJ that changed, or in the dead key format, for a re-key of the anchor under the playbook.",
+        action: { words: "Read them", go: go(TO.findings) } } : null,
       { n: x.strayCodes, words: "identity codes that are neither a Common SUBJ nor an umbrella code" +
         (x.strayIds != null ? ", on " + fmtN(x.strayIds) + " identities" : "") + ", for a re-mint under the playbook." }
     ];

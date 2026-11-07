@@ -1,7 +1,7 @@
 ---
 title: "Data sources: the register of datasets that could fill a Commons gap"
 created: 2026-11-04
-updated: 2026-11-04
+updated: 2026-11-06
 tags: [reference, commons, data-sources, wishlist, procedures]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -42,7 +42,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 
 | Source | Stage | Would feed | Next step |
 |---|---|---|---|
-| CPL-AI, the Foundation and ASCCC's certification recommendations | Connected | Credit Recommendations, Exhibits, Courses, Programs | The lead chooses a schedule for the read |
+| CPL-AI, the Foundation and ASCCC's certification recommendations | Connected, hosted whole (frozen) | Credit Recommendations, Exhibits, Courses, Programs | The CER takes the join's seven title fixes; the public pages wait on the lead's word |
 | Credential Engine's top 50 | Connected | Credentials, Exhibits | Schedule the fetch; widen the catalog beyond IT |
 | MIS | Connected, in part | Courses, Programs, CPL counts | Name the course elements a nightly read would use; the student match needs an agreement |
 | WestEd | Asked | Courses, Subjects, Programs | The partner exchange's seed, with Malone |
@@ -53,14 +53,21 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | The Foundation's certification skills | Assessed | Skills, Outcomes, Credit Recommendations | Confirm what the Foundation holds and how it shares it; draft a note for the lead |
 | ACE, the new partnership | Found | Credit Recommendations, Exhibits | The lead shares the partnership's details |
 | WestEd's environmental scan of datasets and connections | Found | Every reference | The lead shares the scan; each dataset in it gets its own entry |
+| Credit for Being You, the student portal's requests | Found | Credentials (the harvested standing), Exhibits | Ask Malone what the portal records when a student names a credential no exhibit covers, and whether a request can arrive with the credential already named |
+| The state's license lists, the Department of Insurance's license types first | Found | Credentials (the harvested standing), Exhibits | Read the Department of Insurance's published license types; measure how many the Catalog lacks |
 
 ### CPL-AI, the Foundation and ASCCC's certification recommendations
 Faculty-reviewed credit recommendations for 115 industry certifications, each paired with courses colleges could
-award. Public at https://map.rccd.edu/CPL-AI/ (its data at `preview-data/catalog.json`). Read by hand on 2026-10-31
-by `kb/_build_cpl_ai.py --fetch` into `kb/cpl_ai/pairs.json`: 33,232 college and course pairs at 121 colleges, 20,166
-of them strong evidence or faculty interpretation. The Program Requirements dialog reads it; Sierra and the public
-pages wait on the lead's word. Gap: 31 of the 115 join a common exhibit (16 exact); the rest wait on canonical titles.
-Named by Sam, 2026-11-04; first connected S541 (2026-10-31).
+award. Public at https://map.rccd.edu/CPL-AI/ (the catalog at `preview-data/catalog.json`, each pair's full report at
+`preview-data/reports/<id>.json`). **Hosted whole, frozen (Sam, 2026-11-06: "make sure we can host all the data,
+which for now will not have any further updates. Malone is working on how to integrate the process in MAP"):**
+`kb/_harvest_cpl_ai_reports.py` read the catalog and all 33,232 reports once; `kb/_build_cpl_ai_hosted.py` writes
+`kb/cpl_ai/hosted/` (an index and one gzipped file per certification, every field, all three tiers), and the Exhibits
+tab's **CPL-AI recommendations** view (`#exhibits/cpl-ai`, `exhibits_cpl_ai.js`) reads it. No schedule: the source
+publishes no further updates. The Program Requirements dialog still reads `kb/cpl_ai/pairs.json` (tiers 1 and 2,
+`kb/_build_cpl_ai.py`, read 2026-10-31). Sierra and the public pages wait on the lead's word (Sheet 147 card 5). Joined
+2026-11-06 (`kb/cpl_ai/exhibit_join.json`): 39 of the 115 match a common exhibit exactly, 7 are named under another
+exhibit, 8 have a related one, 61 have none. Named by Sam, 2026-11-04; first connected S541 (2026-10-31).
 
 ### Credential Engine's top 50
 The 50 credentials in the most Credential Registry collections, with their CTDL terms. `kb/_fetch_ce_top50.py` writes
@@ -110,6 +117,28 @@ Named by Sam, 2026-11-04.
 Sam, 2026-11-04 (S573): *"We have a new partnership with ace I need to get you info on."* ACE's reviews already supply
 most of MAP's credit recommendation rows (the military half, lane
 [`military-ace-cr-reference`](lanes/military-ace-cr-reference.md)). Steps 2 to 4 wait on the details he shares.
+
+### Credit for Being You, the student portal's requests
+The CO's student portal (https://creditforbeingyou.org/, linked from the public header as *add what you have learned
+and request credit*) is the front door a student uses to ask a college for credit; its requests land in MAP as
+activity (`docs/map_dataset_spec_for_malone.md` notes that the better the portal performs, the more activity arrives
+through it). Found by SkyAerial on 2026-11-06 while mocking the Credential Catalog's *Request an evaluation* route,
+which asks a college the same question a portal request asks. Two feeds would matter. What students ask for that no
+exhibit covers is the demand signal the statewide priority list would run on (7,401 harvested credentials have no
+exhibit today). And a hand-off in the other direction: a catalog row opening the portal with the credential already
+named, so the page keeps one intake rather than building a second. Malone holds the portal's data model; the
+questions above are his to answer, and a request that the portal expose or accept either is the lead's call.
+
+### The state's license lists, the Department of Insurance's license types first
+Each licensing agency in California publishes the licenses it issues; the Department of Insurance's list of license
+types (life agent, property and casualty broker-agent, and the rest) is the first to read, because a Pierce College
+Articulation Officer's email to Sam named three insurance licenses no record in the Credential Catalog held. The
+Catalog's California licenses come today through Credential Engine (source `ca` in `kb/_build_adopt_page.py`), which
+does not carry every agency's list. Plug-in: each license type joins the harvested standing as Not yet evaluated, with
+the agency as issuer and its lookup page as the link, so a visitor finds it before reaching for *Add your credential*;
+the route's verified submissions (`credential_submissions`, DR-32) are the measure of what the lists still miss. Plan:
+a public read of each agency's page, scheduled with the harvest, the Department of Insurance first and the Department
+of Consumer Affairs' boards next. Found by SkyHarbor on 2026-11-06, from Sam's ask in SkyLantern's run to record them.
 
 ### WestEd's environmental scan of datasets and connections
 Sam, 2026-11-04 (S573): *"west ed has a whole environmental scan of datasets and connections I need to feed to you."*

@@ -4,6 +4,8 @@ date: 2026-11-05
 session: 585 (SkyMessier, Sam's side session for COBIx's recommendations, 2026-11-05 ~18:45Z to ~20:00Z)
 tags: [handoff, security, cobix, org-phrase-scope-auth]
 status: current
+superseded: true
+superseded_by: session_590_handoff.md
 ---
 
 # You are Session 586

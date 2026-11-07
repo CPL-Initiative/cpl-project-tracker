@@ -92,6 +92,11 @@ function load(hash, withList) {
     .filter(Boolean);
   check("⭐ the project holding the last-modified piece leads, so the modified-date sort holds across bands (Sam, 2026-11-05)",
     bandOrder[0] === "ELL" && bandOrder.indexOf("Adopt") > bandOrder.lastIndexOf("ELL"), JSON.stringify(bandOrder));
+  const loose = Array.prototype.map.call(doc.querySelectorAll("#lib-list tbody tr"), function (tr) { return tr.textContent; })
+    .map(function (t) { return /Summit deck/.test(t) ? "Summit" : /Adopt guide/.test(t) ? "Adopt" : /ELL IET CPL Ideas/.test(t) ? "ELL" : ""; }).filter(Boolean);
+  check("⭐ a piece in no project sorts by its own modified date, never pushed to the bottom (Sam, 2026-11-06)",
+    loose.join() === "ELL,Summit,Adopt", JSON.stringify(loose));
+  check("and sits under a Not in a project line", /Not in a project/.test(doc.getElementById("lib-list").textContent));
   const cards = load("#library/cards", false);
   await cards.M.activate(); await settle();
   const projs = Array.prototype.map.call(cards.doc.querySelectorAll(".lib-proj .lib-title, .lib-item:not(.lib-proj) .lib-title"), function (h) { return h.textContent; });

@@ -110,16 +110,16 @@ function openEdit(m, id) {
   if (!m.root.querySelector('[data-edittop="' + id + '"]')) click(m.w, m.root.querySelector('[data-toggle="' + id + '"]'));
   click(m.w, m.root.querySelector('[data-edittop="' + id + '"]'));
 }
-// The one panel (Create or Remediate a Document) opens the filing form for a pasted link
-// and the brief for instructions with nothing dropped.
+// The one panel (Create or Remediate a Document) opens the filing form for a pasted link; a new piece's fields sit in
+// the panel itself and Start saves it (Sam, 2026-11-06: "simplify and clean this up").
 function openAdd(m, url) {
   const d = m.w.document; d.getElementById("lc-link").value = url || "https://example.org/a-piece";
   click(m.w, d.getElementById("lib-go"));
 }
 function openStart(m, instr) {
   const d = m.w.document; d.getElementById("lc-instr").value = instr || "A visual";
-  click(m.w, d.getElementById("lib-go"));
 }
+function go(m) { click(m.w, m.w.document.getElementById("lib-go")); }
 
 // ── (1) Wiring, Rule 4, the schema's posture ─────────────────────────────
 block("(1)", function () {
@@ -354,26 +354,25 @@ block("(9)", function () {
     click(m.w, m.root.querySelector('[data-toggle="a2"]'));
     const vt = (m.w.document.getElementById("lib-d-a2") || {}).textContent || "";
     check("(9) a filed version shows the time it was filed (Sam's call 8)", /5 October 2026, 18:42 UTC/.test(vt), vt.slice(0, 400));
-    openStart(m, "A table of awards");
     const doc = m.w.document;
-    check("(9) the panel's Start opens the brief, the instructions in What it must say", !!doc.getElementById("lib-startform") && doc.getElementById("ls-say").value === "A table of awards");
-    doc.getElementById("ls-say").value = "";
+    check("(9) ⭐ the panel holds a new piece's fields itself, the rest folded under More about it, and no second form",
+      !!doc.getElementById("ls-title") && doc.getElementById("ls-by").value === "Sam" && /More about it \(optional\)/.test((doc.querySelector("#ls-more > summary") || {}).textContent || "") && !doc.getElementById("lib-startform"));
     doc.getElementById("ls-kind").value = "spreadsheet";
     doc.getElementById("ls-title").value = "Summit table";
-    doc.getElementById("lib-startform").dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
-    check("(9) a brief without what it must say writes nothing", writes.length === 0 && /Say what the piece must say/.test(m.root.textContent));
-    check("(9) the typed title survives that repaint", doc.getElementById("ls-title").value === "Summit table");
-    doc.getElementById("ls-say").value = "Awards by college";
+    go(m);
+    check("(9) Start with no instructions writes nothing", writes.length === 0 && /say in Instructions what to make/.test(m.root.textContent));
+    check("(9) the typed title survives that repaint", doc.getElementById("ls-title").value === "Summit table" && doc.getElementById("ls-kind").value === "spreadsheet");
+    openStart(m, "Awards by college");
     doc.getElementById("ls-due").value = "Friday";
-    check("(9) Start a piece takes documents to work from", !!doc.querySelector("#lib-startform .lib-srcset") && !!doc.getElementById("ls-stext"));
+    check("(9) More about it takes documents to work from", !!doc.querySelector("#ls-more .lib-srcset") && !!doc.getElementById("ls-stext"));
     doc.getElementById("ls-stitle").value = "EDD notice";
     doc.getElementById("ls-stext").value = "Eight projects funded.";
-    doc.getElementById("lib-startform").dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+    go(m);
     return settle();
   }).then(function () {
     const w0 = writes[0] || { body: {}, init: { headers: {} } };
     const b = w0.body.brief || {};
-    check("(9) Save the brief POSTs one Requested record", w0.init.method === "POST" && /\/rest\/v1\/cpl_library$/.test(w0.url) && w0.body.status === "requested", JSON.stringify(w0.body));
+    check("(9) ⭐ Start POSTs one Requested record, with no second step", w0.init.method === "POST" && /\/rest\/v1\/cpl_library$/.test(w0.url) && w0.body.status === "requested", JSON.stringify(w0.body));
     check("(9) it has no file yet", w0.body.home === "not_filed" && w0.body.url === null);
     check("(9) the brief keeps what it must say, the date needed, and who asked", b.say === "Awards by college" && b.due === "Friday" && b.requested_by === "Sam" && /^\d{4}-\d{2}-\d{2}$/.test(b.requested_on || ""), JSON.stringify(b));
     check("(9) a spreadsheet is a kind", w0.body.kind === "spreadsheet");
@@ -382,7 +381,8 @@ block("(9)", function () {
       w0.body.sources[0].text === "Eight projects funded." && w0.body.sources[0].url === null, JSON.stringify(w0.body.sources));
     check("(9) For defaults to the team", w0.body.seen_by === "team");
     check("(9) the write carries the team phrase", w0.init.headers["x-team-pass"] === "p");
-    check("(9) the saved brief opens for copying", m.M._state.briefShown.new1 === true && /Saved as Requested/.test(m.root.textContent));
+    check("(9) the saved brief opens for copying, and the page says what happens next", m.M._state.briefShown.new1 === true && /Requested: Summit table \(Spreadsheet\)/.test(m.root.textContent) && /next scheduled run picks it up/.test(m.root.textContent));
+    check("(9) the panel empties for the next piece", m.w.document.getElementById("ls-title").value === "" && m.w.document.getElementById("lc-instr").value === "");
   });
 });
 
@@ -510,11 +510,11 @@ block("(11)", function () {
   }).then(function () {
     check("(11) a brief made for a college reads MAP's college list, with the phrase, once it opens",
       m.calls.some(function (c) { return /map_colleges\?select=college_name/.test(c.url) && c.init.headers["x-team-pass"] === "p"; }));
-    check("(11) and offers the names as a datalist on the For field",
-      !!doc.querySelector('#lib-names-colleges option[value="Riverside City College"]') && doc.getElementById("ls-forname").getAttribute("list") === "lib-names-colleges" && doc.getElementById("ls-kind").value === "visual");
+    check("(11) and offers the names as a datalist on the For field, More about it staying open",
+      !!doc.querySelector('#lib-names-colleges option[value="Riverside City College"]') && doc.getElementById("ls-forname").getAttribute("list") === "lib-names-colleges" && doc.getElementById("ls-more").open);
     doc.getElementById("ls-forname").value = "riverside city college";
     doc.getElementById("ls-occasion").value = "CSM meeting, 2026-10-28";
-    submit(m, "#lib-startform");
+    go(m);
     return settle();
   }).then(settle).then(function () {
     const w = m.writes;
@@ -538,12 +538,12 @@ block("(11b)", function () {
     return settle();
   }).then(function () {
     doc.getElementById("ls-forname").value = "Bakersfield College";
-    submit(m, "#lib-startform");
+    go(m);
     return settle();
   }).then(function () {
     check("(11b) a college whose pair exists is refused, and nothing is written", m.writes.length === 0 && /Bakersfield College's pair is already in the Library/.test(m.root.textContent));
     doc.getElementById("ls-forname").value = "Nowhere College";
-    submit(m, "#lib-startform");
+    go(m);
     return settle();
   }).then(function () {
     check("(11b) a name MAP does not list is refused", m.writes.length === 0 && /Pick the college from MAP's list/.test(m.root.textContent));
@@ -553,11 +553,11 @@ block("(11b)", function () {
     doc.getElementById("ls-title").value = "ELL IET grantees";
     return settle();
   }).then(function () {
-    check("(11b) for an agency the brief stays a brief, kind Visual and the entity set",
-      !!doc.getElementById("lib-startform") && doc.getElementById("ls-kind").value === "visual" && doc.getElementById("ls-forkind").value === "agency" &&
+    check("(11b) for an agency the panel keeps the entity set, nothing written yet",
+      m.writes.length === 0 && doc.getElementById("ls-forkind").value === "agency" &&
       doc.getElementById("ls-forname").value === "EDD ELL IET Fund grantees" && doc.getElementById("ls-occasion").value === "Grantees meeting");
-    doc.getElementById("ls-say").value = "What the grantees' training could earn as credit";
-    submit(m, "#lib-startform");
+    doc.getElementById("lc-instr").value = "What the grantees' training could earn as credit";
+    go(m);
     return settle();
   }).then(function () {
     const b = m.writes[0] ? m.writes[0].body : {};
@@ -856,13 +856,12 @@ block("(16)", function () {
     check("(16) one word starts it", doc.getElementById("lib-go").textContent.trim() === "Start");
     click(m.w, doc.getElementById("lib-go"));
     check("(16) Start with nothing says what to do, and opens no form", /Drop a file, paste a link, or say in Instructions what to make/.test(m.root.textContent) && !doc.getElementById("lib-startform") && !doc.getElementById("lib-addform"));
-    openStart(m, "A deck for the webinar on the funding");
-    check("(16) instructions that name a deck open the brief as a deck on the CO template with a script in the notes",
-      doc.getElementById("ls-kind").value === "deck" && /Chancellor's Office template, with a speaker script in each slide's notes/.test(doc.getElementById("ls-shape").value));
-    click(m.w, m.root.querySelector("[data-startcancel]"));
-    openStart(m, "A memo to the CIOs");
-    check("(16) a memo starts in the CO styles", doc.getElementById("ls-kind").value === "document" && doc.getElementById("ls-shape").value === "The Chancellor's Office styles");
-    click(m.w, m.root.querySelector("[data-startcancel]"));
+    const K = m.M._kindFromWords, S = m.M._defaultShape;
+    check("(16) instructions that name a deck make a deck on the CO template with a script in the notes",
+      K("A deck for the webinar on the funding") === "deck" && /Chancellor's Office template, with a speaker script in each slide's notes/.test(S("deck")));
+    check("(16) a memo starts in the CO styles", K("A memo to the CIOs") === "document" && S("document") === "The Chancellor's Office styles");
+    check("(16) ⭐ the kind the instructions name first wins (Sam's noncredit visual read as a Document, 2026-11-06)",
+      K("Create a visual using the new format style ... documented with an exhibit ... see the brainstorming document linked") === "visual");
     openAdd(m, "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx");
     check("(16) a pasted link files as is by default, the link and a title from its name filled in",
       !!doc.getElementById("lib-addform") && doc.getElementById("la-url").value === "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx" &&
@@ -870,10 +869,14 @@ block("(16)", function () {
     doc.getElementById("lc-use-background").checked = true;
     doc.getElementById("lc-use-background").dispatchEvent(new m.w.Event("change", { bubbles: true }));
     doc.getElementById("lc-instr").value = "A one-page visual from this deck";
+    doc.getElementById("ls-title").value = "Summit funding at a glance";
     click(m.w, doc.getElementById("lib-go"));
-    check("(16) background opens the brief with the link as a document to work from",
-      !!doc.getElementById("lib-startform") && (m.M._state.src.ls || []).length === 1 && m.M._state.src.ls[0].url === "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx");
-    click(m.w, m.root.querySelector("[data-unpick]"));
+    return settle();
+  }).then(function () {
+    const nw = writes.filter(function (x) { return x.method === "POST" && /cpl_library$/.test(x.url); }).pop() || { body: {} };
+    check("(16) ⭐ background saves at once, the link as a document to work from, no second form",
+      !doc.getElementById("lib-startform") && nw.body.status === "requested" && nw.body.kind === "visual" && Array.isArray(nw.body.sources) && nw.body.sources.length === 1 &&
+      nw.body.sources[0].url === "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx", JSON.stringify(nw.body).slice(0, 300));
     return remDeck();
   }).then(function (buf) {
     // The remediation module and its zip reader, as the page loads them on demand.
@@ -904,7 +907,7 @@ block("(16)", function () {
     const rem = doc.querySelector(".lib-rem");
     check("(16) Remediate reads the deck here and reports Fixed for you and, every draft already applied, Remediated for you (S553)", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Remediated for you, to edit as needed \(2\)/.test(rem.textContent) &&
       !/Needs you/.test(rem.textContent) && !rem.querySelector("[data-remkeep]") && !rem.querySelector("[data-remkeepall]"), rem && rem.textContent.slice(0, 300));
-    const rec = writes.filter(function (w) { return w.method === "POST" && /cpl_library/.test(w.url); });
+    const rec = writes.filter(function (w) { return w.method === "POST" && /cpl_library/.test(w.url) && w.body.status !== "requested"; });
     check("(16) the file is in the Library as soon as it opens: one Draft record, no link yet, named for the file", rec.length === 1 && rec[0].body.status === "draft" && rec[0].body.home === "not_filed" &&
       rec[0].body.url === null && rec[0].body.file_name === "20261030_Webinar.pptx" && rec[0].body.title === "Webinar" && rec[0].body.kind === "deck" && rec[0].body.remediation === "in_remediation", JSON.stringify(rec));
     check("(16) the title it set is listed", /Document title set: Where the funding goes/.test(rem.textContent));
@@ -1028,12 +1031,14 @@ block("(16)", function () {
       !!doc.getElementById("lib-addform") && /Put Photo\.png in the CPLLibrary folder/.test(m.root.textContent) && doc.getElementById("la-title").value === "Photo");
     drop({ name: "notes.txt", text: function () { return Promise.resolve("Eight projects funded."); } });
     doc.getElementById("lc-instr").value = "A visual of the eight projects";
+    doc.getElementById("ls-title").value = "The eight projects";
     click(m.w, doc.getElementById("lib-go"));
     return settle();
   }).then(function () {
-    const src = m.M._state.src.ls || [];
-    check("(16) a text file used as background is read here into the brief's documents", src.length === 1 && src[0].text === "Eight projects funded." && src[0].title === "notes", JSON.stringify(src));
-    check("(16) the instructions name the kind", doc.getElementById("ls-kind").value === "visual");
+    const nb = (writes.filter(function (w) { return w.method === "POST" && /cpl_library$/.test(w.url) && w.body.status === "requested"; }).pop() || { body: {} }).body;
+    const src = nb.sources || [];
+    check("(16) a text file used as background is read here into the saved request's documents", src.length === 1 && src[0].text === "Eight projects funded." && src[0].title === "notes", JSON.stringify(src));
+    check("(16) the instructions name the kind", nb.kind === "visual");
     // (16) A PDF (S513, S553): Remediate writes its language and title display here and
     // hands the file back; its tags are its source's, named with the record that may hold it.
     const pdf = makePdf({ creator: "Microsoft PowerPoint", title: "Update to the Board of Governors" });
@@ -1160,13 +1165,13 @@ block("(17)", function () {
 // instructions window) to ask if they have notes that they want to preserve and the option for
 // you to add a script below or replacing their notes?"
 block("(18)", function () {
-  const scriptCalls = [];
+  const scriptCalls = [], writes = [];
   const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
     if (/functions\/v1\/slide-script-draft/.test(url)) {
       const b = JSON.parse(init.body); scriptCalls.push({ headers: init.headers, body: b });
       return response(200, { script: "On slide " + b.slide + " we cover " + (b.title || "the agenda") + "." });
     }
-    if (init && init.method && init.method !== "GET") return response(201, [Object.assign({ id: "rem18" }, JSON.parse(init.body || "{}"))]);
+    if (init && init.method && init.method !== "GET") { writes.push({ url: url, method: init.method, body: JSON.parse(init.body || "{}") }); return response(201, [Object.assign({ id: "rem18" }, JSON.parse(init.body || "{}"))]); }
     return response(200, ROWS);
   } });
   const doc = m.w.document;
@@ -1193,10 +1198,12 @@ block("(18)", function () {
     doc.getElementById("lc-use-background").checked = true;
     doc.getElementById("lc-use-background").dispatchEvent(new m.w.Event("change", { bubbles: true }));
     doc.getElementById("lc-instr").value = "A deck for the webinar from this one";
+    doc.getElementById("ls-title").value = "Webinar deck";
+    const before18 = writes.length;
     click(m.w, doc.getElementById("lib-go"));
-    check("(18) as background, the brief says what to do with the source deck's notes", !!doc.getElementById("ls-shape") &&
-      doc.getElementById("ls-shape").value === "The Chancellor's Office template, with a speaker script in each slide's notes in place of the source deck's notes", doc.getElementById("ls-shape") && doc.getElementById("ls-shape").value);
-    click(m.w, m.root.querySelector("[data-startcancel]"));
+    const w18 = writes.slice(before18).filter(function (x) { return x.method === "POST"; })[0] || { body: {} };
+    check("(18) as background, the saved brief says what to do with the source deck's notes",
+      ((w18.body.brief || {}).shape || "") === "The Chancellor's Office template, with a speaker script in each slide's notes in place of the source deck's notes", JSON.stringify(w18.body.brief || {}));
     // A document is asked nothing about notes.
     drop("20261030_Memo.docx", deck);
     check("(18) a document is not asked about speaker notes", !doc.getElementById("lc-notes"));
@@ -1321,10 +1328,13 @@ block("(19)", function () {
     if (!m.root.querySelector('[data-fromit="p2"]')) click(m.w, m.root.querySelector('[data-toggle="p2"]'));
     click(m.w, m.root.querySelector('[data-fromit="p2"]'));
     doc.getElementById("lc-instr").value = "A deck for the grantee webinar";
+    doc.getElementById("ls-title").value = "Grantee webinar";
+    const before19 = writes.length;
     click(m.w, doc.getElementById("lib-go"));
-    const ls = m.M._state.src.ls || [];
-    check("(19) Start something new from it opens the brief with the piece's own link first",
-      !!doc.getElementById("lib-startform") && ls.length >= 1 && ls[0].url === PROJ_ROWS[1].url && doc.getElementById("ls-kind").value === "deck", JSON.stringify(ls));
+    const w19 = writes.slice(before19).filter(function (x) { return /cpl_library$/.test(x.url) && x.body.status === "requested"; })[0] || { body: {} };
+    const ls = w19.body.sources || [];
+    check("(19) Start something new from it saves at once, the piece's own link first, a deck",
+      !doc.getElementById("lib-startform") && w19.body.status === "requested" && ls.length >= 1 && ls[0].url === PROJ_ROWS[1].url && w19.body.kind === "deck", JSON.stringify(w19.body).slice(0, 300));
     check("(19) every row offers its next step: Revise, or Change what you asked once a request waits",
       rows.every(function (r) { return /^(Revise|Change what you asked)/.test((m.root.querySelector('[data-revise="' + r.id + '"], [data-change="' + r.id + '"]') || {}).textContent || ""); }));
   });

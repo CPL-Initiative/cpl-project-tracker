@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-06T06:21:34Z",
+ "written_at": "2026-11-07T02:34:04Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13553,
+     "n": 13554,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3380,
+     "n": 3379,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-01T05:59:43Z",
+    "at": "2026-11-06T11:57:46Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13553,
-    "failing": 3380,
+    "complete": 13554,
+    "failing": 3379,
     "unread": 3349,
-    "records": 18556,
+    "records": 18557,
     "colleges": 114,
-    "outside_active": 1623,
+    "outside_active": 1624,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2502,
-     "of": 5538,
-     "words": "titles carry a review stamp (1,173 a person's, 1,329 a cohort's); 2,698 credentials, 2,232 of 3,001 records stamped",
+     "n": 2552,
+     "of": 5588,
+     "words": "titles carry a review stamp (1,227 a person's, 1,325 a cohort's); 2,725 credentials, 2,263 of 3,031 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1173,
-     "of": 5538,
+     "n": 1227,
+     "of": 5588,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -118,15 +118,15 @@
    ],
    "issues": [
     {
-     "n": 44,
+     "n": 50,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 41, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+     "owner": "a curator (the classifier is unsure 47, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 622,
+     "n": 623,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
      "carry": "keep_call",
@@ -150,23 +150,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-05T21:20:48Z",
+    "at": "2026-11-07T02:29:41Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5538,
-    "stamped": 2502,
-    "person": 1173,
-    "cohort": 1329,
-    "credentials": 2698,
-    "confirmed": 1173,
-    "records": 3001,
-    "records_stamped": 2232,
+    "titles": 5588,
+    "stamped": 2552,
+    "person": 1227,
+    "cohort": 1325,
+    "credentials": 2725,
+    "confirmed": 1227,
+    "records": 3031,
+    "records_stamped": 2263,
     "saved_at": "2026-11-05T15:54:01Z",
-    "fold_at": "2026-11-05T21:20:48Z",
-    "map_titles": 4966,
-    "unclassified": 50,
-    "left_map": 622,
+    "fold_at": "2026-11-07T02:29:41Z",
+    "map_titles": 4971,
+    "unclassified": 6,
+    "left_map": 623,
     "below_80": 1123,
     "below_60": 237
    },
@@ -243,8 +243,8 @@
    ],
    "procedures": [
     {
-     "n": 16478,
-     "words": "identities and 33,418 stand-alone courses on the canvas (the 2026-09-08 layout); 33,421 stand-alone in today's build",
+     "n": 16388,
+     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,421 stand-alone in today's build",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "error": null
     },
@@ -257,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-06T06:20:01+00:00",
+    "at": "2026-11-07T02:31:35+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -344,7 +344,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-05T22:15:35Z",
+    "at": "2026-11-06T22:17:51Z",
     "every_hours": null
    },
    "facts": {
@@ -392,7 +392,7 @@
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 295
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -433,11 +433,11 @@
    ],
    "issues": [
     {
-     "n": 30,
-     "words": "scan findings to confirm or note (an anchor off its code, a weak mnemonic, an anchor key in the dead format)",
-     "owner": "a curator, after Jev's sitting",
-     "carry": "unsure",
-     "open": "#canonical-subj4/list/scan"
+     "n": 21,
+     "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
+     "owner": "a re-key of the anchor under the playbook",
+     "carry": "reaches",
+     "open": "#canonical-subj4/progress"
     },
     {
      "n": 93,
@@ -468,7 +468,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-06T06:18:21Z",
+    "at": "2026-11-07T02:29:38Z",
     "every_hours": 24
    },
    "facts": {
@@ -481,7 +481,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-06",
+    "scanned_at": "2026-11-07",
     "procedures_on": 6
    },
    "sources": [
@@ -504,7 +504,7 @@
    ],
    "pair": [
     {
-     "n": 7566,
+     "n": 7607,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -514,16 +514,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7566,
+    "credentials": 7607,
     "issuers": 1525,
-    "in_map": 205,
+    "in_map": 206,
     "articulated": 161,
     "with_issuer_skills": 64,
-    "tech_giant": 479
+    "tech_giant": 482
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-05T00:00:00Z",
+    "at": "2026-11-06T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -542,9 +542,9 @@
    ],
    "pair": [
     {
-     "n": 27261,
+     "n": 29793,
      "of": null,
-     "words": "outcomes read from 7,022 courses at 10 colleges",
+     "words": "outcomes read from 7,715 courses at 11 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -552,25 +552,26 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 27261,
-    "courses": 7022,
+    "outcomes": 29793,
+    "courses": 7715,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "columbia",
      "golden_west",
      "las_positas",
+     "mission",
      "modesto_junior",
      "moreno_valley",
      "norco",
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 27
+    "reads": 29
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-05T06:47:43Z",
+    "at": "2026-11-06T09:16:18Z",
     "every_hours": null
    },
    "sources": [
@@ -598,7 +599,7 @@
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-05T00:00:00Z",
+    "at": "2026-11-06T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -643,9 +644,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 44,
+      "n": 50,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 41, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
+      "owner": "a curator (the classifier is unsure 47, the classifier's title has a dangling word 2, a merge would join two issuers 1)",
       "open": "#exhibits/held"
      },
      {
@@ -655,20 +656,20 @@
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
-     },
-     {
-      "ref": "subjects",
-      "title": "Common Subjects Reference",
-      "n": 30,
-      "words": "scan findings to confirm or note (an anchor off its code, a weak mnemonic, an anchor key in the dead format)",
-      "owner": "a curator, after Jev's sitting",
-      "open": "#canonical-subj4/list/scan"
      }
     ]
    },
    {
     "key": "reaches",
     "items": [
+     {
+      "ref": "subjects",
+      "title": "Common Subjects Reference",
+      "n": 21,
+      "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
+      "owner": "a re-key of the anchor under the playbook",
+      "open": "#canonical-subj4/progress"
+     },
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
@@ -685,7 +686,7 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 622,
+      "n": 623,
       "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
       "owner": "a curator",
       "open": "#exhibits/list/left"
@@ -697,7 +698,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3380,
+    "n": 3379,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -739,13 +740,13 @@
     {
      "name": "course-identity",
      "placed": 173,
-     "untouched": 162,
+     "untouched": 153,
      "kept": 0,
-     "renamed": 11,
+     "renamed": 20,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
-     "looked": 11
+     "looked": 20
     },
     {
      "name": "brand-family",
@@ -816,13 +817,13 @@
    ],
    "total": {
     "placed": 1197,
-    "untouched": 1079,
+    "untouched": 1070,
     "kept": 23,
-    "renamed": 71,
+    "renamed": 80,
     "moved": 0,
     "by_procedure": 24,
     "left": 0,
-    "looked": 94
+    "looked": 103
    }
   },
   {

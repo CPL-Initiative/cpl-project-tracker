@@ -65,8 +65,9 @@ function visit(p, hash) {
 
   // (3) the bare address: the college comes first
   const bare = page("#cpl-pathways");
-  check("(3) ⭐ the bare #cpl-pathways asks for a college and opens no pathway",
-    colOf(bare) === "" && pathText(bare) === "" && /Choose a college/.test(bare.root.textContent) && !bare.root.querySelector("#cplpw-list"));
+  // Every college until one is picked (Sam, 2026-11-06): the bare tab shows the state's List and opens no pathway.
+  check("(3) ⭐ the bare #cpl-pathways shows every college and opens no pathway",
+    colOf(bare) === "" && pathText(bare) === "" && /Every college, every program/.test(bare.root.textContent) && !!bare.root.querySelector("#cplpw-list"));
   check("(3) ⭐ the bare tab reports itself", ask(bare) === "cpl-pathways", ask(bare));
 
   // (1) + (2) a featured map by id

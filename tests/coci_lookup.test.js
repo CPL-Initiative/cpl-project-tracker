@@ -131,7 +131,7 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
   const doc = window.document;
 
   // ── 1. shell ──
-  check("shell: header renders", txt(doc.querySelector(".cplcoci-head .h")) === "COCI Lookup");
+  check("shell: header renders", txt(doc.querySelector(".cplcoci-head .h")) === "Courses and Programs");
   check("shell: the Courses view is the Courses List on the shared engine",
     log.lazyLoads.indexOf("commons_list.js") >= 0 && !!doc.querySelector("#cplcoci-list-mount ." + P + "table"));
   check("shell: count reflects the full set",

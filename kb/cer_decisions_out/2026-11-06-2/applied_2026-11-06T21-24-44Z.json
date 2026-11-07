@@ -1,0 +1,273 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-06T21-24-44Z",
+  "ruling": "Sam Lee, in session 2026-11-06 (SkyLantern, the Library side session), '1 yes, 2 yes': retire the spent overrides on _CREDENTIAL_REVIEW::Spanish 1 and Spanish 2, and confirm the merge of Wheel Alignment, Chassis Dynamics, and ADAS into Wheel Alignment, Chassis Dynamics, ADAS; written by SkyBeacon",
+  "cohort": "exhibits-s595@bot",
+  "read": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+      "field": "unified_title_override",
+      "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "state": "written",
+      "why": "already holds this value (by slee@cccco.edu)",
+      "live": {
+        "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:28:56.130052+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+      "field": "unified_title_merge_confirm",
+      "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish I",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Elementary Spanish I' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Elementary Spanish I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:38.241406+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish I",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Elementary Spanish I' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Elementary Spanish I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:38.221811+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish II",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Elementary Spanish II' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Elementary Spanish II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:45.28592+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish II",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Elementary Spanish II' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Elementary Spanish II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:45.299919+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    }
+  ],
+  "rows": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+      "field": "unified_title_merge_confirm",
+      "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "reviewer_email": "exhibits-s595@bot"
+    }
+  ],
+  "replaces": [],
+  "retires": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish I",
+      "before": {
+        "value": "Elementary Spanish I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:38.241406+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish I",
+      "before": {
+        "value": "Elementary Spanish I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:38.221811+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish II",
+      "before": {
+        "value": "Elementary Spanish II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:45.28592+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish II",
+      "before": {
+        "value": "Elementary Spanish II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:45.299919+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    }
+  ],
+  "result": "written",
+  "inserted": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+      "field": "unified_title_merge_confirm",
+      "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "reviewer_email": "exhibits-s595@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "replaced": [],
+  "replace_missed": [],
+  "retired": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish I",
+      "before": {
+        "value": "Elementary Spanish I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:38.241406+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish I",
+      "before": {
+        "value": "Elementary Spanish I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:38.221811+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish II",
+      "before": {
+        "value": "Elementary Spanish II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:45.28592+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish II",
+      "before": {
+        "value": "Elementary Spanish II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:29:45.299919+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    }
+  ],
+  "retire_missed": [],
+  "read_back": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+      "field": "unified_title_override",
+      "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "state": "written",
+      "why": "already holds this value (by slee@cccco.edu)",
+      "live": {
+        "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-27T12:28:56.130052+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Wheel Alignment, Chassis Dynamics, and ADAS",
+      "field": "unified_title_merge_confirm",
+      "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s595@bot)",
+      "live": {
+        "value": "Wheel Alignment, Chassis Dynamics, ADAS",
+        "reviewer_email": "exhibits-s595@bot",
+        "reviewed_at": "2026-11-06T21:24:45.231969+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish I",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 1",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish I",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_override",
+      "value": "Elementary Spanish II",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Spanish 2",
+      "field": "unified_title_merge_confirm",
+      "value": "Elementary Spanish II",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "live": null
+    }
+  ]
+}

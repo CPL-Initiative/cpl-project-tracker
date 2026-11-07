@@ -1,6 +1,6 @@
 {
  "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
- "_as_of": "2026-11-05",
+ "_as_of": "2026-11-06",
  "mapped": {
   "workflow:daily-dashboard.yml": "CA-01",
   "workflow:map-users-sync.yml": "CA-02",
@@ -92,7 +92,12 @@
   "table:identifier_crosswalk": "DR-28",
   "tab:exhibits": "DR-07",
   "field:kb_curation.subject_discipline_confirm": "DR-25",
-  "field:kb_curation.subject_discipline_note": "DR-25"
+  "field:kb_curation.subject_discipline_note": "DR-25",
+  "table:credential_priority_requests": "DR-31",
+  "rpc:credential_priority_request": "DR-31",
+  "table:credential_submissions": "DR-32",
+  "rpc:credential_submission_add": "DR-32",
+  "rpc:credential_submission_decide": "DR-32"
  },
  "dismissed": {
   "rpc:cpl_library_set_public": "The public Library's writer and its read (Sam, 2026-10-20: \"a public library I can copy them over to and set view permissions in the Admin tab\"; \"Mock up looks great!\"). cpl_library_set_public() takes the team phrase or a reviewer sign-in (Sam, 2026-10-23 18:50Z, his own call, reversing his 2026-10-20 reviewer-only call: \"can you set the Library page to be editable with Team phrase and not just magic link? I want the team to be able to make their artifacts public on the public library\"), and records who listed; a trigger refuses the public columns written any other way, and the history trigger files every prior row, so a listing is reversible from the database (Rule 10 a2). Its read, cpl_library_public(), is open to anon on purpose for the public page (library/index.html) and Sierra, and returns only listed, current, linked rows marked Public, and only public fields: title, kind, occasion, date, a public summary, topics and the link. Notes, briefs, made_by, rebuild_from, versions, the internal summary and every name stay behind the team phrase. It carries no student or staff detail, so the student-detail disclosure ADR does not reach it. The decision right is Sam's, exercised by the team he gave the phrase to or by a reviewer sign-in, so it needs no register row; unlisting is the safe direction and follows any retire or narrowed audience. A Claude page also needs its own link set public in claude.ai, which COBI cannot set or check, so the switch asks the lister to confirm it.",
@@ -140,6 +145,8 @@
   "workflow:library-publish.yml": "Publishes the Library drafts a person approved on their card (Sam, 2026-11-05: \"Build it\"), every three hours or on dispatch. With the service key it reads only records whose regen carries a draft from the card and an approval (Replace the public copy, or a request to replace at once), writes each draft to library/<slug>/index.html with a receipt of the record's before-values (kb/receipts/library_publish/), commits both to main under the daily-dashboard concurrency group, then moves each record with an update guarded on the updated_at it read, so an edit made on the card since wins. It is the outward step, and it waits on a person's press: the decision to replace a public copy stays with whoever approves the draft, which the record keeps; the workflow only carries it out. Reversible: git revert of the page's commit, and the receipt's before-values (cpl_library_history files the prior row too).",
   "workflow:cobix-review.yml": "COBIx as a CI reviewer (Sam, 2026-11-05: a workflow so COBIx comments on PRs without him relaying). Comment-only: pull-requests write, no code write, no merge; off until COBIX_REVIEW_ENABLED is true and the endpoint secrets exist. A finding it posts is a claim for Claude Code to verify, never a go or an approval. COBIx's identity is the cobi-cto account (Triage, comment-only, event-driven; 2026-11-05); the Governance register row (scope, what it may do, who revokes it) is the open step, and this entry moves to mapped when it lands. docs/reference/cobix_pr_loop.md",
   "table:team_pass_attempts": "Failed team-phrase unlocks per request IP (security step 2, Sam's go 2026-11-05 ~22:15Z). Written only by the SECURITY DEFINER team_pass_verify(); no API role reads or writes it (RLS on, no policy, privileges revoked). It holds an IP, a count and two times, no student or staff detail, and expires after a day. It locks an IP for 15 minutes after 8 failures in 10 minutes; no decision right moves, so it needs no register row.",
-  "rpc:team_pass_verify": "The explicit unlock (security step 2): the phrase in x-team-pass, the site in the body; records failures in team_pass_attempts. Same audience and answer as team_pass_ok(), with a lockout; no new decision right."
+  "rpc:team_pass_verify": "The explicit unlock (security step 2): the phrase in x-team-pass, the site in the body; records failures in team_pass_attempts. Same audience and answer as team_pass_ok(), with a lockout; no new decision right.",
+  "rpc:credential_priority_counts": "A read, and an aggregate one: the count of public requests to prioritize each credential (credential and n), open to anon on purpose so the Credential Catalog shows the count beside the credential (Sam, Sheet 162: the count is the signal). It returns no row-level field: the optional email, college and note stay behind the team phrase. A count of asks is not a count of students, so the k=10 rule of adr-student-detail-aggregate-disclosure-control does not reach it. The decision right is DR-31's; the read changes nothing.",
+  "rpc:credential_submissions_verified": "A read of verified rows only: the name, issuer, kind and link a signed-in reviewer verified, with the count of asks, open to anon on purpose so a verified submission joins the Credential Catalog as Not yet evaluated (Sam, 2026-11-06: \"yes, build the add your credential route\"). It returns nothing waiting or declined and no field a visitor typed about themselves (college, email, note). The decision right is DR-32's; the read changes nothing."
  }
 }

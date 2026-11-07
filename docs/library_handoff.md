@@ -1,59 +1,63 @@
 ---
-title: Library — side-lane handoff (SkyBackflip, beside the CPL Queue routine)
-date: 2026-11-06
-tags: [handoff, library, cpl-pathways, my-college, side-lane]
+title: Library — side-lane handoff (SkyBramble, beside the CPL Queue routine)
+date: 2026-11-07
+tags: [handoff, library, credential-catalog, sierra, alignment, cer, decision-sheet, side-lane]
 related:
+  - "[[docs/reference/lanes/local-course-cr-alignment]]"
+  - "[[docs/reference/lanes/cer-procedures]]"
+  - "[[docs/reference/lanes/sierra-retrieval-corpus]]"
   - "[[docs/reference/lanes/library]]"
-  - "[[docs/reference/lanes/my-college-action-page]]"
   - "[[docs/library_lessons]]"
 ---
 
 # Library — side-lane handoff
 
-> Side-lane handoff. It does **not** replace the numbered `session_<N>_handoff.md`: handoff 587 names SkyWhirlpool for
-> the main queue, and this file stays out of its way. Light Rule 9 checkpoint (2026-11-06, ~05:30Z): no §11 row moved,
-> no re-mint; one Rule 10 receipt (below). Skipped: `kb/README.md`, `README.md`, the lessons doc, KB notes, the pipeline
-> view, the four other status files and the decision sheet rebuild (no card changed).
+> Side-lane handoff; it does not replace the numbered `session_<N>_handoff.md`. **Light checkpoint** (SkyBramble,
+> 2026-11-07, ~04:50Z): no Roadmap row moved. Written: the two lane edits, this handoff, the vault note
+> (`CPLBrain/07-session-notes/2026-11-07-skybramble-sheet-164-rulings.md`), Open Asks Sheet 166. The run wrote one
+> migration (the scorer) and one CER plan; both have receipts beside them. Skipped: `cpl_memory` (each ruling is in its
+> lane and in Sheet 164's store), the KB-note pass, `kb/status/exhibit.json`, `README.md`, the Pipeline tab.
 
-Your moniker is **SkyAerial**. You pick up after SkyBackflip (2026-11-06), on two lanes: the **Library**
-([`library`](reference/lanes/library.md), *Next*) and the college pages inside
-[`my-college-action-page`](reference/lanes/my-college-action-page.md).
+Your moniker is **SkyThistle**. You pick up after SkyBramble on the Library side lanes: alignment, the CER, Sierra.
 
-## What shipped
-- **CPL Pathways in the new format** (#2831, merged on green `test`): the College select comes first and the tab asks
-  for a college until one is chosen; a college shows five figure cards (Pathways, Carry CPL here, Could adopt, For
-  consideration, Confirmed; each sets the List's filter), the program-data line, one read-only List of its pathways on
-  `commons_list.js`, and the My College fold. A title opens the pathway full width; *Back to <college>'s pathways*
-  returns to the List as left. The Pathway select, its search box and Clear are retired. `commons_list.js` gained
-  `open(r)`; the tab joined `commons_look.js`. Mockup https://claude.ai/artifact/R3knxBm8aG9D3FMryD377y (Cerritos, real rows).
-- **The ELL IET record's versions** (applied through the MCP, receipt
-  `kb/receipts/cpl_library_skybackflip_ell_versions_tidy_2026-11-06.sql`, rollback inside): Versions 3 and 4 read
-  *Replaced by v4* and *Replaced by v5*; Version 5 stays *Current*.
-
-## Decisions Sam made this run
-- *"Require college first"*: no All colleges, no statewide search.
-- *"Yes to all"*, on call 1 and the two differences from the mockup: the fourth card counts programs *For consideration*
-  (My College's figure left the cards), and the college picker stays at the top while a pathway is open.
+## What happened (SkyBramble, 2026-11-07)
+- **Sam had answered all five of Sheet 164's cards** at 02:21-02:23Z, not only the deploy. SkyFern read card 5 in
+  session and published Sheet 165 re-asking 1 to 4. **Read every superseded sheet's store before building on it.**
+  His answers: 1 *keep one peer*; 2 *do not send*, with *"I don't think MVC has it articulated with History — I think
+  it's some mistake we should track down on our end — add it to our queue"*; 3 *tighten*; 4 *correct all seven*.
+- **Card 2, tracked down.** MAP's exhibit rows carry the articulating course's COCI C-ID, so Basic Military Training's
+  statewide *Principles of Health Education* kept `HIST 150` after SkyHarbor's hold, and Sierra College's `HIST 50`
+  matched it at the C-ID rung. `_build_statewide_adoption` now reads the holds (`tests/statewide_cid_hold_test.py`, in
+  CI's EACR step). The peer table took the hold on a catalog sync I dispatched at 04:07Z (the first, 04:02Z, timed out
+  on the college-courses upsert while my heavy SQL ran; the peer step had already landed). The Sierra College answer
+  clears once the daily run regenerates `credential_reference_data.js` and the 13:20Z sync carries it.
+- **Card 3:** `kb/migrations/2026-11-07_alignment_level_words.sql` (rollback beside it), applied 04:24Z
+  (`kb/receipts/migration_alignment_level_words_42338146882.json`); Advanced Strength Training at Sierra College now
+  offers only KIN 5B Strength Training.
+- **Card 4:** `kb/cer_decisions_out/2026-11-07/plan.json`, cohort `exhibits-s596@bot`. Validated by the applier; the
+  local fold preview gave 7 revise, 0 held, V2 and V3 OK. **Dispatch `cer-decision-apply.yml` on `main` with that
+  plan_dir, dry-run then commit,** once this PR merges.
+- **Route ALIGN** takes the matched credential the question names (`askedTitlePick`). Built, not deployed.
+- **Open Asks Sheet 166** (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4, current, fresh store): 1, CompTIA alone as
+  issuer of the four ECHT exhibits; 2, deploy Route ALIGN's pick. Sheets 163, 164 and 165 are answered or superseded.
 
 ## Open work, in order
-1. **Sam's eyes on CPL Pathways in a browser** once Pages has deployed #2831 (Cerritos, then a college with no catalog
-   records, such as Santiago Canyon).
-2. **A rendered a11y target for the CPL Opportunity visual:** `cpl-opportunity` in `a11y.config.js` measures only the
-   empty picker. A seeded target with `?college=` would load ~45 MB; axe on the rendered Cerritos page passed by hand.
-3. **Sierra Training's *Try it in: My College*** still targets the hidden My College tab (lane, *combined tab* entry).
-4. The Library lane's standing *Next* (Coordinator Guide Pages copy, IACA, the Microsoft 365 connector; *Replace now*
-   is Sam's call).
+1. **Read Sheet 166's replies** (`ArtifactData` list `replies`). Card 1 *comptia*: a CER plan replacing the four ECHT
+   `issuing_agency_assignment` rows, and the second issuer off the four credentials in `kb/credentials.json`. Card 2
+   *deploy*: preview A/B, then `cpl-chat-deploy.yml`.
+2. **If this PR's apply has not run:** dispatch `cer-decision-apply.yml` (dry-run, then commit) on
+   `kb/cer_decisions_out/2026-11-07`. The scorer migration is applied (04:24Z) and read back.
+3. **After the daily run and the 13:20Z sync:** `credential_alignment_for_college('Basic Military Training','Sierra College')`
+   holds no `HIST 50` row and no `MUS 4A`.
+4. **The claim audit's 10 findings** (`kb/cid_claim_audit.json`, content-based since Sam's 2026-11-07 word): each is
+   a team item, hold it with its sister colleges' home or clear it. Add course SLOs, SOC and course CIP to the
+   content test when a source carries them (`data_sources`).
+5. The Department of Insurance's license types (`data_sources`; outside this network), CPL Pathways' sign-in gate
+   (agree one writer with the main queue), the Commons' NEXT, the Library lane's standing *Next*.
+6. `tests/statewide_kpi_test.py` fails on `main` before this change (a card shows *Issuer/type variants*); not ours.
 
-## Patterns that worked
-- A routed screenshot: Playwright's `page.route` served Supabase rows read through the MCP, so a local page painted
-  real figures where the sandbox cannot reach `*.supabase.co`.
-- One shared driver for a tab's tests (`tests/cpl_pathways_drive.js`): when the way in changes, the tests change in one
-  place and keep guarding what lies behind it.
-- The statewide index stays light; per-college figures come from one read the status line already made.
+## Watching
+The PR subscription and the Sheet 166 watch drop at sign-off; the handoff names them.
 
-## Let go
-PR #2831 merged and its subscription ended; the safety-net check-in fired and is spent. No check-ins remain. The artifact
-watches on both mockup canvases end with the session.
-
-> *Greetings, you are SkyAerial, a Library side session beside the CPL Queue routine, see SkyBackflip's handoff —
+> *Greetings, you are SkyThistle, a Library side session beside the CPL Queue routine, see SkyBramble's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*

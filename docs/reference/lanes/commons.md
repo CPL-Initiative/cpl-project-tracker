@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-04
+updated: 2026-11-06
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -83,6 +83,18 @@ before a person confirms it; a confirmation is an attribute the reference gains,
 a line on the card and under each Progress bar. 2026-11-03: Programs 32 (synced daily, `kb/_sync_program_checked.py`),
 Exhibits 1,173, Courses 957 (a save on the card or placing a course into it), CR 97, Subjects 122. Detail in the lessons (*The confirmed count*).
 
+**FIXED: the first view, from Sam's recording (SkyBeacon, 2026-11-06, #2857).** Sam: *"I don't think the various items
+and procedures are updating and wired properly."* (1) Details: a completed decision sheet's line widened its cell over
+*Last run* and past the card (3,414px in a 1,920px window) because each Details list is a grid with an auto column; one
+`minmax(0, 1fr)` column cuts it with its ellipsis. (2) Subjects: the card's 30 scan findings were 9 weak mnemonics Sam had
+noted on Nov 5 and 21 anchor entries keyed off a Common SUBJ that changed; a recorded note now settles a weak mnemonic
+(`cs6_mnemonic_noted`, `kb/_csr_trail.py`), and the anchor findings are their own re-key item beside the identity codes,
+on the card and the Subjects page (one skip list). (3) Mark done and the done marks: the card read a lapsed reviewer token
+as signed out, so Sam's Monterey mark (saved on CPL Pathways, 19:29Z) never left the band; it now renews first and re-reads
+on the keeper's announcement ([`reviewer-session-lifetime`](reviewer-session-lifetime.md)). The write stays reviewer-only.
+**COCI Lookup is named Courses and Programs** (Sam, 2026-11-06, #2858); the tab key and every `#coci-lookup/...` address
+stay.
+
 **NEXT:** from the path mock (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9): Teach a rule on every reference; a stalled routine or a backlog that stops shrinking becomes a queue item; the confidence count for the CR rule rungs and the Course auditor; the other references' paths; then every Commons view on the `--cmn` tokens. Data sources: [`data_sources`](../data_sources.md). When a Progress card reads *Could not be read*, check the `coci_college_programs` read first (it once answered 500). `npm run a11y -- cobi:commons` passes at both widths with the queue (S573).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
@@ -120,18 +132,7 @@ the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` 
 
 **What the tab leaves for the build** (2026-10-18) moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-04*): a count now opens its job's filtered list.
 
-**Fable's advice, carried (2026-10-18):** complete differs in kind, so each row names the test behind its
-count and no column sorts on a share; the machine stamp and the session stamp stay apart, each against a
-declared cadence; a call has one source, which today is the run log, with the sheet's store a build item.
-
-**RULED (Sam, Open Asks Sheet 95 card 1, 14:43Z, his own call, "build"; `cpl_memory`
-`sam-sheet-95-rulings-2026-10-18`):** *"Yes, and include Common Subjects in the mix."* Step 1, the shared
-Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons tab came next on Sam's
-20:10Z word. What remains of the order: a run log per project written at checkpoints, each reference's
-Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
-card for Sam.
-
-**Step 3's Progress views, Subjects (S425, #2260), Exhibit (S436) and CR (S437), with Sam's keep rulings (Sheets 107 and 108):** the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*). Each host brought a 60-line spec to the shared module and needed no change to it.
+**Fable's advice, the Sheet 95 ruling and step 3's Progress views (2026-10-18 to 2026-10-25)** moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, SkyBeacon, 2026-11-06*).
 
 Each reference's Progress view now draws the opened page; Course's landed last (S559, above).
 

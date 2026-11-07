@@ -3,10 +3,10 @@
   "_method": "M-ID identities re-keyed via the 1a alias (1:1); colleges_offering recomputed from the new College/CourseControlNumber membership (exact), so over-merged leverage deflates. C-ID/CCN identities + records pass through unchanged.",
   "_generated_by": "kb/_remint_apply_articulations.py",
   "_supersedes": "kb/coci_articulations.json (live, old keys)",
-  "identities_with_articulations": 2355,
-  "articulation_records": 4592,
-  "records_with_nonempty_leverage": 2597,
-  "total_adoption_leverage": 47994,
+  "identities_with_articulations": 2319,
+  "articulation_records": 4591,
+  "records_with_nonempty_leverage": 2596,
+  "total_adoption_leverage": 47922,
   "total_adoption_leverage_before_remint": 64732,
   "identities": {
     "ACCT 110": {
@@ -18743,7 +18743,8 @@
         "Saddleback College",
         "San Joaquin Delta College",
         "Santa Ana College",
-        "Victor Valley College"
+        "Victor Valley College",
+        "West Los Angeles College"
       ],
       "colleges_offering_count": 24
     },
@@ -31220,7 +31221,6 @@
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
-        "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
@@ -177919,6 +177919,7 @@
         "3 hours in Principles of Health Education"
       ],
       "earned_by_colleges": [
+        "Moreno Valley College",
         "Norco College",
         "Riverside City College"
       ],
@@ -177934,12 +177935,11 @@
         "Cosumnes River College",
         "Folsom Lake College",
         "Fullerton College",
-        "Moreno Valley College",
         "Sacramento City College",
         "Santa Ana College",
         "Santiago Canyon College"
       ],
-      "adoption_leverage_count": 8,
+      "adoption_leverage_count": 7,
       "_remint_from": "M-ID HEED 102"
     },
     {
@@ -179529,7 +179529,6 @@
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
-        "Moreno Valley College",
         "Mt. San Antonio College",
         "Napa Valley College",
         "Ohlone College",
@@ -179556,7 +179555,7 @@
         "West Valley College",
         "Woodland Community College"
       ],
-      "adoption_leverage_count": 66
+      "adoption_leverage_count": 65
     },
     {
       "course_id": "HIST 150",
@@ -179624,7 +179623,6 @@
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
-        "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
@@ -179652,103 +179650,7 @@
         "West Valley College",
         "Woodland Community College"
       ],
-      "adoption_leverage_count": 66
-    },
-    {
-      "course_id": "HIST 150",
-      "identity_system": "C-ID",
-      "over_merged": false,
-      "identity_confidence": null,
-      "exhibit_id": "MAPMM-BMT1-1-001",
-      "exhibit_title": "Credit for Basic Military Service",
-      "unified_title": "Basic Military Training",
-      "issuing_agency": "American Council on Education (ACE)",
-      "quality_flag": null,
-      "collaborative_type": "CCC",
-      "cpl_type_description": "Military",
-      "top_code": "263",
-      "credit_recommendations": [
-        "3 hours in Principles of Health Education"
-      ],
-      "earned_by_colleges": [
-        "Moreno Valley College"
-      ],
-      "local_courses": [
-        {
-          "subject": "HES",
-          "number": "1",
-          "title": "Health Science"
-        }
-      ],
-      "adoption_leverage": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Chaffey College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Laney College",
-        "Lassen College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "adoption_leverage_count": 66
+      "adoption_leverage_count": 65
     },
     {
       "course_id": "HIST 150",
@@ -179817,7 +179719,6 @@
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
-        "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
@@ -179844,7 +179745,7 @@
         "Ventura College",
         "West Valley College"
       ],
-      "adoption_leverage_count": 66
+      "adoption_leverage_count": 65
     },
     {
       "course_id": "HIST 150",
@@ -179912,7 +179813,6 @@
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
-        "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
@@ -179940,7 +179840,7 @@
         "West Valley College",
         "Woodland Community College"
       ],
-      "adoption_leverage_count": 66
+      "adoption_leverage_count": 65
     },
     {
       "course_id": "HIST 150",
@@ -180008,7 +179908,6 @@
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
-        "Moreno Valley College",
         "Mt. San Antonio College",
         "Mt. San Jacinto College",
         "Napa Valley College",
@@ -180036,7 +179935,7 @@
         "West Valley College",
         "Woodland Community College"
       ],
-      "adoption_leverage_count": 66
+      "adoption_leverage_count": 65
     },
     {
       "course_id": "HIST 160",
@@ -212607,7 +212506,7 @@
       "identity_confidence": 0.72,
       "exhibit_id": "MAPCXN-V2SF-1-001",
       "exhibit_title": "VFOOD 210: ServeSafe Food Protection Manager Certification Exam Prep, Review, & Practice",
-      "unified_title": "ServSafe Food Protection Manager",
+      "unified_title": "ServSafe Food Protection Manager Certification",
       "issuing_agency": "National Restaurant Association",
       "quality_flag": null,
       "collaborative_type": "",

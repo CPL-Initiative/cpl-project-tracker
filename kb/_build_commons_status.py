@@ -455,11 +455,14 @@ def row_cr(root):
 # from the seed, the daily scan's latest.json (kb/_csr_trail.py --latest, the step before this
 # one) and the procedures store; a count's link opens the tab's own list (the Commons' step 3).
 # The Subjects tab's own words for the scan's rules and the findings its page leaves to another item (canonical_subj4.js).
-CSR_ASK_SKIP = ("cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup")
+# The two anchor rules are re-key evidence, counted in their own item (SkyBeacon, 2026-11-06): no curator's note
+# settles an anchor entry keyed off a Common SUBJ that changed; the anchor's next re-key does.
+CSR_ANCHOR = ("cs9_anchor_subj_diverge", "cs9_anchor_dead_format")
+CSR_ASK_SKIP = ("cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup") + CSR_ANCHOR
 CSR_RULE_WORDS = {
     "cs1_format": "not four letters", "cs3_squat": "an official prefix on another subject",
     "cs4_divergence_noted": "a divergence the note records", "cs5_modal_diverge": "a modal choice without a note",
-    "cs6_weak_mnemonic": "a weak mnemonic", "cs7_needs_review": "needs review",
+    "cs6_weak_mnemonic": "a weak mnemonic", "cs6_mnemonic_noted": "a mnemonic the note records", "cs7_needs_review": "needs review",
     "cs8_seeder_bypass": "the mint path skips the reference", "cs9_anchor_dead_format": "an anchor key in the dead format",
     "cs9_anchor_subj_diverge": "an anchor off its code",
 }
@@ -514,8 +517,13 @@ def row_subjects(root):
                 ask[f.get("rule")] = ask.get(f.get("rule"), 0) + 1
         judgments = sum(ask.values())
         kinds = ", ".join(CSR_RULE_WORDS.get(r, r) for r, _ in sorted(ask.items(), key=lambda kv: -kv[1]))
-        issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
-                       "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/list/scan"})
+        if judgments:
+            issues.append({"n": judgments, "words": "scan findings to confirm or note" + (" (" + kinds + ")" if kinds else ""),
+                           "owner": "a curator, after Jev's sitting", "carry": "unsure", "open": tab + "/list/scan"})
+        anchors = sum(1 for f in scan.get("findings") or [] if f.get("rule") in CSR_ANCHOR)
+        if anchors:
+            issues.append({"n": anchors, "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
+                           "owner": "a re-key of the anchor under the playbook", "carry": "reaches", "open": tab + "/progress"})
         mc = scan.get("_mid_codes") or {}
         issues.append({"n": mc.get("stray_codes"), "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on %s identities" % fmt(mc.get("stray_ids")),
                        "owner": "a re-mint under the playbook", "carry": "reaches", "open": "#coci-lookup/list/stray"})

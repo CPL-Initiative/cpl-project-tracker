@@ -1,0 +1,159 @@
+{
+ "_about": "Find COCI C-ID claims that a course's own content calls a mis-entry (SkyHarbor, 2026-11-06).",
+ "_generated_by": "kb/_audit_cid_claims.py",
+ "found": 10,
+ "not_held": 10,
+ "holds_in_force": 2,
+ "findings": [
+  {
+   "claimed_cid": "AJ 110",
+   "college": "Mt. San Antonio College",
+   "course": "AD 1",
+   "title": "Introduction to Addiction Counseling",
+   "top": "2104.40",
+   "control_number": "CCC000414243",
+   "signals": [
+    "no ASCCC approval for AJ 110",
+    "title shares no word with any other member",
+    "description best overlap 0.062, the group's members 0.739"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 7
+  },
+  {
+   "claimed_cid": "ANTH 150",
+   "college": "Palo Verde College",
+   "course": "ANT 102",
+   "title": "Aztecs, Maya, and Their Predecessors",
+   "top": "2202.00",
+   "control_number": "CCC000182167",
+   "signals": [
+    "no ASCCC approval for ANTH 150",
+    "title shares no word with any other member",
+    "description best overlap 0.062, the group's members 0.689"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 2
+  },
+  {
+   "claimed_cid": "MATH 240",
+   "college": "Grossmont College",
+   "course": "MATH 245",
+   "title": "Discrete Mathematics",
+   "top": "1701.00",
+   "control_number": "CCC000071729",
+   "signals": [
+    "no ASCCC approval for MATH 240",
+    "title shares no word with any other member",
+    "description best overlap 0.075, the group's members 0.684"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 2
+  },
+  {
+   "claimed_cid": "AG-AS 104",
+   "college": "Madera College",
+   "course": "AGBS 1",
+   "title": "Introduction to Agriculture Business",
+   "top": "0112.00",
+   "control_number": "CCC000615466",
+   "signals": [
+    "no ASCCC approval for AG-AS 104",
+    "title shares no word with any other member",
+    "description best overlap 0.096, the group's members 0.857"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 1
+  },
+  {
+   "claimed_cid": "BIOL 110 B",
+   "college": "Coastline Community College",
+   "course": "BIOL C200",
+   "title": "Pharmacology",
+   "top": "0401.00",
+   "control_number": "CCC000187959",
+   "signals": [
+    "no ASCCC approval for BIOL 110 B",
+    "title shares no word with any other member",
+    "description best overlap 0.081, the group's members 0.444"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 1
+  },
+  {
+   "claimed_cid": "AG-PS 104 104",
+   "college": "San Joaquin Delta College",
+   "course": "AGBUS 5",
+   "title": "Introduction to Agriculture Business",
+   "top": "0112.00",
+   "control_number": "CCC000569444",
+   "signals": [
+    "no ASCCC approval for AG-PS 104 104",
+    "title shares no word with any other member",
+    "description best overlap 0.043, the group's members 0.533"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 0
+  },
+  {
+   "claimed_cid": "FTVE 110",
+   "college": "Cerritos College",
+   "course": "FILM 241",
+   "title": "Screenwriting",
+   "top": "0612.20",
+   "control_number": "CCC000419633",
+   "signals": [
+    "no ASCCC approval for FTVE 110",
+    "title shares no word with any other member",
+    "description best overlap 0.078, the group's members 0.704"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 0
+  },
+  {
+   "claimed_cid": "FTVE 125",
+   "college": "College of Marin",
+   "course": "COMM 155",
+   "title": "On-Camera Performance and Reporting for Electronic Media",
+   "top": "0614.00",
+   "control_number": "CCC000589315",
+   "signals": [
+    "no ASCCC approval for FTVE 125",
+    "title shares no word with any other member",
+    "description best overlap 0.034, the group's members 0.371"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 0
+  },
+  {
+   "claimed_cid": "JOUR 100",
+   "college": "Reedley College",
+   "course": "JOURN 19V",
+   "title": "Cooperative Work Experience, Journalism",
+   "top": "0602.00",
+   "control_number": "CCC000461271",
+   "signals": [
+    "no ASCCC approval for JOUR 100",
+    "title shares no word with any other member",
+    "description best overlap 0.099, the group's members 0.686"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 0
+  },
+  {
+   "claimed_cid": "MATH 160",
+   "college": "Fresno City College",
+   "course": "MATH 26",
+   "title": "Elementary Linear Algebra",
+   "top": "1701.00",
+   "control_number": "CCC000323573",
+   "signals": [
+    "no ASCCC approval for MATH 160",
+    "title shares no word with any other member",
+    "description best overlap 0.047, the group's members 0.320"
+   ],
+   "held": false,
+   "cpl_articulations_in_group": 0
+  }
+ ]
+}

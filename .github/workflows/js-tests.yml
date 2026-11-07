@@ -423,6 +423,10 @@ jobs:
       # adopt from the prescriptive layer alone, no student figure in the public file.
       - name: Public adoption page builder
         run: python3 tests/adopt_page_build_test.py
+      # The catalog's analysis for faculty (2026-11-06): the skills join, columns only, the newest read,
+      # the lead-in line dropped, covered and confidence, the illustrative label.
+      - name: Credential Catalog analysis builder
+        run: python3 tests/adopt_align_build_test.py
       # The IT/AI credential catalog's fields and MAP join (2026-10-30, 2026-10-31): no guessed
       # CIP, a CTID only on its owner's row, a name join only where the issuer agrees, and the
       # hand check of Credential Engine's top 50 winning over the name join.
@@ -802,6 +806,10 @@ jobs:
         run: |
           python3 tests/top_code_lookup_code4_test.py
           python3 tests/eacr_matrix_payload_test.py
+          # A held COCI C-ID claim stays out of a statewide rec set (Sheet 164 card 2).
+          python3 tests/statewide_cid_hold_test.py
+          # The C-ID claim audit decides on content, never on subject letters alone (Sam, 2026-11-07).
+          python3 tests/cid_claim_audit_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
       # detector proposes re-levels against live curation rows, so its failure
       # modes are confident-wrong writes: reading a PREREQUISITE clause as the

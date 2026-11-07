@@ -2,56 +2,56 @@
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
  "_as_of": "2026-11-05T21:20:35.474Z",
  "credit_recommendations": {
-  "total": "15,093",
-  "ccc": "1,495",
-  "local": "13,598",
+  "total": "15,087",
+  "ccc": "1,504",
+  "local": "13,583",
   "by_type": [
    "Standardized Assessment: 7,789",
-   "Industry Certification: 4,261",
-   "Credit By Exam: 2,329",
-   "Portfolio Review: 459",
-   "Military: 154"
+   "Industry Certification: 4,263",
+   "Credit By Exam: 2,320",
+   "Portfolio Review: 458",
+   "Military: 155"
   ]
  },
  "map_exhibits": {
-  "total": "2,484",
-  "ccc": "163",
-  "local": "2,321",
+  "total": "2,468",
+  "ccc": "162",
+  "local": "2,306",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
-  "total": "163",
+  "total": "162",
   "program_areas": "12",
-  "distinct_credit_recs": "1,291",
-  "adoptions": "1,482",
-  "adopting_colleges": "67",
+  "distinct_credit_recs": "1,300",
+  "adoptions": "1,491",
+  "adopting_colleges": "68",
   "by_sector": [
    {
     "sector": "Construction Technology",
     "exhibits": 54,
-    "credit_recs": 157,
-    "adoptions": 157,
+    "credit_recs": 173,
+    "adoptions": 173,
     "could_adopt": 0
    },
    {
     "sector": "Welding",
     "exhibits": 24,
-    "credit_recs": 212,
-    "adoptions": 267,
+    "credit_recs": 213,
+    "adoptions": 268,
     "could_adopt": 27
    },
    {
     "sector": "Fire Technology",
     "exhibits": 18,
-    "credit_recs": 307,
-    "adoptions": 360,
+    "credit_recs": 303,
+    "adoptions": 356,
     "could_adopt": 45
    },
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 123,
-    "adoptions": 127,
+    "credit_recs": 124,
+    "adoptions": 128,
     "could_adopt": 74
    },
    {
@@ -71,16 +71,9 @@
    {
     "sector": "Emergency Medical Services",
     "exhibits": 5,
-    "credit_recs": 67,
-    "adoptions": 68,
+    "credit_recs": 65,
+    "adoptions": 66,
     "could_adopt": 59
-   },
-   {
-    "sector": "Administration of Justice",
-    "exhibits": 2,
-    "credit_recs": 112,
-    "adoptions": 115,
-    "could_adopt": 55
    },
    {
     "sector": "Corrections",
@@ -102,6 +95,13 @@
     "credit_recs": 19,
     "adoptions": 50,
     "could_adopt": 34
+   },
+   {
+    "sector": "Administration of Justice",
+    "exhibits": 1,
+    "credit_recs": 109,
+    "adoptions": 112,
+    "could_adopt": 55
    },
    {
     "sector": "Kinesiology/Health",
@@ -126,7 +126,7 @@
  "articulating_colleges": {
   "total": "103",
   "originating": "89",
-  "adopting_ccc": "67"
+  "adopting_ccc": "68"
  },
  "veteran_sprint": {
   "star_colleges": "67",

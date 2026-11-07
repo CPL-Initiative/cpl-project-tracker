@@ -1,0 +1,476 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-06T19-49-56Z",
+  "ruling": "Sam Lee, in session 2026-11-06 (SkyLantern, the Library side session): 'go ahead and make the seven title fixes in the CER'; superseding his own 2026-10-31 Review saves by his word; and 'go ahead and fold the duplicate ServSafe Manager exhibit' (same session)",
+  "cohort": "exhibits-s594@bot",
+  "read": [
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_assignment",
+      "value": "ACE Certified Personal Trainer",
+      "state": "replace",
+      "why": "replaces 'Personal Training Certification' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Personal Training Certification",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T15:39:16.338272+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_supersedes",
+      "value": "Personal Training Certification",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "state": "replace",
+      "why": "replaces 'Personal Trainer Instructor' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T15:39:13.827261+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "NASM Certified Personal Trainer (NASM-CPT)",
+      "state": "replace",
+      "why": "replaces 'Personal Trainer Instructor' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:37:41.266072+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+      "state": "replace",
+      "why": "replaces 'Wastewater Treatment 1' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Wastewater Treatment 1",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:27:53.595457+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 1",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+      "state": "replace",
+      "why": "replaces 'Wastewater Treatment 2' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Wastewater Treatment 2",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:47:52.232292+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 2",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_override",
+      "value": "ServSafe Food Protection Manager Certification",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_merge_confirm",
+      "value": "ServSafe Food Protection Manager Certification",
+      "state": "write",
+      "why": "",
+      "live": null
+    }
+  ],
+  "rows": [
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_supersedes",
+      "value": "Personal Training Certification",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 1",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 2",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_override",
+      "value": "ServSafe Food Protection Manager Certification",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_merge_confirm",
+      "value": "ServSafe Food Protection Manager Certification",
+      "reviewer_email": "exhibits-s594@bot"
+    }
+  ],
+  "replaces": [
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_assignment",
+      "value": "ACE Certified Personal Trainer",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Personal Training Certification",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T15:39:16.338272+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T15:39:13.827261+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "NASM Certified Personal Trainer (NASM-CPT)",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:37:41.266072+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Wastewater Treatment 1",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:27:53.595457+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Wastewater Treatment 2",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:47:52.232292+00:00"
+      }
+    }
+  ],
+  "result": "written",
+  "inserted": [
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_supersedes",
+      "value": "Personal Training Certification",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 1",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 2",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_override",
+      "value": "ServSafe Food Protection Manager Certification",
+      "reviewer_email": "exhibits-s594@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_merge_confirm",
+      "value": "ServSafe Food Protection Manager Certification",
+      "reviewer_email": "exhibits-s594@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "replaced": [
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_assignment",
+      "value": "ACE Certified Personal Trainer",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Personal Training Certification",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T15:39:16.338272+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T15:39:13.827261+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "NASM Certified Personal Trainer (NASM-CPT)",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:37:41.266072+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Wastewater Treatment 1",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:27:53.595457+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+      "reviewer_email": "exhibits-s594@bot",
+      "before": {
+        "value": "Wastewater Treatment 2",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:47:52.232292+00:00"
+      }
+    }
+  ],
+  "replace_missed": [],
+  "read_back": [
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_assignment",
+      "value": "ACE Certified Personal Trainer",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "ACE Certified Personal Trainer",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.427214+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American Council on Exercise (ACE) Personal Trainer Certification",
+      "field": "unified_title_supersedes",
+      "value": "Personal Training Certification",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Personal Training Certification",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "ACSM Certified Personal Trainer (ACSM-CPT)",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "ACSM Certified Personal Trainer (ACSM-CPT)",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.427214+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_assignment",
+      "value": "NASM Certified Personal Trainer (NASM-CPT)",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "NASM Certified Personal Trainer (NASM-CPT)",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.427214+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::National Academy of Sports Medicine Certified Personal Trainer (NASM-CPT)",
+      "field": "unified_title_supersedes",
+      "value": "Personal Trainer Instructor",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Personal Trainer Instructor",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.427214+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 1",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Wastewater Treatment 1",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_assignment",
+      "value": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.427214+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::California State Water Resources Control Board wastewater grade IV or V certification",
+      "field": "unified_title_supersedes",
+      "value": "Wastewater Treatment 2",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "Wastewater Treatment 2",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_override",
+      "value": "ServSafe Food Protection Manager Certification",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "ServSafe Food Protection Manager Certification",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ServSafe Food Protection Manager",
+      "field": "unified_title_merge_confirm",
+      "value": "ServSafe Food Protection Manager Certification",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s594@bot)",
+      "live": {
+        "value": "ServSafe Food Protection Manager Certification",
+        "reviewer_email": "exhibits-s594@bot",
+        "reviewed_at": "2026-11-06T19:49:56.357654+00:00"
+      }
+    }
+  ]
+}

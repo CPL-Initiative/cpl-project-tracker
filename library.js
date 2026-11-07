@@ -144,7 +144,7 @@
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
-    retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
+    retireAsk: null, moreOpen: false, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
     view: "list", src: {},
     pick: null, use: null, rem: null, autoDraft: true,
@@ -426,6 +426,10 @@
       R + " .lib-details dd a{display:inline-flex;align-items:center;min-height:24px;}",
       R + " .lib-boxfold>summary{cursor:pointer;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;min-height:24px;}",
       R + " .lib-boxfold>summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}",
+      // More about it: the new piece's optional fields, folded in the panel (2026-11-06).
+      R + " .lib-more{margin:10px 0 4px;}",
+      R + " .lib-more>summary{cursor:pointer;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;min-height:24px;}",
+      R + " .lib-more>summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}",
       R + " .lib-acts .lib-word{justify-content:flex-start;}",
       R + " .lib-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:14px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
       R + " .lib-thumb{width:176px;aspect-ratio:16/10;max-width:100%;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--surface-muted);}",
@@ -1553,7 +1557,7 @@
     var err = takeSource(p, byNode ? byNode.value.trim() : "");
     if (!err && !srcTyped(p).title && !srcTyped(p).url && !srcTyped(p).text) err = "Type a title and a link, or paste the document's text, then press Add this document.";
     if (err) { say(err, true); render(); return; }
-    say("Added. It saves with the brief.");
+    say("Added. It saves with the request when you press Start.");
     render(); clearSrcFields(p);
     var t = document.getElementById(p + "-stitle"); if (t) t.focus();
   }
@@ -1604,13 +1608,16 @@
     return base.length > 2 ? base : "";
   }
   // What the instructions ask to make, read from their words; a visual when they name none.
+  // The kind the instructions name first wins (Sam, 2026-11-06: "Create a visual ... documented with an exhibit ... the
+  // brainstorming document" read as a Document, because document was tested before visual).
+  var KIND_WORDS = [["deck", /\b(deck|slides?|presentation|powerpoint|webinar)\b/], ["film", /\b(video|film|recording)\b/],
+    ["spreadsheet", /\b(spreadsheet|workbook|excel)\b/], ["document", /\b(memo|report|document|letter|guide|brief|word)\b/],
+    ["visual", /\b(visual|page|infographic|one-pager|poster|chart|graphic)\b/]];
   function kindFromWords(t) {
     t = String(t || "").toLowerCase();
-    if (/\b(deck|slides?|presentation|powerpoint|webinar)\b/.test(t)) return "deck";
-    if (/\b(video|film|recording)\b/.test(t)) return "film";
-    if (/\b(spreadsheet|workbook|excel)\b/.test(t)) return "spreadsheet";
-    if (/\b(memo|report|document|letter|guide|brief|word)\b/.test(t)) return "document";
-    return "visual";
+    var best = "visual", at = Infinity;
+    KIND_WORDS.forEach(function (k) { var m = k[1].exec(t); if (m && m.index < at) { at = m.index; best = k[0]; } });
+    return best;
   }
   // The defaults Sam set (2026-10-28): a deck on the CO template with a speaker script in
   // each slide's notes; a memo or report in the CO styles.
@@ -1626,7 +1633,7 @@
     state.use = pick.file && REMEDIABLE[ext] ? "remediate" : pick.link ? "asis" : "background";
     state.autoDraft = true;
     state.notesMode = "keep";
-    state.start = null; state.form = null; state.formFor = null; state.rem = null; say("");
+    state.form = null; state.formFor = null; state.rem = null; say("");
     state.piece = null; state.pieceUse = null; state.edit = null; state.retireAsk = null;
   }
   // A deck's speaker notes (Sam, 2026-10-29: "add a prompt once someone uploads a ppt for
@@ -1698,7 +1705,7 @@
   function setPiece(id, use) {
     var r = byId(id);
     if (!r) return;
-    state.pick = null; state.use = null; state.rem = null; state.start = null; state.form = null; state.formFor = null;
+    state.pick = null; state.use = null; state.rem = null; state.form = null; state.formFor = null;
     state.piece = id; state.src.pc = sourceList(r).slice();
     setPieceUse(use || (r.status === "requested" ? "details" : "revise"));
   }
@@ -1831,6 +1838,7 @@
       : "";
     var chooser = pr ? "" : '<div class="lib-field"><label for="lc-piece">Find a piece already here; its card opens to revise it</label><input id="lc-piece" type="text" list="lib-pieces" autocomplete="off" placeholder="Type part of its title"></div>' +
       '<datalist id="lib-pieces">' + pieceLabels().map(function (x) { return '<option value="' + esc(x.label) + '">'; }).join("") + "</datalist>";
+    var isNew = pr ? pu === "background" : (!pk || state.use === "background");
     var hint = pu === "revise" ? "What to change: the wording, the figures, the layout, what to add or cut. Leave it empty to rebuild from its source, the documents and the current data."
       : pu === "background" ? "What the new piece is for, who it is for, the focus."
       : "What you need, who it is for, the focus. With no file, say what to make: a visual, deck, document or video.";
@@ -1838,18 +1846,20 @@
       ? "Claude rebuilds it from its source, your instructions and the documents, checks its accessibility, keeps its link, and puts the draft on its card" +
         (pr.public_listed ? "; the public copy stays until you press Replace the public copy" : "") +
         ". A session reads a public link or a file's words read here, and cannot open SharePoint until RCCD approves the Microsoft 365 connector. Never add a student's record."
-      : pu === "background" ? "The brief opens with this piece as a document to work from."
+      : isNew ? "Start saves it in the Library as Requested" + (pu === "background" || pk ? ", with " + (pr ? pr.title : pk.name) + " as a document to work from" : "") +
+        ". Claude drafts a new piece in a session: its card's Copy the brief starts one now, or the next scheduled run picks it up. A visual made for a college writes its CPL Opportunity page and workbook at once."
       : "A deck starts on the Chancellor's Office template, with a speaker script in each slide's notes for you to edit; a memo or report starts in the Chancellor's Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.";
     var asks = pu === "details" ? editForm(pr) : pu === "version" ? "" :
       (pr ? pieceDocsHtml() : "") +
       '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="' + esc(hint) + '"></textarea></div>' +
       (pu === "revise" && !storedAuthor() ? '<div class="lib-field"><label for="lc-by">Your name</label><input id="lc-by" type="text" required></div>' : "") +
+      (isNew ? newFields() : "") +
       '<div class="lib-panelfoot"><p class="lib-line">' + esc(foot) + "</p>" +
       '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>";
     return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
       '<div class="lib-drop" id="lib-drop">' +
       (pr ? pieceHtml(pr) : "") + inputs + chooser + picked + asks +
-      "</div>" + remHtml() + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
+      "</div>" + remHtml() + (state.form ? addForm() : "") + "</section>";
   }
   // ── Remediation (lane NEXT ③): the deck, document, workbook or PDF, read and fixed in this browser ──
   // library_remediate.js does the work over the file's XML (or a PDF's catalog); this draws
@@ -1872,7 +1882,7 @@
   var THUMB_EXT = { png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif" };
   function startRemediate(pk) {
     if (!pk.file || !pk.file.arrayBuffer) { say("Choose the file again; this browser could not read it.", true); render(); return; }
-    state.start = null; state.form = null; state.formFor = null;
+    state.form = null; state.formFor = null;
     state.rem = { name: pk.name, recordId: pk.recordId || null, reading: true, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {} };
     say(""); render();
     var buf;
@@ -2526,22 +2536,14 @@
       setPick({ name: link, link: link });
     }
     var pk = state.pick;
-    var openBrief = function (src) {
-      var kind = instr ? kindFromWords(instr) : (pk ? pk.kind : "visual");
-      state.src.ls = src ? [src] : [];
-      state.start = { kind: kind, say: instr, shape: pk && DECK_EXT[pk.ext] && kind === "deck" ? NOTES_BRIEF[state.notesMode || "keep"] : defaultShape(kind) };
-      state.form = null; state.formFor = null;
-      say(src ? "The brief carries " + src.title + " as a document to work from. Name the piece and save it." + (isSharePoint(src.url) ? " " + SP_INSTEAD : "") : "");
-      render();
-      var t = document.getElementById("ls-title"); if (t) t.focus();
-    };
+    var openBrief = function (src, note) { saveNew(src ? [src] : [], note || (src && isSharePoint(src.url) ? SP_INSTEAD : "")); };
     if (!pk) {
       if (!instr) { say("Drop a file, paste a link, or say in Instructions what to make.", true); render(); return; }
       openBrief(null); return;
     }
     if (state.use === "remediate") { startRemediate(pk); return; }
     if (state.use === "asis") {
-      state.start = null; state.formFor = null;
+      state.formFor = null;
       state.form = { url: pk.link || "", title: titleFromName(pk.name), kind: pk.kind };
       say(pk.file ? "A record links to its file. Put " + pk.name + " in the CPLLibrary folder, or its Drafts folder, then paste its link here." : "");
       render();
@@ -2552,12 +2554,59 @@
     if ((TEXT_EXT[pk.ext] || pk.ext === "docx") && pk.file && (pk.ext === "docx" ? pk.file.arrayBuffer : pk.file.text)) {
       (pk.ext === "docx" ? readDocxText(pk.file) : pk.file.text()).then(function (text) {
         openBrief({ title: (titleFromName(pk.name) || pk.name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
-      }, function () { say("This browser could not read " + pk.name + ". Paste its text under Documents to work from.", true); openBrief(null); });
+      }, function () { openBrief(null, "This browser could not read " + pk.name + ": paste its text under Documents to work from on the card's Edit record."); });
       return;
     }
-    openBrief(null);
-    say("A session cannot open " + pk.name + " from here. Paste its text under Documents to work from, or save it as a Word document or plain text and drop that copy.");
-    render();
+    openBrief(null, "A session cannot open " + pk.name + " from here: paste its text under Documents to work from on the card's Edit record, or save it as a Word document or plain text.");
+  }
+
+  /* Start, for a new piece: the record is saved as Requested from the panel, with the documents given (the link or
+     file picked, a piece used as background, and any under More about it), and the page takes the person to its card
+     with the brief open. A visual made for a college is its record pair at once (makePair). */
+  function saveNew(srcs, note) {
+    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
+    var instr = g("lc-instr"), pk = state.pick;
+    var kind = g("ls-kind") || (instr ? kindFromWords(instr) : (pk && pk.kind) || "visual");
+    var f = { kind: kind, title: g("ls-title"), occasion: g("ls-occasion"), due: g("ls-due"), seen_by: g("ls-seen") || "team",
+      say: instr, sources: g("ls-sources"), shape: g("ls-shape") || (pk && DECK_EXT[pk.ext] && kind === "deck" ? NOTES_BRIEF[state.notesMode || "keep"] : defaultShape(kind)), by: g("ls-by") };
+    var madeFor = readFor("ls"), fp = forProblem(madeFor);
+    var focus = function (id) { render(); var n = document.getElementById(id); if (n) n.focus(); };
+    if (!f.by) { say("Add your name, so the request says who asked for it.", true); focus("ls-by"); return; }
+    if (fp) { say(fp, true); render(); return; }
+    if (f.kind === "visual" && madeFor.for_kind === "college") { rememberAuthor(f.by); makePair(madeFor.for_name, f.occasion, f.by); return; }
+    if (!f.title) { say("Add a working title.", true); focus("ls-title"); return; }
+    if (!f.say) { say("Say in Instructions what the piece must say.", true); focus("lc-instr"); return; }
+    var have = (state.src.ls || []).slice();
+    (srcs || []).forEach(function (x) { if (!have.some(function (y) { return (x.url && y.url === x.url) || (!x.url && y.title === x.title); })) have.unshift(x); });
+    state.src.ls = have.slice(0, SRC_MAX);
+    var srcErr = takeSource("ls", f.by);
+    if (srcErr) { say(srcErr, true); render(); return; }
+    rememberAuthor(f.by);
+    var brief = { say: f.say, requested_by: f.by, requested_on: today() };
+    if (f.sources) brief.sources = f.sources;
+    if (f.shape) brief.shape = f.shape;
+    if (f.due) brief.due = f.due;
+    write(TABLE_URL, { method: "POST", body: {
+      slug: slugFor(f.title), title: f.title, kind: f.kind, occasion: f.occasion || null,
+      status: "requested", seen_by: f.seen_by, home: "not_filed", url: null, added_by: f.by, brief: brief,
+      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
+      sources: state.src.ls || []
+    } }).then(function (saved) {
+      var row = Array.isArray(saved) ? saved[0] : saved;
+      var id = row && row.id;
+      if (id) state.briefShown[id] = true;
+      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). Claude drafts a new piece in a session: Copy the brief on its card and paste it into a new session to start now, or the next scheduled run picks it up." + (note ? " " + note : ""));
+      // The panel empties for the next piece (render restores typed values, so the fields are cleared first).
+      Array.prototype.forEach.call(document.querySelectorAll("[id^='ls-'], #lc-instr, #lc-link"), function (n) { if (n.tagName !== "DETAILS" && n.id !== "ls-by") n.value = n.tagName === "SELECT" ? (n.id === "ls-seen" ? "team" : "") : ""; });
+      state.pick = null; state.use = null; state.piece = null; state.pieceUse = null; delete state.forPick.ls; state.src.ls = []; state.moreOpen = false;
+      return load().then(function () { if (id) goToBrief(id); });
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+  function goToBrief(id) {
+    var btn = document.querySelector('[data-brief="' + id + '"]');
+    if (!btn) return;
+    if (btn.scrollIntoView) btn.scrollIntoView({ block: "center" });
+    btn.focus();
   }
 
   // Start on a picked piece. Revise and remediate saves the request on the record: the
@@ -2591,13 +2640,8 @@
     if (state.pieceUse === "background") {
       var kind = instr ? kindFromWords(instr) : (r.kind || "visual");
       var own = r.url ? [{ title: r.title.slice(0, 200), url: r.url, text: null, added_by: by || null, added_on: on }] : [];
-      var title = r.title;
-      clearPiece();
-      state.src.ls = own.concat(list).slice(0, SRC_MAX);
-      state.start = { kind: kind, say: instr, shape: defaultShape(kind) };
-      say("The brief carries " + title + " as a document to work from. Name the new piece and save it.");
-      render();
-      var t = document.getElementById("ls-title"); if (t) t.focus();
+      void kind;
+      saveNew(own.concat(list));
       return;
     }
     if (!by) { say("Add your name, so the request says who asked.", true); render(); var bn = document.getElementById("lc-by"); if (bn) bn.focus(); return; }
@@ -2621,29 +2665,24 @@
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
-  function startForm() {
-    var f = state.start || {};
-    return '<form class="lib-form" id="lib-startform"><h2 class="lib-h">The brief</h2>' +
-      "<p>Say what the piece is for and what it must say. The Library keeps the brief as a Requested record. " +
-      "A visual made for a college writes its CPL Opportunity page and workbook at once instead. " +
-      "Claude starts the draft from it, in a new session you paste the brief into or in the next scheduled run, and hands each draft over for the " +
-      '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>\'s Drafts folder.</p>' +
-      '<div class="lib-grid">' +
-      '<div class="lib-field"><label for="ls-kind">Kind</label><select id="ls-kind">' + opt("visual", "Visual (a page opened in a browser)", f.kind) + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) +
-      opt("film", "Film", f.kind) + opt("document", "Document (Word, PDF)", f.kind) + "</select></div>" +
-      '<div class="lib-field wide"><label for="ls-title">Working title</label><input id="ls-title" type="text" required placeholder="What colleges can expect from the 2026-27 funding" value="' + esc(f.title || "") + '"></div>' +
-      '<div class="lib-field"><label for="ls-occasion">Occasion</label><input id="ls-occasion" type="text" placeholder="Vision 2030 Noncredit Summit" value="' + esc(f.occasion || "") + '"></div>' +
-      forFields("ls", f) +
+  /* A new piece's fields, in the panel itself (Sam, 2026-11-06: "it opens up a secondary view and process after clicking
+     start. need to simplify and clean this up"): the working title and who asks, with the rest of what the old second
+     form asked folded under More about it, every field optional. Start saves the record; nothing opens after it. */
+  function newFields() {
+    var f = state.newMore || {};
+    return '<div class="lib-grid">' +
+      '<div class="lib-field wide"><label for="ls-title">Working title</label><input id="ls-title" type="text" required placeholder="What colleges can expect from the 2026-27 funding"></div>' +
+      '<div class="lib-field"><label for="ls-by">Your name</label><input id="ls-by" type="text" required value="' + esc(storedAuthor()) + '"></div></div>' +
+      '<details class="lib-more" id="ls-more"' + (state.moreOpen || state.forPick.ls ? " open" : "") + '><summary>More about it (optional)</summary><div class="lib-grid">' +
+      '<div class="lib-field"><label for="ls-kind">Kind</label><select id="ls-kind">' + opt("", "From the instructions", f.kind) + opt("visual", "Visual (a page opened in a browser)", f.kind) + opt("deck", "Deck", f.kind) +
+      opt("spreadsheet", "Spreadsheet", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document (Word, PDF)", f.kind) + "</select></div>" +
+      '<div class="lib-field"><label for="ls-occasion">Occasion</label><input id="ls-occasion" type="text" placeholder="Vision 2030 Noncredit Summit"></div>' +
+      forFields("ls", {}) +
       '<div class="lib-field"><label for="ls-due">Needed by</label><input id="ls-due" type="text" placeholder="The week of the summit"></div>' +
-      '<div class="lib-field"><label for="ls-seen">For</label><select id="ls-seen">' + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
-      '<div class="lib-field wide"><label for="ls-say">What it must say</label><textarea id="ls-say" rows="3" required placeholder="Three points, in the order the audience needs them">' + esc(f.say || "") + "</textarea></div>" +
+      '<div class="lib-field"><label for="ls-seen">For</label><select id="ls-seen">' + opt("team", "Team", "team") + opt("colleges", "Colleges", "") + opt("public", "Public", "") + "</select></div>" +
       '<div class="lib-field wide"><label for="ls-sources">Data and sources</label><input id="ls-sources" type="text" placeholder="live_metrics.json, the funding model, last year\'s deck"></div>' +
-      '<div class="lib-field wide"><label for="ls-shape">Length, template or style</label><input id="ls-shape" type="text" placeholder="Five slides on the CO template; or 100 seconds with music and Sierra\'s voice" value="' + esc(f.shape || "") + '"></div>' +
-      sourcesFields("ls") +
-      '<div class="lib-field"><label for="ls-by">Your name</label><input id="ls-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
-      "</div>" +
-      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Save the brief</button>" +
-      '<button type="button" class="lib-btn" data-startcancel="1">Cancel</button></div></form>';
+      '<div class="lib-field wide"><label for="ls-shape">Length, template or style</label><input id="ls-shape" type="text" placeholder="From the kind: a deck on the CO template with a speaker script; a memo in the CO styles"></div>' +
+      sourcesFields("ls") + "</div></details>";
   }
 
   // Copy the request, beside Edit on any record with changes to make; once
@@ -2836,6 +2875,7 @@
       stateBlock(r) +
       '<div class="lib-details" id="lib-d-' + esc(r.id) + '">' + details(r) + "</div></div>";
   }
+  var LOOSE = "\u0002piece:";  // the key prefix for a piece in no project; never shown
   function bandNewestFirst(k, members) {
     var t = (members || []).reduce(function (m, r) { var x = Date.parse(modified(r)); return isNaN(x) || x < m ? m : x; }, -1);
     return t < 0 ? "z" : String(9e15 - t).padStart(16, "0");
@@ -2854,7 +2894,11 @@
       // The band holding the last-modified piece leads, as the Cards' project cards do (Sam, 2026-11-05: "the sort
       // descending by modified date only partially works--ELL is not at the top of the list but was last modified").
       // The engine runs bands A to Z on order(), so the newest time inverts into a fixed-width key; no time sorts last.
-      bands: { key: function (r) { return r.project || ""; }, by: "project", label: "Projects", none: "Not in a project",
+      // A piece in no project takes a key of its own (Sam, 2026-11-06: "thing in the list are categorized as Not in a
+      // Project and pushed to the bottom of the list. Make every item or project sort descending by date modified
+      // initially"): the engine ranks keyless rows after every band, so a loose piece now sorts by its own modified date
+      // among the projects, under a Not in a project line wherever it falls.
+      bands: { key: function (r) { return r.project || LOOSE + r.id; }, by: "project", label: "Projects", none: "Not in a project",
         order: bandNewestFirst,
         name: function (k) { return k; }, facts: function (k, members) { return members.length + " pieces"; } },
       panel: {
@@ -2979,7 +3023,7 @@
       // The List: the box to create or remediate, then every piece as a row; a row's card opens beside it.
       attention = "";
       // The box folds in the List (the Commons' fold): shut until opened, open while something in it is under way.
-      var busyBox = !!(state.pick || state.rem || state.start || state.form || state.piece);
+      var busyBox = !!(state.pick || state.rem || state.form || state.piece);
       controls = '<details class="lib-boxfold" id="lib-boxfold"' + (state.boxOpen || busyBox ? " open" : "") + '><summary>Create or remediate a document, or find a piece</summary>' +
         '<section aria-label="Create or remediate">' + datalists() + panelHtml() + "</section></details>" + '<section aria-label="Messages">' +
         (state.message && !state.msgFor ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "") + "</section>";
@@ -2991,7 +3035,7 @@
       "<p>The Library keeps one record per piece, and the file lives on the MAP team's SharePoint site: approved pieces in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its Drafts folder. ' +
       "The repos keep only the source that rebuilds each piece.</p>" +
-      "<p>Create or Remediate a Document saves a brief as a Requested record, or remediates a file in this browser. To revise a piece already here, press Revise on its card: say what to change, and Claude drafts it on the card in about a minute (a web page with a public copy) or a session rebuilds it (a deck, a document, a file on SharePoint). The card then shows what changed and its accessibility check; Replace the public copy makes it public. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
+      "<p>Create or Remediate a Document saves a new piece as a Requested record when you press Start, or remediates a file in this browser. To revise a piece already here, press Revise on its card: say what to change, and Claude drafts it on the card in about a minute (a web page with a public copy) or a session rebuilds it (a deck, a document, a file on SharePoint). The card then shows what changed and its accessibility check; Replace the public copy makes it public. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
       "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
@@ -3008,7 +3052,7 @@
     var lh = document.getElementById("lib-list"), E = lh && listEngine();
     if (E) E.render(lh);
     Object.keys(typed).forEach(function (id) {
-      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start)) return;
+      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || false) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
     painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
@@ -3059,39 +3103,6 @@
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
-  function submitStart() {
-    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
-    var f = { kind: g("ls-kind"), title: g("ls-title"), occasion: g("ls-occasion"), due: g("ls-due"), seen_by: g("ls-seen"),
-      say: g("ls-say"), sources: g("ls-sources"), shape: g("ls-shape"), by: g("ls-by") };
-    if (!f.by) { say("Add your name, so the brief says who asked for it.", true); render(); return; }
-    var madeFor = readFor("ls"), fp = forProblem(madeFor);
-    if (fp) { say(fp, true); render(); return; }
-    if (!(f.kind === "visual" && madeFor.for_kind === "college")) {
-      if (!f.title) { say("Add a working title.", true); render(); return; }
-      if (!f.say) { say("Say what the piece must say.", true); render(); return; }
-    }
-    if (f.kind === "visual" && madeFor.for_kind === "college") { rememberAuthor(f.by); makePair(madeFor.for_name, f.occasion, f.by); return; }
-    var srcErr = takeSource("ls", f.by);
-    if (srcErr) { say(srcErr, true); render(); return; }
-    rememberAuthor(f.by);
-    var brief = { say: f.say, requested_by: f.by, requested_on: today() };
-    if (f.sources) brief.sources = f.sources;
-    if (f.shape) brief.shape = f.shape;
-    if (f.due) brief.due = f.due;
-    write(TABLE_URL, { method: "POST", body: {
-      slug: slugFor(f.title), title: f.title, kind: f.kind || "deck", occasion: f.occasion || null,
-      status: "requested", seen_by: f.seen_by || "team", home: "not_filed", url: null, added_by: f.by, brief: brief,
-      for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
-      sources: state.src.ls || []
-    } }).then(function (saved) {
-      var row = Array.isArray(saved) ? saved[0] : saved;
-      if (row && row.id) state.briefShown[row.id] = true;
-      say("Saved as Requested. Copy the brief into a new session, or the next scheduled run picks it up.");
-      state.start = null; delete state.forPick.ls; state.src.ls = [];
-      return load();
-    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
-  }
-
   // The record pair a college's visual is (the first twelve were filed this way by the
   // CPL Opportunity side sessions, 2026-10-21): the live page, and the workbook its
   // Download CPL Extract makes, which is filed once the .xlsx is in SharePoint.
@@ -3130,7 +3141,7 @@
       return write(TABLE_URL, { method: "POST", body: pair[1] });
     }).then(function () {
       say("Made. " + college + "'s CPL Opportunity page and its workbook are in the Library, Made for College. List the page publicly when it is ready.");
-      state.start = null; delete state.forPick.ls; state.src.ls = [];
+      delete state.forPick.ls; state.src.ls = [];
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -3294,7 +3305,10 @@
       }
     });
     // The List's box fold: a toggle does not bubble, so it is caught on the way down.
-    root.addEventListener("toggle", function (e) { if (e.target && e.target.id === "lib-boxfold") state.boxOpen = e.target.open; }, true);
+    root.addEventListener("toggle", function (e) {
+      if (e.target && e.target.id === "lib-boxfold") state.boxOpen = e.target.open;
+      if (e.target && e.target.id === "ls-more") state.moreOpen = e.target.open;
+    }, true);
     root.addEventListener("change", function (e) {
       if (e.target.getAttribute && e.target.getAttribute("data-cbfile") && e.target.files && e.target.files[0]) { addCardFile(e.target.getAttribute("data-cbfile"), e.target.files[0]); return; }
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
@@ -3321,7 +3335,8 @@
         setPieceUse(e.target.value); render();
         var pu0 = document.getElementById("lc-pu-" + e.target.value); if (pu0) pu0.focus();
       }
-      else if (e.target.name === "lc-use") { state.use = e.target.value; }
+      // The choice shows or hides a new piece's fields and changes what Start does, so the panel repaints (2026-11-06).
+      else if (e.target.name === "lc-use") { state.use = e.target.value; render(); }
       else if (e.target.name === "lc-notes") { state.notesMode = e.target.value; }
       else if (e.target.id === "lc-autodraft") { state.autoDraft = e.target.checked; }
       else if (e.target.getAttribute && e.target.getAttribute("data-remoff") && state.rem) {
@@ -3363,7 +3378,6 @@
     root.addEventListener("submit", function (e) {
       e.preventDefault();
       if (e.target.id === "lib-addform") submitAdd();
-      else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
       else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
@@ -3402,7 +3416,6 @@
         state.pick = null; state.use = null; state.rem = null; say(""); render();
         var lk = document.getElementById("lc-link"); if (lk) { lk.value = ""; lk.focus(); }
       }
-      else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-go"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if ((v = b.getAttribute("data-request"))) copyRequest(v);
       else if ((v = b.getAttribute("data-revise"))) openCardBox(v);
@@ -3522,6 +3535,8 @@
     _state: state,
     _flagsOf: flagsOf,
     _collegePair: collegePair,
+    _kindFromWords: kindFromWords,
+    _defaultShape: defaultShape,
     _isDev: isDev,
     _briefText: briefText,
     _homeForUrl: homeForUrl,

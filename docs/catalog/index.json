@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 574,
+   "count": 576,
    "docs": [
     {
      "created": "2026-08-14",
@@ -574,6 +574,25 @@
      "title": "A bulk POST is one statement over the union of its keys",
      "type": "methodology",
      "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [
+      "kb/reference/cid_claim_holds.json",
+      "kb/_apply_cid_claim_holds.py",
+      "kb/_audit_cid_claims.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-c-id-claim-is-a-colleges-word-not-asccc.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "c-id",
+      "identity",
+      "cpl-recommendations"
+     ],
+     "title": "A C-ID claim in COCI is a college's word, not ASCCC's",
+     "type": "methodology",
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-08-23",
@@ -8234,11 +8253,12 @@
       "jwt",
       "magic-link",
       "raci",
-      "debugging"
+      "debugging",
+      "session-keeper"
      ],
      "title": "Refresh the access token before every write (don't trust a format-valid JWT)",
      "type": "methodology",
-     "updated": "2026-06-26"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-09-25",
@@ -10127,6 +10147,29 @@
      "title": "Playbook \u2014 Merging two existing CER credentials (existing\u2192existing fold)",
      "type": "playbook",
      "updated": "2026-06-04"
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [
+      "kb/_cer_decision_apply.py",
+      "kb/_fold_unclassified.py",
+      ".github/workflows/cer-decision-apply.yml",
+      ".github/workflows/cred-rename-apply.yml",
+      "kb/cer_decisions_out/2026-11-06/"
+     ],
+     "path": "docs/kb-notes/playbook-move-a-person-placed-title-in-the-cer.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "cer",
+      "curation",
+      "kb-curation",
+      "rule-10",
+      "revise-lane"
+     ],
+     "title": "Playbook \u2014 moving a local title a person placed in the CER",
+     "type": "playbook",
+     "updated": ""
     },
     {
      "created": "2026-06-01",
@@ -13722,7 +13765,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 98,
+   "count": 99,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14616,18 +14659,21 @@
      "updated": ""
     },
     {
-     "created": "2026-11-06",
+     "created": "2026-11-07",
      "governs": [],
      "path": "docs/library_handoff.md",
      "status": null,
      "tags": [
       "handoff",
       "library",
-      "cpl-pathways",
-      "my-college",
+      "credential-catalog",
+      "sierra",
+      "alignment",
+      "cer",
+      "decision-sheet",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyBackflip, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyBramble, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },
@@ -15331,6 +15377,20 @@
      "updated": "2026-08-19"
     },
     {
+     "created": "2026-11-06",
+     "governs": [],
+     "path": "docs/library_lessons_archive_2.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "library",
+      "archive"
+     ],
+     "title": "The Library and its filer \u2014 lessons, archive 2 (2026-10-24 to 2026-10-29)",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-08-26",
      "governs": [
       "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v2.docx"
@@ -15689,7 +15749,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-03"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-09-08",
@@ -15944,7 +16004,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-05"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-08-28",
@@ -15957,7 +16017,7 @@
      ],
      "title": "Local course \u2194 CR alignment \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-11-07"
     },
     {
      "created": "2026-08-28",
@@ -16113,7 +16173,7 @@
      ],
      "title": "Reviewer session lifetime & scope \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-09-09",
@@ -16153,7 +16213,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-07"
     },
     {
      "created": "2026-10-08",
@@ -16213,7 +16273,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-04"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-08-28",
@@ -16317,7 +16377,7 @@
      ],
      "title": "Data sources: the register of datasets that could fill a Commons gap",
      "type": null,
-     "updated": "2026-11-04"
+     "updated": "2026-11-06"
     },
     {
      "created": "2026-08-30",
@@ -16581,8 +16641,104 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 553,
+   "count": 559,
    "docs": [
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 596,
+     "path": "docs/session_596_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 596 handoff: Siskiyous extracting on the new reader; Lake Tahoe's SLOs loading",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 594,
+     "path": "docs/session_594_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 594 handoff: Mt. San Jacinto merged; Ohlone's gaps all the college's own",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 593,
+     "path": "docs/session_593_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 593 handoff: Monterey Peninsula merged; Mt. San Jacinto's Public Health A.S.-T loaded",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 592,
+     "path": "docs/session_592_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "slo",
+      "cpl-scheduled"
+     ],
+     "title": "Session 592 handoff: Monterey Peninsula reread, displayed and parked; Mission's SLOs loaded",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 591,
+     "path": "docs/session_591_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "credential-registry",
+      "ui-pass",
+      "slo",
+      "cpl-scheduled"
+     ],
+     "title": "Session 591 handoff: Monterey Peninsula's six read back, two reconcile steps; credential watch 49 added; the funding-model UI pass",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-06",
+     "governs": [],
+     "n": 590,
+     "path": "docs/session_590_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "security",
+      "org-phrase-scope-auth",
+      "slo",
+      "cpl-scheduled"
+     ],
+     "title": "Session 590 handoff: security step 2 merged and read back; Mission's SLO read and Lake Tahoe's trial running",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-05",
      "governs": [],
@@ -25997,5 +26153,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1391
+ "total": 1400
 }

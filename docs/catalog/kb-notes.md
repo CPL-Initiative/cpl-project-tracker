@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-574 document(s).
+576 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -44,6 +44,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
 | [A bulk delete's receipt reads the rows outside the session's context](../kb-notes/methodology-a-bulk-delete-receipt-reads-the-rows-outside-the-context.md) | methodology | published | 2026-10-23 | 2026-10-23 |
 | [A bulk POST is one statement over the union of its keys](../kb-notes/methodology-a-bulk-post-is-one-statement-over-the-union-of-its-keys.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A C-ID claim in COCI is a college's word, not ASCCC's](../kb-notes/methodology-a-c-id-claim-is-a-colleges-word-not-asccc.md) | methodology | published | 2026-11-06 | 2026-11-06 |
 | [A cache breakpoint must LEAD the prompt, and what sits behind it must not move](../kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display](../kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md) | methodology | published | 2026-08-21 | 2026-10-26 |
 | [A capped list must never read as a census](../kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md) | methodology | published | 2026-08-21 | 2026-08-21 |
@@ -435,7 +436,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Rebuild a jsonb value from its receipts and check its md5](../kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md) | methodology | published | 2026-10-02 | 2026-10-10 |
 | [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
 | [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
-| [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-11-06 |
 | [Render an HTML animation to MP4 from a headless browser](../kb-notes/methodology-render-an-html-animation-to-mp4.md) | methodology | published | 2026-09-25 | 2026-09-25 |
 | [Reorder by permutation, not by rewriting the config](../kb-notes/methodology-reorder-by-permutation-not-by-rewriting-the-config.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Reserved-key namespaces extend a key→override table with new block types (no schema migration)](../kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md) | methodology | published | 2026-06-28 | 2026-06-28 |
@@ -531,6 +532,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — build a CPL executive/board deck, and fill an existing brand PPTX template](../kb-notes/playbook-building-cpl-executive-presentations.md) | playbook | published | 2026-07-20 | 2026-08-10 |
 | [Playbook — loading a Microsoft Access export into Supabase](../kb-notes/playbook-access-export-to-supabase.md) | playbook | published | 2026-08-08 | 2026-08-08 |
 | [Playbook — Merging two existing CER credentials (existing→existing fold)](../kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |
+| [Playbook — moving a local title a person placed in the CER](../kb-notes/playbook-move-a-person-placed-title-in-the-cer.md) | playbook | published | 2026-11-06 |  |
 | [Playbook — Pre-stage optional auth before an external API enforces it](../kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — purge committed PII from git history (CustomReport_latest.json)](../kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — redeploying a shared, live Supabase Edge Function safely](../kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-08-22 |

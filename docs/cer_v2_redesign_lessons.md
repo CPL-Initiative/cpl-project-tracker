@@ -1112,3 +1112,23 @@ Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16
   **The hand-family work stops here.** The next gain is in the catalog, not the link: State Fire Training (99 titles),
   POST, CSLB and FEMA issue certifications the credential watch does not read. Adding them to `_issuers_watched` is the
   credential watch lane's call, and the link rebuild picks up whatever it adds.
+
+## Moved from the lane (SkyBeacon, 2026-11-06)
+
+Verbatim from `docs/reference/lanes/cer-procedures.md`, when the lane passed its 20 KB budget.
+
+**IB on the AP pattern (SkyInkberry, 2026-11-01; Sam kept it, Open Asks Sheet 150 card 1).**
+`kb/_ib_official_titles.py` holds IB's `Diploma Programme` subjects, current and retired, at IB's levels, named as the
+reference and the Cal-GETC IB list write them (*IB Language A: Literature HL*). A missing level takes HL, the
+exam colleges award IB credit for, and an SL-only subject takes SL (*IB World Religions SL*). The exam's language folds
+into the subject; a Language A exam in another language keeps *(Non-English)*. Brand-family's `ib` lane runs beside
+`ap`. The fold merged 49 IB credentials into 24 (receipt `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json`);
+the issuer reads *International Baccalaureate Organization (IBO)* everywhere. Eight live rows moved under `cer-ib-fold-skyinkberry@bot`, one of them Sam's issuer save
+(`ib_kb_curation_update_receipt.json`). Guard: `tests/ib_official_titles_test.py`.
+
+**CLEP on the same pattern (SkyTeaberry, 2026-11-01; Sam, Sheet 150 card 2: fold; #2633).** `kb/_clep_official_titles.py`
+holds College Board's 34 CLEP exams and the retired ones, one credential per exam: a language exam's levels fold in as
+score bands (*CLEP Spanish Language*), the numbered exams take 1 and 2 with no period subtitle, a renamed exam takes its
+current name (*CLEP Information Systems*). Brand-family's `clep` lane runs after `ib`. 48 CLEP names became 35; 33 live
+assignments and 3 panel markers moved under `cer-clep-fold-skyteaberry@bot` (`clep_kb_curation_update_receipt.json`);
+the two Level III markers stay under their old keys. Guard: `tests/clep_official_titles_test.py`.

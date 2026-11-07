@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-98 document(s).
+99 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -66,7 +66,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Kinesiology ⟵ Physical Education Convergence — Re-mint Scope](../kin_pe_convergence_scope.md) | `kin_pe_convergence_scope.md` | 2026-06-10 |  |
 | [Lean custom GitHub Pages deploy — scope + served-path manifest](../pages_lean_deploy_scope.md) | `pages_lean_deploy_scope.md` | 2026-06-29 |  |
 | [Letter Curator Hand-off Prompt](../letter_curator_handoff.md) | `letter_curator_handoff.md` | 2026-05-26 |  |
-| [Library — side-lane handoff (SkyBackflip, beside the CPL Queue routine)](../library_handoff.md) | `library_handoff.md` | 2026-11-06 |  |
+| [Library — side-lane handoff (SkyBramble, beside the CPL Queue routine)](../library_handoff.md) | `library_handoff.md` | 2026-11-07 |  |
 | [Loading the two new MAP Custom Report views](../map_custom_report_load.md) | `map_custom_report_load.md` | 2026-08-19 | 2026-08-19 |
 | [MAP Custom Reports — what the CPL daily feed needs (request for the MAP platform team)](../map_custom_report_request_for_malone.md) | `map_custom_report_request_for_malone.md` | 2026-08-09 |  |
 | [MAP CustomReport API — auth coordination + pre-stage](../map_api_auth_handoff.md) | `map_api_auth_handoff.md` |  |  |
@@ -103,6 +103,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [SkyView — the smaller backlog](../skyview_backlog.md) | `skyview_backlog.md` | 2026-09-07 | 2026-09-10 |
 | [Team-phrase auth expansion — recommendation + execution plan](../team_phrase_expansion_plan.md) | `team_phrase_expansion_plan.md` | 2026-07-03 |  |
 | [The CPL clean-up worklist — what to fix, in what order, and who fixes it](../map_cleanup_worklist.md) | `map_cleanup_worklist.md` | 2026-08-19 | 2026-08-19 |
+| [The Library and its filer — lessons, archive 2 (2026-10-24 to 2026-10-29)](../library_lessons_archive_2.md) | `library_lessons_archive_2.md` | 2026-11-06 |  |
 | [The §55050 draft against the GR Priorities register — what to change on each side](../t5_55050_vs_gr_register.md) | `t5_55050_vs_gr_register.md` | 2026-08-26 | 2026-08-26 |
 | [Title 5 §55050 — redraft architecture against Ed. Code Article 9 (SB 135)](../t5_55050_redraft_scope.md) | `t5_55050_redraft_scope.md` | 2026-08-26 | 2026-08-26 |
 | [TOP-dethroning side-lane — continuation handoff](../top_dethroning_handoff.md) | `top_dethroning_handoff.md` | 2026-07-16 |  |

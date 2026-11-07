@@ -1,0 +1,344 @@
+{
+ "run": "41993224666",
+ "index": "catalog:mission",
+ "host": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+ "system": "elumen",
+ "source_kind": "catalog",
+ "slugs": "mission",
+ "part": 1,
+ "of": 1,
+ "wanted": 759,
+ "slice": 12,
+ "at": "2026-11-05T08:21:11Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 11,
+   "none": 1
+  },
+  "status_not_200": 0,
+  "outcomes": 44
+ },
+ "rows": [
+  {
+   "code": "ACC 001A",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,acc001a?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,acc001a?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1345,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Prepare and interpret the four basic financial statements.",
+    "Apply transaction analysis, input transactions into the accounting system, and process this input using generally accepted accounting principles.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "0a8807b4ccbc27fea6db3a29bd1e1689"
+  },
+  {
+   "code": "AST 001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,ast001?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,ast001?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1540,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "The student will describe their location in the Universe in both time and space. The student will also describe today’s Universe in terms of the origin of the Universe and evolution of the matter that they are composed.",
+    "The student will identify the basic laws of physics and apply these laws throughout the Universe, from the Earth to the visible edge.",
+    "The student will contrast the environment around them with other environments on different planets and different star systems.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "f44de431484780f8db07b7a68e259763"
+  },
+  {
+   "code": "CHD 001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,chd001?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,chd001?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1870,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Analyze the development and behavior of children from conception through adolescence in the physical, social, emotional, and cognitive domains.",
+    "Apply knowledge of development and major theoretical frameworks to child observations.",
+    "Examine cultural, economic, political, and historical contexts that impact development from infancy through adolescence.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "c76441229c5aa6e7b4c9ea1ac7e950e8"
+  },
+  {
+   "code": "COM 010",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,com010?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,com010?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1460,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Apply nonverbal speaking techniques and principles in delivering an extended extemporaneous persuasive presentation while engaging a live audience.",
+    "Use proper outline format, phrasing, content development, logical subordination, and citations for an extended argumentative speech.",
+    "Responsibly use current research methods and tools to discover varied forms of information that are rhetorically adapted to clarify, amplify and substantiate main ideas.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "110d75a34f1ca71174d8356690317dc7"
+  },
+  {
+   "code": "ECONC 2001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,econc2001?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,econc2001?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1866,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Apply the model of supply and demand and the concept of elasticity to analyze the price and quantity decisions and outcomes in different markets.",
+    "Analyze the cost structure and consequent profit maximization of producers in various market structures.",
+    "Explain desirable outcomes of a competitive market and assess government policies in dealing with market failures.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "396c038b8ede9ce55f98d1f199ff4e81"
+  },
+  {
+   "code": "ETH 001A",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,eth001a?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,eth001a?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2658,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Produce work that reflect anti-racist and anti-colonial principles and promote resistance, social justice, solidarity and liberation as experienced by Native American, African American, Asian American, and Latina/Latino American communities.",
+    "Evaluate knowledge and theories produced by Native American, African American, Asian American, and Latina/Latino American communities to describe critical events in U.S. history that have shaped the struggles, lived experiences, cultures, and intellectual traditions of these communities.",
+    "Explain concepts of ethnic studies, including but not limited to race and ethnicity, racism, racialization, equity, ethno-centrism, eurocentrism, white supremacy, self-determination, liberation, decolonization and anti-racism.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "68bebe33ff5ce055f0cf6a1fc061e90b"
+  },
+  {
+   "code": "HIS 004A",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,his004a?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,his004a?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1633,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will identify major ancient and medieval civilizations in the West from prehistoric times to 1600, including the Renaissance.",
+    "Students will analyze of the major political, economic, social, cultural, and intellectual movements that shaped the Western World from prehistoric times to 1600, including the Renaissance.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "117eaac2e714a1052a16fd739517d867"
+  },
+  {
+   "code": "INS 810",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,ins810?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,ins810?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1164,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Develop an effective assistance session plan and/or make a revision based on the individual needs of the tutee/mentee they are helping.",
+    "Utilize effective questioning techniques and active listening skills.",
+    "Demonstrate effective strategies and techniques that actively engage students in the online tutoring learning process.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "6ea10dac6be2be6fa9d6d24906d95100"
+  },
+  {
+   "code": "MTT 010",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,mtt010?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,mtt010?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1276,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Collect, organize, and present measurement data in tabular and graphic form.",
+    "Measuring DC voltage, DC current, and resistance",
+    "Comparison of DC and AC circuits",
+    "Identify both process variable and control variable in a manufacturing process",
+    "Identify and understanding different process industries, e.g. pharmaceutical, water and wastewater, electronic parts, and oil & refinery.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "9d8bcae44968157774072000ee10a243"
+  },
+  {
+   "code": "PHI 001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,phi001?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,phi001?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1462,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Explain the views of the great philosophers.",
+    "Compare the views of philosophers on metaphysical and epistemological issues.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "975af5d2ddf658fd6b804263f2ea596d"
+  },
+  {
+   "code": "PSY 001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,psy001?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,psy001?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 0,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "SOC 001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,soc001?tenant=mission.elumenapp.com",
+   "named_by": [
+    "mission"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/24-25,course,soc001?tenant=mission.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1773,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Identify and explain the three main theoretical perspectives in sociology: Structural Functionalism, Social Conflict Theory, and Symbolic Interactionism.",
+    "Examine research methods used in gathering, organizing, and analyzing of data in sociology.",
+    "Apply the sociological imagination to analyze your own personal issues in terms of social influences.",
+    "Compare and contrast dimensions of social inequality with respect to race, class, and gender.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b7549ace22bc8113bbcb8e66723d1ff5"
+  }
+ ]
+}

@@ -866,6 +866,50 @@ async function seedExhibitsProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+/* The Exhibits tab's Requests view (SkyLoop, 2026-11-06): the public's asks to prioritize a credential, one line per
+   credential. The rows read behind the team phrase, which the sweep does not hold, so the read is answered here with
+   three rows (two credentials), and the table, its region and the counts are measured. */
+async function seedExhibitsRequests(page, theme) {
+  await page.route("**/rest/v1/credential_priority_requests*", (route) => route.fulfill({ status: 200, contentType: "application/json",
+    body: JSON.stringify([
+      { credential: "CompTIA Security+", issuer: "CompTIA", college: "Norco College", email: "a@example.edu", note: null, source: "catalog", status: "new", created_at: "2026-11-06T17:00:00Z" },
+      { credential: "CompTIA Security+", issuer: "CompTIA", college: null, email: null, note: null, source: "catalog", status: "noted", created_at: "2026-11-05T09:00:00Z" },
+      { credential: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", college: null, email: null, note: null, source: "catalog", status: "new", created_at: "2026-11-06T12:00:00Z" }]) }));
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/requests") location.hash = "exhibits/requests"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => Array.prototype.some.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+    (x) => x.textContent.indexOf("Requests") === 0) || document.querySelector("#exhibits-root .exh-views [aria-current='page']"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+      (x) => x.textContent.indexOf("Requests") === 0)[0];
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-pq tbody tr") || document.querySelector("#exhibits-root .exh-empty"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
+/* The Exhibits tab's CPL-AI recommendations view (SkyLantern, 2026-11-06): the hosted snapshot read from the repo, one
+   certification open (ASE A4), its pairs one line each, the first pair's report open with its domain table, so the
+   list box, the tier words, the college picker, the report and its evidence table are measured. */
+async function seedExhibitsCplAi(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/cpl-ai/ase4") location.hash = "exhibits/cpl-ai/ase4"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => document.querySelector("#exh-cplai #cai-pairs-wrap tbody tr button") || document.querySelector("#exh-cplai .exh-empty"), null, { timeout: 90000 });
+  await page.evaluate(() => { const b = document.querySelector("#exh-cplai #cai-pairs-wrap tbody tr button"); if (b) b.click(); });
+  await page.waitForFunction(() => document.querySelector("#exh-cplai .cai-report") || document.querySelector("#exh-cplai .exh-empty"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
 /* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
@@ -1557,6 +1601,9 @@ async function seedLibrary(page, theme, view) {
       if (t) t.click();
     });
     await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("libl-panel") || {}).textContent || ""), null, { timeout: 20000 });
+    // The create box open, a new piece's fields and More about it shown (one form, 2026-11-06).
+    await page.evaluate(() => { ["lib-boxfold", "ls-more"].forEach((id) => { const d = document.getElementById(id); if (d) d.open = true; }); });
+    await page.waitForTimeout(150);
     return;
   }
   await page.waitForFunction(() => /Accessibility checked/.test((document.getElementById("library-root") || {}).textContent || ""), null, { timeout: 20000 });
@@ -2618,6 +2665,7 @@ module.exports = {
   /* The public Library's own pages (S469; Sam, 2026-10-25: "GitHub Pages now"): a piece made
      as a Claude artifact, copied under library/<slug>/ by scripts/library_page.py. */
   "library-ell-iet": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points (public Library page)" },
+  "library-noncredit": { file: "library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html", title: "Noncredit to Credit (public Library page)" },
   "library-ell-iet-dark": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
   "library-cpl-overview": { file: "library/cpl-initiative-overview/index.html", title: "The CPL Initiative overview (public Library page)" },
@@ -2747,14 +2795,24 @@ module.exports = {
   },
   "public-adopt-matrix": {
     file: "library/adopt/index.html",
-    title: "Credential Catalog (public), College matrix",
+    title: "Credential Catalog (public), College matrix with a cell's panel open",
     seed: async (page) => {
       await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
-      await page.evaluate(() => {
-        const r = document.getElementById("ad-region"); r.value = r.options[1].value; r.dispatchEvent(new Event("change"));
-        const s = document.getElementById("ad-show"); s.value = "all"; s.dispatchEvent(new Event("change"));
-        document.querySelector('[data-view="matrix"]').click();
-      });
+      await page.evaluate(() => { document.querySelector('[data-view="matrix"]').click(); });
+      await page.waitForSelector("#ad-mx-body td.art button", { timeout: 20000 });
+      await page.evaluate(() => { document.querySelector("#ad-mx-body td.art button").click(); });
+      await page.waitForSelector("#ad-panel.open", { timeout: 20000 });
+    },
+  },
+  "public-adopt-list": {
+    file: "library/adopt/index.html",
+    title: "Credential Catalog (public), the List with every credit status",
+    widths: [390, 1280],
+    seed: async (page) => {
+      await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
+      await page.waitForFunction(() => !document.getElementById("kpi-harvested").hidden, null, { timeout: 20000 });
+      await page.evaluate(() => { document.getElementById("kpi-harvested").click(); });
+      await page.waitForSelector("#ad-tbl-body .req-w", { timeout: 20000 });
     },
   },
 
@@ -3382,7 +3440,7 @@ module.exports = {
      Every local course in COCI banded by M-ID, an Identities drawer open; one per theme. */
   "coci-lookup-list": {
     file: "index.html",
-    title: "COCI Lookup: the Courses List, banded by M-ID, its line and folded summary, a course's side panel, an Identities drawer open",
+    title: "Courses and Programs: the Courses List, banded by M-ID, its line and folded summary, a course's side panel, an Identities drawer open",
     routes: [{ hash: "coci-lookup", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCociList(page, "light"),
@@ -3390,7 +3448,7 @@ module.exports = {
   },
   "coci-lookup-list-dark": {
     file: "index.html",
-    title: "COCI Lookup: the Courses List, dark",
+    title: "Courses and Programs: the Courses List, dark",
     routes: [{ hash: "coci-lookup", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociList(page, "dark"),
@@ -3399,7 +3457,7 @@ module.exports = {
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */
   "coci-lookup-progress": {
     file: "index.html",
-    title: "COCI Lookup: Progress, the Common Course Reference's opened page",
+    title: "Courses and Programs: Progress, the Common Course Reference's opened page",
     routes: [{ hash: "coci-lookup/progress", name: "progress" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCociProgress(page, "light"),
@@ -3407,7 +3465,7 @@ module.exports = {
   },
   "coci-lookup-progress-dark": {
     file: "index.html",
-    title: "COCI Lookup: Progress, dark",
+    title: "Courses and Programs: Progress, dark",
     routes: [{ hash: "coci-lookup/progress", name: "progress-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociProgress(page, "dark"),
@@ -3640,6 +3698,38 @@ module.exports = {
     routes: [{ hash: "exhibits", name: "progress-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-requests": {
+    file: "index.html",
+    title: "Exhibits: Requests, the public's asks to prioritize a credential",
+    routes: [{ hash: "exhibits/requests", name: "requests" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsRequests(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-requests-dark": {
+    file: "index.html",
+    title: "Exhibits: Requests, dark",
+    routes: [{ hash: "exhibits/requests", name: "requests-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsRequests(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-cpl-ai": {
+    file: "index.html",
+    title: "Exhibits: CPL-AI recommendations, a certification's pairs and one report open",
+    routes: [{ hash: "exhibits/cpl-ai/ase4", name: "cpl-ai" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsCplAi(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-cpl-ai-dark": {
+    file: "index.html",
+    title: "Exhibits: CPL-AI recommendations, dark",
+    routes: [{ hash: "exhibits/cpl-ai/ase4", name: "cpl-ai-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsCplAi(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-list": {

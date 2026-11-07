@@ -4346,12 +4346,39 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.737,
+  "codes_found": [
+   "ANAT101",
+   "ANAT102",
+   "BIOLC1000H",
+   "CHEM100",
+   "CHEM101",
+   "HS120",
+   "HS121",
+   "HS123",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI108",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/public-health/public-health-a.s.-t/",
+   "title": "Public Health, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Public Health, A.S.-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": "adt",
+    "section_line": "public health science› public health science, a.s.-t",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 8269
  },
  {
   "control_number": "39466",

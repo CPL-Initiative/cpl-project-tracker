@@ -1057,3 +1057,95 @@ sharing pages 148-154 and two on the course availability table.
   unspaced codes such as BIOL298, ACCTG101); their units print only in the course descriptions ("3.0 Units"), so a
   reader step that takes a course's units from its description is next. Biotechnology 41767 sums 25-27 against its
   printed 28-30, the catalog's own disagreement. Cost: $2.64 + about $0.40 in forced retries.
+
+## S421 SkyTupelo (2026-10-19): the second reader built, three Jev sittings read, Cañada's Cal-GETC step and the six-row rollback
+
+- **The second reader is one dispatch away (#2246).** `program-requirements-extract` version 11 takes `provider`
+  (`anthropic` or `xai`): the same system prompt, user message and record schema go to xAI's chat endpoint with the
+  schema as `response_format`, the model is `XAI_MODEL` or the body's, never a guess, and the key is scrubbed from any
+  error. `kb/_second_reader.py` reads a college's failing records only from the capture's page when it is the page the
+  first reading came from (the S403 guard), scores the second reading with the one scorer and compares on
+  `requirements_md5`; `second-reader.yml` captures, reads and uploads the comparison. The key is a function secret, per
+  Sam's call 6 on sheet 23: the repo secret `xai-smoke.yml` reads only proves the key, and at 04:05Z it was unset.
+- **Jev's cause is reliable; its owner is not.** Three sittings (Cañada 22, Taft 24, Delta 49 rows; no errors; seconds
+  each after the free capture) and a session's verdicts beside every row in `kb/jev_harvest_verdicts/`. Where the
+  record's own notes settle it, Jev's cause held on 16 of 16 at Cañada and 15 of 21 at Taft (Delta: cause held on 17 of 49 (12 agree, 5 owner differs), and 29 of the 32 misses are one shape: Delta prints every total as a floor and the record's sum is a range whose low end meets it, so a scorer floor rule for the program total clears them).
+  Its misses have a shape: `excerpt_cut` where the text belongs to another program, `record_right_check_misfires` where
+  the extraction dropped a total the page prints. The owner leans wrong the same way everywhere: the scorer or the
+  extraction for a figure a college's procedure step supplies, or a page the reader cut. Read the owner as a hint.
+- **A verdicts file turns a sitting into a worklist.** Grouping the rows by cause found one fix for five Cañada rows
+  (Cal-GETC's units) and one for two Taft rows (the local GE pattern). The record's notes quote the page, so a session
+  settles most rows without the page; the rest say what the page would need to show.
+- **A reconcile step for a transfer-only figure must say so.** The first Cañada run set Cal-GETC's 34 on 26 records:
+  twenty transfer degrees and six local A.A./A.S. whose captured page spans the sibling transfer section (Earth Science
+  A.S. 30427 then failed at 64 past 60). `awards_match` gained `transfer`; `tests/program_requirements_reconcile_test.py`
+  pins it. Cañada's step cites Cañada's own GE page ("California General Education Transfer Curriculum (Cal-GETC) - 34
+  units minimum", page 79 of the hand-filed PDF) where Taft's cites Monterey Peninsula's.
+- **A cancel does not beat a reread already posting.** The reread dispatched on the wrong fills was canceled at
+  checkout by the clock, yet its receipt landed: 26 rows replaced. The receipt's before-images were the rollback:
+  a fresh live read (all six exactly as the write left them), the receipt's own SQL cut to the six, through
+  `supabase-migrate.yml` because the Supabase guard holds an UPDATE from `execute_sql`, a rollback receipt beside the
+  original (`kb/receipts/program_requirement_records_rollback_ca_ada_six_local_2026-10-19_s421.*`), verified live.
+  Dispatch a reread only after the filed records are what they should be.
+- **A PDF page read needs a span and the page after.** Keying on Cal-GETC spent the 14-page cap on the front matter;
+  keying on headings printed the heading pages, and every requirement block sits on the page after its heading.
+  `pdf_span` and `pdf_after` in the plan (three checks in `tests/college_page_read_test.py`). The catalog's own
+  wording came on the third read: "Completion of Cal-GETC (California General Education Transfer Curriculum)" closes
+  every Cal-GETC transfer block; Environmental Science AS-T prints CSU-GE for STEM 33 or IGETC for STEM 31 instead.
+- **Runs this session:** Cañada reconcile 39200870107 (reverted), reread 39201778849 (its receipt the rollback's source),
+  migrate 39202436931, reconcile 39202270482 (20 transfer records), reread 39203273818 (20 posted, 20 replaced), display
+  build 3d92deb7a816 (#2247; `step=display` on main run 39204942046), sittings 39197675380, 39204968617, 39206690775.
+  Cañada's failing records: 22 before, 17 after. Headline 11,630 to 11,635 complete.
+
+### Moved from the lane (S421 compaction)
+
+**A PDF catalog step may name its file** (`file` in place of `follow`, #2213), for a catalog page whose scripts fetch the PDF (Coursedog). **A Coursedog PDF is read by its "Title - CODE" headings** (`Biology - AS.BIO`; `pdf_code_assign()`, #2216): a program no heading names reads from no page. **A kept record must come from its source's page** (`filed_from()`, #2216): a reconcile run files fresh sources beside records it did not move, so test a reader change with a capture-only read (`extract=0`), never a reconcile. **A page read may keep a named vendor host's data calls** (`network_hosts`, #2216).
+
+**The readers:** CourseLeaf's sitemap road, which also reads an own-HTML catalog (`custom_html`) kept to its registry address's year segment (`year_scope()`); the curriQunet, eLumen and Acalog readers; the Coursedog reader (S414: the page's own program search call, its limit rewritten by a route, then each program's Requisites tab); and the whole-catalog PDF reader, which a procedure catalog step points at the PDF a catalog page links, carrying the file's year (#2202), and which prefers a clean heading or the control number (#2203).
+
+**Parked for the reader:** Diablo Valley, Santiago Canyon, Sierra, Foothill, San Jose City, MiraCosta, Orange Coast's 27 empty records, Reedley, Palomar, Ventura and Oxnard, and CCSF's 53 skipped records (lessons S407).
+
+## S422 SkyWillow (2026-10-19): San Joaquin Delta's three scorer readings, Taft's two GE patterns, Sierra Training's UI pass
+
+- **A verdicts file names the fix, and one fix can clear a college.** S421's reading of Delta's sitting said 29 of 32 misses
+  were one shape. Three scorer readings, each from the page's own words, took Delta's live rows from 154 to 195 of 202
+  passing (#2250): the program total read as a floor (`total_units_minimum`, set by a reconcile step on "Minimum Units
+  Required: N" and "Minimum Major Units Required: N", passing a sum whose low end meets it and nothing else), a
+  per-college `prefix_aliases` map (ANTH, ENGL, ARTH and COMM printed where the state file keeps ANTHR, ENG, ART and COM
+  ST; the scorer renames on its own copy, and never a code the file lists as printed), and a noncredit page printing only
+  "Total Contact Hours: N" (equal, `total_only`, only when every hours figure on the page is that total). The eight left
+  are the extraction's: 07304's double-counted electives, 16764's waivable piano block, 22244's unrecorded math, 45621's
+  area minimums, 11970's course-less GE areas, 19752's GE page, and 05630 and 44197 (a certificate total that counts GE;
+  a course taken four times).
+- **A new status string breaks consumers; a flag does not.** `program_record_machine_pass` (SQL), the tab, CPL Pathways
+  and the display build accept only `equal` and `unstated`. A new pass shape is `equal` plus a flag (`minimum`,
+  `within`, `total_only`), the way the degree check already does it.
+- **A new record field reaches the confirm-carry basis.** `program_record_carry_basis` strips the figures a reconcile
+  sets, so a person's confirm survives a reread; `tests/program_requirements_college_test.py` fails when a reconcile
+  field is missing from it. The basis change went live through `supabase-migrate.yml` after checking the live function
+  bodies matched the file (md5 of `prosrc`).
+- **Two reconciles in a row leave two run stamps; reread posts one.** Each reconcile stamps the records it changes with
+  its run, and `step=reread` posted only the newest run's seven. `reread --extracted-run` (the workflow's `force` input on
+  a reread) posts a named run; the function's guards still decide each row (195 replaced, 0 held). Better: put every
+  scorer change on the branch before the first reconcile. A reconcile checks out its dispatch commit, so a later push
+  needs a later run; cancel and redispatch while the capture is young.
+- **Taft's catalog prints two local GE patterns.** Three free page reads: the GE philosophy page states "General
+  Education Requirements (27 units – one course from each category)", and the Other Associate Degrees page says the CTE
+  degrees, Energy Technology and Occupational Safety and Health among them, "follow the local general education pattern of
+  only 18 units". No page words the 60 as a minimum, and neither A.S. page names a GE figure. With 18 the sums are 36 and
+  53 against 60; only Title 5's floor and unnamed electives would pass them, which is also what a dropped block looks
+  like (Fable's advice: cite the catalog's word for a floor or leave the record failing). No step was built (#2249); the
+  27 and 18 are a catalog disagreement for the college.
+- **The UI pass's sweep had never seen Sierra Training** (#2251): the signed-out cobi route paints the First Light
+  greeting over a sign-in note. A reviewer seed with synthetic rows for the six reads measures the tab; it was clean
+  before and after the conversion to underlined words.
+- **Runs this session:** Taft page reads 39215793482, 39216772779, 39217374801; Delta reconcile 39216608232 (canceled:
+  checked out before the alias commit), 39217405432, 39220195737; migrate 39216602991; reread 39223153428, 39223682919;
+  display build 5da99b0af549. No model spend.
+
+### Moved from the lane (S422 compaction)
+
+**Sam's sheet 29 (2026-10-04):** Sierra says "required", names each choose block and gives the printed total for a checked program, citing the catalog and its year (live, smokes 7l and 7q).
+
+**Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
+

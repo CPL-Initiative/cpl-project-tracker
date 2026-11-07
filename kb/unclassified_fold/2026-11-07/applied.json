@@ -1,0 +1,24 @@
+{
+  "folded": [],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Yoga 1",
+      "issuer": "California Community Colleges",
+      "raw": "Noncredit for KIN YO1",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-06T20:32:56.519255+00:00"
+    }
+  ],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 0,
+  "unified_titles_count": 5588
+}

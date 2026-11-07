@@ -42,6 +42,16 @@
 -- what separates "Introduction to FCAW" from "Advanced FCAW", two DIFFERENT
 -- recommendations on the same credential.
 --
+-- ...BUT A LEVEL WORD NEVER MEETS THE FLOOR ALONE (Sam, Open Asks Sheet 164
+-- card 3, 2026-11-07: "Tighten the floor"). advanced / beginning / basic /
+-- intermediate still score and still count in the denominator; the >= 1 floor
+-- counts only the other shared words, and `training` is now dropped outright.
+-- The case: "Advanced Strength Training" offered `MUS 4A Advanced Ear Training`
+-- at 0.612 at Sierra College; a sample of six credentials there had 10 of 18
+-- candidates sharing only a level word (Intermediate Chinese -> Intermediate
+-- Guitar). Migration: kb/migrations/2026-11-07_alignment_level_words.sql
+-- (rollback beside it).
+--
 -- ⚠️ CANDIDATES ARE DRAWN FROM THE COLLEGE'S WHOLE CATALOGUE. Scoping by TOP
 -- code would gate a determination on TOP, which CLAUDE.md Rule 7 forbids;
 -- top_code rides along so a caller can note corroboration, never to filter.

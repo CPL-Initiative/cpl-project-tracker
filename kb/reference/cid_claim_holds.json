@@ -1,0 +1,46 @@
+{
+ "_about": "COCI C-ID claims set aside. A college enters a course's C-ID in COCI with no gatekeeper, and the identity layer trusts that entry as it trusts the ASCCC approval table. A claim listed here is not trusted: the member export (excel_to_dashboard.py) treats its CIDNumber as blank, and kb/_apply_cid_claim_holds.py moves any articulation record it carried to the course's home. A claim qualifies only when four signals agree: the ASCCC C-ID approval table holds no approval for it (kb/cid_articulation_joins.json), and the course's subject, its TOP family and its title all disagree with every other member of the claimed C-ID (kb/_audit_cid_claims.py finds them). The home is the identity the same course holds at its sister colleges. Reverse a hold by deleting its entry and re-running the apply script with --rollback on its receipt. Ask the college to correct COCI; when it does, the hold has nothing left to hold.",
+ "_ruled": "Sam, 2026-11-06 (SkyHarbor): on Sierra College's CPL Pathways visual, 'the HIST course should not be recommend for Basic Training... Definitely don't want Sierra recommending this.' Carried out on the recommendation in the same session; reply to reverse.",
+ "holds": [
+  {
+   "control_number": "CCC000520534",
+   "college": "Moreno Valley College",
+   "course": "HES 1",
+   "title": "Health Science",
+   "top": "0837.00",
+   "claimed_cid": "HIST 150",
+   "claimed_title": "World History to 1500",
+   "home": "HLTH M1148",
+   "home_evidence": "HES 1 Health Science at Norco College and Riverside City College (the same district) sits in HLTH M1148 and carries the same Basic Military Training exhibit (MAPMM-BMT1-1-001); Moreno Valley's own BIO 35 Health Science is in HLTH M1148.",
+   "signals": [
+    "no ASCCC approval for HIST 150",
+    "subject HES, every other member HIST/HIS/HST/HUM",
+    "TOP 0837 Health Education, the C-ID's members 2205 History",
+    "title shares no word with any other member"
+   ],
+   "held_by": "SkyHarbor",
+   "held_on": "2026-11-06",
+   "units": 3.0
+  },
+  {
+   "control_number": "CCC000585241",
+   "college": "West Los Angeles College",
+   "course": "ADDICST 1",
+   "title": "Understanding Addiction And Counseling",
+   "top": "2104.40",
+   "claimed_cid": "PH 103",
+   "claimed_title": null,
+   "home": "COUN M1010",
+   "home_evidence": "ADDICST 1 Understanding Addiction and Counseling at East Los Angeles, Los Angeles City, Pierce and Southwest (the same district) sits in COUN M1010.",
+   "signals": [
+    "no ASCCC approval for PH 103",
+    "subject ADDICST, no other member shares it",
+    "TOP 2104.40, outside the C-ID's TOP family",
+    "title shares no word with any other member"
+   ],
+   "held_by": "SkyHarbor",
+   "held_on": "2026-11-06",
+   "units": 3.0
+  }
+ ]
+}

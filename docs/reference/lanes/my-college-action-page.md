@@ -47,11 +47,15 @@ page passed light, dark, 390px (the a11y target still measures only the empty pi
 
 ✅ **CPL Pathways in the new format (Sam, 2026-11-06: his call 2; then *"Require college first"*).** Mockup
 https://claude.ai/artifact/R3knxBm8aG9D3FMryD377y (Cerritos, real rows). The College select comes first (*Choose a
-college*); until one is chosen the tab asks for it and shows no cards, List or pathway. A college shows its head, five
-figure cards (Pathways; Carry CPL here; Could adopt; For consideration; Confirmed: every card counts programs and
-sets the List's filter, Sam's call 1, *"Yes to all"*), the program-data
+college*). **Until one is chosen the tab shows every college (SkyHarbor, 2026-11-06; Sam: *"a lazy load of the whole
+state when CPL Pathways opens...until you narrow down to a college"*)**: the index read carries each program's counts
+(`counts:display->counts`), so the statewide cards and List need no per-college read; the List names the college. Six
+figure cards (Pathways; Credentials; CPL here; Could adopt; For consideration; Confirmed; *"I don't like to use the word
+carry"*), a *Programs | Credentials* switch that brings the Credential Catalog in (`library/adopt/adopt_data.json`),
+and for a college its recommended credentials, four then *Show all N* in place (mock
+https://claude.ai/artifact/BRUR7BRD4LxVFauQ23NahP; full width). The statewide head carries the Catalog's photo arc (SkyMeadow, 2026-11-07; Sam: yes to the hero picture), cycling only on screen, with Pause photos and a still first photo under reduced motion (`tests/cpl_pathways_hero.test.js`). A college also shows the program-data
 line, one List of its pathways on `commons_list.js` (read-only; filter words Degrees, Certificates, Noncredit, Course maps,
-Carry CPL here, Could adopt, For consideration, Confirmed, Fails a check) and the My College fold. A title opens the
+CPL here, Could adopt, For consideration, Confirmed, Fails a check) and the My College fold. A title opens the
 pathway at full width with *Back to <college>'s pathways*, which returns to the List as left. The engine's new `open(r)`
 hook does that (cells are plain text when a List has no drawer). The per-record counts come from one read per college
 (`readCollegeRecords`: `counts:display->counts`, `total:display->figure->total`, `checks`, `measure`), shared with the

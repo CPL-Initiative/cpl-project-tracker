@@ -60,39 +60,41 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    55.0,
-    65.0
+    21.0,
+    31.0
    ],
    "stated": [
-    60.0,
-    60.0
+    21.0,
+    25.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education come to 55.0-65.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null,
-   "major": {
+   "against": "program",
+   "why": [],
+   "meets": true,
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     21.0,
-     31.0
+     55.0,
+     65.0
     ],
     "stated": [
-     21.0,
-     25.0
+     60.0,
+     60.0
     ],
-    "against": "program",
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
     "why": [],
-    "meets": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     5.0
+    ]
    }
   },
   "repeated": {
@@ -117,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +149,8 @@
     "Develop research projects employing the diverse methodologies of the social sciences and humanities.",
     "Assess the interdependence of global issues, such as inequality, food insecurity, global climate change, terrorism, and community displacement."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -304,20 +307,14 @@
    "Total Units 60 recorded as degree_total; electives fill to 60 transferable units as needed."
   ]
  },
- "extracted_run": 41192567009,
+ "extracted_run": 42195216637,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements')"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (college page read 42046379839 (Global Studies AA-T 37243): Global Studies AA-T 37243: 'TOTAL MAJOR UNITS 21-25 · Additional Requirements 35-39 · Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units · Total Units 60' (college page read 42046379839); the same 'electives, if needed, for a total of 60' the local-degree step reads as a floor (Open Asks Sheet 159 card 1, 'keep'))"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 41192567009
 }

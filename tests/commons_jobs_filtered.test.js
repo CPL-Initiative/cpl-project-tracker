@@ -42,9 +42,10 @@ check("(1) the routines' list follows the same order", carried.join(",") === "11
 const CM = JSON.parse(fs.readFileSync("kb/status/commons.json", "utf8"));
 const subj = CM.rows.find((r) => r.key === "subjects");
 const scanIssue = (subj.issues || []).find((i) => /scan findings to confirm or note/.test(i.words));
-check("(2) ⭐ the Commons file's scan findings count opens the Subjects List on its filter", !!scanIssue && scanIssue.open === "#canonical-subj4/list/scan", scanIssue && scanIssue.open);
+// The count leaves the card at zero (SkyBeacon, 2026-11-06), so a file with none passes; one with a count opens the List.
+check("(2) ⭐ the Commons file's scan findings count opens the Subjects List on its filter", !scanIssue || scanIssue.open === "#canonical-subj4/list/scan", scanIssue && scanIssue.open);
 const queued = [].concat.apply([], CM.queue.reasons.map((g) => g.items)).find((i) => i.ref === "subjects" && /scan findings/.test(i.words));
-check("(2) and so does its queue item", !!queued && queued.open === "#canonical-subj4/list/scan");
+check("(2) and so does its queue item", !scanIssue ? !queued : (!!queued && queued.open === "#canonical-subj4/list/scan"));
 const BUILD = fs.readFileSync("kb/_build_commons_status.py", "utf8");
 const allQueued = [].concat.apply([], CM.queue.reasons.map((g) => g.items)).concat(CM.queue.carried || []);
 const course = CM.rows.find((r) => r.key === "course");
@@ -77,8 +78,8 @@ const SCAN = { _scanned_at: "2026-11-04T06:00:00Z", _mid_codes: { stray_codes: 0
   await H.settle(); await H.settle();
   check("(3) ⭐ #canonical-subj4/list/scan lists the MQ disciplines with a finding to confirm or note", t.titles().join("|") === "Cabinet Making|Graphic Arts", t.titles().join("|"));
   const note = Array.from(t.d.querySelectorAll("#cs-list p")).map(txt).find((x) => /scan findings to confirm or note:/.test(x)) || "";
-  check("(3) the List says how many findings, on how many disciplines, and the one on a file", /4 scan findings to confirm or note: 3 findings on 2 MQ disciplines/.test(note)
-    && /an anchor key in the dead format in common_courses\.json, on a file rather than an MQ discipline/.test(note), note);
+  check("(3) the List says how many findings, on how many disciplines; an anchor finding is not one of them", /3 scan findings to confirm or note: 3 findings on 2 MQ disciplines/.test(note)
+    && !/common_courses\.json/.test(note), note);  // the anchor rules are re-key work with their own item (SkyBeacon, 2026-11-06)
   const p = await t.panel("Cabinet Making");
   const pt = txt(p);
   check("(3) ⭐ the panel names each finding and what the scan suggests", /Scan findings to confirm or note/.test(pt) && /a modal choice without a note: modal WOOD/.test(pt)

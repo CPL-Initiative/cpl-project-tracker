@@ -1,27 +1,68 @@
-/* The public adoption page (library/adopt/): settled credentials, the colleges that award credit for
- * each, and Request Quick Adopt in MAP. Sam, Open Asks Sheet 147 (2026-10-31), cards 1, 3 and 4.
+/* The public Credential Catalog (library/adopt/): every credential's credit status, the colleges that award credit for
+ * each, the way to ask a college to add or evaluate one, and an analysis for faculty. Sam, Open Asks Sheet 147
+ * (2026-10-31), and his asks of 2026-11-06 on the mock (https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds): the
+ * full width, a clickable matrix, a working adult's order (fields first, the exams last), multi-select pickers with
+ * College and District as one and the two region schemes as one, a List view, three figure tiles that open what they
+ * count, Credit status in public words with Show folded into it, A for a college that could adopt, a resizable side
+ * panel, and no bare "MAP" or "CPL" in public strings.
  *
- * Reads adopt_data.json (kb/_build_adopt_page.py). Writes nothing and remembers no filter (Sam,
- * 2026-10-21); ?college=<name> opens on one college, and the address follows the College pick so a
- * link can be sent. Could adopt is the course a college already teaches under the credential's
+ * Reads adopt_data.json (the settled credentials; kb/_build_adopt_page.py), then adopt_more.json (the other credit
+ * statuses: Being reviewed, Not yet evaluated, Known to a college with no credit yet), and adopt_align.json when a
+ * panel opens (kb/_build_adopt_align.py). Writes nothing and remembers no filter (Sam, 2026-10-21); the browser keeps
+ * only the theme and the panel's width (layout). ?college=<name> opens on one college and the address follows a single
+ * college pick, so a link can be sent. Could adopt is the course a college already teaches under the credential's
  * identity, never the TOP or C-ID overlap (Sam, 2026-09-24).
  *
- * window.CPL_ADOPT exposes the pure parts (scope, match, rows, csv) for tests/public_adopt.test.js.
+ * window.CPL_ADOPT exposes the pure parts (scope, stdOf, match, rows, cols, csv, groupKey) for tests/public_adopt.test.js.
  */
 (function () {
   "use strict";
 
-  var DATA_URL = "./adopt_data.json";
+  var DATA_URL = "./adopt_data.json", MORE_URL = "./adopt_more.json", ALIGN_URL = "./adopt_align.json", AI_URL = "./adopt_ai.json";
+  var SHARD_URL = "../../kb/cpl_ai/hosted/shards/";  // CPL-AI's whole recommendations, hosted frozen (kb/cpl_ai/hosted/)
+  var TIER = { 1: "Strong evidence", 2: "Faculty interpretation", 3: "Limited evidence" };
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";  // map_links.js MAP_PAGE
   var MAP_VIEW = "&View=Non-Military";
   var HANDOUT = "../cpl-opportunity/?college=";
-  var PAGE = 40;       // cards drawn at a time
+  var FIND_COLLEGE = "https://map.rccd.edu/cpllandingpages/";
+  var PORTAL = "https://creditforbeingyou.org/";
+  // The statewide route (Sam, Open Asks Sheet 162, 2026-11-06): a public request to prioritize review of a credential,
+  // never an evaluation promise. One INSERT-only function takes it; one aggregate returns the count beside each credential
+  // (kb/migrations/2026-11-06_credential_priority_requests.sql). The public anon key reads nothing else.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var ASK_URL = SUPABASE_URL + "/rest/v1/rpc/credential_priority_request";
+  var COUNTS_URL = SUPABASE_URL + "/rest/v1/rpc/credential_priority_counts";
+  // Add your credential (Sam, 2026-11-06: "yes, build the add your credential route"; DR-32): when the search finds
+  // nothing, a visitor names the credential, its issuer, its kind and a link. One INSERT-only function takes it; nothing
+  // shows until a reviewer verifies it, and the one read returns verified rows only
+  // (kb/migrations/2026-11-06_credential_submissions.sql).
+  var ADD_URL = SUPABASE_URL + "/rest/v1/rpc/credential_submission_add";
+  var VERIFIED_URL = SUPABASE_URL + "/rest/v1/rpc/credential_submissions_verified";
+  var KINDS = [["license", "A license"], ["certification", "A certification"], ["badge", "A badge"]];
+  var ASK = "Ask us to prioritize this credential";
+  var PAGE = 72;       // cards or rows drawn at a time
   var CHIPS = 6;       // Request Quick Adopt chips before "and N more"
   var ROW_H = 44;      // the matrix row height, px (CSS .mx tbody tr)
   var OVERSCAN = 12;   // rows drawn past the viewport, each side
+  var HERO_MS = 7000;
+  var PANEL_MIN = 360, PANEL_MAX = 1200, PANEL_DEFAULT = 560;
 
-  var D = null;
-  var state = { view: "list", shown: PAGE, rows: [], cols: [] };
+  // Credit status, in the public's words. The Commons keeps the curation words: awarded = Awarded somewhere,
+  // inmap = In MAP, no articulation yet, held = Held for title review, harvested = Harvested, no exhibit yet.
+  var STD = { awarded: "Earns credit at a college", here: "Earns credit here", open: "Earns credit elsewhere, could be added here",
+    inmap: "Known to a college, no credit yet", held: "Being reviewed", harvested: "Not yet evaluated" };
+  var STD_ORDER = ["awarded", "inmap", "held", "harvested"];
+  var STD_ORDER_SCOPED = ["here", "open", "inmap", "held", "harvested"];
+  var EXAM_ISSUERS = { "College Board": 1, "International Baccalaureate Organization (IBO)": 1,
+    "Defense Activity for Non-Traditional Education Support (DANTES)": 1 };
+  var EXAM_KEY = "exams", EXAM_LABEL = "High school and college exams (AP, IB, CLEP, DSST)";
+  var NONE_KEY = "none", NONE_LABEL = "No field assigned yet";
+
+  var D = null, A = null, R = [], AI = null;
+  var f = { q: "", colleges: {}, regions: {}, areas: {}, sectors: {}, types: {}, rec: {}, standing: { awarded: true }, sort: "field" };
+  var state = { view: "list", shown: PAGE, rows: [], cols: [], groups: [], flat: [], mxRows: [], sel: null, sc: null, other: {}, asks: {}, asksRead: false };
+  var pickers = {};
 
   function $(id) { return document.getElementById(id); }
   function esc(s) {
@@ -33,259 +74,651 @@
   function units(u) { u = Number(u || 0); return (Math.round(u * 10) / 10).toString(); }
   function plural(n, one, many) { return fmt(n) + " " + (n === 1 ? one : many); }
   function mapUrl(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
+  function keys(o) { return Object.keys(o || {}).filter(function (k) { return o[k]; }); }
+  function any(o) { return keys(o).length > 0; }
 
   /* ── The pure parts ─────────────────────────────────────────────────────────────── */
 
+  function isExam(c) { return EXAM_ISSUERS[c.i] === 1 || /^(AP|CLEP|IB|DSST) /.test(c.t || ""); }
+  function groupKey(c) { return isExam(c) ? EXAM_KEY : (c.s || NONE_KEY); }
+  function groupLabel(data, k) { return k === EXAM_KEY ? EXAM_LABEL : k === NONE_KEY ? NONE_LABEL : ((data.sectors || {})[k] || k); }
+
   // The colleges the college filters leave, as a set of indexes; null when no college filter is set.
   function scope(data, f) {
-    if (!f.college && !f.region && !f.area && !f.district) return null;
+    if (!any(f.colleges) && !any(f.regions) && !any(f.areas)) return null;
     var out = {};
     data.colleges.forEach(function (c, i) {
-      if (f.college && c[0] !== f.college) return;
-      if (f.district && c[2] !== f.district) return;
-      if (f.region && c[3] !== f.region) return;
-      if (f.area && c[4] !== f.area) return;
+      if (any(f.colleges) && !f.colleges[i]) return;
+      if (any(f.regions) && !f.regions[c[3]]) return;
+      if (any(f.areas) && !f.areas[c[4]]) return;
       out[i] = true;
     });
     return out;
   }
 
-  function inScope(sc, i) { return !sc || sc[i] === true; }
+  // A row's credit status as the picked scope sees it: an awarded credential is "here" or "open" inside a scope.
+  function stdOf(c, sc) {
+    if (c.std !== "awarded" || !sc) return c.std;
+    return c.a.some(function (a) { return sc[a[0]]; }) ? "here" : "open";
+  }
 
-  // Show: "open" = articulated somewhere, by no college in the scope (what the scope can adopt);
-  // "here" = articulated by a college in the scope; "all" = every settled credential.
-  function match(cred, f, sc) {
+  function match(c, f, sc, anyStanding) {
+    if (!anyStanding && !f.standing[stdOf(c, sc)]) return false;
     if (f.q) {
-      var hay = (cred.t + " " + (cred.i || "")).toLowerCase();
+      var hay = (c.t + " " + (c.i || "") + " " + (c.k || "") + " " + (c.c || []).map(function (x) { return x[1] || ""; }).join(" ")).toLowerCase();
       var words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
-      for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) < 0) return false;
+      for (var w = 0; w < words.length; w++) {
+        var re = new RegExp("(^|[^a-z0-9])" + words[w].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+        if (!re.test(hay)) return false;  // a word starts a word: "aws" finds AWS, never "chainsaws"
+      }
     }
-    if (f.sector && cred.s !== f.sector) return false;
-    if (f.type !== "" && f.type != null && (cred.y || []).indexOf(Number(f.type)) < 0) return false;
-    if (!sc) return true;
-    var here = cred.a.some(function (a) { return sc[a[0]]; });
-    if (f.show === "here") return here;
-    if (f.show === "open") return !here && cred.a.length > 0;
+    if (any(f.sectors) && !f.sectors[groupKey(c)]) return false;
+    if (any(f.types)) { if (!(c.y || []).some(function (y) { return f.types[y]; })) return false; }
+    if (f.rec && any(f.rec) && !((f.rec.sw && c.sw) || (f.rec.ai && c.ai))) return false;
     return true;
   }
 
-  function rows(data, f) {
-    var sc = scope(data, f);
-    var out = data.credentials.filter(function (c) { return match(c, f, sc); });
-    out.sort(function (x, y) {
-      // A college's own course first (it teaches a matching course), then the most colleges.
-      if (sc) {
+  function cmpTitle(x, y) { return x.t.localeCompare(y.t, "en", { sensitivity: "base", numeric: true }); }
+  function cmpMost(x, y) { return (y.a.length - x.a.length) || cmpTitle(x, y); }
+  function sorter(f, sc) {
+    var inner = (f.sort === "field-most" || f.sort === "most") ? cmpMost : cmpTitle;
+    return function (x, y) {
+      if (sc) {  // a college's own course first (it teaches a matching course)
         var cx = (x.c || []).some(function (c) { return sc[c[0]]; }) ? 1 : 0;
         var cy = (y.c || []).some(function (c) { return sc[c[0]]; }) ? 1 : 0;
         if (cx !== cy) return cy - cx;
       }
-      return (y.a.length - x.a.length) || x.t.localeCompare(y.t);
-    });
-    return out;
+      return inner(x, y);
+    };
+  }
+  function grouped(f) { return f.sort === "field" || f.sort === "field-most"; }
+
+  // Field order: the largest fields first, the exams last, so a working adult meets their trade before the AP list.
+  function fieldOrder(data, all) {
+    var n = {};
+    (data.credentials || []).forEach(function (c) { var k = groupKey(c); n[k] = (n[k] || 0) + 1; });
+    (all || []).forEach(function (c) { var k = groupKey(c); if (!n[k]) n[k] = 0; });
+    var ks = Object.keys(n).filter(function (k) { return k !== EXAM_KEY && k !== NONE_KEY; });
+    ks.sort(function (a, b) { return (n[b] - n[a]) || groupLabel(data, a).localeCompare(groupLabel(data, b)); });
+    if (n[NONE_KEY] != null) ks.push(NONE_KEY);
+    if (n[EXAM_KEY] != null) ks.push(EXAM_KEY);
+    return { keys: ks, n: n };
+  }
+
+  function rows(data, all, f) {
+    var sc = scope(data, f);
+    var list = all.filter(function (c) { return match(c, f, sc); });
+    list.sort(sorter(f, sc));
+    return list;
   }
 
   function cols(data, f) {
-    var sc = scope(data, f);
-    var out = [];
-    data.colleges.forEach(function (c, i) { if (inScope(sc, i)) out.push(i); });
+    var sc = scope(data, f), out = [];
+    data.colleges.forEach(function (c, i) { if (!sc || sc[i]) out.push(i); });
     return out;
   }
 
   function csvCell(v) {
     v = String(v == null ? "" : v);
-    return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+    return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
   }
-
   function csvList(data, list) {
-    var head = ["Credential", "Issuer", "CPL types", "Field (CIP sector)", "Colleges that award credit",
-      "Median units", "Awarded at", "Already teach a matching course", "MAP exhibits (Request Quick Adopt)"];
-    var lines = [head.map(csvCell).join(",")];
+    var lines = [["Credential", "Issuer", "How credit is given", "Field", "Credit status", "Colleges awarding", "Median units",
+      "Colleges and units", "Already teach a matching course", "Request Quick Adopt"].map(csvCell).join(",")];
     list.forEach(function (c) {
       lines.push([
-        c.t, c.i || "", (c.y || []).map(function (i) { return data.types[i]; }).join("; "),
-        c.s ? c.s + " " + (data.sectors[c.s] || "") : "", c.a.length, c.p == null ? "" : units(c.p),
+        c.t, c.i || "", (c.y || []).map(function (i) { return data.types[i]; }).join("; "), groupLabel(data, groupKey(c)),
+        STD[c.std] || "", c.a.length, c.p != null ? units(c.p) : "",
         c.a.map(function (a) { return data.colleges[a[0]][0] + " (" + units(a[1]) + ")"; }).join("; "),
         (c.c || []).map(function (x) { return data.colleges[x[0]][0] + (x[1] ? " (" + x[1] + ")" : ""); }).join("; "),
         (c.m || []).map(function (m) { return m[0] + " " + mapUrl(m[0]); }).join("; ")
       ].map(csvCell).join(","));
     });
-    return lines.join("\r\n") + "\r\n";
+    return lines.join("\r\n");
   }
-
   function csvMatrix(data, list, columns) {
     var lines = [["Credential"].concat(columns.map(function (i) { return data.colleges[i][0]; })).map(csvCell).join(",")];
     list.forEach(function (c) {
+      if (!c.a.length && !(c.c || []).length) return;
       var art = {}, could = {};
       c.a.forEach(function (a) { art[a[0]] = a[1]; });
       (c.c || []).forEach(function (x) { could[x[0]] = true; });
       lines.push([c.t].concat(columns.map(function (i) {
-        return i in art ? units(art[i]) : (could[i] ? "C" : "");
+        return art[i] != null ? units(art[i]) : could[i] ? "A" : "";
       })).map(csvCell).join(","));
     });
-    return lines.join("\r\n") + "\r\n";
+    return lines.join("\r\n");
   }
 
-  /* ── Reading the filters ────────────────────────────────────────────────────────── */
+  /* ── State ──────────────────────────────────────────────────────────────────────── */
 
-  function filters() {
-    return {
-      q: ($("ad-q").value || "").trim(),
-      college: $("ad-college").value, show: $("ad-show").value,
-      sector: $("ad-sector").value, type: $("ad-type").value,
-      region: $("ad-region").value, area: $("ad-area").value, district: $("ad-district").value
-    };
+  function scopeName() {
+    var cs = keys(f.colleges);
+    if (cs.length === 1) return D.colleges[Number(cs[0])][0];
+    if (cs.length > 1) return plural(cs.length, "college", "colleges");
+    return keys(f.regions).concat(keys(f.areas).map(function (a) { return "ASCCC Area " + a; })).join(", ");
   }
 
-  function scopeName(f) {
-    if (f.college) return f.college;
-    var parts = [];
-    if (f.district) parts.push(f.district);
-    if (f.region) parts.push(f.region);
-    if (f.area) parts.push("ASCCC Area " + f.area);
-    return parts.join(", ");
+  // A scope arriving opens the page on what that scope could add; a scope leaving returns to what earns credit.
+  function syncStandingToScope() {
+    var has = !!scope(D, f);
+    if (has === !!state.hadScope) return;
+    state.hadScope = has;
+    if (has) { if (f.standing.awarded) { delete f.standing.awarded; f.standing.open = true; } }
+    else if (f.standing.here || f.standing.open) { delete f.standing.here; delete f.standing.open; f.standing.awarded = true; }
   }
 
-  function fillSelect(sel, values, label) {
-    values.forEach(function (v) {
-      var o = document.createElement("option");
-      o.value = v[0]; o.textContent = label ? label(v) : v[1];
-      sel.appendChild(o);
+  function compute() {
+    var sc = scope(D, f);
+    var list = rows(D, R, f);
+    state.sc = sc;
+    state.cols = cols(D, f);
+    state.other = {};
+    if (f.q || any(f.rec)) R.forEach(function (c) { var k = stdOf(c, sc); if (!f.standing[k] && match(c, f, sc, true)) state.other[k] = (state.other[k] || 0) + 1; });
+    if (grouped(f)) {
+      var by = {};
+      list.forEach(function (c) { var k = groupKey(c); (by[k] = by[k] || []).push(c); });
+      var ks = state.order.keys.filter(function (k) { return by[k]; });
+      Object.keys(by).forEach(function (k) { if (ks.indexOf(k) < 0) ks.splice(ks.length - (by[EXAM_KEY] ? 1 : 0), 0, k); });
+      state.groups = ks.map(function (k) { return { key: k, label: groupLabel(D, k), items: by[k] }; });
+      state.flat = [];
+      state.groups.forEach(function (g) { state.flat.push({ head: g }); g.items.forEach(function (c) { state.flat.push({ c: c }); }); });
+    } else {
+      state.groups = [{ key: "all", label: "", items: list }];
+      state.flat = list.map(function (c) { return { c: c }; });
+    }
+    state.rows = list;
+    state.mxRows = state.flat.filter(function (r) { return r.head || (r.c.a.length || (r.c.c || []).length); });
+  }
+
+  /* ── Pickers: one control, several picks, headings where they help ──────────────── */
+
+  function picker(id, label, groups, read, write, every) {
+    var host = $(id), open = false, qs = "";
+    function sum() {
+      var picked = keys(read());
+      if (!picked.length) return [every, ""];
+      var names = [];
+      groups.forEach(function (g) { g.items.forEach(function (it) { if (read()[it.key]) names.push(it.label); }); });
+      return [names.join(", "), String(picked.length)];
+    }
+    function row(it, sub) {
+      return '<label class="pp-row' + (sub ? " sub" : "") + (it.count === 0 ? " off" : "") + '"><input type="checkbox" data-key="' + esc(it.key) + '" '
+        + (read()[it.key] ? "checked" : "") + '><span>' + esc(it.label) + "</span>" + (it.count != null ? '<span class="cnt">' + fmt(it.count) + "</span>" : "") + "</label>";
+    }
+    function draw() {
+      var s = sum();
+      host.innerHTML = '<span class="lab" id="' + id + '-lab">' + esc(label) + '</span>'
+        + '<button type="button" class="pick-btn" aria-haspopup="true" aria-expanded="' + open + '" aria-labelledby="' + id + '-lab ' + id + '-sum">'
+        + '<span class="sum" id="' + id + '-sum">' + esc(s[0]) + '</span>' + (s[1] ? '<span class="n">' + s[1] + '</span>' : "") + "</button>"
+        + '<div class="pick-pop" ' + (open ? "" : "hidden") + '><div class="pp-top"><input type="search" placeholder="Type to narrow" aria-label="Narrow the '
+        + esc(label) + ' list" value="' + esc(qs) + '"></div><div class="pp-list"></div><div class="pp-foot"><button type="button" class="word pp-clear">Clear</button>'
+        + '<button type="button" class="word pp-done">Done</button></div></div>';
+      var list = host.querySelector(".pp-list"), q = qs.toLowerCase(), html = "";
+      groups.forEach(function (g) {
+        var items = g.items.filter(function (it) { return !q || it.label.toLowerCase().indexOf(q) >= 0 || (g.head && g.head.toLowerCase().indexOf(q) >= 0); });
+        if (!items.length) return;
+        if (g.section) html += '<div class="pp-head">' + esc(g.section) + "</div>";
+        if (g.head) {
+          var all = items.every(function (it) { return read()[it.key]; });
+          html += '<div class="pp-grp"><label class="pp-row"><input type="checkbox" data-grp="' + esc(g.headKey) + '" ' + (all ? "checked" : "")
+            + '><span>' + esc(g.head) + '</span><span class="cnt">' + plural(items.length, "college", "colleges") + "</span></label>";
+          items.forEach(function (it) { html += row(it, true); });
+          html += "</div>";
+        } else items.forEach(function (it) { html += row(it, false); });
+      });
+      list.innerHTML = html || '<p class="empty">Nothing matches.</p>';
+      host.querySelector(".pick-btn").addEventListener("click", function () { open = !open; draw(); if (open) host.querySelector(".pp-top input").focus(); });
+      host.querySelector(".pp-top input").addEventListener("input", function (e) {
+        qs = e.target.value; var pos = e.target.selectionStart; draw();
+        var inp = host.querySelector(".pp-top input"); inp.focus(); try { inp.setSelectionRange(pos, pos); } catch (x) { /* fine */ }
+      });
+      list.addEventListener("change", function (e) {
+        var t = e.target, cur = read();
+        if (t.hasAttribute("data-grp")) {
+          var g = groups.filter(function (g) { return g.headKey === t.getAttribute("data-grp"); })[0];
+          g.items.forEach(function (it) { cur[it.key] = t.checked; });
+        } else cur[t.getAttribute("data-key")] = t.checked;
+        write(cur); draw(); redraw(true);
+      });
+      host.querySelector(".pp-clear").addEventListener("click", function () { write({}); draw(); redraw(true); });
+      host.querySelector(".pp-done").addEventListener("click", function () { open = false; draw(); host.querySelector(".pick-btn").focus(); });
+    }
+    document.addEventListener("click", function (e) {
+      var path = e.composedPath ? e.composedPath() : [];
+      if (open && path.indexOf(host) < 0 && !host.contains(e.target)) { open = false; draw(); }
+    });
+    host.addEventListener("keydown", function (e) { if (e.key === "Escape" && open) { open = false; draw(); host.querySelector(".pick-btn").focus(); } });
+    draw();
+    return { draw: draw };
+  }
+
+  function buildPickers() {
+    // College: one alphabetical list; a district heads its colleges only where it has more than one.
+    var byDist = {};
+    D.colleges.forEach(function (c, i) { (byDist[c[2]] = byDist[c[2]] || []).push(i); });
+    var entries = [];
+    Object.keys(byDist).forEach(function (d) {
+      var idx = byDist[d];
+      if (idx.length > 1) {
+        entries.push({ sortKey: d.replace(/ Community College District| Unified School District/i, ""), head: d, headKey: d,
+          items: idx.map(function (i) { return { key: String(i), label: D.colleges[i][0] }; }).sort(function (a, b) { return a.label.localeCompare(b.label); }) });
+      } else entries.push({ sortKey: D.colleges[idx[0]][0], head: null, items: [{ key: String(idx[0]), label: D.colleges[idx[0]][0] }] });
+    });
+    entries.sort(function (a, b) { return a.sortKey.localeCompare(b.sortKey); });
+    pickers.college = picker("pk-college", "College", entries, function () { return f.colleges; }, function (v) { f.colleges = v; }, "Every college");
+    // Region: the Strong Workforce regions and the ASCCC Areas under two headings.
+    var regs = {}, areas = {};
+    D.colleges.forEach(function (c) { regs[c[3]] = (regs[c[3]] || 0) + 1; areas[c[4]] = (areas[c[4]] || 0) + 1; });
+    var sw = Object.keys(regs).filter(Boolean).sort(function (a, b) {
+      var na = Number((a.match(/Region (\d+)/) || [])[1] || 99), nb = Number((b.match(/Region (\d+)/) || [])[1] || 99);
+      return na - nb || a.localeCompare(b);
+    });
+    pickers.region = picker("pk-region", "Region", [
+      { section: "Strong Workforce", head: null, items: sw.map(function (r) { return { key: "r:" + r, label: r, count: regs[r] }; }) },
+      { section: "ASCCC", head: null, items: Object.keys(areas).filter(Boolean).sort().map(function (a) { return { key: "a:" + a, label: "Area " + a, count: areas[a] }; }) }
+    ], function () {
+      var o = {}; keys(f.regions).forEach(function (r) { o["r:" + r] = true; }); keys(f.areas).forEach(function (a) { o["a:" + a] = true; }); return o;
+    }, function (v) {
+      f.regions = {}; f.areas = {};
+      keys(v).forEach(function (k) { if (k.slice(0, 2) === "r:") f.regions[k.slice(2)] = true; else f.areas[k.slice(2)] = true; });
+    }, "Every region");
+    pickers.sector = picker("pk-sector", "Field", [{ head: null, items: state.order.keys.map(function (k) { return { key: k, label: groupLabel(D, k), count: state.order.n[k] }; }) }],
+      function () { return f.sectors; }, function (v) { f.sectors = v; }, "Every field");
+    var tn = {}; D.credentials.forEach(function (c) { (c.y || []).forEach(function (y) { tn[y] = (tn[y] || 0) + 1; }); });
+    pickers.type = picker("pk-type", "How credit is given", [{ head: null, items: D.types.map(function (t, i) { return { key: String(i), label: t, count: tn[i] || 0 }; }) }],
+      function () { return f.types; }, function (v) { f.types = v; }, "Every way");
+    buildStanding();
+  }
+  function buildStanding() {
+    var sc = scope(D, f), n = {};
+    R.forEach(function (c) { var k = stdOf(c, sc); n[k] = (n[k] || 0) + 1; });
+    var order = sc ? STD_ORDER_SCOPED : STD_ORDER;
+    pickers.standing = picker("pk-standing", "Credit status", [{ head: null, items: order.map(function (k) { return { key: k, label: STD[k], count: n[k] || 0 }; }) }],
+      function () { return f.standing; }, function (v) { f.standing = v; }, "Every status");
+  }
+  function redrawPickers() { Object.keys(pickers).forEach(function (k) { pickers[k].draw(); }); }
+
+  function drawSel() {
+    var out = [];
+    keys(f.colleges).forEach(function (i) { out.push(["College", D.colleges[Number(i)][1], function () { delete f.colleges[i]; }]); });
+    keys(f.regions).forEach(function (r) { out.push(["Region", r, function () { delete f.regions[r]; }]); });
+    keys(f.areas).forEach(function (a) { out.push(["ASCCC", "Area " + a, function () { delete f.areas[a]; }]); });
+    keys(f.sectors).forEach(function (s) { out.push(["Field", groupLabel(D, s), function () { delete f.sectors[s]; }]); });
+    keys(f.types).forEach(function (y) { out.push(["How credit is given", D.types[Number(y)], function () { delete f.types[y]; }]); });
+    keys(f.standing).forEach(function (s) { out.push(["Credit status", STD[s], function () { delete f.standing[s]; }]); });
+    var host = $("ad-sel");
+    host.innerHTML = out.map(function (o, i) {
+      return '<span class="ch"><b>' + esc(o[0]) + "</b> " + esc(o[1]) + '<button type="button" data-i="' + i + '" aria-label="Remove ' + esc(o[1]) + '">✕</button></span>';
+    }).join("");
+    Array.prototype.forEach.call(host.querySelectorAll("button"), function (b) {
+      b.addEventListener("click", function () { out[Number(b.getAttribute("data-i"))][2](); redrawPickers(); redraw(true); });
     });
   }
 
-  function uniq(arr) { return arr.filter(function (v, i) { return v && arr.indexOf(v) === i; }).sort(); }
-
-  function setShowOptions(f) {
-    var sel = $("ad-show"), keep = sel.value, name = scopeName(f);
-    var opts = name
-      ? [["open", "Not adopted yet"], ["here", "Adopted here"], ["all", "Every credential"]]
-      : [["all", "Every credential"]];
-    sel.innerHTML = "";
-    fillSelect(sel, opts);
-    // A scope newly picked opens on what it has not adopted, the page's question.
-    var fresh = name && !state.scopeName;
-    sel.value = !fresh && opts.some(function (o) { return o[0] === keep; }) ? keep : opts[0][0];
-    state.scopeName = name;
-    sel.disabled = !name;
-  }
-
-  /* ── The Credentials view ───────────────────────────────────────────────────────── */
+  /* ── Cards ──────────────────────────────────────────────────────────────────────── */
 
   function quickAdopt(c, sc) {
     var ms = (c.m || []).slice();
     if (!ms.length) return "";
-    // One chip per building college; the scope's own colleges are never offered to themselves.
     var seen = {}, chips = [];
-    ms.forEach(function (m) {
+    ms.forEach(function (m) {  // one chip per building college; the scope's own colleges are never offered to themselves
       if (sc && m[1] >= 0 && sc[m[1]]) return;
       var who = m[1] >= 0 ? D.colleges[m[1]][1] : (m[2] || "MAP");
       if (seen[who]) return;
       seen[who] = true;
       chips.push('<a class="chip" href="' + esc(mapUrl(m[0])) + '" target="_blank" rel="noopener">' + esc(who)
-        + '<span class="sr-only"> built exhibit ' + esc(m[0]) + ', Request Quick Adopt in MAP</span></a>');
+        + '<span class="sr-only"> built exhibit ' + esc(m[0]) + ", Request Quick Adopt</span></a>");
     });
     if (!chips.length) return "";
     var more = chips.length - CHIPS;
-    return '<div class="chips"><span class="lbl">Request Quick Adopt from</span>' + chips.slice(0, CHIPS).join("")
+    return '<div class="chips"><span class="lbl">Ask to add it (Request Quick Adopt) from</span>' + chips.slice(0, CHIPS).join("")
       + (more > 0 ? '<span class="more">and ' + plural(more, "more college", "more colleges") + "</span>" : "") + "</div>";
   }
 
-  function card(c, sc, f) {
+  function evidence(c) {
+    var e = [];
+    if (c.k) e.push(c.k);
+    if (c.st) e.push(c.st === "new" ? "new this year" : c.st);
+    if (c.ct) e.push("Credential Engine CTID");
+    if (c.sk) e.push(plural(c.sk, "issuer skill area", "issuer skill areas"));
+    if ((c.src || []).indexOf("ca") >= 0) e.push("California license");
+    if ((c.src || []).indexOf("iss") >= 0) e.push("read from the issuer");
+    if ((c.src || []).indexOf("public") >= 0) e.push("added by a member of the public and checked by the team");
+    if (c.std === "held") e.push(c.n ? plural(c.n, "college has it on file", "colleges have it on file") : "on a college’s books");
+    return e.join(" · ");
+  }
+
+  function reqWord(c) { return '<div class="chips"><button type="button" class="word" data-open="' + c._i + '" data-req="1">' + ASK + '</button>' + askedWord(c) + "</div>"; }
+  // How many have asked us to prioritize a credential: the signal, shown wherever the credential is (Sam, Sheet 162).
+  /* Ask us to prioritize goes only where no college has articulated the credential (Sam, 2026-11-06: "only the ones that
+     have NOT been articulated by at least one college need the link"); an articulated one offers Request Quick Adopt. Being
+     reviewed counts as articulated: a college awards credit for it under a title being confirmed. */
+  function articulated(c) { return (c.a || []).length > 0 || c.std === "held"; }
+  function asked(c) { return state.asks[String(c.t || "").toLowerCase()] || 0; }
+  function askedWord(c) { var n = asked(c); return n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : ""; }
+  function askedCell(c) { var n = asked(c); return n ? '<span class="askn">' + n + " asked</span>" : ""; }
+
+  function otherCard(c) {
+    var says = c.std === "harvested" ? "No college has evaluated it for credit yet. You can ask for that below."
+      : c.std === "inmap" ? "A college has it on file and has not set credit for it yet."
+      : "A college awards credit for a credential by this name; the Credit for Prior Learning Initiative is confirming it is the same one.";
+    return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
+      + (c.i ? '<p class="meta">' + esc(c.i) + "</p>" : "") + '<div class="pills"><span class="pill ' + (c.std === "harvested" ? "harv" : "std") + '">' + esc(STD[c.std]) + "</span>" + badgeBtns(c, false) + "</div>"
+      + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
+  }
+
+  function card(c, sc) {
+    if (c.std !== "awarded") return otherCard(c);
     var types = (c.y || []).map(function (i) { return D.types[i]; }).join(", ");
-    var meta = [c.i, types, c.s ? D.sectors[c.s] : ""].filter(Boolean).join(" · ");
+    var meta = [c.i, types].filter(Boolean).join(" · ");
     var n = c.a.length;
-    var says = n
-      ? plural(n, "college awards", "colleges award") + " credit for it" + (c.p != null ? ", " + units(c.p) + " units at the median college." : ".")
+    var says = n ? plural(n, "college awards", "colleges award") + " credit for it" + (c.p != null ? ", " + units(c.p) + " units at the median college." : ".")
       : "No college awards credit for it yet.";
     var mine = sc ? (c.c || []).filter(function (x) { return sc[x[0]]; }) : [];
     var here = sc ? c.a.filter(function (a) { return sc[a[0]]; }) : [];
-    var html = '<article class="cred"><h3>' + esc(c.t) + "</h3>";
-    if (meta) html += '<p class="meta">' + esc(meta) + "</p>";
-    if (f.college && here.length) html += '<span class="here">Adopted here: ' + esc(units(here[0][1])) + " units</span>";
-    if (mine.length) {
-      html += '<span class="here">' + (f.college ? "Already teaches " + esc(mine[0][1] || "a matching course")
-        : plural(mine.length, "college here teaches", "colleges here teach") + " a matching course") + "</span>";
-    }
-    html += '<p class="says">' + esc(says) + "</p>" + quickAdopt(c, sc);
-    if (n) {
-      html += "<details><summary>See the colleges and their credit</summary><table><colgroup><col class=\"c1\"><col class=\"c2\"><col></colgroup>"
-        + '<thead><tr><th scope="col">College</th><th scope="col">Units</th><th scope="col">Courses and credit</th></tr></thead><tbody>';
-      c.a.forEach(function (a) {
-        html += '<tr><th scope="row">' + esc(D.colleges[a[0]][1]) + "</th><td>" + esc(units(a[1])) + "</td><td>" + esc(a[2]) + "</td></tr>";
+    var pills = "";
+    if (here.length) pills += '<span class="pill here">Earns credit here: ' + esc(here.map(function (a) { return D.colleges[a[0]][1] + " (" + units(a[1]) + ")"; }).join(", ")) + "</span>";
+    if (mine.length) pills += '<span class="pill could">Already teaches a matching course: ' + esc(mine.map(function (x) { return D.colleges[x[0]][1] + (x[1] ? ": " + x[1] : ""); }).join("; ")) + "</span>";
+    return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
+      + (meta ? '<p class="meta">' + esc(meta) + "</p>" : "") + badges(c, false) + '<p class="says">' + esc(says) + "</p>"
+      + (pills ? '<div class="pills">' + pills + "</div>" : "") + (here.length ? "" : quickAdopt(c, sc)) + (n ? "" : reqWord(c)) + "</article>";
+  }
+
+  function drawList() {
+    var sc = state.sc, budget = state.shown, html = "", total = 0, drawn = 0;
+    state.groups.forEach(function (g) {
+      total += g.items.length;
+      if (budget <= 0) return;
+      var slice = g.items.slice(0, budget); budget -= slice.length; drawn += slice.length;
+      if (g.label) html += '<section class="grp"><h3 class="grp-h">' + esc(g.label) + '<span class="cnt">' + plural(g.items.length, "credential", "credentials") + "</span></h3>";
+      html += '<div class="list">' + slice.map(function (c) { return card(c, sc); }).join("") + "</div>";
+      if (g.label) html += "</section>";
+    });
+    if (drawn < total) html += '<p class="sentinel" id="ad-list-sentinel">Loading ' + fmt(Math.min(PAGE, total - drawn)) + " more of " + fmt(total - drawn) + "…</p>";
+    $("ad-list").innerHTML = html;
+    $("ad-empty").hidden = total > 0;
+    var more = $("ad-more");
+    more.hidden = lazy.ok || drawn >= total;
+    more.textContent = "Show more (" + fmt(total - drawn) + " more)";
+    lazy.watch("list");
+  }
+
+  /* ── Recommendations: the badges, the college's first view, CPL-AI's evidence (Sam, 2026-11-06) ─────────── */
+
+  /* Sam: "like badges on the credential", the first attributes of the next credential registry. A statewide credit
+     recommendation recorded in MAP (the Fact Sheet's list), and the courses CPL-AI rated against a certification, as
+     evidence for faculty review. Each badge is a word that opens its section of the panel. */
+  function badgeBtns(c, compact) {
+    var out = "";
+    if (c.sw) out += '<button type="button" class="badge sw" data-open="' + c._i + '" data-sec="pn-sw" title="A statewide credit recommendation recorded in MAP">' + (compact ? "Statewide" : "Statewide recommendation") + "</button>";
+    if (c.ai) out += '<button type="button" class="badge ai" data-open="' + c._i + '" data-sec="pn-ai" title="Courses CPL-AI rated against this certification, for faculty review">' + (compact ? "CPL-AI" : "CPL-AI course match") + "</button>";
+    return out;
+  }
+  function badges(c, compact) { var b = badgeBtns(c, compact); return b ? '<div class="badges">' + b + "</div>" : ""; }
+
+  function drawRecFilter() {
+    var sw = $("f-sw"), ai = $("f-ai");
+    if (!sw || !ai || !D) return;
+    var n = D.counts || {};
+    sw.textContent = "Statewide recommendation" + (n.statewide ? " (" + fmt(n.statewide) + ")" : "");
+    ai.textContent = "CPL-AI course match" + (n.cplai ? " (" + fmt(n.cplai) + ")" : "");
+    sw.setAttribute("aria-pressed", String(!!f.rec.sw)); ai.setAttribute("aria-pressed", String(!!f.rec.ai));
+  }
+
+  function loadAI() {
+    if (AI || state.aiLoading) return;
+    state.aiLoading = true;
+    fetch(AI_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (a) { AI = a; })
+      .catch(function () { state.aiFailed = true; })
+      .then(function () {
+        state.aiLoading = false;
+        drawAdoptable();
+        if ($("pn-ai-wait") && $("ad-panel").classList.contains("open") && state.open) openPanel(state.open[0], state.open[1], false, null);
       });
-      html += "</tbody></table>";
-      var could = (c.c || []).filter(function (x) { return !sc || sc[x[0]]; });
-      if (could.length && !f.college) {
-        html += '<p class="meta">Already teach a matching course: ' + esc(could.map(function (x) { return D.colleges[x[0]][1]; }).join(", ")) + "</p>";
-      }
-      if (c.w) html += '<p class="meta">' + esc(plural(c.w, "more college teaches", "more colleges teach")) + " a course under a broader identity, not named here.</p>";
-      html += "</details>";
+  }
+  function aiCerts(c) { return (AI && AI.by_exhibit && AI.by_exhibit[c.t]) || []; }
+  // A college's courses CPL-AI rated against a credential's certifications, strongest first: [cert, course row].
+  function aiCourses(c, k, maxTier) {
+    var out = [];
+    aiCerts(c).forEach(function (cert) {
+      ((cert.by_college || {})[String(k)] || []).forEach(function (r) { if (r[2] <= (maxTier || 3)) out.push([cert, r]); });
+    });
+    return out.sort(function (x, y) { return x[1][2] - y[1][2] || (y[1][3] / (y[1][4] || 1)) - (x[1][3] / (x[1][4] || 1)); });
+  }
+  function awardsAt(c, k) { return (c.a || []).some(function (a) { return a[0] === k; }); }
+
+  /* A college's first view (Sam, 2026-11-06: "If you're Allan Hancock College and you open the cred catalog and select
+     Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
+     Request Adopt buttons on all their local aligned courses"; "before we show those, we list the statewides and AIs
+     that the college could adopt"). A credential is listed when it carries a statewide recommendation or a CPL-AI
+     match, the college does not award it yet, and the college teaches an aligned course: the course mapped to the
+     credential, or one CPL-AI rated Strong evidence or Faculty interpretation. */
+  function adoptable(data, all, k, filters) {
+    var out = [];
+    all.forEach(function (c) {
+      if (!(c.sw || c.ai) || awardsAt(c, k)) return;
+      if (filters && !match(c, filters, null, true)) return;
+      var mine = (c.c || []).filter(function (x) { return x[0] === k; });
+      var ai = aiCourses(c, k, 2);
+      if (!mine.length && !ai.length) return;
+      out.push({ c: c, mine: mine, ai: ai, qa: (c.m || []).some(function (m) { return m[1] !== k; }) });
+    });
+    return out.sort(function (x, y) {
+      return (y.qa - x.qa) || ((y.mine.length ? 1 : 0) - (x.mine.length ? 1 : 0))
+        || ((x.ai[0] ? x.ai[0][1][2] : 9) - (y.ai[0] ? y.ai[0][1][2] : 9)) || cmpTitle(x.c, y.c);
+    });
+  }
+  function adoptCard(x, k, sc) {
+    var c = x.c, who = D.colleges[k][1], lines = [];
+    x.mine.forEach(function (m) { lines.push("<li><b>" + esc(m[1] || "A course") + "</b>: mapped to this credential in MAP</li>"); });
+    x.ai.forEach(function (p) {
+      var r = p[1];
+      lines.push("<li><b>" + esc(r[0] + " " + r[1]) + "</b>: CPL-AI rated it " + esc(TIER[r[2]]) + ", " + r[3] + " of " + r[4]
+        + ' skill areas. <button type="button" class="word" data-rep="' + esc(p[0].code + "_" + r[5]) + '" data-code="' + esc(p[0].code) + '" data-from="' + c._i + '">Show the recommendation</button></li>');
+    });
+    var qa = quickAdopt(c, sc);
+    var n = (c.a || []).length;
+    return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
+      + (c.i ? '<p class="meta">' + esc(c.i) + "</p>" : "") + badges(c, false)
+      + '<p class="says">' + (n ? esc(plural(n, "college awards", "colleges award") + " credit for it; " + who + " does not yet.") : esc("No college awards credit for it yet.")) + "</p>"
+      + '<p class="lines">' + esc(who) + "’s aligned courses</p><ul class=\"aligned\">" + lines.join("") + "</ul>"
+      + (qa || (articulated(c) ? "" : reqWord(c))) + "</article>";
+  }
+  function drawAdoptable() {
+    var sec = $("adoptable");
+    if (!sec || !D) return;
+    var picked = keys(f.colleges);
+    if (picked.length !== 1) { sec.hidden = true; return; }
+    var k = Number(picked[0]), sc = state.sc;
+    if (state.adoptFor !== k) { state.adoptFor = k; state.adoptAll = false; }
+    var list = adoptable(D, R, k, f);
+    sec.hidden = false;
+    $("ad-adopt-h").textContent = "Recommended credentials " + D.colleges[k][0] + " could adopt";
+    var cap = state.adoptAll ? list.length : Math.min(list.length, 12);
+    $("ad-adopt-state").textContent = list.length ? plural(list.length, "credential", "credentials") + " with a statewide recommendation or a CPL-AI course match, and a course here that aligns"
+      : (AI || state.aiFailed ? "None yet: no credential with a statewide recommendation or a CPL-AI course match aligns with a course here that the college does not already award." : "Reading CPL-AI's course ratings…");
+    $("ad-adopt").innerHTML = list.slice(0, cap).map(function (x) { return adoptCard(x, k, sc); }).join("");
+    var more = $("ad-adopt-more");
+    more.hidden = cap >= list.length;
+    more.textContent = "Show all " + fmt(list.length);
+  }
+
+  function swBlock(c) {
+    if (!c.sw || !c.sw.length) return "";
+    var total = 0, exact = true;
+    c.sw.forEach(function (x) { var u = parseFloat(x.u); if (isNaN(u) || /[–-]/.test(String(x.u))) exact = false; else total += u; });
+    return '<h3 id="pn-sw">Statewide credit recommendation</h3><p class="lines">Recorded in MAP for every college: ' + plural(c.sw.length, "course", "courses")
+      + (exact ? ", " + units(total) + " units" : "") + ". Each college decides whether to adopt it, through MAP.</p>"
+      + '<table><thead><tr><th scope="col">Course</th><th scope="col" class="u">Units</th><th scope="col">C-ID</th><th scope="col">Exhibit</th></tr></thead><tbody>'
+      + c.sw.map(function (x) { return "<tr><td>" + esc(x.t) + '</td><td class="u">' + esc(x.u) + "</td><td>" + esc(x.cid || "") + "</td><td>" + (x.id ? '<a href="' + esc(mapUrl(x.id)) + '" target="_blank" rel="noopener">' + esc(x.id) + "</a>" : "") + "</td></tr>"; }).join("")
+      + "</tbody></table>";
+  }
+
+  // Beside a Strong evidence course at a college that does not award the credential: Request Quick Adopt, opening the
+  // exhibit a college already built in MAP, so faculty who agree with the rating can ask to adopt it from the line
+  // that makes the case (SkyBeacon's handoff, cer-procedures Next). A college MAP does not know, or a credential no
+  // college has built, offers nothing.
+  function adoptBeside(c, at, code) {
+    if (String(at) === "NaN" || !D.colleges[at]) return "";
+    var m = (c.m || []).filter(function (x) { return x[1] !== at; })[0];
+    if (!m) return "";
+    var from = m[1] >= 0 ? D.colleges[m[1]][1] : (m[2] || "MAP");
+    return ' <a class="word" href="' + esc(mapUrl(m[0])) + '" target="_blank" rel="noopener" title="Opens ' + esc(from)
+      + "'s exhibit in MAP; no sign-in is needed\">Request Quick Adopt<span class=\"sr-only\"> for " + esc(D.colleges[at][1] + " " + code)
+      + ", from " + esc(from) + "</span></a>";
+  }
+  function collegeName(key) { var n = Number(key); return String(n) === String(key) && D.colleges[n] ? D.colleges[n][0] : String(key); }
+  function aiBlock(c) {
+    if (!c.ai) return "";
+    var html = '<h3 id="pn-ai">Courses CPL-AI rated for faculty review</h3>';
+    if (!AI) return html + '<p class="lines" id="pn-ai-wait">' + (state.aiFailed ? "CPL-AI's ratings could not be read just now." : "Reading CPL-AI's ratings…") + "</p>";
+    var one = keys(f.colleges).length === 1 ? keys(f.colleges)[0] : null;
+    aiCerts(c).forEach(function (cert, j) {
+      var t = cert.by_tier || {}, byc = cert.by_college || {}, ks = Object.keys(byc);
+      ks.sort(function (x, y) { return collegeName(x).localeCompare(collegeName(y)); });
+      var strongOf = function (key) { return (byc[key] || []).some(function (r) { return r[2] === 1; }); };
+      var pickKey = [state.aiCollege, one].filter(function (x) { return x != null && byc[x]; })[0] || ks.filter(strongOf)[0] || ks[0];
+      var mine = byc[pickKey] || [], kNum = Number(pickKey);
+      var aw = String(kNum) === pickKey && awardsAt(c, kNum);
+      if (aiCerts(c).length > 1) html += '<p class="lines"><b>' + esc(cert.title) + "</b></p>";
+      if (cert.d && j === 0) html += '<p class="lines">' + esc(cert.d) + (cert.d.length >= 420 ? "…" : "") + "</p>";
+      html += '<p class="lines">CPL-AI rated courses at ' + plural(cert.colleges, "college", "colleges") + ": " + fmt(t["1"]) + " strong evidence, "
+        + fmt(t["2"]) + " faculty interpretation, " + fmt(t["3"]) + " limited evidence.</p>"
+        + '<div class="aipick"><label for="pn-aic-' + j + '">College</label><select id="pn-aic-' + j + '" data-aipick="1">'
+        + ks.map(function (key) { return '<option value="' + esc(key) + '"' + (key === pickKey ? " selected" : "") + ">" + esc(collegeName(key)) + "</option>"; }).join("") + "</select></div>"
+        + '<ul class="aligned">' + mine.map(function (r) {
+          return "<li><b>" + esc(r[0] + " " + r[1]) + '</b>: <span class="tier">' + esc(TIER[r[2]]) + "</span>, " + r[3] + " of " + r[4]
+            + ' skill areas matched. <button type="button" class="word" data-rep="' + esc(cert.code + "_" + r[5]) + '" data-code="' + esc(cert.code) + '">Show the recommendation</button>'
+            + (r[2] === 1 && !aw ? adoptBeside(c, kNum, r[0]) : "") + "</li>";
+        }).join("") + "</ul>"
+        + '<p class="lines">' + esc(collegeName(pickKey)) + (aw ? " awards credit for it in MAP." : " does not award credit for it yet; a course rated above is the evidence its faculty would review.") + "</p>";
+      var leads = ks.filter(function (key) { return String(Number(key)) === key && strongOf(key) && !awardsAt(c, Number(key)); });
+      if (leads.length) html += "<details><summary>The " + plural(leads.length, "college", "colleges") + " with a Strong evidence course that do not award it yet</summary><ul>"
+        + leads.map(function (key) {
+          return "<li>" + esc(D.colleges[Number(key)][1]) + ": " + byc[key].filter(function (r) { return r[2] === 1; }).map(function (r) {
+            return '<button type="button" class="word" data-rep="' + esc(cert.code + "_" + r[5]) + '" data-code="' + esc(cert.code) + '" aria-label="Show the recommendation for ' + esc(D.colleges[Number(key)][1] + " " + r[0]) + '">' + esc(r[0]) + "</button>";
+          }).join(", ") + "</li>";
+        }).join("") + "</ul></details>";
+    });
+    return html + '<p class="lines">AI-supported evidence summary for faculty review; not a CPL determination. ' + esc(AI.credit || "") + " " + esc(AI.caveat || "") + "</p>";
+  }
+
+  /* The CPL-AI recommendation, read from our hosted copy and shown in the panel, so the reader stays on the page
+     (Sam: "trying to keep them on the main page and not have to hop around"). */
+  var SHARDS = {};
+  function decode(buf) {
+    var b = new Uint8Array(buf);
+    if (b.length > 1 && b[0] === 0x1f && b[1] === 0x8b) {
+      if (typeof DecompressionStream !== "function") return Promise.reject(new Error("this browser cannot unpack the file"));
+      return new Response(new Blob([buf]).stream().pipeThrough(new DecompressionStream("gzip"))).text().then(JSON.parse);
     }
-    return html + "</article>";
+    return Promise.resolve(JSON.parse(new TextDecoder("utf-8").decode(b)));
+  }
+  function shard(code) {
+    if (!SHARDS[code]) SHARDS[code] = fetch(SHARD_URL + encodeURIComponent(code) + ".json.gz")
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.arrayBuffer ? r.arrayBuffer().then(decode) : r.json(); })
+      .catch(function (e) { delete SHARDS[code]; throw e; });
+    return SHARDS[code];
+  }
+  function reportUrl(id) { return ((AI && AI.page) || "https://map.rccd.edu/CPL-AI/") + "?report=" + encodeURIComponent(id) + "#recommendations"; }
+  function liList(items) { return items && items.length ? "<ul>" + items.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : ""; }
+  function openReport(code, pid) {
+    var from = state.open ? R[state.open[0]] : null, p = $("ad-panel");
+    var back = from ? '<p><button type="button" class="word" id="pn-back">Back to ' + esc(from.t) + "</button></p>" : "";
+    $("pn-kicker").textContent = "CPL-AI recommendation";
+    $("pn-body").innerHTML = back + '<p class="lines" role="status">Reading the recommendation…</p>';
+    p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
+    shard(code).then(function (sh) {
+      var pr = (sh.pairs || []).filter(function (x) { return x.id === pid; })[0];
+      if (!pr) throw new Error("not in the file");
+      var co = (sh.courses || {})[pr.course] || {}, pct = Math.round((pr.ratio || 0) * 100);
+      var rel = String(pr.relevance || "");
+      var html = back + "<h2>" + esc([co.college, (co.code || "") + " " + (co.title || "")].filter(Boolean).join(", ")) + '</h2><p class="meta">' + esc((sh.credential || {}).title || "") + "</p>"
+        + '<div class="conf-box"><p><b>' + esc(TIER[pr.tier] || "") + "</b>: " + bar(pr.ratio || 0) + " alignment (" + pct + "% of the skill areas), similarity " + esc(String(pr.cosine)) + "</p>"
+        + '<p class="lines">The evidence level is CPL-AI’s confidence: the share of the certification’s skill areas the course outline covers, and how closely their wording matches.</p></div>'
+        + '<dl class="rep"><dt>Skill areas matched</dt><dd>' + pr.matched_n + " of " + pr.domains_n + "</dd><dt>Relevance</dt><dd>" + esc(rel.charAt(0) + rel.slice(1).toLowerCase()) + "</dd>"
+        + "<dt>Units</dt><dd>" + esc((co.units && co.units.display) || "") + "</dd><dt>Discipline</dt><dd>" + esc(co.discipline || "") + "</dd></dl>"
+        + (pr.snapshot && pr.snapshot.length ? liList(pr.snapshot) : "")
+        + (pr.domains && pr.domains.length ? '<h3>The evidence, skill area by skill area</h3><div class="tblx" role="region" aria-label="Skill area evidence" tabindex="0"><table class="dom"><thead><tr><th scope="col">Skill area</th><th scope="col">Course</th><th scope="col">Certification</th><th scope="col">Course evidence</th><th scope="col">Certification evidence</th></tr></thead><tbody>'
+          + pr.domains.map(function (dm) { return '<tr><th scope="row">' + esc(dm.name) + "</th><td>" + (dm.courseCovered ? "Covered" : "Not covered") + "</td><td>" + (dm.credentialCovered ? "Covered" : "Not covered") + "</td><td>" + liList(dm.courseEvidence) + "</td><td>" + liList(dm.credentialEvidence) + "</td></tr>"; }).join("")
+          + "</tbody></table></div>" : "")
+        + (pr.scope_note ? '<p class="lines">' + esc(pr.scope_note) + "</p>" : "")
+        + (co.description ? "<details><summary>The course outline</summary><p class=\"lines\">" + esc(co.description) + "</p>" + (co.outcomes && co.outcomes.length ? "<p class=\"lines\"><b>Outcomes</b></p>" + liList(co.outcomes) : "") + "</details>" : "")
+        + '<p class="lines">' + esc(pr.disclaimer || "AI-supported evidence summary for faculty review; not a CPL determination.") + " " + esc((AI && AI.credit) || "") + " " + esc((AI && AI.caveat) || "") + "</p>"
+        + '<p class="lines"><a href="' + esc(reportUrl(pid)) + '" target="_blank" rel="noopener">The same recommendation on the CPL-AI page</a></p>';
+      $("pn-body").innerHTML = html;
+      p.scrollTop = 0;
+      var b = $("pn-back"); if (b) b.focus(); else $("pn-close").focus();
+    }).catch(function (e) {
+      $("pn-body").innerHTML = back + '<p class="lines">The recommendation could not be read (' + esc(e.message) + ').</p><p class="lines"><a href="' + esc(reportUrl(pid)) + '" target="_blank" rel="noopener">Open it on the CPL-AI page</a></p>';
+    });
   }
 
-  /* ── Worth a faculty review: the search and the field apply; a college scope does not,
-     since no college has an exhibit for any of them. ─────────────────────────────────── */
-  var REGISTRY = "https://credentialengineregistry.org/resources/";
+  /* ── The List ───────────────────────────────────────────────────────────────────── */
 
-  function reviewMatch(r, f) {
-    if (f.q) {
-      var hay = (r.t + " " + (r.i || "")).toLowerCase();
-      var words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
-      for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) < 0) return false;
+  // One line a credential (Sam, 2026-11-06): the credit status is its own column, the ask its own column on the right, and
+  // a cell too long for its column ends in an ellipsis with the whole text in its title.
+  var TBL_COLS = 9;
+  function drawTable() {
+    var budget = state.shown, html = "", total = 0, drawn = 0, sc = state.sc;
+    state.groups.forEach(function (g) {
+      total += g.items.length;
+      if (budget <= 0) return;
+      var slice = g.items.slice(0, budget); budget -= slice.length; drawn += slice.length;
+      if (g.label) html += '<tr class="band"><th scope="rowgroup" colspan="' + TBL_COLS + '">' + esc(g.label) + '<span class="cnt">' + plural(g.items.length, "credential", "credentials") + "</span></th></tr>";
+      html += slice.map(function (c) {
+        var n = c.a.length, field = groupLabel(D, groupKey(c));
+        var status = STD[stdOf(c, sc)] || "", ev = c.std !== "awarded" ? evidence(c) : "";
+        var types = (c.y || []).map(function (i) { return D.types[i]; });
+        var typeCells = (c.y || []).map(function (i) { return '<button type="button" class="word dd" data-type="' + i + '" title="Filter to this way of giving credit">' + esc(D.types[i]) + "</button>"; }).join(", ") || esc(c.k || "");
+        var ask = (n ? "" : '<button type="button" class="word req-w" data-open="' + c._i + '" data-req="1" title="' + esc(ASK) + '">Ask</button> ') + askedCell(c);
+        return '<tr><td title="' + esc(c.t) + '"><button type="button" class="word" data-open="' + c._i + '">' + esc(c.t) + "</button></td>"
+          + '<td title="' + esc(c.i || "") + '">' + (c.i ? '<button type="button" class="word dd" data-q="' + esc(c.i) + '" title="Search this issuer">' + esc(c.i) + "</button>" : "") + "</td>"
+          + '<td title="' + esc(field) + '"><button type="button" class="word dd" data-sector="' + esc(groupKey(c)) + '" title="Filter to this field">' + esc(field) + "</button></td>"
+          + '<td title="' + esc(types.join(", ") || c.k || "") + '">' + typeCells + "</td>"
+          + '<td class="st" title="' + esc([status, ev].filter(Boolean).join(" · ")) + '">' + esc(status) + "</td>"
+          + '<td class="rec">' + badges(c, true) + "</td>"
+          + '<td class="num">' + (n ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards" title="The colleges and their units">' + fmt(n) + "</button>" : "0") + "</td>"
+          + '<td class="num">' + (n && c.p != null ? '<button type="button" class="word" data-open="' + c._i + '" data-sec="pn-awards">' + esc(units(c.p)) + "</button>" : "") + "</td>"
+          + '<td class="ask">' + ask + "</td></tr>";
+      }).join("");
+    });
+    if (drawn < total) html += '<tr class="sentinel" id="ad-tbl-sentinel"><td colspan="' + TBL_COLS + '">Loading ' + fmt(Math.min(PAGE, total - drawn)) + " more of " + fmt(total - drawn) + "…</td></tr>";
+    $("ad-tbl-body").innerHTML = html;
+    $("ad-tbl-empty").hidden = total > 0;
+    var more = $("ad-more-t");
+    more.hidden = lazy.ok || drawn >= total;
+    more.textContent = "Show more (" + fmt(total - drawn) + " more)";
+    lazy.watch("table");
+  }
+
+  // Lazy loading (Sam, 2026-11-06): the next batch draws as the reader nears the end, in place of Show more. The List
+  // scrolls inside its own box, so its sentinel is watched against that box; the cards against the window. Where the
+  // browser has no IntersectionObserver, Show more stays.
+  var lazy = {
+    ok: typeof window !== "undefined" && typeof window.IntersectionObserver === "function",
+    obs: null,
+    watch: function (view) {
+      if (!lazy.ok) return;
+      if (lazy.obs) { lazy.obs.disconnect(); lazy.obs = null; }
+      var el = $(view === "table" ? "ad-tbl-sentinel" : "ad-list-sentinel");
+      if (!el) return;
+      lazy.obs = new window.IntersectionObserver(function (es) {
+        if (!es.some(function (e) { return e.isIntersecting; })) return;
+        lazy.obs.disconnect(); lazy.obs = null;
+        state.shown += PAGE;
+        if (state.view === "table") drawTable(); else if (state.view === "list") drawList();
+      }, { root: view === "table" ? $("ad-tbl-wrap") : null, rootMargin: "0px 0px 400px 0px" });
+      lazy.obs.observe(el);
     }
-    return !f.sector || r.s === f.sector;
-  }
-
-  function reviewRows(data, f) {
-    return (data.review || []).filter(function (r) { return reviewMatch(r, f); });
-  }
-
-  function reviewCard(r) {
-    var tags = [];
-    if (r.o) tags.push(["Occupations", r.o.join(", ") + (r.on ? ", and " + fmt(r.on) + " more" : "")]);
-    if (r.n) tags.push(["Industry", r.n.join(", ") + (r.nn ? ", and " + fmt(r.nn) + " more" : "")]);
-    if (r.f) tags.push(["Field", r.f]);
-    if (r.l) tags.push(["Level", r.l]);
-    var html = '<article class="cred"><h3>' + esc(r.t) + "</h3>";
-    if (r.i) html += '<p class="meta">' + esc(r.i) + "</p>";
-    if (tags.length) {
-      html += '<dl class="tags">' + tags.map(function (t) { return "<dt>" + esc(t[0]) + "</dt><dd>" + esc(t[1]) + "</dd>"; }).join("") + "</dl>";
-    }
-    if (r.r) html += '<p class="says">MAP holds a related credential from the same issuer: ' + esc(r.r) + ".</p>";
-    var links = [];
-    if (r.u) links.push('<a class="chip" href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer\'s page</a>');
-    links.push('<a class="chip" href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>');
-    html += '<div class="chips">' + links.join("") + "</div>";
-    return html + "</article>";
-  }
-
-  function drawReview(f) {
-    var sec = $("review");
-    if (!sec) return;
-    var all = D.review || [];
-    sec.hidden = all.length === 0;
-    if (!all.length) return;
-    var list = reviewRows(D, f);
-    $("ad-review").innerHTML = list.map(reviewCard).join("");
-    $("ad-review-empty").hidden = list.length > 0;
-    $("ad-review-state").textContent = list.length === all.length
-      ? plural(all.length, "credential", "credentials")
-      : fmt(list.length) + " of " + plural(all.length, "credential", "credentials");
-  }
-
-  function drawList(f) {
-    var sc = scope(D, f), list = state.rows;
-    $("ad-list").innerHTML = list.slice(0, state.shown).map(function (c) { return card(c, sc, f); }).join("");
-    $("ad-empty").hidden = list.length > 0;
-    var left = list.length - state.shown;
-    $("ad-more").hidden = left <= 0;
-    if (left > 0) $("ad-more").textContent = "Show " + Math.min(PAGE, left) + " more of " + fmt(left);
-  }
+  };
 
   /* ── The College matrix: a window over the rows ─────────────────────────────────── */
 
-  var mx = { first: -1, last: -1, focus: null };
+  var mx = { first: -1, last: -1 };
 
   function cellOf(c, col) {
     for (var i = 0; i < c.a.length; i++) if (c.a[i][0] === col) return { kind: "art", a: c.a[i] };
@@ -295,14 +728,12 @@
   }
 
   function buildMatrix() {
-    var wrap = $("ad-mx-wrap");
-    var cs = state.cols;
-    var colw = '<col style="width:clamp(180px,24vw,300px)">' + cs.map(function () { return '<col style="width:34px">'; }).join("");
+    var wrap = $("ad-mx-wrap"), cs = state.cols;
     var head = '<tr><th class="corner" scope="col">Credential</th>' + cs.map(function (i) {
-      return '<th class="ch" scope="col" title="' + esc(D.colleges[i][0]) + '">' + esc(D.colleges[i][1]) + "</th>";
+      return '<th class="ch" scope="col"><button type="button" data-col="' + i + '" title="' + esc(D.colleges[i][0]) + ': pick this college">' + esc(D.colleges[i][1]) + "</button></th>";
     }).join("") + "</tr>";
-    wrap.innerHTML = '<table class="mx" style="width:calc(clamp(180px,24vw,300px) + ' + (cs.length * 34) + 'px)"><colgroup>' + colw
-      + "</colgroup><thead>" + head + '</thead><tbody id="ad-mx-body"></tbody></table><div class="tip" id="ad-tip" role="tooltip" hidden></div>';
+    wrap.innerHTML = '<table class="mx" style="width:max(100%, calc(clamp(180px,22vw,320px) + ' + (cs.length * 34) + 'px))"><colgroup><col style="width:clamp(180px,22vw,320px)">'
+      + cs.map(function () { return "<col>"; }).join("") + "</colgroup><thead>" + head + '</thead><tbody id="ad-mx-body"></tbody></table>';
     mx.first = mx.last = -1;
     drawWindow(true);
   }
@@ -310,111 +741,347 @@
   function drawWindow(force) {
     var wrap = $("ad-mx-wrap"), body = $("ad-mx-body");
     if (!body) return;
-    var n = state.rows.length, cs = state.cols;
-    var top = Math.max(0, wrap.scrollTop - 150);
+    var rws = state.mxRows, n = rws.length, cs = state.cols;
+    var top = Math.max(0, wrap.scrollTop - 170);
     var first = Math.max(0, Math.floor(top / ROW_H) - OVERSCAN);
     var last = Math.min(n, Math.ceil((top + (wrap.clientHeight || 600)) / ROW_H) + OVERSCAN);
     if (!force && first === mx.first && last === mx.last) return;
     mx.first = first; mx.last = last;
-    var span = cs.length + 1;
-    var html = first > 0 ? '<tr class="spacer" style="height:' + (first * ROW_H) + 'px"><td colspan="' + span + '"></td></tr>' : "";
+    var span = cs.length + 1, html = first > 0 ? '<tr class="spacer" style="height:' + (first * ROW_H) + 'px"><td colspan="' + span + '"></td></tr>' : "";
     for (var r = first; r < last; r++) {
-      var c = state.rows[r];
-      html += '<tr data-r="' + r + '"><th scope="row" title="' + esc(c.t) + '"><span>' + esc(c.t) + "</span></th>";
+      var row = rws[r];
+      if (row.head) { html += '<tr class="grp-row"><th scope="row">' + esc(row.head.label) + '<span class="cnt">' + fmt(row.head.items.length) + '</span></th><td colspan="' + cs.length + '"></td></tr>'; continue; }
+      var c = row.c;
+      html += '<tr><th scope="row"><button type="button" data-open="' + c._i + '" title="' + esc(c.t) + '">' + esc(c.t) + "</button></th>";
       for (var k = 0; k < cs.length; k++) {
         var cell = cellOf(c, cs[k]);
-        var tab = mx.focus && mx.focus[0] === r && mx.focus[1] === k ? "0" : "-1";
-        if (!cell) { html += '<td data-k="' + k + '" tabindex="' + tab + '"><span class="sr-only">none</span></td>'; continue; }
-        if (cell.kind === "art") html += '<td class="art" data-k="' + k + '" tabindex="' + tab + '">' + esc(units(cell.a[1])) + "</td>";
-        else html += '<td class="could" data-k="' + k + '" tabindex="' + tab + '">C<span class="sr-only"> already teaches a matching course</span></td>';
+        var sel = state.sel && state.sel[0] === c._i && state.sel[1] === cs[k] ? " sel" : "";
+        if (!cell) { html += "<td" + (sel ? ' class="sel"' : "") + '><span class="sr-only">none</span></td>'; continue; }
+        if (cell.kind === "art") {
+          html += '<td class="art' + sel + '"><button type="button" data-open="' + c._i + '" data-at="' + cs[k] + '" aria-label="' + esc(D.colleges[cs[k]][0]) + ", " + esc(units(cell.a[1])) + ' units">' + esc(units(cell.a[1])) + "</button></td>";
+        } else {
+          html += '<td class="could' + sel + '"><button type="button" data-open="' + c._i + '" data-at="' + cs[k] + '" aria-label="' + esc(D.colleges[cs[k]][0]) + ' could adopt: it already teaches a matching course">A</button></td>';
+        }
       }
       html += "</tr>";
     }
     if (last < n) html += '<tr class="spacer" style="height:' + ((n - last) * ROW_H) + 'px"><td colspan="' + span + '"></td></tr>';
     if (!n) html = '<tr><td colspan="' + span + '" class="empty">No credential matches these filters.</td></tr>';
     body.innerHTML = html;
-    if (!mx.focus && n) {
-      var firstCell = body.querySelector("tr[data-r] td");
-      if (firstCell) firstCell.setAttribute("tabindex", "0");
+  }
+
+  /* ── The side panel ─────────────────────────────────────────────────────────────── */
+
+  function requestBlock(c) {
+    var picked = keys(f.colleges), pre = picked.length === 1 ? Number(picked[0]) : -1;
+    var college = pre >= 0 ? D.colleges[pre][0] : "";
+    var n = asked(c);
+    return '<h3 id="pn-req">' + ASK + (n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : "") + '</h3><div class="req">'
+      + '<p class="rtsub">Hold this credential, or teach for it? Two ways to ask. The analysis below is there for the faculty who look at it.</p>'
+      + '<p class="rt"><b>At your college.</b> ' + (college
+        ? 'Reach the person at ' + esc(college) + ' who handles credit for prior learning through <a href="' + FIND_COLLEGE + '" target="_blank" rel="noopener">Find your college</a>, and name this credential.'
+        : 'Pick your college above, or reach its credit for prior learning contact through <a href="' + FIND_COLLEGE + '" target="_blank" rel="noopener">Find your college</a>, and name this credential.')
+      + ' A student can also add it to their record and request credit at <a href="' + PORTAL + '" target="_blank" rel="noopener">Credit for Being You</a>.</p>'
+      + '<p class="rt"><b>Statewide.</b> Ask the Credit for Prior Learning Initiative and the Academic Senate (ASCCC) to prioritize this credential for review. Each request raises it in the order the Initiative works through with colleges. Whether a college evaluates it rests with that college&#x27;s faculty, and the Initiative sends no reply.</p>'
+      + '<form id="pn-ask-form" class="ask-form" data-cred="' + esc(c.t) + '" data-issuer="' + esc(c.i || "") + '">'
+      + '<label for="pn-ask-college">Your college <span class="opt">(optional)</span></label><input id="pn-ask-college" name="college" type="text" maxlength="120" autocomplete="organization" value="' + esc(college) + '">'
+      + '<label for="pn-ask-email">Email <span class="opt">(optional; for the Initiative&#x27;s records, no reply is sent)</span></label><input id="pn-ask-email" name="email" type="email" maxlength="200" autocomplete="email">'
+      + '<div class="ask-row"><button type="submit" class="word">Ask us to prioritize it</button></div>'
+      + '</form><p class="lines" id="pn-ask-msg" aria-live="polite"></p>'
+      + "</div>";
+  }
+
+  // The one public write: the credential, an optional college and email; the reply is the count so far.
+  function sendAsk(form) {
+    var msg = $("pn-ask-msg"), btn = form.querySelector("button[type=submit]");
+    var cred = form.getAttribute("data-cred") || "", key = cred.toLowerCase();
+    var email = (form.querySelector("[name=email]") || {}).value || "", college = (form.querySelector("[name=college]") || {}).value || "";
+    if (!cred) return;
+    if (btn) btn.disabled = true;
+    if (msg) msg.textContent = "Sending\u2026";
+    return fetch(ASK_URL, { method: "POST", headers: { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON },
+      body: JSON.stringify({ p_credential: cred, p_issuer: form.getAttribute("data-issuer") || null, p_college: college.trim() || null, p_email: email.trim() || null, p_note: null, p_source: "catalog" }) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (n) {
+        n = Number(n) || (state.asks[key] || 0) + 1;
+        state.asks[key] = n;
+        form.hidden = true;
+        if (msg) msg.textContent = "Asked. " + plural(n, "person has", "people have") + " asked us to prioritize this credential so far.";
+        var h = $("pn-req"); if (h) h.innerHTML = ASK + ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>";
+        if (state.view === "table") drawTable();
+      })
+      .catch(function () {
+        if (btn) btn.disabled = false;
+        if (msg) msg.textContent = "The request could not be sent. Try again in a moment, or ask through your college above.";
+      });
+  }
+  function loadAsks() {
+    return fetch(COUNTS_URL, { cache: "no-cache", headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        var asks = {};
+        rows.forEach(function (x) { if (x && x.credential && x.n > 0) asks[String(x.credential).toLowerCase()] = Number(x.n); });
+        state.asks = asks; state.asksRead = true;
+        if (state.view === "table") drawTable(); else if (state.view === "list") drawList();
+        drawReview();
+      })
+      .catch(function () { /* the page stands without the counts */ });
+  }
+
+  function bar(x) { return '<span class="conf" aria-hidden="true"><i style="width:' + Math.round(x * 100) + '%"></i></span>' + x.toFixed(2); }
+
+  function analysisBlock(c) {
+    var html = '<h3>Analysis for faculty</h3>';
+    if (!A) return html + '<p class="lines" id="pn-align-wait">' + (state.alignFailed ? "The analysis is not available right now." : "Reading the analysis…") + "</p>";
+    var a = A.align && A.align[c.t], cover = A.cover || {};
+    if (!a) {
+      return html + '<p class="lines">' + (c.sk ? "The issuer’s " + plural(c.sk, "skill area is", "skill areas are") + " harvested; the course outcomes of the colleges that could carry it are next."
+        : "The issuer’s skills are not harvested for this credential yet; the nightly watch adds a batch each run. Course outcomes are harvested for " + plural(cover.colleges || 0, "college", "colleges") + ", " + plural(cover.courses || 0, "course", "courses") + ", so far.") + "</p>";
     }
-  }
-
-  function tipFor(td) {
-    var tr = td.parentNode, r = Number(tr.getAttribute("data-r")), k = Number(td.getAttribute("data-k"));
-    var c = state.rows[r], col = state.cols[k];
-    if (!c || col == null) return "";
-    var cell = cellOf(c, col), who = D.colleges[col][0];
-    if (!cell) return "<b>" + esc(who) + "</b><br>" + esc(c.t) + ": not adopted yet.";
-    if (cell.kind === "art") return "<b>" + esc(who) + "</b><br>" + esc(c.t) + ": " + esc(units(cell.a[1])) + " units<br>" + esc(cell.a[2]);
-    return "<b>" + esc(who) + "</b><br>" + esc(c.t) + ": not adopted yet. Already teaches " + esc(cell.c[1] || "a matching course") + ".";
-  }
-
-  function showTip(td) {
-    var tip = $("ad-tip"), wrap = $("ad-mx-wrap");
-    if (!tip || !td || td.tagName !== "TD" || !td.parentNode.hasAttribute("data-r")) return;
-    tip.innerHTML = tipFor(td);
-    tip.hidden = false;
-    var w = wrap.getBoundingClientRect(), b = td.getBoundingClientRect();
-    var left = b.left - w.left + wrap.scrollLeft + b.width + 6;
-    if (left + 300 > wrap.scrollLeft + wrap.clientWidth) left = Math.max(wrap.scrollLeft, b.left - w.left + wrap.scrollLeft - 310);
-    tip.style.left = left + "px";
-    tip.style.top = (b.top - w.top + wrap.scrollTop) + "px";
-    if (!td.id) td.id = "ad-cell-" + td.parentNode.getAttribute("data-r") + "-" + td.getAttribute("data-k");
-    td.setAttribute("aria-describedby", "ad-tip");
-  }
-  function hideTip() { var t = $("ad-tip"); if (t) t.hidden = true; }
-
-  function focusCell(r, k) {
-    var n = state.rows.length, m = state.cols.length;
-    if (!n || !m) return;
-    r = Math.max(0, Math.min(n - 1, r)); k = Math.max(0, Math.min(m - 1, k));
-    mx.focus = [r, k];
-    var wrap = $("ad-mx-wrap");
-    var rowTop = r * ROW_H;
-    if (rowTop < wrap.scrollTop + 150 - ROW_H || rowTop > wrap.scrollTop + wrap.clientHeight - ROW_H * 2) {
-      wrap.scrollTop = Math.max(0, rowTop - wrap.clientHeight / 2);
+    html += '<p class="lines">Skills the issuer publishes (' + esc(a.issuer_skills_kind || "skill areas") + (a.source ? ', <a href="' + esc(a.source) + '" target="_blank" rel="noopener">source</a>' : "") + ')</p><ul class="skl">'
+      + a.skills.map(function (s) { return "<li>" + esc(s.domain) + (s.weight ? ' <span class="w">' + esc(String(s.weight)) + (/%/.test(String(s.weight)) ? "" : "%") + "</span>" : "") + "</li>"; }).join("") + "</ul>";
+    if (!a.courses.length) {
+      return html + '<p class="lines">Course outcomes are not harvested yet for the colleges that award it (the harvest covers ' + plural(cover.colleges || 0, "college", "colleges") + ", " + plural(cover.courses || 0, "course", "courses") + ").</p>";
     }
-    drawWindow(true);
-    var td = document.querySelector('#ad-mx-body tr[data-r="' + r + '"] td[data-k="' + k + '"]');
-    if (td) { td.focus(); showTip(td); }
+    var rws = [];
+    a.courses.forEach(function (co) { co.slos.forEach(function (s) { if (s.score >= 0.2) rws.push({ co: co, s: s }); }); });
+    rws.sort(function (x, y) { return y.s.score - x.s.score; });
+    var shortOf = function (name) { var c = D.colleges.filter(function (x) { return x[0] === name; })[0]; return c ? c[1] : name; };
+    html += '<p class="lines">Harvested course outcomes that align, strongest first</p><table class="al"><thead><tr><th scope="col">Course</th><th scope="col">Outcome</th><th scope="col">Skill area</th><th scope="col">Confidence</th></tr></thead><tbody>'
+      + rws.slice(0, 10).map(function (r) {
+        return "<tr><td>" + esc(shortOf(r.co.college)) + " " + esc(r.co.code) + '</td><td class="o">' + esc(r.s.text) + '</td><td class="o">' + esc(r.s.skill) + '</td><td class="sc">' + bar(r.s.score) + "</td></tr>";
+      }).join("") + "</tbody></table>";
+    var best = a.courses[0], ustr = "";
+    c.a.forEach(function (x) { if (D.colleges[x[0]][0] === best.college) ustr = units(x[1]) + " units"; });
+    html += '<div class="verdict"><b>Recommendation to adopt or adapt:</b> ' + esc(best.college) + "’s " + esc(best.code) + (best.title ? " (" + esc(best.title) + ")" : "") + " articulation pattern"
+      + (ustr ? ", " + ustr : "") + ". Outcomes cover " + a.covered + " of " + a.of + " skill areas; confidence " + bar(a.confidence || 0)
+      + '.<div class="lines">Illustrative: a word-overlap score on the harvested outcomes and the issuer’s skill areas. The Foundation and ASCCC skills-to-outcomes method replaces it, and faculty verify every alignment before it counts.</div></div>';
+    return html;
+  }
+
+  function openPanel(ci, at, toReq, toSec) {
+    var c = R[ci], sc = state.sc, p = $("ad-panel");
+    state.sel = at != null ? [ci, at] : null;
+    var types = (c.y || []).map(function (i) { return D.types[i]; }).join(", ");
+    var html = "<h2>" + esc(c.t) + '</h2><p class="meta">' + esc([c.i, types || c.k, groupLabel(D, groupKey(c))].filter(Boolean).join(" · ")) + "</p>"
+      + '<div class="pills"><span class="pill ' + (c.std === "harvested" ? "harv" : c.std === "awarded" ? "here" : "std") + '">' + esc(STD[stdOf(c, sc)]) + "</span>" + badgeBtns(c, false) + "</div>"
+      + (c.std !== "awarded" && evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "")
+      + (c.u ? '<p class="lines"><a href="' + esc(c.u) + '" target="_blank" rel="noopener">The issuer’s page</a></p>' : "");
+    if (at != null) {
+      var cell = cellOf(c, at), who = D.colleges[at][0];
+      if (cell && cell.kind === "art") html += '<div class="focus"><b>' + esc(who) + "</b> awards <b>" + esc(units(cell.a[1])) + " units</b> for it." + (cell.a[2] ? '<div class="lines">' + esc(cell.a[2]) + "</div>" : "") + "</div>";
+      else if (cell) html += '<div class="focus could"><b>' + esc(who) + "</b> has not adopted it yet and already teaches a matching course" + (cell.c[1] ? ": <b>" + esc(cell.c[1]) + "</b>" : "") + ". " + quickAdoptFor(c, at) + "</div>";
+    }
+    html += swBlock(c);
+    var n = c.a.length;
+    if (c.std === "awarded" || n) {
+      html += '<h3 id="pn-awards">' + (n ? plural(n, "college awards", "colleges award") + " credit for it" + (c.p != null ? " (" + units(c.p) + " units at the median college)" : "") : "No college awards credit for it yet") + "</h3>";
+      if (n) {
+        var a = c.a.slice().sort(function (x, y) { return y[1] - x[1] || D.colleges[x[0]][0].localeCompare(D.colleges[y[0]][0]); });
+        html += '<table><thead><tr><th scope="col">College</th><th scope="col" class="u">Units</th><th scope="col">Credit lines</th></tr></thead><tbody>'
+          + a.map(function (r) { return '<tr><td><button type="button" class="word" data-pick="' + r[0] + '">' + esc(D.colleges[r[0]][1]) + '</button></td><td class="u">' + esc(units(r[1])) + '</td><td class="lines">' + esc(r[2] || "") + "</td></tr>"; }).join("") + "</tbody></table>";
+      }
+      if (c.w) html += '<p class="lines">' + esc(plural(c.w, "more college teaches", "more colleges teach")) + " a course under a broader identity, not named here.</p>";
+    }
+    var could = (c.c || []).filter(function (x) { return !sc || sc[x[0]]; });
+    if (could.length) html += "<h3>Already teach a matching course and could adopt</h3><ul>" + could.map(function (x) { return "<li>" + esc(D.colleges[x[0]][1]) + (x[1] ? ": " + esc(x[1]) : "") + "</li>"; }).join("") + "</ul>";
+    var qa = quickAdopt(c, sc);
+    if (qa) html += "<h3>Ask a college to add it</h3>" + qa + '<p class="lines">Request Quick Adopt opens the Mapping Articulated Pathways (MAP) platform, where colleges record this credit; no sign-in is needed. It asks the college that set the credit to open an adoption.</p>';
+    if (c.m && c.m.length) html += "<h3>The colleges’ records behind this credential (MAP exhibits)</h3><ul>" + c.m.map(function (m) {
+      return '<li><a href="' + esc(mapUrl(m[0])) + '" target="_blank" rel="noopener">' + esc(m[0]) + "</a>" + (m[1] >= 0 ? " · " + esc(D.colleges[m[1]][1]) : m[2] ? " · " + esc(m[2]) : "") + "</li>";
+    }).join("") + "</ul>";
+    html += aiBlock(c) + (articulated(c) ? "" : requestBlock(c)) + analysisBlock(c);
+    state.open = [ci, at];
+    $("pn-kicker").textContent = at != null ? "Credential at " + D.colleges[at][1] : "Credential";
+    $("pn-body").innerHTML = html;
+    p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
+    $("pn-close").focus();
+    if (toReq) { var h = $("pn-req"); if (h) h.scrollIntoView(); }
+    else if (toSec) { var h2 = $(toSec); if (h2) h2.scrollIntoView(); else p.scrollTop = 0; }
+    else p.scrollTop = 0;
+    if (state.view === "matrix") drawWindow(true);
+    if (!A && !state.alignFailed) loadAlign(ci, at, toReq, toSec);
+    if (c.ai && !AI && !state.aiFailed) loadAI();
+  }
+  function quickAdoptFor(c, at) {
+    var ms = (c.m || []).filter(function (m) { return m[1] !== at; });
+    if (!ms.length) return "";
+    var seen = {}, chips = [];
+    ms.forEach(function (m) { var who = m[1] >= 0 ? D.colleges[m[1]][1] : (m[2] || "MAP"); if (seen[who]) return; seen[who] = true; chips.push('<a class="chip" href="' + esc(mapUrl(m[0])) + '" target="_blank" rel="noopener">' + esc(who) + "</a>"); });
+    return '<div class="chips"><span class="lbl">Ask to add it (Request Quick Adopt) from</span>' + chips.slice(0, CHIPS).join("") + "</div>";
+  }
+  function closePanel() {
+    var p = $("ad-panel");
+    p.classList.remove("open"); p.setAttribute("aria-hidden", "true"); document.body.classList.remove("panel-open");
+    state.sel = null;
+    if (state.view === "matrix") drawWindow(true);
+  }
+  function loadAlign(ci, at, toReq, toSec) {
+    state.alignLoading = true;
+    fetch(ALIGN_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (a) { A = a; })
+      .catch(function () { state.alignFailed = true; })
+      .then(function () {
+        state.alignLoading = false;
+        var w = $("pn-align-wait");
+        if (w && $("ad-panel").classList.contains("open")) openPanel(state.sel ? state.sel[0] : ci, state.sel ? state.sel[1] : null, false, "pn-awards");
+      });
+  }
+
+  // The panel's width: drag its left edge or press the arrow keys on it; the browser keeps the width (layout, never a filter).
+  function panelWidth() {
+    var grip = $("pn-grip"), drag = null, cur = PANEL_DEFAULT;
+    function max() { return Math.max(PANEL_MIN, Math.min(PANEL_MAX, Math.round(window.innerWidth * 0.9))); }
+    function setW(w, keep) {
+      w = Math.max(PANEL_MIN, Math.min(max(), Math.round(w)));
+      document.documentElement.style.setProperty("--panel-w", "min(" + w + "px, 100vw)");
+      grip.setAttribute("aria-valuenow", String(w)); grip.setAttribute("aria-valuemax", String(max()));
+      if (keep) { try { localStorage.setItem("cpl_catalog_panel_w", String(w)); } catch (e) { /* private window */ } }
+      return w;
+    }
+    try { cur = Number(localStorage.getItem("cpl_catalog_panel_w")) || PANEL_DEFAULT; } catch (e) { cur = PANEL_DEFAULT; }
+    cur = setW(cur, false);
+    grip.addEventListener("pointerdown", function (e) {
+      drag = { x: e.clientX, w: cur }; document.body.classList.add("panel-resizing");
+      try { grip.setPointerCapture(e.pointerId); } catch (x) { /* fine */ }
+      e.preventDefault();
+    });
+    grip.addEventListener("pointermove", function (e) { if (drag) cur = setW(drag.w + (drag.x - e.clientX), false); });
+    function end() { if (!drag) return; drag = null; document.body.classList.remove("panel-resizing"); setW(cur, true); }
+    grip.addEventListener("pointerup", end); grip.addEventListener("pointercancel", end);
+    grip.addEventListener("keydown", function (e) {
+      var step = e.shiftKey ? 96 : 24;
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") { cur = setW(cur + step, true); e.preventDefault(); }
+      else if (e.key === "ArrowRight" || e.key === "ArrowDown") { cur = setW(cur - step, true); e.preventDefault(); }
+      else if (e.key === "Home") { cur = setW(max(), true); e.preventDefault(); }
+      else if (e.key === "End") { cur = setW(PANEL_MIN, true); e.preventDefault(); }
+    });
+    window.addEventListener("resize", function () { cur = setW(cur, false); });
+  }
+
+  /* ── Worth a faculty review: the search and the field apply; a college scope does not. ─── */
+  var REGISTRY = "https://credentialengineregistry.org/resources/";
+
+  function reviewMatch(r, f) {
+    if (f.q) {
+      var hay = (r.t + " " + (r.i || "") + " " + (r.f || "")).toLowerCase();
+      var words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) < 0) return false;
+    }
+    return !any(f.sectors) || !!f.sectors[r.s || NONE_KEY];
+  }
+  function reviewRows(data, f) { return (data.review || []).filter(function (r) { return reviewMatch(r, f); }); }
+  function reviewCard(r) {
+    var tags = [];
+    if (r.o) tags.push(["Occupations", r.o.join(", ") + (r.on ? ", and " + fmt(r.on) + " more" : "")]);
+    if (r.n) tags.push(["Industry", r.n.join(", ") + (r.nn ? ", and " + fmt(r.nn) + " more" : "")]);
+    if (r.f) tags.push(["Field", r.f]);
+    if (r.l) tags.push(["Level", r.l]);
+    var html = '<article class="cred"><h3>' + esc(r.t) + "</h3>";
+    if (r.i) html += '<p class="meta">' + esc(r.i) + "</p>";
+    if (tags.length) html += '<dl class="tags">' + tags.map(function (t) { return "<dt>" + esc(t[0]) + "</dt><dd>" + esc(t[1]) + "</dd>"; }).join("") + "</dl>";
+    if (r.r) html += '<p class="says">A related credential from the same issuer already earns credit: ' + esc(r.r) + ".</p>";
+    var links = [];
+    if (r.u) links.push('<a class="chip" href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer’s page</a>');
+    links.push('<a class="chip" href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>');
+    return html + '<div class="chips">' + links.join("") + "</div>"
+      + (r._k != null ? '<div class="chips"><button type="button" class="word" data-review="' + r._k + '">' + ASK + "</button>" + askedWord(r) + "</div>" : "") + "</article>";
+  }
+  /* A Worth a faculty review credential has no college articulating it, so its panel carries the request (Sam, 2026-11-06). */
+  function openReview(k) {
+    var r = (D.review || [])[k], p = $("ad-panel");
+    if (!r) return;
+    state.sel = null;
+    var html = "<h2>" + esc(r.t) + '</h2><p class="meta">' + esc([r.i, r.f].filter(Boolean).join(" · ")) + "</p>"
+      + '<div class="pills"><span class="pill harv">Worth a faculty review</span></div>'
+      + '<p class="lines">No California community college has set credit for it yet. <a href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>'
+      + (r.u ? ' · <a href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer&#x27;s page</a>' : "") + "</p>"
+      + requestBlock({ t: r.t, i: r.i });
+    $("pn-kicker").textContent = "Credential";
+    $("pn-body").innerHTML = html;
+    p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
+    $("pn-close").focus();
+    var h = $("pn-req"); if (h) h.scrollIntoView();
+  }
+  function drawReview() {
+    var sec = $("review");
+    if (!sec) return;
+    var all = D.review || [];
+    sec.hidden = all.length === 0;
+    if (!all.length) return;
+    var list = reviewRows(D, f);
+    (D.review || []).forEach(function (r, k) { r._k = k; });
+    $("ad-review").innerHTML = list.map(reviewCard).join("");
+    $("ad-review-empty").hidden = list.length > 0;
+    $("ad-review-state").textContent = list.length === all.length ? plural(all.length, "credential", "credentials") : fmt(list.length) + " of " + plural(all.length, "credential", "credentials");
   }
 
   /* ── Drawing ────────────────────────────────────────────────────────────────────── */
 
-  function draw(resetPaging) {
-    var f = filters();
-    setShowOptions(f);
-    f = filters();
-    if (resetPaging) state.shown = PAGE;
-    state.rows = rows(D, f);
-    state.cols = cols(D, f);
-    var name = scopeName(f);
-    var n = state.rows.length;
-    var what = f.show === "open" ? " not yet adopted at " + name : f.show === "here" ? " adopted at " + name : "";
-    $("ad-state").textContent = plural(n, "credential", "credentials") + what;
+  function redraw(reset) {
+    f.q = ($("ad-q").value || "").trim();
+    syncStandingToScope();
+    var sk = JSON.stringify([f.colleges, f.regions, f.areas]);
+    if (state.lastScopeKey !== sk) { state.lastScopeKey = sk; buildStanding(); }
+    if (reset) state.shown = PAGE;
+    compute();
+    drawSel();
+    var name = scopeName(), n = state.rows.length, ks = keys(f.standing);
+    var what = name && ks.length === 1 && ks[0] === "open" ? " earning credit elsewhere that " + name + " could add"
+      : name && ks.length === 1 && ks[0] === "here" ? " earning credit at " + name : "";
+    $("ad-state").textContent = plural(n, "credential", "credentials") + what + (grouped(f) ? " in " + plural(state.groups.length, "field", "fields") : "");
     $("ad-note").textContent = name
-      ? (f.show === "open" ? "Each one is awarded at another college. Those whose course the college already teaches come first." : "")
+      ? (f.standing.open && !f.standing.here ? "Each one earns credit at another college. Those whose course this college already teaches come first within a field." : "")
       : "Showing " + fmt(D.credentials.length) + " credentials a person or a rule has reviewed; more join as the review finishes.";
-    var h = $("ad-handout");
-    h.hidden = !f.college;
-    if (f.college) h.href = HANDOUT + encodeURIComponent(f.college);
-    try {
-      var url = f.college ? "?college=" + encodeURIComponent(f.college) : location.pathname;
-      history.replaceState(null, "", url);
+    var oth = Object.keys(state.other), o = $("ad-other");
+    o.hidden = !oth.length;
+    if (oth.length) {
+      o.innerHTML = "Also matching with another credit status: " + oth.map(function (k) { return '<button type="button" class="word" data-std="' + k + '">' + fmt(state.other[k]) + " " + esc(STD[k].toLowerCase()) + "</button>"; }).join(", ") + ".";
+      Array.prototype.forEach.call(o.querySelectorAll("[data-std]"), function (b) { b.addEventListener("click", function () { f.standing[b.getAttribute("data-std")] = true; redrawPickers(); redraw(true); }); });
+    }
+    var hiddenRows = state.flat.length - state.mxRows.length;
+    $("ad-mx-note").textContent = hiddenRows > 0 ? "The matrix draws the credentials a college awards or already teaches; " + plural(hiddenRows, "credential with another credit status is", "credentials with other credit statuses are") + " in the Credentials and List views." : "";
+    var picked = keys(f.colleges), h = $("ad-handout");
+    h.hidden = picked.length !== 1;
+    if (picked.length === 1) h.href = HANDOUT + encodeURIComponent(D.colleges[Number(picked[0])][0]);
+    try {  // the address follows a single college pick, so a link can be sent; nothing is stored
+      history.replaceState(null, "", picked.length === 1 ? "?college=" + encodeURIComponent(D.colleges[Number(picked[0])][0]) : location.pathname);
     } catch (e) { /* the page still works */ }
-    if (state.view === "list") drawList(f);
-    else { mx.focus = null; buildMatrix(); }
-    drawReview(f);
+    drawAddOffer(n, oth.length);
+    if (state.view === "list") drawList(); else if (state.view === "table") drawTable(); else { state.sel = state.sel; buildMatrix(); }
+    drawReview();
+    drawAdoptable();
+    drawRecFilter();
+    tiles();
   }
 
   function setView(v) {
     state.view = v;
-    Array.prototype.forEach.call(document.querySelectorAll("[data-view]"), function (b) {
-      b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === v));
-    });
-    $("ad-list-view").hidden = v !== "list";
-    $("ad-matrix-view").hidden = v !== "matrix";
-    draw(false);
+    Array.prototype.forEach.call(document.querySelectorAll("[data-view]"), function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === v)); });
+    $("ad-list-view").hidden = v !== "list"; $("ad-table-view").hidden = v !== "table"; $("ad-matrix-view").hidden = v !== "matrix";
+    redraw(false);
+  }
+  function setSort(s) {
+    f.sort = s;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sort]"), function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-sort") === s)); });
+    redraw(true);
+  }
+  function clearAll() {
+    f.q = ""; $("ad-q").value = ""; f.colleges = {}; f.regions = {}; f.areas = {}; f.sectors = {}; f.types = {}; f.rec = {}; f.standing = { awarded: true }; state.hadScope = false;
+    redrawPickers(); redraw(true);
+  }
+  function startWith(k) {
+    f.sectors = {}; f.types = {}; f.q = ""; $("ad-q").value = "";
+    var typeIdx = function (name) { return String(D.types.indexOf(name)); };
+    if (k === "cert") f.types[typeIdx("Industry Certification")] = true;
+    if (k === "safety") f.sectors["43"] = true;
+    if (k === "military") f.types[typeIdx("Military")] = true;
+    if (k === "job") f.types[typeIdx("Portfolio Review")] = true;
+    if (k === "exam") f.sectors[EXAM_KEY] = true;
+    redrawPickers(); redraw(true);
+    $("results").scrollIntoView();
   }
 
   function download(name, text) {
@@ -426,70 +1093,257 @@
     a.click();
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
   }
-
   function slug() {
-    var f = filters(), n = scopeName(f);
+    var n = scopeName();
     return "credential-catalog" + (n ? "-" + n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "");
+  }
+
+  /* ── The hero photos: the Library page's cycle ───────────────────────────────────── */
+  var hero = { i: 0, timer: null, paused: false };
+  function slides() { var h = $("ad-hero"); return h ? h.querySelectorAll(".hero-slide") : []; }
+  function prime(img) { if (img && !img.getAttribute("src") && img.getAttribute("data-src")) img.setAttribute("src", img.getAttribute("data-src")); }
+  function heroShow(n) {
+    var s = slides();
+    if (s.length < 2) return;
+    var next = ((n % s.length) + s.length) % s.length;
+    prime(s[next]); prime(s[(next + 1) % s.length]);
+    Array.prototype.forEach.call(s, function (el, k) { el.classList.toggle("is-on", k === next); });
+    hero.i = next;
+  }
+  function heroStop() { if (hero.timer) window.clearInterval(hero.timer); hero.timer = null; }
+  function paintPause() { var b = $("ad-hero-pause"); if (b) b.textContent = hero.paused ? "Play photos" : "Pause photos"; }
+  function heroPlay() { heroStop(); hero.paused = false; hero.timer = window.setInterval(function () { heroShow(hero.i + 1); }, HERO_MS); paintPause(); }
+  function heroPause() { heroStop(); hero.paused = true; paintPause(); }
+  function heroInit() {
+    var s = slides(), b = $("ad-hero-pause");
+    var still = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    if (s.length < 2 || still) { if (b) b.hidden = true; return; }
+    prime(s[1]);
+    if (b) { b.hidden = false; b.addEventListener("click", function () { if (hero.paused) heroPlay(); else heroPause(); }); }
+    document.addEventListener("visibilitychange", function () { if (document.hidden) heroStop(); else if (!hero.paused) heroPlay(); });
+    heroPlay();
+  }
+
+  /* ── Wiring ─────────────────────────────────────────────────────────────────────── */
+
+  // The three figures follow the filters (Sam, 2026-11-06): every filter but Credit status, since each tile is a status
+  // and opens it. Without a college pick they count the state; with one, what earns credit at the colleges picked.
+  function tileCounts() {
+    var sc = state.sc, colsAw = {}, n = { awarded: 0, harvested: 0 };
+    R.forEach(function (c) {
+      if (!match(c, f, sc, true)) return;
+      if (c.std === "harvested") { n.harvested++; return; }
+      if (c.std !== "awarded") return;
+      var mine = sc ? c.a.filter(function (a) { return sc[a[0]]; }) : c.a;
+      if (sc && !mine.length) return;
+      n.awarded++;
+      mine.forEach(function (a) { colsAw[a[0]] = true; });
+    });
+    n.colleges = Object.keys(colsAw).length;
+    return n;
+  }
+  function filtered() { return !!(f.q || any(f.colleges) || any(f.regions) || any(f.areas) || any(f.sectors) || any(f.types) || any(f.rec)); }
+  function tiles() {
+    if (!D) return;
+    var n = tileCounts(), sc = state.sc;
+    $("kpi-awarded").querySelector("b").textContent = fmt(n.awarded);
+    $("kpi-awarded").querySelector("span").textContent = sc ? (n.awarded === 1 ? "credential earns" : "credentials earn") + " credit at the colleges picked" : (n.awarded === 1 ? "credential earns" : "credentials earn") + " credit at a college";
+    $("kpi-colleges").querySelector("b").textContent = fmt(n.colleges);
+    $("kpi-colleges").querySelector("span").textContent = (n.colleges === 1 ? "college awards" : "colleges award") + " that credit";
+    $("kpi-harvested").querySelector("b").textContent = fmt(n.harvested);
+    $("kpi-harvested").querySelector("span").textContent = (n.harvested === 1 ? "credential" : "credentials") + " not yet evaluated";
+    $("kpi-harvested").hidden = !state.hasHarvested;
+    $("kpi-scope").hidden = !filtered();
+  }
+  // A tile opens what it counts: the filters stay, the credit status becomes the tile's.
+  function wireTiles() {
+    function go(std, view) {
+      if (std) { f.standing = {}; f.standing[std] = true; state.hadScope = !!state.sc; redrawPickers(); }
+      setView(view); $("results").scrollIntoView();
+    }
+    $("kpi-awarded").addEventListener("click", function () { go(state.sc ? "here" : "awarded", "list"); });
+    $("kpi-colleges").addEventListener("click", function () { go(state.sc ? "here" : "awarded", "matrix"); });
+    $("kpi-harvested").addEventListener("click", function () { go("harvested", "table"); });
   }
 
   function wire() {
     var t = null;
-    $("ad-q").addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { draw(true); }, 160); });
-    ["ad-college", "ad-show", "ad-sector", "ad-type", "ad-region", "ad-area", "ad-district"].forEach(function (id) {
-      $(id).addEventListener("change", function () { draw(true); });
-    });
-    $("ad-clear").addEventListener("click", function () {
-      ["ad-q", "ad-college", "ad-sector", "ad-type", "ad-region", "ad-area", "ad-district"].forEach(function (id) { $(id).value = ""; });
-      draw(true);
-    });
-    $("ad-more").addEventListener("click", function () { state.shown += PAGE; drawList(filters()); });
-    Array.prototype.forEach.call(document.querySelectorAll("[data-view]"), function (b) {
-      b.addEventListener("click", function () { setView(b.getAttribute("data-view")); });
-    });
+    $("ad-q").addEventListener("input", function () { clearTimeout(t); t = setTimeout(function () { redraw(true); }, 160); });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-view]"), function (b) { b.addEventListener("click", function () { setView(b.getAttribute("data-view")); }); });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-sort]"), function (b) { b.addEventListener("click", function () { setSort(b.getAttribute("data-sort")); }); });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-start]"), function (b) { b.addEventListener("click", function () { startWith(b.getAttribute("data-start")); }); });
+    $("ad-clear").addEventListener("click", clearAll);
+    $("ad-more").addEventListener("click", function () { state.shown += PAGE; drawList(); });
+    $("ad-more-t").addEventListener("click", function () { state.shown += PAGE; drawTable(); });
     $("ad-csv").addEventListener("click", function () { download(slug() + ".csv", csvList(D, state.rows)); });
     $("ad-csv-mx").addEventListener("click", function () { download(slug() + "-matrix.csv", csvMatrix(D, state.rows, state.cols)); });
+    $("pn-close").addEventListener("click", closePanel);
+    document.addEventListener("submit", function (e) {
+      var fm = e.target;
+      if (fm && fm.id === "pn-ask-form") { e.preventDefault(); sendAsk(fm); }
+      else if (fm && fm.id === "pn-add-form") { e.preventDefault(); sendAdd(fm); }
+    });
+    document.addEventListener("click", function (e) {
+      var b = e.target && e.target.closest ? e.target.closest("[data-add]") : null;
+      if (b) { e.preventDefault(); openAdd(f.q); }
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $("ad-panel").classList.contains("open")) closePanel(); });
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("button") : null;
+      if (!b) return;
+      if (b.hasAttribute("data-rep")) { if (b.hasAttribute("data-from")) state.open = [Number(b.getAttribute("data-from")), null]; openReport(b.getAttribute("data-code"), b.getAttribute("data-rep")); return; }
+      if (b.id === "pn-back") { if (state.open) openPanel(state.open[0], state.open[1], false, "pn-ai"); return; }
+      if (b.hasAttribute("data-rec")) { var rk = b.getAttribute("data-rec"); if (f.rec[rk]) delete f.rec[rk]; else f.rec[rk] = true; redraw(true); return; }
+      if (b.id === "ad-adopt-more") { state.adoptAll = true; drawAdoptable(); return; }
+      if (b.hasAttribute("data-open")) { var at = b.getAttribute("data-at"); openPanel(Number(b.getAttribute("data-open")), at == null ? null : Number(at), b.hasAttribute("data-req"), b.getAttribute("data-sec")); }
+      else if (b.hasAttribute("data-review")) openReview(Number(b.getAttribute("data-review")));
+      else if (b.hasAttribute("data-col")) { f.colleges = {}; f.colleges[b.getAttribute("data-col")] = true; redrawPickers(); redraw(true); }
+      else if (b.hasAttribute("data-pick")) { f.colleges = {}; f.colleges[b.getAttribute("data-pick")] = true; redrawPickers(); redraw(true); }
+      else if (b.hasAttribute("data-q")) { $("ad-q").value = b.getAttribute("data-q"); redraw(true); }
+      else if (b.hasAttribute("data-sector")) { f.sectors = {}; f.sectors[b.getAttribute("data-sector")] = true; redrawPickers(); redraw(true); }
+      else if (b.hasAttribute("data-type")) { f.types = {}; f.types[b.getAttribute("data-type")] = true; redrawPickers(); redraw(true); }
+    });
+    document.addEventListener("change", function (e) {
+      var t = e.target;
+      if (t && t.hasAttribute && t.hasAttribute("data-aipick") && state.open) {
+        state.aiCollege = t.value; var id = t.id;
+        openPanel(state.open[0], state.open[1], false, "pn-ai");
+        var again = $(id); if (again) again.focus();
+      }
+    });
     var wrap = $("ad-mx-wrap"), raf = 0;
-    wrap.addEventListener("scroll", function () {
-      if (raf) return;
-      raf = requestAnimationFrame(function () { raf = 0; drawWindow(false); });
-    });
-    wrap.addEventListener("mouseover", function (e) { var td = e.target.closest && e.target.closest("td"); if (td) showTip(td); });
-    wrap.addEventListener("mouseleave", hideTip);
-    wrap.addEventListener("focusin", function (e) {
-      var td = e.target.closest && e.target.closest("td[data-k]");
-      if (td) { mx.focus = [Number(td.parentNode.getAttribute("data-r")), Number(td.getAttribute("data-k"))]; showTip(td); }
-    });
-    wrap.addEventListener("keydown", function (e) {
-      var keys = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1], PageUp: [-10, 0], PageDown: [10, 0] };
-      if (e.key === "Escape") { hideTip(); wrap.focus(); e.stopPropagation(); return; }
-      var d = keys[e.key];
-      if (!d) return;
-      e.preventDefault();
-      var at = mx.focus || [0, 0];
-      focusCell(mx.focus ? at[0] + d[0] : 0, mx.focus ? at[1] + d[1] : 0);
-    });
+    wrap.addEventListener("scroll", function () { if (raf) return; raf = requestAnimationFrame(function () { raf = 0; drawWindow(false); }); });
+    window.addEventListener("resize", function () { if (state.view === "matrix") drawWindow(true); });
+    wireTiles();
+    panelWidth();
+    heroInit();
+  }
+
+  /* ── Add your credential (Sam, 2026-11-06; DR-32) ─────────────────────────────────── */
+
+  // The offer: a search that finds nothing, in any credit status, offers Add it with the search words filled in.
+  function drawAddOffer(n, otherN) {
+    var box = $("ad-add");
+    if (!box) return;
+    var q = f.q || "";
+    var show = n === 0 && !otherN && q.length >= 2;
+    box.hidden = !show;
+    if (!show) { box.innerHTML = ""; return; }
+    box.innerHTML = "<p>The Catalog holds no credential matching <b>" + esc(q) + "</b>. Hold a license, certification or badge it is missing? "
+      + '<button type="button" class="word" data-add="1">Add it</button></p>'
+      + '<p class="lines">The team checks it against the link you give before it shows here, as Not yet evaluated.</p>';
+  }
+  function addForm(q) {
+    var picked = keys(f.colleges), college = picked.length === 1 ? D.colleges[Number(picked[0])][0] : "";
+    return '<h2 id="pn-add">Add a credential</h2>'
+      + '<p class="lines">Name a license, certification or badge the Catalog does not hold. The team checks it against its link; once checked it shows here as Not yet evaluated, '
+      + 'and each request to prioritize it counts. Whether a college evaluates it rests with that college&#x27;s faculty, and the Initiative sends no reply.</p>'
+      + '<form id="pn-add-form" class="ask-form">'
+      + '<label for="pn-add-name">The credential&#x27;s name</label><input id="pn-add-name" name="name" type="text" required minlength="2" maxlength="200" value="' + esc(q || "") + '">'
+      + '<label for="pn-add-issuer">Who issues it</label><input id="pn-add-issuer" name="issuer" type="text" required minlength="2" maxlength="160" autocomplete="off">'
+      + '<fieldset class="add-kind"><legend>What it is</legend>' + KINDS.map(function (k, i) {
+        return '<label><input type="radio" name="kind" value="' + k[0] + '"' + (i === 1 ? " checked" : "") + "> " + k[1] + "</label>"; }).join("") + "</fieldset>"
+      + '<label for="pn-add-link">A link to it <span class="opt">(the issuer&#x27;s page, a license lookup or the badge)</span></label><input id="pn-add-link" name="link" type="url" required maxlength="500" placeholder="https://">'
+      + '<label for="pn-add-college">Your college <span class="opt">(optional)</span></label><input id="pn-add-college" name="college" type="text" maxlength="120" autocomplete="organization" value="' + esc(college) + '">'
+      + '<label for="pn-add-email">Email <span class="opt">(optional; for the Initiative&#x27;s records, never shown, no reply is sent)</span></label><input id="pn-add-email" name="email" type="email" maxlength="200" autocomplete="email">'
+      + '<div class="ask-row"><button type="submit" class="word">Add it</button></div>'
+      + '</form><p class="lines" id="pn-add-msg" aria-live="polite"></p>';
+  }
+  function openAdd(q) {
+    var p = $("ad-panel");
+    state.open = null; state.sel = null;
+    $("pn-kicker").textContent = "Add a credential";
+    $("pn-body").innerHTML = addForm(q);
+    p.classList.add("open"); p.setAttribute("aria-hidden", "false"); document.body.classList.add("panel-open");
+    p.scrollTop = 0;
+    var first = $("pn-add-issuer"); if (first && q) first.focus(); else { var nm = $("pn-add-name"); if (nm) nm.focus(); }
+  }
+  function val(form, name) { var x = form.querySelector("[name=" + name + "]"); return x ? String(x.value || "").trim() : ""; }
+  function sendAdd(form) {
+    var msg = $("pn-add-msg"), btn = form.querySelector("button[type=submit]");
+    var kindEl = form.querySelector("[name=kind]:checked");
+    var body = { p_name: val(form, "name"), p_issuer: val(form, "issuer"), p_kind: kindEl ? kindEl.value : "", p_link: val(form, "link"),
+      p_college: val(form, "college") || null, p_email: val(form, "email") || null, p_note: null };
+    var wrong = body.p_name.length < 2 ? "Name the credential." : body.p_issuer.length < 2 ? "Name who issues it."
+      : !/^https?:\/\/\S+$/i.test(body.p_link) ? "Give a link that starts with https://." : !body.p_kind ? "Say what it is." : "";
+    if (wrong) { if (msg) msg.textContent = wrong; return; }
+    if (btn) btn.disabled = true;
+    if (msg) msg.textContent = "Sending\u2026";
+    var hdr = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    return fetch(ADD_URL, { method: "POST", headers: hdr, body: JSON.stringify(body) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (added) {
+        form.hidden = true;
+        if (added === false) {
+          // Already waiting or already in: the visitor's word counts as a request to prioritize it instead.
+          return fetch(ASK_URL, { method: "POST", headers: hdr, body: JSON.stringify({ p_credential: body.p_name, p_issuer: body.p_issuer, p_college: body.p_college,
+            p_email: body.p_email, p_note: null, p_source: "catalog" }) }).catch(function () { return null; }).then(function () {
+            if (msg) msg.textContent = "Someone has already added this credential, so your word counts as a request to prioritize it. The team checks it before it shows here.";
+          });
+        }
+        if (msg) msg.textContent = "Received. The team checks it against its link; once checked it shows here as Not yet evaluated.";
+      })
+      .catch(function () {
+        if (btn) btn.disabled = false;
+        if (msg) msg.textContent = "It could not be sent. Try again in a moment.";
+      });
+  }
+  // Verified submissions join the Catalog as Not yet evaluated, with their asks counted. One already held is skipped.
+  function loadVerified() {
+    return fetch(VERIFIED_URL, { method: "POST", cache: "no-cache", headers: { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }, body: "{}" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (rows) {
+        if (!Array.isArray(rows) || !rows.length) return;
+        var held = {};
+        R.forEach(function (c) { held[String(c.t || "").toLowerCase()] = true; });
+        var add = [];
+        rows.forEach(function (x) {
+          var key = String(x && x.name || "").toLowerCase();
+          if (!key || held[key]) return;
+          held[key] = true;
+          add.push({ t: x.name, i: x.issuer || "", k: x.kind || null, s: null, src: ["public"], u: /^https?:\/\//i.test(x.link || "") ? x.link : null });
+          if (Number(x.asks) > (state.asks[key] || 0)) state.asks[key] = Number(x.asks);
+        });
+        if (add.length) addMore({ harvested: add });
+      })
+      .catch(function () { /* the page stands without them */ });
+  }
+
+  function addMore(more) {
+    (more.harvested || []).forEach(function (h) { h.std = h.ms === "inmap" ? "inmap" : "harvested"; h.a = []; h.c = []; h.m = []; h.y = []; R.push(h); });
+    (more.held || []).forEach(function (h) { h.std = "held"; h.a = []; h.c = []; h.m = []; h.y = []; R.push(h); });
+    R.forEach(function (c, i) { c._i = i; });
+    state.order = fieldOrder(D, R);
+    pickers.sector = null; delete pickers.sector;
+    state.hasHarvested = R.some(function (c) { return c.std === "harvested"; });
+    buildPickers();
+    redraw(false);
   }
 
   function init(data) {
     D = data;
-    fillSelect($("ad-college"), D.colleges.map(function (c) { return [c[0], c[0]]; }).sort(function (a, b) { return a[1].localeCompare(b[1]); }));
-    fillSelect($("ad-sector"), Object.keys(D.sectors).map(function (k) { return [k, k + " " + D.sectors[k]]; }));
-    fillSelect($("ad-type"), D.types.map(function (t, i) { return [String(i), t]; }));
-    fillSelect($("ad-region"), uniq(D.colleges.map(function (c) { return c[3]; })).map(function (v) { return [v, v]; }));
-    fillSelect($("ad-area"), uniq(D.colleges.map(function (c) { return c[4]; })).map(function (v) { return [v, "Area " + v]; }));
-    fillSelect($("ad-district"), uniq(D.colleges.map(function (c) { return c[2]; })).map(function (v) { return [v, v]; }));
+    R = D.credentials.slice();
+    R.forEach(function (c, i) { c.std = "awarded"; c._i = i; });
+    state.order = fieldOrder(D, R);
+    buildPickers();
     var asked = null;
     try { asked = new URLSearchParams(location.search).get("college"); } catch (e) { asked = null; }
-    if (asked && D.colleges.some(function (c) { return c[0] === asked; })) $("ad-college").value = asked;
-    if (D.written_at) {
-      $("ad-asof").textContent = "updated " + new Date(D.written_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-    }
+    if (asked) D.colleges.forEach(function (c, i) { if (c[0] === asked) f.colleges[i] = true; });
+    if (D.written_at) $("ad-asof").textContent = "updated " + new Date(D.written_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     wire();
-    draw(true);
+    redrawPickers();
+    redraw(true);
+    fetch(MORE_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(addMore)
+      .catch(function () { /* the page stands on the settled credentials alone */ })
+      .then(function () { if (D.counts && D.counts.cplai) loadAI(); return loadVerified(); });
+    loadAsks();
   }
 
-  window.CPL_ADOPT = { scope: scope, match: match, rows: rows, cols: cols, csvList: csvList, csvMatrix: csvMatrix, mapUrl: mapUrl,
-    reviewRows: reviewRows, reviewCard: reviewCard };
+  window.CPL_ADOPT = { scope: scope, stdOf: stdOf, match: match, rows: rows, cols: cols, csvList: csvList, csvMatrix: csvMatrix, mapUrl: mapUrl,
+    groupKey: groupKey, fieldOrder: fieldOrder, reviewRows: reviewRows, reviewCard: reviewCard, STD: STD, ASK: ASK, asked: asked,
+    adoptable: adoptable, aiCourses: aiCourses, openAdd: openAdd };
 
   if (typeof document === "undefined" || !document.getElementById("ad-list")) return;
   fetch(DATA_URL, { cache: "no-cache" })

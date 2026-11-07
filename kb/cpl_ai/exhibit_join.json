@@ -1,0 +1,1060 @@
+{
+ "_about": "The 115 CPL-AI certifications joined to the common exhibits (kb/credentials.json), by kb/_build_cpl_ai_join.py. Kinds: exact, named_under (flagged for a title fix), related. SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins.",
+ "decided": "SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins",
+ "counts": {
+  "certifications": 115,
+  "exact": 46,
+  "named_under": 0,
+  "related": 8,
+  "none": 61
+ },
+ "joins": {
+  "ace1": {
+   "kind": "exact",
+   "exhibits": [
+    "ACE Certified Personal Trainer"
+   ],
+   "reason": "ACE's Personal Trainer Certification, moved by the CER plan of 2026-11-06 from Personal Training Certification."
+  },
+  "acsm1": {
+   "kind": "exact",
+   "exhibits": [
+    "ACSM Certified Personal Trainer (ACSM-CPT)"
+   ],
+   "reason": "ACSM-CPT, moved by the CER plan of 2026-11-06 from Personal Trainer Instructor."
+  },
+  "adobe1": {
+   "kind": "exact",
+   "exhibits": [
+    "Adobe Certified Professional — Acrobat"
+   ],
+   "reason": "Adobe's Acrobat Pro professional certification; the exhibit is its only Acrobat identity."
+  },
+  "adobe8": {
+   "kind": "exact",
+   "exhibits": [
+    "Adobe Certified Professional — Visual Design (Photoshop)"
+   ],
+   "reason": "A college title names this exam word for word."
+  },
+  "ase1": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A1 — Engine Repair"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase10": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase2": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A2 — Automatic Transmission/Transaxle"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase3": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A3 — Manual Drive Train and Axles"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase4": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A4 — Suspension and Steering"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase5": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A5 — Brakes"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase6": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A6 — Electrical/Electronic Systems"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase7": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A7 — Heating and Air Conditioning"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase8": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A8 — Engine Performance"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "ase9": {
+   "kind": "exact",
+   "exhibits": [
+    "ASE A9 — Light Vehicle Diesel Engines"
+   ],
+   "reason": "The ASE area code agrees, and the college titles behind the exhibit name the same test."
+  },
+  "autodesk1": {
+   "kind": "exact",
+   "exhibits": [
+    "Autodesk Certified User/Professional — AutoCAD"
+   ],
+   "reason": "Autodesk's AutoCAD certification; the exhibit folds User and Professional."
+  },
+  "autodesk2": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "autodesk3": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "autodesk4": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "autodesk5": {
+   "kind": "exact",
+   "exhibits": [
+    "Autodesk Certified User/Professional — Revit Architecture"
+   ],
+   "reason": "Autodesk's Revit certification; the exhibit folds User and Professional."
+  },
+  "autodesk6": {
+   "kind": "related",
+   "exhibits": [
+    "Autodesk Certified User"
+   ],
+   "reason": "The exhibit is Autodesk Certified User with no product named."
+  },
+  "aws1": {
+   "kind": "related",
+   "exhibits": [
+    "AWS D1.1 Structural Welder Qualification"
+   ],
+   "reason": "AWS's welder qualification under D1.1; the Certified Welder program is a different credential."
+  },
+  "certiport1": {
+   "kind": "exact",
+   "exhibits": [
+    "Entrepreneurship and Small Business (ESB) Certification"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia1": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA A+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia10": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Network+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia11": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA PenTest+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia12": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Project+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia13": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Server+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia14": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Security+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia15": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Tech+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia3": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Cloud+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia4": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Cloud Essentials+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia5": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA CySA+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "comptia9": {
+   "kind": "exact",
+   "exhibits": [
+    "CompTIA Linux+"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "intuit1": {
+   "kind": "exact",
+   "exhibits": [
+    "Intuit QuickBooks Online Certified User"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "intuit2": {
+   "kind": "exact",
+   "exhibits": [
+    "Intuit Certified Bookkeeping Professional"
+   ],
+   "reason": "Same title and issuer."
+  },
+  "microsoft1": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Certified: Azure AI Fundamentals"
+   ],
+   "reason": "Same exam (AI-900)."
+  },
+  "microsoft10": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — PowerPoint"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft11": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Word Expert"
+   ],
+   "reason": "Same exam (MO-101)."
+  },
+  "microsoft12": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Excel Expert"
+   ],
+   "reason": "Same exam (MO-211)."
+  },
+  "microsoft13": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Word"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft14": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Excel"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft2": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Certified: Azure Fundamentals (AZ-900)"
+   ],
+   "reason": "Same exam (AZ-900)."
+  },
+  "microsoft8": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Word"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "microsoft9": {
+   "kind": "exact",
+   "exhibits": [
+    "Microsoft Office Specialist — Excel"
+   ],
+   "reason": "Versions folded: the reference holds Office 2019 and Microsoft 365 Apps under one exam, as the college titles show."
+  },
+  "mssc1": {
+   "kind": "related",
+   "exhibits": [
+    "MSSC Certified Production Technician (CPT) — Machinist"
+   ],
+   "reason": "MSSC's CPT under a title that mixes a military machinist designation."
+  },
+  "nasm1": {
+   "kind": "exact",
+   "exhibits": [
+    "NASM Certified Personal Trainer (NASM-CPT)"
+   ],
+   "reason": "NASM-CPT, moved by the CER plan of 2026-11-06 from Personal Trainer Instructor."
+  },
+  "rda1": {
+   "kind": "exact",
+   "exhibits": [
+    "Registered Dental Assistant (RDA) License"
+   ],
+   "reason": "The Dental Board of California's RDA license."
+  },
+  "servsafe1": {
+   "kind": "exact",
+   "exhibits": [
+    "ServSafe Food Protection Manager Certification"
+   ],
+   "reason": "Same certification; the duplicate exhibit ServSafe Food Protection Manager folds into it by the CER plan of 2026-11-06."
+  },
+  "servsafe2": {
+   "kind": "related",
+   "exhibits": [
+    "Food Handler Card"
+   ],
+   "reason": "California's food handler card, which a ServSafe Food Handler course can lead to; a different credential."
+  },
+  "wwtp1": {
+   "kind": "related",
+   "exhibits": [
+    "Wastewater Treatment Plant Operator Grade 1"
+   ],
+   "reason": "CWEA's grade 1, a different issuer from the State Water Board's Grade I certificate."
+  },
+  "wwtp2": {
+   "kind": "exact",
+   "exhibits": [
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+   ],
+   "reason": "The exhibit accepts the State Water Board's grade II or any higher one; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1."
+  },
+  "wwtp3": {
+   "kind": "exact",
+   "exhibits": [
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+   ],
+   "reason": "The exhibit accepts the State Water Board's grade II or any higher one; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1."
+  },
+  "wwtp4": {
+   "kind": "exact",
+   "exhibits": [
+    "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+   ],
+   "reason": "Both exhibits accept grade IV; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."
+  },
+  "wwtp5": {
+   "kind": "exact",
+   "exhibits": [
+    "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+    "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+   ],
+   "reason": "Both exhibits accept grade V; moved by the CER plan of 2026-11-06 from Wastewater Treatment 1 and 2."
+  }
+ },
+ "by_exhibit": {
+  "ACE Certified Personal Trainer": [
+   {
+    "code": "ace1",
+    "title": "ACE Certified Personal Trainer",
+    "kind": "exact",
+    "pairs": 341,
+    "strong": 249,
+    "strong_colleges": 105
+   }
+  ],
+  "ACSM Certified Personal Trainer (ACSM-CPT)": [
+   {
+    "code": "acsm1",
+    "title": "ACSM Certified Personal Trainer (ACSM-CPT)",
+    "kind": "exact",
+    "pairs": 334,
+    "strong": 229,
+    "strong_colleges": 104
+   }
+  ],
+  "ASE A1 — Engine Repair": [
+   {
+    "code": "ase1",
+    "title": "Automotive Service Excellence (ASE) Certification A1: Engine Repair",
+    "kind": "exact",
+    "pairs": 271,
+    "strong": 98,
+    "strong_colleges": 57
+   }
+  ],
+  "ASE A2 — Automatic Transmission/Transaxle": [
+   {
+    "code": "ase2",
+    "title": "Automotive Service Excellence (ASE) Certification A2: Automatic Transmission_Transaxle",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 84,
+    "strong_colleges": 53
+   }
+  ],
+  "ASE A3 — Manual Drive Train and Axles": [
+   {
+    "code": "ase3",
+    "title": "Automotive Service Excellence (ASE) Certification A3: Manual Drive Train and Axles",
+    "kind": "exact",
+    "pairs": 282,
+    "strong": 79,
+    "strong_colleges": 54
+   }
+  ],
+  "ASE A4 — Suspension and Steering": [
+   {
+    "code": "ase4",
+    "title": "Automotive Service Excellence (ASE) Certification A4: Suspension and Steering",
+    "kind": "exact",
+    "pairs": 238,
+    "strong": 88,
+    "strong_colleges": 53
+   }
+  ],
+  "ASE A5 — Brakes": [
+   {
+    "code": "ase5",
+    "title": "Automotive Service Excellence (ASE) Certification A5: Brakes",
+    "kind": "exact",
+    "pairs": 245,
+    "strong": 88,
+    "strong_colleges": 56
+   }
+  ],
+  "ASE A6 — Electrical/Electronic Systems": [
+   {
+    "code": "ase6",
+    "title": "Automotive Service Excellence (ASE) Certification A6: Electrical_Electronic Systems",
+    "kind": "exact",
+    "pairs": 313,
+    "strong": 127,
+    "strong_colleges": 65
+   }
+  ],
+  "ASE A7 — Heating and Air Conditioning": [
+   {
+    "code": "ase7",
+    "title": "Automotive Service Excellence (ASE) Certification A7: Heating and Air Conditioning",
+    "kind": "exact",
+    "pairs": 269,
+    "strong": 92,
+    "strong_colleges": 58
+   }
+  ],
+  "ASE A8 — Engine Performance": [
+   {
+    "code": "ase8",
+    "title": "Automotive Service Excellence (ASE) Certification A8: Engine Performance",
+    "kind": "exact",
+    "pairs": 267,
+    "strong": 121,
+    "strong_colleges": 64
+   }
+  ],
+  "ASE A9 — Light Vehicle Diesel Engines": [
+   {
+    "code": "ase9",
+    "title": "Automotive Service Excellence (ASE) Certification A9: Light Vehicle Diesel Engines",
+    "kind": "exact",
+    "pairs": 265,
+    "strong": 107,
+    "strong_colleges": 59
+   }
+  ],
+  "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist": [
+   {
+    "code": "ase10",
+    "title": "Automotive Service Excellence (ASE) Certification L3: Advanced Engine Performance Specialist (Light Duty Hybrid_Electric Vehicle)",
+    "kind": "exact",
+    "pairs": 275,
+    "strong": 91,
+    "strong_colleges": 57
+   }
+  ],
+  "AWS D1.1 Structural Welder Qualification": [
+   {
+    "code": "aws1",
+    "title": "AWS Certified Welder (CW)",
+    "kind": "related",
+    "pairs": 252,
+    "strong": 89,
+    "strong_colleges": 55
+   }
+  ],
+  "Adobe Certified Professional — Acrobat": [
+   {
+    "code": "adobe1",
+    "title": "Adobe Certified Professional in Document Creation and Management Using Adobe Acrobat Pro",
+    "kind": "exact",
+    "pairs": 170,
+    "strong": 41,
+    "strong_colleges": 33
+   }
+  ],
+  "Adobe Certified Professional — Visual Design (Photoshop)": [
+   {
+    "code": "adobe8",
+    "title": "Adobe Certified Professional in Visual Design Using Adobe Photoshop",
+    "kind": "exact",
+    "pairs": 336,
+    "strong": 176,
+    "strong_colleges": 91
+   }
+  ],
+  "Autodesk Certified User": [
+   {
+    "code": "autodesk3",
+    "title": "Autodesk Certified User: Inventor",
+    "kind": "related",
+    "pairs": 264,
+    "strong": 52,
+    "strong_colleges": 39
+   },
+   {
+    "code": "autodesk6",
+    "title": "Autodesk Certified User: 3ds Max",
+    "kind": "related",
+    "pairs": 257,
+    "strong": 40,
+    "strong_colleges": 32
+   },
+   {
+    "code": "autodesk2",
+    "title": "Autodesk Certified User: Fusion 360",
+    "kind": "related",
+    "pairs": 254,
+    "strong": 30,
+    "strong_colleges": 27
+   },
+   {
+    "code": "autodesk4",
+    "title": "Autodesk Certified User: Maya",
+    "kind": "related",
+    "pairs": 250,
+    "strong": 42,
+    "strong_colleges": 34
+   }
+  ],
+  "Autodesk Certified User/Professional — AutoCAD": [
+   {
+    "code": "autodesk1",
+    "title": "Autodesk Certified User: AutoCAD",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 51,
+    "strong_colleges": 39
+   }
+  ],
+  "Autodesk Certified User/Professional — Revit Architecture": [
+   {
+    "code": "autodesk5",
+    "title": "Autodesk Certified User: Revit Architecture",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 28,
+    "strong_colleges": 25
+   }
+  ],
+  "CompTIA A+": [
+   {
+    "code": "comptia1",
+    "title": "CompTIA A+",
+    "kind": "exact",
+    "pairs": 331,
+    "strong": 215,
+    "strong_colleges": 103
+   }
+  ],
+  "CompTIA Cloud Essentials+": [
+   {
+    "code": "comptia4",
+    "title": "CompTIA Cloud Essentials+",
+    "kind": "exact",
+    "pairs": 331,
+    "strong": 127,
+    "strong_colleges": 71
+   }
+  ],
+  "CompTIA Cloud+": [
+   {
+    "code": "comptia3",
+    "title": "CompTIA Cloud+",
+    "kind": "exact",
+    "pairs": 321,
+    "strong": 170,
+    "strong_colleges": 90
+   }
+  ],
+  "CompTIA CySA+": [
+   {
+    "code": "comptia5",
+    "title": "CompTIA CySA+",
+    "kind": "exact",
+    "pairs": 343,
+    "strong": 178,
+    "strong_colleges": 99
+   }
+  ],
+  "CompTIA Linux+": [
+   {
+    "code": "comptia9",
+    "title": "CompTIA Linux+",
+    "kind": "exact",
+    "pairs": 332,
+    "strong": 163,
+    "strong_colleges": 89
+   }
+  ],
+  "CompTIA Network+": [
+   {
+    "code": "comptia10",
+    "title": "CompTIA Network+",
+    "kind": "exact",
+    "pairs": 330,
+    "strong": 206,
+    "strong_colleges": 94
+   }
+  ],
+  "CompTIA PenTest+": [
+   {
+    "code": "comptia11",
+    "title": "CompTIA PenTest+",
+    "kind": "exact",
+    "pairs": 244,
+    "strong": 98,
+    "strong_colleges": 69
+   }
+  ],
+  "CompTIA Project+": [
+   {
+    "code": "comptia12",
+    "title": "CompTIA Project+",
+    "kind": "exact",
+    "pairs": 317,
+    "strong": 112,
+    "strong_colleges": 64
+   }
+  ],
+  "CompTIA Security+": [
+   {
+    "code": "comptia14",
+    "title": "CompTIA Security+",
+    "kind": "exact",
+    "pairs": 343,
+    "strong": 211,
+    "strong_colleges": 98
+   }
+  ],
+  "CompTIA Server+": [
+   {
+    "code": "comptia13",
+    "title": "CompTIA Server+",
+    "kind": "exact",
+    "pairs": 328,
+    "strong": 214,
+    "strong_colleges": 97
+   }
+  ],
+  "CompTIA Tech+": [
+   {
+    "code": "comptia15",
+    "title": "CompTIA Tech+",
+    "kind": "exact",
+    "pairs": 353,
+    "strong": 207,
+    "strong_colleges": 105
+   }
+  ],
+  "Entrepreneurship and Small Business (ESB) Certification": [
+   {
+    "code": "certiport1",
+    "title": "Entrepreneurship & Small Business (ESB) Certification",
+    "kind": "exact",
+    "pairs": 360,
+    "strong": 146,
+    "strong_colleges": 86
+   }
+  ],
+  "Food Handler Card": [
+   {
+    "code": "servsafe2",
+    "title": "ServSafe Food Handler Certificate",
+    "kind": "related",
+    "pairs": 294,
+    "strong": 40,
+    "strong_colleges": 32
+   }
+  ],
+  "Intuit Certified Bookkeeping Professional": [
+   {
+    "code": "intuit2",
+    "title": "Intuit Certification Certified Bookkeeping Professional",
+    "kind": "exact",
+    "pairs": 325,
+    "strong": 199,
+    "strong_colleges": 105
+   }
+  ],
+  "Intuit QuickBooks Online Certified User": [
+   {
+    "code": "intuit1",
+    "title": "Intuit Certification QuickBooks Online Certified User",
+    "kind": "exact",
+    "pairs": 259,
+    "strong": 75,
+    "strong_colleges": 58
+   }
+  ],
+  "MSSC Certified Production Technician (CPT) — Machinist": [
+   {
+    "code": "mssc1",
+    "title": "MSSC Certified Production Technician (CPT) 4.0",
+    "kind": "related",
+    "pairs": 233,
+    "strong": 72,
+    "strong_colleges": 53
+   }
+  ],
+  "Microsoft Certified: Azure AI Fundamentals": [
+   {
+    "code": "microsoft1",
+    "title": "Microsoft Certified Fundamentals Certification Azure AI Fundamentals (AI-900)",
+    "kind": "exact",
+    "pairs": 260,
+    "strong": 19,
+    "strong_colleges": 16
+   }
+  ],
+  "Microsoft Certified: Azure Fundamentals (AZ-900)": [
+   {
+    "code": "microsoft2",
+    "title": "Microsoft Certified Fundamentals Certification Azure Fundamentals (AZ-900)",
+    "kind": "exact",
+    "pairs": 294,
+    "strong": 76,
+    "strong_colleges": 53
+   }
+  ],
+  "Microsoft Office Specialist — Excel": [
+   {
+    "code": "microsoft14",
+    "title": "Microsoft Office Specialist: Excel Associate (Office 2019)",
+    "kind": "exact",
+    "pairs": 335,
+    "strong": 84,
+    "strong_colleges": 63
+   },
+   {
+    "code": "microsoft9",
+    "title": "Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 329,
+    "strong": 80,
+    "strong_colleges": 63
+   }
+  ],
+  "Microsoft Office Specialist — Excel Expert": [
+   {
+    "code": "microsoft12",
+    "title": "Microsoft Office Specialist: Excel Expert (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 340,
+    "strong": 180,
+    "strong_colleges": 104
+   }
+  ],
+  "Microsoft Office Specialist — PowerPoint": [
+   {
+    "code": "microsoft10",
+    "title": "Microsoft Office Specialist: PowerPoint Associate (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 304,
+    "strong": 99,
+    "strong_colleges": 67
+   }
+  ],
+  "Microsoft Office Specialist — Word": [
+   {
+    "code": "microsoft13",
+    "title": "Microsoft Office Specialist: Word Associate (Office 2019)",
+    "kind": "exact",
+    "pairs": 334,
+    "strong": 85,
+    "strong_colleges": 66
+   },
+   {
+    "code": "microsoft8",
+    "title": "Microsoft Office Specialist: Word Associate (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 331,
+    "strong": 77,
+    "strong_colleges": 63
+   }
+  ],
+  "Microsoft Office Specialist — Word Expert": [
+   {
+    "code": "microsoft11",
+    "title": "Microsoft Office Specialist: Word Expert (Microsoft 365 Apps)",
+    "kind": "exact",
+    "pairs": 342,
+    "strong": 63,
+    "strong_colleges": 50
+   }
+  ],
+  "NASM Certified Personal Trainer (NASM-CPT)": [
+   {
+    "code": "nasm1",
+    "title": "NASM Certified Personal Trainer (NASM-CPT)",
+    "kind": "exact",
+    "pairs": 351,
+    "strong": 249,
+    "strong_colleges": 105
+   }
+  ],
+  "Registered Dental Assistant (RDA) License": [
+   {
+    "code": "rda1",
+    "title": "Registered Dental Assistant (RDA)",
+    "kind": "exact",
+    "pairs": 252,
+    "strong": 65,
+    "strong_colleges": 41
+   }
+  ],
+  "ServSafe Food Protection Manager Certification": [
+   {
+    "code": "servsafe1",
+    "title": "ServSafe Food Protection Manager Certification",
+    "kind": "exact",
+    "pairs": 281,
+    "strong": 71,
+    "strong_colleges": 49
+   }
+  ],
+  "Wastewater Treatment Plant Operator Certificate, Grade II or Higher": [
+   {
+    "code": "wwtp5",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade V",
+    "kind": "exact",
+    "pairs": 215,
+    "strong": 47,
+    "strong_colleges": 24
+   },
+   {
+    "code": "wwtp2",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade II",
+    "kind": "exact",
+    "pairs": 193,
+    "strong": 41,
+    "strong_colleges": 25
+   },
+   {
+    "code": "wwtp4",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade IV",
+    "kind": "exact",
+    "pairs": 187,
+    "strong": 39,
+    "strong_colleges": 22
+   },
+   {
+    "code": "wwtp3",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade III",
+    "kind": "exact",
+    "pairs": 176,
+    "strong": 32,
+    "strong_colleges": 20
+   }
+  ],
+  "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher": [
+   {
+    "code": "wwtp5",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade V",
+    "kind": "exact",
+    "pairs": 215,
+    "strong": 47,
+    "strong_colleges": 24
+   },
+   {
+    "code": "wwtp4",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade IV",
+    "kind": "exact",
+    "pairs": 187,
+    "strong": 39,
+    "strong_colleges": 22
+   }
+  ],
+  "Wastewater Treatment Plant Operator Grade 1": [
+   {
+    "code": "wwtp1",
+    "title": "Wastewater Treatment Plant Operator Certificate Grade I",
+    "kind": "related",
+    "pairs": 208,
+    "strong": 20,
+    "strong_colleges": 16
+   }
+  ]
+ },
+ "colleges": {
+  "Allan Hancock College": "Allan Hancock College",
+  "American River College": "American River College",
+  "Antelope Valley College": "Antelope Valley College",
+  "Bakersfield College": "Bakersfield College",
+  "Barstow Community College": "Barstow Community College",
+  "Berkeley City College": "Berkeley City College",
+  "Butte College": "Butte College",
+  "CALBRIGHT": null,
+  "Cabrillo College": "Cabrillo College",
+  "Canada College": "Cañada College",
+  "Cerritos College": "Cerritos College",
+  "Cerro Coso Community College": "Cerro Coso Community College",
+  "Chabot College": "Chabot College",
+  "Chaffey College": "Chaffey College",
+  "Citrus College": "Citrus College",
+  "City College of San Francisco": "City College of San Francisco",
+  "Clovis Community College": "Clovis Community College",
+  "Coastline Community College": "Coastline Community College",
+  "College of Alameda": "College of Alameda",
+  "College of Marin": "College of Marin",
+  "College of San Mateo": "College of San Mateo",
+  "College of the Canyons": "College of the Canyons",
+  "College of the Desert": "College of the Desert",
+  "College of the Redwoods": "College of the Redwoods",
+  "College of the Sequoias": "College of the Sequoias",
+  "College of the Siskiyous": "College of the Siskiyous",
+  "Columbia College": "Columbia College",
+  "Compton College": "Compton College",
+  "Contra Costa College": "Contra Costa College",
+  "Copper Mountain College": "Copper Mountain College",
+  "Cosumnes River College": "Cosumnes River College",
+  "Crafton Hills College": "Crafton Hills College",
+  "Cuesta College": "Cuesta College",
+  "Cuyamaca College": "Cuyamaca College",
+  "Cypress College": "Cypress College",
+  "De Anza College": "De Anza College",
+  "Diablo Valley College": "Diablo Valley College",
+  "East Los Angeles College": "East Los Angeles College",
+  "El Camino College": "El Camino College",
+  "Evergreen Valley College": "Evergreen Valley College",
+  "Feather River College": "Feather River College",
+  "Folsom Lake College": "Folsom Lake College",
+  "Foothill College": "Foothill College",
+  "Fresno City College": "Fresno City College",
+  "Fullerton College": "Fullerton College",
+  "Gavilan College": "Gavilan College",
+  "Glendale Community College": "Glendale Community College",
+  "Golden West College": "Golden West College",
+  "Grossmont College": "Grossmont College",
+  "Hartnell College": "Hartnell College",
+  "Imperial Valley College": "Imperial Valley College",
+  "Irvine Valley College": "Irvine Valley College",
+  "L.A. I.T.V.": null,
+  "Lake Tahoe Community College": "Lake Tahoe Community College",
+  "Laney College": "Laney College",
+  "Las Positas College": "Las Positas College",
+  "Lassen Community College": "Lassen College",
+  "Long Beach City College": "Long Beach City College",
+  "Los Angeles City College": "Los Angeles City College",
+  "Los Angeles Harbor College": "Los Angeles Harbor College",
+  "Los Angeles Mission College": "Los Angeles Mission College",
+  "Los Angeles Pierce College": "Los Angeles Pierce College",
+  "Los Angeles Southwest College": "Los Angeles Southwest College",
+  "Los Angeles Trade Technical College": "Los Angeles Trade Technical College",
+  "Los Angeles Valley College": "Los Angeles Valley College",
+  "Los Medanos College": "Los Medanos College",
+  "Madera Community College": "Madera College",
+  "Mendocino College": "Mendocino College",
+  "Merced College": "Merced College",
+  "Merritt College": "Merritt College",
+  "MiraCosta College": "MiraCosta College",
+  "Mission College": "Mission College",
+  "Modesto Junior College": "Modesto Junior College",
+  "Monterey Peninsula College": "Monterey Peninsula College",
+  "Moorpark College": "Moorpark College",
+  "Moreno Valley College": "Moreno Valley College",
+  "Mount San Antonio College": "Mt. San Antonio College",
+  "Mt. San Jacinto College": "Mt. San Jacinto College",
+  "NORTH ORANGE ADULT": "North Orange Continuing Education",
+  "Napa Valley College": "Napa Valley College",
+  "Norco College": "Norco College",
+  "Ohlone College": "Ohlone College",
+  "Orange Coast College": "Orange Coast College",
+  "Oxnard College": "Oxnard College",
+  "Palo Verde College": "Palo Verde College",
+  "Palomar College": "Palomar College",
+  "Pasadena City College": "Pasadena City College",
+  "Porterville College": "Porterville College",
+  "RANCHO SANTIAGO CED": null,
+  "Reedley College": "Reedley College",
+  "Rio Hondo College": "Rio Hondo College",
+  "Riverside City College": "Riverside City College",
+  "SAN DIEGO ADULT": "San Diego College of Continuing Education",
+  "SANTA BARBARA CED": null,
+  "Sacramento City College": "Sacramento City College",
+  "Saddleback College": "Saddleback College",
+  "San Bernardino Valley College": "San Bernardino Valley College",
+  "San Diego City College": "San Diego City College",
+  "San Diego Mesa College": "San Diego Mesa College",
+  "San Diego Miramar College": "San Diego Miramar College",
+  "San Joaquin Delta College": "San Joaquin Delta College",
+  "San Jose City College": "San Jose City College",
+  "Santa Ana College": "Santa Ana College",
+  "Santa Barbara City College": "Santa Barbara City College",
+  "Santa Monica College": "Santa Monica College",
+  "Santa Rosa Junior College": "Santa Rosa Junior College",
+  "Santiago Canyon College": "Santiago Canyon College",
+  "Shasta College": "Shasta College",
+  "Sierra College": "Sierra College",
+  "Skyline College": "Skyline College",
+  "Solano Community College": "Solano Community College",
+  "Southwestern College": "Southwestern College",
+  "Taft College": "Taft College",
+  "Ventura College": "Ventura College",
+  "Victor Valley College": "Victor Valley College",
+  "West Hills College Coalinga": "Coalinga College",
+  "West Hills College Lemoore": "Lemoore College",
+  "West Los Angeles College": "West Los Angeles College",
+  "West Valley College": "West Valley College",
+  "Woodland Community College": "Woodland Community College",
+  "Yuba College": "Yuba College"
+ }
+}
