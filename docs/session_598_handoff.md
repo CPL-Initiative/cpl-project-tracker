@@ -28,8 +28,8 @@ decision sheet rebuild (no card changed; Open Asks Sheet 166 has no replies), `c
 ## Open work, in order
 
 1. **Merge this checkpoint's PR** on a green `test` if it has not merged.
-2. **Siskiyous' display:** confirm 42360530754 succeeded and committed its applied record to `main`; re-dispatch only if it
-   failed.
+2. **Siskiyous' display: done.** Run 42360530754 wrote 17,555 of 17,558 with 0 errors (the 3 missing are the known
+   Monterey Peninsula rows) and committed its applied record (`9c11f641`).
 3. **Palomar:** when 42359155179 files on `claude/sweep-palomar`, compare its `summary.json` with main's. Extract only
    what `would_extract` lists (under the $40 go); if nothing, close the branch with a line in the lane.
 4. **Coalinga:** the same for 42363219841 on `claude/sweep-coalinga`.
@@ -59,7 +59,7 @@ None.
 ## Let go
 
 This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2873 (Contra Costa, full read due
-2026-11-08) and this checkpoint's PR. Runs in flight: 42360530754 (Siskiyous display, `main`), 42359155179 (Palomar),
+2026-11-08) and this checkpoint's PR. Runs in flight: 42359155179 (Palomar),
 42363219841 (Coalinga). Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
 
 > *Greetings, you are SkyAndromeda (Session 598), see SkyCometGalaxy's handoff — `docs/session_598_handoff.md` — let's keep rolling with our queue.*
