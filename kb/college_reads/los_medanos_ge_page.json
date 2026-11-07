@@ -1,5 +1,5 @@
 {
- "_readme": "S602 SkySombrero, 2026-11-07. Los Medanos College's local A.A. and A.S. records fail arithmetic because the program pages name the 60-unit degree and 'LMC General Education' with no units (page read 42376216539: Accounting A.S. 01528, Fine Arts A.A. 01546). A reconcile step for them must cite LMC's own words, and the Cal-GETC step's source (S600) cites Monterey Peninsula's GE page, which belongs to another college. This read finds LMC's own general education and graduation pages from the catalog's front page and prints what they say. No URL for them is on file, so the front page's matching links are shown and up to five are followed. No model call. The degrees hub (26-27/degrees, S401) is read the same way, and two guessed content-call slugs (S402's form) try the GE page directly; a miss costs one load each.",
+ "_readme": "S602 SkySombrero, 2026-11-07. Los Medanos College's local A.A. and A.S. records fail arithmetic because the program pages name the 60-unit degree and 'LMC General Education' with no units (page read 42376216539: Accounting A.S. 01528, Fine Arts A.A. 01546). A reconcile step for them must cite LMC's own words, and the Cal-GETC step's source (S600) cites Monterey Peninsula's GE page, which belongs to another college. This read finds LMC's own general education and graduation pages from the catalog's front page and prints what they say. No URL for them is on file, so the front page's matching links are shown and up to five are followed. No model call. The degrees hub (26-27/degrees, S401) is read the same way, and two guessed content-call slugs (S402's form) try the GE page directly; a miss costs one load each. Pass 2: run 42396753803 found the hub 26-27/requirements (from 'Graduation & Transfer Requirements' on the front page), whose topics are General Education, Associate Degree General Education Requirements, Graduation Requirements, Transfer Information and Cal-GETC; 26-27,generaleducation is the GE philosophy and SLOs only, and 26-27,graduationrequirements is empty. This pass reads the hub as a page of its own, shows all its links, and follows the three topics.",
  "college": "Los Medanos College",
  "questions": {
   "local_ge_units": "How many units LMC's local general education pattern (for the A.A. and A.S.) requires, in the page's own words.",
@@ -23,36 +23,10 @@
     "electives",
     "cal_getc_units"
    ],
-   "url": "https://lmc.elumenapp.com/catalog/26-27",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/requirements",
    "network": true,
-   "links": "general|graduation|degree req|requirement|cal-getc|associate degree|\\bGE\\b",
-   "follow": "general[- ]education|graduation|degree[- ]requirement|cal-getc"
-  },
-  {
-   "answers": [
-    "local_ge_units",
-    "electives"
-   ],
-   "url": "https://lmc.elumenapp.com/catalog/26-27/degrees",
-   "network": true,
-   "links": "general|graduation|degree req|requirement|cal-getc|\\bGE\\b",
-   "follow": "general[- ]education|graduation|degree[- ]requirement|cal-getc"
-  },
-  {
-   "answers": [
-    "local_ge_units",
-    "electives",
-    "cal_getc_units"
-   ],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,generaleducation?tenant=lmc.elumenapp.com"
-  },
-  {
-   "answers": [
-    "local_ge_units",
-    "electives",
-    "cal_getc_units"
-   ],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,graduationrequirements?tenant=lmc.elumenapp.com"
+   "links": ".",
+   "follow": "associate degree general|graduation requirements|calgetc|cal-getc|general education transfer"
   }
  ]
 }
