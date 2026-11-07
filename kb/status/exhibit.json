@@ -1,20 +1,28 @@
 {
   "schema": 1,
   "session": 595,
-  "moniker": "SkyBeacon",
+  "moniker": "SkyHarbor",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_594_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-06T22:03:38Z",
+  "written_at": "2026-11-06T23:57:22Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Add your credential",
-    "text": "When the Catalog's search finds nothing, a short form adds a credential through one INSERT-only function beside credential_priority_request, verified in the Exhibits Requests view before it shows; Governance maps the write beside DR-31 first."
+    "title": "Read the Department of Insurance's license types into the harvest",
+    "text": "So a visitor finds an insurance license before reaching for Add your credential; then Quick Adopt beside a strong course, and Sierra's CPL-AI answers."
   },
   "changes": [
+    {
+      "at": "2026-11-06T23:35:00Z",
+      "text": "Add your credential is live (#2860): a search that finds nothing offers Add it; nothing a visitor types shows until a reviewer verifies it in the Exhibits Requests view (DR-32)."
+    },
+    {
+      "at": "2026-11-06T23:55:00Z",
+      "text": "CPL Pathways brings the Credential Catalog in: a Credentials card, a Programs or Credentials switch, and a college's recommended credentials it could adopt (#2863, open)."
+    },
     {
       "at": "2026-11-06T21:46:00Z",
       "text": "Sam's 1 yes, 2 yes applied: the Spanish 1 and 2 overrides retired, the Wheel Alignment merge confirmed, and the rename folded ServSafe Food Protection Manager and the two Wheel Alignment titles (#2855)."

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-575 document(s).
+576 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -44,6 +44,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
 | [A bulk delete's receipt reads the rows outside the session's context](../kb-notes/methodology-a-bulk-delete-receipt-reads-the-rows-outside-the-context.md) | methodology | published | 2026-10-23 | 2026-10-23 |
 | [A bulk POST is one statement over the union of its keys](../kb-notes/methodology-a-bulk-post-is-one-statement-over-the-union-of-its-keys.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A C-ID claim in COCI is a college's word, not ASCCC's](../kb-notes/methodology-a-c-id-claim-is-a-colleges-word-not-asccc.md) | methodology | published | 2026-11-06 | 2026-11-06 |
 | [A cache breakpoint must LEAD the prompt, and what sits behind it must not move](../kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display](../kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md) | methodology | published | 2026-08-21 | 2026-10-26 |
 | [A capped list must never read as a census](../kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md) | methodology | published | 2026-08-21 | 2026-08-21 |

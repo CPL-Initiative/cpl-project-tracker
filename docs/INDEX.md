@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 575 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 576 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 99 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 558 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1398** | |
+| **total** | **1399** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-06 SkyHarbor (Library side session): SkyBeacon's PRs merged (#2858, #2859, CPLBrain#694); Add your credential live (#2860, DR-32); the Library List sorts loose pieces by date (#2861); Moreno Valley's HES 1 claim on HIST 150 held, no Basic Military Training on world history (#2862); CPL Pathways opens on every college with the Credential Catalog inside, full width (#2863); full checkpoint; `docs/library_handoff.md`.
 - 2026-11-06 SkyBeacon (Library side session): the ask rule (#2854); the CER retire path and Sam's 1 yes, 2 yes written and folded by the rename (#2855); the Catalog's badges and a college's first view (#2856); the Commons first view from Sam's recording and the lapsed-token fix on every surface (#2857); COCI Lookup named Courses and Programs (#2858); `library_lessons.md` compacted into `library_lessons_archive_2.md`; full checkpoint; `docs/library_handoff.md`.
 - 2026-11-06 SkyLantern (Library side session): the Catalog's List one line a credential, tiles that follow the filters, lazy loading (#2850); CPL-AI hosted whole, joined to the common exhibits and shown in Exhibits (#2851, #2853); seven title moves and the ServSafe fold written through a reviewed plan (#2852; receipt on main); Sam's word that CPL-AI goes public; the badges mock approved; full checkpoint at the context WARN; `docs/library_handoff.md`.
 - 2026-11-06 S589 SkyStephan (CPL Queue routine, 08:12Z): security step 2 merged and read back (#2822; the migration had applied at 06:30Z); COBIx told on #2816; SLOs: Mission's full read pushed (#2800), Lake Tahoe's trial opened (#2833); light checkpoint; handoff 590.
@@ -129,12 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-05 S586 SkyMessier continued (Sam's side session for COBIx): step 1 verified end to end (worker pasted, both secrets rotated, proof runs 686 and 688); COBIx's identity recorded (#2820); step 2's migration drafted, not applied (#2822); light checkpoint at the context WARN; handoff 587.
 - 2026-11-05 S585 SkyMessier (Sam's side session for COBIx): COBIx round 1 answered (#2816), the COBIx PR loop and `cobix-review.yml` stub (#2817), security step 1: the worker and the refresh button take a reviewer sign-in or the team phrase, no trigger secret in the page (#2818); light checkpoint; handoff 586.
 - 2026-11-05 S584 SkyMinkowski (scheduled firing, 14:12Z): course objectives read and stored beside the SLOs (`course_outcomes.kind`, applied live, #2808); Monterey Peninsula's page read (#2809); light checkpoint; handoff 585.
-- 2026-11-05 S581 SkyMeathook (scheduled firing, 10:12Z): start checks only, the queue empty until Mission's full read on 2026-11-06 UTC; light checkpoint; handoff 582.
-- 2026-11-05 S577 SkyKumquat and SkyBarnard (Sam's session, both queues): the Subjects List recode, eleven Common SUBJ codes onto 2,389 M-IDs (#2790), `kb_curation` re-keyed and read back; the S573 cert-link PR merged (#2763); the Library revises a public visual from its card, no session (#2791, #2792); full checkpoint; handoff 578.
-- 2026-11-05 S576 SkyMice (Sam's session): two Claude Team accounts (MAP team, CO Academic Affairs pilot) with the kit and runbook in CPLBrain (#662, #664); Our Process *Getting set up* (#2784, #2786); the Library names a draft's version, sorts by last modified, quiets the project count (#2788); light checkpoint; handoff 577.
-- 2026-11-04/05 SkyJujube (Sam's session, the Lists side session): the Subjects List as Sam's workspace (#2778, #2781, #2782, #2783, #2785): saves renew the sign-in, row press edits, Check alignment (Subjects and Exhibits), Colleges beside Courses, Use, *What a Common SUBJ is*, Hide the top and resizable panels on every Commons view; the sync ran; light checkpoint; handoff `docs/cer_redesign_handoff.md`.
-- 2026-11-04 SkyJujube (Sam's session, a side session): sign-in lands in the keeper and returns to the view (#2775); the Courses List's panel carries the common course card and its edits (#2776); the context meter reads again (#2777); every COBI view has an address (#2779); light checkpoint; handoff `docs/courses_retirement_handoff.md`.
-- 2026-11-04 S573 SkyNeedle (Sam's session): the Commons path mock; every Commons view in Malone's look (#2764); the register of data sources (#2765); the one queue (#2766) and the confidence count (#2767) on the CPL Commons tab; light checkpoint; handoff 575.
-- 2026-11-04 S572 SkyBlackEye (CPL Queue routine): merged S571's #2761; the cert link's NWCG and SWRCB families, 12 titles to 4 certs (#2762); light checkpoint; handoff 573.
-- 2026-11-04 S571 SkyHoags (CPL Queue routine): merged S570's #2760; the cert link's AWS welding and Amazon Web Services families, 10 titles to 6 certs (#2761); light checkpoint; handoff 572.
-- 2026-11-04 S570 SkyFireworks (CPL Queue routine): the cert link's PMI, ICC, CDPH and EMSA families, 17 titles to 16 certs (#2760); light checkpoint; handoff 571.
