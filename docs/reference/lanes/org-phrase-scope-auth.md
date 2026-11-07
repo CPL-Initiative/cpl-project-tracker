@@ -106,6 +106,7 @@ The lane's marker is what makes the builder carry them.
   adds no approval; *Require a pull request*, *Require status checks* and *Require review from Code Owners* stay
   off. Sam answered Sheet 168 card 1 (15:12Z): *"those were already ticked--leaving as is."* The rulesets stand as
   he set them; nothing waits.
+- **Security step 3 is built (S602, #2901), not applied.** The funding half was already closed: anon and authenticated hold no SELECT on the attestor columns of either funding table (column grants; a select as anon reads *permission denied*), so no `_pub` view or gate is needed. The TMC owner token is the change: migration `kb/migrations/2026-11-07_tmc_submissions_owner_token.sql` and its rollback, and the client in the same PR, which must land in one window. NEEDS SAM ([Open Asks Sheet 169](https://claude.ai/artifact/42Wrb1UqxNE6tX3okfu1Re)): the word to apply it. The k=10 check (item 7) is #2903, no apply needed.
 
 ### Next (session work)
 
