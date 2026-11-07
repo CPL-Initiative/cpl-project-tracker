@@ -1,7 +1,7 @@
 ---
-title: Library — side-lane handoff (SkyHarbor, beside the CPL Queue routine)
-date: 2026-11-06
-tags: [handoff, library, credential-catalog, cpl-pathways, c-id, side-lane]
+title: Library — side-lane handoff (SkyMeadow, beside the CPL Queue routine)
+date: 2026-11-07
+tags: [handoff, library, credential-catalog, cpl-pathways, decision-sheet, side-lane]
 related:
   - "[[docs/reference/lanes/cer-procedures]]"
   - "[[docs/reference/lanes/my-college-action-page]]"
@@ -12,63 +12,57 @@ related:
 
 # Library — side-lane handoff
 
-> Side-lane handoff; it does not replace the numbered `session_<N>_handoff.md`. **Full checkpoint** (SkyHarbor,
-> 2026-11-06, ~00:05Z, at the context WARN): lint (two findings, both on the main queue's `session_594_handoff.md`, left to
-> the routine), `docs/library_lessons.md`, the KB note `methodology-a-c-id-claim-is-a-colleges-word-not-asccc`, the INDEX
-> rebuild (history trimmed to 8, the rest to `roadmap_archive.md`), this handoff, `cpl_memory`, the vault note,
-> `kb/status/exhibit.json` and `course.json`. Lane edits ride their PRs (`cer-procedures` merged with #2860;
-> `local-course-cr-alignment` with #2862; `my-college-action-page` with #2863). Skipped: `kb/README.md` (the two new kb
-> scripts land with #2862 and carry their own docstrings), `README.md`, the Pipeline tab (no M-ID phase, auditor count or
-> re-mint moved), and **the decision sheet rebuild** (no room at the WARN line: build it first, item 1).
+> Side-lane handoff; it does not replace the numbered `session_<N>_handoff.md`. **Light checkpoint** (SkyMeadow,
+> 2026-11-07, ~01:15Z): no lane's Roadmap row moved and no re-mint or data write ran. Written: the lane edits (each rode
+> its PR), `docs/library_lessons.md`, `kb/status/exhibit.json`, this handoff, the vault note
+> (`CPLBrain/07-session-notes/2026-11-07-skymeadow-sheet-163-pathways-hero-quick-adopt.md`). Skipped: `cpl_memory` (the
+> one durable finding is Sheet 163 card 4 and the lessons entry; a row waits on Sam's answer), the KB-note pass, the
+> INDEX rebuild beyond the generated check, `README.md` and the Pipeline tab (nothing moved).
 
-Your moniker is **SkyMeadow**. You pick up after SkyHarbor on the **Credential Catalog**, **CPL Pathways** and the
-**C-ID claim holds**, with the Library ([`library`](reference/lanes/library.md)).
+Your moniker is **SkyFern**. You pick up after SkyMeadow on the **Credential Catalog**, **CPL Pathways**, the **C-ID
+claim holds** and the Library ([`library`](reference/lanes/library.md)).
 
-## What shipped (SkyHarbor, 2026-11-06)
-- **#2858, #2859, CPLBrain#694** (SkyBeacon's): merged.
-- **#2860 Add your credential**: a search that finds nothing offers *Add it*; `credential_submissions` (DR-32) through one
-  INSERT-only add, a reviewer-only decide (Verify, Merge, Decline, Reopen, history kept), a verified-only read; the
-  Exhibits Requests view decides. Migration applied live; grants verified.
-- **#2861** the Library List sorts a piece in no project by its own modified date.
-- **#2862 (merged)** Moreno Valley's HES 1 claim on C-ID HIST 150 held: no Basic Military Training on world history in
-  CPL Pathways, the aligned view or Sierra (`kb/reference/cid_claim_holds.json`, receipt in `kb/cid_claim_holds_out/`,
-  daily audit `kb/_audit_cid_claims.py`). Two holds statewide.
-- **#2863 (open, CI)** CPL Pathways opens on every college (the index read carries each program's counts), six cards
-  with Credentials second, *CPL here* (never "carry"), a *Programs | Credentials* switch bringing the Catalog in, a
-  college's recommended credentials (four, then *Show all N*), full width.
-- **The mock**, approved: https://claude.ai/artifact/BRUR7BRD4LxVFauQ23NahP (three boards).
+## What shipped (SkyMeadow, 2026-11-07)
+- **Open Asks Sheet 163** (https://claude.ai/artifact/DdQQznv6bP1owM69KEtJNg, current, fresh store empty at publish;
+  cpl-project-tracker#2865 marked the lanes, CPLBrain#696 the builder). Four held cards: (1) does a recommendation's
+  C-ID need two peer colleges (536 take one from a peer row, 259 from one college alone); (2) the note to Moreno Valley
+  about HES 1's COCI C-ID, drafted, outward; (3) Sierra's wording floor (*MUS 4A Advanced Ear Training* for *Advanced
+  Strength Training*, 0.61); (4) seven of Sam's 2026-11-01 triage titles: four whole-college Credit by Exam exhibits
+  under one course's title (*Plant Propagation*, *Basic Computer Keyboarding*, *Basic Refrigeration & AC Lab*, *Water
+  Supply*) and CompTIA A+, Network+, Server+ under Security+. Sheet 162 is answered and built; never republish onto it.
+- **#2863 and #2864** (SkyHarbor's): merged.
+- **#2866** the CPL Pathways statewide head carries the Catalog's photos (cycles only on screen, Pause photos, still
+  under reduced motion; `tests/cpl_pathways_hero.test.js`).
+- **#2867** the Catalog panel's CPL-AI list offers Request Quick Adopt beside a Strong evidence course at a college
+  that does not award it.
 
 ## Decisions Sam made this run
-All in session, 2026-11-06: the Library List sorts every item or project by modified date, newest first; *"the HIST
-course should not be recommend for Basic Training... Definitely don't want Sierra recommending this"*; Pathways opens on
-the whole state, lazily loaded, until a college is picked; the Catalog comes into Pathways, full width; *"I don't like to
-use the word carry"*; a Credentials card; the recommended box opens in place past four; *"build it into CPL Pathways--looks
-terrific!"*; yes to the hero picture from the standard format.
+None in session (he was away). Sheet 162's answer, read from its store: *"Reframe it as a public request to prioritize
+review of a credential... without promising any one person that we would evaluate their credential"* (15:16Z
+2026-11-06), already built.
 
 ## Open work, in order
-1. **Build the decision sheet** (`CPLBrain/decision-sheets/`, a fresh `SHEET_ID`): (a) should a recommendation's C-ID need
-   two peer colleges to agree before Sierra treats it as a C-ID match (today one peer row decides); (b) send a note to
-   Moreno Valley's articulation officer to correct HES 1's COCI C-ID (draft it; outward, Sam sends); (c) Sierra offers MUS
-   4A *Advanced Ear Training* for *Advanced Strength Training* by wording alone (0.61); (d) *Plant Propagation* carries
-   Spanish and Nutrition credit lines in `chatbox_peer_articulations` (a mis-folded title). Hand over the link.
-2. **Merge #2863 and #2864** on a green `test` (SkyHarbor let go of both at sign-off; #2863's suite (3) failure was
-   fixed in `31231358`, re-check its CI). #2862 merged 00:00Z: after the next daily run and the 13:20Z
-   `credential-catalog-sync.yml`, read `credential_alignment_for_college('Basic Military Training','Sierra College')`
-   and confirm no HIST 50 row.
-3. **The hero picture in CPL Pathways** (Sam: yes): the Catalog's photo arc (`library/adopt/index.html` `.hero-visual`,
-   `adopt.js` `heroInit`, pause control, reduced motion) on the statewide head, Pathways' tokens light and dark,
-   `npm run a11y -- cobi:cpl-pathways`.
-4. **`cer-procedures` NEXT:** the Department of Insurance's license types into the harvest (`data_sources`); Quick Adopt
-   beside a strong course; Sierra's CPL-AI answers.
-5. **`reviewer-session-lifetime`:** CPL Pathways' own sign-in gate (`program_requirements.js` `session()`, strict
-   `isFresh`); widen its draw gate only with its writes renewing first (the main queue's file; agree one writer).
-6. **The Commons' NEXT** ([`commons`](reference/lanes/commons.md)) and its Exhibits List in the Catalog's shape, Jev for
-   the analysis; offered, unanswered: let the team phrase mark a Commons decision done.
+1. **Read Sheet 163's replies first** (`ArtifactData` list `replies` on its URL) and carry out each answer in the same
+   PR as its lane marker. Card 4, if *correct*: a CER decisions plan under `kb/cer_decisions_out/` re-pointing the seven
+   `kb/unified_titles.json` rows (the four to *Credit by Exam*, the three CompTIA exams to their own titles), applied
+   with `kb/_cer_decision_apply.py` and its receipt, then `cred-rename-apply.yml`. Card 3, if *tighten*: a migration
+   through `supabase-migrate.yml` changing `cx_align_tokens()` and the scorer's floor (`kb/supabase_alignment_routes.sql`),
+   then `tests/sierra_alignment.test.js`. Card 2 is Sam's to send.
+2. **SkyHarbor's check, still due:** after the next daily run and the 13:20Z `credential-catalog-sync.yml`, read
+   `credential_alignment_for_college('Basic Military Training','Sierra College')` and confirm no HIST 50 row.
+3. **The Department of Insurance's license types** (`data_sources`): insurance.ca.gov is outside this environment's
+   network (proxy 403; the fetch agent cannot resolve it). Either a session with that host allowed, or a reader that
+   runs in the daily workflow, following `official_exam_lists()` in `kb/_build_it_ai_credential_catalog.py`.
+4. **Sierra's CPL-AI answers** (`cer-procedures` Next): a cpl-chat change, deployed through `cpl-chat-deploy.yml`.
+5. **`reviewer-session-lifetime`:** CPL Pathways' own sign-in gate (`program_requirements.js` `session()`); the main
+   queue's file, agree one writer.
+6. **The Commons' NEXT** and its Exhibits List in the Catalog's shape; offered, unanswered: let the team phrase mark a
+   Commons decision done.
 7. The Library lane's standing *Next*.
 
 ## Watching
-Nothing. SkyHarbor let go of #2863, #2864, the mock's artifact watch and its check-in at sign-off (context near the
-emergency line).
+Nothing. Every PR this run opened is merged (#2865, #2866, #2867, CPLBrain#696, #697); no check-in is scheduled. Sheet
+163's artifact watch was armed at publish; drop it if it is listed.
 
-> *Greetings, you are SkyMeadow, a Library side session beside the CPL Queue routine, see SkyHarbor's handoff —
+> *Greetings, you are SkyFern, a Library side session beside the CPL Queue routine, see SkyMeadow's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*

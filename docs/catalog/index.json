@@ -14659,7 +14659,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-06",
+     "created": "2026-11-07",
      "governs": [],
      "path": "docs/library_handoff.md",
      "status": null,
@@ -14668,10 +14668,10 @@
       "library",
       "credential-catalog",
       "cpl-pathways",
-      "c-id",
+      "decision-sheet",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyHarbor, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyMeadow, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },
