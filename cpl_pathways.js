@@ -168,7 +168,7 @@
   // ── Scoped CSS (var(--token) only — no raw hex) ──────────────────────────
   var CSS_ID = "cpl-pathways-css";
   var CSS = [
-    ".cplpw { color: var(--text-body); max-width: 1080px; margin: 0 auto; }",
+    ".cplpw { color: var(--text-body); max-width: none; margin: 0; }",
     /* Status toolbar (selector + PDF) — above the fold */
     ".cplpw-toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin: 12px 0 4px; }",
     ".cplpw-toolbar .lbl { font-size:.76rem; font-weight:700; color: var(--text-muted); letter-spacing:.04em; text-transform:uppercase; }",
@@ -317,7 +317,8 @@
     ".cplpw-h { margin:0; font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.06; }",
     ".cplpw-h::after { content:''; display:block; width:66px; height:4px; margin:14px 0 0; background: var(--cmn-gold, var(--gold-accent)); }",
     ".cplpw-lede { margin:14px 0 0; font-size:1.02rem; line-height:1.55; max-width:var(--cpl-measure,none); }",
-    ".cplpw-cards { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:14px; margin:20px 0 12px; }",
+    ".cplpw-cards { display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:14px; margin:20px 0 12px; }",
+    "@media (max-width: 1280px) { .cplpw-cards { grid-template-columns:repeat(3, minmax(0, 1fr)); } }",
     "@media (max-width: 900px) { .cplpw-cards { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
     "@media (max-width: 560px) { .cplpw-cards { grid-template-columns:1fr; } }",
     ".cplpw-card { display:block; text-align:left; font:inherit; min-width:0; cursor:pointer; background: var(--surface); color: var(--text-body); border:1px solid var(--border); border-radius:11px; padding:16px 17px; }",
@@ -330,6 +331,24 @@
     // A program's title opens its pathway, so it reads as a link (the controls-are-underlined-words rule).
     ".cplpw-list .cplpwl-open { color: var(--cobalt); font-weight:600; text-decoration:underline; text-underline-offset:3px; text-align:left; }",
     ".cplpw-backrow { margin:14px 0 6px; }",
+    /* Programs or Credentials, and the recommended credentials a college could adopt (Sam, 2026-11-06, the mock). */
+    ".cplpw-lens { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 24px; margin:6px 0 4px; padding-bottom:8px; border-bottom:1px solid var(--border); }",
+    ".cplpw-lens-l { font-size:.85rem; font-weight:700; color: var(--text-muted); }",
+    ".cplpw-lens button { min-height:24px; padding:0; border:0; background:none; font:inherit; font-size:1.05rem; font-weight:700; color: var(--cobalt); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:6px; cursor:pointer; }",
+    ".cplpw-lens button[aria-pressed='true'] { color: var(--text-strong); text-decoration-thickness:3px; }",
+    ".cplpw-recs { margin:6px 0 14px; padding:16px 18px; background: var(--surface); border:1px solid var(--border-strong); border-radius:11px; }",
+    ".cplpw-recs-top { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 20px; }",
+    ".cplpw-recs h3 { margin:0; font-family: var(--cmn-serif, Georgia, serif); font-size:1.35rem; color: var(--text-strong); }",
+    ".cplpw-recs-s { margin:6px 0 10px; font-size:.88rem; color: var(--text-muted); }",
+    ".cplpw-recs-grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }",
+    ".cplpw-rec { display:flex; flex-direction:column; gap:6px; padding:12px 14px; border:1px solid var(--border); border-radius:9px; min-width:0; }",
+    ".cplpw-rec h4 { margin:0; font-size:1rem; color: var(--text-strong); }",
+    ".cplpw-rec-i { margin:0; font-size:.82rem; color: var(--text-muted); }",
+    ".cplpw-rec-b { display:flex; flex-wrap:wrap; gap:4px; }",
+    ".cplpw-badge { display:inline-block; padding:1px 8px; font-size:.75rem; font-weight:600; border-radius:999px; border:1px solid var(--border-strong); color: var(--text-strong); background: var(--surface-subtle, var(--surface)); }",
+    ".cplpw-badge.ai { border-style:dashed; background: var(--surface); }",
+    ".cplpw-rec p { margin:0; font-size:.9rem; }",
+    ".cplpw-more { min-height:24px; padding:0; border:0; background:none; font:inherit; font-weight:700; color: var(--cobalt); text-decoration:underline; text-underline-offset:4px; cursor:pointer; }",
     ".cplpw-back { font-size:.95rem; }",
     "@media print { .cplpw-progrow, .cplpw-selrow, .cplpw-backrow, .cplpw-cards { display:none; } .cplpw-sec { break-inside: avoid; } }",
   ].join("\n");
@@ -1553,7 +1572,7 @@
   // A failed list read falls back to the pilot file and says so; a failed record read
   // shows the file's copy where it has one, and otherwise says the read failed.
   var ROEP_REST = SUPABASE_URL + "/rest/v1";
-  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked";
+  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked,counts:display->counts";
   var ROEP_RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url,measure,record,checked,display";
   var ROEP_READ_MS = 10000;
   var roepTable = { index: null, error: null, platforms: {}, reviewer: false, records: {} };
@@ -1680,7 +1699,8 @@
       var id = roepId(r.college, r.control_number);
       return roepTable.records[id] || {
         key: id, table: true, college: r.college, control_number: r.control_number,
-        title: r.program_title, award: r.award, checked: !!r.checked
+        title: r.program_title, award: r.award, checked: !!r.checked,
+        display: r.counts ? { counts: r.counts } : undefined
       };
     });
   }
@@ -2109,7 +2129,7 @@
     var label = el("div", "mlabel");
     var upTo = Number(fig.up_to) || 0;
     if (!upTo) {
-      label.appendChild(document.createTextNode("No course in this program carries CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : deg ? "; " + degWords : "") + "."));
+      label.appendChild(document.createTextNode("No course in this program can be earned through CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : deg ? "; " + degWords : "") + "."));
     } else if (hasTot) {
       label.appendChild(document.createTextNode("Up to "));
       label.appendChild(el("b", null, roepAmt(upTo, null, m)));
@@ -2117,7 +2137,7 @@
     } else {
       label.appendChild(document.createTextNode(deg ? degWords.charAt(0).toUpperCase() + degWords.slice(1) + "; " : "The catalog prints no program total; "));
       label.appendChild(el("b", null, roepAmt(upTo, null, m)));
-      label.appendChild(document.createTextNode(" of the listed courses carry CPL."));
+      label.appendChild(document.createTextNode(" of the listed courses can be earned through CPL."));
     }
     meter.appendChild(label);
     // The figure along a read map (Sam, open-asks sheet 47 card 9, as proposed): the display
@@ -2987,7 +3007,7 @@
     return p;
   }
   var CPLPW_FILTERS = [["", "All"], ["degree", "Degrees"], ["cert", "Certificates"], ["noncredit", "Noncredit"],
-    ["map", "Course maps"], ["here", "Carry CPL here"], ["adopt", "Could adopt"], ["consider", "For consideration"],
+    ["map", "Course maps"], ["here", "CPL here"], ["adopt", "Could adopt"], ["consider", "For consideration"],
     ["conf", "Confirmed"], ["fail", "Fails a check"]];
   function pathwayRows(items, idxs, dir, directory, recs) {
     var byCtl = {};
@@ -3015,7 +3035,8 @@
         r.tot = p.total_units ? fmtU(p.total_units) + " units" : ""; r.n = null; r.h = null; r.ad = null; r.c = null;
         r.rec = "Course map"; r.conf = false; r.fail = false;
       }
-      r.hay = (r.t + " " + r.a + " " + (p.control_number || "") + " " + (p.field || "")).toLowerCase();
+      r.col = p.college || "";
+      r.hay = (r.t + " " + r.a + " " + (p.control_number || "") + " " + (p.field || "") + " " + r.col).toLowerCase();
       return r;
     });
   }
@@ -3288,6 +3309,128 @@
     if (hit) { shownIdent = hit; wantPath = null; }
     else if (!wp.control || roepTable.index || roepTable.error) wantPath = null;
   }
+  /* ── The Credential Catalog in CPL Pathways (Sam, 2026-11-06: "build it into CPL Pathways", from the mock
+   * https://claude.ai/artifact/BRUR7BRD4LxVFauQ23NahP) ──
+   * The Catalog's own file (library/adopt/adopt_data.json, written daily by kb/_build_adopt_page.py) gives the
+   * credentials that earn credit at a college. Statewide: each one, with its colleges and median units. A college:
+   * the ones it awards, the ones it could add, and first the recommended ones it could adopt (a statewide
+   * recommendation or a CPL-AI course match, earning credit elsewhere, lined up with a course it teaches). */
+  var ADOPT_URL = "library/adopt/adopt_data.json";
+  var RECS_SHOWN = 4;
+  var adoptState = { data: null, error: null, loading: null, sets: {} };
+  function loadAdopt() {
+    if (adoptState.loading) return adoptState.loading;
+    if (typeof window.fetch !== "function") { adoptState.error = "this page cannot read the file"; return Promise.resolve(); }
+    adoptState.loading = window.fetch(ADOPT_URL, { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { adoptState.data = d && Array.isArray(d.credentials) ? d : null; if (!adoptState.data) adoptState.error = "the file holds no credentials"; })
+      .catch(function (e) { adoptState.error = (e && e.message) || "the read failed"; });
+    return adoptState.loading;
+  }
+  /* { here: [...], could: [...], recs: [...] } for a college, or every college when college is "". */
+  function credSet(college) {
+    var D = adoptState.data;
+    if (!D) return null;
+    var k = college ? choiceKey(college) : "";
+    if (adoptState.sets[k]) return adoptState.sets[k];
+    var at = -1;
+    if (college) (D.colleges || []).forEach(function (c, i) { if (at < 0 && choiceKey(c[0]) === k) at = i; });
+    var sectors = D.sectors || {}, here = [], could = [], recs = [];
+    D.credentials.forEach(function (c) {
+      var a = c.a || [], row = { t: c.t, i: c.i || "", f: sectors[c.s] || "", sw: !!(c.sw && c.sw.length), ai: !!c.ai,
+        n: a.length, u: c.p != null ? Number(c.p) : null, could: (c.c || []).length };
+      row.rw = [row.sw ? "Statewide recommendation" : "", row.ai ? "CPL-AI course match" : ""].filter(Boolean).join(", ");
+      if (!college) { here.push(row); return; }
+      if (at < 0) return;
+      var mine = a.filter(function (x) { return x[0] === at; })[0];
+      if (mine) { row.st = "Earns credit here"; row.u = mine[1] != null ? Number(mine[1]) : row.u; row.course = mine[2] || ""; here.push(row); return; }
+      var cc = (c.c || []).filter(function (x) { return x[0] === at; })[0];
+      if (!cc) return;
+      row.st = "Could be added"; row.course = cc[1] || "";
+      could.push(row);
+      if ((row.sw || row.ai) && a.length) recs.push(row);
+    });
+    recs.sort(function (x, y) { return ((y.sw ? 1 : 0) + (y.ai ? 1 : 0)) - ((x.sw ? 1 : 0) + (x.ai ? 1 : 0)) || y.n - x.n || x.t.localeCompare(y.t); });
+    adoptState.sets[k] = { here: here, could: could, recs: recs, known: !college || at >= 0 };
+    return adoptState.sets[k];
+  }
+  function credSpec(college, set, state, repaint) {
+    var rows = college ? set.here.concat(set.could) : set.here;
+    var units = function (u) { return u == null ? "" : String(Math.round(u * 10) / 10); };
+    return {
+      prefix: "cplpwc-", frPrefix: "cplpwc-fr-",
+      noun: { many: "credentials", region: (college || "Every college") + ": credentials that earn credit", keyHeader: "Credential",
+        file: "cpl-credentials-" + (college ? college.toLowerCase().replace(/[^a-z0-9]+/g, "-") : "statewide"),
+        placeholder: "Credential, issuer or field", findLabel: "Find a credential" },
+      state: state, rows: function () { return rows; }, render: repaint, findWords: true,
+      key: function (r) { return r.t; }, title: function (r) { return r.t; },
+      hay: function (r) { return (r.t + " " + r.i + " " + r.f + " " + (r.course || "")).toLowerCase(); },
+      cols: function () {
+        var c = [{ h: "Credential", w: 22, v: function (r) { return r.t; } },
+          { h: "Issuer", w: 18, v: function (r) { return r.i; } },
+          { h: "Field", w: 16, v: function (r) { return r.f; } },
+          { h: "Recommended", w: 15, v: function (r) { return r.rw; } }];
+        if (college) return c.concat([{ h: "Credit status", w: 11, v: function (r) { return r.st; } },
+          { h: "Course", w: 10, v: function (r) { return r.course || ""; } },
+          { h: "Units", w: 5, n: true, v: function (r) { return units(r.u); } }]);
+        return c.concat([{ h: "Colleges", w: 6, n: true, v: function (r) { return r.n; } },
+          { h: "Median units", w: 7, n: true, v: function (r) { return units(r.u); } },
+          { h: "Could adopt", w: 7, n: true, v: function (r) { return r.could; } }]);
+      },
+      openLabel: "open it in the Credential Catalog",
+      open: function () {
+        var url = "library/adopt/" + (college ? "?college=" + encodeURIComponent(college) : "");
+        if (typeof window.open === "function") window.open(url, "_blank", "noopener");
+      }
+    };
+  }
+  /* The recommended credentials a college could adopt: four, then Show all N in place (Sam, 2026-11-06). */
+  var recsOpen = {};
+  function paintRecs(host, college, set) {
+    clearNode(host);
+    if (!college || !set || !set.recs.length) return;
+    var all = !!recsOpen[college], recs = set.recs, shown = all ? recs : recs.slice(0, RECS_SHOWN);
+    var box = el("section", "cplpw-recs");
+    var hid = "cplpw-recs-h";
+    box.setAttribute("aria-labelledby", hid);
+    var top = el("div", "cplpw-recs-top");
+    var h = el("h3", null, "Recommended credentials " + college + " could adopt (" + statNum(recs.length) + ")");
+    h.id = hid;
+    top.appendChild(h);
+    if (recs.length > RECS_SHOWN) {
+      var more = document.createElement("button");
+      more.type = "button"; more.className = "cplpw-more";
+      more.setAttribute("aria-expanded", all ? "true" : "false");
+      more.setAttribute("aria-controls", "cplpw-recs-grid");
+      more.textContent = all ? "Show the first " + RECS_SHOWN : "Show all " + statNum(recs.length);
+      more.addEventListener("click", function () {
+        recsOpen[college] = !all; paintRecs(host, college, set);
+        var again = host.querySelector(".cplpw-more"); if (again) again.focus();
+      });
+      top.appendChild(more);
+    }
+    box.appendChild(top);
+    box.appendChild(el("p", "cplpw-recs-s", "Each has a statewide recommendation or a CPL-AI course match, earns credit at another " +
+      "college, and lines up with a course " + college + " already teaches. Strongest first."));
+    var grid = el("ul", "cplpw-recs-grid");
+    grid.id = "cplpw-recs-grid";
+    shown.forEach(function (r) {
+      var li = el("li", "cplpw-rec");
+      li.appendChild(el("h4", null, r.t));
+      if (r.i) li.appendChild(el("p", "cplpw-rec-i", r.i));
+      var b = el("div", "cplpw-rec-b");
+      if (r.sw) b.appendChild(el("span", "cplpw-badge", "Statewide recommendation"));
+      if (r.ai) b.appendChild(el("span", "cplpw-badge ai", "CPL-AI course match"));
+      li.appendChild(b);
+      li.appendChild(el("p", null, college + " teaches " + (r.course || "a matching course") + ". " + statNum(r.n) +
+        (r.n === 1 ? " college awards" : " colleges award") + " credit for it" + (r.u != null ? ", " + (Math.round(r.u * 10) / 10) + " units at the median college." : ".")));
+      var links = mapLinksNode(r.t);
+      if (links) li.appendChild(links);
+      grid.appendChild(li);
+    });
+    box.appendChild(grid);
+    host.appendChild(box);
+  }
   function render(root, data, live, dir, liveNote) {
     lastRender = { root: root, data: data, live: live, dir: dir, liveNote: liveNote };
     var featured = (data && data.programs) || [];
@@ -3374,23 +3517,36 @@
       roepOpening++;
       clearNode(body);
       if (!pickedCollege) {
-        body.appendChild(el("p", "cplpw-nopath", "Choose a college to see its pathways: its programs read from the catalog, " +
-          "its course maps, and the courses in each that carry credit for prior learning."));
+        // Every college until one is picked (Sam, 2026-11-06: "a lazy load of the whole state when CPL Pathways opens
+        // ...until you narrow down to a college"): the index the tab already reads, the List drawing it a page at a time.
+        var all = [];
+        items.forEach(function (it, j) { if (it.kind === "roep") all.push(j); });
+        paintCollege(body, "", all);
         return;
       }
       paintCollege(body, pickedCollege, idxsFor(pickedCollege));
     }
     /* The college's head, its five figure cards, its program data in one line, the List and My College. */
     function paintCollege(host, college, idxs) {
+      var state = !college;   // every college, until one is picked
       var head = el("div", "cplpw-head");
       head.appendChild(el("p", "cplpw-eyebrow", "CPL Pathways"));
-      head.appendChild(el("h2", "cplpw-h", college));
-      head.appendChild(el("p", "cplpw-lede", "Every " + college + " program read from its catalog, and its course maps, with " +
-        "the courses in each that carry credit for prior learning here or at another college. Each figure opens what it " +
-        "counts; a program opens its pathway."));
+      head.appendChild(el("h2", "cplpw-h", state ? "Every college, every program" : college));
+      head.appendChild(el("p", "cplpw-lede", state
+        ? "Every California community college program read from its catalog, and every credential that earns credit at a " +
+          "college. Pick a college to see its own programs and what it could add. Each figure opens what it counts."
+        : "Every " + college + " program read from its catalog, and its course maps, with the courses in each that earn " +
+          "credit for prior learning here or at another college, and every credential it awards credit for or could add. " +
+          "Each figure opens what it counts; a program opens its pathway."));
       host.appendChild(head);
       var cards = el("div", "cplpw-cards");
       host.appendChild(cards);
+      var recsHost = el("div", "cplpw-recs-host");
+      host.appendChild(recsHost);
+      var lens = el("div", "cplpw-lens");
+      lens.setAttribute("role", "group");
+      lens.setAttribute("aria-label", "What the list shows");
+      host.appendChild(lens);
       var stat = el("p", "cplpw-colstat");
       stat.setAttribute("role", "status");
       stat.setAttribute("aria-live", "polite");
@@ -3406,7 +3562,7 @@
       var mineHost = el("div", "cplpw-mycollege-b");
       myCol.appendChild(mineSum);
       myCol.appendChild(mineHost);
-      host.appendChild(myCol);
+      if (!state) host.appendChild(myCol);
       /* My College's sections for the chosen college (Sam, 2026-10-22, step 2 of folding My College into CPL Pathways).
          Folded until opened: college_briefing.js and its data load on the first open, never on the tab's own load. */
       var mineFor = null;
@@ -3423,8 +3579,8 @@
         });
       }
       myCol.addEventListener("toggle", function () { mineOpen = myCol.open; mountMine(); });
-      myCol.open = mineOpen;
-      mountMine();
+      myCol.open = mineOpen && !state;
+      if (!state) mountMine();
 
       var recs = null, recsErr = null, rowsMemo = null;
       function rows() {
@@ -3434,18 +3590,20 @@
       var L = listStateFor(college);
       var engine = window.CPL_COMMONS_LIST ? window.CPL_COMMONS_LIST.create({
         prefix: "cplpwl-", frPrefix: "cplpwl-fr-",
-        noun: { many: "pathways", region: college + "'s pathways, A to Z", keyHeader: "Pathway",
-          file: "cpl-pathways-" + college.toLowerCase().replace(/[^a-z0-9]+/g, "-"), placeholder: "Program, award or control number",
+        noun: { many: "pathways", region: (state ? "Every college" : college) + "'s pathways, A to Z", keyHeader: "Pathway",
+          file: "cpl-pathways-" + (state ? "statewide" : college.toLowerCase().replace(/[^a-z0-9]+/g, "-")),
+          placeholder: state ? "Program, college, award or control number" : "Program, award or control number",
           findLabel: "Find a pathway" },
         state: function () { return L; }, rows: rows, cols: function () {
-          return [{ h: "Program", w: 24, v: function (r) { return r.t; } },
+          // The engine draws the title in the first column, so the statewide List names the college second.
+          return [{ h: "Program", w: 24, v: function (r) { return r.t; } }].concat(state ? [{ h: "College", w: 14, v: function (r) { return r.col; } }] : [], [
             { h: "Award", w: 18, v: function (r) { return r.a; } },
             { h: "Total", w: 8, v: function (r) { return r.tot; } },
             { h: "Courses", w: 6, n: true, v: function (r) { return r.n; } },
             { h: "CPL here", w: 6, n: true, v: function (r) { return r.h; } },
             { h: "Could adopt", w: 6, n: true, v: function (r) { return r.ad; } },
             { h: "For consideration", w: 7, n: true, v: function (r) { return r.c; } },
-            { h: "Record", w: 7, v: function (r) { return r.rec; } }];
+            { h: "Record", w: 7, v: function (r) { return r.rec; } }]);
         },
         key: function (r) { return r.key; }, title: function (r) { return r.t; }, render: paintList,
         filters: CPLPW_FILTERS, filterPass: cplpwFilterPass, hay: function (r) { return r.hay; }, findWords: true,
@@ -3458,8 +3616,42 @@
           if (b) b.focus();
         }
       }) : null;
+      if (L.lens == null) L.lens = "programs";
+      if (state && !L.sort) L.sort = [{ col: 1, dir: 1 }];   // every college: by college first
+      function paintLens() {
+        clearNode(lens);
+        lens.appendChild(el("span", "cplpw-lens-l", "Show"));
+        [["programs", "Programs (" + statNum(rows().length) + ")"], ["creds", credLensWord()]].forEach(function (x) {
+          var b = document.createElement("button");
+          b.type = "button"; b.textContent = x[1];
+          b.setAttribute("aria-pressed", L.lens === x[0] ? "true" : "false");
+          b.addEventListener("click", function () { L.lens = x[0]; paintList(); var again = lens.querySelectorAll("button")[x[0] === "programs" ? 0 : 1]; if (again) again.focus(); });
+          lens.appendChild(b);
+        });
+      }
+      function credLensWord() {
+        var c = credSet(college);
+        if (!c) return adoptState.error ? "Credentials" : "Credentials (reading…)";
+        return state ? "Credentials (" + statNum(c.here.length) + " earn credit)"
+          : "Credentials (" + statNum(c.here.length) + " earn credit here, " + statNum(c.could.length) + " could be added)";
+      }
+      var credL = L.credL || (L.credL = {});
+      var credEngine = null;
+      function paintCreds() {
+        var c = credSet(college);
+        if (!c) {
+          listHost.appendChild(el("p", "cplpw-nopath", adoptState.error ? "The credentials could not be read just now (" + adoptState.error + ")." : "Reading the credentials…"));
+          return;
+        }
+        if (!credEngine && window.CPL_COMMONS_LIST) credEngine = window.CPL_COMMONS_LIST.create(credSpec(college, c, function () { return credL; }, paintList));
+        if (credEngine) credEngine.render(listHost);
+        else listHost.appendChild(el("p", "cplpw-nopath", "The List could not be loaded on this page."));
+      }
       function paintList() {
         clearNode(listHost);
+        paintLens();
+        paintRecs(recsHost, college, credSet(college));
+        if (L.lens === "creds") { paintCreds(); paintCards(); return; }
         if (!idxs.length) {
           listHost.appendChild(el("p", "cplpw-nopath", college + " has no pathway on record yet: the catalog sweep has not read its programs."));
         } else if (engine) engine.render(listHost);
@@ -3477,13 +3669,14 @@
         function card(n, label, sub, f) {
           var b = document.createElement("button");
           b.type = "button"; b.className = "cplpw-card";
-          b.setAttribute("aria-pressed", L.f === f ? "true" : "false");
+          b.setAttribute("aria-pressed", (f === "creds" ? L.lens === "creds" : L.lens !== "creds" && L.f === f) ? "true" : "false");
           b.setAttribute("data-filter", f);
           b.appendChild(el("span", "cplpw-card-n", n));
           b.appendChild(el("span", "cplpw-card-l", label));
           b.appendChild(el("span", "cplpw-card-s", sub));
           b.addEventListener("click", function () {
-            L.f = f; L.limit = null; paintList();
+            if (f === "creds") L.lens = "creds"; else { L.lens = "programs"; L.f = f; L.limit = null; }
+            paintList();
             var again = cards.querySelector('[data-filter="' + f + '"]'); if (again) again.focus();
           });
           cards.appendChild(b);
@@ -3491,14 +3684,20 @@
         var parts = [statNum(roeps.length) + (roeps.length === 1 ? " catalog record" : " catalog records")];
         if (maps) parts.push(statNum(maps) + (maps === 1 ? " course map or directory entry" : " course maps and directory entries"));
         card(statNum(rs.length), "Pathways", parts.join(" and "), "");
-        card(fig(count(function (r) { return r.h > 0; })), "Carry CPL here", "Programs with a course " + college + " already credits for prior learning", "here");
-        card(fig(count(function (r) { return r.ad > 0; })), "Could adopt", "Programs with a course another college credits for prior learning", "adopt");
+        var cs = credSet(college);
+        card(cs ? statNum(cs.here.length) : adoptState.error ? "TBA" : "Reading", "Credentials", state
+          ? "Earn credit at a California community college"
+          : "Earn credit at " + college + (cs ? "; " + statNum(cs.could.length) + " more it could add" : ""), "creds");
+        card(fig(count(function (r) { return r.h > 0; })), "CPL here", "Programs where a student can already earn at least one course through credit for prior learning at " + (college || "that college"), "here");
+        card(fig(count(function (r) { return r.ad > 0; })), "Could adopt", "Programs with a course another college awards credit for prior learning, and " + (college || "this one") + " could adopt", "adopt");
         // The fourth card counts programs too (Sam, 2026-11-06, call 1: "Yes to all"), so every card opens the List.
         card(fig(count(function (r) { return r.c > 0; })), "For consideration", "Programs with a course a statewide credit recommendation names", "consider");
         card(statNum(count(function (r) { return r.conf; })), "Confirmed", "Records a person has checked; the rest are Beta drafts", "conf");
       }
       paintList();
-      if (typeof window.fetch === "function") {
+      if (!adoptState.data && !adoptState.error) loadAdopt().then(function () { if (host.isConnected) paintList(); });
+      if (state) stat.hidden = true;
+      else if (typeof window.fetch === "function") {
         stat.textContent = "Reading " + college + "'s program data…";
         readCollegeRecords(college).then(function (got) {
           if (pickedCollege !== college || !host.isConnected) return;
