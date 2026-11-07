@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-564 document(s).
+565 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 602 | [Session 602 handoff: the stale KPI scrape fixed; security asks on the sheet; the COBIx inbox routine waits for Sam](../session_602_handoff.md) | 2026-11-07 |
 | 601 | [Session 601 handoff: Coalinga displayed; Palomar's Chemistry reread and built; Los Medanos' failures read and a Cal-GETC step](../session_601_handoff.md) | 2026-11-07 |
 | 600 | [Session 600 handoff: DSP Version 3 drafted for Sam; Coalinga displaying; Palomar extracting](../session_600_handoff.md) | 2026-11-07 |
 | 599 | [Session 599 handoff: Palomar re-capturing after host errors; Coalinga extracting; Los Medanos captured](../session_599_handoff.md) | 2026-11-07 |

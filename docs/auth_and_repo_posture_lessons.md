@@ -490,3 +490,25 @@ read-back, and merged.
 - **The read-back works from the MCP alone**, without the gateway: `set_config('request.headers', ...)` inside a CTE
   then `team_pass_verify()` writes the attempt row a real request would.
 - **Still unmeasured:** whether PostgREST passes a client IP header. The first real failed unlock settles it.
+
+## 2026-11-07 (SkyMilkyWay, S601) — a green run proved nothing, and a `+` became a space
+
+COBIx's audits (#2890, #2891) found `live_metrics.json` stuck at 2026-11-05 21:20Z. Every daily run since had
+passed.
+
+- **A failed scrape passed.** The step kept the old file and wrote `fallback`, and nothing turned the run red, so
+  S587's "proof run 686 green" proved nothing about the scrape. #2892 makes a failed scrape fail the run at its
+  last step (the dashboard still publishes on the old figures; the next ladder rung retries, because the gate
+  stands down only after a success). `tests/daily_scrape_fails_loudly_test.py` pins it.
+- **Read the reason where a session can read it.** The Worker's reply sat near the top of a long job log, and a
+  session reads only a log's tail (the log download host is outside the proxy). #2897 repeats it in the last step.
+- **The cause was the encoding, not the secrets.** Sam rotated both secrets twice to identical values and the Worker
+  still answered 403. The workflow sent `?secret=<value>` raw, and `URLSearchParams` reads a base64 `+` as a space.
+  #2898 sends it with `curl -G --data-urlencode` and in the `x-scrape-secret` header (#2893). Run 700 scraped at
+  2026-11-07T16:09:24Z. Any secret in a query string needs encoding; a header needs none.
+- **Asks in a handoff never reach the sheet.** S586 asked for security steps 3 to 6 "on the next Open Asks sheet";
+  they stayed in its handoff, which the builder does not scan. A NEEDS SAM marker in a lane is what carries an ask
+  (Sheet 167, cards 3 to 6).
+- **Sam's limit on security settings (Sheet 167, 2026-11-07):** *"I don't want this to force me to approve every
+  merge or sql query--finally got out of that horrible loop."* So the two GitHub environments carry no required
+  reviewer, and `main`'s ruleset is Restrict deletions and Block force pushes only, with no required check.
