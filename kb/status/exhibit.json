@@ -1,18 +1,26 @@
 {
   "schema": 1,
   "session": 595,
-  "moniker": "SkyHarbor",
+  "moniker": "SkyMeadow",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_594_handoff.md",
-  "calls": [],
+  "calls": [
+    {
+      "title": "Correct seven triage titles?",
+      "text": "Four whole-college Credit by Exam exhibits carry one course's title (Plant Propagation among them), and CompTIA A+, Network+ and Server+ sit under Security+, from the 2026-11-01 triage.",
+      "if_no_reply": "They stay as they are.",
+      "link": "https://claude.ai/artifact/DdQQznv6bP1owM69KEtJNg",
+      "link_text": "Open Asks Sheet 163, card 4"
+    }
+  ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-06T23:57:22Z",
+  "written_at": "2026-11-07T01:13:05Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Read the Department of Insurance's license types into the harvest",
-    "text": "So a visitor finds an insurance license before reaching for Add your credential; then Quick Adopt beside a strong course, and Sierra's CPL-AI answers."
+    "title": "Read Open Asks Sheet 163's replies and carry them out",
+    "text": "Card 4 corrects seven triage titles through the CER applier with a receipt; then the Department of Insurance's license types once its host is reachable, and Sierra's CPL-AI answers."
   },
   "changes": [
     {
@@ -46,6 +54,10 @@
     {
       "at": "2026-11-06T20:11:07Z",
       "text": "The Exhibits List names each row's CPL-AI pairs, with a filter (#2853)."
+    },
+    {
+      "at": "2026-11-07T01:13:00Z",
+      "text": "Request Quick Adopt beside a Strong evidence course in the Catalog panel (#2867)."
     }
   ]
 }

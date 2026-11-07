@@ -880,3 +880,17 @@ filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (
 - **Judge a local test sweep by exit code, never by the last line.** Four CPL Pathways checks pinned the old rulings and
   printed `N/M passed` as their last line while exiting 1; a sweep that grepped the last line for "fail" let #2863 reach
   CI red (suite 3). `node $t >/dev/null || echo FAIL $t` over every test that loads the file caught them all.
+
+## SkyMeadow, 2026-11-07 (Library side session)
+
+- **A mis-fold has a cause upstream of the table that shows it.** The handoff named *Plant Propagation* as a credential
+  carrying Spanish and nutrition lines in `chatbox_peer_articulations`. Measured, it carried 101 rows across 28 subjects,
+  and the cause sat in `kb/unified_titles.json`: the 2026-11-01 unclassified triage (rows reviewed by slee@cccco.edu) gave
+  *Credit By Exam at Saddleback College* one course's title. The same pass did it to three more whole-college Credit by
+  Exam exhibits and put CompTIA A+, Network+ and Server+ under Security+. A curator's rows are held for him (Rule 8):
+  Open Asks Sheet 163 card 4. A credential whose rows span many subjects is the tell: rank titles by distinct subjects.
+- **A live interval in a tab hangs a jsdom suite.** The Pathways hero's first cut ran `setInterval` on draw, and
+  `tests/cpl_pathways_ui_pass.test.js` never exited. Gating the cycle on IntersectionObserver (absent in jsdom) fixed the
+  suite and gave a better rule: photos move only while the reader can see them. (#2866)
+- **insurance.ca.gov is outside this environment's network.** The proxy refuses it and the fetch agent cannot resolve it;
+  the Department of Insurance's license list waits on that host being allowed or on a run that can reach it.
