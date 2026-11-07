@@ -120,7 +120,7 @@ check("(7) the read rides the credential routes' Promise.all", /fetchMapLinks\(\
 const tryEnd = FN.indexOf('console.error("credential recs lookup failed:", e);');
 const appendAt = FN.indexOf("credentialContext += cplAiContext;");
 check("(7) the section is appended after the recs try, so a failed lookup keeps it", tryEnd > 0 && appendAt > tryEnd);
-check("(7) the answer's log names the CPL-AI section", /cpl_ai: \{ credential: cplAiTitle/.test(FN));
+check("(7) the answer's log names the CPL-AI section", /cpl_ai: \{ credential: cplAiTitle, college: [^}]*loaded: !!cplAiDoc/.test(FN));
 
 // (8)
 const BUILDER = fs.readFileSync(path.join(ROOT, "kb/_build_adopt_page.py"), "utf8");

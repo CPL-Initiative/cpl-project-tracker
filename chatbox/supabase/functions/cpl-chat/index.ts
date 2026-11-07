@@ -6239,12 +6239,17 @@ async function fetchCplAi(): Promise<any> {
   if (cplAiCache && Date.now() - cplAiCache.at < CPL_AI_TTL_MS) return cplAiCache.doc;
   try {
     const res = await fetch(CPL_AI_URL, { signal: AbortSignal.timeout(5000) });
-    if (!res.ok) return cplAiCache ? cplAiCache.doc : null;
+    if (!res.ok) {
+      console.error(`cpl-chat: CPL-AI file read returned ${res.status}`);
+      return cplAiCache ? cplAiCache.doc : null;
+    }
     const doc = await res.json();
     const ok = doc && doc.by_exhibit && typeof doc.by_exhibit === "object" ? doc : null;
     if (ok) cplAiCache = { at: Date.now(), doc: ok };
+    else console.error("cpl-chat: CPL-AI file read held no by_exhibit");
     return ok || (cplAiCache ? cplAiCache.doc : null);
-  } catch {
+  } catch (e) {
+    console.error("cpl-chat: CPL-AI file read failed:", e);
     return cplAiCache ? cplAiCache.doc : null;
   }
 }
@@ -7874,7 +7879,8 @@ Deno.serve(async (req: Request) => {
             },
           } : {}),
           // The CPL-AI ratings this answer was given (SkyFern): the credential and the size.
-          ...(cplAiContext ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, chars: cplAiContext.length } } : {}),
+          // Recorded whenever a credential matched, so an empty section says why: no file, or no rating.
+          ...(cplAiTitle ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, loaded: !!cplAiDoc, chars: cplAiContext.length } } : {}),
         });
         console.log(
           `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +
