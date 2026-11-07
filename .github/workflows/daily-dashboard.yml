@@ -200,6 +200,14 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
 
+      # ── COCI C-ID claims that four signals call a mis-entry (SkyHarbor, 2026-11-06) ─
+      # Moreno Valley's HES 1 Health Science claimed HIST 150, so Basic Military
+      # Training read as a peer path to every world history course. Writes
+      # kb/cid_claim_audit.json; a finding not yet held in
+      # kb/reference/cid_claim_holds.json is an item for the team. Read-only; non-fatal.
+      - name: Audit COCI C-ID claims
+        run: python3 kb/_audit_cid_claims.py || echo "C-ID claim audit failed (non-fatal)"
+
       # ── Step 4a0: Governance drift detector (OQ-08) ────────────────
       # Regenerates kb/governance_candidates.json — surfaces that look governable
       # and have no row in the governance register. PROPOSALS only; nothing is
@@ -566,6 +574,8 @@ jobs:
           git add cpl_pathways_membership_data.js 2>/dev/null || true
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
+          # COCI C-ID claim audit (SkyHarbor, 2026-11-06)
+          git add kb/cid_claim_audit.json 2>/dev/null || true
           # College short names, folded from the College Identity tab's edits in the curation sync (S545).
           git add kb/college_short_names.json college_short_names.js 2>/dev/null || true
           # SkyView's decision payload + the served page that inlines it (Step

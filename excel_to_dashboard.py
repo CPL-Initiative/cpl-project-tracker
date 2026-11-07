@@ -8297,6 +8297,23 @@ def _units_from_members(shown, fallback, units, curated):
     return lo, hi, units
 
 
+def _cid_claim_holds():
+    """COCI C-ID claims set aside: {normalized control number: hold}. See
+    kb/reference/cid_claim_holds.json for the four signals a hold requires."""
+    path = os.path.join(SCRIPT_DIR, "kb", "reference", "cid_claim_holds.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            doc = json.load(f)
+    except (IOError, ValueError):
+        return {}
+    out = {}
+    for h in doc.get("holds", []):
+        cn = " ".join(str(h.get("control_number") or "").split()).upper()
+        if cn and h.get("claimed_cid"):
+            out[cn] = h
+    return out
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -8452,6 +8469,20 @@ def export_unified_courses():
     # Reversible — delete the CN: curation row to undo. (Control numbers are
     # space-free, so strip+upper matches the _nrm() used by the member-join.)
     memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
+    # COCI C-ID claims set aside (kb/reference/cid_claim_holds.json; Sam, 2026-11-06): a
+    # held course leaves the C-ID it claimed (its CIDNumber reads blank below) and joins
+    # the identity the same course holds at its sister colleges. Delete the entry to undo.
+    CID_HOLDS = _cid_claim_holds()
+    for _h in CID_HOLDS.values():
+        _home = _h.get("home")
+        _hcn = " ".join(str(_h["control_number"]).split()).upper()
+        if _home and not any(" ".join(str(p.get("control_number") or "").split()).upper() == _hcn
+                             for p in memships.get(_home, [])):
+            _subj, _, _num = str(_h.get("course") or "").partition(" ")
+            memships.setdefault(_home, []).append({
+                "college": _h.get("college"), "control_number": _h["control_number"],
+                "subject": _subj, "course_number": _num, "units": _h.get("units"),
+                "credit_status": "Credit", "top_code": _h.get("top") or ""})
     member_extract = {str(k[3:]).strip().upper(): v for k, v in curation.items()
                       if k.startswith("CN:") and str(k[3:]).strip()}
     # control_number → a record carrying subject/units/top/credit so a re-homed
@@ -8841,6 +8872,8 @@ def export_unified_courses():
             cidn, ccnn = _nrm(cid), _nrm(ccn)
             if cidn in _NULLISH:
                 cidn = ""
+            if cidn and ctrl in CID_HOLDS and cidn == _nrm(CID_HOLDS[ctrl].get("claimed_cid")):
+                cidn = ""  # a held COCI claim (kb/reference/cid_claim_holds.json)
             if ccnn in _NULLISH:
                 ccnn = ""
             if not cidn and not ccnn and ctrl in ROUTE:
