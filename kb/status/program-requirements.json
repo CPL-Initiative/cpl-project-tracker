@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-07T16:19:13Z",
-  "session": 601,
-  "moniker": "SkyMilkyWay",
+  "written_at": "2026-11-07T18:48:24Z",
+  "session": 602,
+  "moniker": "SkySombrero",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_602_handoff.md",
+  "handoff": "docs/session_603_handoff.md",
   "next_step": {
-    "title": "Confirm Palomar and Los Medanos on display",
-    "text": "Check that both display applies wrote with no errors, then read Los Medanos' own general education page before any step for its local degrees. This session worked on the dashboard's live figures, not the harvest."
+    "title": "Contra Costa's course outcomes, then the next college's",
+    "text": "On Nov 8 UTC, run Contra Costa's full outcomes read in two parts, then name the next college with the outcomes picker. Los Medanos' local degrees are parked: its catalog sets general education at 24 units but never says electives make up the rest of the 60."
   },
   "calls": [
     {
@@ -223,6 +223,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-07T18:47:00Z",
+      "text": "Palomar and Los Medanos now display with no errors. Los Medanos' own general education pages were read for free: its local degrees need 24 units of general education, and no page says electives fill the 60 units, so those degrees stay as they are rather than gaining a step the catalog does not support."
+    },
     {
       "at": "2026-11-07T16:20:00Z",
       "text": "No harvest change this session. The dashboard's live figures update again: the daily scrape had been refused since November 5, and now sends its key correctly."
