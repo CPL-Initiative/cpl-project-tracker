@@ -733,6 +733,14 @@ jobs:
       - name: k=10 disclosure checker (fixtures)
         run: python3 tests/k10_disclosure_check_test.py
 
+      # The failure watch (S602, COBIx #2891 item 3): every scheduled workflow is
+      # watched or excused with its reason, and every watched name is a real
+      # workflow name (workflow_run matches names exactly). PyYAML only.
+      - name: Workflow failure watch covers every scheduled workflow
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/workflow_failure_watch_test.py
+
       # The Statewide Exhibits card (S602, COBIx #2891): run nowhere until now, it
       # went stale when the card gained its Issuer/type variants breakdown.
       # Imports the generator, so it installs openpyxl. Same non-required check.

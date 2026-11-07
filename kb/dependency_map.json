@@ -4,10 +4,10 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 812,
+  "file_datasets": 813,
   "external_services": 193,
   "consumers": 532,
-  "workflows": 63,
+  "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -23164,6 +23164,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/workflow_failure_watch_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/zband_retire_apply_test.py": {
    "consumers": [
     {
@@ -29795,6 +29808,7 @@
     "tests/college_short_names_apply_test.py",
     "tests/active_colleges_ccc_test.py",
     "tests/k10_disclosure_check_test.py",
+    "tests/workflow_failure_watch_test.py",
     "tests/statewide_kpi_test.py",
     "tests/credential_reference_statewide_basis_test.py",
     "tests/doctrine_lookup_test.py",
@@ -30272,6 +30286,16 @@
     "reflections/summary.json"
    ],
    "push": "main (cron checkout)",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "workflow-failure-watch.yml": {
+   "name": "Workflow failure watch",
+   "crons": [],
+   "scripts": [],
+   "adds": [],
+   "push": null,
    "deploys": [],
    "chain": [],
    "urls": []
