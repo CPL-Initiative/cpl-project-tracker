@@ -582,7 +582,7 @@ file.
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
   **One departure (Sam, 2026-10-24):** the public `library/` page, Sierra and the adoption page take Malone's
   CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view, the Library
-  and CPL Pathways (2026-11-04, -05, -06; [lane](docs/reference/lanes/commons.md)).
+  and CPL Pathways take it too (2026-11-04, -05, -06; [lane](docs/reference/lanes/commons.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
