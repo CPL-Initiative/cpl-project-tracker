@@ -1,0 +1,23 @@
+{
+ "_readme": "Los Medanos College's eLumen catalog (S600, SkyWhirlpool). 54 of its 83 records fail, about 37 on one shape: the record names the 60-unit degree total and a GE pattern (Cal-GETC on the transfer degrees, LMC's local GE on the A.A. and A.S.) with no units for it, so the scorer cannot add the degree up. A reconcile step must cite the catalog's own words, so this read prints what two transfer and two local degree pages say about general education, electives and the total.",
+ "college": "Los Medanos College",
+ "questions": {
+  "ge_units": "What each degree page says about its general education pattern and how many units it carries.",
+  "electives": "Whether the page says electives make up the rest of the 60 units, and in what words."
+ },
+ "keywords": [
+  "Cal-GETC",
+  "General Education",
+  "[Ee]lectives",
+  "60",
+  "Total (?:Units|Degree|Major)",
+  "transferable units",
+  "degree[- ]applicable"
+ ],
+ "pages": [
+  {"answers": ["ge_units", "electives"], "url": "https://lmc.elumenapp.com/catalog/26-27/program/sociology-associate-in-arts-for-transfer-aa-t-fall-2025"},
+  {"answers": ["ge_units", "electives"], "url": "https://lmc.elumenapp.com/catalog/26-27/program/biology-associate-in-science-for-transfer-degree-ast-fall-2025"},
+  {"answers": ["ge_units", "electives"], "url": "https://lmc.elumenapp.com/catalog/26-27/program/accounting-associate-of-science-as-degree-fall-2025"},
+  {"answers": ["ge_units", "electives"], "url": "https://lmc.elumenapp.com/catalog/26-27/program/fine-arts-associate-of-arts-degree-aa-fall-2026"}
+ ]
+}
