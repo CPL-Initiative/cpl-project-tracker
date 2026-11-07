@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-06_credential_submissions.sql
-name=credential_submissions
+file=kb/migrations/2026-11-07_alignment_level_words.sql
+name=alignment_level_words

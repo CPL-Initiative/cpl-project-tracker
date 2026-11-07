@@ -14668,11 +14668,12 @@
       "library",
       "credential-catalog",
       "sierra",
-      "cpl-ai",
+      "alignment",
+      "cer",
       "decision-sheet",
       "side-lane"
      ],
-     "title": "Library \u2014 side-lane handoff (SkyFern, beside the CPL Queue routine)",
+     "title": "Library \u2014 side-lane handoff (SkyBramble, beside the CPL Queue routine)",
      "type": null,
      "updated": ""
     },

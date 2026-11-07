@@ -806,6 +806,8 @@ jobs:
         run: |
           python3 tests/top_code_lookup_code4_test.py
           python3 tests/eacr_matrix_payload_test.py
+          # A held COCI C-ID claim stays out of a statewide rec set (Sheet 164 card 2).
+          python3 tests/statewide_cid_hold_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
       # detector proposes re-levels against live curation rows, so its failure
       # modes are confident-wrong writes: reading a PREREQUISITE clause as the

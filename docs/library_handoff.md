@@ -1,70 +1,61 @@
 ---
-title: Library — side-lane handoff (SkyFern, beside the CPL Queue routine)
+title: Library — side-lane handoff (SkyBramble, beside the CPL Queue routine)
 date: 2026-11-07
-tags: [handoff, library, credential-catalog, sierra, cpl-ai, decision-sheet, side-lane]
+tags: [handoff, library, credential-catalog, sierra, alignment, cer, decision-sheet, side-lane]
 related:
-  - "[[docs/reference/lanes/sierra-retrieval-corpus]]"
-  - "[[docs/reference/lanes/cer-procedures]]"
   - "[[docs/reference/lanes/local-course-cr-alignment]]"
+  - "[[docs/reference/lanes/cer-procedures]]"
+  - "[[docs/reference/lanes/sierra-retrieval-corpus]]"
   - "[[docs/reference/lanes/library]]"
   - "[[docs/library_lessons]]"
 ---
 
 # Library — side-lane handoff
 
-> Side-lane handoff; it does not replace the numbered `session_<N>_handoff.md`. **Light checkpoint** (SkyFern,
-> 2026-11-07, ~02:20Z, refreshed ~03:45Z after the deploy): no lane's Roadmap row moved and no re-mint or data write ran. Written: the two lane edits (they
-> rode #2869), this handoff, the vault note (`CPLBrain/07-session-notes/2026-11-07-skyfern-sierra-cpl-ai-sheet-164.md`).
-> Skipped: `cpl_memory` (the one durable fact, Sierra's CPL-AI section, is in the lane and waits on Sam's deploy call),
-> the KB-note pass, `kb/status/exhibit.json`, `README.md` and the Pipeline tab (nothing moved).
+> Side-lane handoff; it does not replace the numbered `session_<N>_handoff.md`. **Light checkpoint** (SkyBramble,
+> 2026-11-07, ~04:50Z): no Roadmap row moved. Written: the two lane edits, this handoff, the vault note
+> (`CPLBrain/07-session-notes/2026-11-07-skybramble-sheet-164-rulings.md`), Open Asks Sheet 166. The run wrote one
+> migration (the scorer) and one CER plan; both have receipts beside them. Skipped: `cpl_memory` (each ruling is in its
+> lane and in Sheet 164's store), the KB-note pass, `kb/status/exhibit.json`, `README.md`, the Pipeline tab.
 
-Your moniker is **SkyBramble**. You pick up after SkyFern on the **Credential Catalog**, **CPL Pathways**, **Sierra's
-CPL-AI answers** and the Library ([`library`](reference/lanes/library.md)).
+Your moniker is **SkyThistle**. You pick up after SkyBramble on the Library side lanes: alignment, the CER, Sierra.
 
-## What shipped (SkyFern, 2026-11-07)
-- **Sierra's CPL-AI answers are live (Sam, in session: *"Deploy Sierra's CPL-AI answers"*).** #2870 fixed what the
-  preview A/B found: the section keyed on the routes' first match, which for Sacramento City's Security+ question was
-  *LA City Certified Welder* (on "city"), and Security+ reached the routes only through the volume lookup. `cplAiPick`
-  now reads every route's matches. The A/B workflow also needed `--yes` (the Supabase CLI's new prompt). Preview A/B
-  42333759325: preview all modes OK, no regressions. Deploy 42334534191 on 36ddc5b4, byte-verified.
-- **#2869 Sierra reads CPL-AI's course ratings.** When the strongest-matched credential is one CPL-AI
-  rated, cpl-chat reads `library/adopt/adopt_ai.json` (an hour's cache; `CPL_AI_URL` overrides it) and adds a section:
-  the named college's Strong evidence courses, then Faculty interpretation, with Limited evidence as a count. With no
-  college named, it gives the colleges with the most Strong evidence courses. Its own rule: a rating is evidence for
-  faculty review, a MAP award comes first, the source is credited. `kb/_build_adopt_page.py` now writes `colleges` into
-  that file; until the daily run carries it, the section names no college and claims no absence.
-  `tests/sierra_cpl_ai.test.js` (31), smoke mode 18. State: [`sierra-retrieval-corpus`](reference/lanes/sierra-retrieval-corpus.md).
-- **Open Asks Sheet 165** (https://claude.ai/artifact/72EWWRRWa9cA5gq3vzHEH9, current, fresh store empty at publish;
-  CPLBrain#699): Sheet 163's four cards at their places. Sheet 164 (https://claude.ai/artifact/SYPCVGbH8HqsWWsdHcvqGw)
-  had card 5, the deploy, answered in session; Sheet 163 (https://claude.ai/artifact/DdQQznv6bP1owM69KEtJNg) held no
-  reply. Both are superseded; a later reply on either still counts for its cards. Never republish onto them.
-- Two lane files moved an older record verbatim to their lessons docs to stay under the 20 KB budget.
-
-## Decisions Sam made this run
-- *"Deploy Sierra's CPL-AI answers"* (in session, 2026-11-07, Sheet 164 card 5): deployed after a preview A/B.
+## What happened (SkyBramble, 2026-11-07)
+- **Sam had answered all five of Sheet 164's cards** at 02:21-02:23Z, not only the deploy. SkyFern read card 5 in
+  session and published Sheet 165 re-asking 1 to 4. **Read every superseded sheet's store before building on it.**
+  His answers: 1 *keep one peer*; 2 *do not send*, with *"I don't think MVC has it articulated with History — I think
+  it's some mistake we should track down on our end — add it to our queue"*; 3 *tighten*; 4 *correct all seven*.
+- **Card 2, tracked down.** MAP's exhibit rows carry the articulating course's COCI C-ID, so Basic Military Training's
+  statewide *Principles of Health Education* kept `HIST 150` after SkyHarbor's hold, and Sierra College's `HIST 50`
+  matched it at the C-ID rung. `_build_statewide_adoption` now reads the holds (`tests/statewide_cid_hold_test.py`, in
+  CI's EACR step). The peer table took the hold on a catalog sync I dispatched at 04:07Z (the first, 04:02Z, timed out
+  on the college-courses upsert while my heavy SQL ran; the peer step had already landed). The Sierra College answer
+  clears once the daily run regenerates `credential_reference_data.js` and the 13:20Z sync carries it.
+- **Card 3:** `kb/migrations/2026-11-07_alignment_level_words.sql` (rollback beside it), applied by
+  `supabase-migrate.yml` on this branch's push.
+- **Card 4:** `kb/cer_decisions_out/2026-11-07/plan.json`, cohort `exhibits-s596@bot`. Validated by the applier; the
+  local fold preview gave 7 revise, 0 held, V2 and V3 OK. **Dispatch `cer-decision-apply.yml` on `main` with that
+  plan_dir, dry-run then commit,** once this PR merges.
+- **Route ALIGN** takes the matched credential the question names (`askedTitlePick`). Built, not deployed.
+- **Open Asks Sheet 166** (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4, current, fresh store): 1, CompTIA alone as
+  issuer of the four ECHT exhibits; 2, deploy Route ALIGN's pick. Sheets 163, 164 and 165 are answered or superseded.
 
 ## Open work, in order
-1. **Read Sheet 165's replies first, then 164's and 163's** (`ArtifactData` list `replies` on each URL). Carry out each
-   answer in the same PR as its lane marker: card 4's CER plan under `kb/cer_decisions_out/`, card 3's migration through
-   `supabase-migrate.yml`; card 2 is Sam's to send.
-   **The deploy's smoke run** (job in run 42334534191) finished after sign-off if this line is still here: read its
-   warnings, and re-check mode 18 alone (`cpl-chat-smoke.yml`, `modes=18`) only if it failed.
-   **A finding for `local-course-cr-alignment`:** Route ALIGN uses the same first match, so on Sacramento City's
-   Security+ question it built the articulation worklist for *LA City Certified Welder*. The answer ignored it, but the
-   ranking (statewide probes on "city" from a college's name) wants the same fix: pick the match the question names.
-2. **SkyHarbor's check, still due:** after the next daily run and the 13:20Z `credential-catalog-sync.yml`, read
-   `credential_alignment_for_college('Basic Military Training','Sierra College')` and confirm no HIST 50 row.
-3. **The Department of Insurance's license types** (`data_sources`): insurance.ca.gov is outside this network. It needs a
-   session with that host allowed, or a reader in the daily workflow following `official_exam_lists()`.
-4. **`reviewer-session-lifetime`:** CPL Pathways' own sign-in gate (`program_requirements.js` `session()`). The file belongs
-   to the main queue, so agree one writer first.
-5. **The Commons' NEXT** and its Exhibits List in the Catalog's shape. Still unanswered from earlier: an offer to let the
-   team phrase mark a Commons decision done.
-6. The Library lane's standing *Next*.
+1. **Read Sheet 166's replies** (`ArtifactData` list `replies`). Card 1 *comptia*: a CER plan replacing the four ECHT
+   `issuing_agency_assignment` rows, and the second issuer off the four credentials in `kb/credentials.json`. Card 2
+   *deploy*: preview A/B, then `cpl-chat-deploy.yml`.
+2. **If this PR's apply has not run:** dispatch `cer-decision-apply.yml` (dry-run, then commit) on
+   `kb/cer_decisions_out/2026-11-07`, and read the migrate receipt for the scorer.
+3. **After the daily run and the 13:20Z sync:** `credential_alignment_for_college('Basic Military Training','Sierra College')`
+   holds no `HIST 50` row and no `MUS 4A`.
+4. **Moreno Valley's `HIS 1`** (`CCC000520542`, World History to 1500) is absent from our COCI export while `HES 1`
+   carries `HIST 150`. Whether COCI itself holds that entry needs a COCI read; our export is the only copy here.
+5. The Department of Insurance's license types (`data_sources`; outside this network), CPL Pathways' sign-in gate
+   (agree one writer with the main queue), the Commons' NEXT, the Library lane's standing *Next*.
+6. `tests/statewide_kpi_test.py` fails on `main` before this change (a card shows *Issuer/type variants*); not ours.
 
 ## Watching
-Dropped at sign-off: every PR subscription (#2869, #2870, CPLBrain#698, #699, all merged) and the artifact watches on
-Sheets 164 and 165. No check-in is scheduled.
+The PR subscription and the Sheet 166 watch drop at sign-off; the handoff names them.
 
-> *Greetings, you are SkyBramble, a Library side session beside the CPL Queue routine, see SkyFern's handoff —
+> *Greetings, you are SkyThistle, a Library side session beside the CPL Queue routine, see SkyBramble's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*
