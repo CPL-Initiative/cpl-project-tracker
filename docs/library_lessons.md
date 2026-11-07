@@ -877,3 +877,6 @@ filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (
 - **Add your credential: nothing a visitor types shows until verified.** One INSERT-only add, a reviewer-only decide that
   keeps each prior state in the row's history, a verified-only public read. The repo's Supabase guard blocks DDL in a
   rolled-back dry run, so the first real run is the migrate workflow; verify the grants live after it. (#2860)
+- **Judge a local test sweep by exit code, never by the last line.** Four CPL Pathways checks pinned the old rulings and
+  printed `N/M passed` as their last line while exiting 1; a sweep that grepped the last line for "fail" let #2863 reach
+  CI red (suite 3). `node $t >/dev/null || echo FAIL $t` over every test that loads the file caught them all.
