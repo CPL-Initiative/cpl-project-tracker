@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1420,
-    "bytes": 14334818,
-    "over_budget": 2,
+    "bytes": 14334195,
+    "over_budget": 1,
     "handoff_max": 602,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59905,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 502226,
-        "over": 1
+        "bytes": 501603,
+        "over": 0
       },
       "handoff": {
         "files": 565,
@@ -57,13 +57,13 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 2,
+      "oversized_doc": 1,
       "vault_heavy_path": 75,
       "handoff_drops_active_lane": 1
     },
     "vault": {
       "files": 26169,
-      "bytes": 4367975246,
+      "bytes": 4367974623,
       "heavy_bytes": 3135632834,
       "heavy_share": 0.718,
       "ignore_filters": [
@@ -169,19 +169,6 @@
       },
       "message": "152,111 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20501,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 501,
-        "ratio": 1.03
-      },
-      "message": "20,501 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
       "rule": "vault_heavy_path",
