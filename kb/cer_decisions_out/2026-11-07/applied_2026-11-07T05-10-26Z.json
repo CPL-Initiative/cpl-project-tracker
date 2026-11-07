@@ -1,0 +1,627 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-07T05-10-26Z",
+  "ruling": "Sam Lee, Open Asks Sheet 164 card 4 (https://claude.ai/artifact/SYPCVGbH8HqsWWsdHcvqGw, reply 2026-11-07T02:23:09Z, 'correct'): correct all seven triage titles, superseding his own 2026-10-31 to 11-02 saves by his word; written by SkyBramble",
+  "cohort": "exhibits-s596@bot",
+  "read": [
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "replace",
+      "why": "replaces 'Water Supply' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Water Supply",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-02T17:14:26.738+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_supersedes",
+      "value": "Water Supply",
+      "state": "replace",
+      "why": "replaces 'Credit by Exam' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-02T17:14:26.738+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "replace",
+      "why": "replaces 'Basic Computer Keyboarding' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Basic Computer Keyboarding",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:56.411+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_supersedes",
+      "value": "Basic Computer Keyboarding",
+      "state": "replace",
+      "why": "replaces 'Credit by Exam' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:56.411+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "replace",
+      "why": "replaces 'Plant Propagation' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Plant Propagation",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:58.587+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_supersedes",
+      "value": "Plant Propagation",
+      "state": "replace",
+      "why": "replaces 'Credit by Exam' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:58.587+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "replace",
+      "why": "replaces 'Basic Refrigeration & AC Lab' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Basic Refrigeration & AC Lab",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:59.788+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_supersedes",
+      "value": "Basic Refrigeration & AC Lab",
+      "state": "replace",
+      "why": "replaces 'Credit by Exam' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:59.788+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA A+",
+      "state": "replace",
+      "why": "replaces 'CompTIA Security+' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:00.640162+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Network+",
+      "state": "replace",
+      "why": "replaces 'CompTIA Security+' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:15.247019+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Server+",
+      "state": "replace",
+      "why": "replaces 'CompTIA Security+' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:26.562954+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "state": "write",
+      "why": "",
+      "live": null
+    }
+  ],
+  "rows": [
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "reviewer_email": "exhibits-s596@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "reviewer_email": "exhibits-s596@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "reviewer_email": "exhibits-s596@bot"
+    }
+  ],
+  "replaces": [
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Water Supply",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-02T17:14:26.738+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_supersedes",
+      "value": "Water Supply",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-02T17:14:26.738+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Basic Computer Keyboarding",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:56.411+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_supersedes",
+      "value": "Basic Computer Keyboarding",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:56.411+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Plant Propagation",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:58.587+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_supersedes",
+      "value": "Plant Propagation",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:58.587+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Basic Refrigeration & AC Lab",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:59.788+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_supersedes",
+      "value": "Basic Refrigeration & AC Lab",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:59.788+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA A+",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:00.640162+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Network+",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:15.247019+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Server+",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:26.562954+00:00"
+      }
+    }
+  ],
+  "retires": [],
+  "result": "written",
+  "inserted": [
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "reviewer_email": "exhibits-s596@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "reviewer_email": "exhibits-s596@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "reviewer_email": "exhibits-s596@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "replaced": [
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Water Supply",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-02T17:14:26.738+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_supersedes",
+      "value": "Water Supply",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-02T17:14:26.738+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Basic Computer Keyboarding",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:56.411+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_supersedes",
+      "value": "Basic Computer Keyboarding",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:56.411+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Plant Propagation",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:58.587+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_supersedes",
+      "value": "Plant Propagation",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:58.587+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Basic Refrigeration & AC Lab",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:59.788+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_supersedes",
+      "value": "Basic Refrigeration & AC Lab",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "Credit by Exam",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:13:59.788+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA A+",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:00.640162+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Network+",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:15.247019+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Server+",
+      "reviewer_email": "exhibits-s596@bot",
+      "before": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T16:30:26.562954+00:00"
+      }
+    }
+  ],
+  "replace_missed": [],
+  "retired": [],
+  "retire_missed": [],
+  "read_back": [
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit by Exam",
+      "field": "unified_title_supersedes",
+      "value": "Water Supply",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Water Supply",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Mesa",
+      "field": "unified_title_supersedes",
+      "value": "Basic Computer Keyboarding",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Basic Computer Keyboarding",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam at Saddleback College",
+      "field": "unified_title_supersedes",
+      "value": "Plant Propagation",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Plant Propagation",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_assignment",
+      "value": "Credit by Exam",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Credit by Exam",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Credit By Exam San Diego City College",
+      "field": "unified_title_supersedes",
+      "value": "Basic Refrigeration & AC Lab",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "Basic Refrigeration & AC Lab",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA A+",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "CompTIA A+",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.192208+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Network+",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "CompTIA Network+",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.192208+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_assignment",
+      "value": "CompTIA Server+",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "CompTIA Server+",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "field": "unified_title_supersedes",
+      "value": "CompTIA Security+",
+      "state": "written",
+      "why": "already holds this value (by exhibits-s596@bot)",
+      "live": {
+        "value": "CompTIA Security+",
+        "reviewer_email": "exhibits-s596@bot",
+        "reviewed_at": "2026-11-07T05:10:27.192208+00:00"
+      }
+    }
+  ]
+}
