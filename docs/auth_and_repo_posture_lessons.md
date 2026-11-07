@@ -512,3 +512,26 @@ passed.
 - **Sam's limit on security settings (Sheet 167, 2026-11-07):** *"I don't want this to force me to approve every
   merge or sql query--finally got out of that horrible loop."* So the two GitHub environments carry no required
   reviewer, and `main`'s ruleset is Restrict deletions and Block force pushes only, with no required check.
+
+## S602 SkySombrero (2026-11-07): security step 3 measured before built; one failure watch
+
+- **Measure the finding against the grants, not the policies.** COBIx read `cfp_select using (true)` and called the
+  funding attestor's name and email public. The policy is open, but anon and authenticated hold no SELECT on the
+  three attestor columns in either table (column grants, `kb/supabase_funding_optin.sql:74`); a select as anon reads
+  *permission denied*. Half of step 3 needed no change. `has_table_privilege` reads false under column grants, so
+  read `information_schema.column_privileges` and then try the select as the role.
+- **A secret column must be one the reader cannot select.** The TMC owner token protects nothing if anon can read it,
+  and PostgREST's `return=representation` needs SELECT on every returned column. So the client mints the token, the
+  table-wide SELECT becomes a column grant without it, and every read names its columns (#2901, held for Sam's word).
+- **A token that lives for one visit strands the record.** The doc's sketch kept the TMC token in sessionStorage;
+  with a unique key on (college, tmc_id) a later visit could neither insert nor update. localStorage per college and
+  TMC keeps "resume any time" true; it remembers no filter.
+- **Standing assertions written as comments never run.** `kb/supabase_credential_volume.sql` carried the k=10
+  assertions as SQL comments; `scripts/k10_disclosure_check.py` runs them daily as anon (#2903).
+- **One watcher beats 44 edits.** `workflow-failure-watch.yml` listens on `workflow_run` and keeps one issue per
+  failing workflow; its guard test fails when a new cron is neither watched nor excused, and when a watched name
+  matches no `name:`, since `workflow_run` matches names exactly (#2905).
+- **A test that runs nowhere goes stale silently.** `tests/statewide_kpi_test.py` failed on a breakdown the generator
+  added on purpose in Session 109; it now runs in the lints job (#2902).
+- **An ask marked any other way never reaches Sam.** `noncredit-cip-categories` carried *BLOCKED ON SAM* since August;
+  the sheet builder scans only NEEDS SAM. It is Sheet 169 card 2 now.

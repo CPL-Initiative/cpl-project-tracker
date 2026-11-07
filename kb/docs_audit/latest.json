@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1420,
-    "bytes": 14335136,
+    "files": 1421,
+    "bytes": 14345640,
     "over_budget": 1,
-    "handoff_max": 602,
+    "handoff_max": 603,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59905,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 145,
-        "bytes": 4402766,
+        "bytes": 4406509,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 11135,
+        "bytes": 10002,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2626330,
+        "bytes": 2628176,
         "over": 0
       },
       "kb_note": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 502544,
+        "bytes": 502746,
         "over": 0
       },
       "handoff": {
-        "files": 565,
-        "bytes": 3894078,
+        "files": 566,
+        "bytes": 3899924,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
       "oversized_doc": 1,
-      "vault_heavy_path": 75,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26171,
-      "bytes": 4367999243,
-      "heavy_bytes": 3135632834,
+      "files": 26175,
+      "bytes": 4368022778,
+      "heavy_bytes": 3135636262,
       "heavy_share": 0.718,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -161,13 +160,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 152111,
+        "bytes": 152412,
         "limit": 150000,
         "lane": "other",
-        "over_by": 2111,
-        "ratio": 1.01
+        "over_by": 2412,
+        "ratio": 1.02
       },
-      "message": "152,111 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "152,412 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -285,10 +284,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10340604,
+        "bytes": 10344032,
         "kind": "dir"
       },
-      "message": "directory totals 10,340,604 B inside the vault"
+      "message": "directory totals 10,344,032 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -919,21 +918,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_602_handoff.md",
-      "detail": {
-        "lanes": [
-          "local-course-cr-alignment",
-          "my-college-action-page",
-          "reviewer-session-lifetime",
-          "sierra-retrieval-corpus"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_602_handoff.md` never names 4 lane(s) worked in the last 7 days that still carry a NEXT: local-course-cr-alignment, my-college-action-page, reviewer-session-lifetime, sierra-retrieval-corpus. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
