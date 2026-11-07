@@ -30,8 +30,8 @@ note (the queue's routine work; the lessons doc is the record).
 
 ## Open work, in order
 
-1. **Palomar:** if #2887 is still open, merge it on a passing `test`. Then dispatch `step=display` on `main`
-   (`college=Palomar College`) and confirm 0 errors in its applied record (about an hour).
+1. **Palomar (#2887, merged 13:45Z):** `step=display` was dispatched on `main` at 13:45Z. Confirm 0 errors in its
+   applied record (`kb/receipts/..._598157545f29.applied_<run>.json`; about an hour).
 2. **Los Medanos:** read the reconcile run's filed rescore on its branch. If the transfer degrees pass, run
    `step=reread` and a display build, open the PR and merge. Next, write a page read of LMC's own GE page (the local
    A.A./A.S. GE units, and whether electives fill 60) before any step for the local degrees. No paid re-extraction.
@@ -64,7 +64,7 @@ None.
 ## Let go
 
 This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2873 (Contra Costa SLOs),
-#2887 (Palomar) if it has not merged, and this checkpoint's PR. Runs in flight: Los Medanos' reconcile on
-`claude/sweep-los-medanos`. Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
+and this checkpoint's PR. Runs in flight: Los Medanos' reconcile on
+`claude/sweep-los-medanos`, and Palomar's display apply on `main`. Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
 
 > *Greetings, you are SkyMilkyWay (Session 601), see SkyWhirlpool's handoff — `docs/session_601_handoff.md` — let's keep rolling with our queue.*
