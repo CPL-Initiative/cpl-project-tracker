@@ -1100,9 +1100,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM110",
+   "CHEM110L",
    "CHEM115",
    "CHEM115L",
    "CHEM220",
@@ -1122,7 +1123,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 1291
+  "text_chars": 1303
  },
  {
   "control_number": "05203",
@@ -6689,9 +6690,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english as a second language - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 4,
@@ -6716,9 +6717,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "adult basic education - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 2,
@@ -7522,7 +7523,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 2367
+  "text_chars": 2347
  },
  {
   "control_number": "31622",
@@ -7559,7 +7560,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 2367
+  "text_chars": 2347
  },
  {
   "control_number": "31627",
@@ -9633,9 +9634,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "medical professions preparation - certificate of competency (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 4,
@@ -9834,9 +9835,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "project management - certificate of competency (noncredit-hours only; no units)",
+    "section_fit": 0.286
    }
   },
   "listed": 3,
@@ -9952,9 +9953,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "computer skills for esl - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 2,
@@ -9979,9 +9980,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "speaking skills for esl - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 2,
@@ -10006,9 +10007,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "grammar skills for esl - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 2,
@@ -10032,9 +10033,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "college preparation - certificate of competency (noncredit-hours only; no units)",
+    "section_fit": 0.286
    }
   },
   "listed": 1,
@@ -10107,9 +10108,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "conversation skills for esl - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 1,
@@ -10808,9 +10809,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "getting started with drone careers and drone applications in geomatics - certificate of competency (noncredit-hours only; no units)",
+    "section_fit": 0.545
    }
   },
   "listed": 2,
@@ -11348,9 +11349,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "reading skills for esl - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -11715,9 +11716,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl work readiness - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.375
    }
   },
   "listed": 3,
@@ -11876,9 +11877,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "adult education workforce preparation - certificate of completion (noncredit-hours only; no units)",
+    "section_fit": 0.444
    }
   },
   "listed": 6,
