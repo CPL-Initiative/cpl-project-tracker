@@ -1,0 +1,129 @@
+{
+ "college": "Palomar College",
+ "reread_run": "42376267731",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "42371822077",
+ "at": "2026-11-07T13:18:27Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "10888",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "05201"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Palomar College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 42371822077;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Program Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 21,
+       "min": 21
+      },
+      "courses": [
+       {
+        "code": "CHEM 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 115L",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 220",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 221",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Successful students will be able to apply the scientific method by stating a question, performing experiments and/or analyzing a data presentation.",
+      "Successful students will be able to set up and execute general and intermediate chemical reactions in the lab using a chemical technique."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 21,
+      "min": 21
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Chemistry - A.S. Degree Major (18 units or more)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 21,
+   "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Chemistry-AS",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843467865,
+   "program_title": "Chemistry",
+   "control_number": "05201"
+  }
+ ]
+}
