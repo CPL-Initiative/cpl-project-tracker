@@ -30,7 +30,7 @@ Your moniker is **SkyMeadow**. You pick up after SkyHarbor on the **Credential C
   INSERT-only add, a reviewer-only decide (Verify, Merge, Decline, Reopen, history kept), a verified-only read; the
   Exhibits Requests view decides. Migration applied live; grants verified.
 - **#2861** the Library List sorts a piece in no project by its own modified date.
-- **#2862 (open, CI)** Moreno Valley's HES 1 claim on C-ID HIST 150 held: no Basic Military Training on world history in
+- **#2862 (merged)** Moreno Valley's HES 1 claim on C-ID HIST 150 held: no Basic Military Training on world history in
   CPL Pathways, the aligned view or Sierra (`kb/reference/cid_claim_holds.json`, receipt in `kb/cid_claim_holds_out/`,
   daily audit `kb/_audit_cid_claims.py`). Two holds statewide.
 - **#2863 (open, CI)** CPL Pathways opens on every college (the index read carries each program's counts), six cards
@@ -51,9 +51,10 @@ terrific!"*; yes to the hero picture from the standard format.
    Moreno Valley's articulation officer to correct HES 1's COCI C-ID (draft it; outward, Sam sends); (c) Sierra offers MUS
    4A *Advanced Ear Training* for *Advanced Strength Training* by wording alone (0.61); (d) *Plant Propagation* carries
    Spanish and Nutrition credit lines in `chatbox_peer_articulations` (a mis-folded title). Hand over the link.
-2. **Merge #2862 and #2863** on a green `test` (both watched). After #2862: the next daily run rebuilds the aligned view;
-   after 13:20Z `credential-catalog-sync.yml`, read `credential_alignment_for_college('Basic Military Training','Sierra
-   College')` and confirm no HIST 50 row.
+2. **Merge #2863 and #2864** on a green `test` (SkyHarbor let go of both at sign-off; #2863's suite (3) failure was
+   fixed in `31231358`, re-check its CI). #2862 merged 00:00Z: after the next daily run and the 13:20Z
+   `credential-catalog-sync.yml`, read `credential_alignment_for_college('Basic Military Training','Sierra College')`
+   and confirm no HIST 50 row.
 3. **The hero picture in CPL Pathways** (Sam: yes): the Catalog's photo arc (`library/adopt/index.html` `.hero-visual`,
    `adopt.js` `heroInit`, pause control, reduced motion) on the statewide head, Pathways' tokens light and dark,
    `npm run a11y -- cobi:cpl-pathways`.
@@ -66,8 +67,8 @@ terrific!"*; yes to the hero picture from the standard format.
 7. The Library lane's standing *Next*.
 
 ## Watching
-#2862 and #2863 (subscribed), the mock's artifact watch, and the check-in `trig_01CBBaLoGgV5R5nDjJhBZdAj` (00:07Z). Let
-them go at sign-off.
+Nothing. SkyHarbor let go of #2863, #2864, the mock's artifact watch and its check-in at sign-off (context near the
+emergency line).
 
 > *Greetings, you are SkyMeadow, a Library side session beside the CPL Queue routine, see SkyHarbor's handoff —
 > `docs/library_handoff.md` — let's keep rolling with our queue.*
