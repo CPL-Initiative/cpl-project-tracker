@@ -1,0 +1,381 @@
+{
+ "run": "42346448758",
+ "index": "catalog:contra_costa",
+ "host": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+ "system": "elumen",
+ "source_kind": "catalog",
+ "slugs": "contra_costa",
+ "part": 1,
+ "of": 1,
+ "wanted": 520,
+ "slice": 12,
+ "at": "2026-11-07T06:22:49Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 11,
+   "none": 1
+  },
+  "status_not_200": 0,
+  "outcomes": 33
+ },
+ "rows": [
+  {
+   "code": "ADJUS 120",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,adjus120?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,adjus120?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1348,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will demonstrate an understanding of how the criminal justice system works.",
+    "Students will demonstrate research methods and writing.",
+    "Students will be able to identify and assess the legal limitations on police operations and investigations."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "ade69181b890067587a2df76173dc64f",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ASTRC 1001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,astrc1001?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,astrc1001?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1174,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will be able to identify, classify, and discuss the components of the Solar System.",
+    "Students will be able to correctly draw, label, and interpret a Hertzsprung–Russell diagram."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "a59e50ef1926a6bb5b906eccdc271d61",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "BUS 102",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,bus102?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,bus102?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1406,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Successfully solve mathematical problems involving addition, subtraction, multiplication and division, fractions, decimals, equations and percents, trade and cash discounts, markup and markdowns, simple interest and simple discount, compound interest, future value, and present value, payroll and tax computations, and consumer credit terms in homework and in-class assignments.",
+    "Identify and understand the benefits and burdens of home ownership by identifying and calculating the costs and rewards of home ownership related to mortgages, interest charges and deductions and insurance.",
+    "Successfully identify basic financial statements and complete parts of a balance sheet, income statement, statement of retained earnings and statement of cash flows."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "6f0059764ddf3019ae4b63f4fa64c452",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "CIS 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,cis101?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,cis101?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 933,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will be able to install components to build, repair, or upgrade personal computers",
+    "Students will be able to explain the roles and responsibilities of the IT professional",
+    "Students will be able to demonstrate and explain how to perform preventive maintenance and troubleshooting on personal computers."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "e8e1da8f6d63248573d14e319af3dbeb",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "CULIN 120",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,culin120?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,culin120?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1384,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will demonstrate knowledge and skill in culinary techniques associated with basic to advanced knife cuts.",
+    "Students will understand and use a variety of culinary vocabulary and terms.",
+    "Students will demonstrate the ability to perform basic to advanced math principles necessary to function in a commercial food service operation.",
+    "Students will demonstrate a positive work ethic and attitude that will lead to successful employment in the food services industry."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "9c3dc0725845ac2f515fbd5827ebc161",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ECONC 2001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,econc2001?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,econc2001?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1470,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will demonstrate the ability to assess and evaluate microeconomics conditions and microeconomics outcomes.",
+    "Students will demonstrate the ability to utilize Micro-Economic models to anticipate possible micro-level policy actions and potential micro-level government intervention strategies.",
+    "Students will demonstrate the ability to analyze Micro-economic trends to anticipate possible micro-level policy actions and potential micro-level government intervention strategies."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "68c5b231d83d706c28ceffe136969117",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ESL 132",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,esl132?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,esl132?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1052,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will be able to demonstrate comprehension of an academic lecture.",
+    "Students will be able to present a 5-7 minute speech on a complex topic, incorporating research and/or secondary sources."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "824ba223e86500991cd3df68f1c93fb3",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "HUMAN 113",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,human113?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,human113?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1120,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will identify major African American cultural works.",
+    "Students will exhibit their knowledge and research findings of African cultural art and how these values relate to African American art values and styles.",
+    "Students will analyze and contextualize cultural artifacts.",
+    "Students will demonstrate the importance of African American cultural expression in the American context."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "6a0f05494597259760af8ad49636c842",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "LIBST 110A",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,libst110a?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,libst110a?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1028,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will improve their overall information competency knowledge.",
+    "Students will identify plagiarism as it relates to citations, copyright, and public domain."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "bde164009c7ab460d00defd9b9c2c3a9",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "MUSIC 102",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,music102?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,music102?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 0,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "POLSC 1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,polsc1000?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,polsc1000?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1617,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will explain the origin of the U.S. Constitution and discuss its role in shaping the character of U.S. Federalism",
+    "Students will analyze the influence of institutions, ideology, and political struggle in the shaping of rights and liberties of individuals as articulated in the U.S. and California Constitution and federal court decisions.",
+    "Students will demonstrate knowledge of the role and functioning of each of the three branches of government (executive, legislative, and judiciary)",
+    "Students will learn how to effectively participate in politics by analyzing the ways in which voters, politicians, political parties, interest groups, and social movements mobilize to shape political agendas and influence policy."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "6c58b1cb39bbbecfac617ad987367dd6",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "SOCI 236",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,soci236?tenant=ccc.elumenapp.com",
+   "named_by": [
+    "contra_costa"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,course,soci236?tenant=ccc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1154,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Students will demonstrate knowledge of the concept of social policy in relation to sport.",
+    "Students will demonstrate knowledge of the concept of socialization in relation to sport.",
+    "Students will demonstrate knowledge of the sociological imagination in relation to sport."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "44ebc40ecd753ce535a6f3b62a3ce412",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  }
+ ]
+}
