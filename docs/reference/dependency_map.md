@@ -830,7 +830,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/zband_retire_out/2026-09-03/materialized.json` | scripts: `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py` | — |
 | `kb/zband_retire_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kpi_cards.js` | pages: `CPL_Dashboard.html` | — |
-| `kpi_history.json` | scripts: `excel_to_dashboard.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
+| `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
 | `library.js` | pages: `CPL_Dashboard.html` | — |
 | `library/*/index.html` | none found | committed by: `library-publish.yml` |
@@ -1027,6 +1027,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/k10_disclosure_check_test.py` | workflows: `js-tests.yml`, `k10-disclosure-check.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
+| `tests/kpi_history_write_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_publish_test.py` | workflows: `js-tests.yml` | — |
@@ -1325,5 +1326,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 813 file
+Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 814 file
 datasets · 193 external services · 532 consumers · 64 workflows · 40 tabs.

@@ -749,6 +749,14 @@ jobs:
           pip install --quiet openpyxl
           python3 tests/statewide_kpi_test.py
 
+      # kpi_history.json cannot be wiped by a bad read (COBIx security round 1,
+      # item 11, S603): a parse error stops the run, the write is atomic, and a
+      # history shorter than the committed one by more than a day is refused.
+      - name: KPI history write guard (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/kpi_history_write_test.py
+
       # The credential reference's statewide flag counts the Fact Sheet's set
       # (Sam, 2026-11-01: a title that includes a statewide exhibit is based on
       # statewide); it read articulation lines alone and marked 84 of 152.
