@@ -6307,11 +6307,19 @@ function cplAiWords(s: any): Array<string> {
 }
 
 function cplAiPick(doc: any, titles: Array<any>, question: string): string | null {
+  return askedTitlePick((titles || []).filter((t) => t && cplAiEntry(doc, t).length > 0), question);
+}
+
+// The matched title the question names, by the same score as cplAiPick, with no CPL-AI filter.
+// Route ALIGN builds its worklist from it (SkyBramble, 2026-11-07): on Sacramento City's Security+
+// question the first match was LA City Certified Welder, so ALIGN built the welding worklist.
+// Null when no title reaches half its words; the caller then keeps the routes' first match.
+function askedTitlePick(titles: Array<any>, question: string): string | null {
   const asked = new Set(cplAiWords(question));
   let best: string | null = null;
   let bestScore = 0;
   for (const t of titles || []) {
-    if (!t || cplAiEntry(doc, t).length === 0) continue;
+    if (!t) continue;
     const words = cplAiWords(t);
     if (words.length === 0) continue;
     const score = words.filter((w) => asked.has(w)).length / words.length;
@@ -7527,7 +7535,12 @@ Deno.serve(async (req: Request) => {
       // is a per-recommendation worklist, and running it for every loosely
       // matched credential would bury the one the person asked about.
       const college = singleProfile?.college || null;
-      const topTitle = (stdRecs && stdRecs[0]?.unified_title)
+      // The title the question names wins over the routes' first match (the Security+ question
+      // above); with none named, the first match, as before.
+      const topTitle = askedTitlePick(
+        [...(stdRecs || []), ...(anyCreds || []), ...(vol || []), ...(collegeCreds || []), ...(adopt || [])]
+          .map((r: any) => r?.unified_title), routeText)
+        || (stdRecs && stdRecs[0]?.unified_title)
         || (anyCreds && anyCreds[0]?.unified_title) || null;
       if (college && topTitle) {
         const align = await fetchAlignment(topTitle, college, sb);

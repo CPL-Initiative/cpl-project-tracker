@@ -6310,6 +6310,19 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     i_course = exhibit_cm.get("Course", 5)
     i_credit = exhibit_cm.get("Credit Recommendation", 6)
     i_cid = exhibit_cm.get("CID Number", 9)
+    # A held COCI C-ID claim (kb/reference/cid_claim_holds.json) reaches MAP too: MAP's
+    # exhibit rows carry the articulating course's COCI C-ID, so Moreno Valley's HES 1 put
+    # HIST 150 on Basic Military Training's statewide "Principles of Health Education" and
+    # Sierra matched world history to it after the member export had set the claim aside
+    # (SkyBramble, 2026-11-07; Sam, Open Asks Sheet 164 card 2: "some mistake we should
+    # track down on our end"). Same hold, same undo: delete its entry.
+    def _hold_course(c):
+        # Subject and number only, so "HES 1", "HES-1" and "HES 1 - Health Science" agree.
+        m = re.match(r"\s*([A-Z]+)[\s\-]*(\d+[A-Z]*)", str(c or "").upper())
+        return (m.group(1) + m.group(2)) if m else ""
+    held_map_cids = {(str(h.get("college") or "").strip().lower(), _hold_course(h.get("course")),
+                      str(h.get("claimed_cid") or "").strip().upper())
+                     for h in _cid_claim_holds().values()}
     i_top = exhibit_cm.get("TOP Code", 8)
     i_cpl = exhibit_cm.get("CPL Type Description", 13)
 
@@ -6412,6 +6425,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         if artic:
             e["adopters"].add(artic)
         cid = (row[i_cid] or "").strip()
+        if cid and (str(artic or "").strip().lower(), _hold_course(row[i_course]), cid.upper()) in held_map_cids:
+            cid = ""  # a held COCI claim, carried into MAP's row
         if cid:
             e["cids"].add(cid)
         top = (row[i_top] or "").strip()

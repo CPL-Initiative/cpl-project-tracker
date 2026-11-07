@@ -29,7 +29,7 @@ STOP = {'introduction','intro','to','the','a','an','and','or','of','for','in','o
         'with','from','into','i','ii','iii','iv','v','lab','laboratory','labs',
         'course','courses','class','hour','hours','unit','units','level','part',
         'study','studies','topics','special','selected','general','applied',
-        'elective','electives'}
+        'elective','electives','training'}
 
 # WEAK: real words, but too generic to establish that two things are the same
 # subject. They may CONTRIBUTE to a score; they may never be the only thing shared.
@@ -40,7 +40,10 @@ WEAK = {'practices','practice','principles','principle','techniques','technique'
         'instruction','applications','application','service','services','repair',
         'control','controls','equipment','management','field','work','shop',
         'theory','skills','processes','process','design','analysis','testing',
-        'reading','survey','use','using','care','support','activities','program'}
+        'reading','survey','use','using','care','support','activities','program',
+        # level words (Sam, Open Asks Sheet 164 card 3, 2026-11-07): the Supabase
+        # scorer lets them score but never meet the floor alone, as WEAK does here
+        'advanced','beginning','basic','intermediate'}
 
 SYN = {}
 for group in [                       # element 0 is the canonical form

@@ -40,7 +40,7 @@ function finish() {
 let L = null;
 try {
   L = liftBlock(FN, "// ── CPL-AI BLOCK START", "// ── CPL-AI BLOCK END",
-    ["buildCplAiContext", "cplAiEntry", "cplAiCollegeKey", "cplAiPick", "CPL_AI_RULE", "CPL_AI_CATALOG"]);
+    ["buildCplAiContext", "cplAiEntry", "cplAiCollegeKey", "cplAiPick", "askedTitlePick", "CPL_AI_RULE", "CPL_AI_CATALOG"]);
 } catch (e) { check("(0) the CPL-AI block lifts out of index.ts — " + e.message, false); }
 check("(0) the CPL-AI block lifts out of index.ts", !!L && typeof L.buildCplAiContext === "function");
 if (!L) finish();
@@ -138,5 +138,17 @@ check("(7) the answer's log names the CPL-AI section", /cpl_ai: \{ credential: c
 // (8)
 const BUILDER = fs.readFileSync(path.join(ROOT, "kb/_build_adopt_page.py"), "utf8");
 check("(8) the builder writes the college column names into adopt_ai.json", /"colleges": \[c\[0\] for c in colleges\]/.test(BUILDER));
+
+// (9) Route ALIGN builds its worklist on the title the question names (SkyBramble, 2026-11-07):
+// on Sacramento City's Security+ question the routes' first match was LA City Certified Welder.
+check("(9) ALIGN's pick names Security+ over the first-matched welding title",
+  L.askedTitlePick(["LA City Certified Welder — AWS D1.1 SMAW", "CompTIA Security+"], SAC_Q) === "CompTIA Security+");
+check("(9) ALIGN's pick needs no CPL-AI rating (a title CPL-AI never rated still wins)",
+  L.askedTitlePick(["LA City Certified Welder — AWS D1.1 SMAW", "Emergency Medical Technician (EMT)"],
+    "Which Los Angeles City College courses fit the Emergency Medical Technician certificate?") === "Emergency Medical Technician (EMT)");
+check("(9) a question naming no title picks nothing, so ALIGN keeps the first match",
+  L.askedTitlePick(["CompTIA Security+"], "Which Sacramento City College courses fit welding?") === null);
+check("(9) the handler's ALIGN title comes from askedTitlePick over every route's matches, falling back to the first",
+  /const topTitle = askedTitlePick\(\s*\[\.\.\.\(stdRecs \|\| \[\]\), \.\.\.\(anyCreds \|\| \[\]\), \.\.\.\(vol \|\| \[\]\)[\s\S]{0,200}\|\| \(stdRecs && stdRecs\[0\]\?\.unified_title\)/.test(FN));
 
 finish();
