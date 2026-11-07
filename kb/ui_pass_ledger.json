@@ -6,8 +6,8 @@
    "name": "Sierra",
    "page": "sierra/index.html",
    "audience": "public",
-   "last": "2026-10-30",
-   "outcome": "S523: 14 Sierra targets (arriving, first Ask, conversation, docked, over COBI, Training queue and guidance; light and dark) pass AA, target size and keyboard at 9 widths. First Light: sierra.css raw hex only in token definitions; sierra.js keeps #fff strokes inside the navy mark (Malone's look, the 10-24 departure). Wiring: cpl-chat and sierra_feedback_upsert paint no fixed figure Sierra shares with College Briefing, GR, Memory or Training, so nothing to compare on screen. No fix needed."
+   "last": "2026-11-07",
+   "outcome": "S594 SkyBodes: npm run a11y, all 14 Sierra targets pass (light and dark, arriving, first Ask, conversation, Training queue and editor, dock full screen, over a COBI tab). Wiring: cpl-chat and sierra_feedback_upsert feed the Briefing, GR, Memory and Sierra Training tabs; no shared figure shows on Sierra's page. First Light: every hex in sierra.css sits in a token block; sierra.js has one var() fallback. No fix needed."
   },
   {
    "id": "veteran-sprint-map",
