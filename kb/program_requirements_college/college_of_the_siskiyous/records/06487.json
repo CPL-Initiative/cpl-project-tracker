@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7672,
+  "input_tokens": 7382,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7672,
-    "output_tokens": 1402,
+    "input_tokens": 7382,
+    "output_tokens": 2349,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1402,
+  "output_tokens": 2349,
   "output_tokens_details": {
-   "thinking_tokens": 589
+   "thinking_tokens": 1166
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05873,
- "ms": 11743,
- "seconds": 12.4,
+ "cost_usd": 0.07651,
+ "ms": 21226,
+ "seconds": 21.5,
  "parts": null,
  "error": null,
  "score": {
@@ -82,7 +82,7 @@
    "against": "degree",
    "ge": null,
    "why": [
-    "the record names the degree total and the The College of the Siskiyous General Education Pattern (COSGE) pattern, but no units for it"
+    "the record names the degree total and the College of the Siskiyous General Education Pattern (COSGE) pattern, but no units for it"
    ],
    "major": {
     "pass": true,
@@ -104,12 +104,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -136,7 +136,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "The College of the Siskiyous General Education Pattern (COSGE)",
+   "ge_pattern": "College of the Siskiyous General Education Pattern (COSGE)",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -146,7 +146,16 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Possess a broad base of nursing and supportive knowledge and an understanding of nursing principles and nursing process.",
+    "Assist with the implementation and continuing evaluation of the nursing care plan.",
+    "Observe, record, and report to the appropriate individuals symptoms, reactions, and changes exhibited by the patient.",
+    "Perform selected nursing procedures with proficiency.",
+    "Assist with rehabilitation of patients.",
+    "Demonstrate knowledge of legal and ethical considerations in nursing.",
+    "Apply knowledge of the basic communication process; utilize the knowledge of the dynamics of human behavior.",
+    "Demonstrate knowledge of physical, psychological, and social aspects of patient care for all age groups."
+   ],
    "careers": [
     "LVN"
    ]
@@ -222,12 +231,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints NURS0952 and NURS0953; these were matched to closed-list entries NURS 952 and NURS 953 as the same courses with different code formatting. Reviewers should confirm this match.",
-   "The degree_total of 60 is taken from 'Any needed electives to reach a total of 60 COS degree-applicable units,' which is printed among this award's requirements. No separate degree total line is printed, and no units are printed for the electives.",
-   "No units are printed for the COSGE general education pattern.",
-   "The optional non-degree support courses (NURS0851-0853) are printed with 'Total 0' and 'Complete the following number of credits: 0.' They are recorded as recommended because they are optional and do not count toward the total.",
-   "The program description gives no program learning outcomes."
+   "Catalog prints NURS0952 and NURS0953; closed list stores them as NURS 952 and NURS 953. Treated as the same courses (catalog_addition false).",
+   "Admission prerequisites (BIO2700 4, ENGLC1000 4, KINE1011 3, NURS1045 3, STATC1000 4) are printed under 'Prerequisite Courses for Admission to Program' with Total 0; they are admission requirements, not counted in the 38-unit major, so they are not recorded as a block. None is on the closed list.",
+   "degree_total 60 taken from 'Any needed electives to reach a total of 60 COS degree-applicable units' printed in this award's requirements; reviewer may check whether this should be treated as a generic degree statement.",
+   "Optional non-degree support courses (NURS0851-0853) are recorded as recommended; they do not count toward the award.",
+   "Outcomes are printed under 'Program Learning Outcomes (LVN - AS)', specific to this award.",
+   "Career 'LVN' taken from 'A passing score entitles you to become an LVN.'",
+   "Major requirements GPA 2.0 overall; prerequisite classes require 2.5 GPA or higher."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

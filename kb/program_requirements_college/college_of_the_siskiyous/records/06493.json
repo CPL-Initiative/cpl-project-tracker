@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8138,
+  "input_tokens": 7360,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8138,
-    "output_tokens": 1680,
+    "input_tokens": 7360,
+    "output_tokens": 1914,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1680,
+  "output_tokens": 1914,
   "output_tokens_details": {
-   "thinking_tokens": 537
+   "thinking_tokens": 664
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06615,
- "ms": 15462,
- "seconds": 15.9,
+ "cost_usd": 0.06772,
+ "ms": 16076,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
@@ -61,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -98,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Mathematics-AS",
+   "section_heading": "Mathematics - AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": "College of the Siskiyous General Education Pattern (COSGE)",
+   "ge_pattern": "The College of the Siskiyous General Education Pattern (COSGE)",
    "degree_total": {
     "min": null,
     "max": null
@@ -123,7 +124,13 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Set up, manipulate, graph, solve, or apply standard algebraic expressions and equations.",
+    "Interpret, analyze, and solve word problems.",
+    "Interpret, analyze, and solve word problems.",
+    "Apply the concepts of analytic geometry, single and multi-variable calculus, linear algebra, and differential equations to model and solve real- world problems.",
+    "Demonstrate a familiarity with the fundamentals of a mathematical proof."
+   ],
    "careers": []
   },
   "blocks": [
@@ -138,21 +145,21 @@
     },
     "courses": [
      {
-      "code": "MATH1400",
+      "code": "MATH 1400",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH1500",
+      "code": "MATH 1500",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH2400",
+      "code": "MATH 2400",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -171,63 +178,63 @@
     },
     "courses": [
      {
-      "code": "CSCI1007",
+      "code": "CSCI 1007",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHYS1105",
+      "code": "PHYS 1105",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHYS2105",
+      "code": "PHYS 2105",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH1010",
+      "code": "MATH 1010",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH1100",
+      "code": "MATH 1100",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH1200",
+      "code": "MATH 1200",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH2500",
+      "code": "MATH 2500",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH2600",
+      "code": "MATH 2600",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -239,13 +246,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text starts mid-page; the program heading, description, any outcomes and any careers section are not in the supplied text. Section heading taken from the 'Mathematics-AS' label in the Recommended Sequence.",
-   "Codes are printed without a space (e.g. MATH1400); they match the closed-list codes (MATH 1400 etc.), so none are catalog additions.",
-   "The page prints no total for the major. The second block prints both 'Complete an additional 2 classes' and 'Complete the following number of credits: 6-8'; recorded as choose 2 courses with stated 6-8.",
-   "The page says 'Any needed electives to reach a total of 60 COS degree-applicable units'; recorded as electives_fill_degree true. The 60 was not recorded as degree_total because it reads as the general degree minimum rather than a printed total for this award; reviewer may wish to check.",
-   "Requirement notes: all major courses must be completed with a C or better; students should take English C1000 and complete the Math competency requirement in their first year (GE, not placed in blocks).",
-   "The Recommended Sequence lists only Required Core courses for Terms 1-3 and is cut off; it adds no requirements."
+   "The catalog prints codes without a space (e.g., MATH1400, STATC1000); recorded with the subject separated to match the closed list.",
+   "The page states 'Any needed electives to reach a total of 60 COS degree-applicable units' within the requirements; recorded electives_fill_degree true. degree_total left null because the page prints only the major total (18-20) as this award's total; reviewer may consider 60 as the degree total.",
+   "The second block is printed as 'Complete an additional 2 classes from the following' with 'Complete the following number of credits: 6-8'; recorded as choose 2 courses with stated 6-8.",
+   "The outcome 'Interpret, analyze, and solve word problems.' is printed twice in the catalog; both entries kept as printed.",
+   "GE pattern named as COSGE; no GE units printed. English C1000 and math competency mentioned as GE planning advice, not placed in blocks.",
+   "Recommended Sequence section only repeats required/elective courses; not recorded as a recommended block."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

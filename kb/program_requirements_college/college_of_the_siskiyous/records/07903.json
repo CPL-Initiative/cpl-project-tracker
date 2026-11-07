@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8055,
+  "input_tokens": 7642,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8055,
-    "output_tokens": 1761,
+    "input_tokens": 7642,
+    "output_tokens": 1646,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1761,
+  "output_tokens": 1646,
   "output_tokens_details": {
-   "thinking_tokens": 584
+   "thinking_tokens": 502
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06744,
- "ms": 14749,
- "seconds": 15.2,
+ "cost_usd": 0.06349,
+ "ms": 13889,
+ "seconds": 14.1,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Humanities--AA",
+   "section_heading": "Humanities - AA",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -114,7 +114,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "The College of the Siskiyous General Education Pattern (COSGE)",
+   "ge_pattern": "College of the Siskiyous General Education Pattern (COSGE)",
    "degree_total": {
     "min": null,
     "max": null
@@ -124,7 +124,11 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Evaluate works of philosophical, historical, literary, aesthetic and cultural significance.",
+    "Analyze the interrelationship between humanities and themselves.",
+    "Critically evaluate various interpretations of works within the humanities."
+   ],
    "careers": []
   },
   "blocks": [
@@ -238,14 +242,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text begins mid-heading ('tal 21)'), apparently '(Total 21)' for the program requirements; recorded as total_units 21, which matches the three requirement totals (9 + 6 + 6). Reviewer should confirm against the full page.",
-   "Section heading not printed in the captured text; 'Humanities--AA' taken from the Recommended Sequence heading.",
-   "Requirements #2 and #3 say 'Complete two courses' and 'Complete the following number of credits: 6'; recorded as choose_units 6 (equivalent to two 3-unit courses).",
-   "The page says 'Any needed electives to reach a total of 60 COS degree-applicable units'; recorded electives_fill_degree true. degree_total left null because no total line is printed for the award with GE; reviewer may treat 60 as the degree total.",
-   "COSGE pattern listed with 0 units; no GE unit total printed, so ge_units is null. All major courses and COSGE check-sheet courses require a C or better.",
-   "No program learning outcomes or careers appear in the captured text; the text is truncated at the end within the Recommended Sequence.",
-   "Codes are written as printed without a space (e.g., HUM1001); they match the closed list entries (e.g., HUM 1001)."
+   "Catalog prints codes without spaces (e.g., HUM1001); these match the closed-list codes (e.g., HUM 1001), so none are catalog additions.",
+   "Program total 'Total 21' recorded as total_units (major only).",
+   "The page says 'Any needed electives to reach a total of 60 COS degree-applicable units' with 0 units printed; recorded electives_fill_degree true and left degree_total null since 60 is stated as an elective target rather than a printed award total. Reviewer may wish to check.",
+   "COSGE requirements are printed with 0 units, so ge_units is null.",
+   "Requirements #2 and #3 say 'Complete two courses' and 'Complete the following number of credits: 6'; recorded as choose_units 6.",
+   "Recommended Sequence section only rearranges the same required courses by term; not recorded as separate blocks.",
+   "Program outcomes are printed under 'Program Outcomes - Humanities -- AA'."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

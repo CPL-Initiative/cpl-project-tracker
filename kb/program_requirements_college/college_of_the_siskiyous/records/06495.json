@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8049,
+  "input_tokens": 7446,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8049,
-    "output_tokens": 1303,
+    "input_tokens": 7446,
+    "output_tokens": 1515,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1303,
+  "output_tokens": 1515,
   "output_tokens_details": {
-   "thinking_tokens": 524
+   "thinking_tokens": 582
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05826,
- "ms": 11178,
- "seconds": 11.6,
+ "cost_usd": 0.06008,
+ "ms": 13308,
+ "seconds": 13.4,
  "parts": null,
  "error": null,
  "score": {
@@ -61,30 +61,47 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
     30.0,
     30.0
    ],
    "stated": [
-    30.0,
-    30.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the College of the Siskiyous General Education pattern (COSGE) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     30.0,
+     30.0
+    ],
+    "stated": [
+     30.0,
+     30.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -94,16 +111,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Physics Major Requirements",
+   "section_heading": "Physics - AS",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -116,15 +130,20 @@
    },
    "ge_pattern": "College of the Siskiyous General Education pattern (COSGE)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate an ability to apply to the real world the principles of physics.",
+    "Demonstrate an understanding of the various components underlying good scientific research including an ability to design and construct experiments, as well as to analyze and interpret data.",
+    "Demonstrate an ability to effectively communicate scientific knowledge, experimental results and analyses.",
+    "Demonstrate that they possess the skills, techniques, attitudes, values and knowledge to success in the upper division level science courses having physics as prerequisite."
+   ],
    "careers": []
   },
   "blocks": [
@@ -193,12 +212,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (e.g. CHEM2000); these match the closed-list codes (e.g. CHEM 2000).",
-   "Degree requirements bullet: 'Any needed electives to reach a total of 60 COS degree applicable units.' Recorded as electives_fill_degree true; degree_total left null because the 60 appears as the level electives fill to rather than a printed award total. Reviewer may consider recording 60 as degree_total.",
-   "No units are printed for the COSGE general education pattern.",
-   "The extracted text begins mid-page (program description, outcomes and careers, if any, are not in the text) and is cut off in Term 4 of the Recommended Sequence.",
-   "Requirement notes: all major courses must be completed with a C or better; students should take English 1001 and complete the Math competency requirement in their first year."
+   "degree_total of 60 is taken from the requirement 'Any needed electives to reach a total of 60 COS degree applicable units' listed among this award's requirements; reviewer should confirm this counts as a printed degree total rather than a generic rule.",
+   "Electives fill the rest of the 60 units with no units printed, so electives_fill_degree is true.",
+   "The page prints no units for the COSGE pattern, so ge_units is null.",
+   "The page's metadata says the program was revised for a Winter 2023 start; the content appears under the 2026-27 catalog.",
+   "The description names physicists and fields where physics is applied (chemistry, biology, geophysics, etc.). These are not framed as career outcomes for students, so careers is left empty.",
+   "The recommended sequence lists only the major courses and adds no other requirements."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

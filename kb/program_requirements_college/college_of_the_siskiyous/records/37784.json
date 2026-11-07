@@ -1,0 +1,211 @@
+{
+ "college": "College of the Siskiyous",
+ "control_number": "37784",
+ "shape": "noncredit",
+ "title": "Culinary and Hospitality Service Skills",
+ "award": "Noncredit program",
+ "source_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/culinary-and-hospitality-service-skills-non-credit-coc-fall-2021",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6625,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6625,
+    "output_tokens": 1254,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1254,
+  "output_tokens_details": {
+   "thinking_tokens": 366
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05158,
+ "ms": 10234,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BA504",
+    "BA505",
+    "WORK510"
+   ],
+   "flagged": [
+    "BA504",
+    "BA505",
+    "WORK510"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    80.0,
+    90.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Requirements' has no units",
+    "a required course in 'Electives' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary and Hospitality Service Skills - Non-Credit - COC",
+   "measure": "hours",
+   "total_units": {
+    "min": 80,
+    "max": 90
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Execute effective preparation techniques in a commercial kitchen.",
+    "Operate confidently and safely in commercial kitchen utilizing equipment and facilities",
+    "Apply and verify safe working habits and practices with regards to sanitation codes",
+    "Use a professional set of kitchen knives in an efficient manner",
+    "Effectively pass CPR/First Aid to apply safety and accident prevention and first aid in the workplace",
+    "Employ and evaluate all traditional dry and moist heat cooking methods and produce a variety of cooked and cold foods",
+    "Identify the interpersonal skills needed to be successful in the highly service oriented hospitality industry"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HOSP0501",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WORK0510",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BA0504",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BA0505",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours: 'Total Certificate Hours: 80 - 90 hours' recorded as total_units. The catalog prints 0 credits beside each course and 'Total 0' for each block; these are credits, not hours, so course units and block stated are left null. Per-course hours are not printed.",
+   "HOSP0501 is the closed-list course HOSP 501, printed without a space.",
+   "The block headed 'Electives' says 'Complete all of the following', so it is recorded as an 'all' block even though named Electives; reviewer may confirm.",
+   "Program outcomes are printed under the heading 'Culinary and Hospitality Service Skills - Certificate', which appears to be the outcomes list for this certificate.",
+   "The program URL refers to fall 2021; the rationale says 'Program previously approved. Initial input into Elumen.'"
+  ]
+ },
+ "extracted_run": "42354853403"
+}

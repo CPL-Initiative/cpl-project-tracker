@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8102,
+  "input_tokens": 7667,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8102,
-    "output_tokens": 1211,
+    "input_tokens": 7667,
+    "output_tokens": 1239,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1211,
+  "output_tokens": 1239,
   "output_tokens_details": {
-   "thinking_tokens": 336
+   "thinking_tokens": 215
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05663,
- "ms": 10570,
- "seconds": 11.0,
+ "cost_usd": 0.05545,
+ "ms": 11666,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -63,29 +63,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.0,
     22.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,15 +101,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science Degree in Mathematics 2.0 for Transfer",
+   "section_heading": "Mathematics 2.0 - AS-T",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,7 +126,13 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Set up, manipulate, graph, solve, or apply standard algebraic expressions and equations.",
+    "Interpret, analyze, and solve word problems.",
+    "Explain the mathematical reasons behind a multi-step problem.",
+    "Apply the concepts of analytic geometry, single and multi-variable calculus, linear algebra, and differential equations to model and solve real-world problems.",
+    "Demonstrate a familiarity with the fundamentals of a mathematical proof."
+   ],
    "careers": []
   },
   "blocks": [
@@ -218,12 +225,12 @@
    }
   ],
   "notes": [
-   "Codes are printed without a space (e.g. MATH1400); they match closed-list codes such as MATH 1400.",
-   "The excerpt starts mid-page and ends in the Recommended Sequence at Term 3; any major total, degree total, outcomes or careers printed elsewhere on the page are not in the text.",
-   "The page says 'Any needed transferable electives to reach a total of 60 CSU transferable units'; recorded as electives_fill_degree true, with no degree total printed as this award's total.",
-   "List A heading says 'Select one course' with 'Complete the following number of credits: 3-4'; recorded as choose 1 course with stated 3-4.",
-   "The page names Cal-GETC as the GE pattern but prints no GE unit figure in the excerpt."
+   "The page prints the same five outcomes twice (under 'Mathematics 2.0 AS-T' and 'Program Learning Outcomes: Mathematics-AS-T Degree'); recorded once.",
+   "List A says 'Select one course' but also 'Complete the following number of credits: 3-4'; recorded as choose 1 course with stated 3-4.",
+   "The 60-unit requirement is stated generically ('completion of 60 semester units' and 'transferable electives to reach a total of 60 CSU transferable units'), not printed as this award's total; degree_total left null and electives_fill_degree set true.",
+   "No Cal-GETC unit figure is printed; ge_units null.",
+   "Codes are printed without a space (e.g., MATH1400) and recorded as printed."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }
