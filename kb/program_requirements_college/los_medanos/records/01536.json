@@ -62,35 +62,34 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     21.0,
     23.0
    ],
    "stated": [
-    21.0,
-    21.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 21.0-23.0; the catalog states 21.0-21.0"
+    "the record names the degree total and the Local GE pattern, but no units for it"
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
      21.0,
      23.0
     ],
     "stated": [
-     60.0,
-     60.0
+     21.0,
+     21.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Local GE pattern, but no units for it"
-    ]
+    "against": "program",
+    "why": [],
+    "meets": true
    }
   },
   "repeated": {
@@ -350,5 +349,6 @@
    "Program title in the request is misspelled 'Journalsim'; the section read is the Journalism A.A."
   ]
  },
- "extracted_run": "39001267800"
+ "extracted_run": 42376691800,
+ "read_run": "39001267800"
 }
