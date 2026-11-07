@@ -1137,3 +1137,7 @@ From *Course objectives too*, verbatim:
   the 65 old records on the same reader as the 8 new.
 - **S594 stopped before its checkpoint** (#2874 open at 06:24Z, one commit, green). S595 merged it and wrote handoff 595;
   a firing that finds a green, quiet queue PR with no handoff merges it and carries its items.
+
+### Moved from the lane (S595): Mt. San Jacinto's paragraph, as it stood
+
+**Mt. San Jacinto (S592-S593, #2838 merged): 116 of 152 found.** Its gaps are the catalog's own (lessons S448); Public Health A.S.-T 39455 was read and loaded, display build 7b1f3658a888 applied by run 42217856222 (17,547 of 17,550, 0 errors; the 3 missing are Monterey's rows already gone). The other 35 stand as the catalog prints them (recheck Chemistry A.S.-T 40010 with the next catalog edit).

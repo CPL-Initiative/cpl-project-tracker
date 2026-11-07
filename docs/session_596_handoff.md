@@ -13,7 +13,7 @@ Your moniker is **SkyPinwheel** (galaxy names).
 This checkpoint was **light**: one lane file moved (`program-requirements-harvest`), no §11 row changed state, no
 re-mint, no data write of this session's own (the SLO load and the Siskiyous extraction are the workflows', each with its
 receipt on its branch). Skipped: `kb/README.md`, `README.md`, KB notes, the pipeline view, the other status files, the
-decision sheet rebuild (no card changed), `cpl_memory` (nothing durable beyond the lessons entry).
+decision sheet rebuild (no card changed). One `cpl_memory` row (the credential watch's material event).
 
 ## What happened
 
@@ -30,14 +30,18 @@ handoff S594 did not. S595 took the next moniker rather than SkyBodes.
 3. **SLOs:** Lake Tahoe's read 42346413202 filed 2 of 2 slices; `.load` (`host=ltcc`) pushed on #2833. Contra Costa's
    trial (#2873, 42346448758) parsed 11 of 12 pages: state *read*. Today's one read and one trial were S594's, so
    Contra Costa's full read waits for 2026-11-08 UTC.
-4. **Credential watch (step 10, 2026-11-07):** CREDWATCH_LINE
+4. **Credential watch (step 10, 2026-11-07): 152 added, 21 skills** on #2876. S594 read the slice (EC-Council, GIAC,
+   IAPP, Anthropic, OpenAI, Google, Microsoft), added 150 and pushed `claude/credential-watch-2026-11-07` at 06:36Z with
+   no PR; S595 re-read the same issuers, added Anthropic's two Claude Frontier Academy badges (Resident Engineer;
+   Frontier Deployed Engineer, first awards early 2027) and opened #2876. `cpl_memory`
+   `anthropic-claude-frontier-academy-badges-2026-10-02` (proposed). OpenAI's hosts answered 403 to S595's read.
 5. Steps 5 to 9: Monterey's done row is S594's, now answered. Three Library revise requests stand
    (`iaca-mvpmcjyl`, `cpl-coordinator-getting-started-guide`, and new at 23:58Z `dsp-credit-starting-points`); they stay
    with the Library side lane (`docs/library_handoff.md`, SkyThistle next). No CER rule or re-analysis request open.
 
 ## Open work, in order
 
-1. **Merge #2875** (this checkpoint) on a green `test`, if it has not merged.
+1. **Merge #2875** (this checkpoint) and **#2876** (the credential watch) on a green `test`, if they have not merged.
 2. **Siskiyous:** when 42354853403 files on `claude/sweep-siskiyous`, dispatch `step=load`, then the display build
    (`kb/_build_roep_display.py` on the branch, then `step=display`), and merge. Record the actual cost and the passing
    count in the lane. After it, Palomar 282 of 331 and Coalinga 53 of 62.
@@ -52,7 +56,7 @@ handoff S594 did not. S595 took the next moniker rather than SkyBodes.
 8. **Lanes worked this week that wait**, by slug: `commons` (the path mock's items, Teach a rule on every reference,
    the Common Course Reference tab's retirement into the Courses List; not reached), `common-subjects-reference` (no
    run this night), `map-users-student-contact` (Sunday's harvest, item 4), and the Library side lane's own:
-   `my-college-action-page`, `local-course-cr-alignment`, `reviewer-session-lifetime`, `sierra-retrieval-corpus`
+   `my-college-action-page`, `cer-procedures`, `local-course-cr-alignment`, `reviewer-session-lifetime`, `sierra-retrieval-corpus`
    (`docs/library_handoff.md` holds them).
 
 ## Decisions Sam made this run
@@ -66,7 +70,7 @@ None in session. Sam's done mark on Monterey (2026-11-06 19:29Z) was read by S59
 
 ## Let go
 
-This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2875 (item 1), #2833 (Lake
+This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2875 and #2876 (item 1), #2833 (Lake
 Tahoe, load running), #2873 (Contra Costa, full read due). Run in flight: 42354853403 (Siskiyous).
 Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current; no card changed this run.
 
