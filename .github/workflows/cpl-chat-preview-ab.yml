@@ -118,9 +118,14 @@ jobs:
           # --no-verify-jwt matches production: the callers send the anon key,
           # not a user JWT. Without it the preview 401s and every mode "fails",
           # which would read as a catastrophic regression in the candidate.
+          # --yes, as in cpl-chat-deploy.yml (2026-11-05): the CLI now asks
+          # "Confirmation required: Deploy 1 Function" and, with no terminal,
+          # changes nothing and exits 1 (run 42330182077, 2026-11-07). The
+          # dispatch is the confirmation, and this slug serves no surface.
           supabase functions deploy "${PREVIEW_SLUG}" \
             --project-ref "${PROJECT_REF}" \
-            --no-verify-jwt
+            --no-verify-jwt \
+            --yes
 
       - name: Smoke — PRODUCTION (cpl-chat, the deployed version)
         env:
