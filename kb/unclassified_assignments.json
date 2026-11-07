@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-06T22:13:51Z",
-  "count": 2402,
+  "_synced_at": "2026-11-07T14:59:09Z",
+  "count": 2406,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3883,6 +3883,12 @@
       "reviewed_at": "2026-10-31T15:29:09.545335+00:00",
       "unified_title": "Empowering Entrepreneurs"
     },
+    "BIOL 40C: Human Anatomy & Physiology III": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+      "unified_title": "Human Anatomy & Physiology Iii"
+    },
     "BIOL 55: Introduction to the Biology of Humans": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -6221,6 +6227,24 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Communication and Ethics In Law Enforcement"
     },
+    "CRJ 130": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+      "unified_title": "Alcohol, Narcotics and Drug Abuse"
+    },
+    "CRJ 155": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+      "unified_title": "Crime Scene Investigation"
+    },
+    "CRJ 220": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+      "unified_title": "Interviewing and Counseling"
+    },
     "CRPSCI 001: Introduction to Plant Science": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -6821,9 +6845,10 @@
     },
     "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:30:00.815425+00:00",
-      "unified_title": "CompTIA Security+"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "CompTIA A+",
+      "supersedes": "CompTIA Security+"
     },
     "CompTIA Network Plus": {
       "issuing_agency": "CompTIA",
@@ -6833,9 +6858,10 @@
     },
     "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:30:15.287694+00:00",
-      "unified_title": "CompTIA Security+"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "CompTIA Network+",
+      "supersedes": "CompTIA Security+"
     },
     "CompTIA Security+ Computer Hardware Systems - Credit by Exam (ECHT 148 )": {
       "issuing_agency": "California Community Colleges",
@@ -6845,9 +6871,10 @@
     },
     "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:30:26.696659+00:00",
-      "unified_title": "CompTIA Security+"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "CompTIA Server+",
+      "supersedes": "CompTIA Security+"
     },
     "Company Officer 2A: Human Resource Management for Company Officer": {
       "issuing_agency": "",
@@ -7061,31 +7088,31 @@
     },
     "Credit By Exam San Diego City College": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:13:59.788+00:00",
-      "unified_title": "Basic Refrigeration & AC Lab",
-      "supersedes": "Credit by Exam"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "Credit by Exam",
+      "supersedes": "Basic Refrigeration & AC Lab"
     },
     "Credit By Exam at Mesa": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:13:56.411+00:00",
-      "unified_title": "Basic Computer Keyboarding",
-      "supersedes": "Credit by Exam"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "Credit by Exam",
+      "supersedes": "Basic Computer Keyboarding"
     },
     "Credit By Exam at Saddleback College": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:13:58.587+00:00",
-      "unified_title": "Plant Propagation",
-      "supersedes": "Credit by Exam"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "Credit by Exam",
+      "supersedes": "Plant Propagation"
     },
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-02T17:14:26.738+00:00",
-      "unified_title": "Water Supply",
-      "supersedes": "Credit by Exam"
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "unified_title": "Credit by Exam",
+      "supersedes": "Water Supply"
     },
     "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
       "issuing_agency": "California Community Colleges",

@@ -5026,8 +5026,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Los Medanos": {
    "vets": 154,
-   "jst": 230,
-   "pct": 1.4935
+   "jst": 231,
+   "pct": 1.5
   },
   "Compton": {
    "vets": 45,

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-07T14:27:00Z",
+ "written_at": "2026-11-07T15:03:45Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2552,
-     "of": 5588,
-     "words": "titles carry a review stamp (1,227 a person's, 1,325 a cohort's); 2,725 credentials, 2,263 of 3,031 records stamped",
+     "n": 2556,
+     "of": 5592,
+     "words": "titles carry a review stamp (1,220 a person's, 1,336 a cohort's); 2,727 credentials, 2,268 of 3,036 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1227,
-     "of": 5588,
+     "n": 1220,
+     "of": 5592,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -142,22 +142,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-07T14:26:54Z",
+    "at": "2026-11-07T14:59:10Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5588,
-    "stamped": 2552,
-    "person": 1227,
-    "cohort": 1325,
-    "credentials": 2725,
-    "confirmed": 1227,
-    "records": 3031,
-    "records_stamped": 2263,
+    "titles": 5592,
+    "stamped": 2556,
+    "person": 1220,
+    "cohort": 1336,
+    "credentials": 2727,
+    "confirmed": 1220,
+    "records": 3036,
+    "records_stamped": 2268,
     "saved_at": "2026-11-07T14:26:54Z",
-    "fold_at": "2026-11-07T02:29:41Z",
+    "fold_at": "2026-11-07T14:59:10Z",
     "map_titles": 4971,
-    "unclassified": 6,
+    "unclassified": 2,
     "left_map": 623,
     "below_80": 1123,
     "below_60": 237
@@ -249,7 +249,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-07T02:31:35+00:00",
+    "at": "2026-11-07T15:01:26+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -292,7 +292,7 @@
     {
      "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,959 of 9,432 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,953 of 9,421 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -317,7 +317,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 38,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -343,16 +343,16 @@
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1933,
-    "rows": 9432,
+    "rows": 9421,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
     "settled": 461,
-    "settled_rows": 5959,
+    "settled_rows": 5953,
     "rule_wordings": 411,
-    "rule_rows": 4914,
+    "rule_rows": 4908,
     "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
@@ -360,7 +360,7 @@
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
     "unsettled": 1883,
-    "unsettled_rows": 3473,
+    "unsettled_rows": 3468,
     "head": {
      "50": {
       "settled": 46,
@@ -375,16 +375,16 @@
      "250": {
       "settled": 153,
       "of": 250,
-      "rows": 6559
+      "rows": 6556
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 38,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -460,7 +460,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-07T02:29:38Z",
+    "at": "2026-11-07T14:59:07Z",
     "every_hours": 24
    },
    "facts": {
@@ -637,7 +637,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 38,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -725,12 +725,12 @@
     {
      "name": "course-identity",
      "placed": 177,
-     "untouched": 153,
+     "untouched": 157,
      "kept": 0,
      "renamed": 20,
      "moved": 0,
      "by_procedure": 0,
-     "left": 4,
+     "left": 0,
      "looked": 20
     },
     {
@@ -802,12 +802,12 @@
    ],
    "total": {
     "placed": 1201,
-    "untouched": 1070,
+    "untouched": 1074,
     "kept": 23,
     "renamed": 80,
     "moved": 0,
     "by_procedure": 24,
-    "left": 4,
+    "left": 0,
     "looked": 103
    }
   },

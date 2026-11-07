@@ -1,12 +1,41 @@
 {
-  "_generated_at": "2026-11-07T02:29:41Z",
+  "_generated_at": "2026-11-07T14:59:10Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [],
+  "clean": [
+    {
+      "raw": "BIOL 40C: Human Anatomy & Physiology III",
+      "assigned": "Human Anatomy & Physiology Iii",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 130",
+      "assigned": "Alcohol, Narcotics and Drug Abuse",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 155",
+      "assigned": "Crime Scene Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 220",
+      "assigned": "Interviewing and Counseling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    }
+  ],
   "skip": [
     {
       "raw": "1st Receiver Ops & Decon",
@@ -8569,14 +8598,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
-      "assigned": "CompTIA Security+",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:30:00.815425+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "CompTIA Network Plus",
       "assigned": "CompTIA Network+",
       "issuer": "CompTIA",
@@ -8585,27 +8606,11 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
-      "assigned": "CompTIA Security+",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:30:15.287694+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "CompTIA Security+ Computer Hardware Systems - Credit by Exam (ECHT 148 )",
       "assigned": "CompTIA Security+",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T16:30:20.970531+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
-      "assigned": "CompTIA Security+",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:30:26.696659+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -8886,38 +8891,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:37.8008+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Credit By Exam San Diego City College",
-      "assigned": "Basic Refrigeration & AC Lab",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:13:59.788+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Credit By Exam at Mesa",
-      "assigned": "Basic Computer Keyboarding",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:13:56.411+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Credit By Exam at Saddleback College",
-      "assigned": "Plant Propagation",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:13:58.587+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Credit by Exam",
-      "assigned": "Water Supply",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-02T17:14:26.738+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -18530,9 +18503,192 @@
     }
   ],
   "supersede": [],
-  "revise": [],
-  "credential_moves": [],
-  "credential_retires": [],
+  "revise": [
+    {
+      "raw": "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "assigned": "CompTIA A+",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )"
+      ],
+      "disagreeing": [
+        "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )"
+      ],
+      "displaced": [
+        "CompTIA Security+"
+      ],
+      "supersedes": "CompTIA Security+"
+    },
+    {
+      "raw": "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "assigned": "CompTIA Network+",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )"
+      ],
+      "disagreeing": [
+        "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )"
+      ],
+      "displaced": [
+        "CompTIA Security+"
+      ],
+      "supersedes": "CompTIA Security+"
+    },
+    {
+      "raw": "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "assigned": "CompTIA Server+",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )"
+      ],
+      "disagreeing": [
+        "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )"
+      ],
+      "displaced": [
+        "CompTIA Security+"
+      ],
+      "supersedes": "CompTIA Security+"
+    },
+    {
+      "raw": "Credit By Exam San Diego City College",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit By Exam San Diego City College"
+      ],
+      "disagreeing": [
+        "Credit By Exam San Diego City College"
+      ],
+      "displaced": [
+        "Basic Refrigeration & AC Lab"
+      ],
+      "supersedes": "Basic Refrigeration & AC Lab"
+    },
+    {
+      "raw": "Credit By Exam at Mesa",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit By Exam at Mesa"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Mesa"
+      ],
+      "displaced": [
+        "Basic Computer Keyboarding"
+      ],
+      "supersedes": "Basic Computer Keyboarding"
+    },
+    {
+      "raw": "Credit By Exam at Saddleback College",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "displaced": [
+        "Plant Propagation"
+      ],
+      "supersedes": "Plant Propagation"
+    },
+    {
+      "raw": "Credit by Exam",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit by Exam"
+      ],
+      "disagreeing": [
+        "Credit by Exam"
+      ],
+      "displaced": [
+        "Water Supply"
+      ],
+      "supersedes": "Water Supply"
+    }
+  ],
+  "credential_moves": [
+    {
+      "title": "Basic Refrigeration & AC Lab",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-01T22:13:59.788+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Credit by Exam"
+    }
+  ],
+  "credential_retires": [
+    {
+      "title": "Plant Propagation",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-01T22:13:58.587+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "title": "Water Supply",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.55,
+          "classified_at": "2026-05-19",
+          "classified_by": "hand-curated seed (Phase 2)",
+          "reviewed_at": "2026-07-08T23:23:46.495931+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Administrative bucket used by Saddleback to register multiple Credit-by-Exam awards under one MAP ExhibitID. Not a single credential; flagged for human review under Skill Rule 5.",
+          "_renamed_from": "Credit by Exam"
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Credit by Exam"
+      ]
+    }
+  ],
   "stale": [
     {
       "raw": "ADM JUS 067",
@@ -19233,19 +19389,1828 @@
   ],
   "conflict": [],
   "held": [],
-  "credential_adds": [],
+  "credential_adds": [
+    {
+      "raw": "BIOL 40C: Human Anatomy & Physiology III",
+      "assigned": "Human Anatomy & Physiology Iii",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 130",
+      "assigned": "Alcohol, Narcotics and Drug Abuse",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 155",
+      "assigned": "Crime Scene Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 220",
+      "assigned": "Interviewing and Counseling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    }
+  ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [
     {
-      "title": "Yoga 1",
+      "title": "CompTIA A+",
       "issuer": "California Community Colleges",
-      "raw": "Noncredit for KIN YO1",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-06T20:32:56.519255+00:00"
+      "raw": "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+    },
+    {
+      "title": "CompTIA Network+",
+      "issuer": "California Community Colleges",
+      "raw": "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+    },
+    {
+      "title": "CompTIA Server+",
+      "issuer": "California Community Colleges",
+      "raw": "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
     }
   ],
   "credential_prunes": [],
-  "articulation_ripples": [],
-  "articulation_ripples_resolved": [],
+  "articulation_ripples": [
+    {
+      "idx": 186,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 187,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 236,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 238,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 512,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 513,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 525,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 527,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 528,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 529,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 530,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 531,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 532,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 533,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 534,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 536,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 553,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 561,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 648,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 747,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 767,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1149,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1212,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1218,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1219,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1222,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1224,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1226,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1389,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1390,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1436,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1437,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1439,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1440,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1442,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1443,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1447,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1454,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1457,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1552,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1594,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1773,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1819,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1821,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1822,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1823,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2049,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2050,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2148,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2158,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2159,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2160,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2161,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2162,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2168,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2222,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2223,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2275,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2277,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2281,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2498,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2501,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2558,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2563,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2931,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2932,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2944,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2954,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3088,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3114,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3116,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3117,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3119,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3122,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3130,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3217,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3223,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3224,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3225,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3226,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3227,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3261,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3269,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3271,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3272,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3277,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3281,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3282,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3283,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3284,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3285,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3287,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3289,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3290,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3291,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3292,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3293,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3294,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3326,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3330,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3335,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3356,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3360,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3405,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3409,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3461,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3462,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3486,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3498,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3591,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3618,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3624,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3625,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3626,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3627,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3670,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3709,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3712,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3714,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3737,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3781,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3792,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3838,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3848,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3905,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3906,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3913,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3963,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3968,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4052,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4054,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4055,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4187,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4189,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4212,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4230,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4241,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4247,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4289,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4290,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4317,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4327,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4328,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4341,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4343,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4345,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4347,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    }
+  ],
+  "articulation_ripples_resolved": [
+    {
+      "idx": 186,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 187,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 236,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 238,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 512,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 513,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 525,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 527,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 528,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 529,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 530,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 531,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 532,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 533,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 534,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 536,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 553,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 561,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 648,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 747,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 767,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1149,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1212,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1218,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1219,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1222,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1224,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1226,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1389,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1390,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1436,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1437,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1439,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1440,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1442,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1443,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1447,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1454,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1457,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1552,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1594,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1773,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1819,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1821,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1822,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 1823,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2049,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2050,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2148,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2158,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2159,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2160,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2161,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2162,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2168,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2222,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2223,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2275,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2277,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2281,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2498,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2501,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2558,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2563,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2931,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2932,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2944,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 2954,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3088,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3114,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3116,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3117,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3119,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3122,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3130,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3217,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3223,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3224,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3225,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3226,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3227,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3261,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3269,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3271,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3272,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3277,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3281,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3282,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3283,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3284,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3285,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3287,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3289,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3290,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3291,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3292,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3293,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3294,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3326,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3330,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3335,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3356,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3360,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3405,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3409,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3461,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3462,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3486,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3498,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3591,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3618,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3624,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3625,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3626,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3627,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3670,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3709,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3712,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3714,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3737,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3781,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3792,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3838,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3848,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3905,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3906,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3913,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3963,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 3968,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4052,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4054,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4055,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4187,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4189,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4212,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4230,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4241,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4247,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4289,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4290,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4317,
+      "raw": "Credit By Exam San Diego City College",
+      "has": "Basic Refrigeration & AC Lab",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4327,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4328,
+      "raw": "Credit By Exam at Saddleback College",
+      "has": "Plant Propagation",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4341,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4343,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4345,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    },
+    {
+      "idx": 4347,
+      "raw": "Credit By Exam at Mesa",
+      "has": "Basic Computer Keyboarding",
+      "want": "Credit by Exam"
+    }
+  ],
   "articulation_ripples_blocking": []
 }

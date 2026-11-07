@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-06T22:17:31Z",
+ "generated_at": "2026-11-07T15:03:25Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -44,11 +44,11 @@
   "ase": 0,
   "numerals": 2,
   "language": 0,
-  "course-code": 0,
+  "course-code": 3,
   "level": 0,
   "fold": 1
  },
- "local_titles": 3,
+ "local_titles": 6,
  "cards": [
   {
    "current": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
@@ -103,6 +103,94 @@
    "proposed_issuer": "",
    "current_locals": 1,
    "moves_all": true
+  },
+  {
+   "current": "Credit by Exam",
+   "proposed": "Basic Computer Keyboarding",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam at Mesa",
+     "colleges": [
+      "San Diego Mesa College",
+      "San Diego City College",
+      "San Diego Miramar College",
+      "Glendale Community College",
+      "Mendocino College"
+     ],
+     "course": "CBTE 101",
+     "credit": "1 hour in Basic Computer Keyboarding"
+    }
+   ],
+   "id": "4fa9d46dfad8",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Credit by Exam",
+   "proposed": "Plant Propagation",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam at Saddleback College",
+     "colleges": [
+      "Saddleback College",
+      "Lemoore College"
+     ],
+     "course": "HORT 112",
+     "credit": "3 hours in PLANT PROPAGATION"
+    }
+   ],
+   "id": "f8813f8b505f",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Credit by Exam",
+   "proposed": "Basic Refrigeration & AC Lab",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam San Diego City College",
+     "colleges": [
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Diego Miramar College"
+     ],
+     "course": "AIRE 103",
+     "credit": "2 hours in Basic Refrigeration & AC Lab"
+    }
+   ],
+   "id": "2796759c7c96",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 4,
+   "moves_all": false
   },
   {
    "current": "Personal Trainer",
