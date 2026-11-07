@@ -191,9 +191,11 @@ else:
     print("PASS  statewide_exhibits card present")
     check("card value", card["value"], "4")
     bd = {b["label"]: b["value"] for b in card["breakdowns"]}
+    # "Issuer/type variants" is the group grain kept as a breakdown since Session 109
+    # re-grained the headline to common titles (docs/reference/pipeline_reference.md).
     check("card breakdown values (incl. the consolidated Adopting Colleges)", bd,
-          {"Program Areas": "3", "Credit Recommendations": "6", "Adoptions": "6",
-           "Adopting Colleges": "4"})
+          {"Program Areas": "3", "Issuer/type variants": "4", "Credit Recommendations": "6",
+           "Adoptions": "6", "Adopting Colleges": "4"})
     check("footnote rows (header + 4 categories + 1 in-progress)",
           len(card["footnote"]), 6)
     check("footnote per-category line", "Welding: 1 · 3 · 3" in card["footnote"], True)

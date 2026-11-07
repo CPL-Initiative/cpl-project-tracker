@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 809,
+  "file_datasets": 810,
   "external_services": 193,
   "consumers": 530,
   "workflows": 62,
@@ -22942,6 +22942,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/statewide_kpi_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/statewide_recs_test.py": {
    "consumers": [
     {
@@ -29741,6 +29754,7 @@
     "tests/funding_name_resolver_test.py",
     "tests/college_short_names_apply_test.py",
     "tests/active_colleges_ccc_test.py",
+    "tests/statewide_kpi_test.py",
     "tests/credential_reference_statewide_basis_test.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
