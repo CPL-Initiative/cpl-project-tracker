@@ -991,6 +991,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ctdl_exchange_seed_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
+| `tests/daily_scrape_fails_loudly_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
 | `tests/discipline_blanks_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/discipline_edge_fill_test.py` | workflows: `js-tests.yml` | — |
@@ -1319,5 +1320,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 807 file
+Coverage: 108 Supabase tables · 54 RPCs · 12 edge functions · 808 file
 datasets · 193 external services · 530 consumers · 62 workflows · 40 tabs.
