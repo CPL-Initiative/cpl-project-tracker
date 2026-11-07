@@ -684,6 +684,24 @@
      "why": "S534 SkyChokeberry, 2026-10-31, page read 41188051977: Economics A.A. 02984 (p156 \"COMPLETE 1 COURSE FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS\", Major Units 18-21), French A.A. 02965 (p127 \"COMPLETE 3-4 COURSES FROM THE FOLLOWING\" then \"3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS\", 18-21) and Geology A.S. 08560 (p147 \"COMPLETE 7\u201314 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS\", 36). The last list fills the major to the printed total, so the sum's low end is that total; French's count is a range whose top the reading dropped."
     }
    ]
+  },
+    "Los Medanos College": {
+      "why": "S600 SkyWhirlpool, 2026-11-07: about 19 of Los Medanos's transfer-degree records failed arithmetic because the record names the 60-unit degree and the Cal-GETC pattern with no units for it. Every transfer page prints 'Completion of California General Education Transfer Curriculum (Cal-GETC)' and no figure (college page read 42376216539: Sociology AA-T 30849, Biology AS-T 35128). Its local A.A. and A.S. pages name no GE units or electives (Accounting A.S. 01528, Fine Arts A.A. 01546), so no step reads them until LMC's GE page is read.",
+      "awards": "transfer",
+      "steps": [
+        {
+          "kind": "set",
+          "field": "ge_units",
+          "value": {
+            "min": 34,
+            "max": 34
+          },
+          "awards": "transfer",
+          "pattern": "Completion\\s+of\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\(Cal-GETC\\)",
+          "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+          "source_words": "Los Medanos AA-T and AS-T pages: 'To earn the Associate Degree for Transfer: Completion of 60 semester units or 90 quarter units of degree-applicable courses ... Completion of California General Education Transfer Curriculum (Cal-GETC)' (college page read 42376216539); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+        }
+      ]
+    }
   }
- }
 }
