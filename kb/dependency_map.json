@@ -4495,7 +4495,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 118
+     "line": 123
     }
    ],
    "served": false,
@@ -4508,7 +4508,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 125
+     "line": 130
     }
    ],
    "served": false,
@@ -19227,7 +19227,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 108
+     "line": 113
     }
    ],
    "served": false,
@@ -29578,7 +29578,7 @@
    "chain": [],
    "urls": [
     "https://cpl-initiative.github.io/cpl-project-tracker/",
-    "https://cpl-proxy.slee-548.workers.dev/scrape?secret="
+    "https://cpl-proxy.slee-548.workers.dev/scrape"
    ]
   },
   "discover-map-datasets.yml": {

@@ -26,6 +26,10 @@ if "code != '200'" not in scrape:
     failures.append("the scrape step accepts a reply without checking for HTTP 200")
 if "::error" not in scrape:
     failures.append("the scrape step's failure is not logged as an ::error")
+if "scrape?secret=" in scrape or "--data-urlencode" not in scrape:
+    failures.append("the scrape puts the secret in the URL unencoded; a base64 '+' reads back as a space (S601)")
+if "x-scrape-secret" not in scrape:
+    failures.append("the scrape does not send the x-scrape-secret header")
 if "curl -s " in scrape:
     failures.append("the scrape uses curl -s, which hides curl's own error")
 
