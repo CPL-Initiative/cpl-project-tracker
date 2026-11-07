@@ -76,7 +76,7 @@ COBIx's audits of 2026-11-07 (#2890, #2891).
 
 **Why this section exists.** S586 asked for security steps 3 to 6 to go on the next Open Asks sheet. They
 went into handoffs only. A handoff is not scanned by the sheet builder, so the asks never reached Sam.
-A NEEDS SAM marker in this lane is what makes the builder carry them.
+The lane's marker is what makes the builder carry them.
 
 ### State
 
@@ -96,15 +96,19 @@ A NEEDS SAM marker in this lane is what makes the builder carry them.
 - **Failure alerts.** COBIx counts 44 of 62 workflows with no failure step (#2891 item 3).
 - **Branch protection on `main`** is unverified: COBIx's Triage role cannot read it (#2891 item 10).
 
-### NEEDS SAM (Open Asks Sheet 167, 2026-11-07)
+### Sam's rulings ([Open Asks Sheet 167](https://claude.ai/artifact/8LGSDcPhS5m2YnUdL66nES), 15:03-15:06Z 2026-11-07)
 
-- NEEDS SAM: set GitHub's `CPL_SCRAPE_SECRET` and the Worker's `SCRAPE_SECRET` to one value and put the
-  new Worker (#2893) in Cloudflare, in one sitting; then dispatch the daily run.
-- NEEDS SAM: the go on security steps 3 to 5, each its own PR or migration for his approval.
-- NEEDS SAM: create the two environments (`database`, `database-scheduled`) and move the service key
-  into them; the `environment:` lines follow in one PR.
-- NEEDS SAM: `main`'s protection in the three repos: force-push and deletion blocked, no required status
-  check (the cron pushes to `main` directly).
+- **Card 3, done:** he set the Worker's `SCRAPE_SECRET` and GitHub's `CPL_SCRAPE_SECRET` to one value. Run 696
+  (his, after the change) still left `live_metrics.json` at 2026-11-05T21:20Z; run 697, the first with #2892's
+  logging, reads the Worker's reply. Not closed until a scrape lands.
+- **Card 4, go:** security steps 3 to 5, each its own PR or migration, each applied only on his word.
+- **Card 5, create:** with a correction in the sheet's thread, so no apply waits on a click (his words on card 6:
+  *"I don't want this to force me to approve every merge or sql query--finally got out of that horrible loop"*):
+  both environments carry **no required reviewer**; `database-scheduled` keeps the `main`-only branch rule.
+  He creates them in the console; the `environment:` lines follow in one PR.
+- **Card 6, advise:** answered in the thread: a ruleset with only *Restrict deletions* and *Block force pushes*
+  adds no approval; *Require a pull request*, *Require status checks* and *Require review from Code Owners* stay
+  off. NEEDS SAM ([Open Asks Sheet 168](https://claude.ai/artifact/7UuGfoQCy4dpnz2unuEFn3)): whether to turn that ruleset on in the three repositories.
 
 ### Next (session work)
 
