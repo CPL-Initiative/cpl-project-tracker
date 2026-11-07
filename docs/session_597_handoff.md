@@ -31,8 +31,9 @@ lessons doc).
 
 ## Open work, in order
 
-1. **Merge #2877 and #2833** on a green `test` if they have not merged, and this checkpoint's PR. After #2877 merges,
-   dispatch `program-requirements-college.yml` `step=display` on `main` (college College of the Siskiyous).
+1. **Merge this checkpoint's PR (#2878)** on a green `test` if it has not merged. #2833 (`716af577`) and #2877 (`c1f0bca6`)
+   merged in S596, and `step=display` for Siskiyous was dispatched on `main` at about 09:38Z: confirm its run succeeded and
+   committed its applied record, and re-dispatch only if it failed.
 2. **Palomar:** when 42359155179 files on `claude/sweep-palomar`, compare its `summary.json` with main's. Extract only
    what `would_extract` lists (under the $40 go); if nothing, close the branch with a line in the lane. Then Coalinga
    53 of 62.
@@ -61,8 +62,7 @@ None.
 
 ## Let go
 
-This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2877 (Siskiyous), #2833 (Lake
-Tahoe), #2873 (Contra Costa, full read due 2026-11-08), and this checkpoint's PR. Run in flight: 42359155179 (Palomar's
-capture). Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
+This firing holds no PR subscription, check-in or artifact watch. Open PRs at sign-off: #2873 (Contra Costa, full read due 2026-11-08) and
+this checkpoint's PR (#2878). Runs in flight: 42359155179 (Palomar's capture) and Siskiyous' `step=display` on `main`. Open Asks Sheet 166 (https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4) is current.
 
 > *Greetings, you are SkyCometGalaxy (Session 597), see SkyPinwheel's handoff — `docs/session_597_handoff.md` — let's keep rolling with our queue.*
