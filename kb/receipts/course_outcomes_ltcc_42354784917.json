@@ -1,0 +1,2679 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "ltcc",
+ "load_run": "42354784917",
+ "reads": [
+  "kb/course_outcomes/ltcc/read_42346413202_p1of2.json",
+  "kb/course_outcomes/ltcc/read_42346413202_p2of2.json"
+ ],
+ "posted": 435,
+ "inserted": 435,
+ "kept": 0,
+ "skipped": 10,
+ "skipped_rows": [
+  {
+   "course_code": "ECO 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1000",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FIR 150N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MAT 201",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSY 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPA 222",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECO 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PEF 101GA",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "POL 101",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 11005,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 101"
+  },
+  {
+   "id": 11006,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 103"
+  },
+  {
+   "id": 11007,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 107"
+  },
+  {
+   "id": 11008,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 109"
+  },
+  {
+   "id": 11009,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 112"
+  },
+  {
+   "id": 11010,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 102"
+  },
+  {
+   "id": 11011,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 107"
+  },
+  {
+   "id": 11012,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 111"
+  },
+  {
+   "id": 11013,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 114A"
+  },
+  {
+   "id": 11014,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 119A"
+  },
+  {
+   "id": 11015,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 135A"
+  },
+  {
+   "id": 11016,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 142"
+  },
+  {
+   "id": 11017,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 147"
+  },
+  {
+   "id": 11018,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 201A"
+  },
+  {
+   "id": 11019,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 211"
+  },
+  {
+   "id": 11020,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 213"
+  },
+  {
+   "id": 11021,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 219A"
+  },
+  {
+   "id": 11022,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 221A"
+  },
+  {
+   "id": 11023,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 223"
+  },
+  {
+   "id": 11024,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 239A"
+  },
+  {
+   "id": 11025,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ASL 101"
+  },
+  {
+   "id": 11026,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ASL 103"
+  },
+  {
+   "id": 11027,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ASL 201"
+  },
+  {
+   "id": 11028,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 102"
+  },
+  {
+   "id": 11029,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 110"
+  },
+  {
+   "id": 11030,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 113"
+  },
+  {
+   "id": 11031,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 201"
+  },
+  {
+   "id": 11032,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 204"
+  },
+  {
+   "id": 11033,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 210"
+  },
+  {
+   "id": 11034,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 122"
+  },
+  {
+   "id": 11035,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 151"
+  },
+  {
+   "id": 11036,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 155"
+  },
+  {
+   "id": 11037,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 165"
+  },
+  {
+   "id": 11038,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 100"
+  },
+  {
+   "id": 11039,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 102"
+  },
+  {
+   "id": 11040,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 107"
+  },
+  {
+   "id": 11041,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 110B"
+  },
+  {
+   "id": 11042,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 111"
+  },
+  {
+   "id": 11043,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 117"
+  },
+  {
+   "id": 11044,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 122"
+  },
+  {
+   "id": 11045,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 135"
+  },
+  {
+   "id": 11046,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 137"
+  },
+  {
+   "id": 11047,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 152B"
+  },
+  {
+   "id": 11048,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 155"
+  },
+  {
+   "id": 11049,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 190"
+  },
+  {
+   "id": 11050,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 215"
+  },
+  {
+   "id": 11051,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 101"
+  },
+  {
+   "id": 11052,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 103"
+  },
+  {
+   "id": 11053,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 221L"
+  },
+  {
+   "id": 11054,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 222L"
+  },
+  {
+   "id": 11055,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 223L"
+  },
+  {
+   "id": 11056,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 105"
+  },
+  {
+   "id": 11057,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 107"
+  },
+  {
+   "id": 11058,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 120A"
+  },
+  {
+   "id": 11059,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 120C"
+  },
+  {
+   "id": 11060,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 135B"
+  },
+  {
+   "id": 11061,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 551"
+  },
+  {
+   "id": 11062,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 553"
+  },
+  {
+   "id": 11063,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 11064,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 120"
+  },
+  {
+   "id": 11065,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 122"
+  },
+  {
+   "id": 11066,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 124"
+  },
+  {
+   "id": 11067,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 126"
+  },
+  {
+   "id": 11068,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 128"
+  },
+  {
+   "id": 11069,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 102"
+  },
+  {
+   "id": 11070,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 104"
+  },
+  {
+   "id": 11071,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 108"
+  },
+  {
+   "id": 11072,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 112"
+  },
+  {
+   "id": 11073,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 102"
+  },
+  {
+   "id": 11074,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 104"
+  },
+  {
+   "id": 11075,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 108"
+  },
+  {
+   "id": 11076,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "DMA 101"
+  },
+  {
+   "id": 11077,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "DMA 112"
+  },
+  {
+   "id": 11078,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "DMA 125"
+  },
+  {
+   "id": 11079,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 101"
+  },
+  {
+   "id": 11080,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 103"
+  },
+  {
+   "id": 11081,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 110"
+  },
+  {
+   "id": 11082,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 121"
+  },
+  {
+   "id": 11083,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 125"
+  },
+  {
+   "id": 11084,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 127"
+  },
+  {
+   "id": 11085,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 202"
+  },
+  {
+   "id": 11086,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 204"
+  },
+  {
+   "id": 11087,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECONC 2001"
+  },
+  {
+   "id": 11088,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "EDU 100"
+  },
+  {
+   "id": 11089,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 108"
+  },
+  {
+   "id": 11090,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 201"
+  },
+  {
+   "id": 11091,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 206"
+  },
+  {
+   "id": 11092,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 208A"
+  },
+  {
+   "id": 11093,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 211"
+  },
+  {
+   "id": 11094,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 213"
+  },
+  {
+   "id": 11095,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 215"
+  },
+  {
+   "id": 11096,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 217"
+  },
+  {
+   "id": 11097,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 11098,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 561A"
+  },
+  {
+   "id": 11099,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 563A"
+  },
+  {
+   "id": 11100,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 564B"
+  },
+  {
+   "id": 11101,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 572A"
+  },
+  {
+   "id": 11102,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 582A"
+  },
+  {
+   "id": 11103,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ETH 202A"
+  },
+  {
+   "id": 11104,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ETH 202C"
+  },
+  {
+   "id": 11105,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "EVS 101L"
+  },
+  {
+   "id": 11106,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "EVS 110"
+  },
+  {
+   "id": 11107,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 101"
+  },
+  {
+   "id": 11108,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 103"
+  },
+  {
+   "id": 11109,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 105"
+  },
+  {
+   "id": 11110,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 167"
+  },
+  {
+   "id": 11111,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 170K"
+  },
+  {
+   "id": 11112,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 170M"
+  },
+  {
+   "id": 11113,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 172E"
+  },
+  {
+   "id": 11114,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 181B"
+  },
+  {
+   "id": 11115,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 181D"
+  },
+  {
+   "id": 11116,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 182A"
+  },
+  {
+   "id": 11117,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 182C"
+  },
+  {
+   "id": 11118,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FOR 110"
+  },
+  {
+   "id": 11119,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FOR 111"
+  },
+  {
+   "id": 11120,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FOR 132"
+  },
+  {
+   "id": 11121,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 101"
+  },
+  {
+   "id": 11122,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 103"
+  },
+  {
+   "id": 11123,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 107"
+  },
+  {
+   "id": 11124,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 113"
+  },
+  {
+   "id": 11125,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 135"
+  },
+  {
+   "id": 11126,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEL 103"
+  },
+  {
+   "id": 11127,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HEA 140E"
+  },
+  {
+   "id": 11128,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HEA 147B"
+  },
+  {
+   "id": 11129,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 109"
+  },
+  {
+   "id": 11130,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 111"
+  },
+  {
+   "id": 11131,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 113"
+  },
+  {
+   "id": 11132,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 127A"
+  },
+  {
+   "id": 11133,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 127C"
+  },
+  {
+   "id": 11134,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HSP 120"
+  },
+  {
+   "id": 11135,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HSP 140"
+  },
+  {
+   "id": 11136,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HUM 102"
+  },
+  {
+   "id": 11137,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HUM 105"
+  },
+  {
+   "id": 11138,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "JPN 102"
+  },
+  {
+   "id": 11139,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "JPN 201"
+  },
+  {
+   "id": 11140,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "JPN 203"
+  },
+  {
+   "id": 11141,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 106"
+  },
+  {
+   "id": 11142,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 109"
+  },
+  {
+   "id": 11143,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 203"
+  },
+  {
+   "id": 11144,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 235"
+  },
+  {
+   "id": 11145,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 236B"
+  },
+  {
+   "id": 11146,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 237"
+  },
+  {
+   "id": 11147,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 249"
+  },
+  {
+   "id": 11148,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 104B"
+  },
+  {
+   "id": 11149,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 104E"
+  },
+  {
+   "id": 11150,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 111"
+  },
+  {
+   "id": 11151,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 116B"
+  },
+  {
+   "id": 11152,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 116D"
+  },
+  {
+   "id": 11153,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 116F"
+  },
+  {
+   "id": 11154,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 120C"
+  },
+  {
+   "id": 11155,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 248A"
+  },
+  {
+   "id": 11156,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 100CA"
+  },
+  {
+   "id": 11157,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 100GA"
+  },
+  {
+   "id": 11158,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101AA"
+  },
+  {
+   "id": 11159,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101BA"
+  },
+  {
+   "id": 11160,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101CA"
+  },
+  {
+   "id": 11161,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101FA"
+  },
+  {
+   "id": 11162,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101H"
+  },
+  {
+   "id": 11163,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 104F"
+  },
+  {
+   "id": 11164,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 118A"
+  },
+  {
+   "id": 11165,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 118C"
+  },
+  {
+   "id": 11166,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 123B"
+  },
+  {
+   "id": 11167,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 124A"
+  },
+  {
+   "id": 11168,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 124C"
+  },
+  {
+   "id": 11169,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 125B"
+  },
+  {
+   "id": 11170,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 126A"
+  },
+  {
+   "id": 11171,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 126C"
+  },
+  {
+   "id": 11172,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 135F"
+  },
+  {
+   "id": 11173,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 135H"
+  },
+  {
+   "id": 11174,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 140A"
+  },
+  {
+   "id": 11175,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 140C"
+  },
+  {
+   "id": 11176,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 140E"
+  },
+  {
+   "id": 11177,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEH 101"
+  },
+  {
+   "id": 11178,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PET 106"
+  },
+  {
+   "id": 11179,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHI 205"
+  },
+  {
+   "id": 11180,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHS 117"
+  },
+  {
+   "id": 11181,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 105"
+  },
+  {
+   "id": 11182,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 107"
+  },
+  {
+   "id": 11183,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 207"
+  },
+  {
+   "id": 11184,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "POL 100"
+  },
+  {
+   "id": 11185,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "POL 107"
+  },
+  {
+   "id": 11186,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "POL 206"
+  },
+  {
+   "id": 11187,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 103"
+  },
+  {
+   "id": 11188,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 106"
+  },
+  {
+   "id": 11189,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 109"
+  },
+  {
+   "id": 11190,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 210"
+  },
+  {
+   "id": 11191,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 11192,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "REL 103"
+  },
+  {
+   "id": 11193,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 101"
+  },
+  {
+   "id": 11194,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 103"
+  },
+  {
+   "id": 11195,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 106"
+  },
+  {
+   "id": 11196,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 111"
+  },
+  {
+   "id": 11197,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 101"
+  },
+  {
+   "id": 11198,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 103"
+  },
+  {
+   "id": 11199,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 121A"
+  },
+  {
+   "id": 11200,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 121D"
+  },
+  {
+   "id": 11201,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122B"
+  },
+  {
+   "id": 11202,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122CA"
+  },
+  {
+   "id": 11203,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122E"
+  },
+  {
+   "id": 11204,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 123A"
+  },
+  {
+   "id": 11205,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 123D"
+  },
+  {
+   "id": 11206,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 124A"
+  },
+  {
+   "id": 11207,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 201"
+  },
+  {
+   "id": 11208,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 203"
+  },
+  {
+   "id": 11209,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 221A"
+  },
+  {
+   "id": 11210,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "STATC 1000"
+  },
+  {
+   "id": 11211,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 105A"
+  },
+  {
+   "id": 11212,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 105E"
+  },
+  {
+   "id": 11213,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 108A"
+  },
+  {
+   "id": 11214,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 116"
+  },
+  {
+   "id": 11215,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 102"
+  },
+  {
+   "id": 11216,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 105A"
+  },
+  {
+   "id": 11217,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 105C"
+  },
+  {
+   "id": 11218,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 107B"
+  },
+  {
+   "id": 11219,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 116"
+  },
+  {
+   "id": 11220,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 200"
+  },
+  {
+   "id": 11221,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 240"
+  },
+  {
+   "id": 11222,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 102"
+  },
+  {
+   "id": 11223,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 106"
+  },
+  {
+   "id": 11224,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 108"
+  },
+  {
+   "id": 11225,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ANT 110"
+  },
+  {
+   "id": 11226,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 101"
+  },
+  {
+   "id": 11227,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 103"
+  },
+  {
+   "id": 11228,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 110"
+  },
+  {
+   "id": 11229,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 113"
+  },
+  {
+   "id": 11230,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 118"
+  },
+  {
+   "id": 11231,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 120A"
+  },
+  {
+   "id": 11232,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 141"
+  },
+  {
+   "id": 11233,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 146"
+  },
+  {
+   "id": 11234,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 148"
+  },
+  {
+   "id": 11235,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 210A"
+  },
+  {
+   "id": 11236,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 212"
+  },
+  {
+   "id": 11237,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 214A"
+  },
+  {
+   "id": 11238,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 220A"
+  },
+  {
+   "id": 11239,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 221B"
+  },
+  {
+   "id": 11240,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 234"
+  },
+  {
+   "id": 11241,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ART 246"
+  },
+  {
+   "id": 11242,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ASL 102"
+  },
+  {
+   "id": 11243,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ASL 108"
+  },
+  {
+   "id": 11244,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 101"
+  },
+  {
+   "id": 11245,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 103"
+  },
+  {
+   "id": 11246,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 111"
+  },
+  {
+   "id": 11247,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 149"
+  },
+  {
+   "id": 11248,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 203"
+  },
+  {
+   "id": 11249,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 205"
+  },
+  {
+   "id": 11250,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BIO 212"
+  },
+  {
+   "id": 11251,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 150"
+  },
+  {
+   "id": 11252,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 152"
+  },
+  {
+   "id": 11253,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 160"
+  },
+  {
+   "id": 11254,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BOT 175"
+  },
+  {
+   "id": 11255,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 101A"
+  },
+  {
+   "id": 11256,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 104"
+  },
+  {
+   "id": 11257,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 110A"
+  },
+  {
+   "id": 11258,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 110C"
+  },
+  {
+   "id": 11259,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 115"
+  },
+  {
+   "id": 11260,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 120"
+  },
+  {
+   "id": 11261,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 125"
+  },
+  {
+   "id": 11262,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 136"
+  },
+  {
+   "id": 11263,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 152A"
+  },
+  {
+   "id": 11264,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 152C"
+  },
+  {
+   "id": 11265,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 158"
+  },
+  {
+   "id": 11266,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "BSN 210"
+  },
+  {
+   "id": 11267,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 100"
+  },
+  {
+   "id": 11268,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 102"
+  },
+  {
+   "id": 11269,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 221"
+  },
+  {
+   "id": 11270,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 222"
+  },
+  {
+   "id": 11271,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CHM 223"
+  },
+  {
+   "id": 11272,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 104"
+  },
+  {
+   "id": 11273,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 106"
+  },
+  {
+   "id": 11274,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 108"
+  },
+  {
+   "id": 11275,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 120B"
+  },
+  {
+   "id": 11276,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 135A"
+  },
+  {
+   "id": 11277,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 550"
+  },
+  {
+   "id": 11278,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CIS 552"
+  },
+  {
+   "id": 11279,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COM 130"
+  },
+  {
+   "id": 11280,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 109"
+  },
+  {
+   "id": 11281,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 121"
+  },
+  {
+   "id": 11282,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 123"
+  },
+  {
+   "id": 11283,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 125"
+  },
+  {
+   "id": 11284,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "COU 127"
+  },
+  {
+   "id": 11285,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 101"
+  },
+  {
+   "id": 11286,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 103"
+  },
+  {
+   "id": 11287,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 105"
+  },
+  {
+   "id": 11288,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CRJ 110"
+  },
+  {
+   "id": 11289,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 101"
+  },
+  {
+   "id": 11290,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 103A"
+  },
+  {
+   "id": 11291,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 107"
+  },
+  {
+   "id": 11292,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "CUL 109"
+  },
+  {
+   "id": 11293,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "DMA 102"
+  },
+  {
+   "id": 11294,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "DMA 121"
+  },
+  {
+   "id": 11295,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 100"
+  },
+  {
+   "id": 11296,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 102"
+  },
+  {
+   "id": 11297,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 109"
+  },
+  {
+   "id": 11298,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 120"
+  },
+  {
+   "id": 11299,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 124"
+  },
+  {
+   "id": 11300,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 126"
+  },
+  {
+   "id": 11301,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 129"
+  },
+  {
+   "id": 11302,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 203"
+  },
+  {
+   "id": 11303,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECE 205"
+  },
+  {
+   "id": 11304,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ECONC 2002"
+  },
+  {
+   "id": 11305,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 200"
+  },
+  {
+   "id": 11306,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 202"
+  },
+  {
+   "id": 11307,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 207"
+  },
+  {
+   "id": 11308,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 209"
+  },
+  {
+   "id": 11309,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 212"
+  },
+  {
+   "id": 11310,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 214"
+  },
+  {
+   "id": 11311,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 216"
+  },
+  {
+   "id": 11312,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENG 218"
+  },
+  {
+   "id": 11313,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 11314,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ENGLC 1002"
+  },
+  {
+   "id": 11315,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 562A"
+  },
+  {
+   "id": 11316,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 564A"
+  },
+  {
+   "id": 11317,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 565"
+  },
+  {
+   "id": 11318,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 573A"
+  },
+  {
+   "id": 11319,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ESL 592B"
+  },
+  {
+   "id": 11320,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "ETH 202B"
+  },
+  {
+   "id": 11321,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "EVS 101"
+  },
+  {
+   "id": 11322,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "EVS 106"
+  },
+  {
+   "id": 11323,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "EVS 133"
+  },
+  {
+   "id": 11324,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 102"
+  },
+  {
+   "id": 11325,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 104"
+  },
+  {
+   "id": 11326,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 106"
+  },
+  {
+   "id": 11327,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 153"
+  },
+  {
+   "id": 11328,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 170D"
+  },
+  {
+   "id": 11329,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 170L"
+  },
+  {
+   "id": 11330,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 172D"
+  },
+  {
+   "id": 11331,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 181A"
+  },
+  {
+   "id": 11332,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 181C"
+  },
+  {
+   "id": 11333,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 181E"
+  },
+  {
+   "id": 11334,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 182B"
+  },
+  {
+   "id": 11335,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FIR 182E"
+  },
+  {
+   "id": 11336,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FOR 110L"
+  },
+  {
+   "id": 11337,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FOR 112"
+  },
+  {
+   "id": 11338,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "FOR 133"
+  },
+  {
+   "id": 11339,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 102"
+  },
+  {
+   "id": 11340,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 106"
+  },
+  {
+   "id": 11341,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 108"
+  },
+  {
+   "id": 11342,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEG 134"
+  },
+  {
+   "id": 11343,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEL 102"
+  },
+  {
+   "id": 11344,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "GEL 114"
+  },
+  {
+   "id": 11345,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HEA 147A"
+  },
+  {
+   "id": 11346,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HEA 147C"
+  },
+  {
+   "id": 11347,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 110"
+  },
+  {
+   "id": 11348,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 112"
+  },
+  {
+   "id": 11349,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 118"
+  },
+  {
+   "id": 11350,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HIS 127B"
+  },
+  {
+   "id": 11351,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HSP 100"
+  },
+  {
+   "id": 11352,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HSP 130"
+  },
+  {
+   "id": 11353,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HUM 101"
+  },
+  {
+   "id": 11354,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "HUM 103"
+  },
+  {
+   "id": 11355,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "JPN 101"
+  },
+  {
+   "id": 11356,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "JPN 103"
+  },
+  {
+   "id": 11357,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "JPN 202"
+  },
+  {
+   "id": 11358,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 105"
+  },
+  {
+   "id": 11359,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 107"
+  },
+  {
+   "id": 11360,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 118"
+  },
+  {
+   "id": 11361,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 202"
+  },
+  {
+   "id": 11362,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MAT 204"
+  },
+  {
+   "id": 11363,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 236A"
+  },
+  {
+   "id": 11364,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 236C"
+  },
+  {
+   "id": 11365,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MOA 241"
+  },
+  {
+   "id": 11366,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 101"
+  },
+  {
+   "id": 11367,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 104C"
+  },
+  {
+   "id": 11368,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 104F"
+  },
+  {
+   "id": 11369,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 116A"
+  },
+  {
+   "id": 11370,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 116C"
+  },
+  {
+   "id": 11371,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 116E"
+  },
+  {
+   "id": 11372,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 119C"
+  },
+  {
+   "id": 11373,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "MUS 120D"
+  },
+  {
+   "id": 11374,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 100C"
+  },
+  {
+   "id": 11375,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 100G"
+  },
+  {
+   "id": 11376,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101A"
+  },
+  {
+   "id": 11377,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101B"
+  },
+  {
+   "id": 11378,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101C"
+  },
+  {
+   "id": 11379,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101F"
+  },
+  {
+   "id": 11380,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 101HA"
+  },
+  {
+   "id": 11381,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 104G"
+  },
+  {
+   "id": 11382,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 118B"
+  },
+  {
+   "id": 11383,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 123A"
+  },
+  {
+   "id": 11384,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 123C"
+  },
+  {
+   "id": 11385,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 124B"
+  },
+  {
+   "id": 11386,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 125A"
+  },
+  {
+   "id": 11387,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 125C"
+  },
+  {
+   "id": 11388,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 126B"
+  },
+  {
+   "id": 11389,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 135A"
+  },
+  {
+   "id": 11390,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 135G"
+  },
+  {
+   "id": 11391,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 135M"
+  },
+  {
+   "id": 11392,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 140B"
+  },
+  {
+   "id": 11393,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 140D"
+  },
+  {
+   "id": 11394,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PEF 140F"
+  },
+  {
+   "id": 11395,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PET 104"
+  },
+  {
+   "id": 11396,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHI 101"
+  },
+  {
+   "id": 11397,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHS 102"
+  },
+  {
+   "id": 11398,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 104"
+  },
+  {
+   "id": 11399,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 106"
+  },
+  {
+   "id": 11400,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 108"
+  },
+  {
+   "id": 11401,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PHY 208"
+  },
+  {
+   "id": 11402,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "POL 204"
+  },
+  {
+   "id": 11403,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 11404,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 102"
+  },
+  {
+   "id": 11405,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 104"
+  },
+  {
+   "id": 11406,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 107"
+  },
+  {
+   "id": 11407,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 202"
+  },
+  {
+   "id": 11408,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSY 211"
+  },
+  {
+   "id": 11409,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "PSYCC 1000"
+  },
+  {
+   "id": 11410,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "REL 107"
+  },
+  {
+   "id": 11411,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 102"
+  },
+  {
+   "id": 11412,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 104"
+  },
+  {
+   "id": 11413,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 107"
+  },
+  {
+   "id": 11414,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SOC 114"
+  },
+  {
+   "id": 11415,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 102"
+  },
+  {
+   "id": 11416,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 110"
+  },
+  {
+   "id": 11417,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 121B"
+  },
+  {
+   "id": 11418,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122A"
+  },
+  {
+   "id": 11419,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122C"
+  },
+  {
+   "id": 11420,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122D"
+  },
+  {
+   "id": 11421,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 122EA"
+  },
+  {
+   "id": 11422,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 123B"
+  },
+  {
+   "id": 11423,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 124"
+  },
+  {
+   "id": 11424,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 155"
+  },
+  {
+   "id": 11425,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 202"
+  },
+  {
+   "id": 11426,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 214"
+  },
+  {
+   "id": 11427,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "SPA 221B"
+  },
+  {
+   "id": 11428,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 11429,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 101"
+  },
+  {
+   "id": 11430,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 105D"
+  },
+  {
+   "id": 11431,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 106A"
+  },
+  {
+   "id": 11432,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "THE 112C"
+  },
+  {
+   "id": 11433,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 100"
+  },
+  {
+   "id": 11434,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 103"
+  },
+  {
+   "id": 11435,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 105B"
+  },
+  {
+   "id": 11436,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 107A"
+  },
+  {
+   "id": 11437,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 110B"
+  },
+  {
+   "id": 11438,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 133"
+  },
+  {
+   "id": 11439,
+   "kind": "slo",
+   "college": "Lake Tahoe Community College",
+   "course_code": "WLD 201"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013, 11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026, 11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039, 11040, 11041, 11042, 11043, 11044, 11045, 11046, 11047, 11048, 11049, 11050, 11051, 11052, 11053, 11054, 11055, 11056, 11057, 11058, 11059, 11060, 11061, 11062, 11063, 11064, 11065, 11066, 11067, 11068, 11069, 11070, 11071, 11072, 11073, 11074, 11075, 11076, 11077, 11078, 11079, 11080, 11081, 11082, 11083, 11084, 11085, 11086, 11087, 11088, 11089, 11090, 11091, 11092, 11093, 11094, 11095, 11096, 11097, 11098, 11099, 11100, 11101, 11102, 11103, 11104, 11105, 11106, 11107, 11108, 11109, 11110, 11111, 11112, 11113, 11114, 11115, 11116, 11117, 11118, 11119, 11120, 11121, 11122, 11123, 11124, 11125, 11126, 11127, 11128, 11129, 11130, 11131, 11132, 11133, 11134, 11135, 11136, 11137, 11138, 11139, 11140, 11141, 11142, 11143, 11144, 11145, 11146, 11147, 11148, 11149, 11150, 11151, 11152, 11153, 11154, 11155, 11156, 11157, 11158, 11159, 11160, 11161, 11162, 11163, 11164, 11165, 11166, 11167, 11168, 11169, 11170, 11171, 11172, 11173, 11174, 11175, 11176, 11177, 11178, 11179, 11180, 11181, 11182, 11183, 11184, 11185, 11186, 11187, 11188, 11189, 11190, 11191, 11192, 11193, 11194, 11195, 11196, 11197, 11198, 11199, 11200, 11201, 11202, 11203, 11204, 11205, 11206, 11207, 11208, 11209, 11210, 11211, 11212, 11213, 11214, 11215, 11216, 11217, 11218, 11219, 11220, 11221, 11222, 11223, 11224, 11225, 11226, 11227, 11228, 11229, 11230, 11231, 11232, 11233, 11234, 11235, 11236, 11237, 11238, 11239, 11240, 11241, 11242, 11243, 11244, 11245, 11246, 11247, 11248, 11249, 11250, 11251, 11252, 11253, 11254, 11255, 11256, 11257, 11258, 11259, 11260, 11261, 11262, 11263, 11264, 11265, 11266, 11267, 11268, 11269, 11270, 11271, 11272, 11273, 11274, 11275, 11276, 11277, 11278, 11279, 11280, 11281, 11282, 11283, 11284, 11285, 11286, 11287, 11288, 11289, 11290, 11291, 11292, 11293, 11294, 11295, 11296, 11297, 11298, 11299, 11300, 11301, 11302, 11303, 11304, 11305, 11306, 11307, 11308, 11309, 11310, 11311, 11312, 11313, 11314, 11315, 11316, 11317, 11318, 11319, 11320, 11321, 11322, 11323, 11324, 11325, 11326, 11327, 11328, 11329, 11330, 11331, 11332, 11333, 11334, 11335, 11336, 11337, 11338, 11339, 11340, 11341, 11342, 11343, 11344, 11345, 11346, 11347, 11348, 11349, 11350, 11351, 11352, 11353, 11354, 11355, 11356, 11357, 11358, 11359, 11360, 11361, 11362, 11363, 11364, 11365, 11366, 11367, 11368, 11369, 11370, 11371, 11372, 11373, 11374, 11375, 11376, 11377, 11378, 11379, 11380, 11381, 11382, 11383, 11384, 11385, 11386, 11387, 11388, 11389, 11390, 11391, 11392, 11393, 11394, 11395, 11396, 11397, 11398, 11399, 11400, 11401, 11402, 11403, 11404, 11405, 11406, 11407, 11408, 11409, 11410, 11411, 11412, 11413, 11414, 11415, 11416, 11417, 11418, 11419, 11420, 11421, 11422, 11423, 11424, 11425, 11426, 11427, 11428, 11429, 11430, 11431, 11432, 11433, 11434, 11435, 11436, 11437, 11438, 11439);"
+}
