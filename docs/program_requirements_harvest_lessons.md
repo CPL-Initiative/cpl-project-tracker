@@ -1123,3 +1123,20 @@ From *Course objectives too*, verbatim:
 ### Moved from the lane (S598): the Progress view, as it stood
 
 ✅ **The Progress view (S343, #1900):** the tab's first view, from the mock-up Sam approved (*"The mockup looks good to go"*). `MILESTONES` and `PARTS` at its top are definitions; the tables are read live; what anon cannot read comes from **`kb/status/program-requirements.json`** (`kb/queue_status.json` until S418), written at every checkpoint (step 12, `scripts/queue_status.py`), never from a widened policy. **The view is drawn by the Commons' shared module `commons_progress.js` since S419** (the Commons' step 1; [commons lane](commons.md)): this tab keeps its definitions (`MILESTONES`, `PARTS`, `WHOLE`, `HEADLINE`, `PROGRESS`) and its live reads, and lends the module its sections and count controls. Detail: lessons S343. Every count opens what it totals; a card waiting on Sam links where he answers (#2077); a call in `kb/queue_status.json` must carry its answer link (`link`, `view` or `records`) and may name its card (`part`). *Whole harvest* and *Complete*: lessons, *Moved from the lane (S542 compaction)*. A status-file note replaces its card's live foot, so delete one the moment it stops being true.
+
+### S600 SkyWhirlpool (2026-11-07, the CPL Queue routine's 13:12Z firing)
+
+- **Coalinga displayed.** Apply 42372728141 on `main`: 17,557 of 17,560, 0 errors (the 3 missing are the Monterey
+  Peninsula rows the table no longer holds). It ran about an hour; a display apply is not quick.
+- **Palomar: a re-extracted program that was already loaded needs `step=reread`, never only `step=load`.** Load
+  42376077805 inserted 0 and kept 281 (the load never replaces a row); reread 42376267731 replaced 05201 with its
+  before-values. Display build 598157545f29 (#2887).
+- **Los Medanos: read the failures by shape before paying for anything.** Of 54 failing, about 37 share one shape (the
+  degree's 60 and a GE pattern, no GE units), so the fix is a reconcile step, never a re-extraction. A four-page free
+  read (`kb/college_reads/los_medanos_ge_totals.json`, run 42376216539) gave the words: each transfer page prints
+  *"Completion of California General Education Transfer Curriculum (Cal-GETC)"* with no figure, so the step sets 34 on
+  transfer degrees only, citing the statewide 34 as Cañada's and Hartnell's steps do. The local A.A./A.S. pages print
+  neither GE units nor an electives sentence, so they wait on a read of LMC's GE page. Reconcile 42376691800
+  moved 29 to 44 passing at no model cost; reread 42377887155 replaced 27 rows (#2889).
+- **The builder needs `openpyxl`** (`chatbox/build_program_courses.py`); a fresh container lacks it. Install it with
+  `python3 -m pip install openpyxl`. A bare `pip` may install it for another Python.
