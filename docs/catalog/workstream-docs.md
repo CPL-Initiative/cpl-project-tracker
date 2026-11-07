@@ -66,7 +66,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Kinesiology ⟵ Physical Education Convergence — Re-mint Scope](../kin_pe_convergence_scope.md) | `kin_pe_convergence_scope.md` | 2026-06-10 |  |
 | [Lean custom GitHub Pages deploy — scope + served-path manifest](../pages_lean_deploy_scope.md) | `pages_lean_deploy_scope.md` | 2026-06-29 |  |
 | [Letter Curator Hand-off Prompt](../letter_curator_handoff.md) | `letter_curator_handoff.md` | 2026-05-26 |  |
-| [Library — side-lane handoff (SkyMeadow, beside the CPL Queue routine)](../library_handoff.md) | `library_handoff.md` | 2026-11-07 |  |
+| [Library — side-lane handoff (SkyFern, beside the CPL Queue routine)](../library_handoff.md) | `library_handoff.md` | 2026-11-07 |  |
 | [Loading the two new MAP Custom Report views](../map_custom_report_load.md) | `map_custom_report_load.md` | 2026-08-19 | 2026-08-19 |
 | [MAP Custom Reports — what the CPL daily feed needs (request for the MAP platform team)](../map_custom_report_request_for_malone.md) | `map_custom_report_request_for_malone.md` | 2026-08-09 |  |
 | [MAP CustomReport API — auth coordination + pre-stage](../map_api_auth_handoff.md) | `map_api_auth_handoff.md` |  |  |

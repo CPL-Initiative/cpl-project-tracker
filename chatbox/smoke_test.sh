@@ -1488,6 +1488,16 @@ run "17 could-adopt credentials carry MAP's Quick Adopt link (Norco)" \
 answer_must_match -i "Norco" "17 host named"
 answer_must_match "cpldashboardcccco\.azurewebsites\.net/insights/exhibit-courses\?Exhibit=" "17 ⭐ a MAP link searched for an exhibit"
 
+# CPL-AI's course ratings (SkyFern, 2026-11-07; Sam, 2026-11-06: "I do want the CPL-AI recs
+# on public view"). Sacramento City rates three CISS courses Strong evidence against
+# Security+ in library/adopt/adopt_ai.json; her answer names CPL-AI and one of them, and
+# leaves the determination with faculty.
+run "18 CPL-AI's course ratings for a credential at a college (Sacramento City)" \
+  '{"query":"Which Sacramento City College courses could faculty review for credit for CompTIA Security+?","session_id":"smoke-ci","audience":"faculty"}'
+answer_must_match "CPL-AI" "18 names CPL-AI"
+answer_must_match "CISS 3(10|16|27)" "18 ⭐ a course CPL-AI rated Strong evidence"
+answer_must_match -i "faculty" "18 the determination stays with faculty"
+
 if [ -n "$SMOKE_MODES" ] && [ "$asked" -eq 0 ]; then
   echo "::error::SMOKE_MODES=$SMOKE_MODES matched no mode: name each by the first word of its run() label (7c, 9, 15a)"
   fail=1

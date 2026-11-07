@@ -6225,6 +6225,153 @@ async function fetchMapLinks(): Promise<any> {
   }
 }
 
+// CPL-AI's course ratings (SkyFern, 2026-11-07). The Credential Catalog's own file,
+// library/adopt/adopt_ai.json, written by every daily dashboard run
+// (kb/_build_adopt_page.py), about 1.2 MB; read once per instance and kept CPL_AI_TTL_MS.
+// CPL_AI_URL overrides it with no deploy (a branch's raw URL, for an A/B). A failed read
+// keeps the last copy, or none, and the block below is then left out.
+const CPL_AI_URL = Deno.env.get("CPL_AI_URL")
+  || "https://raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker/main/library/adopt/adopt_ai.json";
+const CPL_AI_TTL_MS = 60 * 60 * 1000;
+let cplAiCache: { at: number; doc: any } | null = null;
+
+async function fetchCplAi(): Promise<any> {
+  if (cplAiCache && Date.now() - cplAiCache.at < CPL_AI_TTL_MS) return cplAiCache.doc;
+  try {
+    const res = await fetch(CPL_AI_URL, { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) return cplAiCache ? cplAiCache.doc : null;
+    const doc = await res.json();
+    const ok = doc && doc.by_exhibit && typeof doc.by_exhibit === "object" ? doc : null;
+    if (ok) cplAiCache = { at: Date.now(), doc: ok };
+    return ok || (cplAiCache ? cplAiCache.doc : null);
+  } catch {
+    return cplAiCache ? cplAiCache.doc : null;
+  }
+}
+
+// ── CPL-AI BLOCK START ───────────────────────────────────────────────────────────
+// Sierra's CPL-AI answers. Sam, in session 2026-11-06: "I do want the CPL-AI recs on
+// public view"; the Credential Catalog shows them as the *CPL-AI course match* badge and
+// lists, per college, the courses CPL-AI rated against each certification. Sierra had no
+// read of them, so a faculty member asking "which of our courses fit Security+" got the
+// MAP articulations and the title-similarity worklist, never CPL-AI's skill-area ratings.
+//
+// The block fires on the STRONGEST-matched credential only (the one Route ALIGN uses) and
+// only when CPL-AI joined a certification to it. With a college: that college's courses,
+// Strong evidence first, then Faculty interpretation; Limited evidence is a count. Without
+// one, or when CPL-AI rated nothing there: the colleges with the most Strong evidence
+// courses. Every rating is evidence for faculty review, never a CPL determination, and
+// the rule says so beside the data.
+const CPL_AI_CATALOG = "https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/";
+const CPL_AI_TIER_NAMES: Record<string, string> = { "1": "Strong evidence", "2": "Faculty interpretation", "3": "Limited evidence" };
+const CPL_AI_MAX_CERTS = 3;
+const CPL_AI_MAX_STRONG = 6;
+const CPL_AI_MAX_INTERP = 4;
+const CPL_AI_MAX_COLLEGES = 8;
+
+function cplAiNorm(s: any): string {
+  return String(s || "").toLowerCase().replace(/[^a-z0-9+]+/g, " ").trim();
+}
+
+// The certifications CPL-AI joined to this exhibit title: an exact key first, then the
+// same words in another case or punctuation. Never a partial match, which would hand
+// Security+'s ratings to a question about Network+.
+function cplAiEntry(doc: any, title: string | null): Array<any> {
+  if (!doc || !doc.by_exhibit || !title) return [];
+  const exact = doc.by_exhibit[title];
+  if (Array.isArray(exact)) return exact;
+  const want = cplAiNorm(title);
+  for (const k of Object.keys(doc.by_exhibit)) {
+    if (cplAiNorm(k) === want && Array.isArray(doc.by_exhibit[k])) return doc.by_exhibit[k];
+  }
+  return [];
+}
+
+// A college's key in by_college: its index in doc.colleges, the Catalog's college
+// columns. A college CPL-AI names that the Catalog has no column for (Calbright) keeps
+// CPL-AI's own name as its key, so it matches on that name.
+// Without the column list (a file written before it carried one) no college resolves,
+// and the block then claims nothing about any one college.
+function cplAiCollegeKey(doc: any, college: string | null): string | null {
+  if (!college || !cplAiHasColleges(doc)) return null;
+  const want = cplAiNorm(college);
+  const cols = doc.colleges;
+  for (let i = 0; i < cols.length; i++) if (cplAiNorm(cols[i]) === want) return String(i);
+  return want ? want.toUpperCase() : null;
+}
+
+function cplAiHasColleges(doc: any): boolean {
+  return !!doc && Array.isArray(doc.colleges) && doc.colleges.length > 0;
+}
+
+function cplAiCollegeName(doc: any, key: string): string {
+  const cols = Array.isArray(doc && doc.colleges) ? doc.colleges : [];
+  return /^\d+$/.test(key) && cols[Number(key)] ? String(cols[Number(key)]) : key;
+}
+
+function cplAiCourseLine(r: Array<any>): string {
+  const areas = r[4] ? ` (${r[3]} of ${r[4]} skill areas)` : "";
+  return `    - ${r[0]} ${r[1]}${areas}`;
+}
+
+const CPL_AI_RULE = `
+HOW TO USE THE CPL-AI SECTION. CPL-AI, the statewide Credit for Prior Learning and Artificial Intelligence Initiative, compared college courses with each certification's skill areas and rated each pair Strong evidence, Faculty interpretation or Limited evidence. A rating is evidence for faculty review; the college's faculty make every CPL determination.
+- Say what CPL-AI found in those words: "CPL-AI rates CIS 72 Network Security as Strong evidence against CompTIA Security+, matching 4 of 4 skill areas." Never tell a student a rated course is credit they will receive, and never say a college offers or awards credit because CPL-AI rated one of its courses.
+- Where another section shows the college already awards credit for this credential, give that first; CPL-AI's ratings follow as further courses faculty could review.
+- Copy course codes, titles and tier names as the section gives them, and name the college. Do not rank or rate a course yourself.
+- For faculty or staff, link the Credential Catalog given in the section, where each pair's full recommendation is read and a college that does not award the credential yet can Request Quick Adopt. For a student, say that faculty at the college decide, and give the college's CPL contact or landing page where another section names it.
+- End the CPL-AI part with one sentence crediting the source as the section names it.`;
+
+function buildCplAiContext(doc: any, title: string | null, college: string | null): string {
+  const certs = cplAiEntry(doc, title).slice(0, CPL_AI_MAX_CERTS);
+  if (certs.length === 0 || !title) return "";
+  const key = cplAiCollegeKey(doc, college);
+  const catalog = CPL_AI_CATALOG + (college ? "?college=" + encodeURIComponent(college) : "");
+  let out = `\n\n--- CPL-AI COURSE RATINGS FOR ${title.toUpperCase()} (evidence for faculty review; Credential Catalog: ${catalog}) ---\n`;
+  for (const c of certs) {
+    const t = c.by_tier || {};
+    const label = c.kind === "related" ? `${c.title} (a related certification CPL-AI rated)` : c.title;
+    out += `\nCERTIFICATION: ${label}. Statewide, CPL-AI rated courses at ${c.colleges || 0} colleges: `
+        + `${t["1"] || 0} Strong evidence, ${t["2"] || 0} Faculty interpretation, ${t["3"] || 0} Limited evidence.\n`;
+    const byCol = c.by_college || {};
+    const here = key && Array.isArray(byCol[key]) ? byCol[key] : null;
+    if (college && here && here.length > 0) {
+      const strong = here.filter((r: any) => Number(r[2]) === 1);
+      const interp = here.filter((r: any) => Number(r[2]) === 2);
+      const limited = here.filter((r: any) => Number(r[2]) === 3).length;
+      out += `  At ${college}:\n`;
+      if (strong.length > 0) {
+        out += `   ${CPL_AI_TIER_NAMES["1"]}:\n`;
+        for (const r of strong.slice(0, CPL_AI_MAX_STRONG)) out += cplAiCourseLine(r) + "\n";
+        if (strong.length > CPL_AI_MAX_STRONG) out += `    …and ${strong.length - CPL_AI_MAX_STRONG} more\n`;
+      }
+      if (interp.length > 0) {
+        out += `   ${CPL_AI_TIER_NAMES["2"]}:\n`;
+        for (const r of interp.slice(0, CPL_AI_MAX_INTERP)) out += cplAiCourseLine(r) + "\n";
+        if (interp.length > CPL_AI_MAX_INTERP) out += `    …and ${interp.length - CPL_AI_MAX_INTERP} more\n`;
+      }
+      if (limited > 0) out += `   ${CPL_AI_TIER_NAMES["3"]}: ${limited} course${limited === 1 ? "" : "s"}, not listed.\n`;
+      continue;
+    }
+    if (!cplAiHasColleges(doc)) continue;
+    // An absence is claimed only for a college the Catalog has a column for.
+    if (college && key && /^\d+$/.test(key)) out += `  CPL-AI rated no course at ${college} against it.\n`;
+    const ranked = Object.keys(byCol)
+      .map((k) => ({ k, n: (byCol[k] || []).filter((r: any) => Number(r[2]) === 1).length }))
+      .filter((x) => x.n > 0)
+      .sort((a, b) => b.n - a.n || cplAiCollegeName(doc, a.k).localeCompare(cplAiCollegeName(doc, b.k)))
+      .slice(0, CPL_AI_MAX_COLLEGES);
+    if (ranked.length > 0) {
+      out += `  Colleges with the most Strong evidence courses: `
+          + ranked.map((x) => `${cplAiCollegeName(doc, x.k)} (${x.n})`).join("; ") + ".\n";
+    }
+  }
+  if (doc.credit) out += `\nSource: ${doc.credit}\n`;
+  if (doc.caveat) out += `Caveat: ${doc.caveat}\n`;
+  return out + CPL_AI_RULE + "\n";
+}
+// ── CPL-AI BLOCK END ─────────────────────────────────────────────────────────────
+
 // ── LIBRARY BLOCK START ──────────────────────────────────────────────────────────
 // Sierra reads the public CPL Library (S469). Sam, 2026-10-20, approving the public
 // library: "It would be great if Sierra could access the info in the public
@@ -7259,6 +7406,9 @@ Deno.serve(async (req: Request) => {
     // The MAP links index (S494): read only when a college is named, the one case the
     // adoption RPC runs; null leaves every could-adopt line without a link.
     let mapIdx: any = null;
+    // CPL-AI's course ratings (SkyFern), the Credential Catalog's file; null leaves the
+    // CPL-AI section out.
+    let cplAiDoc: any = null;
     let collegeCreds: any = null;
 
     await Promise.all([
@@ -7301,10 +7451,12 @@ Deno.serve(async (req: Request) => {
             fetchCredentialVolume(routeText, sb),
             fetchAdoptionOpportunities(singleProfile?.college || null, sb),
             singleProfile?.college ? fetchMapLinks() : Promise.resolve(null),
+            fetchCplAi(), // CPL-AI's course ratings (SkyFern); cached in the instance
           ]);
           vol = both[0];
           adopt = both[1];
           mapIdx = both[2];
+          cplAiDoc = both[3];
         } catch (e) {
           console.error("credential volume lookup failed:", e);
         }
@@ -7409,6 +7561,14 @@ Deno.serve(async (req: Request) => {
       credentialContext += buildCollegeCredentialContext(
         collegeCreds, singleProfile.college, recsMap);
     }
+
+    // CPL-AI's course ratings for the strongest-matched credential (SkyFern, 2026-11-07),
+    // outside the try for the same reason: the section does not depend on the recs lookup.
+    // It carries its own rule; see the CPL-AI BLOCK.
+    const cplAiTitle = (stdRecs && stdRecs[0]?.unified_title)
+      || (anyCreds && anyCreds[0]?.unified_title) || null;
+    const cplAiContext = buildCplAiContext(cplAiDoc, cplAiTitle, singleProfile?.college || null);
+    credentialContext += cplAiContext;
 
     // The statewide catalog block (S398), decided once detection has run: the
     // detected college's and place's own words are not a subject, and a question
@@ -7713,6 +7873,8 @@ Deno.serve(async (req: Request) => {
               chars: libraryContext.length,
             },
           } : {}),
+          // The CPL-AI ratings this answer was given (SkyFern): the credential and the size.
+          ...(cplAiContext ? { cpl_ai: { credential: cplAiTitle, college: singleProfile?.college || null, chars: cplAiContext.length } } : {}),
         });
         console.log(
           `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +

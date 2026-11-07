@@ -894,3 +894,9 @@ filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (
   suite and gave a better rule: photos move only while the reader can see them. (#2866)
 - **insurance.ca.gov is outside this environment's network.** The proxy refuses it and the fetch agent cannot resolve it;
   the Department of Insurance's license list waits on that host being allowed or on a run that can reach it.
+
+## Moved from the lane, SkyFern (2026-11-07)
+
+From `docs/reference/lanes/cer-procedures.md`, verbatim, to keep the lane under its budget:
+
+**The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`: 280 titles to 235 certs); **kept groups** (S542, #2655): a band over every run (titles alone under *Not in a group*), tick rows to Move, Out of every group or Back to the AI sort, Keep this group, Rename (a shared name joins two), Release; `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` laid over the nightly sort (the builder does not read it yet). Since S542 the List is drawn by the shared engine `commons_list.js` (#2656) and spans the window (#2661). A title opens a side panel (2026-11-03): the folded members, issuer and sites edited there, the rest folded; a Students column. **SLO hints (#2684):** a title whose articulated courses match another's at SLO similarity 0.5 or more, through distinct courses, shows *Outcomes match:* with that title and its group; Sam acts with Move. `kb/_build_exhibit_slo_neighbors.py` writes `kb/exhibit_slo_neighbors.json` daily (guard `tests/exhibit_slo_neighbors_build_test.py`).
