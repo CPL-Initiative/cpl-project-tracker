@@ -7,7 +7,7 @@ to 1500), so its Basic Military Training articulation read as a peer path to eve
 history course (Sam, 2026-11-06: "Definitely don't want Sierra recommending this").
 
 THE CONTENT DECIDES (Sam, 2026-11-07, on the HIST 150 mock-up): "the control number
-characters carry no meaning that should be use to align course numbers are titles. The
+characters carry no meaning that should be use to align course numbers are [and] titles. The
 weight of the comparison between 'HIS' and 'HES' has been vastly overweighted. More
 important factors are the indicator in the course title, description, slos, soc, CIP."
 So a member of a C-ID group (three or more members) is reported when:
