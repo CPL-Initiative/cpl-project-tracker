@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 807,
+  "file_datasets": 808,
   "external_services": 193,
   "consumers": 530,
   "workflows": 62,
@@ -4495,7 +4495,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 105
+     "line": 118
     }
    ],
    "served": false,
@@ -19214,7 +19214,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 101
+     "line": 108
     }
    ],
    "served": false,
@@ -22039,6 +22039,19 @@
    "main_committers": []
   },
   "file:tests/custom_report_response_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/daily_scrape_fails_loudly_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29630,6 +29643,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
+    "tests/daily_scrape_fails_loudly_test.py",
     "tests/supabase_table_grants_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",

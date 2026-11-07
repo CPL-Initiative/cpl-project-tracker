@@ -188,6 +188,10 @@ jobs:
       # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
       - name: Refresh button carries no secret (SEC-3)
         run: python3 tests/refresh_button_no_secret_test.py
+      # A failed live-metrics scrape turns the daily run red (S601, #2890 item 1): the
+      # scrape checks HTTP 200 and logs an ::error, and the last step fails the run.
+      - name: Daily scrape fails loudly
+        run: python3 tests/daily_scrape_fails_loudly_test.py
       # Supabase table-grant lint (2026-09-23) — from 2026-10-30 Supabase stops
       # granting the API roles on a NEW public table, and five functions here
       # DROP + CREATE their table on every nightly promotion. Every table the

@@ -92,19 +92,33 @@ jobs:
       - name: Scrape live metrics from Cloudflare Worker
         env:
           CPL_SCRAPE_SECRET: ${{ secrets.CPL_SCRAPE_SECRET }}
+        # A failed scrape keeps the old file so the rest of the run still publishes, and
+        # the "Fail the run on a stale scrape" step at the end turns the run red (#2890
+        # item 1: from 2026-11-05 to 11-07 the scrape failed every night and every run
+        # passed). The worker's HTTP status and its error reply are logged; neither
+        # carries the secret.
         run: |
-          curl -s "https://cpl-proxy.slee-548.workers.dev/scrape?secret=${CPL_SCRAPE_SECRET}" \
-            -o live_metrics_new.json
+          code=$(curl -sS -o live_metrics_new.json -w '%{http_code}' \
+            "https://cpl-proxy.slee-548.workers.dev/scrape?secret=${CPL_SCRAPE_SECRET}" || true)
+          export SCRAPE_HTTP="$code"
           python3 - <<'EOF'
-          import json, shutil, sys
+          import json, os, shutil
+          code = os.environ.get('SCRAPE_HTTP', '')
           try:
-              d = json.load(open('live_metrics_new.json'))
-              assert 'scraped_at' in d and 'metrics' in d and 'raw' in d
+              raw = open('live_metrics_new.json', encoding='utf-8', errors='replace').read()
+          except OSError:
+              raw = ''
+          try:
+              d = json.loads(raw)
+              missing = [k for k in ('scraped_at', 'metrics', 'raw') if k not in d]
+              if code != '200' or missing:
+                  raise ValueError(f"HTTP {code}, missing {missing or 'nothing'}")
               shutil.move('live_metrics_new.json', 'live_metrics.json')
               print(f"Live metrics updated: {d['scraped_at']}")
               open('/tmp/metrics_status', 'w').write('success')
           except Exception as e:
-              print(f"Scrape failed ({e}) — using existing live_metrics.json")
+              print(f"::error title=Live metrics scrape failed::{e}; worker replied: {raw[:300]!r}. "
+                    "Keeping the existing live_metrics.json; the run fails at its last step.")
               open('/tmp/metrics_status', 'w').write('fallback')
           EOF
           echo "LIVE_METRICS_STATUS=$(cat /tmp/metrics_status)" >> "$GITHUB_ENV"
@@ -714,3 +728,13 @@ jobs:
           echo "| CustomReport | $CUSTOM_REPORT_STATUS |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Live metrics | $LIVE_METRICS_STATUS |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Dashboard URL | https://cpl-initiative.github.io/cpl-project-tracker/ |" >> "$GITHUB_STEP_SUMMARY"
+
+      # Last step, after the push and the summary, so the dashboard still publishes on the
+      # old figures (pages.yml deploys on any completion) and the run turns red. A red run
+      # also means the day has no successful run, so the next cron on the ladder tries the
+      # scrape again (the gate job stands down only after a success).
+      - name: Fail the run on a stale scrape
+        if: env.LIVE_METRICS_STATUS != 'success'
+        run: |
+          echo "::error title=Stale live metrics::The scrape failed (status: ${LIVE_METRICS_STATUS:-unset}); live_metrics.json kept its last good copy. See the scrape step's log."
+          exit 1
