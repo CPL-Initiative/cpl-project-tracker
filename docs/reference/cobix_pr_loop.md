@@ -72,3 +72,5 @@ off until the repository variable `COBIX_REVIEW_ENABLED` is `true`, and it needs
   thread; Sam asked for the loop. This page and the workflow stub landed the same day (#2817).
   COBIx answered the identity question the same evening: `cobi-cto`, Triage, event-driven, no
   token; its first re-audit (of #2818) ran on that path.
+- 2026-11-07: Sam asked for a daytime routine that answers COBIx's issues and comments: the issue-side
+  sibling of this page is [`cobix_inbox_agent`](cobix_inbox_agent.md) (S601).
