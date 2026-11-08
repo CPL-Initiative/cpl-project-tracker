@@ -573,6 +573,7 @@
       // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03, after the Exhibits mock): a wording's
       // title opens it beside the table, with its group's wordings, the decision words and the rest folded.
       panel: { label: function (r) { return "Wording: " + r.m.rec; }, body: listPanelBody },
+      trail: { home: [["CPL Commons", "#commons"]], name: "Common CR Reference" },
       // The List norms' step 3: the wordings of one group sit under one band, named and ordered by the group's reference.
       // Read only: in CR the group is the fold unit, so a wording leaves its group through the worklist's split, never a
       // move between bands. A group of one wording sits under "Single wording", the filter's own word.

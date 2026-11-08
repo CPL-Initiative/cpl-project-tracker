@@ -3664,6 +3664,7 @@
       // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a program's title opens it beside
       // the table, with its required courses block by block, the record's checks and the rest folded.
       panel: { label: function (r) { return "Program: " + r.title; }, body: listPanelBody },
+      trail: { home: [["CPL Commons", "#commons"]], name: "Program Requirements" },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       // Confirmed and Waiting count live: a verdict saved in the panel changes them without a new build.
       counts: function () {

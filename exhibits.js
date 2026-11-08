@@ -2629,6 +2629,7 @@
         placeholder: "Title, local title, issuer, training site, college, district, SWP region, ASCCC area, discipline, subject or CPL type", findLabel: "Find in the list" },
       state: listState, rows: function () { return state.cs.rows || []; }, cols: listCols,
       panel: { label: function (r) { return "Exhibit: " + listTitle(r); }, body: listPanelBody },
+      trail: { home: [["CPL Commons", "#commons"]], name: "Exhibits" },
       key: function (r) { return r.ut; }, title: listTitle, render: function () { render(); }, session: session,
       head: function (wrap) {
         var L = listState(), cs = state.cs;
