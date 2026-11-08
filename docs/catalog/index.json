@@ -13765,7 +13765,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 99,
+   "count": 100,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14938,6 +14938,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S415)",
      "type": null,
      "updated": "2026-10-30"
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_4.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 4 (S419 onward)",
+     "type": null,
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-07-16",
@@ -16641,8 +16656,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 567,
+   "count": 568,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 605,
+     "path": "docs/session_605_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "map-users-student-contact",
+      "credential-registry",
+      "scheduled-sessions"
+     ],
+     "title": "Session 605 handoff: Contra Costa's SLOs loaded; the first weekly contacts read; the credential watch slice; two free re-captures unchanged",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26279,5 +26311,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1408
+ "total": 1410
 }

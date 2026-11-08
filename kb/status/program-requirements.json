@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T01:54:32Z",
-  "session": 603,
-  "moniker": "SkyMaffei",
-  "run": "Sam's session",
+  "written_at": "2026-11-08T07:26:47Z",
+  "session": 604,
+  "moniker": "SkySculptor",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_604_handoff.md",
+  "handoff": "docs/session_605_handoff.md",
   "next_step": {
-    "title": "Read Contra Costa's outcomes and Cuesta's index",
-    "text": "Contra Costa's full outcomes read runs in two parts from Nov 8 01:35 UTC; load it when every part is filed. Cuesta's course index runs beside it and decides whether Cuesta gets a trial next."
+    "title": "Cuesta's trial, then the day's one full read",
+    "text": "Contra Costa's outcomes loaded on Nov 8 (492 rows). Cuesta's course index landed, so on Nov 9 UTC it gets a 12-page trial, and the day's one full read goes to the next college the helper names."
   },
   "calls": [
     {
@@ -502,6 +502,12 @@
       "active": 20282,
       "complete": 13584,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-08",
+      "active": 20282,
+      "complete": 13584,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -510,7 +516,7 @@
     "at": "2026-11-08T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-07",
+    "day": "2026-11-08",
     "gaps": 3014,
     "parts": {
       "links": {
@@ -537,7 +543,7 @@
       ],
       "outcomes": {
         "slo": [
-          9688,
+          10071,
           89192
         ],
         "plo": [
