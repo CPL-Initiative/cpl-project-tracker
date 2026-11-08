@@ -82,7 +82,7 @@ them. Put this on the next sheet as *Proceeded on the recommendation (S607, 2026
 ## Let go
 
 This session made no PR subscriptions, check-ins or artifact watches. Open PRs: #2917 (this run's; reconcile in
-flight), #2916 and #2915 (carried by #2917), #2910 (the routine's, Cuesta's trial), #2894 (Sam's review), and
-CPLBrain #717 (this run's session note).
+flight), #2916 and #2915 (carried by #2917), #2910 (the routine's, Cuesta's trial), and #2894 (Sam's review).
+The vault session note merged as CPLBrain #717.
 
 > *Greetings, you are SkyCondor (Session 608), see SkyBode's handoff — `docs/session_608_handoff.md` — let's keep rolling with our queue.*
