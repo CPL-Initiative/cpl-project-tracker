@@ -1,20 +1,31 @@
 {
   "schema": 1,
-  "session": 595,
-  "moniker": "SkyHarbor",
+  "session": 612,
+  "moniker": "SkySunflower",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_594_handoff.md",
-  "calls": [],
+  "handoff": "docs/session_613_handoff.md",
+  "calls": [
+    {
+      "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
+      "text": "Open Asks Sheet 174 card 1: the seed re-check reads course descriptions (88% right held out at a clear margin) with TOP beside them. Of 12,504 seed cards, 1,964 have both signals; in Kinesiology 627, and 8 go to a curator.",
+      "no_reply": "Every seed card stays capped at 0.79; nothing in the catalog changes.",
+      "link": "https://claude.ai/artifact/ETPrCdiUzf3iq7GUr4F9So"
+    }
+  ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-06T23:57:22Z",
+  "written_at": "2026-11-08T22:50:39Z",
   "project": "course",
   "next_step": {
-    "title": "Merge the C-ID claim holds and confirm Sierra's read",
-    "text": "After #2862 merges and the 13:20Z sync runs, Sierra's alignment tool returns no HIST 50 row for Basic Military Training at Sierra College."
+    "title": "Confirm Kinesiology's seed disciplines, if Sam agrees",
+    "text": "Sheet 174 asks whether the 627 Kinesiology cards whose descriptions and TOP both agree with the seed discipline are confirmed; the 8 that disagree go to a curator as one batch."
   },
   "changes": [
+    {
+      "at": "2026-11-08T22:40:00Z",
+      "text": "The seed re-check dry run reads two second signals on the 14,523 capped seed disciplines: course descriptions, as Sam asked on Sheet 173, and TOP beside them (#2940)."
+    },
     {
       "at": "2026-11-06T23:10:00Z",
       "text": "Moreno Valley's HES 1 claim on C-ID HIST 150 held, and West Los Angeles's ADDICST 1 claim on PH 103: each course joins the identity its sister colleges give it; a daily audit lists new claims of this kind (#2862, open)."
@@ -30,14 +41,6 @@
     {
       "at": "2026-11-03T13:28:16Z",
       "text": "The Course page and the Commons card count cards a person has confirmed in SkyView beside ready: 812 of 27,581 (#2726)."
-    },
-    {
-      "at": "2026-11-03T08:45:00Z",
-      "text": "COCI Lookup's Progress view draws the Common Course Reference's opened page from the Commons' own row: 3,205 of 27,581 cards ready (#2720)."
-    },
-    {
-      "at": "2026-11-02T00:55:00Z",
-      "text": "COCI Lookup's Courses view is the Courses List: 141,738 local courses banded by today's M-ID, read only, Open in SkyView on each band (#2670)."
     }
   ]
 }

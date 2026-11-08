@@ -44,3 +44,12 @@ and nothing errored.
 
 Any id-keyed file that does not carry `_rekeyed_through`: a curated anchor, a hand-kept list, a receipt from another
 lane. Once a document is re-keyed, stamp it, so the next reader need not infer its era again.
+
+## A later map can re-use the id for another record (S612, 2026-11-08)
+
+Reading the era from the keys tells you which maps are pending. It does not tell you that a pending map moves the same
+record. An id can be produced twice: the 2026-09-03 Z-band retirement gave the anchor's Diesel Engines the id AUTD M10FX,
+and the next day's prefix fold gave the same id to an HVAC singleton, which the 2026-11-05 recode then moved to DIES
+M10FX. Through the chain the anchor key "moves" to DIES M10FX, the HVAC course's id. The test that catches it: a re-key
+whose target is a live record is a collision, never a re-key. `kb/_anchor_rekey_dryrun.py` applies it, and
+`kb/_anchor_rekey_apply.py` gates on it again before writing.

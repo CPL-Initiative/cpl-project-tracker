@@ -783,3 +783,32 @@ stay.
 ## The CCR tab's inventory (moved from the commons lane, S612, 2026-11-08)
 
 The inventory found `unified_courses.js` landing every COBI magic link (moved into `cpl_session.js`, #2775) and writes curators had stopped using (`kb_curation` on 2026-11-04, all time / last 30 days: merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1; description edits and merge notes never).
+
+## S612 SkySunflower (2026-11-08): the anchor re-key applied; the CCR's seed disciplines get two second signals
+
+**The anchor re-key (Sheet 171 card 4, #2938).** `kb/_anchor_rekey_apply.py` moved 20 curated anchor keys in
+`kb/common_courses.json` and 21 crosswalk pointers. 15 kept their number, 5 took the lowest never-used number on DIES or
+PARA, and the three HOSP keys stay with the curator. Two lessons:
+
+- **A pending map that names an anchor key may have moved another record.** The S611 dry run read AUTD M10FX and FY as
+  re-keys the 2026-11-05 recode had decided. The 2026-09-04 prefix fold had put two HVAC singletons on the ids the
+  Z-band retirement gave the diesel anchors the day before; the recode moved the singletons. Following the map would
+  have merged Diesel Engines with an HVAC course. The apply's gate (no new key may be a live record) caught it; the dry
+  run now calls a re-key onto a live id a collision.
+- **An era stamp cannot sit inside a flat id-to-record file.** `excel_to_dashboard.py` walks every entry of the
+  anchor, so `_rekeyed_through` lives in `kb/common_courses_era.json` and the dry run reads it from there.
+
+**The CCR's seed disciplines (Commons ruling 4; Sheets 173 and 174; #2940).** The auditor's largest person item is
+14,523 cards whose discipline is the Phase B seed. Two candidate checks fail as second signals: the subject map (the
+seed was itself a subject-code heuristic) and the CSR's local subject variants (tallied from these same cards). TOP
+corroborates under its standing rule: of 12,504 uncurated cards, it agrees on 4,100. Sam asked, on Sheet 173, for
+course descriptions, SLOs and objectives instead or alongside. Descriptions cover 8,286 cards against TOP's 5,768; SLOs
+reach thirteen colleges. `kb/_ccr_desc_signal.py` (stdlib TF-IDF, trained only on curator and subject-map placements)
+is right 88% of the time held out at a clear margin and confuses a discipline with its parent (Business, Accounting).
+With TOP outvoting a lone differing description: 1,964 confirmed by both, 1,823 for a curator; Kinesiology 627 and 8.
+The curator-ruled seed cards are a poor accuracy test: curators set a discipline mostly to change one, so that sample
+is nearly all changes. Sheet 174 asks whether to confirm Kinesiology's 627.
+
+**CI (COBIx #2927 item 2, #2939).** Loading `cpl_funding.js` costs 13ms; a funding render cost 5.7s, a third of it
+jsdom's `window` getter hit from `base()`. One cached reference halves every funding test. The remaining cost is the
+model recomputing `priorities()` per college.
