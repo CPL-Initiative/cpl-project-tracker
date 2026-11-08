@@ -779,3 +779,7 @@ stay.
   an inline link is 16px tall until it is `inline-block` with a 24px minimum.
 - **One shared change, every List.** The trail (#2934) is a spec field on the shared engine, so the four Commons Lists
   with a panel got it from one renderer and one test.
+
+## The CCR tab's inventory (moved from the commons lane, S612, 2026-11-08)
+
+The inventory found `unified_courses.js` landing every COBI magic link (moved into `cpl_session.js`, #2775) and writes curators had stopped using (`kb_curation` on 2026-11-04, all time / last 30 days: merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1; description edits and merge notes never).
