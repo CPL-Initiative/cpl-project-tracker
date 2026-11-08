@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 603 (SkyMaffei, Sam's session, 2026-11-07 to 11-08)
 tags: [handoff, org-phrase-scope-auth, noncredit-cip-categories, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_605_handoff.md
 ---
 
 # You are Session 604

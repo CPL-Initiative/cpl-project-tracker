@@ -122,36 +122,9 @@ Three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone: ver
 
 **Cañada (S419-S421, #2241, #2244, #2247):** the picker reads the catalog's three heading shapes; 73 of 75 listed programs filed; its reconcile step sets Cal-GETC's 34 on transfer degrees only, cited from the catalog's own GE page (lessons S421); 17 records fail a machine check; display build 3d92deb7a816 applied on `main`. **A reconcile step for a figure a local degree never carries reads transfer degrees only (`awards: transfer`, S421):** a local degree's captured page can span the sibling transfer section. **Verify a reader change on the catalog's own words before any dispatch** (`kb/college_reads/`; a PDF plan takes `pdf_span` and `pdf_after`, S421). **San Joaquin Delta (S422, #2250):** the program total is a floor (`total_units_minimum`), its catalog's subject prefixes alias the state file's (`prefix_aliases`), and a noncredit page printing only its total hours passes as `total_only`; 195 of 202 live rows pass (154 before); the 8 left are the extraction's. **Taft's local degrees (S422, #2249):** the catalog prints a 27-unit local GE pattern and an 18-unit one for CTE degrees, and no page words the 60 as a floor, so no step; 16725 and 36928 stay failing.
 
-## Moved from the lane (S419 compaction)
+## Moved from the lane (S419 compaction): moved to the archive (S604 compaction)
 
-**Crafton Hills and Taft (S412-S413)** read by the SmartCatalog walk (index, then a subject or group page, then the program page): Crafton 76 of 79 found and loaded, 51 passing the machine checks, Japanese unfound; Taft 58 of 63, 24 passing (most arithmetic failures read the page's 60-unit degree total as the major's). **Merced (S414):** 154 of 172 found, 153 loaded, 125 passing ($9.14). **The slash rescoring (S414)** replaced Glendale's 14, De Anza's 12, Los Angeles Trade Technical's 5 and Crafton Hills' 2 by free reconcile runs. **A printed degree floor (S415):** Delta's steps read "Minimum Degree Units Required: 60" as `degree_total_minimum`, and the scorer lets a floor alone make up a short sum (152 to 154 passing, 71 reread); Taft's step sets a transfer degree's Cal-GETC to the statewide 34 (24 to 34 passing, 17 reread; Fable's option A; kept: Sam's Open Asks Sheet 94 card 4, 13:43Z).
-
-**The registry** (`kb/supabase_program_source_registry.sql`, applied live
-2026-10-03 as four migrations):
-- `program_source_registry`: one row per college in `coci_college_programs`
- (118: 115 with credit programs, the two continuing-education colleges,
- Calbright), keyed by the catalog-data college name, seeded with an https
- homepage from the CEO list. Calbright College Credit has no `map_colleges` id.
- Columns follow the plan's registry table: catalog URL and year, platform,
- format, CMS public view, sequence source and URL, best method, access status
- and notes, trust evidence (Phase 1), the census's evidence and run id, and
- `corrected_by` / `corrected_at` / `correction_note` for a person.
-- `program_source_registry_history`: a trigger files every prior row on UPDATE
- or DELETE, naming the census run or the person. A run rolls back from it.
-- `program_source_census_apply(run_id, rows)`: the census's only write. A row
- with `corrected_by` set keeps its values; the census files its reading in
- `census_evidence.census_values` and sets `census_disagrees`. Service role
- only. anon and authenticated hold SELECT on the registry and nothing else
- on either table.
-
-**Sam's rulings (2026-10-03):** build our own best version now; the Butte
-College Tech Center's COCI ROE fields are a parallel track, never a gate
-(*"working on that end is often a slog or dead end"*); start from use cases and
-test against real catalog pages; a per-college source registry kept current by
-agents; a per-college tab; an agent per college that the college and the MAP
-team own and train. S320: "Go" on the registry table as described (its
-history, its one write path, a public read); "Approved" on the push that adds
-the weekly apply.
+Verbatim in `docs/program_requirements_harvest_lessons_archive_4.md`.
 
 ## S486-S489: moved to the archive (S535 compaction)
 
