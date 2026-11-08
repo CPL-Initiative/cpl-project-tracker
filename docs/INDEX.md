@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 576 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 577 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 573 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1415** | |
+| Session handoffs | 574 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1417** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:

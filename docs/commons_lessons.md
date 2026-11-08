@@ -732,3 +732,17 @@ Progress view (Exhibit, Course, CR, Subjects) from the module, each with its def
 card for Sam.
 
 **Step 3's Progress views, Subjects (S425, #2260), Exhibit (S436) and CR (S437), with Sam's keep rulings (Sheets 107 and 108):** the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*). Each host brought a 60-line spec to the shared module and needed no change to it.
+
+## S604 SkySculptor (2026-11-08): the first view opens on one batch
+
+- **Reuse the queue a mock redraws.** COBIx's mock drew Keep, Change and Park cards inside the Commons; Another look in
+  Exhibits already had the six cards and their saves. *Start* opens a capped batch there (`#exhibits/another-look/batch`)
+  instead of a second card screen.
+- **A capped headline must open a capped batch.** The first version capped the count at six and opened the whole queue;
+  COBIx caught it. The batch is fixed for the visit, has no bulk acceptance, and ends on a stop screen.
+- **A nightly file is stale after the first save.** Exhibits now reconciles the sweep with `kb_curation` saves written
+  since its `generated_at`; a fold onto another title does not count as a decision.
+- **Keep the house rules over a mock's look.** Underlined-word controls, no arrows, and figures from files: the mock's
+  filled buttons, arrows and example times were illustration (COBIx agreed on #2921).
+- **A palette lives in two places.** `commons_look.js` mirrors `commons.js`'s tokens and `commons_look.test.js` pins them;
+  a new token goes in both.

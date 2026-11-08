@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-573 document(s).
+574 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 611 | [Session 611 handoff: student-level rows ruled out of COBI, the Commons opens on one batch, the classifier answers again](../session_611_handoff.md) | 2026-11-08 |
 | 610 | [Session 610 handoff: Redwoods 53 of 73 passing and displayed (#2918)](../session_610_handoff.md) | 2026-11-08 |
 | 609 | [Session 609 handoff: Columbia 78 of 82 passing and displayed; Redwoods read by shape, its GE page read on #2918](../session_609_handoff.md) | 2026-11-08 |
 | 608 | [Session 608 handoff: Columbia 31 to 52 passing; its local degrees get CC-GE's 21 and the 60 as a floor, the reconcile in flight](../session_608_handoff.md) | 2026-11-08 |

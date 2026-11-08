@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T12:40:00Z",
-  "session": 608,
-  "moniker": "SkyCondor",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-08T17:11:21Z",
+  "session": 604,
+  "moniker": "SkySculptor",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_609_handoff.md",
+  "handoff": "docs/session_611_handoff.md",
   "next_step": {
-    "title": "Redwoods' transfer degrees, then its local degrees",
-    "text": "Columbia's local degrees now pass too (78 of 82). Redwoods' transfer pages name the statewide transfer pattern with no units, so they are being read again with its 34; its local degrees wait on a read of its own general education page."
+    "title": "Redwoods' local degrees",
+    "text": "Redwoods' transfer degrees now pass (53 of 73). Its 8 local degrees name the 60 units and no general education pattern; they wait on a read of the college's own general education page."
   },
   "calls": [
     {
