@@ -72,11 +72,8 @@
     22.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.5-23.0; the catalog states 21.5-22.5"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -256,5 +253,6 @@
    "Career 'EMT' taken from the description ('prepare a student to take a national test to become an EMT')."
   ]
  },
- "extracted_run": "38979390136"
+ "extracted_run": 42466476925,
+ "read_run": "38979390136"
 }
