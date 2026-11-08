@@ -328,6 +328,9 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # The anchor re-key dry run reads the anchor's era from its keys and never runs the whole chain (S611).
+      - name: Anchor re-key dry run reads its era
+        run: python3 tests/anchor_rekey_dryrun_test.py
       # Sierra's program -> course membership (S318): the two-signal college
       # crosswalk, the status filters, MIS as the owner of a course, and the
       # loader's re-send (an upsert lands once). Pure-stdlib python.
