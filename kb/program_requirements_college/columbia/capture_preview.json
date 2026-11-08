@@ -1,0 +1,46 @@
+{
+ "college": "Columbia College",
+ "catalog_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 83,
+ "with_closed_list": 82,
+ "started": "2026-11-08T06:22:47Z",
+ "elumen": {
+  "catalog": "2026-2027-Catalog",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "degrees-certificates"
+  ],
+  "hub_programs": 101,
+  "program_pages": 101
+ },
+ "pages_read": 101,
+ "banner_h1": null,
+ "loads": 103,
+ "seconds": 425.1,
+ "found": 82,
+ "by_method": {
+  "no_closed_list": 1,
+  "sitemap_page": 82
+ },
+ "shared_pages": {},
+ "not_found": [],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 82
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/columbia",
+  "kept": 82,
+  "programs": 0,
+  "list": []
+ },
+ "run": "42454382707"
+}
