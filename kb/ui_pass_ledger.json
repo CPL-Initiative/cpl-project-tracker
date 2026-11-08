@@ -14,8 +14,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": "2026-11-01",
-   "outcome": "S536: npm run a11y passes all three targets (light, dark, embedded) at nine widths; no datasets to wire; First Light holds (every hex sits in a token definition). Nothing to fix."
+   "last": "2026-11-08",
+   "outcome": "S604: npm run a11y passes all three targets (light, dark, embedded) at nine widths; no datasets to wire; First Light holds (every hex sits in a token definition; the one change since the last pass, #2867, added data files and extract scripts, no styles). Nothing to fix."
   },
   {
    "id": "skyview",
