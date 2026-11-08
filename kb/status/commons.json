@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-08T14:35:44Z",
+ "written_at": "2026-11-08T21:50:29Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13641,
+     "n": 13654,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3302,
+     "n": 3289,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-08T11:12:10Z",
+    "at": "2026-11-08T12:26:04Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13641,
-    "failing": 3302,
+    "complete": 13654,
+    "failing": 3289,
     "unread": 3339,
     "records": 18567,
     "colleges": 114,
@@ -249,7 +249,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-08T06:21:06+00:00",
+    "at": "2026-11-08T21:48:20+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -425,7 +425,7 @@
    ],
    "issues": [
     {
-     "n": 21,
+     "n": 1,
      "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
      "owner": "a re-key of the anchor under the playbook",
      "carry": "reaches",
@@ -460,7 +460,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-08T06:18:57Z",
+    "at": "2026-11-08T21:46:30Z",
     "every_hours": 24
    },
    "facts": {
@@ -651,7 +651,7 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 21,
+      "n": 1,
       "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
       "owner": "a re-key of the anchor under the playbook",
       "open": "#canonical-subj4/progress"
@@ -684,7 +684,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3302,
+    "n": 3289,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -839,5 +839,20 @@
     "looked": 0
    }
   }
- ]
+ ],
+ "next_batch": {
+  "kind": "another-look",
+  "n": 6,
+  "of": 6,
+  "open": "#exhibits/another-look/batch",
+  "title": "Another look at 6 exhibit titles",
+  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+  "stop": "The batch ends when its cards are decided.",
+  "rules": [
+   "course-code",
+   "fold",
+   "numerals"
+  ],
+  "at": "2026-11-07T15:03:25Z"
+ }
 }
