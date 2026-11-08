@@ -1,13 +1,13 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-07T14:26:53Z",
+ "_generated_at": "2026-11-08T14:35:38Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 6,
+ "queue": 4,
  "saved_not_folded": 0,
- "waiting": 6,
- "proposed": 4,
+ "waiting": 4,
+ "proposed": 0,
  "needs_you_count": 0,
- "not_yet_asked": 2,
+ "not_yet_asked": 4,
  "fold_held": 0,
  "procedures": [
   {
@@ -111,26 +111,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 4,
+   "settled": 0,
    "held": 0,
-   "sample": [
-    [
-     "BIOL 40C: Human Anatomy & Physiology III",
-     "Human Anatomy & Physiology Iii"
-    ],
-    [
-     "CRJ 130",
-     "Alcohol, Narcotics and Drug Abuse"
-    ],
-    [
-     "CRJ 155",
-     "Crime Scene Investigation"
-    ],
-    [
-     "CRJ 220",
-     "Interviewing and Counseling"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "high-school-rop",
@@ -287,7 +270,7 @@
   "calls": 1,
   "answered": 0,
   "errors": [
-   "HTTP 413: {\"error\":\"rules are 251631 characters; the limit is 250000\"}"
+   "HTTP 413: {\"error\":\"rules are 251866 characters; the limit is 250000\"}"
   ],
   "cost_usd": 0.0
  },

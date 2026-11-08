@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-08T06:23:28Z",
+ "written_at": "2026-11-08T14:35:44Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13595,
+     "n": 13641,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3348,
+     "n": 3302,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-07T13:24:16Z",
+    "at": "2026-11-08T11:12:10Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13595,
-    "failing": 3348,
+    "complete": 13641,
+    "failing": 3302,
     "unread": 3339,
     "records": 18567,
     "colleges": 114,
@@ -336,7 +336,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-07T15:17:04Z",
+    "at": "2026-11-08T06:23:32Z",
     "every_hours": null
    },
    "facts": {
@@ -496,7 +496,7 @@
    ],
    "pair": [
     {
-     "n": 7708,
+     "n": 7709,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -506,16 +506,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7708,
+    "credentials": 7709,
     "issuers": 1525,
     "in_map": 207,
     "articulated": 161,
-    "with_issuer_skills": 85,
-    "tech_giant": 550
+    "with_issuer_skills": 109,
+    "tech_giant": 551
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-07T00:00:00Z",
+    "at": "2026-11-08T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -534,9 +534,9 @@
    ],
    "pair": [
     {
-     "n": 30978,
+     "n": 32394,
      "of": null,
-     "words": "outcomes read from 8,150 courses at 12 colleges",
+     "words": "outcomes read from 8,631 courses at 13 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -544,12 +544,13 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 30978,
-    "courses": 8150,
+    "outcomes": 32394,
+    "courses": 8631,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "columbia",
+     "contra_costa",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
@@ -560,11 +561,11 @@
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 31
+    "reads": 33
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-07T06:49:57Z",
+    "at": "2026-11-08T02:16:24Z",
     "every_hours": null
    },
    "sources": [
@@ -578,7 +579,7 @@
    "links": [],
    "pair": [
     {
-     "n": 85,
+     "n": 109,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -588,11 +589,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 85
+    "with_issuer_skills": 109
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-07T00:00:00Z",
+    "at": "2026-11-08T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -683,7 +684,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3348,
+    "n": 3302,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
