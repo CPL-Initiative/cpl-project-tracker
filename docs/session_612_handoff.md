@@ -33,22 +33,30 @@ auto-merge rule, and everything on the hold list waits on his word on the sheet.
 
 ## Decisions Sam made this run
 
-None. The greeting carried no new direction, and no sheet reply arrived (Sheets 170 and 171 read empty at ~19:40Z).
+Sheet 171, answered 20:13-20:14Z, all his own call (`replies/done` through 4):
+- **Card 1, a follow-up, no verdict:** *"I believe there are no student IDs, names, emails, etc. just hashed ID with records of
+  anonymous students' CPL, right?"* Answered in the card's thread from the schema and the loader (no names, emails or MAP ids;
+  a per-pull number; pseudonymous rows, so small cells stay suppressed). Where the review lives is still open: Sheet 172 card 1.
+- **Card 2, accept:** the Exhibits ranking may lag a regrouping by one day.
+- **Card 3, merge:** #2932 merged on his word; the next nightly load deletes the 73 older sketch pulls.
+- **Card 4, proposed:** next free numbers for the three collisions, the three hospitality entries to the curator worklist, and
+  the 20 applied together. Not yet applied: open work 0.
 
 ## Read first
 
-- [Open Asks Sheet 171](https://claude.ai/artifact/PUTmC3LaA2MQSu69paeqR2) (current; read its `replies` and Sheet 170's
-  before acting). Cards 1 and 2 are 170's (the datashare review's home; the Exhibits ranking's one-day lag), card 3 the
-  go on #2932, card 4 the six anchor entries.
+- [Open Asks Sheet 172](https://claude.ai/artifact/SDabCYZ1uwJtUSRCPSC6cM) (current; read its `replies` first): one card,
+  where the legal and datashare review lives. Sheet 171's four are answered (above); never republish onto it.
 - `docs/reference/lanes/commons.md`, `common-subjects-reference.md`, `disposition-grain-student-detail.md`.
 
 ## Open work, in order
 
-0. **Read Sheet 171's and 170's replies.** On card 3 *merge*: mark #2932 ready, merge on `test`, and merge `main` in
-   first; its lane line conflicts with `main`'s (take `main`'s marker text and note the merge). On card 4 *proposed*:
-   mint the three collisions' next free numbers on DIES and PARA under the playbook, then apply the 20 with an alias map,
-   a receipt and an era stamp (`_rekeyed_through`) on `kb/common_courses.json`; the three hospitality entries stay on the
-   curator worklist.
+0. **Apply the anchor re-key Sam ruled on (Sheet 171 card 4, *proposed*).** Read Sheet 172's replies first. From
+   `kb/anchor_rekey_dryrun/plan.json` (rebuild it on `main` first): the 2 re-keys and 15 prefix swaps as listed, the three
+   collisions (AUTD M10FZ, PLGL M10IA, PLGL M10IB) on the next free number of DIES and PARA, checked against the minted set, the
+   anchor and every id the alias chain has used; the three HOSP keys stay. One alias map under `kb/anchor_rekey_out/<date>/`, a
+   receipt, `_rekeyed_through` on `kb/common_courses.json`, and every consumer of an anchor key re-keyed in the same PR (read
+   `docs/reference/dependency_map.md` for `common_courses.json`; playbook `docs/coursecontrolnumber_remint.md`). Reversible
+   by `git revert`.
 1. **`cer-procedures`: read the next nightly procedures report** (`kb/cer_procedures_out/latest.json`) now that #2925 is in:
    `classifier_run.answered` above 0 and `errors` empty. If it still errors, the size guard in #2925 prints what it sent.
 1. **Commons, next (#2921):** the Common Course Reference, one discipline or seed family at a time, after the Subjects
