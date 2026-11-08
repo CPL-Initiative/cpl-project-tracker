@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T17:11:21Z",
-  "session": 604,
-  "moniker": "SkySculptor",
+  "written_at": "2026-11-08T19:28:59Z",
+  "session": 611,
+  "moniker": "SkyTadpole",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_611_handoff.md",
+  "handoff": "docs/session_612_handoff.md",
   "next_step": {
     "title": "Redwoods' local degrees",
-    "text": "Redwoods' transfer degrees now pass (53 of 73). Its 8 local degrees name the 60 units and no general education pattern; they wait on a read of the college's own general education page."
+    "text": "Redwoods' transfer degrees pass (53 of 73). Its 8 local degrees name the 60 units and no general education pattern; they wait on a read of the college's own general education page."
   },
   "calls": [
     {
@@ -514,14 +514,14 @@
     {
       "day": "2026-11-08",
       "active": 20282,
-      "complete": 13604,
+      "complete": 13643,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-08T13:12:00Z"
+    "at": "2026-11-09T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-08",
