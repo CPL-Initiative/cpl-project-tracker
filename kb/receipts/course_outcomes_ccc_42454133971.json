@@ -1,0 +1,3166 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "ccc",
+ "load_run": "42454133971",
+ "reads": [
+  "kb/course_outcomes/ccc/read_42434894498_p1of2.json",
+  "kb/course_outcomes/ccc/read_42434894498_p2of2.json"
+ ],
+ "posted": 492,
+ "inserted": 492,
+ "kept": 0,
+ "skipped": 39,
+ "skipped_rows": [
+  {
+   "course_code": "ADJUS 127",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJUS 251",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AFRAM 125",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 190",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUSER 190",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CIS 99",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM C1004",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "DRAMA 220A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "DRAMA 220C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECHD 123",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 125",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 221",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 260B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "JRNAL 298",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE 135A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE 165A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE 261A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHILO 120",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYCH 128",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYCH 205B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOCSC 140",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJUS 225",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 191",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUSER 107",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOSC 110",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "DRAMA 100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "DRAMA 220B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "DRAMA 220D",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECHD 121",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECHD 161",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 220",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 260A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUSIC 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUSIC 120",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUSIC 141",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE 116A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE 126A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOCIO 250",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPCH 121",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 11440,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 120"
+  },
+  {
+   "id": 11441,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 122"
+  },
+  {
+   "id": 11442,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 125"
+  },
+  {
+   "id": 11443,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 130"
+  },
+  {
+   "id": 11444,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 139"
+  },
+  {
+   "id": 11445,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 221"
+  },
+  {
+   "id": 11446,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 223"
+  },
+  {
+   "id": 11447,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 110"
+  },
+  {
+   "id": 11448,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 113"
+  },
+  {
+   "id": 11449,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 122"
+  },
+  {
+   "id": 11450,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 210"
+  },
+  {
+   "id": 11451,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 226"
+  },
+  {
+   "id": 11452,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ANTHR 125"
+  },
+  {
+   "id": 11453,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ANTHR 140"
+  },
+  {
+   "id": 11454,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ANTHR 150"
+  },
+  {
+   "id": 11455,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 102"
+  },
+  {
+   "id": 11456,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 113"
+  },
+  {
+   "id": 11457,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 115"
+  },
+  {
+   "id": 11458,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 118"
+  },
+  {
+   "id": 11459,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 124"
+  },
+  {
+   "id": 11460,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 134"
+  },
+  {
+   "id": 11461,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 145"
+  },
+  {
+   "id": 11462,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 158"
+  },
+  {
+   "id": 11463,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 161"
+  },
+  {
+   "id": 11464,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 174"
+  },
+  {
+   "id": 11465,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 194"
+  },
+  {
+   "id": 11466,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "ART 224"
+  },
+  {
+   "id": 11467,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 224"
+  },
+  {
+   "id": 11468,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 240"
+  },
+  {
+   "id": 11469,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 258"
+  },
+  {
+   "id": 11470,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "ART 274"
+  },
+  {
+   "id": 11471,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 274"
+  },
+  {
+   "id": 11472,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ARTHC 1100"
+  },
+  {
+   "id": 11473,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ASTRC 1001"
+  },
+  {
+   "id": 11474,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 103"
+  },
+  {
+   "id": 11475,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 111"
+  },
+  {
+   "id": 11476,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 115"
+  },
+  {
+   "id": 11477,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 123"
+  },
+  {
+   "id": 11478,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 125"
+  },
+  {
+   "id": 11479,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 141"
+  },
+  {
+   "id": 11480,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 207"
+  },
+  {
+   "id": 11481,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 226"
+  },
+  {
+   "id": 11482,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOLC 1000"
+  },
+  {
+   "id": 11483,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 119"
+  },
+  {
+   "id": 11484,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 134"
+  },
+  {
+   "id": 11485,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 147"
+  },
+  {
+   "id": 11486,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 147"
+  },
+  {
+   "id": 11487,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 159"
+  },
+  {
+   "id": 11488,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 172"
+  },
+  {
+   "id": 11489,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 182"
+  },
+  {
+   "id": 11490,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 186"
+  },
+  {
+   "id": 11491,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 186"
+  },
+  {
+   "id": 11492,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 857N"
+  },
+  {
+   "id": 11493,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 875N"
+  },
+  {
+   "id": 11494,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 882N"
+  },
+  {
+   "id": 11495,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 886N"
+  },
+  {
+   "id": 11496,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 886N"
+  },
+  {
+   "id": 11497,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 118"
+  },
+  {
+   "id": 11498,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 210A"
+  },
+  {
+   "id": 11499,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 224"
+  },
+  {
+   "id": 11500,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 242"
+  },
+  {
+   "id": 11501,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 248"
+  },
+  {
+   "id": 11502,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 109"
+  },
+  {
+   "id": 11503,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 125"
+  },
+  {
+   "id": 11504,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 186"
+  },
+  {
+   "id": 11505,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 188"
+  },
+  {
+   "id": 11506,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 294"
+  },
+  {
+   "id": 11507,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CCT 160"
+  },
+  {
+   "id": 11508,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CDEVC 1000"
+  },
+  {
+   "id": 11509,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHEM 120"
+  },
+  {
+   "id": 11510,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHEM 226"
+  },
+  {
+   "id": 11511,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHIN 120"
+  },
+  {
+   "id": 11512,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 101"
+  },
+  {
+   "id": 11513,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 125"
+  },
+  {
+   "id": 11514,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 166A"
+  },
+  {
+   "id": 11515,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 898N"
+  },
+  {
+   "id": 11516,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMP 110"
+  },
+  {
+   "id": 11517,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMP 165"
+  },
+  {
+   "id": 11518,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMP 210"
+  },
+  {
+   "id": 11519,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COUNS 120"
+  },
+  {
+   "id": 11520,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COUNS 140"
+  },
+  {
+   "id": 11521,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CULIN 127"
+  },
+  {
+   "id": 11522,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CULIN 241A"
+  },
+  {
+   "id": 11523,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DANCE 101"
+  },
+  {
+   "id": 11524,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DANCE 161A"
+  },
+  {
+   "id": 11525,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 101"
+  },
+  {
+   "id": 11526,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 103"
+  },
+  {
+   "id": 11527,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 107"
+  },
+  {
+   "id": 11528,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 109"
+  },
+  {
+   "id": 11529,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 122"
+  },
+  {
+   "id": 11530,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 125"
+  },
+  {
+   "id": 11531,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 130"
+  },
+  {
+   "id": 11532,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 221A"
+  },
+  {
+   "id": 11533,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 221C"
+  },
+  {
+   "id": 11534,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 120"
+  },
+  {
+   "id": 11535,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 125"
+  },
+  {
+   "id": 11536,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 127"
+  },
+  {
+   "id": 11537,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 133"
+  },
+  {
+   "id": 11538,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 144"
+  },
+  {
+   "id": 11539,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 152"
+  },
+  {
+   "id": 11540,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 220"
+  },
+  {
+   "id": 11541,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 223"
+  },
+  {
+   "id": 11542,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 11543,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECONC 2002"
+  },
+  {
+   "id": 11544,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 110"
+  },
+  {
+   "id": 11545,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 135"
+  },
+  {
+   "id": 11546,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 201"
+  },
+  {
+   "id": 11547,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 203"
+  },
+  {
+   "id": 11548,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 205"
+  },
+  {
+   "id": 11549,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 170"
+  },
+  {
+   "id": 11550,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 170"
+  },
+  {
+   "id": 11551,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 230"
+  },
+  {
+   "id": 11552,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 255"
+  },
+  {
+   "id": 11553,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 255"
+  },
+  {
+   "id": 11554,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 163"
+  },
+  {
+   "id": 11555,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 220B"
+  },
+  {
+   "id": 11556,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 230B"
+  },
+  {
+   "id": 11557,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 293H"
+  },
+  {
+   "id": 11558,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 842N"
+  },
+  {
+   "id": 11559,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGLC 1000"
+  },
+  {
+   "id": 11560,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGLC 1001"
+  },
+  {
+   "id": 11561,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 132"
+  },
+  {
+   "id": 11562,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 195"
+  },
+  {
+   "id": 11563,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 823N"
+  },
+  {
+   "id": 11564,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 829N"
+  },
+  {
+   "id": 11565,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 835BN"
+  },
+  {
+   "id": 11566,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 846N"
+  },
+  {
+   "id": 11567,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 850N"
+  },
+  {
+   "id": 11568,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 863N"
+  },
+  {
+   "id": 11569,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 869N"
+  },
+  {
+   "id": 11570,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 886N"
+  },
+  {
+   "id": 11571,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "GEOG 120"
+  },
+  {
+   "id": 11572,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "GEOG 126"
+  },
+  {
+   "id": 11573,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "GEOG 150"
+  },
+  {
+   "id": 11574,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 106"
+  },
+  {
+   "id": 11575,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 110"
+  },
+  {
+   "id": 11576,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 115"
+  },
+  {
+   "id": 11577,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 133"
+  },
+  {
+   "id": 11578,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 122"
+  },
+  {
+   "id": 11579,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 124"
+  },
+  {
+   "id": 11580,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 140"
+  },
+  {
+   "id": 11581,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HISTC 1001"
+  },
+  {
+   "id": 11582,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HUMAN 113"
+  },
+  {
+   "id": 11583,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HUMAN 130"
+  },
+  {
+   "id": 11584,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JAPAN 120"
+  },
+  {
+   "id": 11585,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 120"
+  },
+  {
+   "id": 11586,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 123"
+  },
+  {
+   "id": 11587,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 130"
+  },
+  {
+   "id": 11588,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 222"
+  },
+  {
+   "id": 11589,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 191"
+  },
+  {
+   "id": 11590,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 197"
+  },
+  {
+   "id": 11591,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 199"
+  },
+  {
+   "id": 11592,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 205"
+  },
+  {
+   "id": 11593,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 110"
+  },
+  {
+   "id": 11594,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 125"
+  },
+  {
+   "id": 11595,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 130"
+  },
+  {
+   "id": 11596,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 141"
+  },
+  {
+   "id": 11597,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 190"
+  },
+  {
+   "id": 11598,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 118"
+  },
+  {
+   "id": 11599,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 121"
+  },
+  {
+   "id": 11600,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 171"
+  },
+  {
+   "id": 11601,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 185"
+  },
+  {
+   "id": 11602,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 290"
+  },
+  {
+   "id": 11603,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 11604,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATHC 2210"
+  },
+  {
+   "id": 11605,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 101"
+  },
+  {
+   "id": 11606,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 152"
+  },
+  {
+   "id": 11607,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 161"
+  },
+  {
+   "id": 11608,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 165"
+  },
+  {
+   "id": 11609,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 170"
+  },
+  {
+   "id": 11610,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 150"
+  },
+  {
+   "id": 11611,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 205"
+  },
+  {
+   "id": 11612,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 208"
+  },
+  {
+   "id": 11613,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 210"
+  },
+  {
+   "id": 11614,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 226"
+  },
+  {
+   "id": 11615,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 226"
+  },
+  {
+   "id": 11616,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 236"
+  },
+  {
+   "id": 11617,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 238"
+  },
+  {
+   "id": 11618,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 104"
+  },
+  {
+   "id": 11619,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 109"
+  },
+  {
+   "id": 11620,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 119"
+  },
+  {
+   "id": 11621,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 121"
+  },
+  {
+   "id": 11622,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 131"
+  },
+  {
+   "id": 11623,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 150A"
+  },
+  {
+   "id": 11624,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 151A"
+  },
+  {
+   "id": 11625,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 155A"
+  },
+  {
+   "id": 11626,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 155C"
+  },
+  {
+   "id": 11627,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 158A"
+  },
+  {
+   "id": 11628,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 159"
+  },
+  {
+   "id": 11629,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 167"
+  },
+  {
+   "id": 11630,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 171A"
+  },
+  {
+   "id": 11631,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 175A"
+  },
+  {
+   "id": 11632,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 175C"
+  },
+  {
+   "id": 11633,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 176"
+  },
+  {
+   "id": 11634,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 190A"
+  },
+  {
+   "id": 11635,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 191A"
+  },
+  {
+   "id": 11636,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 195A"
+  },
+  {
+   "id": 11637,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 195C"
+  },
+  {
+   "id": 11638,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 222"
+  },
+  {
+   "id": 11639,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 250A"
+  },
+  {
+   "id": 11640,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 251"
+  },
+  {
+   "id": 11641,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 259"
+  },
+  {
+   "id": 11642,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 270B"
+  },
+  {
+   "id": 11643,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 275"
+  },
+  {
+   "id": 11644,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 211"
+  },
+  {
+   "id": 11645,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 236"
+  },
+  {
+   "id": 11646,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 256"
+  },
+  {
+   "id": 11647,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 276"
+  },
+  {
+   "id": 11648,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 102B"
+  },
+  {
+   "id": 11649,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 103B"
+  },
+  {
+   "id": 11650,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 105B"
+  },
+  {
+   "id": 11651,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 116B"
+  },
+  {
+   "id": 11652,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 273A"
+  },
+  {
+   "id": 11653,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 130"
+  },
+  {
+   "id": 11654,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 150"
+  },
+  {
+   "id": 11655,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 180"
+  },
+  {
+   "id": 11656,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 101"
+  },
+  {
+   "id": 11657,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 110D"
+  },
+  {
+   "id": 11658,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 110L"
+  },
+  {
+   "id": 11659,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 120H"
+  },
+  {
+   "id": 11660,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 121H"
+  },
+  {
+   "id": 11661,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 230"
+  },
+  {
+   "id": 11662,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "POLSC 1000"
+  },
+  {
+   "id": 11663,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "POLSC 140"
+  },
+  {
+   "id": 11664,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 11665,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 118"
+  },
+  {
+   "id": 11666,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 122"
+  },
+  {
+   "id": 11667,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 132"
+  },
+  {
+   "id": 11668,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 150"
+  },
+  {
+   "id": 11669,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 237"
+  },
+  {
+   "id": 11670,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "RE 161"
+  },
+  {
+   "id": 11671,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "RE 164"
+  },
+  {
+   "id": 11672,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCI 236"
+  },
+  {
+   "id": 11673,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 130"
+  },
+  {
+   "id": 11674,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 221"
+  },
+  {
+   "id": 11675,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 225"
+  },
+  {
+   "id": 11676,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 245"
+  },
+  {
+   "id": 11677,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCSC 296"
+  },
+  {
+   "id": 11678,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 111"
+  },
+  {
+   "id": 11679,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 116"
+  },
+  {
+   "id": 11680,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 121"
+  },
+  {
+   "id": 11681,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 221"
+  },
+  {
+   "id": 11682,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 231"
+  },
+  {
+   "id": 11683,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPCH 121I"
+  },
+  {
+   "id": 11684,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPCH 128"
+  },
+  {
+   "id": 11685,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPCH 160A"
+  },
+  {
+   "id": 11686,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 11687,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 121"
+  },
+  {
+   "id": 11688,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 124"
+  },
+  {
+   "id": 11689,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 126"
+  },
+  {
+   "id": 11690,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 128"
+  },
+  {
+   "id": 11691,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 135"
+  },
+  {
+   "id": 11692,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 171"
+  },
+  {
+   "id": 11693,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 222"
+  },
+  {
+   "id": 11694,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ADJUS 260"
+  },
+  {
+   "id": 11695,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 112"
+  },
+  {
+   "id": 11696,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 120"
+  },
+  {
+   "id": 11697,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 123"
+  },
+  {
+   "id": 11698,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 140"
+  },
+  {
+   "id": 11699,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 225"
+  },
+  {
+   "id": 11700,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AFRAM 228"
+  },
+  {
+   "id": 11701,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ANTHR 130"
+  },
+  {
+   "id": 11702,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ANTHR 140L"
+  },
+  {
+   "id": 11703,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 101"
+  },
+  {
+   "id": 11704,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 108"
+  },
+  {
+   "id": 11705,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 114"
+  },
+  {
+   "id": 11706,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 117"
+  },
+  {
+   "id": 11707,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 120"
+  },
+  {
+   "id": 11708,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 132"
+  },
+  {
+   "id": 11709,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 140"
+  },
+  {
+   "id": 11710,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 147"
+  },
+  {
+   "id": 11711,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 160"
+  },
+  {
+   "id": 11712,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 165"
+  },
+  {
+   "id": 11713,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 184"
+  },
+  {
+   "id": 11714,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 222"
+  },
+  {
+   "id": 11715,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 232"
+  },
+  {
+   "id": 11716,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 245"
+  },
+  {
+   "id": 11717,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 261"
+  },
+  {
+   "id": 11718,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ART 284"
+  },
+  {
+   "id": 11719,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ARTHC 1200"
+  },
+  {
+   "id": 11720,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 101"
+  },
+  {
+   "id": 11721,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 113"
+  },
+  {
+   "id": 11722,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 117"
+  },
+  {
+   "id": 11723,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 124"
+  },
+  {
+   "id": 11724,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 126"
+  },
+  {
+   "id": 11725,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 153"
+  },
+  {
+   "id": 11726,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 203"
+  },
+  {
+   "id": 11727,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 225"
+  },
+  {
+   "id": 11728,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "AUSER 238"
+  },
+  {
+   "id": 11729,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 132"
+  },
+  {
+   "id": 11730,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 145"
+  },
+  {
+   "id": 11731,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 145"
+  },
+  {
+   "id": 11732,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 157"
+  },
+  {
+   "id": 11733,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 160"
+  },
+  {
+   "id": 11734,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 172L"
+  },
+  {
+   "id": 11735,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 183"
+  },
+  {
+   "id": 11736,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 183"
+  },
+  {
+   "id": 11737,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 188"
+  },
+  {
+   "id": 11738,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 859N"
+  },
+  {
+   "id": 11739,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 876N"
+  },
+  {
+   "id": 11740,
+   "kind": "objective",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 883N"
+  },
+  {
+   "id": 11741,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 883N"
+  },
+  {
+   "id": 11742,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BIOSC 888N"
+  },
+  {
+   "id": 11743,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 200"
+  },
+  {
+   "id": 11744,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 222"
+  },
+  {
+   "id": 11745,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 226"
+  },
+  {
+   "id": 11746,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BOT 243"
+  },
+  {
+   "id": 11747,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 102"
+  },
+  {
+   "id": 11748,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 120"
+  },
+  {
+   "id": 11749,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 181"
+  },
+  {
+   "id": 11750,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 187"
+  },
+  {
+   "id": 11751,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "BUS 240"
+  },
+  {
+   "id": 11752,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CCT 155"
+  },
+  {
+   "id": 11753,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CCT 275"
+  },
+  {
+   "id": 11754,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHEM 119"
+  },
+  {
+   "id": 11755,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHEM 121"
+  },
+  {
+   "id": 11756,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHEM 227"
+  },
+  {
+   "id": 11757,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CHIN 121"
+  },
+  {
+   "id": 11758,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 110"
+  },
+  {
+   "id": 11759,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 135"
+  },
+  {
+   "id": 11760,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 190B"
+  },
+  {
+   "id": 11761,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CIS 899N"
+  },
+  {
+   "id": 11762,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 11763,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMMC 1000"
+  },
+  {
+   "id": 11764,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMP 112"
+  },
+  {
+   "id": 11765,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMP 200"
+  },
+  {
+   "id": 11766,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COMP 265"
+  },
+  {
+   "id": 11767,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "COUNS 130"
+  },
+  {
+   "id": 11768,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CULIN 120"
+  },
+  {
+   "id": 11769,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CULIN 231"
+  },
+  {
+   "id": 11770,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "CULIN 241B"
+  },
+  {
+   "id": 11771,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DANCE 118A"
+  },
+  {
+   "id": 11772,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 102"
+  },
+  {
+   "id": 11773,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 106"
+  },
+  {
+   "id": 11774,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 108"
+  },
+  {
+   "id": 11775,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 110"
+  },
+  {
+   "id": 11776,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 123"
+  },
+  {
+   "id": 11777,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 126"
+  },
+  {
+   "id": 11778,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 165"
+  },
+  {
+   "id": 11779,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "DRAMA 221B"
+  },
+  {
+   "id": 11780,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 109"
+  },
+  {
+   "id": 11781,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 124"
+  },
+  {
+   "id": 11782,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 126"
+  },
+  {
+   "id": 11783,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 128"
+  },
+  {
+   "id": 11784,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 139"
+  },
+  {
+   "id": 11785,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 150"
+  },
+  {
+   "id": 11786,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 222"
+  },
+  {
+   "id": 11787,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECHD 290"
+  },
+  {
+   "id": 11788,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 11789,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ECONC 2001"
+  },
+  {
+   "id": 11790,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 107"
+  },
+  {
+   "id": 11791,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 130"
+  },
+  {
+   "id": 11792,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 200"
+  },
+  {
+   "id": 11793,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 202"
+  },
+  {
+   "id": 11794,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "EMED 204"
+  },
+  {
+   "id": 11795,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 112"
+  },
+  {
+   "id": 11796,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 200"
+  },
+  {
+   "id": 11797,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGIN 240"
+  },
+  {
+   "id": 11798,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 142B"
+  },
+  {
+   "id": 11799,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 210B"
+  },
+  {
+   "id": 11800,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 225"
+  },
+  {
+   "id": 11801,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 274"
+  },
+  {
+   "id": 11802,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL 800N"
+  },
+  {
+   "id": 11803,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 11804,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGLC 1000E"
+  },
+  {
+   "id": 11805,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ENGLC 1003"
+  },
+  {
+   "id": 11806,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 192"
+  },
+  {
+   "id": 11807,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 811N"
+  },
+  {
+   "id": 11808,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 826N"
+  },
+  {
+   "id": 11809,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 835AN"
+  },
+  {
+   "id": 11810,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 843N"
+  },
+  {
+   "id": 11811,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 849N"
+  },
+  {
+   "id": 11812,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 851N"
+  },
+  {
+   "id": 11813,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 866N"
+  },
+  {
+   "id": 11814,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 883N"
+  },
+  {
+   "id": 11815,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "ESL 889N"
+  },
+  {
+   "id": 11816,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "GEOG 120L"
+  },
+  {
+   "id": 11817,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "GEOG 130"
+  },
+  {
+   "id": 11818,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "GEOG 160"
+  },
+  {
+   "id": 11819,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 108"
+  },
+  {
+   "id": 11820,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 113"
+  },
+  {
+   "id": 11821,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HED 120"
+  },
+  {
+   "id": 11822,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 110"
+  },
+  {
+   "id": 11823,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 123"
+  },
+  {
+   "id": 11824,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 127"
+  },
+  {
+   "id": 11825,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HIST 141"
+  },
+  {
+   "id": 11826,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HISTC 1002"
+  },
+  {
+   "id": 11827,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HUMAN 120"
+  },
+  {
+   "id": 11828,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "HUMAN 180"
+  },
+  {
+   "id": 11829,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JAPAN 121"
+  },
+  {
+   "id": 11830,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 122"
+  },
+  {
+   "id": 11831,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 124"
+  },
+  {
+   "id": 11832,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 158"
+  },
+  {
+   "id": 11833,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "JRNAL 223"
+  },
+  {
+   "id": 11834,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 190"
+  },
+  {
+   "id": 11835,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 194"
+  },
+  {
+   "id": 11836,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 198"
+  },
+  {
+   "id": 11837,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 201"
+  },
+  {
+   "id": 11838,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "KINES 225"
+  },
+  {
+   "id": 11839,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 113"
+  },
+  {
+   "id": 11840,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 127"
+  },
+  {
+   "id": 11841,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 131"
+  },
+  {
+   "id": 11842,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LARAZ 165"
+  },
+  {
+   "id": 11843,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "LIBST 110A"
+  },
+  {
+   "id": 11844,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 120"
+  },
+  {
+   "id": 11845,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 135"
+  },
+  {
+   "id": 11846,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 180"
+  },
+  {
+   "id": 11847,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 200"
+  },
+  {
+   "id": 11848,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH 292"
+  },
+  {
+   "id": 11849,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 11850,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MATHC 2220"
+  },
+  {
+   "id": 11851,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 130"
+  },
+  {
+   "id": 11852,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 153"
+  },
+  {
+   "id": 11853,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 162"
+  },
+  {
+   "id": 11854,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIA 166"
+  },
+  {
+   "id": 11855,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 114"
+  },
+  {
+   "id": 11856,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 200"
+  },
+  {
+   "id": 11857,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 206"
+  },
+  {
+   "id": 11858,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 209"
+  },
+  {
+   "id": 11859,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 211"
+  },
+  {
+   "id": 11860,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 235"
+  },
+  {
+   "id": 11861,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MEDIC 237"
+  },
+  {
+   "id": 11862,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 108"
+  },
+  {
+   "id": 11863,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 114"
+  },
+  {
+   "id": 11864,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 130"
+  },
+  {
+   "id": 11865,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 150B"
+  },
+  {
+   "id": 11866,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 151B"
+  },
+  {
+   "id": 11867,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 155B"
+  },
+  {
+   "id": 11868,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 155D"
+  },
+  {
+   "id": 11869,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 158B"
+  },
+  {
+   "id": 11870,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 163"
+  },
+  {
+   "id": 11871,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 170"
+  },
+  {
+   "id": 11872,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 171B"
+  },
+  {
+   "id": 11873,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 175B"
+  },
+  {
+   "id": 11874,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 175D"
+  },
+  {
+   "id": 11875,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 177"
+  },
+  {
+   "id": 11876,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 190B"
+  },
+  {
+   "id": 11877,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 191B"
+  },
+  {
+   "id": 11878,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 195B"
+  },
+  {
+   "id": 11879,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 195D"
+  },
+  {
+   "id": 11880,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 223"
+  },
+  {
+   "id": 11881,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 250B"
+  },
+  {
+   "id": 11882,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 258"
+  },
+  {
+   "id": 11883,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 270A"
+  },
+  {
+   "id": 11884,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "MUSIC 272"
+  },
+  {
+   "id": 11885,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 210"
+  },
+  {
+   "id": 11886,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 235"
+  },
+  {
+   "id": 11887,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 255"
+  },
+  {
+   "id": 11888,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "NURS 275"
+  },
+  {
+   "id": 11889,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 102A"
+  },
+  {
+   "id": 11890,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 103A"
+  },
+  {
+   "id": 11891,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 105A"
+  },
+  {
+   "id": 11892,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 135B"
+  },
+  {
+   "id": 11893,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 250A"
+  },
+  {
+   "id": 11894,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PE 270A"
+  },
+  {
+   "id": 11895,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 101"
+  },
+  {
+   "id": 11896,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 129"
+  },
+  {
+   "id": 11897,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 140"
+  },
+  {
+   "id": 11898,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 160"
+  },
+  {
+   "id": 11899,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHILO 200"
+  },
+  {
+   "id": 11900,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 110"
+  },
+  {
+   "id": 11901,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 110DL"
+  },
+  {
+   "id": 11902,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 120"
+  },
+  {
+   "id": 11903,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 121"
+  },
+  {
+   "id": 11904,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 130"
+  },
+  {
+   "id": 11905,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PHYS 231"
+  },
+  {
+   "id": 11906,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "POLSC 130"
+  },
+  {
+   "id": 11907,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "POLSC 225"
+  },
+  {
+   "id": 11908,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCC 1000"
+  },
+  {
+   "id": 11909,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 120"
+  },
+  {
+   "id": 11910,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 126"
+  },
+  {
+   "id": 11911,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 130"
+  },
+  {
+   "id": 11912,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 140"
+  },
+  {
+   "id": 11913,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 170"
+  },
+  {
+   "id": 11914,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "PSYCH 222"
+  },
+  {
+   "id": 11915,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "RE 160"
+  },
+  {
+   "id": 11916,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "RE 163"
+  },
+  {
+   "id": 11917,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "RE 168"
+  },
+  {
+   "id": 11918,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIC 1000"
+  },
+  {
+   "id": 11919,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 142"
+  },
+  {
+   "id": 11920,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 222"
+  },
+  {
+   "id": 11921,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCIO 234"
+  },
+  {
+   "id": 11922,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SOCSC 141"
+  },
+  {
+   "id": 11923,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 110"
+  },
+  {
+   "id": 11924,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 112"
+  },
+  {
+   "id": 11925,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 120"
+  },
+  {
+   "id": 11926,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 220"
+  },
+  {
+   "id": 11927,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPAN 230"
+  },
+  {
+   "id": 11928,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPCH 122"
+  },
+  {
+   "id": 11929,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPCH 141"
+  },
+  {
+   "id": 11930,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "SPCH 160B"
+  },
+  {
+   "id": 11931,
+   "kind": "slo",
+   "college": "Contra Costa College",
+   "course_code": "STATC 1000"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (11440, 11441, 11442, 11443, 11444, 11445, 11446, 11447, 11448, 11449, 11450, 11451, 11452, 11453, 11454, 11455, 11456, 11457, 11458, 11459, 11460, 11461, 11462, 11463, 11464, 11465, 11466, 11467, 11468, 11469, 11470, 11471, 11472, 11473, 11474, 11475, 11476, 11477, 11478, 11479, 11480, 11481, 11482, 11483, 11484, 11485, 11486, 11487, 11488, 11489, 11490, 11491, 11492, 11493, 11494, 11495, 11496, 11497, 11498, 11499, 11500, 11501, 11502, 11503, 11504, 11505, 11506, 11507, 11508, 11509, 11510, 11511, 11512, 11513, 11514, 11515, 11516, 11517, 11518, 11519, 11520, 11521, 11522, 11523, 11524, 11525, 11526, 11527, 11528, 11529, 11530, 11531, 11532, 11533, 11534, 11535, 11536, 11537, 11538, 11539, 11540, 11541, 11542, 11543, 11544, 11545, 11546, 11547, 11548, 11549, 11550, 11551, 11552, 11553, 11554, 11555, 11556, 11557, 11558, 11559, 11560, 11561, 11562, 11563, 11564, 11565, 11566, 11567, 11568, 11569, 11570, 11571, 11572, 11573, 11574, 11575, 11576, 11577, 11578, 11579, 11580, 11581, 11582, 11583, 11584, 11585, 11586, 11587, 11588, 11589, 11590, 11591, 11592, 11593, 11594, 11595, 11596, 11597, 11598, 11599, 11600, 11601, 11602, 11603, 11604, 11605, 11606, 11607, 11608, 11609, 11610, 11611, 11612, 11613, 11614, 11615, 11616, 11617, 11618, 11619, 11620, 11621, 11622, 11623, 11624, 11625, 11626, 11627, 11628, 11629, 11630, 11631, 11632, 11633, 11634, 11635, 11636, 11637, 11638, 11639, 11640, 11641, 11642, 11643, 11644, 11645, 11646, 11647, 11648, 11649, 11650, 11651, 11652, 11653, 11654, 11655, 11656, 11657, 11658, 11659, 11660, 11661, 11662, 11663, 11664, 11665, 11666, 11667, 11668, 11669, 11670, 11671, 11672, 11673, 11674, 11675, 11676, 11677, 11678, 11679, 11680, 11681, 11682, 11683, 11684, 11685, 11686, 11687, 11688, 11689, 11690, 11691, 11692, 11693, 11694, 11695, 11696, 11697, 11698, 11699, 11700, 11701, 11702, 11703, 11704, 11705, 11706, 11707, 11708, 11709, 11710, 11711, 11712, 11713, 11714, 11715, 11716, 11717, 11718, 11719, 11720, 11721, 11722, 11723, 11724, 11725, 11726, 11727, 11728, 11729, 11730, 11731, 11732, 11733, 11734, 11735, 11736, 11737, 11738, 11739, 11740, 11741, 11742, 11743, 11744, 11745, 11746, 11747, 11748, 11749, 11750, 11751, 11752, 11753, 11754, 11755, 11756, 11757, 11758, 11759, 11760, 11761, 11762, 11763, 11764, 11765, 11766, 11767, 11768, 11769, 11770, 11771, 11772, 11773, 11774, 11775, 11776, 11777, 11778, 11779, 11780, 11781, 11782, 11783, 11784, 11785, 11786, 11787, 11788, 11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796, 11797, 11798, 11799, 11800, 11801, 11802, 11803, 11804, 11805, 11806, 11807, 11808, 11809, 11810, 11811, 11812, 11813, 11814, 11815, 11816, 11817, 11818, 11819, 11820, 11821, 11822, 11823, 11824, 11825, 11826, 11827, 11828, 11829, 11830, 11831, 11832, 11833, 11834, 11835, 11836, 11837, 11838, 11839, 11840, 11841, 11842, 11843, 11844, 11845, 11846, 11847, 11848, 11849, 11850, 11851, 11852, 11853, 11854, 11855, 11856, 11857, 11858, 11859, 11860, 11861, 11862, 11863, 11864, 11865, 11866, 11867, 11868, 11869, 11870, 11871, 11872, 11873, 11874, 11875, 11876, 11877, 11878, 11879, 11880, 11881, 11882, 11883, 11884, 11885, 11886, 11887, 11888, 11889, 11890, 11891, 11892, 11893, 11894, 11895, 11896, 11897, 11898, 11899, 11900, 11901, 11902, 11903, 11904, 11905, 11906, 11907, 11908, 11909, 11910, 11911, 11912, 11913, 11914, 11915, 11916, 11917, 11918, 11919, 11920, 11921, 11922, 11923, 11924, 11925, 11926, 11927, 11928, 11929, 11930, 11931);"
+}
