@@ -239,6 +239,26 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
     { site: "Fontana High School", college: "Bakersfield College" }, { site: "LA Mission EMT Academy", college: "Los Angeles Mission College" },
     { site: "Riverside EMS Academy" }]), JSON.stringify(rowSites.map((c) => c.body.value)));
 
+  // (7) The trail (Sam's Commons rulings, 2026-11-08, #2921; COBIx's filter contract): CPL Commons / Exhibits / the open
+  // filter / the row, the List's word the return, which shuts the panel and leaves the filter and the row's place.
+  t = await boot({ hash: "#exhibits/list" });
+  titleBtn(t.d, "Emergency Medical Technician").click(); await settle();
+  let trail = panel(t.d).querySelector("nav[aria-label='Trail']");
+  check("(7) the panel opens on its trail", !!trail && txt(trail) === "CPL Commons / Exhibits / Emergency Medical Technician", trail && txt(trail));
+  check("(7) the trail leads home to the Commons", !!trail.querySelector("a[href='#commons']"));
+  check("(7) the row's crumb is the current page and no control", (function () { const h = trail.querySelector("[aria-current='page']"); return h && h.tagName === "SPAN" && txt(h) === "Emergency Medical Technician"; })());
+  const back = Array.from(trail.querySelectorAll("button")).find((b) => txt(b) === "Exhibits");
+  check("(7) the List's name is an underlined word that returns to it", !!back && /exh-w/.test(back.className));
+  back.click(); await settle();
+  check("(7) the return shuts the panel and puts focus back on the row", !panel(t.d) && t.d.activeElement && txt(t.d.activeElement) === "Emergency Medical Technician");
+  t = await boot({ hash: "#exhibits/list/bare" });
+  titleBtn(t.d, "Emergency Medical Technician").click(); await settle();
+  trail = panel(t.d).querySelector("nav[aria-label='Trail']");
+  check("(7) under a filter the trail names it, and the filter is the return", !!trail && txt(trail) === "CPL Commons / Exhibits / No articulation / Emergency Medical Technician"
+    && Array.from(trail.querySelectorAll("button")).map(txt).join("|") === "No articulation", trail && txt(trail));
+  Array.from(trail.querySelectorAll("button"))[0].click(); await settle();
+  check("(7) the return keeps the filter", t.M._state.ls && t.M._state.ls.f === "bare" && !panel(t.d));
+
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });
   console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");

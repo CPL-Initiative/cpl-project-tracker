@@ -1994,6 +1994,7 @@
       // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): an MQ discipline's title opens it
       // beside the table, with its local subjects, the codes it shares, Confirm this pick and the rest folded.
       panel: { label: function (r) { return "MQ discipline: " + r.ut; }, body: listPanelBody },
+      trail: { home: [["CPL Commons", "#commons"]], name: "Common Subjects Reference" },
       head: function (wrap, api) {
         listLine(wrap, api);
         wrap.appendChild(api.el("p", { cls: "cs-quiet", text: "Every MQ discipline with courses, A to Z: its Common SUBJ, who confirmed it, "
