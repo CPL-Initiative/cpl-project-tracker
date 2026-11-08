@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-576 document(s).
+577 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -456,6 +456,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Shared grid columns must share one unit](../kb-notes/methodology-shared-grid-columns-must-share-one-unit.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [Shared prose over-claims on the rows it was not written for](../kb-notes/methodology-shared-prose-over-claims-on-rows-it-was-not-written-for.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [Ship generator changes live-on-merge when the artifact regenerates from committed inputs](../kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
+| [Shrink a model's standing prompt losslessly before trimming it, and replay the saved answers to prove it](../kb-notes/methodology-shrink-a-prompt-losslessly-before-trimming-it.md) | methodology | published | 2026-11-08 | 2026-11-08 |
 | [Single source of truth flows via the regenerated snapshot — de-hardcode consumers, and verify the join key](../kb-notes/methodology-single-source-of-truth-flows-via-snapshot.md) | methodology | published | 2026-07-27 | 2026-07-27 |
 | [Small-cell suppression must survive subtraction](../kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md) | methodology | published | 2026-08-06 | 2026-09-30 |
 | [Snapshot-with-stamp fallback for live-data dependencies](../kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |

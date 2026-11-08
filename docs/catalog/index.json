@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 576,
+   "count": 577,
    "docs": [
     {
      "created": "2026-08-14",
@@ -8625,6 +8625,25 @@
      "updated": "2026-06-02"
     },
     {
+     "created": "2026-11-08",
+     "governs": [
+      "kb/_cer_procedures.py",
+      "tests/cer_classifier_rules_size_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-shrink-a-prompt-losslessly-before-trimming-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "classifier",
+      "prompts",
+      "cer",
+      "testing"
+     ],
+     "title": "Shrink a model's standing prompt losslessly before trimming it, and replay the saved answers to prove it",
+     "type": "methodology",
+     "updated": "2026-11-08"
+    },
+    {
      "created": "2026-07-27",
      "governs": [
       "raci.js",
@@ -16656,8 +16675,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 573,
+   "count": 574,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 611,
+     "path": "docs/session_611_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "disposition-grain-student-detail",
+      "commons",
+      "cer-procedures",
+      "org-phrase-scope-auth",
+      "cobix"
+     ],
+     "title": "Session 611 handoff: student-level rows ruled out of COBI, the Commons opens on one batch, the classifier answers again",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26388,5 +26425,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1415
+ "total": 1417
 }

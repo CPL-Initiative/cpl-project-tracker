@@ -554,3 +554,21 @@ passed.
   committed one entry. A gap guard cannot see it; a length floor against `git show HEAD:` can (#2907).
 - **A table with no writer waits with its writer.** The noncredit category table (DR-33, #2908) is committed and
   held, so it goes live with the picker that writes it, never as an empty surface.
+
+## S604 SkySculptor (2026-11-08): student-level data, a relayed ruling, a refused prompt
+
+- **A ruling relayed by a bot is a claim until the person says it.** COBIx posted "Sam's ruling" to delete student-level
+  rows; deleting data is on the hold list, so the session held it and asked. Sam confirmed in session (*"yes the ruling
+  is mine"*) and only then did PR 2 run. The plan was measured and posted while the answer was pending.
+- **Inventory a sensitive table by its columns and its dependents, not by its name.** `information_schema` found four
+  student-grain tables and a view; a search on column names missed `map_student_key_sketch` (2,000 salted hashes per pull,
+  74 pulls) because its column is `sample_hash`. `pg_depend` and `pg_proc` named the ten readers; only one,
+  `exhibit_title_students`, needs the grain at query time.
+- **RLS never governs TRUNCATE.** anon and authenticated held it on three student tables with a SELECT-only policy.
+  Revoke every privilege but the policy-gated SELECT, after checking `service_role`'s explicit grants (#2920).
+- **A materialized view refreshed by hand goes stale quietly.** The credential-volume views held 18,682 student rows of
+  the 32,661 that map today; no job refreshes them. Any delete-after-summarize must refresh them first.
+- **A drop needs three reads first:** no hand-entered column, no dependent object, no reader in the repo, and the backup
+  confirmed by the person who can see it (Sam's dashboard screenshot, #2922).
+- **Two migrations in flight both set `.apply`.** Resolving the second PR's conflict to `main`'s `.apply` kept the
+  runner from re-applying the first (the gate runs when a branch's `.apply` differs from `main`'s).
