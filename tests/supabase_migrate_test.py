@@ -38,6 +38,13 @@ check(M.check_trigger({"file": "chatbox/x.sql", "name": "Bad Name"}, yes)
       "a name that is not snake_case is refused")
 check(M.check_trigger({"file": "chatbox/missing.sql", "name": "abc"}, lambda p: False),
       "a file that is not committed is refused")
+check(M.check_trigger(dict(t, project="budget-support"), yes) is None
+      and M.project_ref(dict(t, project="budget-support")) == "mdxutmbpoqjtdcwjscux"
+      and M.project_ref(t) == "hvuwhnbuahrtptokpqfh",
+      "project= names the budget project; with none the trigger runs on Work Plan")
+check(M.check_trigger(dict(t, project="some-other-ref"), yes)
+      and M.check_trigger(dict(t, project="hvuwhnbuahrtptokpqfh"), yes),
+      "a project outside the allowlist, or a raw ref, is refused")
 sql = "create table t (a text); -- it's a comment with $x$ in it"
 led = M.ledger_sql("20261013150000", "course_outcomes_table", sql)
 tag = led.split("array[$")[1].split("$")[0]

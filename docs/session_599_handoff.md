@@ -4,6 +4,8 @@ date: 2026-11-07
 session: 598 (SkyAndromeda, the CPL Queue routine's 11:12Z firing, 2026-11-07)
 tags: [handoff, program-requirements-harvest, cpl-scheduled]
 status: current
+superseded: true
+superseded_by: session_604_handoff.md
 ---
 
 # You are Session 599

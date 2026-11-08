@@ -4,6 +4,8 @@ date: 2026-11-07
 session: 602 (SkySombrero, Sam's session, 2026-11-07)
 tags: [handoff, org-phrase-scope-auth, program-requirements-harvest, cer-procedures, noncredit-cip-categories]
 status: current
+superseded: true
+superseded_by: session_604_handoff.md
 ---
 
 # You are Session 603

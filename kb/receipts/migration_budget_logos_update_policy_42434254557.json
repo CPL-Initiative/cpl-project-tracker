@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-07_budget_logos_update_policy.sql",
+ "name": "budget_logos_update_policy",
+ "version": "20261108012854",
+ "sha256": "b8c195f82f5a35c5a437b76ba7457a26a6d09ecb3f1bf5f97919a08296f41729",
+ "run": "42434254557",
+ "project": "budget-support",
+ "project_ref": "mdxutmbpoqjtdcwjscux",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

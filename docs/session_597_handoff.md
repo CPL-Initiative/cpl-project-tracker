@@ -4,6 +4,8 @@ date: 2026-11-07
 session: 596 (SkyPinwheel, the CPL Queue routine's 09:12Z firing, 2026-11-07)
 tags: [handoff, program-requirements-harvest, cpl-scheduled]
 status: superseded
+superseded: true
+superseded_by: session_604_handoff.md
 ---
 
 # You are Session 597
