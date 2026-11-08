@@ -97,6 +97,9 @@ _sleep = time.sleep  # the tests replace it
 # enough to make "stable" and "rotated" unmistakable without holding a hash per
 # student.
 SKETCH_N = 2000
+# A page of the previous pull's sketch. Paging stops on an empty page, so a
+# server cap smaller than this still reads every hash.
+SKETCH_PAGE = 1000
 
 CR_UNIT_VIEW = "View_CollegeExhibitCRByCatalogYear_APIDataset"
 STUDENT_VIEW = "View_StudentDetailsCredits_APIDataset"
@@ -687,23 +690,38 @@ def write_sketch(sample: list, key: str, pull_date: str) -> dict:
     pulls. cpl_memory: statewide-is-138-not-84 is the standing precedent for a
     correct ruling sitting unenforced because no consumer ever changed.
     """
-    status, raw = _request(
-        "GET", "map_student_key_sketch?select=pull_date,sample_hash"
-               "&order=pull_date.desc&limit=200000", key)
-    prior = json.loads(raw or b"[]")
-    prior_dates = sorted({r["pull_date"] for r in prior}, reverse=True)
-    prev_date = next((d for d in prior_dates if d != pull_date), None)
-    prev = {r["sample_hash"] for r in prior if r["pull_date"] == prev_date}
+    # PostgREST caps every response (1,000 rows on this project), whatever the
+    # `limit` asks. The read here was one `limit=200000` GET over every pull, so
+    # it saw only the newest pull's first 1,000 hashes, the cleanup below never
+    # saw an older date, and 74 pulls (148,000 hashes) piled up between
+    # 2026-08-19 and 2026-11-08 (S611). So: one row names the previous pull,
+    # its hashes are paged until a page comes back empty, and the delete runs
+    # on the server by date.
+    head = json.loads(_request(
+        "GET", "map_student_key_sketch?select=pull_date"
+               f"&pull_date=neq.{pull_date}&order=pull_date.desc&limit=1", key)[1] or b"[]")
+    prev_date = head[0]["pull_date"] if head else None
+    prev: set = set()
+    if prev_date is not None:
+        offset = 0
+        while True:
+            page = json.loads(_request(
+                "GET", "map_student_key_sketch?select=sample_hash"
+                       f"&pull_date=eq.{prev_date}&order=sample_hash"
+                       f"&limit={SKETCH_PAGE}&offset={offset}", key)[1] or b"[]")
+            if not page:
+                break
+            prev.update(r["sample_hash"] for r in page)
+            offset += len(page)
 
     _request("DELETE", f"map_student_key_sketch?pull_date=eq.{pull_date}", key)
     insert("map_student_key_sketch",
            [{"pull_date": pull_date, "sample_hash": h} for h in sample], key)
 
-    # Keep two pulls. More would be a longitudinal record of student keys, which
-    # is more than a rotation detector needs.
-    for old in prior_dates:
-        if old not in (pull_date, prev_date):
-            _request("DELETE", f"map_student_key_sketch?pull_date=eq.{old}", key)
+    # Keep ONE pull at rest (Sam's ruling, 2026-11-08, S604: COBI keeps no
+    # student-level rows; plan step 3 on #2919). The comparison above already
+    # holds the previous pull in memory, so nothing older is needed afterwards.
+    _request("DELETE", f"map_student_key_sketch?pull_date=neq.{pull_date}", key)
 
     if prev_date is None:
         return {"verdict": "first-pull", "prev_date": None, "overlap": None}
