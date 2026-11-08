@@ -45,3 +45,53 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
+## S484 SkyToyon (2026-10-26, the CPL Queue routine): Hartnell's noncredit course hours
+
+- **A Coursedog course carries its noncredit hours under `credits`, as ranges.** Page read 40273805437 (two
+  noncredit Requirements tabs, `network_find`): ENGM620 `lectureHours` 80-90 and `labHours` 48-54, ENGM622
+  `lectureHours` 64-72 and an empty `labHours`, beside `academicProgressHours` and `financialAidHours`, which are not
+  contact hours. The tab's "Non Credit - Total hours · 216" is the sum of the tops (90 + 54 + 72); the bottoms sum to a
+  shorter term. So the `course_hours` reconcile kind fills each course of a record measured in hours with the top of
+  lecture plus lab, citing the call, and never touches a units record.
+- **Reconcile run 40274398240 (free):** six of Hartnell's eight hours records now read `equal` (43607, 43609, 43610,
+  43776 at 216; 43608 at 144; 40261 at 108). Two stay incomplete because the answer gives no lecture or lab hours for
+  TAC326 (Theatre Performance 44161, 630) and BUS690 and BUS699 (Workforce and Academic Readiness 44574, 432). NEXT:
+  a page read with `network_find` on those codes, to see which field carries their hours.
+- **A reconcile run re-files every record a step notes, not only the ones it changed.** Seven Hartnell unit records
+  came back with only their score bookkeeping changed (the `rescored` marker and the `meets` reason); they were restored
+  from the prior commit before `step=reread`, which posts only records stamped with the newest run.
+- **The page reader prints 1,500 characters of a body.** A plan's `network_find` now prints the stretch around each
+  string it names (six places a string, 600 characters a side), which is how a long vendor answer is read.
+
+## S459 SkyBuckeye (2026-10-23, Sam's session): the meets reading rebuilt and applied; the six rows removed
+
+- **A measured count verifies a rebuild.** S457's scorer change, rescore and receipt died with its container; the PR body
+  and lessons S457 kept the rule and its counts (258 program totals, 9 electives-filled degrees, 738 under the wide
+  reading). The rebuild was accepted when its own count matched: 258 and 9, Hartnell 7. KB note
+  `methodology-a-measured-count-verifies-a-rebuild`.
+- **Shape 6 keeps a failing record failing.** 28 of the 258 program totals carry a degree check that still fails
+  (`arithmetic.degree`), so their major's meets reading changes nothing the live row says; the rescorer skips them and
+  239 moved to equal (run 40024250589; 238 by the proxy count of rows whose check reads equal while the applied display
+  still reads unequal). `program_verdict()` now holds the exact, floor and meets readings in one place for the scorer and
+  the rescorer.
+- **A display build on the branch, the apply on `main`.** `kb/_build_roep_display.py` ran in about two minutes over
+  18,550 records (openpyxl present); its receipt names 17,529 programs, Victor Valley 20545 gone with its file.
+- **The S456 method, one step per command.** The six rows read in one query whose answer the harness saved to a file
+  (101,836 characters); a script checked each `md5(row_text)` and wrote the receipt and the guarded delete; the push went
+  through alone (run 40025041285). The filed records placing none (Long Beach City) stay, as S456 left Citrus 11244's.
+
+## S458 SkyLarkspur (2026-10-23, Sam's session): the display apply's one missing row; the six rows read, not removed
+
+- **A display apply fails on a filed record whose live row left.** Victor Valley's Nursing Licensure 20545 left the
+  table in S456 (Sheet 115 card 1), but `kb/program_requirements_college/victor_valley/records/20545.json` stayed and
+  kept entering every build: runs 39990555422 (17,527 of 17,528) and 39999773855 (17,529 of 17,530) each wrote all but
+  that statement and ended in failure on `missing ["Victor Valley College|20545"]`, errors none. The applies did their
+  work; the exit code said otherwise. A removal takes the filed record with the row (#2391).
+- **The standing rule's six rows were read, not removed.** All six (Hartnell 18353, 19518, 12331; Long Beach City
+  43802, 46290; Palo Verde 04436) read live at 19:09Z as `to_jsonb(r)::text` with md5, unchecked, no verdict, their
+  builds b0a96907bf83, 25fe751ccd0a and be2635ed5b73, and none in build d45e5d0fcf78. The command that wrote the
+  receipt, removed the file and pushed was refused by the session's permission check as one action, and the scratch
+  copy of the rows died with the container. Sam then set the harvest aside for the entity visuals; the next wave
+  repeats the S456 method one step at a time.
+- **A bot's receipt commit on a PR head starts no `test`;** merging `main` into the branch is a session commit that
+  does, and the migrate gate skips a merge commit, so the receipt does not re-apply (#2389, #2390).

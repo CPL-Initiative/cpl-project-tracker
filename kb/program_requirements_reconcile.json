@@ -703,23 +703,62 @@
     }
    ]
   },
-    "Los Medanos College": {
-      "why": "S600 SkyWhirlpool, 2026-11-07: about 19 of Los Medanos's transfer-degree records failed arithmetic because the record names the 60-unit degree and the Cal-GETC pattern with no units for it. Every transfer page prints 'Completion of California General Education Transfer Curriculum (Cal-GETC)' and no figure (college page read 42376216539: Sociology AA-T 30849, Biology AS-T 35128). Its local A.A. and A.S. pages name no GE units or electives (Accounting A.S. 01528, Fine Arts A.A. 01546), so no step reads them until LMC's GE page is read.",
-      "awards": "transfer",
-      "steps": [
-        {
-          "kind": "set",
-          "field": "ge_units",
-          "value": {
-            "min": 34,
-            "max": 34
-          },
-          "awards": "transfer",
-          "pattern": "Completion\\s+of\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\(Cal-GETC\\)",
-          "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
-          "source_words": "Los Medanos AA-T and AS-T pages: 'To earn the Associate Degree for Transfer: Completion of 60 semester units or 90 quarter units of degree-applicable courses ... Completion of California General Education Transfer Curriculum (Cal-GETC)' (college page read 42376216539); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
-        }
-      ]
+  "Los Medanos College": {
+   "why": "S600 SkyWhirlpool, 2026-11-07: about 19 of Los Medanos's transfer-degree records failed arithmetic because the record names the 60-unit degree and the Cal-GETC pattern with no units for it. Every transfer page prints 'Completion of California General Education Transfer Curriculum (Cal-GETC)' and no figure (college page read 42376216539: Sociology AA-T 30849, Biology AS-T 35128). Its local A.A. and A.S. pages name no GE units or electives (Accounting A.S. 01528, Fine Arts A.A. 01546), so no step reads them until LMC's GE page is read.",
+   "awards": "transfer",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "Completion\\s+of\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\(Cal-GETC\\)",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Los Medanos AA-T and AS-T pages: 'To earn the Associate Degree for Transfer: Completion of 60 semester units or 90 quarter units of degree-applicable courses ... Completion of California General Education Transfer Curriculum (Cal-GETC)' (college page read 42376216539); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
     }
+   ]
+  },
+  "Columbia College": {
+   "why": "S605 SkySextans read Columbia's failures by shape: 47 of 52 failing records sum their major correctly and fail the degree check as incomplete, naming the degree's 60 and a GE pattern with no units (26 local degrees name 'Columbia College General Education (CC-GE) Pattern or Cal-GETC Pattern', 21 transfer degrees Cal-GETC alone). A free page read (college-page-read 42462494860, kb/college_reads/columbia_ge_units.json) gave the words: a transfer page (Sociology AA-T) prints 'To earn this degree, students must complete 60 CSU-transferable semester units ... including completion of: 1. The California General Education Transfer Curriculum (Cal-GETC) Pattern; AND ... 3. Any CSU-transferable electives needed to bring the total units to 60', and Columbia's own Cal-GETC page lists the six areas with no total. So this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Taft's and Los Medanos's steps are. The local degrees wait: the read did not load the CC-GE pattern page (ge/cc-pattern), and the Child Development A.S. page prints no GE units; with no figure in Columbia's own words they get no step (as Taft's and Los Medanos's local degrees). S606 SkyFornax, 2026-11-08, proceeded on the handoff's recommendation; reversible by deleting this entry. S607 SkyBode, 2026-11-08: a free page read of ge/cc-pattern (college-page-read 42470655341, kb/college_reads/columbia_ccge_pattern.json) gave the local degrees' words. The CC-GE page: 'To satisfy the CC-GE Pattern, complete 21 semester units of general education coursework'; the Associate Degree Requirements page, which lists all 27 local degrees: 'complete one of the following General Education (GE) Patterns: Columbia College General Education (CC-GE) Pattern ... Cal-GETC Pattern' and 'STEP 4: Complete a minimum of 60 degree-applicable semester units'. So two steps read a program page naming the CC-GE pattern: general education 21-34 (CC-GE's 21 or Cal-GETC's 34, as Monterey Peninsula's 'MPC General Education or Cal-GETC' reads 24-34) and the degree total as a floor (Cerritos's and San Joaquin Delta's degree_total_minimum). The college gate moved from 'transfer' to 'associate' so the local steps run; the Cal-GETC step keeps its own 'transfer'. Proceeded on the recommendation; reversible by deleting the two steps.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "The\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\(Cal-GETC\\)\\s+Pattern",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Columbia AA-T and AS-T pages: 'To earn this degree, students must complete 60 CSU-transferable semester units with a grade point average of 2.0 or better, including completion of: 1. The California General Education Transfer Curriculum (Cal-GETC) Pattern' (college page read 42462494860); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 21,
+      "max": 34
+     },
+     "awards": "associate",
+     "pattern": "Columbia\\s+College\\s+General\\s+Education\\s+\\(CC-GE\\)\\s+Pattern",
+     "source": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/ge/cc-pattern",
+     "source_words": "Columbia College General Education (CC-GE) Pattern 2026-2027: 'To satisfy the CC-GE Pattern, complete 21 semester units of general education coursework in the areas described below' (college page read 42470655341); the Associate Degree Requirements page: 'complete one of the following General Education (GE) Patterns: Columbia College General Education (CC-GE) Pattern ... Cal-GETC Pattern', and Cal-GETC 'satisfies the 34 units of lower-division general education requirements' (Monterey Peninsula's GE page, the house citation)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "awards": "associate",
+     "pattern": "Columbia\\s+College\\s+General\\s+Education\\s+\\(CC-GE\\)\\s+Pattern",
+     "source": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/requirements/aa/as",
+     "source_words": "Associate Degree Requirements 2026-2027 (the 27 local degrees): 'STEP 4: Complete a minimum of 60 degree-applicable semester units with an overall GPA of 2.0 or better' (college page read 42470655341); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units"
+    }
+   ]
   }
+ }
 }

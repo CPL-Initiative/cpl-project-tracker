@@ -61,34 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     26.0,
     26.0
    ],
    "stated": [
-    60.0,
-    60.0
+    26.0,
+    26.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     26.0,
-     26.0
+     60.0,
+     60.0
     ],
     "stated": [
-     26.0,
-     26.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +139,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -224,5 +229,20 @@
    "The program description ends with an outcomes lead-in ('Upon satisfactory completion of this award, the student should be prepared to:') with no outcomes under it. The outcomes were taken from the Program Learning Outcomes section."
   ]
  },
- "extracted_run": "38979390136"
+ "extracted_run": 42466476925,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "The California General Education Transfer Curriculum (Cal-GETC) Pattern (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Columbia AA-T and AS-T pages: 'To earn this degree, students must complete 60 CSU-transferable semester units with a grade point average of 2.0 or better, including completion of: 1. The California General Education Transfer Curriculum (Cal-GETC) Pattern' (college page read 42462494860); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38979390136"
 }
