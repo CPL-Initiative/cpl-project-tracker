@@ -1,7 +1,7 @@
 ---
 title: "Implementation Funding tab / the $35M model — lane state"
 created: 2026-08-28
-updated: 2026-11-02
+updated: 2026-11-08
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -16,6 +16,8 @@ related:
 **What this lane is:** The four priorities, their shares and factors, what each counts toward, and the college-by-college allocation.
 
 ## Status
+
+✅ **The render remembers its priorities (S613, COBIx #2927 item 3):** `priorities()` and `totalSize()` are held for one `render()` only (`withMemo`), emptied at its cache clears and in `persistActive()`; funding tests about 2.7x faster. Lessons, *S613*. Guard `cpl_funding_render_memo`.
 
 ✅ **Every Eligibility word edits, a Show filter on the minimum conditions, and the NC attestation on its own row (S554, #2701, #2703):** lessons, *Moved from the lane (S562)*. Guards `cpl_funding_conditions_filter`, `funding_page_requirements_edit`.
 
