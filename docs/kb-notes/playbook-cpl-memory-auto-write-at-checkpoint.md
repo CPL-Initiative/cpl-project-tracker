@@ -111,6 +111,12 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    to Sam, and say the rows are written and **unlogged**; never log through
    another tool.
 
+   ⚠️ **A staged receipt has never met the table's checks (S611, 2026-11-08).** Before
+   committing one, measure each row against `cpl_memory`'s CHECK constraints: `summary`
+   1 to 400 characters, `detail` ≤ 4,000, `source` ≤ 500, `scope` ≤ 120. S604's staged
+   receipt carried a 440-character summary, and the later write failed on
+   `cpl_memory_summary_check`; S611 moved the overflow to the head of `detail`.
+
    ✅ **ONE CALL, THREE STATEMENTS (S285, 2026-09-24; Sam's SQL budget ruling).** The row
    insert, the log insert and the verify query travel together in ONE `execute_sql`
    call, separated by semicolons: a later statement sees an earlier one's rows, and
