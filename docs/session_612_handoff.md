@@ -36,7 +36,11 @@ auto-merge rule, and everything on the hold list waits on his word on the sheet.
 Sheet 171, answered 20:13-20:14Z, all his own call (`replies/done` through 4):
 - **Card 1, a follow-up, no verdict:** *"I believe there are no student IDs, names, emails, etc. just hashed ID with records of
   anonymous students' CPL, right?"* Answered in the card's thread from the schema and the loader (no names, emails or MAP ids;
-  a per-pull number; pseudonymous rows, so small cells stay suppressed). Where the review lives is still open: Sheet 172 card 1.
+  a per-pull number; pseudonymous rows, so small cells stay suppressed). Sheet 172 card 1 then closed it (20:24Z): no legal
+  and datashare review involves COBI; the CO GC works the DAS apprenticeship redisclosure and a JST procedural OK (lane, memory).
+- **DAS MOU amendment draft (Sam, chat, ~20:30Z):** Sky reviewed it in chat. It does not yet authorize redisclosure to colleges
+  (its last sentence bars disclosure outside CCCCO), RCCD staff may not count as CCCCO employees, "internal and secure platform"
+  needs a name (COBI keeps no student rows), and name and date of birth may be more than matching needs. Redline on his ask only.
 - **Card 2, accept:** the Exhibits ranking may lag a regrouping by one day.
 - **Card 3, merge:** #2932 merged on his word; the next nightly load deletes the 73 older sketch pulls.
 - **Card 4, proposed:** next free numbers for the three collisions, the three hospitality entries to the curator worklist, and
@@ -44,13 +48,12 @@ Sheet 171, answered 20:13-20:14Z, all his own call (`replies/done` through 4):
 
 ## Read first
 
-- [Open Asks Sheet 172](https://claude.ai/artifact/SDabCYZ1uwJtUSRCPSC6cM) (current; read its `replies` first): one card,
-  where the legal and datashare review lives. Sheet 171's four are answered (above); never republish onto it.
+- No sheet card is open: Sheets 170 to 172 are answered (above). Read Sheet 172's store only to confirm; never republish onto it.
 - `docs/reference/lanes/commons.md`, `common-subjects-reference.md`, `disposition-grain-student-detail.md`.
 
 ## Open work, in order
 
-0. **Apply the anchor re-key Sam ruled on (Sheet 171 card 4, *proposed*).** Read Sheet 172's replies first. From
+0. **Apply the anchor re-key Sam ruled on (Sheet 171 card 4, *proposed*).** From
    `kb/anchor_rekey_dryrun/plan.json` (rebuild it on `main` first): the 2 re-keys and 15 prefix swaps as listed, the three
    collisions (AUTD M10FZ, PLGL M10IA, PLGL M10IB) on the next free number of DIES and PARA, checked against the minted set, the
    anchor and every id the alias chain has used; the three HOSP keys stay. One alias map under `kb/anchor_rekey_out/<date>/`, a

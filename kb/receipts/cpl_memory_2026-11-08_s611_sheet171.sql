@@ -13,3 +13,5 @@ from public.cpl_memory m where m.slug = 'sam-sheet-171-rulings-2026-11-08'
 select m.slug, count(l.id) filter (where l.action='create') as creates
 from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
 where m.slug = 'sam-sheet-171-rulings-2026-11-08' group by m.slug;
+-- Also written 2026-11-08 ~20:26Z (creates = 1): slug sam-no-cobi-datashare-review-2026-11-08, kind fact, verified_by Sam,
+-- Sam's Sheet 172 card 1 answer verbatim in detail (no COBI datashare review; the CO GC's DAS and JST matters).
