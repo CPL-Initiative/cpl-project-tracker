@@ -924,3 +924,20 @@ Credential Catalog,"* noting *"my previous 3 attempts to make those changes have
 - **The List's project bands lead with the newest piece** (#2812, SkyRoundoff; Sam's report: *"the sort descending by
   modified date only partially works--ELL is not at the top of the list but was last modified"*): `bandNewestFirst`
   orders them, as the Cards' project cards already were.
+
+## S605 SkySextans (2026-11-08, the CPL Queue routine): the Coordinator Guide's Request Quick Adopt links
+
+Sam's Revise request of 2026-11-05 on the CPL Coordinator Getting Started Guide: *"can you add the Request Adopt buttons
+to any courses or exhibits possible?"*
+
+- **A guide for every college names no college's exhibits, so the links go where it tells a coordinator to adopt.**
+  Under *Setting up MAP*: a table of Basic Military Training and the seven statewide credit recommendations the most
+  colleges have adopted (`statewide_data.js` `adopters`, among the 169 IDs `fact-sheet/statewide_recs.js` names), each
+  with *Request Quick Adopt* opening its MAP exhibit card. The Credential Catalog joins Resources for the rest.
+- **Basic Military Training takes `View=Military`.** `map_links.js` hard-codes `View=Non-Military` because every ID in
+  its index was non-military; MAP's API (`/api/collaborative-exhibits?searchTerm=MAPMM-BMT1-1-001`) gives BMT
+  `CPLTypeDescription` *Military*, so a military exhibit's link names the Military tab (Pedro, 2026-10-28: both exist).
+- **Draft 2 republished at the same artifact**; the record moves by `kb/migrations/2026-11-08_library_coordinator_guide_draft2.sql`
+  through `supabase-migrate.yml`, because an unattended firing's `execute_sql` write waits on an approval prompt.
+- **Checks:** axe (WCAG 2.2 AA) at 390 and 1440px, light and dark: none beyond the fragment's `lang`, which the artifact
+  wrapper sets; every link at least 24px tall; no sideways scroll.

@@ -1,3 +1,2 @@
-file=kb/migrations/2026-11-07_budget_logos_update_policy.sql
-name=budget_logos_update_policy
-project=budget-support
+file=kb/migrations/2026-11-08_library_coordinator_guide_draft2.sql
+name=library_coordinator_guide_draft2
