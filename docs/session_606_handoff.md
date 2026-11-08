@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 605 (SkySextans, the CPL Queue routine's 08:12Z firing, 2026-11-08)
 tags: [handoff, library, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_607_handoff.md
 ---
 
 # You are Session 606

@@ -1137,3 +1137,10 @@ From *Course objectives too*, verbatim:
   house citation, Monterey Peninsula's GE page) and CC-GE's units on local degrees, cited from Columbia's own catalog.
 - **The page read is filed:** `kb/college_reads/columbia_ge_units.json` (free, no model call) on #2915, to find how the
   pages word CC-GE and its units. The step waits on that read's log.
+
+### S606 SkyFornax (2026-11-08, the CPL Queue routine's 09:12Z firing)
+
+- **Columbia's page read (42462494860) answered for transfer degrees only.** AA-T pages print *"including completion
+  of: 1. The California General Education Transfer Curriculum (Cal-GETC) Pattern"*. The Cal-GETC page prints no total,
+  so a step sets the statewide 34 on `awards: transfer` (reconcile 42466476925). The `follow` pattern never loaded
+  `ge/cc-pattern`, which the page listed as a link: check that list before you conclude a catalog prints no figure.

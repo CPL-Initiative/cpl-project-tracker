@@ -16656,8 +16656,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 569,
+   "count": 570,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 607,
+     "path": "docs/session_607_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "library",
+      "scheduled-sessions"
+     ],
+     "title": "Session 607 handoff: #2915 carried on #2916; Columbia's Cal-GETC reconcile step, its run in flight",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26327,5 +26343,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1411
+ "total": 1412
 }
