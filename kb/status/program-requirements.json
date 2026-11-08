@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T22:50:38Z",
-  "session": 612,
-  "moniker": "SkySunflower",
+  "written_at": "2026-11-08T23:51:18Z",
+  "session": 613,
+  "moniker": "SkyCometa",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_613_handoff.md",
+  "handoff": "docs/session_614_handoff.md",
   "next_step": {
     "title": "Redwoods' local degrees",
     "text": "Redwoods' transfer degrees pass (53 of 73). Its 8 local degrees name the 60 units and no general education pattern; they wait on a read of the college's own general education page."
