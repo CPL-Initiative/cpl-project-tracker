@@ -12,7 +12,8 @@
 --
 -- Rollback: kb/migrations/2026-11-08_student_grain_drop_orphans_rollback.sql recreates both tables EMPTY with the
 -- grants and policy they held. The rows are not restorable from this repo by design (the ruling keeps none);
--- MAP is the system of record, and a Supabase backup, if one exists, holds them until it expires.
+-- MAP is the system of record. Backup confirmed by Sam (dashboard screenshot, 2026-11-08 ~16:15Z): Work Plan is on
+-- Pro with daily physical backups; the 2026-11-08 09:29:31Z backup holds both tables until it ages out.
 --
 --   file=kb/migrations/2026-11-08_student_grain_drop_orphans.sql
 --   name=student_grain_drop_orphans
