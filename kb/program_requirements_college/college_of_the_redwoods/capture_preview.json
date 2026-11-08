@@ -1,0 +1,101 @@
+{
+ "college": "College of the Redwoods",
+ "catalog_url": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 79,
+ "with_closed_list": 76,
+ "started": "2026-11-08T06:46:26Z",
+ "elumen": {
+  "catalog": "2026-2027",
+  "read": "publish/content",
+  "menu_programs": 84,
+  "errors": [],
+  "menu_departments": 68,
+  "department_programs": 84,
+  "menu_hubs": [
+   "programs"
+  ],
+  "hub_programs": 84,
+  "program_pages": 84
+ },
+ "pages_read": 84,
+ "banner_h1": null,
+ "loads": 154,
+ "seconds": 637.2,
+ "found": 73,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 2,
+  "page_claimed": 1,
+  "sitemap_page": 73
+ },
+ "shared_pages": {
+  "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026": [
+   "31005",
+   "46245"
+  ],
+  "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026": [
+   "32809",
+   "46085"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "46337",
+   "title": "Surgical Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5009,
+     "content": 5009,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46338",
+   "title": "Respiratory Care",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "46099",
+   "title": "Data Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 23,
+  "1.0": 47
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/college_of_the_redwoods",
+  "kept": 73,
+  "programs": 0,
+  "list": []
+ },
+ "run": "42455994350"
+}
