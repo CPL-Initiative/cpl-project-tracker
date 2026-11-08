@@ -16656,8 +16656,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 572,
+   "count": 573,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 610,
+     "path": "docs/session_610_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 610 handoff: Redwoods 53 of 73 passing and displayed (#2918)",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26373,5 +26388,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1414
+ "total": 1415
 }

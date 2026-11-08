@@ -3,7 +3,7 @@ title: "Session 609 handoff: Columbia 78 of 82 passing and displayed; Redwoods r
 date: 2026-11-08
 session: 608 (SkyCondor, the CPL Queue routine's 12:12Z firing, 2026-11-08)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
-status: current
+status: superseded
 ---
 
 # You are Session 609
