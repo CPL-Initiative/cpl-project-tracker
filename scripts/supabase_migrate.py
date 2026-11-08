@@ -10,9 +10,13 @@ applies a committed file through the Supabase Management API
 chat deploy already uses, records it in supabase_migrations.schema_migrations the
 way apply_migration does, and writes a receipt the workflow commits.
 
-The trigger is kb/migrations/.apply, two lines:
+The trigger is kb/migrations/.apply, two lines and an optional third:
     file=chatbox/supabase_course_outcomes.sql
     name=course_outcomes_table
+    project=budget-support        (optional; default work-plan)
+`project` names one of PROJECTS below and nothing else: the budget project's
+apply_migration prompt timed out twice on 2026-11-07 (S603, COBIx item 10), and
+Rule 10 (c) sends a timed-out migration here.
 The workflow (supabase-migrate.yml) runs the apply job in the GitHub environment
 "database": with Sam as its required reviewer each apply waits for his approval;
 with no protection rule it runs at once. The file is the receipt of what ran;
@@ -33,8 +37,10 @@ import time
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_REF = "hvuwhnbuahrtptokpqfh"
-API = "https://api.supabase.com/v1/projects/%s/database/query" % PROJECT_REF
+# The only projects a trigger may name. Work Plan is the default.
+PROJECTS = {"work-plan": "hvuwhnbuahrtptokpqfh", "budget-support": "mdxutmbpoqjtdcwjscux"}
+PROJECT_REF = PROJECTS["work-plan"]
+API = "https://api.supabase.com/v1/projects/%s/database/query"
 RECEIPTS = os.path.join(ROOT, "kb", "receipts")
 SQL_DIRS = ("chatbox/", "kb/", "supabase/")
 NAME = re.compile(r"^[a-z0-9][a-z0-9_]{2,80}$")
@@ -60,7 +66,14 @@ def check_trigger(t: dict, exists=os.path.exists) -> str | None:
         return "no such file: %s" % f
     if not NAME.match(name):
         return "name must be snake_case (3-81 characters), got %r" % name
+    if t.get("project", "work-plan") not in PROJECTS:
+        return "project must be one of %s, got %r" % (", ".join(sorted(PROJECTS)), t.get("project"))
     return None
+
+
+def project_ref(t: dict) -> str:
+    """The project ref a checked trigger names."""
+    return PROJECTS[t.get("project", "work-plan")]
 
 
 def ledger_sql(version: str, name: str, sql: str) -> str:
@@ -71,8 +84,8 @@ def ledger_sql(version: str, name: str, sql: str) -> str:
             "on conflict (version) do nothing;" % (version, name, tag, sql, tag))
 
 
-def post(query: str, token: str) -> tuple[int, str]:
-    req = urllib.request.Request(API, data=json.dumps({"query": query}).encode(), method="POST",
+def post(query: str, token: str, ref: str = PROJECT_REF) -> tuple[int, str]:
+    req = urllib.request.Request(API % ref, data=json.dumps({"query": query}).encode(), method="POST",
                                  headers={"Authorization": "Bearer " + token,
                                           "Content-Type": "application/json"})
     try:
@@ -96,7 +109,8 @@ def main(argv=None) -> int:
     version = time.strftime("%Y%m%d%H%M%S", time.gmtime())
     receipt = {"what": "supabase-migrate: one committed SQL file applied through the Management API",
                "file": t["file"], "name": t["name"], "version": version,
-               "sha256": hashlib.sha256(sql.encode()).hexdigest(), "run": os.environ.get("GITHUB_RUN_ID")}
+               "sha256": hashlib.sha256(sql.encode()).hexdigest(), "run": os.environ.get("GITHUB_RUN_ID"),
+               "project": t.get("project", "work-plan"), "project_ref": project_ref(t)}
     if a.dry:
         print(json.dumps(receipt, indent=1))
         return 0
@@ -104,10 +118,11 @@ def main(argv=None) -> int:
     if not token.startswith("sbp_"):
         print("refused: SUPABASE_ACCESS_TOKEN is not a personal access token (sbp_)")
         return 2
-    status, body = post(sql, token)
+    ref = project_ref(t)
+    status, body = post(sql, token, ref)
     receipt.update(status=status, response=body[:4000])
     if status < 300:
-        lstatus, lbody = post(ledger_sql(version, t["name"], sql), token)
+        lstatus, lbody = post(ledger_sql(version, t["name"], sql), token, ref)
         receipt.update(ledger_status=lstatus, ledger_response=lbody[:1000])
     os.makedirs(RECEIPTS, exist_ok=True)
     path = os.path.join(RECEIPTS, "migration_%s_%s.json" % (t["name"], receipt["run"] or version))
