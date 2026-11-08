@@ -1,9 +1,16 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-07T15:01:55Z",
+ "_generated_at": "2026-11-08T06:21:33Z",
  "count": 0,
  "suggestions": {},
  "aligned": {
+  "Introduction to Law Enforcement/Corrections": {
+   "kind": "cid",
+   "id": "AJ 110",
+   "title": "Introduction to Criminal Justice",
+   "code": "CRJ 115",
+   "college": "Palo Verde College"
+  },
   "Report Writing": {
    "kind": "mid",
    "id": "CRIM M1309",
@@ -11,12 +18,19 @@
    "code": "CRJ 125",
    "college": "Palo Verde College"
   },
-  "Introduction to Law Enforcement/Corrections": {
-   "kind": "cid",
-   "id": "AJ 110",
-   "title": "Introduction to Criminal Justice",
-   "code": "CRJ 115",
-   "college": "Palo Verde College"
+  "Nursing Care of Children and Families": {
+   "kind": "mid",
+   "id": "NRSR M1050",
+   "title": "Nursing Care of Children & Families",
+   "code": "NURS 509",
+   "college": "Mt. San Jacinto College"
+  },
+  "Nursing Care of the childbearing family": {
+   "kind": "mid",
+   "id": "NRSR M1048",
+   "title": "Nursing Care of the Childbearing Family",
+   "code": "NURS 507",
+   "college": "Mt. San Jacinto College"
   }
  }
 }

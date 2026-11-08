@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-07T16:09:24.054Z",
+  "scraped_at": "2026-11-08T06:18:46.722Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -338,13 +338,13 @@
         },
         {
           "college": "College of the Desert",
-          "students": 481,
+          "students": 482,
           "units": 2806.5,
-          "avgUnits": 5.834719334719335,
+          "avgUnits": 5.822614107883817,
           "transcriptionRate": 31.3,
-          "avgTranscribed": 1.8264033264033264,
+          "avgTranscribed": 1.8226141078838174,
           "criteriaMetCount": 2,
-          "militaryStudents": 431,
+          "militaryStudents": 432,
           "nonMilitaryStudents": 52,
           "apprenticeStudents": 5,
           "savings": 4073922.5,
@@ -473,14 +473,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 621,
+          "students": 622,
           "units": 2234.2,
-          "avgUnits": 3.597745571658615,
+          "avgUnits": 3.5919614147909966,
           "transcriptionRate": 15.8,
-          "avgTranscribed": 0.5687600644122384,
+          "avgTranscribed": 0.5678456591639872,
           "criteriaMetCount": 1,
           "militaryStudents": 389,
-          "nonMilitaryStudents": 232,
+          "nonMilitaryStudents": 233,
           "apprenticeStudents": 11,
           "savings": 3399988.5,
           "yearImpact": 12877721.600000001,
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "59,464",
+      "value": "59,466",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "31,123"
+          "value": "31,124"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,444"
+          "value": "28,445"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 59464,
+    "Students": 59466,
     "Units": 284972.9,
     "TranscribedUnits": 84872.15,
     "Savings": 405786462.75,
     "YearImpact": 1642011786.3999999,
-    "MilitaryStudents": 31123,
-    "NonMilitaryStudents": 28444,
+    "MilitaryStudents": 31124,
+    "NonMilitaryStudents": 28445,
     "AprenticeStudents": 959,
-    "AverageUnits": 4.792360083411813,
-    "TranscribedAverage": 1.427286257231266
+    "AverageUnits": 4.792198903575152,
+    "TranscribedAverage": 1.4272382537920827
   }
 }
