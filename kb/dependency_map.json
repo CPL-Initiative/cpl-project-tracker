@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 815,
+  "file_datasets": 816,
   "external_services": 193,
   "consumers": 532,
   "workflows": 64,
@@ -4787,7 +4787,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 217
+     "line": 220
     }
    ],
    "served": false,
@@ -22618,6 +22618,26 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/map_key_sketch_one_pull_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:map-custom-report-load.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/memory_audit_test.py": {
    "consumers": [
     {
@@ -24898,7 +24918,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 544
+     "line": 547
     }
    ],
    "main_committers": []
@@ -25012,7 +25032,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 731
+     "line": 749
     }
    ],
    "main_committers": []
@@ -27933,7 +27953,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 750
+     "line": 768
     }
    ],
    "main_committers": []
@@ -27982,7 +28002,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 690
+     "line": 700
     }
    ],
    "main_committers": []
@@ -28599,7 +28619,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 854
+     "line": 872
     }
    ],
    "main_committers": []
@@ -28611,7 +28631,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 846
+     "line": 864
     }
    ],
    "main_committers": []
@@ -28623,7 +28643,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 848
+     "line": 866
     }
    ],
    "main_committers": []
@@ -29775,6 +29795,7 @@
     "tests/ui_pass_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
+    "tests/map_key_sketch_one_pull_test.py",
     "tests/program_courses_build_test.py",
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
@@ -29930,6 +29951,7 @@
     "fetch_custom_report.py",
     "tests/custom_report_payload_test.py",
     "tests/map_custom_report_sync_test.py",
+    "tests/map_key_sketch_one_pull_test.py",
     "kb/_sync_map_custom_reports.py"
    ],
    "adds": [],

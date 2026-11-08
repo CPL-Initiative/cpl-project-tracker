@@ -282,7 +282,11 @@ both and name the gap**. **Open: which one the tabs should mean.**
 ## The salt-rotation detector
 
 `map_student_key_sketch` holds the 2,000 lexicographically-smallest student
-hashes of a pull, for the last two pulls, and the loader reports their overlap.
+hashes of ONE pull, the latest. Each load reads it, compares it with the new pull's
+hashes, reports their overlap, and then keeps only the new pull (Sam's student-grain
+ruling, 2026-11-08; #2919 step 3). The read pages past PostgREST's 1,000-row cap: the
+old single read could not, so its cleanup never saw an older date and 74 pulls piled up
+(S611). Guard: `tests/map_key_sketch_one_pull_test.py`.
 
 It is a **min-hash sketch, not a student map**. A hash per student would be a
 persistent pseudonymous record of every student in MAP, which is more than the

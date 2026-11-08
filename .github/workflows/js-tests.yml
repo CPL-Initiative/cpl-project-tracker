@@ -328,6 +328,10 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
+      # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
+      - name: MAP key sketch keeps one pull
+        run: python3 tests/map_key_sketch_one_pull_test.py
       # Sierra's program -> course membership (S318): the two-signal college
       # crosswalk, the status filters, MIS as the owner of a course, and the
       # loader's re-send (an upsert lands once). Pure-stdlib python.
