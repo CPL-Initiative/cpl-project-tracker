@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T07:26:47Z",
-  "session": 604,
-  "moniker": "SkySculptor",
+  "written_at": "2026-11-08T10:25:32Z",
+  "session": 607,
+  "moniker": "SkyBode",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_605_handoff.md",
+  "handoff": "docs/session_608_handoff.md",
   "next_step": {
-    "title": "Cuesta's trial, then the day's one full read",
-    "text": "Contra Costa's outcomes loaded on Nov 8 (492 rows). Cuesta's course index landed, so on Nov 9 UTC it gets a 12-page trial, and the day's one full read goes to the next college the helper names."
+    "title": "Columbia's local degrees, then Redwoods",
+    "text": "Columbia's transfer degrees now pass (52 of 82). Its own catalog prints 21 units for its general education pattern and a 60-unit minimum, so its local degrees are being read again; then Redwoods' failing records are read the same way."
   },
   "calls": [
     {
@@ -223,6 +223,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-08T10:25:00Z",
+      "text": "Columbia's 21 transfer degrees moved to passing (31 to 52 of 82). Its general education page prints 21 units and its degree page a minimum of 60, so its local degrees are being read again with those figures."
+    },
     {
       "at": "2026-11-08T01:36:00Z",
       "text": "Contra Costa's trial read outcomes on 11 of 12 pages, so its full read started in two parts. Cuesta's course index started on its own host, the day's one preparation run."
@@ -506,14 +510,14 @@
     {
       "day": "2026-11-08",
       "active": 20282,
-      "complete": 13584,
+      "complete": 13604,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-08T06:12:00Z"
+    "at": "2026-11-08T11:12:00Z"
   },
   "harvest": {
     "day": "2026-11-08",

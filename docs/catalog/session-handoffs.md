@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-570 document(s).
+571 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 608 | [Session 608 handoff: Columbia 31 to 52 passing; its local degrees get CC-GE's 21 and the 60 as a floor, the reconcile in flight](../session_608_handoff.md) | 2026-11-08 |
 | 607 | [Session 607 handoff: #2915 carried on #2916; Columbia's Cal-GETC reconcile step, its run in flight](../session_607_handoff.md) | 2026-11-08 |
 | 606 | [Session 606 handoff: S604's three PRs merged; the Coordinator Guide's Request Quick Adopt links; Columbia's failures read by shape](../session_606_handoff.md) | 2026-11-08 |
 | 605 | [Session 605 handoff: Contra Costa's SLOs loaded; the first weekly contacts read; the credential watch slice; two free re-captures unchanged](../session_605_handoff.md) | 2026-11-08 |
