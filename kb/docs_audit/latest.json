@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 1433,
-    "bytes": 14449573,
+    "files": 1434,
+    "bytes": 14461319,
     "over_budget": 2,
-    "handoff_max": 612,
+    "handoff_max": 613,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59930,
+    "always_loaded_bytes": 59914,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59930,
+        "bytes": 59914,
         "over": 0
       },
       "other": {
         "files": 146,
-        "bytes": 4423869,
+        "bytes": 4425579,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 9689,
+        "bytes": 9711,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2643734,
+        "bytes": 2646676,
         "over": 0
       },
       "kb_note": {
         "files": 580,
-        "bytes": 2843965,
+        "bytes": 2844685,
         "over": 0
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 510200,
+        "bytes": 510439,
         "over": 1
       },
       "handoff": {
-        "files": 575,
-        "bytes": 3958186,
+        "files": 576,
+        "bytes": 3964315,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26284,
-      "bytes": 4433026526,
-      "heavy_bytes": 3192843685,
+      "files": 26299,
+      "bytes": 4433490845,
+      "heavy_bytes": 3192856477,
       "heavy_share": 0.72,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -160,13 +160,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 152938,
+        "bytes": 153692,
         "limit": 150000,
         "lane": "other",
-        "over_by": 2938,
+        "over_by": 3692,
         "ratio": 1.02
       },
-      "message": "152,938 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "153,692 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -187,10 +187,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2023061263,
+        "bytes": 2023066472,
         "kind": "dir"
       },
-      "message": "directory totals 2,023,061,263 B inside the vault"
+      "message": "directory totals 2,023,066,472 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -277,10 +277,10 @@
       "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 19046035,
+        "bytes": 19046334,
         "kind": "dir"
       },
-      "message": "directory totals 19,046,035 B inside the vault"
+      "message": "directory totals 19,046,334 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -297,10 +297,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10408210,
+        "bytes": 10415323,
         "kind": "dir"
       },
-      "message": "directory totals 10,408,210 B inside the vault"
+      "message": "directory totals 10,415,323 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -487,10 +487,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11909565,
+        "bytes": 11909609,
         "kind": "file"
       },
-      "message": "11,909,565 B single file inside the vault"
+      "message": "11,909,609 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -567,10 +567,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10096548,
+        "bytes": 10096675,
         "kind": "file"
       },
-      "message": "10,096,548 B single file inside the vault"
+      "message": "10,096,675 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

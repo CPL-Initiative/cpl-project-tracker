@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 611,
-  "moniker": "SkyTadpole",
+  "session": 612,
+  "moniker": "SkySunflower",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_612_handoff.md",
+  "handoff": "docs/session_613_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -30,13 +30,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-08T20:21:26Z",
+  "written_at": "2026-11-08T22:50:39Z",
   "project": "subjects",
   "next_step": {
-    "title": "Apply the anchor re-key Sam ruled on",
-    "text": "Sam chose the proposal on Sheet 171 card 4: the 20 anchor entries apply together with an alias map, a receipt and an era stamp; the three hospitality entries stay with the curator."
+    "title": "The Common Course Reference, one discipline at a time",
+    "text": "The anchor re-key is applied; the three hospitality anchor entries and the 93 stray codes stay with the curator, and the Common Course Reference's Kinesiology waits on Sheet 174."
   },
   "changes": [
+    {
+      "at": "2026-11-08T21:42:00Z",
+      "text": "The anchor re-key applied: 20 curated anchor entries onto their Common SUBJ, 15 keeping their number and 5 on the lowest free number of DIES or PARA; the three hospitality entries stay with the curator (#2938)."
+    },
     {
       "text": "The anchor re-key dry run reads the anchor's era from its keys and applies only later maps: 2 re-keys, 15 prefix swaps, 6 for Sam (#2935).",
       "at": "2026-11-08T19:28:20Z"
@@ -52,18 +56,6 @@
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "A row press edits the row and moves the panel; Check alignment audits a typed code"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "The panel shows colleges beside courses for each local code, names its courses, and offers Use"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "A row saved since the scan leaves the scan list"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "What a Common SUBJ is, linked from the reference"
     }
   ]
 }

@@ -16697,8 +16697,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 575,
+   "count": 576,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 613,
+     "path": "docs/session_613_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "ci",
+      "implementation-funding",
+      "cpl-memory"
+     ],
+     "title": "Session 613 handoff: the anchor re-key applied, funding tests twice as fast, the CCR seed re-check reads course descriptions",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26465,5 +26483,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1419
+ "total": 1420
 }
