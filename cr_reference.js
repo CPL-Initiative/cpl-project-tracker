@@ -155,20 +155,41 @@
   }
 
   // ── Load ────────────────────────────────────────────────────────────────
-  function loadWorklist() {
-    return fetch(WORKLIST_URL, { cache: "no-store" }).then(function (r) {
-      if (!r.ok) throw new Error("worklist " + r.status);
-      return r.json();
+  /* A read that never answers must not leave "Loading" up for good (COBIx #2921, S604: a reviewer saw an endless
+     spinner on #cr-reference/open). Each read gets a deadline; past it the request is aborted and the read fails
+     with words, so the view falls to the failure state it already has. window.CPL_READ_TIMEOUT_MS overrides the
+     deadline (the tests use it). */
+  var READ_MS = 45000;
+  function timed(make, what) {
+    var ms = Number(window.CPL_READ_TIMEOUT_MS) > 0 ? Number(window.CPL_READ_TIMEOUT_MS) : READ_MS;
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    return new Promise(function (resolve, reject) {
+      var timer = setTimeout(function () {
+        if (ctl) { try { ctl.abort(); } catch (e) { /* already settled */ } }
+        reject(new Error(what + " did not answer within " + Math.round(ms / 1000) + " seconds. Reload to try again."));
+      }, ms);
+      make(ctl ? ctl.signal : undefined).then(function (v) { clearTimeout(timer); resolve(v); },
+        function (e) { clearTimeout(timer); reject(e); });
     });
+  }
+  function loadWorklist() {
+    return timed(function (signal) {
+      return fetch(WORKLIST_URL, { cache: "no-store", signal: signal }).then(function (r) {
+        if (!r.ok) throw new Error("worklist " + r.status);
+        return r.json();
+      });
+    }, "The reference's worklist");
   }
 
   function loadDecisions() {
     if (!signedIn()) return Promise.resolve(null);
-    return fetch(REST + "/cr_reference_decisions?select=*", { headers: authHeaders() })
-      .then(function (r) {
-        if (!r.ok) throw new Error("decisions " + r.status);
-        return r.json();
-      });
+    return timed(function (signal) {
+      return fetch(REST + "/cr_reference_decisions?select=*", { headers: authHeaders(), signal: signal })
+        .then(function (r) {
+          if (!r.ok) throw new Error("decisions " + r.status);
+          return r.json();
+        });
+    }, "The curators' decisions");
   }
 
   function load() {
@@ -838,7 +859,9 @@
     if (listFailed) { node.innerHTML = '<div class="crr-warn" role="alert">The List (commons_list.js) could not be loaded. Progress still reads; reload the tab to try again.</div>'; return; }
     node.innerHTML = '<div class="crr-info">Loading the List&hellip;</div>';
     var T = window.CPL_TABS;
-    if (listLoading || !T || typeof T.loadScript !== "function") return;
+    /* With no loader the List can never arrive: say so instead of leaving "Loading the List" up (COBIx #2921, S604). */
+    if (!T || typeof T.loadScript !== "function") { listFailed = true; node.innerHTML = '<div class="crr-warn" role="alert">The List (commons_list.js) could not be loaded. Progress still reads; reload the tab to try again.</div>'; return; }
+    if (listLoading) return;
     listLoading = true;
     T.loadScript("commons_list.js", "CPL_COMMONS_LIST", function () {
       listLoading = false;
