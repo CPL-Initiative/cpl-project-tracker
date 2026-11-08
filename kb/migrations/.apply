@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-08_student_grain_drop_orphans.sql
-name=student_grain_drop_orphans
+file=kb/migrations/2026-11-08_student_grain_revoke_writes.sql
+name=student_grain_revoke_writes
