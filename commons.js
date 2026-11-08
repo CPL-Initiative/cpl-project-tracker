@@ -547,7 +547,8 @@
 
   /* Your next batch (Sam's Commons rulings, 2026-11-08, #2921 items 1 and 2; COBIx's first-view mock): the page opens
      on one small batch a person can finish, with what the answers teach and when to stop. The batch is Another look
-     in Exhibits, so Start opens that view and nothing here duplicates its cards or its saves. */
+     in Exhibits, so Start opens that batch there (#exhibits/another-look/batch, the same six at most, then a stop) and
+     nothing here duplicates its cards or its saves. */
   function nextBatchSection(b) {
     if (!b || b.error || !b.n) return null;
     return el("section", { cls: "cmn-next", "aria-labelledby": "cmn-next-h" }, [
@@ -555,7 +556,7 @@
         el("p", { cls: "cmn-kicker", text: "Your next batch" }),
         el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: b.title }),
         el("p", { cls: "cmn-next-teach", text: b.teaches }),
-        el("p", { cls: "cmn-next-meta", text: fmt(b.n) + (b.n === 1 ? " card. " : " cards. ") + (b.stop || "") })
+        el("p", { cls: "cmn-next-meta", text: fmt(b.n) + (b.n === 1 ? " card" : " cards") + " as of last night's sweep; Start counts again. " + (b.stop || "") })
       ]),
       el("a", { cls: "cmn-start", href: b.open, text: "Start" })
     ]);

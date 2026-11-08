@@ -811,7 +811,7 @@ def next_batch(root):
     if not n:
         return None
     rules = sorted({r for c in cards[:n] for r in (c.get("rules") or [])})
-    return {"kind": "another-look", "n": n, "of": len(cards), "open": "#exhibits/another-look",
+    return {"kind": "another-look", "n": n, "of": len(cards), "open": "#exhibits/another-look/batch",
             "title": "Another look at %s exhibit title%s" % (fmt(n), "" if n == 1 else "s"),
             "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
             "stop": "The batch ends when its cards are decided.", "rules": rules,

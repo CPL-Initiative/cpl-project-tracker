@@ -495,7 +495,7 @@ function cellText(li, title) {
       procedures: [{ name: "classifier", placed: 896, untouched: 820, kept: 4, renamed: 53, moved: 0, by_procedure: 19, left: 0, looked: 57 }] }];
     const withB = JSON.parse(JSON.stringify(STATUS));
     withB.confidence = C;
-    withB.next_batch = { kind: "another-look", n: 6, of: 6, open: "#exhibits/another-look", title: "Another look at 6 exhibit titles",
+    withB.next_batch = { kind: "another-look", n: 6, of: 6, open: "#exhibits/another-look/batch", title: "Another look at 6 exhibit titles",
       teaches: "Keep what works, correct what does not; each answer teaches the next nightly sweep.", stop: "The batch ends when its cards are decided." };
     withB.queue = { reasons: [{ key: "no_procedure", items: [{ ref: "cr", title: "Common CR Reference", n: 1883, words: "wordings no rule places", owner: "a curator", open: "#cr-reference/open" }] }],
       carried: [{ ref: "requirements", title: "Program Requirements", n: 3339, words: "active programs with no record yet", owner: "the harvest", open: "#program-requirements/list/unread" }] };
@@ -510,10 +510,10 @@ function cellText(li, title) {
       && kids.indexOf(nb) < kids.indexOf(b.d.querySelector(".cmn-queue")));
     check("batch 2: it names the batch, what the answers teach and when to stop",
       txt(nb.querySelector("#cmn-next-h")) === "Another look at 6 exhibit titles" && /teaches the next nightly sweep/.test(txt(nb))
-      && /6 cards\. The batch ends when its cards are decided\./.test(txt(nb)) && nb.getAttribute("aria-labelledby") === "cmn-next-h");
+      && /6 cards as of last night's sweep; Start counts again\. The batch ends when its cards are decided\./.test(txt(nb)) && nb.getAttribute("aria-labelledby") === "cmn-next-h");
     const start = nb.querySelector("a.cmn-start");
     check("batch 3: Start is a plain word that opens Another look in Exhibits, never a second card screen",
-      start && txt(start) === "Start" && start.getAttribute("href") === "#exhibits/another-look" && !b.d.querySelector(".cmn-next button"));
+      start && txt(start) === "Start" && start.getAttribute("href") === "#exhibits/another-look/batch" && !b.d.querySelector(".cmn-next button"));
     check("batch 4: no batch in the file draws no batch section", !load().d.querySelector(".cmn-next") && b.M.nextBatchSection({ n: 0 }) === null
       && b.M.nextBatchSection({ error: "x" }) === null);
     const learn = b.d.querySelector(".cmn-learn");

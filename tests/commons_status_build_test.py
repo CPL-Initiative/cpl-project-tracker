@@ -302,7 +302,7 @@ with tempfile.TemporaryDirectory() as fx:
 # ── the next batch (Sam's Commons rulings, 2026-11-08, #2921): Another look's open cards, six at most ──
 import json as _json, tempfile as _tf, os as _os
 nb = data.get("next_batch")
-check("the status file carries next_batch, or none when no card is open", nb is None or (nb.get("n", 0) <= 6 and nb.get("open") == "#exhibits/another-look"), nb)
+check("the status file carries next_batch, or none when no card is open", nb is None or (nb.get("n", 0) <= 6 and nb.get("open") == "#exhibits/another-look/batch"), nb)
 with _tf.TemporaryDirectory() as td:
     _os.makedirs(_os.path.join(td, "kb"))
     with open(_os.path.join(td, "kb", "exhibits_sweep.json"), "w") as f:
