@@ -16656,8 +16656,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 568,
+   "count": 569,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 606,
+     "path": "docs/session_606_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 606 handoff: S604's three PRs merged; the Coordinator Guide's Request Quick Adopt links; Columbia's failures read by shape",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26311,5 +26327,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1410
+ "total": 1411
 }

@@ -941,3 +941,15 @@ to any courses or exhibits possible?"*
   through `supabase-migrate.yml`, because an unattended firing's `execute_sql` write waits on an approval prompt.
 - **Checks:** axe (WCAG 2.2 AA) at 390 and 1440px, light and dark: none beyond the fragment's `lang`, which the artifact
   wrapper sets; every link at least 24px tall; no sideways scroll.
+
+## Moved from the lane (S605)
+
+- **Sam's noncredit visual, Draft 1 on its record (SkyLoop, 2026-11-06):** *Noncredit to Credit: How Noncredit Learning Can
+  Result in Credit* (`cpl_library` 5e29e1d3…, his brief, 14:50Z) is drafted in the
+  public library's look from the brief and `docs/noncredit_cpl_thinking.md` (who does what; six ways, each with its
+  credit for prior learning type; four steps to an exhibit; the first question; where to go next). Mock https://claude.ai/artifact/Wi6htw18rtQ9WCM6ajtmnM (Version 3); draft row
+  `cpl_library_drafts` 5b5f9e8a… and the record at Draft (receipt
+  `kb/receipts/cpl_library_noncredit_draft1_2026-11-06_skyloop.sql`); source
+  `CPLBrain/04-projects/cpl-initiative/noncredit-to-credit/`. His reactions of the hour are applied (the companion README lists them). Sam, ~16:10Z: *"visual looks great! go with it"* (and one correction: the Chancellor's film is her address to the 7th
+  Annual CPL Summit): **published** at https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/
+  (`scripts/library_page.py`; the record Approved, Version 1, listed in the public library; `library-noncredit` in the a11y sweep).

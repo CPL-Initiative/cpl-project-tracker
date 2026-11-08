@@ -1128,3 +1128,12 @@ From *Course objectives too*, verbatim:
 - **Redwoods the same:** capture 42455994350 found 73 of 79 with `kept` 73 and `programs` 0. Both of S598's free
   re-capture candidates read as filed; the next pass on either is its failures by shape, then a reconcile step from the
   catalog's own words. Los Medanos was the third candidate and is done (S600 to S602).
+
+### S605 SkySextans (2026-11-08, the CPL Queue routine's 08:12Z firing)
+
+- **Columbia's 51 arithmetic failures in the committed records (the summary says 52), by shape:** 47 sum their major correctly and fail the degree check as `incomplete` only
+  because the record names a GE pattern with no units: 26 local degrees name *CC-GE or Cal-GETC*, 21 transfer degrees
+  name Cal-GETC. The other four are single arithmetic misreads (12023, 32444, 38891, 45075). So Columbia's pass share turns on two `set` steps, never an extraction: Cal-GETC 34 on `awards: transfer` (the
+  house citation, Monterey Peninsula's GE page) and CC-GE's units on local degrees, cited from Columbia's own catalog.
+- **The page read is filed:** `kb/college_reads/columbia_ge_units.json` (free, no model call) on #2915, to find how the
+  pages word CC-GE and its units. The step waits on that read's log.
