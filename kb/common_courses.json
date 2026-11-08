@@ -1283,7 +1283,7 @@
     "origin": "curated common-course anchor (2026-05)",
     "_zband_retired_from": "M-ID AUTO 134"
   },
-  "CNSR M10BM": {
+  "CBIT M10BM": {
     "common_title": "Blueprint Plans and Specification Reading",
     "description": null,
     "description_source": null,
@@ -1303,9 +1303,10 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building inspection/codes course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 100"
+    "_zband_retired_from": "M-ID BCIT 100",
+    "_anchor_rekey_from": "CNSR M10BM"
   },
-  "CNSR M10BN": {
+  "CBIT M10BN": {
     "common_title": "Combination Residential Dwelling Inspection",
     "description": null,
     "description_source": null,
@@ -1325,9 +1326,10 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building inspection course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 102"
+    "_zband_retired_from": "M-ID BCIT 102",
+    "_anchor_rekey_from": "CNSR M10BN"
   },
-  "CNSR M10BO": {
+  "CBIT M10BO": {
     "common_title": "Concrete Inspection",
     "description": null,
     "description_source": null,
@@ -1347,9 +1349,10 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building inspection course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 104"
+    "_zband_retired_from": "M-ID BCIT 104",
+    "_anchor_rekey_from": "CNSR M10BO"
   },
-  "CNSR M10BP": {
+  "CBIT M10BP": {
     "common_title": "Electrical Code Inspection",
     "description": null,
     "description_source": null,
@@ -1369,9 +1372,10 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building inspection course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 106"
+    "_zband_retired_from": "M-ID BCIT 106",
+    "_anchor_rekey_from": "CNSR M10BP"
   },
-  "CNSR M10BQ": {
+  "CBIT M10BQ": {
     "common_title": "International Building Code Inspection",
     "description": null,
     "description_source": null,
@@ -1391,9 +1395,10 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building inspection course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 108"
+    "_zband_retired_from": "M-ID BCIT 108",
+    "_anchor_rekey_from": "CNSR M10BQ"
   },
-  "CNSR M10BR": {
+  "CBIT M10BR": {
     "common_title": "Mechanical Code - Heating, AC, Refrigeration, and Ductwork",
     "description": null,
     "description_source": null,
@@ -1413,9 +1418,10 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building codes course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 110"
+    "_zband_retired_from": "M-ID BCIT 110",
+    "_anchor_rekey_from": "CNSR M10BR"
   },
-  "CNSR M10BS": {
+  "CBIT M10BS": {
     "common_title": "Plumbing Codes - Drains, Waste, Vents, Water, and Gas",
     "description": null,
     "description_source": null,
@@ -1435,7 +1441,8 @@
     "reviewed_by": "samueltlee",
     "_notes": "Building codes course → MQ 'Building Codes and Regulations'. Confirmed curation pass 1.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID BCIT 112"
+    "_zband_retired_from": "M-ID BCIT 112",
+    "_anchor_rekey_from": "CNSR M10BS"
   },
   "BUSI M11TT": {
     "common_title": "Legal Environment and Business Law",
@@ -2361,7 +2368,7 @@
     "origin": "curated common-course anchor (2026-05)",
     "_zband_retired_from": "M-ID DRFT 108"
   },
-  "AUTD M10FX": {
+  "DIES M10II": {
     "common_title": "Diesel Engines",
     "description": null,
     "description_source": null,
@@ -2381,9 +2388,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID DSL 100"
+    "_zband_retired_from": "M-ID DSL 100",
+    "_anchor_rekey_from": "AUTD M10FX"
   },
-  "AUTD M10FY": {
+  "DIES M10IJ": {
     "common_title": "Diesel Fuel Management Systems",
     "description": null,
     "description_source": null,
@@ -2403,9 +2411,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID DSL 102"
+    "_zband_retired_from": "M-ID DSL 102",
+    "_anchor_rekey_from": "AUTD M10FY"
   },
-  "AUTD M10FZ": {
+  "DIES M10IK": {
     "common_title": "Introduction to Heavy-Duty Diesel Repair",
     "description": null,
     "description_source": null,
@@ -2425,7 +2434,8 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID DSL 104"
+    "_zband_retired_from": "M-ID DSL 104",
+    "_anchor_rekey_from": "AUTD M10FZ"
   },
   "CDEV M1290": {
     "common_title": "Child Development Center Practicum",
@@ -2889,7 +2899,7 @@
     "origin": "curated common-course anchor (2026-05)",
     "_zband_retired_from": "M-ID FREN 102"
   },
-  "FTVE M10VO": {
+  "FMED M10VO": {
     "common_title": "Introduction to Nonlinear Editing",
     "description": null,
     "description_source": null,
@@ -2909,9 +2919,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID FTVE 100"
+    "_zband_retired_from": "M-ID FTVE 100",
+    "_anchor_rekey_from": "FTVE M10VO"
   },
-  "FTVE M10VP": {
+  "FMED M10VP": {
     "common_title": "Single Camera Production",
     "description": null,
     "description_source": null,
@@ -2931,9 +2942,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID FTVE 102"
+    "_zband_retired_from": "M-ID FTVE 102",
+    "_anchor_rekey_from": "FTVE M10VP"
   },
-  "FTVE M10VQ": {
+  "FMED M10VQ": {
     "common_title": "The TV News Field Report",
     "description": null,
     "description_source": null,
@@ -2953,7 +2965,8 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID FTVE 104"
+    "_zband_retired_from": "M-ID FTVE 104",
+    "_anchor_rekey_from": "FTVE M10VQ"
   },
   "GERM M10CJ": {
     "common_title": "Elementary German",
@@ -2999,7 +3012,7 @@
     "origin": "curated common-course anchor (2026-05)",
     "_zband_retired_from": "M-ID GERM 102"
   },
-  "GRAF M1066": {
+  "GFCD M1066": {
     "common_title": "Digital Media",
     "description": null,
     "description_source": null,
@@ -3019,9 +3032,10 @@
     "reviewed_by": null,
     "_notes": "Cross-college match: 2 colleges / 2 local courses map here.",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID GRA 100"
+    "_zband_retired_from": "M-ID GRA 100",
+    "_anchor_rekey_from": "GRAF M1066"
   },
-  "GRAF M10HZ": {
+  "GFCD M10HZ": {
     "common_title": "Introduction to Screen Printing",
     "description": null,
     "description_source": null,
@@ -3041,9 +3055,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID GRA 102"
+    "_zband_retired_from": "M-ID GRA 102",
+    "_anchor_rekey_from": "GRAF M10HZ"
   },
-  "GRAF M10IA": {
+  "GFCD M10IA": {
     "common_title": "Motion Graphics",
     "description": null,
     "description_source": null,
@@ -3063,9 +3078,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID GRA 104"
+    "_zband_retired_from": "M-ID GRA 104",
+    "_anchor_rekey_from": "GRAF M10IA"
   },
-  "GRAF M10IB": {
+  "GFCD M10IB": {
     "common_title": "Photoshop Skills for Graphic Designers",
     "description": null,
     "description_source": null,
@@ -3085,9 +3101,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID GRA 106"
+    "_zband_retired_from": "M-ID GRA 106",
+    "_anchor_rekey_from": "GRAF M10IB"
   },
-  "GRAF M10IC": {
+  "GFCD M10IC": {
     "common_title": "Typography",
     "description": null,
     "description_source": null,
@@ -3107,7 +3124,8 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID GRA 108"
+    "_zband_retired_from": "M-ID GRA 108",
+    "_anchor_rekey_from": "GRAF M10IC"
   },
   "FLNG M10AC": {
     "common_title": "Elementary Hebrew",
@@ -4863,7 +4881,7 @@
     "origin": "curated common-course anchor (2026-05)",
     "_zband_retired_from": "M-ID NUTR 104"
   },
-  "PLGL M10IA": {
+  "PARA M10KX": {
     "common_title": "Introduction to Legal Research and Terminology",
     "description": null,
     "description_source": null,
@@ -4883,9 +4901,10 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID PARA 100"
+    "_zband_retired_from": "M-ID PARA 100",
+    "_anchor_rekey_from": "PLGL M10IA"
   },
-  "PLGL M10IB": {
+  "PARA M10KY": {
     "common_title": "Introduction to Paralegal Studies",
     "description": null,
     "description_source": null,
@@ -4905,7 +4924,8 @@
     "reviewed_by": null,
     "_notes": "",
     "origin": "curated common-course anchor (2026-05)",
-    "_zband_retired_from": "M-ID PARA 102"
+    "_zband_retired_from": "M-ID PARA 102",
+    "_anchor_rekey_from": "PLGL M10IB"
   },
   "FLNG M10AH": {
     "common_title": "Elementary Persian",

@@ -223,6 +223,10 @@ receipt = load("kb/zband_retire_out/2026-09-03/duplicates.json")["rows"]
 fold = {o: v["new_id"] for o, v in load("kb/prefix_fold_out/2026-09-03/alias_map.json")["aliases"].items()}
 def cur_disc(i):
     return (real_cur.get(fold.get(i, i)) or {}).get("discipline")
+# Receipt anchors are 2026-09-03 anchor keys: the S612 anchor re-key moved 20 of them onto their Common SUBJ.
+anchor_rk = {o: v["new_id"] for o, v in load("kb/anchor_rekey_out/2026-11-08/alias_map.json")["aliases"].items()}
+for r in receipt:
+    r["new_id"] = anchor_rk.get(r["new_id"], r["new_id"])
 uncovered = [r for r in receipt if r["new_id"] not in real_by_anchor and r["new_id"] not in real_mi]
 explained = [r for r in uncovered
              if any(cur_disc(t) and gen._legacy_disc_key(cur_disc(t), {}) != gen._legacy_disc_key(r["discipline"], {})

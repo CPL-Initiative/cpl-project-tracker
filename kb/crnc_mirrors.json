@@ -24414,8 +24414,9 @@
   "kb/forestry_wine_remint_out/2026-10-20-stragglers/alias_map.json",
   "kb/fl_stray_remint_out/2026-10-20/alias_map.json",
   "kb/blank_stray_remint_out/2026-10-20/alias_map.json",
-  "kb/subjects_list_recode_out/2026-11-05/alias_map.json"
+  "kb/subjects_list_recode_out/2026-11-05/alias_map.json",
+  "kb/anchor_rekey_out/2026-11-08/alias_map.json"
  ],
- "_rekeyed_at": "2026-11-05",
+ "_rekeyed_at": "2026-11-08",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }

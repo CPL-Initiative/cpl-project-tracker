@@ -4,9 +4,9 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 817,
+  "file_datasets": 820,
   "external_services": 193,
-  "consumers": 533,
+  "consumers": 534,
   "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
@@ -10174,6 +10174,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/anchor_rekey_dryrun/plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 165
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/anchor_rekey_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 93
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/athl_remint_out/<date>/alias_map.json": {
    "consumers": [
     {
@@ -11260,11 +11286,18 @@
      "line": 57
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 160
+    },
+    {
      "id": "script:kb/_anchor_rekey_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 128
     },
     {
      "id": "script:kb/_apply_crossdisc_remint.py",
@@ -12089,11 +12122,18 @@
      "line": 58
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 161
+    },
+    {
      "id": "script:kb/_anchor_rekey_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 112
+     "line": 129
     },
     {
      "id": "script:kb/_apply_convergence_singletons.py",
@@ -12749,11 +12789,25 @@
      "line": 73
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 156
+    },
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 200
+    },
+    {
      "id": "script:kb/_anchor_rekey_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 108
+     "line": 125
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -12796,6 +12850,26 @@
      "direction": "read",
      "how": "literal",
      "line": 68
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/common_courses_era.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 133
     }
    ],
    "served": true,
@@ -12884,6 +12958,20 @@
   },
   "file:kb/course_crosswalk.json": {
    "consumers": [
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 157
+    },
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 201
+    },
     {
      "id": "script:kb/_curation_01.py",
      "kind": "script",
@@ -13914,11 +14002,18 @@
      "line": 8074
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 158
+    },
+    {
      "id": "script:kb/_anchor_rekey_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 109
+     "line": 126
     },
     {
      "id": "script:kb/_apply_canonical_subj4.py",
