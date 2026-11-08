@@ -1520,9 +1520,19 @@
   var COMMONS_URL = "kb/status/commons.json", commonsRead = null;
   function readCommons(fresh) {
     if (commonsRead && !fresh) return commonsRead;
-    commonsRead = fetch(COMMONS_URL, { cache: "no-store" }).then(function (r) {
-      if (!r.ok) throw new Error(COMMONS_URL + " answered " + r.status);
-      return r.json();
+    /* A read that never answers fails with words past its deadline instead of leaving "Reading the Commons' figures"
+       up for good (COBIx #2921, S604). window.CPL_READ_TIMEOUT_MS overrides the 30 seconds (the tests use it). */
+    var ms = Number(window.CPL_READ_TIMEOUT_MS) > 0 ? Number(window.CPL_READ_TIMEOUT_MS) : 30000;
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    commonsRead = new Promise(function (resolve, reject) {
+      var timer = setTimeout(function () {
+        if (ctl) { try { ctl.abort(); } catch (e) { /* already settled */ } }
+        reject(new Error(COMMONS_URL + " did not answer within " + Math.round(ms / 1000) + " seconds"));
+      }, ms);
+      fetch(COMMONS_URL, { cache: "no-store", signal: ctl ? ctl.signal : undefined }).then(function (r) {
+        if (!r.ok) throw new Error(COMMONS_URL + " answered " + r.status);
+        return r.json();
+      }).then(function (d) { clearTimeout(timer); resolve(d); }, function (e) { clearTimeout(timer); reject(e); });
     }).then(function (d) {
       if (!d || !Array.isArray(d.rows)) throw new Error(COMMONS_URL + " is not the Commons' status file");
       return d;
