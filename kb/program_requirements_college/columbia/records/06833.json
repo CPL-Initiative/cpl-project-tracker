@@ -67,34 +67,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     41.5,
     46.0
    ],
    "stated": [
-    60.0,
-    60.0
+    41.5,
+    46.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Columbia College General Education (CC-GE) Pattern or California General Education Transfer Curriculum (Cal-GETC) Pattern pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     41.5,
-     46.0
+     62.5,
+     80.0
     ],
     "stated": [
-     41.5,
-     46.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -119,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -153,7 +156,8 @@
     "banquet manager",
     "catering supervisor",
     "food/beverage manager"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -313,5 +317,26 @@
    "Careers taken from job titles named in the first program learning outcome."
   ]
  },
- "extracted_run": "38979390136"
+ "extracted_run": 42471133430,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 34
+   },
+   "words": "Columbia College General Education (CC-GE) Pattern (https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/ge/cc-pattern: Columbia College General Education (CC-GE) Pattern 2026-2027: 'To satisfy the CC-GE Pattern, complete 21 semester units of general education coursework in the areas described below' (college page read 42470655341); the Associate Degree Requirements page: 'complete one of the following General Education (GE) Patterns: Columbia College General Education (CC-GE) Pattern ... Cal-GETC Pattern', and Cal-GETC 'satisfies the 34 units of lower-division general education requirements' (Monterey Peninsula's GE page, the house citation))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Columbia College General Education (CC-GE) Pattern (https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/requirements/aa/as: Associate Degree Requirements 2026-2027 (the 27 local degrees): 'STEP 4: Complete a minimum of 60 degree-applicable semester units with an overall GPA of 2.0 or better' (college page read 42470655341); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
+  }
+ ],
+ "read_run": "38979390136"
 }

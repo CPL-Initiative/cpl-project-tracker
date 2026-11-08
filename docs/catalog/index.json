@@ -16656,8 +16656,70 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 568,
+   "count": 572,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 609,
+     "path": "docs/session_609_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 609 handoff: Columbia 78 of 82 passing and displayed; Redwoods read by shape, its GE page read on #2918",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 608,
+     "path": "docs/session_608_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 608 handoff: Columbia 31 to 52 passing; its local degrees get CC-GE's 21 and the 60 as a floor, the reconcile in flight",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 607,
+     "path": "docs/session_607_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "library",
+      "scheduled-sessions"
+     ],
+     "title": "Session 607 handoff: #2915 carried on #2916; Columbia's Cal-GETC reconcile step, its run in flight",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 606,
+     "path": "docs/session_606_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 606 handoff: S604's three PRs merged; the Coordinator Guide's Request Quick Adopt links; Columbia's failures read by shape",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26311,5 +26373,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1410
+ "total": 1414
 }
