@@ -1,2 +1,3 @@
-file=kb/migrations/2026-11-07_tmc_submissions_owner_token.sql
-name=tmc_submissions_owner_token
+file=kb/migrations/2026-11-07_budget_logos_update_policy.sql
+name=budget_logos_update_policy
+project=budget-support

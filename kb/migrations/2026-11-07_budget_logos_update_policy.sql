@@ -1,5 +1,5 @@
--- PROJECT: cpl-budget-support (mdxutmbpoqjtdcwjscux), NOT Work Plan. Applied through the
--- Supabase MCP tool, never through kb/migrations/.apply (supabase-migrate.yml targets Work Plan).
+-- PROJECT: cpl-budget-support (mdxutmbpoqjtdcwjscux), NOT Work Plan. Applied through
+-- kb/migrations/.apply with `project=budget-support` (the MCP tool's prompt timed out twice).
 --
 -- COBIx security round 1, item 10 (docs/security/cobix_round1_reply_2026-11-05.md); security
 -- step 4, Sam's go on Sheet 167 card 4. S603 SkyMaffei, 2026-11-07.
