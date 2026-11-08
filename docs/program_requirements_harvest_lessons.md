@@ -1152,3 +1152,6 @@ From *Course objectives too*, verbatim:
 - **A free re-capture pays only when the pages changed.** Columbia's capture 42454382707 (`extract=0`) found 82 of 83
   with `would_extract.kept` 82 and `programs` 0: every page reads as filed, so its 37% pass share sits in the records and
   their reconcile steps, never in the capture. Read its failures by shape before anything else (the Los Medanos method).
+- **Redwoods the same:** capture 42455994350 found 73 of 79 with `kept` 73 and `programs` 0. Both of S598's free
+  re-capture candidates read as filed; the next pass on either is its failures by shape, then a reconcile step from the
+  catalog's own words. Los Medanos was the third candidate and is done (S600 to S602).
