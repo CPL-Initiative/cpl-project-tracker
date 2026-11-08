@@ -1486,6 +1486,8 @@
     var api = {
       render: renderList, redraw: redrawList, line: line, topFolded: topFolded, setTopFolded: setTopFolded, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
+      // Each filter's count as the filter bar shows it; a filter whose data is unread has none (never a 0).
+      filterCounts: listFilterCounts,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
       // The suggestion a row shows (null once accepted or dismissed this visit), and the visit's changed set.

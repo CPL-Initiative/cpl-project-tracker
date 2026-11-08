@@ -6,7 +6,7 @@
 // renderer (commons_page.js) so the other references can take it next. Guarded here:
 //   - the shared renderer: its spec in, the page out; a count the reads could not supply says "Could not be read",
 //     never a zero (the S343 rule); a zero-count item leaves Needs attention; controls are words; tokens only;
-//   - the Exhibits host: Progress is the first view and #exhibits/progress opens it, while the tab still opens on
+//   - the Exhibits host: Progress follows the Queue (queue-first, 2026-11-08) and #exhibits/progress opens it, while the tab still opens on
 //     Review (Sam's Sheet 147); the headline is the Commons row's pair, a title with a review stamp (his keep on Sheets
 //     107 and 108); the three questions read the same counts as the Credentials view's tiles, over one denominator;
 //     Needs attention lists the row's known issues and the tab's own queues, each with an action that opens its place;
@@ -150,7 +150,8 @@ function views(d) { return Array.from(d.querySelectorAll(".exh-views > *")).map(
   check("host: #exhibits/progress opens the Progress view", t.M._state.view === "progress" && !!page);
   check("host: a person's stamps sit under the bar as Confirmed by a person (S565)",
     txt(d.querySelector(".exh-pg-confirmed")) === "1,088 confirmed by a person.");
-  check("host: Progress is the first view", views(d)[0] === "Progress" && /Review/.test(views(d)[1]));
+  // Queue leads since Sam's queue-first ruling (2026-11-08, #2921 item 1); Progress and Review follow it.
+  check("host: Queue, then Progress, then Review", /^Queue/.test(views(d)[0]) && views(d)[1] === "Progress" && /Review/.test(views(d)[2]));
   check("host: the headline is the Commons row's pair, a title with a review stamp",
     /2,402 of 5,492 college-entered titles carry a review stamp/.test(txt(d.querySelector(".exh-pg-page [aria-label=Progress]"))));
   check("host: the line under it reads the run log's latest change, first sentence, and the stamp split",
