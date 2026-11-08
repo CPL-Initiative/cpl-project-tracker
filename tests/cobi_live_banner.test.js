@@ -213,6 +213,18 @@ const LINK = "https://claude.ai/code/session_01PmWfWVNTwivV5D4KYkmA9R";
     check("...and it quotes the value that is wrong, so the row can be corrected",
       !!bad && /666224\+00/.test(bad.textContent), bad ? bad.textContent : "no note");
 
+    // ── the note is for the days after an expiry, not for ever (COBIx #2921, S604: it read "49 days ago" above
+    //    the Commons' working screen) ──
+    e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: new Date(Date.now() - 49 * 24 * HOUR).toISOString() });
+    check("⭐ an expiry 49 days old shows no note, and still no banner",
+      !e.window.document.getElementById("cobi-live-stale") && !e.window.document.getElementById("cobi-live"));
+    e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: new Date(Date.now() - 13 * 24 * HOUR).toISOString() });
+    check("an expiry 13 days old still shows the note", !!e.window.document.getElementById("cobi-live-stale"));
+
     // ── an inactive row still says nothing at all: no row, no diagnosis ──────
     e = build();
     e.window.COBI_BRAND.liveBannerRender(
