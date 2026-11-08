@@ -100,8 +100,10 @@ jobs:
           # Re-mint / fold / dry-run / apply output dirs (alias maps, collisions) — never served.
           # One file under them IS served: the Subjects tab reads the daily scan, kb/csr_out/latest.json
           # (its Progress page read "Could not be read" while the whole directory was pruned, S574).
+          # So is last night's procedures report, kb/cer_procedures_out/latest.json: Exhibits, the CER tab and the
+          # Exhibits progress read it, and it 404'd while pruned (COBIx #2921, S604). Its summary is already public in the repo.
           for d in _site/kb/*_out; do
-            if [ "$d" = "_site/kb/csr_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +; else rm -rf "$d"; fi
+            if [ "$d" = "_site/kb/csr_out" ] || [ "$d" = "_site/kb/cer_procedures_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +; else rm -rf "$d"; fi
           done
           rm -rf _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
@@ -138,6 +140,7 @@ jobs:
             "_site/CPL_Data.js"
             "_site/live_metrics.json"
             "_site/kb/csr_out/latest.json"
+            "_site/kb/cer_procedures_out/latest.json"
             "_site/kpi_history.json"
             "_site/project_lifecycle.js"
             "_site/unified_courses_data.js"
