@@ -41,16 +41,35 @@ text = C.rules_text(procs, skill, fam, budget=C.RULES_BUDGET, prefer=ask)
 check("the committed rules fit the budget", len(text) <= C.RULES_BUDGET, len(text))
 check("every procedure in force is still in the text", all(("`%s`" % p["id"]) in text for p in procs))
 
-# a family the batch could join keeps its issuers; small fixture so the trim path is exercised whatever the corpus size
-small = {"CompTIA Security+": {"CompTIA"}, "Forklift Operator": {"OSHA Training Institute"}, "Welding Level 1": {"AWS"}}
+check("every house family is in the text", all(("- %s\n" % t) in text or ("- %s |" % t) in text for t in fam))
+check("today's corpus fits without dropping any family", "further house families" not in text)
+
+# the replay COBIx asked for on #2925, offline: every saved answer that joined a house family still finds
+# that family, under its issuer, in the rules the run now sends
+recs = json.load(open(C.CLASSIFIED, encoding="utf-8")).get("records", {})
+joined = [r.get("unified_title") for r in recs.values() if r.get("unified_title") in fam]
+def under_issuer(t):
+    iss = fam[t]
+    if len(iss) != 1:
+        return ("- %s |" % t) in text or ("- %s\n" % t) in text
+    h = text.find("## Issuer: %s\n" % next(iter(iss)))
+    seg = text[h:text.find("\n## ", h + 3)] + "\n"
+    return h >= 0 and ("\n- %s\n" % t) in seg
+lost = [t for t in joined if not under_issuer(t)]
+check("every saved answer's house family is still listed with its issuer (%d answers)" % len(joined), joined and not lost, lost[:5])
+
+# the trim order on a small fixture: flat when it fits, grouped (lossless) when not, near families last
+small = {"CompTIA Security+": {"CompTIA"}, "Forklift Operator": {"OSHA Training Institute"}, "Welding Level 1": {"AWS"},
+         "Forklift Safety": {"OSHA Training Institute"}}
+small.update({"OSHA Course %d" % i: {"OSHA Training Institute"} for i in range(1, 9)})
 full = C.rules_text([], "skill", small)
-tight = C.rules_text([], "skill", small, budget=len(full) - 5, prefer=["CompTIA Security+ SY0-701"])
-check("a near family keeps its issuer", "- CompTIA Security+ | CompTIA" in tight, tight)
-check("a far family loses its issuer first, keeping its title", "- Forklift Operator\n" in tight and "OSHA" not in tight, tight)
-tighter = C.rules_text([], "skill", small, budget=len("skill") + 10, prefer=["CompTIA Security+ SY0-701"])
-check("at the last step only near families stay, and the text says how many went",
-      "CompTIA Security+" in tighter and "Forklift" not in tighter and "2 further house families" in tighter, tighter)
-check("with no budget the text is unchanged", C.rules_text([], "skill", small) == full)
+check("with no budget the text is the flat list, unchanged", "- Forklift Operator | OSHA Training Institute" in full and "## Issuer" not in full)
+g = C.rules_text([], "skill", small, budget=len(full) - 1, prefer=["anything"])
+check("over the budget, families are grouped under their issuer and nothing is lost",
+      "## Issuer: OSHA Training Institute\n- Forklift Operator\n- Forklift Safety" in g and "- CompTIA Security+" in g and "- Welding Level 1" in g, g)
+tight = C.rules_text([], "skill", small, budget=len("skill") + 10, prefer=["CompTIA Security+ SY0-701"])
+check("only when even the grouped list is over do far families go, and the text says how many",
+      "## Issuer: CompTIA\n- CompTIA Security+" in tight and "Forklift" not in tight and "11 further house families" in tight, tight)
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

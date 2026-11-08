@@ -385,11 +385,11 @@ def rules_text(procs, skill_text, families, budget=None, prefer=()):
     procedure in force, the rule procedures for context, and the house
     families it should join rather than re-name.
 
-    With a budget, the families shrink until the text fits: first the issuer
-    lists go from families that share no word with the titles being asked
-    (`prefer`), then those families go, leaving every family that shares a
-    word with the batch, issuers and all. A family the batch could join is
-    never the one dropped."""
+    With a budget, the families are first listed under their issuers, which
+    loses nothing (an issuer is written once, not on each of its families'
+    lines). Only if that is still over the budget do the families that share
+    no word with the titles being asked (`prefer`) go, and the text says how
+    many. Today's corpus fits grouped with room to spare (~164,000)."""
     lines = [skill_text.rstrip(), "", "---", "", "# Procedures in force",
              "",
              "Sam adds procedures as the work goes. Apply every one below; when a "
@@ -403,30 +403,48 @@ def rules_text(procs, skill_text, families, budget=None, prefer=()):
               "Titles already in the reference, each with its issuer. Join one of these "
               "names exactly when the row names the same credential (Rule 5d, Rule 8c); "
               "otherwise give a new title.", ""]
+    def flat(keep, issuers_for):
+        return ["- %s%s" % (t, (" | " + "; ".join(sorted(families[t]))) if (families[t] and t in issuers_for) else "")
+                for t in sorted(families) if t in keep]
+
+    def grouped(keep):
+        # Lossless: a family with one issuer is listed under that issuer's heading, so the issuer is
+        # written once rather than on every line (2,528 of 2,727 families have exactly one).
+        by, multi = {}, []
+        for t in sorted(families):
+            if t not in keep:
+                continue
+            iss = families[t]
+            if len(iss) == 1:
+                by.setdefault(next(iter(iss)), []).append(t)
+            else:
+                multi.append(t)
+        out = ["Each family is listed under its issuer."]
+        for iss in sorted(by):
+            out += ["", "## Issuer: %s" % iss] + ["- %s" % t for t in by[iss]]
+        if multi:
+            out += ["", "## More than one issuer, or none named"]
+            out += ["- %s%s" % (t, (" | " + "; ".join(sorted(families[t]))) if families[t] else "") for t in multi]
+        return out
+
+    def render(fam_lines, dropped=0):
+        tail = (["", "(%d further house families share no word with these titles and are not listed.)" % dropped]
+                if dropped else [])
+        return "\n".join(lines + fam_lines + tail) + "\n"
+
+    every = set(families)
+    text = render(flat(every, every))
+    if budget is None or len(text) <= budget:
+        return text
+    text = render(grouped(every))
+    if len(text) <= budget:
+        return text
+    # Last resort, only if even the grouped list is over: keep the families that share a word with the batch.
     want = set()
     for t in prefer:
         want |= _words(t)
     near = {t for t in families if _words(t) & want}
-
-    def fam_line(title, with_issuers):
-        iss = families[title] if with_issuers else ()
-        return "- %s%s" % (title, (" | " + "; ".join(sorted(iss))) if iss else "")
-
-    def render(issuers_for, keep):
-        fam = [fam_line(t, t in issuers_for) for t in sorted(families) if t in keep]
-        dropped = len(families) - len(keep)
-        tail = (["", "(%d further house families share no word with these titles and are not listed.)" % dropped]
-                if dropped else [])
-        return "\n".join(lines + fam + tail) + "\n"
-
-    every = set(families)
-    text = render(every, every)
-    if budget is None or len(text) <= budget:
-        return text
-    text = render(near, every)
-    if len(text) <= budget:
-        return text
-    return render(near, near)
+    return render(grouped(near), len(families) - len(near))
 
 
 # ── the college's own course, for a title that is only a code ──────────────
