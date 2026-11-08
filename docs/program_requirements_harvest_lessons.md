@@ -1138,6 +1138,13 @@ From *Course objectives too*, verbatim:
   reconcile 42480098144 on #2918.
 - **An eLumen GE page can render no text to the reader.** Redwoods' `grad5` (Cal-GETC) loaded with status 200 and only
   its menu, so the statewide 34 keeps the house citation. Try the page's Print link (`api-prod.elumenapp.com`) for `grad4`.
+- **A college branch cut before another college's display merge must merge `main` before its display build** (S609).
+  #2918 branched before #2917, so a build there would have carried Columbia's old records and the apply would have
+  reverted Columbia's display. Merge `main`, then `kb/_build_roep_display.py`.
+- **Never `git stash` between `git add` and the commit.** `stash pop` restores the working tree, not the index, so S609's
+  first display commit carried only the `.sql.gz` receipt while the page still named the old build; the apply reads the
+  page's stamp, so it would have reapplied the old build. Cancelled (42489271385), recommitted the page, dispatched again.
+  Check `git show --stat HEAD` names `cpl_pathways_roep_data.js` before you dispatch `step=display`.
 
 ### Moved from the lane (S607): Siskiyous, Palomar and Coalinga, as they stood
 
