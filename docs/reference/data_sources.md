@@ -118,6 +118,25 @@ Sam, 2026-11-04 (S573): *"We have a new partnership with ace I need to get you i
 most of MAP's credit recommendation rows (the military half, lane
 [`military-ace-cr-reference`](lanes/military-ace-cr-reference.md)). Steps 2 to 4 wait on the details he shares.
 
+### Joint Services Transcripts through jst.mil, for students who opted in on CCCApply
+Sam, 2026-11-08 (S611), background for the KB, *"I need to bring this up to the CO GC freshly as I think it's fallen off the
+table"*. CCCApply asks military-connected applicants whether they authorize their college to obtain their JST (the opt-in,
+page 164 of the Standard Application Data Dictionary; Sam reviewed the prompt's revision). In June 2026 the CPL Initiative
+asked RAD for the opted-in students (minimum fields: college and SSN) to order JSTs and load them into MAP; RAD answered that
+colleges already hold the answer through the SuperGlue adaptor and the Tech Center data warehouse. The Department of War's
+JST office has indicated system-level ordering is possible. What waits: the CO General Counsel's procedural OK for the CCCCO
+(or the Initiative as its designated agent) to order the JSTs and upload them to MAP per college; no data share agreement,
+since the student's CCCApply authorization governs (cpl_memory `sam-no-cobi-datashare-review-2026-11-08`). Sam carries it.
+Student-level transcripts land in MAP, never COBI (his 2026-11-08 ruling).
+
+### The DAS apprenticeship data, under the CO's MOU with DIR-DAS
+Sam, 2026-11-08 (S611). The MOU lets the CO match DAS apprentice records (SSN, status, dates, occupation, veteran flag) with
+CCC records for research and aggregate reports only, with no vendor access. The OGC (2026-09-24) drafted a revision extending
+disclosure to the CO's designated agents and to districts, so colleges can award apprenticeship CPL; RAD reviews its outdated
+program and security terms before it goes to DAS. Sky's read in chat: name the designated agent, keep student-level rows in
+MAP and out of COBI, and question adding name and date of birth. Apprenticeship CPL's measure today: `apprenticeship_credits`
+(lane [`disposition-grain-student-detail`](lanes/disposition-grain-student-detail.md)).
+
 ### Credit for Being You, the student portal's requests
 The CO's student portal (https://creditforbeingyou.org/, linked from the public header as *add what you have learned
 and request credit*) is the front door a student uses to ask a college for credit; its requests land in MAP as
