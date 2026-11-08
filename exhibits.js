@@ -1618,7 +1618,7 @@
   /* The Commons' procedures count opens the CER's list; here, the Rules view lists every procedure. */
   var COMMONS_EQUIV = { "#credential-reference/procs": "#exhibits/rules" };
   var ROUTE_WORDS = { held: "Review, every held title", conflict: "Review, Conflict with the reference", "another-look": "Review, Another look",
-    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view", requests: "the Requests view",
+    credentials: "the List view", rules: "the Rules view", list: "the List view", progress: "the Progress view", queue: "the Queue view", requests: "the Requests view",
     "cpl-ai": "the CPL-AI recommendations view" };
 
   function commonsFresh() {
@@ -2629,6 +2629,7 @@
         placeholder: "Title, local title, issuer, training site, college, district, SWP region, ASCCC area, discipline, subject or CPL type", findLabel: "Find in the list" },
       state: listState, rows: function () { return state.cs.rows || []; }, cols: listCols,
       panel: { label: function (r) { return "Exhibit: " + listTitle(r); }, body: listPanelBody },
+      trail: { home: [["CPL Commons", "#commons"]], name: "Exhibits" },
       key: function (r) { return r.ut; }, title: listTitle, render: function () { render(); }, session: session,
       head: function (wrap) {
         var L = listState(), cs = state.cs;
@@ -2829,12 +2830,16 @@
     wrap.appendChild(viewsNav());
     if (state.listFailed) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The list could not be loaded; reload the tab to try again." })); return; }
     wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the list…" }));
-    if (state.listLoading || !window.CPL_TABS || !window.CPL_TABS.loadScript) return;
+    ensureListEngine();
+  }
+  /* The shared List engine, loaded once: the List draws with it and the Queue counts the List's filters with it. */
+  function ensureListEngine() {
+    if (window.CPL_COMMONS_LIST || state.listLoading || state.listFailed || !window.CPL_TABS || !window.CPL_TABS.loadScript) return;
     state.listLoading = true;
     window.CPL_TABS.loadScript("commons_list.js", "CPL_COMMONS_LIST", function () {
       state.listLoading = false;
       if (!window.CPL_COMMONS_LIST) state.listFailed = true;
-      if (state.view === "list") render();
+      if (state.view === "list" || state.view === "queue") render();
     });
   }
   function redrawList() { if (listApi()) LIST_ENGINE.redraw(); else render(); }
@@ -2976,13 +2981,14 @@
       b.addEventListener("click", function () {
         state.view = id; state.note = "";
         render();
-        if (id === "list" || id === "progress") loadCredentials().then(render);
+        if (id === "list" || id === "progress" || id === "queue") loadCredentials().then(render);
         if (id === "requests") loadRequests().then(render);
         if (id === "cpl-ai") loadCplAi();
       });
       return b;
     }
     return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
+      v("queue", "Queue", null),
       v("progress", "Progress", null),
       v("review", "Review", state.data ? stepCount("") : null),
       v("list", "List", state.cs.rows ? state.cs.rows.length : null),
@@ -3406,6 +3412,153 @@
     M.mount(host, { onChange: function () { if (state.view === "cpl-ai") render(); } });
   }
 
+  /* ── Queue: six lenses over the lists this tab already holds (Sam's Commons ruling 1, 2026-11-08, #2921; COBIx's
+     filter contract of 16:49Z) ──
+     Needs Sam, Ready to check, All, Connections, Later, History, in that order. Each lens is a set of entry points into
+     an existing list, counted from the set that list opens: no new store, no second decision screen, no bulk
+     acceptance. Review stays the tab's first view and every deep link stays. A read that failed, the classifier's
+     errors or a review file gone stale show in their own Blocked on Sky line, never as an empty lens. */
+  var QUEUE_LENSES = [
+    ["needs-sam", "Needs " + DECIDER], ["ready", "Ready to check"], ["all", "All"],
+    ["connections", "Connections"], ["later", "Later"], ["history", "History"]
+  ];
+  var QUEUE_STALE_HOURS = 48;   /* the review file is rebuilt nightly; two days without a rebuild reads stale */
+  function queueLens() {
+    var id = state.qLens;
+    return QUEUE_LENSES.some(function (l) { return l[0] === id; }) ? id : "needs-sam";
+  }
+  function queueBlocked() {
+    var out = [];
+    if (state.error) out.push("The review file could not be read (" + state.error + "), so held titles are not counted.");
+    if (state.sw.error) out.push("Another look's file could not be read (" + state.sw.error + ").");
+    if (state.cs.error) out.push("The reference's list could not be read (" + state.cs.error + "), so the List's counts are missing.");
+    var rp = state.rq.report, cr = rp && rp.classifier_run;
+    if (cr && Array.isArray(cr.errors) && cr.errors.length) {
+      out.push("Last night's classifier answered " + fmt(cr.answered || 0) + " and reported: " + cr.errors.slice(0, 2).join("; ")
+        + (cr.errors.length > 2 ? "; and " + fmt(cr.errors.length - 2) + " more" : "") + ".");
+    }
+    var at = state.data && Date.parse(state.data.written_at);
+    if (at && Date.now() - at > QUEUE_STALE_HOURS * 3600e3) {
+      out.push("The review queue was built " + stamp(state.data.written_at) + ", more than two days ago, so its counts may be stale.");
+    }
+    return out;
+  }
+  function queueGoReview(step) {
+    state.view = "review"; state.filter = step; state.cur = 0; state.note = ""; state.openCollege = null; state.teach = false;
+    state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false; state.sw.batchMode = false;
+    render();
+    var h = document.querySelector(".exh-h");
+    if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
+  }
+  function queueGoBatch() {
+    state.sw.batchMode = true; state.sw.batch = null; state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false;
+    state.view = "review"; state.filter = SWEEP; state.note = "";
+    render();
+    var h = document.querySelector(".exh-h");
+    if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
+  }
+  /* The batch as the Start word opens it: the first six open cards. Counted without touching state.sw.batch, which
+     only the batch view itself fixes for the visit. */
+  function queueBatchSize() {
+    var d = state.sw.data;
+    if (!d) return null;
+    return Math.min(BATCH_MAX, (d.cards || []).filter(function (c) { return !state.sw.done[c.id]; }).length);
+  }
+  function queueListCounts() {
+    if (!state.cs.rows || !listApi() || typeof LIST_ENGINE.filterCounts !== "function") return null;
+    return LIST_ENGINE.filterCounts();
+  }
+  /* One entry: its count (none while unread, never a 0 standing in for a failed read), its words, and the underlined
+     word that opens the list it counts. */
+  function queueEntry(n, words, action, go) {
+    var kids = [];
+    if (n != null) kids.push(el("b", { cls: "exh-qn", text: fmt(n) }), " ");
+    kids.push(words);
+    if (go) kids.push(" ", word(action, go, { "aria-label": action + ": " + (n != null ? fmt(n) + " " : "") + words }));
+    return el("li", { cls: "exh-qe" }, kids);
+  }
+  function queueListEntry(lc, f, words, action) {
+    var n = lc ? lc[f] : null;
+    return queueEntry(n == null ? null : n, words + (lc && n == null ? " (counted once the List reads its file)" : ""),
+      action, function () { cmGo("list", f); });
+  }
+  function queueSpec(lens) {
+    var lc = queueListCounts(), have = !!state.data, cm = state.cm || {}, Q = cm.Q || null;
+    var held = have ? stepCount("") : null;
+    if (lens === "needs-sam") {
+      var calls = Q && Array.isArray(Q.calls) ? Q.calls.filter(function (c) { return !(c.answer && c.answer.words); }).length : null;
+      return { lead: "The judgments only a person can make, one small batch at a time. Each card says what is decided and on what evidence; Keep holds the title, Change records the correction, and the batch stops after its last card.",
+        entries: [
+          queueEntry(queueBatchSize(), "Another look cards in your next batch, six at most.", "Start", state.sw.data ? queueGoBatch : null),
+          queueEntry(have ? stepCount(CONFLICT) : null, "saved titles that disagree with one a person approved.", "Decide them", have ? function () { cmGo("conflict"); } : null),
+          queueEntry(have ? stepCount("Two issuers") : null, "titles with two issuers whose roles the sources do not settle.", "Review them", have ? function () { queueGoReview("Two issuers"); } : null),
+          queueEntry(calls, calls === 1 ? "decision about the reference waits on " + DECIDER + "." : "decisions about the reference wait on " + DECIDER + ".", "Read them", Q ? function () { cmGo("progress"); } : null)
+        ] };
+    }
+    if (lens === "ready") {
+      return { lead: "Machine proposals with enough source evidence to check, and no open question of policy or identity. Checking one approves that title only; it is never faculty approval of credit or a bulk acceptance.",
+        entries: [
+          queueEntry(have ? stepCount("Proposed") : null, "titles the nightly run proposed a name for.", "Check them", have ? function () { queueGoReview("Proposed"); } : null),
+          queueEntry(have ? stepCount("Wording check") : null, "titles held for a wording check.", "Check them", have ? function () { queueGoReview("Wording check"); } : null),
+          queueListEntry(lc, "suggested", "suggested folds in the List.", "Open them")
+        ],
+        after: [el("h4", { cls: "exh-qh", text: "Waiting on a process, not on a check" }), el("ul", { cls: "exh-ql" }, [
+          queueEntry(have ? (state.data.tiles && state.data.tiles.saved_not_folded || 0) : null, "titles saved and not yet folded; the nightly run adds them to the reference.", "", null),
+          queueListEntry(lc, "waiting", "folds waiting for the reviewed apply.", "Open them")])] };
+    }
+    if (lens === "all") {
+      return { lead: "The whole reference, searchable, and every title the nightly run held.",
+        entries: [
+          queueEntry(state.cs.rows ? state.cs.rows.length : null, "credentials in the reference.", "Open the List", function () { cmGo("list"); }),
+          queueEntry(held, "titles the nightly run held for a curator.", "Review them", have ? function () { cmGo("held"); } : null)
+        ] };
+    }
+    if (lens === "connections") {
+      return { lead: "What links an exhibit to colleges, courses and outcomes. A credential with no articulation is not a defect, and an outcomes match is a lead, never an identity or a credit approval.",
+        entries: [
+          queueListEntry(lc, "bare", "credentials with no articulation yet.", "Open them"),
+          queueListEntry(lc, "outcomes", "credentials whose courses' outcomes match another's.", "Open them"),
+          queueListEntry(lc, "cplai", "credentials joined to a CPL-AI recommendation.", "Open them"),
+          queueListEntry(lc, "statewide", "credentials based on a statewide articulation.", "Open them"),
+          queueListEntry(lc, "local", "credentials articulated locally only.", "Open them")
+        ] };
+    }
+    if (lens === "later") {
+      return { lead: "What waits by choice. Titles that have left MAP keep their links, so a title that comes back finds its history.",
+        entries: [queueListEntry(lc, "left", "titles that have left MAP.", "Open them")],
+        after: [el("p", { cls: "exh-small exh-muted", text: "Park is not yet a lasting status: Skip in Another look sets a card aside for this visit only, and the card returns on the next one." })] };
+    }
+    var visit = state.sw.history.length;
+    return { lead: "What was decided and where it stands. This visit's decisions last only the visit; saved titles and rule runs are the lasting record.",
+      entries: [
+        queueEntry(visit, visit === 1 ? "Another look decision this visit (this visit only)." : "Another look decisions this visit (this visit only).", "", null),
+        queueListEntry(lc, "changed", "credentials changed in the List this visit (this visit only).", "Open them"),
+        queueListEntry(lc, "waiting", "folds saved and waiting for the reviewed apply (saved, not applied).", "Open them"),
+        queueEntry(state.rq.rows ? state.rq.rows.length : null, "rule requests and their runs (lasting).", "Open the rules", function () { cmGo("rules"); })
+      ] };
+  }
+  function renderQueue(wrap) {
+    wrap.appendChild(viewsNav());
+    if (!state.cs.rows && !state.cs.loading && !state.cs.error) loadCredentials().then(function () { if (state.view === "queue") render(); });
+    if (!state.cm || !state.cm.done) loadCommons().then(function () { if (state.view === "queue") render(); });
+    ensureListEngine();
+    var blocked = queueBlocked();
+    if (blocked.length) {
+      wrap.appendChild(el("div", { cls: "exh-qb", role: "status" }, [el("h3", { cls: "exh-qh", text: "Blocked on Sky" }),
+        el("ul", { cls: "exh-ql" }, blocked.map(function (t) { return el("li", { text: t }); }))]));
+    }
+    var lens = queueLens();
+    wrap.appendChild(el("nav", { cls: "exh-views", "aria-label": "Queue" }, QUEUE_LENSES.map(function (l) {
+      if (l[0] === lens) return el("span", { cls: "exh-view-on", "aria-current": "true", text: l[1] });
+      return word(l[1], function () { state.qLens = l[0]; render(); }, { cls: "exh-w exh-qw" });
+    })));
+    var spec = queueSpec(lens), name = QUEUE_LENSES.filter(function (l) { return l[0] === lens; })[0][1];
+    var sec = el("section", { cls: "exh-qs", "aria-label": name }, [
+      el("h3", { cls: "exh-qh", text: name }), el("p", { cls: "exh-small", text: spec.lead }),
+      el("ul", { cls: "exh-ql" }, spec.entries)].concat(spec.after || []));
+    wrap.appendChild(sec);
+  }
+
   function render() {
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
@@ -3430,6 +3583,10 @@
     }
     if (state.view === "progress") {
       renderProgress(wrap);
+      return;
+    }
+    if (state.view === "queue") {
+      renderQueue(wrap);
       return;
     }
     if (state.view === "list") {
@@ -3534,6 +3691,13 @@
     ".exh-line { margin:0; display:flex; flex-wrap:wrap; gap:4px 0; align-items:baseline; color:var(--text-strong); }",
     ".exh-sep { color:var(--text-muted); margin:0 .55em; }",
     ".exh-fold[hidden] { display:none; }",
+    ".exh-qs, .exh-qb { margin:12px 0; }",
+    ".exh-qb { border-left:3px solid var(--border); padding:4px 0 4px 12px; }",
+    ".exh-qh { font-size:1rem; margin:8px 0 4px; color:var(--text-strong); }",
+    ".exh-ql { list-style:none; margin:4px 0; padding:0; }",
+    ".exh-qe { margin:6px 0; line-height:1.5; }",
+    ".exh-qn { font-variant-numeric:tabular-nums; }",
+    "button.exh-w.exh-qw { display:inline-block; min-width:24px; text-align:center; }",
     ".exh-view-on { color:var(--text-strong); font-weight:600; text-decoration:underline; text-decoration-thickness:3px; text-decoration-color:var(--seal-blue-text); text-underline-offset:3px; }",
     ".exh-n { color:var(--text-muted); font-weight:400; }",
     ".exh-wrap a { color:var(--cobalt); text-underline-offset:3px; }",
@@ -3655,7 +3819,7 @@
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
     state.view = "review";
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
-    state.ls = null;
+    state.ls = null; state.qLens = "";
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     render();
@@ -3665,7 +3829,7 @@
      the reference, credentials = the List (the Credentials view retired into it), rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
   var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["list", ""],
-    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], requests: ["requests", ""], "cpl-ai": ["cpl-ai", ""] };
+    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], queue: ["queue", ""], requests: ["requests", ""], "cpl-ai": ["cpl-ai", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
@@ -3675,6 +3839,7 @@
     if (state.sw.batchMode) { state.sw.batch = null; state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false; }
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
+    if (r[0] === "queue") { state.qLens = parts[2] || ""; loadCredentials().then(render); }
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     if (r[0] === "requests") loadRequests().then(render);
     if (r[0] === "cpl-ai") { state.cplAiCode = parts[2] ? decodeURIComponent(parts[2]) : null; loadCplAi(); }
@@ -3686,6 +3851,7 @@
     var v = state.view, f = state.ls && state.ls.f;
     if (v === "list") return "exhibits/list" + (f ? "/" + f : "");
     if (v === "progress" || v === "rules" || v === "requests") return "exhibits/" + v;
+    if (v === "queue") return "exhibits/queue/" + queueLens();
     if (v === "cpl-ai") return window.CPL_EXHIBITS_CPLAI ? window.CPL_EXHIBITS_CPLAI.address() : "exhibits/cpl-ai";
     if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? (state.sw.batchMode ? "another-look/batch" : "another-look") : "held");
     return "exhibits";

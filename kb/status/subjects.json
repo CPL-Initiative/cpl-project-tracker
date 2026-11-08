@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 595,
-  "moniker": "SkyBeacon",
+  "session": 611,
+  "moniker": "SkyTadpole",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_594_handoff.md",
+  "handoff": "docs/session_612_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -16,17 +16,26 @@
         "at": "2026-10-20",
         "words": "move-both (Open Asks Sheet 107 card 1; applied by S436, kb/forestry_wine_remint_out/2026-10-20-stragglers/)"
       }
+    },
+    {
+      "title": "Six curated anchor entries the re-key dry run cannot settle",
+      "text": "Three collide with other courses on their new Common SUBJ and need fresh numbers; three hospitality entries have no MQ discipline. On no reply they stay unapplied.",
+      "link": "https://claude.ai/artifact/PUTmC3LaA2MQSu69paeqR2"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-06T22:03:38Z",
+  "written_at": "2026-11-08T19:28:59Z",
   "project": "subjects",
   "next_step": {
-    "title": "Check alignment on CR, Programs and Courses",
-    "text": "The Subjects List's codes are applied; carry Check alignment to the other Commons Lists (edit.extra; the worked examples are codeAudit and exhibitAudit)."
+    "title": "The anchor re-key's six choices",
+    "text": "The dry run settles 17 of the 21 flagged anchor entries; six wait on Sam (Open Asks Sheet 171 card 4), then the 20 apply together with an alias map and a receipt."
   },
   "changes": [
+    {
+      "text": "The anchor re-key dry run reads the anchor's era from its keys and applies only later maps: 2 re-keys, 15 prefix swaps, 6 for Sam (#2935).",
+      "at": "2026-11-08T19:28:20Z"
+    },
     {
       "at": "2026-11-06T21:14:00Z",
       "text": "A recorded note settles a weak mnemonic, and the anchor findings are their own re-key item, so nothing waits on a curator (#2857)."
@@ -50,14 +59,6 @@
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "What a Common SUBJ is, linked from the reference"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "Sam's codes synced into the reference file"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "The side session's handoff: docs/cer_redesign_handoff.md (SkyJujube to SkyKumquat)."
     }
   ]
 }

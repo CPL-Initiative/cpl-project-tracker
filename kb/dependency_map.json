@@ -4,9 +4,9 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 816,
+  "file_datasets": 817,
   "external_services": 193,
-  "consumers": 532,
+  "consumers": 533,
   "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
@@ -840,7 +840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2842,
+     "line": 2847,
      "tabs": [
       "exhibits"
      ]
@@ -1036,7 +1036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1567
+     "line": 1589
     },
     {
      "id": "module:admin.js",
@@ -1719,7 +1719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2199
+     "line": 2221
     }
    ],
    "main_committers": []
@@ -2344,7 +2344,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1177
+     "line": 1199
     }
    ],
    "main_committers": []
@@ -2363,7 +2363,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1522
+     "line": 1544
     },
     {
      "id": "module:college_briefing.js",
@@ -3045,7 +3045,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1578
+     "line": 1600
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4355,7 +4355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1863
+     "line": 1885
     }
    ],
    "main_committers": []
@@ -5417,7 +5417,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1754
+     "line": 1776
     },
     {
      "id": "module:admin.js",
@@ -5759,7 +5759,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3860,
+     "line": 3861,
      "tabs": [
       "program-requirements"
      ]
@@ -6184,7 +6184,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2494,
+     "line": 2495,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6214,7 +6214,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 866,
+     "line": 867,
      "tabs": [
       "cr-reference"
      ]
@@ -6224,7 +6224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2834,
+     "line": 2839,
      "tabs": [
       "exhibits"
      ]
@@ -6244,7 +6244,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3859,
+     "line": 3860,
      "tabs": [
       "program-requirements"
      ]
@@ -6307,7 +6307,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 897,
+     "line": 898,
      "tabs": [
       "cr-reference"
      ]
@@ -6317,7 +6317,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3114,
+     "line": 3120,
      "tabs": [
       "exhibits"
      ]
@@ -6353,7 +6353,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 895,
+     "line": 896,
      "tabs": [
       "cr-reference"
      ]
@@ -6561,7 +6561,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2138
+     "line": 2160
     },
     {
      "id": "module:college_briefing.js",
@@ -6774,7 +6774,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1237
+     "line": 1259
     },
     {
      "id": "module:cpl_funding.js",
@@ -7118,7 +7118,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 898,
+     "line": 899,
      "tabs": [
       "cr-reference"
      ]
@@ -7460,7 +7460,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2493,
+     "line": 2494,
      "tabs": [
       "canonical-subj4"
      ]
@@ -8076,7 +8076,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3393,
+     "line": 3399,
      "tabs": [
       "exhibits"
      ]
@@ -11260,6 +11260,13 @@
      "line": 57
     },
     {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 111
+    },
+    {
      "id": "script:kb/_apply_crossdisc_remint.py",
      "kind": "script",
      "direction": "read",
@@ -12082,6 +12089,13 @@
      "line": 58
     },
     {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 112
+    },
+    {
      "id": "script:kb/_apply_convergence_singletons.py",
      "kind": "script",
      "direction": "read",
@@ -12733,6 +12747,13 @@
      "direction": "write",
      "how": "literal",
      "line": 73
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -13893,6 +13914,13 @@
      "line": 8074
     },
     {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 109
+    },
+    {
      "id": "script:kb/_apply_canonical_subj4.py",
      "kind": "script",
      "direction": "read",
@@ -14487,7 +14515,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2856,
+     "line": 2861,
      "tabs": [
       "exhibits"
      ]
@@ -17739,7 +17767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1520,
+     "line": 1548,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -21506,6 +21534,19 @@
    "main_committers": []
   },
   "file:tests/american_spelling_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/anchor_rekey_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26564,7 +26605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 873
+     "line": 895
     },
     {
      "id": "module:exhibits.js",
@@ -29796,6 +29837,7 @@
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/map_key_sketch_one_pull_test.py",
+    "tests/anchor_rekey_dryrun_test.py",
     "tests/program_courses_build_test.py",
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",

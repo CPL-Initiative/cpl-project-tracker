@@ -97,6 +97,11 @@
 //                      first, A to Z }; its sort lasts the visit in L.pnSort[id]), h.fold(id, summary, kids) (a fold
 //                      that stays open or shut as the reader left it, L.pnFold[id]) and h.open(key) (show another
 //                      row's panel). L.panel holds the open row's key.
+//   trail              { home: [[words, href]], name }: the panel's trail (Sam's Commons rulings, 2026-11-08, #2921;
+//                      COBIx's filter contract): above the panel's bar, home's links, then the List's name, then the open
+//                      filter's word when one is on, then the row, separated by " / ". The List's word (or the filter's,
+//                      when one is on) is the underlined return: it closes the panel and leaves the filter, the finder and
+//                      the row's place as they were. The row's crumb is the current page and no control.
 // The line (api.line, the List norms' norm 1; Sam, 2026-11-03: "incorporating the list view below the action/metric cards
 // and make that top level collapsible while keeping the one-line action/metric links like we do elsewhere"): one line of
 // the reference's Commons row over its List, each count a control where the tab says where it opens, and the word that
@@ -1107,6 +1112,7 @@
         if (dbox.firstChild) body.insertBefore(dbox, Array.prototype.filter.call(body.children, function (c) { return c.tagName === "DETAILS"; })[0] || null);
       }
       var aside = el("aside", { id: P + "panel", cls: P + "panel", "aria-labelledby": P + "panel-t" }, [
+        panelTrail(r, close),
         el("div", { cls: P + "pbar" }, [el("span", { id: P + "panel-t", cls: P + "pt", tabindex: "-1", text: S.panel.label ? S.panel.label(r) : listTitle(r) }),
           word("Close", close, { "aria-label": "Close the panel for " + listTitle(r) })]),
         body]);
@@ -1114,6 +1120,23 @@
       panelSize(aside);
       aside.insertBefore(panelGrip(aside), aside.firstChild);
       return aside;
+    }
+    /* The panel's trail (S.trail): where the reader is, and the way back to the List as they left it. */
+    function panelTrail(r, close) {
+      var T = S.trail;
+      if (!T || !T.name) return null;
+      var L = listState();
+      var f = L.f ? (S.filters || []).filter(function (x) { return x[0] === L.f; })[0] : null;
+      var kids = [];
+      (T.home || []).forEach(function (h) { kids.push(el("a", { href: h[1], text: h[0] }), " / "); });
+      if (f) {
+        kids.push(el("span", { text: T.name }), " / ",
+          word(f[1], close, { "aria-label": "Back to " + T.name + ", " + f[1] }));
+      } else {
+        kids.push(word(T.name, close, { "aria-label": "Back to " + T.name }));
+      }
+      kids.push(" / ", el("span", { cls: P + "trail-here", "aria-current": "page", text: listTitle(r) }));
+      return el("nav", { cls: P + "trail", "aria-label": "Trail" }, kids);
     }
     /* The side panel resizes from its left edge (Sam, 2026-11-05: "make all the sidebars horizontal resizable"): drag it
        by mouse, pen or finger, or focus it and use the arrow keys (Left widens, Right narrows, Home returns the panel to
@@ -1403,6 +1426,9 @@
         "." + P + "pgrip:focus-visible{outline:2px solid var(--seal-blue);outline-offset:-2px}",
         // On a narrow window the panel wraps below the table at the full width, so a stored width never scrolls the page.
         "@media (max-width: 900px){." + P + "panel{flex:1 1 100% !important;width:auto !important;max-width:none !important}." + P + "pgrip{display:none}}",
+        "." + P + "trail{padding:6px 12px 0;font-size:.82rem;color:var(--text-muted);overflow-wrap:anywhere}",
+        "." + P + "trail a{display:inline-block;min-height:24px;line-height:24px;color:var(--cobalt);text-underline-offset:3px}",
+        "." + P + "trail-here{color:var(--text-strong)}",
         "." + P + "pbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid var(--border);background:var(--surface-subtle)}",
         "." + P + "pt{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
         "." + P + "pt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
@@ -1486,6 +1512,8 @@
     var api = {
       render: renderList, redraw: redrawList, line: line, topFolded: topFolded, setTopFolded: setTopFolded, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
+      // Each filter's count as the filter bar shows it; a filter whose data is unread has none (never a 0).
+      filterCounts: listFilterCounts,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
       // The suggestion a row shows (null once accepted or dismissed this visit), and the visit's changed set.
