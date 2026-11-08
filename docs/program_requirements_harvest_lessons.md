@@ -1141,3 +1141,14 @@ From *Course objectives too*, verbatim:
   no such sentence, so its local degrees are parked rather than given an invented step.
 - **Citing another college's statement of a statewide figure is the house pattern.** Taft, Hartnell and LMC cite
   Monterey Peninsula's page for Cal-GETC's 34; LMC's own page prints no total, so the citation stands.
+
+### S604 SkySculptor (2026-11-08, the CPL Queue routine's 06:12Z firing)
+
+- **SLOs: Contra Costa loaded.** Load 42454133971: 492 inserted, 39 skipped, receipt
+  `kb/receipts/course_outcomes_ccc_42454133971.json` with its delete (#2873). The bot's receipt commit started no `test`;
+  a `Merge main into ...` commit pushed from the session did, and the read and load gates skip it by its message.
+- **Cuesta's index landed** (42434939730), so the helper moves it to a trial. A trial is a preparation run, and the
+  index already used 2026-11-08 UTC's one, so the trial waits for 2026-11-09 on #2910.
+- **A free re-capture pays only when the pages changed.** Columbia's capture 42454382707 (`extract=0`) found 82 of 83
+  with `would_extract.kept` 82 and `programs` 0: every page reads as filed, so its 37% pass share sits in the records and
+  their reconcile steps, never in the capture. Read its failures by shape before anything else (the Los Medanos method).
