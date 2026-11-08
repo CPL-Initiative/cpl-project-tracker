@@ -89,7 +89,8 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
 (async function main() {
   // ══ 2. subscribers hear the model after its caches clear ══════════════════
   {
-    const body = src.slice(src.indexOf("  function render() {"), src.indexOf("  function render() {") + 900);
+    // render() runs renderNow() inside the per-render memo (S613); the body is renderNow's.
+    const body = src.slice(src.indexOf("  function renderNow() {"), src.indexOf("  function renderNow() {") + 1400);
     check("2a: render() clears the allocation cache before it notifies subscribers",
       body.indexOf("_allocCache = null") >= 0 && body.indexOf("_allocCache = null") < body.indexOf("notifyModel();"));
     const { T } = win();
