@@ -371,6 +371,7 @@
    * different values — the diagnostic on the expiry it is reporting, so a new
    * expiry reports itself again. */
   var LIVE_DISMISS_EXPIRED = "cobi_live_expired_dismissed";
+  var LIVE_STALE_DAYS = 14;   // how long after an expiry the MAP-team note still shows
 
   /* ⭐ THE BANNER IS FOR THE TEAM, NOT FOR COLLEGES (Sam, 2026-09-08:
    * "limit the folks who can use the banner link to users on the MAP Team
@@ -452,6 +453,13 @@
     } catch (e) { /* private window: show it */ }
 
     var ago = liveAgo(new Date(row.expires_at).getTime());
+    /* ⭐ THE DIAGNOSTIC IS FOR THE DAYS AFTER AN EXPIRY, NOT FOR EVER (COBIx #2921, S604). It exists so the person who
+     * set the row learns, soon after, why nothing shows (Sam, 2026-09-10: two days). At 49 days it sat above every
+     * COBI view, the Commons' working screen included, telling the team about a session nobody meant to restart.
+     * Past LIVE_STALE_DAYS the strip goes quiet; the banner still fails closed and still never links a dead session.
+     * An UNREADABLE expiry keeps its note: that is a broken row, not an old one. */
+    var expiredMs = new Date(row.expires_at).getTime();
+    if (ago && Date.now() - expiredMs > LIVE_STALE_DAYS * 86400000) return null;
 
     var bar = document.createElement("div");
     bar.id = "cobi-live-stale";
