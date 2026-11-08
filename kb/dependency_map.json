@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 814,
+  "file_datasets": 815,
   "external_services": 193,
   "consumers": 532,
   "workflows": 64,
@@ -21674,6 +21674,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cer_classifier_rules_size_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/cer_decision_apply_test.py": {
    "consumers": [
     {
@@ -27124,7 +27137,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 621
+     "line": 682
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -29771,6 +29784,7 @@
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
+    "tests/cer_classifier_rules_size_test.py",
     "tests/ap_official_titles_test.py",
     "tests/ib_official_titles_test.py",
     "tests/clep_official_titles_test.py",
