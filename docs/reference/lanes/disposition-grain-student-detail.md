@@ -26,8 +26,9 @@ student-level MAP data only to analyze and summarize it and never acts on an ind
 summarize, then delete. The plan (#2919, comment 6723544749), smallest first, each applied only on Sam's word:
 (1) **done** #2920: anon and authenticated lost TRUNCATE and every write on the three base tables (run 42497305017);
 (2) **done** #2922: `map_student_credit_prev` (220,588) and `stg_student_credit` (543,579) dropped, no reader, backup
-2026-11-08 09:29Z confirmed by Sam (run 42498803570); (3) `map_student_key_sketch` down to one pull (148,000 hashes over
-74 pulls today); (4) summarize-then-delete inside the load, two PRs (summaries and a backfill first, then the delete),
+2026-11-08 09:29Z confirmed by Sam (run 42498803570); (3) **built, held for Sam's word** #2932: `map_student_key_sketch` down to one pull (148,000 hashes over
+74 pulls on 2026-11-08; the loader's one read hit PostgREST's 1,000-row cap, so its keep-two cleanup never saw an
+older date). Merging deletes the 73 older pulls at the next load; (4) summarize-then-delete inside the load, two PRs (summaries and a backfill first, then the delete),
 reproducing today's dashboard, Course Credit tab and Sierra numbers before anything retires; (5) guards (no browser or
 `index.ts` names a student table; a workflow read fails if one holds rows outside the load). **What breaks without a
 replacement:** `exhibit_title_students` (the Exhibits Review ranking, distinct students across a title's exhibits at
