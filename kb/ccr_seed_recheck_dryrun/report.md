@@ -147,13 +147,26 @@ Uncurated seed cards: 12504. TOP agrees on 4100, differs on 1668, casts no vote 
 | Mortuary Science | 1 | 0 | 0 | 1 |
 | Robotics | 1 | 0 | 0 | 1 |
 
-## Kinesiology: the first batch (TOP differs, most colleges first)
+## The description signal (Sam, Sheet 173 note, 2026-11-08)
 
-| Card | Title | Colleges | TOP votes |
-|---|---|---:|---|
-| KINE M1806 | Stress Management | 22 | Health 6, Kinesiology 5, Business 1 |
-| KINE M1142 | First Aid and CPR | 12 | Health 3, Emergency Medical Technologies 1, Kinesiology 1 |
-| KINE M1847 | Sports Psychology | 7 | Kinesiology 1, Health 1 |
-| KINE M1765 | Introduction to Sports Medicine | 6 | Health 1, Kinesiology 1 |
-| KINE M1524 | Introduction to Sport and Exercise Psychology | 3 | Health 1 |
-| KINE M1656 | Healthful Living | 2 | Health 2 |
+Learned from 2935 records a curator or the subject map placed; seed cards are never training data. Held out, it names the trusted discipline 75% of the time, 88% when its margin is clear (1739 of 1981), 57% on curator-labelled records alone.
+
+| Verdict | Cards |
+|---|---:|
+| confirmed by description and top | 1964 |
+| confirmed by description | 778 |
+| for a curator | 1823 |
+| unsettled | 7939 |
+
+Kinesiology: confirmed by description and top 627, confirmed by description 30, for a curator 8, unsettled 483.
+
+## Kinesiology: the first batch for a curator (most colleges first)
+
+| Card | Title | Colleges | Description fits | TOP votes |
+|---|---|---:|---|---|
+| KINE M1142 | First Aid and CPR | 12 | Health Care Ancillaries 0.19, Fire Technology 0.16 | Health 3, Emergency Medical Technologies 1, Kinesiology 1 |
+| KINE M1738 | Water Safety Instructor | 3 | Environmental Technologies 0.16, Ethnic Studies 0.10 |  |
+| KINE M1150 | Introduction to Human Movement Anatomy | 2 | Biological Sciences 0.17, Ceramic Technology 0.09 |  |
+| KINE M1152 | Anatomy and Physiology for Yoga Teachers | 2 | Biological Sciences 0.22, Kinesiology 0.13 |  |
+| KINE M1553 | Sport in Film | 2 | Ethnic Studies 0.24, Film and Media Studies 0.18 |  |
+| KINE M1663 | Nutrition for Sports and Human Performance | 2 | Nutritional Science/Dietetics 0.36, Kinesiology 0.19 |  |

@@ -54,6 +54,24 @@ check("KINE M1005" not in everyone and "KINE M1007" not in everyone,
       "a reviewed or curated card leaves the run; got %r" % ids)
 check("KINE M1006" not in everyone, "a card with a discipline_source is not a seed card; got %r" % ids)
 
+# S612, Sam's Sheet 173 note: the description signal. A model learns from trusted records only and is scored held out.
+import _ccr_desc_signal as S  # noqa: E402
+train = [("Kinesiology", S.tokens("aerobic fitness conditioning cardiovascular exercise strength training"))] * 3 + \
+        [("Health", S.tokens("wellness nutrition disease prevention stress health behaviors"))] * 3
+m = S.Model(train)
+check(m.rank(S.tokens("strength conditioning and cardiovascular exercise"))[0][0] == "Kinesiology",
+      "the model names the discipline whose vocabulary a description shares")
+check(m.rank(S.tokens("zzz qqq")) == [], "a description with no known word casts no vote")
+ev = S.evaluate([("c%d" % i, d, t, "subject_map") for i, (d, t) in enumerate(train * 2)], folds=2)
+check(ev["all"]["n"] == 12, "every trusted record is judged once, by a model that never saw it; got %r" % ev)
+check(dry.combine("top_agrees", "desc_agrees_clear") == "confirmed_by_description_and_top",
+      "a clear description and TOP agreeing with the seed confirm it")
+check(dry.combine("top_differs", "desc_agrees_clear") == "unsettled", "TOP naming another discipline holds a confirmation")
+check(dry.combine("top_agrees", "desc_differs_clear") == "unsettled",
+      "TOP siding with the seed outvotes a lone differing description (Swimming read as water)")
+check(dry.combine("no_top", "desc_differs_clear") == "for_a_curator", "a clear differing description reaches a curator")
+check(dry.combine("top_differs", "desc_differs_thin") == "for_a_curator", "both signals naming another reach a curator")
+
 if failures:
     print("FAIL — %d problem(s):" % len(failures))
     for f in failures:
