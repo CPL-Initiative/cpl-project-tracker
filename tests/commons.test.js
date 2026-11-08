@@ -489,6 +489,52 @@ function cellText(li, title) {
     check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
   }
 
+  // the next batch, the learning line, the folds and Complete (Sam's Commons rulings, 2026-11-08, #2921; S604)
+  {
+    const C = [{ ref: "exhibit", unit: "titles", total: { placed: 1201, untouched: 1098, kept: 23, renamed: 80, moved: 0, by_procedure: 24, left: 0, looked: 103 },
+      procedures: [{ name: "classifier", placed: 896, untouched: 820, kept: 4, renamed: 53, moved: 0, by_procedure: 19, left: 0, looked: 57 }] }];
+    const withB = JSON.parse(JSON.stringify(STATUS));
+    withB.confidence = C;
+    withB.next_batch = { kind: "another-look", n: 6, of: 6, open: "#exhibits/another-look", title: "Another look at 6 exhibit titles",
+      teaches: "Keep what works, correct what does not; each answer teaches the next nightly sweep.", stop: "The batch ends when its cards are decided." };
+    withB.queue = { reasons: [{ key: "no_procedure", items: [{ ref: "cr", title: "Common CR Reference", n: 1883, words: "wordings no rule places", owner: "a curator", open: "#cr-reference/open" }] }],
+      carried: [{ ref: "requirements", title: "Program Requirements", n: 3339, words: "active programs with no record yet", owner: "the harvest", open: "#program-requirements/list/unread" }] };
+    const sub = withB.rows.filter(function (r) { return r.key === "subjects"; })[0];
+    sub.pair = [{ n: 147, of: 147, words: "disciplines with a Common SUBJ", open: "#canonical-subj4" }];
+    const b = load({ fetch: responder({ "kb/status/commons.json": withB, "kb/status/program-requirements.json": PR_LOG }) });
+    await b.M.boot();
+    const nb = b.d.querySelector(".cmn-next");
+    const kids = Array.prototype.slice.call(b.d.querySelector(".cmn-wrap").children);
+    check("batch 1: the page opens on Your next batch, before the decisions band and the queue",
+      nb && kids.indexOf(nb) === 1 && (!b.d.querySelector(".cmn-band") || kids.indexOf(nb) < kids.indexOf(b.d.querySelector(".cmn-band")))
+      && kids.indexOf(nb) < kids.indexOf(b.d.querySelector(".cmn-queue")));
+    check("batch 2: it names the batch, what the answers teach and when to stop",
+      txt(nb.querySelector("#cmn-next-h")) === "Another look at 6 exhibit titles" && /teaches the next nightly sweep/.test(txt(nb))
+      && /6 cards\. The batch ends when its cards are decided\./.test(txt(nb)) && nb.getAttribute("aria-labelledby") === "cmn-next-h");
+    const start = nb.querySelector("a.cmn-start");
+    check("batch 3: Start is a plain word that opens Another look in Exhibits, never a second card screen",
+      start && txt(start) === "Start" && start.getAttribute("href") === "#exhibits/another-look" && !b.d.querySelector(".cmn-next button"));
+    check("batch 4: no batch in the file draws no batch section", !load().d.querySelector(".cmn-next") && b.M.nextBatchSection({ n: 0 }) === null
+      && b.M.nextBatchSection({ error: "x" }) === null);
+    const learn = b.d.querySelector(".cmn-learn");
+    check("learn 1: the learning line counts what people did, from the confidence count, and calls the rest unchecked",
+      /The procedures placed 1,201 exhibit titles\. A person checked 103 and moved 0 elsewhere\. The rest are unchecked, not proven\./.test(txt(learn)));
+    check("learn 2: its word opens the trust table", (function () {
+      const f = b.d.getElementById("cmn-conf-fold"); const was = f.open; learn.querySelector("button.cmn-word").click(); return !was && f.open; })());
+    const q = b.d.querySelector(".cmn-queue:not(.cmn-conf)");
+    check("fold 1: the pools sit behind one word, closed, and say how many they hold",
+      q.querySelector("details.cmn-fold") && !q.querySelector("details.cmn-fold").open
+      && /Show the 1,883 items in the pools, and what the routines carry/.test(txt(q.querySelector("summary"))));
+    const b2 = load({ fetch: responder({ "kb/status/commons.json": withB, "kb/status/program-requirements.json": PR_LOG }) });
+    await b2.M.boot();
+    check("fold 2: the trust table starts closed", b2.d.getElementById("cmn-conf-fold") && !b2.d.getElementById("cmn-conf-fold").open);
+    const subj = b.d.querySelector('.cmn-card[data-card="subjects"]');
+    check("complete 1: a reference whose headline pair is all done reads Complete, with its own pill",
+      subj && txt(subj.querySelector(".cmn-pill")) === "Complete" && subj.querySelector(".cmn-pill-done"));
+    check("complete 2: one still in progress does not", !/Complete/.test(txt(b.d.querySelector('.cmn-card[data-card="requirements"] .cmn-pill'))));
+    check("batch 5: the new words carry no glyph", !/[←-⇿☀-➿\u{1F300}-\u{1FAFF}✔✖▶▼]/u.test(txt(nb) + txt(learn)));
+  }
+
   // every view has an address (2026-11-04): #commons/<needs|build> opens that filter word; the view reports it back
   {
     const pressed = (x) => { const b = x.d.querySelector(".cmn-filter[aria-pressed=\"true\"]"); return b && b.getAttribute("data-show"); };

@@ -1775,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 935,
+     "line": 997,
      "tabs": [
       "commons"
      ]
@@ -14838,6 +14838,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 808
+    },
+    {
      "id": "script:kb/_sweep_exhibit_titles.py",
      "kind": "script",
      "direction": "read",
@@ -25141,7 +25148,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 752,
+     "line": 802,
      "tabs": [
       "commons"
      ]
@@ -28423,7 +28430,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 730,
+     "line": 780,
      "tabs": [
       "commons"
      ]

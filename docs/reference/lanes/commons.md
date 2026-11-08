@@ -47,6 +47,8 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
+**The first view opens on one batch (Sam's Commons rulings relayed on #2921, 2026-11-08, *"yes to all"*; S604).** *Your next batch* leads the page: Another look's open cards in Exhibits, six at most (`next_batch` in `kb/status/commons.json`, from `kb/exhibits_sweep.json`), with what the answers teach and when to stop; *Start* opens `#exhibits/another-look`, so the cards and their saves stay in Exhibits. Under it one line counts what people did with the procedures' work (placed, checked, moved elsewhere; *the rest are unchecked, not proven*), its word opening the trust table. The pools and the trust table start folded. A reference whose headline pair is all done reads *Complete* (Subjects, 147 of 147); its repair jobs stay in its issues. Kept from the house rules where COBIx's mock departs: controls are underlined words, no arrows, live data only.
+
 **RULED (Sam, Open Asks Sheet 158 cards 2 and 3, 15:01Z 2026-11-02, his own call: "malone", "rename").** The CPL
 Commons first view ports into this tab in **Malone's CPL/AI look**, the first COBI tab to carry it (First Light stays the
 rule for the other tabs; this is the one departure inside COBI, beside the public pages' departure of 2026-10-24). The
