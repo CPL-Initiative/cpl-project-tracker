@@ -1918,7 +1918,10 @@
   }
 
   // ── effective-config accessors ────────────────────────────────────────
-  function base() { return window.CPL_FUNDING; }
+  // One read of the global per load (S612, COBIx #2927): under jsdom every bare `window` is a slow getter, and
+  // base() runs about a million times a render, so it cost a third of every funding test. Same object either way.
+  var WIN = window;
+  function base() { return WIN.CPL_FUNDING; }
   function selectedYears() {
     var d = base();
     var y = firstDefined(SCENARIO.years, SHARED.years, d.default_years) || [];
