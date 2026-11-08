@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-07T18:48:24Z",
-  "session": 602,
-  "moniker": "SkySombrero",
+  "written_at": "2026-11-08T01:54:32Z",
+  "session": 603,
+  "moniker": "SkyMaffei",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_603_handoff.md",
+  "handoff": "docs/session_604_handoff.md",
   "next_step": {
-    "title": "Contra Costa's course outcomes, then the next college's",
-    "text": "On Nov 8 UTC, run Contra Costa's full outcomes read in two parts, then name the next college with the outcomes picker. Los Medanos' local degrees are parked: its catalog sets general education at 24 units but never says electives make up the rest of the 60."
+    "title": "Read Contra Costa's outcomes and Cuesta's index",
+    "text": "Contra Costa's full outcomes read runs in two parts from Nov 8 01:35 UTC; load it when every part is filed. Cuesta's course index runs beside it and decides whether Cuesta gets a trial next."
   },
   "calls": [
     {
@@ -223,6 +223,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-08T01:36:00Z",
+      "text": "Contra Costa's trial read outcomes on 11 of 12 pages, so its full read started in two parts. Cuesta's course index started on its own host, the day's one preparation run."
+    },
     {
       "at": "2026-11-07T18:47:00Z",
       "text": "Palomar and Los Medanos now display with no errors. Los Medanos' own general education pages were read for free: its local degrees need 24 units of general education, and no page says electives fill the 60 units, so those degrees stay as they are rather than gaining a step the catalog does not support."

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-566 document(s).
+567 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 604 | [Session 604 handoff: Sheet 169 carried out; security steps 3 and 4 applied; Contra Costa's SLO read running](../session_604_handoff.md) | 2026-11-08 |
 | 603 | [Session 603 handoff: security step 3 built and held for Sam; the k=10 check and a failure watch run unattended; LMC's GE page read](../session_603_handoff.md) | 2026-11-07 |
 | 602 | [Session 602 handoff: the stale KPI scrape fixed; security asks on the sheet; the COBIx inbox routine waits for Sam](../session_602_handoff.md) | 2026-11-07 |
 | 601 | [Session 601 handoff: Coalinga displayed; Palomar's Chemistry reread and built; Los Medanos' failures read and a Cal-GETC step](../session_601_handoff.md) | 2026-11-07 |

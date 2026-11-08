@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-07
+updated: 2026-11-08
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 99 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 566 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1407** | |
+| Session handoffs | 567 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1408** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-08 SkyMaffei (S603, Sam's session): Sheet 169 answered and carried out: security step 3 applied and read back (#2901), the noncredit category table designed through Governance and held for its picker (DR-33, #2908); security step 4 applied: the KPI history guard (#2907) and the budget logo policy through the runner, which now takes `project=` (#2909); Contra Costa's SLO full read and Cuesta's index started (#2873, #2910).
 - 2026-11-07 SkySombrero (S602, Sam's session): Palomar and Los Medanos displayed; LMC's GE page read and its local degrees parked; the ECHT CompTIA four read as course exams; security step 3 built and held (#2901); the k=10 check (#2903) and the failure watch (#2905); statewide_kpi_test fixed (#2902); Open Asks Sheet 169 (#2904); light checkpoint; `docs/session_603_handoff.md`.
 - 2026-11-07 SkyMilkyWay (S601, Sam's session): the stale KPI scrape fixed (#2892 fail loudly, #2893 header, #2897 reason in the tail, #2898 encoded secret; scrape lands 16:09Z); Open Asks Sheets 167 and 168 (security asks reach the sheet, #2895, #2896); the Sky: COBIx inbox routine drafted for Sam's review (#2894, routine disabled); light checkpoint; `docs/session_602_handoff.md`.
 - 2026-11-07 SkyTriangulum (S599, CPL Queue routine, 12:12Z): DSP Credit Starting Points Version 3 from Sam's Revise request, in ELL IET Version 5's form, stored as the card's draft (#2883, CPLBrain#707); Coalinga merged (#2882) and displaying; Palomar's clean re-capture, Chemistry extracting; Los Medanos adds nothing; `docs/session_600_handoff.md`.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-07 SkyCartwheel (S595, CPL Queue routine, 08:12Z): S594's #2874 merged; Siskiyous 73 of 77 on the new reader, extraction 42354853403 running; Lake Tahoe's SLO load pushed (#2833); Contra Costa's full read due 2026-11-08; light checkpoint; `docs/session_596_handoff.md`.
 - 2026-11-06 SkyHarbor (Library side session): SkyBeacon's PRs merged (#2858, #2859, CPLBrain#694); Add your credential live (#2860, DR-32); the Library List sorts loose pieces by date (#2861); Moreno Valley's HES 1 claim on HIST 150 held, no Basic Military Training on world history (#2862); CPL Pathways opens on every college with the Credential Catalog inside, full width (#2863); full checkpoint; `docs/library_handoff.md`.
 - 2026-11-06 SkyBeacon (Library side session): the ask rule (#2854); the CER retire path and Sam's 1 yes, 2 yes written and folded by the rename (#2855); the Catalog's badges and a college's first view (#2856); the Commons first view from Sam's recording and the lapsed-token fix on every surface (#2857); COCI Lookup named Courses and Programs (#2858); `library_lessons.md` compacted into `library_lessons_archive_2.md`; full checkpoint; `docs/library_handoff.md`.
-- 2026-11-06 SkyLantern (Library side session): the Catalog's List one line a credential, tiles that follow the filters, lazy loading (#2850); CPL-AI hosted whole, joined to the common exhibits and shown in Exhibits (#2851, #2853); seven title moves and the ServSafe fold written through a reviewed plan (#2852; receipt on main); Sam's word that CPL-AI goes public; the badges mock approved; full checkpoint at the context WARN; `docs/library_handoff.md`.
