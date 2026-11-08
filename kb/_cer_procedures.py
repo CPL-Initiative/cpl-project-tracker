@@ -363,10 +363,33 @@ def load_cred_issuers(path=CREDENTIALS):
 
 # ── the classifier ───────────────────────────────────────────────────────────
 
-def rules_text(procs, skill_text, families):
+# The Edge Function refuses standing rules over this many characters with an HTTP 413
+# (chatbox/supabase/functions/cer-classify/index.ts MAX_RULES). The run fits under it, with room
+# to spare, rather than send a call it knows will be refused: from 2026-11-07 the house families
+# alone ran to ~210,500 of 251,866 characters, every call came back 413, and the titles waiting
+# on the classifier showed only as a count (COBIx #2921, S604).
+RULES_LIMIT = 250000
+RULES_BUDGET = 240000
+
+_WORD = re.compile(r"[a-z0-9+#]{3,}")
+_STOP = {"and", "the", "for", "with", "certificate", "certification", "certified", "course", "level",
+         "program", "training", "exam", "license", "credential"}
+
+
+def _words(t):
+    return {w for w in _WORD.findall(str(t or "").lower()) if w not in _STOP}
+
+
+def rules_text(procs, skill_text, families, budget=None, prefer=()):
     """The classifier's standing instructions: the skill, every guidance
     procedure in force, the rule procedures for context, and the house
-    families it should join rather than re-name."""
+    families it should join rather than re-name.
+
+    With a budget, the families shrink until the text fits: first the issuer
+    lists go from families that share no word with the titles being asked
+    (`prefer`), then those families go, leaving every family that shares a
+    word with the batch, issuers and all. A family the batch could join is
+    never the one dropped."""
     lines = [skill_text.rstrip(), "", "---", "", "# Procedures in force",
              "",
              "Sam adds procedures as the work goes. Apply every one below; when a "
@@ -380,10 +403,30 @@ def rules_text(procs, skill_text, families):
               "Titles already in the reference, each with its issuer. Join one of these "
               "names exactly when the row names the same credential (Rule 5d, Rule 8c); "
               "otherwise give a new title.", ""]
-    for title in sorted(families):
-        iss = families[title]
-        lines.append("- %s%s" % (title, (" | " + "; ".join(sorted(iss))) if iss else ""))
-    return "\n".join(lines) + "\n"
+    want = set()
+    for t in prefer:
+        want |= _words(t)
+    near = {t for t in families if _words(t) & want}
+
+    def fam_line(title, with_issuers):
+        iss = families[title] if with_issuers else ()
+        return "- %s%s" % (title, (" | " + "; ".join(sorted(iss))) if iss else "")
+
+    def render(issuers_for, keep):
+        fam = [fam_line(t, t in issuers_for) for t in sorted(families) if t in keep]
+        dropped = len(families) - len(keep)
+        tail = (["", "(%d further house families share no word with these titles and are not listed.)" % dropped]
+                if dropped else [])
+        return "\n".join(lines + fam + tail) + "\n"
+
+    every = set(families)
+    text = render(every, every)
+    if budget is None or len(text) <= budget:
+        return text
+    text = render(near, every)
+    if len(text) <= budget:
+        return text
+    return render(near, near)
 
 
 # ── the college's own course, for a title that is only a code ──────────────
@@ -812,8 +855,12 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         families = {}
         for t, recs in json.load(open(CREDENTIALS, encoding="utf-8")).items():
             families[t] = {(r.get("issuing_agency") or "").strip() for r in recs if isinstance(r, dict)} - {""}
-        rules = rules_text(procs, open(SKILL, encoding="utf-8").read(), families)
         ask = need[:classify_n]
+        rules = rules_text(procs, open(SKILL, encoding="utf-8").read(), families, budget=RULES_BUDGET, prefer=ask)
+        if len(rules) > RULES_LIMIT:
+            sys.exit("classifier: the standing rules are %d characters with every family trimmed; the Edge Function "
+                     "takes %d. Shorten the skill or the procedures." % (len(rules), RULES_LIMIT))
+        print("classifier: standing rules %d characters (budget %d)" % (len(rules), RULES_BUDGET))
         rows = [classifier_row(r, cards[r].get("colleges"), raw_meta.get(r) or {}, hints.get(r, []))
                 for r in ask]
         got, calls = classify(rows, rules, key, call=call)

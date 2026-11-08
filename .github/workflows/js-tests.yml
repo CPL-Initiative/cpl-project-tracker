@@ -391,6 +391,10 @@ jobs:
       # card 2).
       - name: CER procedures run settles, holds, and saves only what is sure
         run: python3 tests/cer_procedures_test.py
+      # The classifier's standing rules fit the Edge Function's MAX_RULES (COBIx #2921, S604): from
+      # 2026-11-07 every call came back HTTP 413 and the waiting titles showed only as a count.
+      - name: CER classifier rules fit the Edge Function's limit
+        run: python3 tests/cer_classifier_rules_size_test.py
       # The official AP names (Sam, 2026-10-31, from the Exhibits tab): an AP title takes College
       # Board's exam name however the college wrote it; a title naming two exams is held.
       - name: AP titles fold under College Board's official exam names
