@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T10:25:32Z",
-  "session": 607,
-  "moniker": "SkyBode",
+  "written_at": "2026-11-08T12:40:00Z",
+  "session": 608,
+  "moniker": "SkyCondor",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_608_handoff.md",
+  "handoff": "docs/session_609_handoff.md",
   "next_step": {
-    "title": "Columbia's local degrees, then Redwoods",
-    "text": "Columbia's transfer degrees now pass (52 of 82). Its own catalog prints 21 units for its general education pattern and a 60-unit minimum, so its local degrees are being read again; then Redwoods' failing records are read the same way."
+    "title": "Redwoods' transfer degrees, then its local degrees",
+    "text": "Columbia's local degrees now pass too (78 of 82). Redwoods' transfer pages name the statewide transfer pattern with no units, so they are being read again with its 34; its local degrees wait on a read of its own general education page."
   },
   "calls": [
     {
@@ -223,6 +223,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-08T12:40:00Z",
+      "text": "Columbia moved from 52 to 78 of 82 programs passing on its own catalog's figures: 21 units for its general education pattern and a 60-unit minimum. Redwoods' 14 failing transfer degrees are being read again with the transfer pattern's 34 units."
+    },
     {
       "at": "2026-11-08T10:25:00Z",
       "text": "Columbia's 21 transfer degrees moved to passing (31 to 52 of 82). Its general education page prints 21 units and its degree page a minimum of 60, so its local degrees are being read again with those figures."
@@ -517,7 +521,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-08T11:12:00Z"
+    "at": "2026-11-08T13:12:00Z"
   },
   "harvest": {
     "day": "2026-11-08",

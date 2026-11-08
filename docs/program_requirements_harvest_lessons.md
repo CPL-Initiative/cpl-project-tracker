@@ -1124,6 +1124,21 @@ From *Course objectives too*, verbatim:
   Ecological Forestry 12031). Each major passes its own program check, so the sum is the catalog's and *a minimum of
   60* is met; no misread hides under the floor (Fable's caveat at Monterey Peninsula, S535).
 
+### S608 SkyCondor (2026-11-08, the CPL Queue routine's 12:12Z firing)
+
+- **Columbia's local-degree steps landed: 52 to 78 of 82**, as simulated. Reconcile 42471133430, reread 42479331475
+  (27 replaced, before-values), display build `437d468743b9`. The 4 left are single misreads, filed as read.
+- **A display apply reports `failure` on the 3 missing Monterey Peninsula rows.** Run 42470928680 wrote 17,557 of 17,560
+  with 0 errors and the job still ended red. Read the applied record (`written`, `missing`, `errors`) before calling
+  a display run failed; the 3 rows are the ones the table no longer holds (S592's note).
+- **Redwoods reads like Columbia.** Of its 35 failures, 14 transfer degrees name CalGETC with no units and fail as
+  `incomplete`, and 8 local degrees name the 60 and no GE (`unequal`). The rest are single misreads and 7 coverage
+  failures. Page read 42479757804 (`kb/college_reads/redwoods_ge_units.json`) found the transfer
+  pages' *"including the CalGETC General Education requirements"*; a Cal-GETC 34 step (simulated, 14 of 14 pass) runs in
+  reconcile 42480098144 on #2918.
+- **An eLumen GE page can render no text to the reader.** Redwoods' `grad5` (Cal-GETC) loaded with status 200 and only
+  its menu, so the statewide 34 keeps the house citation. Try the page's Print link (`api-prod.elumenapp.com`) for `grad4`.
+
 ### Moved from the lane (S607): Siskiyous, Palomar and Coalinga, as they stood
 
 **Siskiyous (S594-S596, #2877): 66 of 73 passing on the current eLumen reader** (73 of 77 found; was 42 of 65). Extraction 42354853403 ($4.86), load 42359009832 (8 inserted), reread 42359184639 (65 replaced; receipt with before-values), display build 6c1c41f71db3, merged (#2877). Display applied on `main` (run 42360530754: 17,555 of 17,558, 0 errors, the 3 missing Monterey Peninsula rows the table no longer holds; record `9c11f641`). The 7 failing are arithmetic; read them before a reconcile.

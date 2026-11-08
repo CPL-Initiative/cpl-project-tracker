@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 571 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1413** | |
+| Session handoffs | 572 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1414** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-08 SkyCondor (S608, CPL Queue routine, 12:12Z): Columbia 52 to 78 of 82 passing, reread and displayed (#2917, carrying #2916 and #2915); Redwoods read by shape and a Cal-GETC 34 step for its transfer degrees, reconcile 42480098144 in flight (#2918); light checkpoint; `docs/session_609_handoff.md`.
 - 2026-11-08 SkyFornax (S606, CPL Queue routine, 09:12Z): S605's #2915 carried on #2916; Columbia's Cal-GETC reconcile step for transfer degrees, reconcile 42466476925 in flight; light checkpoint; `docs/session_607_handoff.md`.
 - 2026-11-08 SkyMaffei (S603, Sam's session): Sheet 169 answered and carried out: security step 3 applied and read back (#2901), the noncredit category table designed through Governance and held for its picker (DR-33, #2908); security step 4 applied: the KPI history guard (#2907) and the budget logo policy through the runner, which now takes `project=` (#2909); Contra Costa's SLO full read and Cuesta's index started (#2873, #2910).
 - 2026-11-07 SkySombrero (S602, Sam's session): Palomar and Los Medanos displayed; LMC's GE page read and its local degrees parked; the ECHT CompTIA four read as course exams; security step 3 built and held (#2901); the k=10 check (#2903) and the failure watch (#2905); statewide_kpi_test fixed (#2902); Open Asks Sheet 169 (#2904); light checkpoint; `docs/session_603_handoff.md`.

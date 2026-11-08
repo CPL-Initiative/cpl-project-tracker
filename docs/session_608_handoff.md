@@ -3,7 +3,7 @@ title: "Session 608 handoff: Columbia 31 to 52 passing; its local degrees get CC
 date: 2026-11-08
 session: 607 (SkyBode, the CPL Queue routine's 10:12Z firing, 2026-11-08)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
-status: current
+status: superseded
 ---
 
 # You are Session 608
