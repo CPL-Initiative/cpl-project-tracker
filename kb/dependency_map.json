@@ -27130,7 +27130,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 664
+     "line": 682
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
