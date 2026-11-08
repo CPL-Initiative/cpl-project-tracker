@@ -859,7 +859,9 @@
     if (listFailed) { node.innerHTML = '<div class="crr-warn" role="alert">The List (commons_list.js) could not be loaded. Progress still reads; reload the tab to try again.</div>'; return; }
     node.innerHTML = '<div class="crr-info">Loading the List&hellip;</div>';
     var T = window.CPL_TABS;
-    if (listLoading || !T || typeof T.loadScript !== "function") return;
+    /* With no loader the List can never arrive: say so instead of leaving "Loading the List" up (COBIx #2921, S604). */
+    if (!T || typeof T.loadScript !== "function") { listFailed = true; node.innerHTML = '<div class="crr-warn" role="alert">The List (commons_list.js) could not be loaded. Progress still reads; reload the tab to try again.</div>'; return; }
+    if (listLoading) return;
     listLoading = true;
     T.loadScript("commons_list.js", "CPL_COMMONS_LIST", function () {
       listLoading = false;
