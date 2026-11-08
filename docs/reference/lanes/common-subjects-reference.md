@@ -171,20 +171,6 @@ Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../..
 
 ## NEXT
 
-**APPLIED: the Subjects List recode (SkyKumquat, 2026-11-05; Sam's "Apply now" in session ~01:58Z).** The eleven
-codes Sam saved on the List on 2026-11-04 landed with their identities in one window (`kb/_subjects_list_recode.py`,
-receipt `kb/subjects_list_recode_out/2026-11-05/`, in ALIAS_MAPS): CSAI to CSIS, BCST to BRDC, CNSR to CBIT, CNSC to
-WWKC, AUTD to DIES, ESCI to ENVS, CSTF to WWKF, GRAF to GFCD, PLGL to PARA, NRSV to VNRS, and Media Production FTVE to
-FMED, which ends its 2026-09-03 fan-in with Film (C-ID's code for those courses stays FTVE; his note names it). 2,389
-ids: 2,024 kept their number, 360 gap-filled past slots earlier re-mints used, one returned to its own id. P3 by hash:
-live `kb_curation` equaled the committed overlay over 1,409 keys. Fold-verify 7 (the by-design residue);
-`subject_collision_signal` 113 to 115 (FMED M1166 and M1167, audio courses a curator filed under Media Production whose
-file discipline says Film). Two blank-discipline rows (BRDC M1061 *Media Literacy*, GFCD M1051 *Introduction to
-Virtual Production*) lost the discipline the old code implied and joined the blanks worklist. After the merge:
-`supabase-rekey.yml` with the receipt, the read-back, then `daily-dashboard.yml`. **Watch:** CSIS and ENVS are local
-codes `kb/reference/subject_discipline_map.json` maps to Computer Information Systems and Biological Sciences, so any
-blank-discipline row minted on them later would be edge-filled wrong; none exists today.
-
 **Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 
 **For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
@@ -209,7 +195,7 @@ and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-course
 `cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
 (495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
 
-**The anchor re-key dry run (S611, Sam's Commons ruling 3, #2921).** `kb/_anchor_rekey_dryrun.py` (read-only; `kb/anchor_rekey_dryrun/report.md`) takes the scan's 21 cs9 anchor findings in `kb/common_courses.json` through the pending maps only: the anchor carries no `_rekeyed_through`, so its era is read from its keys (baseline the 2026-09-04 prefix fold) and a mixed era aborts. A whole-chain read sent GRAF M10IB to CRIM M11SD. Result: 2 re-keys the 2026-11-05 recode decided (AUTD M10FX, FY to DIES), 15 prefix swaps onto unused ids (CNSR to CBIT 7, FTVE to FMED 3, GRAF to GFCD 5), and 6 for a person: AUTD M10FZ, PLGL M10IA and M10IB collide with other courses on the canonical and need fresh numbers, and the three dead-format HOSP keys need an M-ID. Nothing is applied; the apply, with its alias map and receipt, waits on the six.
+**The anchor re-key dry run (S611, #2935; Sam's Commons ruling 3, #2921).** `kb/_anchor_rekey_dryrun.py` (read-only; `kb/anchor_rekey_dryrun/report.md`) takes the scan's 21 cs9 anchor findings in `kb/common_courses.json` through the pending maps only: the anchor carries no `_rekeyed_through`, so its era is read from its keys (baseline the 2026-09-04 prefix fold) and a mixed era aborts. A whole-chain read sent GRAF M10IB to CRIM M11SD. Result: 2 re-keys the 2026-11-05 recode decided (AUTD M10FX, FY to DIES), 15 prefix swaps onto unused ids (CNSR to CBIT 7, FTVE to FMED 3, GRAF to GFCD 5), and 6 for a person: AUTD M10FZ, PLGL M10IA and M10IB collide with other courses on the canonical and need fresh numbers, and the three dead-format HOSP keys need an M-ID. Nothing is applied; the apply, with its alias map and receipt, waits on the six (**NEEDS SAM, Open Asks Sheet 171 card 4, 2026-11-08**). The HOSP entries' disciplines, Travel Services and Hotel and Motel Services, are not in the MQ registry, so neither has a Common SUBJ.
 
 **Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
 the discipline-blank worklist for a curator; the Commons' remaining Progress

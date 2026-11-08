@@ -746,3 +746,36 @@ card for Sam.
   filled buttons, arrows and example times were illustration (COBIx agreed on #2921).
 - **A palette lives in two places.** `commons_look.js` mirrors `commons.js`'s tokens and `commons_look.test.js` pins them;
   a new token goes in both.
+
+## 2026-11-06 — the first view, from Sam's recording (moved from the lane, S611)
+
+Moved verbatim from `docs/reference/lanes/commons.md` at the S611 checkpoint (the lane was over its 20 KB budget; it states current truth).
+
+**FIXED: the first view, from Sam's recording (SkyBeacon, 2026-11-06, #2857).** Sam: *"I don't think the various items
+and procedures are updating and wired properly."* (1) Details: a completed decision sheet's line widened its cell over
+*Last run* and past the card (3,414px in a 1,920px window) because each Details list is a grid with an auto column; one
+`minmax(0, 1fr)` column cuts it with its ellipsis. (2) Subjects: the card's 30 scan findings were 9 weak mnemonics Sam had
+noted on Nov 5 and 21 anchor entries keyed off a Common SUBJ that changed; a recorded note now settles a weak mnemonic
+(`cs6_mnemonic_noted`, `kb/_csr_trail.py`), and the anchor findings are their own re-key item beside the identity codes,
+on the card and the Subjects page (one skip list). (3) Mark done and the done marks: the card read a lapsed reviewer token
+as signed out, so Sam's Monterey mark (saved on CPL Pathways, 19:29Z) never left the band; it now renews first and re-reads
+on the keeper's announcement ([`reviewer-session-lifetime`](reviewer-session-lifetime.md)). The write stays reviewer-only.
+**COCI Lookup is named Courses and Programs** (Sam, 2026-11-06, #2858); the tab key and every `#coci-lookup/...` address
+stay.
+
+## 2026-11-08 — S611 SkyTadpole: the Exhibits Queue and the panel trail
+
+- **A lens is a set of entry points, counted from the set it opens.** The Queue (#2933) holds no list of its own. Each
+  entry reads the count from the same eligibility set its word opens: Review's `stepCount`, the List engine's own
+  `filterCounts` (exposed for this, so the Queue never restates a filter), and the capped batch counted without fixing
+  it. A headline that counts a different set than the one it opens is the failure COBIx named on #2921.
+- **An unread count shows no number.** The List's `uncounted` filters (the outcomes match, CPL-AI, titles that have left
+  MAP) have no count until their file loads; the Queue says so in words rather than print a 0.
+- **Lane prose cannot say the lens's name.** The open-asks builder reads `NEEDS SAM` case-insensitively in every lane
+  file, so a lane line naming the lens *Needs Sam* broke `check_generated.sh` as an uncovered ask. The lane says *the
+  calls for Sam*; the rendered UI keeps the ruled word.
+- **`all:unset` wins a tie.** A width rule for the lens words lost to the later `button.exh-w { all:unset }` at equal
+  specificity, so the a11y run still measured "All" at 17.8px; `button.exh-w.exh-qw` fixed it. Same in the panel trail:
+  an inline link is 16px tall until it is `inline-block` with a 24px minimum.
+- **One shared change, every List.** The trail (#2934) is a spec field on the shared engine, so the four Commons Lists
+  with a panel got it from one renderer and one test.

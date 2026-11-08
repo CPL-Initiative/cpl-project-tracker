@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 577,
+   "count": 578,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7848,7 +7848,9 @@
       "credential_reference.js",
       "tests/cer_overlay_pagination.test.js",
       "program_requirements.js",
-      "tests/program_requirements.test.js"
+      "tests/program_requirements.test.js",
+      "kb/_sync_map_custom_reports.py",
+      "tests/map_key_sketch_one_pull_test.py"
      ],
      "path": "docs/kb-notes/methodology-paginate-postgrest-reads.md",
      "status": "published",
@@ -7863,7 +7865,7 @@
      ],
      "title": "Paginate every PostgREST read that can outgrow 1,000 rows",
      "type": "methodology",
-     "updated": "2026-10-13"
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-07-11",
@@ -8182,6 +8184,26 @@
      "title": "Read a single-page catalog through its own content call, not by rendering",
      "type": "methodology",
      "updated": "2026-10-13"
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [
+      "kb/alias_chain.py",
+      "kb/_anchor_rekey_dryrun.py",
+      "tests/anchor_rekey_dryrun_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-read-a-documents-era-from-its-keys.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "m-id",
+      "alias-chain",
+      "remint",
+      "rule-7"
+     ],
+     "title": "Read an id-keyed document's era from its keys before applying an alias chain",
+     "type": "methodology",
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-10-02",
@@ -16675,8 +16697,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 574,
+   "count": 575,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 612,
+     "path": "docs/session_612_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "disposition-grain-student-detail",
+      "map-custom-reports",
+      "cpl-memory"
+     ],
+     "title": "Session 612 handoff: the Exhibits Queue and the panel trail ship, the anchor re-key dry run, the key sketch held for Sam",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-08",
      "governs": [],
@@ -26425,5 +26465,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1417
+ "total": 1419
 }

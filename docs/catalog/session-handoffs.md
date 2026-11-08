@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-574 document(s).
+575 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 612 | [Session 612 handoff: the Exhibits Queue and the panel trail ship, the anchor re-key dry run, the key sketch held for Sam](../session_612_handoff.md) | 2026-11-08 |
 | 611 | [Session 611 handoff: student-level rows ruled out of COBI, the Commons opens on one batch, the classifier answers again](../session_611_handoff.md) | 2026-11-08 |
 | 610 | [Session 610 handoff: Redwoods 53 of 73 passing and displayed (#2918)](../session_610_handoff.md) | 2026-11-08 |
 | 609 | [Session 609 handoff: Columbia 78 of 82 passing and displayed; Redwoods read by shape, its GE page read on #2918](../session_609_handoff.md) | 2026-11-08 |

@@ -1,7 +1,7 @@
 ---
 title: "Paginate every PostgREST read that can outgrow 1,000 rows"
 created: 2026-07-08
-updated: 2026-10-13
+updated: 2026-11-08
 kb-status: published
 tags: [methodology, supabase, postgrest, pagination, overlay, cer, silent-truncation]
 artifacts:
@@ -9,6 +9,8 @@ artifacts:
   - tests/cer_overlay_pagination.test.js
   - program_requirements.js
   - tests/program_requirements.test.js
+  - kb/_sync_map_custom_reports.py
+  - tests/map_key_sketch_one_pull_test.py
 related:
   - "[[docs/exhibit_canonicalization_lessons]]"
   - "[[docs/kb-notes/methodology-refresh-token-before-write]]"
@@ -103,3 +105,13 @@ changed read, check `edge_logs` for each request's status,
 `response.headers.content_range` and `response.origin_time`.
 Worked example: #2088, #2089, #2090; lessons S384 in
 `docs/program_requirements_harvest_lessons.md`.
+
+## A cleanup that reads first (2026-11-08, S611)
+
+The cap also silences a cleanup. The MAP loader's `write_sketch` read every stored pull with one `limit=200000` GET to
+learn which dates to delete. The answer stopped at 1,000 rows, all from the newest pull, so the delete loop never saw
+an older date: 74 pulls piled up where two were meant to stay, and nothing errored for 81 days. Two habits fix both
+halves. Ask the server the narrow question (one row: the previous date) and page only the rows you need, until an
+empty page, never a short one. Then delete by predicate on the server (`pull_date=neq.<today>`) instead of by the list
+a capped read returned. The guard's fake must enforce a cap too: one that returns everything passes the bug.
+

@@ -636,3 +636,33 @@ report as the starting list, but that tool re-sequences (452 curated collisions 
 re-key had no blocker at all. CI found what local tests did not: the suggestions file and the ROEP mirror. The first had
 to be re-keyed, the second left alone because its records keep their ids. A `git clean` of `kb/` deleted the untracked
 planner once; commit a planner before rehearsing with it.
+
+## 2026-11-05 — the Subjects List recode applied (moved from the lane, S611)
+
+Moved verbatim from `docs/reference/lanes/common-subjects-reference.md` at the S611 checkpoint (the lane was over its 20 KB budget; it states current truth).
+
+**APPLIED: the Subjects List recode (SkyKumquat, 2026-11-05; Sam's "Apply now" in session ~01:58Z).** The eleven
+codes Sam saved on the List on 2026-11-04 landed with their identities in one window (`kb/_subjects_list_recode.py`,
+receipt `kb/subjects_list_recode_out/2026-11-05/`, in ALIAS_MAPS): CSAI to CSIS, BCST to BRDC, CNSR to CBIT, CNSC to
+WWKC, AUTD to DIES, ESCI to ENVS, CSTF to WWKF, GRAF to GFCD, PLGL to PARA, NRSV to VNRS, and Media Production FTVE to
+FMED, which ends its 2026-09-03 fan-in with Film (C-ID's code for those courses stays FTVE; his note names it). 2,389
+ids: 2,024 kept their number, 360 gap-filled past slots earlier re-mints used, one returned to its own id. P3 by hash:
+live `kb_curation` equaled the committed overlay over 1,409 keys. Fold-verify 7 (the by-design residue);
+`subject_collision_signal` 113 to 115 (FMED M1166 and M1167, audio courses a curator filed under Media Production whose
+file discipline says Film). Two blank-discipline rows (BRDC M1061 *Media Literacy*, GFCD M1051 *Introduction to
+Virtual Production*) lost the discipline the old code implied and joined the blanks worklist. After the merge:
+`supabase-rekey.yml` with the receipt, the read-back, then `daily-dashboard.yml`. **Watch:** CSIS and ENVS are local
+codes `kb/reference/subject_discipline_map.json` maps to Computer Information Systems and Biological Sciences, so any
+blank-discipline row minted on them later would be edge-filled wrong; none exists today.
+
+## 2026-11-08 — S611 SkyTadpole: a document with no era stamp is read from its keys
+
+- **The curated anchor (`kb/common_courses.json`) carries no `_rekeyed_through`.** Running the whole alias chain over
+  it sent GRAF M10IB, an id the 2026-09-03 Z-band retirement re-used, to CRIM M11SD through the 2026-06-12 fold, which
+  had moved an earlier-era GRAF M10IB. Nothing errored.
+- **The era is evidence, not a guess.** `kb/_anchor_rekey_dryrun.py` takes each key's producer (the latest map with it
+  as an output), the baseline is the latest producer (the 2026-09-04 prefix fold), and the run refuses if any key is an
+  input to a map between its own producer and the baseline. Then only the pending maps apply.
+- **The recode moved minted identities, not anchor-only ids.** Eighteen anchor keys had no pending map; the recode's
+  own rule (keep the number on the new code unless it collides) gives 15 unused ids, and three collide with different
+  courses (*Power Systems 1*, *Civil Procedures 1*, *Elder Law*) and need fresh numbers.
