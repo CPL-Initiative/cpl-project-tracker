@@ -209,6 +209,8 @@ and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-course
 `cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
 (495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
 
+**The anchor re-key dry run (S611, Sam's Commons ruling 3, #2921).** `kb/_anchor_rekey_dryrun.py` (read-only; `kb/anchor_rekey_dryrun/report.md`) takes the scan's 21 cs9 anchor findings in `kb/common_courses.json` through the pending maps only: the anchor carries no `_rekeyed_through`, so its era is read from its keys (baseline the 2026-09-04 prefix fold) and a mixed era aborts. A whole-chain read sent GRAF M10IB to CRIM M11SD. Result: 2 re-keys the 2026-11-05 recode decided (AUTD M10FX, FY to DIES), 15 prefix swaps onto unused ids (CNSR to CBIT 7, FTVE to FMED 3, GRAF to GFCD 5), and 6 for a person: AUTD M10FZ, PLGL M10IA and M10IB collide with other courses on the canonical and need fresh numbers, and the three dead-format HOSP keys need an M-ID. Nothing is applied; the apply, with its alias map and receipt, waits on the six.
+
 **Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
 the discipline-blank worklist for a curator; the Commons' remaining Progress
 views (Exhibit, Course, CR) from the same module.
