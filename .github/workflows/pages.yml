@@ -103,7 +103,9 @@ jobs:
           # So is last night's procedures report, kb/cer_procedures_out/latest.json: Exhibits, the CER tab and the
           # Exhibits progress read it, and it 404'd while pruned (COBIx #2921, S604). Its summary is already public in the repo.
           for d in _site/kb/*_out; do
-            if [ "$d" = "_site/kb/csr_out" ] || [ "$d" = "_site/kb/cer_procedures_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +; else rm -rf "$d"; fi
+            if [ "$d" = "_site/kb/csr_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +;
+            elif [ "$d" = "_site/kb/cer_procedures_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +;
+            else rm -rf "$d"; fi
           done
           rm -rf _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
