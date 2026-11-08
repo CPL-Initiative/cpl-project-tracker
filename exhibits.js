@@ -177,7 +177,8 @@
     // Credentials the public added (Sam, 2026-11-06: "yes, build the add your credential route"), decided here.
     cs: { rows: null, error: null, loading: null, busy: "", note: "", mergeFor: "" },
     // Another look: the sweep's cards, decided this visit by card id.
-    sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
+    sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false,
+      batchMode: false, batch: null },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null,
           drafts: {},
           adopt: null, adoptErr: false, open: null, links: null },
@@ -390,17 +391,50 @@
   function loadSweep() {
     return fetch(SWEEP_URL, { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (d) { state.sw.data = d; state.sw.error = null; })
+      .then(function (d) { state.sw.data = d; state.sw.error = null; return reconcileSweep(d); })
       .catch(function (e) { state.sw.data = null; state.sw.error = String(e && e.message || e); });
+  }
+  /* The sweep is built nightly, so a card someone kept or changed since then is still in the file (COBIx on #2923).
+     Its saves are on kb_curation: a card whose local titles carry a keep, or a fold off its current title, written
+     after the sweep was built is decided, and leaves the queue and the batch. A failed read leaves the file's cards. */
+  function reconcileSweep(d) {
+    var key = anonKey(), cards = (d && d.cards) || [], since = d && d.generated_at;
+    if (!key || !cards.length || !since) return Promise.resolve();
+    var byId = {};
+    cards.forEach(function (c) { (c.locals || []).forEach(function (l) { byId[UNCLASS_PREFIX + l.raw] = c; }); });
+    var ids = Object.keys(byId);
+    if (!ids.length) return Promise.resolve();
+    var quoted = ids.map(function (i) { return encodeURIComponent('"' + i.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
+      + "&field=in.(" + [FIELD_KEPT, FIELD_SUPERSEDES].join(",") + ")"
+      + "&reviewed_at=gt." + encodeURIComponent(since)
+      + "&course_id=in.(" + quoted.join(",") + ")";
+    return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": "0-999" } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        (rows || []).forEach(function (row) {
+          var c = byId[row.course_id];
+          if (!c) return;
+          if (row.field === FIELD_KEPT || (row.field === FIELD_SUPERSEDES && row.value === c.current)) state.sw.done[c.id] = true;
+        });
+      })
+      .catch(function () { /* the file's cards stand */ });
   }
   function sweepRule(id) {
     var rules = (state.sw.data && state.sw.data.rules) || [];
     for (var i = 0; i < rules.length; i++) if (rules[i].id === id) return rules[i];
     return { id: id, label: id, tip: "" };
   }
+  /* The batch (Sam's Commons rulings, 2026-11-08, #2921 item 2): the Commons' Start opens #exhibits/another-look/batch,
+     the first six open cards, fixed for the visit, decided one by one with no bulk acceptance, then a stop. */
+  var BATCH_MAX = 6;
   function sweepShown(rule) {
     var d = state.sw.data;
     if (!d) return [];
+    if (state.sw.batchMode) {
+      if (!state.sw.batch) state.sw.batch = (d.cards || []).filter(function (c) { return !state.sw.done[c.id]; }).slice(0, BATCH_MAX).map(function (c) { return c.id; });
+      return (d.cards || []).filter(function (c) { return state.sw.batch.indexOf(c.id) >= 0 && !state.sw.done[c.id]; });
+    }
     var r = rule == null ? state.sw.rule : rule;
     return (d.cards || []).filter(function (c) { return !state.sw.done[c.id] && (!r || c.rules[0] === r); });
   }
@@ -991,7 +1025,7 @@
     if (state.sw.history.length) acts.appendChild(word("Back", swBack, { "aria-label": "Back to the previous card" }));
     acts.appendChild(word("Skip", function () { swSkip(list); }));
     box.appendChild(acts);
-    if (list.length > 1) {
+    if (list.length > 1 && !state.sw.batchMode) {
       var bulk = el("div", { cls: "exh-bulk" });
       if (!state.sw.bulkAsk) {
         bulk.appendChild(word("Accept all proposed titles (" + fmt(list.length) + ")", function () { state.sw.bulkAsk = true; render(); },
@@ -1013,12 +1047,33 @@
       el("span", { text: next ? "Next: " + next.current + " → " + next.proposed : "" })]));
     return box;
   }
+  function renderBatch(wrap) {
+    var list = sweepShown(), size = state.sw.batch ? state.sw.batch.length : 0, decided = size - list.length;
+    wrap.appendChild(el("nav", { cls: "exh-trail exh-small", "aria-label": "Where you are" }, [
+      el("a", { href: "#commons", text: "CPL Commons" }), " / ", el("a", { href: "#exhibits/another-look", text: "Another look" }), " / ",
+      el("span", { "aria-current": "page", text: "Your next batch" })]));
+    if (state.sw.cur >= list.length) state.sw.cur = Math.max(0, list.length - 1);
+    wrap.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: state.note || "" }));
+    if (!list.length) {
+      wrap.appendChild(el("section", { cls: "exh-card exh-batch-done", "aria-label": "The batch is done" }, [
+        el("h3", { cls: "exh-q", text: size ? "This batch is done" : "Nothing waits for another look" }),
+        el("p", { text: size ? "You decided " + fmt(decided) + " of " + fmt(size) + ". Each choice is saved with your name and the time, "
+          + "and the nightly sweep reads it. Stop here." : "Every card the sweep built has been decided." }),
+        el("div", { cls: "exh-acts" }, [el("a", { href: "#commons", text: "Back to the Commons" }),
+          state.sw.history.length ? word("Back", swBack, { "aria-label": "Back to the last card" }) : null].filter(Boolean))]));
+      return;
+    }
+    wrap.appendChild(el("p", { cls: "exh-small exh-batch-pos" }, ["Card " + fmt(decided + 1) + " of " + fmt(size) + " in this batch. ",
+      el("span", { cls: "exh-muted", text: "Keep what works, change what does not, or skip it for now. The batch stops when its cards are decided." })]));
+    wrap.appendChild(sweepCard(list[state.sw.cur], list));
+  }
   function shortListNames(names) {
     var s = (names || []).map(shortName).filter(Boolean);
     return s.length > 3 ? s.slice(0, 3).join(", ") + " and " + (s.length - 3) + " more" : s.join(", ");
   }
   function renderSweep(wrap) {
     var d = state.sw.data;
+    if (state.sw.batchMode) return renderBatch(wrap);
     wrap.appendChild(el("p", { cls: "exh-muted exh-small", text: "Built " + stamp(d.generated_at) + " from every title in the reference. "
       + "Each card names its rule; a change moves its local titles at the nightly fold." }));
     wrap.appendChild(sweepRules());
@@ -3599,7 +3654,7 @@
   function newVisit() {
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
     state.view = "review";
-    state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false;
+    state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
     state.ls = null;
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
@@ -3616,6 +3671,8 @@
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
     if (!r) return false;
     state.view = r[0]; state.filter = r[1];
+    state.sw.batchMode = parts[1] === "another-look" && parts[2] === "batch";
+    if (state.sw.batchMode) { state.sw.batch = null; state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false; }
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
@@ -3630,7 +3687,7 @@
     if (v === "list") return "exhibits/list" + (f ? "/" + f : "");
     if (v === "progress" || v === "rules" || v === "requests") return "exhibits/" + v;
     if (v === "cpl-ai") return window.CPL_EXHIBITS_CPLAI ? window.CPL_EXHIBITS_CPLAI.address() : "exhibits/cpl-ai";
-    if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? "another-look" : "held");
+    if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? (state.sw.batchMode ? "another-look/batch" : "another-look") : "held");
     return "exhibits";
   });
   function boot() {

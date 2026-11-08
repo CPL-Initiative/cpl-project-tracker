@@ -801,6 +801,23 @@ def build_confidence(root):
     return out
 
 
+def next_batch(root):
+    """The one small batch the first view opens on (Sam's Commons rulings, 2026-11-08, #2921 item 2): Another look's
+    open cards in Exhibits, six at most, decided with Keep or Change from the evidence, then stop. The sweep never
+    shows a card again once a person has kept or changed it, so its card count is what is still open."""
+    d = load_json(root, "kb/exhibits_sweep.json")
+    cards = d.get("cards") or []
+    n = min(len(cards), 6)
+    if not n:
+        return None
+    rules = sorted({r for c in cards[:n] for r in (c.get("rules") or [])})
+    return {"kind": "another-look", "n": n, "of": len(cards), "open": "#exhibits/another-look/batch",
+            "title": "Another look at %s exhibit title%s" % (fmt(n), "" if n == 1 else "s"),
+            "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+            "stop": "The batch ends when its cards are decided.", "rules": rules,
+            "at": d.get("generated_at")}
+
+
 BUILDING = [
     ("credentials", "Industry credentials", "#exhibits", building_credentials),
     ("outcomes", "Course outcomes", "#coci-lookup", building_outcomes),
@@ -823,7 +840,14 @@ def build(root):
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
     return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows),
-            "confidence": build_confidence(root)}
+            "confidence": build_confidence(root), "next_batch": _safe(next_batch, root)}
+
+
+def _safe(fn, root):
+    try:
+        return fn(root)
+    except Exception as e:  # noqa: BLE001
+        return {"error": "%s: %s" % (type(e).__name__, e)}
 
 
 def main(argv=None):
