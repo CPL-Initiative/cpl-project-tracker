@@ -52,6 +52,17 @@ rows = dry.plan(anchor, disc, live, chain)
 check(rows and rows[0]["kind"] == "ambiguous" and "Elder Law" in rows[0]["why"],
       "a live id on the canonical is a collision for a person, naming its holder; got %r" % (rows and rows[0]))
 
+# S612: a later map that re-uses the anchor's id for ANOTHER record, then a recode that moves that record, is a
+# collision, never a re-key. AUTD M10FX (Diesel Engines, from the Z-band retirement) shared its id with an HVAC singleton
+# the next day's prefix fold put there; the 2026-11-05 recode took the singleton to DIES M10FX. Following it merges them.
+shared = [("zband", {"M-ID DSL 100": "AUTD M10FX"}), ("fold", {"HVAC M10FQ": "AUTD M10FX"}),
+          ("recode", {"AUTD M10FX": "DIES M10FX"})]
+anchor2 = {"AUTD M10FX": {"id_system": "M-ID", "discipline": "Diesel Mechanics", "common_title": "Diesel Engines"}}
+disc2 = {"Diesel Mechanics": {"canonical_subj4": "DIES"}}
+rows = dry.plan(anchor2, disc2, {"DIES M10FX": {"title": "Heavy Duty Truck HVAC"}}, shared)
+check(rows and rows[0]["kind"] == "ambiguous" and "Heavy Duty Truck HVAC" in rows[0]["why"],
+      "a pending map that moved another record sharing the id is a collision naming its holder; got %r" % (rows and rows[0]))
+
 if failures:
     print("FAIL — %d problem(s):" % len(failures))
     for f in failures:

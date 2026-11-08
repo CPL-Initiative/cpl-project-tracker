@@ -1,0 +1,112 @@
+{
+  "_status": "Anchor re-key old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-11-08",
+  "_applied_at": "2026-11-08T21:21:30Z",
+  "_applied_by": "kb/_anchor_rekey_apply.py",
+  "_ruling": "Sam, Open Asks Sheet 171 card 4, 'As proposed', 2026-11-08 20:14Z: the three collisions take the next free number on their Common SUBJ, the three hospitality entries stay on the curator worklist, the 20 apply together",
+  "_scope": "kb/common_courses.json keys and kb/course_crosswalk.json pointers; anchor-only ids, no minted record",
+  "_count": 20,
+  "_also_moved_by_the_chain": {},
+  "aliases": {
+    "AUTD M10FX": {
+      "new_id": "DIES M10II",
+      "kind": "collision",
+      "discipline": "Diesel Mechanics"
+    },
+    "AUTD M10FY": {
+      "new_id": "DIES M10IJ",
+      "kind": "collision",
+      "discipline": "Diesel Mechanics"
+    },
+    "AUTD M10FZ": {
+      "new_id": "DIES M10IK",
+      "kind": "collision",
+      "discipline": "Diesel Mechanics"
+    },
+    "CNSR M10BM": {
+      "new_id": "CBIT M10BM",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "CNSR M10BN": {
+      "new_id": "CBIT M10BN",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "CNSR M10BO": {
+      "new_id": "CBIT M10BO",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "CNSR M10BP": {
+      "new_id": "CBIT M10BP",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "CNSR M10BQ": {
+      "new_id": "CBIT M10BQ",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "CNSR M10BR": {
+      "new_id": "CBIT M10BR",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "CNSR M10BS": {
+      "new_id": "CBIT M10BS",
+      "kind": "prefix_swap",
+      "discipline": "Building Codes and Regulations"
+    },
+    "FTVE M10VO": {
+      "new_id": "FMED M10VO",
+      "kind": "prefix_swap",
+      "discipline": "Media Production"
+    },
+    "FTVE M10VP": {
+      "new_id": "FMED M10VP",
+      "kind": "prefix_swap",
+      "discipline": "Media Production"
+    },
+    "FTVE M10VQ": {
+      "new_id": "FMED M10VQ",
+      "kind": "prefix_swap",
+      "discipline": "Media Production"
+    },
+    "GRAF M1066": {
+      "new_id": "GFCD M1066",
+      "kind": "prefix_swap",
+      "discipline": "Graphic Arts"
+    },
+    "GRAF M10HZ": {
+      "new_id": "GFCD M10HZ",
+      "kind": "prefix_swap",
+      "discipline": "Graphic Arts"
+    },
+    "GRAF M10IA": {
+      "new_id": "GFCD M10IA",
+      "kind": "prefix_swap",
+      "discipline": "Graphic Arts"
+    },
+    "GRAF M10IB": {
+      "new_id": "GFCD M10IB",
+      "kind": "prefix_swap",
+      "discipline": "Graphic Arts"
+    },
+    "GRAF M10IC": {
+      "new_id": "GFCD M10IC",
+      "kind": "prefix_swap",
+      "discipline": "Graphic Arts"
+    },
+    "PLGL M10IA": {
+      "new_id": "PARA M10KX",
+      "kind": "collision",
+      "discipline": "Legal Assisting"
+    },
+    "PLGL M10IB": {
+      "new_id": "PARA M10KY",
+      "kind": "collision",
+      "discipline": "Legal Assisting"
+    }
+  }
+}

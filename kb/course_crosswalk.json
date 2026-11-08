@@ -285,7 +285,7 @@
     "local_course_title": "Introduction to Paralegal Studies",
     "units": 3.0,
     "top_code": "111",
-    "course_id": "PLGL M10IB",
+    "course_id": "PARA M10KY",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -305,7 +305,7 @@
     "local_course_title": "Introduction to Legal Research and Terminology",
     "units": 3.0,
     "top_code": "111",
-    "course_id": "PLGL M10IA",
+    "course_id": "PARA M10KX",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1511,7 +1511,7 @@
     "local_course_title": "BLUEPRINT PLANS AND SPECIFICATION READING",
     "units": 4.0,
     "top_code": "201",
-    "course_id": "CNSR M10BM",
+    "course_id": "CBIT M10BM",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1531,7 +1531,7 @@
     "local_course_title": "INTERNATIONAL BUILDING CODE INSPECTION",
     "units": 4.0,
     "top_code": "201",
-    "course_id": "CNSR M10BQ",
+    "course_id": "CBIT M10BQ",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1551,7 +1551,7 @@
     "local_course_title": "COMBINATION RESIDENTIAL DWELLING INSPECTION",
     "units": 3.0,
     "top_code": "201",
-    "course_id": "CNSR M10BN",
+    "course_id": "CBIT M10BN",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1571,7 +1571,7 @@
     "local_course_title": "ELECTRICAL CODE INSPECTION",
     "units": 3.0,
     "top_code": "201",
-    "course_id": "CNSR M10BP",
+    "course_id": "CBIT M10BP",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1591,7 +1591,7 @@
     "local_course_title": "CONCRETE INSPECTION",
     "units": 3.0,
     "top_code": "201",
-    "course_id": "CNSR M10BO",
+    "course_id": "CBIT M10BO",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1611,7 +1611,7 @@
     "local_course_title": "PLUMBING CODES - DRAINS, WASTE, VENTS, WATER, AND GAS",
     "units": 3.0,
     "top_code": "201",
-    "course_id": "CNSR M10BS",
+    "course_id": "CBIT M10BS",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -1631,7 +1631,7 @@
     "local_course_title": "MECHANICAL CODE - HEATING, AC, REFRIGERATION, AND DUCTWORK",
     "units": 3.0,
     "top_code": "201",
-    "course_id": "CNSR M10BR",
+    "course_id": "CBIT M10BR",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -2271,7 +2271,7 @@
     "local_course_title": "INTRODUCTION TO SCREEN PRINTING",
     "units": 3.0,
     "top_code": "54",
-    "course_id": "GRAF M10HZ",
+    "course_id": "GFCD M10HZ",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -2291,7 +2291,7 @@
     "local_course_title": "TYPOGRAPHY",
     "units": 3.0,
     "top_code": "79",
-    "course_id": "GRAF M10IC",
+    "course_id": "GFCD M10IC",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -2311,7 +2311,7 @@
     "local_course_title": "PHOTOSHOP SKILLS FOR GRAPHIC DESIGNERS",
     "units": 3.0,
     "top_code": "79",
-    "course_id": "GRAF M10IB",
+    "course_id": "GFCD M10IB",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -2331,7 +2331,7 @@
     "local_course_title": "MOTION GRAPHICS",
     "units": 3.0,
     "top_code": "79",
-    "course_id": "GRAF M10IA",
+    "course_id": "GFCD M10IA",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -3471,7 +3471,7 @@
     "local_course_title": "Digital Media",
     "units": 1.5,
     "top_code": "198",
-    "course_id": "GRAF M1066",
+    "course_id": "GFCD M1066",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -3977,7 +3977,7 @@
     "local_course_title": "Single Camera Production",
     "units": 2.0,
     "top_code": "19",
-    "course_id": "FTVE M10VP",
+    "course_id": "FMED M10VP",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -3997,7 +3997,7 @@
     "local_course_title": "The TV News Field Report",
     "units": 2.0,
     "top_code": "187",
-    "course_id": "FTVE M10VQ",
+    "course_id": "FMED M10VQ",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -4017,7 +4017,7 @@
     "local_course_title": "Introduction to Nonlinear Editing",
     "units": 2.0,
     "top_code": "22",
-    "course_id": "FTVE M10VO",
+    "course_id": "FMED M10VO",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -4873,7 +4873,7 @@
     "local_course_title": "Digital Media",
     "units": 1.5,
     "top_code": "649",
-    "course_id": "GRAF M1066",
+    "course_id": "GFCD M1066",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -5465,7 +5465,7 @@
     "local_course_title": "Introduction to Heavy-Duty Diesel Repair",
     "units": 4.0,
     "top_code": "211",
-    "course_id": "AUTD M10FZ",
+    "course_id": "DIES M10IK",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -5485,7 +5485,7 @@
     "local_course_title": "Diesel Engines",
     "units": 4.0,
     "top_code": "211",
-    "course_id": "AUTD M10FX",
+    "course_id": "DIES M10II",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -5505,7 +5505,7 @@
     "local_course_title": "Diesel Fuel Management Systems",
     "units": 4.0,
     "top_code": "211",
-    "course_id": "AUTD M10FY",
+    "course_id": "DIES M10IJ",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [

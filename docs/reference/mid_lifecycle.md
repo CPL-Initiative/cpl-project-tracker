@@ -568,7 +568,7 @@ instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
 dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
 decisions + validation methodology:
 [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-**Newest instance (2026-11-05, SkyKumquat): the Subjects List recode, APPLIED.** Sam's eleven Common SUBJ picks of
+**Newest instance (2026-11-08, SkySunflower S612): the anchor re-key, APPLIED.** The curated anchor's 20 flagged keys onto their Common SUBJ (`kb/_anchor_rekey_apply.py`, `kb/anchor_rekey_out/2026-11-08/`); anchor-only ids, no minted record and no Supabase row moved. Its lesson: a pending map that names an anchor key may have moved another record that shared the id (a later map re-used it), so a re-key onto a live id is a collision, never a re-key. **Earlier instance (2026-11-05, SkyKumquat): the Subjects List recode, APPLIED.** Sam's eleven Common SUBJ picks of
 2026-11-04 as a keep-number prefix re-key (`kb/_subjects_list_recode.py`, `kb/subjects_list_recode_out/2026-11-05/`):
 2,389 ids, Media Production off the FTVE fan-in to FMED; lane `common-subjects-reference` has the counts. Its lesson:
 a code change saved on the List lands only with its re-key, so the List's save is the ruling and the re-key follows in
