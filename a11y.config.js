@@ -866,6 +866,28 @@ async function seedExhibitsProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+/* The Exhibits tab's Queue (S611, Sam's queue-first ruling, 2026-11-08, #2921): the six lenses, Needs Sam open, its
+   entries and any Blocked on Sky line, opened by its address as the Commons links to it. */
+async function seedExhibitsQueue(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/queue") location.hash = "exhibits/queue"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => Array.prototype.some.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+    (x) => x.textContent.indexOf("Queue") === 0) || document.querySelector("#exhibits-root nav[aria-label='Queue']"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    if (document.querySelector("#exhibits-root nav[aria-label='Queue']")) return;
+    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+      (x) => x.textContent.indexOf("Queue") === 0)[0];
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-qs .exh-qe"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 /* The Exhibits tab's Requests view (SkyLoop, 2026-11-06): the public's asks to prioritize a credential, one line per
    credential. The rows read behind the team phrase, which the sweep does not hold, so the read is answered here with
    three rows (two credentials), and the table, its region and the counts are measured. */
@@ -3698,6 +3720,22 @@ module.exports = {
     routes: [{ hash: "exhibits", name: "progress-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-queue": {
+    file: "index.html",
+    title: "Exhibits: Queue, six lenses over the existing lists",
+    routes: [{ hash: "exhibits/queue", name: "queue" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsQueue(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-queue-dark": {
+    file: "index.html",
+    title: "Exhibits: Queue, dark",
+    routes: [{ hash: "exhibits/queue", name: "queue-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsQueue(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-requests": {

@@ -840,7 +840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2842,
+     "line": 2846,
      "tabs": [
       "exhibits"
      ]
@@ -1036,7 +1036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1567
+     "line": 1589
     },
     {
      "id": "module:admin.js",
@@ -1719,7 +1719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2199
+     "line": 2221
     }
    ],
    "main_committers": []
@@ -2344,7 +2344,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1177
+     "line": 1199
     }
    ],
    "main_committers": []
@@ -2363,7 +2363,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1522
+     "line": 1544
     },
     {
      "id": "module:college_briefing.js",
@@ -3045,7 +3045,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1578
+     "line": 1600
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4355,7 +4355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1863
+     "line": 1885
     }
    ],
    "main_committers": []
@@ -5417,7 +5417,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1754
+     "line": 1776
     },
     {
      "id": "module:admin.js",
@@ -6224,7 +6224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2834,
+     "line": 2838,
      "tabs": [
       "exhibits"
      ]
@@ -6317,7 +6317,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3114,
+     "line": 3119,
      "tabs": [
       "exhibits"
      ]
@@ -6561,7 +6561,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2138
+     "line": 2160
     },
     {
      "id": "module:college_briefing.js",
@@ -6774,7 +6774,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1237
+     "line": 1259
     },
     {
      "id": "module:cpl_funding.js",
@@ -8076,7 +8076,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3393,
+     "line": 3398,
      "tabs": [
       "exhibits"
      ]
@@ -14487,7 +14487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2856,
+     "line": 2860,
      "tabs": [
       "exhibits"
      ]
@@ -17739,7 +17739,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1520,
+     "line": 1522,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -26544,7 +26544,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 873
+     "line": 895
     },
     {
      "id": "module:exhibits.js",
