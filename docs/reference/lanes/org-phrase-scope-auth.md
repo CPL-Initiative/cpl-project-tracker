@@ -84,14 +84,15 @@ The lane's marker is what makes the builder carry them.
   workflow put the secret in the query string unencoded, and a base64 secret's `+` reads back as a space
   (`URLSearchParams`), so the Worker answered 403 to identical values. #2898 sends it URL-encoded and in the
   `x-scrape-secret` header; #2892 turns a failed scrape red and #2897 prints the Worker's reply in the last step.
-- **Security steps 1 and 2 are done** (S587, S590). Steps 3 to 6 are written in
-  [`cobix_round1_reply_2026-11-05`](../../security/cobix_round1_reply_2026-11-05.md) ("Proposed order,
-  revised"), not built.
+- **Security steps 1 to 4 are done** (S587, S590, S603; steps 3 and 4 under the rulings below). Steps 5 and 6 are
+  open, written in [`cobix_round1_reply_2026-11-05`](../../security/cobix_round1_reply_2026-11-05.md) ("Proposed
+  order, revised"): step 5 is item 5's two unread sources and the durable chat quota, with item 10's rate limits
+  and the TMC contact fields (item 8's TMC half); step 6 is the two environments.
 - **Environments.** The service key is a repository secret, so any workflow can read it; only
   `supabase-migrate.yml` names an environment. The proposal (same file): `database` with a required
   reviewer for the dispatch-only `*-apply` workflows, `database-scheduled` with no reviewer and a `main`
   branch rule for the crons and syncs.
-- **Failure alerts.** COBIx counts 44 of 62 workflows with no failure step (#2891 item 3).
+- **Failure alerts.** `workflow-failure-watch.yml` keeps one issue per failing unattended workflow and closes it on the next success (#2905, #2891 item 3); its guard test fails when a new cron is neither watched nor excused.
 - **Branch protection on `main`** is unverified: COBIx's Triage role cannot read it (#2891 item 10).
 
 ### Sam's rulings ([Open Asks Sheet 167](https://claude.ai/artifact/8LGSDcPhS5m2YnUdL66nES), 15:03-15:06Z 2026-11-07)
