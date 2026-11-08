@@ -1138,9 +1138,8 @@ From *Course objectives too*, verbatim:
   reconcile 42480098144 on #2918.
 - **An eLumen GE page can render no text to the reader.** Redwoods' `grad5` (Cal-GETC) loaded with status 200 and only
   its menu, so the statewide 34 keeps the house citation. Try the page's Print link (`api-prod.elumenapp.com`) for `grad4`.
+- **Merge `main` into a college branch before its display build** (S609): #2918 predated #2917, and its build would
+  have reverted Columbia's display. **Never `git stash` between `git add` and the commit**: the pop restores the tree,
+  not the index, so the commit carried the receipt without the page's new stamp (run 42489271385 canceled).
 
-### Moved from the lane (S607): Siskiyous, Palomar and Coalinga, as they stood
-
-**Siskiyous (S594-S596, #2877): 66 of 73 passing on the current eLumen reader** (73 of 77 found; was 42 of 65). Extraction 42354853403 ($4.86), load 42359009832 (8 inserted), reread 42359184639 (65 replaced; receipt with before-values), display build 6c1c41f71db3, merged (#2877). Display applied on `main` (run 42360530754: 17,555 of 17,558, 0 errors, the 3 missing Monterey Peninsula rows the table no longer holds; record `9c11f641`). The 7 failing are arithmetic; read them before a reconcile.
-**Palomar (S599-S600, #2887): 282 of 342 found; Chemistry A.S. 05201 reread** (load 42376077805 kept 281, reread 42376267731 replaced 05201 with before-values). Displayed: apply 42377748161, 0 errors.
-**Coalinga (S599-S600, #2882): 55 of 62 found, 45 passing, displayed.** Display apply 42372728141 on `main` wrote 17,557 of 17,560 with 0 errors (the 3 missing are the Monterey Peninsula rows the table no longer holds; record `64577367`). Its 7 not found and 10 failing stand as filed.
+The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/program_requirements_harvest_lessons_archive_4.md` (S609).

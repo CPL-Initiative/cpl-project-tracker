@@ -65,7 +65,7 @@
    "status": "incomplete",
    "computed": [
     36.0,
-    36.0
+    40.0
    ],
    "stated": [
     66.0,
@@ -246,5 +246,6 @@
    "Careers are taken from the Career Information heading on the program page."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": 42480098144,
+ "read_run": "38979396148"
 }

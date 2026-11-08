@@ -61,34 +61,41 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
+    18.0,
+    25.0
+   ],
+   "stated": [
     18.0,
     19.0
    ],
-   "stated": [
-    60.0,
-    60.0
-   ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the CalGETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "meets": true,
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     19.0
+     52.0,
+     59.0
     ],
     "stated": [
-     18.0,
-     19.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     1.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +120,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +141,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -442,5 +449,20 @@
    "Careers include the occupations listed under the Career Information heading as well as fields named in the program description."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": 42480098144,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "including the CalGETC General Education requirements (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Redwoods AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis' (college page read 42479757804); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38979396148"
 }

@@ -19,6 +19,24 @@
   "and_units": "a course the page prints joined to the row above by '&' (CourseLeaf's 'CSIS 50 \u00b7 & 50L ... 3'), which the reading listed as its own entry with no units, takes 0: the row's figure is the pair's and the page's total counts it once; only where the page prints the two codes joined, the course before it carries a figure, and never a course the reading gave units (Monterey Peninsula, S536)"
  },
  "colleges": {
+   "College of the Redwoods": {
+    "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry.",
+    "awards": "transfer",
+    "steps": [
+     {
+      "kind": "set",
+      "field": "ge_units",
+      "value": {
+       "min": 34,
+       "max": 34
+      },
+      "awards": "transfer",
+      "pattern": "including\\s+the\\s+Cal-?GETC\\s+General\\s+Education\\s+requirements",
+      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+      "source_words": "Redwoods AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis' (college page read 42479757804); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+     }
+    ]
+   },
   "Cabrillo College": {
    "why": "Sam marked Biology A.S. (06328) Needs a fix on 2026-10-14: \"missing the Cabrillo College General Education credits required: 24 and the 6 units of Elective. Both are noted on the catalog.\" A runner read (college-page-read 38633618089) shows every degree page's requirements tree: \"Complete the following number of credits: 60\" under the award's title, then \"Cabrillo College General Education 24\" (or \"Cal-GETC General Education 34\"), the major, and \"General electives: any transferable or degree applicable course. 6\". Its prose says \"at least 30 units in the major\", which the reading took for the major total.",
    "awards": "associate",
