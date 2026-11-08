@@ -1,0 +1,10388 @@
+{
+ "by_discipline": {
+  "Administration of Justice": {
+   "no_top": 115,
+   "top_agrees": 209,
+   "top_differs": 17
+  },
+  "Agricultural Production": {
+   "no_top": 21,
+   "top_agrees": 3,
+   "top_differs": 0
+  },
+  "Agriculture": {
+   "no_top": 85,
+   "top_agrees": 32,
+   "top_differs": 12
+  },
+  "Air Conditioning, Refrigeration, Heating": {
+   "no_top": 38,
+   "top_agrees": 35,
+   "top_differs": 2
+  },
+  "Anthropology": {
+   "no_top": 93,
+   "top_agrees": 0,
+   "top_differs": 14
+  },
+  "Architecture": {
+   "no_top": 114,
+   "top_agrees": 0,
+   "top_differs": 45
+  },
+  "Art": {
+   "no_top": 277,
+   "top_agrees": 172,
+   "top_differs": 131
+  },
+  "Art History": {
+   "no_top": 23,
+   "top_agrees": 0,
+   "top_differs": 7
+  },
+  "Artificial Intelligence": {
+   "no_top": 3,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Astronomy": {
+   "no_top": 44,
+   "top_agrees": 0,
+   "top_differs": 1
+  },
+  "Auto Body Technology": {
+   "no_top": 35,
+   "top_agrees": 0,
+   "top_differs": 6
+  },
+  "Automotive Technology": {
+   "no_top": 139,
+   "top_agrees": 168,
+   "top_differs": 12
+  },
+  "Aviation": {
+   "no_top": 72,
+   "top_agrees": 0,
+   "top_differs": 3
+  },
+  "Barbering": {
+   "no_top": 2,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Biological Sciences": {
+   "no_top": 116,
+   "top_agrees": 137,
+   "top_differs": 25
+  },
+  "Biotechnology": {
+   "no_top": 17,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Broadcasting Technology": {
+   "no_top": 34,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Building Codes and Regulations": {
+   "no_top": 0,
+   "top_agrees": 0,
+   "top_differs": 4
+  },
+  "Business": {
+   "no_top": 213,
+   "top_agrees": 112,
+   "top_differs": 106
+  },
+  "Cabinet Making": {
+   "no_top": 3,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Carpentry": {
+   "no_top": 14,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Chemistry": {
+   "no_top": 88,
+   "top_agrees": 0,
+   "top_differs": 6
+  },
+  "Chicano Studies": {
+   "no_top": 3,
+   "top_agrees": 0,
+   "top_differs": 26
+  },
+  "Child Development/Early Childhood Education": {
+   "no_top": 108,
+   "top_agrees": 127,
+   "top_differs": 4
+  },
+  "Commercial Art": {
+   "no_top": 9,
+   "top_agrees": 0,
+   "top_differs": 6
+  },
+  "Commercial Music": {
+   "no_top": 9,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Communication Studies": {
+   "no_top": 79,
+   "top_agrees": 0,
+   "top_differs": 31
+  },
+  "Computer Information Systems": {
+   "no_top": 204,
+   "top_agrees": 162,
+   "top_differs": 126
+  },
+  "Computer Science": {
+   "no_top": 89,
+   "top_agrees": 30,
+   "top_differs": 74
+  },
+  "Construction Management": {
+   "no_top": 22,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Construction Technology": {
+   "no_top": 52,
+   "top_agrees": 13,
+   "top_differs": 30
+  },
+  "Cosmetology": {
+   "no_top": 97,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Counseling": {
+   "no_top": 134,
+   "top_agrees": 1,
+   "top_differs": 5
+  },
+  "Court Reporting": {
+   "no_top": 16,
+   "top_agrees": 0,
+   "top_differs": 1
+  },
+  "Culinary Arts/Food Technology": {
+   "no_top": 61,
+   "top_agrees": 31,
+   "top_differs": 7
+  },
+  "Dance": {
+   "no_top": 368,
+   "top_agrees": 0,
+   "top_differs": 70
+  },
+  "Dental Technology": {
+   "no_top": 95,
+   "top_agrees": 0,
+   "top_differs": 10
+  },
+  "Diagnostic Medical Technology": {
+   "no_top": 11,
+   "top_agrees": 0,
+   "top_differs": 1
+  },
+  "Diesel Mechanics": {
+   "no_top": 16,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Dietetics/Nutritional Science": {
+   "no_top": 13,
+   "top_agrees": 0,
+   "top_differs": 37
+  },
+  "Digital Fabrication Technician": {
+   "no_top": 9,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Disabled Student Programs and Services (DSPS)": {
+   "no_top": 55,
+   "top_agrees": 0,
+   "top_differs": 8
+  },
+  "Drafting/CADD": {
+   "no_top": 35,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Drama/Theater Arts": {
+   "no_top": 77,
+   "top_agrees": 156,
+   "top_differs": 105
+  },
+  "Earth Science": {
+   "no_top": 67,
+   "top_agrees": 0,
+   "top_differs": 7
+  },
+  "Economics": {
+   "no_top": 26,
+   "top_agrees": 0,
+   "top_differs": 6
+  },
+  "Education": {
+   "no_top": 59,
+   "top_agrees": 0,
+   "top_differs": 19
+  },
+  "Electricity": {
+   "no_top": 42,
+   "top_agrees": 14,
+   "top_differs": 8
+  },
+  "Electronic Technology": {
+   "no_top": 12,
+   "top_agrees": 0,
+   "top_differs": 12
+  },
+  "Electronics": {
+   "no_top": 29,
+   "top_agrees": 20,
+   "top_differs": 9
+  },
+  "Emergency Medical Technologies": {
+   "no_top": 46,
+   "top_agrees": 29,
+   "top_differs": 3
+  },
+  "Engineering": {
+   "no_top": 55,
+   "top_agrees": 0,
+   "top_differs": 26
+  },
+  "Engineering Technology": {
+   "no_top": 21,
+   "top_agrees": 0,
+   "top_differs": 7
+  },
+  "English": {
+   "no_top": 111,
+   "top_agrees": 203,
+   "top_differs": 39
+  },
+  "English as a Second Language": {
+   "no_top": 1,
+   "top_agrees": 8,
+   "top_differs": 2
+  },
+  "Environmental Technologies": {
+   "no_top": 26,
+   "top_agrees": 13,
+   "top_differs": 2
+  },
+  "Equine Science": {
+   "no_top": 7,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Ethnic Studies": {
+   "no_top": 46,
+   "top_agrees": 78,
+   "top_differs": 12
+  },
+  "Family and Consumer Studies/ Home Economics": {
+   "no_top": 12,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Fashion and Related Technologies": {
+   "no_top": 45,
+   "top_agrees": 67,
+   "top_differs": 5
+  },
+  "Film and Media Studies": {
+   "no_top": 54,
+   "top_agrees": 0,
+   "top_differs": 60
+  },
+  "Fire Technology": {
+   "no_top": 98,
+   "top_agrees": 221,
+   "top_differs": 2
+  },
+  "Foreign Languages": {
+   "no_top": 270,
+   "top_agrees": 0,
+   "top_differs": 1
+  },
+  "Forestry/Natural Resources": {
+   "no_top": 18,
+   "top_agrees": 6,
+   "top_differs": 1
+  },
+  "Furniture Making": {
+   "no_top": 19,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Geography": {
+   "no_top": 67,
+   "top_agrees": 0,
+   "top_differs": 14
+  },
+  "Gerontology": {
+   "no_top": 1,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Graphic Arts": {
+   "no_top": 13,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Gunsmithing": {
+   "no_top": 18,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Health": {
+   "no_top": 104,
+   "top_agrees": 40,
+   "top_differs": 10
+  },
+  "Health Care Ancillaries": {
+   "no_top": 38,
+   "top_agrees": 42,
+   "top_differs": 4
+  },
+  "Health Information Technology": {
+   "no_top": 17,
+   "top_agrees": 7,
+   "top_differs": 2
+  },
+  "History": {
+   "no_top": 171,
+   "top_agrees": 0,
+   "top_differs": 29
+  },
+  "Humanities": {
+   "no_top": 61,
+   "top_agrees": 0,
+   "top_differs": 9
+  },
+  "Industrial Maintenance": {
+   "no_top": 2,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Industrial Relations": {
+   "no_top": 4,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Industrial Safety": {
+   "no_top": 2,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Industrial Technology": {
+   "no_top": 48,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Instructional Design/Technology": {
+   "no_top": 4,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Interdisciplinary Studies": {
+   "no_top": 78,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Interdisciplinary-Basic Skills: Noncredit": {
+   "no_top": 5,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Interior Design": {
+   "no_top": 13,
+   "top_agrees": 25,
+   "top_differs": 0
+  },
+  "Journalism": {
+   "no_top": 14,
+   "top_agrees": 46,
+   "top_differs": 2
+  },
+  "Kinesiology": {
+   "no_top": 369,
+   "top_agrees": 771,
+   "top_differs": 8
+  },
+  "Law": {
+   "no_top": 8,
+   "top_agrees": 0,
+   "top_differs": 28
+  },
+  "Legal Assisting": {
+   "no_top": 11,
+   "top_agrees": 9,
+   "top_differs": 1
+  },
+  "Library Science": {
+   "no_top": 28,
+   "top_agrees": 0,
+   "top_differs": 16
+  },
+  "Library Technology": {
+   "no_top": 3,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Licensed Vocational Nursing": {
+   "no_top": 3,
+   "top_agrees": 9,
+   "top_differs": 0
+  },
+  "Machine Tool Technology": {
+   "no_top": 25,
+   "top_agrees": 23,
+   "top_differs": 5
+  },
+  "Management": {
+   "no_top": 2,
+   "top_agrees": 5,
+   "top_differs": 14
+  },
+  "Manufacturing Technology": {
+   "no_top": 15,
+   "top_agrees": 14,
+   "top_differs": 9
+  },
+  "Marketing": {
+   "no_top": 0,
+   "top_agrees": 4,
+   "top_differs": 0
+  },
+  "Masonry": {
+   "no_top": 1,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Mathematics": {
+   "no_top": 81,
+   "top_agrees": 254,
+   "top_differs": 1
+  },
+  "Media Production": {
+   "no_top": 11,
+   "top_agrees": 0,
+   "top_differs": 5
+  },
+  "Mortuary Science": {
+   "no_top": 1,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Multimedia": {
+   "no_top": 40,
+   "top_agrees": 38,
+   "top_differs": 8
+  },
+  "Music": {
+   "no_top": 126,
+   "top_agrees": 412,
+   "top_differs": 109
+  },
+  "Native American/American Indian Studies": {
+   "no_top": 4,
+   "top_agrees": 0,
+   "top_differs": 5
+  },
+  "Nursing": {
+   "no_top": 107,
+   "top_agrees": 76,
+   "top_differs": 26
+  },
+  "Nutritional Science/Dietetics": {
+   "no_top": 7,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Occupational Therapy Assisting": {
+   "no_top": 15,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Office Technologies": {
+   "no_top": 54,
+   "top_agrees": 97,
+   "top_differs": 13
+  },
+  "Older Adults: Noncredit": {
+   "no_top": 25,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Ornamental Horticulture": {
+   "no_top": 38,
+   "top_agrees": 45,
+   "top_differs": 4
+  },
+  "Parent Education: Noncredit": {
+   "no_top": 25,
+   "top_agrees": 0,
+   "top_differs": 27
+  },
+  "Pharmacy Technology": {
+   "no_top": 4,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Philosophy": {
+   "no_top": 95,
+   "top_agrees": 0,
+   "top_differs": 11
+  },
+  "Photography": {
+   "no_top": 94,
+   "top_agrees": 0,
+   "top_differs": 13
+  },
+  "Physical Education Disabled Students": {
+   "no_top": 4,
+   "top_agrees": 17,
+   "top_differs": 7
+  },
+  "Physical Sciences": {
+   "no_top": 8,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Physical Therapy Assisting": {
+   "no_top": 29,
+   "top_agrees": 0,
+   "top_differs": 6
+  },
+  "Physics/Astronomy": {
+   "no_top": 56,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Plumbing": {
+   "no_top": 4,
+   "top_agrees": 14,
+   "top_differs": 0
+  },
+  "Political Science": {
+   "no_top": 10,
+   "top_agrees": 57,
+   "top_differs": 1
+  },
+  "Psychiatric Technician": {
+   "no_top": 2,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Psychology": {
+   "no_top": 105,
+   "top_agrees": 0,
+   "top_differs": 15
+  },
+  "Public Safety": {
+   "no_top": 21,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Radiological Technology": {
+   "no_top": 34,
+   "top_agrees": 21,
+   "top_differs": 2
+  },
+  "Reading": {
+   "no_top": 4,
+   "top_agrees": 7,
+   "top_differs": 0
+  },
+  "Real Estate": {
+   "no_top": 41,
+   "top_agrees": 0,
+   "top_differs": 1
+  },
+  "Recreation Administration": {
+   "no_top": 2,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Registered Veterinary Technician": {
+   "no_top": 3,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Respiratory Technologies": {
+   "no_top": 26,
+   "top_agrees": 8,
+   "top_differs": 0
+  },
+  "Robotics": {
+   "no_top": 1,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Sign Language, American": {
+   "no_top": 53,
+   "top_agrees": 0,
+   "top_differs": 44
+  },
+  "Sign Language/ English Interpreting": {
+   "no_top": 5,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Small Business Development": {
+   "no_top": 3,
+   "top_agrees": 12,
+   "top_differs": 0
+  },
+  "Social Science": {
+   "no_top": 8,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Sociology": {
+   "no_top": 58,
+   "top_agrees": 0,
+   "top_differs": 17
+  },
+  "Speech Language Pathology": {
+   "no_top": 7,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Stagecraft": {
+   "no_top": 10,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Steamfitting": {
+   "no_top": 5,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Surgical Technology": {
+   "no_top": 2,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Transportation": {
+   "no_top": 12,
+   "top_agrees": 0,
+   "top_differs": 0
+  },
+  "Vocational": {
+   "no_top": 62,
+   "top_agrees": 0,
+   "top_differs": 38
+  },
+  "Welding": {
+   "no_top": 125,
+   "top_agrees": 0,
+   "top_differs": 9
+  },
+  "Women\u2019s Studies": {
+   "no_top": 1,
+   "top_agrees": 0,
+   "top_differs": 2
+  },
+  "Work Experience Instructors": {
+   "no_top": 11,
+   "top_agrees": 0,
+   "top_differs": 0
+  }
+ },
+ "cards": 12504,
+ "counts": {
+  "no_top": 6736,
+  "top_agrees": 4100,
+  "top_differs": 1668
+ },
+ "schema": 1,
+ "worklist": {
+  "batch": [
+   {
+    "colleges": 22,
+    "id": "KINE M1806",
+    "members": 22,
+    "title": "Stress Management",
+    "votes": {
+     "Business": 1,
+     "Health": 6,
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1142",
+    "members": 14,
+    "title": "First Aid and CPR",
+    "votes": {
+     "Emergency Medical Technologies": 1,
+     "Health": 3,
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1847",
+    "members": 7,
+    "title": "Sports Psychology",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1765",
+    "members": 6,
+    "title": "Introduction to Sports Medicine",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1524",
+    "members": 3,
+    "title": "Introduction to Sport and Exercise Psychology",
+    "votes": {
+     "Health": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1656",
+    "members": 2,
+    "title": "Healthful Living",
+    "votes": {
+     "Health": 2
+    }
+   }
+  ],
+  "discipline": "Kinesiology",
+  "no_top": [
+   {
+    "colleges": 0,
+    "id": "ATHL M1366",
+    "members": 0,
+    "title": "Off Season Sports Conditioning 1 - Aerobic/Anaerobic Development",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1367",
+    "members": 0,
+    "title": "Offensive Baseball 1 - Fundamentals",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1368",
+    "members": 0,
+    "title": "Offseason Advanced Intercollegiate Basketball and Physical Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1369",
+    "members": 0,
+    "title": "FastPitch Softball Fundamentals - Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1370",
+    "members": 0,
+    "title": "Intercollegiate Athletics-Wrestling",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1371",
+    "members": 0,
+    "title": "Off-Season Athletics: Softball (Women)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1372",
+    "members": 0,
+    "title": "Baseball Defensive Strategies",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1373",
+    "members": 0,
+    "title": "Intercoll Sports-Strength and Fitness Training for Baseball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1374",
+    "members": 0,
+    "title": "Baseball - Men's Intercollegiate (Spring)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1375",
+    "members": 0,
+    "title": "Intercollegiate Sports: Baseball (Men)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1376",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Baseball & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1377",
+    "members": 0,
+    "title": "Men's Intrcol Baseball Team",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1378",
+    "members": 0,
+    "title": "Baseball, Varsity, Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1379",
+    "members": 0,
+    "title": "Intercollegiate Sports: Basketball (Women) Pre-Conference Comp",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1380",
+    "members": 0,
+    "title": "Conditioning for Men's Basketball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1381",
+    "members": 0,
+    "title": "Preseason Conditioning for Women's Basketball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1382",
+    "members": 0,
+    "title": "Conditioning for Women's Basketball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1383",
+    "members": 0,
+    "title": "Intercollegiate Men's Basketball - Fall",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1384",
+    "members": 0,
+    "title": "Basketball - Women's Intercollegiate Pre-Season (Fall)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1385",
+    "members": 0,
+    "title": "Intercollegiate Women's Basketball - Fall",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1386",
+    "members": 0,
+    "title": "Basketball \u2013 Men's Intercollegiate Off-Season (Spring)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1387",
+    "members": 0,
+    "title": "Intercollegiate Men's Basketball - Spring",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1388",
+    "members": 0,
+    "title": "Basketball \u2013 Women's Intercollegiate Off-Season (Spring)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1389",
+    "members": 0,
+    "title": "Intercollegiate Women's Basketball - Spring",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1390",
+    "members": 0,
+    "title": "Basketball Team - Men's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1391",
+    "members": 0,
+    "title": "Basketball Team - Women's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1392",
+    "members": 0,
+    "title": "Beach Volleyball \u2013 Women's Intercollegiate (Spring)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1393",
+    "members": 0,
+    "title": "Lower Body Conditioning - Plyometric Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1394",
+    "members": 0,
+    "title": "Intercollegiate Cheerleading-Fitness & Skills Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1395",
+    "members": 0,
+    "title": "Conditioning for Cross Country",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1396",
+    "members": 0,
+    "title": "Preseason Conditioning for Football",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1397",
+    "members": 0,
+    "title": "Conditioning for Men's Soccer",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1398",
+    "members": 0,
+    "title": "Off-Season Skills and Conditioning for Wrestling",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1399",
+    "members": 0,
+    "title": "Preseason Conditioning for Women's Soccer",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1400",
+    "members": 0,
+    "title": "Conditioning for Women's Soccer",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1401",
+    "members": 0,
+    "title": "Intercollegiate Varsity Sports Pre-Conference Season - Women",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1402",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Cross Country & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1403",
+    "members": 0,
+    "title": "Intercollegiate Sports: Cross-Country (Women)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1404",
+    "members": 0,
+    "title": "Varsity Cross Country for Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1405",
+    "members": 0,
+    "title": "Off-Season Training for Cross Country",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1406",
+    "members": 0,
+    "title": "Varsity Cross Country for Women",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1407",
+    "members": 0,
+    "title": "Defensive Varsity Football Lab",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1408",
+    "members": 0,
+    "title": "Varsity Swimming and Diving for Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1409",
+    "members": 0,
+    "title": "Varsity Swimming and Diving for Women",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1410",
+    "members": 0,
+    "title": "Off-Season Training for Intercollegiate Esports",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1411",
+    "members": 0,
+    "title": "Soccer - Women's Intercollegiate (Fall)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1412",
+    "members": 0,
+    "title": "Men's Intercollegiate Track and Field",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1413",
+    "members": 0,
+    "title": "Women's Intercollegiate Track and Field",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1414",
+    "members": 0,
+    "title": "Track and Field Skills (Men/Women)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1415",
+    "members": 0,
+    "title": "Varsity Track and Field for Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1416",
+    "members": 0,
+    "title": "Track and Field - Off Season",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1417",
+    "members": 0,
+    "title": "Varsity Track and Field for Women",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1418",
+    "members": 0,
+    "title": "Intercollegiate Trk & Fld Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1419",
+    "members": 0,
+    "title": "Intercollegiate Sports: Football (Men)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1420",
+    "members": 0,
+    "title": "Offensive Varsity Football Lab",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1421",
+    "members": 0,
+    "title": "Varsity Football for Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1422",
+    "members": 0,
+    "title": "Golf, Varsity, Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1423",
+    "members": 0,
+    "title": "Theory Interc Women's Softball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1424",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Men's Soccer & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1425",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Men's Tennis & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1426",
+    "members": 0,
+    "title": "Intercollegiate Water Polo--Men's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1427",
+    "members": 0,
+    "title": "Pre-Season Intercollegiate Volleyball - Men's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1428",
+    "members": 0,
+    "title": "Intercollegiate Men's Rodeo",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1429",
+    "members": 0,
+    "title": "Men's Intercollegiate Wrestling",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1430",
+    "members": 0,
+    "title": "Intercollegiate Water Polo Np (Non Participant)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1431",
+    "members": 0,
+    "title": "Soccer - Women's Intercollegiate Off-Season (Spring)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1432",
+    "members": 0,
+    "title": "Off-Season Training for Women's Intercollegiate Volleyball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1433",
+    "members": 0,
+    "title": "Off-Season Training for Intercollegiate Swimming Teams",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1434",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Women's Soccer & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1435",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Women's Tennis & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1436",
+    "members": 0,
+    "title": "Out-Of-Season Intercollegiate Softball & PE",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1437",
+    "members": 0,
+    "title": "Intercollegiate Volleyball (Women) \"Out-Of-Season\"",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1438",
+    "members": 0,
+    "title": "Intercollegiate Water Polo-Women's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1439",
+    "members": 0,
+    "title": "Soccer - Women's Intercollegiate Pre-Season (Summer)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1440",
+    "members": 0,
+    "title": "Volleyball \u2013 Women's Intercollegiate Pre-Season (Summer)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1441",
+    "members": 0,
+    "title": "Intercollegiate Women's Rodeo",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1442",
+    "members": 0,
+    "title": "Softball - Women's Intercollegiate (Spring)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1443",
+    "members": 0,
+    "title": "Intercollegiate Women's Swim",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1444",
+    "members": 0,
+    "title": "Women's Intercollegiate Wrestling",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1445",
+    "members": 0,
+    "title": "Intercollegiate Sports: Soccer (Women)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1446",
+    "members": 0,
+    "title": "Intercollegiate Sports: Softball (Women)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1447",
+    "members": 0,
+    "title": "Women's Intrcol Sftbll Tm",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1448",
+    "members": 0,
+    "title": "Varsity Water Polo for Men",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1449",
+    "members": 0,
+    "title": "Volleyball - Off Season",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1450",
+    "members": 0,
+    "title": "Wrestling - Off-Season",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1451",
+    "members": 0,
+    "title": "Water Polo Team - Women's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1452",
+    "members": 0,
+    "title": "Varsity Water Polo for Women",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "ATHL M1453",
+    "members": 0,
+    "title": "Volleyball Team - Women's",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "HLTH M1012",
+    "members": 0,
+    "title": "Practical Applications in Athletic Training 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "HLTH M1170",
+    "members": 0,
+    "title": "Practical Applications in Athletic Training 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1043",
+    "members": 0,
+    "title": "Aerobic Fitness 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1044",
+    "members": 0,
+    "title": "Kickboxing with Jeet Kune Do Concepts-Level 1 Teaching Assistant",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1045",
+    "members": 0,
+    "title": "Techniques in Athletic Taping 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1048",
+    "members": 0,
+    "title": "Conditioning Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1049",
+    "members": 0,
+    "title": "Bowling 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1052",
+    "members": 0,
+    "title": "Cardiovascular Conditioning 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1053",
+    "members": 0,
+    "title": "Cardiovascular Development - Running Emphasis 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1054",
+    "members": 0,
+    "title": "Practical Experience in Kinesiology and Physical Education 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1055",
+    "members": 0,
+    "title": "Personal Fitness Evaluation 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1056",
+    "members": 0,
+    "title": "Stretching for Flexibility - 1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1057",
+    "members": 0,
+    "title": "Judo Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1058",
+    "members": 0,
+    "title": "Soccer Level 1",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1108",
+    "members": 3,
+    "title": "Pediatric CPR and AED",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1119",
+    "members": 2,
+    "title": "Aerobic Weight Training",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1145",
+    "members": 2,
+    "title": "Yoga Mobility and Alignment",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1148",
+    "members": 0,
+    "title": "Masters Swimming 1",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1150",
+    "members": 2,
+    "title": "Introduction to Human Movement Anatomy",
+    "votes": {}
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1151",
+    "members": 5,
+    "title": "Movement Anatomy",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1152",
+    "members": 2,
+    "title": "Anatomy and Physiology for Yoga Teachers",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1153",
+    "members": 3,
+    "title": "Pilates Apparatus Instructor Training",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1154",
+    "members": 5,
+    "title": "Applied Exercise Physiology",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1155",
+    "members": 2,
+    "title": "Applied Exercise Science",
+    "votes": {}
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1156",
+    "members": 5,
+    "title": "Applied Kinesiology",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1180",
+    "members": 2,
+    "title": "Senior Fitness Assessment, Strength & Conditioning Programming",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1181",
+    "members": 4,
+    "title": "Exercise and Fitness Assessment",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1185",
+    "members": 0,
+    "title": "PE 179-D1",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1187",
+    "members": 0,
+    "title": "Aikido 2 Intermediate",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1188",
+    "members": 0,
+    "title": "Alternatives for Lifetime Fitness 2",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1189",
+    "members": 2,
+    "title": "College Success for Athletes",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1190",
+    "members": 0,
+    "title": "Mgmt Care Athletic Injuries 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1192",
+    "members": 0,
+    "title": "Mind Body Fusion 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1193",
+    "members": 0,
+    "title": "Bootcamp Fitness - Level 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1194",
+    "members": 0,
+    "title": "Bowling 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1195",
+    "members": 0,
+    "title": "Cardiovascular Conditioning 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1199",
+    "members": 0,
+    "title": "Flag Football League 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1200",
+    "members": 0,
+    "title": "Flexibility and Stretching 2",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1201",
+    "members": 2,
+    "title": "Prevention and Care of Athletic Injuries Lab",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1205",
+    "members": 2,
+    "title": "Principles and Theory of Athletic Coaching",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1206",
+    "members": 0,
+    "title": "Futsal 2 (Indoor Soccer)",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1208",
+    "members": 3,
+    "title": "Fundamentals of Athletic Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1212",
+    "members": 0,
+    "title": "Judo Skills 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1222",
+    "members": 0,
+    "title": "Surfing and Ocean Safety Level 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1223",
+    "members": 0,
+    "title": "Pilates - Level 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1225",
+    "members": 0,
+    "title": "Spin & Sculpt 2",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1227",
+    "members": 0,
+    "title": "Bootcamp Fitness - Level 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1229",
+    "members": 0,
+    "title": "Bowling 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1231",
+    "members": 0,
+    "title": "Brazilian Jiu-Jitsu 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1233",
+    "members": 0,
+    "title": "Cardiovascular Conditioning 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1237",
+    "members": 0,
+    "title": "Cardiovascular Development - Running Emphasis 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1240",
+    "members": 0,
+    "title": "Individual Swim Conditioning 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1249",
+    "members": 0,
+    "title": "Judo Skills 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1250",
+    "members": 0,
+    "title": "Surfing and Ocean Safety Level 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1251",
+    "members": 0,
+    "title": "Aqua Aerobics 4",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1253",
+    "members": 0,
+    "title": "Bowling 4",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1256",
+    "members": 0,
+    "title": "Swimming 4 - Competitive",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1259",
+    "members": 0,
+    "title": "Core Conditioning 4: Power Sculpting",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1262",
+    "members": 0,
+    "title": "Fitness Center Super Circuit (Abridged)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1265",
+    "members": 0,
+    "title": "Core Conditioning for Abs, Hips and Thighs",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1266",
+    "members": 0,
+    "title": "Stress Management Through Physical Activity",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1267",
+    "members": 0,
+    "title": "Adapted: Beginning Stretching and Stress Reduction",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1270",
+    "members": 0,
+    "title": "Adaptive Circuit Endurance Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1272",
+    "members": 0,
+    "title": "Advanced Aqua Aerobics",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1273",
+    "members": 0,
+    "title": "Fire Agility - Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1274",
+    "members": 0,
+    "title": "Advanced Yoga Asana",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1275",
+    "members": 0,
+    "title": "Advanced Balance and Stability Exercise (B.A.S.E.)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1282",
+    "members": 0,
+    "title": "Advanced Core Balance and Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1351",
+    "members": 3,
+    "title": "Total Body Conditioning 1",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1353",
+    "members": 3,
+    "title": "Total Body Conditioning 2",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1355",
+    "members": 3,
+    "title": "Total Body Conditioning 3",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1373",
+    "members": 0,
+    "title": "Advanced Body and Barre",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1376",
+    "members": 2,
+    "title": "Sports Medicine Experience C",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1402",
+    "members": 3,
+    "title": "Care and Prevention of Injuries",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1410",
+    "members": 4,
+    "title": "Personal Trainer Certification Preparation",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1411",
+    "members": 0,
+    "title": "Advanced Boxing for Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1418",
+    "members": 2,
+    "title": "Sports and Cinema",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1424",
+    "members": 0,
+    "title": "Advanced Guts and Butts Workout",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1427",
+    "members": 4,
+    "title": "Foundations of Coaching",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1431",
+    "members": 2,
+    "title": "Coaching Team Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1432",
+    "members": 2,
+    "title": "Theory of Coaching Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1437",
+    "members": 0,
+    "title": "Cardio Kickboxing - Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1438",
+    "members": 0,
+    "title": "Rock Climbing: Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1439",
+    "members": 0,
+    "title": "Advanced Conditioning for Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1440",
+    "members": 0,
+    "title": "Advanced Distance Running/Cross Country",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1442",
+    "members": 0,
+    "title": "Advanced Functional Training for Fat Loss",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1443",
+    "members": 0,
+    "title": "Advanced Swim for Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1445",
+    "members": 0,
+    "title": "Advanced Indoor Soccer - Futsal",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1446",
+    "members": 0,
+    "title": "Intermediate to Advanced Golf",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1448",
+    "members": 0,
+    "title": "Conditioning Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1449",
+    "members": 0,
+    "title": "Advanced Pilates Joyful Movement: Personal/Observation/Student Teaching",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1450",
+    "members": 0,
+    "title": "Advanced Weight Training- Power Lifting and Plyometrics Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1452",
+    "members": 0,
+    "title": "Stand Up Paddleboard Yoga - Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1453",
+    "members": 0,
+    "title": "Stand Up Paddling - Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1460",
+    "members": 2,
+    "title": "Introduction to Strength and Conditioning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1461",
+    "members": 0,
+    "title": "Women's Softball - Advanced",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1462",
+    "members": 0,
+    "title": "Dance, Aerobic",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1463",
+    "members": 0,
+    "title": "Walk/Jog for Aerobic Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1464",
+    "members": 0,
+    "title": "Beginning Aqua Aerobics",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1465",
+    "members": 0,
+    "title": "Fire Agility - Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1466",
+    "members": 0,
+    "title": "Fire Service Conditioning & Physical Agility Development",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1467",
+    "members": 0,
+    "title": "Intercollegiate Strength and Conditioning Speed and Agility Development",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1469",
+    "members": 0,
+    "title": "Fire Agility - Intermediate",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1470",
+    "members": 0,
+    "title": "Introduction to CPR and First Aid for Coaches",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1476",
+    "members": 0,
+    "title": "CPR, First Aid, and Emergencies",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1477",
+    "members": 0,
+    "title": "Aikido - Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1478",
+    "members": 0,
+    "title": "Theory and Technical Analysis of Offensive Football",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1480",
+    "members": 0,
+    "title": "Beginning Aquatic Calisthenics",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1481",
+    "members": 0,
+    "title": "Intermediate Aquatic Calisthenics",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1487",
+    "members": 2,
+    "title": "Social-Cultural Issues in Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1505",
+    "members": 4,
+    "title": "Diversity & Equity in Sport",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1506",
+    "members": 0,
+    "title": "Aquatic Fitness - Crosstraining",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1507",
+    "members": 0,
+    "title": "Lower Extremity Injury Assessment and Reconditioning",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1517",
+    "members": 4,
+    "title": "Yoga Teacher Training Essentials",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1518",
+    "members": 2,
+    "title": "Yoga Philosophy, Lifestyle, and Ethics",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1519",
+    "members": 2,
+    "title": "Sport Ethics",
+    "votes": {}
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1520",
+    "members": 5,
+    "title": "Sports Ethics",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1521",
+    "members": 2,
+    "title": "Techniques of Strength Training and Group Exercise Instruction",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1525",
+    "members": 2,
+    "title": "Introduction to Exercise Science",
+    "votes": {}
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1526",
+    "members": 5,
+    "title": "Techniques of Exercise Leadership",
+    "votes": {}
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1529",
+    "members": 6,
+    "title": "Exercise Physiology",
+    "votes": {}
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1530",
+    "members": 5,
+    "title": "Exercise for Special Populations",
+    "votes": {}
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1533",
+    "members": 7,
+    "title": "Sport and Exercise Psychology",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1535",
+    "members": 2,
+    "title": "Practical Experience in Personal Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1540",
+    "members": 0,
+    "title": "Exercise Techniques and Fitness Assessments",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1542",
+    "members": 0,
+    "title": "Athletic Training: Injury Prevention, Evaluation and Care",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1549",
+    "members": 0,
+    "title": "Psychology of Specific Athletic Competition - Minimal Contact",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1553",
+    "members": 2,
+    "title": "Sport in Film",
+    "votes": {}
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1554",
+    "members": 6,
+    "title": "Sports in Film",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1569",
+    "members": 2,
+    "title": "Techniques of Fitness Instruction",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1578",
+    "members": 2,
+    "title": "Introduction to Personal Fitness Training",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1592",
+    "members": 3,
+    "title": "Psychology of Fitness and Sport Performance",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1598",
+    "members": 2,
+    "title": "Psychology of Sport and Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1617",
+    "members": 0,
+    "title": "Introduction to Athletic Training and Sports Medicine",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1620",
+    "members": 0,
+    "title": "Introduction to Badminton",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1621",
+    "members": 0,
+    "title": "Badminton Tournament Play",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1622",
+    "members": 0,
+    "title": "Intermediate Exercise, Balance, and Mobility",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1623",
+    "members": 0,
+    "title": "Intermediate Stability Ball Training",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1624",
+    "members": 2,
+    "title": "Football Theory",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1627",
+    "members": 0,
+    "title": "Intermediate Body and Barre",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1634",
+    "members": 0,
+    "title": "Introduction to Barre Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1635",
+    "members": 0,
+    "title": "Conditioning for Baseball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1648",
+    "members": 0,
+    "title": "Intermediate Tournament Baseball League",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1663",
+    "members": 2,
+    "title": "Nutrition for Sports and Human Performance",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1668",
+    "members": 0,
+    "title": "Techniques of Baseball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1675",
+    "members": 0,
+    "title": "Basic Heart Rate Training-Fitness Training-Heart Rate Monitor",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1677",
+    "members": 0,
+    "title": "Introduction to Basketball Officiating",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1678",
+    "members": 0,
+    "title": "Basketball Tournament Play",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1690",
+    "members": 0,
+    "title": "Nontraditional Season, Beach Volleyball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1697",
+    "members": 0,
+    "title": "Elements of Swim Technique- Beginner Intermediate",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1699",
+    "members": 0,
+    "title": "Body Conditioning Boot Camp: Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1700",
+    "members": 0,
+    "title": "Beginning Cardio Pump",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1728",
+    "members": 2,
+    "title": "Yoga Teacher Training Implementation",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1734",
+    "members": 2,
+    "title": "Techniques of Instruction: Strength Training",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1735",
+    "members": 3,
+    "title": "Pilates Mat Instructor Training",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1736",
+    "members": 2,
+    "title": "Personal Trainer Instructor",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1738",
+    "members": 3,
+    "title": "Water Safety Instructor",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1759",
+    "members": 0,
+    "title": "Beginning Conditioning for Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1760",
+    "members": 0,
+    "title": "Beginning Cycling for Fitness - Stationary, Indoor",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1762",
+    "members": 2,
+    "title": "Introduction to Sport and Recreation Management",
+    "votes": {}
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1767",
+    "members": 7,
+    "title": "Introduction to Personal Training",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1770",
+    "members": 2,
+    "title": "Introduction to Sport Psychology",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1771",
+    "members": 4,
+    "title": "Introduction to Sports Psychology",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1774",
+    "members": 2,
+    "title": "Introduction to Women in Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1775",
+    "members": 2,
+    "title": "Introduction to Teaching Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1799",
+    "members": 2,
+    "title": "Yoga Pedagogy Lecture",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1801",
+    "members": 4,
+    "title": "Lifeguarding",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1811",
+    "members": 0,
+    "title": "Social Dance - Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1812",
+    "members": 0,
+    "title": "Tae Kwon Do, Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1813",
+    "members": 0,
+    "title": "Beginning Fitness Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1814",
+    "members": 0,
+    "title": "Beginning Stretch, Flex and Tone",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1815",
+    "members": 0,
+    "title": "Beginning Stretching for Flexibility and Relaxation",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1816",
+    "members": 0,
+    "title": "Beginning Hydro HIIT (High Intensity Interval Training)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1817",
+    "members": 0,
+    "title": "Beginning Strength and Interval Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1818",
+    "members": 0,
+    "title": "Pilates Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1819",
+    "members": 0,
+    "title": "Team Sports- Wrestling Biomechanics",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1820",
+    "members": 0,
+    "title": "Introduction to Spring Board Diving",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1824",
+    "members": 2,
+    "title": "Yoga Teaching Methodology",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1831",
+    "members": 0,
+    "title": "Body Conditioning Boot Camp: Intermediate",
+    "votes": {}
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1832",
+    "members": 3,
+    "title": "Personal Training Professional Preparation",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1833",
+    "members": 2,
+    "title": "Personal Training Principles",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1834",
+    "members": 2,
+    "title": "Personal Trainer",
+    "votes": {}
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1835",
+    "members": 4,
+    "title": "Philosophy of Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1839",
+    "members": 0,
+    "title": "Body Conditioning and Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1840",
+    "members": 0,
+    "title": "Mind, Body, and Health",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1842",
+    "members": 0,
+    "title": "Sports Medicine: Lower Body Injuries",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1853",
+    "members": 0,
+    "title": "Brazilian Jiu Jitsu, Intermediate",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1857",
+    "members": 0,
+    "title": "Introduction to Outrigger Canoe",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1858",
+    "members": 0,
+    "title": "Flexibility and Cardiovascular Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1860",
+    "members": 0,
+    "title": "Intermediate Lap Swimming for Cardiovascular Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1866",
+    "members": 0,
+    "title": "Introductory Lap Swimming for Cardiovascular Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1868",
+    "members": 0,
+    "title": "Cheerleading Beginning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1881",
+    "members": 0,
+    "title": "Shape Up-Circuit Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1883",
+    "members": 0,
+    "title": "Theories & Techniques of Coaching Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1884",
+    "members": 0,
+    "title": "Meditation, Mindfulness and Self-Compassion",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1886",
+    "members": 0,
+    "title": "Competitive Fast Pitch Softball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1888",
+    "members": 0,
+    "title": "Int Weight Training & Cond",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1892",
+    "members": 0,
+    "title": "Fitness and Conditioning for Fire Fighters",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1896",
+    "members": 2,
+    "title": "Yoga Teacher Training 2 - Gross and Subtle Anatomy",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1899",
+    "members": 2,
+    "title": "Yoga Teacher Training 3 - Pedagogy: The Art and Science of Teaching",
+    "votes": {}
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1923",
+    "members": 2,
+    "title": "Yoga Teacher Training 1 - Yogic Lifestyle & Yoga as a Healing Practice",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1931",
+    "members": 0,
+    "title": "Weight Training and Conditioning: Free Weights",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1932",
+    "members": 0,
+    "title": "Strength and Conditioning",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1933",
+    "members": 0,
+    "title": "Core Strengthening and Flexibility",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1934",
+    "members": 0,
+    "title": "Corrective Exercise Strategies for the Movement Professional",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1935",
+    "members": 0,
+    "title": "Intermediate Distance Running/Cross Country",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1936",
+    "members": 0,
+    "title": "Women's Intercol Cross Country",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1937",
+    "members": 0,
+    "title": "Cross Fit Training and Functional Exercises",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1938",
+    "members": 0,
+    "title": "Cross Training for Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1939",
+    "members": 0,
+    "title": "Intermediate Outdoor Cycling",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1940",
+    "members": 0,
+    "title": "Women's Self-Defense, Health, and Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1941",
+    "members": 0,
+    "title": "Introduction to Self-Defense",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1942",
+    "members": 0,
+    "title": "Self-Defense and Personal Safety",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1943",
+    "members": 0,
+    "title": "Theory & Technique of Defensive Football",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1944",
+    "members": 0,
+    "title": "Theory of Defensive Football",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1945",
+    "members": 0,
+    "title": "Introductio to Disc Sports",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1946",
+    "members": 0,
+    "title": "Stress Reduction for Physical Efficiency",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1947",
+    "members": 0,
+    "title": "Stress Management and Mindfulness for Yoga Teachers and Everyone Else",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1948",
+    "members": 0,
+    "title": "Track and Field Techniques: Running Event Techniques",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1949",
+    "members": 0,
+    "title": "Exercise for Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1950",
+    "members": 0,
+    "title": "Physiology of Exercise for Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1951",
+    "members": 0,
+    "title": "Fitness Testing with Exercise Prescription",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1952",
+    "members": 0,
+    "title": "Heart Healthy Exercise",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1953",
+    "members": 0,
+    "title": "Modified Resistive Exercise",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1954",
+    "members": 0,
+    "title": "Sports Officiating Fall",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1955",
+    "members": 0,
+    "title": "Sports Officiating for Men's and Women's Track and Field",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1956",
+    "members": 0,
+    "title": "Functional Fitness Training Modes",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1957",
+    "members": 0,
+    "title": "Intermediate Kickboxing for Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1958",
+    "members": 0,
+    "title": "Intermediate Life Long Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1959",
+    "members": 0,
+    "title": "Intermediate Weight Lifting and Physcial Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1960",
+    "members": 0,
+    "title": "Intermediate Fitness Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1961",
+    "members": 0,
+    "title": "Walk/Jog for Total Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1962",
+    "members": 0,
+    "title": "Lifetime Fitness and Weight Management",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1963",
+    "members": 0,
+    "title": "Prin of Fitness & Performance",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1964",
+    "members": 0,
+    "title": "Sport Related Physical Fitness Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1965",
+    "members": 0,
+    "title": "Intermediate Stretch, Flex, and Tone",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1966",
+    "members": 0,
+    "title": "Intermediate Stretching for Flexibility and Relaxation",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1967",
+    "members": 0,
+    "title": "Intermediate Strength and Flexibility",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1968",
+    "members": 0,
+    "title": "Off-Seas Trng Interc Football",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1969",
+    "members": 0,
+    "title": "Introduction to Football Officiating",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1970",
+    "members": 0,
+    "title": "Theory of Offensive Football",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1971",
+    "members": 0,
+    "title": "Football Theory and Practice: Special Teams",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1972",
+    "members": 0,
+    "title": "Power Lifting and Free Weights",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1973",
+    "members": 0,
+    "title": "Wellness Modalities- Functional",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1974",
+    "members": 0,
+    "title": "Pilates Yoga Fusion",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1975",
+    "members": 0,
+    "title": "Intermediate Futsal: Indoor Soccer",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1976",
+    "members": 0,
+    "title": "Introductory Gentle/Restorative/Yin Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1977",
+    "members": 0,
+    "title": "Restorative and Gentle Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1978",
+    "members": 0,
+    "title": "Intermediate Walk for Health",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1979",
+    "members": 0,
+    "title": "Intermediate Hydro HIIT (High Intensity Interval Training)",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1980",
+    "members": 0,
+    "title": "Introduction to Hiking",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1981",
+    "members": 0,
+    "title": "Introduction to Sport Related Injuries",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1982",
+    "members": 0,
+    "title": "Intercol Women's Volleyball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1983",
+    "members": 0,
+    "title": "Intermediate Strength and Interval Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1984",
+    "members": 0,
+    "title": "Intermediate Sport Specific Training for Softball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1986",
+    "members": 0,
+    "title": "Pilates Matwork - Introduction",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1989",
+    "members": 0,
+    "title": "Swimming, Lifeguard Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1990",
+    "members": 0,
+    "title": "Weight Training for the Physically Limited",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1991",
+    "members": 0,
+    "title": "Pilates Teaching-Mat and Reformer",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1992",
+    "members": 0,
+    "title": "Muscular Strength Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1993",
+    "members": 0,
+    "title": "Training and Theory for Restorative Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1994",
+    "members": 0,
+    "title": "Techniques of Swimming",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1995",
+    "members": 0,
+    "title": "Tennis - Tournament",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M1996",
+    "members": 0,
+    "title": "Theory of Yoga",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2016",
+    "members": 0,
+    "title": "Advanced Trail Running",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2017",
+    "members": 0,
+    "title": "Conditioning for Athletes-Co-Ed",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2018",
+    "members": 0,
+    "title": "Conditioning and Injury Prevention for Beach Volleyball",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2019",
+    "members": 0,
+    "title": "Beginning Cardio Fitness and Resistance Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2020",
+    "members": 0,
+    "title": "Beginning to Intermediate Swimming",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2021",
+    "members": 0,
+    "title": "Intermediate Cardio Fitness and Resistance Training",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M2022",
+    "members": 0,
+    "title": "Flexibility Fitness",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9001",
+    "members": 3,
+    "title": "Adult CPR and AED",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9014",
+    "members": 2,
+    "title": "Principles of Coaching",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9016",
+    "members": 2,
+    "title": "Yoga History and Culture",
+    "votes": {}
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9018",
+    "members": 2,
+    "title": "Sports Medicine",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M9023",
+    "members": 0,
+    "title": "Body Dynamics/Aging Process-Older Adults",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M9024",
+    "members": 0,
+    "title": "Beginning Swim for Fitness for Older Adults",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M9025",
+    "members": 0,
+    "title": "Lifelong Learning for Older Adults",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M9026",
+    "members": 0,
+    "title": "Aquatic First Aid/CPR/AED for Lifeguard Rescue Non-Credit",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M9027",
+    "members": 0,
+    "title": "Sports Med Facility Operations & Emerg Mgmt- Non Contact",
+    "votes": {}
+   },
+   {
+    "colleges": 0,
+    "id": "KINE M9028",
+    "members": 0,
+    "title": "Spinal Fitness for Lifelong Learners",
+    "votes": {}
+   }
+  ],
+  "top_agrees": [
+   {
+    "colleges": 3,
+    "id": "ATHL M1001",
+    "members": 3,
+    "title": "Academic Skill Development for Intercollegiate Athletes 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1002",
+    "members": 2,
+    "title": "Academic Skill Development for Intercollegiate Athletes 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1003",
+    "members": 2,
+    "title": "Theory and Application of Intercollegiate Volleyball Skills",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1004",
+    "members": 4,
+    "title": "Conditioning for Intercollegiate Athletes",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "ATHL M1006",
+    "members": 7,
+    "title": "Intercollegiate Athletics-Basketball",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1007",
+    "members": 3,
+    "title": "Performance Training and Conditioning Techniques for Intercollegiate Athletics",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1008",
+    "members": 5,
+    "title": "Intercollegiate Athletics-Cross Country",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1009",
+    "members": 4,
+    "title": "Intercollegiate Athletics - Swimming and Diving",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1010",
+    "members": 3,
+    "title": "Intercollegiate Athletics-Track and Field",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1012",
+    "members": 3,
+    "title": "Intercollegiate Athletics-Water Polo",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "ATHL M1013",
+    "members": 7,
+    "title": "Intercollegiate Athletics-Soccer",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1015",
+    "members": 2,
+    "title": "Intercollegiate Athletics-Tennis",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1016",
+    "members": 6,
+    "title": "Intercollegiate Athletics-Volleyball",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1020",
+    "members": 2,
+    "title": "Intercollegiate Badminton",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1023",
+    "members": 2,
+    "title": "Intercollegiate Cheer/Yell Leaders/Marching Band",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1024",
+    "members": 5,
+    "title": "Off Season Conditioning for Baseball",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1025",
+    "members": 4,
+    "title": "Intercollegiate Baseball -Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1026",
+    "members": 3,
+    "title": "Intercollegiate Baseball 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1027",
+    "members": 3,
+    "title": "Intercollegiate Baseball 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 26,
+    "id": "ATHL M1028",
+    "members": 31,
+    "title": "Intercollegiate Baseball",
+    "votes": {
+     "Kinesiology": 31
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1030",
+    "members": 5,
+    "title": "Baseball, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1033",
+    "members": 6,
+    "title": "Off Season Conditioning for Basketball",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1034",
+    "members": 3,
+    "title": "Intercollegiate Basketball - Men/Fall",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1036",
+    "members": 3,
+    "title": "Intercollegiate Basketball-Women/Fall",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1038",
+    "members": 2,
+    "title": "Men's Varsity Basketball Fall",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1039",
+    "members": 2,
+    "title": "Women's Varsity Basketball Fall",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "ATHL M1040",
+    "members": 7,
+    "title": "Intercollegiate Basketball-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1042",
+    "members": 2,
+    "title": "Intercollegiate Basketball I (Men)",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1044",
+    "members": 5,
+    "title": "Intercollegiate Basketball 2",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1046",
+    "members": 3,
+    "title": "Basketball, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "ATHL M1047",
+    "members": 15,
+    "title": "Intercollegiate Men's Basketball",
+    "votes": {
+     "Kinesiology": 15
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1048",
+    "members": 3,
+    "title": "Intercollegiate Basketball - Men/Spring",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1050",
+    "members": 2,
+    "title": "Intercollegiate Basketball-Np",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1051",
+    "members": 5,
+    "title": "Basketball, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "ATHL M1053",
+    "members": 14,
+    "title": "Intercollegiate Women's Basketball",
+    "votes": {
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1054",
+    "members": 3,
+    "title": "Intercollegiate Basketball- Strength & Skills Training",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1055",
+    "members": 3,
+    "title": "Intercollegiate Basketball-Women/Spring",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1058",
+    "members": 2,
+    "title": "Men's Varsity Basketball Spring",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1061",
+    "members": 2,
+    "title": "Women's Varsity Basketball Spring",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 10,
+    "id": "ATHL M1067",
+    "members": 12,
+    "title": "Intercollegiate Beach Volleyball",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1070",
+    "members": 2,
+    "title": "Intercollegiate Cheer/Dance",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1071",
+    "members": 3,
+    "title": "Off-Season Conditioning for Cross-Country",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1072",
+    "members": 5,
+    "title": "Off-Season Conditioning for Track and Field",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1073",
+    "members": 4,
+    "title": "Off-Season Conditioning for Football",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1074",
+    "members": 3,
+    "title": "Off-Season Conditioning for Sport 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1075",
+    "members": 2,
+    "title": "Intercollegiate Sports-Conditioning & Skills Training 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1076",
+    "members": 3,
+    "title": "Off-Season Conditioning for Sport 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1077",
+    "members": 2,
+    "title": "Intercollegiate Conditioning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1078",
+    "members": 2,
+    "title": "Off-Season Conditioning for Intercollegiate Sports",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "ATHL M1079",
+    "members": 7,
+    "title": "Intercollegiate Sports-Conditioning & Skills Training",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1080",
+    "members": 4,
+    "title": "Intercollegiate Sports Conditioning",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1081",
+    "members": 2,
+    "title": "Off-Season Conditioning for Men's Soccer",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1082",
+    "members": 3,
+    "title": "Off-Season Conditioning for Women's Soccer",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1083",
+    "members": 4,
+    "title": "Off-Season Conditioning for Soccer",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1084",
+    "members": 6,
+    "title": "Off Season Conditioning for Softball",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1085",
+    "members": 2,
+    "title": "Off-Season Conditioning for Swimming",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1086",
+    "members": 6,
+    "title": "Off Season Conditioning for Tennis",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "ATHL M1087",
+    "members": 7,
+    "title": "Off Season Conditioning for Volleyball",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1088",
+    "members": 3,
+    "title": "In-Season Varsity Sport Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1089",
+    "members": 3,
+    "title": "Intercollegiate Cross Country-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1090",
+    "members": 4,
+    "title": "Intercollegiate Cross Country 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1091",
+    "members": 3,
+    "title": "Intercollegiate Cross Country 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "ATHL M1092",
+    "members": 19,
+    "title": "Intercollegiate Cross Country",
+    "votes": {
+     "Kinesiology": 19
+    }
+   },
+   {
+    "colleges": 15,
+    "id": "ATHL M1093",
+    "members": 16,
+    "title": "Intercollegiate Cross Country, Men",
+    "votes": {
+     "Kinesiology": 16
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1094",
+    "members": 3,
+    "title": "Cross Country, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1096",
+    "members": 2,
+    "title": ": Intercollegiate Cross Country for Women and Men",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1098",
+    "members": 3,
+    "title": "Cross Country, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1100",
+    "members": 2,
+    "title": "Intercollegiate Cross Country Teams",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 15,
+    "id": "ATHL M1101",
+    "members": 16,
+    "title": "Intercollegiate Cross Country, Women",
+    "votes": {
+     "Kinesiology": 16
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1103",
+    "members": 3,
+    "title": "Varsity Cross Country",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1105",
+    "members": 3,
+    "title": "Off Season Swim & Dive",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1106",
+    "members": 4,
+    "title": "Intercollegiate Swimming and Diving: Men",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1107",
+    "members": 7,
+    "title": "Intercollegiate Swimming and Diving (Men and Women)",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1108",
+    "members": 7,
+    "title": "Swimming and Diving, Intercollegiate-Women",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1111",
+    "members": 2,
+    "title": "Intercollegiate Track/Field-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1112",
+    "members": 3,
+    "title": "Intercollegiate Track and Field 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1113",
+    "members": 3,
+    "title": "Intercollegiate Track and Field 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1114",
+    "members": 3,
+    "title": "Track and Field, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "ATHL M1115",
+    "members": 10,
+    "title": "Intercollegiate Track and Field - Men",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1117",
+    "members": 2,
+    "title": "Off Season Intercollegiate Track and Field",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1118",
+    "members": 3,
+    "title": "Track and Field, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1119",
+    "members": 2,
+    "title": "Intercollegiate Track and Field Teams",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "ATHL M1120",
+    "members": 14,
+    "title": "Intercollegiate Track and Field",
+    "votes": {
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "ATHL M1121",
+    "members": 12,
+    "title": "Intercollegiate Track and Field - Women",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1125",
+    "members": 2,
+    "title": "Varsity Track and Field",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1126",
+    "members": 5,
+    "title": "Intercollegiate Football-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1127",
+    "members": 2,
+    "title": "Intercollegiate Physical Fitness",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1128",
+    "members": 6,
+    "title": "Intercollegiate Soccer-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1129",
+    "members": 2,
+    "title": "Intercollegiate Softball-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1130",
+    "members": 7,
+    "title": "Intercollegiate Volleyball-Fitness & Skills Training",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1133",
+    "members": 2,
+    "title": "Intercollegiate Football 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1134",
+    "members": 2,
+    "title": "Intercollegiate Football 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 21,
+    "id": "ATHL M1135",
+    "members": 25,
+    "title": "Intercollegiate Football",
+    "votes": {
+     "Kinesiology": 25
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1137",
+    "members": 2,
+    "title": "Off-Season Training for Men's Intercollegiate Football Team",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1138",
+    "members": 3,
+    "title": "Football, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1139",
+    "members": 2,
+    "title": "Intercollegiate Football-Offensive Techniques",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1140",
+    "members": 2,
+    "title": "Pre-Season Intercollegiate Football",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "ATHL M1143",
+    "members": 10,
+    "title": "Intercollegiate Golf",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "ATHL M1144",
+    "members": 7,
+    "title": "Intercollegiate Golf-Women",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1147",
+    "members": 4,
+    "title": "Varsity Golf",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1148",
+    "members": 2,
+    "title": "Intercollegiate Soccer I (Men)",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1149",
+    "members": 3,
+    "title": "Intercollegiate Water Polo 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1150",
+    "members": 6,
+    "title": "Intercollegiate Sand Volleyball 1",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1153",
+    "members": 5,
+    "title": "Intercollegiate Softball 1",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1155",
+    "members": 2,
+    "title": "Intercollegiate Swimming 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1156",
+    "members": 4,
+    "title": "Intercollegiate Tennis 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1157",
+    "members": 4,
+    "title": "Intercollegiate Volleyball 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1158",
+    "members": 2,
+    "title": "Intercollegiate Soccer 2 (Men)",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1159",
+    "members": 3,
+    "title": "Intercollegiate Water Polo 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1163",
+    "members": 3,
+    "title": "Intercollegiate Softball 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1165",
+    "members": 2,
+    "title": "Intercollegiate Swimming 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1166",
+    "members": 4,
+    "title": "Intercollegiate Tennis 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1167",
+    "members": 4,
+    "title": "Intercollegiate Volleyball 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1168",
+    "members": 3,
+    "title": "Water Polo, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1169",
+    "members": 2,
+    "title": "Off-Season Training for Men's Intercollegiate Soccer Team",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1170",
+    "members": 5,
+    "title": "Soccer, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1171",
+    "members": 3,
+    "title": "Swimming, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1172",
+    "members": 4,
+    "title": "Tennis, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1173",
+    "members": 3,
+    "title": "Wrestling, Men, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1174",
+    "members": 5,
+    "title": "Intercollegiate Water Polo, Men",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 28,
+    "id": "ATHL M1175",
+    "members": 34,
+    "title": "Intercollegiate Soccer - Men",
+    "votes": {
+     "Kinesiology": 34
+    }
+   },
+   {
+    "colleges": 14,
+    "id": "ATHL M1177",
+    "members": 19,
+    "title": "Intercollegiate Tennis, Men",
+    "votes": {
+     "Kinesiology": 19
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1178",
+    "members": 8,
+    "title": "Intercollegiate Volleyball - Men",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1179",
+    "members": 4,
+    "title": "Water Polo, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1180",
+    "members": 2,
+    "title": "Off-Season Training for Women's Intercollegiate Soccer Team",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1181",
+    "members": 2,
+    "title": "Off-Season Intercollegiate Soccer",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1182",
+    "members": 5,
+    "title": "Soccer, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1183",
+    "members": 3,
+    "title": "Softball, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1184",
+    "members": 2,
+    "title": "Intercollegiate Sports Off Season Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1185",
+    "members": 4,
+    "title": "Swimming, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1186",
+    "members": 2,
+    "title": "Off Season Intercollegiate Tennis",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1187",
+    "members": 4,
+    "title": "Tennis, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1188",
+    "members": 5,
+    "title": "Volleyball, Women, Off Season Intercollegiate",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "ATHL M1189",
+    "members": 8,
+    "title": "Intercollegiate Water Polo",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "ATHL M1190",
+    "members": 11,
+    "title": "Intercollegiate Water Polo, Women",
+    "votes": {
+     "Kinesiology": 11
+    }
+   },
+   {
+    "colleges": 15,
+    "id": "ATHL M1193",
+    "members": 15,
+    "title": "Intercollegiate Soccer",
+    "votes": {
+     "Kinesiology": 15
+    }
+   },
+   {
+    "colleges": 31,
+    "id": "ATHL M1194",
+    "members": 38,
+    "title": "Intercollegiate Soccer - Women",
+    "votes": {
+     "Kinesiology": 37
+    }
+   },
+   {
+    "colleges": 19,
+    "id": "ATHL M1195",
+    "members": 23,
+    "title": "Intercollegiate Softball",
+    "votes": {
+     "Kinesiology": 23
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1197",
+    "members": 5,
+    "title": "Intercollegiate Swimming",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "ATHL M1199",
+    "members": 22,
+    "title": "Intercollegiate Tennis - Women",
+    "votes": {
+     "Kinesiology": 22
+    }
+   },
+   {
+    "colleges": 16,
+    "id": "ATHL M1200",
+    "members": 16,
+    "title": "Intercollegiate Volleyball",
+    "votes": {
+     "Kinesiology": 16
+    }
+   },
+   {
+    "colleges": 30,
+    "id": "ATHL M1201",
+    "members": 34,
+    "title": "Intercollegiate Volleyball - Women",
+    "votes": {
+     "Kinesiology": 34
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1206",
+    "members": 3,
+    "title": "Off-Season Water Polo",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1207",
+    "members": 5,
+    "title": "Off Season Softball",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1208",
+    "members": 2,
+    "title": "Off Season Swimming",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1214",
+    "members": 2,
+    "title": "Varsity Soccer",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1217",
+    "members": 6,
+    "title": "Varsity Wrestling",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1218",
+    "members": 2,
+    "title": "Professional Activities/Cross Country 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1219",
+    "members": 2,
+    "title": "Theories and Strategies of Baseball 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1220",
+    "members": 3,
+    "title": "Theories and Strategies of Basketball 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1222",
+    "members": 2,
+    "title": "Theories and Strategies of Swimming and Diving 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1223",
+    "members": 2,
+    "title": "Theories and Strategies of Water Polo 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1224",
+    "members": 3,
+    "title": "Theories and Strategies of Soccer 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1225",
+    "members": 2,
+    "title": "Theories and Strategies of Softball 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1226",
+    "members": 2,
+    "title": "Theories and Strategies of Tennis 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1235",
+    "members": 4,
+    "title": "Swimming Team Activity, Men and Women",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1239",
+    "members": 2,
+    "title": "Theory and Analysis of Soccer",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1240",
+    "members": 2,
+    "title": "Student-Athlete Success 1",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1241",
+    "members": 3,
+    "title": "Baseball Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1242",
+    "members": 3,
+    "title": "Basketball Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1243",
+    "members": 2,
+    "title": "Weight Training for Collegiate Athletes",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1244",
+    "members": 3,
+    "title": "Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1245",
+    "members": 3,
+    "title": "Cross Country Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1246",
+    "members": 3,
+    "title": "Football Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1247",
+    "members": 4,
+    "title": "Strength and Conditioning for Intercollegiate Athletes",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1248",
+    "members": 3,
+    "title": "Water Polo Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1249",
+    "members": 3,
+    "title": "Soccer Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1250",
+    "members": 3,
+    "title": "Swimming Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1251",
+    "members": 3,
+    "title": "Volleyball Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1253",
+    "members": 4,
+    "title": "Athletic Conditioning",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1255",
+    "members": 2,
+    "title": "Topics in Intercollegiate Athletics",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1257",
+    "members": 2,
+    "title": "Women's Badminton Techniques",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1259",
+    "members": 3,
+    "title": "Pre-Season Conditioning for Baseball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1260",
+    "members": 5,
+    "title": "Fundamentals of Baseball",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1262",
+    "members": 2,
+    "title": "Off-Season Baseball Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1263",
+    "members": 2,
+    "title": "Theories and Strategies of Baseball 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1266",
+    "members": 3,
+    "title": "Pre-Season Conditioning for Basketball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1267",
+    "members": 2,
+    "title": "Women's Basketball Theory: Defense",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1268",
+    "members": 3,
+    "title": "Basketball Foundations",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1272",
+    "members": 2,
+    "title": "Off-Season Basketball Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1276",
+    "members": 2,
+    "title": "Pre-Season Conditioning for Beach Volleyball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1280",
+    "members": 2,
+    "title": "Men Intrcol Bsktball Team",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1283",
+    "members": 2,
+    "title": "Competitive Cross-Country",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1284",
+    "members": 2,
+    "title": "Competitive Swimming and Diving",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1285",
+    "members": 3,
+    "title": "Competitive Track and Field",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1286",
+    "members": 2,
+    "title": "Competitive Golf",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1287",
+    "members": 5,
+    "title": "Competitive Soccer",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1288",
+    "members": 3,
+    "title": "Competitive Softball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1289",
+    "members": 2,
+    "title": "Competitive Tennis",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1290",
+    "members": 2,
+    "title": "Competitive Volleyball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1294",
+    "members": 2,
+    "title": "Football Conditioning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1296",
+    "members": 3,
+    "title": "Pre-Season Conditioning for Men's Soccer",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1297",
+    "members": 2,
+    "title": "Out-Of-Season Sport Conditioning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1298",
+    "members": 2,
+    "title": "Pre-Season Conditioning for Water Polo",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1299",
+    "members": 3,
+    "title": "Pre-Season Conditioning for Women's Soccer",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1300",
+    "members": 2,
+    "title": "Pre-Season Conditioning for Softball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1302",
+    "members": 4,
+    "title": "Pre-Season Conditioning for Volleyball",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1304",
+    "members": 2,
+    "title": "Softball Conditioning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1305",
+    "members": 2,
+    "title": "Volleyball Conditioning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1311",
+    "members": 2,
+    "title": "Intercollegiate Football - Defense",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1312",
+    "members": 2,
+    "title": "Theories and Strategies of Swimming and Diving 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1313",
+    "members": 3,
+    "title": "Intercollegiate Electronic Sports",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1314",
+    "members": 2,
+    "title": "Experimental Offering in Sport",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1315",
+    "members": 2,
+    "title": "Track and Field Foundations",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1317",
+    "members": 2,
+    "title": "Off-Season Track and Field Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1318",
+    "members": 2,
+    "title": "Football Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1319",
+    "members": 5,
+    "title": "Fundamentals of Football",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1320",
+    "members": 2,
+    "title": "Intercollegiate Football - Offense",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1323",
+    "members": 2,
+    "title": "Off-Season Football Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1326",
+    "members": 3,
+    "title": "Fundamentals of Softball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1327",
+    "members": 3,
+    "title": "Fundamentals of Volleyball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1328",
+    "members": 3,
+    "title": "Intercollegiate Men's Golf",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1330",
+    "members": 2,
+    "title": "Intercollegiate Sports-Water Polo",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1331",
+    "members": 2,
+    "title": "Intercollegiate Sports-Volleyball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "ATHL M1338",
+    "members": 4,
+    "title": "Swimming, Men",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1339",
+    "members": 2,
+    "title": "Track Team: Men",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1342",
+    "members": 3,
+    "title": "Wrestling, Men",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1343",
+    "members": 2,
+    "title": "Off-Season Soccer Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1344",
+    "members": 2,
+    "title": "Off-Season Tennis Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1345",
+    "members": 2,
+    "title": "Off-Season Volleyball Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1346",
+    "members": 3,
+    "title": "Pep Squad",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1347",
+    "members": 2,
+    "title": "Theories and Strategies of Water Polo 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1349",
+    "members": 4,
+    "title": "Water Polo Techniques",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1351",
+    "members": 3,
+    "title": "Theories and Strategies of Soccer 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1353",
+    "members": 2,
+    "title": "Soccer Techniques",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "ATHL M1354",
+    "members": 2,
+    "title": "Women's Soccer Techniques",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1356",
+    "members": 2,
+    "title": "Theories and Strategies of Softball 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1359",
+    "members": 2,
+    "title": "Theories and Strategies of Tennis 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "ATHL M1360",
+    "members": 5,
+    "title": "Swimming - Women",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1361",
+    "members": 2,
+    "title": "Track Team: Women",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1363",
+    "members": 4,
+    "title": "Volleyball Techniques",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "ATHL M1455",
+    "members": 3,
+    "title": "Intercollegiate Women's Flag Football",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "ATHL M1457",
+    "members": 2,
+    "title": "Intercollegiate Track",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1001",
+    "members": 2,
+    "title": "Interactive Cardiovascular Fitness and Activity Tracking 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 36,
+    "id": "KINE M1002",
+    "members": 38,
+    "title": "Badminton 1",
+    "votes": {
+     "Kinesiology": 37
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1003",
+    "members": 2,
+    "title": "Team Sport - Basketball Level 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1004",
+    "members": 14,
+    "title": "Circuit Training 1",
+    "votes": {
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1005",
+    "members": 4,
+    "title": "Plyometric Conditioning 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1007",
+    "members": 2,
+    "title": "Futsal Level 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1009",
+    "members": 3,
+    "title": "Volleyball Level 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1010",
+    "members": 2,
+    "title": "Pickleball 1",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1011",
+    "members": 6,
+    "title": "Resistance Training 1",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1012",
+    "members": 2,
+    "title": "Women's Weight Training 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 47,
+    "id": "KINE M1013",
+    "members": 49,
+    "title": "Weight Training 1",
+    "votes": {
+     "Kinesiology": 46
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1014",
+    "members": 2,
+    "title": "Interactive Cardiovascular Fitness and Activity Tracking 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1016",
+    "members": 2,
+    "title": "Cardio Kick 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1017",
+    "members": 2,
+    "title": "Strength Development 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1019",
+    "members": 4,
+    "title": "Ultimate Frisbee - 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1020",
+    "members": 2,
+    "title": "Futsal Level 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1022",
+    "members": 2,
+    "title": "Soccer Level 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1023",
+    "members": 3,
+    "title": "Volleyball Level 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 16,
+    "id": "KINE M1024",
+    "members": 17,
+    "title": "Pickleball 2",
+    "votes": {
+     "Kinesiology": 16
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "KINE M1025",
+    "members": 11,
+    "title": "Pilates 2",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1026",
+    "members": 2,
+    "title": "Women's Weight Training 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1027",
+    "members": 12,
+    "title": "Badminton 3",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1028",
+    "members": 8,
+    "title": "Flag Football 3",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1029",
+    "members": 2,
+    "title": "Ultimate Frisbee 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1030",
+    "members": 2,
+    "title": "Futsal Level 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1032",
+    "members": 2,
+    "title": "Soccer Level 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1033",
+    "members": 2,
+    "title": "Volleyball Level 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "KINE M1034",
+    "members": 13,
+    "title": "Pickleball 3",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1035",
+    "members": 12,
+    "title": "Basketball 4",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1036",
+    "members": 2,
+    "title": "Futsal Level 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1038",
+    "members": 2,
+    "title": "Soccer Level 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 10,
+    "id": "KINE M1039",
+    "members": 10,
+    "title": "Pickleball 4",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1040",
+    "members": 2,
+    "title": "Advanced Aquatic Fitness",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1041",
+    "members": 2,
+    "title": "Academic Success for Student Athletes",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1042",
+    "members": 2,
+    "title": "Active Isolated Stretching",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1047",
+    "members": 2,
+    "title": "Body Dynamics Activity",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1050",
+    "members": 3,
+    "title": "Experimental Offering in Personal Activity",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1059",
+    "members": 2,
+    "title": "Athletic and Fitness Organization and Administration",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1061",
+    "members": 3,
+    "title": "Advanced Step Aerobics",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1062",
+    "members": 3,
+    "title": "Advanced Water Aerobics",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1063",
+    "members": 2,
+    "title": "Weight Training for Speed, Agility, Quickness: Advanced",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1064",
+    "members": 3,
+    "title": "Advanced Archery",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1066",
+    "members": 4,
+    "title": "Advanced Athletic Training",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "KINE M1067",
+    "members": 19,
+    "title": "Badminton - Advanced",
+    "votes": {
+     "Kinesiology": 18
+    }
+   },
+   {
+    "colleges": 14,
+    "id": "KINE M1068",
+    "members": 14,
+    "title": "Baseball - Advanced",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 28,
+    "id": "KINE M1069",
+    "members": 29,
+    "title": "Basketball - Advanced",
+    "votes": {
+     "Kinesiology": 26
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1071",
+    "members": 2,
+    "title": "Advanced Beginning Golf",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1072",
+    "members": 2,
+    "title": "Advanced Beginning Tennis",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1073",
+    "members": 3,
+    "title": "Advanced Body Sculpting",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1074",
+    "members": 3,
+    "title": "Bowling\u2014Advanced",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1075",
+    "members": 3,
+    "title": "Cardio and Strength Training, Advanced",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1078",
+    "members": 2,
+    "title": "Advanced Track and Field",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1080",
+    "members": 3,
+    "title": "Advanced Fitness Lab",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1082",
+    "members": 2,
+    "title": "Advanced Fitness Swimming",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1083",
+    "members": 7,
+    "title": "Advanced Walking for Fitness",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1086",
+    "members": 2,
+    "title": "Advanced Football for Men",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1088",
+    "members": 2,
+    "title": "Advanced Futsal",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1090",
+    "members": 3,
+    "title": "Advanced Indoor Soccer",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1091",
+    "members": 2,
+    "title": "Swimming-Intermediate/Advanced",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1093",
+    "members": 6,
+    "title": "Karate - Advanced",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1094",
+    "members": 2,
+    "title": "Advanced Lifesaving",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 21,
+    "id": "KINE M1095",
+    "members": 21,
+    "title": "Pickleball - Advanced",
+    "votes": {
+     "Kinesiology": 17
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1096",
+    "members": 4,
+    "title": "Advanced Pilates",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1097",
+    "members": 4,
+    "title": "Advanced Water Polo",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1098",
+    "members": 7,
+    "title": "Soccer, Advanced",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1099",
+    "members": 2,
+    "title": "Advanced Spinning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1100",
+    "members": 3,
+    "title": "Advanced Strength Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1101",
+    "members": 2,
+    "title": "Advanced Surfing",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1102",
+    "members": 23,
+    "title": "Swimming - Advanced",
+    "votes": {
+     "Kinesiology": 21
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1103",
+    "members": 2,
+    "title": "Advanced Table Tennis",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 28,
+    "id": "KINE M1104",
+    "members": 30,
+    "title": "Tennis - Advanced",
+    "votes": {
+     "Kinesiology": 29
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1105",
+    "members": 23,
+    "title": "Weight Training - Advanced",
+    "votes": {
+     "Kinesiology": 22
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1109",
+    "members": 3,
+    "title": "Aerobic Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1112",
+    "members": 3,
+    "title": "Aerobic Dance 3",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1113",
+    "members": 3,
+    "title": "Aerobic Dance 4",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1114",
+    "members": 10,
+    "title": "Aerobic Fitness",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1115",
+    "members": 2,
+    "title": "Aerobic Kickboxing",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1116",
+    "members": 3,
+    "title": "Aerobic Mix",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1117",
+    "members": 2,
+    "title": "Aerobic Power Walking",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1118",
+    "members": 2,
+    "title": "Aerobic Swimming",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1120",
+    "members": 6,
+    "title": "Aerobics",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 14,
+    "id": "KINE M1121",
+    "members": 14,
+    "title": "Aqua Aerobics",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1124",
+    "members": 2,
+    "title": "Beginning Water Aerobics",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1125",
+    "members": 4,
+    "title": "Aerobics: Cardio-Kickboxing",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1126",
+    "members": 2,
+    "title": "Aerobics Circuits",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1127",
+    "members": 2,
+    "title": "Dance Aerobics",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1129",
+    "members": 3,
+    "title": "Step Aerobics 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1131",
+    "members": 2,
+    "title": "Intermediate Low Impact Aerobics",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1133",
+    "members": 3,
+    "title": "Intermediate Water Aerobics",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1135",
+    "members": 2,
+    "title": "Aerobics with Music",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "KINE M1136",
+    "members": 17,
+    "title": "Step Aerobics",
+    "votes": {
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1138",
+    "members": 6,
+    "title": "Water Aerobics",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1140",
+    "members": 2,
+    "title": "T'ai-Chi Ch'uan, Beginning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1141",
+    "members": 2,
+    "title": "T'ai-Chi Ch'uan, Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1143",
+    "members": 4,
+    "title": "Introduction to Physical Therapy Aide",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1144",
+    "members": 3,
+    "title": "Aikido",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1146",
+    "members": 2,
+    "title": "Theory and Analysis of Basketball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1147",
+    "members": 2,
+    "title": "Theory and Analysis of Football",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1158",
+    "members": 3,
+    "title": "Aquatic Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1159",
+    "members": 2,
+    "title": "Aquatic Fitness 3- Deep Water Jogging",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1163",
+    "members": 2,
+    "title": "Aquatic Exercise 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1164",
+    "members": 10,
+    "title": "Aquatic Fitness",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1168",
+    "members": 7,
+    "title": "Archery",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1169",
+    "members": 5,
+    "title": "Beginning Archery",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1171",
+    "members": 7,
+    "title": "Intermediate Archery",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1172",
+    "members": 3,
+    "title": "Self-Defense, Martial Arts",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1173",
+    "members": 2,
+    "title": "Self Defense Arts",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1174",
+    "members": 5,
+    "title": "Mixed Martial Arts 1",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1177",
+    "members": 3,
+    "title": "Mixed Martial Arts 4",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1179",
+    "members": 2,
+    "title": "Psychological Aspects of Sports Performance",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1182",
+    "members": 2,
+    "title": "Fitness Assessment and Laboratory",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1183",
+    "members": 2,
+    "title": "Coaching the Young Athlete",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1196",
+    "members": 3,
+    "title": "Softball Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1197",
+    "members": 2,
+    "title": "Strength and Conditioning for Athletes",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1203",
+    "members": 3,
+    "title": "Clinical Experiences in Athletic Training 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1204",
+    "members": 3,
+    "title": "Clinical Experiences in Athletic Training 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1207",
+    "members": 2,
+    "title": "Athletic Skill Development",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "KINE M1209",
+    "members": 13,
+    "title": "Introduction to Athletic Training",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1210",
+    "members": 5,
+    "title": "Athletic Training",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1211",
+    "members": 5,
+    "title": "Introduction to Coaching Athletics",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 23,
+    "id": "KINE M1213",
+    "members": 26,
+    "title": "Badminton - Beginning",
+    "votes": {
+     "Kinesiology": 24
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1214",
+    "members": 2,
+    "title": "Badminton 2 - Beginning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1219",
+    "members": 2,
+    "title": "Badminton 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1220",
+    "members": 25,
+    "title": "Badminton - Intermediate",
+    "votes": {
+     "Kinesiology": 24
+    }
+   },
+   {
+    "colleges": 14,
+    "id": "KINE M1224",
+    "members": 14,
+    "title": "Beginning Baseball",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1226",
+    "members": 3,
+    "title": "Theory of Coaching Baseball",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1228",
+    "members": 2,
+    "title": "Baseball Theory: Defense",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 19,
+    "id": "KINE M1230",
+    "members": 20,
+    "title": "Baseball 1",
+    "votes": {
+     "Kinesiology": 20
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1232",
+    "members": 5,
+    "title": "Baseball 2",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1234",
+    "members": 4,
+    "title": "Baseball 3",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1235",
+    "members": 12,
+    "title": "Intermediate Baseball",
+    "votes": {
+     "Kinesiology": 11
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1236",
+    "members": 4,
+    "title": "Baseball 4",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1238",
+    "members": 2,
+    "title": "Baseball Theory: Offense",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1239",
+    "members": 3,
+    "title": "Baseball Skills",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1241",
+    "members": 4,
+    "title": "Baseball Theory",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 46,
+    "id": "KINE M1244",
+    "members": 50,
+    "title": "Basketball",
+    "votes": {
+     "Kinesiology": 45
+    }
+   },
+   {
+    "colleges": 36,
+    "id": "KINE M1245",
+    "members": 37,
+    "title": "Basketball - Beginning",
+    "votes": {
+     "Kinesiology": 34
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1246",
+    "members": 3,
+    "title": "Basketball 2 - Beginning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1247",
+    "members": 3,
+    "title": "Basketball 4 - Competitive",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1248",
+    "members": 2,
+    "title": "Post-Season Conditioning for Basketball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1252",
+    "members": 2,
+    "title": "Basketball: Individual Skill Development",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1254",
+    "members": 8,
+    "title": "Basketball 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1255",
+    "members": 6,
+    "title": "Basketball Skills 1",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 23,
+    "id": "KINE M1257",
+    "members": 23,
+    "title": "Basketball 2",
+    "votes": {
+     "Kinesiology": 22
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1258",
+    "members": 3,
+    "title": "Basketball Skills 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "KINE M1260",
+    "members": 17,
+    "title": "Basketball 3",
+    "votes": {
+     "Kinesiology": 17
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1261",
+    "members": 3,
+    "title": "Basketball 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 36,
+    "id": "KINE M1263",
+    "members": 37,
+    "title": "Basketball - Intermediate",
+    "votes": {
+     "Kinesiology": 33
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1264",
+    "members": 4,
+    "title": "Introduction to Basketball",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1268",
+    "members": 3,
+    "title": "Basketball Techniques",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "KINE M1269",
+    "members": 11,
+    "title": "Theory of Basketball",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1271",
+    "members": 9,
+    "title": "Beach Volleyball - Beginning",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1277",
+    "members": 5,
+    "title": "Beach Volleyball 3",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 14,
+    "id": "KINE M1281",
+    "members": 17,
+    "title": "Beach Volleyball",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1286",
+    "members": 2,
+    "title": "Beginning Boot Camp",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1288",
+    "members": 4,
+    "title": "Bowling\u2014Beginning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1289",
+    "members": 3,
+    "title": "Beginning Boxing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1292",
+    "members": 3,
+    "title": "Cardio and Strength Training, Beginning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1293",
+    "members": 2,
+    "title": "Beginning Fitness Center",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1294",
+    "members": 2,
+    "title": "Fitness Center Strength Training 2 - Beginning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1296",
+    "members": 10,
+    "title": "Circuit Training - Beginning",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1297",
+    "members": 4,
+    "title": "Beginning Rock Climbing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1298",
+    "members": 2,
+    "title": "Beginning Firefighting and Public Safety Conditioning",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1299",
+    "members": 3,
+    "title": "Cross Fitness 2 - Beginning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1300",
+    "members": 2,
+    "title": "Beginning Cross Training",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1301",
+    "members": 7,
+    "title": "Self Defense \u2013 Beginning",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1302",
+    "members": 2,
+    "title": "Track and Field 2 - Beginning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1303",
+    "members": 2,
+    "title": "Beginning Track and Field",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1304",
+    "members": 3,
+    "title": "Jogging for Fitness, Beginning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1308",
+    "members": 2,
+    "title": "Beginning Swim for Fitness",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1309",
+    "members": 2,
+    "title": "Beginning Fitness Swimming",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1310",
+    "members": 2,
+    "title": "Beginning Fitness Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1312",
+    "members": 8,
+    "title": "Beginning Flag Football",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1313",
+    "members": 2,
+    "title": "Beginning Football",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1315",
+    "members": 3,
+    "title": "Beginning Futsal",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 32,
+    "id": "KINE M1318",
+    "members": 32,
+    "title": "Golf - Beginning",
+    "votes": {
+     "Kinesiology": 29
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1319",
+    "members": 5,
+    "title": "Hatha Yoga - Beginning",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1320",
+    "members": 6,
+    "title": "Hiking - Beginning",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1322",
+    "members": 2,
+    "title": "Sports Training 2 - Beginning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1323",
+    "members": 2,
+    "title": "Beginning Tennis 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1324",
+    "members": 2,
+    "title": "Yoga 2 - Beginning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1325",
+    "members": 3,
+    "title": "Beginning Indoor Soccer",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1328",
+    "members": 5,
+    "title": "Karate - Beginning",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 30,
+    "id": "KINE M1330",
+    "members": 30,
+    "title": "Pickleball - Beginning",
+    "votes": {
+     "Kinesiology": 24
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1331",
+    "members": 8,
+    "title": "Beginning Water Polo",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "KINE M1333",
+    "members": 13,
+    "title": "Softball - Beginning",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1334",
+    "members": 4,
+    "title": "Beginning Spinning",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1335",
+    "members": 3,
+    "title": "Beginning Strength Training",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1336",
+    "members": 3,
+    "title": "Beginning Surfing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1338",
+    "members": 4,
+    "title": "Beginning Table Tennis",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 37,
+    "id": "KINE M1339",
+    "members": 39,
+    "title": "Tennis - Beginning",
+    "votes": {
+     "Kinesiology": 36
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1340",
+    "members": 2,
+    "title": "Beginning Triathlon Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 38,
+    "id": "KINE M1342",
+    "members": 39,
+    "title": "Volleyball - Beginning",
+    "votes": {
+     "Kinesiology": 34
+    }
+   },
+   {
+    "colleges": 23,
+    "id": "KINE M1344",
+    "members": 23,
+    "title": "Yoga, Beginning",
+    "votes": {
+     "Kinesiology": 17
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1345",
+    "members": 2,
+    "title": "Bicycle Spinning 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1346",
+    "members": 2,
+    "title": "Bicycle Spinning 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1347",
+    "members": 2,
+    "title": "Spin Bike",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1352",
+    "members": 7,
+    "title": "Body Conditioning 2",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1354",
+    "members": 6,
+    "title": "Body Conditioning 3",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1356",
+    "members": 2,
+    "title": "Body Conditioning 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1357",
+    "members": 7,
+    "title": "Body Conditioning Skills",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1359",
+    "members": 5,
+    "title": "Intermediate Body Sculpting",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1360",
+    "members": 6,
+    "title": "Body Sculpting",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1361",
+    "members": 5,
+    "title": "Boot Camp Fitness",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1363",
+    "members": 4,
+    "title": "Boot Camp 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1364",
+    "members": 2,
+    "title": "Boot Camp 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1365",
+    "members": 2,
+    "title": "Boot Camp 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1367",
+    "members": 5,
+    "title": "Bowling",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1368",
+    "members": 3,
+    "title": "Bowling\u2014Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1369",
+    "members": 3,
+    "title": "Boxing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1372",
+    "members": 3,
+    "title": "Intermediate Boxing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1374",
+    "members": 2,
+    "title": "Off Seas Trng Wmn Bsktbll",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1375",
+    "members": 3,
+    "title": "Guts and Butts",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1377",
+    "members": 4,
+    "title": "Fit Camp",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1378",
+    "members": 3,
+    "title": "Cardio Circuit",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1380",
+    "members": 3,
+    "title": "Cardio Conditioning 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1381",
+    "members": 3,
+    "title": "Cardio Conditioning 3",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1382",
+    "members": 3,
+    "title": "Cardio Conditioning 4",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1383",
+    "members": 5,
+    "title": "Core and Cardio Fitness 1",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1384",
+    "members": 3,
+    "title": "Core and Cardio Fitness 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1385",
+    "members": 3,
+    "title": "Core and Cardio Fitness 3",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1386",
+    "members": 3,
+    "title": "Core and Cardio Fitness 4",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1387",
+    "members": 2,
+    "title": "Cardio Cross Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1390",
+    "members": 2,
+    "title": "Cardio Zumba 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1393",
+    "members": 3,
+    "title": "Cardio and Strength Training, Intermediate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1396",
+    "members": 2,
+    "title": "Cardio Step",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1397",
+    "members": 2,
+    "title": "Strength and Cardio Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1398",
+    "members": 2,
+    "title": "Cardio Tennis",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1399",
+    "members": 3,
+    "title": "Cardiovascular Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1400",
+    "members": 3,
+    "title": "Cardiovascular and Strength Training",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1403",
+    "members": 2,
+    "title": "Life Fitness Center Cross Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1405",
+    "members": 7,
+    "title": "Fitness Center",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1406",
+    "members": 2,
+    "title": "Life Fitness Center Functional Fitness Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1407",
+    "members": 2,
+    "title": "Fitness Center Strength Training 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1408",
+    "members": 2,
+    "title": "Fitness Center Strength Training 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1409",
+    "members": 3,
+    "title": "Life Fitness Center Training",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1413",
+    "members": 3,
+    "title": "Tai Chi 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1414",
+    "members": 2,
+    "title": "Tai Chi 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1416",
+    "members": 2,
+    "title": "Tai Chi 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1417",
+    "members": 3,
+    "title": "Wellness: Lifestyle Choices",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1420",
+    "members": 2,
+    "title": "Circuit Training for Strength 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1421",
+    "members": 2,
+    "title": "Circuit Training for Strength 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1426",
+    "members": 2,
+    "title": "Rock Climbing",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1428",
+    "members": 3,
+    "title": "Introduction to Coaching",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1429",
+    "members": 2,
+    "title": "Coaching Youth Soccer",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1430",
+    "members": 2,
+    "title": "Theory of Coaching Softball",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1433",
+    "members": 12,
+    "title": "Theory of Coaching",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1434",
+    "members": 2,
+    "title": "Yoga/Pilates Combo",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1435",
+    "members": 2,
+    "title": "Competition Judo",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1436",
+    "members": 2,
+    "title": "Weight Training for Competition",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1444",
+    "members": 2,
+    "title": "Competitive Swimming",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1451",
+    "members": 2,
+    "title": "Principles of Physical Fitness and Conditioning",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1454",
+    "members": 4,
+    "title": "Individual Conditioning 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1456",
+    "members": 4,
+    "title": "Individual Conditioning 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1457",
+    "members": 2,
+    "title": "Weight Training and Conditioning 2",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1458",
+    "members": 4,
+    "title": "Individual Conditioning 3",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1459",
+    "members": 4,
+    "title": "Individual Conditioning 4",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1468",
+    "members": 5,
+    "title": "Principles of Strength and Conditioning",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1471",
+    "members": 10,
+    "title": "Conditioning for Sports",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1472",
+    "members": 2,
+    "title": "Swimming Conditioning",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1473",
+    "members": 2,
+    "title": "Core and Restore 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1474",
+    "members": 2,
+    "title": "Core Stability and Stretch",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1475",
+    "members": 2,
+    "title": "Core Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1479",
+    "members": 3,
+    "title": "Cross Country Skiing",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1482",
+    "members": 2,
+    "title": "Marathon Training Course for Run/Walk",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1483",
+    "members": 3,
+    "title": "Cross Fitness 4 - Experienced",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1484",
+    "members": 3,
+    "title": "Cross Fitness 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1485",
+    "members": 3,
+    "title": "Cross Fitness 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1486",
+    "members": 10,
+    "title": "Cross Training",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1492",
+    "members": 8,
+    "title": "Indoor Cycling",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1493",
+    "members": 4,
+    "title": "Indoor Cycling 4",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1494",
+    "members": 2,
+    "title": "Day Hiking",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1496",
+    "members": 4,
+    "title": "Self Defense Skills 1",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1498",
+    "members": 2,
+    "title": "Self-Defense Skills 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1499",
+    "members": 3,
+    "title": "Intermediate Self Defense",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1500",
+    "members": 4,
+    "title": "Women's Self Defense",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1501",
+    "members": 23,
+    "title": "Self-Defense",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 21
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1502",
+    "members": 3,
+    "title": "Defensive Football Techniques",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1503",
+    "members": 2,
+    "title": "Strength Development",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1504",
+    "members": 2,
+    "title": "Long Distance Running",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1508",
+    "members": 2,
+    "title": "Scuba Diving",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1509",
+    "members": 4,
+    "title": "Springboard Diving",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1512",
+    "members": 2,
+    "title": "Tennis Doubles",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1514",
+    "members": 2,
+    "title": "Dynamic Fitness Training 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1515",
+    "members": 3,
+    "title": "Physical Education in the Elementary Schools",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1516",
+    "members": 3,
+    "title": "Introduction to Physical Education",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1523",
+    "members": 7,
+    "title": "Introduction to Exercise Physiology",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1527",
+    "members": 2,
+    "title": "Mental Performance and Exercise Psychology",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1528",
+    "members": 2,
+    "title": "Exercise Nutrition",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1531",
+    "members": 3,
+    "title": "Exercise Testing and Prescription",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1534",
+    "members": 2,
+    "title": "Water Exercise",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1536",
+    "members": 2,
+    "title": "Track and Field 4 - Experienced",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1538",
+    "members": 3,
+    "title": "Experimental Offering in Fitness",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1539",
+    "members": 2,
+    "title": "Experimental Offering in Kinesiology",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1541",
+    "members": 3,
+    "title": "Fencing",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1543",
+    "members": 2,
+    "title": "Track and Field 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1544",
+    "members": 4,
+    "title": "Track and Field 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1545",
+    "members": 2,
+    "title": "Track and Field 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1546",
+    "members": 2,
+    "title": "Track and Field 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1547",
+    "members": 2,
+    "title": "Track and Field 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1548",
+    "members": 2,
+    "title": "Track and Field 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1550",
+    "members": 2,
+    "title": "Track and Field Techniques",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1551",
+    "members": 4,
+    "title": "Theory of Track and Field",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1552",
+    "members": 2,
+    "title": "Track and Field",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1555",
+    "members": 2,
+    "title": "Fitness for the First Responder Intermediate",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1557",
+    "members": 2,
+    "title": "Flexibility Fitness 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1559",
+    "members": 2,
+    "title": "Flexibility Fitness 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1560",
+    "members": 4,
+    "title": "Foundation for Fitness and Wellness",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1562",
+    "members": 2,
+    "title": "Yoga for Health and Fitness",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1565",
+    "members": 7,
+    "title": "Fitness Walking 2",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1567",
+    "members": 7,
+    "title": "Fitness Walking 3",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1570",
+    "members": 4,
+    "title": "Jogging for Fitness, Intermediate",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1574",
+    "members": 2,
+    "title": "Intermediate Fitness Swimming",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1575",
+    "members": 2,
+    "title": "Intermediate Fitness Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 15,
+    "id": "KINE M1576",
+    "members": 15,
+    "title": "Walking for Fitness: Intermediate",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1579",
+    "members": 4,
+    "title": "Fitness Walking 4",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1580",
+    "members": 5,
+    "title": "Fitness Walking/Jogging",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1582",
+    "members": 3,
+    "title": "Lifelong Fitness Lab",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1583",
+    "members": 2,
+    "title": "Swim Fitness Lab",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1585",
+    "members": 2,
+    "title": "Physical Fitness Laboratory",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1586",
+    "members": 7,
+    "title": "Fitness for Life",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1588",
+    "members": 2,
+    "title": "Life Fitness Strength Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1591",
+    "members": 5,
+    "title": "Fitness and Sports Nutrition",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "KINE M1596",
+    "members": 12,
+    "title": "Physical Fitness",
+    "votes": {
+     "Administration of Justice": 1,
+     "Kinesiology": 11
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1597",
+    "members": 3,
+    "title": "Pilates for Fitness",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1599",
+    "members": 3,
+    "title": "Running for Fitness",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1602",
+    "members": 6,
+    "title": "Swimming for Fitness",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1608",
+    "members": 2,
+    "title": "Fitness Yoga",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1609",
+    "members": 4,
+    "title": "Zumba Fitness",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 20,
+    "id": "KINE M1610",
+    "members": 21,
+    "title": "Flag Football",
+    "votes": {
+     "Kinesiology": 20
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1612",
+    "members": 4,
+    "title": "Flag Football 4",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1615",
+    "members": 2,
+    "title": "Flow Yoga",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1616",
+    "members": 6,
+    "title": "Football",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1618",
+    "members": 2,
+    "title": "Theory of Football 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1619",
+    "members": 2,
+    "title": "Intermediate Football",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1626",
+    "members": 4,
+    "title": "Touch Football",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1628",
+    "members": 7,
+    "title": "Ultimate Frisbee 1",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1631",
+    "members": 2,
+    "title": "Speed Training 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1632",
+    "members": 3,
+    "title": "Sports Training 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1633",
+    "members": 4,
+    "title": "Yoga 1 - Fundamentals",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1638",
+    "members": 7,
+    "title": "Futsal/Indoor Soccer",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1640",
+    "members": 2,
+    "title": "Golf the Short Game",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 31,
+    "id": "KINE M1641",
+    "members": 34,
+    "title": "Golf",
+    "votes": {
+     "Kinesiology": 30
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "KINE M1642",
+    "members": 11,
+    "title": "Golf 2",
+    "votes": {
+     "Kinesiology": 11
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1643",
+    "members": 8,
+    "title": "Golf 3",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1644",
+    "members": 6,
+    "title": "Golf - Intermediate",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1646",
+    "members": 3,
+    "title": "Introduction to Golf",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1647",
+    "members": 6,
+    "title": "Golf 4",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1649",
+    "members": 2,
+    "title": "Golf Skills",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1650",
+    "members": 2,
+    "title": "Gymnastics 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1651",
+    "members": 2,
+    "title": "Gymnastics 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1652",
+    "members": 2,
+    "title": "Gymnastics 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1653",
+    "members": 2,
+    "title": "Gymnastics 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1655",
+    "members": 9,
+    "title": "Hatha Yoga",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1658",
+    "members": 8,
+    "title": "High-Intensity Interval Training",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1660",
+    "members": 2,
+    "title": "High Level Swimming",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1661",
+    "members": 5,
+    "title": "Hiking",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1662",
+    "members": 2,
+    "title": "Trail Hiking",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1664",
+    "members": 7,
+    "title": "Kickboxing 1",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1665",
+    "members": 5,
+    "title": "Swimming Non-Swimmer 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1669",
+    "members": 4,
+    "title": "Swim and Run 1",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1670",
+    "members": 2,
+    "title": "Spin & Sculpt 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1671",
+    "members": 2,
+    "title": "Soccer Skills 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1672",
+    "members": 8,
+    "title": "Swimming Skills 1",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1673",
+    "members": 6,
+    "title": "Volleyball Skills 1",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1674",
+    "members": 9,
+    "title": "Yoga Skills 1",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 10,
+    "id": "KINE M1676",
+    "members": 10,
+    "title": "Softball 1",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1680",
+    "members": 2,
+    "title": "Taekwondo 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 41,
+    "id": "KINE M1681",
+    "members": 46,
+    "title": "Tennis 1",
+    "votes": {
+     "Kinesiology": 41
+    }
+   },
+   {
+    "colleges": 43,
+    "id": "KINE M1682",
+    "members": 46,
+    "title": "Volleyball 1",
+    "votes": {
+     "Kinesiology": 42
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1683",
+    "members": 2,
+    "title": "Walking 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1684",
+    "members": 4,
+    "title": "Indoor Soccer 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1685",
+    "members": 4,
+    "title": "Karate 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1686",
+    "members": 4,
+    "title": "Kickboxing 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1691",
+    "members": 2,
+    "title": "Soccer Skills 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1692",
+    "members": 5,
+    "title": "Swimming Skills 2",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1693",
+    "members": 3,
+    "title": "Weight Training Skills 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1694",
+    "members": 3,
+    "title": "Volleyball Skills 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1695",
+    "members": 5,
+    "title": "Yoga Skills - 2",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 18,
+    "id": "KINE M1696",
+    "members": 18,
+    "title": "Soccer 2",
+    "votes": {
+     "Kinesiology": 17
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1698",
+    "members": 8,
+    "title": "Softball 2",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 10,
+    "id": "KINE M1701",
+    "members": 10,
+    "title": "Swimming 2",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 20,
+    "id": "KINE M1703",
+    "members": 20,
+    "title": "Tennis 2",
+    "votes": {
+     "Kinesiology": 18
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1704",
+    "members": 22,
+    "title": "Weight Training 2",
+    "votes": {
+     "Kinesiology": 22
+    }
+   },
+   {
+    "colleges": 20,
+    "id": "KINE M1705",
+    "members": 20,
+    "title": "Volleyball 2",
+    "votes": {
+     "Kinesiology": 19
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1706",
+    "members": 2,
+    "title": "Walking 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 20,
+    "id": "KINE M1707",
+    "members": 21,
+    "title": "Yoga 2",
+    "votes": {
+     "Kinesiology": 19
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1708",
+    "members": 3,
+    "title": "Indoor Soccer 3",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1709",
+    "members": 2,
+    "title": "Soccer 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1710",
+    "members": 2,
+    "title": "Sports Training 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1711",
+    "members": 2,
+    "title": "Yoga 3 - Intermediate",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1712",
+    "members": 3,
+    "title": "Karate 3",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1713",
+    "members": 4,
+    "title": "Kickboxing 3",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1714",
+    "members": 2,
+    "title": "Mat Pilates 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1716",
+    "members": 7,
+    "title": "Pilates 3",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1717",
+    "members": 2,
+    "title": "Sand Volleyball 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1718",
+    "members": 4,
+    "title": "Swimming Skills 3",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1719",
+    "members": 3,
+    "title": "Yoga Skills 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "KINE M1720",
+    "members": 13,
+    "title": "Soccer 3",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1721",
+    "members": 5,
+    "title": "Softball 3",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1722",
+    "members": 2,
+    "title": "Spinning 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1723",
+    "members": 9,
+    "title": "Swimming 3",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "KINE M1724",
+    "members": 17,
+    "title": "Tennis 3",
+    "votes": {
+     "Kinesiology": 16
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1725",
+    "members": 12,
+    "title": "Weight Training 3",
+    "votes": {
+     "Kinesiology": 12
+    }
+   },
+   {
+    "colleges": 14,
+    "id": "KINE M1727",
+    "members": 15,
+    "title": "Yoga 3",
+    "votes": {
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1729",
+    "members": 4,
+    "title": "Intermediate Indoor Soccer",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1730",
+    "members": 2,
+    "title": "Indoor Soccer 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1731",
+    "members": 8,
+    "title": "Indoor Soccer",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1733",
+    "members": 6,
+    "title": "Water Safety Instruction",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1742",
+    "members": 10,
+    "title": "Karate - Intermediate",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 29,
+    "id": "KINE M1744",
+    "members": 30,
+    "title": "Pickleball - Intermediate",
+    "votes": {
+     "Kinesiology": 25
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1745",
+    "members": 3,
+    "title": "Intermediate Water Polo",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 30,
+    "id": "KINE M1746",
+    "members": 30,
+    "title": "Soccer, Intermediate",
+    "votes": {
+     "Kinesiology": 26
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1747",
+    "members": 4,
+    "title": "Intermediate Spinning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1748",
+    "members": 4,
+    "title": "Intermediate Strength Training",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1749",
+    "members": 3,
+    "title": "Intermediate Surfing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 28,
+    "id": "KINE M1750",
+    "members": 30,
+    "title": "Swimming - Intermediate",
+    "votes": {
+     "Kinesiology": 25
+    }
+   },
+   {
+    "colleges": 38,
+    "id": "KINE M1753",
+    "members": 40,
+    "title": "Tennis - Intermediate",
+    "votes": {
+     "Kinesiology": 37
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1754",
+    "members": 2,
+    "title": "Intermediate Triathlon Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 25,
+    "id": "KINE M1755",
+    "members": 25,
+    "title": "Weight Training - Intermediate",
+    "votes": {
+     "Kinesiology": 21
+    }
+   },
+   {
+    "colleges": 37,
+    "id": "KINE M1756",
+    "members": 39,
+    "title": "Volleyball - Intermediate",
+    "votes": {
+     "Kinesiology": 36
+    }
+   },
+   {
+    "colleges": 28,
+    "id": "KINE M1758",
+    "members": 28,
+    "title": "Yoga - Intermediate",
+    "votes": {
+     "Kinesiology": 23
+    }
+   },
+   {
+    "colleges": 50,
+    "id": "KINE M1761",
+    "members": 52,
+    "title": "Introduction to Kinesiology",
+    "votes": {
+     "Health": 2,
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1763",
+    "members": 3,
+    "title": "Introduction to Sport Management",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1764",
+    "members": 9,
+    "title": "Introduction to Sports Management",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1766",
+    "members": 3,
+    "title": "Introduction to Meditation",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1768",
+    "members": 3,
+    "title": "Introduction to Pickleball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1769",
+    "members": 2,
+    "title": "Introduction to Water Polo",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1772",
+    "members": 2,
+    "title": "Introduction to Sailing",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1776",
+    "members": 2,
+    "title": "Tennis - Introduction",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1778",
+    "members": 4,
+    "title": "Volleyball - Introduction",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1779",
+    "members": 7,
+    "title": "Introduction to Yoga",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1781",
+    "members": 2,
+    "title": "Social Issues in Sport",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1782",
+    "members": 2,
+    "title": "Karate 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1783",
+    "members": 3,
+    "title": "Kickboxing 4",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1784",
+    "members": 4,
+    "title": "Pilates 4",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1785",
+    "members": 9,
+    "title": "Soccer 4",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1786",
+    "members": 5,
+    "title": "Softball 4",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1787",
+    "members": 9,
+    "title": "Swimming 4",
+    "votes": {
+     "Kinesiology": 8
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1789",
+    "members": 8,
+    "title": "Weight Training 4",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1791",
+    "members": 9,
+    "title": "Yoga 4",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1794",
+    "members": 9,
+    "title": "Karate",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1795",
+    "members": 3,
+    "title": "Kayaking",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1797",
+    "members": 4,
+    "title": "Lap Swimming",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1798",
+    "members": 2,
+    "title": "Learning to Swim",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 18,
+    "id": "KINE M1800",
+    "members": 20,
+    "title": "Lifeguard Training",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1802",
+    "members": 5,
+    "title": "Power Lifting",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1804",
+    "members": 4,
+    "title": "Sport Management",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 12,
+    "id": "KINE M1805",
+    "members": 12,
+    "title": "Sports Management",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1807",
+    "members": 2,
+    "title": "Stress Management and Wellness",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 16,
+    "id": "KINE M1808",
+    "members": 20,
+    "title": "Mat Pilates",
+    "votes": {
+     "Kinesiology": 14
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1809",
+    "members": 3,
+    "title": "Pilates Mat Workout",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1810",
+    "members": 2,
+    "title": "Yoga and Meditation",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1821",
+    "members": 2,
+    "title": "Mental Skills for Sports Performance",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1825",
+    "members": 2,
+    "title": "Relaxation Movements",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1826",
+    "members": 3,
+    "title": "Novice Swimming",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1827",
+    "members": 22,
+    "title": "Sports Officiating",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1828",
+    "members": 2,
+    "title": "Sports Officiating Spring",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1829",
+    "members": 2,
+    "title": "Olympic Weightlifting",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 30,
+    "id": "KINE M1836",
+    "members": 34,
+    "title": "Pickleball",
+    "votes": {
+     "Kinesiology": 29
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1837",
+    "members": 3,
+    "title": "Slow Pitch Softball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1838",
+    "members": 2,
+    "title": "Plyometric Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "KINE M1841",
+    "members": 15,
+    "title": "Water Polo",
+    "votes": {
+     "Kinesiology": 13
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1844",
+    "members": 5,
+    "title": "Power Yoga",
+    "votes": {
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1845",
+    "members": 2,
+    "title": "Powerlifting",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 24,
+    "id": "KINE M1846",
+    "members": 27,
+    "title": "Sport Psychology",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1848",
+    "members": 2,
+    "title": "Racquetball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1852",
+    "members": 2,
+    "title": "Yoga for Relaxation",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 9,
+    "id": "KINE M1859",
+    "members": 9,
+    "title": "Theory of Soccer",
+    "votes": {
+     "Kinesiology": 6
+    }
+   },
+   {
+    "colleges": 24,
+    "id": "KINE M1861",
+    "members": 24,
+    "title": "Sport in Society",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1864",
+    "members": 2,
+    "title": "Sociology of Sports",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 17,
+    "id": "KINE M1865",
+    "members": 17,
+    "title": "Softball",
+    "votes": {
+     "Kinesiology": 17
+    }
+   },
+   {
+    "colleges": 11,
+    "id": "KINE M1867",
+    "members": 12,
+    "title": "Theory of Softball",
+    "votes": {
+     "Kinesiology": 10
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1869",
+    "members": 2,
+    "title": "Sport Specific Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1870",
+    "members": 2,
+    "title": "Spinning",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 13,
+    "id": "KINE M1873",
+    "members": 13,
+    "title": "Women in Sport",
+    "votes": {
+     "Kinesiology": 9
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1874",
+    "members": 7,
+    "title": "Women in Sports",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 8,
+    "id": "KINE M1875",
+    "members": 9,
+    "title": "Strength Training",
+    "votes": {
+     "Kinesiology": 7
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1876",
+    "members": 2,
+    "title": "Stretch",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1877",
+    "members": 2,
+    "title": "Stretching",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1878",
+    "members": 2,
+    "title": "Surfing",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1880",
+    "members": 2,
+    "title": "Swimming 5",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1882",
+    "members": 4,
+    "title": "Table Tennis",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1887",
+    "members": 2,
+    "title": "Theory of Tennis",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1889",
+    "members": 3,
+    "title": "Theory of Volleyball",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1890",
+    "members": 2,
+    "title": "Wrestling Theory",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1893",
+    "members": 3,
+    "title": "Wrestling",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 45,
+    "id": "KINE M1894",
+    "members": 51,
+    "title": "Yoga",
+    "votes": {
+     "Kinesiology": 43
+    }
+   },
+   {
+    "colleges": 5,
+    "id": "KINE M1895",
+    "members": 5,
+    "title": "Zumba",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1897",
+    "members": 2,
+    "title": "Swim Stroke Development 2",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1898",
+    "members": 4,
+    "title": "Water Polo 2",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1900",
+    "members": 2,
+    "title": "Swim Stroke Development 3",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1901",
+    "members": 4,
+    "title": "Water Polo 3",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1903",
+    "members": 2,
+    "title": "Swim Stroke Development 4",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1904",
+    "members": 4,
+    "title": "Water Polo 4",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1905",
+    "members": 3,
+    "title": "Advanced Body Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1906",
+    "members": 2,
+    "title": "Advanced Hatha Yoga",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1909",
+    "members": 2,
+    "title": "Advanced Outdoor Volleyball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1910",
+    "members": 2,
+    "title": "Advanced Volleyball Quads",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1912",
+    "members": 3,
+    "title": "Sports Appreciation",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1913",
+    "members": 2,
+    "title": "Aqua Exercise 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1914",
+    "members": 3,
+    "title": "Beginning Body Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1915",
+    "members": 3,
+    "title": "Beginning Weight Lifting",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1916",
+    "members": 2,
+    "title": "Beginning Pilates Mat",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1917",
+    "members": 2,
+    "title": "Beginning Volleyball Quads",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1918",
+    "members": 3,
+    "title": "Intermediate Body Conditioning",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1919",
+    "members": 2,
+    "title": "Individual Swim Conditioning 1",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1921",
+    "members": 3,
+    "title": "Jogging for Fitness",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1922",
+    "members": 3,
+    "title": "Gentle Yoga",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1924",
+    "members": 3,
+    "title": "Intermediate Hiking",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1926",
+    "members": 2,
+    "title": "Intermediate Outdoor Volleyball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 4,
+    "id": "KINE M1927",
+    "members": 5,
+    "title": "Intermediate Pilates",
+    "votes": {
+     "Kinesiology": 4
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1928",
+    "members": 2,
+    "title": "Intermediate Volleyball Quads",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1929",
+    "members": 2,
+    "title": "Introductory Outdoor Volleyball",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M1930",
+    "members": 2,
+    "title": "Introductory Volleyball Quads",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1997",
+    "members": 2,
+    "title": "Advanced Indoor Cycling",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1998",
+    "members": 2,
+    "title": "Advanced Fencing",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2001",
+    "members": 2,
+    "title": "Advanced Resistance Training",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2004",
+    "members": 2,
+    "title": "Care and Prevention of Athletic and Recreational Injuries",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2005",
+    "members": 2,
+    "title": "Beginning Fitness Boot Camp",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2006",
+    "members": 2,
+    "title": "Beginning Indoor Cycling",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M2007",
+    "members": 3,
+    "title": "Beginning Fencing",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M2008",
+    "members": 3,
+    "title": "Beginning Physical Fitness",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2009",
+    "members": 2,
+    "title": "Intermediate Fitness Boot Camp",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2010",
+    "members": 2,
+    "title": "Intermediate Indoor Cycling",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M2011",
+    "members": 2,
+    "title": "Introduction to Sport, Exercise, and Performance Psychology",
+    "votes": {
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2012",
+    "members": 2,
+    "title": "Intermediate Fencing",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M2013",
+    "members": 3,
+    "title": "Intermediate Physical Fitness",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2015",
+    "members": 2,
+    "title": "Swimming for Nonswimmers",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M2024",
+    "members": 3,
+    "title": "Intermediate Springboard Diving",
+    "votes": {
+     "Kinesiology": 3
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M2025",
+    "members": 3,
+    "title": "Physical Education in the Elementary School",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9007",
+    "members": 2,
+    "title": "Kung Fu Beg/Int/Adv",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9008",
+    "members": 2,
+    "title": "Tennis - Int/Adv (Coed)",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9011",
+    "members": 2,
+    "title": "Tennis - Beg (Coed)",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M9015",
+    "members": 2,
+    "title": "Experimental Courses in Physical Education",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9019",
+    "members": 2,
+    "title": "Snowboarding",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9021",
+    "members": 2,
+    "title": "Cardiovascular Fitness",
+    "votes": {
+     "Kinesiology": 2
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M9022",
+    "members": 2,
+    "title": "Yoga Fundamentals",
+    "votes": {
+     "Kinesiology": 2
+    }
+   }
+  ],
+  "top_differs": [
+   {
+    "colleges": 12,
+    "id": "KINE M1142",
+    "members": 14,
+    "title": "First Aid and CPR",
+    "votes": {
+     "Emergency Medical Technologies": 1,
+     "Health": 3,
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 3,
+    "id": "KINE M1524",
+    "members": 3,
+    "title": "Introduction to Sport and Exercise Psychology",
+    "votes": {
+     "Health": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1568",
+    "members": 2,
+    "title": "Low Impact Fitness",
+    "votes": {
+     "Kinesiology": 1,
+     "Physical Education Disabled Students": 1
+    }
+   },
+   {
+    "colleges": 2,
+    "id": "KINE M1656",
+    "members": 2,
+    "title": "Healthful Living",
+    "votes": {
+     "Health": 2
+    }
+   },
+   {
+    "colleges": 6,
+    "id": "KINE M1765",
+    "members": 6,
+    "title": "Introduction to Sports Medicine",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 22,
+    "id": "KINE M1806",
+    "members": 22,
+    "title": "Stress Management",
+    "votes": {
+     "Business": 1,
+     "Health": 6,
+     "Kinesiology": 5
+    }
+   },
+   {
+    "colleges": 7,
+    "id": "KINE M1847",
+    "members": 7,
+    "title": "Sports Psychology",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 1
+    }
+   },
+   {
+    "colleges": 1,
+    "id": "KINE M9020",
+    "members": 2,
+    "title": "Balance & Yoga for the Mature Adult",
+    "votes": {
+     "Health": 1,
+     "Kinesiology": 1
+    }
+   }
+  ]
+ }
+}

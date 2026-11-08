@@ -4,9 +4,9 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 820,
+  "file_datasets": 821,
   "external_services": 193,
-  "consumers": 534,
+  "consumers": 535,
   "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
@@ -11045,6 +11045,13 @@
      "line": 75
     },
     {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    },
+    {
      "id": "script:kb/_desc_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -11403,6 +11410,13 @@
      "direction": "read",
      "how": "literal",
      "line": 99
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -11863,6 +11877,13 @@
      "direction": "read",
      "how": "literal",
      "line": 73
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -18270,6 +18291,13 @@
      "line": 92
     },
     {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
+    },
+    {
      "id": "script:kb/_infer_disciplines_from_top.py",
      "kind": "script",
      "direction": "read",
@@ -21759,6 +21787,19 @@
    "main_committers": []
   },
   "file:tests/ccr_level_layout_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_seed_recheck_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29933,6 +29974,7 @@
     "tests/map_custom_report_sync_test.py",
     "tests/map_key_sketch_one_pull_test.py",
     "tests/anchor_rekey_dryrun_test.py",
+    "tests/ccr_seed_recheck_dryrun_test.py",
     "tests/program_courses_build_test.py",
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
