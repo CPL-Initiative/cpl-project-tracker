@@ -88,8 +88,7 @@
     18.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -552,5 +551,6 @@
    "The program learning outcomes printed appear to be general English/literature outcomes; recorded as printed for this certificate."
   ]
  },
- "extracted_run": "39001267800"
+ "extracted_run": 42376691800,
+ "read_run": "39001267800"
 }

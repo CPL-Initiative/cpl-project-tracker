@@ -20905,40 +20905,43 @@
     "_notes": "Only course number given; specific topic unknown."
   },
   "Credit By Exam San Diego City College": {
-    "unified_title": "Basic Refrigeration & AC Lab",
+    "unified_title": "Credit by Exam",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:13:59.788+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
     "source_exhibit_ids": [
       "MAPCBES-CBES-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Credit by Exam' (conf 0.55)."
+    "_revised_from": "Basic Refrigeration & AC Lab",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'Basic Refrigeration & AC Lab' on 2026-11-07."
   },
   "Credit By Exam at Mesa": {
-    "unified_title": "Basic Computer Keyboarding",
+    "unified_title": "Credit by Exam",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:13:56.411+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
     "source_exhibit_ids": [
       "MAPCBES-CBEA-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Credit by Exam' (conf 0.5)."
+    "_revised_from": "Basic Computer Keyboarding",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'Basic Computer Keyboarding' on 2026-11-07."
   },
   "Credit By Exam at Saddleback College": {
-    "unified_title": "Plant Propagation",
+    "unified_title": "Credit by Exam",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:13:58.587+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
     "source_exhibit_ids": [
       "MAPCBES-CBEA2-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Credit by Exam' (conf 0.55)."
+    "_revised_from": "Plant Propagation",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'Plant Propagation' on 2026-11-07."
   },
   "Credit by  Exam-Criminal Justice Report Writing and Courtroom Procedures": {
     "unified_title": "Criminal Justice Report Writing and Courtroom Procedures",
@@ -58767,20 +58770,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )": {
-    "unified_title": "CompTIA Security+",
+    "unified_title": "CompTIA A+",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:30:00.815425+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "CompTIA Security+",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'CompTIA Security+' on 2026-11-07."
   },
   "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )": {
-    "unified_title": "CompTIA Security+",
+    "unified_title": "CompTIA Network+",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:30:15.287694+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "CompTIA Security+",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'CompTIA Security+' on 2026-11-07."
   },
   "CompTIA Security+ Computer Hardware Systems - Credit by Exam (ECHT 148 )": {
     "unified_title": "CompTIA Security+",
@@ -58791,12 +58800,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )": {
-    "unified_title": "CompTIA Security+",
+    "unified_title": "CompTIA Server+",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:30:26.696659+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "CompTIA Security+",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'CompTIA Security+' on 2026-11-07."
   },
   "Completed NC.CUL-001 at College of the Canyons and proof of food handler's license.": {
     "unified_title": "Culinary Arts",
@@ -58903,15 +58915,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Credit by Exam": {
-    "unified_title": "Water Supply",
+    "unified_title": "Credit by Exam",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-03",
+    "classified_at": "2026-11-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-02T17:14:26.738+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+    "reviewed_by": "exhibits-s596@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Credit by Exam",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Credit by Exam' on 2026-11-02."
+    "_revised_from": "Water Supply",
+    "_notes": "Another look (Exhibits tab): exhibits-s596@bot replaced 'Water Supply' on 2026-11-07."
   },
   "Credit by Exam - CalAPS - Fire Protection Organization": {
     "unified_title": "Fire Protection Organization",
@@ -62175,5 +62187,37 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-06T20:33:35.697039+00:00",
     "reviewed_by": "slee@cccco.edu"
+  },
+  "BIOL 40C: Human Anatomy & Physiology III": {
+    "unified_title": "Human Anatomy & Physiology Iii",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CRJ 130": {
+    "unified_title": "Alcohol, Narcotics and Drug Abuse",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CRJ 155": {
+    "unified_title": "Crime Scene Investigation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "CRJ 220": {
+    "unified_title": "Interviewing and Counseling",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-07",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
   }
 }

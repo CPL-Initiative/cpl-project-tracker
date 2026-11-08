@@ -1,49 +1,8 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-06T22:16:25Z",
- "count": 4,
- "suggestions": {
-  "BIOL 40C: Human Anatomy & Physiology III": [
-   {
-    "kind": "course",
-    "title": "HUMAN ANATOMY & PHYSIOLOGY III",
-    "code": "BIOL 40C",
-    "share": 1.0,
-    "colleges": 2,
-    "scoped": true
-   }
-  ],
-  "CRJ 130": [
-   {
-    "kind": "course",
-    "title": "Alcohol, Narcotics and Drug Abuse",
-    "code": "CRJ 130",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "CRJ 155": [
-   {
-    "kind": "course",
-    "title": "Crime Scene Investigation",
-    "code": "CRJ 155",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "CRJ 220": [
-   {
-    "kind": "course",
-    "title": "Interviewing and Counseling",
-    "code": "CRJ 220",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ]
- },
+ "_generated_at": "2026-11-07T15:01:55Z",
+ "count": 0,
+ "suggestions": {},
  "aligned": {
   "Report Writing": {
    "kind": "mid",
@@ -58,13 +17,6 @@
    "title": "Introduction to Criminal Justice",
    "code": "CRJ 115",
    "college": "Palo Verde College"
-  },
-  "BIOL 40C: Human Anatomy & Physiology III": {
-   "kind": "course",
-   "id": "BIOL M10DY",
-   "title": "HUMAN ANATOMY & PHYSIOLOGY III",
-   "code": "BIOL 040C",
-   "college": "Foothill College"
   }
  }
 }

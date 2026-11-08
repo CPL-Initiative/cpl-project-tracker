@@ -1,7 +1,7 @@
 ---
 title: "Org & phrase scope / auth model — lane state"
 created: 2026-08-28
-updated: 2026-09-19
+updated: 2026-11-07
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -66,3 +66,51 @@ Ladder detail, the rung table and the gating mechanics:
 ## Status
 
 🔨 **MEASURED + RECOMMENDED, NOT BUILT** (Sky160, Sky168, Sky169). ⭐ **RECOMMENDATION: magic link + ONE `role` column on `allowed_reviewers` — explicitly NOT groups.** Sam re-opened his own 2026-08-14 ruling (*"I want to keep things stupid simple"*, `cpl_memory` `sam-roles-not-groups-keep-the-phrase`, verified). Measured: magic-link ALREADY covers more of COBI than phrases — **132 policies** call `is_allowed_reviewer()` vs **83** calling `team_pass_ok()`, and **31 modules** read a reviewer session vs **22** sending `x-team-pass`. So the question is only whether the phrase half survives. One role per person (admin/team/gr/fin); **the 132 reviewer policies do not change**; transition accepts EITHER a session OR a phrase so nothing goes dark; retire `ci` first (it protects nothing), then `gr`, `fin`, `team`. ⭐ **The scaling proof is our own KB note** `exclusive-surface-scopes-a-shared-credential`: a shared credential can only scope to a surface exclusive to ONE group, and exactly **2 of 34** COBI tabs qualify — so every phrase is structurally a **superset**. ⚠️ **Phrase STRENGTH is not the weakness** (measured by shape: all four are 12–13 chars, mixed case, digits + symbols); the weaknesses are **no identity on writes, no per-person revocation, silent spread**. ✅ **Reviewer roster 5 → 10 (2026-08-19)** — Ashley, Jessica, Malone, Kristen (rccd.edu) + **Pedro Campos (ITPI CEO), the first EXTERNAL-domain reviewer**, added on Sam's explicit confirmation. This closed the gap where team members named in this file were working through shared phrases because nobody had added them. ⚠️ **Reviewer is ALL-OR-NOTHING and that now has teeth** — beyond any phrase it reaches `map_student_credit` (**537,908 rows, STUDENT GRAIN**), `map_student_credit_prev` (220,588), `kb_curation` (32,441), the `gr_*` register, and **`team_access` itself — so a reviewer can read and rotate every team phrase**. A partner who needs `kb_curation` also gets student-grain data; that is the concrete case for the role column. Revocation is one DELETE per row. ✅ **GR phrase scoped** (`team_pass_check()` excludes `gr`, #1239) — residual: a GR-only holder needs the `team` phrase. **Finance stays parked** (genuinely shares 6 of 42 tables). **2026-11-05 (S586):** the drafting proxy and the refresh trigger now take the phrase or a reviewer bearer, verified by `team_pass_ok()` / `is_allowed_reviewer()` from the Cloudflare worker (#2818); COBIx's audit names `team_pass_ok()` as the brute-force oracle, so a failed-attempt lockout inside `team_pass_check` is step 2 of the security order (`docs/security/cobix_round1_reply_2026-11-05.md`). Step 2 is live (2026-11-06): the migration applied by `supabase-migrate.yml` run 42174586762 at 06:30Z and the client switch merged as #2822 (bdf8f811) at 08:15Z. The explicit unlocks call `rpc/team_pass_verify` with `p_site`; holders' checks keep `team_pass_ok`; the 250 ms sleep sits in `team_pass_verify` and a direct POST to `rpc/{team,gr,fin}_pass_ok`, never in the per-row path (89 policies call `team_pass_ok()` unwrapped). Read back at 08:16Z: anon cannot execute `team_pass_check(text)`, the three orphan tables hold `service_role` policies only, `tm_select` is gated, and a simulated wrong phrase wrote one `team_pass_attempts` row (test IP 203.0.113.9). Unmeasured: whether the gateway forwards a client IP on real requests; with none the lock skips itself. **NEXT: read `team_pass_attempts` after the first real failed unlock to settle the IP question; COBIx's console items; steps 3 to 6 on Sam's go; Sam's go on the role column.** Measurement: [`docs/phrase_scope_analysis.md`](docs/phrase_scope_analysis.md); story [`docs/auth_and_repo_posture_lessons.md`](docs/auth_and_repo_posture_lessons.md).
+
+## Repository security & CI (COBIx audits, S601)
+
+What protects the repositories and their automation: the Worker's secrets, which workflows can read
+the Supabase service key, whether a failing workflow is seen, and `main`'s protection. COBIx audits
+it (`cobix_pr_loop`); a session writes the code; Sam holds every console step. Added by S601 from
+COBIx's audits of 2026-11-07 (#2890, #2891).
+
+**Why this section exists.** S586 asked for security steps 3 to 6 to go on the next Open Asks sheet. They
+went into handoffs only. A handoff is not scanned by the sheet builder, so the asks never reached Sam.
+The lane's marker is what makes the builder carry them.
+
+### State
+
+- **The live-metrics scrape works again (2026-11-07 16:09Z, run 700).** It failed from 2026-11-05 ~21:20Z: the
+  workflow put the secret in the query string unencoded, and a base64 secret's `+` reads back as a space
+  (`URLSearchParams`), so the Worker answered 403 to identical values. #2898 sends it URL-encoded and in the
+  `x-scrape-secret` header; #2892 turns a failed scrape red and #2897 prints the Worker's reply in the last step.
+- **Security steps 1 and 2 are done** (S587, S590). Steps 3 to 6 are written in
+  [`cobix_round1_reply_2026-11-05`](../../security/cobix_round1_reply_2026-11-05.md) ("Proposed order,
+  revised"), not built.
+- **Environments.** The service key is a repository secret, so any workflow can read it; only
+  `supabase-migrate.yml` names an environment. The proposal (same file): `database` with a required
+  reviewer for the dispatch-only `*-apply` workflows, `database-scheduled` with no reviewer and a `main`
+  branch rule for the crons and syncs.
+- **Failure alerts.** COBIx counts 44 of 62 workflows with no failure step (#2891 item 3).
+- **Branch protection on `main`** is unverified: COBIx's Triage role cannot read it (#2891 item 10).
+
+### Sam's rulings ([Open Asks Sheet 167](https://claude.ai/artifact/8LGSDcPhS5m2YnUdL66nES), 15:03-15:06Z 2026-11-07)
+
+- **Card 3, done:** both secrets match; the scrape lands since #2898 (run 700, 16:09Z).
+- **Card 4, go:** security steps 3 to 5, each its own PR or migration, each applied only on his word.
+- **Card 5, create:** with a correction in the sheet's thread, so no apply waits on a click (his words on card 6:
+  *"I don't want this to force me to approve every merge or sql query--finally got out of that horrible loop"*):
+  both environments carry **no required reviewer**; `database-scheduled` keeps the `main`-only branch rule.
+  He creates them in the console; the `environment:` lines follow in one PR.
+- **Card 6, advise:** answered in the thread: a ruleset with only *Restrict deletions* and *Block force pushes*
+  adds no approval; *Require a pull request*, *Require status checks* and *Require review from Code Owners* stay
+  off. Sam answered Sheet 168 card 1 (15:12Z): *"those were already ticked--leaving as is."* The rulesets stand as
+  he set them; nothing waits.
+- **Security step 3 is applied (S603, 2026-11-07).** Sam answered [Open Asks Sheet 169](https://claude.ai/artifact/42Wrb1UqxNE6tX3okfu1Re) card 1 *apply* (20:57Z). `supabase-migrate.yml` run 42413667979 applied `kb/migrations/2026-11-07_tmc_submissions_owner_token.sql` (receipt `kb/receipts/migration_tmc_submissions_owner_token_42413667979.json`), and #2901's client landed in the same window. Read back live: the UPDATE policy and the INSERT check both require `owner_token = tmc_request_token()`; `has_column_privilege('anon','public.tmc_submissions','owner_token','select')` is false while every other column stays readable; TRUNCATE is off `anon` and `authenticated`; 0 rows. NEXT: one real save and resume in the TMC Builder after Pages deploys (this sandbox cannot reach `*.supabase.co`, so a browser round trip is the check). The funding half was already closed by column grants (S602). Still readable by anon on `tmc_submissions`: `contact_name` and `contact_email` (0 rows today), item 8's personal-data question for the TMC half; NEXT with step 5. The k=10 check (item 7) runs daily since #2903 (`k10-disclosure-check.yml`; 0 on all four assertions, first runner read 2026-11-07).
+
+### Next (session work)
+
+1. When Sam confirms the Worker in Cloudflare runs #2893's code (it reads `x-scrape-secret`): the workflow drops the
+   query string and the Worker stops reading `?secret=`.
+2. The shared failure step is built (#2905, `workflow-failure-watch.yml`, one issue per failing workflow, closed by the next success); COBIx's fork-PR finding is fixed (46955f4b: only this repository's scheduled, push or dispatch runs alert); confirm it merged with no open finding, and that the first scheduled failure raises an issue.
+3. After the environments exist: the `environment:` lines in the service-key workflows, one PR.

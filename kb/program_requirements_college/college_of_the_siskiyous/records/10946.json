@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8239,
+  "input_tokens": 7241,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8239,
-    "output_tokens": 1369,
+    "input_tokens": 7241,
+    "output_tokens": 1426,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1369,
+  "output_tokens": 1426,
   "output_tokens_details": {
-   "thinking_tokens": 318
+   "thinking_tokens": 288
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06034,
- "ms": 11815,
- "seconds": 12.2,
+ "cost_usd": 0.05748,
+ "ms": 11180,
+ "seconds": 11.4,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -124,12 +124,17 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Design and develop a computer program using all the necessary application elements and logic skills",
+    "Demonstrate a proficiency of computer hardware and software skills typically used in the workplace",
+    "Utilize logic skills and critical thinking while problem solving",
+    "Interact with others in a manner that fosters a cooperative professional relationship."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Complete",
+    "name": "Complete all of the following",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -259,11 +264,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes without a space (e.g., CSCI1001, STATC1000); these match closed-list codes CSCI 1001, STAT C1000, etc.",
-   "Total of 26 credits is the major total ('Complete the following number of credits: 26'); no degree total or named GE pattern is printed. A note says students should take English C1000 and complete the Math competency requirement as part of GE; English C1000 not recorded as it is GE.",
-   "The Recommended Sequence table is cut off in the text after Term 2; it repeats required courses and was not used for blocks.",
-   "No program learning outcomes or careers are printed in the text."
+   "Major total of 26 credits printed; no degree total or named GE pattern is printed. The page only advises taking English C1000 and meeting the Math competency requirement as part of GE.",
+   "Codes are printed without a space (e.g., CSCI1001) and recorded as printed.",
+   "Program outcomes are printed under the heading 'CS Major AS' and recorded for this award.",
+   "The Recommended Sequence (term-by-term plan) was not recorded as blocks since it repeats the requirements.",
+   "The sum of the blocks (16 + 4 + 6) matches the printed total of 26."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

@@ -109,62 +109,14 @@ The second reader built, three Jev sittings, Cañada's Cal-GETC step and the six
 
 The section, verbatim: `program_requirements_harvest_lessons_archive_3.md`, *S422 SkyWillow*.
 
-## S442, the routine's run beside Sam's SkyManzanita (2026-10-21): the Ventura district's campus letter
+## S442 (the Ventura district's campus letter): moved to the archive (S596 compaction)
 
-- **Two sessions ran as S442 on one queue.** The routine's 11:15Z firing found no open PR newer than 10-19 and no
-  `list_sessions`, and Sam opened SkyManzanita by hand about the same hour. Both worked the harvest's thin list; both
-  read Oxnard's host within the hour, and each display job wrote its own build (bf781cf0cd22 for Reedley, 8d733f684f83
-  for the three Ventura colleges) over the same rows in the same window, leaving a mix. A build from `main` after both
-  merged, applied once, settled it. A session with no `list_sessions` reads `main`'s commits again before each
-  display dispatch, not only at the start.
-- **The old reader's capture and the new one disagree on Oxnard:** SkyManzanita's free capture read it "exactly as
-  before" (reader work); with the campus-letter fix it found 120 of 132 (94 before).
+Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-- **A tab the filter cannot read as naming a course is dropped before any check sees it.** Moorpark's Animal Care and
-  Training A.S. took its own page at title 1.0 yet read 0 of 42 listed courses. Page read 39595155181 printed only the
-  Overview; with `"expand": true` (39595760314) the REQUIREMENTS tab printed `ANCT M01A`, `ANCT M09` ... The Ventura
-  district letters each number by campus (M, and R and V at Oxnard and Ventura). `SUBJECT_TOKEN` took a number to start
-  with a digit or Coastline's C, so `hidden_tabs_text` dropped the panel as the search dialog, and the capture fell
-  back to textContent, where each code runs into its title (`ANCT M01AAnimal`) and no pattern ends. Any one letter may
-  now lead (#2309; guard in `tests/program_requirements_pilot_test.py`, failing without the fix).
-- **Moorpark after the fix:** capture-only 39596973339 found 144 of 145 (99 before; 106 at coverage 1.0, 57 before),
-  one page claimed (39 before). Extraction 39600815599: 144 extracted, 100 passing (31), $10.40. Load 39605787602
-  inserted 83 and kept 52; reread 39606457885 replaced 1. Display build c45da149b72b, 16,606 rows.
-- **Golden West's re-read with today's reader (39591103370) found the same 81 pages as S395.** Its gap is the catalog's
-  shape: 43 programs' only pages are department pages (Automotive Technology's nine certificates, Accounting's three)
-  or the General Education page, and 29 have no course list in the state's file. A reader change there is a
-  department-page reader, not a code fix.
-- **Read the thin list for a shared cause before a college's own.** Moorpark (34%), Oxnard (49%) and Ventura (55%)
-  sat on one host and one numbering habit; one fix reaches all three.
+## S440: moved to the archive (S598 compaction)
 
-## S440 SkyChaparral (2026-10-21): three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone
-
-- **List the thin colleges live before picking the next one.** The parked list named eleven colleges; a live read of
-  active COCI programs against records (under 60%) found three more with almost nothing filed and no note saying why:
-  Santa Monica (1 of 254), Irvine Valley (1 of 166) and West LA (4 of 233), each holding only its pilot rows. None
-  had ever been read by the college pipeline.
-- **One run waits per branch.** `program-requirements-college.yml` groups runs by ref with cancel-in-progress off, so
-  a second queued run replaces the first pending one: three dispatches in a row ran the first, canceled the second
-  (Santa Monica, run 39527753004) and queued the third. Queue the next run only when nothing is pending.
-- **A dispatch checks out the commit the branch held when it was sent.** A display dispatch sent in the same breath
-  as a build commit (the commit failed on a staged path) was pinned to the old build (run 39553230693, canceled
-  before it started). Push, confirm the head, then dispatch.
-- **A slow PDF is a wait, not a refusal.** Santa Monica's catalog link answered 200 and its 472-page, 14.5 MB PDF did
-  not finish in 600 s (run 39536186746). A page read (39538245162) showed the HTML catalog links no page per
-  program. Sam raised the ceiling to 2,400 s (`CATALOG_PDF_WAIT_MAX_S`, guard in `tests/program_requirements_pilot_test.py`)
-  and the procedure record names 2,400 (`program_source_procedure_set`, receipt
-  `kb/receipts/program_source_procedure_smc_pdf_wait_2026-10-21_s440.sql`); the rerun (39548766337) found 239 of 240.
-- **A removed row takes its filed record with it.** Build 5f9939404fcf still carried Taft 38661 from
-  `kb/program_requirements_college/taft/records/`, and its display job (39548756872) wrote 16,301 rows and reported
-  38661 missing. Removing the file and rebuilding (772abb3ddebe) clears it, as Hartnell's re-read did.
-- **Taft 38661 (Sheet 98 card 1):** the auto-mode classifier refused the receipt and delete file twice, with and
-  without Sam's go, so Sam ran the guarded delete himself (md5 6b5e44f66a545875fe54b89c8a9d5469, unchecked, no
-  verdicts). No copy of the row is committed.
-- **Counts:** West LA 214 of 228 found, 214 extracted, 173 passing, $14.97, load 39539613701 inserted 195 and kept 4;
-  Irvine Valley 144 of 146 found (curriQunet, 78 minutes of capture), 122 passing, $11.02, load 39548442445 inserted
-  143 and kept 1. Both were already in the dated reads (pilot colleges).
-
-*S424 and S423 moved verbatim to `program_requirements_harvest_lessons_archive_3.md` (S455).*
+Three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone: verbatim in
+`docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## Moved from the lane (S423 compaction)
 
@@ -205,23 +157,9 @@ the weekly apply.
 
 Hartnell's double-count words, its pooled subject lists, its last eight failing tabs and the lists with floors under one total: verbatim in [archive 3](program_requirements_harvest_lessons_archive_3.md).
 
-## S485 SkyElderberry (2026-10-26, the CPL Queue routine): Hartnell's last hours and its degree failures, read
+## S485: moved to the archive (S602 compaction)
 
-- **Where a vendor gives no figure, the record stays incomplete.** Page read 40278795148 (`network_find` on the codes):
-  TAC326, BUS690 and BUS699 carry only `creditHours` 0 and `billingHours` 0 under `credits`, no `lectureHours` or
-  `labHours`. The `contactHours` the answer prints belong to the instructional methods (lecture 18, lab 108 a term), not
-  to a course. Subtracting the other courses from the tab's total would make the check pass by construction, so neither
-  44161 (630) nor 44574 (432) is filled.
-- **The page reader's live run status lags.** `list_workflow_jobs` showed checkout "in progress" for twelve minutes on a
-  run that finished in a minute and a half; the logs answer 404 until the API catches up. Read the logs again rather
-  than wait on the step list.
-- **Hartnell's degree failures are structure, not misreadings** (page read 40279150362, three tabs). Both nursing tabs
-  print "Students can double-count required courses and courses for General Education.": the overlap Sam allowed for
-  transfer degrees (Sheet 82 card 2), stated by the page for a local degree. Vocational Nursing 39248 (80-89 against 63)
-  passes once the scorer reads it. RN 03570 names no whole Local GE pattern: its general education is the prerequisite
-  list plus "Local GE - Area 6". B.S. Respiratory Care 44537 prints 120, which includes the A.S. a student holds to be
-  admitted. General Studies 17912 splits one 18-unit choice into eleven subject lists. No change shipped: one record
-  passes on the overlap step, and the step rides Hartnell's next reconcile.
+Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S484 SkyToyon (2026-10-26, the CPL Queue routine): Hartnell's noncredit course hours
 
@@ -1126,3 +1064,80 @@ From *Course objectives too*, verbatim:
   With S451's 15 credit programs, all 33 of Ohlone's gaps are programs COCI lists that the college does not publish.
 - **Check what a page links before reading what it says.** The certificates page's own text named only departments; its
   links named the programs. A plan's `links` pattern is the cheap half of a page read.
+
+## S594-S595 (2026-11-07, the CPL Queue routine, 06:12Z and 08:12Z firings): Siskiyous re-read
+
+- **A reader upgrade is worth a free re-capture before a page read.** S594 re-ran Siskiyous' capture (42346303670) on
+  the current eLumen reader (`publish/content`, a 230-page walk): 73 of 77 found against 65 on run 38979399672. The 8
+  new are Accounting COA 19374 (page-claimed before) and seven noncredit programs the old walk never reached.
+- **`would_extract` with `kept: 0` means every page's text changed**, not that every program is new: the reader's text
+  differs from the filed sources, so the extraction sends all 73 (about $5). Cheaper than splitting the run, and it puts
+  the 65 old records on the same reader as the 8 new.
+- **S594 stopped before its checkpoint** (#2874 open at 06:24Z, one commit, green). S595 merged it and wrote handoff 595;
+  a firing that finds a green, quiet queue PR with no handoff merges it and carries its items.
+
+### Moved from the lane (S595): Mt. San Jacinto's paragraph, as it stood
+
+**Mt. San Jacinto (S592-S593, #2838 merged): 116 of 152 found.** Its gaps are the catalog's own (lessons S448); Public Health A.S.-T 39455 was read and loaded, display build 7b1f3658a888 applied by run 42217856222 (17,547 of 17,550, 0 errors; the 3 missing are Monterey's rows already gone). The other 35 stand as the catalog prints them (recheck Chemistry A.S.-T 40010 with the next catalog edit).
+
+## S596 SkyPinwheel (2026-11-07, the CPL Queue routine, 09:12Z firing): Siskiyous loaded and reread; Palomar re-captured
+
+- **A load after a re-extraction keeps the old rows; the reread replaces them.** Siskiyous' load (42359009832) inserted the
+  8 new programs and kept the 65 already live, which still carried the old reader's records (42 passing). The reread
+  (42359184639) replaced all 65 from extraction 42354853403, so the college went from 42 to 66 passing (about 31% of 77,
+  far above the stopping rule's 3%). Whenever `would_extract` sends programs already loaded, follow the load with
+  `step=reread`.
+- **A merge of `main` into an SLO branch conflicts on `.load` and `.run`.** Keep the branch's lines (Mission's #2800 put its
+  own on main) and begin the commit message with *Merge*: the read and load gates skip a head commit whose message starts
+  that way, so the load does not run twice.
+- **Palomar's free capture** (42359155179) runs on the curriQunet reader as it stands after S447 and S531; its last capture
+  was 2026-10-22.
+
+### Moved from the lane (S596): Ohlone's paragraph, as it stood
+
+**Ohlone (S593, #2841): 146 of 179 found; every gap is the college's own.** S451 placed the 15 credit gaps (programs the 2026-2027 guide no longer prints under the state's lists). Page reads 42225429355, 42227635069 and 42228515615 placed the 18 noncredit ones: the college's noncredit certificates page and its program list (A to S) name none of them, and the one it still has a page for, Computer Aided Design Skills 38975, answers 403 behind a sign-in. All 33 are the college's to settle in COCI; no paid read. Its open work is the 29 extracted records failing a machine check (arithmetic 18, coverage 13, outcomes 8, invented 1). Its failing records wait for the outlier pass (Sam's Nov 2 ruling).
+
+## S598 SkyAndromeda (2026-11-07, the CPL Queue routine, 11:12Z firing): Palomar re-captured, Coalinga extracting, Los Medanos captured
+
+- **Check a capture's host errors before extracting from it.** Palomar's capture 42359155179 found 8 fewer programs than
+  the filed read, and the 8 matched the 8 entries in `curriqunet.errors` (seven 60 s timeouts and a 503). A read files
+  its new record set in place of the old one, so extracting there would have traded seven passing records for one better
+  Chemistry page. A free re-capture costs runner minutes only; compare `found` and the lost control numbers first.
+- **Pick the next college by pass share and reader age.** The lowest pass shares on a reader since upgraded (eLumen:
+  Los Medanos 30%, Columbia 37%, Redwoods 50%) are the free re-captures most likely to pay, as Siskiyous' did.
+
+### Moved from the lane (S598): the Progress view, as it stood
+
+✅ **The Progress view (S343, #1900):** the tab's first view, from the mock-up Sam approved (*"The mockup looks good to go"*). `MILESTONES` and `PARTS` at its top are definitions; the tables are read live; what anon cannot read comes from **`kb/status/program-requirements.json`** (`kb/queue_status.json` until S418), written at every checkpoint (step 12, `scripts/queue_status.py`), never from a widened policy. **The view is drawn by the Commons' shared module `commons_progress.js` since S419** (the Commons' step 1; [commons lane](commons.md)): this tab keeps its definitions (`MILESTONES`, `PARTS`, `WHOLE`, `HEADLINE`, `PROGRESS`) and its live reads, and lends the module its sections and count controls. Detail: lessons S343. Every count opens what it totals; a card waiting on Sam links where he answers (#2077); a call in `kb/queue_status.json` must carry its answer link (`link`, `view` or `records`) and may name its card (`part`). *Whole harvest* and *Complete*: lessons, *Moved from the lane (S542 compaction)*. A status-file note replaces its card's live foot, so delete one the moment it stops being true.
+
+### S600 SkyWhirlpool (2026-11-07, the CPL Queue routine's 13:12Z firing)
+
+- **Coalinga displayed.** Apply 42372728141 on `main`: 17,557 of 17,560, 0 errors (the 3 missing are the Monterey
+  Peninsula rows the table no longer holds). It ran about an hour; a display apply is not quick.
+- **Palomar: a re-extracted program that was already loaded needs `step=reread`, never only `step=load`.** Load
+  42376077805 inserted 0 and kept 281 (the load never replaces a row); reread 42376267731 replaced 05201 with its
+  before-values. Display build 598157545f29 (#2887).
+- **Los Medanos: read the failures by shape before paying for anything.** Of 54 failing, about 37 share one shape (the
+  degree's 60 and a GE pattern, no GE units), so the fix is a reconcile step, never a re-extraction. A four-page free
+  read (`kb/college_reads/los_medanos_ge_totals.json`, run 42376216539) gave the words: each transfer page prints
+  *"Completion of California General Education Transfer Curriculum (Cal-GETC)"* with no figure, so the step sets 34 on
+  transfer degrees only, citing the statewide 34 as Cañada's and Hartnell's steps do. The local A.A./A.S. pages print
+  neither GE units nor an electives sentence, so they wait on a read of LMC's GE page. Reconcile 42376691800
+  moved 29 to 44 passing at no model cost; reread 42377887155 replaced 27 rows (#2889).
+- **The builder needs `openpyxl`** (`chatbox/build_program_courses.py`); a fresh container lacks it. Install it with
+  `python3 -m pip install openpyxl`. A bare `pip` may install it for another Python.
+
+### S602 SkySombrero (2026-11-07, Sam's session)
+
+- **Palomar and Los Medanos displayed:** applies 42377748161 and 42379928561, each 17,557 of 17,560, 0 errors (the 3
+  Monterey Peninsula rows the table no longer holds).
+- **Find a page the catalog never linked by reading its hubs.** No GE URL was on file for LMC. Pass 1 (run
+  42396753803) read the eLumen front page with `links` shown and `follow` on GE words, which found
+  `26-27/requirements`; pass 2 (42397034327) read that hub and followed its topics: `asdegreereq` (local GE *"at least
+  24 units"*), `gradreq` (no electives rule) and `calgetc` (the areas, no total; they add to 36 with Area 5 printed
+  at 9). Two free runs, four and six loads.
+- **A GE figure alone does not pass a degree whose blocks fall short.** Accounting A.S. 01528 computes 23 against
+  60; GE 24 leaves it unequal. Cerritos's `electives_fill_degree` came from its own *"electives as needed"*; LMC prints
+  no such sentence, so its local degrees are parked rather than given an invented step.
+- **Citing another college's statement of a statewide figure is the house pattern.** Taft, Hartnell and LMC cite
+  Monterey Peninsula's page for Cal-GETC's 34; LMC's own page prints no total, so the citation stands.

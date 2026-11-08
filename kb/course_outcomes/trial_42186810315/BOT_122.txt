@@ -1,0 +1,48 @@
+BOT 122 - Project Management Concepts and Software
+
+Units: 4.5
+
+Print
+Description:
+
+This course explores project management concepts and terminologies along with the use of Microsoft Office Project software and other project management tools through discussions, hands-on exercises, and classroom learning experiences. The course includes work breakdown structure (WBS), budgeting, and resource allocation and other important project management (PM) topics such as Scope and Project Team Development. This course helps prepare students to use the software package in their daily duties as a project manager or project assistant. This course also includes exploration and practice of 21st Century Employability Skills: Adaptability, Collaboration, Social/Diversity.
+
+Requisites:
+None
+Transferability:
+Transferable to CSU only
+
+Approved
+
+Repeatability:
+None
+General Education:
+Not approved for General Education
+Student Learning Outcomes:
+1. Research, analyze, and evaluate information to solve business problems using project management concepts and software.
+2. Design and produce project management solutions incorporating current trends, security, and best practices.
+3. Effectively employ project management concepts and terminology in professional communication.
+4. Demonstrate marketable project management career skills.
+Grade Options:
+Letter Grade Methods
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+4.5
+
+Maximum Credit Units
+
+4.5
+
+Total Course In-Class (Contact) Hours
+
+72.0
+
+Weekly Student Hours
+Lecture Hours
+4.0
+Lab Hours
+2.0
+Activity Hours
+0.0

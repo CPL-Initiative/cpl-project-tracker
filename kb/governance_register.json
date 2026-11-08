@@ -1,7 +1,7 @@
 {
   "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
   "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is null EXCEPT DR-24 (Sam, 2026-09-07 — the first owned row) DR-25 and DR-26 (both Sam, 2026-09-08), DR-27 (Malone), DR-28 and DR-29 (Sam), all three ruled 2026-10-20 on Open Asks Sheet 102. Who is accountable on OUR side is the one thing a session cannot infer from data; filling the rest in is the register's own OQ-01.",
-  "_as_of": "2026-10-20",
+  "_as_of": "2026-11-07",
   "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
   "decision_rights": [
     {
@@ -320,6 +320,15 @@
       "maintained_in": "public.credential_submissions via credential_submission_add() from library/adopt/ (the public Credential Catalog); decided by credential_submission_decide() from the Exhibits tab's Requests view; read by the Catalog through credential_submissions_verified()",
       "owner": null,
       "when_empty": "Submissions wait unverified and the Catalog never shows them, so the visitor's word reaches no one. DR-31 and DR-23 showed the shape: intake without an owner manufactures unread rows. The Requests view counts the waiting submissions on the tab's guidance band."
+    },
+    {
+      "id": "DR-33",
+      "element": "A noncredit program's CIP category (nc_cip_category_decisions)",
+      "drives": "Which of the CO's ten noncredit CIP categories a program belongs to, and so its primary CIP, its CDCP eligibility and, once the CTE line is published, whether it can count as CTE noncredit: a funding line. The category is not inferable from TOP or, for 1,928 programs, from any code; the picker proposes one from the strongest rung and a person confirms (docs/noncredit_cip_category_scope.md sections 5 and 7).",
+      "decides": "The college, per the CO's TOP to CIP Noncredit Mapping page (the codes are \"examples\" a college uses to identify the most appropriate CIP). Sam (Open Asks Sheet 169 card 2, 2026-11-07 20:57Z: \"table\") ruled where the confirmation is saved: one row per program with who and when. A signed-in reviewer records the college's choice; the team phrase reads and does not decide; a rule never writes a row (the guard from #1192). Nothing reaches COCI.",
+      "maintained_in": "public.nc_cip_category_decisions keyed on the Programs list's program key, with nc_cip_category_decisions_history filed by trigger on every edit; written by the category picker (build phase 3), which is not built. The migration is committed and held until then (kb/migrations/2026-11-07_nc_cip_category_decisions.sql).",
+      "owner": null,
+      "when_empty": "Proposals stay proposals, which is the safe direction: nothing counts a program as CTE noncredit until a person confirms its category. With no owner, two reviewers can confirm conflicting categories for a college's neighboring programs, and the history is the only record of which came last."
     }
   ],
   "acceptance_standards": [

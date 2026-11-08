@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 12,
     "already_mapped": 48,
-    "dismissed": 9,
-    "scanned": 69
+    "dismissed": 10,
+    "scanned": 70
   },
   "candidates": [
     {
@@ -94,6 +94,14 @@
     }
   ],
   "dismissed": [
+    {
+      "key": "workflow:k10-disclosure-check.yml",
+      "kind": "cadence",
+      "label": "k=10 disclosure check",
+      "detail": "Scheduled: 41 15 * * *",
+      "where": ".github/workflows/k10-disclosure-check.yml",
+      "why": "The daily k=10 disclosure check (COBIx security round 1 item 7, #2903, S602). Read-only: it asserts that the two public student rollups suppress every cell under ten and writes nothing; a failure raises one issue through the failure watch (#2905) and the next success closes it. The suppression rule it checks is the student-detail disclosure ADR's, already owned there, so the check adds no decision right and needs no register row."
+    },
     {
       "key": "workflow:library-publish.yml",
       "kind": "cadence",

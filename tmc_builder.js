@@ -9,7 +9,8 @@
  * The RIGHT column is a searchable picker of that college's own COCI offerings
  * (window.CPL_TMC_COLLEGE_COURSES, lazy), auto-matching the local course that
  * already carries each slot's C-ID. Output: export (print / .docx / JSON) and an
- * optional Save/Resume to Supabase public.tmc_submissions (anon, no PII).
+ * optional Save/Resume to Supabase public.tmc_submissions (anon; the browser that
+ * starts a draft holds its owner token, and the contact fields are personal data).
  */
 (function () {
   "use strict";
@@ -433,18 +434,50 @@
     if (extra) Object.keys(extra).forEach(function (k) { h[k] = extra[k]; });
     return h;
   }
+  // A saved draft belongs to the browser that started it (COBIx item 9, S602): the
+  // first save mints an owner token, sends it as x-tmc-token, and the UPDATE policy
+  // matches it (kb/migrations/2026-11-07_tmc_submissions_owner_token.sql). anon has
+  // no SELECT on owner_token, so every read names its columns; select=* would fail.
+  // The token is kept per college and TMC so "resume any time" holds in this
+  // browser; the tab still opens with nothing chosen (no filter is remembered).
+  var SUB_COLS = "id,college,tmc_id,tmc_discipline,degree_type,alignments,notes,contact_name,contact_email," +
+    "status,total_major_units,filled_slots,total_slots,created_at,updated_at,review_note,reviewed_by,reviewed_at";
+  function newToken() {
+    var c = window.crypto;
+    if (c && typeof c.randomUUID === "function") return c.randomUUID();
+    var b = new Uint8Array(16);
+    if (c && c.getRandomValues) c.getRandomValues(b);
+    else for (var i = 0; i < 16; i++) b[i] = Math.floor(Math.random() * 256);
+    b[6] = (b[6] & 15) | 64; b[8] = (b[8] & 63) | 128;
+    var h = Array.prototype.map.call(b, function (x) { return (x + 256).toString(16).slice(1); }).join("");
+    return h.slice(0, 8) + "-" + h.slice(8, 12) + "-" + h.slice(12, 16) + "-" + h.slice(16, 20) + "-" + h.slice(20);
+  }
+  function ownerToken(college, tmcId, create) {
+    var k = "tmc_owner:" + college + "|" + tmcId, v = null;
+    try { v = localStorage.getItem(k); } catch (e) {}
+    if (v || !create) return v;
+    v = newToken();
+    try { localStorage.setItem(k, v); } catch (e) {}
+    return v;
+  }
+  function saveRefused(r) { return r.status === 401 || r.status === 403; }
+  var REFUSED_MSG = "This draft was saved from another browser, so it can be changed only there.";
   function sbLoad(college, tmcId) {
     var q = "/rest/v1/tmc_submissions?college=eq." + encodeURIComponent(college) +
-            "&tmc_id=eq." + encodeURIComponent(tmcId) + "&select=*";
+            "&tmc_id=eq." + encodeURIComponent(tmcId) + "&select=" + SUB_COLS;
     return fetch(SUPABASE_URL + q, { headers: sbHeaders() }).then(function (r) {
       return r.ok ? r.json() : [];
     }).then(function (rows) { return (rows && rows[0]) || null; }).catch(function () { return null; });
   }
   function sbSave(payload) {
-    return fetch(SUPABASE_URL + "/rest/v1/tmc_submissions?on_conflict=college,tmc_id", {
+    var token = ownerToken(payload.college, payload.tmc_id, true);
+    var body = {};
+    Object.keys(payload).forEach(function (k) { body[k] = payload[k]; });
+    body.owner_token = token;
+    return fetch(SUPABASE_URL + "/rest/v1/tmc_submissions?on_conflict=college,tmc_id&select=" + SUB_COLS, {
       method: "POST",
-      headers: sbHeaders({ Prefer: "resolution=merge-duplicates,return=representation" }),
-      body: JSON.stringify(payload)
+      headers: sbHeaders({ Prefer: "resolution=merge-duplicates,return=representation", "x-tmc-token": token }),
+      body: JSON.stringify(body)
     });
   }
 
@@ -1479,6 +1512,7 @@
     setMsg("Submitting…", "");
     sbSave(collectPayload("submitted")).then(function (r) {
       if (r.ok) { setMsg("📤 Submitted for CO review — it now appears under “New requests”.", "ok"); loadRequests(); }
+      else if (saveRefused(r)) setMsg(REFUSED_MSG, "err");
       else r.text().then(function (tx) { setMsg("Submit failed: " + (tx || r.status), "err"); });
     }).catch(function (e) { setMsg("Submit failed: " + e.message, "err"); });
   }
@@ -1953,7 +1987,8 @@
   function doSave() {
     setMsg("Saving…", "");
     sbSave(collectPayload("draft")).then(function (r) {
-      if (r.ok) setMsg("✓ Saved — resume any time by re-selecting this college + TMC.", "ok");
+      if (r.ok) setMsg("✓ Saved — resume any time in this browser by re-selecting this college + TMC.", "ok");
+      else if (saveRefused(r)) setMsg(REFUSED_MSG, "err");
       else r.text().then(function (tx) { setMsg("Save failed: " + (tx || r.status), "err"); });
     }).catch(function (e) { setMsg("Save failed: " + e.message, "err"); });
   }
@@ -2204,5 +2239,5 @@
     });
   }
 
-  window.CPL_TMC_BUILDER = { boot: boot, _state: state };
+  window.CPL_TMC_BUILDER = { boot: boot, _state: state, _sbSave: sbSave, _sbLoad: sbLoad, _ownerToken: ownerToken };
 })();

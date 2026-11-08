@@ -1,0 +1,99 @@
+name: Workflow failure watch
+# One failure step for every workflow that runs unattended (COBIx #2891 item 3, S602):
+# 44 of 62 workflows had none, so a scheduled run could fail for days with only a red
+# mark nobody opened. This watcher wakes when a listed workflow completes. A failure of
+# a scheduled run, or of a push or dispatch on main, opens one issue per workflow (label
+# workflow-failure) or comments on the one already open; the next success closes it.
+# Runs on claude/** branches are a session's own business and never alert.
+#
+# The two workflows that already raise their own issue stay off the list:
+# Sierra health (sierra-outage) and MAP Users sync (college-identity).
+# tests/workflow_failure_watch_test.py fails when a scheduled workflow is neither
+# listed here nor named there with its reason.
+#
+# workflow_run reads this file from the default branch, so a change here takes
+# effect when it merges. The names below are each workflow's `name:`, exactly.
+on:
+  workflow_run:
+    types: [completed]
+    workflows:
+      - "CER procedures"
+      - "COCI offerings sync (Sierra catalog)"
+      - "CPL News harvest"
+      - "CPL college landing pages (sync)"
+      - "CSR confirm"
+      - "CSR quarterly (compare)"
+      - "CodeQL"
+      - "College contacts harvest"
+      - "Credential catalog sync (Sierra)"
+      - "Daily CPL Dashboard"
+      - "Deploy Pages (lean)"
+      - "Fetch COCI Program-Course Files"
+      - "JS tests"
+      - "Library — publish approved drafts"
+      - "MAP Custom Report load (staging)"
+      - "My College public layer"
+      - "Program source census"
+      - "Secret scan"
+      - "Source CPL Stories"
+      - "Weekly reflections summary (public-safe)"
+      - "cos-authority-sync"
+      - "moc-crosswalk-sync"
+      - "k=10 disclosure check"
+
+permissions:
+  contents: read
+  issues: write        # to raise, comment on and close the one issue per workflow
+
+concurrency:
+  group: workflow-failure-watch-${{ github.event.workflow_run.name }}
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    # Unattended runs of this repository only: a schedule, or a push or dispatch on main.
+    # A fork PR from a branch named main arrives as event pull_request with head_branch
+    # main, and this job runs with this repository's token, so without the repository
+    # check an outside contributor could open alerts or close a real one (COBIx, #2905).
+    if: >-
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      (github.event.workflow_run.event == 'schedule' ||
+       ((github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch') &&
+        github.event.workflow_run.head_branch == 'main'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Raise, update or close the workflow's issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          WF: ${{ github.event.workflow_run.name }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          EVENT: ${{ github.event.workflow_run.event }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          TITLE="Failing: $WF"
+          gh label create workflow-failure --color B60205 \
+            --description "An unattended workflow run failed (workflow-failure-watch.yml)" 2>/dev/null || true
+          NUM=$(gh issue list --label workflow-failure --state open --limit 100 --json number,title \
+            | jq -r --arg t "$TITLE" '.[] | select(.title == $t) | .number' | head -1)
+          case "$CONCLUSION" in
+            failure|timed_out|startup_failure)
+              BODY=$(printf '%s\n' \
+                "**$WF** ended **$CONCLUSION** on a $EVENT run ($BRANCH, \`${SHA:0:8}\`)." \
+                "" "Run: $RUN_URL" "" \
+                "The next successful run closes this issue. Raised by workflow-failure-watch.yml.")
+              if [ -n "$NUM" ]; then gh issue comment "$NUM" --body "$BODY"
+              else gh issue create --title "$TITLE" --label workflow-failure --body "$BODY"; fi
+              echo "::warning::$WF ended $CONCLUSION: $RUN_URL" ;;
+            success)
+              if [ -n "$NUM" ]; then
+                gh issue close "$NUM" --comment "Recovered: $WF succeeded on a $EVENT run ($BRANCH). $RUN_URL"
+              fi
+              echo "$WF succeeded; nothing open." ;;
+            *)
+              echo "$WF ended $CONCLUSION; no alert for that conclusion." ;;
+          esac

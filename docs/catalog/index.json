@@ -16121,7 +16121,7 @@
      ],
      "title": "Org & phrase scope / auth model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-19"
+     "updated": "2026-11-07"
     },
     {
      "created": "2026-08-28",
@@ -16641,8 +16641,133 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 558,
+   "count": 566,
    "docs": [
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 603,
+     "path": "docs/session_603_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "org-phrase-scope-auth",
+      "program-requirements-harvest",
+      "cer-procedures",
+      "noncredit-cip-categories"
+     ],
+     "title": "Session 603 handoff: security step 3 built and held for Sam; the k=10 check and a failure watch run unattended; LMC's GE page read",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 602,
+     "path": "docs/session_602_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "org-phrase-scope-auth",
+      "cobix",
+      "cer-procedures",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 602 handoff: the stale KPI scrape fixed; security asks on the sheet; the COBIx inbox routine waits for Sam",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 601,
+     "path": "docs/session_601_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 601 handoff: Coalinga displayed; Palomar's Chemistry reread and built; Los Medanos' failures read and a Cal-GETC step",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 600,
+     "path": "docs/session_600_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "library",
+      "cpl-scheduled"
+     ],
+     "title": "Session 600 handoff: DSP Version 3 drafted for Sam; Coalinga displaying; Palomar extracting",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 599,
+     "path": "docs/session_599_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 599 handoff: Palomar re-capturing after host errors; Coalinga extracting; Los Medanos captured",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 598,
+     "path": "docs/session_598_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 598 handoff: Coalinga and Palomar re-capturing; Siskiyous' display applying",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 597,
+     "path": "docs/session_597_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 597 handoff: Siskiyous reread to 66 passing; Palomar re-capturing; Lake Tahoe's SLOs in",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-07",
+     "governs": [],
+     "n": 596,
+     "path": "docs/session_596_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-scheduled"
+     ],
+     "title": "Session 596 handoff: Siskiyous extracting on the new reader; Lake Tahoe's SLOs loading",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-06",
      "governs": [],
@@ -26138,5 +26263,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1399
+ "total": 1407
 }

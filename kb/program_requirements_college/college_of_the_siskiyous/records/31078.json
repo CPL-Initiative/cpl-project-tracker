@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8174,
+  "input_tokens": 7281,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8174,
-    "output_tokens": 1824,
+    "input_tokens": 7281,
+    "output_tokens": 1912,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1824,
+  "output_tokens": 1912,
   "output_tokens_details": {
-   "thinking_tokens": 585
+   "thinking_tokens": 681
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06918,
- "ms": 22003,
- "seconds": 22.4,
+ "cost_usd": 0.06736,
+ "ms": 15267,
+ "seconds": 15.4,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 11,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,8 +124,23 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Analyze and evaluate literary works in a variety of genres for their philosophical, historical, artistic, and cultural merits, applying the language of literary analysis appropriately.",
+    "Recognize, identify, and apply a variety of critical approaches in interpretations and analyses of literary works."
+   ],
+   "careers": [
+    "teaching",
+    "journalism",
+    "technical writing",
+    "free-lance writing",
+    "telecommunications",
+    "editing",
+    "magazine or book publishing",
+    "book marketing and distribution",
+    "advertising",
+    "law",
+    "business/corporate communication"
+   ]
   },
   "blocks": [
    {
@@ -257,14 +272,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints course codes without a space (e.g. 'ENGLC1001', 'ENGL2043', 'HUM1001'); they are recorded with the subject separated to match the closed list.",
-   "List B also allows 'Any of the courses not used in List A' (3 units), so unused List A courses count toward List B; only ENGL 1019 and ENGL 2036 are listed in the block itself.",
-   "List C also allows 'Any course not used in List A or B' (3 units), so unused List A/B courses count toward List C; only HUM 1001 is listed in the block itself.",
-   "The page says 'Any needed transferable electives to reach a total of 60 CSU transferable units' (printed with 0 units), so electives_fill_degree is true. The 60-unit figure appears only as a general requirement statement, so degree_total is left null.",
-   "The page names Cal-GETC-Breadth as the GE pattern but prints no GE units. The note about taking English C1000 and meeting Math competency refers to GE, not to the major.",
-   "The catalog text begins mid-sentence and the Recommended Sequence is cut off. No program learning outcomes or careers appear in the text provided.",
-   "The 'Complete' block, List A, List B and List C (6+6+3+3) sum to the stated major total of 18."
+   "The catalog prints codes without a space between subject and number (e.g., 'ENGLC1001', 'HUM1001'); recorded with a space to match the closed-list format.",
+   "List B also allows 'Any of the courses not used in List A' (3); List C also allows 'Any course not used in List A or B' (3). These open options are not recorded as separate courses.",
+   "The page says 'Any needed transferable electives to reach a total of 60 CSU transferable units' with 0 units printed; electives_fill_degree set true. The 60-unit figure is a general requirement, not recorded as degree_total.",
+   "GE note: students should plan to take English C1000 as part of GE; it is a GE course and not placed in a block.",
+   "Program outcomes are printed under 'English (AA-T)' and recorded for this award."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

@@ -1,24 +1,279 @@
 {
-  "folded": [],
+  "folded": [
+    {
+      "raw": "BIOL 40C: Human Anatomy & Physiology III",
+      "assigned": "Human Anatomy & Physiology Iii",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 130",
+      "assigned": "Alcohol, Narcotics and Drug Abuse",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 155",
+      "assigned": "Crime Scene Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 220",
+      "assigned": "Interviewing and Counseling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    }
+  ],
   "superseded": [],
-  "revised": [],
-  "credential_moved": [],
-  "credential_retired": [],
+  "revised": [
+    {
+      "raw": "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "assigned": "CompTIA A+",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )"
+      ],
+      "disagreeing": [
+        "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )"
+      ],
+      "displaced": [
+        "CompTIA Security+"
+      ],
+      "supersedes": "CompTIA Security+"
+    },
+    {
+      "raw": "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "assigned": "CompTIA Network+",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )"
+      ],
+      "disagreeing": [
+        "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )"
+      ],
+      "displaced": [
+        "CompTIA Security+"
+      ],
+      "supersedes": "CompTIA Security+"
+    },
+    {
+      "raw": "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "assigned": "CompTIA Server+",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )"
+      ],
+      "disagreeing": [
+        "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )"
+      ],
+      "displaced": [
+        "CompTIA Security+"
+      ],
+      "supersedes": "CompTIA Security+"
+    },
+    {
+      "raw": "Credit By Exam San Diego City College",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit By Exam San Diego City College"
+      ],
+      "disagreeing": [
+        "Credit By Exam San Diego City College"
+      ],
+      "displaced": [
+        "Basic Refrigeration & AC Lab"
+      ],
+      "supersedes": "Basic Refrigeration & AC Lab"
+    },
+    {
+      "raw": "Credit By Exam at Mesa",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit By Exam at Mesa"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Mesa"
+      ],
+      "displaced": [
+        "Basic Computer Keyboarding"
+      ],
+      "supersedes": "Basic Computer Keyboarding"
+    },
+    {
+      "raw": "Credit By Exam at Saddleback College",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "displaced": [
+        "Plant Propagation"
+      ],
+      "supersedes": "Plant Propagation"
+    },
+    {
+      "raw": "Credit by Exam",
+      "assigned": "Credit by Exam",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
+      "spellings": [
+        "Credit by Exam"
+      ],
+      "disagreeing": [
+        "Credit by Exam"
+      ],
+      "displaced": [
+        "Water Supply"
+      ],
+      "supersedes": "Water Supply"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "Basic Refrigeration & AC Lab",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-01T22:13:59.788+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Credit by Exam"
+    }
+  ],
+  "credential_retired": [
+    {
+      "title": "Plant Propagation",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-01T22:13:58.587+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "title": "Water Supply",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.55,
+          "classified_at": "2026-05-19",
+          "classified_by": "hand-curated seed (Phase 2)",
+          "reviewed_at": "2026-07-08T23:23:46.495931+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Administrative bucket used by Saddleback to register multiple Credit-by-Exam awards under one MAP ExhibitID. Not a single credential; flagged for human review under Skill Rule 5.",
+          "_renamed_from": "Credit by Exam"
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Credit by Exam"
+      ]
+    }
+  ],
   "held": [],
-  "credential_added": [],
+  "credential_added": [
+    {
+      "raw": "BIOL 40C: Human Anatomy & Physiology III",
+      "assigned": "Human Anatomy & Physiology Iii",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 130",
+      "assigned": "Alcohol, Narcotics and Drug Abuse",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 155",
+      "assigned": "Crime Scene Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    },
+    {
+      "raw": "CRJ 220",
+      "assigned": "Interviewing and Counseling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-07T14:26:54.516864+00:00"
+    }
+  ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [
     {
-      "title": "Yoga 1",
+      "title": "CompTIA A+",
       "issuer": "California Community Colleges",
-      "raw": "Noncredit for KIN YO1",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-06T20:32:56.519255+00:00"
+      "raw": "CompTIA A+ Computer Hardware Systems - Credit by Exam (ECHT 144 )",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+    },
+    {
+      "title": "CompTIA Network+",
+      "issuer": "California Community Colleges",
+      "raw": "CompTIA Network+ Computer Hardware Systems - Credit by Exam (ECHT 146 )",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
+    },
+    {
+      "title": "CompTIA Server+",
+      "issuer": "California Community Colleges",
+      "raw": "CompTIA Server+ Computer Hardware Systems II - Credit by Exam (ECHT 142 )",
+      "reviewed_by": "exhibits-s596@bot",
+      "reviewed_at": "2026-11-07T05:10:27.254628+00:00"
     }
   ],
   "credential_pruned": [],
-  "articulations_repointed": 0,
+  "articulations_repointed": 147,
   "title_anchors_stamped": 0,
-  "audit_pruned": 0,
-  "unified_titles_count": 5588
+  "audit_pruned": 4,
+  "unified_titles_count": 5592
 }

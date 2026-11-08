@@ -1,0 +1,130 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-07T14-26-54Z",
+ "run_id": "42381215822",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "d20f2caab9db",
+ "cohorts": [
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::BIOL 40C: Human Anatomy & Physiology III",
+   "field": "unified_title_assignment",
+   "value": "Human Anatomy & Physiology Iii",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOL 40C: Human Anatomy & Physiology III",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 130",
+   "field": "unified_title_assignment",
+   "value": "Alcohol, Narcotics and Drug Abuse",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 130",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 155",
+   "field": "unified_title_assignment",
+   "value": "Crime Scene Investigation",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 155",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 220",
+   "field": "unified_title_assignment",
+   "value": "Interviewing and Counseling",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 220",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::BIOL 40C: Human Anatomy & Physiology III",
+   "field": "unified_title_assignment",
+   "value": "Human Anatomy & Physiology Iii",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOL 40C: Human Anatomy & Physiology III",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 130",
+   "field": "unified_title_assignment",
+   "value": "Alcohol, Narcotics and Drug Abuse",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 130",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 155",
+   "field": "unified_title_assignment",
+   "value": "Crime Scene Investigation",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 155",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 220",
+   "field": "unified_title_assignment",
+   "value": "Interviewing and Counseling",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CRJ 220",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

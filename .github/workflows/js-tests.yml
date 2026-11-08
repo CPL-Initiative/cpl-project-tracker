@@ -188,6 +188,10 @@ jobs:
       # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
       - name: Refresh button carries no secret (SEC-3)
         run: python3 tests/refresh_button_no_secret_test.py
+      # A failed live-metrics scrape turns the daily run red (S601, #2890 item 1): the
+      # scrape checks HTTP 200 and logs an ::error, and the last step fails the run.
+      - name: Daily scrape fails loudly
+        run: python3 tests/daily_scrape_fails_loudly_test.py
       # Supabase table-grant lint (2026-09-23) — from 2026-10-30 Supabase stops
       # granting the API roles on a NEW public table, and five functions here
       # DROP + CREATE their table on every nightly promotion. Every table the
@@ -722,6 +726,36 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/active_colleges_ccc_test.py
+
+      # The k=10 disclosure checker's logic (S602, COBIx item 7): every failure it
+      # names is caught on fixtures. The live read runs in k10-disclosure-check.yml.
+      # Stdlib only. Same non-required check.
+      - name: k=10 disclosure checker (fixtures)
+        run: python3 tests/k10_disclosure_check_test.py
+
+      # The failure watch (S602, COBIx #2891 item 3): every scheduled workflow is
+      # watched or excused with its reason, and every watched name is a real
+      # workflow name (workflow_run matches names exactly). PyYAML only.
+      - name: Workflow failure watch covers every scheduled workflow
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/workflow_failure_watch_test.py
+
+      # The Statewide Exhibits card (S602, COBIx #2891): run nowhere until now, it
+      # went stale when the card gained its Issuer/type variants breakdown.
+      # Imports the generator, so it installs openpyxl. Same non-required check.
+      - name: Statewide Exhibits card (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/statewide_kpi_test.py
+
+      # kpi_history.json cannot be wiped by a bad read (COBIx security round 1,
+      # item 11, S603): a parse error stops the run, the write is atomic, and a
+      # history shorter than the committed one by more than a day is refused.
+      - name: KPI history write guard (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/kpi_history_write_test.py
 
       # The credential reference's statewide flag counts the Fact Sheet's set
       # (Sam, 2026-11-01: a title that includes a statewide exhibit is based on

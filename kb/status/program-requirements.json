@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-06T14:00:33Z",
-  "session": 593,
-  "moniker": "SkyTadpole",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-07T18:48:24Z",
+  "session": 602,
+  "moniker": "SkySombrero",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_594_handoff.md",
+  "handoff": "docs/session_603_handoff.md",
   "next_step": {
-    "title": "Siskiyous next on the catalog sweep",
-    "text": "Read the College of the Siskiyous' lessons, then a free page read of its gaps (65 of 77 found) before any reader change or paid read. Ohlone's gaps are all the college's own; its 29 records failing a machine check can take a reconcile pass instead."
+    "title": "Contra Costa's course outcomes, then the next college's",
+    "text": "On Nov 8 UTC, run Contra Costa's full outcomes read in two parts, then name the next college with the outcomes picker. Los Medanos' local degrees are parked: its catalog sets general education at 24 units but never says electives make up the rest of the 60."
   },
   "calls": [
     {
@@ -21,7 +21,12 @@
         "text": "Open Program records"
       },
       "part": "reading",
-      "todo_id": "monterey-peninsula-parked-2026-11-06"
+      "todo_id": "monterey-peninsula-parked-2026-11-06",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-06",
+        "words": "marked done on the Commons: \"keep going to get everything you can and we'll handle the outliers afterward\". Every Monterey Peninsula program is found, so S594 read it as his Nov 2 ruling for Glendale: the 13 failing records wait for the outlier pass after the harvest, and the sweep keeps to colleges with missing records."
+      }
     },
     {
       "title": "The printed floor is in the scorer: the live update",
@@ -219,6 +224,38 @@
   },
   "changes": [
     {
+      "at": "2026-11-07T18:47:00Z",
+      "text": "Palomar and Los Medanos now display with no errors. Los Medanos' own general education pages were read for free: its local degrees need 24 units of general education, and no page says electives fill the 60 units, so those degrees stay as they are rather than gaining a step the catalog does not support."
+    },
+    {
+      "at": "2026-11-07T16:20:00Z",
+      "text": "No harvest change this session. The dashboard's live figures update again: the daily scrape had been refused since November 5, and now sends its key correctly."
+    },
+    {
+      "at": "2026-11-07T13:55:00Z",
+      "text": "Coalinga's display now shows its 45 passing programs. Palomar's Chemistry program was read again and replaced, and its display is applying. Los Medanos now passes 44 of 83 programs, up from 29, at no model cost: its transfer degrees now count Cal-GETC's 34 units."
+    },
+    {
+      "at": "2026-11-07T12:50:00Z",
+      "text": "Coalinga now passes 45 of 62 programs; its display build merged and is applying. Palomar's re-read found every program the site had dropped, and Chemistry is being extracted. Los Medanos' new read found nothing new, so its 29 passing stay as filed."
+    },
+    {
+      "at": "2026-11-07T11:16:00Z",
+      "text": "Palomar's catalog is being read again because the college site timed out on 8 pages, which would have dropped 7 passing records. Coalinga's two newly found programs are being extracted, about 13 cents. Los Medanos College's catalog is being read again on the current reader, at no model cost."
+    },
+    {
+      "at": "2026-11-07T10:17:00Z",
+      "text": "Coalinga College's catalog is being read again on the current reader, at no model cost, beside Palomar's. Siskiyous' display step is still applying its new records."
+    },
+    {
+      "at": "2026-11-07T09:50:00Z",
+      "text": "Siskiyous' 73 records loaded and the 65 older ones replaced with the new reading, so 66 now pass the machine checks, up from 42 (#2877). Lake Tahoe Community College's 435 course SLOs loaded (#2833). Palomar's catalog is being read again on the current reader, at no model cost."
+    },
+    {
+      "at": "2026-11-07T08:45:00Z",
+      "text": "Siskiyous' re-read on the current reader found 73 of its 77 programs, 8 more than before; their extraction is running. Lake Tahoe Community College's SLOs are loading (#2833); Contra Costa's trial parsed 11 of 12 pages, so its full read is next."
+    },
+    {
       "at": "2026-11-06T14:05:00Z",
       "text": "Mt. San Jacinto's Public Health A.S.-T record loaded and shown (#2838). Ohlone's 18 missing noncredit certificates are not published on the college's site, so all 33 of its gaps are the college's to settle in COCI (#2841)."
     },
@@ -273,10 +310,6 @@
     {
       "at": "2026-11-05T22:13:00Z",
       "text": "The side session finished security step 1 with Sam (worker pasted, both secrets rotated, proof runs 686 and 688) and drafted step 2's migration (tracker 2822). The harvest's tables and queue did not move."
-    },
-    {
-      "at": "2026-11-06T09:45:00Z",
-      "text": "Monterey Peninsula's six unequal records were read against their pages (tracker 2809). Two steps from the catalog's own words went to a reconcile: the 60 is a floor for transfer degrees too, and a group's units printed on its heading line count once. The other four need reader work or stay as the catalog prints them."
     }
   ],
   "headline": [
@@ -459,16 +492,22 @@
       "active": 20282,
       "complete": 13543,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-07",
+      "active": 20282,
+      "complete": 13584,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-06T14:12:00Z"
+    "at": "2026-11-08T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-06",
-    "gaps": 3024,
+    "day": "2026-11-07",
+    "gaps": 3014,
     "parts": {
       "links": {
         "catalog": [
@@ -489,21 +528,21 @@
         20282
       ],
       "coci": [
-        16132,
+        16142,
         20282
       ],
       "outcomes": {
         "slo": [
-          9266,
+          9688,
           89192
         ],
         "plo": [
-          16132,
+          16142,
           20282
         ]
       },
       "careers": [
-        15096,
+        15106,
         20282
       ]
     }

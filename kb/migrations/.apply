@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-07_alignment_level_words.sql
-name=alignment_level_words
+file=kb/migrations/2026-11-07_tmc_submissions_owner_token.sql
+name=tmc_submissions_owner_token

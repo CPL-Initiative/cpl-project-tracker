@@ -582,7 +582,7 @@ file.
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
   **One departure (Sam, 2026-10-24):** the public `library/` page, Sierra and the adoption page take Malone's
   CPL/AI look ([lane](docs/reference/lanes/library.md)); inside COBI every **CPL Commons** view, the Library
-  and CPL Pathways (2026-11-04, -05, -06; [lane](docs/reference/lanes/commons.md)).
+  and CPL Pathways take it too (2026-11-04, -05, -06; [lane](docs/reference/lanes/commons.md)).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
@@ -739,7 +739,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 166](https://claude.ai/artifact/3FsBDnx8buBKwoZUxzQAa4), 2026-11-07, open). An answer
+> (latest: [Open Asks Sheet 169](https://claude.ai/artifact/42Wrb1UqxNE6tX3okfu1Re), 2026-11-07, answered 20:57Z; no card open). An answer
 > changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

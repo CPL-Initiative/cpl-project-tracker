@@ -36,8 +36,13 @@ related:
    github-pages"*. Playbook: [`docs/kb-notes/playbook-github-pages-manual-redeploy.md`](docs/kb-notes/playbook-github-pages-manual-redeploy.md).
 
 ### Scrape returning errors
-1. Test: `https://cpl-proxy.slee-548.workers.dev/scrape?secret=CPL_SCRAPE_2026`
-2. `Invalid or missing secret` → check `SCRAPE_SECRET` in Cloudflare dashboard
+1. The daily run's scrape step logs the worker's HTTP status and reply, and the run's last
+   step turns it red when the scrape failed (S601). Test by hand:
+   `curl -H "x-scrape-secret: <SCRAPE_SECRET>" https://cpl-proxy.slee-548.workers.dev/scrape`
+   (the old `CPL_SCRAPE_2026` value was rotated out; never paste the live one into a doc).
+2. `Invalid or missing secret` (HTTP 403) → GitHub's `CPL_SCRAPE_SECRET` and the Worker's
+   `SCRAPE_SECRET` disagree. Set both to the same value in one sitting
+   ([`rotation_guide`](../security/rotation_guide.md)).
 3. `CPL API returned 502` → CCCCO Dashboard may be down
 4. `ALL COLLEGES row not found` → API response structure may have changed
 

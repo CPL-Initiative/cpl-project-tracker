@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8088,
+  "input_tokens": 7493,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8088,
-    "output_tokens": 1188,
+    "input_tokens": 7493,
+    "output_tokens": 1536,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1188,
+  "output_tokens": 1536,
   "output_tokens_details": {
-   "thinking_tokens": 346
+   "thinking_tokens": 463
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05611,
- "ms": 11309,
- "seconds": 11.6,
+ "cost_usd": 0.06069,
+ "ms": 13198,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -83,12 +83,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -107,7 +107,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Early Childhood Education--AS-T",
+   "section_heading": "Early Childhood Education - AS-T",
    "measure": "units",
    "total_units": {
     "min": 25,
@@ -128,7 +128,14 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [],
+   "outcomes": [
+    "Identify physical, psychosocial, and cognitive developmental levels throughout early childhood and integrate this knowledge with an awareness of individual differences.",
+    "Interpret the effect of family, social systems, and the cultural diversity inherent within families and communities, on the design and implementation of programs for young children.",
+    "Associate theory and philosophy with applied curriculum in an early childhood setting in support of developmentally appropriate practice.",
+    "Demonstrate knowledge of developmental theory in designing and implementing early childhood programs while defending age appropriate and culturally diverse practice in work with families and children.",
+    "Interpret and follow mandates and guidelines included in relevant state and federal regulations.",
+    "Apply general skills and attitudes integral to success within a professional environment—including: personal responsibility, mental health, and teamwork."
+   ],
    "careers": []
   },
   "blocks": [
@@ -204,12 +211,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text begins mid-sentence ('verage of 2.0 ... completion of Cal-GETC-Breadth'); the GE pattern is recorded as printed, 'Cal-GETC-Breadth', and may be a truncation or a merging of 'Cal-GETC' and 'CSU GE-Breadth'. A reviewer should check this.",
-   "The text also ends mid-way through the Recommended Sequence table. No program description, outcomes or careers appear in the supplied text.",
-   "ECE1003 (Child, Family, & Community) is required in the major but is not in the closed list, so it is marked as a catalog addition.",
-   "The page says 'Any needed transferable electives to reach a total of 60 CSU transferable units' and prints no units for them, so electives_fill_degree is true. The 60-unit figure is a general requirement, not a printed degree total, so degree_total is null.",
-   "Double counting courses in GE and the major is permitted."
+   "The catalog prints codes without a space (e.g., ECE1001); the closed list writes them as 'ECE 1001'. They are treated as the same courses.",
+   "ECE1003 (Child, Family, & Community) is required in the catalog but is not in the closed list, so it is recorded as a catalog addition.",
+   "The page says 'Any needed transferable electives to reach a total of 60 CSU transferable units.' The description also mentions 60 semester units as a general requirement. degree_total is left null because the page does not print 60 as this award's own total. electives_fill_degree is set to true.",
+   "No units are printed for Cal-GETC-Breadth, so ge_units is null.",
+   "The listed courses sum to 25 units, which matches the printed total of 25.",
+   "No specific careers or job titles are named. The text mentions only 'employment in early education programs' and work with school-age children."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

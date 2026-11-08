@@ -25,7 +25,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting associate of science (as) degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -68,7 +71,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "small business operations associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -105,7 +111,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -150,7 +159,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -185,7 +197,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrical technology associate in science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -219,7 +234,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -265,7 +283,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -311,7 +332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music associate of arts (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -360,7 +384,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "vocational nursing certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -393,7 +420,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -425,7 +455,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "recording arts associate in arts degree (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -462,7 +495,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "instrumentation technology associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -508,7 +544,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -541,7 +580,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -580,7 +622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "process technology associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -617,7 +662,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -649,7 +697,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -686,7 +737,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -729,7 +783,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "small business operations certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 21,
@@ -764,7 +821,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical technology certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -801,7 +861,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "instrumentation technology certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -840,7 +903,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "process technology certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
@@ -873,7 +939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -905,7 +974,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "recording arts certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -952,7 +1024,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -985,7 +1060,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 11,
@@ -1010,7 +1088,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire technology certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -1036,7 +1117,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire academy certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -1063,7 +1147,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer applications support specialist associate of science degree (as)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1112,7 +1199,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information technology (basic) certificate of achievement (coa)",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -1139,7 +1229,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer applications support specialist (advanced) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 10,
@@ -1177,7 +1270,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -1206,7 +1302,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology associate in arts for transfer (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1239,7 +1338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education associate of science degree for transfer (as-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 11,
@@ -1268,7 +1370,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -1297,7 +1402,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "acting associate of arts degree (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1359,7 +1467,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology associate in arts for transfer (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -1391,7 +1502,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics associate in science for transfer 2.0 (ast)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -1476,7 +1590,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: behavioral science and social science, associate of arts",
+    "section_fit": 1.0
    }
   },
   "listed": 59,
@@ -1533,7 +1650,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: math and science, associate of arts",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -1637,7 +1757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: arts and humanities, associate of arts",
+    "section_fit": 1.0
    }
   },
   "listed": 82,
@@ -1684,7 +1807,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history associate of arts degree for transfer (aat)",
+    "section_fit": 0.333
    }
   },
   "listed": 29,
@@ -1712,7 +1838,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1757,7 +1886,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice associate of science degree for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -1784,7 +1916,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminal law certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -1818,7 +1953,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism associate in arts for transfer degree (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1873,7 +2011,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 34,
@@ -1919,7 +2060,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english associate in arts for transfer (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -1951,7 +2095,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science associate in science for transfer degree (ast)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -1982,7 +2129,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics associate in science for transfer (ast)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -2033,7 +2183,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 29,
@@ -2065,7 +2218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -2100,7 +2256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music associate in arts for transfer (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2156,7 +2315,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology associate in science for transfer degree (ast)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -2186,7 +2348,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "chemistry associate in science for transfer degree (ast)",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -2226,7 +2391,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -2270,7 +2438,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice: lgbtq studies associate in arts for transfer degree (aat)",
+    "section_fit": 0.8
    }
   },
   "listed": 22,
@@ -2313,7 +2484,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "transit electrical technology certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
@@ -2362,7 +2536,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies: african american studies associate in arts for transfer degree (aat)",
+    "section_fit": 0.833
    }
   },
   "listed": 27,
@@ -2470,7 +2647,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities associate of arts degree (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 53,
@@ -2499,7 +2679,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language associate of arts degree (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2528,7 +2711,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -2559,7 +2745,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "three dimensional design certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
@@ -2588,7 +2777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish certificate of achievement (coa)",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -2619,7 +2811,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy associate in arts for transfer degree (aat)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -2671,7 +2866,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice: chicano/chicana studies associate in arts for transfer degree (aat)",
+    "section_fit": 0.667
    }
   },
   "listed": 30,
@@ -2699,7 +2897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science associate of arts degree for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
@@ -2772,7 +2973,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "college & career preparation certificate of completion (noncredit- 54 hours)",
+    "section_fit": 0.5
    }
   },
   "listed": 3,
@@ -2798,7 +3002,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "construction pre-apprenticeship certificate of completion (noncredit- 220 hours)",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -2822,7 +3029,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic drone piloting certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2854,7 +3064,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 associate of science degree for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -2900,7 +3113,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy and society, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -2938,7 +3154,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies, associate of arts",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -2965,7 +3184,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hip hop studies, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3026,7 +3248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "creative writing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 42,
@@ -3063,7 +3288,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3087,7 +3315,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "automotive maintenance, detailing and surface enhancement certificate of completion (non-credit)",
+    "section_fit": 0.714
    }
   },
   "listed": 2,
@@ -3126,7 +3357,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "associate in science in early childhood education master teacher",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3167,7 +3401,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "associate in science in early childhood education site supervisor",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -3202,7 +3439,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -3236,7 +3476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 associate in arts for transfer degree (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3277,7 +3520,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education certificate of achievement- site supervisor (coa)",
+    "section_fit": 0.833
    }
   },
   "listed": 19,
@@ -3316,7 +3562,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education certificate of achievement- master teacher (coa)",
+    "section_fit": 0.833
    }
   },
   "listed": 17,

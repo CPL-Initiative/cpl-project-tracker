@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7340,
+  "input_tokens": 6679,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7340,
-    "output_tokens": 1595,
+    "input_tokens": 6679,
+    "output_tokens": 1841,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1595,
+  "output_tokens": 1841,
   "output_tokens_details": {
-   "thinking_tokens": 781
+   "thinking_tokens": 791
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06126,
- "ms": 14370,
- "seconds": 14.9,
+ "cost_usd": 0.06354,
+ "ms": 16086,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
@@ -85,12 +85,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -127,7 +127,16 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Identify problem solving and decision-making techniques.",
+    "Demonstrate a proficiency in computer skills typically used in the workplace.",
+    "Distinctive problem-solving, strategic and analytical capabilities.",
+    "Strong communication and interpersonal skills with an ability to influence at executive levels.",
+    "Display and demonstrate an awareness of appropriate professional behavior",
+    "Demonstrated ability to apply data in driving strategy, prioritizing, and making decisions and recommendations.",
+    "Possess sound business insight and strategic skills.",
+    "Identify skills needed to be success in business start-up."
+   ],
    "careers": [
     "media",
     "small business",
@@ -191,13 +200,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page labels the figures 'credits', but this is a noncredit Certificate of Completion. The values (36, 48.06-162) are read as hours, so measure is set to hours.",
-   "The 'Requirements (Total 156.06 - 270)' group contains the nested 'Elective Course (Total 36)' group. Its total equals the program total, so it is recorded in total_units. The outer block's stated is left null, because its own three courses sum to 120.06-234.",
-   "The 'Elective Course' group says 'Complete all of the following' and lists only BA0504, so it is recorded as a required block. The Recommended Sequence instead says 'Take one of the following'.",
-   "The Recommended Sequence shows 'Total Credit Hours 120.06 - 234.0', which conflicts with the 156.06-270 requirements total. It appears to omit one 36-hour course.",
-   "Codes are printed without spaces (CSCI0501, WORK0512); they match closed-list CSCI 501 and WORK 512. BA0504 and BA0505 are not in the closed list.",
-   "Careers were taken from 'entry-level employment in media, small business and management sector'. The phrase split is a judgment call."
+   "The catalog labels the figures 'credits', but this is a noncredit Certificate of Completion and the per-course figures (36, 48.06-162) are hours, so measure is recorded as hours.",
+   "'Requirements (Total 156.06 - 270)' equals the sum of all four courses (36+36+48.06+36 to 36+36+162+36) and matches the program's 'Credits: 156.06 - 270.0'. It is recorded as total_units rather than as the Requirements block's stated total.",
+   "The Recommended Sequence conflicts with the requirements list. Term 1 says 'Take one of the following: BA0504 or BA0505', and Term 2 lists BA0504 again. The Program Requirements section requires all of BA0505, CSCI0501, WORK0512 and BA0504. The requirements section was followed.",
+   "The catalog prints codes without a space (CSCI0501, WORK0512). These match the closed list's CSCI 501 and WORK 512.",
+   "BA0504 and BA0505 are not in the closed list and are marked as catalog additions.",
+   "The PSLO list is printed for the program as a whole, and this award shares it. 'Identify skills needed to be success in business start-up.' is copied as printed.",
+   "The page carries a Winter 2023 start-date rationale, although the catalog year is 2026-2027."
   ]
  },
- "extracted_run": "38979399672"
+ "extracted_run": "42354853403"
 }

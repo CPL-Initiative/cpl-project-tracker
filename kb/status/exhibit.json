@@ -1,28 +1,37 @@
 {
   "schema": 1,
-  "session": 595,
-  "moniker": "SkyMeadow",
+  "session": 602,
+  "moniker": "SkySombrero",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_594_handoff.md",
+  "handoff": "docs/session_603_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
       "text": "Four whole-college Credit by Exam exhibits carry one course's title (Plant Propagation among them), and CompTIA A+, Network+ and Server+ sit under Security+, from the 2026-11-01 triage.",
       "if_no_reply": "They stay as they are.",
       "link": "https://claude.ai/artifact/DdQQznv6bP1owM69KEtJNg",
-      "link_text": "Open Asks Sheet 163, card 4"
+      "link_text": "Open Asks Sheet 163, card 4",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-07",
+        "words": "Correct all seven"
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-07T01:13:05Z",
+  "written_at": "2026-11-07T18:48:29Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Read Open Asks Sheet 163's replies and carry them out",
-    "text": "Card 4 corrects seven triage titles through the CER applier with a receipt; then the Department of Insurance's license types once its host is reachable, and Sierra's CPL-AI answers."
+    "title": "The Department of Insurance's license types",
+    "text": "Read the Department of Insurance's license types once its site is reachable from a runner, and file them as a data source. The four El Camino CompTIA exhibits are settled: each is a course exam, so the college stays their issuer."
   },
   "changes": [
+    {
+      "at": "2026-11-07T18:47:00Z",
+      "text": "The four El Camino CompTIA exhibits were read under your rule from Sheet 167: each is El Camino's own course, filed in MAP as Credit by Exam, so it is a course exam and the college stays its issuer, as the records already say. Nothing was rewritten."
+    },
     {
       "at": "2026-11-06T23:35:00Z",
       "text": "Add your credential is live (#2860): a search that finds nothing offers Add it; nothing a visitor types shows until a reviewer verifies it in the Exhibits Requests view (DR-32)."

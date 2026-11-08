@@ -1,30 +1,30 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-11-05T21:20:35.474Z",
+ "_as_of": "2026-11-07T16:09:24.054Z",
  "credit_recommendations": {
-  "total": "15,087",
-  "ccc": "1,504",
-  "local": "13,583",
+  "total": "15,106",
+  "ccc": "1,510",
+  "local": "13,596",
   "by_type": [
-   "Standardized Assessment: 7,789",
+   "Standardized Assessment: 7,806",
    "Industry Certification: 4,263",
-   "Credit By Exam: 2,320",
+   "Credit By Exam: 2,322",
    "Portfolio Review: 458",
    "Military: 155"
   ]
  },
  "map_exhibits": {
-  "total": "2,468",
+  "total": "2,466",
   "ccc": "162",
-  "local": "2,306",
+  "local": "2,304",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
   "total": "162",
   "program_areas": "12",
   "distinct_credit_recs": "1,300",
-  "adoptions": "1,491",
-  "adopting_colleges": "68",
+  "adoptions": "1,497",
+  "adopting_colleges": "69",
   "by_sector": [
    {
     "sector": "Construction Technology",
@@ -93,7 +93,7 @@
     "sector": "World Languages",
     "exhibits": 2,
     "credit_recs": 19,
-    "adoptions": 50,
+    "adoptions": 56,
     "could_adopt": 34
    },
    {
@@ -126,7 +126,7 @@
  "articulating_colleges": {
   "total": "103",
   "originating": "89",
-  "adopting_ccc": "68"
+  "adopting_ccc": "69"
  },
  "veteran_sprint": {
   "star_colleges": "67",

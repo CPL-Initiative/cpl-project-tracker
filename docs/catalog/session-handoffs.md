@@ -15,10 +15,18 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-558 document(s).
+566 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 603 | [Session 603 handoff: security step 3 built and held for Sam; the k=10 check and a failure watch run unattended; LMC's GE page read](../session_603_handoff.md) | 2026-11-07 |
+| 602 | [Session 602 handoff: the stale KPI scrape fixed; security asks on the sheet; the COBIx inbox routine waits for Sam](../session_602_handoff.md) | 2026-11-07 |
+| 601 | [Session 601 handoff: Coalinga displayed; Palomar's Chemistry reread and built; Los Medanos' failures read and a Cal-GETC step](../session_601_handoff.md) | 2026-11-07 |
+| 600 | [Session 600 handoff: DSP Version 3 drafted for Sam; Coalinga displaying; Palomar extracting](../session_600_handoff.md) | 2026-11-07 |
+| 599 | [Session 599 handoff: Palomar re-capturing after host errors; Coalinga extracting; Los Medanos captured](../session_599_handoff.md) | 2026-11-07 |
+| 598 | [Session 598 handoff: Coalinga and Palomar re-capturing; Siskiyous' display applying](../session_598_handoff.md) | 2026-11-07 |
+| 597 | [Session 597 handoff: Siskiyous reread to 66 passing; Palomar re-capturing; Lake Tahoe's SLOs in](../session_597_handoff.md) | 2026-11-07 |
+| 596 | [Session 596 handoff: Siskiyous extracting on the new reader; Lake Tahoe's SLOs loading](../session_596_handoff.md) | 2026-11-07 |
 | 594 | [Session 594 handoff: Mt. San Jacinto merged; Ohlone's gaps all the college's own](../session_594_handoff.md) | 2026-11-06 |
 | 593 | [Session 593 handoff: Monterey Peninsula merged; Mt. San Jacinto's Public Health A.S.-T loaded](../session_593_handoff.md) | 2026-11-06 |
 | 592 | [Session 592 handoff: Monterey Peninsula reread, displayed and parked; Mission's SLOs loaded](../session_592_handoff.md) | 2026-11-06 |

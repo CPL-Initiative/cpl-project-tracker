@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-07_library_dsp_v3_stored_draft.sql",
+ "name": "library_dsp_v3_stored_draft",
+ "version": "20261107122937",
+ "sha256": "a53a9f242a401652f8bbae79c09a701b46e95df1ef4396f20f0d23da5ab8f5d8",
+ "run": "42372566821",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

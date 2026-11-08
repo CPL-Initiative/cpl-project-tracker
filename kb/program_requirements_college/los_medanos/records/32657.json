@@ -64,34 +64,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.0,
     22.0
    ],
    "stated": [
-    60.0,
-    60.0
+    21.0,
+    22.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     21.0,
-     22.0
+     55.0,
+     56.0
     ],
     "stated": [
-     21.0,
-     22.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     4.0,
+     5.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -257,5 +263,20 @@
    "Program learning outcomes have lettered sub-items; each numbered outcome is recorded as one entry with its sub-items included verbatim, line breaks read as spaces."
   ]
  },
- "extracted_run": "39001267800"
+ "extracted_run": 42376691800,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Completion of California General Education Transfer Curriculum (Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Los Medanos AA-T and AS-T pages: 'To earn the Associate Degree for Transfer: Completion of 60 semester units or 90 quarter units of degree-applicable courses ... Completion of California General Education Transfer Curriculum (Cal-GETC)' (college page read 42376216539); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "39001267800"
 }
