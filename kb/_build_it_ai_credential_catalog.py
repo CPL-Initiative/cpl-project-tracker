@@ -402,7 +402,7 @@ def field_cip(name, ctdl=None, issuer=""):
 # than punctuation, vendor prefix or an exam-code parenthetical. Each pairing
 # was read by a person; never add one on a token overlap alone.
 ALIASES = {
-    ("Cisco", "Cisco Certified Network Associate (CCNA)"): "CCNA Certification",
+    ("Cisco", "Cisco Certified Network Associate (CCNA)"): "CCNA",
     ("CompTIA", "CompTIA CySA+"): "CompTIA Cybersecurity Analyst",
     ("CompTIA", "CompTIA Cloud Essentials+"): "CompTIA Cloud Essentials",
     ("Amazon Web Services", "AWS Certified SysOps Administrator"):
@@ -495,7 +495,7 @@ def domain_of(name, issuer):
 # kb/reference/credential_engine_top50.json with no catalog row.
 CE_TOP50_ALIASES = {
     "ce-969da20e-c127-4175-93f3-0722063ca7fc": ["AWS Certified Cloud Practitioner"],
-    "ce-b9eb2864-f5a6-4c55-b048-3b5aa7bc8c4c": ["CCNA Certification"],
+    "ce-b9eb2864-f5a6-4c55-b048-3b5aa7bc8c4c": ["CCNA"],
     "ce-9b80b165-9629-409c-8d6c-e7de0d22a973": [
         "IT Specialist - HTML5 Application Development",
         "Information Technology Specialist - HTML5 Application Development"],
