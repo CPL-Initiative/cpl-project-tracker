@@ -121,7 +121,15 @@
       headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" },
       body: JSON.stringify(body) }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error(String(r.status))); });
   }
-  function doorSay(text, kind) { if (door) { door.msg = text; door.kind = kind || ""; doorWrite(door); } renderAll(); }
+  // A surface with no door mount of its own (the CSM Workspace's ended-access note) hears the door's words here:
+  // a declined or lapsed request must not leave it saying "Asked" (COBIx on PR 3007).
+  var doorSaid = null;
+  function doorSay(text, kind) {
+    doorSaid = { msg: text, kind: kind || "" };
+    if (door) { door.msg = text; door.kind = kind || ""; doorWrite(door); }
+    renderAll();
+    try { window.dispatchEvent(new CustomEvent("cpl-funding-door-said", { detail: doorSaid })); } catch (e) { /* ignore */ }
+  }
   function askAccess(email) {
     var raw = new Uint8Array(32); crypto.getRandomValues(raw);
     var secret = hex(raw);
