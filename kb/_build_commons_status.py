@@ -298,6 +298,11 @@ def row_course(root):
     # auditor's ready; this count sits beside it. The overlay keeps the latest reviewer a card, so a cohort save made
     # after a person's reads as the cohort's: the count is a floor.
     conf = figure(lambda: confirmed_cards(root, A))
+    # Discipline in doubt (Sam, 2026-11-09: "make a built in way for me to rule on them so our procedures can be adjusted
+    # to handle similar edge cases"): the active discipline's cards the daily re-check could not settle
+    # (kb/_ccr_seed_recheck_dryrun.py --doubt). A ruled card is curated, so the next run leaves it out.
+    doubt = figure(lambda: load_json(root, "kb/ccr_doubt.json"))
+    dn = doubt["n"] or {}
     procedures = [
         {"n": counts.get("identities"), "words": "identities and %s stand-alone courses on the canvas (the %s layout)%s"
          % (fmt(counts.get("stand_alone")), str(cv.get("_generated_from", ""))[:10],
@@ -321,6 +326,13 @@ def row_course(root):
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
              "owner": "the Common Subjects reference", "carry": "no_procedure", "open": "#coci-lookup/list/seedless"},
+            # The queue counts the description's cards alone: TOP is no person's item (Sam, 2026-11-04). The job also
+            # lists the cards only TOP doubts, labeled as such, because Sam asked to see them (2026-11-09).
+            {"n": (dn.get("counts") or {}).get("description") if doubt["n"] else None,
+             "words": "cards whose catalog description reads as another discipline than the one they carry (%s)"
+                      % (dn.get("discipline") or "the active discipline"),
+             "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+             "carry": "unsure", "open": "#coci-lookup/list/doubt", "error": doubt["error"]},
             {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
             # TOP and discipline disagreements are no person's item (Sam, 2026-11-04: "I'm not generally worried about
             # TOP disagreement as those are input unchecked by colleges. CIP from the COCI programs records should be
@@ -338,7 +350,7 @@ def row_course(root):
                   "tags": {k: tags.get(k) for k in ("blank_description", "discipline_title_mismatch", "blank_discipline",
                            "seed_untouched_discipline", "top_discipline_disagreement", "unit_anomaly")}},
         "sources": ["kb/row_audit/latest.json", "kb/coci_curation.json", "prototype/ccr_universe.json",
-                    "unified_courses_standalone.js"],
+                    "unified_courses_standalone.js", "kb/ccr_doubt.json"],
     }
 
 

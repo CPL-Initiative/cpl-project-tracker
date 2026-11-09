@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-08T21:50:29Z",
+ "written_at": "2026-11-09T02:51:57Z",
  "rows": [
   {
    "key": "requirements",
@@ -219,6 +219,14 @@
      "open": "#coci-lookup/list/seedless"
     },
     {
+     "n": 8,
+     "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+     "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+     "carry": "unsure",
+     "open": "#coci-lookup/list/doubt",
+     "error": null
+    },
+    {
      "n": 4179,
      "words": "unit anomalies",
      "owner": "a curator (an identity keeps its unit range)",
@@ -274,7 +282,8 @@
     "kb/row_audit/latest.json",
     "kb/coci_curation.json",
     "prototype/ccr_universe.json",
-    "unified_courses_standalone.js"
+    "unified_courses_standalone.js",
+    "kb/ccr_doubt.json"
    ]
   },
   {
@@ -336,7 +345,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-08T06:23:32Z",
+    "at": "2026-11-08T06:23:32+00:00",
     "every_hours": null
    },
    "facts": {
@@ -635,6 +644,14 @@
    {
     "key": "unsure",
     "items": [
+     {
+      "ref": "course",
+      "title": "Common Course Reference",
+      "n": 8,
+      "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+      "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+      "open": "#coci-lookup/list/doubt"
+     },
      {
       "ref": "cr",
       "title": "Common CR Reference",

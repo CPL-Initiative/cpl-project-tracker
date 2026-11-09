@@ -812,3 +812,17 @@ is nearly all changes. Sheet 174 asks whether to confirm Kinesiology's 627.
 **CI (COBIx #2927 item 2, #2939).** Loading `cpl_funding.js` costs 13ms; a funding render cost 5.7s, a third of it
 jsdom's `window` getter hit from `base()`. One cached reference halves every funding test. The remaining cost is the
 model recomputing `priorities()` per college.
+
+## S614 SkyMilkomeda (2026-11-09): Discipline in doubt, a ruling that teaches the procedure
+
+- **Read the verdict function before naming a set.** I first listed Kinesiology's eight TOP-disagree cards as the
+  re-check's "8 for a curator". `combine()` sends a card to a curator only when the description differs; the TOP-only
+  cards are `unsettled`. Sam ruled on the wrong list for a minute. Recompute a named count from the code that made it.
+- **A ruling and its reason are two writes, reason first.** The reason row carries the signals the person saw, so a
+  session writing the rule later reads what the ruling answered, not today's file. The discipline goes through the
+  List's one write (`ccSave`), so no second discipline path exists.
+- **A standing ruling shapes the queue even when a person asks to see more.** The job shows the TOP-only cards Sam asked
+  for; the Commons queue counts only the description's, because TOP waits on no one (2026-11-04). The guard
+  `commons_jobs_filtered` (5) caught the first draft.
+- **A loader's own throw must reach its catch.** `.then(ok, fail)` does not catch a throw inside `ok`; the jobs test
+  failed on an unhandled rejection until the doubt read used `.then(ok).catch(fail)`.

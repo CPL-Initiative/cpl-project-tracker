@@ -105,6 +105,9 @@
     ".ccl-cc-edit { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; margin:4px 0 8px; }",
     ".ccl-cc-in { font: inherit; font-size:.85rem; min-height:28px; padding:2px 6px; min-width:0; flex:1 1 220px; max-width:100%;" +
       " border:1px solid var(--border-strong); border-radius:4px; background: var(--surface-opaque); color: var(--text-body); }",
+    // Discipline in doubt: the ruling's reason runs the panel's width; the checkbox meets the 24px target.
+    ".ccl-rule-words { flex:1 1 100%; min-height:64px; resize:vertical; }",
+    ".ccl-rule input[type=checkbox] { width:20px; height:20px; margin:2px 0; }",
     ".ccl-cc-fold > summary { cursor:pointer; min-height:24px; line-height:24px; font-size:.82rem; color: var(--text-body); }",
     ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
     ".cplcoci-meta { margin:0 0 6px; font-size:.8rem; color: var(--text-muted); max-width:var(--cpl-measure,none); }",
@@ -357,9 +360,32 @@
      when one is chosen; ten megabytes) and the identity codes the Subjects scan finds stray (kb/csr_out/latest.json).
      The Commons counts common courses (cards); a filter here lists their local courses, banded by M-ID. */
   var JOB_FILTERS = [["seedless", "Discipline no seed has touched", "seed_untouched_discipline"], ["units", "A unit anomaly", "unit_anomaly"],
-    ["nodesc", "No catalog description", "blank_description"], ["stray", "On a stray identity code", null]];
+    ["nodesc", "No catalog description", "blank_description"], ["stray", "On a stray identity code", null],
+    ["doubt", "Discipline in doubt", null]];
   LIST_FILTERS = LIST_FILTERS.concat(JOB_FILTERS.map(function (f) { return [f[0], f[1]]; }));
-  var JOBS = { by: null, strays: null, error: null, strayError: null, loading: null };
+  var JOBS = { by: null, strays: null, error: null, strayError: null, loading: null, doubt: null, doubtError: null, rulings: null };
+  /* Discipline in doubt (Sam, 2026-11-09: "make a built in way for me to rule on them so our procedures can be adjusted
+     to handle similar edge cases"): kb/ccr_doubt.json names the active discipline's cards whose description, or TOP
+     alone, points elsewhere (kb/_ccr_seed_recheck_dryrun.py --doubt). The panel shows both signals and takes a ruling
+     with its reason; a reason marked for similar cards is a ccr_procedure_request row a session writes into
+     kb/ccr_procedures.json as a rule. The ruling's discipline saves through ccSave, the List's one discipline write. */
+  var RULE_PREFIX = "_CCR_PROCEDURE_REQUEST::", RULE_FIELD = "ccr_procedure_request";
+  function jobReady(f) { return f === "stray" ? !!JOBS.strays : f === "doubt" ? !!JOBS.doubt : !!JOBS.by; }
+  function jobError(f) { return f === "stray" ? JOBS.strayError : f === "doubt" ? JOBS.doubtError : JOBS.error; }
+  function loadRulings() {
+    return fetch(REST + "/kb_curation?select=course_id,value,reviewer_email,reviewed_at&field=eq." + RULE_FIELD +
+      "&course_id=like." + encodeURIComponent(RULE_PREFIX) + "%25&order=course_id.asc",
+      { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Range-Unit": "items", Range: "0-999" } })
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (x) {
+          var v; try { v = JSON.parse(x.value); } catch (e) { return; }
+          if (v && v.mid) by[v.mid] = { v: v, who: x.reviewer_email, at: String(x.reviewed_at || "").slice(0, 10) };
+        });
+        JOBS.rulings = by;
+      }, function () { JOBS.rulings = {}; });
+  }
   function isJob(f) { return JOB_FILTERS.some(function (j) { return j[0] === f; }); }
   function readJson(url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " answered " + r.status); return r.json(); }); }
   function loadJobs() {
@@ -378,16 +404,23 @@
         var st = C && C._mid_codes && C._mid_codes.strays;
         if (!Array.isArray(st)) throw new Error("kb/csr_out/latest.json has no stray codes");
         JOBS.strays = new Set(st.map(function (x) { return x.code; }));
-      }, function (e) { JOBS.strayError = String(e && e.message || e); })
+      }, function (e) { JOBS.strayError = String(e && e.message || e); }),
+      readJson("kb/ccr_doubt.json").then(function (D) {
+        if (!D || !Array.isArray(D.cards)) throw new Error("kb/ccr_doubt.json has no cards");
+        var map = new Map();
+        D.cards.forEach(function (c) { if (c && c.id) map.set(c.id, c); });
+        JOBS.doubt = { discipline: D.discipline || "", map: map };
+      }).catch(function (e) { JOBS.doubtError = String(e && e.message || e); }),
+      loadRulings()
     ]).then(function () { JOBS.loading = null; if (state.view === "courses") mountList(); });
     return JOBS.loading;
   }
   function jobCounts() {
-    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0);
+    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0);
     if (JOBS.memo && JOBS.memo.m === m && JOBS.memo.key === key) return JOBS.memo.n;
     var n = {};
     JOB_FILTERS.forEach(function (j) {
-      if (j[0] === "stray" ? !JOBS.strays : !JOBS.by) return;
+      if (!jobReady(j[0])) return;
       var c = 0; m.rows.forEach(function (r) { if (jobPass(r, j[0])) c++; }); n[j[0]] = c;
     });
     JOBS.memo = { m: m, key: key, n: n };
@@ -395,12 +428,14 @@
   }
   function jobPass(r, f) {
     if (f === "stray") return !!JOBS.strays && r.mids.some(function (id) { return JOBS.strays.has(String(id).split(" ")[0]); });
+    if (f === "doubt") return !!JOBS.doubt && r.mids.some(function (id) { return JOBS.doubt.map.has(id); });
     var set = JOBS.by && JOBS.by[f];
     return !!set && r.mids.some(function (id) { return set.has(id); });
   }
   /* What a job filter holds, in words: its common courses and their local courses, or the read it waits on. */
   function jobNote(f) {
     var j = JOB_FILTERS.filter(function (x) { return x[0] === f; })[0];
+    if (f === "doubt") return doubtNote();
     if (f === "stray" ? (JOBS.strayError && !JOBS.strays) : (JOBS.error && !JOBS.by))
       return el("p", { "class": "cplcoci-empty", role: "alert" }, [(f === "stray" ? JOBS.strayError : JOBS.error) + ", so this filter shows nothing. Reload the tab to try again."]);
     if (f === "stray" ? !JOBS.strays : !JOBS.by) return el("p", { "class": "cplcoci-meta", role: "status" }, ["Reading the " + (f === "stray" ? "Subjects scan" : "auditor's cards") + " for this filter…"]);
@@ -409,6 +444,100 @@
     var cards = f === "stray" ? Object.keys(ids).length : JOBS.by[f].size;
     return el("p", { "class": "cplcoci-meta" }, [j[1] + ": " + fmt(cards) + (cards === 1 ? " common course" : " common courses") +
       (f === "stray" ? " on " + fmt(JOBS.strays.size) + " stray codes" : " the auditor marks") + "; their " + fmt(n) + " local courses are below, banded by M-ID. Its work is done in SkyView, one word from each band."]);
+  }
+  /* The job's note: what it holds, where the ruling goes, and how many are ruled. */
+  function doubtNote() {
+    if (JOBS.doubtError && !JOBS.doubt) return el("p", { "class": "cplcoci-empty", role: "alert" }, [JOBS.doubtError + ", so this filter shows nothing. Reload the tab to try again."]);
+    if (!JOBS.doubt) return el("p", { "class": "cplcoci-meta", role: "status" }, ["Reading the cards in doubt for this filter…"]);
+    var D = JOBS.doubt, nDesc = 0, nTop = 0, ruled = 0, taught = 0;
+    D.map.forEach(function (c, id) {
+      if ((c.why || []).indexOf("description") >= 0) nDesc++; else nTop++;
+      var R = JOBS.rulings && JOBS.rulings[id];
+      if (R) { ruled++; if (R.v.similar) taught++; }
+    });
+    var n = D.map.size;
+    return el("div", { "class": "ccl-doubt-note" }, [
+      el("p", { "class": "cplcoci-meta" }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
+        " the daily re-check could not settle. On " + fmt(nDesc) + " the catalog description reads as another discipline; on " + fmt(nTop) +
+        " only the colleges' TOP codes do, and TOP is a last-in-line signal. " + fmt(ruled) + " ruled so far" +
+        (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + "."]),
+      el("p", { "class": "cplcoci-meta" }, ["Open a course to see both signals and rule on its common course: keep the discipline, move it, or say you are not sure, and say why. " +
+        "A reason marked for similar cards becomes a proposed procedure: a session writes it as a rule, counts the waiting cards it would settle, and switches it on with your word, so the next card like it settles without reaching you."])]);
+  }
+  /* The evidence and the ruling, on a common course in the job. */
+  function doubtBlock(c, card, sess, h) {
+    var out = [], mid = c.id, R = JOBS.rulings && JOBS.rulings[mid];
+    out.push(h.heading("Why its discipline is in doubt"));
+    var lines = [];
+    if ((card.why || []).indexOf("description") >= 0 && card.desc && card.desc.length)
+      lines.push("Its catalog description reads closest to " + card.desc.map(function (d) { return d[0]; }).slice(0, 2).join(", then ") + ".");
+    else if (card.desc && card.desc.length)
+      lines.push("Its catalog description reads closest to " + card.desc[0][0] + ".");
+    var votes = Object.keys(card.votes || {}).sort(function (a, b) { return card.votes[b] - card.votes[a] || (a < b ? -1 : 1); });
+    if (votes.length) lines.push("Its colleges' TOP codes point to " + votes.map(function (d) { return d + " (" + card.votes[d] + ")"; }).join(", ") + ".");
+    else lines.push("None of its colleges' TOP codes maps to a discipline.");
+    lines.push(fmt(card.colleges) + (card.colleges === 1 ? " college offers it." : " colleges offer it."));
+    out.push(el("p", { "class": "cplcoci-meta ccl-doubt-why" }, [lines.join(" ")]));
+    if (R) {
+      var did = R.v.ruling === "keep" ? "Kept " + (R.v.discipline_was || c.disc) : R.v.ruling === "move" ? "Moved to " + R.v.to : "Marked not sure";
+      out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [did + (R.who ? " by " + R.who : "") + (R.at ? " on " + R.at : "") + "." +
+        (R.v.words ? " Why: " + R.v.words : "") + (R.v.similar ? " Marked for similar cards." : "")]));
+    }
+    if (!sess) return out;
+    var F = CC.rule[mid] = CC.rule[mid] || { choice: "", words: "", similar: true };
+    var sel = el("select", { id: "ccl-rule-choice", "class": "ccl-cc-in", "aria-label": "Your ruling on " + mid });
+    var opts = [["", R ? "Rule again" : "Choose a ruling"], ["keep", "Keep " + (c.disc || card.discipline)]];
+    var seen = {}; seen[c.disc || card.discipline] = 1;
+    (card.desc || []).map(function (d) { return d[0]; }).concat(votes).forEach(function (d) { if (!seen[d]) { seen[d] = 1; opts.push(["move:" + d, "Move to " + d]); } });
+    opts.push(["unsure", "Not sure yet"]);
+    opts.forEach(function (o) { var n = el("option", { value: o[0] }, [o[1]]); if (o[0] === F.choice) n.selected = true; sel.appendChild(n); });
+    var other = el("optgroup", { label: "Move to another discipline" });
+    CC.mq.forEach(function (d) { if (!seen[d]) { var n = el("option", { value: "move:" + d }, [d]); if ("move:" + d === F.choice) n.selected = true; other.appendChild(n); } });
+    sel.appendChild(other);
+    sel.addEventListener("change", function () { F.choice = sel.value; });
+    var ta = el("textarea", { id: "ccl-rule-words", "class": "ccl-cc-in ccl-rule-words", rows: "3",
+      "aria-label": "Why, in plain words, as you would tell a session" });
+    ta.value = F.words;
+    ta.addEventListener("input", function () { F.words = ta.value; });
+    var cb = el("input", { type: "checkbox", id: "ccl-rule-similar" });
+    cb.checked = !!F.similar;
+    cb.addEventListener("change", function () { F.similar = cb.checked; });
+    out.push(el("div", { "class": "ccl-rule" }, [
+      el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-choice" }, ["Your ruling "]), sel]),
+      el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-words" }, ["Why, in plain words"]), ta]),
+      el("p", { "class": "ccl-cc-edit" }, [cb, el("label", { "for": "ccl-rule-similar" }, [" Use this reason for similar cards"])]),
+      el("p", { "class": "ccl-pn-acts" }, [h.word(CC.busy ? "Saving…" : "Save the ruling", function () { ccRule(c, card); },
+        { "aria-label": "Save your ruling on " + mid })])]));
+    return out;
+  }
+  /* The ruling's two writes: its reason (a ccr_procedure_request row, a new key per save), then the discipline through
+     ccSave (keep confirms it, move sets it, not sure writes nothing more). */
+  function ccRule(c, card) {
+    var F = CC.rule[c.id] || {}, choice = F.choice || "", words = String(F.words || "").trim();
+    if (!choice) { CC.said[c.id] = "Choose a ruling first."; ccRedraw(); return; }
+    if (F.similar && !words) { CC.said[c.id] = "Say why, so a session can write the rule for similar cards."; ccRedraw(); return; }
+    if (CC.busy) return;
+    var ruling = choice === "keep" ? "keep" : choice === "unsure" ? "unsure" : "move";
+    var to = ruling === "move" ? choice.slice(5) : null;
+    CC.busy = true; CC.said[c.id] = "Saving…"; ccRedraw();
+    ccFresh().then(function (sess) {
+      if (!sess) { CC.busy = false; CC.said[c.id] = "Your sign-in has ended. Sign in again, then save."; ccRedraw(); return; }
+      var when = new Date().toISOString().replace(/\.\d+Z$/, "Z");
+      var v = { mid: c.id, title: c.title || card.title, discipline_was: c.disc || card.discipline, ruling: ruling, to: to, words: words,
+        similar: !!F.similar, signals: { why: card.why || [], desc: card.desc || [], votes: card.votes || {} } };
+      return fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess),
+        body: JSON.stringify({ course_id: RULE_PREFIX + when + "-" + c.id.replace(/\s+/g, "_"), field: RULE_FIELD,
+          value: JSON.stringify(v), reviewer_email: sess.email }) })
+        .then(function (res) {
+          CC.busy = false;
+          if (!res.ok) { CC.said[c.id] = "Not saved: the server answered " + res.status + ". Only a reviewer on the list may rule."; ccRedraw(); return; }
+          (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) };
+          CC.rule[c.id] = null;
+          if (ruling === "move") ccSave(c, "discipline", to);
+          else if (ruling === "keep" && !ccVerified(c)) ccSave(c, "confirm", c.disc);
+          else { CC.said[c.id] = (ruling === "keep" ? "Kept " + c.disc : "Marked not sure") + ". The reason is saved" + (v.similar ? " for a session to write as a rule" : "") + "."; ccRedraw(); }
+        });
+    }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
   function listFilterPass(r, L) {
     var f = L.f;
@@ -485,7 +614,7 @@
      time on 2026-11-04): description edits and merge notes (never used), anchor proposals (1), dismissed suggestions
      (12), Mind Meld notes (10); `git revert` of the tab's deletion brings any back. The merge editor and Suggested
      merges follow in their own PR. */
-  var CC = { byId: null, mq: [], loading: false, failed: false, live: {}, liveAsked: {}, said: {}, busy: false, edit: {} };
+  var CC = { byId: null, mq: [], loading: false, failed: false, live: {}, liveAsked: {}, said: {}, busy: false, edit: {}, rule: {} };
   var DSRC_WORDS = { top_code: "from its TOP code, a last-in-line signal that waits on a second signal or a person",
     top_division: "from its TOP division, a last-in-line signal that waits on a second signal or a person",
     subject_map: "from its subject code", subject_map_edge: "from its subject code", title_keyword: "from words in its title",
@@ -668,6 +797,8 @@
     if (live.discipline && live.discipline.value !== c.disc) saved.push("the discipline " + live.discipline.value);
     if (saved.length) out.push(el("p", { "class": "cplcoci-meta" }, ["Saved in COBI since this file was built: " + saved.join(" and ") + ". The daily sync folds it in."]));
     if (CC.said[mid]) out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [CC.said[mid]]));
+    var inDoubt = JOBS.doubt && JOBS.doubt.map.get(mid);
+    if (inDoubt) doubtBlock(c, inDoubt, sess, h).forEach(function (n) { out.push(n); });
     if (!sess) {
       var mount = el("div", { "class": "ccl-cc-signin" });
       var d = el("details", { "class": "ccl-cc-fold" }, [el("summary", null, ["Reviewers: sign in to rename it, set its discipline or confirm it"]), mount]);
@@ -863,7 +994,7 @@
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
-      uncounted: function (id) { return isJob(id) && (id === "stray" ? !JOBS.strays : !JOBS.by); },
+      uncounted: function (id) { return isJob(id) && !jobReady(id); },
       onFilter: function (id) { return isJob(id) ? loadJobs() : null; }
     };
     return spec;
