@@ -23,7 +23,7 @@ answer. Run `/coord` before you start.
    the Discipline in doubt panel's ruling, edits and SkyView link sit apart.
 3. **The daily college identity check reads its names** (#3005): the builder takes a bare name or a record; a failed
    check now annotates the run and notes the `college-identity` issue, whose title follows the latest note.
-4. **A sign-in whose funding access has ended says so** (#3007, open at this writing): the CSM Workspace asks
+4. **A sign-in whose funding access has ended says so** (#3007): the CSM Workspace asks
    `is_funding_reviewer()`; on `false` it draws the note and *Ask an approver*; the door's later words (declined,
    lapsed) reach the note through `cpl-funding-door-said`. No database change.
 
@@ -34,10 +34,8 @@ while the PRs finished. Everything built came from handoff 623's queue and his e
 
 ## Read first
 
-- **#3007 if it is not merged:** merge main, run `python3 kb/_build_docs_index.py`, `kb/_build_dependency_map.py`,
-  `kb/_build_cobi_admin_surface.py`, then `bash scripts/check_generated.sh`, push, and merge on a passing `test`.
 - **The site:** #3001's own Pages deploy failed (run 2899, the *syncing_files* timeout again); run 2900 carries it.
-  `curl` the served `csm_workspace.js` for `nocoord`; a failed deploy takes a fresh `pages.yml` dispatch, never a rerun.
+  the site served `nocoord` at 23:39Z. Check #3007 the same way (`curl` the served `csm_workspace.js` for `cw-grant-h`); a failed deploy takes a fresh `pages.yml` dispatch, never a rerun.
 - The lanes: `csm-workspace.md` (the S623 paragraph, NEXT 0, 0a, 0b), `commons.md`, `college-district-identity.md`,
   `reviewer-session-lifetime.md`.
 
@@ -83,7 +81,7 @@ than `course.json`, and no new decision sheet (nothing new waits on Sam; Sheet 1
 
 ## Let go
 
-Subscriptions at this writing: #3007 (drop once merged). One check-in was set for 23:44Z (`trig_01DemD77dYFjdeVJ93o8rGFL`);
+Subscriptions at this writing: #3009, this checkpoint (drop once merged). One check-in was set for 23:44Z (`trig_01DemD77dYFjdeVJ93o8rGFL`);
 it is canceled at sign-off if it has not fired. No artifact watch.
 
 > *Greetings, you are SkyCocoon (Session 624), see SkyButterfly's handoff — `docs/session_624_handoff.md` — let's keep rolling with our queue.*
