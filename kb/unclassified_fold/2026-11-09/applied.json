@@ -1,0 +1,211 @@
+{
+  "folded": [],
+  "superseded": [],
+  "revised": [
+    {
+      "raw": "California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+      "assigned": "Wastewater Treatment Plant Operator Certificate, Grade 2 or Higher",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:37.888+00:00",
+      "spellings": [
+        "California State Water Resources Control Board wastewater grade II, III, IV, or V certification"
+      ],
+      "disagreeing": [
+        "California State Water Resources Control Board wastewater grade II, III, IV, or V certification"
+      ],
+      "displaced": [
+        "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+      ],
+      "supersedes": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
+    },
+    {
+      "raw": "California State Water Resources Control Board wastewater grade IV or V certification",
+      "assigned": "Wastewater Treatment Plant Operator Certificate, Grade 4 or Higher",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:40.609+00:00",
+      "spellings": [
+        "California State Water Resources Control Board wastewater grade IV or V certification"
+      ],
+      "disagreeing": [
+        "California State Water Resources Control Board wastewater grade IV or V certification"
+      ],
+      "displaced": [
+        "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher"
+      ],
+      "supersedes": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher"
+    },
+    {
+      "raw": "Credit By Exam San Diego City College",
+      "assigned": "Basic Refrigeration & AC Lab",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:59.127+00:00",
+      "spellings": [
+        "Credit By Exam San Diego City College"
+      ],
+      "disagreeing": [
+        "Credit By Exam San Diego City College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ],
+      "supersedes": "Credit by Exam"
+    },
+    {
+      "raw": "Credit By Exam at Mesa",
+      "assigned": "Basic Computer Keyboarding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:48.824+00:00",
+      "spellings": [
+        "Credit By Exam at Mesa"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Mesa"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ],
+      "supersedes": "Credit by Exam"
+    },
+    {
+      "raw": "Credit By Exam at Saddleback College",
+      "assigned": "Plant Propagation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:55.704+00:00",
+      "spellings": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ],
+      "supersedes": "Credit by Exam"
+    },
+    {
+      "raw": "Industry for KIN 6",
+      "assigned": "Personal Training",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:02:02.728+00:00",
+      "spellings": [
+        "Industry for KIN 6"
+      ],
+      "disagreeing": [
+        "Industry for KIN 6"
+      ],
+      "displaced": [
+        "Personal Trainer"
+      ],
+      "supersedes": "Personal Trainer"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
+      "records": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:27:53.595457+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Wastewater Treatment 1"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Wastewater Treatment Plant Operator Certificate, Grade 2 or Higher"
+    },
+    {
+      "title": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
+      "records": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:47:52.247086+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Wastewater Treatment 2"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Wastewater Treatment Plant Operator Certificate, Grade 4 or Higher"
+    }
+  ],
+  "credential_retired": [
+    {
+      "title": "Personal Trainer",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-06",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-06T20:31:37.473467+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Personal Training"
+      ]
+    }
+  ],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Credit By Exam San Diego City College",
+      "assigned": "Basic Refrigeration & AC Lab",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:59.127+00:00",
+      "spellings": [
+        "Credit By Exam San Diego City College"
+      ],
+      "disagreeing": [
+        "Credit By Exam San Diego City College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ],
+      "supersedes": "Credit by Exam"
+    },
+    {
+      "raw": "Credit By Exam at Saddleback College",
+      "assigned": "Plant Propagation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:55.704+00:00",
+      "spellings": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ],
+      "supersedes": "Credit by Exam"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 147,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 0,
+  "unified_titles_count": 5592
+}

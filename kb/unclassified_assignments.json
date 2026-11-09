@@ -1,7 +1,7 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-07T14:59:09Z",
+  "_synced_at": "2026-11-09T14:42:38Z",
   "count": 2406,
   "assignments": {
     "1st Receiver Ops & Decon": {
@@ -6540,17 +6540,17 @@
     },
     "California State Water Resources Control Board wastewater grade II, III, IV, or V certification": {
       "issuing_agency": "California State Water Resources Control Board (SWRCB)",
-      "reviewed_by": "exhibits-s594@bot",
-      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
-      "unified_title": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
-      "supersedes": "Wastewater Treatment 1"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:37.888+00:00",
+      "unified_title": "Wastewater Treatment Plant Operator Certificate, Grade 2 or Higher",
+      "supersedes": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher"
     },
     "California State Water Resources Control Board wastewater grade IV or V certification": {
       "issuing_agency": "California State Water Resources Control Board (SWRCB)",
-      "reviewed_by": "exhibits-s594@bot",
-      "reviewed_at": "2026-11-06T19:49:56.427214+00:00",
-      "unified_title": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
-      "supersedes": "Wastewater Treatment 2"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:40.609+00:00",
+      "unified_title": "Wastewater Treatment Plant Operator Certificate, Grade 4 or Higher",
+      "supersedes": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher"
     },
     "Candidate Physical Ability Test": {
       "issuing_agency": "International Association of Fire Fighters (IAFF)",
@@ -7088,24 +7088,24 @@
     },
     "Credit By Exam San Diego City College": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "exhibits-s596@bot",
-      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
-      "unified_title": "Credit by Exam",
-      "supersedes": "Basic Refrigeration & AC Lab"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:59.127+00:00",
+      "unified_title": "Basic Refrigeration & AC Lab",
+      "supersedes": "Credit by Exam"
     },
     "Credit By Exam at Mesa": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "exhibits-s596@bot",
-      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
-      "unified_title": "Credit by Exam",
-      "supersedes": "Basic Computer Keyboarding"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:48.824+00:00",
+      "unified_title": "Basic Computer Keyboarding",
+      "supersedes": "Credit by Exam"
     },
     "Credit By Exam at Saddleback College": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "exhibits-s596@bot",
-      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
-      "unified_title": "Credit by Exam",
-      "supersedes": "Plant Propagation"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T12:01:55.704+00:00",
+      "unified_title": "Plant Propagation",
+      "supersedes": "Credit by Exam"
     },
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
@@ -10810,8 +10810,9 @@
     "Industry for KIN 6": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-06T20:31:37.473467+00:00",
-      "unified_title": "Personal Trainer"
+      "reviewed_at": "2026-11-09T12:02:02.728+00:00",
+      "unified_title": "Personal Training",
+      "supersedes": "Personal Trainer"
     },
     "Industry for KIN YO1": {
       "issuing_agency": "",

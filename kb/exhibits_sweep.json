@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-07T15:03:25Z",
+ "generated_at": "2026-11-09T14:46:38Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -42,180 +42,38 @@
  ],
  "counts": {
   "ase": 0,
-  "numerals": 2,
+  "numerals": 0,
   "language": 0,
-  "course-code": 3,
+  "course-code": 1,
   "level": 0,
-  "fold": 1
+  "fold": 0
  },
- "local_titles": 6,
+ "local_titles": 1,
  "cards": [
   {
-   "current": "Wastewater Treatment Plant Operator Certificate, Grade II or Higher",
-   "proposed": "Wastewater Treatment Plant Operator Certificate, Grade 2 or Higher",
+   "current": "Credit by Exam",
+   "proposed": "Water Supply",
    "rules": [
-    "numerals"
+    "course-code"
    ],
    "why": [
-    "Roman numerals become Arabic"
+    "drops a method word and takes the course's own title"
    ],
    "locals": [
     {
-     "raw": "California State Water Resources Control Board wastewater grade II, III, IV, or V certification",
+     "raw": "Credit by Exam",
      "colleges": [
       "College of the Canyons"
      ],
-     "course": "WATER 160",
-     "credit": "3 hours in Wastewater Treatment and Disposal I"
+     "course": "WATER 132",
+     "credit": "3 hours in Water Supply"
     }
    ],
-   "id": "6250b4b65eb0",
-   "issuer": "California State Water Resources Control Board (SWRCB)",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Wastewater Treatment Plant Operator Certificate, Grade IV or Higher",
-   "proposed": "Wastewater Treatment Plant Operator Certificate, Grade 4 or Higher",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "California State Water Resources Control Board wastewater grade IV or V certification",
-     "colleges": [
-      "College of the Canyons"
-     ],
-     "course": "WATER 161",
-     "credit": "3 hours in Wastewater Treatment and Disposal II"
-    }
-   ],
-   "id": "c4a967a2dbaf",
-   "issuer": "California State Water Resources Control Board (SWRCB)",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Credit by Exam",
-   "proposed": "Basic Computer Keyboarding",
-   "rules": [
-    "course-code"
-   ],
-   "why": [
-    "drops a method word and takes the course's own title"
-   ],
-   "locals": [
-    {
-     "raw": "Credit By Exam at Mesa",
-     "colleges": [
-      "San Diego Mesa College",
-      "San Diego City College",
-      "San Diego Miramar College",
-      "Glendale Community College",
-      "Mendocino College"
-     ],
-     "course": "CBTE 101",
-     "credit": "1 hour in Basic Computer Keyboarding"
-    }
-   ],
-   "id": "4fa9d46dfad8",
-   "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 1,
-   "proposed_issuer": "California Community Colleges",
-   "current_locals": 4,
-   "moves_all": false
-  },
-  {
-   "current": "Credit by Exam",
-   "proposed": "Plant Propagation",
-   "rules": [
-    "course-code"
-   ],
-   "why": [
-    "drops a method word and takes the course's own title"
-   ],
-   "locals": [
-    {
-     "raw": "Credit By Exam at Saddleback College",
-     "colleges": [
-      "Saddleback College",
-      "Lemoore College"
-     ],
-     "course": "HORT 112",
-     "credit": "3 hours in PLANT PROPAGATION"
-    }
-   ],
-   "id": "f8813f8b505f",
+   "id": "84ac8df76508",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
-   "current_locals": 4,
-   "moves_all": false
-  },
-  {
-   "current": "Credit by Exam",
-   "proposed": "Basic Refrigeration & AC Lab",
-   "rules": [
-    "course-code"
-   ],
-   "why": [
-    "drops a method word and takes the course's own title"
-   ],
-   "locals": [
-    {
-     "raw": "Credit By Exam San Diego City College",
-     "colleges": [
-      "San Diego City College",
-      "San Diego Mesa College",
-      "San Diego Miramar College"
-     ],
-     "course": "AIRE 103",
-     "credit": "2 hours in Basic Refrigeration & AC Lab"
-    }
-   ],
-   "id": "2796759c7c96",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 4,
-   "moves_all": false
-  },
-  {
-   "current": "Personal Trainer",
-   "proposed": "Personal Training",
-   "rules": [
-    "fold"
-   ],
-   "why": [
-    "“Personal Trainer” and “Personal Training” differ only in spelling; “Personal Training” has 2 local titles"
-   ],
-   "locals": [
-    {
-     "raw": "Industry for KIN 6",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "KIN 6",
-     "credit": "3.5 units in KIN 6 Personal Trainer"
-    }
-   ],
-   "id": "8a90da19fc5d",
-   "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 2,
-   "proposed_issuer": "California Community Colleges",
    "current_locals": 1,
    "moves_all": true
   }
