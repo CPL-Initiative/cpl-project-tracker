@@ -121,7 +121,7 @@ VENDOR = {
     "CompTIA Cloud Essentials+": ("all", ["CompTIA Cloud Essentials"]),
     "CompTIA Cloud+": ("all", ["CompTIA Cloud+"]),
     "CompTIA CySA+": ("all", ["CompTIA Cybersecurity Analyst"]),
-    "CompTIA IT Fundamentals (ITF+)": ("all", ["CompTIA IT Fundamentals"]),
+    "CompTIA IT Fundamentals (ITF+)": ("all", ["CompTIA Tech+"]),  # ITF+ renamed Tech+ (comptia.org, 2026-11-09)
     "CompTIA Linux+": ("all", ["CompTIA Linux+"]),
     "CompTIA Network+": ("all", ["CompTIA Network+"]),
     "CompTIA PenTest+": ("all", ["CompTIA PenTest+"]),

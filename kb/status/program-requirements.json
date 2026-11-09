@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-09T07:42:54Z",
-  "session": 616,
-  "moniker": "SkySombrero",
+  "written_at": "2026-11-09T08:26:31Z",
+  "session": 617,
+  "moniker": "SkyWhirlpool",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_617_handoff.md",
+  "handoff": "docs/session_618_handoff.md",
   "next_step": {
     "title": "Cuesta's full read",
-    "text": "Cuesta's outlines now parse, 12 of 12 trial pages. Its full read runs as the day's one full read on the first firing of 2026-11-10 UTC."
+    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC; Orange Coast's full read took 2026-11-09's, and its load follows once every slice is filed."
   },
   "calls": [
     {
@@ -224,8 +224,12 @@
   },
   "changes": [
     {
-      "at": "2026-11-09T07:42:00Z",
-      "text": "The SLO reader parses Cuesta's All Fields outline: its trial read 0 of 12 pages, now 12 of 12 with 60 outcomes (pull request 2910)."
+      "at": "2026-11-09T08:22:00Z",
+      "text": "Orange Coast College's full SLO read dispatched, 4 parts on host cccd (pull request 2955)."
+    },
+    {
+      "at": "2026-11-09T08:25:00Z",
+      "text": "College of Alameda, 25 of 59 passing: a free page read of five entries asks whether the catalog prints the program totals its 16 incomplete records lack (pull request 2956)."
     }
   ],
   "headline": [
@@ -431,7 +435,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-09T08:12:00Z"
+    "at": "2026-11-09T09:12:00Z"
   },
   "harvest": {
     "day": "2026-11-09",

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-578 document(s).
+579 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 618 | [Session 618 handoff: the night's credential watch merged, Orange Coast read, Alameda's totals asked](../session_618_handoff.md) | 2026-11-09 |
 | 617 | [Session 617 handoff: Cuesta's outlines parse](../session_617_handoff.md) | 2026-11-09 |
 | 614 | [Session 614 handoff: the funding render remembers its priorities](../session_614_handoff.md) | 2026-11-08 |
 | 613 | [Session 613 handoff: the anchor re-key applied, funding tests twice as fast, the CCR seed re-check reads course descriptions](../session_613_handoff.md) | 2026-11-08 |
