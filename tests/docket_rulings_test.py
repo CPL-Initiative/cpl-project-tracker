@@ -99,7 +99,11 @@ try:
     txt = buf.getvalue()
 finally:
     os.unlink(f.name)
-check("the command line reads committed cases and a rows file and writes nothing", rc == 0 and "REFUSED" in txt and "OPEN" in txt, txt)
+# OPEN prints only while the committed file holds an open case; once every case is done (S621), it rightly does not.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "docket", "cases.json"), encoding="utf-8") as f:
+    any_open = any(c.get("status") == "open" for c in json.load(f).get("cases") or [])
+check("the command line reads committed cases and a rows file and writes nothing",
+      rc == 0 and "REFUSED" in txt and (("OPEN" in txt) == any_open), txt)
 
 
 # ── step 3: the processor ──
