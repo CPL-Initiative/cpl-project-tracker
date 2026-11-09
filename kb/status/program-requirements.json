@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-08T23:51:18Z",
-  "session": 613,
-  "moniker": "SkyCometa",
-  "run": "Sam's session",
+  "written_at": "2026-11-09T07:42:54Z",
+  "session": 616,
+  "moniker": "SkySombrero",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_614_handoff.md",
+  "handoff": "docs/session_617_handoff.md",
   "next_step": {
-    "title": "Redwoods' local degrees",
-    "text": "Redwoods' transfer degrees pass (53 of 73). Its 8 local degrees name the 60 units and no general education pattern; they wait on a read of the college's own general education page."
+    "title": "Cuesta's full read",
+    "text": "Cuesta's outlines now parse, 12 of 12 trial pages. Its full read runs as the day's one full read on the first firing of 2026-11-10 UTC."
   },
   "calls": [
     {
@@ -222,7 +222,12 @@
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
-  "changes": [],
+  "changes": [
+    {
+      "at": "2026-11-09T07:42:00Z",
+      "text": "The SLO reader parses Cuesta's All Fields outline: its trial read 0 of 12 pages, now 12 of 12 with 60 outcomes (pull request 2910)."
+    }
+  ],
   "headline": [
     {
       "day": "2026-10-08",
@@ -415,15 +420,21 @@
       "active": 20282,
       "complete": 13643,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-09",
+      "active": 20282,
+      "complete": 13643,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-09T06:12:00Z"
+    "at": "2026-11-09T08:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-08",
+    "day": "2026-11-09",
     "gaps": 3014,
     "parts": {
       "links": {
