@@ -71,13 +71,28 @@
   }
   function signOut() { sessionStorage.removeItem("cpl_sb"); }
 
+  /* kb_curation's reviewer emails answer a signed-in reviewer's token only (S614, Sam 2026-11-09: "go ahead and close
+     the email exposure"). Signed out, a read asks for reviewer_label (a procedure's cohort id, or "a reviewer"),
+     copied into reviewer_email so the code below reads one field. */
+  function curationWho() {
+    var S = window.CPL_SESSION, s = S && typeof S.get === "function" ? S.get() : null;
+    var ok = s && s.access_token && (typeof S.isFresh !== "function" || S.isFresh(s));
+    return ok ? { cols: "reviewer_email,reviewer_label", auth: { Authorization: "Bearer " + s.access_token } }
+              : { cols: "reviewer_label", auth: {} };
+  }
+  function curationRows(arr) {
+    (arr || []).forEach(function (r) { if (r && !r.reviewer_email && r.reviewer_label) r.reviewer_email = r.reviewer_label; });
+    return arr;
+  }
   // Fetch overlay — only rows in our namespace.
   function fetchOverlay() {
+    var W = curationWho();
     var url = SUPABASE_URL + "/rest/v1/kb_curation"
-      + "?select=course_id,field,value,reviewer_email,reviewed_at"
+      + "?select=course_id,field,value," + W.cols + ",reviewed_at"
       + "&course_id=like." + encodeURIComponent(KEY_PREFIX) + "%25";
-    return fetch(url, { headers: { "apikey": SUPABASE_ANON } })
+    return fetch(url, { headers: Object.assign({ "apikey": SUPABASE_ANON }, W.auth) })
       .then(function (r) { return r.ok ? r.json() : []; })
+      .then(curationRows)
       .then(function (arr) {
         // Group by discipline (key without prefix), one record per field.
         var m = {};
@@ -2449,12 +2464,13 @@
     return postCuration({ course_id: courseId, field: field, value: value });
   }
   function readCuration(prefix) {
-    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at"
+    var W = curationWho();
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value," + W.cols + ",reviewed_at"
       + "&course_id=like." + encodeURIComponent(prefix) + "%25";
-    return fetch(url, { headers: { "apikey": SUPABASE_ANON } }).then(function (r) {
+    return fetch(url, { headers: Object.assign({ "apikey": SUPABASE_ANON }, W.auth) }).then(function (r) {
       if (!r.ok) throw new Error("kb_curation answered " + r.status);
       return r.json();
-    });
+    }).then(curationRows);
   }
   function localHost() {
     return {

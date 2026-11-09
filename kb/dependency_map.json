@@ -830,7 +830,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1128,
+     "line": 1143,
      "tabs": [
       "canonical-subj4"
      ]
@@ -840,7 +840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2847,
+     "line": 2860,
      "tabs": [
       "exhibits"
      ]
@@ -1543,7 +1543,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5267,
+     "line": 5281,
      "tabs": [
       "credential-reference"
      ]
@@ -2053,7 +2053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4404,
+     "line": 4422,
      "tabs": [
       "unified-courses"
      ]
@@ -2106,7 +2106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3595,
+     "line": 3613,
      "tabs": [
       "unified-courses"
      ]
@@ -3601,7 +3601,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3793,
+     "line": 3807,
      "tabs": [
       "credential-reference"
      ]
@@ -5738,7 +5738,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1250,
+     "line": 1251,
      "tabs": [
       "coci-lookup"
      ]
@@ -6027,7 +6027,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2235,
+     "line": 2248,
      "tabs": [
       "exhibits"
      ]
@@ -6191,7 +6191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2495,
+     "line": 2511,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6201,7 +6201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1038,
+     "line": 1039,
      "tabs": [
       "coci-lookup"
      ]
@@ -6231,7 +6231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2839,
+     "line": 2852,
      "tabs": [
       "exhibits"
      ]
@@ -6294,7 +6294,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1608,
+     "line": 1623,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6304,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1126,
+     "line": 1127,
      "tabs": [
       "coci-lookup"
      ]
@@ -6324,7 +6324,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3120,
+     "line": 3133,
      "tabs": [
       "exhibits"
      ]
@@ -6350,7 +6350,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1606,
+     "line": 1621,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6370,7 +6370,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5629,
+     "line": 5643,
      "tabs": [
       "credential-reference"
      ]
@@ -7211,7 +7211,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5747,
+     "line": 5761,
      "tabs": [
       "credential-reference"
      ]
@@ -7467,7 +7467,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2494,
+     "line": 2510,
      "tabs": [
       "canonical-subj4"
      ]
@@ -8047,7 +8047,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5630,
+     "line": 5644,
      "tabs": [
       "credential-reference"
      ]
@@ -8083,7 +8083,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3399,
+     "line": 3412,
      "tabs": [
       "exhibits"
      ]
@@ -10473,7 +10473,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5368,
+     "line": 5382,
      "tabs": [
       "credential-reference"
      ]
@@ -13021,7 +13021,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5004,
+     "line": 5018,
      "tabs": [
       "credential-reference"
      ]
@@ -13159,7 +13159,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2066,
+     "line": 2079,
      "tabs": [
       "exhibits"
      ]
@@ -13536,7 +13536,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 614,
+     "line": 628,
      "tabs": [
       "credential-reference"
      ]
@@ -13961,7 +13961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 271,
+     "line": 286,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14068,7 +14068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 203,
+     "line": 218,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14078,7 +14078,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3271,
+     "line": 3289,
      "tabs": [
       "unified-courses"
      ]
@@ -14315,7 +14315,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 212,
+     "line": 227,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14394,7 +14394,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 554,
+     "line": 570,
      "tabs": [
       "unified-courses"
      ]
@@ -14689,7 +14689,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 617,
+     "line": 631,
      "tabs": [
       "credential-reference"
      ]
@@ -14699,7 +14699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2861,
+     "line": 2874,
      "tabs": [
       "exhibits"
      ]
@@ -14803,7 +14803,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2061,
+     "line": 2074,
      "tabs": [
       "exhibits"
      ]
@@ -15139,7 +15139,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 233,
+     "line": 248,
      "tabs": [
       "canonical-subj4"
      ]
@@ -15312,7 +15312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 485,
+     "line": 499,
      "tabs": [
       "credential-reference"
      ]
@@ -15349,7 +15349,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5027,
+     "line": 5041,
      "tabs": [
       "credential-reference"
      ]
@@ -16565,7 +16565,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 313,
+     "line": 328,
      "tabs": [
       "canonical-subj4"
      ]
@@ -16732,7 +16732,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 310,
+     "line": 325,
      "tabs": [
       "canonical-subj4"
      ]
@@ -17346,7 +17346,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 873,
+     "line": 888,
      "tabs": [
       "vision-2030"
      ]
@@ -17535,7 +17535,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 222,
+     "line": 237,
      "tabs": [
       "canonical-subj4"
      ]
@@ -17859,7 +17859,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 905,
+     "line": 923,
      "tabs": [
       "unified-courses"
      ]
@@ -18652,7 +18652,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 474,
+     "line": 488,
      "tabs": [
       "credential-reference"
      ]
@@ -18688,7 +18688,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 463,
+     "line": 477,
      "tabs": [
       "credential-reference"
      ]
@@ -18747,7 +18747,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 611,
+     "line": 625,
      "tabs": [
       "credential-reference"
      ]
@@ -21319,7 +21319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2670,
+     "line": 2685,
      "tabs": [
       "vision-2030"
      ]
@@ -21514,7 +21514,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2671,
+     "line": 2686,
      "tabs": [
       "vision-2030"
      ]
@@ -23847,7 +23847,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 867,
+     "line": 885,
      "tabs": [
       "unified-courses"
      ]
@@ -24043,7 +24043,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 835,
+     "line": 853,
      "tabs": [
       "unified-courses"
      ]
@@ -24095,7 +24095,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 815,
+     "line": 833,
      "tabs": [
       "unified-courses"
      ]
@@ -24172,7 +24172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1028,
+     "line": 1046,
      "tabs": [
       "unified-courses"
      ]
@@ -24235,7 +24235,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1039,
+     "line": 1040,
      "tabs": [
       "coci-lookup"
      ]
@@ -24256,7 +24256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 851,
+     "line": 869,
      "tabs": [
       "unified-courses"
      ]
@@ -24375,7 +24375,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1151,
+     "line": 1169,
      "tabs": [
       "unified-courses"
      ]
@@ -24477,7 +24477,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 883,
+     "line": 901,
      "tabs": [
       "unified-courses"
      ]
@@ -27216,7 +27216,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 76,
+     "line": 90,
      "tabs": [
       "canonical-subj4"
      ]
@@ -27226,7 +27226,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 125,
+     "line": 140,
      "tabs": [
       "canonical-subj4"
      ]
@@ -27276,7 +27276,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 287,
+     "line": 301,
      "tabs": [
       "credential-reference"
      ]
@@ -27286,7 +27286,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 355,
+     "line": 369,
      "tabs": [
       "credential-reference"
      ]
@@ -27306,7 +27306,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 594,
+     "line": 607,
      "tabs": [
       "exhibits"
      ]
@@ -27333,7 +27333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 95,
+     "line": 109,
      "tabs": [
       "vision-2030"
      ]
@@ -27343,7 +27343,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 124,
+     "line": 139,
      "tabs": [
       "vision-2030"
      ]
@@ -27353,7 +27353,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 434,
+     "line": 447,
      "tabs": [
       "unified-courses"
      ]
@@ -27363,7 +27363,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 476,
+     "line": 492,
      "tabs": [
       "unified-courses"
      ]
@@ -28272,7 +28272,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 560,
+     "line": 576,
      "tabs": [
       "unified-courses"
      ]

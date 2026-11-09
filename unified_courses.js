@@ -416,12 +416,25 @@
   // table crossed that on 2026-06-12 (auto-merge pass 1: +5,838 rows), which
   // silently truncated the live overlay to an arbitrary first-1,000 subset.
   // Page with Range headers + a stable order until a short page.
+  /* kb_curation's reviewer emails answer a signed-in reviewer's token only (S614, Sam 2026-11-09: "go ahead and close
+     the email exposure"). Signed out, a read asks for reviewer_label (a procedure's cohort id, or "a reviewer"),
+     copied into reviewer_email so the code below reads one field. */
+  function curationWho() {
+    var S = window.CPL_SESSION, s = S && typeof S.get === "function" ? S.get() : null;
+    var ok = s && s.access_token && (typeof S.isFresh !== "function" || S.isFresh(s));
+    return ok ? { cols: "reviewer_email,reviewer_label", auth: { Authorization: "Bearer " + s.access_token } }
+              : { cols: "reviewer_label", auth: {} };
+  }
+  function curationRows(arr) {
+    (arr || []).forEach(function (r) { if (r && !r.reviewer_email && r.reviewer_label) r.reviewer_email = r.reviewer_label; });
+    return arr;
+  }
   function fetchAllRows(query) {
     var PAGE = 1000;
     function page(start, acc) {
       return fetch(SUPABASE_URL + query, {
-        headers: { "apikey": SUPABASE_ANON, "Range-Unit": "items",
-                   "Range": start + "-" + (start + PAGE - 1) } })
+        headers: Object.assign({ "apikey": SUPABASE_ANON, "Range-Unit": "items",
+                   "Range": start + "-" + (start + PAGE - 1) }, curationWho().auth) })
         .then(function (r) { return r.ok ? r.json() : []; })
         .then(function (batch) {
           acc = acc.concat(batch);
@@ -431,7 +444,8 @@
     return page(0, []);
   }
   function fetchOverlay() {
-    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&field=in.(discipline,merge_into,unified_title,merge_note)&order=course_id.asc,field.asc")
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value," + curationWho().cols + ",reviewed_at&field=in.(discipline,merge_into,unified_title,merge_note)&order=course_id.asc,field.asc")
+      .then(curationRows)
       .then(function (arr) {
         var out = { disc: {}, merges: [], titles: {}, notes: {} };
         arr.forEach(function (x) {
@@ -466,9 +480,11 @@
   // maintainer promotes it into common_courses.json. Proposals are world-readable
   // (anon key) so the suggestion is publicly visible while it waits for review.
   function fetchAnchorProposals() {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value,reviewer_email,reviewed_at&field=eq.anchor_discipline_proposal",
-      { headers: { "apikey": SUPABASE_ANON } })
+    var W = curationWho();
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value," + W.cols + ",reviewed_at&field=eq.anchor_discipline_proposal",
+      { headers: Object.assign({ "apikey": SUPABASE_ANON }, W.auth) })
       .then(function (r) { return r.ok ? r.json() : []; })
+      .then(curationRows)
       .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x; }); return m; })
       .catch(function () { return {}; });
   }
@@ -752,9 +768,11 @@
   // Live curated description for one course (so an edit shows before the daily
   // git sync bakes it into the detail file). Resolves the latest row or null.
   function fetchDescription(courseId) {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=value,reviewer_email,reviewed_at&field=eq.description&course_id=eq." +
-      encodeURIComponent(courseId), { headers: { "apikey": SUPABASE_ANON } })
+    var W = curationWho();
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=value," + W.cols + ",reviewed_at&field=eq.description&course_id=eq." +
+      encodeURIComponent(courseId), { headers: Object.assign({ "apikey": SUPABASE_ANON }, W.auth) })
       .then(function (r) { return r.ok ? r.json() : []; })
+      .then(curationRows)
       .then(function (a) { return a[0] || null; })
       .catch(function () { return null; });
   }
