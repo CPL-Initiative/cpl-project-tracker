@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1440,
-    "bytes": 14517810,
+    "files": 1441,
+    "bytes": 14529405,
     "over_budget": 5,
-    "handoff_max": 621,
+    "handoff_max": 622,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59914,
-    "superseded_files": 8,
-    "superseded_bytes": 49227,
+    "always_loaded_bytes": 59915,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59914,
+        "bytes": 59915,
         "over": 0
       },
       "other": {
         "files": 146,
-        "bytes": 4478334,
+        "bytes": 4478583,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 9711,
+        "bytes": 10002,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2606536,
+        "bytes": 2607662,
         "over": 0
       },
       "kb_note": {
@@ -46,26 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 523067,
+        "bytes": 527326,
         "over": 4
       },
       "handoff": {
-        "files": 582,
-        "bytes": 3995563,
+        "files": 583,
+        "bytes": 4001232,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
       "oversized_doc": 5,
-      "superseded_handoff": 8,
-      "vault_heavy_path": 75,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26364,
-      "bytes": 4447280202,
-      "heavy_bytes": 3199214143,
+      "files": 26379,
+      "bytes": 4447710095,
+      "heavy_bytes": 3199489134,
       "heavy_share": 0.719,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -162,13 +160,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 154867,
+        "bytes": 154913,
         "limit": 150000,
         "lane": "other",
-        "over_by": 4867,
+        "over_by": 4913,
         "ratio": 1.03
       },
-      "message": "154,867 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "154,913 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -188,128 +186,40 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 23504,
+        "bytes": 24010,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 3504,
-        "ratio": 1.18
+        "over_by": 4010,
+        "ratio": 1.2
       },
-      "message": "23,504 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,010 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/commons.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20260,
+        "bytes": 21087,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 260,
-        "ratio": 1.01
+        "over_by": 1087,
+        "ratio": 1.05
       },
-      "message": "20,260 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "21,087 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24614,
+        "bytes": 24664,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4614,
+        "over_by": 4664,
         "ratio": 1.23
       },
-      "message": "24,614 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,664 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 607,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 607 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_607_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 608,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 608 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_608_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 609,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 609 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_609_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 610,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 610 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_610_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 611,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 611 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_611_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 612,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 612 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_612_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 613,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 613 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_613_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 614,
-        "authoritative": 621,
-        "has_frontmatter": true
-      },
-      "message": "handoff 614 is below the authoritative 621 but is not stamped `superseded: true`",
-      "path": "docs/session_614_handoff.md"
     },
     {
       "rule": "vault_heavy_path",
@@ -366,10 +276,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 44331089,
+        "bytes": 44277429,
         "kind": "dir"
       },
-      "message": "directory totals 44,331,089 B inside the vault"
+      "message": "directory totals 44,277,429 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -406,10 +316,10 @@
       "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 19049427,
+        "bytes": 19049363,
         "kind": "dir"
       },
-      "message": "directory totals 19,049,427 B inside the vault"
+      "message": "directory totals 19,049,363 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -426,10 +336,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10488052,
+        "bytes": 10502594,
         "kind": "dir"
       },
-      "message": "directory totals 10,488,052 B inside the vault"
+      "message": "directory totals 10,502,594 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -456,10 +366,10 @@
       "fixable": false,
       "path": "kb/coci_minted_courses.json",
       "detail": {
-        "bytes": 34599800,
+        "bytes": 34922570,
         "kind": "file"
       },
-      "message": "34,599,800 B single file inside the vault"
+      "message": "34,922,570 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -616,10 +526,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11917414,
+        "bytes": 11917385,
         "kind": "file"
       },
-      "message": "11,917,414 B single file inside the vault"
+      "message": "11,917,385 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -676,10 +586,10 @@
       "fixable": false,
       "path": "kb/row_audit/latest.json",
       "detail": {
-        "bytes": 10456894,
+        "bytes": 10429107,
         "kind": "file"
       },
-      "message": "10,456,894 B single file inside the vault"
+      "message": "10,429,107 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -696,10 +606,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10111727,
+        "bytes": 10129959,
         "kind": "file"
       },
-      "message": "10,111,727 B single file inside the vault"
+      "message": "10,129,959 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -796,10 +706,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6716452,
+        "bytes": 6716588,
         "kind": "file"
       },
-      "message": "6,716,452 B single file inside the vault"
+      "message": "6,716,588 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -826,10 +736,10 @@
       "fixable": false,
       "path": "kb/coci_curation.json",
       "detail": {
-        "bytes": 5333047,
+        "bytes": 5333767,
         "kind": "file"
       },
-      "message": "5,333,047 B single file inside the vault"
+      "message": "5,333,767 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -896,10 +806,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3524486,
+        "bytes": 3524611,
         "kind": "file"
       },
-      "message": "3,524,486 B single file inside the vault"
+      "message": "3,524,611 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -996,10 +906,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2357875,
+        "bytes": 2357895,
         "kind": "file"
       },
-      "message": "2,357,875 B single file inside the vault"
+      "message": "2,357,895 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1016,10 +926,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2245170,
+        "bytes": 2245163,
         "kind": "file"
       },
-      "message": "2,245,170 B single file inside the vault"
+      "message": "2,245,163 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1036,10 +946,10 @@
       "fixable": false,
       "path": "kb/unified_titles.json",
       "detail": {
-        "bytes": 2211167,
+        "bytes": 2211160,
         "kind": "file"
       },
-      "message": "2,211,167 B single file inside the vault"
+      "message": "2,211,160 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1060,22 +970,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_621_handoff.md",
-      "detail": {
-        "lanes": [
-          "common-subjects-reference",
-          "implementation-funding",
-          "library",
-          "map-users-student-contact",
-          "program-requirements-harvest"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_621_handoff.md` never names 5 lane(s) worked in the last 7 days that still carry a NEXT: common-subjects-reference, implementation-funding, library, map-users-student-contact, program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

@@ -80,3 +80,17 @@ Marin and Butte (the page lists one, the directory none).
   Look at a seeded record in a real browser before shipping; the jsdom suite passed with the wrong default.
 - **The Slack channel is `#mapanditpiteam`** (the ITPI CSMs and the MAP team); it carries college requests the log
   should hold. Proposed: a reviewer's *Log from Slack* entry with the thread link, never an automatic import.
+
+## 2026-11-09 (S621 SkyBlackEye): the rollout day
+
+- **The mailer cap is the bottleneck, not the reviewer list.** The Auth mailer sends two emails an hour for the whole
+  project. With a team signing in at once, magic links stop arriving. The funding door (#2984) mints a session with admin
+  generate_link + verify, which sends nothing, after an approver says yes in the workspace.
+- **A remote image is not a logo in a pasted email.** Outlook and Gmail often refuse to fetch it. The copy now carries a data
+  URI of a 7 KB email copy; a mailto or Gmail compose URL can never carry one.
+- **"Accepted in COBI" is not "the college heard back."** Fifteen acceptances (Oct 31 to Nov 2) failed at Exchange
+  (SendAsDenied, the shared mailbox in the From line). The Sent receipt is the only proof the workspace has; Not received
+  resends the ones from before the log.
+- **An Edge Function reading a table as service_role needs an explicit grant** in this project (the grants lint caught it).
+- **A new mount option must be passed through `mountInto`**, or the box renders without it (the door button; a jsdom test
+  caught it).

@@ -16697,8 +16697,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 582,
+   "count": 583,
    "docs": [
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 622,
+     "path": "docs/session_622_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "implementation-funding",
+      "commons",
+      "program-requirements-harvest",
+      "org-phrase-scope-auth"
+     ],
+     "title": "Session 622 handoff: the funding rollout day \u2014 Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, and the CSM funding door",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26577,5 +26595,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1426
+ "total": 1427
 }
