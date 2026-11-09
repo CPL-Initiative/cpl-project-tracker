@@ -33,7 +33,8 @@ If S620 SkyHoag also wrote a 621 handoff, read both; this one carries the Common
 
 ## Read first
 
-- PRs #2970, #2971, #2973 and CPLBrain#734: merge each on a passing `test` (squash). #2971 is receipts only.
+- #2971 MERGED 15:20Z (receipts). PRs #2970, #2973 and CPLBrain#734: merge each on a passing `test` / `coverage` (squash); a check-in fires at 16:06Z for them.
+- The session hit the context EMERGENCY line at ~15:21Z after the full checkpoint (80ecb34f2) was pushed; nothing was skipped beyond what the checkpoint already names.
 - Read Sheet 176's and 175's `replies`, and `python3 kb/_docket_rulings.py --sql` through the MCP, before acting on the
   next five disciplines.
 
