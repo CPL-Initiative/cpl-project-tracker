@@ -102,6 +102,13 @@
     ".ccl-cc-name { margin:2px 0 2px; font-weight:600; color: var(--text-strong); }",
     ".ccl-cc-said { margin:4px 0 6px; font-size:.82rem; color: var(--text-body); }",
     ".ccl-pn-acts { display:flex; flex-wrap:wrap; gap:4px 14px; align-items:center; }",
+    /* The ruling is one box with its save on its own line; the edits and SkyView each sit apart (Sam, 2026-11-09,
+       issue 2995: "the save ruling and other buttons are a bit jumbled together"). */
+    ".ccl-rule { border:1px solid var(--border); border-radius:6px; padding:8px 10px 6px; margin:6px 0 12px; }",
+    ".ccl-rule .ccl-rule-save { margin:8px 0 2px; padding-top:8px; border-top:1px solid var(--border); }",
+    ".ccl-rule .ccl-rule-save button, .ccl-rule .ccl-rule-save a { font-weight:700; }",
+    ".ccl-pn-edit-h { margin:10px 0 2px; font-size:.82rem; font-weight:600; color:var(--text-strong); }",
+    ".ccl-pn-sky { margin-top:12px; padding-top:8px; border-top:1px solid var(--border); }",
     ".ccl-cc-edit { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; margin:4px 0 8px; }",
     ".ccl-cc-in { font: inherit; font-size:.85rem; min-height:28px; padding:2px 6px; min-width:0; flex:1 1 220px; max-width:100%;" +
       " border:1px solid var(--border-strong); border-radius:4px; background: var(--surface-opaque); color: var(--text-body); }",
@@ -511,7 +518,7 @@
       el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-choice" }, ["Your ruling "]), sel]),
       el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-words" }, ["Why, in plain words"]), ta]),
       el("p", { "class": "ccl-cc-edit" }, [cb, el("label", { "for": "ccl-rule-similar" }, [" Use this reason for similar cards"])]),
-      el("p", { "class": "ccl-pn-acts" }, [h.word(CC.busy ? "Saving…" : "Save the ruling", function () { ccRule(c, card); },
+      el("p", { "class": "ccl-pn-acts ccl-rule-save" }, [h.word(CC.busy ? "Saving…" : "Save the ruling", function () { ccRule(c, card); },
         { "aria-label": "Save your ruling on " + mid })])]));
     return out;
   }
@@ -848,7 +855,8 @@
       acts.push(h.word(c.disc ? "Change the discipline" : "Set the discipline", function () { CC.edit[mid] = "discipline"; CC.said[mid] = null; ccRedraw(); var n = document.getElementById("ccl-cc-disc-in"); if (n) n.focus(); }));
       if (c.disc && !ccVerified(c)) acts.push(h.word("Confirm " + c.disc, function () { ccSave(c, "confirm", c.disc); },
         { "aria-label": "Confirm " + c.disc + " as the discipline of " + mid }));
-      out.push(el("p", { "class": "ccl-pn-acts" }, acts));
+      if (inDoubt) out.push(el("p", { "class": "ccl-pn-edit-h" }, ["Or edit the common course"]));
+      out.push(el("p", { "class": "ccl-pn-acts ccl-pn-edit" }, acts));
     }
     return out;
   }
@@ -867,7 +875,7 @@
       var nCol = Object.keys(seenCol).length;
       out.push(h.heading("Its common course: " + r.mid));
       ccCard(r.mid, h).forEach(function (n) { out.push(n); });
-      out.push(el("p", { "class": "ccl-pn-acts" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
+      out.push(el("p", { "class": "ccl-pn-acts ccl-pn-sky" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
       out.push(h.table({ id: "members", label: "The local courses " + r.mid + " holds",
         note: idWords(r.mid) + ", holding " + fmt(members.length) + (members.length === 1 ? " local course" : " local courses") + " at "
           + fmt(nCol) + (nCol === 1 ? " college" : " colleges") + (r.mids.length > 1 ? "; the course sits in " + r.mids.length + " M-IDs (" + r.mids.join(", ") + "), and the List bands it under this one, the largest" : "")

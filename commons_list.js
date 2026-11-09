@@ -655,6 +655,17 @@
       if (fl && S.filters && S.filters.length && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
       listSyncGrips();
     }
+    /* A redraw asked for from outside (a save in the panel) leaves the list where the reader had it (Sam, 2026-11-09,
+       issue 2995: "the list view shifts focus to the top row every time you take action in the sidebar"). A fresh
+       table opens at its top, so the scroll is put back; a current row that the redraw moved out of sight is brought in. */
+    function redrawKeep() {
+      var y = listScrollTop();
+      redrawList();
+      listScrollTop(y);
+      var w = document.querySelector("." + P + "wrap"), cur = w && w.querySelector("tr." + P + "cur");
+      if (cur && w.clientHeight && (cur.offsetTop < w.scrollTop || cur.offsetTop + cur.offsetHeight > w.scrollTop + w.clientHeight) &&
+        typeof cur.scrollIntoView === "function") cur.scrollIntoView({ block: "nearest" });
+    }
     function hasCellEdit() { return listCols().some(function (c) { return !!c.edit; }); }
     function listTable() {
       var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
@@ -709,12 +720,12 @@
       var body = el("tbody");
       var aiOn = !!(G && L.ai && L.aiData), gi = aiOn ? (L.gi || listGroupIndex()) : null, sgByGroup = {};
       var bi = !gi && bandsOn() ? bandIndex() : null;
-      var lastKey = null, lastLone = false, lastNew = false;
+      var lastKey = null, lastLone = false, lastNew = false, lastBand = null;
       if (gi && G.extra) S.rows().forEach(function (x) {
         if (G.extra.test(x)) { var k = gi.by[K(x)].key; sgByGroup[k] = (sgByGroup[k] || 0) + 1; }
       });
       shown.forEach(function (r) {
-        var rk = K(r);
+        var rk = K(r), bandsBefore = body.childNodes.length;
         // Every run of rows gets its band (Sam, 2026-11-01, on 832 Arrest: three titles that stood alone read as members,
         // because only groups of two or more had one).
         if (gi) {
@@ -729,6 +740,7 @@
           else if (!lastLone) body.appendChild(listPlainBand(S.bands.none || "Not in a group"));
           lastKey = bk; lastLone = !inBand;
         }
+        if (body.childNodes.length > bandsBefore) lastBand = body.lastChild;
         var titleTd = el("td", { cls: P + "title", title: listTitle(r), "data-key": rk }, [listTitle(r)]);
         (S.titleSubs ? S.titleSubs(r, L, aiOn) : []).forEach(function (n) { if (n) titleTd.appendChild(n); });
         if (S.changed && L.changed.indexOf(rk) !== -1) titleTd.appendChild(el("span", { cls: P + "sub", text: "changed this visit" }));
@@ -753,8 +765,13 @@
         var open = L.open && L.open.ut === rk ? L.open.col : -1;
         titleTd.insertBefore(L.editAll && C[0].edit ? listCellInput(r, C[0].edit, listTitle(r), C[0].h) : listOpener(r, 0, listTitle(r), open === 0), titleTd.firstChild);
         titleTd.removeChild(titleTd.childNodes[1]);
+        /* The row whose panel is open stays marked, and so does its band (Sam, 2026-11-09, issue 2995: "the listview
+           is not obviously highlighted as to which row you're acting on"). */
+        var isCur = !!S.panel && L.panel === rk;
+        if (isCur && lastBand && (gi || bi) && !lastLone) lastBand.className += " " + P + "bandcur";
         var rowTr = el("tr", { cls: [L.sel[rk] ? P + "sel" : "", flagged ? P + "flagged" : "", EDIT_LEAD ? P + "rowedit" : "",
-          EDIT_LEAD && L.edit === rk ? P + "editing" : ""].filter(Boolean).join(" ") || null },
+          EDIT_LEAD && L.edit === rk ? P + "editing" : "", isCur ? P + "cur" : ""].filter(Boolean).join(" ") || null,
+          "aria-current": isCur ? "true" : null },
           [el("td", { cls: P + "box" }, [selBox])].concat(S.flag ? [el("td", { cls: P + "box" }, [flagBox])] : [])
           .concat(EDIT_LEAD ? [el("td", { cls: P + "box" }, [editBtn])] : []).concat([titleTd]).concat(C.slice(1).map(function (c, k) {
           var v = c.v(r), t = c.n ? (v == null ? "" : fmt(v) + (c.suffix || "")) : v;
@@ -1375,6 +1392,9 @@
         p + "open:hover," + p + "open:focus-visible{text-decoration:underline;text-decoration-color:var(--accent-link);text-underline-offset:2px}",
         p + "open[aria-expanded='true']{font-weight:600}",
         p + "sel td{background:var(--surface-opaque)}",
+        p + "cur td{background:var(--surface-opaque);box-shadow:inset 0 2px 0 var(--accent-link),inset 0 -2px 0 var(--accent-link)}",
+        p + "cur td:first-child{box-shadow:inset 4px 0 0 var(--accent-link),inset 0 2px 0 var(--accent-link),inset 0 -2px 0 var(--accent-link)}",
+        p + "table tr" + p + "bandcur th{box-shadow:inset 4px 0 0 var(--accent-link)}",
         p + "flagged td:nth-child(3){box-shadow:inset 3px 0 0 var(--accent-link)}",
         p + "drawer{display:flex;flex-direction:column;gap:4px;padding:6px 4px;max-width:960px;white-space:normal}",
         p + "dh{margin:0;font-weight:600;color:var(--text-strong)}",
@@ -1529,7 +1549,7 @@
     }
 
     var api = {
-      render: renderList, redraw: redrawList, line: line, topFolded: topFolded, setTopFolded: setTopFolded, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
+      render: renderList, redraw: redrawKeep, line: line, topFolded: topFolded, setTopFolded: setTopFolded, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
       // Each filter's count as the filter bar shows it; a filter whose data is unread has none (never a 0).
       filterCounts: listFilterCounts,
