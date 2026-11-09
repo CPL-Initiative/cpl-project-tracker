@@ -228,6 +228,33 @@ function rule(t, value, words, similar) {
     check("(8) Use this reason for similar cards starts unticked", t.d.getElementById("ccl-rule-similar") && t.d.getElementById("ccl-rule-similar").checked === false);
   }
   {
+    // (9) issue 2995 (Sam, 2026-11-09): "the list view shifts focus to the top row every time you take action in the
+    // sidebar and the listview is not obviously highlighted as to which row you're acting on. the save ruling and
+    // other buttons are a bit jumbled together."
+    const t = tab({ signedIn: true });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    const cur = () => t.d.querySelector("tr.ccl-cur");
+    check("(9) ⭐ the row whose panel is open is marked current, in class and for a screen reader",
+      !!cur() && cur().getAttribute("aria-current") === "true" && /College Composition/.test(txt(cur())) && t.d.querySelectorAll("tr.ccl-cur").length === 1);
+    check("(9) and its M-ID band is marked with it", t.d.querySelectorAll("tr.ccl-band.ccl-bandcur").length === 1 &&
+      /ENGL M1001/.test(txt(t.d.querySelector("tr.ccl-bandcur"))), txt(t.d.querySelector("tr.ccl-bandcur")));
+    const p0 = panel(t.d);
+    const save = pword(t.d, /^Save the ruling$/);
+    check("(9) Save the ruling sits on its own line inside the ruling's box", !!save.closest(".ccl-rule-save") && !!save.closest(".ccl-rule") &&
+      save.closest(".ccl-rule-save").querySelectorAll("button, a").length === 1);
+    const edit = p0.querySelector(".ccl-pn-edit");
+    check("(9) the edits sit apart under their own words", !!edit && !edit.closest(".ccl-rule") && /Or edit the common course/.test(txt(p0.querySelector(".ccl-pn-edit-h"))) &&
+      Array.from(edit.querySelectorAll("button")).some((b) => /Change the discipline/.test(txt(b))) && !/Save the ruling|SkyView/.test(txt(edit)));
+    const sky = p0.querySelector(".ccl-pn-sky");
+    check("(9) and Open in SkyView has a line of its own", !!sky && /^Open ENGL M1001 in SkyView$/.test(txt(sky)));
+    t.d.querySelector(".ccl-wrap").scrollTop = 140;
+    rule(t, "unsure", "", false);
+    await until(() => /Marked not sure/.test(txt(panel(t.d))));
+    check("(9) ⭐ after a save the list stays where it was, never back at its top row", t.d.querySelector(".ccl-wrap").scrollTop === 140,
+      "scrollTop " + t.d.querySelector(".ccl-wrap").scrollTop);
+    check("(9) and the row acted on is still the current one", !!cur() && /College Composition/.test(txt(cur())));
+  }
+  {
     const t = tab({ doubtFail: true });
     await until(() => /ccr_doubt\.json answered 404/.test(txt(t.d.body)));
     check("(7) the file failing says so, never an empty list as a zero", /kb\/ccr_doubt\.json answered 404, so this filter shows nothing/.test(txt(t.d.body)));

@@ -5713,7 +5713,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 170,
+     "line": 177,
      "tabs": [
       "coci-lookup"
      ]
@@ -5807,7 +5807,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1256,
+     "line": 1264,
      "tabs": [
       "coci-lookup"
      ]
@@ -6270,7 +6270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1044,
+     "line": 1052,
      "tabs": [
       "coci-lookup"
      ]
@@ -6373,7 +6373,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1132,
+     "line": 1140,
      "tabs": [
       "coci-lookup"
      ]
@@ -18094,7 +18094,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1567,
+     "line": 1587,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -24079,7 +24079,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 640,
+     "line": 647,
      "tabs": [
       "coci-lookup"
      ]
@@ -24411,7 +24411,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1045,
+     "line": 1053,
      "tabs": [
       "coci-lookup"
      ]
@@ -26466,7 +26466,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 199,
+     "line": 206,
      "tabs": [
       "coci-lookup"
      ]
@@ -27565,7 +27565,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 381,
+     "line": 388,
      "tabs": [
       "coci-lookup"
      ]
@@ -27575,7 +27575,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 533,
+     "line": 540,
      "tabs": [
       "coci-lookup"
      ]
