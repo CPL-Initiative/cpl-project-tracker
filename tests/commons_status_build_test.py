@@ -314,6 +314,39 @@ with _tf.TemporaryDirectory() as td:
     check("no open card, no batch", B.next_batch(td) is None)
 check("an unreadable sweep carries its error, never a batch of zero", "error" in B._safe(lambda r: 1 / 0, "."))
 
+# ── the ordered batches (#2963 step 1; COBIx on #2921, 2026-11-09): Another look, open decisions, Sam's jobs ──
+bl = data.get("batches")
+check("the status file carries an ordered batches list", isinstance(bl, list), type(bl))
+check("next_batch is the list's first batch", not bl or data.get("next_batch") == next((b for b in bl if not b.get("error")), None))
+with _tf.TemporaryDirectory() as td:
+    _os.makedirs(_os.path.join(td, "kb", "status"))
+    with open(_os.path.join(td, "kb", "exhibits_sweep.json"), "w") as f:
+        _json.dump({"generated_at": "2026-11-08T00:00:00Z", "cards": [
+            {"id": "c%d" % i, "current": "T%d" % i, "rules": ["fold"], "locals": [{"raw": "local %d" % i}, {"raw": ""}]} for i in range(8)]}, f)
+    with open(_os.path.join(td, "kb", "status", "course.json"), "w") as f:
+        _json.dump({"calls": [{"title": "Answered", "answer": {"words": "confirm"}, "link": "https://x"},
+                              {"title": "Open one", "text": "Why", "link": "https://claude.ai/artifact/abc"}]}, f)
+    with open(_os.path.join(td, "kb", "status", "cr.json"), "w") as f:
+        f.write("{not json")
+    q = {"reasons": [{"key": "no_procedure", "items": [{"ref": "course", "n": 14523, "words": "seedless", "owner": "the Common Subjects reference", "open": "#a"}]},
+                     {"key": "unsure", "items": [{"ref": "course", "title": "Common Course Reference", "n": 8, "words": "in doubt", "owner": "Sam (rule on each)", "open": "#coci-lookup/list/doubt"},
+                                                 {"ref": "cr", "n": None, "owner": "Sam", "open": "#b", "error": "x"}]}]}
+    got = B.batches(td, q)
+    kinds = [b["kind"] for b in got]
+    check("batches run Another look, then the open decisions, then Sam's jobs", kinds[0] == "another-look" and kinds[-1] == "job"
+          and kinds.index("job") > max(i for i, k in enumerate(kinds) if k == "decision"), kinds)
+    a = got[0]
+    check("Another look names its six cards with the keys a decision saves under", len(a["cards"]) == 6
+          and a["cards"][0] == {"id": "c0", "current": "T0", "keys": ["_UNCLASSIFIED::local 0"]} and a["at"] == "2026-11-08T00:00:00Z", a["cards"][:1])
+    dec = [b for b in got if b["kind"] == "decision" and not b.get("error")]
+    check("an answered call is no batch; an open one opens its sheet", [d["title"] for d in dec] == ["Open one"]
+          and dec[0]["open"] == "https://claude.ai/artifact/abc" and dec[0]["project"] == "course", dec)
+    bad = [b for b in got if b.get("error")]
+    check("an unreadable run log is named, never read as holding nothing", "cr" in [b["project"] for b in bad]
+          and all(b["project"] != "course" for b in bad) and any("JSONDecodeError" in b["error"] for b in bad), bad)
+    jobs = [b for b in got if b["kind"] == "job"]
+    check("only a job Sam carries, counted and readable, is a batch", len(jobs) == 1 and jobs[0]["n"] == 8 and jobs[0]["open"] == "#coci-lookup/list/doubt", jobs)
+
 # ── the small helpers ──
 check("receipt_time turns 2026-10-18T17-37-29Z into ISO", B.receipt_time("2026-10-18T17-37-29Z") == "2026-10-18T17:37:29Z")
 check("receipt_time leaves an ISO stamp alone", B.receipt_time("2026-10-18T17:37:29Z") == "2026-10-18T17:37:29Z")

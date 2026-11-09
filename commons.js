@@ -549,17 +549,112 @@
      on one small batch a person can finish, with what the answers teach and when to stop. The batch is Another look
      in Exhibits, so Start opens that batch there (#exhibits/another-look/batch, the same six at most, then a stop) and
      nothing here duplicates its cards or its saves. */
-  function nextBatchSection(b) {
-    if (!b || b.error || !b.n) return null;
-    return el("section", { cls: "cmn-next", "aria-labelledby": "cmn-next-h" }, [
+  /* The ordered batches (COBIx on #2921, 2026-11-09, asks 1 to 3; #2963 step 1): Another look, then each decision a
+     run log holds open, then the queue's jobs Sam carries (kb/_build_commons_status.py batches()). The first view
+     shows the first one not done. Another look counts itself from the saves (the kb_curation keys its cards name,
+     read the way exhibits.js reconcileSweep reads them), so deciding the last card closes it here without waiting
+     for the night's build; a decision closes when its call is answered. When none is left the page says so. */
+  var BATCH = { decided: {} };
+  function batchList(data) {
+    if (data && Array.isArray(data.batches)) return data.batches.filter(function (b) { return b && !b.error && b.kind; });
+    var nb = data && data.next_batch;
+    if (nb && !nb.error && nb.n) return [nb];
+    return null;
+  }
+  function batchKey(b) { return (b.kind || "") + "|" + (b.at || b.title || ""); }
+  function batchDone(b, openTitles) {
+    if (b.kind === "another-look") { var d = BATCH.decided[batchKey(b)]; return d != null && d >= b.n; }
+    if (b.kind === "decision") return !openTitles[b.title];
+    return false;
+  }
+  function batchHead(b) { return b.kind === "job" ? capFirst(fmt(b.n) + " " + (b.words || "")) : b.title; }
+  function batchMeta(b) {
+    if (b.kind === "another-look") {
+      var d = BATCH.decided[batchKey(b)];
+      return (d ? fmt(d) + " of " + fmt(b.n) + " decided. " : "") + fmt(b.n) + (b.n === 1 ? " card" : " cards")
+        + " as of last night's sweep; Start counts again. " + (b.stop || "");
+    }
+    if (b.kind === "decision") return "One decision, on its sheet. " + (b.stop || "");
+    return "In the " + (b.title || "reference") + ". Each ruling saves where you make it.";
+  }
+  function nextBatchSection(b, opts) {
+    opts = opts || {};
+    if (opts.unread) return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h" }, [
       el("div", { cls: "cmn-next-text" }, [
         el("p", { cls: "cmn-kicker", text: "Your next batch" }),
-        el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: b.title }),
-        el("p", { cls: "cmn-next-teach", text: b.teaches }),
-        el("p", { cls: "cmn-next-meta", text: fmt(b.n) + (b.n === 1 ? " card" : " cards") + " as of last night's sweep; Start counts again. " + (b.stop || "") })
-      ]),
-      el("a", { cls: "cmn-start", href: b.open, text: "Start" })
+        el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: "Your next batch could not be read" }),
+        el("p", { cls: "cmn-next-meta", text: "The Commons' status file carries no batch" + (opts.error ? " (" + opts.error + ")" : "") + ". The rest of the page reads as usual." })
+      ])
     ]);
+    var done = opts.justDone ? el("p", { cls: "cmn-next-done", role: "status", text: "Done: you decided " + fmt(opts.justDone.n) + " of "
+      + fmt(opts.justDone.n) + (opts.justDone.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight." }) : null;
+    if (!b && !opts.empty) return null;
+    var text = !b
+      ? [el("p", { cls: "cmn-kicker", text: "Your next batch" }), done,
+         el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: "Nothing waits on you in a batch" }),
+         el("p", { cls: "cmn-next-meta", text: "Every batch is decided. The routines carry the rest, and the next build brings any new batch." })]
+      : [el("p", { cls: "cmn-kicker", text: "Your next batch" }), done,
+         el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: batchHead(b) }),
+         b.teaches ? el("p", { cls: "cmn-next-teach", text: b.teaches }) : null,
+         el("p", { cls: "cmn-next-meta", text: batchMeta(b) })];
+    return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": b ? b.kind : "none" }, [
+      el("div", { cls: "cmn-next-text" }, text.filter(Boolean)),
+      b && b.open ? openLink(b.open, "Start", "cmn-start") : null
+    ].filter(Boolean));
+  }
+  /* The section for the list as it stands: the first batch not done, and a line for an Another look batch this
+     visit's count closed. */
+  function batchSection(data, openTitles) {
+    var list = batchList(data);
+    if (list === null) {
+      var err = data && ((data.next_batch && data.next_batch.error) || (data.batches && data.batches.error));
+      return nextBatchSection(null, { unread: true, error: err || "" });
+    }
+    var next = null, justDone = null;
+    list.forEach(function (b) {
+      if (next) return;
+      if (batchDone(b, openTitles)) { if (b.kind === "another-look") justDone = b; return; }
+      next = b;
+    });
+    return nextBatchSection(next, { justDone: justDone, empty: list.length > 0 || !!justDone });
+  }
+  /* How many of an Another look batch's cards are decided: the saves written since the sweep was built (a keep, or
+     a fold off the card's current title), and any this visit's Exhibits marked. Null when nothing can be read. */
+  function countDecided(b) {
+    var cards = Array.isArray(b.cards) ? b.cards : [];
+    if (!cards.length) return Promise.resolve(null);
+    var X = window.CPL_EXHIBITS, seen = X && X._state && X._state.sw && X._state.sw.done || {};
+    var decided = {}, byKey = {};
+    cards.forEach(function (c) {
+      if (c.id && seen[c.id]) decided[c.id] = true;
+      (c.keys || []).forEach(function (k) { byKey[k] = c; });
+    });
+    var keys = Object.keys(byKey), h = sessionHeaders({ "Range-Unit": "items", "Range": "0-999" });
+    var count = function () { return Object.keys(decided).length; };
+    if (!keys.length || !b.at || !h || !h.apikey) return Promise.resolve(Object.keys(seen).length ? count() : null);
+    var quoted = keys.map(function (k) { return encodeURIComponent('"' + k.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+    var url = REST + "/kb_curation?select=course_id,field,value,reviewed_at&field=in.(title_sweep_kept,unified_title_supersedes)"
+      + "&reviewed_at=gt." + encodeURIComponent(b.at) + "&course_id=in.(" + quoted.join(",") + ")";
+    return fetch(url, { headers: h }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        (rows || []).forEach(function (row) {
+          var c = byKey[row.course_id];
+          if (c && (row.field === "title_sweep_kept" || (row.field === "unified_title_supersedes" && row.value === c.current))) decided[c.id] = true;
+        });
+        return count();
+      }, function () { return Object.keys(seen).length ? count() : null; });
+  }
+  /* Count every Another look batch, then redraw the section in place. Runs after the page draws and on each visit. */
+  var batchRefresh = null;
+  function refreshBatches(data, openTitles) {
+    var list = batchList(data) || [];
+    return Promise.all(list.filter(function (b) { return b.kind === "another-look"; }).map(function (b) {
+      return countDecided(b).then(function (n) { if (n != null) BATCH.decided[batchKey(b)] = n; });
+    })).then(function () {
+      var old = document.getElementById("cmn-next-sec"), fresh = batchSection(data, openTitles);
+      if (old && fresh) old.parentNode.replaceChild(fresh, old);
+      else if (old) old.parentNode.removeChild(old);
+    });
   }
   /* The learning line: what people did with the procedures' work, from the confidence count, with the table one
      word away. It reports what people saw, never that the unchecked results are right. */
@@ -611,7 +706,10 @@
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
-    if (e && e.detail && e.detail.tab === "commons" && redraw && arrive()) redraw();
+    if (!(e && e.detail && e.detail.tab === "commons")) return;
+    if (redraw && arrive()) redraw();
+    /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */
+    if (batchRefresh) batchRefresh();
   });
 
   function render(root, data, S, now) {
@@ -636,15 +734,18 @@
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })])
     ]));
 
+    /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */
+    var waiting = [], openTitles = {};
+    cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); if (call.title) openTitles[call.title] = true; }); });
+
     /* the one small batch, then what people did with the procedures' work */
-    var batch = nextBatchSection(data && data.next_batch);
+    var batch = batchSection(data, openTitles);
     if (batch) wrap.appendChild(batch);
+    batchRefresh = function () { return refreshBatches(data, openTitles); };
     var learn = learningLine(data && data.confidence);
     if (learn) wrap.appendChild(learn);
 
     /* the decisions waiting on Sam, next */
-    var waiting = [];
-    cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); }); });
     if (waiting.length) {
       wrap.appendChild(el("section", { cls: "cmn-band", "aria-labelledby": "cmn-band-h" }, [
         el("h3", { id: "cmn-band-h", cls: "cmn-band-h", text: waiting.length === 1 ? "One decision waits on you" : capFirst(countWords(waiting.length)) + " decisions wait on you" }),
@@ -833,7 +934,10 @@
     }
     root.textContent = "Reading the Commons…";
     arrive();
-    return load().then(function (r) { render(root, r.data, r.S, new Date()); return r; }, function (e) {
+    return load().then(function (r) {
+      render(root, r.data, r.S, new Date());
+      return Promise.resolve(batchRefresh && batchRefresh()).then(function () { return r; }, function () { return r; });
+    }, function (e) {
       notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
       return null;
     });
@@ -903,6 +1007,7 @@
     ".cmn-next-h { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.3rem, 1.1rem + 1vw, 1.7rem); color:var(--cmn-heading); }",
     ".cmn-next-teach, .cmn-next-meta { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-next-meta { color:var(--cmn-muted); font-size:.92rem; }",
+    ".cmn-next-done { margin:0 0 4px; color:var(--cmn-ink); font-weight:600; }",
     ".cmn-start { color:var(--cmn-link); font-weight:700; font-size:1.1rem; text-decoration:underline; text-underline-offset:3px; display:inline-block; min-height:24px; line-height:24px; }",
     ".cmn-learn { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-learn strong { color:var(--cmn-heading); }",
@@ -1008,7 +1113,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
-    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, learningLine: learningLine,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

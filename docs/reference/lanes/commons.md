@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-06
+updated: 2026-11-09
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -50,6 +50,8 @@ together and places them in some order of priority and completion and known issu
 **The first view opens on one batch (Sam's Commons rulings relayed on #2921, 2026-11-08, *"yes to all"*; S604).** *Your next batch* leads the page: Another look's open cards in Exhibits, six at most (`next_batch` in `kb/status/commons.json`, from `kb/exhibits_sweep.json`), with what the answers teach and when to stop; *Start* opens `#exhibits/another-look`, so the cards and their saves stay in Exhibits. Under it one line counts what people did with the procedures' work (placed, checked, moved elsewhere; *the rest are unchecked, not proven*), its word opening the trust table. The pools and the trust table start folded. A reference whose headline pair is all done reads *Complete* (Subjects, 147 of 147); its repair jobs stay in its issues. Kept from the house rules where COBIx's mock departs: controls are underlined words, no arrows, live data only.
 
 **The batch is capped (#2923, S604, COBIx's finding).** *Start* opens `#exhibits/another-look/batch`: the first six open cards, fixed for the visit, no bulk acceptance, a trail back to the Commons, and a stop screen after the last. Exhibits reconciles the nightly sweep with `kb_curation` saves written since it was built. **Exhibits queue-first (S611, #2933).** A Queue view leads the Exhibits views at `#exhibits/queue/<lens>`: six lenses in the ruled order, each a set of entry points into a list the tab already holds, counted from the set that list opens. A failed read or the classifier's errors show as Blocked on Sky. Review stays the default view; Park is named visit-only. **The panel's trail (S611, #2934):** the shared List's side panel opens on `CPL Commons / <List> / <filter> / <row>` (spec `trail` in `commons_list.js`), set on Exhibits, the CR Reference, Program Requirements and Subjects; the List's word, or the filter's when one is on, is the underlined return and keeps the filter and the row's place. **NEXT (#2921):** the CCR (below); Subjects' 93 stray codes stay with the curator. Sam's path still waits on his reaction to the mock.
+
+**The Docket, step 1: the batch closes in place (#2963, SkyCigar, 2026-11-09; Sam's go in session: *"yes, post it and start step 1"*).** `kb/status/commons.json` carries `batches`, an ordered list: Another look (its six cards with the `kb_curation` keys a decision saves under), then each call a run log holds open (`decision`, opening its sheet), then the queue's jobs Sam carries (`job`); `next_batch` is the list's first. `commons.js` counts Another look from the saves written since the sweep was built, plus the visit's own marks in Exhibits, on every visit, so the last card decided reads *Done: you decided 6 of 6* and the next batch comes up without a reload; a decision closes when its call is answered; with none left the page says *Nothing waits on you in a batch*, and a file with no batch says it could not be read. Scope and order for steps 2 to 5 (the case record, the processor, Open Asks behind RLS on Sam's call 9, CFBY): Sky's reply on #2963. Guards: `tests/commons.test.js` (*docket 1* to *10*), `tests/commons_status_build_test.py`.
 
 **RULED (Sam, Open Asks Sheet 158 cards 2 and 3, 15:01Z 2026-11-02, his own call: "malone", "rename").** The CPL
 Commons first view ports into this tab in **Malone's CPL/AI look**, the first COBI tab to carry it (First Light stays the
@@ -132,24 +134,4 @@ the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` 
 
 Each reference's Progress view now draws the opened page; Course's landed last (S559, above).
 
-**To do, later (Sam, 2026-10-26 ~15:00Z, S490):** *"The Commons program numbers don't match the PR tabs numbers. Need
-to make sure the numbers on all tabs on the commons match the commons summaries."* His two screenshots, the same morning:
-the Commons' Program Requirements card read **13,194 of 20,282 complete at 114 colleges** (3,731 failing a check, 3,357
-with no record; figures read 6:16 AM PT), while the Program Requirements tab's Progress read **17,529 records read at 114
-colleges** and **3,274 fail a machine check** (7:38 AM PT). The two count different things (complete active programs
-against records read) and from different reads, but neither page says so. Make every tab's figures and the Commons
-summary agree, or name the difference on both. **The Program Requirements pair is done (S560, #2721):** both pages
-headline complete active programs of COCI's active (S558); *Needs attention* now counts active programs whose record
-fails, the card's unit, where it had counted every failing record; and each page names the one difference left, timing
-(the card counts the records committed at the last checkpoint, the tab reads live: 13,553 committed against 13,542
-live on 2026-11-03). **The other four pairs, checked (S561):** Course reads the Commons row itself and CR reads the
-same committed worklist build, so both agree by construction. **Subjects disagreed:** the page counted 17 scan findings
-to confirm or note and the card 16, since the card counted two rules and left out the dead-format anchor; both now
-count one set, the findings needing judgment less the ones another item counts (`ASK_SKIP` in `canonical_subj4.js`,
-`CSR_ASK_SKIP` in the builder; the page also lists a missed alignment, as the card does), and each names its timing
-(the card counts the daily sync, the page reads the picks live). **Exhibits would have counted held titles twice** on
-a night the procedures run held any (live from the review file, and again from the Commons row); the page now drops
-the row's held and conflict copies once the review file is read, and both pages say why the card's list is shorter
-(the page adds the tab's own queues). Guards: `tests/csr_progress.test.js` (79), `tests/exhibits_progress_page.test.js`
-(43), `tests/commons_status_build_test.py` (85). The same screenshot shows both Progress cards reading *Could not be read*
-(`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.
+**The figures agree across every Commons tab** (Sam, S490, 2026-10-26; done S560 and S561): the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-09, SkyCigar*).

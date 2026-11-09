@@ -1775,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1000,
+     "line": 1105,
      "tabs": [
       "commons"
      ]
@@ -15082,7 +15082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 820
+     "line": 824
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -25487,7 +25487,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 803,
+     "line": 904,
      "tabs": [
       "commons"
      ]
@@ -27300,6 +27300,16 @@
      ]
     },
     {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 636,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -28769,7 +28779,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 781,
+     "line": 882,
      "tabs": [
       "commons"
      ]

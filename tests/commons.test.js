@@ -514,8 +514,107 @@ function cellText(li, title) {
     const start = nb.querySelector("a.cmn-start");
     check("batch 3: Start is a plain word that opens Another look in Exhibits, never a second card screen",
       start && txt(start) === "Start" && start.getAttribute("href") === "#exhibits/another-look/batch" && !b.d.querySelector(".cmn-next button"));
-    check("batch 4: no batch in the file draws no batch section", !load().d.querySelector(".cmn-next") && b.M.nextBatchSection({ n: 0 }) === null
-      && b.M.nextBatchSection({ error: "x" }) === null);
+    // COBIx on #2921 (2026-11-09 03:12Z, ask 1d): a file with no batch says so, where the hero had vanished until the run.
+    {
+      const nob = load();
+      await nob.M.boot();
+      const un = nob.d.querySelector("#cmn-next-sec");
+      check("batch 4: a file carrying no batch reads Your next batch could not be read, never an empty page",
+        un && txt(un.querySelector("#cmn-next-h")) === "Your next batch could not be read" && !un.querySelector("a.cmn-start")
+        && b.M.batchList({ next_batch: { error: "x" } }) === null && b.M.batchList({ batches: [] }).length === 0);
+    }
+
+    // #2963 step 1 (COBIx on #2921, 2026-11-09 12:10Z): the batch closes in place and the next one comes up.
+    {
+      const SESS = { get: () => ({ email: "slee@cccco.edu", access_token: "h.p.s" }), isFresh: () => true,
+        authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer h.p.s" }, x || {}) };
+      const six = [1, 2, 3, 4, 5, 6].map(function (i) { return { id: "c" + i, current: "Title " + i, keys: ["_UNCLASSIFIED::local " + i] }; });
+      const AL = { kind: "another-look", n: 6, of: 6, open: "#exhibits/another-look/batch", title: "Another look at 6 exhibit titles",
+        teaches: "Keep what works.", stop: "The batch ends when its cards are decided.", cards: six, at: "2026-11-07T15:03:25Z" };
+      const DEC = { kind: "decision", project: "program-requirements", n: 1, title: "The Commons mock-up, version 3, waits on Sam's look",
+        teaches: "Look at the mock.", open: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi", stop: "It ends when you answer the sheet." };
+      const ANS = { kind: "decision", project: "program-requirements", n: 1, title: "The second reader waits on a new xAI subscription",
+        open: "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu" };
+      const JOB = { kind: "job", ref: "course", n: 8, title: "Common Course Reference", words: "cards whose catalog description reads as another discipline",
+        teaches: "Sam (rule on each and say why)", open: "#coci-lookup/list/doubt" };
+      const withList = function (list) { const x = JSON.parse(JSON.stringify(STATUS)); x.batches = list; x.next_batch = list[0] || null; return x; };
+      const reads = [];
+      const saved = function (n, extra) { return six.slice(0, n).map(function (c, i) {
+        return i % 2 ? { course_id: c.keys[0], field: "unified_title_supersedes", value: c.current, reviewed_at: "2026-11-09T12:00:00Z" }
+                     : { course_id: c.keys[0], field: "title_sweep_kept", value: "true", reviewed_at: "2026-11-09T12:00:00Z" }; }).concat(extra || []); };
+      const fetcher = function (status, rowsFor) {
+        const base = responder({ "kb/status/commons.json": status, "kb/status/program-requirements.json": PR_LOG });
+        return function (url, init) {
+          url = String(url);
+          if (/\/rest\/v1\/kb_curation\?/.test(url)) { reads.push(url); return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(rowsFor()) }); }
+          if (/\/rest\/v1\/queue_todo_done\?/.test(url)) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+          return base(url, init);
+        };
+      };
+      const boot = async function (status, rowsFor, ex) {
+        const x = load({ fetch: fetcher(status, rowsFor) });
+        x.w.CPL_SESSION = SESS;
+        if (ex) x.w.CPL_EXHIBITS = ex;
+        await x.M.boot();
+        return x;
+      };
+      const hero = function (x) { return x.d.querySelector("#cmn-next-sec"); };
+
+      // all six saved since the sweep was built: the batch reads done and the open decision comes up
+      let n = 6;
+      const all = await boot(withList([AL, ANS, DEC, JOB]), function () { return saved(n); });
+      const h1 = hero(all);
+      check("docket 1: six saves since the sweep close the batch on the spot, and say what it taught",
+        /Done: you decided 6 of 6 exhibit titles\. The nightly sweep learns from them tonight\./.test(txt(h1))
+        && h1.querySelector(".cmn-next-done").getAttribute("role") === "status");
+      check("docket 2: the next batch is the first decision still open; an answered one is passed over",
+        h1.getAttribute("data-kind") === "decision" && txt(h1.querySelector("#cmn-next-h")) === DEC.title
+        && /One decision, on its sheet\. It ends when you answer the sheet\./.test(txt(h1)));
+      const st = h1.querySelector("a.cmn-start");
+      check("docket 3: its Start opens the sheet in a new tab", st && st.getAttribute("href") === DEC.open && st.getAttribute("target") === "_blank"
+        && st.getAttribute("rel") === "noopener");
+      check("docket 4: the count reads the saves the way Exhibits reconciles them: both fields, since the sweep, the six keys",
+        reads.length === 1 && /field=in\.\(title_sweep_kept,unified_title_supersedes\)/.test(reads[0])
+        && reads[0].indexOf("reviewed_at=gt." + encodeURIComponent(AL.at)) > 0 && (reads[0].match(/_UNCLASSIFIED/g) || []).length === 6);
+
+      // two saved, and a fold onto some other title does not count
+      n = 2;
+      const part = await boot(withList([AL, DEC]), function () { return saved(n, [{ course_id: six[3].keys[0], field: "unified_title_supersedes", value: "Elsewhere" }]); });
+      check("docket 5: a part-decided batch stays the hero and says how far along it is",
+        hero(part).getAttribute("data-kind") === "another-look" && /2 of 6 decided\./.test(txt(hero(part))) && !part.d.querySelector(".cmn-next-done"));
+
+      // the visit's own decisions in Exhibits count before any save is read back, and a visit back redraws without a reload
+      reads.length = 0; n = 0;
+      const ex = { _state: { sw: { done: {} } } };
+      const visit = await boot(withList([AL, JOB]), function () { return saved(n); }, ex);
+      check("docket 6: before any card is decided the batch is the hero", hero(visit).getAttribute("data-kind") === "another-look");
+      six.forEach(function (c) { ex._state.sw.done[c.id] = true; });
+      visit.w.dispatchEvent(new visit.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+      await new Promise(function (r) { setTimeout(r, 20); });
+      const h6 = hero(visit);
+      check("docket 7: deciding every card in Exhibits brings the next batch on the way back, without a reload",
+        /Done: you decided 6 of 6/.test(txt(h6)) && h6.getAttribute("data-kind") === "job"
+        && txt(h6.querySelector("#cmn-next-h")) === "8 cards whose catalog description reads as another discipline"
+        && h6.querySelector("a.cmn-start").getAttribute("href") === "#coci-lookup/list/doubt" && !h6.querySelector("a.cmn-start").getAttribute("target"));
+
+      // nothing left: the page says so plainly
+      n = 6;
+      const none = await boot(withList([AL, ANS]), function () { return saved(n); });
+      check("docket 8: when every batch is decided the page says so plainly, with no Start",
+        txt(hero(none).querySelector("#cmn-next-h")) === "Nothing waits on you in a batch" && !hero(none).querySelector("a.cmn-start"));
+      const empty = await boot(withList([]), function () { return []; });
+      check("docket 9: an empty list draws nothing to start", !hero(empty) || !hero(empty).querySelector("a.cmn-start"));
+
+      // a failed read leaves the file's count: the batch stays open rather than closing on a guess
+      const failing = load({ fetch: function (url, init) {
+        url = String(url);
+        if (/kb_curation/.test(url)) return Promise.resolve({ ok: false, status: 500, json: () => Promise.reject(new Error("500")) });
+        return fetcher(withList([AL, DEC]), function () { return []; })(url, init); } });
+      failing.w.CPL_SESSION = SESS;
+      await failing.M.boot();
+      check("docket 10: a failed read of the saves leaves the batch open, never closed on a guess",
+        hero(failing).getAttribute("data-kind") === "another-look" && !failing.d.querySelector(".cmn-next-done"));
+    }
     const learn = b.d.querySelector(".cmn-learn");
     check("learn 1: the learning line counts what people did, from the confidence count, and calls the rest unchecked",
       /The procedures placed 1,201 exhibit titles\. A person checked 103 and moved 0 elsewhere\. The rest are unchecked, not proven\./.test(txt(learn)));
