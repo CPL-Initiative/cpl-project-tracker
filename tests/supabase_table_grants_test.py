@@ -234,13 +234,24 @@ def missing_grants(table, policies, grants, revoked):
     return problems
 
 
+# A file can create a table only if its raw text says `create ... table` with
+# nothing but whitespace and `--` comments between (strip_comments removes only
+# those, and CREATE allows only whitespace there). Testing that first lets the
+# lint skip the receipts, about 800 MB of data SQL, without stripping them
+# character by character: 89s in CI before, a few seconds after (COBIx #2927 item 4).
+MAY_CREATE = re.compile(r"create(?:\s|--[^\n]*\n)+(?:unlogged(?:\s|--[^\n]*\n)+)?table", re.I)
+
+
 def main() -> int:
     failures, stale, seen = [], [], set()
     files = sorted(f for f in glob.glob(os.path.join(ROOT, "**", "*.sql"), recursive=True)
                    if "node_modules" not in f)
     for path in files:
         rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
-        sql = strip_comments(open(path, encoding="utf-8").read())
+        raw = open(path, encoding="utf-8").read()
+        if not MAY_CREATE.search(raw):
+            continue
+        sql = strip_comments(raw)
         scopes = list(split_scopes(sql))
         f_creates, f_drops, f_pol, f_gr, f_rev = scan(scopes[0][1])
         for kind, text in scopes:

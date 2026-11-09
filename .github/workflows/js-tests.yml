@@ -161,6 +161,10 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
+      # Every step below that imports the generator needs openpyxl. It is
+      # installed once, here, for all of them (COBIx #2927 item 4: nine steps
+      # each installed it). A new step that needs it adds nothing.
+      - run: pip install --quiet openpyxl
       # The ONE suite input a docs-shaped diff can still change is
       # docs/catalog/** — regenerated beside the docs index on most docs PRs,
       # and read by exactly one test file. Run that file even when the suite
@@ -380,10 +384,9 @@ jobs:
       # lines are built from. Units never split an identity (Sam, 2026-09-27):
       # a line published at 6 and 7 units reads "6–7", where the first figure
       # seen used to win. It also loads the domain crosswalk, which imports
-      # openpyxl, so it installs it itself. Same non-required check.
+      # openpyxl (installed at the top of this job). Same non-required check.
       - name: Fact Sheet statewide recommendations (a unit range, never the first figure)
         run: |
-          pip install --quiet openpyxl
           python3 tests/statewide_recs_test.py
 
       # The open-asks sheet's coverage check (every lane that marks an ask for Sam
@@ -734,11 +737,10 @@ jobs:
         run: python3 tests/college_short_names_apply_test.py
       # Who CPL serves (Sam, sheets 33-34, 2026-10-04): the Active Colleges
       # card counts community colleges only and names Cal State LA beside them,
-      # from kb/non_ccc_institutions.json. Imports the generator, so it installs
-      # openpyxl. Same non-required check.
+      # from kb/non_ccc_institutions.json. Imports the generator (openpyxl, installed
+      # at the top of this job). Same non-required check.
       - name: Active Colleges counts community colleges (excel_to_dashboard.py)
         run: |
-          pip install --quiet openpyxl
           python3 tests/active_colleges_ccc_test.py
 
       # The k=10 disclosure checker's logic (S602, COBIx item 7): every failure it
@@ -757,10 +759,9 @@ jobs:
 
       # The Statewide Exhibits card (S602, COBIx #2891): run nowhere until now, it
       # went stale when the card gained its Issuer/type variants breakdown.
-      # Imports the generator, so it installs openpyxl. Same non-required check.
+      # Imports the generator (openpyxl, installed at the top). Same non-required check.
       - name: Statewide Exhibits card (excel_to_dashboard.py)
         run: |
-          pip install --quiet openpyxl
           python3 tests/statewide_kpi_test.py
 
       # kpi_history.json cannot be wiped by a bad read (COBIx security round 1,
@@ -768,16 +769,14 @@ jobs:
       # history shorter than the committed one by more than a day is refused.
       - name: KPI history write guard (excel_to_dashboard.py)
         run: |
-          pip install --quiet openpyxl
           python3 tests/kpi_history_write_test.py
 
       # The credential reference's statewide flag counts the Fact Sheet's set
       # (Sam, 2026-11-01: a title that includes a statewide exhibit is based on
       # statewide); it read articulation lines alone and marked 84 of 152.
-      # Imports the generator, so it installs openpyxl. Same non-required check.
+      # Imports the generator (openpyxl, installed at the top). Same non-required check.
       - name: Credential reference statewide flag (the Fact Sheet's set)
         run: |
-          pip install --quiet openpyxl
           python3 tests/credential_reference_statewide_basis_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
@@ -802,20 +801,18 @@ jobs:
       # folded identities rendered as their own rows with members stranded
       # mid-chain. Wired here because 18 of the 20 tests/*_test.py run NOWHERE —
       # npm test discovers only *.test.js — and a guard nothing executes is not
-      # a guard. Needs openpyxl (it imports the generator), which the job above
-      # does not install, so it installs it itself. Same non-required check.
+      # a guard. Needs openpyxl (it imports the generator), installed at the top
+      # of this job. Same non-required check.
       - name: Merge-chain flattening lint (excel_to_dashboard.py)
         run: |
-          pip install --quiet openpyxl
           python3 tests/merge_chain_flatten_test.py
       # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
       # read the minted memberships alone, so 2,358 merged rows printed "—" or
       # one figure over members that differ; it now reads the members the row
-      # displays. Imports the generator, so it installs openpyxl too. Same
+      # displays. Imports the generator (openpyxl, installed at the top). Same
       # non-required check.
       - name: Unified Courses unit range (the displayed members, no over-merge alarm)
         run: |
-          pip install --quiet openpyxl
           python3 tests/unified_units_range_test.py
       # The Budget tab's First Light pass (S363): the section is generated, so the
       # bar's text colors, the scrollers' names and the editor's word buttons are
@@ -823,7 +820,6 @@ jobs:
       # non-required check.
       - name: Budget section First Light (excel_to_dashboard.py)
         run: |
-          pip install --quiet openpyxl
           python3 tests/budget_section_first_light_test.py
       # The Vision 2030 tab's First Light pass (S365): the section is generated,
       # so the bars' widths and names, the actions' one wording and the 320px
@@ -831,7 +827,6 @@ jobs:
       # generator. Same non-required check.
       - name: Vision 2030 section First Light (excel_to_dashboard.py)
         run: |
-          pip install --quiet openpyxl
           python3 tests/vision_2030_first_light_test.py
       # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
       # common-course anchors whose title and discipline exactly match a
@@ -840,7 +835,7 @@ jobs:
       # Accounting II), the discipline gate, the live-target resolution, the
       # member order that IS the merge direction, and — against the committed
       # files — that every receipt anchor is offered or already merged. Imports
-      # the generator, so it runs in the openpyxl step above.
+      # the generator (openpyxl, installed at the top of this job).
       - name: Curated-anchor duplicates lane guard (legacy_anchor_duplicate_groups)
         run: python3 tests/legacy_anchor_duplicates_test.py
       # EACR CIP sectors (Session 288) — TOP_Code_Lookup.xlsx column D routes
@@ -849,7 +844,7 @@ jobs:
       # Studies; 611 cards in "No CIP assigned yet" behind codes that are not
       # TOP codes). The first test holds the column to the TOP manual; the
       # second is the EACR payload's own 52-check guard, which ran nowhere.
-      # Both import the generator, so they run in the openpyxl step above.
+      # Both import the generator (openpyxl, installed at the top of this job).
       - name: EACR CIP route (TOP lookup column D + the matrix payload)
         run: |
           python3 tests/top_code_lookup_code4_test.py
