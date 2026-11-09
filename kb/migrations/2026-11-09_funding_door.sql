@@ -32,6 +32,7 @@ create table if not exists public.funding_access_requests (
 create index if not exists funding_access_requests_email on public.funding_access_requests (lower(email), requested_at desc);
 alter table public.funding_access_requests enable row level security;
 revoke all on table public.funding_access_requests from public, anon, authenticated;
+grant select, insert, update on table public.funding_access_requests to service_role;
 
 create table if not exists public.funding_access (
   email      text primary key,
@@ -42,6 +43,7 @@ create table if not exists public.funding_access (
 );
 alter table public.funding_access enable row level security;
 revoke all on table public.funding_access from public, anon, authenticated;
+grant select, insert, update on table public.funding_access to service_role;
 
 create or replace function public.is_funding_reviewer()
 returns boolean language sql stable security definer set search_path = public as $$
@@ -58,6 +60,7 @@ create table if not exists public.funding_approvers (
 );
 alter table public.funding_approvers enable row level security;
 revoke all on table public.funding_approvers from public, anon, authenticated;
+grant select on table public.funding_approvers to service_role;
 insert into public.funding_approvers (email, added_by)
 select lower(tm.email), 'seed: Sam in session 2026-11-09 (#2983)' from public.team_members tm
 where tm.org = 'MAP' and tm.active and tm.email like '%@%'
