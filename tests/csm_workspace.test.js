@@ -540,6 +540,12 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   T._setNotes({ [COLLEGE]: { college: COLLEGE, note: null, declined_at: "2026-11-01T18:00:00Z", declined_by: "co@cccco.edu" } });
   W.paint(); pick("declined");
   check("14x-j: Declined lists the colleges marked Declined participation", listed().join() === COLLEGE);
+  // A college that declined leaves the chase list (COBIx on PR 3001): OTHER has no coordinator, then declines.
+  T._setNotes({ [OTHER]: { college: OTHER, note: null, declined_at: "2026-11-01T18:00:00Z", declined_by: "co@cccco.edu" } });
+  W.paint(); pick("nocoord");
+  check("14x-j2: a college that declined is not in No CPL Coordinator in MAP", listed().length === none.length - 1 && listed().indexOf(OTHER) < 0);
+  pick("declined");
+  check("14x-j3: and reads under Declined", listed().join() === OTHER);
   // No attestation waits in this fixture, so the Noncredit card carries no gap word (a zero is not a button).
   const nCard = Array.from(root.querySelectorAll("#cw-fold .card")).find((c) => /Noncredit CPL Lead attested/.test(flat(c.querySelector(".card-name"))));
   check("14x-k: a card with nothing in its gap carries no gap word", !!nCard && !nCard.querySelector("button.gap"));

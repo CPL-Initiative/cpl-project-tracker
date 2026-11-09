@@ -513,8 +513,9 @@
     confirmed: { g: "browse", label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
     coordmet: { g: "browse", label: "With a CPL Coordinator in MAP", keep: function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); } },
     ncmet: { g: "browse", label: "Noncredit CPL Lead attested", keep: function (r) { return !!(r.nc && r.nc.standing); } },
-    // The full chase list; Confirmed but missing… above is its funding-held part.
-    nocoord: { g: "browse", label: "No CPL Coordinator in MAP", keep: coordGap },
+    // The full chase list; Confirmed but missing… above is its funding-held part. A college that declined is not
+    // chased (COBIx on PR 3001); it reads under Declined.
+    nocoord: { g: "browse", label: "No CPL Coordinator in MAP", keep: function (r) { return !r.declined && coordGap(r); } },
     declined: { g: "browse", label: "Declined", keep: function (r) { return !!r.declined; } },
     all: { g: "browse", label: "All institutions", keep: function () { return true; } } };
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
