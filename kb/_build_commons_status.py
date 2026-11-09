@@ -873,15 +873,32 @@ def job_batches(queue):
     return out
 
 
-def batches(root, queue):
+def docket(root):
+    """The Docket's open cases (#2963 step 2), from kb/docket/cases.json: each a decision a reviewer rules on in the
+    Commons, with its evidence, its choices and the plan each choice runs. A done case leaves the list."""
+    d = load_json(root, "kb/docket/cases.json")
+    keep = ("id", "source", "addressee", "dr", "lane", "ref", "decides", "size", "evidence", "links", "choices",
+            "plan_words", "no_reply", "sheet", "filed_at")
+    return [{k: c.get(k) for k in keep if c.get(k) is not None}
+            for c in d.get("cases") or [] if c.get("status") != "done" and c.get("id") and c.get("choices")]
+
+
+def batches(root, queue, cases=None):
     """The ordered list of small batches (COBIx on #2921, 2026-11-09, ask 2: "always offer the next step"): Another
-    look, then each decision a run log holds open, then the queue's jobs Sam carries. The first view shows the first
-    one not done; when none is left it says so plainly."""
+    look, then the Docket's open cases (ruled in place, #2963 step 2), then each decision a run log holds open on a
+    sheet no case carries, then the queue's jobs Sam carries. The first view shows the first one not done; when none
+    is left it says so plainly."""
     out = []
     a = next_batch(root)
     if a:
         out.append(a)
-    out.extend(decision_batches(root))
+    cases = cases or []
+    for c in cases:
+        out.append({"kind": "case", "id": c["id"], "n": (c.get("size") or {}).get("n"), "title": c.get("decides"),
+                    "open": "#commons/case/" + c["id"], "addressee": c.get("addressee")})
+    # A sheet a case now carries is ruled here, so its run-log call is no second batch.
+    on_docket = {c.get("sheet") for c in cases if c.get("sheet")}
+    out.extend(b for b in decision_batches(root) if b.get("error") or b.get("open") not in on_docket)
     out.extend(job_batches(queue))
     return out
 
@@ -908,10 +925,11 @@ def build(root):
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
     queue = build_queue(rows)
-    bl = _safe(lambda r: batches(r, queue), root)
+    dk = _safe(docket, root)
+    bl = _safe(lambda r: batches(r, queue, dk if isinstance(dk, list) else []), root)
     nb = (next((b for b in bl if not b.get("error")), None) if isinstance(bl, list) else bl)
     return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": queue,
-            "confidence": build_confidence(root), "batches": bl, "next_batch": nb}
+            "confidence": build_confidence(root), "docket": dk, "batches": bl, "next_batch": nb}
 
 
 def _safe(fn, root):

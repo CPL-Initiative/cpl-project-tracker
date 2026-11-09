@@ -615,6 +615,111 @@ function cellText(li, title) {
       check("docket 10: a failed read of the saves leaves the batch open, never closed on a guess",
         hero(failing).getAttribute("data-kind") === "another-look" && !failing.d.querySelector(".cmn-next-done"));
     }
+
+    // #2963 step 2: a Docket case, ruled in place and saved as a ruling the session carries out.
+    {
+      const CASE = { id: "2026-11-09-ccr-next-five", source: "session", addressee: "sam", dr: "DR-25", decides: "Confirm the next five disciplines?",
+        size: { n: 753, unit: "courses" }, evidence: ["You confirmed Kinesiology.", "Music 250 and four more."],
+        links: [{ href: "https://github.com/x/report.md", text: "The report" }, { href: "#coci-lookup/list/doubt", text: "Discipline in doubt" }],
+        choices: [{ value: "five", words: "Confirm the five", recommended: true }, { value: "all", words: "Every discipline" },
+          { value: "one", words: "One at a time, Music first" }, { value: "later", words: "Later" }],
+        plan_words: { all: "A session runs the dry run for every discipline." }, no_reply: "The seed cards stay capped.",
+        sheet: "https://claude.ai/artifact/RytJhApuMxGp11U8NtyDrj" };
+      const JOB2 = { kind: "job", ref: "course", n: 8, title: "Common Course Reference", words: "cards in doubt", open: "#coci-lookup/list/doubt" };
+      const st = JSON.parse(JSON.stringify(STATUS));
+      st.docket = [CASE];
+      st.batches = [{ kind: "case", id: CASE.id, n: 753, title: CASE.decides, open: "#commons/case/" + CASE.id, addressee: "sam" }, JOB2];
+      const SIGNED = { get: () => ({ email: "slee@cccco.edu", access_token: "h.p.s" }), isFresh: () => true,
+        authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer h.p.s" }, x || {}) };
+      const ANON = { get: () => null, isFresh: () => false, authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer anon" }, x || {}) };
+      const calls = [];
+      const make = function (rulings, postStatus) {
+        const base = responder({ "kb/status/commons.json": st, "kb/status/program-requirements.json": PR_LOG });
+        return function (url, init) {
+          url = String(url);
+          if (/\/rest\/v1\/kb_curation/.test(url)) {
+            calls.push({ url: url, init: init || {} });
+            if (init && init.method === "POST") return Promise.resolve({ ok: postStatus < 300, status: postStatus, json: () => Promise.resolve([]) });
+            return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(rulings) });
+          }
+          if (/\/rest\/v1\/queue_todo_done\?/.test(url)) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+          return base(url, init);
+        };
+      };
+      const open = async function (sess, rulings, postStatus, hash) {
+        const x = load({ fetch: make(rulings || [], postStatus || 201), hash: hash });
+        x.w.CPL_SESSION = Object.assign({ arrival: function (tab) {
+          const h = String(x.w.location.hash || "").replace(/^#/, "");
+          return h.indexOf(tab + "/") === 0 ? h.slice(tab.length + 1).split("/") : null; } }, sess);
+        await x.M.boot();
+        return x;
+      };
+      const sec = function (x) { return x.d.querySelector("#cmn-next-sec"); };
+
+      const out = await open(ANON, []);
+      const s0 = sec(out);
+      check("case 1: the case leads the page with what it decides, its size and what no ruling leaves",
+        s0 && s0.getAttribute("data-kind") === "case" && txt(s0.querySelector("#cmn-next-h")) === CASE.decides
+        && /Your next batch, for Sam/.test(txt(s0)) && /753 courses\. On no ruling: The seed cards stay capped\./.test(txt(s0)));
+      const ev = s0.querySelector("details.cmn-case-ev");
+      check("case 2: the rest of the evidence and its links sit one word away", ev && txt(ev.querySelector("summary")) === "The evidence"
+        && /Music 250/.test(txt(ev)) && ev.querySelectorAll("a").length === 2 && ev.querySelector("a").getAttribute("target") === "_blank");
+      check("case 3: signed out, the case reads and points at its sheet, with nothing to press",
+        /Sign in as a reviewer to rule here, or answer on its decision sheet\./.test(txt(s0)) && !s0.querySelector("button.cmn-case-choice")
+        && Array.from(s0.querySelectorAll("a")).some(function (a) { return a.getAttribute("href") === CASE.sheet; }));
+      const rd = calls.filter(function (c) { return !c.init.method; })[0];
+      check("case 4: the rulings are read with no email asked for", rd && /select=course_id,value,reviewed_at&field=eq\.docket_ruling/.test(rd.url)
+        && !/reviewer_email/.test(rd.url) && /course_id=like\._DOCKET%3A%3A\*/.test(rd.url));
+
+      calls.length = 0;
+      const inn = await open(SIGNED, []);
+      let s1 = sec(inn);
+      const chs = Array.from(s1.querySelectorAll("button.cmn-case-choice"));
+      check("case 5: signed in, the choices are words, the recommended one says so, and none is chosen",
+        chs.length === 4 && txt(chs[0]) === "Confirm the five (recommended)" && chs.every(function (b) { return b.getAttribute("aria-pressed") === "false"; })
+        && s1.querySelector(".cmn-case-choices").getAttribute("role") === "group");
+      check("case 6: Save the ruling waits for a choice", s1.querySelector("button.cmn-case-save").hasAttribute("disabled")
+        && s1.querySelector("label[for=cmn-case-note]") && s1.querySelector("#cmn-case-note"));
+      chs[1].click();
+      s1 = sec(inn);
+      check("case 7: a choice that names its plan in words shows them", /A session runs the dry run for every discipline\./.test(txt(s1))
+        && s1.querySelector('button[data-value="all"]').getAttribute("aria-pressed") === "true");
+      s1.querySelector('button[data-value="five"]').click();
+      s1 = sec(inn);
+      const note = s1.querySelector("#cmn-case-note");
+      note.value = "Music last for the curator cards."; note.dispatchEvent(new inn.w.Event("input"));
+      check("case 8: the choice moves and Save the ruling opens", !s1.querySelector("button.cmn-case-save").hasAttribute("disabled")
+        && s1.querySelector('button[data-value="five"]').getAttribute("aria-pressed") === "true");
+      await inn.M.saveRuling(CASE);
+      const post = calls.filter(function (c) { return c.init.method === "POST"; })[0];
+      const body = post && JSON.parse(post.init.body);
+      check("case 9: the ruling saves once, as an upsert under the reviewer's own name, keyed to the case",
+        post && /kb_curation\?on_conflict=course_id,field$/.test(post.url) && /resolution=merge-duplicates/.test(post.init.headers.Prefer)
+        && body.course_id === "_DOCKET::" + CASE.id && body.field === "docket_ruling" && body.reviewer_email === "slee@cccco.edu"
+        && JSON.stringify(JSON.parse(body.value)) === JSON.stringify({ "case": CASE.id, choice: "five", note: "Music last for the curator cards." }));
+      const s2 = sec(inn);
+      check("case 10: the ruled case closes on the spot and the next batch comes up",
+        /Ruled: Confirm the five\. A session carries it out and files its receipt\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
+        && txt(s2.querySelector("#cmn-next-h")) === "8 cards in doubt");
+
+      const ruled = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }]);
+      check("case 11: a ruling already saved closes the case on load, and the page moves past it",
+        sec(ruled).getAttribute("data-kind") === "job" && !ruled.d.querySelector(".cmn-next-done"));
+      const pinned = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }], 201,
+        "#commons/case/" + CASE.id);
+      check("case 12: the case's address opens it, ruled, with the ruling and its day and no controls",
+        sec(pinned).getAttribute("data-case") === CASE.id && /Ruled: One at a time, Music first on 2026-11-09\./.test(txt(sec(pinned)))
+        && !sec(pinned).querySelector("button.cmn-case-choice"));
+
+      const refused = await open(SIGNED, [], 403);
+      sec(refused).querySelector('button[data-value="later"]').click();
+      await refused.M.saveRuling(CASE);
+      check("case 13: a refused save says so and the case stays open", /Not saved: the server answered 403\./.test(txt(sec(refused)))
+        && sec(refused).getAttribute("data-kind") === "case" && sec(refused).querySelector('button[data-value="later"]').getAttribute("aria-pressed") === "true");
+      check("case 15: the evidence fold draws no marker glyph, only its underlined word",
+        /\.cmn-case-ev > summary \{ list-style:none;[^}]*text-decoration:underline/.test(src) && /\.cmn-case-ev > summary::-webkit-details-marker \{ display:none; \}/.test(src));
+      check("case 14: the view's address names the case it opened on", /if \(BATCH\.pin\) return "commons\/case\/" \+ BATCH\.pin;/.test(src));
+    }
     const learn = b.d.querySelector(".cmn-learn");
     check("learn 1: the learning line counts what people did, from the confidence count, and calls the rest unchecked",
       /The procedures placed 1,201 exhibit titles\. A person checked 103 and moved 0 elsewhere\. The rest are unchecked, not proven\./.test(txt(learn)));

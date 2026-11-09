@@ -4,9 +4,9 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 826,
+  "file_datasets": 828,
   "external_services": 193,
-  "consumers": 537,
+  "consumers": 538,
   "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
@@ -1775,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1105,
+     "line": 1242,
      "tabs": [
       "commons"
      ]
@@ -14415,6 +14415,26 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/docket/cases.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 879
+    },
+    {
+     "id": "script:kb/_docket_rulings.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/doctrine_questions.json": {
    "consumers": [
     {
@@ -22455,6 +22475,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/docket_rulings_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/docs_audit_test.py": {
    "consumers": [
     {
@@ -25487,7 +25520,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 904,
+     "line": 1029,
      "tabs": [
       "commons"
      ]
@@ -27304,7 +27337,17 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 636,
+     "line": 733,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 716,
      "tabs": [
       "commons"
      ]
@@ -27495,6 +27538,13 @@
      "direction": "read",
      "how": "literal",
      "line": 139
+    },
+    {
+     "id": "script:kb/_docket_rulings.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     },
     {
      "id": "script:kb/_eacr_flag_migrate.py",
@@ -28779,7 +28829,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 882,
+     "line": 1007,
      "tabs": [
       "commons"
      ]
@@ -30133,6 +30183,7 @@
     "tests/clep_official_titles_test.py",
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
+    "tests/docket_rulings_test.py",
     "tests/exhibits_review_build_test.py",
     "tests/exhibits_sweep_build_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",

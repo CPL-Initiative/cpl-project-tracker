@@ -554,7 +554,7 @@
      shows the first one not done. Another look counts itself from the saves (the kb_curation keys its cards name,
      read the way exhibits.js reconcileSweep reads them), so deciding the last card closes it here without waiting
      for the night's build; a decision closes when its call is answered. When none is left the page says so. */
-  var BATCH = { decided: {} };
+  var BATCH = { decided: {}, ruled: {}, pick: {}, note: {}, said: {}, busy: false, pin: null, data: null };
   function batchList(data) {
     if (data && Array.isArray(data.batches)) return data.batches.filter(function (b) { return b && !b.error && b.kind; });
     var nb = data && data.next_batch;
@@ -565,6 +565,7 @@
   function batchDone(b, openTitles) {
     if (b.kind === "another-look") { var d = BATCH.decided[batchKey(b)]; return d != null && d >= b.n; }
     if (b.kind === "decision") return !openTitles[b.title];
+    if (b.kind === "case") return !!BATCH.ruled[b.id];
     return false;
   }
   function batchHead(b) { return b.kind === "job" ? capFirst(fmt(b.n) + " " + (b.words || "")) : b.title; }
@@ -586,8 +587,7 @@
         el("p", { cls: "cmn-next-meta", text: "The Commons' status file carries no batch" + (opts.error ? " (" + opts.error + ")" : "") + ". The rest of the page reads as usual." })
       ])
     ]);
-    var done = opts.justDone ? el("p", { cls: "cmn-next-done", role: "status", text: "Done: you decided " + fmt(opts.justDone.n) + " of "
-      + fmt(opts.justDone.n) + (opts.justDone.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight." }) : null;
+    var done = doneLine(opts.justDone);
     if (!b && !opts.empty) return null;
     var text = !b
       ? [el("p", { cls: "cmn-kicker", text: "Your next batch" }), done,
@@ -605,18 +605,141 @@
   /* The section for the list as it stands: the first batch not done, and a line for an Another look batch this
      visit's count closed. */
   function batchSection(data, openTitles) {
+    BATCH.data = data;
     var list = batchList(data);
     if (list === null) {
       var err = data && ((data.next_batch && data.next_batch.error) || (data.batches && data.batches.error));
       return nextBatchSection(null, { unread: true, error: err || "" });
     }
     var next = null, justDone = null;
+    /* An address naming a case (#commons/case/<id>) opens that case first, open or ruled. */
+    var pinned = BATCH.pin ? list.filter(function (b) { return b.kind === "case" && b.id === BATCH.pin; })[0] : null;
     list.forEach(function (b) {
       if (next) return;
-      if (batchDone(b, openTitles)) { if (b.kind === "another-look") justDone = b; return; }
+      if (batchDone(b, openTitles)) {
+        if (b.kind === "another-look") justDone = { kind: "another-look", n: b.n };
+        if (b.kind === "case" && BATCH.ruled[b.id] && BATCH.ruled[b.id].here) justDone = { kind: "case", b: b };
+        return;
+      }
       next = b;
     });
+    if (pinned) next = pinned;
+    if (next && next.kind === "case") {
+      var c = caseOf(data, next.id);
+      if (c) return caseSection(c, justDone);
+    }
     return nextBatchSection(next, { justDone: justDone, empty: list.length > 0 || !!justDone });
+  }
+  function caseOf(data, id) {
+    var d = data && Array.isArray(data.docket) ? data.docket : [];
+    for (var i = 0; i < d.length; i++) if (d[i].id === id) return d[i];
+    return null;
+  }
+  function choiceWords(c, v) {
+    var ch = (c.choices || []).filter(function (x) { return x.value === v; })[0];
+    return ch ? ch.words : v;
+  }
+  /* The line above the next batch: what the last one finished. */
+  function doneLine(j) {
+    if (!j) return null;
+    var text = j.kind === "case"
+      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". A session carries it out and files its receipt."
+      : "Done: you decided " + fmt(j.n) + " of " + fmt(j.n) + (j.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight.";
+    return el("p", { cls: "cmn-next-done", role: "status", text: text });
+  }
+  /* A Docket case, ruled in place (#2963 step 2): what it decides, the evidence and its links, the choices as words,
+     a reason, and Save the ruling. The ruling saves to kb_curation (`_DOCKET::<id>`, field docket_ruling) under the
+     reviewer's own name; signed out, the case reads and points at its sheet. Every case is shown to any signed-in
+     reviewer, marked for its addressee, until the per-reviewer table of step 4. */
+  function caseSection(c, justDone) {
+    var R = BATCH.ruled[c.id], who = reviewer(), id = c.id;
+    var kids = [el("p", { cls: "cmn-kicker", text: "Your next batch" + (c.addressee ? ", for " + capFirst(c.addressee) : "") }), doneLine(justDone),
+      el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: c.decides }),
+      (c.evidence || [])[0] ? el("p", { cls: "cmn-next-teach", text: c.evidence[0] }) : null];
+    var more = (c.evidence || []).slice(1), links = c.links || [];
+    if (more.length || links.length) {
+      kids.push(el("details", { cls: "cmn-case-ev" }, [el("summary", { cls: "cmn-word", text: "The evidence" })]
+        .concat(more.map(function (t) { return el("p", { text: t }); }))
+        .concat(links.length ? [el("ul", { cls: "cmn-case-links" }, links.map(function (l) { return el("li", null, [openLink(l.href, l.text)]); }))] : [])));
+    }
+    kids.push(el("p", { cls: "cmn-next-meta", text: (c.size && c.size.n ? fmt(c.size.n) + " " + (c.size.unit || "items") + ". " : "")
+      + "On no ruling: " + (c.no_reply || "nothing changes.") }));
+    if (R) {
+      kids.push(el("p", { cls: "cmn-case-ruled", role: "status", text: "Ruled: " + choiceWords(c, R.choice) + (R.at ? " on " + String(R.at).slice(0, 10) : "")
+        + ". A session carries it out and files its receipt." }));
+      return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
+        [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
+    }
+    if (!who) {
+      kids.push(el("p", { cls: "cmn-next-meta" }, ["Sign in as a reviewer to rule here, or answer on ",
+        c.sheet ? openLink(c.sheet, "its decision sheet") : "its decision sheet", "."]));
+      return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
+        [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
+    }
+    var pick = BATCH.pick[id];
+    var group = el("div", { cls: "cmn-case-choices", role: "group", "aria-label": "Your ruling" }, (c.choices || []).map(function (ch) {
+      var b = el("button", { type: "button", cls: "cmn-word cmn-case-choice", "aria-pressed": pick === ch.value ? "true" : "false",
+        "data-value": ch.value, text: ch.words + (ch.recommended ? " (recommended)" : "") });
+      b.addEventListener("click", function () { BATCH.pick[id] = ch.value; BATCH.said[id] = ""; redrawBatch(); });
+      return b;
+    }));
+    var plan = pick && c.plan_words && c.plan_words[pick] ? el("p", { cls: "cmn-next-meta", text: c.plan_words[pick] }) : null;
+    var note = el("textarea", { id: "cmn-case-note", cls: "cmn-case-note", rows: "2" });
+    note.value = BATCH.note[id] || "";
+    note.addEventListener("input", function () { BATCH.note[id] = note.value; });
+    var save = el("button", { type: "button", cls: "cmn-word cmn-case-save", text: BATCH.busy ? "Saving…" : "Save the ruling" });
+    if (!pick || BATCH.busy) save.setAttribute("disabled", "disabled");
+    save.addEventListener("click", function () { saveRuling(c); });
+    kids.push(group, plan, el("label", { "for": "cmn-case-note", cls: "cmn-case-lbl", text: "Your reason, if any" }), note,
+      el("div", { cls: "cmn-case-acts" }, [save, c.sheet ? openLink(c.sheet, "Its decision sheet") : null].filter(Boolean)),
+      el("p", { cls: "cmn-case-said", role: "status", "aria-live": "polite", text: BATCH.said[id] || "" }));
+    return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
+      [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
+  }
+  var lastOpenTitles = {};
+  function redrawBatch() {
+    var old = document.getElementById("cmn-next-sec"), fresh = batchSection(BATCH.data, lastOpenTitles);
+    if (old && fresh) old.parentNode.replaceChild(fresh, old);
+    else if (old) old.parentNode.removeChild(old);
+  }
+  var RULING_PREFIX = "_DOCKET::", RULING_FIELD = "docket_ruling";
+  function saveRuling(c) {
+    var choice = BATCH.pick[c.id];
+    if (!choice || BATCH.busy) return Promise.resolve();
+    BATCH.busy = true; BATCH.said[c.id] = "Saving…"; redrawBatch();
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      var s = reviewer();
+      if (!s || !s.email) { var e = new Error("your sign-in has ended; sign in again, then save"); throw e; }
+      var value = JSON.stringify({ "case": c.id, choice: choice, note: String(BATCH.note[c.id] || "").trim() });
+      return fetch(REST + "/kb_curation?on_conflict=course_id,field", { method: "POST",
+        headers: sessionHeaders({ "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" }),
+        body: JSON.stringify({ course_id: RULING_PREFIX + c.id, field: RULING_FIELD, value: value, reviewer_email: s.email }) });
+    }).then(function (r) {
+      BATCH.busy = false;
+      if (!r.ok) { BATCH.said[c.id] = "Not saved: the server answered " + r.status + ". Only a reviewer on the list may rule."; redrawBatch(); return; }
+      BATCH.ruled[c.id] = { choice: choice, at: new Date().toISOString(), here: true };
+      if (BATCH.pin === c.id) BATCH.pin = null;
+      redrawBatch();
+    }, function (e) {
+      BATCH.busy = false; BATCH.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; redrawBatch();
+    });
+  }
+  /* The rulings already saved, read with no email asked for (anon reads every column but reviewer_email). */
+  function readRulings() {
+    var h = sessionHeaders({ "Range-Unit": "items", "Range": "0-999" });
+    if (!h || !h.apikey) return Promise.resolve();
+    return fetch(REST + "/kb_curation?select=course_id,value,reviewed_at&field=eq." + RULING_FIELD + "&course_id=like."
+      + encodeURIComponent(RULING_PREFIX) + "*", { headers: h })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        (rows || []).forEach(function (row) {
+          var v; try { v = JSON.parse(row.value); } catch (e) { return; }
+          var id = String(row.course_id || "").slice(RULING_PREFIX.length);
+          if (v && v.choice && !(BATCH.ruled[id] && BATCH.ruled[id].here)) BATCH.ruled[id] = { choice: v.choice, at: row.reviewed_at };
+        });
+      }, function () { /* the cases stay open */ });
   }
   /* How many of an Another look batch's cards are decided: the saves written since the sweep was built (a keep, or
      a fold off the card's current title), and any this visit's Exhibits marked. Null when nothing can be read. */
@@ -648,13 +771,12 @@
   var batchRefresh = null;
   function refreshBatches(data, openTitles) {
     var list = batchList(data) || [];
-    return Promise.all(list.filter(function (b) { return b.kind === "another-look"; }).map(function (b) {
+    lastOpenTitles = openTitles; BATCH.data = data;
+    var counts = list.filter(function (b) { return b.kind === "another-look"; }).map(function (b) {
       return countDecided(b).then(function (n) { if (n != null) BATCH.decided[batchKey(b)] = n; });
-    })).then(function () {
-      var old = document.getElementById("cmn-next-sec"), fresh = batchSection(data, openTitles);
-      if (old && fresh) old.parentNode.replaceChild(fresh, old);
-      else if (old) old.parentNode.removeChild(old);
     });
+    if (list.some(function (b) { return b.kind === "case"; })) counts.push(readRulings());
+    return Promise.all(counts).then(redrawBatch);
   }
   /* The learning line: what people did with the procedures' work, from the confidence count, with the table one
      word away. It reports what people saw, never that the unchecked results are right. */
@@ -681,6 +803,7 @@
   var redraw = null;
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
+    if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons" : "commons/" + show;
   });
   /* Opens the filter word the address names; anything unknown leaves the view as it is. */
@@ -693,6 +816,7 @@
     away = false; seenHash = h;
     if (!visit) return false;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
+    if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
   }
@@ -739,6 +863,7 @@
     cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); if (call.title) openTitles[call.title] = true; }); });
 
     /* the one small batch, then what people did with the procedures' work */
+    lastOpenTitles = openTitles;
     var batch = batchSection(data, openTitles);
     if (batch) wrap.appendChild(batch);
     batchRefresh = function () { return refreshBatches(data, openTitles); };
@@ -1008,6 +1133,18 @@
     ".cmn-next-teach, .cmn-next-meta { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-next-meta { color:var(--cmn-muted); font-size:.92rem; }",
     ".cmn-next-done { margin:0 0 4px; color:var(--cmn-ink); font-weight:600; }",
+    ".cmn-case-ev > summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; min-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; }",
+    ".cmn-case-ev > summary::-webkit-details-marker { display:none; }",
+    ".cmn-case-ev p, .cmn-case-links { margin:6px 0 0; color:var(--cmn-ink-2); }",
+    ".cmn-case-links a { display:inline-block; min-height:24px; line-height:24px; color:var(--cmn-link); }",
+    ".cmn-case-choices { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:8px; }",
+    ".cmn-case-choice[aria-pressed=\"true\"] { font-weight:700; color:var(--cmn-heading); text-decoration-thickness:2px; }",
+    ".cmn-case-lbl { display:block; margin-top:8px; color:var(--cmn-ink-2); font-size:.92rem; }",
+    ".cmn-case-note { width:100%; max-width:var(--cpl-measure,none); box-sizing:border-box; font:inherit; padding:6px 8px; border:1px solid var(--cmn-line); border-radius:8px; background:var(--cmn-surface); color:var(--cmn-ink); }",
+    ".cmn-case-acts { display:flex; flex-wrap:wrap; gap:6px 18px; align-items:center; margin-top:6px; }",
+    ".cmn-case-acts a { color:var(--cmn-link); min-height:24px; line-height:24px; display:inline-block; }",
+    ".cmn-case-save[disabled] { color:var(--cmn-muted); cursor:not-allowed; }",
+    ".cmn-case-said, .cmn-case-ruled { margin:4px 0 0; color:var(--cmn-ink); min-height:1em; }",
     ".cmn-start { color:var(--cmn-link); font-weight:700; font-size:1.1rem; text-decoration:underline; text-underline-offset:3px; display:inline-block; min-height:24px; line-height:24px; }",
     ".cmn-learn { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-learn strong { color:var(--cmn-heading); }",
@@ -1113,7 +1250,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
-    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

@@ -30,7 +30,7 @@
   "project": "course",
   "next_step": {
     "title": "Confirm the next five disciplines, if Sam agrees",
-    "text": "Sheet 175 asks whether Music, Fire Technology, Mathematics, Child Development/ECE and English are confirmed where the descriptions and TOP both agree; on his word kb/_ccr_seed_confirm_apply.py runs per discipline with its --expect count."
+    "text": "Sheet 175 asks whether Music, Fire Technology, Mathematics, Child Development/ECE and English are confirmed where the descriptions and TOP both agree; it is also the Docket's first case in the Commons (#commons/case/2026-11-09-ccr-next-five). On his word kb/_ccr_seed_confirm_apply.py runs per discipline with its --expect count."
   },
   "changes": [
     {

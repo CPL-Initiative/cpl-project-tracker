@@ -491,10 +491,11 @@ window.COBI_ADMIN_SURFACE = {
         "commons_progress.js"
       ],
       "reads": [
-        "kb_curation",
         "queue_todo_done"
       ],
-      "writes": [],
+      "writes": [
+        "kb_curation"
+      ],
       "rpcs": [
         "queue_todo_done_add"
       ],
