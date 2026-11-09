@@ -96,7 +96,7 @@ const auditReads = (t) => t.fetches.filter((u) => /row_audit/.test(u)).length;
   await sleep(40);
   check("(1) ⭐ #coci-lookup/list/units lists the courses of the common course the auditor tags", titles(t.d).sort().join("|") === "College Composition|Composition and Reading|Freshman Composition", titles(t.d).join("|"));
   check("(3) the List says how many common courses the job holds", /A unit anomaly: 1 common course the auditor marks; their 3 local courses are below/.test(txt(t.d.querySelector(".cplcoci-list, #cplcoci-list-mount") || t.d.body)));
-  const fw = Array.from(t.d.querySelectorAll("." + P + "filters > *")).map(txt);
+  const fw = Array.from(t.d.querySelectorAll("." + P + "fgroup > :not(." + P + "fglabel)")).map(txt);
   check("(2) once read, the job words count their courses", fw.indexOf("A unit anomaly (3)") >= 0 && fw.indexOf("Discipline no seed has touched (2)") >= 0
     && fw.indexOf("No catalog description (3)") >= 0 && fw.indexOf("On a stray identity code (1)") >= 0, fw.join(" | "));
   word(t.d, /^Discipline no seed has touched/).click(); await sleep(20);
@@ -107,7 +107,7 @@ const auditReads = (t) => t.fetches.filter((u) => /row_audit/.test(u)).length;
 
   const plain = tab();
   await sleep(40);
-  const fw2 = Array.from(plain.d.querySelectorAll("." + P + "filters > *")).map(txt);
+  const fw2 = Array.from(plain.d.querySelectorAll("." + P + "fgroup > :not(." + P + "fglabel)")).map(txt);
   check("(2) ⭐ the auditor's file is not read until a job is chosen, and its words carry no count", auditReads(plain) === 0 && fw2.indexOf("A unit anomaly") >= 0, fw2.join(" | "));
   plain.w.location.hash = "#coci-lookup/list/nodesc";
   plain.w.dispatchEvent(new plain.w.HashChangeEvent("hashchange")); await sleep(40);

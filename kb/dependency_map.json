@@ -5807,7 +5807,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1251,
+     "line": 1256,
      "tabs": [
       "coci-lookup"
      ]
@@ -6270,7 +6270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1039,
+     "line": 1044,
      "tabs": [
       "coci-lookup"
      ]
@@ -6373,7 +6373,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1127,
+     "line": 1132,
      "tabs": [
       "coci-lookup"
      ]
@@ -18094,7 +18094,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1548,
+     "line": 1567,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -24411,7 +24411,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1040,
+     "line": 1045,
      "tabs": [
       "coci-lookup"
      ]
