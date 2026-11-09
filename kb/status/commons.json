@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-09T16:59:31Z",
+ "written_at": "2026-11-09T17:54:01Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,6 +118,14 @@
    ],
    "issues": [
     {
+     "n": 3,
+     "words": "titles held for a person",
+     "owner": "a curator (the classifier is unsure 3)",
+     "carry": "unsure",
+     "open": "#exhibits/held",
+     "error": null
+    },
+    {
      "n": 623,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
@@ -142,7 +150,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-09T16:53:55Z",
+    "at": "2026-11-09T17:53:54Z",
     "every_hours": 24
    },
    "facts": {
@@ -154,7 +162,7 @@
     "confirmed": 1226,
     "records": 3037,
     "records_stamped": 2269,
-    "saved_at": "2026-11-07T14:26:54Z",
+    "saved_at": "2026-11-09T17:53:54Z",
     "fold_at": "2026-11-09T16:53:55Z",
     "map_titles": 4973,
     "unclassified": 4,
@@ -345,7 +353,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-09T14:47:03Z",
+    "at": "2026-11-09T16:59:35Z",
     "every_hours": null
    },
    "facts": {
@@ -646,6 +654,14 @@
     "key": "unsure",
     "items": [
      {
+      "ref": "exhibit",
+      "title": "Common Exhibit Reference",
+      "n": 3,
+      "words": "titles held for a person",
+      "owner": "a curator (the classifier is unsure 3)",
+      "open": "#exhibits/held"
+     },
+     {
       "ref": "course",
       "title": "Common Course Reference",
       "n": 6,
@@ -732,13 +748,13 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 896,
+     "placed": 897,
      "untouched": 820,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 1,
      "looked": 57
     },
     {
@@ -820,13 +836,13 @@
     }
    ],
    "total": {
-    "placed": 1201,
+    "placed": 1202,
     "untouched": 1074,
     "kept": 23,
     "renamed": 80,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 1,
     "looked": 103
    }
   },
