@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-581 document(s).
+582 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 621 | [Session 621 handoff: the Docket steps 1-3 live, call 9 lifted, CSMs on the reviewer list, TRUNCATE revoked](../session_621_handoff.md) | 2026-11-09 |
 | 620 | [Session 620 handoff: Orange Coast merged, Alameda's description step withdrawn, its transfer degrees take Cal-GETC's 34](../session_620_handoff.md) | 2026-11-09 |
 | 619 | [Session 619 handoff: Orange Coast's SLOs loaded, Alameda's description totals, the email closure confirmed](../session_619_handoff.md) | 2026-11-09 |
 | 618 | [Session 618 handoff: the night's credential watch merged, Orange Coast read, Alameda's totals asked](../session_618_handoff.md) | 2026-11-09 |

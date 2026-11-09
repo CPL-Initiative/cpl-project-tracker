@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1439,
-    "bytes": 14506461,
+    "files": 1440,
+    "bytes": 14517810,
     "over_budget": 5,
-    "handoff_max": 620,
+    "handoff_max": 621,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59914,
     "superseded_files": 8,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 146,
-        "bytes": 4477626,
+        "bytes": 4478334,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2602091,
+        "bytes": 2606536,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 520542,
+        "bytes": 523067,
         "over": 4
       },
       "handoff": {
-        "files": 581,
-        "bytes": 3991892,
+        "files": 582,
+        "bytes": 3995563,
         "over": 0
       }
     },
@@ -59,12 +59,13 @@
       "kb_note_dialect": 1,
       "oversized_doc": 5,
       "superseded_handoff": 8,
-      "vault_heavy_path": 75
+      "vault_heavy_path": 75,
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 26354,
-      "bytes": 4446284084,
-      "heavy_bytes": 3198321778,
+      "files": 26364,
+      "bytes": 4447280202,
+      "heavy_bytes": 3199214143,
       "heavy_share": 0.719,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -161,13 +162,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 154318,
+        "bytes": 154867,
         "limit": 150000,
         "lane": "other",
-        "over_by": 4318,
+        "over_by": 4867,
         "ratio": 1.03
       },
-      "message": "154,318 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "154,867 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -187,13 +188,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 23207,
+        "bytes": 23504,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 3207,
-        "ratio": 1.16
+        "over_by": 3504,
+        "ratio": 1.18
       },
-      "message": "23,207 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "23,504 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/commons.md"
     },
     {
@@ -213,13 +214,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24609,
+        "bytes": 24614,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4609,
+        "over_by": 4614,
         "ratio": 1.23
       },
-      "message": "24,609 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,614 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -227,10 +228,10 @@
       "fixable": true,
       "detail": {
         "session": 607,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 607 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 607 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_607_handoff.md"
     },
     {
@@ -238,10 +239,10 @@
       "fixable": true,
       "detail": {
         "session": 608,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 608 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 608 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_608_handoff.md"
     },
     {
@@ -249,10 +250,10 @@
       "fixable": true,
       "detail": {
         "session": 609,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 609 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 609 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_609_handoff.md"
     },
     {
@@ -260,10 +261,10 @@
       "fixable": true,
       "detail": {
         "session": 610,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 610 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 610 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_610_handoff.md"
     },
     {
@@ -271,10 +272,10 @@
       "fixable": true,
       "detail": {
         "session": 611,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 611 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 611 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_611_handoff.md"
     },
     {
@@ -282,10 +283,10 @@
       "fixable": true,
       "detail": {
         "session": 612,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 612 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 612 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_612_handoff.md"
     },
     {
@@ -293,10 +294,10 @@
       "fixable": true,
       "detail": {
         "session": 613,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 613 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 613 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_613_handoff.md"
     },
     {
@@ -304,10 +305,10 @@
       "fixable": true,
       "detail": {
         "session": 614,
-        "authoritative": 620,
+        "authoritative": 621,
         "has_frontmatter": true
       },
-      "message": "handoff 614 is below the authoritative 620 but is not stamped `superseded: true`",
+      "message": "handoff 614 is below the authoritative 621 but is not stamped `superseded: true`",
       "path": "docs/session_614_handoff.md"
     },
     {
@@ -365,10 +366,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 43485607,
+        "bytes": 44331089,
         "kind": "dir"
       },
-      "message": "directory totals 43,485,607 B inside the vault"
+      "message": "directory totals 44,331,089 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -405,10 +406,10 @@
       "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 19046367,
+        "bytes": 19049427,
         "kind": "dir"
       },
-      "message": "directory totals 19,046,367 B inside the vault"
+      "message": "directory totals 19,049,427 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -425,10 +426,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10451483,
+        "bytes": 10488052,
         "kind": "dir"
       },
-      "message": "directory totals 10,451,483 B inside the vault"
+      "message": "directory totals 10,488,052 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -615,10 +616,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11909726,
+        "bytes": 11917414,
         "kind": "file"
       },
-      "message": "11,909,726 B single file inside the vault"
+      "message": "11,917,414 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -675,10 +676,10 @@
       "fixable": false,
       "path": "kb/row_audit/latest.json",
       "detail": {
-        "bytes": 10479284,
+        "bytes": 10456894,
         "kind": "file"
       },
-      "message": "10,479,284 B single file inside the vault"
+      "message": "10,456,894 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -695,10 +696,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10096675,
+        "bytes": 10111727,
         "kind": "file"
       },
-      "message": "10,096,675 B single file inside the vault"
+      "message": "10,111,727 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -755,10 +756,10 @@
       "fixable": false,
       "path": "kb/coci_articulations.json",
       "detail": {
-        "bytes": 7518561,
+        "bytes": 7519572,
         "kind": "file"
       },
-      "message": "7,518,561 B single file inside the vault"
+      "message": "7,519,572 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -895,10 +896,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3521233,
+        "bytes": 3524486,
         "kind": "file"
       },
-      "message": "3,521,233 B single file inside the vault"
+      "message": "3,524,486 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -995,10 +996,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2355765,
+        "bytes": 2357875,
         "kind": "file"
       },
-      "message": "2,355,765 B single file inside the vault"
+      "message": "2,357,875 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1015,10 +1016,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2244919,
+        "bytes": 2245170,
         "kind": "file"
       },
-      "message": "2,244,919 B single file inside the vault"
+      "message": "2,245,170 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1035,10 +1036,10 @@
       "fixable": false,
       "path": "kb/unified_titles.json",
       "detail": {
-        "bytes": 2210888,
+        "bytes": 2211167,
         "kind": "file"
       },
-      "message": "2,210,888 B single file inside the vault"
+      "message": "2,211,167 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1059,6 +1060,22 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "handoff_drops_active_lane",
+      "fixable": false,
+      "path": "docs/session_621_handoff.md",
+      "detail": {
+        "lanes": [
+          "common-subjects-reference",
+          "implementation-funding",
+          "library",
+          "map-users-student-contact",
+          "program-requirements-harvest"
+        ],
+        "days": 7
+      },
+      "message": "`docs/session_621_handoff.md` never names 5 lane(s) worked in the last 7 days that still carry a NEXT: common-subjects-reference, implementation-funding, library, map-users-student-contact, program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 612 (SkySunflower, Sam's hand-opened session, 2026-11-08 21:13Z to ~23:00Z; the CPL Queue routine fires next at 2026-11-09 06:12Z)
 tags: [handoff, commons, common-subjects-reference, ci, implementation-funding, cpl-memory]
 status: current
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 613

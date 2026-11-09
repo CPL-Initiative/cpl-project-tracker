@@ -26,6 +26,8 @@ before the CPL Commons work"*.
 The design record is the mock, version 11 (https://claude.ai/artifact/LLjcCzVzq7sqtPEjnebMYf; source, porting notes
 and his 18 asks in `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/`).
 
+**2026-11-09 (SkyCigar, #2967, before the CSMs' first funding-confirmation session):** the three CSMs joined the reviewer list (3 of 3; list of 13). **Accept and Deny wait for the save** (#2973, open): the funding tab's `CSM_ACT` answers `{ok}` from the re-read (Accept: the row reads confirmed; Deny: gone), and the workspace logs, speaks and lets the email open only on `ok`; a refused save says *Not saved* and leaves `csm_log` untouched (`tests/csm_workspace.test.js` 9a to 9g). **NEXT: the Ready to send queue (#2967 item 3), designed, not built:** a view of each college whose next email is due (confirmed and no *Acceptance sent* receipt: acceptance from the funding tab's `acceptEmail` template plus the conditions `missingWords` lists; not yet confirmed and not nudged in 14 days: `seedMail(r, "nudge")`; waiting: *Accept first*), Cc the CPL Coordinator (`firstOf(c, "CPL Coordinator")`), *Open in Outlook* (the mailto at `mailAct`, falling back to copy then open when the href passes ~1,900 characters), *Sent* writes a `csm_log` receipt and drops the college; Accept stays separate; shaped so Sheet 146 card 3's Microsoft 365 sender can replace the mailto. Also: the fallback deadline reads Nov 1 (`cpl_funding_data.js:281`, `cpl_funding.js:3630`) where the published config says Dec 31.
+
 ## Status
 
 ✅ **PR 1, the tab over the funding tab's state (S555).** `csm_workspace.js` paints from

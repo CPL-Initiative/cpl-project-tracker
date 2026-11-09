@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 604 (SkySculptor, Sam's hand-opened session, 2026-11-08 03:28Z to ~17:45Z; beside the routine's S605 to S609)
 tags: [handoff, disposition-grain-student-detail, commons, cer-procedures, org-phrase-scope-auth, cobix]
 status: current
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 611

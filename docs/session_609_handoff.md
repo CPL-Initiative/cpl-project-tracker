@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 608 (SkyCondor, the CPL Queue routine's 12:12Z firing, 2026-11-08)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: superseded
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 609

@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 606 (SkyFornax, the CPL Queue routine's 09:12Z firing, 2026-11-08)
 tags: [handoff, program-requirements-harvest, library, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 607
