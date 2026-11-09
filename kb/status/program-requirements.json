@@ -9,7 +9,7 @@
   "handoff": "docs/session_620_handoff.md",
   "next_step": {
     "title": "Cuesta's full read",
-    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC. College of Alameda's transfer degrees wait on a page read of their general education units."
+    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC. College of Alameda's transfer degrees wait on their reconcile run."
   },
   "calls": [
     {
@@ -233,7 +233,7 @@
     },
     {
       "at": "2026-11-09T11:26:00Z",
-      "text": "College of Alameda: a page read of its five transfer degrees asks what each prints of its general education units (pull request 2960)."
+      "text": "College of Alameda: its transfer degrees print 'General Education (Cal-GETC) and Elective Units' above the degree's 60, so a reconcile step gives them Cal-GETC's 34 units (pull request 2960)."
     }
   ],
   "headline": [
