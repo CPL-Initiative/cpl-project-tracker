@@ -4,7 +4,7 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 821,
+  "file_datasets": 825,
   "external_services": 193,
   "consumers": 536,
   "workflows": 64,
@@ -5644,7 +5644,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 167,
+     "line": 170,
      "tabs": [
       "coci-lookup"
      ]
@@ -5738,7 +5738,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1112,
+     "line": 1243,
      "tabs": [
       "coci-lookup"
      ]
@@ -6201,7 +6201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 900,
+     "line": 1031,
      "tabs": [
       "coci-lookup"
      ]
@@ -6304,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 988,
+     "line": 1119,
      "tabs": [
       "coci-lookup"
      ]
@@ -9365,6 +9365,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_ccr_seed_recheck_dryrun.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_cer_decision_apply.py": {
    "consumers": [
     {
@@ -10349,6 +10362,47 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/ccr_doubt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 304
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 144
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/ccr_procedures.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 156
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/cer_classified.json": {
    "consumers": [
     {
@@ -11028,7 +11082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 340
+     "line": 352
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -11056,7 +11110,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 119
+     "line": 165
     },
     {
      "id": "script:kb/_desc_consolidation_dryrun.py",
@@ -11423,7 +11477,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 162
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -11890,7 +11944,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 117
+     "line": 163
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -12238,7 +12292,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 122
+     "line": 168
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -13057,7 +13111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 619
+     "line": 631
     }
    ],
    "served": false,
@@ -13208,7 +13262,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 385
+     "line": 397
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13765,7 +13819,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 770
+     "line": 782
     }
    ],
    "served": false,
@@ -13788,7 +13842,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 494
+     "line": 506
     }
    ],
    "producers": [
@@ -13845,7 +13899,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 495
+     "line": 507
     }
    ],
    "served": true,
@@ -14090,7 +14144,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 473
+     "line": 485
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -15000,7 +15054,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 808
+     "line": 820
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -15312,7 +15366,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 598
+     "line": 610
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -16299,7 +16353,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 400
     }
    ],
    "served": false,
@@ -17938,7 +17992,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 313
+     "line": 318
     }
    ],
    "served": true,
@@ -17951,7 +18005,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 418
+     "line": 430
     }
    ],
    "served": true,
@@ -18052,7 +18106,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 553
+     "line": 565
     }
    ],
    "served": true,
@@ -18309,7 +18363,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 161
     },
     {
      "id": "script:kb/_infer_disciplines_from_top.py",
@@ -20557,7 +20611,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 617
+     "line": 629
     }
    ],
    "served": false,
@@ -21788,6 +21842,19 @@
    "main_committers": []
   },
   "file:tests/ccr_cpl_universe_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_doubt_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -23836,7 +23903,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 506,
+     "line": 635,
      "tabs": [
       "coci-lookup"
      ]
@@ -24168,7 +24235,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 901,
+     "line": 1032,
      "tabs": [
       "coci-lookup"
      ]
@@ -26101,7 +26168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 196,
+     "line": 199,
      "tabs": [
       "coci-lookup"
      ]
@@ -27169,7 +27236,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 513,
+     "line": 376,
      "tabs": [
       "coci-lookup"
      ]
@@ -27179,7 +27246,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 552,
+     "line": 528,
      "tabs": [
       "coci-lookup"
      ]
@@ -29791,6 +29858,7 @@
     "kb/_build_adopt_page.py",
     "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
+    "kb/_ccr_seed_recheck_dryrun.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -29868,6 +29936,7 @@
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
+    "kb/ccr_doubt.json",
     "kb/status/program-requirements-checked.json",
     "kb/csr_out/latest.json",
     "kb/project_lifecycle.json",
@@ -29961,6 +30030,7 @@
     "tests/refresh_button_no_secret_test.py",
     "tests/daily_scrape_fails_loudly_test.py",
     "tests/supabase_table_grants_test.py",
+    "tests/ccr_doubt_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/college_contacts_harvest_sql_test.py",

@@ -1,0 +1,441 @@
+{
+ "_about": "The Courses List's Discipline in doubt job (#coci-lookup/list/doubt), written by kb/_ccr_seed_recheck_dryrun.py --doubt. Each card's description points to another discipline, or TOP alone does. A person rules on each in the List's side panel and says why; a reason marked for similar cards is a proposed procedure (kb/ccr_procedures.json). Read-only: the ruling is the write.",
+ "cards": [
+  {
+   "colleges": 12,
+   "desc": [
+    [
+     "Health Care Ancillaries",
+     0.1887
+    ],
+    [
+     "Fire Technology",
+     0.1594
+    ],
+    [
+     "Child Development/Early Childhood Education",
+     0.1534
+    ]
+   ],
+   "desc_kind": "desc_differs_close",
+   "discipline": "Kinesiology",
+   "id": "KINE M1142",
+   "members": 14,
+   "title": "First Aid and CPR",
+   "verdict": "for_a_curator",
+   "votes": {
+    "Emergency Medical Technologies": 1,
+    "Health": 3,
+    "Kinesiology": 1
+   },
+   "why": [
+    "description",
+    "top"
+   ]
+  },
+  {
+   "colleges": 3,
+   "desc": [
+    [
+     "Environmental Technologies",
+     0.1567
+    ],
+    [
+     "Ethnic Studies",
+     0.1034
+    ],
+    [
+     "Work Experience Instructors",
+     0.091
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1738",
+   "members": 3,
+   "title": "Water Safety Instructor",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Biological Sciences",
+     0.1741
+    ],
+    [
+     "Ceramic Technology",
+     0.0898
+    ],
+    [
+     "Radiological Technology",
+     0.0703
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1150",
+   "members": 2,
+   "title": "Introduction to Human Movement Anatomy",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Biological Sciences",
+     0.2172
+    ],
+    [
+     "Kinesiology",
+     0.1283
+    ],
+    [
+     "Mortuary Science",
+     0.0822
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1152",
+   "members": 2,
+   "title": "Anatomy and Physiology for Yoga Teachers",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Ethnic Studies",
+     0.2378
+    ],
+    [
+     "Film and Media Studies",
+     0.1802
+    ],
+    [
+     "Women’s Studies",
+     0.1655
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1553",
+   "members": 2,
+   "title": "Sport in Film",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Nutritional Science/Dietetics",
+     0.3648
+    ],
+    [
+     "Kinesiology",
+     0.1922
+    ],
+    [
+     "Counseling",
+     0.0955
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1663",
+   "members": 2,
+   "title": "Nutrition for Sports and Human Performance",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Hotel and Motel Services",
+     0.1489
+    ],
+    [
+     "Kinesiology",
+     0.0817
+    ],
+    [
+     "Interdisciplinary-Basic Skills: Noncredit",
+     0.0813
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1762",
+   "members": 2,
+   "title": "Introduction to Sport and Recreation Management",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 1,
+   "desc": [
+    [
+     "Biological Sciences",
+     0.1614
+    ],
+    [
+     "Kinesiology",
+     0.0916
+    ],
+    [
+     "Electricity",
+     0.0707
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1896",
+   "members": 2,
+   "title": "Yoga Teacher Training 2 - Gross and Subtle Anatomy",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
+   "colleges": 22,
+   "desc": [
+    [
+     "Kinesiology",
+     0.2433
+    ],
+    [
+     "Counseling",
+     0.239
+    ],
+    [
+     "Addiction Paraprofessional Training",
+     0.2038
+    ]
+   ],
+   "desc_kind": "desc_agrees_thin",
+   "discipline": "Kinesiology",
+   "id": "KINE M1806",
+   "members": 22,
+   "title": "Stress Management",
+   "verdict": "unsettled",
+   "votes": {
+    "Business": 1,
+    "Health": 6,
+    "Kinesiology": 5
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 7,
+   "desc": [
+    [
+     "Kinesiology",
+     0.2573
+    ],
+    [
+     "Counseling",
+     0.1968
+    ],
+    [
+     "Gerontology",
+     0.1717
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1847",
+   "members": 7,
+   "title": "Sports Psychology",
+   "verdict": "unsettled",
+   "votes": {
+    "Health": 1,
+    "Kinesiology": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 6,
+   "desc": [
+    [
+     "Kinesiology",
+     0.1927
+    ],
+    [
+     "Counseling",
+     0.1338
+    ],
+    [
+     "Health Care Ancillaries",
+     0.1282
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1765",
+   "members": 6,
+   "title": "Introduction to Sports Medicine",
+   "verdict": "unsettled",
+   "votes": {
+    "Health": 1,
+    "Kinesiology": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 3,
+   "desc": [
+    [
+     "Kinesiology",
+     0.1957
+    ],
+    [
+     "Gerontology",
+     0.104
+    ],
+    [
+     "Counseling",
+     0.0886
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1524",
+   "members": 3,
+   "title": "Introduction to Sport and Exercise Psychology",
+   "verdict": "unsettled",
+   "votes": {
+    "Health": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Kinesiology",
+     0.3258
+    ],
+    [
+     "Learning Assistance or Learning Skills",
+     0.0896
+    ],
+    [
+     "Equine Science",
+     0.0855
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1568",
+   "members": 2,
+   "title": "Low Impact Fitness",
+   "verdict": "unsettled",
+   "votes": {
+    "Kinesiology": 1,
+    "Physical Education Disabled Students": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Kinesiology",
+     0.1645
+    ],
+    [
+     "Addiction Paraprofessional Training",
+     0.1624
+    ],
+    [
+     "Nutritional Science/Dietetics",
+     0.1568
+    ]
+   ],
+   "desc_kind": "desc_agrees_thin",
+   "discipline": "Kinesiology",
+   "id": "KINE M1656",
+   "members": 2,
+   "title": "Healthful Living",
+   "verdict": "unsettled",
+   "votes": {
+    "Health": 2
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 1,
+   "desc": [
+    [
+     "Kinesiology",
+     0.1647
+    ],
+    [
+     "Art",
+     0.0996
+    ],
+    [
+     "Equine Science",
+     0.0776
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M9020",
+   "members": 2,
+   "title": "Balance & Yoga for the Mature Adult",
+   "verdict": "unsettled",
+   "votes": {
+    "Health": 1,
+    "Kinesiology": 1
+   },
+   "why": [
+    "top"
+   ]
+  }
+ ],
+ "counts": {
+  "description": 8,
+  "top_only": 7
+ },
+ "discipline": "Kinesiology",
+ "schema": 1
+}

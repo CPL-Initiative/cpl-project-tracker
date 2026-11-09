@@ -33,6 +33,11 @@ Curated cards are left out (reviewed_at, a curation-overlay discipline or merge_
 (fall 2026), is not filled yet. Read-only: nothing in the catalog changes, and lifting a card's score is Sam's call.
 
 Writes kb/ccr_seed_recheck_dryrun/{plan.json, report.md}; `--discipline NAME` adds that discipline's worklist.
+
+`--doubt` also writes kb/ccr_doubt.json, the Courses List's *Discipline in doubt* job (Sam, 2026-11-09: "make a built
+in way for me to rule on them so our procedures can be adjusted to handle similar edge cases"): the active discipline's
+cards (kb/ccr_procedures.json `active_discipline`, or `--discipline`) where the description points elsewhere (the
+`for_a_curator` verdict) or TOP alone does. A card a person has ruled on is curated, so the next run leaves it out.
 """
 import argparse
 import json
@@ -104,10 +109,51 @@ def combine(top_kind, desc_kind):
     return "unsettled"
 
 
+def doubt_cards(discipline, rows):
+    """The cards a person rules on, most colleges first: the description points elsewhere (for_a_curator), or TOP
+    alone does while the description does not settle the card (Sam's TOP ruling of 2026-11-04 keeps TOP last in line,
+    so these read as TOP's word only)."""
+    cards = []
+    for kind in ("top_agrees", "top_differs", "no_top"):
+        for r in rows.get(kind, []):
+            verdict = combine(kind, r.get("desc_kind", "no_desc"))
+            why = []
+            if verdict == "for_a_curator" and str(r.get("desc_kind", "")).startswith("desc_differs"):
+                why.append("description")
+            if kind == "top_differs":
+                why.append("top")
+            if verdict != "for_a_curator" and kind != "top_differs":
+                continue
+            cards.append({"id": r["id"], "title": r.get("title"), "discipline": discipline, "colleges": r.get("colleges"),
+                          "members": r.get("members"), "verdict": verdict, "why": why,
+                          "desc": [[d, round(float(x), 4)] for d, x in (r.get("desc") or [])[:3]],
+                          "desc_kind": r.get("desc_kind"), "votes": dict(sorted((r.get("votes") or {}).items()))})
+    cards.sort(key=lambda c: (0 if "description" in c["why"] else 1, -(c["colleges"] or 0), c["id"]))
+    return cards
+
+
+def write_doubt(discipline, rows, generated_at=None):
+    cards = doubt_cards(discipline, rows)
+    doc = {"_about": "The Courses List's Discipline in doubt job (#coci-lookup/list/doubt), written by "
+                     "kb/_ccr_seed_recheck_dryrun.py --doubt. Each card's description points to another discipline, or "
+                     "TOP alone does. A person rules on each in the List's side panel and says why; a reason marked for "
+                     "similar cards is a proposed procedure (kb/ccr_procedures.json). Read-only: the ruling is the write.",
+           "schema": 1, "discipline": discipline, "cards": cards,
+           "counts": {"description": sum(1 for c in cards if "description" in c["why"]),
+                      "top_only": sum(1 for c in cards if c["why"] == ["top"])}}
+    with open(os.path.join(HERE, "ccr_doubt.json"), "w", encoding="utf-8") as f:
+        json.dump(doc, f, indent=1, sort_keys=True, ensure_ascii=False)
+        f.write("\n")
+    return doc
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--discipline", help="also write this discipline's worklist")
+    ap.add_argument("--doubt", action="store_true", help="also write kb/ccr_doubt.json for the active discipline")
     args = ap.parse_args()
+    if args.doubt and not args.discipline:
+        args.discipline = load("ccr_procedures.json").get("active_discipline")
     sys.path.insert(0, HERE)
     from _alias_canon import alternate_to_canonical, resolve_target
     rev = alternate_to_canonical()
@@ -182,6 +228,8 @@ def main():
                                                        ", ".join("%s %d" % kv for kv in r["votes"].items())))
     with open(os.path.join(OUT, "report.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
+    if args.doubt:
+        write_doubt(args.discipline, out.get(args.discipline) or {}, plan.get("_generated_at"))
     print("seed re-check dry run:", tot)
     return 0
 

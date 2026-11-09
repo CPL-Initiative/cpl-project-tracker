@@ -564,6 +564,14 @@ jobs:
       # The Commons tab's figures (Sam, 2026-10-18: "Build it as a tab now"): every common
       # reference's complete pair, known issues, settled procedures and machine stamp, read
       # from the committed files the steps above rebuilt. kb/status/commons.json; commons.js.
+      # The Courses List's Discipline in doubt job (Sam, 2026-11-09): the active discipline's cards the
+      # two-signal re-check could not settle, from the curation synced above, so a ruled card leaves.
+      # The run's dry-run plan and report stay as committed; only kb/ccr_doubt.json is kept.
+      - name: Discipline in doubt (the Courses List's job)
+        run: |
+          python3 kb/_ccr_seed_recheck_dryrun.py --doubt || echo "::warning title=Discipline in doubt not rebuilt::kb/_ccr_seed_recheck_dryrun.py --doubt failed; the Courses List reads the previous kb/ccr_doubt.json. Check the step log."
+          git checkout -- kb/ccr_seed_recheck_dryrun/ 2>/dev/null || true
+
       - name: Build the Commons status
         run: python3 kb/_build_commons_status.py --quiet || echo "::warning title=Commons status not rebuilt::kb/_build_commons_status.py failed; the Commons tab reads the previous file until the next run. Check the step log."
 
@@ -679,6 +687,7 @@ jobs:
           git add kb/projects_snapshot.json 2>/dev/null || true
           # The Commons tab's figures (the step before the copy): rebuilt every run.
           git add kb/status/commons.json 2>/dev/null || true
+          git add kb/ccr_doubt.json 2>/dev/null || true
           git add kb/status/program-requirements-checked.json 2>/dev/null || true
           # The Common Subjects Reference's daily scan (the step before the Commons build).
           git add kb/csr_out/latest.json 2>/dev/null || true
