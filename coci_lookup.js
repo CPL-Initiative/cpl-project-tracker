@@ -372,16 +372,21 @@
   var RULE_PREFIX = "_CCR_PROCEDURE_REQUEST::", RULE_FIELD = "ccr_procedure_request";
   function jobReady(f) { return f === "stray" ? !!JOBS.strays : f === "doubt" ? !!JOBS.doubt : !!JOBS.by; }
   function jobError(f) { return f === "stray" ? JOBS.strayError : f === "doubt" ? JOBS.doubtError : JOBS.error; }
+  /* COBIx on #2948: a ruling names who made it only to a signed-in reviewer, read with their token; signed out, the
+     read asks for no email and the card says "by a reviewer". */
+  // A sign-in or sign-out while the job is open reads the rulings again, so who ruled shows or hides at once.
+  window.addEventListener("cpl-session-changed", function () { if (JOBS.doubt) loadRulings().then(ccRedraw); });
   function loadRulings() {
-    return fetch(REST + "/kb_curation?select=course_id,value,reviewer_email,reviewed_at&field=eq." + RULE_FIELD +
+    var sess = ccSession(), token = sess && sess.access_token;
+    return fetch(REST + "/kb_curation?select=course_id,value,reviewed_at" + (token ? ",reviewer_email" : "") + "&field=eq." + RULE_FIELD +
       "&course_id=like." + encodeURIComponent(RULE_PREFIX) + "%25&order=course_id.asc",
-      { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Range-Unit": "items", Range: "0-999" } })
+      { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + (token || SUPABASE_ANON), "Range-Unit": "items", Range: "0-999" } })
       .then(function (res) { return res.ok ? res.json() : []; })
       .then(function (rows) {
         var by = {};
         (rows || []).forEach(function (x) {
           var v; try { v = JSON.parse(x.value); } catch (e) { return; }
-          if (v && v.mid) by[v.mid] = { v: v, who: x.reviewer_email, at: String(x.reviewed_at || "").slice(0, 10) };
+          if (v && v.mid) by[v.mid] = { v: v, who: token ? x.reviewer_email : null, at: String(x.reviewed_at || "").slice(0, 10) };
         });
         JOBS.rulings = by;
       }, function () { JOBS.rulings = {}; });
@@ -480,11 +485,11 @@
     out.push(el("p", { "class": "cplcoci-meta ccl-doubt-why" }, [lines.join(" ")]));
     if (R) {
       var did = R.v.ruling === "keep" ? "Kept " + (R.v.discipline_was || c.disc) : R.v.ruling === "move" ? "Moved to " + R.v.to : "Marked not sure";
-      out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [did + (R.who ? " by " + R.who : "") + (R.at ? " on " + R.at : "") + "." +
+      out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [did + (R.who && sess ? " by " + R.who : " by a reviewer") + (R.at ? " on " + R.at : "") + "." +
         (R.v.words ? " Why: " + R.v.words : "") + (R.v.similar ? " Marked for similar cards." : "")]));
     }
     if (!sess) return out;
-    var F = CC.rule[mid] = CC.rule[mid] || { choice: "", words: "", similar: true };
+    var F = CC.rule[mid] = CC.rule[mid] || { choice: "", words: "", similar: false };
     var sel = el("select", { id: "ccl-rule-choice", "class": "ccl-cc-in", "aria-label": "Your ruling on " + mid });
     var opts = [["", R ? "Rule again" : "Choose a ruling"], ["keep", "Keep " + (c.disc || card.discipline)]];
     var seen = {}; seen[c.disc || card.discipline] = 1;
@@ -977,6 +982,8 @@
   function listSpec() {
     var spec = {
       prefix: "ccl-", frPrefix: "ccl-fr-",
+      // The panel's trail (COBIx on #2948; #2934's pattern): CPL Commons / Courses / the open job / the course.
+      trail: { home: [["CPL Commons", "#commons"]], name: "Courses" },
       noun: { many: "local courses", region: "Every local course in COCI, banded by M-ID", keyHeader: "COCI row",
         file: "coci-courses-list", placeholder: "Find by title, college, code or M-ID",
         findLabel: "Find in the list" },

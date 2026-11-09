@@ -9,7 +9,10 @@
 //   (5) ⭐ a ruling writes its reason first (a new ccr_procedure_request key per save, with the signals), then the
 //       discipline through the List's one write: move sets it, keep confirms it, not sure writes nothing more;
 //   (6) a reason marked for similar cards must say why; a refused write says so and writes no discipline;
-//   (7) a ruling read back shows on the card and in the note; the file failing says so.
+//   (7) a ruling read back shows on the card and in the note; the file failing says so;
+//   (8) COBIx on #2948: signed out, the rulings read asks for no email and the card says "by a reviewer"; signed in,
+//       it reads with the reviewer's token and names who ruled; "Use this reason for similar cards" starts unticked;
+//       the panel's trail reads CPL Commons / Courses / the job / the course, and the job's word returns to the List.
 // Run from repo root: `npm test` (or `node tests/coci_list_doubt.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -73,7 +76,7 @@ function tab(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div class="main-container"><div id="coci-lookup-root">Loading…</div></div></body></html>',
     { url: "https://example.org/" + (opts.hash || "#coci-lookup/list/doubt"), runScripts: "dangerously" });
-  const w = dom.window, writes = [];
+  const w = dom.window, writes = [], reads = [];
   w.CPL_COCI_LOOKUP = JSON.parse(JSON.stringify(LOOKUP));
   const ok = (v) => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(v))) });
   w.fetch = function (url, init) {
@@ -84,7 +87,10 @@ function tab(opts) {
       const refused = opts.refuse && body && body.field === "ccr_procedure_request";
       return Promise.resolve({ ok: !refused, status: refused ? 403 : 201, json: () => Promise.resolve(null) });
     }
-    if (/kb_curation/.test(url) && /ccr_procedure_request/.test(url)) return ok(opts.ruled || []);
+    if (/kb_curation/.test(url) && /ccr_procedure_request/.test(url)) {
+      reads.push({ url: url, auth: (init.headers || {}).Authorization || "" });
+      return ok((opts.ruled || []).map((x) => { const y = Object.assign({}, x); if (!/reviewer_email/.test(url)) delete y.reviewer_email; return y; }));
+    }
     if (/kb_curation/.test(url)) return ok([]);
     if (/ccr_doubt\.json/.test(url)) return opts.doubtFail ? Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) }) : ok(DOUBT);
     if (/row_audit\/latest\.json/.test(url)) return ok({ rows: [] });
@@ -102,7 +108,7 @@ function tab(opts) {
   w.CPL_REVIEWER_SIGNIN = { mountInto: function (m) { m.appendChild(w.document.createElement("form")); } };
   const e = w.document.createElement("script"); e.textContent = SRC; w.document.body.appendChild(e);
   w.CPL_COCI_LOOKUP_TAB.activate();
-  return { w, d: w.document, writes };
+  return { w, d: w.document, writes, reads };
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const P = "ccl-";
@@ -203,7 +209,23 @@ function rule(t, value, words, similar) {
     check("(7) the note counts the rulings read back", /1 ruled so far, 1 with a reason marked for similar cards/.test(txt(t.d.body)));
     await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
     check("(7) ⭐ a ruling read back shows on the card",
-      /Kept Construction by sam@rccd\.edu on 2026-11-09\. Why: Shop tools are taught for the trade\. Marked for similar cards\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 500));
+      /Kept Construction by a reviewer on 2026-11-09\. Why: Shop tools are taught for the trade\. Marked for similar cards\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 500));
+    check("(8) ⭐ signed out, the rulings read asks for no email and the card names none",
+      t.reads.length >= 1 && t.reads.every((r) => !/reviewer_email/.test(r.url)) && !/sam@rccd\.edu/.test(txt(t.d.body)), JSON.stringify(t.reads));
+    const trail = panel(t.d).querySelector("nav[aria-label='Trail']");
+    check("(8) the panel's trail: CPL Commons / Courses / the job / the course",
+      !!trail && /^CPL Commons \/ Courses \/ Discipline in doubt \/ /.test(txt(trail)) && trail.querySelector("a[href='#commons']"), trail && txt(trail));
+  }
+  {
+    const t = tab({ ruled: RULED, signedIn: true });
+    await until(() => /1 ruled so far/.test(txt(t.d.body)));
+    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    check("(8) signed in, the read carries the reviewer's token and the card names who ruled",
+      t.reads.some((r) => /reviewer_email/.test(r.url) && r.auth === "Bearer tok.en.x") && /Kept Construction by sam@rccd\.edu on 2026-11-09/.test(txt(panel(t.d))), JSON.stringify(t.reads));
+    t.w.dispatchEvent(new t.w.Event("cpl-session-changed"));
+    await until(() => t.reads.length >= 2);
+    check("(8) a sign-in change reads the rulings again", t.reads.length >= 2);
+    check("(8) Use this reason for similar cards starts unticked", t.d.getElementById("ccl-rule-similar") && t.d.getElementById("ccl-rule-similar").checked === false);
   }
   {
     const t = tab({ doubtFail: true });
