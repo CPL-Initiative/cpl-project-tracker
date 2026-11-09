@@ -3907,13 +3907,16 @@
           var provLabel = r.dsrc === "subject_map" ? "⚙ subj-code"
             : r.dsrc === "title_keyword" ? "⚙ title-kw"
             : r.dsrc === "description" ? "⚙ descr"
+            : r.dsrc === "description_and_top" ? "⚙ descr+TOP"
             : r.dsrc === "top_code" ? "⚙ TOP"
             : r.dsrc === "top_division" ? "⚙ TOP-div" : "⚙ " + r.dsrc;
-          var provCls = (r.dsrc === "subject_map") ? "ok" : "warn";
+          var provCls = (r.dsrc === "subject_map" || r.dsrc === "description_and_top") ? "ok" : "warn";
           var provTip = (r.dsrc === "subject_map"
             ? "discipline inferred from the subject-code map"
             : r.dsrc === "title_keyword"
               ? "discipline inferred from a title keyword — lower confidence, please verify"
+              : r.dsrc === "description_and_top"
+                ? "seed discipline confirmed by the course description, with its TOP code agreeing"
               : r.dsrc === "description"
                 ? "discipline inferred from the course description — lowest confidence, please verify"
                 : r.dsrc === "top_code"

@@ -293,7 +293,9 @@ def _classify_mid_discipline(rec):
     src = rec.get("discipline_source")
     if not v:
         return {"state": "missing", "value": None}
-    if src == "subject_map":
+    # description_and_top: the seed confirmed by its catalog description (clear margin) with TOP's plurality
+    # agreeing, on Sam's ruling per discipline (kb/_ccr_seed_confirm_apply.py; Open Asks Sheet 174 card 1).
+    if src in ("subject_map", "description_and_top"):
         return {"state": "inferred-high", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence")}
     if src in ("title_keyword", "description", "top_code", "top_division"):

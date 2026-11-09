@@ -210,6 +210,9 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
+      - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
+        run: python3 tests/ccr_seed_confirm_test.py
       - name: Supabase migrate runner (committed file, name, receipt)
         run: python3 tests/supabase_migrate_test.py
       # The Program records view's one write (Sheet 51 card 1, S347): the session's
