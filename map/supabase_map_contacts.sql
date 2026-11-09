@@ -110,12 +110,17 @@ create policy mcn_update on public.map_college_nudges for update
 -- name: the published mirror (map_college_contacts_pub) has no primary contact.
 -- A person counts by name OR email, as the coordinator always has; the landing
 -- page counts as an https URL (122 of 122 on file were https, 2026-09-29).
+-- A SECOND WAY TO MEET IT (Sam, in session 2026-11-09, S621): "if there is a cpl coordinator role listed in map
+-- users AND a cpl assistant email in map users, we can count them as satisfying the CPL coordinator condition
+-- without having to do any manual checks." has_cpl_assistant answers the second half as a boolean, never the
+-- address; the tab meets the condition on the three parts OR on coordinator plus assistant. Measured 2026-11-09:
+-- 59 of 124 meet the three parts, 45 have coordinator plus assistant, 2 meet it only the new way.
 -- A return type cannot change under CREATE OR REPLACE, so the function is
 -- dropped and recreated; the grant below restores what it held.
 drop function if exists public.map_coordinator_summary();
 create function public.map_coordinator_summary()
 returns table (college text, has_coordinator boolean, has_primary_contact boolean,
-               has_landing_page boolean, last_synced timestamptz)
+               has_landing_page boolean, last_synced timestamptz, has_cpl_assistant boolean)
 language sql stable security definer set search_path = public as $$
   select college,
          (nullif(trim(coalesce(cpl_coordinator, '')), '') is not null
@@ -123,7 +128,8 @@ language sql stable security definer set search_path = public as $$
          (nullif(trim(coalesce(primary_contact, '')), '') is not null
           or nullif(trim(coalesce(primary_contact_email, '')), '') is not null) as has_primary_contact,
          (coalesce(landing_page_url, '') ~* '^https://[^[:space:]]+$') as has_landing_page,
-         synced_at as last_synced
+         synced_at as last_synced,
+         (nullif(trim(coalesce(cpl_assistant_email, '')), '') is not null) as has_cpl_assistant
   from public.map_college_contacts;
 $$;
 grant execute on function public.map_coordinator_summary() to anon, authenticated, service_role;
