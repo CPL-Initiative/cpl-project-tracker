@@ -320,6 +320,26 @@ def _():
     assert len(pharm["outcomes"]) == 8 and not any("Course Objectives" in x for x in pharm["outcomes"]), pharm
 
 
+CUESTA = os.path.join(ROOT, "kb", "course_outcomes", "trial_42573515439")  # All Fields outline, S616
+
+
+@check("Cuesta's All Fields outline: the SLO block reads though another section holds a data list, and only the labeled lines are objectives")
+def _():
+    pages = pages_in(CUESTA)
+    assert len(pages) == 12, len(pages)
+    for name, (page_html, text) in pages.items():
+        assert reader.groups_from_html(page_html) is None, name
+        got = reader.parse_page(page_html, text)
+        lines = text.split("\n")
+        start = lines.index("Student Learning Outcomes")
+        stop = next(i for i in range(start + 1, len(lines)) if lines[i].strip() == "Course Content")
+        printed = [x.strip() for x in lines[start + 1:stop] if x.strip()]
+        assert got["outcomes"] == printed, (name, len(got["outcomes"]), len(printed))
+        labeled = [x for x in lines if x.startswith("Objective ")]
+        assert len(got["objectives"]) == len(labeled), (name, len(got["objectives"]), len(labeled))
+        assert not any(x in ("Written/Typed Homework", "Term or Other Papers") for x in got["objectives"]), name
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

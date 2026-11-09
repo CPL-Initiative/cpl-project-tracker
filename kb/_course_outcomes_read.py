@@ -230,9 +230,11 @@ def groups_from_html(page_html: str) -> list[dict] | None:
         if section is None:
             continue
         top = next(iter(section.find(lambda n: _has_class(n, "iq-data-list"))), None)
-        if top is None and not any(True for _ in tree.root.find(lambda n: _has_class(n, "iq-data-list"))):
+        if top is None:
             # Not a grouped report: the heading's section holds the heading alone and the outcomes follow
-            # in plain fields (Santa Ana's report 267, trial 41436124244). The text reader takes over.
+            # in plain fields (Santa Ana's report 267, trial 41436124244). The text reader takes over, also
+            # when another section of the page holds a data list (Cuesta's All Fields outline, trial
+            # 42573515439: 12 pages printed SLOs and all 12 read as none, S616).
             return None
         groups = []
         for entry in kids(top, "iq-list-entry") if top is not None else []:
@@ -302,6 +304,8 @@ def outcomes_of(text: str) -> dict:
 OBJ_TITLE = re.compile(r"^[ \t]*(course|student learning|learning|performance)? ?objectives[ \t]*:?[ \t]*$", re.I)
 # A field label a report prints before each item, never an objective itself.
 OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
+# The same label printed inline, before the objective on its own line (Cuesta).
+OBJ_INLINE = re.compile(r"^objective\s+(?=\S)", re.I)
 # Section headings the outcomes' STOP list does not name, where the objectives end: SDCCD's outline report goes on
 # to "Section II" and "1. COURSE OUTLINE AND SCOPE:", its All Fields report to "Disciplines" and "Minimum
 # Qualification".
@@ -335,6 +339,11 @@ def objectives_of(text: str) -> dict:
                 continue
             items.append(MARKER.sub("", s, count=1).strip())
         items = [x for x in items if x]
+        inline = [OBJ_INLINE.sub("", x, count=1).strip() for x in items if OBJ_INLINE.match(x)]
+        if inline:
+            # Cuesta's All Fields outline prints each objective as "Objective <text>" with its assessment
+            # methods and content lines between (trial 42573515439, S616): the labeled lines are the objectives.
+            items = [x for x in inline if x]
         if items:
             return {"objectives": items, "objectives_heading": line.strip().rstrip(":").strip(),
                     "objectives_lead": lead, "objectives_fingerprint": fingerprint(items)}

@@ -1,0 +1,181 @@
+Course Outline
+ENGR 201 - PLANE SURVEYING
+Basic Course Information
+Course Number:
+ENGR 201
+Effective: Fall 2019
+Last Reviewed: 12-07-18
+Course Title: PLANE SURVEYING
+Department: Engineering
+Division: Earth, Engineering, and Physical Sciences
+Total Student Hours and Credit
+ 	Hours/Week	Hours/Term
+Lecture Hours - in class	2.00	36.00
+Lecture Hours - out of class	4.00	72.00
+Lecture Units of Credit	2.00
+Lab Hours - in class	3.00	54.00
+Lab Hours - out of class	0.00	0.00
+Lab Units of Credit	1.00
+Activity Hours - in class	0.00	0.00
+Activity Hours - out of class	0.00	0.00
+Activity Units of Credit	0.00
+Work Experience Hours	0.00	0.00
+Work Experience Units of Credit	0.00
+Hours From Above Offered as TBA	0.00
+Total Student Hours per term	162.00
+Hours per unit Divisor	54
+Units of Credit	3.00
+Catalog Description Introduces the principles and practices of surveying, including the use of the engineer's tape, level, transit, and total station. This equipment will be used to perform computations for horizontal and vertical distances, profiles, azimuths and bearings, traverse closures, topographic mapping, earthwork and land grading, and horizontal and vertical curves. Introduces maps and land descriptions.
+Schedule Description Introduces the principles and practices of surveying, including the use of the engineer's tape, level, transit, and total station. Prerequisite: MATH 229 or MATH 231. Advisory: ENGR 226. Transfer: CSU; UC.
+Prerequisites: MATH 231 or MATH 229
+Advisories: ENGR 226
+Minimum Qualifications Discipline Designation MQDD:
+Engineering OR Engineering Technology OR Engineering Support
+Degree Applicability:
+Credit - Degree Applicable
+Methods of Instruction:
+Lab, Lecture, Distance Education, Lecture/Lab
+Grading Method(s):
+Letter Grade or P/NP
+Course Cap: 20
+Face-to-Face Modality Limit:
+20
+DE Modality Limit:
+20
+Student Learning Outcomes
+Measure and analyze the different types of distances measurements: rectilinear, horizontal, vertical, and sloped
+Determine elevations of points using differential leveling data
+Conduct closed traverse computations, as well as correcting misclosures
+Create and analyze highway, street, and building surveys
+Create various types of survey drawings using both hand and computer methods.
+Create and analyze horizontal and vertical curves
+Course Content
+Objectives:
+Objective Record field notes in a clear, precise, and neat manner.
+Lab Reports
+Objective Measure horizontal and slope distances accurately with an engineer's tape; calculate and determine the tape correction due to changes in tension, changes in temperature, sag, and incorrect horizontal and vertical alignment; explain random errors.
+Written/Typed Homework
+Field Work
+Quizzes/Exams
+Lab Reports
+Objective Measure differences in elevation by using a level and the leveling rod, and if necessary be able to correct the error involved in the process.
+Written/Typed Homework
+Field Work
+Quizzes/Exams
+Lab Reports
+Objective Demonstrate an understanding of the principles, operations, and adjustments of the transit; use the transit in the field to measure and lay off vertical and horizontal angles and extend lines and other field operations.
+Written/Typed Homework
+Field Work
+Quizzes/Exams
+Lab Reports
+Objective Run and adjust a traverse and calculate the area of a traverse.
+Written/Typed Homework
+Field Work
+Quizzes/Exams
+Lab Reports
+Objective Measure horizontal and vertical distances by means of a total station.
+Written/Typed Homework
+Group Work
+Quizzes/Exams
+Lab Reports
+Objective Develop a topographic map.
+Written/Typed Homework
+Field Work
+Group Work
+Quizzes/Exams
+Lab Reports
+Objective Perform calculations involving earthwork, land grading, and horizontal and vertical curves.
+Written/Typed Homework
+Field Work
+Group Work
+Quizzes/Exams
+Lab Reports
+Topics & Scope:
+Standardization and Distance Measurement:
+a) Horizontal distances
+b) Sloped distances
+c) Vertical distances
+d) Corrections to measurements
+(Obj 2, 3, 4, 5, 6)
+Differential Leveling
+a) Tools used to collect vertical measurements
+b) Correct measurements
+c) Preparing field notes
+d) Field techniques
+(Obj 1, 3, 6, 7)
+Layouts:
+a) Stake out corners of a building
+b) Locate a trench/ foundation: length, width, and depth
+c) Establish controls for grade
+(Obj 1, 2, 3, 4, 6)
+Azimuths and Bearings:
+a) How to measure
+b) How to calculate
+c) Corrections for errors
+d) Field notes
+(Obj 1, 5, 6, 8)
+Traverse:
+a) Field notes
+b) How to conduct a traverse
+c) Error correction and reduction
+d) Calculations in determining area and length
+e) Control points
+(Obj 1, 2, 4, 5, 6, 7)
+Maps and Land Description:
+a) Symbols and notations
+b) Computer methods
+c) Hand methods
+d) GIS data bases
+(Obj 7)
+Latitudes and Departures:
+a) Field notes
+b) Correction methods
+c) Running a survey
+(Obj 4, 5)
+Topographic Mapping:
+a) Symbols and notations
+b) Computer methods
+c) Hand methods
+d) GIS data base
+(Obj 2, 3, 7)
+Earthwork and Land Grading:
+a) Cut and fill calculations
+b) Reading and interpreting a topographic map
+c) Finish grade
+d) Rough grade
+(Obj 2, 3, 4, 8)
+Horizontal and Vertical Curves:
+a) Types of curves
+b) Calculations: length, angle, cord, sag
+c) Field techniques to establish each
+(Obj 8)
+Assignments:
+Critical Thinking Assignments (minimum 2 examples):
+Identify cause-effect relationships related to survey data.
+(Obj 5)
+Critical Thinking Assignments (minimum 2 examples):
+Given a set of survey data, recognize errors.
+(Obj 3)
+Independent Work (minimum 2 examples):
+Create a topographic map
+(Obj 7)
+Independent Work (minimum 2 examples):
+Complete homework problems from the textbook.
+(Obj 2)
+Methods of Evaluation:
+Written/Typed Homework
+Field Work
+Group Work
+Quizzes/Exams
+Lab Reports
+Texts, Reading, and Materials:
+Textbooks:
+Kavanagh, Barry Surveying with Construction ApplicationsPrentice Hall, Upper Saddle River, (2015).(Updated text for CoR in Curricunet).
+
+General Education:
+Cuesta General Education
+
+Transfer General Education
+
+UC Transfer Course
+CSU Transfer Course
