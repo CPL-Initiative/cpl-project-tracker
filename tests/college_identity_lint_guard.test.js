@@ -124,6 +124,20 @@ block("2. the builder refuses to empty itself", () => {
       "this is what stops the tab reporting a clean bill of health");
     restore();
 
+    // The daily check (kb/_identity_daily_check.py) hands the builder a list of bare names, never records. It
+    // crashed on the first one (TypeError at o["name"]) and the workflow step stayed green (found 2026-11-09).
+    const bare = path.join(scratch, "observed_bare.json");
+    const records = JSON.parse(fs.readFileSync(OBS, "utf8")).names;
+    fs.writeFileSync(bare, JSON.stringify({ names: records.map((o) => o.name).sort() }));
+    const setOf = () => { const t = fs.readFileSync("college_identity_data.js", "utf8");
+      return JSON.parse(t.slice(t.indexOf("{"), t.lastIndexOf("}") + 1)).findings.map((f) => f.name + "|" + f["class"]).sort().join("\n"); };
+    const wanted = setOf();
+    const asNames = run(["--observed-json", bare]);
+    check("(2) ⭐ a list of bare names builds too, as the daily check sends it", asNames.status === 0,
+      "exit=" + asNames.status + " stderr=" + String(asNames.stderr || "").slice(-200));
+    check("(2) …and finds the same set of (name, class) as the records do", asNames.status === 0 && wanted.length > 0 && setOf() === wanted);
+    restore();
+
     const good = run(["--observed-json", OBS]);
     check("(2) with the input it rebuilds cleanly", good.status === 0,
       "exit=" + good.status + " stderr=" + String(good.stderr || "").slice(0, 120));
