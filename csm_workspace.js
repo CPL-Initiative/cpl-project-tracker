@@ -697,7 +697,10 @@
         (c.counts ? ' <span class="why">' + esc(c.counts) + "</span>" : "") + "</span></li>";
     }).join("") + "</ul>";
     var nc = r.nc ? '<p class="ncline">Noncredit share: ' + (r.nc.standing ? "Noncredit CPL Lead attested" + (r.nc.fy ? " for " + esc(r.nc.fy) : "") + "."
-      : r.nc.waiting ? "Noncredit CPL Lead attestation waiting since " + esc(shortDate(r.nc.at) || "it was sent") + "." : "Noncredit CPL Lead not yet attested.") + "</p>" : "";
+      : r.nc.waiting ? "Noncredit CPL Lead attestation waiting since " + esc(shortDate(r.nc.at) || "it was sent") + "." : "Noncredit CPL Lead not yet attested.") +
+      // The role on the college's MAP landing page (Sam, 2026-11-09): it meets the lead condition alone.
+      (r.nc.lead ? " A Noncredit CPL Lead is on the college's MAP landing page, which meets the Noncredit CPL Lead condition."
+        : r.nc.leadNear ? " The MAP landing page lists a close title. Ask the college to use the Noncredit CPL Lead role." : "") + "</p>" : "";
     var who = "";
     if (S.reviewer && r.req) {
       var bits = [];

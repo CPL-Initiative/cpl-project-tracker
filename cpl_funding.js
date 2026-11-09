@@ -2347,14 +2347,21 @@
   // institution, the latest standing one). Until the attestation surface
   // loads, both read pending — the noncredit share is held, never advanced.
   function ncAttestOf(college) { return (ELIG.ncAttest && ELIG.ncAttest[college]) || null; }
+  function ncLeadInMap(college) { return !!(ELIG.ncLead && ELIG.ncLead[college]); }
+  // A title on the landing page that names noncredit and is not the role: it meets nothing; a CSM asks for the role.
+  function ncLeadNear(college) { return !ncLeadInMap(college) && !!(ELIG.ncLeadNear && ELIG.ncLeadNear[college]); }
   function ncCondList(college) {
     if (!ncOutcomesMode()) return [];
     var att = ncAttestOf(college), pending = !ELIG.ncAttestOk;
     var standing = ncAttestStanding(att);
     var list = [];
     if (ncCoordShown()) {
-      list.push({ kind: "nc_coord", met: standing && !!String(att.coordinator_name || "").trim(),
-        pending: pending, label: NC_COORD_REQ, auto: "nc" });
+      // TWO WAYS TO MEET IT (Sam, in session 2026-11-09): the attestation names the lead, or the Noncredit CPL Lead
+      // role is on the college's MAP landing page. The role meets this condition alone, read live and written
+      // nowhere; where a scenario shows the strike-team condition below, that still comes on the form.
+      var inMap = ncLeadInMap(college);
+      list.push({ kind: "nc_coord", met: inMap || (standing && !!String(att.coordinator_name || "").trim()),
+        pending: inMap ? false : pending, label: NC_COORD_REQ, auto: "nc", via: inMap ? "map" : "" });
     }
     if (ncTeamShown()) list.push({ kind: "nc_team", met: standing, pending: pending, label: NC_TEAM_REQ, auto: "nc" });
     return list;
@@ -5918,10 +5925,15 @@
   // (the part a college lacks). One path for the live fetch and the tests.
   function ingestCoord(coord, roster) {
     ELIG.coord = {}; ELIG.coordN = 0; ELIG.coordMissing = {};
+    ELIG.ncLead = {}; ELIG.ncLeadNear = {};
     coord.forEach(function (row) {
       // MAP carries Calbright as "Calbright College Credit" / "Non-Credit";
       // either one is the Calbright row's contact (Sam, 2026-09-22: 116).
       var f = roster[shortName(row.college)] || (/^calbright/i.test(String(row.college || "")) ? "Calbright" : null);
+      // The Noncredit CPL Lead role on the college's MAP landing page (Sam, 2026-11-09): a boolean, never a name.
+      // Read before the early return below, which skips a second row for an institution already met.
+      if (f && row.has_nc_cpl_lead === true) ELIG.ncLead[f] = true;
+      if (f && row.nc_lead_title_near === true) ELIG.ncLeadNear[f] = true;
       if (!f || ELIG.coord[f]) return;
       // THE FIRST CONDITION HAS THREE PARTS (Sam, 2026-09-29, sheet 4 card 1):
       // a coordinator, a primary CPL contact and the landing page configured.
@@ -6143,6 +6155,7 @@
       return { text: (row && row.status === "revoked" ? "Confirmation withdrawn" : "Confirmation not yet on file") + due };
     }
     if (r.kind === "nc_coord") {
+      if (r.via === "map") return { text: "Noncredit CPL Lead in MAP" };
       if (r.pending) return { text: "Noncredit CPL Lead status pending", pending: true };
       return { text: r.met ? "Noncredit CPL Lead published"
         : ncAttestPending(ncAttestOf(college)) ? "Noncredit CPL Lead: Awaiting CPL Initiative Confirmation" : "Noncredit CPL Lead not yet attested" };
@@ -6834,7 +6847,10 @@
       if (partShown() && !optinActive(c.college) && !optinPending(c.college)) missing.push("part");
       if (ncAttestShown(c)) {
         var att = ncAttestOf(c.college);
-        if (!ncAttestStanding(att) && !ncAttestPending(att)) missing.push("nc");
+        // Nothing to ask for when the noncredit conditions are already met another way (the Noncredit CPL Lead
+        // role in MAP, Sam 2026-11-09): the Nudge asks only a college that still owes a condition.
+        var owes = ncCondList(c.college).some(function (r) { return !r.met; });
+        if (!ncAttestStanding(att) && !ncAttestPending(att) && owes) missing.push("nc");
       }
       var d = declinedOf(c.college);
       return { key: c.college, name: dispName(c.college), aliases: [c.short, c.name].filter(Boolean), missing: missing,
@@ -6868,6 +6884,7 @@
         part: { status: row ? row.status || "" : "", waiting: optinPending(key), confirmed: !!ELIG.optin[key],
           at: row ? (row.requested_at || row.created_at || "") : "", confirmedAt: row ? row.confirmed_at || "" : "" },
         nc: ncOn ? { status: att ? att.status || "" : "", waiting: ncAttestPending(att), standing: ncAttestStanding(att),
+          lead: ncLeadInMap(key), leadNear: ncLeadNear(key),
           fy: att ? att.fiscal_year || "" : "", at: att ? (att.requested_at || att.created_at || "") : "",
           confirmedAt: att ? att.confirmed_at || "" : "" } : null,
         declined: d ? d.at : "", landing: k ? httpsUrl(k.url) || "" : "",
@@ -19669,6 +19686,8 @@
       ELIG.ncAttest = o.ncAttest || {};
       ELIG.ncAttestOk = !!(o.ncAttestOk || o.ncAttest);
       ELIG.ncAttestReview = o.ncAttestReview || [];
+      // The Noncredit CPL Lead role in MAP, by institution key (coordRows sets these through the ingest).
+      if (!o.coordRows) { ELIG.ncLead = o.ncLead || {}; ELIG.ncLeadNear = o.ncLeadNear || {}; }
       // Contacts as PostgREST returns them (the directory's rows or the
       // mirror's), through the same ingest the load uses.
       ELIG.contact = o.contacts ? ingestContacts(o.contacts, rosterByShortName()) : {};
