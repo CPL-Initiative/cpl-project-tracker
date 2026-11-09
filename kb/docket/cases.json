@@ -12,22 +12,47 @@
       "lane": "commons",
       "ref": "course",
       "decides": "Confirm the next five disciplines where the descriptions and TOP both agree?",
-      "size": {"n": 753, "unit": "courses"},
+      "size": {
+        "n": 753,
+        "unit": "courses"
+      },
       "evidence": [
         "You confirmed Kinesiology on Sheet 174, and its 627 courses now carry their discipline from the seed, confirmed by the catalog description with TOP agreeing. The discipline itself did not change, and one command takes the whole change back from its receipt.",
         "The same test confirms 753 courses in the next five disciplines: Music 250, Fire Technology 169, Mathematics 128, Child Development/Early Childhood Education 107 and English 99. Their courses for a curator (Music 75, Fire Technology 2, Mathematics 1, Child Development 6, English 24) keep their score until a person rules on them in the Discipline in doubt job.",
         "Each discipline gets its own receipt and reverses on its own. Counts measured with the apply script's dry run on 2026-11-09."
       ],
       "links": [
-        {"href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_recheck_dryrun/report.md", "text": "The seed re-check report"},
-        {"href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_confirm_out/2026-11-09/kinesiology.json", "text": "Kinesiology's receipt"},
-        {"href": "#coci-lookup/list/doubt", "text": "Discipline in doubt"}
+        {
+          "href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_recheck_dryrun/report.md",
+          "text": "The seed re-check report"
+        },
+        {
+          "href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_confirm_out/2026-11-09/kinesiology.json",
+          "text": "Kinesiology's receipt"
+        },
+        {
+          "href": "#coci-lookup/list/doubt",
+          "text": "Discipline in doubt"
+        }
       ],
       "choices": [
-        {"value": "five", "words": "Confirm the five", "recommended": true},
-        {"value": "all", "words": "Every discipline"},
-        {"value": "one", "words": "One at a time, Music first"},
-        {"value": "later", "words": "Later"}
+        {
+          "value": "five",
+          "words": "Confirm the five",
+          "recommended": true
+        },
+        {
+          "value": "all",
+          "words": "Every discipline"
+        },
+        {
+          "value": "one",
+          "words": "One at a time, Music first"
+        },
+        {
+          "value": "later",
+          "words": "Later"
+        }
       ],
       "plans": {
         "five": [
@@ -37,7 +62,9 @@
           "python3 kb/_ccr_seed_confirm_apply.py --discipline 'Child Development/Early Childhood Education' --expect 107 --apply",
           "python3 kb/_ccr_seed_confirm_apply.py --discipline English --expect 99 --apply"
         ],
-        "one": ["python3 kb/_ccr_seed_confirm_apply.py --discipline Music --expect 250 --apply"],
+        "one": [
+          "python3 kb/_ccr_seed_confirm_apply.py --discipline Music --expect 250 --apply"
+        ],
         "all": [],
         "later": []
       },
@@ -47,7 +74,20 @@
       },
       "no_reply": "The five disciplines' seed cards stay capped at 0.79; nothing in the catalog changes.",
       "sheet": "https://claude.ai/artifact/YWCQRMHZ7JoFZLBtnp1MmF",
-      "status": "open"
+      "status": "done",
+      "done": {
+        "choice": "five",
+        "by": "Sam, Open Asks Sheet 175 card 1 (2026-11-09)",
+        "at": "2026-11-09T16:05:00Z",
+        "receipt": [
+          "kb/ccr_seed_confirm_out/2026-11-09/music.json",
+          "kb/ccr_seed_confirm_out/2026-11-09/fire-technology.json",
+          "kb/ccr_seed_confirm_out/2026-11-09/mathematics.json",
+          "kb/ccr_seed_confirm_out/2026-11-09/child-development-early-childhood-education.json",
+          "kb/ccr_seed_confirm_out/2026-11-09/english.json"
+        ],
+        "run": "S621"
+      }
     }
   ]
 }

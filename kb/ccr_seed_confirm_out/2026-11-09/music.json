@@ -1,0 +1,1012 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Music",
+  "ruling": "Open Asks Sheet 175 card 1 (Sam, 2026-11-09 15:14Z: five)",
+  "run": "S621",
+  "date": "2026-11-09",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 250,
+  "before": {
+    "MUSI M1008": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1011": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1020": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1022": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1025": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1026": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1029": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1032": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1033": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1035": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1044": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1050": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1055": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1057": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1060": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1062": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1065": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1066": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1068": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1071": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1075": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1098": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1100": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1103": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1108": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1110": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1112": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1113": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1115": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1116": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1119": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1120": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1121": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1122": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1123": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1124": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1126": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1127": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1128": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1129": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1130": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1131": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1132": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1133": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1134": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1136": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1137": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1138": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1141": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1143": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1145": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1147": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1148": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1154": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1162": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1163": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1165": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1169": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1173": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1175": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1176": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1177": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1178": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1179": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1180": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1181": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1182": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1183": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1184": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1185": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1186": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1187": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1188": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1191": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1194": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1195": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1197": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1198": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1199": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1200": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1201": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1202": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1203": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1204": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1205": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1208": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1212": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1214": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1217": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1218": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1219": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1220": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1221": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1227": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1228": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1238": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1239": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1241": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1249": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1253": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1255": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1260": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1261": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1262": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1263": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1264": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1265": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1277": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1278": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1279": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1280": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1281": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1282": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1283": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1284": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1285": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1286": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1287": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1288": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1289": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1291": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1292": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1293": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1294": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1295": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1296": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1298": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1299": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1300": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1301": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1303": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1304": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1306": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1308": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1310": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1312": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1313": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1319": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1320": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1321": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1323": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1325": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1326": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1341": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1342": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1343": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1344": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1345": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1347": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1348": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1350": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1352": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1353": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1355": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1356": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1357": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1358": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1359": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1363": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1364": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1366": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1371": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1374": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1376": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1382": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1383": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1385": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1386": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1387": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1388": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1389": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1391": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1395": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1397": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1398": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1399": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1400": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1401": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1406": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1407": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1409": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1415": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1416": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1418": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1419": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1420": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1421": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1427": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1429": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1430": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1431": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1432": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1433": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1434": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1438": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1439": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1444": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1446": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1447": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1451": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1453": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1454": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1455": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1456": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1457": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1458": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1461": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1462": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1465": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1471": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1474": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1476": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1478": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1481": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1486": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1488": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1491": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1492": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1493": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1497": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1498": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1499": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1500": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1501": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1502": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1503": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1504": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1505": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1506": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1515": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1521": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1532": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1534": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1536": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1539": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1541": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1544": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M1548": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M9031": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M9034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M9037": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "MUSI M9039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

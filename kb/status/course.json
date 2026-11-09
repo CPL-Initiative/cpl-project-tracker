@@ -21,7 +21,12 @@
       "title": "Confirm the next five disciplines where the descriptions and TOP both agree?",
       "text": "Open Asks Sheet 176 card 1 (re-asked from Sheet 175): Music 250, Fire Technology 169, Mathematics 128, Child Development/ECE 107 and English 99 cards, by the same two signals that confirmed Kinesiology's 627. Answer five, all, one or later.",
       "no_reply": "The five disciplines' seed cards stay capped at 0.79; nothing in the catalog changes.",
-      "link": "https://claude.ai/artifact/YWCQRMHZ7JoFZLBtnp1MmF"
+      "link": "https://claude.ai/artifact/YWCQRMHZ7JoFZLBtnp1MmF",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-09",
+        "words": "Confirm the five (Sheet 175 card 1); applied S621, 753 cards"
+      }
     }
   ],
   "notes": {},
