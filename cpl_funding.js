@@ -1691,7 +1691,55 @@
   //
   // ⚠️ This did NOT narrow cpl_funding_participation's cfp_insert_self — the
   // college self-attestation path is public by design and is not a phrase gate.
-  function unlocked() { return !!reviewerSession(); }
+  // ── A DOOR SIGN-IN DOES THE REVIEW WORK AND READS THE MODEL (S622, 2026-11-09) ──
+  // The funding door (issue 2983) signs a teammate in who is not on the reviewer
+  // list. The database gives that sign-in the review work (is_funding_reviewer():
+  // confirmations, attestations, notes, nudges, the log) and refuses it the model
+  // (cpl_funding_config, cpl_funding_reports and the credit report still ask
+  // is_allowed_reviewer()). This tab drew every sign-in as a model editor, so a
+  // door sign-in saw "Changes save for everyone" over fields whose saves were all
+  // refused. Two gates now:
+  //   reviewing()  any fresh sign-in: the review work.
+  //   unlocked()   a sign-in that may change the model: reviewing, and on the list.
+  // modelClosed() is true only once the database has ANSWERED that this address is
+  // not on the list. Unasked, unanswered or failed, the model stays open as before,
+  // and RLS still decides: the answer shapes the screen, never the permission.
+  // With the model closed, this browser's own what-if is set aside too (syncActive):
+  // a CSM's acceptance email quotes the minimum conditions, and it must quote the
+  // published ones.
+  var LIST_KEY = "cpl_funding_on_reviewer_list";
+  var LIST = { email: "", ok: null, asking: "" };
+  function reviewing() { return !!reviewerSession(); }
+  function sessionEmail() { var x = reviewerSession(); return x && x.email ? String(x.email).toLowerCase() : ""; }
+  function listRecall(e) {
+    if (LIST.email === e) return;
+    LIST.email = e; LIST.ok = null;
+    try { var v = sessionStorage.getItem(LIST_KEY + ":" + e); if (v === "1" || v === "0") LIST.ok = v === "1"; } catch (err) { /* ignore */ }
+  }
+  function modelClosed() {
+    var e = sessionEmail();
+    if (!e) return false;
+    listRecall(e);
+    return LIST.ok === false;
+  }
+  function unlocked() { return reviewing() && !modelClosed(); }
+  function listAnswer(e, ok) {
+    var was = modelClosed();
+    LIST.email = e; LIST.ok = ok;
+    try { sessionStorage.setItem(LIST_KEY + ":" + e, ok ? "1" : "0"); } catch (err) { /* ignore */ }
+    if (modelClosed() !== was) { syncActive(); render(); }
+  }
+  // Ask once per address per page: is this sign-in on the reviewer list?
+  function askReviewerList() {
+    var e = sessionEmail();
+    if (!e || !remoteEnabled() || LIST.asking === e) return;
+    LIST.asking = e;
+    fetch(SUPABASE_URL + "/rest/v1/rpc/is_allowed_reviewer", { method: "POST", body: "{}",
+      headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }) })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function (v) { if ((v === true || v === false) && sessionEmail() === e) listAnswer(e, v); else LIST.asking = ""; })
+      .catch(function () { LIST.asking = ""; });   // no answer: the model stays as it was, and the next change asks again
+  }
   function activeOverride() { return unlocked() ? SHARED : SCENARIO; }
 
   function defaultProject() { return { label: DEFAULT_PROJECT_LABEL, area: "cpl", scenarios: { "Scenario 1": {} } }; }
@@ -1800,11 +1848,13 @@
     }
     var p = activeProjectObj();
     if (!isPlainObj(p.scenarios) || !Object.keys(p.scenarios).length) p.scenarios = { "Scenario 1": {} };
-    if (publicSurface() || !selectionStored) activeScenario = publishedScenario();
+    if (publicSurface() || modelClosed() || !selectionStored) activeScenario = publishedScenario();
     if (!p.scenarios[activeScenario]) activeScenario = scenarioNames()[0];
     if (!isPlainObj(p.scenarios[activeScenario])) p.scenarios[activeScenario] = {};
     SHARED = p.scenarios[activeScenario];
-    if (publicSurface()) { SCENARIO = {}; return; }
+    // A door sign-in reads the published model as it stands: this browser's what-if is set aside (kept in
+    // storage, never applied), so the conditions its emails quote are the published ones.
+    if (publicSurface() || modelClosed()) { SCENARIO = {}; return; }
     var key = activeProject + "::" + activeScenario;
     if (!isPlainObj(WHATIF[key])) WHATIF[key] = {};
     SCENARIO = WHATIF[key];
@@ -3711,6 +3761,8 @@
   // then re-render. For SHARED, roll back on an RLS/auth failure.
   function persistActive() {
     resetMemo();
+    // A closed model takes no edit: nothing is saved, here or for everyone, and the redraw restores the value.
+    if (modelClosed()) { syncActive(); render(); return; }
     if (unlocked()) saveShared();
     // savingState is set for the LOCKED path too, so authbarHtml() can
     // acknowledge the edit. Without it the branch above renders nothing and the
@@ -5501,6 +5553,24 @@
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
     "cplFundScenSel", "cplFundScenNew", "cplFundScenDel", "cplFundScenPublish",
     "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio"];
+  // The review work's own controls: a door sign-in keeps these (the database gives them to is_funding_reviewer()).
+  var REVIEW_ATTRS = ["data-note", "data-notesave", "data-declineset", "data-declineclear",
+    "data-optinconfirm", "data-optinrevoke", "data-optinremove",
+    "data-ncattestreject", "data-ncattestconfirm", "data-ncattestremove",
+    "data-optinaccept", "data-optindeny", "data-ncattestaccept", "data-ncattestdeny", "data-optinmail", "data-ncattestmail"];
+  // A closed model (a door sign-in): every model control leaves, by the same registry the public view sweeps, and
+  // the review controls stay. The emitters already skip most; the sweep is the backstop, as it is for the public view.
+  function stripModelAffordances(root) {
+    if (!root) return;
+    CURATE_ATTRS.forEach(function (a) {
+      if (REVIEW_ATTRS.indexOf(a) >= 0) return;
+      root.querySelectorAll("[" + a + "]").forEach(function (el) { el.remove(); });
+    });
+    CURATE_IDS.forEach(function (id) {
+      var el = root.querySelector("#" + id);
+      if (el) el.remove();
+    });
+  }
   function stripCurateAffordances(root) {
     if (!root) return;
     CURATE_ATTRS.forEach(function (a) {
@@ -5902,7 +5972,7 @@
       fetch(NC_ATTEST_REVIEW_RPC, { method: "POST", body: "{}", headers: rh })
         .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
       // Who sent each request (MAP role, landing page): a reviewer on the tab only.
-      (!publicMode() && unlocked()
+      (!publicMode() && reviewing()
         ? fetch(REQ_CONTEXT_RPC, { method: "POST", body: "{}", headers: rh })
             .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
         : Promise.resolve(null))
@@ -6751,7 +6821,7 @@
   // request already waiting counts as sent. The recipients and the email live in
   // cpl_funding_nudge.js, loaded on the press, because this module renders the
   // public page too and keeps every directory address out (the PII guard).
-  function nudgeShown() { return unlocked() && !publicMode() && !publicSurface(); }
+  function nudgeShown() { return reviewing() && !publicMode() && !publicSurface(); }
   function nudgeBtnHtml() {
     return nudgeShown() ? '<button type="button" class="cplfund-optbtn" id="cplFundNudge" title="List the institutions ' +
       'still missing a participation confirmation or a noncredit attestation, with one recipient each, for a mail merge">Nudge</button>' +
@@ -6783,7 +6853,7 @@
       landing: c.landing.map(function (l) { return { title: l.title || "", own: !l.college || ctxCollegeIs(l.college, key), college: l.college || "" }; }) };
   }
   function csmSnapshot() {
-    var reviewer = unlocked() && !publicMode();
+    var reviewer = reviewing() && !publicMode();
     var rows = oneRoster().map(function (c) {
       var key = c.college, a = collegeAlloc(c), row = ELIG.optinRow[key] || null, att = ncAttestOf(key);
       var ncOn = ncAttestShown(c), d = declinedOf(key), k = ELIG.contact[key] || null;
@@ -6847,7 +6917,7 @@
   // text Accept opens), filled from the request on file, or, for a college confirmed before the review lane kept its
   // request, from the person the workspace names. Answers { to, subject, text } or null.
   function csmAcceptMail(kind, key, who) {
-    if (!unlocked() || publicMode()) return null;
+    if (!reviewing() || publicMode()) return null;
     var rev = (kind === "nc" ? ncAttestReviewOf(key) : optinReviewOf(key)) || {}, w = who || {}, row = ELIG.optinRow[key] || {};
     var fill = { name: rev.name || rev.attestor_name || w.name || "", email: rev.email || rev.attestor_email || w.email || "",
       requested_at: rev.requested_at || row.requested_at || "", note: rev.note || "", fiscal_year: rev.fiscal_year || "" };
@@ -6855,7 +6925,7 @@
     return { to: m.to, subject: m.subject, text: m.text };
   }
   function csmAct(action, kind, key) {
-    if (!unlocked() || publicMode() || !CSM_ACT[action]) return false;
+    if (!reviewing() || publicMode() || !CSM_ACT[action]) return false;
     return CSM_ACT[action](kind, key);
   }
   // Open the funding tab on one institution: the table's search takes its name, read once, as a hand-off.
@@ -7049,7 +7119,7 @@
     // A waiting request offers Accept and Deny (Sam, 2026-10-27); a confirmed
     // one, Revoke.
     var ctl = "";
-    if (unlocked() && !publicMode() && row && row.status !== "revoked") {
+    if (reviewing() && !publicMode() && row && row.status !== "revoked") {
       var rev = optinReviewOf(college), k = esc(college);
       ctl = '<span class="cplfund-corow">' +
         (rev ? '<span class="dk">' + (row.status === "confirmed" ? "Confirmed for " : "Requested by ") +
@@ -7216,7 +7286,7 @@
   // attested, what the college reported, and Reject (or Re-confirm and Remove
   // once rejected). A signed-in reviewer only, never the public preview.
   function ncAttestCtlHtml(college) {
-    if (!unlocked() || publicMode()) return "";
+    if (!reviewing() || publicMode()) return "";
     var att = ncAttestOf(college);
     if (!att) return "";
     var rev = ncAttestReviewOf(college), bits = [];
@@ -7255,7 +7325,7 @@
   // in a curator's public preview (it is gated on unlocked() and publicMode(),
   // and the PII it shows only arrives via the gated RPC).
   function coReviewLaneHtml() {
-    if (!unlocked() || publicMode()) return "";
+    if (!reviewing() || publicMode()) return "";
     var rows = ELIG.optinReview || [];
     if (!rows.length && !(ELIG.ncAttestReview || []).length) return "";
     function fmtWhen(v) { return v ? esc(String(v).slice(0, 10)) : ""; }
@@ -7979,7 +8049,7 @@
     // site (never inferred from a module flag) because these helpers also serve
     // the pool / eligibility / timing surfaces, which stay editable in every
     // lane. See laneReadOnly() for why the NC priority cards ask for it.
-    if (publicMode() || opts.ro) return esc(value);
+    if (publicMode() || opts.ro || modelClosed()) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -7995,7 +8065,7 @@
     // site (never inferred from a module flag) because these helpers also serve
     // the pool / eligibility / timing surfaces, which stay editable in every
     // lane. See laneReadOnly() for why the NC priority cards ask for it.
-    if (publicMode() || opts.ro) return esc(value);
+    if (publicMode() || opts.ro || modelClosed()) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -8015,7 +8085,7 @@
     // site (never inferred from a module flag) because these helpers also serve
     // the pool / eligibility / timing surfaces, which stay editable in every
     // lane. See laneReadOnly() for why the NC priority cards ask for it.
-    if (publicMode() || opts.ro) return esc(value);
+    if (publicMode() || opts.ro || modelClosed()) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -8082,6 +8152,7 @@
   // deleting projects + scenarios is a curator (unlocked) action.
   function controlStripHtml() {
     if (publicMode()) return "";   // no project/scenario picker for a college audience
+    if (modelClosed()) return "";  // a door sign-in reads the published scenario (syncActive)
     var proj = activeProjectObj();
     var am = areaMeta(proj.area);
     var curator = unlocked();
@@ -8136,6 +8207,12 @@
     if (publicMode()) return "";   // no unlock / team-editing affordance
     var dirty = isDirty();
     var status, resetBtn = "", rightBtn = "";
+    if (modelClosed()) {
+      // A door sign-in (S622): signed in for the review work; the model reads as published and takes no edit.
+      return '<div class="cplfund-authbar"><span class="grow"><span class="mode shared">Signed in as ' + esc(curatorEmail()) +
+        ' for the funding review.</span> <span class="dk">You can accept, deny, note and nudge. The model shows as ' +
+        "published; changing it takes a sign-in on the reviewer list.</span></span></div>";
+    }
     if (unlocked()) {
       status = '<span class="mode shared">Signed in as ' + esc(curatorEmail()) + ".</span> " +
         '<span class="dk">Changes save for everyone' + (dirty ? "." : "; every value is still the shared default.") + "</span>";
@@ -13445,7 +13522,7 @@
     // acceptance--same thing needed for the NC Lead attestation"). The word stands where the Confirm
     // word stood, for every viewer; a signed-in reviewer's row also carries Accept, the drill-in's own
     // (acceptOptIn, acceptNcAttest): it confirms the request and opens the email to the requester.
-    var waits = "", reviewer = unlocked() && !publicMode(), nm = dispName(c.college);
+    var waits = "", reviewer = reviewing() && !publicMode(), nm = dispName(c.college);
     function waitWord(word, tip) {
       return '<span class="cplfund-chip cf-waitchip" title="' + esc(tip) + '">' + word + "</span>";
     }
@@ -14239,7 +14316,7 @@
     var noteLine = "";
     if (publicMode()) {
       noteLine = "";
-    } else if (unlocked()) {
+    } else if (reviewing()) {
       noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span><br>' +
         '<textarea class="cplfund-note" rows="2" data-note="' + esc(c.college) +
         '" placeholder="Visible to signed-in reviewers only" aria-label="CO Monitor note for ' + esc(dispName(c.college)) + '">' +
@@ -14540,7 +14617,7 @@
       " &middot; ") + "<strong>" + optN + " of " + total + "</strong> colleges confirmed so far" +
       (pendN && !publicMode() ? " &middot; <strong>" + pendN + "</strong> awaiting review" : "") +
       ' <span class="dk">(a college&#39;s VPAA, VP of Student Services or President confirms from the college&#39;s row in the table above' +
-      (unlocked() && !publicMode() ? "; review requests in the CO review panel above" : "") + ")</span>";
+      (reviewing() && !publicMode() ? "; review requests in the CO review panel above" : "") + ")</span>";
     var coordItem = coordShown()
       ? reqItem(edArea("coord-label", coordLabel(), { rows: 1, label: "Coordinator requirement text",
           placeholder: "Describe the requirement…" }) + stop(coordLabel()), coordLine, hideBtn("coord", coordLabel()))
@@ -14588,6 +14665,8 @@
       // the memo and the field brief are made; the Public view keeps none of
       // this block, the save note that belonged to Add requirement included.
       (pub ? "" :
+      // A closed model (a door sign-in) adds and restores no requirement; Copy and the brief only read, and stay.
+      (modelClosed() ? "" :
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
       'title="Add another minimum condition">Add requirement</button>' +
@@ -14595,7 +14674,7 @@
         ? "saved for the whole team"
         : "explored on this browser &mdash; sign in to save for everyone") + "</span>" +
       "</div>" +
-      restoreRow +
+      restoreRow) +
       '<div class="cplfund-reqactions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqCopy" ' +
       'title="Copy the requirements as formatted text for a memo or email">Copy requirements</button>' +
@@ -17338,6 +17417,7 @@
     if (!holder) return;
     pinFrozenRows();
     if (publicMode()) stripCurateAffordances(holder);   // the table re-renders on its own
+    else if (modelClosed()) stripModelAffordances(holder);
     function activateKey(e) {   // Enter or Space activates a focusable control
       return e.key === "Enter" || e.key === " " || e.key === "Spacebar" || e.keyCode === 13 || e.keyCode === 32;
     }
@@ -17947,6 +18027,7 @@
     // it. Belt-and-braces with the emitters' own publicMode() checks — a missed
     // call site is the failure mode that matters for a page we hand to colleges.
     if (publicMode()) stripCurateAffordances(document.getElementById("cplFundingMount"));
+    else if (modelClosed()) stripModelAffordances(document.getElementById("cplFundingMount"));
     // Persist each collapsible section's open/closed state so it survives the
     // re-render an edit triggers (native <details> resets otherwise).
     document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (dt) {
@@ -18964,7 +19045,8 @@
     });
     // The keeper announces a renewed token (cpl_session.js); redraw, so a reviewer who returns after the token lapsed is
     // unlocked again without a reload (Sam, 2026-11-06: the lapsed-token fix "must not have worked for all surfaces").
-    window.addEventListener("cpl-session-changed", function () { render(); });
+    window.addEventListener("cpl-session-changed", function () { askReviewerList(); syncActive(); render(); });
+    askReviewerList();
     // Re-measure the frozen-row pins when the window changes size or zoom —
     // registered ONCE here, behind the booted guard, so re-boots never stack
     // listeners.
@@ -19274,7 +19356,7 @@
         return { remote: remoteEnabled(), url: SUPABASE_URL + "/rest/v1/", who: curatorEmail() || "",
           headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }) };
       },
-      setDeclined: function (key, on) { if (unlocked() && !publicMode()) setDeclined(key, !!on); } },
+      setDeclined: function (key, on) { if (reviewing() && !publicMode()) setDeclined(key, !!on); } },
     onModelChange: function (fn, describe) {
       if (typeof fn !== "function") return function () {};
       _subs.push(fn);
@@ -19595,6 +19677,9 @@
     },
     _ingestElig: function (res) { ingestElig(res || []); },
     _gate: function (c) { return baselineGate(c); },
+    // Tests: the database's answer to "is this sign-in on the reviewer list?" (askReviewerList).
+    _setOnReviewerList: function (ok) { listAnswer(sessionEmail(), ok); },
+    _modelClosed: modelClosed, _reviewing: reviewing,
     // The minimum conditions for ONE institution, as the pie and the drill-in
     // score them (eligReqList), for the My CPL Funding block (Sam's card 8,
     // 2026-10-01). Kinds and states only; the block owns the words. The
