@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 51165,
-  "pa": 46337,
+  "pe": 51167,
+  "pa": 46339,
   "ppa": 123,
-  "p2": 3620,
-  "p3": 16881,
+  "p2": 3621,
+  "p3": 16882,
   "pp": 8,
   "ppe": 135,
-  "pac": 5315,
-  "ptc": 4640,
-  "pe_u": 1598848.45,
-  "pa_u": 284206.4,
+  "pac": 5316,
+  "ptc": 4641,
+  "pe_u": 1598912.45,
+  "pa_u": 284233.4,
   "ppa_u": 766.5,
   "ppe_u": 7239.5,
-  "pac_u": 38065.2,
-  "ptc_u": 31737.95,
-  "p3_u": 84795.65,
+  "pac_u": 38075.2,
+  "ptc_u": 31747.95,
+  "p3_u": 84805.65,
   "pp_u": 76.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -214,10 +214,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 17
   },
   "Cabrillo": {
-   "pe": 2187,
-   "pe_u": 18163.0,
-   "pa": 2182,
-   "pa_u": 10428.25,
+   "pe": 2188,
+   "pe_u": 18217.0,
+   "pa": 2183,
+   "pa_u": 10445.25,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 351,
@@ -2465,26 +2465,26 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 25
   },
   "West LA": {
-   "pe": 754,
-   "pe_u": 15041.5,
-   "pa": 754,
-   "pa_u": 8894.0,
+   "pe": 755,
+   "pe_u": 15051.5,
+   "pa": 755,
+   "pa_u": 8904.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 45.0,
-   "p2": 505,
-   "p3": 574,
-   "p3_u": 7611.0,
+   "p2": 506,
+   "p3": 575,
+   "p3_u": 7621.0,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 13.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 249.0,
-   "pac": 580,
-   "pac_u": 7725.0,
-   "ptc": 574,
-   "ptc_u": 7611.5,
+   "pac": 581,
+   "pac_u": 7735.0,
+   "ptc": 575,
+   "ptc_u": 7621.5,
    "nc_exh": 0,
    "nc_course": 0,
    "nc_cdcp": 138
@@ -2732,8 +2732,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 181,
-    "pa": 176,
+    "pe": 182,
+    "pa": 177,
     "p3": null,
     "p3_suppressed": true
    },
@@ -4258,9 +4258,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 15
    },
    "Industry Certification": {
-    "pe": 568,
-    "pa": 568,
-    "p3": 546
+    "pe": 569,
+    "pa": 569,
+    "p3": 547
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -4369,9 +4369,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 46
   },
   "Industry Certification": {
-   "pe": 1457,
-   "pa": 1436,
-   "p3": 1209
+   "pe": 1458,
+   "pa": 1437,
+   "p3": 1210
   },
   "Industry Certification | Military": {
    "pe": 58,
@@ -4416,8 +4416,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 30427,
-   "pa": 27378,
+   "pe": 30428,
+   "pa": 27379,
    "p3": 2672
   },
   "Military | Other": {
@@ -4473,14 +4473,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1598848.45,
-   "pa_u": 284206.4,
-   "p3_u": 84795.65
+   "pe_u": 1598912.45,
+   "pa_u": 284233.4,
+   "p3_u": 84805.65
   },
   "map": {
-   "pe_u": 1606087.95,
-   "pa_u": 284972.9,
-   "p3_u": 84872.15
+   "pe_u": 1606151.95,
+   "pa_u": 284999.9,
+   "p3_u": 84882.15
   },
   "ratio": {
    "pe_u": 1.0045,
@@ -4661,8 +4661,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cabrillo": {
    "vets": 93,
-   "jst": 186,
-   "pct": 2.0
+   "jst": 187,
+   "pct": 2.0108
   },
   "Merced": {
    "vets": 231,

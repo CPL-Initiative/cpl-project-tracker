@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-09T14:42:31.186Z",
+  "scraped_at": "2026-11-09T16:53:37.787Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -49,31 +49,31 @@
         {
           "college": "West Los Angeles College",
           "students": 797,
-          "units": 8939,
-          "avgUnits": 11.215809284818068,
+          "units": 8949,
+          "avgUnits": 11.228356336260978,
           "transcriptionRate": 85.3,
-          "avgTranscribed": 9.565872020075282,
+          "avgTranscribed": 9.578419071518192,
           "criteriaMetCount": 5,
           "militaryStudents": 158,
           "nonMilitaryStudents": 642,
           "apprenticeStudents": 0,
-          "savings": 9284140,
-          "yearImpact": 43500419,
-          "transcribedUnits": 7624
+          "savings": 9293790,
+          "yearImpact": 43547759,
+          "transcribedUnits": 7634
         },
         {
           "college": "Cabrillo College",
-          "students": 2189,
-          "units": 10428.25,
-          "avgUnits": 4.763933302878026,
-          "transcriptionRate": 74.1,
-          "avgTranscribed": 3.5324349017816354,
+          "students": 2190,
+          "units": 10445.25,
+          "avgUnits": 4.769520547945206,
+          "transcriptionRate": 74,
+          "avgTranscribed": 3.530821917808219,
           "criteriaMetCount": 4,
-          "militaryStudents": 186,
+          "militaryStudents": 187,
           "nonMilitaryStudents": 2008,
           "apprenticeStudents": 8,
-          "savings": 11719727.5,
-          "yearImpact": 53889079.5,
+          "savings": 11749137.5,
+          "yearImpact": 53992218.5,
           "transcribedUnits": 7732.5
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "59,466",
+      "value": "59,467",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "31,124"
+          "value": "31,125"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 59466,
-    "Units": 284972.9,
-    "TranscribedUnits": 84872.15,
-    "Savings": 405786462.75,
-    "YearImpact": 1642011786.3999999,
-    "MilitaryStudents": 31124,
+    "Students": 59467,
+    "Units": 284999.9,
+    "TranscribedUnits": 84882.15,
+    "Savings": 405825522.75,
+    "YearImpact": 1642162265.3999999,
+    "MilitaryStudents": 31125,
     "NonMilitaryStudents": 28445,
     "AprenticeStudents": 959,
-    "AverageUnits": 4.792198903575152,
-    "TranscribedAverage": 1.4272382537920827
+    "AverageUnits": 4.792572351051844,
+    "TranscribedAverage": 1.4273824137757074
   }
 }

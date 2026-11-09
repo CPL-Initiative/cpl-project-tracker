@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-09T14:46:38Z",
+ "generated_at": "2026-11-09T16:58:57Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -44,38 +44,10 @@
   "ase": 0,
   "numerals": 0,
   "language": 0,
-  "course-code": 1,
+  "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 1,
- "cards": [
-  {
-   "current": "Credit by Exam",
-   "proposed": "Water Supply",
-   "rules": [
-    "course-code"
-   ],
-   "why": [
-    "drops a method word and takes the course's own title"
-   ],
-   "locals": [
-    {
-     "raw": "Credit by Exam",
-     "colleges": [
-      "College of the Canyons"
-     ],
-     "course": "WATER 132",
-     "credit": "3 hours in Water Supply"
-    }
-   ],
-   "id": "84ac8df76508",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  }
- ]
+ "local_titles": 0,
+ "cards": []
 }

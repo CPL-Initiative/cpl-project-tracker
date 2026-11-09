@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-09T15:54:12Z",
+ "written_at": "2026-11-09T16:59:31Z",
  "rows": [
   {
    "key": "requirements",
@@ -100,11 +100,11 @@
     {
      "n": 2556,
      "of": 5592,
-     "words": "titles carry a review stamp (1,225 a person's, 1,331 a cohort's); 2,728 credentials, 2,269 of 3,037 records stamped",
+     "words": "titles carry a review stamp (1,226 a person's, 1,330 a cohort's); 2,728 credentials, 2,269 of 3,037 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1225,
+     "n": 1226,
      "of": 5592,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -142,20 +142,20 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-09T14:42:38Z",
+    "at": "2026-11-09T16:53:55Z",
     "every_hours": 24
    },
    "facts": {
     "titles": 5592,
     "stamped": 2556,
-    "person": 1225,
-    "cohort": 1331,
+    "person": 1226,
+    "cohort": 1330,
     "credentials": 2728,
-    "confirmed": 1225,
+    "confirmed": 1226,
     "records": 3037,
     "records_stamped": 2269,
     "saved_at": "2026-11-07T14:26:54Z",
-    "fold_at": "2026-11-09T14:42:38Z",
+    "fold_at": "2026-11-09T16:53:55Z",
     "map_titles": 4973,
     "unclassified": 4,
     "left_map": 623,
@@ -193,15 +193,15 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 3793,
+     "n": 4500,
      "of": 27581,
-     "words": "cards the auditor scores 0.85 or better; 16,475 at needs review, 7,308 at needs repair, 5 not ready",
+     "words": "cards the auditor scores 0.85 or better; 15,787 at needs review, 7,289 at needs repair, 5 not ready",
      "open": "#coci-lookup/courses"
     },
     {
-     "n": 957,
+     "n": 965,
      "of": 27581,
-     "words": "confirmed by a person, 186 of them ready",
+     "words": "confirmed by a person, 205 of them ready",
      "open": "#coci-lookup/courses",
      "error": null
     }
@@ -212,14 +212,14 @@
    ],
    "issues": [
     {
-     "n": 13896,
+     "n": 13137,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
      "open": "#coci-lookup/list/seedless"
     },
     {
-     "n": 8,
+     "n": 6,
      "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
      "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
      "carry": "unsure",
@@ -257,23 +257,23 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-09T14:44:53+00:00",
+    "at": "2026-11-09T16:56:27+00:00",
     "every_hours": 24
    },
    "facts": {
     "total": 27581,
-    "ready": 3793,
-    "needs_review": 16475,
-    "needs_repair": 7308,
+    "ready": 4500,
+    "needs_review": 15787,
+    "needs_repair": 7289,
     "not_ready": 5,
     "cap": 0.79,
-    "confirmed": 957,
-    "confirmed_ready": 186,
+    "confirmed": 965,
+    "confirmed_ready": 205,
     "tags": {
      "blank_description": 5750,
      "discipline_title_mismatch": 1116,
      "blank_discipline": 89,
-     "seed_untouched_discipline": 13896,
+     "seed_untouched_discipline": 13137,
      "top_discipline_disagreement": 1159,
      "unit_anomaly": 4179
     }
@@ -326,7 +326,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 36,
+     "n": 37,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -345,7 +345,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-09T14:47:03+00:00",
+    "at": "2026-11-09T14:47:03Z",
     "every_hours": null
    },
    "facts": {
@@ -388,12 +388,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 36,
+    "names_to_check": 37,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 297
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -469,7 +469,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-09T14:42:37Z",
+    "at": "2026-11-09T16:53:52Z",
     "every_hours": 24
    },
    "facts": {
@@ -619,7 +619,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 13896,
+      "n": 13137,
       "words": "cards carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
       "open": "#coci-lookup/list/seedless"
@@ -648,7 +648,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 8,
+      "n": 6,
       "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
       "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
       "open": "#coci-lookup/list/doubt"
@@ -656,7 +656,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 36,
+      "n": 37,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -861,31 +861,9 @@
  "docket": [],
  "batches": [
   {
-   "kind": "another-look",
-   "n": 1,
-   "of": 1,
-   "open": "#exhibits/another-look/batch",
-   "title": "Another look at 1 exhibit title",
-   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
-   "stop": "The batch ends when its cards are decided.",
-   "rules": [
-    "course-code"
-   ],
-   "cards": [
-    {
-     "id": "84ac8df76508",
-     "current": "Credit by Exam",
-     "keys": [
-      "_UNCLASSIFIED::Credit by Exam"
-     ]
-    }
-   ],
-   "at": "2026-11-09T14:46:38Z"
-  },
-  {
    "kind": "job",
    "ref": "course",
-   "n": 8,
+   "n": 6,
    "title": "Common Course Reference",
    "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
    "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
@@ -894,25 +872,13 @@
   }
  ],
  "next_batch": {
-  "kind": "another-look",
-  "n": 1,
-  "of": 1,
-  "open": "#exhibits/another-look/batch",
-  "title": "Another look at 1 exhibit title",
-  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
-  "stop": "The batch ends when its cards are decided.",
-  "rules": [
-   "course-code"
-  ],
-  "cards": [
-   {
-    "id": "84ac8df76508",
-    "current": "Credit by Exam",
-    "keys": [
-     "_UNCLASSIFIED::Credit by Exam"
-    ]
-   }
-  ],
-  "at": "2026-11-09T14:46:38Z"
+  "kind": "job",
+  "ref": "course",
+  "n": 6,
+  "title": "Common Course Reference",
+  "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+  "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+  "open": "#coci-lookup/list/doubt",
+  "reason": "unsure"
  }
 }

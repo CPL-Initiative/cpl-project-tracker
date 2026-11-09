@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-09T14:42:31.336253+00:00",
+  "scraped_at": "2026-11-09T16:53:38.289120+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31124,
+    "jst": 31125,
     "star_colleges": 67
   },
   "computed_star_colleges": 67,
@@ -62,7 +62,7 @@
     },
     "Cabrillo College": {
       "vets": 93,
-      "jst": 186,
+      "jst": 187,
       "star": true
     },
     "Merced College": {

@@ -1,7 +1,7 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-09T14:42:38Z",
+  "_synced_at": "2026-11-09T16:53:54Z",
   "count": 2406,
   "assignments": {
     "1st Receiver Ops & Decon": {
@@ -7109,10 +7109,10 @@
     },
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "exhibits-s596@bot",
-      "reviewed_at": "2026-11-07T05:10:27.254628+00:00",
-      "unified_title": "Credit by Exam",
-      "supersedes": "Water Supply"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T15:12:26.305+00:00",
+      "unified_title": "Water Supply",
+      "supersedes": "Credit by Exam"
     },
     "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
       "issuing_agency": "California Community Colleges",
