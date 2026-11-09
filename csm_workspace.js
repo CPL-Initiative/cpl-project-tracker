@@ -69,6 +69,7 @@
       "#tab-csm-workspace .card-list li { display:flex; justify-content:space-between; gap:12px; border-top:1px solid var(--cw-line-soft); padding:3px 0; }",
       "#tab-csm-workspace .card-list li span:last-child { color:var(--cw-muted); font-variant-numeric:tabular-nums; white-space:nowrap; }",
       "#tab-csm-workspace .card .word { margin-top:auto; }",
+      "#tab-csm-workspace .card .word.gap { margin-top:2px; font-weight:500; }",
       "#tab-csm-workspace .meter { height:8px; border-radius:999px; background:var(--cw-track); overflow:hidden; }",
       "#tab-csm-workspace .meter i { display:block; height:100%; background:var(--cw-accent); border-radius:999px; }",
       "#tab-csm-workspace .pace { width:100%; height:auto; display:block; }",
@@ -493,21 +494,29 @@
     return { t: "", over: false };
   }
 
+  /* The menu in two groups, the work first (Sam's "go" on COBIx's proposal, PR 2990's thread and issue 2989,
+     2026-11-09: "having a prioritized set of easy buttons to push is always preferable"). To do holds the queues a CSM
+     acts on; Browse holds the lists a CSM reads. No view was renamed; Qualifies spells out what it means. */
+  var GROUPS = [{ id: "todo", label: "To do" }, { id: "browse", label: "Browse" }];
+  function coordGap(r) { return r.conds.some(function (c) { return c.kind === "coord" && !c.met && !c.pending; }); }
   var VIEWS = {
-    open: { label: "All open items", keep: function (r) { var s = stageOf(r); return s === "waiting" || s === "held" || !!dueOf(r); } },
-    send: { label: "Ready to send", keep: function (r) { return !!readyOf(r); } },
-    due: { label: "Follow-ups open", keep: function (r) { return !!dueOf(r); } },
-    review: { label: "Waiting on the team", keep: function (r) { return stageOf(r) === "waiting"; } },
-    held: { label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
-    notyet: { label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
-    nc: { label: "Noncredit attestations waiting", keep: function (r) { return !!(r.nc && r.nc.waiting); } },
-    ncmet: { label: "Noncredit CPL Lead attested", keep: function (r) { return !!(r.nc && r.nc.standing); } },
-    coordmet: { label: "With a CPL Coordinator in MAP", keep: function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); } },
-    coord: { label: "Confirmed but missing the CPL Coordinator in MAP",
-      keep: function (r) { return r.part.confirmed && r.conds.some(function (c) { return c.kind === "coord" && !c.met && !c.pending; }); } },
-    confirmed: { label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
-    qual: { label: "Qualifies", keep: function (r) { return stageOf(r) === "qual"; } },
-    all: { label: "All institutions", keep: function () { return true; } } };
+    open: { g: "todo", label: "All open items", keep: function (r) { var s = stageOf(r); return s === "waiting" || s === "held" || !!dueOf(r); } },
+    send: { g: "todo", label: "Ready to send", keep: function (r) { return !!readyOf(r); } },
+    review: { g: "todo", label: "Waiting on the team", keep: function (r) { return stageOf(r) === "waiting"; } },
+    due: { g: "todo", label: "Follow-ups open", keep: function (r) { return !!dueOf(r); } },
+    held: { g: "todo", label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
+    nc: { g: "todo", label: "Noncredit attestations waiting", keep: function (r) { return !!(r.nc && r.nc.waiting); } },
+    coord: { g: "todo", label: "Confirmed but missing the CPL Coordinator in MAP",
+      keep: function (r) { return r.part.confirmed && coordGap(r); } },
+    notyet: { g: "todo", label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
+    qual: { g: "browse", label: "Qualifies (all conditions met)", keep: function (r) { return stageOf(r) === "qual"; } },
+    confirmed: { g: "browse", label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
+    coordmet: { g: "browse", label: "With a CPL Coordinator in MAP", keep: function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); } },
+    ncmet: { g: "browse", label: "Noncredit CPL Lead attested", keep: function (r) { return !!(r.nc && r.nc.standing); } },
+    // The full chase list; Confirmed but missing… above is its funding-held part.
+    nocoord: { g: "browse", label: "No CPL Coordinator in MAP", keep: coordGap },
+    declined: { g: "browse", label: "Declined", keep: function (r) { return !!r.declined; } },
+    all: { g: "browse", label: "All institutions", keep: function () { return true; } } };
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
      items is the tab's first view, so it reports the bare tab. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
@@ -619,13 +628,15 @@
   }
 
   // ── painting ─────────────────────────────────────────────────────────────
-  function card(id, name, big, small, what, list, word, needs) {
+  // gap, on a progress card: [view, words], the work list one click away (issue 2989).
+  function card(id, name, big, small, what, list, word, needs, gap) {
     return '<article class="card' + (needs ? " needs" : "") + (state.view === word ? " on" : "") + '" aria-labelledby="' + id + '">' +
       '<div class="card-head"><h3 class="card-name" id="' + id + '">' + esc(name) + "</h3></div>" +
       '<p class="big">' + big + (small ? " <small>" + esc(small) + "</small>" : "") + "</p>" +
       (what ? '<p class="card-what">' + esc(what) + "</p>" : "") +
       (list && list.length ? '<ul class="card-list">' + list.map(function (li) { return "<li><span>" + esc(li[0]) + "</span><span>" + esc(li[1]) + "</span></li>"; }).join("") + "</ul>" : "") +
-      '<button type="button" class="word" data-view="' + word + '" aria-pressed="' + (state.view === word) + '">Show them in the action center</button></article>';
+      '<button type="button" class="word" data-view="' + word + '" aria-pressed="' + (state.view === word) + '">Show them in the action center</button>' +
+      (gap ? ' <button type="button" class="word gap" data-view="' + gap[0] + '" aria-pressed="' + (state.view === gap[0]) + '">' + esc(gap[1]) + "</button>" : "") + "</article>";
   }
   function meter(n, d) { return '<div class="meter" aria-hidden="true"><i style="width:' + (d ? Math.round(n / d * 100) : 0) + '%"></i></div>'; }
   function cardsHtml() {
@@ -636,6 +647,7 @@
     var ncRows = rows.filter(function (r) { return r.nc; }), ncDone = ncRows.filter(function (r) { return r.nc.standing; });
     var coordRows = rows.filter(function (r) { return r.conds.some(function (c) { return c.kind === "coord"; }); });
     var coordMet = coordRows.filter(function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); });
+    var ncWait = rows.filter(VIEWS.nc.keep).length, coordMiss = S.coordOk ? rows.filter(VIEWS.coord.keep).length : 0;
     var heldWhy = {};
     held.forEach(function (r) { missingWords(r).forEach(function (w) { heldWhy[w] = (heldWhy[w] || 0) + 1; }); });
     return '<div class="needs-row">' +
@@ -650,9 +662,11 @@
       // A figure card opens what it counts (Sam, 2026-11-05). These two opened a narrower list than their figure: the
       // attestations still waiting, and the confirmed colleges missing a coordinator (Sam, 2026-11-09: "I expect to see
       // 61 colleges in action center but it's sorting for a subset").
-      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "", null, "ncmet", false)
+      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "", null, "ncmet", false,
+        ncWait ? ["nc", ncWait + " waiting on the team"] : null)
         .replace('<button', meter(ncDone.length, ncRows.length) + "<button") +
-      card("cw-c5", "CPL Coordinator in MAP", S.coordOk ? String(coordMet.length) : "&hellip;", S.coordOk ? "of " + coordRows.length : "loading", "", null, "coordmet", false)
+      card("cw-c5", "CPL Coordinator in MAP", S.coordOk ? String(coordMet.length) : "&hellip;", S.coordOk ? "of " + coordRows.length : "loading", "", null, "coordmet", false,
+        coordMiss ? ["coord", coordMiss + " confirmed, still missing"] : null)
         .replace('<button', meter(coordMet.length, coordRows.length) + "<button") +
       "</div>";
   }
@@ -660,7 +674,11 @@
     var list = shownRows(), v = VIEWS[state.view] || VIEWS.open;
     // A decided college may leave the view (accepted, it moves on); its record stays until another is chosen.
     if (!state.sel && list.length) state.sel = list[0].key;
-    var opts = Object.keys(VIEWS).map(function (k) { return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + "</option>"; }).join("");
+    var opts = GROUPS.map(function (g) {
+      return '<optgroup label="' + g.label + '">' + Object.keys(VIEWS).filter(function (k) { return VIEWS[k].g === g.id; }).map(function (k) {
+        return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + "</option>";
+      }).join("") + "</optgroup>";
+    }).join("");
     return '<div class="pane" aria-labelledby="cw-q-h"><div class="pane-h">' +
       // The view's name follows the count in lower case, except a name that opens on an acronym (CPL, MAP keep theirs).
       '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.label.replace(/^[A-Z][a-z]+/, function (m) { return m.toLowerCase(); })) + "</p>" +
