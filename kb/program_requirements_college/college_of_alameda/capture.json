@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 85,
  "with_closed_list": 68,
- "started": "2026-11-09T10:28:15Z",
+ "started": "2026-11-09T11:39:21Z",
  "curriqunet": {
   "catalog": 10507,
   "view_prefix": "https://coa.curriqunet.com/catalog/iq/",
@@ -24,7 +24,7 @@
  "pages_read": 89,
  "banner_h1": null,
  "loads": 169,
- "seconds": 806.3,
+ "seconds": 801.7,
  "found": 59,
  "by_method": {
   "no_closed_list": 17,
@@ -152,30 +152,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/college_of_alameda",
-  "kept": 57,
-  "programs": 2,
-  "list": [
-   {
-    "control_number": "31164",
-    "title": "Liberal Arts Emphasis in Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47543",
-    "coverage": 0.989,
-    "was_url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47543",
-    "was_coverage": 0.954,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31166",
-    "title": "Liberal Arts Emphasis in Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47541",
-    "coverage": 0.986,
-    "was_url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47541",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 59,
+  "programs": 0,
+  "list": []
  },
- "run": "42600854055"
+ "run": "42610498785"
 }
