@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-09T08:26:31Z",
-  "session": 617,
-  "moniker": "SkyWhirlpool",
+  "written_at": "2026-11-09T10:45:00Z",
+  "session": 618,
+  "moniker": "SkyPinwheel",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_618_handoff.md",
+  "handoff": "docs/session_619_handoff.md",
   "next_step": {
     "title": "Cuesta's full read",
-    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC; Orange Coast's full read took 2026-11-09's, and its load follows once every slice is filed."
+    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC. Orange Coast's course outcomes are loaded."
   },
   "calls": [
     {
@@ -224,12 +224,12 @@
   },
   "changes": [
     {
-      "at": "2026-11-09T08:22:00Z",
-      "text": "Orange Coast College's full SLO read dispatched, 4 parts on host cccd (pull request 2955)."
+      "at": "2026-11-09T10:21:00Z",
+      "text": "Orange Coast College's course outcomes loaded: 3,035 rows added, 568 already held (pull request 2955)."
     },
     {
-      "at": "2026-11-09T08:25:00Z",
-      "text": "College of Alameda, 25 of 59 passing: a free page read of five entries asks whether the catalog prints the program totals its 16 incomplete records lack (pull request 2956)."
+      "at": "2026-11-09T10:26:00Z",
+      "text": "College of Alameda: a reconcile step reads a program total its description prints above the course table, for Dental Assisting's 41 units (pull request 2956)."
     }
   ],
   "headline": [

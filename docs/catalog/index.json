@@ -16697,8 +16697,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 579,
+   "count": 580,
    "docs": [
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 619,
+     "path": "docs/session_619_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "org-phrase-scope-auth",
+      "scheduled-sessions"
+     ],
+     "title": "Session 619 handoff: Orange Coast's SLOs loaded, Alameda's description totals, the email closure confirmed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26529,5 +26545,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1423
+ "total": 1424
 }

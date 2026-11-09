@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1437,
-    "bytes": 14488945,
+    "files": 1438,
+    "bytes": 14498898,
     "over_budget": 6,
-    "handoff_max": 618,
+    "handoff_max": 619,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59914,
     "superseded_files": 8,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 146,
-        "bytes": 4426571,
+        "bytes": 4426730,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2649772,
+        "bytes": 2652073,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 517669,
+        "bytes": 519412,
         "over": 4
       },
       "handoff": {
-        "files": 579,
-        "bytes": 3980623,
+        "files": 580,
+        "bytes": 3986373,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26345,
-      "bytes": 4442538739,
-      "heavy_bytes": 3194601180,
+      "files": 26347,
+      "bytes": 4442639175,
+      "heavy_bytes": 3194687233,
       "heavy_share": 0.719,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -117,8 +117,8 @@
         "cpl-project-tracker/coci_lookup_desc_E.js",
         "cpl-project-tracker/exports/unified_courses.xlsx",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
-        "cpl-project-tracker/kb/coci_curation.json",
         "cpl-project-tracker/kb/it_ai_credential_catalog.json",
+        "cpl-project-tracker/kb/coci_curation.json",
         "cpl-project-tracker/coci_lookup_desc_M.js",
         "cpl-project-tracker/coci_lookup_desc_P.js",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
@@ -161,13 +161,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 120325,
+        "bytes": 121946,
         "limit": 120000,
         "lane": "lessons",
-        "over_by": 325,
-        "ratio": 1.0
+        "over_by": 1946,
+        "ratio": 1.02
       },
-      "message": "120,325 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "message": "121,946 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/program_requirements_harvest_lessons.md"
     },
     {
@@ -226,13 +226,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 22267,
+        "bytes": 23479,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 2267,
-        "ratio": 1.11
+        "over_by": 3479,
+        "ratio": 1.17
       },
-      "message": "22,267 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "23,479 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -240,10 +240,10 @@
       "fixable": true,
       "detail": {
         "session": 607,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 607 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 607 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_607_handoff.md"
     },
     {
@@ -251,10 +251,10 @@
       "fixable": true,
       "detail": {
         "session": 608,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 608 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 608 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_608_handoff.md"
     },
     {
@@ -262,10 +262,10 @@
       "fixable": true,
       "detail": {
         "session": 609,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 609 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 609 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_609_handoff.md"
     },
     {
@@ -273,10 +273,10 @@
       "fixable": true,
       "detail": {
         "session": 610,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 610 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 610 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_610_handoff.md"
     },
     {
@@ -284,10 +284,10 @@
       "fixable": true,
       "detail": {
         "session": 611,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 611 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 611 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_611_handoff.md"
     },
     {
@@ -295,10 +295,10 @@
       "fixable": true,
       "detail": {
         "session": 612,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 612 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 612 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_612_handoff.md"
     },
     {
@@ -306,10 +306,10 @@
       "fixable": true,
       "detail": {
         "session": 613,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 613 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 613 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_613_handoff.md"
     },
     {
@@ -317,10 +317,10 @@
       "fixable": true,
       "detail": {
         "session": 614,
-        "authoritative": 618,
+        "authoritative": 619,
         "has_frontmatter": true
       },
-      "message": "handoff 614 is below the authoritative 618 but is not stamped `superseded: true`",
+      "message": "handoff 614 is below the authoritative 619 but is not stamped `superseded: true`",
       "path": "docs/session_614_handoff.md"
     },
     {
@@ -358,10 +358,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84261713,
+        "bytes": 84306299,
         "kind": "dir"
       },
-      "message": "directory totals 84,261,713 B inside the vault"
+      "message": "directory totals 84,306,299 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -826,22 +826,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/it_ai_credential_catalog.json",
+      "detail": {
+        "bytes": 5364126,
+        "kind": "file"
+      },
+      "message": "5,364,126 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/coci_curation.json",
       "detail": {
         "bytes": 5333047,
         "kind": "file"
       },
       "message": "5,333,047 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/it_ai_credential_catalog.json",
-      "detail": {
-        "bytes": 5322659,
-        "kind": "file"
-      },
-      "message": "5,322,659 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
