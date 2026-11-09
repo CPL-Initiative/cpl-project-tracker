@@ -6063,14 +6063,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 734
+     "line": 739
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 734
+     "line": 739
     },
     {
      "id": "script:kb/_identity_daily_check.py",
