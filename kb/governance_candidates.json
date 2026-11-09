@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 12,
     "already_mapped": 48,
-    "dismissed": 10,
-    "scanned": 70
+    "dismissed": 11,
+    "scanned": 71
   },
   "candidates": [
     {
@@ -94,6 +94,14 @@
     }
   ],
   "dismissed": [
+    {
+      "key": "workflow:docket-process.yml",
+      "kind": "cadence",
+      "label": "Docket process",
+      "detail": "Scheduled: 33 5 * * *",
+      "where": ".github/workflows/docket-process.yml",
+      "why": "The Docket's processor (#2963 step 3; Sam's go in session 2026-11-09, \"yes, start step 3\", on the order Sky set out on #2963). A writer acting without a session: it carries out rulings a reviewer saved on Docket cases (field:kb_curation.docket_ruling). It adds no decision right: each case names the register row that owns its decision (`dr`), the ruling is that owner deciding, and the job runs only the commands the reviewed kb/docket/cases.json names for the choice ruled, only scripts on kb/_docket_process.py's ALLOWED list (each writes committed files it can undo from its own receipt), only with --apply beside --expect. It writes a receipt with its undo under kb/docket/receipts/ and commits to main behind the daily build (concurrency daily-dashboard). Nothing on the decision sheets' hold list reaches it."
+    },
     {
       "key": "workflow:k10-disclosure-check.yml",
       "kind": "cadence",

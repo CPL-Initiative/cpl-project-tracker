@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-09T06:29:55Z",
+ "written_at": "2026-11-09T14:46:59Z",
  "rows": [
   {
    "key": "requirements",
@@ -63,7 +63,7 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-08T12:26:04Z",
+    "at": "2026-11-09T10:28:15Z",
     "every_hours": null
    },
    "facts": {
@@ -100,11 +100,11 @@
     {
      "n": 2556,
      "of": 5592,
-     "words": "titles carry a review stamp (1,220 a person's, 1,336 a cohort's); 2,727 credentials, 2,268 of 3,036 records stamped",
+     "words": "titles carry a review stamp (1,225 a person's, 1,331 a cohort's); 2,728 credentials, 2,269 of 3,037 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1220,
+     "n": 1225,
      "of": 5592,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -142,20 +142,20 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-07T14:59:10Z",
+    "at": "2026-11-09T14:42:38Z",
     "every_hours": 24
    },
    "facts": {
     "titles": 5592,
     "stamped": 2556,
-    "person": 1220,
-    "cohort": 1336,
-    "credentials": 2727,
-    "confirmed": 1220,
-    "records": 3036,
-    "records_stamped": 2268,
+    "person": 1225,
+    "cohort": 1331,
+    "credentials": 2728,
+    "confirmed": 1225,
+    "records": 3037,
+    "records_stamped": 2269,
     "saved_at": "2026-11-07T14:26:54Z",
-    "fold_at": "2026-11-07T14:59:10Z",
+    "fold_at": "2026-11-09T14:42:38Z",
     "map_titles": 4973,
     "unclassified": 4,
     "left_map": 623,
@@ -193,15 +193,15 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 3205,
+     "n": 3793,
      "of": 27581,
-     "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready",
+     "words": "cards the auditor scores 0.85 or better; 16,475 at needs review, 7,308 at needs repair, 5 not ready",
      "open": "#coci-lookup/courses"
     },
     {
      "n": 957,
      "of": 27581,
-     "words": "confirmed by a person, 152 of them ready",
+     "words": "confirmed by a person, 186 of them ready",
      "open": "#coci-lookup/courses",
      "error": null
     }
@@ -212,7 +212,7 @@
    ],
    "issues": [
     {
-     "n": 14523,
+     "n": 13896,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
@@ -257,23 +257,23 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-09T06:27:49+00:00",
+    "at": "2026-11-09T14:44:53+00:00",
     "every_hours": 24
    },
    "facts": {
     "total": 27581,
-    "ready": 3205,
-    "needs_review": 17036,
-    "needs_repair": 7335,
+    "ready": 3793,
+    "needs_review": 16475,
+    "needs_repair": 7308,
     "not_ready": 5,
     "cap": 0.79,
     "confirmed": 957,
-    "confirmed_ready": 152,
+    "confirmed_ready": 186,
     "tags": {
      "blank_description": 5750,
      "discipline_title_mismatch": 1116,
      "blank_discipline": 89,
-     "seed_untouched_discipline": 14523,
+     "seed_untouched_discipline": 13896,
      "top_discipline_disagreement": 1159,
      "unit_anomaly": 4179
     }
@@ -301,7 +301,7 @@
     {
      "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,953 of 9,421 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,959 of 9,432 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -326,7 +326,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -345,23 +345,23 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-08T06:23:32Z",
+    "at": "2026-11-09T06:29:58Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1933,
-    "rows": 9421,
+    "rows": 9432,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
     "settled": 461,
-    "settled_rows": 5953,
+    "settled_rows": 5959,
     "rule_wordings": 411,
-    "rule_rows": 4908,
+    "rule_rows": 4914,
     "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
@@ -369,7 +369,7 @@
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
     "unsettled": 1883,
-    "unsettled_rows": 3468,
+    "unsettled_rows": 3473,
     "head": {
      "50": {
       "settled": 46,
@@ -384,16 +384,16 @@
      "250": {
       "settled": 153,
       "of": 250,
-      "rows": 6556
+      "rows": 6559
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -469,7 +469,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-09T06:25:45Z",
+    "at": "2026-11-09T14:42:37Z",
     "every_hours": 24
    },
    "facts": {
@@ -505,7 +505,7 @@
    ],
    "pair": [
     {
-     "n": 7709,
+     "n": 7715,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -515,16 +515,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7709,
+    "credentials": 7715,
     "issuers": 1525,
-    "in_map": 207,
-    "articulated": 161,
-    "with_issuer_skills": 109,
-    "tech_giant": 551
+    "in_map": 206,
+    "articulated": 160,
+    "with_issuer_skills": 129,
+    "tech_giant": 556
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-08T00:00:00Z",
+    "at": "2026-11-09T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -543,9 +543,9 @@
    ],
    "pair": [
     {
-     "n": 32394,
+     "n": 36119,
      "of": null,
-     "words": "outcomes read from 8,631 courses at 13 colleges",
+     "words": "outcomes read from 10,147 courses at 14 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -553,8 +553,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 32394,
-    "courses": 8631,
+    "outcomes": 36119,
+    "courses": 10147,
     "colleges": [
      "cabrillo",
      "coastline_community",
@@ -567,14 +567,15 @@
      "modesto_junior",
      "moreno_valley",
      "norco",
+     "orange_coast",
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 33
+    "reads": 37
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-08T02:16:24Z",
+    "at": "2026-11-09T10:10:28Z",
     "every_hours": null
    },
    "sources": [
@@ -588,7 +589,7 @@
    "links": [],
    "pair": [
     {
-     "n": 109,
+     "n": 129,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -598,11 +599,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 109
+    "with_issuer_skills": 129
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-08T00:00:00Z",
+    "at": "2026-11-09T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -618,7 +619,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 14523,
+      "n": 13896,
       "words": "cards carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
       "open": "#coci-lookup/list/seedless"
@@ -655,7 +656,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 37,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -857,19 +858,128 @@
    }
   }
  ],
+ "docket": [
+  {
+   "id": "2026-11-09-ccr-next-five",
+   "source": "session",
+   "addressee": "sam",
+   "dr": "DR-25",
+   "lane": "commons",
+   "ref": "course",
+   "decides": "Confirm the next five disciplines where the descriptions and TOP both agree?",
+   "size": {
+    "n": 753,
+    "unit": "courses"
+   },
+   "evidence": [
+    "You confirmed Kinesiology on Sheet 174, and its 627 courses now carry their discipline from the seed, confirmed by the catalog description with TOP agreeing. The discipline itself did not change, and one command takes the whole change back from its receipt.",
+    "The same test confirms 753 courses in the next five disciplines: Music 250, Fire Technology 169, Mathematics 128, Child Development/Early Childhood Education 107 and English 99. Their courses for a curator (Music 75, Fire Technology 2, Mathematics 1, Child Development 6, English 24) keep their score until a person rules on them in the Discipline in doubt job.",
+    "Each discipline gets its own receipt and reverses on its own. Counts measured with the apply script's dry run on 2026-11-09."
+   ],
+   "links": [
+    {
+     "href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_recheck_dryrun/report.md",
+     "text": "The seed re-check report"
+    },
+    {
+     "href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_confirm_out/2026-11-09/kinesiology.json",
+     "text": "Kinesiology's receipt"
+    },
+    {
+     "href": "#coci-lookup/list/doubt",
+     "text": "Discipline in doubt"
+    }
+   ],
+   "choices": [
+    {
+     "value": "five",
+     "words": "Confirm the five",
+     "recommended": true
+    },
+    {
+     "value": "all",
+     "words": "Every discipline"
+    },
+    {
+     "value": "one",
+     "words": "One at a time, Music first"
+    },
+    {
+     "value": "later",
+     "words": "Later"
+    }
+   ],
+   "plan_words": {
+    "all": "A session runs the dry run for every discipline and applies each with its own count and receipt.",
+    "later": "Nothing changes; the seed cards stay capped at 0.79."
+   },
+   "no_reply": "The five disciplines' seed cards stay capped at 0.79; nothing in the catalog changes.",
+   "sheet": "https://claude.ai/artifact/RytJhApuMxGp11U8NtyDrj",
+   "filed_at": "2026-11-09"
+  }
+ ],
+ "batches": [
+  {
+   "kind": "another-look",
+   "n": 1,
+   "of": 1,
+   "open": "#exhibits/another-look/batch",
+   "title": "Another look at 1 exhibit title",
+   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+   "stop": "The batch ends when its cards are decided.",
+   "rules": [
+    "course-code"
+   ],
+   "cards": [
+    {
+     "id": "84ac8df76508",
+     "current": "Credit by Exam",
+     "keys": [
+      "_UNCLASSIFIED::Credit by Exam"
+     ]
+    }
+   ],
+   "at": "2026-11-09T14:46:38Z"
+  },
+  {
+   "kind": "case",
+   "id": "2026-11-09-ccr-next-five",
+   "n": 753,
+   "title": "Confirm the next five disciplines where the descriptions and TOP both agree?",
+   "open": "#commons/case/2026-11-09-ccr-next-five",
+   "addressee": "sam"
+  },
+  {
+   "kind": "job",
+   "ref": "course",
+   "n": 8,
+   "title": "Common Course Reference",
+   "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+   "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+   "open": "#coci-lookup/list/doubt",
+   "reason": "unsure"
+  }
+ ],
  "next_batch": {
   "kind": "another-look",
-  "n": 6,
-  "of": 6,
+  "n": 1,
+  "of": 1,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 6 exhibit titles",
+  "title": "Another look at 1 exhibit title",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "course-code",
-   "fold",
-   "numerals"
+   "course-code"
   ],
-  "at": "2026-11-07T15:03:25Z"
+  "cards": [
+   {
+    "id": "84ac8df76508",
+    "current": "Credit by Exam",
+    "keys": [
+     "_UNCLASSIFIED::Credit by Exam"
+    ]
+   }
+  ],
+  "at": "2026-11-09T14:46:38Z"
  }
 }
