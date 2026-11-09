@@ -101,6 +101,73 @@
     });
   }
 
+  /* ── the funding door (#2983; Sam, during the MAP CSM session, 2026-11-09) ──────────────────────────────────
+   * The Auth mailer sends two emails an hour for the whole project, which locked the CSMs out. A mount opened with
+   * door: true also offers "Ask an approver": the address goes to funding_access_request with the SHA-256 of a secret
+   * this tab made; one of the four approvers says yes in the CSM Workspace; this tab, still open, sees it and claims a
+   * session from the funding-door Edge Function with the secret. No email and no phrase. The session is the person's
+   * own and opens the funding and CSM surfaces only (is_funding_reviewer()). */
+  var DOOR_KEY = "cpl_funding_door";
+  var DOOR_POLL_MS = 10000, DOOR_GIVE_UP_MS = 2 * 60 * 60 * 1000;
+  var door = null, doorTimer = null;
+  function doorRead() { try { return JSON.parse(sessionStorage.getItem(DOOR_KEY) || "null"); } catch (e) { return null; } }
+  function doorWrite(d) { door = d; try { if (d) sessionStorage.setItem(DOOR_KEY, JSON.stringify(d)); else sessionStorage.removeItem(DOOR_KEY); } catch (e) { /* ignore */ } }
+  function hex(bytes) { return Array.prototype.map.call(bytes, function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
+  function sha256(text) {
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)).then(function (b) { return hex(new Uint8Array(b)); });
+  }
+  function rpc(name, body) {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/" + name, { method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify(body) }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error(String(r.status))); });
+  }
+  function doorSay(text, kind) { if (door) { door.msg = text; door.kind = kind || ""; doorWrite(door); } renderAll(); }
+  function askAccess(email) {
+    var raw = new Uint8Array(32); crypto.getRandomValues(raw);
+    var secret = hex(raw);
+    return sha256(secret).then(function (h) {
+      return rpc("funding_access_request", { p_email: email, p_secret_hash: h }).then(function (r) {
+        if (!r || !r.ok) {
+          return { ok: false, why: r && r.why === "wait" ? "You asked a moment ago. Wait a few minutes and ask again."
+            : r && r.why === "busy" ? "Many requests are waiting. Try again in a few minutes." : "The request did not go through. Check the address and try again." };
+        }
+        doorWrite({ id: r.id || null, secret: secret, hash: h, email: email, at: Date.now(),
+          msg: "Asked. If this address is on the MAP team, Sam, Malone, Kristen or Natalie will see it in the CSM Workspace. Keep this tab open: it signs you in when one of them approves.", kind: "ok" });
+        startDoorPoll();
+        return { ok: true };
+      });
+    });
+  }
+  function claimDoor() {
+    return fetch(SUPABASE_URL + "/functions/v1/funding-door", { method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ id: door.id, secret: door.secret }) }).then(function (r) { return r.json(); });
+  }
+  function pollDoor() {
+    if (!door || !door.id) return;
+    if (Date.now() - door.at > DOOR_GIVE_UP_MS) { stopDoorPoll(); doorSay("No approval yet. Ask again, or reach Sam, Malone, Kristen or Natalie.", "err"); return; }
+    rpc("funding_access_status", { p_id: door.id, p_secret_hash: door.hash }).then(function (st) {
+      if (st === "approved") {
+        stopDoorPoll();
+        doorSay("Approved. Signing you in…", "");
+        return claimDoor().then(function (s) {
+          if (s && s.ok && s.access_token && window.CPL_SESSION && typeof CPL_SESSION.adopt === "function") {
+            CPL_SESSION.adopt(s);
+            doorWrite(null);
+            renderAll();
+            refreshActiveTab();
+            return;
+          }
+          doorSay("The approval came through but the sign-in did not (" + ((s && s.why) || "no answer") + "). Ask again.", "err");
+        });
+      }
+      if (st === "denied") { stopDoorPoll(); doorSay("An approver declined the request.", "err"); }
+      else if (st === "expired" || st === "claimed") { stopDoorPoll(); doorSay("That approval has lapsed. Ask again.", "err"); }
+    }).catch(function () { /* a missed poll; the next one tries again */ });
+  }
+  function startDoorPoll() { stopDoorPoll(); if (door && door.id) doorTimer = setInterval(pollDoor, DOOR_POLL_MS); }
+  function stopDoorPoll() { if (doorTimer) { clearInterval(doorTimer); doorTimer = null; } }
+
   function signOut() {
     try { sessionStorage.removeItem(SESSION_KEY); } catch (e) { /* ignore */ }
     announce("cpl-reviewer-signed-out");
@@ -265,8 +332,34 @@
 
     row.appendChild(input);
     row.appendChild(go);
+    if (m.door) {
+      var ask = document.createElement("button");
+      ask.type = "button";
+      ask.className = "cobi-rsi-go";
+      ask.setAttribute("data-rsi-ask", "");
+      ask.textContent = "Ask an approver";
+      ask.addEventListener("click", function () {
+        var v = String(m.draft || input.value || "").trim().toLowerCase();
+        if (!v || v.indexOf("@") < 1) { say("Enter your work email address.", "err"); return; }
+        ask.disabled = true;
+        askAccess(v).then(function (r) {
+          ask.disabled = false;
+          if (r && r.ok) { m.draft = ""; m.msg = ""; renderAll(); return; }
+          say(r.why, "err");
+        }).catch(function (e) { ask.disabled = false; say("Could not reach the sign-in service (" + (e && e.message || "network error") + "). Try again.", "err"); });
+      });
+      row.appendChild(ask);
+    }
     box.appendChild(row);
     box.appendChild(out);
+    if (m.door && door) {
+      var dm = document.createElement("div");
+      dm.className = "cobi-rsi-msg" + (door.kind ? " " + door.kind : "");
+      dm.setAttribute("data-rsi-door", "");
+      dm.setAttribute("role", "status");
+      dm.textContent = door.msg || "";
+      box.appendChild(dm);
+    }
     m.el.appendChild(box);
   }
 
@@ -316,6 +409,7 @@
   var inited = false;
   function init() {
     ensureCss();
+    if (!door) { door = doorRead(); if (door && door.id) startDoorPoll(); }
     mountAbout();
     if (inited) return;
     inited = true;
@@ -334,6 +428,9 @@
     getSession: getSession,
     signOut: signOut,
     _sendLink: sendLink,
+    _askAccess: askAccess,
+    _pollDoor: pollDoor,
+    _door: function () { return door; },
     _currentTab: currentTab,
     _mounts: function () { return mounts; },
     _prune: prune,

@@ -1,6 +1,6 @@
 {
  "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
- "_as_of": "2026-11-07",
+ "_as_of": "2026-11-09",
  "mapped": {
   "workflow:daily-dashboard.yml": "CA-01",
   "workflow:map-users-sync.yml": "CA-02",
@@ -100,7 +100,12 @@
   "rpc:credential_priority_request": "DR-31",
   "table:credential_submissions": "DR-32",
   "rpc:credential_submission_add": "DR-32",
-  "rpc:credential_submission_decide": "DR-32"
+  "rpc:credential_submission_decide": "DR-32",
+  "table:funding_access_requests": "DR-14",
+  "table:funding_access": "DR-14",
+  "rpc:funding_access_request": "DR-14",
+  "rpc:funding_access_decide": "DR-14",
+  "function:funding-door": "DR-14"
  },
  "dismissed": {
   "workflow:docket-process.yml": "The Docket's processor (#2963 step 3; Sam's go in session 2026-11-09, \"yes, start step 3\", on the order Sky set out on #2963). A writer acting without a session: it carries out rulings a reviewer saved on Docket cases (field:kb_curation.docket_ruling). It adds no decision right: each case names the register row that owns its decision (`dr`), the ruling is that owner deciding, and the job runs only the commands the reviewed kb/docket/cases.json names for the choice ruled, only scripts on kb/_docket_process.py's ALLOWED list (each writes committed files it can undo from its own receipt), only with --apply beside --expect. It writes a receipt with its undo under kb/docket/receipts/ and commits to main behind the daily build (concurrency daily-dashboard). Nothing on the decision sheets' hold list reaches it.",

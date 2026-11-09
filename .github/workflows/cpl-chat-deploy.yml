@@ -69,6 +69,7 @@ on:
           - workplan-rebuild
           - docket-process
           - library-revise-draft
+          - funding-door
 
 concurrency:
   group: cpl-chat-deploy

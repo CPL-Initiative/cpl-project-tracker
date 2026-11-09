@@ -1181,6 +1181,61 @@
       go("qual", q + " qualify") + sep + go("notyet", n + " not yet confirmed") +
       (S.deadline ? sep + "<span>Confirmation due " + esc(shortDate(S.deadline)) + "</span>" : "") + "</p>";
   }
+  /* ── access requests (the funding door, issue 2983) ─────────────────────────────────────────────────────────────
+     A teammate whose sign-in email does not arrive asks an approver from the sign-in box. The four approvers (Sam,
+     Malone, Kristen, Natalie) see the request here; funding_access_pending() answers nobody else, so for every other
+     reviewer the section never draws. Approve grants the funding and CSM surfaces for 30 days and the requester's open
+     tab signs them in; no email and no phrase go anywhere. */
+  var ACC = { rows: [], asked: false, timer: null, busy: {} };
+  function loadAccess() {
+    var R = rest(); if (!R || !R.remote) return;
+    ACC.asked = true;
+    var once = function () {
+      fetch(R.url + "rpc/funding_access_pending", { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, R.headers), body: "{}" })
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (rows) {
+          rows = Array.isArray(rows) ? rows : [];
+          var changed = JSON.stringify(rows.map(function (x) { return x.id; })) !== JSON.stringify(ACC.rows.map(function (x) { return x.id; }));
+          ACC.rows = rows;
+          if (changed) paint();
+        }).catch(function () {});
+    };
+    once();
+    if (!ACC.timer) ACC.timer = setInterval(function () {
+      if (window.CPL_TABS && typeof window.CPL_TABS.current === "function" && window.CPL_TABS.current() !== TAB) return;
+      once();
+    }, 30000);
+  }
+  function accessHtml() {
+    if (!ACC.rows.length) return "";
+    return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
+      "A teammate asked to sign in without the email link. Approve opens the funding and CSM work for 30 days; their open tab signs them in.</p></div>" +
+      '<ul class="queue" aria-label="Access requests">' + ACC.rows.map(function (x) {
+        return '<li><div class="row"><span class="row-name">' + esc(x.name || x.email) + '</span><span class="row-age">' + esc(shortDate(x.requested_at)) +
+          '</span><span class="row-next">' + esc(x.email) + (x.role ? ", " + esc(x.role) : "") + "</span>" +
+          '<span class="row-pills"><button type="button" class="word lead" data-access="approve" data-id="' + esc(x.id) + '"' + (ACC.busy[x.id] ? " disabled" : "") + ">Approve</button>" +
+          '<button type="button" class="word" data-access="deny" data-id="' + esc(x.id) + '"' + (ACC.busy[x.id] ? " disabled" : "") + ">Deny</button></span></div></li>";
+      }).join("") + "</ul></section>";
+  }
+  function decideAccess(id, verdict) {
+    var R = rest(); if (!R) return;
+    var who = (ACC.rows.filter(function (x) { return x.id === id; })[0] || {});
+    ACC.busy[id] = true; paint();
+    fetch(R.url + "rpc/funding_access_decide", { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, R.headers),
+      body: JSON.stringify({ p_id: id, p_verdict: verdict }) })
+      .then(function (r) { return r.ok ? r.json() : { ok: false, why: String(r.status) }; })
+      .then(function (res) {
+        delete ACC.busy[id];
+        if (res && res.ok) {
+          ACC.rows = ACC.rows.filter(function (x) { return x.id !== id; });
+          paint();
+          say(verdict === "approve" ? "Approved " + (who.name || who.email) + ". Their open tab signs them in." : "Declined the request from " + (who.name || who.email) + ".");
+          return;
+        }
+        paint();
+        say("Not saved (" + ((res && res.why) || "no answer") + "). Sign in again and try once more.");
+      }).catch(function (e) { delete ACC.busy[id]; paint(); say("Not saved (" + e.message + ")."); });
+  }
   function paint() {
     var el = root(); if (!el) return;
     var f = F();
@@ -1198,17 +1253,23 @@
         '<button type="button" class="word" data-act="fold" aria-expanded="' + !state.folded + '" aria-controls="cw-fold">' +
         (state.folded ? "Show the priorities" : "Hide the priorities") + "</button></p></div>" +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
-      (S.reviewer ? "" : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p>') +
+      (S.reviewer ? accessHtml() : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
       '<div id="cw-fold" class="cw-fold"' + (state.folded ? " hidden" : "") + ">" +
         '<section class="sec" aria-labelledby="cw-pri-h"><h2 id="cw-pri-h">Priorities</h2>' + cardsHtml() + "</section></div>" +
       '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
         (S.loaded ? "Read live from the funding tab." : "Loading the requests&hellip;") + "</p></div>" +
         '<div class="center">' + queueHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +
       '<section class="sec" aria-labelledby="cw-bd-h"><h2 id="cw-bd-h">Where the ' + S.rows.length + " stand</h2>" + boardHtml() + "</section>" +
-      '<footer class="foot"><span>The workspace never sends mail: every email opens for you to copy into Outlook.</span>' +
+      '<footer class="foot"><span>The workspace never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
         '<a href="#implementation-funding">Implementation Funding</a></footer>' +
       "</div></div></div>";
     if (dlgHost) el.appendChild(dlgHost);
+    var sm = document.getElementById("cw-signin");
+    if (sm && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
+      window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the CSM Workspace", door: true,
+        blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: Sam, Malone, Kristen or Natalie approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
+    }
+    if (S.reviewer && !ACC.asked) loadAccess();
     if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
     else if (focusSel) { var b = el.querySelector('.row[data-sel="' + cssEsc(focusSel) + '"]'); if (b) b.focus(); }
     watchReviews();
@@ -1337,6 +1398,7 @@
       return;
     }
     if (t.hasAttribute("data-mailact")) { mailAct(t.getAttribute("data-mailact")); return; }
+    if (t.hasAttribute("data-access")) { decideAccess(t.getAttribute("data-id"), t.getAttribute("data-access")); return; }
     if (t.hasAttribute("data-logdone")) {
       var on = t.getAttribute("data-on") === "1";
       logWrite("PATCH", Number(t.getAttribute("data-logdone")), { done_at: on ? new Date().toISOString() : null })
@@ -1472,5 +1534,5 @@
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
     _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
-    _logo: LOGO, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
+    _logo: LOGO, _access: ACC, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();

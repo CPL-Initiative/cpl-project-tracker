@@ -533,6 +533,15 @@
     viewAddress: viewAddress,
     arrival: arrival,
     consumeAuthHash: consumeAuthHash,
+    // A session minted without a magic link (the funding door, #2983): the same store, the same announcement.
+    adopt: function (t) {
+      if (!t || !isValidJwt(t.access_token)) return false;
+      var s = { access_token: t.access_token, refresh_token: t.refresh_token || null, email: jwtEmail(t.access_token) || t.email || "",
+        exp: Date.now() + (parseInt(t.expires_in || "3600", 10) * 1000) };
+      write(s);
+      announce(s);
+      return true;
+    },
     _returnTtlMs: RETURN_TTL_MS,
     sync: sync,
     start: start,
