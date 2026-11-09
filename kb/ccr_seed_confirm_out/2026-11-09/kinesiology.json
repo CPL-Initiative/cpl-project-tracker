@@ -1,0 +1,2418 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Kinesiology",
+  "ruling": "Open Asks Sheet 174 card 1 (Sam, 2026-11-09: confirm)",
+  "run": "S615",
+  "date": "2026-11-09",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 627,
+  "before": {
+    "ATHL M1003": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1004": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1006": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1007": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1008": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1009": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1015": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1016": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1020": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1024": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1025": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1026": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1027": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1028": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1033": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1038": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1040": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1042": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1044": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1046": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1047": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1048": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1050": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1051": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1053": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1054": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1055": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1058": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1061": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1067": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1073": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1075": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1076": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1077": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1078": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1079": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1080": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1082": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1083": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1084": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1086": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1087": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1089": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1091": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1092": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1093": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1094": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1096": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1098": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1100": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1103": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1105": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1106": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1107": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1108": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1112": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1113": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1114": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1115": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1117": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1118": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1119": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1120": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1121": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1125": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1126": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1127": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1128": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1129": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1130": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1133": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1134": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1138": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1139": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1140": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1143": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1144": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1147": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1148": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1149": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1150": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1153": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1155": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1156": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1157": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1158": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1159": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1163": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1165": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1166": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1167": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1168": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1170": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1171": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1172": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1173": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1174": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1175": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1177": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1178": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1179": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1181": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1182": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1183": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1184": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1185": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1186": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1187": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1188": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1189": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1190": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1193": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1194": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1195": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1197": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1199": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1200": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1201": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1206": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1207": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1208": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1214": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1217": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1219": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1220": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1222": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1223": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1224": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1225": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1226": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1235": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1239": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1241": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1242": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1243": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1244": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1245": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1246": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1247": {},
+    "ATHL M1248": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1249": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1250": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1251": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1253": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1255": {},
+    "ATHL M1257": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1259": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1260": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1262": {},
+    "ATHL M1263": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1266": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1267": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1268": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1272": {},
+    "ATHL M1276": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1280": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1283": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1284": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1285": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1286": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1287": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1288": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1289": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1290": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1294": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1296": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1298": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1299": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1300": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1302": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1304": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1305": {},
+    "ATHL M1311": {},
+    "ATHL M1312": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1313": {},
+    "ATHL M1315": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1317": {},
+    "ATHL M1318": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1319": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1320": {},
+    "ATHL M1323": {},
+    "ATHL M1326": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1328": {},
+    "ATHL M1330": {},
+    "ATHL M1331": {},
+    "ATHL M1338": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1339": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1342": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1343": {},
+    "ATHL M1344": {},
+    "ATHL M1345": {},
+    "ATHL M1347": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1349": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1351": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1353": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1354": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1356": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1359": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1360": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1361": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1363": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1455": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ATHL M1457": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1001": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1002": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1003": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1004": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1005": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1007": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1009": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1011": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1014": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1016": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1017": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1019": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1020": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1022": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1023": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1024": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1025": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1026": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1027": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1028": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1029": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1032": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1033": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1035": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1038": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1040": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1042": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1059": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1061": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1062": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1064": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1067": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1068": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1069": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1071": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1073": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1075": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1080": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1082": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1083": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1086": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1088": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1095": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1096": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1097": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1098": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1100": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1102": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1103": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1104": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1105": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1109": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1114": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1115": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1116": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1117": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1118": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1120": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1121": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1124": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1125": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1126": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1129": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1131": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1133": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1136": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1138": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1144": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1146": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1147": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1158": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1159": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1164": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1168": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1169": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1171": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1172": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1174": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1179": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1182": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1196": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1197": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1207": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1209": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1211": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1213": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1220": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1224": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1226": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1228": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1230": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1232": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1234": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1235": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1236": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1238": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1239": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1241": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1244": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1245": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1246": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1247": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1248": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1252": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1254": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1255": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1257": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1260": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1261": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1263": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1264": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1268": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1269": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1271": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1277": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1281": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1286": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1288": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1289": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1292": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1293": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1294": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1296": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1299": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1301": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1302": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1303": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1304": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1308": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1309": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1310": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1312": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1313": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1315": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1318": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1319": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1320": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1322": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1323": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1324": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1325": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1328": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1330": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1331": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1333": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1334": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1335": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1338": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1339": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1340": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1342": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1344": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1347": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1352": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1354": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1356": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1357": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1359": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1360": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1361": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1363": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1364": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1365": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1367": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1368": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1369": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1372": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1375": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1377": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1378": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1380": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1381": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1383": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1384": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1385": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1386": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1387": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1393": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1397": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1398": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1399": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1400": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1403": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1405": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1406": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1407": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1408": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1409": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1413": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1414": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1416": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1420": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1421": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1428": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1430": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1434": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1435": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1436": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1444": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1451": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1454": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1456": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1457": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1458": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1468": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1471": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1472": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1474": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1475": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1483": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1484": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1485": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1486": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1492": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1493": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1496": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1498": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1499": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1501": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1502": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1503": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1512": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1516": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1531": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1534": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1536": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1544": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1546": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1550": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1551": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1552": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1557": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1560": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1562": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1565": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1567": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1570": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1574": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1575": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1576": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1579": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1580": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1582": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1583": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1585": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1586": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1588": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1596": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1597": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1599": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1602": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1608": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1610": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1612": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1615": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1616": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1618": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1619": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1626": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1628": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1631": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1632": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1633": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1638": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1640": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1641": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1642": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1643": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1644": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1647": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1649": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1655": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1658": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1661": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1662": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1664": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1669": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1670": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1671": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1672": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1673": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1674": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1676": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1680": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1681": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1682": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1683": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1684": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1685": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1686": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1691": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1693": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1694": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1695": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1696": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1698": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1701": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1703": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1704": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1705": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1706": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1707": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1708": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1709": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1710": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1711": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1712": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1713": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1714": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1716": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1719": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1720": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1721": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1724": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1725": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1727": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1729": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1730": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1731": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1742": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1744": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1746": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1747": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1748": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1750": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1753": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1754": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1755": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1756": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1758": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1761": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1768": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1778": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1779": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1783": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1784": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1785": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1786": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1787": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1789": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1791": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1794": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1797": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1802": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1808": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1809": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1821": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1825": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1827": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1828": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1829": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1836": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1837": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1838": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1841": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1844": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1852": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1859": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1865": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1867": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1869": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1870": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1875": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1877": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1878": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1882": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1887": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1889": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1893": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1894": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1898": {},
+    "KINE M1901": {},
+    "KINE M1904": {},
+    "KINE M1905": {},
+    "KINE M1906": {},
+    "KINE M1909": {},
+    "KINE M1913": {},
+    "KINE M1914": {},
+    "KINE M1915": {},
+    "KINE M1918": {},
+    "KINE M1919": {},
+    "KINE M1921": {},
+    "KINE M1922": {},
+    "KINE M1924": {},
+    "KINE M1926": {},
+    "KINE M1929": {},
+    "KINE M1997": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1998": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2001": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2005": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2006": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2007": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2008": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2009": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2015": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M2024": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M9021": {},
+    "KINE M9022": {}
+  }
+}
