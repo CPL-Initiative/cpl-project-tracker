@@ -425,16 +425,27 @@
     return ok ? { cols: "reviewer_email,reviewer_label", auth: { Authorization: "Bearer " + s.access_token } }
               : { cols: "reviewer_label", auth: {} };
   }
+  var CURATION_ANON = { cols: "reviewer_label", auth: {} };
+  /* One kb_curation read: the url's "{who}" takes curationWho()'s columns. A token the server refuses (401 or 403)
+     reads again signed out, and st.W keeps that choice for the read's later pages, so a paged read never mixes a
+     token-less page with the email columns (COBIx on #2950). */
+  function curationFetch(url, headers, st) {
+    st = st || { W: curationWho() };
+    var go = function () { return fetch(url.split("{who}").join(st.W.cols), { headers: Object.assign({}, headers, st.W.auth) }); };
+    return go().then(function (r) {
+      if ((r.status === 401 || r.status === 403) && st.W.auth.Authorization) { st.W = CURATION_ANON; return go(); }
+      return r;
+    });
+  }
   function curationRows(arr) {
     (arr || []).forEach(function (r) { if (r && !r.reviewer_email && r.reviewer_label) r.reviewer_email = r.reviewer_label; });
     return arr;
   }
   function fetchAllRows(query) {
-    var PAGE = 1000;
+    var PAGE = 1000, st = { W: curationWho() };
     function page(start, acc) {
-      return fetch(SUPABASE_URL + query, {
-        headers: Object.assign({ "apikey": SUPABASE_ANON, "Range-Unit": "items",
-                   "Range": start + "-" + (start + PAGE - 1) }, curationWho().auth) })
+      return curationFetch(SUPABASE_URL + query, { "apikey": SUPABASE_ANON, "Range-Unit": "items",
+                   "Range": start + "-" + (start + PAGE - 1) }, st)
         .then(function (r) { return r.ok ? r.json() : []; })
         .then(function (batch) {
           acc = acc.concat(batch);
@@ -444,7 +455,7 @@
     return page(0, []);
   }
   function fetchOverlay() {
-    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value," + curationWho().cols + ",reviewed_at&field=in.(discipline,merge_into,unified_title,merge_note)&order=course_id.asc,field.asc")
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value,{who},reviewed_at&field=in.(discipline,merge_into,unified_title,merge_note)&order=course_id.asc,field.asc")
       .then(curationRows)
       .then(function (arr) {
         var out = { disc: {}, merges: [], titles: {}, notes: {} };
@@ -480,9 +491,8 @@
   // maintainer promotes it into common_courses.json. Proposals are world-readable
   // (anon key) so the suggestion is publicly visible while it waits for review.
   function fetchAnchorProposals() {
-    var W = curationWho();
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value," + W.cols + ",reviewed_at&field=eq.anchor_discipline_proposal",
-      { headers: Object.assign({ "apikey": SUPABASE_ANON }, W.auth) })
+    return curationFetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value,{who},reviewed_at&field=eq.anchor_discipline_proposal",
+      { "apikey": SUPABASE_ANON })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(curationRows)
       .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x; }); return m; })
@@ -768,9 +778,8 @@
   // Live curated description for one course (so an edit shows before the daily
   // git sync bakes it into the detail file). Resolves the latest row or null.
   function fetchDescription(courseId) {
-    var W = curationWho();
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=value," + W.cols + ",reviewed_at&field=eq.description&course_id=eq." +
-      encodeURIComponent(courseId), { headers: Object.assign({ "apikey": SUPABASE_ANON }, W.auth) })
+    return curationFetch(SUPABASE_URL + "/rest/v1/kb_curation?select=value,{who},reviewed_at&field=eq.description&course_id=eq." +
+      encodeURIComponent(courseId), { "apikey": SUPABASE_ANON })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(curationRows)
       .then(function (a) { return a[0] || null; })

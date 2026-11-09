@@ -272,20 +272,32 @@
     return ok ? { cols: "reviewer_email,reviewer_label", auth: { Authorization: "Bearer " + s.access_token } }
               : { cols: "reviewer_label", auth: {} };
   }
+  var CURATION_ANON = { cols: "reviewer_label", auth: {} };
+  /* One kb_curation read: the url's "{who}" takes curationWho()'s columns. A token the server refuses (401 or 403)
+     reads again signed out, and st.W keeps that choice for the read's later pages, so a paged read never mixes a
+     token-less page with the email columns (COBIx on #2950). */
+  function curationFetch(url, headers, st) {
+    st = st || { W: curationWho() };
+    var go = function () { return fetch(url.split("{who}").join(st.W.cols), { headers: Object.assign({}, headers, st.W.auth) }); };
+    return go().then(function (r) {
+      if ((r.status === 401 || r.status === 403) && st.W.auth.Authorization) { st.W = CURATION_ANON; return go(); }
+      return r;
+    });
+  }
   function curationRows(arr) {
     (arr || []).forEach(function (r) { if (r && !r.reviewer_email && r.reviewer_label) r.reviewer_email = r.reviewer_label; });
     return arr;
   }
   function fetchAllRows(url) {
-    var PAGE = 1000;
+    var PAGE = 1000, st = { W: curationWho() };
     var out = [];
     url += "&order=course_id.asc,field.asc";  // stable order — Range pages must not shear
     function page(from) {
-      return fetch(url, { headers: Object.assign({
+      return curationFetch(url, {
         "apikey": SUPABASE_ANON,
         "Range-Unit": "items",
         "Range": from + "-" + (from + PAGE - 1)
-      }, curationWho().auth) })
+      }, st)
         .then(function (r) { return r.ok ? r.json() : []; })
         .then(curationRows)
         .then(function (arr) {
@@ -299,7 +311,7 @@
   // Fetch overlay — only rows in our namespace.
   function fetchOverlay() {
     var url = SUPABASE_URL + "/rest/v1/kb_curation"
-      + "?select=course_id,field,value," + curationWho().cols + ",reviewed_at"
+      + "?select=course_id,field,value,{who},reviewed_at"
       + "&course_id=like." + encodeURIComponent(KEY_PREFIX) + "%25";
     return fetchAllRows(url)
       .then(function (arr) {
@@ -430,7 +442,7 @@
   // Assignments made so far (own namespace). Returns raw_title → {title, issuer, by, at}.
   function fetchUnclassOverlay() {
     var url = SUPABASE_URL + "/rest/v1/kb_curation"
-      + "?select=course_id,field,value," + curationWho().cols + ",reviewed_at"
+      + "?select=course_id,field,value,{who},reviewed_at"
       + "&course_id=like." + encodeURIComponent(UNCLASS_PREFIX) + "%25";
     return fetchAllRows(url)  // 1,200+ rows — the single-GET 1,000-row cap is the "didn't save" bug
       .then(function (arr) {
