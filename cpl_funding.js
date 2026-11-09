@@ -6424,8 +6424,18 @@
   function ncAttestStanding(att) { return !!(att && att.status === "confirmed"); }
   function ncAttestPending(att) { return !!(att && att.status === "self_attested"); }
   // An institution whose award carries a noncredit share under the outcomes lane.
+  // A table row carries its noncredit award (collegeAlloc's figures ride the shaped row). A ROSTER row does not, and
+  // the CSM Workspace's snapshot and the Nudge both pass roster rows: read as given, a credit college's noncredit
+  // share was never seen there, so the workspace counted three institutions (the noncredit-only ones) and showed no
+  // college's attestation, waiting or accepted (Sam's screen, 2026-11-09: "Noncredit CPL Lead attested 0 of 3" over
+  // twelve attestations on file). A row without the figure asks its allocation.
+  function ncAwardOf(c) {
+    if (c.nc_award != null) return Number(c.nc_award) || 0;
+    var row = c.college ? rosterRow(c.college) : null;
+    return row ? Number(collegeAlloc(row).nc_award) || 0 : 0;
+  }
   function ncAttestShown(c) {
-    return !!c && ncOutcomesMode() && (ncCoordShown() || ncTeamShown()) && (!!c.nco || (c.nc_award || 0) > 0.5);
+    return !!c && ncOutcomesMode() && (ncCoordShown() || ncTeamShown()) && (!!c.nco || ncAwardOf(c) > 0.5);
   }
   // The CO's copy of the row the published view shows (same college, same year).
   function ncAttestReviewOf(college) {
