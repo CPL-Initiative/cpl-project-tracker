@@ -1172,3 +1172,10 @@ The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/p
   starts none (`js-tests.yml` takes `pull_request`'s default types). A branch cut before the last checkpoint also
   conflicts on the lane file, and a conflicting PR runs no `pull_request` checks. Merge `main` in and commit the lane
   line onto the SLO branch: a real change, and `test` runs on the head.
+
+### S619 SkyTadpole (2026-11-09, the CPL Queue routine's 11:12Z firing): simulate on the capture's text
+
+- **A page read through `cq_view` is not the text a reconcile step sees when the capture took another page.** Check the
+  record's source in `sources.json` first: Alameda's Dental 19837 was captured as `sitemap_page` / `innerText` (3,671
+  characters, description cut), while the page read printed the catalog JSON (6,312). The step matched the read and
+  nothing in the run (42600854055). Compare `text_chars` with the read's `chars` before dispatching a reconcile.

@@ -759,17 +759,6 @@
      "source_words": "Associate Degree Requirements 2026-2027 (the 27 local degrees): 'STEP 4: Complete a minimum of 60 degree-applicable semester units with an overall GPA of 2.0 or better' (college page read 42470655341); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units"
     }
    ]
-  },
-  "College of Alameda": {
-   "why": "S618 SkyPinwheel, 2026-11-09. College of Alameda's curriQunet program pages print some totals only in the description paragraph above the course table: Dental Assisting 19837, 'The program requires 32 semester units in Dental Assisting, plus 9 semester units in other general education required courses; for a total of 41 units' (college-page-read 42585679798, kb/college_reads/alameda_program_totals.json). The record reads blocks of 32 and 9 and no total, so it scored incomplete. The step reads only the words ahead of the table's header ('SUBJECT #'), because a block heading under it can print a choice's own total (Athletic Trainer Aide 36691: 'Choose from the KIN/ATHL activity courses listed for a total of 4 units'). Reversible by deleting this entry.",
-   "steps": [
-    {
-     "kind": "fill",
-     "field": "total_units",
-     "pattern": "for\\s+a\\s+total\\s+of\\s+(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*(?:-|\u2013|to)\\s*(?P<max>\\d+(?:\\.\\d+)?))?\\s+units\\b(?=[\\s\\S]*?SUBJECT\\s*#)",
-     "read": "college-page-read 42585679798 (kb/college_reads/alameda_program_totals.json)"
-    }
-   ]
   }
  }
 }
