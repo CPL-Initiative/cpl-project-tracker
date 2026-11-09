@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-06
+updated: 2026-11-09
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -28,6 +28,21 @@ audience set** (in the public tracker repo and Sam has not said who it is for),
 and **figures to refresh**. Add, File it, Edit and Retire write to the table;
 nothing deletes, and a trigger files every prior row in `cpl_library_history`.
 Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
+
+✅ **A piece's link beside a file: both reach the request (Sam, 2026-11-09, the ELL Healthcare Pathways side
+session).** *"I tried adding the link to the previous ELL IEP visual to the new project link box, but it just shot me
+down to the existing ELL IEP project thinking I was wanting to work on it."* The jump to that card also cleared the
+Word file he had attached, so record `ell-healthcare-pathways-cpl-starting-points-mw9tepdk` was saved with no
+document. `knownLink()` in `library.js`: a person who has picked a file or typed what to make is making something new,
+so the piece's link becomes a document to work from and the file stays; a second link beside a file picked as
+background is a second document, never a replacement. With the box empty the link still opens the piece's card, which
+says how to use it as background. `tests/library.test.js` (22). The piece itself was built in session and filed
+(`kb/receipts/library_ell_hp_filed_draft_2026-11-09.sql`).
+
+**Open, Sam's call:** a new piece still needs a session (Copy the brief, or the scheduled run), where Revise drafts
+from the card through `library-revise-draft`. Sam, 2026-11-09: *"I haven't been able to successfully create a doc
+from there yet--always need some sort of out side intervention"*. Put to him in session that day: build the same
+on-card drafting for a new agency visual, or keep new pieces in sessions and have the card say so plainly.
 
 ✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
 (kind, now including spreadsheet; working title; occasion; needed by; for; what it must
