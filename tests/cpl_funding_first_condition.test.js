@@ -105,7 +105,7 @@ function condWords(window, doc, id) {
 // The RPC's SQL source answers all three parts as booleans and keeps its grant.
 const sql = fs.readFileSync(path.join(__dirname, "..", "map", "supabase_map_contacts.sql"), "utf8");
 check("4a: map_coordinator_summary() returns the three booleans and no name",
-  /returns table \(college text, has_coordinator boolean, has_primary_contact boolean,\s*has_landing_page boolean, last_synced timestamptz, has_cpl_assistant boolean\)/.test(sql)
+  /returns table \(college text, has_coordinator boolean, has_primary_contact boolean,\s*has_landing_page boolean, last_synced timestamptz, has_cpl_assistant boolean,\s*has_nc_cpl_lead boolean, nc_lead_title_near boolean\)/.test(sql)
     && !/returns table[^)]*primary_contact text/.test(sql));
 check("4b: the function keeps its execute grant after the drop and recreate",
   /drop function if exists public\.map_coordinator_summary\(\);[\s\S]*grant execute on function public\.map_coordinator_summary\(\) to anon, authenticated, service_role;/.test(sql));
