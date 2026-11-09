@@ -6,8 +6,12 @@
 -- How it works:
 --   1. funding_access_request(email, secret_hash) (anon): a Team RACI address gets a pending request. The requester's
 --      browser keeps the secret; the table holds only its SHA-256. Nothing is mailed.
---   2. funding_access_pending() / funding_access_decide(id, verdict): an approver (on the reviewer list AND one of the
---      four named in team_members) sees and rules on it in the CSM Workspace. Approve grants funding_access for 30 days.
+--   2. funding_access_pending() / funding_access_decide(id, verdict): an approver (on the reviewer list AND in
+--      funding_approvers) sees and rules on it in the CSM Workspace. Approve grants funding_access for 30 days.
+--      funding_approvers is a table Sam controls from Admin (Sam, 11:26 AM PT: "the starting approvers are Sam, Malone,
+--      Kristen, Natalie, and Terence, and there should be a table in Admin where he can control that list"): seeded
+--      from team_members by name, changed only by an owner (Sam or Malone), read by an approver or an owner.
+--   No phrase: the approval mints the session, so there is nothing to hand out or rotate (Sam's go, in session).
 --   3. The Edge Function funding-door (service role) checks the secret, marks the request claimed once, and mints that
 --      person's own Auth session with admin generate_link + verify: no Auth email, so the two-an-hour cap never applies.
 --   4. is_funding_reviewer() = is_allowed_reviewer() OR a live funding_access row. It replaces is_allowed_reviewer() in
@@ -47,16 +51,63 @@ returns boolean language sql stable security definer set search_path = public as
       and fa.revoked_at is null and fa.expires_at > now());
 $$;
 
--- The four approvers, by name in Team RACI; the address is matched on its local part, so Natalie's rccd.edu and
--- vendor.rccd.edu both count. The reviewer list is still required.
+create table if not exists public.funding_approvers (
+  email    text primary key,
+  added_by text not null,
+  added_at timestamptz not null default now()
+);
+alter table public.funding_approvers enable row level security;
+revoke all on table public.funding_approvers from public, anon, authenticated;
+insert into public.funding_approvers (email, added_by)
+select lower(tm.email), 'seed: Sam in session 2026-11-09 (#2983)' from public.team_members tm
+where tm.org = 'MAP' and tm.active and tm.email like '%@%'
+  and tm.name in ('Samuel Lee', 'Malone Dunlavy', 'Kristen Himmerick', 'Natalie Powell', 'Terence Nelson')
+on conflict (email) do nothing;
+
+-- An address matches on its local part, so Natalie's rccd.edu and vendor.rccd.edu both count; the reviewer list is
+-- still required, and the reviewer list compares the exact address.
 create or replace function public.is_funding_approver()
 returns boolean language sql stable security definer set search_path = public as $$
   select public.is_allowed_reviewer() and exists (
+    select 1 from public.funding_approvers fa
+    where split_part(lower(fa.email), '@', 1) = split_part(lower(coalesce(auth.jwt() ->> 'email', '')), '@', 1));
+$$;
+
+-- The owners who may change the approvers: Sam and Malone (#2983).
+create or replace function public.is_funding_owner()
+returns boolean language sql stable security definer set search_path = public as $$
+  select public.is_allowed_reviewer() and exists (
     select 1 from public.team_members tm
-    where tm.org = 'MAP' and tm.active
-      and tm.name in ('Samuel Lee', 'Malone Dunlavy', 'Kristen Himmerick', 'Natalie Powell')
+    where tm.org = 'MAP' and tm.active and tm.name in ('Samuel Lee', 'Malone Dunlavy')
       and split_part(lower(tm.email), '@', 1) = split_part(lower(coalesce(auth.jwt() ->> 'email', '')), '@', 1));
 $$;
+
+create or replace function public.funding_approvers_list()
+returns table (email text, name text, added_by text, added_at timestamptz, can_edit boolean)
+language sql stable security definer set search_path = public as $$
+  select fa.email, tm.name, fa.added_by, fa.added_at, public.is_funding_owner()
+  from public.funding_approvers fa
+  left join public.team_members tm on lower(tm.email) = lower(fa.email)
+  where public.is_funding_approver() or public.is_funding_owner()
+  order by coalesce(tm.name, fa.email);
+$$;
+
+create or replace function public.funding_approvers_set(p_email text, p_add boolean)
+returns json language plpgsql security definer set search_path = public as $$
+declare e text := lower(trim(coalesce(p_email, ''))); me text := lower(coalesce(auth.jwt() ->> 'email', ''));
+begin
+  if not public.is_funding_owner() then return json_build_object('ok', false, 'why', 'not_an_owner'); end if;
+  if e !~ '^[^@\s]+@[^@\s]+\.[a-z]{2,}$' then return json_build_object('ok', false, 'why', 'bad_email'); end if;
+  if p_add then
+    if not exists (select 1 from public.allowed_reviewers ar where lower(ar.email) = e) then
+      return json_build_object('ok', false, 'why', 'not_a_reviewer');
+    end if;
+    insert into public.funding_approvers (email, added_by) values (e, me) on conflict (email) do nothing;
+  else
+    delete from public.funding_approvers where lower(email) = e;
+  end if;
+  return json_build_object('ok', true);
+end $$;
 
 -- Ask. Answers the same words whether or not the address is on the team, so the door says nothing about who is.
 create or replace function public.funding_access_request(p_email text, p_secret_hash text)
@@ -115,12 +166,14 @@ begin
   return json_build_object('ok', true, 'status', r.status);
 end $$;
 
-revoke all on function public.is_funding_reviewer(), public.is_funding_approver(),
+revoke all on function public.is_funding_reviewer(), public.is_funding_approver(), public.is_funding_owner(),
   public.funding_access_request(text, text), public.funding_access_status(uuid, text),
-  public.funding_access_pending(), public.funding_access_decide(uuid, text) from public, anon, authenticated;
-grant execute on function public.is_funding_reviewer(), public.is_funding_approver() to anon, authenticated, service_role;
+  public.funding_access_pending(), public.funding_access_decide(uuid, text),
+  public.funding_approvers_list(), public.funding_approvers_set(text, boolean) from public, anon, authenticated;
+grant execute on function public.is_funding_reviewer(), public.is_funding_approver(), public.is_funding_owner() to anon, authenticated, service_role;
 grant execute on function public.funding_access_request(text, text), public.funding_access_status(uuid, text) to anon, authenticated, service_role;
-grant execute on function public.funding_access_pending(), public.funding_access_decide(uuid, text) to authenticated, service_role;
+grant execute on function public.funding_access_pending(), public.funding_access_decide(uuid, text),
+  public.funding_approvers_list(), public.funding_approvers_set(text, boolean) to authenticated, service_role;
 
 -- The funding and CSM surfaces take is_funding_reviewer(): the policies on these seven tables and the bodies of these
 -- four read functions, rewritten in place (is_allowed_reviewer() -> is_funding_reviewer()); nothing else changes.

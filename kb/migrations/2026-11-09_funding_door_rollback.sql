@@ -21,11 +21,15 @@ begin
     end if;
   end loop;
 end $$;
+drop function if exists public.funding_approvers_set(text, boolean);
+drop function if exists public.funding_approvers_list();
+drop function if exists public.is_funding_owner();
 drop function if exists public.funding_access_decide(uuid, text);
 drop function if exists public.funding_access_pending();
 drop function if exists public.funding_access_status(uuid, text);
 drop function if exists public.funding_access_request(text, text);
 drop function if exists public.is_funding_approver();
 drop function if exists public.is_funding_reviewer();
+drop table if exists public.funding_approvers;
 drop table if exists public.funding_access;
 drop table if exists public.funding_access_requests;

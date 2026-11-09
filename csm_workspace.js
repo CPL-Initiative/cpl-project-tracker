@@ -1182,8 +1182,8 @@
       (S.deadline ? sep + "<span>Confirmation due " + esc(shortDate(S.deadline)) + "</span>" : "") + "</p>";
   }
   /* ── access requests (the funding door, issue 2983) ─────────────────────────────────────────────────────────────
-     A teammate whose sign-in email does not arrive asks an approver from the sign-in box. The four approvers (Sam,
-     Malone, Kristen, Natalie) see the request here; funding_access_pending() answers nobody else, so for every other
+     A teammate whose sign-in email does not arrive asks an approver from the sign-in box. The approvers (the funding_approvers
+     table, managed in Admin) see the request here; funding_access_pending() answers nobody else, so for every other
      reviewer the section never draws. Approve grants the funding and CSM surfaces for 30 days and the requester's open
      tab signs them in; no email and no phrase go anywhere. */
   var ACC = { rows: [], asked: false, timer: null, busy: {} };
@@ -1267,7 +1267,7 @@
     var sm = document.getElementById("cw-signin");
     if (sm && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
       window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the CSM Workspace", door: true,
-        blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: Sam, Malone, Kristen or Natalie approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
+        blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: one of the funding approvers approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
     }
     if (S.reviewer && !ACC.asked) loadAccess();
     if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();

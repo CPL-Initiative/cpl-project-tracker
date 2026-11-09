@@ -132,7 +132,7 @@
             : r && r.why === "busy" ? "Many requests are waiting. Try again in a few minutes." : "The request did not go through. Check the address and try again." };
         }
         doorWrite({ id: r.id || null, secret: secret, hash: h, email: email, at: Date.now(),
-          msg: "Asked. If this address is on the MAP team, Sam, Malone, Kristen or Natalie will see it in the CSM Workspace. Keep this tab open: it signs you in when one of them approves.", kind: "ok" });
+          msg: "Asked. If this address is on the MAP team, an approver will see it in the CSM Workspace. Keep this tab open: it signs you in when one of them approves.", kind: "ok" });
         startDoorPoll();
         return { ok: true };
       });
@@ -145,7 +145,7 @@
   }
   function pollDoor() {
     if (!door || !door.id) return;
-    if (Date.now() - door.at > DOOR_GIVE_UP_MS) { stopDoorPoll(); doorSay("No approval yet. Ask again, or reach Sam, Malone, Kristen or Natalie.", "err"); return; }
+    if (Date.now() - door.at > DOOR_GIVE_UP_MS) { stopDoorPoll(); doorSay("No approval yet. Ask again, or reach an approver directly.", "err"); return; }
     rpc("funding_access_status", { p_id: door.id, p_secret_hash: door.hash }).then(function (st) {
       if (st === "approved") {
         stopDoorPoll();
@@ -377,6 +377,7 @@
     m.title = opts.title;
     m.blurb = opts.blurb;
     m.returnTab = opts.returnTab;
+    m.door = !!opts.door;
     renderMount(m);
     return m;
   }

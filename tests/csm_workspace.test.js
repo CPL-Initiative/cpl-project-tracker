@@ -84,10 +84,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("1d: the workspace's stage follows: waiting on the team, then held or qualifying",
     W._stageOf(mt) === "waiting" && ["held", "qual"].indexOf(W._stageOf(pc)) >= 0);
   const reads = (SRC.match(/fetch\(R\.url \+ "([a-z_/]+)/g) || []).map((m) => m.replace(/^fetch\(R\.url \+ "/, "")).sort();
-  check("1e: the source acts through the funding tab's snapshot; it writes only its own log and reads the three contact sources",
+  check("1e: the source acts through the funding tab's snapshot; it writes only its own log and the access rulings, and reads the three contact sources and the access queue",
     /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1/.test(SRC) &&
-    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/map_landing_contacts_roster"]) &&
-    (SRC.match(/method: "POST"/g) || []).length === 1 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
+    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/funding_access_decide",
+      "rpc/funding_access_pending", "rpc/map_landing_contacts_roster"]) &&
+    (SRC.match(/method: "POST"/g) || []).length === 3 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
   check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
     flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
     !!root.querySelector('.row[data-sel="' + COLLEGE + '"][aria-current="true"]'));
