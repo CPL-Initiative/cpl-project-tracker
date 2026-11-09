@@ -1,27 +1,42 @@
 {
   "schema": 1,
-  "session": 612,
-  "moniker": "SkySunflower",
+  "session": 620,
+  "moniker": "SkyCigar",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_613_handoff.md",
+  "handoff": "docs/session_620_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
       "text": "Open Asks Sheet 174 card 1: the seed re-check reads course descriptions (88% right held out at a clear margin) with TOP beside them. Of 12,504 seed cards, 1,964 have both signals; in Kinesiology 627, and 8 go to a curator.",
       "no_reply": "Every seed card stays capped at 0.79; nothing in the catalog changes.",
-      "link": "https://claude.ai/artifact/ETPrCdiUzf3iq7GUr4F9So"
+      "link": "https://claude.ai/artifact/ETPrCdiUzf3iq7GUr4F9So",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-09",
+        "words": "confirm"
+      }
+    },
+    {
+      "title": "Confirm the next five disciplines where the descriptions and TOP both agree?",
+      "text": "Open Asks Sheet 175 card 1: Music 250, Fire Technology 169, Mathematics 128, Child Development/ECE 107 and English 99 cards, by the same two signals that confirmed Kinesiology's 627. Answer five, all, one or later.",
+      "no_reply": "The five disciplines' seed cards stay capped at 0.79; nothing in the catalog changes.",
+      "link": "https://claude.ai/artifact/RytJhApuMxGp11U8NtyDrj"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-08T22:50:39Z",
+  "written_at": "2026-11-09T13:30:00Z",
   "project": "course",
   "next_step": {
-    "title": "Confirm Kinesiology's seed disciplines, if Sam agrees",
-    "text": "Sheet 174 asks whether the 627 Kinesiology cards whose descriptions and TOP both agree with the seed discipline are confirmed; the 8 that disagree go to a curator as one batch."
+    "title": "Confirm the next five disciplines, if Sam agrees",
+    "text": "Sheet 175 asks whether Music, Fire Technology, Mathematics, Child Development/ECE and English are confirmed where the descriptions and TOP both agree; on his word kb/_ccr_seed_confirm_apply.py runs per discipline with its --expect count."
   },
   "changes": [
+    {
+      "at": "2026-11-09T02:30:00Z",
+      "text": "Kinesiology's 627 seed cards are confirmed by description and TOP, on Sam's confirm (Open Asks Sheet 174); the 8 that disagree are the Courses List's Discipline in doubt job."
+    },
     {
       "at": "2026-11-08T22:40:00Z",
       "text": "The seed re-check dry run reads two second signals on the 14,523 capped seed disciplines: course descriptions, as Sam asked on Sheet 173, and TOP beside them (#2940)."

@@ -816,7 +816,11 @@ def build_confidence(root):
 def next_batch(root):
     """The one small batch the first view opens on (Sam's Commons rulings, 2026-11-08, #2921 item 2): Another look's
     open cards in Exhibits, six at most, decided with Keep or Change from the evidence, then stop. The sweep never
-    shows a card again once a person has kept or changed it, so its card count is what is still open."""
+    shows a card again once a person has kept or changed it, so its card count is what is still open.
+
+    `cards` names the six, with the kb_curation keys a decision saves under (`_UNCLASSIFIED::<local title>`, the
+    keys exhibits.js reconcileSweep reads), so the Commons can count the batch decided from the saves themselves
+    and close it on the spot (COBIx on #2921, 2026-11-09: the card still read open after Sam decided all six)."""
     d = load_json(root, "kb/exhibits_sweep.json")
     cards = d.get("cards") or []
     n = min(len(cards), 6)
@@ -827,7 +831,59 @@ def next_batch(root):
             "title": "Another look at %s exhibit title%s" % (fmt(n), "" if n == 1 else "s"),
             "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
             "stop": "The batch ends when its cards are decided.", "rules": rules,
+            "cards": [{"id": c.get("id"), "current": c.get("current"),
+                       "keys": [UNCLASS_PREFIX + l["raw"] for l in (c.get("locals") or []) if l.get("raw")]}
+                      for c in cards[:n]],
             "at": d.get("generated_at")}
+
+
+UNCLASS_PREFIX = "_UNCLASSIFIED::"
+# The run logs whose open calls are decisions on a sheet (the session side of each row, kb/status/<project>.json).
+CALL_LOGS = ["program-requirements", "exhibit", "course", "cr", "subjects"]
+
+
+def decision_batches(root):
+    """Each call a run log still holds open, one batch apiece, in the logs' order: the decision sheet it sits on.
+    A log that cannot be read is named, never skipped as if it held nothing."""
+    out = []
+    for p in CALL_LOGS:
+        try:
+            d = load_json(root, "kb/status/%s.json" % p)
+        except (OSError, ValueError) as e:
+            out.append({"kind": "decision", "project": p, "error": "%s: %s" % (type(e).__name__, e)})
+            continue
+        for c in d.get("calls") or []:
+            if (c.get("answer") or {}).get("words") or not c.get("title"):
+                continue
+            out.append({"kind": "decision", "project": p, "n": 1, "title": c.get("title"), "teaches": c.get("text"),
+                        "open": c.get("link"), "todo_id": c.get("todo_id"),
+                        "stop": "It ends when you answer the sheet."})
+    return out
+
+
+def job_batches(queue):
+    """The queue's items a person named Sam carries (the owner says so), each a job that opens filtered."""
+    out = []
+    for g in (queue or {}).get("reasons") or []:
+        for i in g.get("items") or []:
+            if not str(i.get("owner") or "").startswith("Sam") or i.get("error") or not i.get("n"):
+                continue
+            out.append({"kind": "job", "ref": i.get("ref"), "n": i.get("n"), "title": i.get("title"),
+                        "words": i.get("words"), "teaches": i.get("owner"), "open": i.get("open"), "reason": g.get("key")})
+    return out
+
+
+def batches(root, queue):
+    """The ordered list of small batches (COBIx on #2921, 2026-11-09, ask 2: "always offer the next step"): Another
+    look, then each decision a run log holds open, then the queue's jobs Sam carries. The first view shows the first
+    one not done; when none is left it says so plainly."""
+    out = []
+    a = next_batch(root)
+    if a:
+        out.append(a)
+    out.extend(decision_batches(root))
+    out.extend(job_batches(queue))
+    return out
 
 
 BUILDING = [
@@ -851,8 +907,11 @@ def build(root):
         except Exception as e:  # noqa: BLE001
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows),
-            "confidence": build_confidence(root), "next_batch": _safe(next_batch, root)}
+    queue = build_queue(rows)
+    bl = _safe(lambda r: batches(r, queue), root)
+    nb = (next((b for b in bl if not b.get("error")), None) if isinstance(bl, list) else bl)
+    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": queue,
+            "confidence": build_confidence(root), "batches": bl, "next_batch": nb}
 
 
 def _safe(fn, root):

@@ -826,3 +826,27 @@ model recomputing `priorities()` per college.
   `commons_jobs_filtered` (5) caught the first draft.
 - **A loader's own throw must reach its catch.** `.then(ok, fail)` does not catch a throw inside `ok`; the jobs test
   failed on an unhandled rejection until the doubt read used `.then(ok).catch(fail)`.
+
+## Moved from the lane, 2026-11-09, SkyCigar
+
+**To do, later (Sam, 2026-10-26 ~15:00Z, S490):** *"The Commons program numbers don't match the PR tabs numbers. Need
+to make sure the numbers on all tabs on the commons match the commons summaries."* His two screenshots, the same morning:
+the Commons' Program Requirements card read **13,194 of 20,282 complete at 114 colleges** (3,731 failing a check, 3,357
+with no record; figures read 6:16 AM PT), while the Program Requirements tab's Progress read **17,529 records read at 114
+colleges** and **3,274 fail a machine check** (7:38 AM PT). The two count different things (complete active programs
+against records read) and from different reads, but neither page says so. Make every tab's figures and the Commons
+summary agree, or name the difference on both. **The Program Requirements pair is done (S560, #2721):** both pages
+headline complete active programs of COCI's active (S558); *Needs attention* now counts active programs whose record
+fails, the card's unit, where it had counted every failing record; and each page names the one difference left, timing
+(the card counts the records committed at the last checkpoint, the tab reads live: 13,553 committed against 13,542
+live on 2026-11-03). **The other four pairs, checked (S561):** Course reads the Commons row itself and CR reads the
+same committed worklist build, so both agree by construction. **Subjects disagreed:** the page counted 17 scan findings
+to confirm or note and the card 16, since the card counted two rules and left out the dead-format anchor; both now
+count one set, the findings needing judgment less the ones another item counts (`ASK_SKIP` in `canonical_subj4.js`,
+`CSR_ASK_SKIP` in the builder; the page also lists a missed alignment, as the card does), and each names its timing
+(the card counts the daily sync, the page reads the picks live). **Exhibits would have counted held titles twice** on
+a night the procedures run held any (live from the review file, and again from the Commons row); the page now drops
+the row's held and conflict copies once the review file is read, and both pages say why the card's list is shorter
+(the page adds the tab's own queues). Guards: `tests/csr_progress.test.js` (79), `tests/exhibits_progress_page.test.js`
+(43), `tests/commons_status_build_test.py` (85). The same screenshot shows both Progress cards reading *Could not be read*
+(`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.
