@@ -69,35 +69,33 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
     18.0,
     19.0
    ],
-   "against": "program",
-   "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
+   "stated": [
+    60.0,
+    60.0
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
      18.0,
-     18.0
+     19.0
     ],
     "stated": [
-     60.0,
-     60.0
+     18.0,
+     19.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -332,5 +330,6 @@
    "The 60-unit degree total is recorded from the page's 'Total units 60.00' line."
   ]
  },
- "extracted_run": "38935121852"
+ "extracted_run": 42600854055,
+ "read_run": "38935121852"
 }

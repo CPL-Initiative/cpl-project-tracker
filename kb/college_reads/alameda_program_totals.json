@@ -1,0 +1,55 @@
+{
+ "_readme": "S617 SkyWhirlpool, 2026-11-09. College of Alameda: 21 of 59 passing, the lowest pass share of any credit college with 40 or more records. 16 of its failures carry no program total (total_min null) and read incomplete; 9 of them lay their courses out by semester (FIRST SEMESTER ... FOURTH SEMESTER, each block stated, rule all), so the record's blocks sum but the scorer has no total to check them against. This read asks, on the catalog's own JSON as the capture reads it, whether each entry prints a program total (Total Units, Major Total) the extraction missed, or only the semester subtotals. Five entries: three semester layouts (Diesel A.S. and CA, Chassis A.S.) and two others (Dental Assisting, Communication Studies). No render, no model call. Pages listed: 01113 Diesel Mechanics A.S. (47309/47555); 19827 Diesel Mechanics CA (47309/47556); 09009 Chassis and Drivetrain A.S. (47257/47392); 19837 Dental Assisting CA (47305/47429); 41483 Communication Studies CA (47289/47425)",
+ "college": "College of Alameda",
+ "questions": {
+  "program_total": "Does the entry print a program total, and in what words, or only semester subtotals?"
+ },
+ "keywords": [
+  "Total",
+  "[Uu]nits",
+  "SEMESTER",
+  "Major"
+ ],
+ "pages": [
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47555",
+   "answers": [
+    "program_total"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47556",
+   "answers": [
+    "program_total"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47392",
+   "answers": [
+    "program_total"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47305/47429",
+   "answers": [
+    "program_total"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47289/47425",
+   "answers": [
+    "program_total"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  }
+ ]
+}
