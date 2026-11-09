@@ -199,7 +199,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `funding_access_status` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `funding_approvers_list` | tabs: `admin` | — |
 | `funding_approvers_set` | tabs: `admin` | — |
-| `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
+| `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · `edgefn:cpl-chat` | — |
 | `is_funding_approver` | tabs: `csm-workspace` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
