@@ -86,9 +86,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const reads = (SRC.match(/fetch\(R\.url \+ "([a-z_/]+)/g) || []).map((m) => m.replace(/^fetch\(R\.url \+ "/, "")).sort();
   check("1e: the source acts through the funding tab's snapshot; it writes only its own log and the access rulings, and reads the three contact sources and the access queue",
     /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1/.test(SRC) &&
-    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/funding_access_decide",
-      "rpc/funding_access_pending", "rpc/map_landing_contacts_roster"]) &&
-    (SRC.match(/method: "POST"/g) || []).length === 3 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
+    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/map_landing_contacts_roster"]) &&
+    JSON.stringify((SRC.match(/accessPost\("([a-z_/]+)"/g) || []).map((m) => m.replace(/^accessPost\("|"$/g, "")).sort()) ===
+      JSON.stringify(["rpc/funding_access_decide", "rpc/funding_access_pending", "rpc/is_funding_approver"]) &&
+    (SRC.match(/method: "POST"/g) || []).length === 2 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
   check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
     flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
     !!root.querySelector('.row[data-sel="' + COLLEGE + '"][aria-current="true"]'));
@@ -474,6 +475,68 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("12f: the email copy of the logo is in the repo and small",
     fs.existsSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")) &&
     fs.statSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")).size < 12000);
+}
+
+// ── 13. access requests: the approver's side of the funding door (Sam, 2026-11-09: "I don't understand how to access
+//        the request to answer") ────────────────────────────────────────────────────────────────────────────────
+{
+  // An approver, with one request waiting. Each read carries the session's token as it stands at that read.
+  const { window, W, root } = setup({ signedIn: true });
+  let token = "first.token.sig", approver = true, pending = [], refuse = false;
+  const sent = [];
+  window.CPL_SESSION.authHeaders = () => ({ apikey: "anon", Authorization: "Bearer " + token });
+  window.CPL_FUNDING_NO_REMOTE = false;
+  window.fetch = function (url, init) {
+    url = String(url);
+    sent.push({ url, auth: init && init.headers && init.headers.Authorization, body: init && init.body });
+    const ans = (v, ok) => Promise.resolve({ ok: ok !== false, status: ok === false ? 401 : 200, json: () => Promise.resolve(v) });
+    if (/rpc\/is_funding_approver/.test(url)) return ans(approver);
+    if (/rpc\/funding_access_pending/.test(url)) return refuse ? ans({}, false) : ans(pending);
+    if (/rpc\/funding_access_decide/.test(url)) return ans({ ok: true, status: "approved" });
+    return ans([]);
+  };
+  W._access.asked = false; W.paint();
+  await tick(); await tick(); await tick();
+  const sec = () => root.querySelector('section[aria-labelledby="cw-acc-h"]');
+  check("13a: an approver sees Access requests with nobody waiting, and how a teammate asks",
+    !!sec() && /No one is waiting/.test(flat(sec())) && /Ask an approver/.test(flat(sec())) && !sec().querySelector('[data-access="approve"]'));
+  check("13b: the empty section offers Check now", !!sec().querySelector('button[data-access="check"]') && flat(sec().querySelector('[data-access="check"]')) === "Check now");
+
+  pending = [{ id: "11111111-2222-3333-4444-555555555555", email: "pat@rccd.edu", name: "Pat Rivera", role: "CSM", requested_at: "2026-11-09T20:00:00Z" }];
+  token = "second.token.sig";                       // the keeper refreshed the session since the first read
+  clickEl(window, sec().querySelector('[data-access="check"]'));
+  await tick(); await tick(); await tick();
+  const reads = sent.filter((x) => /funding_access_pending/.test(x.url));
+  check("13c: a later read carries the session's token as it stands then, never the first read's",
+    reads.length >= 2 && reads[0].auth === "Bearer first.token.sig" && reads[reads.length - 1].auth === "Bearer second.token.sig");
+  check("13d: the request draws with who asked, Approve and Deny, and the status counts it",
+    /Pat Rivera/.test(flat(sec())) && /pat@rccd\.edu, CSM/.test(flat(sec())) && !!sec().querySelector('[data-access="approve"]') &&
+    !!sec().querySelector('[data-access="deny"]') && /1 access request waits\./.test(flat(root.querySelector(".status"))));
+
+  refuse = true;
+  const ok = await W._readAccess();
+  check("13e: a refused read keeps the request on the page", ok === false && /Pat Rivera/.test(flat(sec())));
+  refuse = false;
+
+  token = "third.token.sig";
+  clickEl(window, sec().querySelector('[data-access="approve"]'));
+  await tick(); await tick(); await tick();
+  const dec = sent.find((x) => /funding_access_decide/.test(x.url));
+  check("13f: Approve sends the request's id with the current token, drops the row and says so",
+    !!dec && dec.auth === "Bearer third.token.sig" && /"p_verdict":"approve"/.test(dec.body) && /11111111-2222/.test(dec.body) &&
+    !/Pat Rivera/.test(flat(sec())) && /Approved Pat Rivera/.test(flat(root.querySelector(".status"))));
+}
+{
+  // A reviewer who is not an approver: the database answers false and an empty queue, and the section never draws.
+  const { window, W, root } = setup({ signedIn: true });
+  window.CPL_FUNDING_NO_REMOTE = false;
+  window.fetch = function (url) {
+    const v = /rpc\/is_funding_approver/.test(String(url)) ? false : [];
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(v) });
+  };
+  W._access.asked = false; W.paint();
+  await tick(); await tick(); await tick();
+  check("13g: a reviewer who is not an approver sees no Access requests section", !root.querySelector('section[aria-labelledby="cw-acc-h"]'));
 }
 
 check("10k: the fallback deadline is the published model's date", /\|\| "2026-12-31";/.test(FUND) && !/\|\| "2026-11-01";/.test(FUND));

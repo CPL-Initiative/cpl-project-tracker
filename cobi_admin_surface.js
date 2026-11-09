@@ -149,6 +149,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_requester_context",
         "funding_access_decide",
         "funding_access_pending",
+        "is_funding_approver",
         "map_coordinator_summary",
         "map_landing_contacts_roster"
       ],
