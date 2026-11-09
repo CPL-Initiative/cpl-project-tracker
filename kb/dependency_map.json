@@ -4,9 +4,9 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 825,
+  "file_datasets": 826,
   "external_services": 193,
-  "consumers": 536,
+  "consumers": 537,
   "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
@@ -2053,7 +2053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4431,
+     "line": 4434,
      "tabs": [
       "unified-courses"
      ]
@@ -11106,6 +11106,13 @@
      "line": 75
     },
     {
+     "id": "script:kb/_ccr_seed_confirm_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 70
+    },
+    {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -11229,7 +11236,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1326
+     "line": 1328
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -11473,6 +11480,13 @@
      "line": 99
     },
     {
+     "id": "script:kb/_ccr_seed_confirm_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    },
+    {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -11687,7 +11701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1305
+     "line": 1307
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -11940,6 +11954,13 @@
      "line": 73
     },
     {
+     "id": "script:kb/_ccr_seed_confirm_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
+    },
+    {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -12098,7 +12119,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1361
+     "line": 1363
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -12286,6 +12307,13 @@
      "direction": "read",
      "how": "literal",
      "line": 236
+    },
+    {
+     "id": "script:kb/_ccr_seed_confirm_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 72
     },
     {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
@@ -12502,7 +12530,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1306
+     "line": 1308
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -12917,7 +12945,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1312
+     "line": 1314
     },
     {
      "id": "script:kb/_seed_coci_minted_mids.py",
@@ -14381,7 +14409,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1331
+     "line": 1333
     }
    ],
    "served": true,
@@ -16610,7 +16638,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1322
+     "line": 1324
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -16791,7 +16819,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1316
+     "line": 1318
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -18359,6 +18387,13 @@
      "line": 92
     },
     {
+     "id": "script:kb/_ccr_seed_confirm_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    },
+    {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -18384,7 +18419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1345
+     "line": 1347
     }
    ],
    "served": true,
@@ -21868,6 +21903,19 @@
    "main_committers": []
   },
   "file:tests/ccr_level_layout_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_seed_confirm_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30031,6 +30079,7 @@
     "tests/daily_scrape_fails_loudly_test.py",
     "tests/supabase_table_grants_test.py",
     "tests/ccr_doubt_test.py",
+    "tests/ccr_seed_confirm_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/college_contacts_harvest_sql_test.py",
