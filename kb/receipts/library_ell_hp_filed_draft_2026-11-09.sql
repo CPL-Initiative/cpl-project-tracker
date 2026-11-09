@@ -27,3 +27,16 @@ returning slug, status, url, home, made_on, updated_at;
 -- RESULT (run through the Supabase MCP tools, 2026-11-09 22:23:33Z): one row returned,
 --   slug ell-healthcare-pathways-cpl-starting-points-mw9tepdk, status draft, home web, made_on 2026-11-09,
 --   url https://claude.ai/artifact/LsKburF2qd1zfunirfj77T. This file is the receipt; it is not queued in kb/migrations/.apply.
+
+-- SECOND UPDATE (2026-11-09 22:49:56Z, through the Supabase MCP tools, after Pages served the copy): the record's
+-- link moved to the git address (Sam, in session: a git url rather than a claude.ai url).
+-- Guarded on url = 'https://claude.ai/artifact/LsKburF2qd1zfunirfj77T' and status = 'draft'; one row returned.
+-- Before-values: url and versions[0].url the claude.ai link above; versions[0].status 'Draft', filed_at
+--   2026-11-09T22:30:00Z; rebuild_from without its last clause ("; the public page: ...").
+-- ROLLBACK: set url and versions back to the values the first update wrote (above), and cut the last clause of rebuild_from.
+update public.cpl_library set
+  url = 'https://cpl-initiative.github.io/cpl-project-tracker/library/ell-healthcare-pathways-cpl-starting-points/',
+  home = 'web', updated_by = 'library-hp-s623@bot',
+  versions = '[{"url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-healthcare-pathways-cpl-starting-points/", "date": "2026-11-09", "label": "Version 1", "status": "Draft. The editable original is https://claude.ai/artifact/LsKburF2qd1zfunirfj77T", "filed_at": "2026-11-09T22:50:00Z"}]'::jsonb,
+  rebuild_from = rebuild_from || '; the public page: python3 scripts/library_page.py ell-healthcare-pathways-cpl-starting-points <the built HTML> (cpl-project-tracker)'
+where slug = 'ell-healthcare-pathways-cpl-starting-points-mw9tepdk' and url = 'https://claude.ai/artifact/LsKburF2qd1zfunirfj77T' and status = 'draft';
