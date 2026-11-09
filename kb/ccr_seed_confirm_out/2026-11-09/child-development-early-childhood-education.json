@@ -1,0 +1,440 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Child Development/Early Childhood Education",
+  "ruling": "Open Asks Sheet 175 card 1 (Sam, 2026-11-09 15:14Z: five)",
+  "run": "S621",
+  "date": "2026-11-09",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 107,
+  "before": {
+    "CDEV M1003": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1005": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1006": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1008": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1009": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1011": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1014": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1015": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1020": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1024": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1027": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1029": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1035": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1037": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1038": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1040": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1041": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1046": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1047": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1049": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1050": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1054": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1055": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1056": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1057": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1061": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1062": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1063": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1066": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1067": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1085": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1087": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1089": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1096": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1097": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1098": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1099": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1100": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1102": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1103": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1104": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1106": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1108": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1109": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1111": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1112": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1116": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1118": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1121": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1122": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1124": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1125": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1126": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1127": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1128": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1129": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1130": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1131": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1133": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1138": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1140": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1141": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1143": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1145": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1148": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1149": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1150": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1151": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1152": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1153": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1154": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1155": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1158": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1159": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1160": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1162": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1164": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1165": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1166": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1167": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1168": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1169": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1170": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1173": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1174": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1176": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1177": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1180": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1184": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1185": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1189": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1190": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1192": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1193": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1197": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1202": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M1203": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M9014": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CDEV M9017": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}
