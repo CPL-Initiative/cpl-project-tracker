@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 620,
-  "moniker": "SkyCigar",
+  "session": 623,
+  "moniker": "SkyButterfly",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_620_handoff.md",
+  "handoff": "docs/session_624_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -31,7 +31,7 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-09T13:30:00Z",
+  "written_at": "2026-11-09T23:36:35Z",
   "project": "course",
   "next_step": {
     "title": "Confirm the next five disciplines, if Sam agrees",
@@ -61,6 +61,10 @@
     {
       "at": "2026-11-03T13:28:16Z",
       "text": "The Course page and the Commons card count cards a person has confirmed in SkyView beside ready: 812 of 27,581 (#2726)."
+    },
+    {
+      "at": "2026-11-09T22:55:02Z",
+      "text": "The Courses List keeps the row you rule on in view and marked, with its band; the ruling's save, the edits and Open in SkyView each have their own line (#3004)."
     }
   ]
 }
