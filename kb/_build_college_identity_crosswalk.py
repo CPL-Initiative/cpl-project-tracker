@@ -324,6 +324,11 @@ def lint_observed(observed, rows, same_entity=None, separate=None):
     SUFFIXES = (" Credit", " Non-Credit", " Noncredit")
     findings = []
     for o in observed:
+        # An observed name arrives as a record ({"name", "sources", "has_landing_page"}, the committed input) or as
+        # the bare string (kb/_identity_daily_check.py writes a sorted list of names). The daily check crashed here
+        # on every run that reached the builder (found 2026-11-09), so the check never compared anything.
+        if isinstance(o, str):
+            o = {"name": o}
         nm = o["name"]
         if norm(nm) in known and nm == known[norm(nm)]:
             continue
