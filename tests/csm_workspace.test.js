@@ -361,5 +361,54 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   /accept: function \(kind, key\) \{[\s\S]*?return Promise\.resolve\(p\)\.then\(function \(\) \{\s*return \{ ok: kind === "nc" \? ncAttestStanding\(ncAttestOf\(key\)\) : !!ELIG\.optin\[key\] \};/.test(FUND)
   && /return CSM_ACT\[action\]\(kind, key\);/.test(FUND));
 
+// ── 10. Ready to send (issue 2967, item 3): the email each college is due, and Sent drops it ─────────────────
+{
+  const { window, T, W, root } = setup({ signedIn: true });
+  W._setContacts({
+    dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
+      primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu", vpaa: "Val Price", vpaa_email: "val@pasadena.edu" }],
+    landing: [], users: [] });
+  const nudgeKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && !r.declined && r.key !== COLLEGE).key;
+  check("10a: waiting reads Accept first, confirmed with no receipt the acceptance, not yet confirmed the nudge",
+    W._readyOf(COLLEGE) === "wait" && W._readyOf(OTHER) === "accept" && W._readyOf(nudgeKey) === "nudge");
+  W._state.view = "send"; W._state.sel = null; W.paint();
+  const rows = Array.from(root.querySelectorAll(".queue .row")).map((b) => b.getAttribute("data-sel"));
+  check("10b: Ready to send lists the acceptances first and the waiting request last, with the step in words",
+    rows[0] === OTHER && rows[rows.length - 1] === COLLEGE &&
+    /^Send the acceptance\./.test(flat(root.querySelector('.row[data-sel="' + OTHER + '"] .row-next'))) &&
+    /^Accept first/.test(flat(root.querySelector('.row[data-sel="' + COLLEGE + '"] .row-next'))));
+  W._state.sel = OTHER; W.paint();
+  const m = W._mail(OTHER);
+  check("10c: the acceptance comes from the funding tab's own template, To the person on file, and keeps the record's draft apart",
+    m.tpl === "accept" && m.to === "ana@pasadena.edu" && m.subject.length > 0 && !!W._state.mail[OTHER + "|send"] && !W._state.mail[OTHER] &&
+    /return \{ to: m\.to, subject: m\.subject, text: m\.text \};/.test(FUND) && /acceptMail: csmAcceptMail/.test(FUND));
+  check("10d: Sent shows in Ready to send, beside Open in Outlook",
+    !!root.querySelector('[data-mailact="sent"]') && /Open in Outlook/.test(flat(root.querySelector('[data-mailact="draft"]'))));
+  clickEl(window, root.querySelector('[data-mailact="sent"]'));
+  await tick();
+  check("10e: Sent writes the receipt, the college leaves the queue, and the next one is chosen",
+    W._log().some((x) => x.college === OTHER && /^Acceptance sent: /.test(x.body)) && W._readyOf(OTHER) === null &&
+    !root.querySelector('.queue .row[data-sel="' + OTHER + '"]') && W._state.sel !== OTHER);
+  W._log().unshift({ id: 900, college: nudgeKey, kind: "email", created_at: new Date().toISOString(),
+    body: "Draft opened: CPL Implementation Funding: a participation confirmation for X, to a@b.edu." });
+  check("10f: a nudge drafted in the last 14 days keeps the college out", W._readyOf(nudgeKey) === null);
+  W._log()[0].created_at = "2026-01-02T00:00:00Z";
+  check("10g: a nudge older than 14 days lets it back in", W._readyOf(nudgeKey) === "nudge");
+  W._snapshot().rows.find((r) => r.key === nudgeKey).declined = "2026-11-01";
+  check("10h: a college that declined never enters", W._readyOf(nudgeKey) === null);
+  W._state.view = "open"; W.paint();
+  check("10i: outside Ready to send there is no Sent", !root.querySelector('[data-mailact="sent"]'));
+  // A long email: the link would pass what a mail program takes, so the words go to the clipboard and the draft opens bare.
+  W._state.sel = OTHER; W._state.mail = {}; W.paint();
+  W._mail(OTHER).body = "x".repeat(2500);
+  let href = null; window.CPL_FUNDING_OPEN_MAIL = (h) => { href = h; };
+  window.navigator.clipboard = { writeText: () => Promise.resolve() };
+  clickEl(window, root.querySelector('[data-mailact="draft"]'));
+  await tick(); await tick();
+  check("10j: a draft past 1,900 characters opens with To, Cc and Subject and no body",
+    !!href && /^mailto:/.test(href) && !/&body=/.test(href));
+}
+check("10k: the fallback deadline is the published model's date", /\|\| "2026-12-31";/.test(FUND) && !/\|\| "2026-11-01";/.test(FUND));
+
 finish();
 })();

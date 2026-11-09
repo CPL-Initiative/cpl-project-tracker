@@ -3622,12 +3622,12 @@
   // Is the viewed year pure carryover — front-loaded, with no new money on the
   // table? Drives the "↻ carryover" states so a $0 cap never reads as a defect.
   function slotIsCarryover(slot) { return frontloaded() && String(slot) !== "1"; }
-  // The fallback is the live model's date (2026-11-01, both scenarios, read
-  // 2026-09-29). It fires only when the shared config fails to load, and an
-  // older date there turned every Confirm chip to "Confirm now".
+  // The fallback is the published model's date (Scenario 4, 2026-12-31, read
+  // from cpl_funding_config 2026-11-09). It fires only when the shared config
+  // fails to load, and a past date there turns every Confirm chip to "Confirm now".
   function participationDeadline() {
     return firstDefined(SCENARIO.participationDeadline, SHARED.participationDeadline,
-      base().participation_deadline) || "2026-11-01";
+      base().participation_deadline) || "2026-12-31";
   }
   // Extra baseline-eligibility requirements — free-text quals beyond the two
   // data-backed built-ins (① coordinator, ② participation). Editable in-tab;
@@ -6827,6 +6827,17 @@
     follow: function (kind, key) { if (kind === "nc") followNcAttest(key); else followOptIn(key); return Promise.resolve({ ok: true }); },
     mail: function (kind, key) { if (kind === "nc") mailNcAttest(key); else mailOptIn(key); return Promise.resolve({ ok: true }); }
   };
+  // The acceptance email for the Ready to send queue (#2967 item 3): the review lane's own template (acceptEmail, the
+  // text Accept opens), filled from the request on file, or, for a college confirmed before the review lane kept its
+  // request, from the person the workspace names. Answers { to, subject, text } or null.
+  function csmAcceptMail(kind, key, who) {
+    if (!unlocked() || publicMode()) return null;
+    var rev = (kind === "nc" ? ncAttestReviewOf(key) : optinReviewOf(key)) || {}, w = who || {}, row = ELIG.optinRow[key] || {};
+    var fill = { name: rev.name || rev.attestor_name || w.name || "", email: rev.email || rev.attestor_email || w.email || "",
+      requested_at: rev.requested_at || row.requested_at || "", note: rev.note || "", fiscal_year: rev.fiscal_year || "" };
+    var m = acceptEmail(key, fill, kind);
+    return { to: m.to, subject: m.subject, text: m.text };
+  }
   function csmAct(action, kind, key) {
     if (!unlocked() || publicMode() || !CSM_ACT[action]) return false;
     return CSM_ACT[action](kind, key);
@@ -19241,7 +19252,7 @@
     // that paints from this module waits with it and paints on the model-change event.
     configHeld: function () { return configHold; },
     // The CSM Workspace (csm_workspace.js, S555): one record per institution, the review lane's actions, Nudge.
-    csm: { snapshot: csmSnapshot, act: csmAct, focus: csmFocus, nudge: function () { openNudge(); },
+    csm: { snapshot: csmSnapshot, act: csmAct, acceptMail: csmAcceptMail, focus: csmFocus, nudge: function () { openNudge(); },
       // The workspace's log (csm_log) reads and writes with the reviewer's own credential, as the notes do.
       rest: function () {
         return { remote: remoteEnabled(), url: SUPABASE_URL + "/rest/v1/", who: curatorEmail() || "",
