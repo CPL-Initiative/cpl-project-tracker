@@ -1155,3 +1155,20 @@ From *Course objectives too*, verbatim:
 - **A `follow` pattern matches link text too:** `print` followed *ART 44 - Introduction To Printmaking*.
 
 The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/program_requirements_harvest_lessons_archive_4.md` (S609).
+
+### S618 SkyPinwheel (2026-11-09, the CPL Queue routine's 10:12Z firing): Alameda's description total, Orange Coast's load
+
+- **A curriQunet page's description sits above the course table, and the table's header is the boundary.** Every
+  Alameda page reads title, description, then `SUBJECT # / TITLE / UNITS`, then the lists. A total printed in prose
+  (*for a total of 41 units*) is ahead of the header; a choice's own figure (*listed for a total of 4 units*) is a block
+  heading under it. A lookahead `(?=[\s\S]*?SUBJECT\s*#)` in the step's pattern scopes the fill with no new code: the
+  `before` scope needs `section_heading`, and Alameda's Dental record names a block heading there, which sits below the
+  description.
+- **Simulate a step on the page read's own text, from the job log.** The page read files nothing: its text is in the job
+  log only (`get_job_logs`, tail about 330 lines for the last two pages; the blob URL behind it is refused by the proxy).
+- **Not every incomplete record has a missed total.** Chassis 09009 already read its *61-64*; its semesters (48) plus the
+  printed *General Education and Electives required 19.00- 22.00* make 67-70, so no GE step makes it add up.
+- **An SLO load's receipt arrives as a bot commit, whose `test` waits as `action_required`,** and ready-for-review
+  starts none (`js-tests.yml` takes `pull_request`'s default types). A branch cut before the last checkpoint also
+  conflicts on the lane file, and a conflicting PR runs no `pull_request` checks. Merge `main` in and commit the lane
+  line onto the SLO branch: a real change, and `test` runs on the head.

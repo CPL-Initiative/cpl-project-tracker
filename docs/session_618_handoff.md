@@ -3,7 +3,7 @@ title: "Session 618 handoff: the night's credential watch merged, Orange Coast r
 date: 2026-11-09
 session: 617 (SkyWhirlpool, the CPL Queue routine's 08:12Z firing, 2026-11-09 08:17Z to ~08:35Z; the routine fires next at 09:12Z)
 tags: [handoff, program-requirements-harvest, credential-registry, scheduled-sessions]
-status: current
+status: superseded
 ---
 
 # You are Session 618
