@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-07T18:48:24Z",
-  "session": 602,
-  "moniker": "SkySombrero",
+  "written_at": "2026-11-08T23:51:18Z",
+  "session": 613,
+  "moniker": "SkyCometa",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_603_handoff.md",
+  "handoff": "docs/session_614_handoff.md",
   "next_step": {
-    "title": "Contra Costa's course outcomes, then the next college's",
-    "text": "On Nov 8 UTC, run Contra Costa's full outcomes read in two parts, then name the next college with the outcomes picker. Los Medanos' local degrees are parked: its catalog sets general education at 24 units but never says electives make up the rest of the 60."
+    "title": "Redwoods' local degrees",
+    "text": "Redwoods' transfer degrees pass (53 of 73). Its 8 local degrees name the 60 units and no general education pattern; they wait on a read of the college's own general education page."
   },
   "calls": [
     {
@@ -222,96 +222,7 @@
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
-  "changes": [
-    {
-      "at": "2026-11-07T18:47:00Z",
-      "text": "Palomar and Los Medanos now display with no errors. Los Medanos' own general education pages were read for free: its local degrees need 24 units of general education, and no page says electives fill the 60 units, so those degrees stay as they are rather than gaining a step the catalog does not support."
-    },
-    {
-      "at": "2026-11-07T16:20:00Z",
-      "text": "No harvest change this session. The dashboard's live figures update again: the daily scrape had been refused since November 5, and now sends its key correctly."
-    },
-    {
-      "at": "2026-11-07T13:55:00Z",
-      "text": "Coalinga's display now shows its 45 passing programs. Palomar's Chemistry program was read again and replaced, and its display is applying. Los Medanos now passes 44 of 83 programs, up from 29, at no model cost: its transfer degrees now count Cal-GETC's 34 units."
-    },
-    {
-      "at": "2026-11-07T12:50:00Z",
-      "text": "Coalinga now passes 45 of 62 programs; its display build merged and is applying. Palomar's re-read found every program the site had dropped, and Chemistry is being extracted. Los Medanos' new read found nothing new, so its 29 passing stay as filed."
-    },
-    {
-      "at": "2026-11-07T11:16:00Z",
-      "text": "Palomar's catalog is being read again because the college site timed out on 8 pages, which would have dropped 7 passing records. Coalinga's two newly found programs are being extracted, about 13 cents. Los Medanos College's catalog is being read again on the current reader, at no model cost."
-    },
-    {
-      "at": "2026-11-07T10:17:00Z",
-      "text": "Coalinga College's catalog is being read again on the current reader, at no model cost, beside Palomar's. Siskiyous' display step is still applying its new records."
-    },
-    {
-      "at": "2026-11-07T09:50:00Z",
-      "text": "Siskiyous' 73 records loaded and the 65 older ones replaced with the new reading, so 66 now pass the machine checks, up from 42 (#2877). Lake Tahoe Community College's 435 course SLOs loaded (#2833). Palomar's catalog is being read again on the current reader, at no model cost."
-    },
-    {
-      "at": "2026-11-07T08:45:00Z",
-      "text": "Siskiyous' re-read on the current reader found 73 of its 77 programs, 8 more than before; their extraction is running. Lake Tahoe Community College's SLOs are loading (#2833); Contra Costa's trial parsed 11 of 12 pages, so its full read is next."
-    },
-    {
-      "at": "2026-11-06T14:05:00Z",
-      "text": "Mt. San Jacinto's Public Health A.S.-T record loaded and shown (#2838). Ohlone's 18 missing noncredit certificates are not published on the college's site, so all 33 of its gaps are the college's to settle in COCI (#2841)."
-    },
-    {
-      "at": "2026-11-06T08:30:00Z",
-      "text": "Mission College's full SLO read pushed in two parts after its trial parsed 11 of 12 pages (#2800); Lake Tahoe Community College's 12-page trial started (#2833)."
-    },
-    {
-      "at": "2026-11-05T14:30:00Z",
-      "text": "Course objectives are now read beside each course's SLOs and stored as their own rows (kind objective); every SLO count reads SLO rows only (#2808)."
-    },
-    {
-      "at": "2026-11-04T12:40:00Z",
-      "text": "No harvest change this run: the day's SLO read had already run. The run added the AWS welding and Amazon Web Services families to the exhibit-to-cert link (#2761)."
-    },
-    {
-      "at": "2026-11-04T11:22:00Z",
-      "text": "No harvest change this run: the day's SLO read had already run. The run added the PMI, ICC, CDPH and EMSA families to the exhibit-to-cert link (#2760)."
-    },
-    {
-      "at": "2026-11-04T10:20:00Z",
-      "text": "No harvest change this run: the day's SLO read had already run. The run added the Autodesk, NCCER and ASME families to the exhibit-to-cert link (#2759)."
-    },
-    {
-      "at": "2026-11-04T09:24:00Z",
-      "text": "No harvest change this run: the day's SLO read had already run. The run built the FAA family of the exhibit-to-cert link (#2758)."
-    },
-    {
-      "at": "2026-11-04T08:17:00Z",
-      "text": "Las Positas's course outcomes loaded: 505 rows (#2717). The table holds 9,889 rows at twelve colleges."
-    },
-    {
-      "at": "2026-11-03T09:20:00Z",
-      "text": "What needs attention now counts active programs whose record fails a check, the Commons card's unit, and both pages say why their figures can differ: the card counts the records committed at the last checkpoint, this page reads live."
-    },
-    {
-      "at": "2026-11-03T08:40:00Z",
-      "text": "Santa Ana's course outcomes loaded: 1,366 rows (#2716); Las Positas's trial parsed 12 of 12."
-    },
-    {
-      "at": "2026-11-03T07:35:00Z",
-      "text": "This Progress view now opens on the CPL Commons page: the headline, what needs attention and three questions over COCI's active programs, with the milestones and parts under Details. Las Positas College's SLO trial started."
-    },
-    {
-      "at": "2026-11-03T06:24:00Z",
-      "text": "Santa Ana College's full SLO read (four parts) and Las Positas College's course index started on two hosts. Glendale and Los Angeles Valley read on, as Sam's marks asked; their discrepancies wait until the harvest is complete."
-    },
-    {
-      "at": "2026-11-05T19:54:00Z",
-      "text": "A side session answered COBIx's security audit and closed the drafting proxy and the refresh trigger behind a reviewer sign-in or the team phrase (tracker 2816, 2817, 2818). The harvest's tables and its queue did not move; Monterey Peninsula's page read and Mission's full read stand where the 585 handoff left them."
-    },
-    {
-      "at": "2026-11-05T22:13:00Z",
-      "text": "The side session finished security step 1 with Sam (worker pasted, both secrets rotated, proof runs 686 and 688) and drafted step 2's migration (tracker 2822). The harvest's tables and queue did not move."
-    }
-  ],
+  "changes": [],
   "headline": [
     {
       "day": "2026-10-08",
@@ -498,15 +409,21 @@
       "active": 20282,
       "complete": 13584,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-08",
+      "active": 20282,
+      "complete": 13643,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-08T06:12:00Z"
+    "at": "2026-11-09T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-07",
+    "day": "2026-11-08",
     "gaps": 3014,
     "parts": {
       "links": {
@@ -533,7 +450,7 @@
       ],
       "outcomes": {
         "slo": [
-          9688,
+          10071,
           89192
         ],
         "plo": [

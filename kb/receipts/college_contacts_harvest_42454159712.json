@@ -1,0 +1,708 @@
+{
+ "run": "42454159712",
+ "applied_at": "2026-11-08T06:49:52+00:00",
+ "github_run": "42456248555",
+ "result": {
+  "new": 5,
+  "run": "42454159712",
+  "gone": 0,
+  "colleges": 11,
+  "seen_again": 31
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [
+  {
+   "id": 23,
+   "college": "Cañada College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Lizette Bricker",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 24,
+   "college": "Cañada College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Chialin Hsieh",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 16,
+   "college": "Cerritos College",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Jose Fierro",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/about/president/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 17,
+   "college": "Cerritos College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs/Assistant Superintendent",
+   "name": "Frank Mixson",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 18,
+   "college": "Cerritos College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services/Assistant Superintendent, Student Services",
+   "name": "Robyn Brammer",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 19,
+   "college": "Cerritos College",
+   "position": "vpbs",
+   "title_as_printed": "Executive Vice President, Business Services",
+   "name": "Felipe Lopez",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 20,
+   "college": "Chabot College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Jamal Cooks",
+   "email": "",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 21,
+   "college": "Chabot College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Luis Escobar",
+   "email": "laescobar@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 22,
+   "college": "Chabot College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records",
+   "name": "Liz Oteyza",
+   "email": "moteyza@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/admissions/contact-info.php",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 37,
+   "college": "Chabot College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Marie Amboy",
+   "email": "mamboy@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/",
+   "seen_run": "sheet151-vpbs",
+   "first_seen": "2026-11-01T13:31:49.556057+00:00",
+   "last_seen": "2026-11-01T13:31:49.556057+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 34,
+   "college": "Coalinga College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Ed. Services and Institutional Effect.",
+   "name": "Lataria Hall",
+   "email": "latariahall@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 25,
+   "college": "Coastline College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Dr. Vince Rodriguez",
+   "email": "",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 26,
+   "college": "Coastline College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Kathryn Mueller, Ed.D.",
+   "email": "kmueller@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 27,
+   "college": "Coastline College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Isela Ocegueda, Ph.D.",
+   "email": "iocegueda@cccd.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 28,
+   "college": "Coastline College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Westminster - Le-Jao Campus",
+   "name": "Stephanie Bridges",
+   "email": "sbridges@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 38,
+   "college": "Coastline College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Christine Nguyen, M.B.A.",
+   "email": "cnguyen@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "sheet151-vpbs",
+   "first_seen": "2026-11-01T13:31:49.556057+00:00",
+   "last_seen": "2026-11-01T13:31:49.556057+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 29,
+   "college": "College of Alameda",
+   "position": "college_ceo",
+   "title_as_printed": "Acting President",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 30,
+   "college": "College of Alameda",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor, Peralta Community College District",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 31,
+   "college": "College of Marin",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jonathan Eldridge, Ed.D.",
+   "email": "",
+   "source_url": "https://president.marin.edu",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 32,
+   "college": "College of Marin",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Transfer Counselor",
+   "name": "Sara Malmquist-West",
+   "email": "",
+   "source_url": "https://ss.marin.edu/articulation",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 33,
+   "college": "College of San Mateo",
+   "position": "college_ceo",
+   "title_as_printed": "President, College of San Mateo",
+   "name": "Dr. Manuel Alejandro Pérez",
+   "email": "",
+   "source_url": "https://www.collegeofsanmateo.edu/president/",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 39,
+   "college": "College of the Canyons",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jasmine Ruys",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 40,
+   "college": "College of the Canyons",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Senior Curriculum Analyst",
+   "name": "Patrick Backes",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 41,
+   "college": "College of the Canyons",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Renard Thomas",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 42,
+   "college": "College of the Canyons",
+   "position": "dean_ar",
+   "title_as_printed": "Associate Dean- Admissions, Records, & Online Services",
+   "name": "Steve Erwin",
+   "email": "steve.erwin@canyons.edu",
+   "source_url": "https://www.canyons.edu/studentservices/admissions/contact/staff.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 43,
+   "college": "College of the Canyons",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction (Special Projects)",
+   "name": "James Glapa-Grossklag",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 74,
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Facilities and Operations",
+   "name": "Jason Munoz",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 75,
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, District Communications",
+   "name": "John Green",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 44,
+   "college": "College of the Desert",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Valentine Martinez Garcia",
+   "email": "vmartinezgarcia@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 45,
+   "college": "College of the Desert",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Joy Cowden",
+   "email": "jcowden@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 46,
+   "college": "College of the Desert",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions And Records",
+   "name": "Noelle McMillin",
+   "email": "nmcmillin@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  }
+ ],
+ "rows": [
+  {
+   "college": "Cañada College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Lizette Bricker",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Cañada College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Chialin Hsieh",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Jose Fierro",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/about/president/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs/Assistant Superintendent",
+   "name": "Frank Mixson",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services/Assistant Superintendent, Student Services",
+   "name": "Robyn Brammer",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpbs",
+   "title_as_printed": "Executive Vice President, Business Services",
+   "name": "Felipe Lopez",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Jamal Cooks",
+   "email": "jcooks@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Vice President, Academic Services",
+   "name": "Tracey Coleman",
+   "email": "tcoleman@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Luis Escobar",
+   "email": "laescobar@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Marie Amboy",
+   "email": "mamboy@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records",
+   "name": "Liz Oteyza",
+   "email": "moteyza@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/admissions/contact-info.php"
+  },
+  {
+   "college": "Citrus College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Greg Schulz",
+   "email": "",
+   "source_url": "https://news.citruscollege.edu/news/veterans_magazine26.html"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Ed. Services and Institutional Effect.",
+   "name": "Lataria Hall",
+   "email": "latariahall@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "assoc_vice_chancellor",
+   "title_as_printed": "Associate Vice Chancellor (Human Resources)",
+   "name": "Becky Cazares",
+   "email": "beckycazares@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "assoc_vice_chancellor",
+   "title_as_printed": "Associate Vice Chancellor of Information Technology",
+   "name": "Jeff Seed",
+   "email": "jeffseed@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  },
+  {
+   "college": "Coastline College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Dr. Vince Rodriguez",
+   "email": "",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Kathryn Mueller, Ed.D.",
+   "email": "kmueller@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Isela Ocegueda, Ph.D.",
+   "email": "iocegueda@cccd.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Christine Nguyen, M.B.A.",
+   "email": "cnguyen@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Westminster - Le-Jao Campus",
+   "name": "Stephanie Bridges",
+   "email": "sbridges@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "college_ceo",
+   "title_as_printed": "Acting President",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor, Peralta Community College District",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Marin",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jonathan Eldridge, Ed.D.",
+   "email": "",
+   "source_url": "https://president.marin.edu"
+  },
+  {
+   "college": "College of Marin",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Transfer Counselor",
+   "name": "Sara Malmquist-West",
+   "email": "",
+   "source_url": "https://ss.marin.edu/articulation"
+  },
+  {
+   "college": "College of San Mateo",
+   "position": "college_ceo",
+   "title_as_printed": "President, College of San Mateo",
+   "name": "Dr. Manuel Alejandro Pérez",
+   "email": "",
+   "source_url": "https://www.collegeofsanmateo.edu/president/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jasmine Ruys",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Senior Curriculum Analyst",
+   "name": "Patrick Backes",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Renard Thomas",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "dean_ar",
+   "title_as_printed": "Associate Dean- Admissions, Records, & Online Services",
+   "name": "Steve Erwin",
+   "email": "steve.erwin@canyons.edu",
+   "source_url": "https://www.canyons.edu/studentservices/admissions/contact/staff.php"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction (Special Projects)",
+   "name": "James Glapa-Grossklag",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Facilities and Operations",
+   "name": "Jason Munoz",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, District Communications",
+   "name": "John Green",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate VP Instruction",
+   "name": "Jennifer Brezina",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Valentine Martinez Garcia",
+   "email": "vmartinezgarcia@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Joy Cowden",
+   "email": "jcowden@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions And Records",
+   "name": "Noelle McMillin",
+   "email": "nmcmillin@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  }
+ ]
+}

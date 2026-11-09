@@ -65,7 +65,7 @@
    "status": "unequal",
    "computed": [
     18.0,
-    18.0
+    23.0
    ],
    "stated": [
     60.0,
@@ -74,21 +74,22 @@
    "against": "degree",
    "ge": null,
    "why": [
-    "the blocks and general education sum to 18.0-18.0; the catalog prints 60.0-60.0 for the degree"
+    "the blocks and general education sum to 18.0-23.0; the catalog prints 60.0-60.0 for the degree"
    ],
    "major": {
     "pass": true,
     "status": "equal",
     "computed": [
      18.0,
-     18.0
+     23.0
     ],
     "stated": [
      18.0,
      18.0
     ],
     "against": "program",
-    "why": []
+    "why": [],
+    "meets": true
    }
   },
   "repeated": {
@@ -248,5 +249,6 @@
    "Careers taken from the page's Career Information heading (occupation titles with labor market data)."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": 42480098144,
+ "read_run": "38979396148"
 }

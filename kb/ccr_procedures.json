@@ -1,0 +1,19 @@
+{
+ "_about": "The Common Course Reference's procedures: each a rule in plain words, with who set it and when. kb/_ccr_seed_recheck_dryrun.py --doubt reads active_discipline and writes the Courses List's Discipline in doubt job (kb/ccr_doubt.json). A person's ruling there, with a reason marked for similar cards, arrives as a kb_curation ccr_procedure_request row; a session writes it here as a rule switched off, measures how many waiting cards it would settle, and switches it on with the person's word.",
+ "_updated_at": "2026-11-09",
+ "_updated_by": "S614 SkyMilkomeda: the store and the first procedure, from Sam's ask of 2026-11-09",
+ "active_discipline": "Kinesiology",
+ "procedures": [
+  {
+   "id": "seed_recheck",
+   "name": "Re-check a seed discipline with two signals",
+   "kind": "routine",
+   "on": true,
+   "rule": "A common course keeps its seed discipline when its catalog description fits that discipline with a clear margin and TOP names no other. A card whose description points to another discipline, or whose colleges' TOP codes do, goes to a person, one discipline at a time.",
+   "reads": ["kb/coci_minted_courses.json", "kb/coci_curation.json", "kb/top_discipline_map.json", "the COCI descriptions"],
+   "set_by": "Sam, Open Asks Sheet 173 note, 2026-11-08 (descriptions first, TOP alongside)",
+   "owner": "the daily run"
+  }
+ ],
+ "requests": []
+}

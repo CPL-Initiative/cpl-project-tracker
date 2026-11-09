@@ -15,10 +15,21 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-566 document(s).
+577 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 614 | [Session 614 handoff: the funding render remembers its priorities](../session_614_handoff.md) | 2026-11-08 |
+| 613 | [Session 613 handoff: the anchor re-key applied, funding tests twice as fast, the CCR seed re-check reads course descriptions](../session_613_handoff.md) | 2026-11-08 |
+| 612 | [Session 612 handoff: the Exhibits Queue and the panel trail ship, the anchor re-key dry run, the key sketch held for Sam](../session_612_handoff.md) | 2026-11-08 |
+| 611 | [Session 611 handoff: student-level rows ruled out of COBI, the Commons opens on one batch, the classifier answers again](../session_611_handoff.md) | 2026-11-08 |
+| 610 | [Session 610 handoff: Redwoods 53 of 73 passing and displayed (#2918)](../session_610_handoff.md) | 2026-11-08 |
+| 609 | [Session 609 handoff: Columbia 78 of 82 passing and displayed; Redwoods read by shape, its GE page read on #2918](../session_609_handoff.md) | 2026-11-08 |
+| 608 | [Session 608 handoff: Columbia 31 to 52 passing; its local degrees get CC-GE's 21 and the 60 as a floor, the reconcile in flight](../session_608_handoff.md) | 2026-11-08 |
+| 607 | [Session 607 handoff: #2915 carried on #2916; Columbia's Cal-GETC reconcile step, its run in flight](../session_607_handoff.md) | 2026-11-08 |
+| 606 | [Session 606 handoff: S604's three PRs merged; the Coordinator Guide's Request Quick Adopt links; Columbia's failures read by shape](../session_606_handoff.md) | 2026-11-08 |
+| 605 | [Session 605 handoff: Contra Costa's SLOs loaded; the first weekly contacts read; the credential watch slice; two free re-captures unchanged](../session_605_handoff.md) | 2026-11-08 |
+| 604 | [Session 604 handoff: Sheet 169 carried out; security steps 3 and 4 applied; Contra Costa's SLO read running](../session_604_handoff.md) | 2026-11-08 |
 | 603 | [Session 603 handoff: security step 3 built and held for Sam; the k=10 check and a failure watch run unattended; LMC's GE page read](../session_603_handoff.md) | 2026-11-07 |
 | 602 | [Session 602 handoff: the stale KPI scrape fixed; security asks on the sheet; the COBIx inbox routine waits for Sam](../session_602_handoff.md) | 2026-11-07 |
 | 601 | [Session 601 handoff: Coalinga displayed; Palomar's Chemistry reread and built; Los Medanos' failures read and a Cal-GETC step](../session_601_handoff.md) | 2026-11-07 |

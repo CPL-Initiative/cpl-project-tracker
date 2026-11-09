@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 576,
+   "count": 578,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7848,7 +7848,9 @@
       "credential_reference.js",
       "tests/cer_overlay_pagination.test.js",
       "program_requirements.js",
-      "tests/program_requirements.test.js"
+      "tests/program_requirements.test.js",
+      "kb/_sync_map_custom_reports.py",
+      "tests/map_key_sketch_one_pull_test.py"
      ],
      "path": "docs/kb-notes/methodology-paginate-postgrest-reads.md",
      "status": "published",
@@ -7863,7 +7865,7 @@
      ],
      "title": "Paginate every PostgREST read that can outgrow 1,000 rows",
      "type": "methodology",
-     "updated": "2026-10-13"
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-07-11",
@@ -8182,6 +8184,26 @@
      "title": "Read a single-page catalog through its own content call, not by rendering",
      "type": "methodology",
      "updated": "2026-10-13"
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [
+      "kb/alias_chain.py",
+      "kb/_anchor_rekey_dryrun.py",
+      "tests/anchor_rekey_dryrun_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-read-a-documents-era-from-its-keys.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "m-id",
+      "alias-chain",
+      "remint",
+      "rule-7"
+     ],
+     "title": "Read an id-keyed document's era from its keys before applying an alias chain",
+     "type": "methodology",
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-10-02",
@@ -8623,6 +8645,25 @@
      "title": "Ship generator changes live-on-merge when the artifact regenerates from committed inputs",
      "type": "methodology",
      "updated": "2026-06-02"
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [
+      "kb/_cer_procedures.py",
+      "tests/cer_classifier_rules_size_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-shrink-a-prompt-losslessly-before-trimming-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "classifier",
+      "prompts",
+      "cer",
+      "testing"
+     ],
+     "title": "Shrink a model's standing prompt losslessly before trimming it, and replay the saved answers to prove it",
+     "type": "methodology",
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-07-27",
@@ -13765,7 +13806,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 99,
+   "count": 100,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14940,6 +14981,21 @@
      "updated": "2026-10-30"
     },
     {
+     "created": "2026-11-08",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_4.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 4 (S419 onward)",
+     "type": null,
+     "updated": "2026-11-08"
+    },
+    {
      "created": "2026-07-16",
      "governs": [
       "kb/_build_program_course_graph.py",
@@ -15972,7 +16028,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-11-02"
+     "updated": "2026-11-08"
     },
     {
      "created": "2026-10-23",
@@ -16641,8 +16697,187 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 566,
+   "count": 577,
    "docs": [
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 614,
+     "path": "docs/session_614_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "ci"
+     ],
+     "title": "Session 614 handoff: the funding render remembers its priorities",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 613,
+     "path": "docs/session_613_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "ci",
+      "implementation-funding",
+      "cpl-memory"
+     ],
+     "title": "Session 613 handoff: the anchor re-key applied, funding tests twice as fast, the CCR seed re-check reads course descriptions",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 612,
+     "path": "docs/session_612_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "common-subjects-reference",
+      "disposition-grain-student-detail",
+      "map-custom-reports",
+      "cpl-memory"
+     ],
+     "title": "Session 612 handoff: the Exhibits Queue and the panel trail ship, the anchor re-key dry run, the key sketch held for Sam",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 611,
+     "path": "docs/session_611_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "disposition-grain-student-detail",
+      "commons",
+      "cer-procedures",
+      "org-phrase-scope-auth",
+      "cobix"
+     ],
+     "title": "Session 611 handoff: student-level rows ruled out of COBI, the Commons opens on one batch, the classifier answers again",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 610,
+     "path": "docs/session_610_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 610 handoff: Redwoods 53 of 73 passing and displayed (#2918)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 609,
+     "path": "docs/session_609_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 609 handoff: Columbia 78 of 82 passing and displayed; Redwoods read by shape, its GE page read on #2918",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 608,
+     "path": "docs/session_608_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 608 handoff: Columbia 31 to 52 passing; its local degrees get CC-GE's 21 and the 60 as a floor, the reconcile in flight",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 607,
+     "path": "docs/session_607_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "library",
+      "scheduled-sessions"
+     ],
+     "title": "Session 607 handoff: #2915 carried on #2916; Columbia's Cal-GETC reconcile step, its run in flight",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 606,
+     "path": "docs/session_606_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 606 handoff: S604's three PRs merged; the Coordinator Guide's Request Quick Adopt links; Columbia's failures read by shape",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 605,
+     "path": "docs/session_605_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "map-users-student-contact",
+      "credential-registry",
+      "scheduled-sessions"
+     ],
+     "title": "Session 605 handoff: Contra Costa's SLOs loaded; the first weekly contacts read; the credential watch slice; two free re-captures unchanged",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-08",
+     "governs": [],
+     "n": 604,
+     "path": "docs/session_604_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "org-phrase-scope-auth",
+      "noncredit-cip-categories",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 604 handoff: Sheet 169 carried out; security steps 3 and 4 applied; Contra Costa's SLO read running",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-07",
      "governs": [],
@@ -26263,5 +26498,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1407
+ "total": 1421
 }

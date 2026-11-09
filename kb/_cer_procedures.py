@@ -363,10 +363,33 @@ def load_cred_issuers(path=CREDENTIALS):
 
 # ── the classifier ───────────────────────────────────────────────────────────
 
-def rules_text(procs, skill_text, families):
+# The Edge Function refuses standing rules over this many characters with an HTTP 413
+# (chatbox/supabase/functions/cer-classify/index.ts MAX_RULES). The run fits under it, with room
+# to spare, rather than send a call it knows will be refused: from 2026-11-07 the house families
+# alone ran to ~210,500 of 251,866 characters, every call came back 413, and the titles waiting
+# on the classifier showed only as a count (COBIx #2921, S604).
+RULES_LIMIT = 250000
+RULES_BUDGET = 240000
+
+_WORD = re.compile(r"[a-z0-9+#]{3,}")
+_STOP = {"and", "the", "for", "with", "certificate", "certification", "certified", "course", "level",
+         "program", "training", "exam", "license", "credential"}
+
+
+def _words(t):
+    return {w for w in _WORD.findall(str(t or "").lower()) if w not in _STOP}
+
+
+def rules_text(procs, skill_text, families, budget=None, prefer=()):
     """The classifier's standing instructions: the skill, every guidance
     procedure in force, the rule procedures for context, and the house
-    families it should join rather than re-name."""
+    families it should join rather than re-name.
+
+    With a budget, the families are first listed under their issuers, which
+    loses nothing (an issuer is written once, not on each of its families'
+    lines). Only if that is still over the budget do the families that share
+    no word with the titles being asked (`prefer`) go, and the text says how
+    many. Today's corpus fits grouped with room to spare (~164,000)."""
     lines = [skill_text.rstrip(), "", "---", "", "# Procedures in force",
              "",
              "Sam adds procedures as the work goes. Apply every one below; when a "
@@ -380,10 +403,48 @@ def rules_text(procs, skill_text, families):
               "Titles already in the reference, each with its issuer. Join one of these "
               "names exactly when the row names the same credential (Rule 5d, Rule 8c); "
               "otherwise give a new title.", ""]
-    for title in sorted(families):
-        iss = families[title]
-        lines.append("- %s%s" % (title, (" | " + "; ".join(sorted(iss))) if iss else ""))
-    return "\n".join(lines) + "\n"
+    def flat(keep, issuers_for):
+        return ["- %s%s" % (t, (" | " + "; ".join(sorted(families[t]))) if (families[t] and t in issuers_for) else "")
+                for t in sorted(families) if t in keep]
+
+    def grouped(keep):
+        # Lossless: a family with one issuer is listed under that issuer's heading, so the issuer is
+        # written once rather than on every line (2,528 of 2,727 families have exactly one).
+        by, multi = {}, []
+        for t in sorted(families):
+            if t not in keep:
+                continue
+            iss = families[t]
+            if len(iss) == 1:
+                by.setdefault(next(iter(iss)), []).append(t)
+            else:
+                multi.append(t)
+        out = ["Each family is listed under its issuer."]
+        for iss in sorted(by):
+            out += ["", "## Issuer: %s" % iss] + ["- %s" % t for t in by[iss]]
+        if multi:
+            out += ["", "## More than one issuer, or none named"]
+            out += ["- %s%s" % (t, (" | " + "; ".join(sorted(families[t]))) if families[t] else "") for t in multi]
+        return out
+
+    def render(fam_lines, dropped=0):
+        tail = (["", "(%d further house families share no word with these titles and are not listed.)" % dropped]
+                if dropped else [])
+        return "\n".join(lines + fam_lines + tail) + "\n"
+
+    every = set(families)
+    text = render(flat(every, every))
+    if budget is None or len(text) <= budget:
+        return text
+    text = render(grouped(every))
+    if len(text) <= budget:
+        return text
+    # Last resort, only if even the grouped list is over: keep the families that share a word with the batch.
+    want = set()
+    for t in prefer:
+        want |= _words(t)
+    near = {t for t in families if _words(t) & want}
+    return render(grouped(near), len(families) - len(near))
 
 
 # ── the college's own course, for a title that is only a code ──────────────
@@ -812,8 +873,12 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         families = {}
         for t, recs in json.load(open(CREDENTIALS, encoding="utf-8")).items():
             families[t] = {(r.get("issuing_agency") or "").strip() for r in recs if isinstance(r, dict)} - {""}
-        rules = rules_text(procs, open(SKILL, encoding="utf-8").read(), families)
         ask = need[:classify_n]
+        rules = rules_text(procs, open(SKILL, encoding="utf-8").read(), families, budget=RULES_BUDGET, prefer=ask)
+        if len(rules) > RULES_LIMIT:
+            sys.exit("classifier: the standing rules are %d characters with every family trimmed; the Edge Function "
+                     "takes %d. Shorten the skill or the procedures." % (len(rules), RULES_LIMIT))
+        print("classifier: standing rules %d characters (budget %d)" % (len(rules), RULES_BUDGET))
         rows = [classifier_row(r, cards[r].get("colleges"), raw_meta.get(r) or {}, hints.get(r, []))
                 for r in ask]
         got, calls = classify(rows, rules, key, call=call)

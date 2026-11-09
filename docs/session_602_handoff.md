@@ -4,6 +4,8 @@ date: 2026-11-07
 session: 601 (SkyMilkyWay, Sam's session, 2026-11-07)
 tags: [handoff, org-phrase-scope-auth, cobix, cer-procedures, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_604_handoff.md
 ---
 
 # You are Session 602

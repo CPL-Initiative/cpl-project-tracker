@@ -634,3 +634,19 @@ Sam answered Open Asks Sheet 156 at 13:25Z with a note and no chip: *"I can uplo
 The lesson: **a refusal at the homepage is a refusal at the domain.** Before seeding another address on a refusing domain, check its host. A different host (a vendor catalog) is the only plain route, and a vendor that renders in the browser offers none.
 
 The same run let the apply fill a blank email on a name match (migration run 41458987926) and taught the VP patterns a dash.
+
+## S604 SkySculptor (2026-11-08, the 06:12Z firing): the first weekly Sunday read
+
+- **Read 42454159712, 15 colleges read longest ago; apply 42456248555:** 36 records at 11 colleges, **5 new, 31 seen
+  again, 0 gone** (receipt `kb/receipts/college_contacts_harvest_42454159712.json`). New: Chabot's interim VPAA, Citrus's
+  Superintendent/President, two West Hills associate vice chancellors (filed under Coalinga), Canyons' associate VP of
+  instruction. Chabot's president's email was printed beside him this time, so the load filled it.
+- **Left out of `colleges`:** CCSF and Clovis (403), Cerro Coso (a veterans page with no names), Chaffey (division deans
+  only; its president search is open). A college goes in `colleges` only when every person earlier records name for it
+  is found again or truly replaced, since the apply marks the rest gone; S604 checked that against every earlier
+  records file before the apply (30 earlier people, none missing).
+- **Titles that match none of Sam's positions** are in the records file's `note`: *Dean of Enrollment Services* (Cañada,
+  Cerritos, Alameda, Desert), Cerritos's *Instructional Dean* titles and *VRC Program Facilitator*, Coastline's *Dean of
+  Career Education* and *Director, Military and Contract Education*, Canyons' *VP of Public Information*. Whether
+  *Dean of Enrollment Services* reads as `dean_ar` and *Dean of Career Education* as `dean_cte` is Sam's call (the lane
+  says to ask him as titles turn up).

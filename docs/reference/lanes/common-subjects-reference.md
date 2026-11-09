@@ -171,20 +171,6 @@ Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../..
 
 ## NEXT
 
-**APPLIED: the Subjects List recode (SkyKumquat, 2026-11-05; Sam's "Apply now" in session ~01:58Z).** The eleven
-codes Sam saved on the List on 2026-11-04 landed with their identities in one window (`kb/_subjects_list_recode.py`,
-receipt `kb/subjects_list_recode_out/2026-11-05/`, in ALIAS_MAPS): CSAI to CSIS, BCST to BRDC, CNSR to CBIT, CNSC to
-WWKC, AUTD to DIES, ESCI to ENVS, CSTF to WWKF, GRAF to GFCD, PLGL to PARA, NRSV to VNRS, and Media Production FTVE to
-FMED, which ends its 2026-09-03 fan-in with Film (C-ID's code for those courses stays FTVE; his note names it). 2,389
-ids: 2,024 kept their number, 360 gap-filled past slots earlier re-mints used, one returned to its own id. P3 by hash:
-live `kb_curation` equaled the committed overlay over 1,409 keys. Fold-verify 7 (the by-design residue);
-`subject_collision_signal` 113 to 115 (FMED M1166 and M1167, audio courses a curator filed under Media Production whose
-file discipline says Film). Two blank-discipline rows (BRDC M1061 *Media Literacy*, GFCD M1051 *Introduction to
-Virtual Production*) lost the discipline the old code implied and joined the blanks worklist. After the merge:
-`supabase-rekey.yml` with the receipt, the read-back, then `daily-dashboard.yml`. **Watch:** CSIS and ENVS are local
-codes `kb/reference/subject_discipline_map.json` maps to Computer Information Systems and Biological Sciences, so any
-blank-discipline row minted on them later would be edge-filled wrong; none exists today.
-
 **Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 
 **For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
@@ -208,6 +194,8 @@ own export, `/descriptors/final/csv` (217,763 bytes, `text/csv`); the probe foll
 and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-courses` answers 200 with no export link, so
 `cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
 (495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
+
+**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08; Sam, Open Asks Sheet 171 card 4, *proposed*, 20:14Z; Commons ruling 3, #2921).** `kb/_anchor_rekey_apply.py` moved 20 of the curated anchor's keys in `kb/common_courses.json` onto their Common SUBJ and re-pointed 21 `kb/course_crosswalk.json` pointers; receipt `kb/anchor_rekey_out/2026-11-08/` (last in `kb/alias_chain.py`; stamp `_anchor_rekey_from`). 15 kept their number (CNSR to CBIT 7, FTVE to FMED 3, GRAF to GFCD 5). Five took the lowest DIES or PARA number nothing has used: AUTD M10FX, FY, FZ to DIES M10II, IJ, IK, and PLGL M10IA, IB to PARA M10KX, KY. AUTD M10FX and FY were read as re-keys in the S611 dry run, but the 2026-09-04 prefix fold had put two HVAC singletons on the ids the Z-band retirement gave those diesel entries the day before, and the 2026-11-05 recode took the singletons to DIES M10FX and FY: following the map would have merged Diesel Engines with an HVAC course, so they took the collision rule Sam ruled (proceeded on the recommendation; reply to reverse). The dry run now flags that case. kb_curation held no row on any old or new key, so nothing in Supabase moved. The anchor's era stamp is `kb/common_courses_era.json`, since `excel_to_dashboard.py` walks the anchor whole. Held: the three dead-format HOSP keys; their disciplines, Travel Services and Hotel and Motel Services, are not in the MQ registry, so neither has a Common SUBJ (the curator worklist).
 
 **Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
 the discipline-blank worklist for a curator; the Commons' remaining Progress

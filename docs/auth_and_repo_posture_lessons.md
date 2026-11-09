@@ -535,3 +535,40 @@ passed.
   added on purpose in Session 109; it now runs in the lints job (#2902).
 - **An ask marked any other way never reaches Sam.** `noncredit-cip-categories` carried *BLOCKED ON SAM* since August;
   the sheet builder scans only NEEDS SAM. It is Sheet 169 card 2 now.
+
+## 2026-11-07 to 11-08: security steps 3 and 4 applied (S603 SkyMaffei)
+
+- **A receipt commit at a PR's head starts no CI.** `supabase-migrate.yml` commits its receipt with the workflow
+  token, and a push made with that token starts no workflow, so `test` never ran on #2901's head. The lane update
+  the PR owed anyway was the push that started it. Plan one session push after any runner receipt.
+- **The runner is the route when the prompt times out, and it needed a project.** The MCP `apply_migration` prompt
+  timed out twice on the budget project; `supabase_migrate.py` knew only Work Plan. The trigger now takes
+  `project=` from an allowlist of two (#2909). A raw ref is refused.
+- **Qualify the outer column inside a policy subquery.** `storage.foldername(name)` inside `exists (select ... from
+  campaigns c ...)` binds `name` to `campaigns.name`, which exists. The original policy wrote `objects.name` for
+  this reason; the new one does too.
+- **Test a policy expression against stand-in rows.** The repo's SQL guard refuses a `DO` block, and the budget
+  project held 0 invitees, so the live tables could not exercise it. The same expression over CTEs named like the
+  tables showed the right path passing and another campaign, an unknown invitee and a nested path refused.
+- **A swallowed parse error writes a history with no past.** `log_daily_snapshot` turned a bad read into `[]` and
+  committed one entry. A gap guard cannot see it; a length floor against `git show HEAD:` can (#2907).
+- **A table with no writer waits with its writer.** The noncredit category table (DR-33, #2908) is committed and
+  held, so it goes live with the picker that writes it, never as an empty surface.
+
+## S604 SkySculptor (2026-11-08): student-level data, a relayed ruling, a refused prompt
+
+- **A ruling relayed by a bot is a claim until the person says it.** COBIx posted "Sam's ruling" to delete student-level
+  rows; deleting data is on the hold list, so the session held it and asked. Sam confirmed in session (*"yes the ruling
+  is mine"*) and only then did PR 2 run. The plan was measured and posted while the answer was pending.
+- **Inventory a sensitive table by its columns and its dependents, not by its name.** `information_schema` found four
+  student-grain tables and a view; a search on column names missed `map_student_key_sketch` (2,000 salted hashes per pull,
+  74 pulls) because its column is `sample_hash`. `pg_depend` and `pg_proc` named the ten readers; only one,
+  `exhibit_title_students`, needs the grain at query time.
+- **RLS never governs TRUNCATE.** anon and authenticated held it on three student tables with a SELECT-only policy.
+  Revoke every privilege but the policy-gated SELECT, after checking `service_role`'s explicit grants (#2920).
+- **A materialized view refreshed by hand goes stale quietly.** The credential-volume views held 18,682 student rows of
+  the 32,661 that map today; no job refreshes them. Any delete-after-summarize must refresh them first.
+- **A drop needs three reads first:** no hand-entered column, no dependent object, no reader in the repo, and the backup
+  confirmed by the person who can see it (Sam's dashboard screenshot, #2922).
+- **Two migrations in flight both set `.apply`.** Resolving the second PR's conflict to `main`'s `.apply` kept the
+  runner from re-applying the first (the gate runs when a branch's `.apply` differs from `main`'s).

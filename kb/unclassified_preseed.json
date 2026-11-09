@@ -1,48 +1,17 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-07T14:26:53Z",
- "_queue_count": 6,
+ "_generated_at": "2026-11-08T14:35:38Z",
+ "_queue_count": 4,
  "_counts": {
-  "staged": 4,
+  "staged": 0,
   "needs_you": 0,
-  "not_yet_asked": 2
+  "not_yet_asked": 4
  },
  "_residual": [
   "Introduction to Law Enforcement/Corrections",
+  "Nursing Care of Children and Families",
+  "Nursing Care of the childbearing family",
   "Report Writing"
  ],
- "staged": {
-  "BIOL 40C: Human Anatomy & Physiology III": {
-   "title": "Human Anatomy & Physiology Iii",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for BIOL 40C; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "CRJ 130": {
-   "title": "Alcohol, Narcotics and Drug Abuse",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for CRJ 130; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "CRJ 155": {
-   "title": "Crime Scene Investigation",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for CRJ 155; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "CRJ 220": {
-   "title": "Interviewing and Counseling",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for CRJ 220; issuer = CCC.",
-   "procedure": "course-identity"
-  }
- }
+ "staged": {}
 }

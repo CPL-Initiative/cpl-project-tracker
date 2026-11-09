@@ -36,7 +36,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture, general a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -80,7 +83,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -116,7 +122,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "general business a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -148,7 +157,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -187,7 +199,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction technology a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -232,7 +247,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -271,7 +289,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "registered nursing a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -297,7 +318,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "licensed vocational nursing a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -337,7 +361,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental assisting a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -369,7 +396,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cis networking a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -407,7 +437,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "lvn or paramedic to rn - career mobility a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -444,7 +477,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic law enforcement academy certificate of achievement (",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -469,7 +505,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -504,7 +543,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "addiction studies, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -567,7 +609,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: science exploration a.a. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 46,
@@ -623,7 +668,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: science a.a. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -673,7 +721,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: fine arts a.a. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -726,7 +777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: behavioral & social science a.a. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 38,
@@ -787,7 +841,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: humanities, language & communication a.a. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 46,
@@ -818,7 +875,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: business a.a. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -849,7 +909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "residential construction i, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -887,7 +950,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "residential construction ii, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 17,
@@ -916,7 +982,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cabinetmaking & millwork, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -946,7 +1015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forestry and natural resources, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
@@ -978,7 +1050,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "small business management, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 10,
@@ -1007,7 +1082,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cis networking, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -1039,7 +1117,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1076,7 +1157,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -1101,7 +1185,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "lvn to rn (30 unit option), ca certificate of achievement (",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
@@ -1127,7 +1214,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "licensed vocational nursing, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -1166,7 +1256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental assisting, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -1204,7 +1297,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -1237,7 +1333,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1266,7 +1365,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1293,7 +1395,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1326,7 +1431,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrician trainee, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -1363,7 +1471,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -1405,7 +1516,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -1436,7 +1550,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1464,7 +1581,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "transfer with junior status to the csu system. the associate in science for transfer in physics 2.0",
+    "section_fit": 0.167
    }
   },
   "listed": 6,
@@ -1503,7 +1623,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -1531,7 +1654,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1565,7 +1691,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1596,7 +1725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1645,7 +1777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -1686,7 +1821,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -1714,7 +1852,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "personal or academic english as a second language certificate of competency (noncredit) (",
+    "section_fit": 0.714
    }
   },
   "listed": 6,
@@ -1745,7 +1886,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1778,7 +1922,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1810,7 +1957,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1836,7 +1986,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "police science a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1865,7 +2018,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "horticulture & landscape practices, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -1898,7 +2054,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "organic/sustainable agriculture, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 15,
@@ -1925,7 +2084,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive maintenance & light repair, ca certificate of achievement (",
+    "section_fit": 0.8
    }
   },
   "listed": 5,
@@ -1953,7 +2115,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design & visual communication, ca certificate of achievement (",
+    "section_fit": 0.8
    }
   },
   "listed": 6,
@@ -1978,7 +2143,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cis cybersecurity, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -2027,7 +2195,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "social work and human services a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -2071,7 +2242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -2102,7 +2276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "bookkeeping, ca certificate of achievement (",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -2133,7 +2310,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2163,7 +2343,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "geomatics, ca certificate of achievement (",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -2202,7 +2385,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -2241,7 +2427,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -2276,7 +2465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -2325,7 +2517,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "personal wellness trainer, ca certificate of achievement (",
+    "section_fit": 0.75
    }
   },
   "listed": 28,
@@ -2369,7 +2564,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "personal wellness a.s. degree (",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -2415,7 +2613,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -2443,7 +2644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2471,7 +2675,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2499,7 +2706,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture business, ca certificate of achievement (",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -2531,7 +2741,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "transfer with junior status to the csu system. the associate in science for transfer in physics 2.0",
+    "section_fit": 0.167
    }
   },
   "listed": 10,
@@ -2572,7 +2785,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2605,7 +2821,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,

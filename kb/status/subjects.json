@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 595,
-  "moniker": "SkyBeacon",
+  "session": 612,
+  "moniker": "SkySunflower",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_594_handoff.md",
+  "handoff": "docs/session_613_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -16,17 +16,35 @@
         "at": "2026-10-20",
         "words": "move-both (Open Asks Sheet 107 card 1; applied by S436, kb/forestry_wine_remint_out/2026-10-20-stragglers/)"
       }
+    },
+    {
+      "title": "Six curated anchor entries the re-key dry run cannot settle",
+      "text": "Three collide with other courses on their new Common SUBJ and need fresh numbers; three hospitality entries have no MQ discipline. On no reply they stay unapplied.",
+      "link": "https://claude.ai/artifact/PUTmC3LaA2MQSu69paeqR2",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-08",
+        "words": "proposed"
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-06T22:03:38Z",
+  "written_at": "2026-11-08T22:50:39Z",
   "project": "subjects",
   "next_step": {
-    "title": "Check alignment on CR, Programs and Courses",
-    "text": "The Subjects List's codes are applied; carry Check alignment to the other Commons Lists (edit.extra; the worked examples are codeAudit and exhibitAudit)."
+    "title": "The Common Course Reference, one discipline at a time",
+    "text": "The anchor re-key is applied; the three hospitality anchor entries and the 93 stray codes stay with the curator, and the Common Course Reference's Kinesiology waits on Sheet 174."
   },
   "changes": [
+    {
+      "at": "2026-11-08T21:42:00Z",
+      "text": "The anchor re-key applied: 20 curated anchor entries onto their Common SUBJ, 15 keeping their number and 5 on the lowest free number of DIES or PARA; the three hospitality entries stay with the curator (#2938)."
+    },
+    {
+      "text": "The anchor re-key dry run reads the anchor's era from its keys and applies only later maps: 2 re-keys, 15 prefix swaps, 6 for Sam (#2935).",
+      "at": "2026-11-08T19:28:20Z"
+    },
     {
       "at": "2026-11-06T21:14:00Z",
       "text": "A recorded note settles a weak mnemonic, and the anchor findings are their own re-key item, so nothing waits on a curator (#2857)."
@@ -38,26 +56,6 @@
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "A row press edits the row and moves the panel; Check alignment audits a typed code"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "The panel shows colleges beside courses for each local code, names its courses, and offers Use"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "A row saved since the scan leaves the scan list"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "What a Common SUBJ is, linked from the reference"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "Sam's codes synced into the reference file"
-    },
-    {
-      "at": "2026-11-05T00:45:00Z",
-      "text": "The side session's handoff: docs/cer_redesign_handoff.md (SkyJujube to SkyKumquat)."
     }
   ]
 }

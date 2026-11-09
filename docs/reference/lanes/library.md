@@ -154,15 +154,6 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **Sam's noncredit visual, Draft 1 on its record (SkyLoop, 2026-11-06):** *Noncredit to Credit: How Noncredit Learning Can
-  Result in Credit* (`cpl_library` 5e29e1d3…, his brief, 14:50Z) is drafted in the
-  public library's look from the brief and `docs/noncredit_cpl_thinking.md` (who does what; six ways, each with its
-  credit for prior learning type; four steps to an exhibit; the first question; where to go next). Mock https://claude.ai/artifact/Wi6htw18rtQ9WCM6ajtmnM (Version 3); draft row
-  `cpl_library_drafts` 5b5f9e8a… and the record at Draft (receipt
-  `kb/receipts/cpl_library_noncredit_draft1_2026-11-06_skyloop.sql`); source
-  `CPLBrain/04-projects/cpl-initiative/noncredit-to-credit/`. His reactions of the hour are applied (the companion README lists them). Sam, ~16:10Z: *"visual looks great! go with it"* (and one correction: the Chancellor's film is her address to the 7th
-  Annual CPL Summit): **published** at https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/
-  (`scripts/library_page.py`; the record Approved, Version 1, listed in the public library; `library-noncredit` in the a11y sweep).
 - **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
   simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
   folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
@@ -178,7 +169,9 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
 - **Still open from the ELL IET and Coordinator Guide asks:** IACA's `regen` (Crystal Nasio, 2026-10-26) has no note or
   sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z, Request Adopt
-  links) needs a session: it has no Pages copy. ELL IET reads 33,971 of Sierra's 34,000 characters: room for anything
+  links) is done (S605): Draft 2 at the same artifact, Request Quick Adopt for Basic Military Training and the seven
+  statewide recommendations the most colleges adopted, the Credential Catalog in Resources; the record moves by
+  `kb/migrations/2026-11-08_library_coordinator_guide_draft2.sql` (lessons, S605). ELL IET reads 33,971 of Sierra's 34,000 characters: room for anything
   more comes out of repeated wording (the build already trims two phrases) or a `cpl-chat` cap raise.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
@@ -187,6 +180,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `.gitignore` `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's two
   player pages off the site, and add a guard test so a deliverable binary cannot be committed again. Then the vault's
   binaries (29 on 2026-10-05).
+- The noncredit visual's bullet (published 2026-11-06) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S605)*.
 - Three standing notes (the open-asks series record, a film re-render's record, Sam's sheet 47 to 49 calls) moved verbatim to
   [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 

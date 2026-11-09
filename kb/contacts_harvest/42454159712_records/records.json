@@ -1,0 +1,403 @@
+{
+ "run": "42454159712",
+ "read_by": "S604 SkySculptor, 2026-11-08",
+ "colleges": [
+  "Cañada College",
+  "Cerritos College",
+  "Chabot College",
+  "Citrus College",
+  "Coalinga College",
+  "Coastline College",
+  "College of Alameda",
+  "College of Marin",
+  "College of San Mateo",
+  "College of the Canyons",
+  "College of the Desert"
+ ],
+ "note": "Read by hand from each page window (run 42454159712, 15 colleges). Every person earlier records filed for the 11 colleges named here was found again on the same pages, so the load should mark nobody gone. Left out of the load: City College of San Francisco and Clovis (homepage 403), Cerro Coso (veterans page only, no names), Chaffey (division deans only; its Superintendent/President search is open). Chabot's president now prints jcooks@chabotcollege.edu beside him (filled on the name match). Coalinga's directory is still West Hills district-wide: only district posts are filed (the vice chancellor and two associate vice chancellors); the two presidents, two instruction VPs and the rest stay unsettled until a campus page names them. Canyons' Jennifer Brezina prints 'Associate VP Instruction' and files as assoc_vp, not vpaa.",
+ "unmatched_titles": {
+  "why": "Titles that match none of Sam's variants, or staff beneath an office's lead; never filled from a guess.",
+  "rows": [
+   {
+    "college": "Cañada College",
+    "title_as_printed": "Dean of Enrollment Services (Admissions and Records)",
+    "name": "Wissem Bennani"
+   },
+   {
+    "college": "Cerritos College",
+    "title_as_printed": "Dean, Enrollment Services",
+    "name": "Yvette Tafoya"
+   },
+   {
+    "college": "Cerritos College",
+    "title_as_printed": "Assistant Director, Admissions and Records (staff under the Dean of Enrollment Services)",
+    "name": "Laura Estrada"
+   },
+   {
+    "college": "Cerritos College",
+    "title_as_printed": "Program Facilitator, Veterans Resource Center",
+    "name": "Katherine Mishler"
+   },
+   {
+    "college": "Cerritos College",
+    "title_as_printed": "Dean, Academic Affairs",
+    "name": "Colleen McKinley"
+   },
+   {
+    "college": "Cerritos College",
+    "title_as_printed": "Instructional Dean, Business Education / Technology / Health Occupations (no CTE or instruction variant)",
+    "name": "Sam Agdasi; Christopher Whiteside; Wei Zhou; Elizabeth Riley"
+   },
+   {
+    "college": "Chabot College",
+    "title_as_printed": "Dean of Applied Technology & Business",
+    "name": "Heather Oshiro"
+   },
+   {
+    "college": "Chaffey College",
+    "title_as_printed": "Dean (Business and Applied Technology)",
+    "name": "Dr. Yolanda Friday"
+   },
+   {
+    "college": "Citrus College",
+    "title_as_printed": "Veterans Success Center Director (a May 2025 article only)",
+    "name": "Maria Buffo"
+   },
+   {
+    "college": "Coastline College",
+    "title_as_printed": "Dean of Career Education, Garden Grove Campus",
+    "name": "Natalie V. Nagthall, Ed.D."
+   },
+   {
+    "college": "Coastline College",
+    "title_as_printed": "Director, Military and Contract Education",
+    "name": "Araba Mensah, M.S"
+   },
+   {
+    "college": "College of Alameda",
+    "title_as_printed": "Executive Vice President, Student Learning & Success",
+    "name": "Dr. Nicole Porter"
+   },
+   {
+    "college": "College of Alameda",
+    "title_as_printed": "Dean of Enrollment Services",
+    "name": "John Nguyen"
+   },
+   {
+    "college": "College of Alameda",
+    "title_as_printed": "Coordinator (bare title on the Veterans Resource Center page)",
+    "name": "LaShawn Brumfield"
+   },
+   {
+    "college": "College of Marin",
+    "title_as_printed": "Articulation and Curriculum Specialist",
+    "name": "Grace Yuan"
+   },
+   {
+    "college": "College of the Canyons",
+    "title_as_printed": "Assistant Superintendent/Vice President Public Information",
+    "name": "Eric Harnish"
+   },
+   {
+    "college": "College of the Desert",
+    "title_as_printed": "Dean, Enrollment Services",
+    "name": "Maria Ayon"
+   },
+   {
+    "college": "College of the Desert",
+    "title_as_printed": "Dean, Applied Science and Business",
+    "name": "Jessica Enders"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "college": "Cañada College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Lizette Bricker",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Cañada College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Chialin Hsieh",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Jose Fierro",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/about/president/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs/Assistant Superintendent",
+   "name": "Frank Mixson",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services/Assistant Superintendent, Student Services",
+   "name": "Robyn Brammer",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpbs",
+   "title_as_printed": "Executive Vice President, Business Services",
+   "name": "Felipe Lopez",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Jamal Cooks",
+   "email": "jcooks@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Vice President, Academic Services",
+   "name": "Tracey Coleman",
+   "email": "tcoleman@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Luis Escobar",
+   "email": "laescobar@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Marie Amboy",
+   "email": "mamboy@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records",
+   "name": "Liz Oteyza",
+   "email": "moteyza@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/admissions/contact-info.php"
+  },
+  {
+   "college": "Citrus College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Greg Schulz",
+   "email": "",
+   "source_url": "https://news.citruscollege.edu/news/veterans_magazine26.html"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Ed. Services and Institutional Effect.",
+   "name": "Lataria Hall",
+   "email": "latariahall@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "assoc_vice_chancellor",
+   "title_as_printed": "Associate Vice Chancellor (Human Resources)",
+   "name": "Becky Cazares",
+   "email": "beckycazares@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "assoc_vice_chancellor",
+   "title_as_printed": "Associate Vice Chancellor of Information Technology",
+   "name": "Jeff Seed",
+   "email": "jeffseed@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  },
+  {
+   "college": "Coastline College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Dr. Vince Rodriguez",
+   "email": "",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Kathryn Mueller, Ed.D.",
+   "email": "kmueller@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Isela Ocegueda, Ph.D.",
+   "email": "iocegueda@cccd.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Christine Nguyen, M.B.A.",
+   "email": "cnguyen@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Westminster - Le-Jao Campus",
+   "name": "Stephanie Bridges",
+   "email": "sbridges@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "college_ceo",
+   "title_as_printed": "Acting President",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor, Peralta Community College District",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Marin",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jonathan Eldridge, Ed.D.",
+   "email": "",
+   "source_url": "https://president.marin.edu"
+  },
+  {
+   "college": "College of Marin",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Transfer Counselor",
+   "name": "Sara Malmquist-West",
+   "email": "",
+   "source_url": "https://ss.marin.edu/articulation"
+  },
+  {
+   "college": "College of San Mateo",
+   "position": "college_ceo",
+   "title_as_printed": "President, College of San Mateo",
+   "name": "Dr. Manuel Alejandro Pérez",
+   "email": "",
+   "source_url": "https://www.collegeofsanmateo.edu/president/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jasmine Ruys",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Senior Curriculum Analyst",
+   "name": "Patrick Backes",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Renard Thomas",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "dean_ar",
+   "title_as_printed": "Associate Dean- Admissions, Records, & Online Services",
+   "name": "Steve Erwin",
+   "email": "steve.erwin@canyons.edu",
+   "source_url": "https://www.canyons.edu/studentservices/admissions/contact/staff.php"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction (Special Projects)",
+   "name": "James Glapa-Grossklag",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Facilities and Operations",
+   "name": "Jason Munoz",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, District Communications",
+   "name": "John Green",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate VP Instruction",
+   "name": "Jennifer Brezina",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Valentine Martinez Garcia",
+   "email": "vmartinezgarcia@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Joy Cowden",
+   "email": "jcowden@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions And Records",
+   "name": "Noelle McMillin",
+   "email": "nmcmillin@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  }
+ ]
+}

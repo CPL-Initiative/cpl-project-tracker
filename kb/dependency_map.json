@@ -4,9 +4,9 @@
   "supabase_tables": 108,
   "rpcs": 54,
   "edge_functions": 12,
-  "file_datasets": 814,
+  "file_datasets": 825,
   "external_services": 193,
-  "consumers": 532,
+  "consumers": 536,
   "workflows": 64,
   "data_js_files": 71,
   "tabs": 40
@@ -692,7 +692,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4644,
+     "line": 4678,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -830,7 +830,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1128,
+     "line": 1154,
      "tabs": [
       "canonical-subj4"
      ]
@@ -840,7 +840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2787,
+     "line": 2872,
      "tabs": [
       "exhibits"
      ]
@@ -1036,7 +1036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1567
+     "line": 1589
     },
     {
      "id": "module:admin.js",
@@ -1074,7 +1074,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6533,
+     "line": 6567,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1418,7 +1418,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4135,
+     "line": 4169,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1543,7 +1543,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5267,
+     "line": 5293,
      "tabs": [
       "credential-reference"
      ]
@@ -1719,7 +1719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2199
+     "line": 2221
     }
    ],
    "main_committers": []
@@ -1775,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 935,
+     "line": 1000,
      "tabs": [
       "commons"
      ]
@@ -1795,7 +1795,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15500,
+     "line": 15534,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -2053,7 +2053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4404,
+     "line": 4431,
      "tabs": [
       "unified-courses"
      ]
@@ -2106,7 +2106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3595,
+     "line": 3622,
      "tabs": [
       "unified-courses"
      ]
@@ -2189,7 +2189,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4795,
+     "line": 4829,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -2344,7 +2344,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1177
+     "line": 1199
     }
    ],
    "main_committers": []
@@ -2363,7 +2363,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1522
+     "line": 1544
     },
     {
      "id": "module:college_briefing.js",
@@ -2381,7 +2381,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4123,
+     "line": 4157,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -3045,7 +3045,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1578
+     "line": 1600
     },
     {
      "id": "module:dashboard_filters.js",
@@ -3588,7 +3588,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6835,
+     "line": 6869,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -3601,7 +3601,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3793,
+     "line": 3819,
      "tabs": [
       "credential-reference"
      ]
@@ -4355,7 +4355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1863
+     "line": 1885
     }
    ],
    "main_committers": []
@@ -4647,7 +4647,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9402,
+     "line": 9436,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -4787,7 +4787,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 217
+     "line": 220
     }
    ],
    "served": false,
@@ -5417,7 +5417,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1754
+     "line": 1776
     },
     {
      "id": "module:admin.js",
@@ -5625,6 +5625,13 @@
      "direction": "read",
      "how": "literal",
      "line": 261
+    },
+    {
+     "id": "script:kb/_ccr_desc_signal.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     }
    ],
    "served": false,
@@ -5637,7 +5644,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 167,
+     "line": 170,
      "tabs": [
       "coci-lookup"
      ]
@@ -5731,7 +5738,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1112,
+     "line": 1251,
      "tabs": [
       "coci-lookup"
      ]
@@ -5759,7 +5766,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3860,
+     "line": 3861,
      "tabs": [
       "program-requirements"
      ]
@@ -6020,7 +6027,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2180,
+     "line": 2260,
      "tabs": [
       "exhibits"
      ]
@@ -6184,7 +6191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2494,
+     "line": 2521,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6194,7 +6201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 900,
+     "line": 1039,
      "tabs": [
       "coci-lookup"
      ]
@@ -6214,7 +6221,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 843,
+     "line": 867,
      "tabs": [
       "cr-reference"
      ]
@@ -6224,7 +6231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2779,
+     "line": 2864,
      "tabs": [
       "exhibits"
      ]
@@ -6244,7 +6251,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3859,
+     "line": 3860,
      "tabs": [
       "program-requirements"
      ]
@@ -6287,7 +6294,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1608,
+     "line": 1634,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6297,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 988,
+     "line": 1127,
      "tabs": [
       "coci-lookup"
      ]
@@ -6307,7 +6314,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 874,
+     "line": 898,
      "tabs": [
       "cr-reference"
      ]
@@ -6317,7 +6324,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3059,
+     "line": 3145,
      "tabs": [
       "exhibits"
      ]
@@ -6343,7 +6350,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1606,
+     "line": 1632,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6353,7 +6360,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 872,
+     "line": 896,
      "tabs": [
       "cr-reference"
      ]
@@ -6363,7 +6370,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5629,
+     "line": 5655,
      "tabs": [
       "credential-reference"
      ]
@@ -6561,7 +6568,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2138
+     "line": 2160
     },
     {
      "id": "module:college_briefing.js",
@@ -6634,7 +6641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18898,
+     "line": 18933,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6729,7 +6736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18816,
+     "line": 18851,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6774,14 +6781,14 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1237
+     "line": 1259
     },
     {
      "id": "module:cpl_funding.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18801,
+     "line": 18836,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7118,7 +7125,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 875,
+     "line": 899,
      "tabs": [
       "cr-reference"
      ]
@@ -7204,7 +7211,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5747,
+     "line": 5773,
      "tabs": [
       "credential-reference"
      ]
@@ -7460,7 +7467,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2493,
+     "line": 2520,
      "tabs": [
       "canonical-subj4"
      ]
@@ -8040,7 +8047,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5630,
+     "line": 5656,
      "tabs": [
       "credential-reference"
      ]
@@ -8076,7 +8083,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3338,
+     "line": 3424,
      "tabs": [
       "exhibits"
      ]
@@ -8159,7 +8166,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9526,
+     "line": 9560,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -9358,6 +9365,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_ccr_seed_recheck_dryrun.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_cer_decision_apply.py": {
    "consumers": [
     {
@@ -10174,6 +10194,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/anchor_rekey_dryrun/plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 165
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/anchor_rekey_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 93
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/athl_remint_out/<date>/alias_map.json": {
    "consumers": [
     {
@@ -10316,6 +10362,47 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/ccr_doubt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 304
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 144
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/ccr_procedures.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 156
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/cer_classified.json": {
    "consumers": [
     {
@@ -10386,7 +10473,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5368,
+     "line": 5394,
      "tabs": [
       "credential-reference"
      ]
@@ -10995,7 +11082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 340
+     "line": 352
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -11017,6 +11104,13 @@
      "direction": "read",
      "how": "literal",
      "line": 75
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 165
     },
     {
      "id": "script:kb/_desc_consolidation_dryrun.py",
@@ -11260,6 +11354,20 @@
      "line": 57
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 160
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 128
+    },
+    {
      "id": "script:kb/_apply_crossdisc_remint.py",
      "kind": "script",
      "direction": "read",
@@ -11363,6 +11471,13 @@
      "direction": "read",
      "how": "literal",
      "line": 99
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 162
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -11825,6 +11940,13 @@
      "line": 73
     },
     {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 163
+    },
+    {
      "id": "script:kb/_ccr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -12082,6 +12204,20 @@
      "line": 58
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 161
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 129
+    },
+    {
      "id": "script:kb/_apply_convergence_singletons.py",
      "kind": "script",
      "direction": "read",
@@ -12150,6 +12286,13 @@
      "direction": "read",
      "how": "literal",
      "line": 236
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 168
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -12735,6 +12878,27 @@
      "line": 73
     },
     {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 156
+    },
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 200
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 125
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -12775,6 +12939,26 @@
      "direction": "read",
      "how": "literal",
      "line": 68
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/common_courses_era.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 133
     }
    ],
    "served": true,
@@ -12837,7 +13021,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5004,
+     "line": 5030,
      "tabs": [
       "credential-reference"
      ]
@@ -12863,6 +13047,20 @@
   },
   "file:kb/course_crosswalk.json": {
    "consumers": [
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 157
+    },
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 201
+    },
     {
      "id": "script:kb/_curation_01.py",
      "kind": "script",
@@ -12913,7 +13111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 619
+     "line": 631
     }
    ],
    "served": false,
@@ -12961,7 +13159,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2011,
+     "line": 2091,
      "tabs": [
       "exhibits"
      ]
@@ -13064,7 +13262,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 385
+     "line": 397
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13338,7 +13536,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 614,
+     "line": 640,
      "tabs": [
       "credential-reference"
      ]
@@ -13621,7 +13819,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 770
+     "line": 782
     }
    ],
    "served": false,
@@ -13644,7 +13842,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 494
+     "line": 506
     }
    ],
    "producers": [
@@ -13701,7 +13899,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 495
+     "line": 507
     }
    ],
    "served": true,
@@ -13763,7 +13961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 271,
+     "line": 297,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13870,7 +14068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 203,
+     "line": 229,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13880,7 +14078,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3271,
+     "line": 3298,
      "tabs": [
       "unified-courses"
      ]
@@ -13891,6 +14089,20 @@
      "direction": "read",
      "how": "literal",
      "line": 8074
+    },
+    {
+     "id": "script:kb/_anchor_rekey_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 158
+    },
+    {
+     "id": "script:kb/_anchor_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 126
     },
     {
      "id": "script:kb/_apply_canonical_subj4.py",
@@ -13932,7 +14144,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 473
+     "line": 485
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14103,7 +14315,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 212,
+     "line": 238,
      "tabs": [
       "canonical-subj4"
      ]
@@ -14182,7 +14394,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 554,
+     "line": 580,
      "tabs": [
       "unified-courses"
      ]
@@ -14477,7 +14689,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 617,
+     "line": 643,
      "tabs": [
       "credential-reference"
      ]
@@ -14487,7 +14699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2801,
+     "line": 2886,
      "tabs": [
       "exhibits"
      ]
@@ -14591,7 +14803,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2006,
+     "line": 2086,
      "tabs": [
       "exhibits"
      ]
@@ -14838,6 +15050,13 @@
      ]
     },
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 820
+    },
+    {
      "id": "script:kb/_sweep_exhibit_titles.py",
      "kind": "script",
      "direction": "read",
@@ -14920,7 +15139,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 233,
+     "line": 259,
      "tabs": [
       "canonical-subj4"
      ]
@@ -15093,7 +15312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 485,
+     "line": 511,
      "tabs": [
       "credential-reference"
      ]
@@ -15130,7 +15349,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5027,
+     "line": 5053,
      "tabs": [
       "credential-reference"
      ]
@@ -15147,7 +15366,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 598
+     "line": 610
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -16134,7 +16353,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 400
     }
    ],
    "served": false,
@@ -16346,7 +16565,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 313,
+     "line": 339,
      "tabs": [
       "canonical-subj4"
      ]
@@ -16513,7 +16732,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 310,
+     "line": 336,
      "tabs": [
       "canonical-subj4"
      ]
@@ -17127,7 +17346,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 873,
+     "line": 899,
      "tabs": [
       "vision-2030"
      ]
@@ -17316,7 +17535,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 222,
+     "line": 248,
      "tabs": [
       "canonical-subj4"
      ]
@@ -17640,7 +17859,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 905,
+     "line": 932,
      "tabs": [
       "unified-courses"
      ]
@@ -17732,7 +17951,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1520,
+     "line": 1548,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -17773,7 +17992,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 313
+     "line": 318
     }
    ],
    "served": true,
@@ -17786,7 +18005,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 418
+     "line": 430
     }
    ],
    "served": true,
@@ -17887,7 +18106,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 553
+     "line": 565
     }
    ],
    "served": true,
@@ -18138,6 +18357,13 @@
      "direction": "read",
      "how": "literal",
      "line": 92
+    },
+    {
+     "id": "script:kb/_ccr_seed_recheck_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 161
     },
     {
      "id": "script:kb/_infer_disciplines_from_top.py",
@@ -18426,7 +18652,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 474,
+     "line": 500,
      "tabs": [
       "credential-reference"
      ]
@@ -18462,7 +18688,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 463,
+     "line": 489,
      "tabs": [
       "credential-reference"
      ]
@@ -18521,7 +18747,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 611,
+     "line": 637,
      "tabs": [
       "credential-reference"
      ]
@@ -20385,7 +20611,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 617
+     "line": 629
     }
    ],
    "served": false,
@@ -20714,7 +20940,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5479,
+     "line": 5513,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -21093,7 +21319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2670,
+     "line": 2696,
      "tabs": [
       "vision-2030"
      ]
@@ -21288,7 +21514,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2671,
+     "line": 2697,
      "tabs": [
       "vision-2030"
      ]
@@ -21511,6 +21737,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/anchor_rekey_dryrun_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/ap_official_titles_test.py": {
    "consumers": [
     {
@@ -21615,7 +21854,33 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/ccr_doubt_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/ccr_level_layout_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_seed_recheck_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -21655,6 +21920,19 @@
    "main_committers": []
   },
   "file:tests/ccr_universe_orbits_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/cer_classifier_rules_size_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22579,6 +22857,26 @@
    "main_committers": []
   },
   "file:tests/map_custom_report_sync_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:map-custom-report-load.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/map_key_sketch_one_pull_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -23549,7 +23847,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 867,
+     "line": 894,
      "tabs": [
       "unified-courses"
      ]
@@ -23605,7 +23903,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 506,
+     "line": 640,
      "tabs": [
       "coci-lookup"
      ]
@@ -23745,7 +24043,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 835,
+     "line": 862,
      "tabs": [
       "unified-courses"
      ]
@@ -23797,7 +24095,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 815,
+     "line": 842,
      "tabs": [
       "unified-courses"
      ]
@@ -23874,7 +24172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1028,
+     "line": 1055,
      "tabs": [
       "unified-courses"
      ]
@@ -23937,7 +24235,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 901,
+     "line": 1040,
      "tabs": [
       "coci-lookup"
      ]
@@ -23958,7 +24256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 851,
+     "line": 878,
      "tabs": [
       "unified-courses"
      ]
@@ -24077,7 +24375,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1151,
+     "line": 1178,
      "tabs": [
       "unified-courses"
      ]
@@ -24179,7 +24477,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 883,
+     "line": 910,
      "tabs": [
       "unified-courses"
      ]
@@ -24607,7 +24905,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 6224,
+     "line": 6258,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24821,7 +25119,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 451,
+     "line": 485,
      "tabs": [
       "exhibits"
      ]
@@ -24851,7 +25149,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 372,
+     "line": 373,
      "tabs": [
       "exhibits"
      ]
@@ -24878,7 +25176,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 544
+     "line": 547
     }
    ],
    "main_committers": []
@@ -24992,7 +25290,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 731
+     "line": 749
     }
    ],
    "main_committers": []
@@ -25141,7 +25439,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 752,
+     "line": 803,
      "tabs": [
       "commons"
      ]
@@ -25502,7 +25800,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5779,
+     "line": 5813,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -25696,7 +25994,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 579,
+     "line": 587,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -25870,7 +26168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 196,
+     "line": 199,
      "tabs": [
       "coci-lookup"
      ]
@@ -26094,7 +26392,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5661,
+     "line": 5695,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26132,7 +26430,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6417,
+     "line": 6451,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26150,7 +26448,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5726,
+     "line": 5760,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26163,7 +26461,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5860,
+     "line": 5894,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26188,7 +26486,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7288,
+     "line": 7322,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26201,7 +26499,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7316,
+     "line": 7350,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26232,7 +26530,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5843,
+     "line": 5877,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26257,7 +26555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7404,
+     "line": 7438,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26270,7 +26568,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7525,
+     "line": 7559,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -26499,7 +26797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 167,
+     "line": 187,
      "tabs": [
       "cr-reference"
      ]
@@ -26509,7 +26807,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 211,
+     "line": 232,
      "tabs": [
       "cr-reference"
      ]
@@ -26524,14 +26822,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 873
+     "line": 895
     },
     {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 427,
+     "line": 461,
      "tabs": [
       "exhibits"
      ]
@@ -26546,7 +26844,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 450,
+     "line": 484,
      "tabs": [
       "exhibits"
      ]
@@ -26918,7 +27216,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 76,
+     "line": 101,
      "tabs": [
       "canonical-subj4"
      ]
@@ -26928,7 +27226,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 125,
+     "line": 151,
      "tabs": [
       "canonical-subj4"
      ]
@@ -26938,7 +27236,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 513,
+     "line": 381,
      "tabs": [
       "coci-lookup"
      ]
@@ -26948,7 +27246,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 552,
+     "line": 533,
      "tabs": [
       "coci-lookup"
      ]
@@ -26958,7 +27256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 336,
+     "line": 357,
      "tabs": [
       "cr-reference"
      ]
@@ -26968,7 +27266,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 361,
+     "line": 382,
      "tabs": [
       "cr-reference"
      ]
@@ -26978,7 +27276,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 287,
+     "line": 313,
      "tabs": [
       "credential-reference"
      ]
@@ -26988,7 +27286,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 355,
+     "line": 381,
      "tabs": [
       "credential-reference"
      ]
@@ -26998,7 +27296,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 504,
+     "line": 408,
      "tabs": [
       "exhibits"
      ]
@@ -27008,7 +27306,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 560,
+     "line": 619,
      "tabs": [
       "exhibits"
      ]
@@ -27035,7 +27333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 95,
+     "line": 120,
      "tabs": [
       "vision-2030"
      ]
@@ -27045,7 +27343,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 124,
+     "line": 150,
      "tabs": [
       "vision-2030"
      ]
@@ -27055,7 +27353,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 434,
+     "line": 458,
      "tabs": [
       "unified-courses"
      ]
@@ -27065,7 +27363,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 476,
+     "line": 502,
      "tabs": [
       "unified-courses"
      ]
@@ -27117,7 +27415,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 621
+     "line": 682
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -27252,7 +27550,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13728,
+     "line": 13762,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -27323,7 +27621,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5722,
+     "line": 5756,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -27377,7 +27675,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5723,
+     "line": 5757,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -27420,7 +27718,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13704,
+     "line": 13738,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -27739,7 +28037,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13683,
+     "line": 13717,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -27913,7 +28211,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 750
+     "line": 768
     }
    ],
    "main_committers": []
@@ -27962,7 +28260,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 690
+     "line": 700
     }
    ],
    "main_committers": []
@@ -27974,7 +28272,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 560,
+     "line": 586,
      "tabs": [
       "unified-courses"
      ]
@@ -28423,7 +28721,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 730,
+     "line": 781,
      "tabs": [
       "commons"
      ]
@@ -28579,7 +28877,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 854
+     "line": 872
     }
    ],
    "main_committers": []
@@ -28591,7 +28889,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 846
+     "line": 864
     }
    ],
    "main_committers": []
@@ -28603,7 +28901,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 848
+     "line": 866
     }
    ],
    "main_committers": []
@@ -29560,6 +29858,7 @@
     "kb/_build_adopt_page.py",
     "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
+    "kb/_ccr_seed_recheck_dryrun.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -29637,6 +29936,7 @@
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
+    "kb/ccr_doubt.json",
     "kb/status/program-requirements-checked.json",
     "kb/csr_out/latest.json",
     "kb/project_lifecycle.json",
@@ -29730,6 +30030,7 @@
     "tests/refresh_button_no_secret_test.py",
     "tests/daily_scrape_fails_loudly_test.py",
     "tests/supabase_table_grants_test.py",
+    "tests/ccr_doubt_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/college_contacts_harvest_sql_test.py",
@@ -29755,6 +30056,9 @@
     "tests/ui_pass_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
+    "tests/map_key_sketch_one_pull_test.py",
+    "tests/anchor_rekey_dryrun_test.py",
+    "tests/ccr_seed_recheck_dryrun_test.py",
     "tests/program_courses_build_test.py",
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
@@ -29764,6 +30068,7 @@
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
+    "tests/cer_classifier_rules_size_test.py",
     "tests/ap_official_titles_test.py",
     "tests/ib_official_titles_test.py",
     "tests/clep_official_titles_test.py",
@@ -29909,6 +30214,7 @@
     "fetch_custom_report.py",
     "tests/custom_report_payload_test.py",
     "tests/map_custom_report_sync_test.py",
+    "tests/map_key_sketch_one_pull_test.py",
     "kb/_sync_map_custom_reports.py"
    ],
    "adds": [],

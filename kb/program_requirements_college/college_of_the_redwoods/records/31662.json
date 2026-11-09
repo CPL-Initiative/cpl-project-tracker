@@ -102,10 +102,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -128,8 +125,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -227,5 +224,20 @@
    "Outcomes copied verbatim, including apparent typos ('ion the United States', 'typical and atypical of development')."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": 42480098144,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "including the CalGETC General Education requirements (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Redwoods AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis' (college page read 42479757804); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38979396148"
 }

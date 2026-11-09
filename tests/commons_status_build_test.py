@@ -299,6 +299,21 @@ with tempfile.TemporaryDirectory() as fx:
     bare = B.build_confidence(os.path.join(fx, "nowhere"))
     check("an unreadable confidence source carries its error, never a zero", all(c.get("error") and "total" not in c for c in bare), bare)
 
+# ── the next batch (Sam's Commons rulings, 2026-11-08, #2921): Another look's open cards, six at most ──
+import json as _json, tempfile as _tf, os as _os
+nb = data.get("next_batch")
+check("the status file carries next_batch, or none when no card is open", nb is None or (nb.get("n", 0) <= 6 and nb.get("open") == "#exhibits/another-look/batch"), nb)
+with _tf.TemporaryDirectory() as td:
+    _os.makedirs(_os.path.join(td, "kb"))
+    with open(_os.path.join(td, "kb", "exhibits_sweep.json"), "w") as f:
+        _json.dump({"generated_at": "2026-11-08T00:00:00Z", "cards": [{"rules": ["fold"]}] * 9}, f)
+    b9 = B.next_batch(td)
+    check("a batch is six at most and keeps the open count", b9["n"] == 6 and b9["of"] == 9 and b9["title"] == "Another look at 6 exhibit titles", b9)
+    with open(_os.path.join(td, "kb", "exhibits_sweep.json"), "w") as f:
+        _json.dump({"cards": []}, f)
+    check("no open card, no batch", B.next_batch(td) is None)
+check("an unreadable sweep carries its error, never a batch of zero", "error" in B._safe(lambda r: 1 / 0, "."))
+
 # ── the small helpers ──
 check("receipt_time turns 2026-10-18T17-37-29Z into ISO", B.receipt_time("2026-10-18T17-37-29Z") == "2026-10-18T17:37:29Z")
 check("receipt_time leaves an ISO stamp alone", B.receipt_time("2026-10-18T17:37:29Z") == "2026-10-18T17:37:29Z")

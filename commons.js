@@ -354,8 +354,11 @@
     var open = openCalls(Q);
     var unread = pair.n == null;
     var kind = open.length ? "needs" : (building ? "build" : "progress");
-    var status = unread ? "Could not be read" : open.length ? "Needs you" : building ? (spec.status || "Building") : "In progress";
     var pct = typeof pair.n === "number" && typeof pair.of === "number" && pair.of > 0 ? Math.max(0, Math.min(100, pair.n / pair.of * 100)) : null;
+    /* Complete (Sam's Commons rulings, 2026-11-08, #2921 item 3): every item of the headline pair is done and nothing
+       waits on him. A reference's repair jobs stay in its issues; the word names the milestone, not the lane. */
+    var complete = !unread && !open.length && !building && pct === 100;
+    var status = unread ? "Could not be read" : open.length ? "Needs you" : building ? (spec.status || "Building") : complete ? "Complete" : "In progress";
     var recent = "";
     if (Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text) recent = firstSentence(Q.changes[0].text);
     else if (row.machine && row.machine.what && row.machine.at) recent = capFirst(row.machine.what) + ", " + stampOf(row.machine.at);
@@ -363,7 +366,7 @@
     var links = Array.isArray(spec.links) && spec.links.length ? spec.links : (Array.isArray(row.links) ? row.links : []);
     var home = links[0] ? links[0].href : row.tab;
     return { key: row.key, name: spec.name, what: spec.what, row: row, Q: Q, err: err, pair: pair, open: open, unread: unread,
-      kind: kind, status: status, pct: pct, recent: recent, next: next, links: links, home: home };
+      kind: kind, status: status, complete: complete, pct: pct, recent: recent, next: next, links: links, home: home };
   }
   /* Your decisions first, then by how far along, then the ones being built, in the mock's order inside a tie. */
   function sortCards(cards) {
@@ -386,7 +389,7 @@
   function cardNode(c, onRecord) {
     var head = el("div", { cls: "cmn-card-head" }, [
       el("h3", { cls: "cmn-card-name" }, [openLink(c.home, c.name, null)]),
-      el("span", { cls: "cmn-pill" + (c.kind === "needs" ? " cmn-pill-needs" : ""), text: c.status })
+      el("span", { cls: "cmn-pill" + (c.kind === "needs" ? " cmn-pill-needs" : c.complete ? " cmn-pill-done" : ""), text: c.status })
     ]);
     var n = el("p", { cls: "cmn-card-n" });
     if (c.unread) {
@@ -492,12 +495,18 @@
       ]);
     });
     var carried = Array.isArray(q.carried) ? q.carried : [];
+    /* Folded (#2921, the first view leads with one small batch): the pools stay one word away, never on the first screen. */
+    var pooled = 0;
+    groups.forEach(function (g) { (g.items || []).forEach(function (i) { if (typeof i.n === "number") pooled += i.n; }); });
     return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
       el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
       el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
-      el("div", { cls: "cmn-queue-grid" }, boxes),
-      carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, inProcessOrder(carried).map(queueItem))]) : null
-    ].filter(Boolean));
+      el("details", { cls: "cmn-fold" }, [
+        el("summary", { cls: "cmn-fold-word", text: "Show the " + fmt(pooled) + " items in the pools" + (carried.length ? ", and what the routines carry" : "") }),
+        el("div", { cls: "cmn-queue-grid" }, boxes),
+        carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, inProcessOrder(carried).map(queueItem))]) : null
+      ].filter(Boolean))
+    ]);
   }
 
   /* The confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward. */
@@ -505,6 +514,7 @@
   function procName(n) { n = String(n || "").replace(/-/g, " "); return n === "classifier" ? "the classifier" : n; }
   function confidenceSection(list) {
     if (!Array.isArray(list) || !list.length) return null;
+    var fold = el("details", { cls: "cmn-fold", id: "cmn-conf-fold" }, [el("summary", { cls: "cmn-fold-word", text: "Show each procedure's count" })]);
     var kids = [
       el("h3", { id: "cmn-conf-h", cls: "cmn-band-h", text: "How far to trust the procedures" }),
       el("p", { cls: "cmn-sub", text: "A procedure earns trust by what a person does with its work afterward. A result a person keeps, or renames with its whole family, counts for it; a result a person moves elsewhere counts against it." })
@@ -512,7 +522,7 @@
     list.forEach(function (c) {
       var name = (CARDS[c.ref] && CARDS[c.ref].name) || c.ref;
       var head = el("h4", { cls: "cmn-reason-h", text: name + ": " + (CONF_UNIT[c.ref] || "results the procedures settled") });
-      if (c.error || !c.total) { kids.push(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-unread", text: "Could not be read" })])); return; }
+      if (c.error || !c.total) { fold.appendChild(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-unread", text: "Could not be read" })])); return; }
       var t = c.total;
       var line = t.looked
         ? "A person has looked at " + fmt(t.looked) + " of " + fmt(t.placed) + ": " + fmt(t.kept) + " kept, " + fmt(t.renamed) + " renamed with their family, " + fmt(t.moved) + " moved elsewhere."
@@ -528,10 +538,45 @@
             [p.placed, p.looked, p.kept, p.renamed, p.moved, p.untouched].map(function (n) { return el("td", { text: fmt(n || 0) }); })));
         }))
       ]);
-      kids.push(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-conf-line", text: line + (extra.length ? " " + capFirst(extra.join("; ")) + "." : "") }),
+      fold.appendChild(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-conf-line", text: line + (extra.length ? " " + capFirst(extra.join("; ")) + "." : "") }),
         el("div", { cls: "cmn-conf-wrap", role: "region", tabindex: "0", "aria-label": name + ": each procedure's results" }, [table])]));
     });
-    return el("section", { cls: "cmn-queue cmn-conf", "aria-labelledby": "cmn-conf-h" }, kids);
+    kids.push(fold);
+    return el("section", { cls: "cmn-queue cmn-conf", id: "cmn-conf", "aria-labelledby": "cmn-conf-h" }, kids);
+  }
+
+  /* Your next batch (Sam's Commons rulings, 2026-11-08, #2921 items 1 and 2; COBIx's first-view mock): the page opens
+     on one small batch a person can finish, with what the answers teach and when to stop. The batch is Another look
+     in Exhibits, so Start opens that batch there (#exhibits/another-look/batch, the same six at most, then a stop) and
+     nothing here duplicates its cards or its saves. */
+  function nextBatchSection(b) {
+    if (!b || b.error || !b.n) return null;
+    return el("section", { cls: "cmn-next", "aria-labelledby": "cmn-next-h" }, [
+      el("div", { cls: "cmn-next-text" }, [
+        el("p", { cls: "cmn-kicker", text: "Your next batch" }),
+        el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: b.title }),
+        el("p", { cls: "cmn-next-teach", text: b.teaches }),
+        el("p", { cls: "cmn-next-meta", text: fmt(b.n) + (b.n === 1 ? " card" : " cards") + " as of last night's sweep; Start counts again. " + (b.stop || "") })
+      ]),
+      el("a", { cls: "cmn-start", href: b.open, text: "Start" })
+    ]);
+  }
+  /* The learning line: what people did with the procedures' work, from the confidence count, with the table one
+     word away. It reports what people saw, never that the unchecked results are right. */
+  function learningLine(list) {
+    var ex = Array.isArray(list) ? list.filter(function (c) { return c.ref === "exhibit" && c.total; })[0] : null;
+    if (!ex) return null;
+    var t = ex.total;
+    var word = el("button", { cls: "cmn-word", type: "button", text: "How far to trust the procedures" });
+    word.addEventListener("click", function () {
+      var f = document.getElementById("cmn-conf-fold"), sec = document.getElementById("cmn-conf");
+      if (f) f.open = true;
+      if (sec && sec.scrollIntoView) sec.scrollIntoView({ block: "start" });
+    });
+    return el("p", { cls: "cmn-learn" }, [
+      "The procedures placed ", el("strong", { text: fmt(t.placed) }), " exhibit titles. A person checked ", el("strong", { text: fmt(t.looked) }),
+      " and moved ", el("strong", { text: fmt(t.moved) }), " elsewhere. The rest are unchecked, not proven. ", word
+    ]);
   }
 
   /* The first view's filter word (All, Needs you, Building): it lasts the visit and is never stored. An address
@@ -591,7 +636,13 @@
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })])
     ]));
 
-    /* the decisions waiting on Sam, first */
+    /* the one small batch, then what people did with the procedures' work */
+    var batch = nextBatchSection(data && data.next_batch);
+    if (batch) wrap.appendChild(batch);
+    var learn = learningLine(data && data.confidence);
+    if (learn) wrap.appendChild(learn);
+
+    /* the decisions waiting on Sam, next */
     var waiting = [];
     cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); }); });
     if (waiting.length) {
@@ -845,6 +896,20 @@
     ".cmn-card-links a, .cmn-acts a, .cmn-band-list a, .cmn-card-ask a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cmn-pill { display:inline-block; white-space:nowrap; padding:3px 10px; border-radius:999px; background:var(--cmn-pill-bg); color:var(--cmn-pill-fg); font-size:.78rem; font-weight:700; }",
     ".cmn-pill-needs { background:var(--cmn-ask-bg); color:var(--cmn-ask-fg); }",
+    ".cmn-pill-done { background:var(--cmn-done-bg); color:var(--cmn-done-fg); }",
+    ".cmn-next { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-left:4px solid var(--cmn-accent); border-radius:12px; padding:18px 22px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; }",
+    ".cmn-next-text { flex:1 1 320px; display:grid; gap:4px; }",
+    ".cmn-kicker { margin:0; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cmn-muted); }",
+    ".cmn-next-h { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.3rem, 1.1rem + 1vw, 1.7rem); color:var(--cmn-heading); }",
+    ".cmn-next-teach, .cmn-next-meta { margin:0; color:var(--cmn-ink-2); }",
+    ".cmn-next-meta { color:var(--cmn-muted); font-size:.92rem; }",
+    ".cmn-start { color:var(--cmn-link); font-weight:700; font-size:1.1rem; text-decoration:underline; text-underline-offset:3px; display:inline-block; min-height:24px; line-height:24px; }",
+    ".cmn-learn { margin:0; color:var(--cmn-ink-2); }",
+    ".cmn-learn strong { color:var(--cmn-heading); }",
+    ".cmn-fold > summary { list-style:none; }",
+    ".cmn-fold > summary::-webkit-details-marker { display:none; }",
+    ".cmn-fold > summary { cursor:pointer; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; line-height:24px; }",
+    ".cmn-fold[open] > summary { margin-bottom:12px; }",
     ".cmn-card-what { margin:0; color:var(--cmn-muted); font-size:.92rem; line-height:1.45; }",
     ".cmn-card-also { margin:0; color:var(--cmn-ink-2); font-size:.92rem; font-variant-numeric:tabular-nums; }",
     ".cmn-card-figure { display:grid; gap:6px; }",
@@ -928,9 +993,9 @@
      theme every role mapped onto a First Light dark token, so no color is invented there (Rule 4 holds: the dark
      roles live in both HTMLs' :root). */
   var TOKENS = [
-    "#tab-commons { --cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif; }",
-    ":root[data-theme=\"dark\"] #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); }",
-    "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); } }"
+    "#tab-commons { --cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-done-bg:#E3F4EA; --cmn-done-fg:#1E5B37; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif; }",
+    ":root[data-theme=\"dark\"] #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); }",
+    "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); } }"
   ].join("\n");
   var FONT_HREF = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
   function ensureCss() {
@@ -943,7 +1008,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
-    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, learningLine: learningLine,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

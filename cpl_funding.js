@@ -1918,7 +1918,10 @@
   }
 
   // ── effective-config accessors ────────────────────────────────────────
-  function base() { return window.CPL_FUNDING; }
+  // One read of the global per load (S612, COBIx #2927): under jsdom every bare `window` is a slow getter, and
+  // base() runs about a million times a render, so it cost a third of every funding test. Same object either way.
+  var WIN = window;
+  function base() { return WIN.CPL_FUNDING; }
   function selectedYears() {
     var d = base();
     var y = firstDefined(SCENARIO.years, SHARED.years, d.default_years) || [];
@@ -2604,6 +2607,10 @@
     return allocModel().ncW;
   }
   function totalSize() {
+    if (_memo) return _memo.ts != null ? _memo.ts : (_memo.ts = computeTotalSize());
+    return computeTotalSize();
+  }
+  function computeTotalSize() {
     return oneRoster().reduce(function (s, c) { return s + sizeOf(c); }, 0);
   }
   function totalPlainFtes() {
@@ -3464,7 +3471,33 @@
     persistActive();
   }
 
+  // ── the per-render memo (S613, COBIx #2927 item 3) ─────────────────────
+  // A render asks for the same priorities once per college, and each answer
+  // walks the scenario, shared and baked layers for every field: measured at
+  // 69% of a funding test's time, and the same cost in a browser. The memo
+  // lives only while render() runs, starts empty at each of render's cache
+  // clears, and empties on persistActive(), so no edit and no read outside a
+  // render ever sees a remembered value. Each call still gets its own copies.
+  var _memo = null;
+  function withMemo(fn) {
+    if (_memo) return fn();
+    _memo = { prio: {}, ts: null };
+    try { return fn(); } finally { _memo = null; }
+  }
+  function resetMemo() { if (_memo) _memo = { prio: {}, ts: null }; }
+  function copyPrio(p) {
+    var o = {}, k;
+    for (k in p) o[k] = p[k];
+    if (Array.isArray(p.strategies)) o.strategies = p.strategies.slice();
+    return o;
+  }
   function priorities(slot) {
+    if (!_memo) return computePriorities(slot);
+    var k = String(slot), hit = _memo.prio[k];
+    if (!hit) hit = _memo.prio[k] = computePriorities(slot);
+    return hit.map(copyPrio);
+  }
+  function computePriorities(slot) {
     // `label` is POSITIONAL ("Priority 1" is whatever sits first) while `key` is
     // the IDENTITY the config and every per-college cap are stored against —
     // reordering moves the first and never the second.
@@ -3677,6 +3710,7 @@
   // Persist the active override (SHARED → Supabase, SCENARIO → localStorage),
   // then re-render. For SHARED, roll back on an RLS/auth failure.
   function persistActive() {
+    resetMemo();
     if (unlocked()) saveShared();
     // savingState is set for the LOCKED path too, so authbarHtml() can
     // acknowledge the edit. Without it the branch above renders nothing and the
@@ -16932,7 +16966,8 @@
     try { el.focus({ preventScroll: true }); } catch (e) { try { el.focus(); } catch (e2) {} }
   }
 
-  function render() {
+  function render() { return withMemo(renderNow); }
+  function renderNow() {
     if (press.open) { press.held = true; return; }
     press.held = false;
     if (configHold) { paintConfigHold(); return; }   // the published scenario paints first (loadShared)
@@ -16941,7 +16976,7 @@
     // _alloc() inside its handler read the allocation of the model BEFORE the
     // change, and a page with no funding mount never cleared them at all. My
     // College escaped it only because fundingFor() calls _model() first.
-    _allocCache = null; _ncoRows = null; _earnCache = null;
+    _allocCache = null; _ncoRows = null; _earnCache = null; resetMemo();
     // The remembered institution returns before the subscribers hear, so the
     // explainer's first paint shows its Funding outcomes (2026-10-20).
     var bd = base();
@@ -16983,7 +17018,7 @@
     ensureCss();
     ensureDraftChip();
     paintTitleLink();
-    _allocCache = null; _ncoRows = null; _earnCache = null;
+    _allocCache = null; _ncoRows = null; _earnCache = null; resetMemo();
     var d = base();
     if (!d || !d.colleges || !d.system) {
       mount.innerHTML = '<div class="cplfund-empty">The CPL funding figures did not load. Reload the page.</div>';
@@ -19160,6 +19195,16 @@
     _videoDiff: videoDiff,
     _splash: function () { return splash; },
     _alloc: function (name) { var c = rosterRow(name); return c ? collegeAlloc(c) : null; },
+    // test hook: the per-render memo (S613). Inside one scope, two reads, the
+    // first altered by its caller, and the uncached answer beside them.
+    _memoProbe: function (slot) {
+      return withMemo(function () {
+        var a = priorities(slot);
+        if (a[0]) { a[0].share = -1; if (a[0].strategies) a[0].strategies.push("altered"); }
+        return { altered: a, again: priorities(slot), fresh: computePriorities(slot), active: !!_memo };
+      });
+    },
+    _memoActive: function () { return !!_memo; },
 
     // ── read-only API for the My College tab (#college-briefing) ────────────
     // The briefing shows one college its own money. It MUST NOT re-derive any

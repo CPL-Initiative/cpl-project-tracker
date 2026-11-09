@@ -19,6 +19,14 @@ sees only the exceptions. Sam, 2026-10-18 ~02:55Z (vault braindump
 classify and complete common exhibit titles and elements as we go. I don't have enough time to curate the growing list
 and want to further automate so curation is manageable."*
 
+**The classifier answered nothing from 2026-11-07 to the merge of #2925 (S604).** Every call came back HTTP 413: the
+house families pushed the standing rules to 251,866 characters against `cer-classify`'s `MAX_RULES` 250,000. #2925 lists
+the families under their issuer over a 240,000 budget (lossless, ~165,600), drops far families only as a last resort,
+and stops the run rather than send a refused call. COBIx asked for a replay: the first trim kept every family line but
+stripped the issuer from 156 of 1,115 saved joined answers; the grouping keeps all 1,115 (`tests/cer_classifier_rules_size_test.py`).
+Read the next nightly report's `classifier_run.answered` and `errors` after it lands. Also #2924: the procedures report
+`kb/cer_procedures_out/latest.json` is served by Pages again (it 404'd for Exhibits, the CER tab and the progress).
+
 ## The redesign (2026-10-30, side session beside S531)
 
 Sam, 2026-10-30: *"Have a good look at the current CER and notice how crowded it is and not intuitive to navigate. It is

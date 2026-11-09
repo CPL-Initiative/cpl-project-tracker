@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 602,
-  "moniker": "SkySombrero",
+  "session": 611,
+  "moniker": "SkyTadpole",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_603_handoff.md",
+  "handoff": "docs/session_612_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -21,13 +21,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-07T18:48:29Z",
+  "written_at": "2026-11-08T19:28:59Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The Department of Insurance's license types",
-    "text": "Read the Department of Insurance's license types once its site is reachable from a runner, and file them as a data source. The four El Camino CompTIA exhibits are settled: each is a course exam, so the college stays their issuer."
+    "title": "The Exhibits queue lenses, then the Commons CCR",
+    "text": "The Queue view and the panel trail are live. Next: the Common Course Reference, one discipline at a time, after the Subjects repairs."
   },
   "changes": [
+    {
+      "text": "Exhibits opens a Queue: six lenses in the ruled order over the lists it already holds, with a Blocked on Sky line (cpl-project-tracker#2933).",
+      "at": "2026-11-08T19:28:20Z"
+    },
+    {
+      "text": "The shared List's side panel opens on its trail, CPL Commons, the list, the filter and the row (#2934).",
+      "at": "2026-11-08T19:28:20Z"
+    },
     {
       "at": "2026-11-07T18:47:00Z",
       "text": "The four El Camino CompTIA exhibits were read under your rule from Sheet 167: each is El Camino's own course, filed in MAP as Credit by Exam, so it is a course exam and the college stays its issuer, as the records already say. Nothing was rewritten."
@@ -51,22 +59,6 @@
     {
       "at": "2026-11-06T21:15:00Z",
       "text": "Ask us to prioritize only where no college has articulated the credential (#2854)."
-    },
-    {
-      "at": "2026-11-06T18:50:00Z",
-      "text": "CPL-AI hosted whole (33,232 pairs with full reports) and joined to the common exhibits; the Exhibits view CPL-AI recommendations (#2851)."
-    },
-    {
-      "at": "2026-11-06T19:49:56Z",
-      "text": "Seven CPL-AI title moves and the ServSafe fold written through a reviewed plan; receipt on main (#2852)."
-    },
-    {
-      "at": "2026-11-06T20:11:07Z",
-      "text": "The Exhibits List names each row's CPL-AI pairs, with a filter (#2853)."
-    },
-    {
-      "at": "2026-11-07T01:13:00Z",
-      "text": "Request Quick Adopt beside a Strong evidence course in the Catalog panel (#2867)."
     }
   ]
 }

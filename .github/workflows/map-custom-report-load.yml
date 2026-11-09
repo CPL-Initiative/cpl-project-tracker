@@ -84,6 +84,7 @@ jobs:
         run: |
           python3 tests/custom_report_payload_test.py
           python3 tests/map_custom_report_sync_test.py
+          python3 tests/map_key_sketch_one_pull_test.py
 
       - name: Load staging and promote
         env:

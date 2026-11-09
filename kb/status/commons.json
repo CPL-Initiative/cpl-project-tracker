@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-07T16:13:37Z",
+ "written_at": "2026-11-09T02:51:57Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13595,
+     "n": 13654,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3348,
+     "n": 3289,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-07T13:24:16Z",
+    "at": "2026-11-08T12:26:04Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13595,
-    "failing": 3348,
+    "complete": 13654,
+    "failing": 3289,
     "unread": 3339,
     "records": 18567,
     "colleges": 114,
@@ -156,8 +156,8 @@
     "records_stamped": 2268,
     "saved_at": "2026-11-07T14:26:54Z",
     "fold_at": "2026-11-07T14:59:10Z",
-    "map_titles": 4971,
-    "unclassified": 2,
+    "map_titles": 4973,
+    "unclassified": 4,
     "left_map": 623,
     "below_80": 1123,
     "below_60": 237
@@ -219,6 +219,14 @@
      "open": "#coci-lookup/list/seedless"
     },
     {
+     "n": 8,
+     "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+     "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+     "carry": "unsure",
+     "open": "#coci-lookup/list/doubt",
+     "error": null
+    },
+    {
      "n": 4179,
      "words": "unit anomalies",
      "owner": "a curator (an identity keeps its unit range)",
@@ -249,7 +257,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-07T16:11:26+00:00",
+    "at": "2026-11-08T21:48:20+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -274,7 +282,8 @@
     "kb/row_audit/latest.json",
     "kb/coci_curation.json",
     "prototype/ccr_universe.json",
-    "unified_courses_standalone.js"
+    "unified_courses_standalone.js",
+    "kb/ccr_doubt.json"
    ]
   },
   {
@@ -317,7 +326,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -336,7 +345,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-07T15:17:04Z",
+    "at": "2026-11-08T06:23:32+00:00",
     "every_hours": null
    },
    "facts": {
@@ -379,12 +388,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -425,7 +434,7 @@
    ],
    "issues": [
     {
-     "n": 21,
+     "n": 1,
      "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
      "owner": "a re-key of the anchor under the playbook",
      "carry": "reaches",
@@ -460,7 +469,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-07T16:09:33Z",
+    "at": "2026-11-08T21:46:30Z",
     "every_hours": 24
    },
    "facts": {
@@ -473,7 +482,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-07",
+    "scanned_at": "2026-11-08",
     "procedures_on": 6
    },
    "sources": [
@@ -496,7 +505,7 @@
    ],
    "pair": [
     {
-     "n": 7708,
+     "n": 7709,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -506,16 +515,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7708,
+    "credentials": 7709,
     "issuers": 1525,
     "in_map": 207,
     "articulated": 161,
-    "with_issuer_skills": 85,
-    "tech_giant": 550
+    "with_issuer_skills": 109,
+    "tech_giant": 551
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-07T00:00:00Z",
+    "at": "2026-11-08T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -534,9 +543,9 @@
    ],
    "pair": [
     {
-     "n": 30978,
+     "n": 32394,
      "of": null,
-     "words": "outcomes read from 8,150 courses at 12 colleges",
+     "words": "outcomes read from 8,631 courses at 13 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -544,12 +553,13 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 30978,
-    "courses": 8150,
+    "outcomes": 32394,
+    "courses": 8631,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "columbia",
+     "contra_costa",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
@@ -560,11 +570,11 @@
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 31
+    "reads": 33
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-07T06:49:57Z",
+    "at": "2026-11-08T02:16:24Z",
     "every_hours": null
    },
    "sources": [
@@ -578,7 +588,7 @@
    "links": [],
    "pair": [
     {
-     "n": 85,
+     "n": 109,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -588,11 +598,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 85
+    "with_issuer_skills": 109
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-07T00:00:00Z",
+    "at": "2026-11-08T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -635,9 +645,17 @@
     "key": "unsure",
     "items": [
      {
+      "ref": "course",
+      "title": "Common Course Reference",
+      "n": 8,
+      "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+      "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+      "open": "#coci-lookup/list/doubt"
+     },
+     {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 37,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -650,7 +668,7 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 21,
+      "n": 1,
       "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
       "owner": "a re-key of the anchor under the playbook",
       "open": "#canonical-subj4/progress"
@@ -683,7 +701,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3348,
+    "n": 3289,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -838,5 +856,20 @@
     "looked": 0
    }
   }
- ]
+ ],
+ "next_batch": {
+  "kind": "another-look",
+  "n": 6,
+  "of": 6,
+  "open": "#exhibits/another-look/batch",
+  "title": "Another look at 6 exhibit titles",
+  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+  "stop": "The batch ends when its cards are decided.",
+  "rules": [
+   "course-code",
+   "fold",
+   "numerals"
+  ],
+  "at": "2026-11-07T15:03:25Z"
+ }
 }

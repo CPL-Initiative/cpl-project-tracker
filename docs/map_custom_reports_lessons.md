@@ -1125,3 +1125,19 @@ in Supabase's default grants cannot strip them.
 **Open:** the first scheduled run on the new code is tonight's. Its log should
 print "staging holds exactly the rows sent" and `map_data_loads` should gain id
 48 or later.
+
+## 2026-11-08 — S611 SkyTadpole: a cleanup that reads first never sees past the row cap
+
+- **`map_student_key_sketch` held 74 pulls (148,000 hashes) against a "keep two" loop.** `write_sketch` read every
+  stored pull with one `GET ... limit=200000`; PostgREST answers at most 1,000 rows on this project whatever `limit`
+  asks, so the read saw only the newest pull's first 1,000 hashes, the cleanup loop never saw an older date, and the
+  salt check compared against half a pull. Nothing errored for 81 days.
+- **The fix reads what it needs and deletes on the server.** One row names the previous pull; its hashes page until
+  an empty page (never a short one, so a smaller cap still reads them all); after the comparison one
+  `DELETE ... pull_date=neq.<today>` keeps one pull at rest (Sam's student-grain ruling; #2919 step 3). #2932, held for
+  Sam's word because merging deletes the 73 older pulls.
+- **The guard fakes the cap.** `tests/map_key_sketch_one_pull_test.py` serves PostgREST with a 1,000-row and a 300-row
+  cap; the old code fails four checks. A test whose fake returns everything would have passed the bug.
+- **Staged memory rows meet the table's checks late.** S604's receipt carried a 440-character summary against
+  `cpl_memory_summary_check` (400); the playbook now measures each row before a receipt is staged (#2931).
+

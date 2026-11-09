@@ -1,0 +1,30 @@
+{
+ "baseline": "_rekeyed_through: kb/anchor_rekey_out/2026-11-08/alias_map.json",
+ "counts": {
+  "ambiguous": 3
+ },
+ "rows": [
+  {
+   "discipline": "Travel Services",
+   "key": "M-ID HOSP 100",
+   "kind": "ambiguous",
+   "title": "Airline Computer Training",
+   "why": "dead pre-remint key format; the chain keys M-IDs only"
+  },
+  {
+   "discipline": "Hotel and Motel Services",
+   "key": "M-ID HOSP 102",
+   "kind": "ambiguous",
+   "title": "Introduction to Hospitality & Tourism",
+   "why": "dead pre-remint key format; the chain keys M-IDs only"
+  },
+  {
+   "discipline": "Travel Services",
+   "key": "M-ID HOSP 104",
+   "kind": "ambiguous",
+   "title": "Introduction to the Exciting World of Travel & Tourism",
+   "why": "dead pre-remint key format; the chain keys M-IDs only"
+  }
+ ],
+ "schema": 1
+}

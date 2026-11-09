@@ -130,7 +130,7 @@ VENDOR = {
     "CompTIA Server+": ("all", ["CompTIA Server+"]),
     "CompTIA Tech+": ("all", ["CompTIA Tech+"]),
     "CompTIA Certification (unspecified)": ("all", []),
-    "Cisco Certified Network Associate (CCNA)": ("all", ["CCNA Certification"]),
+    "Cisco Certified Network Associate (CCNA)": ("all", ["CCNA"]),
     "Cisco Certified Network Associate Wireless (CCNA Wireless)": ("all", ["Cisco Certified Network Associate Wireless (CCNA Wireless)"]),
     "Cisco Certified Network Professional (CCNP) Security": ("any", ["Cisco Certified Network Professional (CCNP) Security",
                                                                      "CCNP Security Certification"]),

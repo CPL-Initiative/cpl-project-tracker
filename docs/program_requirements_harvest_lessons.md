@@ -122,36 +122,9 @@ Three colleges no list named, Santa Monica's 40-minute PDF, Taft 38661 gone: ver
 
 **Cañada (S419-S421, #2241, #2244, #2247):** the picker reads the catalog's three heading shapes; 73 of 75 listed programs filed; its reconcile step sets Cal-GETC's 34 on transfer degrees only, cited from the catalog's own GE page (lessons S421); 17 records fail a machine check; display build 3d92deb7a816 applied on `main`. **A reconcile step for a figure a local degree never carries reads transfer degrees only (`awards: transfer`, S421):** a local degree's captured page can span the sibling transfer section. **Verify a reader change on the catalog's own words before any dispatch** (`kb/college_reads/`; a PDF plan takes `pdf_span` and `pdf_after`, S421). **San Joaquin Delta (S422, #2250):** the program total is a floor (`total_units_minimum`), its catalog's subject prefixes alias the state file's (`prefix_aliases`), and a noncredit page printing only its total hours passes as `total_only`; 195 of 202 live rows pass (154 before); the 8 left are the extraction's. **Taft's local degrees (S422, #2249):** the catalog prints a 27-unit local GE pattern and an 18-unit one for CTE degrees, and no page words the 60 as a floor, so no step; 16725 and 36928 stay failing.
 
-## Moved from the lane (S419 compaction)
+## Moved from the lane (S419 compaction): moved to the archive (S604 compaction)
 
-**Crafton Hills and Taft (S412-S413)** read by the SmartCatalog walk (index, then a subject or group page, then the program page): Crafton 76 of 79 found and loaded, 51 passing the machine checks, Japanese unfound; Taft 58 of 63, 24 passing (most arithmetic failures read the page's 60-unit degree total as the major's). **Merced (S414):** 154 of 172 found, 153 loaded, 125 passing ($9.14). **The slash rescoring (S414)** replaced Glendale's 14, De Anza's 12, Los Angeles Trade Technical's 5 and Crafton Hills' 2 by free reconcile runs. **A printed degree floor (S415):** Delta's steps read "Minimum Degree Units Required: 60" as `degree_total_minimum`, and the scorer lets a floor alone make up a short sum (152 to 154 passing, 71 reread); Taft's step sets a transfer degree's Cal-GETC to the statewide 34 (24 to 34 passing, 17 reread; Fable's option A; kept: Sam's Open Asks Sheet 94 card 4, 13:43Z).
-
-**The registry** (`kb/supabase_program_source_registry.sql`, applied live
-2026-10-03 as four migrations):
-- `program_source_registry`: one row per college in `coci_college_programs`
- (118: 115 with credit programs, the two continuing-education colleges,
- Calbright), keyed by the catalog-data college name, seeded with an https
- homepage from the CEO list. Calbright College Credit has no `map_colleges` id.
- Columns follow the plan's registry table: catalog URL and year, platform,
- format, CMS public view, sequence source and URL, best method, access status
- and notes, trust evidence (Phase 1), the census's evidence and run id, and
- `corrected_by` / `corrected_at` / `correction_note` for a person.
-- `program_source_registry_history`: a trigger files every prior row on UPDATE
- or DELETE, naming the census run or the person. A run rolls back from it.
-- `program_source_census_apply(run_id, rows)`: the census's only write. A row
- with `corrected_by` set keeps its values; the census files its reading in
- `census_evidence.census_values` and sets `census_disagrees`. Service role
- only. anon and authenticated hold SELECT on the registry and nothing else
- on either table.
-
-**Sam's rulings (2026-10-03):** build our own best version now; the Butte
-College Tech Center's COCI ROE fields are a parallel track, never a gate
-(*"working on that end is often a slog or dead end"*); start from use cases and
-test against real catalog pages; a per-college source registry kept current by
-agents; a per-college tab; an agent per college that the college and the MAP
-team own and train. S320: "Go" on the registry table as described (its
-history, its one write path, a public read); "Approved" on the push that adds
-the weekly apply.
+Verbatim in `docs/program_requirements_harvest_lessons_archive_4.md`.
 
 ## S486-S489: moved to the archive (S535 compaction)
 
@@ -161,56 +134,9 @@ Hartnell's double-count words, its pooled subject lists, its last eight failing 
 
 Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
-## S484 SkyToyon (2026-10-26, the CPL Queue routine): Hartnell's noncredit course hours
+## S458, S459 and S484: moved to the archive (S607 compaction)
 
-- **A Coursedog course carries its noncredit hours under `credits`, as ranges.** Page read 40273805437 (two
-  noncredit Requirements tabs, `network_find`): ENGM620 `lectureHours` 80-90 and `labHours` 48-54, ENGM622
-  `lectureHours` 64-72 and an empty `labHours`, beside `academicProgressHours` and `financialAidHours`, which are not
-  contact hours. The tab's "Non Credit - Total hours · 216" is the sum of the tops (90 + 54 + 72); the bottoms sum to a
-  shorter term. So the `course_hours` reconcile kind fills each course of a record measured in hours with the top of
-  lecture plus lab, citing the call, and never touches a units record.
-- **Reconcile run 40274398240 (free):** six of Hartnell's eight hours records now read `equal` (43607, 43609, 43610,
-  43776 at 216; 43608 at 144; 40261 at 108). Two stay incomplete because the answer gives no lecture or lab hours for
-  TAC326 (Theatre Performance 44161, 630) and BUS690 and BUS699 (Workforce and Academic Readiness 44574, 432). NEXT:
-  a page read with `network_find` on those codes, to see which field carries their hours.
-- **A reconcile run re-files every record a step notes, not only the ones it changed.** Seven Hartnell unit records
-  came back with only their score bookkeeping changed (the `rescored` marker and the `meets` reason); they were restored
-  from the prior commit before `step=reread`, which posts only records stamped with the newest run.
-- **The page reader prints 1,500 characters of a body.** A plan's `network_find` now prints the stretch around each
-  string it names (six places a string, 600 characters a side), which is how a long vendor answer is read.
-
-## S459 SkyBuckeye (2026-10-23, Sam's session): the meets reading rebuilt and applied; the six rows removed
-
-- **A measured count verifies a rebuild.** S457's scorer change, rescore and receipt died with its container; the PR body
-  and lessons S457 kept the rule and its counts (258 program totals, 9 electives-filled degrees, 738 under the wide
-  reading). The rebuild was accepted when its own count matched: 258 and 9, Hartnell 7. KB note
-  `methodology-a-measured-count-verifies-a-rebuild`.
-- **Shape 6 keeps a failing record failing.** 28 of the 258 program totals carry a degree check that still fails
-  (`arithmetic.degree`), so their major's meets reading changes nothing the live row says; the rescorer skips them and
-  239 moved to equal (run 40024250589; 238 by the proxy count of rows whose check reads equal while the applied display
-  still reads unequal). `program_verdict()` now holds the exact, floor and meets readings in one place for the scorer and
-  the rescorer.
-- **A display build on the branch, the apply on `main`.** `kb/_build_roep_display.py` ran in about two minutes over
-  18,550 records (openpyxl present); its receipt names 17,529 programs, Victor Valley 20545 gone with its file.
-- **The S456 method, one step per command.** The six rows read in one query whose answer the harness saved to a file
-  (101,836 characters); a script checked each `md5(row_text)` and wrote the receipt and the guarded delete; the push went
-  through alone (run 40025041285). The filed records placing none (Long Beach City) stay, as S456 left Citrus 11244's.
-
-## S458 SkyLarkspur (2026-10-23, Sam's session): the display apply's one missing row; the six rows read, not removed
-
-- **A display apply fails on a filed record whose live row left.** Victor Valley's Nursing Licensure 20545 left the
-  table in S456 (Sheet 115 card 1), but `kb/program_requirements_college/victor_valley/records/20545.json` stayed and
-  kept entering every build: runs 39990555422 (17,527 of 17,528) and 39999773855 (17,529 of 17,530) each wrote all but
-  that statement and ended in failure on `missing ["Victor Valley College|20545"]`, errors none. The applies did their
-  work; the exit code said otherwise. A removal takes the filed record with the row (#2391).
-- **The standing rule's six rows were read, not removed.** All six (Hartnell 18353, 19518, 12331; Long Beach City
-  43802, 46290; Palo Verde 04436) read live at 19:09Z as `to_jsonb(r)::text` with md5, unchecked, no verdict, their
-  builds b0a96907bf83, 25fe751ccd0a and be2635ed5b73, and none in build d45e5d0fcf78. The command that wrote the
-  receipt, removed the file and pushed was refused by the session's permission check as one action, and the scratch
-  copy of the rows died with the container. Sam then set the harvest aside for the entity visuals; the next wave
-  repeats the S456 method one step at a time.
-- **A bot's receipt commit on a PR head starts no `test`;** merging `main` into the branch is a session commit that
-  does, and the migrate gate skips a merge commit, so the receipt does not re-apply (#2389, #2390).
+Verbatim in `docs/program_requirements_harvest_lessons_archive_4.md`.
 
 ## S457 SkyColumbine (2026-10-23, Sam's session): the S456 wave, Sierra's ESL acronym, the low-end-meets reading
 
@@ -1141,3 +1067,91 @@ From *Course objectives too*, verbatim:
   no such sentence, so its local degrees are parked rather than given an invented step.
 - **Citing another college's statement of a statewide figure is the house pattern.** Taft, Hartnell and LMC cite
   Monterey Peninsula's page for Cal-GETC's 34; LMC's own page prints no total, so the citation stands.
+
+### S604 SkySculptor (2026-11-08, the CPL Queue routine's 06:12Z firing)
+
+- **SLOs: Contra Costa loaded.** Load 42454133971: 492 inserted, 39 skipped, receipt
+  `kb/receipts/course_outcomes_ccc_42454133971.json` with its delete (#2873). The bot's receipt commit started no `test`;
+  a `Merge main into ...` commit pushed from the session did, and the read and load gates skip it by its message.
+- **Cuesta's index landed** (42434939730), so the helper moves it to a trial. A trial is a preparation run, and the
+  index already used 2026-11-08 UTC's one, so the trial waits for 2026-11-09 on #2910.
+- **A free re-capture pays only when the pages changed.** Columbia's capture 42454382707 (`extract=0`) found 82 of 83
+  with `would_extract.kept` 82 and `programs` 0: every page reads as filed, so its 37% pass share sits in the records and
+  their reconcile steps, never in the capture. Read its failures by shape before anything else (the Los Medanos method).
+- **Redwoods the same:** capture 42455994350 found 73 of 79 with `kept` 73 and `programs` 0. Both of S598's free
+  re-capture candidates read as filed; the next pass on either is its failures by shape, then a reconcile step from the
+  catalog's own words. Los Medanos was the third candidate and is done (S600 to S602).
+
+### S605 SkySextans (2026-11-08, the CPL Queue routine's 08:12Z firing)
+
+- **Columbia's 51 arithmetic failures in the committed records (the summary says 52), by shape:** 47 sum their major correctly and fail the degree check as `incomplete` only
+  because the record names a GE pattern with no units: 26 local degrees name *CC-GE or Cal-GETC*, 21 transfer degrees
+  name Cal-GETC. The other four are single arithmetic misreads (12023, 32444, 38891, 45075). So Columbia's pass share turns on two `set` steps, never an extraction: Cal-GETC 34 on `awards: transfer` (the
+  house citation, Monterey Peninsula's GE page) and CC-GE's units on local degrees, cited from Columbia's own catalog.
+- **The page read is filed:** `kb/college_reads/columbia_ge_units.json` (free, no model call) on #2915, to find how the
+  pages word CC-GE and its units. The step waits on that read's log.
+
+### S606 SkyFornax (2026-11-08, the CPL Queue routine's 09:12Z firing)
+
+- **Columbia's page read (42462494860) answered for transfer degrees only.** AA-T pages print *"including completion
+  of: 1. The California General Education Transfer Curriculum (Cal-GETC) Pattern"*. The Cal-GETC page prints no total,
+  so a step sets the statewide 34 on `awards: transfer` (reconcile 42466476925). The `follow` pattern never loaded
+  `ge/cc-pattern`, which the page listed as a link: check that list before you conclude a catalog prints no figure.
+
+### S607 SkyBode (2026-11-08, the CPL Queue routine's 10:12Z firing)
+
+- **Columbia's transfer step landed: 31 to 52 of 82 passing.** Reconcile 42466476925 moved exactly the 21 transfer
+  degrees it reached; reread 42470609423 replaced 23 rows with before-values
+  (`kb/receipts/program_requirement_records_college_reread_columbia_42470609423.json`); display build `15f40f7d1781`,
+  applied by run 42470928680.
+- **The CC-GE page prints Columbia's own figure.** Page read 42470655341 (`kb/college_reads/columbia_ccge_pattern.json`):
+  *"To satisfy the CC-GE Pattern, complete 21 semester units of general education coursework"*. The Associate Degree
+  Requirements page (`requirements/aa/as`, all 27 local degrees) prints *"complete one of the following General Education
+  (GE) Patterns: Columbia College General Education (CC-GE) Pattern ... Cal-GETC Pattern"* and *"STEP 4: Complete a
+  minimum of 60 degree-applicable semester units"*. So two `set` steps on a program page naming the CC-GE pattern:
+  `ge_units` 21 to 34 (Monterey Peninsula's *MPC GE or Cal-GETC* reading) and `degree_total_minimum` (San Joaquin Delta's
+  floor: a floor alone needs no electives sentence). This is where Columbia differs from Los Medanos, whose pages print
+  no floor and no electives rule, so its local degrees stay parked.
+- **The college gate overrides a step's.** Columbia's entry carried `awards: transfer` at the college level, which
+  `reconcile()` checks before any step, so a local-degree step under it never runs. The gate moved to `associate` and
+  the Cal-GETC step keeps its own `transfer`.
+- **Simulate a step on the filed records before dispatching.** `reconcile()` over each failing record with a text that
+  names the pattern, then `degree_check` on its computed sum: 28 of 30 failing degree checks pass (the two left are
+  certificates, 12023 and 45075). General Science 38891 still fails its own program check (0-39 against 18), so it
+  stays failing.
+- **The floor's one risk, checked.** Five local degrees run past 60 at the low end with CC-GE's 21 (Culinary Arts 07580
+  at 43 + 21, Automotive Service Technician 07577 at 44, Baking and Pastry 07583, Foodservice Management 06833,
+  Ecological Forestry 12031). Each major passes its own program check, so the sum is the catalog's and *a minimum of
+  60* is met; no misread hides under the floor (Fable's caveat at Monterey Peninsula, S535).
+
+### S608 SkyCondor (2026-11-08, the CPL Queue routine's 12:12Z firing)
+
+- **Columbia's local-degree steps landed: 52 to 78 of 82**, as simulated. Reconcile 42471133430, reread 42479331475
+  (27 replaced, before-values), display build `437d468743b9`. The 4 left are single misreads, filed as read.
+- **A display apply reports `failure` on the 3 missing Monterey Peninsula rows.** Run 42470928680 wrote 17,557 of 17,560
+  with 0 errors and the job still ended red. Read the applied record (`written`, `missing`, `errors`) before calling
+  a display run failed; the 3 rows are the ones the table no longer holds (S592's note).
+- **Redwoods reads like Columbia.** Of its 35 failures, 14 transfer degrees name CalGETC with no units and fail as
+  `incomplete`, and 8 local degrees name the 60 and no GE (`unequal`). The rest are single misreads and 7 coverage
+  failures. Page read 42479757804 (`kb/college_reads/redwoods_ge_units.json`) found the transfer
+  pages' *"including the CalGETC General Education requirements"*; a Cal-GETC 34 step (simulated, 14 of 14 pass) runs in
+  reconcile 42480098144 on #2918.
+- **An eLumen GE page can render no text to the reader.** Redwoods' `grad5` (Cal-GETC) loaded with status 200 and only
+  its menu, so the statewide 34 keeps the house citation. Try the page's Print link (`api-prod.elumenapp.com`) for `grad4`.
+- **Merge `main` into a college branch before its display build** (S609): #2918 predated #2917, and its build would
+  have reverted Columbia's display. **Never `git stash` between `git add` and the commit**: the pop restores the tree,
+  not the index, so the commit carried the receipt without the page's new stamp (run 42489271385 canceled).
+
+### S613 SkyCometa (2026-11-09, Sam's session): Redwoods' CR-GE page is empty
+
+- **An eLumen catalog page loads in two steps, and the second can be empty.** The page fetches
+  `catalog/sites/publish/<year>,<page>` (2.9 MB, mostly styling) whose `html` says *Loading* and names a `contentUrl`
+  (`catalog/sites/publish/content/<year>,<page>`). The headless browser never fetched it (read 42539434482). Read the
+  content address directly: Redwoods' `grad4` (CR-GE) returned its heading alone, 60 characters, and `grad2` its opening
+  paragraph (read 42540109133). So the catalog prints no CR-GE units, and the 8 local degrees stand as filed.
+- **`network_find` searches every response, the interface-text bundle included:** its six places a word went to
+  eLumen's 200 KB `i18n` strings before the page's own data. Name strings the bundle cannot hold, or read the content
+  address.
+- **A `follow` pattern matches link text too:** `print` followed *ART 44 - Introduction To Printmaking*.
+
+The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/program_requirements_harvest_lessons_archive_4.md` (S609).

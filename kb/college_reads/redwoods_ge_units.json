@@ -1,0 +1,33 @@
+{
+ "_readme": "S608 SkyCondor, 2026-11-08. College of the Redwoods: 38 of 73 passing. Its failures by shape (the Los Medanos method, lessons S600 and S605): 14 transfer degrees name the degree's 60 and CalGETC with no units (e.g. 35895 Biology AS-T, 31004 Psychology AA-T) and fail the degree check as incomplete; 8 local A.S./A.A. degrees name the 60 and no GE pattern or units (e.g. 44463 Personal Wellness A.S., 18231 Liberal Arts: Business) and read unequal. This read prints how a transfer page and a local page word their general education, and where the catalog states the units of Redwoods' local GE pattern and Cal-GETC, so a reconcile step can cite the catalog's own figure. Two program loads plus the links they follow, no model call.",
+ "college": "College of the Redwoods",
+ "questions": {
+  "ge_units": "The units the catalog states for Redwoods' local GE pattern and for Cal-GETC, how a local degree page and a transfer degree page name them, and whether the catalog prints a 60-unit minimum or an electives rule for local degrees."
+ },
+ "keywords": [
+  "Cal-?GETC[^<\"]{0,200}",
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[^<>\"]{0,120}\\b(?:18|19|21|24|25|34|60)\\b(?:\\.0)?\\s*(?:semester\\s*)?(?:units|credits)[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,80}(?:[Uu]nits|[Cc]redits)[^<\"]{0,60}",
+  "[Ee]lective[^<\"]{0,160}",
+  "[Mm]inimum[^<\"]{0,160}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-fall-2026",
+   "links": "Cal-?GETC|General Education|transfer",
+   "follow": "cal-?getc|general-education"
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-wellness-fall-2025",
+   "links": "General Education|Graduation|Associate Degree|Degree Requirements",
+   "follow": "general-education|graduation|degree-requirements|associate"
+  }
+ ]
+}
