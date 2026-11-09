@@ -45,8 +45,10 @@ reply. Sheet 175 is current. No to-do marked done since 2026-11-08; no new Libra
    filed, write `kb/course_outcomes/.load` as printed and merge once the receipt lands.
 2. **Cuesta's full read** on the first firing of 2026-11-10 UTC (`--college cuesta`, branch `claude/slo-cuesta-read`),
    and Lemoore's trial (`--next --skip cuesta,orange_coast`) as that day's preparation run.
-3. **Alameda's page read** (#2956): read the `College page read` job log. A printed total makes a reconcile step on the
-   catalog's own words; none, and the records stand as printed. Then merge or close #2956.
+3. **Alameda's reconcile** (#2956): the page read (run 42585679798) found Chassis A.S. prints *Total units required for
+   A.S. Degree: 61-64*, and Dental and Communication Studies print their totals in words; the Diesel certificate prints
+   semester subtotals alone. Simulate a reconcile step on those words over the 16 records, then dispatch on #2956
+   (lane, *College of Alameda*).
 4. **`cer-procedures`: the 2026-11-09 ~14:30Z procedures report** (`kb/cer_procedures_out/latest.json`): `classifier_run.answered`
    above 0 and `errors` empty.
 5. **`org-phrase-scope-auth`: the reviewer-email closure, part 2**: confirm Pages serves #2950's readers, then
