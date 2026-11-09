@@ -477,6 +477,32 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     fs.statSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")).size < 12000);
 }
 
+// ── 14. a figure card opens what it counts (Sam's rule, 2026-11-05; the workspace, 2026-11-09: "when I click cpl
+//        coord on map I expect to see 61 colleges in action center but it's sorting for a subset") ───────────────
+{
+  const { window, W, root } = setup({ signedIn: true });
+  const cards = Array.from(root.querySelectorAll("#cw-fold .card"));
+  const pairs = cards.map((c) => ({ name: flat(c.querySelector(".card-name")), n: parseInt(flat(c.querySelector(".big")), 10),
+    view: c.querySelector("[data-view]").getAttribute("data-view") }));
+  const got = pairs.map((p) => {
+    clickEl(window, root.querySelector('#cw-fold .card [data-view="' + p.view + '"]'));
+    return parseInt(flat(root.querySelector(".showing b")), 10);
+  });
+  check("14a: every priority card's word opens a list as long as the card's figure (" + pairs.map((p, i) => p.name + " " + p.n + "/" + got[i]).join("; ") + ")",
+    pairs.length === 5 && pairs.every((p, i) => p.n === got[i]));
+  const coord = pairs.find((p) => /CPL Coordinator in MAP/.test(p.name));
+  check("14b: the coordinator card counts some colleges here, so 14a is a real comparison", !!coord && coord.n > 0);
+  clickEl(window, root.querySelector('#cw-fold .card [data-view="coordmet"]'));
+  const listed = Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel"));
+  check("14c: the coordinator card lists the colleges with a CPL Coordinator in MAP, confirmed or not",
+    listed.indexOf(COLLEGE) >= 0 && listed.indexOf(OTHER) >= 0 && W._state.view === "coordmet");
+  check("14d: the count line keeps CPL and MAP in capitals", /with a CPL Coordinator in MAP/.test(flat(root.querySelector(".showing"))));
+  const sel = root.querySelector("#cw-view");
+  check("14e: the narrower list stays in the menu under its own name",
+    Array.from(sel.options).some((o) => o.value === "coord" && o.textContent === "Confirmed but missing the CPL Coordinator in MAP") &&
+    Array.from(sel.options).some((o) => o.value === "nc" && o.textContent === "Noncredit attestations waiting"));
+}
+
 // ── 13. access requests: the approver's side of the funding door (Sam, 2026-11-09: "I don't understand how to access
 //        the request to answer") ────────────────────────────────────────────────────────────────────────────────
 {

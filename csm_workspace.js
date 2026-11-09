@@ -501,6 +501,8 @@
     held: { label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
     notyet: { label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
     nc: { label: "Noncredit attestations waiting", keep: function (r) { return !!(r.nc && r.nc.waiting); } },
+    ncmet: { label: "Noncredit CPL Lead attested", keep: function (r) { return !!(r.nc && r.nc.standing); } },
+    coordmet: { label: "With a CPL Coordinator in MAP", keep: function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); } },
     coord: { label: "Confirmed but missing the CPL Coordinator in MAP",
       keep: function (r) { return r.part.confirmed && r.conds.some(function (c) { return c.kind === "coord" && !c.met && !c.pending; }); } },
     confirmed: { label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
@@ -645,9 +647,12 @@
         Object.keys(heldWhy).sort(function (a, b) { return heldWhy[b] - heldWhy[a]; }).map(function (w) { return [w, String(heldWhy[w])]; }), "held", true) +
       "</div><div class=\"cohort-row\">" +
       card("cw-c3", "Confirmed", String(conf.length), "of " + tot, "", null, "confirmed", false).replace('<button', meter(conf.length, tot) + "<button") +
-      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "", null, "nc", false)
+      // A figure card opens what it counts (Sam, 2026-11-05). These two opened a narrower list than their figure: the
+      // attestations still waiting, and the confirmed colleges missing a coordinator (Sam, 2026-11-09: "I expect to see
+      // 61 colleges in action center but it's sorting for a subset").
+      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "", null, "ncmet", false)
         .replace('<button', meter(ncDone.length, ncRows.length) + "<button") +
-      card("cw-c5", "CPL Coordinator in MAP", S.coordOk ? String(coordMet.length) : "&hellip;", S.coordOk ? "of " + coordRows.length : "loading", "", null, "coord", false)
+      card("cw-c5", "CPL Coordinator in MAP", S.coordOk ? String(coordMet.length) : "&hellip;", S.coordOk ? "of " + coordRows.length : "loading", "", null, "coordmet", false)
         .replace('<button', meter(coordMet.length, coordRows.length) + "<button") +
       "</div>";
   }
@@ -657,7 +662,8 @@
     if (!state.sel && list.length) state.sel = list[0].key;
     var opts = Object.keys(VIEWS).map(function (k) { return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + "</option>"; }).join("");
     return '<div class="pane" aria-labelledby="cw-q-h"><div class="pane-h">' +
-      '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.label.toLowerCase()) + "</p>" +
+      // The view's name follows the count in lower case, except a name that opens on an acronym (CPL, MAP keep theirs).
+      '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.label.replace(/^[A-Z][a-z]+/, function (m) { return m.toLowerCase(); })) + "</p>" +
       '<label class="sr" for="cw-view">Show</label><select id="cw-view" class="search" data-view-select="1">' + opts + "</select>" +
       '<label class="sr" for="cw-q">Find a college</label><input id="cw-q" class="search" type="search" placeholder="Find a college or district" value="' + esc(state.q) + '">' +
       (v.bulk && S.reviewer ? '<div class="bulk"><button type="button" class="word" data-act="nudge">Nudge them (a mail merge)</button></div>' : "") +
