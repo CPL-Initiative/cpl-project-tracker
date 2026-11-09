@@ -30,8 +30,8 @@
    "name": "Fact Sheet",
    "page": "fact-sheet/index.html",
    "audience": "public",
-   "last": "2026-11-02",
-   "outcome": "S546: light, dark and Ask Sierra (light, dark) pass at every width; no raw hex in factsheet.css. Wiring: 8 datasets, the shared ones (live_metrics, cpl_stories, statewide_recs) are read-only renders of the same files. Fixed: fact-sheet-sierra and its dark twin still pressed the page's own Ask Sierra word, which left the header on 2026-10-30 (one header row); both now open her from her chip as funding-model-sierra does, and the two unused word helpers went."
+   "last": "2026-11-09",
+   "outcome": "S616: npm run a11y fact-sheet passes light and dark at 9 widths (axe 4.10.2, WCAG 2.2 AA); no raw hex in the page; wiring: the six headline KPIs read live_metrics.json (scraped 2026-11-09T06:25Z) and match it on screen (59,466 students, 285k eligible, 85k transcribed). Nothing to fix. COBI's CPL Pathways and College Briefing, which share live_metrics.json, were not rendered (sign-in)."
   },
   {
    "id": "privacy",
