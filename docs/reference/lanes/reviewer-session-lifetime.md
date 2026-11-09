@@ -36,7 +36,8 @@ the browser's sign-in outlives it on a tab left open, and the workspace read as 
 Workspace asks `is_funding_reviewer()` for the session as it stands, when it loads and every ten minutes. On `false` it
 draws *Your funding access has ended* in place of Access requests, names the address signed in, and offers *Ask an
 approver*, which sends the door's own request for that address (`CPL_REVIEWER_SIGNIN._askAccess`); while the note
-shows, the check runs every half minute, so an approval clears it. A check that fails or does not answer leaves the
+shows, the check runs every half minute, so an approval clears it. The door's later words (declined, lapsed, no
+approval yet) reach the note through the `cpl-funding-door-said` event `reviewer_signin.js` sends, and the button stays. A check that fails or does not answer leaves the
 screen as it was. No database change. Guards `tests/csm_workspace.test.js` 13x-a to 13x-g. The earliest real lapse is
 2026-12-09; a revoked grant shows it sooner. **NEXT:** the funding tab's own review controls still draw for such a
 sign-in; give them the same note.

@@ -1250,6 +1250,11 @@
       '<p class="grant-acts"><button type="button" class="word lead" data-grant="ask"' + (GRANT.busy ? " disabled" : "") + ">Ask an approver</button></p>" +
       '<p class="note" role="status" id="cw-grant-msg">' + esc(GRANT.msg) + "</p></section>";
   }
+  // The door's later words (declined, lapsed, no approval yet) reach the note; the button stays, so the reader asks again.
+  window.addEventListener("cpl-funding-door-said", function (e) {
+    if (GRANT.ok !== false || !e || !e.detail || !e.detail.msg) return;
+    GRANT.msg = String(e.detail.msg); GRANT.busy = false; paint();
+  });
   function askGrant() {
     var R = rest(), SI = window.CPL_REVIEWER_SIGNIN, fail = "The request did not go through. Try again in a few minutes.";
     if (GRANT.busy) return;
@@ -1284,7 +1289,7 @@
       if (window.CPL_TABS && typeof window.CPL_TABS.current === "function" && window.CPL_TABS.current() !== TAB) return;
       // While the access is closed, ask every tick so an approval shows within the half minute; otherwise every ten minutes.
       if (GRANT.ok === false || Date.now() - GRANT.at > GRANT_EVERY_MS) readGrant();
-      readAccess();
+      if (GRANT.ok !== false) readAccess();   // the database refuses the queue while the access is closed
     }, 30000);
   }
   function checkAccess() {

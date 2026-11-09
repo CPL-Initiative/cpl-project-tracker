@@ -511,8 +511,18 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("13x-e: Ask an approver sends the door's request for that address, once", asked.length === 1 && /@/.test(asked[0]) &&
     flat(note().querySelector(".signin")).indexOf(asked[0]) === 0);
   check("13x-f: and says it asked, in a status line", /^Asked\. An approver will see it/.test(flat(note().querySelector('[role="status"]'))));
+  // An approver declines: the door says so, and the note must not go on saying "Asked" (COBIx on PR 3007).
+  window.dispatchEvent(new window.CustomEvent("cpl-funding-door-said", { detail: { msg: "An approver declined the request.", kind: "err" } }));
+  await tick();
+  check("13x-f2: ⭐ a declined request shows in the note, and Ask an approver stays to ask again",
+    /^An approver declined the request\.$/.test(flat(note().querySelector('[role="status"]'))) && !!ask() && !ask().disabled);
   grant = true; await W._readGrant(); await tick();
   check("13x-g: once an approver opens it again, the note leaves", !note() && W._grant.ok === true);
+  window.dispatchEvent(new window.CustomEvent("cpl-funding-door-said", { detail: { msg: "That approval has lapsed. Ask again.", kind: "err" } }));
+  await tick();
+  check("13x-h: the door's words draw nothing while the access stands", !note());
+  check("13x-i: the sign-in component announces what the door says (the source)",
+    /dispatchEvent\(new CustomEvent\("cpl-funding-door-said"/.test(require("fs").readFileSync("reviewer_signin.js", "utf8")));
 }
 
 // ── 14. a figure card opens what it counts (Sam's rule, 2026-11-05; the workspace, 2026-11-09: "when I click cpl
