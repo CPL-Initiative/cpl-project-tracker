@@ -880,7 +880,7 @@ def docket(root):
     keep = ("id", "source", "addressee", "dr", "lane", "ref", "decides", "size", "evidence", "links", "choices",
             "plan_words", "no_reply", "sheet", "filed_at")
     return [{k: c.get(k) for k in keep if c.get(k) is not None}
-            for c in d.get("cases") or [] if c.get("status") != "done" and c.get("id") and c.get("choices")]
+            for c in d.get("cases") or [] if c.get("status") not in ("done", "partial") and c.get("id") and c.get("choices")]
 
 
 def batches(root, queue, cases=None):

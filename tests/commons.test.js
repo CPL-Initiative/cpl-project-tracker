@@ -699,7 +699,7 @@ function cellText(li, title) {
         && JSON.stringify(JSON.parse(body.value)) === JSON.stringify({ "case": CASE.id, choice: "five", note: "Music last for the curator cards." }));
       const s2 = sec(inn);
       check("case 10: the ruled case closes on the spot and the next batch comes up",
-        /Ruled: Confirm the five\. A session carries it out and files its receipt\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
+        /Ruled: Confirm the five\. The processor carries it out and files its receipt\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
         && txt(s2.querySelector("#cmn-next-h")) === "8 cards in doubt");
 
       const ruled = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }]);
@@ -716,6 +716,45 @@ function cellText(li, title) {
       await refused.M.saveRuling(CASE);
       check("case 13: a refused save says so and the case stays open", /Not saved: the server answered 403\./.test(txt(sec(refused)))
         && sec(refused).getAttribute("data-kind") === "case" && sec(refused).querySelector('button[data-value="later"]').getAttribute("aria-pressed") === "true");
+      // step 3: Process my rulings now, through the docket-process Edge Function
+      const fnCalls = [];
+      const procFetch = function (status, body) {
+        const base = make([{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "five" }), reviewed_at: "2026-11-09T15:00:00Z" }], 201);
+        return function (url, init) {
+          if (/\/functions\/v1\/docket-process$/.test(String(url))) { fnCalls.push({ url: String(url), init: init });
+            return Promise.resolve({ ok: status === 200, status: status, json: () => Promise.resolve(body) }); }
+          return base(url, init);
+        };
+      };
+      const procOpen = async function (sess, status, body) {
+        const x = load({ fetch: procFetch(status, body), hash: "#commons/case/" + CASE.id });
+        x.w.CPL_SESSION = Object.assign({ arrival: function (tab) {
+          const h = String(x.w.location.hash || "").replace(/^#/, ""); return h.indexOf(tab + "/") === 0 ? h.slice(tab.length + 1).split("/") : null; } }, sess);
+        await x.M.boot();
+        return x;
+      };
+      const p1 = await procOpen(SIGNED, 200, { ok: true, queued: true, already: false });
+      const pw = sec(p1).querySelector("button.cmn-process");
+      check("process 1: a ruled case offers Process my rulings now as a word, and says when it runs otherwise",
+        pw && txt(pw) === "Process my rulings now" && /Otherwise the processor carries rulings out at 05:33 UTC\./.test(txt(sec(p1))));
+      await p1.M.runProcessor();
+      const fc = fnCalls[0];
+      check("process 2: it posts once to the Edge Function with the reviewer's own session, and holds no GitHub token",
+        fnCalls.length === 1 && fc.init.method === "POST" && fc.init.headers.Authorization === "Bearer h.p.s"
+        && !/github|ghp_|token=/i.test(fc.url) && !/api\.github\.com/.test(src));
+      check("process 3: a queued run says what happens next", /Queued\. The processor runs within a few minutes/.test(txt(sec(p1))));
+      fnCalls.length = 0;
+      const p2 = await procOpen(SIGNED, 200, { ok: true, queued: true, already: true });
+      await p2.M.runProcessor();
+      check("process 4: a run already queued is reused, and says so", /A run is already queued/.test(txt(sec(p2))));
+      const p3 = await procOpen(SIGNED, 401, { ok: false, reason: "not_allowed" });
+      await p3.M.runProcessor();
+      check("process 5: a refusal says who may run it", /Not run: only a reviewer on the list can run the processor\./.test(txt(sec(p3))));
+      const p4 = await procOpen(SIGNED, 503, { ok: false, reason: "not_configured" });
+      await p4.M.runProcessor();
+      check("process 6: no key set says the nightly run carries it out", /Not run: the processor's key is not set here\. The 05:33 UTC run/.test(txt(sec(p4))));
+      const p5 = await procOpen(ANON, 200, { ok: true });
+      check("process 7: signed out, there is no word to press", !sec(p5).querySelector("button.cmn-process"));
       check("case 15: the evidence fold draws no marker glyph, only its underlined word",
         /\.cmn-case-ev > summary \{ list-style:none;[^}]*text-decoration:underline/.test(src) && /\.cmn-case-ev > summary::-webkit-details-marker \{ display:none; \}/.test(src));
       check("case 14: the view's address names the case it opened on", /if \(BATCH\.pin\) return "commons\/case\/" \+ BATCH\.pin;/.test(src));

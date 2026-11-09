@@ -28,6 +28,7 @@ on:
       - "Credential catalog sync (Sierra)"
       - "Daily CPL Dashboard"
       - "Deploy Pages (lean)"
+      - "Docket process"
       - "Fetch COCI Program-Course Files"
       - "JS tests"
       - "Library — publish approved drafts"

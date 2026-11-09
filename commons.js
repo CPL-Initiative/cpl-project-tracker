@@ -643,9 +643,44 @@
   function doneLine(j) {
     if (!j) return null;
     var text = j.kind === "case"
-      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". A session carries it out and files its receipt."
+      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and files its receipt."
       : "Done: you decided " + fmt(j.n) + " of " + fmt(j.n) + (j.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight.";
-    return el("p", { cls: "cmn-next-done", role: "status", text: text });
+    var line = el("p", { cls: "cmn-next-done", role: "status", text: text });
+    return j.kind === "case" ? el("div", null, [line, processNow()]) : line;
+  }
+  /* "Process my rulings now" (#2963 step 3): the Docket's processor runs at 05:33 UTC; a reviewer who has ruled can run
+     it at once. The page posts to the docket-process Edge Function with the reviewer's own session; the function checks
+     the reviewer and dispatches docket-process.yml with a token the browser never holds. Signed out, there is no word. */
+  var PROCESS = { said: "", busy: false };
+  function processNow() {
+    if (!reviewer()) return null;
+    var b = el("button", { type: "button", cls: "cmn-word cmn-process", text: PROCESS.busy ? "Asking the processor…" : "Process my rulings now" });
+    if (PROCESS.busy) b.setAttribute("disabled", "disabled");
+    b.addEventListener("click", function () { runProcessor(); });
+    return el("p", { cls: "cmn-process-row" }, [b, " ", el("span", { cls: "cmn-process-said", role: "status", "aria-live": "polite",
+      text: PROCESS.said || "Otherwise the processor carries rulings out at 05:33 UTC." })]);
+  }
+  var FN_BASE = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/functions/v1";
+  function runProcessor() {
+    if (PROCESS.busy) return Promise.resolve();
+    PROCESS.busy = true; PROCESS.said = ""; redrawBatch();
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      return fetch(FN_BASE + "/docket-process", { method: "POST", headers: sessionHeaders({ "Content-Type": "application/json" }), body: "{}" });
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j || {} }; });
+    }).then(function (x) {
+      PROCESS.busy = false;
+      PROCESS.said = x.status === 200 && x.j.ok
+        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, writes a receipt for each ruling and marks its case done.")
+        : x.status === 401 ? "Not run: only a reviewer on the list can run the processor. Sign in again and try once more."
+        : x.status === 503 ? "Not run: the processor's key is not set here. The 05:33 UTC run carries the rulings out."
+        : "Not run: the processor answered " + x.status + ". The 05:33 UTC run carries the rulings out.";
+      redrawBatch();
+    }, function (e) {
+      PROCESS.busy = false; PROCESS.said = "Not run: " + ((e && e.message) || "the network failed") + ". The 05:33 UTC run carries the rulings out."; redrawBatch();
+    });
   }
   /* A Docket case, ruled in place (#2963 step 2): what it decides, the evidence and its links, the choices as words,
      a reason, and Save the ruling. The ruling saves to kb_curation (`_DOCKET::<id>`, field docket_ruling) under the
@@ -666,7 +701,7 @@
       + "On no ruling: " + (c.no_reply || "nothing changes.") }));
     if (R) {
       kids.push(el("p", { cls: "cmn-case-ruled", role: "status", text: "Ruled: " + choiceWords(c, R.choice) + (R.at ? " on " + String(R.at).slice(0, 10) : "")
-        + ". A session carries it out and files its receipt." }));
+        + ". The processor carries it out and files its receipt." }), processNow());
       return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
         [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
     }
@@ -1145,6 +1180,8 @@
     ".cmn-case-acts a { color:var(--cmn-link); min-height:24px; line-height:24px; display:inline-block; }",
     ".cmn-case-save[disabled] { color:var(--cmn-muted); cursor:not-allowed; }",
     ".cmn-case-said, .cmn-case-ruled { margin:4px 0 0; color:var(--cmn-ink); min-height:1em; }",
+    ".cmn-process-row { margin:4px 0 0; color:var(--cmn-ink-2); font-size:.92rem; }",
+    ".cmn-process[disabled] { color:var(--cmn-muted); cursor:not-allowed; }",
     ".cmn-start { color:var(--cmn-link); font-weight:700; font-size:1.1rem; text-decoration:underline; text-underline-offset:3px; display:inline-block; min-height:24px; line-height:24px; }",
     ".cmn-learn { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-learn strong { color:var(--cmn-heading); }",
@@ -1250,7 +1287,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
-    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, runProcessor: runProcessor, PROCESS: PROCESS, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();
