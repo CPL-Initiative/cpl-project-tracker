@@ -83,10 +83,29 @@ function condWords(window, doc, id) {
     !(T._alloc("Calbright").gate_missing || []).some((m) => /Coordinator/i.test(m)));
 }
 
+{
+  // A second way to meet it (Sam, in session 2026-11-09): a coordinator and a CPL Assistant email, nothing else.
+  const { window } = freshDom();
+  boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setElig({ coordRows: [
+    ROW("Laney", { has_primary_contact: false, has_landing_page: false, has_cpl_assistant: true }),
+    ROW("Merritt", { has_coordinator: false, has_cpl_assistant: true }),
+    ROW("Alameda", { has_landing_page: false, has_cpl_assistant: false }),
+  ] });
+  T.render();
+  const gate = (n) => T._alloc(n).gate_missing || [];
+  check("5a: a coordinator and a CPL Assistant email meet the condition without the contact or the landing page",
+    !gate("Laney").some((m) => /Coordinator/i.test(m)));
+  check("5b: a CPL Assistant without a coordinator does not meet it", gate("Merritt").some((m) => /Coordinator/i.test(m)));
+  check("5c: with no CPL Assistant the three parts still decide", gate("Alameda").some((m) => /Coordinator/i.test(m)));
+  check("5d: How to meet it names the second way", /lists a CPL Assistant email in MAP beside its CPL Coordinator/.test(consumerSrc));
+}
+
 // The RPC's SQL source answers all three parts as booleans and keeps its grant.
 const sql = fs.readFileSync(path.join(__dirname, "..", "map", "supabase_map_contacts.sql"), "utf8");
 check("4a: map_coordinator_summary() returns the three booleans and no name",
-  /returns table \(college text, has_coordinator boolean, has_primary_contact boolean,\s*has_landing_page boolean, last_synced timestamptz\)/.test(sql)
+  /returns table \(college text, has_coordinator boolean, has_primary_contact boolean,\s*has_landing_page boolean, last_synced timestamptz, has_cpl_assistant boolean\)/.test(sql)
     && !/returns table[^)]*primary_contact text/.test(sql));
 check("4b: the function keeps its execute grant after the drop and recreate",
   /drop function if exists public\.map_coordinator_summary\(\);[\s\S]*grant execute on function public\.map_coordinator_summary\(\) to anon, authenticated, service_role;/.test(sql));

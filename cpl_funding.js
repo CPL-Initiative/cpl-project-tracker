@@ -4810,6 +4810,8 @@
         "2. Enter the primary CPL contact's name and email. One person may hold both roles.\n" +
         "3. Configure the college's CPL Landing Page, with the email address that receives students' CPL " +
         "requests, and link to it from the college website.\n\n" +
+        "A college that lists a CPL Assistant email in MAP beside its CPL Coordinator meets the condition with " +
+        "step 1 alone.\n\n" +
         "This page reads MAP's contacts each day, so the condition shows as met the day after the change.\n\n" +
         "For help now, join the MAP team's [office hours](https://map.rccd.edu/get-involved/). For a quick answer, " +
         "use the chat on the [MAP Dashboard](https://cpldashboardcccco.azurewebsites.net/insights/dashboard)." },
@@ -5835,6 +5837,9 @@
   // label names them; "" when it has all three.
   function coordPartMissing(row) {
     if (!row.has_coordinator) return "coord";
+    // A second way to meet it (Sam, in session 2026-11-09): a CPL Coordinator and a CPL Assistant email in MAP
+    // satisfy the condition with no manual check. The RPC answers has_cpl_assistant as a boolean.
+    if (row.has_cpl_assistant === true) return "";
     if (row.has_primary_contact === false) return "primary";
     if (row.has_landing_page === false) return "page";
     return "";
