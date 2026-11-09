@@ -25,7 +25,9 @@ is in the lessons doc), and the sheet rebuild (Sheet 175's cards are unchanged).
 3. **#2960 (open): Alameda's transfer degrees.** Page read 42609117444 (`kb/college_reads/alameda_transfer_ge.json`):
    every AA-T/AS-T table ends *General Education (Cal-GETC) and Elective Units* (40-42) above *Total Units 60.00*. A
    reconcile step sets Cal-GETC's 34 on transfer degrees (the Redwoods pattern); simulated with the scorer, 42964,
-   33032 and 32765 read `equal`. The reconcile run was dispatched about 11:40Z on the branch (no model call).
+   33032 and 32765 read `equal`. Reconcile 42610498785 (no model call): **29 of 59 passing** (was 25): 32503, 33032,
+   42964, 45292 pass; 31145, 32714, 37047 still fail their major's own sum, as before; 32765 did not take the step.
+   `step=reread` was dispatched about 11:55Z.
 4. **Lessons doc compacted:** *Moved from the lane (S584)* (50 KB) moved verbatim to archive 4; the doc is under its cap.
 
 ## Decisions Sam made this run
@@ -36,10 +38,10 @@ Library's IACA and DSP Version 3 waits stand).
 
 ## Read first
 
-- **#2960's reconcile run** (`program-requirements-college.yml` on `claude/catalog-alameda-transfer-s619`): pull the
-  branch, read the changed records. The transfer degrees passing is the expected change (32503, 32765, 33032, 42964 and
-  any other transfer degree printing the line). Then `step=reread`, the display build
-  (`kb/_build_roep_display.py` on the branch, then `step=display`), and merge on a passing `test`.
+- **#2960's reread** (`program-requirements-college.yml`, `step=reread`, on `claude/catalog-alameda-transfer-s619`,
+  dispatched about 11:55Z): pull the branch and read its receipt (before-values). Then the display build
+  (`kb/_build_roep_display.py` on the branch, then `step=display`), and merge #2960 on a passing `test`. Why 32765 did
+  not take the step is a small question: its captured text (3,409 characters) may stop before the table's last lines.
 
 ## Open work, in order
 
@@ -74,6 +76,6 @@ Library's IACA and DSP Version 3 waits stand).
 
 ## Let go
 
-This session holds no PR subscription, no check-in and no artifact watch. #2960 is open with its reconcile run in flight.
+This session holds no PR subscription, no check-in and no artifact watch. #2960 is open with its reread in flight.
 
 > *Greetings, you are SkyHoag (Session 620), see SkyTadpole's handoff — `docs/session_620_handoff.md` — let's keep rolling with our queue.*
