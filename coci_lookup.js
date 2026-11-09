@@ -644,7 +644,8 @@
   function ccLive(id) {
     if (CC.liveAsked[id]) return;
     CC.liveAsked[id] = 1;
-    fetch(REST + "/kb_curation?select=field,value,reviewer_email,reviewed_at&course_id=eq." + encodeURIComponent(id) +
+    // No email: the card shows the saved value alone (S614, the email exposure closed).
+    fetch(REST + "/kb_curation?select=field,value,reviewed_at&course_id=eq." + encodeURIComponent(id) +
       "&field=in.(discipline,unified_title)", { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } })
       .then(function (res) { return res.ok ? res.json() : []; })
       .then(function (rows) { var by = {}; (rows || []).forEach(function (x) { by[x.field] = x; }); CC.live[id] = by; ccRedraw(); })
