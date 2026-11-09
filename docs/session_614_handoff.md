@@ -1,7 +1,7 @@
 ---
 title: "Session 614 handoff: the funding render remembers its priorities"
 date: 2026-11-08
-session: 613 (SkyCometa, Sam's session opened from his phone, 2026-11-08 23:21Z to ~23:55Z; the CPL Queue routine fires next at 2026-11-09 06:12Z)
+session: 613 (SkyCometa, Sam's session opened from his phone, 2026-11-08 23:21Z to ~2026-11-09 00:40Z; the CPL Queue routine fires next at 2026-11-09 06:12Z)
 tags: [handoff, implementation-funding, ci]
 status: current
 ---
@@ -24,6 +24,10 @@ one merge rode the standing auto-merge rule.
    `cpl_funding_cap` 42s, then 15s; CI's six shards finished in about 4.5 minutes, against about 13 before. Guard
    `tests/cpl_funding_render_memo.test.js`; `cpl_funding_refresh_sources` 2a now reads `renderNow()`. Lessons
    `docs/cpl_funding_lessons.md`, *S613*.
+2. **The durations table refreshed (#2944; COBIx #2927 item 1)**, after Sam's *"keep rolling with the queue"* (00:05Z):
+   all 597 files measured and passing; the six shards balance to 560s each by the new times (495 to 643s before).
+3. **Redwoods' 8 local degrees stand as filed.** Three page reads (42538790768, 42539434482, 42540109133) found that
+   eLumen's CR-GE page carries its heading alone: the catalog prints no CR-GE units. Lane and lessons (*S613*) updated.
 
 ## Decisions Sam made this run
 
@@ -44,10 +48,9 @@ None. Sheet 174's store was read twice (23:24Z, 23:49Z): no reply.
    since #2925: `classifier_run.answered` above 0 and `errors` empty. If it still errors, #2925's size guard prints what it sent.
 2. **Student-grain plan, PR 4 and 5** (lane `disposition-grain-student-detail`): summaries with a backfill, then the delete
    in the load; each on Sam's word.
-3. **COBIx #2927, what is left:** item 1 (refresh `tests/durations.json` from CI: the funding entries now overstate
-   their files about 2.7x, so the balancer overloads no shard but packs them poorly); item 6 costs Actions minutes
-   (Sam's call); 7 last. Items 2 and 3 are done; 4 mostly done; 5 left alone.
-4. **The routine's queue (`program-requirements-harvest`):** Redwoods' 8 local degrees (`grad4`); SLOs on 2026-11-09 UTC
+3. **COBIx #2927, what is left:** item 6 costs Actions minutes (Sam's call); 7 last. Items 1, 2 and 3 are done; 4
+   mostly done; 5 left alone.
+4. **The routine's queue (`program-requirements-harvest`):** SLOs on 2026-11-09 UTC
    (Cuesta's trial, #2910, then `--next --skip cuesta`); the catalog sweep's next college; the objectives reread.
 5. **Lanes active this week:** `local-course-cr-alignment`, `map-users-student-contact`, `noncredit-cip-categories`
    (waits on Jenni's Q1), `common-subjects-reference` (the three HOSP anchors and 93 stray codes with the curator).
@@ -70,6 +73,6 @@ None. Sheet 174's store was read twice (23:24Z, 23:49Z): no reply.
 
 ## Let go
 
-At sign-off this session holds no PR subscription and no check-in (#2942 merged; its check-in canceled).
+At sign-off this session holds no PR subscription and no check-in (#2942, #2943, #2944 and the Redwoods read PR merged; every check-in fired or canceled).
 
 > *Greetings, you are SkyMilkomeda (Session 614), see SkyCometa's handoff — `docs/session_614_handoff.md` — let's keep rolling with our queue.*

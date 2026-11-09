@@ -1142,4 +1142,16 @@ From *Course objectives too*, verbatim:
   have reverted Columbia's display. **Never `git stash` between `git add` and the commit**: the pop restores the tree,
   not the index, so the commit carried the receipt without the page's new stamp (run 42489271385 canceled).
 
+### S613 SkyCometa (2026-11-09, Sam's session): Redwoods' CR-GE page is empty
+
+- **An eLumen catalog page loads in two steps, and the second can be empty.** The page fetches
+  `catalog/sites/publish/<year>,<page>` (2.9 MB, mostly styling) whose `html` says *Loading* and names a `contentUrl`
+  (`catalog/sites/publish/content/<year>,<page>`). The headless browser never fetched it (read 42539434482). Read the
+  content address directly: Redwoods' `grad4` (CR-GE) returned its heading alone, 60 characters, and `grad2` its opening
+  paragraph (read 42540109133). So the catalog prints no CR-GE units, and the 8 local degrees stand as filed.
+- **`network_find` searches every response, the interface-text bundle included:** its six places a word went to
+  eLumen's 200 KB `i18n` strings before the page's own data. Name strings the bundle cannot hold, or read the content
+  address.
+- **A `follow` pattern matches link text too:** `print` followed *ART 44 - Introduction To Printmaking*.
+
 The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/program_requirements_harvest_lessons_archive_4.md` (S609).
