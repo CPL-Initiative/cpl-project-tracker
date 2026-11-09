@@ -503,6 +503,42 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     Array.from(sel.options).some((o) => o.value === "nc" && o.textContent === "Noncredit attestations waiting"));
 }
 
+// ── 15. a credit college's noncredit attestation reaches the workspace (Sam's screen, 2026-11-09: "Noncredit CPL
+//        Lead attested 0 of 3" over twelve attestations on file) ───────────────────────────────────────────────
+{
+  // Scenario 4's lane: a credit college's award carries a noncredit share, and its attestation waits for review.
+  const OUTCOMES = { ncLane: "outcomes", ncOutcomes: { "1": [
+    { key: "exh", title: "Exhibits built or adopted", share: 0.5, goals: ["A"], unit_word: "exhibits", metric: "Exhibits", metric_src: "nc_exh",
+      target_rule: { kind: "pct_floor_cap", of: "nc_cdcp", pct: 0.05, floor: 2, cap: 10 } },
+    { key: "course", title: "A noncredit CPL course", share: 0.5, goals: ["A"], unit_word: "courses", metric: "A course", metric_src: "nc_course",
+      target_rule: { kind: "fixed", n: 1 } }] } };
+  const { window, T, W, root } = setup({ signedIn: true });
+  T._setShared(OUTCOMES);
+  T._setElig({ coordOk: true, coord: { [COLLEGE]: true, [OTHER]: true },
+    optin: { [OTHER]: true }, optinRow: { [OTHER]: { college: OTHER, status: "confirmed", requested_at: "2026-10-30T04:00:00Z" } },
+    ncAttestOk: true, ncAttest: {
+      [OTHER]: { college: OTHER, status: "self_attested", fiscal_year: "2026-27", requested_at: "2026-11-04T04:00:00Z" },
+      [COLLEGE]: { college: COLLEGE, status: "confirmed", fiscal_year: "2026-27", requested_at: "2026-11-02T04:00:00Z", confirmed_at: "2026-11-03T04:00:00Z" } } });
+  T.render(); W.paint();
+  const snap = T.csm.snapshot();
+  const pc = snap.rows.find((r) => r.key === OTHER), mt = snap.rows.find((r) => r.key === COLLEGE);
+  const withNc = snap.rows.filter((r) => r.nc).length;
+  check("15a: fixture: the model gives a credit college a noncredit award", (T._alloc(OTHER).nc_award || 0) > 0.5 && (T._alloc(COLLEGE).nc_award || 0) > 0.5);
+  check("15b: the snapshot carries the noncredit attestation for credit colleges, more than the three noncredit-only institutions (" + withNc + ")",
+    withNc > 3 && !!pc.nc && !!mt.nc);
+  check("15c: a waiting attestation reads waiting, an accepted one standing", pc.nc.waiting === true && pc.nc.standing === false && mt.nc.standing === true);
+  check("15d: a college whose only open request is its attestation is Waiting on the team", W._stageOf(pc) === "waiting");
+  const card = Array.from(root.querySelectorAll("#cw-fold .card")).find((c) => /Noncredit CPL Lead attested/.test(flat(c.querySelector(".card-name"))));
+  check("15e: the Noncredit card counts the accepted attestation over every institution with a noncredit share",
+    !!card && /^1 of \d+$/.test(flat(card.querySelector(".big"))) && parseInt(flat(card.querySelector(".big small")).replace("of ", ""), 10) === withNc);
+  clickEl(window, root.querySelector('#cw-fold .card [data-view="ncmet"]'));
+  check("15f: and its word lists that college", Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel")).join() === COLLEGE);
+  const nudge = T._nudgeInstitutions();
+  check("15g: the Nudge lists a credit college that has sent no attestation, and leaves out the two that have",
+    nudge.filter((r) => r.missing.indexOf("nc") >= 0).length > 3 &&
+    !nudge.some((r) => (r.key === OTHER || r.key === COLLEGE) && r.missing.indexOf("nc") >= 0));
+}
+
 // ── 13. access requests: the approver's side of the funding door (Sam, 2026-11-09: "I don't understand how to access
 //        the request to answer") ────────────────────────────────────────────────────────────────────────────────
 {
