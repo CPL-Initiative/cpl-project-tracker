@@ -1340,6 +1340,56 @@ block("(19)", function () {
   });
 });
 
+// ── (22) A piece's link beside a file: both reach the request (Sam, 2026-11-09) ──
+// "I tried adding the link to the previous ELL IEP visual to the new project link box, but it just shot me down
+// to the existing ELL IEP project thinking I was wanting to work on it." The jump also cleared the Word file he
+// had attached, so the request reached its session with no document. A person who has picked a file or typed
+// what to make is making something new: the piece becomes a document to work from and the file stays.
+block("(22)", function () {
+  const writes = [];
+  const rows = JSON.parse(JSON.stringify(PROJ_ROWS));
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method && init.method !== "GET") { writes.push({ url: url, method: init.method, body: JSON.parse(init.body || "{}") }); return response(201, [{ id: "new22" }]); }
+    return response(200, rows);
+  } });
+  const JSZip = require("../jszip.min.js");
+  m.w.JSZip = JSZip;
+  const doc = m.w.document;
+  const type = function (id, v) { const n = doc.getElementById(id); n.value = v; n.dispatchEvent(new m.w.Event("input", { bubbles: true })); };
+  const LINK = "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet/";
+  const z = new JSZip();
+  z.file("word/document.xml", '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>' +
+    "<w:p><w:r><w:t>Round 3 funds 20 consortia.</w:t></w:r></w:p></w:body></w:document>");
+  return Promise.resolve(m.M.activate()).then(settle).then(function () { return z.generateAsync({ type: "uint8array" }); }).then(function (u8) {
+    const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
+    Object.defineProperty(ev, "dataTransfer", { value: { files: [{ name: "ELL_HP_Grant_Summary.docx", arrayBuffer: function () { return Promise.resolve(u8.buffer); } }] } });
+    doc.getElementById("lib-drop").dispatchEvent(ev);
+    check("(22) a dropped Word file is picked", !!m.M._state.pick && m.M._state.pick.name === "ELL_HP_Grant_Summary.docx");
+    type("lc-link", LINK);
+    check("(22) ⭐ a piece's link pasted beside a picked file keeps the file and opens no card",
+      !!m.M._state.pick && m.M._state.pick.name === "ELL_HP_Grant_Summary.docx" && !m.M._state.cardBox && doc.getElementById("lc-link").value === "");
+    check("(22) the piece is listed as a document to work from, and the file is background, never a remediation",
+      (m.M._state.src.ls || []).some(function (x) { return x.url === LINK && /ELL IET CPL Starting Points/.test(x.title); }) && m.M._state.use === "background" &&
+      /added as a document to work from/.test(m.root.textContent), JSON.stringify(m.M._state.src.ls));
+    doc.getElementById("lc-instr").value = "Adapt the ELL IET visual for the ELL HP grantees";
+    doc.getElementById("ls-title").value = "ELL Healthcare Pathways CPL Starting Points";
+    click(m.w, doc.getElementById("lib-go"));
+    const posted = function (n) { return writes.some(function (w) { return w.method === "POST"; }) || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return posted(n - 1); }); };
+    return posted(300);
+  }).then(function () {
+    const post = writes.filter(function (w) { return w.method === "POST"; })[0] || { body: {} };
+    const src = post.body.sources || [];
+    check("(22) ⭐ the request is saved with the file's words and the piece's link",
+      post.body.status === "requested" && src.some(function (x) { return x.text === "Round 3 funds 20 consortia."; }) && src.some(function (x) { return x.url === LINK; }), JSON.stringify(post.body));
+    // With the box empty, the link still opens the piece's card, which says how to use it as background.
+    type("lc-link", LINK);
+    const cb = m.root.querySelector('form[data-cboxform="p1"]');
+    check("(22) with nothing picked or typed, the link opens the piece's card and says how to use it as background",
+      !!cb && /To use it as background for something new/.test(m.root.textContent));
+    m.w.close();
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
