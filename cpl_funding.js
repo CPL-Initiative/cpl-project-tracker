@@ -6367,23 +6367,25 @@
     var rev = optinReviewOf(college);
     var done = function () { if (ELIG.optin[college] && rev && rev.email) openConfirmMail(college, rev, "part"); };
     var p = confirmOptIn(college);
-    if (p && typeof p.then === "function") p.then(done); else done();
+    if (p && typeof p.then === "function") return p.then(done);
+    done();
+    return null;
   }
   function revokeOptIn(college) {
     if (!remoteEnabled()) { _localOptinStatus(college, "revoked"); render(); return; }
     reviewerPatch(college, { status: "revoked", revoked_at: nowIso() });
   }
   // Deny removes the request, so the college may send another.
-  function denyOptIn(college) { removeOptIn(college); }
+  function denyOptIn(college) { return removeOptIn(college); }
   function removeOptIn(college) {
     if (!remoteEnabled()) {
       delete ELIG.optin[college]; delete ELIG.optinRow[college];
       ELIG.optinReview = (ELIG.optinReview || []).filter(function (r) { return r.college !== college; });
-      render(); return;
+      render(); return null;
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, Prefer: "return=minimal" };
     applyWriteAuth(headers);
-    fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers })
+    return fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers })
       .then(writeResult)
       .then(function () { loadEligibility(); })
       .catch(function () { loadEligibility(); });
@@ -6528,9 +6530,11 @@
       }
     };
     var p = reconfirmNcAttest(college);
-    if (p && typeof p.then === "function") p.then(done); else done();
+    if (p && typeof p.then === "function") return p.then(done);
+    done();
+    return null;
   }
-  function denyNcAttest(college) { removeNcAttest(college); }
+  function denyNcAttest(college) { return removeNcAttest(college); }
   // Follow up: the editable email to the person who sent the request, the CO Monitor's note in its middle.
   function noteFor(college) { var n = NOTES[college]; return n && n.note ? String(n.note).trim() : ""; }
   function followNcAttest(college) {
@@ -6721,7 +6725,7 @@
       '<img class="cplfund-mailtpl-logo" src="' + EMAIL_LOGO_URL + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37">' +
       "</details>";
   }
-  function removeNcAttest(college) { ncAttestWrite(college, "DELETE", null); }
+  function removeNcAttest(college) { return ncAttestWrite(college, "DELETE", null); }
   // ── NUDGE (Sam, 2026-10-31: "add a Nudge button at the top of the college rows
   // internal funding tab that allows me to send nudge emails to all the colleges
   // who have not yet requested participation or attested to the NC lead") ──────
@@ -6801,16 +6805,31 @@
   }
   // The workspace acts through the review lane's own functions, so a decision there is the same write and the same
   // email the funding tab makes. kind is "part" (the participation confirmation) or "nc" (the noncredit attestation).
+  // Accept and Deny answer with what the re-read shows (COBIx #2967 item 2): the workspace logs, says "Accepted" and
+  // opens the email only when the row reads confirmed (or, for Deny, gone) after the save. A refused save (an expired
+  // session, RLS) re-reads the row unchanged and answers { ok: false }, so nothing is logged and nothing opens.
+  function partGone(key) {
+    return !ELIG.optinRow[key] && !(ELIG.optinReview || []).some(function (r) { return r.college === key; });
+  }
   var CSM_ACT = {
-    accept: function (kind, key) { if (kind === "nc") acceptNcAttest(key); else acceptOptIn(key); },
-    deny: function (kind, key) { if (kind === "nc") denyNcAttest(key); else denyOptIn(key); },
-    follow: function (kind, key) { if (kind === "nc") followNcAttest(key); else followOptIn(key); },
-    mail: function (kind, key) { if (kind === "nc") mailNcAttest(key); else mailOptIn(key); }
+    accept: function (kind, key) {
+      var p = kind === "nc" ? acceptNcAttest(key) : acceptOptIn(key);
+      return Promise.resolve(p).then(function () {
+        return { ok: kind === "nc" ? ncAttestStanding(ncAttestOf(key)) : !!ELIG.optin[key] };
+      }, function () { return { ok: false }; });
+    },
+    deny: function (kind, key) {
+      var p = kind === "nc" ? denyNcAttest(key) : denyOptIn(key);
+      return Promise.resolve(p).then(function () {
+        return { ok: kind === "nc" ? !ncAttestOf(key) : partGone(key) };
+      }, function () { return { ok: false }; });
+    },
+    follow: function (kind, key) { if (kind === "nc") followNcAttest(key); else followOptIn(key); return Promise.resolve({ ok: true }); },
+    mail: function (kind, key) { if (kind === "nc") mailNcAttest(key); else mailOptIn(key); return Promise.resolve({ ok: true }); }
   };
   function csmAct(action, kind, key) {
     if (!unlocked() || publicMode() || !CSM_ACT[action]) return false;
-    CSM_ACT[action](kind, key);
-    return true;
+    return CSM_ACT[action](kind, key);
   }
   // Open the funding tab on one institution: the table's search takes its name, read once, as a hand-off.
   function csmFocus(key) {
