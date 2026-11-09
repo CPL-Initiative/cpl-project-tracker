@@ -5,7 +5,7 @@
   "rpcs": 54,
   "edge_functions": 13,
   "file_datasets": 830,
-  "external_services": 193,
+  "external_services": 194,
   "consumers": 540,
   "workflows": 65,
   "data_js_files": 71,
@@ -2333,6 +2333,21 @@
      "direction": "read",
      "how": "url",
      "line": 5813
+    }
+   ],
+   "main_committers": []
+  },
+  "external:mail.google.com": {
+   "consumers": [
+    {
+     "id": "module:csm_workspace.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1117,
+     "tabs": [
+      "csm-workspace"
+     ]
     }
    ],
    "main_committers": []
@@ -6610,7 +6625,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1427,
+     "line": 1464,
      "tabs": [
       "csm-workspace"
      ]

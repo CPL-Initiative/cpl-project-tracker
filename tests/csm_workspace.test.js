@@ -448,6 +448,33 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("11g: with the participation acceptance sent, a standing noncredit attestation is next", W._readyOf(OTHER) === "accept_nc");
 }
 
+// ── 12. Open in Gmail and the logo as bytes (COBIx on issue 2967, 18:25Z) ─────────────────────────────────────
+{
+  const { window, W, root } = setup({ signedIn: true });
+  W._setContacts({
+    dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
+      primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu", vpaa: "Val Price", vpaa_email: "val@pasadena.edu" }],
+    landing: [], users: [] });
+  W._state.sel = OTHER; W.paint();
+  let opened = null; window.open = (u) => { opened = u; return null; };
+  clickEl(window, root.querySelector('[data-mailact="gmail"]'));
+  check("12a: Open in Gmail opens Gmail's compose with To, Subject and the words, and the log notes it",
+    /^https:\/\/mail\.google\.com\/mail\/\?view=cm&fs=1&to=ana%40pasadena\.edu&su=/.test(opened || "") && /&body=/.test(opened || "") &&
+    W._log().some((x) => x.college === OTHER && /^Gmail draft opened: /.test(x.body)));
+  W._mail(OTHER).body = "y".repeat(2500); opened = null;
+  window.navigator.clipboard = { writeText: () => Promise.resolve() };
+  clickEl(window, root.querySelector('[data-mailact="gmail"]'));
+  await tick(); await tick();
+  check("12b: a long email opens Gmail with no body, for the paste", !!opened && !/&body=/.test(opened));
+  check("12c: until the small logo loads, the copy carries the published address", /<img src="https:\/\/cpl-initiative\.github\.io\//.test(W._mailHtml(OTHER)));
+  W._logo.src = "data:image/png;base64,AAAA";
+  check("12d: once it loads, the copy carries the logo's own bytes", /<img src="data:image\/png;base64,AAAA"/.test(W._mailHtml(OTHER)));
+  check("12e: the words say Outlook or Gmail, and that the logo rides the copy", /paste into Outlook or Gmail/.test(flat(root.querySelector(".tpl"))));
+  check("12f: the email copy of the logo is in the repo and small",
+    fs.existsSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")) &&
+    fs.statSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")).size < 12000);
+}
+
 check("10k: the fallback deadline is the published model's date", /\|\| "2026-12-31";/.test(FUND) && !/\|\| "2026-11-01";/.test(FUND));
 
 finish();

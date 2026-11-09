@@ -927,6 +927,21 @@
   // The workspace never sends: Copy the email puts the formatted email (the logo on its signature line) on the
   // clipboard for Outlook, Open in Outlook opens the mail program with To, Cc and Subject, and the log notes the copy.
   var EMAIL_LOGO_URL = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/cpl-initiative-logo-navy.png";
+  /* The logo travels as its own bytes (COBIx on issue 2967, 18:25Z): Outlook and Gmail often refuse to fetch an outside
+     image on paste, so the copied HTML carries a data: URI of the small email copy, read once from this site when the
+     email box first draws. Until it has loaded, or if it cannot, the copy falls back to the published address. */
+  var EMAIL_LOGO_LOCAL = "sierra/cpl-initiative-logo-navy-email.png";
+  var LOGO = { src: "", asked: false };
+  function loadLogo() {
+    if (LOGO.asked || typeof fetch !== "function" || typeof FileReader === "undefined") return;
+    LOGO.asked = true;
+    fetch(EMAIL_LOGO_LOCAL).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.blob(); }).then(function (b) {
+      var fr = new FileReader();
+      fr.onload = function () { if (/^data:image\/png;base64,/.test(String(fr.result || ""))) LOGO.src = fr.result; };
+      fr.readAsDataURL(b);
+    }).catch(function () {});
+  }
+  function logoSrc() { return LOGO.src || EMAIL_LOGO_URL; }
   var EMAIL_LOGO_ALT = "California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office";
   var PUBLIC_FUNDING_URL = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/";
   var TEMPLATES = [
@@ -1033,6 +1048,7 @@
     if (CT.state === "error") return '<div><p class="k">Write an email</p><p class="gate">' + esc(CT.error) + "</p></div>";
     if (CT.state !== "ready") return '<div><p class="k">Write an email</p><p class="gate">Reading the contacts on file&hellip;</p></div>';
     var m = mailOf(r);
+    loadLogo();
     var opts = TEMPLATES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
     return '<div class="tpl" aria-labelledby="cw-mail-h"><p class="k" id="cw-mail-h">Write an email</p>' +
       '<div class="tpl-row"><label for="cw-tpl">Template</label><select id="cw-tpl" data-mail="tpl">' + opts + "</select></div>" +
@@ -1044,10 +1060,11 @@
       '<label class="sr" for="cw-body">The email</label><textarea id="cw-body" class="search" data-mail="body" rows="10" style="min-height:180px;">' + esc(m.body) + "</textarea>" +
       '<div class="tpl-row"><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
         '<button type="button" class="word" data-mailact="draft">Open in Outlook</button>' +
+        '<button type="button" class="word" data-mailact="gmail">Open in Gmail</button>' +
         (state.view === "send" && SENT[readyOf(r)] ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") +
         '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
       '<p class="tpl-meta">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>' +
-      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook; the log notes the copy.' +
+      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each.' +
       (state.view === "send" ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
   }
   function allCc(m) {
@@ -1059,7 +1076,7 @@
     var link = function (h) { return h.replace(/https?:\/\/[^\s<>"]+[^\s<>".,;:)]/g, function (u) { return '<a href="' + u + '">' + u + "</a>"; }); };
     return '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;">' +
       String(m.body || "").split(/\n\n/).map(function (p) { return '<p style="margin:0 0 12px;">' + link(esc(p)).replace(/\n/g, "<br>") + "</p>"; }).join("") +
-      '<p style="margin:4px 0 0;"><img src="' + EMAIL_LOGO_URL + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
+      '<p style="margin:4px 0 0;"><img src="' + logoSrc() + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
   }
   function copyMail(m) {
     try {
@@ -1093,6 +1110,26 @@
         paint();
         say(what + " for " + r.name + ", noted in the log." + (next ? " Next: " + next.name + "." : " Nothing else is ready to send."));
       });
+      return;
+    }
+    if (kind === "gmail") {
+      // Gmail's compose address (Malone, via COBIx on issue 2967: ITPI's CSM team uses Gmail). Same cap as the mailto.
+      var gHead = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(m.to) +
+        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&su=" + encodeURIComponent(m.subject || "");
+      var gFull = gHead + "&body=" + encodeURIComponent(m.body || "");
+      var openG = function (h) { try { window.open(h, "_blank", "noopener"); } catch (e) {} };
+      if (gFull.length > MAILTO_MAX) {
+        copyMail(m).then(function (ok) {
+          openG(gHead);
+          logIt("Gmail draft opened");
+          say(ok ? "The email is long, so it is on the clipboard: paste it into the Gmail draft that opens. The log notes it."
+            : "The email is long and the browser refused the copy. Select the words in the box, copy them, and paste them into the Gmail draft.");
+        });
+        return;
+      }
+      openG(gFull);
+      logIt("Gmail draft opened");
+      say("The draft opens in Gmail with To, Cc, Subject and the words; the log notes it.");
       return;
     }
     if (kind === "draft") {
@@ -1434,5 +1471,6 @@
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
-    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; } };
+    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
+    _logo: LOGO, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();
