@@ -75,13 +75,26 @@ by source with a finder, each tick adding to More Cc), **Copy the email** (forma
 and **Open in Outlook** (named *Open a draft* until S621); the log notes either, with a follow-up a week out unless unticked. A directory name keeps its
 comma (*Rivera, Ana*): names split on a new line or a semicolon alone.
 
+✅ **The action center's menu in two groups (S623, issue #2989; Sam's *"go"* on COBIx's proposal, 2026-11-09).** The
+menu is two `<optgroup>`s: **To do** (All open items, Ready to send, Waiting on the team, Follow-ups open, Confirmed,
+still held, Noncredit attestations waiting, Confirmed but missing the CPL Coordinator in MAP, Not yet confirmed), then
+**Browse** (Qualifies (all conditions met), Confirmed, With a CPL Coordinator in MAP, Noncredit CPL Lead attested, No
+CPL Coordinator in MAP, Declined, All institutions). Two added lists: `nocoord` (every college without a coordinator that has not declined;
+`coord` is its confirmed part) and `declined`. The two progress cards carry a gap word that counts the work list it
+opens (*N waiting on the team* to `nc`, *N confirmed, still missing* to `coord`); a gap of zero draws no word. No view
+was renamed and no condition is computed differently. *Follow-ups open* names the view; the pill *Follow-up due* shows
+only once the date has arrived. Guards 14x-a to 14x-k and 15f2.
+
 ## NEXT
 
-0. **The action center's list (Sam, 2026-11-09: *"see if it needs to be cleaned up or clarified"*; COBIx reviews it on
-   #2990's thread, Sam picks):** option groups (to do, by stage, by condition, everyone); a *No CPL Coordinator in MAP*
-   view (54 that day) and whether *Confirmed but missing the CPL Coordinator in MAP* then stays; a *Declined* view;
-   *Follow-ups open* beside the pill *Follow-up due*; the Noncredit card's name once the role in MAP counts beside the
-   attestation.
+0. **The Noncredit card's name** once the role in MAP counts beside the attestation (`implementation-funding`).
+0a. **A declined college in To do (COBIx on #3001, older than that PR):** `stageOf` never reads `declined`, so a
+   college that declined and is not confirmed sits in *Not yet confirmed*, the bulk Nudge view (the funding tab's
+   Nudge lists it too, marked declined). Recommended: leave it out of *Not yet confirmed* and Today's count, in one
+   change with the Nudge so both agree.
+0b. **A waiting attestation at a college with the Noncredit CPL Lead role (COBIx on #3001):** the role meets the
+   condition alone, and the form still reads *waiting on the team* in the list and the Noncredit card's gap word.
+   Settle it with item 0, with a guard that the word and its list keep one predicate.
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
