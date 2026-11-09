@@ -419,8 +419,12 @@ def supabase_edges(rel: str, text: str) -> list:
     # fetched hundreds of lines later — direction taken at the const line reads
     # every such table as read-only (cpl_adoption_interest's POST was lost).
     # Follow the identifier to its fetch()/usage sites and take direction THERE.
-    for cm in re.finditer(
-            r"([A-Za-z_]\w*)\s*=\s*[^=\n]*rest/v1/([a-z][a-z0-9_]{2,})", text):
+    # Both const scans below need the literal "rest/v1/"; a file without it
+    # skips them (each walks every identifier to its line's end).
+    has_rest = "rest/v1/" in text
+    for cm in (re.finditer(
+            r"([A-Za-z_]\w*)\s*=\s*[^=\n]*rest/v1/([a-z][a-z0-9_]{2,})", text)
+            if has_rest else ()):
         ident, tbl = cm.group(1), cm.group(2)
         if tbl in NOT_TABLES or tbl == "rpc":
             continue
@@ -458,7 +462,7 @@ def supabase_edges(rel: str, text: str) -> list:
     # method= comes from a parameter + a write-verb call site => write.
     endpoint_consts = {em.group(1): em.group(2) for em in re.finditer(
         r"""([A-Z][A-Z0-9_]*)\s*=\s*f?["'][^"'\n]*rest/v1/([a-z][a-z0-9_]{2,})""",
-        text)}
+        text)} if has_rest else {}
     if endpoint_consts:
         for dm in re.finditer(r"def\s+(\w+)\s*\(\s*(\w+)", text):
             hname, first_param = dm.group(1), dm.group(2)
@@ -1007,13 +1011,18 @@ def build():
         # bare-global reads of data-file exports (window[CC_GLOBAL] included:
         # the global name appears as a string literal and \b matches it)
         gedges = []
+        # `g in text` first: a name absent as a substring cannot match, and
+        # the plain test skips most of the regex scans (25 of the check's
+        # 40s went to them; COBIx #2927 item 4).
         for g, target in globals_index.items():
-            if target == rel:
+            if target == rel or g not in text:
                 continue
             gm = re.search(r"\b%s\b" % re.escape(g), text)
             if gm:
                 gedges.append(("file:%s" % target, "read", line_of(text, gm.start())))
         for g, host in inline_url_globals.items():
+            if g not in text:
+                continue
             gm = re.search(r"\b%s\b" % re.escape(g), text)
             if gm:
                 gedges.append(("external:%s" % host, "read", line_of(text, gm.start())))
