@@ -104,6 +104,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
+| `funding_access` | `edgefn:funding-door` | `edgefn:funding-door` |
+| `funding_access_requests` | none found | `edgefn:funding-door` |
 | `governance_owners` | tabs: `governance`, `map-queue` | tabs: `governance` |
 | `gr_areas` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `gr_artifacts` | tabs: `gr-priorities` | tabs: `gr-priorities` |
@@ -191,6 +193,12 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `credential_submission_decide` | tabs: `exhibits` | — |
 | `credential_submissions_verified` | pages: `library/adopt/index.html` | — |
 | `exhibit_title_students` | tabs: `exhibits` | — |
+| `funding_access_decide` | tabs: `csm-workspace` | — |
+| `funding_access_pending` | tabs: `csm-workspace` | — |
+| `funding_access_request` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
+| `funding_access_status` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
+| `funding_approvers_list` | tabs: `admin` | — |
+| `funding_approvers_set` | tabs: `admin` | — |
 | `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
@@ -236,6 +244,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `docket-process` | none found | produced by: `chatbox/supabase/functions/docket-process/index.ts` |
+| `funding-door` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | produced by: `chatbox/supabase/functions/funding-door/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `letter-curator` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `library-revise-draft` | tabs: `library` | produced by: `chatbox/supabase/functions/library-revise-draft/index.ts` |
@@ -1158,7 +1167,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:docket-process`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:docket-process`, `edgefn:funding-door`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `exhibits`, `implementation-funding` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/adopt/index.html`, `library/cpl-opportunity/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py`, `map/sync_landing_contacts.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1342,8 +1351,7 @@ check these BY HAND before trusting an absence:
 - `cr_progress.js`
 - `exhibit_progress.js`
 - `kb/_program_requirements_extract.py`
-- `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 108 Supabase tables · 54 RPCs · 13 edge functions · 830 file
-datasets · 194 external services · 540 consumers · 65 workflows · 40 tabs.
+Coverage: 110 Supabase tables · 60 RPCs · 14 edge functions · 830 file
+datasets · 194 external services · 542 consumers · 65 workflows · 40 tabs.

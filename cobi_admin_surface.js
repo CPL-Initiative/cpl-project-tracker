@@ -147,6 +147,8 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "cpl_funding_requester_context",
+        "funding_access_decide",
+        "funding_access_pending",
         "map_coordinator_summary",
         "map_landing_contacts_roster"
       ],
@@ -293,7 +295,9 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [
         "cobi_rls_gates",
         "cpl_library_public",
-        "cpl_library_set_public"
+        "cpl_library_set_public",
+        "funding_approvers_list",
+        "funding_approvers_set"
       ],
       "measured": true
     },
