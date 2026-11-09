@@ -850,3 +850,13 @@ the row's held and conflict copies once the review file is read, and both pages 
 (the page adds the tab's own queues). Guards: `tests/csr_progress.test.js` (79), `tests/exhibits_progress_page.test.js`
 (43), `tests/commons_status_build_test.py` (85). The same screenshot shows both Progress cards reading *Could not be read*
 (`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.
+
+## The Docket, steps 1 to 3, and the morning's security asks (SkyCigar, 2026-11-09)
+
+- **A committed status file cannot close a loop a person just finished.** `next_batch` was rebuilt three times a day, so Sam's six decided cards still read open. The fix counts from the saves themselves (the keys a decision writes, read since the sweep was built) and from the visit's own marks; the file supplies only the keys (#2966).
+- **Reuse a write surface before adding one.** Docket rulings are `kb_curation` rows under a prefixed key, like `ccr_procedure_request`; the daily fold keeps only a fixed list of fields, so a new field cannot leak into the reference. The "Process my rulings now" security already existed twice (`workplan-rebuild`, the Worker's `/trigger`); the Edge Function copy took a reviewer-only check and the existing dispatch token (#2968, #2969).
+- **An automated applier's safety lives in what it refuses.** The processor runs only commands the reviewed cases file names, only allowed scripts, only with `--expect`; a failed step stops the rest and marks the case `partial`, never re-run. Tested in a temporary git repo with a stand-in script.
+- **A public file never carries an address.** Cases name an addressee handle; the processor's `done.by` names the ruling key, not the reviewer.
+- **A relayed ruling and a direct one can disagree in time.** COBIx relayed Sam lifting call 9 at 13:10Z; Sam asked at ~14:25Z to put it on a sheet. One plain question settled it (lifted). Ask; do not pick the relay.
+- **Measure grants before revoking them, and roll back to the measurement.** The TRUNCATE rollback restores the exact per-table grants read just before (91 anon, 92 authenticated), not a blanket re-grant.
+- **A UI that logs on return logs refusals.** The CSM workspace logged "Accepted" before the save read back; the funding tab's own email waited correctly. The action now answers with the re-read (#2973).

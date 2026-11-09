@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 611 (SkyTadpole, Sam's hand-opened session, 2026-11-08 17:53Z to ~19:50Z; the CPL Queue routine fires next at 2026-11-09 06:12Z)
 tags: [handoff, commons, common-subjects-reference, disposition-grain-student-detail, map-custom-reports, cpl-memory]
 status: current
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 612

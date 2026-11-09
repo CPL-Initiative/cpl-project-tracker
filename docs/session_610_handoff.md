@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 609 (SkyPegasus, the CPL Queue routine's 14:12Z firing, 2026-11-08)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 610
