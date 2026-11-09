@@ -152,6 +152,7 @@ window.COBI_ADMIN_SURFACE = {
         "funding_access_pending",
         "is_allowed_reviewer",
         "is_funding_approver",
+        "is_funding_reviewer",
         "map_coordinator_summary",
         "map_landing_contacts_roster"
       ],

@@ -201,6 +201,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `funding_approvers_set` | tabs: `admin` | — |
 | `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · `edgefn:cpl-chat` | — |
 | `is_funding_approver` | tabs: `csm-workspace` | — |
+| `is_funding_reviewer` | tabs: `csm-workspace` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
@@ -1354,5 +1355,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 110 Supabase tables · 61 RPCs · 14 edge functions · 830 file
+Coverage: 110 Supabase tables · 62 RPCs · 14 edge functions · 830 file
 datasets · 194 external services · 543 consumers · 65 workflows · 40 tabs.

@@ -84,11 +84,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("1d: the workspace's stage follows: waiting on the team, then held or qualifying",
     W._stageOf(mt) === "waiting" && ["held", "qual"].indexOf(W._stageOf(pc)) >= 0);
   const reads = (SRC.match(/fetch\(R\.url \+ "([a-z_/]+)/g) || []).map((m) => m.replace(/^fetch\(R\.url \+ "/, "")).sort();
-  check("1e: the source acts through the funding tab's snapshot; it writes only its own log and the access rulings, and reads the three contact sources and the access queue",
+  check("1e: the source acts through the funding tab's snapshot; it writes only its own log and the access rulings, and reads the three contact sources, the access queue and whether the sign-in still has funding access",
     /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1/.test(SRC) &&
     JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/map_landing_contacts_roster"]) &&
     JSON.stringify((SRC.match(/accessPost\("([a-z_/]+)"/g) || []).map((m) => m.replace(/^accessPost\("|"$/g, "")).sort()) ===
-      JSON.stringify(["rpc/funding_access_decide", "rpc/funding_access_pending", "rpc/is_funding_approver"]) &&
+      JSON.stringify(["rpc/funding_access_decide", "rpc/funding_access_pending", "rpc/is_funding_approver", "rpc/is_funding_reviewer"]) &&
     (SRC.match(/method: "POST"/g) || []).length === 2 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
   check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
     flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
@@ -475,6 +475,54 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("12f: the email copy of the logo is in the repo and small",
     fs.existsSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")) &&
     fs.statSync(path.join(ROOT, "sierra", "cpl-initiative-logo-navy-email.png")).size < 12000);
+}
+
+// ── 13x. a sign-in whose funding access has ended says so and offers Ask an approver (the reviewer-session-lifetime
+//         lane: "a door sign-in whose grant has lapsed while its tab stayed open reads as signed in with nothing
+//         opening") ─────────────────────────────────────────────────────────────────────────────────────────────
+{
+  const { window, W, root } = setup({ signedIn: true });
+  let grant = true, grantFails = false, asked = [];
+  window.CPL_FUNDING_NO_REMOTE = false;
+  window.fetch = function (url) {
+    url = String(url);
+    const ans = (v, ok) => Promise.resolve({ ok: ok !== false, status: ok === false ? 500 : 200, json: () => Promise.resolve(v) });
+    if (/rpc\/is_funding_reviewer/.test(url)) return grantFails ? ans({}, false) : ans(grant);
+    if (/rpc\/is_funding_approver/.test(url)) return ans(false);
+    return ans([]);
+  };
+  window.CPL_REVIEWER_SIGNIN = Object.assign(window.CPL_REVIEWER_SIGNIN || {}, {
+    _askAccess: (email) => { asked.push(email); return Promise.resolve({ ok: true }); } });
+  const note = () => root.querySelector('section[aria-labelledby="cw-grant-h"]');
+  W._access.asked = false; W.paint();
+  await tick(); await tick(); await tick();
+  check("13x-a: with access standing, no note draws", !note() && W._grant.ok === true);
+  grantFails = true; await W._readGrant(); await tick();
+  check("13x-b: a check that fails leaves the screen as it was", !note() && W._grant.ok === true);
+  grantFails = false; grant = false; await W._readGrant(); await tick();
+  check("13x-c: ⭐ the database says the access ended: the workspace says so, to the address signed in",
+    !!note() && /Your funding access has ended/.test(flat(note())) && /lasts 30 days/.test(flat(note())) &&
+    /@/.test(flat(note().querySelector(".signin"))), note() && flat(note()));
+  const ask = () => note().querySelector('button[data-grant="ask"]');
+  check("13x-d: and offers Ask an approver, as a word", !!ask() && flat(ask()) === "Ask an approver" &&
+    !root.querySelector('section[aria-labelledby="cw-acc-h"]'));
+  clickEl(window, ask());
+  await tick(); await tick();
+  check("13x-e: Ask an approver sends the door's request for that address, once", asked.length === 1 && /@/.test(asked[0]) &&
+    flat(note().querySelector(".signin")).indexOf(asked[0]) === 0);
+  check("13x-f: and says it asked, in a status line", /^Asked\. An approver will see it/.test(flat(note().querySelector('[role="status"]'))));
+  // An approver declines: the door says so, and the note must not go on saying "Asked" (COBIx on PR 3007).
+  window.dispatchEvent(new window.CustomEvent("cpl-funding-door-said", { detail: { msg: "An approver declined the request.", kind: "err" } }));
+  await tick();
+  check("13x-f2: ⭐ a declined request shows in the note, and Ask an approver stays to ask again",
+    /^An approver declined the request\.$/.test(flat(note().querySelector('[role="status"]'))) && !!ask() && !ask().disabled);
+  grant = true; await W._readGrant(); await tick();
+  check("13x-g: once an approver opens it again, the note leaves", !note() && W._grant.ok === true);
+  window.dispatchEvent(new window.CustomEvent("cpl-funding-door-said", { detail: { msg: "That approval has lapsed. Ask again.", kind: "err" } }));
+  await tick();
+  check("13x-h: the door's words draw nothing while the access stands", !note());
+  check("13x-i: the sign-in component announces what the door says (the source)",
+    /dispatchEvent\(new CustomEvent\("cpl-funding-door-said"/.test(require("fs").readFileSync("reviewer_signin.js", "utf8")));
 }
 
 // ── 14. a figure card opens what it counts (Sam's rule, 2026-11-05; the workspace, 2026-11-09: "when I click cpl
