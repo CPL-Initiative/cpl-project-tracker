@@ -1001,6 +1001,11 @@
         acts: function (id) { return [skyLink(id)]; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
+      // The jobs first, in the order to act on them, then the census words (Sam, 2026-11-09, issue 2997: "put them
+      // in order of priority for me to act on ... categorize the ones that need action and the others that are just
+      // convenient filters"). No filter's meaning moves.
+      filterGroups: [{ label: "To do", ids: ["doubt", "stray", "nodesc", "units", "seedless"] },
+        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E"] }],
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
       uncounted: function (id) { return isJob(id) && !jobReady(id); },
       onFilter: function (id) { return isJob(id) ? loadJobs() : null; }

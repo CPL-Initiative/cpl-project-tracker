@@ -59,6 +59,37 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(1) the current word keeps its count, and counting leaves the filter where it was",
     txt(a.d.querySelector('#cl-filters [aria-current="true"]')) === "Group two (2)" && a.state.f === "two" && titles(a.d) === "Bravo|Charlie", titles(a.d));
 
+  // (1b) filterGroups (Sam, 2026-11-09, issue 2997): the words in named groups, each group's own order, counts kept.
+  {
+    const g = boot({ spec: { filterGroups: [{ label: "To do", ids: ["suggested", "two"] }, { label: "Browse", ids: ["", "selected"] }] } });
+    const groups = Array.from(g.d.querySelectorAll("#cl-filters > .cl-fgroup"));
+    const inside = (el) => Array.from(el.children).map(txt).join("|");
+    check("(1b) the groups draw in the order given, each with its label first and its words in the group's order",
+      groups.length === 2 && inside(groups[0]) === "To do|Suggested (2)|Group two (2)" && inside(groups[1]) === "Browse|All (4)|Selected (0)",
+      groups.map(inside).join(" / "));
+    check("(1b) a group is a named group to a screen reader, and its label is text, never a control",
+      groups[0].getAttribute("role") === "group" && groups[0].getAttribute("aria-label") === "To do" &&
+      groups[0].firstElementChild.tagName === "SPAN" && !groups[0].firstElementChild.matches("button"));
+    check("(1b) a word no group names still draws, after the groups",
+      txt(g.d.querySelector("#cl-filters").lastElementChild) === "Changed this visit (0)");
+    words(g.d, "Group two").click(); await settle();
+    check("(1b) a grouped word still filters, and reads current inside its group",
+      g.state.f === "two" && titles(g.d) === "Bravo|Charlie" &&
+      txt(g.d.querySelector('#cl-filters .cl-fgroup [aria-current="true"]')) === "Group two (2)");
+  }
+  // (1c) the Courses List's order (issue 2997): the jobs first, Discipline in doubt leading; then the census words.
+  {
+    const COCI = fs.readFileSync("coci_lookup.js", "utf8");
+    const m = COCI.match(/filterGroups: \[\{ label: "To do", ids: \[([^\]]*)\] \},\s*\{ label: "Browse", ids: \[([^\]]*)\] \}\]/);
+    const ids = (x) => (x || "").split(",").map((v) => v.trim().replace(/"/g, ""));
+    const all = (COCI.match(/var LIST_FILTERS = \[([\s\S]*?)\];/)[1].match(/\["[^"]*"/g) || []).map((v) => v.slice(2, -1))
+      .concat((COCI.match(/var JOB_FILTERS = \[([\s\S]*?)\];/)[1].match(/\["[a-z]+", "/g) || []).map((v) => v.slice(2, -4)));
+    check("(1c) To do is the five jobs in Sam's order; Browse is the ten census words",
+      !!m && ids(m[1]).join() === "doubt,stray,nodesc,units,seedless" && ids(m[2]).join() === ",mid,nomid,cid,ccn,any,none,C,N,E", m && m[1]);
+    check("(1c) every filter the list has sits in exactly one group",
+      !!m && all.slice().sort().join() === ids(m[1]).concat(ids(m[2])).sort().join(), all.join());
+  }
+
   // (2)
   const b = boot();
   words(b.d, "Suggested").click(); await settle();

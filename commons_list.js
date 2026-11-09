@@ -24,6 +24,7 @@
 //   noun               { many: "credentials", region, keyHeader, file, placeholder, findLabel }.
 //   head(wrap, api)    Draws above the finder; return false to stop (still loading, or an error).
 //   filters            [[id, label]]; filterPass(r, L) says whether a row stays; onFilter(id, api) may return a promise.
+//   filterGroups       [{ label, ids }] (optional): the filter words drawn in named groups, in each group's order.
 //   hay(r)             The words the finder searches.
 //   afterBar(wrap, api), beforeTable(wrap, api): blocks the tab adds under the finder and above the table.
 //   titleSubs(r, L, aiOn): nodes under a row's title (a pending rename, a suggestion).
@@ -316,15 +317,31 @@
     function listFilterBar() {
       var L = listState(), n = listFilterCounts();
       var fl = el("div", { cls: P + "filters", id: P + "filters", role: "group", "aria-label": "Show" });
-      S.filters.forEach(function (f) {
+      var one = function (f, into) {
         var label = f[1] + (n[f[0]] != null ? " (" + fmt(n[f[0]]) + ")" : "");
-        if (f[0] === L.f) fl.appendChild(el("span", { cls: CL.on, "aria-current": "true", text: label }));
-        else fl.appendChild(word(label, function () {
+        if (f[0] === L.f) into.appendChild(el("span", { cls: CL.on, "aria-current": "true", text: label }));
+        else into.appendChild(word(label, function () {
           L.f = f[0]; L.limit = LIST_LIMIT;
           var p = S.onFilter ? S.onFilter(f[0], api) : null;
           if (p && p.then) p.then(render, render); else render();
         }));
-      });
+      };
+      // filterGroups: the words in named groups, each on its own line and in the order the group gives (Sam,
+      // 2026-11-09, on the Courses List: "put them in order of priority for me to act on ... categorize the ones that
+      // need action and the others that are just convenient filters"). A word no group names follows, ungrouped.
+      if (S.filterGroups && S.filterGroups.length) {
+        var seen = {};
+        S.filterGroups.forEach(function (g) {
+          var box = el("span", { cls: P + "fgroup", role: "group", "aria-label": g.label });
+          box.appendChild(el("span", { cls: P + "fglabel", text: g.label }));
+          (g.ids || []).forEach(function (id) {
+            var f = S.filters.filter(function (x) { return x[0] === id; })[0];
+            if (f && !seen[id]) { seen[id] = true; one(f, box); }
+          });
+          if (box.childNodes.length > 1) fl.appendChild(box);
+        });
+        S.filters.forEach(function (f) { if (!seen[f[0]]) one(f, fl); });
+      } else S.filters.forEach(function (f) { one(f, fl); });
       return fl;
     }
     function listRows() {
@@ -1335,6 +1352,8 @@
         p + "bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:8px 0}",
         p + "q{flex:1 1 280px;max-width:520px}",
         p + "filters{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8125rem}",
+        p + "fgroup{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;flex:1 1 100%}",
+        p + "fglabel{font-weight:600;color:var(--text-strong)}",
         p + "re{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:4px 0 8px}",
         p + "re{flex-direction:column;align-items:stretch;max-width:760px}",
         p + "relabel{font-size:.8125rem;color:var(--text-strong);font-weight:600}",
