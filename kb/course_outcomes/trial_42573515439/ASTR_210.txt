@@ -1,0 +1,103 @@
+Course Outline
+ASTR 210 - ASTRONOMY
+Basic Course Information
+Course Number:
+ASTR 210
+Effective: Spring 2025
+Last Reviewed: 01-29-13
+Course Title: ASTRONOMY
+Department: Astronomy
+Division: Earth, Engineering, and Physical Sciences
+Total Student Hours and Credit
+ 	Hours/Week	Hours/Term
+Lecture Hours - in class	3.00	54.00
+Lecture Hours - out of class	6.00	108.00
+Lecture Units of Credit	3.00
+Lab Hours - in class	0.00	0.00
+Lab Hours - out of class	0.00	0.00
+Lab Units of Credit	0.00
+Activity Hours - in class	0.00	0.00
+Activity Hours - out of class	0.00	0.00
+Activity Units of Credit	0.00
+Work Experience Hours	0.00	0.00
+Work Experience Units of Credit	0.00
+Hours From Above Offered as TBA	0.00
+Total Student Hours per term	162.00
+Hours per unit Divisor	54
+Units of Credit	3.00
+Catalog Description Presents the astronomy of planets, satellites, asteroids, comets, meteors, the sun, stars, and galaxies.
+Schedule Description Presents the astronomy of planets, satellites, asteroids, comets, meteors, the sun, stars and galaxies. Prerequisite: Elementary algebra or eligibility for college-level math using the current college process. Advisory: Eligibility for ENGL C1000. Transfer: CSU; UC. (Formerly ASTR10)
+Prerequisites: Elementary algebra or eligibility for college-level math using the current college process.
+Advisories: Eligibility for ENGL C1000
+Minimum Qualifications Discipline Designation MQDD:
+Physics/Astronomy
+Degree Applicability:
+Credit - Degree Applicable
+Methods of Instruction:
+Lecture, Distance Education, Correspondence Education,
+Grading Method(s):
+Letter Grade or P/NP
+Course Cap: 96
+Face-to-Face Modality Limit:
+96
+DE Modality Limit:
+96
+Student Learning Outcomes
+Understand cycles and motions of the sun, moon, stars, and planets.
+Describe and explain how light is collected and analyzed in astronomy.
+Describe and explain properties and lives of stars and galaxies.
+Compare and contrast features of planets and other solar system objects.
+Discuss and evaluate astronomy content and value of statements from literature, media, and popular culture.
+Course Content
+Objectives:
+Objective Upon completion of this course, the student should be able to: 1. Explain and coordinate systems used in astronomy and how/why each is used: a. longitude and latitude b. altitude and azimuth c. right ascension and declination 2. Describe the motions of the sun and moon as seen from the earth and as seen from outside the earth. 3. Explain the causes of the seasons, the phases of the moon, and the motions of the stars and planets. 4. Use a star chart to recognize astronomical objects and describe the motions of the sun and moon. 5. Explain the difference between and usefulness of sidereal and solar time. 6. Describe the Ptolemaic System. 7. Describe the Copernican System. 8. Explain contributions of certain astronomers. 9. Describe the laws of force, motion and gravitation. 10. Explain the difference between speculation, hypothesis, theories, and observations. 11. Explain the difference between belief in an idea and scientific proof. 12. Describe characteristics of each of the planets and their satellite systems. 13. Describe how to calculate the size of a planet given the distance to the planet and its subtended angle. 14. Calculate various properties of the ellipse. 15. Explain how information is gleaned from the light of distant objects. 16. Explain why stars have different brightnesses. 17. Describe the physical processes occurring inside stars. 18. Explain how we know the distances to some stars. 19. Explain why stars evolve and what they evolve into. 20. Calculate the distances to stars, knowing their apparent and absolute magnitudes. 21. Describe the contents of our Milky Way galaxy and explain how they are related to the galaxy's evolution. 22. Recognize other galaxies and describe their basic properties. 23. Explain the evidence for an expanding universe. 24. Explain the possible origins and fate of the universe.
+Topics & Scope:
+1. Astronomical reference systems of the sky.
+2. Motions in the sky of the sun, moon, planets, and stars.
+3. Early theories of the solar system. (Ptolemy, Copernicus)
+4. Laws of planetary motion and gravity. (Kepler, Galileo, Newton)
+5. Mechanics of planetary orbits and space flight.
+6. Earth as a planet.
+7. Properties of the moon.
+8. Physical processes and descriptions of Mercury, Venus, Mars,
+Jupiter, Saturn, Uranus, Neptune, and Pluto.
+9. Physical processes and descriptions of the moons and rings of the
+planets.
+10. Comets, asteroids, and meteors.
+11. Ideas of the formation of the solar system.
+12. Properties of light and telescopes.
+13. Stellar spectra and the formation of spectral lines.
+14. The sun as a star.
+15. Physical processes in stars.
+16. Evolution of stars and their end products.
+17. Properties and evolution of our Milky Way galaxy.
+18. Physical processes in other normal and peculiar galaxies.
+19. Explansion of the universe.
+20. The Big Bang and cosmology.
+(Obj 1)
+Assignments:
+Independent Work (minimum 2 examples):
+Primarily College Level. Library has resources needed for assignment completion. 2 hours of independent work done out of class per each hour of lecture or class work, or 3 hours lab, practicum, or the equivalent, per unit. Lecture: 1. Readings from text and Sky and Telescope. 2. Write answers to homework questions. 3. Calculate answers and draw labeled diagrams. 4. Combination of 1, 2, and 3 above. Class participation and assignments require and develop critical thinking. Critical thinking will be demonstrated by applying astronomy principles to problem solving, such as determining the future position of the planet Mars on a given date and time.
+(Obj )
+Texts, Reading, and Materials:
+Textbooks:
+Bennett, J. O. Donahue, M. O. Schneider, N. Voit, M. The Essential Cosmic Perspective (8th/e). Pearson, (2018).
+
+General Education:
+Cuesta General Education
+
+General Education Categories (effective 2025)
+
+Area 5: Natural Sciences
+General Education Categories and Requirements (ended 2025)
+A. Physical and Life Sciences
+Transfer General Education
+
+Cal-GETC
+5A - Physical Science
+CSU General Education
+B1 - Physical Science
+IGETC
+5A - Physical Sciences
+UC Transfer Course
+CSU Transfer Course
