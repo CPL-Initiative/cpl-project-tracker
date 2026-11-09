@@ -623,7 +623,7 @@
   var DSRC_WORDS = { top_code: "from its TOP code, a last-in-line signal that waits on a second signal or a person",
     top_division: "from its TOP division, a last-in-line signal that waits on a second signal or a person",
     subject_map: "from its subject code", subject_map_edge: "from its subject code", title_keyword: "from words in its title",
-    description: "from its catalog description", coci_reference: "from COCI's reference", crossdisc_remint: "from a re-mint across disciplines" };
+    description: "from its catalog description", description_and_top: "from its seed, confirmed by its catalog description with its TOP code agreeing", coci_reference: "from COCI's reference", crossdisc_remint: "from a re-mint across disciplines" };
   function ccRedraw() { var api = listApi(); if (api && api.redraw) api.redraw(); }
   function ccLoad() {
     if (CC.byId || CC.loading || CC.failed) return;
