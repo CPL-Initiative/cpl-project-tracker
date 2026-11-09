@@ -1,0 +1,53 @@
+{
+  "_about": "The Docket's cases (#2963 step 2, Sam's go in session 2026-11-09). One record per decision a reviewer rules on in the Commons, written by a session (source `session`), a procedure (`procedure`), or later the public (`cfby`, not built: it waits on its own privacy design and General Counsel's sign-off). This file is served on Pages, so it holds curation data only, never an email: `addressee` is a handle, and Open Asks cards stay on their sheets until Sam rules on call 9 (step 4). Each case names the register row that owns its decision (`dr`). A ruling saves to kb_curation as course_id `_DOCKET::<id>`, field `docket_ruling`, value JSON {case, choice, note}; read them with kb/_docket_rulings.py. A session that carries a ruling out sets `status` to `done` with `done` {choice, by, at, receipt}.",
+  "schema": 1,
+  "cases": [
+    {
+      "id": "2026-11-09-ccr-next-five",
+      "source": "session",
+      "filed_by": "S615, the CPL Queue routine",
+      "filed_at": "2026-11-09",
+      "addressee": "sam",
+      "dr": "DR-25",
+      "lane": "commons",
+      "ref": "course",
+      "decides": "Confirm the next five disciplines where the descriptions and TOP both agree?",
+      "size": {"n": 753, "unit": "courses"},
+      "evidence": [
+        "You confirmed Kinesiology on Sheet 174, and its 627 courses now carry their discipline from the seed, confirmed by the catalog description with TOP agreeing. The discipline itself did not change, and one command takes the whole change back from its receipt.",
+        "The same test confirms 753 courses in the next five disciplines: Music 250, Fire Technology 169, Mathematics 128, Child Development/Early Childhood Education 107 and English 99. Their courses for a curator (Music 75, Fire Technology 2, Mathematics 1, Child Development 6, English 24) keep their score until a person rules on them in the Discipline in doubt job.",
+        "Each discipline gets its own receipt and reverses on its own. Counts measured with the apply script's dry run on 2026-11-09."
+      ],
+      "links": [
+        {"href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_recheck_dryrun/report.md", "text": "The seed re-check report"},
+        {"href": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/ccr_seed_confirm_out/2026-11-09/kinesiology.json", "text": "Kinesiology's receipt"},
+        {"href": "#coci-lookup/list/doubt", "text": "Discipline in doubt"}
+      ],
+      "choices": [
+        {"value": "five", "words": "Confirm the five", "recommended": true},
+        {"value": "all", "words": "Every discipline"},
+        {"value": "one", "words": "One at a time, Music first"},
+        {"value": "later", "words": "Later"}
+      ],
+      "plans": {
+        "five": [
+          "python3 kb/_ccr_seed_confirm_apply.py --discipline Music --expect 250 --apply",
+          "python3 kb/_ccr_seed_confirm_apply.py --discipline 'Fire Technology' --expect 169 --apply",
+          "python3 kb/_ccr_seed_confirm_apply.py --discipline Mathematics --expect 128 --apply",
+          "python3 kb/_ccr_seed_confirm_apply.py --discipline 'Child Development/Early Childhood Education' --expect 107 --apply",
+          "python3 kb/_ccr_seed_confirm_apply.py --discipline English --expect 99 --apply"
+        ],
+        "one": ["python3 kb/_ccr_seed_confirm_apply.py --discipline Music --expect 250 --apply"],
+        "all": [],
+        "later": []
+      },
+      "plan_words": {
+        "all": "A session runs the dry run for every discipline and applies each with its own count and receipt.",
+        "later": "Nothing changes; the seed cards stay capped at 0.79."
+      },
+      "no_reply": "The five disciplines' seed cards stay capped at 0.79; nothing in the catalog changes.",
+      "sheet": "https://claude.ai/artifact/RytJhApuMxGp11U8NtyDrj",
+      "status": "open"
+    }
+  ]
+}
