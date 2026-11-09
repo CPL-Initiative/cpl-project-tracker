@@ -59,7 +59,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "diesel mechanics - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -90,7 +93,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engine performance - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -134,7 +140,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.2
+    "title": 0.2,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -167,7 +176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -199,7 +211,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental assisting - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -229,11 +244,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics: a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 1967
+  "text_chars": 1959
  },
  {
   "control_number": "01132",
@@ -264,7 +282,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "psychology: a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -311,7 +332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "history: a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -343,7 +367,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "sociology: a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -386,7 +413,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -415,7 +445,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -444,7 +477,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chassis and drivetrain - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -484,11 +520,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engine repair specialist - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 6162
+  "text_chars": 6197
  },
  {
   "control_number": "09013",
@@ -534,7 +573,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "auto paint - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -568,7 +610,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.2
+    "title": 0.2,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -621,7 +666,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "diesel mechanics - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -687,7 +735,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engine performance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -715,11 +766,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engine repair specialist - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 5694
+  "text_chars": 5759
  },
  {
   "control_number": "19833",
@@ -741,7 +795,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "auto body - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -767,7 +824,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "auto paint - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -799,7 +859,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.2
+    "title": 0.2,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -833,7 +896,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.2
+    "title": 0.2,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -865,7 +931,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental assisting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -932,11 +1001,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics: a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3181
+  "text_chars": 3173
  },
  {
   "control_number": "31164",
@@ -944,7 +1016,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.954,
+  "coverage": 0.989,
   "codes_found": [
    "AFRAM1",
    "AFRAM10",
@@ -992,6 +1064,9 @@
    "HISTC1002",
    "HUMAN13A",
    "HUMAN60",
+   "M/LAT18A",
+   "M/LAT18B",
+   "M/LAT40",
    "POLSC1000",
    "POSCI2",
    "POSCI26",
@@ -1037,11 +1112,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts emphasis in social and behavioral sciences: a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 87,
-  "text_chars": 8208
+  "text_chars": 8204
  },
  {
   "control_number": "31165",
@@ -1093,11 +1171,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 38,
-  "text_chars": 4451
+  "text_chars": 4447
  },
  {
   "control_number": "31166",
@@ -1105,7 +1186,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 0.986,
   "codes_found": [
    "ANTHR7",
    "ART1",
@@ -1153,6 +1234,11 @@
    "HUMAN2",
    "HUMAN3",
    "HUMAN60",
+   "M/LAT2A",
+   "M/LAT2B",
+   "M/LAT3",
+   "M/LAT30A",
+   "M/LAT30B",
    "MUSIC10",
    "MUSIC15A",
    "MUSIC15B",
@@ -1181,7 +1267,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts emphasis in arts and humanities: a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 72,
@@ -1210,7 +1299,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history: a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1243,7 +1335,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science: a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1276,7 +1371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1309,7 +1407,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1342,7 +1443,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology: a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1371,7 +1475,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "transportation, distribution and logistics - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1415,7 +1522,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "kinesiology: athletic trainer aide - certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 26,
@@ -1447,11 +1557,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3329
+  "text_chars": 3321
  },
  {
   "control_number": "37416",
@@ -1496,7 +1609,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "tutor training: certificate of completion (noncredit)",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -1523,7 +1639,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "pathway to academic english: certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1554,7 +1673,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "pathway to success: certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1579,7 +1701,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol intermediate -  certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1610,7 +1735,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "practitioner of fine art - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1646,7 +1774,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol high beginning - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1670,7 +1801,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol advanced - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1695,7 +1829,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "making with hand tools: certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1733,7 +1870,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music: gospel music performance: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1771,7 +1911,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "coa",
+    "section_line": "jazz studies/popular music performance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1815,11 +1958,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3192
+  "text_chars": 3184
  },
  {
   "control_number": "41482",
@@ -1846,7 +1992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "geography - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1876,7 +2025,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "communication studies - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1917,11 +2069,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "geology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2431
+  "text_chars": 2423
  },
  {
   "control_number": "41837",
@@ -1956,7 +2111,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "desktop support technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1985,11 +2143,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "general chemistry - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2870
+  "text_chars": 2862
  },
  {
   "control_number": "42835",
@@ -2034,7 +2195,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "making with desktop cutter: certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2064,7 +2228,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2101,7 +2268,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "noncredit",
+    "section_line": "making with the dye sublimation: certificate of completion making with dye sublimation printer - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2126,7 +2296,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "making with the printer cutter: certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2151,7 +2324,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "making with the 3d printer: certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2185,7 +2361,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2217,7 +2396,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2252,7 +2434,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital literacy and critical inquiry - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
