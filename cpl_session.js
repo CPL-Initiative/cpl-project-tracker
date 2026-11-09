@@ -93,10 +93,20 @@
 
   /* Closing the browser used to end the session; now it does not. This caps how
    * long a shared session may be revived for, so a machine left signed in does
-   * not stay that way indefinitely. Deliberately ONE constant: a reviewer
-   * credential outliving the working day is the trade this change makes, and it
-   * should be adjustable without reading the rest of the file. */
-  var MAX_SHARED_AGE_MS = 12 * 60 * 60 * 1000;
+   * not stay that way indefinitely. Deliberately ONE constant, adjustable
+   * without reading the rest of the file.
+   *
+   * 30 days (Sam, 2026-11-09, in session: "30 days sounds good"; "everyone if
+   * cobix is OK with it"). It was 12 hours. The funding door (#2983) made the
+   * shorter limit expensive: an approver's yes lasts 30 days in the database,
+   * but a teammate whose browser had been closed overnight came back signed out
+   * and needed a second yes, every working day. The limit is this browser's
+   * alone. The auth server does not time-box a session, and a tab left open has
+   * always outlived this cap (measured that day: 54 of 132 sessions past 12
+   * hours, the longest 20 days), so what it bounds is a browser reopened later.
+   * What a sign-in opens is still decided in the database at every call: the
+   * reviewer list, and for a door sign-in its 30-day grant. */
+  var MAX_SHARED_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 
   // Renew this far ahead of expiry. Comfortably longer than a slow round trip,
   // so a request is never sent on a token that dies mid-flight.

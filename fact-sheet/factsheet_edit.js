@@ -261,7 +261,7 @@
    *   2. ?curate=1 — the escape hatch, and the reason the session path alone is
    *      not enough. Hiding the button ALSO hides the only way to START signing
    *      in, which strands a curator on a new laptop or one past the keeper's
-   *      12h cap. The param is stripped from the address bar the moment it is
+   *      30-day cap. The param is stripped from the address bar the moment it is
    *      read (the same treatment captureHash() gives an access token, for the
    *      same reason: the URL a curator copies out of their own bar should be
    *      the public one) and remembered per browser. ?curate=0 forgets it.
