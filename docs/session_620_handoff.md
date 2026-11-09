@@ -27,7 +27,7 @@ is in the lessons doc), and the sheet rebuild (Sheet 175's cards are unchanged).
    reconcile step sets Cal-GETC's 34 on transfer degrees (the Redwoods pattern); simulated with the scorer, 42964,
    33032 and 32765 read `equal`. Reconcile 42610498785 (no model call): **29 of 59 passing** (was 25): 32503, 33032,
    42964, 45292 pass; 31145, 32714, 37047 still fail their major's own sum, as before; 32765 did not take the step.
-   `step=reread` was dispatched about 11:55Z.
+   Reread 42612577841: 7 replaced, 0 errors. Display build c4bc9799a305, its apply in flight at sign-off.
 4. **Lessons doc compacted:** *Moved from the lane (S584)* (50 KB) moved verbatim to archive 4; the doc is under its cap.
 
 ## Decisions Sam made this run
@@ -38,10 +38,11 @@ Library's IACA and DSP Version 3 waits stand).
 
 ## Read first
 
-- **#2960's reread** (`program-requirements-college.yml`, `step=reread`, on `claude/catalog-alameda-transfer-s619`,
-  dispatched about 11:55Z): pull the branch and read its receipt (before-values). Then the display build
-  (`kb/_build_roep_display.py` on the branch, then `step=display`), and merge #2960 on a passing `test`. Why 32765 did
-  not take the step is a small question: its captured text (3,409 characters) may stop before the table's last lines.
+- **#2960's display apply** (run 42613918046, `step=display`, build c4bc9799a305, dispatched 12:04Z; still running at
+  12:20Z). The reread is done (42612577841: 7 replaced, 0 errors, receipt with rollback on the branch) and `test`
+  passed on 54a0ae2. Pull the branch: when the apply's receipt (`..._display_2026-10-23_c4bc9799a305.applied_<run>.json`)
+  shows 0 errors, merge #2960 (squash) on a passing `test` on its head. Why 32765 did not take the step is a small
+  question: its captured text (3,409 characters) may stop before the table's last lines.
 
 ## Open work, in order
 
@@ -76,6 +77,6 @@ Library's IACA and DSP Version 3 waits stand).
 
 ## Let go
 
-This session holds no PR subscription, no check-in and no artifact watch. #2960 is open with its reread in flight.
+This session holds no PR subscription, no check-in and no artifact watch. #2960 is open with its display apply (run 42613918046) in flight.
 
 > *Greetings, you are SkyHoag (Session 620), see SkyTadpole's handoff — `docs/session_620_handoff.md` — let's keep rolling with our queue.*
