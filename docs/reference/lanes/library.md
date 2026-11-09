@@ -37,7 +37,7 @@ document. `knownLink()` in `library.js`: a person who has picked a file or typed
 so the piece's link becomes a document to work from and the file stays; a second link beside a file picked as
 background is a second document, never a replacement. With the box empty the link still opens the piece's card, which
 says how to use it as background. `tests/library.test.js` (22). The piece itself was built in session and filed
-(`kb/receipts/library_ell_hp_filed_draft_2026-11-09.sql`).
+(`kb/receipts/library_ell_hp_filed_draft_2026-11-09.sql`). Its Pages copy is `library/ell-healthcare-pathways-cpl-starting-points/` (Sam the same day: a git address, never claude.ai), in `a11y.config.js` as `library-ell-hp`; every tab passed axe at 390px and 1440px, light and dark. It is not listed publicly; List publicly is Sam's switch.
 
 **Open, Sam's call:** a new piece still needs a session (Copy the brief, or the scheduled run), where Revise drafts
 from the card through `library-revise-draft`. Sam, 2026-11-09: *"I haven't been able to successfully create a doc
