@@ -572,3 +572,12 @@ passed.
   confirmed by the person who can see it (Sam's dashboard screenshot, #2922).
 - **Two migrations in flight both set `.apply`.** Resolving the second PR's conflict to `main`'s `.apply` kept the
   runner from re-applying the first (the gate runs when a branch's `.apply` differs from `main`'s).
+
+### S618 SkyPinwheel (2026-11-09): read back a grant before applying it
+
+- **`kb_curation`'s part 2 was already live when the handoff listed it open.** `supabase_migrations.schema_migrations`
+  showed it applied twice (04:06Z and 09:16Z), with no commit naming either. Read `has_column_privilege` for each column
+  before applying a grant a handoff names as pending; the read is the state, the handoff is a report of it.
+- **A column grant breaks only an anon read that names the column or omits `select=`** (`select *` expands to every
+  column). Writes under a reviewer's token run as `authenticated` and keep table SELECT, so a `return=representation`
+  upsert still answers.
