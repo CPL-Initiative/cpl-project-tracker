@@ -16697,8 +16697,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 578,
+   "count": 579,
    "docs": [
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 618,
+     "path": "docs/session_618_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "credential-registry",
+      "scheduled-sessions"
+     ],
+     "title": "Session 618 handoff: the night's credential watch merged, Orange Coast read, Alameda's totals asked",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26513,5 +26529,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1422
+ "total": 1423
 }

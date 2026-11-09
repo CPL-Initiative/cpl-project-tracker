@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1436,
-    "bytes": 14482032,
+    "files": 1437,
+    "bytes": 14488945,
     "over_budget": 6,
-    "handoff_max": 617,
+    "handoff_max": 618,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59914,
     "superseded_files": 8,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 146,
-        "bytes": 4426419,
+        "bytes": 4426571,
         "over": 1
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 516210,
+        "bytes": 517669,
         "over": 4
       },
       "handoff": {
-        "files": 578,
-        "bytes": 3975321,
+        "files": 579,
+        "bytes": 3980623,
         "over": 0
       }
     },
@@ -63,7 +63,7 @@
     },
     "vault": {
       "files": 26345,
-      "bytes": 4442552514,
+      "bytes": 4442538739,
       "heavy_bytes": 3194601180,
       "heavy_share": 0.719,
       "ignore_filters": [
@@ -226,13 +226,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20808,
+        "bytes": 22267,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 808,
-        "ratio": 1.04
+        "over_by": 2267,
+        "ratio": 1.11
       },
-      "message": "20,808 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "22,267 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -240,10 +240,10 @@
       "fixable": true,
       "detail": {
         "session": 607,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 607 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 607 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_607_handoff.md"
     },
     {
@@ -251,10 +251,10 @@
       "fixable": true,
       "detail": {
         "session": 608,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 608 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 608 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_608_handoff.md"
     },
     {
@@ -262,10 +262,10 @@
       "fixable": true,
       "detail": {
         "session": 609,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 609 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 609 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_609_handoff.md"
     },
     {
@@ -273,10 +273,10 @@
       "fixable": true,
       "detail": {
         "session": 610,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 610 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 610 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_610_handoff.md"
     },
     {
@@ -284,10 +284,10 @@
       "fixable": true,
       "detail": {
         "session": 611,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 611 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 611 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_611_handoff.md"
     },
     {
@@ -295,10 +295,10 @@
       "fixable": true,
       "detail": {
         "session": 612,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 612 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 612 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_612_handoff.md"
     },
     {
@@ -306,10 +306,10 @@
       "fixable": true,
       "detail": {
         "session": 613,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 613 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 613 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_613_handoff.md"
     },
     {
@@ -317,10 +317,10 @@
       "fixable": true,
       "detail": {
         "session": 614,
-        "authoritative": 617,
+        "authoritative": 618,
         "has_frontmatter": true
       },
-      "message": "handoff 614 is below the authoritative 617 but is not stamped `superseded: true`",
+      "message": "handoff 614 is below the authoritative 618 but is not stamped `superseded: true`",
       "path": "docs/session_614_handoff.md"
     },
     {
