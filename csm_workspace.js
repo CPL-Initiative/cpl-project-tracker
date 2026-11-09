@@ -1125,8 +1125,19 @@
         (why.length ? "\n\nNot met: " + why.join("; ") + "." : "") + "\n\nDeny removes the request, so the college can send another."); } catch (e) { ok = true; }
       if (!ok) return;
     }
-    if (f.act(name, kind, r.key)) {
-      var what = kind === "nc" ? "noncredit attestation" : "participation confirmation";
+    /* Accept and Deny log and speak only after the save reads back (COBIx on issue 2967, item 2; Sam's go 2026-11-09): f.act answers
+       with the re-read, so a refused save (an expired session, RLS) leaves csm_log, the message and the email untouched. */
+    var p = f.act(name, kind, r.key);
+    if (!p) return;
+    var what = kind === "nc" ? "noncredit attestation" : "participation confirmation";
+    var writes = name === "accept" || name === "deny";
+    if (writes) say(name === "accept" ? "Saving the acceptance…" : "Saving the denial…");
+    return Promise.resolve(p).then(function (res) {
+      var ok = res === true || !!(res && res.ok);
+      if (!ok) {
+        say("Not saved: the " + what + " from " + r.name + " is unchanged. Your sign-in may have ended: sign in again and try once more.");
+        return false;
+      }
       var entry = name === "accept" ? { kind: "email", body: "Accepted the " + what + "; the acceptance email opened to copy." }
         : name === "deny" ? { kind: "note", body: "Denied the " + what + "." + (why && why.length ? " Not met: " + why.join("; ") + "." : "") }
         : name === "follow" ? { kind: "email", body: "Follow-up email on the " + what + " opened to copy.", follow_up_on: plusDays(7) }
@@ -1134,7 +1145,8 @@
       logWrite("POST", null, Object.assign({ college: r.key }, entry));
       say(name === "accept" ? "Accepted. The acceptance email opens for you to copy." : name === "deny" ? "Denied: the request is removed." :
         name === "follow" ? "The follow-up email opens for you to edit and copy." : "The acceptance email opens again for you to copy.");
-    }
+      return true;
+    });
   }
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;

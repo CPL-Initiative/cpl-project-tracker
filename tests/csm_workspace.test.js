@@ -68,6 +68,8 @@ function setup(opts) {
 const flat = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
 const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 
+const tick = () => new Promise((r) => setTimeout(r, 0));
+(async function () {
 // ── 1. one read ──────────────────────────────────────────────────────────────
 {
   const { T, W, root } = setup({ signedIn: true });
@@ -137,6 +139,7 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
   W.paint();
   Array.from(root.querySelectorAll('.review input[data-check]')).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
+  await tick();
   const mt = T.csm.snapshot().rows.find((r) => r.key === COLLEGE);
   check("4a: Accept confirms the request through the review lane (the row reads confirmed)", mt.part.confirmed && !mt.part.waiting);
   check("4b: the acceptance email opens in the funding tab's window", !!window.document.getElementById("cplfund-maildlg"));
@@ -245,6 +248,7 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
   W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
   Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
+  await tick();
   check("7j: Accept logs itself: the email opened to copy, never sent", W._log().some((x) => x.college === COLLEGE && x.kind === "email" &&
     /Accepted the participation confirmation; the acceptance email opened to copy\./.test(x.body)));
 
@@ -317,4 +321,45 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
   check("8n: signed out, no contacts word, no email box, and no contact read", !anon.root.querySelector('[data-pop]') && !anon.root.querySelector("#cw-to"));
 }
 
+// ── 9. a refused save changes nothing (COBIx on issue 2967, item 2; Sam's go 2026-11-09) ────────────────────
+{
+  // The real save path: the funding tab's PATCH is refused (an expired session) and the re-read finds no confirmation.
+  const { window, T, W, root } = setup({ signedIn: true });
+  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
+  const before = W._log().length, sent = [];
+  window.CPL_FUNDING_NO_REMOTE = false;
+  window.fetch = function (url, init) {
+    sent.push({ url: String(url), method: (init && init.method) || "GET" });
+    if (init && init.method && init.method !== "GET") return Promise.resolve({ ok: false, status: 401, json: () => Promise.resolve({}) });
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+  };
+  clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
+  check("9a: while the save runs, the status says it is saving and nothing is logged yet", /Saving the acceptance/.test(flat(root.querySelector(".status"))) && W._log().length === before);
+  await tick(); await tick(); await tick();
+  check("9b: the save went to the participation table as a PATCH", sent.some((x) => x.method === "PATCH" && /cpl_funding_participation/.test(x.url)));
+  check("9c: a 401 on the save logs nothing and opens no acceptance email", W._log().length === before && !window.document.getElementById("cplfund-maildlg"));
+  check("9d: the status says plainly that nothing was saved", /Not saved: the participation confirmation from .+ is unchanged\./.test(flat(root.querySelector(".status"))));
+}
+{
+  // Deny, answered as refused by the funding tab: no entry and no "removed".
+  const { window, T, W, root } = setup({ signedIn: true });
+  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  const before = W._log().length;
+  T.csm.act = function () { return Promise.resolve({ ok: false }); };
+  window.confirm = () => true;
+  clickEl(window, root.querySelector('[data-verdict="part"] [data-act="deny"]'));
+  await tick();
+  check("9e: a refused Deny logs nothing and never says the request is removed", W._log().length === before &&
+    !/removed/.test(flat(root.querySelector(".status"))) && /Not saved/.test(flat(root.querySelector(".status"))));
+  T.csm.act = function () { return Promise.resolve({ ok: true }); };
+  clickEl(window, root.querySelector('[data-verdict="part"] [data-act="deny"]'));
+  await tick();
+  check("9f: a Deny that reads back logs once and says so", W._log().length === before + 1 && /Denied: the request is removed\./.test(flat(root.querySelector(".status"))));
+}
+check("9g: the funding tab answers Accept and Deny with the re-read, never a bare true",
+  /accept: function \(kind, key\) \{[\s\S]*?return Promise\.resolve\(p\)\.then\(function \(\) \{\s*return \{ ok: kind === "nc" \? ncAttestStanding\(ncAttestOf\(key\)\) : !!ELIG\.optin\[key\] \};/.test(FUND)
+  && /return CSM_ACT\[action\]\(kind, key\);/.test(FUND));
+
 finish();
+})();
