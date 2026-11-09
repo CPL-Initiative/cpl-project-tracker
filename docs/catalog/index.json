@@ -16697,8 +16697,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 583,
+   "count": 584,
    "docs": [
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 623,
+     "path": "docs/session_623_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "implementation-funding",
+      "reviewer-session-lifetime",
+      "commons",
+      "college-district-identity"
+     ],
+     "title": "Session 623 handoff: the eve of the rollout \u2014 the door live, 30 days, the cards, the noncredit attestation, the Noncredit CPL Lead rule, To do then Browse",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26595,5 +26613,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1427
+ "total": 1428
 }

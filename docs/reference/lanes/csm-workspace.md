@@ -77,11 +77,14 @@ comma (*Rivera, Ana*): names split on a new line or a semicolon alone.
 
 ## NEXT
 
-0. **The action center's list (Sam, 2026-11-09: *"see if it needs to be cleaned up or clarified"*; COBIx reviews it on
-   #2990's thread, Sam picks):** option groups (to do, by stage, by condition, everyone); a *No CPL Coordinator in MAP*
-   view (54 that day) and whether *Confirmed but missing the CPL Coordinator in MAP* then stays; a *Declined* view;
-   *Follow-ups open* beside the pill *Follow-up due*; the Noncredit card's name once the role in MAP counts beside the
-   attestation.
+0. **The action center's list: build it (Sam, 2026-11-09: *"go"* on COBIx's proposal, #2990's thread).** Two named
+   groups in the menu, no renames: **To do** (All open items, Ready to send, Waiting on the team, Follow-ups open,
+   Confirmed still held, Noncredit attestations waiting, Confirmed but missing the CPL Coordinator in MAP, Not yet
+   confirmed), then **Browse** (Qualifies, Confirmed, With a CPL Coordinator in MAP, Noncredit CPL Lead attested, All
+   institutions). Add two Browse lists: *No CPL Coordinator in MAP* (54 that day) and *Declined*. Each progress card
+   gains a short word for its gap (*4 still missing*; the attestations waiting), issue #2989. The menu is a
+   `<select>`: `<optgroup>` carries the groups. Then the Noncredit card's name, once the role in MAP counts beside
+   the attestation.
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.

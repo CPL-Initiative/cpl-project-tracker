@@ -94,3 +94,33 @@ Marin and Butte (the page lists one, the directory none).
 - **An Edge Function reading a table as service_role needs an explicit grant** in this project (the grants lint caught it).
 - **A new mount option must be passed through `mountInto`**, or the box renders without it (the door button; a jsdom test
   caught it).
+
+## 2026-11-09 (S622 SkyCartwheel): the eve of the rollout
+
+- **Merged is not served.** The door merged and both Pages deploys after it were refused (*in progress deployment*); a
+  third timed out at *syncing_files*. Sam reported the door "not working" while the database and the Edge Function were
+  live and the request table held no rows. The check that settled it was a `curl` of the served `reviewer_signin.js`
+  for the new words. Fix per troubleshooting: a fresh `pages.yml` dispatch, never `rerun_failed_jobs`.
+- **A panel that reads on a timer must rebuild its headers each read.** *Access requests* kept the headers from its
+  first read; the keeper replaces the token within the hour, the kept one is refused, and a refused read drew as an
+  empty queue. An approver with the page open through a rollout would have stopped seeing requests with no error.
+- **A section that draws only when it has rows hides where the work arrives.** An approver with nobody waiting saw
+  nothing and could not tell where to answer a request. The approver's section now always draws, with *Check now*.
+- **A helper that hides a literal hides a dependency.** Moving `rpc/<name>` into a helper's argument concatenation
+  dropped two RPCs from the dependency map; the call sites keep the literal path so the map still finds them.
+- **A roster row carries no award figure.** `ncAttestShown()` read `nc_award` off whatever row it was handed. The table
+  hands it a shaped row; the workspace's snapshot and the Nudge handed it a roster row, so both saw the three
+  noncredit-only institutions alone (*0 of 3* over twelve attestations on file, seven of them waiting). A count that
+  looks small beside what the database holds is worth tracing before anyone trusts the card.
+- **A what-if is not a safe fallback for a reviewer.** Giving a door sign-in the signed-out visitor's private what-if
+  would have let a stray edit change the minimum conditions that CSM's acceptance email quotes. The model reads as
+  published for a door sign-in, and that browser's what-if is set aside.
+- **The connector's migration prompt can time out with nobody there to answer.** `apply_migration` asked for a
+  confirmation on a `drop function`, waited 230 seconds and applied nothing. Rule 10 (c) is the route: the committed
+  file through `supabase-migrate.yml`, whose receipt commit is a bot push that starts no CI, so a commit of your own
+  follows it.
+- **Two PRs that touch the same module both regenerate `kb/dependency_map.json`,** which carries line numbers, so
+  the second always conflicts. Merge main into it and run the builder; never pick a side.
+- **The suite outgrew Node's default heap.** `tests/csm_workspace.test.js` builds the funding tab once per case and
+  needs the runner's `--max-old-space-size=12288` when run by hand.
+
