@@ -3,11 +3,11 @@
  "stats": {
   "supabase_tables": 108,
   "rpcs": 54,
-  "edge_functions": 12,
-  "file_datasets": 828,
+  "edge_functions": 13,
+  "file_datasets": 830,
   "external_services": 193,
-  "consumers": 538,
-  "workflows": 64,
+  "consumers": 540,
+  "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -150,6 +150,16 @@
    "producers": [
     {
      "by": "file:chatbox/supabase/functions/cpl-news-harvest/index.ts",
+     "how": "source"
+    }
+   ],
+   "main_committers": []
+  },
+  "edgefn:docket-process": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "file:chatbox/supabase/functions/docket-process/index.ts",
      "how": "source"
     }
    ],
@@ -536,6 +546,13 @@
   },
   "external:api.github.com/repos/": {
    "consumers": [
+    {
+     "id": "edgefn:docket-process",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 72
+    },
     {
      "id": "edgefn:workplan-rebuild",
      "kind": "edgefn",
@@ -1016,6 +1033,13 @@
      "direction": "read",
      "how": "url",
      "line": 48
+    },
+    {
+     "id": "edgefn:docket-process",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 27
     },
     {
      "id": "edgefn:library-revise-draft",
@@ -1775,7 +1799,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1242,
+     "line": 1279,
      "tabs": [
       "commons"
      ]
@@ -8813,6 +8837,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:docket-process.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:docket-process.yml"
+   ]
+  },
   "file:kb-portal/app.js": {
    "consumers": [
     {
@@ -9584,6 +9621,19 @@
    "consumers": [
     {
      "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_docket_process.py": {
+   "consumers": [
+    {
+     "id": "workflow:docket-process.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -25520,7 +25570,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1029,
+     "line": 1064,
      "tabs": [
       "commons"
      ]
@@ -27337,7 +27387,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 733,
+     "line": 768,
      "tabs": [
       "commons"
      ]
@@ -27347,7 +27397,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 716,
+     "line": 751,
      "tabs": [
       "commons"
      ]
@@ -28829,7 +28879,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1007,
+     "line": 1042,
      "tabs": [
       "commons"
      ]
@@ -30069,6 +30119,22 @@
    ],
    "adds": [],
    "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "docket-process.yml": {
+   "name": "Docket process",
+   "crons": [
+    "33 5 * * *"
+   ],
+   "scripts": [
+    "kb/_docket_process.py"
+   ],
+   "adds": [
+    "kb/"
+   ],
+   "push": "main",
    "deploys": [],
    "chain": [],
    "urls": []

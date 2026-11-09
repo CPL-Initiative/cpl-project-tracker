@@ -46,6 +46,10 @@ name: cpl-chat deploy
 # AND workplan-rebuild (S383, 2026-10-13): Annual Goals queues the dashboard build
 # after a save (Sam, Open Asks Sheet 75 card 2). verify_jwt off for the same reason:
 # it checks its caller (a reviewer's session or the team phrase) itself.
+#
+# AND docket-process (#2963 step 3, 2026-11-09): the Commons' "Process my rulings now"
+# dispatches docket-process.yml. verify_jwt off for the same reason: it checks its caller
+# (a reviewer's session only) itself.
 
 on:
   workflow_dispatch:
@@ -63,6 +67,7 @@ on:
           - cpl-chat
           - program-requirements-extract
           - workplan-rebuild
+          - docket-process
           - library-revise-draft
 
 concurrency:

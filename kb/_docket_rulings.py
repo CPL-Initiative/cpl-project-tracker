@@ -83,14 +83,15 @@ def read(cases, rows):
         if item["choice"] not in values:
             out["refused"].append(dict(item, why="the case offers %s" % ", ".join(values)))
             continue
-        if c.get("status") == "done":
-            out["done"].append(dict(item, done=c.get("done")))
+        if c.get("status") in ("done", "partial"):
+            # partial: some commands ran and one failed; a session finishes it from the receipt, never a re-run
+            out["done"].append(dict(item, status=c.get("status"), done=c.get("done")))
             continue
         plan = (c.get("plans") or {}).get(item["choice"]) or []
         words = (c.get("plan_words") or {}).get(item["choice"]) or ""
         out["act"].append(dict(item, decides=c.get("decides"), dr=c.get("dr"), plan=plan, plan_words=words))
     for c in cases:
-        if c.get("status") != "done" and c.get("id") not in ruled:
+        if c.get("status") not in ("done", "partial") and c.get("id") not in ruled:
             out["open_unruled"].append({"case": c.get("id"), "decides": c.get("decides"), "sheet": c.get("sheet")})
     return out
 
