@@ -406,7 +406,32 @@
   function missingWords(r) {
     return r.conds.filter(function (c) { return !c.met && !c.pending; }).map(function (c) { return c.words; });
   }
+  /* Ready to send (issue 2967, item 3, designed in the csm-workspace lane): the college whose next email is due. Confirmed
+     and no Acceptance sent receipt: the acceptance, with the conditions still waiting. Not yet confirmed and no nudge
+     in 14 days: the nudge. A request waiting on the team: Accept first, from the review. Sent writes the receipt, so
+     the college leaves the queue; a declined college never enters it. */
+  var NUDGE_SUBJ = /a participation confirmation for /;
+  function sentOf(r, re, days) {
+    var since = days ? plusDays(-days) : "";
+    return logFor(r.key).some(function (x) {
+      return x.kind === "email" && re.test(String(x.body || "")) && (!since || String(x.created_at || "").slice(0, 10) >= since);
+    });
+  }
+  function readyOf(r) {
+    if (r.declined) return null;
+    if (waitingKinds(r).length) return "wait";
+    // state.sent bridges the moment between a Sent that saved and the log's re-read.
+    var now = (state.sent || {})[r.key];
+    if (r.part.confirmed) return now === "accept" || sentOf(r, /^Acceptance sent: /) ? null : "accept";
+    return now === "nudge" || sentOf(r, /^Nudge sent: /) || sentOf(r, NUDGE_SUBJ, 14) ? null : "nudge";
+  }
+  var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
+    accept: "Send the acceptance.", nudge: "Send the nudge for the participation confirmation." };
   function nextStep(r) {
+    if (state.view === "send" && readyOf(r)) {
+      var rw = readyOf(r), mw = rw === "accept" ? missingWords(r) : [];
+      return READY_WORDS[rw] + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
+    }
     var w = waitingKinds(r);
     if (w.length === 2) return "Review the participation confirmation and the noncredit attestation.";
     if (w[0] === "part") return "Review the participation confirmation.";
@@ -443,6 +468,7 @@
 
   var VIEWS = {
     open: { label: "All open items", keep: function (r) { var s = stageOf(r); return s === "waiting" || s === "held" || !!dueOf(r); } },
+    send: { label: "Ready to send", keep: function (r) { return !!readyOf(r); } },
     due: { label: "Follow-ups open", keep: function (r) { return !!dueOf(r); } },
     review: { label: "Waiting on the team", keep: function (r) { return stageOf(r) === "waiting"; } },
     held: { label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
@@ -458,7 +484,9 @@
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     return VIEWS[state.view] && state.view !== "open" ? TAB + "/" + state.view : TAB;
   });
+  var READY_RANK = { accept: 0, nudge: 1, wait: 2 };
   function sortRank(r) {
+    if (state.view === "send") return READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 3;
     var s = stageOf(r), du = dueOf(r);
     if (s === "waiting") return 0;
     if (du && du.follow_up_on <= today()) return 1;
@@ -866,11 +894,12 @@
 
   // ── the email: To, Cc, More Cc, Subject, the words, Copy the email (asks 5, 8, 11, 12, 13) ──
   // The workspace never sends: Copy the email puts the formatted email (the logo on its signature line) on the
-  // clipboard for Outlook, Open a draft opens the mail program with To, Cc and Subject, and the log notes the copy.
+  // clipboard for Outlook, Open in Outlook opens the mail program with To, Cc and Subject, and the log notes the copy.
   var EMAIL_LOGO_URL = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/cpl-initiative-logo-navy.png";
   var EMAIL_LOGO_ALT = "California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office";
   var PUBLIC_FUNDING_URL = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/";
   var TEMPLATES = [
+    { id: "accept", label: "The acceptance, with what still waits" },
     { id: "follow", label: "Follow up on a condition" },
     { id: "nudge", label: "Nudge for the participation confirmation" },
     { id: "blank", label: "Blank" }];
@@ -901,6 +930,15 @@
     }
     var name = personWord(toName), college = r.name, missing = missingWords(r);
     var subject = "", body = "";
+    var am = tplId === "accept" && F() && typeof F().acceptMail === "function" ? F().acceptMail("part", r.key, prim ? { name: prim.name, email: prim.email } : null) : null;
+    if (tplId === "accept" && am) {
+      to = am.to || to; subject = am.subject; body = am.text;
+      cc = coord && coord.email.toLowerCase() !== String(to).toLowerCase() ? [coord.email] : [];
+      if (missing.length) body = body.replace(/\n*$/, "") + "\n\n" + (missing.length === 1 ? "One minimum condition still waits: " + missing[0] + "."
+        : "These minimum conditions still wait: " + missing.join("; ") + ".") + " The CPL Implementation Funding page explains each one: " + PUBLIC_FUNDING_URL;
+    } else if (tplId === "accept") {
+      tplId = "follow";
+    }
     if (tplId === "follow") {
       subject = "CPL Implementation Funding: a follow-up for " + college;
       body = "Dear " + name + ",\n\nThank you for your work on CPL Implementation Funding at " + college + ". In reviewing the college's record, " +
@@ -920,11 +958,14 @@
   }
   var LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   function longDay(v) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || "")); return m ? LONG[+m[2] - 1] + " " + +m[3] + ", " + m[1] : String(v || ""); }
+  function mailKey(r) { var rd = state.view === "send" ? readyOf(r) : null; return rd === "accept" || rd === "nudge" ? r.key + "|send" : r.key; }
   function mailOf(r) {
     state.mail = state.mail || {};
-    // A college with no participation confirmation gets the nudge; any other college a follow-up.
-    if (!state.mail[r.key]) state.mail[r.key] = seedMail(r, r.part.confirmed || r.part.waiting ? "follow" : "nudge");
-    return state.mail[r.key];
+    // A college with no participation confirmation gets the nudge; any other college a follow-up. In Ready to send the
+    // email is the one due (the acceptance or the nudge), kept under its own key so the record's draft is untouched.
+    var rd = state.view === "send" ? readyOf(r) : null, k = mailKey(r);
+    if (!state.mail[k]) state.mail[k] = seedMail(r, rd === "accept" || rd === "nudge" ? rd : r.part.confirmed || r.part.waiting ? "follow" : "nudge");
+    return state.mail[k];
   }
   function ccPickerHtml(r, m) {
     var c = contactsOf(r), picked = {};
@@ -963,9 +1004,11 @@
       ccPickerHtml(r, m) +
       '<label class="sr" for="cw-body">The email</label><textarea id="cw-body" class="search" data-mail="body" rows="10" style="min-height:180px;">' + esc(m.body) + "</textarea>" +
       '<div class="tpl-row"><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
-        '<button type="button" class="word" data-mailact="draft">Open a draft</button>' +
+        '<button type="button" class="word" data-mailact="draft">Open in Outlook</button>' +
+        (state.view === "send" && (readyOf(r) === "accept" || readyOf(r) === "nudge") ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") +
         '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
-      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook; the log notes the copy.</p></div>';
+      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook; the log notes the copy.' +
+      (state.view === "send" ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
   }
   function allCc(m) {
     var seen = {}, out = [];
@@ -987,6 +1030,7 @@
     } catch (e) {}
     return copyText(m.body || "");
   }
+  var MAILTO_MAX = 1900;
   function mailAct(kind) {
     var r = rowOf(state.sel); if (!r) return;
     var m = mailOf(r), cc = allCc(m);
@@ -996,13 +1040,43 @@
         body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
         m.fu === false ? {} : { follow_up_on: plusDays(7) }));
     };
+    if (kind === "sent") {
+      var what = m.tpl === "accept" ? "Acceptance sent" : m.tpl === "nudge" ? "Nudge sent" : "Email sent";
+      logWrite("POST", null, Object.assign({ college: r.key, kind: "email",
+        body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
+        m.fu === false ? {} : { follow_up_on: plusDays(7) })).then(function (ok) {
+        if (!ok) return;
+        delete state.mail[mailKey(r)];
+        state.sent = state.sent || {}; state.sent[r.key] = m.tpl;
+        var next = shownRows().filter(function (x) { return x.key !== r.key; })[0];
+        state.sel = next ? next.key : null;
+        paint();
+        say(what + " for " + r.name + ", noted in the log." + (next ? " Next: " + next.name + "." : " Nothing else is ready to send."));
+      });
+      return;
+    }
     if (kind === "draft") {
-      var href = "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject || "") +
-        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&body=" + encodeURIComponent(m.body || "");
-      if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") window.CPL_FUNDING_OPEN_MAIL(href);
-      else { try { window.location.href = href; } catch (e) {} }
+      var head = "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject || "") +
+        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "");
+      var href = head + "&body=" + encodeURIComponent(m.body || "");
+      var open = function (h) {
+        if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") window.CPL_FUNDING_OPEN_MAIL(h);
+        else { try { window.location.href = h; } catch (e) {} }
+      };
+      // A mail program refuses a link much past 1,900 characters, so a long email goes to the clipboard first and the
+      // draft opens with To, Cc and Subject for the paste.
+      if (href.length > MAILTO_MAX) {
+        copyMail(m).then(function (ok) {
+          open(head);
+          logIt("Draft opened");
+          say(ok ? "The email is long, so it is on the clipboard: paste it into the draft that opens. The log notes it."
+            : "The email is long and the browser refused the copy. Select the words in the box, copy them, and paste them into the draft.");
+        });
+        return;
+      }
+      open(href);
       logIt("Draft opened");
-      say("The draft opens in your mail program with To, Cc and Subject; the log notes it.");
+      say("The draft opens in Outlook with To, Cc, Subject and the words; the log notes it.");
       return;
     }
     copyMail(m).then(function (ok) {
@@ -1236,7 +1310,7 @@
   function mailField(t) {
     var r = rowOf(state.sel); if (!r) return;
     var m = mailOf(r), k = t.getAttribute("data-mail");
-    if (k === "tpl") { var keep = m.more; state.mail[r.key] = seedMail(r, t.value); state.mail[r.key].more = keep; paintRecord();
+    if (k === "tpl") { var keep = m.more; state.mail[mailKey(r)] = seedMail(r, t.value); state.mail[mailKey(r)].more = keep; paintRecord();
       var nt = document.getElementById("cw-tpl"); if (nt) nt.focus(); return; }
     if (k === "more") { m.more = splitList(t.value); return; }
     if (k === "fu") { m.fu = !!t.checked; return; }
@@ -1309,5 +1383,5 @@
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
-    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; } };
+    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; } };
 })();
