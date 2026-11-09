@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-09_nc_cpl_lead_in_map.sql",
+ "name": "map_coordinator_summary_nc_cpl_lead",
+ "version": "20261109215333",
+ "sha256": "4d465c111bedbbb42c752c217710bfefdd728b0599220052ef0cdcbc8bd107d9",
+ "run": "42706180745",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
