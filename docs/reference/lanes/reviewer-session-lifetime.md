@@ -29,9 +29,17 @@ is the browser's: it bounds how long a closed browser comes back signed in, coun
 time-boxes no session (measured that day: 0 of 132 time-boxed, 54 past 12 hours, the longest 20 days 20 hours). What a
 sign-in opens is decided in the database at each call: `allowed_reviewers`, and for a door sign-in its `funding_access`
 grant (30 days, revocable). Removing an address from the list closes its sign-in at once, whatever the browser holds.
-Guards `tests/cpl_session.test.js` (the cap is 30 days; the next morning; day 29; day 31). **NEXT:** a door sign-in whose
-grant has lapsed while its tab stayed open reads as signed in with nothing opening; the workspace should say the access
-ended and offer *Ask an approver* (earliest 2026-12-09).
+Guards `tests/cpl_session.test.js` (the cap is 30 days; the next morning; day 29; day 31). 
+
+**A sign-in whose funding access has ended says so (S623, 2026-11-09).** A door grant lasts 30 days and can be revoked;
+the browser's sign-in outlives it on a tab left open, and the workspace read as signed in with nothing opening. The CSM
+Workspace asks `is_funding_reviewer()` for the session as it stands, when it loads and every ten minutes. On `false` it
+draws *Your funding access has ended* in place of Access requests, names the address signed in, and offers *Ask an
+approver*, which sends the door's own request for that address (`CPL_REVIEWER_SIGNIN._askAccess`); while the note
+shows, the check runs every half minute, so an approval clears it. A check that fails or does not answer leaves the
+screen as it was. No database change. Guards `tests/csm_workspace.test.js` 13x-a to 13x-g. The earliest real lapse is
+2026-12-09; a revoked grant shows it sooner. **NEXT:** the funding tab's own review controls still draw for such a
+sign-in; give them the same note.
 
 **A surface that draws a sign-in once must follow the keeper's renewal (SkyBeacon, 2026-11-06, #2857).** Sam: *"we tried
 to fix the lapsed token thing yesterday must not have worked for all surfaces"*. The keeper (`cpl_session.js`) renews a

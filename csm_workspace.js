@@ -297,7 +297,8 @@
       "#tab-csm-workspace .cw-fold[hidden] { display:none; }",
       // A popup sits over the page, so its ground is opaque in both themes (dark --surface is translucent glass).
       "#tab-csm-workspace dialog.cdlg.cdlg { background:var(--cw-dialog); }",
-      "#tab-csm-workspace .signin { margin:0; padding:10px 14px; border-radius:8px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.92rem; }"
+      "#tab-csm-workspace .signin { margin:0; padding:10px 14px; border-radius:8px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.92rem; }",
+      "#tab-csm-workspace .grant .grant-acts { margin:8px 0 2px; }"
     ].concat(RULES).join("\n");
     document.head.appendChild(st);
     try {
@@ -1202,6 +1203,46 @@
     var R = rest(); if (!R || !R.remote) return Promise.reject(new Error("no session"));
     return fetch(R.url + path, { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, R.headers), body: JSON.stringify(body || {}) });
   }
+  /* ── a sign-in whose funding access has ended (the reviewer-session-lifetime lane's NEXT, S622) ────────────────
+     A door grant lasts 30 days (funding_access.expires_at) and can be revoked. The browser's sign-in outlives it on
+     a tab left open, and every review read then comes back refused, so the workspace read as signed in with nothing
+     opening. The database answers is_funding_reviewer() for the session as it stands; false draws this note with
+     Ask an approver, which sends the door's own request for the address signed in. Unasked, unanswered or failed,
+     the screen stays as it was: the answer shapes the screen, never the permission. */
+  var GRANT = { ok: null, at: 0, msg: "", busy: false };
+  var GRANT_EVERY_MS = 10 * 60 * 1000;
+  function readGrant() {
+    return accessPost("rpc/is_funding_reviewer")
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function (v) {
+        if (v !== true && v !== false) return;
+        GRANT.at = Date.now();
+        if (GRANT.ok === v) return;
+        GRANT.ok = v;
+        if (v) { GRANT.msg = ""; ACC.asked = false; }   // access is back: read the queue again
+        paint();
+      }).catch(function () {});
+  }
+  function grantHtml() {
+    var R = rest(), who = R && R.who ? R.who : "This sign-in";
+    return '<section class="sec grant" aria-labelledby="cw-grant-h"><h2 id="cw-grant-h">Your funding access has ended</h2>' +
+      '<p class="signin">' + esc(who) + " is signed in, and the funding review is closed to it now. Access given by an approver lasts 30 days. " +
+      "Ask an approver to open it again; this tab picks the access up when one of them approves.</p>" +
+      '<p class="grant-acts"><button type="button" class="word lead" data-grant="ask"' + (GRANT.busy ? " disabled" : "") + ">Ask an approver</button></p>" +
+      '<p class="note" role="status" id="cw-grant-msg">' + esc(GRANT.msg) + "</p></section>";
+  }
+  function askGrant() {
+    var R = rest(), SI = window.CPL_REVIEWER_SIGNIN, fail = "The request did not go through. Try again in a few minutes.";
+    if (GRANT.busy) return;
+    if (!R || !R.who || !SI || typeof SI._askAccess !== "function") { GRANT.msg = fail; paint("cw-grant-msg"); return; }
+    GRANT.busy = true; GRANT.msg = "Asking…"; paint();
+    SI._askAccess(R.who).then(function (a) {
+      GRANT.busy = false;
+      GRANT.msg = a && a.ok ? "Asked. An approver will see it in the CSM Workspace. Keep this tab open: it picks the access up when one of them approves."
+        : (a && a.why) || fail;
+      paint();
+    }).catch(function () { GRANT.busy = false; GRANT.msg = fail; paint(); });
+  }
   function readAccess() {
     return accessPost("rpc/funding_access_pending")
       .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
@@ -1219,9 +1260,11 @@
     // An approver sees the section with nobody waiting too, so they know where a request will show.
     accessPost("rpc/is_funding_approver").then(function (r) { return r.ok ? r.json() : false; })
       .then(function (yes) { if (yes === true && !ACC.approver) { ACC.approver = true; paint(); } }).catch(function () {});
-    readAccess();
+    readAccess(); readGrant();
     if (!ACC.timer) ACC.timer = setInterval(function () {
       if (window.CPL_TABS && typeof window.CPL_TABS.current === "function" && window.CPL_TABS.current() !== TAB) return;
+      // While the access is closed, ask every tick so an approval shows within the half minute; otherwise every ten minutes.
+      if (GRANT.ok === false || Date.now() - GRANT.at > GRANT_EVERY_MS) readGrant();
       readAccess();
     }, 30000);
   }
@@ -1284,7 +1327,7 @@
         '<button type="button" class="word" data-act="fold" aria-expanded="' + !state.folded + '" aria-controls="cw-fold">' +
         (state.folded ? "Show the priorities" : "Hide the priorities") + "</button></p></div>" +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
-      (S.reviewer ? accessHtml() : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
+      (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
       '<div id="cw-fold" class="cw-fold"' + (state.folded ? " hidden" : "") + ">" +
         '<section class="sec" aria-labelledby="cw-pri-h"><h2 id="cw-pri-h">Priorities</h2>' + cardsHtml() + "</section></div>" +
       '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
@@ -1429,6 +1472,7 @@
       return;
     }
     if (t.hasAttribute("data-mailact")) { mailAct(t.getAttribute("data-mailact")); return; }
+    if (t.getAttribute("data-grant") === "ask") { askGrant(); return; }
     if (t.getAttribute("data-access") === "check") { checkAccess(); return; }
     if (t.hasAttribute("data-access")) { decideAccess(t.getAttribute("data-id"), t.getAttribute("data-access")); return; }
     if (t.hasAttribute("data-logdone")) {
@@ -1567,5 +1611,5 @@
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
     _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
-    _logo: LOGO, _access: ACC, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
+    _logo: LOGO, _access: ACC, _grant: GRANT, _readGrant: readGrant, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();
