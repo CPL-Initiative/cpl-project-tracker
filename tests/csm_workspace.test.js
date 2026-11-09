@@ -408,6 +408,46 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("10j: a draft past 1,900 characters opens with To, Cc and Subject and no body",
     !!href && /^mailto:/.test(href) && !/&body=/.test(href));
 }
+// ── 11. Not received, the From line, It bounced, the noncredit acceptance (COBIx on issue 2967, 16:17Z) ───────
+{
+  const LATER = "Glendale";
+  const { window, W, root } = setup({ signedIn: true, elig: {
+    optinRow: { [COLLEGE]: { college: COLLEGE, status: "self_attested", requested_at: "2026-11-02T04:00:00Z" },
+                [OTHER]: { college: OTHER, status: "confirmed", requested_at: "2026-10-30T04:00:00Z", confirmed_at: "2026-10-31T20:29:00Z" },
+                [LATER]: { college: LATER, status: "confirmed", requested_at: "2026-11-08T04:00:00Z", confirmed_at: "2026-11-09T16:00:00Z" } } } });
+  W._setContacts({
+    dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
+      primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu" }], landing: [], users: [] });
+  const later = { key: LATER };
+  W._state.view = "send"; W._state.sel = null; W.paint();
+  const first = root.querySelector(".queue .row");
+  check("11a: an acceptance confirmed before the log went live leads the queue as Not received, with the resend in words",
+    first && first.getAttribute("data-sel") === OTHER && /Not received/.test(flat(first.querySelector(".row-pills"))) &&
+    /^Resend the acceptance: confirmed/.test(flat(first.querySelector(".row-next"))));
+  check("11b: one confirmed after the log went live is an ordinary acceptance",
+    !!root.querySelector('.queue .row[data-sel="' + later.key + '"]') &&
+    !/Not received/.test(flat(root.querySelector('.queue .row[data-sel="' + later.key + '"] .row-pills'))));
+  W._state.sel = OTHER; W.paint();
+  check("11c: the From-line hint sits with the email's controls",
+    /Send from your own address\. The shared MAP mailbox needs Send As rights from RCCD IT\./.test(flat(root.querySelector(".tpl"))));
+  clickEl(window, root.querySelector('[data-mailact="sent"]'));
+  await tick();
+  check("11d: after Sent the college leaves the queue", W._readyOf(OTHER) === null);
+  W._state.sel = OTHER; W._state.view = "open"; W.paint();
+  const b = root.querySelector('[data-act="bounced"][data-kind="accept"]');
+  check("11e: the record offers It bounced for the acceptance it sent", !!b && /It bounced: acceptance/.test(flat(b)));
+  W._log()[0].created_at = "2026-11-09T18:00:00Z";
+  clickEl(window, b);
+  await tick();
+  W._log()[0].created_at = "2026-11-09T18:05:00Z";
+  check("11f: It bounced writes its row and puts the college back in Ready to send",
+    W._log().some((x) => /^It bounced, Acceptance sent: /.test(x.body)) && W._readyOf(OTHER) === "accept" && !root.querySelector('[data-act="bounced"][data-kind="accept"]'));
+  const pc = W._snapshot().rows.find((r) => r.key === OTHER);
+  pc.nc = { standing: true, waiting: false, confirmedAt: "2026-11-09T17:00:00Z", fy: "2026-27" };
+  W._log().unshift({ id: 990, college: OTHER, kind: "email", created_at: "2026-11-09T18:10:00Z", body: "Acceptance sent: resent, to ana@pasadena.edu." });
+  check("11g: with the participation acceptance sent, a standing noncredit attestation is next", W._readyOf(OTHER) === "accept_nc");
+}
+
 check("10k: the fallback deadline is the published model's date", /\|\| "2026-12-31";/.test(FUND) && !/\|\| "2026-11-01";/.test(FUND));
 
 finish();

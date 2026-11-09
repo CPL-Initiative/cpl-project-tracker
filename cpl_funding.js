@@ -6783,7 +6783,8 @@
         part: { status: row ? row.status || "" : "", waiting: optinPending(key), confirmed: !!ELIG.optin[key],
           at: row ? (row.requested_at || row.created_at || "") : "", confirmedAt: row ? row.confirmed_at || "" : "" },
         nc: ncOn ? { status: att ? att.status || "" : "", waiting: ncAttestPending(att), standing: ncAttestStanding(att),
-          fy: att ? att.fiscal_year || "" : "", at: att ? (att.requested_at || att.created_at || "") : "" } : null,
+          fy: att ? att.fiscal_year || "" : "", at: att ? (att.requested_at || att.created_at || "") : "",
+          confirmedAt: att ? att.confirmed_at || "" : "" } : null,
         declined: d ? d.at : "", landing: k ? httpsUrl(k.url) || "" : "",
         coordMissing: (ELIG.coordMissing || {})[key] || "", note: "", req: null };
       if (reviewer) {
