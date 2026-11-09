@@ -1198,6 +1198,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `localhost:` | scripts: `prototype/mockup_harness/capture_fact_sheet.mjs` |
 | `localhost:3000` | `edgefn:cpl-chat` |
 | `localhost:8000` | modules: `prototype/ccr_universe.js` · `edgefn:cpl-chat` |
+| `mail.google.com` | tabs: `csm-workspace` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map.example` | modules: `a11y.config.js` |
@@ -1345,4 +1346,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 108 Supabase tables · 54 RPCs · 13 edge functions · 830 file
-datasets · 193 external services · 540 consumers · 65 workflows · 40 tabs.
+datasets · 194 external services · 540 consumers · 65 workflows · 40 tabs.

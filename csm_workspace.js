@@ -411,25 +411,51 @@
      in 14 days: the nudge. A request waiting on the team: Accept first, from the review. Sent writes the receipt, so
      the college leaves the queue; a declined college never enters it. */
   var NUDGE_SUBJ = /a participation confirmation for /;
+  /* Each email's receipt, and its undo (COBIx on issue 2967, 16:17Z): Sent writes "<prefix>: …"; It bounced writes
+     "It bounced, <that receipt>", and the later of the two decides, so a bounce puts the college back in the queue. */
+  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent" };
+  function lastSent(r, tpl) {
+    var p = SENT[tpl] + ": ", rows = logFor(r.key).filter(function (x) {
+      var b = String(x.body || "");
+      return x.kind === "email" && (b.indexOf(p) === 0 || b.indexOf("It bounced, " + p) === 0);
+    }).sort(function (a, b) { return String(a.created_at || "") < String(b.created_at || "") ? 1 : -1; });
+    return rows[0] && String(rows[0].body || "").indexOf(p) === 0 ? rows[0] : null;
+  }
   function sentOf(r, re, days) {
     var since = days ? plusDays(-days) : "";
     return logFor(r.key).some(function (x) {
       return x.kind === "email" && re.test(String(x.body || "")) && (!since || String(x.created_at || "").slice(0, 10) >= since);
     });
   }
+  function isSent(r, tpl) { return !!(state.sent || {})[r.key + "|" + tpl] || !!lastSent(r, tpl); }
   function readyOf(r) {
     if (r.declined) return null;
     if (waitingKinds(r).length) return "wait";
     // state.sent bridges the moment between a Sent that saved and the log's re-read.
-    var now = (state.sent || {})[r.key];
-    if (r.part.confirmed) return now === "accept" || sentOf(r, /^Acceptance sent: /) ? null : "accept";
-    return now === "nudge" || sentOf(r, /^Nudge sent: /) || sentOf(r, NUDGE_SUBJ, 14) ? null : "nudge";
+    if (r.part.confirmed && !isSent(r, "accept")) return "accept";
+    if (r.nc && r.nc.standing && !isSent(r, "accept_nc")) return "accept_nc";
+    if (r.part.confirmed) return null;
+    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ? null : "nudge";
+  }
+  function bouncedSince(r, re) {
+    return logFor(r.key).some(function (x) { return /^It bounced, /.test(String(x.body || "")) && re.test(String(x.body || "")); });
+  }
+  /* Not received (COBIx on issue 2967, 16:17Z): the acceptances confirmed before the CSM log went live
+     (2026-11-09) never reached the college: Exchange refused the shared mailbox's From line (SendAsDenied). They lead
+     the queue, each ready to resend. */
+  var LOG_LIVE = "2026-11-09";
+  function notReceived(r) {
+    var rd = readyOf(r), at = rd === "accept" ? r.part.confirmedAt : rd === "accept_nc" ? r.nc && r.nc.confirmedAt : "";
+    return !!at && String(at).slice(0, 10) < LOG_LIVE;
   }
   var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
-    accept: "Send the acceptance.", nudge: "Send the nudge for the participation confirmation." };
+    accept: "Send the acceptance.", accept_nc: "Send the noncredit attestation acceptance.",
+    nudge: "Send the nudge for the participation confirmation." };
   function nextStep(r) {
     if (state.view === "send" && readyOf(r)) {
       var rw = readyOf(r), mw = rw === "accept" ? missingWords(r) : [];
+      if (notReceived(r)) return "Resend the acceptance: confirmed " + shortDate(rw === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) +
+        ", and the first email did not reach the college." + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
       return READY_WORDS[rw] + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
     }
     var w = waitingKinds(r);
@@ -451,6 +477,7 @@
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) p.push(["ask", "Follow-up due"]);
     if (r.declined) p.push(["ask", "Declined"]);
+    if (state.view === "send" && notReceived(r)) p.push(["ask", "Not received"]);
     var st = stageOf(r);
     p.push(["", st === "qual" ? "Qualifies" : st === "held" ? "Held by a condition" : r.part.confirmed ? "Confirmed" : "Not confirmed"]);
     return p;
@@ -484,9 +511,9 @@
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     return VIEWS[state.view] && state.view !== "open" ? TAB + "/" + state.view : TAB;
   });
-  var READY_RANK = { accept: 0, nudge: 1, wait: 2 };
+  var READY_RANK = { accept: 1, accept_nc: 2, nudge: 3, wait: 4 };
   function sortRank(r) {
-    if (state.view === "send") return READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 3;
+    if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 5;
     var s = stageOf(r), du = dueOf(r);
     if (s === "waiting") return 0;
     if (du && du.follow_up_on <= today()) return 1;
@@ -654,6 +681,10 @@
     if (S.reviewer) act.push('<button type="button" class="word" data-pop="contacts">Contacts on file</button>' +
       '<button type="button" class="word" data-pop="people">Names, titles and emails</button>');
     act.push('<button type="button" class="word" data-act="focus">Open in Implementation Funding</button>');
+    if (S.reviewer) Object.keys(SENT).forEach(function (tpl) {
+      if (lastSent(r, tpl)) act.push('<button type="button" class="word" data-act="bounced" data-kind="' + tpl + '">It bounced: ' +
+        esc(SENT[tpl].replace(/ sent$/, "").toLowerCase()) + "</button>");
+    });
     if (S.reviewer) act.push('<button type="button" class="word" data-act="declined">' + (r.declined ? "Clear Declined participation" : "Mark Declined participation") + "</button>");
     var conds = '<ul class="conds">' + r.conds.map(function (c) {
       return '<li class="cond"><span class="pill' + (c.met ? "" : c.pending ? "" : " ask") + '">' + condLabel(c) + "</span><span>" + esc(c.words) +
@@ -896,10 +927,26 @@
   // The workspace never sends: Copy the email puts the formatted email (the logo on its signature line) on the
   // clipboard for Outlook, Open in Outlook opens the mail program with To, Cc and Subject, and the log notes the copy.
   var EMAIL_LOGO_URL = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/cpl-initiative-logo-navy.png";
+  /* The logo travels as its own bytes (COBIx on issue 2967, 18:25Z): Outlook and Gmail often refuse to fetch an outside
+     image on paste, so the copied HTML carries a data: URI of the small email copy, read once from this site when the
+     email box first draws. Until it has loaded, or if it cannot, the copy falls back to the published address. */
+  var EMAIL_LOGO_LOCAL = "sierra/cpl-initiative-logo-navy-email.png";
+  var LOGO = { src: "", asked: false };
+  function loadLogo() {
+    if (LOGO.asked || typeof fetch !== "function" || typeof FileReader === "undefined") return;
+    LOGO.asked = true;
+    fetch(EMAIL_LOGO_LOCAL).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.blob(); }).then(function (b) {
+      var fr = new FileReader();
+      fr.onload = function () { if (/^data:image\/png;base64,/.test(String(fr.result || ""))) LOGO.src = fr.result; };
+      fr.readAsDataURL(b);
+    }).catch(function () {});
+  }
+  function logoSrc() { return LOGO.src || EMAIL_LOGO_URL; }
   var EMAIL_LOGO_ALT = "California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office";
   var PUBLIC_FUNDING_URL = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/";
   var TEMPLATES = [
     { id: "accept", label: "The acceptance, with what still waits" },
+    { id: "accept_nc", label: "The noncredit attestation acceptance" },
     { id: "follow", label: "Follow up on a condition" },
     { id: "nudge", label: "Nudge for the participation confirmation" },
     { id: "blank", label: "Blank" }];
@@ -939,6 +986,13 @@
     } else if (tplId === "accept") {
       tplId = "follow";
     }
+    var an = tplId === "accept_nc" && F() && typeof F().acceptMail === "function" ? F().acceptMail("nc", r.key, prim ? { name: prim.name, email: prim.email } : null) : null;
+    if (tplId === "accept_nc" && an) {
+      to = an.to || to; subject = an.subject; body = an.text;
+      cc = coord && coord.email.toLowerCase() !== String(to).toLowerCase() ? [coord.email] : [];
+    } else if (tplId === "accept_nc") {
+      tplId = "follow";
+    }
     if (tplId === "follow") {
       subject = "CPL Implementation Funding: a follow-up for " + college;
       body = "Dear " + name + ",\n\nThank you for your work on CPL Implementation Funding at " + college + ". In reviewing the college's record, " +
@@ -958,13 +1012,13 @@
   }
   var LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   function longDay(v) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || "")); return m ? LONG[+m[2] - 1] + " " + +m[3] + ", " + m[1] : String(v || ""); }
-  function mailKey(r) { var rd = state.view === "send" ? readyOf(r) : null; return rd === "accept" || rd === "nudge" ? r.key + "|send" : r.key; }
+  function mailKey(r) { var rd = state.view === "send" ? readyOf(r) : null; return SENT[rd] ? r.key + "|send" : r.key; }
   function mailOf(r) {
     state.mail = state.mail || {};
     // A college with no participation confirmation gets the nudge; any other college a follow-up. In Ready to send the
     // email is the one due (the acceptance or the nudge), kept under its own key so the record's draft is untouched.
     var rd = state.view === "send" ? readyOf(r) : null, k = mailKey(r);
-    if (!state.mail[k]) state.mail[k] = seedMail(r, rd === "accept" || rd === "nudge" ? rd : r.part.confirmed || r.part.waiting ? "follow" : "nudge");
+    if (!state.mail[k]) state.mail[k] = seedMail(r, SENT[rd] ? rd : r.part.confirmed || r.part.waiting ? "follow" : "nudge");
     return state.mail[k];
   }
   function ccPickerHtml(r, m) {
@@ -994,6 +1048,7 @@
     if (CT.state === "error") return '<div><p class="k">Write an email</p><p class="gate">' + esc(CT.error) + "</p></div>";
     if (CT.state !== "ready") return '<div><p class="k">Write an email</p><p class="gate">Reading the contacts on file&hellip;</p></div>';
     var m = mailOf(r);
+    loadLogo();
     var opts = TEMPLATES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
     return '<div class="tpl" aria-labelledby="cw-mail-h"><p class="k" id="cw-mail-h">Write an email</p>' +
       '<div class="tpl-row"><label for="cw-tpl">Template</label><select id="cw-tpl" data-mail="tpl">' + opts + "</select></div>" +
@@ -1005,9 +1060,11 @@
       '<label class="sr" for="cw-body">The email</label><textarea id="cw-body" class="search" data-mail="body" rows="10" style="min-height:180px;">' + esc(m.body) + "</textarea>" +
       '<div class="tpl-row"><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
         '<button type="button" class="word" data-mailact="draft">Open in Outlook</button>' +
-        (state.view === "send" && (readyOf(r) === "accept" || readyOf(r) === "nudge") ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") +
+        '<button type="button" class="word" data-mailact="gmail">Open in Gmail</button>' +
+        (state.view === "send" && SENT[readyOf(r)] ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") +
         '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
-      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook; the log notes the copy.' +
+      '<p class="tpl-meta">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>' +
+      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each.' +
       (state.view === "send" ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
   }
   function allCc(m) {
@@ -1019,7 +1076,7 @@
     var link = function (h) { return h.replace(/https?:\/\/[^\s<>"]+[^\s<>".,;:)]/g, function (u) { return '<a href="' + u + '">' + u + "</a>"; }); };
     return '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;">' +
       String(m.body || "").split(/\n\n/).map(function (p) { return '<p style="margin:0 0 12px;">' + link(esc(p)).replace(/\n/g, "<br>") + "</p>"; }).join("") +
-      '<p style="margin:4px 0 0;"><img src="' + EMAIL_LOGO_URL + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
+      '<p style="margin:4px 0 0;"><img src="' + logoSrc() + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
   }
   function copyMail(m) {
     try {
@@ -1041,18 +1098,38 @@
         m.fu === false ? {} : { follow_up_on: plusDays(7) }));
     };
     if (kind === "sent") {
-      var what = m.tpl === "accept" ? "Acceptance sent" : m.tpl === "nudge" ? "Nudge sent" : "Email sent";
+      var what = SENT[m.tpl] || "Email sent";
       logWrite("POST", null, Object.assign({ college: r.key, kind: "email",
         body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
         m.fu === false ? {} : { follow_up_on: plusDays(7) })).then(function (ok) {
         if (!ok) return;
         delete state.mail[mailKey(r)];
-        state.sent = state.sent || {}; state.sent[r.key] = m.tpl;
+        state.sent = state.sent || {}; state.sent[r.key + "|" + m.tpl] = true;
         var next = shownRows().filter(function (x) { return x.key !== r.key; })[0];
         state.sel = next ? next.key : null;
         paint();
         say(what + " for " + r.name + ", noted in the log." + (next ? " Next: " + next.name + "." : " Nothing else is ready to send."));
       });
+      return;
+    }
+    if (kind === "gmail") {
+      // Gmail's compose address (Malone, via COBIx on issue 2967: ITPI's CSM team uses Gmail). Same cap as the mailto.
+      var gHead = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(m.to) +
+        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&su=" + encodeURIComponent(m.subject || "");
+      var gFull = gHead + "&body=" + encodeURIComponent(m.body || "");
+      var openG = function (h) { try { window.open(h, "_blank", "noopener"); } catch (e) {} };
+      if (gFull.length > MAILTO_MAX) {
+        copyMail(m).then(function (ok) {
+          openG(gHead);
+          logIt("Gmail draft opened");
+          say(ok ? "The email is long, so it is on the clipboard: paste it into the Gmail draft that opens. The log notes it."
+            : "The email is long and the browser refused the copy. Select the words in the box, copy them, and paste them into the Gmail draft.");
+        });
+        return;
+      }
+      openG(gFull);
+      logIt("Gmail draft opened");
+      say("The draft opens in Gmail with To, Cc, Subject and the words; the log notes it.");
       return;
     }
     if (kind === "draft") {
@@ -1190,6 +1267,17 @@
       return;
     }
     if (!f || !S.reviewer) return;
+    if (name === "bounced") {
+      var ls = lastSent(r, kind);
+      if (!ls) return;
+      logWrite("POST", null, { college: r.key, kind: "email", body: "It bounced, " + ls.body }).then(function (ok) {
+        if (!ok) return;
+        if (state.sent) delete state.sent[r.key + "|" + kind];
+        paint();
+        say("Noted that it bounced. " + r.name + " is back in Ready to send.");
+      });
+      return;
+    }
     var why = null;
     if (name === "deny") {
       var g = reviewState(r, kind);
@@ -1383,5 +1471,6 @@
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
-    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; } };
+    _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
+    _logo: LOGO, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();
