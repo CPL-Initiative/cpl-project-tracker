@@ -1186,30 +1186,54 @@
      table, managed in Admin) see the request here; funding_access_pending() answers nobody else, so for every other
      reviewer the section never draws. Approve grants the funding and CSM surfaces for 30 days and the requester's open
      tab signs them in; no email and no phrase go anywhere. */
-  var ACC = { rows: [], asked: false, timer: null, busy: {} };
+  var ACC = { rows: [], asked: false, timer: null, busy: {}, approver: false };
+  function accessPost(path, body) {
+    // rest() each time: its headers carry the session's token as it stands now. A token kept from the first read
+    // lapses within the hour, and a refused read looks the same as an empty queue.
+    var R = rest(); if (!R || !R.remote) return Promise.reject(new Error("no session"));
+    return fetch(R.url + path, { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, R.headers), body: JSON.stringify(body || {}) });
+  }
+  function readAccess() {
+    return accessPost("rpc/funding_access_pending")
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function (rows) {
+        rows = Array.isArray(rows) ? rows : [];
+        var changed = JSON.stringify(rows.map(function (x) { return x.id; })) !== JSON.stringify(ACC.rows.map(function (x) { return x.id; }));
+        ACC.rows = rows;
+        if (changed) paint();
+        return true;
+      }).catch(function () { return false; });   // a refused read keeps the rows it had
+  }
   function loadAccess() {
     var R = rest(); if (!R || !R.remote) return;
     ACC.asked = true;
-    var once = function () {
-      fetch(R.url + "rpc/funding_access_pending", { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, R.headers), body: "{}" })
-        .then(function (r) { return r.ok ? r.json() : []; })
-        .then(function (rows) {
-          rows = Array.isArray(rows) ? rows : [];
-          var changed = JSON.stringify(rows.map(function (x) { return x.id; })) !== JSON.stringify(ACC.rows.map(function (x) { return x.id; }));
-          ACC.rows = rows;
-          if (changed) paint();
-        }).catch(function () {});
-    };
-    once();
+    // An approver sees the section with nobody waiting too, so they know where a request will show.
+    accessPost("rpc/is_funding_approver").then(function (r) { return r.ok ? r.json() : false; })
+      .then(function (yes) { if (yes === true && !ACC.approver) { ACC.approver = true; paint(); } }).catch(function () {});
+    readAccess();
     if (!ACC.timer) ACC.timer = setInterval(function () {
       if (window.CPL_TABS && typeof window.CPL_TABS.current === "function" && window.CPL_TABS.current() !== TAB) return;
-      once();
+      readAccess();
     }, 30000);
   }
+  function checkAccess() {
+    say("Checking for access requests…");
+    readAccess().then(function (ok) {
+      say(!ok ? "Could not read the access requests. Sign in again and try once more."
+        : ACC.rows.length ? ACC.rows.length + (ACC.rows.length === 1 ? " access request waits." : " access requests wait.") : "No access request is waiting.");
+      var b = root() && root().querySelector('[data-access="check"]'); if (b) b.focus();
+    });
+  }
   function accessHtml() {
-    if (!ACC.rows.length) return "";
+    if (!ACC.rows.length && !ACC.approver) return "";
+    var check = '<button type="button" class="word" data-access="check">Check now</button>';
+    if (!ACC.rows.length) {
+      return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
+        "No one is waiting. A teammate who is signed out opens this page, enters their work email and chooses Ask an approver; " +
+        "the request shows here within half a minute. " + check + "</p></div></section>";
+    }
     return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
-      "A teammate asked to sign in without the email link. Approve opens the funding and CSM work for 30 days; their open tab signs them in.</p></div>" +
+      "A teammate asked to sign in without the email link. Approve opens the funding and CSM work for 30 days; their open tab signs them in. " + check + "</p></div>" +
       '<ul class="queue" aria-label="Access requests">' + ACC.rows.map(function (x) {
         return '<li><div class="row"><span class="row-name">' + esc(x.name || x.email) + '</span><span class="row-age">' + esc(shortDate(x.requested_at)) +
           '</span><span class="row-next">' + esc(x.email) + (x.role ? ", " + esc(x.role) : "") + "</span>" +
@@ -1218,11 +1242,9 @@
       }).join("") + "</ul></section>";
   }
   function decideAccess(id, verdict) {
-    var R = rest(); if (!R) return;
     var who = (ACC.rows.filter(function (x) { return x.id === id; })[0] || {});
     ACC.busy[id] = true; paint();
-    fetch(R.url + "rpc/funding_access_decide", { method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, R.headers),
-      body: JSON.stringify({ p_id: id, p_verdict: verdict }) })
+    accessPost("rpc/funding_access_decide", { p_id: id, p_verdict: verdict })
       .then(function (r) { return r.ok ? r.json() : { ok: false, why: String(r.status) }; })
       .then(function (res) {
         delete ACC.busy[id];
@@ -1398,6 +1420,7 @@
       return;
     }
     if (t.hasAttribute("data-mailact")) { mailAct(t.getAttribute("data-mailact")); return; }
+    if (t.getAttribute("data-access") === "check") { checkAccess(); return; }
     if (t.hasAttribute("data-access")) { decideAccess(t.getAttribute("data-id"), t.getAttribute("data-access")); return; }
     if (t.hasAttribute("data-logdone")) {
       var on = t.getAttribute("data-on") === "1";
@@ -1530,6 +1553,7 @@
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
     _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
+    _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
