@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1434,
-    "bytes": 14461319,
-    "over_budget": 2,
+    "bytes": 14462487,
+    "over_budget": 3,
     "handoff_max": 613,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59914,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2646676,
+        "bytes": 2647554,
         "over": 0
       },
       "kb_note": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 510439,
-        "over": 1
+        "bytes": 510729,
+        "over": 2
       },
       "handoff": {
         "files": 576,
@@ -57,13 +57,13 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 2,
+      "oversized_doc": 3,
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26299,
-      "bytes": 4433490845,
-      "heavy_bytes": 3192856477,
+      "files": 26300,
+      "bytes": 4433496760,
+      "heavy_bytes": 3192859238,
       "heavy_share": 0.72,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -183,6 +183,19 @@
       "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20260,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 260,
+        "ratio": 1.01
+      },
+      "message": "20,260 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/receipts",
@@ -297,10 +310,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10415323,
+        "bytes": 10418084,
         "kind": "dir"
       },
-      "message": "directory totals 10,415,323 B inside the vault"
+      "message": "directory totals 10,418,084 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

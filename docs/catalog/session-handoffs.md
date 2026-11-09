@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-576 document(s).
+577 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 614 | [Session 614 handoff: the funding render remembers its priorities](../session_614_handoff.md) | 2026-11-08 |
 | 613 | [Session 613 handoff: the anchor re-key applied, funding tests twice as fast, the CCR seed re-check reads course descriptions](../session_613_handoff.md) | 2026-11-08 |
 | 612 | [Session 612 handoff: the Exhibits Queue and the panel trail ship, the anchor re-key dry run, the key sketch held for Sam](../session_612_handoff.md) | 2026-11-08 |
 | 611 | [Session 611 handoff: student-level rows ruled out of COBI, the Commons opens on one batch, the classifier answers again](../session_611_handoff.md) | 2026-11-08 |
