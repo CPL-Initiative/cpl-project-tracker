@@ -101,6 +101,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
 | `credential_priority_requests` | tabs: `exhibits` · modules: `a11y.config.js` | — |
 | `credential_submissions` | tabs: `exhibits` | — |
+| `csm_log` | none found | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
@@ -1356,5 +1357,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 110 Supabase tables · 63 RPCs · 14 edge functions · 830 file
+Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 830 file
 datasets · 194 external services · 544 consumers · 65 workflows · 40 tabs.

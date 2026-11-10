@@ -7054,10 +7054,29 @@
     if (window.CPL_TABS && typeof window.CPL_TABS.activate === "function") window.CPL_TABS.activate("implementation-funding");
     render();
   }
+  // The Nudge logs itself: one csm_log entry a college it reached, in ONE request, so the rows land together or
+  // not at all. The reviewer's own credential, as the workspace's log uses; RLS refuses anyone else. A write RLS
+  // filters out answers 2xx having changed nothing, so the answer is the rows that came back.
+  var NUDGE_LOGGED = [];
+  function nudgeLog(entries) {
+    var rows = (entries || []).map(function (e) {
+      return { college: e.college, activity: "funding", kind: e.kind, body: e.body, follow_up_on: e.follow_up_on };
+    });
+    if (!rows.length) return Promise.resolve(false);
+    var told = function () { try { window.dispatchEvent(new CustomEvent("cpl-csm-log-changed")); } catch (e) {} };
+    if (!remoteEnabled()) { NUDGE_LOGGED = NUDGE_LOGGED.concat(rows); told(); return Promise.resolve(true); }
+    return fetch(SUPABASE_URL + "/rest/v1/csm_log", { method: "POST",
+      headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+        "Content-Type": "application/json", Prefer: "return=representation" }),
+      body: JSON.stringify(rows) })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (back) { var ok = Array.isArray(back) && back.length === rows.length; if (ok) told(); return ok; })
+      .catch(function () { return false; });
+  }
   function openNudge() {
     if (!nudgeShown()) return;
     var rh = applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON });
-    var ctx = { institutions: nudgeInstitutions(), deadline: participationDeadline(), headers: rh };
+    var ctx = { institutions: nudgeInstitutions(), deadline: participationDeadline(), headers: rh, log: nudgeLog };
     loadScriptCompat("cpl_funding_nudge.js", "CPL_FUNDING_NUDGE", function () {
       if (window.CPL_FUNDING_NUDGE) window.CPL_FUNDING_NUDGE.open(ctx);
     });
@@ -19234,6 +19253,7 @@
       SCENARIO = WHATIF[key];
     },
     _nudgeInstitutions: function () { return nudgeInstitutions(); },
+    _nudgeLog: nudgeLog, _nudgeLogged: function () { return NUDGE_LOGGED.slice(); },
     _setConfig: function (cfg) { SUPA_CONFIG = normalizeConfig(cfg); CONFIG_SAVED = clone(SUPA_CONFIG); syncActive(); },
     _config: function () { return SUPA_CONFIG; },
     _normalizeConfig: normalizeConfig,
