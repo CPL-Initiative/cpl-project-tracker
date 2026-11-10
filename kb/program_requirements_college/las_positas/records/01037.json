@@ -145,7 +145,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Compare and contrast the processes used to determine the (1) demand for products and services to be offered by a firm and the (2) identification of appropriate target markets.",
     "Construct a detailed marketing plan, which includes all aspects of the marketing mix.",
@@ -162,7 +162,8 @@
     "retail",
     "marketing consultant",
     "customer service"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -396,5 +397,20 @@
    "Degree total of 60.0 is printed as this award's total ('Total : 60.0')."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

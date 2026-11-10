@@ -89,7 +89,11 @@
      16.0,
      16.0
     ],
-    "why": []
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
    }
   },
   "repeated": {
@@ -138,13 +142,14 @@
     "min": 16,
     "max": 16
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply fundamental principles from mathematics, science and engineering to solve a software engineering-related problem.",
     "Set up appropriate laboratory equipment, collect and analyze software data, draw conclusions, and clearly communicate results.",
     "Use a variety of technological tools to solve software engineering problems."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -260,5 +265,20 @@
    "Text mentions 'Elective units must be degree applicable' but prints no elective units; open_elective_units left null."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

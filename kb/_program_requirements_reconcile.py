@@ -121,6 +121,14 @@ def awards_match(kind: str | None, award: str | None) -> bool:
         return bool(ASSOCIATE.search(award or "")) and not re.search(r"baccalaureate|certificate", award or "", re.I)
     if kind == "transfer":
         return awards_match("associate", award) and bool(TRANSFER.search(award or ""))
+    if kind == "local":
+        return awards_match("associate", award) and not TRANSFER.search(award or "")
+    if kind in ("local_aa", "local_as"):
+        # A local degree by its letters (Las Positas, S634: LPC-GE asks an A.A. for two areas an
+        # A.S. never takes), never a transfer degree.
+        letter = "A" if kind == "local_aa" else "S"
+        return (awards_match("local", award)
+                and bool(re.search(r"\bA\.?\s?%s\b" % letter, award or "", re.I)))
     return False
 
 

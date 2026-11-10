@@ -147,13 +147,14 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply critical thinking principles to the evaluation of human symbolic interaction.",
     "Choose and apply appropriate communication strategies based on consideration of audience and purpose.",
     "Recognize and appreciate the value of a multicultural world and of diversity in its many forms."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -589,5 +590,20 @@
    "The first outcome followed the lead-in on the same line; the lead-in was removed."
   ]
  },
- "extracted_run": "38935144431"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38935144431"
 }
