@@ -62230,5 +62230,121 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-09T17:53:55.099685+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ASL 53 American Sign Language IV": {
+    "unified_title": "American Sign Language IV",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "COSM 211  Manicuring and Pedicuring I": {
+    "unified_title": "Manicuring and Pedicuring I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "COSM 215 Facials I": {
+    "unified_title": "Facials I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "COSM 223 Hairstyling Services/Haircutting II": {
+    "unified_title": "Hairstyling Services/Haircutting II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 112 Creative Process and Solutions": {
+    "unified_title": "Creative Process and Solutions",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 113 Typography": {
+    "unified_title": "Typography",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 114 Graphic Design Technology": {
+    "unified_title": "Graphic Design Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 115 Website Design": {
+    "unified_title": "Website Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 121 Applied Graphic Design 1": {
+    "unified_title": "Applied Graphic Design 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 150 Graphics in Motion: Introduction to Animation": {
+    "unified_title": "Graphics in Motion Introduction to Animation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 42  Web Graphics": {
+    "unified_title": "Web Graphics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "GRART 43 Web Graphics and Animation": {
+    "unified_title": "Web Graphics and Animation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "JOURN 021  Newswriting": {
+    "unified_title": "Introduction to Reporting and Newswriting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "JOUR 110"
+    }
+  },
+  "JOURN 069 Multimedia Reporting for Journalists": {
+    "unified_title": "Multimedia Reporting for Journalists",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-11-10T06:24:11Z",
+  "_generated_at": "2026-11-10T20:24:05Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
@@ -8,11 +8,102 @@
   "apply_safe": true,
   "clean": [
     {
-      "raw": "Nursing Care of Children and Families",
-      "assigned": "Nursing Care of Children and Families",
+      "raw": "ASL 53 American Sign Language IV",
+      "assigned": "American Sign Language IV",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-09T17:53:55.099685+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "COSM 211  Manicuring and Pedicuring I",
+      "assigned": "Manicuring and Pedicuring I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "COSM 215 Facials I",
+      "assigned": "Facials I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "COSM 223 Hairstyling Services/Haircutting II",
+      "assigned": "Hairstyling Services/Haircutting II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 112 Creative Process and Solutions",
+      "assigned": "Creative Process and Solutions",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 113 Typography",
+      "assigned": "Typography",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 114 Graphic Design Technology",
+      "assigned": "Graphic Design Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 115 Website Design",
+      "assigned": "Website Design",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 121 Applied Graphic Design 1",
+      "assigned": "Applied Graphic Design 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 150 Graphics in Motion: Introduction to Animation",
+      "assigned": "Graphics in Motion Introduction to Animation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 42  Web Graphics",
+      "assigned": "Web Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 43 Web Graphics and Animation",
+      "assigned": "Web Graphics and Animation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "JOURN 021  Newswriting",
+      "assigned": "Introduction to Reporting and Newswriting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "JOURN 069 Multimedia Reporting for Journalists",
+      "assigned": "Multimedia Reporting for Journalists",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
     }
   ],
   "skip": [
@@ -16233,6 +16324,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Nursing Care of Children and Families",
+      "assigned": "Nursing Care of Children and Families",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-09T17:53:55.099685+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Nursing Fundamentals - Credit by Exam (NURS 220 )",
       "assigned": "Nursing Fundamentals",
       "issuer": "California Community Colleges",
@@ -19275,11 +19374,95 @@
   "held": [],
   "credential_adds": [
     {
-      "raw": "Nursing Care of Children and Families",
-      "assigned": "Nursing Care of Children and Families",
+      "raw": "ASL 53 American Sign Language IV",
+      "assigned": "American Sign Language IV",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-09T17:53:55.099685+00:00"
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "COSM 211  Manicuring and Pedicuring I",
+      "assigned": "Manicuring and Pedicuring I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "COSM 215 Facials I",
+      "assigned": "Facials I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "COSM 223 Hairstyling Services/Haircutting II",
+      "assigned": "Hairstyling Services/Haircutting II",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 112 Creative Process and Solutions",
+      "assigned": "Creative Process and Solutions",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 113 Typography",
+      "assigned": "Typography",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 114 Graphic Design Technology",
+      "assigned": "Graphic Design Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 115 Website Design",
+      "assigned": "Website Design",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 121 Applied Graphic Design 1",
+      "assigned": "Applied Graphic Design 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 150 Graphics in Motion: Introduction to Animation",
+      "assigned": "Graphics in Motion Introduction to Animation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 42  Web Graphics",
+      "assigned": "Web Graphics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "GRART 43 Web Graphics and Animation",
+      "assigned": "Web Graphics and Animation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
+    },
+    {
+      "raw": "JOURN 069 Multimedia Reporting for Journalists",
+      "assigned": "Multimedia Reporting for Journalists",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00"
     }
   ],
   "credential_issuer_fills": [],
