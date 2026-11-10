@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 633,
-  "moniker": "SkySilverDollar",
+  "session": 634,
+  "moniker": "SkyBackward",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_634_handoff.md",
+  "handoff": "docs/session_635_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -33,24 +33,20 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-10T19:40:21Z",
+  "written_at": "2026-11-10T22:22:22Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Look up two issuing bodies",
-    "text": "Sam ruled on Sheet 180 card 6: the credentials listed under Proctored Testing Center and Graduate Level Institution of Higher Education get their issuing body looked up, saved with a receipt and recorded as a decision; the other three issuers stay."
+    "title": "The next re-analysis request",
+    "text": "The next press of the re-analyze box runs the code checks, then the Jev runner. Two doctorate exhibits from Los Angeles Pierce keep the issuer Graduate Level Institution of Higher Education until the college names the university; that is a question for its CSM."
   },
   "changes": [
     {
-      "at": "2026-11-10T18:17:00Z",
-      "text": "The exhibit re-analysis gained its Jev runner (pull request 3076): two questions, no threshold, nothing written."
+      "at": "2026-11-10T20:11:00Z",
+      "text": "10-Key Data Entry's issuer now reads California Community Colleges alone: both exhibits are Modesto's own course by credit by exam (Sam's ruling, Open Asks Sheet 180 card 6). The receipt holds the earlier value. Pull request 3087 merged."
     },
     {
-      "at": "2026-11-10T18:20:00Z",
-      "text": "The first Jev sitting asked about 13 issuers; five read as training sites, filed with the November 10 findings."
-    },
-    {
-      "at": "2026-11-10T19:38:57Z",
-      "text": "Wildland Fire-Basics' issuer now reads California State Fire Training (SFT), on Sam's answer to Sheet 180 card 3."
+      "at": "2026-11-10T20:11:00Z",
+      "text": "The reference file now reads Wildland Fire-Basics' issuer in the long form saved earlier today; a changed issuer is not removed from the reference by the nightly apply, so it was edited by hand."
     }
   ]
 }

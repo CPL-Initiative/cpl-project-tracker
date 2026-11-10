@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 624,
-  "moniker": "SkyCocoon",
+  "session": 634,
+  "moniker": "SkyBackward",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_625_handoff.md",
+  "handoff": "docs/session_635_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -31,48 +31,16 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-10T02:16:38Z",
+  "written_at": "2026-11-10T22:22:22Z",
   "project": "course",
   "next_step": {
     "title": "Teach a rule on every reference, from the path mock",
-    "text": "The commons lane's NEXT: Teach a rule on every reference, the confidence count for the CR rule rungs and the Course auditor, then the other references' paths. KINE M1142 still has no saved ruling, and Sheet 177 card 1 (the next five disciplines) waits on Sam."
+    "text": "The commons lane's NEXT: Teach a rule on every reference, the Course auditor's count, the Commons tokens. Every seed card that descriptions and TOP both confirm is now stamped; the cards where the two disagree stay in the Courses List's Discipline in doubt job."
   },
   "changes": [
     {
-      "at": "2026-11-09T02:30:00Z",
-      "text": "Kinesiology's 627 seed cards are confirmed by description and TOP, on Sam's confirm (Open Asks Sheet 174); the 8 that disagree are the Courses List's Discipline in doubt job."
-    },
-    {
-      "at": "2026-11-08T22:40:00Z",
-      "text": "The seed re-check dry run reads two second signals on the 14,523 capped seed disciplines: course descriptions, as Sam asked on Sheet 173, and TOP beside them (#2940)."
-    },
-    {
-      "at": "2026-11-06T23:10:00Z",
-      "text": "Moreno Valley's HES 1 claim on C-ID HIST 150 held, and West Los Angeles's ADDICST 1 claim on PH 103: each course joins the identity its sister colleges give it; a daily audit lists new claims of this kind (#2862, open)."
-    },
-    {
-      "at": "2026-11-04T20:47:00Z",
-      "text": "A course's panel in the Courses List shows its common course and, for a signed-in reviewer, Rename, Set the discipline and Confirm, carried from the Common Course Reference tab (#2776)."
-    },
-    {
-      "at": "2026-11-04T20:29:00Z",
-      "text": "The sign-in link lands in the shared session file and returns to the view it was asked from (#2775); the old tab had landed every sign-in."
-    },
-    {
-      "at": "2026-11-03T13:28:16Z",
-      "text": "The Course page and the Commons card count cards a person has confirmed in SkyView beside ready: 812 of 27,581 (#2726)."
-    },
-    {
-      "at": "2026-11-09T22:55:02Z",
-      "text": "The Courses List keeps the row you rule on in view and marked, with its band; the ruling's save, the edits and Open in SkyView each have their own line (#3004)."
-    },
-    {
-      "at": "2026-11-10T02:16:38Z",
-      "text": "A Discipline in doubt ruling can keep the home discipline and also list a second one; it writes one cross-list row and never changes the home or the M-ID (#3025, issue 2981)."
-    },
-    {
-      "at": "2026-11-10T02:16:38Z",
-      "text": "A list of disciplines is split against the MQ names, since two names carry commas; one umbrella record loses three phantom second disciplines at the next daily run (#3025)."
+      "at": "2026-11-10T20:03:00Z",
+      "text": "Every remaining discipline's seed cards that descriptions and TOP both confirm are stamped, on Sam's ruling all (Open Asks Sheet 180 card 1): 584 cards in 26 disciplines, plus 10 Kinesiology cards that qualified since the first apply. Each discipline has its own receipt and reverses alone. Pull request 3084 merged."
     }
   ]
 }

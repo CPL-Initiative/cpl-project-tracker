@@ -1332,3 +1332,13 @@ in a plan: a named curator row goes only while it still holds that value from th
 rows and confirmed the Wheel Alignment merge (receipt `applied_2026-11-06T21-24-44Z.json`: 1 written, 4 retired), and
 `cred-rename-apply.yml` (run 42298978785) then folded ServSafe Food Protection Manager into its Certification title and
 the two Wheel Alignment titles into one (2 confirmed merges, apply_safe).
+
+## 2026-11-10 (S634 SkyBackward): the two setting-style issuers
+
+- **An issuer override that changes leaves the old issuer in the reference.** `kb/_apply_credential_review.py` fills an
+  empty issuer or appends one; it never removes. 10-Key Data Entry's *Proctored Testing Center* and Wildland
+  Fire-Basics' short form were edited out of `kb/credentials.json` by hand in #3087. A retire path in the apply is a
+  candidate.
+- **A lookup can end with no body to save.** Los Angeles Pierce's two doctorate exhibits name no conferring university
+  in MAP, so the rows stand and the question goes to the college through its CSM.
+

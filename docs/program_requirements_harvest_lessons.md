@@ -762,3 +762,23 @@ its curriQunet catalog must declare `curriqunet.com` in `outside_hosts` with its
   pattern units; deanza.edu refuses the reader, so the ask is Sam hand-filing them (Sheet 179 card 5). #3044 merged with
   its lane text so the card's premise is on `main`.
 
+### S634 SkyBackward (2026-11-10, Sam's session): Sheet 180's two harvest rulings carried out
+
+- **A summed figure is set with the page's own words beside it.** Las Positas's local degrees took LPC-GE's 28 (A.A.)
+  and 22 (A.S.) only together with two flags the same page states: *Double counting courses in GE and the major is
+  permissible* (`ge_overlap`) and *Elective units must be degree applicable* (`electives_fill_degree`). GE alone would
+  have left Chemistry A.S. at 67 against 61 and Administration of Justice A.A. at 52 against 60. Award kinds `local`,
+  `local_aa`, `local_as` keep a transfer degree out. 181 of 193 pass (145 before); eight local degrees whose captured
+  page lacks the combined line still read incomplete.
+- **The page's exact words came from an earlier read's job log.** Run 42815817415 had already read two local pages
+  whole; reading its log back gave the sentences for the patterns, with no new load of the college's site.
+- **A computed total is narrow by construction.** `semester_sum` fills `total_units` only where the record holds no
+  program or degree total, every semester block adds to its own printed subtotal, and no other block asks for units.
+  That left Chassis 09009 (a printed degree total) as filed and took exactly the six records the ruling named.
+- **Every reconcile step carries a `field`.** `tests/program_requirements_college_test.py` reads `st["field"]` on every
+  step in the file; a new kind that needs none still names the field it writes.
+- **One display build after several colleges' rereads.** Alameda's PR merged with its reread; the build ran once on
+  Las Positas's branch after `main` came in, so two branches never carried competing builds. Do not run the build with
+  a merge conflict open: resolve and commit first.
+- **The college workflow's filing step rebases and retries**, so a session push to the branch during a run is safe.
+
