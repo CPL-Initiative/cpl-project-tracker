@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1447,
-    "bytes": 14608135,
+    "bytes": 14609065,
     "over_budget": 5,
     "handoff_max": 628,
     "always_loaded_files": 1,
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 541627,
+        "bytes": 541843,
         "over": 4
       },
       "handoff": {
         "files": 589,
-        "bytes": 4044631,
+        "bytes": 4045345,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 26422,
-      "bytes": 4475029168,
+      "bytes": 4475030098,
       "heavy_bytes": 3219363417,
       "heavy_share": 0.719,
       "ignore_filters": [
@@ -212,13 +212,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24983,
+        "bytes": 25199,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4983,
-        "ratio": 1.25
+        "over_by": 5199,
+        "ratio": 1.26
       },
-      "message": "24,983 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "25,199 B is 1.3× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {

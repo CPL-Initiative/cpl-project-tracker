@@ -1,7 +1,7 @@
 ---
 title: "Session 628 handoff: Lemoore prints no SLOs, De Anza's catalog page read in flight, Cuesta's second part running"
 date: 2026-11-10
-session: 627 (SkyBode, the CPL Queue routine, 2026-11-10 07:21Z to ~07:55Z)
+session: 627 (SkyBode, the CPL Queue routine, 2026-11-10 07:21Z to ~08:05Z)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
 ---
@@ -26,16 +26,23 @@ the UI pass were done today by S626, so this firing skipped them.
 1. **Lemoore's trial (#3038):** 0 of 12 pages parsed. Every page prints units, transfer, requisites and hours, and
    no outcomes, so `kb/course_outcomes/queue.json` carries a `none` row (S627). Marked ready; merge on a passing `test`
    if it is still open.
-2. **De Anza page read (#3044, draft), step 12.** De Anza passes 128 of 212. 73 of its 84 failures are degrees with
-   no program total (`incomplete`). Two free reads of the 2025-2026 catalog PDF were pushed:
-   `deanza_program_totals` (program pages 63-66) and `deanza_degree_total` (pages 1-62, the 90 quarter units).
+2. **De Anza page read (#3044, draft), step 12.** De Anza passes 128 of 212. 73 of its 84 failures are degrees, and
+   they read `incomplete` because each one names the 90 and a GE pattern but no GE units (`degree_check`). The host
+   answers 403 (run 42775376804), so the reads use Sam's hand-filed copy
+   (https://github.com/user-attachments/files/33599457/dac_catalog_2025-2026.pdf, 337 pages). Run 42775819484 (pages
+   46-66) shows every degree page printing *"Total Required: 90 Units"* and *"California General Education Transfer
+   Curriculum (Cal-GETC) AND electives as needed to reach at least 90 units"*. The records already hold
+   `degree_total` 90 and `electives_fill_degree`. Run 42776660795 found no GE units statement on pages 1-45.
+3. **#3038 merged** (Lemoore's `none` verdict), with `test` passing on its head.
 
 ## Read first
 
-- **#3044's `college-page-read.yml` run log.** If degree pages print only the major's units and the front matter
-  states the 90-unit total in De Anza's own words, write a reconcile step in `kb/program_requirements_reconcile.json`
-  the way Los Medanos and Columbia did (lessons S600, S605). A local degree needs GE and electives in the catalog's
-  words, never a guess. Then run the reconcile, the reread and the display build.
+- **#3044, De Anza's GE units.** The GE pattern pages sit past the programs. Edit `deanza_degree_total.json`: set
+  `pdf_span` to about 280-337 (or to the pages the index names), keep the keywords, and push. Once De Anza's own words
+  give De Anza GE's and Cal-GETC's quarter units, write a `set` step for `ge_units` in
+  `kb/program_requirements_reconcile.json` the way Cerritos did (`source`, `source_words`). A pattern-by-pattern
+  value needs the pattern from `ge_pattern`, and Cal-GETC goes on transfer degrees only (`awards: transfer`). Then run
+  the reconcile, the reread and the display build (lane, *the catalog sweep*).
 - **#3037 (Cuesta's full read):** part 2 of run 42768224688 was running at 07:30Z. Pull the branch and run
   `python3 scripts/next_slo_colleges.py --all`. At **load**, write `.load` (`host=<folder>`) and merge once the
   receipt is on the branch.
