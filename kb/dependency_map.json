@@ -4,7 +4,7 @@
   "supabase_tables": 111,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 831,
+  "file_datasets": 833,
   "external_services": 194,
   "consumers": 545,
   "workflows": 65,
@@ -9699,6 +9699,19 @@
    "consumers": [
     {
      "id": "workflow:esl-sheet-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_exhibit_reanalysis_jev.py": {
+   "consumers": [
+    {
+     "id": "workflow:typesafe-smoke.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -22776,6 +22789,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/exhibit_reanalysis_jev_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/exhibit_slo_neighbors_build_test.py": {
    "consumers": [
     {
@@ -30588,6 +30614,7 @@
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",
     "tests/jev_adjudicate_test.py",
+    "tests/exhibit_reanalysis_jev_test.py",
     "tests/jev_battery_test.py",
     "kb/_build_remint_blast_radius.py",
     "tests/remint_blast_radius_test.py",
@@ -31079,6 +31106,7 @@
     "kb/_typesafe_smoke.py",
     "kb/_jev_adjudicate.py",
     "kb/_jev_battery.py",
+    "kb/_exhibit_reanalysis_jev.py",
     "kb/_typesafe_cr_trial.py",
     "kb/_program_requirements_college.py",
     "kb/_jev_harvest.py",

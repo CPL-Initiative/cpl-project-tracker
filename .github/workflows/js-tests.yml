@@ -502,6 +502,10 @@ jobs:
       # — Jev is replaced by a recorder that asserts what it was shown.
       - name: Jev adjudication (the second look never sees the first verdict)
         run: python3 tests/jev_adjudicate_test.py
+      # The exhibit re-analysis's Jev runner: only step 9's two questions, only on
+      # what the code checks flagged, no gate, and a dry run makes no call.
+      - name: Exhibit re-analysis Jev runner (two questions, no gate)
+        run: python3 tests/exhibit_reanalysis_jev_test.py
       # The battery's SELECTION RULE (S281). A rule that cannot reject noise is
       # worse than none — it launders chance into a finding the next session
       # builds on. Asserts a false-positive RATE on pure noise (not perfection:

@@ -548,6 +548,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_description_units.py` | workflows: `college-page-read.yml` | — |
 | `kb/_docket_process.py` | workflows: `docket-process.yml` | — |
 | `kb/_esl_sheet_apply.py` | workflows: `esl-sheet-apply.yml` | — |
+| `kb/_exhibit_reanalysis_jev.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
 | `kb/_fold_unclassified.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_funding_config_edit_apply.py` | workflows: `funding-config-edit-apply.yml` | — |
@@ -1038,6 +1039,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_sheet_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/eths_remint_test.py` | workflows: `js-tests.yml` | — |
+| `tests/exhibit_reanalysis_jev_test.py` | workflows: `js-tests.yml` | — |
 | `tests/exhibit_slo_neighbors_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/exhibits_review_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/exhibits_sweep_build_test.py` | workflows: `js-tests.yml` | — |
@@ -1358,5 +1360,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 831 file
+Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 833 file
 datasets · 194 external services · 545 consumers · 65 workflows · 40 tabs.

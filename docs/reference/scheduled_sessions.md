@@ -269,12 +269,16 @@ is his standing preference there too.
    sender saved since the last done row (and the request's `changed` list). **Code checks, no model:** a rename whose
    target is an existing key (`kb/cred_rename_dryrun/collisions.json`), the same issuer spelled two ways, an issuer that
    differs from siblings sharing a title stem, a credential with no CPL type, two credentials now sharing an M-ID.
-   **Jev, on a runner, two questions only:** the same credential under two names (the 0.85 gate,
-   `kb/_jev_adjudicate.py`), and an issuer that is really a training site. Never units, TOP, discipline or "is this a
+   **Jev, on a runner, two questions only:** the same credential under two names (the checks'
+   `shared_mid_same_issuer` pairs), and an issuer that is really a training site. No gate: 0.85 was measured on the
+   CCRR's question (`kb/_jev_adjudicate.py` GATES), so each answer is Jev's probability for Sam's word. Never units, TOP, discipline or "is this a
    good title". Write the findings to `kb/exhibits_reanalysis/<date>.json` and copy it to `latest.json` beside it (the List view's panel reads that one; `tests/exhibits_reanalysis_panel.test.js` fails a stale copy), answer each comment in it, put anything
    that needs Sam on the standing sheet, and write the `exhibit_reanalysis_done` row (INSERT-only, cohort
-   `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view is built (S628); the Jev runner job is
-   the next build; until the runner exists, the code checks run alone and the findings say so. The code checks are
+   `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view is built (S628). **The Jev runner is built (S633):**
+   once the dated findings file is pushed to `main`, dispatch `typesafe-smoke.yml` with `reanalysis=<that path>`
+   (`kb/_exhibit_reanalysis_jev.py`, guard `tests/exhibit_reanalysis_jev_test.py`); the next firing copies its artifact
+   (`jev-exhibit-reanalysis`) into the findings file and `latest.json` under `jev`, and puts any item Sam must judge on
+   the sheet. The code checks are
    `kb/_exhibit_reanalysis_checks.py SAVES.json` (the sender's saves as JSON; first run S626, 2026-11-10).
 
 10. **The industry credential harvest** (Sam, 2026-11-01: *"should we add this cert catalog harvest to our Cpl queue

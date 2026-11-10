@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1453,
-    "bytes": 14653826,
+    "bytes": 14654713,
     "over_budget": 6,
     "handoff_max": 633,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 146,
-        "bytes": 4484644,
+        "bytes": 4485072,
         "over": 1
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 538970,
+        "bytes": 539429,
         "over": 4
       },
       "handoff": {
@@ -58,13 +58,12 @@
     "by_rule": {
       "oversized_doc": 6,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 75,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26471,
-      "bytes": 4495835350,
-      "heavy_bytes": 3240015520,
+      "files": 26473,
+      "bytes": 4495847742,
+      "heavy_bytes": 3240018947,
       "heavy_share": 0.721,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -187,13 +186,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 21621,
+        "bytes": 22080,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 1621,
-        "ratio": 1.08
+        "over_by": 2080,
+        "ratio": 1.1
       },
-      "message": "21,621 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "22,080 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
@@ -350,10 +349,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10710774,
+        "bytes": 10714201,
         "kind": "dir"
       },
-      "message": "directory totals 10,710,774 B inside the vault"
+      "message": "directory totals 10,714,201 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -984,17 +983,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_633_handoff.md",
-      "detail": {
-        "commits_since": 9,
-        "budget": 6,
-        "handoff": "session_633_handoff.md"
-      },
-      "message": "9 commit(s) have landed since `docs/session_633_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
