@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-589 document(s).
+590 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 629 | [Session 629 handoff: Cuesta's SLOs loaded, the re-analysis panel, De Anza's GE units still to find](../session_629_handoff.md) | 2026-11-10 |
 | 628 | [Session 628 handoff: Lemoore prints no SLOs, De Anza's catalog page read in flight, Cuesta's second part running](../session_628_handoff.md) | 2026-11-10 |
 | 627 | [Session 627 handoff: Alameda's transfer degrees merged, the first exhibit re-analysis, Sheet 178, Cuesta's read and Lemoore's trial in flight](../session_627_handoff.md) | 2026-11-10 |
 | 626 | [Session 626 handoff: the MAP role stands in for the whole noncredit attestation, Cal State LA carries its ruling, the Nudge logs itself](../session_626_handoff.md) | 2026-11-10 |
