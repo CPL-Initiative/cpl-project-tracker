@@ -228,9 +228,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       cell(/onfirmation/, 1) === "Waiting on the team" && cell(/onfirmation/, 2) === "After the review" && cell(/oordinator/, 2) === "Status only",
       [cell(/onfirmation/, 1), cell(/onfirmation/, 2), cell(/oordinator/, 2)].join("|"));
     const visit = () => rec().querySelector(".visit");
-    check("5d3: Recommended action for a waiting request is the review, with one lead button, and no email is due",
+    check("5d3: Recommended action for a waiting request is the review, already open below with no button to press, and no email is due",
       flat(visit().querySelector("h4")) === "Recommended action" && flat(visit().querySelector(".reason")) === "Review the request first" &&
-      visit().querySelectorAll('[data-act="toreview"]').length === 1 && !rec().querySelector(".decide [data-act='toreview']") &&
+      /The review is open below the record\./.test(flat(visit())) && !rec().querySelector('[data-act="toreview"]') &&
       !rec().querySelector('[data-mailact="sent"]') && rec().querySelector("#cw-mail-pre").hidden);
     d.W._setContacts({ dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
       primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu" }], landing: [], users: [] });
@@ -297,12 +297,18 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const rec = () => e.root.querySelector("#cw-record"), side = () => rec().querySelector("#cw-side");
     const shown = () => Array.prototype.filter.call(side().querySelectorAll("[data-sidepart]"), (p) => !p.hidden).map((p) => p.getAttribute("data-sidepart")).join();
     const word = (k) => rec().querySelector('.decide [data-side="' + k + '"]');
-    check("5e1: three words open the panel, none pressed at first, and the panel starts closed",
-      ["people", "page", "log"].every((k) => !!word(k) && word(k).getAttribute("aria-pressed") === "false" && word(k).getAttribute("aria-controls") === "cw-side") &&
-      flat(word("people")) === "People" && flat(word("page")) === "CPL landing page" && flat(word("log")) === "History" && side().hidden);
-    clickEl(e.window, rec().querySelector('.visit [data-act="toreview"]'));
-    check("5e2: Review the request opens the review in the panel, alone",
+    // Sam, 2026-11-10: "why do we click on Review when that's what we're there to do? shouldn't it just be open for
+    // review and action?" A request waiting on the team opens its review by itself.
+    check("5e1: four words open the panel; a waiting request's review is open at first, its word pressed",
+      ["review", "people", "page", "log"].every((k) => !!word(k) && word(k).getAttribute("aria-controls") === "cw-side") &&
+      word("review").getAttribute("aria-pressed") === "true" && ["people", "page", "log"].every((k) => word(k).getAttribute("aria-pressed") === "false") &&
+      flat(word("review")) === "Review" && flat(word("people")) === "People" && flat(word("page")) === "CPL landing page" && flat(word("log")) === "History");
+    check("5e2: the review shows in the panel, alone, with no click",
       !side().hidden && shown() === "review" && !!side().querySelector('[data-sidepart="review"] .review [data-act="accept"]'));
+    clickEl(e.window, word("review"));
+    check("5e2a: the Review word closes it, and it stays closed on this record", side().hidden && e.W._state.side === "none" && word("review").getAttribute("aria-pressed") === "false");
+    clickEl(e.window, word("review"));
+    check("5e2b: the word opens it again", !side().hidden && shown() === "review");
     check("5e3: Accept says what it does, beside the buttons",
       /Accept marks the participation confirmation as met and opens the acceptance email for you to send\. Nothing is sent until you send it\./.test(flat(side().querySelector('[data-does="part"]'))));
     clickEl(e.window, word("people"));
@@ -319,10 +325,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     clickEl(e.window, word("page"));
     check("5e7: CPL landing page opens in the panel with the way out to the page, or says MAP holds no address",
       shown() === "page" && (!!side().querySelector('[data-sidepart="page"] a[target="_blank"]') || /No landing page address in MAP/.test(flat(side()))));
-    clickEl(e.window, rec().querySelector('.visit [data-act="toreview"]'));
+    clickEl(e.window, word("review"));
     e.W._state.view = "all"; e.W.paint();
     clickEl(e.window, e.root.querySelector('.row[data-sel="' + OTHER + '"]'));
-    check("5e8: choosing another college closes an open review", e.W._state.side === "" && side().hidden);
+    check("5e8: choosing another college closes an open review, and one with nothing waiting opens no panel", e.W._state.side === "" && side().hidden && !word("review"));
+    clickEl(e.window, e.root.querySelector('.row[data-sel="' + COLLEGE + '"]'));
+    check("5e8-1: choosing the college with a waiting request opens its review again", !side().hidden && shown() === "review");
     check("5e8a: the review has one heading a screen reader hears: the part's own is for the focus alone",
       /\(k === "review" \? " sr" : ""\)/.test(SRC) && !/\bsr\b/.test(side().querySelector("#cw-side-people").className));
     check("5e8b: Recommended action can take the focus after a decision", rec().querySelector("#cw-reason").getAttribute("tabindex") === "-1");
@@ -330,7 +338,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       /r\.landing && \/\^https\?:\\\/\\\/\/i\.test\(r\.landing\)/.test(SRC) && /state\.side === "people" \|\| state\.side === "page"/.test(SRC) &&
       /CT\.state === "error" \? esc\(CT\.error\) : "Reading the contacts/.test(SRC));
     check("5e8d: deciding one of two waiting requests leaves the review open for the other",
-      /waitingKinds\(r\)\.filter\(function \(k\) \{ return k !== kind; \}\)\.length/.test(SRC) && /state\.side === "review" && !left/.test(SRC));
+      /waitingKinds\(r\)\.filter\(function \(k\) \{ return k !== kind; \}\)\.length/.test(SRC) && /\(state\.side === "review" \|\| state\.side === "none"\) && !left/.test(SRC));
     const out = setup({ signedIn: false });
     check("5e9: a reader who is not signed in gets the landing page word alone: no People, no History, no part for either",
       !out.root.querySelector('[data-side="people"]') && !out.root.querySelector('[data-side="log"]') && !!out.root.querySelector('[data-side="page"]') &&
