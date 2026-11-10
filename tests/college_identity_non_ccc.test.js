@@ -7,8 +7,10 @@
 // by no identity", and a session read it as a call still waiting on him (handoff 625, the correction to carry).
 //
 // Guards the failure modes that matter:
-//   1. The shipped artifact carries the name as `non_ccc`, with who ruled and when read from the file's own source line.
-//   2. The lint matches a variant, leaves a community college alone, and falls back to `unknown` with no list.
+//   1. The shipped artifact carries the name as `non_ccc`, with who ruled and when from that entry's own fields.
+//   2. The lint matches a variant, leaves a community college alone, and falls back to `unknown` with no list. An
+//      entry carries its own date; an entry with none names nobody (the file's source line is never borrowed); a
+//      malformed list stops the builder.
 //   3. A ruling outranks the live read: with the contacts loaded the tab still shows the ruled class and who ruled,
 //      for this name and for a separate MAP org awaiting its id.
 //
@@ -34,8 +36,9 @@ const data = sandbox.window.CPL_COLLEGE_IDENTITY;
 const f = (data.findings || []).find((x) => x.name === CSULA);
 check("1a: fixture: the list names the institution", LIST.institutions.some((i) => i.name === CSULA));
 check("1b: the artifact carries it as non_ccc", !!f && f["class"] === "non_ccc", JSON.stringify(f));
-check("1c: with who ruled and when, as the list's own source line states them",
-  !!f && f.decided_by === "Sam" && f.decided_on === "2026-10-04" && LIST._source.indexOf("Sam, ") === 0 && LIST._source.indexOf("2026-10-04") > 0);
+check("1c: with who ruled and when, as the entry's own fields state them",
+  !!f && f.decided_by === "Sam" && f.decided_on === "2026-10-04" &&
+  LIST.institutions[0].decided_by === "Sam" && LIST.institutions[0].decided_on === "2026-10-04");
 check("1d: the reason carries the list's note and says the name still joins to nothing",
   !!f && f.why.indexOf(LIST.institutions[0].note) === 0 && /no row in map_colleges/.test(f.why));
 check("1e: no name the list covers is left unknown",
@@ -49,8 +52,16 @@ const PY = [
   "b = importlib.util.module_from_spec(spec); spec.loader.exec_module(b)",
   "rows = [{'college_name': 'Norco College', 'variants': ['Norco']}]",
   "names = ['Norco College', 'Cal State LA', 'Sage College']",
+  "import tempfile, os",
+  "d = tempfile.mkdtemp()",
+  "own = os.path.join(d, 'own.json'); bad = os.path.join(d, 'bad.json')",
+  "json.dump({'_source': 'Sam, a sheet, 2026-10-04.', 'institutions': [",
+  "  {'name': 'Second Campus', 'decided_by': 'Ashley', 'decided_on': '2027-01-15'}, {'name': 'Third Campus'}]}, open(own, 'w'))",
+  "open(bad, 'w').write('{not json')",
+  "try:\n    b.load_non_ccc(bad); raised = False\nexcept ValueError:\n    raised = True",
   "print(json.dumps({'with': b.lint_observed(names, rows), 'without': b.lint_observed(names, rows, non_ccc={}),",
-  "  'missing': b.load_non_ccc('kb/no_such_file.json')}))",
+  "  'own': b.lint_observed(['Second Campus', 'Third Campus'], rows, non_ccc=b.load_non_ccc(own)),",
+  "  'missing': b.load_non_ccc('kb/no_such_file.json'), 'raised': raised}))",
 ].join("\n");
 let lint = null;
 try { lint = JSON.parse(execFileSync("python3", ["-c", PY], { cwd: ROOT, encoding: "utf8" })); } catch (e) { check("2: the lint ran: " + e.message, false); }
@@ -61,6 +72,12 @@ if (lint) {
     cls(lint.with, "Norco College") === undefined && cls(lint.with, "Sage College") === "unknown");
   check("2c: with no list the name falls back to unknown; a missing file reads as an empty list",
     cls(lint.without, "Cal State LA") === "unknown" && Object.keys(lint.missing).length === 0);
+  const own = (nm) => lint.own.find((x) => x.name === nm) || {};
+  check("2d: an entry carries its own ruling, never the file's source line",
+    own("Second Campus")["class"] === "non_ccc" && own("Second Campus").decided_by === "Ashley" && own("Second Campus").decided_on === "2027-01-15");
+  check("2e: an entry with no ruling fields is still non_ccc and names nobody",
+    own("Third Campus")["class"] === "non_ccc" && !own("Third Campus").decided_by && !own("Third Campus").decided_on);
+  check("2f: a malformed list stops the builder", lint.raised === true);
 }
 
 // ── 3. the tab: a ruling outranks the live read ───────────────────────────────────────────────────────────────

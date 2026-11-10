@@ -296,23 +296,29 @@ NON_CCC_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "non_ccc
 def load_non_ccc(path=NON_CCC_PATH):
     """Institutions Sam has ruled sit outside the California Community Colleges
     (kb/non_ccc_institutions.json, one list for every reader), keyed by norm()
-    of the name and of each variant. A missing file is an empty list: the lint
-    then reports the name as `unknown`, which is the honest fallback."""
+    of the name and of each variant.
+
+    A MISSING file is an empty list: the lint then reports the name as
+    `unknown`, the honest fallback. A MALFORMED file raises and stops the
+    builder, on purpose: a list that cannot be read must not pass for a list
+    with nothing in it.
+
+    WHO RULED AND WHEN ARE EACH ENTRY'S OWN FIELDS (`decided_by`, `decided_on`),
+    never the file's `_source` line. That line describes the whole file, so the
+    next institution added would read "ruled by Sam, 2026-10-04" whether or not
+    he made that call (COBIx on the PR that added this). An entry without the
+    two fields is still class `non_ccc` and names nobody."""
     try:
-        data = json.load(open(path, encoding="utf-8"))
+        fh = open(path, encoding="utf-8")
     except OSError:
         return {}
+    with fh:
+        data = json.load(fh)
     out = {}
     for inst in data.get("institutions") or []:
-        # Who ruled and when come from the file's own `_source` line ("Sam, open-asks sheets 33 and 34,
-        # 2026-10-04 ..."), so the finding never states a date the file does not.
-        src = data.get("_source") or ""
-        when = re.search(r"\d{4}-\d{2}-\d{2}", src)
-        rec = dict(inst, _decided_by=src.split(",")[0].strip() or None,
-                   _decided_on=when.group(0) if when else None)
         for nm in [inst.get("name")] + list(inst.get("variants") or []):
             if nm:
-                out.setdefault(norm(nm), rec)
+                out.setdefault(norm(nm), inst)
     return out
 
 
@@ -390,7 +396,7 @@ def lint_observed(observed, rows, same_entity=None, separate=None, non_ccc=None)
             inst = non_ccc[norm(nm)]
             findings.append({"name": nm, "class": "non_ccc", "resolves_to": None,
                              "institution_kind": inst.get("kind"),
-                             "decided_by": inst.get("_decided_by"), "decided_on": inst.get("_decided_on"),
+                             "decided_by": inst.get("decided_by"), "decided_on": inst.get("decided_on"),
                              "sources": o.get("sources"),
                              "has_landing_page": o.get("has_landing_page"),
                              "why": (inst.get("note") or "Outside the California Community Colleges.")
