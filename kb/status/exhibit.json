@@ -23,16 +23,21 @@
       "text": "Proctored Testing Center, California Specialized Training Institute, Graduate Level Institution of Higher Education, Johnson Controls Training Institute and Spaulding Marine Center read as training sites (probability 0.66 to 0.90, no measured threshold).",
       "if_no_reply": "The issuers stay as saved.",
       "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
-      "link_text": "Open Sheet 180"
+      "link_text": "Open Sheet 180",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-10",
+        "words": "Correct the clear two, on Open Asks Sheet 180 card 6, and go with the recommendation on the other three."
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-10T18:25:47Z",
+  "written_at": "2026-11-10T19:40:21Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Sam's word on five exhibit issuers",
-    "text": "The re-analysis's first Jev sitting read five issuers as places that train or test rather than bodies that issue; Open Asks Sheet 180 card 6 asks whether each is the issuer, and his answers are the first calibration verdicts."
+    "title": "Look up two issuing bodies",
+    "text": "Sam ruled on Sheet 180 card 6: the credentials listed under Proctored Testing Center and Graduate Level Institution of Higher Education get their issuing body looked up, saved with a receipt and recorded as a decision; the other three issuers stay."
   },
   "changes": [
     {
@@ -42,6 +47,10 @@
     {
       "at": "2026-11-10T18:20:00Z",
       "text": "The first Jev sitting asked about 13 issuers; five read as training sites, filed with the November 10 findings."
+    },
+    {
+      "at": "2026-11-10T19:38:57Z",
+      "text": "Wildland Fire-Basics' issuer now reads California State Fire Training (SFT), on Sam's answer to Sheet 180 card 3."
     }
   ]
 }
