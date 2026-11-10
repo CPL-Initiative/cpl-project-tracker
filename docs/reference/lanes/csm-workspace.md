@@ -107,13 +107,33 @@ and Home puts it back; it stops at 25 and 70 so neither side closes. Its place i
 `localStorage` (`cplCsmSplit`) like a column width. Below 960px the panes stack and the divider leaves. Every Commons
 List already carries the same control on its side panel (`pgrip` in `commons_list.js`). Guards 13y-a to 13y-g.
 
+**LIVE: the clarity mock, built (S624, 2026-11-10, on Sam's "go ahead and build it"; #3049, #3050 and the two after).**
+The page reads **Funding Follow-up Dashboard** (Malone, 2026-11-10: the MAP team does most of this work; the address
+stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is five metrics,
+each opening its list, the deadline apart. The list sits in two groups, *Needs you* (a request waiting on the team, an
+email that is due, a follow-up due) above *Waiting on the college*, most pressing first; every row names the email or
+the date. The record is a table of conditions (Condition, Status, Email), then *Recommended action* with the email as
+a preview and *Edit email*; the email is the one that is due (`recTpl`) in every list, and Sent is offered for that
+email alone. One side panel under the record holds People (one list: role, person, source), CPL landing page and
+History, and the review opens there; Accept says what it does. Access requests are one word in the header;
+*Implementation Funding* opens a drawer with the college's max award, what qualifies now, the conditions met and the
+date due. The Action center heading and the four-column board are gone. Tests: `tests/csm_workspace.test.js`
+(5b6 to 5f8, 13a0, 13a1).
+
 ## NEXT
 
-0. **The mock for issue #3010, then its build on Sam's word:** scene A, the sign-in with *Ask an approver* as the one
-   lead action and the email link one click away; scene B, the workspace as it now stands; scene C, one record in each
-   email state (the confirmation, the Noncredit CPL Lead ask for the role in MAP, both in one email, the acceptance, the
-   noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
-   from the workspace mock, version 11, in the vault.
+0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
+   20261110_csm_workspace_go_live_checklist.md`):
+   - **Turn on the two new emails once Sam has read them** (`LEAD_MAIL_ON` in `csm_workspace.js`, false today): the
+     Noncredit CPL Lead ask and both asks in one email, worded in `seedMail`. Off, no lead ask is ever due.
+   - **The sign-in** with *Ask an approver* as the one lead action and the email link one click away
+     (`reviewer_signin.js`; it changes the funding tab's sign-in too). Not built.
+   - **The funding drawer's Priorities lines**: the snapshot does not carry them; `cpl_funding.js` would pass them.
+   - **Check the side menu on the live site**: both HTMLs read *Funding Follow-up Dashboard*; a name stored for the
+     item in the Admin tab's menu would still show the old one.
+   - **Open with Malone:** Recommended action above or below the conditions; the panel under the record or as a third
+     column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
+   - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
