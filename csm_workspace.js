@@ -1547,6 +1547,7 @@
       (r ? '<p class="note" id="cw-fund-who">' + esc(r.name) + (r.district ? ", " + esc(r.district) : "") + "</p>" +
         '<table class="facts" aria-label="' + esc(r.name) + ' in Implementation Funding"><colgroup><col style="width:52%"><col style="width:48%"></colgroup><tbody>' +
         row("Max award", r.total ? money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : "TBA") +
+        // The participation confirmation is one of r.conds (kind "part"), so "every minimum condition" names it too.
         row("Qualifying now", qual ? (r.total ? money(r.total) : "TBA") : "Held until every minimum condition is met") +
         row("Minimum conditions met", met + " of " + of) +
         (S.deadline ? row("Confirmation due", esc(shortDate(S.deadline))) : "") + "</tbody></table>" +
@@ -1734,8 +1735,7 @@
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
-    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review") state.side = ""; paintRecord(); var h = document.getElementById("cw-recname");
-      if (h && t.classList.contains("chip")) h.focus(); return; }
+    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review") state.side = ""; paintRecord(); return; }
     if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
     if (t.hasAttribute("data-fund")) {
       state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
@@ -1887,7 +1887,8 @@
       el.addEventListener("keydown", onSplitKey);
       // Escape closes the funding drawer and returns to the word that opened it.
       el.addEventListener("keydown", function (e) {
-        if (e.key !== "Escape" || !state.fund) return;
+        // A pop-up's own Escape closes the pop-up alone (COBIx on PR 3053): the drawer stays while one is open.
+        if (e.key !== "Escape" || !state.fund || document.getElementById("cw-dlg-host")) return;
         state.fund = false; paint();
         var fo = root().querySelector('[data-fund="open"]'); if (fo) fo.focus();
       });

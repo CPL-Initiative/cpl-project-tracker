@@ -361,11 +361,17 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5f6: Escape closes the drawer", dr().hidden && h.W._state.fund === false);
     clickEl(h.window, open()); clickEl(h.window, dr().querySelector('[data-fund="close"]'));
     check("5f7: Close closes it too", dr().hidden);
+    clickEl(h.window, open());
+    const host = h.doc.createElement("div"); host.id = "cw-dlg-host"; R.appendChild(host);
+    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("5f7a: Escape meant for an open pop-up leaves the drawer open", !R.querySelector("#cw-fund").hidden && h.W._state.fund === true);
+    const hh = R.querySelector("#cw-dlg-host"); if (hh) hh.parentNode.removeChild(hh);
+    clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
     check("5f8: a reviewer who is no approver, with nobody waiting, gets no access word in the header", !R.querySelector("header [data-accopen]"));
   }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
-  check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
+  check("5c: a metric opens its view, Nudge offered on Not yet confirmed",
     W._state.view === "notyet" && !!root.querySelector('[data-act="nudge"]'));
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
   check("5d: a new visit starts on All open items with nothing typed", W._state.view === "open" && W._state.q === "");
@@ -420,7 +426,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
   const { window, doc, W, root } = setup({ signedIn: true });
   // The board is gone (go-live note, item 13), so a college outside the open list is reached through All institutions.
-  const pick = (k) => { W._state.view = "all"; W._state.sel = null; W.paint(); clickEl(window, root.querySelector('.row[data-sel="' + k + '"]')); W._state.view = "open"; };
+  const pick = (k) => { W._state.view = "all"; W._state.sel = null; W.paint(); clickEl(window, root.querySelector('.row[data-sel="' + k + '"]')); };
   pick(OTHER);
   const form = () => root.querySelector("form[data-logform]");
   const fld = (n) => form().elements.namedItem(n);
