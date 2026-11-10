@@ -78,7 +78,7 @@ const COMMITTED_RECEIPTS = new Set(
 
 block("2. the builder refuses to empty itself", () => {
   const MAP = "kb/college_identity/_inputs/map_colleges_2026-08-21.json";
-  const OBS = "kb/college_identity/_inputs/observed_names_2026-08-23.json";
+  const OBS = "kb/college_identity/_inputs/observed_names_2026-11-10.json";
   check("(2) the committed lint inputs are present",
     fs.existsSync(MAP) && fs.existsSync(OBS),
     "the guard is only useful if the input it demands is actually in the repo");
