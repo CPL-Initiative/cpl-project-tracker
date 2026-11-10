@@ -1,0 +1,1068 @@
+{
+ "college": "College of Alameda",
+ "reread_run": "42896121924",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "42892493763",
+ "at": "2026-11-10T20:33:22Z",
+ "posted": 6,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 6,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "01113",
+  "01114",
+  "09012",
+  "19827",
+  "19831",
+  "19832"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 6,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'College of Alameda' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 42892493763;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "FIRST SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "DMECH 011",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 022A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "APPR 451",
+          "units": 6,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SECOND SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "DMECH 012",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 023A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AUTOB 012",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "THIRD SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "DMECH 014",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 021A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 023",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "FOURTH SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "DMECH 015",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 021B",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "beginning mechanics",
+      "apprentices"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 14,
+      "min": 14
+     },
+     "outcomes": [
+      "Apply safe work habits and practices.",
+      "Troubleshoot and perform repairs in mechanical, electrical, and electronic systems.",
+      "Use computers to diagnose equipment and research information.",
+      "Perform preventative maintenance and inspections including engine tune-ups, front-end alignments, and brake service.",
+      "Operate shop machinery and equipment including hoists, overhead cranes, forklifts, hydraulic jacks, steam cleaners, floor jacks, disassembly stands, grinders, drill presses, hydraulic presses, and bead blasters.",
+      "Select and use precision tools such as torque wrenches, micrometers, dial indicators, tap and dies, and bore gauges.",
+      "Maintain professional attitude in challenging working conditions, develop self-confidence and pride in workmanship and think analytically and make professional decisions."
+     ],
+     "ge_pattern": "General Education requirements for the Associate in Science Degree (College of Alameda local GE)",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Diesel Mechanics",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47555",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935121852,
+   "program_title": "Diesel Mechanics",
+   "control_number": "01113"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "FIRST SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ATECH 021",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 022",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 208",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 225",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SECOND SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "ATECH 011",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "THIRD SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ATECH 012",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 024A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "FOURTH SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "ATECH 014",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 027",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "apprentice auto mechanics",
+      "management",
+      "teaching"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 10,
+      "min": 10
+     },
+     "outcomes": [
+      "Be ‘lifelong learners’ in the field of automotive technology, keeping up with changes in vehicles, in diagnostics and in repair procedures through a commitment to continual learning and training.",
+      "Communicate effectively with customers, supervisors and co-workers.",
+      "Apply critical thinking and problem solving skills in the process of diagnosing and repairing vehicles.",
+      "Competently perform industry standard automotive repair procedures, using proper tools, procedures and diagnostic techniques, as specified in the NATEF program certification process."
+     ],
+     "ge_pattern": "General Education requirements for the Associate in Arts Degree (College of Alameda local GE)",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Engine Performance - A.S. Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47400",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935121852,
+   "program_title": "Engine Performance",
+   "control_number": "01114"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "FIRST SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ATECH 021",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 022",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 208",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 225",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SECOND SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "ATECH 011",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "THIRD SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "ATECH 041",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended prior to enrollment in any of the “major” Auto Mechanics classes",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL 268A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ESL 253A",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 268B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ESL 253B",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "apprentice auto mechanics",
+      "management",
+      "teaching"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Be ‘lifelong learners’ in the field of automotive technology, keeping up with changes in vehicles, in diagnostics and in repair procedures through a commitment to continual learning and training.",
+      "Communicate effectively with customers, supervisors and co-workers.",
+      "Apply critical thinking and problem solving skills in the process of diagnosing and repairing vehicles.",
+      "Competently perform industry standard automotive repair procedures, using proper tools, procedures and diagnostic techniques, as specified in the NATEF program certification process."
+     ],
+     "ge_pattern": "General Education requirements for the Associate in Arts Degree (College of Alameda local GE)",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Engine Repair Specialist - A.S. Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47404",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935121852,
+   "program_title": "Engine Repair Specialist",
+   "control_number": "09012"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 14,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "FIRST SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "DMECH 011",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 022A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SECOND SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "DMECH 012",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 023A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AUTOB 012",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "THIRD SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "DMECH 014",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DMECH 021A",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 023",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "FOURTH SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "DMECH 015",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DMECH 021B",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "beginning mechanics",
+      "apprentices"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply safe work habits and practices.",
+      "Troubleshoot and perform repairs in mechanical, electrical, and electronic systems.",
+      "Use computers to diagnose equipment and research information.",
+      "Perform preventative maintenance and inspections including engine tune-ups, front-end alignments, and brake service.",
+      "Operate shop machinery and equipment including hoists, overhead cranes, forklifts, hydraulic jacks, steam cleaners, floor jacks, disassembly stands, grinders, drill presses, hydraulic presses, and bead blasters.",
+      "Select and use precision tools such as torque wrenches, micrometers, dial indicators, tap and dies, and bore gauges.",
+      "Maintain professional attitude in challenging working conditions, develop self-confidence and pride in workmanship and think analytically and make professional decisions."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Diesel Mechanics",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47556",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935121852,
+   "program_title": "Diesel Mechanics",
+   "control_number": "19827"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "FIRST SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ATECH 021",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 022",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 208",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 225",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SECOND SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "ATECH 011",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "THIRD SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ATECH 012",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 024A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "FOURTH SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "ATECH 014",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 027",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "apprentice auto mechanics",
+      "management",
+      "teaching"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Be ‘lifelong learners’ in the field of automotive technology, keeping up with changes in vehicles, in diagnostics and in repair procedures through a commitment to continual learning and training.",
+      "Communicate effectively with customers, supervisors and co-workers.",
+      "Apply critical thinking and problem solving skills in the process of diagnosing and repairing vehicles.",
+      "Competently perform industry standard automotive repair procedures, using proper tools, procedures and diagnostic techniques, as specified in the NATEF program certification process."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Engine Performance - Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47352",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935121852,
+   "program_title": "Engine Performance",
+   "control_number": "19831"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "FIRST SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ATECH 021",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATECH 022",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 208",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 225",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SECOND SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "ATECH 011",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "THIRD SEMESTER",
+      "rule": "all",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "ATECH 041",
+        "units": 10,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended prior to enrollment in any of the “major” Auto Mechanics classes",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL 268A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ESL 253A",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 268B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ESL 253B",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "apprentice auto mechanics",
+      "management",
+      "teaching"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Be ‘lifelong learners’ in the field of automotive technology, keeping up with changes in vehicles, in diagnostics and in repair procedures through a commitment to continual learning and training.",
+      "Communicate effectively with customers, supervisors and co-workers.",
+      "Apply critical thinking and problem solving skills in the process of diagnosing and repairing vehicles.",
+      "Competently perform industry standard automotive repair procedures, using proper tools, procedures and diagnostic techniques, as specified in the NATEF program certification process."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Engine Repair Specialist - Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47368",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935121852,
+   "program_title": "Engine Repair Specialist",
+   "control_number": "19832"
+  }
+ ]
+}
