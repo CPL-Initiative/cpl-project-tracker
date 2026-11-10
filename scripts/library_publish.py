@@ -17,7 +17,9 @@ presses Replace the public copy (regen.approved_at), or asked for it at once whe
              on the card since the read wins and the record is left for the next run.
 
 It writes no other file and no other table. A record whose page is not a Pages copy, or whose
-draft is missing, is skipped and named. Test: tests/library_publish_test.py.
+draft is missing, is skipped and named. A NEW piece (regen.new_piece, drafted on its card from the
+starter page; Sam, 2026-11-10) has no copy yet: --write makes library/<slug>/ for it, and the update
+makes it Version 1, filed on the web at its Pages address, a Requested record moving to Draft. Test: tests/library_publish_test.py.
 
     SUPABASE_SERVICE_KEY=... python3 scripts/library_publish.py --write
     SUPABASE_SERVICE_KEY=... python3 scripts/library_publish.py --finish --commit <sha>
@@ -67,10 +69,149 @@ def source_behind(record, draft):
     return bool(draft.get("model")) and bool(SCRIPT.search(rb))
 
 
+# The second gate on a new piece's page (COBIx on #3077): the drafter's allowlist (new_page.mjs mainProblems), run
+# again on the stored draft before --write, so a draft altered after the drafter checked it is still refused. Pure.
+ALLOWED_TAGS = {"main", "div", "section", "h1", "h2", "h3", "h4", "p", "ol", "ul", "li", "a", "strong", "em", "span",
+                "br", "b", "i"}
+_TAG = re.compile(r"^<(/?)([a-z][a-z0-9]*)((?:\s[^<>]*)?)>$")
+_ATTR = re.compile(r'\s+([a-zA-Z][a-zA-Z0-9-]*)\s*=\s*"([^"<>]*)"')
+
+
+def _decode(v):
+    import html as _h
+    return re.sub(r"[\x00-\x20\x7f-\x9f]", "", _h.unescape(v))
+
+
+def main_problems(page):
+    """What a new piece's <main> carries outside the allowlist; [] when it is clean. Pure."""
+    m = re.search(r'<main\b[^>]*\bid="main"[^>]*>[\s\S]*</main>', page or "")
+    if not m:
+        return ['no <main id="main">']
+    body, out, stack, i = m.group(0), [], [], 0
+    while i < len(body):
+        lt = body.find("<", i)
+        if ">" in body[i:lt if lt >= 0 else len(body)]:
+            out.append("a stray >"); break
+        if lt < 0:
+            break
+        gt = body.find(">", lt)
+        if gt < 0:
+            out.append("an unclosed tag"); break
+        tag, i = body[lt:gt + 1], gt + 1
+        t = _TAG.match(tag)
+        if not t:
+            out.append("markup that is not a plain tag"); continue
+        close, name, attrs = t.group(1), t.group(2), t.group(3)
+        if name not in ALLOWED_TAGS:
+            out.append("the tag <%s>" % name); continue
+        if close:
+            if attrs.strip():
+                out.append("a closing tag with attributes")
+            if (stack.pop() if stack else None) != name:
+                out.append("tags that do not nest")
+            continue
+        rest = re.sub(r"\s*/?\s*$", "", attrs)
+        pos = 0
+        while pos < len(rest):
+            a = _ATTR.match(rest, pos)
+            if not a:
+                out.append("an attribute that is not name=\"value\""); break
+            pos = a.end()
+            an, av = a.group(1).lower(), a.group(2)
+            if an in ("class", "id"):
+                if not re.match(r"^[A-Za-z0-9 _-]*$", av):
+                    out.append("an odd %s" % an)
+            elif re.match(r"^aria-[a-z]+$", an):
+                pass
+            elif an == "href" and name == "a":
+                if not re.match(r"^(https://|mailto:)", _decode(av), re.I):
+                    out.append("a link that is not https: or mailto:")
+            elif an == "target" and name == "a":
+                if av != "_blank":
+                    out.append("a target other than _blank")
+            elif an == "rel" and name == "a":
+                if not re.match(r"^[a-z ]+$", av):
+                    out.append("an odd rel")
+            else:
+                out.append("the attribute %s" % an)
+        if name != "br" and not attrs.rstrip().endswith("/"):
+            stack.append(name)
+    if stack:
+        out.append("tags left open")
+    return sorted(set(out))
+
+
+# A revision may not add risky markup (COBIx on #3077): the same count as apply_edits.mjs riskCounts, run on the draft
+# against the page it replaces, before --write. Pure.
+_RISKS = {
+    "a script": r"<script\b",
+    "an event handler": r"[\s/\"']on[a-z]+\s*=",
+    "a frame, object, embed, form, meta, base, link, style, svg or math element":
+        r"<(iframe|frame|object|embed|form|meta|base|link|style|svg|math|template)\b",
+    "a srcdoc or style attribute": r"[\s/\"'](srcdoc|style)\s*=",
+    "a CSS url(, @import, image-set(, src(, @font-face, escape or entity in a style":
+        r"url\s*\(|@import\b|image-set\s*\(|\bsrc\s*\(|@font-face\b|\\|style\s*=\s*\"[^\"]*&",
+}
+
+
+def risk_counts(page):
+    s, out = page or "", {}
+    for k, rx in _RISKS.items():
+        out[k] = len(re.findall(rx, s, re.I))
+    bad = 0
+    for m in re.finditer(r"(href|src|action|formaction|xlink:href)\s*=\s*(\"[^\"]*\"|'[^']*'|[^\s>]+)", s, re.I):
+        v = m.group(2).strip("\"'")
+        if re.match(r"^(javascript|data|vbscript):", _decode(v), re.I):
+            bad += 1
+    out["a javascript:, data: or vbscript: address"] = bad
+    return out
+
+
+_PIECES = [
+    r"<script\b[\s\S]*?(?:</script\s*>|$)",
+    r"<(?:iframe|frame|object|embed|form|meta|base|link|svg|math|template)\b[^>]*>",
+    r"[\s/\"']on[a-z]+\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)",
+    r"[\s/\"'](?:src|srcdoc|action|formaction|xlink:href)\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)",
+]
+
+
+def frozen_pieces(page):
+    """The page's executable parts, as apply_edits.mjs frozenPieces finds them. Pure."""
+    out = []
+    for rx in _PIECES:
+        out += [re.sub(r"^[\s/\"']", "", m.group(0)) for m in re.finditer(rx, page or "", re.I)]
+    return out
+
+
+def new_pieces(before, after):
+    from collections import Counter
+    have = Counter(frozen_pieces(before))
+    out = []
+    for p in frozen_pieces(after):
+        if have[p]:
+            have[p] -= 1
+        else:
+            out.append(p)
+    return out
+
+
+def added_risks(before, after):
+    b, a = risk_counts(before), risk_counts(after)
+    out = [k for k in a if a[k] > b.get(k, 0)]
+    if new_pieces(before, after) and not out:
+        out.append("a change to a script, handler or source the page already had (a session makes that change: Copy the request)")
+    return out
+
+
+def is_new_piece(record):
+    g = record.get("regen") if isinstance(record.get("regen"), dict) else {}
+    return bool(g.get("new_piece"))
+
+
 def record_update(record, draft, today):
     """The update that makes the draft the record's current version. Pure."""
     g = record["regen"]
-    n = next_version(record)
+    n = 1 if is_new_piece(record) and not record.get("version") else next_version(record)
     label = f"Version {n}" if n else "Revised " + today
     versions = [dict(x) for x in (record.get("versions") or []) if isinstance(x, dict)]
     versions = [x for x in versions if not (x.get("label") == label and str(x.get("status", "")).startswith("Draft"))]
@@ -79,9 +220,10 @@ def record_update(record, draft, today):
             x["status"] = "Replaced by " + (f"v{n}" if n else label)
     who = g.get("approved_by") or g.get("requested_by") or "the team"
     note = (draft.get("summary") or "Revised from the card.").strip()
+    verb = "published the first public copy" if is_new_piece(record) else "replaced the public copy"
     entry = {"url": PAGES + record["slug"] + "/", "date": today, "label": label,
              "status": f"Current: {note} Drafted from the card by {draft.get('made_by') or 'the team'} "
-                       f"(draft {draft['id']}); replaced the public copy on {who}'s approval."}
+                       f"(draft {draft['id']}); {verb} on {who}'s approval."}
     if source_behind(record, draft):
         entry["source_behind"] = True
     versions.append(entry)
@@ -89,6 +231,12 @@ def record_update(record, draft, today):
            "url": PAGES + record["slug"] + "/"}
     if n:
         out["version"] = str(n)
+    if is_new_piece(record):
+        out.update({"home": "web", "file_type": "html"})
+        if record.get("status") in (None, "requested"):
+            out["status"] = "draft"
+        if not record.get("made_on"):
+            out["made_on"] = today
     return out
 
 
@@ -118,14 +266,21 @@ def api(path, method="GET", body=None, headers=None):
 
 
 def write_phase(today):
-    rows = api("cpl_library?select=id,slug,title,url,version,versions,refresh_note,rebuild_from,regen,updated_at"
+    rows = api("cpl_library?select=id,slug,title,url,version,versions,refresh_note,rebuild_from,regen,updated_at,status,made_on,home,file_type"
                "&regen=not.is.null&retired_at=is.null")
     done, skipped = [], []
     for r in rows:
         if not due(r):
             continue
-        if not SLUG.match(r.get("slug") or "") or not (ROOT / "library" / r["slug"] / "index.html").exists():
+        if not SLUG.match(r.get("slug") or ""):
+            skipped.append(f"{r.get('slug')}: not a Pages address")
+            continue
+        page = ROOT / "library" / r["slug"] / "index.html"
+        if not page.exists() and not is_new_piece(r):
             skipped.append(f"{r.get('slug')}: no Pages copy at library/<slug>/")
+            continue
+        if page.exists() and is_new_piece(r) and not r.get("url"):
+            skipped.append(f"{r['slug']}: a new piece whose folder library/{r['slug']}/ already holds another page")
             continue
         did = urllib.parse.quote(r["regen"]["draft_id"])
         d = api(f"cpl_library_drafts?id=eq.{did}&library_id=eq.{r['id']}&select=id,slug,html,summary,made_by,model,published_at")
@@ -133,7 +288,18 @@ def write_phase(today):
             skipped.append(f"{r['slug']}: draft {r['regen']['draft_id']} not found")
             continue
         d = d[0]
-        (ROOT / "library" / r["slug"] / "index.html").write_text(d["html"], encoding="utf-8")
+        if is_new_piece(r):
+            bad = main_problems(d.get("html") or "")
+            if bad:
+                skipped.append(f"{r['slug']}: draft {d['id']} refused, its page carries " + ", ".join(bad))
+                continue
+        else:
+            bad = added_risks(page.read_text(encoding="utf-8"), d.get("html") or "")
+            if bad:
+                skipped.append(f"{r['slug']}: draft {d['id']} refused, it adds " + ", ".join(bad))
+                continue
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text(d["html"], encoding="utf-8")
         up = record_update(r, d, today)
         RECEIPTS.mkdir(parents=True, exist_ok=True)
         (RECEIPTS / f"{today}-{r['slug']}.json").write_text(

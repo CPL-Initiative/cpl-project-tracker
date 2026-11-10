@@ -1185,7 +1185,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `data-c-idsystem.org` | scripts: `kb/_csr_quarterly_probe.py` |
 | `datamart.cccco.edu` | scripts: `kb/_fetch_program_course_files.py` |
 | `datastudio.google.com` | tabs: `cip-crosswalk` |
-| `docs.google.com` | tabs: `nc-learning-partners` |
+| `docs.google.com` | tabs: `nc-learning-partners` · scripts: `chatbox/supabase/functions/library-revise-draft/new_page.mjs` |
 | `drive.google.com` | scripts: `scripts/library_file.py` |
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `example.edu` | modules: `a11y.config.js` |
@@ -1332,6 +1332,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `x` | scripts: `kb/_verify_cos_sync_lanes.py` |
 | `x.example.org` | modules: `a11y.config.js` |
 | `yc.yccd.edu` | tabs: `map-queue`, `map-users` |
+| `|mailto:` | scripts: `scripts/library_publish.py` |
 | `…` | tabs: `cpl-news`, `gr-priorities` · modules: `funding-model/edit_page.js` |
 
 ## Stale-copy risk
@@ -1361,4 +1362,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 833 file
-datasets · 194 external services · 545 consumers · 65 workflows · 40 tabs.
+datasets · 195 external services · 546 consumers · 65 workflows · 40 tabs.

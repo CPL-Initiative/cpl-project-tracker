@@ -496,7 +496,10 @@
       R + " .lib-panel{display:grid;gap:12px;margin:16px 0 4px;padding:18px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
       R + " .lib-panel h2.lib-h{margin:0;}",
       R + " .lib-drop{display:grid;gap:12px;padding:18px;border:2px dashed var(--border-strong);border-radius:8px;background:var(--surface-subtle);}",
-      R + " .lib-drop.over{border-color:var(--cobalt);}",
+      R + " .lib-drop.over,.lib-cbox.over{border-color:var(--cobalt);}",
+      R + " [data-newdrop].over{outline:2px dashed var(--cobalt);outline-offset:4px;}",
+      R + " .lib-state label.lib-word{cursor:pointer;}",
+      R + " .lib-state label.lib-word:has(+ input:focus-visible){outline:2px solid var(--cobalt);outline-offset:2px;}",
       R + " .lib-dropline{margin:0;font-weight:600;color:var(--text-strong);}",
       R + " .lib-pick{justify-self:start;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px;}",
       R + " #lc-file:focus-visible + *, .lib-pick:focus-within{outline:2px solid var(--cobalt);outline-offset:2px;}",
@@ -1097,33 +1100,50 @@
   function g0Replace(r) { return !!(r.regen && r.regen.publish === "replace"); }
   function draftNow(id, byName) {
     var r = byId(id);
-    if (!r || regenState(r) !== "waiting") return;
+    var fresh = isNewPiece(r) && !regenState(r);
+    if (!r || (regenState(r) !== "waiting" && !fresh)) return;
     var n = document.getElementById("dn-by-" + id), by = byName || (n ? n.value.trim() : "") || storedAuthor();
     if (!by) { sayOn(id, "Add your name, so the record says who asked for the draft.", true); render(); return; }
     rememberAuthor(by);
     var h = headers({ "Content-Type": "application/json" }), tok = reviewerToken();
     if (tok && !teamPhrase()) h.Authorization = "Bearer " + tok;
-    state.busy = true; sayOn(id, "Claude is drafting the changes to " + r.title + ". This takes about a minute."); render(); focusState(id);
+    state.busy = true; sayOn(id, (isNewPiece(r) ? "Claude is drafting " + r.title + " from its brief and documents." : "Claude is drafting the changes to " + r.title + ".") + " This takes about a minute."); render(); focusState(id);
     return window.fetch(REVISE_DRAFT_URL, { method: "POST", headers: h, body: JSON.stringify({ id: id, by: by }) })
       .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j || {} }; }); })
       .then(function (o) {
         state.busy = false;
         if (!o.ok) throw new Error((o.j.error || "The draft was not made.") + (o.j.summary ? " The model said: " + o.j.summary : ""));
         sayOn(id, "The draft is ready: " + (o.j.summary || "open it to read the changes.") +
-          (o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open it, then Replace the public copy when it reads right."));
+          (o.j.google_closed && o.j.google_closed.length ? " Not opened (share it as Anyone with the link, then draft again): " + o.j.google_closed.join("; ") + "." : "") +
+          (o.j.new_piece ? " Open it, then Publish it when it reads right." : o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open it, then Replace the public copy when it reads right."));
         return load().then(function () { focusState(id); });
       }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); focusState(id); });
   }
   // A draft from the card lives in cpl_library_drafts, behind the team phrase: read it and
   // open it as a page of its own in a new tab.
+  // The draft opens inside a sandboxed frame (COBIx on #3077, 2026-11-10): a blob: URL made here takes on this page's
+  // origin, so script in a draft built from a pasted document could have read the team phrase and the reviewer token
+  // from localStorage. The frame has no allow-same-origin, so its scripts (the theme line, Ask Sierra) run in an opaque
+  // origin that can reach neither this page nor its storage; a <base> points its relative links at its Pages folder.
+  function draftDoc(html, slug) {
+    var base = '<base href="' + esc(PUBLIC_PAGE + (slug || "") + (slug ? "/" : "")) + '" target="_blank">';
+    return /<head[^>]*>/i.test(html) ? html.replace(/<head[^>]*>/i, function (h) { return h + base; }) : base + html;
+  }
   function openDraft(draftId) {
     var w = window.open("", "_blank");
-    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html", { headers: headers() })
+    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html,slug", { headers: headers() })
       .then(function (res) { if (!res.ok) throw new Error("The draft could not be read (" + res.status + ")."); return res.json(); })
       .then(function (rows) {
         if (!rows || !rows[0]) throw new Error("The draft is not there.");
-        var url = URL.createObjectURL(new Blob([rows[0].html], { type: "text/html" }));
-        if (w) w.location = url; else window.open(url, "_blank");
+        if (!w) throw new Error("The browser blocked the new tab. Allow pop-ups for this site, then Open the draft again.");
+        var d = w.document;
+        d.open();
+        d.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Draft</title>' +
+          "<style>html,body{margin:0;height:100%;background:Canvas}iframe{border:0;width:100%;height:100%;display:block}</style></head>" +
+          '<body><iframe sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" title="The draft"></iframe></body></html>');
+        d.close();
+        d.title = "Draft: " + (rows[0].slug || "Library piece");
+        d.querySelector("iframe").srcdoc = draftDoc(rows[0].html, rows[0].slug);
       }).catch(function (e) { if (w) w.close(); say(e.message, true); render(); });
   }
 
@@ -1148,7 +1168,71 @@
     return (pv ? "Version " + (pv + 1) + " is ready to review" : "A draft is ready to review") + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". " +
       (pv ? "Version " + pv + " stays public until you replace it." : "The public copy stays as it is until you replace it.");
   }
+  // A new piece drafts on its card too (Sam, 2026-11-09: "I haven't been able to successfully create a doc from there
+  // yet--always need some sort of out side intervention"; 2026-11-10: "all the way to posting in the public library").
+  // library-revise-draft writes Draft 1 from the brief and the documents in the public library's look; Publish it
+  // approves it, and library-publish puts it at library/<slug>/ as Version 1. Then List publicly, as for any piece.
+  function isNewPiece(r) { return !!r && r.status === "requested" && !r.url; }
+  function googleLink(u) { return /^https:\/\/docs\.google\.com\/(document|presentation|spreadsheets)\/d\//.test(String(u || "")); }
+  function canDraftNew(r) {
+    return !!((r.brief && r.brief.say) || r.refresh_note || sourceList(r).some(function (x) { return (!x.url && x.text) || googleLink(x.url); }));
+  }
+  function newPieceBlock(r) {
+    var rs = regenState(r), g = r.regen || {}, line = "", why = "", next = [];
+    if (!rs || rs === "waiting") {
+      if (canDraftNew(r)) {
+        next.push('<form data-draftnowform="' + esc(r.id) + '">' + nameOrField("dn-by-", r.id) +
+          '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>");
+        why = "Claude drafts the page in the public library's look from the brief and the documents, in about a minute, and checks its accessibility. Nothing is public until you press Publish it.";
+      } else why = "Say what it must say (Edit record), or add a document to work from, and Claude drafts it here.";
+      // The piece's documents, added on the card itself (Sam's request 71931018 was saved before its PDF was read).
+      next.push('<label class="lib-word" for="nd-file-' + esc(r.id) + '">Add a document</label><input id="nd-file-' + esc(r.id) + '" class="lib-vh" type="file" data-newdoc="' + esc(r.id) + '">');
+      why += " Drop a Word, PowerPoint or Excel file, a PDF or captions on this card to add its words.";
+    } else if (rs === "ready") {
+      line = esc("Draft 1 is ready to review" + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". Nothing is public yet.");
+      next.push(openDraftWord(r, true),
+        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) +
+          '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Publish it</button></form>",
+        word("data-redraft", r.id, "Draft it again", false, r.title));
+      why = "Publish it puts the page at its own address on the CPL Initiative's site; List publicly then adds it to the public library.";
+    } else if (rs === "approved") {
+      line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
+        ". The next scheduled run puts it on its page (every three hours); then List publicly on its card.");
+      next.push(openDraftWord(r, false));
+    }
+    var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
+    return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
+      (line ? '<p class="now">' + line + "</p>" : "") + (why ? '<p class="why">' + esc(why) + "</p>" : "") +
+      (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "") + msg + "</div>";
+  }
+  // A document added on a Requested card: read here, then saved to the record's documents at once.
+  function addNewPieceFile(id, file) {
+    var r = byId(id);
+    if (!isNewPiece(r)) return;
+    var name = file.name, ext = extOf(name);
+    sayOn(id, "Reading " + name + "\u2026"); render();
+    readWords(file).then(function (text) {
+      if (!text) { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); return; }
+      var list = sourceList(r).slice();
+      if (list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
+      return write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { sources: list, updated_by: storedAuthor() || null } }).then(function () {
+        sayOn(id, "Added " + name + " (" + wordCount(text) + " words read). Press Draft it now.");
+        return load().then(function () { focusState(id); });
+      });
+    }, function () { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); })
+      .catch(function (e) { sayOn(id, e.message, true); render(); });
+  }
+  function redraft(id) {
+    var r = byId(id);
+    if (!isNewPiece(r) || regenState(r) !== "ready") return;
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: null, updated_by: storedAuthor() || null } })
+      .then(function () { return load(); }).then(function () { return draftNow(id, storedAuthor()); })
+      .catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
+  }
   function stateBlock(r) {
+    if (isNewPiece(r)) return newPieceBlock(r);
     if (r.status === "requested") return "";
     var rs = regenState(r), g = r.regen || {}, box = state.cardBox && state.cardBox.id === r.id ? state.cardBox : null;
     var line = "", why = "", next = [], extra = "";
@@ -1224,7 +1308,7 @@
         return "<li>" + srcWords(x) + ' <button type="button" class="lib-word" data-srcdel="cb:' + i + '">Remove<span class="lib-vh"> ' + esc(x.title) + "</span></button></li>";
       }).join("") + "</ul></div>" : "") +
       (state.cbDocs
-        ? '<div class="lib-field"><label for="cb-file-' + esc(r.id) + '">Add a document to work from: a Word or text file is read here</label><input id="cb-file-' + esc(r.id) + '" data-cbfile="' + esc(r.id) + '" type="file"></div>' +
+        ? '<div class="lib-field"><label for="cb-file-' + esc(r.id) + '">Add a document to work from, or drop it on this box: a Word document, a deck, a PDF or a text file is read here</label><input id="cb-file-' + esc(r.id) + '" data-cbfile="' + esc(r.id) + '" type="file"></div>' +
           '<div class="lib-field"><label for="cb-link-' + esc(r.id) + '">or paste its link</label><input id="cb-link-' + esc(r.id) + '" type="url" placeholder="A web page or a Claude page; SharePoint is closed to a session"></div>'
         : '<div class="lib-next">' + word("data-cbdocs", r.id, "Add a document to work from") + "</div>") +
       (by && !state.cbName
@@ -1269,17 +1353,16 @@
   function addCardFile(id, file) {
     var name = file.name, ext = extOf(name);
     var take = function (text) {
-      if (!String(text || "").trim()) { sayOn(id, "A session cannot open " + name + " from here. Save it as a Word document or plain text, or paste its words into What to change.", true); render(); return; }
+      if (!String(text || "").trim()) { sayOn(id, unreadWords(name, ext), true); render(); return; }
       var list = (state.src.cb || []).slice();
       if (list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
       list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
       if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
-      state.src.cb = list; sayOn(id, "Added " + name + ". It saves with the request."); render();
+      state.src.cb = list; state.cbDocs = true; sayOn(id, "Added " + name + " (" + wordCount(text) + " words read). It saves with the request."); render();
     };
     var fail = function () { take(""); };
-    if (ext === "docx" && file.arrayBuffer) readDocxText(file).then(take, fail);
-    else if (TEXT_EXT[ext] && file.text) file.text().then(take, fail);
-    else fail();
+    sayOn(id, "Reading " + name + "…"); render();
+    readWords(file).then(take, fail);
   }
   // The box's one press: save the request, then draft it here when this piece can be (Fable's advice, Sam's
   // ask: "add a note and click revise and it hands me a revision right there in the Library").
@@ -1811,11 +1894,126 @@
       }).join("\n").replace(/\n{3,}/g, "\n\n").trim();
     });
   }
+  // A deck's words, read here (Sam, 2026-11-10: a PDF of a deck dropped as background "apparently didn't upload"):
+  // each slide's text and its speaker notes, in slide order.
+  function slideNo(p) { var m = /(\d+)\.xml$/.exec(p); return m ? parseInt(m[1], 10) : 0; }
+  function xmlText(xml, ns) {
+    if (!xml) return "";
+    var d = new DOMParser().parseFromString(xml, "application/xml");
+    return Array.prototype.map.call(d.getElementsByTagNameNS(ns, "p"), function (p) {
+      return Array.prototype.map.call(p.getElementsByTagNameNS(ns, "t"), function (t) { return t.textContent; }).join("");
+    }).filter(function (s) { return s.trim(); }).join("\n");
+  }
+  function readPptxText(file) {
+    var A = "http://schemas.openxmlformats.org/drawingml/2006/main";
+    return loadZip().then(function (JSZip) { return file.arrayBuffer().then(function (b) { return JSZip.loadAsync(b); }); }).then(function (z) {
+      var slides = Object.keys(z.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); }).sort(function (a, b) { return slideNo(a) - slideNo(b); });
+      return Promise.all(slides.map(function (p) {
+        var notes = z.file("ppt/notesSlides/notesSlide" + slideNo(p) + ".xml");
+        return Promise.all([z.file(p).async("string"), notes ? notes.async("string") : ""]).then(function (x) {
+          var body = xmlText(x[0], A), said = xmlText(x[1], A).replace(/^\d+$/gm, "").trim();
+          return "Slide " + slideNo(p) + "\n" + body + (said ? "\nSpeaker notes: " + said : "");
+        });
+      }));
+    }).then(function (parts) { return parts.join("\n\n").trim(); });
+  }
+  // A PDF's words, read here with pdf.js (vendored, Apache-2.0, loaded only when a PDF is dropped). A page's text
+  // items join in reading order, a line break where pdf.js marks one. A scanned PDF has no words to give.
+  function pdfPageText(items) {
+    return (items || []).map(function (it) { return String(it && it.str || "") + (it && it.hasEOL ? "\n" : ""); }).join("")
+      .replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+  }
+  var PDFJS = "vendor/pdfjs/pdf.min.mjs", PDFJS_WORKER = "vendor/pdfjs/pdf.worker.min.mjs";
+  function loadPdfJs() {
+    if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+    var base = (document.baseURI || location.href);
+    return import(new URL(PDFJS, base).href).then(function (m) {
+      m.GlobalWorkerOptions.workerSrc = new URL(PDFJS_WORKER, base).href;
+      window.pdfjsLib = m;
+      return m;
+    });
+  }
+  function readPdfText(file) {
+    return loadPdfJs().then(function (lib) {
+      return file.arrayBuffer().then(function (b) { return lib.getDocument({ data: new Uint8Array(b), isEvalSupported: false }).promise; });
+    }).then(function (doc) {
+      var pages = [];
+      for (var i = 1; i <= doc.numPages; i++) pages.push(i);
+      return Promise.all(pages.map(function (n) {
+        return doc.getPage(n).then(function (pg) { return pg.getTextContent(); }).then(function (tc) { return "Page " + n + "\n" + pdfPageText(tc.items); });
+      }));
+    }).then(function (parts) { return parts.join("\n\n").trim(); });
+  }
+  // A workbook's words: each sheet's rows, cells joined by tabs, its shared strings resolved.
+  function readXlsxText(file) {
+    var S = "http://schemas.openxmlformats.org/spreadsheetml/2006/main";
+    var parse = function (x) { return new DOMParser().parseFromString(x || "<x/>", "application/xml"); };
+    return loadZip().then(function (JSZip) { return file.arrayBuffer().then(function (b) { return JSZip.loadAsync(b); }); }).then(function (z) {
+      var ss = z.file("xl/sharedStrings.xml"), wb = z.file("xl/workbook.xml");
+      var sheets = Object.keys(z.files).filter(function (p) { return /^xl\/worksheets\/sheet\d+\.xml$/.test(p); }).sort(function (a, b) { return slideNo(a) - slideNo(b); });
+      return Promise.all([ss ? ss.async("string") : "", wb ? wb.async("string") : ""].concat(sheets.map(function (p) { return z.file(p).async("string"); }))).then(function (x) {
+        var shared = Array.prototype.map.call(parse(x[0]).getElementsByTagNameNS(S, "si"), function (si) {
+          return Array.prototype.map.call(si.getElementsByTagNameNS(S, "t"), function (t) { return t.textContent; }).join("");
+        });
+        var names = Array.prototype.map.call(parse(x[1]).getElementsByTagNameNS(S, "sheet"), function (s) { return s.getAttribute("name"); });
+        return x.slice(2).map(function (xml, i) {
+          var rows = Array.prototype.map.call(parse(xml).getElementsByTagNameNS(S, "row"), function (row) {
+            return Array.prototype.map.call(row.getElementsByTagNameNS(S, "c"), function (c) {
+              var t = c.getAttribute("t"), v = c.getElementsByTagNameNS(S, "v")[0], is = c.getElementsByTagNameNS(S, "t")[0];
+              if (t === "s" && v) return shared[parseInt(v.textContent, 10)] || "";
+              if (t === "inlineStr" && is) return is.textContent;
+              return v ? v.textContent : "";
+            }).join("\t").replace(/\t+$/, "");
+          }).filter(function (s) { return s.trim(); });
+          return "Sheet: " + (names[i] || "Sheet " + (i + 1)) + "\n" + rows.join("\n");
+        }).join("\n\n").trim();
+      });
+    });
+  }
+  // A video's words come from its captions (Sam, 2026-11-10: "need to be able to handle office docs, pdfs, google
+  // slides, videos"): a .vtt or .srt file reads as its spoken lines, the cue numbers and times dropped. A video file
+  // itself carries no words this page can read; the box asks for its captions or transcript.
+  function captionText(t) {
+    return String(t || "").replace(/^﻿?WEBVTT[^\n]*\n/, "").split(/\r?\n/).filter(function (l) {
+      return l.trim() && !/^\d+$/.test(l.trim()) && !/-->/.test(l) && !/^(NOTE|STYLE|REGION)\b/.test(l);
+    }).map(function (l) { return l.replace(/<[^>]+>/g, ""); }).join("\n").trim();
+  }
+  // The one reader every box uses: Word, PowerPoint and Excel files, a PDF, captions or plain text, as words a draft
+  // can work from. Anything else, or a file with no words in it (a scan), resolves to "" and the box says so before it
+  // saves. A Google Doc, Slides or Sheet arrives as its link; Claude reads it when it drafts (library-revise-draft).
+  var READS = { docx: true, docm: true, pptx: true, pptm: true, ppsx: true, xlsx: true, xlsm: true, pdf: true, vtt: true, srt: true };
+  var VIDEO_EXT = { mp4: true, mov: true, m4v: true, webm: true };
+  function readsWords(ext) { return !!(READS[ext] || TEXT_EXT[ext]); }
+  // The labels this reader adds (Page 3, Slide 2, Sheet: Contacts, Speaker notes:) are not words of the file: a scan's
+  // pages read as labels alone, and count as no words.
+  function hasWords(t) { return /\S/.test(String(t || "").replace(/^(Page \d+|Slide \d+|Sheet: .*)$/gm, "").replace(/Speaker notes:/g, "")); }
+  function readWords(file) {
+    return readWordsRaw(file).then(function (t) { return hasWords(t) ? String(t).trim() : ""; });
+  }
+  function readWordsRaw(file) {
+    var ext = extOf(file && file.name);
+    if (!file) return Promise.resolve("");
+    if ((ext === "docx" || ext === "docm") && file.arrayBuffer) return readDocxText(file);
+    if (DECK_EXT[ext] && file.arrayBuffer) return readPptxText(file);
+    if ((ext === "xlsx" || ext === "xlsm") && file.arrayBuffer) return readXlsxText(file);
+    if (ext === "pdf" && file.arrayBuffer) return readPdfText(file);
+    if ((ext === "vtt" || ext === "srt") && file.text) return file.text().then(captionText);
+    if (TEXT_EXT[ext] && file.text) return file.text();
+    return Promise.resolve("");
+  }
+  var OLD_OFFICE = { doc: "Word", ppt: "PowerPoint", xls: "Excel" };
+  function unreadWords(name, ext) {
+    if (VIDEO_EXT[ext]) return name + " is a video, and this page cannot listen to it. Drop its captions file (.vtt or .srt) or a transcript, or paste a public link to the video, and say in the instructions what it covers.";
+    if (OLD_OFFICE[ext]) return name + " is an older " + OLD_OFFICE[ext] + " file. Save it from " + OLD_OFFICE[ext] + " as ." + ext + "x and drop that copy.";
+    return readsWords(ext)
+      ? name + " has no words this page can read (a scanned page is a picture of text). Paste its words into the instructions, or drop a copy saved with its text."
+      : name + " is not a file this page can read. Drop it as a Word, PowerPoint or Excel file, a PDF, captions or plain text; paste a Google Docs, Slides or Sheets link; or paste its words into the instructions.";
+  }
   // A file dropped while a piece is picked becomes a document to work from.
   function addPieceFile(file) {
     var name = file.name, ext = extOf(name);
     if (state.pieceUse === "version") { say("Put " + name + " in the CPLLibrary folder, or its Drafts folder, then paste its link below."); render(); return; }
-    var fail = function () { say("A session cannot open " + name + " from here. Save it as a Word document or plain text and drop that copy, or paste its words into Instructions.", true); render(); };
+    var fail = function () { say(unreadWords(name, ext), true); render(); };
     var take = function (text) {
       if (!String(text || "").trim()) { fail(); return; }
       var list = (state.src.pc || []).slice();
@@ -1823,13 +2021,13 @@
       list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
       if (JSON.stringify(list).length > SRC_BYTES_MAX) { say("The documents together run past what a record holds. Remove one, or paste the part the piece needs into Instructions.", true); render(); return; }
       state.src.pc = list;
-      say("Added " + name + " as a document to work from. It saves when you press Start.");
+      say("Added " + name + " as a document to work from (" + wordCount(text) + " words read). It saves when you press Start.");
       render();
     };
-    if (ext === "docx" && file.arrayBuffer) readDocxText(file).then(take, fail);
-    else if (TEXT_EXT[ext] && file.text) file.text().then(take, fail);
-    else fail();
+    say("Reading " + name + "…"); render();
+    readWords(file).then(take, fail);
   }
+  function wordCount(t) { return (String(t || "").match(/\S+/g) || []).length.toLocaleString("en-US"); }
   // A file dropped or chosen: a document for the picked piece, the piece itself when it is
   // named for one, or a new file to remediate, build from or file.
   function takeFile(fl) {
@@ -1876,7 +2074,7 @@
         (pr.public_listed ? "; the public copy stays until you press Replace the public copy" : "") +
         ". A session reads a public link or a file's words read here, and cannot open SharePoint until RCCD approves the Microsoft 365 connector. Never add a student's record."
       : isNew ? "Start saves it in the Library as Requested" + (pu === "background" || pk ? ", with " + (pr ? pr.title : pk.name) + " as a document to work from" : "") +
-        ". Claude drafts a new piece in a session: its card's Copy the brief starts one now, or the next scheduled run picks it up. A visual made for a college writes its CPL Opportunity page and workbook at once."
+        ". Then Draft it now on its card, and Claude drafts it in the public library's look in about a minute; nothing is public until you publish it. A visual made for a college writes its CPL Opportunity page and workbook at once."
       : "A deck starts on the Chancellor's Office template, with a speaker script in each slide's notes for you to edit; a memo or report starts in the Chancellor's Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.";
     var asks = pu === "details" ? editForm(pr) : pu === "version" ? "" :
       (pr ? pieceDocsHtml() : "") +
@@ -2567,7 +2765,12 @@
         var both = (state.src.ls || []).slice();
         if (!both.some(function (x) { return x.url === link; }) && both.length < SRC_MAX) both.push({ title: (titleFromName(link) || link).slice(0, 200), url: link, text: null, added_by: storedAuthor() || null, added_on: today() });
         state.src.ls = both; ln.value = "";
-      } else setPick({ name: link, link: link });
+      } else {
+        setPick({ name: link, link: link });
+        // A link with instructions beside it is something to work from (a Google Slides deck to turn into a visual), not a
+        // finished piece to file; File it as is stays one click away.
+        if (instr || googleLink(link)) state.use = "background";
+      }
     }
     var pk = state.pick;
     var openBrief = function (src, note) { saveNew(src ? [src] : [], note || (src && isSharePoint(src.url) ? SP_INSTEAD : "")); };
@@ -2585,13 +2788,16 @@
       return;
     }
     if (pk.link) { openBrief({ title: titleFromName(pk.name) || pk.name.slice(0, 200), url: pk.link, text: null, added_by: storedAuthor() || null, added_on: today() }); return; }
-    if ((TEXT_EXT[pk.ext] || pk.ext === "docx") && pk.file && (pk.ext === "docx" ? pk.file.arrayBuffer : pk.file.text)) {
-      (pk.ext === "docx" ? readDocxText(pk.file) : pk.file.text()).then(function (text) {
-        openBrief({ title: (titleFromName(pk.name) || pk.name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
-      }, function () { openBrief(null, "This browser could not read " + pk.name + ": paste its text under Documents to work from on the card's Edit record."); });
-      return;
-    }
-    openBrief(null, "A session cannot open " + pk.name + " from here: paste its text under Documents to work from on the card's Edit record, or save it as a Word document or plain text.");
+    // The file's words go with the request, or nothing is saved (Sam, 2026-11-10: the PDF he dropped "apparently
+    // didn't upload, but I wasn't aware"; the record was saved with no document and a note at the end of a long line).
+    var stop = function () { state.busy = false; say(unreadWords(pk.name, pk.ext) + " Nothing was saved.", true); render(); var g0 = document.getElementById("lib-go"); if (g0) g0.focus(); };
+    state.busy = true; say("Reading " + pk.name + "…"); render();
+    readWords(pk.file).then(function (text) {
+      state.busy = false;
+      if (!String(text || "").trim()) { stop(); return; }
+      openBrief({ title: (titleFromName(pk.name) || pk.name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() },
+        "Read " + wordCount(text) + " words from " + pk.name + ".");
+    }, stop);
   }
 
   /* Start, for a new piece: the record is saved as Requested from the panel, with the documents given (the link or
@@ -2629,7 +2835,7 @@
       var row = Array.isArray(saved) ? saved[0] : saved;
       var id = row && row.id;
       if (id) state.briefShown[id] = true;
-      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). Claude drafts a new piece in a session: Copy the brief on its card and paste it into a new session to start now, or the next scheduled run picks it up." + (note ? " " + note : ""));
+      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). " + (note ? note + " " : "") + "Press Draft it now on its card and Claude drafts it here in about a minute; Copy the brief still hands it to a session.");
       // The panel empties for the next piece (render restores typed values, so the fields are cleared first).
       Array.prototype.forEach.call(document.querySelectorAll("[id^='ls-'], #lc-instr, #lc-link"), function (n) { if (n.tagName !== "DETAILS" && n.id !== "ls-by") n.value = n.tagName === "SELECT" ? (n.id === "ls-seen" ? "team" : "") : ""; });
       state.pick = null; state.use = null; state.piece = null; state.pieceUse = null; delete state.forPick.ls; state.src.ls = []; state.moreOpen = false;
@@ -3248,7 +3454,7 @@
     Object.keys(r.regen).forEach(function (k) { regen[k] = r.regen[k]; });
     regen.approved_at = new Date().toISOString(); regen.approved_by = by;
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: by } }).then(function () {
-      sayOn(id, "Approved. The draft becomes the public copy within three hours.");
+      sayOn(id, isNewPiece(r) ? "Approved. It goes up on its own page within three hours; then List publicly on its card." : "Approved. The draft becomes the public copy within three hours.");
       return load().then(function () { focusState(id); });
     }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
   }
@@ -3345,6 +3551,7 @@
     }, true);
     root.addEventListener("change", function (e) {
       if (e.target.getAttribute && e.target.getAttribute("data-cbfile") && e.target.files && e.target.files[0]) { addCardFile(e.target.getAttribute("data-cbfile"), e.target.files[0]); return; }
+      if (e.target.getAttribute && e.target.getAttribute("data-newdoc") && e.target.files && e.target.files[0]) { addNewPieceFile(e.target.getAttribute("data-newdoc"), e.target.files[0]); return; }
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
@@ -3396,18 +3603,24 @@
         var again = document.getElementById(pfx + "-forkind"); if (again) again.focus();
       }
     });
+    // Two drop targets: the top box, and a card's Revise box (Sam, 2026-11-10: "I can drop files when starting at
+    // the beginning, but not when revising"; the card's box had no drop target, so the browser took the file).
+    var dropOf = function (e) { return e.target.closest && (e.target.closest("#lib-drop") || e.target.closest("form[data-cboxform]") || e.target.closest("[data-newdrop]")); };
     root.addEventListener("dragover", function (e) {
-      if (e.target.closest && e.target.closest("#lib-drop")) { e.preventDefault(); e.target.closest("#lib-drop").classList.add("over"); }
+      var d = dropOf(e); if (d) { e.preventDefault(); d.classList.add("over"); }
     });
     root.addEventListener("dragleave", function (e) {
-      var d = e.target.closest && e.target.closest("#lib-drop"); if (d) d.classList.remove("over");
+      var d = dropOf(e); if (d) d.classList.remove("over");
     });
     root.addEventListener("drop", function (e) {
-      var d = e.target.closest && e.target.closest("#lib-drop");
+      var d = dropOf(e);
       if (!d) return;
       e.preventDefault(); d.classList.remove("over");
       var fl = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-      if (fl) takeFile(fl);
+      if (!fl) return;
+      if (d.getAttribute("data-cboxform")) addCardFile(d.getAttribute("data-cboxform"), fl);
+      else if (d.getAttribute("data-newdrop")) addNewPieceFile(d.getAttribute("data-newdrop"), fl);
+      else takeFile(fl);
     });
     root.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -3428,6 +3641,7 @@
       else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
       else if ((v = b.getAttribute("data-draftopen"))) openDraft(v);
+      else if ((v = b.getAttribute("data-redraft"))) redraft(v);
       else if (b.id === "lib-go") startPanel();
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);

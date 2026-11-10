@@ -59,7 +59,13 @@ function load(rows, onFetch) {
   };
   w.URL.createObjectURL = () => "blob:draft";
   const opened = [];
-  w.open = function () { const win = { location: null, close() { win.closed = true; } }; opened.push(win); return win; };
+  // The draft opens in a sandboxed frame (COBIx on #3077): the stub records what the new tab is written with.
+  w.open = function () {
+    const frame = { srcdoc: null };
+    const win = { location: null, written: "", close() { win.closed = true; },
+      document: { open() {}, close() {}, title: "", write(h) { win.written += h; }, querySelector(q) { return q === "iframe" ? frame : null; } }, frame: frame };
+    opened.push(win); return win;
+  };
   const s = w.document.createElement("script"); s.textContent = SRC; w.document.body.appendChild(s);
   return { w, calls, opened, M: w.CPL_LIBRARY, root: w.document.getElementById("library-root") };
 }
@@ -123,7 +129,11 @@ function load(rows, onFetch) {
     await settle(); await settle();
     const c = m.calls.find((x) => /cpl_library_drafts/.test(x.url));
     check("B: Open the draft reads the one draft behind the team phrase", c && /id=eq\.d1/.test(c.url) && c.init.headers["x-team-pass"] === "open-sesame");
-    check("B: and opens it in a new tab", m.opened.length === 1 && m.opened[0].location === "blob:draft");
+    const tab = m.opened[0] || { written: "", frame: {} };
+    check("B: and opens it in a new tab", m.opened.length === 1 && /<iframe sandbox="/.test(tab.written));
+    check("B: ⭐ inside a sandbox with no allow-same-origin, never a blob: URL that runs as this page (COBIx on #3077)",
+      /sandbox="allow-scripts allow-popups[^"]*"/.test(tab.written) && !/allow-same-origin/.test(tab.written) && tab.location === null &&
+      typeof tab.frame.srcdoc === "string" && tab.frame.srcdoc.length > 0 && !/createObjectURL\(new Blob\(\[rows\[0\]\.html/.test(SRC));
   }
 
   // ── D. more changes build on the draft ───────────────────────────────────

@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -39,10 +39,23 @@ background is a second document, never a replacement. With the box empty the lin
 says how to use it as background. `tests/library.test.js` (22). The piece itself was built in session and filed
 (`kb/receipts/library_ell_hp_filed_draft_2026-11-09.sql`). Its Pages copy is `library/ell-healthcare-pathways-cpl-starting-points/` (Sam the same day: a git address, never claude.ai), in `a11y.config.js` as `library-ell-hp`; every tab passed axe at 390px and 1440px, light and dark. It is not listed publicly; List publicly is Sam's switch.
 
-**Open, Sam's call:** a new piece still needs a session (Copy the brief, or the scheduled run), where Revise drafts
-from the card through `library-revise-draft`. Sam, 2026-11-09: *"I haven't been able to successfully create a doc
-from there yet--always need some sort of out side intervention"*. Put to him in session that day: build the same
-on-card drafting for a new agency visual, or keep new pieces in sessions and have the card say so plainly.
+✅ **Any file, and a new piece drafted on its card (Sam, 2026-11-10, #3077).** *"when I dropped the Adding CPL
+Coordinator and Noncredit Lead in MAP pdf of a ppt, apparently it didn't upload, but I wasn't aware until cobix hunted
+that down"*; *"I can drop files when starting at the beginning, but not when revising"*; *"need to be able to handle
+office docs, pdfs, google slides, videos"*; and (2026-11-09) *"I haven't been able to successfully create a doc from
+there yet--always need some sort of out side intervention"*. Causes: a PDF or deck picked as background was never read
+and the record saved with `sources: []` (record `71931018`); a card's Revise box had no drop target; a new piece had no
+drafter. Now:
+- **One reader, `readWords`**, for every box: Word, PowerPoint (slides and notes), Excel, PDF (pdf.js 4.10.38 under
+  `vendor/pdfjs/`, loaded only for a PDF), captions (.vtt, .srt), text. A file with no words (a scan, a video, an old
+  .ppt) saves nothing and says why. A video's words come only from its captions or a transcript.
+- **Drop targets:** the top box, a card's Revise box, and a Requested card (*Add a document* saves the words at once).
+- **Google Docs, Slides, Sheets:** a link with instructions is a document to work from; `library-revise-draft` reads
+  its plain-text export when the file is shared by link (docs.google.com only).
+- **Draft it now on a Requested piece:** `library-revise-draft` writes Draft 1 from the starter page (the noncredit
+  visual's frame, `new_page.mjs`, which keeps the frame and refuses scripts); **Publish it** approves it;
+  `library_publish.py` makes `library/<slug>/` as Version 1 (`regen.new_piece`). Then List publicly, as for any piece.
+- Tests: `library_any_file` (33), `library` (288), `library_publish_test.py`.
 
 ✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
 (kind, now including spreadsheet; working title; occasion; needed by; for; what it must
@@ -172,9 +185,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
   simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
   folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
-  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece is
-  still drafted in a session or the scheduled run: the Library has no in-browser drafter for a new piece (Revise's
-  `library-revise-draft` edits an existing public page only); the page now says so when Start saves.
+  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece
+  drafts on its card with Draft it now (2026-11-10, above).
 - **DSP Version 3** (S599; Sam's Revise of 2026-11-07 11:29Z): ELL IET Version 5's form, from the vault source, stored as
   the card's draft (`kb/migrations/2026-11-07_library_dsp_v3_stored_draft.sql`). **NEXT:** Sam's Replace, or his next note.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
