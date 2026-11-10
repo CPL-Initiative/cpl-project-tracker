@@ -241,7 +241,12 @@ def make_resolver():
 
 
 # ── who is in the room ───────────────────────────────────────────────────────
-IDENTITY = "kb/college_identity/2026-08-23/crosswalk.json"
+# The newest committed baseline, never a folder named here: a pinned date kept
+# reading 2026-08-23 after the 2026-11-10 re-baseline (COBIx on #3019). This
+# builder reads district, college_name and entity_kind, which the two share.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _college_identity_latest import latest_crosswalk_path  # noqa: E402
+IDENTITY = os.path.relpath(latest_crosswalk_path(), ROOT)
 
 
 def identity_rows():

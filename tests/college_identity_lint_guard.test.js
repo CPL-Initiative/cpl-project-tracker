@@ -184,6 +184,54 @@ block("3. the tab", () => {
     + "alone is an assertion with no evidence attached");
 });
 
+// ── 4. Every reader opens the NEWEST baseline (COBIx on #3019, 2026-11-10) ──
+// The 2026-11-10 re-baseline left five builders opening an older folder by
+// path, with nothing on any page to say so. One picker now answers for them.
+block("4. readers open the newest baseline", () => {
+  const scratch = fs.mkdtempSync(path.join(os.tmpdir(), "cplidlatest-"));
+  try {
+    const mk = (d, withFile) => {
+      fs.mkdirSync(path.join(scratch, d));
+      if (withFile) fs.writeFileSync(path.join(scratch, d, "crosswalk.json"), "{}");
+    };
+    mk("2026-01-01", true); mk("2026-02-02", true);
+    mk("2026-03-03", false);                                  // a dated folder with no crosswalk
+    mk("_inputs", true);                                      // not a date
+    fs.writeFileSync(path.join(scratch, "2026-09-09_note.md"), "a dated note");
+    fs.writeFileSync(path.join(scratch, "2026-10-10"), "a file named like a date");
+    const r = spawnSync("python3", ["-c",
+      "import sys; sys.path.insert(0, 'kb'); import _college_identity_latest as L; print(L.latest_crosswalk_date(sys.argv[1]))",
+      scratch], { encoding: "utf8" });
+    check("(4) ⭐ the picker takes the newest dated FOLDER that holds crosswalk.json",
+      (r.stdout || "").trim() === "2026-02-02",
+      "got " + JSON.stringify((r.stdout || "").trim()) + " " + (r.stderr || "").slice(0, 200)
+      + "; a dated note, a date-named file and an empty dated folder all sort later and must not win");
+  } finally { fs.rmSync(scratch, { recursive: true, force: true }); }
+
+  const live = spawnSync("python3", ["kb/_college_identity_latest.py"], { encoding: "utf8" });
+  const newest = Array.from(COMMITTED_RECEIPTS).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort().pop();
+  check("(4) in this repo it answers the newest committed baseline",
+    !!newest && (live.stdout || "").trim().endsWith(path.join("kb", "college_identity", newest, "crosswalk.json")),
+    "newest tracked folder " + newest + ", picker said " + (live.stdout || "").trim());
+
+  // No builder names a dated identity folder by path. A pin kept on purpose says so beside it.
+  const PIN = /college_identity["',\s/]+20\d{2}-\d{2}-\d{2}["',\s/]+crosswalk/;
+  const pinned = [];
+  ["kb", "funding", "scripts"].forEach((dir) => {
+    fs.readdirSync(dir).filter((f) => /\.py$/.test(f)).forEach((f) => {
+      const src = fs.readFileSync(path.join(dir, f), "utf8"), lines = src.split("\n");
+      lines.forEach((ln, i) => {
+        if (/^\s*#/.test(ln) || !PIN.test(ln)) return;
+        const above = lines.slice(Math.max(0, i - 8), i).join("\n");
+        if (!/PINNED ON PURPOSE/.test(above)) pinned.push(dir + "/" + f + ":" + (i + 1));
+      });
+    });
+  });
+  check("(4) ⚠️ no builder opens a dated identity folder by path, unless its pin says PINNED ON PURPOSE",
+    pinned.length === 0, "pinned without a reason: " + pinned.join(", ")
+    + ". Ask kb/_college_identity_latest.py, or say beside the pin why the date is fixed.");
+});
+
 const failed = results.filter((r) => !r[1]);
 results.forEach(([name, ok, why]) =>
   console.log((ok ? "  ok  " : "  FAIL ") + name + (ok || !why ? "" : "\n        " + why)));

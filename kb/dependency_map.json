@@ -4,7 +4,7 @@
   "supabase_tables": 110,
   "rpcs": 62,
   "edge_functions": 14,
-  "file_datasets": 830,
+  "file_datasets": 829,
   "external_services": 194,
   "consumers": 543,
   "workflows": 65,
@@ -1541,7 +1541,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 382
+     "line": 387
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -5636,14 +5636,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 321
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 258
+     "line": 262
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -5686,14 +5686,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 321
+     "line": 324
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 261
+     "line": 265
     },
     {
      "id": "script:kb/_ccr_desc_signal.py",
@@ -5880,21 +5880,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 477
+     "line": 480
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 370
+     "line": 374
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 348
+     "line": 353
     }
    ],
    "producers": [
@@ -12873,19 +12873,6 @@
     "workflow:phase-1e-apply.yml"
    ]
   },
-  "file:kb/college_identity/<date>/crosswalk.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_regional_cpl_opportunity.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 244
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:kb/college_short_names.json": {
    "consumers": [
     {
@@ -15806,7 +15793,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 396
+     "line": 399
     }
    ],
    "served": true,
@@ -15819,7 +15806,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 389
+     "line": 393
     }
    ],
    "served": true,
@@ -16140,7 +16127,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 292
+     "line": 295
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -16635,14 +16622,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 317
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 254
+     "line": 258
     },
     {
      "id": "script:kb/_build_program_course_graph.py",
@@ -17416,7 +17403,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 948
+     "line": 953
     }
    ],
    "served": true,
@@ -17743,14 +17730,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 295
+     "line": 298
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 242
+     "line": 246
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -17819,21 +17806,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 217
+     "line": 220
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 186
+     "line": 190
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 265
+     "line": 270
     },
     {
      "id": "script:kb/_emit_regional_opps_data.py",
@@ -19456,7 +19443,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 44
     }
    ],
    "producers": [
@@ -21549,7 +21536,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 350
+     "line": 353
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -21563,7 +21550,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 271
+     "line": 275
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -21577,7 +21564,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 381
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
@@ -23776,7 +23763,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 360
+     "line": 365
     },
     {
      "id": "script:tmc/_build_college_adts.py",
