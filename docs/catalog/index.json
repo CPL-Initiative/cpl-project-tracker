@@ -16716,8 +16716,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 595,
+   "count": 596,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 635,
+     "path": "docs/session_635_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "pages"
+     ],
+     "title": "Session 635 handoff: the Library reads any file and drafts a new piece on its card; Pages deploys are timing out",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26812,5 +26827,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1440
+ "total": 1441
 }
