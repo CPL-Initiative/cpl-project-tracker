@@ -110,20 +110,47 @@ create policy mcn_update on public.map_college_nudges for update
 -- name: the published mirror (map_college_contacts_pub) has no primary contact.
 -- A person counts by name OR email, as the coordinator always has; the landing
 -- page counts as an https URL (122 of 122 on file were https, 2026-09-29).
+-- A SECOND WAY TO MEET IT (Sam, in session 2026-11-09, S621): "if there is a cpl coordinator role listed in map
+-- users AND a cpl assistant email in map users, we can count them as satisfying the CPL coordinator condition
+-- without having to do any manual checks." has_cpl_assistant answers the second half as a boolean, never the
+-- address; the tab meets the condition on the three parts OR on coordinator plus assistant. Measured 2026-11-09:
+-- 59 of 124 meet the three parts, 45 have coordinator plus assistant, 2 meet it only the new way.
+-- THE NONCREDIT CPL LEAD ROLE IN MAP (Sam, in session 2026-11-09, S622): "itpi just added the nc cpl lead role to
+-- the map users we pull ... we can start listing that role next to the priority requiring attestation of a nc cpl
+-- lead and complete the attestation for them if the nc cpl lead role is in map." The role shows on a college's CPL
+-- landing page (map_landing_contacts.contact_title), pulled daily. Two booleans, never a name:
+--   has_nc_cpl_lead     a contact titled exactly "Noncredit CPL Lead" (any case). It stands in for the whole
+--                       noncredit attestation, the strike-team condition included, with no form (Sam, in session
+--                       2026-11-10: "Nc yes exact wor whole", then "Word").
+--   nc_lead_title_near  a title that names noncredit and is not the role ("CPL Coordinator/Noncredit Lead",
+--                       "Noncredit CPL Coordinator"): it meets nothing, and tells a CSM to ask for the role.
+-- Measured 2026-11-09 (the 11-08 18:13Z pull): 2 colleges carry the role, 2 a near title; every one of the 105
+-- landing pages' colleges matches map_college_contacts by name.
 -- A return type cannot change under CREATE OR REPLACE, so the function is
 -- dropped and recreated; the grant below restores what it held.
 drop function if exists public.map_coordinator_summary();
 create function public.map_coordinator_summary()
 returns table (college text, has_coordinator boolean, has_primary_contact boolean,
-               has_landing_page boolean, last_synced timestamptz)
+               has_landing_page boolean, last_synced timestamptz, has_cpl_assistant boolean,
+               has_nc_cpl_lead boolean, nc_lead_title_near boolean)
 language sql stable security definer set search_path = public as $$
-  select college,
-         (nullif(trim(coalesce(cpl_coordinator, '')), '') is not null
-          or nullif(trim(coalesce(cpl_coordinator_email, '')), '') is not null) as has_coordinator,
-         (nullif(trim(coalesce(primary_contact, '')), '') is not null
-          or nullif(trim(coalesce(primary_contact_email, '')), '') is not null) as has_primary_contact,
-         (coalesce(landing_page_url, '') ~* '^https://[^[:space:]]+$') as has_landing_page,
-         synced_at as last_synced
-  from public.map_college_contacts;
+  select c.college,
+         (nullif(trim(coalesce(c.cpl_coordinator, '')), '') is not null
+          or nullif(trim(coalesce(c.cpl_coordinator_email, '')), '') is not null) as has_coordinator,
+         (nullif(trim(coalesce(c.primary_contact, '')), '') is not null
+          or nullif(trim(coalesce(c.primary_contact_email, '')), '') is not null) as has_primary_contact,
+         (coalesce(c.landing_page_url, '') ~* '^https://[^[:space:]]+$') as has_landing_page,
+         c.synced_at as last_synced,
+         (nullif(trim(coalesce(c.cpl_assistant_email, '')), '') is not null) as has_cpl_assistant,
+         exists (select 1 from public.map_landing_contacts l
+                  where lower(trim(l.college)) = lower(trim(c.college))
+                    and lower(trim(l.contact_title)) = 'noncredit cpl lead') as has_nc_cpl_lead,
+         exists (select 1 from public.map_landing_contacts l
+                  where lower(trim(l.college)) = lower(trim(c.college))
+                    and l.contact_title ~* 'non-?credit'
+                    and lower(trim(l.contact_title)) <> 'noncredit cpl lead') as nc_lead_title_near
+  from public.map_college_contacts c;
 $$;
+-- PUBLIC holds EXECUTE from creation; the page and the tab read this as anon, by design (booleans alone).
+revoke all on function public.map_coordinator_summary() from public;
 grant execute on function public.map_coordinator_summary() to anon, authenticated, service_role;

@@ -1,13 +1,13 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-08T14:35:38Z",
+ "_generated_at": "2026-11-09T17:53:53Z",
  "procedures_hash": "d20f2caab9db",
  "queue": 4,
  "saved_not_folded": 0,
  "waiting": 4,
- "proposed": 0,
- "needs_you_count": 0,
- "not_yet_asked": 4,
+ "proposed": 4,
+ "needs_you_count": 3,
+ "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
   {
@@ -22,7 +22,7 @@
     "skill": "Rule 5d"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -111,8 +111,8 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 0,
-   "held": 0,
+   "settled": 1,
+   "held": 1,
    "sample": []
   },
   {
@@ -143,7 +143,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -233,7 +233,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -248,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -261,18 +261,61 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 0,
-   "held": 0,
-   "sample": []
+   "settled": 1,
+   "held": 3,
+   "sample": [
+    [
+     "Nursing Care of Children and Families",
+     "Nursing Care of Children and Families"
+    ]
+   ]
   }
  ],
  "classifier_run": {
   "calls": 1,
-  "answered": 0,
-  "errors": [
-   "HTTP 413: {\"error\":\"rules are 251866 characters; the limit is 250000\"}"
-  ],
-  "cost_usd": 0.0
+  "answered": 1,
+  "errors": [],
+  "cost_usd": 0.38
  },
- "needs_you": []
+ "needs_you": [
+  {
+   "raw_title": "Introduction to Law Enforcement/Corrections",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Introduction to Law Enforcement/Corrections",
+    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+    "confidence": 0.4,
+    "note": "Industry Certification at Palo Verde with no named credential. The title is kept as written. POST is a weak guess because the row pairs with other law-enforcement rows. The corrections half could point instead to a CDCR/CPOST or BSCC academy near Blythe's prisons, so the issuer needs review."
+   },
+   "colleges": [
+    "Palo Verde College"
+   ]
+  },
+  {
+   "raw_title": "Nursing Care of the childbearing family",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Nursing Care of the Childbearing Family",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "Credit by exam course content is kept with only the casing fixed. It may be the same course as the house family 'Nursing Care of the Childbearing Family and Newborn'. It is kept apart because the house title names the newborn and this one does not; a curator may merge them."
+   },
+   "colleges": [
+    "Mt. San Jacinto College"
+   ]
+  },
+  {
+   "raw_title": "Report Writing",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Criminal Justice Report Writing",
+    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+    "confidence": 0.6,
+    "note": "The bare title 'Report Writing' is an Industry Certification at Palo Verde alongside law-enforcement exhibits. It is joined to the POST house family 'Criminal Justice Report Writing' as the likely credential, but the subject area is inferred from that context and should be verified."
+   },
+   "colleges": [
+    "Palo Verde College"
+   ]
+  }
+ ]
 }

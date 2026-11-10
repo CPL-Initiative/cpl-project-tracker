@@ -189,7 +189,7 @@
       ".cid-find .nm { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.84rem; word-break:break-all; }",
       ".cid-tag { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; border:1px solid var(--border-strong, #cdd6e3); border-radius:999px; padding:1px 8px; margin-right:6px; color:var(--text-muted, #5a6478); }",
       ".cid-tag.whitespace, .cid-tag.unknown { border-color:var(--crimson, #920000); color:var(--crimson, #920000); }",
-      ".cid-tag.awaiting_map_id { border-color:var(--cobalt, #0047AB); color:var(--cobalt, #0047AB); }",
+      ".cid-tag.awaiting_map_id, .cid-tag.non_ccc { border-color:var(--cobalt, #0047AB); color:var(--cobalt, #0047AB); }",
       /* Suppressed rows. --mustard-text is the palette's documented "caution
        * TEXT grade on light surfaces" — an EXISTING token, not an invented one
        * (the first draft reached for `--amber`, which does not exist; inventing
@@ -305,6 +305,18 @@
     // ── Findings ──
     var findings = [];
     if (state.contacts) findings = findings.concat(liveFindings(live, state.contacts) || []);
+    // A RULING OUTRANKS THE LIVE READ. The live lint knows only map_colleges, so a name a person has ruled on
+    // (a separate MAP org awaiting its id, an institution outside the system) would read "unknown" the moment
+    // the contacts loaded. The snapshot's ruled finding for the same name supplies the class and the reason.
+    if (s && s.findings) {
+      var ruled = {};
+      s.findings.forEach(function (f) { if (f.decided_by) ruled[f.name] = f; });
+      findings.forEach(function (f) {
+        var r = f.cls === "unknown" ? ruled[f.name] : null;
+        if (!r) return;
+        f.cls = r["class"]; f.why = r.why; f.sibling = r.sibling; f.decided_by = r.decided_by; f.decided_on = r.decided_on;
+      });
+    }
     if (s && s.findings) {
       var seen = {};
       findings.forEach(function (f) { seen[f.name] = 1; });

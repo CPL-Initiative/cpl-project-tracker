@@ -451,6 +451,28 @@ function cellText(li, title) {
     check("queue 6: the routines' items sit apart, under The routines carry, never in a reason box",
       /The routines carry/.test(txt(sec.querySelector(".cmn-carried"))) && /3,349 active programs with no record yet/.test(txt(sec.querySelector(".cmn-carried")))
       && !/no record yet/.test(Array.prototype.map.call(sec.querySelectorAll(".cmn-reason"), txt).join(" ")));
+    check("stalled 1: a file with no stalled routine draws no box for one, and the fold word says nothing of it",
+      !sec.querySelector('[data-reason="stalled"]') && !/stalled/.test(txt(sec.querySelector(".cmn-fold-word"))));
+    {
+      const withS = JSON.parse(JSON.stringify(withQ));
+      withS.queue.stalled = [
+        { ref: "requirements", title: "Program Requirements", kind: "not_shrinking", n: 3289, was: 3289, since: "2026-11-03", words: "active programs whose record fails a check", owner: "the college's reading procedure", open: "#program-requirements/list/fail" },
+        { ref: "course", title: "Common Course Reference", kind: "stopped", what: "the auditor", since: "2026-11-03T06:00:00Z", every_hours: 24, open: "#coci-lookup" },
+        { ref: "course", title: "Common Course Reference", kind: "not_shrinking", n: 5800, was: 5750, since: "2026-11-03", words: "blank descriptions", open: "#coci-lookup/list/nodesc" }];
+      const s2 = load({ fetch: responder({ "kb/status/commons.json": withS, "kb/status/program-requirements.json": PR_LOG }) });
+      await s2.M.boot();
+      const box = s2.d.querySelector('.cmn-queue [data-reason="stalled"]');
+      const lis = box ? Array.prototype.map.call(box.querySelectorAll("li"), txt) : [];
+      check("stalled 2: the box draws after the four reasons, headed in plain words, courses before programs",
+        box && txt(box.querySelector(".cmn-reason-h")) === "A routine has stalled" && lis.length === 3 && /^Common Courses/.test(lis[0]) && /^Common Programs/.test(lis[2]));
+      check("stalled 3: a stopped routine names what stopped, when it last ran and its cadence, and links the reference",
+        /the auditor last ran Nov \d+, .+; it runs daily\.$/.test(lis[0]) && box.querySelector('[data-stalled="stopped"] a').getAttribute("href") === "#coci-lookup");
+      check("stalled 4: a backlog that grew says what it was; one that held says the same count, each with its date and a linked count",
+        /5,800 blank descriptions, up from 5,750 on Nov 3\.$/.test(lis[1]) && /3,289 active programs whose record fails a check, the same count as on Nov 3\.$/.test(lis[2])
+        && box.querySelectorAll('[data-stalled="not_shrinking"] a')[1].getAttribute("href") === "#program-requirements/list/fail");
+      check("stalled 5: the fold word counts the stalled routines",
+        /, 3 stalled routines/.test(txt(s2.d.querySelector(".cmn-queue .cmn-fold-word"))));
+    }
     check("queue 7: the queue sits after the decisions band and before the filter words",
       (function () { const kids = Array.prototype.slice.call(q.d.querySelector(".cmn-wrap").children);
         const iq = kids.indexOf(sec), ib = kids.indexOf(q.d.querySelector(".cmn-band")), iff = kids.indexOf(q.d.querySelector(".cmn-filter-row"));
@@ -486,6 +508,22 @@ function cellText(li, title) {
     check("confidence 5: the table scrolls in its own labelled region", sec.querySelector(".cmn-conf-wrap").getAttribute("role") === "region"
       && /Common Exhibits: each procedure/.test(sec.querySelector(".cmn-conf-wrap").getAttribute("aria-label")));
     check("confidence 6: an unread source reads Could not be read, never a zero", /Common Credit Recommendations[\s\S]*Could not be read/.test(txt(sec)));
+    check("confidence 6b: the CR count names its unit, the groups a rule folded",
+      /Common Credit Recommendations: groups a rung 1 to 4 rule folded/.test(txt(sec)));
+    {
+      const withW = JSON.parse(JSON.stringify(STATUS));
+      withW.confidence = [{ ref: "cr", unit: "groups", procedures: [{ name: "rung 1", placed: 113, untouched: 104, kept: 0, widened: 9, renamed: 0, moved: 0, looked: 9 }],
+        total: { placed: 113, untouched: 104, kept: 0, widened: 9, renamed: 0, moved: 0, by_procedure: 0, left: 0, looked: 9 } }];
+      const w = load({ fetch: responder({ "kb/status/commons.json": withW, "kb/status/program-requirements.json": PR_LOG }) });
+      await w.M.boot();
+      const ws = w.d.querySelector(".cmn-conf");
+      check("confidence 6c: a group a person widened is counted apart from kept, in the line and in its own column",
+        /0 kept, .*9 kept with wordings a person added, which the rule had left in another group\./.test(txt(ws))
+        && Array.prototype.map.call(ws.querySelectorAll("thead th"), txt).join("|") === "Procedure|Placed|A person looked|Kept|Kept, wordings added|Renamed with its family|Moved elsewhere|Not looked at yet"
+        && Array.prototype.map.call(ws.querySelectorAll("tbody td"), txt).join("|") === "113|9|0|9|0|0|104");
+      check("confidence 6d: a count with no widened state keeps its six columns",
+        sec.querySelectorAll(".cmn-conf-table")[0].querySelectorAll("thead th").length === 7);
+    }
     check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
   }
 
@@ -514,8 +552,251 @@ function cellText(li, title) {
     const start = nb.querySelector("a.cmn-start");
     check("batch 3: Start is a plain word that opens Another look in Exhibits, never a second card screen",
       start && txt(start) === "Start" && start.getAttribute("href") === "#exhibits/another-look/batch" && !b.d.querySelector(".cmn-next button"));
-    check("batch 4: no batch in the file draws no batch section", !load().d.querySelector(".cmn-next") && b.M.nextBatchSection({ n: 0 }) === null
-      && b.M.nextBatchSection({ error: "x" }) === null);
+    // COBIx on #2921 (2026-11-09 03:12Z, ask 1d): a file with no batch says so, where the hero had vanished until the run.
+    {
+      const nob = load();
+      await nob.M.boot();
+      const un = nob.d.querySelector("#cmn-next-sec");
+      check("batch 4: a file carrying no batch reads Your next batch could not be read, never an empty page",
+        un && txt(un.querySelector("#cmn-next-h")) === "Your next batch could not be read" && !un.querySelector("a.cmn-start")
+        && b.M.batchList({ next_batch: { error: "x" } }) === null && b.M.batchList({ batches: [] }).length === 0);
+    }
+
+    // #2963 step 1 (COBIx on #2921, 2026-11-09 12:10Z): the batch closes in place and the next one comes up.
+    {
+      const SESS = { get: () => ({ email: "slee@cccco.edu", access_token: "h.p.s" }), isFresh: () => true,
+        authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer h.p.s" }, x || {}) };
+      const six = [1, 2, 3, 4, 5, 6].map(function (i) { return { id: "c" + i, current: "Title " + i, keys: ["_UNCLASSIFIED::local " + i] }; });
+      const AL = { kind: "another-look", n: 6, of: 6, open: "#exhibits/another-look/batch", title: "Another look at 6 exhibit titles",
+        teaches: "Keep what works.", stop: "The batch ends when its cards are decided.", cards: six, at: "2026-11-07T15:03:25Z" };
+      const DEC = { kind: "decision", project: "program-requirements", n: 1, title: "The Commons mock-up, version 3, waits on Sam's look",
+        teaches: "Look at the mock.", open: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi", stop: "It ends when you answer the sheet." };
+      const ANS = { kind: "decision", project: "program-requirements", n: 1, title: "The second reader waits on a new xAI subscription",
+        open: "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu" };
+      const JOB = { kind: "job", ref: "course", n: 8, title: "Common Course Reference", words: "cards whose catalog description reads as another discipline",
+        teaches: "Sam (rule on each and say why)", open: "#coci-lookup/list/doubt" };
+      const withList = function (list) { const x = JSON.parse(JSON.stringify(STATUS)); x.batches = list; x.next_batch = list[0] || null; return x; };
+      const reads = [];
+      const saved = function (n, extra) { return six.slice(0, n).map(function (c, i) {
+        return i % 2 ? { course_id: c.keys[0], field: "unified_title_supersedes", value: c.current, reviewed_at: "2026-11-09T12:00:00Z" }
+                     : { course_id: c.keys[0], field: "title_sweep_kept", value: "true", reviewed_at: "2026-11-09T12:00:00Z" }; }).concat(extra || []); };
+      const fetcher = function (status, rowsFor) {
+        const base = responder({ "kb/status/commons.json": status, "kb/status/program-requirements.json": PR_LOG });
+        return function (url, init) {
+          url = String(url);
+          if (/\/rest\/v1\/kb_curation\?/.test(url)) { reads.push(url); return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(rowsFor()) }); }
+          if (/\/rest\/v1\/queue_todo_done\?/.test(url)) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+          return base(url, init);
+        };
+      };
+      const boot = async function (status, rowsFor, ex) {
+        const x = load({ fetch: fetcher(status, rowsFor) });
+        x.w.CPL_SESSION = SESS;
+        if (ex) x.w.CPL_EXHIBITS = ex;
+        await x.M.boot();
+        return x;
+      };
+      const hero = function (x) { return x.d.querySelector("#cmn-next-sec"); };
+
+      // all six saved since the sweep was built: the batch reads done and the open decision comes up
+      let n = 6;
+      const all = await boot(withList([AL, ANS, DEC, JOB]), function () { return saved(n); });
+      const h1 = hero(all);
+      check("docket 1: six saves since the sweep close the batch on the spot, and say what it taught",
+        /Done: you decided 6 of 6 exhibit titles\. The nightly sweep learns from them tonight\./.test(txt(h1))
+        && h1.querySelector(".cmn-next-done").getAttribute("role") === "status");
+      check("docket 2: the next batch is the first decision still open; an answered one is passed over",
+        h1.getAttribute("data-kind") === "decision" && txt(h1.querySelector("#cmn-next-h")) === DEC.title
+        && /One decision, on its sheet\. It ends when you answer the sheet\./.test(txt(h1)));
+      const st = h1.querySelector("a.cmn-start");
+      check("docket 3: its Start opens the sheet in a new tab", st && st.getAttribute("href") === DEC.open && st.getAttribute("target") === "_blank"
+        && st.getAttribute("rel") === "noopener");
+      check("docket 4: the count reads the saves the way Exhibits reconciles them: both fields, since the sweep, the six keys",
+        reads.length === 1 && /field=in\.\(title_sweep_kept,unified_title_supersedes\)/.test(reads[0])
+        && reads[0].indexOf("reviewed_at=gt." + encodeURIComponent(AL.at)) > 0 && (reads[0].match(/_UNCLASSIFIED/g) || []).length === 6);
+
+      // two saved, and a fold onto some other title does not count
+      n = 2;
+      const part = await boot(withList([AL, DEC]), function () { return saved(n, [{ course_id: six[3].keys[0], field: "unified_title_supersedes", value: "Elsewhere" }]); });
+      check("docket 5: a part-decided batch stays the hero and says how far along it is",
+        hero(part).getAttribute("data-kind") === "another-look" && /2 of 6 decided\./.test(txt(hero(part))) && !part.d.querySelector(".cmn-next-done"));
+
+      // the visit's own decisions in Exhibits count before any save is read back, and a visit back redraws without a reload
+      reads.length = 0; n = 0;
+      const ex = { _state: { sw: { done: {} } } };
+      const visit = await boot(withList([AL, JOB]), function () { return saved(n); }, ex);
+      check("docket 6: before any card is decided the batch is the hero", hero(visit).getAttribute("data-kind") === "another-look");
+      six.forEach(function (c) { ex._state.sw.done[c.id] = true; });
+      visit.w.dispatchEvent(new visit.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+      await new Promise(function (r) { setTimeout(r, 20); });
+      const h6 = hero(visit);
+      check("docket 7: deciding every card in Exhibits brings the next batch on the way back, without a reload",
+        /Done: you decided 6 of 6/.test(txt(h6)) && h6.getAttribute("data-kind") === "job"
+        && txt(h6.querySelector("#cmn-next-h")) === "8 cards whose catalog description reads as another discipline"
+        && h6.querySelector("a.cmn-start").getAttribute("href") === "#coci-lookup/list/doubt" && !h6.querySelector("a.cmn-start").getAttribute("target"));
+
+      // nothing left: the page says so plainly
+      n = 6;
+      const none = await boot(withList([AL, ANS]), function () { return saved(n); });
+      check("docket 8: when every batch is decided the page says so plainly, with no Start",
+        txt(hero(none).querySelector("#cmn-next-h")) === "Nothing waits on you in a batch" && !hero(none).querySelector("a.cmn-start"));
+      const empty = await boot(withList([]), function () { return []; });
+      check("docket 9: an empty list draws nothing to start", !hero(empty) || !hero(empty).querySelector("a.cmn-start"));
+
+      // a failed read leaves the file's count: the batch stays open rather than closing on a guess
+      const failing = load({ fetch: function (url, init) {
+        url = String(url);
+        if (/kb_curation/.test(url)) return Promise.resolve({ ok: false, status: 500, json: () => Promise.reject(new Error("500")) });
+        return fetcher(withList([AL, DEC]), function () { return []; })(url, init); } });
+      failing.w.CPL_SESSION = SESS;
+      await failing.M.boot();
+      check("docket 10: a failed read of the saves leaves the batch open, never closed on a guess",
+        hero(failing).getAttribute("data-kind") === "another-look" && !failing.d.querySelector(".cmn-next-done"));
+    }
+
+    // #2963 step 2: a Docket case, ruled in place and saved as a ruling the session carries out.
+    {
+      const CASE = { id: "2026-11-09-ccr-next-five", source: "session", addressee: "sam", dr: "DR-25", decides: "Confirm the next five disciplines?",
+        size: { n: 753, unit: "courses" }, evidence: ["You confirmed Kinesiology.", "Music 250 and four more."],
+        links: [{ href: "https://github.com/x/report.md", text: "The report" }, { href: "#coci-lookup/list/doubt", text: "Discipline in doubt" }],
+        choices: [{ value: "five", words: "Confirm the five", recommended: true }, { value: "all", words: "Every discipline" },
+          { value: "one", words: "One at a time, Music first" }, { value: "later", words: "Later" }],
+        plan_words: { all: "A session runs the dry run for every discipline." }, no_reply: "The seed cards stay capped.",
+        sheet: "https://claude.ai/artifact/RytJhApuMxGp11U8NtyDrj" };
+      const JOB2 = { kind: "job", ref: "course", n: 8, title: "Common Course Reference", words: "cards in doubt", open: "#coci-lookup/list/doubt" };
+      const st = JSON.parse(JSON.stringify(STATUS));
+      st.docket = [CASE];
+      st.batches = [{ kind: "case", id: CASE.id, n: 753, title: CASE.decides, open: "#commons/case/" + CASE.id, addressee: "sam" }, JOB2];
+      const SIGNED = { get: () => ({ email: "slee@cccco.edu", access_token: "h.p.s" }), isFresh: () => true,
+        authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer h.p.s" }, x || {}) };
+      const ANON = { get: () => null, isFresh: () => false, authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer anon" }, x || {}) };
+      const calls = [];
+      const make = function (rulings, postStatus) {
+        const base = responder({ "kb/status/commons.json": st, "kb/status/program-requirements.json": PR_LOG });
+        return function (url, init) {
+          url = String(url);
+          if (/\/rest\/v1\/kb_curation/.test(url)) {
+            calls.push({ url: url, init: init || {} });
+            if (init && init.method === "POST") return Promise.resolve({ ok: postStatus < 300, status: postStatus, json: () => Promise.resolve([]) });
+            return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(rulings) });
+          }
+          if (/\/rest\/v1\/queue_todo_done\?/.test(url)) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+          return base(url, init);
+        };
+      };
+      const open = async function (sess, rulings, postStatus, hash) {
+        const x = load({ fetch: make(rulings || [], postStatus || 201), hash: hash });
+        x.w.CPL_SESSION = Object.assign({ arrival: function (tab) {
+          const h = String(x.w.location.hash || "").replace(/^#/, "");
+          return h.indexOf(tab + "/") === 0 ? h.slice(tab.length + 1).split("/") : null; } }, sess);
+        await x.M.boot();
+        return x;
+      };
+      const sec = function (x) { return x.d.querySelector("#cmn-next-sec"); };
+
+      const out = await open(ANON, []);
+      const s0 = sec(out);
+      check("case 1: the case leads the page with what it decides, its size and what no ruling leaves",
+        s0 && s0.getAttribute("data-kind") === "case" && txt(s0.querySelector("#cmn-next-h")) === CASE.decides
+        && /Your next batch, for Sam/.test(txt(s0)) && /753 courses\. On no ruling: The seed cards stay capped\./.test(txt(s0)));
+      const ev = s0.querySelector("details.cmn-case-ev");
+      check("case 2: the rest of the evidence and its links sit one word away", ev && txt(ev.querySelector("summary")) === "The evidence"
+        && /Music 250/.test(txt(ev)) && ev.querySelectorAll("a").length === 2 && ev.querySelector("a").getAttribute("target") === "_blank");
+      check("case 3: signed out, the case reads and points at its sheet, with nothing to press",
+        /Sign in as a reviewer to rule here, or answer on its decision sheet\./.test(txt(s0)) && !s0.querySelector("button.cmn-case-choice")
+        && Array.from(s0.querySelectorAll("a")).some(function (a) { return a.getAttribute("href") === CASE.sheet; }));
+      const rd = calls.filter(function (c) { return !c.init.method; })[0];
+      check("case 4: the rulings are read with no email asked for", rd && /select=course_id,value,reviewed_at&field=eq\.docket_ruling/.test(rd.url)
+        && !/reviewer_email/.test(rd.url) && /course_id=like\._DOCKET%3A%3A\*/.test(rd.url));
+
+      calls.length = 0;
+      const inn = await open(SIGNED, []);
+      let s1 = sec(inn);
+      const chs = Array.from(s1.querySelectorAll("button.cmn-case-choice"));
+      check("case 5: signed in, the choices are words, the recommended one says so, and none is chosen",
+        chs.length === 4 && txt(chs[0]) === "Confirm the five (recommended)" && chs.every(function (b) { return b.getAttribute("aria-pressed") === "false"; })
+        && s1.querySelector(".cmn-case-choices").getAttribute("role") === "group");
+      check("case 6: Save the ruling waits for a choice", s1.querySelector("button.cmn-case-save").hasAttribute("disabled")
+        && s1.querySelector("label[for=cmn-case-note]") && s1.querySelector("#cmn-case-note"));
+      chs[1].click();
+      s1 = sec(inn);
+      check("case 7: a choice that names its plan in words shows them", /A session runs the dry run for every discipline\./.test(txt(s1))
+        && s1.querySelector('button[data-value="all"]').getAttribute("aria-pressed") === "true");
+      s1.querySelector('button[data-value="five"]').click();
+      s1 = sec(inn);
+      const note = s1.querySelector("#cmn-case-note");
+      note.value = "Music last for the curator cards."; note.dispatchEvent(new inn.w.Event("input"));
+      check("case 8: the choice moves and Save the ruling opens", !s1.querySelector("button.cmn-case-save").hasAttribute("disabled")
+        && s1.querySelector('button[data-value="five"]').getAttribute("aria-pressed") === "true");
+      await inn.M.saveRuling(CASE);
+      const post = calls.filter(function (c) { return c.init.method === "POST"; })[0];
+      const body = post && JSON.parse(post.init.body);
+      check("case 9: the ruling saves once, as an upsert under the reviewer's own name, keyed to the case",
+        post && /kb_curation\?on_conflict=course_id,field$/.test(post.url) && /resolution=merge-duplicates/.test(post.init.headers.Prefer)
+        && body.course_id === "_DOCKET::" + CASE.id && body.field === "docket_ruling" && body.reviewer_email === "slee@cccco.edu"
+        && JSON.stringify(JSON.parse(body.value)) === JSON.stringify({ "case": CASE.id, choice: "five", note: "Music last for the curator cards." }));
+      const s2 = sec(inn);
+      check("case 10: the ruled case closes on the spot and the next batch comes up",
+        /Ruled: Confirm the five\. The processor carries it out and files its receipt\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
+        && txt(s2.querySelector("#cmn-next-h")) === "8 cards in doubt");
+
+      const ruled = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }]);
+      check("case 11: a ruling already saved closes the case on load, and the page moves past it",
+        sec(ruled).getAttribute("data-kind") === "job" && !ruled.d.querySelector(".cmn-next-done"));
+      const pinned = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }], 201,
+        "#commons/case/" + CASE.id);
+      check("case 12: the case's address opens it, ruled, with the ruling and its day and no controls",
+        sec(pinned).getAttribute("data-case") === CASE.id && /Ruled: One at a time, Music first on 2026-11-09\./.test(txt(sec(pinned)))
+        && !sec(pinned).querySelector("button.cmn-case-choice"));
+
+      const refused = await open(SIGNED, [], 403);
+      sec(refused).querySelector('button[data-value="later"]').click();
+      await refused.M.saveRuling(CASE);
+      check("case 13: a refused save says so and the case stays open", /Not saved: the server answered 403\./.test(txt(sec(refused)))
+        && sec(refused).getAttribute("data-kind") === "case" && sec(refused).querySelector('button[data-value="later"]').getAttribute("aria-pressed") === "true");
+      // step 3: Process my rulings now, through the docket-process Edge Function
+      const fnCalls = [];
+      const procFetch = function (status, body) {
+        const base = make([{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "five" }), reviewed_at: "2026-11-09T15:00:00Z" }], 201);
+        return function (url, init) {
+          if (/\/functions\/v1\/docket-process$/.test(String(url))) { fnCalls.push({ url: String(url), init: init });
+            return Promise.resolve({ ok: status === 200, status: status, json: () => Promise.resolve(body) }); }
+          return base(url, init);
+        };
+      };
+      const procOpen = async function (sess, status, body) {
+        const x = load({ fetch: procFetch(status, body), hash: "#commons/case/" + CASE.id });
+        x.w.CPL_SESSION = Object.assign({ arrival: function (tab) {
+          const h = String(x.w.location.hash || "").replace(/^#/, ""); return h.indexOf(tab + "/") === 0 ? h.slice(tab.length + 1).split("/") : null; } }, sess);
+        await x.M.boot();
+        return x;
+      };
+      const p1 = await procOpen(SIGNED, 200, { ok: true, queued: true, already: false });
+      const pw = sec(p1).querySelector("button.cmn-process");
+      check("process 1: a ruled case offers Process my rulings now as a word, and says when it runs otherwise",
+        pw && txt(pw) === "Process my rulings now" && /Otherwise the processor carries rulings out at 05:33 UTC\./.test(txt(sec(p1))));
+      await p1.M.runProcessor();
+      const fc = fnCalls[0];
+      check("process 2: it posts once to the Edge Function with the reviewer's own session, and holds no GitHub token",
+        fnCalls.length === 1 && fc.init.method === "POST" && fc.init.headers.Authorization === "Bearer h.p.s"
+        && !/github|ghp_|token=/i.test(fc.url) && !/api\.github\.com/.test(src));
+      check("process 3: a queued run says what happens next", /Queued\. The processor runs within a few minutes/.test(txt(sec(p1))));
+      fnCalls.length = 0;
+      const p2 = await procOpen(SIGNED, 200, { ok: true, queued: true, already: true });
+      await p2.M.runProcessor();
+      check("process 4: a run already queued is reused, and says so", /A run is already queued/.test(txt(sec(p2))));
+      const p3 = await procOpen(SIGNED, 401, { ok: false, reason: "not_allowed" });
+      await p3.M.runProcessor();
+      check("process 5: a refusal says who may run it", /Not run: only a reviewer on the list can run the processor\./.test(txt(sec(p3))));
+      const p4 = await procOpen(SIGNED, 503, { ok: false, reason: "not_configured" });
+      await p4.M.runProcessor();
+      check("process 6: no key set says the nightly run carries it out", /Not run: the processor's key is not set here\. The 05:33 UTC run/.test(txt(sec(p4))));
+      const p5 = await procOpen(ANON, 200, { ok: true });
+      check("process 7: signed out, there is no word to press", !sec(p5).querySelector("button.cmn-process"));
+      check("case 15: the evidence fold draws no marker glyph, only its underlined word",
+        /\.cmn-case-ev > summary \{ list-style:none;[^}]*text-decoration:underline/.test(src) && /\.cmn-case-ev > summary::-webkit-details-marker \{ display:none; \}/.test(src));
+      check("case 14: the view's address names the case it opened on", /if \(BATCH\.pin\) return "commons\/case\/" \+ BATCH\.pin;/.test(src));
+    }
     const learn = b.d.querySelector(".cmn-learn");
     check("learn 1: the learning line counts what people did, from the confidence count, and calls the rest unchecked",
       /The procedures placed 1,201 exhibit titles\. A person checked 103 and moved 0 elsewhere\. The rest are unchecked, not proven\./.test(txt(learn)));

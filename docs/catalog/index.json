@@ -14993,7 +14993,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 4 (S419 onward)",
      "type": null,
-     "updated": "2026-11-08"
+     "updated": "2026-11-09"
     },
     {
      "created": "2026-07-16",
@@ -15833,7 +15833,7 @@
      ],
      "title": "College & district identity \u2014 lane state",
      "type": null,
-     "updated": "2026-10-30"
+     "updated": "2026-11-10"
     },
     {
      "created": "2026-08-28",
@@ -15905,7 +15905,7 @@
      ],
      "title": "CSM Workspace / the team's queue for each college \u2014 lane state",
      "type": null,
-     "updated": "2026-11-02"
+     "updated": "2026-11-10"
     },
     {
      "created": "2026-10-20",
@@ -15937,7 +15937,7 @@
      ],
      "title": "Discipline cross-listing \u2014 nest, alias or carry two homes \u2014 lane state",
      "type": null,
-     "updated": "2026-09-29"
+     "updated": "2026-11-10"
     },
     {
      "created": "2026-08-28",
@@ -16060,7 +16060,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-06"
+     "updated": "2026-11-09"
     },
     {
      "created": "2026-08-28",
@@ -16229,7 +16229,7 @@
      ],
      "title": "Reviewer session lifetime & scope \u2014 lane state",
      "type": null,
-     "updated": "2026-11-06"
+     "updated": "2026-11-10"
     },
     {
      "created": "2026-09-09",
@@ -16329,7 +16329,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-06"
+     "updated": "2026-11-10"
     },
     {
      "created": "2026-08-28",
@@ -16697,8 +16697,130 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 580,
+   "count": 587,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 626,
+     "path": "docs/session_626_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "implementation-funding",
+      "college-district-identity"
+     ],
+     "title": "Session 626 handoff: the MAP role stands in for the whole noncredit attestation, Cal State LA carries its ruling, the Nudge logs itself",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 625,
+     "path": "docs/session_625_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "reviewer-session-lifetime",
+      "college-district-identity",
+      "commons",
+      "discipline-crosslist",
+      "implementation-funding"
+     ],
+     "title": "Session 625 handoff: the funding tab says when access has ended, the decline pieces leave, a ruling can cross-list, the identity baseline is current",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 624,
+     "path": "docs/session_624_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "commons",
+      "college-district-identity",
+      "reviewer-session-lifetime",
+      "implementation-funding",
+      "library"
+     ],
+     "title": "Session 624 handoff: the action center in two groups, the Courses List keeps your row, the identity check runs again, a sign-in whose funding access ended says so",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 623,
+     "path": "docs/session_623_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "implementation-funding",
+      "reviewer-session-lifetime",
+      "commons",
+      "college-district-identity"
+     ],
+     "title": "Session 623 handoff: the eve of the rollout \u2014 the door live, 30 days, the cards, the noncredit attestation, the Noncredit CPL Lead rule, To do then Browse",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 622,
+     "path": "docs/session_622_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "implementation-funding",
+      "commons",
+      "program-requirements-harvest",
+      "org-phrase-scope-auth"
+     ],
+     "title": "Session 622 handoff: the funding rollout day \u2014 Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, and the CSM funding door",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 621,
+     "path": "docs/session_621_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "docket",
+      "csm-workspace",
+      "org-phrase-scope-auth"
+     ],
+     "title": "Session 621 handoff: the Docket steps 1-3 live, call 9 lifted, CSMs on the reviewer list, TRUNCATE revoked",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 620,
+     "path": "docs/session_620_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 620 handoff: Orange Coast merged, Alameda's description step withdrawn, its transfer degrees take Cal-GETC's 34",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26545,5 +26667,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1424
+ "total": 1431
 }

@@ -2,7 +2,7 @@
 // Snapshot of the identity lint. The tab re-derives everything it CAN
 // read live and flags disagreement; see college_identity.js.
 window.CPL_COLLEGE_IDENTITY = {
- "generated": "2026-08-23",
+ "generated": "2026-11-10",
  "counts": {
   "entities": 120,
   "with_variants": 118,
@@ -16,7 +16,7 @@ window.CPL_COLLEGE_IDENTITY = {
   "partner": 2
  },
  "linted": true,
- "observed_names": 130,
+ "observed_names": 129,
  "findings": [
   {
    "name": "CA MAP INITIATIVE COLLEGE",
@@ -43,13 +43,18 @@ window.CPL_COLLEGE_IDENTITY = {
    "why": "MAP's college_id for the CREDIT arm. Measured 2026-08-21: it appears in chatbox_college_profiles and map_college_contacts and carries its own landing page, but no row in map_colleges and no id in map_college_users. Only MAP can supply it."
   },
   {
-   "name": "Cypress College ",
-   "class": "whitespace",
-   "resolves_to": "Cypress College",
+   "name": "California State University Los Angeles",
+   "class": "non_ccc",
+   "resolves_to": null,
+   "institution_kind": "csu",
+   "decided_by": "Sam",
+   "decided_on": "2026-10-04",
    "sources": [
+    "chatbox_college_profiles",
     "map_college_contacts"
    ],
-   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
+   "has_landing_page": true,
+   "why": "The first CSU campus on MAP. Counted as a MAP participant beside the community colleges (Sam: \"Keep CSU LA in the mix\"). It has no row in map_colleges, so a join on this name finds nothing."
   },
   {
    "name": "Launch Apprenticeship Non-Credit",
@@ -109,15 +114,6 @@ window.CPL_COLLEGE_IDENTITY = {
    "resolves_to": "San Diego College of Continuing Education",
    "sources": [
     "chatbox_college_profiles"
-   ],
-   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
-  },
-  {
-   "name": "San Jose City College ",
-   "class": "whitespace",
-   "resolves_to": "San Jose City College",
-   "sources": [
-    "map_college_contacts"
    ],
    "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
   }

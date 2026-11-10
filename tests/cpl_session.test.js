@@ -346,17 +346,33 @@ const readStore = (w) => {
   {
     // The cap: closing the browser no longer ends the session, so an absolute
     // age bounds how long it can be revived.
+    const DAY = 24 * 60 * 60 * 1000;
     const old = sess(50 * 60 * 1000);
-    old.shared_since = Date.now() - (13 * 60 * 60 * 1000);
+    old.shared_since = Date.now() - (31 * DAY);
     const w = boot({ shared: old });
     check("a shared session past the age cap is not hydrated", w.CPL_SESSION.get() === null);
     check("…and is cleared rather than left to be retried forever", readLocal(w) === null);
+    // The cap is 30 days (Sam, 2026-11-09): the funding door's approval lasts 30 days, and a browser closed
+    // overnight must come back signed in, or a teammate needs an approver's yes again every working day.
+    check("the cap is 30 days", w.CPL_SESSION._maxSharedAgeMs === 30 * DAY);
   }
   {
+    const DAY = 24 * 60 * 60 * 1000;
     const recent = sess(50 * 60 * 1000);
     recent.shared_since = Date.now() - (2 * 60 * 60 * 1000);
     const w = boot({ shared: recent });
     check("a shared session within the cap still hydrates", !!w.CPL_SESSION.get());
+    // The failure the 12-hour cap caused: closed for the night, reopened the next morning, signed out.
+    const overnight = sess(-8 * 60 * 60 * 1000);          // the token lapsed while the browser was closed
+    overnight.shared_since = Date.now() - (16 * 60 * 60 * 1000);
+    const w2 = boot({ shared: overnight });
+    check("a browser reopened the next morning is still signed in", !!w2.CPL_SESSION.get() &&
+      w2.CPL_SESSION.get().refresh_token === overnight.refresh_token);
+    const weeks = sess(-DAY);
+    weeks.shared_since = Date.now() - (29 * DAY);
+    const w3 = boot({ shared: weeks });
+    check("…and on day 29 too, with the first sign-in's date kept", !!w3.CPL_SESSION.get() &&
+      readLocal(w3).shared_since === weeks.shared_since);
   }
   {
     // A refresh must not restart the clock, or the cap could never bite.

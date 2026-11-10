@@ -130,14 +130,13 @@
     }
     return { to: [], person: "", step: "" };
   }
-  // institutions: [{ key, name, aliases, missing: ["part"|"nc"], declined: "" | its date in words }]
+  // institutions: [{ key, name, aliases, missing: ["part"|"nc"] }]
   // contacts: map_college_contacts rows. One entry per institution with its primary contact.
   function pick(institutions, contacts) {
     var by = indexByName(contacts);
     return (institutions || []).map(function (inst) {
       var p = primaryOf(rowsOf(inst, by));
-      return { key: inst.key, name: inst.name, missing: inst.missing.slice(), declined: inst.declined || "",
-        to: p.to, person: p.person, step: p.step };
+      return { key: inst.key, name: inst.name, missing: inst.missing.slice(), to: p.to, person: p.person, step: p.step };
     });
   }
   // Everyone the checked roles reach at one institution: [{ email, name, role }], one entry an
@@ -204,6 +203,24 @@
   }
 
   var CSS_ID = "cplfund-nudge-css";
+  // THE NUDGE LOGS ITSELF (the CSM Workspace lane's NEXT: "a mail merge writes one entry per college it reached,
+  // with a follow-up date"). COBI sends nothing, so a download is no proof a message went out: the reviewer says
+  // so with one word, Log this Nudge, after the mail merge is sent. One entry a checked institution in the
+  // workspace's log (csm_log), kind email, with a follow-up a week out. No name or address goes in the entry.
+  function plusDays(n) {
+    var d = new Date(); d.setDate(d.getDate() + n);
+    return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  }
+  function logEntries(on, when) {
+    when = when || plusDays(7);
+    return on.map(function (x) {
+      var n = x.recips.length;
+      return { college: x.inst.key, kind: "email",
+        body: "Nudge sent by mail merge to " + n + (n === 1 ? " person" : " people") + ", asking for " +
+          missingText(x.inst.missing) + ".",
+        follow_up_on: when };
+    });
+  }
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
     var st = document.createElement("style");
@@ -251,17 +268,16 @@
   }
   function rowHtml(x, checked) {
     var i = x.inst, can = x.recips.length > 0;
-    var miss = esc(missingText(i.missing)) +
-      (i.declined ? "<br>Declined participation, " + esc(i.declined) + ". Check the box to nudge anyway." : "");
-    return "<tr" + (i.declined || !can ? ' class="cplfund-nudge-off"' : "") + ">" +
+    var miss = esc(missingText(i.missing));
+    return "<tr" + (!can ? ' class="cplfund-nudge-off"' : "") + ">" +
       '<td><input type="checkbox" data-nudgepick="' + esc(i.key) + '"' + (checked && can ? " checked" : "") +
         (can ? "" : " disabled") + ' aria-label="Nudge ' + esc(i.name) + '"></td>' +
       '<th scope="row">' + esc(i.name) + "</th>" +
       '<td class="cplfund-nudge-miss">' + miss + "</td><td>" + whoHtml(x.recips) + "</td></tr>";
   }
   function tableHtml(rows, checked) {
-    // Those who can be nudged first, the declined next, those with no one on file last.
-    var rank = function (x) { return x.recips.length ? (x.inst.declined ? 1 : 0) : 2; };
+    // Those who can be nudged first, those with no one on file last.
+    var rank = function (x) { return x.recips.length ? 0 : 1; };
     var sorted = rows.slice().sort(function (a, b) { return rank(a) - rank(b); });
     return '<div class="cplfund-nudge-wrap" role="region" aria-label="Institutions to nudge" tabindex="0">' +
       '<table class="cplfund-nudge-table"><caption class="cplfund-sr-only">Institutions to nudge: a box to include ' +
@@ -275,11 +291,9 @@
     var n = rows.length;
     var part = rows.filter(function (x) { return x.inst.missing.indexOf("part") >= 0; }).length;
     var nc = rows.filter(function (x) { return x.inst.missing.indexOf("nc") >= 0; }).length;
-    var dec = rows.filter(function (x) { return x.inst.declined; }).length;
     var none = rows.filter(function (x) { return !x.recips.length; }).length;
     return n + (n === 1 ? " institution has" : " institutions have") + " not yet sent what the funding asks: " +
       part + " a participation confirmation, " + nc + " a noncredit attestation." +
-      (dec ? " " + dec + " declined participation and start unchecked." : "") +
       (none ? " " + none + " have no one on file for the checked roles." : "");
   }
   function countText(rows, checked) {
@@ -386,8 +400,7 @@
         rows = insts.map(function (inst) { return { inst: inst, recips: recipients(inst, roles, data) }; });
       }
       build();
-      // A declined institution starts unchecked; its box is the override.
-      rows.forEach(function (x) { checked[x.inst.key] = !x.inst.declined && x.recips.length > 0; });
+      rows.forEach(function (x) { checked[x.inst.key] = x.recips.length > 0; });
       body.innerHTML = rolesHtml(roles, usersOk) +
         '<p class="cplfund-nudge-sum" role="status" data-nudgesum="1"></p>' +
         '<div class="cplfund-nudge-bar"><button type="button" class="cplfund-optbtn" data-nudgeall="1">Select all</button>' +
@@ -399,10 +412,12 @@
           esc(EMAIL_DEFAULT) + "</textarea>" +
         '<p id="cplfund-nudge-help" class="dk cplfund-maildlg-msg">The first line is the subject. {name}, {college}, ' +
         "{missing} and {deadline} fill in for each recipient. Select all checks every institution that has someone on " +
-        "file and has not declined participation; a declined one is nudged only when its own box is checked. Download " +
+        "file. Download " +
         "for mail merge saves one row a recipient of the checked institutions, the filled-in subject and email beside " +
         "each address, for a Word or Outlook mail merge. Copy addresses puts the same addresses on the clipboard for " +
-        "one message's Bcc line. COBI sends nothing: your mail program sends, from its own account.</p>";
+        "one message's Bcc line. COBI sends nothing: your mail program sends, from its own account. Once it has " +
+        "sent, Log this Nudge writes one entry for each institution in that list in the CSM Workspace's log, with a " +
+        "follow-up a week out.</p>";
       var tableBox = body.querySelector("[data-nudgetable]");
       function paint() {
         tableBox.innerHTML = tableHtml(rows, checked);
@@ -425,7 +440,7 @@
         paint();
       });
       body.querySelector("[data-nudgeall]").addEventListener("click", function () {
-        rows.forEach(function (x) { checked[x.inst.key] = !x.inst.declined && x.recips.length > 0; });
+        rows.forEach(function (x) { checked[x.inst.key] = x.recips.length > 0; });
         paint();
       });
       body.querySelector("[data-nudgenone]").addEventListener("click", function () {
@@ -438,6 +453,35 @@
         '<button type="button" class="cplfund-textbtn" data-nudgebcc="1">Copy addresses</button>' +
         '<span class="dk cplfund-maildlg-msg" data-nudgemsg="1" role="status" aria-live="polite"></span>');
       var msg = ctl.querySelector("[data-nudgemsg]");
+      // Log this Nudge shows once a list has left COBI (a download or a copy), and only where the caller can
+      // write the log. It writes once: a second press of a sent merge would file every college twice.
+      // IT FILES WHAT LEFT COBI, never what is checked at the press (COBIx on the PR): each export takes its own
+      // copy of the institutions and how many people each had, and the latest export is the one filed. A box
+      // changed after the export changes nothing until the next export.
+      var canLog = typeof ctx.log === "function", logged = false, sent = [];
+      function offerLog(on) {
+        if (!canLog || logged) return;
+        sent = on.map(function (x) { return { inst: x.inst, recips: x.recips.slice() }; });
+        if (ctl.querySelector("[data-nudgelog]")) return;
+        msg.insertAdjacentHTML("beforebegin", '<button type="button" class="cplfund-textbtn" data-nudgelog="1">Log this Nudge</button>');
+        ctl.querySelector("[data-nudgelog]").addEventListener("click", function () {
+          var btn = this, on = sent, when = plusDays(7);
+          if (logged || !on.length) return;
+          btn.disabled = true;
+          msg.textContent = "Logging\u2026";
+          Promise.resolve(ctx.log(logEntries(on, when))).then(function (ok) { return ok; }, function () { return false; }).then(function (ok) {
+            if (ok) {
+              logged = true;
+              if (btn.parentNode) btn.parentNode.removeChild(btn);
+              msg.textContent = "Logged for " + on.length + (on.length === 1 ? " institution" : " institutions") +
+                ", each with a follow-up on " + longDate(when) + ".";
+            } else {
+              btn.disabled = false;
+              msg.textContent = "The log did not save. Sign in again and press Log this Nudge.";
+            }
+          });
+        });
+      }
       var tpl = function () { return box.querySelector("#cplfund-nudge-tpl").value; };
       var chosen = function () { return rows.filter(function (x) { return checked[x.inst.key] && x.recips.length; }); };
       ctl.querySelector("[data-nudgecsv]").addEventListener("click", function () {
@@ -445,16 +489,18 @@
         if (!on.length) { msg.textContent = "Check at least one institution first."; return; }
         download(today() + "_CPL_Funding_Nudge.csv", csv(on, tpl(), ctx.deadline));
         msg.textContent = "Saved. Open it as the mail merge's recipient list.";
+        offerLog(on);
       });
       ctl.querySelector("[data-nudgebcc]").addEventListener("click", function () {
-        var all = [], seen = {};
-        chosen().forEach(function (x) {
+        var all = [], seen = {}, on = chosen();
+        on.forEach(function (x) {
           x.recips.forEach(function (r) { var k = r.email.toLowerCase(); if (!seen[k]) { seen[k] = 1; all.push(r.email); } });
         });
         if (!all.length) { msg.textContent = "Check at least one institution first."; return; }
         copyText(all.join("; "), function (ok) {
           msg.textContent = ok ? "Copied " + all.length + " addresses. Paste them into one message's Bcc line."
             : "This browser would not copy. Download for mail merge holds the same addresses.";
+          if (ok) offerLog(on);
         });
       });
       return rows;
@@ -462,5 +508,5 @@
   }
 
   window.CPL_FUNDING_NUDGE = { open: open, pick: pick, recipients: recipients, indexByName: indexByName, fill: fill,
-    csv: csv, STEPS: STEPS, ROLES: ROLES, EMAIL_DEFAULT: EMAIL_DEFAULT, CONTACTS_URL: CONTACTS_URL, USERS_URL: USERS_URL };
+    csv: csv, logEntries: logEntries, STEPS: STEPS, ROLES: ROLES, EMAIL_DEFAULT: EMAIL_DEFAULT, CONTACTS_URL: CONTACTS_URL, USERS_URL: USERS_URL };
 })();

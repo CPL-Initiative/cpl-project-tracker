@@ -1,0 +1,46 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-09T17-53-54Z",
+ "run_id": "42668459327",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "d20f2caab9db",
+ "cohorts": [
+  "cer-procedure-classifier@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Nursing Care of Children and Families",
+   "field": "unified_title_assignment",
+   "value": "Nursing Care of Children and Families",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Nursing Care of Children and Families",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Nursing Care of Children and Families",
+   "field": "unified_title_assignment",
+   "value": "Nursing Care of Children and Families",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Nursing Care of Children and Families",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

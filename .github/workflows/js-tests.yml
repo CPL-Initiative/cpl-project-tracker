@@ -433,6 +433,10 @@ jobs:
       # committed files, a figure it cannot read is null with its error, never a zero.
       - name: Commons status builder reads every row
         run: python3 tests/commons_status_build_test.py
+      # The Docket (#2963 step 2): the cases file carries no email and names its register row, and the
+      # ruling reader acts only on an open case's offered choice.
+      - name: Docket cases and the ruling reader
+        run: python3 tests/docket_rulings_test.py
       # The Exhibits tab's Review queue (Sheet 147 card 1, 2026-10-31): each held title in its step,
       # the aligned course naming the proposal, a conflict proposing the reference's title, and no
       # student figure in the public file.

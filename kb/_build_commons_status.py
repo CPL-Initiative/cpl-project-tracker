@@ -704,6 +704,92 @@ def build_queue(rows):
     return out
 
 
+# A stalled routine, or a backlog that stops shrinking, becomes an item for the team (the path mock's proposed
+# build, Sam's S573 asks, 2026-11-04: the routines carry the volume "so the work does not stall under its size").
+# Two tests, both measured, neither a judgment:
+#   stopped        a reference's machine stamp is older than STALL_SLACK of its declared cadence (commons.js's
+#                  MACHINE_SLACK, the same 1.5), read at build time;
+#   not_shrinking  an issue a routine carries counts as many items today as it did STALL_DAYS ago, or more.
+# The second needs yesterday's figures, which the status file overwrites, so each build records the day's routine
+# counts in HISTORY (one entry a UTC day, the last build of the day wins, HISTORY_KEEP_DAYS kept).
+HISTORY = "kb/status/commons_history.json"
+STALL_DAYS = 7
+STALL_SLACK = 1.5
+HISTORY_KEEP_DAYS = 60
+
+
+def issue_key(ref, issue):
+    """One issue across days: its reference, where it opens and its words with any figure taken out."""
+    return "%s|%s|%s" % (ref, issue.get("open") or "", re.sub(r"\d[\d,]*", "#", issue.get("words") or ""))
+
+
+def routine_readings(rows):
+    out = {}
+    for r in rows:
+        for i in r.get("issues") or []:
+            if i.get("carry") == "routine" and isinstance(i.get("n"), int) and not isinstance(i.get("n"), bool):
+                out[issue_key(r.get("key"), i)] = i["n"]
+    return out
+
+
+def load_history(root):
+    try:
+        h = load_json(root, HISTORY)
+    except Exception:  # noqa: BLE001  (no history yet reads as none: nothing can be said to have stopped shrinking)
+        h = None
+    if not isinstance(h, dict) or not isinstance(h.get("days"), dict):
+        h = {"schema": 1, "days": {}}
+    return h
+
+
+def record_history(history, day, readings):
+    days = dict(history.get("days") or {})
+    days[day] = readings
+    keep = sorted(days)[-HISTORY_KEEP_DAYS:]
+    return {"schema": 1, "days": {d: days[d] for d in keep}}
+
+
+def _when(stamp):
+    """A stamp as a UTC datetime, or None: the stamps here are ISO with Z, with an offset, or a bare date."""
+    if not stamp or not isinstance(stamp, str):
+        return None
+    try:
+        t = dt.datetime.fromisoformat(stamp.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=dt.timezone.utc)
+    return t.astimezone(dt.timezone.utc)
+
+
+def build_stalled(rows, history, now):
+    out = []
+    now_t = _when(now)
+    if now_t is None:
+        return out
+    for r in rows:
+        m = r.get("machine") or {}
+        at, every = _when(m.get("at")), m.get("every_hours")
+        if at is not None and isinstance(every, (int, float)) and every > 0:
+            if (now_t - at).total_seconds() / 3600.0 > every * STALL_SLACK:
+                out.append({"ref": r.get("key"), "title": r.get("title"), "kind": "stopped", "what": m.get("what"),
+                            "since": m.get("at"), "every_hours": every, "open": r.get("tab")})
+    cutoff = (now_t - dt.timedelta(days=STALL_DAYS)).strftime("%Y-%m-%d")
+    days = history.get("days") or {}
+    for r in rows:
+        for i in r.get("issues") or []:
+            n = i.get("n")
+            if i.get("carry") != "routine" or not isinstance(n, int) or isinstance(n, bool) or n <= 0:
+                continue
+            k = issue_key(r.get("key"), i)
+            then = [d for d in sorted(days) if d <= cutoff and isinstance((days[d] or {}).get(k), int)]
+            if then and n >= days[then[-1]][k]:
+                out.append({"ref": r.get("key"), "title": r.get("title"), "kind": "not_shrinking", "n": n,
+                            "was": days[then[-1]][k], "since": then[-1], "words": i.get("words"),
+                            "owner": i.get("owner"), "open": i.get("open")})
+    return out
+
+
 # The confidence count (Sam, 2026-11-04, S573: "automate as many of these procedures with confidence as
 # possible"). A procedure earns trust by what a person does with its work afterward. Each procedure's committed
 # receipts say what it placed; the committed reference says where each item sits now and whose stamp it carries.
@@ -717,12 +803,12 @@ def _norm(t):
     return " ".join(str(t or "").lower().split())
 
 
-def _conf_counts(placed):
-    c = {k: 0 for k in CONF_KEYS}
+def _conf_counts(placed, extra=()):
+    c = {k: 0 for k in CONF_KEYS + list(extra)}
     for state in placed.values():
         c["placed"] += 1
         c[state] += 1
-    c["looked"] = c["kept"] + c["renamed"] + c["moved"]
+    c["looked"] = c["kept"] + c["renamed"] + c["moved"] + sum(c[k] for k in extra)
     return c
 
 
@@ -803,9 +889,57 @@ def confidence_subjects(root):
             "total": _conf_counts(placed)}
 
 
+CR_RUNGS = (1, 2, 3, 4)   # the rungs a rule folds without a curator; the tab's words name them, so the filter does too
+
+
+def confidence_cr(root):
+    """Groups a rung 1 to 4 rule folded (kb/cr_reference_worklist.json), against the curator's decisions on them
+    (kb/receipts/cr_reference_decisions_*.json, the committed record of cr_reference_decisions).
+      kept      confirmed, the same wordings the rule folded;
+      widened   confirmed, with wordings the rule had left in another group added by the person: the rule set none
+                wrong and missed some, which is its own state so it never reads as plain trust (COBIx on #3027);
+      moved     a rule's wording set aside, or the group read not a topic;
+      untouched no decision, or one cleared or deferred, which settles nothing.
+    Nothing here renames with a family: a group is its own family. The decisions on file are verdicts on fold
+    proposals (which wording joins which group), matched to today's groups by key, never a review of a rung's
+    output asked as such; the lane says so."""
+    G = load_json(root, "kb/cr_reference_worklist.json")["groups"]
+    receipts = []
+    for p in sorted(glob.glob(os.path.join(root, "kb/receipts/cr_reference_decisions_*.json"))):
+        with open(p, encoding="utf-8") as f:
+            R = json.load(f)
+        receipts.append((str(R.get("written_at") or ""), p, R))
+    decided = {}
+    for _, _, R in sorted(receipts, key=lambda x: x[:2]):   # by the receipt's own time, then its name
+        for r in R.get("rows", []):
+            decided[r.get("group_key")] = r   # the latest receipt row per group stands
+    by = {}
+    for g in G:
+        if not g.get("acts_automatically"):
+            continue
+        if g.get("rung") not in CR_RUNGS:
+            raise ValueError("group %r acts automatically at rung %r, outside the rungs the count names" % (g.get("key"), g.get("rung")))
+        r = decided.get(g["key"])
+        rule = {m["rec"] for m in g["members"]}
+        if not r or r.get("decision") not in SETTLES:
+            state = "untouched"
+        elif r.get("decision") != "confirmed" or set(r.get("excluded") or []) & rule:
+            state = "moved"
+        elif set(r.get("members") or []) - set(r.get("excluded") or []) - rule:
+            state = "widened"
+        else:
+            state = "kept"
+        by.setdefault("rung %s" % g.get("rung"), {})[g["key"]] = state
+    procs = [dict(name=k, **_conf_counts(by[k], ("widened",))) for k in sorted(by)]
+    allp = {}
+    for v in by.values():
+        allp.update(v)
+    return {"ref": "cr", "unit": "groups", "procedures": procs, "total": _conf_counts(allp, ("widened",))}
+
+
 def build_confidence(root):
     out = []
-    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects)):
+    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects), ("cr", confidence_cr)):
         try:
             out.append(fn(root))
         except Exception as e:  # noqa: BLE001  (a source that cannot be read says so, never a zero)
@@ -816,7 +950,11 @@ def build_confidence(root):
 def next_batch(root):
     """The one small batch the first view opens on (Sam's Commons rulings, 2026-11-08, #2921 item 2): Another look's
     open cards in Exhibits, six at most, decided with Keep or Change from the evidence, then stop. The sweep never
-    shows a card again once a person has kept or changed it, so its card count is what is still open."""
+    shows a card again once a person has kept or changed it, so its card count is what is still open.
+
+    `cards` names the six, with the kb_curation keys a decision saves under (`_UNCLASSIFIED::<local title>`, the
+    keys exhibits.js reconcileSweep reads), so the Commons can count the batch decided from the saves themselves
+    and close it on the spot (COBIx on #2921, 2026-11-09: the card still read open after Sam decided all six)."""
     d = load_json(root, "kb/exhibits_sweep.json")
     cards = d.get("cards") or []
     n = min(len(cards), 6)
@@ -827,7 +965,76 @@ def next_batch(root):
             "title": "Another look at %s exhibit title%s" % (fmt(n), "" if n == 1 else "s"),
             "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
             "stop": "The batch ends when its cards are decided.", "rules": rules,
+            "cards": [{"id": c.get("id"), "current": c.get("current"),
+                       "keys": [UNCLASS_PREFIX + l["raw"] for l in (c.get("locals") or []) if l.get("raw")]}
+                      for c in cards[:n]],
             "at": d.get("generated_at")}
+
+
+UNCLASS_PREFIX = "_UNCLASSIFIED::"
+# The run logs whose open calls are decisions on a sheet (the session side of each row, kb/status/<project>.json).
+CALL_LOGS = ["program-requirements", "exhibit", "course", "cr", "subjects"]
+
+
+def decision_batches(root):
+    """Each call a run log still holds open, one batch apiece, in the logs' order: the decision sheet it sits on.
+    A log that cannot be read is named, never skipped as if it held nothing."""
+    out = []
+    for p in CALL_LOGS:
+        try:
+            d = load_json(root, "kb/status/%s.json" % p)
+        except (OSError, ValueError) as e:
+            out.append({"kind": "decision", "project": p, "error": "%s: %s" % (type(e).__name__, e)})
+            continue
+        for c in d.get("calls") or []:
+            if (c.get("answer") or {}).get("words") or not c.get("title"):
+                continue
+            out.append({"kind": "decision", "project": p, "n": 1, "title": c.get("title"), "teaches": c.get("text"),
+                        "open": c.get("link"), "todo_id": c.get("todo_id"),
+                        "stop": "It ends when you answer the sheet."})
+    return out
+
+
+def job_batches(queue):
+    """The queue's items a person named Sam carries (the owner says so), each a job that opens filtered."""
+    out = []
+    for g in (queue or {}).get("reasons") or []:
+        for i in g.get("items") or []:
+            if not str(i.get("owner") or "").startswith("Sam") or i.get("error") or not i.get("n"):
+                continue
+            out.append({"kind": "job", "ref": i.get("ref"), "n": i.get("n"), "title": i.get("title"),
+                        "words": i.get("words"), "teaches": i.get("owner"), "open": i.get("open"), "reason": g.get("key")})
+    return out
+
+
+def docket(root):
+    """The Docket's open cases (#2963 step 2), from kb/docket/cases.json: each a decision a reviewer rules on in the
+    Commons, with its evidence, its choices and the plan each choice runs. A done case leaves the list."""
+    d = load_json(root, "kb/docket/cases.json")
+    keep = ("id", "source", "addressee", "dr", "lane", "ref", "decides", "size", "evidence", "links", "choices",
+            "plan_words", "no_reply", "sheet", "filed_at")
+    return [{k: c.get(k) for k in keep if c.get(k) is not None}
+            for c in d.get("cases") or [] if c.get("status") not in ("done", "partial") and c.get("id") and c.get("choices")]
+
+
+def batches(root, queue, cases=None):
+    """The ordered list of small batches (COBIx on #2921, 2026-11-09, ask 2: "always offer the next step"): Another
+    look, then the Docket's open cases (ruled in place, #2963 step 2), then each decision a run log holds open on a
+    sheet no case carries, then the queue's jobs Sam carries. The first view shows the first one not done; when none
+    is left it says so plainly."""
+    out = []
+    a = next_batch(root)
+    if a:
+        out.append(a)
+    cases = cases or []
+    for c in cases:
+        out.append({"kind": "case", "id": c["id"], "n": (c.get("size") or {}).get("n"), "title": c.get("decides"),
+                    "open": "#commons/case/" + c["id"], "addressee": c.get("addressee")})
+    # A sheet a case now carries is ruled here, so its run-log call is no second batch.
+    on_docket = {c.get("sheet") for c in cases if c.get("sheet")}
+    out.extend(b for b in decision_batches(root) if b.get("error") or b.get("open") not in on_docket)
+    out.extend(job_batches(queue))
+    return out
 
 
 BUILDING = [
@@ -836,7 +1043,8 @@ BUILDING = [
     ("skills", "Skills", None, building_skills),
 ]
 
-def build(root):
+def build_with_history(root, now=None):
+    """The status document and the day history that goes beside it."""
     rows = []
     for key, title, tab, fn in ROWS:
         try:
@@ -851,8 +1059,19 @@ def build(root):
         except Exception as e:  # noqa: BLE001
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": build_queue(rows),
-            "confidence": build_confidence(root), "next_batch": _safe(next_batch, root)}
+    queue = build_queue(rows)
+    now = now or iso_now()
+    history = record_history(load_history(root), now[:10], routine_readings(rows))
+    queue["stalled"] = build_stalled(rows, history, now)
+    dk = _safe(docket, root)
+    bl = _safe(lambda r: batches(r, queue, dk if isinstance(dk, list) else []), root)
+    nb = (next((b for b in bl if not b.get("error")), None) if isinstance(bl, list) else bl)
+    return {"schema": SCHEMA, "written_at": now, "rows": rows, "building": building, "queue": queue,
+            "confidence": build_confidence(root), "docket": dk, "batches": bl, "next_batch": nb}, history
+
+
+def build(root, now=None):
+    return build_with_history(root, now)[0]
 
 
 def _safe(fn, root):
@@ -868,12 +1087,16 @@ def main(argv=None):
     ap.add_argument("--out", default=None, help="where to write (default: kb/status/commons.json under --root)")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args(argv)
-    data = build(a.root)
+    data, history = build_with_history(a.root)
     out = a.out or os.path.join(a.root, OUT)
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
         f.write("\n")
+    if not a.out:   # a build to another path is a look, and a look must not move the day's record
+        with open(os.path.join(a.root, HISTORY), "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=1, ensure_ascii=False, sort_keys=True)
+            f.write("\n")
     if not a.quiet:
         for r in data["rows"]:
             p = r["pair"][0]

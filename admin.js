@@ -1542,6 +1542,69 @@
       .catch(function (e) { pubRows = null; pubErr = e.message; if (done) done(); });
   }
 
+  /* ── Funding approvers (Sam, 2026-11-09, issue 2983: "there should be a table in Admin where he can control that
+     list") ── The people who may approve a teammate's request to sign in to the funding and CSM work without an
+     email link. funding_approvers_list() answers an approver or an owner; only an owner (Sam or Malone) can add or
+     remove, and an added address must already be on the reviewer list. */
+  var apprRows = null, apprErr = "", apprEdit = false, apprAsked = false;
+  function apprHtml() {
+    var h = '<section class="adm-live adm-appr"><h3>Funding approvers</h3>'
+      + '<p class="adm-live-note">Who can approve a teammate\'s request to sign in to the funding and CSM work when the '
+      + "email link does not arrive. An approval opens only that work, for 30 days. Sam and Malone change this list; "
+      + "an address must already be on the reviewer list.</p>";
+    if (apprErr) h += '<p class="adm-live-note">Could not read the approvers (' + esc(apprErr) + ").</p>";
+    else if (!apprRows) h += '<p class="adm-live-note">Loading\u2026</p>';
+    else if (!apprRows.length) h += '<p class="adm-live-note">Only an approver or an owner can read this list.</p>';
+    else {
+      h += '<ul class="adm-pub-list">' + apprRows.map(function (r) {
+        return "<li>" + esc(r.name || r.email) + ' <span class="adm-live-note">' + esc(r.email) + "</span>"
+          + (apprEdit ? ' <button type="button" class="adm-btn" data-apprremove="' + esc(r.email) + '">Remove</button>' : "") + "</li>";
+      }).join("") + "</ul>";
+      if (apprEdit) h += '<p><label for="adm-appr-in">Add an approver</label> <input id="adm-appr-in" type="email" placeholder="name@rccd.edu"> '
+        + '<button type="button" class="adm-btn" data-appradd="1">Add</button></p>';
+    }
+    return h + '<p class="adm-live-msg" id="adm-appr-msg" role="status"></p></section>';
+  }
+  function loadAppr(done) {
+    fetch(REST + "/rpc/funding_approvers_list", { method: "POST",
+      headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()), body: "{}" })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function (rows) { apprRows = Array.isArray(rows) ? rows : []; apprErr = "";
+        apprEdit = apprRows.some(function (x) { return x.can_edit === true; }); done && done(); })
+      .catch(function (e) { apprErr = e.message; done && done(); });
+  }
+  function repaintAppr(root) {
+    var host = root.querySelector(".adm-appr");
+    if (host) { host.outerHTML = apprHtml(); wireAppr(root); }
+  }
+  function setAppr(root, email, add) {
+    var msg = root.querySelector("#adm-appr-msg");
+    if (msg) msg.textContent = add ? "Adding\u2026" : "Removing\u2026";
+    fetch(REST + "/rpc/funding_approvers_set", { method: "POST",
+      headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
+      body: JSON.stringify({ p_email: email, p_add: add }) })
+      .then(function (r) { return r.ok ? r.json() : { ok: false, why: String(r.status) }; })
+      .then(function (res) {
+        if (!res || !res.ok) {
+          var why = res && res.why === "not_a_reviewer" ? "that address is not on the reviewer list"
+            : res && res.why === "not_an_owner" ? "only Sam or Malone can change this list" : (res && res.why) || "no answer";
+          if (msg) msg.textContent = "Not saved: " + why + ".";
+          return;
+        }
+        loadAppr(function () { repaintAppr(root); var m2 = root.querySelector("#adm-appr-msg"); if (m2) m2.textContent = add ? "Added." : "Removed."; });
+      }).catch(function (e) { if (msg) msg.textContent = "Not saved (" + e.message + ")."; });
+  }
+  function wireAppr(root) {
+    Array.prototype.forEach.call(root.querySelectorAll("[data-apprremove]"), function (b) {
+      b.onclick = function () { setAppr(root, b.getAttribute("data-apprremove"), false); };
+    });
+    var add = root.querySelector("[data-appradd]");
+    if (add) add.onclick = function () {
+      var v = String((root.querySelector("#adm-appr-in") || {}).value || "").trim();
+      if (v) setAppr(root, v, true);
+    };
+  }
+
   function repaintPub(root) {
     var host = root.querySelector(".adm-pub");
     if (host) { host.outerHTML = pubHtml(); wirePub(root); }
@@ -1803,6 +1866,7 @@
 
     h += liveHtml();
     h += pubHtml();
+    h += apprHtml();
     h += blastShellHtml();
 
     h += "</div>";
@@ -1817,6 +1881,7 @@
       if (host) { host.outerHTML = liveHtml(); wireLive(root); }
     });
     loadPub(function () { repaintPub(root); });
+    if (!apprAsked) { apprAsked = true; loadAppr(function () { repaintAppr(root); }); }
   }
 
   function wire(root) {

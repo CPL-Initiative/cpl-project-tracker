@@ -102,6 +102,13 @@
     ".ccl-cc-name { margin:2px 0 2px; font-weight:600; color: var(--text-strong); }",
     ".ccl-cc-said { margin:4px 0 6px; font-size:.82rem; color: var(--text-body); }",
     ".ccl-pn-acts { display:flex; flex-wrap:wrap; gap:4px 14px; align-items:center; }",
+    /* The ruling is one box with its save on its own line; the edits and SkyView each sit apart (Sam, 2026-11-09,
+       issue 2995: "the save ruling and other buttons are a bit jumbled together"). */
+    ".ccl-rule { border:1px solid var(--border); border-radius:6px; padding:8px 10px 6px; margin:6px 0 12px; }",
+    ".ccl-rule .ccl-rule-save { margin:8px 0 2px; padding-top:8px; border-top:1px solid var(--border); }",
+    ".ccl-rule .ccl-rule-save button, .ccl-rule .ccl-rule-save a { font-weight:700; }",
+    ".ccl-pn-edit-h { margin:10px 0 2px; font-size:.82rem; font-weight:600; color:var(--text-strong); }",
+    ".ccl-pn-sky { margin-top:12px; padding-top:8px; border-top:1px solid var(--border); }",
     ".ccl-cc-edit { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; margin:4px 0 8px; }",
     ".ccl-cc-in { font: inherit; font-size:.85rem; min-height:28px; padding:2px 6px; min-width:0; flex:1 1 220px; max-width:100%;" +
       " border:1px solid var(--border-strong); border-radius:4px; background: var(--surface-opaque); color: var(--text-body); }",
@@ -482,9 +489,13 @@
     if (votes.length) lines.push("Its colleges' TOP codes point to " + votes.map(function (d) { return d + " (" + card.votes[d] + ")"; }).join(", ") + ".");
     else lines.push("None of its colleges' TOP codes maps to a discipline.");
     lines.push(fmt(card.colleges) + (card.colleges === 1 ? " college offers it." : " colleges offer it."));
+    var also = (c.xdisc || []).filter(Boolean);
+    if (also.length) lines.push("It is also listed as " + ccNames(also) + ".");
     out.push(el("p", { "class": "cplcoci-meta ccl-doubt-why" }, [lines.join(" ")]));
     if (R) {
-      var did = R.v.ruling === "keep" ? "Kept " + (R.v.discipline_was || c.disc) : R.v.ruling === "move" ? "Moved to " + R.v.to : "Marked not sure";
+      var did = R.v.ruling === "keep" ? "Kept " + (R.v.discipline_was || c.disc) : R.v.ruling === "move" ? "Moved to " + R.v.to
+        : R.v.ruling === "crosslist" ? "Kept " + (R.v.discipline_was || c.disc) + (R.v.to ? ", also listed as " + R.v.to : ", second discipline cleared")
+        : "Marked not sure";
       out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [did + (R.who && sess ? " by " + R.who : " by a reviewer") + (R.at ? " on " + R.at : "") + "." +
         (R.v.words ? " Why: " + R.v.words : "") + (R.v.similar ? " Marked for similar cards." : "")]));
     }
@@ -499,6 +510,21 @@
     var other = el("optgroup", { label: "Move to another discipline" });
     CC.mq.forEach(function (d) { if (!seen[d]) { var n = el("option", { value: "move:" + d }, [d]); if ("move:" + d === F.choice) n.selected = true; other.appendChild(n); } });
     sel.appendChild(other);
+    /* Keep the home discipline and list a second one (Sam, 2026-11-09, issue 2981: a student can take the course as
+       Kinesiology or as Psychology, depending on their major). The home stays for counting and the M-ID; the second
+       is for display and search, and never a re-mint (his ruling of 2026-09-22, the discipline-crosslist lane). The
+       signals' disciplines come first, then every other one. */
+    var home = c.disc || card.discipline;
+    if (home) {   // a course with no home has nothing to keep: the group waits until it has one
+      var xg = el("optgroup", { label: "Keep " + home + ", and also list as" }), xseen = {};
+      xseen[home] = 1; also.forEach(function (d) { xseen[d] = 1; });
+      (card.desc || []).map(function (d) { return d[0]; }).concat(votes).concat(CC.mq).forEach(function (d) {
+        if (xseen[d]) return; xseen[d] = 1;
+        var n = el("option", { value: "also:" + d }, [d]); if ("also:" + d === F.choice) n.selected = true; xg.appendChild(n);
+      });
+      if (also.length) { var nx = el("option", { value: "also:" }, ["No second discipline (clear " + ccNames(also) + ")"]); if (F.choice === "also:") nx.selected = true; xg.appendChild(nx); }
+      sel.appendChild(xg);
+    }
     sel.addEventListener("change", function () { F.choice = sel.value; });
     var ta = el("textarea", { id: "ccl-rule-words", "class": "ccl-cc-in ccl-rule-words", rows: "3",
       "aria-label": "Why, in plain words, as you would tell a session" });
@@ -511,25 +537,30 @@
       el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-choice" }, ["Your ruling "]), sel]),
       el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-words" }, ["Why, in plain words"]), ta]),
       el("p", { "class": "ccl-cc-edit" }, [cb, el("label", { "for": "ccl-rule-similar" }, [" Use this reason for similar cards"])]),
-      el("p", { "class": "ccl-pn-acts" }, [h.word(CC.busy ? "Saving…" : "Save the ruling", function () { ccRule(c, card); },
+      el("p", { "class": "ccl-pn-acts ccl-rule-save" }, [h.word(CC.busy ? "Saving…" : "Save the ruling", function () { ccRule(c, card); },
         { "aria-label": "Save your ruling on " + mid })])]));
     return out;
   }
   /* The ruling's two writes: its reason (a ccr_procedure_request row, a new key per save), then the discipline through
-     ccSave (keep confirms it, move sets it, not sure writes nothing more). */
+     ccSave (keep confirms it, move sets it, also list as adds a second discipline and leaves the home, not sure writes
+     nothing more). */
   function ccRule(c, card) {
     var F = CC.rule[c.id] || {}, choice = F.choice || "", words = String(F.words || "").trim();
     if (!choice) { CC.said[c.id] = "Choose a ruling first."; ccRedraw(); return; }
     if (F.similar && !words) { CC.said[c.id] = "Say why, so a session can write the rule for similar cards."; ccRedraw(); return; }
     if (CC.busy) return;
-    var ruling = choice === "keep" ? "keep" : choice === "unsure" ? "unsure" : "move";
-    var to = ruling === "move" ? choice.slice(5) : null;
+    var ruling = choice === "keep" ? "keep" : choice === "unsure" ? "unsure" : choice.indexOf("also:") === 0 ? "crosslist" : "move";
+    var to = ruling === "move" || ruling === "crosslist" ? choice.slice(5) : null;
+    // A second discipline adds to any the course already lists; the empty choice clears them.
+    var alsoWas = (c.xdisc || []).filter(Boolean), alsoNow = ruling !== "crosslist" ? null : !to ? []
+      : alsoWas.filter(function (d) { return d !== to; }).concat([to]);
     CC.busy = true; CC.said[c.id] = "Saving…"; ccRedraw();
     ccFresh().then(function (sess) {
       if (!sess) { CC.busy = false; CC.said[c.id] = "Your sign-in has ended. Sign in again, then save."; ccRedraw(); return; }
       var when = new Date().toISOString().replace(/\.\d+Z$/, "Z");
       var v = { mid: c.id, title: c.title || card.title, discipline_was: c.disc || card.discipline, ruling: ruling, to: to, words: words,
         similar: !!F.similar, signals: { why: card.why || [], desc: card.desc || [], votes: card.votes || {} } };
+      if (ruling === "crosslist") { v.also = alsoNow; v.also_was = alsoWas; }
       return fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess),
         body: JSON.stringify({ course_id: RULE_PREFIX + when + "-" + c.id.replace(/\s+/g, "_"), field: RULE_FIELD,
           value: JSON.stringify(v), reviewer_email: sess.email }) })
@@ -539,6 +570,7 @@
           (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) };
           CC.rule[c.id] = null;
           if (ruling === "move") ccSave(c, "discipline", to);
+          else if (ruling === "crosslist") ccSave(c, "crosslist", alsoNow);
           else if (ruling === "keep" && !ccVerified(c)) ccSave(c, "confirm", c.disc);
           else { CC.said[c.id] = (ruling === "keep" ? "Kept " + c.disc : "Marked not sure") + ". The reason is saved" + (v.similar ? " for a session to write as a rule" : "") + "."; ccRedraw(); }
         });
@@ -674,6 +706,8 @@
     return { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json",
       Prefer: "resolution=merge-duplicates,return=minimal" };
   }
+  // Discipline names in a sentence: a semicolon between them once any carries a comma of its own.
+  function ccNames(list) { return list.join(list.some(function (d) { return d.indexOf(",") >= 0; }) ? "; " : ", "); }
   function ccVerified(c) { return !!(c.locked || c.reviewed_by || (c.flags && c.flags.reviewed) || c._saved); }
   function ccOfficial(c) { return c.id_system === "C-ID" || c.id_system === "CCN-ID"; }
   /* One write: the kb_curation rows the tab wrote, or a merged course's confirmation stamp. Says what happened. */
@@ -682,8 +716,19 @@
     CC.busy = true; CC.said[c.id] = "Saving…"; ccRedraw();
     ccFresh().then(function (sess) {
       if (!sess) { CC.busy = false; CC.said[c.id] = "Your sign-in has ended. Sign in again, then save."; ccRedraw(); return null; }
-      var req;
-      if (kind === "confirm" && c.mt) {
+      var req, confirms = false;
+      if (kind === "crosslist") {
+        // The second discipline is one kb_curation row (cross_listed_disciplines, comma-separated; the daily fold adds
+        // it to the row and changes neither the home discipline nor the M-ID). An unconfirmed home is confirmed in the
+        // same write, as Keep confirms it: the ruling is "keep, and also".
+        // Two MQ names carry commas of their own ("Sign Language, American"). The value stays comma-separated, as
+        // the rows before this tab are, and the daily fold splits it against the MQ list (kb/discipline_list.py); the
+        // names themselves are kept here as a list and never split back out of the string.
+        var rows = [{ course_id: c.id, field: "cross_listed_disciplines", value: value.join(", "), reviewer_email: sess.email }];
+        confirms = !ccVerified(c) && !c.mt && !!c.disc;
+        if (confirms) rows.push({ course_id: c.id, field: "discipline", value: c.disc, reviewer_email: sess.email });
+        req = fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess), body: JSON.stringify(rows) });
+      } else if (kind === "confirm" && c.mt) {
         req = fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(c.id), { method: "PATCH", headers: ccHeaders(sess),
           body: JSON.stringify({ validated_at: new Date().toISOString(), validated_by: sess.email }) });
       } else {
@@ -697,9 +742,12 @@
         var when = new Date().toISOString().slice(0, 10), who = sess.email;
         if (kind === "rename") { c.title = value; (CC.live[c.id] = CC.live[c.id] || {}).unified_title = { value: value, reviewer_email: who, reviewed_at: when }; }
         else if (kind === "discipline") { c.disc = value; c.dsrc = null; (CC.live[c.id] = CC.live[c.id] || {}).discipline = { value: value, reviewer_email: who, reviewed_at: when }; }
-        if (kind !== "rename") { c._saved = true; c.reviewed_by = who; c.reviewed_at = when; }
+        else if (kind === "crosslist") c.xdisc = value.length ? value.slice() : null;
+        if (kind === "crosslist" ? confirms : kind !== "rename") { c._saved = true; c.reviewed_by = who; c.reviewed_at = when; }
         CC.edit[c.id] = null;
-        CC.said[c.id] = (kind === "rename" ? "Renamed " + c.id + " " + value : kind === "discipline" ? "Set the discipline to " + value : "Confirmed " + c.disc + " as the discipline")
+        CC.said[c.id] = (kind === "rename" ? "Renamed " + c.id + " " + value : kind === "discipline" ? "Set the discipline to " + value
+          : kind === "crosslist" ? "Kept " + c.disc + (value.length ? " and listed it also as " + ccNames(value) : " and cleared its second discipline")
+          : "Confirmed " + c.disc + " as the discipline")
           + ". The daily sync folds it into the reference.";
         ccRedraw();
       });
@@ -848,7 +896,8 @@
       acts.push(h.word(c.disc ? "Change the discipline" : "Set the discipline", function () { CC.edit[mid] = "discipline"; CC.said[mid] = null; ccRedraw(); var n = document.getElementById("ccl-cc-disc-in"); if (n) n.focus(); }));
       if (c.disc && !ccVerified(c)) acts.push(h.word("Confirm " + c.disc, function () { ccSave(c, "confirm", c.disc); },
         { "aria-label": "Confirm " + c.disc + " as the discipline of " + mid }));
-      out.push(el("p", { "class": "ccl-pn-acts" }, acts));
+      if (inDoubt) out.push(el("p", { "class": "ccl-pn-edit-h" }, ["Or edit the common course"]));
+      out.push(el("p", { "class": "ccl-pn-acts ccl-pn-edit" }, acts));
     }
     return out;
   }
@@ -867,7 +916,7 @@
       var nCol = Object.keys(seenCol).length;
       out.push(h.heading("Its common course: " + r.mid));
       ccCard(r.mid, h).forEach(function (n) { out.push(n); });
-      out.push(el("p", { "class": "ccl-pn-acts" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
+      out.push(el("p", { "class": "ccl-pn-acts ccl-pn-sky" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
       out.push(h.table({ id: "members", label: "The local courses " + r.mid + " holds",
         note: idWords(r.mid) + ", holding " + fmt(members.length) + (members.length === 1 ? " local course" : " local courses") + " at "
           + fmt(nCol) + (nCol === 1 ? " college" : " colleges") + (r.mids.length > 1 ? "; the course sits in " + r.mids.length + " M-IDs (" + r.mids.join(", ") + "), and the List bands it under this one, the largest" : "")
@@ -1001,6 +1050,11 @@
         acts: function (id) { return [skyLink(id)]; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
+      // The jobs first, in the order to act on them, then the census words (Sam, 2026-11-09, issue 2997: "put them
+      // in order of priority for me to act on ... categorize the ones that need action and the others that are just
+      // convenient filters"). No filter's meaning moves.
+      filterGroups: [{ label: "To do", ids: ["doubt", "stray", "nodesc", "units", "seedless"] },
+        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E"] }],
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
       uncounted: function (id) { return isJob(id) && !jobReady(id); },
       onFilter: function (id) { return isJob(id) ? loadJobs() : null; }

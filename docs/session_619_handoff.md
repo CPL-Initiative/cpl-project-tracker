@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 618 (SkyPinwheel, the CPL Queue routine's 10:12Z firing, 2026-11-09 10:13Z to ~10:55Z; the routine fires next at 11:12Z)
 tags: [handoff, program-requirements-harvest, org-phrase-scope-auth, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 619

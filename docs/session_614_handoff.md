@@ -4,6 +4,8 @@ date: 2026-11-08
 session: 613 (SkyCometa, Sam's session opened from his phone, 2026-11-08 23:21Z to ~2026-11-09 00:40Z; the CPL Queue routine fires next at 2026-11-09 06:12Z)
 tags: [handoff, implementation-funding, ci]
 status: current
+superseded: true
+superseded_by: session_621_handoff.md
 ---
 
 # You are Session 614

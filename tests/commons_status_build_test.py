@@ -11,6 +11,7 @@ Run from the repo root: python3 tests/commons_status_build_test.py
 """
 import importlib.util
 import json
+import re
 import os
 import subprocess
 import sys
@@ -264,14 +265,83 @@ check("an issue that names no reason lands under unsorted, so it cannot hide",
 check("an unread issue keeps its null and its error in the queue",
       probe["reasons"][1]["items"] == [{"ref": "x", "title": "X", "n": None, "words": "an unread one", "owner": None, "open": None, "error": "E"}])
 
+# ── a stalled routine (S624): a stamp past its cadence, or a routine's backlog as large as a week before ──
+check("the queue carries the stalled list, and it names only the two measured kinds",
+      isinstance(q.get("stalled"), list) and all(x.get("kind") in ("stopped", "not_shrinking") for x in q["stalled"]), q.get("stalled"))
+srows = [{"key": "course", "title": "C", "tab": "#c", "machine": {"what": "the auditor", "at": "2026-11-08T00:00:00Z", "every_hours": 24},
+          "issues": [{"n": 50, "words": "flat ones", "carry": "routine", "open": "#c/flat"},
+                     {"n": 40, "words": "shrinking ones", "carry": "routine", "open": "#c/down"},
+                     {"n": 9, "words": "grown ones on 12 cards", "carry": "routine", "open": "#c/up"},
+                     {"n": 70, "words": "a person's", "carry": "unsure", "open": "#c/p"},
+                     {"n": 5, "words": "new today", "carry": "routine", "open": "#c/new"}]},
+         {"key": "cr", "title": "R", "tab": "#r", "machine": {"what": "on dispatch", "at": "2026-01-01T00:00:00Z", "every_hours": None}, "issues": []}]
+shist = {"schema": 1, "days": {
+    "2026-11-01": {"course|#c/flat|flat ones": 50, "course|#c/down|shrinking ones": 60, "course|#c/up|grown ones on # cards": 7, "course|#c/p|a person's": 70},
+    "2026-11-06": {"course|#c/flat|flat ones": 49, "course|#c/down|shrinking ones": 30, "course|#c/up|grown ones on # cards": 99}}}
+st = B.build_stalled(srows, shist, "2026-11-08T12:00:00Z")
+check("a routine within its cadence and slack is not stopped; a routine on dispatch never is", [x for x in st if x["kind"] == "stopped"] == [], st)
+st2 = B.build_stalled(srows, shist, "2026-11-09T12:30:00Z")
+check("a stamp older than 1.5 cadences reads stopped, with what stopped, since when, its cadence and where it opens",
+      [x for x in st2 if x["kind"] == "stopped"] == [{"ref": "course", "title": "C", "kind": "stopped", "what": "the auditor",
+                                                     "since": "2026-11-08T00:00:00Z", "every_hours": 24, "open": "#c"}], st2)
+ns = {x["words"]: x for x in st if x["kind"] == "not_shrinking"}
+check("a backlog as large as seven days before stalls; a smaller one, a person's item and one with no reading that old do not",
+      sorted(ns) == ["flat ones", "grown ones on 12 cards"], sorted(ns))
+check("the comparison is the latest reading at least seven days old, never a nearer one, and a figure in the words does not break the key",
+      ns.get("flat ones", {}).get("was") == 50 and ns["flat ones"]["since"] == "2026-11-01" and ns.get("grown ones on 12 cards", {}).get("was") == 7, ns)
+check("a build with no history says nothing has stopped shrinking", [x for x in B.build_stalled(srows, {"days": {}}, "2026-11-08T12:00:00Z") if x["kind"] == "not_shrinking"] == [])
+rh = B.record_history({"days": {"2026-%02d-%02d" % (m, d): {} for m in (8, 9, 10) for d in range(1, 29)}}, "2026-11-08", B.routine_readings(srows))
+check("the history keeps one entry a day, the routines' counts alone, and the last %d days" % B.HISTORY_KEEP_DAYS,
+      len(rh["days"]) == B.HISTORY_KEEP_DAYS and max(rh["days"]) == "2026-11-08" and "course|#c/p|a person's" not in rh["days"]["2026-11-08"]
+      and rh["days"]["2026-11-08"]["course|#c/up|grown ones on # cards"] == 9, sorted(rh["days"])[-2:])
+hist_file = json.load(open(os.path.join(ROOT, B.HISTORY), encoding="utf-8")) if os.path.exists(os.path.join(ROOT, B.HISTORY)) else None
+check("the committed history is the builder's shape: day keys, and whole-number counts",
+      hist_file and all(re.match(r"^\d{4}-\d{2}-\d{2}$", d) and all(isinstance(v, int) for v in r.values()) for d, r in hist_file["days"].items()))
+
 # ── the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward ──
 conf = {c.get("ref"): c for c in data.get("confidence", [])}
-check("the status file carries the confidence count for Exhibits and Subjects", set(conf) == {"exhibit", "subjects"}, list(conf))
+check("the status file carries the confidence count for Exhibits, Subjects and the CR rule rungs", set(conf) == {"exhibit", "subjects", "cr"}, list(conf))
+with tempfile.TemporaryDirectory() as cx:
+    os.makedirs(os.path.join(cx, "kb/receipts"))
+    def _g(key, rung, auto, recs):
+        return {"key": key, "rung": rung, "acts_automatically": auto, "members": [{"rec": w, "rows": 1} for w in recs]}
+    json.dump({"groups": [_g("a", 1, True, ["a1", "a2"]), _g("b", 1, True, ["b1"]), _g("c", 2, True, ["c1", "c2"]),
+                          _g("d", 2, True, ["d1"]), _g("e", 3, True, ["e1"]), _g("f", 5, False, ["f1"]), _g("h", 4, True, ["h1", "h2"])]},
+              open(os.path.join(cx, "kb/cr_reference_worklist.json"), "w"))
+    json.dump({"rows": [{"group_key": "a", "decision": "confirmed", "members": ["a1", "a2", "a3"], "excluded": []},
+                        {"group_key": "c", "decision": "confirmed", "members": ["c1"], "excluded": ["c2"]},
+                        {"group_key": "d", "decision": "not_a_topic", "members": ["d1"]},
+                        {"group_key": "e", "decision": "deferred"},
+                        {"group_key": "h", "decision": "not_a_topic", "members": ["h1", "h2"]},
+                        {"group_key": "f", "decision": "confirmed", "members": ["f1"]}], "written_at": "2026-01-01T00:00Z"},
+              open(os.path.join(cx, "kb/receipts/cr_reference_decisions_2026-01-01_x.json"), "w"))
+    # a later receipt whose name sorts first: its row for h stands, by the receipt's own time
+    json.dump({"rows": [{"group_key": "h", "decision": "confirmed", "members": ["h1", "h2"], "excluded": []}], "written_at": "2026-02-01T00:00Z"},
+              open(os.path.join(cx, "kb/receipts/cr_reference_decisions_2025-12-31_a.json"), "w"))
+    cc = B.confidence_cr(cx)
+    pr = {p["name"]: p for p in cc["procedures"]}
+    check("CR confidence counts only the groups a rule folded, one line a rung, in groups",
+          cc["unit"] == "groups" and sorted(pr) == ["rung 1", "rung 2", "rung 3", "rung 4"] and cc["total"]["placed"] == 6, cc)
+    check("a confirmed group the person added a wording to is widened, never plain kept; one never decided is not looked at",
+          (pr["rung 1"]["widened"], pr["rung 1"]["kept"], pr["rung 1"]["untouched"], pr["rung 1"]["looked"]) == (1, 0, 1, 1), pr["rung 1"])
+    check("a group confirmed with the rule's own wordings is kept, and the latest receipt by its own time stands, whatever its name",
+          (pr["rung 4"]["kept"], pr["rung 4"]["moved"], pr["rung 4"]["widened"]) == (1, 0, 0), pr["rung 4"])
+    bad = json.load(open(os.path.join(cx, "kb/cr_reference_worklist.json")))
+    bad["groups"].append(_g("z", 5, True, ["z1"]))
+    json.dump(bad, open(os.path.join(cx, "kb/cr_reference_worklist.json"), "w"))
+    try:
+        B.confidence_cr(cx); raised = False
+    except ValueError:
+        raised = True
+    check("a group that acts automatically outside rungs 1 to 4 stops the count, so the tab's words cannot go wrong quietly", raised)
+    check("a group with a rule's wording set aside, or read not a topic, is moved",
+          (pr["rung 2"]["moved"], pr["rung 2"]["kept"]) == (2, 0), pr["rung 2"])
+    check("a deferred decision settles nothing: the group stays not looked at", pr["rung 3"]["untouched"] == 1 and pr["rung 3"]["looked"] == 0, pr["rung 3"])
 for ref, c in conf.items():
     t = c.get("total") or {}
     check("confidence %s: every placed item lands in exactly one state" % ref,
-          not c.get("error") and t.get("placed") == sum(t.get(k, 0) for k in ("untouched", "kept", "renamed", "moved", "by_procedure", "left")), c.get("error") or t)
-    check("confidence %s: looked is kept plus renamed plus moved" % ref, t.get("looked") == t.get("kept", 0) + t.get("renamed", 0) + t.get("moved", 0))
+          not c.get("error") and t.get("placed") == sum(t.get(k, 0) for k in ("untouched", "kept", "widened", "renamed", "moved", "by_procedure", "left")), c.get("error") or t)
+    check("confidence %s: looked is kept plus renamed plus moved" % ref, t.get("looked") == t.get("kept", 0) + t.get("widened", 0) + t.get("renamed", 0) + t.get("moved", 0))
 with tempfile.TemporaryDirectory() as fx:
     os.makedirs(os.path.join(fx, "kb", "cer_procedures_out", "saved"))
     rows = [  # the procedure's saves: (raw title, the common title it placed)
@@ -302,7 +372,10 @@ with tempfile.TemporaryDirectory() as fx:
 # ── the next batch (Sam's Commons rulings, 2026-11-08, #2921): Another look's open cards, six at most ──
 import json as _json, tempfile as _tf, os as _os
 nb = data.get("next_batch")
-check("the status file carries next_batch, or none when no card is open", nb is None or (nb.get("n", 0) <= 6 and nb.get("open") == "#exhibits/another-look/batch"), nb)
+# next_batch is the batches list's first (the Docket, step 1): Another look's six when any card is open, else an open
+# case or call, else one of Sam's jobs. With every case done (S621), a job leads, and that is right.
+check("the status file carries next_batch, or none when no card is open",
+      nb is None or (nb == (data.get("batches") or [None])[0] and (nb.get("open") != "#exhibits/another-look/batch" or nb.get("n", 0) <= 6)), nb)
 with _tf.TemporaryDirectory() as td:
     _os.makedirs(_os.path.join(td, "kb"))
     with open(_os.path.join(td, "kb", "exhibits_sweep.json"), "w") as f:
@@ -313,6 +386,39 @@ with _tf.TemporaryDirectory() as td:
         _json.dump({"cards": []}, f)
     check("no open card, no batch", B.next_batch(td) is None)
 check("an unreadable sweep carries its error, never a batch of zero", "error" in B._safe(lambda r: 1 / 0, "."))
+
+# ── the ordered batches (#2963 step 1; COBIx on #2921, 2026-11-09): Another look, open decisions, Sam's jobs ──
+bl = data.get("batches")
+check("the status file carries an ordered batches list", isinstance(bl, list), type(bl))
+check("next_batch is the list's first batch", not bl or data.get("next_batch") == next((b for b in bl if not b.get("error")), None))
+with _tf.TemporaryDirectory() as td:
+    _os.makedirs(_os.path.join(td, "kb", "status"))
+    with open(_os.path.join(td, "kb", "exhibits_sweep.json"), "w") as f:
+        _json.dump({"generated_at": "2026-11-08T00:00:00Z", "cards": [
+            {"id": "c%d" % i, "current": "T%d" % i, "rules": ["fold"], "locals": [{"raw": "local %d" % i}, {"raw": ""}]} for i in range(8)]}, f)
+    with open(_os.path.join(td, "kb", "status", "course.json"), "w") as f:
+        _json.dump({"calls": [{"title": "Answered", "answer": {"words": "confirm"}, "link": "https://x"},
+                              {"title": "Open one", "text": "Why", "link": "https://claude.ai/artifact/abc"}]}, f)
+    with open(_os.path.join(td, "kb", "status", "cr.json"), "w") as f:
+        f.write("{not json")
+    q = {"reasons": [{"key": "no_procedure", "items": [{"ref": "course", "n": 14523, "words": "seedless", "owner": "the Common Subjects reference", "open": "#a"}]},
+                     {"key": "unsure", "items": [{"ref": "course", "title": "Common Course Reference", "n": 8, "words": "in doubt", "owner": "Sam (rule on each)", "open": "#coci-lookup/list/doubt"},
+                                                 {"ref": "cr", "n": None, "owner": "Sam", "open": "#b", "error": "x"}]}]}
+    got = B.batches(td, q)
+    kinds = [b["kind"] for b in got]
+    check("batches run Another look, then the open decisions, then Sam's jobs", kinds[0] == "another-look" and kinds[-1] == "job"
+          and kinds.index("job") > max(i for i, k in enumerate(kinds) if k == "decision"), kinds)
+    a = got[0]
+    check("Another look names its six cards with the keys a decision saves under", len(a["cards"]) == 6
+          and a["cards"][0] == {"id": "c0", "current": "T0", "keys": ["_UNCLASSIFIED::local 0"]} and a["at"] == "2026-11-08T00:00:00Z", a["cards"][:1])
+    dec = [b for b in got if b["kind"] == "decision" and not b.get("error")]
+    check("an answered call is no batch; an open one opens its sheet", [d["title"] for d in dec] == ["Open one"]
+          and dec[0]["open"] == "https://claude.ai/artifact/abc" and dec[0]["project"] == "course", dec)
+    bad = [b for b in got if b.get("error")]
+    check("an unreadable run log is named, never read as holding nothing", "cr" in [b["project"] for b in bad]
+          and all(b["project"] != "course" for b in bad) and any("JSONDecodeError" in b["error"] for b in bad), bad)
+    jobs = [b for b in got if b["kind"] == "job"]
+    check("only a job Sam carries, counted and readable, is a batch", len(jobs) == 1 and jobs[0]["n"] == 8 and jobs[0]["open"] == "#coci-lookup/list/doubt", jobs)
 
 # ── the small helpers ──
 check("receipt_time turns 2026-10-18T17-37-29Z into ISO", B.receipt_time("2026-10-18T17-37-29Z") == "2026-10-18T17:37:29Z")

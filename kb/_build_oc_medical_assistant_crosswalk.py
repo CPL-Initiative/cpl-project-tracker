@@ -48,6 +48,9 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+import sys
+sys.path.insert(0, HERE)
+from _college_identity_latest import latest_crosswalk_path  # noqa: E402
 REPO = os.path.dirname(HERE)
 OUT = os.path.join(HERE, "oc_medical_assistant_out")
 
@@ -201,7 +204,7 @@ def norm_course(s):
 
 def build_college_index():
     idx = {}
-    cw = json.load(open(os.path.join(HERE, "college_identity", "2026-08-23", "crosswalk.json")))
+    cw = json.load(open(latest_crosswalk_path(), encoding="utf-8"))
     for c in cw["colleges"]:
         canon = c["college_name"]
         for v in [canon, c.get("short"), c.get("mis_name")] + (c.get("variants") or []):

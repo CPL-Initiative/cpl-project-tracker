@@ -2687,6 +2687,9 @@ module.exports = {
   /* The public Library's own pages (S469; Sam, 2026-10-25: "GitHub Pages now"): a piece made
      as a Claude artifact, copied under library/<slug>/ by scripts/library_page.py. */
   "library-ell-iet": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points (public Library page)" },
+  "library-ell-hp": { file: "library/ell-healthcare-pathways-cpl-starting-points/index.html", title: "ELL Healthcare Pathways CPL Starting Points (public Library page)" },
+  "library-ell-hp-dark": { file: "library/ell-healthcare-pathways-cpl-starting-points/index.html", title: "ELL Healthcare Pathways CPL Starting Points, dark", widths: [390, 1280],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
   "library-noncredit": { file: "library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html", title: "Noncredit to Credit (public Library page)" },
   "library-ell-iet-dark": { file: "library/ell-iet-cpl-starting-points/index.html", title: "ELL IET CPL Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },

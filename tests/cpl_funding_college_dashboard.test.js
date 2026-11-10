@@ -564,8 +564,10 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   // card's status word, the fold summary).
   check("9g: no rendered string says 'Awaiting measurement' or 'Awaiting actuals'",
     !/["'>]Awaiting (measurement|actuals)/.test(consumerSrc) && !/Awaiting (measurement|actuals)/.test(doc.getElementById("cplFundingMount").textContent));
-  check("9h: the deadline fallback is the live model's date, so a failed config load moves no chip",
-    /base\(\)\.participation_deadline\) \|\| "2026-11-01";/.test(consumerSrc));
+  check("9h: the deadline fallback is the published model's date, so a failed config load moves no chip",
+    /base\(\)\.participation_deadline\) \|\| "2026-12-31";/.test(consumerSrc));
+  check("9h2: the committed data file carries the same date as the fallback",
+    /"participation_deadline": "2026-12-31"/.test(require("fs").readFileSync(require("path").join(__dirname, "..", "cpl_funding_data.js"), "utf8")));
   check("9i: the retired drill-in summary line leaves no CSS behind",
     !/\.cplfund-dtl-sum/.test(consumerSrc));
   // The print copy has no .cplfund-chip rule, so the chip's margin never

@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-08
+updated: 2026-11-10
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 580 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1424** | |
+| Session handoffs | 587 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1431** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,11 +122,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-10 (S624 SkyCocoon, light): the identity baseline (#3019), the funding tab's ended-access note (#3022), the decline pieces leave (#3023), a ruling can cross-list (#3025); handoff 625.
+- 2026-11-09 (S623 SkyButterfly, light): the action center in two groups (#3001), the Courses List keeps your row (#3004), the identity check runs again (#3005), the ended-access note (#3007); handoff 624.
+- 2026-11-09 (S621 SkyBlackEye): the funding rollout day (Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, the CSM funding door); handoff 622.
+- 2026-11-09 (SkyCigar): the Docket steps 1-3, call 9 lifted, TRUNCATE revoked, CSMs on the reviewer list; handoff 621.
 - 2026-11-08 SkySunflower (S612, Sam's session): the anchor re-key applied, 20 keys and 21 crosswalk pointers (#2938); funding tests twice as fast (#2939); the CCR seed re-check reads course descriptions and TOP (#2940); Open Asks Sheets 173 and 174 (CPLBrain#723); handoff 613, full checkpoint.
 - 2026-11-08 SkyTadpole (S611, Sam's session): S604's five PRs merged; its staged memory rows written (#2931); Exhibits Queue (#2933), the List panel trail (#2934) and the anchor re-key dry run (#2935) shipped; the key sketch held for Sam (#2932); Open Asks Sheet 171; KB note `methodology-read-a-documents-era-from-its-keys`; full checkpoint.
 - 2026-11-08 SkyCondor (S608, CPL Queue routine, 12:12Z): Columbia 52 to 78 of 82 passing, reread and displayed (#2917, carrying #2916 and #2915); Redwoods read by shape and a Cal-GETC 34 step for its transfer degrees, reconcile 42480098144 in flight (#2918); light checkpoint; `docs/session_609_handoff.md`.
 - 2026-11-08 SkyFornax (S606, CPL Queue routine, 09:12Z): S605's #2915 carried on #2916; Columbia's Cal-GETC reconcile step for transfer degrees, reconcile 42466476925 in flight; light checkpoint; `docs/session_607_handoff.md`.
-- 2026-11-08 SkyMaffei (S603, Sam's session): Sheet 169 answered and carried out: security step 3 applied and read back (#2901), the noncredit category table designed through Governance and held for its picker (DR-33, #2908); security step 4 applied: the KPI history guard (#2907) and the budget logo policy through the runner, which now takes `project=` (#2909); Contra Costa's SLO full read and Cuesta's index started (#2873, #2910).
-- 2026-11-07 SkySombrero (S602, Sam's session): Palomar and Los Medanos displayed; LMC's GE page read and its local degrees parked; the ECHT CompTIA four read as course exams; security step 3 built and held (#2901); the k=10 check (#2903) and the failure watch (#2905); statewide_kpi_test fixed (#2902); Open Asks Sheet 169 (#2904); light checkpoint; `docs/session_603_handoff.md`.
-- 2026-11-07 SkyMilkyWay (S601, Sam's session): the stale KPI scrape fixed (#2892 fail loudly, #2893 header, #2897 reason in the tail, #2898 encoded secret; scrape lands 16:09Z); Open Asks Sheets 167 and 168 (security asks reach the sheet, #2895, #2896); the Sky: COBIx inbox routine drafted for Sam's review (#2894, routine disabled); light checkpoint; `docs/session_602_handoff.md`.
-- 2026-11-07 SkyTriangulum (S599, CPL Queue routine, 12:12Z): DSP Credit Starting Points Version 3 from Sam's Revise request, in ELL IET Version 5's form, stored as the card's draft (#2883, CPLBrain#707); Coalinga merged (#2882) and displaying; Palomar's clean re-capture, Chemistry extracting; Los Medanos adds nothing; `docs/session_600_handoff.md`.

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-09T10:45:00Z",
-  "session": 618,
-  "moniker": "SkyPinwheel",
+  "written_at": "2026-11-09T11:50:00Z",
+  "session": 619,
+  "moniker": "SkyTadpole",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_619_handoff.md",
+  "handoff": "docs/session_620_handoff.md",
   "next_step": {
     "title": "Cuesta's full read",
-    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC. Orange Coast's course outcomes are loaded."
+    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC. College of Alameda moved from 25 to 29 passing; its reread posts the changed records."
   },
   "calls": [
     {
@@ -229,7 +229,11 @@
     },
     {
       "at": "2026-11-09T10:26:00Z",
-      "text": "College of Alameda: a reconcile step reads a program total its description prints above the course table, for Dental Assisting's 41 units (pull request 2956)."
+      "text": "College of Alameda: the reconcile step for Dental Assisting's 41 units was removed, because the page the harvest reads cuts the description that prints it (pull request 2956)."
+    },
+    {
+      "at": "2026-11-09T11:26:00Z",
+      "text": "College of Alameda: its transfer degrees print 'General Education (Cal-GETC) and Elective Units' above the degree's 60, so a reconcile step gives them Cal-GETC's 34 units (pull request 2960)."
     }
   ],
   "headline": [

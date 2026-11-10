@@ -68,8 +68,27 @@
     unsure: { title: "A procedure is unsure", who: "A person confirms it or fixes it; a note settles a difference for good." },
     reaches: { title: "It moves items another reference relies on", who: "The lead decides, and the move happens in one planned window." },
     keep_call: { title: "It is a keep, retire or rename call", who: "A curator decides, or the lead where a ruling stands." },
-    unsorted: { title: "Not yet sorted", who: "An issue that names no reason. Give it one in the Commons builder." }
+    unsorted: { title: "Not yet sorted", who: "An issue that names no reason. Give it one in the Commons builder." },
+    stalled: { title: "A routine has stalled", who: "The team looks at why, then restarts the routine or gives its backlog a procedure." }
   };
+  /* A stalled routine (the path mock's build, S624): the builder names a routine whose stamp is past its cadence
+     (stopped) and a routine's backlog that counts as many items as it did a week before (not_shrinking). The box
+     draws only when the file carries one, so a quiet week adds nothing to the page. */
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function dayWords(v) {   /* the history's day key, YYYY-MM-DD, in the stamp's own short form */
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || "");
+    return m && MONTHS[+m[2] - 1] ? MONTHS[+m[2] - 1] + " " + (+m[3]) : (v || "the earlier reading");
+  }
+  function stalledItem(i) {
+    var name = (CARDS[i.ref] && CARDS[i.ref].name) || i.title || i.ref;
+    var head = el("span", { cls: "cmn-queue-ref", text: name + ": " });
+    if (i.kind === "stopped") {
+      return el("li", { "data-stalled": "stopped" }, [head, openLink(i.open, i.what || "its routine"),
+        " last ran " + (stampOf(i.since) || "at a time the file does not give") + "; it runs " + cadenceWords(i.every_hours) + "."]);
+    }
+    var moved = typeof i.was === "number" && i.n > i.was ? "up from " + fmt(i.was) + " on " : "the same count as on ";
+    return el("li", { "data-stalled": "not_shrinking" }, [head, count(i.n, i.open), " " + (i.words || "") + ", " + moved + dayWords(i.since) + "."]);
+  }
 
   function P() { return window.CPL_COMMONS_PROGRESS || null; }
 
@@ -494,15 +513,23 @@
         items.length ? el("ol", { cls: "cmn-steps" }, items.map(queueItem)) : el("p", { cls: "cmn-quiet", text: "Nothing waits here." })
       ]);
     });
+    var stalled = Array.isArray(q.stalled) ? q.stalled : [];
+    if (stalled.length) {
+      boxes.push(el("div", { cls: "cmn-reason", "data-reason": "stalled" }, [
+        el("h4", { cls: "cmn-reason-h", text: REASONS.stalled.title }),
+        el("p", { cls: "cmn-reason-who", text: REASONS.stalled.who }),
+        el("ol", { cls: "cmn-steps" }, inProcessOrder(stalled).map(stalledItem))
+      ]));
+    }
     var carried = Array.isArray(q.carried) ? q.carried : [];
     /* Folded (#2921, the first view leads with one small batch): the pools stay one word away, never on the first screen. */
     var pooled = 0;
     groups.forEach(function (g) { (g.items || []).forEach(function (i) { if (typeof i.n === "number") pooled += i.n; }); });
     return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
       el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
-      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
+      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons, or when a routine stalls. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
       el("details", { cls: "cmn-fold" }, [
-        el("summary", { cls: "cmn-fold-word", text: "Show the " + fmt(pooled) + " items in the pools" + (carried.length ? ", and what the routines carry" : "") }),
+        el("summary", { cls: "cmn-fold-word", text: "Show the " + fmt(pooled) + " items in the pools" + (stalled.length ? ", " + fmt(stalled.length) + (stalled.length === 1 ? " stalled routine" : " stalled routines") : "") + (carried.length ? ", and what the routines carry" : "") }),
         el("div", { cls: "cmn-queue-grid" }, boxes),
         carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, inProcessOrder(carried).map(queueItem))]) : null
       ].filter(Boolean))
@@ -510,7 +537,7 @@
   }
 
   /* The confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward. */
-  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled" };
+  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled", cr: "groups a rung 1 to 4 rule folded" };
   function procName(n) { n = String(n || "").replace(/-/g, " "); return n === "classifier" ? "the classifier" : n; }
   function confidenceSection(list) {
     if (!Array.isArray(list) || !list.length) return null;
@@ -524,18 +551,20 @@
       var head = el("h4", { cls: "cmn-reason-h", text: name + ": " + (CONF_UNIT[c.ref] || "results the procedures settled") });
       if (c.error || !c.total) { fold.appendChild(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-unread", text: "Could not be read" })])); return; }
       var t = c.total;
+      var wide = typeof t.widened === "number";   /* a count that separates a result a person widened (the CR rungs) */
       var line = t.looked
         ? "A person has looked at " + fmt(t.looked) + " of " + fmt(t.placed) + ": " + fmt(t.kept) + " kept, " + fmt(t.renamed) + " renamed with their family, " + fmt(t.moved) + " moved elsewhere."
+          + (wide ? " " + fmt(t.widened) + " kept with wordings a person added, which the rule had left in another group." : "")
         : "No person has looked at any of the " + fmt(t.placed) + " yet.";
       var extra = [];
       if (t.by_procedure) extra.push(fmt(t.by_procedure) + " later revised by another procedure");
       if (t.left) extra.push(fmt(t.left) + " left the reference");
-      var cols = ["Procedure", "Placed", "A person looked", "Kept", "Renamed with its family", "Moved elsewhere", "Not looked at yet"];
+      var cols = ["Procedure", "Placed", "A person looked", "Kept"].concat(wide ? ["Kept, wordings added"] : [], ["Renamed with its family", "Moved elsewhere", "Not looked at yet"]);
       var table = el("table", { cls: "cmn-conf-table" }, [
         el("thead", null, [el("tr", null, cols.map(function (h) { return el("th", { scope: "col", text: h }); }))]),
         el("tbody", null, (c.procedures || []).map(function (p) {
           return el("tr", null, [el("th", { scope: "row", text: procName(p.name) })].concat(
-            [p.placed, p.looked, p.kept, p.renamed, p.moved, p.untouched].map(function (n) { return el("td", { text: fmt(n || 0) }); })));
+            [p.placed, p.looked, p.kept].concat(wide ? [p.widened] : [], [p.renamed, p.moved, p.untouched]).map(function (n) { return el("td", { text: fmt(n || 0) }); })));
         }))
       ]);
       fold.appendChild(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-conf-line", text: line + (extra.length ? " " + capFirst(extra.join("; ")) + "." : "") }),
@@ -549,17 +578,269 @@
      on one small batch a person can finish, with what the answers teach and when to stop. The batch is Another look
      in Exhibits, so Start opens that batch there (#exhibits/another-look/batch, the same six at most, then a stop) and
      nothing here duplicates its cards or its saves. */
-  function nextBatchSection(b) {
-    if (!b || b.error || !b.n) return null;
-    return el("section", { cls: "cmn-next", "aria-labelledby": "cmn-next-h" }, [
+  /* The ordered batches (COBIx on #2921, 2026-11-09, asks 1 to 3; #2963 step 1): Another look, then each decision a
+     run log holds open, then the queue's jobs Sam carries (kb/_build_commons_status.py batches()). The first view
+     shows the first one not done. Another look counts itself from the saves (the kb_curation keys its cards name,
+     read the way exhibits.js reconcileSweep reads them), so deciding the last card closes it here without waiting
+     for the night's build; a decision closes when its call is answered. When none is left the page says so. */
+  var BATCH = { decided: {}, ruled: {}, pick: {}, note: {}, said: {}, busy: false, pin: null, data: null };
+  function batchList(data) {
+    if (data && Array.isArray(data.batches)) return data.batches.filter(function (b) { return b && !b.error && b.kind; });
+    var nb = data && data.next_batch;
+    if (nb && !nb.error && nb.n) return [nb];
+    return null;
+  }
+  function batchKey(b) { return (b.kind || "") + "|" + (b.at || b.title || ""); }
+  function batchDone(b, openTitles) {
+    if (b.kind === "another-look") { var d = BATCH.decided[batchKey(b)]; return d != null && d >= b.n; }
+    if (b.kind === "decision") return !openTitles[b.title];
+    if (b.kind === "case") return !!BATCH.ruled[b.id];
+    return false;
+  }
+  function batchHead(b) { return b.kind === "job" ? capFirst(fmt(b.n) + " " + (b.words || "")) : b.title; }
+  function batchMeta(b) {
+    if (b.kind === "another-look") {
+      var d = BATCH.decided[batchKey(b)];
+      return (d ? fmt(d) + " of " + fmt(b.n) + " decided. " : "") + fmt(b.n) + (b.n === 1 ? " card" : " cards")
+        + " as of last night's sweep; Start counts again. " + (b.stop || "");
+    }
+    if (b.kind === "decision") return "One decision, on its sheet. " + (b.stop || "");
+    return "In the " + (b.title || "reference") + ". Each ruling saves where you make it.";
+  }
+  function nextBatchSection(b, opts) {
+    opts = opts || {};
+    if (opts.unread) return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h" }, [
       el("div", { cls: "cmn-next-text" }, [
         el("p", { cls: "cmn-kicker", text: "Your next batch" }),
-        el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: b.title }),
-        el("p", { cls: "cmn-next-teach", text: b.teaches }),
-        el("p", { cls: "cmn-next-meta", text: fmt(b.n) + (b.n === 1 ? " card" : " cards") + " as of last night's sweep; Start counts again. " + (b.stop || "") })
-      ]),
-      el("a", { cls: "cmn-start", href: b.open, text: "Start" })
+        el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: "Your next batch could not be read" }),
+        el("p", { cls: "cmn-next-meta", text: "The Commons' status file carries no batch" + (opts.error ? " (" + opts.error + ")" : "") + ". The rest of the page reads as usual." })
+      ])
     ]);
+    var done = doneLine(opts.justDone);
+    if (!b && !opts.empty) return null;
+    var text = !b
+      ? [el("p", { cls: "cmn-kicker", text: "Your next batch" }), done,
+         el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: "Nothing waits on you in a batch" }),
+         el("p", { cls: "cmn-next-meta", text: "Every batch is decided. The routines carry the rest, and the next build brings any new batch." })]
+      : [el("p", { cls: "cmn-kicker", text: "Your next batch" }), done,
+         el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: batchHead(b) }),
+         b.teaches ? el("p", { cls: "cmn-next-teach", text: b.teaches }) : null,
+         el("p", { cls: "cmn-next-meta", text: batchMeta(b) })];
+    return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": b ? b.kind : "none" }, [
+      el("div", { cls: "cmn-next-text" }, text.filter(Boolean)),
+      b && b.open ? openLink(b.open, "Start", "cmn-start") : null
+    ].filter(Boolean));
+  }
+  /* The section for the list as it stands: the first batch not done, and a line for an Another look batch this
+     visit's count closed. */
+  function batchSection(data, openTitles) {
+    BATCH.data = data;
+    var list = batchList(data);
+    if (list === null) {
+      var err = data && ((data.next_batch && data.next_batch.error) || (data.batches && data.batches.error));
+      return nextBatchSection(null, { unread: true, error: err || "" });
+    }
+    var next = null, justDone = null;
+    /* An address naming a case (#commons/case/<id>) opens that case first, open or ruled. */
+    var pinned = BATCH.pin ? list.filter(function (b) { return b.kind === "case" && b.id === BATCH.pin; })[0] : null;
+    list.forEach(function (b) {
+      if (next) return;
+      if (batchDone(b, openTitles)) {
+        if (b.kind === "another-look") justDone = { kind: "another-look", n: b.n };
+        if (b.kind === "case" && BATCH.ruled[b.id] && BATCH.ruled[b.id].here) justDone = { kind: "case", b: b };
+        return;
+      }
+      next = b;
+    });
+    if (pinned) next = pinned;
+    if (next && next.kind === "case") {
+      var c = caseOf(data, next.id);
+      if (c) return caseSection(c, justDone);
+    }
+    return nextBatchSection(next, { justDone: justDone, empty: list.length > 0 || !!justDone });
+  }
+  function caseOf(data, id) {
+    var d = data && Array.isArray(data.docket) ? data.docket : [];
+    for (var i = 0; i < d.length; i++) if (d[i].id === id) return d[i];
+    return null;
+  }
+  function choiceWords(c, v) {
+    var ch = (c.choices || []).filter(function (x) { return x.value === v; })[0];
+    return ch ? ch.words : v;
+  }
+  /* The line above the next batch: what the last one finished. */
+  function doneLine(j) {
+    if (!j) return null;
+    var text = j.kind === "case"
+      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and files its receipt."
+      : "Done: you decided " + fmt(j.n) + " of " + fmt(j.n) + (j.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight.";
+    var line = el("p", { cls: "cmn-next-done", role: "status", text: text });
+    return j.kind === "case" ? el("div", null, [line, processNow()]) : line;
+  }
+  /* "Process my rulings now" (#2963 step 3): the Docket's processor runs at 05:33 UTC; a reviewer who has ruled can run
+     it at once. The page posts to the docket-process Edge Function with the reviewer's own session; the function checks
+     the reviewer and dispatches docket-process.yml with a token the browser never holds. Signed out, there is no word. */
+  var PROCESS = { said: "", busy: false };
+  function processNow() {
+    if (!reviewer()) return null;
+    var b = el("button", { type: "button", cls: "cmn-word cmn-process", text: PROCESS.busy ? "Asking the processor…" : "Process my rulings now" });
+    if (PROCESS.busy) b.setAttribute("disabled", "disabled");
+    b.addEventListener("click", function () { runProcessor(); });
+    return el("p", { cls: "cmn-process-row" }, [b, " ", el("span", { cls: "cmn-process-said", role: "status", "aria-live": "polite",
+      text: PROCESS.said || "Otherwise the processor carries rulings out at 05:33 UTC." })]);
+  }
+  var FN_BASE = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/functions/v1";
+  function runProcessor() {
+    if (PROCESS.busy) return Promise.resolve();
+    PROCESS.busy = true; PROCESS.said = ""; redrawBatch();
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      return fetch(FN_BASE + "/docket-process", { method: "POST", headers: sessionHeaders({ "Content-Type": "application/json" }), body: "{}" });
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j || {} }; });
+    }).then(function (x) {
+      PROCESS.busy = false;
+      PROCESS.said = x.status === 200 && x.j.ok
+        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, writes a receipt for each ruling and marks its case done.")
+        : x.status === 401 ? "Not run: only a reviewer on the list can run the processor. Sign in again and try once more."
+        : x.status === 503 ? "Not run: the processor's key is not set here. The 05:33 UTC run carries the rulings out."
+        : "Not run: the processor answered " + x.status + ". The 05:33 UTC run carries the rulings out.";
+      redrawBatch();
+    }, function (e) {
+      PROCESS.busy = false; PROCESS.said = "Not run: " + ((e && e.message) || "the network failed") + ". The 05:33 UTC run carries the rulings out."; redrawBatch();
+    });
+  }
+  /* A Docket case, ruled in place (#2963 step 2): what it decides, the evidence and its links, the choices as words,
+     a reason, and Save the ruling. The ruling saves to kb_curation (`_DOCKET::<id>`, field docket_ruling) under the
+     reviewer's own name; signed out, the case reads and points at its sheet. Every case is shown to any signed-in
+     reviewer, marked for its addressee, until the per-reviewer table of step 4. */
+  function caseSection(c, justDone) {
+    var R = BATCH.ruled[c.id], who = reviewer(), id = c.id;
+    var kids = [el("p", { cls: "cmn-kicker", text: "Your next batch" + (c.addressee ? ", for " + capFirst(c.addressee) : "") }), doneLine(justDone),
+      el("h3", { id: "cmn-next-h", cls: "cmn-next-h", text: c.decides }),
+      (c.evidence || [])[0] ? el("p", { cls: "cmn-next-teach", text: c.evidence[0] }) : null];
+    var more = (c.evidence || []).slice(1), links = c.links || [];
+    if (more.length || links.length) {
+      kids.push(el("details", { cls: "cmn-case-ev" }, [el("summary", { cls: "cmn-word", text: "The evidence" })]
+        .concat(more.map(function (t) { return el("p", { text: t }); }))
+        .concat(links.length ? [el("ul", { cls: "cmn-case-links" }, links.map(function (l) { return el("li", null, [openLink(l.href, l.text)]); }))] : [])));
+    }
+    kids.push(el("p", { cls: "cmn-next-meta", text: (c.size && c.size.n ? fmt(c.size.n) + " " + (c.size.unit || "items") + ". " : "")
+      + "On no ruling: " + (c.no_reply || "nothing changes.") }));
+    if (R) {
+      kids.push(el("p", { cls: "cmn-case-ruled", role: "status", text: "Ruled: " + choiceWords(c, R.choice) + (R.at ? " on " + String(R.at).slice(0, 10) : "")
+        + ". The processor carries it out and files its receipt." }), processNow());
+      return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
+        [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
+    }
+    if (!who) {
+      kids.push(el("p", { cls: "cmn-next-meta" }, ["Sign in as a reviewer to rule here, or answer on ",
+        c.sheet ? openLink(c.sheet, "its decision sheet") : "its decision sheet", "."]));
+      return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
+        [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
+    }
+    var pick = BATCH.pick[id];
+    var group = el("div", { cls: "cmn-case-choices", role: "group", "aria-label": "Your ruling" }, (c.choices || []).map(function (ch) {
+      var b = el("button", { type: "button", cls: "cmn-word cmn-case-choice", "aria-pressed": pick === ch.value ? "true" : "false",
+        "data-value": ch.value, text: ch.words + (ch.recommended ? " (recommended)" : "") });
+      b.addEventListener("click", function () { BATCH.pick[id] = ch.value; BATCH.said[id] = ""; redrawBatch(); });
+      return b;
+    }));
+    var plan = pick && c.plan_words && c.plan_words[pick] ? el("p", { cls: "cmn-next-meta", text: c.plan_words[pick] }) : null;
+    var note = el("textarea", { id: "cmn-case-note", cls: "cmn-case-note", rows: "2" });
+    note.value = BATCH.note[id] || "";
+    note.addEventListener("input", function () { BATCH.note[id] = note.value; });
+    var save = el("button", { type: "button", cls: "cmn-word cmn-case-save", text: BATCH.busy ? "Saving…" : "Save the ruling" });
+    if (!pick || BATCH.busy) save.setAttribute("disabled", "disabled");
+    save.addEventListener("click", function () { saveRuling(c); });
+    kids.push(group, plan, el("label", { "for": "cmn-case-note", cls: "cmn-case-lbl", text: "Your reason, if any" }), note,
+      el("div", { cls: "cmn-case-acts" }, [save, c.sheet ? openLink(c.sheet, "Its decision sheet") : null].filter(Boolean)),
+      el("p", { cls: "cmn-case-said", role: "status", "aria-live": "polite", text: BATCH.said[id] || "" }));
+    return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
+      [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
+  }
+  var lastOpenTitles = {};
+  function redrawBatch() {
+    var old = document.getElementById("cmn-next-sec"), fresh = batchSection(BATCH.data, lastOpenTitles);
+    if (old && fresh) old.parentNode.replaceChild(fresh, old);
+    else if (old) old.parentNode.removeChild(old);
+  }
+  var RULING_PREFIX = "_DOCKET::", RULING_FIELD = "docket_ruling";
+  function saveRuling(c) {
+    var choice = BATCH.pick[c.id];
+    if (!choice || BATCH.busy) return Promise.resolve();
+    BATCH.busy = true; BATCH.said[c.id] = "Saving…"; redrawBatch();
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      var s = reviewer();
+      if (!s || !s.email) { var e = new Error("your sign-in has ended; sign in again, then save"); throw e; }
+      var value = JSON.stringify({ "case": c.id, choice: choice, note: String(BATCH.note[c.id] || "").trim() });
+      return fetch(REST + "/kb_curation?on_conflict=course_id,field", { method: "POST",
+        headers: sessionHeaders({ "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" }),
+        body: JSON.stringify({ course_id: RULING_PREFIX + c.id, field: RULING_FIELD, value: value, reviewer_email: s.email }) });
+    }).then(function (r) {
+      BATCH.busy = false;
+      if (!r.ok) { BATCH.said[c.id] = "Not saved: the server answered " + r.status + ". Only a reviewer on the list may rule."; redrawBatch(); return; }
+      BATCH.ruled[c.id] = { choice: choice, at: new Date().toISOString(), here: true };
+      if (BATCH.pin === c.id) BATCH.pin = null;
+      redrawBatch();
+    }, function (e) {
+      BATCH.busy = false; BATCH.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; redrawBatch();
+    });
+  }
+  /* The rulings already saved, read with no email asked for (anon reads every column but reviewer_email). */
+  function readRulings() {
+    var h = sessionHeaders({ "Range-Unit": "items", "Range": "0-999" });
+    if (!h || !h.apikey) return Promise.resolve();
+    return fetch(REST + "/kb_curation?select=course_id,value,reviewed_at&field=eq." + RULING_FIELD + "&course_id=like."
+      + encodeURIComponent(RULING_PREFIX) + "*", { headers: h })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        (rows || []).forEach(function (row) {
+          var v; try { v = JSON.parse(row.value); } catch (e) { return; }
+          var id = String(row.course_id || "").slice(RULING_PREFIX.length);
+          if (v && v.choice && !(BATCH.ruled[id] && BATCH.ruled[id].here)) BATCH.ruled[id] = { choice: v.choice, at: row.reviewed_at };
+        });
+      }, function () { /* the cases stay open */ });
+  }
+  /* How many of an Another look batch's cards are decided: the saves written since the sweep was built (a keep, or
+     a fold off the card's current title), and any this visit's Exhibits marked. Null when nothing can be read. */
+  function countDecided(b) {
+    var cards = Array.isArray(b.cards) ? b.cards : [];
+    if (!cards.length) return Promise.resolve(null);
+    var X = window.CPL_EXHIBITS, seen = X && X._state && X._state.sw && X._state.sw.done || {};
+    var decided = {}, byKey = {};
+    cards.forEach(function (c) {
+      if (c.id && seen[c.id]) decided[c.id] = true;
+      (c.keys || []).forEach(function (k) { byKey[k] = c; });
+    });
+    var keys = Object.keys(byKey), h = sessionHeaders({ "Range-Unit": "items", "Range": "0-999" });
+    var count = function () { return Object.keys(decided).length; };
+    if (!keys.length || !b.at || !h || !h.apikey) return Promise.resolve(Object.keys(seen).length ? count() : null);
+    var quoted = keys.map(function (k) { return encodeURIComponent('"' + k.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+    var url = REST + "/kb_curation?select=course_id,field,value,reviewed_at&field=in.(title_sweep_kept,unified_title_supersedes)"
+      + "&reviewed_at=gt." + encodeURIComponent(b.at) + "&course_id=in.(" + quoted.join(",") + ")";
+    return fetch(url, { headers: h }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        (rows || []).forEach(function (row) {
+          var c = byKey[row.course_id];
+          if (c && (row.field === "title_sweep_kept" || (row.field === "unified_title_supersedes" && row.value === c.current))) decided[c.id] = true;
+        });
+        return count();
+      }, function () { return Object.keys(seen).length ? count() : null; });
+  }
+  /* Count every Another look batch, then redraw the section in place. Runs after the page draws and on each visit. */
+  var batchRefresh = null;
+  function refreshBatches(data, openTitles) {
+    var list = batchList(data) || [];
+    lastOpenTitles = openTitles; BATCH.data = data;
+    var counts = list.filter(function (b) { return b.kind === "another-look"; }).map(function (b) {
+      return countDecided(b).then(function (n) { if (n != null) BATCH.decided[batchKey(b)] = n; });
+    });
+    if (list.some(function (b) { return b.kind === "case"; })) counts.push(readRulings());
+    return Promise.all(counts).then(redrawBatch);
   }
   /* The learning line: what people did with the procedures' work, from the confidence count, with the table one
      word away. It reports what people saw, never that the unchecked results are right. */
@@ -586,6 +867,7 @@
   var redraw = null;
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
+    if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons" : "commons/" + show;
   });
   /* Opens the filter word the address names; anything unknown leaves the view as it is. */
@@ -598,6 +880,7 @@
     away = false; seenHash = h;
     if (!visit) return false;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
+    if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
   }
@@ -611,7 +894,10 @@
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
-    if (e && e.detail && e.detail.tab === "commons" && redraw && arrive()) redraw();
+    if (!(e && e.detail && e.detail.tab === "commons")) return;
+    if (redraw && arrive()) redraw();
+    /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */
+    if (batchRefresh) batchRefresh();
   });
 
   function render(root, data, S, now) {
@@ -636,15 +922,19 @@
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })])
     ]));
 
+    /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */
+    var waiting = [], openTitles = {};
+    cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); if (call.title) openTitles[call.title] = true; }); });
+
     /* the one small batch, then what people did with the procedures' work */
-    var batch = nextBatchSection(data && data.next_batch);
+    lastOpenTitles = openTitles;
+    var batch = batchSection(data, openTitles);
     if (batch) wrap.appendChild(batch);
+    batchRefresh = function () { return refreshBatches(data, openTitles); };
     var learn = learningLine(data && data.confidence);
     if (learn) wrap.appendChild(learn);
 
     /* the decisions waiting on Sam, next */
-    var waiting = [];
-    cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); }); });
     if (waiting.length) {
       wrap.appendChild(el("section", { cls: "cmn-band", "aria-labelledby": "cmn-band-h" }, [
         el("h3", { id: "cmn-band-h", cls: "cmn-band-h", text: waiting.length === 1 ? "One decision waits on you" : capFirst(countWords(waiting.length)) + " decisions wait on you" }),
@@ -833,7 +1123,10 @@
     }
     root.textContent = "Reading the Commons…";
     arrive();
-    return load().then(function (r) { render(root, r.data, r.S, new Date()); return r; }, function (e) {
+    return load().then(function (r) {
+      render(root, r.data, r.S, new Date());
+      return Promise.resolve(batchRefresh && batchRefresh()).then(function () { return r; }, function () { return r; });
+    }, function (e) {
       notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
       return null;
     });
@@ -903,6 +1196,21 @@
     ".cmn-next-h { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.3rem, 1.1rem + 1vw, 1.7rem); color:var(--cmn-heading); }",
     ".cmn-next-teach, .cmn-next-meta { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-next-meta { color:var(--cmn-muted); font-size:.92rem; }",
+    ".cmn-next-done { margin:0 0 4px; color:var(--cmn-ink); font-weight:600; }",
+    ".cmn-case-ev > summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; min-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; }",
+    ".cmn-case-ev > summary::-webkit-details-marker { display:none; }",
+    ".cmn-case-ev p, .cmn-case-links { margin:6px 0 0; color:var(--cmn-ink-2); }",
+    ".cmn-case-links a { display:inline-block; min-height:24px; line-height:24px; color:var(--cmn-link); }",
+    ".cmn-case-choices { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:8px; }",
+    ".cmn-case-choice[aria-pressed=\"true\"] { font-weight:700; color:var(--cmn-heading); text-decoration-thickness:2px; }",
+    ".cmn-case-lbl { display:block; margin-top:8px; color:var(--cmn-ink-2); font-size:.92rem; }",
+    ".cmn-case-note { width:100%; max-width:var(--cpl-measure,none); box-sizing:border-box; font:inherit; padding:6px 8px; border:1px solid var(--cmn-line); border-radius:8px; background:var(--cmn-surface); color:var(--cmn-ink); }",
+    ".cmn-case-acts { display:flex; flex-wrap:wrap; gap:6px 18px; align-items:center; margin-top:6px; }",
+    ".cmn-case-acts a { color:var(--cmn-link); min-height:24px; line-height:24px; display:inline-block; }",
+    ".cmn-case-save[disabled] { color:var(--cmn-muted); cursor:not-allowed; }",
+    ".cmn-case-said, .cmn-case-ruled { margin:4px 0 0; color:var(--cmn-ink); min-height:1em; }",
+    ".cmn-process-row { margin:4px 0 0; color:var(--cmn-ink-2); font-size:.92rem; }",
+    ".cmn-process[disabled] { color:var(--cmn-muted); cursor:not-allowed; }",
     ".cmn-start { color:var(--cmn-link); font-weight:700; font-size:1.1rem; text-decoration:underline; text-underline-offset:3px; display:inline-block; min-height:24px; line-height:24px; }",
     ".cmn-learn { margin:0; color:var(--cmn-ink-2); }",
     ".cmn-learn strong { color:var(--cmn-heading); }",
@@ -1008,7 +1316,7 @@
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
-    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, learningLine: learningLine,
+    queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, runProcessor: runProcessor, PROCESS: PROCESS, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

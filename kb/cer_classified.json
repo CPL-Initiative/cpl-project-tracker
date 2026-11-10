@@ -18328,6 +18328,24 @@
    "hints": "832efdd55b",
    "asked": "2026-10-31"
   },
+  "Introduction to Law Enforcement/Corrections": {
+   "raw_title": "Introduction to Law Enforcement/Corrections",
+   "unified_title": "Introduction to Law Enforcement/Corrections",
+   "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.4,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 9",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Industry Certification at Palo Verde with no named credential. The title is kept as written. POST is a weak guess because the row pairs with other law-enforcement rows. The corrections half could point instead to a CDCR/CPOST or BSCC academy near Blythe's prisons, so the issuer needs review.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-09"
+  },
   "Introduction to Mechanical Drafting - Credit by Exam (CADD 5 )": {
    "raw_title": "Introduction to Mechanical Drafting - Credit by Exam (CADD 5 )",
    "unified_title": "Introduction to Mechanical Drafting",
@@ -20937,6 +20955,42 @@
    "hints": "74a559295b",
    "asked": "2026-11-05"
   },
+  "Nursing Care of Children and Families": {
+   "raw_title": "Nursing Care of Children and Families",
+   "unified_title": "Nursing Care of Children and Families",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "cx-type routing"
+   ],
+   "_notes": "Credit by exam course content is taken verbatim from the cx hint. No CCN or C-ID anchor was verified, and no house family matches exactly.",
+   "rules": "d20f2caab9db",
+   "hints": "0f45ae6962",
+   "asked": "2026-11-09"
+  },
+  "Nursing Care of the childbearing family": {
+   "raw_title": "Nursing Care of the childbearing family",
+   "unified_title": "Nursing Care of the Childbearing Family",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Credit by exam course content is kept with only the casing fixed. It may be the same course as the house family 'Nursing Care of the Childbearing Family and Newborn'. It is kept apart because the house title names the newborn and this one does not; a curator may merge them.",
+   "rules": "d20f2caab9db",
+   "hints": "d103eac824",
+   "asked": "2026-11-09"
+  },
   "Nursing Fundamentals - Credit by Exam (NURS 220 )": {
    "raw_title": "Nursing Fundamentals - Credit by Exam (NURS 220 )",
    "unified_title": "Fundamentals of Nursing",
@@ -22637,6 +22691,24 @@
    "_notes": "The cx hint is set aside: 'High School Articulation' was stripped, and 'Sy' was read as a truncated 'Systems'. The row names a high school without naming one, so the issuer is Local High School rather than the hinted California Community Colleges.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Report Writing": {
+   "raw_title": "Report Writing",
+   "unified_title": "Criminal Justice Report Writing",
+   "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4"
+   ],
+   "_notes": "The bare title 'Report Writing' is an Industry Certification at Palo Verde alongside law-enforcement exhibits. It is joined to the POST house family 'Criminal Justice Report Writing' as the likely credential, but the subject area is inferred from that context and should be verified.",
+   "rules": "d20f2caab9db",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-09"
   },
   "Report Writing for Law Enforcement": {
    "raw_title": "Report Writing for Law Enforcement",

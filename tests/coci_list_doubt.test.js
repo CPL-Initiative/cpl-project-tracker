@@ -13,6 +13,9 @@
 //   (8) COBIx on #2948: signed out, the rulings read asks for no email and the card says "by a reviewer"; signed in,
 //       it reads with the reviewer's token and names who ruled; "Use this reason for similar cards" starts unticked;
 //       the panel's trail reads CPL Commons / Courses / the job / the course, and the job's word returns to the List.
+//  (10) ⭐ issue 2981 (Sam, 2026-11-09): a ruling can keep the home discipline and also list a second one. It writes
+//       the reason (ruling "crosslist"), then one cross_listed_disciplines row; the home discipline is never changed,
+//       an unconfirmed home is confirmed in the same write, a second choice adds to the first, and one choice clears.
 // Run from repo root: `npm test` (or `node tests/coci_list_doubt.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -92,7 +95,12 @@ function tab(opts) {
       return ok((opts.ruled || []).map((x) => { const y = Object.assign({}, x); if (!/reviewer_email/.test(url)) delete y.reviewer_email; return y; }));
     }
     if (/kb_curation/.test(url)) return ok([]);
-    if (/ccr_doubt\.json/.test(url)) return opts.doubtFail ? Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) }) : ok(DOUBT);
+    if (/ccr_doubt\.json/.test(url)) {
+      if (opts.doubtFail) return Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) });
+      const D = JSON.parse(JSON.stringify(DOUBT));
+      if (opts.nohome) D.cards.find((c) => c.id === opts.nohome).discipline = "";
+      return ok(D);
+    }
     if (/row_audit\/latest\.json/.test(url)) return ok({ rows: [] });
     if (/csr_out\/latest\.json/.test(url)) return ok({ _mid_codes: { strays: [] } });
     return ok([]);
@@ -100,7 +108,12 @@ function tab(opts) {
   w.CPL_TABS = { loadScript: function (s, name, cb) {
     if (s === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = LIST_SRC; w.document.body.appendChild(e); }
     if (s === "unified_courses_members.js") w.CPL_UC_MEMBERS = JSON.parse(JSON.stringify(MEMBERS));
-    if (s === "unified_courses_data.js") w.CPL_UNIFIED_COURSES = JSON.parse(JSON.stringify(UC));
+    if (s === "unified_courses_data.js") {
+      w.CPL_UNIFIED_COURSES = JSON.parse(JSON.stringify(UC));
+      Object.keys(opts.xdisc || {}).forEach((id) => { w.CPL_UNIFIED_COURSES.rows.find((r) => r.id === id).xdisc = opts.xdisc[id]; });
+      if (opts.mq) w.CPL_UNIFIED_COURSES.mq_disciplines = opts.mq.slice();
+      if (opts.nohome) w.CPL_UNIFIED_COURSES.rows.find((r) => r.id === opts.nohome).disc = "";
+    }
     setTimeout(cb, 0);
   } };
   const sess = opts.signedIn ? { email: "reviewer@rccd.edu", access_token: "tok.en.x" } : null;
@@ -164,7 +177,10 @@ function rule(t, value, words, similar) {
     check("(2) TOP's votes, most first", /Its colleges' TOP codes point to Welding \(2\), Construction \(1\)\./.test(p), p.slice(0, 500));
     const opts = Array.from(t.d.getElementById("ccl-rule-choice").querySelectorAll("option")).map((o) => o.value + "=" + txt(o));
     check("(4) the ruling offers keep, the signals' disciplines, not sure, then every other discipline",
-      opts.join("|") === "=Choose a ruling|keep=Keep Construction|move:Welding=Move to Welding|unsure=Not sure yet|move:English=English", opts.join("|"));
+      opts.join("|") === "=Choose a ruling|keep=Keep Construction|move:Welding=Move to Welding|unsure=Not sure yet|move:English=English|also:Welding=Welding|also:English=English", opts.join("|"));
+    const groups = Array.from(t.d.getElementById("ccl-rule-choice").querySelectorAll("optgroup")).map((g) => g.getAttribute("label"));
+    check("(10) the second-discipline choices sit in their own group, named for the home it keeps",
+      groups.join("|") === "Move to another discipline|Keep Construction, and also list as", groups.join("|"));
     rule(t, "move:Welding", "", true);
     await sleep(20);
     check("(6) a reason for similar cards must say why, and nothing is written", t.writes.length === 0 && /Say why, so a session can write the rule/.test(txt(panel(t.d))));
@@ -226,6 +242,121 @@ function rule(t, value, words, similar) {
     await until(() => t.reads.length >= 2);
     check("(8) a sign-in change reads the rulings again", t.reads.length >= 2);
     check("(8) Use this reason for similar cards starts unticked", t.d.getElementById("ccl-rule-similar") && t.d.getElementById("ccl-rule-similar").checked === false);
+  }
+  {
+    // (9) issue 2995 (Sam, 2026-11-09): "the list view shifts focus to the top row every time you take action in the
+    // sidebar and the listview is not obviously highlighted as to which row you're acting on. the save ruling and
+    // other buttons are a bit jumbled together."
+    const t = tab({ signedIn: true });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    const cur = () => t.d.querySelector("tr.ccl-cur");
+    check("(9) ⭐ the row whose panel is open is marked current, in class and for a screen reader",
+      !!cur() && cur().getAttribute("aria-current") === "true" && /College Composition/.test(txt(cur())) && t.d.querySelectorAll("tr.ccl-cur").length === 1);
+    check("(9) and its M-ID band is marked with it", t.d.querySelectorAll("tr.ccl-band.ccl-bandcur").length === 1 &&
+      /ENGL M1001/.test(txt(t.d.querySelector("tr.ccl-bandcur"))), txt(t.d.querySelector("tr.ccl-bandcur")));
+    const p0 = panel(t.d);
+    const save = pword(t.d, /^Save the ruling$/);
+    check("(9) Save the ruling sits on its own line inside the ruling's box", !!save.closest(".ccl-rule-save") && !!save.closest(".ccl-rule") &&
+      save.closest(".ccl-rule-save").querySelectorAll("button, a").length === 1);
+    const edit = p0.querySelector(".ccl-pn-edit");
+    check("(9) the edits sit apart under their own words", !!edit && !edit.closest(".ccl-rule") && /Or edit the common course/.test(txt(p0.querySelector(".ccl-pn-edit-h"))) &&
+      Array.from(edit.querySelectorAll("button")).some((b) => /Change the discipline/.test(txt(b))) && !/Save the ruling|SkyView/.test(txt(edit)));
+    const sky = p0.querySelector(".ccl-pn-sky");
+    check("(9) and Open in SkyView has a line of its own", !!sky && /^Open ENGL M1001 in SkyView$/.test(txt(sky)));
+    t.d.querySelector(".ccl-wrap").scrollTop = 140;
+    rule(t, "unsure", "", false);
+    await until(() => /Marked not sure/.test(txt(panel(t.d))));
+    check("(9) ⭐ after a save the list stays where it was, never back at its top row", t.d.querySelector(".ccl-wrap").scrollTop === 140,
+      "scrollTop " + t.d.querySelector(".ccl-wrap").scrollTop);
+    check("(9) and the row acted on is still the current one", !!cur() && /College Composition/.test(txt(cur())));
+  }
+  {
+    // (10) an unconfirmed, unmerged common course: the reason, then one write of two rows.
+    const t = tab({ signedIn: true });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    rule(t, "also:Journalism", "Taken as English or as Journalism, by major.", false);
+    await until(() => t.writes.length >= 2);
+    const v = JSON.parse(t.writes[0].body.value), rows = t.writes[1].body;
+    check("(10) ⭐ the reason is written first, as a cross-list ruling that names the second discipline and the home it keeps",
+      t.writes[0].body.field === "ccr_procedure_request" && v.ruling === "crosslist" && v.to === "Journalism" && v.discipline_was === "English"
+      && JSON.stringify(v.also) === '["Journalism"]' && JSON.stringify(v.also_was) === "[]", JSON.stringify(t.writes[0]));
+    check("(10) ⭐ then one write: the second discipline, and the home confirmed as it stands",
+      t.writes.length === 2 && Array.isArray(rows) && rows.length === 2
+      && rows[0].course_id === "ENGL M1001" && rows[0].field === "cross_listed_disciplines" && rows[0].value === "Journalism" && rows[0].reviewer_email === "reviewer@rccd.edu"
+      && rows[1].field === "discipline" && rows[1].value === "English", JSON.stringify(t.writes[1]));
+    await until(() => /Kept English and listed it also as Journalism/.test(txt(panel(t.d))));
+    const p = txt(panel(t.d));
+    check("(10) the panel says what happened, and shows the second discipline with the evidence",
+      /Kept English and listed it also as Journalism\. The daily sync folds it into the reference\./.test(p) && /It is also listed as Journalism\./.test(p)
+      && /Kept English, also listed as Journalism by reviewer@rccd\.edu/.test(p), p.slice(0, 700));
+  }
+  {
+    // (10) a merged common course (its confirmation is a stamp): the second discipline alone, and never a discipline write.
+    const t = tab({ signedIn: true });
+    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    rule(t, "also:Welding", "", false);
+    await until(() => t.writes.length >= 2);
+    await sleep(30);
+    const rows = t.writes[1].body;
+    check("(10) ⭐ a cross-list never changes the home discipline: no discipline row names another one",
+      t.writes.length === 2 && Array.isArray(rows) && rows.length === 1 && rows[0].field === "cross_listed_disciplines" && rows[0].value === "Welding"
+      && !t.writes.some((w) => [].concat(w.body).some((r) => r && r.field === "discipline" && r.value !== "Construction")), JSON.stringify(t.writes));
+  }
+  {
+    // (10) a course that already lists a second discipline: a new one adds to it, and one choice clears them.
+    const t = tab({ signedIn: true, xdisc: { "ENGL M1001": ["Communication Studies"] } });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    const opts = Array.from(t.d.getElementById("ccl-rule-choice").querySelectorAll("option")).map((o) => o.value);
+    check("(10) what it already lists is said, is not offered again, and can be cleared",
+      /It is also listed as Communication Studies\./.test(txt(panel(t.d))) && opts.indexOf("also:Communication Studies") < 0 && opts.indexOf("also:") >= 0
+      && opts.indexOf("also:English") < 0 && opts.indexOf("also:Journalism") >= 0, opts.join("|"));
+    rule(t, "also:Journalism", "", false);
+    await until(() => t.writes.length >= 2);
+    check("(10) ⭐ a second choice adds to the first", t.writes[1].body[0].value === "Communication Studies, Journalism"
+      && JSON.stringify(JSON.parse(t.writes[0].body.value).also_was) === '["Communication Studies"]', JSON.stringify(t.writes[1]));
+    await until(() => /listed it also as Communication Studies, Journalism/.test(txt(panel(t.d))));
+    rule(t, "also:", "", false);
+    await until(() => t.writes.length >= 4);
+    const v = JSON.parse(t.writes[2].body.value);
+    check("(10) clearing writes the reason with what was listed, then an empty value",
+      v.ruling === "crosslist" && v.to === "" && JSON.stringify(v.also) === "[]" && JSON.stringify(v.also_was) === '["Communication Studies","Journalism"]'
+      && t.writes[3].body[0].field === "cross_listed_disciplines" && t.writes[3].body[0].value === "", JSON.stringify(t.writes.slice(2)));
+    await until(() => /cleared its second discipline/.test(txt(panel(t.d))));
+    check("(10) and the panel stops saying it is listed elsewhere", !/It is also listed as/.test(txt(panel(t.d))) && /Kept English, second discipline cleared/.test(txt(panel(t.d))));
+  }
+  {
+    // (10) COBIx on #3025: two MQ names carry commas of their own. The name is kept whole in the panel and the reason row.
+    const t = tab({ signedIn: true, mq: ["Construction", "English", "Sign Language, American", "Welding"], xdisc: { "ENGL M1001": ["Journalism"] } });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    rule(t, "also:Sign Language, American", "", false);
+    await until(() => t.writes.length >= 2);
+    const v = JSON.parse(t.writes[0].body.value);
+    check("(10) ⭐ a discipline whose name carries a comma stays one name in the reason row",
+      JSON.stringify(v.also) === '["Journalism","Sign Language, American"]' && v.to === "Sign Language, American", JSON.stringify(v.also));
+    check("(10) the row's value is the comma-separated list the daily fold splits against the MQ names",
+      t.writes[1].body[0].value === "Journalism, Sign Language, American", JSON.stringify(t.writes[1].body[0]));
+    await until(() => /listed it also as Journalism; Sign Language, American/.test(txt(panel(t.d))));
+    const p = txt(panel(t.d));
+    check("(10) ⭐ and the panel reads it back as two disciplines, never three",
+      /It is also listed as Journalism; Sign Language, American\./.test(p) && /No second discipline \(clear Journalism; Sign Language, American\)/.test(p), p.slice(0, 600));
+    rule(t, "also:Welding", "", false);
+    await until(() => t.writes.length >= 4);
+    check("(10) a later choice adds to the two, with the comma name still whole",
+      JSON.stringify(JSON.parse(t.writes[2].body.value).also) === '["Journalism","Sign Language, American","Welding"]', t.writes[2].body.value);
+  }
+  {
+    // (10) a course with no home discipline has nothing to keep: no second-discipline group, and never "Keep undefined".
+    const t = tab({ signedIn: true, nohome: "ENGL M1001" });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    const sel = t.d.getElementById("ccl-rule-choice");
+    check("(10) with no home discipline the group is left out", !!sel && !Array.from(sel.querySelectorAll("optgroup")).some((g) => /also list as/.test(g.getAttribute("label")))
+      && !/undefined/.test(txt(panel(t.d))), sel && Array.from(sel.querySelectorAll("optgroup")).map((g) => g.getAttribute("label")).join("|"));
+  }
+  {
+    const t = tab({ ruled: [Object.assign({}, RULED[0], { value: JSON.stringify({ mid: "CNST M1009", discipline_was: "Construction", ruling: "crosslist", to: "Welding", words: "", similar: false }) })] });
+    await until(() => /1 ruled so far/.test(txt(t.d.body)));
+    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    check("(10) a cross-list ruling read back shows on the card", /Kept Construction, also listed as Welding by a reviewer on 2026-11-09\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 400));
   }
   {
     const t = tab({ doubtFail: true });

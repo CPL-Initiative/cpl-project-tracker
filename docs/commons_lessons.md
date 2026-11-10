@@ -826,3 +826,93 @@ model recomputing `priorities()` per college.
   `commons_jobs_filtered` (5) caught the first draft.
 - **A loader's own throw must reach its catch.** `.then(ok, fail)` does not catch a throw inside `ok`; the jobs test
   failed on an unhandled rejection until the doubt read used `.then(ok).catch(fail)`.
+
+## Moved from the lane, 2026-11-09, SkyCigar
+
+**To do, later (Sam, 2026-10-26 ~15:00Z, S490):** *"The Commons program numbers don't match the PR tabs numbers. Need
+to make sure the numbers on all tabs on the commons match the commons summaries."* His two screenshots, the same morning:
+the Commons' Program Requirements card read **13,194 of 20,282 complete at 114 colleges** (3,731 failing a check, 3,357
+with no record; figures read 6:16 AM PT), while the Program Requirements tab's Progress read **17,529 records read at 114
+colleges** and **3,274 fail a machine check** (7:38 AM PT). The two count different things (complete active programs
+against records read) and from different reads, but neither page says so. Make every tab's figures and the Commons
+summary agree, or name the difference on both. **The Program Requirements pair is done (S560, #2721):** both pages
+headline complete active programs of COCI's active (S558); *Needs attention* now counts active programs whose record
+fails, the card's unit, where it had counted every failing record; and each page names the one difference left, timing
+(the card counts the records committed at the last checkpoint, the tab reads live: 13,553 committed against 13,542
+live on 2026-11-03). **The other four pairs, checked (S561):** Course reads the Commons row itself and CR reads the
+same committed worklist build, so both agree by construction. **Subjects disagreed:** the page counted 17 scan findings
+to confirm or note and the card 16, since the card counted two rules and left out the dead-format anchor; both now
+count one set, the findings needing judgment less the ones another item counts (`ASK_SKIP` in `canonical_subj4.js`,
+`CSR_ASK_SKIP` in the builder; the page also lists a missed alignment, as the card does), and each names its timing
+(the card counts the daily sync, the page reads the picks live). **Exhibits would have counted held titles twice** on
+a night the procedures run held any (live from the review file, and again from the Commons row); the page now drops
+the row's held and conflict copies once the review file is read, and both pages say why the card's list is shorter
+(the page adds the tab's own queues). Guards: `tests/csr_progress.test.js` (79), `tests/exhibits_progress_page.test.js`
+(43), `tests/commons_status_build_test.py` (85). The same screenshot shows both Progress cards reading *Could not be read*
+(`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.
+
+## The Docket, steps 1 to 3, and the morning's security asks (SkyCigar, 2026-11-09)
+
+- **A committed status file cannot close a loop a person just finished.** `next_batch` was rebuilt three times a day, so Sam's six decided cards still read open. The fix counts from the saves themselves (the keys a decision writes, read since the sweep was built) and from the visit's own marks; the file supplies only the keys (#2966).
+- **Reuse a write surface before adding one.** Docket rulings are `kb_curation` rows under a prefixed key, like `ccr_procedure_request`; the daily fold keeps only a fixed list of fields, so a new field cannot leak into the reference. The "Process my rulings now" security already existed twice (`workplan-rebuild`, the Worker's `/trigger`); the Edge Function copy took a reviewer-only check and the existing dispatch token (#2968, #2969).
+- **An automated applier's safety lives in what it refuses.** The processor runs only commands the reviewed cases file names, only allowed scripts, only with `--expect`; a failed step stops the rest and marks the case `partial`, never re-run. Tested in a temporary git repo with a stand-in script.
+- **A public file never carries an address.** Cases name an addressee handle; the processor's `done.by` names the ruling key, not the reviewer.
+- **A relayed ruling and a direct one can disagree in time.** COBIx relayed Sam lifting call 9 at 13:10Z; Sam asked at ~14:25Z to put it on a sheet. One plain question settled it (lifted). Ask; do not pick the relay.
+- **Measure grants before revoking them, and roll back to the measurement.** The TRUNCATE rollback restores the exact per-table grants read just before (91 anon, 92 authenticated), not a blanket re-grant.
+- **A UI that logs on return logs refusals.** The CSM workspace logged "Accepted" before the save read back; the funding tab's own email waited correctly. The action now answers with the re-read (#2973).
+
+## Moved from the lane (S624, 2026-11-10; the lane stood at 1.43 times its budget)
+
+Five settled paragraphs, verbatim; the lane keeps one line for each.
+
+**LIVE: the Docket, steps 1 to 3 (#2963, SkyCigar, 2026-11-09, each on Sam's go in session).** *Batches* (#2966): `kb/status/commons.json` `batches` runs Another look, the open cases, run-log calls on sheets no case carries, then Sam's queue jobs; `next_batch` is the first. The page counts Another look from the saves since the sweep, so the last card decided reads *Done* and the next batch comes up without a reload. *Cases* (#2968): `kb/docket/cases.json` (served on Pages: an `addressee` handle, never an email; `dr` names the owning register row; `plans` give each choice's commands with `--expect`). The Commons rules one in place at `#commons/case/<id>`; the ruling upserts to `kb_curation` as `_DOCKET::<id>`, field `docket_ruling`, under the reviewer's own name. Sessions read rulings beside the sheet stores (`kb/_docket_rulings.py --sql`, then `--rows`); Sheet 175 is the first case, and a reply on the sheet or the case counts. *Processor* (step 3): `kb/_docket_process.py` runs nightly at 05:33 UTC (`docket-process.yml`, behind the daily build) or from *Process my rulings now* (Edge Function `docket-process`, reviewer only; deploy via `cpl-chat-deploy.yml`). It runs only the cases file's commands for the choice, only `ALLOWED` scripts, only with `--apply` and `--expect`; writes `kb/docket/receipts/` with the undo; marks the case `done`, or `partial` for a session to finish; a choice whose plan is words stays for a session. Every case shows to any signed-in reviewer until step 4's reviewer-only table. **RULED (Sam, in session 2026-11-09 ~14:55Z, on Open Asks Sheet 176 card 2: *"Lifted: build step 4"*; COBIx relayed the same at 13:10Z on #2963):** call 9 is lifted for the Docket. NEXT, step 4: one Supabase table for cases that are not public (Open Asks cards), SELECT only to `authenticated` passing `is_allowed_reviewer()` in the RLS policy itself (signup is open), `anon` no grants, no TRUNCATE/REFERENCES/TRIGGER, writes only by the processor's service role or a check-then-insert RPC; Governance surface map and the privacy ADRs first (Rule 10 a3); sources stay in the vault; the claude.ai sheets run until the table carries two cleanly; hold-list cards never reach the processor. Open question from COBIx (#2963, 13:10Z): the processor opens a PR per run instead of pushing to `main`; a `GITHUB_TOKEN` PR triggers no CI, so it needs a dispatch token or a merge path decided first. Guards: `tests/commons.test.js` (*docket*, *case*, *process*), `tests/docket_rulings_test.py`.
+
+**LIVE: the CPL Commons first view (S552, 2026-11-02, #2697).** `commons.js` draws the locked mock as the tab's first
+view: the decisions waiting on Sam lead (every open call from the run logs, each naming its card), then one card per
+common reference, your decisions first, then by how far along, then the builds; a card carries its Common name, one
+line of what, the headline pair with its meter, *Your decision* (the first open call, linked to its sheet), *Recently*
+(the run log's latest change, first sentence; a row with no run log shows its machine stamp), *Next* (the run log's
+next step), its opening words and *Decision record*. Three filter words (*All eight*, *Needs you*, *Building*) last the
+visit. The rows of 2026-10-18 (known issues, settled procedures, the Decision Sheet Library, the last run, Sam's order
+and fold) stay under **Details**, one word away; a card's *Decision record* opens them at its row. **The three building
+references** (Common Credentials, Common Outcomes, Common Skills) are `building` rows in `kb/status/commons.json`, written
+by `kb/_build_commons_status.py` from `kb/it_ai_credential_catalog.json` (`_stats`) and the committed
+`kb/course_outcomes/*/read_*.json`: a count with no universe, no meter, the file's stamp. **Malone's look** (Sheet 158
+card 2): the palette lives once as `--cmn` tokens on `#tab-commons`; the dark theme maps every role onto a First Light
+dark token (`:root[data-theme="dark"] #tab-commons` and the OS-dark media query), so no color is invented there. Inter
+loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/commons_status_build_test.py` (83).
+
+**The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
+the mock's opened page for any reference: the progress line over one denominator, *Needs attention* with an action each,
+and three question groups over that denominator; an unread count says *Could not be read*. First Light tokens. **Every
+reference carries it** as a **Progress** view, one word from the List the card opens (Sam, 2026-11-03: *"open the List view as the default for all the commons actions"*; held exhibit titles keep Review, Courses keeps SkyView):
+Exhibits `#exhibits/progress` (questions read `credCounts()`, the tiles' own counts), CR Reference
+`#cr-reference/progress`, Subjects (`canonical-subj4`), CPL Pathways (`#program-requirements`, denominator COCI's active
+program) and the Common Course Reference in COCI Lookup (`#coci-lookup/progress`, the row's pair: ready of the auditor's
+cards). Guards `tests/exhibits_progress_page.test.js`, `cr_progress`, `csr_progress`, `program_requirements_page`,
+`coci_progress`; a11y targets `<view>-progress` and `-dark`. Per-view detail: `docs/commons_lessons.md` (*Moved from the
+lane, 2026-11-03*). **Complete is the auditor's *ready*** (Sam, Open Asks Sheet 160, *keep*, 12:44Z 2026-11-03): a common course counts
+before a person confirms it; a confirmation is an attribute the reference gains, counted beside it. His words are in
+`docs/commons_lessons.md` (*Sheet 160 answered*). **Confirmed by a person, on all five** (Sam, S565: *"yes to both, build them for all four"*): each row's second `pair`,
+a line on the card and under each Progress bar. 2026-11-03: Programs 32 (synced daily, `kb/_sync_program_checked.py`),
+Exhibits 1,173, Courses 957 (a save on the card or placing a course into it), CR 97, Subjects 122. Detail in the lessons (*The confirmed count*).
+
+**The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
+hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
+groups"*). Exhibits (#2656), the Common CR Reference (#2657, with your flag #2659), Subjects (#2658) and Program
+Requirements (#2660) run on it. **The Courses List is the COCI Lookup tab's Courses view** (#2670, live): 141,738
+local courses banded by today's M-ID (from `unified_courses_members.js`, never the extract's older column), Open in
+SkyView on each band; an M-ID move is a re-mint, done in SkyView. A course's panel carries its common course's card and, for a signed-in reviewer, Rename, Set the discipline and Confirm, carried from the Common Course Reference tab before it retires (SkyJujube, 2026-11-04, `tests/coci_list_cc_card.test.js`). Sam, 2026-11-01 ~23:02Z: *"WE have the
+COCI lookup tab in COBI...maybe courses in that?"*; SkyView stays the map alone. The engine filters before it sorts and
+sorts on per-column ranks (a settled finder keystroke 228 ms at 141,738 rows). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
+only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
+bar when needed"*). **All five Lists carry the line, the fold and the side panel** (2026-11-04). **All five carry Check alignment** (Sam, 2026-11-04: *"We could use that feature on all our commons list views"*; S578
+added the last three): one audit and one recommendation beside the edit, reading what the page holds and writing nothing.
+Subjects audits a typed code, Exhibits a title and issuer, CR a reference (its applied official name, a cited course its
+wordings never reach, another group's name, a wording's unit count up front), Courses a name (its local courses' titles,
+its discipline's other common courses) and a discipline (where colleges file the same subject codes; a TOP-sourced one
+corroborates only), Programs a record in *Your reading* (its machine checks, COCI's title and units, the same award under
+the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` and `alignClose`. Guards
+`tests/cr_list.test.js` (12), `tests/coci_list_cc_card.test.js` (7), `tests/program_requirements_list_record_port.test.js` (16).
+
+**LIVE: Discipline in doubt, a ruling that teaches the procedure (S614, 2026-11-09).** Sam, in session: *"Can you put these in the appropriate part of the commons process and make a built in way for me to rule on them so our procedures can be adjusted to handle similar edge cases? ... I suspect other edge cases will emerge as we begin to use the subjects more intensly."* It lives in the Courses reference (a common course's discipline is the Courses List's one discipline write; Subjects maps a discipline to its code and is complete). `kb/_ccr_seed_recheck_dryrun.py --doubt`, daily in `daily-dashboard.yml` after the curation sync, writes `kb/ccr_doubt.json`: the active discipline's (`kb/ccr_procedures.json` `active_discipline`) cards whose description reads elsewhere, then those TOP alone doubts, labeled as TOP's word. `#coci-lookup/list/doubt` lists them; the panel shows both signals and takes a ruling (keep, move, keep and also list as a second discipline, not sure), its reason in plain words and *Use this reason for similar cards*. The reason saves first as a `kb_curation` `ccr_procedure_request` row (`_CCR_PROCEDURE_REQUEST::<iso>-<mid>`, DR-25), then the discipline through `ccSave`. **Also list as (S624, issue #2981; Sam, 2026-11-09: a student can take the course as Kinesiology or as Psychology, depending on their major):** the ruling keeps the home discipline and writes one `cross_listed_disciplines` row (comma-separated, added to any the course already lists; one choice clears them); the home and the M-ID never change, an unconfirmed home is confirmed in the same write, and the reason row reads `ruling: "crosslist"` with `also` and `also_was`. *Rule again* adds one to a heading already kept, so the 2026-11-09 keeps need no redoing. Two MQ names carry commas of their own (*Sign Language, American*; *Air Conditioning, Refrigeration, Heating*): the value stays comma-separated and `kb/discipline_list.py` splits it against the MQ names, in the generator's `xdisc_of` too (COBIx on #3025; the plain split had read three phantom disciplines on the one umbrella record that lists them). Guards `tests/coci_list_doubt.test.js` block 10, `tests/discipline_list.test.js`. The Commons queue counts the description's cards under *unsure* (Kinesiology: 8; TOP is no person's item, Sam 2026-11-04). NEXT: when a ruling marked for similar cards arrives, a session reads the rows (MCP), writes the rule into `kb/ccr_procedures.json` switched off, measures the waiting cards it would settle with the dry run, and switches it on with Sam's word; the bulk settle then needs a `--try`, a receipt with before-values and an `--undo` (Rule 10 a2; COBIx on #2948), none built yet; then the next discipline. COBIx's review of #2948, worked in its follow-up: a ruling names who made it only to a signed-in reviewer (read with their token; signed out, "by a reviewer"); *Use this reason for similar cards* starts unticked; the Courses List's panel carries the trail (CPL Commons / Courses / the job / the course). The ruling stays a select (a choice among 150 disciplines is an input, like the discipline select beside it). Open, table-wide: `kb_curation`'s read policy is PUBLIC with `true`, so the anon key reads every row's `reviewer_email`, the older panel reads included; asked of Sam in session 2026-11-09. Guards `tests/coci_list_doubt.test.js` (23), `tests/ccr_doubt_test.py` (9).

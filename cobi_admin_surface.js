@@ -110,13 +110,17 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports"
+        "cpl_funding_reports",
+        "csm_log"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "cpl_funding_requester_context",
+        "cpl_funding_sender_titles",
+        "is_allowed_reviewer",
+        "is_funding_reviewer",
         "map_coordinator_summary"
       ],
       "measured": true
@@ -140,13 +144,20 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports"
+        "cpl_funding_reports",
+        "csm_log"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "cpl_funding_requester_context",
+        "cpl_funding_sender_titles",
+        "funding_access_decide",
+        "funding_access_pending",
+        "is_allowed_reviewer",
+        "is_funding_approver",
+        "is_funding_reviewer",
         "map_coordinator_summary",
         "map_landing_contacts_roster"
       ],
@@ -225,7 +236,8 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports"
+        "cpl_funding_reports",
+        "csm_log"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
@@ -233,6 +245,9 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "cpl_funding_requester_context",
+        "cpl_funding_sender_titles",
+        "is_allowed_reviewer",
+        "is_funding_reviewer",
         "map_coordinator_summary"
       ],
       "measured": true
@@ -293,7 +308,9 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [
         "cobi_rls_gates",
         "cpl_library_public",
-        "cpl_library_set_public"
+        "cpl_library_set_public",
+        "funding_approvers_list",
+        "funding_approvers_set"
       ],
       "measured": true
     },
@@ -355,7 +372,8 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports"
+        "cpl_funding_reports",
+        "csm_log"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
@@ -363,6 +381,9 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "cpl_funding_requester_context",
+        "cpl_funding_sender_titles",
+        "is_allowed_reviewer",
+        "is_funding_reviewer",
         "map_coordinator_summary",
         "sierra_feedback_upsert"
       ],
@@ -493,7 +514,9 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "queue_todo_done"
       ],
-      "writes": [],
+      "writes": [
+        "kb_curation"
+      ],
       "rpcs": [
         "queue_todo_done_add"
       ],

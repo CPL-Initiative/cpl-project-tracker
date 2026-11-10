@@ -1,27 +1,47 @@
 {
   "schema": 1,
-  "session": 612,
-  "moniker": "SkySunflower",
+  "session": 624,
+  "moniker": "SkyCocoon",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_613_handoff.md",
+  "handoff": "docs/session_625_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
       "text": "Open Asks Sheet 174 card 1: the seed re-check reads course descriptions (88% right held out at a clear margin) with TOP beside them. Of 12,504 seed cards, 1,964 have both signals; in Kinesiology 627, and 8 go to a curator.",
       "no_reply": "Every seed card stays capped at 0.79; nothing in the catalog changes.",
-      "link": "https://claude.ai/artifact/ETPrCdiUzf3iq7GUr4F9So"
+      "link": "https://claude.ai/artifact/ETPrCdiUzf3iq7GUr4F9So",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-09",
+        "words": "confirm"
+      }
+    },
+    {
+      "title": "Confirm the next five disciplines where the descriptions and TOP both agree?",
+      "text": "Open Asks Sheet 176 card 1 (re-asked from Sheet 175): Music 250, Fire Technology 169, Mathematics 128, Child Development/ECE 107 and English 99 cards, by the same two signals that confirmed Kinesiology's 627. Answer five, all, one or later.",
+      "no_reply": "The five disciplines' seed cards stay capped at 0.79; nothing in the catalog changes.",
+      "link": "https://claude.ai/artifact/YWCQRMHZ7JoFZLBtnp1MmF",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-09",
+        "words": "Confirm the five (Sheet 175 card 1); applied S621, 753 cards"
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-08T22:50:39Z",
+  "written_at": "2026-11-10T02:16:38Z",
   "project": "course",
   "next_step": {
-    "title": "Confirm Kinesiology's seed disciplines, if Sam agrees",
-    "text": "Sheet 174 asks whether the 627 Kinesiology cards whose descriptions and TOP both agree with the seed discipline are confirmed; the 8 that disagree go to a curator as one batch."
+    "title": "Teach a rule on every reference, from the path mock",
+    "text": "The commons lane's NEXT: Teach a rule on every reference, the confidence count for the CR rule rungs and the Course auditor, then the other references' paths. KINE M1142 still has no saved ruling, and Sheet 177 card 1 (the next five disciplines) waits on Sam."
   },
   "changes": [
+    {
+      "at": "2026-11-09T02:30:00Z",
+      "text": "Kinesiology's 627 seed cards are confirmed by description and TOP, on Sam's confirm (Open Asks Sheet 174); the 8 that disagree are the Courses List's Discipline in doubt job."
+    },
     {
       "at": "2026-11-08T22:40:00Z",
       "text": "The seed re-check dry run reads two second signals on the 14,523 capped seed disciplines: course descriptions, as Sam asked on Sheet 173, and TOP beside them (#2940)."
@@ -41,6 +61,18 @@
     {
       "at": "2026-11-03T13:28:16Z",
       "text": "The Course page and the Commons card count cards a person has confirmed in SkyView beside ready: 812 of 27,581 (#2726)."
+    },
+    {
+      "at": "2026-11-09T22:55:02Z",
+      "text": "The Courses List keeps the row you rule on in view and marked, with its band; the ruling's save, the edits and Open in SkyView each have their own line (#3004)."
+    },
+    {
+      "at": "2026-11-10T02:16:38Z",
+      "text": "A Discipline in doubt ruling can keep the home discipline and also list a second one; it writes one cross-list row and never changes the home or the M-ID (#3025, issue 2981)."
+    },
+    {
+      "at": "2026-11-10T02:16:38Z",
+      "text": "A list of disciplines is split against the MQ names, since two names carry commas; one umbrella record loses three phantom second disciplines at the next daily run (#3025)."
     }
   ]
 }

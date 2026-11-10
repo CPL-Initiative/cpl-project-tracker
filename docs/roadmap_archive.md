@@ -221,3 +221,10 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history (moved 2026-11-08, S612)
 
 - 2026-11-07 SkyAndromeda (S598, CPL Queue routine, 11:12Z): Palomar held back from extraction after 8 host errors and re-captured; Coalinga extracting its two new programs; Los Medanos captured on the current eLumen reader; light checkpoint; `docs/session_599_handoff.md`.
+
+## INDEX update history, moved 2026-11-10 (S624)
+
+- 2026-11-08 SkyMaffei (S603, Sam's session): Sheet 169 answered and carried out: security step 3 applied and read back (#2901), the noncredit category table designed through Governance and held for its picker (DR-33, #2908); security step 4 applied: the KPI history guard (#2907) and the budget logo policy through the runner, which now takes `project=` (#2909); Contra Costa's SLO full read and Cuesta's index started (#2873, #2910).
+- 2026-11-07 SkySombrero (S602, Sam's session): Palomar and Los Medanos displayed; LMC's GE page read and its local degrees parked; the ECHT CompTIA four read as course exams; security step 3 built and held (#2901); the k=10 check (#2903) and the failure watch (#2905); statewide_kpi_test fixed (#2902); Open Asks Sheet 169 (#2904); light checkpoint; `docs/session_603_handoff.md`.
+- 2026-11-07 SkyMilkyWay (S601, Sam's session): the stale KPI scrape fixed (#2892 fail loudly, #2893 header, #2897 reason in the tail, #2898 encoded secret; scrape lands 16:09Z); Open Asks Sheets 167 and 168 (security asks reach the sheet, #2895, #2896); the Sky: COBIx inbox routine drafted for Sam's review (#2894, routine disabled); light checkpoint; `docs/session_602_handoff.md`.
+- 2026-11-07 SkyTriangulum (S599, CPL Queue routine, 12:12Z): DSP Credit Starting Points Version 3 from Sam's Revise request, in ELL IET Version 5's form, stored as the card's draft (#2883, CPLBrain#707); Coalinga merged (#2882) and displaying; Palomar's clean re-capture, Chemistry extracting; Los Medanos adds nothing; `docs/session_600_handoff.md`.

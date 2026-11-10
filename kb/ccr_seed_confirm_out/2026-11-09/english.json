@@ -1,0 +1,408 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "English",
+  "ruling": "Open Asks Sheet 175 card 1 (Sam, 2026-11-09 15:14Z: five)",
+  "run": "S621",
+  "date": "2026-11-09",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 99,
+  "before": {
+    "ENGL M1006": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1011": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1016": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1025": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1042": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1075": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1092": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1093": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1098": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1102": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1114": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1115": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1116": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1117": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1118": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1121": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1122": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1125": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1134": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1136": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1137": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1138": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1144": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1154": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1155": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1157": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1165": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1168": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1170": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1171": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1172": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1179": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1180": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1182": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1186": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1188": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1189": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1191": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1195": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1196": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1200": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1202": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1203": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1204": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1206": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1207": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1210": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1212": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1215": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1217": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1225": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1227": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1230": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1232": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1238": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1246": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1252": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1261": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1263": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1264": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1265": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1271": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1275": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1276": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1282": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1287": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1289": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1290": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1296": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1297": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1298": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1299": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1303": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1316": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1319": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1335": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1341": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1346": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1347": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1350": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1351": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1352": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1353": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1355": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1359": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1360": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1365": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1366": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1368": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1369": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M1376": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ENGL M9019": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

@@ -1687,6 +1687,35 @@
     var slug = (n.match(/\/library\/([a-z0-9-]+)$/) || [])[1];
     return (state.rows || []).filter(function (r) { return !r.retired_at && ((r.url && normLink(r.url) === n) || (slug && r.slug === slug)); })[0] || null;
   }
+  // A pasted link that is a piece's own (Sam, 2026-11-09: "I tried adding the link to the previous ELL IEP visual
+  // to the new project link box, but it just shot me down to the existing ELL IEP project thinking I was wanting to
+  // work on it", and the file he had attached was gone from the request). A person who has picked a file or typed
+  // what to make is making something new: the piece becomes a document to work from, the file stays, and nothing
+  // jumps. With the box empty, the link still opens the piece's card, which now says how to use it as background.
+  function makingNew() {
+    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
+    return !!(state.pick || g("lc-instr") || g("ls-title"));
+  }
+  function knownLink(r, link) {
+    if (!makingNew()) {
+      openCardBox(r.id);
+      sayOn(r.id, "That link is " + r.title + ", already in the Library, so its card is open to revise it. To use it as background for something new, close this, say what to make in Instructions, then paste the link again.");
+      render();
+      return;
+    }
+    var list = (state.src.ls || []).slice();
+    if (!list.some(function (x) { return x.url && normLink(x.url) === normLink(link); })) {
+      if (list.length >= SRC_MAX) { say("A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      list.push({ title: (r.title + " (a piece in the Library, to work from)").slice(0, 200), url: link, text: null, added_by: storedAuthor() || null, added_on: today() });
+      state.src.ls = list;
+    }
+    // A file picked beside a piece to work from is background for the new piece, never a remediation.
+    if (state.pick && state.pick.file && state.use === "remediate") state.use = "background";
+    state.moreOpen = true;
+    say(r.title + " is already in the Library, so it is added as a document to work from for the new piece" +
+      (state.pick ? ", beside " + state.pick.name : "") + ". It is listed under More about it. To revise " + r.title + " itself, find it by its title above.");
+    render();
+  }
   // A dropped page or picture named for a piece (20261023_ELL_IET_CPL_Starting_Points_2.html)
   // picks it; a deck, document, workbook or PDF goes to remediation, which finds its record itself.
   function normTitle(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+(v|version)?\s?\d+$/, ""); }
@@ -2532,8 +2561,13 @@
     if (link && (!state.pick || state.pick.link !== link)) {
       if (!/^https:\/\//.test(link)) { say("The link must start with https://.", true); render(); return; }
       var known = pieceByLink(link);
-      if (known) { ln.value = ""; openCardBox(known.id); return; }
-      setPick({ name: link, link: link });
+      if (known) { ln.value = ""; knownLink(known, link); return; }
+      // A link given beside a file picked as background is a second document to work from; it never replaces the file.
+      if (state.pick && state.pick.file && state.use === "background") {
+        var both = (state.src.ls || []).slice();
+        if (!both.some(function (x) { return x.url === link; }) && both.length < SRC_MAX) both.push({ title: (titleFromName(link) || link).slice(0, 200), url: link, text: null, added_by: storedAuthor() || null, added_on: today() });
+        state.src.ls = both; ln.value = "";
+      } else setPick({ name: link, link: link });
     }
     var pk = state.pick;
     var openBrief = function (src, note) { saveNew(src ? [src] : [], note || (src && isSharePoint(src.url) ? SP_INSTEAD : "")); };
@@ -3292,7 +3326,7 @@
       }
       else if (e.target.id === "lc-link" && !state.piece) {
         var pl = pieceByLink(e.target.value);
-        if (pl) { e.target.value = ""; openCardBox(pl.id); }
+        if (pl) { var lv = e.target.value.trim(); e.target.value = ""; knownLink(pl, lv); }
       }
       else if (e.target.getAttribute && e.target.getAttribute("data-remscript") && state.rem) {
         state.rem.scripts[e.target.getAttribute("data-remscript")] = e.target.value; state.rem.touched = true;

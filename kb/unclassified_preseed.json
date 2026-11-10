@@ -1,17 +1,65 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-08T14:35:38Z",
+ "_generated_at": "2026-11-09T17:53:53Z",
  "_queue_count": 4,
  "_counts": {
-  "staged": 0,
-  "needs_you": 0,
-  "not_yet_asked": 4
+  "staged": 4,
+  "needs_you": 3,
+  "not_yet_asked": 0
  },
- "_residual": [
-  "Introduction to Law Enforcement/Corrections",
-  "Nursing Care of Children and Families",
-  "Nursing Care of the childbearing family",
-  "Report Writing"
- ],
- "staged": {}
+ "_residual": [],
+ "staged": {
+  "Introduction to Law Enforcement/Corrections": {
+   "title": "Introduction to Law Enforcement/Corrections",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Industry Certification at Palo Verde with no named credential. The title is kept as written. POST is a weak guess because the row pairs with other law-enforcement rows. The corrections half could point instead to a CDCR/CPOST or BSCC academy near Blythe's prisons, so the issuer needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 9",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Nursing Care of Children and Families": {
+   "title": "Nursing Care of Children and Families",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Credit by exam course content is taken verbatim from the cx hint. No CCN or C-ID anchor was verified, and no house family matches exactly.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "cx-type routing"
+   ]
+  },
+  "Nursing Care of the childbearing family": {
+   "title": "Nursing Care of the Childbearing Family",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Credit by exam course content is kept with only the casing fixed. It may be the same course as the house family 'Nursing Care of the Childbearing Family and Newborn'. It is kept apart because the house title names the newborn and this one does not; a curator may merge them.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Report Writing": {
+   "title": "Criminal Justice Report Writing",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "The bare title 'Report Writing' is an Industry Certification at Palo Verde alongside law-enforcement exhibits. It is joined to the POST house family 'Criminal Justice Report Writing' as the likely credential, but the subject area is inferred from that context and should be verified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 4"
+   ]
+  }
+ }
 }

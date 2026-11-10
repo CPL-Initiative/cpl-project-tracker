@@ -78,7 +78,7 @@ const COMMITTED_RECEIPTS = new Set(
 
 block("2. the builder refuses to empty itself", () => {
   const MAP = "kb/college_identity/_inputs/map_colleges_2026-08-21.json";
-  const OBS = "kb/college_identity/_inputs/observed_names_2026-08-23.json";
+  const OBS = "kb/college_identity/_inputs/observed_names_2026-11-10.json";
   check("(2) the committed lint inputs are present",
     fs.existsSync(MAP) && fs.existsSync(OBS),
     "the guard is only useful if the input it demands is actually in the repo");
@@ -122,6 +122,20 @@ block("2. the builder refuses to empty itself", () => {
     check("(2) ⚠️ …and the unlinted artifact SAYS it is unlinted",
       /"linted":\s*false/.test(unlinted),
       "this is what stops the tab reporting a clean bill of health");
+    restore();
+
+    // The daily check (kb/_identity_daily_check.py) hands the builder a list of bare names, never records. It
+    // crashed on the first one (TypeError at o["name"]) and the workflow step stayed green (found 2026-11-09).
+    const bare = path.join(scratch, "observed_bare.json");
+    const records = JSON.parse(fs.readFileSync(OBS, "utf8")).names;
+    fs.writeFileSync(bare, JSON.stringify({ names: records.map((o) => o.name).sort() }));
+    const setOf = () => { const t = fs.readFileSync("college_identity_data.js", "utf8");
+      return JSON.parse(t.slice(t.indexOf("{"), t.lastIndexOf("}") + 1)).findings.map((f) => f.name + "|" + f["class"]).sort().join("\n"); };
+    const wanted = setOf();
+    const asNames = run(["--observed-json", bare]);
+    check("(2) ⭐ a list of bare names builds too, as the daily check sends it", asNames.status === 0,
+      "exit=" + asNames.status + " stderr=" + String(asNames.stderr || "").slice(-200));
+    check("(2) …and finds the same set of (name, class) as the records do", asNames.status === 0 && wanted.length > 0 && setOf() === wanted);
     restore();
 
     const good = run(["--observed-json", OBS]);
@@ -168,6 +182,54 @@ block("3. the tab", () => {
     /Nothing outstanding/.test(TAB) && /observed_names/.test(TAB),
     "'Nothing outstanding — 130 names checked' is a claim; 'Nothing outstanding' "
     + "alone is an assertion with no evidence attached");
+});
+
+// ── 4. Every reader opens the NEWEST baseline (COBIx on #3019, 2026-11-10) ──
+// The 2026-11-10 re-baseline left five builders opening an older folder by
+// path, with nothing on any page to say so. One picker now answers for them.
+block("4. readers open the newest baseline", () => {
+  const scratch = fs.mkdtempSync(path.join(os.tmpdir(), "cplidlatest-"));
+  try {
+    const mk = (d, withFile) => {
+      fs.mkdirSync(path.join(scratch, d));
+      if (withFile) fs.writeFileSync(path.join(scratch, d, "crosswalk.json"), "{}");
+    };
+    mk("2026-01-01", true); mk("2026-02-02", true);
+    mk("2026-03-03", false);                                  // a dated folder with no crosswalk
+    mk("_inputs", true);                                      // not a date
+    fs.writeFileSync(path.join(scratch, "2026-09-09_note.md"), "a dated note");
+    fs.writeFileSync(path.join(scratch, "2026-10-10"), "a file named like a date");
+    const r = spawnSync("python3", ["-c",
+      "import sys; sys.path.insert(0, 'kb'); import _college_identity_latest as L; print(L.latest_crosswalk_date(sys.argv[1]))",
+      scratch], { encoding: "utf8" });
+    check("(4) ⭐ the picker takes the newest dated FOLDER that holds crosswalk.json",
+      (r.stdout || "").trim() === "2026-02-02",
+      "got " + JSON.stringify((r.stdout || "").trim()) + " " + (r.stderr || "").slice(0, 200)
+      + "; a dated note, a date-named file and an empty dated folder all sort later and must not win");
+  } finally { fs.rmSync(scratch, { recursive: true, force: true }); }
+
+  const live = spawnSync("python3", ["kb/_college_identity_latest.py"], { encoding: "utf8" });
+  const newest = Array.from(COMMITTED_RECEIPTS).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort().pop();
+  check("(4) in this repo it answers the newest committed baseline",
+    !!newest && (live.stdout || "").trim().endsWith(path.join("kb", "college_identity", newest, "crosswalk.json")),
+    "newest tracked folder " + newest + ", picker said " + (live.stdout || "").trim());
+
+  // No builder names a dated identity folder by path. A pin kept on purpose says so beside it.
+  const PIN = /college_identity["',\s/]+20\d{2}-\d{2}-\d{2}["',\s/]+crosswalk/;
+  const pinned = [];
+  ["kb", "funding", "scripts"].forEach((dir) => {
+    fs.readdirSync(dir).filter((f) => /\.py$/.test(f)).forEach((f) => {
+      const src = fs.readFileSync(path.join(dir, f), "utf8"), lines = src.split("\n");
+      lines.forEach((ln, i) => {
+        if (/^\s*#/.test(ln) || !PIN.test(ln)) return;
+        const above = lines.slice(Math.max(0, i - 8), i).join("\n");
+        if (!/PINNED ON PURPOSE/.test(above)) pinned.push(dir + "/" + f + ":" + (i + 1));
+      });
+    });
+  });
+  check("(4) ⚠️ no builder opens a dated identity folder by path, unless its pin says PINNED ON PURPOSE",
+    pinned.length === 0, "pinned without a reason: " + pinned.join(", ")
+    + ". Ask kb/_college_identity_latest.py, or say beside the pin why the date is fixed.");
 });
 
 const failed = results.filter((r) => !r[1]);

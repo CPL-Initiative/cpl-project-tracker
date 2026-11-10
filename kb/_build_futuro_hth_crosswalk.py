@@ -50,6 +50,11 @@ MAPREF = os.path.join(HERE, "futuro_hth_map_reference.json")
 # The shared identity crosswalk (SkyLink, 2026-08-12) — MAP college_id <-> MIS
 # college code <-> every spelling our systems use. Preferred over name matching:
 # `cb_course_basic.CB_COLLEGE_ID` IS the MIS college code, so this is a CODED join.
+# PINNED ON PURPOSE to the 2026-08-12 baseline (S624, 2026-11-10): this builds a dated
+# deliverable for Futuro Health against the identity as it stood then (116 colleges, no
+# entity_kind). A later baseline carries Futuro Health itself as a partner and four more
+# entities, so repointing changes what the deliverable says. A rebuild for a new date
+# repoints through kb/_college_identity_latest.py and diffs the output first.
 IDENTITY = os.path.join(HERE, "college_identity", "2026-08-12", "crosswalk.json")
 
 CNA_TOP = "123030"          # MIS form (no dot) -- Certified Nurse Assistant

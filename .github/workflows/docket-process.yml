@@ -1,0 +1,84 @@
+name: Docket process
+
+# The Docket's processor (#2963 step 3; Sam's go in session, 2026-11-09: "yes, start step 3").
+#
+# A reviewer rules on a Commons case in COBI; the ruling is a kb_curation row (_DOCKET::<case id>,
+# field docket_ruling). This job reads the rulings, runs the commands the ruled choice names in
+# kb/docket/cases.json (as committed on main), writes a receipt with its undo under
+# kb/docket/receipts/, marks the case done, rebuilds the Commons status, and commits it all to main.
+#
+# What it runs is bounded by kb/_docket_process.py, not by this file: only a script on its ALLOWED
+# list, only with --apply beside --expect N (the script refuses unless today's count is the ruled
+# count), and only from the reviewed cases file, never from the ruling's own text. A choice whose
+# plan is words is left for a session.
+#
+# Triggers: nightly at 05:33 UTC, before the daily build's first rung (06:17), so the Commons shows
+# the result in the morning; and on demand from the Commons' "Process my rulings now", through the
+# docket-process Edge Function, which checks the reviewer and dispatches this with a server-side
+# token (the browser never holds a GitHub token).
+#
+# concurrency: daily-dashboard, so it never pushes to main beside the daily build or another apply.
+
+on:
+  schedule:
+    - cron: "33 5 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run reports what each ruling would run; apply runs it and commits"
+        required: true
+        default: apply
+        type: choice
+        options: [apply, dry-run]
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Read the rulings and carry them out
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          MODE: ${{ inputs.mode || 'apply' }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then echo "::error::SUPABASE_SERVICE_KEY is not set"; exit 1; fi
+          case "$MODE" in
+            dry-run) python kb/_docket_process.py | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            apply)   python kb/_docket_process.py --apply | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            *) echo "::error::mode must be apply or dry-run"; exit 1 ;;
+          esac
+
+      - name: Commit the receipts and the cases
+        if: ${{ always() && (inputs.mode || 'apply') == 'apply' }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A kb/
+          if git diff --cached --quiet; then echo "Nothing to commit."; exit 0; fi
+          git commit -m "Docket process: rulings carried out, receipts in kb/docket/receipts (run ${GITHUB_RUN_ID})"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1

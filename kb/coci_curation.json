@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-09T06:25:44Z",
-  "count": 30709,
+  "_synced_at": "2026-11-09T16:53:51Z",
+  "count": 30713,
   "curations": {
     "AERO M1001": {
       "unified_title": "AS200 Leadership Laboratory C",
@@ -109568,6 +109568,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1150": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T14:55:41.687122+00:00"
+    },
     "KINE M1151": {
       "unified_title": "Anatomy of Movement",
       "reviewed_by": "automerge-v1@bot",
@@ -115345,9 +115350,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1663": {
-      "unified_title": "Nutrition for Sports and Human Performance",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "discipline": "Nutritional Science/Dietetics",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T15:04:32.986406+00:00",
+      "unified_title": "Nutrition for Sports and Human Performance"
     },
     "KINE M1664": {
       "unified_title": "Kickboxing for Fitness - Level 1",
@@ -115551,6 +115557,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1738": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T15:05:36.975905+00:00"
+    },
     "KINE M1739": {
       "merge_into": "KINE M1728",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -115606,6 +115617,11 @@
       "unified_title": "Introduction to Sport and Recreation Management",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M1765": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T15:06:49.228666+00:00"
     },
     "KINE M1768": {
       "unified_title": "Introduction to Pickleball",
@@ -115990,6 +116006,11 @@
       "unified_title": "Fitness and Conditioning for Fire Fighters",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1896": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T15:07:34.801693+00:00"
     },
     "KINE M1897": {
       "unified_title": "Swim Intermediate",
@@ -116552,9 +116573,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M9020": {
-      "unified_title": "Functional Movement and Balance for the Mature Adult",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "discipline": "Health and Safety: Noncredit",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-09T15:09:12.683449+00:00",
+      "unified_title": "Functional Movement and Balance for the Mature Adult"
     },
     "KINE M9023": {
       "unified_title": "Body Dynamics/Aging Process-Older Adults",

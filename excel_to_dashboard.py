@@ -8429,6 +8429,10 @@ def export_unified_courses():
         c = curation.get(cid)
         return (c.get("discipline") or base) if c else base
 
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+    from discipline_list import split_disciplines as _split_disciplines
+    _mq_names = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
+
     def xdisc_of(cid):
         # Secondary (cross-listed) disciplines from curation — a comma-separated
         # MQ-discipline string -> list. Lets one course list under two disciplines
@@ -8444,8 +8448,9 @@ def export_unified_courses():
             v = mrec.get("cross_listed_disciplines") if mrec else None
         if not v:
             return None
-        parts = [p.strip() for p in str(v).split(",") if p.strip()]
-        return parts or None
+        # Two MQ names carry commas of their own ("Sign Language, American"), so
+        # the split reads the MQ list as its dictionary (kb/discipline_list.py).
+        return _split_disciplines(v, _mq_names) or None
 
     def substantive_curation(cid):
         # Curation presence implies human review (Verified) — EXCEPT a
