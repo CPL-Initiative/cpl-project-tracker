@@ -30,7 +30,10 @@ with no overlap but the generated dependency map and docs audit (whoever merges 
 4. **#3076 the exhibit re-analysis's Jev runner:** `kb/_exhibit_reanalysis_jev.py` on `typesafe-smoke.yml` (input
    `reanalysis`), step 9's two questions only, **no gate** (0.85 is the CCRR's; step 9 corrected). First sitting, run
    42873788079: no pair to ask, 13 issuers, five reading as training sites (filed under `jev` in the findings).
-5. **CPLBrain#754** Sheet 179's builder (carrying #746, closed); then **Open Asks Sheet 180** on this checkpoint's vault
+5. **#3080 the funding drawer's Priorities lines:** `csmSnapshot()` carries one line per priority from the funding
+   tab's own reads (TBA where unmeasured); the drawer lists them. Its test needs the runner's heap
+   (`--max-old-space-size=12288`); bare, it runs out of memory on `main` too.
+6. **CPLBrain#754** Sheet 179's builder (carrying #746, closed); then **Open Asks Sheet 180** on this checkpoint's vault
    branch.
 
 ## Decisions to honor
@@ -55,8 +58,8 @@ with no overlap but the generated dependency map and docs audit (whoever merges 
    2026-11-11 UTC. The lane is 22.6 KB against 20: compact its live mechanism text (the nightly SLO read, Phase 2) next.
 3. **`cer-procedures`:** Sheet 180 card 6; the next re-analysis request runs the checks, then the Jev runner. The lane is
    over budget too (22 KB): the *Add your credential* paragraph is the largest.
-4. **`csm-workspace` NEXT 0:** the sign-in with *Ask an approver*, the funding drawer's Priorities lines, Malone's four
-   questions. NEXT 1 and 2: the hover cards and every landing-page role; the denial email.
+4. **`csm-workspace` NEXT 0:** the sign-in with *Ask an approver*, Malone's four questions (the drawer's Priorities
+   lines shipped in #3080). NEXT 1 and 2: the hover cards and every landing-page role; the denial email.
 5. **`commons` NEXT:** Teach a rule on every reference, the Course auditor's count, the `--cmn` tokens.
 6. **`implementation-funding`:** the sender waits on RCCD IT's mailbox grant. **`library`:** DSP Version 3, IACA, the
    Microsoft 365 connector; the Library session may have moved it. **`college-district-identity`,
