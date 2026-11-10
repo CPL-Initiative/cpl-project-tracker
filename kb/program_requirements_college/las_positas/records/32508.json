@@ -66,7 +66,6 @@
   "arithmetic": {
    "pass": true,
    "status": "equal",
-   "meets": true,
    "computed": [
     18.0,
     25.0
@@ -77,7 +76,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -99,10 +98,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -125,8 +121,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -340,5 +336,20 @@
    "ETHS 5/PSYC 21 and ETHS 6/SOC 3 share titles (likely cross-listed) but are printed as separate rows."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42816943064,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "including both of the following:\nThe California General Education Transfer Curriculum (Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Las Positas College AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' then 'Additional General Education and Elective Units ... 42.0 · Total: 60.0' (English AA-T 32182; college page read 42815817415); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38984747530"
 }
