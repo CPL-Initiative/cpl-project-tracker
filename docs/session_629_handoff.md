@@ -37,8 +37,9 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
    Requirements*, PDF 208K) and `deanza.edu/articulation/ge-requirements`. deanza.edu refuses the reader (403). No
    figure in the catalog gives a pattern's units, so no `set` step can rest on De Anza's own words yet. The lane
    records it.
-4. **Pages.** The 07:49Z deploy of `main` timed out in *Deploy to GitHub Pages* (GitHub's side; the 07:36Z deploy
-   had succeeded). A fresh `pages.yml` dispatch went out at 08:16Z.
+4. **Pages.** Three of four deploys since 06:50Z timed out in *Deploy to GitHub Pages* (GitHub's side; the 07:36Z one
+   succeeded), the 08:18Z dispatch included. The #3037 merge's deploy (run 42783937448) was running at sign-off. If
+   it failed too, dispatch `pages.yml` once more and say so to Sam: the site then holds the 07:36Z build.
 
 ## Read first
 
