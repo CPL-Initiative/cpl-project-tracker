@@ -95,7 +95,11 @@
      16.0,
      19.0
     ],
-    "why": []
+    "why": [],
+    "fill": [
+     0.0,
+     3.0
+    ]
    }
   },
   "repeated": {
@@ -144,7 +148,7 @@
     "min": 16,
     "max": 19
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Have the skills necessary to pass an American Welding Society standard welding certification test.",
     "Operate safely in a welding workplace environment."
@@ -157,7 +161,8 @@
     "welders",
     "certified inspectors",
     "engineers"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -363,5 +368,20 @@
    "Core course units sum to 33, matching the printed block total."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

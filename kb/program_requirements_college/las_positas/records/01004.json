@@ -141,14 +141,15 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply creative thinking through the production of original artworks.",
     "Apply the principles of visual design for the communication and expression of ideas.",
     "Create works of art that synthesize quality technical execution with content and concept.",
     "Demonstrate technical proficiency in use of art media, tools, processes and technology."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -285,5 +286,20 @@
    "ARHS 6 (Museum & Gallery Techniques) is in List A but not in the closed list; recorded as a catalog addition."
   ]
  },
- "extracted_run": "38935144431"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38935144431"
 }

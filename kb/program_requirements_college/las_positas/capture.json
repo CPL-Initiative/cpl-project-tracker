@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 204,
  "with_closed_list": 201,
- "started": "2026-11-10T12:36:57Z",
+ "started": "2026-11-10T20:10:35Z",
  "curriqunet": {
   "catalog": 164,
   "view_prefix": "https://laspositas.curriqunet.com/catalog/iq/",
@@ -27,7 +27,7 @@
  "pages_read": 201,
  "banner_h1": null,
  "loads": 526,
- "seconds": 2435.3,
+ "seconds": 2650.7,
  "found": 195,
  "by_method": {
   "no_closed_list": 3,
@@ -124,100 +124,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/las_positas",
-  "kept": 186,
-  "programs": 9,
-  "list": [
-   {
-    "control_number": "01011",
-    "title": "Computer Information Systems",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1557",
-    "coverage": 0.947,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1557",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "15504",
-    "title": "Cybersecurity and Network Administration",
-    "award": "A.S. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1599",
-    "coverage": 0.889,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1599",
-    "was_coverage": 0.944,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "15505",
-    "title": "Network Support Professional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1602",
-    "coverage": 0.909,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1602",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "16367",
-    "title": "Viticulture",
-    "award": "A.S. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2127",
-    "coverage": 0.81,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2127",
-    "was_coverage": 0.857,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33900",
-    "title": "Computer Information Technologist",
-    "award": "A.S. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1558",
-    "coverage": 0.909,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1558",
-    "was_coverage": 0.955,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36361",
-    "title": "Liberal Arts & Sciences: Computer Studies",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877",
-    "coverage": 0.976,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37520",
-    "title": "Cybersecurity Professional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1600",
-    "coverage": 0.938,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1600",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37527",
-    "title": "IT Support Professional",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1601",
-    "coverage": 0.8,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1601",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40478",
-    "title": "Red Hat Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1630",
-    "coverage": 0.917,
-    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1630",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 195,
+  "programs": 0,
+  "list": []
  },
- "run": "42816943064"
+ "run": "42892238131"
 }
