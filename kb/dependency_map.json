@@ -31483,6 +31483,7 @@
   "docs",
   "kb/*_dryrun",
   "kb/coci_minted_courses.json",
+  "kb/receipts",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",
   "kb/row_audit/*.md"
