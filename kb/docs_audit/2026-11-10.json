@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1444,
-    "bytes": 14581981,
-    "over_budget": 6,
+    "bytes": 14585336,
+    "over_budget": 5,
     "handoff_max": 625,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59915,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2612653,
+        "bytes": 2624604,
         "over": 0
       },
       "kb_note": {
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 548678,
-        "over": 5
+        "bytes": 539466,
+        "over": 4
       },
       "handoff": {
         "files": 586,
-        "bytes": 4025077,
+        "bytes": 4025693,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 6,
+      "oversized_doc": 5,
       "vault_heavy_path": 75
     },
     "vault": {
       "files": 26406,
-      "bytes": 4449804765,
-      "heavy_bytes": 3199776086,
+      "bytes": 4449815948,
+      "heavy_bytes": 3199780803,
       "heavy_share": 0.719,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -181,19 +181,6 @@
       },
       "message": "20,724 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cer-procedures.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 27566,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 7566,
-        "ratio": 1.38
-      },
-      "message": "27,566 B is 1.4× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/commons.md"
     },
     {
       "rule": "oversized_doc",
@@ -349,10 +336,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10607882,
+        "bytes": 10612599,
         "kind": "dir"
       },
-      "message": "directory totals 10,607,882 B inside the vault"
+      "message": "directory totals 10,612,599 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
