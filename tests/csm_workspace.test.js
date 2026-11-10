@@ -291,6 +291,51 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     log.splice(log.length - 3, 3);
     d.W._leadMail(false);
   }
+  // One side panel under the record: People, CPL landing page, History, and the review (the clarity mock; issue 2978).
+  {
+    const e = setup({ signedIn: true });
+    const rec = () => e.root.querySelector("#cw-record"), side = () => rec().querySelector("#cw-side");
+    const shown = () => Array.prototype.filter.call(side().querySelectorAll("[data-sidepart]"), (p) => !p.hidden).map((p) => p.getAttribute("data-sidepart")).join();
+    const word = (k) => rec().querySelector('.decide [data-side="' + k + '"]');
+    check("5e1: three words open the panel, none pressed at first, and the panel starts closed",
+      ["people", "page", "log"].every((k) => !!word(k) && word(k).getAttribute("aria-pressed") === "false" && word(k).getAttribute("aria-controls") === "cw-side") &&
+      flat(word("people")) === "People" && flat(word("page")) === "CPL landing page" && flat(word("log")) === "History" && side().hidden);
+    clickEl(e.window, rec().querySelector('.visit [data-act="toreview"]'));
+    check("5e2: Review the request opens the review in the panel, alone",
+      !side().hidden && shown() === "review" && !!side().querySelector('[data-sidepart="review"] .review [data-act="accept"]'));
+    check("5e3: Accept says what it does, beside the buttons",
+      /Accept marks the participation confirmation as met and opens the acceptance email for you to send\. Nothing is sent until you send it\./.test(flat(side().querySelector('[data-does="part"]'))));
+    clickEl(e.window, word("people"));
+    const ppl = side().querySelector('[data-sidepart="people"]');
+    check("5e4: People is one list with Role, Person and Source, who sent the request above it, and the word reads pressed",
+      shown() === "people" && word("people").getAttribute("aria-pressed") === "true" &&
+      (Array.prototype.map.call(ppl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Role|Person|Source" || /Reading the contacts/.test(flat(ppl))) &&
+      /Who sent it/.test(flat(ppl)) && /Dana Lee/.test(flat(ppl)) && !!ppl.querySelector('[data-pop="contacts"]') && !!ppl.querySelector('[data-pop="people"]'));
+    clickEl(e.window, word("log"));
+    check("5e5: History holds the log's form and the CO Monitor's note, and takes the panel from People",
+      shown() === "log" && !!side().querySelector('[data-sidepart="log"] form[data-logform]') && /CO Monitor/.test(flat(side().querySelector('[data-sidepart="log"]'))));
+    clickEl(e.window, word("log"));
+    check("5e6: the same word closes the panel", side().hidden && word("log").getAttribute("aria-pressed") === "false");
+    clickEl(e.window, word("page"));
+    check("5e7: CPL landing page opens in the panel with the way out to the page, or says MAP holds no address",
+      shown() === "page" && (!!side().querySelector('[data-sidepart="page"] a[target="_blank"]') || /No landing page address in MAP/.test(flat(side()))));
+    clickEl(e.window, rec().querySelector('.visit [data-act="toreview"]'));
+    e.W._state.view = "all"; e.W.paint();
+    clickEl(e.window, e.root.querySelector('.row[data-sel="' + OTHER + '"]'));
+    check("5e8: choosing another college closes an open review", e.W._state.side === "" && side().hidden);
+    check("5e8a: the review has one heading a screen reader hears: the part's own is for the focus alone",
+      /\(k === "review" \? " sr" : ""\)/.test(SRC) && !/\bsr\b/.test(side().querySelector("#cw-side-people").className));
+    check("5e8b: Recommended action can take the focus after a decision", rec().querySelector("#cw-reason").getAttribute("tabindex") === "-1");
+    check("5e8c: a landing page address is drawn as a link only when it is http or https, and the page part loads the contacts as People does",
+      /r\.landing && \/\^https\?:\\\/\\\/\/i\.test\(r\.landing\)/.test(SRC) && /state\.side === "people" \|\| state\.side === "page"/.test(SRC) &&
+      /CT\.state === "error" \? esc\(CT\.error\) : "Reading the contacts/.test(SRC));
+    check("5e8d: deciding one of two waiting requests leaves the review open for the other",
+      /waitingKinds\(r\)\.filter\(function \(k\) \{ return k !== kind; \}\)\.length/.test(SRC) && /state\.side === "review" && !left/.test(SRC));
+    const out = setup({ signedIn: false });
+    check("5e9: a reader who is not signed in gets the landing page word alone: no People, no History, no part for either",
+      !out.root.querySelector('[data-side="people"]') && !out.root.querySelector('[data-side="log"]') && !!out.root.querySelector('[data-side="page"]') &&
+      !out.root.querySelector('[data-sidepart="people"]') && !out.root.querySelector('[data-sidepart="log"]'));
+  }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('[data-stage="notyet"]'));
   check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
