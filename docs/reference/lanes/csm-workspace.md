@@ -87,6 +87,7 @@ itpi just added the field in map users. if they attest, we can accept that now a
 - **The exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation (Sam, in session 2026-11-10: *"Nc yes exact wor whole"*, then *"Word"*; COBIx had relayed it on #2999).** No form is needed and the form stays out under Scenario 4. The workspace reads it so since #3012 and its record reads *Noncredit share: complete*; the funding tab since #3033: the role meets `nc_team` as well as `nc_coord`, a college with the role is offered no form, counts as attested in the filter, and a form it left waiting shows no chip (guard `tests/cpl_funding_nc_lead_in_map.test.js`). The reviewer's confirmations panel still lists a form on file, so Accept and Reject stay reachable.
 - **The Noncredit CPL Lead is met by the role in MAP or an accepted attestation** (`ncMet`). A form still waiting at a
   college that holds the role asks nothing of the team (`ncWaiting`): no pill, no place in Waiting on the team.
+- **The Nudge logs itself (S625, 2026-11-10).** COBI sends nothing, so the reviewer says the mail merge went out: once a list has been downloaded or copied, *Log this Nudge* writes one `csm_log` entry for each checked institution (kind email, what was asked for, how many people, no name or address) with a follow-up a week out. One request carries every row on the reviewer's credential (`nudgeLog` in `cpl_funding.js`; the Nudge module holds no write), it files once a window, and the workspace reads its log again when told (`cpl-csm-log-changed`). `csm_log` stays under DR-09. Guard `tests/cpl_funding_nudge_log.test.js`.
 - **No decline piece, in the workspace or the funding tab.** No *Mark Declined participation*, no Declined list, pill
   or chip, no decline line in the review, no gray row in Nudge, and nothing reads a mark (S624 took the funding tab's
   `setDeclined`, its chip and the Nudge's declined word; read 2026-11-10: 0 of 5 notes rows carry one).
@@ -116,9 +117,8 @@ List already carries the same control on its side panel (`pgrip` in `commons_lis
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
-3. **Nudge logs itself:** a mail merge writes one entry per college it reached, with a follow-up date.
-4. **Other activities** (Sam: MAP onboarding, the activity cards): a second `activity` value and its own queue.
-5. **The CSM team's Slack channel is `#mapanditpiteam`** (read S555, 2026-11-03, read-only): the ITPI CSMs and
+3. **Other activities** (Sam: MAP onboarding, the activity cards): a second `activity` value and its own queue.
+4. **The CSM team's Slack channel is `#mapanditpiteam`** (read S555, 2026-11-03, read-only): the ITPI CSMs and
    the MAP team coordinate there, and it carries college requests the log should hold (a college's new CPL
    Coordinator asking to join the listserv, 2026-11-02; who answers which college). Proposed: a **Log from Slack**
    entry kind carrying the thread's link, written by a reviewer from the workspace; never an automatic import, and

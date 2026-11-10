@@ -1276,6 +1276,9 @@
       '<p class="grant-acts"><button type="button" class="word lead" data-grant="ask"' + (GRANT.busy ? " disabled" : "") + ">Ask an approver</button></p>" +
       '<p class="note" role="status" id="cw-grant-msg">' + esc(GRANT.msg) + "</p></section>";
   }
+  // The Nudge logs itself from the funding tab (cpl_funding.js nudgeLog): read the log again so its entries and
+  // their follow-ups show here without a reload.
+  window.addEventListener("cpl-csm-log-changed", function () { if (LOG.asked) loadLog(); });
   // The door's later words (declined, lapsed, no approval yet) reach the note; the button stays, so the reader asks again.
   window.addEventListener("cpl-funding-door-said", function (e) {
     if (GRANT.ok !== false || !e || !e.detail || !e.detail.msg) return;
