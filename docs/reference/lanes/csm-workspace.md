@@ -120,6 +120,17 @@ History, and the review opens there; Accept says what it does. Access requests a
 date due. The Action center heading and the four-column board are gone. Tests: `tests/csm_workspace.test.js`
 (5b6 to 5f8, 13a0, 13a1).
 
+**LIVE: the review and the panel, after Sam's look at the live page (2026-11-10, his go in session on all five; #3061,
+#3063, #3064 and the two after).** Sam: *"why do we click on Review when that's what we're there to do? shouldn't it just
+be open for review and action?"* and *"links still opening to new tabs instead of sidebars"*. A waiting request's review
+opens in the panel by itself (`sideOf`; a **Review** word closes it, `state.side = "none"`). The scroll gate is gone, which
+reverses his 2026-11-02 *"unless they seen that section"*: Deny is open, Accept waits on the checks. Implementation
+Funding in the record opens the drawer, which shows the CO Monitor's note (`fundWord`, `fundOpener`). The landing page
+draws in a sandboxed frame in the panel and behind *Show the landing page here* in the review (`landingFrame`); MAP's
+landing pages send no X-Frame-Options (read 2026-11-10), and a refusing site leaves a blank frame with the new-tab link
+beside it. Contacts on file and the people filter sit in People; the pop-ups are gone (`contactsOnFileHtml`,
+`state.psrc`). Not yet seen in a signed-in browser: the a11y sweep reads the signed-out view only.
+
 ## NEXT
 
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
