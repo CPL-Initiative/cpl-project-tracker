@@ -246,6 +246,31 @@ two["blocks"][0]["stated"] = {"min": 2, "max": 4}
 check("a block stating a range changes nothing",
       R.reconcile(two, acct_text, "Monterey Peninsula College", "Certificate of Achievement", steps=steps)[1] == [])
 
+print("Alameda's semester layouts (S634; Sam, Open Asks Sheet 180 card 2: count)")
+def _sem(name, stated, units):
+    return {"name": name, "rule": "all", "stated": {"min": stated, "max": stated},
+            "courses": [{"code": "X %d" % i, "units": u, "units_max": None} for i, u in enumerate(units)]}
+sem = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": None, "max": None}},
+       "blocks": [_sem("FIRST SEMESTER", 10, [4, 6]), _sem("SECOND SEMESTER", 12, [4, 4, 4]),
+                  {"name": "Recommended prior to enrollment", "rule": "recommended", "courses": []}]}
+sem_text = "FIRST SEMESTER ... 10.00 SECOND SEMESTER ... 12.00"
+ALA = "College of Alameda"
+got, got_notes = R.reconcile(sem, sem_text, ALA, "Certificate of Achievement", steps=R.load_steps())
+check("the subtotals' sum is the total, marked summed",
+      got["program"]["total_units"] == {"min": 22.0, "max": 22.0} and got["program"].get("total_units_summed") is True
+      and "SUMMED FROM THE SEMESTERS" in got_notes[0]["words"])
+bad = json.loads(json.dumps(sem)); bad["blocks"][1]["courses"][0]["units"] = 3
+check("a semester that does not add to its subtotal changes nothing",
+      R.reconcile(bad, sem_text, ALA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+held = json.loads(json.dumps(sem)); held["program"]["degree_total"] = {"min": 61, "max": 64}
+check("a record holding a printed total changes nothing",
+      R.reconcile(held, sem_text, ALA, "A.S. Degree", steps=R.load_steps())[1] == [])
+other = json.loads(json.dumps(sem)); other["blocks"].append({"name": "Electives", "rule": "choose_units", "courses": []})
+check("another block asking for units changes nothing",
+      R.reconcile(other, sem_text, ALA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a heading the page does not print changes nothing",
+      R.reconcile(sem, "FIRST SEMESTER only", ALA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
