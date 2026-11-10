@@ -41,10 +41,13 @@ function load(rx) {
 }
 const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 12; i++) await tick(); }
+/* CI runs files side by side, so a fixed count of ticks can end before the panel's fetch paints: wait for it, up to 5 s. */
+async function until(fn) { const end = Date.now() + 5000; while (!fn() && Date.now() < end) await new Promise((r) => setTimeout(r, 20)); }
 
 (async function () {
   const t = load(RX);
   await t.M.boot(); await settle();
+  await until(() => t.d.getElementById("exh-l-rx"));
   const p = t.d.getElementById("exh-l-rx");
   check("(1) ⭐ the panel shows under the re-analyze box, labelled", !!p && p.getAttribute("aria-label") === "The last re-analysis"
     && !!t.d.getElementById("exh-l-note"));
@@ -59,6 +62,7 @@ async function settle() { for (let i = 0; i < 12; i++) await tick(); }
 
   const t2 = load(null);
   await t2.M.boot(); await settle();
+  await until(() => t2.d.getElementById("exh-l-note") && t2.M._state && t2.M._state.ls && t2.M._state.ls.rx === false);
   check("(3) no file, no panel; the box stays", !t2.d.getElementById("exh-l-rx") && !!t2.d.getElementById("exh-l-note"));
 
   const dir = "kb/exhibits_reanalysis";
