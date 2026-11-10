@@ -1,0 +1,22 @@
+{
+ "_readme": "S627 SkyBode, 2026-11-10. De Anza College: 128 of 212 passing; 73 of its 84 failures are degrees, and the ones sampled carry no program total (total_min null) and read incomplete (Business Administration A.A. 05952 p.66, Automotive Machining A.S. 05962 p.63, Real Estate 05954 p.143, Art History 05965 p.50). De Anza runs on quarters. This read prints four program pages (63-66) to see whether a degree page prints a total, or only its major units with the degree total stated elsewhere. One load of the 2025-2026 catalog PDF, no model call. Second read: the first asked www.deanza.edu, which answers 403 (run 42775376804); this one reads the copy Sam hand-filed (kb/hand_filed_catalogs/de_anza.json).",
+ "college": "De Anza College",
+ "questions": {
+  "program_total": "Does the degree page print a program total, and in what words, or only the major's units?"
+ },
+ "keywords": [
+  "[Uu]nits"
+ ],
+ "pages": [
+  {
+   "url": "https://github.com/user-attachments/files/33599457/dac_catalog_2025-2026.pdf",
+   "answers": [
+    "program_total"
+   ]
+  }
+ ],
+ "pdf_span": [
+  63,
+  66
+ ]
+}
