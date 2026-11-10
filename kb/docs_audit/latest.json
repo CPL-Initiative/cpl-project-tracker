@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 1453,
-    "bytes": 14653826,
+    "bytes": 14654181,
     "over_budget": 6,
     "handoff_max": 633,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60007,
+    "always_loaded_bytes": 60006,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60007,
+        "bytes": 60006,
         "over": 1
       },
       "other": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2640315,
+        "bytes": 2640722,
         "over": 0
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 538970,
+        "bytes": 538919,
         "over": 4
       },
       "handoff": {
@@ -58,12 +58,11 @@
     "by_rule": {
       "oversized_doc": 6,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 75,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 75
     },
     "vault": {
       "files": 26471,
-      "bytes": 4495835350,
+      "bytes": 4495835705,
       "heavy_bytes": 3240015520,
       "heavy_share": 0.721,
       "ignore_filters": [
@@ -150,13 +149,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60007,
+        "bytes": 60006,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 7,
+        "over_by": 6,
         "ratio": 1.0
       },
-      "message": "60,007 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,006 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -187,13 +186,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 21621,
+        "bytes": 21643,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 1621,
+        "over_by": 1643,
         "ratio": 1.08
       },
-      "message": "21,621 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "21,643 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
@@ -226,13 +225,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24532,
+        "bytes": 24639,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4532,
+        "over_by": 4639,
         "ratio": 1.23
       },
-      "message": "24,532 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,639 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -984,17 +983,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_633_handoff.md",
-      "detail": {
-        "commits_since": 9,
-        "budget": 6,
-        "handoff": "session_633_handoff.md"
-      },
-      "message": "9 commit(s) have landed since `docs/session_633_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
