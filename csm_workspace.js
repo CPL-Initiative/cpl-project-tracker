@@ -135,6 +135,27 @@
       "#tab-csm-workspace .conds { margin:0; padding:0; list-style:none; display:grid; gap:6px; }",
       "#tab-csm-workspace .cond { display:grid; grid-template-columns:5.5rem minmax(0, 1fr); gap:10px; align-items:baseline; font-size:.92rem; }",
       "#tab-csm-workspace .cond .why { color:var(--cw-muted); font-size:.86rem; }",
+      // The record as conditions in a table, Recommended action and the email preview (the clarity mock, Malone's change 4).
+      "#tab-csm-workspace .facts { width:100%; border-collapse:collapse; table-layout:fixed; }",
+      "#tab-csm-workspace .facts th, #tab-csm-workspace .facts td { text-align:left; padding:9px 8px; border-top:1px solid var(--cw-line-soft); vertical-align:top; font-size:.93rem; overflow-wrap:anywhere; }",
+      "#tab-csm-workspace .facts thead th { border-top:0; color:var(--cw-muted); font-size:.78rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }",
+      "#tab-csm-workspace .facts tbody th { font-weight:600; color:var(--cw-heading); }",
+      "#tab-csm-workspace .facts .why { display:block; color:var(--cw-muted); font-size:.86rem; font-weight:400; }",
+      "#tab-csm-workspace .st { font-weight:700; }",
+      "#tab-csm-workspace .st.met { color:var(--cw-met); }",
+      "#tab-csm-workspace .st.not { color:var(--cw-ask-fg); background:var(--cw-ask-bg); border-radius:4px; padding:0 6px; }",
+      "#tab-csm-workspace .visit { border:1px solid var(--cw-line); border-top:4px solid var(--cw-gold); border-radius:10px; padding:14px 16px; display:grid; gap:8px; background:var(--cw-surface); }",
+      "#tab-csm-workspace .visit h4 { margin:0; font-family:var(--cw-serif); font-size:1.05rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .visit .reason { margin:0; font-family:var(--cw-serif); font-size:1.25rem; color:var(--cw-title); }",
+      "#tab-csm-workspace .visit .status { margin:0; }",
+      "#tab-csm-workspace .mail-h { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+      "#tab-csm-workspace .mail-h .k { margin:0; }",
+      "#tab-csm-workspace .mail-f { margin:0; display:grid; grid-template-columns:minmax(64px, auto) minmax(0, 1fr); gap:6px 14px; font-size:.9rem; }",
+      "#tab-csm-workspace .mail-f dt { font-weight:700; color:var(--cw-heading); }",
+      "#tab-csm-workspace .mail-f dd { margin:0; color:var(--cw-ink); min-width:0; overflow-wrap:anywhere; white-space:pre-wrap; }",
+      "#tab-csm-workspace .mail-f dd + dt, #tab-csm-workspace .mail-f dd + dt + dd { border-top:1px solid var(--cw-line-soft); padding-top:6px; }",
+      "#tab-csm-workspace .tpl-edit { display:grid; gap:8px; }",
+      "#tab-csm-workspace .tpl-edit[hidden], #tab-csm-workspace .mail-f[hidden], #tab-csm-workspace .tpl-row[hidden], #tab-csm-workspace .tpl-meta[hidden] { display:none; }",
       "#tab-csm-workspace .ncline { margin:8px 0 0; font-size:.9rem; color:var(--cw-ink-2); }",
       "#tab-csm-workspace .tpl { display:grid; gap:8px; background:var(--cw-page); border:1px solid var(--cw-line); border-radius:8px; padding:12px 14px; }",
       "#tab-csm-workspace .tpl-row { display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; }",
@@ -293,7 +314,7 @@
     "--cw-muted:#58677D; --cw-heading:#082B61; --cw-title:#072C66; --cw-link:#0D5BC6; --cw-accent:#1671D9; --cw-gold:#F4B300; " +
     "--cw-line:#D9E4EF; --cw-line-soft:#E8EEF5; --cw-field-line:#6E7F96; --cw-track:#E3ECF5; --cw-pill-bg:#EAF4FE; " +
     "--cw-pill-fg:#355A80; --cw-ask-bg:#FFF4D6; --cw-ask-fg:#5C4000; --cw-warn-fg:#8A2316; --cw-sel:#EEF5FD; --cw-guide:#9AA9BC; " +
-    "--cw-paper:#FFFFFF; --cw-paper-ink:#1C1C1A; --cw-dialog:#FFFFFF; --cw-serif:Georgia,'Times New Roman',serif; " +
+    "--cw-met:#1F5D3A; --cw-paper:#FFFFFF; --cw-paper-ink:#1C1C1A; --cw-dialog:#FFFFFF; --cw-serif:Georgia,'Times New Roman',serif; " +
     "--cw-sans:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;";
   var DARK = "--cw-page:var(--surface-muted); --cw-page-end:var(--surface-muted); --cw-surface:var(--surface); " +
     "--cw-ink:var(--text-body); --cw-ink-2:var(--text-body); --cw-muted:var(--text-muted); --cw-heading:var(--text-strong); " +
@@ -301,7 +322,7 @@
     "--cw-line:var(--border); --cw-line-soft:var(--border); --cw-field-line:var(--border-strong); --cw-track:var(--surface-muted); " +
     "--cw-pill-bg:var(--surface-muted); --cw-pill-fg:var(--text-body); --cw-ask-bg:var(--gold-soft); --cw-ask-fg:var(--mustard-text); " +
     "--cw-warn-fg:var(--danger-text); --cw-sel:var(--surface-muted); --cw-guide:var(--text-faint); --cw-paper:var(--surface); " +
-    "--cw-paper-ink:var(--text-body); --cw-dialog:var(--surface-opaque);";
+    "--cw-paper-ink:var(--text-body); --cw-dialog:var(--surface-opaque); --cw-met:var(--success-text);";
   var CSS_ID = "csm-workspace-css";
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
@@ -439,7 +460,19 @@
   var NUDGE_SUBJ = /a participation confirmation for /;
   /* Each email's receipt, and its undo (COBIx on issue 2967, 16:17Z): Sent writes "<prefix>: …"; It bounced writes
      "It bounced, <that receipt>", and the later of the two decides, so a bounce puts the college back in the queue. */
-  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent" };
+  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent", lead: "Noncredit CPL Lead ask sent" };
+  /* The Noncredit CPL Lead ask (Sam, 2026-11-09: the ask is "for the role in MAP ... if they attest, we can accept that
+     now as well"). Open when the noncredit share applies, the role is not in MAP, no attestation stands and none waits.
+     A college owing the confirmation too gets both asks in one email ("both"), whose receipt is the nudge's, told
+     apart by its subject. An ask counts as made for 14 days, as the nudge does. */
+  var BOTH_SUBJ = /: two steps for /;
+  function leadOpen(r) { return !!(r.nc && !ncMet(r) && !ncWaiting(r)); }
+  function leadAsked(r) {
+    if ((state.sent || {})[r.key + "|lead"] || (state.sent || {})[r.key + "|both"]) return true;
+    var since = plusDays(-14), a = lastSent(r, "lead"), b = lastSent(r, "nudge");
+    return !!(a && String(a.created_at || "").slice(0, 10) >= since) ||
+      !!(b && BOTH_SUBJ.test(String(b.body || "")) && String(b.created_at || "").slice(0, 10) >= since);
+  }
   function lastSent(r, tpl) {
     var p = SENT[tpl] + ": ", rows = logFor(r.key).filter(function (x) {
       var b = String(x.body || "");
@@ -453,13 +486,15 @@
       return x.kind === "email" && re.test(String(x.body || "")) && (!since || String(x.created_at || "").slice(0, 10) >= since);
     });
   }
-  function isSent(r, tpl) { return !!(state.sent || {})[r.key + "|" + tpl] || !!lastSent(r, tpl); }
+  function isSent(r, tpl) {
+    return !!(state.sent || {})[r.key + "|" + tpl] || (tpl === "nudge" && !!(state.sent || {})[r.key + "|both"]) || !!lastSent(r, tpl);
+  }
   function readyOf(r) {
     if (waitingKinds(r).length) return "wait";
     // state.sent bridges the moment between a Sent that saved and the log's re-read.
     if (r.part.confirmed && !isSent(r, "accept")) return "accept";
     if (r.nc && r.nc.standing && !isSent(r, "accept_nc")) return "accept_nc";
-    if (r.part.confirmed) return null;
+    if (r.part.confirmed) return leadOpen(r) && !leadAsked(r) ? "lead" : null;
     return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ? null : "nudge";
   }
   function bouncedSince(r, re) {
@@ -475,15 +510,19 @@
   }
   var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
     accept: "Send the acceptance.", accept_nc: "Send the noncredit attestation acceptance.",
-    nudge: "Send the request for the participation confirmation." };
+    nudge: "Send the request for the participation confirmation.",
+    lead: "Ask the college to give its lead the Noncredit CPL Lead role in MAP." };
   // One wording for the email that is due, whatever the list (COBIx on PR 3049): Ready to send and every other list
   // read it from here, so the same email never reads two ways.
   function readyWords(r, rd) {
     var mw = rd === "accept" ? missingWords(r) : [], still = mw.length ? " Still waiting: " + mw.join("; ") + "." : "";
     if (notReceived(r)) return "Resend the " + (rd === "accept" ? "acceptance" : "noncredit attestation acceptance") + ": confirmed " +
       shortDate(rd === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) + ", and the first email did not reach the college." + still;
+    if (rd === "nudge" && leadOpen(r)) return "Send one email asking for the confirmation and the Noncredit CPL Lead role in MAP.";
     return READY_WORDS[rd] + still;
   }
+  // The email the college's state calls for: the one Ready to send holds, with both asks in one email where both are open.
+  function recTpl(r) { var rd = readyOf(r); return rd === "nudge" && leadOpen(r) ? "both" : SENT[rd] ? rd : null; }
   function nextStep(r) {
     if (state.view === "send" && readyOf(r)) return readyWords(r, readyOf(r));
     // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
@@ -568,9 +607,9 @@
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     return VIEWS[state.view] && state.view !== "open" ? TAB + "/" + state.view : TAB;
   });
-  var READY_RANK = { accept: 1, accept_nc: 2, nudge: 3, wait: 4 };
+  var READY_RANK = { accept: 1, accept_nc: 2, lead: 3, nudge: 4, wait: 5 };
   function sortRank(r) {
-    if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 5;
+    if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 6;
     var s = stageOf(r), du = dueOf(r), rd = readyOf(r);
     // Needs you, most pressing first (COBIx on PR 3049): a request waiting on the team, an email that never reached
     // the college, a follow-up due, then the emails in Ready to send's own order, so a resend is never buried under the
@@ -766,11 +805,25 @@
         }).join("") : '<ul class="queue" aria-label="' + esc(v.label) + '"><li><p class="empty">Nothing here.</p></li></ul>') + "</div>";
   }
   function condLabel(c) { return c.pending ? "Pending" : c.met ? "Met" : "Not met"; }
+  function recOf(r) {
+    if (waitingKinds(r).length) return { reason: "Review the request first", why: nextStep(r) + " The acceptance is ready once it is accepted.", review: true };
+    var t = recTpl(r), du = dueOf(r);
+    if (t === "accept") return notReceived(r)
+      ? { reason: "Resend the acceptance", why: "Confirmed " + shortDate(r.part.confirmedAt) + ". The first acceptance did not reach the college." }
+      : { reason: "Send the acceptance", why: "The participation confirmation is accepted" + (r.part.confirmedAt ? " (" + shortDate(r.part.confirmedAt) + ")" : "") + ", and no acceptance has gone out." };
+    if (t === "accept_nc") return { reason: "Send the noncredit attestation acceptance", why: "The team accepted the attestation, and no acceptance has gone out." };
+    if (t === "both") return { reason: "Send both in one email", why: "The confirmation and the Noncredit CPL Lead are both open, so the college gets one email." };
+    if (t === "nudge") return { reason: "Send the confirmation request", why: "No participation confirmation is on file." };
+    if (t === "lead") return { reason: "Send the Noncredit CPL Lead ask", why: r.nc && r.nc.leadNear
+      ? "The landing page lists a close title. The condition is met by the Noncredit CPL Lead role in MAP."
+      : "MAP shows no Noncredit CPL Lead for the college. The role in MAP meets the condition." };
+    if (du && du.follow_up_on <= today()) return { reason: "Follow up", why: nextStep(r) };
+    return { reason: "No email needed", why: nextStep(r) };
+  }
   function recordHtml() {
     var r = state.sel ? rowOf(state.sel) : null;
     if (!r) return '<div class="pane"><p class="empty">Choose a college to see its record.</p></div>';
     var w = waitingKinds(r), act = [];
-    if (w.length) act.push('<button type="button" class="word lead" data-act="toreview">Review the request</button>');
     if (S.reviewer && r.part.confirmed && r.req && r.req.part && r.req.part.email) act.push('<button type="button" class="word" data-act="mail" data-kind="part">Email the confirmation acceptance again</button>');
     if (S.reviewer && r.nc && r.nc.standing && r.req && r.req.nc && r.req.nc.attestor_email) act.push('<button type="button" class="word" data-act="mail" data-kind="nc">Email the attestation acceptance again</button>');
     if (S.reviewer) act.push('<button type="button" class="word" data-pop="contacts">Contacts on file</button>' +
@@ -780,17 +833,35 @@
       if (lastSent(r, tpl)) act.push('<button type="button" class="word" data-act="bounced" data-kind="' + tpl + '">It bounced: ' +
         esc(SENT[tpl].replace(/ sent$/, "").toLowerCase()) + "</button>");
     });
-    var conds = '<ul class="conds">' + r.conds.map(function (c) {
-      return '<li class="cond"><span class="pill' + (c.met ? "" : c.pending ? "" : " ask") + '">' + condLabel(c) + "</span><span>" + esc(c.words) +
-        (c.counts ? ' <span class="why">' + esc(c.counts) + "</span>" : "") + "</span></li>";
-    }).join("") + "</ul>";
-    // The role on the college's MAP landing page (Sam, 2026-11-09) stands in for the whole attestation (2026-11-10), so
-    // a college that holds it never reads "not yet attested" (COBIx, PR 3033).
-    var nc = r.nc ? '<p class="ncline">Noncredit share: ' + (r.nc.standing ? "Noncredit CPL Lead attested" + (r.nc.fy ? " for " + esc(r.nc.fy) : "") + "."
-      : r.nc.lead ? "complete."
-      : ncWaiting(r) ? "Noncredit CPL Lead attestation waiting since " + esc(shortDate(r.nc.at) || "it was sent") + "." : "Noncredit CPL Lead not yet attested.") +
-      (r.nc.lead ? " The Noncredit CPL Lead role is on the college's MAP landing page, which stands in for the attestation."
-        : r.nc.leadNear ? " The MAP landing page lists a close title. Ask the college to use the Noncredit CPL Lead role." : "") + "</p>" : "";
+    // The conditions in a table (the clarity mock): what the college owes, where it stands, and whether an email goes
+    // out for it. Only the participation confirmation and the Noncredit CPL Lead are asked for by email; the rest is
+    // status the college's own records move.
+    var stWord = function (met, pending, waiting) {
+      return waiting ? '<span class="st not">Waiting on the team</span>' : pending ? "Pending" : met ? '<span class="st met">Met</span>' : '<span class="st not">Not met</span>';
+    };
+    var rowOfCond = function (name, why, status, mail) {
+      return '<tr><th scope="row">' + esc(name) + (why ? '<span class="why">' + esc(why) + "</span>" : "") + "</th><td>" + status + "</td><td>" + mail + "</td></tr>";
+    };
+    var conds = '<div class="wide"><table class="facts" aria-label="What the college owes"><colgroup><col style="width:50%"><col style="width:24%"><col style="width:26%"></colgroup>' +
+      '<thead><tr><th scope="col">Condition</th><th scope="col">Status</th><th scope="col">Email</th></tr></thead><tbody>' +
+      r.conds.map(function (c) {
+        var part = c.kind === "part", waitP = part && r.part.waiting;
+        return rowOfCond(c.words, c.counts, stWord(c.met, c.pending, waitP), part ? (c.met ? "No" : waitP ? "After the review" : "When not met") : "Status only");
+      }).join("") +
+      // The role on the college's MAP landing page (Sam, 2026-11-09) stands in for the whole attestation (2026-11-10), so
+      // a college that holds it reads Met (COBIx, PR 3033).
+      (r.nc ? rowOfCond("Noncredit CPL Lead", r.nc.lead ? "The role is on the college's MAP landing page, which stands in for the attestation."
+          : r.nc.standing ? "Attested" + (r.nc.fy ? " for " + r.nc.fy : "") + "."
+          : ncWaiting(r) ? "The attestation has waited since " + (shortDate(r.nc.at) || "it was sent") + "."
+          : r.nc.leadNear ? "The MAP landing page lists a close title. Ask the college to use the Noncredit CPL Lead role." : "Not yet in MAP, and not yet attested.",
+        stWord(ncMet(r), false, ncWaiting(r)), ncMet(r) ? "No" : ncWaiting(r) ? "After the review" : "When not met") : "") +
+      "</tbody></table></div>";
+    var nc = "";
+    // Recommended action (Malone, 2026-11-10): one reason, one sentence of why, and the one thing to do next.
+    var rec = recOf(r);
+    var visit = '<div class="visit"><h4>Recommended action</h4><p class="reason" id="cw-reason">' + esc(rec.reason) + '</p><p class="note">' + esc(rec.why) + "</p>" +
+      (rec.review ? '<p class="links" style="margin:0"><button type="button" class="word lead" data-act="toreview">Review the request</button></p>' : "") +
+      '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" + composeHtml(r) + "</div>";
     var who = "";
     if (S.reviewer && r.req) {
       var bits = [];
@@ -806,10 +877,9 @@
       '<div class="rec-head"><div><h3 class="rec-name" id="cw-recname" tabindex="-1">' + esc(r.name) + '</h3><p class="rec-sub">' +
         esc([r.district, r.total ? "Max award " + money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : ""].filter(Boolean).join(" · ")) + "</p></div>" +
         '<p class="links" style="margin:0">' + landingLink(r) + "</p></div>" +
-      '<div class="decide" role="group" aria-label="Actions">' + act.join("") + "</div>" +
-      '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" +
-      '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + who +
-      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + composeHtml(r) + historyHtml(r) +
+      '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + visit +
+      '<div class="decide" role="group" aria-label="More for this college">' + act.join("") + "</div>" + who +
+      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + historyHtml(r) +
       "</div></div>";
   }
   function historyHtml(r) {
@@ -1048,6 +1118,8 @@
     { id: "accept_nc", label: "The noncredit attestation acceptance" },
     { id: "follow", label: "Follow up on a condition" },
     { id: "nudge", label: "Nudge for the participation confirmation" },
+    { id: "lead", label: "The Noncredit CPL Lead ask (the role in MAP)" },
+    { id: "both", label: "Both asks in one email (the confirmation and the Noncredit CPL Lead)" },
     { id: "blank", label: "Blank" }];
   function firstOf(c, role) { var p = c.people.filter(function (x) { return x.src === "MAP directory" && x.role === role && x.email; })[0]; return p || null; }
   // Sam's order for the one person a nudge goes to (Nudge's cascade): CPL Coordinator, primary contact, Lead Initiator, VPAA, CEO.
@@ -1071,7 +1143,8 @@
       if (coord && coord.email.toLowerCase() !== String(to).toLowerCase()) cc.push(coord.email);
     } else if (prim) {
       to = prim.email; toName = prim.name;
-      if (tplId === "nudge" && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
+      if ((tplId === "nudge" || tplId === "both") && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
+      if (tplId === "lead" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
       if (tplId === "follow" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
     }
     var name = personWord(toName), college = r.name, missing = missingWords(r);
@@ -1104,6 +1177,25 @@
         (S.deadline ? " The deadline is " + longDay(S.deadline) + "." : "") + "\n\nThe CPL Implementation Funding page explains each condition and how to send it: " +
         PUBLIC_FUNDING_URL + "\n\nIf it is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
         "\n\nThe CPL Initiative team";
+    } else if (tplId === "lead" || tplId === "both") {
+      // Drafted S624 for Sam's edit (go-live note, decision 4). The facts: the exact MAP title Noncredit CPL Lead meets
+      // the condition (his ruling, 2026-11-10, PR 3031), and an attestation on the funding page is accepted as well.
+      var leadPara = "MAP does not yet show a Noncredit CPL Lead for " + college + ". The condition is met when the college's lead holds the " +
+        "Noncredit CPL Lead role in MAP, under that exact title. A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.";
+      var closing = "\n\nIf either is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
+        "\n\nThe CPL Initiative team";
+      if (tplId === "lead") {
+        subject = "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for " + college;
+        body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about the noncredit share of CPL Implementation Funding for " + college + ". " + leadPara +
+          "\n\nThe CPL Implementation Funding page explains the condition: " + PUBLIC_FUNDING_URL + closing.replace("If either is", "If it is");
+      } else {
+        subject = "CPL Implementation Funding: two steps for " + college;
+        body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about CPL Implementation Funding for " + college + ". Two steps remain." +
+          "\n\nFirst, our records do not yet show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award." +
+          (S.deadline ? " The deadline is " + longDay(S.deadline) + "." : "") +
+          "\n\nSecond, for the noncredit share: " + leadPara +
+          "\n\nThe CPL Implementation Funding page explains each condition and how to send it: " + PUBLIC_FUNDING_URL + closing;
+      }
     } else {
       body = "Dear " + name + ",\n\n\n\nThe CPL Initiative team";
     }
@@ -1111,13 +1203,13 @@
   }
   var LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   function longDay(v) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || "")); return m ? LONG[+m[2] - 1] + " " + +m[3] + ", " + m[1] : String(v || ""); }
-  function mailKey(r) { var rd = state.view === "send" ? readyOf(r) : null; return SENT[rd] ? r.key + "|send" : r.key; }
+  function mailKey(r) { return recTpl(r) ? r.key + "|send" : r.key; }
   function mailOf(r) {
     state.mail = state.mail || {};
-    // A college with no participation confirmation gets the nudge; any other college a follow-up. In Ready to send the
-    // email is the one due (the acceptance or the nudge), kept under its own key so the record's draft is untouched.
-    var rd = state.view === "send" ? readyOf(r) : null, k = mailKey(r);
-    if (!state.mail[k]) state.mail[k] = seedMail(r, SENT[rd] ? rd : r.part.confirmed || r.part.waiting ? "follow" : "nudge");
+    // The email is the one the college's state calls for (recTpl), in every list, kept under its own key so a draft
+    // written with nothing due is untouched. With nothing due: the nudge before a confirmation, a follow-up after.
+    var rt = recTpl(r), k = mailKey(r);
+    if (!state.mail[k]) state.mail[k] = seedMail(r, rt || (r.part.confirmed || r.part.waiting ? "follow" : "nudge"));
     return state.mail[k];
   }
   function ccPickerHtml(r, m) {
@@ -1149,7 +1241,18 @@
     var m = mailOf(r);
     loadLogo();
     var opts = TEMPLATES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
-    return '<div class="tpl" aria-labelledby="cw-mail-h"><p class="k" id="cw-mail-h">Write an email</p>' +
+    // The preview first (Malone, 2026-11-10: recipient, subject and message apart, with Edit email). Edit email opens
+    // the fields the composer always had; they stay in the page either way, so a draft is never lost to a fold. With no
+    // email due the block folds to one word, Write an email.
+    var due = !!recTpl(r), edit = !!(state.mailEdit || {})[r.key], open = due || edit, cc = allCc(m);
+    var sentBtn = SENT[m.tpl] || m.tpl === "both";
+    return '<div class="tpl" aria-labelledby="cw-mail-h"><div class="mail-h"><p class="k" id="cw-mail-h">' + (open ? "Email preview" : "Email") + "</p>" +
+      '<button type="button" class="word" data-act="mailedit" aria-expanded="' + edit + '" aria-controls="cw-mail-edit">' +
+        (edit ? "Done editing" : due ? "Edit email" : "Write an email") + "</button></div>" +
+      '<dl class="mail-f" id="cw-mail-pre"' + (open && !edit ? "" : " hidden") + "><dt>To</dt><dd>" + (m.to ? esc(m.to) : "No address on file. Edit email to add one.") + "</dd>" +
+        (cc.length ? "<dt>Cc</dt><dd>" + esc(cc.join(", ")) + "</dd>" : "") +
+        "<dt>Subject</dt><dd>" + esc(m.subject) + "</dd><dt>Message</dt><dd>" + esc(m.body) + "</dd></dl>" +
+      '<div class="tpl-edit" id="cw-mail-edit"' + (edit ? "" : " hidden") + ">" +
       '<div class="tpl-row"><label for="cw-tpl">Template</label><select id="cw-tpl" data-mail="tpl">' + opts + "</select></div>" +
       '<dl class="addr"><dt><label for="cw-to">To</label></dt><dd><input id="cw-to" data-mail="to" value="' + esc(m.to) + '"></dd>' +
         '<dt><label for="cw-cc">Cc</label></dt><dd><input id="cw-cc" data-mail="cc" value="' + esc(m.cc) + '"></dd>' +
@@ -1157,14 +1260,14 @@
         '<dt><label for="cw-subj">Subject</label></dt><dd><input id="cw-subj" data-mail="subject" value="' + esc(m.subject) + '"></dd></dl>' +
       ccPickerHtml(r, m) +
       '<label class="sr" for="cw-body">The email</label><textarea id="cw-body" class="search" data-mail="body" rows="10" style="min-height:180px;">' + esc(m.body) + "</textarea>" +
-      '<div class="tpl-row"><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
+      '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
+      '<div class="tpl-row"' + (open ? "" : " hidden") + '><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
         '<button type="button" class="word" data-mailact="draft">Open in Outlook</button>' +
         '<button type="button" class="word" data-mailact="gmail">Open in Gmail</button>' +
-        (state.view === "send" && SENT[readyOf(r)] ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") +
-        '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
-      '<p class="tpl-meta">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>' +
-      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each.' +
-      (state.view === "send" ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
+        (sentBtn ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") + "</div>" +
+      '<p class="tpl-meta"' + (open ? "" : " hidden") + ">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>" +
+      '<p class="tpl-meta"' + (open ? "" : " hidden") + ">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each, with a follow-up a week out unless Edit email clears it." +
+      (sentBtn ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
   }
   function allCc(m) {
     var seen = {}, out = [];
@@ -1197,7 +1300,7 @@
         m.fu === false ? {} : { follow_up_on: plusDays(7) }));
     };
     if (kind === "sent") {
-      var what = SENT[m.tpl] || "Email sent";
+      var what = m.tpl === "both" ? SENT.nudge : SENT[m.tpl] || "Email sent";
       logWrite("POST", null, Object.assign({ college: r.key, kind: "email",
         body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
         m.fu === false ? {} : { follow_up_on: plusDays(7) })).then(function (ok) {
@@ -1486,6 +1589,13 @@
     if (!r) return;
     if (name === "toreview") { var rv = root().querySelector(".review h4"); if (rv) { rv.setAttribute("tabindex", "-1"); rv.focus(); if (rv.scrollIntoView) rv.scrollIntoView({ block: "start" }); } return; }
     if (name === "focus") { if (f) f.focus(r.key); return; }
+    if (name === "mailedit") {
+      state.mailEdit = state.mailEdit || {};
+      state.mailEdit[r.key] = !state.mailEdit[r.key];
+      paintRecord();
+      var me = root().querySelector(state.mailEdit[r.key] ? "#cw-body" : '[data-act="mailedit"]'); if (me) me.focus();
+      return;
+    }
     if (!f || !S.reviewer) return;
     if (name === "bounced") {
       var ls = lastSent(r, kind);
@@ -1695,7 +1805,7 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },

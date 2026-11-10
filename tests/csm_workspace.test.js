@@ -214,6 +214,66 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       g.root.querySelectorAll('.queue[data-group="you"] .row').length + 1 === g.root.querySelectorAll("#cw-queue .row").length &&
       g.root.querySelector("#cw-queue .queue").getAttribute("data-group") === "you");
   }
+  // The record: the conditions in a table, Recommended action, the email preview with Edit email, and the two new
+  // emails (the clarity mock; Malone's change 4; built on Sam's go, 2026-11-10).
+  {
+    const d = setup({ signedIn: true });
+    const rec = () => d.root.querySelector("#cw-record");
+    const tbl = rec().querySelector("table.facts");
+    const cell = (re, n) => { const tr = Array.prototype.find.call(tbl.querySelectorAll("tbody tr"), (r) => re.test(flat(r.querySelector("th")))); return tr ? flat(tr.cells[n]) : null; };
+    check("5d1: the conditions are a table: three column headers, each condition a row header",
+      !!tbl && Array.prototype.map.call(tbl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Condition|Status|Email" &&
+      tbl.querySelectorAll('tbody th[scope="row"]').length === tbl.querySelectorAll("tbody tr").length && tbl.querySelectorAll("tbody tr").length >= 2);
+    check("5d2: a confirmation waiting on the team says so and its email comes after the review; the coordinator is status only",
+      cell(/onfirmation/, 1) === "Waiting on the team" && cell(/onfirmation/, 2) === "After the review" && cell(/oordinator/, 2) === "Status only",
+      [cell(/onfirmation/, 1), cell(/onfirmation/, 2), cell(/oordinator/, 2)].join("|"));
+    const visit = () => rec().querySelector(".visit");
+    check("5d3: Recommended action for a waiting request is the review, with one lead button, and no email is due",
+      flat(visit().querySelector("h4")) === "Recommended action" && flat(visit().querySelector(".reason")) === "Review the request first" &&
+      visit().querySelectorAll('[data-act="toreview"]').length === 1 && !rec().querySelector(".decide [data-act='toreview']") &&
+      !rec().querySelector('[data-mailact="sent"]') && rec().querySelector("#cw-mail-pre").hidden);
+    d.W._setContacts({ dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
+      primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu" }], landing: [], users: [] });
+    d.W._state.view = "all"; d.W._state.sel = OTHER; d.W.paint();
+    const pre = () => rec().querySelector("#cw-mail-pre"), edit = () => rec().querySelector("#cw-mail-edit"), word = () => rec().querySelector('[data-act="mailedit"]');
+    check("5d4: a confirmed college with no acceptance sent reads Send the acceptance, and the email shows as a preview: To, Subject, Message",
+      flat(visit().querySelector(".reason")) === "Send the acceptance" && !pre().hidden && edit().hidden &&
+      Array.prototype.map.call(pre().querySelectorAll("dt"), flat).filter((t) => t !== "Cc").join("|") === "To|Subject|Message" &&
+      /@pasadena\.edu/.test(flat(pre().querySelector("dd"))) && flat(word()) === "Edit email" && word().getAttribute("aria-expanded") === "false" &&
+      !!rec().querySelector('[data-mailact="sent"]') && d.W._state.view === "all");
+    clickEl(d.window, word());
+    check("5d5: Edit email opens the fields in place of the preview and reads Done editing; the draft's fields were in the page all along",
+      pre().hidden && !edit().hidden && flat(word()) === "Done editing" && word().getAttribute("aria-expanded") === "true" &&
+      !!edit().querySelector("#cw-to") && !!edit().querySelector("#cw-body") && !!edit().querySelector("#cw-mailfu"));
+    const tplSel = rec().querySelector("#cw-tpl");
+    tplSel.value = "lead"; tplSel.dispatchEvent(new d.window.Event("change", { bubbles: true }));
+    const lead = d.W._mail(OTHER);
+    check("5d6: the Noncredit CPL Lead ask names the role in MAP under its exact title and says an attestation is accepted as well",
+      lead.tpl === "lead" && /the Noncredit CPL Lead role in MAP for Pasadena/.test(lead.subject) && /under that exact title/.test(lead.body) &&
+      /attestation on the CPL Implementation Funding page is accepted as well/.test(lead.body) && !/\b(money|pool|earn|unspent|draw)\b/i.test(lead.body), lead.body);
+    const tplSel2 = rec().querySelector("#cw-tpl");
+    tplSel2.value = "both"; tplSel2.dispatchEvent(new d.window.Event("change", { bubbles: true }));
+    const both = d.W._mail(OTHER);
+    check("5d7: both asks in one email: two steps, the confirmation first and the Noncredit CPL Lead second",
+      both.tpl === "both" && /: two steps for Pasadena/.test(both.subject) && both.body.indexOf("First, our records do not yet show a participation confirmation") > 0 &&
+      both.body.indexOf("Second, for the noncredit share") > both.body.indexOf("First,"), both.body);
+    // the rule, on rows built here so the noncredit share is on
+    const log = d.W._log();
+    const row = (key, confirmed) => ({ key: key, name: key, part: { confirmed: confirmed, waiting: false, confirmedAt: "2026-11-09T00:00:00Z" },
+      nc: { lead: false, standing: false, waiting: false, leadNear: false }, conds: [], gate: { blocked: false } });
+    log.push({ id: 910, college: "ZC", kind: "email", body: "Acceptance sent: x", created_at: "2026-11-09T12:00:00Z" });
+    check("5d8: confirmed, the acceptance sent, and no Noncredit CPL Lead in MAP: the lead ask is due and is the recommended action",
+      d.W._recTpl(row("ZC", true)) === "lead" && d.W._recOf(row("ZC", true)).reason === "Send the Noncredit CPL Lead ask" && d.W._needsYou(row("ZC", true)));
+    check("5d9: not yet confirmed and no Noncredit CPL Lead: one email carries both asks",
+      d.W._recTpl(row("ZN", false)) === "both" && d.W._recOf(row("ZN", false)).reason === "Send both in one email");
+    log.push({ id: 911, college: "ZN", kind: "email", body: "Nudge sent: CPL Implementation Funding: two steps for ZN, to a@b.edu.", created_at: new Date().toISOString() });
+    log.push({ id: 912, college: "ZC", kind: "email", body: "Noncredit CPL Lead ask sent: x", created_at: new Date().toISOString() });
+    check("5d10: once sent, neither is due again for 14 days, and the both-in-one receipt counts as the nudge and as the lead ask",
+      d.W._recTpl(row("ZN", false)) === null && d.W._recTpl(row("ZC", true)) === null && d.W._recTpl(row("ZN", true)) === "accept");
+    log[log.length - 1].created_at = "2026-01-02T00:00:00Z";
+    check("5d11: a lead ask older than 14 days is due again", d.W._recTpl(row("ZC", true)) === "lead");
+    log.splice(log.length - 3, 3);
+  }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('[data-stage="notyet"]'));
   check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
@@ -344,7 +404,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("8f: Close removes the popup", !doc.getElementById("cw-dlg-host"));
 
   const conf = W._mail(OTHER);
-  check("8g0: a confirmed college's email opens on the follow-up, To its CPL Coordinator", conf.tpl === "follow" && conf.to === "ana@pasadena.edu");
+  check("8g0a: a confirmed college whose acceptance has not gone opens on the acceptance, in any list", conf.tpl === "accept");
+  W._log().push({ id: 902, college: OTHER, activity: "funding", kind: "email", body: "Acceptance sent: x", created_at: "2026-11-09T12:00:00Z" });
+  W._state.mail = {};
+  const conf2 = W._mail(OTHER);
+  check("8g0: once the acceptance has gone, its email opens on the follow-up, To its CPL Coordinator", conf2.tpl === "follow" && conf2.to === "ana@pasadena.edu");
+  W._log().pop();
   W._state.mail = {};
   W._snapshot().rows.find((r) => r.key === OTHER).part.confirmed = false;
   const m = W._mail(OTHER);
@@ -469,7 +534,9 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   W._log()[0].created_at = "2026-01-02T00:00:00Z";
   check("10g: a nudge older than 14 days lets it back in", W._readyOf(nudgeKey) === "nudge");
   W._state.view = "open"; W.paint();
-  check("10i: outside Ready to send there is no Sent", !root.querySelector('[data-mailact="sent"]'));
+  const selRow = W._snapshot().rows.find((r) => r.key === W._state.sel);
+  check("10i: Sent shows exactly when an email is due for the college, whatever the list",
+    W._state.view === "open" && !!selRow && !!root.querySelector('[data-mailact="sent"]') === (W._recTpl(selRow) !== null));
   // A long email: the link would pass what a mail program takes, so the words go to the clipboard and the draft opens bare.
   W._state.sel = OTHER; W._state.mail = {}; W.paint();
   W._mail(OTHER).body = "x".repeat(2500);
