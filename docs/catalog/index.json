@@ -16697,8 +16697,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 584,
+   "count": 585,
    "docs": [
+    {
+     "created": "2026-11-09",
+     "governs": [],
+     "n": 624,
+     "path": "docs/session_624_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "commons",
+      "college-district-identity",
+      "reviewer-session-lifetime",
+      "implementation-funding",
+      "library"
+     ],
+     "title": "Session 624 handoff: the action center in two groups, the Courses List keeps your row, the identity check runs again, a sign-in whose funding access ended says so",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26613,5 +26632,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1428
+ "total": 1429
 }

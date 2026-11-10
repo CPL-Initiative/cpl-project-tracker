@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 584 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1428** | |
+| Session handoffs | 585 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1429** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-09 (S623 SkyButterfly, light): the action center in two groups (#3001), the Courses List keeps your row (#3004), the identity check runs again (#3005), the ended-access note (#3007); handoff 624.
 - 2026-11-09 (S621 SkyBlackEye): the funding rollout day (Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, the CSM funding door); handoff 622.
 - 2026-11-09 (SkyCigar): the Docket steps 1-3, call 9 lifted, TRUNCATE revoked, CSMs on the reviewer list; handoff 621.
 - 2026-11-08 SkySunflower (S612, Sam's session): the anchor re-key applied, 20 keys and 21 crosswalk pointers (#2938); funding tests twice as fast (#2939); the CCR seed re-check reads course descriptions and TOP (#2940); Open Asks Sheets 173 and 174 (CPLBrain#723); handoff 613, full checkpoint.
