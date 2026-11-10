@@ -864,7 +864,9 @@
     var w = waitingKinds(r), act = [];
     if (S.reviewer && r.part.confirmed && r.req && r.req.part && r.req.part.email) act.push('<button type="button" class="word" data-act="mail" data-kind="part">Email the confirmation acceptance again</button>');
     if (S.reviewer && r.nc && r.nc.standing && r.req && r.req.nc && r.req.nc.attestor_email) act.push('<button type="button" class="word" data-act="mail" data-kind="nc">Email the attestation acceptance again</button>');
-    act.push('<button type="button" class="word" data-act="focus">Open in Implementation Funding</button>');
+    // Implementation Funding opens the drawer beside the record, never another tab (Sam, 2026-11-10: "links still
+    // opening to new tabs instead of sidebars"); the drawer's Open the full page is the one way to the funding tab.
+    act.push(fundWord("rec", "Implementation Funding"));
     if (S.reviewer) Object.keys(SENT).forEach(function (tpl) {
       if (lastSent(r, tpl)) act.push('<button type="button" class="word" data-act="bounced" data-kind="' + tpl + '">It bounced: ' +
         esc(SENT[tpl].replace(/ sent$/, "").toLowerCase()) + "</button>");
@@ -909,7 +911,7 @@
       if (bits.length) who = '<div><p class="k">Who sent it</p><ul class="conds">' + bits.map(function (b) { return '<li class="ncline" style="margin:0">' + b + "</li>"; }).join("") + "</ul></div>";
     }
     var note = S.reviewer ? '<div><p class="k">CO Monitor\'s note</p><p class="ncline" style="margin:0">' + (r.note ? esc(r.note) : "No note yet.") +
-      ' <button type="button" class="word" data-act="focus">Write it in Implementation Funding</button></p></div>' : "";
+      ' It is written on Implementation Funding\'s full page. ' + fundWord("note", "Implementation Funding") + "</p></div>" : "";
     // One side panel under the record (the clarity mock): People, CPL landing page, History, and the review when one waits.
     var sideWord = function (k, t) {
       return '<button type="button" class="word" data-side="' + k + '" aria-pressed="' + (side === k) + '" aria-controls="cw-side">' + t + "</button>";
@@ -1548,6 +1550,9 @@
      the chosen college's place in Implementation Funding, from the snapshot the workspace already holds, in a panel at
      the right edge; Open the full page goes to the funding tab on that college. The priorities' progress is not in the
      snapshot, so the drawer leaves it to the full page (go-live note, decision 6). */
+  function fundWord(from, words) {
+    return '<button type="button" class="word" data-fund="open" data-fund-from="' + from + '" aria-expanded="' + !!state.fund + '" aria-controls="cw-fund">' + esc(words) + "</button>";
+  }
   function fundHtml() {
     var r = state.sel ? rowOf(state.sel) : null;
     var met = r ? r.conds.filter(function (c) { return c.met; }).length : 0, of = r ? r.conds.length : 0;
@@ -1561,9 +1566,15 @@
         // The participation confirmation is one of r.conds (kind "part"), so "every minimum condition" names it too.
         row("Qualifying now", qual ? (r.total ? money(r.total) : "TBA") : "Held until every minimum condition is met") +
         row("Minimum conditions met", met + " of " + of) +
-        (S.deadline ? row("Confirmation due", esc(shortDate(S.deadline))) : "") + "</tbody></table>" +
-        '<p class="links" style="margin:0"><button type="button" class="word" data-act="focus">Open the full page</button></p>'
+        (S.deadline ? row("Confirmation due", esc(shortDate(S.deadline))) : "") +
+        (S.reviewer ? row("CO Monitor's note", r.note ? esc(r.note) : "No note yet.") : "") + "</tbody></table>" +
+        '<p class="links" style="margin:0"><button type="button" class="word" data-act="focus">Open the full page</button></p>' +
+        (S.reviewer ? '<p class="note">The CO Monitor\'s note is written on the full page.</p>' : "")
         : '<p class="note">Choose a college to see its place in Implementation Funding.</p>') + "</aside>";
+  }
+  // Closing the drawer returns the focus to the word that opened it: the header's, or one in the record.
+  function fundOpener() {
+    return (state.fundFrom && root().querySelector('[data-fund="open"][data-fund-from="' + cssEsc(state.fundFrom) + '"]')) || root().querySelector('[data-fund="open"]');
   }
   function accessHtml() {
     if (!ACC.rows.length && !ACC.approver) return "";
@@ -1612,7 +1623,7 @@
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
       '<header><div class="top-row"><h1>Funding Follow-up Dashboard</h1><p class="links">' + accessWord() +
-        '<button type="button" class="word" data-fund="open" aria-expanded="' + !!state.fund + '" aria-controls="cw-fund">Implementation Funding</button></p></div>' +
+        fundWord("head", "Implementation Funding") + "</p></div>" +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
       (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
       // The list needs no title and the metrics and the menu count every institution, so the Action center heading and
@@ -1732,8 +1743,9 @@
     if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
     if (t.hasAttribute("data-fund")) {
       state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
+      if (t.getAttribute("data-fund") === "open") state.fundFrom = t.getAttribute("data-fund-from") || "";
       paint();
-      var fh = root().querySelector(state.fund ? "#cw-fund-h" : '[data-fund="open"]'); if (fh) fh.focus();
+      var fh = state.fund ? root().querySelector("#cw-fund-h") : fundOpener(); if (fh) fh.focus();
       return;
     }
     if (t.hasAttribute("data-side")) {
@@ -1883,7 +1895,7 @@
         // A pop-up's own Escape closes the pop-up alone (COBIx on PR 3053): the drawer stays while one is open.
         if (e.key !== "Escape" || !state.fund || document.getElementById("cw-dlg-host")) return;
         state.fund = false; paint();
-        var fo = root().querySelector('[data-fund="open"]'); if (fo) fo.focus();
+        var fo = fundOpener(); if (fo) fo.focus();
       });
       el.addEventListener("pointerdown", onSplitDown);
       el.addEventListener("change", onChange);

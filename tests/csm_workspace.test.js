@@ -369,6 +369,24 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const hh = R.querySelector("#cw-dlg-host"); if (hh) hh.parentNode.removeChild(hh);
     clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
     check("5f8: a reviewer who is no approver, with nobody waiting, gets no access word in the header", !R.querySelector("header [data-accopen]"));
+    // Sam, 2026-11-10: "links still opening to new tabs instead of sidebars". In the record, Implementation Funding
+    // opens the drawer; only the drawer's Open the full page goes to the funding tab.
+    const recFund = () => R.querySelector('#cw-record [data-fund="open"][data-fund-from="rec"]');
+    const noteFund = () => R.querySelector('#cw-record [data-fund="open"][data-fund-from="note"]');
+    check("5f9: the record's Implementation Funding words open the drawer and leave nothing that switches tabs",
+      !!recFund() && !!noteFund() && !R.querySelector('#cw-record [data-act="focus"]') && !/Open in Implementation Funding|Write it in Implementation Funding/.test(flat(R)));
+    let switched = 0; const was = h.window.CPL_TABS; h.window.CPL_TABS = { activate: () => { switched++; } };
+    clickEl(h.window, recFund());
+    check("5f9a: pressed, the drawer opens on the college, the tab stays, and its word reads expanded",
+      !dr().hidden && switched === 0 && h.W._state.fund === true && recFund().getAttribute("aria-expanded") === "true");
+    check("5f9b: the drawer shows the CO Monitor's note for a reviewer and says where it is written",
+      /CO Monitor's note/.test(flat(dr())) && /written on the full page/.test(flat(dr())));
+    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("5f9c: closed, the focus returns to the record's word that opened it", dr().hidden && h.doc.activeElement === recFund());
+    clickEl(h.window, noteFund());
+    check("5f9d: the History note's word opens the same drawer", !dr().hidden && switched === 0);
+    clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
+    h.window.CPL_TABS = was;
   }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
