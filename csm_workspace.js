@@ -477,11 +477,11 @@
      A college owing the confirmation too gets both asks in one email ("both"), whose receipt is the nudge's, told
      apart by its subject. An ask counts as made for 14 days, as the nudge does. */
   var BOTH_SUBJ = /: two steps for /, LEAD_SUBJ = /: the Noncredit CPL Lead role in MAP for /;
-  /* HELD UNTIL SAM HAS READ THEM (COBIx on PR 3050; the hold list's "anything outward"): the two new emails are built
-     and tested, and stay out of the page until LEAD_MAIL_ON is true. While it is false no lead ask is ever due, a
-     college owing the confirmation gets the plain nudge, and the Template menu does not offer either. Turning it on is
-     one word here, once Sam has read the wording in seedMail. */
-  var LEAD_MAIL_ON = false;
+  /* ON, on Sam's word (2026-11-10, in session, having read them: "yes to all"). Held until then (COBIx on PR 3050; the
+     hold list's "anything outward"). Their wording is a template a reviewer can change (Email templates, PR 3068). Set
+     false and no lead ask is ever due again: a college owing the confirmation gets the plain nudge, and the Template
+     menu offers neither. */
+  var LEAD_MAIL_ON = true;
   function leadOpen(r) { return LEAD_MAIL_ON && !!(r.nc && !ncMet(r) && !ncWaiting(r)); }
   // An ask counts as made for 14 days, by its Sent receipt or by a draft opened or copied (as a nudge's draft counts).
   // A Sent nudge is final, as it was before this change: lastSent has no window, so a college nudged by either email

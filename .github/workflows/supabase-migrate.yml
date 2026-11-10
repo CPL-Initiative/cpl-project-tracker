@@ -10,9 +10,12 @@ name: Supabase migrate
 # Runs when a claude/** push changes kb/migrations/.apply (file=..., name=...) to
 # something main does not hold (the gate job), never on a merge commit.
 #
-# APPROVAL: the apply job runs in the GitHub environment "database". Add Sam as a
-# required reviewer there (Settings > Environments > database) and every apply waits
-# for his tap; with no protection rule it runs at once.
+# APPROVAL (Sam, 2026-11-10: "yes" to waiting for his approval, "migrate workflow is
+# approved"): the apply job runs in the GitHub environment "database", and every apply
+# waits for Sam's approval there. The rule is a repository setting (Settings >
+# Environments > database > Required reviewers: Sam; leave "Prevent self-review" off,
+# since session pushes run under his account). Until the setting is saved, an apply
+# still runs at once. A session that pushes .apply tells Sam the run waits for him.
 on:
   push:
     branches: ['claude/**']
