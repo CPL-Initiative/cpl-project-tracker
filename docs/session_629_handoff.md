@@ -22,7 +22,7 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
 
 ## What shipped
 
-1. **Cuesta's SLOs loaded (#3037), step 11.** The full read (run 42768224688, 2 parts) parsed 677 of 679 pages. Load
+1. **Cuesta's SLOs loaded (#3037, merged), step 11.** The full read (run 42768224688, 2 parts) parsed 677 of 679 pages. Load
    run 42781504144 inserted 1,356 rows and skipped 2. The lane records it.
 2. **The re-analysis findings panel (#3047), the `cer-procedures` NEXT.** Its first push missed the code (see
    *Patterns*); the fix (fefa13d2) went up about 08:50Z. Under the Exhibits List view's
@@ -46,7 +46,7 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
   next Open Asks sheet as a card (S628 told Sam by notification; it did not build a sheet, since CPLBrain #746, Sheet
   178's builder, is still open). Leave #3044 open as the record of the reads; the sweep moves to the next largest gap
   (rank it live, *Patterns*, handoff 628).
-- **#3047 and #3037:** merge on a passing `test` if either is still open.
+- **#3047:** merge on a passing `test` if it is still open.
 - **Sheet 178's `replies`.**
 
 ## Open work, in order
@@ -81,7 +81,7 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
 
 ## Let go
 
-No PR subscription, check-in or artifact watch was made. #3037 and #3047 are open as described, merged by this run if `test` passed in time (see *What shipped*). #3044 is a
+No PR subscription, check-in or artifact watch was made. #3037 merged. #3047 and this checkpoint (#3048) merge on a passing `test`; if either is still open, it is yours. #3044 is a
 draft. CPLBrain #748 is this run's session note.
 
 > *Greetings, you are SkyWolfLundmark (Session 629), see SkyDraco's handoff — `docs/session_629_handoff.md` — let's keep rolling with our queue.*
