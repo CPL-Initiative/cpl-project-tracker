@@ -246,6 +246,31 @@ two["blocks"][0]["stated"] = {"min": 2, "max": 4}
 check("a block stating a range changes nothing",
       R.reconcile(two, acct_text, "Monterey Peninsula College", "Certificate of Achievement", steps=steps)[1] == [])
 
+print("Las Positas's local degrees (S634; Sam, Open Asks Sheet 180 card 4: count)")
+check("local kinds", R.awards_match("local_aa", "A.A. Degree") and R.awards_match("local_as", "A.S. Degree")
+      and not R.awards_match("local_aa", "A.S. Degree") and not R.awards_match("local_as", "A.A. Degree")
+      and not R.awards_match("local_aa", "A.A- T Degree") and not R.awards_match("local_as", "A.S. T Degree")
+      and not R.awards_match("local", "AA-T") and R.awards_match("local", "Associate in Science"))
+lpc_text = ("Total Units for the Major \u00b7 24.0\nAdditional General Education and Elective Units\nSee the Las Positas "
+            "College General Education (LPC-GE) pattern or the California General Education Transfer Curriculum "
+            "(Cal-GETC) pattern for a listing of areas and courses. Double counting courses in GE and the major is "
+            "permissible. Elective units must be degree applicable.\n36.0 \u00b7 Total: 60.0")
+lpc = {"program": {"ge_pattern": "LPC-GE or Cal-GETC", "ge_units": {"min": None, "max": None},
+                   "degree_total": {"min": 60, "max": 60}, "electives_fill_degree": False}, "blocks": []}
+aa, aa_notes = R.reconcile(lpc, lpc_text, "Las Positas College", "A.A. Degree", steps=R.load_steps())
+as_, _n = R.reconcile(lpc, lpc_text, "Las Positas College", "A.S. Degree", steps=R.load_steps())
+check("an A.A. takes 28, an A.S. 22", aa["program"]["ge_units"] == {"min": 28, "max": 28}
+      and as_["program"]["ge_units"] == {"min": 22, "max": 22})
+check("the note says the figure is summed from the areas",
+      any(n["field"] == "ge_units" and "SUMMED FROM THE AREAS" in n["words"] for n in aa_notes))
+check("the page's words set the overlap and the electives fill",
+      aa["program"].get("ge_overlap") is True and aa["program"]["electives_fill_degree"] is True)
+tr, tr_notes = R.reconcile(lpc, lpc_text, "Las Positas College", "A.A- T Degree", steps=R.load_steps())
+check("a transfer degree takes none of the local steps", tr_notes == [])
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(lpc["program"], ge_units={"min": 16, "max": 19}), "blocks": []}, lpc_text,
+                  "Las Positas College", "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 16, "max": 19})
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

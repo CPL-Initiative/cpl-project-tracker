@@ -4,7 +4,7 @@
   "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count)",
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
-  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section",
+  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE)",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed)",
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
@@ -779,8 +779,8 @@
    ]
   },
   "Las Positas College": {
-   "why": "S630 SkyCartwheel, 2026-11-10. Las Positas College passed 116 of 193; all 77 failures are degrees, and its 25 transfer degrees name the degree's 60 and Cal-GETC with no units, so they read incomplete. A free page read (college-page-read 42815817415, kb/college_reads/las_positas_ge_units.json) gave the words: English AA-T 32182, Sociology AA-T 30815, Biology AS-T 35245 and Business Administration 2.0 AS-T 41984 each print 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' and end 'Additional General Education and Elective Units' (27.0 to 42.0) above 'Total: 60.0'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Alameda's, Redwoods' and Columbia's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. The local degrees print the same combined line under 'LPC-GE or Cal-GETC' and no LPC-GE units; they wait on the LPC-GE pattern page. Proceeded on the recommendation; reversible by deleting this entry.",
-   "awards": "transfer",
+   "why": "S630 SkyCartwheel, 2026-11-10. Las Positas College passed 116 of 193; all 77 failures are degrees, and its 25 transfer degrees name the degree's 60 and Cal-GETC with no units, so they read incomplete. A free page read (college-page-read 42815817415, kb/college_reads/las_positas_ge_units.json) gave the words: English AA-T 32182, Sociology AA-T 30815, Biology AS-T 35245 and Business Administration 2.0 AS-T 41984 each print 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' and end 'Additional General Education and Elective Units' (27.0 to 42.0) above 'Total: 60.0'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Alameda's, Redwoods' and Columbia's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. The local degrees print the same combined line under 'LPC-GE or Cal-GETC' and no LPC-GE units; they wait on the LPC-GE pattern page. Proceeded on the recommendation; reversible by deleting this entry. S634 SkyBackward, 2026-11-10, on Sam's ruling count (Open Asks Sheet 180 card 4, 19:35Z): the local degrees take LPC-GE's units summed from the areas the 2026-2027 LPC-GE page prints (college-page-read 42827288689: Area 1 6, Areas 2 to 6 3 each, Area 7 Kinesiology 1, Areas 8 Health and 9 American Institutions 3 each, 'Not required for AS degrees'), A.A. 28 and A.S. 22; the page prints no total, so each note says the figure is summed. The local pages' own words (read 42815817415, Administration of Justice A.A. 01001 and Chemistry A.S. 01008) carry the other two flags: 'Double counting courses in GE and the major is permissible' (ge_overlap) and 'Elective units must be degree applicable' under 'Additional General Education and Elective Units' (electives fill the total). Simulated: Administration of Justice 24 + 28 leaves 8 of electives to 60; Chemistry 45 + 22 runs past its 61 and reads equal by overlap. Reversible by deleting the four local steps.",
+   "awards": "associate",
    "steps": [
     {
      "kind": "set",
@@ -793,6 +793,44 @@
      "pattern": "including\\s+both\\s+of\\s+the\\s+following:?\\s+The\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\(Cal-?GETC\\)",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
      "source_words": "Las Positas College AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' then 'Additional General Education and Elective Units ... 42.0 \u00b7 Total: 60.0' (English AA-T 32182; college page read 42815817415); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 28,
+      "max": 28
+     },
+     "awards": "local_aa",
+     "pattern": "Additional\\s+General\\s+Education\\s+and\\s+Elective\\s+Units",
+     "source": "https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php",
+     "source_words": "SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, Area 8 Health 3 units and Area 9 American Institutions 3 units; 6 + 15 + 1 + 3 + 3 = 28 for an A.A. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 22,
+      "max": 22
+     },
+     "awards": "local_as",
+     "pattern": "Additional\\s+General\\s+Education\\s+and\\s+Elective\\s+Units",
+     "source": "https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php",
+     "source_words": "SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, and Areas 8 Health and 9 American Institutions 'Not required for AS degrees'; 6 + 15 + 1 = 22 for an A.S. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_overlap",
+     "value": true,
+     "awards": "local",
+     "pattern": "Double\\s+counting\\s+courses\\s+in\\s+GE\\s+and\\s+the\\s+major\\s+is\\s+permissible"
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_degree",
+     "value": true,
+     "awards": "local",
+     "pattern": "Elective\\s+units\\s+must\\s+be\\s+degree\\s+applicable"
     }
    ]
   }
