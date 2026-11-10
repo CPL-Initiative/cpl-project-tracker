@@ -3,7 +3,7 @@
   "sent_by": "slee@cccco.edu",
   "sent_at": "2026-11-09T12:39:19.127Z",
   "run": "S626 SkyUmbrella, the CPL Queue routine, 2026-11-10",
-  "method": "code checks only (kb/_exhibit_reanalysis_checks.py); the Jev runner job is not built yet, so its two questions were not asked",
+  "method": "code checks (kb/_exhibit_reanalysis_checks.py), then Jev's two questions on a runner (kb/_exhibit_reanalysis_jev.py, typesafe-smoke.yml run 42873788079, S633)",
   "changes_read": "20 _CREDENTIAL_REVIEW:: saves by the sender since 2026-11-01 (no earlier done row; the request's changed list was empty), all issuer overrides from 2026-11-01 22:23-22:39Z, on 19 credentials",
   "comments": "",
   "comments_answer": "The request carried no comments; nothing to answer.",
@@ -21,6 +21,18 @@
       "credential": "Wildland Fire-Basics",
       "ask": "The save reads State Fire Training (SFT); 110 credentials carry California State Fire Training (SFT) and this is the only one with the shorter form. Recommendation: the long form, so the issuer filter and its count read one agency.",
       "held_because": "a correction to his own save (Rule 8: a human row is not silently superseded)"
+    },
+    {
+      "item": "training_site",
+      "issuers": [
+        "California Specialized Training Institute (CSTI)",
+        "Graduate Level Institution of Higher Education",
+        "Johnson Controls Training Institute",
+        "Proctored Testing Center",
+        "Spaulding Marine Center"
+      ],
+      "ask": "Jev reads these five issuers as places that train or test rather than bodies that issue the credential (p 0.66 to 0.90, no gate). Open Asks Sheet 180 card 6 asks whether each is the issuer.",
+      "by": "S633"
     }
   ],
   "notes": [
@@ -434,5 +446,115 @@
         "State Fire Training (SFT)"
       ]
     }
-  ]
+  ],
+  "jev": {
+    "run": 42873788079,
+    "gate": null,
+    "reading": "calibration sitting: no measured gate for the exhibits, so each p is Jev's probability for Sam's word and nothing is suggested",
+    "same_credential": [],
+    "same_credential_note": "the checks flagged no shared_mid_same_issuer pair, so the first question had nothing to ask",
+    "training_site": [
+      {
+        "issuer": "Proctored Testing Center",
+        "p": 0.9,
+        "credentials": [
+          "10-Key Data Entry"
+        ]
+      },
+      {
+        "issuer": "California Specialized Training Institute (CSTI)",
+        "p": 0.77,
+        "credentials": [
+          "First Receiver Operations & Decontamination for Healthcare",
+          "Haz Mat Specialist 1F: Specialized Mitigation Techniques",
+          "Specialist Course Module G"
+        ]
+      },
+      {
+        "issuer": "Graduate Level Institution of Higher Education",
+        "p": 0.71,
+        "credentials": [
+          "Clinical Counseling Laws and Ethics",
+          "Clinical Psychology Doctorate"
+        ]
+      },
+      {
+        "issuer": "Johnson Controls Training Institute",
+        "p": 0.71,
+        "credentials": [
+          "Building Automation System (BAS) Certification — Manufacturer/Vendor"
+        ]
+      },
+      {
+        "issuer": "Spaulding Marine Center",
+        "p": 0.66,
+        "credentials": [
+          "Boatworks 101 Yacht Electrical Systems"
+        ]
+      },
+      {
+        "issuer": "Automotive Apprenticeship Group (AAG)",
+        "p": 0.46,
+        "credentials": [
+          "AAG Industry Recognized Training"
+        ]
+      },
+      {
+        "issuer": "California Community Colleges",
+        "p": 0.28,
+        "credentials": [
+          "10-Key Data Entry",
+          "Basic Frame Scaffold",
+          "Boatworks 101 Yacht Electrical Systems",
+          "Carpentry: General Certificate of Achievement",
+          "Construction Trades Pre-Apprenticeship",
+          "Digital Photography in Law Enforcement",
+          "Global Music Appreciation",
+          "Wall Forming"
+        ]
+      },
+      {
+        "issuer": "State Fire Training (SFT)",
+        "p": 0.21,
+        "credentials": [
+          "Wildland Fire-Basics"
+        ]
+      },
+      {
+        "issuer": "Honeywell",
+        "p": 0.15,
+        "credentials": [
+          "Building Automation System (BAS) Certification — Manufacturer/Vendor"
+        ]
+      },
+      {
+        "issuer": "Schneider Electric's EcoXpert program",
+        "p": 0.15,
+        "credentials": [
+          "Building Automation System (BAS) Certification — Manufacturer/Vendor"
+        ]
+      },
+      {
+        "issuer": "Siemens",
+        "p": 0.15,
+        "credentials": [
+          "Building Automation System (BAS) Certification — Manufacturer/Vendor"
+        ]
+      },
+      {
+        "issuer": "California Consortium of Addiction Programs and Professionals (CCAPP)",
+        "p": 0.14,
+        "credentials": [
+          "Intro to Addiction Studies: Addiction and the Community"
+        ]
+      },
+      {
+        "issuer": "Employer Issued",
+        "p": 0.14,
+        "credentials": [
+          "GIS Professional Work Experience"
+        ]
+      }
+    ]
+  }
 }

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-10T16:25:11Z",
-  "session": 632,
-  "moniker": "SkyUmbrella",
+  "written_at": "2026-11-10T18:25:27Z",
+  "session": 633,
+  "moniker": "SkySilverDollar",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_633_handoff.md",
+  "handoff": "docs/session_634_handoff.md",
   "next_step": {
-    "title": "Las Positas's local degrees",
-    "text": "The 2026-27 LPC-GE page prints units per area and no single total, so the local degrees wait on Sam's call on a computed GE figure. Then the reconcile, reread and display follow, and pull request 3056 merges."
+    "title": "Sam's answers on Open Asks Sheet 180",
+    "text": "Las Positas's local degrees wait on card 4 (a GE figure summed from the pattern's areas), De Anza on card 5 (a hand-filed copy of its two GE sheets) and Alameda on card 2; until then the catalog sweep moves to the next college with missing records."
   },
   "calls": [
     {
@@ -217,6 +217,20 @@
         "at": "2026-11-02",
         "words": "keep, on Open Asks Sheet 159 card 1 (22:51Z, his own call): the 60 stays a floor."
       }
+    },
+    {
+      "title": "May Las Positas's local GE units be the sum its GE pattern prints area by area?",
+      "text": "The 2026-27 LPC-GE page prints each area's units and no total; summed, an A.A. needs 28 and an A.S. 22. The 47 local degrees fail until a figure is set.",
+      "if_no_reply": "The local degrees stay failing as read.",
+      "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
+      "link_text": "Open Sheet 180"
+    },
+    {
+      "title": "Will Sam hand-file De Anza's two GE sheets?",
+      "text": "deanza.edu refuses the reader, and the catalog links two separate GE sheets without printing a pattern's units, so 73 degrees fail for want of GE units.",
+      "if_no_reply": "De Anza waits and the sweep moves on.",
+      "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
+      "link_text": "Open Sheet 180"
     }
   ],
   "notes": {
@@ -224,24 +238,16 @@
   },
   "changes": [
     {
-      "at": "2026-11-10T13:26:00Z",
-      "text": "Las Positas College: the Cal-GETC step reconciled 40 transfer degree records and the reread replaced them; the college now passes 145 of 193, up from 116 (pull request 3056)."
+      "at": "2026-11-10T17:38:00Z",
+      "text": "Las Positas: pull request 3056 merged, its display build applied (17,557 of 17,560 rows written, 0 errors); 145 of 193 records pass."
     },
     {
-      "at": "2026-11-10T13:37:00Z",
-      "text": "Las Positas College: a page read found the LPC-GE page prints only a link to the 2026-27 pattern; a second read follows it."
+      "at": "2026-11-10T17:52:00Z",
+      "text": "De Anza: pull request 3044 merged; the catalog links two separate GE sheets and prints no pattern units, so the ask is a hand-filed copy."
     },
     {
-      "at": "2026-11-09T10:21:00Z",
-      "text": "Orange Coast College's course outcomes loaded: 3,035 rows added, 568 already held (pull request 2955)."
-    },
-    {
-      "at": "2026-11-09T10:26:00Z",
-      "text": "College of Alameda: the reconcile step for Dental Assisting's 41 units was removed, because the page the harvest reads cuts the description that prints it (pull request 2956)."
-    },
-    {
-      "at": "2026-11-09T11:26:00Z",
-      "text": "College of Alameda: its transfer degrees print 'General Education (Cal-GETC) and Elective Units' above the degree's 60, so a reconcile step gives them Cal-GETC's 34 units (pull request 2960)."
+      "at": "2026-11-10T18:30:00Z",
+      "text": "Open Asks Sheet 180 carries the harvest's three asks: Alameda's semester layouts, Las Positas's summed GE units and De Anza's GE sheets."
     }
   ],
   "headline": [

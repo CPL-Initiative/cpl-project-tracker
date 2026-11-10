@@ -1305,3 +1305,17 @@ titles and elements as we go."* Built and run this session (#2217, #2218, #2219)
   and each held title opens alone in Unclassified, where its pre-filled proposal saves. The views are the S411 mock-up's;
   the Initiated sign-off and the Curate panel stay until Open Asks Sheet 93 card 3. UI pass notes:
   `docs/ui_pass_lessons.md` S413.
+
+## 2026-11-10 (S633 SkySilverDollar): the re-analysis's Jev runner
+
+- **The runner asks two questions and carries no gate.** `kb/_exhibit_reanalysis_jev.py` (#3076) reads the code checks'
+  findings file and asks only step 9's questions: a `shared_mid_same_issuer` pair as one credential under two names, and
+  an issuer on a changed credential as a training site. Step 9 had named "the 0.85 gate", but `kb/_jev_adjudicate.py`
+  holds that a gate belongs to the reference and question it was measured on (only the CCRR has one), so the exhibits
+  run as a calibration sitting: each answer is Jev's probability for Sam's word, and nothing reads as suggested. Sam's
+  verdicts on these items are what would earn the exhibits a gate.
+- **It runs only on a runner.** typesafe.ai is egress-blocked from the sandbox; `typesafe-smoke.yml` takes the findings
+  path as `reanalysis` (passed through `env`, never interpolated into the shell) and uploads `jev-exhibit-reanalysis`.
+- **The first findings file gives it little to ask.** Over `kb/exhibits_reanalysis/2026-11-10.json` the dry run found no
+  pair (the checks flagged none) and 13 issuers, among them *Proctored Testing Center* and *Johnson Controls Training
+  Institute*, the names the second question is for.

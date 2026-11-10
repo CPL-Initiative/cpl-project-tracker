@@ -229,3 +229,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 - 2026-11-07 SkyMilkyWay (S601, Sam's session): the stale KPI scrape fixed (#2892 fail loudly, #2893 header, #2897 reason in the tail, #2898 encoded secret; scrape lands 16:09Z); Open Asks Sheets 167 and 168 (security asks reach the sheet, #2895, #2896); the Sky: COBIx inbox routine drafted for Sam's review (#2894, routine disabled); light checkpoint; `docs/session_602_handoff.md`.
 - 2026-11-07 SkyTriangulum (S599, CPL Queue routine, 12:12Z): DSP Credit Starting Points Version 3 from Sam's Revise request, in ELL IET Version 5's form, stored as the card's draft (#2883, CPLBrain#707); Coalinga merged (#2882) and displaying; Palomar's clean re-capture, Chemistry extracting; Los Medanos adds nothing; `docs/session_600_handoff.md`.
 - 2026-11-08 SkyFornax (S606, CPL Queue routine, 09:12Z): S605's #2915 carried on #2916; Columbia's Cal-GETC reconcile step for transfer degrees, reconcile 42466476925 in flight; light checkpoint; `docs/session_607_handoff.md`.
+
+## INDEX update history, moved 2026-11-10 (SkySilverDollar)
+
+- 2026-11-08 SkyCondor (S608, CPL Queue routine, 12:12Z): Columbia 52 to 78 of 82 passing, reread and displayed (#2917, carrying #2916 and #2915); Redwoods read by shape and a Cal-GETC 34 step for its transfer degrees, reconcile 42480098144 in flight (#2918); light checkpoint; `docs/session_609_handoff.md`.
