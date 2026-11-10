@@ -1829,7 +1829,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1306,
+     "line": 1308,
      "tabs": [
       "commons"
      ]
@@ -14504,7 +14504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 996
+     "line": 1013
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -15184,7 +15184,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 941
+     "line": 958
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -25802,7 +25802,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1091,
+     "line": 1093,
      "tabs": [
       "commons"
      ]
@@ -27650,7 +27650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 795,
+     "line": 797,
      "tabs": [
       "commons"
      ]
@@ -27660,7 +27660,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 778,
+     "line": 780,
      "tabs": [
       "commons"
      ]
@@ -29142,7 +29142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1069,
+     "line": 1071,
      "tabs": [
       "commons"
      ]

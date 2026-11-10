@@ -306,28 +306,42 @@ with tempfile.TemporaryDirectory() as cx:
     def _g(key, rung, auto, recs):
         return {"key": key, "rung": rung, "acts_automatically": auto, "members": [{"rec": w, "rows": 1} for w in recs]}
     json.dump({"groups": [_g("a", 1, True, ["a1", "a2"]), _g("b", 1, True, ["b1"]), _g("c", 2, True, ["c1", "c2"]),
-                          _g("d", 2, True, ["d1"]), _g("e", 3, True, ["e1"]), _g("f", 5, False, ["f1"])]},
+                          _g("d", 2, True, ["d1"]), _g("e", 3, True, ["e1"]), _g("f", 5, False, ["f1"]), _g("h", 4, True, ["h1", "h2"])]},
               open(os.path.join(cx, "kb/cr_reference_worklist.json"), "w"))
     json.dump({"rows": [{"group_key": "a", "decision": "confirmed", "members": ["a1", "a2", "a3"], "excluded": []},
                         {"group_key": "c", "decision": "confirmed", "members": ["c1"], "excluded": ["c2"]},
                         {"group_key": "d", "decision": "not_a_topic", "members": ["d1"]},
                         {"group_key": "e", "decision": "deferred"},
-                        {"group_key": "f", "decision": "confirmed", "members": ["f1"]}]},
+                        {"group_key": "h", "decision": "not_a_topic", "members": ["h1", "h2"]},
+                        {"group_key": "f", "decision": "confirmed", "members": ["f1"]}], "written_at": "2026-01-01T00:00Z"},
               open(os.path.join(cx, "kb/receipts/cr_reference_decisions_2026-01-01_x.json"), "w"))
+    # a later receipt whose name sorts first: its row for h stands, by the receipt's own time
+    json.dump({"rows": [{"group_key": "h", "decision": "confirmed", "members": ["h1", "h2"], "excluded": []}], "written_at": "2026-02-01T00:00Z"},
+              open(os.path.join(cx, "kb/receipts/cr_reference_decisions_2025-12-31_a.json"), "w"))
     cc = B.confidence_cr(cx)
     pr = {p["name"]: p for p in cc["procedures"]}
     check("CR confidence counts only the groups a rule folded, one line a rung, in groups",
-          cc["unit"] == "groups" and sorted(pr) == ["rung 1", "rung 2", "rung 3"] and cc["total"]["placed"] == 5, cc)
-    check("a confirmed group is kept though the curator added a wording; one never decided is not looked at",
-          (pr["rung 1"]["kept"], pr["rung 1"]["untouched"], pr["rung 1"]["moved"]) == (1, 1, 0), pr["rung 1"])
+          cc["unit"] == "groups" and sorted(pr) == ["rung 1", "rung 2", "rung 3", "rung 4"] and cc["total"]["placed"] == 6, cc)
+    check("a confirmed group the person added a wording to is widened, never plain kept; one never decided is not looked at",
+          (pr["rung 1"]["widened"], pr["rung 1"]["kept"], pr["rung 1"]["untouched"], pr["rung 1"]["looked"]) == (1, 0, 1, 1), pr["rung 1"])
+    check("a group confirmed with the rule's own wordings is kept, and the latest receipt by its own time stands, whatever its name",
+          (pr["rung 4"]["kept"], pr["rung 4"]["moved"], pr["rung 4"]["widened"]) == (1, 0, 0), pr["rung 4"])
+    bad = json.load(open(os.path.join(cx, "kb/cr_reference_worklist.json")))
+    bad["groups"].append(_g("z", 5, True, ["z1"]))
+    json.dump(bad, open(os.path.join(cx, "kb/cr_reference_worklist.json"), "w"))
+    try:
+        B.confidence_cr(cx); raised = False
+    except ValueError:
+        raised = True
+    check("a group that acts automatically outside rungs 1 to 4 stops the count, so the tab's words cannot go wrong quietly", raised)
     check("a group with a rule's wording set aside, or read not a topic, is moved",
           (pr["rung 2"]["moved"], pr["rung 2"]["kept"]) == (2, 0), pr["rung 2"])
     check("a deferred decision settles nothing: the group stays not looked at", pr["rung 3"]["untouched"] == 1 and pr["rung 3"]["looked"] == 0, pr["rung 3"])
 for ref, c in conf.items():
     t = c.get("total") or {}
     check("confidence %s: every placed item lands in exactly one state" % ref,
-          not c.get("error") and t.get("placed") == sum(t.get(k, 0) for k in ("untouched", "kept", "renamed", "moved", "by_procedure", "left")), c.get("error") or t)
-    check("confidence %s: looked is kept plus renamed plus moved" % ref, t.get("looked") == t.get("kept", 0) + t.get("renamed", 0) + t.get("moved", 0))
+          not c.get("error") and t.get("placed") == sum(t.get(k, 0) for k in ("untouched", "kept", "widened", "renamed", "moved", "by_procedure", "left")), c.get("error") or t)
+    check("confidence %s: looked is kept plus renamed plus moved" % ref, t.get("looked") == t.get("kept", 0) + t.get("widened", 0) + t.get("renamed", 0) + t.get("moved", 0))
 with tempfile.TemporaryDirectory() as fx:
     os.makedirs(os.path.join(fx, "kb", "cer_procedures_out", "saved"))
     rows = [  # the procedure's saves: (raw title, the common title it placed)
