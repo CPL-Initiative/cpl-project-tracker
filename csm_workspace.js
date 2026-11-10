@@ -711,7 +711,8 @@
     return "Every requirement is checked. Accept or Deny.";
   }
   function landingLink(r, words) {
-    return r.landing ? '<a href="' + esc(r.landing) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) +
+    // The snapshot already passes an https address alone (httpsUrl in cpl_funding.js); checked again where it is drawn.
+    return r.landing && /^https?:\/\//i.test(r.landing) ? '<a href="' + esc(r.landing) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) +
       ' CPL landing page (opens in a new tab)">' + esc(words || "CPL landing page") + "</a>" : "";
   }
   function reviewHtml(r, kind) {
@@ -876,7 +877,7 @@
     var nc = "";
     // Recommended action (Malone, 2026-11-10): one reason, one sentence of why, and the one thing to do next.
     var rec = recOf(r);
-    var visit = '<div class="visit"><h4>Recommended action</h4><p class="reason" id="cw-reason">' + esc(rec.reason) + '</p><p class="note">' + esc(rec.why) + "</p>" +
+    var visit = '<div class="visit"><h4>Recommended action</h4><p class="reason" id="cw-reason" tabindex="-1">' + esc(rec.reason) + '</p><p class="note">' + esc(rec.why) + "</p>" +
       (rec.review ? '<p class="links" style="margin:0"><button type="button" class="word lead" data-act="toreview">Review the request</button></p>' : "") +
       '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" + composeHtml(r) + "</div>";
     var who = "";
@@ -897,7 +898,8 @@
     var words = (S.reviewer ? sideWord("people", "People") : "") + sideWord("page", "CPL landing page") + (S.reviewer ? sideWord("log", "History") : "");
     var part = function (k, title, body) {
       if (!body) return "";   // a part with nothing in it (History for a reader who is not signed in) draws nothing, heading included
-      return '<div class="sidepart" data-sidepart="' + k + '"' + (side === k ? "" : " hidden") + '><h4 class="side-h" id="cw-side-' + k + '" tabindex="-1">' + title + "</h4>" + body + "</div>";
+      // The review carries its own heading, so the part's is for the focus alone.
+      return '<div class="sidepart" data-sidepart="' + k + '"' + (side === k ? "" : " hidden") + '><h4 class="side-h' + (k === "review" ? " sr" : "") + '" id="cw-side-' + k + '" tabindex="-1">' + title + "</h4>" + body + "</div>";
     };
     var c = S.reviewer && CT.state === "ready" ? contactsOf(r) : null;
     var peopleBody = !S.reviewer ? "" : who + (CT.state === "error" ? '<p class="gate">' + esc(CT.error) + "</p>" : !c ? '<p class="gate">Reading the contacts on file&hellip;</p>' :
@@ -913,7 +915,7 @@
     var pageBody = '<p class="links" style="margin:0">' + (landingLink(r, "Open the page in a new tab") || '<span class="gate">No landing page address in MAP.</span>') + "</p>" +
       (S.reviewer && r.landing ? (onPage.length ? '<p class="k">Who the page lists</p><ul class="conds">' + onPage.map(function (p) {
         return '<li class="ncline" style="margin:0">' + esc([p.role, p.name, p.email].filter(Boolean).join(", ")) + "</li>"; }).join("") + "</ul>"
-        : '<p class="gate">' + (c ? "The page lists no one MAP has read." : "Reading the contacts on file&hellip;") + "</p>") : "");
+        : '<p class="gate">' + (c ? "The page lists no one MAP has read." : CT.state === "error" ? esc(CT.error) : "Reading the contacts on file&hellip;") + "</p>") : "");
     var reviews = w.map(function (k) { return reviewHtml(r, k); }).join("");
     return '<div class="pane"><div class="rec">' +
       '<div class="rec-head"><div><h3 class="rec-name" id="cw-recname" tabindex="-1">' + esc(r.name) + '</h3><p class="rec-sub">' +
@@ -1689,7 +1691,13 @@
         : name === "follow" ? { kind: "email", body: "Follow-up email on the " + what + " opened to copy.", follow_up_on: plusDays(7) }
         : { kind: "email", body: "The acceptance email for the " + what + " opened again to copy." };
       logWrite("POST", null, Object.assign({ college: r.key }, entry));
-      if (writes && state.side === "review") state.side = "";   // the request is decided; the record's next action is the email
+      // The request is decided: the panel closes unless another request still waits (COBIx on PR 3052), and focus
+      // goes to Recommended action, which now names the email, so the keyboard is never left on the page's body.
+      if (writes) {
+        var left = waitingKinds(r).filter(function (k) { return k !== kind; }).length;
+        if (state.side === "review" && !left) state.side = "";
+        setTimeout(function () { var rr = document.getElementById(left ? "cw-side-review" : "cw-reason"); if (rr) rr.focus(); }, 0);
+      }
       say(name === "accept" ? "Accepted. The acceptance email opens for you to copy." : name === "deny" ? "Denied: the request is removed." :
         name === "follow" ? "The follow-up email opens for you to edit and copy." : "The acceptance email opens again for you to copy.");
       return true;
@@ -1706,7 +1714,7 @@
       paintRecord();
       var sh = state.side ? root().querySelector("#cw-side-" + state.side) : root().querySelector('[data-side="' + sk + '"]');
       if (sh) sh.focus();
-      if (state.side === "people" && S.reviewer && CT.state !== "ready" && CT.state !== "error") loadContacts().then(paintRecord);
+      if ((state.side === "people" || state.side === "page") && S.reviewer && CT.state !== "ready" && CT.state !== "error") loadContacts().then(paintRecord);
       return;
     }
     if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }

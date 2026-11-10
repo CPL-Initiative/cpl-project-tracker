@@ -323,6 +323,14 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     e.W._state.view = "all"; e.W.paint();
     clickEl(e.window, e.root.querySelector('.row[data-sel="' + OTHER + '"]'));
     check("5e8: choosing another college closes an open review", e.W._state.side === "" && side().hidden);
+    check("5e8a: the review has one heading a screen reader hears: the part's own is for the focus alone",
+      /\(k === "review" \? " sr" : ""\)/.test(SRC) && !/\bsr\b/.test(side().querySelector("#cw-side-people").className));
+    check("5e8b: Recommended action can take the focus after a decision", rec().querySelector("#cw-reason").getAttribute("tabindex") === "-1");
+    check("5e8c: a landing page address is drawn as a link only when it is http or https, and the page part loads the contacts as People does",
+      /r\.landing && \/\^https\?:\\\/\\\/\/i\.test\(r\.landing\)/.test(SRC) && /state\.side === "people" \|\| state\.side === "page"/.test(SRC) &&
+      /CT\.state === "error" \? esc\(CT\.error\) : "Reading the contacts/.test(SRC));
+    check("5e8d: deciding one of two waiting requests leaves the review open for the other",
+      /waitingKinds\(r\)\.filter\(function \(k\) \{ return k !== kind; \}\)\.length/.test(SRC) && /state\.side === "review" && !left/.test(SRC));
     const out = setup({ signedIn: false });
     check("5e9: a reader who is not signed in gets the landing page word alone: no People, no History, no part for either",
       !out.root.querySelector('[data-side="people"]') && !out.root.querySelector('[data-side="log"]') && !!out.root.querySelector('[data-side="page"]') &&
