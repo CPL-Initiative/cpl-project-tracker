@@ -72,8 +72,7 @@
     162.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -185,5 +184,6 @@
    "The first program learning outcome was printed run-on with the lead-in sentence ('Upon completion of this program, students will be able to: Comprehend academic lectures'); the lead-in was omitted."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42816943064,
+ "read_run": "38984747530"
 }

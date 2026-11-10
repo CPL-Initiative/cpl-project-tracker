@@ -65,34 +65,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.0,
     23.0
    ],
    "stated": [
-    60.0,
-    60.0
+    21.0,
+    23.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     21.0,
-     23.0
+     55.0,
+     57.0
     ],
     "stated": [
-     21.0,
-     23.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     3.0,
+     5.0
+    ]
    }
   },
   "repeated": {
@@ -117,7 +123,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -138,8 +144,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -240,5 +246,20 @@
    "Catalog text begins mid-sentence (cut off at the start of the program description)."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42816943064,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "including both of the following:\nThe California General Education Transfer Curriculum (Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Las Positas College AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' then 'Additional General Education and Elective Units ... 42.0 · Total: 60.0' (English AA-T 32182; college page read 42815817415); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38984747530"
 }
