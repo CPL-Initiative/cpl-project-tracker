@@ -71,6 +71,23 @@ function setup(signedIn) {
     !/ {2}| \n/.test(both.body) && !/[{}]/.test(both.body), both.body);
   check("1c: the nudge and the follow-up come from the same templates", /participation confirmation for Pasadena/.test(nudge.subject) &&
     /a follow-up for Pasadena/.test(W._seedMail(COLLEGE, "follow").subject));
+  // COBIx on PR 3068: "reads exactly as before" is checked word for word, against the old seedMail's own output for all
+  // four emails, with and without a deadline, a close title and a CO Monitor's note (one with indents and doubled spaces).
+  {
+    const SHIPPED = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures/csm_templates_shipped.json"), "utf8")).cases;
+    const snap = W._snapshot(), row = snap.rows.find((r) => r.key === COLLEGE), keep = { dl: snap.deadline, nc: row.nc, note: row.note };
+    const dl0 = snap.deadline || "2026-12-31", miss = [];
+    for (const dl of [dl0, null]) for (const near of [false, true]) for (const note of ["", "Line one\n    indented  two   spaces."]) {
+      snap.deadline = dl; row.nc = Object.assign({}, row.nc || {}, { leadNear: near }); row.note = note;
+      for (const t of ["lead", "both", "nudge", "follow"]) {
+        const k = [t, !!dl, near, !!note].join("|"), m = W._seedMail(COLLEGE, t);
+        if (SHIPPED[k] !== m.subject + "\n---\n" + m.body) miss.push(k);
+      }
+    }
+    snap.deadline = keep.dl; row.nc = keep.nc; row.note = keep.note;
+    check("1d: with nothing saved, all 32 cases read word for word as the dashboard wrote them before the templates", Object.keys(SHIPPED).length === 32 && miss.length === 0);
+    if (miss.length) console.log("1d differs: " + miss.join(", "));
+  }
 
   // ── 5a. the pane, for a reviewer ──
   const word = () => root.querySelector("header [data-tplopen]"), pn = () => root.querySelector("#cw-tpls");
@@ -111,6 +128,25 @@ function setup(signedIn) {
     next.body === "Dear Ana Rivera,\n\nA shorter ask for Pasadena.\n\nThe CPL Initiative team" && next.subject === lead.subject, JSON.stringify(next.body));
   check("2c: the other templates are untouched", W._seedMail(COLLEGE, "both").body === both.body);
   check("2d: the pane names who saved the version in force, and offers the shipped wording back", /Saved by /.test(flat(pn())) && !!pn().querySelector("[data-tplreset]"));
+
+  // ── 2e. a teammate's save while this one types ──
+  body().value = "Dear {name},\n\nMy edit for {college}.\n\nThe CPL Initiative team";
+  body().dispatchEvent(new window.Event("input", { bubbles: true }));
+  W._tpls.rows.unshift({ id: 99, activity: "funding", template_id: "lead", subject: "Theirs", body: "Dear {name},\n\nTheir edit.", reset: false,
+    by_email: "kristen@rccd.edu", created_at: "2026-11-10T16:00:00Z" });
+  pn().querySelector("form").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
+  await tick(); await tick();
+  check("2e: a save over a teammate's newer version is refused and names them, keeping both sets of words",
+    W._tpls.rows.length === 2 && W._tpls.rows[0].id === 99 && /Not saved: kristen@rccd\.edu saved this template/.test(flat(pn())) && /My edit for/.test(body().value));
+  pn().querySelector("form").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
+  await tick(); await tick();
+  check("2f: saved again knowingly, it goes through", W._tpls.rows.length === 3 && /My edit for \{college\}/.test(W._tpls.rows[0].body));
+  W._tpls.rows.splice(0, 2);   // back to the one version 2a saved, for what follows
+
+  // ── 4a1. the cursor ──
+  body().focus(); body().setSelectionRange(5, 9);
+  W.paint();
+  check("4a1: a repaint keeps the cursor where it was in the message", doc.activeElement === body() && body().selectionStart === 5 && body().selectionEnd === 9);
 
   // ── 4b. earlier versions and the reset ──
   clickEl(window, pn().querySelector("[data-tplreset]"));

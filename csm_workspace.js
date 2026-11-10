@@ -1278,10 +1278,14 @@
     String(text || "").replace(/\{([^{}\s]{1,40})\}/g, function (m, k) { if (!known[k] && bad.indexOf(m) < 0) bad.push(m); return m; });
     return bad;
   }
-  // Fill the braces, then tidy what an empty sentence leaves: a space before a line break, or two spaces together.
+  // Fill the braces. A word with nothing to say (no deadline set, no close title) goes with the one space before it, so
+  // the sentence around it reads whole; nothing else in the message is touched, the CO Monitor's note included (COBIx
+  // on PR 3068).
   function tplFill(text, vars) {
-    return String(text || "").replace(/\{([a-z_]{1,40})\}/g, function (m, k) { return Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m; })
-      .replace(/[ \t]+\n/g, "\n").replace(/ {2,}/g, " ").replace(/[ \t]+$/, "");
+    var has = function (k) { return Object.prototype.hasOwnProperty.call(vars, k); };
+    return String(text || "")
+      .replace(/[ \t]?\{([a-z_]{1,40})\}/g, function (m, k) { return has(k) && String(vars[k]) === "" ? "" : m; })
+      .replace(/\{([a-z_]{1,40})\}/g, function (m, k) { return has(k) ? String(vars[k]) : m; });
   }
   function tplVars(r, name, missing) {
     return { name: name, college: r.name, funding_page: PUBLIC_FUNDING_URL,
@@ -1298,8 +1302,7 @@
     if (!R || !S || !S.reviewer) return;
     TPLS.asked = true;
     if (!R.remote) { TPLS.loaded = true; return; }
-    fetch(R.url + "csm_templates?select=*&activity=eq." + ACTIVITY + "&order=created_at.desc,id.desc&limit=500", { headers: R.headers })
-      .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return x.json(); })
+    tplFetch(R)
       .then(function (rows) { TPLS.rows = rows || []; TPLS.loaded = true; TPLS.error = ""; paint(); })
       .catch(function (e) { TPLS.loaded = true; TPLS.error = "The saved templates could not be read (" + e.message + "). Emails use the wording the dashboard ships with."; paint(); });
   }
@@ -1317,6 +1320,16 @@
       .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return true; })
       .catch(function (e) { TPLS.error = "The template did not save (" + e.message + "). Your words are still in the box."; return false; })
       .then(function (ok) { if (ok) TPLS.error = ""; return ok; });
+  }
+  // Re-read the saved versions and wait for them (remote only); without a remote the store is already current.
+  function tplFresh() {
+    var R = rest();
+    if (!R || !R.remote) return Promise.resolve();
+    return tplFetch(R).then(function (rows) { TPLS.rows = rows || []; TPLS.loaded = true; }).catch(function () {});
+  }
+  function tplFetch(R) {
+    return fetch(R.url + "csm_templates?select=*&activity=eq." + ACTIVITY + "&order=created_at.desc,id.desc&limit=500", { headers: R.headers })
+      .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return x.json(); });
   }
   function tplWord() {
     return S && S.reviewer ? '<button type="button" class="word quiet" data-tplopen="1" aria-expanded="' + !!state.tplOpen + '" aria-controls="cw-tpls">Email templates</button>' : "";
@@ -1757,6 +1770,8 @@
     if (dlgHost) dlgHost.parentNode.removeChild(dlgHost);
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
+    // A template being edited keeps its cursor and scroll through a repaint (COBIx on PR 3068).
+    var caret = focusId === "cw-tpls-body" || focusId === "cw-tpls-subj" ? { a: ae.selectionStart, b: ae.selectionEnd, top: ae.scrollTop } : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
       '<header><div class="top-row"><h1>Funding Follow-up Dashboard</h1><p class="links">' + accessWord() + tplWord() +
         fundWord("head", "Implementation Funding") + "</p></div>" +
@@ -1776,7 +1791,10 @@
         blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: one of the funding approvers approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
     }
     if (S.reviewer && !ACC.asked) loadAccess();
-    if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
+    if (focusId && document.getElementById(focusId)) {
+      var fe = document.getElementById(focusId); fe.focus();
+      if (caret) { try { fe.setSelectionRange(caret.a, caret.b); fe.scrollTop = caret.top; } catch (e) {} }
+    }
     else if (focusSel) { var b = el.querySelector('.row[data-sel="' + cssEsc(focusSel) + '"]'); if (b) b.focus(); }
   }
   function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
@@ -1877,14 +1895,16 @@
     if (!t || !root().contains(t)) return;
     if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
     if (t.hasAttribute("data-tplopen")) {
-      state.tplOpen = !state.tplOpen; state.tplMsg = ""; paint();
+      state.tplOpen = !state.tplOpen; state.tplMsg = "";
+      if (state.tplOpen && rest() && rest().remote) TPLS.asked = false;   // re-read on open, so a teammate's save shows
+      paint();
       var tw = root().querySelector(state.tplOpen ? "#cw-tpls-h" : "[data-tplopen]"); if (tw) { tw.setAttribute("tabindex", "-1"); tw.focus(); }
       return;
     }
     if (t.hasAttribute("data-tpldiscard")) { delete state.tplDraft[state.tplId]; state.tplMsg = "Your changes are discarded."; paint(); return; }
     if (t.hasAttribute("data-tpluse")) {
       var vid = t.getAttribute("data-tpluse"), ver = TPLS.rows.filter(function (x) { return String(x.id) === vid; })[0];
-      if (ver) { state.tplDraft[state.tplId] = { subject: ver.subject, body: ver.body }; state.tplMsg = "Loaded the version from " + shortDate(ver.created_at) + ". Save to use it again."; paint(); }
+      if (ver) { var cur1 = tplOf(state.tplId); state.tplDraft[state.tplId] = { subject: ver.subject, body: ver.body, base: cur1.row ? cur1.row.id : null }; state.tplMsg = "Loaded the version from " + shortDate(ver.created_at) + ". Save to use it again."; paint(); }
       var tb = document.getElementById("cw-tpls-body"); if (tb) tb.focus();
       return;
     }
@@ -2020,10 +2040,22 @@
     if (!subject || !body.trim()) { said("A template needs a subject and a message."); return; }
     var bad = tplUnknown(subject + "\n" + body);
     if (bad.length) { said("Not saved: " + bad.join(", ") + (bad.length === 1 ? " is not a word" : " are not words") + " the dashboard fills in. Use one of the words listed under the message."); return; }
-    var cur = tplOf(id);
-    if (subject === cur.subject && body === cur.body) { said("Nothing has changed since the last save."); return; }
+    var dr = state.tplDraft[id] || null;
     TPLS.busy = true; paint();
-    tplWrite({ template_id: id, subject: subject, body: body }).then(function (ok) {
+    // Re-read first: a teammate's save since this draft began is named, and nothing is written over it (COBIx on PR 3068).
+    tplFresh().then(function () {
+      var cur = tplOf(id), now = cur.row ? cur.row.id : null, base = dr && "base" in dr ? dr.base : now;
+      if (String(now) !== String(base)) {
+        TPLS.busy = false;
+        if (dr) dr.base = now;
+        state.tplMsg = "Not saved: " + (cur.row.by_email || "a teammate") + " saved this template on " + shortDate(cur.row.created_at) +
+          " while you were editing. Your words are still in the box; Earlier versions holds theirs. Save again to keep yours.";
+        paint(); return null;
+      }
+      if (subject === cur.subject && body === cur.body) { TPLS.busy = false; state.tplMsg = "Nothing has changed since the last save."; paint(); return null; }
+      return tplWrite({ template_id: id, subject: subject, body: body });
+    }).then(function (ok) {
+      if (ok === null) return;
       TPLS.busy = false;
       if (ok) { delete state.tplDraft[id]; state.tplMsg = "Saved. Every reviewer's next " + tplLabel(id).toLowerCase().replace(/^the /, "") + " email starts from this wording."; }
       if (ok && rest() && rest().remote) loadTemplates(); else paint();
@@ -2031,7 +2063,7 @@
   }
   function onInput(e) {
     if (e.target.hasAttribute && e.target.hasAttribute("data-tpledit")) {
-      var cur = tplOf(state.tplId), dr = state.tplDraft[state.tplId] || { subject: cur.subject, body: cur.body };
+      var cur = tplOf(state.tplId), dr = state.tplDraft[state.tplId] || { subject: cur.subject, body: cur.body, base: cur.row ? cur.row.id : null };
       dr[e.target.getAttribute("data-tpledit")] = e.target.value;
       state.tplDraft[state.tplId] = dr;
       return;
