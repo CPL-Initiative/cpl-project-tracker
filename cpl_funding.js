@@ -205,8 +205,6 @@
     // breaks.
     ".cplfund-table td.cf-inst { white-space: normal; }",
     ".cplfund-table td.cf-inst .cplfund-instname { white-space: nowrap; }",
-    ".cplfund-table td.cf-inst .cf-declined { color: var(--text-muted); }",
-    ".cplfund-declined-line { margin-top: 6px; font-size: .84rem; color: var(--text-muted); }",
     // The Confirm word sits at the cell's right edge (Sam, 2026-10-25: "Make the
     // Confirm by links line up right justified so they look uniform up and down
     // the table"), whatever the length of the name before it.
@@ -5531,7 +5529,7 @@
   // of the DOM after each render rather than relying on each emitter to check
   // publicMode() — a missed call site is the failure mode that matters, and a
   // declarative sweep cannot miss one. wire() reads the same list.
-  var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave", "data-declineset", "data-declineclear", "data-srcopen", "data-srcall", "data-repopen",
+  var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave", "data-srcopen", "data-srcall", "data-repopen",
     "data-reqdel", "data-reqhide", "data-reqshow",
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-ncostratadd", "data-ncostratdel", "data-ncgoal",
@@ -5563,7 +5561,7 @@
     "cplFundScenSel", "cplFundScenNew", "cplFundScenDel", "cplFundScenPublish",
     "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio"];
   // The review work's own controls: a door sign-in keeps these (the database gives them to is_funding_reviewer()).
-  var REVIEW_ATTRS = ["data-note", "data-notesave", "data-declineset", "data-declineclear",
+  var REVIEW_ATTRS = ["data-note", "data-notesave",
     "data-optinconfirm", "data-optinrevoke", "data-optinremove",
     "data-ncattestreject", "data-ncattestconfirm", "data-ncattestremove",
     "data-optinaccept", "data-optindeny", "data-ncattestaccept", "data-ncattestdeny", "data-optinmail", "data-ncattestmail"];
@@ -6875,9 +6873,7 @@
         var owes = ncCondList(c.college).some(function (r) { return !r.met; });
         if (!ncAttestStanding(att) && !ncAttestPending(att) && owes) missing.push("nc");
       }
-      var d = declinedOf(c.college);
-      return { key: c.college, name: dispName(c.college), aliases: [c.short, c.name].filter(Boolean), missing: missing,
-        declined: d ? longDate(d.at) : "" };
+      return { key: c.college, name: dispName(c.college), aliases: [c.short, c.name].filter(Boolean), missing: missing };
     }).filter(function (r) { return r.missing.length; });
   }
   // ── THE CSM WORKSPACE'S READ (Sam, 2026-11-02: "a CSM workspace for handling the comms (notes, follow ups,
@@ -6895,7 +6891,7 @@
     var reviewer = reviewing() && !publicMode();
     var rows = oneRoster().map(function (c) {
       var key = c.college, a = collegeAlloc(c), row = ELIG.optinRow[key] || null, att = ncAttestOf(key);
-      var ncOn = ncAttestShown(c), d = declinedOf(key), k = ELIG.contact[key] || null;
+      var ncOn = ncAttestShown(c), k = ELIG.contact[key] || null;
       var out = {
         key: key, name: dispName(key), district: c.district || "",
         total: Math.round(a.total || 0), floored: !!a.floored, capped: !!a.capped, ncShare: ncOn,
@@ -6910,7 +6906,7 @@
           lead: ncLeadInMap(key), leadNear: ncLeadNear(key),
           fy: att ? att.fiscal_year || "" : "", at: att ? (att.requested_at || att.created_at || "") : "",
           confirmedAt: att ? att.confirmed_at || "" : "" } : null,
-        declined: d ? d.at : "", landing: k ? httpsUrl(k.url) || "" : "",
+        landing: k ? httpsUrl(k.url) || "" : "",
         coordMissing: (ELIG.coordMissing || {})[key] || "", note: "", req: null };
       if (reviewer) {
         out.note = noteFor(key);
@@ -7416,9 +7412,6 @@
           (n.updated_by || n.updated_at ? ' <span class="dk">(' + esc(n.updated_by || "") +
             (n.updated_by && n.updated_at ? ", " : "") + fmtWhen(n.updated_at) + ")</span>" : "") + "</div>";
       }
-      var dcl = declinedOf(college);
-      if (dcl) out += '<div class="cplfund-colane-more-line"><span class="cplfund-colane-k">Declined participation</span> ' +
-        fmtWhen(dcl.at) + (dcl.by ? " by " + esc(dcl.by) : "") + "</div>";
       return out ? '<div class="dk cplfund-colane-moreinfo">' + out + "</div>" : "";
     }
     function line(r, actions) {
@@ -7507,7 +7500,7 @@
     if (!remoteEnabled() || publicMode()) return;   // reviewer-gated server-side; don't ask
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
     applyWriteAuth(headers);
-    return fetch(NOTES_URL + "?select=college,note,updated_by,updated_at,declined_at,declined_by", { headers: headers })
+    return fetch(NOTES_URL + "?select=college,note,updated_by,updated_at", { headers: headers })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
         if (!Array.isArray(rows)) return;
@@ -7520,79 +7513,28 @@
     note = String(note || "").trim();
     if (!remoteEnabled()) {
       if (note) NOTES[college] = Object.assign({}, NOTES[college] || {}, { college: college, note: note });
-      else if (declinedOf(college)) NOTES[college].note = null;
       else delete NOTES[college];
       render();
       return;
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
     applyWriteAuth(headers);
-    // A row that also holds a decline keeps it: an emptied note becomes null there, never a delete.
-    var keepRow = !note && declinedOf(college);
     var req = note
       ? fetch(NOTES_URL + "?on_conflict=college", {
           method: "POST",
           headers: (function (x) { x.Prefer = "resolution=merge-duplicates"; return x; })(headers),
           body: JSON.stringify({ college: college, note: note, updated_by: curatorEmail() })
         })
-      : keepRow
-        ? fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), {
-            method: "PATCH", headers: headers, body: JSON.stringify({ note: null, updated_by: curatorEmail() }) })
-        : fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
+      : fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
     req.then(writeResult)
       .then(function () { loadNotes(); })   // re-read = the honest confirmation (#598)
       .catch(function () { loadNotes(); });
   }
 
-  // ── DECLINED PARTICIPATION (Sam, 2026-10-31: "a few may want to refuse
-  // participation, in which case we need to be able to note that on their
-  // college row and exclude them from nudges (or gray them out with an option
-  // to override and nudge anyway)") ─────────────────────────────────────────
-  // The mark rides the CO Monitor's notes row (declined_at, declined_by;
-  // kb/migrations/2026-10-31_cpl_funding_notes_declined.sql), so it has the
-  // note's audience: a signed-in reviewer reads and writes it, and no public
-  // rendering shows it. Nudge lists a declined college unchecked, in gray.
-  function declinedOf(college) {
-    var n = NOTES[college];
-    return n && n.declined_at ? { at: n.declined_at, by: n.declined_by || "" } : null;
-  }
-  function setDeclined(college, on) {
-    var when = on ? nowIso() : null, who = on ? curatorEmail() : null;
-    var had = NOTES[college] || null;
-    if (!remoteEnabled()) {
-      if (on) NOTES[college] = Object.assign({}, had || {}, { college: college, declined_at: when, declined_by: who });
-      else if (had && had.note) { had.declined_at = null; had.declined_by = null; }
-      else delete NOTES[college];
-      render();
-      return;
-    }
-    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
-    applyWriteAuth(headers);
-    var req = on
-      ? fetch(NOTES_URL + "?on_conflict=college", {
-          method: "POST",
-          headers: (function (x) { x.Prefer = "resolution=merge-duplicates"; return x; })(headers),
-          body: JSON.stringify({ college: college, declined_at: when, declined_by: who })
-        })
-      : had && had.note
-        ? fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), {
-            method: "PATCH", headers: headers, body: JSON.stringify({ declined_at: null, declined_by: null }) })
-        : fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
-    req.then(writeResult)
-      .then(function () { loadNotes(); })
-      .catch(function () { loadNotes(); });
-  }
-  function declinedLineHtml(college) {
-    var d = declinedOf(college), name = esc(dispName(college));
-    if (d) {
-      return '<div class="cplfund-declined-line"><span>Declined participation, ' + esc(longDate(d.at)) +
-        (d.by ? ", noted by " + esc(d.by) : "") + '. Nudge lists it unchecked.</span> ' +
-        '<button type="button" class="cplfund-optbtn" data-declineclear="' + esc(college) +
-        '" aria-label="Clear the declined participation mark for ' + name + '">Clear</button></div>';
-    }
-    return '<div class="cplfund-declined-line"><button type="button" class="cplfund-optbtn" data-declineset="' + esc(college) +
-      '" aria-label="Mark ' + name + ' as declining participation">Mark as declined participation</button></div>';
-  }
+  // ── NO DECLINE PIECE (Sam, 2026-11-09: "we really don't need a college declining piece at all--we can just leave
+  // the confirmation blank as an indicator--save the step"). The mark a reviewer could set on a college's row, its
+  // chip, the Nudge's gray row and the workspace's hook left in S624; no row carried one (read live 2026-11-10:
+  // 0 of 5). cpl_funding_notes keeps its two columns for the mark, unread.
 
   // ── The Reporting box: what a college reports it has expended ─────────
   // Sam's calls (open-asks sheet 6, cards 2–4, 2026-09-30): one report a
@@ -13610,10 +13552,6 @@
         (reviewer ? acceptWord("data-ncattestaccept", "the Noncredit CPL Lead attestation") : "");
     }
     if (waits) chips += ' <span class="cf-waits">' + waits + "</span>";
-    // Declined participation (Sam, 2026-10-31), a signed-in reviewer's word on the row; never public.
-    var dec = reviewer ? declinedOf(c.college) : null;
-    if (dec) chips += ' <span class="cplfund-chip cf-declined" title="' + esc("Declined participation, " + longDate(dec.at) +
-      (dec.by ? ", noted by " + dec.by : "") + ". Nudge lists it unchecked.") + '">Declined</span>';
     return chips;
   }
   // ★ Veteran Star beside the name (Sam, 2026-09-24: "Add a veteran star icon on
@@ -14391,8 +14329,7 @@
         '<button type="button" class="cplfund-optbtn" data-notesave="' + esc(c.college) + '">Save note</button>' +
         (noteRec && noteRec.updated_at && noteRec.note
           ? ' <span class="dk">saved ' + esc(String(noteRec.updated_at).slice(0, 10)) +
-            (noteRec.updated_by ? " by " + esc(noteRec.updated_by) : "") + "</span>" : "") +
-        declinedLineHtml(c.college) + "</div>";
+            (noteRec.updated_by ? " by " + esc(noteRec.updated_by) : "") + "</span>" : "") + "</div>";
     } else if (noteRec && noteRec.note) {
       noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span> ' +
         esc(noteRec.note) + "</div>";
@@ -17699,13 +17636,6 @@
         refreshTable();
       });
     });
-    holder.querySelectorAll("[data-declineset], [data-declineclear]").forEach(function (b) {
-      b.addEventListener("click", function (e) {
-        e.stopPropagation();
-        var set = b.hasAttribute("data-declineset");
-        setDeclined(b.getAttribute(set ? "data-declineset" : "data-declineclear"), set);
-      });
-    });
     holder.querySelectorAll("[data-notesave]").forEach(function (b) {
       b.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -19432,8 +19362,7 @@
       rest: function () {
         return { remote: remoteEnabled(), url: SUPABASE_URL + "/rest/v1/", who: curatorEmail() || "",
           headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }) };
-      },
-      setDeclined: function (key, on) { if (reviewing() && !publicMode()) setDeclined(key, !!on); } },
+      } },
     onModelChange: function (fn, describe) {
       if (typeof fn !== "function") return function () {};
       _subs.push(fn);

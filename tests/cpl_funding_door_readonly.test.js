@@ -118,7 +118,7 @@ check("6c: the review work reads reviewing(), never the model's gate",
   /function csmSnapshot\(\) \{\s*var reviewer = reviewing\(\) && !publicMode\(\);/.test(SRC) &&
   /function coReviewLaneHtml\(\) \{\s*if \(!reviewing\(\) \|\| publicMode\(\)\) return "";/.test(SRC) &&
   /function nudgeShown\(\) \{ return reviewing\(\)/.test(SRC) &&
-  /setDeclined: function \(key, on\) \{ if \(reviewing\(\)/.test(SRC));
+  !/setDeclined/.test(SRC));
 check("6d: the three field builders render the value alone for a closed model",
   (SRC.match(/if \(publicMode\(\) \|\| opts\.ro \|\| modelClosed\(\)\) return esc\(value\);/g) || []).length === 3);
 
