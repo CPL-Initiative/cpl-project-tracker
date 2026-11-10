@@ -159,6 +159,48 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   clickEl(window, today.querySelector('[data-view="held"]'));
   check("5b4: a Today count filters the action center and shows pressed", W._state.view === "held" &&
     root.querySelector('header .today [data-view="held"]').getAttribute("aria-pressed") === "true");
+  // Malone, 2026-11-10, built on Sam's go: the summary as scannable metrics, the number above its label, the deadline apart.
+  {
+    const m = setup({ signedIn: true });
+    const mets = Array.prototype.slice.call(m.root.querySelectorAll("header .today .metric"));
+    const menu = {};
+    Array.prototype.forEach.call(m.root.querySelectorAll("#cw-view option"), (o) => { menu[o.value] = (/\((\d+)\)$/.exec(o.textContent) || [])[1]; });
+    check("5b6: five metrics in the order the work goes, each a number above its label",
+      mets.map((b) => b.getAttribute("data-view")).join() === "review,send,notyet,held,qual" &&
+      mets.every((b) => /^\d+$/.test(flat(b.querySelector(".num"))) && flat(b.querySelector(".lab")).length > 3 && b.firstElementChild.className === "num"));
+    check("5b7: each metric's number is its menu view's own count, so the two cannot disagree",
+      mets.every((b) => flat(b.querySelector(".num")) === menu[b.getAttribute("data-view")]), JSON.stringify(menu));
+    clickEl(m.window, m.root.querySelector('.metric[data-view="send"]'));
+    check("5b8: Ready to send is a metric, and it opens its list and shows pressed",
+      m.W._state.view === "send" && m.root.querySelector('.metric[data-view="send"]').getAttribute("aria-pressed") === "true" &&
+      m.root.querySelector("#cw-view").value === "send");
+    const dl = m.root.querySelector("header .today .deadline");
+    check("5b9: the deadline sits apart from the metrics, its label above its date, and is no button",
+      !dl || (dl.tagName === "P" && /Confirmation due/.test(flat(dl.querySelector(".lab"))) && !!flat(dl.querySelector(".date"))));
+  }
+  // The list in two groups, each row a specific next action, every badge kept (Malone, 2026-11-10; built on Sam's go).
+  {
+    const g = setup({ signedIn: true });
+    const heads = () => Array.prototype.map.call(g.root.querySelectorAll("#cw-queue .qgroup"), (h) => flat(h));
+    check("5c1: the waiting request sits under Needs you, and a group with no college draws no heading",
+      heads().join("|") === "Needs you 1" && !!g.root.querySelector('.queue[data-group="you"] .row[data-sel="' + COLLEGE + '"]') &&
+      g.root.querySelector('.queue[data-group="you"]').getAttribute("aria-labelledby") === "cw-qg-you");
+    check("5c2: its line names what to review, the day it was sent and the decision",
+      flat(g.root.querySelector('.row[data-sel="' + COLLEGE + '"] .row-next')) === "Review the participation confirmation sent Nov 2, then accept or deny it.");
+    const rowsNow = g.W._snapshot().rows;
+    const nk = rowsNow.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
+    check("5c3: outside Ready to send, a college with no confirmation reads the email to send, never a pointer to another list",
+      g.W._nextStep(rowsNow.find((r) => r.key === nk)) === "Send the request for the participation confirmation." && g.W._needsYou(rowsNow.find((r) => r.key === nk)));
+    g.W._log().push({ id: 901, college: nk, activity: "funding", kind: "email", body: "Nudge sent: a participation confirmation for " + nk, created_at: "2026-11-09T10:00:00Z" });
+    g.W._state.view = "notyet"; g.W._state.sel = null; g.W.paint();
+    const nrow = g.root.querySelector('.queue[data-group="col"] .row[data-sel="' + nk + '"]');
+    check("5c4: a nudged college waits on the college: its own group, the Nudged badge with its date, and nothing to send today",
+      !!nrow && /Nudged Nov 9/.test(flat(nrow.querySelector(".row-pills"))) && /^Nothing to send today\. The request for the confirmation went out Nov 9\.$/.test(flat(nrow.querySelector(".row-next"))) &&
+      heads().length === 2 && /^Needs you \d+$/.test(heads()[0]) && /^Waiting on the college 1$/.test(heads()[1]));
+    check("5c5: Needs you comes first and holds every other college in the list, in the live order",
+      g.root.querySelectorAll('.queue[data-group="you"] .row').length + 1 === g.root.querySelectorAll("#cw-queue .row").length &&
+      g.root.querySelector("#cw-queue .queue").getAttribute("data-group") === "you");
+  }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('[data-stage="notyet"]'));
   check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
