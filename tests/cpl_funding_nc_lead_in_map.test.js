@@ -136,6 +136,14 @@ function make(elig) {
   check("6c: the filter counts the role as attested, with no attestation on file",
     has(yes, "Laney") && !has(yes, "Alameda") && !has(no, "Laney") && has(no, "Alameda"));
   names("");
+  {
+    // The attestations have not loaded: nobody is in either list, the role colleges included.
+    const m = make({ ncAttestOk: false, ncAttest: null, ncLead: { Laney: true } });   // the hook reads a given ncAttest as loaded
+    const pick = (val) => { const el = m.doc.getElementById("cplFundCondFilter"); el.value = val;
+      el.dispatchEvent(new m.window.Event("change", { bubbles: true }));
+      return m.doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length; };
+    check("6f: while the attestations load, neither filter choice lists anyone", pick("nc_yes") === 0 && pick("nc_no") === 0);
+  }
   const open = (name) => {
     const r = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((x) => x.textContent.indexOf(name) !== -1);
     r.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
@@ -167,8 +175,9 @@ check("4f: the rollback restores the six-column function and its grant",
   /grant execute on function public\.map_coordinator_summary\(\) to anon, authenticated, service_role;/.test(BACK));
 
 // ── 5. the workspace record ───────────────────────────────────────────────────────────────────────────────────
-check("5d: the record says the role meets the Noncredit CPL Lead condition",
-  /A Noncredit CPL Lead is on the college's MAP landing page, which meets the Noncredit CPL Lead condition\./.test(WS));
+check("5d: the record says the role stands in for the attestation, and a college with the role is never told not yet attested",
+  /The Noncredit CPL Lead role is on the college's MAP landing page, which stands in for the attestation\./.test(WS) &&
+  /: r\.nc\.lead \? "complete\."\s*: ncWaiting\(r\) \?[^\n]*"Noncredit CPL Lead not yet attested\."/.test(WS));
 check("5e: a near title tells the CSM to ask for the role", /The MAP landing page lists a close title\. Ask the college to use the Noncredit CPL Lead role\./.test(WS));
 
 finish();

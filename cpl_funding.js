@@ -13293,7 +13293,9 @@
       return v === "met" ? !g.blocked : g.blocked;
     }
     if (v === "nc_yes" || v === "nc_no") {
-      if (!ncAttestShown(r) || !(ELIG.ncAttestOk || ncLeadInMap(r.college))) return false;
+      // Until the attestations have loaded an institution is in neither list, role or no role: half a list
+      // would read as the whole one (COBIx on #3033).
+      if (!ncAttestShown(r) || !ELIG.ncAttestOk) return false;
       return ncLeadAttested(r.college) === (v === "nc_yes");
     }
     return true;
