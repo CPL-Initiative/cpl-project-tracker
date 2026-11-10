@@ -36,17 +36,14 @@ Version 3 waiting on Sam's Replace; `iaca-mvpmcjyl`, waiting on Crystal's note) 
 ## Read first
 
 - **Run 42825327646 (display).** Confirm success and that it committed the applied record beside the receipt.
-- **Run 42827288689 (page read, done).** Its job log prints the LPC-GE pattern's text. If the 2026-27 page prints
-  the pattern's total units (or per-area units that sum without a judgment call, AA and AS apart), add a step to Las Positas's entry in `kb/program_requirements_reconcile.json` with `awards` local, citing the
-  page, run `tests/program_requirements_reconcile_test.py`, then reconcile (`step=reconcile`, `extract=0`), reread,
-  the display build on the branch (merge `main` first), `step=display`, and merge #3056 on a passing `test`. If the
-  pattern prints no total, merge #3056 as it stands and record the local degrees as waiting.
+- **Las Positas's local degrees wait on Sam.** The 2026-27 LPC-GE page (`lpcarticulation/lpc-ge/lpc-ge-2026-2027.php`, read 42827288689) prints units per area and no total: Area 1 6, Areas 2 to 6 3 each, Area 7 Kinesiology 1, Areas 8 Health and 9 American Institutions 3 each *"Not required for AS degrees"*; summed, A.A. 28 and A.S. 22. A `ge_units` set from that sum is a computed figure, the same question as Alameda's semester layouts (Sheet 178 card 2), so it waits on Sam's answer there. **NEEDS SAM (next Open Asks sheet):** may a reconcile step set a local GE pattern's units from its printed per-area units (A.A. 28, A.S. 22), when the pattern prints no total? #3056 merged as it stood. Put the question on the next Open Asks sheet beside the
+  `cer-procedures` and De Anza cards.
 
 ## Open work, in order
 
 Built from the lanes:
 
-1. **`program-requirements-harvest`:** Las Positas as above. De Anza (#3044) waits on the two GE sheets, a card for
+1. **`program-requirements-harvest`:** Las Positas waits on the computed-GE card (above). De Anza (#3044) waits on the two GE sheets, a card for
    the next Open Asks sheet. Alameda's semester layouts are Sheet 178 card 2. Step 11's next full read and preparation
    run, and the UI pass, fall to the first firing of 2026-11-11 UTC.
 2. **`csm-workspace` NEXT 0:** Sam's read of the two held emails (`LEAD_MAIL_ON`), the sign-in with *Ask an approver*,
