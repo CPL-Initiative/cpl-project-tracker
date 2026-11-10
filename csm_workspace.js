@@ -167,6 +167,8 @@
       "#tab-csm-workspace .accpane { padding:14px 18px; }",
       "#tab-csm-workspace .drawer { position:fixed; top:0; right:0; bottom:0; width:min(480px, 92vw); z-index:20; background:var(--cw-dialog); border-left:1px solid var(--cw-line); box-shadow:-12px 0 32px color-mix(in srgb, var(--cw-heading) 16%, transparent); padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 18px 18px; display:grid; gap:12px; align-content:start; overflow-y:auto; }",
       "#tab-csm-workspace .drawer-h { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+      "#tab-csm-workspace .drawer-sub { margin:4px 0 0; font-family:var(--cw-serif); font-size:1rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .prio-lines { margin:0; padding-left:1.2em; display:grid; gap:4px; color:var(--cw-ink-2); font-size:.92rem; }",
       "#tab-csm-workspace #cw-record { display:grid; gap:14px; min-width:0; align-content:start; }",
       "#tab-csm-workspace .side { border-top:4px solid var(--cw-line); padding:16px 20px 18px; display:grid; gap:14px; }",
       "#tab-csm-workspace .side h4.side-h { margin:0; font-family:var(--cw-serif); font-size:1.1rem; color:var(--cw-heading); }",
@@ -1647,8 +1649,9 @@
   }
   /* The funding drawer (Sam on the mock, 2026-11-09: "love the simple side bar with link to go full monty if needed"):
      the chosen college's place in Implementation Funding, from the snapshot the workspace already holds, in a panel at
-     the right edge; Open the full page goes to the funding tab on that college. The priorities' progress is not in the
-     snapshot, so the drawer leaves it to the full page (go-live note, decision 6). */
+     the right edge; Open the full page goes to the funding tab on that college. Under the facts, one line per priority
+     (the mock's drawer: "Access: applied CPL units in MAP, 41 of a target of 60."), written by the funding tab's
+     csmPrioLines() from its own reads, so the drawer and the full page cannot disagree; TBA where nothing is measured. */
   function fundWord(from, words) {
     return '<button type="button" class="word" data-fund="open" data-fund-from="' + from + '" aria-expanded="' + !!state.fund + '" aria-controls="cw-fund">' + esc(words) + "</button>";
   }
@@ -1667,6 +1670,8 @@
         row("Minimum conditions met", met + " of " + of) +
         (S.deadline ? row("Confirmation due", esc(shortDate(S.deadline))) : "") +
         (S.reviewer ? row("CO Monitor's note", r.note ? esc(r.note) : "No note yet.") : "") + "</tbody></table>" +
+        ((r.prios || []).length ? '<h3 class="drawer-sub" id="cw-fund-prio">Priorities</h3><ul class="prio-lines" aria-labelledby="cw-fund-prio">' +
+          r.prios.map(function (p) { return "<li>" + esc(p.text) + "</li>"; }).join("") + "</ul>" : "") +
         '<p class="links" style="margin:0"><button type="button" class="word" data-act="focus">Open the full page</button></p>' +
         (S.reviewer ? '<p class="note">The CO Monitor\'s note is written on the full page.</p>' : "")
         : '<p class="note">Choose a college to see its place in Implementation Funding.</p>') + "</aside>";

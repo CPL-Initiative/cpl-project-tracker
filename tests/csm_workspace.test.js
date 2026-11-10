@@ -403,6 +403,19 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       /^\d+ of \d+$/.test(cells["Minimum conditions met"]) && !!dr().querySelector('[data-act="focus"]') && flat(dr().querySelector('[data-act="focus"]')) === "Open the full page",
       JSON.stringify(cells));
     check("5f5: the drawer's words follow the funding vocabulary", !/\b(money|pool|earn(ed|s)?|unspent|draw)\b/i.test(flat(dr())));
+    // The Priorities lines (csm-workspace NEXT 0, the mock's drawer): one line per priority from the funding tab's
+    // own reads, so the drawer prints exactly what the snapshot carries, and an unmeasured actual reads TBA, never 0.
+    const selKey = h.W._state.sel, selRow = h.W._snapshot().rows.find((r) => r.key === selKey) || {};
+    const lines = Array.prototype.map.call(dr().querySelectorAll(".prio-lines li"), flat);
+    check("5f5a: the snapshot carries a Priorities line for each priority, in the mock's form",
+      Array.isArray(selRow.prios) && selRow.prios.length > 0 &&
+      selRow.prios.every((p) => /^.+: (TBA|fewer than \d+|[\d.,K]+) of a target of (TBA|[\d.,K]+) \S/.test(p.text)),
+      JSON.stringify(selRow.prios));
+    check("5f5b: the drawer lists those lines under Priorities, word for word",
+      flat(dr().querySelector("#cw-fund-prio")) === "Priorities" && lines.length === (selRow.prios || []).length &&
+      lines.every((t, i) => t === selRow.prios[i].text), JSON.stringify(lines));
+    check("5f5c: with no feed loaded nothing reads as a measured zero: each actual is TBA, a figure, or below the privacy floor",
+      (selRow.prios || []).every((p) => p.actual === "TBA" || /^[\d.,K]+$/.test(p.actual) || /^fewer than \d+$/.test(p.actual)));
     R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
     check("5f6: Escape closes the drawer", dr().hidden && h.W._state.fund === false);
     clickEl(h.window, open()); clickEl(h.window, dr().querySelector('[data-fund="close"]'));
