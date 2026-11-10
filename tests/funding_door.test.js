@@ -90,7 +90,32 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     w.CPL_REVIEWER_SIGNIN.mountInto(el, { title: "Sign in" });
     check("e1: a mount not opened as a door has no Ask an approver", !el.querySelector("[data-rsi-ask]"));
     w.CPL_REVIEWER_SIGNIN.mountInto(el, { title: "Sign in", door: true });
-    check("e2: a door mount offers Ask an approver beside the link", !!el.querySelector("[data-rsi-ask]") && !!el.querySelector("[data-rsi-send]"));
+    // Sam, 2026-11-10 ("yes to all", the clarity mock's decision 1): Ask an approver is the one lead action at the
+    // door, and the email link sits one click away.
+    check("e2: a door mount leads with Ask an approver; the email link is one click away, as a word",
+      !!el.querySelector("[data-rsi-ask]") && !el.querySelector("[data-rsi-send]") &&
+      !!el.querySelector("[data-rsi-uselink]") && el.querySelector("[data-rsi-uselink]").tagName === "BUTTON" &&
+      el.querySelector("[data-rsi-uselink]").textContent === "Use an email link instead");
+    {
+      const w2 = win({});
+      const el2 = w2.document.getElementById("m");
+      w2.CPL_REVIEWER_SIGNIN.mountInto(el2, { title: "Sign in", door: true });
+      const in2 = el2.querySelector("[data-rsi-email]");
+      in2.value = "typed@college.edu"; in2.dispatchEvent(new w2.Event("input"));
+      el2.querySelector("[data-rsi-uselink]").dispatchEvent(new w2.MouseEvent("click", { bubbles: true }));
+      check("e2b: the word opens Email me a link beside Ask an approver, keeps the typed address, and leaves",
+        !!el2.querySelector("[data-rsi-send]") && !!el2.querySelector("[data-rsi-ask]") &&
+        !el2.querySelector("[data-rsi-uselink]") && el2.querySelector("[data-rsi-email]").value === "typed@college.edu");
+      const w3 = win({});
+      const el3 = w3.document.getElementById("m");
+      w3.CPL_REVIEWER_SIGNIN.mountInto(el3, { title: "Sign in", door: true });
+      const in3 = el3.querySelector("[data-rsi-email]");
+      in3.value = "enter@college.edu"; in3.dispatchEvent(new w3.Event("input"));
+      in3.dispatchEvent(new w3.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+      await tick(); await tick(); await tick();
+      check("e2c: Enter at the door asks an approver and sends no email link",
+        w3.__calls.some((c) => /funding_access_request/.test(c.url)) && !w3.__calls.some((c) => /auth\/v1\/(otp|magiclink)/.test(c.url)));
+    }
     const input = el.querySelector("[data-rsi-email]");
     input.value = "someone@college.edu"; input.dispatchEvent(new w.Event("input"));
     el.querySelector("[data-rsi-ask]").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));

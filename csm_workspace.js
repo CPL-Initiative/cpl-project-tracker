@@ -1741,7 +1741,7 @@
     var sm = document.getElementById("cw-signin");
     if (sm && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
       window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the Funding Follow-up Dashboard", door: true,
-        blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: one of the funding approvers approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
+        blurb: "Enter your work email and Ask an approver: one of the funding approvers approves from this page, and this tab signs you in. A one-time email link works too. Either way the workspace knows it is you." });
     }
     if (S.reviewer && !ACC.asked) loadAccess();
     if (focusId && document.getElementById(focusId)) {

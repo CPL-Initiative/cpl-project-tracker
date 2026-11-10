@@ -149,8 +149,9 @@ word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptan
      template), and a door sign-in with a 30-day grant may change a template (`is_funding_reviewer()` stays).
      `supabase-migrate.yml` keeps applying at once with no required reviewer on `database`: Sam withdrew the same
      day's approval ask (*"I was confused by the migration approval request and don't want it"*).
-   - **The sign-in** with *Ask an approver* as the one lead action and the email link one click away
-     (`reviewer_signin.js`; it changes the funding tab's sign-in too). Not built.
+   - **The sign-in is built (S634, 2026-11-10):** at the dashboard's door *Ask an approver* is the one lead action and
+     Enter asks; *Use an email link instead* opens *Email me a link* beside it (`reviewer_signin.js`, door mounts only;
+     the workspace is the one door mount, so no other tab's sign-in changes). Guard `tests/funding_door.test.js` e2 to e2c.
    - **Open with Malone:** Recommended action above or below the conditions; the panel under the record or as a third
      column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
    - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
