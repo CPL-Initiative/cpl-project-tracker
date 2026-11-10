@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-592 document(s).
+593 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 632 | [Session 632 handoff: Las Positas passes 145 of 193; the LPC-GE pattern read in flight](../session_632_handoff.md) | 2026-11-10 |
 | 631 | [Session 631 handoff: Las Positas's transfer degrees take Cal-GETC's 34, reconcile in flight](../session_631_handoff.md) | 2026-11-10 |
 | 630 | [Session 630 handoff: the clarity mock is built into the live workspace, now the Funding Follow-up Dashboard; two emails held for Sam; the sign-in not built](../session_630_handoff.md) | 2026-11-10 |
 | 629 | [Session 629 handoff: Cuesta's SLOs loaded, the re-analysis panel, De Anza's GE units still to find](../session_629_handoff.md) | 2026-11-10 |
