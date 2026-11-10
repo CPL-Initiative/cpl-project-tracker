@@ -120,7 +120,7 @@ function openDetail(x, name) {
   await tick(); await tick();
   check("3i: it sends the door's own request for the address signed in, once", asked.join() === "pat@rccd.edu");
   check("3j: and says it asked, in a status line",
-    /^Asked\. An approver will see it in the CSM Workspace\./.test(flat(d.mount.querySelector('#cplFundAccessMsg[role="status"]'))));
+    /^Asked\. An approver will see it in the Funding Follow-up Dashboard\./.test(flat(d.mount.querySelector('#cplFundAccessMsg[role="status"]'))));
 
   d.window.dispatchEvent(new d.window.CustomEvent("cpl-funding-door-said", { detail: { msg: "An approver declined the request.", kind: "err" } }));
   await tick();

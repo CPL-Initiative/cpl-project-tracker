@@ -72,11 +72,8 @@
     14.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 13.0-15.0; the catalog states 13.0-14.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -224,5 +221,6 @@
    "The lead-in 'Upon completion of this program, students will be able to:' was omitted from the first outcome."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42816943064,
+ "read_run": "38984747530"
 }

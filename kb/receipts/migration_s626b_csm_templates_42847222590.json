@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-10_csm_templates.sql",
+ "name": "s626b_csm_templates",
+ "version": "20261110154730",
+ "sha256": "5521fb4d9bf69cc4cfa14854199d5c95d9293e7851261050bf50365b90101920",
+ "run": "42847222590",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

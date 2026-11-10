@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-09T11:50:00Z",
-  "session": 619,
-  "moniker": "SkyTadpole",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-10T16:25:11Z",
+  "session": 632,
+  "moniker": "SkyUmbrella",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_620_handoff.md",
+  "handoff": "docs/session_633_handoff.md",
   "next_step": {
-    "title": "Cuesta's full read",
-    "text": "Cuesta's full read runs as the day's one full read on the first firing of 2026-11-10 UTC. College of Alameda moved from 25 to 29 passing; its reread posts the changed records."
+    "title": "Las Positas's local degrees",
+    "text": "The 2026-27 LPC-GE page prints units per area and no single total, so the local degrees wait on Sam's call on a computed GE figure. Then the reconcile, reread and display follow, and pull request 3056 merges."
   },
   "calls": [
     {
@@ -224,6 +224,14 @@
   },
   "changes": [
     {
+      "at": "2026-11-10T13:26:00Z",
+      "text": "Las Positas College: the Cal-GETC step reconciled 40 transfer degree records and the reread replaced them; the college now passes 145 of 193, up from 116 (pull request 3056)."
+    },
+    {
+      "at": "2026-11-10T13:37:00Z",
+      "text": "Las Positas College: a page read found the LPC-GE page prints only a link to the 2026-27 pattern; a second read follows it."
+    },
+    {
       "at": "2026-11-09T10:21:00Z",
       "text": "Orange Coast College's course outcomes loaded: 3,035 rows added, 568 already held (pull request 2955)."
     },
@@ -434,15 +442,21 @@
       "active": 20282,
       "complete": 13643,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-10",
+      "active": 20282,
+      "complete": 13664,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-09T09:12:00Z"
+    "at": "2026-11-11T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-09",
+    "day": "2026-11-10",
     "gaps": 3014,
     "parts": {
       "links": {
@@ -469,7 +483,7 @@
       ],
       "outcomes": {
         "slo": [
-          10071,
+          12066,
           89192
         ],
         "plo": [

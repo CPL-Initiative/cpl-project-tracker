@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 578,
+   "count": 579,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3477,6 +3477,25 @@
      "title": "A rendered artifact reads the model through a filed stamp",
      "type": "methodology",
      "updated": "2026-10-19"
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [
+      "csm_workspace.js",
+      "tests/csm_workspace.test.js",
+      "tests/csm_workspace_templates.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-repaint-must-keep-what-the-reader-opened.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "cobi",
+      "csm-workspace"
+     ],
+     "title": "A repaint must keep what the reader opened",
+     "type": "methodology",
+     "updated": "2026-11-10"
     },
     {
      "created": "2026-08-17",
@@ -16697,8 +16716,101 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 588,
+   "count": 594,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 633,
+     "path": "docs/session_633_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "program-requirements-harvest"
+     ],
+     "title": "Session 633 handoff: the Funding Follow-up Dashboard's review opens itself, the panel holds the links, templates a reviewer can change",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 632,
+     "path": "docs/session_632_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 632 handoff: Las Positas passes 145 of 193; the LPC-GE pattern read in flight",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 631,
+     "path": "docs/session_631_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 631 handoff: Las Positas's transfer degrees take Cal-GETC's 34, reconcile in flight",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 630,
+     "path": "docs/session_630_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "commons",
+      "implementation-funding",
+      "mock"
+     ],
+     "title": "Session 630 handoff: the clarity mock is built into the live workspace, now the Funding Follow-up Dashboard; two emails held for Sam; the sign-in not built",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 629,
+     "path": "docs/session_629_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cer-procedures",
+      "scheduled-sessions"
+     ],
+     "title": "Session 629 handoff: Cuesta's SLOs loaded, the re-analysis panel, De Anza's GE units still to find",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 628,
+     "path": "docs/session_628_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 628 handoff: Lemoore prints no SLOs, De Anza's catalog page read in flight, Cuesta's second part running",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26684,5 +26796,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1432
+ "total": 1439
 }

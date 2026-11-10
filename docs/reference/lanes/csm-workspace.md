@@ -26,9 +26,7 @@ before the CPL Commons work"*.
 The design record is the mock, version 11 (https://claude.ai/artifact/LLjcCzVzq7sqtPEjnebMYf; source, porting notes
 and his 18 asks in `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/`).
 
-**2026-11-09 (S622 SkyCartwheel, Sam in session, the eve of the rollout):** the door's front end reached the site at 20:44Z (the two Pages deploys after #2984 were refused on a deployment collision and a third timed out at *syncing_files*; a fresh `pages.yml` dispatch published it), and Sam's own request was approved and signed in at 20:51Z. **The approver's side (#2987):** an approver always sees *Access requests*, with *Check now* and how a teammate asks; every read builds its headers from the session as it stands (a token kept from the first read lapsed within the hour and a refused read drew as an empty queue). **A sign-in lasts 30 days in the browser** (#2988; Sam: *"everyone if cobix is OK with it"*; COBIx found no defect; `reviewer-session-lifetime`). **Each priority card opens the list its figure counts** (#2990; Sam: *"I expect to see 61 colleges in action center but it's sorting for a subset"*): views `coordmet` (*With a CPL Coordinator in MAP*) and `ncmet` (*Noncredit CPL Lead attested*); the count line keeps CPL and MAP in capitals. **A credit college's noncredit attestation is seen** (#2993): `ncAttestShown()` read `nc_award` off a roster row that has none, so the workspace and the Nudge saw the three noncredit-only institutions alone (Sam's screen: *0 of 3* over twelve attestations on file); a row without the figure asks its allocation (3 before, 111 after, with Scenario 4's lane). **The Noncredit CPL Lead role in MAP** (Sam's rule, in `implementation-funding`): the record says the role meets the condition, or that the landing page lists a close title and to ask the college for the role. Guards `tests/csm_workspace.test.js` 13a to 15g, `tests/cpl_funding_door_readonly.test.js`, `tests/cpl_funding_nc_lead_in_map.test.js`.
-
-**2026-11-09 (SkyCigar, #2967, before the CSMs' first funding-confirmation session):** the three CSMs joined the reviewer list (3 of 3; list of 13). **Accept and Deny wait for the save** (#2973, open): the funding tab's `CSM_ACT` answers `{ok}` from the re-read (Accept: the row reads confirmed; Deny: gone), and the workspace logs, speaks and lets the email open only on `ok`; a refused save says *Not saved* and leaves `csm_log` untouched (`tests/csm_workspace.test.js` 9a to 9g). **2026-11-09 ~17:55Z (S621, COBIx on #2967 17:42Z, Sam in session):** the MAP team on Sam's call were told to sign in as a reviewer. Janelle Brekke joined `allowed_reviewers` from `team_members`; Natalie Powell and Chelsea Marada also at `rccd.edu` (same local part as their `vendor.rccd.edu` rows), since `is_allowed_reviewer()` compares the exact address. Read back: Janelle 1, Natalie 2, Chelsea 2, Ally 1. Migration `kb/migrations/2026-11-09_map_reviewers_rccd.sql`, rollback beside it. Still open: COBIx's item 3 there, Team RACI flowing into the list behind an explicit flag. **The funding door (S621, #2983, Sam's go in session 2026-11-09):** the Auth mailer is capped at two emails an hour for the whole project, which locked the CSMs out. A teammate asks from the CSM Workspace's sign-in box (*Ask an approver*; `reviewer_signin.js` door mounts); `funding_access_request` stores a SHA-256 of a secret the tab keeps; an approver (`funding_approvers`, managed in Admin by Sam or Malone, seeded with Sam, Malone, Kristen, Natalie, Terence; each must also be on the reviewer list) approves in the workspace's *Access requests*; the open tab claims a session from the Edge Function `funding-door` (admin generate_link + verify: no email) and `CPL_SESSION.adopt` stores it. `is_funding_reviewer()` replaces `is_allowed_reviewer()` in the seven funding/CSM tables' policies and four read functions only; a grant lasts 30 days. No phrase (Sam's go). Migration `kb/migrations/2026-11-09_funding_door.sql`, rollback beside it. Guards `tests/funding_door.test.js`, `tests/csm_workspace.test.js` 1e. A door sign-in that is not on the reviewer list reads the model as published and keeps the review controls (S622, #2991: `reviewing()` opens the review work, `unlocked()` the model, on the database's answer to `rpc/is_allowed_reviewer`; a what-if left in that browser is set aside). Natalie and Terence have no Auth account yet, so they approve once signed in. **LIVE: Ready to send (#2967 item 3, S621 SkyBlackEye):** a view (`#csm-workspace/send`) of each college whose next email is due, by `readyOf`: confirmed with no *Acceptance sent* receipt, the acceptance (template *The acceptance, with what still waits*: the funding tab's own `acceptEmail` text through `csm.acceptMail`, To the request's sender or, with no request on file, the first person in Sam's order; Cc the CPL Coordinator; the `missingWords` conditions appended with the public funding page); not yet confirmed and no nudge in 14 days (a *Nudge sent* receipt, or any email row carrying the nudge's subject), the nudge; a request waiting, *Accept first* (Accept stays in the review). Acceptances sort first, the waiting last. The send view's draft keeps its own key (`<college>|send`), so the record's draft is untouched. *Open in Outlook* (renamed from *Open a draft* everywhere) opens the mailto; past 1,900 characters the email goes to the clipboard and the draft opens with To, Cc and Subject. *Sent* writes the `csm_log` receipt (`Acceptance sent:` / `Nudge sent:`, a follow-up a week out unless unticked), drops the college and selects the next. Sheet 146 card 3's Microsoft 365 sender replaces the mailto at `mailAct` when it comes. **Not received, the From line, It bounced (S621, COBIx on #2967 16:17Z):** Sam's acceptances from Oct 31 on never left Outlook (Exchange `SendAsDenied`: the From line held the shared MAP mailbox). Every acceptance confirmed before the log went live (`LOG_LIVE` 2026-11-09; measured 15: 10 participation, 5 noncredit, Oct 31 to Nov 2) leads Ready to send as *Not received*, ready to resend. Noncredit attestation acceptances join the queue (`accept_nc`, the funding tab's `acceptMail("nc")`) once the participation acceptance is sent. Beside the controls: *Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.* The record offers *It bounced* on each sent receipt; it writes `It bounced, <the receipt>`, and the later row decides, so the college returns to the queue. Guards `tests/csm_workspace.test.js` 11a to 11g. **Open in Gmail and the logo as bytes (S621, COBIx on #2967 18:25Z; Malone: ITPI's CSM team uses Gmail):** *Open in Gmail* beside *Open in Outlook* opens Gmail's compose (`mail.google.com/mail/?view=cm&fs=1`, to, cc, su, body), with the same 1,900-character fallback (copy, then a draft with no body). Neither draft link can carry the logo; *Copy the email* does, now as a data URI of `sierra/cpl-initiative-logo-navy-email.png` (400x75, 7 KB, read from the site when the email box first draws; the published address until then), since Outlook and Gmail often refuse an outside image on paste. Not tested in a live Outlook or Gmail from a session: if either still drops the embedded image, say so in the hint. Guards 12a to 12f. The fallback deadline is the published Scenario 4's **2026-12-31** (`cpl_funding_data.js`, `participationDeadline()`; was Nov 1). Guards `tests/csm_workspace.test.js` 10a to 10k, `tests/cpl_funding_equity.test.js`.
+**The door and the reviewer list (2026-11-09, S621 and S622):** moved verbatim to `docs/csm_workspace_lessons.md`, *Moved from the lane (S626b)*. What stays true from them is in Status below.
 
 ## Status
 
@@ -107,13 +105,58 @@ and Home puts it back; it stops at 25 and 70 so neither side closes. Its place i
 `localStorage` (`cplCsmSplit`) like a column width. Below 960px the panes stack and the divider leaves. Every Commons
 List already carries the same control on its side panel (`pgrip` in `commons_list.js`). Guards 13y-a to 13y-g.
 
+**LIVE: the clarity mock, built (S624, 2026-11-10, on Sam's "go ahead and build it"; #3049, #3050 and the two after).**
+The page reads **Funding Follow-up Dashboard** (Malone, 2026-11-10: the MAP team does most of this work; the address
+stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is five metrics,
+each opening its list, the deadline apart. The list sits in two groups, *Needs you* (a request waiting on the team, an
+email that is due, a follow-up due) above *Waiting on the college*, most pressing first; every row names the email or
+the date. The record is a table of conditions (Condition, Status, Email), then *Recommended action* with the email as
+a preview and *Edit email*; the email is the one that is due (`recTpl`) in every list, and Sent is offered for that
+email alone. One side panel under the record holds People (one list: role, person, source), CPL landing page and
+History, and the review opens there; Accept says what it does. Access requests are one word in the header;
+*Implementation Funding* opens a drawer with the college's max award, what qualifies now, the conditions met and the
+date due. The Action center heading and the four-column board are gone. Tests: `tests/csm_workspace.test.js`
+(5b6 to 5f8, 13a0, 13a1).
+
+**LIVE: the review and the panel, after Sam's look at the live page (2026-11-10, his go in session on all five; #3061,
+#3063, #3064 and the two after).** Sam: *"why do we click on Review when that's what we're there to do? shouldn't it just
+be open for review and action?"* and *"links still opening to new tabs instead of sidebars"*. A waiting request's review
+opens in the panel by itself (`sideOf`; a **Review** word closes it, `state.side = "none"`). The scroll gate is gone, which
+reverses his 2026-11-02 *"unless they seen that section"*: Deny is open, Accept waits on the checks. Implementation
+Funding in the record opens the drawer, which shows the CO Monitor's note (`fundWord`, `fundOpener`). The landing page
+draws in a sandboxed frame in the panel and behind *Show the landing page here* in the review (`landingFrame`); MAP's
+landing pages send no X-Frame-Options (read 2026-11-10), and a refusing site leaves a blank frame with the new-tab link
+beside it. Contacts on file and the people filter sit in People; the pop-ups are gone (`contactsOnFileHtml`,
+`state.psrc`). Not yet seen in a signed-in browser: the a11y sweep reads the signed-out view only.
+
+**LIVE: Email templates a reviewer can change (2026-11-10, #3068; Sam: *"can you add a place for me or any reviewer to
+make changes to the templates for these and later make additional changes if needed?"*).** The four emails the
+dashboard writes itself (the lead ask, both asks, the nudge, the follow-up) are templates in `TPL_DEFAULT`, with words in
+braces (`TPL_WORDS`: `{name}`, `{college}`, `{deadline}`, `{funding_page}`, `{close_title}`, `{open_items}`). *Email
+templates* in the header (reviewers only) opens the pane: edit, preview for the chosen college, *Save for every
+reviewer*; *Earlier versions* loads one back; *Put back the shipped wording* saves a reset. Store `csm_templates`
+(insert-only, RLS `is_funding_reviewer()` select and insert, saver stamped from the JWT; DR-09; migration
+`kb/migrations/2026-11-10_csm_templates.sql`, rollback beside it, applied by run 42847222590). A save re-reads first and
+refuses to write over a teammate's newer version. With nothing saved the four emails match the old `seedMail` word for
+word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptances stay the funding tab's
+(`acceptMail`).
+
 ## NEXT
 
-0. **The mock for issue #3010, then its build on Sam's word:** scene A, the sign-in with *Ask an approver* as the one
-   lead action and the email link one click away; scene B, the workspace as it now stands; scene C, one record in each
-   email state (the confirmation, the Noncredit CPL Lead ask for the role in MAP, both in one email, the acceptance, the
-   noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
-   from the workspace mock, version 11, in the vault.
+0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
+   20261110_csm_workspace_go_live_checklist.md`):
+   - **Ruled 2026-11-10 (Sam, *"yes to all"*):** the two new emails are on (`LEAD_MAIL_ON` true; their wording is a
+     template), and a door sign-in with a 30-day grant may change a template (`is_funding_reviewer()` stays).
+     `supabase-migrate.yml` keeps applying at once with no required reviewer on `database`: Sam withdrew the same
+     day's approval ask (*"I was confused by the migration approval request and don't want it"*).
+   - **The sign-in** with *Ask an approver* as the one lead action and the email link one click away
+     (`reviewer_signin.js`; it changes the funding tab's sign-in too). Not built.
+   - **The funding drawer's Priorities lines**: the snapshot does not carry them; `cpl_funding.js` would pass them.
+   - **Check the side menu on the live site**: both HTMLs read *Funding Follow-up Dashboard*; a name stored for the
+     item in the Admin tab's menu would still show the old one.
+   - **Open with Malone:** Recommended action above or below the conditions; the panel under the record or as a third
+     column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
+   - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.

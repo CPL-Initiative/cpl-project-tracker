@@ -8,8 +8,8 @@
 //   1. ONE READ: the workspace's stages and conditions come from CPL_FUNDING_TAB.csm.snapshot(), the same
 //      eligReqList / baselineGate the funding tab draws, never a second computation.
 //   2. NO PII TO A READER WHO IS NOT SIGNED IN: names and emails ride `req` for a reviewer alone.
-//   3. THE REVIEW GATE (Sam's ask 15): Accept stays shut until the reviewer has seen the review and ticked every
-//      Check this; a requirement that fails keeps Accept shut and leaves Deny open.
+//   3. THE REVIEW GATE (Sam's ask 15): Accept stays shut until the reviewer has ticked every Check this; a
+//      requirement that fails keeps Accept shut. Deny is open from the start (the scroll gate went, Sam 2026-11-10).
 //   4. A DECISION IS THE FUNDING TAB'S DECISION: Accept runs the review lane's acceptOptIn (the same write, the
 //      same email window), so the two surfaces cannot drift.
 //   5. THE TOP FOLDS (Sam's ask 18) and a pick lasts the visit.
@@ -43,9 +43,6 @@ function setup(opts) {
   // The real keeper (cpl_session.js) when a test reads the view's address; a signed-in mock rides on top of it.
   if (opts.keeper) window.eval(fs.readFileSync(path.join(ROOT, "cpl_session.js"), "utf8"));
   if (opts.signedIn) window.CPL_SESSION = Object.assign(window.CPL_SESSION || {}, session());
-  // A browser's observer that has not yet seen the review's foot: jsdom has none, and the module's fallback opens
-  // the gate at once, which is the right behavior where no observer exists but would hide the gate from this test.
-  window.IntersectionObserver = function () { this.observe = function () {}; this.disconnect = function () {}; };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   T._setElig(Object.assign({ coordOk: true, coord: { [COLLEGE]: true, [OTHER]: true },
@@ -84,12 +81,14 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("1d: the workspace's stage follows: waiting on the team, then held or qualifying",
     W._stageOf(mt) === "waiting" && ["held", "qual"].indexOf(W._stageOf(pc)) >= 0);
   const reads = (SRC.match(/fetch\(R\.url \+ "([a-z_/]+)/g) || []).map((m) => m.replace(/^fetch\(R\.url \+ "/, "")).sort();
-  check("1e: the source acts through the funding tab's snapshot; it writes only its own log and the access rulings, and reads the three contact sources, the access queue and whether the sign-in still has funding access",
+  // csm_templates (Sam, 2026-11-10): the saved email templates, read and added to by a reviewer, never edited or deleted.
+  check("1e: the source acts through the funding tab's snapshot; it writes only its own log, its email templates and the access rulings, and reads the three contact sources, the access queue and whether the sign-in still has funding access",
     /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1/.test(SRC) &&
-    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/map_landing_contacts_roster"]) &&
+    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "csm_templates", "csm_templates", "map_college_contacts", "map_college_users", "rpc/map_landing_contacts_roster"]) &&
     JSON.stringify((SRC.match(/accessPost\("([a-z_/]+)"/g) || []).map((m) => m.replace(/^accessPost\("|"$/g, "")).sort()) ===
       JSON.stringify(["rpc/funding_access_decide", "rpc/funding_access_pending", "rpc/is_funding_approver", "rpc/is_funding_reviewer"]) &&
-    (SRC.match(/method: "POST"/g) || []).length === 2 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
+    (SRC.match(/method: "POST"/g) || []).length === 3 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC) &&
+    /fetch\(R\.url \+ "csm_templates", \{ method: "POST"/.test(SRC) && !/csm_templates[^"]*", \{ method: "(PATCH|DELETE)"/.test(SRC));
   check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
     flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
     !!root.querySelector('.row[data-sel="' + COLLEGE + '"][aria-current="true"]'));
@@ -116,11 +115,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const items = W._reviewItems(T.csm.snapshot().rows.find((r) => r.key === COLLEGE), "part").items;
   check("3b: the review names the domain (the form's) and the title Other as Check this, with no line about a decline",
     items[0].s === "form" && /mtsac\.edu/.test(items[0].d) && items[1].s === "check" && !items.some((i) => /declin/i.test(i.t + " " + i.d)));
-  check("3c: Accept and Deny stay shut until the reviewer has seen the review", !!accept() && accept().disabled && deny().disabled);
-  W._state.seen[COLLEGE + "|part"] = true;
-  W.paint();
-  check("3d: seen, Deny opens and Accept waits on the checks", !deny().disabled && accept().disabled &&
-    /checks? left before Accept/.test(flat(root.querySelector('[data-gate="part"]'))));
+  check("3c: with no scrolling asked, Deny is open and Accept waits on the checks", !!accept() && accept().disabled && !deny().disabled &&
+    /checks? left before Accept/.test(flat(root.querySelector('[data-gate="part"]'))) && !/Scroll/.test(flat(root)) && !/IntersectionObserver/.test(SRC));
   Array.from(root.querySelectorAll('[data-verdict="part"]')[0].closest(".review").querySelectorAll("input[data-check]")).forEach((b) => {
     b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true }));
   });
@@ -134,7 +130,6 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   const { window, T, W, root } = setup({ signedIn: true });
   window.CPL_FUNDING_NO_REMOTE = true;
-  W._state.seen[COLLEGE + "|part"] = true;
   W.paint();
   Array.from(root.querySelectorAll('.review input[data-check]')).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
@@ -159,9 +154,284 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   clickEl(window, today.querySelector('[data-view="held"]'));
   check("5b4: a Today count filters the action center and shows pressed", W._state.view === "held" &&
     root.querySelector('header .today [data-view="held"]').getAttribute("aria-pressed") === "true");
+  // Malone, 2026-11-10, built on Sam's go: the summary as scannable metrics, the number above its label, the deadline apart.
+  {
+    const m = setup({ signedIn: true });
+    const mets = Array.prototype.slice.call(m.root.querySelectorAll("header .today .metric"));
+    const menu = {};
+    Array.prototype.forEach.call(m.root.querySelectorAll("#cw-view option"), (o) => { menu[o.value] = (/\((\d+)\)$/.exec(o.textContent) || [])[1]; });
+    check("5b6: five metrics in the order the work goes, each a number above its label",
+      mets.map((b) => b.getAttribute("data-view")).join() === "review,send,notyet,held,qual" &&
+      mets.every((b) => /^\d+$/.test(flat(b.querySelector(".num"))) && flat(b.querySelector(".lab")).length > 3 && b.firstElementChild.className === "num"));
+    check("5b7: each metric's number is its menu view's own count, so the two cannot disagree",
+      mets.every((b) => flat(b.querySelector(".num")) === menu[b.getAttribute("data-view")]), JSON.stringify(menu));
+    clickEl(m.window, m.root.querySelector('.metric[data-view="send"]'));
+    check("5b8: Ready to send is a metric, and it opens its list and shows pressed",
+      m.W._state.view === "send" && m.root.querySelector('.metric[data-view="send"]').getAttribute("aria-pressed") === "true" &&
+      m.root.querySelector("#cw-view").value === "send");
+    const dl = m.root.querySelector("header .today .deadline");
+    check("5b9: the deadline sits apart from the metrics, its label above its date, and is no button",
+      !dl || (dl.tagName === "P" && /Confirmation due/.test(flat(dl.querySelector(".lab"))) && !!flat(dl.querySelector(".date"))));
+  }
+  // The list in two groups, each row a specific next action, every badge kept (Malone, 2026-11-10; built on Sam's go).
+  {
+    const g = setup({ signedIn: true });
+    const heads = () => Array.prototype.map.call(g.root.querySelectorAll("#cw-queue .qgroup"), (h) => flat(h));
+    check("5c1: the waiting request sits under Needs you, and a group with no college draws no heading",
+      heads().join("|") === "Needs you 1" && !!g.root.querySelector('.queue[data-group="you"] .row[data-sel="' + COLLEGE + '"]') &&
+      g.root.querySelector('.queue[data-group="you"]').getAttribute("aria-labelledby") === "cw-qg-you");
+    check("5c2: its line names what to review, the day it was sent and the decision",
+      flat(g.root.querySelector('.row[data-sel="' + COLLEGE + '"] .row-next')) === "Review the participation confirmation sent Nov 2, then accept or deny it.");
+    const rowsNow = g.W._snapshot().rows;
+    const nk = rowsNow.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
+    check("5c3: outside Ready to send, a college with no confirmation reads the email to send, never a pointer to another list",
+      g.W._nextStep(rowsNow.find((r) => r.key === nk)) === "Send the request for the participation confirmation." && g.W._needsYou(rowsNow.find((r) => r.key === nk)));
+    g.W._log().push({ id: 901, college: nk, activity: "funding", kind: "email", body: "Nudge sent: a participation confirmation for " + nk, created_at: "2026-11-09T10:00:00Z" });
+    g.W._state.view = "notyet"; g.W._state.sel = null; g.W.paint();
+    const nrow = g.root.querySelector('.queue[data-group="col"] .row[data-sel="' + nk + '"]');
+    check("5c4: a nudged college waits on the college: its own group, the Nudged badge with its date, and nothing to send today",
+      !!nrow && /Nudged Nov 9/.test(flat(nrow.querySelector(".row-pills"))) && /^Nothing to send today\. The request for the confirmation went out Nov 9\.$/.test(flat(nrow.querySelector(".row-next"))) &&
+      heads().length === 2 && /^Needs you \d+$/.test(heads()[0]) && /^Waiting on the college 1$/.test(heads()[1]));
+    {
+      // COBIx on PR 3049: an acceptance that never reached the college must not sink under the colleges owed a nudge.
+      g.W._state.view = "all"; g.W._state.sel = null; g.W.paint();
+      const order = Array.prototype.map.call(g.root.querySelectorAll('.queue[data-group="you"] .row'), (b) => b.getAttribute("data-sel"));
+      check("5c6: inside Needs you the waiting request leads, then the acceptance that is due, then the colleges owed a first nudge",
+        order[0] === COLLEGE && order[1] === OTHER && order.length > 50 && g.W._readyOf(order[2]) === "nudge", order.slice(0, 3).join());
+      const o = g.W._snapshot().rows.find((r) => r.key === OTHER);
+      const here = g.W._nextStep(o);
+      g.W._state.view = "send";
+      check("5c7: the email that is due reads the same in Ready to send and in every other list",
+        here === g.W._nextStep(o) && /^Send the acceptance\./.test(here), here);
+      g.W._state.view = "notyet"; g.W._state.sel = null; g.W.paint();
+    }
+    check("5c5: Needs you comes first and holds every other college in the list, in the live order",
+      g.root.querySelectorAll('.queue[data-group="you"] .row').length + 1 === g.root.querySelectorAll("#cw-queue .row").length &&
+      g.root.querySelector("#cw-queue .queue").getAttribute("data-group") === "you");
+  }
+  // The record: the conditions in a table, Recommended action, the email preview with Edit email, and the two new
+  // emails (the clarity mock; Malone's change 4; built on Sam's go, 2026-11-10).
+  {
+    const d = setup({ signedIn: true });
+    const rec = () => d.root.querySelector("#cw-record");
+    const tbl = rec().querySelector("table.facts");
+    const cell = (re, n) => { const tr = Array.prototype.find.call(tbl.querySelectorAll("tbody tr"), (r) => re.test(flat(r.querySelector("th")))); return tr ? flat(tr.cells[n]) : null; };
+    check("5d1: the conditions are a table: three column headers, each condition a row header",
+      !!tbl && Array.prototype.map.call(tbl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Condition|Status|Email" &&
+      tbl.querySelectorAll('tbody th[scope="row"]').length === tbl.querySelectorAll("tbody tr").length && tbl.querySelectorAll("tbody tr").length >= 2);
+    check("5d2: a confirmation waiting on the team says so and its email comes after the review; the coordinator is status only",
+      cell(/onfirmation/, 1) === "Waiting on the team" && cell(/onfirmation/, 2) === "After the review" && cell(/oordinator/, 2) === "Status only",
+      [cell(/onfirmation/, 1), cell(/onfirmation/, 2), cell(/oordinator/, 2)].join("|"));
+    const visit = () => rec().querySelector(".visit");
+    check("5d3: Recommended action for a waiting request is the review, already open below with no button to press, and no email is due",
+      flat(visit().querySelector("h4")) === "Recommended action" && flat(visit().querySelector(".reason")) === "Review the request first" &&
+      /The review is open below the record\./.test(flat(visit())) && !rec().querySelector('[data-act="toreview"]') &&
+      !rec().querySelector('[data-mailact="sent"]') && rec().querySelector("#cw-mail-pre").hidden);
+    d.W._setContacts({ dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
+      primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu" }], landing: [], users: [] });
+    d.W._state.view = "all"; d.W._state.sel = OTHER; d.W.paint();
+    const pre = () => rec().querySelector("#cw-mail-pre"), edit = () => rec().querySelector("#cw-mail-edit"), word = () => rec().querySelector('[data-act="mailedit"]');
+    check("5d4: a confirmed college with no acceptance sent reads Send the acceptance, and the email shows as a preview: To, Subject, Message",
+      flat(visit().querySelector(".reason")) === "Send the acceptance" && !pre().hidden && edit().hidden &&
+      Array.prototype.map.call(pre().querySelectorAll("dt"), flat).filter((t) => t !== "Cc").join("|") === "To|Subject|Message" &&
+      /@pasadena\.edu/.test(flat(pre().querySelector("dd"))) && flat(word()) === "Edit email" && word().getAttribute("aria-expanded") === "false" &&
+      !!rec().querySelector('[data-mailact="sent"]') && d.W._state.view === "all");
+    clickEl(d.window, word());
+    check("5d5: Edit email opens the fields in place of the preview and reads Done editing; the draft's fields were in the page all along",
+      pre().hidden && !edit().hidden && flat(word()) === "Done editing" && word().getAttribute("aria-expanded") === "true" &&
+      !!edit().querySelector("#cw-to") && !!edit().querySelector("#cw-body") && !!edit().querySelector("#cw-mailfu"));
+    // The two new emails were held until Sam read them (COBIx on PR 3050); on, on his word of 2026-11-10. Off still holds.
+    check("5d5-on: the two new emails are on by Sam's word", /var LEAD_MAIL_ON = true;/.test(SRC));
+    d.W._leadMail(false); d.W.paint(); clickEl(d.window, word());
+    check("5d5a: switched off, the Template menu offers neither new email, and no college is due one",
+      !rec().querySelector('#cw-tpl option[value="lead"]') && !rec().querySelector('#cw-tpl option[value="both"]') &&
+      d.W._recTpl({ key: "ZH", name: "ZH", part: { confirmed: false, waiting: false }, nc: { lead: false, standing: false, waiting: false }, conds: [], gate: {} }) === "nudge");
+    d.W._leadMail(true); d.W.paint(); clickEl(d.window, word());
+    const tplSel = rec().querySelector("#cw-tpl");
+    tplSel.value = "lead"; tplSel.dispatchEvent(new d.window.Event("change", { bubbles: true }));
+    const lead = d.W._mail(OTHER);
+    check("5d6: the Noncredit CPL Lead ask names the role in MAP under its exact title and says an attestation is accepted as well",
+      lead.tpl === "lead" && /the Noncredit CPL Lead role in MAP for Pasadena/.test(lead.subject) && /under that exact title/.test(lead.body) &&
+      /attestation on the CPL Implementation Funding page is accepted as well/.test(lead.body) && !/\b(money|pool|earn|unspent|draw)\b/i.test(lead.body), lead.body);
+    check("5d6a: Sent is offered for the email that is due alone: a template switched by hand offers none",
+      d.W._recTpl(d.W._snapshot().rows.find((r) => r.key === OTHER)) === "accept" && !rec().querySelector('[data-mailact="sent"]'));
+    const tplSel2 = rec().querySelector("#cw-tpl");
+    tplSel2.value = "both"; tplSel2.dispatchEvent(new d.window.Event("change", { bubbles: true }));
+    const both = d.W._mail(OTHER);
+    check("5d7: both asks in one email: two steps, the confirmation first and the Noncredit CPL Lead second",
+      both.tpl === "both" && /: two steps for Pasadena/.test(both.subject) && both.body.indexOf("First, our records do not yet show a participation confirmation") > 0 &&
+      both.body.indexOf("Second, for the noncredit share") > both.body.indexOf("First,"), both.body);
+    // the rule, on rows built here so the noncredit share is on
+    const log = d.W._log();
+    const row = (key, confirmed) => ({ key: key, name: key, part: { confirmed: confirmed, waiting: false, confirmedAt: "2026-11-09T00:00:00Z" },
+      nc: { lead: false, standing: false, waiting: false, leadNear: false }, conds: [], gate: { blocked: false } });
+    log.push({ id: 910, college: "ZC", kind: "email", body: "Acceptance sent: x", created_at: "2026-11-09T12:00:00Z" });
+    check("5d8: confirmed, the acceptance sent, and no Noncredit CPL Lead in MAP: the lead ask is due and is the recommended action",
+      d.W._recTpl(row("ZC", true)) === "lead" && d.W._recOf(row("ZC", true)).reason === "Send the Noncredit CPL Lead ask" && d.W._needsYou(row("ZC", true)));
+    check("5d9: not yet confirmed and no Noncredit CPL Lead: one email carries both asks",
+      d.W._recTpl(row("ZN", false)) === "both" && d.W._recOf(row("ZN", false)).reason === "Send both in one email");
+    log.push({ id: 911, college: "ZN", kind: "email", body: "Nudge sent: CPL Implementation Funding: two steps for ZN, to a@b.edu.", created_at: new Date().toISOString() });
+    log.push({ id: 912, college: "ZC", kind: "email", body: "Noncredit CPL Lead ask sent: x", created_at: new Date().toISOString() });
+    check("5d10: once sent, neither is due again for 14 days, and the both-in-one receipt counts as the nudge and as the lead ask",
+      d.W._recTpl(row("ZN", false)) === null && d.W._recTpl(row("ZC", true)) === null && d.W._recTpl(row("ZN", true)) === "accept");
+    log[log.length - 1].created_at = "2026-01-02T00:00:00Z";
+    check("5d11: a lead ask older than 14 days is due again", d.W._recTpl(row("ZC", true)) === "lead");
+    log[log.length - 2].created_at = "2026-01-02T00:00:00Z";
+    check("5d12: a Sent nudge is final, the both-in-one email included: however old, the college is not due a nudge again, and once it confirms the lead ask is due",
+      d.W._recTpl(row("ZN", false)) === null && d.W._recTpl(Object.assign(row("ZN", true), {})) === "accept");
+    log.splice(log.length - 3, 3);
+    log.push({ id: 913, college: "ZD", kind: "email", body: "Draft opened: CPL Implementation Funding: two steps for ZD, to a@b.edu.", created_at: new Date().toISOString() });
+    log.push({ id: 914, college: "ZE", kind: "email", body: "Acceptance sent: x", created_at: "2026-11-09T12:00:00Z" });
+    log.push({ id: 915, college: "ZE", kind: "email", body: "Email copied: CPL Implementation Funding: the Noncredit CPL Lead role in MAP for ZE, to a@b.edu.", created_at: new Date().toISOString() });
+    check("5d13: a draft of either new email holds the college out for 14 days, as a nudge's draft does",
+      d.W._recTpl(row("ZD", false)) === null && d.W._recTpl(row("ZE", true)) === null);
+    log.splice(log.length - 3, 3);
+    d.W._leadMail(false);
+  }
+  // One side panel under the record: People, CPL landing page, History, and the review (the clarity mock; issue 2978).
+  {
+    const e = setup({ signedIn: true });
+    const rec = () => e.root.querySelector("#cw-record"), side = () => rec().querySelector("#cw-side");
+    const shown = () => Array.prototype.filter.call(side().querySelectorAll("[data-sidepart]"), (p) => !p.hidden).map((p) => p.getAttribute("data-sidepart")).join();
+    const word = (k) => rec().querySelector('.decide [data-side="' + k + '"]');
+    // Sam, 2026-11-10: "why do we click on Review when that's what we're there to do? shouldn't it just be open for
+    // review and action?" A request waiting on the team opens its review by itself.
+    check("5e1: four words open the panel; a waiting request's review is open at first, its word pressed",
+      ["review", "people", "page", "log"].every((k) => !!word(k) && word(k).getAttribute("aria-controls") === "cw-side") &&
+      word("review").getAttribute("aria-pressed") === "true" && ["people", "page", "log"].every((k) => word(k).getAttribute("aria-pressed") === "false") &&
+      flat(word("review")) === "Review" && flat(word("people")) === "People" && flat(word("page")) === "CPL landing page" && flat(word("log")) === "History");
+    check("5e2: the review shows in the panel, alone, with no click",
+      !side().hidden && shown() === "review" && !!side().querySelector('[data-sidepart="review"] .review [data-act="accept"]'));
+    clickEl(e.window, word("review"));
+    check("5e2a: the Review word closes it, and it stays closed on this record", side().hidden && e.W._state.side === "none" && word("review").getAttribute("aria-pressed") === "false");
+    clickEl(e.window, word("review"));
+    check("5e2b: the word opens it again", !side().hidden && shown() === "review");
+    check("5e3: Accept says what it does, beside the buttons",
+      /Accept marks the participation confirmation as met and opens the acceptance email for you to send\. Nothing is sent until you send it\./.test(flat(side().querySelector('[data-does="part"]'))));
+    clickEl(e.window, word("people"));
+    const ppl = side().querySelector('[data-sidepart="people"]');
+    check("5e4: People is one list with Role, Person and Source, who sent the request above it, and the word reads pressed",
+      shown() === "people" && word("people").getAttribute("aria-pressed") === "true" &&
+      (Array.prototype.map.call(ppl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Role|Person|Source" || /Reading the contacts/.test(flat(ppl))) &&
+      /Who sent it/.test(flat(ppl)) && /Dana Lee/.test(flat(ppl)) && !ppl.querySelector("[data-pop]"));
+    clickEl(e.window, word("log"));
+    check("5e5: History holds the log's form and the CO Monitor's note, and takes the panel from People",
+      shown() === "log" && !!side().querySelector('[data-sidepart="log"] form[data-logform]') && /CO Monitor/.test(flat(side().querySelector('[data-sidepart="log"]'))));
+    clickEl(e.window, word("log"));
+    check("5e6: the same word closes the panel", side().hidden && word("log").getAttribute("aria-pressed") === "false");
+    clickEl(e.window, word("page"));
+    check("5e7: CPL landing page opens in the panel with the way out to the page, or says MAP holds no address",
+      shown() === "page" && (!!side().querySelector('[data-sidepart="page"] a[target="_blank"]') || /No landing page address in MAP/.test(flat(side()))));
+    clickEl(e.window, word("review"));
+    e.W._state.view = "all"; e.W.paint();
+    clickEl(e.window, e.root.querySelector('.row[data-sel="' + OTHER + '"]'));
+    check("5e8: choosing another college closes an open review, and one with nothing waiting opens no panel", e.W._state.side === "" && side().hidden && !word("review"));
+    clickEl(e.window, e.root.querySelector('.row[data-sel="' + COLLEGE + '"]'));
+    check("5e8-1: choosing the college with a waiting request opens its review again", !side().hidden && shown() === "review");
+    check("5e8a: the review has one heading a screen reader hears: the part's own is for the focus alone",
+      /\(k === "review" \? " sr" : ""\)/.test(SRC) && !/\bsr\b/.test(side().querySelector("#cw-side-people").className));
+    check("5e8b: Recommended action can take the focus after a decision", rec().querySelector("#cw-reason").getAttribute("tabindex") === "-1");
+    check("5e8c: a landing page address is drawn as a link only when it is http or https, and the page part loads the contacts as People does",
+      /r\.landing && \/\^https\?:\\\/\\\/\/i\.test\(r\.landing\)/.test(SRC) && /state\.side === "people" \|\| state\.side === "page"/.test(SRC) &&
+      /CT\.state === "error" \? esc\(CT\.error\) : "Reading the contacts/.test(SRC));
+    check("5e8d: deciding one of two waiting requests leaves the review open for the other",
+      /waitingKinds\(r\)\.filter\(function \(k\) \{ return k !== kind; \}\)\.length/.test(SRC) && /\(state\.side === "review" \|\| state\.side === "none"\) && !left/.test(SRC));
+    const out = setup({ signedIn: false });
+    check("5e9: a reader who is not signed in gets the landing page word alone: no People, no History, no part for either",
+      !out.root.querySelector('[data-side="people"]') && !out.root.querySelector('[data-side="log"]') && !!out.root.querySelector('[data-side="page"]') &&
+      !out.root.querySelector('[data-sidepart="people"]') && !out.root.querySelector('[data-sidepart="log"]'));
+  }
+  // The landing page inside the panel (Sam, 2026-11-10: "links still opening to new tabs instead of sidebars").
+  {
+    const LP = "https://cpldashboardcccco.azurewebsites.net/MTSAC";
+    const e = setup({ signedIn: true, elig: { contacts: [{ college: COLLEGE, landing_page_url: LP }] } });
+    const rec = () => e.root.querySelector("#cw-record"), side = () => rec().querySelector("#cw-side");
+    check("5e10: the fixture's college carries its landing page address", e.T.csm.snapshot().rows.find((r) => r.key === COLLEGE).landing === LP);
+    const rv = () => side().querySelector('[data-sidepart="review"]');
+    const det = () => rv().querySelector("details[data-lpshow]");
+    check("5e10a: the open review offers Show the landing page here, draws no page until asked, and links to no new tab",
+      !!det() && !det().open && flat(det().querySelector("summary")) === "Show the landing page here" && !rv().querySelector("iframe") && !rv().querySelector('a[target="_blank"]'));
+    det().open = true; det().dispatchEvent(new e.window.Event("toggle"));
+    const fr = () => rv().querySelector(".lpframe iframe");
+    check("5e10b: opened, the page draws inside the review, sandboxed and titled, with the new-tab link kept as the fallback",
+      !!fr() && fr().getAttribute("src") === LP && /allow-scripts/.test(fr().getAttribute("sandbox")) && !/allow-top-navigation/.test(fr().getAttribute("sandbox")) &&
+      /Mt\. San Antonio.* CPL landing page|CPL landing page/.test(fr().getAttribute("title")) && /does not let another page show it/.test(flat(det())) &&
+      !!det().querySelector('a[target="_blank"][rel="noopener"]'));
+    det().dispatchEvent(new e.window.Event("toggle"));
+    check("5e10c: a second toggle draws no second page", rv().querySelectorAll("iframe").length === 1);
+    // COBIx on PR 3066: a repaint (the contacts arriving, a note saved) must not close the page the reviewer opened.
+    e.W._setContacts({ dir: [], landing: [], users: [] }); e.W.paint();
+    check("5e10c1: after the contacts arrive and the record repaints, the page is still open with its frame",
+      !!det() && det().open && rv().querySelectorAll(".lpframe iframe").length === 1);
+    det().open = false; det().dispatchEvent(new e.window.Event("toggle")); e.W.paint();
+    check("5e10c2: closed by the reviewer, it stays closed through a repaint", !!det() && !det().open && !rv().querySelector("iframe"));
+    det().open = true; det().dispatchEvent(new e.window.Event("toggle"));
+    check("5e10c3: the frame asks for scripts and popups only: no forms, no top navigation",
+      !/allow-forms|allow-top-navigation/.test(rv().querySelector("iframe").getAttribute("sandbox")));
+    check("5e10c4: an address on this site's own origin, or not https, gets the link alone, with words that say it cannot show here",
+      /new URL\(r\.landing\)\.origin !== window\.location\.origin/.test(SRC) && /This address cannot show inside the panel\./.test(SRC) &&
+      /if \(!frameable\(r\)\) return '<p class="gate">' \+ landingLink\(r, "Open the landing page in a new tab"\)/.test(SRC));
+    check("5e10c5: one page a review: Show the landing page here sits on the first check that names the page alone",
+      /i === lpAt \? landingShow\(r, kind\)/.test(SRC) && rv().querySelectorAll("details[data-lpshow]").length === 1);
+    clickEl(e.window, rec().querySelector('.decide [data-side="page"]'));
+    const pg = () => side().querySelector('[data-sidepart="page"]');
+    check("5e10d: CPL landing page shows the page in the panel, the review's page left alone",
+      !pg().hidden && !!pg().querySelector(".lpframe iframe") && pg().querySelector(".lpframe iframe").getAttribute("src") === LP && /Open it in a new tab/.test(flat(pg())));
+    clickEl(e.window, rec().querySelector('.decide [data-side="log"]'));
+    check("5e10e: another part of the panel drops the page's frame", !side().querySelector('[data-sidepart="page"] iframe'));
+    check("5e10f: only an https address draws inside the panel; anything else keeps the link alone",
+      /if \(!r\.landing \|\| !\/\^https:\\\/\\\/\/i\.test\(r\.landing\)\) return false;/.test(SRC));
+  }
+  // The header: the new name, access requests as one quiet word, the funding drawer; no Action center heading, no board.
+  {
+    const h = setup({ signedIn: true });
+    const R = h.root;
+    check("5f1: the page reads Funding Follow-up Dashboard, and its address is still the tab's own",
+      flat(R.querySelector("header h1")) === "Funding Follow-up Dashboard" && !/CSM Workspace/.test(flat(R)) && /#csm-workspace/.test(FUND));
+    check("5f2: the Action center heading and the four-column board are gone; the metrics and the menu carry every count",
+      !/Action center/.test(flat(R)) && !R.querySelector(".board") && !R.querySelector("[data-stage]") && !/Where the \d+ stand/.test(flat(R)) &&
+      R.querySelectorAll("header .metric").length === 5 && R.querySelectorAll("#cw-view option").length >= 10);
+    const open = () => R.querySelector('header [data-fund="open"]'), dr = () => R.querySelector("#cw-fund");
+    check("5f3: Implementation Funding in the header is a word that opens a drawer, closed at first",
+      !!open() && open().tagName === "BUTTON" && open().getAttribute("aria-expanded") === "false" && open().getAttribute("aria-controls") === "cw-fund" && dr().hidden);
+    clickEl(h.window, open());
+    const cells = {};
+    Array.prototype.forEach.call(dr().querySelectorAll("tbody tr"), (tr) => { cells[flat(tr.querySelector("th"))] = flat(tr.querySelector("td")); });
+    check("5f4: the drawer names the chosen college, its max award, what qualifies now, the conditions met and the date due, and offers the full page",
+      !dr().hidden && open().getAttribute("aria-expanded") === "true" && /Mt\. San Antonio/.test(flat(dr().querySelector("#cw-fund-who"))) &&
+      /^\$[\d,]+/.test(cells["Max award"]) && cells["Qualifying now"] === "Held until every minimum condition is met" &&
+      /^\d+ of \d+$/.test(cells["Minimum conditions met"]) && !!dr().querySelector('[data-act="focus"]') && flat(dr().querySelector('[data-act="focus"]')) === "Open the full page",
+      JSON.stringify(cells));
+    check("5f5: the drawer's words follow the funding vocabulary", !/\b(money|pool|earn(ed|s)?|unspent|draw)\b/i.test(flat(dr())));
+    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("5f6: Escape closes the drawer", dr().hidden && h.W._state.fund === false);
+    clickEl(h.window, open()); clickEl(h.window, dr().querySelector('[data-fund="close"]'));
+    check("5f7: Close closes it too", dr().hidden);
+    // The pop-ups are gone (#3067), so nothing else on the page takes Escape from the drawer.
+    check("5f7a: no pop-up code is left: no dialog host, no dialog styles", !/cw-dlg-host|dialog\.cdlg|\.cdlg-/.test(SRC));
+    check("5f8: a reviewer who is no approver, with nobody waiting, gets no access word in the header", !R.querySelector("header [data-accopen]"));
+    // Sam, 2026-11-10: "links still opening to new tabs instead of sidebars". In the record, Implementation Funding
+    // opens the drawer; only the drawer's Open the full page goes to the funding tab.
+    const recFund = () => R.querySelector('#cw-record [data-fund="open"][data-fund-from="rec"]');
+    const noteFund = () => R.querySelector('#cw-record [data-fund="open"][data-fund-from="note"]');
+    check("5f9: the record's Implementation Funding words open the drawer and leave nothing that switches tabs",
+      !!recFund() && !!noteFund() && !R.querySelector('#cw-record [data-act="focus"]') && !/Open in Implementation Funding|Write it in Implementation Funding/.test(flat(R)));
+    let switched = 0; const was = h.window.CPL_TABS; h.window.CPL_TABS = { activate: () => { switched++; } };
+    clickEl(h.window, recFund());
+    check("5f9a: pressed, the drawer opens on the college, the tab stays, and its word reads expanded",
+      !dr().hidden && switched === 0 && h.W._state.fund === true && recFund().getAttribute("aria-expanded") === "true");
+    check("5f9b: the drawer shows the CO Monitor's note for a reviewer and says where it is written",
+      /CO Monitor's note/.test(flat(dr())) && /written on the full page/.test(flat(dr())));
+    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("5f9c: closed, the focus returns to the record's word that opened it", dr().hidden && h.doc.activeElement === recFund());
+    clickEl(h.window, noteFund());
+    check("5f9d: the History note's word opens the same drawer", !dr().hidden && switched === 0);
+    clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
+    h.window.CPL_TABS = was;
+  }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
-  clickEl(window, root.querySelector('[data-stage="notyet"]'));
-  check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
+  clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
+  check("5c: a metric opens its view, Nudge offered on Not yet confirmed",
     W._state.view === "notyet" && !!root.querySelector('[data-act="nudge"]'));
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
   check("5d: a new visit starts on All open items with nothing typed", W._state.view === "open" && W._state.q === "");
@@ -173,7 +443,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const stash = () => { window.CPL_SESSION.stashReturnTab("csm-workspace"); return (JSON.parse(window.localStorage.getItem("cpl_sb_return_tab") || "{}")).tab; };
   check("5e1: #csm-workspace/held opens Confirmed, still held", W._state.view === "held" && root.querySelector("#cw-view").value === "held");
   check("5e2: and reports it as the view a sign-in returns to", stash() === "csm-workspace/held");
-  clickEl(window, root.querySelector('[data-stage="notyet"]'));
+  clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
   check("5e3: another view reports its own address (the address still says held)", stash() === "csm-workspace/notyet" && window.location.hash === "#csm-workspace/held");
   const sel = root.querySelector("#cw-view"); sel.value = "open"; sel.dispatchEvent(new window.Event("change", { bubbles: true }));
   check("5e4: All open items reports the bare tab", stash() === "csm-workspace");
@@ -189,12 +459,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
 // ── 6. Rule 4 and the link from the internal view ────────────────────────────
 {
-  const tags = (s) => [/<button class="cpl-tab" data-tab="csm-workspace">CSM Workspace<\/button>/.test(s),
+  const tags = (s) => [/<button class="cpl-tab" data-tab="csm-workspace">Funding Follow-up Dashboard<\/button>/.test(s),
     /<div class="cpl-tab-pane" id="tab-csm-workspace" data-tab="csm-workspace">/.test(s),
     /onActivate\('csm-workspace'/.test(s) && /loadScript\('csm_workspace\.js', 'CPL_CSM_WORKSPACE'/.test(s)];
   check("6a: the button, the pane and the boot sit in both HTMLs", tags(IDX).every(Boolean) && tags(CPL).every(Boolean));
   check("6b: the funding tab's toolbar links the workspace beside Nudge, for a signed-in reviewer",
-    /<a class="cplfund-csmlink" href="#csm-workspace">CSM Workspace<\/a>/.test(FUND) && /function nudgeBtnHtml\(\) \{\s*return nudgeShown\(\)/.test(FUND));
+    /<a class="cplfund-csmlink" href="#csm-workspace">Funding Follow-up Dashboard<\/a>/.test(FUND) && /function nudgeBtnHtml\(\) \{\s*return nudgeShown\(\)/.test(FUND));
   const { doc } = setup({ signedIn: true });
   check("6c: rendered, the link shows in the internal view", !!doc.querySelector('#cplFundingMount a.cplfund-csmlink[href="#csm-workspace"]'));
   check("6d: new CSS keys every color to a --cw token, and the dark theme maps each onto a First Light token",
@@ -215,7 +485,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("7c: the new write surface is mapped before it ships (Rule 10 a3)", GOV.mapped["table:csm_log"] === "DR-09");
 
   const { window, doc, W, root } = setup({ signedIn: true });
-  const pick = (k) => clickEl(window, root.querySelector('.row[data-sel="' + k + '"], .chip[data-sel="' + k + '"]'));
+  // The board is gone (go-live note, item 13), so a college outside the open list is reached through All institutions.
+  const pick = (k) => { W._state.view = "all"; W._state.sel = null; W.paint(); clickEl(window, root.querySelector('.row[data-sel="' + k + '"]')); };
   pick(OTHER);
   const form = () => root.querySelector("form[data-logform]");
   const fld = (n) => form().elements.namedItem(n);
@@ -243,7 +514,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("7i: Delete removes the entry", W._log().length === 0);
 
   // a decision writes its own entry
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
   await tick();
@@ -273,23 +544,35 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("8b: the mismatches say what disagrees: the coordinator missing from the landing page, the primary contact not a MAP user",
     mm.some((x) => /CPL Coordinator in MAP's directory \(Rivera, Ana\) is not on the landing page/.test(x)) &&
     mm.some((x) => /primary CPL contact \(Bo Chen\) is not an active MAP user/.test(x)));
+  // Sam, 2026-11-10: "links still opening to new tabs instead of sidebars". The two pop-ups are now the People panel.
   W._state.sel = OTHER; W.paint();
-  clickEl(window, root.querySelector('[data-pop="contacts"]'));
-  const dlg = () => doc.querySelector("#cw-dlg-host dialog");
-  check("8c: Contacts on file opens a popup with the directory's fields, the landing page's people and MAP users by role",
-    !!dlg() && /Pasadena contacts/.test(flat(dlg().querySelector("h3"))) && /CPL Coordinator\s*Rivera, Ana, ana@pasadena\.edu/.test(flat(dlg())) &&
-    /CEO\s*Not on file/.test(flat(dlg())) && /CPL Counselor: Dee Lu/.test(flat(dlg())) && /Initiator 1/.test(flat(dlg())));
-  clickEl(window, dlg().querySelector('[data-pop="people"]'));
-  check("8d: Names, titles and emails lists every row with its source, in a table with header cells",
-    /names, titles and emails/.test(flat(dlg().querySelector("h3"))) && dlg().querySelectorAll("tbody tr").length === 6 &&
-    dlg().querySelectorAll('th[scope="col"]').length === 4);
-  const src = dlg().querySelector("[data-psrc]"); src.value = "MAP users"; src.dispatchEvent(new window.Event("change", { bubbles: true }));
-  check("8e: the source filter narrows the table", dlg().querySelectorAll("tbody tr").length === 2);
-  clickEl(window, dlg().querySelector("[data-close]"));
-  check("8f: Close removes the popup", !doc.getElementById("cw-dlg-host"));
+  clickEl(window, root.querySelector('#cw-record .decide [data-side="people"]'));
+  const ppl = () => root.querySelector('#cw-side [data-sidepart="people"]');
+  check("8c: People holds the contacts on file in the panel: what differs, then the directory's fields, the landing page's people and MAP users by role behind one fold",
+    !ppl().hidden && !doc.getElementById("cw-dlg-host") && !root.querySelector("[data-pop]") &&
+    /is not on the landing page/.test(flat(ppl().querySelector(".diff"))) && !!ppl().querySelector("details.onfile summary") &&
+    /CPL Coordinator\s*Rivera, Ana, ana@pasadena\.edu/.test(flat(ppl().querySelector("details.onfile"))) &&
+    /CEO\s*Not on file/.test(flat(ppl())) && /CPL Counselor: Dee Lu/.test(flat(ppl())) && /Initiator 1/.test(flat(ppl())));
+  const rows = () => ppl().querySelectorAll("table.facts tbody tr");
+  check("8d: the one people list carries every row with its source, under column headers", rows().length === 6 &&
+    Array.prototype.map.call(ppl().querySelectorAll('table.facts thead th[scope="col"]'), flat).join("|") === "Role|Person|Source", String(rows().length));
+  // COBIx on PR 3067: the filter repaints the record, and the fold must stay as the reviewer left it.
+  const fold = ppl().querySelector("details.onfile"); fold.open = true; fold.dispatchEvent(new window.Event("toggle"));
+  const src = ppl().querySelector("[data-psrc]"); src.value = "MAP users"; src.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("8e0: an open Every field on file stays open when the source filter repaints the record", ppl().querySelector("details.onfile").open === true);
+  check("8e: the source filter narrows the list in place, and keeps the focus on itself",
+    rows().length === 2 && W._state.psrc === "MAP users" && doc.activeElement === root.querySelector("#cw-psrc") && root.querySelector("#cw-psrc").value === "MAP users");
+  clickEl(window, root.querySelector('.row[data-sel="' + COLLEGE + '"]') || root.querySelector(".row[data-sel]"));
+  check("8f: choosing another college clears the source filter", W._state.psrc === "");
+  W._state.sel = OTHER; W._state.side = ""; W.paint();
 
   const conf = W._mail(OTHER);
-  check("8g0: a confirmed college's email opens on the follow-up, To its CPL Coordinator", conf.tpl === "follow" && conf.to === "ana@pasadena.edu");
+  check("8g0a: a confirmed college whose acceptance has not gone opens on the acceptance, in any list", conf.tpl === "accept");
+  W._log().push({ id: 902, college: OTHER, activity: "funding", kind: "email", body: "Acceptance sent: x", created_at: "2026-11-09T12:00:00Z" });
+  W._state.mail = {};
+  const conf2 = W._mail(OTHER);
+  check("8g0: once the acceptance has gone, its email opens on the follow-up, To its CPL Coordinator", conf2.tpl === "follow" && conf2.to === "ana@pasadena.edu");
+  W._log().pop();
   W._state.mail = {};
   W._snapshot().rows.find((r) => r.key === OTHER).part.confirmed = false;
   const m = W._mail(OTHER);
@@ -323,7 +606,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   // The real save path: the funding tab's PATCH is refused (an expired session) and the re-read finds no confirmation.
   const { window, T, W, root } = setup({ signedIn: true });
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   const before = W._log().length, sent = [];
   window.CPL_FUNDING_NO_REMOTE = false;
@@ -342,7 +625,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   // Deny, answered as refused by the funding tab: no entry and no "removed".
   const { window, T, W, root } = setup({ signedIn: true });
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   const before = W._log().length;
   T.csm.act = function () { return Promise.resolve({ ok: false }); };
   window.confirm = () => true;
@@ -358,7 +641,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   // The role the reviewer confirmed rides the acceptance's log entry (Sam, 2026-11-10: "I meant for the reviewer to add").
   const { window, T, W, root } = setup({ signedIn: true });
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   const role = () => root.querySelector('.review input[data-role="part"]');
   check("9h: the senior administrator check, when the form gave Other, carries a field for the role the reviewer confirmed",
     !!role() && /Their role, as you confirmed it/.test(flat(role().closest("label"))) && role().closest(".req").querySelector("input[data-check]"));
@@ -414,7 +697,9 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   W._log()[0].created_at = "2026-01-02T00:00:00Z";
   check("10g: a nudge older than 14 days lets it back in", W._readyOf(nudgeKey) === "nudge");
   W._state.view = "open"; W.paint();
-  check("10i: outside Ready to send there is no Sent", !root.querySelector('[data-mailact="sent"]'));
+  const selRow = W._snapshot().rows.find((r) => r.key === W._state.sel);
+  check("10i: Sent shows exactly when an email is due for the college, whatever the list",
+    W._state.view === "open" && !!selRow && !!root.querySelector('[data-mailact="sent"]') === (W._recTpl(selRow) !== null));
   // A long email: the link would pass what a mail program takes, so the words go to the clipboard and the draft opens bare.
   W._state.sel = OTHER; W._state.mail = {}; W.paint();
   W._mail(OTHER).body = "x".repeat(2500);
@@ -688,6 +973,13 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   W._access.asked = false; W.paint();
   await tick(); await tick(); await tick();
   const sec = () => root.querySelector('section[aria-labelledby="cw-acc-h"]');
+  {
+    const aw = () => root.querySelector("header [data-accopen]");
+    check("13a0: an approver gets one quiet word in the header with the count, and the section starts closed",
+      !!aw() && flat(aw()) === "Access requests: none waiting" && /quiet/.test(aw().className) && aw().getAttribute("aria-expanded") === "false" && !!sec() && sec().hidden);
+    clickEl(window, aw());
+    check("13a1: the word opens the section", !sec().hidden && aw().getAttribute("aria-expanded") === "true");
+  }
   check("13a: an approver sees Access requests with nobody waiting, and how a teammate asks",
     !!sec() && /No one is waiting/.test(flat(sec())) && /Ask an approver/.test(flat(sec())) && !sec().querySelector('[data-access="approve"]'));
   check("13b: the empty section offers Check now", !!sec().querySelector('button[data-access="check"]') && flat(sec().querySelector('[data-access="check"]')) === "Check now");

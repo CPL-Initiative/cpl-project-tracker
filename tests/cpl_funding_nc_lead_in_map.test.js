@@ -176,8 +176,11 @@ check("4f: the rollback restores the six-column function and its grant",
 
 // ── 5. the workspace record ───────────────────────────────────────────────────────────────────────────────────
 check("5d: the record says the role stands in for the attestation, and a college with the role is never told not yet attested",
-  /The Noncredit CPL Lead role is on the college's MAP landing page, which stands in for the attestation\./.test(WS) &&
-  /: r\.nc\.lead \? "complete\."\s*: ncWaiting\(r\) \?[^\n]*"Noncredit CPL Lead not yet attested\."/.test(WS));
+  // The record's conditions are a table since the clarity mock's build (S624): the role reads Met with its reason, and
+  // the row tests the role before it can say the lead is not yet in MAP or attested.
+  /r\.nc\.lead \? "The role is on the college's MAP landing page, which stands in for the attestation\."/.test(WS) &&
+  /r\.nc\.lead \? "The role is on[^\n]*\n(?:[^\n]*\n){0,4}[^\n]*"Not yet in MAP, and not yet attested\."/.test(WS) &&
+  /stWord\(ncMet\(r\), false, ncWaiting\(r\)\)/.test(WS));
 check("5e: a near title tells the CSM to ask for the role", /The MAP landing page lists a close title\. Ask the college to use the Noncredit CPL Lead role\./.test(WS));
 
 finish();

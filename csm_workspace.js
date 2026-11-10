@@ -17,13 +17,17 @@
  * a3): notes, calls, emails and meetings per college and activity, each with an optional follow-up date the queue
  * counts down to. A decision made here logs itself.
  *
- * THE CONTACTS (S555): Contacts on file and Names, titles and emails open popups over MAP's directory, the landing
- * page and MAP's users; Write an email seeds To and Cc by template, takes More Cc from the picker, and copies the
+ * THE CONTACTS (S555; in the People panel since 2026-11-10): one people list with its source filter over MAP's
+ * directory, the landing page and MAP's users, what they disagree on, and every field on file; Write an email seeds To and Cc by template, takes More Cc from the picker, and copies the
  * formatted email for Outlook. All three sources are reviewer-gated in the database.
  *
  * The look is the CPL Commons' (Malone's CPL/AI palette) as the mock shows it; the dark theme maps every role onto a
  * First Light dark token. The priority cards fold behind one word for the visit (Sam's ask 18);
  * Today stays in the header either way, each count a word that opens its view (Sam, 2026-11-03, S564).
+ *
+ * THE NAME (Malone, 2026-11-10; built on Sam's go): the page reads Funding Follow-up Dashboard, because the MAP team does
+ * most of this work and the CSMs only part of it. The tab's address stays #csm-workspace, and the file, the lane and
+ * the identifiers keep the old name, as the Activities tab kept its address when its label changed.
  *
  * Tests: tests/csm_workspace.test.js
  */
@@ -45,10 +49,21 @@
       "#tab-csm-workspace h1 { margin:0; font-family:var(--cw-serif); font-weight:700; color:var(--cw-title); font-size:clamp(2rem, 1.5rem + 1.8vw, 3rem); line-height:1; letter-spacing:-0.03em; }",
       "#tab-csm-workspace .links { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.92rem; align-items:baseline; }",
       "#tab-csm-workspace .rule { width:66px; height:4px; background:var(--cw-gold); margin:10px 0 8px; }",
-      "#tab-csm-workspace .today { margin:0; display:flex; flex-wrap:wrap; gap:4px 10px; align-items:baseline; font-size:.95rem; }",
-      "#tab-csm-workspace .today b { color:var(--cw-heading); }",
-      "#tab-csm-workspace .today .sep { color:var(--cw-muted); }",
-      "#tab-csm-workspace .today .word { font-weight:500; font-size:inherit; }",
+      // The summary metrics (Malone, 2026-11-10, built on Sam's go): each one scannable, the number above its label, the
+      // deadline set apart at the right. Each metric is the button that opens its list (a figure opens what it counts).
+      "#tab-csm-workspace .today { margin:0; display:flex; flex-wrap:wrap; gap:8px 10px; align-items:stretch; }",
+      "#tab-csm-workspace .metric { all:unset; box-sizing:border-box; cursor:pointer; display:grid; gap:2px; align-content:center; min-width:132px; padding:8px 14px; border-left:3px solid var(--cw-line); }",
+      "#tab-csm-workspace .metric .num { font-family:var(--cw-serif); font-weight:700; font-size:1.9rem; line-height:1.05; color:var(--cw-title); font-variant-numeric:tabular-nums; }",
+      "#tab-csm-workspace .metric .lab, #tab-csm-workspace .deadline .lab { font-size:.86rem; font-weight:600; color:var(--cw-ink-2); }",
+      "#tab-csm-workspace .metric:hover { border-left-color:var(--cw-accent); }",
+      "#tab-csm-workspace .metric:hover .lab { color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; }",
+      "#tab-csm-workspace .metric[aria-pressed=\"true\"] { border-left-color:var(--cw-gold); background:var(--cw-sel); border-radius:0 6px 6px 0; }",
+      "#tab-csm-workspace .metric:focus-visible { outline:2px solid var(--cw-accent); outline-offset:2px; border-radius:3px; }",
+      "#tab-csm-workspace .deadline { margin:0 0 0 auto; display:grid; gap:2px; align-content:center; padding:8px 0 8px 18px; border-left:1px solid var(--cw-line); text-align:right; }",
+      "#tab-csm-workspace .deadline .date { font-family:var(--cw-serif); font-weight:700; font-size:1.35rem; line-height:1.1; color:var(--cw-heading); }",
+      "@media (max-width:640px) { #tab-csm-workspace .metric { min-width:calc(50% - 5px); } #tab-csm-workspace .deadline { margin-left:0; text-align:left; border-left:3px solid var(--cw-gold); padding-left:14px; } }",
+      "#tab-csm-workspace .qgroup { margin:10px 0 0; padding:0 18px; font-family:var(--cw-sans); font-size:.8rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--cw-muted); }",
+      "#tab-csm-workspace .qgroup-n { font-variant-numeric:tabular-nums; }",
       "#tab-csm-workspace h2 { margin:0; font-family:var(--cw-serif); font-size:1.3rem; color:var(--cw-heading); }",
       "#tab-csm-workspace .sec { display:grid; gap:8px; }",
       "#tab-csm-workspace .sec-h { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:6px 20px; }",
@@ -124,6 +139,42 @@
       "#tab-csm-workspace .conds { margin:0; padding:0; list-style:none; display:grid; gap:6px; }",
       "#tab-csm-workspace .cond { display:grid; grid-template-columns:5.5rem minmax(0, 1fr); gap:10px; align-items:baseline; font-size:.92rem; }",
       "#tab-csm-workspace .cond .why { color:var(--cw-muted); font-size:.86rem; }",
+      // The record as conditions in a table, Recommended action and the email preview (the clarity mock, Malone's change 4).
+      "#tab-csm-workspace .facts { width:100%; border-collapse:collapse; table-layout:fixed; }",
+      "#tab-csm-workspace .facts th, #tab-csm-workspace .facts td { text-align:left; padding:9px 8px; border-top:1px solid var(--cw-line-soft); vertical-align:top; font-size:.93rem; overflow-wrap:anywhere; }",
+      "#tab-csm-workspace .facts thead th { border-top:0; color:var(--cw-muted); font-size:.78rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; }",
+      "#tab-csm-workspace .facts tbody th { font-weight:600; color:var(--cw-heading); }",
+      "#tab-csm-workspace .facts .why { display:block; color:var(--cw-muted); font-size:.86rem; font-weight:400; }",
+      "#tab-csm-workspace .st { font-weight:700; }",
+      "#tab-csm-workspace .st.met { color:var(--cw-met); }",
+      "#tab-csm-workspace .st.not { color:var(--cw-ask-fg); background:var(--cw-ask-bg); border-radius:4px; padding:0 6px; }",
+      "#tab-csm-workspace .visit { border:1px solid var(--cw-line); border-top:4px solid var(--cw-gold); border-radius:10px; padding:14px 16px; display:grid; gap:8px; background:var(--cw-surface); }",
+      "#tab-csm-workspace .visit h4 { margin:0; font-family:var(--cw-serif); font-size:1.05rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .visit .reason { margin:0; font-family:var(--cw-serif); font-size:1.25rem; color:var(--cw-title); }",
+      "#tab-csm-workspace .visit .status { margin:0; }",
+      "#tab-csm-workspace .mail-h { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+      "#tab-csm-workspace .mail-h .k { margin:0; }",
+      "#tab-csm-workspace .mail-f { margin:0; display:grid; grid-template-columns:minmax(64px, auto) minmax(0, 1fr); gap:6px 14px; font-size:.9rem; }",
+      "#tab-csm-workspace .mail-f dt { font-weight:700; color:var(--cw-heading); }",
+      "#tab-csm-workspace .mail-f dd { margin:0; color:var(--cw-ink); min-width:0; overflow-wrap:anywhere; white-space:pre-wrap; }",
+      "#tab-csm-workspace .mail-f dd + dt, #tab-csm-workspace .mail-f dd + dt + dd { border-top:1px solid var(--cw-line-soft); padding-top:6px; }",
+      "#tab-csm-workspace .tpl-edit { display:grid; gap:8px; }",
+      "#tab-csm-workspace .tpl-edit[hidden], #tab-csm-workspace .mail-f[hidden], #tab-csm-workspace .tpl-row[hidden], #tab-csm-workspace .tpl-meta[hidden] { display:none; }",
+      // The side panel (the clarity mock; one people list, issue 2978): People, CPL landing page and History open under the
+      // record, one at a time; the review opens there too. Every part stays in the page, so a draft is never lost to a fold.
+      "#tab-csm-workspace [hidden] { display:none !important; }",
+      "#tab-csm-workspace .word.quiet { font-weight:500; color:var(--cw-muted); }",
+      "#tab-csm-workspace .accpane { padding:14px 18px; }",
+      "#tab-csm-workspace .drawer { position:fixed; top:0; right:0; bottom:0; width:min(480px, 92vw); z-index:20; background:var(--cw-dialog); border-left:1px solid var(--cw-line); box-shadow:-12px 0 32px color-mix(in srgb, var(--cw-heading) 16%, transparent); padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 18px 18px; display:grid; gap:12px; align-content:start; overflow-y:auto; }",
+      "#tab-csm-workspace .drawer-h { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+      "#tab-csm-workspace #cw-record { display:grid; gap:14px; min-width:0; align-content:start; }",
+      "#tab-csm-workspace .side { border-top:4px solid var(--cw-line); padding:16px 20px 18px; display:grid; gap:14px; }",
+      "#tab-csm-workspace .side h4.side-h { margin:0; font-family:var(--cw-serif); font-size:1.1rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .sidepart { display:grid; gap:12px; min-width:0; }",
+      "#tab-csm-workspace .lpframe { border:1px solid var(--cw-line); border-radius:8px; overflow:hidden; background:var(--cw-surface); }",
+      "#tab-csm-workspace .lpframe iframe { display:block; width:100%; height:clamp(360px, 60vh, 640px); border:0; }",
+      "#tab-csm-workspace details.lpshow summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
+      "#tab-csm-workspace details.lpshow[open] { display:grid; gap:8px; margin-top:6px; }",
       "#tab-csm-workspace .ncline { margin:8px 0 0; font-size:.9rem; color:var(--cw-ink-2); }",
       "#tab-csm-workspace .tpl { display:grid; gap:8px; background:var(--cw-page); border:1px solid var(--cw-line); border-radius:8px; padding:12px 14px; }",
       "#tab-csm-workspace .tpl-row { display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; }",
@@ -181,21 +232,15 @@
       "#tab-csm-workspace .chip { all:unset; cursor:pointer; min-height:24px; font-size:.88rem; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; }",
       "#tab-csm-workspace .chip:hover { color:var(--cw-heading); }",
       "#tab-csm-workspace .ncstrip { margin:0; font-size:.92rem; color:var(--cw-ink-2); }",
-      "#tab-csm-workspace dialog.cdlg { border:1px solid var(--cw-line); border-radius:12px; padding:0; width:min(680px, calc(100vw - 32px)); max-height:min(86vh, 900px); background:var(--cw-surface); color:var(--cw-ink); box-shadow:0 18px 48px rgba(8,43,97,.22); }",
-      "#tab-csm-workspace dialog.cdlg::backdrop { background:rgba(8,20,40,.45); }",
-      "#tab-csm-workspace .cdlg-in { display:grid; gap:16px; padding:20px 22px 22px; }",
-      "#tab-csm-workspace .cdlg-head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
-      "#tab-csm-workspace .cdlg-head h3 { margin:0; font-family:var(--cw-serif); font-size:1.4rem; color:var(--cw-title); }",
-      "#tab-csm-workspace .cdlg-src { display:grid; gap:6px; }",
-      "#tab-csm-workspace .cdlg-src h4 { margin:0; font-size:.98rem; color:var(--cw-heading); }",
-      "#tab-csm-workspace .cdlg-src .tpl-meta { margin:0; }",
+      "#tab-csm-workspace .onfile-src { display:grid; gap:6px; }",
+      "#tab-csm-workspace .onfile-src h4 { margin:0; font-size:.98rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .onfile-src .tpl-meta { margin:0; }",
       "#tab-csm-workspace .fields { margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:4px 18px; font-size:.9rem; }",
       "#tab-csm-workspace .fields li { display:flex; justify-content:space-between; gap:10px; border-top:1px solid var(--cw-line-soft); padding:4px 0; }",
       "#tab-csm-workspace .fields .off { color:var(--cw-ask-fg); background:var(--cw-ask-bg); border-radius:999px; padding:0 8px; font-size:.78rem; font-weight:700; white-space:nowrap; }",
       "#tab-csm-workspace .fields .on { color:var(--cw-muted); font-size:.82rem; white-space:nowrap; }",
       "#tab-csm-workspace .tags { display:flex; flex-wrap:wrap; gap:6px; }",
       "#tab-csm-workspace .diff { margin:0; padding:10px 12px; border-radius:8px; background:var(--cw-ask-bg); color:var(--cw-ask-fg); font-size:.9rem; }",
-      "#tab-csm-workspace .cdlg-foot { display:flex; flex-wrap:wrap; gap:6px 20px; align-items:center; border-top:1px solid var(--cw-line-soft); padding-top:12px; }",
       "#tab-csm-workspace .ppl-h { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 16px; margin:0 0 6px; }",
       "#tab-csm-workspace .ppl-h .k { margin:0; }",
       "#tab-csm-workspace .roles { margin:0; padding:0; list-style:none; display:grid; gap:0; }",
@@ -210,13 +255,13 @@
       "#tab-csm-workspace .titles { margin:0 0 10px; padding:0; list-style:none; display:grid; gap:2px; font-size:.88rem; }",
       "#tab-csm-workspace .titles li { display:flex; justify-content:space-between; gap:12px; padding:2px 0 2px 14px; color:var(--cw-ink-2); }",
       "#tab-csm-workspace .titles li span:last-child { color:var(--cw-muted); font-variant-numeric:tabular-nums; }",
-      "#tab-csm-workspace table.people { width:100%; border-collapse:collapse; font-size:.88rem; min-width:520px; }",
-      "#tab-csm-workspace .people th, #tab-csm-workspace .people td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--cw-line-soft); vertical-align:top; }",
-      "#tab-csm-workspace .people th { color:var(--cw-muted); font-weight:600; font-size:.8rem; position:sticky; top:0; background:var(--cw-surface); }",
-      "#tab-csm-workspace .people .ph { color:var(--cw-muted); font-style:italic; }",
-      "#tab-csm-workspace .people td:last-child { white-space:nowrap; }",
       "#tab-csm-workspace .ppl-tools { display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center; }",
-      "#tab-csm-workspace .ppl-scroll { max-height:52vh; overflow:auto; border:1px solid var(--cw-line-soft); border-radius:8px; }",
+      "#tab-csm-workspace details.onfile { display:grid; gap:10px; }",
+      "#tab-csm-workspace details.onfile summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
+      "#tab-csm-workspace .tplform { display:grid; gap:8px; }",
+      "#tab-csm-workspace .tplform textarea { width:100%; box-sizing:border-box; font:inherit; resize:vertical; }",
+      "#tab-csm-workspace .tplpre { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; margin:0; }",
+      "#tab-csm-workspace details.tplprev summary, #tab-csm-workspace details.tplhist summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
       "@media (max-width: 560px) { #tab-csm-workspace .fields { grid-template-columns:minmax(0, 1fr); } }",
       "#tab-csm-workspace .hc { position:absolute; z-index:50; max-width:min(340px, calc(100vw - 32px)); background:var(--cw-surface); color:var(--cw-ink); border:1px solid var(--cw-line); border-radius:10px; box-shadow:0 12px 32px rgba(8,43,97,.18); padding:12px 14px; font-size:.86rem; line-height:1.45; display:grid; gap:6px; }",
       "#tab-csm-workspace .hc[hidden] { display:none; }",
@@ -230,7 +275,6 @@
       "#tab-csm-workspace button[data-hc], #tab-csm-workspace .row[data-hc], #tab-csm-workspace .chip[data-hc] { cursor:pointer; }",
       "#tab-csm-workspace [data-hc]:not(button):not(.row):not(.chip) { text-decoration:underline dotted var(--cw-muted); text-underline-offset:4px; }",
       "#tab-csm-workspace .big[data-hc] { text-decoration-thickness:2px; }",
-      "#tab-csm-workspace dialog.cdlg.wide { width:min(900px, calc(100vw - 32px)); }",
       "#tab-csm-workspace .mm-grid { display:grid; grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); gap:16px; align-items:start; }",
       "#tab-csm-workspace .mm-step { display:grid; gap:8px; min-width:0; }",
       "#tab-csm-workspace .mm-step h4 { margin:0; font-size:.98rem; color:var(--cw-heading); display:flex; justify-content:space-between; gap:10px; align-items:baseline; }",
@@ -282,7 +326,7 @@
     "--cw-muted:#58677D; --cw-heading:#082B61; --cw-title:#072C66; --cw-link:#0D5BC6; --cw-accent:#1671D9; --cw-gold:#F4B300; " +
     "--cw-line:#D9E4EF; --cw-line-soft:#E8EEF5; --cw-field-line:#6E7F96; --cw-track:#E3ECF5; --cw-pill-bg:#EAF4FE; " +
     "--cw-pill-fg:#355A80; --cw-ask-bg:#FFF4D6; --cw-ask-fg:#5C4000; --cw-warn-fg:#8A2316; --cw-sel:#EEF5FD; --cw-guide:#9AA9BC; " +
-    "--cw-paper:#FFFFFF; --cw-paper-ink:#1C1C1A; --cw-dialog:#FFFFFF; --cw-serif:Georgia,'Times New Roman',serif; " +
+    "--cw-met:#1F5D3A; --cw-paper:#FFFFFF; --cw-paper-ink:#1C1C1A; --cw-dialog:#FFFFFF; --cw-serif:Georgia,'Times New Roman',serif; " +
     "--cw-sans:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;";
   var DARK = "--cw-page:var(--surface-muted); --cw-page-end:var(--surface-muted); --cw-surface:var(--surface); " +
     "--cw-ink:var(--text-body); --cw-ink-2:var(--text-body); --cw-muted:var(--text-muted); --cw-heading:var(--text-strong); " +
@@ -290,7 +334,7 @@
     "--cw-line:var(--border); --cw-line-soft:var(--border); --cw-field-line:var(--border-strong); --cw-track:var(--surface-muted); " +
     "--cw-pill-bg:var(--surface-muted); --cw-pill-fg:var(--text-body); --cw-ask-bg:var(--gold-soft); --cw-ask-fg:var(--mustard-text); " +
     "--cw-warn-fg:var(--danger-text); --cw-sel:var(--surface-muted); --cw-guide:var(--text-faint); --cw-paper:var(--surface); " +
-    "--cw-paper-ink:var(--text-body); --cw-dialog:var(--surface-opaque);";
+    "--cw-paper-ink:var(--text-body); --cw-dialog:var(--surface-opaque); --cw-met:var(--success-text);";
   var CSS_ID = "csm-workspace-css";
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
@@ -303,7 +347,6 @@
         "background-color:var(--cw-page); color:var(--cw-ink); font-family:var(--cw-sans); font-size:16px; line-height:1.55; border-radius:12px; }",
       "#tab-csm-workspace .cw-fold[hidden] { display:none; }",
       // A popup sits over the page, so its ground is opaque in both themes (dark --surface is translucent glass).
-      "#tab-csm-workspace dialog.cdlg.cdlg { background:var(--cw-dialog); }",
       "#tab-csm-workspace .rolefield { display:grid; gap:4px; margin:6px 0; max-width:340px; font-weight:600; font-size:.88rem; }",
       "#tab-csm-workspace .signin { margin:0; padding:10px 14px; border-radius:8px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.92rem; }",
       "#tab-csm-workspace .grant .grant-acts { margin:8px 0 2px; }"
@@ -321,7 +364,7 @@
 
   // ── the read ─────────────────────────────────────────────────────────────
   var S = null;                 // the funding tab's snapshot, refreshed on every model change
-  var state = { view: "open", q: "", sel: null, checks: {}, seen: {}, msg: "", draft: {} };
+  var state = { view: "open", q: "", sel: null, checks: {}, lpOpen: {}, tplId: "lead", tplDraft: {}, msg: "", draft: {} };
   // ── the communications log (csm_log, kb/migrations/2026-11-02_csm_log.sql) ──────────────────────────────────────
   // Notes, calls, emails and meetings per college and activity, each with an optional follow-up date. A signed-in
   // reviewer reads and writes it with their own credential; the trigger stamps who. Read whole (paged by Range, the kb_curation rule),
@@ -428,7 +471,28 @@
   var NUDGE_SUBJ = /a participation confirmation for /;
   /* Each email's receipt, and its undo (COBIx on issue 2967, 16:17Z): Sent writes "<prefix>: …"; It bounced writes
      "It bounced, <that receipt>", and the later of the two decides, so a bounce puts the college back in the queue. */
-  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent" };
+  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent", lead: "Noncredit CPL Lead ask sent" };
+  /* The Noncredit CPL Lead ask (Sam, 2026-11-09: the ask is "for the role in MAP ... if they attest, we can accept that
+     now as well"). Open when the noncredit share applies, the role is not in MAP, no attestation stands and none waits.
+     A college owing the confirmation too gets both asks in one email ("both"), whose receipt is the nudge's, told
+     apart by its subject. An ask counts as made for 14 days, as the nudge does. */
+  var BOTH_SUBJ = /: two steps for /, LEAD_SUBJ = /: the Noncredit CPL Lead role in MAP for /;
+  /* ON, on Sam's word (2026-11-10, in session, having read them: "yes to all"). Held until then (COBIx on PR 3050; the
+     hold list's "anything outward"). Their wording is a template a reviewer can change (Email templates, PR 3068). Set
+     false and no lead ask is ever due again: a college owing the confirmation gets the plain nudge, and the Template
+     menu offers neither. */
+  var LEAD_MAIL_ON = true;
+  function leadOpen(r) { return LEAD_MAIL_ON && !!(r.nc && !ncMet(r) && !ncWaiting(r)); }
+  // An ask counts as made for 14 days, by its Sent receipt or by a draft opened or copied (as a nudge's draft counts).
+  // A Sent nudge is final, as it was before this change: lastSent has no window, so a college nudged by either email
+  // is not due a nudge again; the Noncredit CPL Lead ask alone comes due again after 14 days, once the college confirms.
+  function leadAsked(r) {
+    if ((state.sent || {})[r.key + "|lead"] || (state.sent || {})[r.key + "|both"]) return true;
+    var since = plusDays(-14), a = lastSent(r, "lead"), b = lastSent(r, "nudge");
+    return !!(a && String(a.created_at || "").slice(0, 10) >= since) ||
+      !!(b && BOTH_SUBJ.test(String(b.body || "")) && String(b.created_at || "").slice(0, 10) >= since) ||
+      sentOf(r, LEAD_SUBJ, 14) || sentOf(r, BOTH_SUBJ, 14);
+  }
   function lastSent(r, tpl) {
     var p = SENT[tpl] + ": ", rows = logFor(r.key).filter(function (x) {
       var b = String(x.body || "");
@@ -442,14 +506,17 @@
       return x.kind === "email" && re.test(String(x.body || "")) && (!since || String(x.created_at || "").slice(0, 10) >= since);
     });
   }
-  function isSent(r, tpl) { return !!(state.sent || {})[r.key + "|" + tpl] || !!lastSent(r, tpl); }
+  function isSent(r, tpl) {
+    return !!(state.sent || {})[r.key + "|" + tpl] || (tpl === "nudge" && !!(state.sent || {})[r.key + "|both"]) || !!lastSent(r, tpl);
+  }
   function readyOf(r) {
     if (waitingKinds(r).length) return "wait";
     // state.sent bridges the moment between a Sent that saved and the log's re-read.
     if (r.part.confirmed && !isSent(r, "accept")) return "accept";
     if (r.nc && r.nc.standing && !isSent(r, "accept_nc")) return "accept_nc";
-    if (r.part.confirmed) return null;
-    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ? null : "nudge";
+    if (r.part.confirmed) return leadOpen(r) && !leadAsked(r) ? "lead" : null;
+    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ||
+      sentOf(r, BOTH_SUBJ, 14) && !bouncedSince(r, BOTH_SUBJ) ? null : "nudge";
   }
   function bouncedSince(r, re) {
     return logFor(r.key).some(function (x) { return /^It bounced, /.test(String(x.body || "")) && re.test(String(x.body || "")); });
@@ -464,24 +531,47 @@
   }
   var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
     accept: "Send the acceptance.", accept_nc: "Send the noncredit attestation acceptance.",
-    nudge: "Send the nudge for the participation confirmation." };
+    nudge: "Send the request for the participation confirmation.",
+    lead: "Ask the college to give its lead the Noncredit CPL Lead role in MAP." };
+  // One wording for the email that is due, whatever the list (COBIx on PR 3049): Ready to send and every other list
+  // read it from here, so the same email never reads two ways.
+  function readyWords(r, rd) {
+    var mw = rd === "accept" ? missingWords(r) : [], still = mw.length ? " Still waiting: " + mw.join("; ") + "." : "";
+    if (notReceived(r)) return "Resend the " + (rd === "accept" ? "acceptance" : "noncredit attestation acceptance") + ": confirmed " +
+      shortDate(rd === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) + ", and the first email did not reach the college." + still;
+    if (rd === "nudge" && leadOpen(r)) return "Send one email asking for the confirmation and the Noncredit CPL Lead role in MAP.";
+    return READY_WORDS[rd] + still;
+  }
+  // The email the college's state calls for: the one Ready to send holds, with both asks in one email where both are open.
+  function recTpl(r) { var rd = readyOf(r); return rd === "nudge" && leadOpen(r) ? "both" : SENT[rd] ? rd : null; }
   function nextStep(r) {
-    if (state.view === "send" && readyOf(r)) {
-      var rw = readyOf(r), mw = rw === "accept" ? missingWords(r) : [];
-      if (notReceived(r)) return "Resend the acceptance: confirmed " + shortDate(rw === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) +
-        ", and the first email did not reach the college." + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
-      return READY_WORDS[rw] + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
-    }
-    var w = waitingKinds(r);
-    if (w.length === 2) return "Review the participation confirmation and the noncredit attestation.";
-    if (w[0] === "part") return "Review the participation confirmation.";
-    if (w[0] === "nc") return "Review the noncredit attestation." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
+    if (state.view === "send" && readyOf(r)) return readyWords(r, readyOf(r));
+    // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
+    // next action"), from the same readyOf the Ready to send list keeps, so the two lists cannot disagree.
+    var w = waitingKinds(r), sentOn = function (at) { return at ? " sent " + shortDate(at) : ""; };
+    if (w.length === 2) return "Review the participation confirmation" + sentOn(r.part.at) + " and the noncredit attestation, then accept or deny each.";
+    if (w[0] === "part") return "Review the participation confirmation" + sentOn(r.part.at) + ", then accept or deny it.";
+    if (w[0] === "nc") return "Review the noncredit attestation" + sentOn(r.nc.at) + ", then accept or deny it." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
     var du = dueOf(r);
-    if (du) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
+    if (du && du.follow_up_on <= today()) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
+    var rd = readyOf(r);
+    if (rd) return readyWords(r, rd);
+    if (du) return "Nothing to send today. Follow up on " + shortDate(du.follow_up_on) + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
     var st = stageOf(r);
-    if (st === "held") { var m = missingWords(r); return "Confirmed. Follow up on: " + (m.length ? m.join("; ") : "a condition still pending") + "."; }
+    if (st === "held") {
+      var m = missingWords(r);
+      return "Nothing to send. Still waiting: " + (m.length ? m.join("; ") : "a condition still pending") + ". No email goes out for " + (m.length > 1 ? "those" : "that") + ".";
+    }
     if (st === "qual") return "Qualifies. Nothing waits.";
-    return "No confirmation yet. Nudge it from Not yet confirmed.";
+    var ns = lastSent(r, "nudge");
+    return "Nothing to send today. The request for the confirmation went out" + (ns && ns.created_at ? " " + shortDate(ns.created_at) : " within the last two weeks") + ".";
+  }
+  /* The two groups (Malone, 2026-11-10; the rule is the go-live note's item 4, built on Sam's go): Needs you holds a
+     request waiting on the team, an email ready to send and a follow-up due today or earlier; every other college
+     waits on the college. */
+  function needsYou(r) {
+    var du = dueOf(r);
+    return waitingKinds(r).length > 0 || !!readyOf(r) || !!(du && du.follow_up_on <= today());
   }
   function pillsOf(r) {
     var p = [];
@@ -489,9 +579,14 @@
     if (ncWaiting(r)) p.push(["ask", "NC attestation waiting"]);
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) p.push(["ask", "Follow-up due"]);
-    if (state.view === "send" && notReceived(r)) p.push(["ask", "Not received"]);
+    if (notReceived(r)) p.push(["ask", "Not received"]);
     var st = stageOf(r);
     p.push(["", st === "qual" ? "Qualifies" : st === "held" ? "Held by a condition" : r.part.confirmed ? "Confirmed" : "Not confirmed"]);
+    // Every badge kept (Malone, 2026-11-10): what the noncredit share still lacks, what was accepted, when the nudge went.
+    if (r.nc && r.nc.standing) p.push(["", "Attestation accepted"]);
+    else if (r.nc && !ncMet(r) && !ncWaiting(r)) p.push(["", "No Noncredit CPL Lead"]);
+    var ns = !r.part.confirmed && !r.part.waiting ? lastSent(r, "nudge") : null;
+    if (ns && ns.created_at) p.push(["", "Nudged " + shortDate(ns.created_at)]);
     return p;
   }
   function ageOf(r) {
@@ -533,13 +628,18 @@
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     return VIEWS[state.view] && state.view !== "open" ? TAB + "/" + state.view : TAB;
   });
-  var READY_RANK = { accept: 1, accept_nc: 2, nudge: 3, wait: 4 };
+  var READY_RANK = { accept: 1, accept_nc: 2, lead: 3, nudge: 4, wait: 5 };
   function sortRank(r) {
-    if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 5;
-    var s = stageOf(r), du = dueOf(r);
+    if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 6;
+    var s = stageOf(r), du = dueOf(r), rd = readyOf(r);
+    // Needs you, most pressing first (COBIx on PR 3049): a request waiting on the team, an email that never reached
+    // the college, a follow-up due, then the emails in Ready to send's own order, so a resend is never buried under the
+    // colleges still owed their first nudge. Waiting on the college keeps the order by stage.
     if (s === "waiting") return 0;
-    if (du && du.follow_up_on <= today()) return 1;
-    return s === "held" ? 2 : du ? 3 : s === "notyet" ? 4 : 5;
+    if (rd && rd !== "wait" && notReceived(r)) return 1;
+    if (du && du.follow_up_on <= today()) return 2;
+    if (rd && READY_RANK[rd] != null) return 2 + READY_RANK[rd];
+    return s === "held" ? 10 : du ? 11 : s === "notyet" ? 12 : 13;
   }
   function shownRows() {
     if (!S) return [];
@@ -553,6 +653,9 @@
   // comply with requirements" and "Probably shouldn't allow an accept deny unless they seen that section") ──────────
   // Each requirement reads Checked by the form, Meets, Check this (with I checked this) or Does not meet, from what
   // the request and the requester context already hold; nothing here is typed by hand.
+  // Accept opens once every Check this is ticked and nothing fails; Deny is open from the start. The review opens by
+  // itself, so its being on screen is the seeing Sam asked for; the scroll gate that also waited for its foot to be
+  // scrolled into view read as dead buttons in the side panel and is gone (Sam's go, 2026-11-10).
   function domainOf(email) { return String(email || "").split("@")[1] || ""; }
   function titleLabel(list, v) { for (var i = 0; i < list.length; i++) if (list[i].val === v) return list[i].label; return v || "not given"; }
   function ownMap(ctx) { return ctx ? ctx.map.filter(function (u) { return u.own; }) : []; }
@@ -593,7 +696,7 @@
       : a.leadCtx
       ? { t: "The Lead is published on the college's CPL landing page", s: "fails", n: "the Noncredit CPL Lead is not yet published on the college's CPL landing page",
           d: "The landing page does not list the Lead by name." }
-      : { t: "The Lead is published on the college's CPL landing page", s: "check", d: "Open the landing page and match the Lead's name." });
+      : { t: "The Lead is published on the college's CPL landing page", s: "check", d: "Show the landing page here and match the Lead's name." });
     items.push({ t: "The Lead's assignment gives time for the work", s: "check", d: a.lead_assignment ? "Given: " + a.lead_assignment + "." : "Not given." });
     items.push({ t: "The Lead meets regularly with credit CPL colleagues", s: "check", d: a.lead_meets ? "Given: " + a.lead_meets + "." : "Not given." });
     return { kind: "Noncredit CPL Lead attestation" + (r.nc && r.nc.fy ? ", " + r.nc.fy : ""),
@@ -606,31 +709,61 @@
     var R = reviewItems(r, kind); if (!R) return null;
     var ch = state.checks[gid(r.key, kind)] || {}, open = 0, fails = 0;
     R.items.forEach(function (it, i) { if (it.s === "check" && !ch[i]) open++; if (it.s === "fails") fails++; });
-    return { R: R, open: open, fails: fails, seen: !!state.seen[gid(r.key, kind)] };
+    return { R: R, open: open, fails: fails };
   }
   function gateWords(g) {
-    if (!g.seen) return "Scroll through the review to open Accept and Deny.";
     if (g.fails) return g.fails + " requirement" + (g.fails === 1 ? " is" : "s are") + " not met. Deny with the reason, or Follow up and hold the request.";
     if (g.open) return g.open + " check" + (g.open === 1 ? "" : "s") + " left before Accept.";
     return "Every requirement is checked. Accept or Deny.";
   }
   function landingLink(r, words) {
-    return r.landing ? '<a href="' + esc(r.landing) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) +
+    // The snapshot already passes an https address alone (httpsUrl in cpl_funding.js); checked again where it is drawn.
+    return r.landing && /^https?:\/\//i.test(r.landing) ? '<a href="' + esc(r.landing) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) +
       ' CPL landing page (opens in a new tab)">' + esc(words || "CPL landing page") + "</a>" : "";
+  }
+  /* The landing page inside the panel (Sam, 2026-11-10: "links still opening to new tabs instead of sidebars"). MAP's
+     landing pages answer with no X-Frame-Options or frame-ancestors (read 2026-11-10), so most draw here; a page whose
+     site refuses another page's frame stays blank, and the line under it says so and keeps the new-tab link. An http
+     address cannot draw inside this https page, so it keeps the link alone. */
+  // Only an https address on another origin draws in the frame: an http one cannot inside this https page, and one on
+  // this site's own origin could lift its own sandbox, since the address is data a college can edit (COBIx on PR 3066).
+  function frameable(r) {
+    if (!r.landing || !/^https:\/\//i.test(r.landing)) return false;
+    try { return new URL(r.landing).origin !== window.location.origin; } catch (e) { return false; }
+  }
+  function landingFrame(r) {
+    if (!r.landing || !/^https?:\/\//i.test(r.landing)) return '<p class="gate">No landing page address in MAP.</p>';
+    if (!frameable(r)) return '<p class="gate">This address cannot show inside the panel. ' + landingLink(r, "Open it in a new tab") + "</p>";
+    // Scripts and popups only: a college site needs scripts to draw, and a link out opens as an ordinary tab. No
+    // forms and no top navigation, since the reviewer reads the page and matches a name.
+    return '<div class="lpframe"><iframe src="' + esc(r.landing) + '" title="' + esc(r.name) + ' CPL landing page" loading="lazy" referrerpolicy="no-referrer"' +
+      ' sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div>' +
+      '<p class="gate">If the page stays blank, the college\'s site does not let another page show it. ' + landingLink(r, "Open it in a new tab") + "</p>";
+  }
+  // Inside the review the page waits behind Show the landing page here, so a review opens without loading a college's
+  // site. Its open state lasts the record, so a repaint (the contacts arriving, a note saved) draws it open again.
+  function landingShow(r, kind) {
+    if (!r.landing || !/^https?:\/\//i.test(r.landing)) return "";
+    if (!frameable(r)) return '<p class="gate">' + landingLink(r, "Open the landing page in a new tab") + "</p>";
+    var open = !!state.lpOpen[gid(r.key, kind)];
+    return '<details class="lpshow" data-lpshow="' + esc(kind) + '"' + (open ? " open" : "") + "><summary>Show the landing page here</summary>" + (open ? landingFrame(r) : "") + "</details>";
   }
   function reviewHtml(r, kind) {
     var g = reviewState(r, kind);
     if (!g) return '<section class="review"><h4>Review before you decide</h4><p class="gate">Sign in as a reviewer to read who sent the request.</p></section>';
     var ch = state.checks[gid(r.key, kind)] || {}, pre = "rv-" + kind;
+    // One page a review: on the first check that names the landing page, or at the head when none does.
+    var lpAt = -1;
+    for (var li = 0; li < g.R.items.length; li++) if (/landing page/i.test(g.R.items[li].t)) { lpAt = li; break; }
     return '<section class="review" aria-labelledby="' + pre + '-h"><h4 id="' + pre + '-h">Review before you decide: ' + esc(g.R.kind) + "</h4>" +
-      '<p class="links" style="margin:0">' + (landingLink(r, "Open the landing page") || '<span class="gate">No landing page address in MAP.</span>') + "</p>" +
+      (lpAt >= 0 ? "" : '<div>' + (landingShow(r, kind) || '<span class="gate">No landing page address in MAP.</span>') + "</div>") +
       // The role in MAP already meets the condition: the box stays reachable and says nothing is owed (COBIx on PR 3012).
       (kind === "nc" && r.nc && r.nc.lead ? '<p class="gate" data-role-met="1">The Noncredit CPL Lead role is on the college\'s MAP landing page, which already meets this condition. Nothing here needs a decision.</p>' : "") +
       (g.R.note ? '<p class="gate">' + esc(g.R.note) + "</p>" : "") +
       '<ul class="reqs">' + g.R.items.map(function (it, i) {
         var pl = REQ_PILL[it.s], id = pre + "-ck-" + i;
         return '<li class="req"><span><span class="pill ' + pl[0] + '">' + pl[1] + "</span></span><span><b>" + esc(it.t) + '</b><span class="why">' + esc(it.d) +
-          (/landing page/i.test(it.t) && r.landing ? " " + landingLink(r, "Open the page to check") : "") + "</span>" +
+          "</span>" + (i === lpAt ? landingShow(r, kind) : "") +
           // The role the reviewer confirmed, kept with the acceptance (Sam, 2026-11-10: "I meant for the reviewer to add").
           (it.s === "check" && /senior administrator/i.test(it.t) ? '<label class="rolefield" for="' + pre + '-role">Their role, as you confirmed it' +
             '<input id="' + pre + '-role" class="search" type="text" autocomplete="off" maxlength="120" data-role="' + kind + '" value="' +
@@ -639,10 +772,12 @@
             (ch[i] ? " checked" : "") + "> I checked this</label>" : "") + "</span></li>";
       }).join("") + "</ul>" +
       '<div class="verdict" data-verdict="' + kind + '" role="group" aria-label="Decide on the ' + esc(g.R.kind.toLowerCase()) + '">' +
-        '<button type="button" class="word lead" data-act="accept" data-kind="' + kind + '"' + (g.seen && !g.open && !g.fails ? "" : " disabled") + ">Accept</button>" +
-        '<button type="button" class="word danger" data-act="deny" data-kind="' + kind + '"' + (g.seen ? "" : " disabled") + ">Deny</button>" +
+        '<button type="button" class="word lead" data-act="accept" data-kind="' + kind + '"' + (!g.open && !g.fails ? "" : " disabled") + ">Accept</button>" +
+        '<button type="button" class="word danger" data-act="deny" data-kind="' + kind + '">Deny</button>' +
         '<button type="button" class="word" data-act="follow" data-kind="' + kind + '">Follow up</button>' +
-        '<p class="gate" data-gate="' + kind + '" role="status">' + esc(gateWords(g)) + "</p></div></section>";
+        '<p class="gate" data-gate="' + kind + '" role="status">' + esc(gateWords(g)) + "</p>" +
+        // Accept says what it does (Sam on the mock, 2026-11-09).
+        '<p class="gate" data-does="' + kind + '">Accept marks the ' + esc(g.R.kind.toLowerCase()) + " as met and opens the acceptance email for you to send. Nothing is sent until you send it.</p></div></section>";
   }
 
   // ── painting ─────────────────────────────────────────────────────────────
@@ -712,41 +847,86 @@
       '<label class="sr" for="cw-view">Show</label><select id="cw-view" class="search" data-view-select="1">' + opts + "</select>" +
       '<label class="sr" for="cw-q">Find a college</label><input id="cw-q" class="search" type="search" placeholder="Find a college or district" value="' + esc(state.q) + '">' +
       (v.bulk && S.reviewer ? '<div class="bulk"><button type="button" class="word" data-act="nudge">Nudge them (a mail merge)</button></div>' : "") +
-      '</div><ul class="queue" aria-label="' + esc(v.label) + '">' +
-      (list.length ? list.map(function (r) {
-        var ag = ageOf(r);
-        return '<li><button type="button" class="row" data-sel="' + esc(r.key) + '"' + (r.key === state.sel ? ' aria-current="true"' : "") + ">" +
-          '<span class="row-name">' + esc(r.name) + '</span><span class="row-age' + (ag.over ? " over" : "") + '">' + esc(ag.t) + "</span>" +
-          '<span class="row-next">' + esc(nextStep(r)) + '</span><span class="row-pills">' +
-          pillsOf(r).map(function (p) { return '<span class="pill ' + p[0] + '">' + esc(p[1]) + "</span>"; }).join("") + "</span></button></li>";
-      }).join("") : '<li><p class="empty">Nothing here.</p></li>') + "</ul></div>";
+      "</div>" + (list.length ? [["you", "Needs you", list.filter(needsYou)], ["col", "Waiting on the college", list.filter(function (r) { return !needsYou(r); })]]
+        .filter(function (g) { return g[2].length; }).map(function (g) {
+          // The live order stands inside each group (go-live note, item 5): sortRank, then the college's name.
+          return '<h3 class="qgroup" id="cw-qg-' + g[0] + '">' + g[1] + ' <span class="qgroup-n">' + g[2].length + '</span></h3>' +
+            '<ul class="queue" data-group="' + g[0] + '" aria-labelledby="cw-qg-' + g[0] + '">' + g[2].map(function (r) {
+              var ag = ageOf(r);
+              return '<li><button type="button" class="row" data-sel="' + esc(r.key) + '"' + (r.key === state.sel ? ' aria-current="true"' : "") + ">" +
+                '<span class="row-name">' + esc(r.name) + '</span><span class="row-age' + (ag.over ? " over" : "") + '">' + esc(ag.t) + "</span>" +
+                '<span class="row-next">' + esc(nextStep(r)) + '</span><span class="row-pills">' +
+                pillsOf(r).map(function (p) { return '<span class="pill ' + p[0] + '">' + esc(p[1]) + "</span>"; }).join("") + "</span></button></li>";
+            }).join("") + "</ul>";
+        }).join("") : '<ul class="queue" aria-label="' + esc(v.label) + '"><li><p class="empty">Nothing here.</p></li></ul>') + "</div>";
   }
   function condLabel(c) { return c.pending ? "Pending" : c.met ? "Met" : "Not met"; }
+  function recOf(r) {
+    if (waitingKinds(r).length) return { reason: "Review the request first", why: nextStep(r) + " The acceptance is ready once it is accepted.", review: true };
+    var t = recTpl(r), du = dueOf(r);
+    if (t === "accept") return notReceived(r)
+      ? { reason: "Resend the acceptance", why: "Confirmed " + shortDate(r.part.confirmedAt) + ". The first acceptance did not reach the college." }
+      : { reason: "Send the acceptance", why: "The participation confirmation is accepted" + (r.part.confirmedAt ? " (" + shortDate(r.part.confirmedAt) + ")" : "") + ", and no acceptance has gone out." };
+    if (t === "accept_nc") return { reason: "Send the noncredit attestation acceptance", why: "The team accepted the attestation, and no acceptance has gone out." };
+    if (t === "both") return { reason: "Send both in one email", why: "The confirmation and the Noncredit CPL Lead are both open, so the college gets one email." };
+    if (t === "nudge") return { reason: "Send the confirmation request", why: "No participation confirmation is on file." };
+    if (t === "lead") return { reason: "Send the Noncredit CPL Lead ask", why: r.nc && r.nc.leadNear
+      ? "The landing page lists a close title. The condition is met by the Noncredit CPL Lead role in MAP."
+      : "MAP shows no Noncredit CPL Lead for the college. The role in MAP meets the condition." };
+    if (du && du.follow_up_on <= today()) return { reason: "Follow up", why: nextStep(r) };
+    return { reason: "No email needed", why: nextStep(r) };
+  }
+  /* Which part of the side panel shows. A request waiting on the team opens the review by itself, since reviewing it is
+     why the reviewer is on the record (Sam, 2026-11-10: "why do we click on Review when that's what we're there to do?
+     shouldn't it just be open for review and action?"). "none" is the reviewer closing it; a pick lasts the record. */
+  function sideOf(r) {
+    if (state.side === "none") return "";
+    if (state.side) return state.side;
+    return S.reviewer && r && waitingKinds(r).length ? "review" : "";
+  }
   function recordHtml() {
     var r = state.sel ? rowOf(state.sel) : null;
     if (!r) return '<div class="pane"><p class="empty">Choose a college to see its record.</p></div>';
     var w = waitingKinds(r), act = [];
-    if (w.length) act.push('<button type="button" class="word lead" data-act="toreview">Review the request</button>');
     if (S.reviewer && r.part.confirmed && r.req && r.req.part && r.req.part.email) act.push('<button type="button" class="word" data-act="mail" data-kind="part">Email the confirmation acceptance again</button>');
     if (S.reviewer && r.nc && r.nc.standing && r.req && r.req.nc && r.req.nc.attestor_email) act.push('<button type="button" class="word" data-act="mail" data-kind="nc">Email the attestation acceptance again</button>');
-    if (S.reviewer) act.push('<button type="button" class="word" data-pop="contacts">Contacts on file</button>' +
-      '<button type="button" class="word" data-pop="people">Names, titles and emails</button>');
-    act.push('<button type="button" class="word" data-act="focus">Open in Implementation Funding</button>');
+    // Implementation Funding opens the drawer beside the record, never another tab (Sam, 2026-11-10: "links still
+    // opening to new tabs instead of sidebars"); the drawer's Open the full page is the one way to the funding tab.
+    act.push(fundWord("rec", "Implementation Funding"));
     if (S.reviewer) Object.keys(SENT).forEach(function (tpl) {
       if (lastSent(r, tpl)) act.push('<button type="button" class="word" data-act="bounced" data-kind="' + tpl + '">It bounced: ' +
         esc(SENT[tpl].replace(/ sent$/, "").toLowerCase()) + "</button>");
     });
-    var conds = '<ul class="conds">' + r.conds.map(function (c) {
-      return '<li class="cond"><span class="pill' + (c.met ? "" : c.pending ? "" : " ask") + '">' + condLabel(c) + "</span><span>" + esc(c.words) +
-        (c.counts ? ' <span class="why">' + esc(c.counts) + "</span>" : "") + "</span></li>";
-    }).join("") + "</ul>";
-    // The role on the college's MAP landing page (Sam, 2026-11-09) stands in for the whole attestation (2026-11-10), so
-    // a college that holds it never reads "not yet attested" (COBIx, PR 3033).
-    var nc = r.nc ? '<p class="ncline">Noncredit share: ' + (r.nc.standing ? "Noncredit CPL Lead attested" + (r.nc.fy ? " for " + esc(r.nc.fy) : "") + "."
-      : r.nc.lead ? "complete."
-      : ncWaiting(r) ? "Noncredit CPL Lead attestation waiting since " + esc(shortDate(r.nc.at) || "it was sent") + "." : "Noncredit CPL Lead not yet attested.") +
-      (r.nc.lead ? " The Noncredit CPL Lead role is on the college's MAP landing page, which stands in for the attestation."
-        : r.nc.leadNear ? " The MAP landing page lists a close title. Ask the college to use the Noncredit CPL Lead role." : "") + "</p>" : "";
+    // The conditions in a table (the clarity mock): what the college owes, where it stands, and whether an email goes
+    // out for it. Only the participation confirmation and the Noncredit CPL Lead are asked for by email; the rest is
+    // status the college's own records move.
+    var stWord = function (met, pending, waiting) {
+      return waiting ? '<span class="st not">Waiting on the team</span>' : pending ? "Pending" : met ? '<span class="st met">Met</span>' : '<span class="st not">Not met</span>';
+    };
+    var rowOfCond = function (name, why, status, mail) {
+      return '<tr><th scope="row">' + esc(name) + (why ? '<span class="why">' + esc(why) + "</span>" : "") + "</th><td>" + status + "</td><td>" + mail + "</td></tr>";
+    };
+    var conds = '<div class="wide"><table class="facts" aria-label="What the college owes"><colgroup><col style="width:50%"><col style="width:24%"><col style="width:26%"></colgroup>' +
+      '<thead><tr><th scope="col">Condition</th><th scope="col">Status</th><th scope="col">Email</th></tr></thead><tbody>' +
+      r.conds.map(function (c) {
+        var part = c.kind === "part", waitP = part && r.part.waiting;
+        return rowOfCond(c.words, c.counts, stWord(c.met, c.pending, waitP), part ? (c.met ? "No" : waitP ? "After the review" : "When not met") : "Status only");
+      }).join("") +
+      // The role on the college's MAP landing page (Sam, 2026-11-09) stands in for the whole attestation (2026-11-10), so
+      // a college that holds it reads Met (COBIx, PR 3033).
+      (r.nc ? rowOfCond("Noncredit CPL Lead", r.nc.lead ? "The role is on the college's MAP landing page, which stands in for the attestation."
+          : r.nc.standing ? "Attested" + (r.nc.fy ? " for " + r.nc.fy : "") + "."
+          : ncWaiting(r) ? "The attestation has waited since " + (shortDate(r.nc.at) || "it was sent") + "."
+          : r.nc.leadNear ? "The MAP landing page lists a close title. Ask the college to use the Noncredit CPL Lead role." : "Not yet in MAP, and not yet attested.",
+        stWord(ncMet(r), false, ncWaiting(r)), ncMet(r) ? "No" : ncWaiting(r) ? "After the review" : "When not met") : "") +
+      "</tbody></table></div>";
+    var nc = "";
+    // Recommended action (Malone, 2026-11-10): one reason, one sentence of why, and the one thing to do next.
+    var rec = recOf(r);
+    var side = sideOf(r);
+    var visit = '<div class="visit"><h4>Recommended action</h4><p class="reason" id="cw-reason" tabindex="-1">' + esc(rec.reason) + '</p><p class="note">' + esc(rec.why) +
+      (rec.review && side === "review" ? " The review is open below the record." : "") + "</p>" +
+      '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" + composeHtml(r) + "</div>";
     var who = "";
     if (S.reviewer && r.req) {
       var bits = [];
@@ -757,16 +937,42 @@
       if (bits.length) who = '<div><p class="k">Who sent it</p><ul class="conds">' + bits.map(function (b) { return '<li class="ncline" style="margin:0">' + b + "</li>"; }).join("") + "</ul></div>";
     }
     var note = S.reviewer ? '<div><p class="k">CO Monitor\'s note</p><p class="ncline" style="margin:0">' + (r.note ? esc(r.note) : "No note yet.") +
-      ' <button type="button" class="word" data-act="focus">Write it in Implementation Funding</button></p></div>' : "";
+      ' It is written on Implementation Funding\'s full page. ' + fundWord("note", "Implementation Funding") + "</p></div>" : "";
+    // One side panel under the record (the clarity mock): People, CPL landing page, History, and the review when one waits.
+    var sideWord = function (k, t) {
+      return '<button type="button" class="word" data-side="' + k + '" aria-pressed="' + (side === k) + '" aria-controls="cw-side">' + t + "</button>";
+    };
+    var words = (S.reviewer && w.length ? sideWord("review", "Review") : "") + (S.reviewer ? sideWord("people", "People") : "") + sideWord("page", "CPL landing page") + (S.reviewer ? sideWord("log", "History") : "");
+    var part = function (k, title, body) {
+      if (!body) return "";   // a part with nothing in it (History for a reader who is not signed in) draws nothing, heading included
+      // The review carries its own heading, so the part's is for the focus alone.
+      return '<div class="sidepart" data-sidepart="' + k + '"' + (side === k ? "" : " hidden") + '><h4 class="side-h' + (k === "review" ? " sr" : "") + '" id="cw-side-' + k + '" tabindex="-1">' + title + "</h4>" + body + "</div>";
+    };
+    var c = S.reviewer && CT.state === "ready" ? contactsOf(r) : null;
+    var peopleBody = !S.reviewer ? "" : who + (CT.state === "error" ? '<p class="gate">' + esc(CT.error) + "</p>" : !c ? '<p class="gate">Reading the contacts on file&hellip;</p>' :
+      peopleToolsHtml(state.psrc || "") +
+      '<div class="wide" role="region" aria-label="People at ' + esc(r.name) + '" tabindex="0"><table class="facts"><colgroup><col style="width:30%"><col style="width:46%"><col style="width:24%"></colgroup>' +
+      '<thead><tr><th scope="col">Role</th><th scope="col">Person</th><th scope="col">Source</th></tr></thead><tbody>' +
+      (c.people.some(function (p) { return !state.psrc || p.src === state.psrc; }) ? c.people.filter(function (p) { return !state.psrc || p.src === state.psrc; }).map(function (p) {
+        return '<tr><th scope="row">' + esc(p.role || "No role given") + "</th><td>" + (p.name ? esc(p.name) : "Name not given") + (p.email ? '<span class="why">' + esc(p.email) + "</span>" : "") +
+          "</td><td>" + esc(p.src) + "</td></tr>";
+      }).join("") : '<tr><td colspan="3">' + (state.psrc ? "No one on file from this source." : "No one on file for this college.") + "</td></tr>") + "</tbody></table></div>" +
+      contactsOnFileHtml(r));
+    var onPage = c ? c.people.filter(function (p) { return p.src === "Landing page"; }) : [];
+    var pageBody = (side === "page" ? landingFrame(r) : "") +
+      (S.reviewer && r.landing ? (onPage.length ? '<p class="k">Who the page lists</p><ul class="conds">' + onPage.map(function (p) {
+        return '<li class="ncline" style="margin:0">' + esc([p.role, p.name, p.email].filter(Boolean).join(", ")) + "</li>"; }).join("") + "</ul>"
+        : '<p class="gate">' + (c ? "The page lists no one MAP has read." : CT.state === "error" ? esc(CT.error) : "Reading the contacts on file&hellip;") + "</p>") : "");
+    var reviews = w.map(function (k) { return reviewHtml(r, k); }).join("");
     return '<div class="pane"><div class="rec">' +
       '<div class="rec-head"><div><h3 class="rec-name" id="cw-recname" tabindex="-1">' + esc(r.name) + '</h3><p class="rec-sub">' +
-        esc([r.district, r.total ? "Max award " + money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : ""].filter(Boolean).join(" · ")) + "</p></div>" +
-        '<p class="links" style="margin:0">' + landingLink(r) + "</p></div>" +
-      '<div class="decide" role="group" aria-label="Actions">' + act.join("") + "</div>" +
-      '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" +
-      '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + who +
-      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + composeHtml(r) + historyHtml(r) +
-      "</div></div>";
+        esc([r.district, r.total ? "Max award " + money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : ""].filter(Boolean).join(" · ")) + "</p></div></div>" +
+      '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + visit +
+      '<div class="decide" role="group" aria-label="More for this college">' + words + act.join("") + "</div>" +
+      "</div></div>" +
+      '<aside class="pane side" id="cw-side" aria-label="More for ' + esc(r.name) + '"' + (side && (side !== "review" || reviews) && (S.reviewer || side === "page" || side === "review") ? "" : " hidden") + ">" +
+        part("review", "Review before you decide", reviews) + part("people", "People at " + esc(r.name), peopleBody) +
+        part("page", "CPL landing page", pageBody) + part("log", "History", note + historyHtml(r)) + "</aside>";
   }
   function historyHtml(r) {
     if (!S.reviewer) return "";
@@ -791,7 +997,7 @@
             (x.done_at ? "Reopen the follow-up" : "Mark the follow-up done") + "</button> " : "") +
           '<button type="button" class="word danger" data-logdel="' + x.id + '">Delete</button></span></li>';
       }).join("") + "</ul>" : '<p class="gate">Nothing logged with this college yet.</p>';
-    return '<div><p class="k" id="cw-log-h">History</p>' + form + items + "</div>";
+    return '<div><p class="sr" id="cw-log-h">Add to the history</p>' + form + items + "</div>";
   }
   // ── the contacts on file (Sam's asks 4, 6, 7, 8, 11, 12, 13 on the mock, 2026-11-02) ─────────────────────────────
   // Three sources, read once a visit for a signed-in reviewer: MAP's directory (map_college_contacts, the twelve role
@@ -895,38 +1101,12 @@
     return out;
   }
 
-  // ── the popups ──
-  var lastOpener = null;
-  function dialogShell(id, title, body, wide) {
-    return '<dialog class="cdlg' + (wide ? " wide" : "") + '" id="' + id + '" aria-labelledby="' + id + '-h"><div class="cdlg-in">' +
-      '<div class="cdlg-head"><h3 id="' + id + '-h" tabindex="-1">' + esc(title) + '</h3><button type="button" class="word" data-close="1">Close</button></div>' +
-      body + "</div></dialog>";
-  }
-  function openDialog(html, opener) {
-    closeDialog();
-    lastOpener = opener || null;
-    var host = document.createElement("div");
-    host.id = "cw-dlg-host";
-    host.innerHTML = html;
-    root().appendChild(host);
-    var dlg = host.querySelector("dialog");
-    if (typeof dlg.showModal === "function") { try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); } }
-    else dlg.setAttribute("open", "");
-    dlg.addEventListener("cancel", function (e) { e.preventDefault(); closeDialog(); });
-    dlg.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closeDialog(); } });
-    var h = dlg.querySelector("h3"); if (h) h.focus();
-    return dlg;
-  }
-  function closeDialog() {
-    var host = document.getElementById("cw-dlg-host");
-    if (!host) return;
-    var dlg = host.querySelector("dialog");
-    try { if (dlg && dlg.open && typeof dlg.close === "function") dlg.close(); } catch (e) {}
-    host.parentNode.removeChild(host);
-    if (lastOpener && document.body.contains(lastOpener)) lastOpener.focus();
-    lastOpener = null;
-  }
-  function contactsDialogHtml(r) {
+  // ── the contacts on file ──
+  /* Contacts on file, inside the People panel (Sam, 2026-11-10: "links still opening to new tabs instead of
+     sidebars"). What were two pop-ups, Contacts on file and Names, titles and emails, now sit in the panel: the one
+     people list with its source filter and Copy the addresses shown, what the sources disagree on, and every field on
+     file behind one fold. */
+  function contactsOnFileHtml(r) {
     var c = contactsOf(r), mm = mismatchesOf(r, c);
     var dirByRole = {};
     c.people.forEach(function (p) { if (p.src === "MAP directory") (dirByRole[p.role] = dirByRole[p.role] || []).push(p); });
@@ -944,28 +1124,17 @@
     c.users.forEach(function (u) { var k = u.role_name || "User"; byRole[k] = (byRole[k] || 0) + 1; });
     var users = Object.keys(byRole).length ? '<p class="tags">' + Object.keys(byRole).sort().map(function (k) {
       return '<span class="pill">' + esc(k) + " " + byRole[k] + "</span>"; }).join("") + "</p>" : '<p class="tpl-meta">No active MAP users.</p>';
-    var landingLinkHtml = c.landing ? '<a href="' + esc(c.landing) + '" target="_blank" rel="noopener">Open the landing page</a>' : "";
-    return dialogShell("cw-cdlg", r.name + " contacts",
-      (mm.length ? '<p class="diff">' + mm.map(esc).join("<br>") + "</p>" : '<p class="tpl-meta">The three sources agree on the coordinator and the primary contact.</p>') +
-      '<section class="cdlg-src"><h4>MAP directory</h4>' + fields + "</section>" +
-      '<section class="cdlg-src"><h4>Landing page</h4>' + land + "</section>" +
-      '<section class="cdlg-src"><h4>MAP users by role</h4>' + users + "</section>" +
-      '<div class="cdlg-foot">' + landingLinkHtml + '<button type="button" class="word" data-pop="people">Names, titles and emails</button>' +
-        '<button type="button" class="word" data-copyaddr="all">Copy every address</button><span class="tpl-meta" role="status" data-copied="1"></span></div>');
+    return (mm.length ? '<p class="diff">' + mm.map(esc).join("<br>") + "</p>" : '<p class="tpl-meta">The three sources agree on the coordinator and the primary contact.</p>') +
+      '<details class="onfile" data-onfile="1"' + (state.onfileOpen ? " open" : "") + "><summary>Every field on file</summary>" +
+      '<section class="onfile-src"><h4>MAP directory</h4>' + fields + "</section>" +
+      '<section class="onfile-src"><h4>Landing page</h4>' + land + "</section>" +
+      '<section class="onfile-src"><h4>MAP users by role</h4>' + users + "</section></details>";
   }
   var SOURCES = ["MAP directory", "Landing page", "MAP users"];
-  function peopleDialogHtml(r, only) {
-    var c = contactsOf(r), list = c.people.filter(function (p) { return !only || p.src === only; });
+  function peopleToolsHtml(only) {
     var opts = '<option value="">Every source</option>' + SOURCES.map(function (s) { return '<option' + (s === only ? " selected" : "") + ">" + esc(s) + "</option>"; }).join("");
-    return dialogShell("cw-pdlg", r.name + ": names, titles and emails",
-      '<div class="ppl-tools"><label for="cw-psrc">Show</label><select id="cw-psrc" data-psrc="1">' + opts + "</select>" +
-        '<button type="button" class="word" data-copyaddr="shown">Copy the addresses shown</button><span class="tpl-meta" role="status" data-copied="1"></span></div>' +
-      '<div class="ppl-scroll" role="region" aria-label="People on file" tabindex="0"><table class="people"><thead><tr>' +
-        '<th scope="col">Source</th><th scope="col">Role or title</th><th scope="col">Name</th><th scope="col">Email</th></tr></thead><tbody>' +
-        (list.length ? list.map(function (p) {
-          return "<tr><td>" + esc(p.src) + "</td><td>" + esc(p.role) + "</td><td>" + (p.name ? esc(p.name) : '<span class="ph">Not given</span>') +
-            "</td><td>" + (p.email ? esc(p.email) : '<span class="ph">None</span>') + "</td></tr>";
-        }).join("") : '<tr><td colspan="4">No one on file from this source.</td></tr>') + "</tbody></table></div>", true);
+    return '<div class="ppl-tools"><label for="cw-psrc">Show</label><select id="cw-psrc" data-psrc="1">' + opts + "</select>" +
+      '<button type="button" class="word" data-copyaddr="shown">Copy the addresses shown</button><span class="tpl-meta" role="status" data-copied="1"></span></div>';
   }
   function uniqueEmails(list) {
     var seen = {}, out = [];
@@ -1004,7 +1173,149 @@
     { id: "accept_nc", label: "The noncredit attestation acceptance" },
     { id: "follow", label: "Follow up on a condition" },
     { id: "nudge", label: "Nudge for the participation confirmation" },
+    { id: "lead", label: "The Noncredit CPL Lead ask (the role in MAP)" },
+    { id: "both", label: "Both asks in one email (the confirmation and the Noncredit CPL Lead)" },
     { id: "blank", label: "Blank" }];
+
+  /* ── the email templates a reviewer can change (csm_templates, kb/migrations/2026-11-10_csm_templates.sql) ──
+     Sam, 2026-11-10, reading the two new emails: "can you add a place for me or any reviewer to make changes to the
+     templates for these and later make additional changes if needed?" The four emails this dashboard writes itself
+     keep their wording here, with words in braces that fill in for each college. The newest saved version of a
+     template is what every reviewer's next email starts from; a version with reset puts back the wording below. The
+     two acceptances are the funding tab's own emails (acceptMail) and are changed there. */
+  var TPL_DEFAULT = {
+    follow: { subject: "CPL Implementation Funding: a follow-up for {college}",
+      body: "Dear {name},\n\nThank you for your work on CPL Implementation Funding at {college}. In reviewing the college's record, the CPL Initiative team " +
+        "noticed the following:\n\n{open_items}\n\nWe would welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team" },
+    nudge: { subject: "CPL Implementation Funding: a participation confirmation for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about CPL Implementation Funding for {college}. Our records do not yet show a participation " +
+        "confirmation, one of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nThe CPL Implementation Funding page " +
+        "explains each condition and how to send it: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive this " +
+        "note, a short reply will let us update our records.\n\nThe CPL Initiative team" },
+    // Drafted S624 for Sam's edit (go-live note, decision 4). The facts: the exact MAP title Noncredit CPL Lead meets
+    // the condition (his ruling, 2026-11-10, PR 3031), and an attestation on the funding page is accepted as well.
+    lead: { subject: "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about the noncredit share of CPL Implementation Funding for {college}. MAP does not yet show " +
+        "a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the Noncredit CPL Lead role in MAP, under that exact title. " +
+        "{close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.\n\nThe CPL Implementation Funding page " +
+        "explains the condition: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive this note, a short reply " +
+        "will let us update our records.\n\nThe CPL Initiative team" },
+    both: { subject: "CPL Implementation Funding: two steps for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about CPL Implementation Funding for {college}. Two steps remain.\n\nFirst, our records do " +
+        "not yet show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nSecond, " +
+        "for the noncredit share: MAP does not yet show a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the " +
+        "Noncredit CPL Lead role in MAP, under that exact title. {close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is " +
+        "accepted as well.\n\nThe CPL Implementation Funding page explains each condition and how to send it: {funding_page}\n\nIf either is already on " +
+        "its way, or if someone else at {college} should receive this note, a short reply will let us update our records.\n\nThe CPL Initiative team" }
+  };
+  var TPL_EDITABLE = ["lead", "both", "nudge", "follow"];
+  var TPL_WORDS = [
+    ["name", "the person the email is to"], ["college", "the college's name"],
+    ["deadline", "the sentence naming the confirmation deadline, or nothing when none is set"],
+    ["funding_page", "the public CPL Implementation Funding page"],
+    ["close_title", "a sentence when the landing page lists a title close to Noncredit CPL Lead, or nothing"],
+    ["open_items", "the CO Monitor's note, or the conditions still open (follow-up)"]];
+  var TPLS = { rows: [], loaded: false, error: "", seq: 0, asked: false, busy: false };
+  function tplLabel(id) { for (var i = 0; i < TEMPLATES.length; i++) if (TEMPLATES[i].id === id) return TEMPLATES[i].label; return id; }
+  function tplRows(id) { return TPLS.rows.filter(function (x) { return x.template_id === id; }); }
+  // The wording in force: the newest saved version, unless it is a reset or none was saved.
+  function tplOf(id) {
+    var last = tplRows(id)[0];
+    return last && !last.reset ? { subject: last.subject, body: last.body, row: last } : { subject: TPL_DEFAULT[id].subject, body: TPL_DEFAULT[id].body, row: last || null };
+  }
+  function tplUnknown(text) {
+    var known = {}, bad = [];
+    TPL_WORDS.forEach(function (w) { known[w[0]] = 1; });
+    String(text || "").replace(/\{([^{}\s]{1,40})\}/g, function (m, k) { if (!known[k] && bad.indexOf(m) < 0) bad.push(m); return m; });
+    return bad;
+  }
+  // Fill the braces. A word with nothing to say (no deadline set, no close title) goes with the one space before it, so
+  // the sentence around it reads whole; nothing else in the message is touched, the CO Monitor's note included (COBIx
+  // on PR 3068).
+  function tplFill(text, vars) {
+    var has = function (k) { return Object.prototype.hasOwnProperty.call(vars, k); };
+    return String(text || "")
+      .replace(/[ \t]?\{([a-z_]{1,40})\}/g, function (m, k) { return has(k) && String(vars[k]) === "" ? "" : m; })
+      .replace(/\{([a-z_]{1,40})\}/g, function (m, k) { return has(k) ? String(vars[k]) : m; });
+  }
+  function tplVars(r, name, missing) {
+    return { name: name, college: r.name, funding_page: PUBLIC_FUNDING_URL,
+      deadline: S && S.deadline ? "The deadline is " + longDay(S.deadline) + "." : "",
+      close_title: r.nc && r.nc.leadNear ? "The college's CPL landing page in MAP lists a close title; the condition asks for the exact one, Noncredit CPL Lead." : "",
+      open_items: r.note || (missing.length ? missing.join("\n") : "Write what the college can do here.") };
+  }
+  function tplRender(id, r, name, missing) {
+    var t = tplOf(id), v = tplVars(r, name, missing);
+    return { subject: tplFill(t.subject, v), body: tplFill(t.body, v) };
+  }
+  function loadTemplates() {
+    var R = rest();
+    if (!R || !S || !S.reviewer) return;
+    TPLS.asked = true;
+    if (!R.remote) { TPLS.loaded = true; return; }
+    tplFetch(R)
+      .then(function (rows) { TPLS.rows = rows || []; TPLS.loaded = true; TPLS.error = ""; paint(); })
+      .catch(function (e) { TPLS.loaded = true; TPLS.error = "The saved templates could not be read (" + e.message + "). Emails use the wording the dashboard ships with."; paint(); });
+  }
+  // One saved version. Without a remote (tests, NO_REMOTE) the store changes here.
+  function tplWrite(row) {
+    var R = rest();
+    if (!R) return Promise.resolve(false);
+    var full = Object.assign({ activity: ACTIVITY, subject: null, body: null, reset: false }, row);
+    if (!R.remote) {
+      TPLS.rows.unshift(Object.assign({ id: ++TPLS.seq, by_email: R.who, created_at: new Date().toISOString() }, full));
+      return Promise.resolve(true);
+    }
+    return fetch(R.url + "csm_templates", { method: "POST", headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=minimal" }, R.headers),
+      body: JSON.stringify(full) })
+      .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return true; })
+      .catch(function (e) { TPLS.error = "The template did not save (" + e.message + "). Your words are still in the box."; return false; })
+      .then(function (ok) { if (ok) TPLS.error = ""; return ok; });
+  }
+  // Re-read the saved versions and wait for them (remote only); without a remote the store is already current.
+  function tplFresh() {
+    var R = rest();
+    if (!R || !R.remote) return Promise.resolve();
+    return tplFetch(R).then(function (rows) { TPLS.rows = rows || []; TPLS.loaded = true; }).catch(function () {});
+  }
+  function tplFetch(R) {
+    return fetch(R.url + "csm_templates?select=*&activity=eq." + ACTIVITY + "&order=created_at.desc,id.desc&limit=500", { headers: R.headers })
+      .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return x.json(); });
+  }
+  function tplWord() {
+    return S && S.reviewer ? '<button type="button" class="word quiet" data-tplopen="1" aria-expanded="' + !!state.tplOpen + '" aria-controls="cw-tpls">Email templates</button>' : "";
+  }
+  function tplHtml() {
+    if (!S || !S.reviewer || !state.tplOpen) return "";
+    var id = TPL_EDITABLE.indexOf(state.tplId) >= 0 ? state.tplId : TPL_EDITABLE[0];
+    var t = tplOf(id), d = (state.tplDraft || {})[id], subj = d ? d.subject : t.subject, body = d ? d.body : t.body;
+    var rows = tplRows(id), r = state.sel ? rowOf(state.sel) : null;
+    var meta = t.row && !t.row.reset ? "Saved by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "."
+      : t.row ? "Put back to the shipped wording by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "." : "The wording the dashboard ships with.";
+    var prev = r ? (function () {
+      var v = tplVars(r, "the person on file", []);
+      return '<details class="tplprev"><summary>Preview for ' + esc(r.name) + "</summary><p class=\"k\">Subject</p><p>" + esc(tplFill(subj, v)) +
+        '</p><p class="k">Message</p><pre class="tplpre">' + esc(tplFill(body, v)) + "</pre></details>";
+    })() : "";
+    return '<section class="sec pane tplpane" id="cw-tpls" aria-labelledby="cw-tpls-h"><div class="sec-h"><h2 id="cw-tpls-h">Email templates</h2>' +
+      '<p class="note">Saved changes reach every reviewer. The next email opened from a template starts from its saved wording; an email already open keeps its words.</p></div>' +
+      '<form class="compose tplform" data-tplform="1" aria-labelledby="cw-tpls-h">' +
+        '<div class="compose-row"><label for="cw-tpls-id">Template <select id="cw-tpls-id" data-tplpick="1">' + TPL_EDITABLE.map(function (k) {
+          return '<option value="' + k + '"' + (k === id ? " selected" : "") + ">" + esc(tplLabel(k)) + "</option>"; }).join("") + "</select></label></div>" +
+        '<p class="tpl-meta">' + esc(meta) + (d ? " You have unsaved changes." : "") + "</p>" +
+        '<label for="cw-tpls-subj">Subject</label><input id="cw-tpls-subj" class="search" name="subject" type="text" maxlength="300" data-tpledit="subject" value="' + esc(subj) + '">' +
+        '<label for="cw-tpls-body">Message</label><textarea id="cw-tpls-body" name="body" rows="16" maxlength="8000" data-tpledit="body">' + esc(body) + "</textarea>" +
+        '<p class="tpl-meta">Words in braces fill in for each college: ' + TPL_WORDS.map(function (w) { return "{" + w[0] + "} " + esc(w[1]); }).join("; ") + ".</p>" +
+        '<p class="links"><button type="submit" class="word lead"' + (TPLS.busy ? " disabled" : "") + ">Save for every reviewer</button>" +
+          (d ? '<button type="button" class="word" data-tpldiscard="1">Discard my changes</button>' : "") +
+          (t.row && !t.row.reset ? '<button type="button" class="word" data-tplreset="1">Put back the shipped wording</button>' : "") + "</p>" +
+        '<p class="status" role="status" aria-live="polite" id="cw-tpls-said">' + esc(TPLS.error || state.tplMsg || "") + "</p></form>" + prev +
+      (rows.length ? '<details class="tplhist"><summary>Earlier versions (' + rows.length + ")</summary><ul class=\"conds\">" + rows.map(function (x) {
+        return '<li class="ncline" style="margin:0">' + esc(shortDate(x.created_at)) + ", " + esc(x.by_email || "a reviewer") + ": " +
+          (x.reset ? "put back the shipped wording" : esc(x.subject)) +
+          (x.reset ? "" : ' <button type="button" class="word" data-tpluse="' + esc(x.id) + '">Load this version</button>') + "</li>";
+      }).join("") + "</ul></details>" : "") + "</section>";
+  }
   function firstOf(c, role) { var p = c.people.filter(function (x) { return x.src === "MAP directory" && x.role === role && x.email; })[0]; return p || null; }
   // Sam's order for the one person a nudge goes to (Nudge's cascade): CPL Coordinator, primary contact, Lead Initiator, VPAA, CEO.
   function primaryOf(c) {
@@ -1027,7 +1338,8 @@
       if (coord && coord.email.toLowerCase() !== String(to).toLowerCase()) cc.push(coord.email);
     } else if (prim) {
       to = prim.email; toName = prim.name;
-      if (tplId === "nudge" && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
+      if ((tplId === "nudge" || tplId === "both") && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
+      if (tplId === "lead" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
       if (tplId === "follow" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
     }
     var name = personWord(toName), college = r.name, missing = missingWords(r);
@@ -1048,18 +1360,9 @@
     } else if (tplId === "accept_nc") {
       tplId = "follow";
     }
-    if (tplId === "follow") {
-      subject = "CPL Implementation Funding: a follow-up for " + college;
-      body = "Dear " + name + ",\n\nThank you for your work on CPL Implementation Funding at " + college + ". In reviewing the college's record, " +
-        "the CPL Initiative team noticed the following:\n\n" + (r.note || (missing.length ? missing.join("\n") : "Write what the college can do here.")) +
-        "\n\nWe would welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team";
-    } else if (tplId === "nudge") {
-      subject = "CPL Implementation Funding: a participation confirmation for " + college;
-      body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about CPL Implementation Funding for " + college + ". Our records do not yet " +
-        "show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award." +
-        (S.deadline ? " The deadline is " + longDay(S.deadline) + "." : "") + "\n\nThe CPL Implementation Funding page explains each condition and how to send it: " +
-        PUBLIC_FUNDING_URL + "\n\nIf it is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
-        "\n\nThe CPL Initiative team";
+    if (TPL_DEFAULT[tplId]) {
+      var made = tplRender(tplId, r, name, missing);
+      subject = made.subject; body = made.body;
     } else {
       body = "Dear " + name + ",\n\n\n\nThe CPL Initiative team";
     }
@@ -1067,13 +1370,13 @@
   }
   var LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   function longDay(v) { var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || "")); return m ? LONG[+m[2] - 1] + " " + +m[3] + ", " + m[1] : String(v || ""); }
-  function mailKey(r) { var rd = state.view === "send" ? readyOf(r) : null; return SENT[rd] ? r.key + "|send" : r.key; }
+  function mailKey(r) { return recTpl(r) ? r.key + "|send" : r.key; }
   function mailOf(r) {
     state.mail = state.mail || {};
-    // A college with no participation confirmation gets the nudge; any other college a follow-up. In Ready to send the
-    // email is the one due (the acceptance or the nudge), kept under its own key so the record's draft is untouched.
-    var rd = state.view === "send" ? readyOf(r) : null, k = mailKey(r);
-    if (!state.mail[k]) state.mail[k] = seedMail(r, SENT[rd] ? rd : r.part.confirmed || r.part.waiting ? "follow" : "nudge");
+    // The email is the one the college's state calls for (recTpl), in every list, kept under its own key so a draft
+    // written with nothing due is untouched. With nothing due: the nudge before a confirmation, a follow-up after.
+    var rt = recTpl(r), k = mailKey(r);
+    if (!state.mail[k]) state.mail[k] = seedMail(r, rt || (r.part.confirmed || r.part.waiting ? "follow" : "nudge"));
     return state.mail[k];
   }
   function ccPickerHtml(r, m) {
@@ -1104,8 +1407,22 @@
     if (CT.state !== "ready") return '<div><p class="k">Write an email</p><p class="gate">Reading the contacts on file&hellip;</p></div>';
     var m = mailOf(r);
     loadLogo();
-    var opts = TEMPLATES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
-    return '<div class="tpl" aria-labelledby="cw-mail-h"><p class="k" id="cw-mail-h">Write an email</p>' +
+    var opts = TEMPLATES.filter(function (t) { return LEAD_MAIL_ON || (t.id !== "lead" && t.id !== "both"); })
+      .map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
+    // The preview first (Malone, 2026-11-10: recipient, subject and message apart, with Edit email). Edit email opens
+    // the fields the composer always had; they stay in the page either way, so a draft is never lost to a fold. With no
+    // email due the block folds to one word, Write an email.
+    var due = !!recTpl(r), edit = !!(state.mailEdit || {})[r.key], open = due || edit, cc = allCc(m);
+    // Sent is offered for the email that is due and no other (COBIx on PR 3050): a template switched by hand never
+    // writes a receipt that would keep the real one from queueing.
+    var sentBtn = due && m.tpl === recTpl(r);
+    return '<div class="tpl" aria-labelledby="cw-mail-h"><div class="mail-h"><p class="k" id="cw-mail-h">' + (open ? "Email preview" : "Email") + "</p>" +
+      '<button type="button" class="word" data-act="mailedit" aria-expanded="' + edit + '" aria-controls="cw-mail-edit">' +
+        (edit ? "Done editing" : due ? "Edit email" : "Write an email") + "</button></div>" +
+      '<dl class="mail-f" id="cw-mail-pre"' + (open && !edit ? "" : " hidden") + "><dt>To</dt><dd>" + (m.to ? esc(m.to) : "No address on file. Edit email to add one.") + "</dd>" +
+        (cc.length ? "<dt>Cc</dt><dd>" + esc(cc.join(", ")) + "</dd>" : "") +
+        "<dt>Subject</dt><dd>" + esc(m.subject) + "</dd><dt>Message</dt><dd>" + esc(m.body) + "</dd></dl>" +
+      '<div class="tpl-edit" id="cw-mail-edit"' + (edit ? "" : " hidden") + ">" +
       '<div class="tpl-row"><label for="cw-tpl">Template</label><select id="cw-tpl" data-mail="tpl">' + opts + "</select></div>" +
       '<dl class="addr"><dt><label for="cw-to">To</label></dt><dd><input id="cw-to" data-mail="to" value="' + esc(m.to) + '"></dd>' +
         '<dt><label for="cw-cc">Cc</label></dt><dd><input id="cw-cc" data-mail="cc" value="' + esc(m.cc) + '"></dd>' +
@@ -1113,14 +1430,14 @@
         '<dt><label for="cw-subj">Subject</label></dt><dd><input id="cw-subj" data-mail="subject" value="' + esc(m.subject) + '"></dd></dl>' +
       ccPickerHtml(r, m) +
       '<label class="sr" for="cw-body">The email</label><textarea id="cw-body" class="search" data-mail="body" rows="10" style="min-height:180px;">' + esc(m.body) + "</textarea>" +
-      '<div class="tpl-row"><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
+      '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
+      '<div class="tpl-row"' + (open ? "" : " hidden") + '><button type="button" class="word lead" data-mailact="copy">Copy the email</button>' +
         '<button type="button" class="word" data-mailact="draft">Open in Outlook</button>' +
         '<button type="button" class="word" data-mailact="gmail">Open in Gmail</button>' +
-        (state.view === "send" && SENT[readyOf(r)] ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") +
-        '<label for="cw-mailfu"><input type="checkbox" id="cw-mailfu" data-mail="fu"' + (m.fu === false ? "" : " checked") + "> Follow up in a week</label></div>" +
-      '<p class="tpl-meta">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>' +
-      '<p class="tpl-meta">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each.' +
-      (state.view === "send" ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
+        (sentBtn ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") + "</div>" +
+      '<p class="tpl-meta"' + (open ? "" : " hidden") + ">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>" +
+      '<p class="tpl-meta"' + (open ? "" : " hidden") + ">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each, with a follow-up a week out unless Edit email clears it." +
+      (sentBtn ? " Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
   }
   function allCc(m) {
     var seen = {}, out = [];
@@ -1153,7 +1470,7 @@
         m.fu === false ? {} : { follow_up_on: plusDays(7) }));
     };
     if (kind === "sent") {
-      var what = SENT[m.tpl] || "Email sent";
+      var what = m.tpl === "both" ? SENT.nudge : SENT[m.tpl] || "Email sent";
       logWrite("POST", null, Object.assign({ college: r.key, kind: "email",
         body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
         m.fu === false ? {} : { follow_up_on: plusDays(7) })).then(function (ok) {
@@ -1217,24 +1534,15 @@
       say("Copied, logo included. Paste it into Outlook; the log notes the copy.");
     });
   }
-  function boardHtml() {
-    return '<div class="board">' + STAGES.map(function (st) {
-      var list = S.rows.filter(function (r) { return stageOf(r) === st.id; }).sort(function (a, b) { return a.name.localeCompare(b.name); });
-      return '<div class="col"><div class="col-h"><button type="button" class="word" data-stage="' + st.id + '">' + esc(st.label) + '</button><span class="col-n">' + list.length + "</span></div>" +
-        '<p class="col-what">' + esc(st.what) + '</p><div class="chips">' +
-        list.map(function (r) { return '<button type="button" class="chip" data-sel="' + esc(r.key) + '">' + esc(r.name) + "</button>"; }).join("") + "</div></div>";
-    }).join("") + "</div>";
-  }
   function todayHtml() {
-    var w = S.rows.filter(function (r) { return stageOf(r) === "waiting"; }).length;
-    var h = S.rows.filter(function (r) { return stageOf(r) === "held"; }).length;
-    var q = S.rows.filter(function (r) { return stageOf(r) === "qual"; }).length;
-    var n = S.rows.filter(function (r) { return stageOf(r) === "notyet"; }).length;
-    var go = function (view, t) { return '<button type="button" class="word" data-view="' + view + '" aria-pressed="' + (state.view === view) + '">' + t + "</button>"; };
-    var sep = '<span class="sep" aria-hidden="true">·</span>';
-    return '<p class="today"><b>Today</b>' + go("review", w + " waiting on the team") + sep + go("held", h + " confirmed and held") + sep +
-      go("qual", q + " qualify") + sep + go("notyet", n + " not yet confirmed") +
-      (S.deadline ? sep + "<span>Confirmation due " + esc(shortDate(S.deadline)) + "</span>" : "") + "</p>";
+    // The five lists a reviewer opens most, in the order the work goes; each count is its menu view's own count.
+    var go = function (view, label) {
+      return '<button type="button" class="metric" data-view="' + view + '" aria-pressed="' + (state.view === view) + '"><span class="num">' +
+        S.rows.filter(VIEWS[view].keep).length + '</span><span class="lab">' + label + "</span></button>";
+    };
+    return '<div class="today" role="group" aria-label="Today">' + go("review", "Waiting on the team") + go("send", "Ready to send") +
+      go("notyet", "Not yet confirmed") + go("held", "Confirmed and held") + go("qual", "Qualify") +
+      (S.deadline ? '<p class="deadline"><span class="lab">Confirmation due</span><span class="date">' + esc(shortDate(S.deadline)) + "</span></p>" : "") + "</div>";
   }
   /* ── access requests (the funding door, issue 2983) ─────────────────────────────────────────────────────────────
      A teammate whose sign-in email does not arrive asks an approver from the sign-in box. The approvers (the funding_approvers
@@ -1291,7 +1599,7 @@
     GRANT.busy = true; GRANT.msg = "Asking…"; paint();
     SI._askAccess(R.who).then(function (a) {
       GRANT.busy = false;
-      GRANT.msg = a && a.ok ? "Asked. An approver will see it in the CSM Workspace. Keep this tab open: it picks the access up when one of them approves."
+      GRANT.msg = a && a.ok ? "Asked. An approver will see it in the Funding Follow-up Dashboard. Keep this tab open: it picks the access up when one of them approves."
         : (a && a.why) || fail;
       paint();
     }).catch(function () { GRANT.busy = false; GRANT.msg = fail; paint(); });
@@ -1329,15 +1637,53 @@
       var b = root() && root().querySelector('[data-access="check"]'); if (b) b.focus();
     });
   }
+  // Access requests sit in the header as one word with their count (Sam on the mock, 2026-11-09: "quietly in the
+  // header"); the word opens the section below it. Only an approver, or a reviewer with a request to see, gets the word.
+  function accessWord() {
+    if (!S.reviewer || GRANT.ok === false || (!ACC.rows.length && !ACC.approver)) return "";
+    var n = ACC.rows.length;
+    return '<button type="button" class="word' + (n ? "" : " quiet") + '" data-accopen="1" aria-expanded="' + !!state.accOpen + '" aria-controls="cw-acc">Access requests: ' +
+      (n ? n + " waiting" : "none waiting") + "</button>";
+  }
+  /* The funding drawer (Sam on the mock, 2026-11-09: "love the simple side bar with link to go full monty if needed"):
+     the chosen college's place in Implementation Funding, from the snapshot the workspace already holds, in a panel at
+     the right edge; Open the full page goes to the funding tab on that college. The priorities' progress is not in the
+     snapshot, so the drawer leaves it to the full page (go-live note, decision 6). */
+  function fundWord(from, words) {
+    return '<button type="button" class="word" data-fund="open" data-fund-from="' + from + '" aria-expanded="' + !!state.fund + '" aria-controls="cw-fund">' + esc(words) + "</button>";
+  }
+  function fundHtml() {
+    var r = state.sel ? rowOf(state.sel) : null;
+    var met = r ? r.conds.filter(function (c) { return c.met; }).length : 0, of = r ? r.conds.length : 0;
+    var qual = r && r.part.confirmed && !r.gate.blocked;
+    var row = function (k, v) { return '<tr><th scope="row">' + k + "</th><td>" + v + "</td></tr>"; };
+    return '<aside class="drawer" id="cw-fund" aria-labelledby="cw-fund-h"' + (state.fund ? "" : " hidden") + '><div class="drawer-h"><h2 id="cw-fund-h" tabindex="-1">Implementation Funding</h2>' +
+      '<button type="button" class="word" data-fund="close">Close</button></div>' +
+      (r ? '<p class="note" id="cw-fund-who">' + esc(r.name) + (r.district ? ", " + esc(r.district) : "") + "</p>" +
+        '<table class="facts" aria-label="' + esc(r.name) + ' in Implementation Funding"><colgroup><col style="width:52%"><col style="width:48%"></colgroup><tbody>' +
+        row("Max award", r.total ? money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : "TBA") +
+        // The participation confirmation is one of r.conds (kind "part"), so "every minimum condition" names it too.
+        row("Qualifying now", qual ? (r.total ? money(r.total) : "TBA") : "Held until every minimum condition is met") +
+        row("Minimum conditions met", met + " of " + of) +
+        (S.deadline ? row("Confirmation due", esc(shortDate(S.deadline))) : "") +
+        (S.reviewer ? row("CO Monitor's note", r.note ? esc(r.note) : "No note yet.") : "") + "</tbody></table>" +
+        '<p class="links" style="margin:0"><button type="button" class="word" data-act="focus">Open the full page</button></p>' +
+        (S.reviewer ? '<p class="note">The CO Monitor\'s note is written on the full page.</p>' : "")
+        : '<p class="note">Choose a college to see its place in Implementation Funding.</p>') + "</aside>";
+  }
+  // Closing the drawer returns the focus to the word that opened it: the header's, or one in the record.
+  function fundOpener() {
+    return (state.fundFrom && root().querySelector('[data-fund="open"][data-fund-from="' + cssEsc(state.fundFrom) + '"]')) || root().querySelector('[data-fund="open"]');
+  }
   function accessHtml() {
     if (!ACC.rows.length && !ACC.approver) return "";
     var check = '<button type="button" class="word" data-access="check">Check now</button>';
     if (!ACC.rows.length) {
-      return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
+      return '<section class="sec pane accpane" id="cw-acc" aria-labelledby="cw-acc-h"' + (state.accOpen ? "" : " hidden") + '><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
         "No one is waiting. A teammate who is signed out opens this page, enters their work email and chooses Ask an approver; " +
         "the request shows here within half a minute. " + check + "</p></div></section>";
     }
-    return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
+    return '<section class="sec pane accpane" id="cw-acc" aria-labelledby="cw-acc-h"' + (state.accOpen ? "" : " hidden") + '><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
       "A teammate asked to sign in without the email link. Approve opens the funding and CSM work for 30 days; their open tab signs them in. " + check + "</p></div>" +
       '<ul class="queue" aria-label="Access requests">' + ACC.rows.map(function (x) {
         return '<li><div class="row"><span class="row-name">' + esc(x.name || x.email) + '</span><span class="row-age">' + esc(shortDate(x.requested_at)) +
@@ -1366,36 +1712,38 @@
   function paint() {
     var el = root(); if (!el) return;
     var f = F();
-    if (!f) { el.innerHTML = '<p class="empty">Loading the CSM Workspace&hellip;</p>'; return; }
+    if (!f) { el.innerHTML = '<p class="empty">Loading the Funding Follow-up Dashboard&hellip;</p>'; return; }
     S = f.snapshot();
     if (S.reviewer && !LOG.asked) loadLog();
+    if (S.reviewer && !TPLS.asked) loadTemplates();
     if (S.reviewer && CT.state === "idle") loadContacts();
-    var dlgHost = document.getElementById("cw-dlg-host");
-    if (dlgHost) dlgHost.parentNode.removeChild(dlgHost);
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
+    // A template being edited keeps its cursor and scroll through a repaint (COBIx on PR 3068).
+    var caret = focusId === "cw-tpls-body" || focusId === "cw-tpls-subj" ? { a: ae.selectionStart, b: ae.selectionEnd, top: ae.scrollTop } : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
-      '<header><div class="top-row"><h1>CSM Workspace</h1><p class="links">' +
-        '<a href="#implementation-funding">Implementation Funding</a></p></div>' +
+      '<header><div class="top-row"><h1>Funding Follow-up Dashboard</h1><p class="links">' + accessWord() + tplWord() +
+        fundWord("head", "Implementation Funding") + "</p></div>" +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
-      (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
-      '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
-        (S.loaded ? "Read live from the funding tab." : "Loading the requests&hellip;") + "</p></div>" +
+      (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml() + tplHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
+      // The list needs no title and the metrics and the menu count every institution, so the Action center heading and
+      // the four-column board are gone (go-live note, item 13, on Sam's go).
+      '<section class="sec" aria-label="Colleges">' + (S.loaded ? "" : '<p class="note">Loading the requests&hellip;</p>') +
         '<div class="center" id="cw-center" style="' + splitStyle() + '">' + queueHtml() + splitHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +
-      '<section class="sec" aria-labelledby="cw-bd-h"><h2 id="cw-bd-h">Where the ' + S.rows.length + " stand</h2>" + boardHtml() + "</section>" +
-      '<footer class="foot"><span>The workspace never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
-        '<a href="#implementation-funding">Implementation Funding</a></footer>' +
+      '<footer class="foot"><span>The dashboard never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
+        '<a href="#implementation-funding">Open Implementation Funding</a></footer>' + fundHtml() +
       "</div></div></div>";
-    if (dlgHost) el.appendChild(dlgHost);
     var sm = document.getElementById("cw-signin");
     if (sm && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
-      window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the CSM Workspace", door: true,
+      window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the Funding Follow-up Dashboard", door: true,
         blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: one of the funding approvers approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
     }
     if (S.reviewer && !ACC.asked) loadAccess();
-    if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
+    if (focusId && document.getElementById(focusId)) {
+      var fe = document.getElementById(focusId); fe.focus();
+      if (caret) { try { fe.setSelectionRange(caret.a, caret.b); fe.scrollTop = caret.top; } catch (e) {} }
+    }
     else if (focusSel) { var b = el.querySelector('.row[data-sel="' + cssEsc(focusSel) + '"]'); if (b) b.focus(); }
-    watchReviews();
   }
   function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
   function paintRecord() {
@@ -1404,7 +1752,6 @@
     Array.prototype.forEach.call(root().querySelectorAll(".row[data-sel]"), function (b) {
       if (b.getAttribute("data-sel") === state.sel) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
     });
-    watchReviews();
   }
   function refreshVerdicts() {
     var r = rowOf(state.sel); if (!r) return;
@@ -1412,28 +1759,12 @@
       var g = reviewState(r, kind); if (!g) return;
       var v = root().querySelector('[data-verdict="' + kind + '"]'); if (!v) return;
       var a = v.querySelector('[data-act="accept"]'), d = v.querySelector('[data-act="deny"]'), gt = v.querySelector("[data-gate]");
-      if (a) a.disabled = !(g.seen && !g.open && !g.fails);
-      if (d) d.disabled = !g.seen;
+      if (a) a.disabled = !!(g.open || g.fails);
+      if (d) d.disabled = false;
       if (gt) gt.textContent = gateWords(g);
     });
   }
-  // Accept and Deny open once the reviewer has scrolled the review's foot into view.
-  var obs = null;
-  function watchReviews() {
-    if (obs) { obs.disconnect(); obs = null; }
-    var r = rowOf(state.sel); if (!r) return;
-    var key = r.key, pending = waitingKinds(r).filter(function (k) { return !state.seen[gid(key, k)]; });
-    if (!pending.length) return;
-    if (!("IntersectionObserver" in window)) { pending.forEach(function (k) { state.seen[gid(key, k)] = true; }); refreshVerdicts(); return; }
-    obs = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) {
-        if (!en.isIntersecting || state.sel !== key) return;
-        state.seen[gid(key, en.target.getAttribute("data-verdict"))] = true;
-        refreshVerdicts();
-      });
-    }, { threshold: 1 });
-    pending.forEach(function (k) { var v = root().querySelector('[data-verdict="' + k + '"]'); if (v) obs.observe(v); });
-  }
+
 
   // ── the controls ─────────────────────────────────────────────────────────
   function say(t) { state.msg = t; var s = root() && root().querySelector(".status"); if (s) s.textContent = t; }
@@ -1441,15 +1772,27 @@
     var f = F(), r = rowOf(state.sel);
     if (name === "nudge") { if (f) f.nudge(); return; }
     if (!r) return;
-    if (name === "toreview") { var rv = root().querySelector(".review h4"); if (rv) { rv.setAttribute("tabindex", "-1"); rv.focus(); if (rv.scrollIntoView) rv.scrollIntoView({ block: "start" }); } return; }
+    if (name === "toreview") {
+      state.side = "review"; paintRecord();
+      var rv = root().querySelector("#cw-side-review"); if (rv) { rv.focus(); if (rv.scrollIntoView) rv.scrollIntoView({ block: "start" }); }
+      return;
+    }
     if (name === "focus") { if (f) f.focus(r.key); return; }
+    if (name === "mailedit") {
+      state.mailEdit = state.mailEdit || {};
+      state.mailEdit[r.key] = !state.mailEdit[r.key];
+      paintRecord();
+      var me = root().querySelector(state.mailEdit[r.key] ? "#cw-body" : '[data-act="mailedit"]'); if (me) me.focus();
+      return;
+    }
     if (!f || !S.reviewer) return;
     if (name === "bounced") {
       var ls = lastSent(r, kind);
       if (!ls) return;
       logWrite("POST", null, { college: r.key, kind: "email", body: "It bounced, " + ls.body }).then(function (ok) {
         if (!ok) return;
-        if (state.sent) delete state.sent[r.key + "|" + kind];
+        // Either receipt can be undone (COBIx on PR 3050): the both-in-one email's receipt is the nudge's.
+        if (state.sent) { delete state.sent[r.key + "|" + kind]; if (kind === "nudge") delete state.sent[r.key + "|both"]; }
         paint();
         say("Noted that it bounced. " + r.name + " is back in Ready to send.");
       });
@@ -1483,6 +1826,13 @@
         : name === "follow" ? { kind: "email", body: "Follow-up email on the " + what + " opened to copy.", follow_up_on: plusDays(7) }
         : { kind: "email", body: "The acceptance email for the " + what + " opened again to copy." };
       logWrite("POST", null, Object.assign({ college: r.key }, entry));
+      // The request is decided: the panel closes unless another request still waits (COBIx on PR 3052), and focus
+      // goes to Recommended action, which now names the email, so the keyboard is never left on the page's body.
+      if (writes) {
+        var left = waitingKinds(r).filter(function (k) { return k !== kind; }).length;
+        if ((state.side === "review" || state.side === "none") && !left) state.side = "";
+        setTimeout(function () { var rr = document.getElementById(left ? "cw-side-review" : "cw-reason"); if (rr) rr.focus(); }, 0);
+      }
       say(name === "accept" ? "Accepted. The acceptance email opens for you to copy." : name === "deny" ? "Denied: the request is removed." :
         name === "follow" ? "The follow-up email opens for you to edit and copy." : "The acceptance email opens again for you to copy.");
       return true;
@@ -1491,21 +1841,51 @@
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
-    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; paintRecord(); var h = document.getElementById("cw-recname");
-      if (h && t.classList.contains("chip")) h.focus(); return; }
-    if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
-    if (t.hasAttribute("data-stage")) { var s = t.getAttribute("data-stage"); state.view = s === "waiting" ? "review" : s; state.sel = null; paint(); return; }
-    if (t.hasAttribute("data-close")) { closeDialog(); return; }
-    if (t.hasAttribute("data-pop")) {
-      var pr = rowOf(state.sel); if (!pr) return;
-      var opener = t.closest("dialog") ? lastOpener : t;
-      var pop = function () {
-        if (CT.state === "error") { say(CT.error); return; }
-        openDialog(t.getAttribute("data-pop") === "people" ? peopleDialogHtml(pr, "") : contactsDialogHtml(pr), opener);
-      };
-      if (CT.state === "ready") pop(); else { say("Reading the contacts on file…"); loadContacts().then(pop); }
+    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; state.psrc = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
+    if (t.hasAttribute("data-tplopen")) {
+      state.tplOpen = !state.tplOpen; state.tplMsg = "";
+      if (state.tplOpen && rest() && rest().remote) TPLS.asked = false;   // re-read on open, so a teammate's save shows
+      paint();
+      var tw = root().querySelector(state.tplOpen ? "#cw-tpls-h" : "[data-tplopen]"); if (tw) { tw.setAttribute("tabindex", "-1"); tw.focus(); }
       return;
     }
+    if (t.hasAttribute("data-tpldiscard")) { delete state.tplDraft[state.tplId]; state.tplMsg = "Your changes are discarded."; paint(); return; }
+    if (t.hasAttribute("data-tpluse")) {
+      var vid = t.getAttribute("data-tpluse"), ver = TPLS.rows.filter(function (x) { return String(x.id) === vid; })[0];
+      if (ver) { var cur1 = tplOf(state.tplId); state.tplDraft[state.tplId] = { subject: ver.subject, body: ver.body, base: cur1.row ? cur1.row.id : null }; state.tplMsg = "Loaded the version from " + shortDate(ver.created_at) + ". Save to use it again."; paint(); }
+      var tb = document.getElementById("cw-tpls-body"); if (tb) tb.focus();
+      return;
+    }
+    if (t.hasAttribute("data-tplreset")) {
+      var ok0 = true;
+      try { ok0 = window.confirm("Put back the wording the dashboard ships with for " + tplLabel(state.tplId) + "? Every reviewer's next email uses it. The saved versions stay in Earlier versions."); } catch (e0) { ok0 = true; }
+      if (!ok0) return;
+      TPLS.busy = true; paint();
+      tplWrite({ template_id: state.tplId, reset: true }).then(function (ok) {
+        TPLS.busy = false; delete state.tplDraft[state.tplId];
+        state.tplMsg = ok ? "The shipped wording is back for every reviewer." : "";
+        if (ok && rest() && rest().remote) loadTemplates(); else paint();
+      });
+      return;
+    }
+    if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
+    if (t.hasAttribute("data-fund")) {
+      state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
+      if (t.getAttribute("data-fund") === "open") state.fundFrom = t.getAttribute("data-fund-from") || "";
+      paint();
+      var fh = state.fund ? root().querySelector("#cw-fund-h") : fundOpener(); if (fh) fh.focus();
+      return;
+    }
+    if (t.hasAttribute("data-side")) {
+      var sk = t.getAttribute("data-side");
+      state.side = sideOf(rowOf(state.sel)) === sk ? "none" : sk;
+      paintRecord();
+      var sh = sideOf(rowOf(state.sel)) ? root().querySelector("#cw-side-" + sideOf(rowOf(state.sel))) : root().querySelector('[data-side="' + sk + '"]');
+      if (sh) sh.focus();
+      if ((state.side === "people" || state.side === "page") && S.reviewer && CT.state !== "ready" && CT.state !== "error") loadContacts().then(paintRecord);
+      return;
+    }
+    if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
     if (t.hasAttribute("data-copyaddr")) {
       var cr = rowOf(state.sel); if (!cr) return;
       var srcSel = document.getElementById("cw-psrc"), only = t.getAttribute("data-copyaddr") === "shown" && srcSel ? srcSel.value : "";
@@ -1534,6 +1914,7 @@
   }
   function onSubmit(e) {
     var fm = e.target;
+    if (fm.hasAttribute && fm.hasAttribute("data-tplform")) { e.preventDefault(); saveTemplate(fm); return; }
     if (!fm.hasAttribute || !fm.hasAttribute("data-logform")) return;
     e.preventDefault();
     var r = rowOf(state.sel); if (!r) return;
@@ -1554,9 +1935,14 @@
       refreshVerdicts();
       return;
     }
+    if (t.hasAttribute && t.hasAttribute("data-tplpick")) {
+      state.tplId = t.value; state.tplMsg = ""; paint();
+      var tp = document.getElementById("cw-tpls-id"); if (tp) tp.focus();
+      return;
+    }
     if (t.hasAttribute && t.hasAttribute("data-psrc")) {
-      var pr = rowOf(state.sel); if (!pr) return;
-      openDialog(peopleDialogHtml(pr, t.value), lastOpener);
+      state.psrc = t.value || "";
+      paintRecord();
       var ns = document.getElementById("cw-psrc"); if (ns) ns.focus();
       return;
     }
@@ -1585,7 +1971,40 @@
     if (k === "fu") { m.fu = !!t.checked; return; }
     m[k] = t.value;
   }
+  function saveTemplate(fm) {
+    var id = state.tplId, subject = String(fv(fm, "subject").value || "").trim(), body = String(fv(fm, "body").value || "").replace(/\s+$/, "");
+    var said = function (m) { state.tplMsg = m; var x = document.getElementById("cw-tpls-said"); if (x) x.textContent = m; };
+    if (!subject || !body.trim()) { said("A template needs a subject and a message."); return; }
+    var bad = tplUnknown(subject + "\n" + body);
+    if (bad.length) { said("Not saved: " + bad.join(", ") + (bad.length === 1 ? " is not a word" : " are not words") + " the dashboard fills in. Use one of the words listed under the message."); return; }
+    var dr = state.tplDraft[id] || null;
+    TPLS.busy = true; paint();
+    // Re-read first: a teammate's save since this draft began is named, and nothing is written over it (COBIx on PR 3068).
+    tplFresh().then(function () {
+      var cur = tplOf(id), now = cur.row ? cur.row.id : null, base = dr && "base" in dr ? dr.base : now;
+      if (String(now) !== String(base)) {
+        TPLS.busy = false;
+        if (dr) dr.base = now;
+        state.tplMsg = "Not saved: " + (cur.row.by_email || "a teammate") + " saved this template on " + shortDate(cur.row.created_at) +
+          " while you were editing. Your words are still in the box; Earlier versions holds theirs. Save again to keep yours.";
+        paint(); return null;
+      }
+      if (subject === cur.subject && body === cur.body) { TPLS.busy = false; state.tplMsg = "Nothing has changed since the last save."; paint(); return null; }
+      return tplWrite({ template_id: id, subject: subject, body: body });
+    }).then(function (ok) {
+      if (ok === null) return;
+      TPLS.busy = false;
+      if (ok) { delete state.tplDraft[id]; state.tplMsg = "Saved. Every reviewer's next " + tplLabel(id).toLowerCase().replace(/^the /, "") + " email starts from this wording."; }
+      if (ok && rest() && rest().remote) loadTemplates(); else paint();
+    });
+  }
   function onInput(e) {
+    if (e.target.hasAttribute && e.target.hasAttribute("data-tpledit")) {
+      var cur = tplOf(state.tplId), dr = state.tplDraft[state.tplId] || { subject: cur.subject, body: cur.body, base: cur.row ? cur.row.id : null };
+      dr[e.target.getAttribute("data-tpledit")] = e.target.value;
+      state.tplDraft[state.tplId] = dr;
+      return;
+    }
     if (e.target.id === "cw-ccfind") {
       var q = e.target.value.trim().toLowerCase();
       Array.prototype.forEach.call(root().querySelectorAll(".ccopt"), function (o) { o.hidden = !!q && o.getAttribute("data-hay").indexOf(q) < 0; });
@@ -1609,7 +2028,7 @@
 
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
-  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; LOG.asked = false; }
+  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.lpOpen = {}; state.psrc = ""; state.mailEdit = {}; state.fund = false; state.accOpen = false; state.tplOpen = false; state.tplMsg = ""; LOG.asked = false; TPLS.asked = false; }
   /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
      #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
   function arrive() {
@@ -1627,11 +2046,27 @@
       wired = true;
       el.addEventListener("click", onClick);
       el.addEventListener("keydown", onSplitKey);
+      // Escape closes the funding drawer and returns to the word that opened it.
+      el.addEventListener("keydown", function (e) {
+        // A pop-up's own Escape closes the pop-up alone (COBIx on PR 3053): the drawer stays while one is open.
+        if (e.key !== "Escape" || !state.fund) return;
+        state.fund = false; paint();
+        var fo = fundOpener(); if (fo) fo.focus();
+      });
       el.addEventListener("pointerdown", onSplitDown);
       el.addEventListener("change", onChange);
       el.addEventListener("input", onInput);
       el.addEventListener("submit", onSubmit);
       el.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("ccpick")) state.ccOpen = e.target.open; }, true);
+      // Every field on file keeps its fold through a repaint, as the source filter repaints the record (COBIx on PR 3067).
+      el.addEventListener("toggle", function (e) { if (e.target.hasAttribute && e.target.hasAttribute("data-onfile")) state.onfileOpen = e.target.open; }, true);
+      // Show the landing page here draws the page the first time it opens.
+      el.addEventListener("toggle", function (e) {
+        var d = e.target; if (!d.hasAttribute || !d.hasAttribute("data-lpshow")) return;
+        state.lpOpen[gid(state.sel, d.getAttribute("data-lpshow"))] = d.open;
+        if (!d.open || d.querySelector(".lpframe, .gate")) return;
+        var r = rowOf(state.sel); if (r) d.insertAdjacentHTML("beforeend", landingFrame(r));
+      }, true);
       window.addEventListener("cpl-tab-activated", function (e) {
         if (e && e.detail && e.detail.tab === TAB) { fresh(); arrive(); paint(); }
       });
@@ -1652,12 +2087,13 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
+    _tpls: TPLS, _tplOf: tplOf, _seedMail: function (key, tpl) { var r = rowOf(key); return r ? seedMail(r, tpl) : null; },
     _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
     _logo: LOGO, _split: function () { return splitPct(); }, _access: ACC, _grant: GRANT, _readGrant: readGrant, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();

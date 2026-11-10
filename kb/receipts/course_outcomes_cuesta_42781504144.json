@@ -1,0 +1,8165 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "cuesta",
+ "load_run": "42781504144",
+ "reads": [
+  "kb/course_outcomes/cuesta/read_42768224688_p1of2.json",
+  "kb/course_outcomes/cuesta/read_42768224688_p2of2.json"
+ ],
+ "posted": 1356,
+ "inserted": 1356,
+ "kept": 0,
+ "skipped": 2,
+ "skipped_rows": [
+  {
+   "course_code": "ATCH 269",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 247",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 15535,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 170"
+  },
+  {
+   "id": 15536,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 170"
+  },
+  {
+   "id": 15537,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 175"
+  },
+  {
+   "id": 15538,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 175"
+  },
+  {
+   "id": 15539,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 570"
+  },
+  {
+   "id": 15540,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 570"
+  },
+  {
+   "id": 15541,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 575"
+  },
+  {
+   "id": 15542,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 575"
+  },
+  {
+   "id": 15543,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ACCT 201A"
+  },
+  {
+   "id": 15544,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ACCT 201A"
+  },
+  {
+   "id": 15545,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ACCT 203"
+  },
+  {
+   "id": 15546,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ACCT 203"
+  },
+  {
+   "id": 15547,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ACCT 252A"
+  },
+  {
+   "id": 15548,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ACCT 252A"
+  },
+  {
+   "id": 15549,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGAS 201"
+  },
+  {
+   "id": 15550,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGAS 201"
+  },
+  {
+   "id": 15551,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGAS 211"
+  },
+  {
+   "id": 15552,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGAS 211"
+  },
+  {
+   "id": 15553,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGB 201"
+  },
+  {
+   "id": 15554,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGB 201"
+  },
+  {
+   "id": 15555,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGB 206"
+  },
+  {
+   "id": 15556,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGB 206"
+  },
+  {
+   "id": 15557,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGM 221"
+  },
+  {
+   "id": 15558,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGM 221"
+  },
+  {
+   "id": 15559,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGM 223"
+  },
+  {
+   "id": 15560,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGM 223"
+  },
+  {
+   "id": 15561,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGPS 246"
+  },
+  {
+   "id": 15562,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGPS 246"
+  },
+  {
+   "id": 15563,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGPS 251"
+  },
+  {
+   "id": 15564,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGPS 251"
+  },
+  {
+   "id": 15565,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ANTH 201L"
+  },
+  {
+   "id": 15566,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ANTH 201L"
+  },
+  {
+   "id": 15567,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ANTH 220"
+  },
+  {
+   "id": 15568,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ANTH 220"
+  },
+  {
+   "id": 15569,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 205"
+  },
+  {
+   "id": 15570,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 205"
+  },
+  {
+   "id": 15571,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 218"
+  },
+  {
+   "id": 15572,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 218"
+  },
+  {
+   "id": 15573,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 222"
+  },
+  {
+   "id": 15574,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 222"
+  },
+  {
+   "id": 15575,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 242"
+  },
+  {
+   "id": 15576,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 242"
+  },
+  {
+   "id": 15577,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 251"
+  },
+  {
+   "id": 15578,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 251"
+  },
+  {
+   "id": 15579,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 209"
+  },
+  {
+   "id": 15580,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 209"
+  },
+  {
+   "id": 15581,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 221"
+  },
+  {
+   "id": 15582,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 221"
+  },
+  {
+   "id": 15583,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 223"
+  },
+  {
+   "id": 15584,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 223"
+  },
+  {
+   "id": 15585,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 229"
+  },
+  {
+   "id": 15586,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 229"
+  },
+  {
+   "id": 15587,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 230B"
+  },
+  {
+   "id": 15588,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 230B"
+  },
+  {
+   "id": 15589,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 232"
+  },
+  {
+   "id": 15590,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 232"
+  },
+  {
+   "id": 15591,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 234"
+  },
+  {
+   "id": 15592,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 234"
+  },
+  {
+   "id": 15593,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 240B"
+  },
+  {
+   "id": 15594,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 240B"
+  },
+  {
+   "id": 15595,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 241A"
+  },
+  {
+   "id": 15596,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 241A"
+  },
+  {
+   "id": 15597,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 241C"
+  },
+  {
+   "id": 15598,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 241C"
+  },
+  {
+   "id": 15599,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 243B"
+  },
+  {
+   "id": 15600,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 243B"
+  },
+  {
+   "id": 15601,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 245"
+  },
+  {
+   "id": 15602,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 245"
+  },
+  {
+   "id": 15603,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 249B"
+  },
+  {
+   "id": 15604,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 249B"
+  },
+  {
+   "id": 15605,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 251"
+  },
+  {
+   "id": 15606,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 251"
+  },
+  {
+   "id": 15607,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 253"
+  },
+  {
+   "id": 15608,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 253"
+  },
+  {
+   "id": 15609,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 256"
+  },
+  {
+   "id": 15610,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 256"
+  },
+  {
+   "id": 15611,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 259"
+  },
+  {
+   "id": 15612,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 259"
+  },
+  {
+   "id": 15613,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 266"
+  },
+  {
+   "id": 15614,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 266"
+  },
+  {
+   "id": 15615,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 268"
+  },
+  {
+   "id": 15616,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 268"
+  },
+  {
+   "id": 15617,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 271"
+  },
+  {
+   "id": 15618,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 271"
+  },
+  {
+   "id": 15619,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 274A"
+  },
+  {
+   "id": 15620,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 274A"
+  },
+  {
+   "id": 15621,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 274C"
+  },
+  {
+   "id": 15622,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 274C"
+  },
+  {
+   "id": 15623,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 281A"
+  },
+  {
+   "id": 15624,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 281A"
+  },
+  {
+   "id": 15625,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 282"
+  },
+  {
+   "id": 15626,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 282"
+  },
+  {
+   "id": 15627,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 284"
+  },
+  {
+   "id": 15628,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 284"
+  },
+  {
+   "id": 15629,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 200"
+  },
+  {
+   "id": 15630,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 200"
+  },
+  {
+   "id": 15631,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 205"
+  },
+  {
+   "id": 15632,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 205"
+  },
+  {
+   "id": 15633,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 208"
+  },
+  {
+   "id": 15634,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 208"
+  },
+  {
+   "id": 15635,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 211"
+  },
+  {
+   "id": 15636,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 211"
+  },
+  {
+   "id": 15637,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 15638,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 15639,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 205"
+  },
+  {
+   "id": 15640,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 205"
+  },
+  {
+   "id": 15641,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 212"
+  },
+  {
+   "id": 15642,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 212"
+  },
+  {
+   "id": 15643,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 218"
+  },
+  {
+   "id": 15644,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 218"
+  },
+  {
+   "id": 15645,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 270"
+  },
+  {
+   "id": 15646,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 270"
+  },
+  {
+   "id": 15647,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 278"
+  },
+  {
+   "id": 15648,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 278"
+  },
+  {
+   "id": 15649,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 280"
+  },
+  {
+   "id": 15650,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 280"
+  },
+  {
+   "id": 15651,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289A"
+  },
+  {
+   "id": 15652,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289A"
+  },
+  {
+   "id": 15653,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289D"
+  },
+  {
+   "id": 15654,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289D"
+  },
+  {
+   "id": 15655,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASTR 210"
+  },
+  {
+   "id": 15656,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASTR 210"
+  },
+  {
+   "id": 15657,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 109"
+  },
+  {
+   "id": 15658,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 109"
+  },
+  {
+   "id": 15659,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 152"
+  },
+  {
+   "id": 15660,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 152"
+  },
+  {
+   "id": 15661,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 158"
+  },
+  {
+   "id": 15662,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 158"
+  },
+  {
+   "id": 15663,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 168"
+  },
+  {
+   "id": 15664,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 168"
+  },
+  {
+   "id": 15665,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 186"
+  },
+  {
+   "id": 15666,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 186"
+  },
+  {
+   "id": 15667,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 255"
+  },
+  {
+   "id": 15668,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 255"
+  },
+  {
+   "id": 15669,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 269"
+  },
+  {
+   "id": 15670,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 281"
+  },
+  {
+   "id": 15671,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 281"
+  },
+  {
+   "id": 15672,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 110"
+  },
+  {
+   "id": 15673,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 110"
+  },
+  {
+   "id": 15674,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 110B"
+  },
+  {
+   "id": 15675,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 110B"
+  },
+  {
+   "id": 15676,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 120A"
+  },
+  {
+   "id": 15677,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 120A"
+  },
+  {
+   "id": 15678,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 130"
+  },
+  {
+   "id": 15679,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 130"
+  },
+  {
+   "id": 15680,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 150"
+  },
+  {
+   "id": 15681,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 150"
+  },
+  {
+   "id": 15682,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 170"
+  },
+  {
+   "id": 15683,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 170"
+  },
+  {
+   "id": 15684,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 201A"
+  },
+  {
+   "id": 15685,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 201A"
+  },
+  {
+   "id": 15686,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 202"
+  },
+  {
+   "id": 15687,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 202"
+  },
+  {
+   "id": 15688,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 205"
+  },
+  {
+   "id": 15689,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 205"
+  },
+  {
+   "id": 15690,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 211"
+  },
+  {
+   "id": 15691,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 211"
+  },
+  {
+   "id": 15692,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 212L"
+  },
+  {
+   "id": 15693,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 212L"
+  },
+  {
+   "id": 15694,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 216"
+  },
+  {
+   "id": 15695,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 216"
+  },
+  {
+   "id": 15696,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 221"
+  },
+  {
+   "id": 15697,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 221"
+  },
+  {
+   "id": 15698,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 224"
+  },
+  {
+   "id": 15699,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 224"
+  },
+  {
+   "id": 15700,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 405"
+  },
+  {
+   "id": 15701,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 405"
+  },
+  {
+   "id": 15702,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 407"
+  },
+  {
+   "id": 15703,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 407"
+  },
+  {
+   "id": 15704,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 409"
+  },
+  {
+   "id": 15705,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 409"
+  },
+  {
+   "id": 15706,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 411"
+  },
+  {
+   "id": 15707,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 411"
+  },
+  {
+   "id": 15708,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 414"
+  },
+  {
+   "id": 15709,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 414"
+  },
+  {
+   "id": 15710,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSNC 547"
+  },
+  {
+   "id": 15711,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSNC 547"
+  },
+  {
+   "id": 15712,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 227"
+  },
+  {
+   "id": 15713,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 227"
+  },
+  {
+   "id": 15714,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 230"
+  },
+  {
+   "id": 15715,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 230"
+  },
+  {
+   "id": 15716,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 232"
+  },
+  {
+   "id": 15717,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 232"
+  },
+  {
+   "id": 15718,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 234"
+  },
+  {
+   "id": 15719,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 234"
+  },
+  {
+   "id": 15720,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 249"
+  },
+  {
+   "id": 15721,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 249"
+  },
+  {
+   "id": 15722,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 283"
+  },
+  {
+   "id": 15723,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 283"
+  },
+  {
+   "id": 15724,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 201"
+  },
+  {
+   "id": 15725,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 201"
+  },
+  {
+   "id": 15726,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 203"
+  },
+  {
+   "id": 15727,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 203"
+  },
+  {
+   "id": 15728,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 205"
+  },
+  {
+   "id": 15729,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 205"
+  },
+  {
+   "id": 15730,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 211"
+  },
+  {
+   "id": 15731,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 211"
+  },
+  {
+   "id": 15732,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 215"
+  },
+  {
+   "id": 15733,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 215"
+  },
+  {
+   "id": 15734,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 217"
+  },
+  {
+   "id": 15735,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 217"
+  },
+  {
+   "id": 15736,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 221"
+  },
+  {
+   "id": 15737,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 221"
+  },
+  {
+   "id": 15738,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 234"
+  },
+  {
+   "id": 15739,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 234"
+  },
+  {
+   "id": 15740,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 236"
+  },
+  {
+   "id": 15741,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 236"
+  },
+  {
+   "id": 15742,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 240"
+  },
+  {
+   "id": 15743,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 240"
+  },
+  {
+   "id": 15744,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 245"
+  },
+  {
+   "id": 15745,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 245"
+  },
+  {
+   "id": 15746,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 248"
+  },
+  {
+   "id": 15747,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 248"
+  },
+  {
+   "id": 15748,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 201A"
+  },
+  {
+   "id": 15749,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 201A"
+  },
+  {
+   "id": 15750,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 211"
+  },
+  {
+   "id": 15751,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 211"
+  },
+  {
+   "id": 15752,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 212B"
+  },
+  {
+   "id": 15753,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 212B"
+  },
+  {
+   "id": 15754,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CIS 216"
+  },
+  {
+   "id": 15755,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CIS 216"
+  },
+  {
+   "id": 15756,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 204"
+  },
+  {
+   "id": 15757,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 204"
+  },
+  {
+   "id": 15758,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 208"
+  },
+  {
+   "id": 15759,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 208"
+  },
+  {
+   "id": 15760,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 213"
+  },
+  {
+   "id": 15761,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 213"
+  },
+  {
+   "id": 15762,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 226"
+  },
+  {
+   "id": 15763,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 226"
+  },
+  {
+   "id": 15764,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CNET 219"
+  },
+  {
+   "id": 15765,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CNET 219"
+  },
+  {
+   "id": 15766,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CNET 240"
+  },
+  {
+   "id": 15767,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CNET 240"
+  },
+  {
+   "id": 15768,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "COMM 210"
+  },
+  {
+   "id": 15769,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "COMM 210"
+  },
+  {
+   "id": 15770,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "COMM 215"
+  },
+  {
+   "id": 15771,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "COMM 215"
+  },
+  {
+   "id": 15772,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "COMM 280"
+  },
+  {
+   "id": 15773,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "COMM 280"
+  },
+  {
+   "id": 15774,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 201"
+  },
+  {
+   "id": 15775,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 201"
+  },
+  {
+   "id": 15776,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 207"
+  },
+  {
+   "id": 15777,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 207"
+  },
+  {
+   "id": 15778,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 220"
+  },
+  {
+   "id": 15779,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 220"
+  },
+  {
+   "id": 15780,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 225"
+  },
+  {
+   "id": 15781,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 225"
+  },
+  {
+   "id": 15782,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 231"
+  },
+  {
+   "id": 15783,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 231"
+  },
+  {
+   "id": 15784,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 233"
+  },
+  {
+   "id": 15785,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 233"
+  },
+  {
+   "id": 15786,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 241"
+  },
+  {
+   "id": 15787,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 241"
+  },
+  {
+   "id": 15788,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CSS 725"
+  },
+  {
+   "id": 15789,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CSS 725"
+  },
+  {
+   "id": 15790,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 200"
+  },
+  {
+   "id": 15791,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 200"
+  },
+  {
+   "id": 15792,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 220"
+  },
+  {
+   "id": 15793,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 220"
+  },
+  {
+   "id": 15794,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 224"
+  },
+  {
+   "id": 15795,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 224"
+  },
+  {
+   "id": 15796,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 228"
+  },
+  {
+   "id": 15797,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 228"
+  },
+  {
+   "id": 15798,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 232"
+  },
+  {
+   "id": 15799,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 232"
+  },
+  {
+   "id": 15800,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 210"
+  },
+  {
+   "id": 15801,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 210"
+  },
+  {
+   "id": 15802,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 220"
+  },
+  {
+   "id": 15803,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 220"
+  },
+  {
+   "id": 15804,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 241"
+  },
+  {
+   "id": 15805,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 241"
+  },
+  {
+   "id": 15806,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 243"
+  },
+  {
+   "id": 15807,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 243"
+  },
+  {
+   "id": 15808,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 252"
+  },
+  {
+   "id": 15809,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 252"
+  },
+  {
+   "id": 15810,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 260"
+  },
+  {
+   "id": 15811,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 260"
+  },
+  {
+   "id": 15812,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DIST 101"
+  },
+  {
+   "id": 15813,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DIST 101"
+  },
+  {
+   "id": 15814,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 201"
+  },
+  {
+   "id": 15815,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 201"
+  },
+  {
+   "id": 15816,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 211"
+  },
+  {
+   "id": 15817,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 211"
+  },
+  {
+   "id": 15818,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 214"
+  },
+  {
+   "id": 15819,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 214"
+  },
+  {
+   "id": 15820,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 237"
+  },
+  {
+   "id": 15821,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 237"
+  },
+  {
+   "id": 15822,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 241"
+  },
+  {
+   "id": 15823,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 241"
+  },
+  {
+   "id": 15824,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 243"
+  },
+  {
+   "id": 15825,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 243"
+  },
+  {
+   "id": 15826,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 261"
+  },
+  {
+   "id": 15827,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 261"
+  },
+  {
+   "id": 15828,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 263"
+  },
+  {
+   "id": 15829,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 263"
+  },
+  {
+   "id": 15830,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ECON 200"
+  },
+  {
+   "id": 15831,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ECON 200"
+  },
+  {
+   "id": 15832,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 15833,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 15834,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EDUC 210"
+  },
+  {
+   "id": 15835,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EDUC 210"
+  },
+  {
+   "id": 15836,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EDUC 252"
+  },
+  {
+   "id": 15837,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EDUC 252"
+  },
+  {
+   "id": 15838,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 119"
+  },
+  {
+   "id": 15839,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 119"
+  },
+  {
+   "id": 15840,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 181"
+  },
+  {
+   "id": 15841,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 181"
+  },
+  {
+   "id": 15842,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 213"
+  },
+  {
+   "id": 15843,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 213"
+  },
+  {
+   "id": 15844,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 227"
+  },
+  {
+   "id": 15845,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 227"
+  },
+  {
+   "id": 15846,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 257"
+  },
+  {
+   "id": 15847,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 257"
+  },
+  {
+   "id": 15848,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EMS 201"
+  },
+  {
+   "id": 15849,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EMS 201"
+  },
+  {
+   "id": 15850,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EMS 211"
+  },
+  {
+   "id": 15851,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EMS 211"
+  },
+  {
+   "id": 15852,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EMS 212"
+  },
+  {
+   "id": 15853,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EMS 212"
+  },
+  {
+   "id": 15854,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 205"
+  },
+  {
+   "id": 15855,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 205"
+  },
+  {
+   "id": 15856,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 212A"
+  },
+  {
+   "id": 15857,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 212A"
+  },
+  {
+   "id": 15858,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 213"
+  },
+  {
+   "id": 15859,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 213"
+  },
+  {
+   "id": 15860,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 216"
+  },
+  {
+   "id": 15861,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 216"
+  },
+  {
+   "id": 15862,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 231"
+  },
+  {
+   "id": 15863,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 231"
+  },
+  {
+   "id": 15864,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 242"
+  },
+  {
+   "id": 15865,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 242"
+  },
+  {
+   "id": 15866,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 245B"
+  },
+  {
+   "id": 15867,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 245B"
+  },
+  {
+   "id": 15868,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 246B"
+  },
+  {
+   "id": 15869,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 246B"
+  },
+  {
+   "id": 15870,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 15871,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 15872,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 201"
+  },
+  {
+   "id": 15873,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 201"
+  },
+  {
+   "id": 15874,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 217"
+  },
+  {
+   "id": 15875,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 217"
+  },
+  {
+   "id": 15876,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 228"
+  },
+  {
+   "id": 15877,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 228"
+  },
+  {
+   "id": 15878,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 246L"
+  },
+  {
+   "id": 15879,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 246L"
+  },
+  {
+   "id": 15880,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 250"
+  },
+  {
+   "id": 15881,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 250"
+  },
+  {
+   "id": 15882,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 252A"
+  },
+  {
+   "id": 15883,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 252A"
+  },
+  {
+   "id": 15884,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENVS 200"
+  },
+  {
+   "id": 15885,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENVS 200"
+  },
+  {
+   "id": 15886,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 701"
+  },
+  {
+   "id": 15887,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 701"
+  },
+  {
+   "id": 15888,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 703"
+  },
+  {
+   "id": 15889,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 703"
+  },
+  {
+   "id": 15890,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 705"
+  },
+  {
+   "id": 15891,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 705"
+  },
+  {
+   "id": 15892,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 707A"
+  },
+  {
+   "id": 15893,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 707A"
+  },
+  {
+   "id": 15894,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 713"
+  },
+  {
+   "id": 15895,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 713"
+  },
+  {
+   "id": 15896,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 715"
+  },
+  {
+   "id": 15897,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 715"
+  },
+  {
+   "id": 15898,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 720"
+  },
+  {
+   "id": 15899,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 720"
+  },
+  {
+   "id": 15900,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 725"
+  },
+  {
+   "id": 15901,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 725"
+  },
+  {
+   "id": 15902,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 797"
+  },
+  {
+   "id": 15903,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 797"
+  },
+  {
+   "id": 15904,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 210"
+  },
+  {
+   "id": 15905,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 210"
+  },
+  {
+   "id": 15906,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 213"
+  },
+  {
+   "id": 15907,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 213"
+  },
+  {
+   "id": 15908,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 231"
+  },
+  {
+   "id": 15909,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 231"
+  },
+  {
+   "id": 15910,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 235"
+  },
+  {
+   "id": 15911,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 235"
+  },
+  {
+   "id": 15912,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 250"
+  },
+  {
+   "id": 15913,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 250"
+  },
+  {
+   "id": 15914,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 260"
+  },
+  {
+   "id": 15915,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 260"
+  },
+  {
+   "id": 15916,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 270"
+  },
+  {
+   "id": 15917,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 270"
+  },
+  {
+   "id": 15918,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FR 202"
+  },
+  {
+   "id": 15919,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FR 202"
+  },
+  {
+   "id": 15920,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FTVE 224A"
+  },
+  {
+   "id": 15921,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FTVE 224A"
+  },
+  {
+   "id": 15922,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FTVE 225B"
+  },
+  {
+   "id": 15923,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FTVE 225B"
+  },
+  {
+   "id": 15924,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FTVE 230A"
+  },
+  {
+   "id": 15925,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FTVE 230A"
+  },
+  {
+   "id": 15926,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOG 225"
+  },
+  {
+   "id": 15927,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOG 225"
+  },
+  {
+   "id": 15928,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 211"
+  },
+  {
+   "id": 15929,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 211"
+  },
+  {
+   "id": 15930,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 220"
+  },
+  {
+   "id": 15931,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 220"
+  },
+  {
+   "id": 15932,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229B"
+  },
+  {
+   "id": 15933,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229B"
+  },
+  {
+   "id": 15934,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229D"
+  },
+  {
+   "id": 15935,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229D"
+  },
+  {
+   "id": 15936,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 231"
+  },
+  {
+   "id": 15937,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 231"
+  },
+  {
+   "id": 15938,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 233"
+  },
+  {
+   "id": 15939,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 233"
+  },
+  {
+   "id": 15940,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GER 201"
+  },
+  {
+   "id": 15941,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GER 201"
+  },
+  {
+   "id": 15942,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GLST 210"
+  },
+  {
+   "id": 15943,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GLST 210"
+  },
+  {
+   "id": 15944,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST 203A"
+  },
+  {
+   "id": 15945,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST 203A"
+  },
+  {
+   "id": 15946,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST 212"
+  },
+  {
+   "id": 15947,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST 212"
+  },
+  {
+   "id": 15948,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST 237"
+  },
+  {
+   "id": 15949,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST 237"
+  },
+  {
+   "id": 15950,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 15951,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 15952,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 230"
+  },
+  {
+   "id": 15953,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 230"
+  },
+  {
+   "id": 15954,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 270"
+  },
+  {
+   "id": 15955,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 270"
+  },
+  {
+   "id": 15956,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 730"
+  },
+  {
+   "id": 15957,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 730"
+  },
+  {
+   "id": 15958,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HSCI 202"
+  },
+  {
+   "id": 15959,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HSCI 202"
+  },
+  {
+   "id": 15960,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HSCI 204"
+  },
+  {
+   "id": 15961,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HSCI 204"
+  },
+  {
+   "id": 15962,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 201"
+  },
+  {
+   "id": 15963,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 201"
+  },
+  {
+   "id": 15964,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 202B"
+  },
+  {
+   "id": 15965,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 202B"
+  },
+  {
+   "id": 15966,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203A"
+  },
+  {
+   "id": 15967,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203A"
+  },
+  {
+   "id": 15968,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203C"
+  },
+  {
+   "id": 15969,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203C"
+  },
+  {
+   "id": 15970,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 206"
+  },
+  {
+   "id": 15971,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 206"
+  },
+  {
+   "id": 15972,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 202"
+  },
+  {
+   "id": 15973,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 202"
+  },
+  {
+   "id": 15974,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 204"
+  },
+  {
+   "id": 15975,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 204"
+  },
+  {
+   "id": 15976,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 206"
+  },
+  {
+   "id": 15977,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 206"
+  },
+  {
+   "id": 15978,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 210"
+  },
+  {
+   "id": 15979,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 210"
+  },
+  {
+   "id": 15980,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 217"
+  },
+  {
+   "id": 15981,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 217"
+  },
+  {
+   "id": 15982,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 223"
+  },
+  {
+   "id": 15983,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 223"
+  },
+  {
+   "id": 15984,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 225"
+  },
+  {
+   "id": 15985,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 225"
+  },
+  {
+   "id": 15986,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 227"
+  },
+  {
+   "id": 15987,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 227"
+  },
+  {
+   "id": 15988,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 231"
+  },
+  {
+   "id": 15989,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 231"
+  },
+  {
+   "id": 15990,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 233"
+  },
+  {
+   "id": 15991,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 233"
+  },
+  {
+   "id": 15992,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 235"
+  },
+  {
+   "id": 15993,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 235"
+  },
+  {
+   "id": 15994,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 241"
+  },
+  {
+   "id": 15995,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 241"
+  },
+  {
+   "id": 15996,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 245"
+  },
+  {
+   "id": 15997,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 245"
+  },
+  {
+   "id": 15998,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 251"
+  },
+  {
+   "id": 15999,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 251"
+  },
+  {
+   "id": 16000,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 201"
+  },
+  {
+   "id": 16001,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 201"
+  },
+  {
+   "id": 16002,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 211"
+  },
+  {
+   "id": 16003,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 211"
+  },
+  {
+   "id": 16004,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 214"
+  },
+  {
+   "id": 16005,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 214"
+  },
+  {
+   "id": 16006,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 219"
+  },
+  {
+   "id": 16007,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 219"
+  },
+  {
+   "id": 16008,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 221"
+  },
+  {
+   "id": 16009,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 221"
+  },
+  {
+   "id": 16010,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 208"
+  },
+  {
+   "id": 16011,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LIBT 208"
+  },
+  {
+   "id": 16012,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 213"
+  },
+  {
+   "id": 16013,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LIBT 213"
+  },
+  {
+   "id": 16014,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 221"
+  },
+  {
+   "id": 16015,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LIBT 221"
+  },
+  {
+   "id": 16016,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 247"
+  },
+  {
+   "id": 16017,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 101A"
+  },
+  {
+   "id": 16018,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 101A"
+  },
+  {
+   "id": 16019,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 101B"
+  },
+  {
+   "id": 16020,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 101B"
+  },
+  {
+   "id": 16021,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 102A"
+  },
+  {
+   "id": 16022,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 102A"
+  },
+  {
+   "id": 16023,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 102B"
+  },
+  {
+   "id": 16024,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 102B"
+  },
+  {
+   "id": 16025,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 103A"
+  },
+  {
+   "id": 16026,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 103A"
+  },
+  {
+   "id": 16027,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MAST 110"
+  },
+  {
+   "id": 16028,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MAST 110"
+  },
+  {
+   "id": 16029,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MAST 111B"
+  },
+  {
+   "id": 16030,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MAST 111B"
+  },
+  {
+   "id": 16031,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 220"
+  },
+  {
+   "id": 16032,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 220"
+  },
+  {
+   "id": 16033,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 230"
+  },
+  {
+   "id": 16034,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 230"
+  },
+  {
+   "id": 16035,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 232"
+  },
+  {
+   "id": 16036,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 232"
+  },
+  {
+   "id": 16037,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 242"
+  },
+  {
+   "id": 16038,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 242"
+  },
+  {
+   "id": 16039,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 255"
+  },
+  {
+   "id": 16040,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 255"
+  },
+  {
+   "id": 16041,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 283"
+  },
+  {
+   "id": 16042,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 283"
+  },
+  {
+   "id": 16043,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "METE 212"
+  },
+  {
+   "id": 16044,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "METE 212"
+  },
+  {
+   "id": 16045,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 204A"
+  },
+  {
+   "id": 16046,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 204A"
+  },
+  {
+   "id": 16047,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 204C"
+  },
+  {
+   "id": 16048,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 204C"
+  },
+  {
+   "id": 16049,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 205B"
+  },
+  {
+   "id": 16050,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 205B"
+  },
+  {
+   "id": 16051,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 210"
+  },
+  {
+   "id": 16052,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 210"
+  },
+  {
+   "id": 16053,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 211"
+  },
+  {
+   "id": 16054,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 211"
+  },
+  {
+   "id": 16055,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 220"
+  },
+  {
+   "id": 16056,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 220"
+  },
+  {
+   "id": 16057,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 223"
+  },
+  {
+   "id": 16058,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 223"
+  },
+  {
+   "id": 16059,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 224B"
+  },
+  {
+   "id": 16060,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 224B"
+  },
+  {
+   "id": 16061,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 227"
+  },
+  {
+   "id": 16062,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 227"
+  },
+  {
+   "id": 16063,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 229"
+  },
+  {
+   "id": 16064,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 229"
+  },
+  {
+   "id": 16065,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 232"
+  },
+  {
+   "id": 16066,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 232"
+  },
+  {
+   "id": 16067,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 233"
+  },
+  {
+   "id": 16068,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 233"
+  },
+  {
+   "id": 16069,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 235"
+  },
+  {
+   "id": 16070,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 235"
+  },
+  {
+   "id": 16071,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 240"
+  },
+  {
+   "id": 16072,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 240"
+  },
+  {
+   "id": 16073,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 242"
+  },
+  {
+   "id": 16074,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 242"
+  },
+  {
+   "id": 16075,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 244A"
+  },
+  {
+   "id": 16076,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 244A"
+  },
+  {
+   "id": 16077,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 245"
+  },
+  {
+   "id": 16078,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 245"
+  },
+  {
+   "id": 16079,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 258"
+  },
+  {
+   "id": 16080,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 258"
+  },
+  {
+   "id": 16081,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 270"
+  },
+  {
+   "id": 16082,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 270"
+  },
+  {
+   "id": 16083,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NAST 148"
+  },
+  {
+   "id": 16084,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NAST 148"
+  },
+  {
+   "id": 16085,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NAWD 701"
+  },
+  {
+   "id": 16086,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NAWD 701"
+  },
+  {
+   "id": 16087,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NAWD 710"
+  },
+  {
+   "id": 16088,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NAWD 710"
+  },
+  {
+   "id": 16089,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 004E"
+  },
+  {
+   "id": 16090,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 004E"
+  },
+  {
+   "id": 16091,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 103H"
+  },
+  {
+   "id": 16092,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 103H"
+  },
+  {
+   "id": 16093,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120B"
+  },
+  {
+   "id": 16094,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120B"
+  },
+  {
+   "id": 16095,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120D"
+  },
+  {
+   "id": 16096,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120D"
+  },
+  {
+   "id": 16097,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201C"
+  },
+  {
+   "id": 16098,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201C"
+  },
+  {
+   "id": 16099,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201E"
+  },
+  {
+   "id": 16100,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201E"
+  },
+  {
+   "id": 16101,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202C"
+  },
+  {
+   "id": 16102,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202C"
+  },
+  {
+   "id": 16103,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202E"
+  },
+  {
+   "id": 16104,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202E"
+  },
+  {
+   "id": 16105,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203C"
+  },
+  {
+   "id": 16106,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203C"
+  },
+  {
+   "id": 16107,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203E"
+  },
+  {
+   "id": 16108,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203E"
+  },
+  {
+   "id": 16109,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 204B"
+  },
+  {
+   "id": 16110,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 204B"
+  },
+  {
+   "id": 16111,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 222"
+  },
+  {
+   "id": 16112,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 222"
+  },
+  {
+   "id": 16113,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 211"
+  },
+  {
+   "id": 16114,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 211"
+  },
+  {
+   "id": 16115,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 230"
+  },
+  {
+   "id": 16116,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 230"
+  },
+  {
+   "id": 16117,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 249"
+  },
+  {
+   "id": 16118,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 249"
+  },
+  {
+   "id": 16119,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 252"
+  },
+  {
+   "id": 16120,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 252"
+  },
+  {
+   "id": 16121,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "OCEN 210L"
+  },
+  {
+   "id": 16122,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "OCEN 210L"
+  },
+  {
+   "id": 16123,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PDS 178"
+  },
+  {
+   "id": 16124,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PDS 178"
+  },
+  {
+   "id": 16125,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHIL 208"
+  },
+  {
+   "id": 16126,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHIL 208"
+  },
+  {
+   "id": 16127,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHIL 212"
+  },
+  {
+   "id": 16128,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHIL 212"
+  },
+  {
+   "id": 16129,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHLB 109A"
+  },
+  {
+   "id": 16130,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHLB 109A"
+  },
+  {
+   "id": 16131,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHS 206"
+  },
+  {
+   "id": 16132,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHS 206"
+  },
+  {
+   "id": 16133,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHS 212"
+  },
+  {
+   "id": 16134,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHS 212"
+  },
+  {
+   "id": 16135,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHYS 208B"
+  },
+  {
+   "id": 16136,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHYS 208B"
+  },
+  {
+   "id": 16137,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PLGL 203"
+  },
+  {
+   "id": 16138,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PLGL 203"
+  },
+  {
+   "id": 16139,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "POLS 204"
+  },
+  {
+   "id": 16140,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "POLS 204"
+  },
+  {
+   "id": 16141,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "POLS 206"
+  },
+  {
+   "id": 16142,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "POLS 206"
+  },
+  {
+   "id": 16143,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 16144,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 16145,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSCI 211"
+  },
+  {
+   "id": 16146,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSCI 211"
+  },
+  {
+   "id": 16147,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYC 202"
+  },
+  {
+   "id": 16148,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYC 202"
+  },
+  {
+   "id": 16149,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYC 206"
+  },
+  {
+   "id": 16150,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYC 206"
+  },
+  {
+   "id": 16151,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 16152,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 16153,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYT 207"
+  },
+  {
+   "id": 16154,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYT 207"
+  },
+  {
+   "id": 16155,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYT 209"
+  },
+  {
+   "id": 16156,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYT 209"
+  },
+  {
+   "id": 16157,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "REC 203"
+  },
+  {
+   "id": 16158,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "REC 203"
+  },
+  {
+   "id": 16159,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "REC 205"
+  },
+  {
+   "id": 16160,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "REC 205"
+  },
+  {
+   "id": 16161,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SOC 201B"
+  },
+  {
+   "id": 16162,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SOC 201B"
+  },
+  {
+   "id": 16163,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SOC 204"
+  },
+  {
+   "id": 16164,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SOC 204"
+  },
+  {
+   "id": 16165,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SOC 208"
+  },
+  {
+   "id": 16166,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SOC 208"
+  },
+  {
+   "id": 16167,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SPAN 202"
+  },
+  {
+   "id": 16168,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SPAN 202"
+  },
+  {
+   "id": 16169,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SPAN 204"
+  },
+  {
+   "id": 16170,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SPAN 204"
+  },
+  {
+   "id": 16171,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VESL 711"
+  },
+  {
+   "id": 16172,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VESL 711"
+  },
+  {
+   "id": 16173,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565A"
+  },
+  {
+   "id": 16174,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565A"
+  },
+  {
+   "id": 16175,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565C"
+  },
+  {
+   "id": 16176,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565C"
+  },
+  {
+   "id": 16177,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565E"
+  },
+  {
+   "id": 16178,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565E"
+  },
+  {
+   "id": 16179,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 567B"
+  },
+  {
+   "id": 16180,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 567B"
+  },
+  {
+   "id": 16181,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 595"
+  },
+  {
+   "id": 16182,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 595"
+  },
+  {
+   "id": 16183,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 597"
+  },
+  {
+   "id": 16184,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 597"
+  },
+  {
+   "id": 16185,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 599"
+  },
+  {
+   "id": 16186,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 599"
+  },
+  {
+   "id": 16187,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 601"
+  },
+  {
+   "id": 16188,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 601"
+  },
+  {
+   "id": 16189,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 609"
+  },
+  {
+   "id": 16190,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 609"
+  },
+  {
+   "id": 16191,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 611"
+  },
+  {
+   "id": 16192,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 611"
+  },
+  {
+   "id": 16193,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 725A"
+  },
+  {
+   "id": 16194,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 725A"
+  },
+  {
+   "id": 16195,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 770"
+  },
+  {
+   "id": 16196,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 770"
+  },
+  {
+   "id": 16197,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 772"
+  },
+  {
+   "id": 16198,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 772"
+  },
+  {
+   "id": 16199,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 270B"
+  },
+  {
+   "id": 16200,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 270B"
+  },
+  {
+   "id": 16201,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 273"
+  },
+  {
+   "id": 16202,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 273"
+  },
+  {
+   "id": 16203,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 276"
+  },
+  {
+   "id": 16204,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 276"
+  },
+  {
+   "id": 16205,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 280A"
+  },
+  {
+   "id": 16206,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 280A"
+  },
+  {
+   "id": 16207,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 770A"
+  },
+  {
+   "id": 16208,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 770A"
+  },
+  {
+   "id": 16209,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 780A"
+  },
+  {
+   "id": 16210,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 780A"
+  },
+  {
+   "id": 16211,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WKFP 562"
+  },
+  {
+   "id": 16212,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WKFP 562"
+  },
+  {
+   "id": 16213,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 171"
+  },
+  {
+   "id": 16214,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 171"
+  },
+  {
+   "id": 16215,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 177"
+  },
+  {
+   "id": 16216,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 177"
+  },
+  {
+   "id": 16217,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 571"
+  },
+  {
+   "id": 16218,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 571"
+  },
+  {
+   "id": 16219,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ABOD 577"
+  },
+  {
+   "id": 16220,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ABOD 577"
+  },
+  {
+   "id": 16221,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ACCT 201B"
+  },
+  {
+   "id": 16222,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ACCT 201B"
+  },
+  {
+   "id": 16223,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ACCT 251"
+  },
+  {
+   "id": 16224,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ACCT 251"
+  },
+  {
+   "id": 16225,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ACCT 252B"
+  },
+  {
+   "id": 16226,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ACCT 252B"
+  },
+  {
+   "id": 16227,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGAS 210"
+  },
+  {
+   "id": 16228,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGAS 210"
+  },
+  {
+   "id": 16229,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGAS 212"
+  },
+  {
+   "id": 16230,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGAS 212"
+  },
+  {
+   "id": 16231,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGB 205"
+  },
+  {
+   "id": 16232,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGB 205"
+  },
+  {
+   "id": 16233,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGM 220"
+  },
+  {
+   "id": 16234,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGM 220"
+  },
+  {
+   "id": 16235,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGM 222"
+  },
+  {
+   "id": 16236,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGM 222"
+  },
+  {
+   "id": 16237,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGPS 230"
+  },
+  {
+   "id": 16238,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGPS 230"
+  },
+  {
+   "id": 16239,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AGPS 250"
+  },
+  {
+   "id": 16240,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AGPS 250"
+  },
+  {
+   "id": 16241,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ANTH 201"
+  },
+  {
+   "id": 16242,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ANTH 201"
+  },
+  {
+   "id": 16243,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ANTH 202"
+  },
+  {
+   "id": 16244,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ANTH 202"
+  },
+  {
+   "id": 16245,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ANTH 221"
+  },
+  {
+   "id": 16246,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ANTH 221"
+  },
+  {
+   "id": 16247,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 217"
+  },
+  {
+   "id": 16248,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 217"
+  },
+  {
+   "id": 16249,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 221"
+  },
+  {
+   "id": 16250,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 221"
+  },
+  {
+   "id": 16251,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 232"
+  },
+  {
+   "id": 16252,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 232"
+  },
+  {
+   "id": 16253,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 244"
+  },
+  {
+   "id": 16254,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 244"
+  },
+  {
+   "id": 16255,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARCH 252"
+  },
+  {
+   "id": 16256,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARCH 252"
+  },
+  {
+   "id": 16257,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 220"
+  },
+  {
+   "id": 16258,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 220"
+  },
+  {
+   "id": 16259,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 222"
+  },
+  {
+   "id": 16260,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 222"
+  },
+  {
+   "id": 16261,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 224"
+  },
+  {
+   "id": 16262,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 224"
+  },
+  {
+   "id": 16263,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 230A"
+  },
+  {
+   "id": 16264,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 230A"
+  },
+  {
+   "id": 16265,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 230C"
+  },
+  {
+   "id": 16266,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 230C"
+  },
+  {
+   "id": 16267,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 233"
+  },
+  {
+   "id": 16268,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 233"
+  },
+  {
+   "id": 16269,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 240A"
+  },
+  {
+   "id": 16270,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 240A"
+  },
+  {
+   "id": 16271,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 240C"
+  },
+  {
+   "id": 16272,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 240C"
+  },
+  {
+   "id": 16273,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 241B"
+  },
+  {
+   "id": 16274,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 241B"
+  },
+  {
+   "id": 16275,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 243A"
+  },
+  {
+   "id": 16276,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 243A"
+  },
+  {
+   "id": 16277,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 244"
+  },
+  {
+   "id": 16278,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 244"
+  },
+  {
+   "id": 16279,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 249A"
+  },
+  {
+   "id": 16280,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 249A"
+  },
+  {
+   "id": 16281,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 250"
+  },
+  {
+   "id": 16282,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 250"
+  },
+  {
+   "id": 16283,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 252"
+  },
+  {
+   "id": 16284,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 252"
+  },
+  {
+   "id": 16285,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 255"
+  },
+  {
+   "id": 16286,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 255"
+  },
+  {
+   "id": 16287,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 258"
+  },
+  {
+   "id": 16288,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 258"
+  },
+  {
+   "id": 16289,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 265"
+  },
+  {
+   "id": 16290,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 265"
+  },
+  {
+   "id": 16291,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 267"
+  },
+  {
+   "id": 16292,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 267"
+  },
+  {
+   "id": 16293,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 270"
+  },
+  {
+   "id": 16294,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 270"
+  },
+  {
+   "id": 16295,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 272"
+  },
+  {
+   "id": 16296,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 272"
+  },
+  {
+   "id": 16297,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 274B"
+  },
+  {
+   "id": 16298,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 274B"
+  },
+  {
+   "id": 16299,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 280"
+  },
+  {
+   "id": 16300,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 280"
+  },
+  {
+   "id": 16301,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 281B"
+  },
+  {
+   "id": 16302,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 281B"
+  },
+  {
+   "id": 16303,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 283"
+  },
+  {
+   "id": 16304,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 283"
+  },
+  {
+   "id": 16305,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ART 293"
+  },
+  {
+   "id": 16306,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ART 293"
+  },
+  {
+   "id": 16307,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 202"
+  },
+  {
+   "id": 16308,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 202"
+  },
+  {
+   "id": 16309,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 207"
+  },
+  {
+   "id": 16310,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 207"
+  },
+  {
+   "id": 16311,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 210"
+  },
+  {
+   "id": 16312,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 210"
+  },
+  {
+   "id": 16313,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH 295"
+  },
+  {
+   "id": 16314,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH 295"
+  },
+  {
+   "id": 16315,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 16316,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 16317,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 210"
+  },
+  {
+   "id": 16318,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 210"
+  },
+  {
+   "id": 16319,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 214"
+  },
+  {
+   "id": 16320,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 214"
+  },
+  {
+   "id": 16321,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 262"
+  },
+  {
+   "id": 16322,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 262"
+  },
+  {
+   "id": 16323,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 271"
+  },
+  {
+   "id": 16324,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 271"
+  },
+  {
+   "id": 16325,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 279"
+  },
+  {
+   "id": 16326,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 279"
+  },
+  {
+   "id": 16327,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289"
+  },
+  {
+   "id": 16328,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289"
+  },
+  {
+   "id": 16329,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289B"
+  },
+  {
+   "id": 16330,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASHS 289B"
+  },
+  {
+   "id": 16331,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ASL 202"
+  },
+  {
+   "id": 16332,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ASL 202"
+  },
+  {
+   "id": 16333,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 105"
+  },
+  {
+   "id": 16334,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 105"
+  },
+  {
+   "id": 16335,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 125"
+  },
+  {
+   "id": 16336,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 125"
+  },
+  {
+   "id": 16337,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 153"
+  },
+  {
+   "id": 16338,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 153"
+  },
+  {
+   "id": 16339,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 160"
+  },
+  {
+   "id": 16340,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 160"
+  },
+  {
+   "id": 16341,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 182"
+  },
+  {
+   "id": 16342,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 182"
+  },
+  {
+   "id": 16343,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 188"
+  },
+  {
+   "id": 16344,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 188"
+  },
+  {
+   "id": 16345,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 264"
+  },
+  {
+   "id": 16346,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 264"
+  },
+  {
+   "id": 16347,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 280"
+  },
+  {
+   "id": 16348,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 280"
+  },
+  {
+   "id": 16349,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ATCH 284"
+  },
+  {
+   "id": 16350,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ATCH 284"
+  },
+  {
+   "id": 16351,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 110A"
+  },
+  {
+   "id": 16352,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 110A"
+  },
+  {
+   "id": 16353,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 120"
+  },
+  {
+   "id": 16354,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 120"
+  },
+  {
+   "id": 16355,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 120B"
+  },
+  {
+   "id": 16356,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 120B"
+  },
+  {
+   "id": 16357,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 140"
+  },
+  {
+   "id": 16358,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 140"
+  },
+  {
+   "id": 16359,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 160"
+  },
+  {
+   "id": 16360,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 160"
+  },
+  {
+   "id": 16361,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "AVMT 180"
+  },
+  {
+   "id": 16362,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "AVMT 180"
+  },
+  {
+   "id": 16363,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 201B"
+  },
+  {
+   "id": 16364,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 201B"
+  },
+  {
+   "id": 16365,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 204"
+  },
+  {
+   "id": 16366,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 204"
+  },
+  {
+   "id": 16367,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 206"
+  },
+  {
+   "id": 16368,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 206"
+  },
+  {
+   "id": 16369,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 212"
+  },
+  {
+   "id": 16370,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 212"
+  },
+  {
+   "id": 16371,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 213"
+  },
+  {
+   "id": 16372,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 213"
+  },
+  {
+   "id": 16373,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 220"
+  },
+  {
+   "id": 16374,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 220"
+  },
+  {
+   "id": 16375,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BIO 222"
+  },
+  {
+   "id": 16376,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BIO 222"
+  },
+  {
+   "id": 16377,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 404"
+  },
+  {
+   "id": 16378,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 404"
+  },
+  {
+   "id": 16379,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 406"
+  },
+  {
+   "id": 16380,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 406"
+  },
+  {
+   "id": 16381,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 408"
+  },
+  {
+   "id": 16382,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 408"
+  },
+  {
+   "id": 16383,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 410"
+  },
+  {
+   "id": 16384,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 410"
+  },
+  {
+   "id": 16385,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSHS 412"
+  },
+  {
+   "id": 16386,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSHS 412"
+  },
+  {
+   "id": 16387,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BSNC 530"
+  },
+  {
+   "id": 16388,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BSNC 530"
+  },
+  {
+   "id": 16389,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 220"
+  },
+  {
+   "id": 16390,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 220"
+  },
+  {
+   "id": 16391,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 228"
+  },
+  {
+   "id": 16392,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 228"
+  },
+  {
+   "id": 16393,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 231"
+  },
+  {
+   "id": 16394,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 231"
+  },
+  {
+   "id": 16395,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 233"
+  },
+  {
+   "id": 16396,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 233"
+  },
+  {
+   "id": 16397,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 243"
+  },
+  {
+   "id": 16398,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 243"
+  },
+  {
+   "id": 16399,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 253"
+  },
+  {
+   "id": 16400,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 253"
+  },
+  {
+   "id": 16401,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "BUS 285"
+  },
+  {
+   "id": 16402,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "BUS 285"
+  },
+  {
+   "id": 16403,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 202"
+  },
+  {
+   "id": 16404,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 202"
+  },
+  {
+   "id": 16405,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 204"
+  },
+  {
+   "id": 16406,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 204"
+  },
+  {
+   "id": 16407,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 206"
+  },
+  {
+   "id": 16408,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 206"
+  },
+  {
+   "id": 16409,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 212"
+  },
+  {
+   "id": 16410,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 212"
+  },
+  {
+   "id": 16411,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 216"
+  },
+  {
+   "id": 16412,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 216"
+  },
+  {
+   "id": 16413,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 220"
+  },
+  {
+   "id": 16414,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 220"
+  },
+  {
+   "id": 16415,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 223"
+  },
+  {
+   "id": 16416,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 223"
+  },
+  {
+   "id": 16417,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 235"
+  },
+  {
+   "id": 16418,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 235"
+  },
+  {
+   "id": 16419,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 237"
+  },
+  {
+   "id": 16420,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 237"
+  },
+  {
+   "id": 16421,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 242"
+  },
+  {
+   "id": 16422,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 242"
+  },
+  {
+   "id": 16423,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CDFS 246"
+  },
+  {
+   "id": 16424,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CDFS 246"
+  },
+  {
+   "id": 16425,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 200"
+  },
+  {
+   "id": 16426,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 200"
+  },
+  {
+   "id": 16427,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 201B"
+  },
+  {
+   "id": 16428,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 201B"
+  },
+  {
+   "id": 16429,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 212A"
+  },
+  {
+   "id": 16430,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 212A"
+  },
+  {
+   "id": 16431,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CHEM 231"
+  },
+  {
+   "id": 16432,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CHEM 231"
+  },
+  {
+   "id": 16433,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 202"
+  },
+  {
+   "id": 16434,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 202"
+  },
+  {
+   "id": 16435,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 206"
+  },
+  {
+   "id": 16436,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 206"
+  },
+  {
+   "id": 16437,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 210"
+  },
+  {
+   "id": 16438,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 210"
+  },
+  {
+   "id": 16439,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 224"
+  },
+  {
+   "id": 16440,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 224"
+  },
+  {
+   "id": 16441,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CJ 228"
+  },
+  {
+   "id": 16442,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CJ 228"
+  },
+  {
+   "id": 16443,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CNET 235"
+  },
+  {
+   "id": 16444,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CNET 235"
+  },
+  {
+   "id": 16445,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CNET 253"
+  },
+  {
+   "id": 16446,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CNET 253"
+  },
+  {
+   "id": 16447,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "COMM 212"
+  },
+  {
+   "id": 16448,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "COMM 212"
+  },
+  {
+   "id": 16449,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "COMM 230"
+  },
+  {
+   "id": 16450,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "COMM 230"
+  },
+  {
+   "id": 16451,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 16452,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 16453,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 203"
+  },
+  {
+   "id": 16454,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 203"
+  },
+  {
+   "id": 16455,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 217"
+  },
+  {
+   "id": 16456,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 217"
+  },
+  {
+   "id": 16457,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 223"
+  },
+  {
+   "id": 16458,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 223"
+  },
+  {
+   "id": 16459,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 226"
+  },
+  {
+   "id": 16460,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 226"
+  },
+  {
+   "id": 16461,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 232"
+  },
+  {
+   "id": 16462,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 232"
+  },
+  {
+   "id": 16463,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CS 240"
+  },
+  {
+   "id": 16464,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CS 240"
+  },
+  {
+   "id": 16465,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CSS 225"
+  },
+  {
+   "id": 16466,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CSS 225"
+  },
+  {
+   "id": 16467,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CSS 754"
+  },
+  {
+   "id": 16468,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CSS 754"
+  },
+  {
+   "id": 16469,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 210"
+  },
+  {
+   "id": 16470,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 210"
+  },
+  {
+   "id": 16471,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 222"
+  },
+  {
+   "id": 16472,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 222"
+  },
+  {
+   "id": 16473,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 226"
+  },
+  {
+   "id": 16474,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 226"
+  },
+  {
+   "id": 16475,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 230"
+  },
+  {
+   "id": 16476,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 230"
+  },
+  {
+   "id": 16477,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CTCH 260"
+  },
+  {
+   "id": 16478,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CTCH 260"
+  },
+  {
+   "id": 16479,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 215"
+  },
+  {
+   "id": 16480,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 215"
+  },
+  {
+   "id": 16481,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 225"
+  },
+  {
+   "id": 16482,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 225"
+  },
+  {
+   "id": 16483,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 242"
+  },
+  {
+   "id": 16484,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 242"
+  },
+  {
+   "id": 16485,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 245"
+  },
+  {
+   "id": 16486,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 245"
+  },
+  {
+   "id": 16487,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 255"
+  },
+  {
+   "id": 16488,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 255"
+  },
+  {
+   "id": 16489,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "CUL 290"
+  },
+  {
+   "id": 16490,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "CUL 290"
+  },
+  {
+   "id": 16491,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 200"
+  },
+  {
+   "id": 16492,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 200"
+  },
+  {
+   "id": 16493,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 209"
+  },
+  {
+   "id": 16494,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 209"
+  },
+  {
+   "id": 16495,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 212"
+  },
+  {
+   "id": 16496,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 212"
+  },
+  {
+   "id": 16497,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 236"
+  },
+  {
+   "id": 16498,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 236"
+  },
+  {
+   "id": 16499,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 240"
+  },
+  {
+   "id": 16500,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 240"
+  },
+  {
+   "id": 16501,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 242"
+  },
+  {
+   "id": 16502,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 242"
+  },
+  {
+   "id": 16503,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 260"
+  },
+  {
+   "id": 16504,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 260"
+  },
+  {
+   "id": 16505,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 262"
+  },
+  {
+   "id": 16506,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 262"
+  },
+  {
+   "id": 16507,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "DRA 264"
+  },
+  {
+   "id": 16508,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "DRA 264"
+  },
+  {
+   "id": 16509,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 16510,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 16511,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EDUC 200"
+  },
+  {
+   "id": 16512,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EDUC 200"
+  },
+  {
+   "id": 16513,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EDUC 220"
+  },
+  {
+   "id": 16514,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EDUC 220"
+  },
+  {
+   "id": 16515,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 113"
+  },
+  {
+   "id": 16516,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 113"
+  },
+  {
+   "id": 16517,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 169"
+  },
+  {
+   "id": 16518,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 169"
+  },
+  {
+   "id": 16519,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 183"
+  },
+  {
+   "id": 16520,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 183"
+  },
+  {
+   "id": 16521,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 224"
+  },
+  {
+   "id": 16522,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 224"
+  },
+  {
+   "id": 16523,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 228"
+  },
+  {
+   "id": 16524,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 228"
+  },
+  {
+   "id": 16525,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EET 267"
+  },
+  {
+   "id": 16526,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EET 267"
+  },
+  {
+   "id": 16527,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EMS 210"
+  },
+  {
+   "id": 16528,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EMS 210"
+  },
+  {
+   "id": 16529,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EMS 211L"
+  },
+  {
+   "id": 16530,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EMS 211L"
+  },
+  {
+   "id": 16531,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "EMS 213"
+  },
+  {
+   "id": 16532,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "EMS 213"
+  },
+  {
+   "id": 16533,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 206"
+  },
+  {
+   "id": 16534,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 206"
+  },
+  {
+   "id": 16535,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 212B"
+  },
+  {
+   "id": 16536,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 212B"
+  },
+  {
+   "id": 16537,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 215"
+  },
+  {
+   "id": 16538,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 215"
+  },
+  {
+   "id": 16539,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 217"
+  },
+  {
+   "id": 16540,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 217"
+  },
+  {
+   "id": 16541,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 237"
+  },
+  {
+   "id": 16542,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 237"
+  },
+  {
+   "id": 16543,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 245A"
+  },
+  {
+   "id": 16544,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 245A"
+  },
+  {
+   "id": 16545,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL 246A"
+  },
+  {
+   "id": 16546,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL 246A"
+  },
+  {
+   "id": 16547,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 16548,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 16549,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 16550,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 16551,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 210"
+  },
+  {
+   "id": 16552,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 210"
+  },
+  {
+   "id": 16553,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 226"
+  },
+  {
+   "id": 16554,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 226"
+  },
+  {
+   "id": 16555,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 246"
+  },
+  {
+   "id": 16556,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 246"
+  },
+  {
+   "id": 16557,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 248"
+  },
+  {
+   "id": 16558,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 248"
+  },
+  {
+   "id": 16559,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 251"
+  },
+  {
+   "id": 16560,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 251"
+  },
+  {
+   "id": 16561,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENGR 252B"
+  },
+  {
+   "id": 16562,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENGR 252B"
+  },
+  {
+   "id": 16563,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ENVS 205"
+  },
+  {
+   "id": 16564,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ENVS 205"
+  },
+  {
+   "id": 16565,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 702"
+  },
+  {
+   "id": 16566,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 702"
+  },
+  {
+   "id": 16567,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 704"
+  },
+  {
+   "id": 16568,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 704"
+  },
+  {
+   "id": 16569,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 706"
+  },
+  {
+   "id": 16570,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 706"
+  },
+  {
+   "id": 16571,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 707B"
+  },
+  {
+   "id": 16572,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 707B"
+  },
+  {
+   "id": 16573,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 714"
+  },
+  {
+   "id": 16574,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 714"
+  },
+  {
+   "id": 16575,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 716"
+  },
+  {
+   "id": 16576,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 716"
+  },
+  {
+   "id": 16577,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 721"
+  },
+  {
+   "id": 16578,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 721"
+  },
+  {
+   "id": 16579,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 735"
+  },
+  {
+   "id": 16580,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 735"
+  },
+  {
+   "id": 16581,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ESL 798"
+  },
+  {
+   "id": 16582,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ESL 798"
+  },
+  {
+   "id": 16583,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 211"
+  },
+  {
+   "id": 16584,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 211"
+  },
+  {
+   "id": 16585,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 219"
+  },
+  {
+   "id": 16586,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 219"
+  },
+  {
+   "id": 16587,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 234"
+  },
+  {
+   "id": 16588,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 234"
+  },
+  {
+   "id": 16589,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 240"
+  },
+  {
+   "id": 16590,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 240"
+  },
+  {
+   "id": 16591,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 252"
+  },
+  {
+   "id": 16592,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 252"
+  },
+  {
+   "id": 16593,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "ETHN 262"
+  },
+  {
+   "id": 16594,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "ETHN 262"
+  },
+  {
+   "id": 16595,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FR 201"
+  },
+  {
+   "id": 16596,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FR 201"
+  },
+  {
+   "id": 16597,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FTVE 223"
+  },
+  {
+   "id": 16598,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FTVE 223"
+  },
+  {
+   "id": 16599,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FTVE 225A"
+  },
+  {
+   "id": 16600,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FTVE 225A"
+  },
+  {
+   "id": 16601,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "FTVE 226"
+  },
+  {
+   "id": 16602,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "FTVE 226"
+  },
+  {
+   "id": 16603,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOG 201"
+  },
+  {
+   "id": 16604,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOG 201"
+  },
+  {
+   "id": 16605,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 210"
+  },
+  {
+   "id": 16606,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 210"
+  },
+  {
+   "id": 16607,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 212"
+  },
+  {
+   "id": 16608,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 212"
+  },
+  {
+   "id": 16609,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229A"
+  },
+  {
+   "id": 16610,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229A"
+  },
+  {
+   "id": 16611,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229C"
+  },
+  {
+   "id": 16612,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 229C"
+  },
+  {
+   "id": 16613,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 230"
+  },
+  {
+   "id": 16614,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 230"
+  },
+  {
+   "id": 16615,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 232"
+  },
+  {
+   "id": 16616,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 232"
+  },
+  {
+   "id": 16617,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GEOL 234"
+  },
+  {
+   "id": 16618,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GEOL 234"
+  },
+  {
+   "id": 16619,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GER 202"
+  },
+  {
+   "id": 16620,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GER 202"
+  },
+  {
+   "id": 16621,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "GLST 220"
+  },
+  {
+   "id": 16622,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "GLST 220"
+  },
+  {
+   "id": 16623,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST 203B"
+  },
+  {
+   "id": 16624,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST 203B"
+  },
+  {
+   "id": 16625,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST 233"
+  },
+  {
+   "id": 16626,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST 233"
+  },
+  {
+   "id": 16627,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 16628,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 16629,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 200"
+  },
+  {
+   "id": 16630,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 200"
+  },
+  {
+   "id": 16631,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 250"
+  },
+  {
+   "id": 16632,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 250"
+  },
+  {
+   "id": 16633,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 700"
+  },
+  {
+   "id": 16634,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 700"
+  },
+  {
+   "id": 16635,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HOSP 750"
+  },
+  {
+   "id": 16636,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HOSP 750"
+  },
+  {
+   "id": 16637,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HSCI 203"
+  },
+  {
+   "id": 16638,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HSCI 203"
+  },
+  {
+   "id": 16639,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "HSCI 208"
+  },
+  {
+   "id": 16640,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "HSCI 208"
+  },
+  {
+   "id": 16641,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 202A"
+  },
+  {
+   "id": 16642,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 202A"
+  },
+  {
+   "id": 16643,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 202C"
+  },
+  {
+   "id": 16644,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 202C"
+  },
+  {
+   "id": 16645,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203B"
+  },
+  {
+   "id": 16646,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203B"
+  },
+  {
+   "id": 16647,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203D"
+  },
+  {
+   "id": 16648,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "JOUR 203D"
+  },
+  {
+   "id": 16649,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 201"
+  },
+  {
+   "id": 16650,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 201"
+  },
+  {
+   "id": 16651,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 203"
+  },
+  {
+   "id": 16652,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 203"
+  },
+  {
+   "id": 16653,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 205"
+  },
+  {
+   "id": 16654,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 205"
+  },
+  {
+   "id": 16655,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 209"
+  },
+  {
+   "id": 16656,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 209"
+  },
+  {
+   "id": 16657,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 214"
+  },
+  {
+   "id": 16658,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 214"
+  },
+  {
+   "id": 16659,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 222"
+  },
+  {
+   "id": 16660,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 222"
+  },
+  {
+   "id": 16661,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 224"
+  },
+  {
+   "id": 16662,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 224"
+  },
+  {
+   "id": 16663,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 226"
+  },
+  {
+   "id": 16664,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 226"
+  },
+  {
+   "id": 16665,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 229"
+  },
+  {
+   "id": 16666,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 229"
+  },
+  {
+   "id": 16667,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 232"
+  },
+  {
+   "id": 16668,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 232"
+  },
+  {
+   "id": 16669,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 234"
+  },
+  {
+   "id": 16670,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 234"
+  },
+  {
+   "id": 16671,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 237"
+  },
+  {
+   "id": 16672,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 237"
+  },
+  {
+   "id": 16673,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 244"
+  },
+  {
+   "id": 16674,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 244"
+  },
+  {
+   "id": 16675,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 246"
+  },
+  {
+   "id": 16676,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 246"
+  },
+  {
+   "id": 16677,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINA 294"
+  },
+  {
+   "id": 16678,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINA 294"
+  },
+  {
+   "id": 16679,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 210"
+  },
+  {
+   "id": 16680,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 210"
+  },
+  {
+   "id": 16681,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 213"
+  },
+  {
+   "id": 16682,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 213"
+  },
+  {
+   "id": 16683,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 218"
+  },
+  {
+   "id": 16684,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 218"
+  },
+  {
+   "id": 16685,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 220"
+  },
+  {
+   "id": 16686,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 220"
+  },
+  {
+   "id": 16687,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "KINE 252"
+  },
+  {
+   "id": 16688,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "KINE 252"
+  },
+  {
+   "id": 16689,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 209"
+  },
+  {
+   "id": 16690,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LIBT 209"
+  },
+  {
+   "id": 16691,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 214"
+  },
+  {
+   "id": 16692,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LIBT 214"
+  },
+  {
+   "id": 16693,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LIBT 222"
+  },
+  {
+   "id": 16694,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LIBT 222"
+  },
+  {
+   "id": 16695,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 101"
+  },
+  {
+   "id": 16696,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 101"
+  },
+  {
+   "id": 16697,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 101AL"
+  },
+  {
+   "id": 16698,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 101AL"
+  },
+  {
+   "id": 16699,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 102"
+  },
+  {
+   "id": 16700,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 102"
+  },
+  {
+   "id": 16701,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 102AL"
+  },
+  {
+   "id": 16702,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 102AL"
+  },
+  {
+   "id": 16703,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 103"
+  },
+  {
+   "id": 16704,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 103"
+  },
+  {
+   "id": 16705,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "LVN 103B"
+  },
+  {
+   "id": 16706,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "LVN 103B"
+  },
+  {
+   "id": 16707,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MAST 111A"
+  },
+  {
+   "id": 16708,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MAST 111A"
+  },
+  {
+   "id": 16709,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 127"
+  },
+  {
+   "id": 16710,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 127"
+  },
+  {
+   "id": 16711,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 229"
+  },
+  {
+   "id": 16712,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 229"
+  },
+  {
+   "id": 16713,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 231"
+  },
+  {
+   "id": 16714,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 231"
+  },
+  {
+   "id": 16715,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 236"
+  },
+  {
+   "id": 16716,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 236"
+  },
+  {
+   "id": 16717,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 248"
+  },
+  {
+   "id": 16718,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 248"
+  },
+  {
+   "id": 16719,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 265A"
+  },
+  {
+   "id": 16720,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 265A"
+  },
+  {
+   "id": 16721,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MATH 287"
+  },
+  {
+   "id": 16722,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MATH 287"
+  },
+  {
+   "id": 16723,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 201"
+  },
+  {
+   "id": 16724,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 201"
+  },
+  {
+   "id": 16725,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 204B"
+  },
+  {
+   "id": 16726,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 204B"
+  },
+  {
+   "id": 16727,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 205A"
+  },
+  {
+   "id": 16728,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 205A"
+  },
+  {
+   "id": 16729,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 205C"
+  },
+  {
+   "id": 16730,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 205C"
+  },
+  {
+   "id": 16731,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 210B"
+  },
+  {
+   "id": 16732,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 210B"
+  },
+  {
+   "id": 16733,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 212"
+  },
+  {
+   "id": 16734,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 212"
+  },
+  {
+   "id": 16735,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 222"
+  },
+  {
+   "id": 16736,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 222"
+  },
+  {
+   "id": 16737,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 224A"
+  },
+  {
+   "id": 16738,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 224A"
+  },
+  {
+   "id": 16739,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 225"
+  },
+  {
+   "id": 16740,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 225"
+  },
+  {
+   "id": 16741,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 228"
+  },
+  {
+   "id": 16742,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 228"
+  },
+  {
+   "id": 16743,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 231"
+  },
+  {
+   "id": 16744,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 231"
+  },
+  {
+   "id": 16745,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 232A"
+  },
+  {
+   "id": 16746,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 232A"
+  },
+  {
+   "id": 16747,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 234"
+  },
+  {
+   "id": 16748,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 234"
+  },
+  {
+   "id": 16749,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 237"
+  },
+  {
+   "id": 16750,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 237"
+  },
+  {
+   "id": 16751,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 241"
+  },
+  {
+   "id": 16752,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 241"
+  },
+  {
+   "id": 16753,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 243"
+  },
+  {
+   "id": 16754,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 243"
+  },
+  {
+   "id": 16755,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 244B"
+  },
+  {
+   "id": 16756,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 244B"
+  },
+  {
+   "id": 16757,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 257"
+  },
+  {
+   "id": 16758,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 257"
+  },
+  {
+   "id": 16759,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 259"
+  },
+  {
+   "id": 16760,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 259"
+  },
+  {
+   "id": 16761,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "MUS 271"
+  },
+  {
+   "id": 16762,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "MUS 271"
+  },
+  {
+   "id": 16763,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NAST 148L"
+  },
+  {
+   "id": 16764,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NAST 148L"
+  },
+  {
+   "id": 16765,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NAWD 705"
+  },
+  {
+   "id": 16766,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NAWD 705"
+  },
+  {
+   "id": 16767,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NAWD 730"
+  },
+  {
+   "id": 16768,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NAWD 730"
+  },
+  {
+   "id": 16769,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 102H"
+  },
+  {
+   "id": 16770,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 102H"
+  },
+  {
+   "id": 16771,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120A"
+  },
+  {
+   "id": 16772,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120A"
+  },
+  {
+   "id": 16773,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120C"
+  },
+  {
+   "id": 16774,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 120C"
+  },
+  {
+   "id": 16775,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201A"
+  },
+  {
+   "id": 16776,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201A"
+  },
+  {
+   "id": 16777,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201D"
+  },
+  {
+   "id": 16778,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 201D"
+  },
+  {
+   "id": 16779,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202A"
+  },
+  {
+   "id": 16780,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202A"
+  },
+  {
+   "id": 16781,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202D"
+  },
+  {
+   "id": 16782,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 202D"
+  },
+  {
+   "id": 16783,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203A"
+  },
+  {
+   "id": 16784,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203A"
+  },
+  {
+   "id": 16785,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203D"
+  },
+  {
+   "id": 16786,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 203D"
+  },
+  {
+   "id": 16787,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 204A"
+  },
+  {
+   "id": 16788,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 204A"
+  },
+  {
+   "id": 16789,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NRAD 204D"
+  },
+  {
+   "id": 16790,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NRAD 204D"
+  },
+  {
+   "id": 16791,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 210"
+  },
+  {
+   "id": 16792,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 210"
+  },
+  {
+   "id": 16793,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 224"
+  },
+  {
+   "id": 16794,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 224"
+  },
+  {
+   "id": 16795,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 240"
+  },
+  {
+   "id": 16796,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 240"
+  },
+  {
+   "id": 16797,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "NUTR 250"
+  },
+  {
+   "id": 16798,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "NUTR 250"
+  },
+  {
+   "id": 16799,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "OCEN 210"
+  },
+  {
+   "id": 16800,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "OCEN 210"
+  },
+  {
+   "id": 16801,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PDS 171"
+  },
+  {
+   "id": 16802,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PDS 171"
+  },
+  {
+   "id": 16803,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHIL 206"
+  },
+  {
+   "id": 16804,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHIL 206"
+  },
+  {
+   "id": 16805,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHIL 209"
+  },
+  {
+   "id": 16806,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHIL 209"
+  },
+  {
+   "id": 16807,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHIL 213"
+  },
+  {
+   "id": 16808,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHIL 213"
+  },
+  {
+   "id": 16809,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHLB 109B"
+  },
+  {
+   "id": 16810,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHLB 109B"
+  },
+  {
+   "id": 16811,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHS 210"
+  },
+  {
+   "id": 16812,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHS 210"
+  },
+  {
+   "id": 16813,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHYS 208A"
+  },
+  {
+   "id": 16814,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHYS 208A"
+  },
+  {
+   "id": 16815,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PHYS 208C"
+  },
+  {
+   "id": 16816,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PHYS 208C"
+  },
+  {
+   "id": 16817,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PLGL 220"
+  },
+  {
+   "id": 16818,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PLGL 220"
+  },
+  {
+   "id": 16819,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "POLS 205"
+  },
+  {
+   "id": 16820,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "POLS 205"
+  },
+  {
+   "id": 16821,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "POLS 209"
+  },
+  {
+   "id": 16822,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "POLS 209"
+  },
+  {
+   "id": 16823,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSCI 210"
+  },
+  {
+   "id": 16824,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSCI 210"
+  },
+  {
+   "id": 16825,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYC 200"
+  },
+  {
+   "id": 16826,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYC 200"
+  },
+  {
+   "id": 16827,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYC 204"
+  },
+  {
+   "id": 16828,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYC 204"
+  },
+  {
+   "id": 16829,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYC 233"
+  },
+  {
+   "id": 16830,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYC 233"
+  },
+  {
+   "id": 16831,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYT 110"
+  },
+  {
+   "id": 16832,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYT 110"
+  },
+  {
+   "id": 16833,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "PSYT 208"
+  },
+  {
+   "id": 16834,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "PSYT 208"
+  },
+  {
+   "id": 16835,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "REC 201"
+  },
+  {
+   "id": 16836,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "REC 201"
+  },
+  {
+   "id": 16837,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "REC 204"
+  },
+  {
+   "id": 16838,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "REC 204"
+  },
+  {
+   "id": 16839,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SOC 201A"
+  },
+  {
+   "id": 16840,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SOC 201A"
+  },
+  {
+   "id": 16841,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SOC 202"
+  },
+  {
+   "id": 16842,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SOC 202"
+  },
+  {
+   "id": 16843,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SOC 206"
+  },
+  {
+   "id": 16844,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SOC 206"
+  },
+  {
+   "id": 16845,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SPAN 201"
+  },
+  {
+   "id": 16846,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SPAN 201"
+  },
+  {
+   "id": 16847,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "SPAN 203"
+  },
+  {
+   "id": 16848,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "SPAN 203"
+  },
+  {
+   "id": 16849,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 16850,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 16851,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VESL 712"
+  },
+  {
+   "id": 16852,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VESL 712"
+  },
+  {
+   "id": 16853,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565B"
+  },
+  {
+   "id": 16854,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565B"
+  },
+  {
+   "id": 16855,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565D"
+  },
+  {
+   "id": 16856,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 565D"
+  },
+  {
+   "id": 16857,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 567A"
+  },
+  {
+   "id": 16858,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 567A"
+  },
+  {
+   "id": 16859,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 594"
+  },
+  {
+   "id": 16860,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 594"
+  },
+  {
+   "id": 16861,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 596"
+  },
+  {
+   "id": 16862,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 596"
+  },
+  {
+   "id": 16863,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 598"
+  },
+  {
+   "id": 16864,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 598"
+  },
+  {
+   "id": 16865,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 600"
+  },
+  {
+   "id": 16866,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 600"
+  },
+  {
+   "id": 16867,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 608"
+  },
+  {
+   "id": 16868,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 608"
+  },
+  {
+   "id": 16869,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 610"
+  },
+  {
+   "id": 16870,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 610"
+  },
+  {
+   "id": 16871,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 612"
+  },
+  {
+   "id": 16872,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 612"
+  },
+  {
+   "id": 16873,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 725B"
+  },
+  {
+   "id": 16874,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 725B"
+  },
+  {
+   "id": 16875,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "VOCE 771"
+  },
+  {
+   "id": 16876,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "VOCE 771"
+  },
+  {
+   "id": 16877,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 270A"
+  },
+  {
+   "id": 16878,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 270A"
+  },
+  {
+   "id": 16879,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 270C"
+  },
+  {
+   "id": 16880,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 270C"
+  },
+  {
+   "id": 16881,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 275"
+  },
+  {
+   "id": 16882,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 275"
+  },
+  {
+   "id": 16883,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 277"
+  },
+  {
+   "id": 16884,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 277"
+  },
+  {
+   "id": 16885,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 280B"
+  },
+  {
+   "id": 16886,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 280B"
+  },
+  {
+   "id": 16887,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WELD 770B"
+  },
+  {
+   "id": 16888,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WELD 770B"
+  },
+  {
+   "id": 16889,
+   "kind": "objective",
+   "college": "Cuesta College",
+   "course_code": "WKFP 561"
+  },
+  {
+   "id": 16890,
+   "kind": "slo",
+   "college": "Cuesta College",
+   "course_code": "WKFP 561"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (15535, 15536, 15537, 15538, 15539, 15540, 15541, 15542, 15543, 15544, 15545, 15546, 15547, 15548, 15549, 15550, 15551, 15552, 15553, 15554, 15555, 15556, 15557, 15558, 15559, 15560, 15561, 15562, 15563, 15564, 15565, 15566, 15567, 15568, 15569, 15570, 15571, 15572, 15573, 15574, 15575, 15576, 15577, 15578, 15579, 15580, 15581, 15582, 15583, 15584, 15585, 15586, 15587, 15588, 15589, 15590, 15591, 15592, 15593, 15594, 15595, 15596, 15597, 15598, 15599, 15600, 15601, 15602, 15603, 15604, 15605, 15606, 15607, 15608, 15609, 15610, 15611, 15612, 15613, 15614, 15615, 15616, 15617, 15618, 15619, 15620, 15621, 15622, 15623, 15624, 15625, 15626, 15627, 15628, 15629, 15630, 15631, 15632, 15633, 15634, 15635, 15636, 15637, 15638, 15639, 15640, 15641, 15642, 15643, 15644, 15645, 15646, 15647, 15648, 15649, 15650, 15651, 15652, 15653, 15654, 15655, 15656, 15657, 15658, 15659, 15660, 15661, 15662, 15663, 15664, 15665, 15666, 15667, 15668, 15669, 15670, 15671, 15672, 15673, 15674, 15675, 15676, 15677, 15678, 15679, 15680, 15681, 15682, 15683, 15684, 15685, 15686, 15687, 15688, 15689, 15690, 15691, 15692, 15693, 15694, 15695, 15696, 15697, 15698, 15699, 15700, 15701, 15702, 15703, 15704, 15705, 15706, 15707, 15708, 15709, 15710, 15711, 15712, 15713, 15714, 15715, 15716, 15717, 15718, 15719, 15720, 15721, 15722, 15723, 15724, 15725, 15726, 15727, 15728, 15729, 15730, 15731, 15732, 15733, 15734, 15735, 15736, 15737, 15738, 15739, 15740, 15741, 15742, 15743, 15744, 15745, 15746, 15747, 15748, 15749, 15750, 15751, 15752, 15753, 15754, 15755, 15756, 15757, 15758, 15759, 15760, 15761, 15762, 15763, 15764, 15765, 15766, 15767, 15768, 15769, 15770, 15771, 15772, 15773, 15774, 15775, 15776, 15777, 15778, 15779, 15780, 15781, 15782, 15783, 15784, 15785, 15786, 15787, 15788, 15789, 15790, 15791, 15792, 15793, 15794, 15795, 15796, 15797, 15798, 15799, 15800, 15801, 15802, 15803, 15804, 15805, 15806, 15807, 15808, 15809, 15810, 15811, 15812, 15813, 15814, 15815, 15816, 15817, 15818, 15819, 15820, 15821, 15822, 15823, 15824, 15825, 15826, 15827, 15828, 15829, 15830, 15831, 15832, 15833, 15834, 15835, 15836, 15837, 15838, 15839, 15840, 15841, 15842, 15843, 15844, 15845, 15846, 15847, 15848, 15849, 15850, 15851, 15852, 15853, 15854, 15855, 15856, 15857, 15858, 15859, 15860, 15861, 15862, 15863, 15864, 15865, 15866, 15867, 15868, 15869, 15870, 15871, 15872, 15873, 15874, 15875, 15876, 15877, 15878, 15879, 15880, 15881, 15882, 15883, 15884, 15885, 15886, 15887, 15888, 15889, 15890, 15891, 15892, 15893, 15894, 15895, 15896, 15897, 15898, 15899, 15900, 15901, 15902, 15903, 15904, 15905, 15906, 15907, 15908, 15909, 15910, 15911, 15912, 15913, 15914, 15915, 15916, 15917, 15918, 15919, 15920, 15921, 15922, 15923, 15924, 15925, 15926, 15927, 15928, 15929, 15930, 15931, 15932, 15933, 15934, 15935, 15936, 15937, 15938, 15939, 15940, 15941, 15942, 15943, 15944, 15945, 15946, 15947, 15948, 15949, 15950, 15951, 15952, 15953, 15954, 15955, 15956, 15957, 15958, 15959, 15960, 15961, 15962, 15963, 15964, 15965, 15966, 15967, 15968, 15969, 15970, 15971, 15972, 15973, 15974, 15975, 15976, 15977, 15978, 15979, 15980, 15981, 15982, 15983, 15984, 15985, 15986, 15987, 15988, 15989, 15990, 15991, 15992, 15993, 15994, 15995, 15996, 15997, 15998, 15999, 16000, 16001, 16002, 16003, 16004, 16005, 16006, 16007, 16008, 16009, 16010, 16011, 16012, 16013, 16014, 16015, 16016, 16017, 16018, 16019, 16020, 16021, 16022, 16023, 16024, 16025, 16026, 16027, 16028, 16029, 16030, 16031, 16032, 16033, 16034, 16035, 16036, 16037, 16038, 16039, 16040, 16041, 16042, 16043, 16044, 16045, 16046, 16047, 16048, 16049, 16050, 16051, 16052, 16053, 16054, 16055, 16056, 16057, 16058, 16059, 16060, 16061, 16062, 16063, 16064, 16065, 16066, 16067, 16068, 16069, 16070, 16071, 16072, 16073, 16074, 16075, 16076, 16077, 16078, 16079, 16080, 16081, 16082, 16083, 16084, 16085, 16086, 16087, 16088, 16089, 16090, 16091, 16092, 16093, 16094, 16095, 16096, 16097, 16098, 16099, 16100, 16101, 16102, 16103, 16104, 16105, 16106, 16107, 16108, 16109, 16110, 16111, 16112, 16113, 16114, 16115, 16116, 16117, 16118, 16119, 16120, 16121, 16122, 16123, 16124, 16125, 16126, 16127, 16128, 16129, 16130, 16131, 16132, 16133, 16134, 16135, 16136, 16137, 16138, 16139, 16140, 16141, 16142, 16143, 16144, 16145, 16146, 16147, 16148, 16149, 16150, 16151, 16152, 16153, 16154, 16155, 16156, 16157, 16158, 16159, 16160, 16161, 16162, 16163, 16164, 16165, 16166, 16167, 16168, 16169, 16170, 16171, 16172, 16173, 16174, 16175, 16176, 16177, 16178, 16179, 16180, 16181, 16182, 16183, 16184, 16185, 16186, 16187, 16188, 16189, 16190, 16191, 16192, 16193, 16194, 16195, 16196, 16197, 16198, 16199, 16200, 16201, 16202, 16203, 16204, 16205, 16206, 16207, 16208, 16209, 16210, 16211, 16212, 16213, 16214, 16215, 16216, 16217, 16218, 16219, 16220, 16221, 16222, 16223, 16224, 16225, 16226, 16227, 16228, 16229, 16230, 16231, 16232, 16233, 16234, 16235, 16236, 16237, 16238, 16239, 16240, 16241, 16242, 16243, 16244, 16245, 16246, 16247, 16248, 16249, 16250, 16251, 16252, 16253, 16254, 16255, 16256, 16257, 16258, 16259, 16260, 16261, 16262, 16263, 16264, 16265, 16266, 16267, 16268, 16269, 16270, 16271, 16272, 16273, 16274, 16275, 16276, 16277, 16278, 16279, 16280, 16281, 16282, 16283, 16284, 16285, 16286, 16287, 16288, 16289, 16290, 16291, 16292, 16293, 16294, 16295, 16296, 16297, 16298, 16299, 16300, 16301, 16302, 16303, 16304, 16305, 16306, 16307, 16308, 16309, 16310, 16311, 16312, 16313, 16314, 16315, 16316, 16317, 16318, 16319, 16320, 16321, 16322, 16323, 16324, 16325, 16326, 16327, 16328, 16329, 16330, 16331, 16332, 16333, 16334, 16335, 16336, 16337, 16338, 16339, 16340, 16341, 16342, 16343, 16344, 16345, 16346, 16347, 16348, 16349, 16350, 16351, 16352, 16353, 16354, 16355, 16356, 16357, 16358, 16359, 16360, 16361, 16362, 16363, 16364, 16365, 16366, 16367, 16368, 16369, 16370, 16371, 16372, 16373, 16374, 16375, 16376, 16377, 16378, 16379, 16380, 16381, 16382, 16383, 16384, 16385, 16386, 16387, 16388, 16389, 16390, 16391, 16392, 16393, 16394, 16395, 16396, 16397, 16398, 16399, 16400, 16401, 16402, 16403, 16404, 16405, 16406, 16407, 16408, 16409, 16410, 16411, 16412, 16413, 16414, 16415, 16416, 16417, 16418, 16419, 16420, 16421, 16422, 16423, 16424, 16425, 16426, 16427, 16428, 16429, 16430, 16431, 16432, 16433, 16434, 16435, 16436, 16437, 16438, 16439, 16440, 16441, 16442, 16443, 16444, 16445, 16446, 16447, 16448, 16449, 16450, 16451, 16452, 16453, 16454, 16455, 16456, 16457, 16458, 16459, 16460, 16461, 16462, 16463, 16464, 16465, 16466, 16467, 16468, 16469, 16470, 16471, 16472, 16473, 16474, 16475, 16476, 16477, 16478, 16479, 16480, 16481, 16482, 16483, 16484, 16485, 16486, 16487, 16488, 16489, 16490, 16491, 16492, 16493, 16494, 16495, 16496, 16497, 16498, 16499, 16500, 16501, 16502, 16503, 16504, 16505, 16506, 16507, 16508, 16509, 16510, 16511, 16512, 16513, 16514, 16515, 16516, 16517, 16518, 16519, 16520, 16521, 16522, 16523, 16524, 16525, 16526, 16527, 16528, 16529, 16530, 16531, 16532, 16533, 16534, 16535, 16536, 16537, 16538, 16539, 16540, 16541, 16542, 16543, 16544, 16545, 16546, 16547, 16548, 16549, 16550, 16551, 16552, 16553, 16554, 16555, 16556, 16557, 16558, 16559, 16560, 16561, 16562, 16563, 16564, 16565, 16566, 16567, 16568, 16569, 16570, 16571, 16572, 16573, 16574, 16575, 16576, 16577, 16578, 16579, 16580, 16581, 16582, 16583, 16584, 16585, 16586, 16587, 16588, 16589, 16590, 16591, 16592, 16593, 16594, 16595, 16596, 16597, 16598, 16599, 16600, 16601, 16602, 16603, 16604, 16605, 16606, 16607, 16608, 16609, 16610, 16611, 16612, 16613, 16614, 16615, 16616, 16617, 16618, 16619, 16620, 16621, 16622, 16623, 16624, 16625, 16626, 16627, 16628, 16629, 16630, 16631, 16632, 16633, 16634, 16635, 16636, 16637, 16638, 16639, 16640, 16641, 16642, 16643, 16644, 16645, 16646, 16647, 16648, 16649, 16650, 16651, 16652, 16653, 16654, 16655, 16656, 16657, 16658, 16659, 16660, 16661, 16662, 16663, 16664, 16665, 16666, 16667, 16668, 16669, 16670, 16671, 16672, 16673, 16674, 16675, 16676, 16677, 16678, 16679, 16680, 16681, 16682, 16683, 16684, 16685, 16686, 16687, 16688, 16689, 16690, 16691, 16692, 16693, 16694, 16695, 16696, 16697, 16698, 16699, 16700, 16701, 16702, 16703, 16704, 16705, 16706, 16707, 16708, 16709, 16710, 16711, 16712, 16713, 16714, 16715, 16716, 16717, 16718, 16719, 16720, 16721, 16722, 16723, 16724, 16725, 16726, 16727, 16728, 16729, 16730, 16731, 16732, 16733, 16734, 16735, 16736, 16737, 16738, 16739, 16740, 16741, 16742, 16743, 16744, 16745, 16746, 16747, 16748, 16749, 16750, 16751, 16752, 16753, 16754, 16755, 16756, 16757, 16758, 16759, 16760, 16761, 16762, 16763, 16764, 16765, 16766, 16767, 16768, 16769, 16770, 16771, 16772, 16773, 16774, 16775, 16776, 16777, 16778, 16779, 16780, 16781, 16782, 16783, 16784, 16785, 16786, 16787, 16788, 16789, 16790, 16791, 16792, 16793, 16794, 16795, 16796, 16797, 16798, 16799, 16800, 16801, 16802, 16803, 16804, 16805, 16806, 16807, 16808, 16809, 16810, 16811, 16812, 16813, 16814, 16815, 16816, 16817, 16818, 16819, 16820, 16821, 16822, 16823, 16824, 16825, 16826, 16827, 16828, 16829, 16830, 16831, 16832, 16833, 16834, 16835, 16836, 16837, 16838, 16839, 16840, 16841, 16842, 16843, 16844, 16845, 16846, 16847, 16848, 16849, 16850, 16851, 16852, 16853, 16854, 16855, 16856, 16857, 16858, 16859, 16860, 16861, 16862, 16863, 16864, 16865, 16866, 16867, 16868, 16869, 16870, 16871, 16872, 16873, 16874, 16875, 16876, 16877, 16878, 16879, 16880, 16881, 16882, 16883, 16884, 16885, 16886, 16887, 16888, 16889, 16890);"
+}

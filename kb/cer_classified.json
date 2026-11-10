@@ -11055,6 +11055,26 @@
    "hints": "3d14c45e4e",
    "asked": "2026-10-31"
   },
+  "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+   "raw_title": "Credit By Exam- CFPL ABT 130 Intro to Food Safety",
+   "unified_title": "Introduction to Food Safety",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 5g"
+   ],
+   "_notes": "Mended the cx hint: dropped the mechanism phrase, the CFPL program tag and the ABT 130 course code, and expanded 'Intro' to 'Introduction' per Rule 5g. No CCN or C-ID title was confirmed for Hartnell ABT 130, so the title is the college's own course title.",
+   "rules": "d20f2caab9db",
+   "hints": "5d81a49e3b",
+   "asked": "2026-11-10"
+  },
   "Credit by Exam": {
    "raw_title": "Credit by Exam",
    "unified_title": "Generic Credit by Exam — College of the Canyons",
@@ -11347,6 +11367,23 @@
    "rules": "575c290d755b",
    "hints": "f902383ed3",
    "asked": "2026-10-21"
+  },
+  "Credit by Exam-- CFPL ABT 132": {
+   "raw_title": "Credit by Exam-- CFPL ABT 132",
+   "unified_title": "Agricultural Business and Technology (ABT 132)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The title is code only, and the Hartnell ABT 132 course title could not be resolved from the text. The fallback is Discipline (code), reading ABT as Agricultural Business and Technology, which is assumed. A curator should look up Hartnell's COCI title. The hint's 'CFPL ABT 132' kept a course code, so it was set aside.",
+   "rules": "d20f2caab9db",
+   "hints": "c2a5f9252f",
+   "asked": "2026-11-10"
   },
   "Credit by Exam: Introduction to Criminal Justice": {
    "raw_title": "Credit by Exam: Introduction to Criminal Justice",
@@ -18591,6 +18628,23 @@
    "rules": "e9d6bb7f8641",
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
+  },
+  "JOURN 062 Survey of Mass Media": {
+   "raw_title": "JOURN 062 Survey of Mass Media",
+   "unified_title": "Survey of Mass Media",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Accepted the hint: the course code was stripped and Laney's own course title kept. It is unverified whether JOURN 062 carries the C-ID JOUR 100 (Introduction to Mass Communication) or a CCN, which would outrank the local title on re-key.",
+   "rules": "d20f2caab9db",
+   "hints": "be57a7ab3e",
+   "asked": "2026-11-10"
   },
   "Juvenile Corrections Training": {
    "raw_title": "Juvenile Corrections Training",
