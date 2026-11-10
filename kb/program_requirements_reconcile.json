@@ -778,6 +778,7 @@
     },
     {
      "kind": "semester_sum",
+     "field": "total_units",
      "block_pattern": "^(FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH)\\s+SEMESTER$"
     }
    ]
