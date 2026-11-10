@@ -1,0 +1,372 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Computer Information Systems",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 90,
+  "before": {
+    "ITIS M1003": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1005": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1018": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1023": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1041": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1042": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1043": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1047": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1048": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1050": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1051": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1052": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1054": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1055": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1056": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1079": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1091": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1094": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1095": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1107": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1128": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1137": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1141": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1149": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1152": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1154": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1170": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1177": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1178": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1181": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1184": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1188": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1190": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1191": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1193": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1195": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1197": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1198": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1200": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1204": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1208": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1216": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1218": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1226": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1235": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1237": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1245": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1253": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1254": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1258": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1261": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1284": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1285": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1286": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1287": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1288": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1296": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1347": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1348": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1352": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1353": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1365": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1366": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1367": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1368": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1369": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1376": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1388": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1389": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1395": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1397": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1398": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1407": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1415": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1419": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1421": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1423": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1452": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1453": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1462": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1464": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1467": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1469": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1473": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1483": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "ITIS M1487": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

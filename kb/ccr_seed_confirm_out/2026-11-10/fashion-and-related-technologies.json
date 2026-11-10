@@ -1,0 +1,220 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Fashion and Related Technologies",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 52,
+  "before": {
+    "FASH M1001": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1005": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1007": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1016": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1019": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1022": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1023": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1028": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1037": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1038": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1041": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1044": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1046": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1048": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1050": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1051": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1052": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1053": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1054": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1055": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1058": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1060": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1061": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1062": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1063": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1065": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1066": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1067": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1069": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1071": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1073": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1076": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1079": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1081": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1082": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1088": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1089": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1091": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1093": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1095": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1097": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1098": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M1099": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M9001": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "FASH M9002": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

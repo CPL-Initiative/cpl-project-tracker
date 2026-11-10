@@ -1,0 +1,68 @@
+{
+ "what": "Open Asks Sheet 180 card 6 (Sam, 2026-11-10 19:37Z: two): Proctored Testing Center names a setting, so 10-Key Data Entry's issuer is looked up and saved. Its two exhibits are Modesto Junior College's own course BIT 375 by credit by exam (MAPCXS-O3(C2-1-001, MAPICI-B3OT-1-001, both Local), so the college is the issuer, written as the reference writes it: California Community Colleges (Sam's own additional-issuer row of 2026-11-01 already named it).",
+ "table": "kb_curation",
+ "key": {
+  "course_id": "_CREDENTIAL_REVIEW::10-Key Data Entry",
+  "field": "issuing_agency_override"
+ },
+ "before": {
+  "value": "Proctored Testing Center",
+  "reviewer_email": "session105-skyclose@bot",
+  "reviewed_at": "2026-07-08 01:01:42.874139+00"
+ },
+ "after": {
+  "value": "California Community Colleges",
+  "reviewer_email": "exhibit-reanalysis-s634@bot",
+  "reviewed_at": "2026-11-10 20:11:23.028147+00"
+ },
+ "guard": "update only where value = 'Proctored Testing Center' and reviewer_email = 'session105-skyclose@bot'",
+ "rollback": "update kb_curation set value = 'Proctored Testing Center', reviewer_email = 'session105-skyclose@bot', reviewed_at = '2026-07-08 01:01:42.874139+00' where course_id = '_CREDENTIAL_REVIEW::10-Key Data Entry' and field = 'issuing_agency_override' and reviewer_email = 'exhibit-reanalysis-s634@bot';",
+ "credentials_json": {
+  "file": "kb/credentials.json",
+  "key": "10-Key Data Entry",
+  "before": [
+   {
+    "issuing_agency": "Proctored Testing Center",
+    "training_agency": null,
+    "confidence_issuer": 1.0,
+    "confidence_trainer": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": "2026-07-08T01:01:42.874139+00:00",
+    "reviewed_by": "session105-skyclose@bot",
+    "_notes": "Local course CBE."
+   },
+   {
+    "issuing_agency": "California Community Colleges",
+    "training_agency": null,
+    "confidence_issuer": 1.0,
+    "confidence_trainer": 0.9,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER issuing-agency override)",
+    "reviewed_at": "2026-11-01T22:23:44.75276+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "_notes": "Additional issuing agency from a Curate-panel override \u2014 same credential, multiple certifying bodies (Rule 4)."
+   }
+  ],
+  "after": [
+   {
+    "issuing_agency": "California Community Colleges",
+    "training_agency": null,
+    "confidence_issuer": 1.0,
+    "confidence_trainer": 0.9,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER issuing-agency override)",
+    "reviewed_at": "2026-11-01T22:23:44.75276+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "_notes": "Local course CBE: Modesto Junior College's BIT 375 by credit by exam; the college is the issuer. Proctored Testing Center named the setting and left on Sam's ruling (Open Asks Sheet 180 card 6, 2026-11-10); S634."
+   }
+  ],
+  "rollback": "restore the before list under the key"
+ },
+ "not_changed": {
+  "Clinical Counseling Laws and Ethics": "Sam's row of 2026-11-01 stands (Graduate Level Institution of Higher Education)",
+  "Clinical Psychology Doctorate": "Sam's row of 2026-11-01 stands",
+  "why": "Both are Los Angeles Pierce College exhibits for a doctoral degree (Clinical Psychology Ph.D., MAP 63381; Clinical Psychology Psy.D., MAP 64857). A doctorate's issuer is the university that confers it, and MAP's titles name none, so no issuing body can be saved from the data on hand."
+ },
+ "session": "S634 SkyBackward"
+}

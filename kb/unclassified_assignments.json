@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-10T06:24:11Z",
-  "count": 2407,
+  "_synced_at": "2026-11-10T20:24:05Z",
+  "count": 2421,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3122,6 +3122,12 @@
       "unified_title": "Elementary American Sign Language 2",
       "supersedes": "American Sign Language 2"
     },
+    "ASL 53 American Sign Language IV": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "American Sign Language IV"
+    },
     "ASNT Level 1 Thermal (Infrared) Thermography Certification": {
       "issuing_agency": "American Society for Nondestructive Testing (ASNT)",
       "reviewed_by": "slee@cccco.edu",
@@ -6162,6 +6168,24 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-09T23:38:17.801762+00:00",
       "unified_title": "Basic Residential Construction"
+    },
+    "COSM 211  Manicuring and Pedicuring I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Manicuring and Pedicuring I"
+    },
+    "COSM 215 Facials I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Facials I"
+    },
+    "COSM 223 Hairstyling Services/Haircutting II": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Hairstyling Services/Haircutting II"
     },
     "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER": {
       "unified_title": "C++ Certified Associate Programmer (CPA)",
@@ -9431,6 +9455,42 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "GIS Professional (GISP) Certification"
     },
+    "GRART 112 Creative Process and Solutions": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Creative Process and Solutions"
+    },
+    "GRART 113 Typography": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Typography"
+    },
+    "GRART 114 Graphic Design Technology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Graphic Design Technology"
+    },
+    "GRART 115 Website Design": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Website Design"
+    },
+    "GRART 121 Applied Graphic Design 1": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Applied Graphic Design 1"
+    },
+    "GRART 150 Graphics in Motion: Introduction to Animation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Graphics in Motion Introduction to Animation"
+    },
     "GRART 32 Digital Documents (Adobe InDesign)": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -9448,6 +9508,18 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-11-04T15:49:39.490819+00:00",
       "unified_title": "Photoshop Advanced"
+    },
+    "GRART 42  Web Graphics": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Web Graphics"
+    },
+    "GRART 43 Web Graphics and Animation": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Web Graphics and Animation"
     },
     "Game Design HS-CNUSD": {
       "issuing_agency": "Corona-Norco Unified School District",
@@ -11352,6 +11424,18 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T16:37:03.659044+00:00",
       "unified_title": "Property Management"
+    },
+    "JOURN 021  Newswriting": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Introduction to Reporting and Newswriting"
+    },
+    "JOURN 069 Multimedia Reporting for Journalists": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+      "unified_title": "Multimedia Reporting for Journalists"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",

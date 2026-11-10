@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-10T15:51:47Z",
+ "written_at": "2026-11-10T20:29:15Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13658,
+     "n": 13675,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3285,
+     "n": 3268,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-09T11:39:21Z",
+    "at": "2026-11-10T12:36:57Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13658,
-    "failing": 3285,
+    "complete": 13675,
+    "failing": 3268,
     "unread": 3339,
     "records": 18567,
     "colleges": 114,
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2557,
-     "of": 5593,
-     "words": "titles carry a review stamp (1,226 a person's, 1,331 a cohort's); 2,729 credentials, 2,270 of 3,038 records stamped",
+     "n": 2571,
+     "of": 5607,
+     "words": "titles carry a review stamp (1,226 a person's, 1,345 a cohort's); 2,742 credentials, 2,283 of 3,051 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1226,
-     "of": 5593,
+     "of": 5607,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -150,22 +150,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-10T15:51:40Z",
+    "at": "2026-11-10T20:24:05Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5593,
-    "stamped": 2557,
+    "titles": 5607,
+    "stamped": 2571,
     "person": 1226,
-    "cohort": 1331,
-    "credentials": 2729,
+    "cohort": 1345,
+    "credentials": 2742,
     "confirmed": 1226,
-    "records": 3038,
-    "records_stamped": 2270,
+    "records": 3051,
+    "records_stamped": 2283,
     "saved_at": "2026-11-10T15:51:40Z",
-    "fold_at": "2026-11-10T06:24:11Z",
-    "map_titles": 4990,
-    "unclassified": 20,
+    "fold_at": "2026-11-10T20:24:05Z",
+    "map_titles": 5090,
+    "unclassified": 106,
     "left_map": 623,
     "below_80": 1123,
     "below_60": 237
@@ -201,15 +201,15 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 4503,
+     "n": 5026,
      "of": 27581,
-     "words": "cards the auditor scores 0.85 or better; 15,784 at needs review, 7,289 at needs repair, 5 not ready",
+     "words": "cards the auditor scores 0.85 or better; 15,288 at needs review, 7,262 at needs repair, 5 not ready",
      "open": "#coci-lookup/courses"
     },
     {
      "n": 968,
      "of": 27581,
-     "words": "confirmed by a person, 208 of them ready",
+     "words": "confirmed by a person, 219 of them ready",
      "open": "#coci-lookup/courses",
      "error": null
     }
@@ -220,7 +220,7 @@
    ],
    "issues": [
     {
-     "n": 13134,
+     "n": 12540,
      "words": "cards carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
@@ -265,23 +265,23 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-10T06:26:25+00:00",
+    "at": "2026-11-10T20:26:24+00:00",
     "every_hours": 24
    },
    "facts": {
     "total": 27581,
-    "ready": 4503,
-    "needs_review": 15784,
-    "needs_repair": 7289,
+    "ready": 5026,
+    "needs_review": 15288,
+    "needs_repair": 7262,
     "not_ready": 5,
     "cap": 0.79,
     "confirmed": 968,
-    "confirmed_ready": 208,
+    "confirmed_ready": 219,
     "tags": {
      "blank_description": 5750,
      "discipline_title_mismatch": 1116,
      "blank_discipline": 89,
-     "seed_untouched_discipline": 13134,
+     "seed_untouched_discipline": 12540,
      "top_discipline_disagreement": 1159,
      "unit_anomaly": 4179
     }
@@ -477,7 +477,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-10T06:24:09Z",
+    "at": "2026-11-10T20:24:03Z",
     "every_hours": 24
    },
    "facts": {
@@ -628,7 +628,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 13134,
+      "n": 12540,
       "words": "cards carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
       "open": "#coci-lookup/list/seedless"
@@ -719,7 +719,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3285,
+    "n": 3268,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -762,12 +762,12 @@
     {
      "name": "course-identity",
      "placed": 191,
-     "untouched": 157,
+     "untouched": 171,
      "kept": 0,
      "renamed": 20,
      "moved": 0,
      "by_procedure": 0,
-     "left": 14,
+     "left": 0,
      "looked": 20
     },
     {
@@ -839,12 +839,12 @@
    ],
    "total": {
     "placed": 1216,
-    "untouched": 1075,
+    "untouched": 1089,
     "kept": 23,
     "renamed": 80,
     "moved": 0,
     "by_procedure": 24,
-    "left": 14,
+    "left": 0,
     "looked": 103
    }
   },
@@ -944,6 +944,50 @@
  "docket": [],
  "batches": [
   {
+   "kind": "another-look",
+   "n": 4,
+   "of": 4,
+   "open": "#exhibits/another-look/batch",
+   "title": "Another look at 4 exhibit titles",
+   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+   "stop": "The batch ends when its cards are decided.",
+   "rules": [
+    "language",
+    "numerals"
+   ],
+   "cards": [
+    {
+     "id": "460caa647cd9",
+     "current": "American Sign Language IV",
+     "keys": [
+      "_UNCLASSIFIED::ASL 53 American Sign Language IV"
+     ]
+    },
+    {
+     "id": "0f4e3168f278",
+     "current": "Facials I",
+     "keys": [
+      "_UNCLASSIFIED::COSM 215 Facials I"
+     ]
+    },
+    {
+     "id": "9df782749a76",
+     "current": "Hairstyling Services/Haircutting II",
+     "keys": [
+      "_UNCLASSIFIED::COSM 223 Hairstyling Services/Haircutting II"
+     ]
+    },
+    {
+     "id": "fb1bda479521",
+     "current": "Manicuring and Pedicuring I",
+     "keys": [
+      "_UNCLASSIFIED::COSM 211  Manicuring and Pedicuring I"
+     ]
+    }
+   ],
+   "at": "2026-11-10T20:28:45Z"
+  },
+  {
    "kind": "job",
    "ref": "course",
    "n": 4,
@@ -955,13 +999,47 @@
   }
  ],
  "next_batch": {
-  "kind": "job",
-  "ref": "course",
+  "kind": "another-look",
   "n": 4,
-  "title": "Common Course Reference",
-  "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
-  "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
-  "open": "#coci-lookup/list/doubt",
-  "reason": "unsure"
+  "of": 4,
+  "open": "#exhibits/another-look/batch",
+  "title": "Another look at 4 exhibit titles",
+  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+  "stop": "The batch ends when its cards are decided.",
+  "rules": [
+   "language",
+   "numerals"
+  ],
+  "cards": [
+   {
+    "id": "460caa647cd9",
+    "current": "American Sign Language IV",
+    "keys": [
+     "_UNCLASSIFIED::ASL 53 American Sign Language IV"
+    ]
+   },
+   {
+    "id": "0f4e3168f278",
+    "current": "Facials I",
+    "keys": [
+     "_UNCLASSIFIED::COSM 215 Facials I"
+    ]
+   },
+   {
+    "id": "9df782749a76",
+    "current": "Hairstyling Services/Haircutting II",
+    "keys": [
+     "_UNCLASSIFIED::COSM 223 Hairstyling Services/Haircutting II"
+    ]
+   },
+   {
+    "id": "fb1bda479521",
+    "current": "Manicuring and Pedicuring I",
+    "keys": [
+     "_UNCLASSIFIED::COSM 211  Manicuring and Pedicuring I"
+    ]
+   }
+  ],
+  "at": "2026-11-10T20:28:45Z"
  }
 }
