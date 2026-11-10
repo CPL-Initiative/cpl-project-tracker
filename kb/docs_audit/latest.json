@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1453,
-    "bytes": 14653815,
+    "bytes": 14654182,
     "over_budget": 6,
     "handoff_max": 633,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 538552,
+        "bytes": 538919,
         "over": 4
       },
       "handoff": {
@@ -61,10 +61,10 @@
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26464,
-      "bytes": 4477005017,
-      "heavy_bytes": 3221194959,
-      "heavy_share": 0.719,
+      "files": 26471,
+      "bytes": 4495835706,
+      "heavy_bytes": 3240015520,
+      "heavy_share": 0.721,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -225,13 +225,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24272,
+        "bytes": 24639,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4272,
-        "ratio": 1.21
+        "over_by": 4639,
+        "ratio": 1.23
       },
-      "message": "24,272 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,639 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -239,20 +239,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2042266959,
+        "bytes": 2061086103,
         "kind": "dir"
       },
-      "message": "directory totals 2,042,266,959 B inside the vault"
+      "message": "directory totals 2,061,086,103 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146593042,
+        "bytes": 146594459,
         "kind": "dir"
       },
-      "message": "directory totals 146,593,042 B inside the vault"
+      "message": "directory totals 146,594,459 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
