@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-10T19:40:21Z",
-  "session": 633,
-  "moniker": "SkySilverDollar",
+  "written_at": "2026-11-10T22:42:19Z",
+  "session": 634,
+  "moniker": "SkyBackward",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_634_handoff.md",
+  "handoff": "docs/session_635_handoff.md",
   "next_step": {
-    "title": "Carry out Sam's Sheet 180 rulings",
-    "text": "Las Positas's local degrees take GE units of 28 and 22 summed from the LPC-GE areas, and Alameda's six semester layouts take the sum of their subtotals; each runs reconcile, reread and display. De Anza waits on Sam's hand-filed GE sheets."
+    "title": "The sweep's next college",
+    "text": "Las Positas and Alameda are displayed (pull request 3085 merged; 17,557 of 17,560 rows written, no errors). The sweep takes the next college with missing records. De Anza waits on Sam's two hand-filed GE sheets."
   },
   "calls": [
     {
@@ -248,16 +248,16 @@
   },
   "changes": [
     {
-      "at": "2026-11-10T17:38:00Z",
-      "text": "Las Positas: pull request 3056 merged, its display build applied (17,557 of 17,560 rows written, 0 errors); 145 of 193 records pass."
+      "at": "2026-11-10T20:33:00Z",
+      "text": "College of Alameda: the six semester layouts take the sum of their printed subtotals as the total, on Sam's ruling (Open Asks Sheet 180 card 2); 35 of 59 records pass, up from 29. Pull request 3086 merged."
     },
     {
-      "at": "2026-11-10T17:52:00Z",
-      "text": "De Anza: pull request 3044 merged; the catalog links two separate GE sheets and prints no pattern units, so the ask is a hand-filed copy."
+      "at": "2026-11-10T20:57:00Z",
+      "text": "Las Positas: local degrees take general education units of 28 for an A.A. and 22 for an A.S., summed from the areas the college's page prints, on Sam's ruling (Sheet 180 card 4); 181 of 193 records pass, up from 145. The reread replaced 52 rows with no errors."
     },
     {
-      "at": "2026-11-10T18:30:00Z",
-      "text": "Open Asks Sheet 180 carries the harvest's three asks: Alameda's semester layouts, Las Positas's summed GE units and De Anza's GE sheets."
+      "at": "2026-11-10T22:23:00Z",
+      "text": "Display build 29e68f1d8dd2 is applied for both colleges: 17,557 of 17,560 rows written, no errors; the 3 missing are Monterey Peninsula rows the table no longer holds. Pull request 3085 merged."
     }
   ],
   "headline": [
@@ -462,7 +462,7 @@
     {
       "day": "2026-11-10",
       "active": 20282,
-      "complete": 13664,
+      "complete": 13696,
       "colleges": 114
     }
   ],

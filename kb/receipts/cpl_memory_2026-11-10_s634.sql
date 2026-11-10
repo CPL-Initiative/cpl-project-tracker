@@ -35,3 +35,7 @@ from public.cpl_memory m where m.author = 'SkyBackwardS634'
 select m.slug, length(m.summary) n, count(l.id) filter (where l.action='create') as creates
 from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
 where m.author = 'SkyBackwardS634' group by m.slug, m.summary order by m.slug;
+
+-- Checkpoint, ~22:35Z: two more rows by the same author and the same log insert, written through execute_sql
+-- (count for the author afterward: 7): m-dashboard-signin-ask-an-approver-leads-2026-11-10 (milestone, #3092)
+-- and p-a11y-run-hangs-in-cloud-container (pitfall). Same rollback.

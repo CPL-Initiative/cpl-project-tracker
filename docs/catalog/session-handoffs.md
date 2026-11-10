@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-596 document(s).
+597 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 636 | [Session 636 handoff: Sheet 180's rulings carried out (CCR seed confirm, Las Positas, Alameda, the issuers), the dashboard's sign-in](../session_636_handoff.md) | 2026-11-10 |
 | 635 | [Session 635 handoff: the Library reads any file and drafts a new piece on its card; Pages deploys are timing out](../session_635_handoff.md) | 2026-11-10 |
 | 634 | [Session 634 handoff: Las Positas and De Anza merged, the exhibit re-analysis's Jev runner, Open Asks Sheet 180](../session_634_handoff.md) | 2026-11-10 |
 | 633 | [Session 633 handoff: the Funding Follow-up Dashboard's review opens itself, the panel holds the links, templates a reviewer can change](../session_633_handoff.md) | 2026-11-10 |
