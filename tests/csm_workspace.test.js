@@ -8,8 +8,8 @@
 //   1. ONE READ: the workspace's stages and conditions come from CPL_FUNDING_TAB.csm.snapshot(), the same
 //      eligReqList / baselineGate the funding tab draws, never a second computation.
 //   2. NO PII TO A READER WHO IS NOT SIGNED IN: names and emails ride `req` for a reviewer alone.
-//   3. THE REVIEW GATE (Sam's ask 15): Accept stays shut until the reviewer has seen the review and ticked every
-//      Check this; a requirement that fails keeps Accept shut and leaves Deny open.
+//   3. THE REVIEW GATE (Sam's ask 15): Accept stays shut until the reviewer has ticked every Check this; a
+//      requirement that fails keeps Accept shut. Deny is open from the start (the scroll gate went, Sam 2026-11-10).
 //   4. A DECISION IS THE FUNDING TAB'S DECISION: Accept runs the review lane's acceptOptIn (the same write, the
 //      same email window), so the two surfaces cannot drift.
 //   5. THE TOP FOLDS (Sam's ask 18) and a pick lasts the visit.
@@ -43,9 +43,6 @@ function setup(opts) {
   // The real keeper (cpl_session.js) when a test reads the view's address; a signed-in mock rides on top of it.
   if (opts.keeper) window.eval(fs.readFileSync(path.join(ROOT, "cpl_session.js"), "utf8"));
   if (opts.signedIn) window.CPL_SESSION = Object.assign(window.CPL_SESSION || {}, session());
-  // A browser's observer that has not yet seen the review's foot: jsdom has none, and the module's fallback opens
-  // the gate at once, which is the right behavior where no observer exists but would hide the gate from this test.
-  window.IntersectionObserver = function () { this.observe = function () {}; this.disconnect = function () {}; };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   T._setElig(Object.assign({ coordOk: true, coord: { [COLLEGE]: true, [OTHER]: true },
@@ -116,11 +113,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const items = W._reviewItems(T.csm.snapshot().rows.find((r) => r.key === COLLEGE), "part").items;
   check("3b: the review names the domain (the form's) and the title Other as Check this, with no line about a decline",
     items[0].s === "form" && /mtsac\.edu/.test(items[0].d) && items[1].s === "check" && !items.some((i) => /declin/i.test(i.t + " " + i.d)));
-  check("3c: Accept and Deny stay shut until the reviewer has seen the review", !!accept() && accept().disabled && deny().disabled);
-  W._state.seen[COLLEGE + "|part"] = true;
-  W.paint();
-  check("3d: seen, Deny opens and Accept waits on the checks", !deny().disabled && accept().disabled &&
-    /checks? left before Accept/.test(flat(root.querySelector('[data-gate="part"]'))));
+  check("3c: with no scrolling asked, Deny is open and Accept waits on the checks", !!accept() && accept().disabled && !deny().disabled &&
+    /checks? left before Accept/.test(flat(root.querySelector('[data-gate="part"]'))) && !/Scroll/.test(flat(root)) && !/IntersectionObserver/.test(SRC));
   Array.from(root.querySelectorAll('[data-verdict="part"]')[0].closest(".review").querySelectorAll("input[data-check]")).forEach((b) => {
     b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true }));
   });
@@ -134,7 +128,6 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   const { window, T, W, root } = setup({ signedIn: true });
   window.CPL_FUNDING_NO_REMOTE = true;
-  W._state.seen[COLLEGE + "|part"] = true;
   W.paint();
   Array.from(root.querySelectorAll('.review input[data-check]')).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
@@ -462,7 +455,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("7i: Delete removes the entry", W._log().length === 0);
 
   // a decision writes its own entry
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
   await tick();
@@ -547,7 +540,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   // The real save path: the funding tab's PATCH is refused (an expired session) and the re-read finds no confirmation.
   const { window, T, W, root } = setup({ signedIn: true });
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
   const before = W._log().length, sent = [];
   window.CPL_FUNDING_NO_REMOTE = false;
@@ -566,7 +559,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   // Deny, answered as refused by the funding tab: no entry and no "removed".
   const { window, T, W, root } = setup({ signedIn: true });
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   const before = W._log().length;
   T.csm.act = function () { return Promise.resolve({ ok: false }); };
   window.confirm = () => true;
@@ -582,7 +575,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 {
   // The role the reviewer confirmed rides the acceptance's log entry (Sam, 2026-11-10: "I meant for the reviewer to add").
   const { window, T, W, root } = setup({ signedIn: true });
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   const role = () => root.querySelector('.review input[data-role="part"]');
   check("9h: the senior administrator check, when the form gave Other, carries a field for the role the reviewer confirmed",
     !!role() && /Their role, as you confirmed it/.test(flat(role().closest("label"))) && role().closest(".req").querySelector("input[data-check]"));

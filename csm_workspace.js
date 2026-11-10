@@ -368,7 +368,7 @@
 
   // ── the read ─────────────────────────────────────────────────────────────
   var S = null;                 // the funding tab's snapshot, refreshed on every model change
-  var state = { view: "open", q: "", sel: null, checks: {}, seen: {}, msg: "", draft: {} };
+  var state = { view: "open", q: "", sel: null, checks: {}, msg: "", draft: {} };
   // ── the communications log (csm_log, kb/migrations/2026-11-02_csm_log.sql) ──────────────────────────────────────
   // Notes, calls, emails and meetings per college and activity, each with an optional follow-up date. A signed-in
   // reviewer reads and writes it with their own credential; the trigger stamps who. Read whole (paged by Range, the kb_curation rule),
@@ -657,6 +657,9 @@
   // comply with requirements" and "Probably shouldn't allow an accept deny unless they seen that section") ──────────
   // Each requirement reads Checked by the form, Meets, Check this (with I checked this) or Does not meet, from what
   // the request and the requester context already hold; nothing here is typed by hand.
+  // Accept opens once every Check this is ticked and nothing fails; Deny is open from the start. The review opens by
+  // itself, so its being on screen is the seeing Sam asked for; the scroll gate that also waited for its foot to be
+  // scrolled into view read as dead buttons in the side panel and is gone (Sam's go, 2026-11-10).
   function domainOf(email) { return String(email || "").split("@")[1] || ""; }
   function titleLabel(list, v) { for (var i = 0; i < list.length; i++) if (list[i].val === v) return list[i].label; return v || "not given"; }
   function ownMap(ctx) { return ctx ? ctx.map.filter(function (u) { return u.own; }) : []; }
@@ -710,10 +713,9 @@
     var R = reviewItems(r, kind); if (!R) return null;
     var ch = state.checks[gid(r.key, kind)] || {}, open = 0, fails = 0;
     R.items.forEach(function (it, i) { if (it.s === "check" && !ch[i]) open++; if (it.s === "fails") fails++; });
-    return { R: R, open: open, fails: fails, seen: !!state.seen[gid(r.key, kind)] };
+    return { R: R, open: open, fails: fails };
   }
   function gateWords(g) {
-    if (!g.seen) return "Scroll through the review to open Accept and Deny.";
     if (g.fails) return g.fails + " requirement" + (g.fails === 1 ? " is" : "s are") + " not met. Deny with the reason, or Follow up and hold the request.";
     if (g.open) return g.open + " check" + (g.open === 1 ? "" : "s") + " left before Accept.";
     return "Every requirement is checked. Accept or Deny.";
@@ -744,8 +746,8 @@
             (ch[i] ? " checked" : "") + "> I checked this</label>" : "") + "</span></li>";
       }).join("") + "</ul>" +
       '<div class="verdict" data-verdict="' + kind + '" role="group" aria-label="Decide on the ' + esc(g.R.kind.toLowerCase()) + '">' +
-        '<button type="button" class="word lead" data-act="accept" data-kind="' + kind + '"' + (g.seen && !g.open && !g.fails ? "" : " disabled") + ">Accept</button>" +
-        '<button type="button" class="word danger" data-act="deny" data-kind="' + kind + '"' + (g.seen ? "" : " disabled") + ">Deny</button>" +
+        '<button type="button" class="word lead" data-act="accept" data-kind="' + kind + '"' + (!g.open && !g.fails ? "" : " disabled") + ">Accept</button>" +
+        '<button type="button" class="word danger" data-act="deny" data-kind="' + kind + '">Deny</button>' +
         '<button type="button" class="word" data-act="follow" data-kind="' + kind + '">Follow up</button>' +
         '<p class="gate" data-gate="' + kind + '" role="status">' + esc(gateWords(g)) + "</p>" +
         // Accept says what it does (Sam on the mock, 2026-11-09).
@@ -1629,7 +1631,6 @@
     if (S.reviewer && !ACC.asked) loadAccess();
     if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
     else if (focusSel) { var b = el.querySelector('.row[data-sel="' + cssEsc(focusSel) + '"]'); if (b) b.focus(); }
-    watchReviews();
   }
   function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
   function paintRecord() {
@@ -1638,7 +1639,6 @@
     Array.prototype.forEach.call(root().querySelectorAll(".row[data-sel]"), function (b) {
       if (b.getAttribute("data-sel") === state.sel) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
     });
-    watchReviews();
   }
   function refreshVerdicts() {
     var r = rowOf(state.sel); if (!r) return;
@@ -1646,28 +1646,12 @@
       var g = reviewState(r, kind); if (!g) return;
       var v = root().querySelector('[data-verdict="' + kind + '"]'); if (!v) return;
       var a = v.querySelector('[data-act="accept"]'), d = v.querySelector('[data-act="deny"]'), gt = v.querySelector("[data-gate]");
-      if (a) a.disabled = !(g.seen && !g.open && !g.fails);
-      if (d) d.disabled = !g.seen;
+      if (a) a.disabled = !!(g.open || g.fails);
+      if (d) d.disabled = false;
       if (gt) gt.textContent = gateWords(g);
     });
   }
-  // Accept and Deny open once the reviewer has scrolled the review's foot into view.
-  var obs = null;
-  function watchReviews() {
-    if (obs) { obs.disconnect(); obs = null; }
-    var r = rowOf(state.sel); if (!r) return;
-    var key = r.key, pending = waitingKinds(r).filter(function (k) { return !state.seen[gid(key, k)]; });
-    if (!pending.length) return;
-    if (!("IntersectionObserver" in window)) { pending.forEach(function (k) { state.seen[gid(key, k)] = true; }); refreshVerdicts(); return; }
-    obs = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) {
-        if (!en.isIntersecting || state.sel !== key) return;
-        state.seen[gid(key, en.target.getAttribute("data-verdict"))] = true;
-        refreshVerdicts();
-      });
-    }, { threshold: 1 });
-    pending.forEach(function (k) { var v = root().querySelector('[data-verdict="' + k + '"]'); if (v) obs.observe(v); });
-  }
+
 
   // ── the controls ─────────────────────────────────────────────────────────
   function say(t) { state.msg = t; var s = root() && root().querySelector(".status"); if (s) s.textContent = t; }
