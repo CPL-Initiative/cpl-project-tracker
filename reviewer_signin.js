@@ -210,6 +210,9 @@
       ".cobi-rsi-go{padding:4px 10px;border:1px solid var(--seal-blue,#00356B);border-radius:4px;" +
         "background:var(--seal-blue,#00356B);color:#fff;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;}" +
       ".cobi-rsi-go[disabled]{opacity:.6;cursor:default;}" +
+      ".cobi-rsi-alt{display:block;min-height:24px;margin:.4rem 0 0;padding:0;border:0;background:none;" +
+        "color:inherit;font-size:.75rem;font-family:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}" +
+      // color:inherit on purpose: the box sits on light and dark surfaces, and --seal-blue has no dark value.
       ".cobi-rsi-out{padding:4px 10px;border:1px solid var(--border,#ccc);border-radius:4px;" +
         "background:var(--surface-2,#f5f5f5);font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;}" +
       ".cobi-rsi-who{font-size:.78rem;color:var(--text-body,#3A3A36);margin:0 0 .4rem;word-break:break-all;}" +
@@ -335,11 +338,18 @@
 
     go.addEventListener("click", submit);
     input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); m.draft = input.value; submit(); }
+      if (e.key !== "Enter") return;
+      e.preventDefault(); m.draft = input.value;
+      // At the door the lead action answers Enter; the email link does once it is opened.
+      var lead = m.door && !m.linkOpen && m.el.querySelector("[data-rsi-ask]");
+      if (lead) lead.click(); else submit();
     });
 
+    // The funding door (Sam, 2026-11-10, "yes to all", the clarity mock's decision 1): Ask an approver is the one
+    // lead action, and the email link sits one click away, opened by "Use an email link instead". Every other
+    // mount keeps the email link as its only action.
     row.appendChild(input);
-    row.appendChild(go);
+    if (!m.door || m.linkOpen) row.appendChild(go);
     if (m.door) {
       var ask = document.createElement("button");
       ask.type = "button";
@@ -356,9 +366,22 @@
           say(r.why, "err");
         }).catch(function (e) { ask.disabled = false; say("Could not reach the sign-in service (" + (e && e.message || "network error") + "). Try again.", "err"); });
       });
-      row.appendChild(ask);
+      row.insertBefore(ask, m.linkOpen ? go : null);
     }
     box.appendChild(row);
+    if (m.door && !m.linkOpen) {
+      var alt = document.createElement("button");
+      alt.type = "button";
+      alt.className = "cobi-rsi-alt";
+      alt.setAttribute("data-rsi-uselink", "");
+      alt.textContent = "Use an email link instead";
+      alt.addEventListener("click", function () {
+        m.draft = input.value; m.linkOpen = true; renderMount(m);
+        var again = m.el.querySelector("[data-rsi-email]");
+        if (again) again.focus();
+      });
+      box.appendChild(alt);
+    }
     box.appendChild(out);
     if (m.door && door) {
       var dm = document.createElement("div");
