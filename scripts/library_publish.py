@@ -149,7 +149,8 @@ _RISKS = {
     "a frame, object, embed, form, meta, base, link, style, svg or math element":
         r"<(iframe|frame|object|embed|form|meta|base|link|style|svg|math|template)\b",
     "a srcdoc or style attribute": r"[\s/\"'](srcdoc|style)\s*=",
-    "a CSS url( or @import": r"url\s*\(|@import\b",
+    "a CSS url(, @import, image-set(, src(, @font-face, escape or entity in a style":
+        r"url\s*\(|@import\b|image-set\s*\(|\bsrc\s*\(|@font-face\b|\\|style\s*=\s*\"[^\"]*&",
 }
 
 

@@ -272,6 +272,15 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
     const cssAt = live.indexOf("{", live.indexOf("<style")) + 1, cssOld = live.slice(cssAt, cssAt + 30);
     check("F a layout edit to the page's styles still applies (CSS runs no code)", !ae.applyEdits(live, [{ old: cssOld, new: "--extra:1;" + cssOld }]).error);
     check("F but a style edit that adds a url( or an @import is refused", !!ae.applyEdits(live, [{ old: cssOld, new: "background:url(https://x.example/p.png);" + cssOld }]).error);
+    // COBIx's fourth note: the same host reached without a plain url( or @import.
+    const cssSneak = ["background:\\75rl(//x.example/p.png);", "background-image:image-set(\"//x.example/p.png\" 1x);", "@\\69mport '//x.example/a.css';", "@font-face{font-family:x;src:url(//x.example/f.woff)}"];
+    const sneakPassed = cssSneak.filter((x) => !ae.applyEdits(live, [{ old: cssOld, new: x + cssOld }]).error);
+    const styled = '<p style="color:red">Hi</p>';
+    if (!ae.applyEdits(styled, [{ old: 'color:red', new: 'background:&#117;rl(//x.example/p.png)' }]).error) sneakPassed.push("an entity inside style=");
+    check("F ⭐ a style edit that reaches a host by an escape, image-set(, @font-face or an entity is refused", sneakPassed.length === 0, JSON.stringify(sneakPassed));
+    const pys = JSON.parse(execFileSync("python3", ["-c", "import sys,json;sys.path.insert(0,'scripts');import library_publish as lp;d=json.load(sys.stdin);print(json.dumps([len(lp.added_risks(d['live'],d['live'].replace(d['o'],x+d['o'],1)))>0 for x in d['xs']]))"],
+      { input: JSON.stringify({ live: live, o: cssOld, xs: cssSneak }) }).toString());
+    check("F and library_publish.py refuses the same", pys.every(Boolean), JSON.stringify(pys));
     const pyf = execFileSync("python3", ["-c", "import sys,json;sys.path.insert(0,'scripts');import library_publish as lp;d=json.load(sys.stdin);print(json.dumps([lp.added_risks(d['live'],d['live'].replace(o,n,1)) for o,n in d['ed']]))"],
       { input: JSON.stringify({ live: live, ed: frozenCases.map((c) => [c[1], c[2]]).concat([[cssOld, "--extra:1;" + cssOld], [cssOld, "background:url(https://x.example/p.png);" + cssOld]]) }) }).toString();
     const pf = JSON.parse(pyf);

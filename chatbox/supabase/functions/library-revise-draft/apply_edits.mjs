@@ -73,7 +73,9 @@ export const RISKS = {
   "an event handler": /[\s\/"']on[a-z]+\s*=/gi,
   "a frame, object, embed, form, meta, base, link, style, svg or math element": /<(iframe|frame|object|embed|form|meta|base|link|style|svg|math|template)\b/gi,
   "a srcdoc or style attribute": /[\s\/"'](srcdoc|style)\s*=/gi,
-  "a CSS url( or @import": /url\s*\(|@import\b/gi,
+  // COBIx's fourth note: escapes (\75rl(, @\69mport), image-set(, src(, @font-face and an entity inside style= reach a host
+  // without a plain url( or @import, so each is counted too.
+  "a CSS url(, @import, image-set(, src(, @font-face, escape or entity in a style": /url\s*\(|@import\b|image-set\s*\(|\bsrc\s*\(|@font-face\b|\\|style\s*=\s*"[^"]*&/gi,
 };
 export function riskCounts(html) {
   const s = String(html || ""), out = {};
