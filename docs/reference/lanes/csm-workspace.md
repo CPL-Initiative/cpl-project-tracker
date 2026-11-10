@@ -89,7 +89,9 @@ itpi just added the field in map users. if they attest, we can accept that now a
 - **No decline piece, in the workspace or the funding tab.** No *Mark Declined participation*, no Declined list, pill
   or chip, no decline line in the review, no gray row in Nudge, and nothing reads a mark (S624 took the funding tab's
   `setDeclined`, its chip and the Nudge's declined word; read 2026-11-10: 0 of 5 notes rows carry one).
-  `cpl_funding_notes` keeps `declined_at` and `declined_by`, unread; dropping them is a schema change for Sam's word.
+  `cpl_funding_notes` keeps `declined_at` and `declined_by`, unread; dropping them is a schema change for Sam's word,
+  and that migration rewrites the table's check (`note is not null or declined_at is not null`) as `note is not null`
+  in the same step (COBIx on #3023).
 Guards `tests/csm_workspace.test.js` 3f, 5a, 14a to 14x-g, 15e to 15j.
 
 ✅ **The role the reviewer confirmed is kept with the acceptance (S623, Sam, 2026-11-10: *"I meant for the reviewer to
