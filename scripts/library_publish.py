@@ -69,6 +69,78 @@ def source_behind(record, draft):
     return bool(draft.get("model")) and bool(SCRIPT.search(rb))
 
 
+# The second gate on a new piece's page (COBIx on #3077): the drafter's allowlist (new_page.mjs mainProblems), run
+# again on the stored draft before --write, so a draft altered after the drafter checked it is still refused. Pure.
+ALLOWED_TAGS = {"main", "div", "section", "h1", "h2", "h3", "h4", "p", "ol", "ul", "li", "a", "strong", "em", "span",
+                "br", "b", "i"}
+_TAG = re.compile(r"^<(/?)([a-z][a-z0-9]*)((?:\s[^<>]*)?)>$")
+_ATTR = re.compile(r'\s+([a-zA-Z][a-zA-Z0-9-]*)\s*=\s*"([^"<>]*)"')
+
+
+def _decode(v):
+    import html as _h
+    return re.sub(r"[\x00-\x20\x7f-\x9f]", "", _h.unescape(v))
+
+
+def main_problems(page):
+    """What a new piece's <main> carries outside the allowlist; [] when it is clean. Pure."""
+    m = re.search(r'<main\b[^>]*\bid="main"[^>]*>[\s\S]*</main>', page or "")
+    if not m:
+        return ['no <main id="main">']
+    body, out, stack, i = m.group(0), [], [], 0
+    while i < len(body):
+        lt = body.find("<", i)
+        if ">" in body[i:lt if lt >= 0 else len(body)]:
+            out.append("a stray >"); break
+        if lt < 0:
+            break
+        gt = body.find(">", lt)
+        if gt < 0:
+            out.append("an unclosed tag"); break
+        tag, i = body[lt:gt + 1], gt + 1
+        t = _TAG.match(tag)
+        if not t:
+            out.append("markup that is not a plain tag"); continue
+        close, name, attrs = t.group(1), t.group(2), t.group(3)
+        if name not in ALLOWED_TAGS:
+            out.append("the tag <%s>" % name); continue
+        if close:
+            if stack and stack[-1] == name:
+                stack.pop()
+            else:
+                out.append("tags that do not nest")
+            continue
+        rest = re.sub(r"\s*/?\s*$", "", attrs)
+        pos = 0
+        while pos < len(rest):
+            a = _ATTR.match(rest, pos)
+            if not a:
+                out.append("an attribute that is not name=\"value\""); break
+            pos = a.end()
+            an, av = a.group(1).lower(), a.group(2)
+            if an in ("class", "id"):
+                if not re.match(r"^[A-Za-z0-9 _-]*$", av):
+                    out.append("an odd %s" % an)
+            elif re.match(r"^aria-[a-z]+$", an):
+                pass
+            elif an == "href" and name == "a":
+                if not re.match(r"^(https://|mailto:)", _decode(av), re.I):
+                    out.append("a link that is not https: or mailto:")
+            elif an == "target" and name == "a":
+                if av != "_blank":
+                    out.append("a target other than _blank")
+            elif an == "rel" and name == "a":
+                if not re.match(r"^[a-z ]+$", av):
+                    out.append("an odd rel")
+            else:
+                out.append("the attribute %s" % an)
+        if name != "br" and not attrs.rstrip().endswith("/"):
+            stack.append(name)
+    if stack:
+        out.append("tags left open")
+    return sorted(set(out))
+
+
 def is_new_piece(record):
     g = record.get("regen") if isinstance(record.get("regen"), dict) else {}
     return bool(g.get("new_piece"))
@@ -154,6 +226,11 @@ def write_phase(today):
             skipped.append(f"{r['slug']}: draft {r['regen']['draft_id']} not found")
             continue
         d = d[0]
+        if is_new_piece(r):
+            bad = main_problems(d.get("html") or "")
+            if bad:
+                skipped.append(f"{r['slug']}: draft {d['id']} refused, its page carries " + ", ".join(bad))
+                continue
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(d["html"], encoding="utf-8")
         up = record_update(r, d, today)

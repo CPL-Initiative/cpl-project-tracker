@@ -29,19 +29,69 @@ export function parseNewAnswer(text) {
   };
 }
 
-// What the model's <main> may not carry: an outside script, any script at all, an inline handler, a frame or a form
-// (the page is read-only), or a heading 1 beyond the hero's one.
+// What the model's <main> may carry: an ALLOWLIST (COBIx on #3077, 2026-11-10: a denylist let <svg/onload>,
+// <img/src=x/onerror>, an entity-encoded javascript: link, <meta refresh>, <base> and data: links through). The draft is
+// built from pasted documents and Google files, so a prompt injection in one can steer the model; anything outside the
+// list refuses the draft. The same list runs again in scripts/library_publish.py before a new piece is written.
+export const ALLOWED_TAGS = ["main", "div", "section", "h1", "h2", "h3", "h4", "p", "ol", "ul", "li", "a", "strong", "em", "span", "br", "b", "i"];
+const VOID = { br: true };
+const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", colon: ":", tab: "\t", newline: "\n", sol: "/", lpar: "(", rpar: ")", period: "." };
+export function decodeEntities(v) {
+  return String(v).replace(/&(#x[0-9a-f]+|#[0-9]+|[a-z]+);?/gi, (m, e) => {
+    if (e[0] === "#") { const n = e[1] === "x" || e[1] === "X" ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10); return isFinite(n) ? String.fromCodePoint(n) : ""; }
+    return Object.prototype.hasOwnProperty.call(NAMED, e.toLowerCase()) ? NAMED[e.toLowerCase()] : m;
+  });
+}
+function attrProblems(tag, attrs) {
+  const out = [], re = /\s+([a-zA-Z][a-zA-Z0-9-]*)\s*=\s*"([^"<>]*)"/y;
+  let at = 0, m;
+  const s = String(attrs || "").replace(/\s*\/?\s*$/, "");
+  while (at < s.length) {
+    re.lastIndex = at; m = re.exec(s);
+    if (!m) { out.push("<" + tag + "> with an attribute that is not name=\"value\""); return out; }
+    at = re.lastIndex;
+    const name = m[1].toLowerCase(), val = m[2];
+    const plain = decodeEntities(val).replace(/[\u0000-\u0020\u007f-\u009f]/g, "");
+    if (name === "class" || name === "id") { if (!/^[A-Za-z0-9 _-]*$/.test(val)) out.push("a " + name + " outside letters, digits and dashes"); }
+    else if (/^aria-[a-z]+$/.test(name)) { /* text only; quoted, no markup */ }
+    else if (name === "href" && tag === "a") { if (!/^(https:\/\/|mailto:)/i.test(plain)) out.push("a link that is not https: or mailto:"); }
+    else if (name === "target" && tag === "a") { if (val !== "_blank") out.push("a target other than _blank"); }
+    else if (name === "rel" && tag === "a") { if (!/^[a-z ]+$/.test(val)) out.push("an odd rel"); }
+    else out.push("the attribute " + name + " on <" + tag + ">");
+  }
+  return out;
+}
 export function mainProblems(main) {
   const m = String(main || ""), out = [];
   if (!/^<main\b[^>]*\bid="main"/i.test(m) || !/<\/main>\s*$/i.test(m)) out.push('it is not one <main id="main"> element');
-  if (/<script\b/i.test(m)) out.push("a script");
-  if (/\son[a-z]+\s*=/i.test(m)) out.push("an inline event handler");
-  if (/<(iframe|object|embed|form)\b/i.test(m)) out.push("a frame, an embed or a form");
-  if (/javascript:/i.test(m)) out.push("a javascript: link");
+  if (m.length > MAX_MAIN) out.push("more than " + MAX_MAIN.toLocaleString("en-US") + " characters");
+  const stack = [];
+  let i = 0;
+  while (i < m.length) {
+    const lt = m.indexOf("<", i);
+    const text = m.slice(i, lt < 0 ? m.length : lt);
+    if (text.indexOf(">") >= 0) { out.push("a stray >"); break; }
+    if (lt < 0) break;
+    const gt = m.indexOf(">", lt);
+    if (gt < 0) { out.push("an unclosed tag"); break; }
+    const tag = m.slice(lt, gt + 1);
+    i = gt + 1;
+    const t = /^<(\/?)([a-z][a-z0-9]*)((?:\s[^<>]*)?)>$/.exec(tag);
+    if (!t) { out.push("markup that is not a plain tag (" + tag.slice(0, 40) + ")"); continue; }
+    const name = t[2];
+    if (ALLOWED_TAGS.indexOf(name) < 0) { out.push("the tag <" + name + ">"); continue; }
+    if (t[1]) {
+      if (t[3].trim()) out.push("a closing tag with attributes");
+      if (stack.pop() !== name) out.push("tags that do not nest");
+      continue;
+    }
+    attrProblems(name, t[3]).forEach((p) => out.push(p));
+    if (!VOID[name] && !/\/\s*$/.test(t[3])) stack.push(name);
+  }
+  if (stack.length) out.push("tags left open");
   const h1 = (m.match(/<h1\b/gi) || []).length;
   if (h1 !== 1) out.push(h1 + " level-one headings, not one");
-  if (m.length > MAX_MAIN) out.push("more than " + MAX_MAIN.toLocaleString("en-US") + " characters");
-  return out;
+  return Array.from(new Set(out)).slice(0, 8);
 }
 
 // A Google Docs, Slides or Sheets link, as the address of its plain-text export (Sam, 2026-11-10: "google slides").

@@ -1121,14 +1121,29 @@
   }
   // A draft from the card lives in cpl_library_drafts, behind the team phrase: read it and
   // open it as a page of its own in a new tab.
+  // The draft opens inside a sandboxed frame (COBIx on #3077, 2026-11-10): a blob: URL made here takes on this page's
+  // origin, so script in a draft built from a pasted document could have read the team phrase and the reviewer token
+  // from localStorage. The frame has no allow-same-origin, so its scripts (the theme line, Ask Sierra) run in an opaque
+  // origin that can reach neither this page nor its storage; a <base> points its relative links at its Pages folder.
+  function draftDoc(html, slug) {
+    var base = '<base href="' + esc(PUBLIC_PAGE + (slug || "") + (slug ? "/" : "")) + '" target="_blank">';
+    return /<head[^>]*>/i.test(html) ? html.replace(/<head[^>]*>/i, function (h) { return h + base; }) : base + html;
+  }
   function openDraft(draftId) {
     var w = window.open("", "_blank");
-    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html", { headers: headers() })
+    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html,slug", { headers: headers() })
       .then(function (res) { if (!res.ok) throw new Error("The draft could not be read (" + res.status + ")."); return res.json(); })
       .then(function (rows) {
         if (!rows || !rows[0]) throw new Error("The draft is not there.");
-        var url = URL.createObjectURL(new Blob([rows[0].html], { type: "text/html" }));
-        if (w) w.location = url; else window.open(url, "_blank");
+        if (!w) throw new Error("The browser blocked the new tab. Allow pop-ups for this site, then Open the draft again.");
+        var d = w.document;
+        d.open();
+        d.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Draft</title>' +
+          "<style>html,body{margin:0;height:100%;background:Canvas}iframe{border:0;width:100%;height:100%;display:block}</style></head>" +
+          '<body><iframe sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" title="The draft"></iframe></body></html>');
+        d.close();
+        d.title = "Draft: " + (rows[0].slug || "Library piece");
+        d.querySelector("iframe").srcdoc = draftDoc(rows[0].html, rows[0].slug);
       }).catch(function (e) { if (w) w.close(); say(e.message, true); render(); });
   }
 

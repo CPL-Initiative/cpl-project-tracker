@@ -230,6 +230,20 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
     check("F none of the starter's own words or its brief note survive", !/record 5e29e1d3/.test(h) && !/Chancellor Sonya Christian named these bridges/.test(h));
     check("F ⭐ a main with a script, a handler or two h1s is refused", !!np.buildNewPage(starter, "x-y", { title: "T", main: '<main id="main"><h1>T</h1><script>1</script></main>' }).error &&
       !!np.buildNewPage(starter, "x-y", { title: "T", main: '<main id="main"><h1 onclick="x()">T</h1></main>' }).error && !!np.buildNewPage(starter, "x-y", { title: "T", main: '<main id="main"><h1>T</h1><h1>U</h1></main>' }).error);
+    // COBIx on #3077 (2026-11-10): each of these passed the first, denylist check. The allowlist refuses every one.
+    const bypass = ['<svg/onload=alert(1)>', '<img/src=x/onerror=alert(1)>', '<a href="java&#115;cript:alert(1)">x</a>', '<a href="&#x6A;avascript:x">x</a>',
+      '<a href=" javascript:x">x</a>', '<meta http-equiv="refresh" content="0;url=https://x.example">', '<base href="https://x.example/">',
+      '<a href="data:text/html,x">x</a>', '<style>p{background:url(https://x.example/a)}</style>', '<p onclick="x()">a</p>', '<!-- note -->', '<p style="color:red">a</p>'];
+    const wrap = (x) => '<main id="main"><h1>T</h1>' + x + '</main>';
+    const passed = bypass.filter((x) => np.mainProblems(wrap(x)).length === 0);
+    check("F ⭐ every bypass COBIx found is refused by the allowlist", passed.length === 0, JSON.stringify(passed));
+    check("F a plain page with the starter's classes, a link and an ampersand passes", np.mainProblems(wrap('<div class="cards"><p class="card" aria-label="Step">Log in &amp; open <a href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP</a>.<br></p></div>')).length === 0);
+    const { execFileSync } = require("child_process");
+    const py = execFileSync("python3", ["-c", "import sys,json;sys.path.insert(0,'scripts');import library_publish as lp;print(json.dumps([len(lp.main_problems(x))>0 for x in json.load(sys.stdin)]))"],
+      { input: JSON.stringify(bypass.map(wrap).concat([wrap('<p class="card">ok</p>')])) }).toString();
+    const flags = JSON.parse(py);
+    check("F ⭐ library_publish.py refuses the same pages before it writes a new piece (the second gate), and passes a clean one",
+      flags.slice(0, bypass.length).every(Boolean) && flags[bypass.length] === false, py);
     check("F a Google Docs, Slides or Sheets link reads by its plain-text export, and nothing else is fetched",
       np.googleExport("https://docs.google.com/presentation/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/edit#slide=id.p") === "https://docs.google.com/presentation/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/export/txt" &&
       np.googleExport("https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/edit") === "https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/export?format=txt" &&

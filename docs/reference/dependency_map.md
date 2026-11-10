@@ -1332,6 +1332,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `x` | scripts: `kb/_verify_cos_sync_lanes.py` |
 | `x.example.org` | modules: `a11y.config.js` |
 | `yc.yccd.edu` | tabs: `map-queue`, `map-users` |
+| `|mailto:` | scripts: `scripts/library_publish.py` |
 | `…` | tabs: `cpl-news`, `gr-priorities` · modules: `funding-model/edit_page.js` |
 
 ## Stale-copy risk
@@ -1361,4 +1362,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 833 file
-datasets · 194 external services · 546 consumers · 65 workflows · 40 tabs.
+datasets · 195 external services · 546 consumers · 65 workflows · 40 tabs.
