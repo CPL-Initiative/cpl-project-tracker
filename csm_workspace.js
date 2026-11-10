@@ -267,6 +267,10 @@
       "#tab-csm-workspace .people .ph { color:var(--cw-muted); font-style:italic; }",
       "#tab-csm-workspace .people td:last-child { white-space:nowrap; }",
       "#tab-csm-workspace .ppl-tools { display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center; }",
+      "#tab-csm-workspace .tplform { display:grid; gap:8px; }",
+      "#tab-csm-workspace .tplform textarea { width:100%; box-sizing:border-box; font:inherit; resize:vertical; }",
+      "#tab-csm-workspace .tplpre { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; margin:0; }",
+      "#tab-csm-workspace details.tplprev summary, #tab-csm-workspace details.tplhist summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
       "#tab-csm-workspace .ppl-scroll { max-height:52vh; overflow:auto; border:1px solid var(--cw-line-soft); border-radius:8px; }",
       "@media (max-width: 560px) { #tab-csm-workspace .fields { grid-template-columns:minmax(0, 1fr); } }",
       "#tab-csm-workspace .hc { position:absolute; z-index:50; max-width:min(340px, calc(100vw - 32px)); background:var(--cw-surface); color:var(--cw-ink); border:1px solid var(--cw-line); border-radius:10px; box-shadow:0 12px 32px rgba(8,43,97,.18); padding:12px 14px; font-size:.86rem; line-height:1.45; display:grid; gap:6px; }",
@@ -372,7 +376,7 @@
 
   // ── the read ─────────────────────────────────────────────────────────────
   var S = null;                 // the funding tab's snapshot, refreshed on every model change
-  var state = { view: "open", q: "", sel: null, checks: {}, lpOpen: {}, msg: "", draft: {} };
+  var state = { view: "open", q: "", sel: null, checks: {}, lpOpen: {}, tplId: "lead", tplDraft: {}, msg: "", draft: {} };
   // ── the communications log (csm_log, kb/migrations/2026-11-02_csm_log.sql) ──────────────────────────────────────
   // Notes, calls, emails and meetings per college and activity, each with an optional follow-up date. A signed-in
   // reviewer reads and writes it with their own credential; the trigger stamps who. Read whole (paged by Range, the kb_curation rule),
@@ -1221,6 +1225,133 @@
     { id: "lead", label: "The Noncredit CPL Lead ask (the role in MAP)" },
     { id: "both", label: "Both asks in one email (the confirmation and the Noncredit CPL Lead)" },
     { id: "blank", label: "Blank" }];
+
+  /* ── the email templates a reviewer can change (csm_templates, kb/migrations/2026-11-10_csm_templates.sql) ──
+     Sam, 2026-11-10, reading the two new emails: "can you add a place for me or any reviewer to make changes to the
+     templates for these and later make additional changes if needed?" The four emails this dashboard writes itself
+     keep their wording here, with words in braces that fill in for each college. The newest saved version of a
+     template is what every reviewer's next email starts from; a version with reset puts back the wording below. The
+     two acceptances are the funding tab's own emails (acceptMail) and are changed there. */
+  var TPL_DEFAULT = {
+    follow: { subject: "CPL Implementation Funding: a follow-up for {college}",
+      body: "Dear {name},\n\nThank you for your work on CPL Implementation Funding at {college}. In reviewing the college's record, the CPL Initiative team " +
+        "noticed the following:\n\n{open_items}\n\nWe would welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team" },
+    nudge: { subject: "CPL Implementation Funding: a participation confirmation for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about CPL Implementation Funding for {college}. Our records do not yet show a participation " +
+        "confirmation, one of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nThe CPL Implementation Funding page " +
+        "explains each condition and how to send it: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive this " +
+        "note, a short reply will let us update our records.\n\nThe CPL Initiative team" },
+    // Drafted S624 for Sam's edit (go-live note, decision 4). The facts: the exact MAP title Noncredit CPL Lead meets
+    // the condition (his ruling, 2026-11-10, PR 3031), and an attestation on the funding page is accepted as well.
+    lead: { subject: "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about the noncredit share of CPL Implementation Funding for {college}. MAP does not yet show " +
+        "a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the Noncredit CPL Lead role in MAP, under that exact title. " +
+        "{close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.\n\nThe CPL Implementation Funding page " +
+        "explains the condition: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive this note, a short reply " +
+        "will let us update our records.\n\nThe CPL Initiative team" },
+    both: { subject: "CPL Implementation Funding: two steps for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about CPL Implementation Funding for {college}. Two steps remain.\n\nFirst, our records do " +
+        "not yet show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nSecond, " +
+        "for the noncredit share: MAP does not yet show a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the " +
+        "Noncredit CPL Lead role in MAP, under that exact title. {close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is " +
+        "accepted as well.\n\nThe CPL Implementation Funding page explains each condition and how to send it: {funding_page}\n\nIf either is already on " +
+        "its way, or if someone else at {college} should receive this note, a short reply will let us update our records.\n\nThe CPL Initiative team" }
+  };
+  var TPL_EDITABLE = ["lead", "both", "nudge", "follow"];
+  var TPL_WORDS = [
+    ["name", "the person the email is to"], ["college", "the college's name"],
+    ["deadline", "the sentence naming the confirmation deadline, or nothing when none is set"],
+    ["funding_page", "the public CPL Implementation Funding page"],
+    ["close_title", "a sentence when the landing page lists a title close to Noncredit CPL Lead, or nothing"],
+    ["open_items", "the CO Monitor's note, or the conditions still open (follow-up)"]];
+  var TPLS = { rows: [], loaded: false, error: "", seq: 0, asked: false, busy: false };
+  function tplLabel(id) { for (var i = 0; i < TEMPLATES.length; i++) if (TEMPLATES[i].id === id) return TEMPLATES[i].label; return id; }
+  function tplRows(id) { return TPLS.rows.filter(function (x) { return x.template_id === id; }); }
+  // The wording in force: the newest saved version, unless it is a reset or none was saved.
+  function tplOf(id) {
+    var last = tplRows(id)[0];
+    return last && !last.reset ? { subject: last.subject, body: last.body, row: last } : { subject: TPL_DEFAULT[id].subject, body: TPL_DEFAULT[id].body, row: last || null };
+  }
+  function tplUnknown(text) {
+    var known = {}, bad = [];
+    TPL_WORDS.forEach(function (w) { known[w[0]] = 1; });
+    String(text || "").replace(/\{([^{}\s]{1,40})\}/g, function (m, k) { if (!known[k] && bad.indexOf(m) < 0) bad.push(m); return m; });
+    return bad;
+  }
+  // Fill the braces, then tidy what an empty sentence leaves: a space before a line break, or two spaces together.
+  function tplFill(text, vars) {
+    return String(text || "").replace(/\{([a-z_]{1,40})\}/g, function (m, k) { return Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m; })
+      .replace(/[ \t]+\n/g, "\n").replace(/ {2,}/g, " ").replace(/[ \t]+$/, "");
+  }
+  function tplVars(r, name, missing) {
+    return { name: name, college: r.name, funding_page: PUBLIC_FUNDING_URL,
+      deadline: S && S.deadline ? "The deadline is " + longDay(S.deadline) + "." : "",
+      close_title: r.nc && r.nc.leadNear ? "The college's CPL landing page in MAP lists a close title; the condition asks for the exact one, Noncredit CPL Lead." : "",
+      open_items: r.note || (missing.length ? missing.join("\n") : "Write what the college can do here.") };
+  }
+  function tplRender(id, r, name, missing) {
+    var t = tplOf(id), v = tplVars(r, name, missing);
+    return { subject: tplFill(t.subject, v), body: tplFill(t.body, v) };
+  }
+  function loadTemplates() {
+    var R = rest();
+    if (!R || !S || !S.reviewer) return;
+    TPLS.asked = true;
+    if (!R.remote) { TPLS.loaded = true; return; }
+    fetch(R.url + "csm_templates?select=*&activity=eq." + ACTIVITY + "&order=created_at.desc,id.desc&limit=500", { headers: R.headers })
+      .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return x.json(); })
+      .then(function (rows) { TPLS.rows = rows || []; TPLS.loaded = true; TPLS.error = ""; paint(); })
+      .catch(function (e) { TPLS.loaded = true; TPLS.error = "The saved templates could not be read (" + e.message + "). Emails use the wording the dashboard ships with."; paint(); });
+  }
+  // One saved version. Without a remote (tests, NO_REMOTE) the store changes here.
+  function tplWrite(row) {
+    var R = rest();
+    if (!R) return Promise.resolve(false);
+    var full = Object.assign({ activity: ACTIVITY, subject: null, body: null, reset: false }, row);
+    if (!R.remote) {
+      TPLS.rows.unshift(Object.assign({ id: ++TPLS.seq, by_email: R.who, created_at: new Date().toISOString() }, full));
+      return Promise.resolve(true);
+    }
+    return fetch(R.url + "csm_templates", { method: "POST", headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=minimal" }, R.headers),
+      body: JSON.stringify(full) })
+      .then(function (x) { if (!x.ok) throw new Error(String(x.status)); return true; })
+      .catch(function (e) { TPLS.error = "The template did not save (" + e.message + "). Your words are still in the box."; return false; })
+      .then(function (ok) { if (ok) TPLS.error = ""; return ok; });
+  }
+  function tplWord() {
+    return S && S.reviewer ? '<button type="button" class="word quiet" data-tplopen="1" aria-expanded="' + !!state.tplOpen + '" aria-controls="cw-tpls">Email templates</button>' : "";
+  }
+  function tplHtml() {
+    if (!S || !S.reviewer || !state.tplOpen) return "";
+    var id = TPL_EDITABLE.indexOf(state.tplId) >= 0 ? state.tplId : TPL_EDITABLE[0];
+    var t = tplOf(id), d = (state.tplDraft || {})[id], subj = d ? d.subject : t.subject, body = d ? d.body : t.body;
+    var rows = tplRows(id), r = state.sel ? rowOf(state.sel) : null;
+    var meta = t.row && !t.row.reset ? "Saved by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "."
+      : t.row ? "Put back to the shipped wording by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "." : "The wording the dashboard ships with.";
+    var prev = r ? (function () {
+      var v = tplVars(r, "the person on file", []);
+      return '<details class="tplprev"><summary>Preview for ' + esc(r.name) + "</summary><p class=\"k\">Subject</p><p>" + esc(tplFill(subj, v)) +
+        '</p><p class="k">Message</p><pre class="tplpre">' + esc(tplFill(body, v)) + "</pre></details>";
+    })() : "";
+    return '<section class="sec pane tplpane" id="cw-tpls" aria-labelledby="cw-tpls-h"><div class="sec-h"><h2 id="cw-tpls-h">Email templates</h2>' +
+      '<p class="note">Saved changes reach every reviewer. The next email opened from a template starts from its saved wording; an email already open keeps its words.</p></div>' +
+      '<form class="compose tplform" data-tplform="1" aria-labelledby="cw-tpls-h">' +
+        '<div class="compose-row"><label for="cw-tpls-id">Template <select id="cw-tpls-id" data-tplpick="1">' + TPL_EDITABLE.map(function (k) {
+          return '<option value="' + k + '"' + (k === id ? " selected" : "") + ">" + esc(tplLabel(k)) + "</option>"; }).join("") + "</select></label></div>" +
+        '<p class="tpl-meta">' + esc(meta) + (d ? " You have unsaved changes." : "") + "</p>" +
+        '<label for="cw-tpls-subj">Subject</label><input id="cw-tpls-subj" class="search" name="subject" type="text" maxlength="300" data-tpledit="subject" value="' + esc(subj) + '">' +
+        '<label for="cw-tpls-body">Message</label><textarea id="cw-tpls-body" name="body" rows="16" maxlength="8000" data-tpledit="body">' + esc(body) + "</textarea>" +
+        '<p class="tpl-meta">Words in braces fill in for each college: ' + TPL_WORDS.map(function (w) { return "{" + w[0] + "} " + esc(w[1]); }).join("; ") + ".</p>" +
+        '<p class="links"><button type="submit" class="word lead"' + (TPLS.busy ? " disabled" : "") + ">Save for every reviewer</button>" +
+          (d ? '<button type="button" class="word" data-tpldiscard="1">Discard my changes</button>' : "") +
+          (t.row && !t.row.reset ? '<button type="button" class="word" data-tplreset="1">Put back the shipped wording</button>' : "") + "</p>" +
+        '<p class="status" role="status" aria-live="polite" id="cw-tpls-said">' + esc(TPLS.error || state.tplMsg || "") + "</p></form>" + prev +
+      (rows.length ? '<details class="tplhist"><summary>Earlier versions (' + rows.length + ")</summary><ul class=\"conds\">" + rows.map(function (x) {
+        return '<li class="ncline" style="margin:0">' + esc(shortDate(x.created_at)) + ", " + esc(x.by_email || "a reviewer") + ": " +
+          (x.reset ? "put back the shipped wording" : esc(x.subject)) +
+          (x.reset ? "" : ' <button type="button" class="word" data-tpluse="' + esc(x.id) + '">Load this version</button>') + "</li>";
+      }).join("") + "</ul></details>" : "") + "</section>";
+  }
   function firstOf(c, role) { var p = c.people.filter(function (x) { return x.src === "MAP directory" && x.role === role && x.email; })[0]; return p || null; }
   // Sam's order for the one person a nudge goes to (Nudge's cascade): CPL Coordinator, primary contact, Lead Initiator, VPAA, CEO.
   function primaryOf(c) {
@@ -1265,39 +1396,9 @@
     } else if (tplId === "accept_nc") {
       tplId = "follow";
     }
-    if (tplId === "follow") {
-      subject = "CPL Implementation Funding: a follow-up for " + college;
-      body = "Dear " + name + ",\n\nThank you for your work on CPL Implementation Funding at " + college + ". In reviewing the college's record, " +
-        "the CPL Initiative team noticed the following:\n\n" + (r.note || (missing.length ? missing.join("\n") : "Write what the college can do here.")) +
-        "\n\nWe would welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team";
-    } else if (tplId === "nudge") {
-      subject = "CPL Implementation Funding: a participation confirmation for " + college;
-      body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about CPL Implementation Funding for " + college + ". Our records do not yet " +
-        "show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award." +
-        (S.deadline ? " The deadline is " + longDay(S.deadline) + "." : "") + "\n\nThe CPL Implementation Funding page explains each condition and how to send it: " +
-        PUBLIC_FUNDING_URL + "\n\nIf it is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
-        "\n\nThe CPL Initiative team";
-    } else if (tplId === "lead" || tplId === "both") {
-      // Drafted S624 for Sam's edit (go-live note, decision 4). The facts: the exact MAP title Noncredit CPL Lead meets
-      // the condition (his ruling, 2026-11-10, PR 3031), and an attestation on the funding page is accepted as well.
-      var leadPara = "MAP does not yet show a Noncredit CPL Lead for " + college + ". The condition is met when the college's lead holds the " +
-        "Noncredit CPL Lead role in MAP, under that exact title." +
-        (r.nc && r.nc.leadNear ? " The college's CPL landing page in MAP lists a close title; the condition asks for the exact one, Noncredit CPL Lead." : "") +
-        " A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.";
-      var closing = "\n\nIf either is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
-        "\n\nThe CPL Initiative team";
-      if (tplId === "lead") {
-        subject = "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for " + college;
-        body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about the noncredit share of CPL Implementation Funding for " + college + ". " + leadPara +
-          "\n\nThe CPL Implementation Funding page explains the condition: " + PUBLIC_FUNDING_URL + closing.replace("If either is", "If it is");
-      } else {
-        subject = "CPL Implementation Funding: two steps for " + college;
-        body = "Dear " + name + ",\n\nThe CPL Initiative team is writing about CPL Implementation Funding for " + college + ". Two steps remain." +
-          "\n\nFirst, our records do not yet show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award." +
-          (S.deadline ? " The deadline is " + longDay(S.deadline) + "." : "") +
-          "\n\nSecond, for the noncredit share: " + leadPara +
-          "\n\nThe CPL Implementation Funding page explains each condition and how to send it: " + PUBLIC_FUNDING_URL + closing;
-      }
+    if (TPL_DEFAULT[tplId]) {
+      var made = tplRender(tplId, r, name, missing);
+      subject = made.subject; body = made.body;
     } else {
       body = "Dear " + name + ",\n\n\n\nThe CPL Initiative team";
     }
@@ -1650,16 +1751,17 @@
     if (!f) { el.innerHTML = '<p class="empty">Loading the Funding Follow-up Dashboard&hellip;</p>'; return; }
     S = f.snapshot();
     if (S.reviewer && !LOG.asked) loadLog();
+    if (S.reviewer && !TPLS.asked) loadTemplates();
     if (S.reviewer && CT.state === "idle") loadContacts();
     var dlgHost = document.getElementById("cw-dlg-host");
     if (dlgHost) dlgHost.parentNode.removeChild(dlgHost);
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
-      '<header><div class="top-row"><h1>Funding Follow-up Dashboard</h1><p class="links">' + accessWord() +
+      '<header><div class="top-row"><h1>Funding Follow-up Dashboard</h1><p class="links">' + accessWord() + tplWord() +
         fundWord("head", "Implementation Funding") + "</p></div>" +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
-      (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
+      (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml() + tplHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
       // The list needs no title and the metrics and the menu count every institution, so the Action center heading and
       // the four-column board are gone (go-live note, item 13, on Sam's go).
       '<section class="sec" aria-label="Colleges">' + (S.loaded ? "" : '<p class="note">Loading the requests&hellip;</p>') +
@@ -1774,6 +1876,30 @@
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
     if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
+    if (t.hasAttribute("data-tplopen")) {
+      state.tplOpen = !state.tplOpen; state.tplMsg = ""; paint();
+      var tw = root().querySelector(state.tplOpen ? "#cw-tpls-h" : "[data-tplopen]"); if (tw) { tw.setAttribute("tabindex", "-1"); tw.focus(); }
+      return;
+    }
+    if (t.hasAttribute("data-tpldiscard")) { delete state.tplDraft[state.tplId]; state.tplMsg = "Your changes are discarded."; paint(); return; }
+    if (t.hasAttribute("data-tpluse")) {
+      var vid = t.getAttribute("data-tpluse"), ver = TPLS.rows.filter(function (x) { return String(x.id) === vid; })[0];
+      if (ver) { state.tplDraft[state.tplId] = { subject: ver.subject, body: ver.body }; state.tplMsg = "Loaded the version from " + shortDate(ver.created_at) + ". Save to use it again."; paint(); }
+      var tb = document.getElementById("cw-tpls-body"); if (tb) tb.focus();
+      return;
+    }
+    if (t.hasAttribute("data-tplreset")) {
+      var ok0 = true;
+      try { ok0 = window.confirm("Put back the wording the dashboard ships with for " + tplLabel(state.tplId) + "? Every reviewer's next email uses it. The saved versions stay in Earlier versions."); } catch (e0) { ok0 = true; }
+      if (!ok0) return;
+      TPLS.busy = true; paint();
+      tplWrite({ template_id: state.tplId, reset: true }).then(function (ok) {
+        TPLS.busy = false; delete state.tplDraft[state.tplId];
+        state.tplMsg = ok ? "The shipped wording is back for every reviewer." : "";
+        if (ok && rest() && rest().remote) loadTemplates(); else paint();
+      });
+      return;
+    }
     if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
     if (t.hasAttribute("data-fund")) {
       state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
@@ -1831,6 +1957,7 @@
   }
   function onSubmit(e) {
     var fm = e.target;
+    if (fm.hasAttribute && fm.hasAttribute("data-tplform")) { e.preventDefault(); saveTemplate(fm); return; }
     if (!fm.hasAttribute || !fm.hasAttribute("data-logform")) return;
     e.preventDefault();
     var r = rowOf(state.sel); if (!r) return;
@@ -1849,6 +1976,11 @@
       var k = gid(state.sel, t.getAttribute("data-kind")), m = state.checks[k] || (state.checks[k] = {});
       m[t.getAttribute("data-check")] = t.checked;
       refreshVerdicts();
+      return;
+    }
+    if (t.hasAttribute && t.hasAttribute("data-tplpick")) {
+      state.tplId = t.value; state.tplMsg = ""; paint();
+      var tp = document.getElementById("cw-tpls-id"); if (tp) tp.focus();
       return;
     }
     if (t.hasAttribute && t.hasAttribute("data-psrc")) {
@@ -1882,7 +2014,28 @@
     if (k === "fu") { m.fu = !!t.checked; return; }
     m[k] = t.value;
   }
+  function saveTemplate(fm) {
+    var id = state.tplId, subject = String(fv(fm, "subject").value || "").trim(), body = String(fv(fm, "body").value || "").replace(/\s+$/, "");
+    var said = function (m) { state.tplMsg = m; var x = document.getElementById("cw-tpls-said"); if (x) x.textContent = m; };
+    if (!subject || !body.trim()) { said("A template needs a subject and a message."); return; }
+    var bad = tplUnknown(subject + "\n" + body);
+    if (bad.length) { said("Not saved: " + bad.join(", ") + (bad.length === 1 ? " is not a word" : " are not words") + " the dashboard fills in. Use one of the words listed under the message."); return; }
+    var cur = tplOf(id);
+    if (subject === cur.subject && body === cur.body) { said("Nothing has changed since the last save."); return; }
+    TPLS.busy = true; paint();
+    tplWrite({ template_id: id, subject: subject, body: body }).then(function (ok) {
+      TPLS.busy = false;
+      if (ok) { delete state.tplDraft[id]; state.tplMsg = "Saved. Every reviewer's next " + tplLabel(id).toLowerCase().replace(/^the /, "") + " email starts from this wording."; }
+      if (ok && rest() && rest().remote) loadTemplates(); else paint();
+    });
+  }
   function onInput(e) {
+    if (e.target.hasAttribute && e.target.hasAttribute("data-tpledit")) {
+      var cur = tplOf(state.tplId), dr = state.tplDraft[state.tplId] || { subject: cur.subject, body: cur.body };
+      dr[e.target.getAttribute("data-tpledit")] = e.target.value;
+      state.tplDraft[state.tplId] = dr;
+      return;
+    }
     if (e.target.id === "cw-ccfind") {
       var q = e.target.value.trim().toLowerCase();
       Array.prototype.forEach.call(root().querySelectorAll(".ccopt"), function (o) { o.hidden = !!q && o.getAttribute("data-hay").indexOf(q) < 0; });
@@ -1906,7 +2059,7 @@
 
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
-  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.lpOpen = {}; state.mailEdit = {}; state.fund = false; state.accOpen = false; LOG.asked = false; }
+  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.lpOpen = {}; state.mailEdit = {}; state.fund = false; state.accOpen = false; state.tplOpen = false; state.tplMsg = ""; LOG.asked = false; TPLS.asked = false; }
   /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
      #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
   function arrive() {
@@ -1969,6 +2122,7 @@
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
+    _tpls: TPLS, _tplOf: tplOf, _seedMail: function (key, tpl) { var r = rowOf(key); return r ? seedMail(r, tpl) : null; },
     _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
     _logo: LOGO, _split: function () { return splitPct(); }, _access: ACC, _grant: GRANT, _readGrant: readGrant, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();

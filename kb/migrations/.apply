@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-10_sender_title_text.sql
-name=sender_title_text
+file=kb/migrations/2026-11-10_csm_templates.sql
+name=s626b_csm_templates
