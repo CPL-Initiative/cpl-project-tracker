@@ -6,7 +6,7 @@
   "edge_functions": 14,
   "file_datasets": 830,
   "external_services": 194,
-  "consumers": 544,
+  "consumers": 545,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -7421,6 +7421,13 @@
      "line": 101
     },
     {
+     "id": "script:kb/_exhibit_reanalysis_checks.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 30
+    },
+    {
      "id": "script:kb/_preseed_null_issuers.py",
      "kind": "script",
      "direction": "read",
@@ -13466,6 +13473,13 @@
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:kb/_exhibit_reanalysis_checks.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",

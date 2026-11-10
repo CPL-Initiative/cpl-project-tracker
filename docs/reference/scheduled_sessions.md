@@ -274,7 +274,8 @@ is his standing preference there too.
    good title". Write the findings to `kb/exhibits_reanalysis/<date>.json`, answer each comment in it, put anything
    that needs Sam on the standing sheet, and write the `exhibit_reanalysis_done` row (INSERT-only, cohort
    `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view and the Jev runner job are
-   the next builds; until the runner exists, the code checks run alone and the findings say so.
+   the next builds; until the runner exists, the code checks run alone and the findings say so. The code checks are
+   `kb/_exhibit_reanalysis_checks.py SAVES.json` (the sender's saves as JSON; first run S626, 2026-11-10).
 
 10. **The industry credential harvest** (Sam, 2026-11-01: *"should we add this cert catalog harvest to our Cpl queue
    workload and retire the weekly job. Thinking this should be daily until we get a good catalog established. I don't
