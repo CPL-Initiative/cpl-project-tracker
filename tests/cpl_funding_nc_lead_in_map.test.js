@@ -4,15 +4,18 @@
 //
 // "itpi just added the nc cpl lead role to the map users we pull ... we can start listing that role next to the
 // priority requiring attestation of a nc cpl lead and complete the attestation for them if the nc cpl lead role is
-// in map." His two calls, the same day: the role meets the Noncredit CPL Lead condition ALONE (the strike-team
-// attestation still comes on the form), and the EXACT title only counts, with a near title flagged for a CSM.
+// in map." The EXACT title only counts, with a near title flagged for a CSM. The role stands in for the WHOLE
+// noncredit attestation, the strike-team condition included, with no form (Sam, in session 2026-11-10: "Nc yes
+// exact wor whole", then "Word"; the 2026-11-09 build had the role meet the lead condition alone).
 //
 // Guards the failure modes that matter:
-//   1. The role meets the lead condition with no attestation on file, and nothing else.
+//   1. The role meets the lead condition with no attestation on file, and the strike-team condition where shown.
 //   2. A near title ("CPL Coordinator/Noncredit Lead") meets nothing.
 //   3. A database that predates the column reads as "not in MAP": the condition falls back to the attestation.
 //   4. NO NAME LEAVES THE DATABASE: the function answers booleans; its select list names no person column.
 //   5. The words say where the lead was found, and the workspace record tells a CSM what to do with a near title.
+//   6. A college with the role is offered no form, counts as attested in the filter, and a form it left waiting
+//      shows no chip; a college without the role keeps all three.
 //
 // Run from repo root: `npm test` (or `node --max-old-space-size=12288 tests/cpl_funding_nc_lead_in_map.test.js`).
 const fs = require("fs");
@@ -87,18 +90,63 @@ function make(elig) {
   check("5b: the condition's words say the lead is in MAP", /Noncredit CPL Lead in MAP/.test(laney));
 }
 {
-  // A scenario that also shows the strike-team condition: the role meets the lead condition ALONE.
+  // A scenario that also shows the strike-team condition: the role meets it too (Sam, 2026-11-10).
   const { window } = freshDom();
-  boot(window);
+  const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   T._setShared(Object.assign({ ncTeamHidden: false }, OUTCOMES));
-  T._setElig({ coordOk: true, ncAttestOk: true, ncAttest: {}, ncLead: { Laney: true } });
+  T._setElig({ coordOk: true, ncAttestOk: true, ncAttest: {}, ncLead: { Laney: true }, optin: { Laney: true, Alameda: true } });
   T.render();
-  check("1f: where the strike-team condition shows, the role leaves it unmet and the share held",
-    nc(T, "Laney", "nc_coord").met === true && !!nc(T, "Laney", "nc_team") && nc(T, "Laney", "nc_team").met === false &&
-    T._conditions("Laney").ncBlocked === true);
-  check("1g: and the Nudge still asks that college for the attestation",
-    T._nudgeInstitutions().some((r) => r.key === "Laney" && r.missing.indexOf("nc") >= 0));
+  check("1f: where the strike-team condition shows, the role meets it too and the share is no longer held",
+    nc(T, "Laney", "nc_coord").met === true && !!nc(T, "Laney", "nc_team") && nc(T, "Laney", "nc_team").met === true &&
+    nc(T, "Laney", "nc_team").pending === false && T._conditions("Laney").ncBlocked === false);
+  check("1g: and the Nudge no longer asks that college for the attestation, and still asks one without the role",
+    !T._nudgeInstitutions().some((r) => r.key === "Laney" && r.missing.indexOf("nc") >= 0) &&
+    T._nudgeInstitutions().some((r) => r.key === "Alameda" && r.missing.indexOf("nc") >= 0));
+  check("1h: without the role the strike-team condition still waits on an accepted attestation",
+    nc(T, "Alameda", "nc_team").met === false && T._conditions("Alameda").ncBlocked === true);
+  const r = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((x) => x.textContent.indexOf("Laney") !== -1);
+  r.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
+  const det = doc.querySelector("tr.cplfund-detail");
+  check("5c: the strike-team condition's words say the lead is in MAP, and nothing reads not yet on file",
+    !!det && (det.textContent.match(/Noncredit CPL Lead in MAP/g) || []).length === 2 &&
+    !/Strike-team attestation not yet on file/.test(det.textContent));
+}
+
+// ── 6. no form, the filter, and a form left waiting ───────────────────────────────────────────────────────────
+{
+  const waiting = (college) => ({ college, status: "self_attested", fiscal_year: "2026-27", coordinator_name: "A lead", requested_at: "2026-11-02T04:00:00Z" });
+  const { doc, window } = make({ ncLead: { Laney: true }, ncAttest: { Laney: waiting("Laney"), Merritt: waiting("Merritt") } });
+  const rowOf = (name) => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((x) => x.textContent.indexOf(name) !== -1);
+  const chip = (name) => { const tr = rowOf(name); return !!tr && Array.from(tr.querySelectorAll(".cf-waitchip")).some((x) => x.textContent === "NC Lead attestation submitted"); };
+  check("6a: a form left waiting shows no chip where the role is in MAP, and still shows where it is not",
+    !!rowOf("Laney") && chip("Laney") === false && chip("Merritt") === true);
+}
+{
+  const { doc, window } = make({ ncLead: { Laney: true } });
+  const sel = doc.getElementById("cplFundCondFilter");
+  const names = (val) => {
+    const el = doc.getElementById("cplFundCondFilter");
+    el.value = val; el.dispatchEvent(new window.Event("change", { bubbles: true }));
+    return Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).map((x) => x.textContent);
+  };
+  const has = (rows, name) => rows.some((t) => t.indexOf(name) !== -1);
+  check("6b: fixture: the filter is on the page", !!sel);
+  const yes = names("nc_yes"), no = names("nc_no");
+  check("6c: the filter counts the role as attested, with no attestation on file",
+    has(yes, "Laney") && !has(yes, "Alameda") && !has(no, "Laney") && has(no, "Alameda"));
+  names("");
+  const open = (name) => {
+    const r = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((x) => x.textContent.indexOf(name) !== -1);
+    r.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
+    const again = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((x) => x.textContent.indexOf(name) !== -1);
+    const det = again && again.nextElementSibling;
+    return det && det.classList.contains("cplfund-detail") ? det : null;
+  };
+  const laney = open("Laney");
+  check("6d: a college with the role is offered no attestation form", !!laney && !laney.querySelector("[data-ncattestopen]"));
+  const alameda = open("Alameda");
+  check("6e: a college without it still is", !!alameda && !!alameda.querySelector("[data-ncattestopen]"));
 }
 
 // ── 4. the database answers booleans ──────────────────────────────────────────────────────────────────────────
