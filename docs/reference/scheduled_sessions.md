@@ -271,10 +271,10 @@ is his standing preference there too.
    differs from siblings sharing a title stem, a credential with no CPL type, two credentials now sharing an M-ID.
    **Jev, on a runner, two questions only:** the same credential under two names (the 0.85 gate,
    `kb/_jev_adjudicate.py`), and an issuer that is really a training site. Never units, TOP, discipline or "is this a
-   good title". Write the findings to `kb/exhibits_reanalysis/<date>.json`, answer each comment in it, put anything
+   good title". Write the findings to `kb/exhibits_reanalysis/<date>.json` and copy it to `latest.json` beside it (the List view's panel reads that one; `tests/exhibits_reanalysis_panel.test.js` fails a stale copy), answer each comment in it, put anything
    that needs Sam on the standing sheet, and write the `exhibit_reanalysis_done` row (INSERT-only, cohort
-   `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view and the Jev runner job are
-   the next builds; until the runner exists, the code checks run alone and the findings say so. The code checks are
+   `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view is built (S628); the Jev runner job is
+   the next build; until the runner exists, the code checks run alone and the findings say so. The code checks are
    `kb/_exhibit_reanalysis_checks.py SAVES.json` (the sender's saves as JSON; first run S626, 2026-11-10).
 
 10. **The industry credential harvest** (Sam, 2026-11-01: *"should we add this cert catalog harvest to our Cpl queue

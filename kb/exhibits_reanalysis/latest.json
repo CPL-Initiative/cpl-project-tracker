@@ -1,0 +1,438 @@
+{
+  "request": "_EXHIBIT_REANALYSIS::2026-11-09T12:39:19.127Z-e9mi",
+  "sent_by": "slee@cccco.edu",
+  "sent_at": "2026-11-09T12:39:19.127Z",
+  "run": "S626 SkyUmbrella, the CPL Queue routine, 2026-11-10",
+  "method": "code checks only (kb/_exhibit_reanalysis_checks.py); the Jev runner job is not built yet, so its two questions were not asked",
+  "changes_read": "20 _CREDENTIAL_REVIEW:: saves by the sender since 2026-11-01 (no earlier done row; the request's changed list was empty), all issuer overrides from 2026-11-01 22:23-22:39Z, on 19 credentials",
+  "comments": "",
+  "comments_answer": "The request carried no comments; nothing to answer.",
+  "summary": {
+    "credentials": 19,
+    "rename_collision": 0,
+    "issuer_spellings": 2,
+    "stem_issuer_differs": 2,
+    "no_cpl_type": 17,
+    "no_cpl_type_unarticulated": 17,
+    "shared_mid_same_issuer": 0
+  },
+  "for_sam": [
+    {
+      "credential": "Wildland Fire-Basics",
+      "ask": "The save reads State Fire Training (SFT); 110 credentials carry California State Fire Training (SFT) and this is the only one with the shorter form. Recommendation: the long form, so the issuer filter and its count read one agency.",
+      "held_because": "a correction to his own save (Rule 8: a human row is not silently superseded)"
+    }
+  ],
+  "notes": [
+    "Intro to Addiction Studies: CCAPP is also written as the joint 'CCAPP / CADTP' issuer on other rows; that names two bodies, so it is a different value, not a misspelling. No action.",
+    "GIS Professional Work Experience (Employer Issued) shares a stem with GIS Professional (GISP) Certification (GISCI); they are different credentials. No action.",
+    "Wildland Fire-Basics' siblings mix NWCG and California State Fire Training; NWCG titles carry S-numbers, this one does not, so SFT stands.",
+    "no_cpl_type: 17 of the 17 have no articulation at any college, so no CPL type can attach yet; it is expected and needs no curation."
+  ],
+  "findings": [
+    {
+      "credential": "10-Key Data Entry",
+      "saves": [
+        {
+          "field": "issuing_agency_additional_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [],
+      "issuer_now": [
+        "Proctored Testing Center",
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Clinical Counseling Laws and Ethics",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "Graduate Level Institution of Higher Education"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "Graduate Level Institution of Higher Education"
+      ]
+    },
+    {
+      "credential": "First Receiver Operations & Decontamination for Healthcare",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Specialized Training Institute (CSTI)"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Specialized Training Institute (CSTI)"
+      ]
+    },
+    {
+      "credential": "Digital Photography in Law Enforcement",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Construction Trades Pre-Apprenticeship",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Clinical Psychology Doctorate",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "Graduate Level Institution of Higher Education"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "Graduate Level Institution of Higher Education"
+      ]
+    },
+    {
+      "credential": "Carpentry: General Certificate of Achievement",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "Johnson Controls Training Institute"
+        },
+        {
+          "field": "issuing_agency_additional_override",
+          "value": "Schneider Electric's EcoXpert program | Siemens | Honeywell"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "Johnson Controls Training Institute",
+        "Schneider Electric's EcoXpert program",
+        "Siemens",
+        "Honeywell"
+      ]
+    },
+    {
+      "credential": "Boatworks 101 Yacht Electrical Systems",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "Spaulding Marine Center"
+        }
+      ],
+      "checks": [],
+      "issuer_now": [
+        "Spaulding Marine Center",
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Basic Frame Scaffold",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "AAG Industry Recognized Training",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "Automotive Apprenticeship Group (AAG)"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "Automotive Apprenticeship Group (AAG)"
+      ]
+    },
+    {
+      "credential": "GIS Professional Work Experience",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "Employer Issued"
+        }
+      ],
+      "checks": [
+        {
+          "check": "stem_issuer_differs",
+          "stem": "gis professional",
+          "siblings": [
+            {
+              "credential": "GIS Professional (GISP) Certification",
+              "issuer": [
+                "GIS Certification Institute (GISCI)"
+              ]
+            }
+          ],
+          "n_siblings": 1
+        },
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "Employer Issued"
+      ]
+    },
+    {
+      "credential": "Global Music Appreciation",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Haz Mat Specialist 1F: Specialized Mitigation Techniques",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Specialized Training Institute (CSTI)"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Specialized Training Institute (CSTI)"
+      ]
+    },
+    {
+      "credential": "Introduction to Geographic Information Systems",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": ""
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": []
+    },
+    {
+      "credential": "Intro to Addiction Studies: Addiction and the Community",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Consortium of Addiction Programs and Professionals (CCAPP)"
+        }
+      ],
+      "checks": [
+        {
+          "check": "issuer_spellings",
+          "issuer": "California Consortium of Addiction Programs and Professionals (CCAPP)",
+          "also_spelled": [
+            "California Consortium of Addiction Programs and Professionals (CCAPP) / California Association of DUI Treatment Programs (CADTP)"
+          ]
+        },
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Consortium of Addiction Programs and Professionals (CCAPP)"
+      ]
+    },
+    {
+      "credential": "Specialist Course Module G",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Specialized Training Institute (CSTI)"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Specialized Training Institute (CSTI)"
+      ]
+    },
+    {
+      "credential": "Wall Forming",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "California Community Colleges"
+        }
+      ],
+      "checks": [
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "California Community Colleges"
+      ]
+    },
+    {
+      "credential": "Wildland Fire-Basics",
+      "saves": [
+        {
+          "field": "issuing_agency_override",
+          "value": "State Fire Training (SFT)"
+        }
+      ],
+      "checks": [
+        {
+          "check": "issuer_spellings",
+          "issuer": "State Fire Training (SFT)",
+          "also_spelled": [
+            "California State Fire Training (SFT)"
+          ]
+        },
+        {
+          "check": "stem_issuer_differs",
+          "stem": "wildland fire",
+          "siblings": [
+            {
+              "credential": "Wildland Fire Behavior (S-190)",
+              "issuer": [
+                "National Wildfire Coordinating Group (NWCG)"
+              ]
+            },
+            {
+              "credential": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
+              "issuer": [
+                "California State Fire Training (SFT)"
+              ]
+            },
+            {
+              "credential": "Wildland Fire Chainsaws (S-212)",
+              "issuer": [
+                "National Wildfire Coordinating Group (NWCG)"
+              ]
+            },
+            {
+              "credential": "Wildland Fire Control",
+              "issuer": [
+                "California Community Colleges"
+              ]
+            },
+            {
+              "credential": "Wildland Fire ICS/NWCG Certification Bundle",
+              "issuer": [
+                "National Wildfire Coordinating Group (NWCG) / FEMA"
+              ]
+            },
+            {
+              "credential": "Wildland Fire Investigation, Prevention, and Public Information",
+              "issuer": [
+                "California Community Colleges"
+              ]
+            },
+            {
+              "credential": "Wildland Fire Logistics, Finance, and Planning",
+              "issuer": [
+                "California Community Colleges"
+              ]
+            },
+            {
+              "credential": "Wildland Fire Operations",
+              "issuer": [
+                "California Community Colleges"
+              ]
+            }
+          ],
+          "n_siblings": 10
+        },
+        {
+          "check": "no_cpl_type"
+        }
+      ],
+      "issuer_now": [
+        "State Fire Training (SFT)"
+      ]
+    }
+  ]
+}
