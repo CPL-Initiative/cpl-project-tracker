@@ -28,13 +28,16 @@ Version 3 waiting on Sam's Replace; `iaca-mvpmcjyl`, waiting on Crystal's note) 
 2. **The LPC-GE pattern, first read** (run 42825317081, `kb/college_reads/las_positas_lpc_ge.json`): the
    articulation page's `lpcge.php` prints only a link, *2026-2027 Las Positas College General Education (LPC-GE)*; the
    AA and AS GE pages list archives to 2024-25. The plan now follows that link and ADGE's 2025-26 PDF: **page read
-   42827288689** was running at sign-off.
+   42827288689** finished at 13:47Z: it reached `lpcarticulation/lpc-ge/lpc-ge-2026-2027.php` (12,594 characters) and
+   `assets/docs/LPC-ADGE-2025-2026.pdf`. The ADGE pattern prints units per area (*One course: 3 units*; Area 7
+   Kinesiology 1 unit; Areas 8 Health and 9 American Institutions *Not required for AS degrees*) and, in the part read,
+   no single total. Read the whole job log (job 129867813238) for the 2026-27 LPC-GE page's own figures before any step.
 
 ## Read first
 
 - **Run 42825327646 (display).** Confirm success and that it committed the applied record beside the receipt.
-- **Run 42827288689 (page read).** Its job log prints the LPC-GE pattern's text. If it prints the pattern's total
-  units, add a step to Las Positas's entry in `kb/program_requirements_reconcile.json` with `awards` local, citing the
+- **Run 42827288689 (page read, done).** Its job log prints the LPC-GE pattern's text. If the 2026-27 page prints
+  the pattern's total units (or per-area units that sum without a judgment call, AA and AS apart), add a step to Las Positas's entry in `kb/program_requirements_reconcile.json` with `awards` local, citing the
   page, run `tests/program_requirements_reconcile_test.py`, then reconcile (`step=reconcile`, `extract=0`), reread,
   the display build on the branch (merge `main` first), `step=display`, and merge #3056 on a passing `test`. If the
   pattern prints no total, merge #3056 as it stands and record the local degrees as waiting.
