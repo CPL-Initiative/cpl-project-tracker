@@ -119,6 +119,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_requester_context",
         "cpl_funding_sender_titles",
         "is_allowed_reviewer",
+        "is_funding_reviewer",
         "map_coordinator_summary"
       ],
       "measured": true
@@ -243,6 +244,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_requester_context",
         "cpl_funding_sender_titles",
         "is_allowed_reviewer",
+        "is_funding_reviewer",
         "map_coordinator_summary"
       ],
       "measured": true
@@ -377,6 +379,7 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_requester_context",
         "cpl_funding_sender_titles",
         "is_allowed_reviewer",
+        "is_funding_reviewer",
         "map_coordinator_summary",
         "sierra_feedback_upsert"
       ],

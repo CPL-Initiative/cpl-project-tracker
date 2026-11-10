@@ -53,7 +53,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-10-05 |
 | [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-01 |
 | [Public/private repo split — lane state](../reference/lanes/public-private-repo-split.md) | lanes | `public-private-repo-split.md` | 2026-08-28 | 2026-08-28 |
-| [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-11-09 |
+| [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-11-10 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |
 | [Row-auditor rules (§11 phase 1c) — lane state](../reference/lanes/audit-rules.md) | lanes | `audit-rules.md` | 2026-08-28 | 2026-08-28 |
 | [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-11-07 |

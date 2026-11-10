@@ -1,7 +1,7 @@
 ---
 title: "Reviewer session lifetime & scope — lane state"
 created: 2026-08-28
-updated: 2026-11-09
+updated: 2026-11-10
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -39,8 +39,13 @@ approver*, which sends the door's own request for that address (`CPL_REVIEWER_SI
 shows, the check runs every half minute, so an approval clears it. The door's later words (declined, lapsed, no
 approval yet) reach the note through the `cpl-funding-door-said` event `reviewer_signin.js` sends, and the button stays. A check that fails or does not answer leaves the
 screen as it was. No database change. Guards `tests/csm_workspace.test.js` 13x-a to 13x-g. The earliest real lapse is
-2026-12-09; a revoked grant shows it sooner. **NEXT:** the funding tab's own review controls still draw for such a
-sign-in; give them the same note.
+2026-12-09; a revoked grant shows it sooner. **The funding tab says it too (S624, 2026-11-10).** For a door sign-in (a closed model), `cpl_funding.js` asks
+`rpc/is_funding_reviewer` when the reviewer list answers no, every ten minutes after, and every half minute while the
+note shows; a sign-in on the list is never asked, since the function is true for it by definition. On a no, the bar
+reads *Your funding access has ended* with *Ask an approver* (the door's own request, `_askAccess`), and Accept, Deny,
+the CO Monitor's note, Nudge and every model control leave (`stripEndedAffordances`); what only reads stays. The door's
+later words reach the note, and an approval brings the review back without a reload. Guards
+`tests/cpl_funding_access_ended.test.js` (21).
 
 **A surface that draws a sign-in once must follow the keeper's renewal (SkyBeacon, 2026-11-06, #2857).** Sam: *"we tried
 to fix the lapsed token thing yesterday must not have worked for all surfaces"*. The keeper (`cpl_session.js`) renews a
