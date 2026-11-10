@@ -4,7 +4,7 @@
   "supabase_tables": 110,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 829,
+  "file_datasets": 830,
   "external_services": 194,
   "consumers": 543,
   "workflows": 65,
@@ -1829,7 +1829,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1279,
+     "line": 1306,
      "tabs": [
       "commons"
      ]
@@ -13929,7 +13929,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 782
+     "line": 868
     }
    ],
    "served": false,
@@ -14504,7 +14504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 879
+     "line": 965
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -15184,7 +15184,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 824
+     "line": 910
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -18098,6 +18098,31 @@
      "direction": "read",
      "how": "literal",
      "line": 28
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/status/commons_history.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 715
     }
    ],
    "producers": [
@@ -25777,7 +25802,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1064,
+     "line": 1091,
      "tabs": [
       "commons"
      ]
@@ -27625,7 +27650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 768,
+     "line": 795,
      "tabs": [
       "commons"
      ]
@@ -27635,7 +27660,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 751,
+     "line": 778,
      "tabs": [
       "commons"
      ]
@@ -29117,7 +29142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1042,
+     "line": 1069,
      "tabs": [
       "commons"
      ]
@@ -29842,7 +29867,8 @@
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
-    "kb/status/commons.json"
+    "kb/status/commons.json",
+    "kb/status/commons_history.json"
    ],
    "push": null,
    "deploys": [],
@@ -30332,6 +30358,7 @@
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
+    "kb/status/commons_history.json",
     "kb/ccr_doubt.json",
     "kb/status/program-requirements-checked.json",
     "kb/csr_out/latest.json",
