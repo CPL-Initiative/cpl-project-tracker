@@ -166,3 +166,9 @@ The two paragraphs below left `docs/reference/lanes/csm-workspace.md` verbatim t
 - **The live menu reads *Funding Follow-up Dashboard*.** The served `index.html` carries the label, and `cobi_nav` (54
   rows, read 17:40Z) holds no `csm-workspace` row, so no name stored in the Admin tab masks it. The served
   `csm_workspace.js` carries `tplHtml` and `sideOf`. The NEXT 0 line that asked for this check left the lane.
+- **The funding drawer's Priorities lines (S633).** `csmSnapshot()` now carries `prios`, one line per priority for each
+  college, written by `csmPrioLines()` from the same reads as the college CSV (`priorities()`, `prioTarget()`,
+  `earnFraction()`), in the mock's form (*"Access: …, 41 of a target of 60."*). An unmeasured actual and a count target
+  waiting on its denominator read TBA; a suppressed actual reads *fewer than* the privacy floor. Guard
+  `tests/csm_workspace.test.js` 5f5a to 5f5c. This test needs the runner's heap (`--max-old-space-size=12288`, as
+  `tests/run.js` passes); run bare, it runs out of memory on `main` too.

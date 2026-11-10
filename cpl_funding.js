@@ -6969,6 +6969,27 @@
     return { map: c.map.map(function (u) { return { role: u.role || "", status: u.status || "", own: !u.college || ctxCollegeIs(u.college, key), college: u.college || "" }; }),
       landing: c.landing.map(function (l) { return { title: l.title || "", own: !l.college || ctxCollegeIs(l.college, key), college: l.college || "" }; }) };
   }
+  // The funding drawer's Priorities lines (csm-workspace NEXT 0; the mock's drawer, 2026-11-10: "Access: applied CPL
+  // units in MAP, 41 of a target of 60."). One line per priority for one college, from the same reads as the
+  // college CSV (prioCsvCells): priorities(), prioTarget() and earnFraction(). An actual the feed has not measured
+  // reads TBA, a suppressed one reads below the privacy floor, and a count target that waits on its denominator
+  // reads TBA too: never a zero standing for "not known".
+  function csmPrioLines(c) {
+    var slot = state.viewSlot;
+    return priorities(slot).concat(ncOutcomes(slot)).map(function (p) {
+      var isCount = p.unit === "count", fr = earnFraction(c, p);
+      var fmt = function (v) { return isCount ? fmtInt(v) : fmtFtesSmall(v); };
+      var pend = isCount && countTargetPending(c, p);
+      var tgt = pend ? null : prioTarget(c, p);
+      var act = fr.status === "earned" ? fmt(fr.actual) :
+        fr.status === "none" && earnIsMeasured(fr) ? fmt(0) :
+        fr.status === "suppressed" ? "fewer than " + suppressFloor() : "TBA";
+      var name = String(p.title || p.label || "").trim();
+      return { label: p.label || "", title: name, unit: prioUnitLabel(p),
+        actual: act, target: tgt == null ? "TBA" : fmt(tgt),
+        text: name + ": " + act + " of a target of " + (tgt == null ? "TBA" : fmt(tgt)) + " " + prioUnitLabel(p) + "." };
+    });
+  }
   function csmSnapshot() {
     var reviewer = reviewing() && !publicMode();
     var rows = oneRoster().map(function (c) {
@@ -6989,7 +7010,7 @@
           fy: att ? att.fiscal_year || "" : "", at: att ? (att.requested_at || att.created_at || "") : "",
           confirmedAt: att ? att.confirmed_at || "" : "" } : null,
         landing: k ? httpsUrl(k.url) || "" : "",
-        coordMissing: (ELIG.coordMissing || {})[key] || "", note: "", req: null };
+        coordMissing: (ELIG.coordMissing || {})[key] || "", note: "", req: null, prios: csmPrioLines(c) };
       if (reviewer) {
         out.note = noteFor(key);
         var rev = optinReviewOf(key), nrev = ncOn ? ncAttestReviewOf(key) : null, nr = null;

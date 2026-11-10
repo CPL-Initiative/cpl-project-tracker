@@ -151,7 +151,6 @@ word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptan
      day's approval ask (*"I was confused by the migration approval request and don't want it"*).
    - **The sign-in** with *Ask an approver* as the one lead action and the email link one click away
      (`reviewer_signin.js`; it changes the funding tab's sign-in too). Not built.
-   - **The funding drawer's Priorities lines**: the snapshot does not carry them; `cpl_funding.js` would pass them.
    - **Open with Malone:** Recommended action above or below the conditions; the panel under the record or as a third
      column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
    - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).

@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1454,
-    "bytes": 14665276,
+    "bytes": 14665275,
     "over_budget": 5,
     "handoff_max": 634,
     "always_loaded_files": 1,
@@ -51,20 +51,19 @@
       },
       "handoff": {
         "files": 595,
-        "bytes": 4078841,
+        "bytes": 4078840,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
       "oversized_doc": 5,
-      "american_spelling": 1,
       "vault_heavy_path": 75
     },
     "vault": {
       "files": 26476,
-      "bytes": 4495891822,
-      "heavy_bytes": 3240022988,
+      "bytes": 4495895217,
+      "heavy_bytes": 3240024267,
       "heavy_share": 0.721,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -223,21 +222,6 @@
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "forms": {
-          "cancelled": {
-            "n": 1,
-            "prefer": "canceled"
-          }
-        }
-      },
-      "message": "1 British form — cancelled→canceled",
-      "path": "docs/session_634_handoff.md"
-    },
-    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/receipts",
@@ -352,10 +336,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10714201,
+        "bytes": 10715480,
         "kind": "dir"
       },
-      "message": "directory totals 10,714,201 B inside the vault"
+      "message": "directory totals 10,715,480 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
