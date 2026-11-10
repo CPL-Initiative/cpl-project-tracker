@@ -145,15 +145,10 @@ word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptan
 
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
    20261110_csm_workspace_go_live_checklist.md`):
-   - **Turn on the two new emails once Sam has read them** (`LEAD_MAIL_ON` in `csm_workspace.js`, false today): the
-     Noncredit CPL Lead ask and both asks in one email. Sam was reading them on 2026-11-10 and asked for the template
-     pane, which shipped; their wording is now his to edit there. Off, no lead ask is ever due. NEEDS SAM: his go.
-   - **Who may change a template** (COBIx on #3068, point 1): today `is_funding_reviewer()`, so a door sign-in with a
-     30-day grant may too, on Sam's *"me or any reviewer"*. Narrower is one migration (insert to
-     `is_allowed_reviewer()`). NEEDS SAM: confirm or narrow.
-   - **The `database` environment has no required reviewer** (COBIx on #3068): `supabase-migrate.yml` applies on any
-     `claude/**` push that changes `.apply`, by Sam's 2026-10-13 *"with or without my approvals"*. A required reviewer
-     is his repository setting. NEEDS SAM: keep or add.
+   - **Ruled 2026-11-10 (Sam, *"yes to all"*):** the two new emails are on (`LEAD_MAIL_ON` true; their wording is a
+     template), and a door sign-in with a 30-day grant may change a template (`is_funding_reviewer()` stays).
+     `supabase-migrate.yml` keeps applying at once with no required reviewer on `database`: Sam withdrew the same
+     day's approval ask (*"I was confused by the migration approval request and don't want it"*).
    - **The sign-in** with *Ask an approver* as the one lead action and the email link one click away
      (`reviewer_signin.js`; it changes the funding tab's sign-in too). Not built.
    - **The funding drawer's Priorities lines**: the snapshot does not carry them; `cpl_funding.js` would pass them.

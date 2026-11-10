@@ -41,6 +41,9 @@ templates. Sam drove the whole run.
 - *"can you add a place for me or any reviewer to make changes to the templates for these and later make additional
   changes if needed?"*: the template pane, open to any funding reviewer.
 - *"cobix is your sidekick on this and will add comments"*: read `cobi-cto`'s comments on every PR before merging.
+- *"yes to all"* (16:4xZ): the two lead emails on, door sign-ins may change templates. His yes to a migration approval
+  step he then withdrew: *"I was confused by the migration approval request and don't want it"*. Database changes keep
+  applying with no approval step and no required reviewer on `database`.
 
 ## Read first
 
@@ -59,10 +62,11 @@ Built from the lanes:
    figures). Confirm display run 42825327646 committed its applied record. #3056 (draft) still open. De Anza (#3044)
    waits on the two GE sheets. Alameda's semester layouts are Sheet 178 card 2. Step 11's full read and the UI pass fall
    to the first firing of 2026-11-11 UTC.
-2. **The next Open Asks sheet** needs cards for the three new NEEDS SAM items in `csm-workspace` NEXT 0 (turn on the two
-   lead emails; who may change a template; a required reviewer on the `database` environment), the `cer-procedures`
-   card and De Anza's. Build it on CPLBrain #746's builder (Sheet 178, still an open draft); until then
-   `scripts/check_generated.sh`'s open-asks coverage reads stale. Sam was asked the three in session; read his reply first.
+2. **Sam answered this session's three asks in session (*"yes to all"*, 16:4xZ):** the two lead emails are on
+   (the last PR of this run) and door sign-ins may change templates. **Database changes keep applying as before:**
+   `supabase-migrate.yml` has no approval step and `database` no required reviewer; Sam withdrew his same-day yes (*"I
+   was confused by the migration approval request and don't want it"*). **The next Open Asks sheet** still needs the `cer-procedures` card and De Anza's, built on
+   CPLBrain #746's builder (Sheet 178, an open draft); until then the open-asks coverage check reads stale.
 3. **`csm-workspace` NEXT 0** otherwise: the sign-in with *Ask an approver*, the funding drawer's Priorities lines, the
    side-menu label on the live site, Malone's four questions (he has sent nothing new). NEXT 1 and 2: the hover cards
    and every landing-page role; the denial email.

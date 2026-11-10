@@ -240,8 +240,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5d5: Edit email opens the fields in place of the preview and reads Done editing; the draft's fields were in the page all along",
       pre().hidden && !edit().hidden && flat(word()) === "Done editing" && word().getAttribute("aria-expanded") === "true" &&
       !!edit().querySelector("#cw-to") && !!edit().querySelector("#cw-body") && !!edit().querySelector("#cw-mailfu"));
-    // The two new emails are held until Sam has read them (COBIx on PR 3050).
-    check("5d5a: held: the Template menu offers neither new email, and no college is due one",
+    // The two new emails were held until Sam read them (COBIx on PR 3050); on, on his word of 2026-11-10. Off still holds.
+    check("5d5-on: the two new emails are on by Sam's word", /var LEAD_MAIL_ON = true;/.test(SRC));
+    d.W._leadMail(false); d.W.paint(); clickEl(d.window, word());
+    check("5d5a: switched off, the Template menu offers neither new email, and no college is due one",
       !rec().querySelector('#cw-tpl option[value="lead"]') && !rec().querySelector('#cw-tpl option[value="both"]') &&
       d.W._recTpl({ key: "ZH", name: "ZH", part: { confirmed: false, waiting: false }, nc: { lead: false, standing: false, waiting: false }, conds: [], gate: {} }) === "nudge");
     d.W._leadMail(true); d.W.paint(); clickEl(d.window, word());
