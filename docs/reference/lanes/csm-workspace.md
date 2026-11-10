@@ -93,7 +93,7 @@ Guards `tests/csm_workspace.test.js` 3f, 5a, 14a to 14x-g, 15e to 15j.
 
 ✅ **The role the reviewer confirmed is kept with the acceptance (S623, Sam, 2026-11-10: *"I meant for the reviewer to
 add"*).** When the form gave *Other senior administrator*, the review's check carries *Their role, as you confirmed it*;
-Accept writes it into its `csm_log` entry (*Sender's role, as checked: …*). No database change. Guards 9h to 9j.
+Accept writes it into its `csm_log` entry (*Sender's role, as checked: …*). No database change. Guards 9h to 9k, and a noncredit Accept run in `tests/csm_workspace_nc_accept.test.js` (S624, COBIx on #3014).
 
 ✅ **The queue and the record share a divider (S623, Sam, 2026-11-10: *"can you make the big side by side window on the
 various views resizable horizontally--thinking when sidebars get opens users will want to shift things depending on what
