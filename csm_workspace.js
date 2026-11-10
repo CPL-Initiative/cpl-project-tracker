@@ -156,6 +156,13 @@
       "#tab-csm-workspace .mail-f dd + dt, #tab-csm-workspace .mail-f dd + dt + dd { border-top:1px solid var(--cw-line-soft); padding-top:6px; }",
       "#tab-csm-workspace .tpl-edit { display:grid; gap:8px; }",
       "#tab-csm-workspace .tpl-edit[hidden], #tab-csm-workspace .mail-f[hidden], #tab-csm-workspace .tpl-row[hidden], #tab-csm-workspace .tpl-meta[hidden] { display:none; }",
+      // The side panel (the clarity mock; one people list, issue 2978): People, CPL landing page and History open under the
+      // record, one at a time; the review opens there too. Every part stays in the page, so a draft is never lost to a fold.
+      "#tab-csm-workspace [hidden] { display:none !important; }",
+      "#tab-csm-workspace #cw-record { display:grid; gap:14px; min-width:0; align-content:start; }",
+      "#tab-csm-workspace .side { border-top:4px solid var(--cw-line); padding:16px 20px 18px; display:grid; gap:14px; }",
+      "#tab-csm-workspace .side h4.side-h { margin:0; font-family:var(--cw-serif); font-size:1.1rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .sidepart { display:grid; gap:12px; min-width:0; }",
       "#tab-csm-workspace .ncline { margin:8px 0 0; font-size:.9rem; color:var(--cw-ink-2); }",
       "#tab-csm-workspace .tpl { display:grid; gap:8px; background:var(--cw-page); border:1px solid var(--cw-line); border-radius:8px; padding:12px 14px; }",
       "#tab-csm-workspace .tpl-row { display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; }",
@@ -731,7 +738,9 @@
         '<button type="button" class="word lead" data-act="accept" data-kind="' + kind + '"' + (g.seen && !g.open && !g.fails ? "" : " disabled") + ">Accept</button>" +
         '<button type="button" class="word danger" data-act="deny" data-kind="' + kind + '"' + (g.seen ? "" : " disabled") + ">Deny</button>" +
         '<button type="button" class="word" data-act="follow" data-kind="' + kind + '">Follow up</button>' +
-        '<p class="gate" data-gate="' + kind + '" role="status">' + esc(gateWords(g)) + "</p></div></section>";
+        '<p class="gate" data-gate="' + kind + '" role="status">' + esc(gateWords(g)) + "</p>" +
+        // Accept says what it does (Sam on the mock, 2026-11-09).
+        '<p class="gate" data-does="' + kind + '">Accept marks the ' + esc(g.R.kind.toLowerCase()) + " as met and opens the acceptance email for you to send. Nothing is sent until you send it.</p></div></section>";
   }
 
   // ── painting ─────────────────────────────────────────────────────────────
@@ -836,8 +845,6 @@
     var w = waitingKinds(r), act = [];
     if (S.reviewer && r.part.confirmed && r.req && r.req.part && r.req.part.email) act.push('<button type="button" class="word" data-act="mail" data-kind="part">Email the confirmation acceptance again</button>');
     if (S.reviewer && r.nc && r.nc.standing && r.req && r.req.nc && r.req.nc.attestor_email) act.push('<button type="button" class="word" data-act="mail" data-kind="nc">Email the attestation acceptance again</button>');
-    if (S.reviewer) act.push('<button type="button" class="word" data-pop="contacts">Contacts on file</button>' +
-      '<button type="button" class="word" data-pop="people">Names, titles and emails</button>');
     act.push('<button type="button" class="word" data-act="focus">Open in Implementation Funding</button>');
     if (S.reviewer) Object.keys(SENT).forEach(function (tpl) {
       if (lastSent(r, tpl)) act.push('<button type="button" class="word" data-act="bounced" data-kind="' + tpl + '">It bounced: ' +
@@ -883,14 +890,40 @@
     }
     var note = S.reviewer ? '<div><p class="k">CO Monitor\'s note</p><p class="ncline" style="margin:0">' + (r.note ? esc(r.note) : "No note yet.") +
       ' <button type="button" class="word" data-act="focus">Write it in Implementation Funding</button></p></div>' : "";
+    // One side panel under the record (the clarity mock): People, CPL landing page, History, and the review when one waits.
+    var side = state.side || "", sideWord = function (k, t) {
+      return '<button type="button" class="word" data-side="' + k + '" aria-pressed="' + (side === k) + '" aria-controls="cw-side">' + t + "</button>";
+    };
+    var words = (S.reviewer ? sideWord("people", "People") : "") + sideWord("page", "CPL landing page") + (S.reviewer ? sideWord("log", "History") : "");
+    var part = function (k, title, body) {
+      if (!body) return "";   // a part with nothing in it (History for a reader who is not signed in) draws nothing, heading included
+      return '<div class="sidepart" data-sidepart="' + k + '"' + (side === k ? "" : " hidden") + '><h4 class="side-h" id="cw-side-' + k + '" tabindex="-1">' + title + "</h4>" + body + "</div>";
+    };
+    var c = S.reviewer && CT.state === "ready" ? contactsOf(r) : null;
+    var peopleBody = !S.reviewer ? "" : who + (CT.state === "error" ? '<p class="gate">' + esc(CT.error) + "</p>" : !c ? '<p class="gate">Reading the contacts on file&hellip;</p>' :
+      '<div class="wide" role="region" aria-label="People at ' + esc(r.name) + '" tabindex="0"><table class="facts"><colgroup><col style="width:30%"><col style="width:46%"><col style="width:24%"></colgroup>' +
+      '<thead><tr><th scope="col">Role</th><th scope="col">Person</th><th scope="col">Source</th></tr></thead><tbody>' +
+      (c.people.length ? c.people.map(function (p) {
+        return '<tr><th scope="row">' + esc(p.role || "No role given") + "</th><td>" + (p.name ? esc(p.name) : "Name not given") + (p.email ? '<span class="why">' + esc(p.email) + "</span>" : "") +
+          "</td><td>" + esc(p.src) + "</td></tr>";
+      }).join("") : '<tr><td colspan="3">No one on file for this college.</td></tr>') + "</tbody></table></div>") +
+      '<p class="links" style="margin:0"><button type="button" class="word" data-pop="contacts">Contacts on file, with what differs</button>' +
+      '<button type="button" class="word" data-pop="people">Filter the list and copy addresses</button></p>';
+    var onPage = c ? c.people.filter(function (p) { return p.src === "Landing page"; }) : [];
+    var pageBody = '<p class="links" style="margin:0">' + (landingLink(r, "Open the page in a new tab") || '<span class="gate">No landing page address in MAP.</span>') + "</p>" +
+      (S.reviewer && r.landing ? (onPage.length ? '<p class="k">Who the page lists</p><ul class="conds">' + onPage.map(function (p) {
+        return '<li class="ncline" style="margin:0">' + esc([p.role, p.name, p.email].filter(Boolean).join(", ")) + "</li>"; }).join("") + "</ul>"
+        : '<p class="gate">' + (c ? "The page lists no one MAP has read." : "Reading the contacts on file&hellip;") + "</p>") : "");
+    var reviews = w.map(function (k) { return reviewHtml(r, k); }).join("");
     return '<div class="pane"><div class="rec">' +
       '<div class="rec-head"><div><h3 class="rec-name" id="cw-recname" tabindex="-1">' + esc(r.name) + '</h3><p class="rec-sub">' +
-        esc([r.district, r.total ? "Max award " + money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : ""].filter(Boolean).join(" · ")) + "</p></div>" +
-        '<p class="links" style="margin:0">' + landingLink(r) + "</p></div>" +
+        esc([r.district, r.total ? "Max award " + money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : ""].filter(Boolean).join(" · ")) + "</p></div></div>" +
       '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + visit +
-      '<div class="decide" role="group" aria-label="More for this college">' + act.join("") + "</div>" + who +
-      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + historyHtml(r) +
-      "</div></div>";
+      '<div class="decide" role="group" aria-label="More for this college">' + words + act.join("") + "</div>" +
+      "</div></div>" +
+      '<aside class="pane side" id="cw-side" aria-label="More for ' + esc(r.name) + '"' + (side && (side !== "review" || reviews) && (S.reviewer || side === "page" || side === "review") ? "" : " hidden") + ">" +
+        part("review", "Review before you decide", reviews) + part("people", "People at " + esc(r.name), peopleBody) +
+        part("page", "CPL landing page", pageBody) + part("log", "History", note + historyHtml(r)) + "</aside>";
   }
   function historyHtml(r) {
     if (!S.reviewer) return "";
@@ -915,7 +948,7 @@
             (x.done_at ? "Reopen the follow-up" : "Mark the follow-up done") + "</button> " : "") +
           '<button type="button" class="word danger" data-logdel="' + x.id + '">Delete</button></span></li>';
       }).join("") + "</ul>" : '<p class="gate">Nothing logged with this college yet.</p>';
-    return '<div><p class="k" id="cw-log-h">History</p>' + form + items + "</div>";
+    return '<div><p class="sr" id="cw-log-h">Add to the history</p>' + form + items + "</div>";
   }
   // ── the contacts on file (Sam's asks 4, 6, 7, 8, 11, 12, 13 on the mock, 2026-11-02) ─────────────────────────────
   // Three sources, read once a visit for a signed-in reviewer: MAP's directory (map_college_contacts, the twelve role
@@ -1602,7 +1635,11 @@
     var f = F(), r = rowOf(state.sel);
     if (name === "nudge") { if (f) f.nudge(); return; }
     if (!r) return;
-    if (name === "toreview") { var rv = root().querySelector(".review h4"); if (rv) { rv.setAttribute("tabindex", "-1"); rv.focus(); if (rv.scrollIntoView) rv.scrollIntoView({ block: "start" }); } return; }
+    if (name === "toreview") {
+      state.side = "review"; paintRecord();
+      var rv = root().querySelector("#cw-side-review"); if (rv) { rv.focus(); if (rv.scrollIntoView) rv.scrollIntoView({ block: "start" }); }
+      return;
+    }
     if (name === "focus") { if (f) f.focus(r.key); return; }
     if (name === "mailedit") {
       state.mailEdit = state.mailEdit || {};
@@ -1652,6 +1689,7 @@
         : name === "follow" ? { kind: "email", body: "Follow-up email on the " + what + " opened to copy.", follow_up_on: plusDays(7) }
         : { kind: "email", body: "The acceptance email for the " + what + " opened again to copy." };
       logWrite("POST", null, Object.assign({ college: r.key }, entry));
+      if (writes && state.side === "review") state.side = "";   // the request is decided; the record's next action is the email
       say(name === "accept" ? "Accepted. The acceptance email opens for you to copy." : name === "deny" ? "Denied: the request is removed." :
         name === "follow" ? "The follow-up email opens for you to edit and copy." : "The acceptance email opens again for you to copy.");
       return true;
@@ -1660,8 +1698,17 @@
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
-    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; paintRecord(); var h = document.getElementById("cw-recname");
+    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review") state.side = ""; paintRecord(); var h = document.getElementById("cw-recname");
       if (h && t.classList.contains("chip")) h.focus(); return; }
+    if (t.hasAttribute("data-side")) {
+      var sk = t.getAttribute("data-side");
+      state.side = state.side === sk ? "" : sk;
+      paintRecord();
+      var sh = state.side ? root().querySelector("#cw-side-" + state.side) : root().querySelector('[data-side="' + sk + '"]');
+      if (sh) sh.focus();
+      if (state.side === "people" && S.reviewer && CT.state !== "ready" && CT.state !== "error") loadContacts().then(paintRecord);
+      return;
+    }
     if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
     if (t.hasAttribute("data-stage")) { var s = t.getAttribute("data-stage"); state.view = s === "waiting" ? "review" : s; state.sel = null; paint(); return; }
     if (t.hasAttribute("data-close")) { closeDialog(); return; }
@@ -1778,7 +1825,7 @@
 
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
-  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; LOG.asked = false; }
+  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.mailEdit = {}; LOG.asked = false; }
   /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
      #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
   function arrive() {
