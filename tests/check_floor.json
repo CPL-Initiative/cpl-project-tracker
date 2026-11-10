@@ -380,6 +380,7 @@
     "library_any_file.test.js": 46,
     "library_list.test.js": 27,
     "library_revise_draft.test.js": 56,
-    "public_library.test.js": 121
+    "public_library.test.js": 121,
+    "pages_size_guard.test.js": 4
   }
 }

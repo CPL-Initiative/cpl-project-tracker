@@ -1,0 +1,40 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Business",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 7,
+  "before": {
+    "BUSI M1104": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BUSI M1177": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BUSI M1186": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BUSI M1211": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BUSI M1216": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BUSI M9070": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BUSI M9080": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

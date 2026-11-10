@@ -1139,3 +1139,13 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
 - A two-word title stem is useless when its first word is generic (*Introduction to* paired Geographic Information Systems with Accounting); the checks make no stem from a generic first word or a stopword second.
 - *No CPL type* fires on every credential no college has articulated yet (17 of 19 here); the findings say so, so it reads as expected rather than as curation work.
 - A spelling finding that corrects Sam's own save is held for his word (Rule 8), even at 110 to 1.
+
+## Moved from the lane (S634): Sam's rulings, Open Asks Sheet 147
+
+**Sam's rulings, Open Asks Sheet 147** ([the sheet](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), completed 00:06Z 2026-10-31, all five his own call; cpl_memory `sam-sheet-147-rulings-2026-10-31`). Build in this order:
+
+1. **One Exhibits tab** in the Catalog Commons replaces the CER and EACR; **Review is built first**. The two tabs stay until Exhibits carries everything they show.
+2. **The high school and ROP rule — built (SkyGooseberry, 2026-10-31).** Detail moved verbatim to the lessons doc, *Moved from the lane (S541)*.
+3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
+4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
+5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** Detail moved verbatim to the lessons doc, *Moved from the lane (S541)*.

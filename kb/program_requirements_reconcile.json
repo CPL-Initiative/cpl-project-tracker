@@ -16,7 +16,8 @@
   "unit_line": "a requirement the page prints as a line with units and no course (Delta's Architectural Drafting 22244, \"Associate Degree Math Requirement: Units 4\"): pattern's label and n add a choose_units block of n with no courses, only where no block carries the label and the record's sum falls short of its printed total by exactly n",
   "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)",
   "or_units": "an alternative the page prints as its own 'or CODE' row with no units (CourseLeaf's course list) takes its parent's units, the group's figure the page's total counts once: never an alternative the reading gave units, never a parent without them (Monterey Peninsula, S535); parent_from_block (S590) first gives a block of one course and its alternatives, read 'all' with one stated figure, that figure where the course has none (the heading line carries it: 'Select one of the following: 2 \u00b7 WORK 96 \u00b7 or WORK 99')",
-  "and_units": "a course the page prints joined to the row above by '&' (CourseLeaf's 'CSIS 50 \u00b7 & 50L ... 3'), which the reading listed as its own entry with no units, takes 0: the row's figure is the pair's and the page's total counts it once; only where the page prints the two codes joined, the course before it carries a figure, and never a course the reading gave units (Monterey Peninsula, S536)"
+  "and_units": "a course the page prints joined to the row above by '&' (CourseLeaf's 'CSIS 50 \u00b7 & 50L ... 3'), which the reading listed as its own entry with no units, takes 0: the row's figure is the pair's and the page's total counts it once; only where the page prints the two codes joined, the course before it carries a figure, and never a course the reading gave units (Monterey Peninsula, S536)",
+  "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units"
  },
  "colleges": {
   "College of the Redwoods": {
@@ -761,8 +762,7 @@
    ]
   },
   "College of Alameda": {
-   "why": "S619 SkyTadpole, 2026-11-09. College of Alameda's transfer degrees name the degree's 60 and a GE pattern with no units, so they read incomplete. A free page read (college-page-read 42609117444, kb/college_reads/alameda_transfer_ge.json) gave the words: each transfer page's table ends 'General Education (Cal-GETC) and Elective Units' (40.00 to 42.00) above 'Total Units 60.00'; Art History AA-T 32765 prints 'Complete the California General Education pattern (Cal-GETC)'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Redwoods', Columbia's, Taft's and Los Medanos's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. Simulated with the scorer on the read's text: Business Administration 2.0 42964 reads equal (overlap), Sociology 33032 and Art History 32765 equal with 7-8 units of electives. Mathematics A.S. 01129 is a local degree and stays out. Proceeded on the recommendation; reversible by deleting this entry.",
-   "awards": "transfer",
+   "why": "S619 SkyTadpole, 2026-11-09. College of Alameda's transfer degrees name the degree's 60 and a GE pattern with no units, so they read incomplete. A free page read (college-page-read 42609117444, kb/college_reads/alameda_transfer_ge.json) gave the words: each transfer page's table ends 'General Education (Cal-GETC) and Elective Units' (40.00 to 42.00) above 'Total Units 60.00'; Art History AA-T 32765 prints 'Complete the California General Education pattern (Cal-GETC)'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Redwoods', Columbia's, Taft's and Los Medanos's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. Simulated with the scorer on the read's text: Business Administration 2.0 42964 reads equal (overlap), Sociology 33032 and Art History 32765 equal with 7-8 units of electives. Mathematics A.S. 01129 is a local degree and stays out. Proceeded on the recommendation; reversible by deleting this entry. S634 SkyBackward, 2026-11-10, on Sam's ruling count (Open Asks Sheet 180 card 2, 19:35Z): six records lay their courses out by semester with a printed subtotal each and no total (01113, 01114, 09012, 19827, 19831, 19832; page read 42585679798); a semester_sum step gives each the sum of its subtotals as total_units, marked total_units_summed. The transfer step keeps its own awards gate, so the college-level gate is lifted for the certificates among the six.",
    "steps": [
     {
      "kind": "set",
@@ -775,6 +775,11 @@
      "pattern": "General\\s+Education\\s+\\(Cal-?GETC\\)\\s+and\\s+Elective\\s+Units",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
      "source_words": "College of Alameda AA-T and AS-T pages: 'General Education (Cal-GETC) and Elective Units 41.00- 42.00 / Total Units 60.00' (Sociology 33032; college page read 42609117444); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+    },
+    {
+     "kind": "semester_sum",
+     "field": "total_units",
+     "block_pattern": "^(FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH)\\s+SEMESTER$"
     }
    ]
   },

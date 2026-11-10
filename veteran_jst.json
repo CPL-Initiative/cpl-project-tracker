@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-11-10T06:23:55.523045+00:00",
+  "scraped_at": "2026-11-10T20:23:51.030021+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31200,
-    "star_colleges": 67
+    "jst": 31385,
+    "star_colleges": 68
   },
-  "computed_star_colleges": 67,
+  "computed_star_colleges": 68,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
@@ -32,7 +32,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1151,
-      "jst": 1664,
+      "jst": 1665,
       "star": true
     },
     "San Diego City College": {
@@ -42,12 +42,12 @@
     },
     "San Diego Miramar College": {
       "vets": 1172,
-      "jst": 1707,
+      "jst": 1712,
       "star": true
     },
     "Moreno Valley College": {
       "vets": 938,
-      "jst": 1066,
+      "jst": 1067,
       "star": true
     },
     "Bakersfield College": {
@@ -57,7 +57,7 @@
     },
     "Norco College": {
       "vets": 686,
-      "jst": 578,
+      "jst": 580,
       "star": true
     },
     "Cabrillo College": {
@@ -72,7 +72,7 @@
     },
     "West Los Angeles College": {
       "vets": 147,
-      "jst": 157,
+      "jst": 156,
       "star": true
     },
     "Long Beach City College": {
@@ -125,6 +125,11 @@
       "jst": 432,
       "star": true
     },
+    "Santa Ana College": {
+      "vets": 392,
+      "jst": 394,
+      "star": true
+    },
     "Mt. San Jacinto College": {
       "vets": 639,
       "jst": 537,
@@ -133,11 +138,6 @@
     "Barstow Community College": {
       "vets": 103,
       "jst": 155,
-      "star": true
-    },
-    "Santa Ana College": {
-      "vets": 392,
-      "jst": 389,
       "star": true
     },
     "Modesto Junior College": {
@@ -217,7 +217,7 @@
     },
     "Victor Valley College": {
       "vets": 74,
-      "jst": 347,
+      "jst": 349,
       "star": true
     },
     "Ventura College": {
@@ -244,6 +244,11 @@
       "vets": 60,
       "jst": 53,
       "star": true
+    },
+    "Saddleback College": {
+      "vets": 807,
+      "jst": 149,
+      "star": false
     },
     "College of the Sequoias": {
       "vets": 266,
@@ -274,6 +279,11 @@
       "vets": 642,
       "jst": 236,
       "star": false
+    },
+    "Irvine Valley College": {
+      "vets": 247,
+      "jst": 221,
+      "star": true
     },
     "San Jose City College": {
       "vets": 153,
@@ -339,16 +349,6 @@
       "vets": 100,
       "jst": 140,
       "star": true
-    },
-    "Irvine Valley College": {
-      "vets": 247,
-      "jst": 137,
-      "star": false
-    },
-    "Saddleback College": {
-      "vets": 807,
-      "jst": 63,
-      "star": false
     },
     "Palo Verde College": {
       "vets": 15,

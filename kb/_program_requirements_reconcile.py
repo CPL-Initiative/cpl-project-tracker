@@ -400,6 +400,39 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                     notes.append({"field": "blocks", "was": None, "now": {block.get("name"): {key: n}},
                                   "words": bm.group(0).strip()})
             continue
+        if st["kind"] == "semester_sum":
+            # Sam, Open Asks Sheet 180 card 2 ("count", 2026-11-10): a program the page lays out by
+            # semester, each semester's courses adding to the subtotal it prints, with no total over
+            # them (College of Alameda's Diesel Mechanics 19827), carries the sum of the subtotals as
+            # its total, marked total_units_summed. Only where the record holds no total of either kind, every
+            # semester block is rule all and adds to its own printed figure, the page prints each
+            # semester's heading, and no other block asks for units.
+            named = re.compile(st["block_pattern"], re.I)
+            blocks = out.get("blocks") or []
+            sems = [b for b in blocks if named.search(b.get("name") or "")]
+            rest = [b for b in blocks if b not in sems]
+            if (not _empty(prog.get("total_units")) or not _empty(prog.get("degree_total")) or len(sems) < 2
+                    or any(b.get("rule") != "recommended" for b in rest)):
+                continue
+            total, parts = 0.0, []
+            for b in sems:
+                span = _span_of(b.get("stated"))
+                units = [c.get("units") for c in b.get("courses") or []]
+                if (b.get("rule") != "all" or not span or span[0] is None or span[0] != span[1] or not units
+                        or any(not isinstance(u, (int, float)) or c.get("units_max") not in (None, u)
+                               for u, c in zip(units, b["courses"]))
+                        or abs(sum(units) - span[0]) > 0.01
+                        or not re.search(re.escape(b["name"].strip()), text, re.I)):
+                    break
+                total += span[0]
+                parts.append("%s %g" % (b["name"].strip(), span[0]))
+            else:
+                now = {"min": total, "max": total}
+                notes.append({"field": "total_units", "was": prog.get("total_units"), "now": now,
+                              "words": "SUMMED FROM THE SEMESTERS, no total is printed: " + " + ".join(parts)})
+                prog["total_units"] = now
+                prog["total_units_summed"] = True
+            continue
         if st["kind"] == "repeat":
             # A course or a list the page says is taken more than once (Hartnell's Music 43887, S497):
             # "If MUS 11 is chosen, it must be taken for 2 semesters" gives that course (or alternative)

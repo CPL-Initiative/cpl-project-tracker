@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 85,
  "with_closed_list": 68,
- "started": "2026-11-09T11:39:21Z",
+ "started": "2026-11-10T20:12:35Z",
  "curriqunet": {
   "catalog": 10507,
   "view_prefix": "https://coa.curriqunet.com/catalog/iq/",
@@ -24,7 +24,7 @@
  "pages_read": 89,
  "banner_h1": null,
  "loads": 169,
- "seconds": 801.7,
+ "seconds": 955.4,
  "found": 59,
  "by_method": {
   "no_closed_list": 17,
@@ -156,5 +156,5 @@
   "programs": 0,
   "list": []
  },
- "run": "42610498785"
+ "run": "42892493763"
 }

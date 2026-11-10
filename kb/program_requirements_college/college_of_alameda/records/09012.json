@@ -71,17 +71,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     34.0,
     34.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -108,15 +109,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Engine Repair Specialist - A.S. Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 34.0,
+    "max": 34.0
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -143,7 +144,8 @@
     "apprentice auto mechanics",
     "management",
     "teaching"
-   ]
+   ],
+   "total_units_summed": true
   },
   "blocks": [
    {
@@ -274,5 +276,20 @@
    "The description and outcomes appear shared across Automotive Technology options (AS and certificates); outcomes recorded as printed on this award's page."
   ]
  },
- "extracted_run": "38935121852"
+ "extracted_run": 42892493763,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34.0,
+    "max": 34.0
+   },
+   "words": "SUMMED FROM THE SEMESTERS, no total is printed: FIRST SEMESTER 14 + SECOND SEMESTER 10 + THIRD SEMESTER 10"
+  }
+ ],
+ "read_run": "38935121852"
 }
