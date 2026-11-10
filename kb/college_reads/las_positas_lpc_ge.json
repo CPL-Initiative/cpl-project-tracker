@@ -1,5 +1,5 @@
 {
- "_readme": "S631 SkyMayall, 2026-11-10. The 47 Las Positas local degrees name LPC-GE or Cal-GETC with no GE units, and each degree page's 'Additional General Education and Elective Units' figure combines GE with electives (S630, las_positas_ge_units.json), so it cannot stand as ge_units. This read finds the LPC-GE pattern itself (the catalog's Program & General Education Charts) and what it prints for its total units: the articulation page, the college homepage and one local degree page (01001 Administration of Justice A.A.), each following links that name general education or the charts, and printing every such link. No model call.",
+ "_readme": "S631 SkyMayall, 2026-11-10. The 47 Las Positas local degrees name LPC-GE or Cal-GETC with no GE units, and each degree page's 'Additional General Education and Elective Units' figure combines GE with electives (S630, las_positas_ge_units.json), so it cannot stand as ge_units. This read finds the LPC-GE pattern itself (the catalog's Program & General Education Charts) and what it prints for its total units: the articulation page, the college homepage and one local degree page (01001 Administration of Justice A.A.), each following links that name general education or the charts, and printing every such link. No model call. Run 42825317081 (S631): the articulation page links lpcge.php, which prints only a link titled '2026-2027 Las Positas College General Education (LPC-GE)'; the AA and AS GE pages print archives to 2024-25 only. This read follows that link from lpcge.php and the AA, AS and ADGE pages' newest links.",
  "college": "Las Positas College",
  "questions": {
   "lpc_ge_units": "What total units does the LPC-GE (local associate degree) general education pattern require, and where does the catalog print it?"
@@ -16,28 +16,20 @@
  ],
  "pages": [
   {
-   "url": "https://www.laspositascollege.edu/lpcarticulation/index.php",
+   "url": "https://www.laspositascollege.edu/lpcarticulation/lpcge.php",
    "answers": [
     "lpc_ge_units"
    ],
-   "follow": "general education|GE pattern|LPC-GE|charts|associate degree",
-   "links": "general education|GE|pattern|chart"
+   "follow": "2026-2027|LPC-GE\\b.*(pdf|Pattern)",
+   "links": "pdf|LPC-GE|2026"
   },
   {
-   "url": "https://www.laspositascollege.edu/",
+   "url": "https://www.laspositascollege.edu/lpcarticulation/adge.php",
    "answers": [
     "lpc_ge_units"
    ],
-   "follow": "general education|GE pattern|LPC-GE|catalog",
-   "links": "general education|pattern|chart|catalog"
-  },
-  {
-   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/741",
-   "answers": [
-    "lpc_ge_units"
-   ],
-   "follow": "general education|LPC-GE|chart",
-   "links": "general education|GE|pattern|chart"
+   "follow": "2025-2026",
+   "links": "pdf|ADGE|2025"
   }
  ],
  "outside_hosts": {
