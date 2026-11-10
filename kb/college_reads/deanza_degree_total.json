@@ -1,0 +1,24 @@
+{
+ "_readme": "S627 SkyBode, 2026-11-10. De Anza College: 128 of 212 passing; 73 of its 84 failures are degrees, and the ones sampled carry no program total (total_min null) and read incomplete (Business Administration A.A. 05952 p.66, Automotive Machining A.S. 05962 p.63, Real Estate 05954 p.143, Art History 05965 p.50). De Anza runs on quarters. This read prints the pages that state the associate degree's total (90 quarter units) and how a degree's major, general education and electives add to it, so a reconcile step can rest on De Anza's own words. One load of the same PDF, no model call.",
+ "college": "De Anza College",
+ "questions": {
+  "degree_total": "Where and in what words does the catalog state the associate degree's total units, and how major, GE and electives reach it?"
+ },
+ "keywords": [
+  "90 (quarter )?units",
+  "Associate (in Arts|in Science|Degree)[^\\n]{0,30}Requirements",
+  "minimum of 90"
+ ],
+ "pages": [
+  {
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf",
+   "answers": [
+    "degree_total"
+   ]
+  }
+ ],
+ "pdf_span": [
+  1,
+  62
+ ]
+}
