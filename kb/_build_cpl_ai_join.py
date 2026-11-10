@@ -37,7 +37,10 @@ from _build_cpl_ai import college_key  # noqa: E402
 OUT = os.path.join(HERE, "cpl_ai", "exhibit_join.json")
 INDEX = os.path.join(HERE, "cpl_ai", "hosted", "index.json")
 CREDS = os.path.join(HERE, "credentials.json")
-CROSSWALK = os.path.join(HERE, "college_identity", "2026-08-23", "crosswalk.json")
+# The newest committed baseline (kb/_college_identity_latest.py), never a folder named here.
+sys.path.insert(0, HERE)
+from _college_identity_latest import latest_crosswalk_path  # noqa: E402
+CROSSWALK = latest_crosswalk_path()
 ADOPT = os.path.join(HERE, "..", "library", "adopt", "adopt_data.json")
 DECIDED = "SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins"
 

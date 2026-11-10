@@ -24,7 +24,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Annual Workplan Goals / adding, moving and counting sub-activities — lane state](../reference/lanes/workplan-annual-goals.md) | lanes | `workplan-annual-goals.md` | 2026-10-12 | 2026-10-20 |
 | [CER procedures and the simpler CER tab — lane state](../reference/lanes/cer-procedures.md) | lanes | `cer-procedures.md` | 2026-10-18 | 2026-11-06 |
 | [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-10-24 |
-| [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-10-30 |
+| [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-11-10 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-11-01 |
 | [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-10-20 |
