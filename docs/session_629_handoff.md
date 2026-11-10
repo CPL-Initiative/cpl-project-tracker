@@ -24,7 +24,8 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
 
 1. **Cuesta's SLOs loaded (#3037), step 11.** The full read (run 42768224688, 2 parts) parsed 677 of 679 pages. Load
    run 42781504144 inserted 1,356 rows and skipped 2. The lane records it.
-2. **The re-analysis findings panel (#3047), the `cer-procedures` NEXT.** Under the Exhibits List view's
+2. **The re-analysis findings panel (#3047), the `cer-procedures` NEXT.** Its first push missed the code (see
+   *Patterns*); the fix (fefa13d2) went up about 08:50Z. Under the Exhibits List view's
    *Re-analyze my changes* box, the view reads `kb/exhibits_reanalysis/latest.json` and shows the last pass: what
    needs the sender's word first, then a fold with the checks' counts and the routine's notes. Step 9 of
    `scheduled_sessions` now copies each pass's findings to `latest.json`; `tests/exhibits_reanalysis_panel.test.js`
@@ -72,6 +73,11 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
 - **The vault's sheet coverage check fails on `main` while the vault PR holding the newest sheet's builder stays
   open** (CPLBrain #746 carries Sheet 178). `check_generated.sh` reports it STALE for every branch; it is not the
   branch's fault.
+
+- **Never `git stash` around a local check with staged work.** S628 stashed to compare `check_generated.sh` against
+  `main`; the pop did not restore the modified files, and #3047's first commit carried only its two new files. CI's
+  `suite (2)` caught it (the test ran against code that was not there). The work came back from the dangling stash
+  commit (`git fsck --no-reflog`). Compare against `main` in a worktree instead.
 
 ## Let go
 
