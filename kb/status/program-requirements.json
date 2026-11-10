@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-10T22:22:21Z",
+  "written_at": "2026-11-10T22:42:19Z",
   "session": 634,
   "moniker": "SkyBackward",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_635_handoff.md",
   "next_step": {
-    "title": "Merge the Las Positas display, then the sweep's next college",
-    "text": "Pull request 3085 holds Las Positas's local degrees and the display build that also carries Alameda's six; its display step was still writing at the checkpoint. After it merges, the sweep takes the next college with missing records. De Anza waits on Sam's two hand-filed GE sheets."
+    "title": "The sweep's next college",
+    "text": "Las Positas and Alameda are displayed (pull request 3085 merged; 17,557 of 17,560 rows written, no errors). The sweep takes the next college with missing records. De Anza waits on Sam's two hand-filed GE sheets."
   },
   "calls": [
     {
@@ -256,8 +256,8 @@
       "text": "Las Positas: local degrees take general education units of 28 for an A.A. and 22 for an A.S., summed from the areas the college's page prints, on Sam's ruling (Sheet 180 card 4); 181 of 193 records pass, up from 145. The reread replaced 52 rows with no errors."
     },
     {
-      "at": "2026-11-10T21:01:00Z",
-      "text": "Display build 29e68f1d8dd2 covers both colleges; its display step was dispatched on pull request 3085."
+      "at": "2026-11-10T22:23:00Z",
+      "text": "Display build 29e68f1d8dd2 is applied for both colleges: 17,557 of 17,560 rows written, no errors; the 3 missing are Monterey Peninsula rows the table no longer holds. Pull request 3085 merged."
     }
   ],
   "headline": [

@@ -20,7 +20,7 @@ Sam opened on handoff 634 and later said *"keep going"*. All three repos were at
 Library session idle and review-ready; no file overlapped but the generated docs index and audit. The greeting named
 *Sky634*; the handoff's moniker SkyBackward was used.
 
-## What shipped (all merged unless marked)
+## What shipped (all merged)
 
 1. **#3084 commons, Sheet 180 card 1 *all*:** `kb/_ccr_seed_confirm_apply.py` a discipline at a time: 584 cards in 26
    disciplines, plus Kinesiology's 10 that qualified since S615. 27 receipts under
@@ -34,9 +34,10 @@ Library session idle and review-ready; no file overlapped but the generated docs
 5. **#3092 csm-workspace:** at the dashboard's door *Ask an approver* leads and *Use an email link instead* opens the
    email link (`reviewer_signin.js`, door mounts only).
 6. **CPLBrain#756** (S633's, left for this session): merged.
-7. **OPEN, #3085 Las Positas, card 4 *count*:** local A.A. 28 and A.S. 22 with the page's overlap and electives words;
+7. **#3085 Las Positas, card 4 *count*:** local A.A. 28 and A.S. 22 with the page's overlap and electives words;
    181 of 193 (was 145). Reconcile 42892238131, reread 42899948939 (52 replaced, 0 errors), display build
-   29e68f1d8dd2 (it carries Alameda's six). **Display run 42900864858 was still writing at 22:40Z.**
+   29e68f1d8dd2 (it carries Alameda's six), applied by run 42900864858: 17,557 of 17,560 written, 0 errors (the job
+   reads *failure* on the 3 Monterey Peninsula rows the table no longer holds).
 
 ## Decisions to honor
 
@@ -56,15 +57,13 @@ Library session idle and review-ready; no file overlapped but the generated docs
 
 ## Open work, in order (built from the lanes)
 
-1. **#3085:** when display run 42900864858 commits its applied record, read `written`, `missing`, `errors` (a run that
-   reads *failure* may have written every row; the 3 Monterey Peninsula rows are always missing). Merge `main` in from
-   the session, mark ready, merge on `test`. The lane text is already on the branch.
+1. **Sheet 180 is carried out** but for De Anza (item 3). Nothing of this run's is open.
 2. **`library` NEXT 0, Sam's test of #3077:** Pages deploys succeed again (runs 2969 and 2970, 21:03Z and 21:12Z), so
    the served `library.js` now carries #3077. On request card `71931018` he drops the PDF, presses Draft it now,
    Publish it, List publicly; dispatch `library-publish.yml` after Publish. Owed to COBIx on the next Library change:
    the `style=` entity pattern in either quote, and the size-guard test walking `kb/`.
 3. **`program-requirements-harvest`:** the lane is 23.5 KB against 20: compact the live mechanism text (the nightly SLO
-   read, Phase 2) after #3085 merges. Then the sweep's next college with missing records (step 12). **De Anza** waits
+   read, Phase 2). Then the sweep's next college with missing records (step 12). **De Anza** waits
    on Sam posting its two GE sheets to `catalog-files` (Sheet 180 card 5). Las Positas's eight local degrees whose
    captured page lacks the combined line stand as filed.
 4. **`cer-procedures`:** the next re-analysis request runs the checks, then the Jev runner. A retire path in
@@ -97,9 +96,8 @@ Library session idle and review-ready; no file overlapped but the generated docs
 
 ## Let go
 
-PR subscriptions ended with each merge (#3084, #3086, #3087, #3089, #3092). **#3085 stays watched** by this session
-until it merges; the check-in *Re-check display apply and #3092* (`trig_01G3LzF1pSbSWMi8JpAGcvmi`, 22:42Z) is this
-session's last, and a session that takes #3085 over should say so with `/coord`. This checkpoint's two PRs are
-watched until they merge, then dropped.
+PR subscriptions ended with each merge (#3084, #3085, #3086, #3087, #3089, #3092); the checkpoint's own PR (#3093)
+is watched until it merges, then dropped. CPLBrain#757 (the session note, a draft) is Sam's to merge; its subscription
+is dropped at sign-off. No check-in is pending after 22:42Z's. No artifact watch was registered.
 
 > *Greetings, you are SkyAntennae (Session 636), see SkyBackward's handoff — `docs/session_636_handoff.md` — let's keep rolling with our queue.*
