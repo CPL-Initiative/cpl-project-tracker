@@ -16697,8 +16697,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 589,
+   "count": 590,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 629,
+     "path": "docs/session_629_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cer-procedures",
+      "scheduled-sessions"
+     ],
+     "title": "Session 629 handoff: Cuesta's SLOs loaded, the re-analysis panel, De Anza's GE units still to find",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26699,5 +26715,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1433
+ "total": 1434
 }
