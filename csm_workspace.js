@@ -45,10 +45,21 @@
       "#tab-csm-workspace h1 { margin:0; font-family:var(--cw-serif); font-weight:700; color:var(--cw-title); font-size:clamp(2rem, 1.5rem + 1.8vw, 3rem); line-height:1; letter-spacing:-0.03em; }",
       "#tab-csm-workspace .links { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.92rem; align-items:baseline; }",
       "#tab-csm-workspace .rule { width:66px; height:4px; background:var(--cw-gold); margin:10px 0 8px; }",
-      "#tab-csm-workspace .today { margin:0; display:flex; flex-wrap:wrap; gap:4px 10px; align-items:baseline; font-size:.95rem; }",
-      "#tab-csm-workspace .today b { color:var(--cw-heading); }",
-      "#tab-csm-workspace .today .sep { color:var(--cw-muted); }",
-      "#tab-csm-workspace .today .word { font-weight:500; font-size:inherit; }",
+      // The summary metrics (Malone, 2026-11-10, built on Sam's go): each one scannable, the number above its label, the
+      // deadline set apart at the right. Each metric is the button that opens its list (a figure opens what it counts).
+      "#tab-csm-workspace .today { margin:0; display:flex; flex-wrap:wrap; gap:8px 10px; align-items:stretch; }",
+      "#tab-csm-workspace .metric { all:unset; box-sizing:border-box; cursor:pointer; display:grid; gap:2px; align-content:center; min-width:132px; padding:8px 14px; border-left:3px solid var(--cw-line); }",
+      "#tab-csm-workspace .metric .num { font-family:var(--cw-serif); font-weight:700; font-size:1.9rem; line-height:1.05; color:var(--cw-title); font-variant-numeric:tabular-nums; }",
+      "#tab-csm-workspace .metric .lab, #tab-csm-workspace .deadline .lab { font-size:.86rem; font-weight:600; color:var(--cw-ink-2); }",
+      "#tab-csm-workspace .metric:hover { border-left-color:var(--cw-accent); }",
+      "#tab-csm-workspace .metric:hover .lab { color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; }",
+      "#tab-csm-workspace .metric[aria-pressed=\"true\"] { border-left-color:var(--cw-gold); background:var(--cw-sel); border-radius:0 6px 6px 0; }",
+      "#tab-csm-workspace .metric:focus-visible { outline:2px solid var(--cw-accent); outline-offset:2px; border-radius:3px; }",
+      "#tab-csm-workspace .deadline { margin:0 0 0 auto; display:grid; gap:2px; align-content:center; padding:8px 0 8px 18px; border-left:1px solid var(--cw-line); text-align:right; }",
+      "#tab-csm-workspace .deadline .date { font-family:var(--cw-serif); font-weight:700; font-size:1.35rem; line-height:1.1; color:var(--cw-heading); }",
+      "@media (max-width:640px) { #tab-csm-workspace .metric { min-width:calc(50% - 5px); } #tab-csm-workspace .deadline { margin-left:0; text-align:left; border-left:3px solid var(--cw-gold); padding-left:14px; } }",
+      "#tab-csm-workspace .qgroup { margin:10px 0 0; padding:0 18px; font-family:var(--cw-sans); font-size:.8rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--cw-muted); }",
+      "#tab-csm-workspace .qgroup-n { font-variant-numeric:tabular-nums; }",
       "#tab-csm-workspace h2 { margin:0; font-family:var(--cw-serif); font-size:1.3rem; color:var(--cw-heading); }",
       "#tab-csm-workspace .sec { display:grid; gap:8px; }",
       "#tab-csm-workspace .sec-h { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:6px 20px; }",
@@ -464,24 +475,43 @@
   }
   var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
     accept: "Send the acceptance.", accept_nc: "Send the noncredit attestation acceptance.",
-    nudge: "Send the nudge for the participation confirmation." };
+    nudge: "Send the request for the participation confirmation." };
+  // One wording for the email that is due, whatever the list (COBIx on PR 3049): Ready to send and every other list
+  // read it from here, so the same email never reads two ways.
+  function readyWords(r, rd) {
+    var mw = rd === "accept" ? missingWords(r) : [], still = mw.length ? " Still waiting: " + mw.join("; ") + "." : "";
+    if (notReceived(r)) return "Resend the " + (rd === "accept" ? "acceptance" : "noncredit attestation acceptance") + ": confirmed " +
+      shortDate(rd === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) + ", and the first email did not reach the college." + still;
+    return READY_WORDS[rd] + still;
+  }
   function nextStep(r) {
-    if (state.view === "send" && readyOf(r)) {
-      var rw = readyOf(r), mw = rw === "accept" ? missingWords(r) : [];
-      if (notReceived(r)) return "Resend the acceptance: confirmed " + shortDate(rw === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) +
-        ", and the first email did not reach the college." + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
-      return READY_WORDS[rw] + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
-    }
-    var w = waitingKinds(r);
-    if (w.length === 2) return "Review the participation confirmation and the noncredit attestation.";
-    if (w[0] === "part") return "Review the participation confirmation.";
-    if (w[0] === "nc") return "Review the noncredit attestation." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
+    if (state.view === "send" && readyOf(r)) return readyWords(r, readyOf(r));
+    // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
+    // next action"), from the same readyOf the Ready to send list keeps, so the two lists cannot disagree.
+    var w = waitingKinds(r), sentOn = function (at) { return at ? " sent " + shortDate(at) : ""; };
+    if (w.length === 2) return "Review the participation confirmation" + sentOn(r.part.at) + " and the noncredit attestation, then accept or deny each.";
+    if (w[0] === "part") return "Review the participation confirmation" + sentOn(r.part.at) + ", then accept or deny it.";
+    if (w[0] === "nc") return "Review the noncredit attestation" + sentOn(r.nc.at) + ", then accept or deny it." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
     var du = dueOf(r);
-    if (du) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
+    if (du && du.follow_up_on <= today()) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
+    var rd = readyOf(r);
+    if (rd) return readyWords(r, rd);
+    if (du) return "Nothing to send today. Follow up on " + shortDate(du.follow_up_on) + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
     var st = stageOf(r);
-    if (st === "held") { var m = missingWords(r); return "Confirmed. Follow up on: " + (m.length ? m.join("; ") : "a condition still pending") + "."; }
+    if (st === "held") {
+      var m = missingWords(r);
+      return "Nothing to send. Still waiting: " + (m.length ? m.join("; ") : "a condition still pending") + ". No email goes out for " + (m.length > 1 ? "those" : "that") + ".";
+    }
     if (st === "qual") return "Qualifies. Nothing waits.";
-    return "No confirmation yet. Nudge it from Not yet confirmed.";
+    var ns = lastSent(r, "nudge");
+    return "Nothing to send today. The request for the confirmation went out" + (ns && ns.created_at ? " " + shortDate(ns.created_at) : " within the last two weeks") + ".";
+  }
+  /* The two groups (Malone, 2026-11-10; the rule is the go-live note's item 4, built on Sam's go): Needs you holds a
+     request waiting on the team, an email ready to send and a follow-up due today or earlier; every other college
+     waits on the college. */
+  function needsYou(r) {
+    var du = dueOf(r);
+    return waitingKinds(r).length > 0 || !!readyOf(r) || !!(du && du.follow_up_on <= today());
   }
   function pillsOf(r) {
     var p = [];
@@ -489,9 +519,14 @@
     if (ncWaiting(r)) p.push(["ask", "NC attestation waiting"]);
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) p.push(["ask", "Follow-up due"]);
-    if (state.view === "send" && notReceived(r)) p.push(["ask", "Not received"]);
+    if (notReceived(r)) p.push(["ask", "Not received"]);
     var st = stageOf(r);
     p.push(["", st === "qual" ? "Qualifies" : st === "held" ? "Held by a condition" : r.part.confirmed ? "Confirmed" : "Not confirmed"]);
+    // Every badge kept (Malone, 2026-11-10): what the noncredit share still lacks, what was accepted, when the nudge went.
+    if (r.nc && r.nc.standing) p.push(["", "Attestation accepted"]);
+    else if (r.nc && !ncMet(r) && !ncWaiting(r)) p.push(["", "No Noncredit CPL Lead"]);
+    var ns = !r.part.confirmed && !r.part.waiting ? lastSent(r, "nudge") : null;
+    if (ns && ns.created_at) p.push(["", "Nudged " + shortDate(ns.created_at)]);
     return p;
   }
   function ageOf(r) {
@@ -536,10 +571,15 @@
   var READY_RANK = { accept: 1, accept_nc: 2, nudge: 3, wait: 4 };
   function sortRank(r) {
     if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 5;
-    var s = stageOf(r), du = dueOf(r);
+    var s = stageOf(r), du = dueOf(r), rd = readyOf(r);
+    // Needs you, most pressing first (COBIx on PR 3049): a request waiting on the team, an email that never reached
+    // the college, a follow-up due, then the emails in Ready to send's own order, so a resend is never buried under the
+    // colleges still owed their first nudge. Waiting on the college keeps the order by stage.
     if (s === "waiting") return 0;
-    if (du && du.follow_up_on <= today()) return 1;
-    return s === "held" ? 2 : du ? 3 : s === "notyet" ? 4 : 5;
+    if (rd && rd !== "wait" && notReceived(r)) return 1;
+    if (du && du.follow_up_on <= today()) return 2;
+    if (rd && READY_RANK[rd] != null) return 2 + READY_RANK[rd];
+    return s === "held" ? 10 : du ? 11 : s === "notyet" ? 12 : 13;
   }
   function shownRows() {
     if (!S) return [];
@@ -712,14 +752,18 @@
       '<label class="sr" for="cw-view">Show</label><select id="cw-view" class="search" data-view-select="1">' + opts + "</select>" +
       '<label class="sr" for="cw-q">Find a college</label><input id="cw-q" class="search" type="search" placeholder="Find a college or district" value="' + esc(state.q) + '">' +
       (v.bulk && S.reviewer ? '<div class="bulk"><button type="button" class="word" data-act="nudge">Nudge them (a mail merge)</button></div>' : "") +
-      '</div><ul class="queue" aria-label="' + esc(v.label) + '">' +
-      (list.length ? list.map(function (r) {
-        var ag = ageOf(r);
-        return '<li><button type="button" class="row" data-sel="' + esc(r.key) + '"' + (r.key === state.sel ? ' aria-current="true"' : "") + ">" +
-          '<span class="row-name">' + esc(r.name) + '</span><span class="row-age' + (ag.over ? " over" : "") + '">' + esc(ag.t) + "</span>" +
-          '<span class="row-next">' + esc(nextStep(r)) + '</span><span class="row-pills">' +
-          pillsOf(r).map(function (p) { return '<span class="pill ' + p[0] + '">' + esc(p[1]) + "</span>"; }).join("") + "</span></button></li>";
-      }).join("") : '<li><p class="empty">Nothing here.</p></li>') + "</ul></div>";
+      "</div>" + (list.length ? [["you", "Needs you", list.filter(needsYou)], ["col", "Waiting on the college", list.filter(function (r) { return !needsYou(r); })]]
+        .filter(function (g) { return g[2].length; }).map(function (g) {
+          // The live order stands inside each group (go-live note, item 5): sortRank, then the college's name.
+          return '<h3 class="qgroup" id="cw-qg-' + g[0] + '">' + g[1] + ' <span class="qgroup-n">' + g[2].length + '</span></h3>' +
+            '<ul class="queue" data-group="' + g[0] + '" aria-labelledby="cw-qg-' + g[0] + '">' + g[2].map(function (r) {
+              var ag = ageOf(r);
+              return '<li><button type="button" class="row" data-sel="' + esc(r.key) + '"' + (r.key === state.sel ? ' aria-current="true"' : "") + ">" +
+                '<span class="row-name">' + esc(r.name) + '</span><span class="row-age' + (ag.over ? " over" : "") + '">' + esc(ag.t) + "</span>" +
+                '<span class="row-next">' + esc(nextStep(r)) + '</span><span class="row-pills">' +
+                pillsOf(r).map(function (p) { return '<span class="pill ' + p[0] + '">' + esc(p[1]) + "</span>"; }).join("") + "</span></button></li>";
+            }).join("") + "</ul>";
+        }).join("") : '<ul class="queue" aria-label="' + esc(v.label) + '"><li><p class="empty">Nothing here.</p></li></ul>') + "</div>";
   }
   function condLabel(c) { return c.pending ? "Pending" : c.met ? "Met" : "Not met"; }
   function recordHtml() {
@@ -1226,15 +1270,14 @@
     }).join("") + "</div>";
   }
   function todayHtml() {
-    var w = S.rows.filter(function (r) { return stageOf(r) === "waiting"; }).length;
-    var h = S.rows.filter(function (r) { return stageOf(r) === "held"; }).length;
-    var q = S.rows.filter(function (r) { return stageOf(r) === "qual"; }).length;
-    var n = S.rows.filter(function (r) { return stageOf(r) === "notyet"; }).length;
-    var go = function (view, t) { return '<button type="button" class="word" data-view="' + view + '" aria-pressed="' + (state.view === view) + '">' + t + "</button>"; };
-    var sep = '<span class="sep" aria-hidden="true">·</span>';
-    return '<p class="today"><b>Today</b>' + go("review", w + " waiting on the team") + sep + go("held", h + " confirmed and held") + sep +
-      go("qual", q + " qualify") + sep + go("notyet", n + " not yet confirmed") +
-      (S.deadline ? sep + "<span>Confirmation due " + esc(shortDate(S.deadline)) + "</span>" : "") + "</p>";
+    // The five lists a reviewer opens most, in the order the work goes; each count is its menu view's own count.
+    var go = function (view, label) {
+      return '<button type="button" class="metric" data-view="' + view + '" aria-pressed="' + (state.view === view) + '"><span class="num">' +
+        S.rows.filter(VIEWS[view].keep).length + '</span><span class="lab">' + label + "</span></button>";
+    };
+    return '<div class="today" role="group" aria-label="Today">' + go("review", "Waiting on the team") + go("send", "Ready to send") +
+      go("notyet", "Not yet confirmed") + go("held", "Confirmed and held") + go("qual", "Qualify") +
+      (S.deadline ? '<p class="deadline"><span class="lab">Confirmation due</span><span class="date">' + esc(shortDate(S.deadline)) + "</span></p>" : "") + "</div>";
   }
   /* ── access requests (the funding door, issue 2983) ─────────────────────────────────────────────────────────────
      A teammate whose sign-in email does not arrive asks an approver from the sign-in box. The approvers (the funding_approvers
@@ -1652,7 +1695,7 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
