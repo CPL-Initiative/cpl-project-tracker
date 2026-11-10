@@ -31,7 +31,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
 | [CSM Workspace / the team's queue for each college — lane state](../reference/lanes/csm-workspace.md) | lanes | `csm-workspace.md` | 2026-11-02 | 2026-11-10 |
 | [CTDL and the partner exchange (Credential Engine, WestEd) — lane state](../reference/lanes/ctdl-partner-exchange.md) | lanes | `ctdl-partner-exchange.md` | 2026-10-20 | 2026-10-20 |
-| [Discipline cross-listing — nest, alias or carry two homes — lane state](../reference/lanes/discipline-crosslist.md) | lanes | `discipline-crosslist.md` | 2026-09-22 | 2026-09-29 |
+| [Discipline cross-listing — nest, alias or carry two homes — lane state](../reference/lanes/discipline-crosslist.md) | lanes | `discipline-crosslist.md` | 2026-09-22 | 2026-11-10 |
 | [Disposition grain / student detail — lane state](../reference/lanes/disposition-grain-student-detail.md) | lanes | `disposition-grain-student-detail.md` | 2026-08-28 | 2026-09-30 |
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-10-31 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-27 |
@@ -60,7 +60,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Sierra's page redesign (after america.gov) — lane state](../reference/lanes/sierra-page-redesign.md) | lanes | `sierra-page-redesign.md` | 2026-10-08 | 2026-10-27 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-10-26 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
-| [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-09 |
+| [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-10 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
 | [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-10-05 |

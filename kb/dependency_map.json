@@ -6,7 +6,7 @@
   "edge_functions": 14,
   "file_datasets": 830,
   "external_services": 194,
-  "consumers": 543,
+  "consumers": 544,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -5807,7 +5807,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1264,
+     "line": 1305,
      "tabs": [
       "coci-lookup"
      ]
@@ -6171,7 +6171,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13213
+     "line": 13218
     }
    ],
    "served": true,
@@ -6270,7 +6270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1052,
+     "line": 1093,
      "tabs": [
       "coci-lookup"
      ]
@@ -6373,7 +6373,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1140,
+     "line": 1181,
      "tabs": [
       "coci-lookup"
      ]
@@ -6761,7 +6761,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13547
+     "line": 13552
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7559,7 +7559,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13154
+     "line": 13159
     }
    ],
    "served": true,
@@ -8090,7 +8090,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13210
+     "line": 13215
     }
    ],
    "served": true,
@@ -8188,7 +8188,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10221
+     "line": 10226
     }
    ],
    "producers": [
@@ -8688,7 +8688,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13771
+     "line": 13776
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -8734,7 +8734,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13791
+     "line": 13796
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -10645,7 +10645,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8888
+     "line": 8893
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -11418,7 +11418,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9005
+     "line": 9010
     }
    ],
    "producers": [
@@ -12749,14 +12749,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8970
+     "line": 8975
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 8970
+     "line": 8975
     }
    ],
    "producers": [
@@ -12971,7 +12971,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8630
+     "line": 8635
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -13878,7 +13878,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8506
+     "line": 8511
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -14081,7 +14081,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10151
+     "line": 10156
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -16370,7 +16370,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9021
+     "line": 9026
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -16705,7 +16705,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8667
+     "line": 8672
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -16872,7 +16872,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8699
+     "line": 8704
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -17009,7 +17009,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8851
+     "line": 8856
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -17561,7 +17561,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10205
+     "line": 8434
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -17653,6 +17653,13 @@
      "direction": "read",
      "how": "literal",
      "line": 23
+    },
+    {
+     "id": "script:kb/discipline_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
     }
    ],
    "served": true,
@@ -18443,7 +18450,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9712
+     "line": 9717
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -21505,7 +21512,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12982
+     "line": 12987
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -21670,7 +21677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13212
+     "line": 13217
     }
    ],
    "served": true,
@@ -21693,14 +21700,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13012
+     "line": 13017
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13012
+     "line": 13017
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -24018,7 +24025,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13214
+     "line": 13219
     }
    ],
    "served": true,
@@ -24098,7 +24105,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 647,
+     "line": 672,
      "tabs": [
       "coci-lookup"
      ]
@@ -24248,14 +24255,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10273
+     "line": 10278
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10273
+     "line": 10278
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -24300,14 +24307,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9624
+     "line": 9629
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9624
+     "line": 9629
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24377,14 +24384,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10357
+     "line": 10362
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10357
+     "line": 10362
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -24430,7 +24437,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1053,
+     "line": 1094,
      "tabs": [
       "coci-lookup"
      ]
@@ -24461,14 +24468,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10345
+     "line": 10350
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10345
+     "line": 10350
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -24580,14 +24587,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10309
+     "line": 10314
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10309
+     "line": 10314
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -24682,14 +24689,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10153
+     "line": 10158
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10153
+     "line": 10158
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -27640,7 +27647,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 540,
+     "line": 564,
      "tabs": [
       "coci-lookup"
      ]

@@ -8,7 +8,7 @@ status: current
 
 # You are Session 625
 
-Your moniker is **SkyWhale** (galaxy names). A **light** checkpoint, written at 9 commits past handoff 624 with 265k
+Your moniker is **SkyWhale** (galaxy names). A **light** checkpoint, written at 10 commits past handoff 624 with 265k
 of context left: no Roadmap row moved, no re-mint, and the run wrote no data (three `cpl_memory` rows aside). Sam gave
 no new ruling this run; he opened the session and the queue ran. The MAP team rolls the funding confirmations out to
 the whole team on 2026-11-10. COBIx (`cobi-cto`) reviews every PR; `docs/reference/cobix_pr_loop.md` says how to
@@ -17,7 +17,8 @@ answer. Run `/coord` before you start.
 **Two sessions ran on handoff 624.** Sam pasted the SkyCocoon greeting into a second session at 01:43Z
 (`session_01Rvwe2U562qR7UqfSmi4LXw`). It took the `commons` NEXT (the path mock's items, `kb/status/commons.json`,
 `lanes/commons.md`, branches `claude/s624b-*`) and stayed out of the CSM, funding and identity files; this session
-stayed out of the Commons view. If it checkpoints it writes `docs/session_626_handoff.md`: read the highest-numbered
+stayed out of the Commons view. It merged #3024 (a stalled routine, or a backlog that stops shrinking, becomes a queue
+item). If it checkpoints it writes `docs/session_626_handoff.md`: read the highest-numbered
 handoff, and this one beside it for the lanes named here.
 
 ## What shipped
