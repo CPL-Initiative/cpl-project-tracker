@@ -16697,8 +16697,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 592,
+   "count": 593,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 632,
+     "path": "docs/session_632_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 632 handoff: Las Positas passes 145 of 193; the LPC-GE pattern read in flight",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26747,5 +26762,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1436
+ "total": 1437
 }

@@ -734,3 +734,9 @@ The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/p
 - **A curriQunet degree page can print GE and electives as one figure** (*Additional General Education and Elective
   Units 36.0 · Total: 60.0*). It closes the sum, but it is not GE alone: a local degree's GE units still need the
   college's own GE pattern page.
+
+**S631 (SkyMayall, 2026-11-10): the display build's page file is a sample.** After Las Positas's reread, the rebuilt
+`cpl_pathways_roep_data.js` changed only its build stamp and the 22 sample programs' daily inputs, and named no Las
+Positas program. A college's display facts live in the build's SQL receipt, which `step=display` applies; the page
+file's diff is no test of whether a college was built. Also: a page-read plan that touches both the college's site and
+its curriQunet catalog must declare `curriqunet.com` in `outside_hosts` with its reason.
