@@ -1,16 +1,156 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-08T06:21:33Z",
- "count": 0,
- "suggestions": {},
+ "_generated_at": "2026-11-10T06:26:54Z",
+ "count": 15,
+ "suggestions": {
+  "ASL 53 American Sign Language IV": [
+   {
+    "kind": "course",
+    "title": "American Sign Language IV",
+    "code": "ASL 53",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "COSM 211  Manicuring and Pedicuring I": [
+   {
+    "kind": "course",
+    "title": "Manicuring and Pedicuring I",
+    "code": "COSM 211",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "COSM 215 Facials I": [
+   {
+    "kind": "course",
+    "title": "Facials I",
+    "code": "COSM 215",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "COSM 223 Hairstyling Services/Haircutting II": [
+   {
+    "kind": "course",
+    "title": "Hairstyling Services/Haircutting II",
+    "code": "COSM 223",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 112 Creative Process and Solutions": [
+   {
+    "kind": "course",
+    "title": "Creative Process and Solutions",
+    "code": "GRART 112",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 113 Typography": [
+   {
+    "kind": "course",
+    "title": "Typography",
+    "code": "GRART 113",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 114 Graphic Design Technology": [
+   {
+    "kind": "course",
+    "title": "Graphic Design Technology",
+    "code": "GRART 114",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 115 Website Design": [
+   {
+    "kind": "course",
+    "title": "Website Design",
+    "code": "GRART 115",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 121 Applied Graphic Design 1": [
+   {
+    "kind": "course",
+    "title": "Applied Graphic Design 1",
+    "code": "GRART 121",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 150 Graphics in Motion: Introduction to Animation": [
+   {
+    "kind": "course",
+    "title": "Graphics in Motion Introduction to Animation",
+    "code": "GRART 150",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 42  Web Graphics": [
+   {
+    "kind": "course",
+    "title": "Web Graphics",
+    "code": "GRART 42",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "GRART 43 Web Graphics and Animation": [
+   {
+    "kind": "course",
+    "title": "Web Graphics and Animation",
+    "code": "GRART 43",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "JOURN 021  Newswriting": [
+   {
+    "kind": "cid",
+    "id": "JOUR 110",
+    "title": "Introduction to Reporting and Newswriting",
+    "code": "JOURN 21"
+   }
+  ],
+  "JOURN 062 Survey of Mass Media": [
+   {
+    "kind": "cid",
+    "id": "JOUR 100",
+    "title": "Introduction to Mass Communications",
+    "code": "JOURN 62"
+   }
+  ],
+  "JOURN 069 Multimedia Reporting for Journalists": [
+   {
+    "kind": "course",
+    "title": "Multimedia Reporting for Journalists",
+    "code": "JOURN 69",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ]
+ },
  "aligned": {
-  "Introduction to Law Enforcement/Corrections": {
-   "kind": "cid",
-   "id": "AJ 110",
-   "title": "Introduction to Criminal Justice",
-   "code": "CRJ 115",
-   "college": "Palo Verde College"
-  },
   "Report Writing": {
    "kind": "mid",
    "id": "CRIM M1309",
@@ -18,12 +158,12 @@
    "code": "CRJ 125",
    "college": "Palo Verde College"
   },
-  "Nursing Care of Children and Families": {
-   "kind": "mid",
-   "id": "NRSR M1050",
-   "title": "Nursing Care of Children & Families",
-   "code": "NURS 509",
-   "college": "Mt. San Jacinto College"
+  "Introduction to Law Enforcement/Corrections": {
+   "kind": "cid",
+   "id": "AJ 110",
+   "title": "Introduction to Criminal Justice",
+   "code": "CRJ 115",
+   "college": "Palo Verde College"
   },
   "Nursing Care of the childbearing family": {
    "kind": "mid",
@@ -31,6 +171,111 @@
    "title": "Nursing Care of the Childbearing Family",
    "code": "NURS 507",
    "college": "Mt. San Jacinto College"
+  },
+  "JOURN 062 Survey of Mass Media": {
+   "kind": "cid",
+   "id": "JOUR 100",
+   "title": "Introduction to Mass Communications",
+   "code": "JOURN 062",
+   "college": "Laney College"
+  },
+  "JOURN 021  Newswriting": {
+   "kind": "cid",
+   "id": "JOUR 110",
+   "title": "Introduction to Reporting and Newswriting",
+   "code": "JOURN 021",
+   "college": "Laney College"
+  },
+  "JOURN 069 Multimedia Reporting for Journalists": {
+   "kind": "course",
+   "id": "JOUR M10HU",
+   "title": "Multimedia Reporting for Journalists",
+   "code": "JOURN 069",
+   "college": "Laney College"
+  },
+  "GRART 121 Applied Graphic Design 1": {
+   "kind": "course",
+   "id": "GFCD M10AA",
+   "title": "Applied Graphic Design 1",
+   "code": "GRART 121",
+   "college": "Laney College"
+  },
+  "GRART 150 Graphics in Motion: Introduction to Animation": {
+   "kind": "course",
+   "id": "GFCD M10BZ",
+   "title": "Graphics in Motion Introduction to Animation",
+   "code": "GRART 150",
+   "college": "Laney College"
+  },
+  "GRART 112 Creative Process and Solutions": {
+   "kind": "mid",
+   "id": "ARTS M1609",
+   "title": "Creative Solutions for Ceramics",
+   "code": "GRART 112",
+   "college": "Laney College"
+  },
+  "GRART 114 Graphic Design Technology": {
+   "kind": "course",
+   "id": "GFCD M10FH",
+   "title": "Graphic Design Technology",
+   "code": "GRART 114",
+   "college": "Laney College"
+  },
+  "GRART 43 Web Graphics and Animation": {
+   "kind": "course",
+   "id": "GFCD M10CA",
+   "title": "Web Graphics and Animation",
+   "code": "GRART 043",
+   "college": "Laney College"
+  },
+  "GRART 113 Typography": {
+   "kind": "mid",
+   "id": "ARTS M1507",
+   "title": "Typography",
+   "code": "GRART 113",
+   "college": "Laney College"
+  },
+  "GRART 42  Web Graphics": {
+   "kind": "mid",
+   "id": "GFCD M1046",
+   "title": "Web Graphics",
+   "code": "GRART 042",
+   "college": "Laney College"
+  },
+  "ASL 53 American Sign Language IV": {
+   "kind": "mid",
+   "id": "SLNA M1041",
+   "title": "American Sign Language 4",
+   "code": "ASL 053",
+   "college": "Berkeley City College"
+  },
+  "COSM 215 Facials I": {
+   "kind": "course",
+   "id": "COSM M10JY",
+   "title": "Facials I",
+   "code": "COSM 215",
+   "college": "Laney College"
+  },
+  "COSM 211  Manicuring and Pedicuring I": {
+   "kind": "mid",
+   "id": "COSM M1066",
+   "title": "Manicuring and Pedicuring",
+   "code": "COSM 211",
+   "college": "Laney College"
+  },
+  "COSM 223 Hairstyling Services/Haircutting II": {
+   "kind": "course",
+   "id": "COSM M10KL",
+   "title": "Hairstyling Services/Haircutting II",
+   "code": "COSM 223",
+   "college": "Laney College"
+  },
+  "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+   "kind": "mid",
+   "id": "AGRI M1099",
+   "title": "Introduction to Food Safety",
+   "code": "ABT 130",
+   "college": "Hartnell College"
   }
  }
 }

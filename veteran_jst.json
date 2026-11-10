@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-09T16:53:38.289120+00:00",
+  "scraped_at": "2026-11-10T06:23:55.523045+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31125,
+    "jst": 31200,
     "star_colleges": 67
   },
   "computed_star_colleges": 67,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 207,
-      "jst": 418,
+      "jst": 419,
       "star": true
     },
     "City College of San Francisco": {
@@ -32,12 +32,12 @@
     },
     "San Diego Mesa College": {
       "vets": 1151,
-      "jst": 1660,
+      "jst": 1664,
       "star": true
     },
     "San Diego City College": {
       "vets": 810,
-      "jst": 1560,
+      "jst": 1566,
       "star": true
     },
     "San Diego Miramar College": {
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 600,
+      "jst": 599,
       "star": true
     },
     "Norco College": {
@@ -72,12 +72,12 @@
     },
     "West Los Angeles College": {
       "vets": 147,
-      "jst": 158,
+      "jst": 157,
       "star": true
     },
     "Long Beach City College": {
       "vets": 880,
-      "jst": 883,
+      "jst": 884,
       "star": true
     },
     "De Anza College": {
@@ -180,14 +180,14 @@
       "jst": 227,
       "star": true
     },
+    "Los Angeles Trade Technical College": {
+      "vets": 310,
+      "jst": 477,
+      "star": true
+    },
     "Mission College": {
       "vets": 167,
       "jst": 174,
-      "star": true
-    },
-    "Los Angeles Trade Technical College": {
-      "vets": 310,
-      "jst": 414,
       "star": true
     },
     "Clovis Community College": {
@@ -267,7 +267,7 @@
     },
     "Las Positas College": {
       "vets": 234,
-      "jst": 128,
+      "jst": 129,
       "star": false
     },
     "East Los Angeles College": {
@@ -497,7 +497,7 @@
     },
     "Sacramento City College": {
       "vets": 233,
-      "jst": 119,
+      "jst": 120,
       "star": false
     },
     "Cuyamaca College": {

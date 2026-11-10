@@ -1,0 +1,32 @@
+{
+  "folded": [
+    {
+      "raw": "Nursing Care of Children and Families",
+      "assigned": "Nursing Care of Children and Families",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-09T17:53:55.099685+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Nursing Care of Children and Families",
+      "assigned": "Nursing Care of Children and Families",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-09T17:53:55.099685+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 1,
+  "unified_titles_count": 5593
+}
