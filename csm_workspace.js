@@ -17,8 +17,8 @@
  * a3): notes, calls, emails and meetings per college and activity, each with an optional follow-up date the queue
  * counts down to. A decision made here logs itself.
  *
- * THE CONTACTS (S555): Contacts on file and Names, titles and emails open popups over MAP's directory, the landing
- * page and MAP's users; Write an email seeds To and Cc by template, takes More Cc from the picker, and copies the
+ * THE CONTACTS (S555; in the People panel since 2026-11-10): one people list with its source filter over MAP's
+ * directory, the landing page and MAP's users, what they disagree on, and every field on file; Write an email seeds To and Cc by template, takes More Cc from the picker, and copies the
  * formatted email for Outlook. All three sources are reviewer-gated in the database.
  *
  * The look is the CPL Commons' (Malone's CPL/AI palette) as the mock shows it; the dark theme maps every role onto a
@@ -267,6 +267,8 @@
       "#tab-csm-workspace .people .ph { color:var(--cw-muted); font-style:italic; }",
       "#tab-csm-workspace .people td:last-child { white-space:nowrap; }",
       "#tab-csm-workspace .ppl-tools { display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center; }",
+      "#tab-csm-workspace details.onfile { display:grid; gap:10px; }",
+      "#tab-csm-workspace details.onfile summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
       "#tab-csm-workspace .ppl-scroll { max-height:52vh; overflow:auto; border:1px solid var(--cw-line-soft); border-radius:8px; }",
       "@media (max-width: 560px) { #tab-csm-workspace .fields { grid-template-columns:minmax(0, 1fr); } }",
       "#tab-csm-workspace .hc { position:absolute; z-index:50; max-width:min(340px, calc(100vw - 32px)); background:var(--cw-surface); color:var(--cw-ink); border:1px solid var(--cw-line); border-radius:10px; box-shadow:0 12px 32px rgba(8,43,97,.18); padding:12px 14px; font-size:.86rem; line-height:1.45; display:grid; gap:6px; }",
@@ -958,14 +960,14 @@
     };
     var c = S.reviewer && CT.state === "ready" ? contactsOf(r) : null;
     var peopleBody = !S.reviewer ? "" : who + (CT.state === "error" ? '<p class="gate">' + esc(CT.error) + "</p>" : !c ? '<p class="gate">Reading the contacts on file&hellip;</p>' :
+      peopleToolsHtml(state.psrc || "") +
       '<div class="wide" role="region" aria-label="People at ' + esc(r.name) + '" tabindex="0"><table class="facts"><colgroup><col style="width:30%"><col style="width:46%"><col style="width:24%"></colgroup>' +
       '<thead><tr><th scope="col">Role</th><th scope="col">Person</th><th scope="col">Source</th></tr></thead><tbody>' +
-      (c.people.length ? c.people.map(function (p) {
+      (c.people.some(function (p) { return !state.psrc || p.src === state.psrc; }) ? c.people.filter(function (p) { return !state.psrc || p.src === state.psrc; }).map(function (p) {
         return '<tr><th scope="row">' + esc(p.role || "No role given") + "</th><td>" + (p.name ? esc(p.name) : "Name not given") + (p.email ? '<span class="why">' + esc(p.email) + "</span>" : "") +
           "</td><td>" + esc(p.src) + "</td></tr>";
-      }).join("") : '<tr><td colspan="3">No one on file for this college.</td></tr>') + "</tbody></table></div>") +
-      '<p class="links" style="margin:0"><button type="button" class="word" data-pop="contacts">Contacts on file, with what differs</button>' +
-      '<button type="button" class="word" data-pop="people">Filter the list and copy addresses</button></p>';
+      }).join("") : '<tr><td colspan="3">' + (state.psrc ? "No one on file from this source." : "No one on file for this college.") + "</td></tr>") + "</tbody></table></div>" +
+      contactsOnFileHtml(r));
     var onPage = c ? c.people.filter(function (p) { return p.src === "Landing page"; }) : [];
     var pageBody = (side === "page" ? landingFrame(r) : "") +
       (S.reviewer && r.landing ? (onPage.length ? '<p class="k">Who the page lists</p><ul class="conds">' + onPage.map(function (p) {
@@ -1110,37 +1112,11 @@
   }
 
   // ── the popups ──
-  var lastOpener = null;
-  function dialogShell(id, title, body, wide) {
-    return '<dialog class="cdlg' + (wide ? " wide" : "") + '" id="' + id + '" aria-labelledby="' + id + '-h"><div class="cdlg-in">' +
-      '<div class="cdlg-head"><h3 id="' + id + '-h" tabindex="-1">' + esc(title) + '</h3><button type="button" class="word" data-close="1">Close</button></div>' +
-      body + "</div></dialog>";
-  }
-  function openDialog(html, opener) {
-    closeDialog();
-    lastOpener = opener || null;
-    var host = document.createElement("div");
-    host.id = "cw-dlg-host";
-    host.innerHTML = html;
-    root().appendChild(host);
-    var dlg = host.querySelector("dialog");
-    if (typeof dlg.showModal === "function") { try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); } }
-    else dlg.setAttribute("open", "");
-    dlg.addEventListener("cancel", function (e) { e.preventDefault(); closeDialog(); });
-    dlg.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closeDialog(); } });
-    var h = dlg.querySelector("h3"); if (h) h.focus();
-    return dlg;
-  }
-  function closeDialog() {
-    var host = document.getElementById("cw-dlg-host");
-    if (!host) return;
-    var dlg = host.querySelector("dialog");
-    try { if (dlg && dlg.open && typeof dlg.close === "function") dlg.close(); } catch (e) {}
-    host.parentNode.removeChild(host);
-    if (lastOpener && document.body.contains(lastOpener)) lastOpener.focus();
-    lastOpener = null;
-  }
-  function contactsDialogHtml(r) {
+  /* Contacts on file, inside the People panel (Sam, 2026-11-10: "links still opening to new tabs instead of
+     sidebars"). What were two pop-ups, Contacts on file and Names, titles and emails, now sit in the panel: the one
+     people list with its source filter and Copy the addresses shown, what the sources disagree on, and every field on
+     file behind one fold. */
+  function contactsOnFileHtml(r) {
     var c = contactsOf(r), mm = mismatchesOf(r, c);
     var dirByRole = {};
     c.people.forEach(function (p) { if (p.src === "MAP directory") (dirByRole[p.role] = dirByRole[p.role] || []).push(p); });
@@ -1158,28 +1134,17 @@
     c.users.forEach(function (u) { var k = u.role_name || "User"; byRole[k] = (byRole[k] || 0) + 1; });
     var users = Object.keys(byRole).length ? '<p class="tags">' + Object.keys(byRole).sort().map(function (k) {
       return '<span class="pill">' + esc(k) + " " + byRole[k] + "</span>"; }).join("") + "</p>" : '<p class="tpl-meta">No active MAP users.</p>';
-    var landingLinkHtml = c.landing ? '<a href="' + esc(c.landing) + '" target="_blank" rel="noopener">Open the landing page</a>' : "";
-    return dialogShell("cw-cdlg", r.name + " contacts",
-      (mm.length ? '<p class="diff">' + mm.map(esc).join("<br>") + "</p>" : '<p class="tpl-meta">The three sources agree on the coordinator and the primary contact.</p>') +
+    return (mm.length ? '<p class="diff">' + mm.map(esc).join("<br>") + "</p>" : '<p class="tpl-meta">The three sources agree on the coordinator and the primary contact.</p>') +
+      '<details class="onfile"><summary>Every field on file</summary>' +
       '<section class="cdlg-src"><h4>MAP directory</h4>' + fields + "</section>" +
       '<section class="cdlg-src"><h4>Landing page</h4>' + land + "</section>" +
-      '<section class="cdlg-src"><h4>MAP users by role</h4>' + users + "</section>" +
-      '<div class="cdlg-foot">' + landingLinkHtml + '<button type="button" class="word" data-pop="people">Names, titles and emails</button>' +
-        '<button type="button" class="word" data-copyaddr="all">Copy every address</button><span class="tpl-meta" role="status" data-copied="1"></span></div>');
+      '<section class="cdlg-src"><h4>MAP users by role</h4>' + users + "</section></details>";
   }
   var SOURCES = ["MAP directory", "Landing page", "MAP users"];
-  function peopleDialogHtml(r, only) {
-    var c = contactsOf(r), list = c.people.filter(function (p) { return !only || p.src === only; });
+  function peopleToolsHtml(only) {
     var opts = '<option value="">Every source</option>' + SOURCES.map(function (s) { return '<option' + (s === only ? " selected" : "") + ">" + esc(s) + "</option>"; }).join("");
-    return dialogShell("cw-pdlg", r.name + ": names, titles and emails",
-      '<div class="ppl-tools"><label for="cw-psrc">Show</label><select id="cw-psrc" data-psrc="1">' + opts + "</select>" +
-        '<button type="button" class="word" data-copyaddr="shown">Copy the addresses shown</button><span class="tpl-meta" role="status" data-copied="1"></span></div>' +
-      '<div class="ppl-scroll" role="region" aria-label="People on file" tabindex="0"><table class="people"><thead><tr>' +
-        '<th scope="col">Source</th><th scope="col">Role or title</th><th scope="col">Name</th><th scope="col">Email</th></tr></thead><tbody>' +
-        (list.length ? list.map(function (p) {
-          return "<tr><td>" + esc(p.src) + "</td><td>" + esc(p.role) + "</td><td>" + (p.name ? esc(p.name) : '<span class="ph">Not given</span>') +
-            "</td><td>" + (p.email ? esc(p.email) : '<span class="ph">None</span>') + "</td></tr>";
-        }).join("") : '<tr><td colspan="4">No one on file from this source.</td></tr>') + "</tbody></table></div>", true);
+    return '<div class="ppl-tools"><label for="cw-psrc">Show</label><select id="cw-psrc" data-psrc="1">' + opts + "</select>" +
+      '<button type="button" class="word" data-copyaddr="shown">Copy the addresses shown</button><span class="tpl-meta" role="status" data-copied="1"></span></div>';
   }
   function uniqueEmails(list) {
     var seen = {}, out = [];
@@ -1773,7 +1738,7 @@
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
-    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
+    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; state.psrc = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
     if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
     if (t.hasAttribute("data-fund")) {
       state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
@@ -1792,17 +1757,6 @@
       return;
     }
     if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
-    if (t.hasAttribute("data-close")) { closeDialog(); return; }
-    if (t.hasAttribute("data-pop")) {
-      var pr = rowOf(state.sel); if (!pr) return;
-      var opener = t.closest("dialog") ? lastOpener : t;
-      var pop = function () {
-        if (CT.state === "error") { say(CT.error); return; }
-        openDialog(t.getAttribute("data-pop") === "people" ? peopleDialogHtml(pr, "") : contactsDialogHtml(pr), opener);
-      };
-      if (CT.state === "ready") pop(); else { say("Reading the contacts on file…"); loadContacts().then(pop); }
-      return;
-    }
     if (t.hasAttribute("data-copyaddr")) {
       var cr = rowOf(state.sel); if (!cr) return;
       var srcSel = document.getElementById("cw-psrc"), only = t.getAttribute("data-copyaddr") === "shown" && srcSel ? srcSel.value : "";
@@ -1852,8 +1806,8 @@
       return;
     }
     if (t.hasAttribute && t.hasAttribute("data-psrc")) {
-      var pr = rowOf(state.sel); if (!pr) return;
-      openDialog(peopleDialogHtml(pr, t.value), lastOpener);
+      state.psrc = t.value || "";
+      paintRecord();
       var ns = document.getElementById("cw-psrc"); if (ns) ns.focus();
       return;
     }
@@ -1906,7 +1860,7 @@
 
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
-  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.lpOpen = {}; state.mailEdit = {}; state.fund = false; state.accOpen = false; LOG.asked = false; }
+  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.lpOpen = {}; state.psrc = ""; state.mailEdit = {}; state.fund = false; state.accOpen = false; LOG.asked = false; }
   /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
      #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
   function arrive() {
