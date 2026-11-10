@@ -1,0 +1,49 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Kinesiology",
+  "ruling": "Open Asks Sheet 174 card 1 (Sam, 2026-11-09: confirm), carried to 10 cards that qualified since; S634's call under decide-and-record (Sam, 2026-11-10)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 10,
+  "before": {
+    "KINE M1066": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1210": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1382": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1433": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1459": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1723": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1733": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1782": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "KINE M1897": {},
+    "KINE M2004": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

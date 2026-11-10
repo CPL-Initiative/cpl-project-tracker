@@ -1,0 +1,100 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Culinary Arts/Food Technology",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 22,
+  "before": {
+    "CULN M1022": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1027": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1029": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1040": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1042": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1048": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1058": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1064": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1092": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1093": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1095": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1096": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1102": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1106": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1129": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1130": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1146": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M1155": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M9024": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CULN M9035": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

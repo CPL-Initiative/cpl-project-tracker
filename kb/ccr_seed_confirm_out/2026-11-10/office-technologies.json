@@ -1,0 +1,252 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Office Technologies",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 60,
+  "before": {
+    "BSOT M1011": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1012": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1013": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1014": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1015": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1016": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1022": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1039": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1047": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1049": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1050": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1058": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1062": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1067": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1068": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1069": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1084": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1085": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1086": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1089": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1111": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1113": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1114": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1115": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1116": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1117": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1118": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1119": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1141": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1142": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1143": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1145": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1156": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1157": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1158": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1167": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1168": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1169": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1176": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1192": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1201": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1209": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1214": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1217": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1219": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1220": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1222": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1223": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1224": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1227": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M1238": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M9011": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M9032": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M9058": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M9072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M9080": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "BSOT M9090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}
