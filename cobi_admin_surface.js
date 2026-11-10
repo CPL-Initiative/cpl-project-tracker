@@ -98,19 +98,19 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "budget_funding",
-        "cpl_funding_nc_attestation",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
+        "map_college_cr_unit",
         "map_colleges"
       ],
       "writes": [
         "cpl_funding_config",
+        "cpl_funding_nc_attestation",
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports",
-        "map_college_cr_unit"
+        "cpl_funding_reports"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
@@ -130,19 +130,19 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "budget_funding",
-        "cpl_funding_nc_attestation",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
+        "map_college_cr_unit",
         "map_colleges"
       ],
       "writes": [
         "cpl_funding_config",
+        "cpl_funding_nc_attestation",
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports",
-        "map_college_cr_unit"
+        "cpl_funding_reports"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
@@ -211,10 +211,10 @@ window.COBI_ADMIN_SURFACE = {
         "coci_college_programs",
         "coci_program_courses",
         "course_outcomes",
-        "cpl_funding_nc_attestation",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
+        "map_college_cr_unit",
         "map_college_cr_waiting_pub",
         "map_college_credit_summary",
         "map_college_credit_summary_pub",
@@ -229,11 +229,11 @@ window.COBI_ADMIN_SURFACE = {
       "writes": [
         "cpl_adoption_interest",
         "cpl_funding_config",
+        "cpl_funding_nc_attestation",
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports",
-        "map_college_cr_unit"
+        "cpl_funding_reports"
       ],
       "rpcs": [
         "cpl_funding_email_domains",
@@ -346,10 +346,10 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "budget_funding",
         "chatbox_credentials",
-        "cpl_funding_nc_attestation",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
+        "map_college_cr_unit",
         "map_college_cr_waiting_pub",
         "map_college_credit_summary",
         "map_college_credit_summary_pub",
@@ -363,11 +363,11 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "writes": [
         "cpl_funding_config",
+        "cpl_funding_nc_attestation",
         "cpl_funding_nc_attestation_pub",
         "cpl_funding_notes",
         "cpl_funding_participation",
-        "cpl_funding_reports",
-        "map_college_cr_unit"
+        "cpl_funding_reports"
       ],
       "rpcs": [
         "cpl_funding_email_domains",

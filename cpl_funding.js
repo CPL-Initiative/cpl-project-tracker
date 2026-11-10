@@ -6410,17 +6410,20 @@
      selfPost sends the row; where the database answers 400 to a row carrying the new field (the column has not
      landed, or was rolled back), it sends the row once more without it, so a confirmation is never lost to this field. */
   var OTHER_TITLE_ASK = "Please enter your title at the college.";
-  function selfPost(url, rec) {
-    var send = function (body) {
-      return fetch(url, { method: "POST",
-        headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
-          "Content-Type": "application/json", Prefer: "return=minimal" },
-        body: JSON.stringify(body) });
-    };
+  /* send(body) is the caller's own fetch, so each table's write stays at its call site with its URL beside it (the
+     dependency map reads the write from there; COBIx on PR 3015). The row is sent again without the field only when
+     PostgREST says the column is unknown (400, code PGRST204); any other refusal reports as it always did. */
+  var SELF_HEADERS = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+    "Content-Type": "application/json", Prefer: "return=minimal" };
+  function selfPost(send, rec) {
     return send(rec).then(function (r) {
       if (r.ok || r.status !== 400 || rec.attestor_title_text == null) return r;
-      var bare = {}; Object.keys(rec).forEach(function (k) { if (k !== "attestor_title_text") bare[k] = rec[k]; });
-      return send(bare);
+      var read = typeof r.clone === "function" ? r.clone().json() : Promise.resolve(null);
+      return read.then(function (e) {
+        if (!e || e.code !== "PGRST204") return r;
+        var bare = {}; Object.keys(rec).forEach(function (k) { if (k !== "attestor_title_text") bare[k] = rec[k]; });
+        return send(bare);
+      }, function () { return r; });
     });
   }
   function submitOptIn(college, form) {
@@ -6436,7 +6439,9 @@
       render(); return;
     }
     refreshTable();   // show the disabled "Submitting…" state at once
-    selfPost(PART_URL, rec).then(function (r) {
+    selfPost(function (body) {
+      return fetch(PART_URL, { method: "POST", headers: SELF_HEADERS, body: JSON.stringify(body) });
+    }, rec).then(function (r) {
       // 409 = a row already exists for this college (a race, or already opted in);
       // treat it as done and let the re-read show the true state.
       OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : keep({ error: true });
@@ -6567,7 +6572,9 @@
       render(); return;
     }
     refreshTable();
-    selfPost(NC_ATTEST_TABLE_URL, rec).then(function (r) {
+    selfPost(function (body) {
+      return fetch(NC_ATTEST_TABLE_URL, { method: "POST", headers: SELF_HEADERS, body: JSON.stringify(body) });
+    }, rec).then(function (r) {
       // 409: this college already attested for the year; the re-read shows it.
       NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : keep({ error: true });
       loadEligibility();
@@ -7078,7 +7085,7 @@
       headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }) })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
-        if (!Array.isArray(rows)) { TITLES.asked = ""; return; }
+        if (!Array.isArray(rows)) return;   // refused or absent: not asked again for this sign-in on this page
         var roster = rosterByShortName(), m = {};
         rows.forEach(function (x) {
           var key = roster[shortName(x.college)] || x.college;
@@ -7086,7 +7093,7 @@
         });
         TITLES.map = m;
         if (rows.length) render();
-      }).catch(function () { TITLES.asked = ""; });
+      }).catch(function () { /* the same: one ask per sign-in per page */ });
   }
   function senderTitleText(kind, college, fy) { return TITLES.map[kind + "|" + college + (kind === "nc" ? "|" + (fy || "") : "")] || ""; }
   function optinReviewOf(college) {

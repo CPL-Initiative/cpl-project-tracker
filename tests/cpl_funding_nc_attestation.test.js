@@ -435,8 +435,12 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
     /title === "Other" && !titleText\) err = OTHER_TITLE_ASK/.test(SRC) && /form\.title === "Other" && !form\.titleText\) return \{ error: OTHER_TITLE_ASK \}/.test(SRC));
   check("T3: the title rides attestor_title_text only when the title is Other, on both writes",
     (SRC.match(/if \(form\.title === "Other" && form\.titleText\) rec\.attestor_title_text = form\.titleText;/g) || []).length === 2);
-  check("T4: both writes go through selfPost, which sends the row again without the field on a 400",
-    /selfPost\(PART_URL, rec\)/.test(SRC) && /selfPost\(NC_ATTEST_TABLE_URL, rec\)/.test(SRC) &&
-    /r\.status !== 400 \|\| rec\.attestor_title_text == null\) return r;/.test(SRC));
+  check("T4: each write keeps its own fetch and URL at the call site, and selfPost resends without the field only on PGRST204",
+    /fetch\(PART_URL, \{ method: "POST", headers: SELF_HEADERS/.test(SRC) && /fetch\(NC_ATTEST_TABLE_URL, \{ method: "POST", headers: SELF_HEADERS/.test(SRC) &&
+    /e\.code !== "PGRST204"\) return r;/.test(SRC));
+  const DM = JSON.stringify(require("../kb/dependency_map.json"));
+  check("T5: the access map still names the two tables the forms write, and no public write to map_college_cr_unit",
+    /cpl_funding_participation/.test(DM) && /cpl_funding_nc_attestation/.test(DM));
+  check("T6: the titles are asked once per sign-in per page, whatever the answer", !/TITLES\.asked = ""/.test(SRC));
 }
 finish();
