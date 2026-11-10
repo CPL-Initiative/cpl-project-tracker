@@ -77,17 +77,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     46.0,
     46.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    46.0,
+    46.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -111,15 +112,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Diesel Mechanics",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 46.0,
+    "max": 46.0
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -148,7 +149,8 @@
    "careers": [
     "beginning mechanics",
     "apprentices"
-   ]
+   ],
+   "total_units_summed": true
   },
   "blocks": [
    {
@@ -310,5 +312,20 @@
    "The program learning outcomes are printed once for the program as a whole (shared by the certificate and the AS degree) and are recorded here."
   ]
  },
- "extracted_run": "38935121852"
+ "extracted_run": 42892493763,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 46.0,
+    "max": 46.0
+   },
+   "words": "SUMMED FROM THE SEMESTERS, no total is printed: FIRST SEMESTER 10 + SECOND SEMESTER 12 + THIRD SEMESTER 14 + FOURTH SEMESTER 10"
+  }
+ ],
+ "read_run": "38935121852"
 }

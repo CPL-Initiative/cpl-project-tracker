@@ -65,17 +65,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     50.0,
     50.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    50.0,
+    50.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -99,15 +100,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Engine Performance - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 50.0,
+    "max": 50.0
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -134,7 +135,8 @@
     "apprentice auto mechanics",
     "management",
     "teaching"
-   ]
+   ],
+   "total_units_summed": true
   },
   "blocks": [
    {
@@ -261,5 +263,20 @@
    "The description mentions ENGL 268A-268B, ESL 253A-253B and MATH 225 as recommended preparation, and the ATECH 21/26 grade prerequisite; these are not certificate requirements beyond the listed semesters."
   ]
  },
- "extracted_run": "38935121852"
+ "extracted_run": 42892493763,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 50.0,
+    "max": 50.0
+   },
+   "words": "SUMMED FROM THE SEMESTERS, no total is printed: FIRST SEMESTER 14 + SECOND SEMESTER 10 + THIRD SEMESTER 14 + FOURTH SEMESTER 12"
+  }
+ ],
+ "read_run": "38935121852"
 }
