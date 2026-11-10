@@ -41,11 +41,13 @@ approval yet) reach the note through the `cpl-funding-door-said` event `reviewer
 screen as it was. No database change. Guards `tests/csm_workspace.test.js` 13x-a to 13x-g. The earliest real lapse is
 2026-12-09; a revoked grant shows it sooner. **The funding tab says it too (S624, 2026-11-10).** For a door sign-in (a closed model), `cpl_funding.js` asks
 `rpc/is_funding_reviewer` when the reviewer list answers no, every ten minutes after, and every half minute while the
-note shows; a sign-in on the list is never asked, since the function is true for it by definition. On a no, the bar
+note shows; each answer sets the next check (never a render: a second no draws nothing, so a check armed from the
+render fired once and stopped, COBIx on #3022), so an idle tab keeps asking. A sign-in on the list is never asked,
+since the function is true for it by definition. On a no, the bar
 reads *Your funding access has ended* with *Ask an approver* (the door's own request, `_askAccess`), and Accept, Deny,
 the CO Monitor's note, Nudge and every model control leave (`stripEndedAffordances`); what only reads stays. The door's
 later words reach the note, and an approval brings the review back without a reload. Guards
-`tests/cpl_funding_access_ended.test.js` (21).
+`tests/cpl_funding_access_ended.test.js` (31).
 
 **A surface that draws a sign-in once must follow the keeper's renewal (SkyBeacon, 2026-11-06, #2857).** Sam: *"we tried
 to fix the lapsed token thing yesterday must not have worked for all surfaces"*. The keeper (`cpl_session.js`) renews a

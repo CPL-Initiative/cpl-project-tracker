@@ -15,6 +15,7 @@
 //      Ask an approver sends the door's own request for that address.
 //   4. THE DOOR'S LATER WORDS reach the note, and the button stays.
 //   5. ACCESS BACK: the note leaves and the review controls return.
+//   6. AN IDLE TAB KEEPS ASKING: the next check is set from the answer, so an approval arrives with no click.
 //
 // Run from repo root: `npm test` (or `node --max-old-space-size=12288 tests/cpl_funding_access_ended.test.js`).
 const fs = require("fs");
@@ -136,14 +137,63 @@ function openDetail(x, name) {
   check("5c: the door's words draw nothing while the access stands", !note(d) && !d.mount.querySelector("#cplFundAccessMsg"));
 }
 
+// ── 7. an idle tab keeps asking (COBIx on #3022: armed from the render alone, the check fired once and stopped) ──
+{
+  const d = make();
+  let grant = false, fails = false, asks = 0, hold = null;
+  const timers = [];
+  d.window.setTimeout = (fn, ms) => { timers.push({ fn, ms }); return timers.length; };
+  d.window.clearTimeout = (id) => { if (timers[id - 1]) timers[id - 1].cleared = true; };
+  const live = () => timers.filter((x) => !x.cleared && !x.ran);
+  const fire = () => { const x = live()[0]; x.ran = true; x.fn(); };
+  d.window.CPL_FUNDING_NO_REMOTE = false;
+  d.window.fetch = (url) => {
+    const ans = (v, ok) => Promise.resolve({ ok: ok !== false, status: ok === false ? 500 : 200, json: () => Promise.resolve(v) });
+    if (!/rpc\/is_funding_reviewer/.test(String(url))) return ans([]);
+    asks++;
+    if (hold) return new Promise((res) => { hold.push(() => res({ ok: true, status: 200, json: () => Promise.resolve(grant) })); });
+    return fails ? ans({}, false) : ans(grant);
+  };
+  const settle = async () => { await tick(); await tick(); await tick(); };
+
+  d.T._setOnReviewerList(false); await settle();
+  check("7a: the first no draws the note and sets the next check half a minute out",
+    d.T._reviewEnded() === true && asks === 1 && live().length === 1 && live()[0].ms === 30000, asks + " asks, timers " + JSON.stringify(live().map((x) => x.ms)));
+  fire(); await settle();
+  check("7b: a second no changes nothing on the screen, and still sets the next check", asks === 2 && !!note(d) && live().length === 1 && live()[0].ms === 30000);
+  fire(); await settle();
+  check("7c: ⭐ so a third ask goes out from an idle tab, and a fourth is set", asks === 3 && live().length === 1);
+  fails = true; fire(); await settle();
+  check("7d: an ask that fails keeps the note and still sets the next check", asks === 4 && !!note(d) && live().length === 1 && live()[0].ms === 30000);
+  fails = false; grant = true; fire(); await settle();
+  check("7e: ⭐ the approval is picked up with no click and no reload, and the pace drops to ten minutes",
+    asks === 5 && !note(d) && d.T._reviewEnded() === false && live().length === 1 && live()[0].ms === 600000,
+    JSON.stringify(live().map((x) => x.ms)));
+  grant = false; fire(); await settle();
+  check("7f: an idle door sign-in whose grant then ends learns it at the next ten-minute check, and the pace returns to half a minute",
+    asks === 6 && !!note(d) && live().length === 1 && live()[0].ms === 30000, JSON.stringify(live().map((x) => x.ms)));
+
+  // A forced ask that arrives while one is out is kept and sent when that one lands (the answer in flight is for
+  // the token it left with).
+  hold = []; fire(); await settle();                       // ask 7 is out and held
+  d.T._askFundingAccess(true); d.T._askFundingAccess(true);   // a new sign-in asks meanwhile, twice
+  check("7g: while an ask is out, no second one leaves", asks === 7 && hold.length === 1);
+  const release = hold; hold = null; grant = true; release[0](); await settle();
+  check("7h: ⭐ when it lands, one more ask goes out, and its answer is the one that stands",
+    asks === 8 && d.T._reviewEnded() === false && !note(d), asks + " asks");
+  check("7i: one timer at a time, whatever the path", live().length === 1);
+}
+
 // ── source ───────────────────────────────────────────────────────────────────────────────────────────────────
 check("6a: only a closed model is asked, and a failed ask closes nothing",
   /function askFundingAccess\(force\) \{[\s\S]{0,160}!modelClosed\(\)/.test(SRC) &&
-  /\.catch\(function \(\) \{ ACCESS\.asking = ""; \}\);/.test(SRC) &&
+  /\.catch\(function \(\) \{ done\(\); \}\);/.test(SRC) &&
   /return !!e && modelClosed\(\) && ACCESS\.email === e && ACCESS\.ok === false;/.test(SRC));
 check("6b: a new sign-in asks again, so an approval claimed by this tab clears the note",
   /addEventListener\("cpl-session-changed", function \(\) \{ askReviewerList\(\); askFundingAccess\(true\);/.test(SRC));
 check("6c: both sweeps take the ended branch before the door's", (SRC.match(/else if \(reviewEnded\(\)\) stripEndedAffordances\(/g) || []).length === 2);
+check("6d: the next check is set from the answer path, on success and on failure",
+  /accessAnswer\(e, v\); done\(\); \}\)\s*\.catch\(function \(\) \{ done\(\); \}\)/.test(SRC) && /scheduleAccessCheck\(\);\s*\};/.test(SRC));
 
 finish();
 })();

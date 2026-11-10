@@ -1730,7 +1730,7 @@
     LIST.email = e; LIST.ok = ok;
     try { sessionStorage.setItem(LIST_KEY + ":" + e, ok ? "1" : "0"); } catch (err) { /* ignore */ }
     if (modelClosed() !== was) { syncActive(); render(); }
-    if (ok === false) askFundingAccess(true);   // a door sign-in: does its grant still stand?
+    if (ok === false) askFundingAccess();       // a door sign-in: does its grant still stand? (the render above may have asked)
   }
   // Ask once per address per page: is this sign-in on the reviewer list?
   function askReviewerList() {
@@ -1750,7 +1750,7 @@
   // here. The database answers is_funding_reviewer() for the session as it stands. A sign-in on the reviewer list
   // is a funding reviewer by that function's own definition, so only a closed model (a door sign-in) is asked.
   // Unasked, unanswered or failed, the screen stays as it was: the answer shapes the screen, never the permission.
-  var ACCESS = { email: "", ok: null, asking: "", at: 0, msg: "", busy: false, timer: null };
+  var ACCESS = { email: "", ok: null, asking: "", again: false, at: 0, msg: "", busy: false, timer: null };
   var ACCESS_EVERY_MS = 10 * 60 * 1000, ACCESS_ENDED_EVERY_MS = 30 * 1000;
   function reviewEnded() {
     var e = sessionEmail();
@@ -1760,23 +1760,38 @@
     var was = reviewEnded();
     ACCESS.email = e; ACCESS.ok = ok; ACCESS.at = Date.now();
     if (ok) { ACCESS.msg = ""; ACCESS.busy = false; }
+    // The pace follows the answer: a timer set for the other state would wait ten minutes to notice an end, or
+    // go on asking every half minute once the access is back.
+    if (reviewEnded() !== was && ACCESS.timer) { clearTimeout(ACCESS.timer); ACCESS.timer = null; }
     if (reviewEnded() !== was) render();
   }
   function askFundingAccess(force) {
     var e = sessionEmail();
-    if (!e || !remoteEnabled() || !modelClosed() || ACCESS.asking === e) return;
+    if (!e || !remoteEnabled() || !modelClosed()) return;
+    // An ask already out answers for the token it left with. A forced ask that arrives meanwhile (a new sign-in,
+    // the timer) is kept and sent when that one lands, so the last word is about the session as it stands.
+    if (ACCESS.asking === e) { if (force) ACCESS.again = true; return; }
     if (!force && ACCESS.email === e && Date.now() - ACCESS.at < ACCESS_EVERY_MS) return;
-    ACCESS.asking = e;
+    ACCESS.asking = e; ACCESS.again = false;
+    var done = function () {
+      ACCESS.asking = "";
+      if (ACCESS.again) { ACCESS.again = false; askFundingAccess(true); return; }
+      scheduleAccessCheck();
+    };
     fetch(SUPABASE_URL + "/rest/v1/rpc/is_funding_reviewer", { method: "POST", body: "{}",
       headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }) })
       .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
-      .then(function (v) { ACCESS.asking = ""; if ((v === true || v === false) && sessionEmail() === e) accessAnswer(e, v); })
-      .catch(function () { ACCESS.asking = ""; });   // no answer: the review stays as it was
+      .then(function (v) { if ((v === true || v === false) && sessionEmail() === e) accessAnswer(e, v); done(); })
+      .catch(function () { done(); });   // no answer: the review stays as it was, and the next check still comes
   }
-  // While the note shows, ask again every half minute, so an approval clears it without a reload.
-  function watchEndedAccess() {
-    if (!reviewEnded() || ACCESS.timer) return;
-    ACCESS.timer = setTimeout(function () { ACCESS.timer = null; if (reviewEnded()) askFundingAccess(true); }, ACCESS_ENDED_EVERY_MS);
+  // The next check is set from the ANSWER, never from a render (COBIx on #3022: armed from the render alone, the
+  // half-minute check fired once and stopped, since a second no changes nothing and draws nothing). Every answer,
+  // and every ask that fails, sets the next: half a minute while the note shows, ten minutes while the access
+  // stands. One timer at a time; a sign-out or a sign-in on the list ends the chain.
+  function scheduleAccessCheck() {
+    if (ACCESS.timer || !sessionEmail() || !modelClosed() || !remoteEnabled()) return;
+    ACCESS.timer = setTimeout(function () { ACCESS.timer = null; askFundingAccess(true); },
+      reviewEnded() ? ACCESS_ENDED_EVERY_MS : ACCESS_EVERY_MS);
   }
   function askApprover() {
     var e = sessionEmail(), SI = window.CPL_REVIEWER_SIGNIN, fail = "The request did not go through. Try again in a few minutes.";
@@ -18171,8 +18186,8 @@
     if (publicMode()) stripCurateAffordances(document.getElementById("cplFundingMount"));
     else if (reviewEnded()) stripEndedAffordances(document.getElementById("cplFundingMount"));
     else if (modelClosed()) stripModelAffordances(document.getElementById("cplFundingMount"));
-    // A door sign-in is asked again now and then whether its grant stands, and more often while the note shows.
-    if (!publicMode() && modelClosed()) { askFundingAccess(); watchEndedAccess(); }
+    // A door sign-in is asked whether its grant stands; scheduleAccessCheck keeps asking on an idle tab.
+    if (!publicMode() && modelClosed()) { askFundingAccess(); scheduleAccessCheck(); }
     var accessAsk = document.getElementById("cplFundAccessAsk");
     if (accessAsk) accessAsk.addEventListener("click", askApprover);
     // Persist each collapsible section's open/closed state so it survives the
