@@ -114,8 +114,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("3a: a reviewer reads who sent it, with the title the form gave",
     /Dana Lee \(Other senior administrator\), dana@mtsac\.edu/.test(flat(root)));
   const items = W._reviewItems(T.csm.snapshot().rows.find((r) => r.key === COLLEGE), "part").items;
-  check("3b: the review names the domain (the form's), the title Other as Check this, and no decline as Meets",
-    items[0].s === "form" && /mtsac\.edu/.test(items[0].d) && items[1].s === "check" && items[3].s === "meets");
+  check("3b: the review names the domain (the form's) and the title Other as Check this, with no line about a decline",
+    items[0].s === "form" && /mtsac\.edu/.test(items[0].d) && items[1].s === "check" && !items.some((i) => /declin/i.test(i.t + " " + i.d)));
   check("3c: Accept and Deny stay shut until the reviewer has seen the review", !!accept() && accept().disabled && deny().disabled);
   W._state.seen[COLLEGE + "|part"] = true;
   W.paint();
@@ -125,12 +125,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true }));
   });
   check("3e: every Check this ticked, Accept opens", !accept().disabled && /Every requirement is checked/.test(flat(root.querySelector('[data-gate="part"]'))));
-  // a decline on file fails a requirement: Accept shuts whatever is ticked
-  const notes = {}; notes[COLLEGE] = { college: COLLEGE, note: null, declined_at: "2026-11-01T18:00:00Z", declined_by: "co@cccco.edu" };
-  T._setNotes(notes);
-  W.paint();
-  check("3f: a requirement that fails keeps Accept shut and Deny open", accept().disabled && !deny().disabled &&
-    /not met/.test(flat(root.querySelector('[data-gate="part"]'))));
+  // Sam, 2026-11-09: "we really don't need a college declining piece at all--we can just leave the confirmation blank as
+  // an indicator". The workspace marks no decline and lists none.
+  check("3f: the record offers no decline control", !root.querySelector('[data-act="declined"]') && !/Declined participation/.test(flat(root)));
 }
 
 // ── 4. a decision is the funding tab's ───────────────────────────────────────
@@ -151,18 +148,17 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 // ── 5. the fold, the views, the visit ────────────────────────────────────────
 {
   const { window, W, root } = setup({ signedIn: true });
-  const fold = () => root.querySelector('[data-act="fold"]');
-  check("5a: the top shows at first, its word Hide the priorities", fold().getAttribute("aria-expanded") === "true" && !root.querySelector("#cw-fold").hidden);
-  clickEl(window, fold());
-  check("5b: one word folds the priority cards, and the word turns", root.querySelector("#cw-fold").hidden &&
-    fold().getAttribute("aria-expanded") === "false" && fold().textContent === "Show the priorities");
+  // Sam, 2026-11-09, after the walkthrough with Malone: "i think the cards can go away". Today's counts and the count
+  // beside each menu label carry the figures.
+  check("5a: the priority cards and their fold are gone", !root.querySelector('[data-act="fold"]') && !root.querySelector("#cw-fold") &&
+    !root.querySelector(".card") && !/Priorities/.test(flat(root.querySelector("header"))));
   // Sam, 2026-11-03: folded, Today stays in the header and each count filters the action center as its card does.
   const today = root.querySelector("header .today");
-  check("5b2: folded, Today stays in the header outside the fold", !!today && !root.querySelector("#cw-fold .today"));
+  check("5b2: Today sits in the header", !!today);
   check("5b3: Today's counts are words for the cards' views", ["review", "held", "qual", "notyet"].every((v) => !!today.querySelector('button[data-view="' + v + '"]')));
   clickEl(window, today.querySelector('[data-view="held"]'));
   check("5b4: a Today count filters the action center and shows pressed", W._state.view === "held" &&
-    root.querySelector('header .today [data-view="held"]').getAttribute("aria-pressed") === "true" && root.querySelector("#cw-fold").hidden);
+    root.querySelector('header .today [data-view="held"]').getAttribute("aria-pressed") === "true");
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('[data-stage="notyet"]'));
   check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
@@ -396,8 +392,6 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("10f: a nudge drafted in the last 14 days keeps the college out", W._readyOf(nudgeKey) === null);
   W._log()[0].created_at = "2026-01-02T00:00:00Z";
   check("10g: a nudge older than 14 days lets it back in", W._readyOf(nudgeKey) === "nudge");
-  W._snapshot().rows.find((r) => r.key === nudgeKey).declined = "2026-11-01";
-  check("10h: a college that declined never enters", W._readyOf(nudgeKey) === null);
   W._state.view = "open"; W.paint();
   check("10i: outside Ready to send there is no Sent", !root.querySelector('[data-mailact="sent"]'));
   // A long email: the link would pass what a mail program takes, so the words go to the clipboard and the draft opens bare.
@@ -525,82 +519,55 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     /dispatchEvent\(new CustomEvent\("cpl-funding-door-said"/.test(require("fs").readFileSync("reviewer_signin.js", "utf8")));
 }
 
-// ── 14. a figure card opens what it counts (Sam's rule, 2026-11-05; the workspace, 2026-11-09: "when I click cpl
-//        coord on map I expect to see 61 colleges in action center but it's sorting for a subset") ───────────────
-{
-  const { window, W, root } = setup({ signedIn: true });
-  const cards = Array.from(root.querySelectorAll("#cw-fold .card"));
-  const pairs = cards.map((c) => ({ name: flat(c.querySelector(".card-name")), n: parseInt(flat(c.querySelector(".big")), 10),
-    view: c.querySelector("[data-view]").getAttribute("data-view") }));
-  const got = pairs.map((p) => {
-    clickEl(window, root.querySelector('#cw-fold .card [data-view="' + p.view + '"]'));
-    return parseInt(flat(root.querySelector(".showing b")), 10);
-  });
-  check("14a: every priority card's word opens a list as long as the card's figure (" + pairs.map((p, i) => p.name + " " + p.n + "/" + got[i]).join("; ") + ")",
-    pairs.length === 5 && pairs.every((p, i) => p.n === got[i]));
-  const coord = pairs.find((p) => /CPL Coordinator in MAP/.test(p.name));
-  check("14b: the coordinator card counts some colleges here, so 14a is a real comparison", !!coord && coord.n > 0);
-  clickEl(window, root.querySelector('#cw-fold .card [data-view="coordmet"]'));
-  const listed = Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel"));
-  check("14c: the coordinator card lists the colleges with a CPL Coordinator in MAP, confirmed or not",
-    listed.indexOf(COLLEGE) >= 0 && listed.indexOf(OTHER) >= 0 && W._state.view === "coordmet");
-  check("14d: the count line keeps CPL and MAP in capitals", /with a CPL Coordinator in MAP/.test(flat(root.querySelector(".showing"))));
-  const sel = root.querySelector("#cw-view");
-  check("14e: the narrower list stays in the menu under its own name",
-    Array.from(sel.options).some((o) => o.value === "coord" && o.textContent === "Confirmed but missing the CPL Coordinator in MAP") &&
-    Array.from(sel.options).some((o) => o.value === "nc" && o.textContent === "Noncredit attestations waiting"));
-}
-
-// ── 14x. the menu in two groups, the two added lists, and each progress card's gap word (issue 2989; Sam's "go" on
-//         COBIx's proposal, 2026-11-09) ────────────────────────────────────────────────────────────────────────
+// ── 14. every menu label carries the count of the list it opens (the walkthrough with Malone, 2026-11-09: "a count
+//        beside each label so a CSM can pick a queue without opening it"; Sam's rule, 2026-11-05: a figure opens what
+//        it counts). The cards are gone, so the menu and Today carry every figure. ─────────────────────────────────
 {
   const { window, T, W, root } = setup({ signedIn: true });
-  // OTHER is confirmed with no coordinator on file; COLLEGE has one and has an attestation waiting.
+  // OTHER is confirmed with no coordinator on file; COLLEGE has one.
   T._setElig({ coordOk: true, coord: { [COLLEGE]: true },
     optin: { [OTHER]: true }, optinRow: { [OTHER]: { college: OTHER, status: "confirmed", requested_at: "2026-10-30T04:00:00Z" } } });
   T.render(); W.paint();
+  const opt = (v) => root.querySelector('#cw-view option[value="' + v + '"]');
+  const pick = (v) => { const sel = root.querySelector("#cw-view"); sel.value = v; sel.dispatchEvent(new window.Event("change", { bubbles: true })); };
+  const listed = () => Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel"));
+  const keys = Array.from(root.querySelectorAll("#cw-view option")).map((o) => o.value);
+  const pairs = keys.map((k) => { const m = /\((\d+)\)$/.exec(opt(k).textContent); pick(k);
+    return { k, n: m ? parseInt(m[1], 10) : -1, got: parseInt(flat(root.querySelector(".showing b")), 10) }; });
+  check("14a: ⭐ every label's count is the length of the list it opens (" + pairs.map((p) => p.k + " " + p.n + "/" + p.got).join("; ") + ")",
+    pairs.length === 14 && pairs.every((p) => p.n === p.got));
+  check("14b: the counts are real figures here, not all zero", pairs.find((p) => p.k === "all").n > 100 && pairs.find((p) => p.k === "coordmet").n > 0);
+  pick("coordmet");
+  check("14c: With a CPL Coordinator in MAP lists the colleges that have one, confirmed or not",
+    listed().indexOf(COLLEGE) >= 0 && listed().indexOf(OTHER) < 0 && W._state.view === "coordmet");
+  check("14d: the count line keeps CPL and MAP in capitals, and carries no second count", /^\d+ with a CPL Coordinator in MAP$/.test(flat(root.querySelector(".showing"))));
   const groups = () => Array.from(root.querySelectorAll("#cw-view optgroup"));
   const vals = (g) => Array.from(g.querySelectorAll("option")).map((o) => o.value).join();
   check("14x-a: the menu has two groups, To do then Browse", groups().map((g) => g.getAttribute("label")).join() === "To do,Browse");
-  check("14x-b: To do holds the work queues, in the agreed order", vals(groups()[0]) === "open,send,review,due,held,nc,coord,notyet");
-  check("14x-c: Browse holds the lists, with the two added ones", vals(groups()[1]) === "qual,confirmed,coordmet,ncmet,nocoord,declined,all");
+  check("14x-b: To do holds the work queues, in the agreed order", vals(groups()[0]) === "open,send,review,due,held,nc,notyet");
+  check("14x-c: Browse holds the lists, the two coordinator lists among them (status only; Sam chases); no Declined list",
+    vals(groups()[1]) === "qual,confirmed,coordmet,ncmet,coord,nocoord,all");
+  // A mark already on a notes row (none exists today) still keeps its college out of Ready to send.
+  const anyKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
+  const before = W._readyOf(anyKey);
+  W._snapshot().rows.find((r) => r.key === anyKey).declined = "2026-11-01";
+  check("14x-c2: a decline mark already on file keeps its college out of Ready to send", before === "nudge" && W._readyOf(anyKey) === null);
+  delete W._snapshot().rows.find((r) => r.key === anyKey).declined;
   check("14x-d: every option sits in a group", root.querySelectorAll("#cw-view > option").length === 0);
-  check("14x-e: Qualifies spells out what it means; no other view is renamed",
-    root.querySelector('#cw-view option[value="qual"]').textContent === "Qualifies (all conditions met)" &&
-    root.querySelector('#cw-view option[value="due"]').textContent === "Follow-ups open");
-  const pick = (v) => { const sel = root.querySelector("#cw-view"); sel.value = v; sel.dispatchEvent(new window.Event("change", { bubbles: true })); };
-  const listed = () => Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel"));
-  const snap = W._snapshot();
-  const none = snap.rows.filter((r) => r.conds.some((c) => c.kind === "coord" && !c.met && !c.pending)).map((r) => r.key);
+  check("14x-e: the labels keep their names before the count",
+    /^Qualifies \(all conditions met\) \(\d+\)$/.test(opt("qual").textContent) && /^Follow-ups open \(\d+\)$/.test(opt("due").textContent) &&
+    /^Confirmed but missing the CPL Coordinator in MAP \(1\)$/.test(opt("coord").textContent) && /^With a Noncredit CPL Lead \(\d+\)$/.test(opt("ncmet").textContent));
+  const none = W._snapshot().rows.filter((r) => r.conds.some((c) => c.kind === "coord" && !c.met && !c.pending)).map((r) => r.key);
   pick("nocoord");
   check("14x-f: No CPL Coordinator in MAP lists every college without one, confirmed or not (" + none.length + ")",
     none.length > 1 && listed().length === none.length && listed().indexOf(OTHER) >= 0 && listed().indexOf(COLLEGE) < 0 &&
     /no CPL Coordinator in MAP/.test(flat(root.querySelector(".showing"))));
   pick("coord");
   check("14x-g: the confirmed-missing list is its narrower part", listed().join() === OTHER);
-  const cCard = Array.from(root.querySelectorAll("#cw-fold .card")).find((c) => /^CPL Coordinator in MAP$/.test(flat(c.querySelector(".card-name"))));
-  const gap = cCard.querySelector("button.gap");
-  check("14x-h: the coordinator card carries a gap word that counts the list it opens",
-    !!gap && gap.getAttribute("data-view") === "coord" && flat(gap) === "1 confirmed, still missing" &&
-    cCard.querySelector("[data-view]").getAttribute("data-view") === "coordmet");
-  pick("open"); clickEl(window, root.querySelector('#cw-fold .card button.gap[data-view="coord"]'));
-  check("14x-i: and the gap word opens that list", W._state.view === "coord" && listed().join() === OTHER);
-  T._setNotes({ [COLLEGE]: { college: COLLEGE, note: null, declined_at: "2026-11-01T18:00:00Z", declined_by: "co@cccco.edu" } });
-  W.paint(); pick("declined");
-  check("14x-j: Declined lists the colleges marked Declined participation", listed().join() === COLLEGE);
-  // A college that declined leaves the chase list (COBIx on PR 3001): OTHER has no coordinator, then declines.
-  T._setNotes({ [OTHER]: { college: OTHER, note: null, declined_at: "2026-11-01T18:00:00Z", declined_by: "co@cccco.edu" } });
-  W.paint(); pick("nocoord");
-  check("14x-j2: a college that declined is not in No CPL Coordinator in MAP", listed().length === none.length - 1 && listed().indexOf(OTHER) < 0);
-  pick("declined");
-  check("14x-j3: and reads under Declined", listed().join() === OTHER);
-  // No attestation waits in this fixture, so the Noncredit card carries no gap word (a zero is not a button).
-  const nCard = Array.from(root.querySelectorAll("#cw-fold .card")).find((c) => /Noncredit CPL Lead attested/.test(flat(c.querySelector(".card-name"))));
-  check("14x-k: a card with nothing in its gap carries no gap word", !!nCard && !nCard.querySelector("button.gap"));
 }
 
 // ── 15. a credit college's noncredit attestation reaches the workspace (Sam's screen, 2026-11-09: "Noncredit CPL
-//        Lead attested 0 of 3" over twelve attestations on file) ───────────────────────────────────────────────
+//        Lead attested 0 of 3" over twelve attestations on file), and the role in MAP meets the condition ─────────
 {
   // Scenario 4's lane: a credit college's award carries a noncredit share, and its attestation waits for review.
   const OUTCOMES = { ncLane: "outcomes", ncOutcomes: { "1": [
@@ -610,11 +577,12 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
       target_rule: { kind: "fixed", n: 1 } }] } };
   const { window, T, W, root } = setup({ signedIn: true });
   T._setShared(OUTCOMES);
-  T._setElig({ coordOk: true, coord: { [COLLEGE]: true, [OTHER]: true },
+  const ELIG = (lead) => ({ coordOk: true, coord: { [COLLEGE]: true, [OTHER]: true }, ncLead: lead || {},
     optin: { [OTHER]: true }, optinRow: { [OTHER]: { college: OTHER, status: "confirmed", requested_at: "2026-10-30T04:00:00Z" } },
     ncAttestOk: true, ncAttest: {
       [OTHER]: { college: OTHER, status: "self_attested", fiscal_year: "2026-27", requested_at: "2026-11-04T04:00:00Z" },
       [COLLEGE]: { college: COLLEGE, status: "confirmed", fiscal_year: "2026-27", requested_at: "2026-11-02T04:00:00Z", confirmed_at: "2026-11-03T04:00:00Z" } } });
+  T._setElig(ELIG());
   T.render(); W.paint();
   const snap = T.csm.snapshot();
   const pc = snap.rows.find((r) => r.key === OTHER), mt = snap.rows.find((r) => r.key === COLLEGE);
@@ -624,14 +592,25 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     withNc > 3 && !!pc.nc && !!mt.nc);
   check("15c: a waiting attestation reads waiting, an accepted one standing", pc.nc.waiting === true && pc.nc.standing === false && mt.nc.standing === true);
   check("15d: a college whose only open request is its attestation is Waiting on the team", W._stageOf(pc) === "waiting");
-  const card = Array.from(root.querySelectorAll("#cw-fold .card")).find((c) => /Noncredit CPL Lead attested/.test(flat(c.querySelector(".card-name"))));
-  check("15e: the Noncredit card counts the accepted attestation over every institution with a noncredit share",
-    !!card && /^1 of \d+$/.test(flat(card.querySelector(".big"))) && parseInt(flat(card.querySelector(".big small")).replace("of ", ""), 10) === withNc);
-  clickEl(window, root.querySelector('#cw-fold .card [data-view="ncmet"]'));
-  check("15f: and its word lists that college", Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel")).join() === COLLEGE);
-  const ncGap = card && Array.from(root.querySelectorAll("#cw-fold .card")).find((c) => /Noncredit CPL Lead attested/.test(flat(c.querySelector(".card-name")))).querySelector("button.gap");
-  check("15f2: the Noncredit card's gap word counts the attestations waiting and opens them",
-    !!ncGap && ncGap.getAttribute("data-view") === "nc" && flat(ncGap) === "1 waiting on the team");
+  const opt = (v) => root.querySelector('#cw-view option[value="' + v + '"]');
+  const pick = (v) => { const sel = root.querySelector("#cw-view"); sel.value = v; sel.dispatchEvent(new window.Event("change", { bubbles: true })); };
+  const listed = () => Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel")).join();
+  check("15e: With a Noncredit CPL Lead counts the accepted attestation, and the waiting one counts as waiting",
+    opt("ncmet").textContent === "With a Noncredit CPL Lead (1)" && opt("nc").textContent === "Noncredit attestations waiting (1)");
+  pick("ncmet");
+  check("15f: and the list is that college", listed() === COLLEGE);
+  // Sam, 2026-11-09: the role in MAP meets the condition ("in MAP since itpi just added the field in map users. if they
+  // attest, we can accept that now as well"). OTHER's form waits, and OTHER now holds the role on its MAP landing page.
+  T._setElig(ELIG({ [OTHER]: true })); T.render(); W.paint();
+  const pc2 = T.csm.snapshot().rows.find((r) => r.key === OTHER);
+  check("15h: ⭐ a college with the role in MAP no longer reads as attestation waiting", pc2.nc.lead === true && pc2.nc.waiting === true &&
+    W._stageOf(pc2) !== "waiting" && opt("nc").textContent === "Noncredit attestations waiting (0)");
+  pick("ncmet");
+  check("15i: and it counts as having a Noncredit CPL Lead, beside the accepted attestation",
+    opt("ncmet").textContent === "With a Noncredit CPL Lead (2)" && listed().split(",").sort().join() === [COLLEGE, OTHER].sort().join());
+  pick("open");
+  check("15j: its row carries no NC attestation waiting pill", !/NC attestation waiting/.test(flat(root.querySelector('.row[data-sel="' + OTHER + '"]') || root)));
+  T._setElig(ELIG()); T.render(); W.paint();
   const nudge = T._nudgeInstitutions();
   check("15g: the Nudge lists a credit college that has sent no attestation, and leaves out the two that have",
     nudge.filter((r) => r.missing.indexOf("nc") >= 0).length > 3 &&

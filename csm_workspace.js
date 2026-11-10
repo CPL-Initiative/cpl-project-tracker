@@ -314,7 +314,7 @@
 
   // ── the read ─────────────────────────────────────────────────────────────
   var S = null;                 // the funding tab's snapshot, refreshed on every model change
-  var state = { view: "open", q: "", sel: null, folded: false, checks: {}, seen: {}, msg: "", draft: {} };
+  var state = { view: "open", q: "", sel: null, checks: {}, seen: {}, msg: "", draft: {} };
   // ── the communications log (csm_log, kb/migrations/2026-11-02_csm_log.sql) ──────────────────────────────────────
   // Notes, calls, emails and meetings per college and activity, each with an optional follow-up date. A signed-in
   // reviewer reads and writes it with their own credential; the trigger stamps who. Read whole (paged by Range, the kb_curation rule),
@@ -388,10 +388,16 @@
   function money(n) { return "$" + Math.round(n || 0).toLocaleString("en-US"); }
 
   // Where each institution stands, in the board's four columns.
+  /* The Noncredit CPL Lead condition (Sam, 2026-11-09, on COBIx's writeup of the walkthrough with Malone: "in MAP since
+     itpi just added the field in map users. if they attest, we can accept that now as well"). The role on the college's
+     MAP landing page meets it, and so does an accepted attestation. A form still waiting at a college that holds the
+     role asks nothing of the team: the condition is already met. */
+  function ncMet(r) { return !!(r.nc && (r.nc.standing || r.nc.lead)); }
+  function ncWaiting(r) { return !!(r.nc && r.nc.waiting && !r.nc.lead); }
   function waitingKinds(r) {
     var k = [];
     if (r.part.waiting) k.push("part");
-    if (r.nc && r.nc.waiting) k.push("nc");
+    if (ncWaiting(r)) k.push("nc");
     return k;
   }
   function stageOf(r) {
@@ -411,7 +417,7 @@
   /* Ready to send (issue 2967, item 3, designed in the csm-workspace lane): the college whose next email is due. Confirmed
      and no Acceptance sent receipt: the acceptance, with the conditions still waiting. Not yet confirmed and no nudge
      in 14 days: the nudge. A request waiting on the team: Accept first, from the review. Sent writes the receipt, so
-     the college leaves the queue; a declined college never enters it. */
+     the college leaves the queue. */
   var NUDGE_SUBJ = /a participation confirmation for /;
   /* Each email's receipt, and its undo (COBIx on issue 2967, 16:17Z): Sent writes "<prefix>: …"; It bounced writes
      "It bounced, <that receipt>", and the later of the two decides, so a bounce puts the college back in the queue. */
@@ -431,6 +437,7 @@
   }
   function isSent(r, tpl) { return !!(state.sent || {})[r.key + "|" + tpl] || !!lastSent(r, tpl); }
   function readyOf(r) {
+    // No one marks a decline any more (Sam, 2026-11-09); a mark already on a notes row still keeps its college out.
     if (r.declined) return null;
     if (waitingKinds(r).length) return "wait";
     // state.sent bridges the moment between a Sent that saved and the log's re-read.
@@ -466,7 +473,6 @@
     if (w[0] === "nc") return "Review the noncredit attestation." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
     var du = dueOf(r);
     if (du) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
-    if (r.declined) return "Declined participation on " + shortDate(r.declined) + ".";
     var st = stageOf(r);
     if (st === "held") { var m = missingWords(r); return "Confirmed. Follow up on: " + (m.length ? m.join("; ") : "a condition still pending") + "."; }
     if (st === "qual") return "Qualifies. Nothing waits.";
@@ -475,10 +481,9 @@
   function pillsOf(r) {
     var p = [];
     if (r.part.waiting) p.push(["ask", "Confirmation waiting"]);
-    if (r.nc && r.nc.waiting) p.push(["ask", "NC attestation waiting"]);
+    if (ncWaiting(r)) p.push(["ask", "NC attestation waiting"]);
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) p.push(["ask", "Follow-up due"]);
-    if (r.declined) p.push(["ask", "Declined"]);
     if (state.view === "send" && notReceived(r)) p.push(["ask", "Not received"]);
     var st = stageOf(r);
     p.push(["", st === "qual" ? "Qualifies" : st === "held" ? "Held by a condition" : r.part.confirmed ? "Confirmed" : "Not confirmed"]);
@@ -506,18 +511,17 @@
     review: { g: "todo", label: "Waiting on the team", keep: function (r) { return stageOf(r) === "waiting"; } },
     due: { g: "todo", label: "Follow-ups open", keep: function (r) { return !!dueOf(r); } },
     held: { g: "todo", label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
-    nc: { g: "todo", label: "Noncredit attestations waiting", keep: function (r) { return !!(r.nc && r.nc.waiting); } },
-    coord: { g: "todo", label: "Confirmed but missing the CPL Coordinator in MAP",
-      keep: function (r) { return r.part.confirmed && coordGap(r); } },
+    nc: { g: "todo", label: "Noncredit attestations waiting", keep: ncWaiting },
     notyet: { g: "todo", label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
     qual: { g: "browse", label: "Qualifies (all conditions met)", keep: function (r) { return stageOf(r) === "qual"; } },
     confirmed: { g: "browse", label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
     coordmet: { g: "browse", label: "With a CPL Coordinator in MAP", keep: function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); } },
-    ncmet: { g: "browse", label: "Noncredit CPL Lead attested", keep: function (r) { return !!(r.nc && r.nc.standing); } },
-    // The full chase list; Confirmed but missing… above is its funding-held part. A college that declined is not
-    // chased (COBIx on PR 3001); it reads under Declined.
-    nocoord: { g: "browse", label: "No CPL Coordinator in MAP", keep: function (r) { return !r.declined && coordGap(r); } },
-    declined: { g: "browse", label: "Declined", keep: function (r) { return !!r.declined; } },
+    ncmet: { g: "browse", label: "With a Noncredit CPL Lead", keep: ncMet },
+    // A missing coordinator is status only: no CSM email for it, and Sam chases the confirmed ones himself (issue 3010,
+    // his call 1), so both coordinator lists read under Browse. The first is the funding-held part of the second.
+    coord: { g: "browse", label: "Confirmed but missing the CPL Coordinator in MAP",
+      keep: function (r) { return r.part.confirmed && coordGap(r); } },
+    nocoord: { g: "browse", label: "No CPL Coordinator in MAP", keep: coordGap },
     all: { g: "browse", label: "All institutions", keep: function () { return true; } } };
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
      items is the tab's first view, so it reports the bare tab. */
@@ -564,9 +568,6 @@
                 lp.length ? "On the landing page as " + lp.map(function (l) { return l.title || "a contact"; }).join(" and ") : ""].filter(Boolean).join(". ") + "." }
         : { t: "The sender matches someone MAP shows for the college", s: "check",
             d: q.ctx ? "Not a MAP user at the college and not on its landing page." : "The requester context has not loaded." });
-      items.push(r.declined
-        ? { t: "The college has not declined", s: "fails", n: "the college declined participation", d: "Declined on " + shortDate(r.declined) + "." }
-        : { t: "The college has not declined", s: "meets", d: "No decline on file." });
       return { kind: "Participation confirmation", items: items };
     }
     var a = r.req && r.req.nc;
@@ -630,55 +631,14 @@
   }
 
   // ── painting ─────────────────────────────────────────────────────────────
-  // gap, on a progress card: [view, words], the work list one click away (issue 2989).
-  function card(id, name, big, small, what, list, word, needs, gap) {
-    return '<article class="card' + (needs ? " needs" : "") + (state.view === word ? " on" : "") + '" aria-labelledby="' + id + '">' +
-      '<div class="card-head"><h3 class="card-name" id="' + id + '">' + esc(name) + "</h3></div>" +
-      '<p class="big">' + big + (small ? " <small>" + esc(small) + "</small>" : "") + "</p>" +
-      (what ? '<p class="card-what">' + esc(what) + "</p>" : "") +
-      (list && list.length ? '<ul class="card-list">' + list.map(function (li) { return "<li><span>" + esc(li[0]) + "</span><span>" + esc(li[1]) + "</span></li>"; }).join("") + "</ul>" : "") +
-      '<button type="button" class="word" data-view="' + word + '" aria-pressed="' + (state.view === word) + '">Show them in the action center</button>' +
-      (gap ? ' <button type="button" class="word gap" data-view="' + gap[0] + '" aria-pressed="' + (state.view === gap[0]) + '">' + esc(gap[1]) + "</button>" : "") + "</article>";
-  }
-  function meter(n, d) { return '<div class="meter" aria-hidden="true"><i style="width:' + (d ? Math.round(n / d * 100) : 0) + '%"></i></div>'; }
-  function cardsHtml() {
-    var rows = S.rows, tot = rows.length;
-    var waiting = rows.filter(function (r) { return stageOf(r) === "waiting"; });
-    var held = rows.filter(function (r) { return stageOf(r) === "held"; });
-    var conf = rows.filter(function (r) { return r.part.confirmed; });
-    var ncRows = rows.filter(function (r) { return r.nc; }), ncDone = ncRows.filter(function (r) { return r.nc.standing; });
-    var coordRows = rows.filter(function (r) { return r.conds.some(function (c) { return c.kind === "coord"; }); });
-    var coordMet = coordRows.filter(function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); });
-    var ncWait = rows.filter(VIEWS.nc.keep).length, coordMiss = S.coordOk ? rows.filter(VIEWS.coord.keep).length : 0;
-    var heldWhy = {};
-    held.forEach(function (r) { missingWords(r).forEach(function (w) { heldWhy[w] = (heldWhy[w] || 0) + 1; }); });
-    return '<div class="needs-row">' +
-      card("cw-c1", "Waiting on the team", String(waiting.length), waiting.length === 1 ? "request" : "requests",
-        "Requests the team reviews before the college's condition counts.",
-        waiting.slice(0, 6).map(function (r) { return [r.name, ageOf(r).t.replace("Waiting since ", "since ")]; }), "review", true) +
-      card("cw-c2", "Confirmed, still held", String(held.length), "institutions",
-        "Confirmed, and funding stays held until every minimum condition is met.",
-        Object.keys(heldWhy).sort(function (a, b) { return heldWhy[b] - heldWhy[a]; }).map(function (w) { return [w, String(heldWhy[w])]; }), "held", true) +
-      "</div><div class=\"cohort-row\">" +
-      card("cw-c3", "Confirmed", String(conf.length), "of " + tot, "", null, "confirmed", false).replace('<button', meter(conf.length, tot) + "<button") +
-      // A figure card opens what it counts (Sam, 2026-11-05). These two opened a narrower list than their figure: the
-      // attestations still waiting, and the confirmed colleges missing a coordinator (Sam, 2026-11-09: "I expect to see
-      // 61 colleges in action center but it's sorting for a subset").
-      card("cw-c4", "Noncredit CPL Lead attested", String(ncDone.length), "of " + ncRows.length, "", null, "ncmet", false,
-        ncWait ? ["nc", ncWait + " waiting on the team"] : null)
-        .replace('<button', meter(ncDone.length, ncRows.length) + "<button") +
-      card("cw-c5", "CPL Coordinator in MAP", S.coordOk ? String(coordMet.length) : "&hellip;", S.coordOk ? "of " + coordRows.length : "loading", "", null, "coordmet", false,
-        coordMiss ? ["coord", coordMiss + " confirmed, still missing"] : null)
-        .replace('<button', meter(coordMet.length, coordRows.length) + "<button") +
-      "</div>";
-  }
   function queueHtml() {
     var list = shownRows(), v = VIEWS[state.view] || VIEWS.open;
     // A decided college may leave the view (accepted, it moves on); its record stays until another is chosen.
     if (!state.sel && list.length) state.sel = list[0].key;
     var opts = GROUPS.map(function (g) {
       return '<optgroup label="' + g.label + '">' + Object.keys(VIEWS).filter(function (k) { return VIEWS[k].g === g.id; }).map(function (k) {
-        return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + "</option>";
+        // A count beside each label, so a CSM picks a queue without opening it (the walkthrough with Malone, 2026-11-09).
+        return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + " (" + S.rows.filter(VIEWS[k].keep).length + ")</option>";
       }).join("") + "</optgroup>";
     }).join("");
     return '<div class="pane" aria-labelledby="cw-q-h"><div class="pane-h">' +
@@ -711,13 +671,12 @@
       if (lastSent(r, tpl)) act.push('<button type="button" class="word" data-act="bounced" data-kind="' + tpl + '">It bounced: ' +
         esc(SENT[tpl].replace(/ sent$/, "").toLowerCase()) + "</button>");
     });
-    if (S.reviewer) act.push('<button type="button" class="word" data-act="declined">' + (r.declined ? "Clear Declined participation" : "Mark Declined participation") + "</button>");
     var conds = '<ul class="conds">' + r.conds.map(function (c) {
       return '<li class="cond"><span class="pill' + (c.met ? "" : c.pending ? "" : " ask") + '">' + condLabel(c) + "</span><span>" + esc(c.words) +
         (c.counts ? ' <span class="why">' + esc(c.counts) + "</span>" : "") + "</span></li>";
     }).join("") + "</ul>";
     var nc = r.nc ? '<p class="ncline">Noncredit share: ' + (r.nc.standing ? "Noncredit CPL Lead attested" + (r.nc.fy ? " for " + esc(r.nc.fy) : "") + "."
-      : r.nc.waiting ? "Noncredit CPL Lead attestation waiting since " + esc(shortDate(r.nc.at) || "it was sent") + "." : "Noncredit CPL Lead not yet attested.") +
+      : ncWaiting(r) ? "Noncredit CPL Lead attestation waiting since " + esc(shortDate(r.nc.at) || "it was sent") + "." : "Noncredit CPL Lead not yet attested.") +
       // The role on the college's MAP landing page (Sam, 2026-11-09): it meets the lead condition alone.
       (r.nc.lead ? " A Noncredit CPL Lead is on the college's MAP landing page, which meets the Noncredit CPL Lead condition."
         : r.nc.leadNear ? " The MAP landing page lists a close title. Ask the college to use the Noncredit CPL Lead role." : "") + "</p>" : "";
@@ -1347,13 +1306,9 @@
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
       '<header><div class="top-row"><h1>CSM Workspace</h1><p class="links">' +
-        '<a href="#implementation-funding">Implementation Funding</a>' +
-        '<button type="button" class="word" data-act="fold" aria-expanded="' + !state.folded + '" aria-controls="cw-fold">' +
-        (state.folded ? "Show the priorities" : "Hide the priorities") + "</button></p></div>" +
+        '<a href="#implementation-funding">Implementation Funding</a></p></div>' +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
       (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
-      '<div id="cw-fold" class="cw-fold"' + (state.folded ? " hidden" : "") + ">" +
-        '<section class="sec" aria-labelledby="cw-pri-h"><h2 id="cw-pri-h">Priorities</h2>' + cardsHtml() + "</section></div>" +
       '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
         (S.loaded ? "Read live from the funding tab." : "Loading the requests&hellip;") + "</p></div>" +
         '<div class="center">' + queueHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +
@@ -1414,17 +1369,10 @@
   function say(t) { state.msg = t; var s = root() && root().querySelector(".status"); if (s) s.textContent = t; }
   function act(name, kind) {
     var f = F(), r = rowOf(state.sel);
-    if (name === "fold") { state.folded = !state.folded; paint(); var b = root().querySelector('[data-act="fold"]'); if (b) b.focus(); return; }
     if (name === "nudge") { if (f) f.nudge(); return; }
     if (!r) return;
     if (name === "toreview") { var rv = root().querySelector(".review h4"); if (rv) { rv.setAttribute("tabindex", "-1"); rv.focus(); if (rv.scrollIntoView) rv.scrollIntoView({ block: "start" }); } return; }
     if (name === "focus") { if (f) f.focus(r.key); return; }
-    if (name === "declined") {
-      if (!f) return;
-      f.setDeclined(r.key, !r.declined);
-      say(r.declined ? "Declined participation cleared for " + r.name + "." : r.name + " is marked Declined participation.");
-      return;
-    }
     if (!f || !S.reviewer) return;
     if (name === "bounced") {
       var ls = lastSent(r, kind);
