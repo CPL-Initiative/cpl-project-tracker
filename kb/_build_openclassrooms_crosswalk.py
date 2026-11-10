@@ -29,7 +29,8 @@ SOURCES (committed or MAP-owned; nothing scraped):
   * kb/openclassrooms_map_ace_recs.json -- MAP's ACE (military) credit
     recommendations in the same subjects, read from Supabase 2026-09-29.
   * kb/reference/swp_region_roster.json -- college -> Strong Workforce region.
-  * kb/college_identity/2026-08-23/crosswalk.json -- every college spelling.
+  * kb/college_identity/<newest date>/crosswalk.json -- every college spelling
+    (kb/_college_identity_latest.py picks the folder).
 
 MATCHING GATE (the Futuro lesson): a course needs TWO signals -- a TITLE lens hit
 AND a TOP code in a business / media / IT family -- or, found by description, a
@@ -48,6 +49,9 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+import sys
+sys.path.insert(0, HERE)
+from _college_identity_latest import latest_crosswalk_path  # noqa: E402
 REPO = os.path.dirname(HERE)
 OUT = os.path.join(HERE, "openclassrooms_out")
 
@@ -168,7 +172,7 @@ def norm_course(s):
 
 def build_college_index():
     idx = {}
-    cw = json.load(open(os.path.join(HERE, "college_identity", "2026-08-23", "crosswalk.json")))
+    cw = json.load(open(latest_crosswalk_path(), encoding="utf-8"))
     for c in cw["colleges"]:
         canon = c["college_name"]
         for v in [canon, c.get("short"), c.get("mis_name")] + (c.get("variants") or []):
