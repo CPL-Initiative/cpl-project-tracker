@@ -37,8 +37,6 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     isFresh: function () { return true; },
     authHeaders: function () { return { apikey: "anon", Authorization: "Bearer header.payload.sig" }; }
   });
-  // No observer in jsdom: the module's fallback would open the gate at once, so stand one in that has seen nothing.
-  window.IntersectionObserver = function () { this.observe = function () {}; this.disconnect = function () {}; };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   T._setShared(OUTCOMES);
@@ -67,7 +65,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     !!row && !!row.nc && row.nc.waiting === true && !!row.req && !!row.req.nc && row.req.nc.attestor_title === "Other",
     JSON.stringify(row && { nc: row.nc, req: row.req && row.req.nc }).slice(0, 300));
 
-  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|nc"] = true; W.paint();
+  W._state.sel = COLLEGE; W.paint();
   const role = () => root.querySelector('.review input[data-role="nc"]');
   check("2: the noncredit review's senior administrator check carries the role field",
     !!role() && /Their role, as you confirmed it/.test(flat(role().closest("label"))) &&

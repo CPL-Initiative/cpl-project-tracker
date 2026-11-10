@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-578 document(s).
+579 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -194,6 +194,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A renamed family is not a correction](../kb-notes/methodology-a-renamed-family-is-not-a-correction.md) | methodology | published | 2026-11-04 | 2026-11-04 |
 | [A rendered artifact reads the model through a filed stamp](../kb-notes/methodology-a-rendered-artifact-reads-the-model-through-a-filed-stamp.md) | methodology | published | 2026-10-19 | 2026-10-19 |
+| [A repaint must keep what the reader opened](../kb-notes/methodology-a-repaint-must-keep-what-the-reader-opened.md) | methodology | published | 2026-11-10 | 2026-11-10 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |

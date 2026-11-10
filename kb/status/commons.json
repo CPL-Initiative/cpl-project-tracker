@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-10T06:29:08Z",
+ "written_at": "2026-11-10T15:51:47Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13654,
+     "n": 13658,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3289,
+     "n": 3285,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-09T10:28:15Z",
+    "at": "2026-11-09T11:39:21Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13654,
-    "failing": 3289,
+    "complete": 13658,
+    "failing": 3285,
     "unread": 3339,
     "records": 18567,
     "colleges": 114,
@@ -118,9 +118,9 @@
    ],
    "issues": [
     {
-     "n": 3,
+     "n": 6,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 3)",
+     "owner": "a curator (the classifier is unsure 5, the classifier's title has a course code left in 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
@@ -150,7 +150,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-10T06:24:11Z",
+    "at": "2026-11-10T15:51:40Z",
     "every_hours": 24
    },
    "facts": {
@@ -162,7 +162,7 @@
     "confirmed": 1226,
     "records": 3038,
     "records_stamped": 2270,
-    "saved_at": "2026-11-09T17:53:54Z",
+    "saved_at": "2026-11-10T15:51:40Z",
     "fold_at": "2026-11-10T06:24:11Z",
     "map_titles": 4990,
     "unclassified": 20,
@@ -353,7 +353,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-09T16:59:35Z",
+    "at": "2026-11-10T06:29:11Z",
     "every_hours": null
    },
    "facts": {
@@ -527,12 +527,12 @@
     "issuers": 1525,
     "in_map": 206,
     "articulated": 160,
-    "with_issuer_skills": 129,
+    "with_issuer_skills": 153,
     "tech_giant": 556
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-09T00:00:00Z",
+    "at": "2026-11-10T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -551,9 +551,9 @@
    ],
    "pair": [
     {
-     "n": 36119,
+     "n": 38797,
      "of": null,
-     "words": "outcomes read from 10,147 courses at 14 colleges",
+     "words": "outcomes read from 10,824 courses at 15 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -561,13 +561,14 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 36119,
-    "courses": 10147,
+    "outcomes": 38797,
+    "courses": 10824,
     "colleges": [
      "cabrillo",
      "coastline_community",
      "columbia",
      "contra_costa",
+     "cuesta",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
@@ -579,11 +580,11 @@
      "riverside_city",
      "santa_ana"
     ],
-    "reads": 37
+    "reads": 39
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-09T10:10:28Z",
+    "at": "2026-11-10T07:25:14Z",
     "every_hours": null
    },
    "sources": [
@@ -597,7 +598,7 @@
    "links": [],
    "pair": [
     {
-     "n": 129,
+     "n": 153,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -607,11 +608,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 129
+    "with_issuer_skills": 153
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-09T00:00:00Z",
+    "at": "2026-11-10T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -656,9 +657,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 3,
+      "n": 6,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 3)",
+      "owner": "a curator (the classifier is unsure 5, the classifier's title has a course code left in 1)",
       "open": "#exhibits/held"
      },
      {
@@ -718,7 +719,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3289,
+    "n": 3285,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -760,13 +761,13 @@
     },
     {
      "name": "course-identity",
-     "placed": 177,
+     "placed": 191,
      "untouched": 157,
      "kept": 0,
      "renamed": 20,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 14,
      "looked": 20
     },
     {
@@ -837,13 +838,13 @@
     }
    ],
    "total": {
-    "placed": 1202,
+    "placed": 1216,
     "untouched": 1075,
     "kept": 23,
     "renamed": 80,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 14,
     "looked": 103
    }
   },
