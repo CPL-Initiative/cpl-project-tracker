@@ -67,6 +67,10 @@ on:
         description: 'Common Subjects Reference: a Jev sitting over the Agriculture umbrella''s residual code AGRI, a C-ID family proposed for each identity for Sam to confirm (kb/_jev_agri_families.py; Sheet 99 card 4). Suggests, writes nothing.'
         type: boolean
         default: false
+      reanalysis:
+        description: 'Exhibit re-analysis: Jev''s two questions (one credential under two names; an issuer that is a training site) over a findings file, e.g. kb/exhibits_reanalysis/2026-11-10.json (kb/_exhibit_reanalysis_jev.py). No gate; suggests nothing, writes nothing.'
+        type: string
+        default: ''
       agri_limit:
         description: 'Cap the AGRI sitting to the first N identities (blank = all 404)'
         type: string
@@ -134,6 +138,22 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: jev-battery
+          path: kb/jev_out/
+      # The exhibit re-analysis's Jev half (scheduled_sessions.md step 9). Asks only
+      # the two questions step 9 allows, over the code checks' findings file. No
+      # gate exists for the exhibits, so it is a calibration sitting: each item
+      # carries Jev's probability for Sam's word; nothing is written or committed.
+      - name: Exhibit re-analysis, Jev's two questions (asks, decides nothing)
+        if: inputs.reanalysis != ''
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          FINDINGS: ${{ inputs.reanalysis }}
+        run: python3 kb/_exhibit_reanalysis_jev.py "$FINDINGS"
+      - name: Upload the re-analysis answers
+        if: inputs.reanalysis != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: jev-exhibit-reanalysis
           path: kb/jev_out/
       # Reads kb/cr_reference_worklist.json, asks Jev one noul + one score per
       # anchored pair, prints a ranked worklist. SUGGESTS ONLY — no Supabase
