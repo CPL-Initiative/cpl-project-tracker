@@ -1798,7 +1798,7 @@
     ACCESS.busy = true; ACCESS.msg = "Asking\u2026"; render();
     SI._askAccess(e).then(function (a) {
       ACCESS.busy = false;
-      ACCESS.msg = a && a.ok ? "Asked. An approver will see it in the CSM Workspace. Keep this tab open: it picks the access up when one of them approves."
+      ACCESS.msg = a && a.ok ? "Asked. An approver will see it in the Funding Follow-up Dashboard. Keep this tab open: it picks the access up when one of them approves."
         : (a && a.why) || fail;
       render();
     }).catch(function () { ACCESS.busy = false; ACCESS.msg = fail; render(); });
@@ -6942,7 +6942,7 @@
     return nudgeShown() ? '<button type="button" class="cplfund-optbtn" id="cplFundNudge" title="List the institutions ' +
       'still missing a participation confirmation or a noncredit attestation, with one recipient each, for a mail merge">Nudge</button>' +
       // The team's queue over the same requests (Sam, 2026-11-02: "a tab linked from the internal view").
-      '<a class="cplfund-csmlink" href="#csm-workspace">CSM Workspace</a>' : "";
+      '<a class="cplfund-csmlink" href="#csm-workspace">Funding Follow-up Dashboard</a>' : "";
   }
   function nudgeInstitutions() {
     return oneRoster().map(function (c) {

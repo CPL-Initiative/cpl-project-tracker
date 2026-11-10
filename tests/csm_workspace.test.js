@@ -336,9 +336,42 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       !out.root.querySelector('[data-side="people"]') && !out.root.querySelector('[data-side="log"]') && !!out.root.querySelector('[data-side="page"]') &&
       !out.root.querySelector('[data-sidepart="people"]') && !out.root.querySelector('[data-sidepart="log"]'));
   }
+  // The header: the new name, access requests as one quiet word, the funding drawer; no Action center heading, no board.
+  {
+    const h = setup({ signedIn: true });
+    const R = h.root;
+    check("5f1: the page reads Funding Follow-up Dashboard, and its address is still the tab's own",
+      flat(R.querySelector("header h1")) === "Funding Follow-up Dashboard" && !/CSM Workspace/.test(flat(R)) && /#csm-workspace/.test(FUND));
+    check("5f2: the Action center heading and the four-column board are gone; the metrics and the menu carry every count",
+      !/Action center/.test(flat(R)) && !R.querySelector(".board") && !R.querySelector("[data-stage]") && !/Where the \d+ stand/.test(flat(R)) &&
+      R.querySelectorAll("header .metric").length === 5 && R.querySelectorAll("#cw-view option").length >= 10);
+    const open = () => R.querySelector('header [data-fund="open"]'), dr = () => R.querySelector("#cw-fund");
+    check("5f3: Implementation Funding in the header is a word that opens a drawer, closed at first",
+      !!open() && open().tagName === "BUTTON" && open().getAttribute("aria-expanded") === "false" && open().getAttribute("aria-controls") === "cw-fund" && dr().hidden);
+    clickEl(h.window, open());
+    const cells = {};
+    Array.prototype.forEach.call(dr().querySelectorAll("tbody tr"), (tr) => { cells[flat(tr.querySelector("th"))] = flat(tr.querySelector("td")); });
+    check("5f4: the drawer names the chosen college, its max award, what qualifies now, the conditions met and the date due, and offers the full page",
+      !dr().hidden && open().getAttribute("aria-expanded") === "true" && /Mt\. San Antonio/.test(flat(dr().querySelector("#cw-fund-who"))) &&
+      /^\$[\d,]+/.test(cells["Max award"]) && cells["Qualifying now"] === "Held until every minimum condition is met" &&
+      /^\d+ of \d+$/.test(cells["Minimum conditions met"]) && !!dr().querySelector('[data-act="focus"]') && flat(dr().querySelector('[data-act="focus"]')) === "Open the full page",
+      JSON.stringify(cells));
+    check("5f5: the drawer's words follow the funding vocabulary", !/\b(money|pool|earn(ed|s)?|unspent|draw)\b/i.test(flat(dr())));
+    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("5f6: Escape closes the drawer", dr().hidden && h.W._state.fund === false);
+    clickEl(h.window, open()); clickEl(h.window, dr().querySelector('[data-fund="close"]'));
+    check("5f7: Close closes it too", dr().hidden);
+    clickEl(h.window, open());
+    const host = h.doc.createElement("div"); host.id = "cw-dlg-host"; R.appendChild(host);
+    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("5f7a: Escape meant for an open pop-up leaves the drawer open", !R.querySelector("#cw-fund").hidden && h.W._state.fund === true);
+    const hh = R.querySelector("#cw-dlg-host"); if (hh) hh.parentNode.removeChild(hh);
+    clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
+    check("5f8: a reviewer who is no approver, with nobody waiting, gets no access word in the header", !R.querySelector("header [data-accopen]"));
+  }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
-  clickEl(window, root.querySelector('[data-stage="notyet"]'));
-  check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
+  clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
+  check("5c: a metric opens its view, Nudge offered on Not yet confirmed",
     W._state.view === "notyet" && !!root.querySelector('[data-act="nudge"]'));
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
   check("5d: a new visit starts on All open items with nothing typed", W._state.view === "open" && W._state.q === "");
@@ -350,7 +383,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const stash = () => { window.CPL_SESSION.stashReturnTab("csm-workspace"); return (JSON.parse(window.localStorage.getItem("cpl_sb_return_tab") || "{}")).tab; };
   check("5e1: #csm-workspace/held opens Confirmed, still held", W._state.view === "held" && root.querySelector("#cw-view").value === "held");
   check("5e2: and reports it as the view a sign-in returns to", stash() === "csm-workspace/held");
-  clickEl(window, root.querySelector('[data-stage="notyet"]'));
+  clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
   check("5e3: another view reports its own address (the address still says held)", stash() === "csm-workspace/notyet" && window.location.hash === "#csm-workspace/held");
   const sel = root.querySelector("#cw-view"); sel.value = "open"; sel.dispatchEvent(new window.Event("change", { bubbles: true }));
   check("5e4: All open items reports the bare tab", stash() === "csm-workspace");
@@ -366,12 +399,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
 // ── 6. Rule 4 and the link from the internal view ────────────────────────────
 {
-  const tags = (s) => [/<button class="cpl-tab" data-tab="csm-workspace">CSM Workspace<\/button>/.test(s),
+  const tags = (s) => [/<button class="cpl-tab" data-tab="csm-workspace">Funding Follow-up Dashboard<\/button>/.test(s),
     /<div class="cpl-tab-pane" id="tab-csm-workspace" data-tab="csm-workspace">/.test(s),
     /onActivate\('csm-workspace'/.test(s) && /loadScript\('csm_workspace\.js', 'CPL_CSM_WORKSPACE'/.test(s)];
   check("6a: the button, the pane and the boot sit in both HTMLs", tags(IDX).every(Boolean) && tags(CPL).every(Boolean));
   check("6b: the funding tab's toolbar links the workspace beside Nudge, for a signed-in reviewer",
-    /<a class="cplfund-csmlink" href="#csm-workspace">CSM Workspace<\/a>/.test(FUND) && /function nudgeBtnHtml\(\) \{\s*return nudgeShown\(\)/.test(FUND));
+    /<a class="cplfund-csmlink" href="#csm-workspace">Funding Follow-up Dashboard<\/a>/.test(FUND) && /function nudgeBtnHtml\(\) \{\s*return nudgeShown\(\)/.test(FUND));
   const { doc } = setup({ signedIn: true });
   check("6c: rendered, the link shows in the internal view", !!doc.querySelector('#cplFundingMount a.cplfund-csmlink[href="#csm-workspace"]'));
   check("6d: new CSS keys every color to a --cw token, and the dark theme maps each onto a First Light token",
@@ -392,7 +425,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("7c: the new write surface is mapped before it ships (Rule 10 a3)", GOV.mapped["table:csm_log"] === "DR-09");
 
   const { window, doc, W, root } = setup({ signedIn: true });
-  const pick = (k) => clickEl(window, root.querySelector('.row[data-sel="' + k + '"], .chip[data-sel="' + k + '"]'));
+  // The board is gone (go-live note, item 13), so a college outside the open list is reached through All institutions.
+  const pick = (k) => { W._state.view = "all"; W._state.sel = null; W.paint(); clickEl(window, root.querySelector('.row[data-sel="' + k + '"]')); };
   pick(OTHER);
   const form = () => root.querySelector("form[data-logform]");
   const fld = (n) => form().elements.namedItem(n);
@@ -872,6 +906,13 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   W._access.asked = false; W.paint();
   await tick(); await tick(); await tick();
   const sec = () => root.querySelector('section[aria-labelledby="cw-acc-h"]');
+  {
+    const aw = () => root.querySelector("header [data-accopen]");
+    check("13a0: an approver gets one quiet word in the header with the count, and the section starts closed",
+      !!aw() && flat(aw()) === "Access requests: none waiting" && /quiet/.test(aw().className) && aw().getAttribute("aria-expanded") === "false" && !!sec() && sec().hidden);
+    clickEl(window, aw());
+    check("13a1: the word opens the section", !sec().hidden && aw().getAttribute("aria-expanded") === "true");
+  }
   check("13a: an approver sees Access requests with nobody waiting, and how a teammate asks",
     !!sec() && /No one is waiting/.test(flat(sec())) && /Ask an approver/.test(flat(sec())) && !sec().querySelector('[data-access="approve"]'));
   check("13b: the empty section offers Check now", !!sec().querySelector('button[data-access="check"]') && flat(sec().querySelector('[data-access="check"]')) === "Check now");
