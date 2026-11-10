@@ -66,14 +66,16 @@ Merged and on main:
    no saved ruling; Sam's to rule.
 3. **`csm-workspace` NEXT 1 and 2:** the hover cards and landing-page roles; the denial email. Both come from the mock.
 4. **`college-district-identity` NEXT:** MAP supplies the two `awaiting_map_id` ids; nothing on our side.
-5. **`library`:** Sam's Replace on the ELL Healthcare Pathways piece, or his next note.
-6. Carried, untouched: COBIx #2967 item 3 remainder (Team RACI into the reviewer list behind a flag); #2972's ask;
+5. **`reviewer-session-lifetime` NEXT:** one real-browser round trip (sign in, the other open tab signs in, drag and
+   Save on Admin, sign out, both stay out). It waits on a person at a browser; this session could not run it.
+6. **`library`:** Sam's Replace on the ELL Healthcare Pathways piece, or his next note.
+7. Carried, untouched: COBIx #2967 item 3 remainder (Team RACI into the reviewer list behind a flag); #2972's ask;
    "one place to rule"; Sheet 177's answers (read `replies` first: https://claude.ai/artifact/ArGaTSSRgbYjvqb9fvKVkm,
    still current, two cards open; this session did not read its replies); the "Water Supply" title on
    `_UNCLASSIFIED::Credit by Exam`; S620's queue; `common-subjects-reference`; `org-phrase-scope-auth` NEXT;
    `program-requirements-harvest` NEXT.
-7. Sam to verify, from handoff 622: Copy the email into Outlook and Gmail once each; does the logo survive the paste?
-8. **CI weight (issue #2927):** `tests/csm_workspace.test.js` needs more than Node's default heap. New CSM and funding
+8. Sam to verify, from handoff 622: Copy the email into Outlook and Gmail once each; does the logo survive the paste?
+9. **CI weight (issue #2927):** `tests/csm_workspace.test.js` needs more than Node's default heap. New CSM and funding
    checks go in their own file, as this run's three did.
 
 ## Not refreshed by this checkpoint (light)

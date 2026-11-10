@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 624 (SkyCocoon, Sam's session, 2026-11-10 ~01:05Z to ~02:40Z)
 tags: [handoff, csm-workspace, reviewer-session-lifetime, college-district-identity, commons, discipline-crosslist, implementation-funding]
 status: current
+superseded: true
+superseded_by: session_626_handoff.md
 ---
 
 # You are Session 625
