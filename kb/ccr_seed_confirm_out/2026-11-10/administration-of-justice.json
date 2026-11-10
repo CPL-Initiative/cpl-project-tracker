@@ -1,0 +1,356 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Administration of Justice",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 86,
+  "before": {
+    "CRIM M1001": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1002": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1005": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1007": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1017": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1018": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1019": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1020": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1021": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1024": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1025": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1027": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1028": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1033": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1047": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1049": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1051": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1058": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1060": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1070": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1072": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1073": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1074": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1075": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1076": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1079": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1080": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1081": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1082": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1083": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1085": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1086": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1087": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1088": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1093": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1094": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1114": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1124": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1134": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1135": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1137": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1143": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1146": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1147": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1149": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1166": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1168": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1197": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1201": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1202": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1207": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1208": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1209": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1216": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1233": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1234": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1235": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1236": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1237": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1239": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1240": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1241": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1243": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1247": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1249": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1250": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1262": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1279": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1286": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1287": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1289": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1290": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1291": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1293": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1294": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1301": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1302": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1306": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1310": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M1311": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M9001": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "CRIM M9003": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}

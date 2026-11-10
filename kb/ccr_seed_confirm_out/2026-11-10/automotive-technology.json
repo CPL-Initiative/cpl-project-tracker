@@ -1,0 +1,128 @@
+{
+  "_about": "kb/_ccr_seed_confirm_apply.py receipt: the cards stamped and their before-values. Undo: python3 kb/_ccr_seed_confirm_apply.py --undo <this file>.",
+  "discipline": "Automotive Technology",
+  "ruling": "Open Asks Sheet 180 card 1 (Sam, 2026-11-10 19:34Z: all)",
+  "run": "S634",
+  "date": "2026-11-10",
+  "source": "description_and_top",
+  "confidence": 0.8,
+  "count": 29,
+  "before": {
+    "AUTO M1022": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1028": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1029": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1030": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1034": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1061": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1062": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1064": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1065": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1066": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1071": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1083": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1084": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1086": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1090": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1101": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1102": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1106": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1139": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1167": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1175": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1194": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1196": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M1212": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M9010": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M9019": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M9036": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M9042": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    },
+    "AUTO M9046": {
+      "discipline_source": null,
+      "discipline_confidence": null
+    }
+  }
+}
