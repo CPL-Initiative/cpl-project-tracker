@@ -245,12 +245,19 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5d5: Edit email opens the fields in place of the preview and reads Done editing; the draft's fields were in the page all along",
       pre().hidden && !edit().hidden && flat(word()) === "Done editing" && word().getAttribute("aria-expanded") === "true" &&
       !!edit().querySelector("#cw-to") && !!edit().querySelector("#cw-body") && !!edit().querySelector("#cw-mailfu"));
+    // The two new emails are held until Sam has read them (COBIx on PR 3050).
+    check("5d5a: held: the Template menu offers neither new email, and no college is due one",
+      !rec().querySelector('#cw-tpl option[value="lead"]') && !rec().querySelector('#cw-tpl option[value="both"]') &&
+      d.W._recTpl({ key: "ZH", name: "ZH", part: { confirmed: false, waiting: false }, nc: { lead: false, standing: false, waiting: false }, conds: [], gate: {} }) === "nudge");
+    d.W._leadMail(true); d.W.paint(); clickEl(d.window, word());
     const tplSel = rec().querySelector("#cw-tpl");
     tplSel.value = "lead"; tplSel.dispatchEvent(new d.window.Event("change", { bubbles: true }));
     const lead = d.W._mail(OTHER);
     check("5d6: the Noncredit CPL Lead ask names the role in MAP under its exact title and says an attestation is accepted as well",
       lead.tpl === "lead" && /the Noncredit CPL Lead role in MAP for Pasadena/.test(lead.subject) && /under that exact title/.test(lead.body) &&
       /attestation on the CPL Implementation Funding page is accepted as well/.test(lead.body) && !/\b(money|pool|earn|unspent|draw)\b/i.test(lead.body), lead.body);
+    check("5d6a: Sent is offered for the email that is due alone: a template switched by hand offers none",
+      d.W._recTpl(d.W._snapshot().rows.find((r) => r.key === OTHER)) === "accept" && !rec().querySelector('[data-mailact="sent"]'));
     const tplSel2 = rec().querySelector("#cw-tpl");
     tplSel2.value = "both"; tplSel2.dispatchEvent(new d.window.Event("change", { bubbles: true }));
     const both = d.W._mail(OTHER);
@@ -272,7 +279,17 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       d.W._recTpl(row("ZN", false)) === null && d.W._recTpl(row("ZC", true)) === null && d.W._recTpl(row("ZN", true)) === "accept");
     log[log.length - 1].created_at = "2026-01-02T00:00:00Z";
     check("5d11: a lead ask older than 14 days is due again", d.W._recTpl(row("ZC", true)) === "lead");
+    log[log.length - 2].created_at = "2026-01-02T00:00:00Z";
+    check("5d12: a Sent nudge is final, the both-in-one email included: however old, the college is not due a nudge again, and once it confirms the lead ask is due",
+      d.W._recTpl(row("ZN", false)) === null && d.W._recTpl(Object.assign(row("ZN", true), {})) === "accept");
     log.splice(log.length - 3, 3);
+    log.push({ id: 913, college: "ZD", kind: "email", body: "Draft opened: CPL Implementation Funding: two steps for ZD, to a@b.edu.", created_at: new Date().toISOString() });
+    log.push({ id: 914, college: "ZE", kind: "email", body: "Acceptance sent: x", created_at: "2026-11-09T12:00:00Z" });
+    log.push({ id: 915, college: "ZE", kind: "email", body: "Email copied: CPL Implementation Funding: the Noncredit CPL Lead role in MAP for ZE, to a@b.edu.", created_at: new Date().toISOString() });
+    check("5d13: a draft of either new email holds the college out for 14 days, as a nudge's draft does",
+      d.W._recTpl(row("ZD", false)) === null && d.W._recTpl(row("ZE", true)) === null);
+    log.splice(log.length - 3, 3);
+    d.W._leadMail(false);
   }
   check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('[data-stage="notyet"]'));

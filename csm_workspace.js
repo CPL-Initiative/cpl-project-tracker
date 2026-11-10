@@ -465,13 +465,22 @@
      now as well"). Open when the noncredit share applies, the role is not in MAP, no attestation stands and none waits.
      A college owing the confirmation too gets both asks in one email ("both"), whose receipt is the nudge's, told
      apart by its subject. An ask counts as made for 14 days, as the nudge does. */
-  var BOTH_SUBJ = /: two steps for /;
-  function leadOpen(r) { return !!(r.nc && !ncMet(r) && !ncWaiting(r)); }
+  var BOTH_SUBJ = /: two steps for /, LEAD_SUBJ = /: the Noncredit CPL Lead role in MAP for /;
+  /* HELD UNTIL SAM HAS READ THEM (COBIx on PR 3050; the hold list's "anything outward"): the two new emails are built
+     and tested, and stay out of the page until LEAD_MAIL_ON is true. While it is false no lead ask is ever due, a
+     college owing the confirmation gets the plain nudge, and the Template menu does not offer either. Turning it on is
+     one word here, once Sam has read the wording in seedMail. */
+  var LEAD_MAIL_ON = false;
+  function leadOpen(r) { return LEAD_MAIL_ON && !!(r.nc && !ncMet(r) && !ncWaiting(r)); }
+  // An ask counts as made for 14 days, by its Sent receipt or by a draft opened or copied (as a nudge's draft counts).
+  // A Sent nudge is final, as it was before this change: lastSent has no window, so a college nudged by either email
+  // is not due a nudge again; the Noncredit CPL Lead ask alone comes due again after 14 days, once the college confirms.
   function leadAsked(r) {
     if ((state.sent || {})[r.key + "|lead"] || (state.sent || {})[r.key + "|both"]) return true;
     var since = plusDays(-14), a = lastSent(r, "lead"), b = lastSent(r, "nudge");
     return !!(a && String(a.created_at || "").slice(0, 10) >= since) ||
-      !!(b && BOTH_SUBJ.test(String(b.body || "")) && String(b.created_at || "").slice(0, 10) >= since);
+      !!(b && BOTH_SUBJ.test(String(b.body || "")) && String(b.created_at || "").slice(0, 10) >= since) ||
+      sentOf(r, LEAD_SUBJ, 14) || sentOf(r, BOTH_SUBJ, 14);
   }
   function lastSent(r, tpl) {
     var p = SENT[tpl] + ": ", rows = logFor(r.key).filter(function (x) {
@@ -495,7 +504,8 @@
     if (r.part.confirmed && !isSent(r, "accept")) return "accept";
     if (r.nc && r.nc.standing && !isSent(r, "accept_nc")) return "accept_nc";
     if (r.part.confirmed) return leadOpen(r) && !leadAsked(r) ? "lead" : null;
-    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ? null : "nudge";
+    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ||
+      sentOf(r, BOTH_SUBJ, 14) && !bouncedSince(r, BOTH_SUBJ) ? null : "nudge";
   }
   function bouncedSince(r, re) {
     return logFor(r.key).some(function (x) { return /^It bounced, /.test(String(x.body || "")) && re.test(String(x.body || "")); });
@@ -1181,7 +1191,9 @@
       // Drafted S624 for Sam's edit (go-live note, decision 4). The facts: the exact MAP title Noncredit CPL Lead meets
       // the condition (his ruling, 2026-11-10, PR 3031), and an attestation on the funding page is accepted as well.
       var leadPara = "MAP does not yet show a Noncredit CPL Lead for " + college + ". The condition is met when the college's lead holds the " +
-        "Noncredit CPL Lead role in MAP, under that exact title. A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.";
+        "Noncredit CPL Lead role in MAP, under that exact title." +
+        (r.nc && r.nc.leadNear ? " The college's CPL landing page in MAP lists a close title; the condition asks for the exact one, Noncredit CPL Lead." : "") +
+        " A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.";
       var closing = "\n\nIf either is already on its way, or if someone else at " + college + " should receive this note, a short reply will let us update our records." +
         "\n\nThe CPL Initiative team";
       if (tplId === "lead") {
@@ -1240,12 +1252,15 @@
     if (CT.state !== "ready") return '<div><p class="k">Write an email</p><p class="gate">Reading the contacts on file&hellip;</p></div>';
     var m = mailOf(r);
     loadLogo();
-    var opts = TEMPLATES.map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
+    var opts = TEMPLATES.filter(function (t) { return LEAD_MAIL_ON || (t.id !== "lead" && t.id !== "both"); })
+      .map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
     // The preview first (Malone, 2026-11-10: recipient, subject and message apart, with Edit email). Edit email opens
     // the fields the composer always had; they stay in the page either way, so a draft is never lost to a fold. With no
     // email due the block folds to one word, Write an email.
     var due = !!recTpl(r), edit = !!(state.mailEdit || {})[r.key], open = due || edit, cc = allCc(m);
-    var sentBtn = SENT[m.tpl] || m.tpl === "both";
+    // Sent is offered for the email that is due and no other (COBIx on PR 3050): a template switched by hand never
+    // writes a receipt that would keep the real one from queueing.
+    var sentBtn = due && m.tpl === recTpl(r);
     return '<div class="tpl" aria-labelledby="cw-mail-h"><div class="mail-h"><p class="k" id="cw-mail-h">' + (open ? "Email preview" : "Email") + "</p>" +
       '<button type="button" class="word" data-act="mailedit" aria-expanded="' + edit + '" aria-controls="cw-mail-edit">' +
         (edit ? "Done editing" : due ? "Edit email" : "Write an email") + "</button></div>" +
@@ -1602,7 +1617,8 @@
       if (!ls) return;
       logWrite("POST", null, { college: r.key, kind: "email", body: "It bounced, " + ls.body }).then(function (ok) {
         if (!ok) return;
-        if (state.sent) delete state.sent[r.key + "|" + kind];
+        // Either receipt can be undone (COBIx on PR 3050): the both-in-one email's receipt is the nudge's.
+        if (state.sent) { delete state.sent[r.key + "|" + kind]; if (kind === "nudge") delete state.sent[r.key + "|both"]; }
         paint();
         say("Noted that it bounced. " + r.name + " is back in Ready to send.");
       });
@@ -1805,7 +1821,7 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
