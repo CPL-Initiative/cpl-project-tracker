@@ -715,7 +715,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/memory_audit/latest.json` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | — |
 | `kb/morph_variant_out/2026-06-24/dryrun.json` | none found | scripts: `kb/_morphological_variant_dryrun.py` |
 | `kb/nc_learning_partners.json` | tabs: `nc-learning-partners` | — |
-| `kb/non_ccc_institutions.json` | scripts: `excel_to_dashboard.py`, `funding/_build_funding_performance.py` | — |
+| `kb/non_ccc_institutions.json` | scripts: `excel_to_dashboard.py`, `funding/_build_funding_performance.py`, `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/noncredit_cip_categories.json` | scripts: `kb/_build_noncredit_cip_categories.py`, `kb/_classify_noncredit_programs.py` | scripts: `kb/_build_noncredit_cip_categories.py` |
 | `kb/occupation_credential_map.json` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_partner_crosswalk.py` | — |
 | `kb/openclassrooms_ma_ace_recs.json` | scripts: `kb/_build_oc_medical_assistant_crosswalk.py` | — |

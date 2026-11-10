@@ -290,7 +290,33 @@ def load_rulings():
     return same, sep
 
 
-def lint_observed(observed, rows, same_entity=None, separate=None):
+NON_CCC_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "non_ccc_institutions.json")
+
+
+def load_non_ccc(path=NON_CCC_PATH):
+    """Institutions Sam has ruled sit outside the California Community Colleges
+    (kb/non_ccc_institutions.json, one list for every reader), keyed by norm()
+    of the name and of each variant. A missing file is an empty list: the lint
+    then reports the name as `unknown`, which is the honest fallback."""
+    try:
+        data = json.load(open(path, encoding="utf-8"))
+    except OSError:
+        return {}
+    out = {}
+    for inst in data.get("institutions") or []:
+        # Who ruled and when come from the file's own `_source` line ("Sam, open-asks sheets 33 and 34,
+        # 2026-10-04 ..."), so the finding never states a date the file does not.
+        src = data.get("_source") or ""
+        when = re.search(r"\d{4}-\d{2}-\d{2}", src)
+        rec = dict(inst, _decided_by=src.split(",")[0].strip() or None,
+                   _decided_on=when.group(0) if when else None)
+        for nm in [inst.get("name")] + list(inst.get("variants") or []):
+            if nm:
+                out.setdefault(norm(nm), rec)
+    return out
+
+
+def lint_observed(observed, rows, same_entity=None, separate=None, non_ccc=None):
     """Names seen in a LIVE table that resolve to no identity here.
 
     ⭐ THIS IS THE POINT OF THE WHOLE ARTIFACT, not a bonus. A crosswalk that
@@ -312,9 +338,15 @@ def lint_observed(observed, rows, same_entity=None, separate=None):
                     a curator decides, because merging two real orgs and
                     splitting one org are both wrong in ways nothing downstream
                     can detect.
+      non_ccc     — an institution kb/non_ccc_institutions.json names: outside
+                    the system by Sam's ruling, on MAP on purpose, with no row in
+                    map_colleges. The finding carries his statement. It stays a
+                    finding because the name still joins to nothing.
       unknown     — everything else. Test rows, private institutions, anything
                     nobody has claimed.
     """
+    if non_ccc is None:
+        non_ccc = load_non_ccc()
     known = {}
     for r in rows:
         known[norm(r["college_name"])] = r["college_name"]
@@ -353,6 +385,16 @@ def lint_observed(observed, rows, same_entity=None, separate=None):
                              "has_landing_page": o.get("has_landing_page"),
                              "why": r.get("needs") or "A separate MAP org; its college_id is not in "
                                                      "anything we hold and must come from MAP."})
+            continue
+        if norm(nm) in non_ccc:
+            inst = non_ccc[norm(nm)]
+            findings.append({"name": nm, "class": "non_ccc", "resolves_to": None,
+                             "institution_kind": inst.get("kind"),
+                             "decided_by": inst.get("_decided_by"), "decided_on": inst.get("_decided_on"),
+                             "sources": o.get("sources"),
+                             "has_landing_page": o.get("has_landing_page"),
+                             "why": (inst.get("note") or "Outside the California Community Colleges.")
+                                    + " It has no row in map_colleges, so a join on this name finds nothing."})
             continue
         twin = None
         for suf in SUFFIXES:

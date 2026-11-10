@@ -44,14 +44,17 @@ window.CPL_COLLEGE_IDENTITY = {
   },
   {
    "name": "California State University Los Angeles",
-   "class": "unknown",
+   "class": "non_ccc",
    "resolves_to": null,
+   "institution_kind": "csu",
+   "decided_by": "Sam",
+   "decided_on": "2026-10-04",
    "sources": [
     "chatbox_college_profiles",
     "map_college_contacts"
    ],
    "has_landing_page": true,
-   "why": "In a live table and claimed by no identity."
+   "why": "The first CSU campus on MAP. Counted as a MAP participant beside the community colleges (Sam: \"Keep CSU LA in the mix\"). It has no row in map_colleges, so a join on this name finds nothing."
   },
   {
    "name": "Launch Apprenticeship Non-Credit",

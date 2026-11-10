@@ -16,8 +16,9 @@
     "names_with_no_identity": 9,
     "lint_by_class": {
       "awaiting_map_id": 2,
+      "non_ccc": 1,
       "spelling": 3,
-      "unknown": 4
+      "unknown": 3
     },
     "colleges": 116,
     "with_mis_code": 118,
@@ -361,14 +362,17 @@
     },
     {
       "name": "California State University Los Angeles",
-      "class": "unknown",
+      "class": "non_ccc",
       "resolves_to": null,
+      "institution_kind": "csu",
+      "decided_by": "Sam",
+      "decided_on": "2026-10-04",
       "sources": [
         "chatbox_college_profiles",
         "map_college_contacts"
       ],
       "has_landing_page": true,
-      "why": "In a live table and claimed by no identity."
+      "why": "The first CSU campus on MAP. Counted as a MAP participant beside the community colleges (Sam: \"Keep CSU LA in the mix\"). It has no row in map_colleges, so a join on this name finds nothing."
     },
     {
       "name": "Launch Apprenticeship Non-Credit",
