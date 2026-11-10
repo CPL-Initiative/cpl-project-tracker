@@ -91,6 +91,13 @@ itpi just added the field in map users. if they attest, we can accept that now a
   Ready to send. The funding tab's own `setDeclined` and its Nudge's declined word are untouched.
 Guards `tests/csm_workspace.test.js` 3f, 5a, 14a to 14x-g, 15e to 15j.
 
+✅ **The queue and the record share a divider (S623, Sam, 2026-11-10: *"can you make the big side by side window on the
+various views resizable horizontally--thinking when sidebars get opens users will want to shift things depending on what
+they're looking at"*).** `#cw-split`, a `separator` between the two panes: drag it, or Left and Right step it two points
+and Home puts it back; it stops at 25 and 70 so neither side closes. Its place is a layout choice, kept in
+`localStorage` (`cplCsmSplit`) like a column width. Below 960px the panes stack and the divider leaves. Every Commons
+List already carries the same control on its side panel (`pgrip` in `commons_list.js`). Guards 13y-a to 13y-g.
+
 ## NEXT
 
 0. **The mock for issue #3010, then its build on Sam's word:** scene A, the sign-in with *Ask an approver* as the one

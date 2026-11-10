@@ -81,7 +81,13 @@
       "#tab-csm-workspace .pace .dot { fill:var(--cw-accent); }",
       "#tab-csm-workspace .pill { display:inline-block; white-space:nowrap; padding:2px 10px; border-radius:999px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.76rem; font-weight:700; }",
       "#tab-csm-workspace .pill.ask { background:var(--cw-ask-bg); color:var(--cw-ask-fg); }",
-      "#tab-csm-workspace .center { display:grid; grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); gap:16px; align-items:start; }",
+      // The queue and the record, with a divider a reader drags or steps with the arrow keys (Sam, 2026-11-10: "when
+      // sidebars get opened users will want to shift things depending on what they're looking at"). The two shares
+      // ride custom properties, so the one-column rule below still wins on a narrow screen.
+      "#tab-csm-workspace .center { display:grid; grid-template-columns:minmax(0, var(--cw-q, 5fr)) 12px minmax(0, var(--cw-r, 7fr)); gap:4px; align-items:start; }",
+      "#tab-csm-workspace .split { align-self:stretch; min-height:120px; cursor:col-resize; touch-action:none; border-radius:6px; background:linear-gradient(to right, transparent 5px, var(--cw-line) 5px, var(--cw-line) 7px, transparent 7px); }",
+      "#tab-csm-workspace .split:hover, #tab-csm-workspace .split:focus-visible { background:var(--cw-line); }",
+      "#tab-csm-workspace .split:focus-visible { outline:2px solid var(--cw-accent); outline-offset:-2px; }",
       "#tab-csm-workspace .pane { background:var(--cw-surface); border:1px solid var(--cw-line); border-radius:12px; min-width:0; }",
       "#tab-csm-workspace .pane-h { padding:14px 18px 12px; border-bottom:1px solid var(--cw-line-soft); display:grid; gap:8px; }",
       "#tab-csm-workspace .showing { margin:0; font-size:.95rem; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
@@ -259,7 +265,7 @@
       "#tab-csm-workspace .gate { margin:0; font-size:.88rem; color:var(--cw-ink-2); }",
       "@media (max-width: 560px) { #tab-csm-workspace .req { grid-template-columns:minmax(0, 1fr); } }",
       "#tab-csm-workspace .foot { border-top:1px solid var(--cw-line); padding-top:16px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; color:var(--cw-muted); font-size:.88rem; }",
-      "@media (max-width: 960px) { #tab-csm-workspace .cohort-row { grid-template-columns:repeat(2, minmax(0, 1fr)); } #tab-csm-workspace .center { grid-template-columns:minmax(0, 1fr); } #tab-csm-workspace .board { grid-template-columns:repeat(2, minmax(0, 1fr)); } #tab-csm-workspace .back { display:inline-flex; } }",
+      "@media (max-width: 960px) { #tab-csm-workspace .cohort-row { grid-template-columns:repeat(2, minmax(0, 1fr)); } #tab-csm-workspace .center { grid-template-columns:minmax(0, 1fr); gap:16px; } #tab-csm-workspace .split { display:none; } #tab-csm-workspace .board { grid-template-columns:repeat(2, minmax(0, 1fr)); } #tab-csm-workspace .back { display:inline-flex; } }",
       "@media (max-width: 560px) { #tab-csm-workspace .needs-row, #tab-csm-workspace .cohort-row, #tab-csm-workspace .board { grid-template-columns:minmax(0, 1fr); } #tab-csm-workspace .cond, #tab-csm-workspace .ev { grid-template-columns:minmax(0, 1fr); gap:2px; } #tab-csm-workspace .needs .big { font-size:2.3rem; } }",
       "@media (prefers-reduced-motion: no-preference) { #tab-csm-workspace .row, #tab-csm-workspace .card { transition:background-color .12s, border-color .12s; } }"
   ];
@@ -637,6 +643,56 @@
   }
 
   // ── painting ─────────────────────────────────────────────────────────────
+  /* The divider between the queue and the record. Its place is a layout choice, never a filter, so it lasts across
+     visits like a column width (CLAUDE.md, "Tabs never remember a filter"); storage blocked, it lasts the page. */
+  var SPLIT_KEY = "cplCsmSplit", SPLIT_MIN = 25, SPLIT_MAX = 70, SPLIT_DEFAULT = 42, SPLIT_STEP = 2, splitMem;
+  function splitPct() {
+    if (splitMem === undefined) { try { splitMem = parseInt(window.localStorage.getItem(SPLIT_KEY), 10) || null; } catch (e) { splitMem = null; } }
+    return splitMem && splitMem >= SPLIT_MIN && splitMem <= SPLIT_MAX ? splitMem : SPLIT_DEFAULT;
+  }
+  function setSplit(p, keep) {
+    p = p == null ? null : Math.max(SPLIT_MIN, Math.min(SPLIT_MAX, Math.round(p)));
+    splitMem = p;
+    if (keep !== false) { try { if (p) window.localStorage.setItem(SPLIT_KEY, String(p)); else window.localStorage.removeItem(SPLIT_KEY); } catch (e) { /* storage blocked */ } }
+    var c = document.getElementById("cw-center"), g = document.getElementById("cw-split");
+    if (c) c.setAttribute("style", splitStyle());
+    if (g) g.setAttribute("aria-valuenow", String(splitPct()));
+  }
+  function splitStyle() { var p = splitPct(); return "--cw-q:" + p + "fr; --cw-r:" + (100 - p) + "fr"; }
+  function splitHtml() {
+    return '<div class="split" id="cw-split" role="separator" tabindex="0" aria-orientation="vertical" aria-controls="cw-queue" ' +
+      'aria-label="Resize the queue and the record. Left and Right arrows move it, Home puts it back." ' +
+      'aria-valuemin="' + SPLIT_MIN + '" aria-valuemax="' + SPLIT_MAX + '" aria-valuenow="' + splitPct() + '"></div>';
+  }
+  function onSplitKey(e) {
+    var t = e.target; if (!t || t.id !== "cw-split") return;
+    if (e.key === "ArrowLeft") setSplit(splitPct() - SPLIT_STEP);
+    else if (e.key === "ArrowRight") setSplit(splitPct() + SPLIT_STEP);
+    else if (e.key === "Home") setSplit(null);
+    else return;
+    e.preventDefault();
+  }
+  function onSplitDown(e) {
+    var t = e.target; if (!t || t.id !== "cw-split" || (e.button !== undefined && e.button !== 0)) return;
+    var c = document.getElementById("cw-center"); if (!c) return;
+    e.preventDefault();
+    try { t.setPointerCapture(e.pointerId); } catch (err) { /* no capture: the document listeners carry the drag */ }
+    // The two shares split what is left after the 12px divider and its two 4px gaps, so the pointer is measured
+    // against that width: the divider stays under it (COBIx on PR 3013).
+    var PAD = 20;
+    function at(ev) { var r = c.getBoundingClientRect(), w = r.width - PAD; return w > 0 ? (ev.clientX - r.left - PAD / 2) / w * 100 : splitPct(); }
+    // Only the pointer that started the drag moves or ends it, as the Commons Lists' panel grip does.
+    function move(ev) { if (ev.pointerId === e.pointerId) setSplit(at(ev), false); }
+    var ENDS = ["pointerup", "pointercancel", "lostpointercapture"];
+    function up(ev) {
+      if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+      document.removeEventListener("pointermove", move);
+      ENDS.forEach(function (n) { document.removeEventListener(n, up); t.removeEventListener(n, up); });
+      setSplit(ev && ev.clientX != null && ev.type === "pointerup" ? at(ev) : splitPct());
+    }
+    document.addEventListener("pointermove", move);
+    ENDS.forEach(function (n) { document.addEventListener(n, up); t.addEventListener(n, up); });
+  }
   function queueHtml() {
     var list = shownRows(), v = VIEWS[state.view] || VIEWS.open;
     // A decided college may leave the view (accepted, it moves on); its record stays until another is chosen.
@@ -647,7 +703,7 @@
         return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + " (" + S.rows.filter(VIEWS[k].keep).length + ")</option>";
       }).join("") + "</optgroup>";
     }).join("");
-    return '<div class="pane" aria-labelledby="cw-q-h"><div class="pane-h">' +
+    return '<div class="pane" id="cw-queue" aria-labelledby="cw-q-h"><div class="pane-h">' +
       // The view's name follows the count in lower case, except a name that opens on an acronym (CPL, MAP keep theirs).
       '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.label.replace(/^[A-Z][a-z]+/, function (m) { return m.toLowerCase(); })) + "</p>" +
       '<label class="sr" for="cw-view">Show</label><select id="cw-view" class="search" data-view-select="1">' + opts + "</select>" +
@@ -1317,7 +1373,7 @@
       (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
       '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
         (S.loaded ? "Read live from the funding tab." : "Loading the requests&hellip;") + "</p></div>" +
-        '<div class="center">' + queueHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +
+        '<div class="center" id="cw-center" style="' + splitStyle() + '">' + queueHtml() + splitHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +
       '<section class="sec" aria-labelledby="cw-bd-h"><h2 id="cw-bd-h">Where the ' + S.rows.length + " stand</h2>" + boardHtml() + "</section>" +
       '<footer class="foot"><span>The workspace never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
         '<a href="#implementation-funding">Implementation Funding</a></footer>' +
@@ -1558,6 +1614,8 @@
     if (!wired) {
       wired = true;
       el.addEventListener("click", onClick);
+      el.addEventListener("keydown", onSplitKey);
+      el.addEventListener("pointerdown", onSplitDown);
       el.addEventListener("change", onChange);
       el.addEventListener("input", onInput);
       el.addEventListener("submit", onSubmit);
@@ -1589,5 +1647,5 @@
     _contactsOf: function (key) { var r = rowOf(key); return r ? contactsOf(r) : null; },
     _mismatches: function (key) { var r = rowOf(key); return r ? mismatchesOf(r, contactsOf(r)) : null; },
     _mail: function (key) { var r = rowOf(key); return r ? mailOf(r) : null; }, _readyOf: function (key) { var r = rowOf(key); return r ? readyOf(r) : null; },
-    _logo: LOGO, _access: ACC, _grant: GRANT, _readGrant: readGrant, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
+    _logo: LOGO, _split: function () { return splitPct(); }, _access: ACC, _grant: GRANT, _readGrant: readGrant, _mailHtml: function (key) { var r = rowOf(key); return r ? mailHtml(mailOf(r)) : null; } };
 })();

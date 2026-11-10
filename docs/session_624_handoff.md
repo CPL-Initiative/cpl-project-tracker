@@ -1,7 +1,7 @@
 ---
 title: "Session 624 handoff: the action center in two groups, the Courses List keeps your row, the identity check runs again, a sign-in whose funding access ended says so"
 date: 2026-11-09
-session: 623 (SkyButterfly, Sam's session, 2026-11-09 ~22:30Z to ~23:40Z)
+session: 623 (SkyButterfly, Sam's session with Malone joining, 2026-11-09 ~22:30Z to 2026-11-10 ~01:00Z)
 tags: [handoff, csm-workspace, commons, college-district-identity, reviewer-session-lifetime, implementation-funding, library]
 status: current
 ---
@@ -9,62 +9,74 @@ status: current
 # You are Session 624
 
 Your moniker is **SkyCocoon** (galaxy names). A **light** checkpoint, written at 7 commits past handoff 623 with 405k of
-context left: no Roadmap row moved, the run wrote no data and no re-mint. The MAP team rolls the funding confirmations
+context left, then refreshed near 95k: no Roadmap row moved and no re-mint. One additive migration ran (#3016, receipt in its PR). The MAP team rolls the funding confirmations
 out to the whole team on 2026-11-10. COBIx (`cobi-cto`) reviews every PR; `docs/reference/cobix_pr_loop.md` says how to
 answer. Run `/coord` before you start.
 
 ## What shipped
 
-1. **The action center's menu in two groups** (#3001, closes #2989): To do, then Browse, as `<optgroup>`s; two added
-   lists (`nocoord`, `declined`); a gap word on the Noncredit and coordinator cards that counts the list it opens. A
-   college that declined leaves the chase list (COBIx's finding).
-2. **The Courses List keeps the row you rule on** (#3004, closes #2995): the list engine's public `redraw` puts the
-   scroll back (`redrawKeep` in `commons_list.js`, so every List gets it), the current row and its band are marked, and
-   the Discipline in doubt panel's ruling, edits and SkyView link sit apart.
-3. **The daily college identity check reads its names** (#3005): the builder takes a bare name or a record; a failed
-   check now annotates the run and notes the `college-identity` issue, whose title follows the latest note.
-4. **A sign-in whose funding access has ended says so** (#3007): the CSM Workspace asks
-   `is_funding_reviewer()`; on `false` it draws the note and *Ask an approver*; the door's later words (declined,
-   lapsed) reach the note through `cpl-funding-door-said`. No database change.
+Merged and on main:
+1. **The action center's menu in two groups** (#3001), then **the workspace after the walkthrough with Malone** (#3012,
+   issue #3010): the priority cards are gone, every menu label carries its list's count, the coordinator lists sit under
+   Browse, the Noncredit CPL Lead is met by the role in MAP or an accepted attestation, and there is no decline piece.
+2. **The Courses List keeps the row you rule on** (#3004). 3. **The daily college identity check reads its names** (#3005).
+4. **A sign-in whose funding access has ended says so** (#3007).
 
-## Decisions Sam made this run
+Open at this writing, each waiting on `test` (merge each on a pass; the second to merge takes main and regenerates):
+- **#3013** the divider between the queue and the record (COBIx's three findings fixed in d96c0be1).
+- **#3014** the reviewer's field for the sender's role, kept in the acceptance's `csm_log` entry.
+- **#3015** both public forms require *Your title at the college* when the sender picks Other; `selfPost` falls back.
+- **#3016** the database half of #3015, **already applied and read back** (two `attestor_title_text` columns,
+  `cpl_funding_sender_titles()`; anon cannot read either). Merge it so main holds the migration and its `.apply`.
 
-None new. He asked for `/coord` with the ELL Healthcare Pathways side session and said to keep rolling with item 3
-while the PRs finished. Everything built came from handoff 623's queue and his earlier "go" on COBIx's proposal.
+**The mock for #3010** (not built; nothing from it goes live without Sam's word):
+https://claude.ai/artifact/Bj8psKPeZS3DFHmgcSpoeL, source `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
+20261110_csm_workspace_clarity_mock.html` (vault branch `claude/s623-csm-mock-2`; open its PR and merge it if it is not
+on the vault's main). It opens as a signed-in reviewer sees the workspace, at full width.
+
+## Decisions this run (Sam's words are in `cpl_memory` `sam-csm-workspace-after-the-walkthrough-2026-11-09` and the lanes)
+
+- **Sam:** the cards go; no college-declining piece (a blank confirmation is the indicator); the Noncredit CPL Lead ask
+  is for the role in MAP and an attestation is accepted too; he chases the missing coordinators
+  (`#csm-workspace/coord`); the side-by-side panes resize; the reviewer adds the sender's role; the sender is required to
+  give a title when they pick Other; in the mock, only what a reviewer sees, full width, Implementation Funding opens a
+  side drawer (*"love the simple side bar with link to go full monty if needed"*), access requests sit quietly in the
+  header, and Accept says what it does.
+- **Malone (in session 2026-11-10, giving UI changes one at a time so each rolls back):** 1, the summary as scannable
+  metrics, number above label, the deadline set apart, still clickable; 2, the college list with what needs the CSM
+  above what waits on the college, every badge kept, each line a specific next action; 3, skipped by him; 4, *This
+  visit* becomes *Recommended action*, the email section is *Email preview* with recipient, subject and message apart
+  and *Edit email*. All four are in the mock, each as its own version. **He has more to send.**
+- **Open for Sam:** whether the role in MAP also counts for the strike-team condition (`nc_team`, hidden in every
+  scenario today; `csm-workspace` NEXT 0b).
+- **Open for Malone (asked, not yet answered):** Recommended action above or below the four conditions; the
+  People, landing page and History panel under the record or as a third column; whether the row pills earn their place;
+  a menu or visible words for the filter.
 
 ## Read first
 
-- **The site:** #3001's own Pages deploy failed (run 2899, the *syncing_files* timeout again); run 2900 carries it.
-  the site served `nocoord` at 23:39Z. Check #3007 the same way (`curl` the served `csm_workspace.js` for `cw-grant-h`); a failed deploy takes a fresh `pages.yml` dispatch, never a rerun.
-- The lanes: `csm-workspace.md` (the S623 paragraph, NEXT 0, 0a, 0b), `commons.md`, `college-district-identity.md`,
-  `reviewer-session-lifetime.md`.
+- The four open PRs above. Then `docs/reference/lanes/csm-workspace.md` (the S623 paragraphs and NEXT 0, 0a, 0b),
+  `implementation-funding.md` (the sender's title paragraph), `reviewer-session-lifetime.md`.
+- **The site:** check the served `csm_workspace.js` for `cw-grant-h` (#3007) and `ncMet` (#3012); a failed Pages
+  deploy takes a fresh `pages.yml` dispatch, never a rerun.
 
 ## Open work, in order
 
-1. **`csm-workspace` NEXT 0, 0a, 0b, with `implementation-funding`'s Noncredit card** (one change): the card's name
-   once the Noncredit CPL Lead role in MAP counts beside the attestation; a waiting attestation at a college with the
-   role (COBIx on #3001: it still reads *waiting on the team*); a declined college out of *Not yet confirmed* and
-   Today's count, changed together with the funding tab's Nudge so both agree. A CSM follow-up to Napa and Fresno City
-   to use the role.
-2. **`reviewer-session-lifetime` NEXT:** the funding tab's own review controls still draw for a sign-in whose access
-   ended; give them the workspace's note. Natalie and Terence have no Auth account yet; each approves once in.
-3. **`college-district-identity`:** the first working run of the daily check (the next `map-users-sync.yml` run) is
-   expected to raise the `college-identity` issue: `California State University Los Angeles` is new in the live tables
-   and two trailing-space names are gone (129 live against the committed 130). Rule on the new name in
-   `kb/reference/college_identity_rulings.json`, then re-baseline the committed input and artifact in a reviewed PR.
-   Its standing NEXT: MAP supplies the two `awaiting_map_id` ids.
-4. **`commons` NEXT** (the path mock: Teach a rule on every reference, and the rest of that line). KINE M1142 (First Aid
-   and CPR) still has no saved ruling; it is Sam's to rule again now that #3004 is live.
-5. **`library` (the ELL Healthcare Pathways side session, #3000, #3006, its own PRs):** the lane's NEXT is Sam's
-   Replace, or his next note. That session wrote no handoff; its cohort name is `library-hp-s623@bot`.
-6. Carried from handoff 623, untouched: COBIx #2967 item 3 remainder (Team RACI into `allowed_reviewers` behind a
-   flag, Sam's call on the flag); #2981 and #2972's asks; "one place to rule"; Sheet 177's answers (read `replies`
-   first: https://claude.ai/artifact/ArGaTSSRgbYjvqb9fvKVkm, still current, two cards open); the "Water Supply" title
-   on `_UNCLASSIFIED::Credit by Exam` (Sam's row; ask him); S620's queue (Cuesta's full read 2026-11-10, the
-   cer-procedures report, student-grain PR 4/5, COBIx #2927, Docket step 4); `common-subjects-reference` (three HOSP
-   anchors, 93 stray codes); `org-phrase-scope-auth` NEXT (read `team_pass_attempts` after the first real failed
-   unlock); `program-requirements-harvest` NEXT (the CPL Queue routine's).
-7. Sam to verify, from handoff 622: Copy the email into Outlook and Gmail once each; does the logo survive the paste?
+1. **Malone's remaining UI changes, in the mock, one version each.** Then, on Sam's word, **build the mock into the
+   live workspace** (`csm-workspace` NEXT 0): the metrics, the two-group list with specific next actions, the record as
+   four conditions with *Recommended action* and the email preview, the funding drawer, access requests in the header,
+   the side panel and the one people list of #2978, and the sign-in with *Ask an approver* as the one lead action.
+2. **`csm-workspace` NEXT 0a and 0b:** the funding tab's own decline pieces can leave; `nc_team` and the role.
+3. **`reviewer-session-lifetime` NEXT:** the funding tab's own review controls for a sign-in whose access ended.
+4. **`college-district-identity`:** the first working run of the daily check should raise the `college-identity` issue
+   (`California State University Los Angeles` new; two trailing-space names gone). Rule on it, then re-baseline.
+5. **`commons` NEXT** (the path mock). KINE M1142 still has no saved ruling; it is Sam's to rule again.
+6. **`library`** (the ELL Healthcare Pathways side session's lane): Sam's Replace, or his next note.
+7. Carried from handoff 623, untouched: COBIx #2967 item 3 remainder; #2981 and #2972's asks; "one place to rule";
+   Sheet 177's answers (read `replies` first: https://claude.ai/artifact/ArGaTSSRgbYjvqb9fvKVkm, still current, two
+   cards open); the "Water Supply" title on `_UNCLASSIFIED::Credit by Exam`; S620's queue; `common-subjects-reference`;
+   `org-phrase-scope-auth` NEXT; `program-requirements-harvest` NEXT.
+8. Sam to verify, from handoff 622: Copy the email into Outlook and Gmail once each; does the logo survive the paste?
 
 ## Not refreshed by this checkpoint (light)
 
@@ -81,7 +93,7 @@ than `course.json`, and no new decision sheet (nothing new waits on Sam; Sheet 1
 
 ## Let go
 
-Subscriptions at this writing: #3009, this checkpoint (drop once merged). One check-in was set for 23:44Z (`trig_01DemD77dYFjdeVJ93o8rGFL`);
-it is canceled at sign-off if it has not fired. No artifact watch.
+Subscriptions at this writing: #3013, #3014, #3015, #3016 and this checkpoint's PR (drop each once merged), and the
+mock artifact's watch. No check-in is scheduled.
 
 > *Greetings, you are SkyCocoon (Session 624), see SkyButterfly's handoff — `docs/session_624_handoff.md` — let's keep rolling with our queue.*
