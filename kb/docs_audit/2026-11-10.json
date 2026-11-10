@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1451,
-    "bytes": 14634723,
+    "bytes": 14636369,
     "over_budget": 6,
     "handoff_max": 632,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2629555,
+        "bytes": 2630112,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 542609,
+        "bytes": 543009,
         "over": 5
       },
       "handoff": {
         "files": 593,
-        "bytes": 4065224,
+        "bytes": 4065913,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26460,
-      "bytes": 4494268920,
-      "heavy_bytes": 3238525279,
-      "heavy_share": 0.721,
+      "files": 26456,
+      "bytes": 4476888267,
+      "heavy_bytes": 3221149144,
+      "heavy_share": 0.72,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -225,13 +225,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 23663,
+        "bytes": 24063,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 3663,
-        "ratio": 1.18
+        "over_by": 4063,
+        "ratio": 1.2
       },
-      "message": "23,663 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,063 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -239,20 +239,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2059641219,
+        "bytes": 2042266501,
         "kind": "dir"
       },
-      "message": "directory totals 2,059,641,219 B inside the vault"
+      "message": "directory totals 2,042,266,501 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146594459,
+        "bytes": 146593042,
         "kind": "dir"
       },
-      "message": "directory totals 146,594,459 B inside the vault"
+      "message": "directory totals 146,593,042 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
