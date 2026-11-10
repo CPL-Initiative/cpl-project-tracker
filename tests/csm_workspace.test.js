@@ -337,6 +337,33 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       !out.root.querySelector('[data-side="people"]') && !out.root.querySelector('[data-side="log"]') && !!out.root.querySelector('[data-side="page"]') &&
       !out.root.querySelector('[data-sidepart="people"]') && !out.root.querySelector('[data-sidepart="log"]'));
   }
+  // The landing page inside the panel (Sam, 2026-11-10: "links still opening to new tabs instead of sidebars").
+  {
+    const LP = "https://cpldashboardcccco.azurewebsites.net/MTSAC";
+    const e = setup({ signedIn: true, elig: { contacts: [{ college: COLLEGE, landing_page_url: LP }] } });
+    const rec = () => e.root.querySelector("#cw-record"), side = () => rec().querySelector("#cw-side");
+    check("5e10: the fixture's college carries its landing page address", e.T.csm.snapshot().rows.find((r) => r.key === COLLEGE).landing === LP);
+    const rv = () => side().querySelector('[data-sidepart="review"]');
+    const det = () => rv().querySelector("details[data-lpshow]");
+    check("5e10a: the open review offers Show the landing page here, draws no page until asked, and links to no new tab",
+      !!det() && !det().open && flat(det().querySelector("summary")) === "Show the landing page here" && !rv().querySelector("iframe") && !rv().querySelector('a[target="_blank"]'));
+    det().open = true; det().dispatchEvent(new e.window.Event("toggle"));
+    const fr = () => rv().querySelector(".lpframe iframe");
+    check("5e10b: opened, the page draws inside the review, sandboxed and titled, with the new-tab link kept as the fallback",
+      !!fr() && fr().getAttribute("src") === LP && /allow-scripts/.test(fr().getAttribute("sandbox")) && !/allow-top-navigation/.test(fr().getAttribute("sandbox")) &&
+      /Mt\. San Antonio.* CPL landing page|CPL landing page/.test(fr().getAttribute("title")) && /does not let another page show it/.test(flat(det())) &&
+      !!det().querySelector('a[target="_blank"][rel="noopener"]'));
+    det().dispatchEvent(new e.window.Event("toggle"));
+    check("5e10c: a second toggle draws no second page", rv().querySelectorAll("iframe").length === 1);
+    clickEl(e.window, rec().querySelector('.decide [data-side="page"]'));
+    const pg = () => side().querySelector('[data-sidepart="page"]');
+    check("5e10d: CPL landing page shows the page in the panel, the review's page left alone",
+      !pg().hidden && !!pg().querySelector(".lpframe iframe") && pg().querySelector(".lpframe iframe").getAttribute("src") === LP && /Open it in a new tab/.test(flat(pg())));
+    clickEl(e.window, rec().querySelector('.decide [data-side="log"]'));
+    check("5e10e: another part of the panel drops the page's frame", !side().querySelector('[data-sidepart="page"] iframe'));
+    check("5e10f: only an https address draws inside the panel; anything else keeps the link alone",
+      /if \(!\/\^https:\\\/\\\/\/i\.test\(r\.landing\)\) return out;/.test(SRC));
+  }
   // The header: the new name, access requests as one quiet word, the funding drawer; no Action center heading, no board.
   {
     const h = setup({ signedIn: true });

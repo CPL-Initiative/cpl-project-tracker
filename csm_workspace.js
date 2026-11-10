@@ -171,6 +171,10 @@
       "#tab-csm-workspace .side { border-top:4px solid var(--cw-line); padding:16px 20px 18px; display:grid; gap:14px; }",
       "#tab-csm-workspace .side h4.side-h { margin:0; font-family:var(--cw-serif); font-size:1.1rem; color:var(--cw-heading); }",
       "#tab-csm-workspace .sidepart { display:grid; gap:12px; min-width:0; }",
+      "#tab-csm-workspace .lpframe { border:1px solid var(--cw-line); border-radius:8px; overflow:hidden; background:var(--cw-surface); }",
+      "#tab-csm-workspace .lpframe iframe { display:block; width:100%; height:clamp(360px, 60vh, 640px); border:0; }",
+      "#tab-csm-workspace details.lpshow summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
+      "#tab-csm-workspace details.lpshow[open] { display:grid; gap:8px; margin-top:6px; }",
       "#tab-csm-workspace .ncline { margin:8px 0 0; font-size:.9rem; color:var(--cw-ink-2); }",
       "#tab-csm-workspace .tpl { display:grid; gap:8px; background:var(--cw-page); border:1px solid var(--cw-line); border-radius:8px; padding:12px 14px; }",
       "#tab-csm-workspace .tpl-row { display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; }",
@@ -700,7 +704,7 @@
       : a.leadCtx
       ? { t: "The Lead is published on the college's CPL landing page", s: "fails", n: "the Noncredit CPL Lead is not yet published on the college's CPL landing page",
           d: "The landing page does not list the Lead by name." }
-      : { t: "The Lead is published on the college's CPL landing page", s: "check", d: "Open the landing page and match the Lead's name." });
+      : { t: "The Lead is published on the college's CPL landing page", s: "check", d: "Show the landing page here and match the Lead's name." });
     items.push({ t: "The Lead's assignment gives time for the work", s: "check", d: a.lead_assignment ? "Given: " + a.lead_assignment + "." : "Not given." });
     items.push({ t: "The Lead meets regularly with credit CPL colleagues", s: "check", d: a.lead_meets ? "Given: " + a.lead_meets + "." : "Not given." });
     return { kind: "Noncredit CPL Lead attestation" + (r.nc && r.nc.fy ? ", " + r.nc.fy : ""),
@@ -725,19 +729,34 @@
     return r.landing && /^https?:\/\//i.test(r.landing) ? '<a href="' + esc(r.landing) + '" target="_blank" rel="noopener" aria-label="' + esc(r.name) +
       ' CPL landing page (opens in a new tab)">' + esc(words || "CPL landing page") + "</a>" : "";
   }
+  /* The landing page inside the panel (Sam, 2026-11-10: "links still opening to new tabs instead of sidebars"). MAP's
+     landing pages answer with no X-Frame-Options or frame-ancestors (read 2026-11-10), so most draw here; a page whose
+     site refuses another page's frame stays blank, and the line under it says so and keeps the new-tab link. An http
+     address cannot draw inside this https page, so it keeps the link alone. */
+  function landingFrame(r) {
+    if (!r.landing || !/^https?:\/\//i.test(r.landing)) return '<p class="gate">No landing page address in MAP.</p>';
+    var out = '<p class="gate">If the page stays blank, the college\'s site does not let another page show it. ' + landingLink(r, "Open it in a new tab") + "</p>";
+    if (!/^https:\/\//i.test(r.landing)) return out;
+    return '<div class="lpframe"><iframe src="' + esc(r.landing) + '" title="' + esc(r.name) + ' CPL landing page" loading="lazy" referrerpolicy="no-referrer"' +
+      ' sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms"></iframe></div>' + out;
+  }
+  // Inside the review the page waits behind Show the page here, so a review opens without loading a college's site.
+  function landingShow(r) {
+    return r.landing && /^https?:\/\//i.test(r.landing) ? '<details class="lpshow" data-lpshow="1"><summary>Show the landing page here</summary></details>' : "";
+  }
   function reviewHtml(r, kind) {
     var g = reviewState(r, kind);
     if (!g) return '<section class="review"><h4>Review before you decide</h4><p class="gate">Sign in as a reviewer to read who sent the request.</p></section>';
     var ch = state.checks[gid(r.key, kind)] || {}, pre = "rv-" + kind;
     return '<section class="review" aria-labelledby="' + pre + '-h"><h4 id="' + pre + '-h">Review before you decide: ' + esc(g.R.kind) + "</h4>" +
-      '<p class="links" style="margin:0">' + (landingLink(r, "Open the landing page") || '<span class="gate">No landing page address in MAP.</span>') + "</p>" +
+      (g.R.items.some(function (it) { return /landing page/i.test(it.t); }) ? "" : '<div>' + (landingShow(r) || '<span class="gate">No landing page address in MAP.</span>') + "</div>") +
       // The role in MAP already meets the condition: the box stays reachable and says nothing is owed (COBIx on PR 3012).
       (kind === "nc" && r.nc && r.nc.lead ? '<p class="gate" data-role-met="1">The Noncredit CPL Lead role is on the college\'s MAP landing page, which already meets this condition. Nothing here needs a decision.</p>' : "") +
       (g.R.note ? '<p class="gate">' + esc(g.R.note) + "</p>" : "") +
       '<ul class="reqs">' + g.R.items.map(function (it, i) {
         var pl = REQ_PILL[it.s], id = pre + "-ck-" + i;
         return '<li class="req"><span><span class="pill ' + pl[0] + '">' + pl[1] + "</span></span><span><b>" + esc(it.t) + '</b><span class="why">' + esc(it.d) +
-          (/landing page/i.test(it.t) && r.landing ? " " + landingLink(r, "Open the page to check") : "") + "</span>" +
+          "</span>" + (/landing page/i.test(it.t) ? landingShow(r) : "") +
           // The role the reviewer confirmed, kept with the acceptance (Sam, 2026-11-10: "I meant for the reviewer to add").
           (it.s === "check" && /senior administrator/i.test(it.t) ? '<label class="rolefield" for="' + pre + '-role">Their role, as you confirmed it' +
             '<input id="' + pre + '-role" class="search" type="text" autocomplete="off" maxlength="120" data-role="' + kind + '" value="' +
@@ -933,7 +952,7 @@
       '<p class="links" style="margin:0"><button type="button" class="word" data-pop="contacts">Contacts on file, with what differs</button>' +
       '<button type="button" class="word" data-pop="people">Filter the list and copy addresses</button></p>';
     var onPage = c ? c.people.filter(function (p) { return p.src === "Landing page"; }) : [];
-    var pageBody = '<p class="links" style="margin:0">' + (landingLink(r, "Open the page in a new tab") || '<span class="gate">No landing page address in MAP.</span>') + "</p>" +
+    var pageBody = (side === "page" ? landingFrame(r) : "") +
       (S.reviewer && r.landing ? (onPage.length ? '<p class="k">Who the page lists</p><ul class="conds">' + onPage.map(function (p) {
         return '<li class="ncline" style="margin:0">' + esc([p.role, p.name, p.email].filter(Boolean).join(", ")) + "</li>"; }).join("") + "</ul>"
         : '<p class="gate">' + (c ? "The page lists no one MAP has read." : CT.state === "error" ? esc(CT.error) : "Reading the contacts on file&hellip;") + "</p>") : "");
@@ -1902,6 +1921,11 @@
       el.addEventListener("input", onInput);
       el.addEventListener("submit", onSubmit);
       el.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("ccpick")) state.ccOpen = e.target.open; }, true);
+      // Show the landing page here draws the page the first time it opens.
+      el.addEventListener("toggle", function (e) {
+        var d = e.target; if (!d.hasAttribute || !d.hasAttribute("data-lpshow") || !d.open || d.querySelector(".lpframe, .gate")) return;
+        var r = rowOf(state.sel); if (r) d.insertAdjacentHTML("beforeend", landingFrame(r));
+      }, true);
       window.addEventListener("cpl-tab-activated", function (e) {
         if (e && e.detail && e.detail.tab === TAB) { fresh(); arrive(); paint(); }
       });
