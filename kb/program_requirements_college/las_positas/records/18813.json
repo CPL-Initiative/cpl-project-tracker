@@ -165,7 +165,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Compare and contrast diverse cultural values, child rearing practices, attitudes towards play and education by developing respectful reciprocal relationships in order to work effectively with children, families, co-workers and community.",
     "Demonstrate practices that maintain standards of health, nutrition, and safety in early childhood settings.",
@@ -175,12 +175,28 @@
     "Synthesize child development research and theories; apply principles with consideration for children's varying characteristics, needs and the multiple interacting influences on children's development.",
     "Utilize observation and evaluation processes/tools to apply and implement developmentally appropriate practices in an early care and education setting using knowledge, skills and professional dispositions that promote the development and learning of all young children."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [],
   "course_outcomes": [],
   "missing_explained": [],
   "notes": []
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

@@ -141,7 +141,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Analyze, design, and solve complex computer-based problems using both logical and mathematical methods including the implementation of control and data structures.",
     "Direct computer operations by writing detailed instructions in computer languages to solve a variety of problems.",
@@ -153,7 +153,8 @@
     "data processing",
     "database analysis",
     "computer science"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -259,5 +260,20 @@
    "The third program learning outcome is printed without a closing period; copied as printed."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

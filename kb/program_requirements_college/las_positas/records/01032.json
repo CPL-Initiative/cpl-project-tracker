@@ -143,14 +143,15 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Interpret and analyze culture and art by applying theoretical methods used in the humanities.",
     "Discuss major themes expressed in art, culture, and belief systems as seen throughout global history.",
     "Demonstrate their own appreciation for the value of art, ideas, and culture through discussion and writing.",
     "Formally evaluate a variety of art forms using the elements and principles corresponding to each medium."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -393,5 +394,20 @@
    "The overview names fields students may major in (Liberal Arts, English, Art History, etc.); these are transfer majors, not careers, so careers left empty."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

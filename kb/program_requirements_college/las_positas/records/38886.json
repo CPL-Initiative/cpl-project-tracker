@@ -137,13 +137,14 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply fundamental principles from mathematics, science and engineering to solve an electrical engineering-related problem.",
     "Set up appropriate laboratory equipment, collect and analyze electrical data, draw conclusions, and clearly communicate results.",
     "Students are able to use a variety of technological tools to solve electrical engineering problems."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -238,5 +239,20 @@
    "The first outcome follows the lead-in 'Upon completion of this program, students will be able to:' on the same line; the lead-in was omitted."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

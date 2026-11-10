@@ -65,34 +65,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     19.0,
     19.0
    ],
    "stated": [
-    60.0,
-    60.0
+    19.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Las Positas College General Education (LPC-GE) or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     19.0,
-     19.0
+     41.0,
+     41.0
     ],
     "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": [],
+    "fill": [
      19.0,
      19.0
-    ],
-    "against": "program",
-    "why": []
+    ]
    }
   },
   "repeated": {
@@ -117,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -138,10 +143,10 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Analyze and apply measures to resolve problems in areas of suppression, prevention, and EMS.",
     "Analyze and evaluate data to solve Fire Technology problems.",
@@ -159,7 +164,8 @@
     "Code Enforcement Officer",
     "Fire Cause and Origin Investigator",
     "State Certified “Fire Officer”"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -246,5 +252,32 @@
    "'Company Officer' is mentioned as a promotion goal for State Certified Fire Officers and was not recorded as a separate career."
   ]
  },
- "extracted_run": "38984747530"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 22,
+    "max": 22
+   },
+   "words": "Additional General Education and Elective Units (https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php: SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, and Areas 8 Health and 9 American Institutions 'Not required for AS degrees'; 6 + 15 + 1 = 22 for an A.S. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count))"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38984747530"
 }

@@ -82,20 +82,25 @@
     "the blocks sum to 9.0-9.0; the catalog states 18.0-21.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     9.0,
-     9.0
+     37.0,
+     37.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the LPC-GE or Cal-GETC pattern, but no units for it"
+    "ge": [
+     28.0,
+     28.0
+    ],
+    "why": [],
+    "fill": [
+     23.0,
+     23.0
     ]
    }
   },
@@ -142,17 +147,18 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply mathematical and scientific ideas to analyze real-world situations.",
     "Read, write, listen to, and speak about mathematical and scientific ideas with understanding.",
     "Use appropriate technology and/or tools to enhance their scientific thinking and understanding.",
     "Use scientific reasoning to solve problems or conduct research, and assess the reasonableness of their results."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -644,5 +650,32 @@
    "The program learning outcomes are printed for the program as a whole; the A.A. award is the only award on this page and shares them."
   ]
  },
- "extracted_run": "38935144431"
+ "extracted_run": 42892238131,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 28,
+    "max": 28
+   },
+   "words": "Additional General Education and Elective Units (https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php: SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, Area 8 Health 3 units and Area 9 American Institutions 3 units; 6 + 15 + 1 + 3 + 3 = 28 for an A.A. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count))"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
+  }
+ ],
+ "read_run": "38935144431"
 }
