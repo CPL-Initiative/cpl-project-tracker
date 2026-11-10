@@ -355,6 +355,20 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       !!det().querySelector('a[target="_blank"][rel="noopener"]'));
     det().dispatchEvent(new e.window.Event("toggle"));
     check("5e10c: a second toggle draws no second page", rv().querySelectorAll("iframe").length === 1);
+    // COBIx on PR 3066: a repaint (the contacts arriving, a note saved) must not close the page the reviewer opened.
+    e.W._setContacts({ dir: [], landing: [], users: [] }); e.W.paint();
+    check("5e10c1: after the contacts arrive and the record repaints, the page is still open with its frame",
+      !!det() && det().open && rv().querySelectorAll(".lpframe iframe").length === 1);
+    det().open = false; det().dispatchEvent(new e.window.Event("toggle")); e.W.paint();
+    check("5e10c2: closed by the reviewer, it stays closed through a repaint", !!det() && !det().open && !rv().querySelector("iframe"));
+    det().open = true; det().dispatchEvent(new e.window.Event("toggle"));
+    check("5e10c3: the frame asks for scripts and popups only: no forms, no top navigation",
+      !/allow-forms|allow-top-navigation/.test(rv().querySelector("iframe").getAttribute("sandbox")));
+    check("5e10c4: an address on this site's own origin, or not https, gets the link alone, with words that say it cannot show here",
+      /new URL\(r\.landing\)\.origin !== window\.location\.origin/.test(SRC) && /This address cannot show inside the panel\./.test(SRC) &&
+      /if \(!frameable\(r\)\) return '<p class="gate">' \+ landingLink\(r, "Open the landing page in a new tab"\)/.test(SRC));
+    check("5e10c5: one page a review: Show the landing page here sits on the first check that names the page alone",
+      /i === lpAt \? landingShow\(r, kind\)/.test(SRC) && rv().querySelectorAll("details[data-lpshow]").length === 1);
     clickEl(e.window, rec().querySelector('.decide [data-side="page"]'));
     const pg = () => side().querySelector('[data-sidepart="page"]');
     check("5e10d: CPL landing page shows the page in the panel, the review's page left alone",
@@ -362,7 +376,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     clickEl(e.window, rec().querySelector('.decide [data-side="log"]'));
     check("5e10e: another part of the panel drops the page's frame", !side().querySelector('[data-sidepart="page"] iframe'));
     check("5e10f: only an https address draws inside the panel; anything else keeps the link alone",
-      /if \(!\/\^https:\\\/\\\/\/i\.test\(r\.landing\)\) return out;/.test(SRC));
+      /if \(!r\.landing \|\| !\/\^https:\\\/\\\/\/i\.test\(r\.landing\)\) return false;/.test(SRC));
   }
   // The header: the new name, access requests as one quiet word, the funding drawer; no Action center heading, no board.
   {
