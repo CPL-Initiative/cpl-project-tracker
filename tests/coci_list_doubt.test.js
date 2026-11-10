@@ -95,7 +95,12 @@ function tab(opts) {
       return ok((opts.ruled || []).map((x) => { const y = Object.assign({}, x); if (!/reviewer_email/.test(url)) delete y.reviewer_email; return y; }));
     }
     if (/kb_curation/.test(url)) return ok([]);
-    if (/ccr_doubt\.json/.test(url)) return opts.doubtFail ? Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) }) : ok(DOUBT);
+    if (/ccr_doubt\.json/.test(url)) {
+      if (opts.doubtFail) return Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) });
+      const D = JSON.parse(JSON.stringify(DOUBT));
+      if (opts.nohome) D.cards.find((c) => c.id === opts.nohome).discipline = "";
+      return ok(D);
+    }
     if (/row_audit\/latest\.json/.test(url)) return ok({ rows: [] });
     if (/csr_out\/latest\.json/.test(url)) return ok({ _mid_codes: { strays: [] } });
     return ok([]);
@@ -106,6 +111,8 @@ function tab(opts) {
     if (s === "unified_courses_data.js") {
       w.CPL_UNIFIED_COURSES = JSON.parse(JSON.stringify(UC));
       Object.keys(opts.xdisc || {}).forEach((id) => { w.CPL_UNIFIED_COURSES.rows.find((r) => r.id === id).xdisc = opts.xdisc[id]; });
+      if (opts.mq) w.CPL_UNIFIED_COURSES.mq_disciplines = opts.mq.slice();
+      if (opts.nohome) w.CPL_UNIFIED_COURSES.rows.find((r) => r.id === opts.nohome).disc = "";
     }
     setTimeout(cb, 0);
   } };
@@ -316,6 +323,34 @@ function rule(t, value, words, similar) {
       && t.writes[3].body[0].field === "cross_listed_disciplines" && t.writes[3].body[0].value === "", JSON.stringify(t.writes.slice(2)));
     await until(() => /cleared its second discipline/.test(txt(panel(t.d))));
     check("(10) and the panel stops saying it is listed elsewhere", !/It is also listed as/.test(txt(panel(t.d))) && /Kept English, second discipline cleared/.test(txt(panel(t.d))));
+  }
+  {
+    // (10) COBIx on #3025: two MQ names carry commas of their own. The name is kept whole in the panel and the reason row.
+    const t = tab({ signedIn: true, mq: ["Construction", "English", "Sign Language, American", "Welding"], xdisc: { "ENGL M1001": ["Journalism"] } });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    rule(t, "also:Sign Language, American", "", false);
+    await until(() => t.writes.length >= 2);
+    const v = JSON.parse(t.writes[0].body.value);
+    check("(10) ⭐ a discipline whose name carries a comma stays one name in the reason row",
+      JSON.stringify(v.also) === '["Journalism","Sign Language, American"]' && v.to === "Sign Language, American", JSON.stringify(v.also));
+    check("(10) the row's value is the comma-separated list the daily fold splits against the MQ names",
+      t.writes[1].body[0].value === "Journalism, Sign Language, American", JSON.stringify(t.writes[1].body[0]));
+    await until(() => /listed it also as Journalism; Sign Language, American/.test(txt(panel(t.d))));
+    const p = txt(panel(t.d));
+    check("(10) ⭐ and the panel reads it back as two disciplines, never three",
+      /It is also listed as Journalism; Sign Language, American\./.test(p) && /No second discipline \(clear Journalism; Sign Language, American\)/.test(p), p.slice(0, 600));
+    rule(t, "also:Welding", "", false);
+    await until(() => t.writes.length >= 4);
+    check("(10) a later choice adds to the two, with the comma name still whole",
+      JSON.stringify(JSON.parse(t.writes[2].body.value).also) === '["Journalism","Sign Language, American","Welding"]', t.writes[2].body.value);
+  }
+  {
+    // (10) a course with no home discipline has nothing to keep: no second-discipline group, and never "Keep undefined".
+    const t = tab({ signedIn: true, nohome: "ENGL M1001" });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    const sel = t.d.getElementById("ccl-rule-choice");
+    check("(10) with no home discipline the group is left out", !!sel && !Array.from(sel.querySelectorAll("optgroup")).some((g) => /also list as/.test(g.getAttribute("label")))
+      && !/undefined/.test(txt(panel(t.d))), sel && Array.from(sel.querySelectorAll("optgroup")).map((g) => g.getAttribute("label")).join("|"));
   }
   {
     const t = tab({ ruled: [Object.assign({}, RULED[0], { value: JSON.stringify({ mid: "CNST M1009", discipline_was: "Construction", ruling: "crosslist", to: "Welding", words: "", similar: false }) })] });

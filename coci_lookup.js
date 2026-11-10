@@ -490,7 +490,7 @@
     else lines.push("None of its colleges' TOP codes maps to a discipline.");
     lines.push(fmt(card.colleges) + (card.colleges === 1 ? " college offers it." : " colleges offer it."));
     var also = (c.xdisc || []).filter(Boolean);
-    if (also.length) lines.push("It is also listed as " + also.join(", ") + ".");
+    if (also.length) lines.push("It is also listed as " + ccNames(also) + ".");
     out.push(el("p", { "class": "cplcoci-meta ccl-doubt-why" }, [lines.join(" ")]));
     if (R) {
       var did = R.v.ruling === "keep" ? "Kept " + (R.v.discipline_was || c.disc) : R.v.ruling === "move" ? "Moved to " + R.v.to
@@ -514,14 +514,17 @@
        Kinesiology or as Psychology, depending on their major). The home stays for counting and the M-ID; the second
        is for display and search, and never a re-mint (his ruling of 2026-09-22, the discipline-crosslist lane). The
        signals' disciplines come first, then every other one. */
-    var home = c.disc || card.discipline, xg = el("optgroup", { label: "Keep " + home + ", and also list as" }), xseen = {};
-    xseen[home] = 1; also.forEach(function (d) { xseen[d] = 1; });
-    (card.desc || []).map(function (d) { return d[0]; }).concat(votes).concat(CC.mq).forEach(function (d) {
-      if (xseen[d]) return; xseen[d] = 1;
-      var n = el("option", { value: "also:" + d }, [d]); if ("also:" + d === F.choice) n.selected = true; xg.appendChild(n);
-    });
-    if (also.length) { var nx = el("option", { value: "also:" }, ["No second discipline (clear " + also.join(", ") + ")"]); if (F.choice === "also:") nx.selected = true; xg.appendChild(nx); }
-    sel.appendChild(xg);
+    var home = c.disc || card.discipline;
+    if (home) {   // a course with no home has nothing to keep: the group waits until it has one
+      var xg = el("optgroup", { label: "Keep " + home + ", and also list as" }), xseen = {};
+      xseen[home] = 1; also.forEach(function (d) { xseen[d] = 1; });
+      (card.desc || []).map(function (d) { return d[0]; }).concat(votes).concat(CC.mq).forEach(function (d) {
+        if (xseen[d]) return; xseen[d] = 1;
+        var n = el("option", { value: "also:" + d }, [d]); if ("also:" + d === F.choice) n.selected = true; xg.appendChild(n);
+      });
+      if (also.length) { var nx = el("option", { value: "also:" }, ["No second discipline (clear " + ccNames(also) + ")"]); if (F.choice === "also:") nx.selected = true; xg.appendChild(nx); }
+      sel.appendChild(xg);
+    }
     sel.addEventListener("change", function () { F.choice = sel.value; });
     var ta = el("textarea", { id: "ccl-rule-words", "class": "ccl-cc-in ccl-rule-words", rows: "3",
       "aria-label": "Why, in plain words, as you would tell a session" });
@@ -567,7 +570,7 @@
           (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) };
           CC.rule[c.id] = null;
           if (ruling === "move") ccSave(c, "discipline", to);
-          else if (ruling === "crosslist") ccSave(c, "crosslist", alsoNow.join(", "));
+          else if (ruling === "crosslist") ccSave(c, "crosslist", alsoNow);
           else if (ruling === "keep" && !ccVerified(c)) ccSave(c, "confirm", c.disc);
           else { CC.said[c.id] = (ruling === "keep" ? "Kept " + c.disc : "Marked not sure") + ". The reason is saved" + (v.similar ? " for a session to write as a rule" : "") + "."; ccRedraw(); }
         });
@@ -703,6 +706,8 @@
     return { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json",
       Prefer: "resolution=merge-duplicates,return=minimal" };
   }
+  // Discipline names in a sentence: a semicolon between them once any carries a comma of its own.
+  function ccNames(list) { return list.join(list.some(function (d) { return d.indexOf(",") >= 0; }) ? "; " : ", "); }
   function ccVerified(c) { return !!(c.locked || c.reviewed_by || (c.flags && c.flags.reviewed) || c._saved); }
   function ccOfficial(c) { return c.id_system === "C-ID" || c.id_system === "CCN-ID"; }
   /* One write: the kb_curation rows the tab wrote, or a merged course's confirmation stamp. Says what happened. */
@@ -716,7 +721,10 @@
         // The second discipline is one kb_curation row (cross_listed_disciplines, comma-separated; the daily fold adds
         // it to the row and changes neither the home discipline nor the M-ID). An unconfirmed home is confirmed in the
         // same write, as Keep confirms it: the ruling is "keep, and also".
-        var rows = [{ course_id: c.id, field: "cross_listed_disciplines", value: value, reviewer_email: sess.email }];
+        // Two MQ names carry commas of their own ("Sign Language, American"). The value stays comma-separated, as
+        // the rows before this tab are, and the daily fold splits it against the MQ list (kb/discipline_list.py); the
+        // names themselves are kept here as a list and never split back out of the string.
+        var rows = [{ course_id: c.id, field: "cross_listed_disciplines", value: value.join(", "), reviewer_email: sess.email }];
         confirms = !ccVerified(c) && !c.mt && !!c.disc;
         if (confirms) rows.push({ course_id: c.id, field: "discipline", value: c.disc, reviewer_email: sess.email });
         req = fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess), body: JSON.stringify(rows) });
@@ -734,11 +742,11 @@
         var when = new Date().toISOString().slice(0, 10), who = sess.email;
         if (kind === "rename") { c.title = value; (CC.live[c.id] = CC.live[c.id] || {}).unified_title = { value: value, reviewer_email: who, reviewed_at: when }; }
         else if (kind === "discipline") { c.disc = value; c.dsrc = null; (CC.live[c.id] = CC.live[c.id] || {}).discipline = { value: value, reviewer_email: who, reviewed_at: when }; }
-        else if (kind === "crosslist") c.xdisc = value ? value.split(", ") : null;
+        else if (kind === "crosslist") c.xdisc = value.length ? value.slice() : null;
         if (kind === "crosslist" ? confirms : kind !== "rename") { c._saved = true; c.reviewed_by = who; c.reviewed_at = when; }
         CC.edit[c.id] = null;
         CC.said[c.id] = (kind === "rename" ? "Renamed " + c.id + " " + value : kind === "discipline" ? "Set the discipline to " + value
-          : kind === "crosslist" ? "Kept " + c.disc + (value ? " and listed it also as " + value : " and cleared its second discipline")
+          : kind === "crosslist" ? "Kept " + c.disc + (value.length ? " and listed it also as " + ccNames(value) : " and cleared its second discipline")
           : "Confirmed " + c.disc + " as the discipline")
           + ". The daily sync folds it into the reference.";
         ccRedraw();
