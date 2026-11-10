@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09",
+  "generated": "2026-11-10",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1443,
-    "bytes": 14559638,
+    "bytes": 14562351,
     "over_budget": 6,
     "handoff_max": 624,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 146,
-        "bytes": 4479985,
+        "bytes": 4480041,
         "over": 1
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 539980,
+        "bytes": 541715,
         "over": 5
       },
       "handoff": {
         "files": 585,
-        "bytes": 4014389,
+        "bytes": 4015311,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 26392,
-      "bytes": 4448047978,
-      "heavy_bytes": 3199725188,
+      "bytes": 4448052789,
+      "heavy_bytes": 3199727399,
       "heavy_share": 0.719,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -160,13 +160,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 155891,
+        "bytes": 155947,
         "limit": 150000,
         "lane": "other",
-        "over_by": 5891,
+        "over_by": 5947,
         "ratio": 1.04
       },
-      "message": "155,891 B is 1.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "155,947 B is 1.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -349,10 +349,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10557444,
+        "bytes": 10559655,
         "kind": "dir"
       },
-      "message": "directory totals 10,557,444 B inside the vault"
+      "message": "directory totals 10,559,655 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

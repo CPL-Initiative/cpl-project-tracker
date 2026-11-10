@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-09_nc_cpl_lead_in_map.sql
-name=map_coordinator_summary_nc_cpl_lead
+file=kb/migrations/2026-11-10_sender_title_text.sql
+name=sender_title_text
