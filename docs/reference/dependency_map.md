@@ -202,7 +202,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `funding_approvers_set` | tabs: `admin` | — |
 | `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · `edgefn:cpl-chat` | — |
 | `is_funding_approver` | tabs: `csm-workspace` | — |
-| `is_funding_reviewer` | tabs: `csm-workspace` | — |
+| `is_funding_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
