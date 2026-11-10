@@ -740,3 +740,25 @@ The S607 block of Siskiyous, Palomar and Coalinga as they stood moved to `docs/p
 Positas program. A college's display facts live in the build's SQL receipt, which `step=display` applies; the page
 file's diff is no test of whether a college was built. Also: a page-read plan that touches both the college's site and
 its curriQunet catalog must declare `curriqunet.com` in `outside_hosts` with its reason.
+
+### Moved from the lane (S633): Los Medanos and Las Positas as they stood
+
+**Los Medanos (S599-S600, #2889): 44 of 83 passing (was 29), free.** About 37 of the 54 failing named the degree's 60 and a GE pattern with no units. Page read 42376216539 gave the transfer pages' words; a reconcile step sets Cal-GETC 34 on transfer degrees only. Reconcile 42376691800, reread 42377887155 (27 replaced, before-values), display build a19682c0630e. Detail: lessons S600. Displayed: apply 42379928561, 0 errors. **GE page read (S602, `kb/college_reads/los_medanos_ge_page.json`):** `26-27/asdegreereq` prints *"at least 24 units"* for the local pattern; `gradreq` prints no electives rule; `calgetc` prints no total, so the MPC citation of the statewide 34 stands (as for Taft, Hartnell). GE 24 alone passes no local degree (Accounting A.S. 01528 computes 23 against 60). **Parked:** the local degrees wait on an electives sentence in LMC's own words.
+
+**Las Positas (S630-S631, #3056): 145 of 193 passing** (116 before). A reconcile step sets Cal-GETC's 34 on transfer degrees only (the Alameda pattern), on the ADT pages' sentence *"including both of the following: The California General Education Transfer Curriculum (Cal-GETC)"* (page read 42815817415, `kb/college_reads/las_positas_ge_units.json`). Reconcile run 42816943064 changed 40 records; reread 42823942266 replaced 40 rows (38 pass; receipt `kb/receipts/program_requirement_records_college_reread_las_positas_42823942266.json` holds the before-values); display build 46aae217691c applied by run 42825327646. The 47 local degrees print one combined *Additional General Education and Elective Units* figure above *"Total: 60.0"* (Administration of Justice A.A. 36.0), so it never stands as `ge_units`. Page read 42825317081 (`kb/college_reads/las_positas_lpc_ge.json`) found the LPC-GE page (`lpcarticulation/lpcge.php`) prints only a link, *2026-2027 Las Positas College General Education (LPC-GE)*; the AA and AS GE pages list archives to 2024-25. NEXT: The 2026-27 LPC-GE page (`lpcarticulation/lpc-ge/lpc-ge-2026-2027.php`, read 42827288689) prints units per area and no total: Area 1 6, Areas 2 to 6 3 each, Area 7 Kinesiology 1, Areas 8 Health and 9 American Institutions 3 each *"Not required for AS degrees"*; summed, A.A. 28 and A.S. 22. A `ge_units` set from that sum is a computed figure, the same question as Alameda's semester layouts (Sheet 178 card 2), so it waits on Sam's answer there. **NEEDS SAM (Open Asks Sheet 179 card 4):** may a reconcile step set a local GE pattern's units from its printed per-area units (A.A. 28, A.S. 22), when the pattern prints no total? #3056 merged (S633) once display run 42825327646 committed its applied record (17,557 of 17,560 written, 0 errors; the 3 missing are Monterey Peninsula's rows the table no longer holds).
+
+### S633 SkySilverDollar (2026-11-10, Sam's session): Las Positas merged, De Anza's card, the lost premise
+
+- **A display apply that ends red can be a success.** Run 42825327646 failed after 82 minutes and still wrote 17,557 of
+  17,560 rows, 0 errors; its applied record committed. The 3 missing are Monterey Peninsula's rows the table no longer
+  holds, as in S592 and S608. Read `written`, `missing` and `errors` in the applied record before calling it failed.
+- **A runner's push starts no CI.** #3056's last commit came from the workflow token, so the PR showed no check runs at all.
+  A session push (here a merge of `main`) starts `test`; mark the PR ready and merge on it.
+- **Moving a paragraph can close a card by accident.** S630 moved Alameda's paragraph to the lessons and kept the marker
+  but not the six record ids, and Sheet 178 card 2's premise check reads both, so the builder refused the next sheet as
+  if Sam had ruled. The lane names the ids again (#3074). When a lane line carries a card's marker, keep what the card's
+  premise check reads with it (`p_*_open` in the vault builder).
+- **De Anza waits on a person, not a read.** #3044's reads showed the catalog links two separate GE sheets and prints no
+  pattern units; deanza.edu refuses the reader, so the ask is Sam hand-filing them (Sheet 179 card 5). #3044 merged with
+  its lane text so the card's premise is on `main`.
+

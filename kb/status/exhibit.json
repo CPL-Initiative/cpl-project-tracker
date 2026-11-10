@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 611,
-  "moniker": "SkyTadpole",
+  "session": 633,
+  "moniker": "SkySilverDollar",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_612_handoff.md",
+  "handoff": "docs/session_634_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -17,48 +17,31 @@
         "at": "2026-11-07",
         "words": "Correct all seven"
       }
+    },
+    {
+      "title": "Are these five exhibit issuers the places that train, rather than the bodies that issue?",
+      "text": "Proctored Testing Center, California Specialized Training Institute, Graduate Level Institution of Higher Education, Johnson Controls Training Institute and Spaulding Marine Center read as training sites (probability 0.66 to 0.90, no measured threshold).",
+      "if_no_reply": "The issuers stay as saved.",
+      "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
+      "link_text": "Open Sheet 180"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-08T19:28:59Z",
+  "written_at": "2026-11-10T18:25:47Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The Exhibits queue lenses, then the Commons CCR",
-    "text": "The Queue view and the panel trail are live. Next: the Common Course Reference, one discipline at a time, after the Subjects repairs."
+    "title": "Sam's word on five exhibit issuers",
+    "text": "The re-analysis's first Jev sitting read five issuers as places that train or test rather than bodies that issue; Open Asks Sheet 180 card 6 asks whether each is the issuer, and his answers are the first calibration verdicts."
   },
   "changes": [
     {
-      "text": "Exhibits opens a Queue: six lenses in the ruled order over the lists it already holds, with a Blocked on Sky line (cpl-project-tracker#2933).",
-      "at": "2026-11-08T19:28:20Z"
+      "at": "2026-11-10T18:17:00Z",
+      "text": "The exhibit re-analysis gained its Jev runner (pull request 3076): two questions, no threshold, nothing written."
     },
     {
-      "text": "The shared List's side panel opens on its trail, CPL Commons, the list, the filter and the row (#2934).",
-      "at": "2026-11-08T19:28:20Z"
-    },
-    {
-      "at": "2026-11-07T18:47:00Z",
-      "text": "The four El Camino CompTIA exhibits were read under your rule from Sheet 167: each is El Camino's own course, filed in MAP as Credit by Exam, so it is a course exam and the college stays its issuer, as the records already say. Nothing was rewritten."
-    },
-    {
-      "at": "2026-11-06T23:35:00Z",
-      "text": "Add your credential is live (#2860): a search that finds nothing offers Add it; nothing a visitor types shows until a reviewer verifies it in the Exhibits Requests view (DR-32)."
-    },
-    {
-      "at": "2026-11-06T23:55:00Z",
-      "text": "CPL Pathways brings the Credential Catalog in: a Credentials card, a Programs or Credentials switch, and a college's recommended credentials it could adopt (#2863, open)."
-    },
-    {
-      "at": "2026-11-06T21:46:00Z",
-      "text": "Sam's 1 yes, 2 yes applied: the Spanish 1 and 2 overrides retired, the Wheel Alignment merge confirmed, and the rename folded ServSafe Food Protection Manager and the two Wheel Alignment titles (#2855)."
-    },
-    {
-      "at": "2026-11-06T21:39:00Z",
-      "text": "The Credential Catalog's badges, the Recommendations filter and a college's first view of the recommended credentials it could adopt (#2856)."
-    },
-    {
-      "at": "2026-11-06T21:15:00Z",
-      "text": "Ask us to prioritize only where no college has articulated the credential (#2854)."
+      "at": "2026-11-10T18:20:00Z",
+      "text": "The first Jev sitting asked about 13 issuers; five read as training sites, filed with the November 10 findings."
     }
   ]
 }
