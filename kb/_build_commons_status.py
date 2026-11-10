@@ -704,6 +704,92 @@ def build_queue(rows):
     return out
 
 
+# A stalled routine, or a backlog that stops shrinking, becomes an item for the team (the path mock's proposed
+# build, Sam's S573 asks, 2026-11-04: the routines carry the volume "so the work does not stall under its size").
+# Two tests, both measured, neither a judgment:
+#   stopped        a reference's machine stamp is older than STALL_SLACK of its declared cadence (commons.js's
+#                  MACHINE_SLACK, the same 1.5), read at build time;
+#   not_shrinking  an issue a routine carries counts as many items today as it did STALL_DAYS ago, or more.
+# The second needs yesterday's figures, which the status file overwrites, so each build records the day's routine
+# counts in HISTORY (one entry a UTC day, the last build of the day wins, HISTORY_KEEP_DAYS kept).
+HISTORY = "kb/status/commons_history.json"
+STALL_DAYS = 7
+STALL_SLACK = 1.5
+HISTORY_KEEP_DAYS = 60
+
+
+def issue_key(ref, issue):
+    """One issue across days: its reference, where it opens and its words with any figure taken out."""
+    return "%s|%s|%s" % (ref, issue.get("open") or "", re.sub(r"\d[\d,]*", "#", issue.get("words") or ""))
+
+
+def routine_readings(rows):
+    out = {}
+    for r in rows:
+        for i in r.get("issues") or []:
+            if i.get("carry") == "routine" and isinstance(i.get("n"), int) and not isinstance(i.get("n"), bool):
+                out[issue_key(r.get("key"), i)] = i["n"]
+    return out
+
+
+def load_history(root):
+    try:
+        h = load_json(root, HISTORY)
+    except Exception:  # noqa: BLE001  (no history yet reads as none: nothing can be said to have stopped shrinking)
+        h = None
+    if not isinstance(h, dict) or not isinstance(h.get("days"), dict):
+        h = {"schema": 1, "days": {}}
+    return h
+
+
+def record_history(history, day, readings):
+    days = dict(history.get("days") or {})
+    days[day] = readings
+    keep = sorted(days)[-HISTORY_KEEP_DAYS:]
+    return {"schema": 1, "days": {d: days[d] for d in keep}}
+
+
+def _when(stamp):
+    """A stamp as a UTC datetime, or None: the stamps here are ISO with Z, with an offset, or a bare date."""
+    if not stamp or not isinstance(stamp, str):
+        return None
+    try:
+        t = dt.datetime.fromisoformat(stamp.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if t.tzinfo is None:
+        t = t.replace(tzinfo=dt.timezone.utc)
+    return t.astimezone(dt.timezone.utc)
+
+
+def build_stalled(rows, history, now):
+    out = []
+    now_t = _when(now)
+    if now_t is None:
+        return out
+    for r in rows:
+        m = r.get("machine") or {}
+        at, every = _when(m.get("at")), m.get("every_hours")
+        if at is not None and isinstance(every, (int, float)) and every > 0:
+            if (now_t - at).total_seconds() / 3600.0 > every * STALL_SLACK:
+                out.append({"ref": r.get("key"), "title": r.get("title"), "kind": "stopped", "what": m.get("what"),
+                            "since": m.get("at"), "every_hours": every, "open": r.get("tab")})
+    cutoff = (now_t - dt.timedelta(days=STALL_DAYS)).strftime("%Y-%m-%d")
+    days = history.get("days") or {}
+    for r in rows:
+        for i in r.get("issues") or []:
+            n = i.get("n")
+            if i.get("carry") != "routine" or not isinstance(n, int) or isinstance(n, bool) or n <= 0:
+                continue
+            k = issue_key(r.get("key"), i)
+            then = [d for d in sorted(days) if d <= cutoff and isinstance((days[d] or {}).get(k), int)]
+            if then and n >= days[then[-1]][k]:
+                out.append({"ref": r.get("key"), "title": r.get("title"), "kind": "not_shrinking", "n": n,
+                            "was": days[then[-1]][k], "since": then[-1], "words": i.get("words"),
+                            "owner": i.get("owner"), "open": i.get("open")})
+    return out
+
+
 # The confidence count (Sam, 2026-11-04, S573: "automate as many of these procedures with confidence as
 # possible"). A procedure earns trust by what a person does with its work afterward. Each procedure's committed
 # receipts say what it placed; the committed reference says where each item sits now and whose stamp it carries.
@@ -909,7 +995,8 @@ BUILDING = [
     ("skills", "Skills", None, building_skills),
 ]
 
-def build(root):
+def build_with_history(root, now=None):
+    """The status document and the day history that goes beside it."""
     rows = []
     for key, title, tab, fn in ROWS:
         try:
@@ -925,11 +1012,18 @@ def build(root):
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         building.append(row)
     queue = build_queue(rows)
+    now = now or iso_now()
+    history = record_history(load_history(root), now[:10], routine_readings(rows))
+    queue["stalled"] = build_stalled(rows, history, now)
     dk = _safe(docket, root)
     bl = _safe(lambda r: batches(r, queue, dk if isinstance(dk, list) else []), root)
     nb = (next((b for b in bl if not b.get("error")), None) if isinstance(bl, list) else bl)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building, "queue": queue,
-            "confidence": build_confidence(root), "docket": dk, "batches": bl, "next_batch": nb}
+    return {"schema": SCHEMA, "written_at": now, "rows": rows, "building": building, "queue": queue,
+            "confidence": build_confidence(root), "docket": dk, "batches": bl, "next_batch": nb}, history
+
+
+def build(root, now=None):
+    return build_with_history(root, now)[0]
 
 
 def _safe(fn, root):
@@ -945,12 +1039,16 @@ def main(argv=None):
     ap.add_argument("--out", default=None, help="where to write (default: kb/status/commons.json under --root)")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args(argv)
-    data = build(a.root)
+    data, history = build_with_history(a.root)
     out = a.out or os.path.join(a.root, OUT)
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
         f.write("\n")
+    if not a.out:   # a build to another path is a look, and a look must not move the day's record
+        with open(os.path.join(a.root, HISTORY), "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=1, ensure_ascii=False, sort_keys=True)
+            f.write("\n")
     if not a.quiet:
         for r in data["rows"]:
             p = r["pair"][0]
