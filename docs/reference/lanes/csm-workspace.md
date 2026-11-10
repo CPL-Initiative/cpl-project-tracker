@@ -38,9 +38,8 @@ and his 18 asks in `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/`).
 `CPL_FUNDING_TAB.csm.act` (the review lane's `acceptOptIn` / `denyOptIn` / `followOptIn` / `mailOptIn` and the
 noncredit twins), `focus` (the funding tab opened on the college) and `nudge` (the funding tab's Nudge, the mail
 merge). No second computation and no table of its own. Names and emails ride `req` for a signed-in reviewer on the
-internal view alone. Carried from the mock: the header with **Hide the priorities** (ask 18, the visit only), Today, the
-five priority cards, the action center (eight views, search, the queue with each next step), the record (minimum
-conditions in the funding tab's words, who sent it, the CO Monitor's note, Mark Declined participation), **Review
+internal view alone. Carried from the mock: the header with Today, the action center (search, the queue with each next step), the record (minimum
+conditions in the funding tab's words, who sent it, the CO Monitor's note), **Review
 before you decide** (ask 15: Checked by the form / Meets / Check this with I checked this / Does not meet; Accept opens
 once the reviewer has scrolled to the review's foot and ticked every check, a failing requirement keeps Accept shut),
 the stage board, and the landing-page links (ask 16). The funding tab's toolbar links it beside Nudge. Look: the CPL
@@ -49,9 +48,8 @@ recommendation (S555): the second COBI tab in Malone's look, after the CPL Commo
 `tests/csm_workspace.test.js`; `npm run a11y -- cobi:csm-workspace` passes at both widths, light and `--dark`.
 
 ✅ **The top, tightened for the action center (Sam, 2026-11-03, S564).** The tab runs the full window width; the intro
-under the title is gone; Today sits in the header, outside the fold, and each of its four counts is a word that opens
-the same view as its card (`review`, `held`, `qual`, `notyet`); the fold holds only the priority cards; card padding and
-gaps are tighter, and the noncredit card carries no line under its count. Guards 5b2 to 5b5.
+under the title is gone; Today sits in the header, and each of its four counts is a word that opens its view (`review`,
+`held`, `qual`, `notyet`). Guards 5b2 to 5b5.
 
 ✅ **The communications log, `csm_log` (S555).** One row per note, call, email or meeting with a college, keyed by
 **activity** (`funding` today, never the funding module) with an optional follow-up date. History sits in each record
@@ -75,26 +73,36 @@ by source with a finder, each tick adding to More Cc), **Copy the email** (forma
 and **Open in Outlook** (named *Open a draft* until S621); the log notes either, with a follow-up a week out unless unticked. A directory name keeps its
 comma (*Rivera, Ana*): names split on a new line or a semicolon alone.
 
-✅ **The action center's menu in two groups (S623, issue #2989; Sam's *"go"* on COBIx's proposal, 2026-11-09).** The
-menu is two `<optgroup>`s: **To do** (All open items, Ready to send, Waiting on the team, Follow-ups open, Confirmed,
-still held, Noncredit attestations waiting, Confirmed but missing the CPL Coordinator in MAP, Not yet confirmed), then
-**Browse** (Qualifies (all conditions met), Confirmed, With a CPL Coordinator in MAP, Noncredit CPL Lead attested, No
-CPL Coordinator in MAP, Declined, All institutions). Two added lists: `nocoord` (every college without a coordinator that has not declined;
-`coord` is its confirmed part) and `declined`. The two progress cards carry a gap word that counts the work list it
-opens (*N waiting on the team* to `nc`, *N confirmed, still missing* to `coord`); a gap of zero draws no word. No view
-was renamed and no condition is computed differently. *Follow-ups open* names the view; the pill *Follow-up due* shows
-only once the date has arrived. Guards 14x-a to 14x-k and 15f2.
+✅ **The workspace after the walkthrough with Malone (S623, 2026-11-09, issue #3010; the parts that shipped without the
+mock).** Sam, on COBIx's writeup: *"i think the cards can go away"*; *"we really don't need a college declining piece at
+all--we can just leave the confirmation blank as an indicator--save the step"*; the Noncredit CPL Lead *"in MAP since
+itpi just added the field in map users. if they attest, we can accept that now as well"*; the missing coordinators,
+*"since I made the problem, I will chase them"*.
+- **The priority cards are gone**, with their fold. Today's four counts stay in the header.
+- **The menu is two groups with a count beside every label.** **To do:** All open items, Ready to send, Waiting on the
+  team, Follow-ups open, Confirmed, still held, Noncredit attestations waiting, Not yet confirmed. **Browse:** Qualifies
+  (all conditions met), Confirmed, With a CPL Coordinator in MAP, With a Noncredit CPL Lead, Confirmed but missing the
+  CPL Coordinator in MAP (`#csm-workspace/coord`, the list Sam chases), No CPL Coordinator in MAP, All institutions.
+  A missing coordinator is status only: no CSM email for it.
+- **The Noncredit CPL Lead is met by the role in MAP or an accepted attestation** (`ncMet`). A form still waiting at a
+  college that holds the role asks nothing of the team (`ncWaiting`): no pill, no place in Waiting on the team.
+- **No decline piece.** No *Mark Declined participation*, no Declined list or pill, no decline line in the review. No
+  college carried a mark (read 2026-11-09: zero); a mark already on a notes row would still keep its college out of
+  Ready to send. The funding tab's own `setDeclined` and its Nudge's declined word are untouched.
+Guards `tests/csm_workspace.test.js` 3f, 5a, 14a to 14x-g, 15e to 15j.
 
 ## NEXT
 
-0. **The Noncredit card's name** once the role in MAP counts beside the attestation (`implementation-funding`).
-0a. **A declined college in To do (COBIx on #3001, older than that PR):** `stageOf` never reads `declined`, so a
-   college that declined and is not confirmed sits in *Not yet confirmed*, the bulk Nudge view (the funding tab's
-   Nudge lists it too, marked declined). Recommended: leave it out of *Not yet confirmed* and Today's count, in one
-   change with the Nudge so both agree.
-0b. **A waiting attestation at a college with the Noncredit CPL Lead role (COBIx on #3001):** the role meets the
-   condition alone, and the form still reads *waiting on the team* in the list and the Noncredit card's gap word.
-   Settle it with item 0, with a guard that the word and its list keep one predicate.
+0. **The mock for issue #3010, then its build on Sam's word:** scene A, the sign-in with *Ask an approver* as the one
+   lead action and the email link one click away; scene B, the workspace as it now stands; scene C, one record in each
+   email state (the confirmation, the Noncredit CPL Lead ask for the role in MAP, both in one email, the acceptance, the
+   noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
+   from the workspace mock, version 11, in the vault.
+0b. **`nc_team` and the role (COBIx on #3012 and #2999):** the workspace reads the role in MAP as meeting the whole
+   Noncredit CPL Lead condition; the funding tab's `ncCondList` lets it meet `nc_coord` only, and `nc_team` (hidden by
+   default, `ncTeamShown`) still needs an accepted attestation. Nothing differs while `nc_team` stays hidden. Settle it in
+   the funding tab before any scenario shows `nc_team`; it changes what releases the noncredit share, so it is Sam's call.
+0a. **The funding tab's decline pieces** (`setDeclined`, the Nudge's declined word) can leave too, now that nothing sets one.
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
