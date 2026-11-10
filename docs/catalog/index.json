@@ -16697,8 +16697,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 590,
+   "count": 591,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 630,
+     "path": "docs/session_630_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "commons",
+      "implementation-funding",
+      "mock"
+     ],
+     "title": "Session 630 handoff: the clarity mock is built into the live workspace, now the Funding Follow-up Dashboard; two emails held for Sam; the sign-in not built",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26715,5 +26732,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1434
+ "total": 1435
 }
