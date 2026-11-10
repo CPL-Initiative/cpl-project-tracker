@@ -508,6 +508,22 @@ function cellText(li, title) {
     check("confidence 5: the table scrolls in its own labelled region", sec.querySelector(".cmn-conf-wrap").getAttribute("role") === "region"
       && /Common Exhibits: each procedure/.test(sec.querySelector(".cmn-conf-wrap").getAttribute("aria-label")));
     check("confidence 6: an unread source reads Could not be read, never a zero", /Common Credit Recommendations[\s\S]*Could not be read/.test(txt(sec)));
+    check("confidence 6b: the CR count names its unit, the groups a rule folded",
+      /Common Credit Recommendations: groups a rung 1 to 4 rule folded/.test(txt(sec)));
+    {
+      const withW = JSON.parse(JSON.stringify(STATUS));
+      withW.confidence = [{ ref: "cr", unit: "groups", procedures: [{ name: "rung 1", placed: 113, untouched: 104, kept: 0, widened: 9, renamed: 0, moved: 0, looked: 9 }],
+        total: { placed: 113, untouched: 104, kept: 0, widened: 9, renamed: 0, moved: 0, by_procedure: 0, left: 0, looked: 9 } }];
+      const w = load({ fetch: responder({ "kb/status/commons.json": withW, "kb/status/program-requirements.json": PR_LOG }) });
+      await w.M.boot();
+      const ws = w.d.querySelector(".cmn-conf");
+      check("confidence 6c: a group a person widened is counted apart from kept, in the line and in its own column",
+        /0 kept, .*9 kept with wordings a person added, which the rule had left in another group\./.test(txt(ws))
+        && Array.prototype.map.call(ws.querySelectorAll("thead th"), txt).join("|") === "Procedure|Placed|A person looked|Kept|Kept, wordings added|Renamed with its family|Moved elsewhere|Not looked at yet"
+        && Array.prototype.map.call(ws.querySelectorAll("tbody td"), txt).join("|") === "113|9|0|9|0|0|104");
+      check("confidence 6d: a count with no widened state keeps its six columns",
+        sec.querySelectorAll(".cmn-conf-table")[0].querySelectorAll("thead th").length === 7);
+    }
     check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
   }
 

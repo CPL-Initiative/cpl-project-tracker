@@ -803,12 +803,12 @@ def _norm(t):
     return " ".join(str(t or "").lower().split())
 
 
-def _conf_counts(placed):
-    c = {k: 0 for k in CONF_KEYS}
+def _conf_counts(placed, extra=()):
+    c = {k: 0 for k in CONF_KEYS + list(extra)}
     for state in placed.values():
         c["placed"] += 1
         c[state] += 1
-    c["looked"] = c["kept"] + c["renamed"] + c["moved"]
+    c["looked"] = c["kept"] + c["renamed"] + c["moved"] + sum(c[k] for k in extra)
     return c
 
 
@@ -889,9 +889,57 @@ def confidence_subjects(root):
             "total": _conf_counts(placed)}
 
 
+CR_RUNGS = (1, 2, 3, 4)   # the rungs a rule folds without a curator; the tab's words name them, so the filter does too
+
+
+def confidence_cr(root):
+    """Groups a rung 1 to 4 rule folded (kb/cr_reference_worklist.json), against the curator's decisions on them
+    (kb/receipts/cr_reference_decisions_*.json, the committed record of cr_reference_decisions).
+      kept      confirmed, the same wordings the rule folded;
+      widened   confirmed, with wordings the rule had left in another group added by the person: the rule set none
+                wrong and missed some, which is its own state so it never reads as plain trust (COBIx on #3027);
+      moved     a rule's wording set aside, or the group read not a topic;
+      untouched no decision, or one cleared or deferred, which settles nothing.
+    Nothing here renames with a family: a group is its own family. The decisions on file are verdicts on fold
+    proposals (which wording joins which group), matched to today's groups by key, never a review of a rung's
+    output asked as such; the lane says so."""
+    G = load_json(root, "kb/cr_reference_worklist.json")["groups"]
+    receipts = []
+    for p in sorted(glob.glob(os.path.join(root, "kb/receipts/cr_reference_decisions_*.json"))):
+        with open(p, encoding="utf-8") as f:
+            R = json.load(f)
+        receipts.append((str(R.get("written_at") or ""), p, R))
+    decided = {}
+    for _, _, R in sorted(receipts, key=lambda x: x[:2]):   # by the receipt's own time, then its name
+        for r in R.get("rows", []):
+            decided[r.get("group_key")] = r   # the latest receipt row per group stands
+    by = {}
+    for g in G:
+        if not g.get("acts_automatically"):
+            continue
+        if g.get("rung") not in CR_RUNGS:
+            raise ValueError("group %r acts automatically at rung %r, outside the rungs the count names" % (g.get("key"), g.get("rung")))
+        r = decided.get(g["key"])
+        rule = {m["rec"] for m in g["members"]}
+        if not r or r.get("decision") not in SETTLES:
+            state = "untouched"
+        elif r.get("decision") != "confirmed" or set(r.get("excluded") or []) & rule:
+            state = "moved"
+        elif set(r.get("members") or []) - set(r.get("excluded") or []) - rule:
+            state = "widened"
+        else:
+            state = "kept"
+        by.setdefault("rung %s" % g.get("rung"), {})[g["key"]] = state
+    procs = [dict(name=k, **_conf_counts(by[k], ("widened",))) for k in sorted(by)]
+    allp = {}
+    for v in by.values():
+        allp.update(v)
+    return {"ref": "cr", "unit": "groups", "procedures": procs, "total": _conf_counts(allp, ("widened",))}
+
+
 def build_confidence(root):
     out = []
-    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects)):
+    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects), ("cr", confidence_cr)):
         try:
             out.append(fn(root))
         except Exception as e:  # noqa: BLE001  (a source that cannot be read says so, never a zero)

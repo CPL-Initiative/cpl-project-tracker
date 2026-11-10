@@ -537,7 +537,7 @@
   }
 
   /* The confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward. */
-  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled" };
+  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled", cr: "groups a rung 1 to 4 rule folded" };
   function procName(n) { n = String(n || "").replace(/-/g, " "); return n === "classifier" ? "the classifier" : n; }
   function confidenceSection(list) {
     if (!Array.isArray(list) || !list.length) return null;
@@ -551,18 +551,20 @@
       var head = el("h4", { cls: "cmn-reason-h", text: name + ": " + (CONF_UNIT[c.ref] || "results the procedures settled") });
       if (c.error || !c.total) { fold.appendChild(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-unread", text: "Could not be read" })])); return; }
       var t = c.total;
+      var wide = typeof t.widened === "number";   /* a count that separates a result a person widened (the CR rungs) */
       var line = t.looked
         ? "A person has looked at " + fmt(t.looked) + " of " + fmt(t.placed) + ": " + fmt(t.kept) + " kept, " + fmt(t.renamed) + " renamed with their family, " + fmt(t.moved) + " moved elsewhere."
+          + (wide ? " " + fmt(t.widened) + " kept with wordings a person added, which the rule had left in another group." : "")
         : "No person has looked at any of the " + fmt(t.placed) + " yet.";
       var extra = [];
       if (t.by_procedure) extra.push(fmt(t.by_procedure) + " later revised by another procedure");
       if (t.left) extra.push(fmt(t.left) + " left the reference");
-      var cols = ["Procedure", "Placed", "A person looked", "Kept", "Renamed with its family", "Moved elsewhere", "Not looked at yet"];
+      var cols = ["Procedure", "Placed", "A person looked", "Kept"].concat(wide ? ["Kept, wordings added"] : [], ["Renamed with its family", "Moved elsewhere", "Not looked at yet"]);
       var table = el("table", { cls: "cmn-conf-table" }, [
         el("thead", null, [el("tr", null, cols.map(function (h) { return el("th", { scope: "col", text: h }); }))]),
         el("tbody", null, (c.procedures || []).map(function (p) {
           return el("tr", null, [el("th", { scope: "row", text: procName(p.name) })].concat(
-            [p.placed, p.looked, p.kept, p.renamed, p.moved, p.untouched].map(function (n) { return el("td", { text: fmt(n || 0) }); })));
+            [p.placed, p.looked, p.kept].concat(wide ? [p.widened] : [], [p.renamed, p.moved, p.untouched]).map(function (n) { return el("td", { text: fmt(n || 0) }); })));
         }))
       ]);
       fold.appendChild(el("div", { cls: "cmn-conf-ref" }, [head, el("p", { cls: "cmn-conf-line", text: line + (extra.length ? " " + capFirst(extra.join("; ")) + "." : "") }),
