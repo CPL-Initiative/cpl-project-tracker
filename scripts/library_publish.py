@@ -105,9 +105,9 @@ def main_problems(page):
         if name not in ALLOWED_TAGS:
             out.append("the tag <%s>" % name); continue
         if close:
-            if stack and stack[-1] == name:
-                stack.pop()
-            else:
+            if attrs.strip():
+                out.append("a closing tag with attributes")
+            if (stack.pop() if stack else None) != name:
                 out.append("tags that do not nest")
             continue
         rest = re.sub(r"\s*/?\s*$", "", attrs)
@@ -139,6 +139,35 @@ def main_problems(page):
     if stack:
         out.append("tags left open")
     return sorted(set(out))
+
+
+# A revision may not add risky markup (COBIx on #3077): the same count as apply_edits.mjs riskCounts, run on the draft
+# against the page it replaces, before --write. Pure.
+_RISKS = {
+    "a script": r"<script\b",
+    "an event handler": r"[\s/\"']on[a-z]+\s*=",
+    "a frame, object, embed, form, meta, base, link, style, svg or math element":
+        r"<(iframe|frame|object|embed|form|meta|base|link|style|svg|math|template)\b",
+    "a srcdoc or style attribute": r"[\s/\"'](srcdoc|style)\s*=",
+}
+
+
+def risk_counts(page):
+    s, out = page or "", {}
+    for k, rx in _RISKS.items():
+        out[k] = len(re.findall(rx, s, re.I))
+    bad = 0
+    for m in re.finditer(r"(href|src|action|formaction|xlink:href)\s*=\s*(\"[^\"]*\"|'[^']*'|[^\s>]+)", s, re.I):
+        v = m.group(2).strip("\"'")
+        if re.match(r"^(javascript|data|vbscript):", _decode(v), re.I):
+            bad += 1
+    out["a javascript:, data: or vbscript: address"] = bad
+    return out
+
+
+def added_risks(before, after):
+    b, a = risk_counts(before), risk_counts(after)
+    return [k for k in a if a[k] > b.get(k, 0)]
 
 
 def is_new_piece(record):
@@ -230,6 +259,11 @@ def write_phase(today):
             bad = main_problems(d.get("html") or "")
             if bad:
                 skipped.append(f"{r['slug']}: draft {d['id']} refused, its page carries " + ", ".join(bad))
+                continue
+        else:
+            bad = added_risks(page.read_text(encoding="utf-8"), d.get("html") or "")
+            if bad:
+                skipped.append(f"{r['slug']}: draft {d['id']} refused, it adds " + ", ".join(bad))
                 continue
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(d["html"], encoding="utf-8")

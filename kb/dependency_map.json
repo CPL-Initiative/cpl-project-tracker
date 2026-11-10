@@ -8807,9 +8807,16 @@
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 245
+    },
+    {
+     "id": "script:scripts/library_publish.py",
+     "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 216
+     "line": 245
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -27061,7 +27068,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 207
+     "line": 236
     }
    ],
    "main_committers": []

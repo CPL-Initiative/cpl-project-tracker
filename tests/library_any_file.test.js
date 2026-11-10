@@ -244,6 +244,20 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
     const flags = JSON.parse(py);
     check("F ⭐ library_publish.py refuses the same pages before it writes a new piece (the second gate), and passes a clean one",
       flags.slice(0, bypass.length).every(Boolean) && flags[bypass.length] === false, py);
+    // The revision path too (COBIx's second note on #3077): the same strings sent in as edits to a real public page.
+    const ae = await import("../chatbox/supabase/functions/library-revise-draft/apply_edits.mjs");
+    const live = fs.readFileSync("library/ell-iet-cpl-starting-points/index.html", "utf8");
+    const anchor = (live.match(/<h1[^>]*>[^<]{3,}<\/h1>/) || [""])[0];
+    const asEdit = (x) => ae.applyEdits(live, [{ old: anchor, new: anchor + x }]);
+    const editPassed = bypass.filter((x) => x !== "<!-- note -->").concat(['<script>alert(1)</script>', '<img src=x onerror=alert(1)>']).filter((x) => !asEdit(x).error);
+    check("F ⭐ every one is refused as a revision edit too", !!anchor && editPassed.length === 0, JSON.stringify(editPassed));
+    check("F a plain revision edit still applies", !!anchor && !asEdit('<p>Updated December 9.</p>').error);
+    const split = ae.applyEdits('<p>A</p><p>B</p>', [{ old: "<p>A</p>", new: "<p>A</p><scr" }, { old: "<p>B</p>", new: "ipt>alert(1)</script><p>B</p>" }]);
+    check("F two edits cannot build a script between them (the whole page is counted)", !!split.error && /add a script/.test(split.error), split.error);
+    const pyr = execFileSync("python3", ["-c", "import sys,json;sys.path.insert(0,'scripts');import library_publish as lp;d=json.load(sys.stdin);print(json.dumps([lp.added_risks(d['live'],d['live'].replace(d['a'],d['a']+x)) for x in d['xs']]))"],
+      { input: JSON.stringify({ live: live, a: anchor, xs: ['<script>alert(1)</script>', '<svg/onload=alert(1)>', '<a href="java&#115;cript:x">x</a>', '<meta http-equiv="refresh">', '<p>Plain.</p>'] }) }).toString();
+    const pr = JSON.parse(pyr);
+    check("F ⭐ library_publish.py refuses a revision that adds risky markup, and passes a plain one", pr.slice(0, 4).every((x) => x.length > 0) && pr[4].length === 0, pyr);
     check("F a Google Docs, Slides or Sheets link reads by its plain-text export, and nothing else is fetched",
       np.googleExport("https://docs.google.com/presentation/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/edit#slide=id.p") === "https://docs.google.com/presentation/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/export/txt" &&
       np.googleExport("https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/edit") === "https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/export?format=txt" &&
