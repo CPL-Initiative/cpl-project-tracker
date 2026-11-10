@@ -113,7 +113,7 @@ List already carries the same control on its side panel (`pgrip` in `commons_lis
    noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
    from the workspace mock, version 11, in the vault.
 0b. **The role in MAP meets the whole attestation, in the funding tab (Sam, 2026-11-10, in session: *"Nc yes exact wor
-   whole"*; cleared to build).** COBIx had relayed the same (#2999, 2026-11-09 22:22Z): the exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation, no form needed, a
+   whole"*, then *"Word"* (the typo, corrected); cleared to build).** COBIx had relayed the same (#2999, 2026-11-09 22:22Z): the exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation, no form needed, a
    waiting form counts as complete, and the form stays out under Scenario 4. The workspace reads it so since #3012.
    The funding tab's `ncCondList` still lets the role meet `nc_coord` only, and `nc_team` (hidden by default,
    `ncTeamShown`) still needs an accepted attestation (tests 1f, 1g); its Attest control and the *Noncredit CPL Lead

@@ -56,7 +56,7 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
   in the identity lane (2026-10-04: the first CSU campus on MAP, kept in the mix, `kb/non_ccc_institutions.json`).
   Nothing waits on him there. Read the lane's own paragraphs, and the PR threads, before calling anything his.
 - **Sam, 2026-11-10, in session, on whether the exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit
-  attestation:** *"Nc yes exact wor whole"*. Yes: the exact title, the whole attestation (the strike-team condition
+  attestation:** *"Nc yes exact wor whole"*, then *"Word"* (the typo, corrected). Yes: the exact title, the whole attestation (the strike-team condition
   included), no form needed, a waiting form counts as complete. It confirms COBIx's relay on #2999 (2026-11-09 22:22Z);
   `cpl_memory` `sam-nc-lead-title-meets-whole-attestation-2026-11-10`. #3012 built the workspace's half; the funding
   tab's half is open work item 2, and it is cleared to build.
