@@ -2424,16 +2424,19 @@
     if (!ncOutcomesMode()) return [];
     var att = ncAttestOf(college), pending = !ELIG.ncAttestOk;
     var standing = ncAttestStanding(att);
+    // THE ROLE STANDS IN FOR THE WHOLE ATTESTATION (Sam, in session 2026-11-10: "Nc yes exact wor whole", then
+    // "Word"): the exact MAP title meets the strike-team condition too, where a scenario shows it. No form is
+    // needed, and a form still waiting changes nothing.
+    var inMap = ncLeadInMap(college);
     var list = [];
     if (ncCoordShown()) {
       // TWO WAYS TO MEET IT (Sam, in session 2026-11-09): the attestation names the lead, or the Noncredit CPL Lead
-      // role is on the college's MAP landing page. The role meets this condition alone, read live and written
-      // nowhere; where a scenario shows the strike-team condition below, that still comes on the form.
-      var inMap = ncLeadInMap(college);
+      // role is on the college's MAP landing page, read live and written nowhere.
       list.push({ kind: "nc_coord", met: inMap || (standing && !!String(att.coordinator_name || "").trim()),
         pending: inMap ? false : pending, label: NC_COORD_REQ, auto: "nc", via: inMap ? "map" : "" });
     }
-    if (ncTeamShown()) list.push({ kind: "nc_team", met: standing, pending: pending, label: NC_TEAM_REQ, auto: "nc" });
+    if (ncTeamShown()) list.push({ kind: "nc_team", met: inMap || standing, pending: inMap ? false : pending,
+      label: NC_TEAM_REQ, auto: "nc", via: inMap ? "map" : "" });
     return list;
   }
   // The gate on the NONCREDIT share alone (Sheet 113 card 1): the
@@ -6239,6 +6242,7 @@
         : ncAttestPending(ncAttestOf(college)) ? "Noncredit CPL Lead: Awaiting CPL Initiative Confirmation" : "Noncredit CPL Lead not yet attested" };
     }
     if (r.kind === "nc_team") {
+      if (r.via === "map") return { text: "Noncredit CPL Lead in MAP" };
       if (r.pending) return { text: "Strike-team attestation status pending", pending: true };
       var att = ncAttestOf(college);
       return { text: r.met ? "Strike team attested" + (att && att.fiscal_year ? " for " + att.fiscal_year : "")
@@ -7348,6 +7352,8 @@
   function ncAttestOpenHtml(c) {
     var college = c.college;
     if (!ELIG.ncAttestOk || !ncAttestShown(c) || ncAttestOf(college)) return "";
+    // The role in MAP stands in for the whole attestation (Sam, 2026-11-10): the college is offered no form.
+    if (ncLeadInMap(college)) return "";
     var ui = NCATTEST_UI[college] || {};
     if (ui.done) return "";
     return '<button type="button" class="cplfund-optbtn cplfund-ncattest-open" data-ncattestopen="' + esc(college) +
@@ -7363,7 +7369,7 @@
         esc(fy) + " and send a confirmation to " + (ui.email ? esc(ui.email) : "the address you gave") +
         ". Once they approve it, the Noncredit CPL Lead shows as complete on this dashboard.</div>";
     }
-    if (ncAttestStanding(att)) return "";
+    if (ncAttestStanding(att) || ncLeadInMap(college)) return "";
     if (ncAttestPending(att)) {
       return '<div class="cplfund-optin cplfund-optin-note">The noncredit attestation for ' + esc(att.fiscal_year || fy) +
         (att.requested_at ? ", received " + esc(isoMdy(att.requested_at)) + "," : "") + " is awaiting CPL Initiative confirmation.</div>";
@@ -13259,7 +13265,7 @@
   // with them. An institution whose status is still loading is in neither
   // list. The Noncredit CPL Lead choices cover the institutions whose award
   // carries a noncredit share (ncAttestShown); attested means on file for the
-  // fiscal year, awaiting confirmation or confirmed.
+  // fiscal year, awaiting confirmation or confirmed, or the role in MAP.
   var COND_FILTERS = [
     { val: "", label: "All institutions" },
     { val: "met", label: "Met all three minimum conditions" },
@@ -13275,9 +13281,10 @@
     var v = state.condFilter;
     return !!v && condFilterChoices().some(function (f) { return f.val === v; });
   }
+  // The role in MAP counts as attested (Sam, 2026-11-10: the exact title stands in for the whole attestation).
   function ncLeadAttested(college) {
     var att = ncAttestOf(college);
-    return ncAttestStanding(att) || ncAttestPending(att);
+    return ncLeadInMap(college) || ncAttestStanding(att) || ncAttestPending(att);
   }
   function condFilterKeeps(r, v) {
     if (v === "met" || v === "unmet") {
@@ -13286,6 +13293,8 @@
       return v === "met" ? !g.blocked : g.blocked;
     }
     if (v === "nc_yes" || v === "nc_no") {
+      // Until the attestations have loaded an institution is in neither list, role or no role: half a list
+      // would read as the whole one (COBIx on #3033).
       if (!ncAttestShown(r) || !ELIG.ncAttestOk) return false;
       return ncLeadAttested(r.college) === (v === "nc_yes");
     }
@@ -13625,7 +13634,8 @@
         (reviewer ? acceptWord("data-optinaccept", "the participation confirmation") : "");
     }
     var att = ncAttestShown(c) ? ncAttestOf(c.college) : null;
-    if (att && ncAttestPending(att)) {
+    // A form still waiting counts as complete where the role is in MAP: no chip, nothing to accept.
+    if (att && ncAttestPending(att) && !ncLeadInMap(c.college)) {
       waits += waitWord("NC Lead attestation submitted", "Noncredit CPL Lead attestation submitted" + sentOn(att.requested_at) +
         (att.fiscal_year ? " for " + att.fiscal_year : "") + ". Awaiting CPL Initiative Confirmation.") +
         (reviewer ? acceptWord("data-ncattestaccept", "the Noncredit CPL Lead attestation") : "");
