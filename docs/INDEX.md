@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 66 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 595 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1440** | |
+| Session handoffs | 596 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1441** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-10 (SkyFermi, Library side session): handoff 635; the Library reads any file and drafts a new piece (#3077); Pages prune of kb/receipts (#3088); Pages deploys still timing out.
 - 2026-11-10 (S633 SkySilverDollar, light): Las Positas (#3056) and De Anza (#3044) merged, the lanes onto the sheet (#3074), the exhibit re-analysis's Jev runner (#3076); Open Asks Sheet 180; handoff 634.
 - 2026-11-10 (S626b SkyUmbrella, Sam in session): the review opens itself, no scroll gate, the drawer, the landing page and the contacts in the panel (#3061, #3063, #3064, #3066, #3067); Email templates a reviewer can change (#3068); handoff 633.
 - 2026-11-10 (S624 SkyCocoon, light): the identity baseline (#3019), the funding tab's ended-access note (#3022), the decline pieces leave (#3023), a ruling can cross-list (#3025); handoff 625.
