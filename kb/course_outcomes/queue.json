@@ -7,6 +7,8 @@
                "why": "its CourseLeaf course entries print no SLOs"},
   "chaffey": {"state": "none", "on": "2026-10-13", "by": "S380", "source": "#2073, discovery 38392162605, read 38394075773",
               "why": "both public dashboard reports (225 and 1225) print objectives only; its outcomes FAQ keeps course outcomes on section syllabi"},
+  "lemoore": {"state": "none", "on": "2026-11-10", "by": "S627", "source": "#3038, trial 42768227305",
+              "why": "its eLumen 26-27 course pages print units, transfer, requisites and hours, and no SLOs (0 of 12)"},
   "long_beach_city": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
                       "why": "its CourseLeaf course entries print no SLOs"},
   "mt_san_antonio": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
