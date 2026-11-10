@@ -1132,3 +1132,10 @@ score bands (*CLEP Spanish Language*), the numbered exams take 1 and 2 with no p
 current name (*CLEP Information Systems*). Brand-family's `clep` lane runs after `ib`. 48 CLEP names became 35; 33 live
 assignments and 3 panel markers moved under `cer-clep-fold-skyteaberry@bot` (`clep_kb_curation_update_receipt.json`);
 the two Level III markers stay under their old keys. Guard: `tests/clep_official_titles_test.py`.
+
+## SkyUmbrella (2026-11-10, S626, the CPL Queue routine): the first exhibit re-analysis
+
+- The request row carried an empty `changed` list and no comments, so the changes are the sender's `_CREDENTIAL_REVIEW::` saves since the button went live (2026-11-01; no earlier done row): 20 issuer overrides on 19 credentials.
+- A two-word title stem is useless when its first word is generic (*Introduction to* paired Geographic Information Systems with Accounting); the checks make no stem from a generic first word or a stopword second.
+- *No CPL type* fires on every credential no college has articulated yet (17 of 19 here); the findings say so, so it reads as expected rather than as curation work.
+- A spelling finding that corrects Sam's own save is held for his word (Rule 8), even at 110 to 1.

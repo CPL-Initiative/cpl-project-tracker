@@ -1,0 +1,59 @@
+{
+ "_readme": "S619 SkyTadpole, 2026-11-09. College of Alameda: five transfer degrees name Cal-GETC (or IGETC/CSU GE) and no units, so they read incomplete against the 60: 01129 Mathematics A.S., 32503 Political Science AA-T, 32765 Art History AA-T, 33032 Sociology AA-T, 42964 Business Administration 2.0 AS-T. This read asks, on the catalog's own JSON as the capture reads it (catalog 10507), what each page prints about the general education pattern and its units, and whether it prints a degree total, before any Redwoods-style set of 34. No render, no model call.",
+ "college": "College of Alameda",
+ "questions": {
+  "ge_units": "What does the page print about the general education pattern (Cal-GETC, IGETC, CSU GE, Peralta GE) and its units, and does it print a degree total?"
+ },
+ "keywords": [
+  "Cal-GETC",
+  "CalGETC",
+  "IGETC",
+  "CSU",
+  "General Education",
+  "[Uu]nits",
+  "Total",
+  "60"
+ ],
+ "pages": [
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47373/47460",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47389/47465",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47380",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47397/47492",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  },
+  {
+   "url": "https://coa.curriqunet.com/catalog/iq/47221/47273/47413",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 10507
+  }
+ ]
+}

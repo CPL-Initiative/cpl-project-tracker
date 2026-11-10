@@ -16697,8 +16697,40 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 587,
+   "count": 589,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 628,
+     "path": "docs/session_628_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 628 handoff: Lemoore prints no SLOs, De Anza's catalog page read in flight, Cuesta's second part running",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 627,
+     "path": "docs/session_627_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cer-procedures",
+      "program-requirements-harvest",
+      "credential-registry",
+      "scheduled-sessions"
+     ],
+     "title": "Session 627 handoff: Alameda's transfer degrees merged, the first exhibit re-analysis, Sheet 178, Cuesta's read and Lemoore's trial in flight",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26667,5 +26699,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1431
+ "total": 1433
 }

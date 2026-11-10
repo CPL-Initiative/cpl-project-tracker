@@ -6,15 +6,15 @@
    "desc": [
     [
      "Health Care Ancillaries",
-     0.1883
+     0.1882
     ],
     [
      "Fire Technology",
-     0.1589
+     0.1588
     ],
     [
      "Kinesiology",
-     0.1573
+     0.156
     ]
    ],
    "desc_kind": "desc_differs_close",
@@ -37,35 +37,8 @@
    "colleges": 2,
    "desc": [
     [
-     "Health and Safety: Noncredit",
-     0.182
-    ],
-    [
-     "Kinesiology",
-     0.1034
-    ],
-    [
-     "Hotel and Motel Services",
-     0.0652
-    ]
-   ],
-   "desc_kind": "desc_differs_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M1518",
-   "members": 2,
-   "title": "Yoga Philosophy, Lifestyle, and Ethics",
-   "verdict": "for_a_curator",
-   "votes": {},
-   "why": [
-    "description"
-   ]
-  },
-  {
-   "colleges": 2,
-   "desc": [
-    [
      "Ethnic Studies",
-     0.2396
+     0.2395
     ],
     [
      "Film and Media Studies",
@@ -91,6 +64,36 @@
    "colleges": 2,
    "desc": [
     [
+     "Addiction Paraprofessional Training",
+     0.1608
+    ],
+    [
+     "Kinesiology",
+     0.1506
+    ],
+    [
+     "Health Information Technology",
+     0.1479
+    ]
+   ],
+   "desc_kind": "desc_differs_thin",
+   "discipline": "Kinesiology",
+   "id": "KINE M1656",
+   "members": 2,
+   "title": "Healthful Living",
+   "verdict": "for_a_curator",
+   "votes": {
+    "Health": 2
+   },
+   "why": [
+    "description",
+    "top"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
      "Hotel and Motel Services",
      0.1489
     ],
@@ -99,8 +102,8 @@
      0.0812
     ],
     [
-     "Kinesiology",
-     0.0791
+     "Learning Assistance or Learning Skills",
+     0.0782
     ]
    ],
    "desc_kind": "desc_differs_clear",
@@ -115,76 +118,22 @@
    ]
   },
   {
-   "colleges": 2,
-   "desc": [
-    [
-     "Health and Safety: Noncredit",
-     0.2129
-    ],
-    [
-     "Kinesiology",
-     0.1583
-    ],
-    [
-     "Interdisciplinary-Basic Skills: Noncredit",
-     0.077
-    ]
-   ],
-   "desc_kind": "desc_differs_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M1775",
-   "members": 2,
-   "title": "Introduction to Teaching Yoga",
-   "verdict": "for_a_curator",
-   "votes": {},
-   "why": [
-    "description"
-   ]
-  },
-  {
-   "colleges": 1,
-   "desc": [
-    [
-     "Health and Safety: Noncredit",
-     0.3095
-    ],
-    [
-     "Kinesiology",
-     0.2385
-    ],
-    [
-     "Electricity",
-     0.0586
-    ]
-   ],
-   "desc_kind": "desc_differs_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M1923",
-   "members": 2,
-   "title": "Yoga Teacher Training 1 - Yogic Lifestyle & Yoga as a Healing Practice",
-   "verdict": "for_a_curator",
-   "votes": {},
-   "why": [
-    "description"
-   ]
-  },
-  {
    "colleges": 22,
    "desc": [
     [
      "Kinesiology",
-     0.2535
+     0.2683
     ],
     [
      "Counseling",
-     0.2381
+     0.2387
     ],
     [
      "Health and Safety: Noncredit",
-     0.229
+     0.222
     ]
    ],
-   "desc_kind": "desc_agrees_thin",
+   "desc_kind": "desc_agrees_close",
    "discipline": "Kinesiology",
    "id": "KINE M1806",
    "members": 22,
@@ -204,18 +153,18 @@
    "desc": [
     [
      "Kinesiology",
-     0.2587
+     0.2351
     ],
     [
      "Counseling",
-     0.1979
+     0.198
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1921
+     0.1923
     ]
    ],
-   "desc_kind": "desc_agrees_clear",
+   "desc_kind": "desc_agrees_close",
    "discipline": "Kinesiology",
    "id": "KINE M1847",
    "members": 7,
@@ -234,7 +183,7 @@
    "desc": [
     [
      "Kinesiology",
-     0.189
+     0.17
     ],
     [
      "Nutritional Science/Dietetics",
@@ -245,7 +194,7 @@
      0.1043
     ]
    ],
-   "desc_kind": "desc_agrees_clear",
+   "desc_kind": "desc_agrees_close",
    "discipline": "Kinesiology",
    "id": "KINE M1524",
    "members": 3,
@@ -263,18 +212,18 @@
    "desc": [
     [
      "Kinesiology",
-     0.2947
+     0.2655
     ],
     [
      "Health and Safety: Noncredit",
-     0.2484
+     0.2533
     ],
     [
      "Nutritional Science/Dietetics",
      0.1056
     ]
    ],
-   "desc_kind": "desc_agrees_close",
+   "desc_kind": "desc_agrees_thin",
    "discipline": "Kinesiology",
    "id": "KINE M1568",
    "members": 2,
@@ -287,40 +236,11 @@
    "why": [
     "top"
    ]
-  },
-  {
-   "colleges": 2,
-   "desc": [
-    [
-     "Kinesiology",
-     0.1714
-    ],
-    [
-     "Addiction Paraprofessional Training",
-     0.1609
-    ],
-    [
-     "Health Information Technology",
-     0.1479
-    ]
-   ],
-   "desc_kind": "desc_agrees_thin",
-   "discipline": "Kinesiology",
-   "id": "KINE M1656",
-   "members": 2,
-   "title": "Healthful Living",
-   "verdict": "unsettled",
-   "votes": {
-    "Health": 2
-   },
-   "why": [
-    "top"
-   ]
   }
  ],
  "counts": {
-  "description": 6,
-  "top_only": 5
+  "description": 4,
+  "top_only": 4
  },
  "discipline": "Kinesiology",
  "schema": 1

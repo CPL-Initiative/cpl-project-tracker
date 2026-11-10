@@ -62222,5 +62222,13 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-07T14:26:54.516864+00:00",
     "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Nursing Care of Children and Families": {
+    "unified_title": "Nursing Care of Children and Families",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-10",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-09T17:53:55.099685+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

@@ -38,6 +38,8 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 
 **The List view** (S540, S541; live): its record moved verbatim to `docs/library_lessons.md` (*Moved from the lane, SkyFern*).
 
+**Re-analysis, first run (S626, 2026-11-10).** Sam's press of 2026-11-09 12:39Z (no comments) ran the code checks alone (`kb/_exhibit_reanalysis_checks.py`; findings `kb/exhibits_reanalysis/2026-11-10.json`; done row under `exhibit-reanalysis-s626@bot`). **NEEDS SAM (Open Asks Sheet 178 card 3):** Wildland Fire-Basics' issuer reads *State Fire Training (SFT)* where 110 credentials read *California State Fire Training (SFT)*; recommendation the long form, held because it corrects his own save. **NEXT:** the Jev runner job (its two questions) and the findings panel in the List view.
+
 Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyCloudberry)*.
 
 **Sam's rulings, Open Asks Sheet 147** ([the sheet](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), completed 00:06Z 2026-10-31, all five his own call; cpl_memory `sam-sheet-147-rulings-2026-10-31`). Build in this order:

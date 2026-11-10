@@ -1,0 +1,12 @@
+{
+  "what": "The exhibit re-analysis done row for Sam's request of 2026-11-09 12:39Z (scheduled_sessions.md step 9)",
+  "table": "kb_curation",
+  "mode": "INSERT-only, ON CONFLICT DO NOTHING",
+  "cohort": "exhibit-reanalysis-s626@bot",
+  "rows": [
+    {"course_id": "_EXHIBIT_REANALYSIS::2026-11-09T12:39:19.127Z-e9mi", "field": "exhibit_reanalysis_done",
+     "reviewed_at": "2026-11-10T06:26:59.701186Z",
+     "value": {"findings": "kb/exhibits_reanalysis/2026-11-10.json", "method": "code checks only", "credentials": 19, "for_sam": 1, "by": "S626 SkyUmbrella"}}
+  ],
+  "rollback": "delete from kb_curation where reviewer_email = 'exhibit-reanalysis-s626@bot' and field = 'exhibit_reanalysis_done';"
+}

@@ -35,7 +35,7 @@ jobs:
           echo "count=$n" >> "$GITHUB_OUTPUT"
           if [ "$n" -ge 3 ]; then echo "COBIx has commented $n times here; a person takes the next turn."; fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: ${{ steps.cap.outputs.count < 3 }}
         with:
           fetch-depth: 0
