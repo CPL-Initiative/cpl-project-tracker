@@ -375,6 +375,11 @@
     "workplan_goals_authoritative.test.js": 26,
     "workplan_goals_desc_editors.test.js": 22,
     "cpl_funding_outcomes_follow_institution.test.js": 24,
-    "cpl_funding_step_two_view.test.js": 21
+    "cpl_funding_step_two_view.test.js": 21,
+    "library.test.js": 288,
+    "library_any_file.test.js": 33,
+    "library_list.test.js": 27,
+    "library_revise_draft.test.js": 55,
+    "public_library.test.js": 121
   }
 }
