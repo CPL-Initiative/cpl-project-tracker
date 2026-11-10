@@ -1,13 +1,15 @@
 {
- "_readme": "S627 SkyBode, 2026-11-10. De Anza College: 128 of 212 passing; 73 of its 84 failures are degrees, and the ones sampled carry no program total (total_min null) and read incomplete (Business Administration A.A. 05952 p.66, Automotive Machining A.S. 05962 p.63, Real Estate 05954 p.143, Art History 05965 p.50). De Anza runs on quarters. This read prints the pages that state the associate degree's total (90 quarter units) and how a degree's major, general education and electives add to it, so a reconcile step can rest on De Anza's own words. One load of the same PDF, no model call. Second read: the first asked www.deanza.edu, which answers 403 (run 42775376804); this one reads the copy Sam hand-filed (kb/hand_filed_catalogs/de_anza.json). Third read: the second printed program pages 46-54, which confirm every degree page prints 'Total Required: 90 Units' and 'Cal-GETC AND electives as needed to reach at least 90 units' but no GE units. So this read asks the front matter (pages 1-45) for the GE patterns' units, the figure the degree check lacks (run 42775819484). Fourth read (S628 SkyDraco): pages 1-45 printed no GE units statement (run 42776660795), so this read asks the back of the catalog (pages 280-337), where the GE pattern pages sit past the programs.",
+ "_readme": "S627 SkyBode, 2026-11-10. De Anza College: 128 of 212 passing; 73 of its 84 failures are degrees, and the ones sampled carry no program total (total_min null) and read incomplete (Business Administration A.A. 05952 p.66, Automotive Machining A.S. 05962 p.63, Real Estate 05954 p.143, Art History 05965 p.50). De Anza runs on quarters. This read prints the pages that state the associate degree's total (90 quarter units) and how a degree's major, general education and electives add to it, so a reconcile step can rest on De Anza's own words. One load of the same PDF, no model call. Second read: the first asked www.deanza.edu, which answers 403 (run 42775376804); this one reads the copy Sam hand-filed (kb/hand_filed_catalogs/de_anza.json). Third read: the second printed program pages 46-54, which confirm every degree page prints 'Total Required: 90 Units' and 'Cal-GETC AND electives as needed to reach at least 90 units' but no GE units. So this read asks the front matter (pages 1-45) for the GE patterns' units, the figure the degree check lacks (run 42775819484). Fourth read (S628 SkyDraco): pages 1-45 printed no GE units statement (run 42776660795), so this read asks the back of the catalog (pages 280-337), where the GE pattern pages sit past the programs. Fifth read (S628): pages 280-337 named none of the three keywords (run 42781536942 printed only page 1), so this read asks the whole catalog for the GE pattern's own headings: its areas, the words General Education Requirements or Pattern, and a GE total.",
  "college": "De Anza College",
  "questions": {
   "ge_units": "Where and in what words does the catalog state the units of De Anza General Education and of Cal-GETC, in quarter units?"
  },
  "keywords": [
-  "De Anza General Education[^\\n]{0,80}units",
-  "Cal-GETC[^\\n]{0,60}\\d+(\\.\\d)? (quarter )?units",
-  "General Education[^\\n]{0,40}(minimum|total)[^\\n]{0,30}units"
+  "General Education (Requirements|Pattern|Breadth)",
+  "De Anza (College )?General Education",
+  "(AREA|Area) ?1A\\b",
+  "Cal-GETC (Requirements|Pattern|Areas?)",
+  "(minimum|total) of \\d+ (quarter )?units[^\\n]{0,40}(general education|GE)"
  ],
  "pages": [
   {
@@ -18,7 +20,7 @@
   }
  ],
  "pdf_span": [
-  280,
+  1,
   337
  ]
 }

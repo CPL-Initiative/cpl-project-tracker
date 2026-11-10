@@ -2426,7 +2426,7 @@
       L.busy = false; L.comments = "";
       L.note = "Queued with your comments. " + ROUTINE_WHEN + " looks at what changed: the code checks (a rename that collides, an issuer spelled two ways, " +
         "a credential with no CPL type) and Jev's two questions (the same credential under two names? an issuer that is really a training site?). " +
-        "Its findings come back to you as cards on the standing decision sheet until this view shows them.";
+        "Its findings show below once it has run, and anything that needs your word is also a card on the standing decision sheet.";
       render();
     }).catch(function (e) {
       L.busy = false;
@@ -2434,6 +2434,42 @@
         : "The request did not reach the routine (" + (e && e.message || "no answer") + "). Try again.";
       render();
     });
+  }
+  /* The last re-analysis, under the box that asks for one (the cer-procedures lane's NEXT, S628): the routine writes
+     its findings to kb/exhibits_reanalysis/<date>.json and copies the newest to latest.json, which this reads once a
+     visit. What waits on the sender's word comes first; the checks' counts and the routine's notes fold below. */
+  var REANALYSIS_URL = "kb/exhibits_reanalysis/latest.json";
+  var RX_CHECKS = [["rename_collision", "a rename that collides with an existing title"],
+    ["issuer_spellings", "an issuer spelled two ways"], ["stem_issuer_differs", "an issuer that differs from its title's siblings"],
+    ["no_cpl_type", "no CPL type"], ["shared_mid_same_issuer", "two credentials sharing an M-ID"]];
+  function listReanalysisLoad() {
+    var L = listState();
+    if (L.rxP) return L.rxP;
+    L.rxP = fetch(REANALYSIS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { L.rx = d && d.summary ? d : false; }, function () { L.rx = false; })
+      .then(function () { render(); });
+    return L.rxP;
+  }
+  function listReanalysisPanel() {
+    var L = listState(), d = L.rx;
+    if (d === undefined) { listReanalysisLoad(); return null; }
+    if (!d) return null;
+    var s = d.summary || {}, asks = d.for_sam || [];
+    var counts = RX_CHECKS.filter(function (c) { return s[c[0]]; }).map(function (c) { return fmt(s[c[0]]) + " with " + c[1]; });
+    var head = "The last re-analysis (" + (stamp(d.sent_at) || "undated") + " request, by " + (d.run || "the routine") + ") looked at "
+      + fmt(s.credentials || (d.findings || []).length) + (s.credentials === 1 ? " credential" : " credentials") + ". "
+      + (asks.length ? asks.length + (asks.length === 1 ? " needs" : " need") + " your word." : "Nothing needs your word.");
+    var kids = [el("p", { cls: "exh-l-rxhead", text: head })];
+    if (asks.length) kids.push(el("ul", { cls: "exh-l-rxlist" }, asks.map(function (a) {
+      return el("li", null, [el("strong", { text: a.credential + ": " }), a.ask + (a.held_because ? " Held: " + a.held_because + "." : "")]);
+    })));
+    if (d.comments_answer) kids.push(el("p", { cls: "exh-muted exh-small", text: "Your comments: " + d.comments_answer }));
+    var more = [el("summary", { text: "What the checks found" + (counts.length ? " (" + counts.length + (counts.length === 1 ? " kind)" : " kinds)") : "") })];
+    more.push(el("p", { cls: "exh-small", text: counts.length ? "Of the credentials looked at: " + counts.join("; ") + "." : "No check found anything." }));
+    if (d.method) more.push(el("p", { cls: "exh-muted exh-small", text: "How: " + d.method + "." }));
+    if ((d.notes || []).length) more.push(el("ul", { cls: "exh-l-rxlist exh-small" }, d.notes.map(function (n) { return el("li", { text: n }); })));
+    kids.push(el("details", { cls: "exh-l-rxmore" }, more));
+    return el("section", { cls: "exh-l-rx", id: "exh-l-rx", "aria-label": "The last re-analysis" }, kids);
   }
   /* A spelling twin's fold (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you
      see?"). Shown until it is accepted, dismissed for the visit, or the credential already carries a rename. */
@@ -2732,6 +2768,8 @@
           el("div", { cls: "exh-l-acts" }, [word(L.busy ? "Working…" : "Re-analyze my changes", listReanalyze),
             el("span", { cls: "exh-muted exh-small", text: L.changed.length
               ? fmt(L.changed.length) + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass" })])]));
+        var rx = listReanalysisPanel();
+        if (rx) wrap.appendChild(rx);
       },
       beforeTable: function (wrap) {
         var L = listState();
@@ -3679,6 +3717,11 @@
     ".exh-h { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:clamp(1.5rem, 3vw, 2rem); }",
     ".exh-q { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:1.05rem; font-weight:600; }",
     ".exh-muted { color:var(--text-muted); }",
+    ".exh-l-rx { display:grid; gap:4px; margin:4px 0 10px; padding:8px 12px; border-left:3px solid var(--border); max-width:var(--cpl-measure,none); }",
+    ".exh-l-rxhead { margin:0; font-weight:600; color:var(--text-strong); }",
+    ".exh-l-rxlist { margin:0; padding-left:1.2em; display:grid; gap:2px; }",
+    ".exh-l-rxmore summary { cursor:pointer; color:var(--seal-blue-text); text-decoration:underline; min-height:24px; }",
+    ".exh-l-rxmore summary:focus-visible { outline:2px solid var(--seal-blue-text); outline-offset:2px; }",
     ".exh-small { font-size:.88rem; }",
     ".exh-group { display:grid; gap:8px; }",
     ".exh-tblwrap { overflow-x:auto; max-width:100%; }",

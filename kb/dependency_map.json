@@ -4,7 +4,7 @@
   "supabase_tables": 111,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 830,
+  "file_datasets": 831,
   "external_services": 194,
   "consumers": 545,
   "workflows": 65,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2872,
+     "line": 2910,
      "tabs": [
       "exhibits"
      ]
@@ -6300,7 +6300,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2864,
+     "line": 2902,
      "tabs": [
       "exhibits"
      ]
@@ -6393,7 +6393,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3145,
+     "line": 3183,
      "tabs": [
       "exhibits"
      ]
@@ -8159,7 +8159,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3424,
+     "line": 3462,
      "tabs": [
       "exhibits"
      ]
@@ -14843,7 +14843,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2886,
+     "line": 2924,
      "tabs": [
       "exhibits"
      ]
@@ -15089,6 +15089,22 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/exhibits_reanalysis/latest.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2441,
+     "tabs": [
+      "exhibits"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/exhibits_review.json": {
    "consumers": [
