@@ -1,14 +1,125 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-09T17:53:53Z",
- "_queue_count": 4,
+ "_generated_at": "2026-11-10T15:51:38Z",
+ "_queue_count": 20,
  "_counts": {
-  "staged": 4,
-  "needs_you": 3,
+  "staged": 19,
+  "needs_you": 6,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
+  "ASL 53 American Sign Language IV": {
+   "title": "American Sign Language IV",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ASL 53; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "COSM 211  Manicuring and Pedicuring I": {
+   "title": "Manicuring and Pedicuring I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for COSM 211; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "COSM 215 Facials I": {
+   "title": "Facials I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for COSM 215; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "COSM 223 Hairstyling Services/Haircutting II": {
+   "title": "Hairstyling Services/Haircutting II",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for COSM 223; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+   "title": "Introduction to Food Safety",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.82,
+   "note": "Mended the cx hint: dropped the mechanism phrase, the CFPL program tag and the ABT 130 course code, and expanded 'Intro' to 'Introduction' per Rule 5g. No CCN or C-ID title was confirmed for Hartnell ABT 130, so the title is the college's own course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "level-words-last",
+    "mechanism-collapses",
+    "Rule 5c",
+    "Rule 5g"
+   ]
+  },
+  "GRART 112 Creative Process and Solutions": {
+   "title": "Creative Process and Solutions",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 112; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 113 Typography": {
+   "title": "Typography",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 113; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 114 Graphic Design Technology": {
+   "title": "Graphic Design Technology",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 114; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 115 Website Design": {
+   "title": "Website Design",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 115; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 121 Applied Graphic Design 1": {
+   "title": "Applied Graphic Design 1",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 121; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 150 Graphics in Motion: Introduction to Animation": {
+   "title": "Graphics in Motion Introduction to Animation",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 150; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 42  Web Graphics": {
+   "title": "Web Graphics",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 42; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GRART 43 Web Graphics and Animation": {
+   "title": "Web Graphics and Animation",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GRART 43; issuer = CCC.",
+   "procedure": "course-identity"
+  },
   "Introduction to Law Enforcement/Corrections": {
    "title": "Introduction to Law Enforcement/Corrections",
    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
@@ -22,18 +133,33 @@
     "issuer-issues-the-card"
    ]
   },
-  "Nursing Care of Children and Families": {
-   "title": "Nursing Care of Children and Families",
+  "JOURN 021  Newswriting": {
+   "title": "Introduction to Reporting and Newswriting",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.85,
+   "note": "Rule 5c: title anchored to C-ID JOUR 110; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "JOURN 062 Survey of Mass Media": {
+   "title": "Survey of Mass Media",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Credit by exam course content is taken verbatim from the cx hint. No CCN or C-ID anchor was verified, and no house family matches exactly.",
+   "confidence": 0.8,
+   "note": "Accepted the hint: the course code was stripped and Laney's own course title kept. It is unverified whether JOURN 062 carries the C-ID JOUR 100 (Introduction to Mass Communication) or a CCN, which would outrank the local title on re-key.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c",
-    "cx-type routing"
+    "Rule 5c"
    ]
+  },
+  "JOURN 069 Multimedia Reporting for Journalists": {
+   "title": "Multimedia Reporting for Journalists",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for JOURN 69; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "Nursing Care of the childbearing family": {
    "title": "Nursing Care of the Childbearing Family",
