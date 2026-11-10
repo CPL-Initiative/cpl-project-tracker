@@ -642,3 +642,6 @@ session wrote, in the lane and in a PR, that what it is waited on Sam's ruling, 
 own paragraph, eleven lines up, holds his word from 2026-10-04: the first CSU campus on MAP, kept in the mix, named in
 `kb/non_ccc_institutions.json`. The card was dropped and the lane corrected. The finding reads `unknown` because the
 crosswalk builder's lint does not read the non-CCC list; that is the lane's NEXT.
+
+**And the PR threads.** The same checkpoint's handoff called the strike-team question open for Sam; COBIx pointed at its
+own relay of his answer on #2999. A lane can lag a thread by a session.

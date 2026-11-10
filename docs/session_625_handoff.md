@@ -48,10 +48,14 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
 - **Sam:** none new. His 2026-11-09 rulings carried the work (no decline piece; the reviewer adds the sender's role).
 - **A correction to carry:** this session wrote that what Cal State LA is waited on Sam, then found his word already
   in the identity lane (2026-10-04: the first CSU campus on MAP, kept in the mix, `kb/non_ccc_institutions.json`).
-  Nothing waits on him there. Read the lane's own paragraphs before calling anything his.
-- **Open for Sam, unchanged:** whether the role in MAP also meets the strike-team condition (`nc_team`, hidden in
-  every scenario today; `csm-workspace` NEXT 0b). Dropping `cpl_funding_notes`' two unread columns takes his word and
-  a migration that rewrites the table's check in the same step.
+  Nothing waits on him there. Read the lane's own paragraphs, and the PR threads, before calling anything his.
+- **Relayed, to confirm in one line:** COBIx relays Sam's word on #2999 (2026-11-09 22:22Z) that the exact MAP title
+  *Noncredit CPL Lead* stands in for the **whole** noncredit attestation: no form needed, a waiting form counts as
+  complete, and the form stays out under Scenario 4. Handoff 624 and the lane had carried the strike-team half
+  (`nc_team`) as open for him, and this session repeated that until COBIx pointed at the thread (#3028). #3012 built the
+  workspace's half. The funding tab's half is open work item 2 below: ask Sam *yes* on the relay, then build.
+- **For Sam's word, no hurry:** dropping `cpl_funding_notes`' two unread columns, with a migration that rewrites the
+  table's check in the same step.
 - **Open for Malone, unchanged (asked, not yet answered):** Recommended action above or below the four conditions;
   the People, landing page and History panel under the record or as a third column; whether the row pills earn their
   place; a menu or visible words for the filter. **He has more UI changes to send.**
@@ -71,22 +75,26 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
 
 1. **Malone's remaining UI changes, in the mock, one version each.** Then, on Sam's word, **build the mock into the
    live workspace** (`csm-workspace` NEXT 0).
-2. **`college-district-identity` NEXT:** the crosswalk builder's lint reads `kb/non_ccc_institutions.json`, so Cal
+2. **The role in MAP meets the whole noncredit attestation, in the funding tab** (`csm-workspace` NEXT 0b, on Sam's
+   *yes* to COBIx's relay): `ncCondList` lets the role meet `nc_team` as well as `nc_coord` (tests 1f and 1g flip), the
+   Attest control and the *Noncredit CPL Lead attested* filter read the role, and the comments in `ncCondList` and
+   `map/supabase_map_contacts.sql` say so. Nothing differs on the page until a scenario shows `nc_team`.
+3. **`college-district-identity` NEXT:** the crosswalk builder's lint reads `kb/non_ccc_institutions.json`, so Cal
    State LA's finding carries Sam's 2026-10-04 statement in place of `unknown`; then re-baseline (the class changes,
    so the daily check will say the set moved once).
-3. **`commons` lane is 1.3 times its budget** (26.5 KB against 20): move its finished paragraphs to
+4. **`commons` lane is 1.3 times its budget** (26.5 KB against 20): move its finished paragraphs to
    `docs/commons_lessons.md` at the next checkpoint (the second session holds that lane; check what it did first).
    Then **`commons` NEXT** (the path mock: Teach a rule on every
    reference; the confidence count; the other references' paths). KINE M1142 still has no saved ruling; Sam's to rule.
-4. **`csm-workspace` NEXT 1 to 3:** the hover cards and landing-page roles; the denial email; Nudge logs itself.
-5. **`library`:** Sam's Replace on the ELL Healthcare Pathways piece, or his next note.
-6. Carried, untouched: COBIx #2967 item 3 remainder (Team RACI into the reviewer list behind a flag); #2972's ask;
+5. **`csm-workspace` NEXT 1 to 3:** the hover cards and landing-page roles; the denial email; Nudge logs itself.
+6. **`library`:** Sam's Replace on the ELL Healthcare Pathways piece, or his next note.
+7. Carried, untouched: COBIx #2967 item 3 remainder (Team RACI into the reviewer list behind a flag); #2972's ask;
    "one place to rule"; Sheet 177's answers (read `replies` first: https://claude.ai/artifact/ArGaTSSRgbYjvqb9fvKVkm,
    still current, two cards open, no reply at 01:10Z 2026-11-10); the "Water Supply" title on
    `_UNCLASSIFIED::Credit by Exam`; S620's queue; `common-subjects-reference`; `org-phrase-scope-auth` NEXT;
    `program-requirements-harvest` NEXT.
-7. Sam to verify, from handoff 622: Copy the email into Outlook and Gmail once each; does the logo survive the paste?
-8. **CI weight (issue #2927):** `tests/csm_workspace.test.js` takes 2 min 40 s and needs more than Node's default heap
+8. Sam to verify, from handoff 622: Copy the email into Outlook and Gmail once each; does the logo survive the paste?
+9. **CI weight (issue #2927):** `tests/csm_workspace.test.js` takes 2 min 40 s and needs more than Node's default heap
    (`tests/run.js` gives it 12 GB). New CSM checks go in their own file, as #3021's did.
 
 ## Not refreshed by this checkpoint (light)
