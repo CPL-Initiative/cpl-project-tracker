@@ -25,6 +25,10 @@
  * First Light dark token. The priority cards fold behind one word for the visit (Sam's ask 18);
  * Today stays in the header either way, each count a word that opens its view (Sam, 2026-11-03, S564).
  *
+ * THE NAME (Malone, 2026-11-10; built on Sam's go): the page reads Funding Follow-up Dashboard, because the MAP team does
+ * most of this work and the CSMs only part of it. The tab's address stays #csm-workspace, and the file, the lane and
+ * the identifiers keep the old name, as the Activities tab kept its address when its label changed.
+ *
  * Tests: tests/csm_workspace.test.js
  */
 (function () {
@@ -159,6 +163,10 @@
       // The side panel (the clarity mock; one people list, issue 2978): People, CPL landing page and History open under the
       // record, one at a time; the review opens there too. Every part stays in the page, so a draft is never lost to a fold.
       "#tab-csm-workspace [hidden] { display:none !important; }",
+      "#tab-csm-workspace .word.quiet { font-weight:500; color:var(--cw-muted); }",
+      "#tab-csm-workspace .accpane { padding:14px 18px; }",
+      "#tab-csm-workspace .drawer { position:fixed; top:0; right:0; bottom:0; width:min(480px, 92vw); z-index:20; background:var(--cw-dialog); border-left:1px solid var(--cw-line); box-shadow:-12px 0 32px color-mix(in srgb, var(--cw-heading) 16%, transparent); padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 18px 18px; display:grid; gap:12px; align-content:start; overflow-y:auto; }",
+      "#tab-csm-workspace .drawer-h { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
       "#tab-csm-workspace #cw-record { display:grid; gap:14px; min-width:0; align-content:start; }",
       "#tab-csm-workspace .side { border-top:4px solid var(--cw-line); padding:16px 20px 18px; display:grid; gap:14px; }",
       "#tab-csm-workspace .side h4.side-h { margin:0; font-family:var(--cw-serif); font-size:1.1rem; color:var(--cw-heading); }",
@@ -1414,14 +1422,6 @@
       say("Copied, logo included. Paste it into Outlook; the log notes the copy.");
     });
   }
-  function boardHtml() {
-    return '<div class="board">' + STAGES.map(function (st) {
-      var list = S.rows.filter(function (r) { return stageOf(r) === st.id; }).sort(function (a, b) { return a.name.localeCompare(b.name); });
-      return '<div class="col"><div class="col-h"><button type="button" class="word" data-stage="' + st.id + '">' + esc(st.label) + '</button><span class="col-n">' + list.length + "</span></div>" +
-        '<p class="col-what">' + esc(st.what) + '</p><div class="chips">' +
-        list.map(function (r) { return '<button type="button" class="chip" data-sel="' + esc(r.key) + '">' + esc(r.name) + "</button>"; }).join("") + "</div></div>";
-    }).join("") + "</div>";
-  }
   function todayHtml() {
     // The five lists a reviewer opens most, in the order the work goes; each count is its menu view's own count.
     var go = function (view, label) {
@@ -1487,7 +1487,7 @@
     GRANT.busy = true; GRANT.msg = "Asking…"; paint();
     SI._askAccess(R.who).then(function (a) {
       GRANT.busy = false;
-      GRANT.msg = a && a.ok ? "Asked. An approver will see it in the CSM Workspace. Keep this tab open: it picks the access up when one of them approves."
+      GRANT.msg = a && a.ok ? "Asked. An approver will see it in the Funding Follow-up Dashboard. Keep this tab open: it picks the access up when one of them approves."
         : (a && a.why) || fail;
       paint();
     }).catch(function () { GRANT.busy = false; GRANT.msg = fail; paint(); });
@@ -1525,15 +1525,43 @@
       var b = root() && root().querySelector('[data-access="check"]'); if (b) b.focus();
     });
   }
+  // Access requests sit in the header as one word with their count (Sam on the mock, 2026-11-09: "quietly in the
+  // header"); the word opens the section below it. Only an approver, or a reviewer with a request to see, gets the word.
+  function accessWord() {
+    if (!S.reviewer || GRANT.ok === false || (!ACC.rows.length && !ACC.approver)) return "";
+    var n = ACC.rows.length;
+    return '<button type="button" class="word' + (n ? "" : " quiet") + '" data-accopen="1" aria-expanded="' + !!state.accOpen + '" aria-controls="cw-acc">Access requests: ' +
+      (n ? n + " waiting" : "none waiting") + "</button>";
+  }
+  /* The funding drawer (Sam on the mock, 2026-11-09: "love the simple side bar with link to go full monty if needed"):
+     the chosen college's place in Implementation Funding, from the snapshot the workspace already holds, in a panel at
+     the right edge; Open the full page goes to the funding tab on that college. The priorities' progress is not in the
+     snapshot, so the drawer leaves it to the full page (go-live note, decision 6). */
+  function fundHtml() {
+    var r = state.sel ? rowOf(state.sel) : null;
+    var met = r ? r.conds.filter(function (c) { return c.met; }).length : 0, of = r ? r.conds.length : 0;
+    var qual = r && r.part.confirmed && !r.gate.blocked;
+    var row = function (k, v) { return '<tr><th scope="row">' + k + "</th><td>" + v + "</td></tr>"; };
+    return '<aside class="drawer" id="cw-fund" aria-labelledby="cw-fund-h"' + (state.fund ? "" : " hidden") + '><div class="drawer-h"><h2 id="cw-fund-h" tabindex="-1">Implementation Funding</h2>' +
+      '<button type="button" class="word" data-fund="close">Close</button></div>' +
+      (r ? '<p class="note" id="cw-fund-who">' + esc(r.name) + (r.district ? ", " + esc(r.district) : "") + "</p>" +
+        '<table class="facts" aria-label="' + esc(r.name) + ' in Implementation Funding"><colgroup><col style="width:52%"><col style="width:48%"></colgroup><tbody>' +
+        row("Max award", r.total ? money(r.total) + (r.floored ? " (Base)" : r.capped ? " (Cap)" : "") : "TBA") +
+        row("Qualifying now", qual ? (r.total ? money(r.total) : "TBA") : "Held until every minimum condition is met") +
+        row("Minimum conditions met", met + " of " + of) +
+        (S.deadline ? row("Confirmation due", esc(shortDate(S.deadline))) : "") + "</tbody></table>" +
+        '<p class="links" style="margin:0"><button type="button" class="word" data-act="focus">Open the full page</button></p>'
+        : '<p class="note">Choose a college to see its place in Implementation Funding.</p>') + "</aside>";
+  }
   function accessHtml() {
     if (!ACC.rows.length && !ACC.approver) return "";
     var check = '<button type="button" class="word" data-access="check">Check now</button>';
     if (!ACC.rows.length) {
-      return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
+      return '<section class="sec pane accpane" id="cw-acc" aria-labelledby="cw-acc-h"' + (state.accOpen ? "" : " hidden") + '><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
         "No one is waiting. A teammate who is signed out opens this page, enters their work email and chooses Ask an approver; " +
         "the request shows here within half a minute. " + check + "</p></div></section>";
     }
-    return '<section class="sec" aria-labelledby="cw-acc-h"><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
+    return '<section class="sec pane accpane" id="cw-acc" aria-labelledby="cw-acc-h"' + (state.accOpen ? "" : " hidden") + '><div class="sec-h"><h2 id="cw-acc-h">Access requests</h2><p class="note">' +
       "A teammate asked to sign in without the email link. Approve opens the funding and CSM work for 30 days; their open tab signs them in. " + check + "</p></div>" +
       '<ul class="queue" aria-label="Access requests">' + ACC.rows.map(function (x) {
         return '<li><div class="row"><span class="row-name">' + esc(x.name || x.email) + '</span><span class="row-age">' + esc(shortDate(x.requested_at)) +
@@ -1562,7 +1590,7 @@
   function paint() {
     var el = root(); if (!el) return;
     var f = F();
-    if (!f) { el.innerHTML = '<p class="empty">Loading the CSM Workspace&hellip;</p>'; return; }
+    if (!f) { el.innerHTML = '<p class="empty">Loading the Funding Follow-up Dashboard&hellip;</p>'; return; }
     S = f.snapshot();
     if (S.reviewer && !LOG.asked) loadLog();
     if (S.reviewer && CT.state === "idle") loadContacts();
@@ -1571,21 +1599,21 @@
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
-      '<header><div class="top-row"><h1>CSM Workspace</h1><p class="links">' +
-        '<a href="#implementation-funding">Implementation Funding</a></p></div>' +
+      '<header><div class="top-row"><h1>Funding Follow-up Dashboard</h1><p class="links">' + accessWord() +
+        '<button type="button" class="word" data-fund="open" aria-expanded="' + !!state.fund + '" aria-controls="cw-fund">Implementation Funding</button></p></div>' +
         '<div class="rule" aria-hidden="true"></div>' + todayHtml() + "</header>" +
       (S.reviewer ? (GRANT.ok === false ? grantHtml() : accessHtml()) : '<p class="signin">Sign in as a MAP team reviewer to read who sent each request and to accept, deny or follow up. The counts below are the public ones.</p><div id="cw-signin"></div>') +
-      '<section class="sec" aria-labelledby="cw-ac-h"><div class="sec-h"><h2 id="cw-ac-h">Action center</h2><p class="note">' +
-        (S.loaded ? "Read live from the funding tab." : "Loading the requests&hellip;") + "</p></div>" +
+      // The list needs no title and the metrics and the menu count every institution, so the Action center heading and
+      // the four-column board are gone (go-live note, item 13, on Sam's go).
+      '<section class="sec" aria-label="Colleges">' + (S.loaded ? "" : '<p class="note">Loading the requests&hellip;</p>') +
         '<div class="center" id="cw-center" style="' + splitStyle() + '">' + queueHtml() + splitHtml() + '<div id="cw-record">' + recordHtml() + "</div></div></section>" +
-      '<section class="sec" aria-labelledby="cw-bd-h"><h2 id="cw-bd-h">Where the ' + S.rows.length + " stand</h2>" + boardHtml() + "</section>" +
-      '<footer class="foot"><span>The workspace never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
-        '<a href="#implementation-funding">Implementation Funding</a></footer>' +
+      '<footer class="foot"><span>The dashboard never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
+        '<a href="#implementation-funding">Open Implementation Funding</a></footer>' + fundHtml() +
       "</div></div></div>";
     if (dlgHost) el.appendChild(dlgHost);
     var sm = document.getElementById("cw-signin");
     if (sm && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
-      window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the CSM Workspace", door: true,
+      window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the Funding Follow-up Dashboard", door: true,
         blurb: "Email me a link sends a one-time sign-in link. When it does not arrive, Ask an approver: one of the funding approvers approves from this page, and this tab signs you in. Either way the workspace knows it is you." });
     }
     if (S.reviewer && !ACC.asked) loadAccess();
@@ -1708,6 +1736,13 @@
     if (!t || !root().contains(t)) return;
     if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review") state.side = ""; paintRecord(); var h = document.getElementById("cw-recname");
       if (h && t.classList.contains("chip")) h.focus(); return; }
+    if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
+    if (t.hasAttribute("data-fund")) {
+      state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
+      paint();
+      var fh = root().querySelector(state.fund ? "#cw-fund-h" : '[data-fund="open"]'); if (fh) fh.focus();
+      return;
+    }
     if (t.hasAttribute("data-side")) {
       var sk = t.getAttribute("data-side");
       state.side = state.side === sk ? "" : sk;
@@ -1718,7 +1753,6 @@
       return;
     }
     if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
-    if (t.hasAttribute("data-stage")) { var s = t.getAttribute("data-stage"); state.view = s === "waiting" ? "review" : s; state.sel = null; paint(); return; }
     if (t.hasAttribute("data-close")) { closeDialog(); return; }
     if (t.hasAttribute("data-pop")) {
       var pr = rowOf(state.sel); if (!pr) return;
@@ -1833,7 +1867,7 @@
 
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
-  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.mailEdit = {}; LOG.asked = false; }
+  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.mailEdit = {}; state.fund = false; state.accOpen = false; LOG.asked = false; }
   /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
      #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
   function arrive() {
@@ -1851,6 +1885,12 @@
       wired = true;
       el.addEventListener("click", onClick);
       el.addEventListener("keydown", onSplitKey);
+      // Escape closes the funding drawer and returns to the word that opened it.
+      el.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape" || !state.fund) return;
+        state.fund = false; paint();
+        var fo = root().querySelector('[data-fund="open"]'); if (fo) fo.focus();
+      });
       el.addEventListener("pointerdown", onSplitDown);
       el.addEventListener("change", onChange);
       el.addEventListener("input", onInput);

@@ -140,7 +140,7 @@
             : r && r.why === "busy" ? "Many requests are waiting. Try again in a few minutes." : "The request did not go through. Check the address and try again." };
         }
         doorWrite({ id: r.id || null, secret: secret, hash: h, email: email, at: Date.now(),
-          msg: "Asked. If this address is on the MAP team, an approver will see it in the CSM Workspace. Keep this tab open: it signs you in when one of them approves.", kind: "ok" });
+          msg: "Asked. If this address is on the MAP team, an approver will see it in the Funding Follow-up Dashboard. Keep this tab open: it signs you in when one of them approves.", kind: "ok" });
         startDoorPoll();
         return { ok: true };
       });
