@@ -103,16 +103,19 @@ const NUDGE_SRC = fs.readFileSync(path.join(__dirname, "..", "cpl_funding_nudge.
     check("1p: no one on file: the box is disabled and the row says so in words",
       box("D College").disabled && /No one on file/.test(box("D College").closest("tr").textContent));
     const eRow = box("E College").closest("tr");
-    check("1q: a declined institution is grayed, starts unchecked, and its box overrides",
-      !box("E College").checked && !box("E College").disabled && eRow.classList.contains("cplfund-nudge-off") &&
-        /Declined participation, October 30, 2026\. Check the box to nudge anyway\./.test(eRow.textContent));
+    // No decline piece (Sam, 2026-11-09). The fixture still hands E College the old `declined` field, as a stale
+    // caller would: the window ignores it.
+    check("1q: ⭐ a row handed the old declined field draws like any other: checked, not grayed, no decline words",
+      box("E College").checked && !box("E College").disabled && !eRow.classList.contains("cplfund-nudge-off") &&
+        !/declin/i.test(dlg.textContent));
     click(dlg.querySelector("[data-nudgenone]"));
     check("1r: Clear all unchecks every box", !dlg.querySelectorAll("input[data-nudgepick]:checked").length &&
       /^0 of 5 checked, 0 recipients$/.test(dlg.querySelector("[data-nudgecount]").textContent));
     click(dlg.querySelector("[data-nudgeall]"));
-    check("1s: Select all checks every institution with someone on file and leaves the declined one unchecked",
-      box("A College").checked && box("B College").checked && box("Calbright").checked && !box("E College").checked &&
-        /^3 of 5 checked, 4 recipients$/.test(dlg.querySelector("[data-nudgecount]").textContent));
+    check("1s: Select all checks every institution with someone on file",
+      box("A College").checked && box("B College").checked && box("Calbright").checked && box("E College").checked &&
+        !box("D College").checked && /^4 of 5 checked, \d+ recipients$/.test(dlg.querySelector("[data-nudgecount]").textContent),
+      dlg.querySelector("[data-nudgecount]").textContent);
     box("B College").checked = false; fire(box("B College"), "change");
     box("E College").checked = true; fire(box("E College"), "change");
     const ceo = dlg.querySelector('input[data-nudgerole="ceo"]');
@@ -159,28 +162,24 @@ const NUDGE_SRC = fs.readFileSync(path.join(__dirname, "..", "cpl_funding_nudge.
   T._setElig({ coordOk: true, coord: {}, optinRow: opt });
   check("2d: a waiting request counts as sent", !T._nudgeInstitutions().some((r) => r.key === first.key && r.missing.indexOf("part") >= 0));
 
-  // Declined participation (Sam, 2026-10-31): a reviewer's mark on the notes row, a word on the
-  // college row, and the date Nudge shows.
+  // No decline piece (Sam, 2026-11-09: "we really don't need a college declining piece at all"). A notes row that
+  // still carried the old mark draws no word, reaches Nudge as nothing, and the drill-in offers no control.
   T._setElig({ coordOk: true, coord: {}, optinRow: {} });
   const notes = {}; notes[first.key] = { college: first.key, note: null, declined_at: "2026-10-30T18:00:00Z", declined_by: "co@cccco.edu" };
   T._setNotes(notes);
   T.render();
   const rowB = Array.from(docB.querySelectorAll("tr[data-id]")).find((tr) => tr.getAttribute("data-id") === "c:" + first.key);
-  check("2g: a declined college's row carries the word Declined for a reviewer",
-    !!rowB && !!rowB.querySelector(".cf-declined") && rowB.querySelector(".cf-declined").textContent === "Declined");
-  check("2h: Nudge receives the declined date in words",
-    (T._nudgeInstitutions().find((r) => r.key === first.key) || {}).declined === "October 30, 2026");
+  check("2g: ⭐ a reviewer's row carries no Declined word", !!rowB && !rowB.querySelector(".cf-declined") && !/Declined/.test(rowB.textContent));
+  const nudged = T._nudgeInstitutions().find((r) => r.key === first.key) || {};
+  check("2h: Nudge still lists the college, with no declined field", nudged.key === first.key && !("declined" in nudged));
   rowB.querySelector(".cplfund-caret").dispatchEvent(new b.window.MouseEvent("click", { bubbles: true }));
-  const clr = docB.querySelector('[data-declineclear="' + first.key + '"]');
-  check("2i: the drill-in says who noted it and offers Clear",
-    !!clr && /Declined participation, October 30, 2026, noted by co@cccco\.edu\./.test(clr.parentNode.textContent));
-  clr.dispatchEvent(new b.window.MouseEvent("click", { bubbles: true }));
-  check("2j: Clear removes the mark; the drill-in then offers Mark as declined participation",
-    !(T._nudgeInstitutions().find((r) => r.key === first.key) || {}).declined &&
-      !!docB.querySelector('[data-declineset="' + first.key + '"]'));
-  docB.querySelector('[data-declineset="' + first.key + '"]').dispatchEvent(new b.window.MouseEvent("click", { bubbles: true }));
-  check("2k: Mark as declined participation sets it again, dated today",
-    !!(T._nudgeInstitutions().find((r) => r.key === first.key) || {}).declined);
+  const detB = docB.querySelector("tr.cplfund-detail");
+  check("2i: the drill-in keeps the CO Monitor's note and offers no decline control",
+    !!detB && !!detB.querySelector("textarea[data-note]") && !docB.querySelector("[data-declineset], [data-declineclear]") &&
+      !/declined participation/i.test(detB.textContent));
+  check("2j: the funding tab holds no decline writer, and the notes read asks for the note alone",
+    !/setDeclined|declinedOf|data-declineset|data-declineclear/.test(consumerSrc) &&
+      /"\?select=college,note,updated_by,updated_at"/.test(consumerSrc));
 
   const c = freshDom();
   c.window.CPL_SESSION = session;

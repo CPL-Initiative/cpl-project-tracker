@@ -444,8 +444,6 @@
   }
   function isSent(r, tpl) { return !!(state.sent || {})[r.key + "|" + tpl] || !!lastSent(r, tpl); }
   function readyOf(r) {
-    // No one marks a decline any more (Sam, 2026-11-09); a mark already on a notes row still keeps its college out.
-    if (r.declined) return null;
     if (waitingKinds(r).length) return "wait";
     // state.sent bridges the moment between a Sent that saved and the log's re-read.
     if (r.part.confirmed && !isSent(r, "accept")) return "accept";
