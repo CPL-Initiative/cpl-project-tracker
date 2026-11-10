@@ -160,3 +160,9 @@ The two paragraphs below left `docs/reference/lanes/csm-workspace.md` verbatim t
   required reviewer (Sam's 2026-10-13 call), which COBIx raised; it is his setting.
 - **COBIx's workflow reads skipped** (`COBIX_REVIEW_ENABLED` is off), yet `cobi-cto` comments arrive about ten minutes
   after a PR opens. Read the PR's comments before merging, not the check list.
+
+## 2026-11-10 (S633 SkySilverDollar): the side menu on the live site
+
+- **The live menu reads *Funding Follow-up Dashboard*.** The served `index.html` carries the label, and `cobi_nav` (54
+  rows, read 17:40Z) holds no `csm-workspace` row, so no name stored in the Admin tab masks it. The served
+  `csm_workspace.js` carries `tplHtml` and `sideOf`. The NEXT 0 line that asked for this check left the lane.
