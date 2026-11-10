@@ -108,10 +108,24 @@ jobs:
             else rm -rf "$d"; fi
           done
           rm -rf _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
+          # Data-write receipts (Rule 10 a2): the rollback record, read in the repo, never by a
+          # page. 2.0 GB of the 2.9 GB site on 2026-11-10, when the deploy's sync began timing out
+          # (COBIx on #3077: the artifact was 1.6 GB, over Pages' 1 GB published-site limit).
+          rm -rf _site/kb/receipts
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
           # root .nojekyll; this is belt + braces).
           touch _site/.nojekyll
           echo "Assembled _site: $(du -sh _site | cut -f1) ($(find _site -type f | wc -l) files)"
+          # GitHub documents a 1 GB limit for a published Pages site, and a sync near it outlasts
+          # deploy-pages' wait (2026-11-10). Fail over 1000 MB; warn over 800 MB, so a growing
+          # site is noticed before it fails.
+          mb=$(du -sm _site | cut -f1)
+          if [ "$mb" -gt 1000 ]; then
+            echo "::error::_site is ${mb} MB, over GitHub Pages' 1 GB limit. Prune what the browser never fetches (du -sh _site/* | sort -h)."
+            exit 1
+          elif [ "$mb" -gt 800 ]; then
+            echo "::warning::_site is ${mb} MB, nearing GitHub Pages' 1 GB limit. du -sh _site/* | sort -h names the largest paths."
+          fi
 
       # Cache-bust the published assets. Sam, 2026-08-22: "I fear users may be
       # looking at stale screens." index.html shipped 38 <script> tags with no
@@ -231,3 +245,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        # The default wait is 10 minutes; a large site's sync outlasted it on 2026-11-10 (COBIx on #3077).
+        with:
+          timeout: 1800000
