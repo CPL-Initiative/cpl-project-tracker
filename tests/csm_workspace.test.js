@@ -519,6 +519,33 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     /dispatchEvent\(new CustomEvent\("cpl-funding-door-said"/.test(require("fs").readFileSync("reviewer_signin.js", "utf8")));
 }
 
+// ── 13y. the queue and the record share a divider a reader moves (Sam, 2026-11-10: "can you make the big side by side
+//         window on the various views resizable horizontally") ─────────────────────────────────────────────────
+{
+  const { window, W, root } = setup({ signedIn: true });
+  const grip = () => root.querySelector("#cw-split"), center = () => root.querySelector("#cw-center");
+  check("13y-a: the divider sits between the queue and the record, a separator a keyboard reaches",
+    !!grip() && grip().getAttribute("role") === "separator" && grip().getAttribute("tabindex") === "0" &&
+    grip().previousElementSibling.id === "cw-queue" && grip().nextElementSibling.id === "cw-record" &&
+    grip().getAttribute("aria-controls") === "cw-queue" &&   // the value is the queue's share, so the queue is what it controls
+    grip().getAttribute("aria-valuenow") === "42" && /--cw-q:42fr; --cw-r:58fr/.test(center().getAttribute("style")));
+  const key = (k) => grip().dispatchEvent(new window.KeyboardEvent("keydown", { key: k, bubbles: true, cancelable: true }));
+  key("ArrowRight"); key("ArrowRight");
+  check("13y-b: Right widens the queue two points a step, and the record takes the rest",
+    W._split() === 46 && /--cw-q:46fr; --cw-r:54fr/.test(center().getAttribute("style")) && grip().getAttribute("aria-valuenow") === "46");
+  W.paint();
+  check("13y-c: a repaint keeps the divider where the reader put it", /--cw-q:46fr/.test(center().getAttribute("style")));
+  check("13y-d: the place is kept for the next visit, as a column width is", window.localStorage.getItem("cplCsmSplit") === "46");
+  for (let i = 0; i < 40; i++) key("ArrowLeft");
+  check("13y-e: it stops at a quarter of the width, so neither side closes", W._split() === 25);
+  key("Home");
+  check("13y-f: Home puts it back", W._split() === 42 && window.localStorage.getItem("cplCsmSplit") === null);
+  check("13y-h: the drag measures against the width the two shares split, and follows only the pointer that began it (the source)",
+    /\(ev\.clientX - r\.left - PAD \/ 2\) \/ w \* 100/.test(SRC) && /if \(ev\.pointerId === e\.pointerId\) setSplit/.test(SRC) && /"lostpointercapture"/.test(SRC));
+  check("13y-g: on a narrow screen the divider leaves and the panes stack (the source)",
+    /\.center \{ grid-template-columns:minmax\(0, 1fr\); gap:16px; \} #tab-csm-workspace \.split \{ display:none; \}/.test(SRC));
+}
+
 // ── 14. every menu label carries the count of the list it opens (the walkthrough with Malone, 2026-11-09: "a count
 //        beside each label so a CSM can pick a queue without opening it"; Sam's rule, 2026-11-05: a figure opens what
 //        it counts). The cards are gone, so the menu and Today carry every figure. ─────────────────────────────────
