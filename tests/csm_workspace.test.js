@@ -526,7 +526,8 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   const grip = () => root.querySelector("#cw-split"), center = () => root.querySelector("#cw-center");
   check("13y-a: the divider sits between the queue and the record, a separator a keyboard reaches",
     !!grip() && grip().getAttribute("role") === "separator" && grip().getAttribute("tabindex") === "0" &&
-    grip().previousElementSibling.classList.contains("pane") && grip().nextElementSibling.id === "cw-record" &&
+    grip().previousElementSibling.id === "cw-queue" && grip().nextElementSibling.id === "cw-record" &&
+    grip().getAttribute("aria-controls") === "cw-queue" &&   // the value is the queue's share, so the queue is what it controls
     grip().getAttribute("aria-valuenow") === "42" && /--cw-q:42fr; --cw-r:58fr/.test(center().getAttribute("style")));
   const key = (k) => grip().dispatchEvent(new window.KeyboardEvent("keydown", { key: k, bubbles: true, cancelable: true }));
   key("ArrowRight"); key("ArrowRight");
@@ -539,6 +540,8 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("13y-e: it stops at a quarter of the width, so neither side closes", W._split() === 25);
   key("Home");
   check("13y-f: Home puts it back", W._split() === 42 && window.localStorage.getItem("cplCsmSplit") === null);
+  check("13y-h: the drag measures against the width the two shares split, and follows only the pointer that began it (the source)",
+    /\(ev\.clientX - r\.left - PAD \/ 2\) \/ w \* 100/.test(SRC) && /if \(ev\.pointerId === e\.pointerId\) setSplit/.test(SRC) && /"lostpointercapture"/.test(SRC));
   check("13y-g: on a narrow screen the divider leaves and the panes stack (the source)",
     /\.center \{ grid-template-columns:minmax\(0, 1fr\); gap:16px; \} #tab-csm-workspace \.split \{ display:none; \}/.test(SRC));
 }

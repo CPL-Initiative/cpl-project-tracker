@@ -656,7 +656,7 @@
   }
   function splitStyle() { var p = splitPct(); return "--cw-q:" + p + "fr; --cw-r:" + (100 - p) + "fr"; }
   function splitHtml() {
-    return '<div class="split" id="cw-split" role="separator" tabindex="0" aria-orientation="vertical" aria-controls="cw-record" ' +
+    return '<div class="split" id="cw-split" role="separator" tabindex="0" aria-orientation="vertical" aria-controls="cw-queue" ' +
       'aria-label="Resize the queue and the record. Left and Right arrows move it, Home puts it back." ' +
       'aria-valuemin="' + SPLIT_MIN + '" aria-valuemax="' + SPLIT_MAX + '" aria-valuenow="' + splitPct() + '"></div>';
   }
@@ -673,13 +673,21 @@
     var c = document.getElementById("cw-center"); if (!c) return;
     e.preventDefault();
     try { t.setPointerCapture(e.pointerId); } catch (err) { /* no capture: the document listeners carry the drag */ }
-    function at(ev) { var r = c.getBoundingClientRect(); return r.width ? (ev.clientX - r.left) / r.width * 100 : splitPct(); }
-    function move(ev) { setSplit(at(ev), false); }
+    // The two shares split what is left after the 12px divider and its two 4px gaps, so the pointer is measured
+    // against that width: the divider stays under it (COBIx on PR 3013).
+    var PAD = 20;
+    function at(ev) { var r = c.getBoundingClientRect(), w = r.width - PAD; return w > 0 ? (ev.clientX - r.left - PAD / 2) / w * 100 : splitPct(); }
+    // Only the pointer that started the drag moves or ends it, as the Commons Lists' panel grip does.
+    function move(ev) { if (ev.pointerId === e.pointerId) setSplit(at(ev), false); }
+    var ENDS = ["pointerup", "pointercancel", "lostpointercapture"];
     function up(ev) {
-      document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", up); document.removeEventListener("pointercancel", up);
-      setSplit(ev && ev.clientX != null ? at(ev) : splitPct());
+      if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+      document.removeEventListener("pointermove", move);
+      ENDS.forEach(function (n) { document.removeEventListener(n, up); t.removeEventListener(n, up); });
+      setSplit(ev && ev.clientX != null && ev.type === "pointerup" ? at(ev) : splitPct());
     }
-    document.addEventListener("pointermove", move); document.addEventListener("pointerup", up); document.addEventListener("pointercancel", up);
+    document.addEventListener("pointermove", move);
+    ENDS.forEach(function (n) { document.addEventListener(n, up); t.addEventListener(n, up); });
   }
   function queueHtml() {
     var list = shownRows(), v = VIEWS[state.view] || VIEWS.open;
@@ -691,7 +699,7 @@
         return '<option value="' + k + '"' + (k === state.view ? " selected" : "") + ">" + esc(VIEWS[k].label) + " (" + S.rows.filter(VIEWS[k].keep).length + ")</option>";
       }).join("") + "</optgroup>";
     }).join("");
-    return '<div class="pane" aria-labelledby="cw-q-h"><div class="pane-h">' +
+    return '<div class="pane" id="cw-queue" aria-labelledby="cw-q-h"><div class="pane-h">' +
       // The view's name follows the count in lower case, except a name that opens on an acronym (CPL, MAP keep theirs).
       '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.label.replace(/^[A-Z][a-z]+/, function (m) { return m.toLowerCase(); })) + "</p>" +
       '<label class="sr" for="cw-view">Show</label><select id="cw-view" class="search" data-view-select="1">' + opts + "</select>" +
