@@ -451,6 +451,28 @@ function cellText(li, title) {
     check("queue 6: the routines' items sit apart, under The routines carry, never in a reason box",
       /The routines carry/.test(txt(sec.querySelector(".cmn-carried"))) && /3,349 active programs with no record yet/.test(txt(sec.querySelector(".cmn-carried")))
       && !/no record yet/.test(Array.prototype.map.call(sec.querySelectorAll(".cmn-reason"), txt).join(" ")));
+    check("stalled 1: a file with no stalled routine draws no box for one, and the fold word says nothing of it",
+      !sec.querySelector('[data-reason="stalled"]') && !/stalled/.test(txt(sec.querySelector(".cmn-fold-word"))));
+    {
+      const withS = JSON.parse(JSON.stringify(withQ));
+      withS.queue.stalled = [
+        { ref: "requirements", title: "Program Requirements", kind: "not_shrinking", n: 3289, was: 3289, since: "2026-11-03", words: "active programs whose record fails a check", owner: "the college's reading procedure", open: "#program-requirements/list/fail" },
+        { ref: "course", title: "Common Course Reference", kind: "stopped", what: "the auditor", since: "2026-11-03T06:00:00Z", every_hours: 24, open: "#coci-lookup" },
+        { ref: "course", title: "Common Course Reference", kind: "not_shrinking", n: 5800, was: 5750, since: "2026-11-03", words: "blank descriptions", open: "#coci-lookup/list/nodesc" }];
+      const s2 = load({ fetch: responder({ "kb/status/commons.json": withS, "kb/status/program-requirements.json": PR_LOG }) });
+      await s2.M.boot();
+      const box = s2.d.querySelector('.cmn-queue [data-reason="stalled"]');
+      const lis = box ? Array.prototype.map.call(box.querySelectorAll("li"), txt) : [];
+      check("stalled 2: the box draws after the four reasons, headed in plain words, courses before programs",
+        box && txt(box.querySelector(".cmn-reason-h")) === "A routine has stalled" && lis.length === 3 && /^Common Courses/.test(lis[0]) && /^Common Programs/.test(lis[2]));
+      check("stalled 3: a stopped routine names what stopped, when it last ran and its cadence, and links the reference",
+        /the auditor last ran Nov \d+, .+; it runs daily\.$/.test(lis[0]) && box.querySelector('[data-stalled="stopped"] a').getAttribute("href") === "#coci-lookup");
+      check("stalled 4: a backlog that grew says what it was; one that held says the same count, each with its date and a linked count",
+        /5,800 blank descriptions, up from 5,750 on Nov 3\.$/.test(lis[1]) && /3,289 active programs whose record fails a check, the same count as on Nov 3\.$/.test(lis[2])
+        && box.querySelectorAll('[data-stalled="not_shrinking"] a')[1].getAttribute("href") === "#program-requirements/list/fail");
+      check("stalled 5: the fold word counts the stalled routines",
+        /, 3 stalled routines/.test(txt(s2.d.querySelector(".cmn-queue .cmn-fold-word"))));
+    }
     check("queue 7: the queue sits after the decisions band and before the filter words",
       (function () { const kids = Array.prototype.slice.call(q.d.querySelector(".cmn-wrap").children);
         const iq = kids.indexOf(sec), ib = kids.indexOf(q.d.querySelector(".cmn-band")), iff = kids.indexOf(q.d.querySelector(".cmn-filter-row"));

@@ -11,6 +11,7 @@ Run from the repo root: python3 tests/commons_status_build_test.py
 """
 import importlib.util
 import json
+import re
 import os
 import subprocess
 import sys
@@ -263,6 +264,39 @@ check("an issue that names no reason lands under unsorted, so it cannot hide",
       [i["words"] for i in probe.get("unsorted", [])] == ["a new issue"])
 check("an unread issue keeps its null and its error in the queue",
       probe["reasons"][1]["items"] == [{"ref": "x", "title": "X", "n": None, "words": "an unread one", "owner": None, "open": None, "error": "E"}])
+
+# ── a stalled routine (S624): a stamp past its cadence, or a routine's backlog as large as a week before ──
+check("the queue carries the stalled list, and it names only the two measured kinds",
+      isinstance(q.get("stalled"), list) and all(x.get("kind") in ("stopped", "not_shrinking") for x in q["stalled"]), q.get("stalled"))
+srows = [{"key": "course", "title": "C", "tab": "#c", "machine": {"what": "the auditor", "at": "2026-11-08T00:00:00Z", "every_hours": 24},
+          "issues": [{"n": 50, "words": "flat ones", "carry": "routine", "open": "#c/flat"},
+                     {"n": 40, "words": "shrinking ones", "carry": "routine", "open": "#c/down"},
+                     {"n": 9, "words": "grown ones on 12 cards", "carry": "routine", "open": "#c/up"},
+                     {"n": 70, "words": "a person's", "carry": "unsure", "open": "#c/p"},
+                     {"n": 5, "words": "new today", "carry": "routine", "open": "#c/new"}]},
+         {"key": "cr", "title": "R", "tab": "#r", "machine": {"what": "on dispatch", "at": "2026-01-01T00:00:00Z", "every_hours": None}, "issues": []}]
+shist = {"schema": 1, "days": {
+    "2026-11-01": {"course|#c/flat|flat ones": 50, "course|#c/down|shrinking ones": 60, "course|#c/up|grown ones on # cards": 7, "course|#c/p|a person's": 70},
+    "2026-11-06": {"course|#c/flat|flat ones": 49, "course|#c/down|shrinking ones": 30, "course|#c/up|grown ones on # cards": 99}}}
+st = B.build_stalled(srows, shist, "2026-11-08T12:00:00Z")
+check("a routine within its cadence and slack is not stopped; a routine on dispatch never is", [x for x in st if x["kind"] == "stopped"] == [], st)
+st2 = B.build_stalled(srows, shist, "2026-11-09T12:30:00Z")
+check("a stamp older than 1.5 cadences reads stopped, with what stopped, since when, its cadence and where it opens",
+      [x for x in st2 if x["kind"] == "stopped"] == [{"ref": "course", "title": "C", "kind": "stopped", "what": "the auditor",
+                                                     "since": "2026-11-08T00:00:00Z", "every_hours": 24, "open": "#c"}], st2)
+ns = {x["words"]: x for x in st if x["kind"] == "not_shrinking"}
+check("a backlog as large as seven days before stalls; a smaller one, a person's item and one with no reading that old do not",
+      sorted(ns) == ["flat ones", "grown ones on 12 cards"], sorted(ns))
+check("the comparison is the latest reading at least seven days old, never a nearer one, and a figure in the words does not break the key",
+      ns.get("flat ones", {}).get("was") == 50 and ns["flat ones"]["since"] == "2026-11-01" and ns.get("grown ones on 12 cards", {}).get("was") == 7, ns)
+check("a build with no history says nothing has stopped shrinking", [x for x in B.build_stalled(srows, {"days": {}}, "2026-11-08T12:00:00Z") if x["kind"] == "not_shrinking"] == [])
+rh = B.record_history({"days": {"2026-%02d-%02d" % (m, d): {} for m in (8, 9, 10) for d in range(1, 29)}}, "2026-11-08", B.routine_readings(srows))
+check("the history keeps one entry a day, the routines' counts alone, and the last %d days" % B.HISTORY_KEEP_DAYS,
+      len(rh["days"]) == B.HISTORY_KEEP_DAYS and max(rh["days"]) == "2026-11-08" and "course|#c/p|a person's" not in rh["days"]["2026-11-08"]
+      and rh["days"]["2026-11-08"]["course|#c/up|grown ones on # cards"] == 9, sorted(rh["days"])[-2:])
+hist_file = json.load(open(os.path.join(ROOT, B.HISTORY), encoding="utf-8")) if os.path.exists(os.path.join(ROOT, B.HISTORY)) else None
+check("the committed history is the builder's shape: day keys, and whole-number counts",
+      hist_file and all(re.match(r"^\d{4}-\d{2}-\d{2}$", d) and all(isinstance(v, int) for v in r.values()) for d, r in hist_file["days"].items()))
 
 # ── the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward ──
 conf = {c.get("ref"): c for c in data.get("confidence", [])}

@@ -1,0 +1,35 @@
+{
+ "days": {
+  "2026-11-04": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 3380,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 3349
+  },
+  "2026-11-05": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 3380,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 3349
+  },
+  "2026-11-06": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 3379,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 3349
+  },
+  "2026-11-07": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 3348,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 3339
+  },
+  "2026-11-09": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 3289,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 3339
+  },
+  "2026-11-10": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 3289,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 3339
+  }
+ },
+ "schema": 1
+}

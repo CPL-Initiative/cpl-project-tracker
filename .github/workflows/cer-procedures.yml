@@ -114,6 +114,7 @@ jobs:
           git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
           git add kb/exhibits_sweep.json 2>/dev/null || true
           git add kb/status/commons.json 2>/dev/null || true
+          git add kb/status/commons_history.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

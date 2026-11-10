@@ -387,7 +387,7 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
       primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu", vpaa: "Val Price", vpaa_email: "val@pasadena.edu" }],
     landing: [], users: [] });
-  const nudgeKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && !r.declined && r.key !== COLLEGE).key;
+  const nudgeKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
   check("10a: waiting reads Accept first, confirmed with no receipt the acceptance, not yet confirmed the nudge",
     W._readyOf(COLLEGE) === "wait" && W._readyOf(OTHER) === "accept" && W._readyOf(nudgeKey) === "nudge");
   W._state.view = "send"; W._state.sel = null; W.paint();
@@ -595,11 +595,11 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("14x-b: To do holds the work queues, in the agreed order", vals(groups()[0]) === "open,send,review,due,held,nc,notyet");
   check("14x-c: Browse holds the lists, the two coordinator lists among them (status only; Sam chases); no Declined list",
     vals(groups()[1]) === "qual,confirmed,coordmet,ncmet,coord,nocoord,all");
-  // A mark already on a notes row (none exists today) still keeps its college out of Ready to send.
+  // Nothing reads a decline mark any more (S624): a row handed the old field stays in Ready to send.
   const anyKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
   const before = W._readyOf(anyKey);
   W._snapshot().rows.find((r) => r.key === anyKey).declined = "2026-11-01";
-  check("14x-c2: a decline mark already on file keeps its college out of Ready to send", before === "nudge" && W._readyOf(anyKey) === null);
+  check("14x-c2: a row handed the old declined field stays in Ready to send", before === "nudge" && W._readyOf(anyKey) === "nudge");
   delete W._snapshot().rows.find((r) => r.key === anyKey).declined;
   check("14x-d: every option sits in a group", root.querySelectorAll("#cw-view > option").length === 0);
   check("14x-e: the labels keep their names before the count",

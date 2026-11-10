@@ -68,8 +68,27 @@
     unsure: { title: "A procedure is unsure", who: "A person confirms it or fixes it; a note settles a difference for good." },
     reaches: { title: "It moves items another reference relies on", who: "The lead decides, and the move happens in one planned window." },
     keep_call: { title: "It is a keep, retire or rename call", who: "A curator decides, or the lead where a ruling stands." },
-    unsorted: { title: "Not yet sorted", who: "An issue that names no reason. Give it one in the Commons builder." }
+    unsorted: { title: "Not yet sorted", who: "An issue that names no reason. Give it one in the Commons builder." },
+    stalled: { title: "A routine has stalled", who: "The team looks at why, then restarts the routine or gives its backlog a procedure." }
   };
+  /* A stalled routine (the path mock's build, S624): the builder names a routine whose stamp is past its cadence
+     (stopped) and a routine's backlog that counts as many items as it did a week before (not_shrinking). The box
+     draws only when the file carries one, so a quiet week adds nothing to the page. */
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function dayWords(v) {   /* the history's day key, YYYY-MM-DD, in the stamp's own short form */
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || "");
+    return m && MONTHS[+m[2] - 1] ? MONTHS[+m[2] - 1] + " " + (+m[3]) : (v || "the earlier reading");
+  }
+  function stalledItem(i) {
+    var name = (CARDS[i.ref] && CARDS[i.ref].name) || i.title || i.ref;
+    var head = el("span", { cls: "cmn-queue-ref", text: name + ": " });
+    if (i.kind === "stopped") {
+      return el("li", { "data-stalled": "stopped" }, [head, openLink(i.open, i.what || "its routine"),
+        " last ran " + (stampOf(i.since) || "at a time the file does not give") + "; it runs " + cadenceWords(i.every_hours) + "."]);
+    }
+    var moved = typeof i.was === "number" && i.n > i.was ? "up from " + fmt(i.was) + " on " : "the same count as on ";
+    return el("li", { "data-stalled": "not_shrinking" }, [head, count(i.n, i.open), " " + (i.words || "") + ", " + moved + dayWords(i.since) + "."]);
+  }
 
   function P() { return window.CPL_COMMONS_PROGRESS || null; }
 
@@ -494,15 +513,23 @@
         items.length ? el("ol", { cls: "cmn-steps" }, items.map(queueItem)) : el("p", { cls: "cmn-quiet", text: "Nothing waits here." })
       ]);
     });
+    var stalled = Array.isArray(q.stalled) ? q.stalled : [];
+    if (stalled.length) {
+      boxes.push(el("div", { cls: "cmn-reason", "data-reason": "stalled" }, [
+        el("h4", { cls: "cmn-reason-h", text: REASONS.stalled.title }),
+        el("p", { cls: "cmn-reason-who", text: REASONS.stalled.who }),
+        el("ol", { cls: "cmn-steps" }, inProcessOrder(stalled).map(stalledItem))
+      ]));
+    }
     var carried = Array.isArray(q.carried) ? q.carried : [];
     /* Folded (#2921, the first view leads with one small batch): the pools stay one word away, never on the first screen. */
     var pooled = 0;
     groups.forEach(function (g) { (g.items || []).forEach(function (i) { if (typeof i.n === "number") pooled += i.n; }); });
     return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
       el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
-      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
+      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons, or when a routine stalls. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
       el("details", { cls: "cmn-fold" }, [
-        el("summary", { cls: "cmn-fold-word", text: "Show the " + fmt(pooled) + " items in the pools" + (carried.length ? ", and what the routines carry" : "") }),
+        el("summary", { cls: "cmn-fold-word", text: "Show the " + fmt(pooled) + " items in the pools" + (stalled.length ? ", " + fmt(stalled.length) + (stalled.length === 1 ? " stalled routine" : " stalled routines") : "") + (carried.length ? ", and what the routines carry" : "") }),
         el("div", { cls: "cmn-queue-grid" }, boxes),
         carried.length ? el("div", { cls: "cmn-carried" }, [el("h4", { cls: "cmn-reason-h", text: "The routines carry" }), el("ul", null, inProcessOrder(carried).map(queueItem))]) : null
       ].filter(Boolean))

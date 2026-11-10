@@ -130,14 +130,13 @@
     }
     return { to: [], person: "", step: "" };
   }
-  // institutions: [{ key, name, aliases, missing: ["part"|"nc"], declined: "" | its date in words }]
+  // institutions: [{ key, name, aliases, missing: ["part"|"nc"] }]
   // contacts: map_college_contacts rows. One entry per institution with its primary contact.
   function pick(institutions, contacts) {
     var by = indexByName(contacts);
     return (institutions || []).map(function (inst) {
       var p = primaryOf(rowsOf(inst, by));
-      return { key: inst.key, name: inst.name, missing: inst.missing.slice(), declined: inst.declined || "",
-        to: p.to, person: p.person, step: p.step };
+      return { key: inst.key, name: inst.name, missing: inst.missing.slice(), to: p.to, person: p.person, step: p.step };
     });
   }
   // Everyone the checked roles reach at one institution: [{ email, name, role }], one entry an
@@ -251,17 +250,16 @@
   }
   function rowHtml(x, checked) {
     var i = x.inst, can = x.recips.length > 0;
-    var miss = esc(missingText(i.missing)) +
-      (i.declined ? "<br>Declined participation, " + esc(i.declined) + ". Check the box to nudge anyway." : "");
-    return "<tr" + (i.declined || !can ? ' class="cplfund-nudge-off"' : "") + ">" +
+    var miss = esc(missingText(i.missing));
+    return "<tr" + (!can ? ' class="cplfund-nudge-off"' : "") + ">" +
       '<td><input type="checkbox" data-nudgepick="' + esc(i.key) + '"' + (checked && can ? " checked" : "") +
         (can ? "" : " disabled") + ' aria-label="Nudge ' + esc(i.name) + '"></td>' +
       '<th scope="row">' + esc(i.name) + "</th>" +
       '<td class="cplfund-nudge-miss">' + miss + "</td><td>" + whoHtml(x.recips) + "</td></tr>";
   }
   function tableHtml(rows, checked) {
-    // Those who can be nudged first, the declined next, those with no one on file last.
-    var rank = function (x) { return x.recips.length ? (x.inst.declined ? 1 : 0) : 2; };
+    // Those who can be nudged first, those with no one on file last.
+    var rank = function (x) { return x.recips.length ? 0 : 1; };
     var sorted = rows.slice().sort(function (a, b) { return rank(a) - rank(b); });
     return '<div class="cplfund-nudge-wrap" role="region" aria-label="Institutions to nudge" tabindex="0">' +
       '<table class="cplfund-nudge-table"><caption class="cplfund-sr-only">Institutions to nudge: a box to include ' +
@@ -275,11 +273,9 @@
     var n = rows.length;
     var part = rows.filter(function (x) { return x.inst.missing.indexOf("part") >= 0; }).length;
     var nc = rows.filter(function (x) { return x.inst.missing.indexOf("nc") >= 0; }).length;
-    var dec = rows.filter(function (x) { return x.inst.declined; }).length;
     var none = rows.filter(function (x) { return !x.recips.length; }).length;
     return n + (n === 1 ? " institution has" : " institutions have") + " not yet sent what the funding asks: " +
       part + " a participation confirmation, " + nc + " a noncredit attestation." +
-      (dec ? " " + dec + " declined participation and start unchecked." : "") +
       (none ? " " + none + " have no one on file for the checked roles." : "");
   }
   function countText(rows, checked) {
@@ -386,8 +382,7 @@
         rows = insts.map(function (inst) { return { inst: inst, recips: recipients(inst, roles, data) }; });
       }
       build();
-      // A declined institution starts unchecked; its box is the override.
-      rows.forEach(function (x) { checked[x.inst.key] = !x.inst.declined && x.recips.length > 0; });
+      rows.forEach(function (x) { checked[x.inst.key] = x.recips.length > 0; });
       body.innerHTML = rolesHtml(roles, usersOk) +
         '<p class="cplfund-nudge-sum" role="status" data-nudgesum="1"></p>' +
         '<div class="cplfund-nudge-bar"><button type="button" class="cplfund-optbtn" data-nudgeall="1">Select all</button>' +
@@ -399,7 +394,7 @@
           esc(EMAIL_DEFAULT) + "</textarea>" +
         '<p id="cplfund-nudge-help" class="dk cplfund-maildlg-msg">The first line is the subject. {name}, {college}, ' +
         "{missing} and {deadline} fill in for each recipient. Select all checks every institution that has someone on " +
-        "file and has not declined participation; a declined one is nudged only when its own box is checked. Download " +
+        "file. Download " +
         "for mail merge saves one row a recipient of the checked institutions, the filled-in subject and email beside " +
         "each address, for a Word or Outlook mail merge. Copy addresses puts the same addresses on the clipboard for " +
         "one message's Bcc line. COBI sends nothing: your mail program sends, from its own account.</p>";
@@ -425,7 +420,7 @@
         paint();
       });
       body.querySelector("[data-nudgeall]").addEventListener("click", function () {
-        rows.forEach(function (x) { checked[x.inst.key] = !x.inst.declined && x.recips.length > 0; });
+        rows.forEach(function (x) { checked[x.inst.key] = x.recips.length > 0; });
         paint();
       });
       body.querySelector("[data-nudgenone]").addEventListener("click", function () {
