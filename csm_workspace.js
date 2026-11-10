@@ -304,6 +304,7 @@
       "#tab-csm-workspace .cw-fold[hidden] { display:none; }",
       // A popup sits over the page, so its ground is opaque in both themes (dark --surface is translucent glass).
       "#tab-csm-workspace dialog.cdlg.cdlg { background:var(--cw-dialog); }",
+      "#tab-csm-workspace .rolefield { display:grid; gap:4px; margin:6px 0; max-width:340px; font-weight:600; font-size:.88rem; }",
       "#tab-csm-workspace .signin { margin:0; padding:10px 14px; border-radius:8px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.92rem; }",
       "#tab-csm-workspace .grant .grant-acts { margin:8px 0 2px; }"
     ].concat(RULES).join("\n");
@@ -632,6 +633,10 @@
         var pl = REQ_PILL[it.s], id = pre + "-ck-" + i;
         return '<li class="req"><span><span class="pill ' + pl[0] + '">' + pl[1] + "</span></span><span><b>" + esc(it.t) + '</b><span class="why">' + esc(it.d) +
           (/landing page/i.test(it.t) && r.landing ? " " + landingLink(r, "Open the page to check") : "") + "</span>" +
+          // The role the reviewer confirmed, kept with the acceptance (Sam, 2026-11-10: "I meant for the reviewer to add").
+          (it.s === "check" && /senior administrator/i.test(it.t) ? '<label class="rolefield" for="' + pre + '-role">Their role, as you confirmed it' +
+            '<input id="' + pre + '-role" class="search" type="text" autocomplete="off" maxlength="120" data-role="' + kind + '" value="' +
+            esc((state.roles || {})[gid(r.key, kind)] || "") + '"></label>' : "") +
           (it.s === "check" ? '<label class="ichk" for="' + id + '"><input id="' + id + '" type="checkbox" data-check="' + i + '" data-kind="' + kind + '"' +
             (ch[i] ? " checked" : "") + "> I checked this</label>" : "") + "</span></li>";
       }).join("") + "</ul>" +
@@ -1462,6 +1467,7 @@
     if (!p) return;
     var what = kind === "nc" ? "noncredit attestation" : "participation confirmation";
     var writes = name === "accept" || name === "deny";
+    var role = String((state.roles || {})[gid(r.key, kind)] || "").trim().slice(0, 120);
     if (writes) say(name === "accept" ? "Saving the acceptance…" : "Saving the denial…");
     return Promise.resolve(p).then(function (res) {
       var ok = res === true || !!(res && res.ok);
@@ -1469,7 +1475,7 @@
         say("Not saved: the " + what + " from " + r.name + " is unchanged. Your sign-in may have ended: sign in again and try once more.");
         return false;
       }
-      var entry = name === "accept" ? { kind: "email", body: "Accepted the " + what + "; the acceptance email opened to copy." }
+      var entry = name === "accept" ? { kind: "email", body: "Accepted the " + what + "; the acceptance email opened to copy." + (role ? " Sender's role, as checked: " + role + "." : "") }
         : name === "deny" ? { kind: "note", body: "Denied the " + what + "." + (why && why.length ? " Not met: " + why.join("; ") + "." : "") }
         : name === "follow" ? { kind: "email", body: "Follow-up email on the " + what + " opened to copy.", follow_up_on: plusDays(7) }
         : { kind: "email", body: "The acceptance email for the " + what + " opened again to copy." };
@@ -1581,6 +1587,9 @@
       var q = e.target.value.trim().toLowerCase();
       Array.prototype.forEach.call(root().querySelectorAll(".ccopt"), function (o) { o.hidden = !!q && o.getAttribute("data-hay").indexOf(q) < 0; });
       return;
+    }
+    if (e.target.hasAttribute && e.target.hasAttribute("data-role") && state.sel) {
+      (state.roles = state.roles || {})[gid(state.sel, e.target.getAttribute("data-role"))] = e.target.value; return;
     }
     if (e.target.hasAttribute && e.target.hasAttribute("data-mail") && e.target.getAttribute("data-mail") !== "tpl") { mailField(e.target); return; }
     var fm = e.target.form;
