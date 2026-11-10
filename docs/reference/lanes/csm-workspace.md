@@ -98,6 +98,10 @@ Guards `tests/csm_workspace.test.js` 3f, 5a, 14a to 14x-g, 15e to 15j.
    email state (the confirmation, the Noncredit CPL Lead ask for the role in MAP, both in one email, the acceptance, the
    noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
    from the workspace mock, version 11, in the vault.
+0b. **`nc_team` and the role (COBIx on #3012 and #2999):** the workspace reads the role in MAP as meeting the whole
+   Noncredit CPL Lead condition; the funding tab's `ncCondList` lets it meet `nc_coord` only, and `nc_team` (hidden by
+   default, `ncTeamShown`) still needs an accepted attestation. Nothing differs while `nc_team` stays hidden. Settle it in
+   the funding tab before any scenario shows `nc_team`; it changes what releases the noncredit share, so it is Sam's call.
 0a. **The funding tab's decline pieces** (`setDeclined`, the Nudge's declined word) can leave too, now that nothing sets one.
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).

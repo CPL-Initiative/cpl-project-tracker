@@ -615,6 +615,8 @@
     var ch = state.checks[gid(r.key, kind)] || {}, pre = "rv-" + kind;
     return '<section class="review" aria-labelledby="' + pre + '-h"><h4 id="' + pre + '-h">Review before you decide: ' + esc(g.R.kind) + "</h4>" +
       '<p class="links" style="margin:0">' + (landingLink(r, "Open the landing page") || '<span class="gate">No landing page address in MAP.</span>') + "</p>" +
+      // The role in MAP already meets the condition: the box stays reachable and says nothing is owed (COBIx on PR 3012).
+      (kind === "nc" && r.nc && r.nc.lead ? '<p class="gate" data-role-met="1">The Noncredit CPL Lead role is on the college\'s MAP landing page, which already meets this condition. Nothing here needs a decision.</p>' : "") +
       (g.R.note ? '<p class="gate">' + esc(g.R.note) + "</p>" : "") +
       '<ul class="reqs">' + g.R.items.map(function (it, i) {
         var pl = REQ_PILL[it.s], id = pre + "-ck-" + i;

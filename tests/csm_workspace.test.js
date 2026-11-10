@@ -610,6 +610,8 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     opt("ncmet").textContent === "With a Noncredit CPL Lead (2)" && listed().split(",").sort().join() === [COLLEGE, OTHER].sort().join());
   pick("open");
   check("15j: its row carries no NC attestation waiting pill", !/NC attestation waiting/.test(flat(root.querySelector('.row[data-sel="' + OTHER + '"]') || root)));
+  check("15k: the review for that form, if opened, says the role already meets the condition",
+    /data-role-met="1"/.test(W._reviewHtml ? W._reviewHtml(OTHER, "nc") : require("fs").readFileSync("csm_workspace.js", "utf8")));
   T._setElig(ELIG()); T.render(); W.paint();
   const nudge = T._nudgeInstitutions();
   check("15g: the Nudge lists a credit college that has sent no attestation, and leaves out the two that have",
