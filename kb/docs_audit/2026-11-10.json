@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1451,
-    "bytes": 14636369,
-    "over_budget": 6,
-    "handoff_max": 632,
+    "files": 1453,
+    "bytes": 14653200,
+    "over_budget": 5,
+    "handoff_max": 633,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59917,
     "superseded_files": 0,
@@ -26,45 +26,45 @@
       },
       "other": {
         "files": 146,
-        "bytes": 4483886,
+        "bytes": 4484457,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 8847,
+        "bytes": 8866,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2630112,
+        "bytes": 2640315,
         "over": 0
       },
       "kb_note": {
-        "files": 580,
-        "bytes": 2844685,
+        "files": 581,
+        "bytes": 2847920,
         "over": 0
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 543009,
-        "over": 5
+        "bytes": 539082,
+        "over": 4
       },
       "handoff": {
-        "files": 593,
-        "bytes": 4065913,
+        "files": 594,
+        "bytes": 4072643,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 6,
+      "oversized_doc": 5,
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26456,
-      "bytes": 4476888267,
-      "heavy_bytes": 3221149144,
-      "heavy_share": 0.72,
+      "files": 26464,
+      "bytes": 4477003578,
+      "heavy_bytes": 3221194740,
+      "heavy_share": 0.719,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -186,19 +186,6 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 21499,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 1499,
-        "ratio": 1.07
-      },
-      "message": "21,499 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/csm-workspace.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
         "bytes": 24187,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -225,13 +212,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24063,
+        "bytes": 24165,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4063,
-        "ratio": 1.2
+        "over_by": 4165,
+        "ratio": 1.21
       },
-      "message": "24,063 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,165 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -239,10 +226,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2042266501,
+        "bytes": 2042266959,
         "kind": "dir"
       },
-      "message": "directory totals 2,042,266,501 B inside the vault"
+      "message": "directory totals 2,042,266,959 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -349,10 +336,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10665417,
+        "bytes": 10710555,
         "kind": "dir"
       },
-      "message": "directory totals 10,665,417 B inside the vault"
+      "message": "directory totals 10,710,555 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
