@@ -73,6 +73,7 @@ export const RISKS = {
   "an event handler": /[\s\/"']on[a-z]+\s*=/gi,
   "a frame, object, embed, form, meta, base, link, style, svg or math element": /<(iframe|frame|object|embed|form|meta|base|link|style|svg|math|template)\b/gi,
   "a srcdoc or style attribute": /[\s\/"'](srcdoc|style)\s*=/gi,
+  "a CSS url( or @import": /url\s*\(|@import\b/gi,
 };
 export function riskCounts(html) {
   const s = String(html || ""), out = {};
@@ -82,9 +83,32 @@ export function riskCounts(html) {
     .filter((a) => /^(javascript|data|vbscript):/i.test(decode(a.replace(/^[^=]*=\s*/, "").replace(/^["']|["']$/g, "")))).length;
   return out;
 }
+// The page's executable parts are frozen (COBIx's third note on #3077): a count let an edit rewrite the code inside an
+// existing script, or repoint sidebar.js at another host. Every script block, every risky element's opening tag, every
+// on…= handler and every src, srcdoc, action, formaction or xlink:href attribute is pulled out of the page, and the
+// edited page may hold only pieces the page already had, string for string (a sub-multiset). Styles may change (a
+// layout edit is ordinary and CSS runs no code), but no edit may add a url( or an @import, which reach another host.
+const PIECES = [
+  /<script\b[\s\S]*?(?:<\/script\s*>|$)/gi,
+  /<(?:iframe|frame|object|embed|form|meta|base|link|svg|math|template)\b[^>]*>/gi,
+  /[\s\/"']on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi,
+  /[\s\/"'](?:src|srcdoc|action|formaction|xlink:href)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi,
+];
+export function frozenPieces(html) {
+  const s = String(html || ""), out = [];
+  PIECES.forEach((re) => { (s.match(re) || []).forEach((m) => out.push(m.replace(/^[\s\/"']/, ""))); });
+  return out;
+}
+export function newPieces(before, after) {
+  const have = {};
+  frozenPieces(before).forEach((p) => { have[p] = (have[p] || 0) + 1; });
+  return frozenPieces(after).filter((p) => { if (have[p]) { have[p] -= 1; return false; } return true; });
+}
 export function addedRisks(before, after) {
   const b = riskCounts(before), a = riskCounts(after);
-  return Object.keys(a).filter((k) => a[k] > (b[k] || 0));
+  const out = Object.keys(a).filter((k) => a[k] > (b[k] || 0));
+  if (newPieces(before, after).length && !out.length) out.push("a change to a script, handler or source the page already had (a session makes that change: Copy the request)");
+  return out;
 }
 
 // What a public page must still carry after the edits: the edits may change its words and

@@ -149,6 +149,7 @@ _RISKS = {
     "a frame, object, embed, form, meta, base, link, style, svg or math element":
         r"<(iframe|frame|object|embed|form|meta|base|link|style|svg|math|template)\b",
     "a srcdoc or style attribute": r"[\s/\"'](srcdoc|style)\s*=",
+    "a CSS url( or @import": r"url\s*\(|@import\b",
 }
 
 
@@ -165,9 +166,40 @@ def risk_counts(page):
     return out
 
 
+_PIECES = [
+    r"<script\b[\s\S]*?(?:</script\s*>|$)",
+    r"<(?:iframe|frame|object|embed|form|meta|base|link|svg|math|template)\b[^>]*>",
+    r"[\s/\"']on[a-z]+\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)",
+    r"[\s/\"'](?:src|srcdoc|action|formaction|xlink:href)\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)",
+]
+
+
+def frozen_pieces(page):
+    """The page's executable parts, as apply_edits.mjs frozenPieces finds them. Pure."""
+    out = []
+    for rx in _PIECES:
+        out += [re.sub(r"^[\s/\"']", "", m.group(0)) for m in re.finditer(rx, page or "", re.I)]
+    return out
+
+
+def new_pieces(before, after):
+    from collections import Counter
+    have = Counter(frozen_pieces(before))
+    out = []
+    for p in frozen_pieces(after):
+        if have[p]:
+            have[p] -= 1
+        else:
+            out.append(p)
+    return out
+
+
 def added_risks(before, after):
     b, a = risk_counts(before), risk_counts(after)
-    return [k for k in a if a[k] > b.get(k, 0)]
+    out = [k for k in a if a[k] > b.get(k, 0)]
+    if new_pieces(before, after) and not out:
+        out.append("a change to a script, handler or source the page already had (a session makes that change: Copy the request)")
+    return out
 
 
 def is_new_piece(record):

