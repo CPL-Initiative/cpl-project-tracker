@@ -38,8 +38,8 @@
    "name": "Privacy",
    "page": "privacy.html",
    "audience": "public",
-   "last": "2026-11-04",
-   "outcome": "S565: a11y light and dark pass at 9 widths (axe 4.10.2); raw hex appears only in its :root tokens; it reads no shared dataset, so wiring has nothing to compare. No fix needed."
+   "last": "2026-11-10",
+   "outcome": "S626: AA and WCAG 2.2 pass at nine widths, light and dark (npm run a11y, axe 4.10.2); no dataset to wire; tokens only, raw hex only in the :root token blocks; no glyph, plain links. Nothing to fix."
   },
   {
    "id": "funding-model",
