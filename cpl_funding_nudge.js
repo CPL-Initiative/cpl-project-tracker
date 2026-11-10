@@ -211,13 +211,14 @@
     var d = new Date(); d.setDate(d.getDate() + n);
     return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
   }
-  function logEntries(on) {
+  function logEntries(on, when) {
+    when = when || plusDays(7);
     return on.map(function (x) {
       var n = x.recips.length;
       return { college: x.inst.key, kind: "email",
         body: "Nudge sent by mail merge to " + n + (n === 1 ? " person" : " people") + ", asking for " +
           missingText(x.inst.missing) + ".",
-        follow_up_on: plusDays(7) };
+        follow_up_on: when };
     });
   }
   function ensureCss() {
@@ -415,7 +416,7 @@
         "for mail merge saves one row a recipient of the checked institutions, the filled-in subject and email beside " +
         "each address, for a Word or Outlook mail merge. Copy addresses puts the same addresses on the clipboard for " +
         "one message's Bcc line. COBI sends nothing: your mail program sends, from its own account. Once it has " +
-        "sent, Log this Nudge writes one entry for each checked institution in the CSM Workspace's log, with a " +
+        "sent, Log this Nudge writes one entry for each institution in that list in the CSM Workspace's log, with a " +
         "follow-up a week out.</p>";
       var tableBox = body.querySelector("[data-nudgetable]");
       function paint() {
@@ -454,22 +455,26 @@
       var msg = ctl.querySelector("[data-nudgemsg]");
       // Log this Nudge shows once a list has left COBI (a download or a copy), and only where the caller can
       // write the log. It writes once: a second press of a sent merge would file every college twice.
-      var canLog = typeof ctx.log === "function", logged = false;
-      function offerLog() {
-        if (!canLog || logged || ctl.querySelector("[data-nudgelog]")) return;
+      // IT FILES WHAT LEFT COBI, never what is checked at the press (COBIx on the PR): each export takes its own
+      // copy of the institutions and how many people each had, and the latest export is the one filed. A box
+      // changed after the export changes nothing until the next export.
+      var canLog = typeof ctx.log === "function", logged = false, sent = [];
+      function offerLog(on) {
+        if (!canLog || logged) return;
+        sent = on.map(function (x) { return { inst: x.inst, recips: x.recips.slice() }; });
+        if (ctl.querySelector("[data-nudgelog]")) return;
         msg.insertAdjacentHTML("beforebegin", '<button type="button" class="cplfund-textbtn" data-nudgelog="1">Log this Nudge</button>');
         ctl.querySelector("[data-nudgelog]").addEventListener("click", function () {
-          var btn = this, on = chosen();
-          if (logged) return;
-          if (!on.length) { msg.textContent = "Check at least one institution first."; return; }
+          var btn = this, on = sent, when = plusDays(7);
+          if (logged || !on.length) return;
           btn.disabled = true;
           msg.textContent = "Logging\u2026";
-          Promise.resolve(ctx.log(logEntries(on))).then(function (ok) { return ok; }, function () { return false; }).then(function (ok) {
+          Promise.resolve(ctx.log(logEntries(on, when))).then(function (ok) { return ok; }, function () { return false; }).then(function (ok) {
             if (ok) {
               logged = true;
               if (btn.parentNode) btn.parentNode.removeChild(btn);
               msg.textContent = "Logged for " + on.length + (on.length === 1 ? " institution" : " institutions") +
-                ", each with a follow-up on " + longDate(plusDays(7)) + ".";
+                ", each with a follow-up on " + longDate(when) + ".";
             } else {
               btn.disabled = false;
               msg.textContent = "The log did not save. Sign in again and press Log this Nudge.";
@@ -484,18 +489,18 @@
         if (!on.length) { msg.textContent = "Check at least one institution first."; return; }
         download(today() + "_CPL_Funding_Nudge.csv", csv(on, tpl(), ctx.deadline));
         msg.textContent = "Saved. Open it as the mail merge's recipient list.";
-        offerLog();
+        offerLog(on);
       });
       ctl.querySelector("[data-nudgebcc]").addEventListener("click", function () {
-        var all = [], seen = {};
-        chosen().forEach(function (x) {
+        var all = [], seen = {}, on = chosen();
+        on.forEach(function (x) {
           x.recips.forEach(function (r) { var k = r.email.toLowerCase(); if (!seen[k]) { seen[k] = 1; all.push(r.email); } });
         });
         if (!all.length) { msg.textContent = "Check at least one institution first."; return; }
         copyText(all.join("; "), function (ok) {
           msg.textContent = ok ? "Copied " + all.length + " addresses. Paste them into one message's Bcc line."
             : "This browser would not copy. Download for mail merge holds the same addresses.";
-          if (ok) offerLog();
+          if (ok) offerLog(on);
         });
       });
       return rows;

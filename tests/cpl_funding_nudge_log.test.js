@@ -9,7 +9,8 @@
 //
 // Guards the failure modes that matter:
 //   1. The word is absent until a list has left COBI, and absent where the caller cannot write the log.
-//   2. It files the checked institutions alone, one entry each, and no name or address rides in an entry.
+//   2. It files WHAT LEFT COBI, the institutions of the latest download or copy, one entry each, never what is
+//      checked at the press (COBIx on the PR); no name or address rides in an entry.
 //   3. It writes ONCE: a second press cannot file every college twice. A refused save leaves the word to press again.
 //   4. The funding tab's write is one request for all rows, on the reviewer's credential, and reads the rows back
 //      (a write RLS filters out answers 2xx having changed nothing).
@@ -63,18 +64,21 @@ function open(extra) {
     d.click(d.dlg.querySelector("[data-nudgecsv]"));
     check("1b: after the download the word shows, a button reading Log this Nudge",
       !!d.word() && d.word().tagName === "BUTTON" && d.word().textContent === "Log this Nudge");
+    // B is unchecked AFTER the download: B's addresses are in the file that left, so B is filed.
     d.box("B College").checked = false; d.fire(d.box("B College"), "change");
     d.click(d.word());
     await tick(); await tick();
     const rows = calls[0] || [];
-    check("2a: it files the checked institutions alone, one entry each", calls.length === 1 && rows.length === 1 && rows[0].college === "A College");
+    check("2a: it files the downloaded set, whatever is checked at the press",
+      calls.length === 1 && rows.map((r) => r.college).join() === "A College,B College", JSON.stringify(rows.map((r) => r.college)));
     check("2b: the entry is an email with a follow-up a week out and says what was asked for",
       rows[0] && rows[0].kind === "email" && /^\d{4}-\d{2}-\d{2}$/.test(rows[0].follow_up_on) &&
       Math.round((new Date(rows[0].follow_up_on + "T12:00:00") - new Date(new Date().toDateString() + " 12:00:00")) / 864e5) === 7 &&
       rows[0].body === "Nudge sent by mail merge to 1 person, asking for a participation confirmation.");
     check("2c: no name or address rides in an entry", !/ada|@|Coord/i.test(JSON.stringify(rows)));
     check("3a: once logged the word is gone and the note says how many and when the follow-up falls",
-      !d.word() && /^Logged for 1 institution, each with a follow-up on [A-Z][a-z]+ \d{1,2}, \d{4}\.$/.test(d.msg()), d.msg());
+      !d.word() && /^Logged for 2 institutions, each with a follow-up on [A-Z][a-z]+ \d{1,2}, \d{4}\.$/.test(d.msg()) &&
+      d.msg().indexOf(new Date(rows[0].follow_up_on + "T12:00:00").getDate() + ", ") > 0, d.msg());
     d.click(d.dlg.querySelector("[data-nudgecsv]"));
     check("3b: a second download does not bring the word back, so one Nudge is filed once", !d.word() && calls.length === 1);
   }
@@ -96,17 +100,22 @@ function open(extra) {
     t.click(t.word());
     await tick(); await tick();
     check("3d: a write that throws reads the same way", !!t.word() && /^The log did not save\./.test(t.msg()));
-    const e = await open({ log: () => { n++; return Promise.resolve(true); } });
+    // A second export replaces the first: the latest list that left is the one filed.
+    const got = [];
+    const e = await open({ log: (rows) => { got.push(rows); return Promise.resolve(true); } });
     e.click(e.dlg.querySelector("[data-nudgecsv]"));
-    e.dlg.querySelectorAll("input[data-nudgepick]").forEach((b) => { b.checked = false; e.fire(b, "change"); });
-    const before = n;
+    e.box("A College").checked = false; e.fire(e.box("A College"), "change");
+    e.click(e.dlg.querySelector("[data-nudgecsv]"));
+    e.box("A College").checked = true; e.fire(e.box("A College"), "change");
     e.click(e.word());
-    check("3e: with nothing checked it writes nothing and asks for a check", n === before && /^Check at least one institution first\.$/.test(e.msg()));
+    await tick(); await tick();
+    check("3e: after a second export the latest list is the one filed, and a box checked afterward is not",
+      got.length === 1 && got[0].map((r) => r.college).join() === "B College", JSON.stringify(got));
   }
   check("2d: the entries builder words two missing items and a plural",
     (function () { const { window } = freshDom(); window.eval(NUDGE_SRC);
-      const r = window.CPL_FUNDING_NUDGE.logEntries([{ inst: inst[1], recips: [{}, {}, {}] }])[0];
-      return r.college === "B College" && r.body === "Nudge sent by mail merge to 3 people, asking for a participation confirmation and a noncredit attestation."; })());
+      const r = window.CPL_FUNDING_NUDGE.logEntries([{ inst: inst[1], recips: [{}, {}, {}] }], "2026-11-17")[0];
+      return r.college === "B College" && r.follow_up_on === "2026-11-17" && r.body === "Nudge sent by mail merge to 3 people, asking for a participation confirmation and a noncredit attestation."; })());
 
   // ── 4. the funding tab's write ──────────────────────────────────────────────────────────────────────────────
   {
