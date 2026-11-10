@@ -355,6 +355,24 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await tick();
   check("9f: a Deny that reads back logs once and says so", W._log().length === before + 1 && /Denied: the request is removed\./.test(flat(root.querySelector(".status"))));
 }
+{
+  // The role the reviewer confirmed rides the acceptance's log entry (Sam, 2026-11-10: "I meant for the reviewer to add").
+  const { window, T, W, root } = setup({ signedIn: true });
+  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  const role = () => root.querySelector('.review input[data-role="part"]');
+  check("9h: the senior administrator check, when the form gave Other, carries a field for the role the reviewer confirmed",
+    !!role() && /Their role, as you confirmed it/.test(flat(role().closest("label"))) && role().closest(".req").querySelector("input[data-check]"));
+  role().value = "Dean of Instruction"; role().dispatchEvent(new window.Event("input", { bubbles: true }));
+  Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
+  check("9i: the role survives the repaint a tick causes", role().value === "Dean of Instruction");
+  const before = W._log().length;
+  T.csm.act = function () { return Promise.resolve({ ok: true }); };
+  clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
+  await tick(); await tick();
+  const last = W._log()[0] || {};
+  check("9j: ⭐ Accept logs once, and the entry says the sender's role as checked", W._log().length === before + 1 &&
+    W._log().some((x) => /Accepted the participation confirmation.*Sender's role, as checked: Dean of Instruction\./.test(String(x.body || ""))), JSON.stringify(last).slice(0, 200));
+}
 check("9g: the funding tab answers Accept and Deny with the re-read, never a bare true",
   /accept: function \(kind, key\) \{[\s\S]*?return Promise\.resolve\(p\)\.then\(function \(\) \{\s*return \{ ok: kind === "nc" \? ncAttestStanding\(ncAttestOf\(key\)\) : !!ELIG\.optin\[key\] \};/.test(FUND)
   && /return CSM_ACT\[action\]\(kind, key\);/.test(FUND));

@@ -91,6 +91,10 @@ itpi just added the field in map users. if they attest, we can accept that now a
   Ready to send. The funding tab's own `setDeclined` and its Nudge's declined word are untouched.
 Guards `tests/csm_workspace.test.js` 3f, 5a, 14a to 14x-g, 15e to 15j.
 
+✅ **The role the reviewer confirmed is kept with the acceptance (S623, Sam, 2026-11-10: *"I meant for the reviewer to
+add"*).** When the form gave *Other senior administrator*, the review's check carries *Their role, as you confirmed it*;
+Accept writes it into its `csm_log` entry (*Sender's role, as checked: …*). No database change. Guards 9h to 9j.
+
 ## NEXT
 
 0. **The mock for issue #3010, then its build on Sam's word:** scene A, the sign-in with *Ask an approver* as the one
