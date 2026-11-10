@@ -6063,14 +6063,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 739
+     "line": 787
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 739
+     "line": 787
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -15734,6 +15734,13 @@
      "direction": "read",
      "how": "literal",
      "line": 218
+    },
+    {
+     "id": "script:kb/_build_college_identity_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 293
     }
    ],
    "served": true,
@@ -26506,7 +26513,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 673,
+     "line": 685,
      "tabs": [
       "college-identity"
      ]
@@ -26516,7 +26523,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 602,
+     "line": 614,
      "tabs": [
       "college-identity"
      ]
@@ -28029,7 +28036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 669,
+     "line": 681,
      "tabs": [
       "college-identity"
      ]
@@ -28445,7 +28452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 666,
+     "line": 678,
      "tabs": [
       "college-identity"
      ]
