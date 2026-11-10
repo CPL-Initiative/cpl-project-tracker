@@ -16697,8 +16697,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 586,
+   "count": 587,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 626,
+     "path": "docs/session_626_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "implementation-funding",
+      "college-district-identity"
+     ],
+     "title": "Session 626 handoff: the MAP role stands in for the whole noncredit attestation, Cal State LA carries its ruling, the Nudge logs itself",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26651,5 +26667,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1430
+ "total": 1431
 }
