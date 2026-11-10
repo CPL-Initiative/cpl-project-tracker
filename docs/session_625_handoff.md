@@ -14,12 +14,18 @@ no new ruling this run; he opened the session and the queue ran. The MAP team ro
 the whole team on 2026-11-10. COBIx (`cobi-cto`) reviews every PR; `docs/reference/cobix_pr_loop.md` says how to
 answer. Run `/coord` before you start.
 
-**Two sessions ran on handoff 624.** Sam pasted the SkyCocoon greeting into a second session at 01:43Z
-(`session_01Rvwe2U562qR7UqfSmi4LXw`). It took the `commons` NEXT (the path mock's items, `kb/status/commons.json`,
-`lanes/commons.md`, branches `claude/s624b-*`) and stayed out of the CSM, funding and identity files; this session
-stayed out of the Commons view. It merged #3024 (a stalled routine, or a backlog that stops shrinking, becomes a queue
-item). If it checkpoints it writes `docs/session_626_handoff.md`: read the highest-numbered
-handoff, and this one beside it for the lanes named here.
+**Two sessions ran on handoff 624, and this is the one handoff for both.** Sam pasted the SkyCocoon greeting into a
+second session at 01:43Z (`session_01Rvwe2U562qR7UqfSmi4LXw`). It held the `commons` lane and stayed out of the CSM,
+funding and identity files; this session stayed out of the Commons view. It wrote no handoff of its own and holds no
+subscription or check-in. Its work, as it reported it and as `main` shows:
+- **#3024:** a stalled routine, or a backlog that stops shrinking, becomes a queue item (`queue.stalled` in
+  `kb/status/commons.json`; `kb/status/commons_history.json`, which `daily-dashboard.yml` and `cer-procedures.yml` now
+  commit). Nothing stalled on 2026-11-10; blank descriptions, flat at 5,750 since 2026-11-04, flag on the 2026-11-11 build.
+- **#3027:** the confidence count reads the CR rule rungs. Of 226 rule-folded groups a person looked at 20, kept 0 and
+  widened 20. **Open for Sam, no hurry:** whether a widened group counts as plain kept.
+- **#3029:** the `commons` lane compacted to 18,354 bytes; five settled paragraphs moved verbatim to
+  `docs/commons_lessons.md`.
+- `cpl_memory`: `commons-stalled-routine-queue-item-live-2026-11-10`, `cr-rule-rungs-confidence-widened-2026-11-10`.
 
 ## What shipped
 
@@ -82,10 +88,10 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
 3. **`college-district-identity` NEXT:** the crosswalk builder's lint reads `kb/non_ccc_institutions.json`, so Cal
    State LA's finding carries Sam's 2026-10-04 statement in place of `unknown`; then re-baseline (the class changes,
    so the daily check will say the set moved once).
-4. **`commons` lane is 1.3 times its budget** (26.5 KB against 20): move its finished paragraphs to
-   `docs/commons_lessons.md` at the next checkpoint (the second session holds that lane; check what it did first).
-   Then **`commons` NEXT** (the path mock: Teach a rule on every
-   reference; the confidence count; the other references' paths). KINE M1142 still has no saved ruling; Sam's to rule.
+4. **`commons` NEXT** (the path mock): Teach a rule on every reference (a new write surface, so Governance first,
+   Rule 10 a3); the Course auditor's confidence count, which needs a receipt of what the auditor scored before a person
+   changed the card; the other references' paths; then every Commons view on the `--cmn` tokens. KINE M1142 still has
+   no saved ruling; Sam's to rule.
 5. **`csm-workspace` NEXT 1 to 3:** the hover cards and landing-page roles; the denial email; Nudge logs itself.
 6. **`library`:** Sam's Replace on the ELL Healthcare Pathways piece, or his next note.
 7. Carried, untouched: COBIx #2967 item 3 remainder (Team RACI into the reviewer list behind a flag); #2972's ask;
