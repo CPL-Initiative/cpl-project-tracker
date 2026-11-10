@@ -193,7 +193,7 @@ function drill(window, doc, name) {
   const fields = wrap ? Array.from(wrap.querySelectorAll("[data-ncattestfield]")).map((el) => el.getAttribute("data-ncattestfield")) : [];
   const types = wrap ? Array.from(wrap.querySelectorAll("[data-ncattestlead]")) : [];
   check("C2: the form asks for the Lead (name, title, type, assignment, meetings) and the attestor, every control labeled; no count, course or exhibits",
-    fields.join(",") === "coordName,coordTitle,assignment,meets,name,title" &&
+    fields.join(",") === "coordName,coordTitle,assignment,meets,name,title,titleText" &&
     types.map((b) => b.closest("label").textContent.trim()).join("|") === "Staff|FT Faculty|PT Faculty|Administrator" &&
     types.every((b) => b.type === "checkbox") &&
     Array.from(wrap.querySelectorAll("fieldset > legend")).map((l) => l.textContent).join("|") === "The Noncredit CPL Lead|The Lead is|You, attesting for the college" &&
@@ -425,4 +425,22 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
     /data-howto=/.test(ncBlock) && /kinds\.indexOf\(it\.kind\)/.test(ncBlock));
 }
 
+// ── The sender's own title when the title is Other (Sam, 2026-11-10: "it would make great sense for the sender to be
+//    prompted (required) to add their title ... would save us this whole step") ─────────────────────────────────
+{
+  const SRC = require("fs").readFileSync("cpl_funding.js", "utf8");
+  check("T1: both forms carry the title field, hidden until Other is picked",
+    (SRC.match(/data-titletext hidden>Your title at the college/g) || []).length === 2 && /l\.hidden = sel\.value !== "Other"/.test(SRC));
+  check("T2: Other without a title is refused in words, on both forms",
+    /title === "Other" && !titleText\) err = OTHER_TITLE_ASK/.test(SRC) && /form\.title === "Other" && !form\.titleText\) return \{ error: OTHER_TITLE_ASK \}/.test(SRC));
+  check("T3: the title rides attestor_title_text only when the title is Other, on both writes",
+    (SRC.match(/if \(form\.title === "Other" && form\.titleText\) rec\.attestor_title_text = form\.titleText;/g) || []).length === 2);
+  check("T4: each write keeps its own fetch and URL at the call site, and selfPost resends without the field only on PGRST204",
+    /fetch\(PART_URL, \{ method: "POST", headers: SELF_HEADERS/.test(SRC) && /fetch\(NC_ATTEST_TABLE_URL, \{ method: "POST", headers: SELF_HEADERS/.test(SRC) &&
+    /e\.code !== "PGRST204"\) return r;/.test(SRC));
+  const DM = JSON.stringify(require("../kb/dependency_map.json"));
+  check("T5: the access map still names the two tables the forms write, and no public write to map_college_cr_unit",
+    /cpl_funding_participation/.test(DM) && /cpl_funding_nc_attestation/.test(DM));
+  check("T6: the titles are asked once per sign-in per page, whatever the answer", !/TITLES\.asked = ""/.test(SRC));
+}
 finish();

@@ -183,6 +183,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_nc_attestation_review` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_funding_requester_context` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
+| `cpl_funding_sender_titles` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_library_public` | tabs: `admin` · pages: `library/index.html` · `edgefn:cpl-chat` | — |
 | `cpl_library_set_public` | tabs: `admin`, `library` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
@@ -1354,5 +1355,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 110 Supabase tables · 62 RPCs · 14 edge functions · 829 file
+Coverage: 110 Supabase tables · 63 RPCs · 14 edge functions · 829 file
 datasets · 194 external services · 543 consumers · 65 workflows · 40 tabs.
