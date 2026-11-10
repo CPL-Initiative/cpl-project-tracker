@@ -197,6 +197,19 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5c4: a nudged college waits on the college: its own group, the Nudged badge with its date, and nothing to send today",
       !!nrow && /Nudged Nov 9/.test(flat(nrow.querySelector(".row-pills"))) && /^Nothing to send today\. The request for the confirmation went out Nov 9\.$/.test(flat(nrow.querySelector(".row-next"))) &&
       heads().length === 2 && /^Needs you \d+$/.test(heads()[0]) && /^Waiting on the college 1$/.test(heads()[1]));
+    {
+      // COBIx on PR 3049: an acceptance that never reached the college must not sink under the colleges owed a nudge.
+      g.W._state.view = "all"; g.W._state.sel = null; g.W.paint();
+      const order = Array.prototype.map.call(g.root.querySelectorAll('.queue[data-group="you"] .row'), (b) => b.getAttribute("data-sel"));
+      check("5c6: inside Needs you the waiting request leads, then the acceptance that is due, then the colleges owed a first nudge",
+        order[0] === COLLEGE && order[1] === OTHER && order.length > 50 && g.W._readyOf(order[2]) === "nudge", order.slice(0, 3).join());
+      const o = g.W._snapshot().rows.find((r) => r.key === OTHER);
+      const here = g.W._nextStep(o);
+      g.W._state.view = "send";
+      check("5c7: the email that is due reads the same in Ready to send and in every other list",
+        here === g.W._nextStep(o) && /^Send the acceptance\./.test(here), here);
+      g.W._state.view = "notyet"; g.W._state.sel = null; g.W.paint();
+    }
     check("5c5: Needs you comes first and holds every other college in the list, in the live order",
       g.root.querySelectorAll('.queue[data-group="you"] .row').length + 1 === g.root.querySelectorAll("#cw-queue .row").length &&
       g.root.querySelector("#cw-queue .queue").getAttribute("data-group") === "you");

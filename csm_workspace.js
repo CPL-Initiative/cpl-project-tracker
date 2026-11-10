@@ -475,14 +475,17 @@
   }
   var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
     accept: "Send the acceptance.", accept_nc: "Send the noncredit attestation acceptance.",
-    nudge: "Send the nudge for the participation confirmation." };
+    nudge: "Send the request for the participation confirmation." };
+  // One wording for the email that is due, whatever the list (COBIx on PR 3049): Ready to send and every other list
+  // read it from here, so the same email never reads two ways.
+  function readyWords(r, rd) {
+    var mw = rd === "accept" ? missingWords(r) : [], still = mw.length ? " Still waiting: " + mw.join("; ") + "." : "";
+    if (notReceived(r)) return "Resend the " + (rd === "accept" ? "acceptance" : "noncredit attestation acceptance") + ": confirmed " +
+      shortDate(rd === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) + ", and the first email did not reach the college." + still;
+    return READY_WORDS[rd] + still;
+  }
   function nextStep(r) {
-    if (state.view === "send" && readyOf(r)) {
-      var rw = readyOf(r), mw = rw === "accept" ? missingWords(r) : [];
-      if (notReceived(r)) return "Resend the acceptance: confirmed " + shortDate(rw === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) +
-        ", and the first email did not reach the college." + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
-      return READY_WORDS[rw] + (mw.length ? " Still waiting: " + mw.join("; ") + "." : "");
-    }
+    if (state.view === "send" && readyOf(r)) return readyWords(r, readyOf(r));
     // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
     // next action"), from the same readyOf the Ready to send list keeps, so the two lists cannot disagree.
     var w = waitingKinds(r), sentOn = function (at) { return at ? " sent " + shortDate(at) : ""; };
@@ -492,11 +495,7 @@
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
     var rd = readyOf(r);
-    if (rd === "accept" || rd === "accept_nc") {
-      if (notReceived(r)) return "Resend the " + (rd === "accept" ? "acceptance" : "noncredit attestation acceptance") + ". The first one did not reach the college.";
-      return READY_WORDS[rd];
-    }
-    if (rd === "nudge") return "Send the request for the participation confirmation.";
+    if (rd) return readyWords(r, rd);
     if (du) return "Nothing to send today. Follow up on " + shortDate(du.follow_up_on) + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
     var st = stageOf(r);
     if (st === "held") {
@@ -572,10 +571,15 @@
   var READY_RANK = { accept: 1, accept_nc: 2, nudge: 3, wait: 4 };
   function sortRank(r) {
     if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 5;
-    var s = stageOf(r), du = dueOf(r);
+    var s = stageOf(r), du = dueOf(r), rd = readyOf(r);
+    // Needs you, most pressing first (COBIx on PR 3049): a request waiting on the team, an email that never reached
+    // the college, a follow-up due, then the emails in Ready to send's own order, so a resend is never buried under the
+    // colleges still owed their first nudge. Waiting on the college keeps the order by stage.
     if (s === "waiting") return 0;
-    if (du && du.follow_up_on <= today()) return 1;
-    return s === "held" ? 2 : du ? 3 : s === "notyet" ? 4 : 5;
+    if (rd && rd !== "wait" && notReceived(r)) return 1;
+    if (du && du.follow_up_on <= today()) return 2;
+    if (rd && READY_RANK[rd] != null) return 2 + READY_RANK[rd];
+    return s === "held" ? 10 : du ? 11 : s === "notyet" ? 12 : 13;
   }
   function shownRows() {
     if (!S) return [];
