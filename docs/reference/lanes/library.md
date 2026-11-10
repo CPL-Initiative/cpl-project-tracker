@@ -29,15 +29,7 @@ and **figures to refresh**. Add, File it, Edit and Retire write to the table;
 nothing deletes, and a trigger files every prior row in `cpl_library_history`.
 Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 
-✅ **A piece's link beside a file: both reach the request (Sam, 2026-11-09, the ELL Healthcare Pathways side
-session).** *"I tried adding the link to the previous ELL IEP visual to the new project link box, but it just shot me
-down to the existing ELL IEP project thinking I was wanting to work on it."* The jump to that card also cleared the
-Word file he had attached, so record `ell-healthcare-pathways-cpl-starting-points-mw9tepdk` was saved with no
-document. `knownLink()` in `library.js`: a person who has picked a file or typed what to make is making something new,
-so the piece's link becomes a document to work from and the file stays; a second link beside a file picked as
-background is a second document, never a replacement. With the box empty the link still opens the piece's card, which
-says how to use it as background. `tests/library.test.js` (22). The piece itself was built in session and filed
-(`kb/receipts/library_ell_hp_filed_draft_2026-11-09.sql`). Its Pages copy is `library/ell-healthcare-pathways-cpl-starting-points/` (Sam the same day: a git address, never claude.ai), in `a11y.config.js` as `library-ell-hp`; every tab passed axe at 390px and 1440px, light and dark. It is not listed publicly; List publicly is Sam's switch.
+✅ **A piece's link beside a file** (2026-11-09, #3000): moved verbatim to the lessons, *Moved from the lane (tender-fermi, 2026-11-10)*.
 
 ✅ **Any file, and a new piece drafted on its card (Sam, 2026-11-10, #3077).** *"when I dropped the Adding CPL
 Coordinator and Noncredit Lead in MAP pdf of a ppt, apparently it didn't upload, but I wasn't aware until cobix hunted
@@ -107,26 +99,7 @@ Opportunity record pair in one step, and opens Start a piece for any other entit
 are in `docs/library_lessons.md`, *Moved from the lane (S467)*, verbatim; Sam's 2026-10-05 rulings, his calls 7 to 9
 and the Drive filing history moved there with them.
 
-✅ **Version 22 and the List (SkyCartwheel, 2026-11-05; Sam: "Version 22 looks better", then "Add a list view option to the
-Library just like our CPL Commons list views and the current cards you have can be the sidebar details like in the Commons.
-Also use the new commons format.").** Mockup Version 22 (advised by Fable) on the Library canvas,
-https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR.
-- **Three views, each with an address:** List (`#library`, the default), Cards (`#library/cards`), Knowledge Base.
-- **The List** is `commons_list.js`: six columns that fit beside the side menu (Title, Kind, Made for, Where it stands,
-  Status, Updated), last modified first, banded by project; filters for drafts to review, changes asked, replacing, in
-  development and the attention flags. A row's title opens its card in the side panel. The create box folds shut.
-- **The card names one of four states** in a line and offers the next step under it as underlined words: Revise; Draft it
-  now, Change what you asked, Copy for a session; Open the draft, Replace the public copy, Ask for more changes; Keep
-  Version N instead. Revise opens its box on the card (or in the panel): What to change, a document, one press that
-  saves the request and drafts it in place for a page with a Pages copy, or sends it to a session.
-- **More changes build on the draft** (`regen.based_on_draft`, earlier drafts under `regen.earlier`; a draft known only
-  by its claude.ai link, `based_on_url`, goes to a session). Start over from Version N drops it by choice.
-- **What changed** on a ready draft: the summary, each edit as Was and Now (`request.pairs`, stored by
-  `library-revise-draft` once redeployed), and an accessibility check run on the draft in a script-free frame.
-- Edit the record, File a new version and Start something new from it sit in Details. The size box is gone; the size
-  and format sit beside the title. The Library takes the Commons look (`commons_look.js` names `#tab-library`).
-- Tests `library` (280), `library_revise_draft` (44), `library_list` (23), `public_library` (112), `commons_look` (12);
-  `npm run a11y -- library-cards library-cards-dark library-list library-list-dark` (seeded) pass.
+✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 
 ## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)
 
@@ -182,6 +155,17 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **NEXT 0, Sam's test of #3077 (2026-11-10):** his request `71931018` (*Adding CPL Coordinator & Noncredit Lead to MAP*)
+  holds no document. On the live site he drops the PDF on its card (Add a document), presses Draft it now, opens the
+  draft, presses Publish it, then List publicly; dispatch `library-publish.yml` after Publish rather than wait three
+  hours. `library-revise-draft` is deployed (cpl-chat-deploy run 42885369380). **Blocked on Pages:** every
+  `pages.yml` deploy since 16:53 UTC times out at `deploy-pages`' fixed 10-minute wait in `syncing_files`, including
+  after #3088 cut the artifact from 1.6 GB to 374 MB (run 42897745399). So the served `library.js` predates #3077.
+  Next try: dispatch one fresh `pages.yml`; if it times out again, the sync is slow on GitHub's side or by file count,
+  not size (see `docs/library_lessons.md`, tender-fermi).
+- **Owed to COBIx on the next Library change:** the `style=` entity pattern in either quote or unquoted
+  (`apply_edits.mjs` RISKS, `library_publish.py` _RISKS), and `tests/pages_size_guard.test.js` walking `kb/` minus
+  `kb/receipts`.
 - **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
   simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
   folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No

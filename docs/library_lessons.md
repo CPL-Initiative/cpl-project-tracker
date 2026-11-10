@@ -953,3 +953,62 @@ to any courses or exhibits possible?"*
   `CPLBrain/04-projects/cpl-initiative/noncredit-to-credit/`. His reactions of the hour are applied (the companion README lists them). Sam, ~16:10Z: *"visual looks great! go with it"* (and one correction: the Chancellor's film is her address to the 7th
   Annual CPL Summit): **published** at https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/
   (`scripts/library_page.py`; the record Approved, Version 1, listed in the public library; `library-noncredit` in the a11y sweep).
+
+## tender-fermi (2026-11-10, Sam's Library side session): any file, a new piece drafted on its card, and Pages
+
+Sam: *"when I dropped the Adding CPL Coordinator and Noncredit Lead in MAP pdf of a ppt, apparently it didn't upload,
+but I wasn't aware until cobix hunted that down"*; *"I can drop files when starting at the beginning, but not when
+revising"*; *"need to be able to handle office docs, pdfs, google slides, videos"*.
+
+- **Causes.** A PDF or deck picked as background was never read: `startPanel` saved the record with `sources: []` and
+  a note at the end of a long line (record `71931018`). A card's Revise box had no drop target, so the browser took the
+  file. A new piece had no drafter.
+- **#3077 shipped:** `readWords` (Word, PowerPoint with notes, Excel, PDF through vendored pdf.js 4.10.38, captions,
+  text); a file with no words saves nothing; drop targets on the Revise box and a Requested card; Google links read by
+  their export in `library-revise-draft`; Draft it now on a Requested piece from the starter frame (`new_page.mjs`);
+  Publish it; `library_publish.py` makes `library/<slug>/` as Version 1.
+- **COBIx found four security gaps on #3077, each real:** a denylist passing `<svg/onload>`; a `blob:` draft running as
+  the tracker (reads the team phrase); revision edits stored unchecked; edits rewriting code inside existing scripts or
+  repointing `sidebar.js`. The fixes: an allowlist for new pages, a sandboxed `srcdoc` frame, frozen executable parts
+  (scripts, handlers, sources string for string), CSS `url(`/escape/`image-set(` counts, a second gate in the publish
+  script. Lesson: a count-based check on a page that already carries scripts misses edits inside them; freeze them.
+- **A new test file can tip `check_ledger` (4):** the suite must stay over 60% floored; one unfloored file made it
+  exactly 60%. Floor new files in `tests/check_floor.json` (append, never re-sort).
+- **Pages.** From 16:53 UTC `deploy-pages` timed out in `syncing_files`. COBIx measured a 1.6 GB artifact, over the
+  1 GB published-site limit; `kb/receipts/` was 2.0 GB of 2.9 GB, never served (#3088 prunes it, size check fails over
+  1000 MB). `deploy-pages` caps its wait at 10 minutes whatever `timeout` says. **After the prune (374 MB) the deploy
+  still timed out**, so size was not the whole cause; unresolved at this checkpoint.
+
+## Moved from the lane (tender-fermi, 2026-11-10)
+
+✅ **A piece's link beside a file: both reach the request (Sam, 2026-11-09, the ELL Healthcare Pathways side
+session).** *"I tried adding the link to the previous ELL IEP visual to the new project link box, but it just shot me
+down to the existing ELL IEP project thinking I was wanting to work on it."* The jump to that card also cleared the
+Word file he had attached, so record `ell-healthcare-pathways-cpl-starting-points-mw9tepdk` was saved with no
+document. `knownLink()` in `library.js`: a person who has picked a file or typed what to make is making something new,
+so the piece's link becomes a document to work from and the file stays; a second link beside a file picked as
+background is a second document, never a replacement. With the box empty the link still opens the piece's card, which
+says how to use it as background. `tests/library.test.js` (22). The piece itself was built in session and filed
+(`kb/receipts/library_ell_hp_filed_draft_2026-11-09.sql`). Its Pages copy is `library/ell-healthcare-pathways-cpl-starting-points/` (Sam the same day: a git address, never claude.ai), in `a11y.config.js` as `library-ell-hp`; every tab passed axe at 390px and 1440px, light and dark. It is not listed publicly; List publicly is Sam's switch.
+
+✅ **Version 22 and the List (SkyCartwheel, 2026-11-05; Sam: "Version 22 looks better", then "Add a list view option to the
+Library just like our CPL Commons list views and the current cards you have can be the sidebar details like in the Commons.
+Also use the new commons format.").** Mockup Version 22 (advised by Fable) on the Library canvas,
+https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR.
+- **Three views, each with an address:** List (`#library`, the default), Cards (`#library/cards`), Knowledge Base.
+- **The List** is `commons_list.js`: six columns that fit beside the side menu (Title, Kind, Made for, Where it stands,
+  Status, Updated), last modified first, banded by project; filters for drafts to review, changes asked, replacing, in
+  development and the attention flags. A row's title opens its card in the side panel. The create box folds shut.
+- **The card names one of four states** in a line and offers the next step under it as underlined words: Revise; Draft it
+  now, Change what you asked, Copy for a session; Open the draft, Replace the public copy, Ask for more changes; Keep
+  Version N instead. Revise opens its box on the card (or in the panel): What to change, a document, one press that
+  saves the request and drafts it in place for a page with a Pages copy, or sends it to a session.
+- **More changes build on the draft** (`regen.based_on_draft`, earlier drafts under `regen.earlier`; a draft known only
+  by its claude.ai link, `based_on_url`, goes to a session). Start over from Version N drops it by choice.
+- **What changed** on a ready draft: the summary, each edit as Was and Now (`request.pairs`, stored by
+  `library-revise-draft` once redeployed), and an accessibility check run on the draft in a script-free frame.
+- Edit the record, File a new version and Start something new from it sit in Details. The size box is gone; the size
+  and format sit beside the title. The Library takes the Commons look (`commons_look.js` names `#tab-library`).
+- Tests `library` (280), `library_revise_draft` (44), `library_list` (23), `public_library` (112), `commons_look` (12);
+  `npm run a11y -- library-cards library-cards-dark library-list library-list-dark` (seeded) pass.
+
