@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-585 document(s).
+586 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 625 | [Session 625 handoff: the funding tab says when access has ended, the decline pieces leave, a ruling can cross-list, the identity baseline is current](../session_625_handoff.md) | 2026-11-10 |
 | 624 | [Session 624 handoff: the action center in two groups, the Courses List keeps your row, the identity check runs again, a sign-in whose funding access ended says so](../session_624_handoff.md) | 2026-11-09 |
 | 623 | [Session 623 handoff: the eve of the rollout — the door live, 30 days, the cards, the noncredit attestation, the Noncredit CPL Lead rule, To do then Browse](../session_623_handoff.md) | 2026-11-09 |
 | 622 | [Session 622 handoff: the funding rollout day — Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, and the CSM funding door](../session_622_handoff.md) | 2026-11-09 |

@@ -112,10 +112,13 @@ List already carries the same control on its side panel (`pgrip` in `commons_lis
    email state (the confirmation, the Noncredit CPL Lead ask for the role in MAP, both in one email, the acceptance, the
    noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
    from the workspace mock, version 11, in the vault.
-0b. **`nc_team` and the role (COBIx on #3012 and #2999):** the workspace reads the role in MAP as meeting the whole
-   Noncredit CPL Lead condition; the funding tab's `ncCondList` lets it meet `nc_coord` only, and `nc_team` (hidden by
-   default, `ncTeamShown`) still needs an accepted attestation. Nothing differs while `nc_team` stays hidden. Settle it in
-   the funding tab before any scenario shows `nc_team`; it changes what releases the noncredit share, so it is Sam's call.
+0b. **The role in MAP meets the whole attestation, in the funding tab.** COBIx relays Sam's word (#2999, 2026-11-09
+   22:22Z): the exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation, no form needed, a
+   waiting form counts as complete, and the form stays out under Scenario 4. The workspace reads it so since #3012.
+   The funding tab's `ncCondList` still lets the role meet `nc_coord` only, and `nc_team` (hidden by default,
+   `ncTeamShown`) still needs an accepted attestation (tests 1f, 1g); its Attest control and the *Noncredit CPL Lead
+   attested* filter read the form alone. Confirm the relay with Sam in one line, then build; nothing differs on the
+   page while `nc_team` stays hidden.
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.

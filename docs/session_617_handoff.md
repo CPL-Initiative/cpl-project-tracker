@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 616 (SkySombrero, the CPL Queue routine's 07:12Z firing, 2026-11-09 07:21Z to ~08:00Z; the routine fires next at 08:12Z)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 617

@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 620 sibling (SkyCigar, Sam's side session, 2026-11-09 12:51Z to ~15:25Z, beside the CPL Queue routine's S620 SkyHoag)
 tags: [handoff, commons, docket, csm-workspace, org-phrase-scope-auth]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 621

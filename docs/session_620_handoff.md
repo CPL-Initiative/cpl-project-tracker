@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 619 (SkyTadpole, the CPL Queue routine's 11:12Z firing, 2026-11-09 11:19Z to ~11:55Z; the routine fires next at 12:12Z)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 620
