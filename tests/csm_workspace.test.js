@@ -309,7 +309,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5e4: People is one list with Role, Person and Source, who sent the request above it, and the word reads pressed",
       shown() === "people" && word("people").getAttribute("aria-pressed") === "true" &&
       (Array.prototype.map.call(ppl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Role|Person|Source" || /Reading the contacts/.test(flat(ppl))) &&
-      /Who sent it/.test(flat(ppl)) && /Dana Lee/.test(flat(ppl)) && !!ppl.querySelector('[data-pop="contacts"]') && !!ppl.querySelector('[data-pop="people"]'));
+      /Who sent it/.test(flat(ppl)) && /Dana Lee/.test(flat(ppl)) && !ppl.querySelector("[data-pop]"));
     clickEl(e.window, word("log"));
     check("5e5: History holds the log's form and the CO Monitor's note, and takes the panel from People",
       shown() === "log" && !!side().querySelector('[data-sidepart="log"] form[data-logform]') && /CO Monitor/.test(flat(side().querySelector('[data-sidepart="log"]'))));
@@ -403,12 +403,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5f6: Escape closes the drawer", dr().hidden && h.W._state.fund === false);
     clickEl(h.window, open()); clickEl(h.window, dr().querySelector('[data-fund="close"]'));
     check("5f7: Close closes it too", dr().hidden);
-    clickEl(h.window, open());
-    const host = h.doc.createElement("div"); host.id = "cw-dlg-host"; R.appendChild(host);
-    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
-    check("5f7a: Escape meant for an open pop-up leaves the drawer open", !R.querySelector("#cw-fund").hidden && h.W._state.fund === true);
-    const hh = R.querySelector("#cw-dlg-host"); if (hh) hh.parentNode.removeChild(hh);
-    clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
+    // The pop-ups are gone (#3067), so nothing else on the page takes Escape from the drawer.
+    check("5f7a: no pop-up code is left: no dialog host, no dialog styles", !/cw-dlg-host|dialog\.cdlg|\.cdlg-/.test(SRC));
     check("5f8: a reviewer who is no approver, with nobody waiting, gets no access word in the header", !R.querySelector("header [data-accopen]"));
     // Sam, 2026-11-10: "links still opening to new tabs instead of sidebars". In the record, Implementation Funding
     // opens the drawer; only the drawer's Open the full page goes to the funding tab.
@@ -544,20 +540,27 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("8b: the mismatches say what disagrees: the coordinator missing from the landing page, the primary contact not a MAP user",
     mm.some((x) => /CPL Coordinator in MAP's directory \(Rivera, Ana\) is not on the landing page/.test(x)) &&
     mm.some((x) => /primary CPL contact \(Bo Chen\) is not an active MAP user/.test(x)));
+  // Sam, 2026-11-10: "links still opening to new tabs instead of sidebars". The two pop-ups are now the People panel.
   W._state.sel = OTHER; W.paint();
-  clickEl(window, root.querySelector('[data-pop="contacts"]'));
-  const dlg = () => doc.querySelector("#cw-dlg-host dialog");
-  check("8c: Contacts on file opens a popup with the directory's fields, the landing page's people and MAP users by role",
-    !!dlg() && /Pasadena contacts/.test(flat(dlg().querySelector("h3"))) && /CPL Coordinator\s*Rivera, Ana, ana@pasadena\.edu/.test(flat(dlg())) &&
-    /CEO\s*Not on file/.test(flat(dlg())) && /CPL Counselor: Dee Lu/.test(flat(dlg())) && /Initiator 1/.test(flat(dlg())));
-  clickEl(window, dlg().querySelector('[data-pop="people"]'));
-  check("8d: Names, titles and emails lists every row with its source, in a table with header cells",
-    /names, titles and emails/.test(flat(dlg().querySelector("h3"))) && dlg().querySelectorAll("tbody tr").length === 6 &&
-    dlg().querySelectorAll('th[scope="col"]').length === 4);
-  const src = dlg().querySelector("[data-psrc]"); src.value = "MAP users"; src.dispatchEvent(new window.Event("change", { bubbles: true }));
-  check("8e: the source filter narrows the table", dlg().querySelectorAll("tbody tr").length === 2);
-  clickEl(window, dlg().querySelector("[data-close]"));
-  check("8f: Close removes the popup", !doc.getElementById("cw-dlg-host"));
+  clickEl(window, root.querySelector('#cw-record .decide [data-side="people"]'));
+  const ppl = () => root.querySelector('#cw-side [data-sidepart="people"]');
+  check("8c: People holds the contacts on file in the panel: what differs, then the directory's fields, the landing page's people and MAP users by role behind one fold",
+    !ppl().hidden && !doc.getElementById("cw-dlg-host") && !root.querySelector("[data-pop]") &&
+    /is not on the landing page/.test(flat(ppl().querySelector(".diff"))) && !!ppl().querySelector("details.onfile summary") &&
+    /CPL Coordinator\s*Rivera, Ana, ana@pasadena\.edu/.test(flat(ppl().querySelector("details.onfile"))) &&
+    /CEO\s*Not on file/.test(flat(ppl())) && /CPL Counselor: Dee Lu/.test(flat(ppl())) && /Initiator 1/.test(flat(ppl())));
+  const rows = () => ppl().querySelectorAll("table.facts tbody tr");
+  check("8d: the one people list carries every row with its source, under column headers", rows().length === 6 &&
+    Array.prototype.map.call(ppl().querySelectorAll('table.facts thead th[scope="col"]'), flat).join("|") === "Role|Person|Source", String(rows().length));
+  // COBIx on PR 3067: the filter repaints the record, and the fold must stay as the reviewer left it.
+  const fold = ppl().querySelector("details.onfile"); fold.open = true; fold.dispatchEvent(new window.Event("toggle"));
+  const src = ppl().querySelector("[data-psrc]"); src.value = "MAP users"; src.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("8e0: an open Every field on file stays open when the source filter repaints the record", ppl().querySelector("details.onfile").open === true);
+  check("8e: the source filter narrows the list in place, and keeps the focus on itself",
+    rows().length === 2 && W._state.psrc === "MAP users" && doc.activeElement === root.querySelector("#cw-psrc") && root.querySelector("#cw-psrc").value === "MAP users");
+  clickEl(window, root.querySelector('.row[data-sel="' + COLLEGE + '"]') || root.querySelector(".row[data-sel]"));
+  check("8f: choosing another college clears the source filter", W._state.psrc === "");
+  W._state.sel = OTHER; W._state.side = ""; W.paint();
 
   const conf = W._mail(OTHER);
   check("8g0a: a confirmed college whose acceptance has not gone opens on the acceptance, in any list", conf.tpl === "accept");
