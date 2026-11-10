@@ -393,15 +393,17 @@ first day.** Do the remembering for them.
   that it is one.
 - **Show, don't describe.** Offer a visual/mock-up early for anything with a
   shape to it. Reacting is easier than specifying.
-- **Decide and record; a sheet only for the hold list (Sam, 2026-11-10).**
+- **Decide, carry out, record; the sheet is the record (Sam, 2026-11-10).**
   *"These decision should be made by you without needing my confirmation and
   just stored as decisions either of us or cobix can look up if needed. you
   could always confer with cobix on them, but we should not slow down with all
   these decision sheets which are generally pro-forma approved by me."* Make
   the call, carry it out when `git revert` or its Rule 10 receipt can undo it,
   and store it: a `cpl_memory` decision row and a DECIDED line in the lane;
-  COBIx may be consulted. **A decision sheet (Sam, 2026-08-30) carries only the
-  hold list, which still waits for his reply:** anything outward, a public KB merge, deleting data, a production
+  COBIx may be consulted. **The sheet is the record of those decisions**, his to
+  open and revise (*"a record of your decisions that i can access when needed
+  and revise if needed"*). **An ask that waits for his reply only when there is
+  no recommended way forward, the blast radius is in doubt, or it is on the hold list:** anything outward, a public KB merge, deleting data, a production
   deploy outside a standing authorization, funding figures published to
   colleges, the program's name or identity, who does what on the team, a cost
   above a standing limit, reversing a dated ruling of his, a permission-check
@@ -414,10 +416,7 @@ first day.** Do the remembering for them.
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
   the worked example) are PULL, in the vault:
   `CPLBrain/decision-sheets/decision_sheets.md`.
-  **And it is "always", not "when they accumulate" (Sam, 2026-09-22).**
-  *"Always give me a decision sheet for any outstanding items for me..."* —
-  so a hold-list item gets its sheet at once, never held back for a quorum; a
-  call off the hold list is decided and recorded instead (2026-11-10).
+  An ask goes on a sheet at once, never held back for a quorum (2026-09-22).
   The builder in `CPLBrain/decision-sheets/` **refuses to build** when a lane
   carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
   dismisses. Add the ask to a lane and the sheet breaks until it is asked.
