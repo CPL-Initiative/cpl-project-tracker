@@ -560,7 +560,9 @@
       items.push({ t: "Sent from the college's or district's email domain", s: "form", d: (domainOf(q.email) || "The address") + ", checked by the form when it was sent." });
       items.push(q.title && q.title !== "Other"
         ? { t: "Sent by a senior administrator", s: "meets", d: "Title given: " + titleLabel(S.partTitles, q.title) + "." }
-        : { t: "Sent by a senior administrator", s: "check", d: "Title given: " + titleLabel(S.partTitles, q.title) + ". Confirm the sender's role before you accept." });
+        : { t: "Sent by a senior administrator", s: "check", d: "Title given: " + titleLabel(S.partTitles, q.title) +
+            (q.titleText ? ", written by the sender as " + q.titleText + ". Confirm that role is a senior administrator before you accept."
+              : ". Confirm the sender's role before you accept.") });
       var mu = ownMap(q.ctx), lp = ownLanding(q.ctx);
       items.push(mu.length || lp.length
         ? { t: "The sender matches someone MAP shows for the college", s: "meets",
@@ -575,7 +577,9 @@
     items.push({ t: "Sent from the college's or district's email domain", s: "form", d: (domainOf(a.attestor_email) || "The address") + ", checked by the form when it was sent." });
     items.push(a.attestor_title && a.attestor_title !== "Other"
       ? { t: "Sent by a senior administrator", s: "meets", d: "Title given: " + titleLabel(S.ncTitles, a.attestor_title) + "." }
-      : { t: "Sent by a senior administrator", s: "check", d: "Title given: " + titleLabel(S.ncTitles, a.attestor_title) + ". Confirm the sender's role before you accept." });
+      : { t: "Sent by a senior administrator", s: "check", d: "Title given: " + titleLabel(S.ncTitles, a.attestor_title) +
+          (a.titleText ? ", written by the sender as " + a.titleText + ". Confirm that role is a senior administrator before you accept."
+            : ". Confirm the sender's role before you accept.") });
     items.push({ t: "The award carries a noncredit share", s: "meets", d: "Yes." });
     items.push({ t: "A Noncredit CPL Lead named, with a title", s: "form", d: "Required by the form." });
     var ll = ownLanding(a.leadCtx);

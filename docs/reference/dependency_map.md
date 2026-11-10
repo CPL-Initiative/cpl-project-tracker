@@ -86,7 +86,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_document_sections` | `edgefn:cpl-chat` | — |
 | `cpl_documents` | `edgefn:cpl-chat` | — |
 | `cpl_funding_config` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `kb/_funding_config_edit_apply.py` · `edgefn:cpl-chat` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
-| `cpl_funding_nc_attestation` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
+| `cpl_funding_nc_attestation` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_funding_nc_attestation_pub` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `cpl_funding_notes` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `cpl_funding_participation` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
@@ -120,7 +120,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
 | `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `map-queue`, `map-users` · modules: `cpl_funding_nudge.js` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_contacts_pub` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` · scripts: `kb/_publish_college_briefing.py` | — |
-| `map_college_cr_unit` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
+| `map_college_cr_unit` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing`, `cpl-pathways` | scripts: `kb/_publish_college_briefing.py` |
 | `map_college_credit_bucket` | `edgefn:cpl-chat` | — |
 | `map_college_credit_statewide` | `edgefn:cpl-chat` | — |
@@ -183,6 +183,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_nc_attestation_review` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_funding_requester_context` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
+| `cpl_funding_sender_titles` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_library_public` | tabs: `admin` · pages: `library/index.html` · `edgefn:cpl-chat` | — |
 | `cpl_library_set_public` | tabs: `admin`, `library` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
@@ -1355,5 +1356,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 110 Supabase tables · 62 RPCs · 14 edge functions · 830 file
+Coverage: 110 Supabase tables · 63 RPCs · 14 edge functions · 830 file
 datasets · 194 external services · 543 consumers · 65 workflows · 40 tabs.

@@ -1188,6 +1188,8 @@
     ".cplfund-optin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }",
     ".cplfund-optin-grid label { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); }",
     ".cplfund-optin-grid label:first-child { grid-column: 1 / -1; }",
+    ".cplfund-titletext { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); grid-column: 1 / -1; }",
+    ".cplfund-titletext[hidden] { display: none; }",
     /* ⚠ THE FLOOR GOES ON THE CONTROL, NOT THE WRAPPING LABEL — the label is a
        flex COLUMN, taller than its field, so growing it moves a number nothing
        reads. And it goes on THIS rule, not a new one: an identical selector was
@@ -6401,9 +6403,30 @@
   // Public write: INSERT a pending self-attestation. return=minimal because anon
   // has no SELECT on the PII columns it just wrote (it cannot read the row back);
   // the honest confirmation is the loadEligibility() re-read of the status.
+  /* THE SENDER'S OWN TITLE (Sam, 2026-11-10: "it would make great sense for the sender to be prompted (required) to
+     add their title in that procedure ... would save us this whole step"). A sender who picks Other senior
+     administrator writes their title, and the CSM review reads it beside the check instead of looking the person up.
+     It rides attestor_title_text (kb/migrations/2026-11-10_sender_title_text.sql), a column anon cannot read back.
+     selfPost sends the row; where the database answers 400 to a row carrying the new field (the column has not
+     landed, or was rolled back), it sends the row once more without it, so a confirmation is never lost to this field. */
+  var OTHER_TITLE_ASK = "Please enter your title at the college.";
+  function selfPost(url, rec) {
+    var send = function (body) {
+      return fetch(url, { method: "POST",
+        headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+          "Content-Type": "application/json", Prefer: "return=minimal" },
+        body: JSON.stringify(body) });
+    };
+    return send(rec).then(function (r) {
+      if (r.ok || r.status !== 400 || rec.attestor_title_text == null) return r;
+      var bare = {}; Object.keys(rec).forEach(function (k) { if (k !== "attestor_title_text") bare[k] = rec[k]; });
+      return send(bare);
+    });
+  }
   function submitOptIn(college, form) {
     var rec = { college: college, attestor_name: form.name, attestor_title: form.title,
       attestor_email: form.email, status: "self_attested", source: "self" };
+    if (form.title === "Other" && form.titleText) rec.attestor_title_text = form.titleText;
     // The checked address rides every state, so the form never falls back to step one.
     var keep = function (o) { o.open = true; o.email = form.email; o.verified = true; return o; };
     OPTIN_UI[college] = keep({ submitting: true });
@@ -6413,12 +6436,7 @@
       render(); return;
     }
     refreshTable();   // show the disabled "Submitting…" state at once
-    fetch(PART_URL, {
-      method: "POST",
-      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
-        "Content-Type": "application/json", Prefer: "return=minimal" },
-      body: JSON.stringify(rec)
-    }).then(function (r) {
+    selfPost(PART_URL, rec).then(function (r) {
       // 409 = a row already exists for this college (a race, or already opted in);
       // treat it as done and let the re-read show the true state.
       OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : keep({ error: true });
@@ -6538,6 +6556,7 @@
       attestor_name: form.name, attestor_title: form.title, attestor_email: form.email,
       lead_types: form.leadTypes && form.leadTypes.length ? form.leadTypes : null,
       lead_assignment: form.assignment || null, lead_meets: form.meets || null };
+    if (form.title === "Other" && form.titleText) rec.attestor_title_text = form.titleText;
     var keep = function (o) { o.open = true; o.email = form.email; o.verified = true; return o; };
     NCATTEST_UI[college] = keep({ submitting: true });
     if (!remoteEnabled()) {
@@ -6548,12 +6567,7 @@
       render(); return;
     }
     refreshTable();
-    fetch(NC_ATTEST_TABLE_URL, {
-      method: "POST",
-      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
-        "Content-Type": "application/json", Prefer: "return=minimal" },
-      body: JSON.stringify(rec)
-    }).then(function (r) {
+    selfPost(NC_ATTEST_TABLE_URL, rec).then(function (r) {
       // 409: this college already attested for the year; the re-read shows it.
       NCATTEST_UI[college] = (r.ok || r.status === 409) ? { done: true, email: form.email } : keep({ error: true });
       loadEligibility();
@@ -6567,6 +6581,7 @@
     var t = function (k) { return String(get(k) == null ? "" : get(k)).trim(); };
     var form = { coordName: t("coordName"), coordTitle: t("coordTitle"),
       name: t("name"), title: t("title"), email: t("email"),
+      titleText: t("title") === "Other" ? t("titleText").slice(0, 120) : "",
       leadTypes: (get("leadTypes") || []).filter(function (v) {
         return NC_LEAD_TYPES.some(function (o) { return o.val === v; });
       }), assignment: t("assignment"), meets: t("meets") };
@@ -6577,6 +6592,7 @@
     if (!form.meets) return { error: "Please say how often the Lead meets with credit CPL colleagues." };
     if (!form.name) return { error: "Please enter your name." };
     if (NC_ATTEST_TITLES.map(function (o) { return o.val; }).indexOf(form.title) === -1) return { error: "Please choose your title." };
+    if (form.title === "Other" && !form.titleText) return { error: OTHER_TITLE_ASK };
     if (!OPTIN_EMAIL_RE.test(form.email)) return { error: "Please enter a valid college email address (name@college.edu)." };
     return { form: form };
   }
@@ -6898,7 +6914,9 @@
           nr.ctx = csmCtx("nc", key, att && att.fiscal_year);
           nr.leadCtx = csmCtx("lead", key, att && att.fiscal_year);
         }
-        out.req = { part: rev ? { name: rev.name || "", title: rev.title || "", email: rev.email || "", at: rev.requested_at || "",
+        loadSenderTitles();
+        if (nr) nr.titleText = senderTitleText("nc", key, att && att.fiscal_year);
+        out.req = { part: rev ? { name: rev.name || "", title: rev.title || "", titleText: senderTitleText("part", key), email: rev.email || "", at: rev.requested_at || "",
           status: rev.status || "", ctx: csmCtx("part", key) } : null, nc: nr };
       }
       return out;
@@ -7048,6 +7066,29 @@
   // Reviewer-only lookup of the PII attestation row for a college (from the gated
   // RPC feed). Null when the caller isn't a reviewer, or the active row is a
   // reviewer-created (on-behalf) one — the RPC returns only source='self' rows.
+  /* The titles senders wrote (attestor_title_text), for a reviewer: cpl_funding_sender_titles() answers only
+     is_funding_reviewer(). Asked once per sign-in per page; no answer leaves the review as it was. */
+  var SENDER_TITLES_RPC = SUPABASE_URL + "/rest/v1/rpc/cpl_funding_sender_titles";
+  var TITLES = { asked: "", map: {} };
+  function loadSenderTitles() {
+    var e = sessionEmail();
+    if (!e || !remoteEnabled() || TITLES.asked === e) return;
+    TITLES.asked = e;
+    fetch(SENDER_TITLES_RPC, { method: "POST", body: "{}",
+      headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }) })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) { TITLES.asked = ""; return; }
+        var roster = rosterByShortName(), m = {};
+        rows.forEach(function (x) {
+          var key = roster[shortName(x.college)] || x.college;
+          m[x.kind + "|" + key + (x.kind === "nc" ? "|" + (x.fiscal_year || "") : "")] = String(x.title_text || "");
+        });
+        TITLES.map = m;
+        if (rows.length) render();
+      }).catch(function () { TITLES.asked = ""; });
+  }
+  function senderTitleText(kind, college, fy) { return TITLES.map[kind + "|" + college + (kind === "nc" ? "|" + (fy || "") : "")] || ""; }
   function optinReviewOf(college) {
     var list = ELIG.optinReview || [];
     for (var i = 0; i < list.length; i++) if (list[i].college === college) return list[i];
@@ -7194,7 +7235,8 @@
       emailStepHtml(college, "optin", "part", ui) +
       '<div class="cplfund-optin-grid">' +
       '<label>Your name<input type="text" data-optinfield="name" autocomplete="name" maxlength="120" placeholder="First Last"></label>' +
-      "<label>Your title<select data-optinfield=\"title\">" + titleOpts + "</select></label>" +
+      "<label>Your title<select data-optinfield=\"title\" data-titlepick>" + titleOpts + "</select></label>" +
+      '<label class="cplfund-titletext" data-titletext hidden>Your title at the college<input type="text" data-optinfield="titleText" autocomplete="organization-title" maxlength="120" placeholder="For example: Dean of Instruction"></label>' +
       "</div>" + err +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-optinsubmit="' + esc(college) + '"' +
@@ -7286,7 +7328,8 @@
       "</div></fieldset>" +
       '<fieldset class="cplfund-ncattest-set"><legend>You, attesting for the college</legend><div class="cplfund-ncattest-grid">' +
       f("name", "Your name", 'type="text" maxlength="120" autocomplete="name" placeholder="First Last"') +
-      "<label>Your title<select data-ncattestfield=\"title\">" + titleOpts + "</select></label>" +
+      "<label>Your title<select data-ncattestfield=\"title\" data-titlepick>" + titleOpts + "</select></label>" +
+      '<label class="cplfund-titletext" data-titletext hidden>Your title at the college<input type="text" data-ncattestfield="titleText" autocomplete="organization-title" maxlength="120" placeholder="For example: Dean of Instruction"></label>' +
       "</div></fieldset>" + err +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-ncattestsubmit="' + esc(college) + '"' +
@@ -17540,6 +17583,14 @@
         });
       });
     });
+    // The sender's own title shows once they pick Other senior administrator (both forms).
+    holder.querySelectorAll("[data-titlepick]").forEach(function (sel) {
+      var sync = function () {
+        var w = sel.closest("[data-optinwrap],[data-ncattestwrap]"), l = w && w.querySelector("[data-titletext]");
+        if (l) l.hidden = sel.value !== "Other";
+      };
+      sel.addEventListener("change", sync); sync();
+    });
     holder.querySelectorAll("[data-optinsubmit]").forEach(function (b) {
       b.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -17551,16 +17602,18 @@
         if (!wrap) return;
         var g = function (f) { var el = wrap.querySelector('[data-optinfield="' + f + '"]'); return el ? el.value : ""; };
         var name = String(g("name")).trim(), title = String(g("title")), email = String((OPTIN_UI[college] || {}).email || "").trim();
+        var titleText = title === "Other" ? String(g("titleText")).trim().slice(0, 120) : "";
         var errEl = wrap.querySelector("[data-optinerr]");
         var err = "";
         if (!name) err = "Please enter your name.";
         else if (OPTIN_TITLES.map(function (o) { return o.val; }).indexOf(title) === -1) err = "Please choose your title.";
+        else if (title === "Other" && !titleText) err = OTHER_TITLE_ASK;
         else if (!OPTIN_EMAIL_RE.test(email)) err = "Please enter a valid college email address (name@college.edu).";
         if (err) { if (errEl) errEl.textContent = err; return; }
         if (errEl) errEl.textContent = "";
         domainCheck(college, email, function (dc) {
           if (!dc.ok) { if (errEl) errEl.textContent = domainErrText(college, dc.domains); return; }
-          submitOptIn(college, { name: name, title: title, email: email });
+          submitOptIn(college, { name: name, title: title, email: email, titleText: titleText });
         });
       });
     });
