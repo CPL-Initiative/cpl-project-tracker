@@ -100,21 +100,23 @@
     "the blocks sum to 38.0-42.0; the catalog states 19.0-21.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     38.0,
-     42.0
+     72.0,
+     76.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-    ]
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -160,8 +162,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -405,5 +407,20 @@
    "'English is frequently studied as a pre-law major' not recorded as a career."
   ]
  },
- "extracted_run": "38935121852"
+ "extracted_run": 42610498785,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "General Education (Cal-GETC) and Elective Units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: College of Alameda AA-T and AS-T pages: 'General Education (Cal-GETC) and Elective Units 41.00- 42.00 / Total Units 60.00' (Sociology 33032; college page read 42609117444); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)')"
+  }
+ ],
+ "read_run": "38935121852"
 }
