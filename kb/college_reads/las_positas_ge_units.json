@@ -1,0 +1,68 @@
+{
+ "_readme": "S630 SkyCartwheel, 2026-11-10. Las Positas College passes 116 of 193 (program_record_machine_pass); all 77 failures are degrees, 72 read incomplete: each names the degree's 60 and Cal-GETC (transfer, 25) or LPC-GE or Cal-GETC (local) with no GE units. This read asks, on the catalog's own JSON as the capture reads it (catalog 164), what four transfer pages (32182 English AA-T, 30815 Sociology AA-T, 35245 Biology AS-T, 41984 Business Administration 2.0 AS-T) and two local pages (01001 Administration of Justice A.A., 01008 Chemistry A.S.) print about the GE pattern and its units, and the degree total, before any Redwoods-style set of 34 on transfer degrees or any LPC-GE figure. No render, no model call.",
+ "college": "Las Positas College",
+ "questions": {
+  "ge_units": "What does the page print about the general education pattern (Cal-GETC, LPC-GE, CSU GE) and its units, and does it print a degree total?"
+ },
+ "keywords": [
+  "Cal-GETC",
+  "CalGETC",
+  "IGETC",
+  "LPC-GE",
+  "CSU",
+  "General Education",
+  "[Uu]nits",
+  "Total",
+  "60"
+ ],
+ "pages": [
+  {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1677",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 164
+  },
+  {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/176/2071/2084",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 164
+  },
+  {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1447",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 164
+  },
+  {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1486",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 164
+  },
+  {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/741",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 164
+  },
+  {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1527",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 164
+  }
+ ]
+}
