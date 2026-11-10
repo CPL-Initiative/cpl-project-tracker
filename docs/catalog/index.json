@@ -16697,8 +16697,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 585,
+   "count": 586,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 625,
+     "path": "docs/session_625_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "csm-workspace",
+      "reviewer-session-lifetime",
+      "college-district-identity",
+      "commons",
+      "discipline-crosslist",
+      "implementation-funding"
+     ],
+     "title": "Session 625 handoff: the funding tab says when access has ended, the decline pieces leave, a ruling can cross-list, the identity baseline is current",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-09",
      "governs": [],
@@ -26632,5 +26651,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1429
+ "total": 1430
 }

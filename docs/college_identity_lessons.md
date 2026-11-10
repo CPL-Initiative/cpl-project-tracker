@@ -622,3 +622,23 @@ its shorts over every edit; it now exits 2 without `--force-reseed`.
 `service_role` grants stated in the file even though the project's default privileges already held them; they were
 added after the apply with a note, since the receipt's sha256 names the file as it ran. The trigger was probed live with
 UPDATEs inside statements made to fail (`cpl_memory` `probe-a-trigger-without-a-write-2026-11-02`).
+
+## S624 SkyCocoon (2026-11-10): the re-baseline, and five readers left on the old one
+
+**The daily check's first working run compared today's names with an input from August.** It raised the
+`college-identity` issue as built: one new name, two gone. The re-baseline (#3019) derived the new input from the last
+one and proved it against live in a single SQL read: the name-set md5, each name's sources and landing page, and
+`map_colleges` unchanged at 120 rows. A second run of the check then closed the issue itself, which is the proof the
+baseline matches.
+
+**A re-baseline moves the newest folder, and a reader that names a folder does not follow.** COBIx found two builders
+opening `kb/college_identity/2026-08-23/` by path; a search for the pattern found three more, one still on 2026-08-12.
+`kb/_college_identity_latest.py` now answers which folder is newest, and a reader that must stay on a date says
+*PINNED ON PURPOSE* beside the path. Before repointing each reader, its output was rebuilt on the old baseline and on the
+new one and compared byte for byte: three were identical, and the fourth reads only fields the two baselines share.
+
+**Read the lane before calling a question Sam's.** The new name was California State University Los Angeles. The
+session wrote, in the lane and in a PR, that what it is waited on Sam's ruling, and began a decision card. The lane's
+own paragraph, eleven lines up, holds his word from 2026-10-04: the first CSU campus on MAP, kept in the mix, named in
+`kb/non_ccc_institutions.json`. The card was dropped and the lane corrected. The finding reads `unknown` because the
+crosswalk builder's lint does not read the non-CCC list; that is the lane's NEXT.

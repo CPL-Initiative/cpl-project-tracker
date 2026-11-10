@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 623,
-  "moniker": "SkyButterfly",
+  "session": 624,
+  "moniker": "SkyCocoon",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_624_handoff.md",
+  "handoff": "docs/session_625_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -31,11 +31,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-09T23:36:35Z",
+  "written_at": "2026-11-10T02:16:38Z",
   "project": "course",
   "next_step": {
-    "title": "Confirm the next five disciplines, if Sam agrees",
-    "text": "Sheet 175 asks whether Music, Fire Technology, Mathematics, Child Development/ECE and English are confirmed where the descriptions and TOP both agree; it is also the Docket's first case in the Commons (#commons/case/2026-11-09-ccr-next-five). On his word kb/_ccr_seed_confirm_apply.py runs per discipline with its --expect count."
+    "title": "Teach a rule on every reference, from the path mock",
+    "text": "The commons lane's NEXT: Teach a rule on every reference, the confidence count for the CR rule rungs and the Course auditor, then the other references' paths. KINE M1142 still has no saved ruling, and Sheet 177 card 1 (the next five disciplines) waits on Sam."
   },
   "changes": [
     {
@@ -65,6 +65,14 @@
     {
       "at": "2026-11-09T22:55:02Z",
       "text": "The Courses List keeps the row you rule on in view and marked, with its band; the ruling's save, the edits and Open in SkyView each have their own line (#3004)."
+    },
+    {
+      "at": "2026-11-10T02:16:38Z",
+      "text": "A Discipline in doubt ruling can keep the home discipline and also list a second one; it writes one cross-list row and never changes the home or the M-ID (#3025, issue 2981)."
+    },
+    {
+      "at": "2026-11-10T02:16:38Z",
+      "text": "A list of disciplines is split against the MQ names, since two names carry commas; one umbrella record loses three phantom second disciplines at the next daily run (#3025)."
     }
   ]
 }

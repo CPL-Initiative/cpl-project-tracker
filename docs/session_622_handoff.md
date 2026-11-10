@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 621 (SkyBlackEye, Sam's session, 2026-11-09 ~15:50Z to ~20:10Z)
 tags: [handoff, csm-workspace, implementation-funding, commons, program-requirements-harvest, org-phrase-scope-auth]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 622

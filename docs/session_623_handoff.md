@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 622 (SkyCartwheel, Sam's session, 2026-11-09 ~20:20Z to ~22:30Z)
 tags: [handoff, csm-workspace, implementation-funding, reviewer-session-lifetime, commons, college-district-identity]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 623

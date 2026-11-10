@@ -4,6 +4,8 @@ date: 2026-11-09
 session: 623 (SkyButterfly, Sam's session with Malone joining, 2026-11-09 ~22:30Z to 2026-11-10 ~01:00Z)
 tags: [handoff, csm-workspace, commons, college-district-identity, reviewer-session-lifetime, implementation-funding, library]
 status: current
+superseded: true
+superseded_by: session_625_handoff.md
 ---
 
 # You are Session 624
