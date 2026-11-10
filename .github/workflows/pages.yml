@@ -245,6 +245,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-        # The default wait is 10 minutes; a large site's sync outlasted it on 2026-11-10 (COBIx on #3077).
-        with:
-          timeout: 1800000
+        # deploy-pages waits at most 10 minutes (MAX_TIMEOUT 600000 in v4 and v5; COBIx on #3088), so the size
+        # check in Assemble lean site is what keeps the sync inside it.
