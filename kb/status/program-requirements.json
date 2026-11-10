@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-10T18:25:27Z",
+  "written_at": "2026-11-10T19:40:21Z",
   "session": 633,
   "moniker": "SkySilverDollar",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_634_handoff.md",
   "next_step": {
-    "title": "Sam's answers on Open Asks Sheet 180",
-    "text": "Las Positas's local degrees wait on card 4 (a GE figure summed from the pattern's areas), De Anza on card 5 (a hand-filed copy of its two GE sheets) and Alameda on card 2; until then the catalog sweep moves to the next college with missing records."
+    "title": "Carry out Sam's Sheet 180 rulings",
+    "text": "Las Positas's local degrees take GE units of 28 and 22 summed from the LPC-GE areas, and Alameda's six semester layouts take the sum of their subtotals; each runs reconcile, reread and display. De Anza waits on Sam's hand-filed GE sheets."
   },
   "calls": [
     {
@@ -223,14 +223,24 @@
       "text": "The 2026-27 LPC-GE page prints each area's units and no total; summed, an A.A. needs 28 and an A.S. 22. The 47 local degrees fail until a figure is set.",
       "if_no_reply": "The local degrees stay failing as read.",
       "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
-      "link_text": "Open Sheet 180"
+      "link_text": "Open Sheet 180",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-10",
+        "words": "Count them, on Open Asks Sheet 180 card 4: A.A. 28 and A.S. 22, summed from the areas."
+      }
     },
     {
       "title": "Will Sam hand-file De Anza's two GE sheets?",
       "text": "deanza.edu refuses the reader, and the catalog links two separate GE sheets without printing a pattern's units, so 73 degrees fail for want of GE units.",
       "if_no_reply": "De Anza waits and the sweep moves on.",
       "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
-      "link_text": "Open Sheet 180"
+      "link_text": "Open Sheet 180",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-10",
+        "words": "I will file them, on Open Asks Sheet 180 card 5."
+      }
     }
   ],
   "notes": {

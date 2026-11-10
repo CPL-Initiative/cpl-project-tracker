@@ -1,0 +1,10 @@
+{
+  "what": "Open Asks Sheet 180 card 3 (Sam, 2026-11-10 19:35:27Z, his own call: long): Wildland Fire-Basics' issuer saved in the long form, as the other 110 credentials from that agency read.",
+  "table": "kb_curation",
+  "key": {"course_id": "_CREDENTIAL_REVIEW::Wildland Fire-Basics", "field": "issuing_agency_override"},
+  "before": {"value": "State Fire Training (SFT)", "reviewer_email": "slee@cccco.edu", "reviewed_at": "2026-11-01 22:39:22.326209+00"},
+  "after": {"value": "California State Fire Training (SFT)", "reviewer_email": "exhibit-reanalysis-s633@bot"},
+  "guard": "update only where value = 'State Fire Training (SFT)' and reviewer_email = 'slee@cccco.edu'",
+  "rollback": "update kb_curation set value = 'State Fire Training (SFT)', reviewer_email = 'slee@cccco.edu', reviewed_at = '2026-11-01 22:39:22.326209+00' where course_id = '_CREDENTIAL_REVIEW::Wildland Fire-Basics' and field = 'issuing_agency_override' and reviewer_email = 'exhibit-reanalysis-s633@bot';",
+  "session": "S633 SkySilverDollar"
+}

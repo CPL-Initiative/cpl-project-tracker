@@ -43,23 +43,35 @@ with no overlap but the generated dependency map and docs audit (whoever merges 
 
 ## Read first
 
-- [Open Asks Sheet 180](https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F) (current, six cards, empty at 18:30Z).
-  **Read its `replies` before acting on any card.** A late reply on Sheet 178 or 179 still counts for the card it names.
+- [Open Asks Sheet 180](https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F): answered in full at 19:37Z (`replies/1` to `6`,
+  `done`); no card is open, and none should be made for calls off the hold list.
 - `docs/reference/lanes/cer-procedures.md` (the re-analysis paragraph), `docs/exhibit_canonicalization_lessons.md` S633,
   `docs/program_requirements_harvest_lessons.md` S633.
 
 ## Open work, in order (built from the lanes)
 
-1. **Sheet 180's replies.** Card 6 (the five training-site issuers) is the re-analysis's first calibration input; cards 4
-   and 5 unblock Las Positas's local degrees and De Anza; card 2 Alameda's semester layouts; card 3 the Wildland issuer;
-   card 1 the next common-course disciplines.
-2. **`program-requirements-harvest`:** Las Positas, De Anza and Alameda all wait on Sheet 180; the catalog sweep moves to
-   the next college with missing records (step 12). Step 11's full read and the UI pass fall to the first firing of
-   2026-11-11 UTC. The lane is 22.6 KB against 20: compact its live mechanism text (the nightly SLO read, Phase 2) next.
-3. **`cer-procedures`:** Sheet 180 card 6; the next re-analysis request runs the checks, then the Jev runner. The lane is
-   over budget too (22 KB): the *Add your credential* paragraph is the largest.
+**Doctrine change first (Sam, 2026-11-10 ~19:41Z, in session):** *"These decision should be made by you without needing
+my confirmation and just stored as decisions either of us or cobix can look up if needed. you could always confer with
+cobix on them, but we should not slow down with all these decision sheets which are generally pro-forma approved by me."*
+Decide, carry out, and record (a `cpl_memory` decision row and a DECIDED line in the lane); a sheet only for the hold
+list (`CLAUDE.md`, the decision-sheets bullet). Vault braindump `braindump-2026-11-10-1941-decide-and-record-not-decision-sheets.md`.
+
+1. **Carry out Sheet 180's rulings** (all six answered 19:34-19:37Z, his own call; card 3 done by S633):
+   - **`commons`, card 1 *all*:** confirm every remaining discipline with `kb/_ccr_seed_confirm_apply.py`, a
+     discipline at a time, each with its receipt (the dry run named 26 disciplines, 584 courses).
+   - **`program-requirements-harvest`, card 4 *count*:** Las Positas's local A.A. 28 and A.S. 22, summed from the
+     LPC-GE areas; reconcile, reread, display. **Card 2 *count*:** Alameda's six semester layouts take the sum of their
+     subtotals; same runs. **Card 5 *file*:** De Anza waits on Sam posting its two GE sheets to `catalog-files`.
+   - **`cer-procedures`, card 6 *two*:** look up the issuing body for the credentials under Proctored Testing Center
+     and Graduate Level Institution of Higher Education, save with a receipt, record the decision; CSTI, Johnson
+     Controls and Spaulding stay.
+2. **`program-requirements-harvest`:** then the sweep's next college with missing records (step 12). Step 11's full read
+   and the UI pass fall to the first firing of 2026-11-11 UTC. The lane is 22.6 KB against 20: compact its live
+   mechanism text (the nightly SLO read, Phase 2).
+3. **`cer-procedures`:** the next re-analysis request runs the checks, then the Jev runner. The lane is over budget (22
+   KB): the *Add your credential* paragraph is the largest.
 4. **`csm-workspace` NEXT 0:** the sign-in with *Ask an approver*, Malone's four questions (the drawer's Priorities
-   lines shipped in #3080). NEXT 1 and 2: the hover cards and every landing-page role; the denial email.
+   lines shipped in #3080).
 5. **`commons` NEXT:** Teach a rule on every reference, the Course auditor's count, the `--cmn` tokens.
 6. **`implementation-funding`:** the sender waits on RCCD IT's mailbox grant. **`library`:** DSP Version 3, IACA, the
    Microsoft 365 connector; the Library session may have moved it. **`college-district-identity`,

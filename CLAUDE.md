@@ -393,17 +393,15 @@ first day.** Do the remembering for them.
   that it is one.
 - **Show, don't describe.** Offer a visual/mock-up early for anything with a
   shape to it. Reacting is easier than specifying.
-- **Decisions arrive as decision sheets (Sam, 2026-08-30).** *"I'd like to
-  handle all my current and future decisions this way."* When judgments only
-  Sam can make accumulate, build one numbered sheet rather than scattering
-  asks through chat: per item, what it is in plain words, the measured
-  context (from the maps and feeds, never guessed), a proposed disposition
-  with its draft reason, and reply-by-number verdicts. Hand it over as a
-  Claude artifact link. **Mark the recommendation and carry it out in the
-  same run (Sam, 2026-10-20) when `git revert` or its Rule 10 receipt can
-  undo it;** the sheet stays the record, and the card reads *Proceeded on the
-  recommendation (S<N>, <date>); reply to reverse*. **Hold for his reply,
-  still:** anything outward, a public KB merge, deleting data, a production
+- **Decide and record; a sheet only for the hold list (Sam, 2026-11-10).**
+  *"These decision should be made by you without needing my confirmation and
+  just stored as decisions either of us or cobix can look up if needed. you
+  could always confer with cobix on them, but we should not slow down with all
+  these decision sheets which are generally pro-forma approved by me."* Make
+  the call, carry it out when `git revert` or its Rule 10 receipt can undo it,
+  and store it: a `cpl_memory` decision row and a DECIDED line in the lane;
+  COBIx may be consulted. **A decision sheet (Sam, 2026-08-30) carries only the
+  hold list, which still waits for his reply:** anything outward, a public KB merge, deleting data, a production
   deploy outside a standing authorization, funding figures published to
   colleges, the program's name or identity, who does what on the team, a cost
   above a standing limit, reversing a dated ruling of his, a permission-check
@@ -418,8 +416,8 @@ first day.** Do the remembering for them.
   `CPLBrain/decision-sheets/decision_sheets.md`.
   **And it is "always", not "when they accumulate" (Sam, 2026-09-22).**
   *"Always give me a decision sheet for any outstanding items for me..."* —
-  so the sheet is the standing form of the backlog, built whenever anything is
-  waiting on him, never held back for a quorum.
+  so a hold-list item gets its sheet at once, never held back for a quorum; a
+  call off the hold list is decided and recorded instead (2026-11-10).
   The builder in `CPLBrain/decision-sheets/` **refuses to build** when a lane
   carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
   dismisses. Add the ask to a lane and the sheet breaks until it is asked.
@@ -740,7 +738,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (now: [Open Asks Sheet 180](https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F), 2026-11-10, six open). An answer
+> (last: [Open Asks Sheet 180](https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F), answered 2026-11-10; none open). An answer
 > changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
