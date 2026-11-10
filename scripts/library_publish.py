@@ -17,7 +17,9 @@ presses Replace the public copy (regen.approved_at), or asked for it at once whe
              on the card since the read wins and the record is left for the next run.
 
 It writes no other file and no other table. A record whose page is not a Pages copy, or whose
-draft is missing, is skipped and named. Test: tests/library_publish_test.py.
+draft is missing, is skipped and named. A NEW piece (regen.new_piece, drafted on its card from the
+starter page; Sam, 2026-11-10) has no copy yet: --write makes library/<slug>/ for it, and the update
+makes it Version 1, filed on the web at its Pages address, a Requested record moving to Draft. Test: tests/library_publish_test.py.
 
     SUPABASE_SERVICE_KEY=... python3 scripts/library_publish.py --write
     SUPABASE_SERVICE_KEY=... python3 scripts/library_publish.py --finish --commit <sha>
@@ -67,10 +69,15 @@ def source_behind(record, draft):
     return bool(draft.get("model")) and bool(SCRIPT.search(rb))
 
 
+def is_new_piece(record):
+    g = record.get("regen") if isinstance(record.get("regen"), dict) else {}
+    return bool(g.get("new_piece"))
+
+
 def record_update(record, draft, today):
     """The update that makes the draft the record's current version. Pure."""
     g = record["regen"]
-    n = next_version(record)
+    n = 1 if is_new_piece(record) and not record.get("version") else next_version(record)
     label = f"Version {n}" if n else "Revised " + today
     versions = [dict(x) for x in (record.get("versions") or []) if isinstance(x, dict)]
     versions = [x for x in versions if not (x.get("label") == label and str(x.get("status", "")).startswith("Draft"))]
@@ -79,9 +86,10 @@ def record_update(record, draft, today):
             x["status"] = "Replaced by " + (f"v{n}" if n else label)
     who = g.get("approved_by") or g.get("requested_by") or "the team"
     note = (draft.get("summary") or "Revised from the card.").strip()
+    verb = "published the first public copy" if is_new_piece(record) else "replaced the public copy"
     entry = {"url": PAGES + record["slug"] + "/", "date": today, "label": label,
              "status": f"Current: {note} Drafted from the card by {draft.get('made_by') or 'the team'} "
-                       f"(draft {draft['id']}); replaced the public copy on {who}'s approval."}
+                       f"(draft {draft['id']}); {verb} on {who}'s approval."}
     if source_behind(record, draft):
         entry["source_behind"] = True
     versions.append(entry)
@@ -89,6 +97,12 @@ def record_update(record, draft, today):
            "url": PAGES + record["slug"] + "/"}
     if n:
         out["version"] = str(n)
+    if is_new_piece(record):
+        out.update({"home": "web", "file_type": "html"})
+        if record.get("status") in (None, "requested"):
+            out["status"] = "draft"
+        if not record.get("made_on"):
+            out["made_on"] = today
     return out
 
 
@@ -118,14 +132,21 @@ def api(path, method="GET", body=None, headers=None):
 
 
 def write_phase(today):
-    rows = api("cpl_library?select=id,slug,title,url,version,versions,refresh_note,rebuild_from,regen,updated_at"
+    rows = api("cpl_library?select=id,slug,title,url,version,versions,refresh_note,rebuild_from,regen,updated_at,status,made_on,home,file_type"
                "&regen=not.is.null&retired_at=is.null")
     done, skipped = [], []
     for r in rows:
         if not due(r):
             continue
-        if not SLUG.match(r.get("slug") or "") or not (ROOT / "library" / r["slug"] / "index.html").exists():
+        if not SLUG.match(r.get("slug") or ""):
+            skipped.append(f"{r.get('slug')}: not a Pages address")
+            continue
+        page = ROOT / "library" / r["slug"] / "index.html"
+        if not page.exists() and not is_new_piece(r):
             skipped.append(f"{r.get('slug')}: no Pages copy at library/<slug>/")
+            continue
+        if page.exists() and is_new_piece(r) and not r.get("url"):
+            skipped.append(f"{r['slug']}: a new piece whose folder library/{r['slug']}/ already holds another page")
             continue
         did = urllib.parse.quote(r["regen"]["draft_id"])
         d = api(f"cpl_library_drafts?id=eq.{did}&library_id=eq.{r['id']}&select=id,slug,html,summary,made_by,model,published_at")
@@ -133,7 +154,8 @@ def write_phase(today):
             skipped.append(f"{r['slug']}: draft {r['regen']['draft_id']} not found")
             continue
         d = d[0]
-        (ROOT / "library" / r["slug"] / "index.html").write_text(d["html"], encoding="utf-8")
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text(d["html"], encoding="utf-8")
         up = record_update(r, d, today)
         RECEIPTS.mkdir(parents=True, exist_ok=True)
         (RECEIPTS / f"{today}-{r['slug']}.json").write_text(

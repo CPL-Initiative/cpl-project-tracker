@@ -486,7 +486,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `generate_reports.js` | scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` | — |
 | `governance.js` | pages: `CPL_Dashboard.html` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
-| `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/build_exhibits_list_preview.py`, `scripts/library_publish.py`, `scripts/ui_pass.py` | scripts: `scripts/library_page.py`, `scripts/library_publish.py` · committed by: `daily-dashboard.yml` |
+| `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/build_exhibits_list_preview.py`, `scripts/ui_pass.py` | scripts: `scripts/library_page.py`, `scripts/library_publish.py` · committed by: `daily-dashboard.yml` |
 | `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `index_*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
@@ -1185,7 +1185,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `data-c-idsystem.org` | scripts: `kb/_csr_quarterly_probe.py` |
 | `datamart.cccco.edu` | scripts: `kb/_fetch_program_course_files.py` |
 | `datastudio.google.com` | tabs: `cip-crosswalk` |
-| `docs.google.com` | tabs: `nc-learning-partners` |
+| `docs.google.com` | tabs: `nc-learning-partners` · scripts: `chatbox/supabase/functions/library-revise-draft/new_page.mjs` |
 | `drive.google.com` | scripts: `scripts/library_file.py` |
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `example.edu` | modules: `a11y.config.js` |
@@ -1361,4 +1361,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 833 file
-datasets · 194 external services · 545 consumers · 65 workflows · 40 tabs.
+datasets · 194 external services · 546 consumers · 65 workflows · 40 tabs.

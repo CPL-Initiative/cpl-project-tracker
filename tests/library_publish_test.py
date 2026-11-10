@@ -67,6 +67,21 @@ check(not any(v.get("source_behind") for v in u5["versions"]), "nor one whose on
 check("rebuild_from" in open(lp.__file__).read().split("def write_phase")[1].split("\n")[1] and "made_by,model" in open(lp.__file__).read(),
       "the run reads rebuild_from and the draft's model")
 
+# A new piece drafted on its card from the starter (Sam, 2026-11-10): Version 1, filed on the web, Requested to Draft.
+N = {"id": "n1", "slug": "adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5", "version": None, "status": "requested",
+     "made_on": None, "home": "not_filed", "url": None, "versions": [], "updated_at": "2026-11-10T18:00:00+00:00",
+     "regen": {"requested_at": "t0", "requested_by": "Sam", "new_piece": True, "ready_at": "t1", "draft_id": "d9",
+               "approved_at": "t2", "approved_by": "Sam"}}
+un = lp.record_update(N, {"id": "d9", "summary": "Steps to add the two contacts.", "made_by": "Sam", "model": "m"}, "2026-11-10")
+check(lp.due(N) and lp.is_new_piece(N), "an approved new piece is due, and known as new")
+check(un["version"] == "1" and un["versions"][-1]["label"] == "Version 1", "a new piece publishes as Version 1")
+check(un["home"] == "web" and un["url"].endswith("/library/" + N["slug"] + "/") and un["file_type"] == "html",
+      "it is filed on the web at its Pages address (home and url move together, as cpl_library_filed_ck asks)")
+check(un["status"] == "draft" and un["made_on"] == "2026-11-10", "a Requested piece moves to Draft and takes the day as made on")
+check("first public copy" in un["versions"][-1]["status"], "its version says it is the first public copy")
+check(not lp.is_new_piece(R) and "home" not in lp.record_update(R, D, "2026-11-05"), "a revision moves none of that")
+check("mkdir(parents=True" in open(lp.__file__).read(), "--write makes the new piece's folder")
+
 if fails:
     print("\n%d check(s) failed" % len(fails))
     sys.exit(1)

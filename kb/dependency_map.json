@@ -6,7 +6,7 @@
   "edge_functions": 14,
   "file_datasets": 833,
   "external_services": 194,
-  "consumers": 545,
+  "consumers": 546,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -510,7 +510,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 149
+     "line": 160
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -1076,7 +1076,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 38
+     "line": 47
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1291,7 +1291,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 37
+     "line": 39
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -1735,6 +1735,13 @@
      "tabs": [
       "nc-learning-partners"
      ]
+    },
+    {
+     "id": "script:chatbox/supabase/functions/library-revise-draft/new_page.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 54
     }
    ],
    "main_committers": []
@@ -2943,7 +2950,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1801,
+     "line": 1844,
      "tabs": [
       "library"
      ]
@@ -6310,7 +6317,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2963,
+     "line": 3129,
      "tabs": [
       "library"
      ]
@@ -8788,16 +8795,9 @@
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 127
-    },
-    {
-     "id": "script:scripts/library_publish.py",
-     "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 136
+     "line": 144
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -8864,7 +8864,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2289,
+     "line": 2447,
      "tabs": [
       "library"
      ]
@@ -8880,7 +8880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1794,
+     "line": 1837,
      "tabs": [
       "library"
      ]
@@ -19593,7 +19593,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1907,
+     "line": 2065,
      "tabs": [
       "library"
      ]
@@ -21333,7 +21333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3548,
+     "line": 3720,
      "tabs": [
       "library"
      ]
@@ -27039,7 +27039,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1309,
+     "line": 1190,
      "tabs": [
       "library"
      ]
@@ -27049,7 +27049,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 135
     }
    ],
    "main_committers": []

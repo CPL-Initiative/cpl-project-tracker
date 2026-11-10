@@ -381,7 +381,7 @@ block("(9)", function () {
       w0.body.sources[0].text === "Eight projects funded." && w0.body.sources[0].url === null, JSON.stringify(w0.body.sources));
     check("(9) For defaults to the team", w0.body.seen_by === "team");
     check("(9) the write carries the team phrase", w0.init.headers["x-team-pass"] === "p");
-    check("(9) the saved brief opens for copying, and the page says what happens next", m.M._state.briefShown.new1 === true && /Requested: Summit table \(Spreadsheet\)/.test(m.root.textContent) && /next scheduled run picks it up/.test(m.root.textContent));
+    check("(9) the saved brief opens for copying, and the page says what happens next", m.M._state.briefShown.new1 === true && /Requested: Summit table \(Spreadsheet\)/.test(m.root.textContent) && /Press Draft it now on its card/.test(m.root.textContent));
     check("(9) the panel empties for the next piece", m.w.document.getElementById("ls-title").value === "" && m.w.document.getElementById("lc-instr").value === "");
   });
 });
@@ -1201,9 +1201,16 @@ block("(18)", function () {
     doc.getElementById("ls-title").value = "Webinar deck";
     const before18 = writes.length;
     click(m.w, doc.getElementById("lib-go"));
+    // The deck's words are read first (Sam, 2026-11-10), so the POST follows a read.
+    const posted = function (n) { return writes.slice(before18).some(function (x) { return x.method === "POST"; }) || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return posted(n - 1); }); };
+    return posted(200).then(function () {
     const w18 = writes.slice(before18).filter(function (x) { return x.method === "POST"; })[0] || { body: {} };
     check("(18) as background, the saved brief says what to do with the source deck's notes",
       ((w18.body.brief || {}).shape || "") === "The Chancellor's Office template, with a speaker script in each slide's notes in place of the source deck's notes", JSON.stringify(w18.body.brief || {}));
+    check("(18) ⭐ and the deck's words go with it, slide by slide (Sam, 2026-11-10: the dropped file \"apparently didn't upload\")",
+      (w18.body.sources || []).some(function (x) { return /^Slide 1\n/.test(x.text || "") && /Slide 3\n[\s\S]*Questions\?/.test(x.text || ""); }), JSON.stringify(w18.body.sources || []).slice(0, 300));
+    return settle();
+    }).then(function () {
     // A document is asked nothing about notes.
     drop("20261030_Memo.docx", deck);
     check("(18) a document is not asked about speaker notes", !doc.getElementById("lc-notes"));
@@ -1216,6 +1223,7 @@ block("(18)", function () {
     click(m.w, doc.getElementById("lib-go"));
     const ready = function (n) { return scriptCalls.length >= 3 && doc.querySelector('[data-remscript="3"]') && doc.querySelector('[data-remscript="3"]').value || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
     return ready(300);
+    });
   }).then(function () {
     const sec = doc.querySelector(".lib-remnotes");
     check("(18) the report holds a script for each slide, said to go below the notes", !!sec && /Speaker notes: Claude's script below your notes \(3\)/.test(sec.textContent) && sec.querySelectorAll("[data-remscript]").length === 3, sec && sec.textContent.slice(0, 200));

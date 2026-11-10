@@ -22,7 +22,15 @@
 //
 // The documents a teammate pasted travel to the Anthropic API for the one call; the tab's
 // help already says never a student's record. A linked document is named to the model, not
-// fetched.
+// fetched, except a Google Docs, Slides or Sheets link, whose plain-text export is read when
+// the file is shared as "Anyone with the link" (new_page.mjs googleExport; Sam, 2026-11-10).
+//
+// NEW PIECES (Sam, 2026-11-09 and 2026-11-10: a new piece made from the Library "all the way to
+// posting in the public library", no session): a Requested record has no page to revise, so its
+// first draft starts from a starter page in the public library's look (new_page.mjs). The model
+// writes the title, the description, the page's <main> and the foot's publication line; the
+// frame stays the starter's. The draft is stored the same way and regen.new_piece tells
+// library_publish.py to make library/<slug>/ and Version 1.
 //
 // Auth: the team phrase (x-team-pass) or a reviewer sign-in (bearer), as alt-text-draft.
 // Deployed with verify_jwt off; the check is here. Secrets used (project-wide):
@@ -31,6 +39,7 @@
 
 import { applyEdits, frameKept, parseAnswer } from "./apply_edits.mjs";
 import { readingText, SIERRA_MAX } from "./sierra_text.mjs";
+import { buildNewPage, googleExport, parseNewAnswer, STARTER_SLUG } from "./new_page.mjs";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const ANON = Deno.env.get("SUPABASE_ANON_KEY") || "";
@@ -99,17 +108,23 @@ Deno.serve(async (req) => {
   const by = String(body?.by || "").trim().slice(0, 120);
   if (!by) return reply(400, { error: "Add your name, so the record says who asked for the draft." });
 
-  const got = await rest(`cpl_library?id=eq.${id}&select=id,slug,title,url,version,refresh_note,sources,regen,public_listed`, cred);
+  const got = await rest(`cpl_library?id=eq.${id}&select=id,slug,title,kind,status,url,version,refresh_note,sources,regen,public_listed,brief,for_name,occasion`, cred);
   if (!got.ok) return reply(502, { error: "The record could not be read (" + got.status + ")." });
   const r = (await got.json())[0];
   if (!r) return reply(404, { error: "No such record." });
-  const g = r.regen && typeof r.regen === "object" ? r.regen : null;
+  const isNew = r.status === "requested" && !r.url;
+  let g = r.regen && typeof r.regen === "object" ? r.regen : null;
+  if (isNew && (!g || !g.requested_at)) g = { requested_at: new Date().toISOString(), requested_by: by, publish: "show" };
   if (!g || !g.requested_at) return reply(409, { error: "Ask for the revision first: Revise and remediate, with what to change." });
   if (g.ready_at) return reply(409, { error: "A draft is already on the card. Ask for more changes to start a new one." });
   const pasted = (Array.isArray(r.sources) ? r.sources : []).filter((x: any) => x && !x.url && x.text);
   const linked = (Array.isArray(r.sources) ? r.sources : []).filter((x: any) => x && x.url);
-  if (!r.refresh_note && !pasted.length) return reply(409, { error: "Say what to change, or paste a document to work from, before drafting." });
+  const brief = r.brief && typeof r.brief === "object" ? r.brief : {};
+  if (isNew ? !(brief.say || r.refresh_note || pasted.length) : !(r.refresh_note || pasted.length || linked.some((x: any) => googleExport(x.url))))
+    return reply(409, { error: isNew ? "Say what the piece must say, or add a document to work from, before drafting." : "Say what to change, or paste a document to work from, before drafting." });
   if (!SLUG.test(r.slug || "")) return reply(409, { error: "The record's slug is not a Pages address." });
+  const fromGoogle = await readGoogle(linked);
+  if (isNew) return draftNew(r, g, brief, pasted, linked, fromGoogle, by, cred);
 
   const pageUrl = PAGES + r.slug + "/";
   // More changes to a draft (Sam, 2026-11-05: Ask for more changes must never lose the draft): the card names the
@@ -130,12 +145,8 @@ Deno.serve(async (req) => {
   }
   if (page.length > MAX_PAGE) return reply(413, { error: "The page is too large to revise here; a session revises it." });
 
-  let docs = "";
-  for (const x of pasted) {
-    const room = MAX_SOURCES - docs.length;
-    if (room <= 0) break;
-    docs += `\n--- ${String(x.title || "A pasted document").slice(0, 200)} ---\n` + String(x.text).slice(0, room) + "\n";
-  }
+  const docs = docsText(pasted, fromGoogle.read);
+  const unopened = linked.filter((x: any) => !fromGoogle.read.some((y) => y.url === x.url));
   // Fix 1 (Sam, 2026-11-05: "build fixes 1-3"): the model is told Sierra's budget and the page's length against it.
   const sierraBefore = readingText(page).length;
   const ask = `${pageWords}:\n<page>\n${page}\n</page>\n\n` +
@@ -143,7 +154,7 @@ Deno.serve(async (req) => {
     (sierraBefore > SIERRA_MAX ? ", already past it: add nothing without making room." : `, so ${(SIERRA_MAX - sierraBefore).toLocaleString("en-US")} remain.`) + "\n\n" +
     `Changes asked for by ${g.requested_by || "the team"}:\n${r.refresh_note || "None typed: bring the page in line with the documents below."}\n` +
     (docs ? `\nDocuments pasted to work from:${docs}` : "") +
-    (linked.length ? `\nDocuments linked on the card, not opened here: ${linked.map((x: any) => x.title || x.url).join("; ")}. Say in the summary if the change needs one of them.\n` : "") +
+    (unopened.length ? `\nDocuments linked on the card, not opened here: ${unopened.map((x: any) => x.title || x.url).join("; ")}. Say in the summary if the change needs one of them.\n` : "") +
     "\nAnswer with the JSON.";
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
@@ -185,3 +196,96 @@ Deno.serve(async (req) => {
   if (!up.ok) return reply(502, { error: "The draft is stored, but the card could not be updated (" + up.status + ")." });
   return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", sierra, model: MODEL, usage: out?.usage || null });
 });
+
+// ── Documents: what was pasted, and the Google files read by their links ──────────────────────
+function docsText(pasted: any[], google: { title: string; text: string }[]): string {
+  let docs = "";
+  for (const x of [...pasted, ...google]) {
+    const room = MAX_SOURCES - docs.length;
+    if (room <= 0) break;
+    docs += `\n--- ${String(x.title || "A pasted document").slice(0, 200)} ---\n` + String(x.text).slice(0, room) + "\n";
+  }
+  return docs;
+}
+
+async function readGoogle(linked: any[]): Promise<{ read: { url: string; title: string; text: string }[]; closed: string[] }> {
+  const read: { url: string; title: string; text: string }[] = [], closed: string[] = [];
+  for (const x of linked.slice(0, 6)) {
+    const at = googleExport(x.url);
+    if (!at) continue;
+    const res = await fetch(at, { redirect: "follow" }).catch(() => null);
+    const type = res?.headers.get("content-type") || "";
+    const text = res && res.ok && !/text\/html/i.test(type) ? (await res.text().catch(() => "")).replace(/^\uFEFF/, "").trim() : "";
+    if (text) read.push({ url: x.url, title: String(x.title || "A Google file") + " (read from its Google link)", text: text.slice(0, MAX_SOURCES) });
+    else closed.push(String(x.title || x.url));
+  }
+  return { read, closed };
+}
+
+// ── A new piece's first draft (Sam, 2026-11-10) ───────────────────────────────────────────────
+const NEW_INSTRUCTIONS = `You write a new public page for the CPL Library, the California Community Colleges Chancellor's Office's collection of visuals about Credit for Prior Learning (CPL). You receive a STARTER page in the public library's look, the brief a teammate wrote, and the documents they gave. Write the new page's content in the starter's look.
+
+Answer with JSON alone, no fence and no preface:
+{"title":"<the page's title, short>","description":"<one sentence for search and link previews>","main":"<main id=\"main\">...</main>","published":"<the foot's first line, in the starter's form, dated today and naming Draft 1>","summary":"<two or three plain sentences: what the page covers, what it drew from, and anything the brief asked for that you could not do and why>"}
+
+Rules for "main":
+- One <main id="main"> element and nothing outside it. Build it from the starter's own classes and pattern: the hero (hero, hero-in, eyebrow, h1, sub, title-accent, lede), then a body div of sections, each a <section aria-labelledby> with an h2, cards (cards, card), numbered steps (ol class="cards four steps" with li class="card"), and plain paragraphs. Exactly one h1, in the hero. Headings in order, no level skipped.
+- No script, no inline event handler, no style attribute that sets a color, no iframe, no form, no image. Links open with target="_blank" rel="noopener" and point only to addresses stated in the brief or the documents.
+- Never invent a figure, a date, a name, a step or a link. Every instruction on the page comes from the documents or the brief. When a document is a set of screens or slides, turn its steps into plain numbered steps and its callouts into short notes beside them.
+- Write as the Chancellor's Office writes: plain words, active voice, the student or the college as the subject, American spelling, sentences that vary in length. The program is the CPL Initiative; the platform is the MAP platform (Mapping Articulated Pathways). No emoji, no glyphs standing for words, no business words (leverage, utilize, robust).
+- A support address or an office's general address from the documents may stay. Never copy a person's own email address, phone number or ID number onto the page.
+- Keep the page inside Sierra's reading budget, which the request states.`;
+
+async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[], google: { read: any[]; closed: string[] }, by: string, cred: Record<string, string>) {
+  const starterUrl = PAGES + STARTER_SLUG + "/";
+  const sr = await fetch(starterUrl).catch(() => null);
+  if (!sr || !sr.ok) return reply(502, { error: "The starter page could not be read from GitHub Pages. Try again in a minute, or Copy the brief for a session." });
+  const starter = await sr.text();
+  const docs = docsText(pasted, google.read);
+  const unopened = linked.filter((x: any) => !google.read.some((y) => y.url === x.url));
+  const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "America/Los_Angeles" });
+  const ask = `The starter page (${starterUrl}), for its look and pattern only; none of its words belong on the new page:\n<starter>\n${starter}\n</starter>\n\n` +
+    `Sierra's reading budget: ${SIERRA_MAX.toLocaleString("en-US")} characters of text.\nToday is ${today}.\n\n` +
+    `The new piece: ${r.title} (${r.kind || "visual"})` + (r.for_name ? `, made for ${r.for_name}` : "") + (r.occasion ? `, for ${r.occasion}` : "") + ".\n" +
+    `Brief from ${brief.requested_by || g.requested_by || "the team"}:\n${brief.say || r.refresh_note || "None typed: make the page from the documents below."}\n` +
+    (brief.shape ? `Its shape: ${brief.shape}\n` : "") + (brief.sources ? `Sources named in the brief: ${brief.sources}\n` : "") +
+    (r.refresh_note && brief.say ? `More asked since: ${r.refresh_note}\n` : "") +
+    (docs ? `\nDocuments to work from:${docs}` : "") +
+    (unopened.length ? `\nDocuments linked on the card, not opened here: ${unopened.map((x: any) => x.title || x.url).join("; ")}. Say in the summary if the page needs one of them.\n` : "") +
+    "\nAnswer with the JSON.";
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "x-api-key": Deno.env.get("ANTHROPIC_API_KEY") || "", "anthropic-version": "2023-06-01", "content-type": "application/json" },
+    body: JSON.stringify({ model: MODEL, max_tokens: 16000, system: NEW_INSTRUCTIONS, messages: [{ role: "user", content: ask }] }),
+  }).catch(() => null);
+  if (!res || !res.ok) {
+    const t = res ? await res.text().catch(() => "") : "";
+    console.error("library-revise-draft (new): model call failed", res?.status, t.slice(0, 300));
+    return reply(502, { error: "The model did not answer" + (res ? " (" + res.status + ")" : "") + ". Try again in a minute." });
+  }
+  const out = await res.json();
+  const text = (out?.content || []).filter((c: any) => c.type === "text").map((c: any) => c.text).join("");
+  const ans = parseNewAnswer(text);
+  if (ans.error) return reply(502, { error: ans.error + " Try again." });
+  const built = buildNewPage(starter, r.slug, ans);
+  if (built.error) return reply(422, { error: built.error, summary: ans.summary });
+  const lost = frameKept(starter, built.html);
+  if (lost.length) return reply(422, { error: "The draft was not stored: it dropped " + lost.join(", ") + ".", summary: ans.summary });
+  const sierra = { before: 0, after: readingText(built.html).length, max: SIERRA_MAX };
+  const ins = await rest("cpl_library_drafts", cred, {
+    method: "POST",
+    body: JSON.stringify({
+      library_id: r.id, slug: r.slug, html: built.html, based_on: "starter " + STARTER_SLUG, made_by: by, model: MODEL,
+      summary: ans.summary || null, edits: 0,
+      request: { new_piece: true, brief: brief.say || null, refresh_note: r.refresh_note || null,
+        sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)),
+        google_closed: google.closed, regen: g, sierra, title: ans.title },
+    }),
+  });
+  if (!ins.ok) return reply(502, { error: "The draft could not be stored (" + ins.status + ")." });
+  const draft = (await ins.json())[0];
+  const regen = { ...g, new_piece: true, ready_at: new Date().toISOString(), draft_id: draft.id, draft_url: null, drafted_by: by, drafted_with: "library-revise-draft" };
+  const up = await rest(`cpl_library?id=eq.${r.id}`, cred, { method: "PATCH", body: JSON.stringify({ regen, updated_by: by }) });
+  if (!up.ok) return reply(502, { error: "The draft is stored, but the card could not be updated (" + up.status + ")." });
+  return reply(200, { draft_id: draft.id, summary: ans.summary, new_piece: true, title: ans.title, google_closed: google.closed, sierra, model: MODEL, usage: out?.usage || null });
+}
