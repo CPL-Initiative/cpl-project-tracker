@@ -497,6 +497,9 @@
       R + " .lib-panel h2.lib-h{margin:0;}",
       R + " .lib-drop{display:grid;gap:12px;padding:18px;border:2px dashed var(--border-strong);border-radius:8px;background:var(--surface-subtle);}",
       R + " .lib-drop.over,.lib-cbox.over{border-color:var(--cobalt);}",
+      R + " [data-newdrop].over{outline:2px dashed var(--cobalt);outline-offset:4px;}",
+      R + " .lib-state label.lib-word{cursor:pointer;}",
+      R + " .lib-state label.lib-word:has(+ input:focus-visible){outline:2px solid var(--cobalt);outline-offset:2px;}",
       R + " .lib-dropline{margin:0;font-weight:600;color:var(--text-strong);}",
       R + " .lib-pick{justify-self:start;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px;}",
       R + " #lc-file:focus-visible + *, .lib-pick:focus-within{outline:2px solid var(--cobalt);outline-offset:2px;}",
@@ -1166,7 +1169,10 @@
         next.push('<form data-draftnowform="' + esc(r.id) + '">' + nameOrField("dn-by-", r.id) +
           '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>");
         why = "Claude drafts the page in the public library's look from the brief and the documents, in about a minute, and checks its accessibility. Nothing is public until you press Publish it.";
-      } else why = "Say what it must say, or add a document to work from (Edit record), and Claude drafts it here.";
+      } else why = "Say what it must say (Edit record), or add a document to work from, and Claude drafts it here.";
+      // The piece's documents, added on the card itself (Sam's request 71931018 was saved before its PDF was read).
+      next.push('<label class="lib-word" for="nd-file-' + esc(r.id) + '">Add a document</label><input id="nd-file-' + esc(r.id) + '" class="lib-vh" type="file" data-newdoc="' + esc(r.id) + '">');
+      why += " Drop a Word, PowerPoint or Excel file, a PDF or captions on this card to add its words.";
     } else if (rs === "ready") {
       line = esc("Draft 1 is ready to review" + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". Nothing is public yet.");
       next.push(openDraftWord(r, true),
@@ -1180,9 +1186,28 @@
       next.push(openDraftWord(r, false));
     }
     var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
-    return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
+    return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
       (line ? '<p class="now">' + line + "</p>" : "") + (why ? '<p class="why">' + esc(why) + "</p>" : "") +
       (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "") + msg + "</div>";
+  }
+  // A document added on a Requested card: read here, then saved to the record's documents at once.
+  function addNewPieceFile(id, file) {
+    var r = byId(id);
+    if (!isNewPiece(r)) return;
+    var name = file.name, ext = extOf(name);
+    sayOn(id, "Reading " + name + "\u2026"); render();
+    readWords(file).then(function (text) {
+      if (!text) { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); return; }
+      var list = sourceList(r).slice();
+      if (list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
+      return write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { sources: list, updated_by: storedAuthor() || null } }).then(function () {
+        sayOn(id, "Added " + name + " (" + wordCount(text) + " words read). Press Draft it now.");
+        return load().then(function () { focusState(id); });
+      });
+    }, function () { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); })
+      .catch(function (e) { sayOn(id, e.message, true); render(); });
   }
   function redraft(id) {
     var r = byId(id);
@@ -3511,6 +3536,7 @@
     }, true);
     root.addEventListener("change", function (e) {
       if (e.target.getAttribute && e.target.getAttribute("data-cbfile") && e.target.files && e.target.files[0]) { addCardFile(e.target.getAttribute("data-cbfile"), e.target.files[0]); return; }
+      if (e.target.getAttribute && e.target.getAttribute("data-newdoc") && e.target.files && e.target.files[0]) { addNewPieceFile(e.target.getAttribute("data-newdoc"), e.target.files[0]); return; }
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
@@ -3564,7 +3590,7 @@
     });
     // Two drop targets: the top box, and a card's Revise box (Sam, 2026-11-10: "I can drop files when starting at
     // the beginning, but not when revising"; the card's box had no drop target, so the browser took the file).
-    var dropOf = function (e) { return e.target.closest && (e.target.closest("#lib-drop") || e.target.closest("form[data-cboxform]")); };
+    var dropOf = function (e) { return e.target.closest && (e.target.closest("#lib-drop") || e.target.closest("form[data-cboxform]") || e.target.closest("[data-newdrop]")); };
     root.addEventListener("dragover", function (e) {
       var d = dropOf(e); if (d) { e.preventDefault(); d.classList.add("over"); }
     });
@@ -3578,6 +3604,7 @@
       var fl = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
       if (!fl) return;
       if (d.getAttribute("data-cboxform")) addCardFile(d.getAttribute("data-cboxform"), fl);
+      else if (d.getAttribute("data-newdrop")) addNewPieceFile(d.getAttribute("data-newdrop"), fl);
       else takeFile(fl);
     });
     root.addEventListener("submit", function (e) {

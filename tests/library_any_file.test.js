@@ -201,9 +201,22 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
         check("E ⭐ Publish it approves the draft for library-publish, keeping new_piece", !!p && p.body.regen.new_piece === true && p.body.regen.approved_by === "Sam");
       }
     }
+    // Sam's own request 71931018 was saved with no document: its card takes the PDF now, dropped on it or chosen.
+    const add = loadModule(); await add.M.activate(); await tick();
+    add.w.pdfjsLib = pdfStub(PDF_PAGES);
+    const zone = add.root.querySelector('[data-newdrop="n1"]');
+    check("E ⭐ a Requested card is a drop target and offers Add a document", !!zone && !!add.root.querySelector('input[data-newdoc="n1"]') && /Add a document/.test(zone.textContent));
+    if (zone) {
+      drop(add, zone, fileOf("Adding_CPL_Coordinator.pdf", new Uint8Array([1])));
+      await until(() => add.writes.some((x) => x.method === "PATCH" && x.body.sources));
+      const pw = add.writes.filter((x) => x.method === "PATCH" && x.body.sources)[0];
+      check("E ⭐ a PDF dropped on it saves its words to the record's documents at once", !!pw && /cpl_library\?id=eq\.n1$/.test(pw.url) && /Log in to MAP/.test((pw.body.sources[0] || {}).text || ""));
+      await until(() => /Press Draft it now/.test(add.root.textContent));
+      check("E and says to press Draft it now", /Added Adding_CPL_Coordinator\.pdf \(\d+ words read\)\. Press Draft it now\./.test(add.root.textContent));
+    }
     const none = loadModule(null, [Object.assign({}, ROWS[1], { brief: { requested_by: "Sam" }, sources: [] })]);
     await none.M.activate(); await tick();
-    check("E a Requested piece with nothing to draft from says what to add", !none.root.querySelector('form[data-draftnowform="n1"]') && /Say what it must say, or add a document/.test(none.root.textContent));
+    check("E a Requested piece with nothing to draft from says what to add", !none.root.querySelector('form[data-draftnowform="n1"]') && /Say what it must say \(Edit record\), or add a document/.test(none.root.textContent));
   }
   // ── F. new_page.mjs and the function ──
   {
