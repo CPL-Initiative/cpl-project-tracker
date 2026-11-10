@@ -84,6 +84,7 @@ itpi just added the field in map users. if they attest, we can accept that now a
   (all conditions met), Confirmed, With a CPL Coordinator in MAP, With a Noncredit CPL Lead, Confirmed but missing the
   CPL Coordinator in MAP (`#csm-workspace/coord`, the list Sam chases), No CPL Coordinator in MAP, All institutions.
   A missing coordinator is status only: no CSM email for it.
+- **The exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation (Sam, in session 2026-11-10: *"Nc yes exact wor whole"*, then *"Word"*; COBIx had relayed it on #2999).** No form is needed and the form stays out under Scenario 4. The workspace reads it so since #3012 and its record reads *Noncredit share: complete*; the funding tab since #3033: the role meets `nc_team` as well as `nc_coord`, a college with the role is offered no form, counts as attested in the filter, and a form it left waiting shows no chip (guard `tests/cpl_funding_nc_lead_in_map.test.js`). The reviewer's confirmations panel still lists a form on file, so Accept and Reject stay reachable.
 - **The Noncredit CPL Lead is met by the role in MAP or an accepted attestation** (`ncMet`). A form still waiting at a
   college that holds the role asks nothing of the team (`ncWaiting`): no pill, no place in Waiting on the team.
 - **No decline piece, in the workspace or the funding tab.** No *Mark Declined participation*, no Declined list, pill
@@ -112,13 +113,6 @@ List already carries the same control on its side panel (`pgrip` in `commons_lis
    email state (the confirmation, the Noncredit CPL Lead ask for the role in MAP, both in one email, the acceptance, the
    noncredit attestation acceptance, no email needed), with the side panel and the one people list of #2978. Build it
    from the workspace mock, version 11, in the vault.
-0b. **The role in MAP meets the whole attestation, in the funding tab.** COBIx relays Sam's word (#2999, 2026-11-09
-   22:22Z): the exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation, no form needed, a
-   waiting form counts as complete, and the form stays out under Scenario 4. The workspace reads it so since #3012.
-   The funding tab's `ncCondList` still lets the role meet `nc_coord` only, and `nc_team` (hidden by default,
-   `ncTeamShown`) still needs an accepted attestation (tests 1f, 1g); its Attest control and the *Noncredit CPL Lead
-   attested* filter read the form alone. Confirm the relay with Sam in one line, then build; nothing differs on the
-   page while `nc_team` stays hidden.
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.

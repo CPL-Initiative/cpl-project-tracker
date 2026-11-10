@@ -119,8 +119,9 @@ create policy mcn_update on public.map_college_nudges for update
 -- the map users we pull ... we can start listing that role next to the priority requiring attestation of a nc cpl
 -- lead and complete the attestation for them if the nc cpl lead role is in map." The role shows on a college's CPL
 -- landing page (map_landing_contacts.contact_title), pulled daily. Two booleans, never a name:
---   has_nc_cpl_lead     a contact titled exactly "Noncredit CPL Lead" (any case). It meets the Noncredit CPL Lead
---                       condition alone; the attestation's other parts still come on the form (Sam: "yes" to both).
+--   has_nc_cpl_lead     a contact titled exactly "Noncredit CPL Lead" (any case). It stands in for the whole
+--                       noncredit attestation, the strike-team condition included, with no form (Sam, in session
+--                       2026-11-10: "Nc yes exact wor whole", then "Word").
 --   nc_lead_title_near  a title that names noncredit and is not the role ("CPL Coordinator/Noncredit Lead",
 --                       "Noncredit CPL Coordinator"): it meets nothing, and tells a CSM to ask for the role.
 -- Measured 2026-11-09 (the 11-08 18:13Z pull): 2 colleges carry the role, 2 a near title; every one of the 105
