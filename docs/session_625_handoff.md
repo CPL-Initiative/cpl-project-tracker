@@ -55,11 +55,11 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
 - **A correction to carry:** this session wrote that what Cal State LA is waited on Sam, then found his word already
   in the identity lane (2026-10-04: the first CSU campus on MAP, kept in the mix, `kb/non_ccc_institutions.json`).
   Nothing waits on him there. Read the lane's own paragraphs, and the PR threads, before calling anything his.
-- **Relayed, to confirm in one line:** COBIx relays Sam's word on #2999 (2026-11-09 22:22Z) that the exact MAP title
-  *Noncredit CPL Lead* stands in for the **whole** noncredit attestation: no form needed, a waiting form counts as
-  complete, and the form stays out under Scenario 4. Handoff 624 and the lane had carried the strike-team half
-  (`nc_team`) as open for him, and this session repeated that until COBIx pointed at the thread (#3028). #3012 built the
-  workspace's half. The funding tab's half is open work item 2 below: ask Sam *yes* on the relay, then build.
+- **Sam, 2026-11-10, in session, on whether the exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit
+  attestation:** *"Nc yes exact wor whole"*. Yes: the exact title, the whole attestation (the strike-team condition
+  included), no form needed, a waiting form counts as complete. It confirms COBIx's relay on #2999 (2026-11-09 22:22Z);
+  `cpl_memory` `sam-nc-lead-title-meets-whole-attestation-2026-11-10`. #3012 built the workspace's half; the funding
+  tab's half is open work item 2, and it is cleared to build.
 - **For Sam's word, no hurry:** dropping `cpl_funding_notes`' two unread columns, with a migration that rewrites the
   table's check in the same step.
 - **Open for Malone, unchanged (asked, not yet answered):** Recommended action above or below the four conditions;
@@ -81,8 +81,8 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
 
 1. **Malone's remaining UI changes, in the mock, one version each.** Then, on Sam's word, **build the mock into the
    live workspace** (`csm-workspace` NEXT 0).
-2. **The role in MAP meets the whole noncredit attestation, in the funding tab** (`csm-workspace` NEXT 0b, on Sam's
-   *yes* to COBIx's relay): `ncCondList` lets the role meet `nc_team` as well as `nc_coord` (tests 1f and 1g flip), the
+2. **The role in MAP meets the whole noncredit attestation, in the funding tab** (`csm-workspace` NEXT 0b; Sam said yes on
+   2026-11-10, so build it): `ncCondList` lets the role meet `nc_team` as well as `nc_coord` (tests 1f and 1g flip), the
    Attest control and the *Noncredit CPL Lead attested* filter read the role, and the comments in `ncCondList` and
    `map/supabase_map_contacts.sql` say so. Nothing differs on the page until a scenario shows `nc_team`.
 3. **`college-district-identity` NEXT:** the crosswalk builder's lint reads `kb/non_ccc_institutions.json`, so Cal
