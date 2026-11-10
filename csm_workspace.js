@@ -232,21 +232,15 @@
       "#tab-csm-workspace .chip { all:unset; cursor:pointer; min-height:24px; font-size:.88rem; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; }",
       "#tab-csm-workspace .chip:hover { color:var(--cw-heading); }",
       "#tab-csm-workspace .ncstrip { margin:0; font-size:.92rem; color:var(--cw-ink-2); }",
-      "#tab-csm-workspace dialog.cdlg { border:1px solid var(--cw-line); border-radius:12px; padding:0; width:min(680px, calc(100vw - 32px)); max-height:min(86vh, 900px); background:var(--cw-surface); color:var(--cw-ink); box-shadow:0 18px 48px rgba(8,43,97,.22); }",
-      "#tab-csm-workspace dialog.cdlg::backdrop { background:rgba(8,20,40,.45); }",
-      "#tab-csm-workspace .cdlg-in { display:grid; gap:16px; padding:20px 22px 22px; }",
-      "#tab-csm-workspace .cdlg-head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
-      "#tab-csm-workspace .cdlg-head h3 { margin:0; font-family:var(--cw-serif); font-size:1.4rem; color:var(--cw-title); }",
-      "#tab-csm-workspace .cdlg-src { display:grid; gap:6px; }",
-      "#tab-csm-workspace .cdlg-src h4 { margin:0; font-size:.98rem; color:var(--cw-heading); }",
-      "#tab-csm-workspace .cdlg-src .tpl-meta { margin:0; }",
+      "#tab-csm-workspace .onfile-src { display:grid; gap:6px; }",
+      "#tab-csm-workspace .onfile-src h4 { margin:0; font-size:.98rem; color:var(--cw-heading); }",
+      "#tab-csm-workspace .onfile-src .tpl-meta { margin:0; }",
       "#tab-csm-workspace .fields { margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:4px 18px; font-size:.9rem; }",
       "#tab-csm-workspace .fields li { display:flex; justify-content:space-between; gap:10px; border-top:1px solid var(--cw-line-soft); padding:4px 0; }",
       "#tab-csm-workspace .fields .off { color:var(--cw-ask-fg); background:var(--cw-ask-bg); border-radius:999px; padding:0 8px; font-size:.78rem; font-weight:700; white-space:nowrap; }",
       "#tab-csm-workspace .fields .on { color:var(--cw-muted); font-size:.82rem; white-space:nowrap; }",
       "#tab-csm-workspace .tags { display:flex; flex-wrap:wrap; gap:6px; }",
       "#tab-csm-workspace .diff { margin:0; padding:10px 12px; border-radius:8px; background:var(--cw-ask-bg); color:var(--cw-ask-fg); font-size:.9rem; }",
-      "#tab-csm-workspace .cdlg-foot { display:flex; flex-wrap:wrap; gap:6px 20px; align-items:center; border-top:1px solid var(--cw-line-soft); padding-top:12px; }",
       "#tab-csm-workspace .ppl-h { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 16px; margin:0 0 6px; }",
       "#tab-csm-workspace .ppl-h .k { margin:0; }",
       "#tab-csm-workspace .roles { margin:0; padding:0; list-style:none; display:grid; gap:0; }",
@@ -261,15 +255,9 @@
       "#tab-csm-workspace .titles { margin:0 0 10px; padding:0; list-style:none; display:grid; gap:2px; font-size:.88rem; }",
       "#tab-csm-workspace .titles li { display:flex; justify-content:space-between; gap:12px; padding:2px 0 2px 14px; color:var(--cw-ink-2); }",
       "#tab-csm-workspace .titles li span:last-child { color:var(--cw-muted); font-variant-numeric:tabular-nums; }",
-      "#tab-csm-workspace table.people { width:100%; border-collapse:collapse; font-size:.88rem; min-width:520px; }",
-      "#tab-csm-workspace .people th, #tab-csm-workspace .people td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--cw-line-soft); vertical-align:top; }",
-      "#tab-csm-workspace .people th { color:var(--cw-muted); font-weight:600; font-size:.8rem; position:sticky; top:0; background:var(--cw-surface); }",
-      "#tab-csm-workspace .people .ph { color:var(--cw-muted); font-style:italic; }",
-      "#tab-csm-workspace .people td:last-child { white-space:nowrap; }",
       "#tab-csm-workspace .ppl-tools { display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center; }",
       "#tab-csm-workspace details.onfile { display:grid; gap:10px; }",
       "#tab-csm-workspace details.onfile summary { cursor:pointer; color:var(--cw-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
-      "#tab-csm-workspace .ppl-scroll { max-height:52vh; overflow:auto; border:1px solid var(--cw-line-soft); border-radius:8px; }",
       "@media (max-width: 560px) { #tab-csm-workspace .fields { grid-template-columns:minmax(0, 1fr); } }",
       "#tab-csm-workspace .hc { position:absolute; z-index:50; max-width:min(340px, calc(100vw - 32px)); background:var(--cw-surface); color:var(--cw-ink); border:1px solid var(--cw-line); border-radius:10px; box-shadow:0 12px 32px rgba(8,43,97,.18); padding:12px 14px; font-size:.86rem; line-height:1.45; display:grid; gap:6px; }",
       "#tab-csm-workspace .hc[hidden] { display:none; }",
@@ -283,7 +271,6 @@
       "#tab-csm-workspace button[data-hc], #tab-csm-workspace .row[data-hc], #tab-csm-workspace .chip[data-hc] { cursor:pointer; }",
       "#tab-csm-workspace [data-hc]:not(button):not(.row):not(.chip) { text-decoration:underline dotted var(--cw-muted); text-underline-offset:4px; }",
       "#tab-csm-workspace .big[data-hc] { text-decoration-thickness:2px; }",
-      "#tab-csm-workspace dialog.cdlg.wide { width:min(900px, calc(100vw - 32px)); }",
       "#tab-csm-workspace .mm-grid { display:grid; grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); gap:16px; align-items:start; }",
       "#tab-csm-workspace .mm-step { display:grid; gap:8px; min-width:0; }",
       "#tab-csm-workspace .mm-step h4 { margin:0; font-size:.98rem; color:var(--cw-heading); display:flex; justify-content:space-between; gap:10px; align-items:baseline; }",
@@ -356,7 +343,6 @@
         "background-color:var(--cw-page); color:var(--cw-ink); font-family:var(--cw-sans); font-size:16px; line-height:1.55; border-radius:12px; }",
       "#tab-csm-workspace .cw-fold[hidden] { display:none; }",
       // A popup sits over the page, so its ground is opaque in both themes (dark --surface is translucent glass).
-      "#tab-csm-workspace dialog.cdlg.cdlg { background:var(--cw-dialog); }",
       "#tab-csm-workspace .rolefield { display:grid; gap:4px; margin:6px 0; max-width:340px; font-weight:600; font-size:.88rem; }",
       "#tab-csm-workspace .signin { margin:0; padding:10px 14px; border-radius:8px; background:var(--cw-pill-bg); color:var(--cw-pill-fg); font-size:.92rem; }",
       "#tab-csm-workspace .grant .grant-acts { margin:8px 0 2px; }"
@@ -1111,7 +1097,7 @@
     return out;
   }
 
-  // ── the popups ──
+  // ── the contacts on file ──
   /* Contacts on file, inside the People panel (Sam, 2026-11-10: "links still opening to new tabs instead of
      sidebars"). What were two pop-ups, Contacts on file and Names, titles and emails, now sit in the panel: the one
      people list with its source filter and Copy the addresses shown, what the sources disagree on, and every field on
@@ -1135,10 +1121,10 @@
     var users = Object.keys(byRole).length ? '<p class="tags">' + Object.keys(byRole).sort().map(function (k) {
       return '<span class="pill">' + esc(k) + " " + byRole[k] + "</span>"; }).join("") + "</p>" : '<p class="tpl-meta">No active MAP users.</p>';
     return (mm.length ? '<p class="diff">' + mm.map(esc).join("<br>") + "</p>" : '<p class="tpl-meta">The three sources agree on the coordinator and the primary contact.</p>') +
-      '<details class="onfile"><summary>Every field on file</summary>' +
-      '<section class="cdlg-src"><h4>MAP directory</h4>' + fields + "</section>" +
-      '<section class="cdlg-src"><h4>Landing page</h4>' + land + "</section>" +
-      '<section class="cdlg-src"><h4>MAP users by role</h4>' + users + "</section></details>";
+      '<details class="onfile" data-onfile="1"' + (state.onfileOpen ? " open" : "") + "><summary>Every field on file</summary>" +
+      '<section class="onfile-src"><h4>MAP directory</h4>' + fields + "</section>" +
+      '<section class="onfile-src"><h4>Landing page</h4>' + land + "</section>" +
+      '<section class="onfile-src"><h4>MAP users by role</h4>' + users + "</section></details>";
   }
   var SOURCES = ["MAP directory", "Landing page", "MAP users"];
   function peopleToolsHtml(only) {
@@ -1616,8 +1602,6 @@
     S = f.snapshot();
     if (S.reviewer && !LOG.asked) loadLog();
     if (S.reviewer && CT.state === "idle") loadContacts();
-    var dlgHost = document.getElementById("cw-dlg-host");
-    if (dlgHost) dlgHost.parentNode.removeChild(dlgHost);
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
@@ -1632,7 +1616,6 @@
       '<footer class="foot"><span>The dashboard never sends mail: every email opens for you to send from Outlook or Gmail.</span>' +
         '<a href="#implementation-funding">Open Implementation Funding</a></footer>' + fundHtml() +
       "</div></div></div>";
-    if (dlgHost) el.appendChild(dlgHost);
     var sm = document.getElementById("cw-signin");
     if (sm && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
       window.CPL_REVIEWER_SIGNIN.mountInto(sm, { title: "Sign in to the Funding Follow-up Dashboard", door: true,
@@ -1881,7 +1864,7 @@
       // Escape closes the funding drawer and returns to the word that opened it.
       el.addEventListener("keydown", function (e) {
         // A pop-up's own Escape closes the pop-up alone (COBIx on PR 3053): the drawer stays while one is open.
-        if (e.key !== "Escape" || !state.fund || document.getElementById("cw-dlg-host")) return;
+        if (e.key !== "Escape" || !state.fund) return;
         state.fund = false; paint();
         var fo = fundOpener(); if (fo) fo.focus();
       });
@@ -1890,6 +1873,8 @@
       el.addEventListener("input", onInput);
       el.addEventListener("submit", onSubmit);
       el.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("ccpick")) state.ccOpen = e.target.open; }, true);
+      // Every field on file keeps its fold through a repaint, as the source filter repaints the record (COBIx on PR 3067).
+      el.addEventListener("toggle", function (e) { if (e.target.hasAttribute && e.target.hasAttribute("data-onfile")) state.onfileOpen = e.target.open; }, true);
       // Show the landing page here draws the page the first time it opens.
       el.addEventListener("toggle", function (e) {
         var d = e.target; if (!d.hasAttribute || !d.hasAttribute("data-lpshow")) return;

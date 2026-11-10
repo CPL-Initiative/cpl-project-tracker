@@ -403,12 +403,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5f6: Escape closes the drawer", dr().hidden && h.W._state.fund === false);
     clickEl(h.window, open()); clickEl(h.window, dr().querySelector('[data-fund="close"]'));
     check("5f7: Close closes it too", dr().hidden);
-    clickEl(h.window, open());
-    const host = h.doc.createElement("div"); host.id = "cw-dlg-host"; R.appendChild(host);
-    R.dispatchEvent(new h.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
-    check("5f7a: Escape meant for an open pop-up leaves the drawer open", !R.querySelector("#cw-fund").hidden && h.W._state.fund === true);
-    const hh = R.querySelector("#cw-dlg-host"); if (hh) hh.parentNode.removeChild(hh);
-    clickEl(h.window, R.querySelector('#cw-fund [data-fund="close"]'));
+    // The pop-ups are gone (#3067), so nothing else on the page takes Escape from the drawer.
+    check("5f7a: no pop-up code is left: no dialog host, no dialog styles", !/cw-dlg-host|dialog\.cdlg|\.cdlg-/.test(SRC));
     check("5f8: a reviewer who is no approver, with nobody waiting, gets no access word in the header", !R.querySelector("header [data-accopen]"));
     // Sam, 2026-11-10: "links still opening to new tabs instead of sidebars". In the record, Implementation Funding
     // opens the drawer; only the drawer's Open the full page goes to the funding tab.
@@ -556,7 +552,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const rows = () => ppl().querySelectorAll("table.facts tbody tr");
   check("8d: the one people list carries every row with its source, under column headers", rows().length === 6 &&
     Array.prototype.map.call(ppl().querySelectorAll('table.facts thead th[scope="col"]'), flat).join("|") === "Role|Person|Source", String(rows().length));
+  // COBIx on PR 3067: the filter repaints the record, and the fold must stay as the reviewer left it.
+  const fold = ppl().querySelector("details.onfile"); fold.open = true; fold.dispatchEvent(new window.Event("toggle"));
   const src = ppl().querySelector("[data-psrc]"); src.value = "MAP users"; src.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("8e0: an open Every field on file stays open when the source filter repaints the record", ppl().querySelector("details.onfile").open === true);
   check("8e: the source filter narrows the list in place, and keeps the focus on itself",
     rows().length === 2 && W._state.psrc === "MAP users" && doc.activeElement === root.querySelector("#cw-psrc") && root.querySelector("#cw-psrc").value === "MAP users");
   clickEl(window, root.querySelector('.row[data-sel="' + COLLEGE + '"]') || root.querySelector(".row[data-sel]"));
