@@ -14,6 +14,12 @@ no new ruling this run; he opened the session and the queue ran. The MAP team ro
 the whole team on 2026-11-10. COBIx (`cobi-cto`) reviews every PR; `docs/reference/cobix_pr_loop.md` says how to
 answer. Run `/coord` before you start.
 
+**Two sessions ran on handoff 624.** Sam pasted the SkyCocoon greeting into a second session at 01:43Z
+(`session_01Rvwe2U562qR7UqfSmi4LXw`). It took the `commons` NEXT (the path mock's items, `kb/status/commons.json`,
+`lanes/commons.md`, branches `claude/s624b-*`) and stayed out of the CSM, funding and identity files; this session
+stayed out of the Commons view. If it checkpoints it writes `docs/session_626_handoff.md`: read the highest-numbered
+handoff, and this one beside it for the lanes named here.
+
 ## What shipped
 
 Merged and on main:
@@ -68,7 +74,8 @@ phantom disciplines (*Refrigeration*, *Heating*, *American*). Expect that diff; 
    State LA's finding carries Sam's 2026-10-04 statement in place of `unknown`; then re-baseline (the class changes,
    so the daily check will say the set moved once).
 3. **`commons` lane is 1.3 times its budget** (26.5 KB against 20): move its finished paragraphs to
-   `docs/commons_lessons.md` at the next checkpoint. Then **`commons` NEXT** (the path mock: Teach a rule on every
+   `docs/commons_lessons.md` at the next checkpoint (the second session holds that lane; check what it did first).
+   Then **`commons` NEXT** (the path mock: Teach a rule on every
    reference; the confidence count; the other references' paths). KINE M1142 still has no saved ruling; Sam's to rule.
 4. **`csm-workspace` NEXT 1 to 3:** the hover cards and landing-page roles; the denial email; Nudge logs itself.
 5. **`library`:** Sam's Replace on the ELL Healthcare Pathways piece, or his next note.
