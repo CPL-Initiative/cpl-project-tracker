@@ -1,7 +1,7 @@
 ---
 title: "Discipline cross-listing — nest, alias or carry two homes — lane state"
 created: 2026-09-22
-updated: 2026-09-29
+updated: 2026-11-10
 tags: [reference, roadmap-lane]
 kb-status: internal
 related:
@@ -25,6 +25,12 @@ rulings:
 **Decision sheet:** https://claude.ai/artifact/BizNPAbrucq6hWARVzTQBp — twelve
 items, generator `kb/_build_crosslist_decision_sheet.py` (every count recomputed
 at build time, so the sheet moves with the data).
+
+**A curator can cross-list from the Courses List (S624, 2026-11-10, issue #2981).** The *Discipline in doubt* ruling
+(`#coci-lookup/list/doubt`) offers *Keep the home, and also list as* a second MQ discipline. It writes the
+`cross_listed_disciplines` curation row the daily fold already reads (`xdisc`); the home stays for counting and the
+M-ID, and nothing re-mints (Sam's ruling of 2026-09-22). It is the first tab to write the field; the 21 rows before it
+came from scripts. State: the `commons` lane.
 
 ## ⭐ THE FRAME — the 1,210 are four problems, not one (item 1)
 

@@ -5807,7 +5807,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1264,
+     "line": 1297,
      "tabs": [
       "coci-lookup"
      ]
@@ -6270,7 +6270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1052,
+     "line": 1085,
      "tabs": [
       "coci-lookup"
      ]
@@ -6373,7 +6373,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1140,
+     "line": 1173,
      "tabs": [
       "coci-lookup"
      ]
@@ -24073,7 +24073,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 647,
+     "line": 669,
      "tabs": [
       "coci-lookup"
      ]
@@ -24405,7 +24405,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1053,
+     "line": 1086,
      "tabs": [
       "coci-lookup"
      ]
@@ -27602,7 +27602,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 540,
+     "line": 561,
      "tabs": [
       "coci-lookup"
      ]
