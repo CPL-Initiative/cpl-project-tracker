@@ -16697,8 +16697,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 591,
+   "count": 592,
    "docs": [
+    {
+     "created": "2026-11-10",
+     "governs": [],
+     "n": 631,
+     "path": "docs/session_631_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "Session 631 handoff: Las Positas's transfer degrees take Cal-GETC's 34, reconcile in flight",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26732,5 +26747,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1435
+ "total": 1436
 }
