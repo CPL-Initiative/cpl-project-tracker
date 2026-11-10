@@ -146,10 +146,9 @@ word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptan
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
    20261110_csm_workspace_go_live_checklist.md`):
    - **Ruled 2026-11-10 (Sam, *"yes to all"*):** the two new emails are on (`LEAD_MAIL_ON` true; their wording is a
-     template); a door sign-in with a 30-day grant may change a template (`is_funding_reviewer()` stays); and every
-     `supabase-migrate.yml` apply waits for his approval (*"migrate workflow is approved"*). That last one takes his
-     repository setting, Settings > Environments > database > Required reviewers; until it is saved an apply still runs
-     at once, so check a run's approval record once before relying on it.
+     template), and a door sign-in with a 30-day grant may change a template (`is_funding_reviewer()` stays).
+     `supabase-migrate.yml` keeps applying at once with no required reviewer on `database`: Sam withdrew the same
+     day's approval ask (*"I was confused by the migration approval request and don't want it"*).
    - **The sign-in** with *Ask an approver* as the one lead action and the email link one click away
      (`reviewer_signin.js`; it changes the funding tab's sign-in too). Not built.
    - **The funding drawer's Priorities lines**: the snapshot does not carry them; `cpl_funding.js` would pass them.

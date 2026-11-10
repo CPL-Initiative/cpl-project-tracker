@@ -252,8 +252,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    or the revoke breaks the cron. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
    MCP tools; when `apply_migration` times out, a committed file goes through
-   `supabase-migrate.yml` (`kb/migrations/.apply`; Sam, Sheet 74), whose apply waits for
-   Sam's approval in the `database` environment (2026-11-10): tell him it waits. Worked examples:
+   `supabase-migrate.yml` (`kb/migrations/.apply`; Sam, Sheet 74), which applies at once, with
+   no approval step (Sam, 2026-10-13, reaffirmed 2026-11-10). Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
 ## Naming & terminology (Sam's conventions — honor in all output)
