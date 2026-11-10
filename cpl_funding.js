@@ -1730,6 +1730,7 @@
     LIST.email = e; LIST.ok = ok;
     try { sessionStorage.setItem(LIST_KEY + ":" + e, ok ? "1" : "0"); } catch (err) { /* ignore */ }
     if (modelClosed() !== was) { syncActive(); render(); }
+    if (ok === false) askFundingAccess();       // a door sign-in: does its grant still stand? (the render above may have asked)
   }
   // Ask once per address per page: is this sign-in on the reviewer list?
   function askReviewerList() {
@@ -1741,6 +1742,75 @@
       .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
       .then(function (v) { if ((v === true || v === false) && sessionEmail() === e) listAnswer(e, v); else LIST.asking = ""; })
       .catch(function () { LIST.asking = ""; });   // no answer: the model stays as it was, and the next change asks again
+  }
+  // ── A DOOR SIGN-IN WHOSE FUNDING ACCESS HAS ENDED (S624, 2026-11-10; the reviewer-session-lifetime lane) ──
+  // A door grant lasts 30 days (funding_access.expires_at) and can be revoked. The browser's sign-in outlives it,
+  // so this tab went on drawing Accept, Deny, Nudge and the CO Monitor's note over saves the database refused, and
+  // a refused read looked like an empty queue. The CSM Workspace has said so since #3007; this is the same note
+  // here. The database answers is_funding_reviewer() for the session as it stands. A sign-in on the reviewer list
+  // is a funding reviewer by that function's own definition, so only a closed model (a door sign-in) is asked.
+  // Unasked, unanswered or failed, the screen stays as it was: the answer shapes the screen, never the permission.
+  var ACCESS = { email: "", ok: null, asking: "", again: false, at: 0, msg: "", busy: false, timer: null };
+  var ACCESS_EVERY_MS = 10 * 60 * 1000, ACCESS_ENDED_EVERY_MS = 30 * 1000;
+  function reviewEnded() {
+    var e = sessionEmail();
+    return !!e && modelClosed() && ACCESS.email === e && ACCESS.ok === false;
+  }
+  function accessAnswer(e, ok) {
+    var was = reviewEnded();
+    ACCESS.email = e; ACCESS.ok = ok; ACCESS.at = Date.now();
+    if (ok) { ACCESS.msg = ""; ACCESS.busy = false; }
+    // The pace follows the answer: a timer set for the other state would wait ten minutes to notice an end, or
+    // go on asking every half minute once the access is back.
+    if (reviewEnded() !== was && ACCESS.timer) { clearTimeout(ACCESS.timer); ACCESS.timer = null; }
+    if (reviewEnded() !== was) render();
+  }
+  function askFundingAccess(force) {
+    var e = sessionEmail();
+    if (!e || !remoteEnabled() || !modelClosed()) return;
+    // An ask already out answers for the token it left with. A forced ask that arrives meanwhile (a new sign-in,
+    // the timer) is kept and sent when that one lands, so the last word is about the session as it stands.
+    if (ACCESS.asking === e) { if (force) ACCESS.again = true; return; }
+    if (!force && ACCESS.email === e && Date.now() - ACCESS.at < ACCESS_EVERY_MS) return;
+    ACCESS.asking = e; ACCESS.again = false;
+    var done = function () {
+      ACCESS.asking = "";
+      if (ACCESS.again) { ACCESS.again = false; askFundingAccess(true); return; }
+      scheduleAccessCheck();
+    };
+    fetch(SUPABASE_URL + "/rest/v1/rpc/is_funding_reviewer", { method: "POST", body: "{}",
+      headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }) })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function (v) { if ((v === true || v === false) && sessionEmail() === e) accessAnswer(e, v); done(); })
+      .catch(function () { done(); });   // no answer: the review stays as it was, and the next check still comes
+  }
+  // The next check is set from the ANSWER, never from a render (COBIx on #3022: armed from the render alone, the
+  // half-minute check fired once and stopped, since a second no changes nothing and draws nothing). Every answer,
+  // and every ask that fails, sets the next: half a minute while the note shows, ten minutes while the access
+  // stands. One timer at a time; a sign-out or a sign-in on the list ends the chain.
+  function scheduleAccessCheck() {
+    if (ACCESS.timer || !sessionEmail() || !modelClosed() || !remoteEnabled()) return;
+    ACCESS.timer = setTimeout(function () { ACCESS.timer = null; askFundingAccess(true); },
+      reviewEnded() ? ACCESS_ENDED_EVERY_MS : ACCESS_EVERY_MS);
+  }
+  function askApprover() {
+    var e = sessionEmail(), SI = window.CPL_REVIEWER_SIGNIN, fail = "The request did not go through. Try again in a few minutes.";
+    if (ACCESS.busy) return;
+    if (!e || !SI || typeof SI._askAccess !== "function") { ACCESS.msg = fail; render(); return; }
+    ACCESS.busy = true; ACCESS.msg = "Asking\u2026"; render();
+    SI._askAccess(e).then(function (a) {
+      ACCESS.busy = false;
+      ACCESS.msg = a && a.ok ? "Asked. An approver will see it in the CSM Workspace. Keep this tab open: it picks the access up when one of them approves."
+        : (a && a.why) || fail;
+      render();
+    }).catch(function () { ACCESS.busy = false; ACCESS.msg = fail; render(); });
+  }
+  function accessEndedHtml() {
+    return '<div class="cplfund-authbar" data-fundaccess="ended"><span class="grow"><span class="mode scenario">Your funding access has ended.</span> ' +
+      '<span class="dk">' + esc(curatorEmail()) + " is signed in, and the funding review is closed to it now. Access given by an approver lasts 30 days. " +
+      "Ask an approver to open it again; this tab picks the access up when one of them approves.</span> " +
+      '<span class="dk" role="status" id="cplFundAccessMsg">' + esc(ACCESS.msg) + "</span></span>" +
+      '<button type="button" class="rst primary" id="cplFundAccessAsk"' + (ACCESS.busy ? " disabled" : "") + ">Ask an approver</button></div>";
   }
   function activeOverride() { return unlocked() ? SHARED : SCENARIO; }
 
@@ -5580,6 +5650,14 @@
       if (el) el.remove();
     });
   }
+  // A sign-in whose funding access has ended: the model controls and the review controls both leave (the database
+  // refuses every one), with Nudge, which reads the contacts the same grant opened.
+  function stripEndedAffordances(root) {
+    if (!root) return;
+    stripCurateAffordances(root);
+    var nudge = root.querySelector("#cplFundNudge");
+    if (nudge) nudge.remove();
+  }
   function stripCurateAffordances(root) {
     if (!root) return;
     CURATE_ATTRS.forEach(function (a) {
@@ -8274,6 +8352,7 @@
     if (publicMode()) return "";   // no unlock / team-editing affordance
     var dirty = isDirty();
     var status, resetBtn = "", rightBtn = "";
+    if (reviewEnded()) return accessEndedHtml();
     if (modelClosed()) {
       // A door sign-in (S622): signed in for the review work; the model reads as published and takes no edit.
       return '<div class="cplfund-authbar"><span class="grow"><span class="mode shared">Signed in as ' + esc(curatorEmail()) +
@@ -17484,6 +17563,7 @@
     if (!holder) return;
     pinFrozenRows();
     if (publicMode()) stripCurateAffordances(holder);   // the table re-renders on its own
+    else if (reviewEnded()) stripEndedAffordances(holder);
     else if (modelClosed()) stripModelAffordances(holder);
     function activateKey(e) {   // Enter or Space activates a focusable control
       return e.key === "Enter" || e.key === " " || e.key === "Spacebar" || e.keyCode === 13 || e.keyCode === 32;
@@ -18104,7 +18184,12 @@
     // it. Belt-and-braces with the emitters' own publicMode() checks — a missed
     // call site is the failure mode that matters for a page we hand to colleges.
     if (publicMode()) stripCurateAffordances(document.getElementById("cplFundingMount"));
+    else if (reviewEnded()) stripEndedAffordances(document.getElementById("cplFundingMount"));
     else if (modelClosed()) stripModelAffordances(document.getElementById("cplFundingMount"));
+    // A door sign-in is asked whether its grant stands; scheduleAccessCheck keeps asking on an idle tab.
+    if (!publicMode() && modelClosed()) { askFundingAccess(); scheduleAccessCheck(); }
+    var accessAsk = document.getElementById("cplFundAccessAsk");
+    if (accessAsk) accessAsk.addEventListener("click", askApprover);
     // Persist each collapsible section's open/closed state so it survives the
     // re-render an edit triggers (native <details> resets otherwise).
     document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (dt) {
@@ -19122,7 +19207,12 @@
     });
     // The keeper announces a renewed token (cpl_session.js); redraw, so a reviewer who returns after the token lapsed is
     // unlocked again without a reload (Sam, 2026-11-06: the lapsed-token fix "must not have worked for all surfaces").
-    window.addEventListener("cpl-session-changed", function () { askReviewerList(); syncActive(); render(); });
+    window.addEventListener("cpl-session-changed", function () { askReviewerList(); askFundingAccess(true); syncActive(); render(); });
+    // The door's later words (declined, lapsed, no approval yet) reach the note; the button stays, so the reader asks again.
+    window.addEventListener("cpl-funding-door-said", function (e) {
+      if (!reviewEnded() || !e || !e.detail || !e.detail.msg) return;
+      ACCESS.msg = String(e.detail.msg); ACCESS.busy = false; render();
+    });
     askReviewerList();
     // Re-measure the frozen-row pins when the window changes size or zoom —
     // registered ONCE here, behind the booted guard, so re-boots never stack
@@ -19759,6 +19849,7 @@
     // Tests: the database's answer to "is this sign-in on the reviewer list?" (askReviewerList).
     _setOnReviewerList: function (ok) { listAnswer(sessionEmail(), ok); },
     _modelClosed: modelClosed, _reviewing: reviewing,
+    _reviewEnded: reviewEnded, _setFundingAccess: function (ok) { accessAnswer(sessionEmail(), ok); }, _askFundingAccess: askFundingAccess,
     // The minimum conditions for ONE institution, as the pie and the drill-in
     // score them (eligReqList), for the My CPL Funding block (Sam's card 8,
     // 2026-10-01). Kinds and states only; the block owns the words. The
