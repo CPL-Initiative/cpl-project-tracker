@@ -848,6 +848,14 @@
     if (du && du.follow_up_on <= today()) return { reason: "Follow up", why: nextStep(r) };
     return { reason: "No email needed", why: nextStep(r) };
   }
+  /* Which part of the side panel shows. A request waiting on the team opens the review by itself, since reviewing it is
+     why the reviewer is on the record (Sam, 2026-11-10: "why do we click on Review when that's what we're there to do?
+     shouldn't it just be open for review and action?"). "none" is the reviewer closing it; a pick lasts the record. */
+  function sideOf(r) {
+    if (state.side === "none") return "";
+    if (state.side) return state.side;
+    return S.reviewer && r && waitingKinds(r).length ? "review" : "";
+  }
   function recordHtml() {
     var r = state.sel ? rowOf(state.sel) : null;
     if (!r) return '<div class="pane"><p class="empty">Choose a college to see its record.</p></div>';
@@ -885,8 +893,9 @@
     var nc = "";
     // Recommended action (Malone, 2026-11-10): one reason, one sentence of why, and the one thing to do next.
     var rec = recOf(r);
-    var visit = '<div class="visit"><h4>Recommended action</h4><p class="reason" id="cw-reason" tabindex="-1">' + esc(rec.reason) + '</p><p class="note">' + esc(rec.why) + "</p>" +
-      (rec.review ? '<p class="links" style="margin:0"><button type="button" class="word lead" data-act="toreview">Review the request</button></p>' : "") +
+    var side = sideOf(r);
+    var visit = '<div class="visit"><h4>Recommended action</h4><p class="reason" id="cw-reason" tabindex="-1">' + esc(rec.reason) + '</p><p class="note">' + esc(rec.why) +
+      (rec.review && side === "review" ? " The review is open below the record." : "") + "</p>" +
       '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" + composeHtml(r) + "</div>";
     var who = "";
     if (S.reviewer && r.req) {
@@ -900,10 +909,10 @@
     var note = S.reviewer ? '<div><p class="k">CO Monitor\'s note</p><p class="ncline" style="margin:0">' + (r.note ? esc(r.note) : "No note yet.") +
       ' <button type="button" class="word" data-act="focus">Write it in Implementation Funding</button></p></div>' : "";
     // One side panel under the record (the clarity mock): People, CPL landing page, History, and the review when one waits.
-    var side = state.side || "", sideWord = function (k, t) {
+    var sideWord = function (k, t) {
       return '<button type="button" class="word" data-side="' + k + '" aria-pressed="' + (side === k) + '" aria-controls="cw-side">' + t + "</button>";
     };
-    var words = (S.reviewer ? sideWord("people", "People") : "") + sideWord("page", "CPL landing page") + (S.reviewer ? sideWord("log", "History") : "");
+    var words = (S.reviewer && w.length ? sideWord("review", "Review") : "") + (S.reviewer ? sideWord("people", "People") : "") + sideWord("page", "CPL landing page") + (S.reviewer ? sideWord("log", "History") : "");
     var part = function (k, title, body) {
       if (!body) return "";   // a part with nothing in it (History for a reader who is not signed in) draws nothing, heading included
       // The review carries its own heading, so the part's is for the focus alone.
@@ -1724,7 +1733,7 @@
       // goes to Recommended action, which now names the email, so the keyboard is never left on the page's body.
       if (writes) {
         var left = waitingKinds(r).filter(function (k) { return k !== kind; }).length;
-        if (state.side === "review" && !left) state.side = "";
+        if ((state.side === "review" || state.side === "none") && !left) state.side = "";
         setTimeout(function () { var rr = document.getElementById(left ? "cw-side-review" : "cw-reason"); if (rr) rr.focus(); }, 0);
       }
       say(name === "accept" ? "Accepted. The acceptance email opens for you to copy." : name === "deny" ? "Denied: the request is removed." :
@@ -1735,7 +1744,7 @@
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
-    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review") state.side = ""; paintRecord(); return; }
+    if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
     if (t.hasAttribute("data-accopen")) { state.accOpen = !state.accOpen; paint(); var aw = root().querySelector(state.accOpen ? "#cw-acc-h" : "[data-accopen]"); if (aw) { aw.setAttribute("tabindex", "-1"); aw.focus(); } return; }
     if (t.hasAttribute("data-fund")) {
       state.fund = t.getAttribute("data-fund") === "open" && !state.fund;
@@ -1745,9 +1754,9 @@
     }
     if (t.hasAttribute("data-side")) {
       var sk = t.getAttribute("data-side");
-      state.side = state.side === sk ? "" : sk;
+      state.side = sideOf(rowOf(state.sel)) === sk ? "none" : sk;
       paintRecord();
-      var sh = state.side ? root().querySelector("#cw-side-" + state.side) : root().querySelector('[data-side="' + sk + '"]');
+      var sh = sideOf(rowOf(state.sel)) ? root().querySelector("#cw-side-" + sideOf(rowOf(state.sel))) : root().querySelector('[data-side="' + sk + '"]');
       if (sh) sh.focus();
       if ((state.side === "people" || state.side === "page") && S.reviewer && CT.state !== "ready" && CT.state !== "error") loadContacts().then(paintRecord);
       return;
