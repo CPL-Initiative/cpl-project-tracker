@@ -777,6 +777,24 @@
      "source_words": "College of Alameda AA-T and AS-T pages: 'General Education (Cal-GETC) and Elective Units 41.00- 42.00 / Total Units 60.00' (Sociology 33032; college page read 42609117444); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
     }
    ]
+  },
+  "Las Positas College": {
+   "why": "S630 SkyCartwheel, 2026-11-10. Las Positas College passed 116 of 193; all 77 failures are degrees, and its 25 transfer degrees name the degree's 60 and Cal-GETC with no units, so they read incomplete. A free page read (college-page-read 42815817415, kb/college_reads/las_positas_ge_units.json) gave the words: English AA-T 32182, Sociology AA-T 30815, Biology AS-T 35245 and Business Administration 2.0 AS-T 41984 each print 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' and end 'Additional General Education and Elective Units' (27.0 to 42.0) above 'Total: 60.0'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Alameda's, Redwoods' and Columbia's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. The local degrees print the same combined line under 'LPC-GE or Cal-GETC' and no LPC-GE units; they wait on the LPC-GE pattern page. Proceeded on the recommendation; reversible by deleting this entry.",
+   "awards": "transfer",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "including\\s+both\\s+of\\s+the\\s+following:?\\s+The\\s+California\\s+General\\s+Education\\s+Transfer\\s+Curriculum\\s+\\(Cal-?GETC\\)",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Las Positas College AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' then 'Additional General Education and Elective Units ... 42.0 \u00b7 Total: 60.0' (English AA-T 32182; college page read 42815817415); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+    }
+   ]
   }
  }
 }
