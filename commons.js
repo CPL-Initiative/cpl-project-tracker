@@ -537,7 +537,7 @@
   }
 
   /* The confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward. */
-  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled" };
+  var CONF_UNIT = { exhibit: "titles the procedures placed", subjects: "picks the nightly confirm settled", cr: "groups a rung 1 to 4 rule folded" };
   function procName(n) { n = String(n || "").replace(/-/g, " "); return n === "classifier" ? "the classifier" : n; }
   function confidenceSection(list) {
     if (!Array.isArray(list) || !list.length) return null;

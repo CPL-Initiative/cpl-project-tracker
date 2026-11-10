@@ -508,6 +508,8 @@ function cellText(li, title) {
     check("confidence 5: the table scrolls in its own labelled region", sec.querySelector(".cmn-conf-wrap").getAttribute("role") === "region"
       && /Common Exhibits: each procedure/.test(sec.querySelector(".cmn-conf-wrap").getAttribute("aria-label")));
     check("confidence 6: an unread source reads Could not be read, never a zero", /Common Credit Recommendations[\s\S]*Could not be read/.test(txt(sec)));
+    check("confidence 6b: the CR count names its unit, the groups a rule folded",
+      /Common Credit Recommendations: groups a rung 1 to 4 rule folded/.test(txt(sec)));
     check("confidence 7: the section sits after the queue's place and names no person", !/Sam/.test(txt(sec)) && !t.d.querySelector(".cmn-conf"));
   }
 

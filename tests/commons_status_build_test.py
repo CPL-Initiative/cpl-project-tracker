@@ -300,7 +300,29 @@ check("the committed history is the builder's shape: day keys, and whole-number 
 
 # ── the confidence count (Sam, 2026-11-04, S573): what a person did with each procedure's work afterward ──
 conf = {c.get("ref"): c for c in data.get("confidence", [])}
-check("the status file carries the confidence count for Exhibits and Subjects", set(conf) == {"exhibit", "subjects"}, list(conf))
+check("the status file carries the confidence count for Exhibits, Subjects and the CR rule rungs", set(conf) == {"exhibit", "subjects", "cr"}, list(conf))
+with tempfile.TemporaryDirectory() as cx:
+    os.makedirs(os.path.join(cx, "kb/receipts"))
+    def _g(key, rung, auto, recs):
+        return {"key": key, "rung": rung, "acts_automatically": auto, "members": [{"rec": w, "rows": 1} for w in recs]}
+    json.dump({"groups": [_g("a", 1, True, ["a1", "a2"]), _g("b", 1, True, ["b1"]), _g("c", 2, True, ["c1", "c2"]),
+                          _g("d", 2, True, ["d1"]), _g("e", 3, True, ["e1"]), _g("f", 5, False, ["f1"])]},
+              open(os.path.join(cx, "kb/cr_reference_worklist.json"), "w"))
+    json.dump({"rows": [{"group_key": "a", "decision": "confirmed", "members": ["a1", "a2", "a3"], "excluded": []},
+                        {"group_key": "c", "decision": "confirmed", "members": ["c1"], "excluded": ["c2"]},
+                        {"group_key": "d", "decision": "not_a_topic", "members": ["d1"]},
+                        {"group_key": "e", "decision": "deferred"},
+                        {"group_key": "f", "decision": "confirmed", "members": ["f1"]}]},
+              open(os.path.join(cx, "kb/receipts/cr_reference_decisions_2026-01-01_x.json"), "w"))
+    cc = B.confidence_cr(cx)
+    pr = {p["name"]: p for p in cc["procedures"]}
+    check("CR confidence counts only the groups a rule folded, one line a rung, in groups",
+          cc["unit"] == "groups" and sorted(pr) == ["rung 1", "rung 2", "rung 3"] and cc["total"]["placed"] == 5, cc)
+    check("a confirmed group is kept though the curator added a wording; one never decided is not looked at",
+          (pr["rung 1"]["kept"], pr["rung 1"]["untouched"], pr["rung 1"]["moved"]) == (1, 1, 0), pr["rung 1"])
+    check("a group with a rule's wording set aside, or read not a topic, is moved",
+          (pr["rung 2"]["moved"], pr["rung 2"]["kept"]) == (2, 0), pr["rung 2"])
+    check("a deferred decision settles nothing: the group stays not looked at", pr["rung 3"]["untouched"] == 1 and pr["rung 3"]["looked"] == 0, pr["rung 3"])
 for ref, c in conf.items():
     t = c.get("total") or {}
     check("confidence %s: every placed item lands in exactly one state" % ref,

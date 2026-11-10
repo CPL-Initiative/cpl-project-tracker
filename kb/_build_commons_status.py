@@ -889,9 +889,40 @@ def confidence_subjects(root):
             "total": _conf_counts(placed)}
 
 
+def confidence_cr(root):
+    """Groups a rung 1 to 4 rule folded (kb/cr_reference_worklist.json), against the curator's decisions on them
+    (kb/receipts/cr_reference_decisions_*.json, the committed record of cr_reference_decisions). A confirmed group
+    whose decision sets none of the rule's wordings aside is kept, whatever the curator added to it; one that sets
+    a wording aside, or reads not a topic, is moved. A cleared or deferred decision settles nothing, so the group
+    stays not looked at. Nothing here renames with a family: a group is its own family."""
+    G = load_json(root, "kb/cr_reference_worklist.json")["groups"]
+    decided = {}
+    for p in sorted(glob.glob(os.path.join(root, "kb/receipts/cr_reference_decisions_*.json"))):
+        with open(p, encoding="utf-8") as f:
+            for r in json.load(f).get("rows", []):
+                decided[r.get("group_key")] = r   # the latest receipt row per group stands
+    by = {}
+    for g in G:
+        if not g.get("acts_automatically"):
+            continue
+        r = decided.get(g["key"])
+        if not r or r.get("decision") not in SETTLES:
+            state = "untouched"
+        elif r.get("decision") == "confirmed" and not (set(r.get("excluded") or []) & {m["rec"] for m in g["members"]}):
+            state = "kept"
+        else:
+            state = "moved"
+        by.setdefault("rung %s" % g.get("rung"), {})[g["key"]] = state
+    procs = [dict(name=k, **_conf_counts(by[k])) for k in sorted(by)]
+    allp = {}
+    for v in by.values():
+        allp.update(v)
+    return {"ref": "cr", "unit": "groups", "procedures": procs, "total": _conf_counts(allp)}
+
+
 def build_confidence(root):
     out = []
-    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects)):
+    for ref, fn in (("exhibit", confidence_exhibits), ("subjects", confidence_subjects), ("cr", confidence_cr)):
         try:
             out.append(fn(root))
         except Exception as e:  # noqa: BLE001  (a source that cannot be read says so, never a zero)
