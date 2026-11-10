@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-09T17:53:53Z",
+ "_generated_at": "2026-11-10T15:51:38Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 4,
+ "queue": 20,
  "saved_not_folded": 0,
- "waiting": 4,
- "proposed": 4,
- "needs_you_count": 3,
+ "waiting": 20,
+ "proposed": 19,
+ "needs_you_count": 6,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -111,9 +111,30 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 1,
-   "held": 1,
-   "sample": []
+   "settled": 14,
+   "held": 4,
+   "sample": [
+    [
+     "ASL 53 American Sign Language IV",
+     "American Sign Language IV"
+    ],
+    [
+     "COSM 211  Manicuring and Pedicuring I",
+     "Manicuring and Pedicuring I"
+    ],
+    [
+     "COSM 215 Facials I",
+     "Facials I"
+    ],
+    [
+     "COSM 223 Hairstyling Services/Haircutting II",
+     "Hairstyling Services/Haircutting II"
+    ],
+    [
+     "GRART 112 Creative Process and Solutions",
+     "Creative Process and Solutions"
+    ]
+   ]
   },
   {
    "id": "high-school-rop",
@@ -173,7 +194,7 @@
     "skill": "Rule 5g"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -233,7 +254,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 1,
+   "held": 2,
    "sample": []
   },
   {
@@ -261,23 +282,44 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 1,
-   "held": 3,
-   "sample": [
-    [
-     "Nursing Care of Children and Families",
-     "Nursing Care of Children and Families"
-    ]
-   ]
+   "settled": 0,
+   "held": 6,
+   "sample": []
   }
  ],
  "classifier_run": {
   "calls": 1,
   "answered": 1,
   "errors": [],
-  "cost_usd": 0.38
+  "cost_usd": 0.37
  },
  "needs_you": [
+  {
+   "raw_title": "Credit By Exam- CFPL ABT 130 Intro to Food Safety",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Introduction to Food Safety",
+    "issuer": "California Community Colleges",
+    "confidence": 0.82,
+    "note": "Mended the cx hint: dropped the mechanism phrase, the CFPL program tag and the ABT 130 course code, and expanded 'Intro' to 'Introduction' per Rule 5g. No CCN or C-ID title was confirmed for Hartnell ABT 130, so the title is the college's own course title."
+   },
+   "colleges": [
+    "Hartnell College"
+   ]
+  },
+  {
+   "raw_title": "Credit by Exam-- CFPL ABT 132",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Agricultural Business and Technology (ABT 132)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "The title is code only, and the Hartnell ABT 132 course title could not be resolved from the text. The fallback is Discipline (code), reading ABT as Agricultural Business and Technology, which is assumed. A curator should look up Hartnell's COCI title. The hint's 'CFPL ABT 132' kept a course code, so it was set aside."
+   },
+   "colleges": [
+    "Hartnell College"
+   ]
+  },
   {
    "raw_title": "Introduction to Law Enforcement/Corrections",
    "why": "the classifier is unsure (0.40)",
@@ -289,6 +331,19 @@
    },
    "colleges": [
     "Palo Verde College"
+   ]
+  },
+  {
+   "raw_title": "JOURN 062 Survey of Mass Media",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Survey of Mass Media",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Accepted the hint: the course code was stripped and Laney's own course title kept. It is unverified whether JOURN 062 carries the C-ID JOUR 100 (Introduction to Mass Communication) or a CCN, which would outrank the local title on re-key."
+   },
+   "colleges": [
+    "Laney College"
    ]
   },
   {
