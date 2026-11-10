@@ -30,29 +30,29 @@ requested brief, no CER rule request, no open re-analysis request. Steps 6 to 11
    needs the sender's word first, then a fold with the checks' counts and the routine's notes. Step 9 of
    `scheduled_sessions` now copies each pass's findings to `latest.json`; `tests/exhibits_reanalysis_panel.test.js`
    fails a stale copy.
-3. **De Anza's GE units (#3044, draft), step 12.** Pages 280-337 named none of S627's three keywords (run
-   42781536942 printed page 1 only). Run 42782560440 asked the whole catalog, but *De Anza General Education* matches every degree page (each says
-   *one of the following general education patterns: De Anza General Education or Cal-GETC*), so the 14-page cap went
-   to pages 46-55. The sixth read (commit a6cf1a33, pushed about 08:38Z) asks only for the patterns' area headings
-   (*Area 1A*), a stated GE minimum and *General Education Requirements*, with the page after each hit.
+3. **De Anza's GE units (#3044, draft), step 12: not in the catalog.** Four reads of Sam's hand-filed 2025-2026 copy
+   (runs 42781536942, 42782560440, 42783023601). Page 39, *General Education Requirements*, says a degree is 90
+   quarter units of GE (De Anza GE or Cal-GETC), the major and electives, then only links two separate sheets
+   (*General Education/Breadth Requirements for AA/AS Degree*, PDF 148K; *CSU General Education/Breadth
+   Requirements*, PDF 208K) and `deanza.edu/articulation/ge-requirements`. deanza.edu refuses the reader (403). No
+   figure in the catalog gives a pattern's units, so no `set` step can rest on De Anza's own words yet. The lane
+   records it.
 4. **Pages.** The 07:49Z deploy of `main` timed out in *Deploy to GitHub Pages* (GitHub's side; the 07:36Z deploy
    had succeeded). A fresh `pages.yml` dispatch went out at 08:16Z.
 
 ## Read first
 
-- **#3044, De Anza.** Read the sixth read's job log (`college-page-read.yml` on `claude/catalog-deanza-s627`). Once De Anza's own words
-  give De Anza GE's and Cal-GETC's quarter units, write a `set` step for `ge_units` in
-  `kb/program_requirements_reconcile.json` the way Cerritos did (`source`, `source_words`); Cal-GETC goes on transfer
-  degrees only (`awards: transfer`). Then the reconcile, the reread and the display build (lane, *the catalog sweep*).
-  If the sixth read finds no area heading either, the catalog may print the pattern as a table the extractor flattens:
-  try `pdf_span` on the pages the catalog's contents list names for general education.
+- **#3044, De Anza.** Waits on a hand-filed copy of the two GE sheets (the hand-filed step, #2199). Put the ask on the
+  next Open Asks sheet as a card (S628 told Sam by notification; it did not build a sheet, since CPLBrain #746, Sheet
+  178's builder, is still open). Leave #3044 open as the record of the reads; the sweep moves to the next largest gap
+  (rank it live, *Patterns*, handoff 628).
 - **#3047 and #3037:** merge on a passing `test` if either is still open.
 - **Sheet 178's `replies`.**
 
 ## Open work, in order
 
 0. **Sheet 178's answers** (card 3 *long* is a guarded UPDATE with Sam's before-value).
-1. **#3044** (Read first).
+1. **The catalog sweep's next college** (De Anza waits; Read first).
 2. **`cer-procedures` NEXT:** the re-analysis's Jev runner job (its two questions).
 3. **`csm-workspace` NEXT 0 to 2:** Malone's mock (https://claude.ai/artifact/Bj8psKPeZS3DFHmgcSpoeL), the hover cards
    and the denial email.
