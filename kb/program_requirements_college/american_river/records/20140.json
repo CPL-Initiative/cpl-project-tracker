@@ -88,8 +88,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -316,5 +316,6 @@
    "PLGL324, PLGL344 and PLGL361 in the closed list appear to be legacy codes not printed in this 2026-2027 section."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }

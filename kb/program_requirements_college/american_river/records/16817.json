@@ -82,11 +82,21 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "describe the general content and scope of collegiate level geography studies.",
+    "interpret maps and mapped data utilizing basic map elements including scales, coordinate systems, and symbols.",
+    "compare and contrast common geographic information technologies such as Geographic Information Systems (GIS), Global Positioning System (GPS), and Remote Sensing.",
+    "evaluate and analyze geographic problems and their solutions."
+   ],
+   "why": [
+    "not in the catalog text as printed: describe the general content and scope of collegiate level geography studies.",
+    "not in the catalog text as printed: interpret maps and mapped data utilizing basic map elements including scales, co",
+    "not in the catalog text as printed: compare and contrast common geographic information technologies such as Geograph",
+    "not in the catalog text as printed: evaluate and analyze geographic problems and their solutions."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 7,
@@ -99,7 +109,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -327,5 +337,6 @@
    "The GIS Certificate of Achievement section that follows was not used."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }

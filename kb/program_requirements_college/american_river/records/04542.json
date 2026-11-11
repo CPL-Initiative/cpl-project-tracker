@@ -88,11 +88,27 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "evaluate major trends and developments in contemporary works of art.",
+    "compose works of art that utilize a combination of techniques, materials, visual ideas, and experiences.",
+    "construct and document an initial portfolio of artworks for professional presentations.",
+    "critique and analyze subject matter in the visual arts based on theory and technique.",
+    "develop an aesthetic understanding and the ability to make value judgments within the context of images, form, and content of artistic creations.",
+    "conceive and develop conceptual structures of art imagery within a specific technical process.",
+    "assess aesthetic and visual traditions."
+   ],
+   "why": [
+    "not in the catalog text as printed: evaluate major trends and developments in contemporary works of art.",
+    "not in the catalog text as printed: compose works of art that utilize a combination of techniques, materials, visual",
+    "not in the catalog text as printed: construct and document an initial portfolio of artworks for professional present",
+    "not in the catalog text as printed: critique and analyze subject matter in the visual arts based on theory and techn",
+    "not in the catalog text as printed: develop an aesthetic understanding and the ability to make value judgments withi",
+    "not in the catalog text as printed: conceive and develop conceptual structures of art imagery within a specific tech",
+    "not in the catalog text as printed: assess aesthetic and visual traditions."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 12,
@@ -105,7 +121,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -503,5 +519,6 @@
    "Outcomes and careers taken from the A.A. in Art section, not the preceding AA-T section."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }

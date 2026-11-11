@@ -82,11 +82,15 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "identify ecological phenomena in one's everyday experiences and apply ecological principles to understand local, national and global environmental issues."
+   ],
+   "why": [
+    "not in the catalog text as printed: identify ecological phenomena in one's everyday experiences and apply ecological"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 2,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -307,5 +311,6 @@
    "The Student Learning Outcomes on page 798 belong to the General Science A.S. and were not used; the Technician (Fisheries/Sustainability/Vegetation/Wildlife) certificates are separate awards and were not read."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }

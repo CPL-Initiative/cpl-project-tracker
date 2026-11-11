@@ -92,16 +92,39 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "demonstrate an understanding of major functional areas of business organizations including planning, management, marketing, and finance.",
+    "demonstrate an understanding of accounting as an information system and how it is used by investors, creditors, and others to make decisions and the recording and reporting of business transactions, generally accepted accounting principles, financial statements, and statement analysis.",
+    "demonstrate proficiency in advanced business technology applications and employ computer applications to create relevant business documents.",
+    "demonstrate proficiency in business administration and leadership skills needed to manage a multicultural workforce.",
+    "demonstrate customer service skills in a business environment and skills required to deliver a positive customer service experience.",
+    "compose effective oral and written communications in various business settings.",
+    "research, develop, evaluate, and test possible solutions using creativity, critical thinking, and technology skills."
+   ],
+   "why": [
+    "not in the catalog text as printed: demonstrate an understanding of major functional areas of business organizations",
+    "not in the catalog text as printed: demonstrate an understanding of accounting as an information system and how it i",
+    "not in the catalog text as printed: demonstrate proficiency in advanced business technology applications and employ ",
+    "not in the catalog text as printed: demonstrate proficiency in business administration and leadership skills needed ",
+    "not in the catalog text as printed: demonstrate customer service skills in a business environment and skills require",
+    "not in the catalog text as printed: compose effective oral and written communications in various business settings.",
+    "not in the catalog text as printed: research, develop, evaluate, and test possible solutions using creativity, criti"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "customer service representatives",
+    "receptionists and information clerks",
+    "executive secretaries and executive administrative assistants",
+    "business analysts",
+    "technical support specialists",
+    "first-line supervisors of office and administrative support workers"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -109,7 +132,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -401,5 +424,6 @@
    "Footnotes name Folsom Lake College substitute courses (BUSTEC 307, 360, 362, 366); not recorded as alternatives."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }
