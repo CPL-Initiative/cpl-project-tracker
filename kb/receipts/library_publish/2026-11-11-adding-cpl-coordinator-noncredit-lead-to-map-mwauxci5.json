@@ -3,30 +3,16 @@
   "at": "2026-11-11",
   "slug": "adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5",
   "record_id": "71931018-3c80-4879-a531-ede7cd62c837",
-  "draft_id": "a28c8fb5-b558-4543-8a4e-b91255aa5c6a",
+  "draft_id": "0869bdeb-b6c4-4533-8840-ee2b50bc688a",
   "page": "library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html",
   "before": {
-    "file_type": null,
-    "home": "not_filed",
-    "made_on": null,
-    "refresh_note": "Fix what the accessibility check found: 3 links or buttons are under 24 by 24px (“Links” is 43 by 23.9px).",
+    "refresh_note": "Add a new section after the User Module steps for the CPL Coordinator and Noncredit Lead: how to add the college's CPL Assistant email for the college landing page. Use the official MAP training video \"Set Up: College Landing Page\" (https://youtu.be/xW0I6iFgRuk, also listed at https://map.rccd.edu/library/) and the August 2026 slide in https://map.rccd.edu/wp-content/uploads/2026/08/20260804_MilCPL_and_StudentPortal.pdf (attach the PDF so its Contacts-tab screenshot can be used). An Ambassador opens Main Menu,… The whole instructions are under Documents to work from.",
     "regen": {
       "earlier": [
         {
-          "note": null,
-          "draft_id": "801cad96-683d-46e7-9302-f998e625e708",
-          "ready_at": "2026-11-10T23:18:37.913Z",
-          "documents": [
-            "Adding CPL Coordinator & Noncredit Lead to the User Module",
-            "Adding CPL Coordinator & Noncredit Lead to the User Module"
-          ],
-          "draft_url": null,
-          "requested_by": "Sam"
-        },
-        {
-          "note": "Add the pictures under the steps they show.",
-          "draft_id": "569b249d-9e79-4a43-9a9d-5dffeca7f88c",
-          "ready_at": "2026-11-11T01:35:46.904Z",
+          "note": "Everything looks great but the screenshot images are a bit too large compared to the page text. try shrinking the images 25% or let me resize them.",
+          "draft_id": "cd171892-b049-4880-9f01-bf25a5d3b63a",
+          "ready_at": "2026-11-11T11:50:54.023Z",
           "documents": [
             "Adding CPL Coordinator & Noncredit Lead to the User Module",
             "Adding CPL Coordinator & Noncredit Lead to the User Module"
@@ -36,26 +22,31 @@
         }
       ],
       "publish": "show",
-      "draft_id": "a28c8fb5-b558-4543-8a4e-b91255aa5c6a",
-      "ready_at": "2026-11-11T01:36:28.546Z",
+      "draft_id": "0869bdeb-b6c4-4533-8840-ee2b50bc688a",
+      "ready_at": "2026-11-11T13:07:59.874Z",
       "draft_url": null,
-      "new_piece": true,
       "drafted_by": "Sam",
-      "approved_at": "2026-11-11T01:38:11.782Z",
+      "approved_at": "2026-11-11T13:09:06.233Z",
       "approved_by": "Sam",
       "drafted_with": "library-revise-draft",
-      "requested_at": "2026-11-11T01:36:12.088Z",
+      "requested_at": "2026-11-11T13:07:35.180Z",
       "requested_by": "Sam",
-      "based_on_draft": "569b249d-9e79-4a43-9a9d-5dffeca7f88c",
-      "pictures_checked_at": "2026-11-11T01:38:11.782Z",
+      "based_on_draft": "cd171892-b049-4880-9f01-bf25a5d3b63a",
+      "pictures_checked_at": "2026-11-11T13:09:06.233Z",
       "pictures_checked_by": "Sam"
     },
-    "status": "requested",
-    "updated_at": "2026-11-11T01:38:12.013296+00:00",
+    "updated_at": "2026-11-11T13:09:06.419819+00:00",
     "updated_by": null,
-    "url": null,
-    "version": null,
-    "versions": []
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+    "version": "1",
+    "versions": [
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+        "date": "2026-11-11",
+        "label": "Version 1",
+        "status": "Current: I fixed the three undersized controls (the Links button and the Light and Dark theme buttons) by setting a 28px minimum height and width from the page's own styles, so the shared header block stays untouched. I also raised the Get help links to a 28px minimum height so they clear 24px with room to spare. The five figures already on the page stay where they are, and I did not add Pictures 6 to 10 because they duplicate Pictures 1 to 5. Before publishing, cover or crop Picture 4 (and its duplicate, Picture 9), which shows people's names, usernames and email addresses, and Picture 5 (and its duplicate, Picture 10), which shows an email address. Drafted from the card by Sam (draft a28c8fb5-b558-4543-8a4e-b91255aa5c6a); published the first public copy on Sam's approval."
+      }
+    ]
   },
   "update": {
     "versions": [
@@ -64,16 +55,18 @@
         "date": "2026-11-11",
         "label": "Version 1",
         "status": "Current: I fixed the three undersized controls (the Links button and the Light and Dark theme buttons) by setting a 28px minimum height and width from the page's own styles, so the shared header block stays untouched. I also raised the Get help links to a 28px minimum height so they clear 24px with room to spare. The five figures already on the page stay where they are, and I did not add Pictures 6 to 10 because they duplicate Pictures 1 to 5. Before publishing, cover or crop Picture 4 (and its duplicate, Picture 9), which shows people's names, usernames and email addresses, and Picture 5 (and its duplicate, Picture 10), which shows an email address. Drafted from the card by Sam (draft a28c8fb5-b558-4543-8a4e-b91255aa5c6a); published the first public copy on Sam's approval."
+      },
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+        "date": "2026-11-11",
+        "label": "Version 2",
+        "status": "Current: I added an \"Add your CPL Assistant email\" section after the User Module steps. It gives the four steps from Sam's instructions, explains what the email does for students' Request CPL Review, notes that a college needs both this email and a CPL Coordinator to qualify automatically, and links the training video. I also added one clause to the lede naming the new section; no Save step appears because neither source mentions one. I placed Picture 14 and left out Pictures 11, 12 and 13, which repeat it, and Pictures 15 to 17, which show the Student Contact checkbox the request did not ask for. Pictures 14 (an email address), 4 (names and email addresses) and 5 (a name and email address) show personal details, so the team should cover or crop them before publishing. Drafted from the card by Sam (draft 0869bdeb-b6c4-4533-8840-ee2b50bc688a); replaced the public copy on Sam's approval."
       }
     ],
     "refresh_note": null,
     "regen": null,
     "updated_by": "library-publish@bot",
     "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
-    "version": "1",
-    "home": "web",
-    "file_type": "html",
-    "status": "draft",
-    "made_on": "2026-11-11"
+    "version": "2"
   }
 }
