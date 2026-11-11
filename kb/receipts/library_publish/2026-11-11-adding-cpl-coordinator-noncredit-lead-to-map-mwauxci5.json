@@ -1,0 +1,79 @@
+{
+  "_about": "Library publish receipt (scripts/library_publish.py): the record's before-values and the update --finish makes, guarded on updated_at; cpl_library_history also files the prior row. Roll back by writing the before-values and reverting the page's commit.",
+  "at": "2026-11-11",
+  "slug": "adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5",
+  "record_id": "71931018-3c80-4879-a531-ede7cd62c837",
+  "draft_id": "a28c8fb5-b558-4543-8a4e-b91255aa5c6a",
+  "page": "library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html",
+  "before": {
+    "file_type": null,
+    "home": "not_filed",
+    "made_on": null,
+    "refresh_note": "Fix what the accessibility check found: 3 links or buttons are under 24 by 24px (“Links” is 43 by 23.9px).",
+    "regen": {
+      "earlier": [
+        {
+          "note": null,
+          "draft_id": "801cad96-683d-46e7-9302-f998e625e708",
+          "ready_at": "2026-11-10T23:18:37.913Z",
+          "documents": [
+            "Adding CPL Coordinator & Noncredit Lead to the User Module",
+            "Adding CPL Coordinator & Noncredit Lead to the User Module"
+          ],
+          "draft_url": null,
+          "requested_by": "Sam"
+        },
+        {
+          "note": "Add the pictures under the steps they show.",
+          "draft_id": "569b249d-9e79-4a43-9a9d-5dffeca7f88c",
+          "ready_at": "2026-11-11T01:35:46.904Z",
+          "documents": [
+            "Adding CPL Coordinator & Noncredit Lead to the User Module",
+            "Adding CPL Coordinator & Noncredit Lead to the User Module"
+          ],
+          "draft_url": null,
+          "requested_by": "Sam"
+        }
+      ],
+      "publish": "show",
+      "draft_id": "a28c8fb5-b558-4543-8a4e-b91255aa5c6a",
+      "ready_at": "2026-11-11T01:36:28.546Z",
+      "draft_url": null,
+      "new_piece": true,
+      "drafted_by": "Sam",
+      "approved_at": "2026-11-11T01:38:11.782Z",
+      "approved_by": "Sam",
+      "drafted_with": "library-revise-draft",
+      "requested_at": "2026-11-11T01:36:12.088Z",
+      "requested_by": "Sam",
+      "based_on_draft": "569b249d-9e79-4a43-9a9d-5dffeca7f88c",
+      "pictures_checked_at": "2026-11-11T01:38:11.782Z",
+      "pictures_checked_by": "Sam"
+    },
+    "status": "requested",
+    "updated_at": "2026-11-11T01:38:12.013296+00:00",
+    "updated_by": null,
+    "url": null,
+    "version": null,
+    "versions": []
+  },
+  "update": {
+    "versions": [
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+        "date": "2026-11-11",
+        "label": "Version 1",
+        "status": "Current: I fixed the three undersized controls (the Links button and the Light and Dark theme buttons) by setting a 28px minimum height and width from the page's own styles, so the shared header block stays untouched. I also raised the Get help links to a 28px minimum height so they clear 24px with room to spare. The five figures already on the page stay where they are, and I did not add Pictures 6 to 10 because they duplicate Pictures 1 to 5. Before publishing, cover or crop Picture 4 (and its duplicate, Picture 9), which shows people's names, usernames and email addresses, and Picture 5 (and its duplicate, Picture 10), which shows an email address. Drafted from the card by Sam (draft a28c8fb5-b558-4543-8a4e-b91255aa5c6a); published the first public copy on Sam's approval."
+      }
+    ],
+    "refresh_note": null,
+    "regen": null,
+    "updated_by": "library-publish@bot",
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+    "version": "1",
+    "home": "web",
+    "file_type": "html",
+    "status": "draft",
+    "made_on": "2026-11-11"
+  }
+}
