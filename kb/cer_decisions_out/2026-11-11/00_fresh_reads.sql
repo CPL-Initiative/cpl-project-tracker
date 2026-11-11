@@ -1,5 +1,5 @@
 -- S638 ASE plans: run FRESH, read-only, before the dry run of each plan (CLAUDE.md Rule 10a).
--- Plans: kb/cer_decisions_out/2026-11-11-s638 (phase 1), -s638-b2 (phase 2), -s638-c (phase 3, after cred-rename-apply).
+-- Plans: kb/cer_decisions_out/2026-11-11 (phase 1), -2 (phase 2), -3 (phase 3, after cred-rename-apply).
 
 -- 1. Every row the plans replace or retire, with its per-row stamp. Paste each retire's reviewed_at into its plan
 --    (the plans carry kb/credential_review_overlay.json's per-title stamp). Expect slee@cccco.edu on all.

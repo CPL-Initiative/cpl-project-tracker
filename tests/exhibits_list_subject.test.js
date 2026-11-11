@@ -31,9 +31,9 @@ const OVERLAY = [
   { course_id: "_CREDENTIAL_REVIEW::Overridden", field: "subj_override", value: "MGMT", reviewed_at: "2026-11-01" }
 ];
 
-function load() {
+function load(hash) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root">Loading</div></body></html>',
-    { url: "https://example.org/#exhibits/list", runScripts: "dangerously" });
+    { url: "https://example.org/" + (hash || "#exhibits/list"), runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.fetch = function (url, init) {
     url = String(url); init = init || {};
@@ -86,6 +86,16 @@ function catalogSubjOf() {
   if (nos) { nos.click(); await settle(); }
   check("(4) the No Common SUBJ filter (the Commons count's address, #exhibits/list/nosubj) shows only the blank one",
     !!nos && rows(t.d).length === 1 && /Nothing Yet/.test(txt(rows(t.d)[0])), rows(t.d).map(txt).join(" | "));
+
+  // The Commons count's link itself (kb/status/commons.json writes #exhibits/list/nosubj), opened as an address.
+  const at = load("#exhibits/list/nosubj");
+  await at.M.boot(); await settle();
+  check("(4) ⭐ the address #exhibits/list/nosubj opens the List on the No Common SUBJ filter",
+    rows(at.d).length === 1 && /Nothing Yet/.test(txt(rows(at.d)[0])), rows(at.d).map(txt).join(" | "));
+  const cm = JSON.parse(fs.readFileSync("kb/status/commons.json", "utf8"));
+  const nsIssue = ((cm.rows.find((r) => r.key === "exhibit") || {}).issues || []).find((i) => /no Common SUBJ/.test(i.words));
+  check("(4) the Commons count for credentials with no Common SUBJ links to that address",
+    !nsIssue || nsIssue.open === "#exhibits/list/nosubj", nsIssue && JSON.stringify(nsIssue));
 
   const subjOf = catalogSubjOf();
   check("(3) the Catalog's subjOf() is found in credential_reference.js", typeof subjOf === "function");
