@@ -1012,3 +1012,55 @@ https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR.
 - Tests `library` (280), `library_revise_draft` (44), `library_list` (23), `public_library` (112), `commons_look` (12);
   `npm run a11y -- library-cards library-cards-dark library-list library-list-dark` (seeded) pass.
 
+## Moved from the lane (SkyWhirlpool, 2026-11-11)
+
+Verbatim from `docs/reference/lanes/library.md`, to keep the lane under its budget.
+
+✅ **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing
+2026-10-20; built S458):** *"can you set the Library page to be editable with Team phrase and not
+just magic link? I want the team to be able to make their artifacts public on the public library."*
+`cpl_library_set_public()` takes `team_pass_ok()` or `is_allowed_reviewer()`, anon holds EXECUTE on
+it, the tab's switch sends the phrase when there is no reviewer token, and `listed_by` reads the
+name given, else the sign-in's email, else *team phrase*. The guard trigger and the governance
+dismissal say the same. Applied by `supabase-migrate.yml` run 40011678930 (19:32Z; the schema file
+is re-runnable; receipt `kb/receipts/migration_cpl_library_public_team_phrase_2026_10_23_s458_40011678930.json`),
+and read back live: anon, authenticated and service_role hold EXECUTE, the function reads
+`team_pass_ok()`, the trigger's message names the phrase, the ledger holds the row. The tab's
+`library.js` reaches COBI with the merge of #2390 (Pages serves `main`); until then the page still
+asks for a sign-in. `cpl_memory` `sam-library-public-listing-with-team-phrase-2026-10-23`. The
+workflow it serves (Sam, 2026-10-23): Ashley makes a college's CPL Pathways visual, files it here,
+lists it publicly and gives the college the link as the CSM team meets with them.
+
+✅ **Any file, and a new piece drafted on its card (Sam, 2026-11-10, #3077).** *"when I dropped the Adding CPL
+Coordinator and Noncredit Lead in MAP pdf of a ppt, apparently it didn't upload, but I wasn't aware until cobix hunted
+that down"*; *"I can drop files when starting at the beginning, but not when revising"*; *"need to be able to handle
+office docs, pdfs, google slides, videos"*; and (2026-11-09) *"I haven't been able to successfully create a doc from
+there yet--always need some sort of out side intervention"*. Causes: a PDF or deck picked as background was never read
+and the record saved with `sources: []` (record `71931018`); a card's Revise box had no drop target; a new piece had no
+drafter. Now:
+- **One reader, `readWords`**, for every box: Word, PowerPoint (slides and notes), Excel, PDF (pdf.js 4.10.38 under
+  `vendor/pdfjs/`, loaded only for a PDF), captions (.vtt, .srt), text. A file with no words (a scan, a video, an old
+  .ppt) saves nothing and says why. A video's words come only from its captions or a transcript.
+- **Drop targets:** the top box, a card's Revise box, and a Requested card (*Add a document* saves the words at once).
+- **Google Docs, Slides, Sheets:** a link with instructions is a document to work from; `library-revise-draft` reads
+  its plain-text export when the file is shared by link (docs.google.com only).
+- **Draft it now on a Requested piece:** `library-revise-draft` writes Draft 1 from the starter page (the noncredit
+  visual's frame, `new_page.mjs`, which keeps the frame and refuses scripts); **Publish it** approves it;
+  `library_publish.py` makes `library/<slug>/` as Version 1 (`regen.new_piece`). Then List publicly, as for any piece.
+- Tests: `library_any_file` (33), `library` (288), `library_publish_test.py`.
+
+- **Pictures in a piece (Sam, 2026-11-11, S635):** *"the visual didn't include any of the map screenshots from the pdf
+  that the user will need to know how to navigate map. i'd like to edit it in the library (not here)"*, then *"it would
+  be even better if you ... just assemble the pics together with the text from the get go"*. A PDF's pictures are found
+  in the browser (`readPictures`: pdf.js names where each image sits, the rendered page is cropped there at 200 dpi, so
+  a deck's red boxes stay; a logo and a background are skipped) and saved as rows of `cpl_library_pictures`
+  (`kb/migrations/2026-11-11_library_pictures.sql`). `library-revise-draft` shows them to the model, which writes only
+  a marker, `<p>[[picture N: alt text]]</p>`; `pictures.mjs` turns each into the one fixed figure, so the allowlist and
+  the frozen sources stand. The card shows the pictures (*Check the pictures*: Cover or crop, which rewrites the bytes,
+  and Leave it out); Publish it and Replace the public copy wait for the box that says they were checked;
+  `library_publish.py` writes `library/<slug>/img/<n>.webp`, deletes a picture file the page no longer shows, and
+  skips a draft with pictures whose approval does not carry `regen.pictures_checked_by` (COBIx on #3095). A picture
+  once published stays in the repo's history: a name in one needs a history purge (Rule 5), so the check before
+  publishing is the gate. A PowerPoint is saved as PDF first. COBIx's session
+  recipe (`pdftoppm -r 200`, crop, captions, full size on a click, alt text, the review step) is the same result by
+  hand. Tests: `library_pictures` (38), `library_publish_test.py`.
