@@ -815,3 +815,21 @@ its curriQunet catalog must declare `curriqunet.com` in `outside_hosts` with its
 - **A college-level `awards` gate can hold a new step out.** Redwoods' entry read `transfer`, so reconcile 43016437012 changed none; it now reads `associate`, each step keeping its own gate. Read the entry's top level before a dispatch.
 - **The Los Rios 404 is keyed to the census user agent.** The hand-filed-copy user agent, which also names the CPL Initiative, gets the file at the college's own address (COBIx, #3096). The colleges recompiled their catalogs on 2026-11-06, so the copies pinned on 2026-10-17 are the earlier edition.
 - **A registry row a person corrected** (De Anza, Sam's go of 2026-10-17) is changed only by saying so on the row, and the session's permission check refused the apply: it waits on Sam.
+
+## S637 (SkyPorpoise, 2026-11-11): De Anza's packed course codes, and the runners' DNS
+
+- **Read the capture's near-miss reason before the diagnosis.** Handoff 637 said the reader "does not yet find the
+  program pages". `capture_preview.json` said otherwise: 242 of 243 programs had a page found by title and award, each
+  `coarse net: the page's code tokens name 0 of N listed courses`. Every miss shared one cause.
+- **An eLumen publish call is the page before its script runs.** De Anza's feed writes
+  `<td class="fix-code">ACCTD001A</td>` (subject, campus letter, four characters of number: `D01AH`, `D090.`, `D018.`);
+  the page's script shows `ACCT 1A`, `ACCT 1AH`, `ACCT 90`, `BUS 18` (page read 43044618275 shows both).
+  `el_fix_codes` rewrites only a fix-code cell in that packed shape; a code printed with its space is left alone
+  (`tests/program_requirements_college_test.py`, the De Anza block).
+- **A run can fail before its own work.** On 2026-11-11 the runners could not resolve Ubuntu's archive;
+  `playwright install --with-deps` spent ten minutes in DNS timeouts and exited 100 (page read 43040340552 twice,
+  capture 43046657326). The image already holds Chromium's libraries. `scripts/install_browser.sh` (#3112) installs
+  the browser alone, launches it once and fetches packages only if it will not start; thirteen workflows call it and
+  `tests/browser_install_single_source_test.py` fails one that writes the line itself.
+- **A page read costs nothing and settles a hypothesis in six minutes.** A push that adds a plan under
+  `kb/college_reads/` runs it; a dispatch names the plan. Hand the log to a subagent with the exact lines wanted.

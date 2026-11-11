@@ -451,6 +451,17 @@ jobs:
       # title carries it, nothing in the reference renamed without the approved batch, an old title kept as an alias.
       - name: Certification naming and the rename batch
         run: python3 tests/cert_naming_test.py
+      # Fold issuer precedence and the one-pass apply (#3110 build step 1): a person's issuer wins, a cert-form target
+      # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
+      - name: Credential fold issuer precedence and undo
+        run: python3 tests/cred_rename_fold_issuer_test.py
+      # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
+      # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
+      # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.
+      - name: Credential fold issuer resolution, end to end
+        run: python3 tests/fold_issuer_resolution_test.py
+      - name: The fold issuer resolver is defined once
+        run: python3 tests/fold_issuer_single_source_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder

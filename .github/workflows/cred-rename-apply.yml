@@ -19,6 +19,25 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 #      override rows' course_id to the new identity.
 #   5. Commit + push the mutated kb files + frozen alias_map snapshot.
 #
+# One pass (#3110 build step 1): a lead that creates a title and the siblings
+# whose merge into it is already confirmed apply in the same run; a second
+# dispatch is no longer needed. Each fold group's issuer follows
+# kb/fold_issuer.py's four rules in the kb files, and is stored in kb_curation
+# as ONE issuer_resolution row per folded target (step 3b), never by updating
+# or deleting a person's issuer row; the nightly sync enforces it. The receipt
+# kb/cred_rename_out/<date>/ holds undo.json; kb/_cred_rename_undo.py reverses
+# an apply from it.
+#
+# statewide_data.js and the MAP link verify file are NOT rebuilt here.
+# statewide_data.js is written by the full excel_to_dashboard.py run, which
+# also regenerates the dashboard HTML (Rule 1) and reads the master workbook
+# and live Supabase; daily-dashboard.yml owns that run, and a second writer of
+# those artifacts is what the artifact policy and Rule 6 rule out. After an
+# apply, dispatch daily-dashboard.yml (it queues behind this run on the shared
+# concurrency group) and let it publish.
+#
+# workflow_dispatch stays the only trigger: no schedule, no automatic start.
+#
 # Going light vs Phase 1e: this workflow has 5 steps, not 7 — no
 # post-apply re-dry-run (V4 in-apply already validates), no auditor
 # cleanup-receipt re-run (no rename-outcome invariant exists). Trust the
@@ -82,20 +101,46 @@ jobs:
           n = len(doc.get('renames') or {}) + len(doc.get('merges') or {})
           if n == 0:
               print("::warning::Dry-run produced 0 renames/merges — apply is a no-op")
+          for t, p in sorted((doc.get('issuer_preview') or {}).items()):
+              if p.get('conflict'):
+                  print(f"::notice title=Issuer conflict::{t}: the target's override "
+                        f"{p['conflict']['target_override_before']['issuer']} becomes {p['winner']}")
+              for e in p.get('exceptions') or []:
+                  print(f"::warning title=Issuer exception for a person::{t}: {e['ic_exhibits']} "
+                        f"industry-certification exhibit(s), issuer {e['issuer']} (does not block)")
           print(f"apply gate OK — {len(doc.get('renames') or {})} renames "
                 f"+ {len(doc.get('merges') or {})} confirmed merges to apply")
           EOF
 
       # ── Step 3: apply JSON file mutations ─────────────────────────
       - name: Apply credential renames to kb files
+        id: json
         run: python kb/_cred_rename_apply.py
 
+      # ── Step 3b: the fold's issuer resolutions ────────────────────
+      # One issuer_resolution row per folded target (kb/fold_issuer.py,
+      # cohort cred-fold-s638@bot), written BEFORE the row moves and before
+      # anything commits. No issuer row a person wrote is updated or deleted;
+      # every reader and the nightly resolve and enforce these rows, and only
+      # once the fold's receipt is on main (fold_issuer.applied_fold_ids): a
+      # row from an apply that never landed is inert. A failure here fails the
+      # job: the moves and the commit do not run, and the failure step at the
+      # end takes the written rows back and commits the receipt alone.
+      # Idempotent: a retry finds its own rows and writes nothing.
+      - name: Write the fold's issuer resolutions to kb_curation
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python kb/_cred_fold_resolution_write.py
+
       # ── Step 4: apply Supabase row migration ──────────────────────
-      # Best-effort: a single transient Supabase error doesn't strand
-      # the apply (the kb files have already landed; the operator can
-      # re-run kb/_cred_rename_apply_supabase.py manually). The supabase_log.json
-      # under kb/cred_rename_out/<date>/ is the retry input.
+      # Moves each folded title's kb_curation rows onto its new title, as
+      # before the redesign. The kb files are final once step 3 lands and the
+      # resolutions are written, so they still commit when this step fails, but
+      # the job then FAILS (the last step below) until someone re-runs
+      # kb/_cred_rename_apply_supabase.py. A retry writes supabase_log-<UTC>.json
+      # beside the first log; the undo reads them all.
       - name: Apply Supabase kb_curation row migration
+        id: supa
         continue-on-error: true
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -106,15 +151,28 @@ jobs:
       # files stale, so the lints job's freshness checks failed on main and on
       # every PR until a session rebuilt them (S313). Both builders are
       # standard-library Python over committed files.
+      # continue-on-error: a crash here must not keep the kb files and the
+      # receipt off main while kb_curation already holds the moves; the job
+      # still fails at the end.
       - name: Rebuild the files derived from the credential keys
+        id: rebuild
+        continue-on-error: true
         run: |
           python3 kb/_build_remint_blast_radius.py
           python3 kb/_build_ccr_cpl.py
 
       # ── Step 5: commit + push ─────────────────────────────────────
       - name: Commit + push
+        id: commit
+        env:
+          SUPA_OUTCOME: ${{ steps.supa.outcome }}
         run: |
           set -euo pipefail
+          if [ "$SUPA_OUTCOME" = "success" ]; then
+            SUPA_LINE="Supabase kb_curation rows migrated in same window — log: kb/cred_rename_out/<date>/supabase_log*.json. unified_title_override rows DELETEd (fulfilled); other override rows PATCHed to new course_id. Issuer resolutions: kb/cred_rename_out/<date>/resolution_log*.json."
+          else
+            SUPA_LINE="Supabase kb_curation row moves FAILED or partial (outcome: $SUPA_OUTCOME); the kb files and kb_curation may disagree. Re-run kb/_cred_rename_apply_supabase.py and read kb/cred_rename_out/<date>/supabase_log*.json."
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add kb/credentials.json \
@@ -135,7 +193,7 @@ jobs:
             -m "Atomic re-key of unified credentials per kb/credential_review_overlay.json. Alias map (rollback basis): kb/cred_rename_out/<date>/alias_map.json." \
             -m "Mutated kb files: credentials.json (key rewrite), unified_titles.json (value rewrite), coci_articulations.json (value rewrite). Raw college-authored titles in unified_titles.json dict KEYS stay immutable per the supersede-don't-mutate ADR." \
             -m "Validated (in-apply gates): V1 dry-run reported apply_safe=true; V3 no drift collisions at apply time; V4 articulation cardinality preserved (rename, not delete)." \
-            -m "Supabase kb_curation rows migrated in same window — log: kb/cred_rename_out/<date>/supabase_log.json. unified_title_override rows DELETEd (fulfilled); other override rows PATCHed to new course_id."
+            -m "$SUPA_LINE"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded on attempt $attempt."
@@ -146,6 +204,51 @@ jobs:
             git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((attempt * 2))
           done
+          exit 1
+
+      # Fail closed: the job never reads success while the row moves failed.
+      - name: Fail when the kb_curation row moves did not finish
+        if: steps.supa.outcome == 'failure'
+        run: |
+          echo "::error::The kb_curation row moves failed; the folded titles keep rows under their old keys until the retry. Read kb/cred_rename_out/<date>/supabase_log*.json and re-run kb/_cred_rename_apply_supabase.py."
+          exit 1
+
+      - name: Fail when the derived files were not rebuilt
+        if: steps.rebuild.outcome == 'failure'
+        run: |
+          echo "::error::kb/_build_remint_blast_radius.py or kb/_build_ccr_cpl.py failed; the kb files committed. Rebuild them in a PR."
+          exit 1
+
+      # The apply did not land on main (step 3b failed, or the commit or push
+      # did): take back this run's issuer_resolution rows (guarded on the
+      # cohort and the value written), mark the receipt apply_failed.json so
+      # no reader enforces any row left, and commit the receipt ALONE, so the
+      # undo can read its resolution and row-move logs. Never runs once the
+      # kb files are on main.
+      - name: Take back the resolutions and commit the receipt when the apply did not land
+        if: failure() && steps.json.outputs.receipt != '' && steps.commit.outcome != 'success'
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RECEIPT: ${{ steps.json.outputs.receipt }}
+        run: |
+          set -uo pipefail
+          python kb/_cred_fold_resolution_write.py --rollback "$RECEIPT" \
+            || echo "::error::The rollback did not finish; ${RECEIPT}/apply_failed.json still keeps its rows inert. Read resolution_rollback_log.json."
+          test -f "$RECEIPT/apply_failed.json" || python3 -c "import json,sys; json.dump({'_about': 'the apply did not land; rollback did not run'}, open(sys.argv[1] + '/apply_failed.json', 'w'))" "$RECEIPT"
+          cp -r "$RECEIPT" "$RUNNER_TEMP/receipt"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main && git reset --hard origin/main
+            rm -rf "$RECEIPT" && mkdir -p "$RECEIPT" && cp -r "$RUNNER_TEMP/receipt/." "$RECEIPT/"
+            git add "$RECEIPT"
+            git diff --cached --quiet && exit 0
+            git commit -m "Cred-Ref PR-5b/1: receipt of an apply that did not land ($RECEIPT)" \
+              -m "The kb files did not change. Its issuer_resolution rows were taken back (resolution_rollback_log.json); apply_failed.json keeps any left inert. Row moves, if any, reverse with kb/_cred_rename_undo.py."
+            git push origin HEAD:main && exit 0
+            sleep $((attempt * 2))
+          done
+          echo "::error::The receipt of the failed apply could not be pushed."
           exit 1
 
       - name: Summary

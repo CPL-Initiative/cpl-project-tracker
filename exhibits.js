@@ -98,6 +98,7 @@
   var CRED_DATA = "credential_reference_data.js";
   var CRED_PREFIX = "_CREDENTIAL_REVIEW::";
   var FIELD_CRED_ISSUER = "issuing_agency_override";
+  var FIELD_FOLD_RESOLUTION = "issuer_resolution";  // a fold's issuer decision (#3116, issuer_resolution.js)
   var FIELD_CRED_TRAINER = "training_agency_override";
   var FIELD_CRED_SITES = "training_sites_override";
   // The List view (Sam, 2026-11-01): a title edited there saves the rename field the reference already reads
@@ -1879,12 +1880,39 @@
     }).then(function () { cs.loading = null; });
     return cs.loading;
   }
+  /* A credential fold's issuer resolution (#3116): the issuer row resolves through issuer_resolution.js, the one
+     browser port of kb/fold_issuer.py effective_issuer(). A struck issuer leaves o.issuer unset, so the reference's
+     own (folded) issuer shows; the fold's winner shows as the issuer; o.fold drives the editor's plain line. */
+  function resolveFoldIssuers(m) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R) return m;
+    Object.keys(m).forEach(function (t) {
+      var o = m[t], res = R.parse(o.resolution);
+      if (!res) return;
+      var got = R.resolve({ issuing_agency_override: { value: o.issuer || "", at: o.issuerAt || "" } }, res);
+      if (got.issuer) o.issuer = got.issuer; else delete o.issuer;
+      o.fold = got.fold;
+    });
+    return m;
+  }
+  /* The editor's plain lines under the issuer: "Set by the fold on <date>", then each stored row it superseded. */
+  function foldLines(o) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R || !o || !o.fold) return [];
+    var out = [], line = R.foldLine(o.fold);
+    if (line) out.push(line);
+    (o.fold.superseded || []).forEach(function (s) {
+      if (s.field === "issuing_agency_override")
+        out.push("Superseded: " + s.value + (s.at ? ", saved " + String(s.at).slice(0, 10) : ""));
+    });
+    return out;
+  }
   /* The live _CREDENTIAL_REVIEW:: rows for the three fields, paginated (PostgREST caps a response at 1,000). */
   function loadCredOverlay() {
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM, FIELD_FOLD_RESOLUTION].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1899,7 +1927,8 @@
         var t = (row.course_id || "").slice(CRED_PREFIX.length);
         if (!t) return;
         var o = m[t] = m[t] || {};
-        if (row.field === FIELD_CRED_ISSUER) o.issuer = row.value || "";
+        if (row.field === FIELD_CRED_ISSUER) { o.issuer = row.value || ""; o.issuerAt = row.reviewed_at || ""; }
+        else if (row.field === FIELD_FOLD_RESOLUTION) o.resolution = row.value || "";
         else if (row.field === FIELD_CRED_TRAINER) { o.trainer = row.value; o.trainerAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_TITLE) o.title = row.value || "";
@@ -1907,6 +1936,7 @@
         else if (row.field === FIELD_LIST_GROUP) o.group = row.value || "";
         else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
       });
+      resolveFoldIssuers(m);
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
   }
@@ -1937,7 +1967,10 @@
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
       method: "POST",
       headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
-      body: JSON.stringify({ course_id: CRED_PREFIX + ut, field: field, value: value, reviewer_email: sess.email })
+      // reviewed_at: a save is a new decision with its own stamp, so an issuer saved after a fold decided wins
+      // over the fold (issuer_resolution.js); an upsert that kept the old stamp would hide it.
+      body: JSON.stringify({ course_id: CRED_PREFIX + ut, field: field, value: value, reviewer_email: sess.email,
+                             reviewed_at: new Date().toISOString() })
     });
   }
   /* Many credentials, one field, one request: [[title, value], ...], each an upsert on (course_id, field). */
@@ -1945,7 +1978,7 @@
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
       method: "POST",
       headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
-      body: JSON.stringify(pairs.map(function (p) { return { course_id: CRED_PREFIX + p[0], field: field, value: p[1], reviewer_email: sess.email }; }))
+      body: JSON.stringify(pairs.map(function (p) { return { course_id: CRED_PREFIX + p[0], field: field, value: p[1], reviewer_email: sess.email, reviewed_at: new Date().toISOString() }; }))
     });
   }
 
@@ -1978,10 +2011,11 @@
       var o = cs.overlay[r.ut] = cs.overlay[r.ut] || {};
       var now = new Date().toISOString();
       writes.forEach(function (w) {
-        if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+        if (w[0] === FIELD_CRED_ISSUER) { o.issuer = w[1]; o.issuerAt = now; }
         else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
         else { o.sites = w[1]; o.sitesAt = now; }
       });
+      var one = {}; one[r.ut] = o; resolveFoldIssuers(one);  // a newer row: the person's save wins
       delete cs.drafts[r.ut];
       ui.changed();
       ui.setNote("Saved. The tabs show it now; the daily run writes it into the reference.");
@@ -2417,6 +2451,9 @@
     issuer.addEventListener("input", function () { d.issuer = issuer.value; });
     out.push(el("label", { cls: "exh-inbox", "for": pf + "issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
     out.push(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
+    foldLines(state.cs.overlay[r.ut]).forEach(function (txt) {
+      out.push(el("p", { cls: "exh-muted exh-small exh-fold-line", text: txt }));
+    });
     var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
     if (also.length) out.push(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
       + ". The Common Exhibit Reference edits a credential's other issuers." }));
@@ -2798,12 +2835,13 @@
     var L = listState(), o = state.cs.overlay[r.ut] = state.cs.overlay[r.ut] || {};
     var now = new Date().toISOString();
     writes.forEach(function (w) {
-      if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+      if (w[0] === FIELD_CRED_ISSUER) { o.issuer = w[1]; o.issuerAt = now; }
       else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
       else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
       else if (w[0] === FIELD_MERGE_CONFIRM) o.merge = w[1];
       else if (w[0] === FIELD_CRED_TITLE) o.title = w[1];
     });
+    var one = {}; one[r.ut] = o; resolveFoldIssuers(one);  // a newer row: the person's save wins
     if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
   }
 
