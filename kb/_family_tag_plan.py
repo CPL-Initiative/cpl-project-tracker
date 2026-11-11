@@ -119,7 +119,7 @@ def tag_rows(p, rows):
             conflicts.append({"title": it["title"], "why": "holds family %r (by %s); a person's word wins"
                               % (have[0].get("value"), have[0].get("reviewer_email"))})
         elif have:
-            written.append({"title": it["title"], "by": have[0].get("reviewer_email")})
+            written.append({"title": it["title"], "family": it["family"], "by": have[0].get("reviewer_email")})
         else:
             tags.append({"course_id": cid, "field": FAMILY_FIELD, "value": it["family"]})
     return tags, written, conflicts

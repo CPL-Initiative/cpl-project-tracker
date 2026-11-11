@@ -6,7 +6,7 @@
   "edge_functions": 14,
   "file_datasets": 855,
   "external_services": 195,
-  "consumers": 555,
+  "consumers": 556,
   "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
@@ -5029,7 +5029,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 161
     },
     {
      "id": "script:kb/_funding_config_edit_apply.py",
@@ -28437,6 +28437,13 @@
      ]
     },
     {
+     "id": "module:kb/_family_tag_apply.py",
+     "kind": "module",
+     "direction": "write",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:map_export.js",
      "kind": "module",
      "direction": "read",
@@ -28618,6 +28625,13 @@
      "direction": "read",
      "how": "literal",
      "line": 308
+    },
+    {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_overmerge_apply_supabase.py",

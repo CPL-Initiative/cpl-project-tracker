@@ -61,15 +61,19 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   rows stay beside the tags, never edited or deleted; `kb/fold_issuer.py` `hold_family_folds` (called by
   `_cred_rename_dryrun.py` and `_cred_rename_apply.py`) holds any fold whose target is a family title, and the rename
   batch (`_build_exhibits_related.py`) reads a member's fold into its family as no rename. The write is
-  `credential-family-apply.yml` (`kb/_family_tag_apply.py`): it reads live at dispatch, inserts only under
-  `credential-family-s638@bot`, refuses on a conflict (a pending merge confirm naming a member as its target, or a
-  member's family row holding another value), and lands receipts in `kb/receipts/credential_family_2026-11-11_s638/`.
-  Undo: `mode=rollback` removes exactly the cohort's rows. #3117's `plan.sql` never ran and is retired.
+  `credential-family-apply.yml` (`kb/_family_tag_apply.py`): it reads live at dispatch (Range-paged), gates on the
+  SET (a hash of the sorted title-family pairs, never a count), refuses on a conflict (a pending merge confirm naming a
+  member as its target, or a member's family row holding another value), pushes a pending receipt of the planned rows
+  to `main` before the insert, inserts only under `credential-family-s638@bot`, and files each row as ours or a
+  person's by a live read-back, never by the INSERT's echo; receipts land in
+  `kb/receipts/credential_family_2026-11-11_s638/`. Undo: `mode=rollback` deletes each planned row (pending receipts
+  included) only while it still holds the cohort, the field and the value written; a row a person changed since stays
+  and is reported as taken since. #3117's `plan.sql` never ran and is retired.
 - **Held for Sam (his call, outward naming):** four ASE Master titles; Advanced Electrical and Electronic Systems (the
   ASE plan retires it); ASE Certification (any A1-A8); ASE C1 or G1 (either test qualifies; agreed with COBIx on #3111).
 - **NEXT, in order:** (0) the family tags: once the S639 PR is on `main`, dispatch `credential-family-apply.yml`
-  `mode=dry-run`; a correct summary reads *24 to write, 0 already written, 7 held for Sam, 0 conflicts*; then
-  `mode=commit expect=24`; then `daily-dashboard.yml` carries the family onto `kb/credentials.json`; (1) phase 2 (`-2`): its dry run was dispatched 22:16Z; read it, commit if 0 held; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
+  `mode=dry-run`; a correct summary reads *24 to write, 0 already written, 7 held for Sam, 0 conflicts; set
+  `<hash>` (24 tags)*; then `mode=commit expect=<hash>`, the 12-character hash that line printed; then `daily-dashboard.yml` carries the family onto `kb/credentials.json`; (1) phase 2 (`-2`): its dry run was dispatched 22:16Z; read it, commit if 0 held; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
   #3116 (read `kb/cred_rename_dryrun/alias_map.json`'s `issuer_preview` first), then `daily-dashboard.yml`; (4) ASE
   plan phase 3 (`-3`); (5) the owed decision sheet; (6) the rename batch proposing
   "ASE Certificate Bundles: A4 + A5" titles, for Sam's one approval; (7) the credentials still without a subject, as one

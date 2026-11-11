@@ -291,6 +291,14 @@ SEEDS = [
                      ("supabase:cpl_document_sections", "read")],
         "why": "tables behind rpc:match_document_sections; DDL not in the repo",
     },
+    {   # kb/_family_tag_apply.py (S639): inserts and deletes kb_curation rows through the inherited
+        # _cer_decision_apply.Rest insert()/delete(); the verb never sits near the table name.
+        "file": "kb/_family_tag_apply.py",
+        "anchor": r'self\.base = url\.rstrip\("/"\) \+ "/rest/v1/" \+ TABLE',
+        "datasets": [("supabase:kb_curation", "write")],
+        "why": "insert-only credential_family rows under credential-family-s638@bot, and the guarded "
+               "rollback delete, through the inherited PostgREST client",
+    },
 ]
 
 
