@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-11T14:47:21Z",
+ "written_at": "2026-11-11T15:43:09Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,9 +118,9 @@
    ],
    "issues": [
     {
-     "n": 6,
+     "n": 177,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 5, the classifier's title has a course code left in 1)",
+     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
@@ -150,7 +150,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-11T06:24:41Z",
+    "at": "2026-11-11T15:43:03Z",
     "every_hours": 24
    },
    "facts": {
@@ -162,7 +162,7 @@
     "confirmed": 1236,
     "records": 3054,
     "records_stamped": 2286,
-    "saved_at": "2026-11-10T15:51:40Z",
+    "saved_at": "2026-11-11T15:43:03Z",
     "fold_at": "2026-11-11T06:24:41Z",
     "map_titles": 5086,
     "unclassified": 280,
@@ -657,9 +657,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 6,
+      "n": 177,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 5, the classifier's title has a course code left in 1)",
+      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
       "open": "#exhibits/held"
      },
      {
@@ -762,35 +762,35 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 897,
+     "placed": 945,
      "untouched": 821,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 48,
      "looked": 57
     },
     {
      "name": "course-identity",
-     "placed": 191,
+     "placed": 192,
      "untouched": 167,
      "kept": 0,
      "renamed": 24,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 1,
      "looked": 24
     },
     {
      "name": "brand-family",
-     "placed": 61,
+     "placed": 115,
      "untouched": 54,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
      "by_procedure": 5,
-     "left": 0,
+     "left": 54,
      "looked": 2
     },
     {
@@ -850,13 +850,13 @@
     }
    ],
    "total": {
-    "placed": 1216,
+    "placed": 1319,
     "untouched": 1085,
     "kept": 23,
     "renamed": 84,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 103,
     "looked": 107
    }
   },
