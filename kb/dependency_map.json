@@ -4,10 +4,10 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 856,
+  "file_datasets": 858,
   "external_services": 195,
-  "consumers": 553,
-  "workflows": 65,
+  "consumers": 556,
+  "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -5025,6 +5025,13 @@
      "line": 231
     },
     {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 161
+    },
+    {
      "id": "script:kb/_funding_config_edit_apply.py",
      "kind": "script",
      "direction": "read",
@@ -9810,6 +9817,19 @@
    "consumers": [
     {
      "id": "workflow:cer-procedures.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_family_tag_apply.py": {
+   "consumers": [
+    {
+     "id": "workflow:credential-family-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -17671,7 +17691,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 42
     }
    ],
    "served": true,
@@ -22978,6 +22998,19 @@
    "main_committers": []
   },
   "file:tests/credential_catalog_widening_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_family_apply_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28443,6 +28476,13 @@
      ]
     },
     {
+     "id": "module:kb/_family_tag_apply.py",
+     "kind": "module",
+     "direction": "write",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:map_export.js",
      "kind": "module",
      "direction": "read",
@@ -28624,6 +28664,13 @@
      "direction": "read",
      "how": "literal",
      "line": 308
+    },
+    {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_overmerge_apply_supabase.py",
@@ -30952,6 +30999,18 @@
    "chain": [],
    "urls": []
   },
+  "credential-family-apply.yml": {
+   "name": "Credential family apply",
+   "crons": [],
+   "scripts": [
+    "kb/_family_tag_apply.py"
+   ],
+   "adds": [],
+   "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "csr-confirm.yml": {
    "name": "CSR confirm",
    "crons": [
@@ -31341,6 +31400,7 @@
     "tests/eacr_matrix_payload_test.py",
     "tests/statewide_cid_hold_test.py",
     "tests/credential_family_test.py",
+    "tests/credential_family_apply_test.py",
     "tests/credential_family_fold_contact_test.py",
     "tests/cid_claim_audit_test.py",
     "tests/esl_fold_spotcheck_test.py",
