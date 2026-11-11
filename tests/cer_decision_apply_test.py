@@ -479,6 +479,139 @@ for label, mutate in [
 shutil.rmtree(tmp)
 app.UT_PATH = os.path.join(ROOT, "kb", "unified_titles.json")
 
+# ── a reinstate puts back exactly the row an earlier receipt retired; rollback takes exactly it back ──
+# Sky and COBIx, 2026-11-11 (#3110): a plan never retires a person's saved row on an emptied title; readers ignore
+# it. The S638 plans had retired Sam's rows; kb/cer_decisions_out/2026-11-11-4 restores them through this path.
+tmp = tempfile.mkdtemp()
+real_repo, real_root = app.REPO, app.RECEIPT_ROOT
+app.REPO, app.RECEIPT_ROOT = tmp, os.path.join(tmp, "kb", "cer_decisions_out")
+os.makedirs(os.path.join(app.RECEIPT_ROOT, "2026-11-11"))
+HAC = P + "Heating and Air Conditioning"
+SAMROW = {"course_id": HAC, "field": "issuing_agency_override", "value": "California Community College Chancellor's Office",
+          "reviewer_email": "slee@cccco.edu", "reviewed_at": "2026-11-11T15:47:58.805608+00:00"}
+OVR = {"course_id": HAC, "field": "unified_title_override", "value": "Heating and Air Conditioning (ASE A7 standards)",
+       "reviewer_email": "slee@cccco.edu", "reviewed_at": "2026-11-11T15:26:55.029+00:00"}
+MARK = {"course_id": HAC, "field": "reviewed_marker", "value": "1", "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.539922+00:00"}
+RCPT = "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+with open(os.path.join(tmp, RCPT), "w", encoding="utf-8") as fh:
+    json.dump({"retired": [{"course_id": x["course_id"], "field": x["field"], "value": x["value"],
+                            "before": dict({k: x[k] for k in ("value", "reviewer_email", "reviewed_at")},
+                                           validated_at=None, validated_by=None)} for x in (SAMROW, OVR, MARK)]}, fh)
+
+
+def back_plan(*rows, **extra):
+    return dict({"ruling": "restore ruling", "cohort": "cer-s639@bot", "rows": [],
+                 "reinstates": [dict(x, from_receipt=RCPT) for x in rows]}, **extra)
+
+
+UTP = os.path.join(tmp, "ut.json")
+with open(UTP, "w", encoding="utf-8") as fh:
+    json.dump({"MIL7": {"unified_title": "Military Tactical Wheeled Vehicle (ASE MIL7)"}}, fh)
+app.UT_PATH = UTP
+d = plan_dir(back_plan(SAMROW, OVR))
+r = FakeRest([{"course_id": P + "Other", "field": "unified_title_override", "value": "Z",
+               "reviewer_email": "curator@rccd.edu", "reviewed_at": "2026-11-01T00:00:00Z"}], plan_dir=d)
+code, lines = run(d, "dry-run", r)
+check("a reinstate dry run reports 2 to reinstate and writes nothing",
+      code == 0 and r.inserts == 0 and any("2 to reinstate, 0 already reinstated" in l for l in lines), lines)
+code, lines = run(d, "commit", r)
+rec = json.load(open(glob.glob(os.path.join(d, "applied_*.json"))[0]))
+got = {(x["field"], x["reviewer_email"], x["reviewed_at"]) for x in r.rows if x["course_id"] == HAC}
+check("commit puts both rows back under the person's own reviewer and stamp, never the cohort",
+      code == 0 and got == {(SAMROW["field"], "slee@cccco.edu", SAMROW["reviewed_at"]),
+                            (OVR["field"], "slee@cccco.edu", OVR["reviewed_at"])}, lines)
+check("the receipt names what it put back, written before the insert, and reads back settled",
+      len(rec["put_back"]) == 2 and rec["result"] == "written" and r.receipt_before_insert is True
+      and all(x["from_receipt"] == RCPT for x in rec["reinstates"]), rec.get("result"))
+code, lines = run(d, "commit", r)
+check("a second commit finds them reinstated and writes nothing",
+      code == 0 and any("nothing to write" in l for l in lines), lines)
+# Sam saves the override again after the restore: the undo leaves his new save.
+for x in r.rows:
+    if x["course_id"] == HAC and x["field"] == "unified_title_override":
+        x["reviewed_at"] = "2026-11-12T09:00:00+00:00"
+code, lines = run(d, "rollback", r)
+left = {(x["field"], x["reviewed_at"]) for x in r.rows if x["course_id"] == HAC}
+check("rollback deletes exactly the reinstated row still as put back, and leaves a person's later save",
+      code == 0 and left == {("unified_title_override", "2026-11-12T09:00:00+00:00")}
+      and any("1 reinstated rows removed again, 1 saved again since and left" in l for l in lines), lines)
+check("rollback leaves every other row", any(x["course_id"] == P + "Other" for x in r.rows))
+shutil.rmtree(d)
+
+d = plan_dir(back_plan(SAMROW))
+r = FakeRest([dict(SAMROW, value="National Institute for Automotive Service Excellence (ASE)",
+                   reviewed_at="2026-11-12T08:00:00Z")], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a row written since holds the reinstate; nothing written",
+      code == 1 and r.inserts == 0 and any("REFUSED" in l for l in lines), lines)
+shutil.rmtree(d)
+
+with open(UTP, "w", encoding="utf-8") as fh:
+    json.dump({"HVAC NC": {"unified_title": "Heating and Air Conditioning"}}, fh)
+d = plan_dir(back_plan(dict(SAMROW, while_emptied=True)))
+r = FakeRest(plan_dir=d)
+code, lines = run(d, "commit", r)
+check("while_emptied holds the reinstate while a raw still maps to the title",
+      code == 1 and r.inserts == 0 and any("still holds an exhibit" in l for l in lines), lines)
+shutil.rmtree(d)
+
+for label, mutate in [
+    ("a reinstate whose value differs from its receipt", lambda p: p["reinstates"][0].update(value="Something else")),
+    ("a reinstate under another reviewer", lambda p: p["reinstates"][0].update(reviewer_email="someone@rccd.edu")),
+    ("a reinstate with another stamp", lambda p: p["reinstates"][0].update(reviewed_at="2026-11-11T15:48:00Z")),
+    ("a reinstate of a row the receipt did not retire", lambda p: p["reinstates"][0].update(field="training_agency_override")),
+    ("a reinstate naming a receipt outside the plans", lambda p: p["reinstates"][0].update(from_receipt="kb/x.json")),
+    ("a reinstate under the cohort's own name", lambda p: p["reinstates"][0].update(reviewer_email="cer-s639@bot")),
+    ("a reinstate with no stamp", lambda p: p["reinstates"][0].pop("reviewed_at")),
+]:
+    bad = copy.deepcopy(back_plan(SAMROW))
+    mutate(bad)
+    d = plan_dir(bad)
+    try:
+        app.load_plan(d)
+        refused = False
+    except SystemExit:
+        refused = True
+    check("the plan refuses " + label, refused)
+    shutil.rmtree(d)
+d = plan_dir(back_plan(SAMROW, MARK))
+try:
+    app.load_plan(d)
+    ok = True
+except SystemExit as e:
+    ok = str(e)
+check("a reviewed_marker the receipt kept may be reinstated too (the plan decides which)", ok is True, ok)
+shutil.rmtree(d)
+app.REPO, app.RECEIPT_ROOT = real_repo, real_root
+app.UT_PATH = os.path.join(ROOT, "kb", "unified_titles.json")
+shutil.rmtree(tmp)
+
+# ── the committed restore puts back every person's row the S638 plans retired, markers aside ──
+REST = os.path.join(ROOT, "kb", "cer_decisions_out", "2026-11-11-4")
+retired = []
+for ph in ("2026-11-11", "2026-11-11-2"):
+    for p in glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", ph, "applied_*.json")):
+        retired += json.load(open(p, encoding="utf-8")).get("retired") or []
+want = {(x["course_id"], x["field"]) for x in retired if x["field"] != "reviewed_marker"}
+restore = app.load_plan(REST)
+have = {(x["course_id"], x["field"]) for x in restore["reinstates"]}
+check("the restore names every retired row but the reviewed_marker ticks (13), and only those",
+      have == want and len(have) == 13, sorted(want ^ have))
+check("the restore carries all 12 of Sam's slee@cccco.edu rows",
+      sum(x["reviewer_email"] == "slee@cccco.edu" for x in restore["reinstates"]) == 12)
+check("every restore entry waits for its title to hold no exhibit",
+      all(x.get("while_emptied") is True for x in restore["reinstates"]))
+
+# ── a plan not yet applied retires no person's saved row but a reviewed_marker tick ──
+for p in glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json")):
+    if glob.glob(os.path.join(os.path.dirname(p), "applied_*.json")):
+        continue  # applied history; its receipt is the record
+    pl = json.load(open(p, encoding="utf-8"))
+    bad = [x for x in pl.get("retires") or [] if x.get("field") != "reviewed_marker"
+           and not str(x.get("reviewer_email", "")).endswith("@bot")]
+    check("%s retires no person's saved row but a reviewed_marker" % os.path.relpath(p, ROOT), not bad, bad)
+
 # ── the committed plans are valid ones ───────────────────────────────────────
 plans = glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json"))
 check("a committed plan exists", bool(plans))

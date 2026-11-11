@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 853,
+  "file_datasets": 854,
   "external_services": 195,
   "consumers": 553,
   "workflows": 65,
@@ -5008,7 +5008,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 351
+     "line": 436
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -19342,7 +19342,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 229
+     "line": 280
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -23225,6 +23225,19 @@
    "main_committers": []
   },
   "file:tests/eacr_matrix_payload_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/emptied_title_guard_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28500,7 +28513,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 93
+     "line": 101
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -31240,6 +31253,7 @@
     "tests/cred_rename_fold_issuer_test.py",
     "tests/fold_issuer_resolution_test.py",
     "tests/fold_issuer_single_source_test.py",
+    "tests/emptied_title_guard_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
     "tests/adopt_align_build_test.py",

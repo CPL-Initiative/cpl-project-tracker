@@ -447,12 +447,17 @@ def main():
     alias_doc, renames, merges = load_alias_map()
     # A fold into a declared family title is never applied (Sam's ruling C), whatever the alias map says.
     renames, merges, held_family = fold_issuer.hold_family_folds(renames, merges, fold_issuer.family_titles(FAMILIES))
-    for h in held_family:
+    # A saved fold on a title that holds no exhibit is never applied (#3110), read against the raws as they
+    # stand now, so an alias map written before the nightly emptied a title does not fold it.
+    renames, merges, held_emptied = fold_issuer.hold_emptied_folds(
+        renames, merges, fold_issuer.titles_holding_exhibits(_load_optional(UNIFIED_TITLES)))
+    for h in held_family + held_emptied:
         print(f"  {h['old']} into {h['target']}: {h['why']}")
     alias_doc = dict(alias_doc, renames=renames, merges=merges,
-                     held_family=(alias_doc.get("held_family") or []) + held_family)
+                     held_family=(alias_doc.get("held_family") or []) + held_family,
+                     held_emptied=(alias_doc.get("held_emptied") or []) + held_emptied)
     if not renames and not merges:
-        print("  nothing to apply once the family folds are held")
+        print("  nothing to apply once the family and emptied-title folds are held")
         return
     print(f"[cred_rename_apply] {TODAY} — applying {len(renames)} rename(s) "
           f"+ {len(merges)} confirmed merge(s)")

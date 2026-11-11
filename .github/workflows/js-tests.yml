@@ -462,6 +462,10 @@ jobs:
         run: python3 tests/fold_issuer_resolution_test.py
       - name: The fold issuer resolver is defined once
         run: python3 tests/fold_issuer_single_source_test.py
+      # A person's saved fold rows on a title that holds no exhibit do nothing (Sky and COBIx, #3110): no fold, no
+      # issuer conflict, no rename, and the apply stays safe; the same rows act again once a raw maps to the title.
+      - name: Saved rows on an emptied title are ignored
+        run: python3 tests/emptied_title_guard_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder
