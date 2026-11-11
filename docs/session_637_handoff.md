@@ -36,6 +36,15 @@ each time.
    override leaves in `kb/credentials.json`; it removes nothing. Live: 166 appended records, none stale. Test
    `tests/credential_review_stale_issuer_test.py`, in `js-tests.yml`.
 
+## Beside this run: the CPL Queue routine's firings (their notes on #3100)
+
+- **06:12Z (S636b):** dispatched `daily-dashboard.yml`; the UI pass on funding-model (#3101 merged: the print page's
+  white is `--print-paper`); the credential watch (#3103: 25 added, 1 retired, Oracle OCI 2025 GenAI Professional;
+  `cpl_memory` `oracle-retires-oci-2025-genai-professional-2026-11-11`); #3102 wrote Shasta's curriQunet index run.
+- **09:12Z (S636c):** wrote nothing. Shasta's index is filed (run 42972399224) and `next_slo_colleges.py` gives
+  Shasta as *trial* (`trial=12`): the trial is the next UTC day's SLO run. No new Library request (DSP v3 waits on
+  Sam's approval of its draft; IACA waits on Crystal's note), no CER rule request, no re-analysis request open.
+
 ## Decisions to honor
 
 - Sam, this run: the opening line only. No card was asked or answered; no sheet was built.
