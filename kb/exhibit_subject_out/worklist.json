@@ -2,20 +2,20 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-11T20:00:23Z",
- "mode": "offline",
- "live_read": false,
+ "written_at": "2026-11-11T21:41:28Z",
+ "mode": "on",
+ "live_read": true,
  "by_rung": {
   "courses, several colleges": 29,
-  "courses, one college": 713,
+  "courses, one college": 709,
   "issuer family": 9
  },
- "written": 0,
- "not_yet_written": 751,
- "no_subject": 1122,
- "left": 371,
- "left_exhibits": 434,
- "suggested": 71,
+ "written": 747,
+ "not_yet_written": 0,
+ "no_subject": 362,
+ "left": 362,
+ "left_exhibits": 429,
+ "suggested": 70,
  "not_held": [
   "Theater Arts"
  ],
@@ -353,54 +353,6 @@
    "exhibits": [
     "MAPPRI-AP-1-001"
    ]
-  },
-  {
-   "title": "Carpenters Apprenticeship — Drywall Applicator",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": [
-    "MAPICA-DAA-1-001"
-   ]
-  },
-  {
-   "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": [
-    "MAPICA-HFLA-1-001"
-   ]
-  },
-  {
-   "title": "Carpenters Apprenticeship — Insulator",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": [
-    "MAPICA-IA-1-001"
-   ]
-  },
-  {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": [
-    "MAPICA-SEA-1-001"
-   ]
-  },
-  {
-   "title": "Carpenters Apprenticeship — Shingler",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": [
-    "MAPICA-SA-1-001"
-   ]
-  },
-  {
-   "title": "Carpenters Training Committee for Northern California (CTCNC) — Work Experience",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": [],
-   "suggested": "WEXP",
-   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Carpentry: General Certificate of Achievement",
@@ -1573,24 +1525,6 @@
    "exhibits": [
     "MAPCXH-RES-1-001"
    ]
-  },
-  {
-   "title": "Introduction to Acoustical Apprenticeship 2",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": []
-  },
-  {
-   "title": "Introduction to Apprenticeship 1",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": []
-  },
-  {
-   "title": "Introduction to Apprenticeship 2",
-   "why": "no signal",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "exhibits": []
   },
   {
    "title": "Introduction to Art History",
