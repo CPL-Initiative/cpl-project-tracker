@@ -447,6 +447,10 @@ jobs:
       # as a course number.
       - name: Exhibits Another look builder
         run: python3 tests/exhibits_sweep_build_test.py
+      # Certification naming (Sam, 2026-11-11): "<Official cert name> (ASE <code>)" for a new card, no card again once a
+      # title carries it, nothing in the reference renamed without the approved batch, an old title kept as an alias.
+      - name: Certification naming and the rename batch
+        run: python3 tests/cert_naming_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder

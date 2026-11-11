@@ -94,6 +94,11 @@ jobs:
       - name: Build the Exhibits tab's Another look
         run: python3 kb/_sweep_exhibit_titles.py --quiet || echo "::warning title=Another look not rebuilt::kb/_sweep_exhibit_titles.py failed; the Exhibits tab reads the previous file until the next run."
 
+      # The Review card's Related titles panel and the rename batch (Sam, 2026-11-11) read the reference, the
+      # titles saved and held tonight, and Another look's open cards, so they rebuild after all three.
+      - name: Build the Exhibits tab's related titles and rename batch
+        run: python3 kb/_build_exhibits_related.py --quiet || echo "::warning title=Related titles not rebuilt::kb/_build_exhibits_related.py failed; the Exhibits tab reads the previous file until the next run."
+
       # The Exhibits tiles and the Commons' Exhibit row read the held titles and conflicts from this run's latest.json
       # (#2665's note, S544): rebuilt only by the daily run, the tile said 351 held while Review said 1 until the next
       # morning. Rebuilt here too, after the files it reads, so both pages agree with Review the same night.
@@ -113,6 +118,7 @@ jobs:
           git add kb/cer_procedures_out/saved 2>/dev/null || true
           git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
           git add kb/exhibits_sweep.json 2>/dev/null || true
+          git add kb/exhibits_related.json 2>/dev/null || true
           git add kb/status/commons.json 2>/dev/null || true
           git add kb/status/commons_history.json 2>/dev/null || true
           if git diff --cached --quiet; then

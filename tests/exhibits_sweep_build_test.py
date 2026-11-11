@@ -57,6 +57,8 @@ TITLES = {
     "PC Operating Systems II": ("PC Operating Systems", JULY),
     "Noncredit for AUTO INT": ("Automotive Technology", SAM),
     "Noncredit for AUTO SMOG": ("Automotive Technology", SAM),
+    # The family's own form, a course in parentheses after the program (no ASE test now writes it).
+    "Hybrid Vehicle Safety at another college": ("Automotive Technology (Hybrid Vehicle Safety)", JULY),
     "Credit by Exam AUTO INTR Automotive Service and Introduction": ("Automotive Service and Introduction", JULY),
     "AP Calculus AB (Score of 3)": ("AP Calculus AB", JULY),
     "AP Calculus AB (Score of 4 or 5)": ("AP Calculus AB", JULY),
@@ -122,19 +124,22 @@ try:
         return (by_local.get(raw) or {}).get("rules")
 
     # ase
-    check("a course named by its ASE code takes Automotive Technology and the test in parentheses",
-          proposed("Noncredit for AUTO A1") == "Automotive Technology (ASE A1 Engine Repair)"
+    # Sam's ruling, 2026-11-11 (kb/cert_naming.py): the test's official name leads, its code in parentheses.
+    check("a course named by its ASE code takes the test's official name and its code in parentheses",
+          proposed("Noncredit for AUTO A1") == "Engine Repair (ASE A1)"
           and rules("Noncredit for AUTO A1") == ["ase"], by_local.get("Noncredit for AUTO A1"))
     check("an ASE paren with extra words takes the test's official name",
-          proposed("Noncredit for AUTO A8") == "Automotive Technology (ASE A8 Engine Performance)")
+          proposed("Noncredit for AUTO A8") == "Engine Performance (ASE A8)")
     check("an ASE paren on a course the code does not name gives way to the course's own title",
           proposed("Noncredit for AUTO P1") == "Powertrains: Modifications for Performance"
           and "not ASE P1" in by_local["Noncredit for AUTO P1"]["why"][0])
     check("the ASE credential itself keeps its name",
           "Automotive Service Excellence (ASE) A1 Certificate" not in by_local)
+    check("the same test under the older form is never folded by a twin card: the rename batch settles it",
+          not any(c["current"] == "ASE A1 — Engine Repair" or c["proposed"] == "ASE A1 — Engine Repair" for c in d["cards"]))
     # course-code, then ase
     check("a course number and method word come off, and the course then takes its ASE test",
-          proposed("Brakes - Credit by Exam (ATEC 14 )") == "Automotive Technology (ASE A5 Brakes)"
+          proposed("Brakes - Credit by Exam (ATEC 14 )") == "Brakes (ASE A5)"
           and rules("Brakes - Credit by Exam (ATEC 14 )") == ["ase", "course-code"])
     check("an industry credential's code is its name, never a course number", "OSHA 10 Card" not in by_local)
     # numerals
