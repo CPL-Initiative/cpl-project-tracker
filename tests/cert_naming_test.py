@@ -75,7 +75,32 @@ for t in ("ASE Bundle — A4, A5", "ASE Master Automobile Technician (A1–A8 + 
           "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair", "ASE Master Automobile Technician"):
     got = cn.ase_read(t, ASE)
     check("more than one test has no single name: " + t, got["kind"] == "several" and got["proposed"] == "", got)
-check("a title that is not ASE's is not read", cn.ase_read("Phase Change Materials", CCC) is None
+# ── ASE's Military Tactical Wheeled Vehicle series (Sam, 2026-11-11: "adjust the canonical title to match the official
+# ASE titles"): each of the eight is named in the format, with the series, so none reads as a T-series truck test ──
+MIL_WANT = {
+    "MIL1": "Military Tactical Wheeled Vehicle – Military Fundamentals (ASE MIL1)",
+    "MIL2": "Military Tactical Wheeled Vehicle – Diesel Engines (ASE MIL2)",
+    "MIL3": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
+    "MIL4": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+    "MIL5": "Military Tactical Wheeled Vehicle – Suspension, Steering, and Hydraulics (ASE MIL5)",
+    "MIL6": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
+    "MIL7": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
+    "MIL8": "Military Tactical Wheeled Vehicle – Preventive Maintenance Checks and Services (ASE MIL8)",
+}
+check("the eight MIL titles are written in the format, the series named",
+      {c: cn.ase_title(c) for c in cn.MIL} == MIL_WANT, {c: cn.ase_title(c) for c in cn.MIL})
+check("a MIL title in the format fits", all(cn.ase_read(t, ASE)["kind"] == "fits" for t in MIL_WANT.values()))
+got = cn.ase_read("ASE MIL7 — Heating, Ventilation & Air Conditioning", ASE)
+check("a MIL code in front is code-first, the official name proposed",
+      got["kind"] == "code-first" and got["proposed"] == MIL_WANT["MIL7"], got)
+got = cn.ase_read("Drive Train (ASE MIL3)", ASE)
+check("a MIL title without the series is a wrong name", got["kind"] == "wrong-name" and got["proposed"] == MIL_WANT["MIL3"], got)
+check("the MIL names take no word-match from the truck and car tests",
+      cn.code_by_words("Diesel Engines") == "T2" and cn.code_by_words("Drive Train") == "T3"
+      and cn.code_by_words("Heating and Air Conditioning") == "A7")
+check("a MIL code is read as one code, never as its last letter and digit",
+      cn.ase_read("ASE MIL6 — Electrical/Electronic Systems", ASE)["codes"] == ["MIL6"])
+check("a title that is not ASE's is not read",cn.ase_read("Phase Change Materials", CCC) is None
       and cn.ase_read("CompTIA A+", "CompTIA") is None)
 check("a new proposal goes out in the format; any other title goes out as it came",
       cn.canonical("Automotive Technology (ASE A7 Heating and Air Conditioning)") == "Heating and Air Conditioning (ASE A7)"

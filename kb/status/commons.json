@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-11T17:45:56Z",
+ "written_at": "2026-11-11T21:41:34Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13764,
+     "n": 13782,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 3179,
+     "n": 3146,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3339,
+     "n": 3354,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-11T12:18:07Z",
+    "at": "2026-11-11T17:53:38Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13764,
-    "failing": 3179,
-    "unread": 3339,
-    "records": 18567,
+    "complete": 13782,
+    "failing": 3146,
+    "unread": 3354,
+    "records": 18555,
     "colleges": 114,
-    "outside_active": 1624,
+    "outside_active": 1627,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -100,7 +100,7 @@
     {
      "n": 2680,
      "of": 5716,
-     "words": "titles carry a review stamp (1,236 a person's, 1,444 a cohort's); 2,748 credentials, 2,289 of 3,057 records stamped",
+     "words": "titles carry a review stamp (1,236 a person's, 1,444 a cohort's); 2,752 credentials, 2,289 of 3,061 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -123,6 +123,14 @@
      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
      "carry": "unsure",
      "open": "#exhibits/held",
+     "error": null
+    },
+    {
+     "n": 362,
+     "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
+     "carry": "routine",
+     "open": "#exhibits/list/nosubj",
      "error": null
     },
     {
@@ -158,9 +166,9 @@
     "stamped": 2680,
     "person": 1236,
     "cohort": 1444,
-    "credentials": 2748,
+    "credentials": 2752,
     "confirmed": 1236,
-    "records": 3057,
+    "records": 3061,
     "records_stamped": 2289,
     "saved_at": "2026-11-11T15:43:03Z",
     "fold_at": "2026-11-11T17:40:48Z",
@@ -168,7 +176,8 @@
     "unclassified": 178,
     "left_map": 807,
     "below_80": 1123,
-    "below_60": 237
+    "below_60": 237,
+    "no_subject": 362
    },
    "sources": [
     "kb/unified_titles.json",
@@ -177,7 +186,8 @@
     "kb/cer_procedures_out/latest.json",
     "kb/cer_procedures.json",
     "kb/cer_procedures_out/saved/",
-    "kb/unclassified_fold/*/report.json"
+    "kb/unclassified_fold/*/report.json",
+    "kb/exhibit_subject_out/worklist.json"
    ]
   },
   {
@@ -719,7 +729,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3179,
+    "n": 3146,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -727,10 +737,18 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3339,
+    "n": 3354,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
+   },
+   {
+    "ref": "exhibit",
+    "title": "Common Exhibit Reference",
+    "n": 362,
+    "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
+    "open": "#exhibits/list/nosubj"
    },
    {
     "ref": "course",
@@ -742,6 +760,17 @@
    }
   ],
   "stalled": [
+   {
+    "ref": "requirements",
+    "title": "Program Requirements",
+    "kind": "not_shrinking",
+    "n": 3354,
+    "was": 3349,
+    "since": "2026-11-04",
+    "words": "active programs with no record yet",
+    "owner": "the harvest",
+    "open": "#program-requirements/list/unread"
+   },
    {
     "ref": "course",
     "title": "Common Course Reference",

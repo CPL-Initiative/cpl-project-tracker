@@ -67,6 +67,21 @@ ASE = {
     "B6": "Damage Analysis and Estimating",
 }
 
+# ASE's Military Tactical Wheeled Vehicle (TWV) test series (Sam, 2026-11-11, from ase.com/tests/mil: "ASE MIL3 test is
+# the Military Tactical Wheeled Vehicle (TWV) – Drive Train certification ... adjust the canonical title to match the
+# official ASE titles"). Each name carries the series, so "Diesel Engines (ASE MIL2)" never reads as the truck test T2:
+# "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)". Two choices keep one pair of parentheses in a title, the
+# one that holds the code: the series' acronym (TWV) and the tests' own (HVAC, PMCS) are left out, and "&" reads "and",
+# as the A7 and T7 names already do here. The series belongs to the automotive subject, never HVAC (Sam, 2026-11-11:
+# "so the hvac mil should be in auto not hvac subj"); kb/_build_it_ai_credential_catalog.py's ASE_SERIES_CIP places it.
+MIL_SERIES = "Military Tactical Wheeled Vehicle"
+MIL = {
+    "MIL1": "Military Fundamentals", "MIL2": "Diesel Engines", "MIL3": "Drive Train", "MIL4": "Chassis",
+    "MIL5": "Suspension, Steering, and Hydraulics", "MIL6": "Electrical/Electronic Systems",
+    "MIL7": "Heating, Ventilation and Air Conditioning", "MIL8": "Preventive Maintenance Checks and Services",
+}
+ASE.update({code: "%s – %s" % (MIL_SERIES, name) for code, name in MIL.items()})
+
 # The families the format is run for, one rename batch each, in this order. ASE is first; the others
 # wait until its batch is decided (Sam, 2026-11-11: "Once ASE is done, run the same check for other
 # cert issuers (CompTIA, AWS, NCCER...) as separate batches").
@@ -77,7 +92,7 @@ FAMILIES = [
     {"id": "nccer", "short": "NCCER", "issuer": "NCCER", "active": False},
 ]
 
-CODE = r"[A-Z]\d|xEV"
+CODE = r"MIL\d|[A-Z]\d|xEV"
 # "Brakes (ASE A5)": the format. Nothing follows the code inside the parentheses.
 NEW_FORM = re.compile(r"^(?P<name>.+?)\s*\(ASE\s+(?P<code>" + CODE + r")\)\s*$")
 # "Automotive Technology (ASE A5 Brakes)": a name in front, the test and its words in parentheses.

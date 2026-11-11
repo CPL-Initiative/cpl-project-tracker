@@ -101,6 +101,7 @@
   var FIELD_FOLD_RESOLUTION = "issuer_resolution";  // a fold's issuer decision (#3116, issuer_resolution.js)
   var FIELD_CRED_TRAINER = "training_agency_override";
   var FIELD_CRED_SITES = "training_sites_override";
+  var FIELD_CRED_SUBJ = "subj_override";       // the Common SUBJ the Catalog's editor or the subject fill stored
   // The List view (Sam, 2026-11-01): a title edited there saves the rename field the reference already reads
   // (credential_reference.js: display-only until the daily dry-run projects it and the reviewed apply re-keys).
   var FIELD_CRED_TITLE = "unified_title_override";
@@ -1956,7 +1957,7 @@
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM, FIELD_FOLD_RESOLUTION, FIELD_CRED_FAMILY].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM, FIELD_FOLD_RESOLUTION, FIELD_CRED_SUBJ, FIELD_CRED_FAMILY].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1979,6 +1980,7 @@
         else if (row.field === FIELD_LIST_FLAG) o.flag = row.value || "";
         else if (row.field === FIELD_LIST_GROUP) o.group = row.value || "";
         else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
+        else if (row.field === FIELD_CRED_SUBJ) o.subj = row.value || "";
         else if (row.field === FIELD_CRED_FAMILY) o.family = row.value || "";
       });
       resolveFoldIssuers(m);
@@ -2535,6 +2537,7 @@
     ["mine", "Your flags"],
     ["selected", "Selected"],
     ["bare", "No articulation"],
+    ["nosubj", "No Common SUBJ"],
     ["changed", "Changed this visit"],
     ["suggested", "Suggested folds"],
     ["outcomes", "Outcomes match"],
@@ -2728,13 +2731,25 @@
     if (!r.curated_at && !by) return "Unreviewed";
     return /@bot$/.test(by) ? "Cohort" : "Person";
   }
+  /* The Common SUBJ, read as the Catalog reads it (credential_reference.js subjOf; Sam, 2026-11-11): a stored
+     subj_override on _CREDENTIAL_REVIEW::<title> wins; else every articulation's subject token, M-ID and C-ID
+     alike, the Catalog's modal one first, then the rest by count. tests/exhibits_list_subject.test.js holds the two
+     readers to one answer. */
   function listSubj(r) {
-    var out = [];
+    var o = (state.cs.overlay || {})[r.ut] || {};
+    if (o.subj) return o.subj;
+    var counts = {}, order = [], best = "", bestN = 0;
     (r.articulations || []).forEach(function (a) {
-      var p = String(a.cid || "").split(" ")[0];
-      if (a.sys === "M-ID" && p && out.indexOf(p) === -1) out.push(p);
+      var tok = a && a.cid ? String(a.cid).split(/\s+/)[0] : "";
+      if (!/^[A-Za-z][A-Za-z-]{1,7}$/.test(tok)) return;
+      if (!counts[tok]) order.push(tok);
+      counts[tok] = (counts[tok] || 0) + 1;
+      if (counts[tok] > bestN) { bestN = counts[tok]; best = tok; }
     });
-    return out.join(", ");
+    if (!best) return "";
+    var rest = order.filter(function (t) { return t !== best; });
+    rest.sort(function (a, b) { return counts[b] - counts[a] || order.indexOf(a) - order.indexOf(b); });
+    return [best].concat(rest).join(", ");
   }
   function listCip(r) {
     var ad = credAdopt(r);
@@ -3223,6 +3238,7 @@
         if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
         if (L.f === "flagged" && !r.quality_flag) return false;
         if (L.f === "bare" && (r.articulations || []).length) return false;
+        if (L.f === "nosubj" && listSubj(r)) return false;
         if (L.f === "mine" && !listFlag(r)) return false;
         if (L.f === "outcomes" && !listOutcomeHints(r).length) return false;
         if (L.f === "waiting" && !listPendingFold(r)) return false;

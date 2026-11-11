@@ -41,6 +41,12 @@ on:
         # true, preview and false and refused save=on (S417, 2026-10-18); the nightly
         # run never noticed because the schedule takes the default.
         options: ["on", "preview", "off"]
+      subject_fill:
+        description: "The exhibit subject fill (kb/_exhibit_subject_fill.py): on writes every credential's missing Common SUBJ under exhibit-subject-s638@bot; preview (the nightly default) lists them against a fresh read and writes no row; off plans from the committed files alone"
+        required: true
+        default: "preview"
+        type: choice
+        options: ["on", "preview", "off"]
 
 concurrency:
   group: cer-procedures-${{ github.ref }}
@@ -86,6 +92,30 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # The exhibit subject fill (Sam, in session 2026-11-11: "add a check into that in our common plan and
+      # procedure so we can get those fill as automatically as possible"). A credential with no Common SUBJ takes
+      # its credited courses' subject (several colleges, then one), else its issuer family's; a person's subject
+      # always wins. Preview by default: a dispatch with subject_fill=on writes. Receipt before the INSERT under
+      # kb/exhibit_subject_out/saved/; `python3 kb/_exhibit_subject_fill.py --undo` takes the cohort back. The
+      # remainder lands in kb/exhibit_subject_out/worklist.json, which the Commons status (below) counts.
+      # continue-on-error: a refused read or write must not stop the Exhibits and Commons rebuilds below.
+      - name: Fill the exhibits' missing Common SUBJ
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SUBJECT_FILL: ${{ inputs.subject_fill || 'preview' }}
+        run: |
+          set -euo pipefail
+          case "$SUBJECT_FILL" in on|preview) FILL_FLAG="--save $SUBJECT_FILL";; off) FILL_FLAG="";; *) echo "subject_fill must be on, preview or off"; exit 1;; esac
+          # shellcheck disable=SC2086
+          python3 kb/_exhibit_subject_fill.py $FILL_FLAG | tee exhibit_subject_fill.log
+          {
+            echo "### Exhibit subject fill — $(date -u +%Y-%m-%d)"
+            echo '```'
+            cat exhibit_subject_fill.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       # The Exhibits tab's Review queue reads this run's held titles (kb/_build_exhibits_review.py).
       - name: Build the Exhibits review queue
         run: python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run."
@@ -121,6 +151,7 @@ jobs:
           git add kb/exhibits_related.json 2>/dev/null || true
           git add kb/status/commons.json 2>/dev/null || true
           git add kb/status/commons_history.json 2>/dev/null || true
+          git add kb/exhibit_subject_out 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
