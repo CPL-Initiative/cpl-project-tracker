@@ -593,6 +593,9 @@
       raw_count: b.raw_count || 0,
       primary_issuer: b.issuer || null,
       primary_trainer: b.trainer || null,
+      // The credential family the title belongs to (Sam, 2026-11-11: each ASE bundle stays its own title and carries
+      // the family; excel_to_dashboard.py export_credential_reference emits it only when set).
+      family: b.family || null,
       conf_modal: b.conf_title || 0,
       conf_issuer: b.conf_issuer || 0,
       conf_min: b.conf_title || 0,  // baked payload only carries modal
@@ -746,9 +749,11 @@
           confidence_trainer: c.confidence_trainer || 0,
           reviewed_at: c.reviewed_at || null,
           reviewed_by: c.reviewed_by || null,
+          family: c.family || null,
           _notes: c._notes || null,
         };
       });
+      row.family = (row.credentials.filter(function (c) { return c.family; })[0] || {}).family || null;
       // Derived fields for the table.
       row.raw_count = row.raw_variants.length;
       row.conf_min = Math.min.apply(null, row.confidences);
@@ -937,6 +942,8 @@
       var hit = row.unified_title.toLowerCase().indexOf(q) >= 0
         || (row.display_title && row.display_title.toLowerCase().indexOf(q) >= 0)
         || (row.primary_issuer && row.primary_issuer.toLowerCase().indexOf(q) >= 0)
+        // The family name is a search alias: "ASE Certificate Bundles" finds every member.
+        || (row.family && row.family.toLowerCase().indexOf(q) >= 0)
         || (row.raw_variants || []).some(function (v) {
           return v.raw_title.toLowerCase().indexOf(q) >= 0;
         });
@@ -2415,6 +2422,9 @@
           return v.raw_title;
         }).join("\n") }, [rawFirst + rawMore]));
     }
+    // Its credential family, in plain words on the quiet context line (Sam, 2026-11-11: each bundle stays its own
+    // title and carries the family).
+    if (r.family) tchips.appendChild(el("span", { class: "cr-ctx-raw cr-ctx-fam" }, ["Family: " + r.family]));
     // ⇆ merge-suggestion chip — titles whose normalized signature collides
     // (likely the same credential entered twice). Click → inline panel;
     // merging routes through the standard confirm-merge flow.
@@ -4706,6 +4716,10 @@
     // retired 2026-10-18, Sheet 94 card 3). ──
     var flagRow = renderFlagRow(r);
     if (flagRow) div.appendChild(flagRow);
+
+    // ── Its credential family (Sam, 2026-11-11): the family is a field, never a fold. ──
+    if (r.family) div.appendChild(el("p", { class: "cr-fam-line" }, ["Family: " + r.family
+      + ". This title stays its own credential, adopted on its own; a search for the family finds every title in it."]));
 
     // ── System-level GE-Area credit for AP/IB/CLEP exams (2026-06-04). This
     // credit is set statewide (AP: AB 1985 / AA 17-20; IB+CLEP: title 5 §55052.5;

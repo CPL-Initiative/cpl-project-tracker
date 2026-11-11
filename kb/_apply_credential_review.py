@@ -100,12 +100,17 @@ FIELDS = {
     # does not offer that proposal again. A decision record only: it changes
     # nothing in the reference and does not stamp the credential as reviewed.
     "cert_rename_kept",
+    # A credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family; cpl_memory
+    # sam-bundle-family-is-a-field-2026-11-11). value = a family declared in kb/reference/credential_families.json.
+    # promote_families() carries it onto the title's records in kb/credentials.json; it changes no identity.
+    "credential_family",
     # A credential fold's issuer decision (#3116): one row per folded target under the bot cohort
     # fold_issuer.COHORT, its value fold_issuer.resolution_value()'s JSON. apply_resolutions() resolves
     # the title's issuer rows through it; it stamps nothing as reviewed.
     "issuer_resolution",
 }
-DECISION_ONLY = {"cert_rename_kept", "issuer_resolution"}
+DECISION_ONLY = {"cert_rename_kept", "credential_family", "issuer_resolution"}
+FAMILIES_PATH = os.path.join(HERE, "reference", "credential_families.json")
 TRAINER_FIELDS = {"training_agency_override", "training_sites_override"}
 # Fields whose own row stamp the fold's issuer precedence reads (kb/fold_issuer.py): who set an issuer
 # and when, and when the fold itself was saved (rule 1 counts only an issuer set with the fold).
@@ -395,6 +400,36 @@ def promote_trainers(overrides):
     return fills, missing
 
 
+def promote_families(overrides, cr_path=CR_PATH, families_path=FAMILIES_PATH):
+    """Mode A4: carry each title's credential_family onto every one of its records in kb/credentials.json as
+    `family`, and take it off a title whose row is gone, so a rollback of the rows reaches the file too. A value
+    no declared family names is skipped and reported. Returns (set, cleared, undeclared)."""
+    try:
+        cr = json.load(open(cr_path, encoding="utf-8"))
+        declared = (json.load(open(families_path, encoding="utf-8")).get("families") or {})
+    except (OSError, ValueError):
+        return [], [], []
+    put, cleared, undeclared = [], [], []
+    for ut, recs in cr.items():
+        want = ((overrides.get(ut) or {}).get("credential_family") or "").strip()
+        if want and want not in declared:
+            undeclared.append((ut, want))
+            want = ""
+        for rec in recs or []:
+            have = rec.get("family") or ""
+            if want and have != want:
+                rec["family"] = want
+                put.append(ut)
+            elif not want and have:
+                del rec["family"]
+                cleared.append(ut)
+    if put or cleared:
+        with open(cr_path, "w", encoding="utf-8") as f:
+            json.dump(cr, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+    return sorted(set(put)), sorted(set(cleared)), undeclared
+
+
 def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
@@ -499,6 +534,11 @@ def main():
               f"{len(t_fills)} filled {[(f['title'], f['trainer']) for f in t_fills]}, "
               f"{len(t_missing)} title(s) with no credential record skipped "
               f"{t_missing[:5]}")
+    f_put, f_cleared, f_undeclared = promote_families(overrides)
+    if f_put or f_cleared or f_undeclared:
+        print(f"Mode A4 family → credentials.json: {len(f_put)} titles set {f_put[:5]}, "
+              f"{len(f_cleared)} cleared {f_cleared[:5]}, {len(f_undeclared)} naming no declared family "
+              f"{f_undeclared[:5]}")
     print("Review the diff, then commit kb/credential_review_overlay.json "
           "(+ kb/credentials.json when Modes A2/A3 promoted agencies).")
 

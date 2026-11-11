@@ -44,6 +44,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import cert_naming  # noqa: E402
 import credential_aliases  # noqa: E402
+import test_mix  # noqa: E402
 import exhibit_paths  # noqa: E402
 
 SCHEMA = 1
@@ -55,6 +56,7 @@ KINDS = {
     "wrong-name": "Not the official name",
     "missing-code": "No test code",
     "several": "More than one test",
+    "family": "A family bundle, named family plus its tests",
 }
 
 
@@ -79,6 +81,7 @@ def build(root="."):
     sweep = load_json(root, "kb/exhibits_sweep.json", {}) or {}
     overlay = (load_json(root, "kb/credential_review_overlay.json", {}) or {}).get("overrides") or {}
     aka = credential_aliases.load(root)
+    members = credential_aliases.family_members(root)
 
     locals_of, ids_of = collections.defaultdict(list), collections.defaultdict(list)
     for raw, e in ut.items():
@@ -122,6 +125,8 @@ def build(root="."):
     # The rename batches.
     on_card = {c.get("current") for c in sweep.get("cards") or []}
     batches, pending, waiting = [], {}, []
+    declared_issuer = {n: (f or {}).get("issuer", "") for n, f in ((load_json(root, "kb/reference/credential_families.json", {})
+                                                                     or {}).get("families") or {}).items()}
     for fam in cert_naming.FAMILIES:
         if not fam["active"]:
             waiting.append(fam["short"])
@@ -130,14 +135,36 @@ def build(root="."):
         for t in sorted(status, key=str.lower):
             if status[t] != IN_REFERENCE:
                 continue
+            ov = overlay.get(t) or {}
+            approved = (ov.get("unified_title_override") or "").strip() and ov.get("unified_title_override") != t
+            if t in members and declared_issuer.get(members[t]["family"]) == fam["issuer"]:
+                # A family member is proposed in the family's naming form (Sam's "family as a field", as COBIx relayed
+                # it on #3110, 18:40Z): "ASE Certificate Bundles: A4 + A5". Two titles with one mix share the
+                # proposal, so one leads and the other folds into it. Nothing moves until a person approves the batch.
+                fam_name = members[t]["family"]
+                to = test_mix.family_title(fam_name, t)
+                if approved or not to or to == t or (ov.get("cert_rename_kept") or "") == to:
+                    continue   # approved, no mix, already named so, or this proposal was declined
+                mix = test_mix.parts(t) or {"tests": [], "with": []}
+                exc = test_mix.exception(t)
+                rows.append({
+                    "current": t, "proposed": to, "kind": "family", "kind_label": KINDS["family"],
+                    "why": "a member of %s; its tests lead the name" % fam_name
+                           + ("; its mix holds a part to code by hand, shown in the family's exception list" if exc else ""),
+                    "codes": [c for c in (test_mix.from_title(t) or {}).get("codes") or []],
+                    "issuer": issuer_of(t), "locals": len(locals_of.get(t) or []), "adopted": adopted(t),
+                    "ids": ids_of.get(t) or [], "paths": paths(t), "family": fam_name, "with": mix["with"],
+                })
+                continue
+            if t in members:
+                continue   # a member of another issuer's family: that batch proposes it
             got = cert_naming.ase_read(t, issuer_of(t))
             if not got:
                 continue
             if got["kind"] == "fits":
                 fits += 1
                 continue
-            ov = overlay.get(t) or {}
-            if (ov.get("unified_title_override") or "").strip() and ov.get("unified_title_override") != t:
+            if approved:
                 continue   # approved: the credential rename dry-run carries it from here
             if got["proposed"] and (ov.get("cert_rename_kept") or "") == got["proposed"]:
                 continue   # skipped: this proposal was declined
@@ -199,10 +226,25 @@ def build(root="."):
         "paths": {k: {"words": w, "assessed_by": who} for k, (w, who) in exhibit_paths.PATHS.items()},
         "issuers": issuers,
         "titles": titles,
+        # The declared credential families (kb/reference/credential_families.json) and their member titles, each with
+        # its component tests as search aliases (kb/credential_aliases.py family_members; Sam, 2026-11-11).
+        "families": families_payload(root, members),
         "pending": pending,
         "batches": batches,
         "waiting": waiting,
     }
+
+
+def families_payload(root, members):
+    declared = (load_json(root, "kb/reference/credential_families.json", {}) or {}).get("families") or {}
+    out = {}
+    for name, f in sorted(declared.items()):
+        mem = {t: m["aliases"] for t, m in sorted(members.items(), key=lambda kv: kv[0].lower()) if m["family"] == name}
+        # The members whose mix the parser cannot code fully (an "or", or a part no ASE code names), one list for a
+        # person to code in Review (#3110, 18:40Z). They carry the family all the same.
+        exc = [e for e in (test_mix.exception(t) for t in mem) if e]
+        out[name] = {"issuer": f.get("issuer", ""), "about": f.get("about", ""), "members": mem, "exceptions": exc}
+    return out
 
 
 def main(argv=None):
@@ -214,7 +256,7 @@ def main(argv=None):
     data = build(a.root)
     path = a.out if os.path.isabs(a.out) else os.path.join(a.root, a.out)
     old = load_json(a.root, a.out, {}) if not os.path.isabs(a.out) else {}
-    if old and all(old.get(k) == data[k] for k in ("titles", "pending", "batches", "issuers", "waiting", "rule")):
+    if old and all(old.get(k) == data[k] for k in ("titles", "pending", "batches", "issuers", "waiting", "rule", "families")):
         data["generated_at"] = old.get("generated_at", data["generated_at"])
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))

@@ -126,6 +126,16 @@ def _stem(w):
     return w
 
 
+def codes_named(title):
+    """The test codes a title names, in the order it names them ("A1-A8" reads as its two ends, A1 and A8).
+    The one code parser: ase_read and kb/test_mix.py (a local exhibit's test mix) both read through it."""
+    codes = []
+    for c in ANY_CODE.findall(re.sub(r"\b([A-Z])(\d)\s*[–-]\s*\1?(\d)\b", r"\1\2 \1\3", title or "")):
+        if c not in codes:
+            codes.append(c)
+    return codes
+
+
 def code_by_words(title):
     """The one light-vehicle or truck test a title's words name, or None. A title needs every word of the
     test's name (so "Automotive Braking Systems" reads A5 or T4 and stays unnamed: two tests are Brakes)."""
@@ -166,10 +176,7 @@ def ase_read(title, issuer=""):
                 "why": ("“%s” leads; the certification's name is %s" % (base, ASE[code])) if want
                 else "ASE %s is not in the table of official names" % code}
     if ASE_NAMED.match(t) or is_ase_issuer:
-        codes = []
-        for c in ANY_CODE.findall(re.sub(r"\b([A-Z])(\d)\s*[–-]\s*\1?(\d)\b", r"\1\2 \1\3", t)):
-            if c not in codes:
-                codes.append(c)
+        codes = codes_named(t)
         cf = CODE_FIRST.match(t)
         if cf and len(codes) == 1:
             code = cf.group("code")

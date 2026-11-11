@@ -36,3 +36,26 @@ def load(root="."):
                 if n != new and n not in names:
                     names.append(n)
     return aka
+
+
+def family_members(root="."):
+    """title -> {"family", "aliases"} for every title kb/credentials.json puts in a credential family (Sam, 2026-11-11:
+    each ASE bundle stays its own title, carries the family, and each component test is a search alias of it). The
+    aliases come from kb/test_mix.py: "ASE A4" for each test the title names, and the mix as written where it holds an
+    "or" or a non-ASE part. They are search terms only, never earlier titles, so a reader keeps them apart from load()."""
+    import sys
+    here = os.path.join(os.path.abspath(root), "kb")
+    if here not in sys.path:
+        sys.path.insert(0, here)
+    import test_mix
+    try:
+        with open(os.path.join(root, "kb", "credentials.json"), encoding="utf-8") as f:
+            cr = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for title, recs in cr.items():
+        fam = next((r.get("family") for r in recs or [] if r.get("family")), "")
+        if fam:
+            out[title] = {"family": fam, "aliases": test_mix.components(title)}
+    return out
