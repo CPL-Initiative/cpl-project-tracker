@@ -60,5 +60,8 @@ purpose (Program Mapper's hosts; Sheet 112 card 1). None of those is routed arou
 | College | Refused | What works | Checked | Source |
 |---|---|---|---|---|
 | De Anza | `www.deanza.edu` answers the reader 403 | `daweb2.deanza.edu` for the same paths | 2026-11-10 | COBIx, #3083 |
+| American River (Los Rios) | `arc.losrios.edu` answers the census and page-read user agent 404 (run 43014049067) | The same address answers the harvest's hand-filed-copy user agent, which names the CPL Initiative; `copy_url` points at it (Sam, #3096, 2026-11-11) and the runner pins the hash (run 43019771268: 8,010,776 bytes, the hash COBIx gave) | 2026-11-11 | COBIx, #3096; the first closed loop |
 
 Rows COBIx reported on #3096 join the table as a session verifies each from a runner.
+
+**The loop, timed (2026-11-11):** block recorded 11:45Z, ask posted 11:51Z, COBIx's answer 11:53Z, the runner's pin matched by 12:40Z. Most of the 47 minutes was the session's own queue on the branch; the ask and the answer took two.

@@ -98,7 +98,7 @@ description (`units_file`; lessons S523, S526), the C-numbers from the runner's 
 ✅ **Sam, Sheet 144 card 2 *floor* (17:50Z 2026-10-30, his own call):** a choose-courses list's printed units are its floor, never its ceiling (`block_units`; `block_units_summed` keeps the reading before it). The S529 rescore and its live apply (Sheet 146 card 2): lessons, *Moved from the lane (S542 compaction)*. NEXT: the display build.
 **Los Angeles Valley (S530-S534; its 2026-27 PDF): parked at 202 of 215** (`lavc-parked-2026-10-31`, the stopping rule). Its steps and the 13 left: lessons S530-S534.
 
-**Monterey Peninsula: 184 of 197, every program found; its failing records wait for the outlier pass** (Sam, 2026-11-06: *"keep going to get everything you can and we'll handle the outliers afterward"*; S594). Steps: lessons, *Moved from the lane (S592)*.
+**Monterey Peninsula: 184 of 197, every program found; its failing records wait for the outlier pass** (Sam, 2026-11-06: *"keep going to get everything you can and we'll handle the outliers afterward"*; S594). Lessons, *(S592)*.
 **Mt. San Jacinto: 116 of 152 found, merged (#2838);** its 36 gaps stand as the catalog prints them (recheck Chemistry A.S.-T 40010 with the next catalog edit). Detail: lessons, *Moved from the lane (S595)*.
 **Ohlone (S593, #2841): 146 of 179 found; every gap is the college's own** (lessons, *Moved from the lane (S596)*).
 **Siskiyous, Palomar and Coalinga: loaded and displayed;** their paragraphs as they stood: lessons, *Moved from the lane (S607)*.
