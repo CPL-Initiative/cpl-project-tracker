@@ -21,7 +21,7 @@
  },
  "colleges": {
   "College of the Redwoods": {
-   "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry.",
+   "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry. S636 SkyAntennae, 2026-11-11: the 8 local degrees. COBIx found the college's 2026-2027 CRGE pattern sheet on its counseling page (#3096); read 43013608134 verified it: 'CRGE Units Required 21', 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60'. Read 43015726456 gave the local pages' own words as the capture holds them: the title line 'A.S. Degree ( 60.0 Credits )', blocks headed '(Total N)', no general education line, and on Forestry 'This program includes requirements that can be double counted for GE requirements'. Three local steps: ge_units 21; degree_total_minimum where the title prints 60.0; ge_overlap where the page says double counted. Simulated on the filed records: 6 of the 8 read equal; Registered Nursing 01831 and LVN to RN 08393 print their own totals and stay. Session call, cpl_memory d-redwoods-crge-21-s636; reversible by deleting the three local steps.",
    "awards": "transfer",
    "steps": [
     {
@@ -35,6 +35,34 @@
      "pattern": "including\\s+the\\s+Cal-?GETC\\s+General\\s+Education\\s+requirements",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
      "source_words": "Redwoods AA-T and AS-T pages: 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis' (college page read 42479757804); Cal-GETC 'satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)'"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 21,
+      "max": 21
+     },
+     "awards": "local",
+     "pattern": "A\\.[AS]\\.\\s+Degree\\s*\\(\\s*[\\d.]+(?:\\s*-\\s*[\\d.]+)?\\s+Credits\\s*\\)",
+     "source": "https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf",
+     "source_words": "Redwoods local degree pages print their total in the title line, 'A.S. Degree ( 60.0 Credits )' (Personal Wellness 44463; college page read 43015726456), and no general education units. The college's 2026-2027 CRGE pattern sheet, linked from its counseling page: 'CRGE Units Required 21' (Areas 1A, 1B, 2, 3, 4, 5 and 6, 3 units each; college page read 43013608134; found by COBIx, #3096)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "awards": "local",
+     "pattern": "A\\.[AS]\\.\\s+Degree\\s*\\(\\s*60\\.0\\s+Credits\\s*\\)",
+     "source": "https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf",
+     "source_words": "The same sheet: 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60' and 'Complete a minimum of 60 semester units of degree applicable coursework': the 60 a local degree's title prints is a floor that electives make up. A degree whose title prints another total (Registered Nursing 78.0 - 81.0, Construction Technology 63.5) keeps it as printed"
+    },
+    {
+     "kind": "set",
+     "field": "ge_overlap",
+     "value": true,
+     "awards": "local",
+     "pattern": "can\\s+be\\s+double\\s+counted\\s+for\\s+GE\\s+requirements"
     }
    ]
   },
