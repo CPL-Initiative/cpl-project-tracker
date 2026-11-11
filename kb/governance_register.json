@@ -329,6 +329,15 @@
       "maintained_in": "public.nc_cip_category_decisions keyed on the Programs list's program key, with nc_cip_category_decisions_history filed by trigger on every edit; written by the category picker (build phase 3), which is not built. The migration is committed and held until then (kb/migrations/2026-11-07_nc_cip_category_decisions.sql).",
       "owner": null,
       "when_empty": "Proposals stay proposals, which is the safe direction: nothing counts a program as CTE noncredit until a person confirms its category. With no owner, two reviewers can confirm conflicting categories for a college's neighboring programs, and the history is the only record of which came last."
+    },
+    {
+      "id": "DR-34",
+      "element": "The canonical credential model: the issuer on the title, the assessor on each local exhibit",
+      "drives": "Whose name a canonical exhibit title carries as issuer, and how a college's own exam and the certificate itself sit under one title. In 551 of 2,412 titles at least one local exhibit was assessed by someone other than the title's issuer (COBIx, issue #3110, 2026-11-11), so one issuer a title misstated who assessed 751 exhibits. It decides which titles may fold together, what a student's search by certification, issuer or trainer finds, and what a college adopting another's decision is shown.",
+      "decides": "Sam (2026-11-11, issue #3110, relayed by COBIx: \"1. yes 2. yes\", then \"3. yes 4. use the majority exhibits that have them in the title to determine who should get the tags 5. yes 6. will do\"). The canonical title carries the credential's issuer; each local exhibit carries its CPL path and who assessed the student; a college's set of tests is a local requirement and ASE Master stays canonical; a short tag goes to the body most titles use it for; a trainer is never the issuer; the ask to ITPI for MAP's fields is his. A reviewer still confirms each title (DR-07).",
+      "maintained_in": "docs/reference/canonical_credential_model.md (the model and the six rulings); kb/cert_naming.py (the title format); kb/exhibit_paths.py (the path and assessor, read from the MAP exhibit id and never typed); kb/exhibits_related.json (each title's exhibits by path, built nightly and daily). Read-only: no field stores a path or an assessor.",
+      "owner": null,
+      "when_empty": "A title shows one issuer for every exhibit under it, as before 2026-11-11: a college's own exam under an ASE title reads as issued by ASE, and a certificate under a college title as issued by the college."
     }
   ],
   "acceptance_standards": [

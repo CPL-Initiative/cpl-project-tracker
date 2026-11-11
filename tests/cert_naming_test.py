@@ -179,6 +179,38 @@ try:
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
+# ── each local exhibit's path and assessor (Sam's rulings on #3110, 2026-11-11) ──
+import exhibit_paths as ep  # noqa: E402
+check("the path is read from the MAP exhibit id, in each of the spellings MAP writes",
+      [ep.path_of(i) for i in ("MAPICI-ASE1-1-001", "CPLICI-ASE5-1-001", "MAPCXS-O3(C2-1-001", "MAPCxS-3CDA-1-001",
+                               "MAPCBEH-EARS-1-001", "MAPSAH-ASA-1-1-001", "MAPPRS-PFA--1-001", "MAPMM-ATT+-1-001", "MAPOS-A0CA-1-001")]
+      == ["ic", "ic", "cx", "cx", "cx", "sa", "pr", "other", "other"])
+check("an id that is not MAP's has no path", ep.path_of("AR-1406-0090") == "" and ep.path_of("") == "")
+check("who assessed follows the path: the issuer for the certificate and the exam score, the college for its own exam and a portfolio",
+      [ep.PATHS[k][1] for k in ("ic", "sa", "cx", "pr")] == ["issuer", "issuer", "college", "college"])
+check("a title's exhibits are tallied by path, each id once",
+      ep.tally(["MAPICI-A-1-001", "MAPICI-A-1-001", "MAPCXS-B-1-001", "MAPCxS-C-1-001", "ACE-1"]) == [["ic", 1], ["cx", 2]])
+check("a title whose exhibits were assessed by the issuer and by a college is mixed; one path alone is not",
+      ep.mixed([["ic", 9], ["cx", 2]]) and not ep.mixed([["cx", 5], ["pr", 1]]) and not ep.mixed([["ic", 3]]))
+tmp2 = tempfile.mkdtemp(prefix="cert-naming-paths-")
+try:
+    fixture(tmp2)
+    write(os.path.join(tmp2, "kb", "exhibits_adoption.json"), {"credentials": {"ASE A5 — Brakes": {
+        "a": {"3": []}, "x": [["MAPICI-ASE5-1-001", "ASE A5", 3.0], ["MAPCXS-BRAK-1-001", "Brakes Cx", 3.0]]}}})
+    d3 = rel.build(tmp2)
+    row = {r[0]: r for r in d3["titles"]}["ASE A5 — Brakes"]
+    brow = {r["current"]: r for r in d3["batches"][0]["rows"]}["ASE A5 — Brakes"]
+    check("the index and the batch row carry the title's exhibits by path, and the file says what each path means",
+          row[6] == [["ic", 1], ["cx", 1]] and brow["paths"] == row[6] and d3["paths"]["cx"] == {"words": "credit by exam", "assessed_by": "college"}, (row, brow.get("paths")))
+finally:
+    shutil.rmtree(tmp2, ignore_errors=True)
+with open(os.path.join(ROOT, "docs", "reference", "canonical_credential_model.md"), encoding="utf-8") as f:
+    note = f.read()
+with open(os.path.join(ROOT, "kb", "governance_register.json"), encoding="utf-8") as f:
+    reg = json.load(f)
+check("the model is written down and registered with Governance",
+      "The canonical title carries the credential's issuer" in note and any(x["id"] == "DR-34" for x in reg["decision_rights"]))
+
 # ── the readers ──
 with open(os.path.join(ROOT, "kb", "_apply_credential_review.py"), encoding="utf-8") as f:
     sync = f.read()

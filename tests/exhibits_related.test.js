@@ -40,13 +40,15 @@ function row(current, proposed, kind, issuer, locals, adopted, extra) {
 const RELATED = { schema: 1, generated_at: "2026-11-11T07:55:00Z",
   rule: { id: "cert-name-first", set_by: "Sam", date: "2026-11-11", words: "Use the cert's official name first and the code in parentheses", notes: ["n"] },
   issuers: ISSUERS,
+  paths: { ic: { words: "industry certification", assessed_by: "issuer" }, cx: { words: "credit by exam", assessed_by: "college" },
+    pr: { words: "portfolio", assessed_by: "college" }, sa: { words: "exam score", assessed_by: "issuer" }, other: { words: "another path", assessed_by: "" } },
   titles: [
-    ["ASE A5 — Brakes", 2, 14, 23, 0],
+    ["ASE A5 — Brakes", 2, 14, 23, 0, [], [["ic", 9], ["cx", 2]]],
     ["ASE Bundle — P1, P2", 2, 1, 1, 0],
     ["ASE P1 — Medium/Heavy Truck Parts Specialist", 2, 3, 2, 0],
     ["ASE P2 — Automobile Parts Specialist", 2, 2, 1, 0],
     ["ASE T2 — Diesel Engines", 2, 4, 3, 0],
-    ["Automotive Technology (ASE A5 Brakes)", 0, 7, 6, 0],
+    ["Automotive Technology (ASE A5 Brakes)", 0, 7, 6, 0, [], [["ic", 1], ["cx", 5]]],
     ["Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)", 0, 1, 0, 0],
     ["CompTIA Network+", 1, 5, 9, 0],
     ["CompTIA Security+", 1, 6, 12, 0, ["Security Plus"]],
@@ -56,7 +58,7 @@ const RELATED = { schema: 1, generated_at: "2026-11-11T07:55:00Z",
   pending: { "ASE A5 — Brakes": "Brakes (ASE A5)", "Automotive Technology (ASE A5 Brakes)": "Brakes (ASE A5)",
     "ASE P1 — Medium/Heavy Truck Parts Specialist": "Medium/Heavy Truck Parts Specialist (ASE P1)", "ASE Bundle — P1, P2": "" },
   batches: [{ id: "ase", label: "ASE", issuer: ASE, format: "<Official cert name> (ASE <code>)", fits: 0, left_to_cards: 1, with_proposal: 3, rows: [
-    row("ASE A5 — Brakes", "Brakes (ASE A5)", "code-first", ASE, 14, 23, { merge: false, twins: ["Automotive Technology (ASE A5 Brakes)"] }),
+    row("ASE A5 — Brakes", "Brakes (ASE A5)", "code-first", ASE, 14, 23, { merge: false, twins: ["Automotive Technology (ASE A5 Brakes)"], paths: [["ic", 9], ["cx", 2]] }),
     row("Automotive Technology (ASE A5 Brakes)", "Brakes (ASE A5)", "program-first", CCC, 7, 6, { merge: true, twins: ["ASE A5 — Brakes"] }),
     row("ASE P1 — Medium/Heavy Truck Parts Specialist", "Medium/Heavy Truck Parts Specialist (ASE P1)", "code-first", ASE, 3, 2),
     row("ASE Bundle — P1, P2", "", "several", ASE, 1, 1)] }],
@@ -126,6 +128,12 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   check("a proposed title says it is not in the reference yet", /1 local title · Proposed, not in the reference yet/.test(txt(item(t.d, "Parts Counter Specialist (ASE P2)"))));
   check("an old-format title is marked Rename pending, with the title proposed for it",
     /Rename pending: Medium\/Heavy Truck Parts Specialist \(ASE P1\)/.test(txt(li)) && /Rename pending/.test(txt(item(t.d, "ASE A5 — Brakes"))));
+  // Sam's rulings on #3110: each local exhibit carries its own path and assessor, read from its MAP id.
+  check("a title shows its local exhibits by path, each with who assessed the student",
+    /Local exhibits: 9 by industry certification, assessed by ASE; 2 by credit by exam, assessed by the college/.test(txt(item(t.d, "ASE A5 — Brakes"))));
+  check("under a college-issued title an industry certification is assessed by the credential's issuer, never the college",
+    /1 by industry certification, assessed by the credential's issuer; 5 by credit by exam, assessed by the college/.test(txt(item(t.d, "Automotive Technology (ASE A5 Brakes)"))));
+  check("a title with no exhibits on record shows no path line", !/Local exhibits:/.test(txt(item(t.d, "ASE P2 — Automobile Parts Specialist"))));
   check("a title in the new format carries no such mark", !/Rename pending/.test(txt(item(t.d, "Parts Counter Specialist (ASE P2)"))));
   const use = byText(li, "button", "Use this title");
   check("each has a Use this title control, named for its title", use && use.getAttribute("aria-label") === "Use this title: ASE P1 — Medium/Heavy Truck Parts Specialist");
@@ -144,8 +152,9 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   // ── a Review card: the new format, the issuer left to the card, the panel following the title ──
   t = load({ signedIn: true });
   await t.M.boot(); await settle();
-  check("a new ASE card in Review arrives in the format, its issuer the card's own",
-    t.d.getElementById("exh-title").value === "Diesel Engines (ASE T2)" && t.d.getElementById("exh-issuer").value === CCC);
+  // Sam's ruling 1 on #3110 (2026-11-11): the canonical title carries the credential's issuer, so the format names ASE.
+  check("a new ASE card in Review arrives in the format, its issuer the certification's",
+    t.d.getElementById("exh-title").value === "Diesel Engines (ASE T2)" && t.d.getElementById("exh-issuer").value === ASE);
   names = panelTitles(t.d);
   check("its panel leads with the same test", names[0] === "ASE T2 — Diesel Engines");
   item(t.d, "ASE T2 — Diesel Engines").querySelector("button").click(); await settle();
@@ -182,6 +191,8 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   check("a row shows the current title, the proposed title in a box, its local titles, its colleges and its students",
     txt(trs[0].querySelector(".exh-rb-cur")) === "ASE A5 — Brakes" && trs[0].querySelector("input").value === "Brakes (ASE A5)"
     && txt(trs[0].children[2]) === "14" && txt(trs[0].children[3]) === "23 articulate it" && txt(trs[0].children[4]) === "41");
+  check("a batch row shows its local exhibits' paths, so a fold keeps each exhibit's own assessor in view",
+    /Local exhibits: 9 by industry certification, assessed by ASE; 2 by credit by exam, assessed by the college/.test(txt(trs[0].children[0])));
   check("a student count under ten is never shown", txt(trs[1].children[4]) === "Fewer than 10");
   check("a title with no students reads None", txt(trs[2].children[4]) === "None");
   check("each row says what approving does: renamed, folded into the title of that name, or left as it is",

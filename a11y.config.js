@@ -895,7 +895,7 @@ async function seedExhibitsRelated(page, theme, where) {
   const ASE = "National Institute for Automotive Service Excellence (ASE)", CCC = "California Community Colleges";
   const P1_OLD = "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)";
   const row = (current, proposed, kind, issuer, locals, adopted, merge) => ({ current, proposed, kind, kind_label: kind, why: "the code leads", codes: [],
-    issuer, locals, adopted, ids: [], merge: !!merge });
+    issuer, locals, adopted, ids: [], merge: !!merge, paths: [["ic", 1], ["cx", 5]] });
   await page.route("**/kb/exhibits_sweep.json*", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
     schema: 1, generated_at: "2026-11-11T07:52:00Z", rules: [{ id: "ase", label: "ASE", tip: "An automotive exhibit named for an ASE test." }], counts: { ase: 1 },
     cards: [{ id: "c-p1", rules: ["ase"], current: P1_OLD, proposed: "Medium/Heavy Truck Parts Specialist (ASE P1)",
@@ -906,7 +906,8 @@ async function seedExhibitsRelated(page, theme, where) {
     schema: 1, generated_at: "2026-11-11T07:55:00Z",
     rule: { id: "cert-name-first", set_by: "Sam", date: "2026-11-11", words: "Use the cert's official name first and the code in parentheses." },
     issuers: [CCC, ASE],
-    titles: [["ASE A5 — Brakes", 1, 14, 23, 0], ["ASE Bundle — P1, P2", 1, 1, 1, 0], ["ASE P1 — Medium/Heavy Truck Parts Specialist", 1, 3, 2, 0],
+    paths: { ic: { words: "industry certification", assessed_by: "issuer" }, cx: { words: "credit by exam", assessed_by: "college" } },
+    titles: [["ASE A5 — Brakes", 1, 14, 23, 0, [], [["ic", 9], ["cx", 2]]], ["ASE Bundle — P1, P2", 1, 1, 1, 0], ["ASE P1 — Medium/Heavy Truck Parts Specialist", 1, 3, 2, 0],
       ["ASE P2 — Automobile Parts Specialist", 1, 2, 1, 0], ["ASE T2 — Diesel Engines", 1, 4, 3, 0], ["Automotive Technology (ASE A5 Brakes)", 0, 7, 6, 0],
       [P1_OLD, 0, 1, 0, 0], ["Parts Counter Specialist (ASE P2)", 0, 1, 0, 1], ["ASE A1 — Engine Repair", 1, 14, 26, 0],
       ["ASE A6 — Electrical/Electronic Systems", 1, 18, 25, 0], ["ASE L1 — Advanced Engine Performance Specialist", 1, 9, 10, 0]],
