@@ -79,3 +79,51 @@ def components(title):
     if not got["coded"]:
         out.append(got["label"])
     return out
+
+
+_PARTS = re.compile(r"\s*[,+]\s*")
+_OR = re.compile(r"\s+or\s+", re.I)
+
+
+def _is_ase(part):
+    """True when a part of a mix is ASE tests only: one code, or codes joined by "or"."""
+    alts = [a.strip() for a in _OR.split(part) if a.strip()]
+    return bool(alts) and all(a.upper() in _ORDER for a in alts)
+
+
+def parts(title):
+    """{"tests": [...], "with": [...]} for a bundle title: its ASE parts as written (an "or" kept inside one part) and
+    every other part, which joins the bundle "with" the ASE tests (COBIx relaying Sam's ruling on #3110, 18:40Z:
+    MACS 609 is not an ASE test, so it is a "with" component). None for a title that names no mix."""
+    got = from_title(title)
+    if not got:
+        return None
+    if got["coded"]:
+        return {"tests": list(got["codes"]), "with": []}
+    out = {"tests": [], "with": []}
+    for p in _PARTS.split(got["label"]):
+        p = p.strip()
+        if p:
+            out["tests" if _is_ase(p) else "with"].append(p)
+    return out
+
+
+def family_title(family, title):
+    """The title a family member takes in the family's naming form (the ruling as relayed on #3110: family plus the
+    normalized mix, "ASE Certificate Bundles: A4 + A5"), or None when the title names no mix. A part no ASE code names
+    follows "with": "ASE Certificate Bundles: T7 + T8 with MACS/609". A proposal only: a person approves it."""
+    got = parts(title)
+    if not got or not got["tests"]:
+        return None
+    t = "%s: %s" % (family, " + ".join(got["tests"]))
+    return t + (" with " + " + ".join(got["with"]) if got["with"] else "")
+
+
+def exception(title):
+    """The member a person codes by hand: its mix holds an "or" or a part no ASE code names, so the parser cannot code
+    it fully. {"title", "mix", "tests", "with"}; None for a fully coded mix or a title with none."""
+    got = from_title(title)
+    if not got or got["coded"]:
+        return None
+    p = parts(title)
+    return {"title": title, "mix": got["label"], "tests": p["tests"], "with": p["with"]}

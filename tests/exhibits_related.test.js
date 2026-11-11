@@ -295,6 +295,30 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   check("the classifier's ASE guidance is the ruling, amended by Sam on 2026-11-11, with the notes",
     /official name, then its code in parentheses/.test(store.rule) && store.amended[0].date === "2026-11-11" && store.notes.length === 5);
 
+  // ── a credential family (#3117): reads reviewed, its exceptions listed, its members proposed in the family form ──
+  const FAMN = "ASE Certificate Bundles", MEM = "ASE Bundle — P1, P2", FAMT = "ASE Certificate Bundles: P1 + P2 with MACS/609";
+  RELATED.families[FAMN].exceptions = [{ title: MEM, mix: "P1, P2 + MACS/609", tests: ["P1", "P2"], with: ["MACS/609"] }];
+  RELATED.batches[0].rows[3] = row(MEM, FAMT, "family", ASE, 1, 1, { merge: false, kind_label: "A family bundle, named family plus its tests" });
+  t = load({ signedIn: true });
+  await t.M.boot(); await settle();
+  check("a family member whose fold rows the conversion removed reads Family set, never Unreviewed",
+    t.M._listStatus({ ut: MEM }) === "Family set" && t.M._listStatus({ ut: "Security Operations" }) === "Unreviewed");
+  check("the List reads the family live from kb_curation too", /FIELD_CRED_FAMILY = "credential_family"/.test(src)
+    && /FIELD_MERGE_CONFIRM, FIELD_CRED_FAMILY\]\.join/.test(src) && /row\.field === FIELD_CRED_FAMILY\) o\.family/.test(src));
+  stepTile(t.d, "Rename batch").click(); await settle();
+  const fx = t.d.querySelector("section.exh-famx");
+  check("Review lists the family's titles to code by hand, as one card", fx && txt(fx.querySelector("h3")) === FAMN + ": titles to code by hand (1)"
+    && t.d.querySelectorAll("section.exh-famx").length === 1);
+  check("each row shows the mix as written, its ASE tests and what joins them with", fx && Array.from(fx.querySelectorAll("tbody td")).map(txt).join("|") === "P1, P2 + MACS/609|P1, P2|MACS/609"
+    && txt(fx.querySelector("tbody th")) === MEM && Array.from(fx.querySelectorAll("th")).every(function (h) { return h.getAttribute("scope"); })
+    && fx.querySelector(".exh-rb-scroll").getAttribute("role") === "region");
+  const famTr = Array.from(t.d.querySelectorAll("section.exh-rb:not(.exh-famx) tbody tr")).find(function (tr) { return txt(tr.querySelector(".exh-rb-cur")) === MEM; });
+  check("the rename batch proposes the member in the family form, for one approval", famTr && famTr.querySelector("input").value === FAMT
+    && /A family bundle/.test(txt(famTr)) && writes(t).length === 0);
+  rows = t.M._renameRows("r@example.org", t.M._renamePlan(RELATED.batches[0]), "2026-11-11T12:00:00.000Z");
+  check("approving saves the family title as the member's rename, which keeps its old title as an alias",
+    rows.some(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::" + MEM && r.field === "unified_title_override" && r.value === FAMT; }));
+
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); });
   console.log((results.length - failed.length) + "/" + results.length + " checks passed");

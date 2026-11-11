@@ -917,8 +917,12 @@ async function seedExhibitsRelated(page, theme, where) {
       row("ASE A5 — Brakes", "Brakes (ASE A5)", "The code leads", ASE, 14, 23),
       row("Automotive Technology (ASE A5 Brakes)", "Brakes (ASE A5)", "A program or course name leads", CCC, 7, 6, true),
       row("ASE P1 — Medium/Heavy Truck Parts Specialist", "Medium/Heavy Truck Parts Specialist (ASE P1)", "The code leads", ASE, 3, 2),
-      row("ASE Bundle — P1, P2", "", "More than one test", ASE, 1, 1)] }],
-    waiting: ["CompTIA", "AWS", "NCCER"] }) }));
+      row("ASE Bundle — P1, P2", "", "More than one test", ASE, 1, 1),
+      row("ASE Bundle — T7, T8 + MACS/609", "ASE Certificate Bundles: T7 + T8 with MACS/609", "A family bundle, named family plus its tests", ASE, 2, 2)] }],
+    waiting: ["CompTIA", "AWS", "NCCER"],
+    // A credential family's titles to code by hand (#3117), measured as its own card above the batch.
+    families: { "ASE Certificate Bundles": { issuer: ASE, about: "A college's own set of ASE tests.", members: { "ASE Bundle — T7, T8 + MACS/609": ["ASE T7", "ASE T8"] },
+      exceptions: [{ title: "ASE Bundle — T7, T8 + MACS/609", mix: "T7, T8 + MACS/609", tests: ["T7", "T8"], with: ["MACS/609"] }] } } }) }));
   const hash = "exhibits/" + where;
   await page.evaluate((h) => { if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, hash);
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));

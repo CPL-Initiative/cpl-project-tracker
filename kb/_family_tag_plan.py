@@ -8,11 +8,14 @@ because a fold put unlike bundles on one card and nine surfaces misread adoption
 family tags, not merges. kb/reference/credential_families.json declares the families.
 
 WHAT IT WRITES (nothing to Supabase; a person reviews and runs the SQL):
-  plan.sql      one transaction. Per member title: INSERT a `credential_family` row naming the family, under the
-                cohort CREDENTIAL_FAMILY_COHORT, only while the saved override still stands; then DELETE that
-                title's unified_title_override and unified_title_merge_confirm rows, each guarded on its own
-                value AND reviewed_at, so a row Sam has touched since the read is left alone.
-  rollback.sql  deletes the cohort's credential_family rows and re-inserts every deleted row's full image.
+  plan.sql      one transaction. Per member title, all or nothing: a check first lists the title as skipped when
+                its rows are no longer exactly the rows read (a fold row re-saved, added or gone, or a credential_family
+                row already there); otherwise it INSERTs a `credential_family` row under the cohort
+                CREDENTIAL_FAMILY_COHORT and DELETEs the title's unified_title_override and unified_title_merge_confirm
+                rows. The read-back lists each title as converted or skipped.
+  rollback.sql  per title, all or nothing: deletes the cohort's credential_family row and re-inserts every deleted
+                row's image (INSERTABLE columns only; reviewer_label is generated), unless a person has saved on the
+                title since, which skips it whole and lists it.
   receipt.json  the live rows read (full images, the before-values), what each title becomes, what is held.
 
 HELD for Sam, untouched (the conductor's scope, 2026-11-11): the ASE Master titles stay their own titles and
@@ -101,50 +104,100 @@ def plan(rows, fams):
     return out
 
 
+# kb_curation's columns (kb/supabase_curation_setup.sql plus the later migrations). A re-insert names only the
+# columns a person's save can carry; reviewer_label is `generated always ... stored`
+# (kb/migrations/2026-11-09_kb_curation_reviewer_label.sql) and Postgres refuses any value for it, which aborted the
+# whole rollback (#3117 review). A column this list does not know stops the plan rather than being dropped unread.
+INSERTABLE = ("course_id", "field", "value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")
+GENERATED = ("reviewer_label",)
+SKIP = "_family_skip"
+
+
+def image_cols(r):
+    unknown = sorted(set(r) - set(INSERTABLE) - set(GENERATED))
+    if unknown:
+        raise SystemExit("kb_curation row carries columns this plan does not know: %s. Classify them in INSERTABLE "
+                         "or GENERATED before writing a rollback." % ", ".join(unknown))
+    return [c for c in INSERTABLE if c in r]
+
+
+def _same(cid, r):
+    """True for the live row that is exactly the row read: its field, value, reviewer and reviewed_at."""
+    return ("(field = %s and value = %s and reviewer_email = %s and reviewed_at = %s::timestamptz)"
+            % (q(r["field"]), q(r["value"]), q(r["reviewer_email"]), q(r["reviewed_at"])))
+
+
+def _fold_in(cid):
+    return "course_id = %s and field in (%s)" % (q(cid), ", ".join(q(f) for f in FOLD_FIELDS))
+
+
 def plan_sql(p):
+    """One transaction. Per title, a check first records whether the title's rows are still exactly the rows read
+    (every fold row, nothing added, no credential_family row yet); only then the insert and the deletes run, each
+    gated on that one record, so a title converts whole or not at all (#3117 review). Skipped titles are listed."""
     lines = ["-- Family tags for the saved folds into a declared family title (kb/_family_tag_plan.py).",
              "-- " + SOURCE,
-             "-- Rule 10: the insert is insert-only under %s and runs only while the saved override" % CREDENTIAL_FAMILY_COHORT,
-             "-- still stands; each delete is guarded on the row's own value and reviewed_at, so a row changed",
-             "-- since the read stays. Rollback: rollback.sql beside this file (full row images in receipt.json).",
-             "begin;"]
+             "-- Rule 10: insert-only under %s. Per title, all or nothing: a title whose rows changed since the read"
+             % CREDENTIAL_FAMILY_COHORT,
+             "-- (a fold row re-saved, added or removed, or a credential_family row already there) is skipped whole and",
+             "-- listed at the end. Rollback: rollback.sql beside this file (row images in receipt.json).",
+             "begin;",
+             "create temp table %s (course_id text primary key, why text);" % SKIP]
     for it in p["convert"]:
         cid = PREFIX + it["title"]
-        ov = next(r for r in it["rows"] if r["field"] == "unified_title_override")
+        rows = sorted(it["rows"], key=lambda r: r["field"])
         lines.append("")
         lines.append("-- %s -> family %s" % (it["title"], it["family"]))
+        lines.append("insert into %s (course_id, why) select %s, 'rows changed since the read'" % (SKIP, q(cid)))
+        lines.append(" where (select count(*) from public.kb_curation where %s) <> %d" % (_fold_in(cid), len(rows)))
+        lines.append("    or (select count(*) from public.kb_curation where course_id = %s and (%s)) <> %d"
+                     % (q(cid), " or ".join(_same(cid, r) for r in rows), len(rows)))
+        lines.append("    or exists (select 1 from public.kb_curation where course_id = %s and field = 'credential_family');" % q(cid))
         lines.append("insert into public.kb_curation (course_id, field, value, reviewer_email)")
         lines.append("select %s, 'credential_family', %s, %s" % (q(cid), q(it["family"]), q(CREDENTIAL_FAMILY_COHORT)))
-        lines.append(" where exists (select 1 from public.kb_curation where course_id = %s and field = 'unified_title_override'"
-                     % q(cid))
-        lines.append("                  and value = %s and reviewed_at = %s::timestamptz)" % (q(ov["value"]), q(ov["reviewed_at"])))
+        lines.append(" where not exists (select 1 from %s where course_id = %s)" % (SKIP, q(cid)))
         lines.append("on conflict (course_id, field) do nothing;")
-        for r in sorted(it["rows"], key=lambda r: r["field"]):
-            lines.append("delete from public.kb_curation where course_id = %s and field = %s and value = %s"
-                         % (q(cid), q(r["field"]), q(r["value"])))
-            lines.append("   and reviewed_at = %s::timestamptz;" % q(r["reviewed_at"]))
-    lines += ["", "-- Read back: expect %d credential_family rows under the cohort and no fold row left for them."
-              % len(p["convert"]),
-              "select course_id, field, value, reviewer_email from public.kb_curation",
-              " where course_id in (%s)" % ", ".join(q(PREFIX + it["title"]) for it in p["convert"]),
-              "   and field in ('credential_family', 'unified_title_override', 'unified_title_merge_confirm')",
-              " order by course_id, field;",
+        lines.append("delete from public.kb_curation where %s" % _fold_in(cid))
+        lines.append("   and not exists (select 1 from %s where course_id = %s);" % (SKIP, q(cid)))
+    ids = ", ".join(q(PREFIX + it["title"]) for it in p["convert"])
+    lines += ["", "-- Read back: expect %d converted and none skipped; a skipped title is untouched." % len(p["convert"]),
+              "select 'skipped' as outcome, course_id, why from %s" % SKIP,
+              "union all",
+              "select 'converted', course_id, null from public.kb_curation",
+              " where field = 'credential_family' and reviewer_email = %s and course_id in (%s)"
+              % (q(CREDENTIAL_FAMILY_COHORT), ids),
+              " order by 1, 2;",
+              "drop table %s;" % SKIP,
               "commit;", ""]
     return "\n".join(lines)
 
 
 def rollback_sql(p):
-    lines = ["-- Rollback of plan.sql (kb/_family_tag_plan.py). Read live first (data_write_rollback.md):",
-             "-- a credential_family row a person has since changed is no longer the cohort's and stays.",
+    """Per title, all or nothing: restore a title only while it still holds the cohort's family row and no fold row
+    (a person's save since then wins, and the title is listed as skipped). Each re-insert names INSERTABLE columns."""
+    lines = ["-- Rollback of plan.sql (kb/_family_tag_plan.py). Read live first (data_write_rollback.md).",
+             "-- Per title: restored whole, or skipped whole and listed when a person has saved on it since.",
              "begin;",
-             "delete from public.kb_curation where field = 'credential_family' and reviewer_email = %s" % q(CREDENTIAL_FAMILY_COHORT),
-             "   and course_id in (%s);" % ", ".join(q(PREFIX + it["title"]) for it in p["convert"])]
+             "create temp table %s (course_id text primary key, why text);" % SKIP]
     for it in p["convert"]:
+        cid = PREFIX + it["title"]
+        lines.append("")
+        lines.append("-- %s" % it["title"])
+        lines.append("insert into %s (course_id, why) select %s, 'saved on since the plan ran'" % (SKIP, q(cid)))
+        lines.append(" where exists (select 1 from public.kb_curation where %s)" % _fold_in(cid))
+        lines.append("    or not exists (select 1 from public.kb_curation where course_id = %s and field = 'credential_family'"
+                     % q(cid))
+        lines.append("                   and value = %s and reviewer_email = %s);" % (q(it["family"]), q(CREDENTIAL_FAMILY_COHORT)))
+        lines.append("delete from public.kb_curation where course_id = %s and field = 'credential_family'" % q(cid))
+        lines.append("   and reviewer_email = %s and not exists (select 1 from %s where course_id = %s);"
+                     % (q(CREDENTIAL_FAMILY_COHORT), SKIP, q(cid)))
         for r in sorted(it["rows"], key=lambda r: r["field"]):
-            cols = sorted(r)
-            lines.append("insert into public.kb_curation (%s) values (%s) on conflict (course_id, field) do nothing;"
-                         % (", ".join(cols), ", ".join(q(r[c]) for c in cols)))
-    lines += ["commit;", ""]
+            cols = image_cols(r)
+            lines.append("insert into public.kb_curation (%s)" % ", ".join(cols))
+            lines.append("select %s where not exists (select 1 from %s where course_id = %s)"
+                         % (", ".join(q(r[c]) for c in cols), SKIP, q(cid)))
+            lines.append("on conflict (course_id, field) do nothing;")
+    lines += ["", "select course_id, why from %s order by 1;" % SKIP, "drop table %s;" % SKIP, "commit;", ""]
     return "\n".join(lines)
 
 

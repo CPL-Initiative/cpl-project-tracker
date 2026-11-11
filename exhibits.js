@@ -105,6 +105,8 @@
   var FIELD_CRED_TITLE = "unified_title_override";
   /* A fold into an existing credential: the rename apply merges only when this names the exact target. */
   var FIELD_MERGE_CONFIRM = "unified_title_merge_confirm";
+  // A credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family).
+  var FIELD_CRED_FAMILY = "credential_family";
   // Your flag (Sam, 2026-11-01: "a flag for any row that persists until I clear it"): one row per credential, the
   // value the time it was set; clearing writes "" (an upsert, never a delete, so a refused write cannot pass as done).
   var FIELD_LIST_FLAG = "list_flag";
@@ -1121,8 +1123,36 @@
       window.CPL_REVIEWER_SIGNIN.mountInto(mount, { title: "Sign in to approve",
         blurb: "A reviewer's sign-in saves the batch and shows the students on each title.", returnTab: "exhibits" });
     }
+    familyExceptionCards().forEach(function (c) { wrap.appendChild(c); });
     if (!bs.length) { wrap.appendChild(el("p", { cls: "exh-empty", text: "No rename batch is built." })); return; }
     bs.forEach(function (b) { wrap.appendChild(renameCard(b)); });
+  }
+  /* A family's members whose mix the parser cannot code fully, one list for a person to code (Sam's "family as a field",
+     as COBIx relayed it on #3110): an "or", or a part ASE does not award, which joins the bundle "with" its ASE tests.
+     Each carries the family all the same; the list only asks a person to say what the mix is. */
+  function familyExceptionCards() {
+    var fams = (state.rel.data && state.rel.data.families) || {}, out = [];
+    Object.keys(fams).forEach(function (name, i) {
+      var ex = fams[name].exceptions || [];
+      if (!ex.length) return;
+      var box = el("section", { cls: "exh-card exh-rb exh-famx", "aria-labelledby": "exh-famx-h-" + i });
+      box.appendChild(el("h3", { cls: "exh-q", id: "exh-famx-h-" + i, text: name + ": titles to code by hand (" + fmt(ex.length) + ")" }));
+      box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Each title carries the family. The parser could not code its tests fully: "
+        + "the mix holds an “or”, or a part that is not an ASE test. A part that is not an ASE test joins the bundle with its ASE tests. "
+        + "Say what each mix is; its proposed title waits in the batch below." }));
+      var cols = el("colgroup", null, ["40%", "24%", "18%", "18%"].map(function (w) { var c = el("col"); c.style.width = w; return c; }));
+      var head = el("thead", null, [el("tr", null, ["Title", "Its mix as written", "ASE tests", "With"].map(function (h) {
+        return el("th", { scope: "col", text: h }); }))]);
+      var tb = el("tbody");
+      ex.forEach(function (e) {
+        tb.appendChild(el("tr", null, [el("th", { scope: "row", text: e.title }), el("td", { text: e.mix }),
+          el("td", { text: (e.tests || []).join(", ") || "None" }), el("td", { text: (e.with || []).join(", ") || "Nothing else" })]));
+      });
+      box.appendChild(el("div", { cls: "exh-rb-scroll", role: "region", tabindex: "0", "aria-label": name + " titles to code by hand" }, [
+        el("table", { cls: "exh-rb-table" }, [cols, head, tb])]));
+      out.push(box);
+    });
+    return out;
   }
 
   /* ── the actions ── */
@@ -1898,7 +1928,7 @@
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM, FIELD_CRED_FAMILY].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1920,6 +1950,7 @@
         else if (row.field === FIELD_LIST_FLAG) o.flag = row.value || "";
         else if (row.field === FIELD_LIST_GROUP) o.group = row.value || "";
         else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
+        else if (row.field === FIELD_CRED_FAMILY) o.family = row.value || "";
       });
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
@@ -2644,9 +2675,18 @@
     if (o.title && o.title !== r.ut) return { status: STATUS_SAVED, to: o.title, fold: !!(o.merge && o.merge === o.title) };
     return null;
   }
+  /* A title's family, read live (kb_curation credential_family) or from the reference build. The family row comes only from
+     a person's decision (Sam's 31 saved folds, read as family tags, #3117), so a title that carries one reads as reviewed:
+     the conversion deletes the only rows that stamped it, and it must not fall back to Unreviewed. */
+  var STATUS_FAMILY = "Family set";
+  function listFamily(r) {
+    var o = (state.cs.overlay || {})[r.ut] || {}, f = famOf(r.ut);
+    return o.family || (f ? f.name : "");
+  }
   function listStatus(r) {
     var dec = listDecision(r);
     if (dec) return dec.status;
+    if (listFamily(r)) return STATUS_FAMILY;
     var by = String(r.curated_by || "");
     if (!r.curated_at && !by) return "Unreviewed";
     return /@bot$/.test(by) ? "Cohort" : "Person";
@@ -3043,6 +3083,7 @@
       if (dec && dec.status === STATUS_APPLIED) line("Applied: the reference now carries this title as an old name of " + dec.to + ".");
       else if (dec) line("Saved: " + (dec.fold ? "the fold into " : "the rename to ") + dec.to
         + " is the review. The apply runs it with no click from you.");
+      else if (listStatus(r) === STATUS_FAMILY) line("Family set: " + listFamily(r) + ", from a person's decision. The title stays its own credential, adopted on its own.");
       else line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
         (listStatus(r) === "Cohort" ? "the cohort " + r.curated_by : "a person") + ".");
       var tags = r.audit_tags || {};
@@ -4435,6 +4476,6 @@
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
-    _renameCount: renameCount, _akaOf: akaOf, _famOf: famOf, loadRenameStudents: loadRenameStudents
+    _renameCount: renameCount, _akaOf: akaOf, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();
