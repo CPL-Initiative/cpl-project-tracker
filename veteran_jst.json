@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-11T06:24:24.170572+00:00",
+  "scraped_at": "2026-11-11T14:41:56.318925+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31638,
+    "jst": 31648,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
@@ -40,14 +40,14 @@
       "jst": 1566,
       "star": true
     },
+    "Moreno Valley College": {
+      "vets": 938,
+      "jst": 1077,
+      "star": true
+    },
     "San Diego Miramar College": {
       "vets": 1172,
       "jst": 1712,
-      "star": true
-    },
-    "Moreno Valley College": {
-      "vets": 938,
-      "jst": 1067,
       "star": true
     },
     "Bakersfield College": {

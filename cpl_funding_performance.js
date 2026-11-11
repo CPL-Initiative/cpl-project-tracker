@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 51568,
-  "pa": 46738,
+  "pe": 51584,
+  "pa": 46754,
   "ppa": 121,
-  "p2": 3625,
-  "p3": 16891,
+  "p2": 3630,
+  "p3": 16895,
   "pp": 8,
   "ppe": 133,
   "pac": 5325,
   "ptc": 4648,
-  "pe_u": 1618490.95,
-  "pa_u": 286133.9,
+  "pe_u": 1619402.95,
+  "pa_u": 286320.9,
   "ppa_u": 751.5,
   "ppe_u": 7145.5,
   "pac_u": 38183.7,
   "ptc_u": 31815.45,
-  "p3_u": 84924.65,
+  "p3_u": 84978.15,
   "pp_u": 79.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -1490,16 +1490,16 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 27
   },
   "Moreno Valley": {
-   "pe": 2555,
-   "pe_u": 55385.0,
-   "pa": 2225,
-   "pa_u": 13528.0,
+   "pe": 2571,
+   "pe_u": 56297.0,
+   "pa": 2241,
+   "pa_u": 13715.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 504,
-   "p3": 2154,
-   "p3_u": 12883.0,
+   "p2": 509,
+   "p3": 2158,
+   "p3_u": 12936.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -3551,7 +3551,8 @@ window.CPL_FUNDING_PERF = {
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Credit By Exam | Industry Certification | Portfolio Review": {
     "pe": null,
@@ -3570,9 +3571,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 146,
-    "pa": 145,
-    "p3": 132
+    "pe": 149,
+    "pa": 148,
+    "p3": 134
    },
    "Industry Certification | Military": {
     "pe": 17,
@@ -3588,6 +3589,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification | Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Other | Portfolio Review": {
     "pe": null,
     "pe_suppressed": true,
     "pa": null,
@@ -3612,9 +3621,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1046,
-    "pa": 1046,
-    "p3": 990
+    "pe": 1055,
+    "pa": 1055,
+    "p3": 989
    },
    "Standardized Assessment": {
     "pe": 265,
@@ -4341,9 +4350,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 10670
   },
   "Credit By Exam | Industry Certification": {
-   "pe": 46,
-   "pa": 44,
-   "p3": 24
+   "pe": 47,
+   "pa": 45,
+   "p3": 25
   },
   "Credit By Exam | Industry Certification | Military | Portfolio Review": {
    "pe": null,
@@ -4411,9 +4420,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 46
   },
   "Industry Certification": {
-   "pe": 1466,
-   "pa": 1444,
-   "p3": 1214
+   "pe": 1469,
+   "pa": 1447,
+   "p3": 1216
   },
   "Industry Certification | Military": {
    "pe": 60,
@@ -4444,6 +4453,14 @@ window.CPL_FUNDING_PERF = {
    "p3": null,
    "p3_suppressed": true
   },
+  "Industry Certification | Other | Portfolio Review": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
   "Industry Certification | Portfolio Review": {
    "pe": 29,
    "pa": 27,
@@ -4458,9 +4475,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 30812,
-   "pa": 27762,
-   "p3": 2671
+   "pe": 30821,
+   "pa": 27771,
+   "p3": 2670
   },
   "Military | Other": {
    "pe": null,
@@ -4515,14 +4532,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1618490.95,
-   "pa_u": 286133.9,
-   "p3_u": 84924.65
+   "pe_u": 1619402.95,
+   "pa_u": 286320.9,
+   "p3_u": 84978.15
   },
   "map": {
-   "pe_u": 1625636.45,
-   "pa_u": 286885.4,
-   "p3_u": 85004.15
+   "pe_u": 1626548.45,
+   "pa_u": 287072.4,
+   "p3_u": 85057.65
   },
   "ratio": {
    "pe_u": 1.0044,
@@ -4537,8 +4554,8 @@ window.CPL_FUNDING_PERF = {
   "San Francisco": true,
   "San Diego Mesa": true,
   "San Diego City": true,
-  "San Diego Miramar": true,
   "Moreno Valley": true,
+  "San Diego Miramar": true,
   "Bakersfield": true,
   "Norco College": true,
   "Cabrillo": true,
@@ -4681,15 +4698,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 1566,
    "pct": 1.9333
   },
+  "Moreno Valley": {
+   "vets": 938,
+   "jst": 1077,
+   "pct": 1.1482
+  },
   "San Diego Miramar": {
    "vets": 1172,
    "jst": 1712,
    "pct": 1.4608
-  },
-  "Moreno Valley": {
-   "vets": 938,
-   "jst": 1067,
-   "pct": 1.1375
   },
   "Bakersfield": {
    "vets": 431,

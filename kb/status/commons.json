@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-11T06:29:51Z",
+ "written_at": "2026-11-11T14:47:21Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13707,
+     "n": 13764,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3236,
+     "n": 3179,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-10T20:12:35Z",
+    "at": "2026-11-11T12:18:07Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13707,
-    "failing": 3236,
+    "complete": 13764,
+    "failing": 3179,
     "unread": 3339,
     "records": 18567,
     "colleges": 114,
@@ -126,7 +126,7 @@
      "error": null
     },
     {
-     "n": 802,
+     "n": 807,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
      "carry": "keep_call",
@@ -165,8 +165,8 @@
     "saved_at": "2026-11-10T15:51:40Z",
     "fold_at": "2026-11-11T06:24:41Z",
     "map_titles": 5086,
-    "unclassified": 275,
-    "left_map": 802,
+    "unclassified": 280,
+    "left_map": 807,
     "below_80": 1123,
     "below_60": 237
    },
@@ -265,7 +265,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-11T06:26:57+00:00",
+    "at": "2026-11-11T14:44:28+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -477,7 +477,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-11T06:24:38Z",
+    "at": "2026-11-11T14:42:09Z",
     "every_hours": 24
    },
    "facts": {
@@ -513,7 +513,7 @@
    ],
    "pair": [
     {
-     "n": 7715,
+     "n": 7726,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -523,16 +523,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7715,
+    "credentials": 7726,
     "issuers": 1525,
     "in_map": 206,
     "articulated": 160,
-    "with_issuer_skills": 153,
-    "tech_giant": 556
+    "with_issuer_skills": 177,
+    "tech_giant": 567
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-10T00:00:00Z",
+    "at": "2026-11-11T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -598,7 +598,7 @@
    "links": [],
    "pair": [
     {
-     "n": 153,
+     "n": 177,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -608,11 +608,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 153
+    "with_issuer_skills": 177
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-10T00:00:00Z",
+    "at": "2026-11-11T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -707,7 +707,7 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 802,
+      "n": 807,
       "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
       "owner": "a curator",
       "open": "#exhibits/list/left"
@@ -719,7 +719,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3236,
+    "n": 3179,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -968,14 +968,14 @@
    ],
    "cards": [
     {
-     "id": "e899695cd7aa",
+     "id": "7487be0172f2",
      "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
      "keys": [
       "_UNCLASSIFIED::Noncredit for AUTO P1"
      ]
     }
    ],
-   "at": "2026-11-11T06:29:17Z"
+   "at": "2026-11-11T14:46:46Z"
   },
   {
    "kind": "job",
@@ -1001,13 +1001,13 @@
   ],
   "cards": [
    {
-    "id": "e899695cd7aa",
+    "id": "7487be0172f2",
     "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
     "keys": [
      "_UNCLASSIFIED::Noncredit for AUTO P1"
     ]
    }
   ],
-  "at": "2026-11-11T06:29:17Z"
+  "at": "2026-11-11T14:46:46Z"
  }
 }
