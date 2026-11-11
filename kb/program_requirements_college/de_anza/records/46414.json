@@ -1,0 +1,181 @@
+{
+ "college": "De Anza College",
+ "control_number": "46414",
+ "shape": "noncredit",
+ "title": "Professional Photography",
+ "award": "Noncredit program",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7190,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7190,
+    "output_tokens": 936,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 936,
+  "output_tokens_details": {
+   "thinking_tokens": 298
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04748,
+ "ms": 8844,
+ "seconds": 9.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    252.0,
+    252.0
+   ],
+   "stated": [
+    252.0,
+    252.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "hours",
+   "total_units": {
+    "min": 252,
+    "max": 252
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "photography"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 252,
+     "max": 252
+    },
+    "courses": [
+     {
+      "code": "PHTG 302",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTG 303",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTG 306",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTG 354",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is printed as a Certificate of Completion (noncredit); requirements are counted in hours. The course table's column is headed 'Units' but the block and totals are stated in hours (Required Core 252 Hours, Total Required 252 Hours, Max/Min Units 252.0), so the per-course figures are recorded as hours.",
+   "The text opens with Bachelor of Science degree boilerplate (180 quarter units, GE patterns) that does not belong to this noncredit program; it was ignored.",
+   "The program description says it prepares students 'for careers in photography—whether in commercial, fine art or experimental fields'; only 'photography' was recorded as the career field. A reviewer may decide whether 'commercial', 'fine art' and 'experimental fields' should be listed as separate career fields.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "43056325121"
+}

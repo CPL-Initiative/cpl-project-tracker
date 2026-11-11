@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Real Estate",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=143",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9078,
+  "input_tokens": 7831,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9078,
-    "output_tokens": 1723,
+    "input_tokens": 7831,
+    "output_tokens": 1688,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1723,
+  "output_tokens": 1688,
   "output_tokens_details": {
-   "thinking_tokens": 406
+   "thinking_tokens": 396
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07077,
- "ms": 13917,
+ "cost_usd": 0.06508,
+ "ms": 13978,
  "seconds": 14.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 19,
-   "share": 0.947,
-   "missing": [
-    "REST62"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -66,12 +64,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    24.0,
-    24.0
+    23.0,
+    25.0
    ],
    "stated": [
-    24.0,
-    24.0
+    23.0,
+    25.0
    ],
    "against": "program",
    "why": []
@@ -81,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -102,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement in Real Estate",
+   "section_heading": "Real Estate (Certificate of Achievement) — Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": 24,
-    "max": 24
+    "min": 23,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -123,11 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Demonstrate knowledge of how real property is described, acquired, appraised, financed, encumbered and leased and how title to real property is held in California",
-    "Demonstrate knowledge of the risks, returns, legal issues and ethical issues involved in the purchase, holding and sale of California real estate",
-    "Qualify to take the California Department of Real Estate salesperson examination"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -181,11 +175,11 @@
    {
     "name": "List A",
     "rule": "choose_units",
-    "minimum": 4,
+    "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": 4,
-     "max": 4
+     "min": 3,
+     "max": 5
     },
     "courses": [
      {
@@ -275,24 +269,27 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "REST 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "REST 62",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The certificate's heading is not printed in the extracted text (page begins mid-section); section_heading is taken from the opening sentence 'The Certificate of Achievement in Real Estate...'.",
-   "Catalog codes are printed without leading zeros (ACCT 1A, ACCT 1AH, REST 52A) and were matched to closed-list codes ACCT 001A, ACCT 01AH, REST 052A, etc.",
-   "Units are De Anza quarter units; total 24 quarter units.",
-   "The same Program Learning Outcomes list is printed for both the certificate and the A.A. degree; recorded here from the certificate section.",
-   "The A.A. degree section (Required Core 24, List A 20, total 90) was not used for this record."
+   "Catalog codes differ in zero-padding from the closed list (REST 52A = REST 052A, ACCT 1A = ACCT 001A, ACCT 1AH = ACCT 01AH, etc.); treated as the same courses, not catalog additions.",
+   "List A prints only '(3 - 5 Units)' with no explicit selection instruction; read as choose courses totaling at least 3 units (effectively one course). Reviewer should confirm.",
+   "Honors twins (ACCT 1AH/1BH/1CH) recorded as alternatives to their non-honors versions, per the note that students receive credit for only one version.",
+   "Text opening with baccalaureate degree requirements (180 quarter units, GE) belongs to a different program and was ignored.",
+   "Units are quarter units; total 23-25 matches Min/Max Units 23.0/25.0 in program metadata.",
+   "No program learning outcomes or careers printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

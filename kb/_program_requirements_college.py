@@ -1557,15 +1557,52 @@ def el_hub_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     return out[:EL_MAX_MENU_HUBS]
 
 
-def el_text(html_text: str) -> str:
+# De Anza's 2026-2027 catalog (S637, page read 43044618275): a publish call writes each course
+# code packed, <td class="fix-code">ACCTD001A</td>, ACCTD01AH, ACCTD090., BUSD018., MUSID003A: the
+# subject, the campus letter, then four characters of number (zero-filled, a letter suffix or a
+# full stop). The page's own script rewrites the cell for a reader (ACCT 1A, ACCT 1AH, ACCT 90,
+# BUS 18, MUSI 3A), and a content call never runs it, so the capture found each of 242 programs'
+# pages by title and award and counted none of their courses (run 43024817869). Only a fix-code
+# cell in that packed shape is rewritten; a code a college prints with its space is left alone.
+# The subject is a fixed-width field that keeps its own spaces and slash (S638, extraction
+# 43056325121): C DD010G is C D 10G, E SD001. is E S 1, F/TVD02AH is F/TV 2AH. Read with letters
+# alone, those three subjects' codes stayed packed and scored as invented. A number whose stop
+# the cell drops (F/TVD020) is three digits. The campus letter is De Anza's D, and the rewrite runs
+# only on De Anza's host: other eLumen colleges keep plain zero-filled codes in the same cell
+# (Lemoore AOJ001, Modesto AG249), which a looser reading cut to AO 1 and A 249 (review of #3109).
+EL_PACKED_HOSTS = {"deanza.elumenapp.com"}
+EL_FIX_CODE = re.compile(r'(<td\b[^>]*\bclass=\\?"[^">]*\bfix-code\b[^">]*\\?"[^>]*>)\s*'
+                         r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)D(\d{2,3}[A-Z.]{0,2})\s*(?=</td)", re.I)
+
+
+def el_packed_host(url: str | None) -> bool:
+    """Whether a catalog's publish calls pack their course codes (De Anza only)."""
+    return (urllib.parse.urlparse(url or "").netloc or "").lower() in EL_PACKED_HOSTS
+
+
+def el_fix_codes(html_text: str, packed: bool = True) -> str:
+    """A packed course code in a fix-code cell, as the page's script shows it; with
+    packed false, the page as given."""
+    if not packed:
+        return html_text or ""
+
+    def fix(m):
+        num = m.group(3)
+        if len(num) != 4 and not (len(num) == 3 and num.isdigit()):
+            return m.group(0)
+        return "%s%s %s" % (m.group(1), m.group(2).upper(), num.rstrip(".").lstrip("0") or "0")
+    return EL_FIX_CODE.sub(fix, html_text or "")
+
+
+def el_text(html_text: str, packed: bool = False) -> str:
     """A content call's page as the lines a reader sees, without styles, scripts
-    or icons."""
-    return cq_text(EL_STRIP.sub(" ", html_text or ""))
+    or icons. packed: the host packs its codes (el_packed_host)."""
+    return cq_text(EL_STRIP.sub(" ", el_fix_codes(html_text, packed)))
 
 
 def el_page(start: str, slug: str, html_text: str) -> dict | None:
     """One program's page in the shape assign() reads."""
-    text = el_text(html_text)
+    text = el_text(html_text, el_packed_host(start))
     if not text:
         return None
     m = EL_HEADING.search(EL_STRIP.sub(" ", html_text or ""))
@@ -3035,7 +3072,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             got = dict(got, record=rec)
         try:
             sc = X.score(rec, src["closed_list"], src["text"], src.get("award"),
-                         R.prefix_aliases(src["college"])) if isinstance(rec, dict) else None
+                         R.prefix_aliases(src["college"]), R.packed_codes(src["college"])) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],
@@ -3128,7 +3165,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
                              score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                           R.prefix_aliases(college)))
+                                           R.prefix_aliases(college), R.packed_codes(college)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -3139,7 +3176,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # score carries the run too, or step=reread keeps the loaded row's old checks
                 # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                R.prefix_aliases(college))
+                                R.prefix_aliases(college), R.packed_codes(college))
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)

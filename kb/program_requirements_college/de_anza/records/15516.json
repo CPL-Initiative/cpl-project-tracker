@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Liberal Arts (Science, Math and Engineering Emphasis)",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-math-and-engineering-emphasis-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 16121,
+  "input_tokens": 16107,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 16121,
-    "output_tokens": 9720,
+    "input_tokens": 16107,
+    "output_tokens": 9923,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,94 +30,73 @@
     "model": null
    }
   ],
-  "output_tokens": 9720,
+  "output_tokens": 9923,
   "output_tokens_details": {
-   "thinking_tokens": 2672
+   "thinking_tokens": 2429
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.25888,
- "ms": 69788,
- "seconds": 70.3,
+ "cost_usd": 0.26289,
+ "ms": 70737,
+ "seconds": 71.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 140,
+   "placed": 146,
    "listed": 146,
-   "share": 0.959,
-   "missing": [
-    "ENGR11",
-    "ENGR45",
-    "GEO6",
-    "GEOL11",
-    "GEOL51",
-    "MATH4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 10,
-   "codes": [
-    "BIOL15",
-    "CIS13",
-    "CIS14B",
-    "CIS21JB",
-    "CIS27",
-    "CIS50",
-    "CIS74",
-    "ESCI21",
-    "ESCI30",
-    "ESCI60"
-   ],
-   "flagged": [
-    "BIOL15",
-    "CIS13",
-    "CIS14B",
-    "CIS21JB",
-    "CIS27",
-    "CIS50",
-    "CIS74",
-    "ESCI21",
-    "ESCI30",
-    "ESCI60"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
     27.0,
     27.0
    ],
-   "stated": [
-    90.0,
-    90.0
-   ],
-   "against": "degree",
-   "ge": null,
+   "against": "program",
    "why": [
-    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+    "the blocks sum to 0.0-0.0; the catalog states 27.0-27.0"
    ],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     27.0,
-     27.0
+     29.0,
+     41.0
     ],
     "stated": [
-     27.0,
-     27.0
+     90.0,
+     90.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     29.0,
+     41.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     49.0,
+     61.0
+    ]
    }
   },
   "repeated": {
@@ -125,12 +104,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -163,28 +142,23 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate the use of effective language and speech communication skills",
-    "Analyze and solve problems by using thoughtful and logical reasoning skills",
-    "Recognize and value the complexities of living in a multicultural world by demonstrating an appreciation of diversity in its many forms",
-    "Display behaviors that promote the mental and physical well-being of self and others",
-    "Identify basic and foundational theories, concepts and practices in the comprehensive area of emphasis"
-   ],
-   "careers": []
+   "outcomes": [],
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
-    "name": "Program Requirements",
+    "name": "Anthropology:",
     "rule": "choose_units",
-    "minimum": 27,
+    "minimum": 0,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 0,
+     "max": 0
     },
     "courses": [
      {
@@ -213,7 +187,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Astronomy:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "ASTR 4",
       "units": 5,
@@ -227,7 +213,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Biology:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "BIOL 6A",
       "units": 6,
@@ -287,13 +285,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "BIOL 15",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "BIOL 26",
@@ -357,7 +348,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Chemistry:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "CHEM 1A",
       "units": 5,
@@ -445,7 +448,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Computer Information Systems:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "CIS 2",
       "units": 4,
@@ -475,25 +490,11 @@
       "catalog_addition": false
      },
      {
-      "code": "CIS 13",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "CIS 14A",
       "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "CIS 14B",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "CIS 18A",
@@ -522,13 +523,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "CIS 21JB",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "CIS 22A",
@@ -582,13 +576,6 @@
        }
       ],
       "catalog_addition": false
-     },
-     {
-      "code": "CIS 27",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "CIS 28",
@@ -703,13 +690,6 @@
       "catalog_addition": false
      },
      {
-      "code": "CIS 50",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "CIS 57",
       "units": 4.5,
       "units_max": null,
@@ -745,13 +725,6 @@
       "catalog_addition": false
      },
      {
-      "code": "CIS 74",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "CIS 75B",
       "units": 4.5,
       "units_max": null,
@@ -778,17 +751,48 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Education:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "EDUC 46",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Engineering:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "ENGR 10",
       "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 11",
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -815,6 +819,25 @@
       "catalog_addition": false
      },
      {
+      "code": "ENGR 45",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Environmental Science:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
       "code": "ESCI 1",
       "units": 4,
       "units_max": null,
@@ -834,63 +857,66 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Environmental Studies:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
-      "code": "ESCI 21",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ESCI 30",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ESCI 60",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "E S 2",
+      "code": "E SD002.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 50",
+      "code": "E SD050.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 56",
+      "code": "E SD056.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 58",
+      "code": "E SD058.",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 64",
+      "code": "E SD064.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Geography:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "GEO 1",
       "units": 4,
@@ -906,7 +932,33 @@
       "catalog_addition": false
      },
      {
+      "code": "GEO 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geology:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
       "code": "GEOL 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 11",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -920,12 +972,43 @@
       "catalog_addition": false
      },
      {
+      "code": "GEOL 51",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Health:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
       "code": "HLTH 21",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Kinesiology:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "KNES 45",
       "units": 5,
@@ -939,7 +1022,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Mathematics:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "MATH 1A",
       "units": 5,
@@ -1016,6 +1111,13 @@
         "catalog_addition": false
        }
       ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -1106,18 +1208,30 @@
       "catalog_addition": false
      },
      {
-      "code": "STAT C1000",
+      "code": "STATC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "STAT C1000H",
+        "code": "STATC1000H",
         "units": 5,
         "catalog_addition": false
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Meteorology:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "MET 10",
       "units": 5,
@@ -1145,14 +1259,38 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Nutrition:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "NUTR 10",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Physics:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
      {
       "code": "PHYS 2A",
       "units": 5,
@@ -1220,42 +1358,40 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ENGR 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGR 45",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEO 6",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOL 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOL 51",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH 4",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The catalog lists the emphasis courses under subject headings (Anthropology, Astronomy, Biology, Chemistry, Computer Information Systems, Education, Engineering, Environmental Science, Environmental Studies, Geography, Geology, Health, Kinesiology, Mathematics, Meteorology, Nutrition, Physics), each printed with '(0 Units)'. The description says students complete a minimum of 27 units from the emphasis area, so all subject lists are recorded as one choose_units block of 27; subject subheadings carry no separate minimums.",
-   "total_units 27 is taken from 'Students complete a minimum of 27 units from one of the four emphasis areas' / 'the 27-unit emphasis area requirement'; reviewer may check whether this should be read as a program total.",
-   "'Total Required: 90 Units' (De Anza is on the quarter system) recorded as degree_total; the page says GE (De Anza General Education or Cal-GETC) plus 'electives as needed to reach at least 90 units', so electives_fill_degree is true. No GE unit figure is printed.",
-   "Courses used for the 27-unit emphasis requirement may not be used to satisfy General Education requirements.",
-   "The section's course list continues across a page break (pages 129-131); the GE/90-unit sentence is repeated at the top of page 131 before PHYS 10 and PHYS 50, which belong to this section's Physics list.",
-   "MET 20L is printed as 'Climate Change Laboratory' while the closed list titles MET 020L 'Climate Studies Laboratory'; treated as the same course.",
-   "The Program Learning Outcomes are printed identically for each Liberal Arts emphasis; recorded here as printed in this section.",
-   "Courses with honors versions are recorded with the honors course as an alternative; students receive credit for only one version."
+   "The text opening the catalog excerpt (Bachelor of Science Degree Requirements, 180 quarter units) belongs to a different program and was ignored.",
+   "Each subject list prints '(0 Units)'; recorded as stated 0 and minimum 0. The actual rule is 'Major Required: 27 Credits' drawn from any combination of the subject lists (description: 'a minimum of 27 units from one of the four emphasis areas'). A reviewer may prefer a single 27-unit choose_units rule across all lists.",
+   "Units are quarter units (De Anza); degree total printed as 'Total Required: 90 Units' with electives as needed to reach at least 90 units; no GE unit figure printed.",
+   "Honors versions recorded as alternatives because the page states students receive credit for only one version of a course.",
+   "Environmental Studies codes are printed in internal format ('E SD002.', 'E SD050.', 'E SD056.', 'E SD058.', 'E SD064.'); they correspond to closed-list E S 2, E S 50, E S 56, E S 58, E S 64.",
+   "STATC1000 and STATC1000H are printed under the Mathematics heading and correspond to STAT C1000 / STAT C1000H.",
+   "Some printed titles differ from the closed list (CIS 18B 'Advanced Unix/Linux and Bash Scripting', MET 10L 'Weather Laboratory', MET 20L 'Climate Change Laboratory'); codes match.",
+   "Courses used for the 27-unit emphasis may not also satisfy General Education requirements.",
+   "A repeated XML copy of the requirements is cut off at Chemistry; it matches the earlier list where it overlaps.",
+   "No program learning outcomes or careers are printed (Program Employment Potential: N/A)."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }
