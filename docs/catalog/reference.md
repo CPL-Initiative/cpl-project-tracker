@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-67 document(s).
+68 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -82,6 +82,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-05 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
+| [The canonical credential model: issuer on the title, assessor on the local exhibit](../reference/canonical_credential_model.md) | — | `canonical_credential_model.md` | 2026-11-11 | 2026-11-11 |
 | [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-10-30 |
 | [The Library filer — every piece files itself to Drive](../reference/library_filer.md) | — | `library_filer.md` | 2026-10-06 | 2026-10-08 |
 | [The live-session banner — how a session announces itself, and the two things it cannot know](../reference/live_session_banner.md) | — | `live_session_banner.md` | 2026-09-10 | 2026-09-10 |

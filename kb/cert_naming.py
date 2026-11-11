@@ -14,9 +14,12 @@ This module is the one place the format lives. kb/_sweep_exhibit_titles.py (Anot
 kb/_build_exhibits_review.py (Review's proposals), kb/_build_exhibits_related.py (the related-titles
 panel and the rename batch) import it.
 
-The format names the certification in the title. It does not set the issuer: Sam's rulings of 2026-10-31
-("Agree on your call on the college as issuer") and 2026-11-07 (Open Asks Sheet 167 card 1) stand, so credit
-by the college's own exam keeps the college as issuer and credit on the certificate names the vendor.
+The canonical title carries the credential's issuer (Sam's ruling 1 on issue #3110, 2026-11-11, which
+replaced his note of the same morning, "keep the college as issuer on the P1 title"): a title in the format
+is the certification's own, so its issuer is ASE. The college that gives the credit by its own exam shows on
+its local exhibit as that exhibit's assessor (kb/exhibit_paths.py), which is how his rulings of 2026-10-31
+and 2026-11-07 hold: the college for its own exam, the vendor for the certificate. The design note is
+docs/reference/canonical_credential_model.md.
 
 Existing titles are never renamed here. A title in an older form is listed for Sam in the rename batch
 (kb/_build_exhibits_related.py) and moves only through his approval and the credential rename apply.

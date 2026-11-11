@@ -15770,7 +15770,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 67,
+   "count": 68,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16660,6 +16660,21 @@
      "title": "SkyView \u2014 the engineering invariants",
      "type": null,
      "updated": "2026-09-29"
+    },
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "path": "docs/reference/canonical_credential_model.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "cer",
+      "exhibit-canonicalization",
+      "governance"
+     ],
+     "title": "The canonical credential model: issuer on the title, assessor on the local exhibit",
+     "type": null,
+     "updated": "2026-11-11"
     },
     {
      "created": "2026-09-30",
@@ -26892,5 +26907,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1445
+ "total": 1446
 }

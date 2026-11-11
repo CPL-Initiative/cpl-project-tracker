@@ -137,17 +137,7 @@ jobs:
       - name: Install Playwright + Chromium, pypdf, pdfminer
         run: |
           pip install --quiet playwright pypdf pdfminer.six
-          # The image holds Chromium's system libraries; --with-deps only adds font packages from Ubuntu's
-          # archive, which the runner could not resolve on 2026-11-11 (run 43046657326: no capture ran). The
-          # browser is installed alone and launched once; the packages are fetched only if it will not start.
-          python -m playwright install chromium
-          python - <<'PY' || python -m playwright install --with-deps chromium
-          from playwright.sync_api import sync_playwright
-          with sync_playwright() as p:
-              b = p.chromium.launch()
-              b.new_page().set_content("<p>ok</p>")
-              b.close()
-          PY
+          bash scripts/install_browser.sh
       - name: Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)
         run: python3 kb/_program_requirements_college.py pin --college "$COLLEGE"
       - name: Capture

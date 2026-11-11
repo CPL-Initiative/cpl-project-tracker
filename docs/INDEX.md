@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 579 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 67 | [`catalog/reference.md`](catalog/reference.md) |
+| Reference (pull-side) | 68 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 599 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1445** | |
+| **total** | **1446** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,6 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-11-11 (S637, SkyPorpoise):** Exhibits' related titles, certification names and the ASE rename batch (#3108); one browser install for thirteen workflows (#3112); the canonical credential model, DR-34 (#3114); De Anza's packed course codes (#3109); handoff 638.
 - 2026-11-11 (S636 SkyAntennae, Sam's session): Butte 87 to 138 of 164 and displayed on the catalog's own GE totals, the reconcile's address guard, a stale-issuer report in the credential review apply, the harvest lane under its budget (#3100); handoff 637.
 - 2026-11-10 (S634 SkyBackward, Sam's session): Sheet 180 carried out: the CCR seed confirm for every remaining discipline (#3084), Alameda's semester sum (#3086), 10-Key's issuer (#3087), Las Positas's local GE (#3085, display running); the cer lane compacted (#3089); the dashboard's sign-in (#3092); handoff 636.
 - 2026-11-10 (SkyFermi, Library side session): handoff 635; the Library reads any file and drafts a new piece (#3077); Pages prune of kb/receipts (#3088); Pages deploys still timing out.

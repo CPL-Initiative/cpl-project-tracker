@@ -342,9 +342,10 @@ From Sam's pass through the Exhibits review. Procedures `ase-paren`, `arabic-lev
    lead, so *Automotive Technology (...)* is out: students search by the certification's name and
    colleges adopt by it. A noncredit course titled for a certification folds under the
    certification, never under the program, whichever way its credit is awarded (credit by exam
-   mirrored, credit by exam not mirrored, or the industry certification itself). The format names
-   the title only; the issuer follows Rule 6 and the 2026-11-07 ruling (the college for its own
-   exam, ASE for the certificate). A course code names a test only when the course's title agrees
+   mirrored, credit by exam not mirrored, or the industry certification itself). The canonical
+   title carries the credential's issuer, ASE (Sam, 2026-11-11, #3110); the college that awards the
+   credit by its own exam is that local exhibit's assessor, read from the MAP exhibit id
+   (`docs/reference/canonical_credential_model.md`). A course code names a test only when the course's title agrees
    (Las Positas's AUTO P1 is *Powertrains: Modifications for Performance*). Propose a NEW title in
    this format even where the reference still holds an older form (*ASE A5 — Brakes*,
    *Automotive Technology (ASE A5 Brakes)*): those are renamed only by Sam's approved batch

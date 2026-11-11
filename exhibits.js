@@ -146,9 +146,11 @@
      parentheses and keeps its college or school as issuer (Sam, 2026-10-31: "Agree on your call on the college as
      issuer"). */
   var ASE_CERT_TITLE = /^\s*(?:ASE\b|Automotive Services? Excellence\b|National Institute for Automotive Service Excellence\b)/i;
-  /* The format Sam ruled on 2026-11-11 (kb/cert_naming.py), "Medium/Heavy Truck Parts Specialist (ASE P1)", names the
-     certification in the title and leaves the issuer to the card: his rulings of 2026-10-31 and 2026-11-07 stand, so
-     credit by the college's own exam keeps the college as issuer and credit on the certificate names ASE. */
+  /* The certification named the way Sam ruled on 2026-11-11 (kb/cert_naming.py): its official name first, its code in
+     parentheses, "Medium/Heavy Truck Parts Specialist (ASE P1)". The title carries the credential's issuer, ASE (his
+     ruling 1 on #3110 the same day, which replaced "keep the college as issuer on the P1 title"); the college that
+     gives the credit by its own exam shows on its local exhibit, as that exhibit's assessor. */
+  var ASE_CERT_FORM = /\(ASE\s+(?:[A-Z]\d|xEV)\)\s*$/;
   var OPTS_MAX = 8;
   var REQ_PREFIX = "_CER_PROCEDURE_REQUEST::";
   var FIELD_REQ = "cer_procedure_request";
@@ -244,7 +246,7 @@
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
   /* The issuer a title brings with it: an ASE certification's title names ASE, ahead of the proposal's issuer;
      what a person typed in the box wins over both. */
-  function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") ? ASE_ISSUER : ""; }
+  function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") || ASE_CERT_FORM.test(title || "") ? ASE_ISSUER : ""; }
   function issuerFor(title, issuer) { return aseIssuer(title) || issuer || ""; }
 
   /* ── names to pick from: the issuers and training sites already in the reference ── */
@@ -770,7 +772,7 @@
         var idx = [], by = {};
         (d.titles || []).forEach(function (row) {
           var issuer = row[1] >= 0 ? (d.issuers || [])[row[1]] || "" : "";
-          var o = { t: row[0], issuer: issuer, locals: row[2] || 0, adopted: row[3] || 0, proposed: row[4] === 1, aka: row[5] || [] };
+          var o = { t: row[0], issuer: issuer, locals: row[2] || 0, adopted: row[3] || 0, proposed: row[4] === 1, aka: row[5] || [], paths: row[6] || [] };
           o.ase = /Automotive Service Excellence/i.test(issuer) || /(?:^|[^A-Za-z])ASE(?![A-Za-z])/.test(o.t);
           o.codes = o.ase ? aseCodesIn(o.t) : [];
           o.words = relWords(o.t + " " + o.aka.join(" "));
@@ -780,6 +782,29 @@
         return reconcileRename(d);
       })
       .catch(function (e) { state.rel.data = null; state.rel.idx = []; state.rel.by = {}; state.rel.error = String(e && e.message || e); });
+  }
+  /* Each local exhibit's CPL path and who assessed the student (Sam's rulings on #3110, 2026-11-11: the canonical
+     title carries the credential's issuer, each local exhibit carries its path and assessor). The path is read from
+     the MAP exhibit id by kb/exhibit_paths.py; an industry certification or an exam score is assessed by the title's
+     issuer, a college's own exam or a portfolio by the college. One line a path: "9 by industry certification,
+     assessed by ASE". */
+  function shortIssuer(name) {
+    var m = /\(([^()]+)\)\s*$/.exec(name || "");
+    return m ? m[1] : (name || "");
+  }
+  function pathLines(paths, issuer) {
+    var defs = (state.rel.data && state.rel.data.paths) || {};
+    return (paths || []).map(function (p) {
+      var d = defs[p[0]] || { words: p[0], assessed_by: "" };
+      var who = d.assessed_by === "college" ? "the college"
+        : d.assessed_by === "issuer" ? (issuer && issuer !== LOCAL_ISSUER ? shortIssuer(issuer) : "the credential's issuer") : "";
+      return fmt(p[1]) + " by " + d.words + (who ? ", assessed by " + who : "");
+    });
+  }
+  function pathsNode(paths, issuer) {
+    var lines = pathLines(paths, issuer);
+    if (!lines.length) return null;
+    return el("span", { cls: "exh-muted exh-small exh-rel-paths" }, ["Local exhibits: " + lines.join("; ")]);
   }
   /* The titles a credential carried before a rename or a merge: the List's finder searches them too. */
   function akaOf(title) { var o = state.rel.by && state.rel.by[title]; return o ? o.aka : []; }
@@ -872,7 +897,8 @@
         var r = x.o, pend = renamePending(r.t);
         var meta = [r.issuer || "No issuer named", fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
           r.proposed ? "Proposed, not in the reference yet" : "In the reference"].join(" · ");
-        var li = el("li", null, [el("b", { cls: "exh-rel-t", text: r.t }), el("span", { cls: "exh-muted exh-small", text: meta })]);
+        var li = el("li", null, [el("b", { cls: "exh-rel-t", text: r.t }), el("span", { cls: "exh-muted exh-small", text: meta }),
+          pathsNode(r.paths, r.issuer)]);
         if (pend) li.appendChild(el("span", { cls: "exh-rel-pend exh-small", text: "Rename pending" + (pend.to ? ": " + pend.to : "") }));
         if (r.t === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
         else li.appendChild(word("Use this title", function () { o.use(r); draw(); }, { cls: "exh-w exh-small", "aria-label": "Use this title: " + r.t }));
@@ -1014,7 +1040,8 @@
       rule.words ? el("span", { cls: "exh-muted", text: (rule.set_by || "Sam") + ", " + (rule.date || "") + ": “" + rule.words + "”" }) : null]));
     box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Nothing is renamed until you approve. Edit a proposed title, or skip a row, before you do. "
       + "An approved title keeps its old name as a search alias, and its local titles, colleges and students move with it. "
-      + "A row with no proposed title names more than one test or no test; it stays as it is unless you write a title." }));
+      + "A row with no proposed title names more than one test or no test; it stays as it is unless you write a title. "
+      + "A title that folds into another keeps each local exhibit's own path and assessor, shown under it." }));
     if (!open.length) { box.appendChild(el("p", { cls: "exh-empty", text: "Every title in this batch is decided." })); return box; }
     var cols = el("colgroup", null, [["26%"], ["34%"], ["8%"], ["9%"], ["9%"], ["14%"]].map(function (w) { var c = el("col"); c.style.width = w[0]; return c; }));
     var head = el("thead", null, [el("tr", null, ["Current title", "Proposed title", "Local titles", "Colleges", "Students", "Decision"].map(function (h) {
@@ -1039,7 +1066,8 @@
       say();
       tb.appendChild(el("tr", skipped ? { cls: "exh-rb-skip" } : null, [
         el("th", { scope: "row" }, [el("span", { cls: "exh-rb-cur", text: r.current }),
-          el("span", { cls: "exh-muted exh-small", text: r.kind_label + (r.why ? ": " + r.why : "") + (r.issuer ? " · " + r.issuer : "") })]),
+          el("span", { cls: "exh-muted exh-small", text: r.kind_label + (r.why ? ": " + r.why : "") + (r.issuer ? " · " + r.issuer : "") }),
+          pathsNode(r.paths, r.issuer)]),
         el("td", null, [inp]),
         el("td", { text: fmt(r.locals) }),
         el("td", { text: r.adopted ? fmt(r.adopted) + " articulate it" : "None yet" }),
@@ -4256,6 +4284,8 @@
     ".exh-rel-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
     ".exh-rel-list li { display:grid; gap:2px; justify-items:start; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
     ".exh-rel-t { color:var(--text-strong); overflow-wrap:anywhere; }",
+    ".exh-rel-paths { overflow-wrap:anywhere; }",
+    ".exh-rb-table .exh-rel-paths { display:block; }",
     ".exh-rel-pend { color:var(--text-strong); font-weight:600; overflow-wrap:anywhere; }",
     ".exh-rule-notes p, .exh-rule-notes ol { margin:4px 0; }",
     ".exh-rb-scroll { overflow-x:auto; min-width:0; }",

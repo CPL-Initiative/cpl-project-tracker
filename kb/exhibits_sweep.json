@@ -1,13 +1,25 @@
 {
  "schema": 1,
- "generated_at": "2026-11-11T06:29:17Z",
+ "generated_at": "2026-11-11T14:46:46Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
    "id": "ase",
    "label": "ASE",
    "words": "Auto exhibits are most often aligned with ASE cert titles and I started adding those to later exhibit titles in parens after the title",
-   "tip": "An automotive course that prepares for an ASE test gets the test in parentheses after the title: Automotive Technology (ASE A7 Heating and Air Conditioning)."
+   "tip": "An automotive exhibit named for an ASE test takes the test's official name, then its code in parentheses: Medium/Heavy Truck Parts Specialist (ASE P1). The program name does not lead (Sam, 2026-11-11). A title already under an older form waits in the rename batch.",
+   "ruling": {
+    "who": "Sam",
+    "date": "2026-11-11",
+    "words": "Use the cert's official name first and the code in parentheses: \"Medium/Heavy Truck Parts Specialist (ASE P1)\". Don't put the program name in front, so \"Automotive Technology (...)\" is out. Students search by the cert name, and colleges adopt by it."
+   },
+   "notes": [
+    "Why a noncredit course with a certification's title can qualify for CPL. There are three paths.",
+    "Credit by exam, mirrored: credit and noncredit faculty agree on the assessment evidence, and the student is registered in the mirrored credit course and gets a grade.",
+    "Credit by exam, not mirrored: the student gets a CX CPL notation and a grade on the credit course.",
+    "Industry certification: the student earns the certification, possibly after the noncredit course, and gets credit through an existing articulation.",
+    "All three point to the same canonical certification title, so a cert-named noncredit title folds under the certification, not under the program."
+   ]
   },
   {
    "id": "numerals",
@@ -52,7 +64,7 @@
  "cards": [
   {
    "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
-   "proposed": "Automotive Technology (ASE P1 Medium/Heavy Truck Parts Specialist)",
+   "proposed": "Medium/Heavy Truck Parts Specialist (ASE P1)",
    "rules": [
     "ase"
    ],
@@ -67,7 +79,7 @@
      "credit": ""
     }
    ],
-   "id": "e899695cd7aa",
+   "id": "7487be0172f2",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,

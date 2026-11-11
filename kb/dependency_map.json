@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 838,
+  "file_datasets": 840,
   "external_services": 195,
   "consumers": 548,
   "workflows": 65,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3269,
+     "line": 3297,
      "tabs": [
       "exhibits"
      ]
@@ -1090,7 +1090,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1632
+     "line": 1633
     },
     {
      "id": "module:admin.js",
@@ -1780,7 +1780,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2264
+     "line": 2265
     }
    ],
    "main_committers": []
@@ -2084,7 +2084,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 159,
+     "line": 161,
      "tabs": [
       "exhibits"
      ]
@@ -2420,7 +2420,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1242
+     "line": 1243
     }
    ],
    "main_committers": []
@@ -2439,7 +2439,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1587
+     "line": 1588
     },
     {
      "id": "module:college_briefing.js",
@@ -3121,7 +3121,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1643
+     "line": 1644
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4431,7 +4431,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1928
+     "line": 1929
     }
    ],
    "main_committers": []
@@ -5505,7 +5505,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1819
+     "line": 1820
     },
     {
      "id": "module:admin.js",
@@ -6115,7 +6115,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2617,
+     "line": 2645,
      "tabs": [
       "exhibits"
      ]
@@ -6319,7 +6319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3261,
+     "line": 3289,
      "tabs": [
       "exhibits"
      ]
@@ -6412,7 +6412,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3542,
+     "line": 3570,
      "tabs": [
       "exhibits"
      ]
@@ -6656,7 +6656,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2203
+     "line": 2204
     },
     {
      "id": "module:college_briefing.js",
@@ -6869,7 +6869,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1302
+     "line": 1303
     },
     {
      "id": "module:cpl_funding.js",
@@ -8178,7 +8178,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3831,
+     "line": 3859,
      "tabs": [
       "exhibits"
      ]
@@ -10590,7 +10590,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 157,
+     "line": 159,
      "tabs": [
       "exhibits"
      ]
@@ -10637,7 +10637,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 158,
+     "line": 160,
      "tabs": [
       "exhibits"
      ]
@@ -13328,7 +13328,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2448,
+     "line": 2476,
      "tabs": [
       "exhibits"
      ]
@@ -13672,7 +13672,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 80
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13771,7 +13771,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 74
+     "line": 75
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -14909,7 +14909,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3283,
+     "line": 3311,
      "tabs": [
       "exhibits"
      ]
@@ -15013,7 +15013,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2443,
+     "line": 2471,
      "tabs": [
       "exhibits"
      ]
@@ -15082,7 +15082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 77
+     "line": 78
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -15170,7 +15170,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2798,
+     "line": 2826,
      "tabs": [
       "exhibits"
      ]
@@ -15196,7 +15196,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 50
     }
    ],
    "producers": [
@@ -15231,7 +15231,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 77
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -15336,7 +15336,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 79
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -18912,7 +18912,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 76
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -19127,7 +19127,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 74
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -21314,6 +21314,103 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/install_browser.sh": {
+   "consumers": [
+    {
+     "id": "workflow:catalog-framing.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:course-outcomes-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:course-outline-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:course-outline-index.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:cpl-stories.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-course-fetch.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-sequence-ppm.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-source-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:second-reader.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/k10_disclosure_check.py": {
    "consumers": [
     {
@@ -22159,6 +22256,19 @@
    "main_committers": []
   },
   "file:tests/bash_read_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/browser_install_single_source_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25571,7 +25681,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 497,
+     "line": 499,
      "tabs": [
       "exhibits"
      ]
@@ -25601,7 +25711,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 385,
+     "line": 387,
      "tabs": [
       "exhibits"
      ]
@@ -27449,14 +27559,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 938
+     "line": 939
     },
     {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 473,
+     "line": 475,
      "tabs": [
       "exhibits"
      ]
@@ -27471,7 +27581,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 496,
+     "line": 498,
      "tabs": [
       "exhibits"
      ]
@@ -27992,7 +28102,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 420,
+     "line": 422,
      "tabs": [
       "exhibits"
      ]
@@ -28002,7 +28112,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 631,
+     "line": 633,
      "tabs": [
       "exhibits"
      ]
@@ -30109,6 +30219,7 @@
    "name": "Catalog framing check",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "scripts/catalog_framing.py"
    ],
    "adds": [],
@@ -30230,6 +30341,7 @@
    "name": "College page read",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_college_page_read.py",
     "kb/_description_units.py"
    ],
@@ -30276,6 +30388,7 @@
    "name": "Course outcomes read",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outcomes_read.py"
    ],
    "adds": [
@@ -30290,6 +30403,7 @@
    "name": "Course outline census",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outline_census.py"
    ],
    "adds": [
@@ -30304,6 +30418,7 @@
    "name": "Course outline index",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outline_index.py"
    ],
    "adds": [
@@ -30423,6 +30538,7 @@
     "23 7 * * 1"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "tools/source_cpl_stories.mjs"
    ],
    "adds": [
@@ -30895,7 +31011,8 @@
     "tests/course_outline_index_test.py",
     "tests/course_outcomes_read_test.py",
     "tests/course_outcomes_load_test.py",
-    "tests/next_slo_colleges_test.py"
+    "tests/next_slo_colleges_test.py",
+    "tests/browser_install_single_source_test.py"
    ],
    "adds": [],
    "push": null,
@@ -31090,6 +31207,7 @@
     "23 8 * * 0"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_fetch_program_course_files.py",
     "kb/_build_program_course_graph.py"
    ],
@@ -31107,6 +31225,7 @@
    "name": "Program requirements, one college",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_program_requirements_display_apply.py"
    ],
@@ -31137,6 +31256,7 @@
    "name": "Program requirements pilot",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_pilot.py"
    ],
    "adds": [],
@@ -31149,6 +31269,7 @@
    "name": "Program requirements pilot, sequence",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_sequence_ppm.py"
    ],
    "adds": [],
@@ -31163,6 +31284,7 @@
     "29 10 * * 0"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_source_census.py"
    ],
    "adds": [],
@@ -31191,6 +31313,7 @@
    "name": "Second reader (program requirements)",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_second_reader.py"
    ],
@@ -31309,6 +31432,7 @@
     "kb/_jev_battery.py",
     "kb/_exhibit_reanalysis_jev.py",
     "kb/_typesafe_cr_trial.py",
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_jev_harvest.py",
     "kb/_jev_agri_families.py"

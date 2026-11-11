@@ -1098,6 +1098,10 @@ jobs:
       # an unproven host's full read. Pure-stdlib python.
       - name: Next SLO colleges (the order, the trial gate, the verdicts)
         run: python3 tests/next_slo_colleges_test.py
+      # One browser install for every workflow (2026-11-11, the runners' DNS fault): a workflow that writes
+      # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
+      - name: Browser install has one source
+        run: python3 tests/browser_install_single_source_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It
