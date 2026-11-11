@@ -1088,6 +1088,11 @@ jobs:
       # Pure-stdlib python.
       - name: Course outcomes read (outcomes as printed, slices, pages only)
         run: python3 tests/course_outcomes_read_test.py
+      # The exhibit subject fill (S638; Sam, in session 2026-11-11): MIL7 fills
+      # automotive from its course, a person's subject is never touched, undo
+      # takes exactly the cohort back, a second run inserts nothing. Pure-stdlib python.
+      - name: Exhibit subject fill (rungs, hold, receipt, undo)
+        run: python3 tests/exhibit_subject_fill_test.py
       # The course outcomes load (S374): one row per college the outline names, the
       # fingerprint checked, a receipt that rolls back, and the insert-only function
       # as the only write. Pure-stdlib python.

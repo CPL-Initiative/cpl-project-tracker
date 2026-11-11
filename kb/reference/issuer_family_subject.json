@@ -1,0 +1,12 @@
+{
+ "_about": "Issuer family -> Common SUBJ, for the exhibit subject fill (kb/_exhibit_subject_fill.py, rung c and the conflict hold). Only a family whose credentials all sit in one discipline belongs here. A family is recognized from a title's certification links (kb/exhibit_cert_links.json certs[].family) or from its issuer or MAP titles matching one of `issuer_patterns` (case-insensitive). Every subject must be a Common SUBJ the Common Subjects Reference holds (kb/discipline_canonical_subj4.json); the fill skips and lists one that is not. Small on purpose, so the planned issuer registry can absorb it.",
+ "_set_by": {"who": "SkyTamarind (Session 638), on Sam's in-session asks of 2026-11-11", "words": "ASE is automotive: Sam's ruling that ASE MIL7 Heating, Ventilation & Air Conditioning is automotive, not HVAC"},
+ "families": {
+  "ASE": {"subject": "AUTO", "issuer_patterns": ["automotive service excellence", "\\bASE\\b"],
+          "why": "Every ASE test certifies a vehicle technician, the HVAC tests included (Sam, 2026-11-11, on MIL7)."},
+  "AWS-Welding": {"subject": "WELD", "issuer_patterns": ["american welding society"],
+                  "why": "The American Welding Society certifies welders and welding inspectors."},
+  "FAA": {"subject": "AVIA", "issuer_patterns": ["federal aviation administration", "\\bFAA\\b"],
+          "why": "FAA airman certificates (pilot, mechanic, remote pilot) all sit in the MQ discipline Aviation."}
+ }
+}
