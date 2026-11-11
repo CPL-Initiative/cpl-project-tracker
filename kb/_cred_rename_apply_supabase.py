@@ -77,6 +77,9 @@ import urllib.request
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fold_issuer  # noqa: E402
+
 OUT_ROOT = os.path.join(HERE, "cred_rename_out")
 KEY_PREFIX = "_CREDENTIAL_REVIEW::"
 
@@ -332,9 +335,21 @@ def main():
     # override: the moves above already kept the target's.
     for target, g in sorted((doc.get("issuer_resolution") or {}).items()):
         res_ = g.get("resolution") or {}
+        cid = f"{KEY_PREFIX}{target}"
+        if res_.get("rule") in ("cert-form", "standards"):
+            # Rules 2 and 2b drop an issuer from the target. An override naming it that landed on the
+            # target (the lead's, moved above) would put it back at the next sync, so it goes too,
+            # logged with its before-row.
+            cur = (live.get(cid) or {}).get("issuing_agency_override")
+            if cur and fold_issuer.drop_issuer(res_, cur.get("value")):
+                res = delete_row(cid, "issuing_agency_override")
+                res["before_row"] = {k: cur.get(k) for k in ("value", "reviewer_email", "reviewed_at")}
+                res["dropped_by_rule"] = res_.get("rule")
+                log.append({"kind": "issuer", **res})
+                ok, fail = (ok + 1, fail) if res.get("status") == "ok" else (ok, fail + 1)
+            continue
         if res_.get("rule") != "reviewer" or not res_.get("winner"):
             continue
-        cid = f"{KEY_PREFIX}{target}"
         win = res_.get("winner_from") or {}
         cur = (live.get(cid) or {}).get("issuing_agency_override")
         if cur and cur.get("value") == res_["winner"]:

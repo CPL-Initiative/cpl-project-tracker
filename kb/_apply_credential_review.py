@@ -101,7 +101,10 @@ FIELDS = {
 }
 DECISION_ONLY = {"cert_rename_kept"}
 TRAINER_FIELDS = {"training_agency_override", "training_sites_override"}
-ISSUER_FIELDS = {"issuing_agency_override", "issuing_agency_additional_override"}
+# Fields whose own row stamp the fold's issuer precedence reads (kb/fold_issuer.py): who set an issuer
+# and when, and when the fold itself was saved (rule 1 counts only an issuer set with the fold).
+STAMPED_FIELDS = {"issuing_agency_override", "issuing_agency_additional_override",
+                  "unified_title_override", "unified_title_merge_confirm"}
 
 
 def fetch_rows():
@@ -369,9 +372,9 @@ def main():
             stamps.setdefault(ut, {})[field] = row.get("reviewed_at") or ""
         if field == "unified_title_override" and row.get("value"):
             rename_count += 1
-        # Who set each issuer, per field: the fold's issuer precedence (kb/fold_issuer.py) tells a
-        # person's issuer from a bot cohort's by this stamp, never by the entry's latest reviewer.
-        if field in ISSUER_FIELDS:
+        # Each field row's own stamp: the fold's issuer precedence (kb/fold_issuer.py) reads who set an
+        # issuer and when, and when the fold was saved, from it, never from the entry's latest reviewer.
+        if field in STAMPED_FIELDS:
             entry.setdefault("field_reviews", {})[field] = {
                 "by": row.get("reviewer_email"), "at": row.get("reviewed_at")}
         # Latest reviewer/timestamp wins (matches _apply_curation.py).

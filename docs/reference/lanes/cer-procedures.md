@@ -67,12 +67,13 @@ certification. The notes show in the Rules view, never on a card.
   JATCs move from issuer to trainer (130 titles) in one data PR with receipts, with the 10 duplicate spellings and the
   *alifornia Veterinary Medical Association* typo.
 - **The fold keeps one issuer, in one pass (#3110 build step 1, S638):** `kb/fold_issuer.py` is the one rule set for
-  the JSON fold and the `kb_curation` carry: a person's explicit issuer in the fold group wins (newest on a
-  disagreement, the target's before-value in the receipt); else a cert-form target keeps its issuer and drops the
-  folded college record; else additive. A college issuer a person puts on a title holding IC exhibits is an exception
-  line, never a block. A lead and its confirmed siblings apply in one dispatch (the lead is the source with no
+  the JSON fold and the `kb_curation` carry, in order: (1) a person's issuer saved at or after the group's earliest
+  fold save wins (newest on a disagreement, the target's before-value in the receipt; the July map@rccd.edu
+  overrides are ordinary records); (2) a cert-form target keeps its issuer and drops the folded college record;
+  (2b) a "(ASE … standards)" target keeps the college and drops ASE; (3) additive. The college kept as issuer on a
+  title holding IC exhibits is an exception line, never a block; a person-set record a rule drops is named. A lead and its confirmed siblings apply in one dispatch (the lead is the source with no
   confirm). `kb/_cred_rename_undo.py <receipt>` reverses an apply from `undo.json` (refuses drift) and
-  `--supabase-plan` writes the `kb_curation` reversal as SQL. Tests: `tests/cred_rename_fold_issuer_test.py` (35).
+  `--supabase-plan` writes the `kb_curation` reversal as SQL. Tests: `tests/cred_rename_fold_issuer_test.py` (47).
 - **NEXT:** after the precedence PR merges, read `kb/cred_rename_dryrun/alias_map.json`'s summary and its
   `issuer_preview`, then dispatch `cred-rename-apply.yml` once, then `daily-dashboard.yml` (statewide_data.js is
   rebuilt there, never in the apply). Then turn on the next family in `cert_naming.FAMILIES`

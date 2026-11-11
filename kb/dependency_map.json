@@ -28248,7 +28248,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 119
     },
     {
      "id": "script:kb/_apply_curation.py",
@@ -28283,14 +28283,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 128
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 156
+     "line": 159
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",

@@ -207,9 +207,13 @@ def main():
         # The lead is a source with no merge confirm (the one that creates the title); the earliest
         # saved among those, or among all when every source confirmed. An entry's reviewed_at is its
         # latest field's, so an issuer edited after the batch must not make a sibling the lead.
+        # Saved-at is the rename row's own stamp where the overlay carries one (field_reviews).
+        def _saved(o):
+            e = overrides.get(o) or {}
+            st = (e.get("field_reviews") or {}).get("unified_title_override") or {}
+            return st.get("at") or e.get("reviewed_at") or ""
         sources.sort(key=lambda o: (
-            (overrides.get(o) or {}).get("unified_title_merge_confirm") == new_ut,
-            (overrides.get(o) or {}).get("reviewed_at") or "", o))
+            (overrides.get(o) or {}).get("unified_title_merge_confirm") == new_ut, _saved(o), o))
         for o in sources[1:]:
             del renames_clean[o]
             ov = overrides.get(o) or {}
