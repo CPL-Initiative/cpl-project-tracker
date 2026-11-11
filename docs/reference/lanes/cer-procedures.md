@@ -54,9 +54,18 @@ certification. The notes show in the Rules view, never on a card.
   `cert_rename_kept` (DR-07). Until decided, the panel marks a title *Rename pending*.
 - **Aliases:** `kb/credential_aliases.py` reads the applied snapshots under `kb/cred_rename_out/`; the List's finder and
   the public Credential Catalog (`aka`) find a credential by a title it used to carry.
-- **DECIDED (S637):** the format names the title and leaves the issuer to the card. Sam's rulings of 2026-10-31
-  (*"Agree on your call on the college as issuer"*) and 2026-11-07 (Sheet 167 card 1) stand: the college for its own
-  exam, ASE for the certificate. His to revise.
+- **The canonical credential model (Sam's six rulings on #3110, 2026-11-11; DR-34;
+  [`docs/reference/canonical_credential_model.md`](../canonical_credential_model.md)):** the canonical title carries the credential's
+  issuer and each local exhibit its path and assessor, read from the MAP exhibit id (`kb/exhibit_paths.py`). A title in
+  the format fills its issuer with ASE; the panel and each batch row show a title's exhibits by path (*9 by industry
+  certification, assessed by ASE; 2 by credit by exam, assessed by the college*). This replaced his 06:20 PT note
+  *"Keep the college as issuer on the P1 title"* and S637's decision to leave the issuer to the card. The hold on the
+  16 merges ends with this display, the condition he set.
+- **NEXT (rulings 3 to 5):** no canonical title for a college's set of tests (the 30 bundle rows stay without a
+  proposal; ASE Master stays); *AWS* is the American Welding Society and *ACE* the American Council on Education
+  (recounted 20 to 4 and 29 to 3), the other body spelled out, before the AWS batch; high schools, districts, ROPs and
+  JATCs move from issuer to trainer (130 titles) in one data PR with receipts, with the 10 duplicate spellings and the
+  *alifornia Veterinary Medical Association* typo.
 - **NEXT:** after Sam approves the batch, read `kb/cred_rename_dryrun/alias_map.json`'s summary and dispatch
   `cred-rename-apply.yml` twice (the leads, then the merges). Then turn on the next family in `cert_naming.FAMILIES`
   with its table of official names (CompTIA, AWS, NCCER, one batch each). Sierra's corpus does not read aliases yet.

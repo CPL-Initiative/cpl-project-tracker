@@ -44,6 +44,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import cert_naming  # noqa: E402
 import credential_aliases  # noqa: E402
+import exhibit_paths  # noqa: E402
 
 SCHEMA = 1
 OUT = "kb/exhibits_related.json"
@@ -95,6 +96,12 @@ def build(root="."):
     def adopted(t):
         return len((adoption.get(t) or {}).get("a") or {})
 
+    def paths(t):
+        # Each local exhibit's CPL path, read from its MAP id (kb/exhibit_paths.py; Sam's rulings on
+        # #3110): the adoption file lists a credential's exhibits, the reference's stamps the rest.
+        ids = [x[0] for x in (adoption.get(t) or {}).get("x") or [] if x] + (ids_of.get(t) or [])
+        return exhibit_paths.tally(ids)
+
     # Every title a card could fold into: the reference, then what is only proposed (saved and waiting
     # for the nightly fold, or proposed on a card in Review).
     status, proposed_issuer = {}, {}
@@ -141,7 +148,7 @@ def build(root="."):
                 "current": t, "proposed": got["proposed"], "kind": got["kind"],
                 "kind_label": KINDS.get(got["kind"], got["kind"]), "why": got["why"], "codes": got["codes"],
                 "issuer": issuer_of(t), "locals": len(locals_of.get(t) or []), "adopted": adopted(t),
-                "ids": ids_of.get(t) or [],
+                "ids": ids_of.get(t) or [], "paths": paths(t),
             })
         # Two titles for one certification share a proposed title. One of them takes the name; the rest
         # fold into it, which the rename apply does only on a confirmed merge. The one that leads is the
@@ -176,18 +183,20 @@ def build(root="."):
     titles = []
     for t in sorted(status, key=str.lower):
         iss = issuer_of(t) or proposed_issuer.get(t, "")
-        row = [t, at.get(iss, -1), len(locals_of.get(t) or []), adopted(t), status[t]]
-        if aka.get(t):
-            row.append(aka[t])
+        row = [t, at.get(iss, -1), len(locals_of.get(t) or []), adopted(t), status[t], aka.get(t) or [], paths(t)]
+        while row and row[-1] == []:
+            row.pop()
         titles.append(row)
     return {
         "schema": SCHEMA,
         "generated_at": iso_now(),
         "generated_by": "kb/_build_exhibits_related.py",
         "_about": "The Exhibits tab's Related titles panel and rename batches. titles: [title, issuer index, "
-                  "local titles, colleges that articulate it, 0 in the reference or 1 proposed, earlier titles]. "
+                  "local titles, colleges that articulate it, 0 in the reference or 1 proposed, earlier titles, "
+                  "local exhibits by CPL path as [path, count] (kb/exhibit_paths.py)]. "
                   "pending: a title in a rename batch that Sam has not decided, and the title proposed for it.",
         "rule": cert_naming.RULE,
+        "paths": {k: {"words": w, "assessed_by": who} for k, (w, who) in exhibit_paths.PATHS.items()},
         "issuers": issuers,
         "titles": titles,
         "pending": pending,
