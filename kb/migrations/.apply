@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-10_csm_templates.sql
-name=s626b_csm_templates
+file=kb/migrations/2026-11-11_library_pictures.sql
+name=s635_library_pictures

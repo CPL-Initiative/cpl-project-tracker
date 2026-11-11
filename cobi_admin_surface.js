@@ -711,7 +711,8 @@ window.COBI_ADMIN_SURFACE = {
         "map_colleges"
       ],
       "writes": [
-        "cpl_library"
+        "cpl_library",
+        "cpl_library_pictures"
       ],
       "rpcs": [
         "cpl_library_set_public"

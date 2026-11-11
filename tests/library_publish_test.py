@@ -82,6 +82,35 @@ check("first public copy" in un["versions"][-1]["status"], "its version says it 
 check(not lp.is_new_piece(R) and "home" not in lp.record_update(R, D, "2026-11-05"), "a revision moves none of that")
 check("mkdir(parents=True" in open(lp.__file__).read(), "--write makes the new piece's folder")
 
+# Pictures (Sam, 2026-11-11): the one figure a page may carry, and the files written beside it.
+import base64  # noqa: E402
+WEBP = base64.b64encode(b"RIFF\x10\x00\x00\x00WEBPVP8 " + b"x" * 80).decode()
+PNG = base64.b64encode(b"\x89PNG\r\n\x1a\n" + b"x" * 80).decode()
+FIG = ('<figure class="shot"><a href="img/%d.%s" target="_blank" rel="noopener"><img src="img/%d.%s" alt="MAP Main Menu" '
+       'width="10" height="10" loading="lazy"></a></figure>')
+MAIN = '<main id="main"><h1>T</h1><p>One.</p>%s</main>'
+page = MAIN % (FIG % (1, "webp", 1, "webp") + FIG % (2, "png", 2, "png") + FIG % (3, "webp", 3, "webp") + FIG % (4, "webp", 4, "webp"))
+pics = [{"n": 1, "mime": "image/webp", "data": WEBP, "width": 800, "height": 600, "left_out": False},
+        {"n": 2, "mime": "image/png", "data": PNG, "width": 5, "height": 5, "left_out": True},
+        {"n": 3, "mime": "image/webp", "data": PNG, "width": 5, "height": 5, "left_out": False}]
+out, files = lp.place_pictures(page, pics)
+check(sorted(files) == ["img/1.webp"] and files["img/1.webp"][:4] == b"RIFF", "a placed picture is a file beside the page")
+check('src="img/1.webp" alt="MAP Main Menu" width="800" height="600"' in out, "its figure takes the row's size")
+check("img/2." not in out, "a picture left out is dropped from the page")
+check("img/3." not in out, "a picture that is not the type it says is dropped")
+check("img/4." not in out, "a figure with no picture behind it is dropped")
+check(lp.main_problems(lp.strip_figures(out)) == [], "the allowlist passes the page with its figures taken out")
+check(any("img" in b for b in lp.main_problems(out)), "and still refuses a figure it was not told to take out")
+evil = MAIN % '<figure class="shot"><a href="img/1.webp" target="_blank" rel="noopener"><img src="https://x.example/a.png" alt="" width="1" height="1" loading="lazy"></a></figure>'
+check(lp.strip_figures(evil) == evil and lp.main_problems(lp.strip_figures(evil)) != [], "a figure pointing anywhere else is not the fixed form, so it is refused")
+handler = MAIN % (FIG % (1, "webp", 1, "webp")).replace(' loading="lazy"', ' onerror="x()" loading="lazy"')
+check(lp.strip_figures(handler) == handler, "nor is one with a handler added")
+check(lp.added_risks(lp.strip_figures("<p>a</p>"), lp.strip_figures("<p>a</p>" + FIG % (1, "webp", 1, "webp"))) == [],
+      "a revision that adds a picture is no new source")
+check(lp.added_risks("<p>a</p>", '<p>a</p><img src="https://x.example/a.png">') != [], "one that adds any other image still is")
+wf = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".github", "workflows", "library-publish.yml")).read()
+check("git add library/*/img/" in wf, "the publish run commits the picture files")
+
 if fails:
     print("\n%d check(s) failed" % len(fails))
     sys.exit(1)

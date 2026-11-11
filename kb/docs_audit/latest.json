@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10",
+  "generated": "2026-11-11",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1456,
-    "bytes": 14693018,
-    "over_budget": 3,
+    "bytes": 14694501,
+    "over_budget": 4,
     "handoff_max": 636,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59918,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 535671,
-        "over": 2
+        "bytes": 537154,
+        "over": 3
       },
       "handoff": {
         "files": 597,
@@ -57,13 +57,13 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 3,
+      "oversized_doc": 4,
       "vault_heavy_path": 75
     },
     "vault": {
-      "files": 26519,
-      "bytes": 4517609644,
-      "heavy_bytes": 3259814129,
+      "files": 26523,
+      "bytes": 4517679395,
+      "heavy_bytes": 3259839288,
       "heavy_share": 0.722,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -181,6 +181,19 @@
       },
       "message": "24,187 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 21481,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 1481,
+        "ratio": 1.07
+      },
+      "message": "21,481 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/library.md"
     },
     {
       "rule": "oversized_doc",
@@ -310,10 +323,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 10755129,
+        "bytes": 10780288,
         "kind": "dir"
       },
-      "message": "directory totals 10,755,129 B inside the vault"
+      "message": "directory totals 10,780,288 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

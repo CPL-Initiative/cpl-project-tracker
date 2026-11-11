@@ -203,6 +203,61 @@ def added_risks(before, after):
     return out
 
 
+# ── Pictures (Sam, 2026-11-11) ────────────────────────────────────────────────
+# A page may carry one kind of figure: the fixed form pictures.mjs builds from a row of cpl_library_pictures. Its
+# address is a file beside the page (img/<n>.webp or .png), which this script writes from the row when it publishes.
+# The checks above run on the page with those figures taken out, so any other image or source is still refused.
+FIGURE = re.compile(r'<figure class="shot"><a href="img/(\d{1,2})\.(webp|png)" target="_blank" rel="noopener">'
+                    r'<img src="img/\1\.\2" alt="([^"<>]*)" width="\d{1,5}" height="\d{1,5}" loading="lazy"></a></figure>')
+_EXT = {"image/webp": "webp", "image/png": "png"}
+MAX_PICTURE_BYTES = 1_100_000
+
+
+def strip_figures(page):
+    return FIGURE.sub("", page or "")
+
+
+def picture_bytes(row):
+    """The row's picture as bytes, or None when it is not the WebP or PNG it says it is. Pure."""
+    import base64
+    import binascii
+    try:
+        b = base64.b64decode(row.get("data") or "", validate=True)
+    except (binascii.Error, ValueError):
+        return None
+    if not b or len(b) > MAX_PICTURE_BYTES:
+        return None
+    if row.get("mime") == "image/webp":
+        return b if b[:4] == b"RIFF" and b[8:12] == b"WEBP" else None
+    if row.get("mime") == "image/png":
+        return b if b[:8] == b"\x89PNG\r\n\x1a\n" else None
+    return None
+
+
+def place_pictures(page, pictures):
+    """The page with each figure matched to its row, and the files to write beside it. A figure whose picture was
+    left out, is missing, or is not the type the figure names is dropped. -> (page, {"img/3.webp": bytes}). Pure."""
+    by_n = {int(p["n"]): p for p in (pictures or []) if isinstance(p, dict) and not p.get("left_out")}
+    files = {}
+
+    def one(m):
+        n, ext = int(m.group(1)), m.group(2)
+        p = by_n.get(n)
+        if not p or _EXT.get(p.get("mime")) != ext:
+            return ""
+        b = picture_bytes(p)
+        if b is None:
+            return ""
+        files[f"img/{n}.{ext}"] = b
+        w, h = int(p.get("width") or 0), int(p.get("height") or 0)
+        if not (0 < w < 100000 and 0 < h < 100000):
+            return m.group(0)
+        return (f'<figure class="shot"><a href="img/{n}.{ext}" target="_blank" rel="noopener">'
+                f'<img src="img/{n}.{ext}" alt="{m.group(3)}" width="{w}" height="{h}" loading="lazy"></a></figure>')
+
+    return FIGURE.sub(one, page or ""), files
+
+
 def is_new_piece(record):
     g = record.get("regen") if isinstance(record.get("regen"), dict) else {}
     return bool(g.get("new_piece"))
@@ -288,18 +343,26 @@ def write_phase(today):
             skipped.append(f"{r['slug']}: draft {r['regen']['draft_id']} not found")
             continue
         d = d[0]
+        files = {}
+        if FIGURE.search(d.get("html") or ""):
+            pics = api(f"cpl_library_pictures?library_id=eq.{r['id']}&select=n,mime,data,width,height,left_out") or []
+            d["html"], files = place_pictures(d["html"], pics)
         if is_new_piece(r):
-            bad = main_problems(d.get("html") or "")
+            bad = main_problems(strip_figures(d.get("html") or ""))
             if bad:
                 skipped.append(f"{r['slug']}: draft {d['id']} refused, its page carries " + ", ".join(bad))
                 continue
         else:
-            bad = added_risks(page.read_text(encoding="utf-8"), d.get("html") or "")
+            bad = added_risks(strip_figures(page.read_text(encoding="utf-8")), strip_figures(d.get("html") or ""))
             if bad:
                 skipped.append(f"{r['slug']}: draft {d['id']} refused, it adds " + ", ".join(bad))
                 continue
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text(d["html"], encoding="utf-8")
+        for name, data in sorted(files.items()):
+            out = page.parent / name
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(data)
         up = record_update(r, d, today)
         RECEIPTS.mkdir(parents=True, exist_ok=True)
         (RECEIPTS / f"{today}-{r['slug']}.json").write_text(
