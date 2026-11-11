@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-11_de_anza_catalog_2026_27.sql",
+ "name": "s636_de_anza_catalog_2026_27",
+ "version": "20261111125300",
+ "sha256": "71ac1664caf13feccb8cd383a5e099acb5b2552f16163b357237f5cd9146398a",
+ "run": "43023582603",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
