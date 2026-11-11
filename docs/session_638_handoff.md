@@ -25,18 +25,19 @@ Then read **#3110 and #3111 for COBIx's replies to Sky** before any Exhibits or 
   search aliases (`kb/credential_aliases.py`). The daily run rebuilt the P1 card with the ruled title.
 - **#3112, merged.** `scripts/install_browser.sh`: one browser install for thirteen workflows, after the runners'
   DNS fault. The npm path (`cpl-stories.yml`) is proven only as far as the launch; Monday's scheduled run tests the site.
-- **#3114, open draft, watched until sign-off.** The canonical credential model (Sam's six rulings on #3110): each
+- **#3114, merged.** The canonical credential model (Sam's six rulings on #3110): each
   local exhibit's path and assessor on the panel and the batch (`kb/exhibit_paths.py`), ASE as issuer on a title in the
-  format, `docs/reference/canonical_credential_model.md`, DR-34. **Merge it on a green `test`.**
+  format, `docs/reference/canonical_credential_model.md`, DR-34.
 - **#3109, open draft.** De Anza: `el_fix_codes` reads the eLumen feed's packed codes (`ACCTD001A`) as the page shows
   them (`ACCT 1A`); the page read's plan; this checkpoint. A free capture was dispatched at 15:30Z on the branch.
 
 ## Open work, in order (built from the lanes)
 
-1. **`program-requirements-harvest`, De Anza (#3109).** `git pull` the branch and read
-   `kb/program_requirements_college/de_anza/capture_preview.json` (`found`, `by_method`, `coverage_bands`; it was 1 of
-   243). If the capture failed, have a subagent read the failing step. If most programs are found: **tell Sam the
-   extraction's expected cost against his standing $40 go before `extract=1`** (the 2025-26 run cost $20.33 for 233).
+1. **`program-requirements-harvest`, De Anza (#3109).** The free capture (run 43048959990) found **221 of 243**
+   programs (186 at full coverage, 33 at 0.8 to 1.0, 2 below; 22 not found, 7 of them still counting no course). The
+   extraction was dispatched at 16:16Z (`step=read`, `extract=1`), expected about $20 of Sam's standing $40 go; Sam was
+   told the figure first. `git pull` the branch and read `kb/program_requirements_college/de_anza/summary.json`
+   (`extracted`, `passed_machine_checks`, `cost_usd`). If the run failed, have a subagent read the failing step.
    Then load, a `ge_units` step from the `daweb2` GE pages, the registry read refresh, display. #3109 carries the inline
    install in two workflows; merging `main` brings `scripts/install_browser.sh`: take main's side in both.
    Then the sweep's next college: Orange Coast 72, Los Angeles City 67, Victor Valley 60.
@@ -94,5 +95,5 @@ the lessons doc once #3114 merges (both touch it).
 
 ## Let go
 
-At sign-off drop the watches on #3109 and #3114 and cancel check-in `trig_01DrjWUGtBYFU3uwGp1wkHF1` (16:16Z, De
-Anza's capture) if it has not fired. #3108 and #3112 are merged and unwatched.
+SkyPorpoise dropped its watches on #3109 and CPLBrain#759 at sign-off and holds no check-in. #3108, #3112 and #3114
+are merged. #3109 is an open draft with the extraction running on its branch: subscribe to it, then merge `main` into it.
