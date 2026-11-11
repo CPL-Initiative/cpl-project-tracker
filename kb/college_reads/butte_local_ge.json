@@ -1,0 +1,55 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Butte College, third read. The second (butte_ge_section, run 42958639573) gave the catalog's top navigation (catalog 14, 29 nodes): General Education is node 25389, with one child body page; Academic Program Types and Requirements is 25391. This read asks the General Education section, and the program types page, what the Butte Local pattern asks area by area and in total, and what the catalog says of the degree's 60, electives and a course counting for both the major and general education. Three ways in case one prints nothing: the rendered view, the section's own page JSON, and its child list. No model call.",
+ "college": "Butte College",
+ "questions": {
+  "local_ge_units": "What does the catalog print for the Butte Local general education pattern: its areas, each area's units, and a total?",
+  "degree_rules": "What does the catalog say of the associate degree's 60 units, electives, and a course counting for both the major and general education?"
+ },
+ "keywords": [
+  "Butte Local",
+  "Local General Education",
+  "Cal-GETC",
+  "Area",
+  "[Uu]nits",
+  "Total",
+  "60",
+  "[Dd]ouble",
+  "both",
+  "Elective",
+  "Graduation Requirement"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/Catalog//iq/25389",
+   "answers": [
+    "local_ge_units"
+   ],
+   "expand": true
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getPage?catalogId=14&id=25389",
+   "answers": [
+    "local_ge_units"
+   ]
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=25389",
+   "answers": [
+    "local_ge_units"
+   ]
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog//iq/25391",
+   "answers": [
+    "degree_rules"
+   ],
+   "expand": true
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getPage?catalogId=14&id=25391",
+   "answers": [
+    "degree_rules"
+   ]
+  }
+ ]
+}
