@@ -1,0 +1,46 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. COBIx's issue #3096 reports that De Anza publishes a 2026-2027 catalog on eLumen (deanza.elumenapp.com/catalog/2026-2027, 285 pages, 47 degree hubs; daweb2.deanza.edu/catalog/ redirects there), where the registry holds a hand-filed 2025-2026 PDF and the lane waits on Sam's two GE sheets. A finding to verify before the registry or the lane changes: this read loads the catalog's start page and the daweb2 address, records what their own scripts fetch from eLumen's API, and prints the stretches around the catalog year and the general education units (Local GE 29-41 quarter units, Cal-GETC 45-58, the degree's 90). No model call.",
+ "college": "De Anza College",
+ "questions": {
+  "catalog_year": "Does the eLumen catalog print 2026-2027, and how many pages and degree hubs does its menu hold?",
+  "ge_units": "What does the catalog print for the units of De Anza's local GE pattern and of Cal-GETC, and for the degree's 90 quarter units?"
+ },
+ "keywords": [
+  "2026-2027",
+  "General Education",
+  "Cal-GETC",
+  "[^<\"]{0,100}\\b(?:29|31|41|45|58|90)\\b[^<\"]{0,40}(?:quarter\\s*)?units[^<\"]{0,100}",
+  "[Mm]inimum[^<\"]{0,120}units[^<\"]{0,80}"
+ ],
+ "pages": [
+  {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027",
+   "answers": [
+    "catalog_year",
+    "ge_units"
+   ],
+   "network": true,
+   "network_hosts": [
+    "api-prod.elumenapp.com"
+   ],
+   "network_find": [
+    "General Education",
+    "Cal-GETC",
+    "quarter units",
+    "degree"
+   ],
+   "links": "General Education|GE|Degree|Graduation|Cal-GETC",
+   "follow": "General Education|Graduation Requirements|Cal-GETC"
+  },
+  {
+   "url": "https://daweb2.deanza.edu/catalog/",
+   "answers": [
+    "catalog_year"
+   ],
+   "links": "catalog|2026|2025|General Education"
+  }
+ ],
+ "outside_hosts": {
+  "elumenapp.com": "De Anza College's own 2026-2027 catalog (deanza.elumenapp.com), served on its catalog vendor's domain, with the vendor's API its pages call (api-prod.elumenapp.com)"
+ }
+}
