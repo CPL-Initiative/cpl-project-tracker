@@ -183,6 +183,35 @@ const FIG = (n) => '<figure class="shot"><a href="img/' + n + '.webp" target="_b
     const none = loadModule([ready], []); await none.M.activate(); await tick(); await tick();
     check("D a draft with no pictures asks for no box", !none.doc.getElementById("ro-pics-n1") && !none.root.querySelector('[data-picsopen="n1"]'));
   }
+  // ── D2. The box says what it did where the person is looking, and the same file twice is one set of pictures ──
+  //        (Sam, 2026-11-11: "the text showing they uploaded is below the window of view and I thought nothing
+  //        happened when I first clicked", so he added the PDF twice and its five pictures were saved twice).
+  {
+    const ready = Object.assign({}, NEW, { regen: { requested_at: "2026-11-10T18:00:00Z", requested_by: "Sam", publish: "show", new_piece: true, ready_at: "2026-11-10T18:01:00Z", draft_id: "11111111-1111-1111-1111-111111111111" } });
+    const m = loadModule([ready], [], function (url) { return /functions\/v1\/library-revise-draft/.test(url) ? response(200, { draft_id: "22222222-2222-2222-2222-222222222222", summary: "Placed.", new_piece: true }) : null; });
+    await m.M.activate(); await tick();
+    m.w.pdfjsLib = pdfStub();
+    click(m.w, m.root.querySelector('[data-revise="n1"]'));
+    click(m.w, m.root.querySelector('[data-cbdocs="n1"]'));
+    const file = { name: "Adding_CPL_Coordinator.pdf", arrayBuffer: () => Promise.resolve(new Uint8Array([1])) };
+    const give = () => { const inp = m.root.querySelector('[data-cbfile="n1"]'); Object.defineProperty(inp, "files", { value: [file], configurable: true }); inp.dispatchEvent(new m.w.Event("change", { bubbles: true })); };
+    give();
+    await until(() => /1 picture found/.test(m.root.textContent));
+    const line = m.doc.getElementById("cb-msg-n1"), form = m.root.querySelector('form[data-cboxform="n1"]');
+    check("D2 ⭐ the line that says the file was read sits inside the box, right under the document field",
+      !!line && form.contains(line) && /1 picture found/.test(line.textContent) && !!line.previousElementSibling && !!line.previousElementSibling.querySelector('[data-cbfile="n1"], #cb-link-n1'), line && line.outerHTML);
+    check("D2 it is said once, not again under the card", m.root.querySelectorAll(".lib-msg").length === 1);
+    give();
+    await until(() => /is already here; its words/.test(m.root.textContent));
+    check("D2 ⭐ the same file added again says so", /is already here; its words are not added twice/.test(m.doc.getElementById("cb-msg-n1").textContent), m.doc.getElementById("cb-msg-n1").textContent);
+    await tick(); await tick();
+    m.root.querySelector('form[data-cboxform="n1"]').dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+    await until(() => m.writes.some((x) => /cpl_library_pictures/.test(x.url) && x.method === "POST"));
+    const posts = m.writes.filter((x) => /cpl_library_pictures/.test(x.url) && x.method === "POST");
+    check("D2 ⭐ and its pictures are saved once", posts.length === 1 && posts[0].body.length === 1, JSON.stringify(posts.map((x) => x.body.length)));
+    const w = m.writes.filter((x) => x.body && x.body.regen && x.body.regen.based_on_draft)[0];
+    check("D2 with no instructions typed, the request asks for the pictures under their steps", !!w && w.body.refresh_note === "Add the pictures under the steps they show." && w.body.sources.length === 1);
+  }
   // ── E. The draft opens with its pictures ──
   {
     const m = loadModule([NEW]); await m.M.activate(); await tick();
@@ -198,6 +227,10 @@ const FIG = (n) => '<figure class="shot"><a href="img/' + n + '.webp" target="_b
     check("F a picture whose bytes are not the type it claims is not sent to the model", /p\.mime === "image\/webp" && \/\^UklGR\/\.test\(p\.data\)/.test(fn));
     check("F ⭐ it shows them to the model as images and adds the picture rules", /type: "image", source: \{ type: "base64"/.test(fn) && (fn.match(/pictures\.length \? PICTURE_RULES : ""/g) || []).length === 2);
     check("F ⭐ markers are placed after the model's work passed its checks, on both paths", /const done = applyEdits\(page, ans\.edits\);[\s\S]{0,200}placePictures\(done\.html/.test(fn) && /buildNewPage\(starter, r\.slug, ans\);[\s\S]{0,300}placePictures\(built\.html/.test(fn));
+    // The first piece published from the card carried sidebar.js?v=ec58e874 into the repo: the starter was read off Pages.
+    check("F ⭐ a page read off Pages loses its version stamps before a draft is made from it",
+      ae.unstamp('<script src="../../sierra/sidebar.js?v=ec58e874" defer></script>') === '<script src="../../sierra/sidebar.js" defer></script>' &&
+      /const starter = unstamp\(await sr\.text\(\)\)/.test(fn) && /page = unstamp\(await pr\.text\(\)\)/.test(fn) && /page = unstamp\(rows\[0\]\.html\)/.test(fn));
     const sql = fs.readFileSync("kb/migrations/2026-11-11_library_pictures.sql", "utf8");
     check("F ⭐ the table is the team's to read, add and change; nobody deletes; the service role only reads",
       /grant select, insert, update on public\.cpl_library_pictures to anon, authenticated;/.test(sql) && /grant select on public\.cpl_library_pictures to service_role;/.test(sql) &&

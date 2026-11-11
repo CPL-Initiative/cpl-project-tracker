@@ -962,7 +962,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/index.html` | scripts: `scripts/ui_pass.py` | — |
-| `sierra/sidebar.js` | tabs: `library`, `sierra-training` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-initiative-overview/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-healthcare-pathways-cpl-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html`, `library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html` | — |
+| `sierra/sidebar.js` | tabs: `library`, `sierra-training` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-initiative-overview/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-healthcare-pathways-cpl-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html`, `library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
 | `sierra_wording_check.js` | tabs: `sierra-training` | — |
@@ -1364,4 +1364,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 834 file
-datasets · 195 external services · 546 consumers · 65 workflows · 40 tabs.
+datasets · 195 external services · 547 consumers · 65 workflows · 40 tabs.

@@ -6,7 +6,7 @@
   "edge_functions": 14,
   "file_datasets": 834,
   "external_services": 195,
-  "consumers": 546,
+  "consumers": 547,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -2950,7 +2950,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2138,
+     "line": 2152,
      "tabs": [
       "library"
      ]
@@ -6329,7 +6329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3428,
+     "line": 3442,
      "tabs": [
       "library"
      ]
@@ -8809,14 +8809,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 350
+     "line": 356
     },
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 350
+     "line": 356
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -8883,7 +8883,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2741,
+     "line": 2755,
      "tabs": [
       "library"
      ]
@@ -8899,7 +8899,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2131,
+     "line": 2145,
      "tabs": [
       "library"
      ]
@@ -19625,7 +19625,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2359,
+     "line": 2373,
      "tabs": [
       "library"
      ]
@@ -21365,7 +21365,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4057,
+     "line": 4071,
      "tabs": [
       "library"
      ]
@@ -21393,6 +21393,13 @@
      "direction": "read",
      "how": "markup",
      "line": 1769
+    },
+    {
+     "id": "page:library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 226
     },
     {
      "id": "page:library/adopt/index.html",
@@ -27071,7 +27078,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1457,
+     "line": 1458,
      "tabs": [
       "library"
      ]
@@ -27081,7 +27088,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 347
     }
    ],
    "main_committers": []
@@ -27118,7 +27125,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1270,
+     "line": 1271,
      "tabs": [
       "library"
      ]

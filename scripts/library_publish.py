@@ -213,6 +213,12 @@ _EXT = {"image/webp": "webp", "image/png": "png"}
 MAX_PICTURE_BYTES = 1_100_000
 
 
+def unstamp(page):
+    """The page without the ?v=<hash> stamps GitHub Pages adds to local scripts and styles (apply_edits.mjs unstamp).
+    A draft made from a page read off Pages could carry one; the repo's file never does. Pure."""
+    return re.sub(r"(\.(?:js|mjs|css))\?v=[0-9a-f]{6,16}(?=[\"'])", r"\1", page or "")
+
+
 def strip_figures(page):
     return FIGURE.sub("", page or "")
 
@@ -360,6 +366,7 @@ def write_phase(today):
             skipped.append(f"{r['slug']}: draft {r['regen']['draft_id']} not found")
             continue
         d = d[0]
+        d["html"] = unstamp(d.get("html") or "")
         files = {}
         if FIGURE.search(d.get("html") or ""):
             pics = api(f"cpl_library_pictures?library_id=eq.{r['id']}&select=n,mime,data,width,height,left_out") or []

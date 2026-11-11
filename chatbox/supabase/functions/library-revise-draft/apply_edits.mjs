@@ -113,6 +113,14 @@ export function addedRisks(before, after) {
   return out;
 }
 
+// GitHub Pages serves every page with a version stamp on its local scripts and styles (scripts/stamp_asset_versions.py
+// adds ?v=<hash> when the site is built). A page read from Pages therefore differs from its file in the repo by those
+// stamps alone. They are taken off before a draft is made, so a draft never carries one into the repo (Sam's first
+// piece published from the card, 2026-11-11, carried sidebar.js?v=ec58e874) and a revision's sources match its file's.
+export function unstamp(html) {
+  return String(html || "").replace(/(\.(?:js|mjs|css))\?v=[0-9a-f]{6,16}(?=["'])/g, "$1");
+}
+
 // What a public page must still carry after the edits: the edits may change its words and
 // its look, never strip the frame library_page.py built around it.
 export function frameKept(before, after) {
