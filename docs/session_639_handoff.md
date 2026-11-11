@@ -16,9 +16,7 @@ came from a worker and was not re-read.
 ## If you are the scheduled session (06:12Z, the CPL Queue routine)
 
 **Safe to run unattended, in this order** (each under Rule 10 and the playbook's dispatch rules): the credential family
-plan by a route with a receipt (item 1 below says how); the result of ASE plan phase 1's commit run (43109363928,
-dispatched 22:09Z; the live dry run read 5 write, 9 replace, 11 retire, 0 held; 0 rows under `cer-s638@bot` at 22:14Z
-while it ran); phase 2 (`kb/cer_decisions_out/2026-11-11-2`, dry run then commit); the nightly fold's result; the five
+plan by a route with a receipt (item 1 below says how); phase 2 (`kb/cer_decisions_out/2026-11-11-2`: its dry run was dispatched at 22:16Z; read it and commit if 0 held); the nightly fold's result; the five
 "standards" folds on a small scope first; phase 3 (`-3`); the subject batch; De Anza's `step=load`; the answer to
 COBIx's 21:52Z reply on #3111. Then the rest of *Open work* below.
 **Waits for Sam:** the six held titles, the Pierce question to MAP/ITPI, Cloudflare Web Analytics on public pages,
@@ -89,7 +87,11 @@ Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*:
 **Also merged after the checkpoint opened:** #3120 (65b0aec2): the ASE plan folders are now
 `kb/cer_decisions_out/2026-11-11`, `-2`, `-3`, and `tests/exhibit_progress.test.js` is fixed; `main` is green. #3117
 (88f6d19c, 22:13Z): a credential family is a field (`kb/reference/credential_families.json`, `kb/_family_tag_plan.py`).
-Every S638 feature PR is merged. **Open:** this checkpoint's PR, #3121.
+Every S638 feature PR is merged.
+**ASE plan phase 1 applied:** run 43109363928 succeeded; live at 22:16Z, 14 rows under `cer-s638@bot`, the MIL7 local
+title assigned to "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)", and none
+of Sam's override, merge-confirm or issuer rows left on Automotive Braking Systems, Heating and Air Conditioning or
+Automotive Air Conditioner. Rollback: `cer-decision-apply.yml` with `mode=rollback` on `kb/cer_decisions_out/2026-11-11`. **Open:** this checkpoint's PR, #3121.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
@@ -99,7 +101,7 @@ Every S638 feature PR is merged. **Open:** this checkpoint's PR, #3121.
    rows (`kb/_family_tag_plan.py --rows`), carry it by a route with a receipt (a small apply workflow in the
    `cer-decision-apply.yml` shape, or a generator that needs no temp table), and confirm with one count of
    `credential-family-s638@bot` rows;
-   then read ASE phase 1's commit (run 43109363928) and its receipt; phase 2 (`-2`), dry run then commit; the next
+   then phase 2 (`kb/cer_decisions_out/2026-11-11-2`: its dry run was dispatched at 22:16Z; read it and commit if 0 held); the next
    nightly fold; `cred-rename-apply.yml` for the five "standards" folds, the first live use of
    #3116 (small scope first, per the playbook), then `daily-dashboard.yml`; ASE plan phase 3 (`-3`); build the owed decision sheet; the rename batch proposing "ASE Certificate Bundles: A4 + A5" titles
    for Sam's one approval; the 362 credentials still without a subject as one batch (the worklist,
