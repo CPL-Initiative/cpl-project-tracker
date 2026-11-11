@@ -45,6 +45,42 @@ each time.
   Shasta as *trial* (`trial=12`): the trial is the next UTC day's SLO run. No new Library request (DSP v3 waits on
   Sam's approval of its draft; IACA waits on Crystal's note), no CER rule request, no re-analysis request open.
 
+## After the first checkpoint: the session went on (Sam: "keep going see cobix 3096 comments")
+
+A second, lighter checkpoint at 12:45Z 2026-11-11, written at the context warning (108,832 tokens left). All of this is
+on draft **#3105**, not merged. Sam's words this stretch, verbatim: *"can you see the de anza solution cobix has and
+let me know if you have or can implement it? i beleive it will unblock much of the stuck cpl queue work"*; *"good, and
+try testing a scenario where you can't reach the doc needed in t he queue and you ping cobix to try and if he succeeds,
+test that you can access what he provides to see if the loop is closed and the throughput works"*.
+
+1. **The blocked-source procedure is in the rules:** `docs/reference/blocked_sources.md` (COBIx's seven steps from
+   #3083, on Sam's words of 2026-11-10), pointed to from `CLAUDE.md`, step 12 of `scheduled_sessions.md` and the lane.
+   One condition: the harvest's own reads keep naming the CPL Initiative.
+2. **COBIx's rulings relay (#3096, 11:38Z):** Sam, *"yes to all recommendations"*: a hand-filed `copy_url` may point at
+   the college's own open address; COBIx is "the person" for a challenge or user-agent block; Program Mapper gets a
+   vendor note first (COBIx drafts, Sam sends); Cañada's robots.txt reads by longest match. Relayed, not heard here:
+   Sam was asked in session to say if it is not his.
+3. **The loop test (Sam's ask).** Block proved: American River's catalog answers the reader 404 (page read
+   43014049067). Ask posted on #3096 at 11:51Z; COBIx answered at 11:53Z: the file answers the harvest's hand-filed-copy
+   user agent at the college's own address (8,010,776 bytes, sha256 `a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708`).
+   `kb/hand_filed_catalogs/american_river.json` now points there with no hash; a dispatched run
+   (`step=reconcile`, American River, ~12:22Z) pins it. **Open: read the pinned sha256 in that file, compare, report on
+   #3096 and to Sam, add the Los Rios row to `blocked_sources.md`.** If it matches, tell COBIx to post the other three
+   Los Rios packets and the next five colleges' source packets (its section 4, which Sky adopts).
+4. **Redwoods: 59 of 73 on the branch (was 53).** Three local steps on the college's CRGE sheet (21) and its pages' own
+   words; reconcile 43018781168 changed 18. Reread dispatched ~12:31Z. **Open: read its receipt, verify live, merge
+   `main`, run `kb/_build_roep_display.py`, commit, dispatch `step=display`.**
+5. **De Anza waits on Sam's word** (asked in session at 12:02Z; the lane carries no sheet marker, so if he has not
+   answered by your start, put it on Open Asks Sheet 181 with the lane's marker restored). Its 2026-2027 catalog on eLumen is verified (read 43013608134). The registry correction is
+   staged, not applied (`kb/migrations/2026-11-11_de_anza_catalog_2026_27.sql`): the session's permission check
+   refused the push that would apply it, and it supersedes Sam's correction of 2026-10-17. On his "go De Anza": name the
+   file in `kb/migrations/.apply`, move `kb/hand_filed_catalogs/de_anza.json` to `retired/`, push, then a free capture
+   (`extract=0`), extraction under the $40 go, load, a `ge_units` step from the `daweb2` GE pages (COBIx: Local GE
+   29-41 quarter units, Cal-GETC 45-58; verify), display.
+6. **Not started, from #3096's list for Sky:** Diablo Valley's `programs` to department to program route (0 of 244
+   records), the registry fixes in its section 3, `course-outline-index.yml` discovery on the five curriQunet hosts.
+   **#3083 has no reply from Sky yet**; the answer sits on #3096. Post a short pointer there.
+
 ## Decisions to honor
 
 - Sam, this run: the opening line only. No card was asked or answered; no sheet was built.
@@ -103,7 +139,8 @@ each time.
 
 ## Let go
 
-#3100's subscription ends with its merge. The check-ins this run scheduled have all fired but one (11:12Z, the
+#3100 merged and its subscription is dropped. #3105 is watched by this session until it merges or the session ends; a
+next session subscribes again. The check-ins this run scheduled have all fired but one (11:12Z, the
 display apply), which finds the work done. CPLBrain's session note is a draft PR, Sam's to merge; its subscription is
 dropped at sign-off. No artifact watch was registered.
 

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-11T11:42:21Z",
+  "written_at": "2026-11-11T12:39:46Z",
   "session": 636,
   "moniker": "SkyAntennae",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_637_handoff.md",
   "next_step": {
-    "title": "De Anza, on the route COBIx found",
-    "text": "Butte is displayed at 138 of 164 records passing, up from 87. De Anza no longer waits on Sam: COBIx found its general education sheets on a second De Anza host and a 2026-2027 catalog on the college's catalog vendor. The sweep takes De Anza next, then the college with the next largest gap."
+    "title": "Redwoods' reread and display, then De Anza on Sam's word",
+    "text": "Redwoods reads 59 of 73 on the branch, up from 53, on the general education sheet COBIx found. De Anza's 2026-2027 catalog is verified on its catalog vendor's site; the change to its registry row waits on Sam's word. A test of asking COBIx for a blocked file is under way with American River's catalog."
   },
   "calls": [
     {
@@ -254,6 +254,10 @@
     {
       "at": "2026-11-11T12:05:00Z",
       "text": "De Anza no longer waits on Sam's hand-filed sheets: COBIx found the general education sheets on a second De Anza host and reported a 2026-2027 catalog on the college's catalog vendor. A procedure for refused reads is in the queue's rules: other hosts, the publisher's copy, an archive copy, then a comment to COBIx, before any card."
+    },
+    {
+      "at": "2026-11-11T12:30:00Z",
+      "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
     }
   ],
   "headline": [
