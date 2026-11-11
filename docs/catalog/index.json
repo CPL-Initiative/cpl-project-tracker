@@ -15770,7 +15770,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 66,
+   "count": 67,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16388,6 +16388,22 @@
      "title": "Approval-prompt guards \u2014 why the allowlist never worked, and where the hooks must live",
      "type": null,
      "updated": "2026-10-05"
+    },
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "path": "docs/reference/blocked_sources.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "program-requirements-harvest",
+      "course-outcomes",
+      "procedures",
+      "cobix"
+     ],
+     "title": "Blocked sources: what a session does before a refused read becomes a card for Sam",
+     "type": null,
+     "updated": "2026-11-11"
     },
     {
      "created": "2026-08-28",
@@ -26862,5 +26878,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1443
+ "total": 1444
 }

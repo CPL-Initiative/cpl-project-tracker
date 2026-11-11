@@ -1,0 +1,32 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. COBIx's issue #3096 reports that Redwoods' counseling page links a '2026-2027 CRGE Pattern' PDF printing 'CRGE Units Required 21', 'Major and Elective Units 18+' and 'Minimum Degree Units 60', the figure the lane's NEXT waits for (the catalog itself prints no CR-GE units, S613). A finding to verify before any step: this read loads the counseling page, shows its links that name CRGE or a GE pattern, follows the CRGE pattern sheet, and loads the PDF address COBIx gave. No model call.",
+ "college": "College of the Redwoods",
+ "questions": {
+  "crge_units": "What does the 2026-2027 CRGE pattern sheet print for the CR-GE units required, the major and elective units, and the minimum degree units?"
+ },
+ "keywords": [
+  "CRGE",
+  "CR-GE",
+  "Units Required",
+  "Minimum Degree Units",
+  "Major and Elective",
+  "[Aa]rea",
+  "Total"
+ ],
+ "pages": [
+  {
+   "url": "https://www.redwoods.edu/services/counseling/",
+   "answers": [
+    "crge_units"
+   ],
+   "links": "CRGE|CR-GE|GE [Pp]attern|General Education|Cal-GETC",
+   "follow": "CRGE|CR-GE"
+  },
+  {
+   "url": "https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf",
+   "answers": [
+    "crge_units"
+   ]
+  }
+ ]
+}

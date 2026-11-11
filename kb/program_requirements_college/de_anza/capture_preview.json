@@ -1,0 +1,6366 @@
+{
+ "college": "De Anza College",
+ "catalog_url": "https://deanza.elumenapp.com/catalog/2026-2027/home",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 248,
+ "with_closed_list": 243,
+ "started": "2026-11-11T13:37:09Z",
+ "elumen": {
+  "catalog": "2026-2027",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "general-education-breadth-requirements-for-aa-as-degree",
+   "returning-for-subsequent-degree",
+   "accounting-degrees-and-certificates",
+   "admin-of-justice-degrees-and-certificates",
+   "anthropology-degrees-and-certificates",
+   "art-degrees-and-certificates",
+   "asian-american-and-asian-studies-degrees-and-certificates",
+   "automotive-technician-degrees-and-certificates",
+   "automotive-technology-degrees-and-certificates",
+   "automotive-technology-management-degrees-and-certificates",
+   "biological-sciences-degrees-and-certificates",
+   "business-administration-degrees-and-certificates"
+  ],
+  "hub_programs": 59,
+  "walk_pages": 250,
+  "walk_menus": 17,
+  "walk_programs": 200,
+  "walk_stopped_at_cap": true,
+  "program_pages": 259
+ },
+ "pages_read": 259,
+ "banner_h1": null,
+ "loads": 522,
+ "seconds": 2157.8,
+ "found": 1,
+ "by_method": {
+  "no_closed_list": 5,
+  "not_found": 242,
+  "sitemap_page": 1
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "05951",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16235,
+     "content": 16235,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05952",
+   "title": "Business Administration",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 0 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18384,
+     "content": 18384,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05954",
+   "title": "Real Estate",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16907,
+     "content": 16907,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05962",
+   "title": "Automotive Machining and Engine Repair",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14426,
+     "content": 14426,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05965",
+   "title": "Art History",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/art-history-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 25,
+    "why": "coarse net: the page's code tokens name 0 of 25 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18759,
+     "content": 18759,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05966",
+   "title": "Music",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/music-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 52,
+    "why": "coarse net: the page's code tokens name 0 of 52 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22435,
+     "content": 22435,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05969",
+   "title": "Photographic Arts (Film and Digital)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/photographic-arts-film-and-digital-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 38,
+    "why": "coarse net: the page's code tokens name 0 of 38 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22509,
+     "content": 22509,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05970",
+   "title": "Professional Photography (Film and Digital)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-film-and-digital-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17012,
+     "content": 17012,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05971",
+   "title": "Graphic Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18556,
+     "content": 18556,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05980",
+   "title": "Medical Assisting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-assisting-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 32,
+    "why": "coarse net: the page's code tokens name 0 of 32 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19824,
+     "content": 19824,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05983",
+   "title": "Communication Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/communication-studies-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.111,
+    "body": 0.111,
+    "content": 0.111,
+    "net": 2,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 2 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17149,
+     "content": 17149,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05992",
+   "title": "Law Enforcement",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-enforcement-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 43,
+    "why": "coarse net: the page's code tokens name 0 of 43 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20994,
+     "content": 20994,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05993",
+   "title": "Corrections/Probation",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/corrections-probation-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 41,
+    "why": "coarse net: the page's code tokens name 0 of 41 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20878,
+     "content": 20878,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05994",
+   "title": "Child Development",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-and-adolescent-development-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 0 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22508,
+     "content": 22508,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "05996",
+   "title": "Intercultural Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intercultural-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 61,
+    "why": "coarse net: the page's code tokens name 0 of 61 listed courses",
+    "error": null,
+    "chars": {
+     "body": 27878,
+     "content": 27878,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "06005",
+   "title": "Marketing Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/marketing-management-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16336,
+     "content": 16336,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "06006",
+   "title": "Business Programming",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-programming-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16624,
+     "content": 16624,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07090",
+   "title": "Film/TV: Production",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 64,
+    "why": "coarse net: the page's code tokens name 0 of 64 listed courses",
+    "error": null,
+    "chars": {
+     "body": 25972,
+     "content": 25972,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07091",
+   "title": "Automotive Powertrain Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14283,
+     "content": 14283,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07099",
+   "title": "Environmental Resource Management and Pollution Prevention",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18715,
+     "content": 18715,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07101",
+   "title": "Registered Nurse (RN)",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/registered-nurse-rn-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.175,
+    "body": 0.175,
+    "content": 0.175,
+    "net": 7,
+    "listed": 40,
+    "why": "coarse net: the page's code tokens name 7 of 40 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21708,
+     "content": 21708,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07102",
+   "title": "Paralegal Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 49,
+    "why": "coarse net: the page's code tokens name 0 of 49 listed courses",
+    "error": null,
+    "chars": {
+     "body": 23207,
+     "content": 23207,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07103",
+   "title": "Private Security",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/private-security-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 35,
+    "why": "coarse net: the page's code tokens name 0 of 35 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19310,
+     "content": 19310,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "09226",
+   "title": "Film/TV: Animation",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 46,
+    "why": "coarse net: the page's code tokens name 0 of 46 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22413,
+     "content": 22413,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10108",
+   "title": "Accounting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 0 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17503,
+     "content": 17503,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10112",
+   "title": "Systems Programming",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/systems-programming-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16399,
+     "content": 16399,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10114",
+   "title": "Network Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15605,
+     "content": 15605,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10117",
+   "title": "Automotive Machining and Engine Repair Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14426,
+     "content": 14426,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10118",
+   "title": "Automotive Chassis Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14580,
+     "content": 14580,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10121",
+   "title": "Advanced Manufacturing and Prototyping Technician",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-manufacturing-and-prototyping-technician-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20016,
+     "content": 20016,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10122",
+   "title": "CNC Research and Development Machinist",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-research-and-development-machinist-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18094,
+     "content": 18094,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10124",
+   "title": "Ceramics",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ceramics-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14874,
+     "content": 14874,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10125",
+   "title": "Painting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/painting-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16916,
+     "content": 16916,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10127",
+   "title": "Sculpture",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/sculpture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15613,
+     "content": 15613,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10132",
+   "title": "Lab Assisting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/lab-assisting-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14552,
+     "content": 14552,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10133",
+   "title": "Medical Reception",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-reception-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14480,
+     "content": 14480,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10134",
+   "title": "Medical Transcribing with Editing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-transcribing-with-editing-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15017,
+     "content": 15017,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10135",
+   "title": "Phlebotomy Technician I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/phlebotomy-technician-i-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14629,
+     "content": 14629,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10137",
+   "title": "Energy Management and Building Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.037,
+    "body": 0.037,
+    "content": 0.037,
+    "net": 1,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 1 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20999,
+     "content": 20999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10416",
+   "title": "Medical File Clerk",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-file-clerk-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13419,
+     "content": 13419,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10417",
+   "title": "Medical Records Clerk",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-records-clerk-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13660,
+     "content": 13660,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "11040",
+   "title": "Network Programming",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-programming-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16597,
+     "content": 16597,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "11778",
+   "title": "Automotive Engine Performance",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-engine-performance-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14928,
+     "content": 14928,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "11779",
+   "title": "Automotive Chassis and Powertrain",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-and-powertrain-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15668,
+     "content": 15668,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "11784",
+   "title": "Advanced Engine Performance Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-engine-performance-technology-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15451,
+     "content": 15451,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "12199",
+   "title": "Network Administration",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15962,
+     "content": 15962,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "12727",
+   "title": "Biological Sciences",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/biological-sciences-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18369,
+     "content": 18369,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "12821",
+   "title": "LVN Transition to RN",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/lvn-transition-to-rn-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.269,
+    "body": 0.269,
+    "content": 0.269,
+    "net": 7,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 7 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19174,
+     "content": 19174,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "12827",
+   "title": "Child Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19177,
+     "content": 19177,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "12869",
+   "title": "Business Office Clerk",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-office-clerk-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13882,
+     "content": 13882,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "15181",
+   "title": "Early Intervention/Special Education Assistant",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-intervention-special-education-assistant-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 0 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20189,
+     "content": 20189,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "15516",
+   "title": "Liberal Arts (Science, Math and Engineering Emphasis)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-math-and-engineering-emphasis-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.014,
+    "body": 0.014,
+    "content": 0.014,
+    "net": 2,
+    "listed": 146,
+    "why": "coarse net: the page's code tokens name 2 of 146 listed courses",
+    "error": null,
+    "chars": {
+     "body": 42991,
+     "content": 42991,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "15964",
+   "title": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.03,
+    "body": 0.03,
+    "content": 0.03,
+    "net": 7,
+    "listed": 232,
+    "why": "coarse net: the page's code tokens name 7 of 232 listed courses",
+    "error": null,
+    "chars": {
+     "body": 64016,
+     "content": 64016,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "15965",
+   "title": "Liberal Arts (Arts and Letters Emphasis)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-letters-emphasis-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.022,
+    "body": 0.022,
+    "content": 0.022,
+    "net": 7,
+    "listed": 315,
+    "why": "coarse net: the page's code tokens name 7 of 315 listed courses",
+    "error": null,
+    "chars": {
+     "body": 77888,
+     "content": 77888,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16510",
+   "title": "Global Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.017,
+    "body": 0.017,
+    "content": 0.017,
+    "net": 2,
+    "listed": 116,
+    "why": "coarse net: the page's code tokens name 2 of 116 listed courses",
+    "error": null,
+    "chars": {
+     "body": 41718,
+     "content": 41718,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16757",
+   "title": "Medical Laboratory Technology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-laboratory-technology-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 0 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19960,
+     "content": 19960,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16759",
+   "title": "CNC Machinist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-machinist-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13687,
+     "content": 13687,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16975",
+   "title": "Cybersecurity",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cybersecurity-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16539,
+     "content": 16539,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16977",
+   "title": "Journalism",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.15,
+    "body": 0.15,
+    "content": 0.15,
+    "net": 6,
+    "listed": 40,
+    "why": "coarse net: the page's code tokens name 6 of 40 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21748,
+     "content": 21748,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18004",
+   "title": "Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18715,
+     "content": 18715,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18850",
+   "title": "CNC Machinist",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-machinist-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18715,
+     "content": 18715,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19291",
+   "title": "Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-information-systems-support-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15487,
+     "content": 15487,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19521",
+   "title": "Environmental Resource Management and Pollution Prevention",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16201,
+     "content": 16201,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19523",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/entrepreneurship-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13885,
+     "content": 13885,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19530",
+   "title": "Early Childhood Mental Health",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-mental-health-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15535,
+     "content": 15535,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19531",
+   "title": "Energy Management and Building Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17504,
+     "content": 17504,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19532",
+   "title": "Energy Management and Building Science",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17504,
+     "content": 17504,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19534",
+   "title": "Medical Assisting",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-assisting-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 32,
+    "why": "coarse net: the page's code tokens name 0 of 32 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19630,
+     "content": 19630,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19536",
+   "title": "Marketing Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/marketing-management-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14142,
+     "content": 14142,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19537",
+   "title": "Project Management Practitioner",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15615,
+     "content": 15615,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19540",
+   "title": "Network Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15605,
+     "content": 15605,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19846",
+   "title": "Database Development Practitioner",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-development-practitioner-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16655,
+     "content": 16655,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23063",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 0 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16235,
+     "content": 16235,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23065",
+   "title": "Real Estate",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16713,
+     "content": 16713,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23067",
+   "title": "Film/TV: Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 64,
+    "why": "coarse net: the page's code tokens name 0 of 64 listed courses",
+    "error": null,
+    "chars": {
+     "body": 25615,
+     "content": 25615,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23070",
+   "title": "Business Programming",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-programming-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16269,
+     "content": 16269,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23071",
+   "title": "Systems Programming",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/systems-programming-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16044,
+     "content": 16044,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23072",
+   "title": "Network Programming",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-programming-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16240,
+     "content": 16240,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23073",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cybersecurity-fall-2025v2v3",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15651,
+     "content": 15651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23077",
+   "title": "Advanced Engine Performance Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-engine-performance-technology-fall-2022v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15049,
+     "content": 15049,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23078",
+   "title": "Automotive Machining and Engine Repair Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12730,
+     "content": 12730,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23079",
+   "title": "Automotive Powertrain Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025v2v3",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12879,
+     "content": 12879,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23080",
+   "title": "Automotive Chassis and Powertrain",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-and-powertrain-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15300,
+     "content": 15300,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23081",
+   "title": "Automotive Engine Performance",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-engine-performance-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14558,
+     "content": 14558,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23082",
+   "title": "Automotive Machining and Engine Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12730,
+     "content": 12730,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23083",
+   "title": "Computer Aided Design - Mechanical",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/computer-aided-design-mechanical-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18457,
+     "content": 18457,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23084",
+   "title": "Advanced Manufacturing and Prototyping Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-manufacturing-and-prototyping-technician-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20437,
+     "content": 20437,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23085",
+   "title": "CNC Research and Development Machinist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-research-and-development-machinist-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17726,
+     "content": 17726,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23086",
+   "title": "Art History",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/art-history-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 25,
+    "why": "coarse net: the page's code tokens name 0 of 25 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18395,
+     "content": 18395,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23090",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18144,
+     "content": 18144,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23092",
+   "title": "Medical Laboratory Technology",
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-laboratory-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 0 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20216,
+     "content": 20216,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23093",
+   "title": "Child Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.083,
+    "body": 0.083,
+    "content": 0.083,
+    "net": 2,
+    "listed": 24,
+    "why": "coarse net: the page's code tokens name 2 of 24 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19177,
+     "content": 19177,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23094",
+   "title": "Paralegal Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 49,
+    "why": "coarse net: the page's code tokens name 0 of 49 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22843,
+     "content": 22843,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23095",
+   "title": "Private Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/private-security-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 0 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18046,
+     "content": 18046,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23096",
+   "title": "Intercultural Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intercultural-studies-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 61,
+    "why": "coarse net: the page's code tokens name 0 of 61 listed courses",
+    "error": null,
+    "chars": {
+     "body": 27572,
+     "content": 27572,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "23097",
+   "title": "Global Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 63,
+    "why": "coarse net: the page's code tokens name 0 of 63 listed courses",
+    "error": null,
+    "chars": {
+     "body": 28063,
+     "content": 28063,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30618",
+   "title": "English",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.122,
+    "body": 0.122,
+    "content": 0.122,
+    "net": 5,
+    "listed": 41,
+    "why": "coarse net: the page's code tokens name 5 of 41 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26731,
+     "content": 26731,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30911",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19303,
+     "content": 19303,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30931",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/graphic-design-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18144,
+     "content": 18144,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30933",
+   "title": "Professional Photography (Film and Digital)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-film-and-digital-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14667,
+     "content": 14667,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30943",
+   "title": "Smog Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/smog-technician-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12688,
+     "content": 12688,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30944",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cybersecurity-fall-2025v2v3",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15651,
+     "content": 15651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30952",
+   "title": "Advanced Automotive Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13365,
+     "content": 13365,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30953",
+   "title": "Automotive Machining and Engine Repair Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12730,
+     "content": 12730,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30954",
+   "title": "Communication Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/communication-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.087,
+    "body": 0.087,
+    "content": 0.087,
+    "net": 2,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 2 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19945,
+     "content": 19945,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30955",
+   "title": "Automotive Powertrain Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025v2v3",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12879,
+     "content": 12879,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30956",
+   "title": "Automotive Chassis Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12789,
+     "content": 12789,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30958",
+   "title": "Intermediate Engine Performance Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intermediate-engine-performance-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12828,
+     "content": 12828,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "30959",
+   "title": "Basic Engine Performance Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/basic-engine-performance-technology-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13048,
+     "content": 13048,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31272",
+   "title": "Business Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16201,
+     "content": 16201,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31293",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.018,
+    "body": 0.018,
+    "content": 0.018,
+    "net": 2,
+    "listed": 114,
+    "why": "coarse net: the page's code tokens name 2 of 114 listed courses",
+    "error": null,
+    "chars": {
+     "body": 34389,
+     "content": 34389,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31308",
+   "title": "Film/TV: Screenwriting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-screenwriting-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 53,
+    "why": "coarse net: the page's code tokens name 0 of 53 listed courses",
+    "error": null,
+    "chars": {
+     "body": 23072,
+     "content": 23072,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31498",
+   "title": "Programming in JAVA",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/programming-in-java-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14290,
+     "content": 14290,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31500",
+   "title": "UNIX/LINUX Operating System",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/unix-linux-operating-system-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13371,
+     "content": 13371,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31502",
+   "title": "Web Development",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/web-development-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14597,
+     "content": 14597,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31504",
+   "title": "Film/TV: Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 25615,
+     "content": 25615,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31511",
+   "title": "Programming in C/C++",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-programming-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16269,
+     "content": 16269,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31549",
+   "title": "Network Basics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-basics-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13879,
+     "content": 13879,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31805",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/art-history-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 32,
+    "why": "coarse net: the page's code tokens name 0 of 32 listed courses",
+    "error": null,
+    "chars": {
+     "body": 25321,
+     "content": 25321,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31820",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.171,
+    "body": 0.171,
+    "content": 0.171,
+    "net": 6,
+    "listed": 35,
+    "why": "coarse net: the page's code tokens name 6 of 35 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22247,
+     "content": 22247,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32006",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20141,
+     "content": 20141,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33329",
+   "title": "CNC Programming - CAD-CAM",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-programming-cad-cam-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15269,
+     "content": 15269,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33330",
+   "title": "CNC Machinist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-machinist-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13687,
+     "content": 13687,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33336",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/computer-science-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19116,
+     "content": 19116,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33338",
+   "title": "Journalism",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.32,
+    "body": 0.32,
+    "content": 0.32,
+    "net": 8,
+    "listed": 25,
+    "why": "coarse net: the page's code tokens name 8 of 25 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21602,
+     "content": 21602,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33366",
+   "title": "Mandarin Language and Culture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17830,
+     "content": 17830,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33456",
+   "title": "Mandarin Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17830,
+     "content": 17830,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33800",
+   "title": "Clinical Laboratory Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/clinical-laboratory-assistant-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14191,
+     "content": 14191,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35500",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.138,
+    "body": 0.138,
+    "content": 0.138,
+    "net": 4,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 4 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21648,
+     "content": 21648,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35605",
+   "title": "Humanities",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/humanities-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17533,
+     "content": 17533,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35647",
+   "title": "Programming in Python",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/programming-in-python-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16692,
+     "content": 16692,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35661",
+   "title": "Women's Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/women-s-studies-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 0 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19969,
+     "content": 19969,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35730",
+   "title": "Environmental Resource Management and Pollution Prevention",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16201,
+     "content": 16201,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35776",
+   "title": "Quality Control Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/quality-control-technician-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15535,
+     "content": 15535,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35828",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19379,
+     "content": 19379,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35922",
+   "title": "Facility and Sustainable Building Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17942,
+     "content": 17942,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35923",
+   "title": "Facility and Sustainable Building Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17942,
+     "content": 17942,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35924",
+   "title": "Facility and Sustainable Building Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2v3",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 24,
+    "why": "coarse net: the page's code tokens name 0 of 24 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21181,
+     "content": 21181,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36263",
+   "title": "Leadership and Social Change",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 83,
+    "why": "coarse net: the page's code tokens name 0 of 83 listed courses",
+    "error": null,
+    "chars": {
+     "body": 30493,
+     "content": 30493,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36264",
+   "title": "Liberal Arts (Business and Computer Information Systems Emphasis)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-and-computer-information-systems-emphasis-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.031,
+    "body": 0.031,
+    "content": 0.031,
+    "net": 4,
+    "listed": 130,
+    "why": "coarse net: the page's code tokens name 4 of 130 listed courses",
+    "error": null,
+    "chars": {
+     "body": 38627,
+     "content": 38627,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36775",
+   "title": "Automotive General Service Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-general-service-technician-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13513,
+     "content": 13513,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36776",
+   "title": "Cyber Forensics and Investigations",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cyber-forensics-and-investigations-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16510,
+     "content": 16510,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36817",
+   "title": "Spatial Art",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/spatial-art-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18608,
+     "content": 18608,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36818",
+   "title": "Public Relations",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/public-relations-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14241,
+     "content": 14241,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36854",
+   "title": "Public Relations",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/public-relations-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14241,
+     "content": 14241,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38149",
+   "title": "Management Information Systems Support",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/management-information-systems-support-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15487,
+     "content": 15487,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38395",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.233,
+    "body": 0.233,
+    "content": 0.233,
+    "net": 7,
+    "listed": 30,
+    "why": "coarse net: the page's code tokens name 7 of 30 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21269,
+     "content": 21269,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38397",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/philosophy-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18020,
+     "content": 18020,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39225",
+   "title": "Asian American Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/asian-american-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 45,
+    "why": "coarse net: the page's code tokens name 0 of 45 listed courses",
+    "error": null,
+    "chars": {
+     "body": 25042,
+     "content": 25042,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39283",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18792,
+     "content": 18792,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39288",
+   "title": "Automotive Chassis Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12435,
+     "content": 12435,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39304",
+   "title": "Project Management Practitioner",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15615,
+     "content": 15615,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39305",
+   "title": "Mandarin Translation and Interpretation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-translation-and-interpretation-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14565,
+     "content": 14565,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39307",
+   "title": "Database Development Practitioner",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-development-practitioner-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16655,
+     "content": 16655,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39308",
+   "title": "Database Development Practitioner",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-development-practitioner-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17012,
+     "content": 17012,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39309",
+   "title": "Project Management Practitioner",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15440,
+     "content": 15440,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39310",
+   "title": "General Service Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/general-service-technician-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12921,
+     "content": 12921,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39311",
+   "title": "Smog Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/smog-technician-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12109,
+     "content": 12109,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39390",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.233,
+    "body": 0.233,
+    "content": 0.233,
+    "net": 10,
+    "listed": 43,
+    "why": "coarse net: the page's code tokens name 10 of 43 listed courses",
+    "error": null,
+    "chars": {
+     "body": 27825,
+     "content": 27825,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39415",
+   "title": "Social Justice Studies: General Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/social-justice-studies-general-studies-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.022,
+    "body": 0.022,
+    "content": 0.022,
+    "net": 2,
+    "listed": 92,
+    "why": "coarse net: the page's code tokens name 2 of 92 listed courses",
+    "error": null,
+    "chars": {
+     "body": 39203,
+     "content": 39203,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41152",
+   "title": "Advanced Engine Performance Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/advanced-engine-performance-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12416,
+     "content": 12416,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41153",
+   "title": "Automotive Machining and Engine Repair Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-machining-and-engine-repair-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12171,
+     "content": 12171,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41154",
+   "title": "Automotive Powertrain Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12270,
+     "content": 12270,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41155",
+   "title": "Basic Engine Performance Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/basic-engine-performance-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12478,
+     "content": 12478,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41156",
+   "title": "Intermediate Engine Performance Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intermediate-engine-performance-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12256,
+     "content": 12256,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41157",
+   "title": "Business Software Applications",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-software-applications-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14240,
+     "content": 14240,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41158",
+   "title": "Introduction to Computer Science",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/introduction-to-computer-science-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13634,
+     "content": 13634,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41159",
+   "title": "Real Estate Salesperson",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/real-estate-salesperson-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14461,
+     "content": 14461,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41160",
+   "title": "Commercial Lighting",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/commercial-lighting-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13493,
+     "content": 13493,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41161",
+   "title": "Photographic Retouching and Digital Post-Production",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/photographic-retouching-and-digital-post-production-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13520,
+     "content": 13520,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41172",
+   "title": "Precalculus Bridge",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/precalculus-bridge-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13285,
+     "content": 13285,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41174",
+   "title": "Math Basic Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/math-basic-skills-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13741,
+     "content": 13741,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41176",
+   "title": "English as a Second Language Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-high-intermediate-level-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13853,
+     "content": 13853,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41326",
+   "title": "Community Service Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-service-officer-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16788,
+     "content": 16788,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41327",
+   "title": "Film/TV: Animation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14604,
+     "content": 14604,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41792",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.235,
+    "body": 0.235,
+    "content": 0.235,
+    "net": 4,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 4 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18993,
+     "content": 18993,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41793",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 28,
+    "why": "coarse net: the page's code tokens name 0 of 28 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21758,
+     "content": 21758,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41858",
+   "title": "French Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/french-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16846,
+     "content": 16846,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41859",
+   "title": "German Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/german-language-and-culture-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17721,
+     "content": 17721,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41860",
+   "title": "Italian Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/italian-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18358,
+     "content": 18358,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41861",
+   "title": "Korean Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/korean-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20107,
+     "content": 20107,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41862",
+   "title": "Russian Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/russian-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18418,
+     "content": 18418,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41863",
+   "title": "Spanish Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/spanish-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 24,
+    "why": "coarse net: the page's code tokens name 0 of 24 listed courses",
+    "error": null,
+    "chars": {
+     "body": 20138,
+     "content": 20138,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41864",
+   "title": "World Languages and Culture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/world-languages-and-culture-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 60,
+    "why": "coarse net: the page's code tokens name 0 of 60 listed courses",
+    "error": null,
+    "chars": {
+     "body": 28884,
+     "content": 28884,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41885",
+   "title": "Paralegal Studies - Corporate Law",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-corporate-law-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16287,
+     "content": 16287,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41886",
+   "title": "Paralegal Studies - Intellectual Property",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-intellectual-property-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16833,
+     "content": 16833,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41887",
+   "title": "Paralegal Studies - Litigation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/paralegal-studies-litigation-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15767,
+     "content": 15767,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42012",
+   "title": "American English Pronunciation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/american-english-pronunciation-fall-2023",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13598,
+     "content": 13598,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42062",
+   "title": "Information Technology Technical Support",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/information-technology-technical-support-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14163,
+     "content": 14163,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42169",
+   "title": "Information Technology Technical Support",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/information-technology-technical-support-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14429,
+     "content": 14429,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42171",
+   "title": "Forensic Criminal Investigation Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/forensic-criminal-investigation-technician-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17282,
+     "content": 17282,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42186",
+   "title": "Additive Manufacturing Technology: 3D Design and Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/additive-manufacturing-technology-3d-design-and-production-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 18416,
+     "content": 18416,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43348",
+   "title": "English Writing, Grammar and Proofreading",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-writing-grammar-and-proofreading-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14107,
+     "content": 14107,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43374",
+   "title": "Alternative Fuels Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/alternative-fuels-technology-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12220,
+     "content": 12220,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43443",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.111,
+    "body": 0.111,
+    "content": 0.111,
+    "net": 2,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 2 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19249,
+     "content": 19249,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44021",
+   "title": "English as a Second Language High Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-high-intermediate-level-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13853,
+     "content": 13853,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44033",
+   "title": "Math Skills for Business",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/math-skills-for-business-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13902,
+     "content": 13902,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44044",
+   "title": "Project Management Practitioner",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14744,
+     "content": 14744,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44045",
+   "title": "Database Science Practitioner",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/database-science-practitioner-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13733,
+     "content": 13733,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44194",
+   "title": "Autonomous and Electric Vehicle Technician (Level 2)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-1-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13468,
+     "content": 13468,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44239",
+   "title": "Autonomous and Electric Vehicle Technician (Level 1)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-1-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12802,
+     "content": 12802,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44240",
+   "title": "Autonomous and Electric Vehicle Technician (Level 2)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-1-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12802,
+     "content": 12802,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44241",
+   "title": "Automotive Body Electrical",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-body-electrical-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12182,
+     "content": 12182,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44242",
+   "title": "EV and Fuel Vehicle Safety",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ev-and-fuel-vehicle-safety-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 11940,
+     "content": 11940,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44325",
+   "title": "Global Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.069,
+    "body": 0.069,
+    "content": 0.069,
+    "net": 2,
+    "listed": 29,
+    "why": "coarse net: the page's code tokens name 2 of 29 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21277,
+     "content": 21277,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44377",
+   "title": "Autonomous and Electric Vehicle Technician (Level 1)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technician-level-1-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13468,
+     "content": 13468,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44378",
+   "title": "Autonomous and Electric Vehicle Technology (Level 1)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/autonomous-and-electric-vehicle-technology-level-1-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13330,
+     "content": 13330,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45128",
+   "title": "Mandarin Language and Culture",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-language-and-culture-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19620,
+     "content": 19620,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45186",
+   "title": "Ethnic Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ethnic-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 42,
+    "why": "coarse net: the page's code tokens name 0 of 42 listed courses",
+    "error": null,
+    "chars": {
+     "body": 27683,
+     "content": 27683,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45187",
+   "title": "Hindi Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/hindi-language-and-culture-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17199,
+     "content": 17199,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45188",
+   "title": "Japanese Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/japanese-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 17797,
+     "content": 17797,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45189",
+   "title": "Vietnamese Language and Culture",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/vietnamese-language-and-culture-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21972,
+     "content": 21972,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45279",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cal-getc-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 365,
+    "why": "coarse net: the page's code tokens name 0 of 365 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3729,
+     "content": 3729,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45492",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-science-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.148,
+    "body": 0.148,
+    "content": 0.148,
+    "net": 4,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 4 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21993,
+     "content": 21993,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45499",
+   "title": "Automotive Technology Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-technology-management-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16445,
+     "content": 16445,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45561",
+   "title": "Illustration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 23411,
+     "content": 23411,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45562",
+   "title": "UI/UX: User Interface/User Experience Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ui-ux-user-interface-user-experience-design-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 21690,
+     "content": 21690,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45563",
+   "title": "Illustration",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 23797,
+     "content": 23797,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45564",
+   "title": "UI/UX: User Interface/User Experience Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ui-ux-user-interface-user-experience-design-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22091,
+     "content": 22091,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45937",
+   "title": "Mandarin Translation and Interpretation Level One",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mandarin-translation-and-interpretation-level-one-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14012,
+     "content": 14012,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45938",
+   "title": "Journalism and Media Practices",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/journalism-and-media-practices-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13565,
+     "content": 13565,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45939",
+   "title": "Multimedia and Visual Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/multimedia-and-visual-communication-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15003,
+     "content": 15003,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45940",
+   "title": "Nonprofit Management",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/nonprofit-management-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13108,
+     "content": 13108,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46178",
+   "title": "Automotive Service and Repair",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-service-and-repair-spring-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15327,
+     "content": 15327,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46311",
+   "title": "Applied Mathematics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-mathematics-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 2,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 2 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16843,
+     "content": 16843,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46312",
+   "title": "Elementary Mathematics Education",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/elementary-mathematics-education-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.286,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15944,
+     "content": 15944,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46313",
+   "title": "Mathematics for Business and Social Sciences",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mathematics-for-business-and-social-sciences-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.3,
+    "body": 0.3,
+    "content": 0.3,
+    "net": 2,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 2 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16988,
+     "content": 16988,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46314",
+   "title": "Pure Mathematics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/pure-mathematics-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16062,
+     "content": 16062,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46315",
+   "title": "Statistics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/statistics-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.222,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15888,
+     "content": 15888,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46316",
+   "title": "Community Impact",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-impact-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.048,
+    "body": 0.048,
+    "content": 0.048,
+    "net": 5,
+    "listed": 105,
+    "why": "coarse net: the page's code tokens name 5 of 105 listed courses",
+    "error": null,
+    "chars": {
+     "body": 35203,
+     "content": 35203,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46339",
+   "title": "Engineering (Electrical Engineering Track)",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/engineering-electrical-engineering-track-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 19053,
+     "content": 19053,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46394",
+   "title": "English as a Second Language Oral Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-oral-communication-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13432,
+     "content": 13432,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46395",
+   "title": "Writing and Reading Skills for Career and College Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/writing-and-reading-skills-for-career-and-college-success-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14078,
+     "content": 14078,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46411",
+   "title": "Applied Artificial Intelligence",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14024,
+     "content": 14024,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46412",
+   "title": "AI in Business",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ai-in-business-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 12450,
+     "content": 12450,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46413",
+   "title": "Foundations of Data Science",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/foundations-of-data-science-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 13854,
+     "content": 13854,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46414",
+   "title": "Professional Photography",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/professional-photography-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14189,
+     "content": 14189,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46510",
+   "title": "Applied Artificial Intelligence",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2v3v4",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.087,
+    "body": 0.087,
+    "content": 0.087,
+    "net": 2,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 2 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 22048,
+     "content": 22048,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46511",
+   "title": "Applied Artificial Intelligence",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.25,
+    "net": 2,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 2 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15252,
+     "content": 15252,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46512",
+   "title": "Applied Artificial Intelligence",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.091,
+    "body": 0.091,
+    "content": 0.091,
+    "net": 2,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 2 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15252,
+     "content": 15252,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46513",
+   "title": "Leadership and Social Change",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/leadership-and-social-change-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 77,
+    "why": "coarse net: the page's code tokens name 0 of 77 listed courses",
+    "error": null,
+    "chars": {
+     "body": 30493,
+     "content": 30493,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46568",
+   "title": "Foundations of Data Science",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/foundations-of-data-science-fall-2026v2",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 14109,
+     "content": 14109,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 1
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/de_anza",
+  "kept": 0,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "44020",
+    "title": "English as a Second Language Low Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/english-as-a-second-language-advanced-level-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ]
+ },
+ "run": "43024817869"
+}

@@ -45,6 +45,85 @@ each time.
   Shasta as *trial* (`trial=12`): the trial is the next UTC day's SLO run. No new Library request (DSP v3 waits on
   Sam's approval of its draft; IACA waits on Crystal's note), no CER rule request, no re-analysis request open.
 
+## After the first checkpoint: the session went on (Sam: "keep going see cobix 3096 comments")
+
+A second, lighter checkpoint at 12:45Z 2026-11-11, written at the context warning (108,832 tokens left). All of this is
+on draft **#3105**, not merged. Sam's words this stretch, verbatim: *"can you see the de anza solution cobix has and
+let me know if you have or can implement it? i beleive it will unblock much of the stuck cpl queue work"*; *"good, and
+try testing a scenario where you can't reach the doc needed in t he queue and you ping cobix to try and if he succeeds,
+test that you can access what he provides to see if the loop is closed and the throughput works"*.
+
+1. **The blocked-source procedure is in the rules:** `docs/reference/blocked_sources.md` (COBIx's seven steps from
+   #3083, on Sam's words of 2026-11-10), pointed to from `CLAUDE.md`, step 12 of `scheduled_sessions.md` and the lane.
+   One condition: the harvest's own reads keep naming the CPL Initiative.
+2. **COBIx's rulings relay (#3096, 11:38Z):** Sam, *"yes to all recommendations"*: a hand-filed `copy_url` may point at
+   the college's own open address; COBIx is "the person" for a challenge or user-agent block; Program Mapper gets a
+   vendor note first (COBIx drafts, Sam sends); Cañada's robots.txt reads by longest match. Relayed, not heard here:
+   Sam was asked in session to say if it is not his.
+3. **The loop test (Sam's ask).** Block proved: American River's catalog answers the reader 404 (page read
+   43014049067). Ask posted on #3096 at 11:51Z; COBIx answered at 11:53Z: the file answers the harvest's hand-filed-copy
+   user agent at the college's own address (8,010,776 bytes, sha256 `a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708`).
+   `kb/hand_filed_catalogs/american_river.json` now points there with no hash; a dispatched run
+   (`step=reconcile`, American River, ~12:22Z) pins it. **Open: read the pinned sha256 in that file, compare, report on
+   #3096 and to Sam, add the Los Rios row to `blocked_sources.md`.** If it matches, tell COBIx to post the other three
+   Los Rios packets and the next five colleges' source packets (its section 4, which Sky adopts).
+4. **Redwoods: 59 of 73 on the branch (was 53).** Three local steps on the college's CRGE sheet (21) and its pages' own
+   words; reconcile 43018781168 changed 18. Reread dispatched ~12:31Z. **Open: read its receipt, verify live, merge
+   `main`, run `kb/_build_roep_display.py`, commit, dispatch `step=display`.**
+5. **De Anza waits on Sam's word** (asked in session at 12:02Z; the lane carries no sheet marker, so if he has not
+   answered by your start, put it on Open Asks Sheet 181 with the lane's marker restored). Its 2026-2027 catalog on eLumen is verified (read 43013608134). The registry correction is
+   staged, not applied (`kb/migrations/2026-11-11_de_anza_catalog_2026_27.sql`): the session's permission check
+   refused the push that would apply it, and it supersedes Sam's correction of 2026-10-17. On his "go De Anza": name the
+   file in `kb/migrations/.apply`, move `kb/hand_filed_catalogs/de_anza.json` to `retired/`, push, then a free capture
+   (`extract=0`), extraction under the $40 go, load, a `ge_units` step from the `daweb2` GE pages (COBIx: Local GE
+   29-41 quarter units, Cal-GETC 45-58; verify), display.
+6. **Not started, from #3096's list for Sky:** Diablo Valley's `programs` to department to program route (0 of 244
+   records), the registry fixes in its section 3, `course-outline-index.yml` discovery on the five curriQunet hosts.
+   **#3083 has no reply from Sky yet**; the answer sits on #3096. Post a short pointer there.
+
+### Where that stretch ended (13:00Z)
+
+- **The loop closed.** Run 43019771268 pinned American River's catalog from the college's own address: 8,010,776 bytes,
+  the sha256 COBIx gave. Reported on #3096 and #3083; the Los Rios row is in `blocked_sources.md`. Sky adopted COBIx's
+  source packets and asked for the other three Los Rios colleges and the next five in the sweep: **read #3096 first**.
+- **American River's new edition reworded 23 programs' outcomes or careers.** The rescored records were not kept or
+  posted. NEXT: `step=read`, `extract=1`, `force=` these control numbers (about $1.50), then load and reread:
+  `04542,04551,12180,12186,14520,16734,16817,20099,20104,20110,20117,20121,20132,31537,31582,35640,37403,40100,40111,42725,44962,44999,46434`.
+- **Redwoods is live: 59 of 68 rows passing** (reread 43021039908, 18 replaced, no error). Display build 0874a3a15f22
+  was dispatched at 12:47Z; confirm its applied record under `kb/receipts/` (17,557 of 17,560 expected).
+- **De Anza: applied on Sam's "go de anza"** (migration run 43023582603; the row reads eLumen, 2026-2027; the hand-filed
+  record is in `kb/hand_filed_catalogs/retired/`). A free capture was dispatched at 12:58Z (`step=read`, `extract=0`).
+  NEXT: read its found count in `kb/program_requirements_college/de_anza/summary.json`; extract under the $40 go; load
+  (the 212 live rows are 2025-26 records: the reread replaces unchecked rows, and rows the new catalog no longer files
+  follow Sheet 118 card 1); a `ge_units` step from the `daweb2` GE pages; refresh the builder's dated registry read
+  (`kb/program_requirements_pilot/registry_read.json`) for De Anza before the display build.
+- **#3105 is open.** If this session did not merge it, merge it on a green `test` once the De Anza capture's commit is on
+  the branch.
+
+### EMERGENCY checkpoint, 13:35Z 2026-11-11 (49,038 tokens of context left)
+
+This handoff is on branch `claude/skyantennae-session-636-y7tu6s` (draft **#3105**), and `main` holds its first version.
+**Start here:** read this file from the branch; confirm the two runner jobs below have committed to the branch; then
+mark #3105 ready and squash-merge it on a green `test`.
+
+- At 13:35Z the Redwoods display apply (run 43023439796, build 0874a3a15f22, dispatched 12:47Z) was still in progress,
+  and the De Anza capture (`step=read`, `extract=0`, dispatched 12:58Z) was queued behind it. Neither had committed.
+  `kb/program_requirements_college/de_anza/capture.json` still showed the old PDF run (39115772038).
+- Not refreshed at this emergency checkpoint: the docs index rebuild beyond the last commit, the pipeline view,
+  `kb/README.md`, `README.md`, a KB note, the vault note (CPLBrain#758 covers the first stretch only: add the second),
+  the four other references' run logs, a decision sheet for the record of this run's calls.
+- This session's check-in at 14:11Z may merge #3105 if both jobs have landed; if #3105 is already merged, skip that.
+
+### Last word, 14:20Z: both runner jobs landed
+
+- **Redwoods' display is applied** (run 43023439796, build 0874a3a15f22): 17,557 of 17,560 written, 0 errors, the 3
+  Monterey Peninsula rows missing as before.
+- **De Anza's free capture found 1 of 243 programs** on the 2026-2027 eLumen catalog (run 43024817869: 259 pages read,
+  242 not found; `kb/program_requirements_college/de_anza/capture_preview.json`). The catalog answers; the reader does
+  not yet find De Anza's program pages. COBIx reported 47 degree hubs: read `el_hub_slugs` and `el_program_slugs`
+  against two hub pages with a free page read before any extraction. **Do not extract until the capture finds the
+  programs.** De Anza's 212 live rows (2025-26) are untouched and still displayed.
+
 ## Decisions to honor
 
 - Sam, this run: the opening line only. No card was asked or answered; no sheet was built.
@@ -66,7 +145,8 @@ each time.
 ## Open work, in order (built from the lanes)
 
 1. **`program-requirements-harvest`:** the sweep's next college (step 12), listed live first. By failing records
-   after Glendale (parked) and De Anza (waits on Sam's two GE sheets in `catalog-files`): Orange Coast 72, Los
+   after Glendale (parked): De Anza first (it no longer waits on Sam: COBIx's #3083 and #3096 give `daweb2.deanza.edu`
+   and a 2026-2027 eLumen catalog), then Orange Coast 72, Los
    Angeles City 67, Victor Valley 60, San Bernardino Valley 54, Berkeley City 54. Butte's 27 left stand as filed
    (25 read `unequal` inside the map's printed range). The nightly SLO read runs as `--next` names it.
 2. **`library` NEXT 0:** Sam's List publicly for request `71931018`, and the link from the public funding dashboard
@@ -102,7 +182,8 @@ each time.
 
 ## Let go
 
-#3100's subscription ends with its merge. The check-ins this run scheduled have all fired but one (11:12Z, the
+#3100 merged and its subscription is dropped. #3105 is watched by this session until it merges or the session ends; a
+next session subscribes again. The check-ins this run scheduled have all fired but one (11:12Z, the
 display apply), which finds the work done. CPLBrain's session note is a draft PR, Sam's to merge; its subscription is
 dropped at sign-off. No artifact watch was registered.
 
