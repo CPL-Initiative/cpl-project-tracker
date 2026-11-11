@@ -57,6 +57,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from _suggest_unclassified import load_js, norm_college  # noqa: E402
+import cert_naming  # noqa: E402
 
 SCHEMA = 1
 OUT = "kb/exhibits_review.json"
@@ -333,6 +334,14 @@ def build(root):
         step = step_of(n)
         aligned = aligned_all.get(raw) if step != CONFLICT else None
         prop = proposal_of(n, aligned)
+        if step != CONFLICT:
+            # A proposal based on a certification goes out in the format (kb/cert_naming.py, Sam's ruling of
+            # 2026-11-11); the form the rule or the classifier wrote stays beside it as an alternate. A
+            # conflict's proposal is a title a person already approved, which only the rename batch moves.
+            formed = cert_naming.canonical(prop["title"], prop.get("issuer", ""))
+            if formed != prop["title"]:
+                prop = dict(prop, alternates=[prop["title"]] + [a for a in prop.get("alternates") or [] if a != formed],
+                            title=formed)
         ex = by_raw.get(raw) or {"ids": [], "art": []}
         typed = [clean_college(c) for c in n.get("colleges") or []]
         art = ex["art"] or typed

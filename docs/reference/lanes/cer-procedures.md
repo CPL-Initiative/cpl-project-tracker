@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-11-10
+updated: 2026-11-11
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -26,6 +26,42 @@ and stops the run rather than send a refused call. COBIx asked for a replay: the
 stripped the issuer from 156 of 1,115 saved joined answers; the grouping keeps all 1,115 (`tests/cer_classifier_rules_size_test.py`).
 Read the next nightly report's `classifier_run.answered` and `errors` after it lands. Also #2924: the procedures report
 `kb/cer_procedures_out/latest.json` is served by Pages again (it 404'd for Exhibits, the CER tab and the progress).
+
+## Certification naming, related titles and the rename batch (S637, 2026-11-11)
+
+**Sam's ruling, 2026-11-11** (the card for *Noncredit for AUTO P1*, which kept returning to Another look): *"Use the
+cert's official name first and the code in parentheses: 'Medium/Heavy Truck Parts Specialist (ASE P1)'. Don't put the
+program name in front, so 'Automotive Technology (...)' is out. Students search by the cert name, and colleges adopt by
+it."* It supersedes the 2026-10-31 form (*Automotive Technology (ASE A7 Heating and Air Conditioning)*). The rule's notes
+carry why a noncredit course with a certification's title can qualify for CPL (credit by exam mirrored; credit by exam
+not mirrored, a CX notation and a grade on the credit course; the industry certification through an existing
+articulation): all three point to the same canonical title, so a cert-named noncredit title folds under the
+certification. The notes show in the Rules view, never on a card.
+
+- **The format lives in `kb/cert_naming.py`** (the ASE table, `ase_read`, `canonical`, the rule's words and notes).
+  Another look's `rule_ase` proposes it and gives a title already in it no card again; Review's builder puts a new
+  proposal in it and keeps the older wording as *Also proposed*; the classifier reads it in the skill's Rule 5h and the
+  `ase-paren` procedure.
+- **Related titles:** every Review card and Another look card has a side panel (`kb/exhibits_related.json`,
+  `kb/_build_exhibits_related.py`, nightly and daily after the sweep): the same test, the same series, then ASE's other
+  titles, each with its issuer, its local titles, *In the reference* or *Proposed*, and **Use this title**, which fills
+  the title and the issuer that title carries. A card outside ASE lists titles by issuer and shared words.
+- **The rename batch** (`#exhibits/rename-batch`, a Review tile): no title in the reference is renamed by a card or a
+  builder. The batch lists each ASE title not in the format (68 on 2026-11-11, 33 with a proposed title; the 35 bundles,
+  masters and uncoded titles carry none and stay unless Sam writes one). Approving writes `_CREDENTIAL_REVIEW::`
+  `unified_title_override`, and `unified_title_merge_confirm` where two titles are one certification (ASE's own title
+  leads, saved a second earlier, so the dry run renames it and folds the rest on the next apply); a skipped row writes
+  `cert_rename_kept` (DR-07). Until decided, the panel marks a title *Rename pending*.
+- **Aliases:** `kb/credential_aliases.py` reads the applied snapshots under `kb/cred_rename_out/`; the List's finder and
+  the public Credential Catalog (`aka`) find a credential by a title it used to carry.
+- **DECIDED (S637):** the format names the title and leaves the issuer to the card. Sam's rulings of 2026-10-31
+  (*"Agree on your call on the college as issuer"*) and 2026-11-07 (Sheet 167 card 1) stand: the college for its own
+  exam, ASE for the certificate. His to revise.
+- **NEXT:** after Sam approves the batch, read `kb/cred_rename_dryrun/alias_map.json`'s summary and dispatch
+  `cred-rename-apply.yml` twice (the leads, then the merges). Then turn on the next family in `cert_naming.FAMILIES`
+  with its table of official names (CompTIA, AWS, NCCER, one batch each). Sierra's corpus does not read aliases yet.
+- Tests: `tests/cert_naming_test.py` (42), `tests/exhibits_related.test.js` (57); `npm run a11y -- exhibits-related
+  exhibits-rename-batch` and their dark targets.
 
 ## The redesign (2026-10-30, side session beside S531)
 

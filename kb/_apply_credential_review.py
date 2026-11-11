@@ -93,7 +93,13 @@ FIELDS = {
     "training_sites_override",
     "quality_flag_override",
     "reviewed_marker",
+    # The Exhibits tab's rename batch (Sam, 2026-11-11): a row skipped, value = the
+    # proposed title declined. kb/_build_exhibits_related.py reads it so the batch
+    # does not offer that proposal again. A decision record only: it changes
+    # nothing in the reference and does not stamp the credential as reviewed.
+    "cert_rename_kept",
 }
+DECISION_ONLY = {"cert_rename_kept"}
 TRAINER_FIELDS = {"training_agency_override", "training_sites_override"}
 
 
@@ -363,6 +369,8 @@ def main():
         if field == "unified_title_override" and row.get("value"):
             rename_count += 1
         # Latest reviewer/timestamp wins (matches _apply_curation.py).
+        if field in DECISION_ONLY:
+            continue
         if row.get("reviewed_at", "") >= entry.get("reviewed_at", ""):
             entry["reviewed_by"] = row.get("reviewer_email")
             entry["reviewed_at"] = row.get("reviewed_at")

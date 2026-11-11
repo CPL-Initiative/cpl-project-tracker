@@ -105,7 +105,7 @@
   function match(c, f, sc, anyStanding) {
     if (!anyStanding && !f.standing[stdOf(c, sc)]) return false;
     if (f.q) {
-      var hay = (c.t + " " + (c.i || "") + " " + (c.k || "") + " " + (c.c || []).map(function (x) { return x[1] || ""; }).join(" ")).toLowerCase();
+      var hay = (c.t + " " + (c.aka || []).join(" ") + " " + (c.i || "") + " " + (c.k || "") + " " + (c.c || []).map(function (x) { return x[1] || ""; }).join(" ")).toLowerCase();
       var words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
       for (var w = 0; w < words.length; w++) {
         var re = new RegExp("(^|[^a-z0-9])" + words[w].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));

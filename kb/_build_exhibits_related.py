@@ -1,0 +1,221 @@
+#!/usr/bin/env python3
+"""_build_exhibits_related.py — the titles beside a Review card, and the rename batch.
+
+Sam, 2026-11-11, on the noncredit Automotive cards that kept returning to Another look ("Noncredit for
+AUTO P1"): he went back and forth because the card did not show which canonical titles already exist
+for the same certification. Two things come from this file, kb/exhibits_related.json:
+
+  titles   every canonical title, its issuer, how many local titles are folded under it, how many
+           colleges articulate it, whether it is in the reference or only proposed, and the titles it
+           was known by before a rename. The Exhibits tab's Review card draws its Related titles panel
+           from it (exhibits.js matches the card's certification family, code and words), and the
+           List's search finds a credential by a title it used to carry.
+
+  batches  one rename batch a certification family (kb/cert_naming.py, ASE first): every title in the
+           reference that does not read "<Official cert name> (ASE <code>)": a program or course name
+           in front, the code in front, a missing code, or two titles for one certification. Each row
+           carries the current title, the proposed title, the local titles and colleges folded under
+           it, the colleges that articulate it and the exhibits behind it (the tab counts students on
+           those, reviewers only). NOTHING HERE RENAMES A TITLE. Sam approves the batch in Review, or
+           edits or skips rows in it; an approved row is a unified_title_override the credential
+           rename dry-run and apply carry (kb/_cred_rename_dryrun.py, cred-rename-apply.yml), and the
+           old title stays a search alias (kb/credential_aliases.py).
+
+A row leaves the batch once it is decided: an override is saved for it, or cert_rename_kept names the
+proposal declined (both synced into kb/credential_review_overlay.json). A title with its own open card
+in Another look is left to that card. Until a row is decided, the panel marks its title "rename pending".
+
+The other families (CompTIA, AWS, NCCER) are listed as waiting: each runs as its own batch once ASE's is
+decided (Sam's step 4e), by turning its family on in kb/cert_naming.py with its table of official names.
+
+Runs nightly at the end of cer-procedures.yml and daily in daily-dashboard.yml, after the sweep.
+
+Usage, from the repo root:
+  python3 kb/_build_exhibits_related.py [--root DIR] [--out PATH] [--quiet]
+"""
+import argparse
+import collections
+import datetime as dt
+import json
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import cert_naming  # noqa: E402
+import credential_aliases  # noqa: E402
+
+SCHEMA = 1
+OUT = "kb/exhibits_related.json"
+IN_REFERENCE, PROPOSED = 0, 1
+KINDS = {
+    "program-first": "A program or course name leads",
+    "code-first": "The code leads",
+    "wrong-name": "Not the official name",
+    "missing-code": "No test code",
+    "several": "More than one test",
+}
+
+
+def iso_now():
+    return dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def load_json(root, rel, default=None):
+    try:
+        with open(os.path.join(root, rel), encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return default
+
+
+def build(root="."):
+    ut = load_json(root, "kb/unified_titles.json", {}) or {}
+    cr = load_json(root, "kb/credentials.json", {}) or {}
+    saved = (load_json(root, "kb/unclassified_assignments.json", {}) or {}).get("assignments") or {}
+    review = load_json(root, "kb/exhibits_review.json", {}) or {}
+    adoption = (load_json(root, "kb/exhibits_adoption.json", {}) or {}).get("credentials") or {}
+    sweep = load_json(root, "kb/exhibits_sweep.json", {}) or {}
+    overlay = (load_json(root, "kb/credential_review_overlay.json", {}) or {}).get("overrides") or {}
+    aka = credential_aliases.load(root)
+
+    locals_of, ids_of = collections.defaultdict(list), collections.defaultdict(list)
+    for raw, e in ut.items():
+        t = ((e or {}).get("unified_title") or "").strip()
+        if not t or not raw.strip():
+            continue
+        locals_of[t].append(raw.strip())
+        for i in (e or {}).get("source_exhibit_ids") or []:
+            if i and i not in ids_of[t]:
+                ids_of[t].append(i)
+
+    def issuer_of(t):
+        return (((cr.get(t) or [{}])[0] or {}).get("issuing_agency") or "").strip()
+
+    def adopted(t):
+        return len((adoption.get(t) or {}).get("a") or {})
+
+    # Every title a card could fold into: the reference, then what is only proposed (saved and waiting
+    # for the nightly fold, or proposed on a card in Review).
+    status, proposed_issuer = {}, {}
+    for t in set(cr) | set(locals_of):
+        status[t] = IN_REFERENCE
+    for raw, a in saved.items():
+        t = ((a or {}).get("unified_title") or "").strip()
+        if t and t not in status:
+            status[t] = PROPOSED
+            proposed_issuer[t] = ((a or {}).get("issuing_agency") or "").strip()
+            locals_of[t].append(raw.strip())
+    for h in review.get("held") or []:
+        t = (h.get("title") or "").strip()
+        if t and t not in status:
+            status[t] = PROPOSED
+            proposed_issuer[t] = (h.get("issuer") or "").strip()
+
+    # The rename batches.
+    on_card = {c.get("current") for c in sweep.get("cards") or []}
+    batches, pending, waiting = [], {}, []
+    for fam in cert_naming.FAMILIES:
+        if not fam["active"]:
+            waiting.append(fam["short"])
+            continue
+        rows, fits, left = [], 0, 0
+        for t in sorted(status, key=str.lower):
+            if status[t] != IN_REFERENCE:
+                continue
+            got = cert_naming.ase_read(t, issuer_of(t))
+            if not got:
+                continue
+            if got["kind"] == "fits":
+                fits += 1
+                continue
+            ov = overlay.get(t) or {}
+            if (ov.get("unified_title_override") or "").strip() and ov.get("unified_title_override") != t:
+                continue   # approved: the credential rename dry-run carries it from here
+            if got["proposed"] and (ov.get("cert_rename_kept") or "") == got["proposed"]:
+                continue   # skipped: this proposal was declined
+            if t in on_card:
+                left += 1   # its own card in Another look decides it
+                continue
+            rows.append({
+                "current": t, "proposed": got["proposed"], "kind": got["kind"],
+                "kind_label": KINDS.get(got["kind"], got["kind"]), "why": got["why"], "codes": got["codes"],
+                "issuer": issuer_of(t), "locals": len(locals_of.get(t) or []), "adopted": adopted(t),
+                "ids": ids_of.get(t) or [],
+            })
+        # Two titles for one certification share a proposed title. One of them takes the name; the rest
+        # fold into it, which the rename apply does only on a confirmed merge. The one that leads is the
+        # certification ASE itself issues, then the one with the most local titles.
+        groups = collections.defaultdict(list)
+        for r in rows:
+            if r["proposed"]:
+                groups[r["proposed"]].append(r)
+        for target, rs in groups.items():
+            exists = target in cr or status.get(target) == IN_REFERENCE
+            rs.sort(key=lambda r: (r["issuer"] != fam["issuer"], -r["locals"], r["current"].lower()))
+            for k, r in enumerate(rs):
+                r["target_exists"] = exists
+                r["twins"] = [x["current"] for x in rs if x is not r]
+                r["merge"] = exists or k > 0   # folds into a title that exists, or will once the lead lands
+                if r["twins"] or exists:
+                    r["why"] += "; " + ("joins “%s”, already in the reference" % target if exists
+                                         else "one of %d titles for this certification" % len(rs))
+        rows.sort(key=lambda r: (not r["proposed"], (r["codes"] or ["~"])[0], r.get("merge", False), r["current"].lower()))
+        for r in rows:
+            pending[r["current"]] = r["proposed"]
+        batches.append({
+            "id": fam["id"], "label": fam["short"], "issuer": fam["issuer"],
+            "format": "<Official cert name> (%s <code>)" % fam["short"],
+            "fits": fits, "left_to_cards": left,
+            "with_proposal": sum(1 for r in rows if r["proposed"]),
+            "rows": rows,
+        })
+
+    issuers = sorted({issuer_of(t) or proposed_issuer.get(t, "") for t in status} - {""}, key=str.lower)
+    at = {name: i for i, name in enumerate(issuers)}
+    titles = []
+    for t in sorted(status, key=str.lower):
+        iss = issuer_of(t) or proposed_issuer.get(t, "")
+        row = [t, at.get(iss, -1), len(locals_of.get(t) or []), adopted(t), status[t]]
+        if aka.get(t):
+            row.append(aka[t])
+        titles.append(row)
+    return {
+        "schema": SCHEMA,
+        "generated_at": iso_now(),
+        "generated_by": "kb/_build_exhibits_related.py",
+        "_about": "The Exhibits tab's Related titles panel and rename batches. titles: [title, issuer index, "
+                  "local titles, colleges that articulate it, 0 in the reference or 1 proposed, earlier titles]. "
+                  "pending: a title in a rename batch that Sam has not decided, and the title proposed for it.",
+        "rule": cert_naming.RULE,
+        "issuers": issuers,
+        "titles": titles,
+        "pending": pending,
+        "batches": batches,
+        "waiting": waiting,
+    }
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--root", default=".")
+    ap.add_argument("--out", default=OUT)
+    ap.add_argument("--quiet", action="store_true")
+    a = ap.parse_args(argv)
+    data = build(a.root)
+    path = a.out if os.path.isabs(a.out) else os.path.join(a.root, a.out)
+    old = load_json(a.root, a.out, {}) if not os.path.isabs(a.out) else {}
+    if old and all(old.get(k) == data[k] for k in ("titles", "pending", "batches", "issuers", "waiting", "rule")):
+        data["generated_at"] = old.get("generated_at", data["generated_at"])
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+        f.write("\n")
+    if not a.quiet:
+        print("wrote %s: %d titles, %s" % (a.out, len(data["titles"]), "; ".join(
+            "%s batch %d rows (%d with a proposed title, %d already fit)" % (b["label"], len(b["rows"]), b["with_proposal"], b["fits"])
+            for b in data["batches"])))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

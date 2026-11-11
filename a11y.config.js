@@ -888,6 +888,49 @@ async function seedExhibitsQueue(page, theme) {
   await page.waitForTimeout(300);
 }
 
+/* The Exhibits tab's Related titles panel and rename batch (S637, Sam 2026-11-11). Both files are answered here, so the
+   card, its side panel and the batch's table are measured whatever tonight's sweep holds: one ASE P1 card in Another
+   look with the ASE titles beside it, and a four-row batch. `where` is "another-look" or "rename-batch". */
+async function seedExhibitsRelated(page, theme, where) {
+  const ASE = "National Institute for Automotive Service Excellence (ASE)", CCC = "California Community Colleges";
+  const P1_OLD = "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)";
+  const row = (current, proposed, kind, issuer, locals, adopted, merge) => ({ current, proposed, kind, kind_label: kind, why: "the code leads", codes: [],
+    issuer, locals, adopted, ids: [], merge: !!merge });
+  await page.route("**/kb/exhibits_sweep.json*", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
+    schema: 1, generated_at: "2026-11-11T07:52:00Z", rules: [{ id: "ase", label: "ASE", tip: "An automotive exhibit named for an ASE test." }], counts: { ase: 1 },
+    cards: [{ id: "c-p1", rules: ["ase"], current: P1_OLD, proposed: "Medium/Heavy Truck Parts Specialist (ASE P1)",
+      why: ["ASE P1's official name is Medium/Heavy Truck Parts Specialist"], issuer: CCC,
+      locals: [{ raw: "Noncredit for AUTO P1", colleges: [], course: "", credit: "" }],
+      proposed_exists: false, proposed_locals: 0, proposed_issuer: "", current_locals: 1, moves_all: true }] }) }));
+  await page.route("**/kb/exhibits_related.json*", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
+    schema: 1, generated_at: "2026-11-11T07:55:00Z",
+    rule: { id: "cert-name-first", set_by: "Sam", date: "2026-11-11", words: "Use the cert's official name first and the code in parentheses." },
+    issuers: [CCC, ASE],
+    titles: [["ASE A5 — Brakes", 1, 14, 23, 0], ["ASE Bundle — P1, P2", 1, 1, 1, 0], ["ASE P1 — Medium/Heavy Truck Parts Specialist", 1, 3, 2, 0],
+      ["ASE P2 — Automobile Parts Specialist", 1, 2, 1, 0], ["ASE T2 — Diesel Engines", 1, 4, 3, 0], ["Automotive Technology (ASE A5 Brakes)", 0, 7, 6, 0],
+      [P1_OLD, 0, 1, 0, 0], ["Parts Counter Specialist (ASE P2)", 0, 1, 0, 1], ["ASE A1 — Engine Repair", 1, 14, 26, 0],
+      ["ASE A6 — Electrical/Electronic Systems", 1, 18, 25, 0], ["ASE L1 — Advanced Engine Performance Specialist", 1, 9, 10, 0]],
+    pending: { "ASE A5 — Brakes": "Brakes (ASE A5)", "Automotive Technology (ASE A5 Brakes)": "Brakes (ASE A5)",
+      "ASE P1 — Medium/Heavy Truck Parts Specialist": "Medium/Heavy Truck Parts Specialist (ASE P1)", "ASE Bundle — P1, P2": "" },
+    batches: [{ id: "ase", label: "ASE", issuer: ASE, format: "<Official cert name> (ASE <code>)", fits: 0, left_to_cards: 1, with_proposal: 3, rows: [
+      row("ASE A5 — Brakes", "Brakes (ASE A5)", "The code leads", ASE, 14, 23),
+      row("Automotive Technology (ASE A5 Brakes)", "Brakes (ASE A5)", "A program or course name leads", CCC, 7, 6, true),
+      row("ASE P1 — Medium/Heavy Truck Parts Specialist", "Medium/Heavy Truck Parts Specialist (ASE P1)", "The code leads", ASE, 3, 2),
+      row("ASE Bundle — P1, P2", "", "More than one test", ASE, 1, 1)] }],
+    waiting: ["CompTIA", "AWS", "NCCER"] }) }));
+  const hash = "exhibits/" + where;
+  await page.evaluate((h) => { if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, hash);
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction((w) => document.querySelector(w === "rename-batch" ? "#exhibits-root section.exh-rb table" : "#exhibits-root aside.exh-rel .exh-rel-list"),
+    where, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 /* The Exhibits tab's Requests view (SkyLoop, 2026-11-06): the public's asks to prioritize a credential, one line per
    credential. The rows read behind the team phrase, which the sweep does not hold, so the read is answered here with
    three rows (two credentials), and the table, its region and the counts are measured. */
@@ -3739,6 +3782,39 @@ module.exports = {
     routes: [{ hash: "exhibits/queue", name: "queue-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsQueue(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Exhibits: a Review card with its Related titles panel, and the rename batch (S637, Sam 2026-11-11) ── */
+  "exhibits-related": {
+    file: "index.html",
+    title: "Exhibits: a Review card with its related titles beside it",
+    routes: [{ hash: "exhibits/another-look", name: "related" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsRelated(page, "light", "another-look"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-related-dark": {
+    file: "index.html",
+    title: "Exhibits: related titles, dark",
+    routes: [{ hash: "exhibits/another-look", name: "related-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsRelated(page, "dark", "another-look"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-rename-batch": {
+    file: "index.html",
+    title: "Exhibits: the rename batch, one card in Review",
+    routes: [{ hash: "exhibits/rename-batch", name: "rename-batch" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsRelated(page, "light", "rename-batch"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-rename-batch-dark": {
+    file: "index.html",
+    title: "Exhibits: the rename batch, dark",
+    routes: [{ hash: "exhibits/rename-batch", name: "rename-batch-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsRelated(page, "dark", "rename-batch"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-requests": {

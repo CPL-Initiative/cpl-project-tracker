@@ -336,10 +336,19 @@ From Sam's pass through the Exhibits review. Procedures `ase-paren`, `arabic-lev
 `language-levels` in `kb/cer_procedures.json`; the nightly audit `kb/_sweep_exhibit_titles.py`
 (the Exhibits tab's *Another look*) finds titles already in the reference that miss them.
 
-1. **An automotive course that prepares for an ASE test names the test in parentheses** after the
-   title, code and official name: *Automotive Technology (ASE A7 Heating and Air Conditioning)*. A
-   course code names a test only when the course's title agrees (Las Positas's AUTO P1 is
-   *Powertrains: Modifications for Performance*). The ASE certification keeps its own name.
+1. **An exhibit based on an ASE certification takes the certification's official name, then its
+   code in parentheses** (Sam, 2026-11-11, superseding the 2026-10-31 form): *Medium/Heavy Truck
+   Parts Specialist (ASE P1)*, *Heating and Air Conditioning (ASE A7)*. The program name does not
+   lead, so *Automotive Technology (...)* is out: students search by the certification's name and
+   colleges adopt by it. A noncredit course titled for a certification folds under the
+   certification, never under the program, whichever way its credit is awarded (credit by exam
+   mirrored, credit by exam not mirrored, or the industry certification itself). The format names
+   the title only; the issuer follows Rule 6 and the 2026-11-07 ruling (the college for its own
+   exam, ASE for the certificate). A course code names a test only when the course's title agrees
+   (Las Positas's AUTO P1 is *Powertrains: Modifications for Performance*). Propose a NEW title in
+   this format even where the reference still holds an older form (*ASE A5 — Brakes*,
+   *Automotive Technology (ASE A5 Brakes)*): those are renamed only by Sam's approved batch
+   (`kb/_build_exhibits_related.py`), and `kb/cert_naming.py` holds the format and the test names.
 2. **Level numerals are Arabic** (1, 2, 3), except an official name that carries a Roman numeral
    (State Fire Training's Firefighter I).
 3. **A world-language course is Elementary or Intermediate, the language, then 1 or 2**, the level
@@ -380,7 +389,8 @@ Consult these when a row has NO house family yet (full link card:
   https://www.faa.gov/licenses_certificates/airmen_certification
 - **ASE — National Institute for Automotive Service Excellence** (Sam,
   2026-07-08 evening): automotive exhibits whose competency aligns with one
-  ASE cert take the ASE title (Rule 8b form — `ASE A5 — Brakes`) and the
+  ASE cert take the ASE title (Rule 5h item 1's form since 2026-11-11, `Brakes (ASE A5)`; the
+  reference's older `ASE A5 — Brakes` keys wait in the rename batch) and the
   house-canonical issuer `National Institute for Automotive Service
   Excellence (ASE)` (Rule 6 — Sam's message said "Automotive Services
   Excellence"; the 55-record house family spells it canonically). Mechanized
