@@ -124,12 +124,14 @@ Deno.serve(async (req) => {
     return reply(409, { error: isNew ? "Say what the piece must say, or add a document to work from, before drafting." : "Say what to change, or paste a document to work from, before drafting." });
   if (!SLUG.test(r.slug || "")) return reply(409, { error: "The record's slug is not a Pages address." });
   const fromGoogle = await readGoogle(linked);
-  if (isNew) return draftNew(r, g, brief, pasted, linked, fromGoogle, by, cred);
-
-  const pageUrl = PAGES + r.slug + "/";
   // More changes to a draft (Sam, 2026-11-05: Ask for more changes must never lose the draft): the card names the
   // draft it builds on in regen.based_on_draft, and the new draft starts from that draft's page, never the public copy.
   const baseDraft = g.based_on_draft ? String(g.based_on_draft) : "";
+  // A new piece's first draft comes from the starter. Changes asked after it (Sam, 2026-11-11: "there doesn't appear
+  // to be any way to add new instructions") are edits to that draft, made the way a public page's draft is edited.
+  if (isNew && !baseDraft) return draftNew(r, g, brief, pasted, linked, fromGoogle, by, cred);
+
+  const pageUrl = PAGES + r.slug + "/";
   if (baseDraft && !/^[0-9a-f-]{36}$/i.test(baseDraft)) return reply(409, { error: "The draft this builds on is not one the Library stored; a session revises it: Copy the request." });
   let page = "", basedOn = pageUrl, pageWords = `The page (${pageUrl})`;
   if (baseDraft) {
@@ -137,7 +139,7 @@ Deno.serve(async (req) => {
     const rows = bd.ok ? await bd.json() : [];
     if (!rows[0] || !rows[0].html) return reply(409, { error: "The draft this builds on could not be read, so a session revises it: Copy the request." });
     page = rows[0].html; basedOn = "draft " + baseDraft;
-    pageWords = `The draft of the page, not yet public (it will replace ${pageUrl})`;
+    pageWords = isNew ? `The draft of a new page, not yet public (it will be published at ${pageUrl})` : `The draft of the page, not yet public (it will replace ${pageUrl})`;
   } else {
     const pr = await fetch(pageUrl).catch(() => null);
     if (!pr || !pr.ok) return reply(409, { error: "This piece has no public copy on GitHub Pages to revise from, so a session revises it: Copy the request." });
@@ -153,7 +155,7 @@ Deno.serve(async (req) => {
     `Sierra's reading budget: ${SIERRA_MAX.toLocaleString("en-US")} characters of text. The page reads ${sierraBefore.toLocaleString("en-US")} now` +
     (sierraBefore > SIERRA_MAX ? ", already past it: add nothing without making room." : `, so ${(SIERRA_MAX - sierraBefore).toLocaleString("en-US")} remain.`) + "\n\n" +
     `Changes asked for by ${g.requested_by || "the team"}:\n${r.refresh_note || "None typed: bring the page in line with the documents below."}\n` +
-    (docs ? `\nDocuments pasted to work from:${docs}` : "") +
+    (docs ? (isNew ? `\nThe documents the draft was made from, and any added since, to check the changes against:${docs}` : `\nDocuments pasted to work from:${docs}`) : "") +
     (unopened.length ? `\nDocuments linked on the card, not opened here: ${unopened.map((x: any) => x.title || x.url).join("; ")}. Say in the summary if the change needs one of them.\n` : "") +
     "\nAnswer with the JSON.";
 
@@ -191,10 +193,10 @@ Deno.serve(async (req) => {
   if (!ins.ok) return reply(502, { error: "The draft could not be stored (" + ins.status + ")." });
   const draft = (await ins.json())[0];
 
-  const regen = { ...g, ready_at: new Date().toISOString(), draft_id: draft.id, draft_url: null, drafted_by: by, drafted_with: "library-revise-draft" };
+  const regen = { ...g, ...(isNew ? { new_piece: true } : {}), ready_at: new Date().toISOString(), draft_id: draft.id, draft_url: null, drafted_by: by, drafted_with: "library-revise-draft" };
   const up = await rest(`cpl_library?id=eq.${id}`, cred, { method: "PATCH", body: JSON.stringify({ regen, updated_by: by }) });
   if (!up.ok) return reply(502, { error: "The draft is stored, but the card could not be updated (" + up.status + ")." });
-  return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", sierra, model: MODEL, usage: out?.usage || null });
+  return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", new_piece: isNew || undefined, sierra, model: MODEL, usage: out?.usage || null });
 });
 
 // ── Documents: what was pasted, and the Google files read by their links ──────────────────────

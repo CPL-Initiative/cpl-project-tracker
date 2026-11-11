@@ -218,6 +218,47 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
     await none.M.activate(); await tick();
     check("E a Requested piece with nothing to draft from says what to add", !none.root.querySelector('form[data-draftnowform="n1"]') && /Say what it must say \(Edit record\), or add a document/.test(none.root.textContent));
   }
+  // ── E2. Changes after the first draft (Sam, 2026-11-11: "there doesn't appear to be any way to add new
+  //        instructions when I click edit"). A ready Draft 1 takes instructions on its card, and the function
+  //        edits that draft; the piece's documents stay on the record.
+  {
+    const D1 = "11111111-1111-1111-1111-111111111111", D2 = "22222222-2222-2222-2222-222222222222";
+    const ready = Object.assign({}, ROWS[1], { sources: [{ title: "Deck", url: null, text: "Log in to MAP." }],
+      regen: { requested_at: "2026-11-10T18:00:00Z", requested_by: "Sam", publish: "show", new_piece: true, ready_at: "2026-11-10T18:01:00Z", draft_id: D1 } });
+    let sent = null;
+    const m = loadModule(function (url, init, writes, data) {
+      if (/functions\/v1\/library-revise-draft/.test(url)) {
+        sent = JSON.parse(init.body);
+        data[0].regen = Object.assign({}, data[0].regen, { new_piece: true, ready_at: "2026-11-11T18:01:00Z", draft_id: D2 });
+        return response(200, { draft_id: D2, summary: "Added the note.", new_piece: true });
+      }
+      if (/cpl_library_drafts/.test(url)) return response(200, []);
+      return null;
+    }, [ready]);
+    await m.M.activate(); await tick();
+    const ask = m.root.querySelector('[data-revise="n1"]');
+    check("E2 ⭐ a ready Draft 1 offers Ask for changes beside Open the draft and Publish it",
+      !!ask && /Ask for changes/.test(ask.textContent) && !!m.root.querySelector('[data-draftopen="' + D1 + '"]') && !!m.root.querySelector('form[data-regenokform="n1"]'));
+    if (ask) {
+      click(m.w, ask);
+      const box = m.root.querySelector('form[data-cboxform="n1"]');
+      check("E2 ⭐ it opens the box on the card, drafting here", !!box && /Changes to Draft 1 of/.test(box.textContent) && /Draft it now/.test(box.textContent) && !/Send to a session/.test(box.textContent) && /Start over from the brief/.test(box.textContent));
+      if (box) {
+        m.doc.getElementById("cb-instr-n1").value = "Add a note under step 3 about the Student Contact box.";
+        box.dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+        await until(() => sent);
+        const w = m.writes.filter((x) => x.method === "PATCH" && x.body.regen && x.body.regen.based_on_draft)[0];
+        check("E2 ⭐ the request builds on Draft 1 and keeps it listed", !!w && w.body.regen.based_on_draft === D1 && w.body.regen.earlier.length === 1 && w.body.regen.earlier[0].draft_id === D1 && /Student Contact/.test(w.body.refresh_note));
+        check("E2 ⭐ the piece's documents stay on the record", !!w && w.body.sources.length === 1 && /Log in to MAP/.test(w.body.sources[0].text));
+        check("E2 ⭐ and the draft is made at once, here", !!sent && sent.id === "n1" && sent.by === "Sam");
+        await until(() => /Draft 2 is ready to review/.test(m.root.textContent));
+        check("E2 the card then names Draft 2", /Draft 2 is ready to review/.test(m.root.textContent) && !!m.root.querySelector('[data-draftopen="' + D2 + '"]'));
+      }
+    }
+    const fn = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/index.ts", "utf8");
+    check("E2 ⭐ the function edits a new piece's draft when the request names one, and keeps new_piece for the publisher",
+      /if \(isNew && !baseDraft\) return draftNew\(/.test(fn) && /\.\.\.\(isNew \? \{ new_piece: true \} : \{\}\)/.test(fn));
+  }
   // ── F. new_page.mjs and the function ──
   {
     const np = await import("../chatbox/supabase/functions/library-revise-draft/new_page.mjs");
