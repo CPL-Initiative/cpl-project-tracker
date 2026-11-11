@@ -100,6 +100,20 @@ test that you can access what he provides to see if the loop is closed and the t
 - **#3105 is open.** If this session did not merge it, merge it on a green `test` once the De Anza capture's commit is on
   the branch.
 
+### EMERGENCY checkpoint, 13:35Z 2026-11-11 (49,038 tokens of context left)
+
+This handoff is on branch `claude/skyantennae-session-636-y7tu6s` (draft **#3105**), and `main` holds its first version.
+**Start here:** read this file from the branch; confirm the two runner jobs below have committed to the branch; then
+mark #3105 ready and squash-merge it on a green `test`.
+
+- At 13:35Z the Redwoods display apply (run 43023439796, build 0874a3a15f22, dispatched 12:47Z) was still in progress,
+  and the De Anza capture (`step=read`, `extract=0`, dispatched 12:58Z) was queued behind it. Neither had committed.
+  `kb/program_requirements_college/de_anza/capture.json` still showed the old PDF run (39115772038).
+- Not refreshed at this emergency checkpoint: the docs index rebuild beyond the last commit, the pipeline view,
+  `kb/README.md`, `README.md`, a KB note, the vault note (CPLBrain#758 covers the first stretch only: add the second),
+  the four other references' run logs, a decision sheet for the record of this run's calls.
+- This session's check-in at 14:11Z may merge #3105 if both jobs have landed; if #3105 is already merged, skip that.
+
 ## Decisions to honor
 
 - Sam, this run: the opening line only. No card was asked or answered; no sheet was built.
