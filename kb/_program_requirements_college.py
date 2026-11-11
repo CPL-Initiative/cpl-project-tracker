@@ -1557,10 +1557,31 @@ def el_hub_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     return out[:EL_MAX_MENU_HUBS]
 
 
+# De Anza's 2026-2027 catalog (S637, page read 43044618275): a publish call writes each course
+# code packed, <td class="fix-code">ACCTD001A</td>, ACCTD01AH, ACCTD090., BUSD018., MUSID003A: the
+# subject, the campus letter, then four characters of number (zero-filled, a letter suffix or a
+# full stop). The page's own script rewrites the cell for a reader (ACCT 1A, ACCT 1AH, ACCT 90,
+# BUS 18, MUSI 3A), and a content call never runs it, so the capture found each of 242 programs'
+# pages by title and award and counted none of their courses (run 43024817869). Only a fix-code
+# cell in that packed shape is rewritten; a code a college prints with its space is left alone.
+EL_FIX_CODE = re.compile(r'(<td\b[^>]*\bclass=\\?"[^">]*\bfix-code\b[^">]*\\?"[^>]*>)\s*'
+                         r"([A-Z&]{2,8})[A-Z](\d{2,3}[A-Z.]{1,2})\s*(?=</td)", re.I)
+
+
+def el_fix_codes(html_text: str) -> str:
+    """A packed course code in a fix-code cell, as the page's script shows it."""
+    def fix(m):
+        num = m.group(3)
+        if len(num) != 4:
+            return m.group(0)
+        return "%s%s %s" % (m.group(1), m.group(2).upper(), num.rstrip(".").lstrip("0") or "0")
+    return EL_FIX_CODE.sub(fix, html_text or "")
+
+
 def el_text(html_text: str) -> str:
     """A content call's page as the lines a reader sees, without styles, scripts
     or icons."""
-    return cq_text(EL_STRIP.sub(" ", html_text or ""))
+    return cq_text(EL_STRIP.sub(" ", el_fix_codes(html_text)))
 
 
 def el_page(start: str, slug: str, html_text: str) -> dict | None:
