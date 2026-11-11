@@ -1,0 +1,29 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. The blocked-source loop, tested on a real block (Sam, in session: test a doc the queue cannot reach, ping COBIx, then test access to what COBIx provides). American River College's 2026-2027 catalog PDF answers the reader 404 (since 2026-10-08), and COBIx's issue #3096 reports the college recompiled it on 2026-11-06 (8,010,776 bytes; the hand-filed copy pinned on 2026-10-17 is 8,052,937), so the hand-filed copy is out of date. This read records what the reader gets today from the catalog's own address and its catalog page, before the ask to COBIx. No model call.",
+ "college": "American River College",
+ "questions": {
+  "block": "What does the college's host answer the reader for its 2026-2027 catalog PDF and its catalog page?"
+ },
+ "keywords": [
+  "2026-2027",
+  "Catalog",
+  "Last-Modified"
+ ],
+ "pages": [
+  {
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "answers": [
+    "block"
+   ],
+   "retry": true
+  },
+  {
+   "url": "https://arc.losrios.edu/catalog",
+   "answers": [
+    "block"
+   ],
+   "retry": true,
+   "links": "pdf|catalog|2026"
+  }
+ ]
+}

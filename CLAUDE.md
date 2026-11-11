@@ -33,7 +33,7 @@ you move something out of this file, leave the line that says it is out there.
 
 Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
-finished_workstreams · skyview_invariants · live_session_banner ·
+finished_workstreams · [blocked_sources](docs/reference/blocked_sources.md) · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
 Allow-Once storm) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents
