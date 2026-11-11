@@ -2608,7 +2608,31 @@
     var S = window.CPL_STATEWIDE_RECS;
     return (S ? !!S[r.ut] : !!r.statewide) ? "Statewide" : "Local";
   }
+  /* A saved fold is a reviewed row (Sam, 2026-11-11, #3110: he approved 35 folds, opened Folds waiting for the apply,
+     and every row read Unreviewed). Saving the decision is the review: a row whose saved rename or fold the reference
+     already carries (its title is now an old name of another credential, kb/exhibits_related.json's aka) reads Applied;
+     a saved rename or fold the apply has not reached reads Saved, waiting for apply. Only then the reference's stamp. */
+  var STATUS_SAVED = "Saved, waiting for apply", STATUS_APPLIED = "Applied";
+  function listAppliedTo(ut) {
+    var d = state.rel.data;
+    if (!d) return "";
+    if (state.rel._akaFor !== d) {
+      var m = {};
+      (state.rel.idx || []).forEach(function (o) { (o.aka || []).forEach(function (a) { if (a && a !== o.t) m[a] = o.t; }); });
+      state.rel._akaTo = m; state.rel._akaFor = d;
+    }
+    return state.rel._akaTo[ut] || "";
+  }
+  function listDecision(r) {
+    var to = listAppliedTo(r.ut);
+    if (to) return { status: STATUS_APPLIED, to: to };
+    var o = (state.cs.overlay || {})[r.ut] || {};
+    if (o.title && o.title !== r.ut) return { status: STATUS_SAVED, to: o.title, fold: !!(o.merge && o.merge === o.title) };
+    return null;
+  }
   function listStatus(r) {
+    var dec = listDecision(r);
+    if (dec) return dec.status;
     var by = String(r.curated_by || "");
     if (!r.curated_at && !by) return "Unreviewed";
     return /@bot$/.test(by) ? "Cohort" : "Person";
@@ -3001,7 +3025,11 @@
       }
       // The title's drawer shows inside the side panel, whose editor sets the issuer and training sites.
     } else if (name === "Status" || name === "Confidence") {
-      line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
+      var dec = listDecision(r);
+      if (dec && dec.status === STATUS_APPLIED) line("Applied: the reference now carries this title as an old name of " + dec.to + ".");
+      else if (dec) line("Saved: " + (dec.fold ? "the fold into " : "the rename to ") + dec.to
+        + " is the review. The apply runs it with no click from you.");
+      else line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
         (listStatus(r) === "Cohort" ? "the cohort " + r.curated_by : "a person") + ".");
       var tags = r.audit_tags || {};
       if (Object.keys(tags).length) { line("The audit's tags:"); list(Object.keys(tags).map(function (k) { return k.replace(/_/g, " ") + ": " + tags[k]; })); }
@@ -3160,6 +3188,10 @@
       },
       beforeTable: function (wrap) {
         var L = listState();
+        // The waiting folds, told plainly (#3110 step 2): saved, applied without a click, and gone from here once applied.
+        // Worded to hold whether a session or a schedule starts the apply.
+        if (L.f === "waiting") wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-waitline",
+          text: "These folds are saved, the apply runs them without a click from you, and each one leaves this list once it is applied." }));
         if (L.f === "outcomes") {
           var sd = L.slo, sc = (sd && sd.counts) || {};
           wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-sloline", text: sd === false
