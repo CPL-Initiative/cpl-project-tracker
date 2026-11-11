@@ -30109,6 +30109,7 @@
    "name": "Catalog framing check",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "scripts/catalog_framing.py"
    ],
    "adds": [],
@@ -30230,6 +30231,7 @@
    "name": "College page read",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_college_page_read.py",
     "kb/_description_units.py"
    ],
@@ -30276,6 +30278,7 @@
    "name": "Course outcomes read",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outcomes_read.py"
    ],
    "adds": [
@@ -30290,6 +30293,7 @@
    "name": "Course outline census",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outline_census.py"
    ],
    "adds": [
@@ -30304,6 +30308,7 @@
    "name": "Course outline index",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outline_index.py"
    ],
    "adds": [
@@ -30423,6 +30428,7 @@
     "23 7 * * 1"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "tools/source_cpl_stories.mjs"
    ],
    "adds": [
@@ -30895,7 +30901,8 @@
     "tests/course_outline_index_test.py",
     "tests/course_outcomes_read_test.py",
     "tests/course_outcomes_load_test.py",
-    "tests/next_slo_colleges_test.py"
+    "tests/next_slo_colleges_test.py",
+    "tests/browser_install_single_source_test.py"
    ],
    "adds": [],
    "push": null,
@@ -31090,6 +31097,7 @@
     "23 8 * * 0"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_fetch_program_course_files.py",
     "kb/_build_program_course_graph.py"
    ],
@@ -31107,6 +31115,7 @@
    "name": "Program requirements, one college",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_program_requirements_display_apply.py"
    ],
@@ -31137,6 +31146,7 @@
    "name": "Program requirements pilot",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_pilot.py"
    ],
    "adds": [],
@@ -31149,6 +31159,7 @@
    "name": "Program requirements pilot, sequence",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_sequence_ppm.py"
    ],
    "adds": [],
@@ -31163,6 +31174,7 @@
     "29 10 * * 0"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_source_census.py"
    ],
    "adds": [],
@@ -31191,6 +31203,7 @@
    "name": "Second reader (program requirements)",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_second_reader.py"
    ],
@@ -31309,6 +31322,7 @@
     "kb/_jev_battery.py",
     "kb/_exhibit_reanalysis_jev.py",
     "kb/_typesafe_cr_trial.py",
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_jev_harvest.py",
     "kb/_jev_agri_families.py"
