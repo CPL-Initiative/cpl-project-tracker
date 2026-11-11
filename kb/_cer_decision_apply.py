@@ -78,6 +78,9 @@ FIELDS_BY_PREFIX = {
     UNCLASSIFIED: {"issuing_agency_assignment", "unified_title_assignment", "unified_title_supersedes"},
 }
 TITLE_FIELDS = {"unified_title_override", "unified_title_merge_confirm"}
+# Fields a plan may retire but never write: the CER's "reviewed" tick on a title, which goes with the title when its
+# last exhibit leaves (S638, 2026-11-11).
+RETIRE_ONLY = {PREFIX: {"reviewed_marker"}}
 COHORT_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*-s\d+@bot$")
 ATTEMPTS = 5
 TRANSIENT_HTTP = {429, 500, 502, 503, 504}
@@ -209,7 +212,7 @@ def load_plan(plan_dir):
         cid, field = r.get("course_id"), r.get("field")
         pre = next((x for x in FIELDS_BY_PREFIX if isinstance(cid, str) and cid.startswith(x)
                     and len(cid) > len(x)), None)
-        if pre is None or field not in FIELDS_BY_PREFIX[pre]:
+        if pre is None or field not in FIELDS_BY_PREFIX[pre] | RETIRE_ONLY.get(pre, set()):
             raise SystemExit("a retire names a %s key and one of its fields: %r" % (" or ".join(FIELDS_BY_PREFIX), r))
         if not all(isinstance(r.get(k), str) and r[k].strip() for k in ("value", "reviewer_email")):
             raise SystemExit("a retire names the live row's value and reviewer_email: %r" % r)

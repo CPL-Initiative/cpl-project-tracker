@@ -3,8 +3,8 @@
  "ruling": "Sam Lee, in session 2026-11-11 (SkyTamarind, S638; cpl_memory sam-ase-mil-certs-and-cx-to-standards-2026-11-11, sam-ic-exhibits-go-to-cert-title-2026-11-11, sam-cert-name-first-2026-11-11): 'ASE MIL3 test is the Military Tactical Wheeled Vehicle (TWV) – Drive Train certification... if there are any exhibits with ASE MIL in the title, adjust the canonical title to match the official ASE titles'; an industry-certification exhibit under a '(ASE ... standards)' title goes to the cert title, and ('3 yes') the credit-by-exam exhibits under the A5, A7 and A8 cert titles go to the standards titles; then his authorization the same day for the conductor and COBIx to settle the emptied titles without bringing them back to him. Superseding his own 2026-10-31 to 11-11 saves by his word (CLAUDE.md Rule 8); written by SkyTamarind's worker",
  "cohort": "cer-s638@bot",
  "read_by_session": {
-  "at": "2026-11-11",
-  "how": "NOT a live read: the committed overlays kb/unclassified_assignments.json and kb/credential_review_overlay.json (synced ~17:40Z). The conductor runs 00_fresh_reads.sql and the workflow's dry run before the commit."
+  "at": "2026-11-11T20:15Z",
+  "how": "read-only select through the Supabase MCP tool by the conductor (SkyTamarind), 00_fresh_reads.sql: no other ASE MIL exhibit; no merge confirm targets an emptied title; cohort cer-s638@bot has written nothing; Auto 617 Completion and the five credit-by-exam keys hold no row; every replaced and retired row as this plan names it, with its own stamp."
  },
  "rows": [
   {

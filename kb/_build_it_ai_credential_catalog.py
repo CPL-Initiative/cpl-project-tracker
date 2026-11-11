@@ -386,6 +386,10 @@ SOC_MAJOR_CIP = {"11": "52.0101", "13": "52.0101", "21": "44.0701", "29": "51.00
 ASE_SERIES_CIP = [
     (r"Automotive Service Excellence", r"\bMIL\d\b|Military Tactical Wheeled Vehicle", "47.0604",
      "Sam, 2026-11-11"),
+    # The automobile and truck tests whose names read as another trade (A6 and T6 Electrical/Electronic Systems,
+    # A7 and T7 heating and air conditioning), by analogy with his MIL7 ruling: the conductor of S638, 2026-11-11.
+    # The bus (S6, S7, H6, H7), truck equipment (E2) and collision (B5) tests wait for their own call.
+    (r"Automotive Service Excellence", r"\b[AT][67]\b", "47.0604", "S638 by analogy with Sam's MIL7 ruling, 2026-11-11"),
 ]
 _ASE_SERIES_RX = [(re.compile(i, re.I), re.compile(n, re.I), c, who) for i, n, c, who in ASE_SERIES_CIP]
 

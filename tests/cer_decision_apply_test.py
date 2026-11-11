@@ -401,8 +401,18 @@ code, lines = run(d, "commit", r)
 check("a retire naming its save time holds when the same value was saved again later; nothing removed",
       code == 1 and len(r.rows) == 3 and any("saved again" in l for l in lines), lines)
 shutil.rmtree(d)
+MK = {"ruling": "r", "cohort": "exhibits-s0@bot", "rows": [], "retires": [
+    {"course_id": P + "Spanish 1", "field": "reviewed_marker", "value": "1", "reviewer_email": "map@rccd.edu",
+     "reviewed_at": "2026-07-10T14:07:19.539922", "because": "the title is empty"}]}
+d = plan_dir(MK)
+r = FakeRest([{"course_id": P + "Spanish 1", "field": "reviewed_marker", "value": "1", "reviewer_email": "map@rccd.edu",
+               "reviewed_at": "2026-07-10T14:07:19.539922+00:00"}], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a title's reviewed_marker may be retired (a naive stamp reads as UTC), and comes back on rollback",
+      code == 0 and r.rows == [] and run(d, "rollback", r)[0] == 0 and len(r.rows) == 1, lines)
+shutil.rmtree(d)
 U = "_UNCLASSIFIED::"
-SPL = {"ruling": "r", "cohort": "exhibits-s0@bot", "rows": [
+SPL ={"ruling": "r", "cohort": "exhibits-s0@bot", "rows": [
     {"course_id": U + "IC-Brakes", "field": "unified_title_assignment", "value": "Brakes (ASE A5)",
      "replaces": {"value": "Brake Course", "reviewer_email": SAM, "reviewed_at": "2026-10-31T18:52:59.978032+00:00"}},
     {"course_id": U + "IC-Brakes", "field": "unified_title_supersedes", "value": "Brake Course"}]}
@@ -452,7 +462,9 @@ for label, mutate in [
     ("a machine-draft assignment naming no draft", lambda p: p["rows"][0].update(over_machine_draft="")),
     ("a machine-draft assignment beside a supersedes",
      lambda p: p["rows"].append({"course_id": U + "Brakes", "field": "unified_title_supersedes", "value": "Z"})),
-    ("a retire whose reviewed_at is not a time", lambda p: p.update(retires=[dict(RPLAN["retires"][0], reviewed_at="soon")])),
+    ("a reviewed_marker written rather than retired",
+     lambda p: p["rows"].append({"course_id": P + "Spanish 1", "field": "reviewed_marker", "value": "1"})),
+    ("a retire whose reviewed_at is not a time",lambda p: p.update(retires=[dict(RPLAN["retires"][0], reviewed_at="soon")])),
 ]:
     bad = copy.deepcopy(MPL)
     mutate(bad)

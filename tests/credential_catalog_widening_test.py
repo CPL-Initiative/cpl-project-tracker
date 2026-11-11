@@ -86,6 +86,17 @@ class AseMilitarySeriesIsAutomotive(unittest.TestCase):
         for c in cn.MIL:
             self.assertEqual(b.field_cip(cn.ase_title(c), None, cn.ASE_ISSUER)[0], "47.0604", c)
 
+    def test_automobile_and_truck_tests_named_like_another_trade_are_automotive(self):
+        for name in ("Automobile & Light Truck Certification - A6 Electrical/Electronic Systems",
+                     "Automobile & Light Truck Certification - A7 Heating & Air Conditioning",
+                     "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
+                     "Medium-Heavy Truck Certification - T7 Heating, Ventilation & Air Conditioning (HVAC)"):
+            self.assertEqual(b.field_cip(name, None, self.ASE)[0], "47.0604", name)
+        # the diesel tests keep their diesel CIP, and a bus test is not swept in
+        self.assertEqual(b.field_cip("Medium-Heavy Truck Certification - T2 Diesel Engines", None, self.ASE)[0], "47.0605")
+        self.assertEqual(b.field_cip("School Bus Certification - S7 Air Conditioning Systems & Controls", None, self.ASE)[0],
+                         "47.0201")
+
     def test_rule_is_held_to_the_series_and_its_issuer(self):
         # another issuer's HVAC credential, and ASE's own building-trade-sounding names outside the series, keep the name rules
         self.assertEqual(b.field_cip("EPA 608 Universal", None, "U.S. Environmental Protection Agency (EPA)")[0], "47.0201")
