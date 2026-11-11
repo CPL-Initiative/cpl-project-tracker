@@ -53,7 +53,18 @@ jobs:
       - name: Install Playwright + Chromium, pypdf, pdfminer
         run: |
           pip install --quiet playwright pypdf pdfminer.six
-          python -m playwright install --with-deps chromium
+          # The runner image already holds Chromium's system libraries; --with-deps only adds nine font
+          # packages from Ubuntu's archive, and on 2026-11-11 the runner could not resolve that archive
+          # (run 43040340552, twice: ten minutes of DNS timeouts, then exit 100, no page read). So the
+          # browser alone is installed and launched once; the packages are fetched only if it will not start.
+          python -m playwright install chromium
+          python - <<'PY' || python -m playwright install --with-deps chromium
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              b.new_page().set_content("<p>ok</p>")
+              b.close()
+          PY
 
       - name: Read
         env:
